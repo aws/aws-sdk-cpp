@@ -213,181 +213,256 @@ OdbClient::InvokeOperationOutcome OdbClient::InvokeServiceOperation(const Amazon
 }
 
 AcceptMarketplaceRegistrationOutcome OdbClient::AcceptMarketplaceRegistration(const AcceptMarketplaceRegistrationRequest& request) const {
-  return AcceptMarketplaceRegistrationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptMarketplaceRegistrationOutcome(result.GetResultWithOwnership())
+                            : AcceptMarketplaceRegistrationOutcome(std::move(result.GetError()));
 }
 
 AssociateIamRoleToResourceOutcome OdbClient::AssociateIamRoleToResource(const AssociateIamRoleToResourceRequest& request) const {
-  return AssociateIamRoleToResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateIamRoleToResourceOutcome(result.GetResultWithOwnership())
+                            : AssociateIamRoleToResourceOutcome(std::move(result.GetError()));
 }
 
 CreateCloudAutonomousVmClusterOutcome OdbClient::CreateCloudAutonomousVmCluster(
     const CreateCloudAutonomousVmClusterRequest& request) const {
-  return CreateCloudAutonomousVmClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCloudAutonomousVmClusterOutcome(result.GetResultWithOwnership())
+                            : CreateCloudAutonomousVmClusterOutcome(std::move(result.GetError()));
 }
 
 CreateCloudExadataInfrastructureOutcome OdbClient::CreateCloudExadataInfrastructure(
     const CreateCloudExadataInfrastructureRequest& request) const {
-  return CreateCloudExadataInfrastructureOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCloudExadataInfrastructureOutcome(result.GetResultWithOwnership())
+                            : CreateCloudExadataInfrastructureOutcome(std::move(result.GetError()));
 }
 
 CreateCloudVmClusterOutcome OdbClient::CreateCloudVmCluster(const CreateCloudVmClusterRequest& request) const {
-  return CreateCloudVmClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCloudVmClusterOutcome(result.GetResultWithOwnership())
+                            : CreateCloudVmClusterOutcome(std::move(result.GetError()));
 }
 
 CreateOdbNetworkOutcome OdbClient::CreateOdbNetwork(const CreateOdbNetworkRequest& request) const {
-  return CreateOdbNetworkOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateOdbNetworkOutcome(result.GetResultWithOwnership())
+                            : CreateOdbNetworkOutcome(std::move(result.GetError()));
 }
 
 CreateOdbPeeringConnectionOutcome OdbClient::CreateOdbPeeringConnection(const CreateOdbPeeringConnectionRequest& request) const {
-  return CreateOdbPeeringConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateOdbPeeringConnectionOutcome(result.GetResultWithOwnership())
+                            : CreateOdbPeeringConnectionOutcome(std::move(result.GetError()));
 }
 
 DeleteCloudAutonomousVmClusterOutcome OdbClient::DeleteCloudAutonomousVmCluster(
     const DeleteCloudAutonomousVmClusterRequest& request) const {
-  return DeleteCloudAutonomousVmClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCloudAutonomousVmClusterOutcome(result.GetResultWithOwnership())
+                            : DeleteCloudAutonomousVmClusterOutcome(std::move(result.GetError()));
 }
 
 DeleteCloudExadataInfrastructureOutcome OdbClient::DeleteCloudExadataInfrastructure(
     const DeleteCloudExadataInfrastructureRequest& request) const {
-  return DeleteCloudExadataInfrastructureOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCloudExadataInfrastructureOutcome(result.GetResultWithOwnership())
+                            : DeleteCloudExadataInfrastructureOutcome(std::move(result.GetError()));
 }
 
 DeleteCloudVmClusterOutcome OdbClient::DeleteCloudVmCluster(const DeleteCloudVmClusterRequest& request) const {
-  return DeleteCloudVmClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCloudVmClusterOutcome(result.GetResultWithOwnership())
+                            : DeleteCloudVmClusterOutcome(std::move(result.GetError()));
 }
 
 DeleteOdbNetworkOutcome OdbClient::DeleteOdbNetwork(const DeleteOdbNetworkRequest& request) const {
-  return DeleteOdbNetworkOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteOdbNetworkOutcome(result.GetResultWithOwnership())
+                            : DeleteOdbNetworkOutcome(std::move(result.GetError()));
 }
 
 DeleteOdbPeeringConnectionOutcome OdbClient::DeleteOdbPeeringConnection(const DeleteOdbPeeringConnectionRequest& request) const {
-  return DeleteOdbPeeringConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteOdbPeeringConnectionOutcome(result.GetResultWithOwnership())
+                            : DeleteOdbPeeringConnectionOutcome(std::move(result.GetError()));
 }
 
 DisassociateIamRoleFromResourceOutcome OdbClient::DisassociateIamRoleFromResource(
     const DisassociateIamRoleFromResourceRequest& request) const {
-  return DisassociateIamRoleFromResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateIamRoleFromResourceOutcome(result.GetResultWithOwnership())
+                            : DisassociateIamRoleFromResourceOutcome(std::move(result.GetError()));
 }
 
 GetCloudAutonomousVmClusterOutcome OdbClient::GetCloudAutonomousVmCluster(const GetCloudAutonomousVmClusterRequest& request) const {
-  return GetCloudAutonomousVmClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCloudAutonomousVmClusterOutcome(result.GetResultWithOwnership())
+                            : GetCloudAutonomousVmClusterOutcome(std::move(result.GetError()));
 }
 
 GetCloudExadataInfrastructureOutcome OdbClient::GetCloudExadataInfrastructure(const GetCloudExadataInfrastructureRequest& request) const {
-  return GetCloudExadataInfrastructureOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCloudExadataInfrastructureOutcome(result.GetResultWithOwnership())
+                            : GetCloudExadataInfrastructureOutcome(std::move(result.GetError()));
 }
 
 GetCloudExadataInfrastructureUnallocatedResourcesOutcome OdbClient::GetCloudExadataInfrastructureUnallocatedResources(
     const GetCloudExadataInfrastructureUnallocatedResourcesRequest& request) const {
-  return GetCloudExadataInfrastructureUnallocatedResourcesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCloudExadataInfrastructureUnallocatedResourcesOutcome(result.GetResultWithOwnership())
+                            : GetCloudExadataInfrastructureUnallocatedResourcesOutcome(std::move(result.GetError()));
 }
 
 GetCloudVmClusterOutcome OdbClient::GetCloudVmCluster(const GetCloudVmClusterRequest& request) const {
-  return GetCloudVmClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCloudVmClusterOutcome(result.GetResultWithOwnership())
+                            : GetCloudVmClusterOutcome(std::move(result.GetError()));
 }
 
 GetDbNodeOutcome OdbClient::GetDbNode(const GetDbNodeRequest& request) const {
-  return GetDbNodeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDbNodeOutcome(result.GetResultWithOwnership()) : GetDbNodeOutcome(std::move(result.GetError()));
 }
 
 GetDbServerOutcome OdbClient::GetDbServer(const GetDbServerRequest& request) const {
-  return GetDbServerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDbServerOutcome(result.GetResultWithOwnership()) : GetDbServerOutcome(std::move(result.GetError()));
 }
 
 GetOciOnboardingStatusOutcome OdbClient::GetOciOnboardingStatus(const GetOciOnboardingStatusRequest& request) const {
-  return GetOciOnboardingStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetOciOnboardingStatusOutcome(result.GetResultWithOwnership())
+                            : GetOciOnboardingStatusOutcome(std::move(result.GetError()));
 }
 
 GetOdbNetworkOutcome OdbClient::GetOdbNetwork(const GetOdbNetworkRequest& request) const {
-  return GetOdbNetworkOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetOdbNetworkOutcome(result.GetResultWithOwnership()) : GetOdbNetworkOutcome(std::move(result.GetError()));
 }
 
 GetOdbPeeringConnectionOutcome OdbClient::GetOdbPeeringConnection(const GetOdbPeeringConnectionRequest& request) const {
-  return GetOdbPeeringConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetOdbPeeringConnectionOutcome(result.GetResultWithOwnership())
+                            : GetOdbPeeringConnectionOutcome(std::move(result.GetError()));
 }
 
 InitializeServiceOutcome OdbClient::InitializeService(const InitializeServiceRequest& request) const {
-  return InitializeServiceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? InitializeServiceOutcome(result.GetResultWithOwnership())
+                            : InitializeServiceOutcome(std::move(result.GetError()));
 }
 
 ListAutonomousVirtualMachinesOutcome OdbClient::ListAutonomousVirtualMachines(const ListAutonomousVirtualMachinesRequest& request) const {
-  return ListAutonomousVirtualMachinesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAutonomousVirtualMachinesOutcome(result.GetResultWithOwnership())
+                            : ListAutonomousVirtualMachinesOutcome(std::move(result.GetError()));
 }
 
 ListCloudAutonomousVmClustersOutcome OdbClient::ListCloudAutonomousVmClusters(const ListCloudAutonomousVmClustersRequest& request) const {
-  return ListCloudAutonomousVmClustersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCloudAutonomousVmClustersOutcome(result.GetResultWithOwnership())
+                            : ListCloudAutonomousVmClustersOutcome(std::move(result.GetError()));
 }
 
 ListCloudExadataInfrastructuresOutcome OdbClient::ListCloudExadataInfrastructures(
     const ListCloudExadataInfrastructuresRequest& request) const {
-  return ListCloudExadataInfrastructuresOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCloudExadataInfrastructuresOutcome(result.GetResultWithOwnership())
+                            : ListCloudExadataInfrastructuresOutcome(std::move(result.GetError()));
 }
 
 ListCloudVmClustersOutcome OdbClient::ListCloudVmClusters(const ListCloudVmClustersRequest& request) const {
-  return ListCloudVmClustersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCloudVmClustersOutcome(result.GetResultWithOwnership())
+                            : ListCloudVmClustersOutcome(std::move(result.GetError()));
 }
 
 ListDbNodesOutcome OdbClient::ListDbNodes(const ListDbNodesRequest& request) const {
-  return ListDbNodesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDbNodesOutcome(result.GetResultWithOwnership()) : ListDbNodesOutcome(std::move(result.GetError()));
 }
 
 ListDbServersOutcome OdbClient::ListDbServers(const ListDbServersRequest& request) const {
-  return ListDbServersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDbServersOutcome(result.GetResultWithOwnership()) : ListDbServersOutcome(std::move(result.GetError()));
 }
 
 ListDbSystemShapesOutcome OdbClient::ListDbSystemShapes(const ListDbSystemShapesRequest& request) const {
-  return ListDbSystemShapesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDbSystemShapesOutcome(result.GetResultWithOwnership())
+                            : ListDbSystemShapesOutcome(std::move(result.GetError()));
 }
 
 ListGiVersionsOutcome OdbClient::ListGiVersions(const ListGiVersionsRequest& request) const {
-  return ListGiVersionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListGiVersionsOutcome(result.GetResultWithOwnership()) : ListGiVersionsOutcome(std::move(result.GetError()));
 }
 
 ListOdbNetworksOutcome OdbClient::ListOdbNetworks(const ListOdbNetworksRequest& request) const {
-  return ListOdbNetworksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListOdbNetworksOutcome(result.GetResultWithOwnership())
+                            : ListOdbNetworksOutcome(std::move(result.GetError()));
 }
 
 ListOdbPeeringConnectionsOutcome OdbClient::ListOdbPeeringConnections(const ListOdbPeeringConnectionsRequest& request) const {
-  return ListOdbPeeringConnectionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListOdbPeeringConnectionsOutcome(result.GetResultWithOwnership())
+                            : ListOdbPeeringConnectionsOutcome(std::move(result.GetError()));
 }
 
 ListSystemVersionsOutcome OdbClient::ListSystemVersions(const ListSystemVersionsRequest& request) const {
-  return ListSystemVersionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSystemVersionsOutcome(result.GetResultWithOwnership())
+                            : ListSystemVersionsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome OdbClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 RebootDbNodeOutcome OdbClient::RebootDbNode(const RebootDbNodeRequest& request) const {
-  return RebootDbNodeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RebootDbNodeOutcome(result.GetResultWithOwnership()) : RebootDbNodeOutcome(std::move(result.GetError()));
 }
 
 StartDbNodeOutcome OdbClient::StartDbNode(const StartDbNodeRequest& request) const {
-  return StartDbNodeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDbNodeOutcome(result.GetResultWithOwnership()) : StartDbNodeOutcome(std::move(result.GetError()));
 }
 
 StopDbNodeOutcome OdbClient::StopDbNode(const StopDbNodeRequest& request) const {
-  return StopDbNodeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopDbNodeOutcome(result.GetResultWithOwnership()) : StopDbNodeOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome OdbClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome OdbClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateCloudExadataInfrastructureOutcome OdbClient::UpdateCloudExadataInfrastructure(
     const UpdateCloudExadataInfrastructureRequest& request) const {
-  return UpdateCloudExadataInfrastructureOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCloudExadataInfrastructureOutcome(result.GetResultWithOwnership())
+                            : UpdateCloudExadataInfrastructureOutcome(std::move(result.GetError()));
 }
 
 UpdateOdbNetworkOutcome OdbClient::UpdateOdbNetwork(const UpdateOdbNetworkRequest& request) const {
-  return UpdateOdbNetworkOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateOdbNetworkOutcome(result.GetResultWithOwnership())
+                            : UpdateOdbNetworkOutcome(std::move(result.GetError()));
 }
 
 UpdateOdbPeeringConnectionOutcome OdbClient::UpdateOdbPeeringConnection(const UpdateOdbPeeringConnectionRequest& request) const {
-  return UpdateOdbPeeringConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateOdbPeeringConnectionOutcome(result.GetResultWithOwnership())
+                            : UpdateOdbPeeringConnectionOutcome(std::move(result.GetError()));
 }

@@ -187,5 +187,7 @@ ListRealtimeContactAnalysisSegmentsOutcome ConnectContactLensClient::ListRealtim
     endpointResolutionOutcome.GetResult().AddPathSegments("/realtime-contact-analysis/analysis-segments");
   };
 
-  return ListRealtimeContactAnalysisSegmentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRealtimeContactAnalysisSegmentsOutcome(result.GetResultWithOwnership())
+                            : ListRealtimeContactAnalysisSegmentsOutcome(std::move(result.GetError()));
 }

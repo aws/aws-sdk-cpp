@@ -236,271 +236,381 @@ OrganizationsClient::InvokeOperationOutcome OrganizationsClient::InvokeServiceOp
 }
 
 AcceptHandshakeOutcome OrganizationsClient::AcceptHandshake(const AcceptHandshakeRequest& request) const {
-  return AcceptHandshakeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptHandshakeOutcome(result.GetResultWithOwnership())
+                            : AcceptHandshakeOutcome(std::move(result.GetError()));
 }
 
 AttachPolicyOutcome OrganizationsClient::AttachPolicy(const AttachPolicyRequest& request) const {
-  return AttachPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AttachPolicyOutcome(result.GetResultWithOwnership()) : AttachPolicyOutcome(std::move(result.GetError()));
 }
 
 CancelHandshakeOutcome OrganizationsClient::CancelHandshake(const CancelHandshakeRequest& request) const {
-  return CancelHandshakeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelHandshakeOutcome(result.GetResultWithOwnership())
+                            : CancelHandshakeOutcome(std::move(result.GetError()));
 }
 
 CloseAccountOutcome OrganizationsClient::CloseAccount(const CloseAccountRequest& request) const {
-  return CloseAccountOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CloseAccountOutcome(result.GetResultWithOwnership()) : CloseAccountOutcome(std::move(result.GetError()));
 }
 
 CreateAccountOutcome OrganizationsClient::CreateAccount(const CreateAccountRequest& request) const {
-  return CreateAccountOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAccountOutcome(result.GetResultWithOwnership()) : CreateAccountOutcome(std::move(result.GetError()));
 }
 
 CreateGovCloudAccountOutcome OrganizationsClient::CreateGovCloudAccount(const CreateGovCloudAccountRequest& request) const {
-  return CreateGovCloudAccountOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGovCloudAccountOutcome(result.GetResultWithOwnership())
+                            : CreateGovCloudAccountOutcome(std::move(result.GetError()));
 }
 
 CreateOrganizationOutcome OrganizationsClient::CreateOrganization(const CreateOrganizationRequest& request) const {
-  return CreateOrganizationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateOrganizationOutcome(result.GetResultWithOwnership())
+                            : CreateOrganizationOutcome(std::move(result.GetError()));
 }
 
 CreateOrganizationalUnitOutcome OrganizationsClient::CreateOrganizationalUnit(const CreateOrganizationalUnitRequest& request) const {
-  return CreateOrganizationalUnitOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateOrganizationalUnitOutcome(result.GetResultWithOwnership())
+                            : CreateOrganizationalUnitOutcome(std::move(result.GetError()));
 }
 
 CreatePolicyOutcome OrganizationsClient::CreatePolicy(const CreatePolicyRequest& request) const {
-  return CreatePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePolicyOutcome(result.GetResultWithOwnership()) : CreatePolicyOutcome(std::move(result.GetError()));
 }
 
 DeclineHandshakeOutcome OrganizationsClient::DeclineHandshake(const DeclineHandshakeRequest& request) const {
-  return DeclineHandshakeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeclineHandshakeOutcome(result.GetResultWithOwnership())
+                            : DeclineHandshakeOutcome(std::move(result.GetError()));
 }
 
 DeleteOrganizationOutcome OrganizationsClient::DeleteOrganization(const DeleteOrganizationRequest& request) const {
-  return DeleteOrganizationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteOrganizationOutcome(result.GetResultWithOwnership())
+                            : DeleteOrganizationOutcome(std::move(result.GetError()));
 }
 
 DeleteOrganizationalUnitOutcome OrganizationsClient::DeleteOrganizationalUnit(const DeleteOrganizationalUnitRequest& request) const {
-  return DeleteOrganizationalUnitOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteOrganizationalUnitOutcome(result.GetResultWithOwnership())
+                            : DeleteOrganizationalUnitOutcome(std::move(result.GetError()));
 }
 
 DeletePolicyOutcome OrganizationsClient::DeletePolicy(const DeletePolicyRequest& request) const {
-  return DeletePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePolicyOutcome(result.GetResultWithOwnership()) : DeletePolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteResourcePolicyOutcome OrganizationsClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const {
-  return DeleteResourcePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 DeregisterDelegatedAdministratorOutcome OrganizationsClient::DeregisterDelegatedAdministrator(
     const DeregisterDelegatedAdministratorRequest& request) const {
-  return DeregisterDelegatedAdministratorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterDelegatedAdministratorOutcome(result.GetResultWithOwnership())
+                            : DeregisterDelegatedAdministratorOutcome(std::move(result.GetError()));
 }
 
 DescribeAccountOutcome OrganizationsClient::DescribeAccount(const DescribeAccountRequest& request) const {
-  return DescribeAccountOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAccountOutcome(result.GetResultWithOwnership())
+                            : DescribeAccountOutcome(std::move(result.GetError()));
 }
 
 DescribeCreateAccountStatusOutcome OrganizationsClient::DescribeCreateAccountStatus(
     const DescribeCreateAccountStatusRequest& request) const {
-  return DescribeCreateAccountStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCreateAccountStatusOutcome(result.GetResultWithOwnership())
+                            : DescribeCreateAccountStatusOutcome(std::move(result.GetError()));
 }
 
 DescribeEffectivePolicyOutcome OrganizationsClient::DescribeEffectivePolicy(const DescribeEffectivePolicyRequest& request) const {
-  return DescribeEffectivePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEffectivePolicyOutcome(result.GetResultWithOwnership())
+                            : DescribeEffectivePolicyOutcome(std::move(result.GetError()));
 }
 
 DescribeHandshakeOutcome OrganizationsClient::DescribeHandshake(const DescribeHandshakeRequest& request) const {
-  return DescribeHandshakeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeHandshakeOutcome(result.GetResultWithOwnership())
+                            : DescribeHandshakeOutcome(std::move(result.GetError()));
 }
 
 DescribeOrganizationOutcome OrganizationsClient::DescribeOrganization(const DescribeOrganizationRequest& request) const {
-  return DescribeOrganizationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeOrganizationOutcome(result.GetResultWithOwnership())
+                            : DescribeOrganizationOutcome(std::move(result.GetError()));
 }
 
 DescribeOrganizationalUnitOutcome OrganizationsClient::DescribeOrganizationalUnit(const DescribeOrganizationalUnitRequest& request) const {
-  return DescribeOrganizationalUnitOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeOrganizationalUnitOutcome(result.GetResultWithOwnership())
+                            : DescribeOrganizationalUnitOutcome(std::move(result.GetError()));
 }
 
 DescribePolicyOutcome OrganizationsClient::DescribePolicy(const DescribePolicyRequest& request) const {
-  return DescribePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePolicyOutcome(result.GetResultWithOwnership()) : DescribePolicyOutcome(std::move(result.GetError()));
 }
 
 DescribeResourcePolicyOutcome OrganizationsClient::DescribeResourcePolicy(const DescribeResourcePolicyRequest& request) const {
-  return DescribeResourcePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : DescribeResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 DescribeResponsibilityTransferOutcome OrganizationsClient::DescribeResponsibilityTransfer(
     const DescribeResponsibilityTransferRequest& request) const {
-  return DescribeResponsibilityTransferOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeResponsibilityTransferOutcome(result.GetResultWithOwnership())
+                            : DescribeResponsibilityTransferOutcome(std::move(result.GetError()));
 }
 
 DetachPolicyOutcome OrganizationsClient::DetachPolicy(const DetachPolicyRequest& request) const {
-  return DetachPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DetachPolicyOutcome(result.GetResultWithOwnership()) : DetachPolicyOutcome(std::move(result.GetError()));
 }
 
 DisableAWSServiceAccessOutcome OrganizationsClient::DisableAWSServiceAccess(const DisableAWSServiceAccessRequest& request) const {
-  return DisableAWSServiceAccessOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableAWSServiceAccessOutcome(result.GetResultWithOwnership())
+                            : DisableAWSServiceAccessOutcome(std::move(result.GetError()));
 }
 
 DisablePolicyTypeOutcome OrganizationsClient::DisablePolicyType(const DisablePolicyTypeRequest& request) const {
-  return DisablePolicyTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisablePolicyTypeOutcome(result.GetResultWithOwnership())
+                            : DisablePolicyTypeOutcome(std::move(result.GetError()));
 }
 
 EnableAWSServiceAccessOutcome OrganizationsClient::EnableAWSServiceAccess(const EnableAWSServiceAccessRequest& request) const {
-  return EnableAWSServiceAccessOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableAWSServiceAccessOutcome(result.GetResultWithOwnership())
+                            : EnableAWSServiceAccessOutcome(std::move(result.GetError()));
 }
 
 EnableAllFeaturesOutcome OrganizationsClient::EnableAllFeatures(const EnableAllFeaturesRequest& request) const {
-  return EnableAllFeaturesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableAllFeaturesOutcome(result.GetResultWithOwnership())
+                            : EnableAllFeaturesOutcome(std::move(result.GetError()));
 }
 
 EnablePolicyTypeOutcome OrganizationsClient::EnablePolicyType(const EnablePolicyTypeRequest& request) const {
-  return EnablePolicyTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnablePolicyTypeOutcome(result.GetResultWithOwnership())
+                            : EnablePolicyTypeOutcome(std::move(result.GetError()));
 }
 
 InviteAccountToOrganizationOutcome OrganizationsClient::InviteAccountToOrganization(
     const InviteAccountToOrganizationRequest& request) const {
-  return InviteAccountToOrganizationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? InviteAccountToOrganizationOutcome(result.GetResultWithOwnership())
+                            : InviteAccountToOrganizationOutcome(std::move(result.GetError()));
 }
 
 InviteOrganizationToTransferResponsibilityOutcome OrganizationsClient::InviteOrganizationToTransferResponsibility(
     const InviteOrganizationToTransferResponsibilityRequest& request) const {
-  return InviteOrganizationToTransferResponsibilityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? InviteOrganizationToTransferResponsibilityOutcome(result.GetResultWithOwnership())
+                            : InviteOrganizationToTransferResponsibilityOutcome(std::move(result.GetError()));
 }
 
 LeaveOrganizationOutcome OrganizationsClient::LeaveOrganization(const LeaveOrganizationRequest& request) const {
-  return LeaveOrganizationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? LeaveOrganizationOutcome(result.GetResultWithOwnership())
+                            : LeaveOrganizationOutcome(std::move(result.GetError()));
 }
 
 ListAWSServiceAccessForOrganizationOutcome OrganizationsClient::ListAWSServiceAccessForOrganization(
     const ListAWSServiceAccessForOrganizationRequest& request) const {
-  return ListAWSServiceAccessForOrganizationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAWSServiceAccessForOrganizationOutcome(result.GetResultWithOwnership())
+                            : ListAWSServiceAccessForOrganizationOutcome(std::move(result.GetError()));
 }
 
 ListAccountsOutcome OrganizationsClient::ListAccounts(const ListAccountsRequest& request) const {
-  return ListAccountsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAccountsOutcome(result.GetResultWithOwnership()) : ListAccountsOutcome(std::move(result.GetError()));
 }
 
 ListAccountsForParentOutcome OrganizationsClient::ListAccountsForParent(const ListAccountsForParentRequest& request) const {
-  return ListAccountsForParentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAccountsForParentOutcome(result.GetResultWithOwnership())
+                            : ListAccountsForParentOutcome(std::move(result.GetError()));
 }
 
 ListAccountsWithInvalidEffectivePolicyOutcome OrganizationsClient::ListAccountsWithInvalidEffectivePolicy(
     const ListAccountsWithInvalidEffectivePolicyRequest& request) const {
-  return ListAccountsWithInvalidEffectivePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAccountsWithInvalidEffectivePolicyOutcome(result.GetResultWithOwnership())
+                            : ListAccountsWithInvalidEffectivePolicyOutcome(std::move(result.GetError()));
 }
 
 ListChildrenOutcome OrganizationsClient::ListChildren(const ListChildrenRequest& request) const {
-  return ListChildrenOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListChildrenOutcome(result.GetResultWithOwnership()) : ListChildrenOutcome(std::move(result.GetError()));
 }
 
 ListCreateAccountStatusOutcome OrganizationsClient::ListCreateAccountStatus(const ListCreateAccountStatusRequest& request) const {
-  return ListCreateAccountStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCreateAccountStatusOutcome(result.GetResultWithOwnership())
+                            : ListCreateAccountStatusOutcome(std::move(result.GetError()));
 }
 
 ListDelegatedAdministratorsOutcome OrganizationsClient::ListDelegatedAdministrators(
     const ListDelegatedAdministratorsRequest& request) const {
-  return ListDelegatedAdministratorsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDelegatedAdministratorsOutcome(result.GetResultWithOwnership())
+                            : ListDelegatedAdministratorsOutcome(std::move(result.GetError()));
 }
 
 ListDelegatedServicesForAccountOutcome OrganizationsClient::ListDelegatedServicesForAccount(
     const ListDelegatedServicesForAccountRequest& request) const {
-  return ListDelegatedServicesForAccountOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDelegatedServicesForAccountOutcome(result.GetResultWithOwnership())
+                            : ListDelegatedServicesForAccountOutcome(std::move(result.GetError()));
 }
 
 ListEffectivePolicyValidationErrorsOutcome OrganizationsClient::ListEffectivePolicyValidationErrors(
     const ListEffectivePolicyValidationErrorsRequest& request) const {
-  return ListEffectivePolicyValidationErrorsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEffectivePolicyValidationErrorsOutcome(result.GetResultWithOwnership())
+                            : ListEffectivePolicyValidationErrorsOutcome(std::move(result.GetError()));
 }
 
 ListHandshakesForAccountOutcome OrganizationsClient::ListHandshakesForAccount(const ListHandshakesForAccountRequest& request) const {
-  return ListHandshakesForAccountOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListHandshakesForAccountOutcome(result.GetResultWithOwnership())
+                            : ListHandshakesForAccountOutcome(std::move(result.GetError()));
 }
 
 ListHandshakesForOrganizationOutcome OrganizationsClient::ListHandshakesForOrganization(
     const ListHandshakesForOrganizationRequest& request) const {
-  return ListHandshakesForOrganizationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListHandshakesForOrganizationOutcome(result.GetResultWithOwnership())
+                            : ListHandshakesForOrganizationOutcome(std::move(result.GetError()));
 }
 
 ListInboundResponsibilityTransfersOutcome OrganizationsClient::ListInboundResponsibilityTransfers(
     const ListInboundResponsibilityTransfersRequest& request) const {
-  return ListInboundResponsibilityTransfersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListInboundResponsibilityTransfersOutcome(result.GetResultWithOwnership())
+                            : ListInboundResponsibilityTransfersOutcome(std::move(result.GetError()));
 }
 
 ListOrganizationalUnitsForParentOutcome OrganizationsClient::ListOrganizationalUnitsForParent(
     const ListOrganizationalUnitsForParentRequest& request) const {
-  return ListOrganizationalUnitsForParentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListOrganizationalUnitsForParentOutcome(result.GetResultWithOwnership())
+                            : ListOrganizationalUnitsForParentOutcome(std::move(result.GetError()));
 }
 
 ListOutboundResponsibilityTransfersOutcome OrganizationsClient::ListOutboundResponsibilityTransfers(
     const ListOutboundResponsibilityTransfersRequest& request) const {
-  return ListOutboundResponsibilityTransfersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListOutboundResponsibilityTransfersOutcome(result.GetResultWithOwnership())
+                            : ListOutboundResponsibilityTransfersOutcome(std::move(result.GetError()));
 }
 
 ListParentsOutcome OrganizationsClient::ListParents(const ListParentsRequest& request) const {
-  return ListParentsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListParentsOutcome(result.GetResultWithOwnership()) : ListParentsOutcome(std::move(result.GetError()));
 }
 
 ListPoliciesOutcome OrganizationsClient::ListPolicies(const ListPoliciesRequest& request) const {
-  return ListPoliciesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPoliciesOutcome(result.GetResultWithOwnership()) : ListPoliciesOutcome(std::move(result.GetError()));
 }
 
 ListPoliciesForTargetOutcome OrganizationsClient::ListPoliciesForTarget(const ListPoliciesForTargetRequest& request) const {
-  return ListPoliciesForTargetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPoliciesForTargetOutcome(result.GetResultWithOwnership())
+                            : ListPoliciesForTargetOutcome(std::move(result.GetError()));
 }
 
 ListRootsOutcome OrganizationsClient::ListRoots(const ListRootsRequest& request) const {
-  return ListRootsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRootsOutcome(result.GetResultWithOwnership()) : ListRootsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome OrganizationsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTargetsForPolicyOutcome OrganizationsClient::ListTargetsForPolicy(const ListTargetsForPolicyRequest& request) const {
-  return ListTargetsForPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTargetsForPolicyOutcome(result.GetResultWithOwnership())
+                            : ListTargetsForPolicyOutcome(std::move(result.GetError()));
 }
 
 MoveAccountOutcome OrganizationsClient::MoveAccount(const MoveAccountRequest& request) const {
-  return MoveAccountOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? MoveAccountOutcome(result.GetResultWithOwnership()) : MoveAccountOutcome(std::move(result.GetError()));
 }
 
 PutResourcePolicyOutcome OrganizationsClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const {
-  return PutResourcePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : PutResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 RegisterDelegatedAdministratorOutcome OrganizationsClient::RegisterDelegatedAdministrator(
     const RegisterDelegatedAdministratorRequest& request) const {
-  return RegisterDelegatedAdministratorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterDelegatedAdministratorOutcome(result.GetResultWithOwnership())
+                            : RegisterDelegatedAdministratorOutcome(std::move(result.GetError()));
 }
 
 RemoveAccountFromOrganizationOutcome OrganizationsClient::RemoveAccountFromOrganization(
     const RemoveAccountFromOrganizationRequest& request) const {
-  return RemoveAccountFromOrganizationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveAccountFromOrganizationOutcome(result.GetResultWithOwnership())
+                            : RemoveAccountFromOrganizationOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome OrganizationsClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 TerminateResponsibilityTransferOutcome OrganizationsClient::TerminateResponsibilityTransfer(
     const TerminateResponsibilityTransferRequest& request) const {
-  return TerminateResponsibilityTransferOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TerminateResponsibilityTransferOutcome(result.GetResultWithOwnership())
+                            : TerminateResponsibilityTransferOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome OrganizationsClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateOrganizationalUnitOutcome OrganizationsClient::UpdateOrganizationalUnit(const UpdateOrganizationalUnitRequest& request) const {
-  return UpdateOrganizationalUnitOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateOrganizationalUnitOutcome(result.GetResultWithOwnership())
+                            : UpdateOrganizationalUnitOutcome(std::move(result.GetError()));
 }
 
 UpdatePolicyOutcome OrganizationsClient::UpdatePolicy(const UpdatePolicyRequest& request) const {
-  return UpdatePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePolicyOutcome(result.GetResultWithOwnership()) : UpdatePolicyOutcome(std::move(result.GetError()));
 }
 
 UpdateResponsibilityTransferOutcome OrganizationsClient::UpdateResponsibilityTransfer(
     const UpdateResponsibilityTransferRequest& request) const {
-  return UpdateResponsibilityTransferOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateResponsibilityTransferOutcome(result.GetResultWithOwnership())
+                            : UpdateResponsibilityTransferOutcome(std::move(result.GetError()));
 }

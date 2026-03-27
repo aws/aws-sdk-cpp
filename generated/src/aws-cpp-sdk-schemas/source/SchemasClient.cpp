@@ -211,7 +211,9 @@ CreateDiscovererOutcome SchemasClient::CreateDiscoverer(const CreateDiscovererRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/discoverers");
   };
 
-  return CreateDiscovererOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDiscovererOutcome(result.GetResultWithOwnership())
+                            : CreateDiscovererOutcome(std::move(result.GetError()));
 }
 
 CreateRegistryOutcome SchemasClient::CreateRegistry(const CreateRegistryRequest& request) const {
@@ -227,7 +229,8 @@ CreateRegistryOutcome SchemasClient::CreateRegistry(const CreateRegistryRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRegistryName());
   };
 
-  return CreateRegistryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRegistryOutcome(result.GetResultWithOwnership()) : CreateRegistryOutcome(std::move(result.GetError()));
 }
 
 CreateSchemaOutcome SchemasClient::CreateSchema(const CreateSchemaRequest& request) const {
@@ -250,7 +253,8 @@ CreateSchemaOutcome SchemasClient::CreateSchema(const CreateSchemaRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSchemaName());
   };
 
-  return CreateSchemaOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSchemaOutcome(result.GetResultWithOwnership()) : CreateSchemaOutcome(std::move(result.GetError()));
 }
 
 DeleteDiscovererOutcome SchemasClient::DeleteDiscoverer(const DeleteDiscovererRequest& request) const {
@@ -266,7 +270,9 @@ DeleteDiscovererOutcome SchemasClient::DeleteDiscoverer(const DeleteDiscovererRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDiscovererId());
   };
 
-  return DeleteDiscovererOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDiscovererOutcome(result.GetResultWithOwnership())
+                            : DeleteDiscovererOutcome(std::move(result.GetError()));
 }
 
 DeleteRegistryOutcome SchemasClient::DeleteRegistry(const DeleteRegistryRequest& request) const {
@@ -282,7 +288,8 @@ DeleteRegistryOutcome SchemasClient::DeleteRegistry(const DeleteRegistryRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRegistryName());
   };
 
-  return DeleteRegistryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRegistryOutcome(result.GetResultWithOwnership()) : DeleteRegistryOutcome(std::move(result.GetError()));
 }
 
 DeleteResourcePolicyOutcome SchemasClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const {
@@ -291,7 +298,9 @@ DeleteResourcePolicyOutcome SchemasClient::DeleteResourcePolicy(const DeleteReso
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/policy");
   };
 
-  return DeleteResourcePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteSchemaOutcome SchemasClient::DeleteSchema(const DeleteSchemaRequest& request) const {
@@ -314,7 +323,8 @@ DeleteSchemaOutcome SchemasClient::DeleteSchema(const DeleteSchemaRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSchemaName());
   };
 
-  return DeleteSchemaOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSchemaOutcome(result.GetResultWithOwnership()) : DeleteSchemaOutcome(std::move(result.GetError()));
 }
 
 DeleteSchemaVersionOutcome SchemasClient::DeleteSchemaVersion(const DeleteSchemaVersionRequest& request) const {
@@ -344,7 +354,9 @@ DeleteSchemaVersionOutcome SchemasClient::DeleteSchemaVersion(const DeleteSchema
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSchemaVersion());
   };
 
-  return DeleteSchemaVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSchemaVersionOutcome(result.GetResultWithOwnership())
+                            : DeleteSchemaVersionOutcome(std::move(result.GetError()));
 }
 
 DescribeCodeBindingOutcome SchemasClient::DescribeCodeBinding(const DescribeCodeBindingRequest& request) const {
@@ -374,7 +386,9 @@ DescribeCodeBindingOutcome SchemasClient::DescribeCodeBinding(const DescribeCode
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLanguage());
   };
 
-  return DescribeCodeBindingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeCodeBindingOutcome(result.GetResultWithOwnership())
+                            : DescribeCodeBindingOutcome(std::move(result.GetError()));
 }
 
 DescribeDiscovererOutcome SchemasClient::DescribeDiscoverer(const DescribeDiscovererRequest& request) const {
@@ -390,7 +404,9 @@ DescribeDiscovererOutcome SchemasClient::DescribeDiscoverer(const DescribeDiscov
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDiscovererId());
   };
 
-  return DescribeDiscovererOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDiscovererOutcome(result.GetResultWithOwnership())
+                            : DescribeDiscovererOutcome(std::move(result.GetError()));
 }
 
 DescribeRegistryOutcome SchemasClient::DescribeRegistry(const DescribeRegistryRequest& request) const {
@@ -406,7 +422,9 @@ DescribeRegistryOutcome SchemasClient::DescribeRegistry(const DescribeRegistryRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRegistryName());
   };
 
-  return DescribeRegistryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeRegistryOutcome(result.GetResultWithOwnership())
+                            : DescribeRegistryOutcome(std::move(result.GetError()));
 }
 
 DescribeSchemaOutcome SchemasClient::DescribeSchema(const DescribeSchemaRequest& request) const {
@@ -429,7 +447,8 @@ DescribeSchemaOutcome SchemasClient::DescribeSchema(const DescribeSchemaRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSchemaName());
   };
 
-  return DescribeSchemaOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeSchemaOutcome(result.GetResultWithOwnership()) : DescribeSchemaOutcome(std::move(result.GetError()));
 }
 
 ExportSchemaOutcome SchemasClient::ExportSchema(const ExportSchemaRequest& request) const {
@@ -458,7 +477,8 @@ ExportSchemaOutcome SchemasClient::ExportSchema(const ExportSchemaRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/export");
   };
 
-  return ExportSchemaOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ExportSchemaOutcome(result.GetResultWithOwnership()) : ExportSchemaOutcome(std::move(result.GetError()));
 }
 
 GetCodeBindingSourceOutcome SchemasClient::GetCodeBindingSource(const GetCodeBindingSourceRequest& request) const {
@@ -504,8 +524,9 @@ GetCodeBindingSourceOutcome SchemasClient::GetCodeBindingSource(const GetCodeBin
         endpointResolutionOutcome.GetResult().AddPathSegments("/language/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLanguage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/source");
-        return GetCodeBindingSourceOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetCodeBindingSourceOutcome(result.GetResultWithOwnership())
+                                  : GetCodeBindingSourceOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -518,7 +539,9 @@ GetDiscoveredSchemaOutcome SchemasClient::GetDiscoveredSchema(const GetDiscovere
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/discover");
   };
 
-  return GetDiscoveredSchemaOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDiscoveredSchemaOutcome(result.GetResultWithOwnership())
+                            : GetDiscoveredSchemaOutcome(std::move(result.GetError()));
 }
 
 GetResourcePolicyOutcome SchemasClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const {
@@ -527,7 +550,9 @@ GetResourcePolicyOutcome SchemasClient::GetResourcePolicy(const GetResourcePolic
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/policy");
   };
 
-  return GetResourcePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : GetResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 ListDiscoverersOutcome SchemasClient::ListDiscoverers(const ListDiscoverersRequest& request) const {
@@ -536,7 +561,9 @@ ListDiscoverersOutcome SchemasClient::ListDiscoverers(const ListDiscoverersReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/discoverers");
   };
 
-  return ListDiscoverersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDiscoverersOutcome(result.GetResultWithOwnership())
+                            : ListDiscoverersOutcome(std::move(result.GetError()));
 }
 
 ListRegistriesOutcome SchemasClient::ListRegistries(const ListRegistriesRequest& request) const {
@@ -545,7 +572,8 @@ ListRegistriesOutcome SchemasClient::ListRegistries(const ListRegistriesRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/registries");
   };
 
-  return ListRegistriesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRegistriesOutcome(result.GetResultWithOwnership()) : ListRegistriesOutcome(std::move(result.GetError()));
 }
 
 ListSchemaVersionsOutcome SchemasClient::ListSchemaVersions(const ListSchemaVersionsRequest& request) const {
@@ -569,7 +597,9 @@ ListSchemaVersionsOutcome SchemasClient::ListSchemaVersions(const ListSchemaVers
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
   };
 
-  return ListSchemaVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSchemaVersionsOutcome(result.GetResultWithOwnership())
+                            : ListSchemaVersionsOutcome(std::move(result.GetError()));
 }
 
 ListSchemasOutcome SchemasClient::ListSchemas(const ListSchemasRequest& request) const {
@@ -586,7 +616,8 @@ ListSchemasOutcome SchemasClient::ListSchemas(const ListSchemasRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegments("/schemas");
   };
 
-  return ListSchemasOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSchemasOutcome(result.GetResultWithOwnership()) : ListSchemasOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome SchemasClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -602,7 +633,9 @@ ListTagsForResourceOutcome SchemasClient::ListTagsForResource(const ListTagsForR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutCodeBindingOutcome SchemasClient::PutCodeBinding(const PutCodeBindingRequest& request) const {
@@ -632,7 +665,8 @@ PutCodeBindingOutcome SchemasClient::PutCodeBinding(const PutCodeBindingRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLanguage());
   };
 
-  return PutCodeBindingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutCodeBindingOutcome(result.GetResultWithOwnership()) : PutCodeBindingOutcome(std::move(result.GetError()));
 }
 
 PutResourcePolicyOutcome SchemasClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const {
@@ -641,7 +675,9 @@ PutResourcePolicyOutcome SchemasClient::PutResourcePolicy(const PutResourcePolic
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/policy");
   };
 
-  return PutResourcePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : PutResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 SearchSchemasOutcome SchemasClient::SearchSchemas(const SearchSchemasRequest& request) const {
@@ -663,7 +699,8 @@ SearchSchemasOutcome SchemasClient::SearchSchemas(const SearchSchemasRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/schemas/search");
   };
 
-  return SearchSchemasOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? SearchSchemasOutcome(result.GetResultWithOwnership()) : SearchSchemasOutcome(std::move(result.GetError()));
 }
 
 StartDiscovererOutcome SchemasClient::StartDiscoverer(const StartDiscovererRequest& request) const {
@@ -680,7 +717,9 @@ StartDiscovererOutcome SchemasClient::StartDiscoverer(const StartDiscovererReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/start");
   };
 
-  return StartDiscovererOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDiscovererOutcome(result.GetResultWithOwnership())
+                            : StartDiscovererOutcome(std::move(result.GetError()));
 }
 
 StopDiscovererOutcome SchemasClient::StopDiscoverer(const StopDiscovererRequest& request) const {
@@ -697,7 +736,8 @@ StopDiscovererOutcome SchemasClient::StopDiscoverer(const StopDiscovererRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/stop");
   };
 
-  return StopDiscovererOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopDiscovererOutcome(result.GetResultWithOwnership()) : StopDiscovererOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome SchemasClient::TagResource(const TagResourceRequest& request) const {
@@ -713,7 +753,8 @@ TagResourceOutcome SchemasClient::TagResource(const TagResourceRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome SchemasClient::UntagResource(const UntagResourceRequest& request) const {
@@ -734,7 +775,8 @@ UntagResourceOutcome SchemasClient::UntagResource(const UntagResourceRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateDiscovererOutcome SchemasClient::UpdateDiscoverer(const UpdateDiscovererRequest& request) const {
@@ -750,7 +792,9 @@ UpdateDiscovererOutcome SchemasClient::UpdateDiscoverer(const UpdateDiscovererRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDiscovererId());
   };
 
-  return UpdateDiscovererOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateDiscovererOutcome(result.GetResultWithOwnership())
+                            : UpdateDiscovererOutcome(std::move(result.GetError()));
 }
 
 UpdateRegistryOutcome SchemasClient::UpdateRegistry(const UpdateRegistryRequest& request) const {
@@ -766,7 +810,8 @@ UpdateRegistryOutcome SchemasClient::UpdateRegistry(const UpdateRegistryRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRegistryName());
   };
 
-  return UpdateRegistryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateRegistryOutcome(result.GetResultWithOwnership()) : UpdateRegistryOutcome(std::move(result.GetError()));
 }
 
 UpdateSchemaOutcome SchemasClient::UpdateSchema(const UpdateSchemaRequest& request) const {
@@ -789,5 +834,6 @@ UpdateSchemaOutcome SchemasClient::UpdateSchema(const UpdateSchemaRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSchemaName());
   };
 
-  return UpdateSchemaOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateSchemaOutcome(result.GetResultWithOwnership()) : UpdateSchemaOutcome(std::move(result.GetError()));
 }

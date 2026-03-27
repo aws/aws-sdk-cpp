@@ -208,145 +208,204 @@ Route53DomainsClient::InvokeOperationOutcome Route53DomainsClient::InvokeService
 
 AcceptDomainTransferFromAnotherAwsAccountOutcome Route53DomainsClient::AcceptDomainTransferFromAnotherAwsAccount(
     const AcceptDomainTransferFromAnotherAwsAccountRequest& request) const {
-  return AcceptDomainTransferFromAnotherAwsAccountOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptDomainTransferFromAnotherAwsAccountOutcome(result.GetResultWithOwnership())
+                            : AcceptDomainTransferFromAnotherAwsAccountOutcome(std::move(result.GetError()));
 }
 
 AssociateDelegationSignerToDomainOutcome Route53DomainsClient::AssociateDelegationSignerToDomain(
     const AssociateDelegationSignerToDomainRequest& request) const {
-  return AssociateDelegationSignerToDomainOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateDelegationSignerToDomainOutcome(result.GetResultWithOwnership())
+                            : AssociateDelegationSignerToDomainOutcome(std::move(result.GetError()));
 }
 
 CancelDomainTransferToAnotherAwsAccountOutcome Route53DomainsClient::CancelDomainTransferToAnotherAwsAccount(
     const CancelDomainTransferToAnotherAwsAccountRequest& request) const {
-  return CancelDomainTransferToAnotherAwsAccountOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelDomainTransferToAnotherAwsAccountOutcome(result.GetResultWithOwnership())
+                            : CancelDomainTransferToAnotherAwsAccountOutcome(std::move(result.GetError()));
 }
 
 CheckDomainAvailabilityOutcome Route53DomainsClient::CheckDomainAvailability(const CheckDomainAvailabilityRequest& request) const {
-  return CheckDomainAvailabilityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CheckDomainAvailabilityOutcome(result.GetResultWithOwnership())
+                            : CheckDomainAvailabilityOutcome(std::move(result.GetError()));
 }
 
 CheckDomainTransferabilityOutcome Route53DomainsClient::CheckDomainTransferability(const CheckDomainTransferabilityRequest& request) const {
-  return CheckDomainTransferabilityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CheckDomainTransferabilityOutcome(result.GetResultWithOwnership())
+                            : CheckDomainTransferabilityOutcome(std::move(result.GetError()));
 }
 
 DeleteDomainOutcome Route53DomainsClient::DeleteDomain(const DeleteDomainRequest& request) const {
-  return DeleteDomainOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDomainOutcome(result.GetResultWithOwnership()) : DeleteDomainOutcome(std::move(result.GetError()));
 }
 
 DeleteTagsForDomainOutcome Route53DomainsClient::DeleteTagsForDomain(const DeleteTagsForDomainRequest& request) const {
-  return DeleteTagsForDomainOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTagsForDomainOutcome(result.GetResultWithOwnership())
+                            : DeleteTagsForDomainOutcome(std::move(result.GetError()));
 }
 
 DisableDomainAutoRenewOutcome Route53DomainsClient::DisableDomainAutoRenew(const DisableDomainAutoRenewRequest& request) const {
-  return DisableDomainAutoRenewOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableDomainAutoRenewOutcome(result.GetResultWithOwnership())
+                            : DisableDomainAutoRenewOutcome(std::move(result.GetError()));
 }
 
 DisableDomainTransferLockOutcome Route53DomainsClient::DisableDomainTransferLock(const DisableDomainTransferLockRequest& request) const {
-  return DisableDomainTransferLockOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableDomainTransferLockOutcome(result.GetResultWithOwnership())
+                            : DisableDomainTransferLockOutcome(std::move(result.GetError()));
 }
 
 DisassociateDelegationSignerFromDomainOutcome Route53DomainsClient::DisassociateDelegationSignerFromDomain(
     const DisassociateDelegationSignerFromDomainRequest& request) const {
-  return DisassociateDelegationSignerFromDomainOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateDelegationSignerFromDomainOutcome(result.GetResultWithOwnership())
+                            : DisassociateDelegationSignerFromDomainOutcome(std::move(result.GetError()));
 }
 
 EnableDomainAutoRenewOutcome Route53DomainsClient::EnableDomainAutoRenew(const EnableDomainAutoRenewRequest& request) const {
-  return EnableDomainAutoRenewOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableDomainAutoRenewOutcome(result.GetResultWithOwnership())
+                            : EnableDomainAutoRenewOutcome(std::move(result.GetError()));
 }
 
 EnableDomainTransferLockOutcome Route53DomainsClient::EnableDomainTransferLock(const EnableDomainTransferLockRequest& request) const {
-  return EnableDomainTransferLockOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableDomainTransferLockOutcome(result.GetResultWithOwnership())
+                            : EnableDomainTransferLockOutcome(std::move(result.GetError()));
 }
 
 GetContactReachabilityStatusOutcome Route53DomainsClient::GetContactReachabilityStatus(
     const GetContactReachabilityStatusRequest& request) const {
-  return GetContactReachabilityStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetContactReachabilityStatusOutcome(result.GetResultWithOwnership())
+                            : GetContactReachabilityStatusOutcome(std::move(result.GetError()));
 }
 
 GetDomainDetailOutcome Route53DomainsClient::GetDomainDetail(const GetDomainDetailRequest& request) const {
-  return GetDomainDetailOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDomainDetailOutcome(result.GetResultWithOwnership())
+                            : GetDomainDetailOutcome(std::move(result.GetError()));
 }
 
 GetDomainSuggestionsOutcome Route53DomainsClient::GetDomainSuggestions(const GetDomainSuggestionsRequest& request) const {
-  return GetDomainSuggestionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDomainSuggestionsOutcome(result.GetResultWithOwnership())
+                            : GetDomainSuggestionsOutcome(std::move(result.GetError()));
 }
 
 GetOperationDetailOutcome Route53DomainsClient::GetOperationDetail(const GetOperationDetailRequest& request) const {
-  return GetOperationDetailOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetOperationDetailOutcome(result.GetResultWithOwnership())
+                            : GetOperationDetailOutcome(std::move(result.GetError()));
 }
 
 ListDomainsOutcome Route53DomainsClient::ListDomains(const ListDomainsRequest& request) const {
-  return ListDomainsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDomainsOutcome(result.GetResultWithOwnership()) : ListDomainsOutcome(std::move(result.GetError()));
 }
 
 ListOperationsOutcome Route53DomainsClient::ListOperations(const ListOperationsRequest& request) const {
-  return ListOperationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListOperationsOutcome(result.GetResultWithOwnership()) : ListOperationsOutcome(std::move(result.GetError()));
 }
 
 ListPricesOutcome Route53DomainsClient::ListPrices(const ListPricesRequest& request) const {
-  return ListPricesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPricesOutcome(result.GetResultWithOwnership()) : ListPricesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForDomainOutcome Route53DomainsClient::ListTagsForDomain(const ListTagsForDomainRequest& request) const {
-  return ListTagsForDomainOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForDomainOutcome(result.GetResultWithOwnership())
+                            : ListTagsForDomainOutcome(std::move(result.GetError()));
 }
 
 PushDomainOutcome Route53DomainsClient::PushDomain(const PushDomainRequest& request) const {
-  return PushDomainOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PushDomainOutcome(result.GetResultWithOwnership()) : PushDomainOutcome(std::move(result.GetError()));
 }
 
 RegisterDomainOutcome Route53DomainsClient::RegisterDomain(const RegisterDomainRequest& request) const {
-  return RegisterDomainOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterDomainOutcome(result.GetResultWithOwnership()) : RegisterDomainOutcome(std::move(result.GetError()));
 }
 
 RejectDomainTransferFromAnotherAwsAccountOutcome Route53DomainsClient::RejectDomainTransferFromAnotherAwsAccount(
     const RejectDomainTransferFromAnotherAwsAccountRequest& request) const {
-  return RejectDomainTransferFromAnotherAwsAccountOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RejectDomainTransferFromAnotherAwsAccountOutcome(result.GetResultWithOwnership())
+                            : RejectDomainTransferFromAnotherAwsAccountOutcome(std::move(result.GetError()));
 }
 
 RenewDomainOutcome Route53DomainsClient::RenewDomain(const RenewDomainRequest& request) const {
-  return RenewDomainOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RenewDomainOutcome(result.GetResultWithOwnership()) : RenewDomainOutcome(std::move(result.GetError()));
 }
 
 ResendContactReachabilityEmailOutcome Route53DomainsClient::ResendContactReachabilityEmail(
     const ResendContactReachabilityEmailRequest& request) const {
-  return ResendContactReachabilityEmailOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResendContactReachabilityEmailOutcome(result.GetResultWithOwnership())
+                            : ResendContactReachabilityEmailOutcome(std::move(result.GetError()));
 }
 
 ResendOperationAuthorizationOutcome Route53DomainsClient::ResendOperationAuthorization(
     const ResendOperationAuthorizationRequest& request) const {
-  return ResendOperationAuthorizationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResendOperationAuthorizationOutcome(result.GetResultWithOwnership())
+                            : ResendOperationAuthorizationOutcome(std::move(result.GetError()));
 }
 
 RetrieveDomainAuthCodeOutcome Route53DomainsClient::RetrieveDomainAuthCode(const RetrieveDomainAuthCodeRequest& request) const {
-  return RetrieveDomainAuthCodeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RetrieveDomainAuthCodeOutcome(result.GetResultWithOwnership())
+                            : RetrieveDomainAuthCodeOutcome(std::move(result.GetError()));
 }
 
 TransferDomainOutcome Route53DomainsClient::TransferDomain(const TransferDomainRequest& request) const {
-  return TransferDomainOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TransferDomainOutcome(result.GetResultWithOwnership()) : TransferDomainOutcome(std::move(result.GetError()));
 }
 
 TransferDomainToAnotherAwsAccountOutcome Route53DomainsClient::TransferDomainToAnotherAwsAccount(
     const TransferDomainToAnotherAwsAccountRequest& request) const {
-  return TransferDomainToAnotherAwsAccountOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TransferDomainToAnotherAwsAccountOutcome(result.GetResultWithOwnership())
+                            : TransferDomainToAnotherAwsAccountOutcome(std::move(result.GetError()));
 }
 
 UpdateDomainContactOutcome Route53DomainsClient::UpdateDomainContact(const UpdateDomainContactRequest& request) const {
-  return UpdateDomainContactOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDomainContactOutcome(result.GetResultWithOwnership())
+                            : UpdateDomainContactOutcome(std::move(result.GetError()));
 }
 
 UpdateDomainContactPrivacyOutcome Route53DomainsClient::UpdateDomainContactPrivacy(const UpdateDomainContactPrivacyRequest& request) const {
-  return UpdateDomainContactPrivacyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDomainContactPrivacyOutcome(result.GetResultWithOwnership())
+                            : UpdateDomainContactPrivacyOutcome(std::move(result.GetError()));
 }
 
 UpdateDomainNameserversOutcome Route53DomainsClient::UpdateDomainNameservers(const UpdateDomainNameserversRequest& request) const {
-  return UpdateDomainNameserversOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDomainNameserversOutcome(result.GetResultWithOwnership())
+                            : UpdateDomainNameserversOutcome(std::move(result.GetError()));
 }
 
 UpdateTagsForDomainOutcome Route53DomainsClient::UpdateTagsForDomain(const UpdateTagsForDomainRequest& request) const {
-  return UpdateTagsForDomainOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTagsForDomainOutcome(result.GetResultWithOwnership())
+                            : UpdateTagsForDomainOutcome(std::move(result.GetError()));
 }
 
 ViewBillingOutcome Route53DomainsClient::ViewBilling(const ViewBillingRequest& request) const {
-  return ViewBillingOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ViewBillingOutcome(result.GetResultWithOwnership()) : ViewBillingOutcome(std::move(result.GetError()));
 }

@@ -193,7 +193,8 @@ CreateLinkOutcome OAMClient::CreateLink(const CreateLinkRequest& request) const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateLink");
   };
 
-  return CreateLinkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLinkOutcome(result.GetResultWithOwnership()) : CreateLinkOutcome(std::move(result.GetError()));
 }
 
 CreateSinkOutcome OAMClient::CreateSink(const CreateSinkRequest& request) const {
@@ -202,7 +203,8 @@ CreateSinkOutcome OAMClient::CreateSink(const CreateSinkRequest& request) const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateSink");
   };
 
-  return CreateSinkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSinkOutcome(result.GetResultWithOwnership()) : CreateSinkOutcome(std::move(result.GetError()));
 }
 
 DeleteLinkOutcome OAMClient::DeleteLink(const DeleteLinkRequest& request) const {
@@ -211,7 +213,8 @@ DeleteLinkOutcome OAMClient::DeleteLink(const DeleteLinkRequest& request) const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteLink");
   };
 
-  return DeleteLinkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLinkOutcome(result.GetResultWithOwnership()) : DeleteLinkOutcome(std::move(result.GetError()));
 }
 
 DeleteSinkOutcome OAMClient::DeleteSink(const DeleteSinkRequest& request) const {
@@ -220,7 +223,8 @@ DeleteSinkOutcome OAMClient::DeleteSink(const DeleteSinkRequest& request) const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteSink");
   };
 
-  return DeleteSinkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSinkOutcome(result.GetResultWithOwnership()) : DeleteSinkOutcome(std::move(result.GetError()));
 }
 
 GetLinkOutcome OAMClient::GetLink(const GetLinkRequest& request) const {
@@ -229,7 +233,8 @@ GetLinkOutcome OAMClient::GetLink(const GetLinkRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetLink");
   };
 
-  return GetLinkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLinkOutcome(result.GetResultWithOwnership()) : GetLinkOutcome(std::move(result.GetError()));
 }
 
 GetSinkOutcome OAMClient::GetSink(const GetSinkRequest& request) const {
@@ -238,7 +243,8 @@ GetSinkOutcome OAMClient::GetSink(const GetSinkRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetSink");
   };
 
-  return GetSinkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSinkOutcome(result.GetResultWithOwnership()) : GetSinkOutcome(std::move(result.GetError()));
 }
 
 GetSinkPolicyOutcome OAMClient::GetSinkPolicy(const GetSinkPolicyRequest& request) const {
@@ -247,7 +253,8 @@ GetSinkPolicyOutcome OAMClient::GetSinkPolicy(const GetSinkPolicyRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetSinkPolicy");
   };
 
-  return GetSinkPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSinkPolicyOutcome(result.GetResultWithOwnership()) : GetSinkPolicyOutcome(std::move(result.GetError()));
 }
 
 ListAttachedLinksOutcome OAMClient::ListAttachedLinks(const ListAttachedLinksRequest& request) const {
@@ -256,7 +263,9 @@ ListAttachedLinksOutcome OAMClient::ListAttachedLinks(const ListAttachedLinksReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListAttachedLinks");
   };
 
-  return ListAttachedLinksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAttachedLinksOutcome(result.GetResultWithOwnership())
+                            : ListAttachedLinksOutcome(std::move(result.GetError()));
 }
 
 ListLinksOutcome OAMClient::ListLinks(const ListLinksRequest& request) const {
@@ -265,7 +274,8 @@ ListLinksOutcome OAMClient::ListLinks(const ListLinksRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListLinks");
   };
 
-  return ListLinksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLinksOutcome(result.GetResultWithOwnership()) : ListLinksOutcome(std::move(result.GetError()));
 }
 
 ListSinksOutcome OAMClient::ListSinks(const ListSinksRequest& request) const {
@@ -274,7 +284,8 @@ ListSinksOutcome OAMClient::ListSinks(const ListSinksRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListSinks");
   };
 
-  return ListSinksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSinksOutcome(result.GetResultWithOwnership()) : ListSinksOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome OAMClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -290,7 +301,9 @@ ListTagsForResourceOutcome OAMClient::ListTagsForResource(const ListTagsForResou
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutSinkPolicyOutcome OAMClient::PutSinkPolicy(const PutSinkPolicyRequest& request) const {
@@ -299,7 +312,8 @@ PutSinkPolicyOutcome OAMClient::PutSinkPolicy(const PutSinkPolicyRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/PutSinkPolicy");
   };
 
-  return PutSinkPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutSinkPolicyOutcome(result.GetResultWithOwnership()) : PutSinkPolicyOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome OAMClient::TagResource(const TagResourceRequest& request) const {
@@ -315,7 +329,8 @@ TagResourceOutcome OAMClient::TagResource(const TagResourceRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome OAMClient::UntagResource(const UntagResourceRequest& request) const {
@@ -336,7 +351,8 @@ UntagResourceOutcome OAMClient::UntagResource(const UntagResourceRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateLinkOutcome OAMClient::UpdateLink(const UpdateLinkRequest& request) const {
@@ -345,5 +361,6 @@ UpdateLinkOutcome OAMClient::UpdateLink(const UpdateLinkRequest& request) const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateLink");
   };
 
-  return UpdateLinkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLinkOutcome(result.GetResultWithOwnership()) : UpdateLinkOutcome(std::move(result.GetError()));
 }

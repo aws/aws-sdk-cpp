@@ -222,7 +222,9 @@ CancelExportTaskOutcome NeptuneGraphClient::CancelExportTask(const CancelExportT
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTaskIdentifier());
   };
 
-  return CancelExportTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? CancelExportTaskOutcome(result.GetResultWithOwnership())
+                            : CancelExportTaskOutcome(std::move(result.GetError()));
 }
 
 CancelImportTaskOutcome NeptuneGraphClient::CancelImportTask(const CancelImportTaskRequest& request) const {
@@ -238,7 +240,9 @@ CancelImportTaskOutcome NeptuneGraphClient::CancelImportTask(const CancelImportT
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTaskIdentifier());
   };
 
-  return CancelImportTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? CancelImportTaskOutcome(result.GetResultWithOwnership())
+                            : CancelImportTaskOutcome(std::move(result.GetError()));
 }
 
 CancelQueryOutcome NeptuneGraphClient::CancelQuery(const CancelQueryRequest& request) const {
@@ -259,7 +263,8 @@ CancelQueryOutcome NeptuneGraphClient::CancelQuery(const CancelQueryRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueryId());
   };
 
-  return CancelQueryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? CancelQueryOutcome(result.GetResultWithOwnership()) : CancelQueryOutcome(std::move(result.GetError()));
 }
 
 CreateGraphOutcome NeptuneGraphClient::CreateGraph(const CreateGraphRequest& request) const {
@@ -268,7 +273,8 @@ CreateGraphOutcome NeptuneGraphClient::CreateGraph(const CreateGraphRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/graphs");
   };
 
-  return CreateGraphOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGraphOutcome(result.GetResultWithOwnership()) : CreateGraphOutcome(std::move(result.GetError()));
 }
 
 CreateGraphSnapshotOutcome NeptuneGraphClient::CreateGraphSnapshot(const CreateGraphSnapshotRequest& request) const {
@@ -277,7 +283,9 @@ CreateGraphSnapshotOutcome NeptuneGraphClient::CreateGraphSnapshot(const CreateG
     endpointResolutionOutcome.GetResult().AddPathSegments("/snapshots");
   };
 
-  return CreateGraphSnapshotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGraphSnapshotOutcome(result.GetResultWithOwnership())
+                            : CreateGraphSnapshotOutcome(std::move(result.GetError()));
 }
 
 CreateGraphUsingImportTaskOutcome NeptuneGraphClient::CreateGraphUsingImportTask(const CreateGraphUsingImportTaskRequest& request) const {
@@ -286,7 +294,9 @@ CreateGraphUsingImportTaskOutcome NeptuneGraphClient::CreateGraphUsingImportTask
     endpointResolutionOutcome.GetResult().AddPathSegments("/importtasks");
   };
 
-  return CreateGraphUsingImportTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGraphUsingImportTaskOutcome(result.GetResultWithOwnership())
+                            : CreateGraphUsingImportTaskOutcome(std::move(result.GetError()));
 }
 
 CreatePrivateGraphEndpointOutcome NeptuneGraphClient::CreatePrivateGraphEndpoint(const CreatePrivateGraphEndpointRequest& request) const {
@@ -303,7 +313,9 @@ CreatePrivateGraphEndpointOutcome NeptuneGraphClient::CreatePrivateGraphEndpoint
     endpointResolutionOutcome.GetResult().AddPathSegments("/endpoints/");
   };
 
-  return CreatePrivateGraphEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePrivateGraphEndpointOutcome(result.GetResultWithOwnership())
+                            : CreatePrivateGraphEndpointOutcome(std::move(result.GetError()));
 }
 
 DeleteGraphOutcome NeptuneGraphClient::DeleteGraph(const DeleteGraphRequest& request) const {
@@ -324,7 +336,8 @@ DeleteGraphOutcome NeptuneGraphClient::DeleteGraph(const DeleteGraphRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGraphIdentifier());
   };
 
-  return DeleteGraphOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteGraphOutcome(result.GetResultWithOwnership()) : DeleteGraphOutcome(std::move(result.GetError()));
 }
 
 DeleteGraphSnapshotOutcome NeptuneGraphClient::DeleteGraphSnapshot(const DeleteGraphSnapshotRequest& request) const {
@@ -340,7 +353,9 @@ DeleteGraphSnapshotOutcome NeptuneGraphClient::DeleteGraphSnapshot(const DeleteG
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSnapshotIdentifier());
   };
 
-  return DeleteGraphSnapshotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteGraphSnapshotOutcome(result.GetResultWithOwnership())
+                            : DeleteGraphSnapshotOutcome(std::move(result.GetError()));
 }
 
 DeletePrivateGraphEndpointOutcome NeptuneGraphClient::DeletePrivateGraphEndpoint(const DeletePrivateGraphEndpointRequest& request) const {
@@ -363,7 +378,9 @@ DeletePrivateGraphEndpointOutcome NeptuneGraphClient::DeletePrivateGraphEndpoint
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVpcId());
   };
 
-  return DeletePrivateGraphEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePrivateGraphEndpointOutcome(result.GetResultWithOwnership())
+                            : DeletePrivateGraphEndpointOutcome(std::move(result.GetError()));
 }
 
 ExecuteQueryOutcome NeptuneGraphClient::ExecuteQuery(const ExecuteQueryRequest& request) const {
@@ -395,8 +412,9 @@ ExecuteQueryOutcome NeptuneGraphClient::ExecuteQuery(const ExecuteQueryRequest& 
         auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("" + request.GetGraphIdentifier() + ".");
         AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ExecuteQueryOutcome(addPrefixErr.value()));
         endpointResolutionOutcome.GetResult().AddPathSegments("/queries");
-        return ExecuteQueryOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? ExecuteQueryOutcome(result.GetResultWithOwnership())
+                                  : ExecuteQueryOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -416,7 +434,8 @@ GetExportTaskOutcome NeptuneGraphClient::GetExportTask(const GetExportTaskReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTaskIdentifier());
   };
 
-  return GetExportTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetExportTaskOutcome(result.GetResultWithOwnership()) : GetExportTaskOutcome(std::move(result.GetError()));
 }
 
 GetGraphOutcome NeptuneGraphClient::GetGraph(const GetGraphRequest& request) const {
@@ -432,7 +451,8 @@ GetGraphOutcome NeptuneGraphClient::GetGraph(const GetGraphRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGraphIdentifier());
   };
 
-  return GetGraphOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetGraphOutcome(result.GetResultWithOwnership()) : GetGraphOutcome(std::move(result.GetError()));
 }
 
 GetGraphSnapshotOutcome NeptuneGraphClient::GetGraphSnapshot(const GetGraphSnapshotRequest& request) const {
@@ -448,7 +468,9 @@ GetGraphSnapshotOutcome NeptuneGraphClient::GetGraphSnapshot(const GetGraphSnaps
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSnapshotIdentifier());
   };
 
-  return GetGraphSnapshotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetGraphSnapshotOutcome(result.GetResultWithOwnership())
+                            : GetGraphSnapshotOutcome(std::move(result.GetError()));
 }
 
 GetGraphSummaryOutcome NeptuneGraphClient::GetGraphSummary(const GetGraphSummaryRequest& request) const {
@@ -463,7 +485,9 @@ GetGraphSummaryOutcome NeptuneGraphClient::GetGraphSummary(const GetGraphSummary
     endpointResolutionOutcome.GetResult().AddPathSegments("/summary");
   };
 
-  return GetGraphSummaryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetGraphSummaryOutcome(result.GetResultWithOwnership())
+                            : GetGraphSummaryOutcome(std::move(result.GetError()));
 }
 
 GetImportTaskOutcome NeptuneGraphClient::GetImportTask(const GetImportTaskRequest& request) const {
@@ -479,7 +503,8 @@ GetImportTaskOutcome NeptuneGraphClient::GetImportTask(const GetImportTaskReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTaskIdentifier());
   };
 
-  return GetImportTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetImportTaskOutcome(result.GetResultWithOwnership()) : GetImportTaskOutcome(std::move(result.GetError()));
 }
 
 GetPrivateGraphEndpointOutcome NeptuneGraphClient::GetPrivateGraphEndpoint(const GetPrivateGraphEndpointRequest& request) const {
@@ -502,7 +527,9 @@ GetPrivateGraphEndpointOutcome NeptuneGraphClient::GetPrivateGraphEndpoint(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVpcId());
   };
 
-  return GetPrivateGraphEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPrivateGraphEndpointOutcome(result.GetResultWithOwnership())
+                            : GetPrivateGraphEndpointOutcome(std::move(result.GetError()));
 }
 
 GetQueryOutcome NeptuneGraphClient::GetQuery(const GetQueryRequest& request) const {
@@ -523,7 +550,8 @@ GetQueryOutcome NeptuneGraphClient::GetQuery(const GetQueryRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueryId());
   };
 
-  return GetQueryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetQueryOutcome(result.GetResultWithOwnership()) : GetQueryOutcome(std::move(result.GetError()));
 }
 
 ListExportTasksOutcome NeptuneGraphClient::ListExportTasks(const ListExportTasksRequest& request) const {
@@ -532,7 +560,9 @@ ListExportTasksOutcome NeptuneGraphClient::ListExportTasks(const ListExportTasks
     endpointResolutionOutcome.GetResult().AddPathSegments("/exporttasks");
   };
 
-  return ListExportTasksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListExportTasksOutcome(result.GetResultWithOwnership())
+                            : ListExportTasksOutcome(std::move(result.GetError()));
 }
 
 ListGraphSnapshotsOutcome NeptuneGraphClient::ListGraphSnapshots(const ListGraphSnapshotsRequest& request) const {
@@ -541,7 +571,9 @@ ListGraphSnapshotsOutcome NeptuneGraphClient::ListGraphSnapshots(const ListGraph
     endpointResolutionOutcome.GetResult().AddPathSegments("/snapshots");
   };
 
-  return ListGraphSnapshotsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListGraphSnapshotsOutcome(result.GetResultWithOwnership())
+                            : ListGraphSnapshotsOutcome(std::move(result.GetError()));
 }
 
 ListGraphsOutcome NeptuneGraphClient::ListGraphs(const ListGraphsRequest& request) const {
@@ -550,7 +582,8 @@ ListGraphsOutcome NeptuneGraphClient::ListGraphs(const ListGraphsRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/graphs");
   };
 
-  return ListGraphsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListGraphsOutcome(result.GetResultWithOwnership()) : ListGraphsOutcome(std::move(result.GetError()));
 }
 
 ListImportTasksOutcome NeptuneGraphClient::ListImportTasks(const ListImportTasksRequest& request) const {
@@ -559,7 +592,9 @@ ListImportTasksOutcome NeptuneGraphClient::ListImportTasks(const ListImportTasks
     endpointResolutionOutcome.GetResult().AddPathSegments("/importtasks");
   };
 
-  return ListImportTasksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListImportTasksOutcome(result.GetResultWithOwnership())
+                            : ListImportTasksOutcome(std::move(result.GetError()));
 }
 
 ListPrivateGraphEndpointsOutcome NeptuneGraphClient::ListPrivateGraphEndpoints(const ListPrivateGraphEndpointsRequest& request) const {
@@ -576,7 +611,9 @@ ListPrivateGraphEndpointsOutcome NeptuneGraphClient::ListPrivateGraphEndpoints(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/endpoints/");
   };
 
-  return ListPrivateGraphEndpointsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPrivateGraphEndpointsOutcome(result.GetResultWithOwnership())
+                            : ListPrivateGraphEndpointsOutcome(std::move(result.GetError()));
 }
 
 ListQueriesOutcome NeptuneGraphClient::ListQueries(const ListQueriesRequest& request) const {
@@ -596,7 +633,8 @@ ListQueriesOutcome NeptuneGraphClient::ListQueries(const ListQueriesRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/queries");
   };
 
-  return ListQueriesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListQueriesOutcome(result.GetResultWithOwnership()) : ListQueriesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome NeptuneGraphClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -612,7 +650,9 @@ ListTagsForResourceOutcome NeptuneGraphClient::ListTagsForResource(const ListTag
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ResetGraphOutcome NeptuneGraphClient::ResetGraph(const ResetGraphRequest& request) const {
@@ -628,7 +668,8 @@ ResetGraphOutcome NeptuneGraphClient::ResetGraph(const ResetGraphRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGraphIdentifier());
   };
 
-  return ResetGraphOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? ResetGraphOutcome(result.GetResultWithOwnership()) : ResetGraphOutcome(std::move(result.GetError()));
 }
 
 RestoreGraphFromSnapshotOutcome NeptuneGraphClient::RestoreGraphFromSnapshot(const RestoreGraphFromSnapshotRequest& request) const {
@@ -645,7 +686,9 @@ RestoreGraphFromSnapshotOutcome NeptuneGraphClient::RestoreGraphFromSnapshot(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/restore");
   };
 
-  return RestoreGraphFromSnapshotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RestoreGraphFromSnapshotOutcome(result.GetResultWithOwnership())
+                            : RestoreGraphFromSnapshotOutcome(std::move(result.GetError()));
 }
 
 StartExportTaskOutcome NeptuneGraphClient::StartExportTask(const StartExportTaskRequest& request) const {
@@ -654,7 +697,9 @@ StartExportTaskOutcome NeptuneGraphClient::StartExportTask(const StartExportTask
     endpointResolutionOutcome.GetResult().AddPathSegments("/exporttasks");
   };
 
-  return StartExportTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartExportTaskOutcome(result.GetResultWithOwnership())
+                            : StartExportTaskOutcome(std::move(result.GetError()));
 }
 
 StartGraphOutcome NeptuneGraphClient::StartGraph(const StartGraphRequest& request) const {
@@ -671,7 +716,8 @@ StartGraphOutcome NeptuneGraphClient::StartGraph(const StartGraphRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/start");
   };
 
-  return StartGraphOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartGraphOutcome(result.GetResultWithOwnership()) : StartGraphOutcome(std::move(result.GetError()));
 }
 
 StartImportTaskOutcome NeptuneGraphClient::StartImportTask(const StartImportTaskRequest& request) const {
@@ -688,7 +734,9 @@ StartImportTaskOutcome NeptuneGraphClient::StartImportTask(const StartImportTask
     endpointResolutionOutcome.GetResult().AddPathSegments("/importtasks");
   };
 
-  return StartImportTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartImportTaskOutcome(result.GetResultWithOwnership())
+                            : StartImportTaskOutcome(std::move(result.GetError()));
 }
 
 StopGraphOutcome NeptuneGraphClient::StopGraph(const StopGraphRequest& request) const {
@@ -705,7 +753,8 @@ StopGraphOutcome NeptuneGraphClient::StopGraph(const StopGraphRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/stop");
   };
 
-  return StopGraphOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopGraphOutcome(result.GetResultWithOwnership()) : StopGraphOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome NeptuneGraphClient::TagResource(const TagResourceRequest& request) const {
@@ -721,7 +770,8 @@ TagResourceOutcome NeptuneGraphClient::TagResource(const TagResourceRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome NeptuneGraphClient::UntagResource(const UntagResourceRequest& request) const {
@@ -742,7 +792,8 @@ UntagResourceOutcome NeptuneGraphClient::UntagResource(const UntagResourceReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateGraphOutcome NeptuneGraphClient::UpdateGraph(const UpdateGraphRequest& request) const {
@@ -758,5 +809,6 @@ UpdateGraphOutcome NeptuneGraphClient::UpdateGraph(const UpdateGraphRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGraphIdentifier());
   };
 
-  return UpdateGraphOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateGraphOutcome(result.GetResultWithOwnership()) : UpdateGraphOutcome(std::move(result.GetError()));
 }

@@ -284,371 +284,524 @@ CloudFormationClient::InvokeOperationOutcome CloudFormationClient::InvokeService
 }
 ActivateOrganizationsAccessOutcome CloudFormationClient::ActivateOrganizationsAccess(
     const ActivateOrganizationsAccessRequest& request) const {
-  return ActivateOrganizationsAccessOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ActivateOrganizationsAccessOutcome(result.GetResultWithOwnership())
+                            : ActivateOrganizationsAccessOutcome(std::move(result.GetError()));
 }
 
 ActivateTypeOutcome CloudFormationClient::ActivateType(const ActivateTypeRequest& request) const {
-  return ActivateTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ActivateTypeOutcome(result.GetResultWithOwnership()) : ActivateTypeOutcome(std::move(result.GetError()));
 }
 
 BatchDescribeTypeConfigurationsOutcome CloudFormationClient::BatchDescribeTypeConfigurations(
     const BatchDescribeTypeConfigurationsRequest& request) const {
-  return BatchDescribeTypeConfigurationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDescribeTypeConfigurationsOutcome(result.GetResultWithOwnership())
+                            : BatchDescribeTypeConfigurationsOutcome(std::move(result.GetError()));
 }
 
 CancelUpdateStackOutcome CloudFormationClient::CancelUpdateStack(const CancelUpdateStackRequest& request) const {
-  return CancelUpdateStackOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelUpdateStackOutcome(result.GetResultWithOwnership())
+                            : CancelUpdateStackOutcome(std::move(result.GetError()));
 }
 
 ContinueUpdateRollbackOutcome CloudFormationClient::ContinueUpdateRollback(const ContinueUpdateRollbackRequest& request) const {
-  return ContinueUpdateRollbackOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ContinueUpdateRollbackOutcome(result.GetResultWithOwnership())
+                            : ContinueUpdateRollbackOutcome(std::move(result.GetError()));
 }
 
 CreateChangeSetOutcome CloudFormationClient::CreateChangeSet(const CreateChangeSetRequest& request) const {
-  return CreateChangeSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateChangeSetOutcome(result.GetResultWithOwnership())
+                            : CreateChangeSetOutcome(std::move(result.GetError()));
 }
 
 CreateGeneratedTemplateOutcome CloudFormationClient::CreateGeneratedTemplate(const CreateGeneratedTemplateRequest& request) const {
-  return CreateGeneratedTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGeneratedTemplateOutcome(result.GetResultWithOwnership())
+                            : CreateGeneratedTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateStackOutcome CloudFormationClient::CreateStack(const CreateStackRequest& request) const {
-  return CreateStackOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateStackOutcome(result.GetResultWithOwnership()) : CreateStackOutcome(std::move(result.GetError()));
 }
 
 CreateStackInstancesOutcome CloudFormationClient::CreateStackInstances(const CreateStackInstancesRequest& request) const {
-  return CreateStackInstancesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateStackInstancesOutcome(result.GetResultWithOwnership())
+                            : CreateStackInstancesOutcome(std::move(result.GetError()));
 }
 
 CreateStackRefactorOutcome CloudFormationClient::CreateStackRefactor(const CreateStackRefactorRequest& request) const {
-  return CreateStackRefactorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateStackRefactorOutcome(result.GetResultWithOwnership())
+                            : CreateStackRefactorOutcome(std::move(result.GetError()));
 }
 
 CreateStackSetOutcome CloudFormationClient::CreateStackSet(const CreateStackSetRequest& request) const {
-  return CreateStackSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateStackSetOutcome(result.GetResultWithOwnership()) : CreateStackSetOutcome(std::move(result.GetError()));
 }
 
 DeactivateOrganizationsAccessOutcome CloudFormationClient::DeactivateOrganizationsAccess(
     const DeactivateOrganizationsAccessRequest& request) const {
-  return DeactivateOrganizationsAccessOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeactivateOrganizationsAccessOutcome(result.GetResultWithOwnership())
+                            : DeactivateOrganizationsAccessOutcome(std::move(result.GetError()));
 }
 
 DeactivateTypeOutcome CloudFormationClient::DeactivateType(const DeactivateTypeRequest& request) const {
-  return DeactivateTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeactivateTypeOutcome(result.GetResultWithOwnership()) : DeactivateTypeOutcome(std::move(result.GetError()));
 }
 
 DeleteChangeSetOutcome CloudFormationClient::DeleteChangeSet(const DeleteChangeSetRequest& request) const {
-  return DeleteChangeSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteChangeSetOutcome(result.GetResultWithOwnership())
+                            : DeleteChangeSetOutcome(std::move(result.GetError()));
 }
 
 DeleteGeneratedTemplateOutcome CloudFormationClient::DeleteGeneratedTemplate(const DeleteGeneratedTemplateRequest& request) const {
-  return DeleteGeneratedTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteGeneratedTemplateOutcome(result.GetResultWithOwnership())
+                            : DeleteGeneratedTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteStackOutcome CloudFormationClient::DeleteStack(const DeleteStackRequest& request) const {
-  return DeleteStackOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteStackOutcome(result.GetResultWithOwnership()) : DeleteStackOutcome(std::move(result.GetError()));
 }
 
 DeleteStackInstancesOutcome CloudFormationClient::DeleteStackInstances(const DeleteStackInstancesRequest& request) const {
-  return DeleteStackInstancesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteStackInstancesOutcome(result.GetResultWithOwnership())
+                            : DeleteStackInstancesOutcome(std::move(result.GetError()));
 }
 
 DeleteStackSetOutcome CloudFormationClient::DeleteStackSet(const DeleteStackSetRequest& request) const {
-  return DeleteStackSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteStackSetOutcome(result.GetResultWithOwnership()) : DeleteStackSetOutcome(std::move(result.GetError()));
 }
 
 DeregisterTypeOutcome CloudFormationClient::DeregisterType(const DeregisterTypeRequest& request) const {
-  return DeregisterTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterTypeOutcome(result.GetResultWithOwnership()) : DeregisterTypeOutcome(std::move(result.GetError()));
 }
 
 DescribeAccountLimitsOutcome CloudFormationClient::DescribeAccountLimits(const DescribeAccountLimitsRequest& request) const {
-  return DescribeAccountLimitsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAccountLimitsOutcome(result.GetResultWithOwnership())
+                            : DescribeAccountLimitsOutcome(std::move(result.GetError()));
 }
 
 DescribeChangeSetOutcome CloudFormationClient::DescribeChangeSet(const DescribeChangeSetRequest& request) const {
-  return DescribeChangeSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeChangeSetOutcome(result.GetResultWithOwnership())
+                            : DescribeChangeSetOutcome(std::move(result.GetError()));
 }
 
 DescribeChangeSetHooksOutcome CloudFormationClient::DescribeChangeSetHooks(const DescribeChangeSetHooksRequest& request) const {
-  return DescribeChangeSetHooksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeChangeSetHooksOutcome(result.GetResultWithOwnership())
+                            : DescribeChangeSetHooksOutcome(std::move(result.GetError()));
 }
 
 DescribeEventsOutcome CloudFormationClient::DescribeEvents(const DescribeEventsRequest& request) const {
-  return DescribeEventsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEventsOutcome(result.GetResultWithOwnership()) : DescribeEventsOutcome(std::move(result.GetError()));
 }
 
 DescribeGeneratedTemplateOutcome CloudFormationClient::DescribeGeneratedTemplate(const DescribeGeneratedTemplateRequest& request) const {
-  return DescribeGeneratedTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeGeneratedTemplateOutcome(result.GetResultWithOwnership())
+                            : DescribeGeneratedTemplateOutcome(std::move(result.GetError()));
 }
 
 DescribeOrganizationsAccessOutcome CloudFormationClient::DescribeOrganizationsAccess(
     const DescribeOrganizationsAccessRequest& request) const {
-  return DescribeOrganizationsAccessOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeOrganizationsAccessOutcome(result.GetResultWithOwnership())
+                            : DescribeOrganizationsAccessOutcome(std::move(result.GetError()));
 }
 
 DescribePublisherOutcome CloudFormationClient::DescribePublisher(const DescribePublisherRequest& request) const {
-  return DescribePublisherOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePublisherOutcome(result.GetResultWithOwnership())
+                            : DescribePublisherOutcome(std::move(result.GetError()));
 }
 
 DescribeResourceScanOutcome CloudFormationClient::DescribeResourceScan(const DescribeResourceScanRequest& request) const {
-  return DescribeResourceScanOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeResourceScanOutcome(result.GetResultWithOwnership())
+                            : DescribeResourceScanOutcome(std::move(result.GetError()));
 }
 
 DescribeStackDriftDetectionStatusOutcome CloudFormationClient::DescribeStackDriftDetectionStatus(
     const DescribeStackDriftDetectionStatusRequest& request) const {
-  return DescribeStackDriftDetectionStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeStackDriftDetectionStatusOutcome(result.GetResultWithOwnership())
+                            : DescribeStackDriftDetectionStatusOutcome(std::move(result.GetError()));
 }
 
 DescribeStackEventsOutcome CloudFormationClient::DescribeStackEvents(const DescribeStackEventsRequest& request) const {
-  return DescribeStackEventsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeStackEventsOutcome(result.GetResultWithOwnership())
+                            : DescribeStackEventsOutcome(std::move(result.GetError()));
 }
 
 DescribeStackInstanceOutcome CloudFormationClient::DescribeStackInstance(const DescribeStackInstanceRequest& request) const {
-  return DescribeStackInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeStackInstanceOutcome(result.GetResultWithOwnership())
+                            : DescribeStackInstanceOutcome(std::move(result.GetError()));
 }
 
 DescribeStackRefactorOutcome CloudFormationClient::DescribeStackRefactor(const DescribeStackRefactorRequest& request) const {
-  return DescribeStackRefactorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeStackRefactorOutcome(result.GetResultWithOwnership())
+                            : DescribeStackRefactorOutcome(std::move(result.GetError()));
 }
 
 DescribeStackResourceOutcome CloudFormationClient::DescribeStackResource(const DescribeStackResourceRequest& request) const {
-  return DescribeStackResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeStackResourceOutcome(result.GetResultWithOwnership())
+                            : DescribeStackResourceOutcome(std::move(result.GetError()));
 }
 
 DescribeStackResourceDriftsOutcome CloudFormationClient::DescribeStackResourceDrifts(
     const DescribeStackResourceDriftsRequest& request) const {
-  return DescribeStackResourceDriftsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeStackResourceDriftsOutcome(result.GetResultWithOwnership())
+                            : DescribeStackResourceDriftsOutcome(std::move(result.GetError()));
 }
 
 DescribeStackResourcesOutcome CloudFormationClient::DescribeStackResources(const DescribeStackResourcesRequest& request) const {
-  return DescribeStackResourcesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeStackResourcesOutcome(result.GetResultWithOwnership())
+                            : DescribeStackResourcesOutcome(std::move(result.GetError()));
 }
 
 DescribeStackSetOutcome CloudFormationClient::DescribeStackSet(const DescribeStackSetRequest& request) const {
-  return DescribeStackSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeStackSetOutcome(result.GetResultWithOwnership())
+                            : DescribeStackSetOutcome(std::move(result.GetError()));
 }
 
 DescribeStackSetOperationOutcome CloudFormationClient::DescribeStackSetOperation(const DescribeStackSetOperationRequest& request) const {
-  return DescribeStackSetOperationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeStackSetOperationOutcome(result.GetResultWithOwnership())
+                            : DescribeStackSetOperationOutcome(std::move(result.GetError()));
 }
 
 DescribeStacksOutcome CloudFormationClient::DescribeStacks(const DescribeStacksRequest& request) const {
-  return DescribeStacksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeStacksOutcome(result.GetResultWithOwnership()) : DescribeStacksOutcome(std::move(result.GetError()));
 }
 
 DescribeTypeOutcome CloudFormationClient::DescribeType(const DescribeTypeRequest& request) const {
-  return DescribeTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTypeOutcome(result.GetResultWithOwnership()) : DescribeTypeOutcome(std::move(result.GetError()));
 }
 
 DescribeTypeRegistrationOutcome CloudFormationClient::DescribeTypeRegistration(const DescribeTypeRegistrationRequest& request) const {
-  return DescribeTypeRegistrationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTypeRegistrationOutcome(result.GetResultWithOwnership())
+                            : DescribeTypeRegistrationOutcome(std::move(result.GetError()));
 }
 
 DetectStackDriftOutcome CloudFormationClient::DetectStackDrift(const DetectStackDriftRequest& request) const {
-  return DetectStackDriftOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DetectStackDriftOutcome(result.GetResultWithOwnership())
+                            : DetectStackDriftOutcome(std::move(result.GetError()));
 }
 
 DetectStackResourceDriftOutcome CloudFormationClient::DetectStackResourceDrift(const DetectStackResourceDriftRequest& request) const {
-  return DetectStackResourceDriftOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DetectStackResourceDriftOutcome(result.GetResultWithOwnership())
+                            : DetectStackResourceDriftOutcome(std::move(result.GetError()));
 }
 
 DetectStackSetDriftOutcome CloudFormationClient::DetectStackSetDrift(const DetectStackSetDriftRequest& request) const {
-  return DetectStackSetDriftOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DetectStackSetDriftOutcome(result.GetResultWithOwnership())
+                            : DetectStackSetDriftOutcome(std::move(result.GetError()));
 }
 
 EstimateTemplateCostOutcome CloudFormationClient::EstimateTemplateCost(const EstimateTemplateCostRequest& request) const {
-  return EstimateTemplateCostOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EstimateTemplateCostOutcome(result.GetResultWithOwnership())
+                            : EstimateTemplateCostOutcome(std::move(result.GetError()));
 }
 
 ExecuteChangeSetOutcome CloudFormationClient::ExecuteChangeSet(const ExecuteChangeSetRequest& request) const {
-  return ExecuteChangeSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExecuteChangeSetOutcome(result.GetResultWithOwnership())
+                            : ExecuteChangeSetOutcome(std::move(result.GetError()));
 }
 
 ExecuteStackRefactorOutcome CloudFormationClient::ExecuteStackRefactor(const ExecuteStackRefactorRequest& request) const {
-  return ExecuteStackRefactorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExecuteStackRefactorOutcome(result.GetResultWithOwnership())
+                            : ExecuteStackRefactorOutcome(std::move(result.GetError()));
 }
 
 GetGeneratedTemplateOutcome CloudFormationClient::GetGeneratedTemplate(const GetGeneratedTemplateRequest& request) const {
-  return GetGeneratedTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetGeneratedTemplateOutcome(result.GetResultWithOwnership())
+                            : GetGeneratedTemplateOutcome(std::move(result.GetError()));
 }
 
 GetHookResultOutcome CloudFormationClient::GetHookResult(const GetHookResultRequest& request) const {
-  return GetHookResultOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetHookResultOutcome(result.GetResultWithOwnership()) : GetHookResultOutcome(std::move(result.GetError()));
 }
 
 GetStackPolicyOutcome CloudFormationClient::GetStackPolicy(const GetStackPolicyRequest& request) const {
-  return GetStackPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetStackPolicyOutcome(result.GetResultWithOwnership()) : GetStackPolicyOutcome(std::move(result.GetError()));
 }
 
 GetTemplateOutcome CloudFormationClient::GetTemplate(const GetTemplateRequest& request) const {
-  return GetTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTemplateOutcome(result.GetResultWithOwnership()) : GetTemplateOutcome(std::move(result.GetError()));
 }
 
 GetTemplateSummaryOutcome CloudFormationClient::GetTemplateSummary(const GetTemplateSummaryRequest& request) const {
-  return GetTemplateSummaryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTemplateSummaryOutcome(result.GetResultWithOwnership())
+                            : GetTemplateSummaryOutcome(std::move(result.GetError()));
 }
 
 ImportStacksToStackSetOutcome CloudFormationClient::ImportStacksToStackSet(const ImportStacksToStackSetRequest& request) const {
-  return ImportStacksToStackSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportStacksToStackSetOutcome(result.GetResultWithOwnership())
+                            : ImportStacksToStackSetOutcome(std::move(result.GetError()));
 }
 
 ListChangeSetsOutcome CloudFormationClient::ListChangeSets(const ListChangeSetsRequest& request) const {
-  return ListChangeSetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListChangeSetsOutcome(result.GetResultWithOwnership()) : ListChangeSetsOutcome(std::move(result.GetError()));
 }
 
 ListExportsOutcome CloudFormationClient::ListExports(const ListExportsRequest& request) const {
-  return ListExportsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListExportsOutcome(result.GetResultWithOwnership()) : ListExportsOutcome(std::move(result.GetError()));
 }
 
 ListGeneratedTemplatesOutcome CloudFormationClient::ListGeneratedTemplates(const ListGeneratedTemplatesRequest& request) const {
-  return ListGeneratedTemplatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListGeneratedTemplatesOutcome(result.GetResultWithOwnership())
+                            : ListGeneratedTemplatesOutcome(std::move(result.GetError()));
 }
 
 ListHookResultsOutcome CloudFormationClient::ListHookResults(const ListHookResultsRequest& request) const {
-  return ListHookResultsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListHookResultsOutcome(result.GetResultWithOwnership())
+                            : ListHookResultsOutcome(std::move(result.GetError()));
 }
 
 ListImportsOutcome CloudFormationClient::ListImports(const ListImportsRequest& request) const {
-  return ListImportsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListImportsOutcome(result.GetResultWithOwnership()) : ListImportsOutcome(std::move(result.GetError()));
 }
 
 ListResourceScanRelatedResourcesOutcome CloudFormationClient::ListResourceScanRelatedResources(
     const ListResourceScanRelatedResourcesRequest& request) const {
-  return ListResourceScanRelatedResourcesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResourceScanRelatedResourcesOutcome(result.GetResultWithOwnership())
+                            : ListResourceScanRelatedResourcesOutcome(std::move(result.GetError()));
 }
 
 ListResourceScanResourcesOutcome CloudFormationClient::ListResourceScanResources(const ListResourceScanResourcesRequest& request) const {
-  return ListResourceScanResourcesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResourceScanResourcesOutcome(result.GetResultWithOwnership())
+                            : ListResourceScanResourcesOutcome(std::move(result.GetError()));
 }
 
 ListResourceScansOutcome CloudFormationClient::ListResourceScans(const ListResourceScansRequest& request) const {
-  return ListResourceScansOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResourceScansOutcome(result.GetResultWithOwnership())
+                            : ListResourceScansOutcome(std::move(result.GetError()));
 }
 
 ListStackInstanceResourceDriftsOutcome CloudFormationClient::ListStackInstanceResourceDrifts(
     const ListStackInstanceResourceDriftsRequest& request) const {
-  return ListStackInstanceResourceDriftsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListStackInstanceResourceDriftsOutcome(result.GetResultWithOwnership())
+                            : ListStackInstanceResourceDriftsOutcome(std::move(result.GetError()));
 }
 
 ListStackInstancesOutcome CloudFormationClient::ListStackInstances(const ListStackInstancesRequest& request) const {
-  return ListStackInstancesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListStackInstancesOutcome(result.GetResultWithOwnership())
+                            : ListStackInstancesOutcome(std::move(result.GetError()));
 }
 
 ListStackRefactorActionsOutcome CloudFormationClient::ListStackRefactorActions(const ListStackRefactorActionsRequest& request) const {
-  return ListStackRefactorActionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListStackRefactorActionsOutcome(result.GetResultWithOwnership())
+                            : ListStackRefactorActionsOutcome(std::move(result.GetError()));
 }
 
 ListStackRefactorsOutcome CloudFormationClient::ListStackRefactors(const ListStackRefactorsRequest& request) const {
-  return ListStackRefactorsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListStackRefactorsOutcome(result.GetResultWithOwnership())
+                            : ListStackRefactorsOutcome(std::move(result.GetError()));
 }
 
 ListStackResourcesOutcome CloudFormationClient::ListStackResources(const ListStackResourcesRequest& request) const {
-  return ListStackResourcesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListStackResourcesOutcome(result.GetResultWithOwnership())
+                            : ListStackResourcesOutcome(std::move(result.GetError()));
 }
 
 ListStackSetAutoDeploymentTargetsOutcome CloudFormationClient::ListStackSetAutoDeploymentTargets(
     const ListStackSetAutoDeploymentTargetsRequest& request) const {
-  return ListStackSetAutoDeploymentTargetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListStackSetAutoDeploymentTargetsOutcome(result.GetResultWithOwnership())
+                            : ListStackSetAutoDeploymentTargetsOutcome(std::move(result.GetError()));
 }
 
 ListStackSetOperationResultsOutcome CloudFormationClient::ListStackSetOperationResults(
     const ListStackSetOperationResultsRequest& request) const {
-  return ListStackSetOperationResultsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListStackSetOperationResultsOutcome(result.GetResultWithOwnership())
+                            : ListStackSetOperationResultsOutcome(std::move(result.GetError()));
 }
 
 ListStackSetOperationsOutcome CloudFormationClient::ListStackSetOperations(const ListStackSetOperationsRequest& request) const {
-  return ListStackSetOperationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListStackSetOperationsOutcome(result.GetResultWithOwnership())
+                            : ListStackSetOperationsOutcome(std::move(result.GetError()));
 }
 
 ListStackSetsOutcome CloudFormationClient::ListStackSets(const ListStackSetsRequest& request) const {
-  return ListStackSetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListStackSetsOutcome(result.GetResultWithOwnership()) : ListStackSetsOutcome(std::move(result.GetError()));
 }
 
 ListStacksOutcome CloudFormationClient::ListStacks(const ListStacksRequest& request) const {
-  return ListStacksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListStacksOutcome(result.GetResultWithOwnership()) : ListStacksOutcome(std::move(result.GetError()));
 }
 
 ListTypeRegistrationsOutcome CloudFormationClient::ListTypeRegistrations(const ListTypeRegistrationsRequest& request) const {
-  return ListTypeRegistrationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTypeRegistrationsOutcome(result.GetResultWithOwnership())
+                            : ListTypeRegistrationsOutcome(std::move(result.GetError()));
 }
 
 ListTypeVersionsOutcome CloudFormationClient::ListTypeVersions(const ListTypeVersionsRequest& request) const {
-  return ListTypeVersionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTypeVersionsOutcome(result.GetResultWithOwnership())
+                            : ListTypeVersionsOutcome(std::move(result.GetError()));
 }
 
 ListTypesOutcome CloudFormationClient::ListTypes(const ListTypesRequest& request) const {
-  return ListTypesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTypesOutcome(result.GetResultWithOwnership()) : ListTypesOutcome(std::move(result.GetError()));
 }
 
 PublishTypeOutcome CloudFormationClient::PublishType(const PublishTypeRequest& request) const {
-  return PublishTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PublishTypeOutcome(result.GetResultWithOwnership()) : PublishTypeOutcome(std::move(result.GetError()));
 }
 
 RecordHandlerProgressOutcome CloudFormationClient::RecordHandlerProgress(const RecordHandlerProgressRequest& request) const {
-  return RecordHandlerProgressOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RecordHandlerProgressOutcome(result.GetResultWithOwnership())
+                            : RecordHandlerProgressOutcome(std::move(result.GetError()));
 }
 
 RegisterPublisherOutcome CloudFormationClient::RegisterPublisher(const RegisterPublisherRequest& request) const {
-  return RegisterPublisherOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterPublisherOutcome(result.GetResultWithOwnership())
+                            : RegisterPublisherOutcome(std::move(result.GetError()));
 }
 
 RegisterTypeOutcome CloudFormationClient::RegisterType(const RegisterTypeRequest& request) const {
-  return RegisterTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterTypeOutcome(result.GetResultWithOwnership()) : RegisterTypeOutcome(std::move(result.GetError()));
 }
 
 RollbackStackOutcome CloudFormationClient::RollbackStack(const RollbackStackRequest& request) const {
-  return RollbackStackOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RollbackStackOutcome(result.GetResultWithOwnership()) : RollbackStackOutcome(std::move(result.GetError()));
 }
 
 SetStackPolicyOutcome CloudFormationClient::SetStackPolicy(const SetStackPolicyRequest& request) const {
-  return SetStackPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetStackPolicyOutcome(result.GetResultWithOwnership()) : SetStackPolicyOutcome(std::move(result.GetError()));
 }
 
 SetTypeConfigurationOutcome CloudFormationClient::SetTypeConfiguration(const SetTypeConfigurationRequest& request) const {
-  return SetTypeConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetTypeConfigurationOutcome(result.GetResultWithOwnership())
+                            : SetTypeConfigurationOutcome(std::move(result.GetError()));
 }
 
 SetTypeDefaultVersionOutcome CloudFormationClient::SetTypeDefaultVersion(const SetTypeDefaultVersionRequest& request) const {
-  return SetTypeDefaultVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetTypeDefaultVersionOutcome(result.GetResultWithOwnership())
+                            : SetTypeDefaultVersionOutcome(std::move(result.GetError()));
 }
 
 SignalResourceOutcome CloudFormationClient::SignalResource(const SignalResourceRequest& request) const {
-  return SignalResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SignalResourceOutcome(result.GetResultWithOwnership()) : SignalResourceOutcome(std::move(result.GetError()));
 }
 
 StartResourceScanOutcome CloudFormationClient::StartResourceScan(const StartResourceScanRequest& request) const {
-  return StartResourceScanOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartResourceScanOutcome(result.GetResultWithOwnership())
+                            : StartResourceScanOutcome(std::move(result.GetError()));
 }
 
 StopStackSetOperationOutcome CloudFormationClient::StopStackSetOperation(const StopStackSetOperationRequest& request) const {
-  return StopStackSetOperationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopStackSetOperationOutcome(result.GetResultWithOwnership())
+                            : StopStackSetOperationOutcome(std::move(result.GetError()));
 }
 
 TestTypeOutcome CloudFormationClient::TestType(const TestTypeRequest& request) const {
-  return TestTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TestTypeOutcome(result.GetResultWithOwnership()) : TestTypeOutcome(std::move(result.GetError()));
 }
 
 UpdateGeneratedTemplateOutcome CloudFormationClient::UpdateGeneratedTemplate(const UpdateGeneratedTemplateRequest& request) const {
-  return UpdateGeneratedTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateGeneratedTemplateOutcome(result.GetResultWithOwnership())
+                            : UpdateGeneratedTemplateOutcome(std::move(result.GetError()));
 }
 
 UpdateStackOutcome CloudFormationClient::UpdateStack(const UpdateStackRequest& request) const {
-  return UpdateStackOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateStackOutcome(result.GetResultWithOwnership()) : UpdateStackOutcome(std::move(result.GetError()));
 }
 
 UpdateStackInstancesOutcome CloudFormationClient::UpdateStackInstances(const UpdateStackInstancesRequest& request) const {
-  return UpdateStackInstancesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateStackInstancesOutcome(result.GetResultWithOwnership())
+                            : UpdateStackInstancesOutcome(std::move(result.GetError()));
 }
 
 UpdateStackSetOutcome CloudFormationClient::UpdateStackSet(const UpdateStackSetRequest& request) const {
-  return UpdateStackSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateStackSetOutcome(result.GetResultWithOwnership()) : UpdateStackSetOutcome(std::move(result.GetError()));
 }
 
 UpdateTerminationProtectionOutcome CloudFormationClient::UpdateTerminationProtection(
     const UpdateTerminationProtectionRequest& request) const {
-  return UpdateTerminationProtectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTerminationProtectionOutcome(result.GetResultWithOwnership())
+                            : UpdateTerminationProtectionOutcome(std::move(result.GetError()));
 }
 
 ValidateTemplateOutcome CloudFormationClient::ValidateTemplate(const ValidateTemplateRequest& request) const {
-  return ValidateTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ValidateTemplateOutcome(result.GetResultWithOwnership())
+                            : ValidateTemplateOutcome(std::move(result.GetError()));
 }

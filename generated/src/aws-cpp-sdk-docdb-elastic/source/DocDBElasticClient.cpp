@@ -201,7 +201,9 @@ ApplyPendingMaintenanceActionOutcome DocDBElasticClient::ApplyPendingMaintenance
     endpointResolutionOutcome.GetResult().AddPathSegments("/pending-action");
   };
 
-  return ApplyPendingMaintenanceActionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ApplyPendingMaintenanceActionOutcome(result.GetResultWithOwnership())
+                            : ApplyPendingMaintenanceActionOutcome(std::move(result.GetError()));
 }
 
 CopyClusterSnapshotOutcome DocDBElasticClient::CopyClusterSnapshot(const CopyClusterSnapshotRequest& request) const {
@@ -218,7 +220,9 @@ CopyClusterSnapshotOutcome DocDBElasticClient::CopyClusterSnapshot(const CopyClu
     endpointResolutionOutcome.GetResult().AddPathSegments("/copy");
   };
 
-  return CopyClusterSnapshotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CopyClusterSnapshotOutcome(result.GetResultWithOwnership())
+                            : CopyClusterSnapshotOutcome(std::move(result.GetError()));
 }
 
 CreateClusterOutcome DocDBElasticClient::CreateCluster(const CreateClusterRequest& request) const {
@@ -227,7 +231,8 @@ CreateClusterOutcome DocDBElasticClient::CreateCluster(const CreateClusterReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/cluster");
   };
 
-  return CreateClusterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateClusterOutcome(result.GetResultWithOwnership()) : CreateClusterOutcome(std::move(result.GetError()));
 }
 
 CreateClusterSnapshotOutcome DocDBElasticClient::CreateClusterSnapshot(const CreateClusterSnapshotRequest& request) const {
@@ -236,7 +241,9 @@ CreateClusterSnapshotOutcome DocDBElasticClient::CreateClusterSnapshot(const Cre
     endpointResolutionOutcome.GetResult().AddPathSegments("/cluster-snapshot");
   };
 
-  return CreateClusterSnapshotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateClusterSnapshotOutcome(result.GetResultWithOwnership())
+                            : CreateClusterSnapshotOutcome(std::move(result.GetError()));
 }
 
 DeleteClusterOutcome DocDBElasticClient::DeleteCluster(const DeleteClusterRequest& request) const {
@@ -252,7 +259,8 @@ DeleteClusterOutcome DocDBElasticClient::DeleteCluster(const DeleteClusterReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterArn());
   };
 
-  return DeleteClusterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteClusterOutcome(result.GetResultWithOwnership()) : DeleteClusterOutcome(std::move(result.GetError()));
 }
 
 DeleteClusterSnapshotOutcome DocDBElasticClient::DeleteClusterSnapshot(const DeleteClusterSnapshotRequest& request) const {
@@ -268,7 +276,9 @@ DeleteClusterSnapshotOutcome DocDBElasticClient::DeleteClusterSnapshot(const Del
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSnapshotArn());
   };
 
-  return DeleteClusterSnapshotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteClusterSnapshotOutcome(result.GetResultWithOwnership())
+                            : DeleteClusterSnapshotOutcome(std::move(result.GetError()));
 }
 
 GetClusterOutcome DocDBElasticClient::GetCluster(const GetClusterRequest& request) const {
@@ -284,7 +294,8 @@ GetClusterOutcome DocDBElasticClient::GetCluster(const GetClusterRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterArn());
   };
 
-  return GetClusterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetClusterOutcome(result.GetResultWithOwnership()) : GetClusterOutcome(std::move(result.GetError()));
 }
 
 GetClusterSnapshotOutcome DocDBElasticClient::GetClusterSnapshot(const GetClusterSnapshotRequest& request) const {
@@ -300,7 +311,9 @@ GetClusterSnapshotOutcome DocDBElasticClient::GetClusterSnapshot(const GetCluste
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSnapshotArn());
   };
 
-  return GetClusterSnapshotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetClusterSnapshotOutcome(result.GetResultWithOwnership())
+                            : GetClusterSnapshotOutcome(std::move(result.GetError()));
 }
 
 GetPendingMaintenanceActionOutcome DocDBElasticClient::GetPendingMaintenanceAction(
@@ -317,7 +330,9 @@ GetPendingMaintenanceActionOutcome DocDBElasticClient::GetPendingMaintenanceActi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return GetPendingMaintenanceActionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPendingMaintenanceActionOutcome(result.GetResultWithOwnership())
+                            : GetPendingMaintenanceActionOutcome(std::move(result.GetError()));
 }
 
 ListClusterSnapshotsOutcome DocDBElasticClient::ListClusterSnapshots(const ListClusterSnapshotsRequest& request) const {
@@ -326,7 +341,9 @@ ListClusterSnapshotsOutcome DocDBElasticClient::ListClusterSnapshots(const ListC
     endpointResolutionOutcome.GetResult().AddPathSegments("/cluster-snapshots");
   };
 
-  return ListClusterSnapshotsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListClusterSnapshotsOutcome(result.GetResultWithOwnership())
+                            : ListClusterSnapshotsOutcome(std::move(result.GetError()));
 }
 
 ListClustersOutcome DocDBElasticClient::ListClusters(const ListClustersRequest& request) const {
@@ -335,7 +352,8 @@ ListClustersOutcome DocDBElasticClient::ListClusters(const ListClustersRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/clusters");
   };
 
-  return ListClustersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListClustersOutcome(result.GetResultWithOwnership()) : ListClustersOutcome(std::move(result.GetError()));
 }
 
 ListPendingMaintenanceActionsOutcome DocDBElasticClient::ListPendingMaintenanceActions(
@@ -345,7 +363,9 @@ ListPendingMaintenanceActionsOutcome DocDBElasticClient::ListPendingMaintenanceA
     endpointResolutionOutcome.GetResult().AddPathSegments("/pending-actions");
   };
 
-  return ListPendingMaintenanceActionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPendingMaintenanceActionsOutcome(result.GetResultWithOwnership())
+                            : ListPendingMaintenanceActionsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome DocDBElasticClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -361,7 +381,9 @@ ListTagsForResourceOutcome DocDBElasticClient::ListTagsForResource(const ListTag
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 RestoreClusterFromSnapshotOutcome DocDBElasticClient::RestoreClusterFromSnapshot(const RestoreClusterFromSnapshotRequest& request) const {
@@ -378,7 +400,9 @@ RestoreClusterFromSnapshotOutcome DocDBElasticClient::RestoreClusterFromSnapshot
     endpointResolutionOutcome.GetResult().AddPathSegments("/restore");
   };
 
-  return RestoreClusterFromSnapshotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RestoreClusterFromSnapshotOutcome(result.GetResultWithOwnership())
+                            : RestoreClusterFromSnapshotOutcome(std::move(result.GetError()));
 }
 
 StartClusterOutcome DocDBElasticClient::StartCluster(const StartClusterRequest& request) const {
@@ -395,7 +419,8 @@ StartClusterOutcome DocDBElasticClient::StartCluster(const StartClusterRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/start");
   };
 
-  return StartClusterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartClusterOutcome(result.GetResultWithOwnership()) : StartClusterOutcome(std::move(result.GetError()));
 }
 
 StopClusterOutcome DocDBElasticClient::StopCluster(const StopClusterRequest& request) const {
@@ -412,7 +437,8 @@ StopClusterOutcome DocDBElasticClient::StopCluster(const StopClusterRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/stop");
   };
 
-  return StopClusterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopClusterOutcome(result.GetResultWithOwnership()) : StopClusterOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome DocDBElasticClient::TagResource(const TagResourceRequest& request) const {
@@ -428,7 +454,8 @@ TagResourceOutcome DocDBElasticClient::TagResource(const TagResourceRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome DocDBElasticClient::UntagResource(const UntagResourceRequest& request) const {
@@ -449,7 +476,8 @@ UntagResourceOutcome DocDBElasticClient::UntagResource(const UntagResourceReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateClusterOutcome DocDBElasticClient::UpdateCluster(const UpdateClusterRequest& request) const {
@@ -465,5 +493,6 @@ UpdateClusterOutcome DocDBElasticClient::UpdateCluster(const UpdateClusterReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterArn());
   };
 
-  return UpdateClusterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateClusterOutcome(result.GetResultWithOwnership()) : UpdateClusterOutcome(std::move(result.GetError()));
 }

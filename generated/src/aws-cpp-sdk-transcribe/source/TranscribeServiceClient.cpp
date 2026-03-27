@@ -221,180 +221,263 @@ TranscribeServiceClient::InvokeOperationOutcome TranscribeServiceClient::InvokeS
 
 CreateCallAnalyticsCategoryOutcome TranscribeServiceClient::CreateCallAnalyticsCategory(
     const CreateCallAnalyticsCategoryRequest& request) const {
-  return CreateCallAnalyticsCategoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCallAnalyticsCategoryOutcome(result.GetResultWithOwnership())
+                            : CreateCallAnalyticsCategoryOutcome(std::move(result.GetError()));
 }
 
 CreateLanguageModelOutcome TranscribeServiceClient::CreateLanguageModel(const CreateLanguageModelRequest& request) const {
-  return CreateLanguageModelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLanguageModelOutcome(result.GetResultWithOwnership())
+                            : CreateLanguageModelOutcome(std::move(result.GetError()));
 }
 
 CreateMedicalVocabularyOutcome TranscribeServiceClient::CreateMedicalVocabulary(const CreateMedicalVocabularyRequest& request) const {
-  return CreateMedicalVocabularyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMedicalVocabularyOutcome(result.GetResultWithOwnership())
+                            : CreateMedicalVocabularyOutcome(std::move(result.GetError()));
 }
 
 CreateVocabularyOutcome TranscribeServiceClient::CreateVocabulary(const CreateVocabularyRequest& request) const {
-  return CreateVocabularyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateVocabularyOutcome(result.GetResultWithOwnership())
+                            : CreateVocabularyOutcome(std::move(result.GetError()));
 }
 
 CreateVocabularyFilterOutcome TranscribeServiceClient::CreateVocabularyFilter(const CreateVocabularyFilterRequest& request) const {
-  return CreateVocabularyFilterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateVocabularyFilterOutcome(result.GetResultWithOwnership())
+                            : CreateVocabularyFilterOutcome(std::move(result.GetError()));
 }
 
 DeleteCallAnalyticsCategoryOutcome TranscribeServiceClient::DeleteCallAnalyticsCategory(
     const DeleteCallAnalyticsCategoryRequest& request) const {
-  return DeleteCallAnalyticsCategoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCallAnalyticsCategoryOutcome(result.GetResultWithOwnership())
+                            : DeleteCallAnalyticsCategoryOutcome(std::move(result.GetError()));
 }
 
 DeleteCallAnalyticsJobOutcome TranscribeServiceClient::DeleteCallAnalyticsJob(const DeleteCallAnalyticsJobRequest& request) const {
-  return DeleteCallAnalyticsJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCallAnalyticsJobOutcome(result.GetResultWithOwnership())
+                            : DeleteCallAnalyticsJobOutcome(std::move(result.GetError()));
 }
 
 DeleteLanguageModelOutcome TranscribeServiceClient::DeleteLanguageModel(const DeleteLanguageModelRequest& request) const {
-  return DeleteLanguageModelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLanguageModelOutcome(result.GetResultWithOwnership())
+                            : DeleteLanguageModelOutcome(std::move(result.GetError()));
 }
 
 DeleteMedicalScribeJobOutcome TranscribeServiceClient::DeleteMedicalScribeJob(const DeleteMedicalScribeJobRequest& request) const {
-  return DeleteMedicalScribeJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteMedicalScribeJobOutcome(result.GetResultWithOwnership())
+                            : DeleteMedicalScribeJobOutcome(std::move(result.GetError()));
 }
 
 DeleteMedicalTranscriptionJobOutcome TranscribeServiceClient::DeleteMedicalTranscriptionJob(
     const DeleteMedicalTranscriptionJobRequest& request) const {
-  return DeleteMedicalTranscriptionJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteMedicalTranscriptionJobOutcome(result.GetResultWithOwnership())
+                            : DeleteMedicalTranscriptionJobOutcome(std::move(result.GetError()));
 }
 
 DeleteMedicalVocabularyOutcome TranscribeServiceClient::DeleteMedicalVocabulary(const DeleteMedicalVocabularyRequest& request) const {
-  return DeleteMedicalVocabularyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteMedicalVocabularyOutcome(result.GetResultWithOwnership())
+                            : DeleteMedicalVocabularyOutcome(std::move(result.GetError()));
 }
 
 DeleteTranscriptionJobOutcome TranscribeServiceClient::DeleteTranscriptionJob(const DeleteTranscriptionJobRequest& request) const {
-  return DeleteTranscriptionJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTranscriptionJobOutcome(result.GetResultWithOwnership())
+                            : DeleteTranscriptionJobOutcome(std::move(result.GetError()));
 }
 
 DeleteVocabularyOutcome TranscribeServiceClient::DeleteVocabulary(const DeleteVocabularyRequest& request) const {
-  return DeleteVocabularyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVocabularyOutcome(result.GetResultWithOwnership())
+                            : DeleteVocabularyOutcome(std::move(result.GetError()));
 }
 
 DeleteVocabularyFilterOutcome TranscribeServiceClient::DeleteVocabularyFilter(const DeleteVocabularyFilterRequest& request) const {
-  return DeleteVocabularyFilterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVocabularyFilterOutcome(result.GetResultWithOwnership())
+                            : DeleteVocabularyFilterOutcome(std::move(result.GetError()));
 }
 
 DescribeLanguageModelOutcome TranscribeServiceClient::DescribeLanguageModel(const DescribeLanguageModelRequest& request) const {
-  return DescribeLanguageModelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeLanguageModelOutcome(result.GetResultWithOwnership())
+                            : DescribeLanguageModelOutcome(std::move(result.GetError()));
 }
 
 GetCallAnalyticsCategoryOutcome TranscribeServiceClient::GetCallAnalyticsCategory(const GetCallAnalyticsCategoryRequest& request) const {
-  return GetCallAnalyticsCategoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCallAnalyticsCategoryOutcome(result.GetResultWithOwnership())
+                            : GetCallAnalyticsCategoryOutcome(std::move(result.GetError()));
 }
 
 GetCallAnalyticsJobOutcome TranscribeServiceClient::GetCallAnalyticsJob(const GetCallAnalyticsJobRequest& request) const {
-  return GetCallAnalyticsJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCallAnalyticsJobOutcome(result.GetResultWithOwnership())
+                            : GetCallAnalyticsJobOutcome(std::move(result.GetError()));
 }
 
 GetMedicalScribeJobOutcome TranscribeServiceClient::GetMedicalScribeJob(const GetMedicalScribeJobRequest& request) const {
-  return GetMedicalScribeJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetMedicalScribeJobOutcome(result.GetResultWithOwnership())
+                            : GetMedicalScribeJobOutcome(std::move(result.GetError()));
 }
 
 GetMedicalTranscriptionJobOutcome TranscribeServiceClient::GetMedicalTranscriptionJob(
     const GetMedicalTranscriptionJobRequest& request) const {
-  return GetMedicalTranscriptionJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetMedicalTranscriptionJobOutcome(result.GetResultWithOwnership())
+                            : GetMedicalTranscriptionJobOutcome(std::move(result.GetError()));
 }
 
 GetMedicalVocabularyOutcome TranscribeServiceClient::GetMedicalVocabulary(const GetMedicalVocabularyRequest& request) const {
-  return GetMedicalVocabularyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetMedicalVocabularyOutcome(result.GetResultWithOwnership())
+                            : GetMedicalVocabularyOutcome(std::move(result.GetError()));
 }
 
 GetTranscriptionJobOutcome TranscribeServiceClient::GetTranscriptionJob(const GetTranscriptionJobRequest& request) const {
-  return GetTranscriptionJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTranscriptionJobOutcome(result.GetResultWithOwnership())
+                            : GetTranscriptionJobOutcome(std::move(result.GetError()));
 }
 
 GetVocabularyOutcome TranscribeServiceClient::GetVocabulary(const GetVocabularyRequest& request) const {
-  return GetVocabularyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetVocabularyOutcome(result.GetResultWithOwnership()) : GetVocabularyOutcome(std::move(result.GetError()));
 }
 
 GetVocabularyFilterOutcome TranscribeServiceClient::GetVocabularyFilter(const GetVocabularyFilterRequest& request) const {
-  return GetVocabularyFilterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetVocabularyFilterOutcome(result.GetResultWithOwnership())
+                            : GetVocabularyFilterOutcome(std::move(result.GetError()));
 }
 
 ListCallAnalyticsCategoriesOutcome TranscribeServiceClient::ListCallAnalyticsCategories(
     const ListCallAnalyticsCategoriesRequest& request) const {
-  return ListCallAnalyticsCategoriesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCallAnalyticsCategoriesOutcome(result.GetResultWithOwnership())
+                            : ListCallAnalyticsCategoriesOutcome(std::move(result.GetError()));
 }
 
 ListCallAnalyticsJobsOutcome TranscribeServiceClient::ListCallAnalyticsJobs(const ListCallAnalyticsJobsRequest& request) const {
-  return ListCallAnalyticsJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCallAnalyticsJobsOutcome(result.GetResultWithOwnership())
+                            : ListCallAnalyticsJobsOutcome(std::move(result.GetError()));
 }
 
 ListLanguageModelsOutcome TranscribeServiceClient::ListLanguageModels(const ListLanguageModelsRequest& request) const {
-  return ListLanguageModelsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLanguageModelsOutcome(result.GetResultWithOwnership())
+                            : ListLanguageModelsOutcome(std::move(result.GetError()));
 }
 
 ListMedicalScribeJobsOutcome TranscribeServiceClient::ListMedicalScribeJobs(const ListMedicalScribeJobsRequest& request) const {
-  return ListMedicalScribeJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMedicalScribeJobsOutcome(result.GetResultWithOwnership())
+                            : ListMedicalScribeJobsOutcome(std::move(result.GetError()));
 }
 
 ListMedicalTranscriptionJobsOutcome TranscribeServiceClient::ListMedicalTranscriptionJobs(
     const ListMedicalTranscriptionJobsRequest& request) const {
-  return ListMedicalTranscriptionJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMedicalTranscriptionJobsOutcome(result.GetResultWithOwnership())
+                            : ListMedicalTranscriptionJobsOutcome(std::move(result.GetError()));
 }
 
 ListMedicalVocabulariesOutcome TranscribeServiceClient::ListMedicalVocabularies(const ListMedicalVocabulariesRequest& request) const {
-  return ListMedicalVocabulariesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMedicalVocabulariesOutcome(result.GetResultWithOwnership())
+                            : ListMedicalVocabulariesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome TranscribeServiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTranscriptionJobsOutcome TranscribeServiceClient::ListTranscriptionJobs(const ListTranscriptionJobsRequest& request) const {
-  return ListTranscriptionJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTranscriptionJobsOutcome(result.GetResultWithOwnership())
+                            : ListTranscriptionJobsOutcome(std::move(result.GetError()));
 }
 
 ListVocabulariesOutcome TranscribeServiceClient::ListVocabularies(const ListVocabulariesRequest& request) const {
-  return ListVocabulariesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListVocabulariesOutcome(result.GetResultWithOwnership())
+                            : ListVocabulariesOutcome(std::move(result.GetError()));
 }
 
 ListVocabularyFiltersOutcome TranscribeServiceClient::ListVocabularyFilters(const ListVocabularyFiltersRequest& request) const {
-  return ListVocabularyFiltersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListVocabularyFiltersOutcome(result.GetResultWithOwnership())
+                            : ListVocabularyFiltersOutcome(std::move(result.GetError()));
 }
 
 StartCallAnalyticsJobOutcome TranscribeServiceClient::StartCallAnalyticsJob(const StartCallAnalyticsJobRequest& request) const {
-  return StartCallAnalyticsJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartCallAnalyticsJobOutcome(result.GetResultWithOwnership())
+                            : StartCallAnalyticsJobOutcome(std::move(result.GetError()));
 }
 
 StartMedicalScribeJobOutcome TranscribeServiceClient::StartMedicalScribeJob(const StartMedicalScribeJobRequest& request) const {
-  return StartMedicalScribeJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartMedicalScribeJobOutcome(result.GetResultWithOwnership())
+                            : StartMedicalScribeJobOutcome(std::move(result.GetError()));
 }
 
 StartMedicalTranscriptionJobOutcome TranscribeServiceClient::StartMedicalTranscriptionJob(
     const StartMedicalTranscriptionJobRequest& request) const {
-  return StartMedicalTranscriptionJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartMedicalTranscriptionJobOutcome(result.GetResultWithOwnership())
+                            : StartMedicalTranscriptionJobOutcome(std::move(result.GetError()));
 }
 
 StartTranscriptionJobOutcome TranscribeServiceClient::StartTranscriptionJob(const StartTranscriptionJobRequest& request) const {
-  return StartTranscriptionJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartTranscriptionJobOutcome(result.GetResultWithOwnership())
+                            : StartTranscriptionJobOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome TranscribeServiceClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome TranscribeServiceClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateCallAnalyticsCategoryOutcome TranscribeServiceClient::UpdateCallAnalyticsCategory(
     const UpdateCallAnalyticsCategoryRequest& request) const {
-  return UpdateCallAnalyticsCategoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCallAnalyticsCategoryOutcome(result.GetResultWithOwnership())
+                            : UpdateCallAnalyticsCategoryOutcome(std::move(result.GetError()));
 }
 
 UpdateMedicalVocabularyOutcome TranscribeServiceClient::UpdateMedicalVocabulary(const UpdateMedicalVocabularyRequest& request) const {
-  return UpdateMedicalVocabularyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateMedicalVocabularyOutcome(result.GetResultWithOwnership())
+                            : UpdateMedicalVocabularyOutcome(std::move(result.GetError()));
 }
 
 UpdateVocabularyOutcome TranscribeServiceClient::UpdateVocabulary(const UpdateVocabularyRequest& request) const {
-  return UpdateVocabularyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateVocabularyOutcome(result.GetResultWithOwnership())
+                            : UpdateVocabularyOutcome(std::move(result.GetError()));
 }
 
 UpdateVocabularyFilterOutcome TranscribeServiceClient::UpdateVocabularyFilter(const UpdateVocabularyFilterRequest& request) const {
-  return UpdateVocabularyFilterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateVocabularyFilterOutcome(result.GetResultWithOwnership())
+                            : UpdateVocabularyFilterOutcome(std::move(result.GetError()));
 }

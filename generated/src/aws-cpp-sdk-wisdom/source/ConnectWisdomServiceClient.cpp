@@ -228,7 +228,9 @@ CreateAssistantOutcome ConnectWisdomServiceClient::CreateAssistant(const CreateA
     endpointResolutionOutcome.GetResult().AddPathSegments("/assistants");
   };
 
-  return CreateAssistantOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAssistantOutcome(result.GetResultWithOwnership())
+                            : CreateAssistantOutcome(std::move(result.GetError()));
 }
 
 CreateAssistantAssociationOutcome ConnectWisdomServiceClient::CreateAssistantAssociation(
@@ -246,7 +248,9 @@ CreateAssistantAssociationOutcome ConnectWisdomServiceClient::CreateAssistantAss
     endpointResolutionOutcome.GetResult().AddPathSegments("/associations");
   };
 
-  return CreateAssistantAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAssistantAssociationOutcome(result.GetResultWithOwnership())
+                            : CreateAssistantAssociationOutcome(std::move(result.GetError()));
 }
 
 CreateContentOutcome ConnectWisdomServiceClient::CreateContent(const CreateContentRequest& request) const {
@@ -263,7 +267,8 @@ CreateContentOutcome ConnectWisdomServiceClient::CreateContent(const CreateConte
     endpointResolutionOutcome.GetResult().AddPathSegments("/contents");
   };
 
-  return CreateContentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateContentOutcome(result.GetResultWithOwnership()) : CreateContentOutcome(std::move(result.GetError()));
 }
 
 CreateKnowledgeBaseOutcome ConnectWisdomServiceClient::CreateKnowledgeBase(const CreateKnowledgeBaseRequest& request) const {
@@ -272,7 +277,9 @@ CreateKnowledgeBaseOutcome ConnectWisdomServiceClient::CreateKnowledgeBase(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/knowledgeBases");
   };
 
-  return CreateKnowledgeBaseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateKnowledgeBaseOutcome(result.GetResultWithOwnership())
+                            : CreateKnowledgeBaseOutcome(std::move(result.GetError()));
 }
 
 CreateQuickResponseOutcome ConnectWisdomServiceClient::CreateQuickResponse(const CreateQuickResponseRequest& request) const {
@@ -289,7 +296,9 @@ CreateQuickResponseOutcome ConnectWisdomServiceClient::CreateQuickResponse(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/quickResponses");
   };
 
-  return CreateQuickResponseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateQuickResponseOutcome(result.GetResultWithOwnership())
+                            : CreateQuickResponseOutcome(std::move(result.GetError()));
 }
 
 CreateSessionOutcome ConnectWisdomServiceClient::CreateSession(const CreateSessionRequest& request) const {
@@ -306,7 +315,8 @@ CreateSessionOutcome ConnectWisdomServiceClient::CreateSession(const CreateSessi
     endpointResolutionOutcome.GetResult().AddPathSegments("/sessions");
   };
 
-  return CreateSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSessionOutcome(result.GetResultWithOwnership()) : CreateSessionOutcome(std::move(result.GetError()));
 }
 
 DeleteAssistantOutcome ConnectWisdomServiceClient::DeleteAssistant(const DeleteAssistantRequest& request) const {
@@ -322,7 +332,9 @@ DeleteAssistantOutcome ConnectWisdomServiceClient::DeleteAssistant(const DeleteA
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssistantId());
   };
 
-  return DeleteAssistantOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAssistantOutcome(result.GetResultWithOwnership())
+                            : DeleteAssistantOutcome(std::move(result.GetError()));
 }
 
 DeleteAssistantAssociationOutcome ConnectWisdomServiceClient::DeleteAssistantAssociation(
@@ -346,7 +358,9 @@ DeleteAssistantAssociationOutcome ConnectWisdomServiceClient::DeleteAssistantAss
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssistantAssociationId());
   };
 
-  return DeleteAssistantAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAssistantAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteAssistantAssociationOutcome(std::move(result.GetError()));
 }
 
 DeleteContentOutcome ConnectWisdomServiceClient::DeleteContent(const DeleteContentRequest& request) const {
@@ -369,7 +383,8 @@ DeleteContentOutcome ConnectWisdomServiceClient::DeleteContent(const DeleteConte
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContentId());
   };
 
-  return DeleteContentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteContentOutcome(result.GetResultWithOwnership()) : DeleteContentOutcome(std::move(result.GetError()));
 }
 
 DeleteImportJobOutcome ConnectWisdomServiceClient::DeleteImportJob(const DeleteImportJobRequest& request) const {
@@ -392,7 +407,9 @@ DeleteImportJobOutcome ConnectWisdomServiceClient::DeleteImportJob(const DeleteI
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetImportJobId());
   };
 
-  return DeleteImportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteImportJobOutcome(result.GetResultWithOwnership())
+                            : DeleteImportJobOutcome(std::move(result.GetError()));
 }
 
 DeleteKnowledgeBaseOutcome ConnectWisdomServiceClient::DeleteKnowledgeBase(const DeleteKnowledgeBaseRequest& request) const {
@@ -408,7 +425,9 @@ DeleteKnowledgeBaseOutcome ConnectWisdomServiceClient::DeleteKnowledgeBase(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKnowledgeBaseId());
   };
 
-  return DeleteKnowledgeBaseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteKnowledgeBaseOutcome(result.GetResultWithOwnership())
+                            : DeleteKnowledgeBaseOutcome(std::move(result.GetError()));
 }
 
 DeleteQuickResponseOutcome ConnectWisdomServiceClient::DeleteQuickResponse(const DeleteQuickResponseRequest& request) const {
@@ -431,7 +450,9 @@ DeleteQuickResponseOutcome ConnectWisdomServiceClient::DeleteQuickResponse(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQuickResponseId());
   };
 
-  return DeleteQuickResponseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteQuickResponseOutcome(result.GetResultWithOwnership())
+                            : DeleteQuickResponseOutcome(std::move(result.GetError()));
 }
 
 GetAssistantOutcome ConnectWisdomServiceClient::GetAssistant(const GetAssistantRequest& request) const {
@@ -447,7 +468,8 @@ GetAssistantOutcome ConnectWisdomServiceClient::GetAssistant(const GetAssistantR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssistantId());
   };
 
-  return GetAssistantOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAssistantOutcome(result.GetResultWithOwnership()) : GetAssistantOutcome(std::move(result.GetError()));
 }
 
 GetAssistantAssociationOutcome ConnectWisdomServiceClient::GetAssistantAssociation(const GetAssistantAssociationRequest& request) const {
@@ -470,7 +492,9 @@ GetAssistantAssociationOutcome ConnectWisdomServiceClient::GetAssistantAssociati
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssistantAssociationId());
   };
 
-  return GetAssistantAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAssistantAssociationOutcome(result.GetResultWithOwnership())
+                            : GetAssistantAssociationOutcome(std::move(result.GetError()));
 }
 
 GetContentOutcome ConnectWisdomServiceClient::GetContent(const GetContentRequest& request) const {
@@ -493,7 +517,8 @@ GetContentOutcome ConnectWisdomServiceClient::GetContent(const GetContentRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContentId());
   };
 
-  return GetContentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetContentOutcome(result.GetResultWithOwnership()) : GetContentOutcome(std::move(result.GetError()));
 }
 
 GetContentSummaryOutcome ConnectWisdomServiceClient::GetContentSummary(const GetContentSummaryRequest& request) const {
@@ -517,7 +542,9 @@ GetContentSummaryOutcome ConnectWisdomServiceClient::GetContentSummary(const Get
     endpointResolutionOutcome.GetResult().AddPathSegments("/summary");
   };
 
-  return GetContentSummaryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetContentSummaryOutcome(result.GetResultWithOwnership())
+                            : GetContentSummaryOutcome(std::move(result.GetError()));
 }
 
 GetImportJobOutcome ConnectWisdomServiceClient::GetImportJob(const GetImportJobRequest& request) const {
@@ -540,7 +567,8 @@ GetImportJobOutcome ConnectWisdomServiceClient::GetImportJob(const GetImportJobR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetImportJobId());
   };
 
-  return GetImportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetImportJobOutcome(result.GetResultWithOwnership()) : GetImportJobOutcome(std::move(result.GetError()));
 }
 
 GetKnowledgeBaseOutcome ConnectWisdomServiceClient::GetKnowledgeBase(const GetKnowledgeBaseRequest& request) const {
@@ -556,7 +584,9 @@ GetKnowledgeBaseOutcome ConnectWisdomServiceClient::GetKnowledgeBase(const GetKn
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKnowledgeBaseId());
   };
 
-  return GetKnowledgeBaseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetKnowledgeBaseOutcome(result.GetResultWithOwnership())
+                            : GetKnowledgeBaseOutcome(std::move(result.GetError()));
 }
 
 GetQuickResponseOutcome ConnectWisdomServiceClient::GetQuickResponse(const GetQuickResponseRequest& request) const {
@@ -579,7 +609,9 @@ GetQuickResponseOutcome ConnectWisdomServiceClient::GetQuickResponse(const GetQu
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQuickResponseId());
   };
 
-  return GetQuickResponseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetQuickResponseOutcome(result.GetResultWithOwnership())
+                            : GetQuickResponseOutcome(std::move(result.GetError()));
 }
 
 GetSessionOutcome ConnectWisdomServiceClient::GetSession(const GetSessionRequest& request) const {
@@ -602,7 +634,8 @@ GetSessionOutcome ConnectWisdomServiceClient::GetSession(const GetSessionRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
   };
 
-  return GetSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSessionOutcome(result.GetResultWithOwnership()) : GetSessionOutcome(std::move(result.GetError()));
 }
 
 ListAssistantAssociationsOutcome ConnectWisdomServiceClient::ListAssistantAssociations(
@@ -620,7 +653,9 @@ ListAssistantAssociationsOutcome ConnectWisdomServiceClient::ListAssistantAssoci
     endpointResolutionOutcome.GetResult().AddPathSegments("/associations");
   };
 
-  return ListAssistantAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAssistantAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListAssistantAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListAssistantsOutcome ConnectWisdomServiceClient::ListAssistants(const ListAssistantsRequest& request) const {
@@ -629,7 +664,8 @@ ListAssistantsOutcome ConnectWisdomServiceClient::ListAssistants(const ListAssis
     endpointResolutionOutcome.GetResult().AddPathSegments("/assistants");
   };
 
-  return ListAssistantsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAssistantsOutcome(result.GetResultWithOwnership()) : ListAssistantsOutcome(std::move(result.GetError()));
 }
 
 ListContentsOutcome ConnectWisdomServiceClient::ListContents(const ListContentsRequest& request) const {
@@ -646,7 +682,8 @@ ListContentsOutcome ConnectWisdomServiceClient::ListContents(const ListContentsR
     endpointResolutionOutcome.GetResult().AddPathSegments("/contents");
   };
 
-  return ListContentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListContentsOutcome(result.GetResultWithOwnership()) : ListContentsOutcome(std::move(result.GetError()));
 }
 
 ListImportJobsOutcome ConnectWisdomServiceClient::ListImportJobs(const ListImportJobsRequest& request) const {
@@ -663,7 +700,8 @@ ListImportJobsOutcome ConnectWisdomServiceClient::ListImportJobs(const ListImpor
     endpointResolutionOutcome.GetResult().AddPathSegments("/importJobs");
   };
 
-  return ListImportJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListImportJobsOutcome(result.GetResultWithOwnership()) : ListImportJobsOutcome(std::move(result.GetError()));
 }
 
 ListKnowledgeBasesOutcome ConnectWisdomServiceClient::ListKnowledgeBases(const ListKnowledgeBasesRequest& request) const {
@@ -672,7 +710,9 @@ ListKnowledgeBasesOutcome ConnectWisdomServiceClient::ListKnowledgeBases(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/knowledgeBases");
   };
 
-  return ListKnowledgeBasesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListKnowledgeBasesOutcome(result.GetResultWithOwnership())
+                            : ListKnowledgeBasesOutcome(std::move(result.GetError()));
 }
 
 ListQuickResponsesOutcome ConnectWisdomServiceClient::ListQuickResponses(const ListQuickResponsesRequest& request) const {
@@ -689,7 +729,9 @@ ListQuickResponsesOutcome ConnectWisdomServiceClient::ListQuickResponses(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/quickResponses");
   };
 
-  return ListQuickResponsesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListQuickResponsesOutcome(result.GetResultWithOwnership())
+                            : ListQuickResponsesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome ConnectWisdomServiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -705,7 +747,9 @@ ListTagsForResourceOutcome ConnectWisdomServiceClient::ListTagsForResource(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 NotifyRecommendationsReceivedOutcome ConnectWisdomServiceClient::NotifyRecommendationsReceived(
@@ -730,7 +774,9 @@ NotifyRecommendationsReceivedOutcome ConnectWisdomServiceClient::NotifyRecommend
     endpointResolutionOutcome.GetResult().AddPathSegments("/recommendations/notify");
   };
 
-  return NotifyRecommendationsReceivedOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? NotifyRecommendationsReceivedOutcome(result.GetResultWithOwnership())
+                            : NotifyRecommendationsReceivedOutcome(std::move(result.GetError()));
 }
 
 RemoveKnowledgeBaseTemplateUriOutcome ConnectWisdomServiceClient::RemoveKnowledgeBaseTemplateUri(
@@ -748,7 +794,9 @@ RemoveKnowledgeBaseTemplateUriOutcome ConnectWisdomServiceClient::RemoveKnowledg
     endpointResolutionOutcome.GetResult().AddPathSegments("/templateUri");
   };
 
-  return RemoveKnowledgeBaseTemplateUriOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? RemoveKnowledgeBaseTemplateUriOutcome(result.GetResultWithOwnership())
+                            : RemoveKnowledgeBaseTemplateUriOutcome(std::move(result.GetError()));
 }
 
 SearchContentOutcome ConnectWisdomServiceClient::SearchContent(const SearchContentRequest& request) const {
@@ -765,7 +813,8 @@ SearchContentOutcome ConnectWisdomServiceClient::SearchContent(const SearchConte
     endpointResolutionOutcome.GetResult().AddPathSegments("/search");
   };
 
-  return SearchContentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchContentOutcome(result.GetResultWithOwnership()) : SearchContentOutcome(std::move(result.GetError()));
 }
 
 SearchQuickResponsesOutcome ConnectWisdomServiceClient::SearchQuickResponses(const SearchQuickResponsesRequest& request) const {
@@ -782,7 +831,9 @@ SearchQuickResponsesOutcome ConnectWisdomServiceClient::SearchQuickResponses(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/search/quickResponses");
   };
 
-  return SearchQuickResponsesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchQuickResponsesOutcome(result.GetResultWithOwnership())
+                            : SearchQuickResponsesOutcome(std::move(result.GetError()));
 }
 
 SearchSessionsOutcome ConnectWisdomServiceClient::SearchSessions(const SearchSessionsRequest& request) const {
@@ -799,7 +850,8 @@ SearchSessionsOutcome ConnectWisdomServiceClient::SearchSessions(const SearchSes
     endpointResolutionOutcome.GetResult().AddPathSegments("/searchSessions");
   };
 
-  return SearchSessionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchSessionsOutcome(result.GetResultWithOwnership()) : SearchSessionsOutcome(std::move(result.GetError()));
 }
 
 StartContentUploadOutcome ConnectWisdomServiceClient::StartContentUpload(const StartContentUploadRequest& request) const {
@@ -816,7 +868,9 @@ StartContentUploadOutcome ConnectWisdomServiceClient::StartContentUpload(const S
     endpointResolutionOutcome.GetResult().AddPathSegments("/upload");
   };
 
-  return StartContentUploadOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartContentUploadOutcome(result.GetResultWithOwnership())
+                            : StartContentUploadOutcome(std::move(result.GetError()));
 }
 
 StartImportJobOutcome ConnectWisdomServiceClient::StartImportJob(const StartImportJobRequest& request) const {
@@ -833,7 +887,8 @@ StartImportJobOutcome ConnectWisdomServiceClient::StartImportJob(const StartImpo
     endpointResolutionOutcome.GetResult().AddPathSegments("/importJobs");
   };
 
-  return StartImportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartImportJobOutcome(result.GetResultWithOwnership()) : StartImportJobOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ConnectWisdomServiceClient::TagResource(const TagResourceRequest& request) const {
@@ -849,7 +904,8 @@ TagResourceOutcome ConnectWisdomServiceClient::TagResource(const TagResourceRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome ConnectWisdomServiceClient::UntagResource(const UntagResourceRequest& request) const {
@@ -870,7 +926,8 @@ UntagResourceOutcome ConnectWisdomServiceClient::UntagResource(const UntagResour
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateContentOutcome ConnectWisdomServiceClient::UpdateContent(const UpdateContentRequest& request) const {
@@ -893,7 +950,8 @@ UpdateContentOutcome ConnectWisdomServiceClient::UpdateContent(const UpdateConte
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContentId());
   };
 
-  return UpdateContentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateContentOutcome(result.GetResultWithOwnership()) : UpdateContentOutcome(std::move(result.GetError()));
 }
 
 UpdateKnowledgeBaseTemplateUriOutcome ConnectWisdomServiceClient::UpdateKnowledgeBaseTemplateUri(
@@ -911,7 +969,9 @@ UpdateKnowledgeBaseTemplateUriOutcome ConnectWisdomServiceClient::UpdateKnowledg
     endpointResolutionOutcome.GetResult().AddPathSegments("/templateUri");
   };
 
-  return UpdateKnowledgeBaseTemplateUriOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateKnowledgeBaseTemplateUriOutcome(result.GetResultWithOwnership())
+                            : UpdateKnowledgeBaseTemplateUriOutcome(std::move(result.GetError()));
 }
 
 UpdateQuickResponseOutcome ConnectWisdomServiceClient::UpdateQuickResponse(const UpdateQuickResponseRequest& request) const {
@@ -934,5 +994,7 @@ UpdateQuickResponseOutcome ConnectWisdomServiceClient::UpdateQuickResponse(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQuickResponseId());
   };
 
-  return UpdateQuickResponseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateQuickResponseOutcome(result.GetResultWithOwnership())
+                            : UpdateQuickResponseOutcome(std::move(result.GetError()));
 }

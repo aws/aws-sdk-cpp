@@ -212,7 +212,9 @@ BatchGetIncidentFindingsOutcome SSMIncidentsClient::BatchGetIncidentFindings(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/batchGetIncidentFindings");
   };
 
-  return BatchGetIncidentFindingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetIncidentFindingsOutcome(result.GetResultWithOwnership())
+                            : BatchGetIncidentFindingsOutcome(std::move(result.GetError()));
 }
 
 CreateReplicationSetOutcome SSMIncidentsClient::CreateReplicationSet(const CreateReplicationSetRequest& request) const {
@@ -221,7 +223,9 @@ CreateReplicationSetOutcome SSMIncidentsClient::CreateReplicationSet(const Creat
     endpointResolutionOutcome.GetResult().AddPathSegments("/createReplicationSet");
   };
 
-  return CreateReplicationSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateReplicationSetOutcome(result.GetResultWithOwnership())
+                            : CreateReplicationSetOutcome(std::move(result.GetError()));
 }
 
 CreateResponsePlanOutcome SSMIncidentsClient::CreateResponsePlan(const CreateResponsePlanRequest& request) const {
@@ -230,7 +234,9 @@ CreateResponsePlanOutcome SSMIncidentsClient::CreateResponsePlan(const CreateRes
     endpointResolutionOutcome.GetResult().AddPathSegments("/createResponsePlan");
   };
 
-  return CreateResponsePlanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateResponsePlanOutcome(result.GetResultWithOwnership())
+                            : CreateResponsePlanOutcome(std::move(result.GetError()));
 }
 
 CreateTimelineEventOutcome SSMIncidentsClient::CreateTimelineEvent(const CreateTimelineEventRequest& request) const {
@@ -239,7 +245,9 @@ CreateTimelineEventOutcome SSMIncidentsClient::CreateTimelineEvent(const CreateT
     endpointResolutionOutcome.GetResult().AddPathSegments("/createTimelineEvent");
   };
 
-  return CreateTimelineEventOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTimelineEventOutcome(result.GetResultWithOwnership())
+                            : CreateTimelineEventOutcome(std::move(result.GetError()));
 }
 
 DeleteIncidentRecordOutcome SSMIncidentsClient::DeleteIncidentRecord(const DeleteIncidentRecordRequest& request) const {
@@ -248,7 +256,9 @@ DeleteIncidentRecordOutcome SSMIncidentsClient::DeleteIncidentRecord(const Delet
     endpointResolutionOutcome.GetResult().AddPathSegments("/deleteIncidentRecord");
   };
 
-  return DeleteIncidentRecordOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteIncidentRecordOutcome(result.GetResultWithOwnership())
+                            : DeleteIncidentRecordOutcome(std::move(result.GetError()));
 }
 
 DeleteReplicationSetOutcome SSMIncidentsClient::DeleteReplicationSet(const DeleteReplicationSetRequest& request) const {
@@ -263,7 +273,9 @@ DeleteReplicationSetOutcome SSMIncidentsClient::DeleteReplicationSet(const Delet
     endpointResolutionOutcome.GetResult().AddPathSegments("/deleteReplicationSet");
   };
 
-  return DeleteReplicationSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteReplicationSetOutcome(result.GetResultWithOwnership())
+                            : DeleteReplicationSetOutcome(std::move(result.GetError()));
 }
 
 DeleteResourcePolicyOutcome SSMIncidentsClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const {
@@ -272,7 +284,9 @@ DeleteResourcePolicyOutcome SSMIncidentsClient::DeleteResourcePolicy(const Delet
     endpointResolutionOutcome.GetResult().AddPathSegments("/deleteResourcePolicy");
   };
 
-  return DeleteResourcePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteResponsePlanOutcome SSMIncidentsClient::DeleteResponsePlan(const DeleteResponsePlanRequest& request) const {
@@ -281,7 +295,9 @@ DeleteResponsePlanOutcome SSMIncidentsClient::DeleteResponsePlan(const DeleteRes
     endpointResolutionOutcome.GetResult().AddPathSegments("/deleteResponsePlan");
   };
 
-  return DeleteResponsePlanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteResponsePlanOutcome(result.GetResultWithOwnership())
+                            : DeleteResponsePlanOutcome(std::move(result.GetError()));
 }
 
 DeleteTimelineEventOutcome SSMIncidentsClient::DeleteTimelineEvent(const DeleteTimelineEventRequest& request) const {
@@ -290,7 +306,9 @@ DeleteTimelineEventOutcome SSMIncidentsClient::DeleteTimelineEvent(const DeleteT
     endpointResolutionOutcome.GetResult().AddPathSegments("/deleteTimelineEvent");
   };
 
-  return DeleteTimelineEventOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTimelineEventOutcome(result.GetResultWithOwnership())
+                            : DeleteTimelineEventOutcome(std::move(result.GetError()));
 }
 
 GetIncidentRecordOutcome SSMIncidentsClient::GetIncidentRecord(const GetIncidentRecordRequest& request) const {
@@ -305,7 +323,9 @@ GetIncidentRecordOutcome SSMIncidentsClient::GetIncidentRecord(const GetIncident
     endpointResolutionOutcome.GetResult().AddPathSegments("/getIncidentRecord");
   };
 
-  return GetIncidentRecordOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetIncidentRecordOutcome(result.GetResultWithOwnership())
+                            : GetIncidentRecordOutcome(std::move(result.GetError()));
 }
 
 GetReplicationSetOutcome SSMIncidentsClient::GetReplicationSet(const GetReplicationSetRequest& request) const {
@@ -320,7 +340,9 @@ GetReplicationSetOutcome SSMIncidentsClient::GetReplicationSet(const GetReplicat
     endpointResolutionOutcome.GetResult().AddPathSegments("/getReplicationSet");
   };
 
-  return GetReplicationSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetReplicationSetOutcome(result.GetResultWithOwnership())
+                            : GetReplicationSetOutcome(std::move(result.GetError()));
 }
 
 GetResourcePoliciesOutcome SSMIncidentsClient::GetResourcePolicies(const GetResourcePoliciesRequest& request) const {
@@ -335,7 +357,9 @@ GetResourcePoliciesOutcome SSMIncidentsClient::GetResourcePolicies(const GetReso
     endpointResolutionOutcome.GetResult().AddPathSegments("/getResourcePolicies");
   };
 
-  return GetResourcePoliciesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourcePoliciesOutcome(result.GetResultWithOwnership())
+                            : GetResourcePoliciesOutcome(std::move(result.GetError()));
 }
 
 GetResponsePlanOutcome SSMIncidentsClient::GetResponsePlan(const GetResponsePlanRequest& request) const {
@@ -350,7 +374,9 @@ GetResponsePlanOutcome SSMIncidentsClient::GetResponsePlan(const GetResponsePlan
     endpointResolutionOutcome.GetResult().AddPathSegments("/getResponsePlan");
   };
 
-  return GetResponsePlanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetResponsePlanOutcome(result.GetResultWithOwnership())
+                            : GetResponsePlanOutcome(std::move(result.GetError()));
 }
 
 GetTimelineEventOutcome SSMIncidentsClient::GetTimelineEvent(const GetTimelineEventRequest& request) const {
@@ -370,7 +396,9 @@ GetTimelineEventOutcome SSMIncidentsClient::GetTimelineEvent(const GetTimelineEv
     endpointResolutionOutcome.GetResult().AddPathSegments("/getTimelineEvent");
   };
 
-  return GetTimelineEventOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTimelineEventOutcome(result.GetResultWithOwnership())
+                            : GetTimelineEventOutcome(std::move(result.GetError()));
 }
 
 ListIncidentFindingsOutcome SSMIncidentsClient::ListIncidentFindings(const ListIncidentFindingsRequest& request) const {
@@ -379,7 +407,9 @@ ListIncidentFindingsOutcome SSMIncidentsClient::ListIncidentFindings(const ListI
     endpointResolutionOutcome.GetResult().AddPathSegments("/listIncidentFindings");
   };
 
-  return ListIncidentFindingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListIncidentFindingsOutcome(result.GetResultWithOwnership())
+                            : ListIncidentFindingsOutcome(std::move(result.GetError()));
 }
 
 ListIncidentRecordsOutcome SSMIncidentsClient::ListIncidentRecords(const ListIncidentRecordsRequest& request) const {
@@ -388,7 +418,9 @@ ListIncidentRecordsOutcome SSMIncidentsClient::ListIncidentRecords(const ListInc
     endpointResolutionOutcome.GetResult().AddPathSegments("/listIncidentRecords");
   };
 
-  return ListIncidentRecordsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListIncidentRecordsOutcome(result.GetResultWithOwnership())
+                            : ListIncidentRecordsOutcome(std::move(result.GetError()));
 }
 
 ListRelatedItemsOutcome SSMIncidentsClient::ListRelatedItems(const ListRelatedItemsRequest& request) const {
@@ -397,7 +429,9 @@ ListRelatedItemsOutcome SSMIncidentsClient::ListRelatedItems(const ListRelatedIt
     endpointResolutionOutcome.GetResult().AddPathSegments("/listRelatedItems");
   };
 
-  return ListRelatedItemsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRelatedItemsOutcome(result.GetResultWithOwnership())
+                            : ListRelatedItemsOutcome(std::move(result.GetError()));
 }
 
 ListReplicationSetsOutcome SSMIncidentsClient::ListReplicationSets(const ListReplicationSetsRequest& request) const {
@@ -406,7 +440,9 @@ ListReplicationSetsOutcome SSMIncidentsClient::ListReplicationSets(const ListRep
     endpointResolutionOutcome.GetResult().AddPathSegments("/listReplicationSets");
   };
 
-  return ListReplicationSetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListReplicationSetsOutcome(result.GetResultWithOwnership())
+                            : ListReplicationSetsOutcome(std::move(result.GetError()));
 }
 
 ListResponsePlansOutcome SSMIncidentsClient::ListResponsePlans(const ListResponsePlansRequest& request) const {
@@ -415,7 +451,9 @@ ListResponsePlansOutcome SSMIncidentsClient::ListResponsePlans(const ListRespons
     endpointResolutionOutcome.GetResult().AddPathSegments("/listResponsePlans");
   };
 
-  return ListResponsePlansOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResponsePlansOutcome(result.GetResultWithOwnership())
+                            : ListResponsePlansOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome SSMIncidentsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -431,7 +469,9 @@ ListTagsForResourceOutcome SSMIncidentsClient::ListTagsForResource(const ListTag
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTimelineEventsOutcome SSMIncidentsClient::ListTimelineEvents(const ListTimelineEventsRequest& request) const {
@@ -440,7 +480,9 @@ ListTimelineEventsOutcome SSMIncidentsClient::ListTimelineEvents(const ListTimel
     endpointResolutionOutcome.GetResult().AddPathSegments("/listTimelineEvents");
   };
 
-  return ListTimelineEventsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTimelineEventsOutcome(result.GetResultWithOwnership())
+                            : ListTimelineEventsOutcome(std::move(result.GetError()));
 }
 
 PutResourcePolicyOutcome SSMIncidentsClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const {
@@ -449,7 +491,9 @@ PutResourcePolicyOutcome SSMIncidentsClient::PutResourcePolicy(const PutResource
     endpointResolutionOutcome.GetResult().AddPathSegments("/putResourcePolicy");
   };
 
-  return PutResourcePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : PutResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 StartIncidentOutcome SSMIncidentsClient::StartIncident(const StartIncidentRequest& request) const {
@@ -458,7 +502,8 @@ StartIncidentOutcome SSMIncidentsClient::StartIncident(const StartIncidentReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/startIncident");
   };
 
-  return StartIncidentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartIncidentOutcome(result.GetResultWithOwnership()) : StartIncidentOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome SSMIncidentsClient::TagResource(const TagResourceRequest& request) const {
@@ -474,7 +519,8 @@ TagResourceOutcome SSMIncidentsClient::TagResource(const TagResourceRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome SSMIncidentsClient::UntagResource(const UntagResourceRequest& request) const {
@@ -495,7 +541,8 @@ UntagResourceOutcome SSMIncidentsClient::UntagResource(const UntagResourceReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateDeletionProtectionOutcome SSMIncidentsClient::UpdateDeletionProtection(const UpdateDeletionProtectionRequest& request) const {
@@ -504,7 +551,9 @@ UpdateDeletionProtectionOutcome SSMIncidentsClient::UpdateDeletionProtection(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/updateDeletionProtection");
   };
 
-  return UpdateDeletionProtectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDeletionProtectionOutcome(result.GetResultWithOwnership())
+                            : UpdateDeletionProtectionOutcome(std::move(result.GetError()));
 }
 
 UpdateIncidentRecordOutcome SSMIncidentsClient::UpdateIncidentRecord(const UpdateIncidentRecordRequest& request) const {
@@ -513,7 +562,9 @@ UpdateIncidentRecordOutcome SSMIncidentsClient::UpdateIncidentRecord(const Updat
     endpointResolutionOutcome.GetResult().AddPathSegments("/updateIncidentRecord");
   };
 
-  return UpdateIncidentRecordOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateIncidentRecordOutcome(result.GetResultWithOwnership())
+                            : UpdateIncidentRecordOutcome(std::move(result.GetError()));
 }
 
 UpdateRelatedItemsOutcome SSMIncidentsClient::UpdateRelatedItems(const UpdateRelatedItemsRequest& request) const {
@@ -522,7 +573,9 @@ UpdateRelatedItemsOutcome SSMIncidentsClient::UpdateRelatedItems(const UpdateRel
     endpointResolutionOutcome.GetResult().AddPathSegments("/updateRelatedItems");
   };
 
-  return UpdateRelatedItemsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRelatedItemsOutcome(result.GetResultWithOwnership())
+                            : UpdateRelatedItemsOutcome(std::move(result.GetError()));
 }
 
 UpdateReplicationSetOutcome SSMIncidentsClient::UpdateReplicationSet(const UpdateReplicationSetRequest& request) const {
@@ -531,7 +584,9 @@ UpdateReplicationSetOutcome SSMIncidentsClient::UpdateReplicationSet(const Updat
     endpointResolutionOutcome.GetResult().AddPathSegments("/updateReplicationSet");
   };
 
-  return UpdateReplicationSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateReplicationSetOutcome(result.GetResultWithOwnership())
+                            : UpdateReplicationSetOutcome(std::move(result.GetError()));
 }
 
 UpdateResponsePlanOutcome SSMIncidentsClient::UpdateResponsePlan(const UpdateResponsePlanRequest& request) const {
@@ -540,7 +595,9 @@ UpdateResponsePlanOutcome SSMIncidentsClient::UpdateResponsePlan(const UpdateRes
     endpointResolutionOutcome.GetResult().AddPathSegments("/updateResponsePlan");
   };
 
-  return UpdateResponsePlanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateResponsePlanOutcome(result.GetResultWithOwnership())
+                            : UpdateResponsePlanOutcome(std::move(result.GetError()));
 }
 
 UpdateTimelineEventOutcome SSMIncidentsClient::UpdateTimelineEvent(const UpdateTimelineEventRequest& request) const {
@@ -549,5 +606,7 @@ UpdateTimelineEventOutcome SSMIncidentsClient::UpdateTimelineEvent(const UpdateT
     endpointResolutionOutcome.GetResult().AddPathSegments("/updateTimelineEvent");
   };
 
-  return UpdateTimelineEventOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTimelineEventOutcome(result.GetResultWithOwnership())
+                            : UpdateTimelineEventOutcome(std::move(result.GetError()));
 }

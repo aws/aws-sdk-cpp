@@ -218,7 +218,8 @@ CancelJobRunOutcome EMRContainersClient::CancelJobRun(const CancelJobRunRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return CancelJobRunOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? CancelJobRunOutcome(result.GetResultWithOwnership()) : CancelJobRunOutcome(std::move(result.GetError()));
 }
 
 CreateJobTemplateOutcome EMRContainersClient::CreateJobTemplate(const CreateJobTemplateRequest& request) const {
@@ -227,7 +228,9 @@ CreateJobTemplateOutcome EMRContainersClient::CreateJobTemplate(const CreateJobT
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobtemplates");
   };
 
-  return CreateJobTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateJobTemplateOutcome(result.GetResultWithOwnership())
+                            : CreateJobTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateManagedEndpointOutcome EMRContainersClient::CreateManagedEndpoint(const CreateManagedEndpointRequest& request) const {
@@ -244,7 +247,9 @@ CreateManagedEndpointOutcome EMRContainersClient::CreateManagedEndpoint(const Cr
     endpointResolutionOutcome.GetResult().AddPathSegments("/endpoints");
   };
 
-  return CreateManagedEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateManagedEndpointOutcome(result.GetResultWithOwnership())
+                            : CreateManagedEndpointOutcome(std::move(result.GetError()));
 }
 
 CreateSecurityConfigurationOutcome EMRContainersClient::CreateSecurityConfiguration(
@@ -254,7 +259,9 @@ CreateSecurityConfigurationOutcome EMRContainersClient::CreateSecurityConfigurat
     endpointResolutionOutcome.GetResult().AddPathSegments("/securityconfigurations");
   };
 
-  return CreateSecurityConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSecurityConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateSecurityConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateVirtualClusterOutcome EMRContainersClient::CreateVirtualCluster(const CreateVirtualClusterRequest& request) const {
@@ -263,7 +270,9 @@ CreateVirtualClusterOutcome EMRContainersClient::CreateVirtualCluster(const Crea
     endpointResolutionOutcome.GetResult().AddPathSegments("/virtualclusters");
   };
 
-  return CreateVirtualClusterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateVirtualClusterOutcome(result.GetResultWithOwnership())
+                            : CreateVirtualClusterOutcome(std::move(result.GetError()));
 }
 
 DeleteJobTemplateOutcome EMRContainersClient::DeleteJobTemplate(const DeleteJobTemplateRequest& request) const {
@@ -279,7 +288,9 @@ DeleteJobTemplateOutcome EMRContainersClient::DeleteJobTemplate(const DeleteJobT
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteJobTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteJobTemplateOutcome(result.GetResultWithOwnership())
+                            : DeleteJobTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteManagedEndpointOutcome EMRContainersClient::DeleteManagedEndpoint(const DeleteManagedEndpointRequest& request) const {
@@ -302,7 +313,9 @@ DeleteManagedEndpointOutcome EMRContainersClient::DeleteManagedEndpoint(const De
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteManagedEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteManagedEndpointOutcome(result.GetResultWithOwnership())
+                            : DeleteManagedEndpointOutcome(std::move(result.GetError()));
 }
 
 DeleteVirtualClusterOutcome EMRContainersClient::DeleteVirtualCluster(const DeleteVirtualClusterRequest& request) const {
@@ -318,7 +331,9 @@ DeleteVirtualClusterOutcome EMRContainersClient::DeleteVirtualCluster(const Dele
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteVirtualClusterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteVirtualClusterOutcome(result.GetResultWithOwnership())
+                            : DeleteVirtualClusterOutcome(std::move(result.GetError()));
 }
 
 DescribeJobRunOutcome EMRContainersClient::DescribeJobRun(const DescribeJobRunRequest& request) const {
@@ -341,7 +356,8 @@ DescribeJobRunOutcome EMRContainersClient::DescribeJobRun(const DescribeJobRunRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DescribeJobRunOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeJobRunOutcome(result.GetResultWithOwnership()) : DescribeJobRunOutcome(std::move(result.GetError()));
 }
 
 DescribeJobTemplateOutcome EMRContainersClient::DescribeJobTemplate(const DescribeJobTemplateRequest& request) const {
@@ -357,7 +373,9 @@ DescribeJobTemplateOutcome EMRContainersClient::DescribeJobTemplate(const Descri
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DescribeJobTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeJobTemplateOutcome(result.GetResultWithOwnership())
+                            : DescribeJobTemplateOutcome(std::move(result.GetError()));
 }
 
 DescribeManagedEndpointOutcome EMRContainersClient::DescribeManagedEndpoint(const DescribeManagedEndpointRequest& request) const {
@@ -380,7 +398,9 @@ DescribeManagedEndpointOutcome EMRContainersClient::DescribeManagedEndpoint(cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DescribeManagedEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeManagedEndpointOutcome(result.GetResultWithOwnership())
+                            : DescribeManagedEndpointOutcome(std::move(result.GetError()));
 }
 
 DescribeSecurityConfigurationOutcome EMRContainersClient::DescribeSecurityConfiguration(
@@ -397,7 +417,9 @@ DescribeSecurityConfigurationOutcome EMRContainersClient::DescribeSecurityConfig
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DescribeSecurityConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeSecurityConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeSecurityConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeVirtualClusterOutcome EMRContainersClient::DescribeVirtualCluster(const DescribeVirtualClusterRequest& request) const {
@@ -413,7 +435,9 @@ DescribeVirtualClusterOutcome EMRContainersClient::DescribeVirtualCluster(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DescribeVirtualClusterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeVirtualClusterOutcome(result.GetResultWithOwnership())
+                            : DescribeVirtualClusterOutcome(std::move(result.GetError()));
 }
 
 GetManagedEndpointSessionCredentialsOutcome EMRContainersClient::GetManagedEndpointSessionCredentials(
@@ -438,7 +462,9 @@ GetManagedEndpointSessionCredentialsOutcome EMRContainersClient::GetManagedEndpo
     endpointResolutionOutcome.GetResult().AddPathSegments("/credentials");
   };
 
-  return GetManagedEndpointSessionCredentialsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetManagedEndpointSessionCredentialsOutcome(result.GetResultWithOwnership())
+                            : GetManagedEndpointSessionCredentialsOutcome(std::move(result.GetError()));
 }
 
 ListJobRunsOutcome EMRContainersClient::ListJobRuns(const ListJobRunsRequest& request) const {
@@ -455,7 +481,8 @@ ListJobRunsOutcome EMRContainersClient::ListJobRuns(const ListJobRunsRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobruns");
   };
 
-  return ListJobRunsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListJobRunsOutcome(result.GetResultWithOwnership()) : ListJobRunsOutcome(std::move(result.GetError()));
 }
 
 ListJobTemplatesOutcome EMRContainersClient::ListJobTemplates(const ListJobTemplatesRequest& request) const {
@@ -464,7 +491,9 @@ ListJobTemplatesOutcome EMRContainersClient::ListJobTemplates(const ListJobTempl
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobtemplates");
   };
 
-  return ListJobTemplatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListJobTemplatesOutcome(result.GetResultWithOwnership())
+                            : ListJobTemplatesOutcome(std::move(result.GetError()));
 }
 
 ListManagedEndpointsOutcome EMRContainersClient::ListManagedEndpoints(const ListManagedEndpointsRequest& request) const {
@@ -481,7 +510,9 @@ ListManagedEndpointsOutcome EMRContainersClient::ListManagedEndpoints(const List
     endpointResolutionOutcome.GetResult().AddPathSegments("/endpoints");
   };
 
-  return ListManagedEndpointsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListManagedEndpointsOutcome(result.GetResultWithOwnership())
+                            : ListManagedEndpointsOutcome(std::move(result.GetError()));
 }
 
 ListSecurityConfigurationsOutcome EMRContainersClient::ListSecurityConfigurations(const ListSecurityConfigurationsRequest& request) const {
@@ -490,7 +521,9 @@ ListSecurityConfigurationsOutcome EMRContainersClient::ListSecurityConfiguration
     endpointResolutionOutcome.GetResult().AddPathSegments("/securityconfigurations");
   };
 
-  return ListSecurityConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSecurityConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListSecurityConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome EMRContainersClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -506,7 +539,9 @@ ListTagsForResourceOutcome EMRContainersClient::ListTagsForResource(const ListTa
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListVirtualClustersOutcome EMRContainersClient::ListVirtualClusters(const ListVirtualClustersRequest& request) const {
@@ -515,7 +550,9 @@ ListVirtualClustersOutcome EMRContainersClient::ListVirtualClusters(const ListVi
     endpointResolutionOutcome.GetResult().AddPathSegments("/virtualclusters");
   };
 
-  return ListVirtualClustersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListVirtualClustersOutcome(result.GetResultWithOwnership())
+                            : ListVirtualClustersOutcome(std::move(result.GetError()));
 }
 
 StartJobRunOutcome EMRContainersClient::StartJobRun(const StartJobRunRequest& request) const {
@@ -532,7 +569,8 @@ StartJobRunOutcome EMRContainersClient::StartJobRun(const StartJobRunRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobruns");
   };
 
-  return StartJobRunOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartJobRunOutcome(result.GetResultWithOwnership()) : StartJobRunOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome EMRContainersClient::TagResource(const TagResourceRequest& request) const {
@@ -548,7 +586,8 @@ TagResourceOutcome EMRContainersClient::TagResource(const TagResourceRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome EMRContainersClient::UntagResource(const UntagResourceRequest& request) const {
@@ -569,5 +608,6 @@ UntagResourceOutcome EMRContainersClient::UntagResource(const UntagResourceReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }

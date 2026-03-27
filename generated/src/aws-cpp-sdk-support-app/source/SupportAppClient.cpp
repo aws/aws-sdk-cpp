@@ -191,7 +191,9 @@ CreateSlackChannelConfigurationOutcome SupportAppClient::CreateSlackChannelConfi
     endpointResolutionOutcome.GetResult().AddPathSegments("/control/create-slack-channel-configuration");
   };
 
-  return CreateSlackChannelConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSlackChannelConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateSlackChannelConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteAccountAliasOutcome SupportAppClient::DeleteAccountAlias(const DeleteAccountAliasRequest& request) const {
@@ -200,7 +202,9 @@ DeleteAccountAliasOutcome SupportAppClient::DeleteAccountAlias(const DeleteAccou
     endpointResolutionOutcome.GetResult().AddPathSegments("/control/delete-account-alias");
   };
 
-  return DeleteAccountAliasOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAccountAliasOutcome(result.GetResultWithOwnership())
+                            : DeleteAccountAliasOutcome(std::move(result.GetError()));
 }
 
 DeleteSlackChannelConfigurationOutcome SupportAppClient::DeleteSlackChannelConfiguration(
@@ -210,7 +214,9 @@ DeleteSlackChannelConfigurationOutcome SupportAppClient::DeleteSlackChannelConfi
     endpointResolutionOutcome.GetResult().AddPathSegments("/control/delete-slack-channel-configuration");
   };
 
-  return DeleteSlackChannelConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSlackChannelConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteSlackChannelConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteSlackWorkspaceConfigurationOutcome SupportAppClient::DeleteSlackWorkspaceConfiguration(
@@ -220,7 +226,9 @@ DeleteSlackWorkspaceConfigurationOutcome SupportAppClient::DeleteSlackWorkspaceC
     endpointResolutionOutcome.GetResult().AddPathSegments("/control/delete-slack-workspace-configuration");
   };
 
-  return DeleteSlackWorkspaceConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSlackWorkspaceConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteSlackWorkspaceConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetAccountAliasOutcome SupportAppClient::GetAccountAlias(const GetAccountAliasRequest& request) const {
@@ -229,7 +237,9 @@ GetAccountAliasOutcome SupportAppClient::GetAccountAlias(const GetAccountAliasRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/control/get-account-alias");
   };
 
-  return GetAccountAliasOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAccountAliasOutcome(result.GetResultWithOwnership())
+                            : GetAccountAliasOutcome(std::move(result.GetError()));
 }
 
 ListSlackChannelConfigurationsOutcome SupportAppClient::ListSlackChannelConfigurations(
@@ -239,7 +249,9 @@ ListSlackChannelConfigurationsOutcome SupportAppClient::ListSlackChannelConfigur
     endpointResolutionOutcome.GetResult().AddPathSegments("/control/list-slack-channel-configurations");
   };
 
-  return ListSlackChannelConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSlackChannelConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListSlackChannelConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListSlackWorkspaceConfigurationsOutcome SupportAppClient::ListSlackWorkspaceConfigurations(
@@ -249,7 +261,9 @@ ListSlackWorkspaceConfigurationsOutcome SupportAppClient::ListSlackWorkspaceConf
     endpointResolutionOutcome.GetResult().AddPathSegments("/control/list-slack-workspace-configurations");
   };
 
-  return ListSlackWorkspaceConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSlackWorkspaceConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListSlackWorkspaceConfigurationsOutcome(std::move(result.GetError()));
 }
 
 PutAccountAliasOutcome SupportAppClient::PutAccountAlias(const PutAccountAliasRequest& request) const {
@@ -258,7 +272,9 @@ PutAccountAliasOutcome SupportAppClient::PutAccountAlias(const PutAccountAliasRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/control/put-account-alias");
   };
 
-  return PutAccountAliasOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutAccountAliasOutcome(result.GetResultWithOwnership())
+                            : PutAccountAliasOutcome(std::move(result.GetError()));
 }
 
 RegisterSlackWorkspaceForOrganizationOutcome SupportAppClient::RegisterSlackWorkspaceForOrganization(
@@ -268,7 +284,9 @@ RegisterSlackWorkspaceForOrganizationOutcome SupportAppClient::RegisterSlackWork
     endpointResolutionOutcome.GetResult().AddPathSegments("/control/register-slack-workspace-for-organization");
   };
 
-  return RegisterSlackWorkspaceForOrganizationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterSlackWorkspaceForOrganizationOutcome(result.GetResultWithOwnership())
+                            : RegisterSlackWorkspaceForOrganizationOutcome(std::move(result.GetError()));
 }
 
 UpdateSlackChannelConfigurationOutcome SupportAppClient::UpdateSlackChannelConfiguration(
@@ -278,5 +296,7 @@ UpdateSlackChannelConfigurationOutcome SupportAppClient::UpdateSlackChannelConfi
     endpointResolutionOutcome.GetResult().AddPathSegments("/control/update-slack-channel-configuration");
   };
 
-  return UpdateSlackChannelConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSlackChannelConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateSlackChannelConfigurationOutcome(std::move(result.GetError()));
 }

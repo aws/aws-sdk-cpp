@@ -229,241 +229,345 @@ EMRClient::InvokeOperationOutcome EMRClient::InvokeServiceOperation(const Amazon
 }
 
 AddInstanceFleetOutcome EMRClient::AddInstanceFleet(const AddInstanceFleetRequest& request) const {
-  return AddInstanceFleetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddInstanceFleetOutcome(result.GetResultWithOwnership())
+                            : AddInstanceFleetOutcome(std::move(result.GetError()));
 }
 
 AddInstanceGroupsOutcome EMRClient::AddInstanceGroups(const AddInstanceGroupsRequest& request) const {
-  return AddInstanceGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddInstanceGroupsOutcome(result.GetResultWithOwnership())
+                            : AddInstanceGroupsOutcome(std::move(result.GetError()));
 }
 
 AddJobFlowStepsOutcome EMRClient::AddJobFlowSteps(const AddJobFlowStepsRequest& request) const {
-  return AddJobFlowStepsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddJobFlowStepsOutcome(result.GetResultWithOwnership())
+                            : AddJobFlowStepsOutcome(std::move(result.GetError()));
 }
 
 AddTagsOutcome EMRClient::AddTags(const AddTagsRequest& request) const {
-  return AddTagsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddTagsOutcome(result.GetResultWithOwnership()) : AddTagsOutcome(std::move(result.GetError()));
 }
 
 CancelStepsOutcome EMRClient::CancelSteps(const CancelStepsRequest& request) const {
-  return CancelStepsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelStepsOutcome(result.GetResultWithOwnership()) : CancelStepsOutcome(std::move(result.GetError()));
 }
 
 CreatePersistentAppUIOutcome EMRClient::CreatePersistentAppUI(const CreatePersistentAppUIRequest& request) const {
-  return CreatePersistentAppUIOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePersistentAppUIOutcome(result.GetResultWithOwnership())
+                            : CreatePersistentAppUIOutcome(std::move(result.GetError()));
 }
 
 CreateSecurityConfigurationOutcome EMRClient::CreateSecurityConfiguration(const CreateSecurityConfigurationRequest& request) const {
-  return CreateSecurityConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSecurityConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateSecurityConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateStudioOutcome EMRClient::CreateStudio(const CreateStudioRequest& request) const {
-  return CreateStudioOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateStudioOutcome(result.GetResultWithOwnership()) : CreateStudioOutcome(std::move(result.GetError()));
 }
 
 CreateStudioSessionMappingOutcome EMRClient::CreateStudioSessionMapping(const CreateStudioSessionMappingRequest& request) const {
-  return CreateStudioSessionMappingOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateStudioSessionMappingOutcome(result.GetResultWithOwnership())
+                            : CreateStudioSessionMappingOutcome(std::move(result.GetError()));
 }
 
 DeleteSecurityConfigurationOutcome EMRClient::DeleteSecurityConfiguration(const DeleteSecurityConfigurationRequest& request) const {
-  return DeleteSecurityConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSecurityConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteSecurityConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteStudioOutcome EMRClient::DeleteStudio(const DeleteStudioRequest& request) const {
-  return DeleteStudioOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteStudioOutcome(result.GetResultWithOwnership()) : DeleteStudioOutcome(std::move(result.GetError()));
 }
 
 DeleteStudioSessionMappingOutcome EMRClient::DeleteStudioSessionMapping(const DeleteStudioSessionMappingRequest& request) const {
-  return DeleteStudioSessionMappingOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteStudioSessionMappingOutcome(result.GetResultWithOwnership())
+                            : DeleteStudioSessionMappingOutcome(std::move(result.GetError()));
 }
 
 DescribeClusterOutcome EMRClient::DescribeCluster(const DescribeClusterRequest& request) const {
-  return DescribeClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeClusterOutcome(result.GetResultWithOwnership())
+                            : DescribeClusterOutcome(std::move(result.GetError()));
 }
 
 DescribeNotebookExecutionOutcome EMRClient::DescribeNotebookExecution(const DescribeNotebookExecutionRequest& request) const {
-  return DescribeNotebookExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeNotebookExecutionOutcome(result.GetResultWithOwnership())
+                            : DescribeNotebookExecutionOutcome(std::move(result.GetError()));
 }
 
 DescribePersistentAppUIOutcome EMRClient::DescribePersistentAppUI(const DescribePersistentAppUIRequest& request) const {
-  return DescribePersistentAppUIOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePersistentAppUIOutcome(result.GetResultWithOwnership())
+                            : DescribePersistentAppUIOutcome(std::move(result.GetError()));
 }
 
 DescribeReleaseLabelOutcome EMRClient::DescribeReleaseLabel(const DescribeReleaseLabelRequest& request) const {
-  return DescribeReleaseLabelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeReleaseLabelOutcome(result.GetResultWithOwnership())
+                            : DescribeReleaseLabelOutcome(std::move(result.GetError()));
 }
 
 DescribeSecurityConfigurationOutcome EMRClient::DescribeSecurityConfiguration(const DescribeSecurityConfigurationRequest& request) const {
-  return DescribeSecurityConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSecurityConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeSecurityConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeStepOutcome EMRClient::DescribeStep(const DescribeStepRequest& request) const {
-  return DescribeStepOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeStepOutcome(result.GetResultWithOwnership()) : DescribeStepOutcome(std::move(result.GetError()));
 }
 
 DescribeStudioOutcome EMRClient::DescribeStudio(const DescribeStudioRequest& request) const {
-  return DescribeStudioOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeStudioOutcome(result.GetResultWithOwnership()) : DescribeStudioOutcome(std::move(result.GetError()));
 }
 
 GetAutoTerminationPolicyOutcome EMRClient::GetAutoTerminationPolicy(const GetAutoTerminationPolicyRequest& request) const {
-  return GetAutoTerminationPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAutoTerminationPolicyOutcome(result.GetResultWithOwnership())
+                            : GetAutoTerminationPolicyOutcome(std::move(result.GetError()));
 }
 
 GetBlockPublicAccessConfigurationOutcome EMRClient::GetBlockPublicAccessConfiguration(
     const GetBlockPublicAccessConfigurationRequest& request) const {
-  return GetBlockPublicAccessConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetBlockPublicAccessConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetBlockPublicAccessConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetClusterSessionCredentialsOutcome EMRClient::GetClusterSessionCredentials(const GetClusterSessionCredentialsRequest& request) const {
-  return GetClusterSessionCredentialsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetClusterSessionCredentialsOutcome(result.GetResultWithOwnership())
+                            : GetClusterSessionCredentialsOutcome(std::move(result.GetError()));
 }
 
 GetManagedScalingPolicyOutcome EMRClient::GetManagedScalingPolicy(const GetManagedScalingPolicyRequest& request) const {
-  return GetManagedScalingPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetManagedScalingPolicyOutcome(result.GetResultWithOwnership())
+                            : GetManagedScalingPolicyOutcome(std::move(result.GetError()));
 }
 
 GetOnClusterAppUIPresignedURLOutcome EMRClient::GetOnClusterAppUIPresignedURL(const GetOnClusterAppUIPresignedURLRequest& request) const {
-  return GetOnClusterAppUIPresignedURLOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetOnClusterAppUIPresignedURLOutcome(result.GetResultWithOwnership())
+                            : GetOnClusterAppUIPresignedURLOutcome(std::move(result.GetError()));
 }
 
 GetPersistentAppUIPresignedURLOutcome EMRClient::GetPersistentAppUIPresignedURL(
     const GetPersistentAppUIPresignedURLRequest& request) const {
-  return GetPersistentAppUIPresignedURLOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPersistentAppUIPresignedURLOutcome(result.GetResultWithOwnership())
+                            : GetPersistentAppUIPresignedURLOutcome(std::move(result.GetError()));
 }
 
 GetStudioSessionMappingOutcome EMRClient::GetStudioSessionMapping(const GetStudioSessionMappingRequest& request) const {
-  return GetStudioSessionMappingOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetStudioSessionMappingOutcome(result.GetResultWithOwnership())
+                            : GetStudioSessionMappingOutcome(std::move(result.GetError()));
 }
 
 ListBootstrapActionsOutcome EMRClient::ListBootstrapActions(const ListBootstrapActionsRequest& request) const {
-  return ListBootstrapActionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBootstrapActionsOutcome(result.GetResultWithOwnership())
+                            : ListBootstrapActionsOutcome(std::move(result.GetError()));
 }
 
 ListClustersOutcome EMRClient::ListClusters(const ListClustersRequest& request) const {
-  return ListClustersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListClustersOutcome(result.GetResultWithOwnership()) : ListClustersOutcome(std::move(result.GetError()));
 }
 
 ListInstanceFleetsOutcome EMRClient::ListInstanceFleets(const ListInstanceFleetsRequest& request) const {
-  return ListInstanceFleetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListInstanceFleetsOutcome(result.GetResultWithOwnership())
+                            : ListInstanceFleetsOutcome(std::move(result.GetError()));
 }
 
 ListInstanceGroupsOutcome EMRClient::ListInstanceGroups(const ListInstanceGroupsRequest& request) const {
-  return ListInstanceGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListInstanceGroupsOutcome(result.GetResultWithOwnership())
+                            : ListInstanceGroupsOutcome(std::move(result.GetError()));
 }
 
 ListInstancesOutcome EMRClient::ListInstances(const ListInstancesRequest& request) const {
-  return ListInstancesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListInstancesOutcome(result.GetResultWithOwnership()) : ListInstancesOutcome(std::move(result.GetError()));
 }
 
 ListNotebookExecutionsOutcome EMRClient::ListNotebookExecutions(const ListNotebookExecutionsRequest& request) const {
-  return ListNotebookExecutionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListNotebookExecutionsOutcome(result.GetResultWithOwnership())
+                            : ListNotebookExecutionsOutcome(std::move(result.GetError()));
 }
 
 ListReleaseLabelsOutcome EMRClient::ListReleaseLabels(const ListReleaseLabelsRequest& request) const {
-  return ListReleaseLabelsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListReleaseLabelsOutcome(result.GetResultWithOwnership())
+                            : ListReleaseLabelsOutcome(std::move(result.GetError()));
 }
 
 ListSecurityConfigurationsOutcome EMRClient::ListSecurityConfigurations(const ListSecurityConfigurationsRequest& request) const {
-  return ListSecurityConfigurationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSecurityConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListSecurityConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListStepsOutcome EMRClient::ListSteps(const ListStepsRequest& request) const {
-  return ListStepsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListStepsOutcome(result.GetResultWithOwnership()) : ListStepsOutcome(std::move(result.GetError()));
 }
 
 ListStudioSessionMappingsOutcome EMRClient::ListStudioSessionMappings(const ListStudioSessionMappingsRequest& request) const {
-  return ListStudioSessionMappingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListStudioSessionMappingsOutcome(result.GetResultWithOwnership())
+                            : ListStudioSessionMappingsOutcome(std::move(result.GetError()));
 }
 
 ListStudiosOutcome EMRClient::ListStudios(const ListStudiosRequest& request) const {
-  return ListStudiosOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListStudiosOutcome(result.GetResultWithOwnership()) : ListStudiosOutcome(std::move(result.GetError()));
 }
 
 ListSupportedInstanceTypesOutcome EMRClient::ListSupportedInstanceTypes(const ListSupportedInstanceTypesRequest& request) const {
-  return ListSupportedInstanceTypesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSupportedInstanceTypesOutcome(result.GetResultWithOwnership())
+                            : ListSupportedInstanceTypesOutcome(std::move(result.GetError()));
 }
 
 ModifyClusterOutcome EMRClient::ModifyCluster(const ModifyClusterRequest& request) const {
-  return ModifyClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyClusterOutcome(result.GetResultWithOwnership()) : ModifyClusterOutcome(std::move(result.GetError()));
 }
 
 ModifyInstanceFleetOutcome EMRClient::ModifyInstanceFleet(const ModifyInstanceFleetRequest& request) const {
-  return ModifyInstanceFleetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyInstanceFleetOutcome(result.GetResultWithOwnership())
+                            : ModifyInstanceFleetOutcome(std::move(result.GetError()));
 }
 
 ModifyInstanceGroupsOutcome EMRClient::ModifyInstanceGroups(const ModifyInstanceGroupsRequest& request) const {
-  return ModifyInstanceGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyInstanceGroupsOutcome(result.GetResultWithOwnership())
+                            : ModifyInstanceGroupsOutcome(std::move(result.GetError()));
 }
 
 PutAutoScalingPolicyOutcome EMRClient::PutAutoScalingPolicy(const PutAutoScalingPolicyRequest& request) const {
-  return PutAutoScalingPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutAutoScalingPolicyOutcome(result.GetResultWithOwnership())
+                            : PutAutoScalingPolicyOutcome(std::move(result.GetError()));
 }
 
 PutAutoTerminationPolicyOutcome EMRClient::PutAutoTerminationPolicy(const PutAutoTerminationPolicyRequest& request) const {
-  return PutAutoTerminationPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutAutoTerminationPolicyOutcome(result.GetResultWithOwnership())
+                            : PutAutoTerminationPolicyOutcome(std::move(result.GetError()));
 }
 
 PutBlockPublicAccessConfigurationOutcome EMRClient::PutBlockPublicAccessConfiguration(
     const PutBlockPublicAccessConfigurationRequest& request) const {
-  return PutBlockPublicAccessConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutBlockPublicAccessConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutBlockPublicAccessConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutManagedScalingPolicyOutcome EMRClient::PutManagedScalingPolicy(const PutManagedScalingPolicyRequest& request) const {
-  return PutManagedScalingPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutManagedScalingPolicyOutcome(result.GetResultWithOwnership())
+                            : PutManagedScalingPolicyOutcome(std::move(result.GetError()));
 }
 
 RemoveAutoScalingPolicyOutcome EMRClient::RemoveAutoScalingPolicy(const RemoveAutoScalingPolicyRequest& request) const {
-  return RemoveAutoScalingPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveAutoScalingPolicyOutcome(result.GetResultWithOwnership())
+                            : RemoveAutoScalingPolicyOutcome(std::move(result.GetError()));
 }
 
 RemoveAutoTerminationPolicyOutcome EMRClient::RemoveAutoTerminationPolicy(const RemoveAutoTerminationPolicyRequest& request) const {
-  return RemoveAutoTerminationPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveAutoTerminationPolicyOutcome(result.GetResultWithOwnership())
+                            : RemoveAutoTerminationPolicyOutcome(std::move(result.GetError()));
 }
 
 RemoveManagedScalingPolicyOutcome EMRClient::RemoveManagedScalingPolicy(const RemoveManagedScalingPolicyRequest& request) const {
-  return RemoveManagedScalingPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveManagedScalingPolicyOutcome(result.GetResultWithOwnership())
+                            : RemoveManagedScalingPolicyOutcome(std::move(result.GetError()));
 }
 
 RemoveTagsOutcome EMRClient::RemoveTags(const RemoveTagsRequest& request) const {
-  return RemoveTagsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveTagsOutcome(result.GetResultWithOwnership()) : RemoveTagsOutcome(std::move(result.GetError()));
 }
 
 RunJobFlowOutcome EMRClient::RunJobFlow(const RunJobFlowRequest& request) const {
-  return RunJobFlowOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RunJobFlowOutcome(result.GetResultWithOwnership()) : RunJobFlowOutcome(std::move(result.GetError()));
 }
 
 SetKeepJobFlowAliveWhenNoStepsOutcome EMRClient::SetKeepJobFlowAliveWhenNoSteps(
     const SetKeepJobFlowAliveWhenNoStepsRequest& request) const {
-  return SetKeepJobFlowAliveWhenNoStepsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetKeepJobFlowAliveWhenNoStepsOutcome(result.GetResultWithOwnership())
+                            : SetKeepJobFlowAliveWhenNoStepsOutcome(std::move(result.GetError()));
 }
 
 SetTerminationProtectionOutcome EMRClient::SetTerminationProtection(const SetTerminationProtectionRequest& request) const {
-  return SetTerminationProtectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetTerminationProtectionOutcome(result.GetResultWithOwnership())
+                            : SetTerminationProtectionOutcome(std::move(result.GetError()));
 }
 
 SetUnhealthyNodeReplacementOutcome EMRClient::SetUnhealthyNodeReplacement(const SetUnhealthyNodeReplacementRequest& request) const {
-  return SetUnhealthyNodeReplacementOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetUnhealthyNodeReplacementOutcome(result.GetResultWithOwnership())
+                            : SetUnhealthyNodeReplacementOutcome(std::move(result.GetError()));
 }
 
 SetVisibleToAllUsersOutcome EMRClient::SetVisibleToAllUsers(const SetVisibleToAllUsersRequest& request) const {
-  return SetVisibleToAllUsersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetVisibleToAllUsersOutcome(result.GetResultWithOwnership())
+                            : SetVisibleToAllUsersOutcome(std::move(result.GetError()));
 }
 
 StartNotebookExecutionOutcome EMRClient::StartNotebookExecution(const StartNotebookExecutionRequest& request) const {
-  return StartNotebookExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartNotebookExecutionOutcome(result.GetResultWithOwnership())
+                            : StartNotebookExecutionOutcome(std::move(result.GetError()));
 }
 
 StopNotebookExecutionOutcome EMRClient::StopNotebookExecution(const StopNotebookExecutionRequest& request) const {
-  return StopNotebookExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopNotebookExecutionOutcome(result.GetResultWithOwnership())
+                            : StopNotebookExecutionOutcome(std::move(result.GetError()));
 }
 
 TerminateJobFlowsOutcome EMRClient::TerminateJobFlows(const TerminateJobFlowsRequest& request) const {
-  return TerminateJobFlowsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TerminateJobFlowsOutcome(result.GetResultWithOwnership())
+                            : TerminateJobFlowsOutcome(std::move(result.GetError()));
 }
 
 UpdateStudioOutcome EMRClient::UpdateStudio(const UpdateStudioRequest& request) const {
-  return UpdateStudioOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateStudioOutcome(result.GetResultWithOwnership()) : UpdateStudioOutcome(std::move(result.GetError()));
 }
 
 UpdateStudioSessionMappingOutcome EMRClient::UpdateStudioSessionMapping(const UpdateStudioSessionMappingRequest& request) const {
-  return UpdateStudioSessionMappingOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateStudioSessionMappingOutcome(result.GetResultWithOwnership())
+                            : UpdateStudioSessionMappingOutcome(std::move(result.GetError()));
 }

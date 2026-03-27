@@ -195,7 +195,9 @@ AcceptPrimaryEmailUpdateOutcome AccountClient::AcceptPrimaryEmailUpdate(const Ac
     endpointResolutionOutcome.GetResult().AddPathSegments("/acceptPrimaryEmailUpdate");
   };
 
-  return AcceptPrimaryEmailUpdateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptPrimaryEmailUpdateOutcome(result.GetResultWithOwnership())
+                            : AcceptPrimaryEmailUpdateOutcome(std::move(result.GetError()));
 }
 
 DeleteAlternateContactOutcome AccountClient::DeleteAlternateContact(const DeleteAlternateContactRequest& request) const {
@@ -204,7 +206,9 @@ DeleteAlternateContactOutcome AccountClient::DeleteAlternateContact(const Delete
     endpointResolutionOutcome.GetResult().AddPathSegments("/deleteAlternateContact");
   };
 
-  return DeleteAlternateContactOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAlternateContactOutcome(result.GetResultWithOwnership())
+                            : DeleteAlternateContactOutcome(std::move(result.GetError()));
 }
 
 DisableRegionOutcome AccountClient::DisableRegion(const DisableRegionRequest& request) const {
@@ -213,7 +217,8 @@ DisableRegionOutcome AccountClient::DisableRegion(const DisableRegionRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/disableRegion");
   };
 
-  return DisableRegionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableRegionOutcome(result.GetResultWithOwnership()) : DisableRegionOutcome(std::move(result.GetError()));
 }
 
 EnableRegionOutcome AccountClient::EnableRegion(const EnableRegionRequest& request) const {
@@ -222,7 +227,8 @@ EnableRegionOutcome AccountClient::EnableRegion(const EnableRegionRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/enableRegion");
   };
 
-  return EnableRegionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableRegionOutcome(result.GetResultWithOwnership()) : EnableRegionOutcome(std::move(result.GetError()));
 }
 
 GetAccountInformationOutcome AccountClient::GetAccountInformation(const GetAccountInformationRequest& request) const {
@@ -231,7 +237,9 @@ GetAccountInformationOutcome AccountClient::GetAccountInformation(const GetAccou
     endpointResolutionOutcome.GetResult().AddPathSegments("/getAccountInformation");
   };
 
-  return GetAccountInformationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAccountInformationOutcome(result.GetResultWithOwnership())
+                            : GetAccountInformationOutcome(std::move(result.GetError()));
 }
 
 GetAlternateContactOutcome AccountClient::GetAlternateContact(const GetAlternateContactRequest& request) const {
@@ -240,7 +248,9 @@ GetAlternateContactOutcome AccountClient::GetAlternateContact(const GetAlternate
     endpointResolutionOutcome.GetResult().AddPathSegments("/getAlternateContact");
   };
 
-  return GetAlternateContactOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAlternateContactOutcome(result.GetResultWithOwnership())
+                            : GetAlternateContactOutcome(std::move(result.GetError()));
 }
 
 GetContactInformationOutcome AccountClient::GetContactInformation(const GetContactInformationRequest& request) const {
@@ -249,7 +259,9 @@ GetContactInformationOutcome AccountClient::GetContactInformation(const GetConta
     endpointResolutionOutcome.GetResult().AddPathSegments("/getContactInformation");
   };
 
-  return GetContactInformationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetContactInformationOutcome(result.GetResultWithOwnership())
+                            : GetContactInformationOutcome(std::move(result.GetError()));
 }
 
 GetGovCloudAccountInformationOutcome AccountClient::GetGovCloudAccountInformation(
@@ -259,7 +271,9 @@ GetGovCloudAccountInformationOutcome AccountClient::GetGovCloudAccountInformatio
     endpointResolutionOutcome.GetResult().AddPathSegments("/getGovCloudAccountInformation");
   };
 
-  return GetGovCloudAccountInformationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetGovCloudAccountInformationOutcome(result.GetResultWithOwnership())
+                            : GetGovCloudAccountInformationOutcome(std::move(result.GetError()));
 }
 
 GetPrimaryEmailOutcome AccountClient::GetPrimaryEmail(const GetPrimaryEmailRequest& request) const {
@@ -268,7 +282,9 @@ GetPrimaryEmailOutcome AccountClient::GetPrimaryEmail(const GetPrimaryEmailReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/getPrimaryEmail");
   };
 
-  return GetPrimaryEmailOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPrimaryEmailOutcome(result.GetResultWithOwnership())
+                            : GetPrimaryEmailOutcome(std::move(result.GetError()));
 }
 
 GetRegionOptStatusOutcome AccountClient::GetRegionOptStatus(const GetRegionOptStatusRequest& request) const {
@@ -277,7 +293,9 @@ GetRegionOptStatusOutcome AccountClient::GetRegionOptStatus(const GetRegionOptSt
     endpointResolutionOutcome.GetResult().AddPathSegments("/getRegionOptStatus");
   };
 
-  return GetRegionOptStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRegionOptStatusOutcome(result.GetResultWithOwnership())
+                            : GetRegionOptStatusOutcome(std::move(result.GetError()));
 }
 
 ListRegionsOutcome AccountClient::ListRegions(const ListRegionsRequest& request) const {
@@ -286,7 +304,8 @@ ListRegionsOutcome AccountClient::ListRegions(const ListRegionsRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegments("/listRegions");
   };
 
-  return ListRegionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRegionsOutcome(result.GetResultWithOwnership()) : ListRegionsOutcome(std::move(result.GetError()));
 }
 
 PutAccountNameOutcome AccountClient::PutAccountName(const PutAccountNameRequest& request) const {
@@ -295,7 +314,8 @@ PutAccountNameOutcome AccountClient::PutAccountName(const PutAccountNameRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/putAccountName");
   };
 
-  return PutAccountNameOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutAccountNameOutcome(result.GetResultWithOwnership()) : PutAccountNameOutcome(std::move(result.GetError()));
 }
 
 PutAlternateContactOutcome AccountClient::PutAlternateContact(const PutAlternateContactRequest& request) const {
@@ -304,7 +324,9 @@ PutAlternateContactOutcome AccountClient::PutAlternateContact(const PutAlternate
     endpointResolutionOutcome.GetResult().AddPathSegments("/putAlternateContact");
   };
 
-  return PutAlternateContactOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutAlternateContactOutcome(result.GetResultWithOwnership())
+                            : PutAlternateContactOutcome(std::move(result.GetError()));
 }
 
 PutContactInformationOutcome AccountClient::PutContactInformation(const PutContactInformationRequest& request) const {
@@ -313,7 +335,9 @@ PutContactInformationOutcome AccountClient::PutContactInformation(const PutConta
     endpointResolutionOutcome.GetResult().AddPathSegments("/putContactInformation");
   };
 
-  return PutContactInformationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutContactInformationOutcome(result.GetResultWithOwnership())
+                            : PutContactInformationOutcome(std::move(result.GetError()));
 }
 
 StartPrimaryEmailUpdateOutcome AccountClient::StartPrimaryEmailUpdate(const StartPrimaryEmailUpdateRequest& request) const {
@@ -322,5 +346,7 @@ StartPrimaryEmailUpdateOutcome AccountClient::StartPrimaryEmailUpdate(const Star
     endpointResolutionOutcome.GetResult().AddPathSegments("/startPrimaryEmailUpdate");
   };
 
-  return StartPrimaryEmailUpdateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartPrimaryEmailUpdateOutcome(result.GetResultWithOwnership())
+                            : StartPrimaryEmailUpdateOutcome(std::move(result.GetError()));
 }

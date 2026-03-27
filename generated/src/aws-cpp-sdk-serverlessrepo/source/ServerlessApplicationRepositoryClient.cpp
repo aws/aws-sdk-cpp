@@ -204,7 +204,9 @@ CreateApplicationOutcome ServerlessApplicationRepositoryClient::CreateApplicatio
     endpointResolutionOutcome.GetResult().AddPathSegments("/applications");
   };
 
-  return CreateApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateApplicationOutcome(result.GetResultWithOwnership())
+                            : CreateApplicationOutcome(std::move(result.GetError()));
 }
 
 CreateApplicationVersionOutcome ServerlessApplicationRepositoryClient::CreateApplicationVersion(
@@ -228,7 +230,9 @@ CreateApplicationVersionOutcome ServerlessApplicationRepositoryClient::CreateApp
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSemanticVersion());
   };
 
-  return CreateApplicationVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateApplicationVersionOutcome(result.GetResultWithOwnership())
+                            : CreateApplicationVersionOutcome(std::move(result.GetError()));
 }
 
 CreateCloudFormationChangeSetOutcome ServerlessApplicationRepositoryClient::CreateCloudFormationChangeSet(
@@ -246,7 +250,9 @@ CreateCloudFormationChangeSetOutcome ServerlessApplicationRepositoryClient::Crea
     endpointResolutionOutcome.GetResult().AddPathSegments("/changesets");
   };
 
-  return CreateCloudFormationChangeSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCloudFormationChangeSetOutcome(result.GetResultWithOwnership())
+                            : CreateCloudFormationChangeSetOutcome(std::move(result.GetError()));
 }
 
 CreateCloudFormationTemplateOutcome ServerlessApplicationRepositoryClient::CreateCloudFormationTemplate(
@@ -264,7 +270,9 @@ CreateCloudFormationTemplateOutcome ServerlessApplicationRepositoryClient::Creat
     endpointResolutionOutcome.GetResult().AddPathSegments("/templates");
   };
 
-  return CreateCloudFormationTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCloudFormationTemplateOutcome(result.GetResultWithOwnership())
+                            : CreateCloudFormationTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteApplicationOutcome ServerlessApplicationRepositoryClient::DeleteApplication(const DeleteApplicationRequest& request) const {
@@ -280,7 +288,9 @@ DeleteApplicationOutcome ServerlessApplicationRepositoryClient::DeleteApplicatio
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
   };
 
-  return DeleteApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteApplicationOutcome(result.GetResultWithOwnership())
+                            : DeleteApplicationOutcome(std::move(result.GetError()));
 }
 
 GetApplicationOutcome ServerlessApplicationRepositoryClient::GetApplication(const GetApplicationRequest& request) const {
@@ -296,7 +306,8 @@ GetApplicationOutcome ServerlessApplicationRepositoryClient::GetApplication(cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
   };
 
-  return GetApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetApplicationOutcome(result.GetResultWithOwnership()) : GetApplicationOutcome(std::move(result.GetError()));
 }
 
 GetApplicationPolicyOutcome ServerlessApplicationRepositoryClient::GetApplicationPolicy(const GetApplicationPolicyRequest& request) const {
@@ -313,7 +324,9 @@ GetApplicationPolicyOutcome ServerlessApplicationRepositoryClient::GetApplicatio
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return GetApplicationPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetApplicationPolicyOutcome(result.GetResultWithOwnership())
+                            : GetApplicationPolicyOutcome(std::move(result.GetError()));
 }
 
 GetCloudFormationTemplateOutcome ServerlessApplicationRepositoryClient::GetCloudFormationTemplate(
@@ -337,7 +350,9 @@ GetCloudFormationTemplateOutcome ServerlessApplicationRepositoryClient::GetCloud
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTemplateId());
   };
 
-  return GetCloudFormationTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCloudFormationTemplateOutcome(result.GetResultWithOwnership())
+                            : GetCloudFormationTemplateOutcome(std::move(result.GetError()));
 }
 
 ListApplicationDependenciesOutcome ServerlessApplicationRepositoryClient::ListApplicationDependencies(
@@ -355,7 +370,9 @@ ListApplicationDependenciesOutcome ServerlessApplicationRepositoryClient::ListAp
     endpointResolutionOutcome.GetResult().AddPathSegments("/dependencies");
   };
 
-  return ListApplicationDependenciesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListApplicationDependenciesOutcome(result.GetResultWithOwnership())
+                            : ListApplicationDependenciesOutcome(std::move(result.GetError()));
 }
 
 ListApplicationVersionsOutcome ServerlessApplicationRepositoryClient::ListApplicationVersions(
@@ -373,7 +390,9 @@ ListApplicationVersionsOutcome ServerlessApplicationRepositoryClient::ListApplic
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
   };
 
-  return ListApplicationVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListApplicationVersionsOutcome(result.GetResultWithOwnership())
+                            : ListApplicationVersionsOutcome(std::move(result.GetError()));
 }
 
 ListApplicationsOutcome ServerlessApplicationRepositoryClient::ListApplications(const ListApplicationsRequest& request) const {
@@ -382,7 +401,9 @@ ListApplicationsOutcome ServerlessApplicationRepositoryClient::ListApplications(
     endpointResolutionOutcome.GetResult().AddPathSegments("/applications");
   };
 
-  return ListApplicationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListApplicationsOutcome(result.GetResultWithOwnership())
+                            : ListApplicationsOutcome(std::move(result.GetError()));
 }
 
 PutApplicationPolicyOutcome ServerlessApplicationRepositoryClient::PutApplicationPolicy(const PutApplicationPolicyRequest& request) const {
@@ -399,7 +420,9 @@ PutApplicationPolicyOutcome ServerlessApplicationRepositoryClient::PutApplicatio
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return PutApplicationPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutApplicationPolicyOutcome(result.GetResultWithOwnership())
+                            : PutApplicationPolicyOutcome(std::move(result.GetError()));
 }
 
 UnshareApplicationOutcome ServerlessApplicationRepositoryClient::UnshareApplication(const UnshareApplicationRequest& request) const {
@@ -416,7 +439,9 @@ UnshareApplicationOutcome ServerlessApplicationRepositoryClient::UnshareApplicat
     endpointResolutionOutcome.GetResult().AddPathSegments("/unshare");
   };
 
-  return UnshareApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UnshareApplicationOutcome(result.GetResultWithOwnership())
+                            : UnshareApplicationOutcome(std::move(result.GetError()));
 }
 
 UpdateApplicationOutcome ServerlessApplicationRepositoryClient::UpdateApplication(const UpdateApplicationRequest& request) const {
@@ -432,5 +457,7 @@ UpdateApplicationOutcome ServerlessApplicationRepositoryClient::UpdateApplicatio
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
   };
 
-  return UpdateApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateApplicationOutcome(result.GetResultWithOwnership())
+                            : UpdateApplicationOutcome(std::move(result.GetError()));
 }

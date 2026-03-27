@@ -236,7 +236,9 @@ AddPolicyStatementOutcome EntityResolutionClient::AddPolicyStatement(const AddPo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStatementId());
   };
 
-  return AddPolicyStatementOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddPolicyStatementOutcome(result.GetResultWithOwnership())
+                            : AddPolicyStatementOutcome(std::move(result.GetError()));
 }
 
 BatchDeleteUniqueIdOutcome EntityResolutionClient::BatchDeleteUniqueId(const BatchDeleteUniqueIdRequest& request) const {
@@ -258,7 +260,9 @@ BatchDeleteUniqueIdOutcome EntityResolutionClient::BatchDeleteUniqueId(const Bat
     endpointResolutionOutcome.GetResult().AddPathSegments("/uniqueids");
   };
 
-  return BatchDeleteUniqueIdOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? BatchDeleteUniqueIdOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteUniqueIdOutcome(std::move(result.GetError()));
 }
 
 CreateIdMappingWorkflowOutcome EntityResolutionClient::CreateIdMappingWorkflow(const CreateIdMappingWorkflowRequest& request) const {
@@ -267,7 +271,9 @@ CreateIdMappingWorkflowOutcome EntityResolutionClient::CreateIdMappingWorkflow(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/idmappingworkflows");
   };
 
-  return CreateIdMappingWorkflowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIdMappingWorkflowOutcome(result.GetResultWithOwnership())
+                            : CreateIdMappingWorkflowOutcome(std::move(result.GetError()));
 }
 
 CreateIdNamespaceOutcome EntityResolutionClient::CreateIdNamespace(const CreateIdNamespaceRequest& request) const {
@@ -276,7 +282,9 @@ CreateIdNamespaceOutcome EntityResolutionClient::CreateIdNamespace(const CreateI
     endpointResolutionOutcome.GetResult().AddPathSegments("/idnamespaces");
   };
 
-  return CreateIdNamespaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIdNamespaceOutcome(result.GetResultWithOwnership())
+                            : CreateIdNamespaceOutcome(std::move(result.GetError()));
 }
 
 CreateMatchingWorkflowOutcome EntityResolutionClient::CreateMatchingWorkflow(const CreateMatchingWorkflowRequest& request) const {
@@ -285,7 +293,9 @@ CreateMatchingWorkflowOutcome EntityResolutionClient::CreateMatchingWorkflow(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/matchingworkflows");
   };
 
-  return CreateMatchingWorkflowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMatchingWorkflowOutcome(result.GetResultWithOwnership())
+                            : CreateMatchingWorkflowOutcome(std::move(result.GetError()));
 }
 
 CreateSchemaMappingOutcome EntityResolutionClient::CreateSchemaMapping(const CreateSchemaMappingRequest& request) const {
@@ -294,7 +304,9 @@ CreateSchemaMappingOutcome EntityResolutionClient::CreateSchemaMapping(const Cre
     endpointResolutionOutcome.GetResult().AddPathSegments("/schemas");
   };
 
-  return CreateSchemaMappingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSchemaMappingOutcome(result.GetResultWithOwnership())
+                            : CreateSchemaMappingOutcome(std::move(result.GetError()));
 }
 
 DeleteIdMappingWorkflowOutcome EntityResolutionClient::DeleteIdMappingWorkflow(const DeleteIdMappingWorkflowRequest& request) const {
@@ -310,7 +322,9 @@ DeleteIdMappingWorkflowOutcome EntityResolutionClient::DeleteIdMappingWorkflow(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkflowName());
   };
 
-  return DeleteIdMappingWorkflowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteIdMappingWorkflowOutcome(result.GetResultWithOwnership())
+                            : DeleteIdMappingWorkflowOutcome(std::move(result.GetError()));
 }
 
 DeleteIdNamespaceOutcome EntityResolutionClient::DeleteIdNamespace(const DeleteIdNamespaceRequest& request) const {
@@ -326,7 +340,9 @@ DeleteIdNamespaceOutcome EntityResolutionClient::DeleteIdNamespace(const DeleteI
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdNamespaceName());
   };
 
-  return DeleteIdNamespaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteIdNamespaceOutcome(result.GetResultWithOwnership())
+                            : DeleteIdNamespaceOutcome(std::move(result.GetError()));
 }
 
 DeleteMatchingWorkflowOutcome EntityResolutionClient::DeleteMatchingWorkflow(const DeleteMatchingWorkflowRequest& request) const {
@@ -342,7 +358,9 @@ DeleteMatchingWorkflowOutcome EntityResolutionClient::DeleteMatchingWorkflow(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkflowName());
   };
 
-  return DeleteMatchingWorkflowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMatchingWorkflowOutcome(result.GetResultWithOwnership())
+                            : DeleteMatchingWorkflowOutcome(std::move(result.GetError()));
 }
 
 DeletePolicyStatementOutcome EntityResolutionClient::DeletePolicyStatement(const DeletePolicyStatementRequest& request) const {
@@ -364,7 +382,9 @@ DeletePolicyStatementOutcome EntityResolutionClient::DeletePolicyStatement(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStatementId());
   };
 
-  return DeletePolicyStatementOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePolicyStatementOutcome(result.GetResultWithOwnership())
+                            : DeletePolicyStatementOutcome(std::move(result.GetError()));
 }
 
 DeleteSchemaMappingOutcome EntityResolutionClient::DeleteSchemaMapping(const DeleteSchemaMappingRequest& request) const {
@@ -380,7 +400,9 @@ DeleteSchemaMappingOutcome EntityResolutionClient::DeleteSchemaMapping(const Del
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSchemaName());
   };
 
-  return DeleteSchemaMappingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSchemaMappingOutcome(result.GetResultWithOwnership())
+                            : DeleteSchemaMappingOutcome(std::move(result.GetError()));
 }
 
 GenerateMatchIdOutcome EntityResolutionClient::GenerateMatchId(const GenerateMatchIdRequest& request) const {
@@ -397,7 +419,9 @@ GenerateMatchIdOutcome EntityResolutionClient::GenerateMatchId(const GenerateMat
     endpointResolutionOutcome.GetResult().AddPathSegments("/generateMatches");
   };
 
-  return GenerateMatchIdOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GenerateMatchIdOutcome(result.GetResultWithOwnership())
+                            : GenerateMatchIdOutcome(std::move(result.GetError()));
 }
 
 GetIdMappingJobOutcome EntityResolutionClient::GetIdMappingJob(const GetIdMappingJobRequest& request) const {
@@ -420,7 +444,9 @@ GetIdMappingJobOutcome EntityResolutionClient::GetIdMappingJob(const GetIdMappin
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return GetIdMappingJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetIdMappingJobOutcome(result.GetResultWithOwnership())
+                            : GetIdMappingJobOutcome(std::move(result.GetError()));
 }
 
 GetIdMappingWorkflowOutcome EntityResolutionClient::GetIdMappingWorkflow(const GetIdMappingWorkflowRequest& request) const {
@@ -436,7 +462,9 @@ GetIdMappingWorkflowOutcome EntityResolutionClient::GetIdMappingWorkflow(const G
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkflowName());
   };
 
-  return GetIdMappingWorkflowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetIdMappingWorkflowOutcome(result.GetResultWithOwnership())
+                            : GetIdMappingWorkflowOutcome(std::move(result.GetError()));
 }
 
 GetIdNamespaceOutcome EntityResolutionClient::GetIdNamespace(const GetIdNamespaceRequest& request) const {
@@ -452,7 +480,8 @@ GetIdNamespaceOutcome EntityResolutionClient::GetIdNamespace(const GetIdNamespac
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdNamespaceName());
   };
 
-  return GetIdNamespaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetIdNamespaceOutcome(result.GetResultWithOwnership()) : GetIdNamespaceOutcome(std::move(result.GetError()));
 }
 
 GetMatchIdOutcome EntityResolutionClient::GetMatchId(const GetMatchIdRequest& request) const {
@@ -469,7 +498,8 @@ GetMatchIdOutcome EntityResolutionClient::GetMatchId(const GetMatchIdRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/matches");
   };
 
-  return GetMatchIdOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetMatchIdOutcome(result.GetResultWithOwnership()) : GetMatchIdOutcome(std::move(result.GetError()));
 }
 
 GetMatchingJobOutcome EntityResolutionClient::GetMatchingJob(const GetMatchingJobRequest& request) const {
@@ -492,7 +522,8 @@ GetMatchingJobOutcome EntityResolutionClient::GetMatchingJob(const GetMatchingJo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return GetMatchingJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMatchingJobOutcome(result.GetResultWithOwnership()) : GetMatchingJobOutcome(std::move(result.GetError()));
 }
 
 GetMatchingWorkflowOutcome EntityResolutionClient::GetMatchingWorkflow(const GetMatchingWorkflowRequest& request) const {
@@ -508,7 +539,9 @@ GetMatchingWorkflowOutcome EntityResolutionClient::GetMatchingWorkflow(const Get
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkflowName());
   };
 
-  return GetMatchingWorkflowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMatchingWorkflowOutcome(result.GetResultWithOwnership())
+                            : GetMatchingWorkflowOutcome(std::move(result.GetError()));
 }
 
 GetPolicyOutcome EntityResolutionClient::GetPolicy(const GetPolicyRequest& request) const {
@@ -524,7 +557,8 @@ GetPolicyOutcome EntityResolutionClient::GetPolicy(const GetPolicyRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return GetPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPolicyOutcome(result.GetResultWithOwnership()) : GetPolicyOutcome(std::move(result.GetError()));
 }
 
 GetProviderServiceOutcome EntityResolutionClient::GetProviderService(const GetProviderServiceRequest& request) const {
@@ -546,7 +580,9 @@ GetProviderServiceOutcome EntityResolutionClient::GetProviderService(const GetPr
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProviderServiceName());
   };
 
-  return GetProviderServiceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetProviderServiceOutcome(result.GetResultWithOwnership())
+                            : GetProviderServiceOutcome(std::move(result.GetError()));
 }
 
 GetSchemaMappingOutcome EntityResolutionClient::GetSchemaMapping(const GetSchemaMappingRequest& request) const {
@@ -562,7 +598,9 @@ GetSchemaMappingOutcome EntityResolutionClient::GetSchemaMapping(const GetSchema
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSchemaName());
   };
 
-  return GetSchemaMappingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSchemaMappingOutcome(result.GetResultWithOwnership())
+                            : GetSchemaMappingOutcome(std::move(result.GetError()));
 }
 
 ListIdMappingJobsOutcome EntityResolutionClient::ListIdMappingJobs(const ListIdMappingJobsRequest& request) const {
@@ -579,7 +617,9 @@ ListIdMappingJobsOutcome EntityResolutionClient::ListIdMappingJobs(const ListIdM
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobs");
   };
 
-  return ListIdMappingJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListIdMappingJobsOutcome(result.GetResultWithOwnership())
+                            : ListIdMappingJobsOutcome(std::move(result.GetError()));
 }
 
 ListIdMappingWorkflowsOutcome EntityResolutionClient::ListIdMappingWorkflows(const ListIdMappingWorkflowsRequest& request) const {
@@ -588,7 +628,9 @@ ListIdMappingWorkflowsOutcome EntityResolutionClient::ListIdMappingWorkflows(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/idmappingworkflows");
   };
 
-  return ListIdMappingWorkflowsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListIdMappingWorkflowsOutcome(result.GetResultWithOwnership())
+                            : ListIdMappingWorkflowsOutcome(std::move(result.GetError()));
 }
 
 ListIdNamespacesOutcome EntityResolutionClient::ListIdNamespaces(const ListIdNamespacesRequest& request) const {
@@ -597,7 +639,9 @@ ListIdNamespacesOutcome EntityResolutionClient::ListIdNamespaces(const ListIdNam
     endpointResolutionOutcome.GetResult().AddPathSegments("/idnamespaces");
   };
 
-  return ListIdNamespacesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListIdNamespacesOutcome(result.GetResultWithOwnership())
+                            : ListIdNamespacesOutcome(std::move(result.GetError()));
 }
 
 ListMatchingJobsOutcome EntityResolutionClient::ListMatchingJobs(const ListMatchingJobsRequest& request) const {
@@ -614,7 +658,9 @@ ListMatchingJobsOutcome EntityResolutionClient::ListMatchingJobs(const ListMatch
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobs");
   };
 
-  return ListMatchingJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMatchingJobsOutcome(result.GetResultWithOwnership())
+                            : ListMatchingJobsOutcome(std::move(result.GetError()));
 }
 
 ListMatchingWorkflowsOutcome EntityResolutionClient::ListMatchingWorkflows(const ListMatchingWorkflowsRequest& request) const {
@@ -623,7 +669,9 @@ ListMatchingWorkflowsOutcome EntityResolutionClient::ListMatchingWorkflows(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/matchingworkflows");
   };
 
-  return ListMatchingWorkflowsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMatchingWorkflowsOutcome(result.GetResultWithOwnership())
+                            : ListMatchingWorkflowsOutcome(std::move(result.GetError()));
 }
 
 ListProviderServicesOutcome EntityResolutionClient::ListProviderServices(const ListProviderServicesRequest& request) const {
@@ -632,7 +680,9 @@ ListProviderServicesOutcome EntityResolutionClient::ListProviderServices(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/providerservices");
   };
 
-  return ListProviderServicesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListProviderServicesOutcome(result.GetResultWithOwnership())
+                            : ListProviderServicesOutcome(std::move(result.GetError()));
 }
 
 ListSchemaMappingsOutcome EntityResolutionClient::ListSchemaMappings(const ListSchemaMappingsRequest& request) const {
@@ -641,7 +691,9 @@ ListSchemaMappingsOutcome EntityResolutionClient::ListSchemaMappings(const ListS
     endpointResolutionOutcome.GetResult().AddPathSegments("/schemas");
   };
 
-  return ListSchemaMappingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSchemaMappingsOutcome(result.GetResultWithOwnership())
+                            : ListSchemaMappingsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome EntityResolutionClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -657,7 +709,9 @@ ListTagsForResourceOutcome EntityResolutionClient::ListTagsForResource(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutPolicyOutcome EntityResolutionClient::PutPolicy(const PutPolicyRequest& request) const {
@@ -673,7 +727,8 @@ PutPolicyOutcome EntityResolutionClient::PutPolicy(const PutPolicyRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return PutPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutPolicyOutcome(result.GetResultWithOwnership()) : PutPolicyOutcome(std::move(result.GetError()));
 }
 
 StartIdMappingJobOutcome EntityResolutionClient::StartIdMappingJob(const StartIdMappingJobRequest& request) const {
@@ -690,7 +745,9 @@ StartIdMappingJobOutcome EntityResolutionClient::StartIdMappingJob(const StartId
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobs");
   };
 
-  return StartIdMappingJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartIdMappingJobOutcome(result.GetResultWithOwnership())
+                            : StartIdMappingJobOutcome(std::move(result.GetError()));
 }
 
 StartMatchingJobOutcome EntityResolutionClient::StartMatchingJob(const StartMatchingJobRequest& request) const {
@@ -707,7 +764,9 @@ StartMatchingJobOutcome EntityResolutionClient::StartMatchingJob(const StartMatc
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobs");
   };
 
-  return StartMatchingJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartMatchingJobOutcome(result.GetResultWithOwnership())
+                            : StartMatchingJobOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome EntityResolutionClient::TagResource(const TagResourceRequest& request) const {
@@ -723,7 +782,8 @@ TagResourceOutcome EntityResolutionClient::TagResource(const TagResourceRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome EntityResolutionClient::UntagResource(const UntagResourceRequest& request) const {
@@ -744,7 +804,8 @@ UntagResourceOutcome EntityResolutionClient::UntagResource(const UntagResourceRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateIdMappingWorkflowOutcome EntityResolutionClient::UpdateIdMappingWorkflow(const UpdateIdMappingWorkflowRequest& request) const {
@@ -760,7 +821,9 @@ UpdateIdMappingWorkflowOutcome EntityResolutionClient::UpdateIdMappingWorkflow(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkflowName());
   };
 
-  return UpdateIdMappingWorkflowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateIdMappingWorkflowOutcome(result.GetResultWithOwnership())
+                            : UpdateIdMappingWorkflowOutcome(std::move(result.GetError()));
 }
 
 UpdateIdNamespaceOutcome EntityResolutionClient::UpdateIdNamespace(const UpdateIdNamespaceRequest& request) const {
@@ -776,7 +839,9 @@ UpdateIdNamespaceOutcome EntityResolutionClient::UpdateIdNamespace(const UpdateI
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdNamespaceName());
   };
 
-  return UpdateIdNamespaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateIdNamespaceOutcome(result.GetResultWithOwnership())
+                            : UpdateIdNamespaceOutcome(std::move(result.GetError()));
 }
 
 UpdateMatchingWorkflowOutcome EntityResolutionClient::UpdateMatchingWorkflow(const UpdateMatchingWorkflowRequest& request) const {
@@ -792,7 +857,9 @@ UpdateMatchingWorkflowOutcome EntityResolutionClient::UpdateMatchingWorkflow(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkflowName());
   };
 
-  return UpdateMatchingWorkflowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateMatchingWorkflowOutcome(result.GetResultWithOwnership())
+                            : UpdateMatchingWorkflowOutcome(std::move(result.GetError()));
 }
 
 UpdateSchemaMappingOutcome EntityResolutionClient::UpdateSchemaMapping(const UpdateSchemaMappingRequest& request) const {
@@ -808,5 +875,7 @@ UpdateSchemaMappingOutcome EntityResolutionClient::UpdateSchemaMapping(const Upd
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSchemaName());
   };
 
-  return UpdateSchemaMappingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateSchemaMappingOutcome(result.GetResultWithOwnership())
+                            : UpdateSchemaMappingOutcome(std::move(result.GetError()));
 }

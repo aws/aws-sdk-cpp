@@ -273,7 +273,9 @@ CreateAccountAssociationOutcome IoTManagedIntegrationsClient::CreateAccountAssoc
     endpointResolutionOutcome.GetResult().AddPathSegments("/account-associations");
   };
 
-  return CreateAccountAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAccountAssociationOutcome(result.GetResultWithOwnership())
+                            : CreateAccountAssociationOutcome(std::move(result.GetError()));
 }
 
 CreateCloudConnectorOutcome IoTManagedIntegrationsClient::CreateCloudConnector(const CreateCloudConnectorRequest& request) const {
@@ -282,7 +284,9 @@ CreateCloudConnectorOutcome IoTManagedIntegrationsClient::CreateCloudConnector(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/cloud-connectors");
   };
 
-  return CreateCloudConnectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCloudConnectorOutcome(result.GetResultWithOwnership())
+                            : CreateCloudConnectorOutcome(std::move(result.GetError()));
 }
 
 CreateConnectorDestinationOutcome IoTManagedIntegrationsClient::CreateConnectorDestination(
@@ -292,7 +296,9 @@ CreateConnectorDestinationOutcome IoTManagedIntegrationsClient::CreateConnectorD
     endpointResolutionOutcome.GetResult().AddPathSegments("/connector-destinations");
   };
 
-  return CreateConnectorDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConnectorDestinationOutcome(result.GetResultWithOwnership())
+                            : CreateConnectorDestinationOutcome(std::move(result.GetError()));
 }
 
 CreateCredentialLockerOutcome IoTManagedIntegrationsClient::CreateCredentialLocker(const CreateCredentialLockerRequest& request) const {
@@ -301,7 +307,9 @@ CreateCredentialLockerOutcome IoTManagedIntegrationsClient::CreateCredentialLock
     endpointResolutionOutcome.GetResult().AddPathSegments("/credential-lockers");
   };
 
-  return CreateCredentialLockerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCredentialLockerOutcome(result.GetResultWithOwnership())
+                            : CreateCredentialLockerOutcome(std::move(result.GetError()));
 }
 
 CreateDestinationOutcome IoTManagedIntegrationsClient::CreateDestination(const CreateDestinationRequest& request) const {
@@ -310,7 +318,9 @@ CreateDestinationOutcome IoTManagedIntegrationsClient::CreateDestination(const C
     endpointResolutionOutcome.GetResult().AddPathSegments("/destinations");
   };
 
-  return CreateDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDestinationOutcome(result.GetResultWithOwnership())
+                            : CreateDestinationOutcome(std::move(result.GetError()));
 }
 
 CreateEventLogConfigurationOutcome IoTManagedIntegrationsClient::CreateEventLogConfiguration(
@@ -320,7 +330,9 @@ CreateEventLogConfigurationOutcome IoTManagedIntegrationsClient::CreateEventLogC
     endpointResolutionOutcome.GetResult().AddPathSegments("/event-log-configurations");
   };
 
-  return CreateEventLogConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEventLogConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateEventLogConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateManagedThingOutcome IoTManagedIntegrationsClient::CreateManagedThing(const CreateManagedThingRequest& request) const {
@@ -329,7 +341,9 @@ CreateManagedThingOutcome IoTManagedIntegrationsClient::CreateManagedThing(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/managed-things");
   };
 
-  return CreateManagedThingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateManagedThingOutcome(result.GetResultWithOwnership())
+                            : CreateManagedThingOutcome(std::move(result.GetError()));
 }
 
 CreateNotificationConfigurationOutcome IoTManagedIntegrationsClient::CreateNotificationConfiguration(
@@ -339,7 +353,9 @@ CreateNotificationConfigurationOutcome IoTManagedIntegrationsClient::CreateNotif
     endpointResolutionOutcome.GetResult().AddPathSegments("/notification-configurations");
   };
 
-  return CreateNotificationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateNotificationConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateNotificationConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateOtaTaskOutcome IoTManagedIntegrationsClient::CreateOtaTask(const CreateOtaTaskRequest& request) const {
@@ -348,7 +364,8 @@ CreateOtaTaskOutcome IoTManagedIntegrationsClient::CreateOtaTask(const CreateOta
     endpointResolutionOutcome.GetResult().AddPathSegments("/ota-tasks");
   };
 
-  return CreateOtaTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateOtaTaskOutcome(result.GetResultWithOwnership()) : CreateOtaTaskOutcome(std::move(result.GetError()));
 }
 
 CreateOtaTaskConfigurationOutcome IoTManagedIntegrationsClient::CreateOtaTaskConfiguration(
@@ -358,7 +375,9 @@ CreateOtaTaskConfigurationOutcome IoTManagedIntegrationsClient::CreateOtaTaskCon
     endpointResolutionOutcome.GetResult().AddPathSegments("/ota-task-configurations");
   };
 
-  return CreateOtaTaskConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateOtaTaskConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateOtaTaskConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateProvisioningProfileOutcome IoTManagedIntegrationsClient::CreateProvisioningProfile(
@@ -368,7 +387,9 @@ CreateProvisioningProfileOutcome IoTManagedIntegrationsClient::CreateProvisionin
     endpointResolutionOutcome.GetResult().AddPathSegments("/provisioning-profiles");
   };
 
-  return CreateProvisioningProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProvisioningProfileOutcome(result.GetResultWithOwnership())
+                            : CreateProvisioningProfileOutcome(std::move(result.GetError()));
 }
 
 DeleteAccountAssociationOutcome IoTManagedIntegrationsClient::DeleteAccountAssociation(
@@ -385,7 +406,9 @@ DeleteAccountAssociationOutcome IoTManagedIntegrationsClient::DeleteAccountAssoc
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccountAssociationId());
   };
 
-  return DeleteAccountAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAccountAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteAccountAssociationOutcome(std::move(result.GetError()));
 }
 
 DeleteCloudConnectorOutcome IoTManagedIntegrationsClient::DeleteCloudConnector(const DeleteCloudConnectorRequest& request) const {
@@ -401,7 +424,9 @@ DeleteCloudConnectorOutcome IoTManagedIntegrationsClient::DeleteCloudConnector(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteCloudConnectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCloudConnectorOutcome(result.GetResultWithOwnership())
+                            : DeleteCloudConnectorOutcome(std::move(result.GetError()));
 }
 
 DeleteConnectorDestinationOutcome IoTManagedIntegrationsClient::DeleteConnectorDestination(
@@ -418,7 +443,9 @@ DeleteConnectorDestinationOutcome IoTManagedIntegrationsClient::DeleteConnectorD
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteConnectorDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConnectorDestinationOutcome(result.GetResultWithOwnership())
+                            : DeleteConnectorDestinationOutcome(std::move(result.GetError()));
 }
 
 DeleteCredentialLockerOutcome IoTManagedIntegrationsClient::DeleteCredentialLocker(const DeleteCredentialLockerRequest& request) const {
@@ -434,7 +461,9 @@ DeleteCredentialLockerOutcome IoTManagedIntegrationsClient::DeleteCredentialLock
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteCredentialLockerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCredentialLockerOutcome(result.GetResultWithOwnership())
+                            : DeleteCredentialLockerOutcome(std::move(result.GetError()));
 }
 
 DeleteDestinationOutcome IoTManagedIntegrationsClient::DeleteDestination(const DeleteDestinationRequest& request) const {
@@ -450,7 +479,9 @@ DeleteDestinationOutcome IoTManagedIntegrationsClient::DeleteDestination(const D
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDestinationOutcome(result.GetResultWithOwnership())
+                            : DeleteDestinationOutcome(std::move(result.GetError()));
 }
 
 DeleteEventLogConfigurationOutcome IoTManagedIntegrationsClient::DeleteEventLogConfiguration(
@@ -467,7 +498,9 @@ DeleteEventLogConfigurationOutcome IoTManagedIntegrationsClient::DeleteEventLogC
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteEventLogConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteEventLogConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteEventLogConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteManagedThingOutcome IoTManagedIntegrationsClient::DeleteManagedThing(const DeleteManagedThingRequest& request) const {
@@ -483,7 +516,9 @@ DeleteManagedThingOutcome IoTManagedIntegrationsClient::DeleteManagedThing(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteManagedThingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteManagedThingOutcome(result.GetResultWithOwnership())
+                            : DeleteManagedThingOutcome(std::move(result.GetError()));
 }
 
 DeleteNotificationConfigurationOutcome IoTManagedIntegrationsClient::DeleteNotificationConfiguration(
@@ -500,7 +535,9 @@ DeleteNotificationConfigurationOutcome IoTManagedIntegrationsClient::DeleteNotif
     endpointResolutionOutcome.GetResult().AddPathSegment(EventTypeMapper::GetNameForEventType(request.GetEventType()));
   };
 
-  return DeleteNotificationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteNotificationConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteNotificationConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteOtaTaskOutcome IoTManagedIntegrationsClient::DeleteOtaTask(const DeleteOtaTaskRequest& request) const {
@@ -516,7 +553,8 @@ DeleteOtaTaskOutcome IoTManagedIntegrationsClient::DeleteOtaTask(const DeleteOta
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteOtaTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteOtaTaskOutcome(result.GetResultWithOwnership()) : DeleteOtaTaskOutcome(std::move(result.GetError()));
 }
 
 DeleteOtaTaskConfigurationOutcome IoTManagedIntegrationsClient::DeleteOtaTaskConfiguration(
@@ -533,7 +571,9 @@ DeleteOtaTaskConfigurationOutcome IoTManagedIntegrationsClient::DeleteOtaTaskCon
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteOtaTaskConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteOtaTaskConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteOtaTaskConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteProvisioningProfileOutcome IoTManagedIntegrationsClient::DeleteProvisioningProfile(
@@ -550,7 +590,9 @@ DeleteProvisioningProfileOutcome IoTManagedIntegrationsClient::DeleteProvisionin
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteProvisioningProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteProvisioningProfileOutcome(result.GetResultWithOwnership())
+                            : DeleteProvisioningProfileOutcome(std::move(result.GetError()));
 }
 
 DeregisterAccountAssociationOutcome IoTManagedIntegrationsClient::DeregisterAccountAssociation(
@@ -560,7 +602,9 @@ DeregisterAccountAssociationOutcome IoTManagedIntegrationsClient::DeregisterAcco
     endpointResolutionOutcome.GetResult().AddPathSegments("/managed-thing-associations/deregister");
   };
 
-  return DeregisterAccountAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? DeregisterAccountAssociationOutcome(result.GetResultWithOwnership())
+                            : DeregisterAccountAssociationOutcome(std::move(result.GetError()));
 }
 
 GetAccountAssociationOutcome IoTManagedIntegrationsClient::GetAccountAssociation(const GetAccountAssociationRequest& request) const {
@@ -576,7 +620,9 @@ GetAccountAssociationOutcome IoTManagedIntegrationsClient::GetAccountAssociation
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccountAssociationId());
   };
 
-  return GetAccountAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAccountAssociationOutcome(result.GetResultWithOwnership())
+                            : GetAccountAssociationOutcome(std::move(result.GetError()));
 }
 
 GetCloudConnectorOutcome IoTManagedIntegrationsClient::GetCloudConnector(const GetCloudConnectorRequest& request) const {
@@ -592,7 +638,9 @@ GetCloudConnectorOutcome IoTManagedIntegrationsClient::GetCloudConnector(const G
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetCloudConnectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCloudConnectorOutcome(result.GetResultWithOwnership())
+                            : GetCloudConnectorOutcome(std::move(result.GetError()));
 }
 
 GetConnectorDestinationOutcome IoTManagedIntegrationsClient::GetConnectorDestination(const GetConnectorDestinationRequest& request) const {
@@ -608,7 +656,9 @@ GetConnectorDestinationOutcome IoTManagedIntegrationsClient::GetConnectorDestina
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetConnectorDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConnectorDestinationOutcome(result.GetResultWithOwnership())
+                            : GetConnectorDestinationOutcome(std::move(result.GetError()));
 }
 
 GetCredentialLockerOutcome IoTManagedIntegrationsClient::GetCredentialLocker(const GetCredentialLockerRequest& request) const {
@@ -624,7 +674,9 @@ GetCredentialLockerOutcome IoTManagedIntegrationsClient::GetCredentialLocker(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetCredentialLockerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCredentialLockerOutcome(result.GetResultWithOwnership())
+                            : GetCredentialLockerOutcome(std::move(result.GetError()));
 }
 
 GetCustomEndpointOutcome IoTManagedIntegrationsClient::GetCustomEndpoint(const GetCustomEndpointRequest& request) const {
@@ -633,7 +685,9 @@ GetCustomEndpointOutcome IoTManagedIntegrationsClient::GetCustomEndpoint(const G
     endpointResolutionOutcome.GetResult().AddPathSegments("/custom-endpoint");
   };
 
-  return GetCustomEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCustomEndpointOutcome(result.GetResultWithOwnership())
+                            : GetCustomEndpointOutcome(std::move(result.GetError()));
 }
 
 GetDefaultEncryptionConfigurationOutcome IoTManagedIntegrationsClient::GetDefaultEncryptionConfiguration(
@@ -643,7 +697,9 @@ GetDefaultEncryptionConfigurationOutcome IoTManagedIntegrationsClient::GetDefaul
     endpointResolutionOutcome.GetResult().AddPathSegments("/configuration/account/encryption");
   };
 
-  return GetDefaultEncryptionConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDefaultEncryptionConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetDefaultEncryptionConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetDestinationOutcome IoTManagedIntegrationsClient::GetDestination(const GetDestinationRequest& request) const {
@@ -659,7 +715,8 @@ GetDestinationOutcome IoTManagedIntegrationsClient::GetDestination(const GetDest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return GetDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDestinationOutcome(result.GetResultWithOwnership()) : GetDestinationOutcome(std::move(result.GetError()));
 }
 
 GetDeviceDiscoveryOutcome IoTManagedIntegrationsClient::GetDeviceDiscovery(const GetDeviceDiscoveryRequest& request) const {
@@ -675,7 +732,9 @@ GetDeviceDiscoveryOutcome IoTManagedIntegrationsClient::GetDeviceDiscovery(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetDeviceDiscoveryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDeviceDiscoveryOutcome(result.GetResultWithOwnership())
+                            : GetDeviceDiscoveryOutcome(std::move(result.GetError()));
 }
 
 GetEventLogConfigurationOutcome IoTManagedIntegrationsClient::GetEventLogConfiguration(
@@ -692,7 +751,9 @@ GetEventLogConfigurationOutcome IoTManagedIntegrationsClient::GetEventLogConfigu
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetEventLogConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEventLogConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetEventLogConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetHubConfigurationOutcome IoTManagedIntegrationsClient::GetHubConfiguration(const GetHubConfigurationRequest& request) const {
@@ -701,7 +762,9 @@ GetHubConfigurationOutcome IoTManagedIntegrationsClient::GetHubConfiguration(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/hub-configuration");
   };
 
-  return GetHubConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetHubConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetHubConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetManagedThingOutcome IoTManagedIntegrationsClient::GetManagedThing(const GetManagedThingRequest& request) const {
@@ -717,7 +780,9 @@ GetManagedThingOutcome IoTManagedIntegrationsClient::GetManagedThing(const GetMa
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetManagedThingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetManagedThingOutcome(result.GetResultWithOwnership())
+                            : GetManagedThingOutcome(std::move(result.GetError()));
 }
 
 GetManagedThingCapabilitiesOutcome IoTManagedIntegrationsClient::GetManagedThingCapabilities(
@@ -734,7 +799,9 @@ GetManagedThingCapabilitiesOutcome IoTManagedIntegrationsClient::GetManagedThing
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetManagedThingCapabilitiesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetManagedThingCapabilitiesOutcome(result.GetResultWithOwnership())
+                            : GetManagedThingCapabilitiesOutcome(std::move(result.GetError()));
 }
 
 GetManagedThingCertificateOutcome IoTManagedIntegrationsClient::GetManagedThingCertificate(
@@ -751,7 +818,9 @@ GetManagedThingCertificateOutcome IoTManagedIntegrationsClient::GetManagedThingC
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetManagedThingCertificateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetManagedThingCertificateOutcome(result.GetResultWithOwnership())
+                            : GetManagedThingCertificateOutcome(std::move(result.GetError()));
 }
 
 GetManagedThingConnectivityDataOutcome IoTManagedIntegrationsClient::GetManagedThingConnectivityData(
@@ -768,7 +837,9 @@ GetManagedThingConnectivityDataOutcome IoTManagedIntegrationsClient::GetManagedT
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetManagedThingConnectivityDataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetManagedThingConnectivityDataOutcome(result.GetResultWithOwnership())
+                            : GetManagedThingConnectivityDataOutcome(std::move(result.GetError()));
 }
 
 GetManagedThingMetaDataOutcome IoTManagedIntegrationsClient::GetManagedThingMetaData(const GetManagedThingMetaDataRequest& request) const {
@@ -784,7 +855,9 @@ GetManagedThingMetaDataOutcome IoTManagedIntegrationsClient::GetManagedThingMeta
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetManagedThingMetaDataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetManagedThingMetaDataOutcome(result.GetResultWithOwnership())
+                            : GetManagedThingMetaDataOutcome(std::move(result.GetError()));
 }
 
 GetManagedThingStateOutcome IoTManagedIntegrationsClient::GetManagedThingState(const GetManagedThingStateRequest& request) const {
@@ -800,7 +873,9 @@ GetManagedThingStateOutcome IoTManagedIntegrationsClient::GetManagedThingState(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetManagedThingId());
   };
 
-  return GetManagedThingStateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetManagedThingStateOutcome(result.GetResultWithOwnership())
+                            : GetManagedThingStateOutcome(std::move(result.GetError()));
 }
 
 GetNotificationConfigurationOutcome IoTManagedIntegrationsClient::GetNotificationConfiguration(
@@ -817,7 +892,9 @@ GetNotificationConfigurationOutcome IoTManagedIntegrationsClient::GetNotificatio
     endpointResolutionOutcome.GetResult().AddPathSegment(EventTypeMapper::GetNameForEventType(request.GetEventType()));
   };
 
-  return GetNotificationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetNotificationConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetNotificationConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetOtaTaskOutcome IoTManagedIntegrationsClient::GetOtaTask(const GetOtaTaskRequest& request) const {
@@ -833,7 +910,8 @@ GetOtaTaskOutcome IoTManagedIntegrationsClient::GetOtaTask(const GetOtaTaskReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetOtaTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetOtaTaskOutcome(result.GetResultWithOwnership()) : GetOtaTaskOutcome(std::move(result.GetError()));
 }
 
 GetOtaTaskConfigurationOutcome IoTManagedIntegrationsClient::GetOtaTaskConfiguration(const GetOtaTaskConfigurationRequest& request) const {
@@ -849,7 +927,9 @@ GetOtaTaskConfigurationOutcome IoTManagedIntegrationsClient::GetOtaTaskConfigura
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetOtaTaskConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetOtaTaskConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetOtaTaskConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetProvisioningProfileOutcome IoTManagedIntegrationsClient::GetProvisioningProfile(const GetProvisioningProfileRequest& request) const {
@@ -865,7 +945,9 @@ GetProvisioningProfileOutcome IoTManagedIntegrationsClient::GetProvisioningProfi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetProvisioningProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetProvisioningProfileOutcome(result.GetResultWithOwnership())
+                            : GetProvisioningProfileOutcome(std::move(result.GetError()));
 }
 
 GetRuntimeLogConfigurationOutcome IoTManagedIntegrationsClient::GetRuntimeLogConfiguration(
@@ -882,7 +964,9 @@ GetRuntimeLogConfigurationOutcome IoTManagedIntegrationsClient::GetRuntimeLogCon
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetManagedThingId());
   };
 
-  return GetRuntimeLogConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRuntimeLogConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetRuntimeLogConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetSchemaVersionOutcome IoTManagedIntegrationsClient::GetSchemaVersion(const GetSchemaVersionRequest& request) const {
@@ -904,7 +988,9 @@ GetSchemaVersionOutcome IoTManagedIntegrationsClient::GetSchemaVersion(const Get
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSchemaVersionedId());
   };
 
-  return GetSchemaVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSchemaVersionOutcome(result.GetResultWithOwnership())
+                            : GetSchemaVersionOutcome(std::move(result.GetError()));
 }
 
 ListAccountAssociationsOutcome IoTManagedIntegrationsClient::ListAccountAssociations(const ListAccountAssociationsRequest& request) const {
@@ -913,7 +999,9 @@ ListAccountAssociationsOutcome IoTManagedIntegrationsClient::ListAccountAssociat
     endpointResolutionOutcome.GetResult().AddPathSegments("/account-associations");
   };
 
-  return ListAccountAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAccountAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListAccountAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListCloudConnectorsOutcome IoTManagedIntegrationsClient::ListCloudConnectors(const ListCloudConnectorsRequest& request) const {
@@ -922,7 +1010,9 @@ ListCloudConnectorsOutcome IoTManagedIntegrationsClient::ListCloudConnectors(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/cloud-connectors");
   };
 
-  return ListCloudConnectorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCloudConnectorsOutcome(result.GetResultWithOwnership())
+                            : ListCloudConnectorsOutcome(std::move(result.GetError()));
 }
 
 ListConnectorDestinationsOutcome IoTManagedIntegrationsClient::ListConnectorDestinations(
@@ -932,7 +1022,9 @@ ListConnectorDestinationsOutcome IoTManagedIntegrationsClient::ListConnectorDest
     endpointResolutionOutcome.GetResult().AddPathSegments("/connector-destinations");
   };
 
-  return ListConnectorDestinationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListConnectorDestinationsOutcome(result.GetResultWithOwnership())
+                            : ListConnectorDestinationsOutcome(std::move(result.GetError()));
 }
 
 ListCredentialLockersOutcome IoTManagedIntegrationsClient::ListCredentialLockers(const ListCredentialLockersRequest& request) const {
@@ -941,7 +1033,9 @@ ListCredentialLockersOutcome IoTManagedIntegrationsClient::ListCredentialLockers
     endpointResolutionOutcome.GetResult().AddPathSegments("/credential-lockers");
   };
 
-  return ListCredentialLockersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCredentialLockersOutcome(result.GetResultWithOwnership())
+                            : ListCredentialLockersOutcome(std::move(result.GetError()));
 }
 
 ListDestinationsOutcome IoTManagedIntegrationsClient::ListDestinations(const ListDestinationsRequest& request) const {
@@ -950,7 +1044,9 @@ ListDestinationsOutcome IoTManagedIntegrationsClient::ListDestinations(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/destinations");
   };
 
-  return ListDestinationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDestinationsOutcome(result.GetResultWithOwnership())
+                            : ListDestinationsOutcome(std::move(result.GetError()));
 }
 
 ListDeviceDiscoveriesOutcome IoTManagedIntegrationsClient::ListDeviceDiscoveries(const ListDeviceDiscoveriesRequest& request) const {
@@ -959,7 +1055,9 @@ ListDeviceDiscoveriesOutcome IoTManagedIntegrationsClient::ListDeviceDiscoveries
     endpointResolutionOutcome.GetResult().AddPathSegments("/device-discoveries");
   };
 
-  return ListDeviceDiscoveriesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDeviceDiscoveriesOutcome(result.GetResultWithOwnership())
+                            : ListDeviceDiscoveriesOutcome(std::move(result.GetError()));
 }
 
 ListDiscoveredDevicesOutcome IoTManagedIntegrationsClient::ListDiscoveredDevices(const ListDiscoveredDevicesRequest& request) const {
@@ -976,7 +1074,9 @@ ListDiscoveredDevicesOutcome IoTManagedIntegrationsClient::ListDiscoveredDevices
     endpointResolutionOutcome.GetResult().AddPathSegments("/devices");
   };
 
-  return ListDiscoveredDevicesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDiscoveredDevicesOutcome(result.GetResultWithOwnership())
+                            : ListDiscoveredDevicesOutcome(std::move(result.GetError()));
 }
 
 ListEventLogConfigurationsOutcome IoTManagedIntegrationsClient::ListEventLogConfigurations(
@@ -986,7 +1086,9 @@ ListEventLogConfigurationsOutcome IoTManagedIntegrationsClient::ListEventLogConf
     endpointResolutionOutcome.GetResult().AddPathSegments("/event-log-configurations");
   };
 
-  return ListEventLogConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListEventLogConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListEventLogConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListManagedThingAccountAssociationsOutcome IoTManagedIntegrationsClient::ListManagedThingAccountAssociations(
@@ -996,7 +1098,9 @@ ListManagedThingAccountAssociationsOutcome IoTManagedIntegrationsClient::ListMan
     endpointResolutionOutcome.GetResult().AddPathSegments("/managed-thing-associations");
   };
 
-  return ListManagedThingAccountAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListManagedThingAccountAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListManagedThingAccountAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListManagedThingSchemasOutcome IoTManagedIntegrationsClient::ListManagedThingSchemas(const ListManagedThingSchemasRequest& request) const {
@@ -1012,7 +1116,9 @@ ListManagedThingSchemasOutcome IoTManagedIntegrationsClient::ListManagedThingSch
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return ListManagedThingSchemasOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListManagedThingSchemasOutcome(result.GetResultWithOwnership())
+                            : ListManagedThingSchemasOutcome(std::move(result.GetError()));
 }
 
 ListManagedThingsOutcome IoTManagedIntegrationsClient::ListManagedThings(const ListManagedThingsRequest& request) const {
@@ -1021,7 +1127,9 @@ ListManagedThingsOutcome IoTManagedIntegrationsClient::ListManagedThings(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/managed-things");
   };
 
-  return ListManagedThingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListManagedThingsOutcome(result.GetResultWithOwnership())
+                            : ListManagedThingsOutcome(std::move(result.GetError()));
 }
 
 ListNotificationConfigurationsOutcome IoTManagedIntegrationsClient::ListNotificationConfigurations(
@@ -1031,7 +1139,9 @@ ListNotificationConfigurationsOutcome IoTManagedIntegrationsClient::ListNotifica
     endpointResolutionOutcome.GetResult().AddPathSegments("/notification-configurations");
   };
 
-  return ListNotificationConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListNotificationConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListNotificationConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListOtaTaskConfigurationsOutcome IoTManagedIntegrationsClient::ListOtaTaskConfigurations(
@@ -1041,7 +1151,9 @@ ListOtaTaskConfigurationsOutcome IoTManagedIntegrationsClient::ListOtaTaskConfig
     endpointResolutionOutcome.GetResult().AddPathSegments("/ota-task-configurations");
   };
 
-  return ListOtaTaskConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListOtaTaskConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListOtaTaskConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListOtaTaskExecutionsOutcome IoTManagedIntegrationsClient::ListOtaTaskExecutions(const ListOtaTaskExecutionsRequest& request) const {
@@ -1058,7 +1170,9 @@ ListOtaTaskExecutionsOutcome IoTManagedIntegrationsClient::ListOtaTaskExecutions
     endpointResolutionOutcome.GetResult().AddPathSegments("/devices");
   };
 
-  return ListOtaTaskExecutionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListOtaTaskExecutionsOutcome(result.GetResultWithOwnership())
+                            : ListOtaTaskExecutionsOutcome(std::move(result.GetError()));
 }
 
 ListOtaTasksOutcome IoTManagedIntegrationsClient::ListOtaTasks(const ListOtaTasksRequest& request) const {
@@ -1067,7 +1181,8 @@ ListOtaTasksOutcome IoTManagedIntegrationsClient::ListOtaTasks(const ListOtaTask
     endpointResolutionOutcome.GetResult().AddPathSegments("/ota-tasks");
   };
 
-  return ListOtaTasksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListOtaTasksOutcome(result.GetResultWithOwnership()) : ListOtaTasksOutcome(std::move(result.GetError()));
 }
 
 ListProvisioningProfilesOutcome IoTManagedIntegrationsClient::ListProvisioningProfiles(
@@ -1077,7 +1192,9 @@ ListProvisioningProfilesOutcome IoTManagedIntegrationsClient::ListProvisioningPr
     endpointResolutionOutcome.GetResult().AddPathSegments("/provisioning-profiles");
   };
 
-  return ListProvisioningProfilesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListProvisioningProfilesOutcome(result.GetResultWithOwnership())
+                            : ListProvisioningProfilesOutcome(std::move(result.GetError()));
 }
 
 ListSchemaVersionsOutcome IoTManagedIntegrationsClient::ListSchemaVersions(const ListSchemaVersionsRequest& request) const {
@@ -1093,7 +1210,9 @@ ListSchemaVersionsOutcome IoTManagedIntegrationsClient::ListSchemaVersions(const
     endpointResolutionOutcome.GetResult().AddPathSegment(SchemaVersionTypeMapper::GetNameForSchemaVersionType(request.GetType()));
   };
 
-  return ListSchemaVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSchemaVersionsOutcome(result.GetResultWithOwnership())
+                            : ListSchemaVersionsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome IoTManagedIntegrationsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -1109,7 +1228,9 @@ ListTagsForResourceOutcome IoTManagedIntegrationsClient::ListTagsForResource(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutDefaultEncryptionConfigurationOutcome IoTManagedIntegrationsClient::PutDefaultEncryptionConfiguration(
@@ -1119,7 +1240,9 @@ PutDefaultEncryptionConfigurationOutcome IoTManagedIntegrationsClient::PutDefaul
     endpointResolutionOutcome.GetResult().AddPathSegments("/configuration/account/encryption");
   };
 
-  return PutDefaultEncryptionConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutDefaultEncryptionConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutDefaultEncryptionConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutHubConfigurationOutcome IoTManagedIntegrationsClient::PutHubConfiguration(const PutHubConfigurationRequest& request) const {
@@ -1128,7 +1251,9 @@ PutHubConfigurationOutcome IoTManagedIntegrationsClient::PutHubConfiguration(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/hub-configuration");
   };
 
-  return PutHubConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutHubConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutHubConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutRuntimeLogConfigurationOutcome IoTManagedIntegrationsClient::PutRuntimeLogConfiguration(
@@ -1145,7 +1270,9 @@ PutRuntimeLogConfigurationOutcome IoTManagedIntegrationsClient::PutRuntimeLogCon
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetManagedThingId());
   };
 
-  return PutRuntimeLogConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutRuntimeLogConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutRuntimeLogConfigurationOutcome(std::move(result.GetError()));
 }
 
 RegisterAccountAssociationOutcome IoTManagedIntegrationsClient::RegisterAccountAssociation(
@@ -1155,7 +1282,9 @@ RegisterAccountAssociationOutcome IoTManagedIntegrationsClient::RegisterAccountA
     endpointResolutionOutcome.GetResult().AddPathSegments("/managed-thing-associations/register");
   };
 
-  return RegisterAccountAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? RegisterAccountAssociationOutcome(result.GetResultWithOwnership())
+                            : RegisterAccountAssociationOutcome(std::move(result.GetError()));
 }
 
 RegisterCustomEndpointOutcome IoTManagedIntegrationsClient::RegisterCustomEndpoint(const RegisterCustomEndpointRequest& request) const {
@@ -1164,7 +1293,9 @@ RegisterCustomEndpointOutcome IoTManagedIntegrationsClient::RegisterCustomEndpoi
     endpointResolutionOutcome.GetResult().AddPathSegments("/custom-endpoint");
   };
 
-  return RegisterCustomEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterCustomEndpointOutcome(result.GetResultWithOwnership())
+                            : RegisterCustomEndpointOutcome(std::move(result.GetError()));
 }
 
 ResetRuntimeLogConfigurationOutcome IoTManagedIntegrationsClient::ResetRuntimeLogConfiguration(
@@ -1181,7 +1312,9 @@ ResetRuntimeLogConfigurationOutcome IoTManagedIntegrationsClient::ResetRuntimeLo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetManagedThingId());
   };
 
-  return ResetRuntimeLogConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? ResetRuntimeLogConfigurationOutcome(result.GetResultWithOwnership())
+                            : ResetRuntimeLogConfigurationOutcome(std::move(result.GetError()));
 }
 
 SendConnectorEventOutcome IoTManagedIntegrationsClient::SendConnectorEvent(const SendConnectorEventRequest& request) const {
@@ -1197,7 +1330,9 @@ SendConnectorEventOutcome IoTManagedIntegrationsClient::SendConnectorEvent(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectorId());
   };
 
-  return SendConnectorEventOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendConnectorEventOutcome(result.GetResultWithOwnership())
+                            : SendConnectorEventOutcome(std::move(result.GetError()));
 }
 
 SendManagedThingCommandOutcome IoTManagedIntegrationsClient::SendManagedThingCommand(const SendManagedThingCommandRequest& request) const {
@@ -1213,7 +1348,9 @@ SendManagedThingCommandOutcome IoTManagedIntegrationsClient::SendManagedThingCom
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetManagedThingId());
   };
 
-  return SendManagedThingCommandOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendManagedThingCommandOutcome(result.GetResultWithOwnership())
+                            : SendManagedThingCommandOutcome(std::move(result.GetError()));
 }
 
 StartAccountAssociationRefreshOutcome IoTManagedIntegrationsClient::StartAccountAssociationRefresh(
@@ -1231,7 +1368,9 @@ StartAccountAssociationRefreshOutcome IoTManagedIntegrationsClient::StartAccount
     endpointResolutionOutcome.GetResult().AddPathSegments("/refresh");
   };
 
-  return StartAccountAssociationRefreshOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartAccountAssociationRefreshOutcome(result.GetResultWithOwnership())
+                            : StartAccountAssociationRefreshOutcome(std::move(result.GetError()));
 }
 
 StartDeviceDiscoveryOutcome IoTManagedIntegrationsClient::StartDeviceDiscovery(const StartDeviceDiscoveryRequest& request) const {
@@ -1240,7 +1379,9 @@ StartDeviceDiscoveryOutcome IoTManagedIntegrationsClient::StartDeviceDiscovery(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/device-discoveries");
   };
 
-  return StartDeviceDiscoveryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDeviceDiscoveryOutcome(result.GetResultWithOwnership())
+                            : StartDeviceDiscoveryOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome IoTManagedIntegrationsClient::TagResource(const TagResourceRequest& request) const {
@@ -1256,7 +1397,8 @@ TagResourceOutcome IoTManagedIntegrationsClient::TagResource(const TagResourceRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome IoTManagedIntegrationsClient::UntagResource(const UntagResourceRequest& request) const {
@@ -1277,7 +1419,8 @@ UntagResourceOutcome IoTManagedIntegrationsClient::UntagResource(const UntagReso
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAccountAssociationOutcome IoTManagedIntegrationsClient::UpdateAccountAssociation(
@@ -1294,7 +1437,9 @@ UpdateAccountAssociationOutcome IoTManagedIntegrationsClient::UpdateAccountAssoc
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccountAssociationId());
   };
 
-  return UpdateAccountAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateAccountAssociationOutcome(result.GetResultWithOwnership())
+                            : UpdateAccountAssociationOutcome(std::move(result.GetError()));
 }
 
 UpdateCloudConnectorOutcome IoTManagedIntegrationsClient::UpdateCloudConnector(const UpdateCloudConnectorRequest& request) const {
@@ -1310,7 +1455,9 @@ UpdateCloudConnectorOutcome IoTManagedIntegrationsClient::UpdateCloudConnector(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateCloudConnectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateCloudConnectorOutcome(result.GetResultWithOwnership())
+                            : UpdateCloudConnectorOutcome(std::move(result.GetError()));
 }
 
 UpdateConnectorDestinationOutcome IoTManagedIntegrationsClient::UpdateConnectorDestination(
@@ -1327,7 +1474,9 @@ UpdateConnectorDestinationOutcome IoTManagedIntegrationsClient::UpdateConnectorD
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateConnectorDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateConnectorDestinationOutcome(result.GetResultWithOwnership())
+                            : UpdateConnectorDestinationOutcome(std::move(result.GetError()));
 }
 
 UpdateDestinationOutcome IoTManagedIntegrationsClient::UpdateDestination(const UpdateDestinationRequest& request) const {
@@ -1343,7 +1492,9 @@ UpdateDestinationOutcome IoTManagedIntegrationsClient::UpdateDestination(const U
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return UpdateDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateDestinationOutcome(result.GetResultWithOwnership())
+                            : UpdateDestinationOutcome(std::move(result.GetError()));
 }
 
 UpdateEventLogConfigurationOutcome IoTManagedIntegrationsClient::UpdateEventLogConfiguration(
@@ -1360,7 +1511,9 @@ UpdateEventLogConfigurationOutcome IoTManagedIntegrationsClient::UpdateEventLogC
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateEventLogConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateEventLogConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateEventLogConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateManagedThingOutcome IoTManagedIntegrationsClient::UpdateManagedThing(const UpdateManagedThingRequest& request) const {
@@ -1376,7 +1529,9 @@ UpdateManagedThingOutcome IoTManagedIntegrationsClient::UpdateManagedThing(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateManagedThingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateManagedThingOutcome(result.GetResultWithOwnership())
+                            : UpdateManagedThingOutcome(std::move(result.GetError()));
 }
 
 UpdateNotificationConfigurationOutcome IoTManagedIntegrationsClient::UpdateNotificationConfiguration(
@@ -1393,7 +1548,9 @@ UpdateNotificationConfigurationOutcome IoTManagedIntegrationsClient::UpdateNotif
     endpointResolutionOutcome.GetResult().AddPathSegment(EventTypeMapper::GetNameForEventType(request.GetEventType()));
   };
 
-  return UpdateNotificationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateNotificationConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateNotificationConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateOtaTaskOutcome IoTManagedIntegrationsClient::UpdateOtaTask(const UpdateOtaTaskRequest& request) const {
@@ -1409,5 +1566,6 @@ UpdateOtaTaskOutcome IoTManagedIntegrationsClient::UpdateOtaTask(const UpdateOta
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateOtaTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateOtaTaskOutcome(result.GetResultWithOwnership()) : UpdateOtaTaskOutcome(std::move(result.GetError()));
 }

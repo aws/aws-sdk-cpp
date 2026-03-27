@@ -260,304 +260,435 @@ SESClient::InvokeOperationOutcome SESClient::InvokeServiceOperation(const Amazon
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 CloneReceiptRuleSetOutcome SESClient::CloneReceiptRuleSet(const CloneReceiptRuleSetRequest& request) const {
-  return CloneReceiptRuleSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CloneReceiptRuleSetOutcome(result.GetResultWithOwnership())
+                            : CloneReceiptRuleSetOutcome(std::move(result.GetError()));
 }
 
 CreateConfigurationSetOutcome SESClient::CreateConfigurationSet(const CreateConfigurationSetRequest& request) const {
-  return CreateConfigurationSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConfigurationSetOutcome(result.GetResultWithOwnership())
+                            : CreateConfigurationSetOutcome(std::move(result.GetError()));
 }
 
 CreateConfigurationSetEventDestinationOutcome SESClient::CreateConfigurationSetEventDestination(
     const CreateConfigurationSetEventDestinationRequest& request) const {
-  return CreateConfigurationSetEventDestinationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConfigurationSetEventDestinationOutcome(result.GetResultWithOwnership())
+                            : CreateConfigurationSetEventDestinationOutcome(std::move(result.GetError()));
 }
 
 CreateConfigurationSetTrackingOptionsOutcome SESClient::CreateConfigurationSetTrackingOptions(
     const CreateConfigurationSetTrackingOptionsRequest& request) const {
-  return CreateConfigurationSetTrackingOptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConfigurationSetTrackingOptionsOutcome(result.GetResultWithOwnership())
+                            : CreateConfigurationSetTrackingOptionsOutcome(std::move(result.GetError()));
 }
 
 CreateCustomVerificationEmailTemplateOutcome SESClient::CreateCustomVerificationEmailTemplate(
     const CreateCustomVerificationEmailTemplateRequest& request) const {
-  return CreateCustomVerificationEmailTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCustomVerificationEmailTemplateOutcome(result.GetResultWithOwnership())
+                            : CreateCustomVerificationEmailTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateReceiptFilterOutcome SESClient::CreateReceiptFilter(const CreateReceiptFilterRequest& request) const {
-  return CreateReceiptFilterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateReceiptFilterOutcome(result.GetResultWithOwnership())
+                            : CreateReceiptFilterOutcome(std::move(result.GetError()));
 }
 
 CreateReceiptRuleOutcome SESClient::CreateReceiptRule(const CreateReceiptRuleRequest& request) const {
-  return CreateReceiptRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateReceiptRuleOutcome(result.GetResultWithOwnership())
+                            : CreateReceiptRuleOutcome(std::move(result.GetError()));
 }
 
 CreateReceiptRuleSetOutcome SESClient::CreateReceiptRuleSet(const CreateReceiptRuleSetRequest& request) const {
-  return CreateReceiptRuleSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateReceiptRuleSetOutcome(result.GetResultWithOwnership())
+                            : CreateReceiptRuleSetOutcome(std::move(result.GetError()));
 }
 
 CreateTemplateOutcome SESClient::CreateTemplate(const CreateTemplateRequest& request) const {
-  return CreateTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTemplateOutcome(result.GetResultWithOwnership()) : CreateTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteConfigurationSetOutcome SESClient::DeleteConfigurationSet(const DeleteConfigurationSetRequest& request) const {
-  return DeleteConfigurationSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteConfigurationSetOutcome(result.GetResultWithOwnership())
+                            : DeleteConfigurationSetOutcome(std::move(result.GetError()));
 }
 
 DeleteConfigurationSetEventDestinationOutcome SESClient::DeleteConfigurationSetEventDestination(
     const DeleteConfigurationSetEventDestinationRequest& request) const {
-  return DeleteConfigurationSetEventDestinationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteConfigurationSetEventDestinationOutcome(result.GetResultWithOwnership())
+                            : DeleteConfigurationSetEventDestinationOutcome(std::move(result.GetError()));
 }
 
 DeleteConfigurationSetTrackingOptionsOutcome SESClient::DeleteConfigurationSetTrackingOptions(
     const DeleteConfigurationSetTrackingOptionsRequest& request) const {
-  return DeleteConfigurationSetTrackingOptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteConfigurationSetTrackingOptionsOutcome(result.GetResultWithOwnership())
+                            : DeleteConfigurationSetTrackingOptionsOutcome(std::move(result.GetError()));
 }
 
 DeleteCustomVerificationEmailTemplateOutcome SESClient::DeleteCustomVerificationEmailTemplate(
     const DeleteCustomVerificationEmailTemplateRequest& request) const {
-  return DeleteCustomVerificationEmailTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCustomVerificationEmailTemplateOutcome(result.GetResultWithOwnership())
+                            : DeleteCustomVerificationEmailTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteIdentityOutcome SESClient::DeleteIdentity(const DeleteIdentityRequest& request) const {
-  return DeleteIdentityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteIdentityOutcome(result.GetResultWithOwnership()) : DeleteIdentityOutcome(std::move(result.GetError()));
 }
 
 DeleteIdentityPolicyOutcome SESClient::DeleteIdentityPolicy(const DeleteIdentityPolicyRequest& request) const {
-  return DeleteIdentityPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteIdentityPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteIdentityPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteReceiptFilterOutcome SESClient::DeleteReceiptFilter(const DeleteReceiptFilterRequest& request) const {
-  return DeleteReceiptFilterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteReceiptFilterOutcome(result.GetResultWithOwnership())
+                            : DeleteReceiptFilterOutcome(std::move(result.GetError()));
 }
 
 DeleteReceiptRuleOutcome SESClient::DeleteReceiptRule(const DeleteReceiptRuleRequest& request) const {
-  return DeleteReceiptRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteReceiptRuleOutcome(result.GetResultWithOwnership())
+                            : DeleteReceiptRuleOutcome(std::move(result.GetError()));
 }
 
 DeleteReceiptRuleSetOutcome SESClient::DeleteReceiptRuleSet(const DeleteReceiptRuleSetRequest& request) const {
-  return DeleteReceiptRuleSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteReceiptRuleSetOutcome(result.GetResultWithOwnership())
+                            : DeleteReceiptRuleSetOutcome(std::move(result.GetError()));
 }
 
 DeleteTemplateOutcome SESClient::DeleteTemplate(const DeleteTemplateRequest& request) const {
-  return DeleteTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTemplateOutcome(result.GetResultWithOwnership()) : DeleteTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteVerifiedEmailAddressOutcome SESClient::DeleteVerifiedEmailAddress(const DeleteVerifiedEmailAddressRequest& request) const {
-  return DeleteVerifiedEmailAddressOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVerifiedEmailAddressOutcome(result.GetResultWithOwnership())
+                            : DeleteVerifiedEmailAddressOutcome(std::move(result.GetError()));
 }
 
 DescribeActiveReceiptRuleSetOutcome SESClient::DescribeActiveReceiptRuleSet(const DescribeActiveReceiptRuleSetRequest& request) const {
-  return DescribeActiveReceiptRuleSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeActiveReceiptRuleSetOutcome(result.GetResultWithOwnership())
+                            : DescribeActiveReceiptRuleSetOutcome(std::move(result.GetError()));
 }
 
 DescribeConfigurationSetOutcome SESClient::DescribeConfigurationSet(const DescribeConfigurationSetRequest& request) const {
-  return DescribeConfigurationSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeConfigurationSetOutcome(result.GetResultWithOwnership())
+                            : DescribeConfigurationSetOutcome(std::move(result.GetError()));
 }
 
 DescribeReceiptRuleOutcome SESClient::DescribeReceiptRule(const DescribeReceiptRuleRequest& request) const {
-  return DescribeReceiptRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeReceiptRuleOutcome(result.GetResultWithOwnership())
+                            : DescribeReceiptRuleOutcome(std::move(result.GetError()));
 }
 
 DescribeReceiptRuleSetOutcome SESClient::DescribeReceiptRuleSet(const DescribeReceiptRuleSetRequest& request) const {
-  return DescribeReceiptRuleSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeReceiptRuleSetOutcome(result.GetResultWithOwnership())
+                            : DescribeReceiptRuleSetOutcome(std::move(result.GetError()));
 }
 
 GetAccountSendingEnabledOutcome SESClient::GetAccountSendingEnabled(const GetAccountSendingEnabledRequest& request) const {
-  return GetAccountSendingEnabledOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAccountSendingEnabledOutcome(result.GetResultWithOwnership())
+                            : GetAccountSendingEnabledOutcome(std::move(result.GetError()));
 }
 
 GetCustomVerificationEmailTemplateOutcome SESClient::GetCustomVerificationEmailTemplate(
     const GetCustomVerificationEmailTemplateRequest& request) const {
-  return GetCustomVerificationEmailTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCustomVerificationEmailTemplateOutcome(result.GetResultWithOwnership())
+                            : GetCustomVerificationEmailTemplateOutcome(std::move(result.GetError()));
 }
 
 GetIdentityDkimAttributesOutcome SESClient::GetIdentityDkimAttributes(const GetIdentityDkimAttributesRequest& request) const {
-  return GetIdentityDkimAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIdentityDkimAttributesOutcome(result.GetResultWithOwnership())
+                            : GetIdentityDkimAttributesOutcome(std::move(result.GetError()));
 }
 
 GetIdentityMailFromDomainAttributesOutcome SESClient::GetIdentityMailFromDomainAttributes(
     const GetIdentityMailFromDomainAttributesRequest& request) const {
-  return GetIdentityMailFromDomainAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIdentityMailFromDomainAttributesOutcome(result.GetResultWithOwnership())
+                            : GetIdentityMailFromDomainAttributesOutcome(std::move(result.GetError()));
 }
 
 GetIdentityNotificationAttributesOutcome SESClient::GetIdentityNotificationAttributes(
     const GetIdentityNotificationAttributesRequest& request) const {
-  return GetIdentityNotificationAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIdentityNotificationAttributesOutcome(result.GetResultWithOwnership())
+                            : GetIdentityNotificationAttributesOutcome(std::move(result.GetError()));
 }
 
 GetIdentityPoliciesOutcome SESClient::GetIdentityPolicies(const GetIdentityPoliciesRequest& request) const {
-  return GetIdentityPoliciesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIdentityPoliciesOutcome(result.GetResultWithOwnership())
+                            : GetIdentityPoliciesOutcome(std::move(result.GetError()));
 }
 
 GetIdentityVerificationAttributesOutcome SESClient::GetIdentityVerificationAttributes(
     const GetIdentityVerificationAttributesRequest& request) const {
-  return GetIdentityVerificationAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIdentityVerificationAttributesOutcome(result.GetResultWithOwnership())
+                            : GetIdentityVerificationAttributesOutcome(std::move(result.GetError()));
 }
 
 GetSendQuotaOutcome SESClient::GetSendQuota(const GetSendQuotaRequest& request) const {
-  return GetSendQuotaOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSendQuotaOutcome(result.GetResultWithOwnership()) : GetSendQuotaOutcome(std::move(result.GetError()));
 }
 
 GetSendStatisticsOutcome SESClient::GetSendStatistics(const GetSendStatisticsRequest& request) const {
-  return GetSendStatisticsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSendStatisticsOutcome(result.GetResultWithOwnership())
+                            : GetSendStatisticsOutcome(std::move(result.GetError()));
 }
 
 GetTemplateOutcome SESClient::GetTemplate(const GetTemplateRequest& request) const {
-  return GetTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTemplateOutcome(result.GetResultWithOwnership()) : GetTemplateOutcome(std::move(result.GetError()));
 }
 
 ListConfigurationSetsOutcome SESClient::ListConfigurationSets(const ListConfigurationSetsRequest& request) const {
-  return ListConfigurationSetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListConfigurationSetsOutcome(result.GetResultWithOwnership())
+                            : ListConfigurationSetsOutcome(std::move(result.GetError()));
 }
 
 ListCustomVerificationEmailTemplatesOutcome SESClient::ListCustomVerificationEmailTemplates(
     const ListCustomVerificationEmailTemplatesRequest& request) const {
-  return ListCustomVerificationEmailTemplatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCustomVerificationEmailTemplatesOutcome(result.GetResultWithOwnership())
+                            : ListCustomVerificationEmailTemplatesOutcome(std::move(result.GetError()));
 }
 
 ListIdentitiesOutcome SESClient::ListIdentities(const ListIdentitiesRequest& request) const {
-  return ListIdentitiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListIdentitiesOutcome(result.GetResultWithOwnership()) : ListIdentitiesOutcome(std::move(result.GetError()));
 }
 
 ListIdentityPoliciesOutcome SESClient::ListIdentityPolicies(const ListIdentityPoliciesRequest& request) const {
-  return ListIdentityPoliciesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListIdentityPoliciesOutcome(result.GetResultWithOwnership())
+                            : ListIdentityPoliciesOutcome(std::move(result.GetError()));
 }
 
 ListReceiptFiltersOutcome SESClient::ListReceiptFilters(const ListReceiptFiltersRequest& request) const {
-  return ListReceiptFiltersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListReceiptFiltersOutcome(result.GetResultWithOwnership())
+                            : ListReceiptFiltersOutcome(std::move(result.GetError()));
 }
 
 ListReceiptRuleSetsOutcome SESClient::ListReceiptRuleSets(const ListReceiptRuleSetsRequest& request) const {
-  return ListReceiptRuleSetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListReceiptRuleSetsOutcome(result.GetResultWithOwnership())
+                            : ListReceiptRuleSetsOutcome(std::move(result.GetError()));
 }
 
 ListTemplatesOutcome SESClient::ListTemplates(const ListTemplatesRequest& request) const {
-  return ListTemplatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTemplatesOutcome(result.GetResultWithOwnership()) : ListTemplatesOutcome(std::move(result.GetError()));
 }
 
 ListVerifiedEmailAddressesOutcome SESClient::ListVerifiedEmailAddresses(const ListVerifiedEmailAddressesRequest& request) const {
-  return ListVerifiedEmailAddressesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListVerifiedEmailAddressesOutcome(result.GetResultWithOwnership())
+                            : ListVerifiedEmailAddressesOutcome(std::move(result.GetError()));
 }
 
 PutConfigurationSetDeliveryOptionsOutcome SESClient::PutConfigurationSetDeliveryOptions(
     const PutConfigurationSetDeliveryOptionsRequest& request) const {
-  return PutConfigurationSetDeliveryOptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutConfigurationSetDeliveryOptionsOutcome(result.GetResultWithOwnership())
+                            : PutConfigurationSetDeliveryOptionsOutcome(std::move(result.GetError()));
 }
 
 PutIdentityPolicyOutcome SESClient::PutIdentityPolicy(const PutIdentityPolicyRequest& request) const {
-  return PutIdentityPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutIdentityPolicyOutcome(result.GetResultWithOwnership())
+                            : PutIdentityPolicyOutcome(std::move(result.GetError()));
 }
 
 ReorderReceiptRuleSetOutcome SESClient::ReorderReceiptRuleSet(const ReorderReceiptRuleSetRequest& request) const {
-  return ReorderReceiptRuleSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ReorderReceiptRuleSetOutcome(result.GetResultWithOwnership())
+                            : ReorderReceiptRuleSetOutcome(std::move(result.GetError()));
 }
 
 SendBounceOutcome SESClient::SendBounce(const SendBounceRequest& request) const {
-  return SendBounceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendBounceOutcome(result.GetResultWithOwnership()) : SendBounceOutcome(std::move(result.GetError()));
 }
 
 SendBulkTemplatedEmailOutcome SESClient::SendBulkTemplatedEmail(const SendBulkTemplatedEmailRequest& request) const {
-  return SendBulkTemplatedEmailOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendBulkTemplatedEmailOutcome(result.GetResultWithOwnership())
+                            : SendBulkTemplatedEmailOutcome(std::move(result.GetError()));
 }
 
 SendCustomVerificationEmailOutcome SESClient::SendCustomVerificationEmail(const SendCustomVerificationEmailRequest& request) const {
-  return SendCustomVerificationEmailOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendCustomVerificationEmailOutcome(result.GetResultWithOwnership())
+                            : SendCustomVerificationEmailOutcome(std::move(result.GetError()));
 }
 
 SendEmailOutcome SESClient::SendEmail(const SendEmailRequest& request) const {
-  return SendEmailOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendEmailOutcome(result.GetResultWithOwnership()) : SendEmailOutcome(std::move(result.GetError()));
 }
 
 SendRawEmailOutcome SESClient::SendRawEmail(const SendRawEmailRequest& request) const {
-  return SendRawEmailOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendRawEmailOutcome(result.GetResultWithOwnership()) : SendRawEmailOutcome(std::move(result.GetError()));
 }
 
 SendTemplatedEmailOutcome SESClient::SendTemplatedEmail(const SendTemplatedEmailRequest& request) const {
-  return SendTemplatedEmailOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendTemplatedEmailOutcome(result.GetResultWithOwnership())
+                            : SendTemplatedEmailOutcome(std::move(result.GetError()));
 }
 
 SetActiveReceiptRuleSetOutcome SESClient::SetActiveReceiptRuleSet(const SetActiveReceiptRuleSetRequest& request) const {
-  return SetActiveReceiptRuleSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetActiveReceiptRuleSetOutcome(result.GetResultWithOwnership())
+                            : SetActiveReceiptRuleSetOutcome(std::move(result.GetError()));
 }
 
 SetIdentityDkimEnabledOutcome SESClient::SetIdentityDkimEnabled(const SetIdentityDkimEnabledRequest& request) const {
-  return SetIdentityDkimEnabledOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetIdentityDkimEnabledOutcome(result.GetResultWithOwnership())
+                            : SetIdentityDkimEnabledOutcome(std::move(result.GetError()));
 }
 
 SetIdentityFeedbackForwardingEnabledOutcome SESClient::SetIdentityFeedbackForwardingEnabled(
     const SetIdentityFeedbackForwardingEnabledRequest& request) const {
-  return SetIdentityFeedbackForwardingEnabledOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetIdentityFeedbackForwardingEnabledOutcome(result.GetResultWithOwnership())
+                            : SetIdentityFeedbackForwardingEnabledOutcome(std::move(result.GetError()));
 }
 
 SetIdentityHeadersInNotificationsEnabledOutcome SESClient::SetIdentityHeadersInNotificationsEnabled(
     const SetIdentityHeadersInNotificationsEnabledRequest& request) const {
-  return SetIdentityHeadersInNotificationsEnabledOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetIdentityHeadersInNotificationsEnabledOutcome(result.GetResultWithOwnership())
+                            : SetIdentityHeadersInNotificationsEnabledOutcome(std::move(result.GetError()));
 }
 
 SetIdentityMailFromDomainOutcome SESClient::SetIdentityMailFromDomain(const SetIdentityMailFromDomainRequest& request) const {
-  return SetIdentityMailFromDomainOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetIdentityMailFromDomainOutcome(result.GetResultWithOwnership())
+                            : SetIdentityMailFromDomainOutcome(std::move(result.GetError()));
 }
 
 SetIdentityNotificationTopicOutcome SESClient::SetIdentityNotificationTopic(const SetIdentityNotificationTopicRequest& request) const {
-  return SetIdentityNotificationTopicOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetIdentityNotificationTopicOutcome(result.GetResultWithOwnership())
+                            : SetIdentityNotificationTopicOutcome(std::move(result.GetError()));
 }
 
 SetReceiptRulePositionOutcome SESClient::SetReceiptRulePosition(const SetReceiptRulePositionRequest& request) const {
-  return SetReceiptRulePositionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetReceiptRulePositionOutcome(result.GetResultWithOwnership())
+                            : SetReceiptRulePositionOutcome(std::move(result.GetError()));
 }
 
 TestRenderTemplateOutcome SESClient::TestRenderTemplate(const TestRenderTemplateRequest& request) const {
-  return TestRenderTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TestRenderTemplateOutcome(result.GetResultWithOwnership())
+                            : TestRenderTemplateOutcome(std::move(result.GetError()));
 }
 
 UpdateAccountSendingEnabledOutcome SESClient::UpdateAccountSendingEnabled(const UpdateAccountSendingEnabledRequest& request) const {
-  return UpdateAccountSendingEnabledOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAccountSendingEnabledOutcome(result.GetResultWithOwnership())
+                            : UpdateAccountSendingEnabledOutcome(std::move(result.GetError()));
 }
 
 UpdateConfigurationSetEventDestinationOutcome SESClient::UpdateConfigurationSetEventDestination(
     const UpdateConfigurationSetEventDestinationRequest& request) const {
-  return UpdateConfigurationSetEventDestinationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateConfigurationSetEventDestinationOutcome(result.GetResultWithOwnership())
+                            : UpdateConfigurationSetEventDestinationOutcome(std::move(result.GetError()));
 }
 
 UpdateConfigurationSetReputationMetricsEnabledOutcome SESClient::UpdateConfigurationSetReputationMetricsEnabled(
     const UpdateConfigurationSetReputationMetricsEnabledRequest& request) const {
-  return UpdateConfigurationSetReputationMetricsEnabledOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateConfigurationSetReputationMetricsEnabledOutcome(result.GetResultWithOwnership())
+                            : UpdateConfigurationSetReputationMetricsEnabledOutcome(std::move(result.GetError()));
 }
 
 UpdateConfigurationSetSendingEnabledOutcome SESClient::UpdateConfigurationSetSendingEnabled(
     const UpdateConfigurationSetSendingEnabledRequest& request) const {
-  return UpdateConfigurationSetSendingEnabledOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateConfigurationSetSendingEnabledOutcome(result.GetResultWithOwnership())
+                            : UpdateConfigurationSetSendingEnabledOutcome(std::move(result.GetError()));
 }
 
 UpdateConfigurationSetTrackingOptionsOutcome SESClient::UpdateConfigurationSetTrackingOptions(
     const UpdateConfigurationSetTrackingOptionsRequest& request) const {
-  return UpdateConfigurationSetTrackingOptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateConfigurationSetTrackingOptionsOutcome(result.GetResultWithOwnership())
+                            : UpdateConfigurationSetTrackingOptionsOutcome(std::move(result.GetError()));
 }
 
 UpdateCustomVerificationEmailTemplateOutcome SESClient::UpdateCustomVerificationEmailTemplate(
     const UpdateCustomVerificationEmailTemplateRequest& request) const {
-  return UpdateCustomVerificationEmailTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCustomVerificationEmailTemplateOutcome(result.GetResultWithOwnership())
+                            : UpdateCustomVerificationEmailTemplateOutcome(std::move(result.GetError()));
 }
 
 UpdateReceiptRuleOutcome SESClient::UpdateReceiptRule(const UpdateReceiptRuleRequest& request) const {
-  return UpdateReceiptRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateReceiptRuleOutcome(result.GetResultWithOwnership())
+                            : UpdateReceiptRuleOutcome(std::move(result.GetError()));
 }
 
 UpdateTemplateOutcome SESClient::UpdateTemplate(const UpdateTemplateRequest& request) const {
-  return UpdateTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTemplateOutcome(result.GetResultWithOwnership()) : UpdateTemplateOutcome(std::move(result.GetError()));
 }
 
 VerifyDomainDkimOutcome SESClient::VerifyDomainDkim(const VerifyDomainDkimRequest& request) const {
-  return VerifyDomainDkimOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? VerifyDomainDkimOutcome(result.GetResultWithOwnership())
+                            : VerifyDomainDkimOutcome(std::move(result.GetError()));
 }
 
 VerifyDomainIdentityOutcome SESClient::VerifyDomainIdentity(const VerifyDomainIdentityRequest& request) const {
-  return VerifyDomainIdentityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? VerifyDomainIdentityOutcome(result.GetResultWithOwnership())
+                            : VerifyDomainIdentityOutcome(std::move(result.GetError()));
 }
 
 VerifyEmailAddressOutcome SESClient::VerifyEmailAddress(const VerifyEmailAddressRequest& request) const {
-  return VerifyEmailAddressOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? VerifyEmailAddressOutcome(result.GetResultWithOwnership())
+                            : VerifyEmailAddressOutcome(std::move(result.GetError()));
 }
 
 VerifyEmailIdentityOutcome SESClient::VerifyEmailIdentity(const VerifyEmailIdentityRequest& request) const {
-  return VerifyEmailIdentityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? VerifyEmailIdentityOutcome(result.GetResultWithOwnership())
+                            : VerifyEmailIdentityOutcome(std::move(result.GetError()));
 }

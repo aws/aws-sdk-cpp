@@ -185,7 +185,9 @@ CalculateIsolinesOutcome GeoRoutesClient::CalculateIsolines(const CalculateIsoli
     endpointResolutionOutcome.GetResult().AddPathSegments("/isolines");
   };
 
-  return CalculateIsolinesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CalculateIsolinesOutcome(result.GetResultWithOwnership())
+                            : CalculateIsolinesOutcome(std::move(result.GetError()));
 }
 
 CalculateRouteMatrixOutcome GeoRoutesClient::CalculateRouteMatrix(const CalculateRouteMatrixRequest& request) const {
@@ -194,7 +196,9 @@ CalculateRouteMatrixOutcome GeoRoutesClient::CalculateRouteMatrix(const Calculat
     endpointResolutionOutcome.GetResult().AddPathSegments("/route-matrix");
   };
 
-  return CalculateRouteMatrixOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CalculateRouteMatrixOutcome(result.GetResultWithOwnership())
+                            : CalculateRouteMatrixOutcome(std::move(result.GetError()));
 }
 
 CalculateRoutesOutcome GeoRoutesClient::CalculateRoutes(const CalculateRoutesRequest& request) const {
@@ -203,7 +207,9 @@ CalculateRoutesOutcome GeoRoutesClient::CalculateRoutes(const CalculateRoutesReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/routes");
   };
 
-  return CalculateRoutesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CalculateRoutesOutcome(result.GetResultWithOwnership())
+                            : CalculateRoutesOutcome(std::move(result.GetError()));
 }
 
 OptimizeWaypointsOutcome GeoRoutesClient::OptimizeWaypoints(const OptimizeWaypointsRequest& request) const {
@@ -212,7 +218,9 @@ OptimizeWaypointsOutcome GeoRoutesClient::OptimizeWaypoints(const OptimizeWaypoi
     endpointResolutionOutcome.GetResult().AddPathSegments("/optimize-waypoints");
   };
 
-  return OptimizeWaypointsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? OptimizeWaypointsOutcome(result.GetResultWithOwnership())
+                            : OptimizeWaypointsOutcome(std::move(result.GetError()));
 }
 
 SnapToRoadsOutcome GeoRoutesClient::SnapToRoads(const SnapToRoadsRequest& request) const {
@@ -221,5 +229,6 @@ SnapToRoadsOutcome GeoRoutesClient::SnapToRoads(const SnapToRoadsRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/snap-to-roads");
   };
 
-  return SnapToRoadsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SnapToRoadsOutcome(result.GetResultWithOwnership()) : SnapToRoadsOutcome(std::move(result.GetError()));
 }

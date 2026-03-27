@@ -226,7 +226,9 @@ CreateApplicationOutcome AppConfigClient::CreateApplication(const CreateApplicat
     endpointResolutionOutcome.GetResult().AddPathSegments("/applications");
   };
 
-  return CreateApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateApplicationOutcome(result.GetResultWithOwnership())
+                            : CreateApplicationOutcome(std::move(result.GetError()));
 }
 
 CreateConfigurationProfileOutcome AppConfigClient::CreateConfigurationProfile(const CreateConfigurationProfileRequest& request) const {
@@ -243,7 +245,9 @@ CreateConfigurationProfileOutcome AppConfigClient::CreateConfigurationProfile(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/configurationprofiles");
   };
 
-  return CreateConfigurationProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConfigurationProfileOutcome(result.GetResultWithOwnership())
+                            : CreateConfigurationProfileOutcome(std::move(result.GetError()));
 }
 
 CreateDeploymentStrategyOutcome AppConfigClient::CreateDeploymentStrategy(const CreateDeploymentStrategyRequest& request) const {
@@ -252,7 +256,9 @@ CreateDeploymentStrategyOutcome AppConfigClient::CreateDeploymentStrategy(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/deploymentstrategies");
   };
 
-  return CreateDeploymentStrategyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDeploymentStrategyOutcome(result.GetResultWithOwnership())
+                            : CreateDeploymentStrategyOutcome(std::move(result.GetError()));
 }
 
 CreateEnvironmentOutcome AppConfigClient::CreateEnvironment(const CreateEnvironmentRequest& request) const {
@@ -269,7 +275,9 @@ CreateEnvironmentOutcome AppConfigClient::CreateEnvironment(const CreateEnvironm
     endpointResolutionOutcome.GetResult().AddPathSegments("/environments");
   };
 
-  return CreateEnvironmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEnvironmentOutcome(result.GetResultWithOwnership())
+                            : CreateEnvironmentOutcome(std::move(result.GetError()));
 }
 
 CreateExtensionOutcome AppConfigClient::CreateExtension(const CreateExtensionRequest& request) const {
@@ -278,7 +286,9 @@ CreateExtensionOutcome AppConfigClient::CreateExtension(const CreateExtensionReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/extensions");
   };
 
-  return CreateExtensionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateExtensionOutcome(result.GetResultWithOwnership())
+                            : CreateExtensionOutcome(std::move(result.GetError()));
 }
 
 CreateExtensionAssociationOutcome AppConfigClient::CreateExtensionAssociation(const CreateExtensionAssociationRequest& request) const {
@@ -287,7 +297,9 @@ CreateExtensionAssociationOutcome AppConfigClient::CreateExtensionAssociation(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/extensionassociations");
   };
 
-  return CreateExtensionAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateExtensionAssociationOutcome(result.GetResultWithOwnership())
+                            : CreateExtensionAssociationOutcome(std::move(result.GetError()));
 }
 
 CreateHostedConfigurationVersionOutcome AppConfigClient::CreateHostedConfigurationVersion(
@@ -327,8 +339,9 @@ CreateHostedConfigurationVersionOutcome AppConfigClient::CreateHostedConfigurati
         endpointResolutionOutcome.GetResult().AddPathSegments("/configurationprofiles/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfigurationProfileId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/hostedconfigurationversions");
-        return CreateHostedConfigurationVersionOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateHostedConfigurationVersionOutcome(result.GetResultWithOwnership())
+                                  : CreateHostedConfigurationVersionOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -348,7 +361,9 @@ DeleteApplicationOutcome AppConfigClient::DeleteApplication(const DeleteApplicat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
   };
 
-  return DeleteApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteApplicationOutcome(result.GetResultWithOwnership())
+                            : DeleteApplicationOutcome(std::move(result.GetError()));
 }
 
 DeleteConfigurationProfileOutcome AppConfigClient::DeleteConfigurationProfile(const DeleteConfigurationProfileRequest& request) const {
@@ -371,7 +386,9 @@ DeleteConfigurationProfileOutcome AppConfigClient::DeleteConfigurationProfile(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfigurationProfileId());
   };
 
-  return DeleteConfigurationProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConfigurationProfileOutcome(result.GetResultWithOwnership())
+                            : DeleteConfigurationProfileOutcome(std::move(result.GetError()));
 }
 
 DeleteDeploymentStrategyOutcome AppConfigClient::DeleteDeploymentStrategy(const DeleteDeploymentStrategyRequest& request) const {
@@ -387,7 +404,9 @@ DeleteDeploymentStrategyOutcome AppConfigClient::DeleteDeploymentStrategy(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDeploymentStrategyId());
   };
 
-  return DeleteDeploymentStrategyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDeploymentStrategyOutcome(result.GetResultWithOwnership())
+                            : DeleteDeploymentStrategyOutcome(std::move(result.GetError()));
 }
 
 DeleteEnvironmentOutcome AppConfigClient::DeleteEnvironment(const DeleteEnvironmentRequest& request) const {
@@ -410,7 +429,9 @@ DeleteEnvironmentOutcome AppConfigClient::DeleteEnvironment(const DeleteEnvironm
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentId());
   };
 
-  return DeleteEnvironmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteEnvironmentOutcome(result.GetResultWithOwnership())
+                            : DeleteEnvironmentOutcome(std::move(result.GetError()));
 }
 
 DeleteExtensionOutcome AppConfigClient::DeleteExtension(const DeleteExtensionRequest& request) const {
@@ -426,7 +447,9 @@ DeleteExtensionOutcome AppConfigClient::DeleteExtension(const DeleteExtensionReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExtensionIdentifier());
   };
 
-  return DeleteExtensionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteExtensionOutcome(result.GetResultWithOwnership())
+                            : DeleteExtensionOutcome(std::move(result.GetError()));
 }
 
 DeleteExtensionAssociationOutcome AppConfigClient::DeleteExtensionAssociation(const DeleteExtensionAssociationRequest& request) const {
@@ -442,7 +465,9 @@ DeleteExtensionAssociationOutcome AppConfigClient::DeleteExtensionAssociation(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExtensionAssociationId());
   };
 
-  return DeleteExtensionAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteExtensionAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteExtensionAssociationOutcome(std::move(result.GetError()));
 }
 
 DeleteHostedConfigurationVersionOutcome AppConfigClient::DeleteHostedConfigurationVersion(
@@ -473,7 +498,9 @@ DeleteHostedConfigurationVersionOutcome AppConfigClient::DeleteHostedConfigurati
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionNumber());
   };
 
-  return DeleteHostedConfigurationVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteHostedConfigurationVersionOutcome(result.GetResultWithOwnership())
+                            : DeleteHostedConfigurationVersionOutcome(std::move(result.GetError()));
 }
 
 GetAccountSettingsOutcome AppConfigClient::GetAccountSettings(const GetAccountSettingsRequest& request) const {
@@ -482,7 +509,9 @@ GetAccountSettingsOutcome AppConfigClient::GetAccountSettings(const GetAccountSe
     endpointResolutionOutcome.GetResult().AddPathSegments("/settings");
   };
 
-  return GetAccountSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAccountSettingsOutcome(result.GetResultWithOwnership())
+                            : GetAccountSettingsOutcome(std::move(result.GetError()));
 }
 
 GetApplicationOutcome AppConfigClient::GetApplication(const GetApplicationRequest& request) const {
@@ -498,7 +527,8 @@ GetApplicationOutcome AppConfigClient::GetApplication(const GetApplicationReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
   };
 
-  return GetApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetApplicationOutcome(result.GetResultWithOwnership()) : GetApplicationOutcome(std::move(result.GetError()));
 }
 
 GetConfigurationProfileOutcome AppConfigClient::GetConfigurationProfile(const GetConfigurationProfileRequest& request) const {
@@ -521,7 +551,9 @@ GetConfigurationProfileOutcome AppConfigClient::GetConfigurationProfile(const Ge
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfigurationProfileId());
   };
 
-  return GetConfigurationProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConfigurationProfileOutcome(result.GetResultWithOwnership())
+                            : GetConfigurationProfileOutcome(std::move(result.GetError()));
 }
 
 GetDeploymentOutcome AppConfigClient::GetDeployment(const GetDeploymentRequest& request) const {
@@ -551,7 +583,8 @@ GetDeploymentOutcome AppConfigClient::GetDeployment(const GetDeploymentRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDeploymentNumber());
   };
 
-  return GetDeploymentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDeploymentOutcome(result.GetResultWithOwnership()) : GetDeploymentOutcome(std::move(result.GetError()));
 }
 
 GetDeploymentStrategyOutcome AppConfigClient::GetDeploymentStrategy(const GetDeploymentStrategyRequest& request) const {
@@ -567,7 +600,9 @@ GetDeploymentStrategyOutcome AppConfigClient::GetDeploymentStrategy(const GetDep
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDeploymentStrategyId());
   };
 
-  return GetDeploymentStrategyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDeploymentStrategyOutcome(result.GetResultWithOwnership())
+                            : GetDeploymentStrategyOutcome(std::move(result.GetError()));
 }
 
 GetEnvironmentOutcome AppConfigClient::GetEnvironment(const GetEnvironmentRequest& request) const {
@@ -590,7 +625,8 @@ GetEnvironmentOutcome AppConfigClient::GetEnvironment(const GetEnvironmentReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentId());
   };
 
-  return GetEnvironmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEnvironmentOutcome(result.GetResultWithOwnership()) : GetEnvironmentOutcome(std::move(result.GetError()));
 }
 
 GetExtensionOutcome AppConfigClient::GetExtension(const GetExtensionRequest& request) const {
@@ -606,7 +642,8 @@ GetExtensionOutcome AppConfigClient::GetExtension(const GetExtensionRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExtensionIdentifier());
   };
 
-  return GetExtensionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetExtensionOutcome(result.GetResultWithOwnership()) : GetExtensionOutcome(std::move(result.GetError()));
 }
 
 GetExtensionAssociationOutcome AppConfigClient::GetExtensionAssociation(const GetExtensionAssociationRequest& request) const {
@@ -622,7 +659,9 @@ GetExtensionAssociationOutcome AppConfigClient::GetExtensionAssociation(const Ge
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExtensionAssociationId());
   };
 
-  return GetExtensionAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetExtensionAssociationOutcome(result.GetResultWithOwnership())
+                            : GetExtensionAssociationOutcome(std::move(result.GetError()));
 }
 
 GetHostedConfigurationVersionOutcome AppConfigClient::GetHostedConfigurationVersion(
@@ -668,8 +707,9 @@ GetHostedConfigurationVersionOutcome AppConfigClient::GetHostedConfigurationVers
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfigurationProfileId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/hostedconfigurationversions/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionNumber());
-        return GetHostedConfigurationVersionOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetHostedConfigurationVersionOutcome(result.GetResultWithOwnership())
+                                  : GetHostedConfigurationVersionOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -682,7 +722,9 @@ ListApplicationsOutcome AppConfigClient::ListApplications(const ListApplications
     endpointResolutionOutcome.GetResult().AddPathSegments("/applications");
   };
 
-  return ListApplicationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListApplicationsOutcome(result.GetResultWithOwnership())
+                            : ListApplicationsOutcome(std::move(result.GetError()));
 }
 
 ListConfigurationProfilesOutcome AppConfigClient::ListConfigurationProfiles(const ListConfigurationProfilesRequest& request) const {
@@ -699,7 +741,9 @@ ListConfigurationProfilesOutcome AppConfigClient::ListConfigurationProfiles(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/configurationprofiles");
   };
 
-  return ListConfigurationProfilesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListConfigurationProfilesOutcome(result.GetResultWithOwnership())
+                            : ListConfigurationProfilesOutcome(std::move(result.GetError()));
 }
 
 ListDeploymentStrategiesOutcome AppConfigClient::ListDeploymentStrategies(const ListDeploymentStrategiesRequest& request) const {
@@ -708,7 +752,9 @@ ListDeploymentStrategiesOutcome AppConfigClient::ListDeploymentStrategies(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/deploymentstrategies");
   };
 
-  return ListDeploymentStrategiesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDeploymentStrategiesOutcome(result.GetResultWithOwnership())
+                            : ListDeploymentStrategiesOutcome(std::move(result.GetError()));
 }
 
 ListDeploymentsOutcome AppConfigClient::ListDeployments(const ListDeploymentsRequest& request) const {
@@ -732,7 +778,9 @@ ListDeploymentsOutcome AppConfigClient::ListDeployments(const ListDeploymentsReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/deployments");
   };
 
-  return ListDeploymentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDeploymentsOutcome(result.GetResultWithOwnership())
+                            : ListDeploymentsOutcome(std::move(result.GetError()));
 }
 
 ListEnvironmentsOutcome AppConfigClient::ListEnvironments(const ListEnvironmentsRequest& request) const {
@@ -749,7 +797,9 @@ ListEnvironmentsOutcome AppConfigClient::ListEnvironments(const ListEnvironments
     endpointResolutionOutcome.GetResult().AddPathSegments("/environments");
   };
 
-  return ListEnvironmentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListEnvironmentsOutcome(result.GetResultWithOwnership())
+                            : ListEnvironmentsOutcome(std::move(result.GetError()));
 }
 
 ListExtensionAssociationsOutcome AppConfigClient::ListExtensionAssociations(const ListExtensionAssociationsRequest& request) const {
@@ -758,7 +808,9 @@ ListExtensionAssociationsOutcome AppConfigClient::ListExtensionAssociations(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/extensionassociations");
   };
 
-  return ListExtensionAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListExtensionAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListExtensionAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListExtensionsOutcome AppConfigClient::ListExtensions(const ListExtensionsRequest& request) const {
@@ -767,7 +819,8 @@ ListExtensionsOutcome AppConfigClient::ListExtensions(const ListExtensionsReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/extensions");
   };
 
-  return ListExtensionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListExtensionsOutcome(result.GetResultWithOwnership()) : ListExtensionsOutcome(std::move(result.GetError()));
 }
 
 ListHostedConfigurationVersionsOutcome AppConfigClient::ListHostedConfigurationVersions(
@@ -792,7 +845,9 @@ ListHostedConfigurationVersionsOutcome AppConfigClient::ListHostedConfigurationV
     endpointResolutionOutcome.GetResult().AddPathSegments("/hostedconfigurationversions");
   };
 
-  return ListHostedConfigurationVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListHostedConfigurationVersionsOutcome(result.GetResultWithOwnership())
+                            : ListHostedConfigurationVersionsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome AppConfigClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -808,7 +863,9 @@ ListTagsForResourceOutcome AppConfigClient::ListTagsForResource(const ListTagsFo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 StartDeploymentOutcome AppConfigClient::StartDeployment(const StartDeploymentRequest& request) const {
@@ -832,7 +889,9 @@ StartDeploymentOutcome AppConfigClient::StartDeployment(const StartDeploymentReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/deployments");
   };
 
-  return StartDeploymentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDeploymentOutcome(result.GetResultWithOwnership())
+                            : StartDeploymentOutcome(std::move(result.GetError()));
 }
 
 StopDeploymentOutcome AppConfigClient::StopDeployment(const StopDeploymentRequest& request) const {
@@ -862,7 +921,8 @@ StopDeploymentOutcome AppConfigClient::StopDeployment(const StopDeploymentReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDeploymentNumber());
   };
 
-  return StopDeploymentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? StopDeploymentOutcome(result.GetResultWithOwnership()) : StopDeploymentOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome AppConfigClient::TagResource(const TagResourceRequest& request) const {
@@ -878,7 +938,8 @@ TagResourceOutcome AppConfigClient::TagResource(const TagResourceRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome AppConfigClient::UntagResource(const UntagResourceRequest& request) const {
@@ -899,7 +960,8 @@ UntagResourceOutcome AppConfigClient::UntagResource(const UntagResourceRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAccountSettingsOutcome AppConfigClient::UpdateAccountSettings(const UpdateAccountSettingsRequest& request) const {
@@ -908,7 +970,9 @@ UpdateAccountSettingsOutcome AppConfigClient::UpdateAccountSettings(const Update
     endpointResolutionOutcome.GetResult().AddPathSegments("/settings");
   };
 
-  return UpdateAccountSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateAccountSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdateAccountSettingsOutcome(std::move(result.GetError()));
 }
 
 UpdateApplicationOutcome AppConfigClient::UpdateApplication(const UpdateApplicationRequest& request) const {
@@ -924,7 +988,9 @@ UpdateApplicationOutcome AppConfigClient::UpdateApplication(const UpdateApplicat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
   };
 
-  return UpdateApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateApplicationOutcome(result.GetResultWithOwnership())
+                            : UpdateApplicationOutcome(std::move(result.GetError()));
 }
 
 UpdateConfigurationProfileOutcome AppConfigClient::UpdateConfigurationProfile(const UpdateConfigurationProfileRequest& request) const {
@@ -947,7 +1013,9 @@ UpdateConfigurationProfileOutcome AppConfigClient::UpdateConfigurationProfile(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfigurationProfileId());
   };
 
-  return UpdateConfigurationProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateConfigurationProfileOutcome(result.GetResultWithOwnership())
+                            : UpdateConfigurationProfileOutcome(std::move(result.GetError()));
 }
 
 UpdateDeploymentStrategyOutcome AppConfigClient::UpdateDeploymentStrategy(const UpdateDeploymentStrategyRequest& request) const {
@@ -963,7 +1031,9 @@ UpdateDeploymentStrategyOutcome AppConfigClient::UpdateDeploymentStrategy(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDeploymentStrategyId());
   };
 
-  return UpdateDeploymentStrategyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateDeploymentStrategyOutcome(result.GetResultWithOwnership())
+                            : UpdateDeploymentStrategyOutcome(std::move(result.GetError()));
 }
 
 UpdateEnvironmentOutcome AppConfigClient::UpdateEnvironment(const UpdateEnvironmentRequest& request) const {
@@ -986,7 +1056,9 @@ UpdateEnvironmentOutcome AppConfigClient::UpdateEnvironment(const UpdateEnvironm
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentId());
   };
 
-  return UpdateEnvironmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateEnvironmentOutcome(result.GetResultWithOwnership())
+                            : UpdateEnvironmentOutcome(std::move(result.GetError()));
 }
 
 UpdateExtensionOutcome AppConfigClient::UpdateExtension(const UpdateExtensionRequest& request) const {
@@ -1002,7 +1074,9 @@ UpdateExtensionOutcome AppConfigClient::UpdateExtension(const UpdateExtensionReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExtensionIdentifier());
   };
 
-  return UpdateExtensionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateExtensionOutcome(result.GetResultWithOwnership())
+                            : UpdateExtensionOutcome(std::move(result.GetError()));
 }
 
 UpdateExtensionAssociationOutcome AppConfigClient::UpdateExtensionAssociation(const UpdateExtensionAssociationRequest& request) const {
@@ -1018,7 +1092,9 @@ UpdateExtensionAssociationOutcome AppConfigClient::UpdateExtensionAssociation(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExtensionAssociationId());
   };
 
-  return UpdateExtensionAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateExtensionAssociationOutcome(result.GetResultWithOwnership())
+                            : UpdateExtensionAssociationOutcome(std::move(result.GetError()));
 }
 
 ValidateConfigurationOutcome AppConfigClient::ValidateConfiguration(const ValidateConfigurationRequest& request) const {
@@ -1047,5 +1123,7 @@ ValidateConfigurationOutcome AppConfigClient::ValidateConfiguration(const Valida
     endpointResolutionOutcome.GetResult().AddPathSegments("/validators");
   };
 
-  return ValidateConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ValidateConfigurationOutcome(result.GetResultWithOwnership())
+                            : ValidateConfigurationOutcome(std::move(result.GetError()));
 }

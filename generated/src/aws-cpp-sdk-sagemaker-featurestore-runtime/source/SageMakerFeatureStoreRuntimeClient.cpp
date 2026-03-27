@@ -193,7 +193,8 @@ BatchGetRecordOutcome SageMakerFeatureStoreRuntimeClient::BatchGetRecord(const B
     endpointResolutionOutcome.GetResult().AddPathSegments("/BatchGetRecord");
   };
 
-  return BatchGetRecordOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetRecordOutcome(result.GetResultWithOwnership()) : BatchGetRecordOutcome(std::move(result.GetError()));
 }
 
 DeleteRecordOutcome SageMakerFeatureStoreRuntimeClient::DeleteRecord(const DeleteRecordRequest& request) const {
@@ -220,7 +221,8 @@ DeleteRecordOutcome SageMakerFeatureStoreRuntimeClient::DeleteRecord(const Delet
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFeatureGroupName());
   };
 
-  return DeleteRecordOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRecordOutcome(result.GetResultWithOwnership()) : DeleteRecordOutcome(std::move(result.GetError()));
 }
 
 GetRecordOutcome SageMakerFeatureStoreRuntimeClient::GetRecord(const GetRecordRequest& request) const {
@@ -242,7 +244,8 @@ GetRecordOutcome SageMakerFeatureStoreRuntimeClient::GetRecord(const GetRecordRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFeatureGroupName());
   };
 
-  return GetRecordOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRecordOutcome(result.GetResultWithOwnership()) : GetRecordOutcome(std::move(result.GetError()));
 }
 
 PutRecordOutcome SageMakerFeatureStoreRuntimeClient::PutRecord(const PutRecordRequest& request) const {
@@ -258,5 +261,6 @@ PutRecordOutcome SageMakerFeatureStoreRuntimeClient::PutRecord(const PutRecordRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFeatureGroupName());
   };
 
-  return PutRecordOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutRecordOutcome(result.GetResultWithOwnership()) : PutRecordOutcome(std::move(result.GetError()));
 }

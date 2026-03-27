@@ -201,7 +201,9 @@ DeleteConnectionOutcome ApiGatewayManagementApiClient::DeleteConnection(const De
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectionId());
   };
 
-  return DeleteConnectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConnectionOutcome(result.GetResultWithOwnership())
+                            : DeleteConnectionOutcome(std::move(result.GetError()));
 }
 
 GetConnectionOutcome ApiGatewayManagementApiClient::GetConnection(const GetConnectionRequest& request) const {
@@ -217,7 +219,8 @@ GetConnectionOutcome ApiGatewayManagementApiClient::GetConnection(const GetConne
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectionId());
   };
 
-  return GetConnectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConnectionOutcome(result.GetResultWithOwnership()) : GetConnectionOutcome(std::move(result.GetError()));
 }
 
 PostToConnectionOutcome ApiGatewayManagementApiClient::PostToConnection(const PostToConnectionRequest& request) const {
@@ -233,5 +236,7 @@ PostToConnectionOutcome ApiGatewayManagementApiClient::PostToConnection(const Po
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectionId());
   };
 
-  return PostToConnectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PostToConnectionOutcome(result.GetResultWithOwnership())
+                            : PostToConnectionOutcome(std::move(result.GetError()));
 }

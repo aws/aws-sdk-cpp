@@ -198,7 +198,9 @@ BatchGetTokenBalanceOutcome ManagedBlockchainQueryClient::BatchGetTokenBalance(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/batch-get-token-balance");
   };
 
-  return BatchGetTokenBalanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetTokenBalanceOutcome(result.GetResultWithOwnership())
+                            : BatchGetTokenBalanceOutcome(std::move(result.GetError()));
 }
 
 GetAssetContractOutcome ManagedBlockchainQueryClient::GetAssetContract(const GetAssetContractRequest& request) const {
@@ -207,7 +209,9 @@ GetAssetContractOutcome ManagedBlockchainQueryClient::GetAssetContract(const Get
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-asset-contract");
   };
 
-  return GetAssetContractOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAssetContractOutcome(result.GetResultWithOwnership())
+                            : GetAssetContractOutcome(std::move(result.GetError()));
 }
 
 GetTokenBalanceOutcome ManagedBlockchainQueryClient::GetTokenBalance(const GetTokenBalanceRequest& request) const {
@@ -216,7 +220,9 @@ GetTokenBalanceOutcome ManagedBlockchainQueryClient::GetTokenBalance(const GetTo
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-token-balance");
   };
 
-  return GetTokenBalanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTokenBalanceOutcome(result.GetResultWithOwnership())
+                            : GetTokenBalanceOutcome(std::move(result.GetError()));
 }
 
 GetTransactionOutcome ManagedBlockchainQueryClient::GetTransaction(const GetTransactionRequest& request) const {
@@ -225,7 +231,8 @@ GetTransactionOutcome ManagedBlockchainQueryClient::GetTransaction(const GetTran
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-transaction");
   };
 
-  return GetTransactionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTransactionOutcome(result.GetResultWithOwnership()) : GetTransactionOutcome(std::move(result.GetError()));
 }
 
 ListAssetContractsOutcome ManagedBlockchainQueryClient::ListAssetContracts(const ListAssetContractsRequest& request) const {
@@ -234,7 +241,9 @@ ListAssetContractsOutcome ManagedBlockchainQueryClient::ListAssetContracts(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-asset-contracts");
   };
 
-  return ListAssetContractsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAssetContractsOutcome(result.GetResultWithOwnership())
+                            : ListAssetContractsOutcome(std::move(result.GetError()));
 }
 
 ListFilteredTransactionEventsOutcome ManagedBlockchainQueryClient::ListFilteredTransactionEvents(
@@ -244,7 +253,9 @@ ListFilteredTransactionEventsOutcome ManagedBlockchainQueryClient::ListFilteredT
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-filtered-transaction-events");
   };
 
-  return ListFilteredTransactionEventsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFilteredTransactionEventsOutcome(result.GetResultWithOwnership())
+                            : ListFilteredTransactionEventsOutcome(std::move(result.GetError()));
 }
 
 ListTokenBalancesOutcome ManagedBlockchainQueryClient::ListTokenBalances(const ListTokenBalancesRequest& request) const {
@@ -253,7 +264,9 @@ ListTokenBalancesOutcome ManagedBlockchainQueryClient::ListTokenBalances(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-token-balances");
   };
 
-  return ListTokenBalancesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTokenBalancesOutcome(result.GetResultWithOwnership())
+                            : ListTokenBalancesOutcome(std::move(result.GetError()));
 }
 
 ListTransactionEventsOutcome ManagedBlockchainQueryClient::ListTransactionEvents(const ListTransactionEventsRequest& request) const {
@@ -262,7 +275,9 @@ ListTransactionEventsOutcome ManagedBlockchainQueryClient::ListTransactionEvents
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-transaction-events");
   };
 
-  return ListTransactionEventsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTransactionEventsOutcome(result.GetResultWithOwnership())
+                            : ListTransactionEventsOutcome(std::move(result.GetError()));
 }
 
 ListTransactionsOutcome ManagedBlockchainQueryClient::ListTransactions(const ListTransactionsRequest& request) const {
@@ -271,5 +286,7 @@ ListTransactionsOutcome ManagedBlockchainQueryClient::ListTransactions(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-transactions");
   };
 
-  return ListTransactionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTransactionsOutcome(result.GetResultWithOwnership())
+                            : ListTransactionsOutcome(std::move(result.GetError()));
 }

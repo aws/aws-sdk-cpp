@@ -200,121 +200,168 @@ B2BIClient::InvokeOperationOutcome B2BIClient::InvokeServiceOperation(const Amaz
 }
 
 CreateCapabilityOutcome B2BIClient::CreateCapability(const CreateCapabilityRequest& request) const {
-  return CreateCapabilityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCapabilityOutcome(result.GetResultWithOwnership())
+                            : CreateCapabilityOutcome(std::move(result.GetError()));
 }
 
 CreatePartnershipOutcome B2BIClient::CreatePartnership(const CreatePartnershipRequest& request) const {
-  return CreatePartnershipOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePartnershipOutcome(result.GetResultWithOwnership())
+                            : CreatePartnershipOutcome(std::move(result.GetError()));
 }
 
 CreateProfileOutcome B2BIClient::CreateProfile(const CreateProfileRequest& request) const {
-  return CreateProfileOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProfileOutcome(result.GetResultWithOwnership()) : CreateProfileOutcome(std::move(result.GetError()));
 }
 
 CreateStarterMappingTemplateOutcome B2BIClient::CreateStarterMappingTemplate(const CreateStarterMappingTemplateRequest& request) const {
-  return CreateStarterMappingTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateStarterMappingTemplateOutcome(result.GetResultWithOwnership())
+                            : CreateStarterMappingTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateTransformerOutcome B2BIClient::CreateTransformer(const CreateTransformerRequest& request) const {
-  return CreateTransformerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTransformerOutcome(result.GetResultWithOwnership())
+                            : CreateTransformerOutcome(std::move(result.GetError()));
 }
 
 DeleteCapabilityOutcome B2BIClient::DeleteCapability(const DeleteCapabilityRequest& request) const {
-  return DeleteCapabilityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCapabilityOutcome(result.GetResultWithOwnership())
+                            : DeleteCapabilityOutcome(std::move(result.GetError()));
 }
 
 DeletePartnershipOutcome B2BIClient::DeletePartnership(const DeletePartnershipRequest& request) const {
-  return DeletePartnershipOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePartnershipOutcome(result.GetResultWithOwnership())
+                            : DeletePartnershipOutcome(std::move(result.GetError()));
 }
 
 DeleteProfileOutcome B2BIClient::DeleteProfile(const DeleteProfileRequest& request) const {
-  return DeleteProfileOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteProfileOutcome(result.GetResultWithOwnership()) : DeleteProfileOutcome(std::move(result.GetError()));
 }
 
 DeleteTransformerOutcome B2BIClient::DeleteTransformer(const DeleteTransformerRequest& request) const {
-  return DeleteTransformerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTransformerOutcome(result.GetResultWithOwnership())
+                            : DeleteTransformerOutcome(std::move(result.GetError()));
 }
 
 GenerateMappingOutcome B2BIClient::GenerateMapping(const GenerateMappingRequest& request) const {
-  return GenerateMappingOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GenerateMappingOutcome(result.GetResultWithOwnership())
+                            : GenerateMappingOutcome(std::move(result.GetError()));
 }
 
 GetCapabilityOutcome B2BIClient::GetCapability(const GetCapabilityRequest& request) const {
-  return GetCapabilityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCapabilityOutcome(result.GetResultWithOwnership()) : GetCapabilityOutcome(std::move(result.GetError()));
 }
 
 GetPartnershipOutcome B2BIClient::GetPartnership(const GetPartnershipRequest& request) const {
-  return GetPartnershipOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPartnershipOutcome(result.GetResultWithOwnership()) : GetPartnershipOutcome(std::move(result.GetError()));
 }
 
 GetProfileOutcome B2BIClient::GetProfile(const GetProfileRequest& request) const {
-  return GetProfileOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetProfileOutcome(result.GetResultWithOwnership()) : GetProfileOutcome(std::move(result.GetError()));
 }
 
 GetTransformerOutcome B2BIClient::GetTransformer(const GetTransformerRequest& request) const {
-  return GetTransformerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTransformerOutcome(result.GetResultWithOwnership()) : GetTransformerOutcome(std::move(result.GetError()));
 }
 
 GetTransformerJobOutcome B2BIClient::GetTransformerJob(const GetTransformerJobRequest& request) const {
-  return GetTransformerJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTransformerJobOutcome(result.GetResultWithOwnership())
+                            : GetTransformerJobOutcome(std::move(result.GetError()));
 }
 
 ListCapabilitiesOutcome B2BIClient::ListCapabilities(const ListCapabilitiesRequest& request) const {
-  return ListCapabilitiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCapabilitiesOutcome(result.GetResultWithOwnership())
+                            : ListCapabilitiesOutcome(std::move(result.GetError()));
 }
 
 ListPartnershipsOutcome B2BIClient::ListPartnerships(const ListPartnershipsRequest& request) const {
-  return ListPartnershipsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPartnershipsOutcome(result.GetResultWithOwnership())
+                            : ListPartnershipsOutcome(std::move(result.GetError()));
 }
 
 ListProfilesOutcome B2BIClient::ListProfiles(const ListProfilesRequest& request) const {
-  return ListProfilesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListProfilesOutcome(result.GetResultWithOwnership()) : ListProfilesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome B2BIClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTransformersOutcome B2BIClient::ListTransformers(const ListTransformersRequest& request) const {
-  return ListTransformersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTransformersOutcome(result.GetResultWithOwnership())
+                            : ListTransformersOutcome(std::move(result.GetError()));
 }
 
 StartTransformerJobOutcome B2BIClient::StartTransformerJob(const StartTransformerJobRequest& request) const {
-  return StartTransformerJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartTransformerJobOutcome(result.GetResultWithOwnership())
+                            : StartTransformerJobOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome B2BIClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 TestConversionOutcome B2BIClient::TestConversion(const TestConversionRequest& request) const {
-  return TestConversionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TestConversionOutcome(result.GetResultWithOwnership()) : TestConversionOutcome(std::move(result.GetError()));
 }
 
 TestMappingOutcome B2BIClient::TestMapping(const TestMappingRequest& request) const {
-  return TestMappingOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TestMappingOutcome(result.GetResultWithOwnership()) : TestMappingOutcome(std::move(result.GetError()));
 }
 
 TestParsingOutcome B2BIClient::TestParsing(const TestParsingRequest& request) const {
-  return TestParsingOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TestParsingOutcome(result.GetResultWithOwnership()) : TestParsingOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome B2BIClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateCapabilityOutcome B2BIClient::UpdateCapability(const UpdateCapabilityRequest& request) const {
-  return UpdateCapabilityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCapabilityOutcome(result.GetResultWithOwnership())
+                            : UpdateCapabilityOutcome(std::move(result.GetError()));
 }
 
 UpdatePartnershipOutcome B2BIClient::UpdatePartnership(const UpdatePartnershipRequest& request) const {
-  return UpdatePartnershipOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePartnershipOutcome(result.GetResultWithOwnership())
+                            : UpdatePartnershipOutcome(std::move(result.GetError()));
 }
 
 UpdateProfileOutcome B2BIClient::UpdateProfile(const UpdateProfileRequest& request) const {
-  return UpdateProfileOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateProfileOutcome(result.GetResultWithOwnership()) : UpdateProfileOutcome(std::move(result.GetError()));
 }
 
 UpdateTransformerOutcome B2BIClient::UpdateTransformer(const UpdateTransformerRequest& request) const {
-  return UpdateTransformerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTransformerOutcome(result.GetResultWithOwnership())
+                            : UpdateTransformerOutcome(std::move(result.GetError()));
 }

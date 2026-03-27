@@ -252,7 +252,9 @@ AssociateAssessmentReportEvidenceFolderOutcome AuditManagerClient::AssociateAsse
     endpointResolutionOutcome.GetResult().AddPathSegments("/associateToAssessmentReport");
   };
 
-  return AssociateAssessmentReportEvidenceFolderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateAssessmentReportEvidenceFolderOutcome(result.GetResultWithOwnership())
+                            : AssociateAssessmentReportEvidenceFolderOutcome(std::move(result.GetError()));
 }
 
 BatchAssociateAssessmentReportEvidenceOutcome AuditManagerClient::BatchAssociateAssessmentReportEvidence(
@@ -270,7 +272,9 @@ BatchAssociateAssessmentReportEvidenceOutcome AuditManagerClient::BatchAssociate
     endpointResolutionOutcome.GetResult().AddPathSegments("/batchAssociateToAssessmentReport");
   };
 
-  return BatchAssociateAssessmentReportEvidenceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? BatchAssociateAssessmentReportEvidenceOutcome(result.GetResultWithOwnership())
+                            : BatchAssociateAssessmentReportEvidenceOutcome(std::move(result.GetError()));
 }
 
 BatchCreateDelegationByAssessmentOutcome AuditManagerClient::BatchCreateDelegationByAssessment(
@@ -288,7 +292,9 @@ BatchCreateDelegationByAssessmentOutcome AuditManagerClient::BatchCreateDelegati
     endpointResolutionOutcome.GetResult().AddPathSegments("/delegations");
   };
 
-  return BatchCreateDelegationByAssessmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchCreateDelegationByAssessmentOutcome(result.GetResultWithOwnership())
+                            : BatchCreateDelegationByAssessmentOutcome(std::move(result.GetError()));
 }
 
 BatchDeleteDelegationByAssessmentOutcome AuditManagerClient::BatchDeleteDelegationByAssessment(
@@ -306,7 +312,9 @@ BatchDeleteDelegationByAssessmentOutcome AuditManagerClient::BatchDeleteDelegati
     endpointResolutionOutcome.GetResult().AddPathSegments("/delegations");
   };
 
-  return BatchDeleteDelegationByAssessmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? BatchDeleteDelegationByAssessmentOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteDelegationByAssessmentOutcome(std::move(result.GetError()));
 }
 
 BatchDisassociateAssessmentReportEvidenceOutcome AuditManagerClient::BatchDisassociateAssessmentReportEvidence(
@@ -324,7 +332,9 @@ BatchDisassociateAssessmentReportEvidenceOutcome AuditManagerClient::BatchDisass
     endpointResolutionOutcome.GetResult().AddPathSegments("/batchDisassociateFromAssessmentReport");
   };
 
-  return BatchDisassociateAssessmentReportEvidenceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? BatchDisassociateAssessmentReportEvidenceOutcome(result.GetResultWithOwnership())
+                            : BatchDisassociateAssessmentReportEvidenceOutcome(std::move(result.GetError()));
 }
 
 BatchImportEvidenceToAssessmentControlOutcome AuditManagerClient::BatchImportEvidenceToAssessmentControl(
@@ -356,7 +366,9 @@ BatchImportEvidenceToAssessmentControlOutcome AuditManagerClient::BatchImportEvi
     endpointResolutionOutcome.GetResult().AddPathSegments("/evidence");
   };
 
-  return BatchImportEvidenceToAssessmentControlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchImportEvidenceToAssessmentControlOutcome(result.GetResultWithOwnership())
+                            : BatchImportEvidenceToAssessmentControlOutcome(std::move(result.GetError()));
 }
 
 CreateAssessmentOutcome AuditManagerClient::CreateAssessment(const CreateAssessmentRequest& request) const {
@@ -365,7 +377,9 @@ CreateAssessmentOutcome AuditManagerClient::CreateAssessment(const CreateAssessm
     endpointResolutionOutcome.GetResult().AddPathSegments("/assessments");
   };
 
-  return CreateAssessmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAssessmentOutcome(result.GetResultWithOwnership())
+                            : CreateAssessmentOutcome(std::move(result.GetError()));
 }
 
 CreateAssessmentFrameworkOutcome AuditManagerClient::CreateAssessmentFramework(const CreateAssessmentFrameworkRequest& request) const {
@@ -374,7 +388,9 @@ CreateAssessmentFrameworkOutcome AuditManagerClient::CreateAssessmentFramework(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/assessmentFrameworks");
   };
 
-  return CreateAssessmentFrameworkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAssessmentFrameworkOutcome(result.GetResultWithOwnership())
+                            : CreateAssessmentFrameworkOutcome(std::move(result.GetError()));
 }
 
 CreateAssessmentReportOutcome AuditManagerClient::CreateAssessmentReport(const CreateAssessmentReportRequest& request) const {
@@ -391,7 +407,9 @@ CreateAssessmentReportOutcome AuditManagerClient::CreateAssessmentReport(const C
     endpointResolutionOutcome.GetResult().AddPathSegments("/reports");
   };
 
-  return CreateAssessmentReportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAssessmentReportOutcome(result.GetResultWithOwnership())
+                            : CreateAssessmentReportOutcome(std::move(result.GetError()));
 }
 
 CreateControlOutcome AuditManagerClient::CreateControl(const CreateControlRequest& request) const {
@@ -400,7 +418,8 @@ CreateControlOutcome AuditManagerClient::CreateControl(const CreateControlReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/controls");
   };
 
-  return CreateControlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateControlOutcome(result.GetResultWithOwnership()) : CreateControlOutcome(std::move(result.GetError()));
 }
 
 DeleteAssessmentOutcome AuditManagerClient::DeleteAssessment(const DeleteAssessmentRequest& request) const {
@@ -416,7 +435,9 @@ DeleteAssessmentOutcome AuditManagerClient::DeleteAssessment(const DeleteAssessm
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssessmentId());
   };
 
-  return DeleteAssessmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAssessmentOutcome(result.GetResultWithOwnership())
+                            : DeleteAssessmentOutcome(std::move(result.GetError()));
 }
 
 DeleteAssessmentFrameworkOutcome AuditManagerClient::DeleteAssessmentFramework(const DeleteAssessmentFrameworkRequest& request) const {
@@ -432,7 +453,9 @@ DeleteAssessmentFrameworkOutcome AuditManagerClient::DeleteAssessmentFramework(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFrameworkId());
   };
 
-  return DeleteAssessmentFrameworkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAssessmentFrameworkOutcome(result.GetResultWithOwnership())
+                            : DeleteAssessmentFrameworkOutcome(std::move(result.GetError()));
 }
 
 DeleteAssessmentFrameworkShareOutcome AuditManagerClient::DeleteAssessmentFrameworkShare(
@@ -454,7 +477,9 @@ DeleteAssessmentFrameworkShareOutcome AuditManagerClient::DeleteAssessmentFramew
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRequestId());
   };
 
-  return DeleteAssessmentFrameworkShareOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAssessmentFrameworkShareOutcome(result.GetResultWithOwnership())
+                            : DeleteAssessmentFrameworkShareOutcome(std::move(result.GetError()));
 }
 
 DeleteAssessmentReportOutcome AuditManagerClient::DeleteAssessmentReport(const DeleteAssessmentReportRequest& request) const {
@@ -477,7 +502,9 @@ DeleteAssessmentReportOutcome AuditManagerClient::DeleteAssessmentReport(const D
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssessmentReportId());
   };
 
-  return DeleteAssessmentReportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAssessmentReportOutcome(result.GetResultWithOwnership())
+                            : DeleteAssessmentReportOutcome(std::move(result.GetError()));
 }
 
 DeleteControlOutcome AuditManagerClient::DeleteControl(const DeleteControlRequest& request) const {
@@ -493,7 +520,8 @@ DeleteControlOutcome AuditManagerClient::DeleteControl(const DeleteControlReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetControlId());
   };
 
-  return DeleteControlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteControlOutcome(result.GetResultWithOwnership()) : DeleteControlOutcome(std::move(result.GetError()));
 }
 
 DeregisterAccountOutcome AuditManagerClient::DeregisterAccount(const DeregisterAccountRequest& request) const {
@@ -502,7 +530,9 @@ DeregisterAccountOutcome AuditManagerClient::DeregisterAccount(const DeregisterA
     endpointResolutionOutcome.GetResult().AddPathSegments("/account/deregisterAccount");
   };
 
-  return DeregisterAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterAccountOutcome(result.GetResultWithOwnership())
+                            : DeregisterAccountOutcome(std::move(result.GetError()));
 }
 
 DeregisterOrganizationAdminAccountOutcome AuditManagerClient::DeregisterOrganizationAdminAccount(
@@ -512,7 +542,9 @@ DeregisterOrganizationAdminAccountOutcome AuditManagerClient::DeregisterOrganiza
     endpointResolutionOutcome.GetResult().AddPathSegments("/account/deregisterOrganizationAdminAccount");
   };
 
-  return DeregisterOrganizationAdminAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterOrganizationAdminAccountOutcome(result.GetResultWithOwnership())
+                            : DeregisterOrganizationAdminAccountOutcome(std::move(result.GetError()));
 }
 
 DisassociateAssessmentReportEvidenceFolderOutcome AuditManagerClient::DisassociateAssessmentReportEvidenceFolder(
@@ -530,7 +562,9 @@ DisassociateAssessmentReportEvidenceFolderOutcome AuditManagerClient::Disassocia
     endpointResolutionOutcome.GetResult().AddPathSegments("/disassociateFromAssessmentReport");
   };
 
-  return DisassociateAssessmentReportEvidenceFolderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? DisassociateAssessmentReportEvidenceFolderOutcome(result.GetResultWithOwnership())
+                            : DisassociateAssessmentReportEvidenceFolderOutcome(std::move(result.GetError()));
 }
 
 GetAccountStatusOutcome AuditManagerClient::GetAccountStatus(const GetAccountStatusRequest& request) const {
@@ -539,7 +573,9 @@ GetAccountStatusOutcome AuditManagerClient::GetAccountStatus(const GetAccountSta
     endpointResolutionOutcome.GetResult().AddPathSegments("/account/status");
   };
 
-  return GetAccountStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAccountStatusOutcome(result.GetResultWithOwnership())
+                            : GetAccountStatusOutcome(std::move(result.GetError()));
 }
 
 GetAssessmentOutcome AuditManagerClient::GetAssessment(const GetAssessmentRequest& request) const {
@@ -555,7 +591,8 @@ GetAssessmentOutcome AuditManagerClient::GetAssessment(const GetAssessmentReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssessmentId());
   };
 
-  return GetAssessmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAssessmentOutcome(result.GetResultWithOwnership()) : GetAssessmentOutcome(std::move(result.GetError()));
 }
 
 GetAssessmentFrameworkOutcome AuditManagerClient::GetAssessmentFramework(const GetAssessmentFrameworkRequest& request) const {
@@ -571,7 +608,9 @@ GetAssessmentFrameworkOutcome AuditManagerClient::GetAssessmentFramework(const G
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFrameworkId());
   };
 
-  return GetAssessmentFrameworkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAssessmentFrameworkOutcome(result.GetResultWithOwnership())
+                            : GetAssessmentFrameworkOutcome(std::move(result.GetError()));
 }
 
 GetAssessmentReportUrlOutcome AuditManagerClient::GetAssessmentReportUrl(const GetAssessmentReportUrlRequest& request) const {
@@ -595,7 +634,9 @@ GetAssessmentReportUrlOutcome AuditManagerClient::GetAssessmentReportUrl(const G
     endpointResolutionOutcome.GetResult().AddPathSegments("/url");
   };
 
-  return GetAssessmentReportUrlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAssessmentReportUrlOutcome(result.GetResultWithOwnership())
+                            : GetAssessmentReportUrlOutcome(std::move(result.GetError()));
 }
 
 GetChangeLogsOutcome AuditManagerClient::GetChangeLogs(const GetChangeLogsRequest& request) const {
@@ -612,7 +653,8 @@ GetChangeLogsOutcome AuditManagerClient::GetChangeLogs(const GetChangeLogsReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/changelogs");
   };
 
-  return GetChangeLogsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetChangeLogsOutcome(result.GetResultWithOwnership()) : GetChangeLogsOutcome(std::move(result.GetError()));
 }
 
 GetControlOutcome AuditManagerClient::GetControl(const GetControlRequest& request) const {
@@ -628,7 +670,8 @@ GetControlOutcome AuditManagerClient::GetControl(const GetControlRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetControlId());
   };
 
-  return GetControlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetControlOutcome(result.GetResultWithOwnership()) : GetControlOutcome(std::move(result.GetError()));
 }
 
 GetDelegationsOutcome AuditManagerClient::GetDelegations(const GetDelegationsRequest& request) const {
@@ -637,7 +680,8 @@ GetDelegationsOutcome AuditManagerClient::GetDelegations(const GetDelegationsReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/delegations");
   };
 
-  return GetDelegationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDelegationsOutcome(result.GetResultWithOwnership()) : GetDelegationsOutcome(std::move(result.GetError()));
 }
 
 GetEvidenceOutcome AuditManagerClient::GetEvidence(const GetEvidenceRequest& request) const {
@@ -674,7 +718,8 @@ GetEvidenceOutcome AuditManagerClient::GetEvidence(const GetEvidenceRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEvidenceId());
   };
 
-  return GetEvidenceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEvidenceOutcome(result.GetResultWithOwnership()) : GetEvidenceOutcome(std::move(result.GetError()));
 }
 
 GetEvidenceByEvidenceFolderOutcome AuditManagerClient::GetEvidenceByEvidenceFolder(
@@ -706,7 +751,9 @@ GetEvidenceByEvidenceFolderOutcome AuditManagerClient::GetEvidenceByEvidenceFold
     endpointResolutionOutcome.GetResult().AddPathSegments("/evidence");
   };
 
-  return GetEvidenceByEvidenceFolderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEvidenceByEvidenceFolderOutcome(result.GetResultWithOwnership())
+                            : GetEvidenceByEvidenceFolderOutcome(std::move(result.GetError()));
 }
 
 GetEvidenceFileUploadUrlOutcome AuditManagerClient::GetEvidenceFileUploadUrl(const GetEvidenceFileUploadUrlRequest& request) const {
@@ -721,7 +768,9 @@ GetEvidenceFileUploadUrlOutcome AuditManagerClient::GetEvidenceFileUploadUrl(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/evidenceFileUploadUrl");
   };
 
-  return GetEvidenceFileUploadUrlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEvidenceFileUploadUrlOutcome(result.GetResultWithOwnership())
+                            : GetEvidenceFileUploadUrlOutcome(std::move(result.GetError()));
 }
 
 GetEvidenceFolderOutcome AuditManagerClient::GetEvidenceFolder(const GetEvidenceFolderRequest& request) const {
@@ -751,7 +800,9 @@ GetEvidenceFolderOutcome AuditManagerClient::GetEvidenceFolder(const GetEvidence
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEvidenceFolderId());
   };
 
-  return GetEvidenceFolderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEvidenceFolderOutcome(result.GetResultWithOwnership())
+                            : GetEvidenceFolderOutcome(std::move(result.GetError()));
 }
 
 GetEvidenceFoldersByAssessmentOutcome AuditManagerClient::GetEvidenceFoldersByAssessment(
@@ -769,7 +820,9 @@ GetEvidenceFoldersByAssessmentOutcome AuditManagerClient::GetEvidenceFoldersByAs
     endpointResolutionOutcome.GetResult().AddPathSegments("/evidenceFolders");
   };
 
-  return GetEvidenceFoldersByAssessmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEvidenceFoldersByAssessmentOutcome(result.GetResultWithOwnership())
+                            : GetEvidenceFoldersByAssessmentOutcome(std::move(result.GetError()));
 }
 
 GetEvidenceFoldersByAssessmentControlOutcome AuditManagerClient::GetEvidenceFoldersByAssessmentControl(
@@ -799,7 +852,9 @@ GetEvidenceFoldersByAssessmentControlOutcome AuditManagerClient::GetEvidenceFold
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetControlId());
   };
 
-  return GetEvidenceFoldersByAssessmentControlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEvidenceFoldersByAssessmentControlOutcome(result.GetResultWithOwnership())
+                            : GetEvidenceFoldersByAssessmentControlOutcome(std::move(result.GetError()));
 }
 
 GetInsightsOutcome AuditManagerClient::GetInsights(const GetInsightsRequest& request) const {
@@ -808,7 +863,8 @@ GetInsightsOutcome AuditManagerClient::GetInsights(const GetInsightsRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/insights");
   };
 
-  return GetInsightsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetInsightsOutcome(result.GetResultWithOwnership()) : GetInsightsOutcome(std::move(result.GetError()));
 }
 
 GetInsightsByAssessmentOutcome AuditManagerClient::GetInsightsByAssessment(const GetInsightsByAssessmentRequest& request) const {
@@ -824,7 +880,9 @@ GetInsightsByAssessmentOutcome AuditManagerClient::GetInsightsByAssessment(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssessmentId());
   };
 
-  return GetInsightsByAssessmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetInsightsByAssessmentOutcome(result.GetResultWithOwnership())
+                            : GetInsightsByAssessmentOutcome(std::move(result.GetError()));
 }
 
 GetOrganizationAdminAccountOutcome AuditManagerClient::GetOrganizationAdminAccount(
@@ -834,7 +892,9 @@ GetOrganizationAdminAccountOutcome AuditManagerClient::GetOrganizationAdminAccou
     endpointResolutionOutcome.GetResult().AddPathSegments("/account/organizationAdminAccount");
   };
 
-  return GetOrganizationAdminAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetOrganizationAdminAccountOutcome(result.GetResultWithOwnership())
+                            : GetOrganizationAdminAccountOutcome(std::move(result.GetError()));
 }
 
 GetServicesInScopeOutcome AuditManagerClient::GetServicesInScope(const GetServicesInScopeRequest& request) const {
@@ -843,7 +903,9 @@ GetServicesInScopeOutcome AuditManagerClient::GetServicesInScope(const GetServic
     endpointResolutionOutcome.GetResult().AddPathSegments("/services");
   };
 
-  return GetServicesInScopeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetServicesInScopeOutcome(result.GetResultWithOwnership())
+                            : GetServicesInScopeOutcome(std::move(result.GetError()));
 }
 
 GetSettingsOutcome AuditManagerClient::GetSettings(const GetSettingsRequest& request) const {
@@ -859,7 +921,8 @@ GetSettingsOutcome AuditManagerClient::GetSettings(const GetSettingsRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(SettingAttributeMapper::GetNameForSettingAttribute(request.GetAttribute()));
   };
 
-  return GetSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSettingsOutcome(result.GetResultWithOwnership()) : GetSettingsOutcome(std::move(result.GetError()));
 }
 
 ListAssessmentControlInsightsByControlDomainOutcome AuditManagerClient::ListAssessmentControlInsightsByControlDomain(
@@ -880,7 +943,9 @@ ListAssessmentControlInsightsByControlDomainOutcome AuditManagerClient::ListAsse
     endpointResolutionOutcome.GetResult().AddPathSegments("/insights/controls-by-assessment");
   };
 
-  return ListAssessmentControlInsightsByControlDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAssessmentControlInsightsByControlDomainOutcome(result.GetResultWithOwnership())
+                            : ListAssessmentControlInsightsByControlDomainOutcome(std::move(result.GetError()));
 }
 
 ListAssessmentFrameworkShareRequestsOutcome AuditManagerClient::ListAssessmentFrameworkShareRequests(
@@ -896,7 +961,9 @@ ListAssessmentFrameworkShareRequestsOutcome AuditManagerClient::ListAssessmentFr
     endpointResolutionOutcome.GetResult().AddPathSegments("/assessmentFrameworkShareRequests");
   };
 
-  return ListAssessmentFrameworkShareRequestsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAssessmentFrameworkShareRequestsOutcome(result.GetResultWithOwnership())
+                            : ListAssessmentFrameworkShareRequestsOutcome(std::move(result.GetError()));
 }
 
 ListAssessmentFrameworksOutcome AuditManagerClient::ListAssessmentFrameworks(const ListAssessmentFrameworksRequest& request) const {
@@ -911,7 +978,9 @@ ListAssessmentFrameworksOutcome AuditManagerClient::ListAssessmentFrameworks(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/assessmentFrameworks");
   };
 
-  return ListAssessmentFrameworksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAssessmentFrameworksOutcome(result.GetResultWithOwnership())
+                            : ListAssessmentFrameworksOutcome(std::move(result.GetError()));
 }
 
 ListAssessmentReportsOutcome AuditManagerClient::ListAssessmentReports(const ListAssessmentReportsRequest& request) const {
@@ -920,7 +989,9 @@ ListAssessmentReportsOutcome AuditManagerClient::ListAssessmentReports(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/assessmentReports");
   };
 
-  return ListAssessmentReportsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAssessmentReportsOutcome(result.GetResultWithOwnership())
+                            : ListAssessmentReportsOutcome(std::move(result.GetError()));
 }
 
 ListAssessmentsOutcome AuditManagerClient::ListAssessments(const ListAssessmentsRequest& request) const {
@@ -929,7 +1000,9 @@ ListAssessmentsOutcome AuditManagerClient::ListAssessments(const ListAssessments
     endpointResolutionOutcome.GetResult().AddPathSegments("/assessments");
   };
 
-  return ListAssessmentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAssessmentsOutcome(result.GetResultWithOwnership())
+                            : ListAssessmentsOutcome(std::move(result.GetError()));
 }
 
 ListControlDomainInsightsOutcome AuditManagerClient::ListControlDomainInsights(const ListControlDomainInsightsRequest& request) const {
@@ -938,7 +1011,9 @@ ListControlDomainInsightsOutcome AuditManagerClient::ListControlDomainInsights(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/insights/control-domains");
   };
 
-  return ListControlDomainInsightsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListControlDomainInsightsOutcome(result.GetResultWithOwnership())
+                            : ListControlDomainInsightsOutcome(std::move(result.GetError()));
 }
 
 ListControlDomainInsightsByAssessmentOutcome AuditManagerClient::ListControlDomainInsightsByAssessment(
@@ -954,7 +1029,9 @@ ListControlDomainInsightsByAssessmentOutcome AuditManagerClient::ListControlDoma
     endpointResolutionOutcome.GetResult().AddPathSegments("/insights/control-domains-by-assessment");
   };
 
-  return ListControlDomainInsightsByAssessmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListControlDomainInsightsByAssessmentOutcome(result.GetResultWithOwnership())
+                            : ListControlDomainInsightsByAssessmentOutcome(std::move(result.GetError()));
 }
 
 ListControlInsightsByControlDomainOutcome AuditManagerClient::ListControlInsightsByControlDomain(
@@ -970,7 +1047,9 @@ ListControlInsightsByControlDomainOutcome AuditManagerClient::ListControlInsight
     endpointResolutionOutcome.GetResult().AddPathSegments("/insights/controls");
   };
 
-  return ListControlInsightsByControlDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListControlInsightsByControlDomainOutcome(result.GetResultWithOwnership())
+                            : ListControlInsightsByControlDomainOutcome(std::move(result.GetError()));
 }
 
 ListControlsOutcome AuditManagerClient::ListControls(const ListControlsRequest& request) const {
@@ -985,7 +1064,8 @@ ListControlsOutcome AuditManagerClient::ListControls(const ListControlsRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/controls");
   };
 
-  return ListControlsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListControlsOutcome(result.GetResultWithOwnership()) : ListControlsOutcome(std::move(result.GetError()));
 }
 
 ListKeywordsForDataSourceOutcome AuditManagerClient::ListKeywordsForDataSource(const ListKeywordsForDataSourceRequest& request) const {
@@ -1000,7 +1080,9 @@ ListKeywordsForDataSourceOutcome AuditManagerClient::ListKeywordsForDataSource(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/dataSourceKeywords");
   };
 
-  return ListKeywordsForDataSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListKeywordsForDataSourceOutcome(result.GetResultWithOwnership())
+                            : ListKeywordsForDataSourceOutcome(std::move(result.GetError()));
 }
 
 ListNotificationsOutcome AuditManagerClient::ListNotifications(const ListNotificationsRequest& request) const {
@@ -1009,7 +1091,9 @@ ListNotificationsOutcome AuditManagerClient::ListNotifications(const ListNotific
     endpointResolutionOutcome.GetResult().AddPathSegments("/notifications");
   };
 
-  return ListNotificationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListNotificationsOutcome(result.GetResultWithOwnership())
+                            : ListNotificationsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome AuditManagerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -1025,7 +1109,9 @@ ListTagsForResourceOutcome AuditManagerClient::ListTagsForResource(const ListTag
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 RegisterAccountOutcome AuditManagerClient::RegisterAccount(const RegisterAccountRequest& request) const {
@@ -1034,7 +1120,9 @@ RegisterAccountOutcome AuditManagerClient::RegisterAccount(const RegisterAccount
     endpointResolutionOutcome.GetResult().AddPathSegments("/account/registerAccount");
   };
 
-  return RegisterAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterAccountOutcome(result.GetResultWithOwnership())
+                            : RegisterAccountOutcome(std::move(result.GetError()));
 }
 
 RegisterOrganizationAdminAccountOutcome AuditManagerClient::RegisterOrganizationAdminAccount(
@@ -1044,7 +1132,9 @@ RegisterOrganizationAdminAccountOutcome AuditManagerClient::RegisterOrganization
     endpointResolutionOutcome.GetResult().AddPathSegments("/account/registerOrganizationAdminAccount");
   };
 
-  return RegisterOrganizationAdminAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterOrganizationAdminAccountOutcome(result.GetResultWithOwnership())
+                            : RegisterOrganizationAdminAccountOutcome(std::move(result.GetError()));
 }
 
 StartAssessmentFrameworkShareOutcome AuditManagerClient::StartAssessmentFrameworkShare(
@@ -1062,7 +1152,9 @@ StartAssessmentFrameworkShareOutcome AuditManagerClient::StartAssessmentFramewor
     endpointResolutionOutcome.GetResult().AddPathSegments("/shareRequests");
   };
 
-  return StartAssessmentFrameworkShareOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartAssessmentFrameworkShareOutcome(result.GetResultWithOwnership())
+                            : StartAssessmentFrameworkShareOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome AuditManagerClient::TagResource(const TagResourceRequest& request) const {
@@ -1078,7 +1170,8 @@ TagResourceOutcome AuditManagerClient::TagResource(const TagResourceRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome AuditManagerClient::UntagResource(const UntagResourceRequest& request) const {
@@ -1099,7 +1192,8 @@ UntagResourceOutcome AuditManagerClient::UntagResource(const UntagResourceReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAssessmentOutcome AuditManagerClient::UpdateAssessment(const UpdateAssessmentRequest& request) const {
@@ -1115,7 +1209,9 @@ UpdateAssessmentOutcome AuditManagerClient::UpdateAssessment(const UpdateAssessm
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssessmentId());
   };
 
-  return UpdateAssessmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateAssessmentOutcome(result.GetResultWithOwnership())
+                            : UpdateAssessmentOutcome(std::move(result.GetError()));
 }
 
 UpdateAssessmentControlOutcome AuditManagerClient::UpdateAssessmentControl(const UpdateAssessmentControlRequest& request) const {
@@ -1145,7 +1241,9 @@ UpdateAssessmentControlOutcome AuditManagerClient::UpdateAssessmentControl(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetControlId());
   };
 
-  return UpdateAssessmentControlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateAssessmentControlOutcome(result.GetResultWithOwnership())
+                            : UpdateAssessmentControlOutcome(std::move(result.GetError()));
 }
 
 UpdateAssessmentControlSetStatusOutcome AuditManagerClient::UpdateAssessmentControlSetStatus(
@@ -1170,7 +1268,9 @@ UpdateAssessmentControlSetStatusOutcome AuditManagerClient::UpdateAssessmentCont
     endpointResolutionOutcome.GetResult().AddPathSegments("/status");
   };
 
-  return UpdateAssessmentControlSetStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateAssessmentControlSetStatusOutcome(result.GetResultWithOwnership())
+                            : UpdateAssessmentControlSetStatusOutcome(std::move(result.GetError()));
 }
 
 UpdateAssessmentFrameworkOutcome AuditManagerClient::UpdateAssessmentFramework(const UpdateAssessmentFrameworkRequest& request) const {
@@ -1186,7 +1286,9 @@ UpdateAssessmentFrameworkOutcome AuditManagerClient::UpdateAssessmentFramework(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFrameworkId());
   };
 
-  return UpdateAssessmentFrameworkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateAssessmentFrameworkOutcome(result.GetResultWithOwnership())
+                            : UpdateAssessmentFrameworkOutcome(std::move(result.GetError()));
 }
 
 UpdateAssessmentFrameworkShareOutcome AuditManagerClient::UpdateAssessmentFrameworkShare(
@@ -1203,7 +1305,9 @@ UpdateAssessmentFrameworkShareOutcome AuditManagerClient::UpdateAssessmentFramew
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRequestId());
   };
 
-  return UpdateAssessmentFrameworkShareOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateAssessmentFrameworkShareOutcome(result.GetResultWithOwnership())
+                            : UpdateAssessmentFrameworkShareOutcome(std::move(result.GetError()));
 }
 
 UpdateAssessmentStatusOutcome AuditManagerClient::UpdateAssessmentStatus(const UpdateAssessmentStatusRequest& request) const {
@@ -1220,7 +1324,9 @@ UpdateAssessmentStatusOutcome AuditManagerClient::UpdateAssessmentStatus(const U
     endpointResolutionOutcome.GetResult().AddPathSegments("/status");
   };
 
-  return UpdateAssessmentStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateAssessmentStatusOutcome(result.GetResultWithOwnership())
+                            : UpdateAssessmentStatusOutcome(std::move(result.GetError()));
 }
 
 UpdateControlOutcome AuditManagerClient::UpdateControl(const UpdateControlRequest& request) const {
@@ -1236,7 +1342,8 @@ UpdateControlOutcome AuditManagerClient::UpdateControl(const UpdateControlReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetControlId());
   };
 
-  return UpdateControlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateControlOutcome(result.GetResultWithOwnership()) : UpdateControlOutcome(std::move(result.GetError()));
 }
 
 UpdateSettingsOutcome AuditManagerClient::UpdateSettings(const UpdateSettingsRequest& request) const {
@@ -1245,7 +1352,8 @@ UpdateSettingsOutcome AuditManagerClient::UpdateSettings(const UpdateSettingsReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/settings");
   };
 
-  return UpdateSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateSettingsOutcome(result.GetResultWithOwnership()) : UpdateSettingsOutcome(std::move(result.GetError()));
 }
 
 ValidateAssessmentReportIntegrityOutcome AuditManagerClient::ValidateAssessmentReportIntegrity(
@@ -1255,5 +1363,7 @@ ValidateAssessmentReportIntegrityOutcome AuditManagerClient::ValidateAssessmentR
     endpointResolutionOutcome.GetResult().AddPathSegments("/assessmentReports/integrity");
   };
 
-  return ValidateAssessmentReportIntegrityOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ValidateAssessmentReportIntegrityOutcome(result.GetResultWithOwnership())
+                            : ValidateAssessmentReportIntegrityOutcome(std::move(result.GetError()));
 }

@@ -182,5 +182,6 @@ ScanSbomOutcome InspectorscanClient::ScanSbom(const ScanSbomRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegments("/scan/sbom");
   };
 
-  return ScanSbomOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ScanSbomOutcome(result.GetResultWithOwnership()) : ScanSbomOutcome(std::move(result.GetError()));
 }

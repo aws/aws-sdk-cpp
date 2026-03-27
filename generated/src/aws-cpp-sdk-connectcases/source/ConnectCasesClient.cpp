@@ -232,7 +232,9 @@ BatchGetCaseRuleOutcome ConnectCasesClient::BatchGetCaseRule(const BatchGetCaseR
     endpointResolutionOutcome.GetResult().AddPathSegments("/rules-batch");
   };
 
-  return BatchGetCaseRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetCaseRuleOutcome(result.GetResultWithOwnership())
+                            : BatchGetCaseRuleOutcome(std::move(result.GetError()));
 }
 
 BatchGetFieldOutcome ConnectCasesClient::BatchGetField(const BatchGetFieldRequest& request) const {
@@ -249,7 +251,8 @@ BatchGetFieldOutcome ConnectCasesClient::BatchGetField(const BatchGetFieldReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/fields-batch");
   };
 
-  return BatchGetFieldOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetFieldOutcome(result.GetResultWithOwnership()) : BatchGetFieldOutcome(std::move(result.GetError()));
 }
 
 BatchPutFieldOptionsOutcome ConnectCasesClient::BatchPutFieldOptions(const BatchPutFieldOptionsRequest& request) const {
@@ -273,7 +276,9 @@ BatchPutFieldOptionsOutcome ConnectCasesClient::BatchPutFieldOptions(const Batch
     endpointResolutionOutcome.GetResult().AddPathSegments("/options");
   };
 
-  return BatchPutFieldOptionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? BatchPutFieldOptionsOutcome(result.GetResultWithOwnership())
+                            : BatchPutFieldOptionsOutcome(std::move(result.GetError()));
 }
 
 CreateCaseOutcome ConnectCasesClient::CreateCase(const CreateCaseRequest& request) const {
@@ -290,7 +295,8 @@ CreateCaseOutcome ConnectCasesClient::CreateCase(const CreateCaseRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/cases");
   };
 
-  return CreateCaseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCaseOutcome(result.GetResultWithOwnership()) : CreateCaseOutcome(std::move(result.GetError()));
 }
 
 CreateCaseRuleOutcome ConnectCasesClient::CreateCaseRule(const CreateCaseRuleRequest& request) const {
@@ -307,7 +313,8 @@ CreateCaseRuleOutcome ConnectCasesClient::CreateCaseRule(const CreateCaseRuleReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/case-rules");
   };
 
-  return CreateCaseRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCaseRuleOutcome(result.GetResultWithOwnership()) : CreateCaseRuleOutcome(std::move(result.GetError()));
 }
 
 CreateDomainOutcome ConnectCasesClient::CreateDomain(const CreateDomainRequest& request) const {
@@ -316,7 +323,8 @@ CreateDomainOutcome ConnectCasesClient::CreateDomain(const CreateDomainRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/domains");
   };
 
-  return CreateDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDomainOutcome(result.GetResultWithOwnership()) : CreateDomainOutcome(std::move(result.GetError()));
 }
 
 CreateFieldOutcome ConnectCasesClient::CreateField(const CreateFieldRequest& request) const {
@@ -333,7 +341,8 @@ CreateFieldOutcome ConnectCasesClient::CreateField(const CreateFieldRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/fields");
   };
 
-  return CreateFieldOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFieldOutcome(result.GetResultWithOwnership()) : CreateFieldOutcome(std::move(result.GetError()));
 }
 
 CreateLayoutOutcome ConnectCasesClient::CreateLayout(const CreateLayoutRequest& request) const {
@@ -350,7 +359,8 @@ CreateLayoutOutcome ConnectCasesClient::CreateLayout(const CreateLayoutRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/layouts");
   };
 
-  return CreateLayoutOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLayoutOutcome(result.GetResultWithOwnership()) : CreateLayoutOutcome(std::move(result.GetError()));
 }
 
 CreateRelatedItemOutcome ConnectCasesClient::CreateRelatedItem(const CreateRelatedItemRequest& request) const {
@@ -374,7 +384,9 @@ CreateRelatedItemOutcome ConnectCasesClient::CreateRelatedItem(const CreateRelat
     endpointResolutionOutcome.GetResult().AddPathSegments("/related-items/");
   };
 
-  return CreateRelatedItemOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRelatedItemOutcome(result.GetResultWithOwnership())
+                            : CreateRelatedItemOutcome(std::move(result.GetError()));
 }
 
 CreateTemplateOutcome ConnectCasesClient::CreateTemplate(const CreateTemplateRequest& request) const {
@@ -391,7 +403,8 @@ CreateTemplateOutcome ConnectCasesClient::CreateTemplate(const CreateTemplateReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/templates");
   };
 
-  return CreateTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTemplateOutcome(result.GetResultWithOwnership()) : CreateTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteCaseOutcome ConnectCasesClient::DeleteCase(const DeleteCaseRequest& request) const {
@@ -414,7 +427,8 @@ DeleteCaseOutcome ConnectCasesClient::DeleteCase(const DeleteCaseRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCaseId());
   };
 
-  return DeleteCaseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCaseOutcome(result.GetResultWithOwnership()) : DeleteCaseOutcome(std::move(result.GetError()));
 }
 
 DeleteCaseRuleOutcome ConnectCasesClient::DeleteCaseRule(const DeleteCaseRuleRequest& request) const {
@@ -437,7 +451,8 @@ DeleteCaseRuleOutcome ConnectCasesClient::DeleteCaseRule(const DeleteCaseRuleReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCaseRuleId());
   };
 
-  return DeleteCaseRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCaseRuleOutcome(result.GetResultWithOwnership()) : DeleteCaseRuleOutcome(std::move(result.GetError()));
 }
 
 DeleteDomainOutcome ConnectCasesClient::DeleteDomain(const DeleteDomainRequest& request) const {
@@ -453,7 +468,8 @@ DeleteDomainOutcome ConnectCasesClient::DeleteDomain(const DeleteDomainRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainId());
   };
 
-  return DeleteDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDomainOutcome(result.GetResultWithOwnership()) : DeleteDomainOutcome(std::move(result.GetError()));
 }
 
 DeleteFieldOutcome ConnectCasesClient::DeleteField(const DeleteFieldRequest& request) const {
@@ -476,7 +492,8 @@ DeleteFieldOutcome ConnectCasesClient::DeleteField(const DeleteFieldRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFieldId());
   };
 
-  return DeleteFieldOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteFieldOutcome(result.GetResultWithOwnership()) : DeleteFieldOutcome(std::move(result.GetError()));
 }
 
 DeleteLayoutOutcome ConnectCasesClient::DeleteLayout(const DeleteLayoutRequest& request) const {
@@ -499,7 +516,8 @@ DeleteLayoutOutcome ConnectCasesClient::DeleteLayout(const DeleteLayoutRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLayoutId());
   };
 
-  return DeleteLayoutOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteLayoutOutcome(result.GetResultWithOwnership()) : DeleteLayoutOutcome(std::move(result.GetError()));
 }
 
 DeleteRelatedItemOutcome ConnectCasesClient::DeleteRelatedItem(const DeleteRelatedItemRequest& request) const {
@@ -529,7 +547,9 @@ DeleteRelatedItemOutcome ConnectCasesClient::DeleteRelatedItem(const DeleteRelat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRelatedItemId());
   };
 
-  return DeleteRelatedItemOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRelatedItemOutcome(result.GetResultWithOwnership())
+                            : DeleteRelatedItemOutcome(std::move(result.GetError()));
 }
 
 DeleteTemplateOutcome ConnectCasesClient::DeleteTemplate(const DeleteTemplateRequest& request) const {
@@ -552,7 +572,8 @@ DeleteTemplateOutcome ConnectCasesClient::DeleteTemplate(const DeleteTemplateReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTemplateId());
   };
 
-  return DeleteTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTemplateOutcome(result.GetResultWithOwnership()) : DeleteTemplateOutcome(std::move(result.GetError()));
 }
 
 GetCaseOutcome ConnectCasesClient::GetCase(const GetCaseRequest& request) const {
@@ -575,7 +596,8 @@ GetCaseOutcome ConnectCasesClient::GetCase(const GetCaseRequest& request) const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCaseId());
   };
 
-  return GetCaseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCaseOutcome(result.GetResultWithOwnership()) : GetCaseOutcome(std::move(result.GetError()));
 }
 
 GetCaseAuditEventsOutcome ConnectCasesClient::GetCaseAuditEvents(const GetCaseAuditEventsRequest& request) const {
@@ -599,7 +621,9 @@ GetCaseAuditEventsOutcome ConnectCasesClient::GetCaseAuditEvents(const GetCaseAu
     endpointResolutionOutcome.GetResult().AddPathSegments("/audit-history");
   };
 
-  return GetCaseAuditEventsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCaseAuditEventsOutcome(result.GetResultWithOwnership())
+                            : GetCaseAuditEventsOutcome(std::move(result.GetError()));
 }
 
 GetCaseEventConfigurationOutcome ConnectCasesClient::GetCaseEventConfiguration(const GetCaseEventConfigurationRequest& request) const {
@@ -616,7 +640,9 @@ GetCaseEventConfigurationOutcome ConnectCasesClient::GetCaseEventConfiguration(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/case-event-configuration");
   };
 
-  return GetCaseEventConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCaseEventConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetCaseEventConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetDomainOutcome ConnectCasesClient::GetDomain(const GetDomainRequest& request) const {
@@ -632,7 +658,8 @@ GetDomainOutcome ConnectCasesClient::GetDomain(const GetDomainRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainId());
   };
 
-  return GetDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDomainOutcome(result.GetResultWithOwnership()) : GetDomainOutcome(std::move(result.GetError()));
 }
 
 GetLayoutOutcome ConnectCasesClient::GetLayout(const GetLayoutRequest& request) const {
@@ -655,7 +682,8 @@ GetLayoutOutcome ConnectCasesClient::GetLayout(const GetLayoutRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLayoutId());
   };
 
-  return GetLayoutOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLayoutOutcome(result.GetResultWithOwnership()) : GetLayoutOutcome(std::move(result.GetError()));
 }
 
 GetTemplateOutcome ConnectCasesClient::GetTemplate(const GetTemplateRequest& request) const {
@@ -678,7 +706,8 @@ GetTemplateOutcome ConnectCasesClient::GetTemplate(const GetTemplateRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTemplateId());
   };
 
-  return GetTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTemplateOutcome(result.GetResultWithOwnership()) : GetTemplateOutcome(std::move(result.GetError()));
 }
 
 ListCaseRulesOutcome ConnectCasesClient::ListCaseRules(const ListCaseRulesRequest& request) const {
@@ -695,7 +724,8 @@ ListCaseRulesOutcome ConnectCasesClient::ListCaseRules(const ListCaseRulesReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/rules-list/");
   };
 
-  return ListCaseRulesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCaseRulesOutcome(result.GetResultWithOwnership()) : ListCaseRulesOutcome(std::move(result.GetError()));
 }
 
 ListCasesForContactOutcome ConnectCasesClient::ListCasesForContact(const ListCasesForContactRequest& request) const {
@@ -712,7 +742,9 @@ ListCasesForContactOutcome ConnectCasesClient::ListCasesForContact(const ListCas
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-cases-for-contact");
   };
 
-  return ListCasesForContactOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCasesForContactOutcome(result.GetResultWithOwnership())
+                            : ListCasesForContactOutcome(std::move(result.GetError()));
 }
 
 ListDomainsOutcome ConnectCasesClient::ListDomains(const ListDomainsRequest& request) const {
@@ -721,7 +753,8 @@ ListDomainsOutcome ConnectCasesClient::ListDomains(const ListDomainsRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/domains-list");
   };
 
-  return ListDomainsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDomainsOutcome(result.GetResultWithOwnership()) : ListDomainsOutcome(std::move(result.GetError()));
 }
 
 ListFieldOptionsOutcome ConnectCasesClient::ListFieldOptions(const ListFieldOptionsRequest& request) const {
@@ -745,7 +778,9 @@ ListFieldOptionsOutcome ConnectCasesClient::ListFieldOptions(const ListFieldOpti
     endpointResolutionOutcome.GetResult().AddPathSegments("/options-list");
   };
 
-  return ListFieldOptionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFieldOptionsOutcome(result.GetResultWithOwnership())
+                            : ListFieldOptionsOutcome(std::move(result.GetError()));
 }
 
 ListFieldsOutcome ConnectCasesClient::ListFields(const ListFieldsRequest& request) const {
@@ -762,7 +797,8 @@ ListFieldsOutcome ConnectCasesClient::ListFields(const ListFieldsRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/fields-list");
   };
 
-  return ListFieldsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFieldsOutcome(result.GetResultWithOwnership()) : ListFieldsOutcome(std::move(result.GetError()));
 }
 
 ListLayoutsOutcome ConnectCasesClient::ListLayouts(const ListLayoutsRequest& request) const {
@@ -779,7 +815,8 @@ ListLayoutsOutcome ConnectCasesClient::ListLayouts(const ListLayoutsRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/layouts-list");
   };
 
-  return ListLayoutsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLayoutsOutcome(result.GetResultWithOwnership()) : ListLayoutsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome ConnectCasesClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -795,7 +832,9 @@ ListTagsForResourceOutcome ConnectCasesClient::ListTagsForResource(const ListTag
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTemplatesOutcome ConnectCasesClient::ListTemplates(const ListTemplatesRequest& request) const {
@@ -812,7 +851,8 @@ ListTemplatesOutcome ConnectCasesClient::ListTemplates(const ListTemplatesReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/templates-list");
   };
 
-  return ListTemplatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTemplatesOutcome(result.GetResultWithOwnership()) : ListTemplatesOutcome(std::move(result.GetError()));
 }
 
 PutCaseEventConfigurationOutcome ConnectCasesClient::PutCaseEventConfiguration(const PutCaseEventConfigurationRequest& request) const {
@@ -829,7 +869,9 @@ PutCaseEventConfigurationOutcome ConnectCasesClient::PutCaseEventConfiguration(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/case-event-configuration");
   };
 
-  return PutCaseEventConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutCaseEventConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutCaseEventConfigurationOutcome(std::move(result.GetError()));
 }
 
 SearchAllRelatedItemsOutcome ConnectCasesClient::SearchAllRelatedItems(const SearchAllRelatedItemsRequest& request) const {
@@ -846,7 +888,9 @@ SearchAllRelatedItemsOutcome ConnectCasesClient::SearchAllRelatedItems(const Sea
     endpointResolutionOutcome.GetResult().AddPathSegments("/related-items-search");
   };
 
-  return SearchAllRelatedItemsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchAllRelatedItemsOutcome(result.GetResultWithOwnership())
+                            : SearchAllRelatedItemsOutcome(std::move(result.GetError()));
 }
 
 SearchCasesOutcome ConnectCasesClient::SearchCases(const SearchCasesRequest& request) const {
@@ -863,7 +907,8 @@ SearchCasesOutcome ConnectCasesClient::SearchCases(const SearchCasesRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/cases-search");
   };
 
-  return SearchCasesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchCasesOutcome(result.GetResultWithOwnership()) : SearchCasesOutcome(std::move(result.GetError()));
 }
 
 SearchRelatedItemsOutcome ConnectCasesClient::SearchRelatedItems(const SearchRelatedItemsRequest& request) const {
@@ -887,7 +932,9 @@ SearchRelatedItemsOutcome ConnectCasesClient::SearchRelatedItems(const SearchRel
     endpointResolutionOutcome.GetResult().AddPathSegments("/related-items-search");
   };
 
-  return SearchRelatedItemsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchRelatedItemsOutcome(result.GetResultWithOwnership())
+                            : SearchRelatedItemsOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ConnectCasesClient::TagResource(const TagResourceRequest& request) const {
@@ -903,7 +950,8 @@ TagResourceOutcome ConnectCasesClient::TagResource(const TagResourceRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome ConnectCasesClient::UntagResource(const UntagResourceRequest& request) const {
@@ -924,7 +972,8 @@ UntagResourceOutcome ConnectCasesClient::UntagResource(const UntagResourceReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateCaseOutcome ConnectCasesClient::UpdateCase(const UpdateCaseRequest& request) const {
@@ -947,7 +996,8 @@ UpdateCaseOutcome ConnectCasesClient::UpdateCase(const UpdateCaseRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCaseId());
   };
 
-  return UpdateCaseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateCaseOutcome(result.GetResultWithOwnership()) : UpdateCaseOutcome(std::move(result.GetError()));
 }
 
 UpdateCaseRuleOutcome ConnectCasesClient::UpdateCaseRule(const UpdateCaseRuleRequest& request) const {
@@ -970,7 +1020,8 @@ UpdateCaseRuleOutcome ConnectCasesClient::UpdateCaseRule(const UpdateCaseRuleReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCaseRuleId());
   };
 
-  return UpdateCaseRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateCaseRuleOutcome(result.GetResultWithOwnership()) : UpdateCaseRuleOutcome(std::move(result.GetError()));
 }
 
 UpdateFieldOutcome ConnectCasesClient::UpdateField(const UpdateFieldRequest& request) const {
@@ -993,7 +1044,8 @@ UpdateFieldOutcome ConnectCasesClient::UpdateField(const UpdateFieldRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFieldId());
   };
 
-  return UpdateFieldOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateFieldOutcome(result.GetResultWithOwnership()) : UpdateFieldOutcome(std::move(result.GetError()));
 }
 
 UpdateLayoutOutcome ConnectCasesClient::UpdateLayout(const UpdateLayoutRequest& request) const {
@@ -1016,7 +1068,8 @@ UpdateLayoutOutcome ConnectCasesClient::UpdateLayout(const UpdateLayoutRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLayoutId());
   };
 
-  return UpdateLayoutOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateLayoutOutcome(result.GetResultWithOwnership()) : UpdateLayoutOutcome(std::move(result.GetError()));
 }
 
 UpdateRelatedItemOutcome ConnectCasesClient::UpdateRelatedItem(const UpdateRelatedItemRequest& request) const {
@@ -1046,7 +1099,9 @@ UpdateRelatedItemOutcome ConnectCasesClient::UpdateRelatedItem(const UpdateRelat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRelatedItemId());
   };
 
-  return UpdateRelatedItemOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateRelatedItemOutcome(result.GetResultWithOwnership())
+                            : UpdateRelatedItemOutcome(std::move(result.GetError()));
 }
 
 UpdateTemplateOutcome ConnectCasesClient::UpdateTemplate(const UpdateTemplateRequest& request) const {
@@ -1069,5 +1124,6 @@ UpdateTemplateOutcome ConnectCasesClient::UpdateTemplate(const UpdateTemplateReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTemplateId());
   };
 
-  return UpdateTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateTemplateOutcome(result.GetResultWithOwnership()) : UpdateTemplateOutcome(std::move(result.GetError()));
 }

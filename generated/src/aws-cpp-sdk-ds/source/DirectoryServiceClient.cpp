@@ -257,332 +257,467 @@ DirectoryServiceClient::InvokeOperationOutcome DirectoryServiceClient::InvokeSer
 }
 
 AcceptSharedDirectoryOutcome DirectoryServiceClient::AcceptSharedDirectory(const AcceptSharedDirectoryRequest& request) const {
-  return AcceptSharedDirectoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptSharedDirectoryOutcome(result.GetResultWithOwnership())
+                            : AcceptSharedDirectoryOutcome(std::move(result.GetError()));
 }
 
 AddIpRoutesOutcome DirectoryServiceClient::AddIpRoutes(const AddIpRoutesRequest& request) const {
-  return AddIpRoutesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddIpRoutesOutcome(result.GetResultWithOwnership()) : AddIpRoutesOutcome(std::move(result.GetError()));
 }
 
 AddRegionOutcome DirectoryServiceClient::AddRegion(const AddRegionRequest& request) const {
-  return AddRegionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddRegionOutcome(result.GetResultWithOwnership()) : AddRegionOutcome(std::move(result.GetError()));
 }
 
 AddTagsToResourceOutcome DirectoryServiceClient::AddTagsToResource(const AddTagsToResourceRequest& request) const {
-  return AddTagsToResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddTagsToResourceOutcome(result.GetResultWithOwnership())
+                            : AddTagsToResourceOutcome(std::move(result.GetError()));
 }
 
 CancelSchemaExtensionOutcome DirectoryServiceClient::CancelSchemaExtension(const CancelSchemaExtensionRequest& request) const {
-  return CancelSchemaExtensionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelSchemaExtensionOutcome(result.GetResultWithOwnership())
+                            : CancelSchemaExtensionOutcome(std::move(result.GetError()));
 }
 
 ConnectDirectoryOutcome DirectoryServiceClient::ConnectDirectory(const ConnectDirectoryRequest& request) const {
-  return ConnectDirectoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ConnectDirectoryOutcome(result.GetResultWithOwnership())
+                            : ConnectDirectoryOutcome(std::move(result.GetError()));
 }
 
 CreateAliasOutcome DirectoryServiceClient::CreateAlias(const CreateAliasRequest& request) const {
-  return CreateAliasOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAliasOutcome(result.GetResultWithOwnership()) : CreateAliasOutcome(std::move(result.GetError()));
 }
 
 CreateComputerOutcome DirectoryServiceClient::CreateComputer(const CreateComputerRequest& request) const {
-  return CreateComputerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateComputerOutcome(result.GetResultWithOwnership()) : CreateComputerOutcome(std::move(result.GetError()));
 }
 
 CreateConditionalForwarderOutcome DirectoryServiceClient::CreateConditionalForwarder(
     const CreateConditionalForwarderRequest& request) const {
-  return CreateConditionalForwarderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConditionalForwarderOutcome(result.GetResultWithOwnership())
+                            : CreateConditionalForwarderOutcome(std::move(result.GetError()));
 }
 
 CreateDirectoryOutcome DirectoryServiceClient::CreateDirectory(const CreateDirectoryRequest& request) const {
-  return CreateDirectoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDirectoryOutcome(result.GetResultWithOwnership())
+                            : CreateDirectoryOutcome(std::move(result.GetError()));
 }
 
 CreateHybridADOutcome DirectoryServiceClient::CreateHybridAD(const CreateHybridADRequest& request) const {
-  return CreateHybridADOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateHybridADOutcome(result.GetResultWithOwnership()) : CreateHybridADOutcome(std::move(result.GetError()));
 }
 
 CreateLogSubscriptionOutcome DirectoryServiceClient::CreateLogSubscription(const CreateLogSubscriptionRequest& request) const {
-  return CreateLogSubscriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLogSubscriptionOutcome(result.GetResultWithOwnership())
+                            : CreateLogSubscriptionOutcome(std::move(result.GetError()));
 }
 
 CreateMicrosoftADOutcome DirectoryServiceClient::CreateMicrosoftAD(const CreateMicrosoftADRequest& request) const {
-  return CreateMicrosoftADOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMicrosoftADOutcome(result.GetResultWithOwnership())
+                            : CreateMicrosoftADOutcome(std::move(result.GetError()));
 }
 
 CreateSnapshotOutcome DirectoryServiceClient::CreateSnapshot(const CreateSnapshotRequest& request) const {
-  return CreateSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSnapshotOutcome(result.GetResultWithOwnership()) : CreateSnapshotOutcome(std::move(result.GetError()));
 }
 
 CreateTrustOutcome DirectoryServiceClient::CreateTrust(const CreateTrustRequest& request) const {
-  return CreateTrustOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTrustOutcome(result.GetResultWithOwnership()) : CreateTrustOutcome(std::move(result.GetError()));
 }
 
 DeleteADAssessmentOutcome DirectoryServiceClient::DeleteADAssessment(const DeleteADAssessmentRequest& request) const {
-  return DeleteADAssessmentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteADAssessmentOutcome(result.GetResultWithOwnership())
+                            : DeleteADAssessmentOutcome(std::move(result.GetError()));
 }
 
 DeleteConditionalForwarderOutcome DirectoryServiceClient::DeleteConditionalForwarder(
     const DeleteConditionalForwarderRequest& request) const {
-  return DeleteConditionalForwarderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteConditionalForwarderOutcome(result.GetResultWithOwnership())
+                            : DeleteConditionalForwarderOutcome(std::move(result.GetError()));
 }
 
 DeleteDirectoryOutcome DirectoryServiceClient::DeleteDirectory(const DeleteDirectoryRequest& request) const {
-  return DeleteDirectoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDirectoryOutcome(result.GetResultWithOwnership())
+                            : DeleteDirectoryOutcome(std::move(result.GetError()));
 }
 
 DeleteLogSubscriptionOutcome DirectoryServiceClient::DeleteLogSubscription(const DeleteLogSubscriptionRequest& request) const {
-  return DeleteLogSubscriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLogSubscriptionOutcome(result.GetResultWithOwnership())
+                            : DeleteLogSubscriptionOutcome(std::move(result.GetError()));
 }
 
 DeleteSnapshotOutcome DirectoryServiceClient::DeleteSnapshot(const DeleteSnapshotRequest& request) const {
-  return DeleteSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSnapshotOutcome(result.GetResultWithOwnership()) : DeleteSnapshotOutcome(std::move(result.GetError()));
 }
 
 DeleteTrustOutcome DirectoryServiceClient::DeleteTrust(const DeleteTrustRequest& request) const {
-  return DeleteTrustOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTrustOutcome(result.GetResultWithOwnership()) : DeleteTrustOutcome(std::move(result.GetError()));
 }
 
 DeregisterCertificateOutcome DirectoryServiceClient::DeregisterCertificate(const DeregisterCertificateRequest& request) const {
-  return DeregisterCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterCertificateOutcome(result.GetResultWithOwnership())
+                            : DeregisterCertificateOutcome(std::move(result.GetError()));
 }
 
 DeregisterEventTopicOutcome DirectoryServiceClient::DeregisterEventTopic(const DeregisterEventTopicRequest& request) const {
-  return DeregisterEventTopicOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterEventTopicOutcome(result.GetResultWithOwnership())
+                            : DeregisterEventTopicOutcome(std::move(result.GetError()));
 }
 
 DescribeADAssessmentOutcome DirectoryServiceClient::DescribeADAssessment(const DescribeADAssessmentRequest& request) const {
-  return DescribeADAssessmentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeADAssessmentOutcome(result.GetResultWithOwnership())
+                            : DescribeADAssessmentOutcome(std::move(result.GetError()));
 }
 
 DescribeCAEnrollmentPolicyOutcome DirectoryServiceClient::DescribeCAEnrollmentPolicy(
     const DescribeCAEnrollmentPolicyRequest& request) const {
-  return DescribeCAEnrollmentPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCAEnrollmentPolicyOutcome(result.GetResultWithOwnership())
+                            : DescribeCAEnrollmentPolicyOutcome(std::move(result.GetError()));
 }
 
 DescribeCertificateOutcome DirectoryServiceClient::DescribeCertificate(const DescribeCertificateRequest& request) const {
-  return DescribeCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCertificateOutcome(result.GetResultWithOwnership())
+                            : DescribeCertificateOutcome(std::move(result.GetError()));
 }
 
 DescribeClientAuthenticationSettingsOutcome DirectoryServiceClient::DescribeClientAuthenticationSettings(
     const DescribeClientAuthenticationSettingsRequest& request) const {
-  return DescribeClientAuthenticationSettingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeClientAuthenticationSettingsOutcome(result.GetResultWithOwnership())
+                            : DescribeClientAuthenticationSettingsOutcome(std::move(result.GetError()));
 }
 
 DescribeConditionalForwardersOutcome DirectoryServiceClient::DescribeConditionalForwarders(
     const DescribeConditionalForwardersRequest& request) const {
-  return DescribeConditionalForwardersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeConditionalForwardersOutcome(result.GetResultWithOwnership())
+                            : DescribeConditionalForwardersOutcome(std::move(result.GetError()));
 }
 
 DescribeDirectoriesOutcome DirectoryServiceClient::DescribeDirectories(const DescribeDirectoriesRequest& request) const {
-  return DescribeDirectoriesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDirectoriesOutcome(result.GetResultWithOwnership())
+                            : DescribeDirectoriesOutcome(std::move(result.GetError()));
 }
 
 DescribeDirectoryDataAccessOutcome DirectoryServiceClient::DescribeDirectoryDataAccess(
     const DescribeDirectoryDataAccessRequest& request) const {
-  return DescribeDirectoryDataAccessOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDirectoryDataAccessOutcome(result.GetResultWithOwnership())
+                            : DescribeDirectoryDataAccessOutcome(std::move(result.GetError()));
 }
 
 DescribeDomainControllersOutcome DirectoryServiceClient::DescribeDomainControllers(const DescribeDomainControllersRequest& request) const {
-  return DescribeDomainControllersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDomainControllersOutcome(result.GetResultWithOwnership())
+                            : DescribeDomainControllersOutcome(std::move(result.GetError()));
 }
 
 DescribeEventTopicsOutcome DirectoryServiceClient::DescribeEventTopics(const DescribeEventTopicsRequest& request) const {
-  return DescribeEventTopicsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEventTopicsOutcome(result.GetResultWithOwnership())
+                            : DescribeEventTopicsOutcome(std::move(result.GetError()));
 }
 
 DescribeHybridADUpdateOutcome DirectoryServiceClient::DescribeHybridADUpdate(const DescribeHybridADUpdateRequest& request) const {
-  return DescribeHybridADUpdateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeHybridADUpdateOutcome(result.GetResultWithOwnership())
+                            : DescribeHybridADUpdateOutcome(std::move(result.GetError()));
 }
 
 DescribeLDAPSSettingsOutcome DirectoryServiceClient::DescribeLDAPSSettings(const DescribeLDAPSSettingsRequest& request) const {
-  return DescribeLDAPSSettingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeLDAPSSettingsOutcome(result.GetResultWithOwnership())
+                            : DescribeLDAPSSettingsOutcome(std::move(result.GetError()));
 }
 
 DescribeRegionsOutcome DirectoryServiceClient::DescribeRegions(const DescribeRegionsRequest& request) const {
-  return DescribeRegionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRegionsOutcome(result.GetResultWithOwnership())
+                            : DescribeRegionsOutcome(std::move(result.GetError()));
 }
 
 DescribeSettingsOutcome DirectoryServiceClient::DescribeSettings(const DescribeSettingsRequest& request) const {
-  return DescribeSettingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSettingsOutcome(result.GetResultWithOwnership())
+                            : DescribeSettingsOutcome(std::move(result.GetError()));
 }
 
 DescribeSharedDirectoriesOutcome DirectoryServiceClient::DescribeSharedDirectories(const DescribeSharedDirectoriesRequest& request) const {
-  return DescribeSharedDirectoriesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSharedDirectoriesOutcome(result.GetResultWithOwnership())
+                            : DescribeSharedDirectoriesOutcome(std::move(result.GetError()));
 }
 
 DescribeSnapshotsOutcome DirectoryServiceClient::DescribeSnapshots(const DescribeSnapshotsRequest& request) const {
-  return DescribeSnapshotsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSnapshotsOutcome(result.GetResultWithOwnership())
+                            : DescribeSnapshotsOutcome(std::move(result.GetError()));
 }
 
 DescribeTrustsOutcome DirectoryServiceClient::DescribeTrusts(const DescribeTrustsRequest& request) const {
-  return DescribeTrustsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTrustsOutcome(result.GetResultWithOwnership()) : DescribeTrustsOutcome(std::move(result.GetError()));
 }
 
 DescribeUpdateDirectoryOutcome DirectoryServiceClient::DescribeUpdateDirectory(const DescribeUpdateDirectoryRequest& request) const {
-  return DescribeUpdateDirectoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeUpdateDirectoryOutcome(result.GetResultWithOwnership())
+                            : DescribeUpdateDirectoryOutcome(std::move(result.GetError()));
 }
 
 DisableCAEnrollmentPolicyOutcome DirectoryServiceClient::DisableCAEnrollmentPolicy(const DisableCAEnrollmentPolicyRequest& request) const {
-  return DisableCAEnrollmentPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableCAEnrollmentPolicyOutcome(result.GetResultWithOwnership())
+                            : DisableCAEnrollmentPolicyOutcome(std::move(result.GetError()));
 }
 
 DisableClientAuthenticationOutcome DirectoryServiceClient::DisableClientAuthentication(
     const DisableClientAuthenticationRequest& request) const {
-  return DisableClientAuthenticationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableClientAuthenticationOutcome(result.GetResultWithOwnership())
+                            : DisableClientAuthenticationOutcome(std::move(result.GetError()));
 }
 
 DisableDirectoryDataAccessOutcome DirectoryServiceClient::DisableDirectoryDataAccess(
     const DisableDirectoryDataAccessRequest& request) const {
-  return DisableDirectoryDataAccessOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableDirectoryDataAccessOutcome(result.GetResultWithOwnership())
+                            : DisableDirectoryDataAccessOutcome(std::move(result.GetError()));
 }
 
 DisableLDAPSOutcome DirectoryServiceClient::DisableLDAPS(const DisableLDAPSRequest& request) const {
-  return DisableLDAPSOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableLDAPSOutcome(result.GetResultWithOwnership()) : DisableLDAPSOutcome(std::move(result.GetError()));
 }
 
 DisableRadiusOutcome DirectoryServiceClient::DisableRadius(const DisableRadiusRequest& request) const {
-  return DisableRadiusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableRadiusOutcome(result.GetResultWithOwnership()) : DisableRadiusOutcome(std::move(result.GetError()));
 }
 
 DisableSsoOutcome DirectoryServiceClient::DisableSso(const DisableSsoRequest& request) const {
-  return DisableSsoOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableSsoOutcome(result.GetResultWithOwnership()) : DisableSsoOutcome(std::move(result.GetError()));
 }
 
 EnableCAEnrollmentPolicyOutcome DirectoryServiceClient::EnableCAEnrollmentPolicy(const EnableCAEnrollmentPolicyRequest& request) const {
-  return EnableCAEnrollmentPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableCAEnrollmentPolicyOutcome(result.GetResultWithOwnership())
+                            : EnableCAEnrollmentPolicyOutcome(std::move(result.GetError()));
 }
 
 EnableClientAuthenticationOutcome DirectoryServiceClient::EnableClientAuthentication(
     const EnableClientAuthenticationRequest& request) const {
-  return EnableClientAuthenticationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableClientAuthenticationOutcome(result.GetResultWithOwnership())
+                            : EnableClientAuthenticationOutcome(std::move(result.GetError()));
 }
 
 EnableDirectoryDataAccessOutcome DirectoryServiceClient::EnableDirectoryDataAccess(const EnableDirectoryDataAccessRequest& request) const {
-  return EnableDirectoryDataAccessOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableDirectoryDataAccessOutcome(result.GetResultWithOwnership())
+                            : EnableDirectoryDataAccessOutcome(std::move(result.GetError()));
 }
 
 EnableLDAPSOutcome DirectoryServiceClient::EnableLDAPS(const EnableLDAPSRequest& request) const {
-  return EnableLDAPSOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableLDAPSOutcome(result.GetResultWithOwnership()) : EnableLDAPSOutcome(std::move(result.GetError()));
 }
 
 EnableRadiusOutcome DirectoryServiceClient::EnableRadius(const EnableRadiusRequest& request) const {
-  return EnableRadiusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableRadiusOutcome(result.GetResultWithOwnership()) : EnableRadiusOutcome(std::move(result.GetError()));
 }
 
 EnableSsoOutcome DirectoryServiceClient::EnableSso(const EnableSsoRequest& request) const {
-  return EnableSsoOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableSsoOutcome(result.GetResultWithOwnership()) : EnableSsoOutcome(std::move(result.GetError()));
 }
 
 GetDirectoryLimitsOutcome DirectoryServiceClient::GetDirectoryLimits(const GetDirectoryLimitsRequest& request) const {
-  return GetDirectoryLimitsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDirectoryLimitsOutcome(result.GetResultWithOwnership())
+                            : GetDirectoryLimitsOutcome(std::move(result.GetError()));
 }
 
 GetSnapshotLimitsOutcome DirectoryServiceClient::GetSnapshotLimits(const GetSnapshotLimitsRequest& request) const {
-  return GetSnapshotLimitsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSnapshotLimitsOutcome(result.GetResultWithOwnership())
+                            : GetSnapshotLimitsOutcome(std::move(result.GetError()));
 }
 
 ListADAssessmentsOutcome DirectoryServiceClient::ListADAssessments(const ListADAssessmentsRequest& request) const {
-  return ListADAssessmentsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListADAssessmentsOutcome(result.GetResultWithOwnership())
+                            : ListADAssessmentsOutcome(std::move(result.GetError()));
 }
 
 ListCertificatesOutcome DirectoryServiceClient::ListCertificates(const ListCertificatesRequest& request) const {
-  return ListCertificatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCertificatesOutcome(result.GetResultWithOwnership())
+                            : ListCertificatesOutcome(std::move(result.GetError()));
 }
 
 ListIpRoutesOutcome DirectoryServiceClient::ListIpRoutes(const ListIpRoutesRequest& request) const {
-  return ListIpRoutesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListIpRoutesOutcome(result.GetResultWithOwnership()) : ListIpRoutesOutcome(std::move(result.GetError()));
 }
 
 ListLogSubscriptionsOutcome DirectoryServiceClient::ListLogSubscriptions(const ListLogSubscriptionsRequest& request) const {
-  return ListLogSubscriptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLogSubscriptionsOutcome(result.GetResultWithOwnership())
+                            : ListLogSubscriptionsOutcome(std::move(result.GetError()));
 }
 
 ListSchemaExtensionsOutcome DirectoryServiceClient::ListSchemaExtensions(const ListSchemaExtensionsRequest& request) const {
-  return ListSchemaExtensionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSchemaExtensionsOutcome(result.GetResultWithOwnership())
+                            : ListSchemaExtensionsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome DirectoryServiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 RegisterCertificateOutcome DirectoryServiceClient::RegisterCertificate(const RegisterCertificateRequest& request) const {
-  return RegisterCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterCertificateOutcome(result.GetResultWithOwnership())
+                            : RegisterCertificateOutcome(std::move(result.GetError()));
 }
 
 RegisterEventTopicOutcome DirectoryServiceClient::RegisterEventTopic(const RegisterEventTopicRequest& request) const {
-  return RegisterEventTopicOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterEventTopicOutcome(result.GetResultWithOwnership())
+                            : RegisterEventTopicOutcome(std::move(result.GetError()));
 }
 
 RejectSharedDirectoryOutcome DirectoryServiceClient::RejectSharedDirectory(const RejectSharedDirectoryRequest& request) const {
-  return RejectSharedDirectoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RejectSharedDirectoryOutcome(result.GetResultWithOwnership())
+                            : RejectSharedDirectoryOutcome(std::move(result.GetError()));
 }
 
 RemoveIpRoutesOutcome DirectoryServiceClient::RemoveIpRoutes(const RemoveIpRoutesRequest& request) const {
-  return RemoveIpRoutesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveIpRoutesOutcome(result.GetResultWithOwnership()) : RemoveIpRoutesOutcome(std::move(result.GetError()));
 }
 
 RemoveRegionOutcome DirectoryServiceClient::RemoveRegion(const RemoveRegionRequest& request) const {
-  return RemoveRegionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveRegionOutcome(result.GetResultWithOwnership()) : RemoveRegionOutcome(std::move(result.GetError()));
 }
 
 RemoveTagsFromResourceOutcome DirectoryServiceClient::RemoveTagsFromResource(const RemoveTagsFromResourceRequest& request) const {
-  return RemoveTagsFromResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveTagsFromResourceOutcome(result.GetResultWithOwnership())
+                            : RemoveTagsFromResourceOutcome(std::move(result.GetError()));
 }
 
 ResetUserPasswordOutcome DirectoryServiceClient::ResetUserPassword(const ResetUserPasswordRequest& request) const {
-  return ResetUserPasswordOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResetUserPasswordOutcome(result.GetResultWithOwnership())
+                            : ResetUserPasswordOutcome(std::move(result.GetError()));
 }
 
 RestoreFromSnapshotOutcome DirectoryServiceClient::RestoreFromSnapshot(const RestoreFromSnapshotRequest& request) const {
-  return RestoreFromSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RestoreFromSnapshotOutcome(result.GetResultWithOwnership())
+                            : RestoreFromSnapshotOutcome(std::move(result.GetError()));
 }
 
 ShareDirectoryOutcome DirectoryServiceClient::ShareDirectory(const ShareDirectoryRequest& request) const {
-  return ShareDirectoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ShareDirectoryOutcome(result.GetResultWithOwnership()) : ShareDirectoryOutcome(std::move(result.GetError()));
 }
 
 StartADAssessmentOutcome DirectoryServiceClient::StartADAssessment(const StartADAssessmentRequest& request) const {
-  return StartADAssessmentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartADAssessmentOutcome(result.GetResultWithOwnership())
+                            : StartADAssessmentOutcome(std::move(result.GetError()));
 }
 
 StartSchemaExtensionOutcome DirectoryServiceClient::StartSchemaExtension(const StartSchemaExtensionRequest& request) const {
-  return StartSchemaExtensionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartSchemaExtensionOutcome(result.GetResultWithOwnership())
+                            : StartSchemaExtensionOutcome(std::move(result.GetError()));
 }
 
 UnshareDirectoryOutcome DirectoryServiceClient::UnshareDirectory(const UnshareDirectoryRequest& request) const {
-  return UnshareDirectoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UnshareDirectoryOutcome(result.GetResultWithOwnership())
+                            : UnshareDirectoryOutcome(std::move(result.GetError()));
 }
 
 UpdateConditionalForwarderOutcome DirectoryServiceClient::UpdateConditionalForwarder(
     const UpdateConditionalForwarderRequest& request) const {
-  return UpdateConditionalForwarderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateConditionalForwarderOutcome(result.GetResultWithOwnership())
+                            : UpdateConditionalForwarderOutcome(std::move(result.GetError()));
 }
 
 UpdateDirectorySetupOutcome DirectoryServiceClient::UpdateDirectorySetup(const UpdateDirectorySetupRequest& request) const {
-  return UpdateDirectorySetupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDirectorySetupOutcome(result.GetResultWithOwnership())
+                            : UpdateDirectorySetupOutcome(std::move(result.GetError()));
 }
 
 UpdateHybridADOutcome DirectoryServiceClient::UpdateHybridAD(const UpdateHybridADRequest& request) const {
-  return UpdateHybridADOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateHybridADOutcome(result.GetResultWithOwnership()) : UpdateHybridADOutcome(std::move(result.GetError()));
 }
 
 UpdateNumberOfDomainControllersOutcome DirectoryServiceClient::UpdateNumberOfDomainControllers(
     const UpdateNumberOfDomainControllersRequest& request) const {
-  return UpdateNumberOfDomainControllersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateNumberOfDomainControllersOutcome(result.GetResultWithOwnership())
+                            : UpdateNumberOfDomainControllersOutcome(std::move(result.GetError()));
 }
 
 UpdateRadiusOutcome DirectoryServiceClient::UpdateRadius(const UpdateRadiusRequest& request) const {
-  return UpdateRadiusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRadiusOutcome(result.GetResultWithOwnership()) : UpdateRadiusOutcome(std::move(result.GetError()));
 }
 
 UpdateSettingsOutcome DirectoryServiceClient::UpdateSettings(const UpdateSettingsRequest& request) const {
-  return UpdateSettingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSettingsOutcome(result.GetResultWithOwnership()) : UpdateSettingsOutcome(std::move(result.GetError()));
 }
 
 UpdateTrustOutcome DirectoryServiceClient::UpdateTrust(const UpdateTrustRequest& request) const {
-  return UpdateTrustOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTrustOutcome(result.GetResultWithOwnership()) : UpdateTrustOutcome(std::move(result.GetError()));
 }
 
 VerifyTrustOutcome DirectoryServiceClient::VerifyTrust(const VerifyTrustRequest& request) const {
-  return VerifyTrustOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? VerifyTrustOutcome(result.GetResultWithOwnership()) : VerifyTrustOutcome(std::move(result.GetError()));
 }

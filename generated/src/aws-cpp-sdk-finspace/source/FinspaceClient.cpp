@@ -240,7 +240,9 @@ CreateKxChangesetOutcome FinspaceClient::CreateKxChangeset(const CreateKxChanges
     endpointResolutionOutcome.GetResult().AddPathSegments("/changesets");
   };
 
-  return CreateKxChangesetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateKxChangesetOutcome(result.GetResultWithOwnership())
+                            : CreateKxChangesetOutcome(std::move(result.GetError()));
 }
 
 CreateKxClusterOutcome FinspaceClient::CreateKxCluster(const CreateKxClusterRequest& request) const {
@@ -257,7 +259,9 @@ CreateKxClusterOutcome FinspaceClient::CreateKxCluster(const CreateKxClusterRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/clusters");
   };
 
-  return CreateKxClusterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateKxClusterOutcome(result.GetResultWithOwnership())
+                            : CreateKxClusterOutcome(std::move(result.GetError()));
 }
 
 CreateKxDatabaseOutcome FinspaceClient::CreateKxDatabase(const CreateKxDatabaseRequest& request) const {
@@ -274,7 +278,9 @@ CreateKxDatabaseOutcome FinspaceClient::CreateKxDatabase(const CreateKxDatabaseR
     endpointResolutionOutcome.GetResult().AddPathSegments("/databases");
   };
 
-  return CreateKxDatabaseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateKxDatabaseOutcome(result.GetResultWithOwnership())
+                            : CreateKxDatabaseOutcome(std::move(result.GetError()));
 }
 
 CreateKxDataviewOutcome FinspaceClient::CreateKxDataview(const CreateKxDataviewRequest& request) const {
@@ -298,7 +304,9 @@ CreateKxDataviewOutcome FinspaceClient::CreateKxDataview(const CreateKxDataviewR
     endpointResolutionOutcome.GetResult().AddPathSegments("/dataviews");
   };
 
-  return CreateKxDataviewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateKxDataviewOutcome(result.GetResultWithOwnership())
+                            : CreateKxDataviewOutcome(std::move(result.GetError()));
 }
 
 CreateKxEnvironmentOutcome FinspaceClient::CreateKxEnvironment(const CreateKxEnvironmentRequest& request) const {
@@ -307,7 +315,9 @@ CreateKxEnvironmentOutcome FinspaceClient::CreateKxEnvironment(const CreateKxEnv
     endpointResolutionOutcome.GetResult().AddPathSegments("/kx/environments");
   };
 
-  return CreateKxEnvironmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateKxEnvironmentOutcome(result.GetResultWithOwnership())
+                            : CreateKxEnvironmentOutcome(std::move(result.GetError()));
 }
 
 CreateKxScalingGroupOutcome FinspaceClient::CreateKxScalingGroup(const CreateKxScalingGroupRequest& request) const {
@@ -324,7 +334,9 @@ CreateKxScalingGroupOutcome FinspaceClient::CreateKxScalingGroup(const CreateKxS
     endpointResolutionOutcome.GetResult().AddPathSegments("/scalingGroups");
   };
 
-  return CreateKxScalingGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateKxScalingGroupOutcome(result.GetResultWithOwnership())
+                            : CreateKxScalingGroupOutcome(std::move(result.GetError()));
 }
 
 CreateKxUserOutcome FinspaceClient::CreateKxUser(const CreateKxUserRequest& request) const {
@@ -341,7 +353,8 @@ CreateKxUserOutcome FinspaceClient::CreateKxUser(const CreateKxUserRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/users");
   };
 
-  return CreateKxUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateKxUserOutcome(result.GetResultWithOwnership()) : CreateKxUserOutcome(std::move(result.GetError()));
 }
 
 CreateKxVolumeOutcome FinspaceClient::CreateKxVolume(const CreateKxVolumeRequest& request) const {
@@ -358,7 +371,8 @@ CreateKxVolumeOutcome FinspaceClient::CreateKxVolume(const CreateKxVolumeRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/kxvolumes");
   };
 
-  return CreateKxVolumeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateKxVolumeOutcome(result.GetResultWithOwnership()) : CreateKxVolumeOutcome(std::move(result.GetError()));
 }
 
 DeleteKxClusterOutcome FinspaceClient::DeleteKxCluster(const DeleteKxClusterRequest& request) const {
@@ -381,7 +395,9 @@ DeleteKxClusterOutcome FinspaceClient::DeleteKxCluster(const DeleteKxClusterRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterName());
   };
 
-  return DeleteKxClusterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteKxClusterOutcome(result.GetResultWithOwnership())
+                            : DeleteKxClusterOutcome(std::move(result.GetError()));
 }
 
 DeleteKxClusterNodeOutcome FinspaceClient::DeleteKxClusterNode(const DeleteKxClusterNodeRequest& request) const {
@@ -411,7 +427,9 @@ DeleteKxClusterNodeOutcome FinspaceClient::DeleteKxClusterNode(const DeleteKxClu
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNodeId());
   };
 
-  return DeleteKxClusterNodeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteKxClusterNodeOutcome(result.GetResultWithOwnership())
+                            : DeleteKxClusterNodeOutcome(std::move(result.GetError()));
 }
 
 DeleteKxDatabaseOutcome FinspaceClient::DeleteKxDatabase(const DeleteKxDatabaseRequest& request) const {
@@ -439,7 +457,9 @@ DeleteKxDatabaseOutcome FinspaceClient::DeleteKxDatabase(const DeleteKxDatabaseR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatabaseName());
   };
 
-  return DeleteKxDatabaseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteKxDatabaseOutcome(result.GetResultWithOwnership())
+                            : DeleteKxDatabaseOutcome(std::move(result.GetError()));
 }
 
 DeleteKxDataviewOutcome FinspaceClient::DeleteKxDataview(const DeleteKxDataviewRequest& request) const {
@@ -474,7 +494,9 @@ DeleteKxDataviewOutcome FinspaceClient::DeleteKxDataview(const DeleteKxDataviewR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataviewName());
   };
 
-  return DeleteKxDataviewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteKxDataviewOutcome(result.GetResultWithOwnership())
+                            : DeleteKxDataviewOutcome(std::move(result.GetError()));
 }
 
 DeleteKxEnvironmentOutcome FinspaceClient::DeleteKxEnvironment(const DeleteKxEnvironmentRequest& request) const {
@@ -490,7 +512,9 @@ DeleteKxEnvironmentOutcome FinspaceClient::DeleteKxEnvironment(const DeleteKxEnv
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentId());
   };
 
-  return DeleteKxEnvironmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteKxEnvironmentOutcome(result.GetResultWithOwnership())
+                            : DeleteKxEnvironmentOutcome(std::move(result.GetError()));
 }
 
 DeleteKxScalingGroupOutcome FinspaceClient::DeleteKxScalingGroup(const DeleteKxScalingGroupRequest& request) const {
@@ -513,7 +537,9 @@ DeleteKxScalingGroupOutcome FinspaceClient::DeleteKxScalingGroup(const DeleteKxS
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetScalingGroupName());
   };
 
-  return DeleteKxScalingGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteKxScalingGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteKxScalingGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteKxUserOutcome FinspaceClient::DeleteKxUser(const DeleteKxUserRequest& request) const {
@@ -536,7 +562,8 @@ DeleteKxUserOutcome FinspaceClient::DeleteKxUser(const DeleteKxUserRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserName());
   };
 
-  return DeleteKxUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteKxUserOutcome(result.GetResultWithOwnership()) : DeleteKxUserOutcome(std::move(result.GetError()));
 }
 
 DeleteKxVolumeOutcome FinspaceClient::DeleteKxVolume(const DeleteKxVolumeRequest& request) const {
@@ -559,7 +586,8 @@ DeleteKxVolumeOutcome FinspaceClient::DeleteKxVolume(const DeleteKxVolumeRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVolumeName());
   };
 
-  return DeleteKxVolumeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteKxVolumeOutcome(result.GetResultWithOwnership()) : DeleteKxVolumeOutcome(std::move(result.GetError()));
 }
 
 GetKxChangesetOutcome FinspaceClient::GetKxChangeset(const GetKxChangesetRequest& request) const {
@@ -589,7 +617,8 @@ GetKxChangesetOutcome FinspaceClient::GetKxChangeset(const GetKxChangesetRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChangesetId());
   };
 
-  return GetKxChangesetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetKxChangesetOutcome(result.GetResultWithOwnership()) : GetKxChangesetOutcome(std::move(result.GetError()));
 }
 
 GetKxClusterOutcome FinspaceClient::GetKxCluster(const GetKxClusterRequest& request) const {
@@ -612,7 +641,8 @@ GetKxClusterOutcome FinspaceClient::GetKxCluster(const GetKxClusterRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterName());
   };
 
-  return GetKxClusterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetKxClusterOutcome(result.GetResultWithOwnership()) : GetKxClusterOutcome(std::move(result.GetError()));
 }
 
 GetKxConnectionStringOutcome FinspaceClient::GetKxConnectionString(const GetKxConnectionStringRequest& request) const {
@@ -639,7 +669,9 @@ GetKxConnectionStringOutcome FinspaceClient::GetKxConnectionString(const GetKxCo
     endpointResolutionOutcome.GetResult().AddPathSegments("/connectionString");
   };
 
-  return GetKxConnectionStringOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetKxConnectionStringOutcome(result.GetResultWithOwnership())
+                            : GetKxConnectionStringOutcome(std::move(result.GetError()));
 }
 
 GetKxDatabaseOutcome FinspaceClient::GetKxDatabase(const GetKxDatabaseRequest& request) const {
@@ -662,7 +694,8 @@ GetKxDatabaseOutcome FinspaceClient::GetKxDatabase(const GetKxDatabaseRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatabaseName());
   };
 
-  return GetKxDatabaseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetKxDatabaseOutcome(result.GetResultWithOwnership()) : GetKxDatabaseOutcome(std::move(result.GetError()));
 }
 
 GetKxDataviewOutcome FinspaceClient::GetKxDataview(const GetKxDataviewRequest& request) const {
@@ -692,7 +725,8 @@ GetKxDataviewOutcome FinspaceClient::GetKxDataview(const GetKxDataviewRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataviewName());
   };
 
-  return GetKxDataviewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetKxDataviewOutcome(result.GetResultWithOwnership()) : GetKxDataviewOutcome(std::move(result.GetError()));
 }
 
 GetKxEnvironmentOutcome FinspaceClient::GetKxEnvironment(const GetKxEnvironmentRequest& request) const {
@@ -708,7 +742,9 @@ GetKxEnvironmentOutcome FinspaceClient::GetKxEnvironment(const GetKxEnvironmentR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentId());
   };
 
-  return GetKxEnvironmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetKxEnvironmentOutcome(result.GetResultWithOwnership())
+                            : GetKxEnvironmentOutcome(std::move(result.GetError()));
 }
 
 GetKxScalingGroupOutcome FinspaceClient::GetKxScalingGroup(const GetKxScalingGroupRequest& request) const {
@@ -731,7 +767,9 @@ GetKxScalingGroupOutcome FinspaceClient::GetKxScalingGroup(const GetKxScalingGro
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetScalingGroupName());
   };
 
-  return GetKxScalingGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetKxScalingGroupOutcome(result.GetResultWithOwnership())
+                            : GetKxScalingGroupOutcome(std::move(result.GetError()));
 }
 
 GetKxUserOutcome FinspaceClient::GetKxUser(const GetKxUserRequest& request) const {
@@ -754,7 +792,8 @@ GetKxUserOutcome FinspaceClient::GetKxUser(const GetKxUserRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserName());
   };
 
-  return GetKxUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetKxUserOutcome(result.GetResultWithOwnership()) : GetKxUserOutcome(std::move(result.GetError()));
 }
 
 GetKxVolumeOutcome FinspaceClient::GetKxVolume(const GetKxVolumeRequest& request) const {
@@ -777,7 +816,8 @@ GetKxVolumeOutcome FinspaceClient::GetKxVolume(const GetKxVolumeRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVolumeName());
   };
 
-  return GetKxVolumeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetKxVolumeOutcome(result.GetResultWithOwnership()) : GetKxVolumeOutcome(std::move(result.GetError()));
 }
 
 ListKxChangesetsOutcome FinspaceClient::ListKxChangesets(const ListKxChangesetsRequest& request) const {
@@ -801,7 +841,9 @@ ListKxChangesetsOutcome FinspaceClient::ListKxChangesets(const ListKxChangesetsR
     endpointResolutionOutcome.GetResult().AddPathSegments("/changesets");
   };
 
-  return ListKxChangesetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListKxChangesetsOutcome(result.GetResultWithOwnership())
+                            : ListKxChangesetsOutcome(std::move(result.GetError()));
 }
 
 ListKxClusterNodesOutcome FinspaceClient::ListKxClusterNodes(const ListKxClusterNodesRequest& request) const {
@@ -825,7 +867,9 @@ ListKxClusterNodesOutcome FinspaceClient::ListKxClusterNodes(const ListKxCluster
     endpointResolutionOutcome.GetResult().AddPathSegments("/nodes");
   };
 
-  return ListKxClusterNodesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListKxClusterNodesOutcome(result.GetResultWithOwnership())
+                            : ListKxClusterNodesOutcome(std::move(result.GetError()));
 }
 
 ListKxClustersOutcome FinspaceClient::ListKxClusters(const ListKxClustersRequest& request) const {
@@ -842,7 +886,8 @@ ListKxClustersOutcome FinspaceClient::ListKxClusters(const ListKxClustersRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/clusters");
   };
 
-  return ListKxClustersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListKxClustersOutcome(result.GetResultWithOwnership()) : ListKxClustersOutcome(std::move(result.GetError()));
 }
 
 ListKxDatabasesOutcome FinspaceClient::ListKxDatabases(const ListKxDatabasesRequest& request) const {
@@ -859,7 +904,9 @@ ListKxDatabasesOutcome FinspaceClient::ListKxDatabases(const ListKxDatabasesRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/databases");
   };
 
-  return ListKxDatabasesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListKxDatabasesOutcome(result.GetResultWithOwnership())
+                            : ListKxDatabasesOutcome(std::move(result.GetError()));
 }
 
 ListKxDataviewsOutcome FinspaceClient::ListKxDataviews(const ListKxDataviewsRequest& request) const {
@@ -883,7 +930,9 @@ ListKxDataviewsOutcome FinspaceClient::ListKxDataviews(const ListKxDataviewsRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/dataviews");
   };
 
-  return ListKxDataviewsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListKxDataviewsOutcome(result.GetResultWithOwnership())
+                            : ListKxDataviewsOutcome(std::move(result.GetError()));
 }
 
 ListKxEnvironmentsOutcome FinspaceClient::ListKxEnvironments(const ListKxEnvironmentsRequest& request) const {
@@ -892,7 +941,9 @@ ListKxEnvironmentsOutcome FinspaceClient::ListKxEnvironments(const ListKxEnviron
     endpointResolutionOutcome.GetResult().AddPathSegments("/kx/environments");
   };
 
-  return ListKxEnvironmentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListKxEnvironmentsOutcome(result.GetResultWithOwnership())
+                            : ListKxEnvironmentsOutcome(std::move(result.GetError()));
 }
 
 ListKxScalingGroupsOutcome FinspaceClient::ListKxScalingGroups(const ListKxScalingGroupsRequest& request) const {
@@ -909,7 +960,9 @@ ListKxScalingGroupsOutcome FinspaceClient::ListKxScalingGroups(const ListKxScali
     endpointResolutionOutcome.GetResult().AddPathSegments("/scalingGroups");
   };
 
-  return ListKxScalingGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListKxScalingGroupsOutcome(result.GetResultWithOwnership())
+                            : ListKxScalingGroupsOutcome(std::move(result.GetError()));
 }
 
 ListKxUsersOutcome FinspaceClient::ListKxUsers(const ListKxUsersRequest& request) const {
@@ -926,7 +979,8 @@ ListKxUsersOutcome FinspaceClient::ListKxUsers(const ListKxUsersRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/users");
   };
 
-  return ListKxUsersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListKxUsersOutcome(result.GetResultWithOwnership()) : ListKxUsersOutcome(std::move(result.GetError()));
 }
 
 ListKxVolumesOutcome FinspaceClient::ListKxVolumes(const ListKxVolumesRequest& request) const {
@@ -943,7 +997,8 @@ ListKxVolumesOutcome FinspaceClient::ListKxVolumes(const ListKxVolumesRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/kxvolumes");
   };
 
-  return ListKxVolumesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListKxVolumesOutcome(result.GetResultWithOwnership()) : ListKxVolumesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome FinspaceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -959,7 +1014,9 @@ ListTagsForResourceOutcome FinspaceClient::ListTagsForResource(const ListTagsFor
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome FinspaceClient::TagResource(const TagResourceRequest& request) const {
@@ -975,7 +1032,8 @@ TagResourceOutcome FinspaceClient::TagResource(const TagResourceRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome FinspaceClient::UntagResource(const UntagResourceRequest& request) const {
@@ -996,7 +1054,8 @@ UntagResourceOutcome FinspaceClient::UntagResource(const UntagResourceRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateKxClusterCodeConfigurationOutcome FinspaceClient::UpdateKxClusterCodeConfiguration(
@@ -1021,7 +1080,9 @@ UpdateKxClusterCodeConfigurationOutcome FinspaceClient::UpdateKxClusterCodeConfi
     endpointResolutionOutcome.GetResult().AddPathSegments("/configuration/code");
   };
 
-  return UpdateKxClusterCodeConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateKxClusterCodeConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateKxClusterCodeConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateKxClusterDatabasesOutcome FinspaceClient::UpdateKxClusterDatabases(const UpdateKxClusterDatabasesRequest& request) const {
@@ -1045,7 +1106,9 @@ UpdateKxClusterDatabasesOutcome FinspaceClient::UpdateKxClusterDatabases(const U
     endpointResolutionOutcome.GetResult().AddPathSegments("/configuration/databases");
   };
 
-  return UpdateKxClusterDatabasesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateKxClusterDatabasesOutcome(result.GetResultWithOwnership())
+                            : UpdateKxClusterDatabasesOutcome(std::move(result.GetError()));
 }
 
 UpdateKxDatabaseOutcome FinspaceClient::UpdateKxDatabase(const UpdateKxDatabaseRequest& request) const {
@@ -1068,7 +1131,9 @@ UpdateKxDatabaseOutcome FinspaceClient::UpdateKxDatabase(const UpdateKxDatabaseR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatabaseName());
   };
 
-  return UpdateKxDatabaseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateKxDatabaseOutcome(result.GetResultWithOwnership())
+                            : UpdateKxDatabaseOutcome(std::move(result.GetError()));
 }
 
 UpdateKxDataviewOutcome FinspaceClient::UpdateKxDataview(const UpdateKxDataviewRequest& request) const {
@@ -1098,7 +1163,9 @@ UpdateKxDataviewOutcome FinspaceClient::UpdateKxDataview(const UpdateKxDataviewR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataviewName());
   };
 
-  return UpdateKxDataviewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateKxDataviewOutcome(result.GetResultWithOwnership())
+                            : UpdateKxDataviewOutcome(std::move(result.GetError()));
 }
 
 UpdateKxEnvironmentOutcome FinspaceClient::UpdateKxEnvironment(const UpdateKxEnvironmentRequest& request) const {
@@ -1114,7 +1181,9 @@ UpdateKxEnvironmentOutcome FinspaceClient::UpdateKxEnvironment(const UpdateKxEnv
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentId());
   };
 
-  return UpdateKxEnvironmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateKxEnvironmentOutcome(result.GetResultWithOwnership())
+                            : UpdateKxEnvironmentOutcome(std::move(result.GetError()));
 }
 
 UpdateKxEnvironmentNetworkOutcome FinspaceClient::UpdateKxEnvironmentNetwork(const UpdateKxEnvironmentNetworkRequest& request) const {
@@ -1131,7 +1200,9 @@ UpdateKxEnvironmentNetworkOutcome FinspaceClient::UpdateKxEnvironmentNetwork(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/network");
   };
 
-  return UpdateKxEnvironmentNetworkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateKxEnvironmentNetworkOutcome(result.GetResultWithOwnership())
+                            : UpdateKxEnvironmentNetworkOutcome(std::move(result.GetError()));
 }
 
 UpdateKxUserOutcome FinspaceClient::UpdateKxUser(const UpdateKxUserRequest& request) const {
@@ -1154,7 +1225,8 @@ UpdateKxUserOutcome FinspaceClient::UpdateKxUser(const UpdateKxUserRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserName());
   };
 
-  return UpdateKxUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateKxUserOutcome(result.GetResultWithOwnership()) : UpdateKxUserOutcome(std::move(result.GetError()));
 }
 
 UpdateKxVolumeOutcome FinspaceClient::UpdateKxVolume(const UpdateKxVolumeRequest& request) const {
@@ -1177,5 +1249,6 @@ UpdateKxVolumeOutcome FinspaceClient::UpdateKxVolume(const UpdateKxVolumeRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVolumeName());
   };
 
-  return UpdateKxVolumeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateKxVolumeOutcome(result.GetResultWithOwnership()) : UpdateKxVolumeOutcome(std::move(result.GetError()));
 }

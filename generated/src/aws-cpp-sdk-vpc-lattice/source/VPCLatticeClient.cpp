@@ -268,7 +268,9 @@ BatchUpdateRuleOutcome VPCLatticeClient::BatchUpdateRule(const BatchUpdateRuleRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/rules");
   };
 
-  return BatchUpdateRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? BatchUpdateRuleOutcome(result.GetResultWithOwnership())
+                            : BatchUpdateRuleOutcome(std::move(result.GetError()));
 }
 
 CreateAccessLogSubscriptionOutcome VPCLatticeClient::CreateAccessLogSubscription(const CreateAccessLogSubscriptionRequest& request) const {
@@ -277,7 +279,9 @@ CreateAccessLogSubscriptionOutcome VPCLatticeClient::CreateAccessLogSubscription
     endpointResolutionOutcome.GetResult().AddPathSegments("/accesslogsubscriptions");
   };
 
-  return CreateAccessLogSubscriptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAccessLogSubscriptionOutcome(result.GetResultWithOwnership())
+                            : CreateAccessLogSubscriptionOutcome(std::move(result.GetError()));
 }
 
 CreateListenerOutcome VPCLatticeClient::CreateListener(const CreateListenerRequest& request) const {
@@ -294,7 +298,8 @@ CreateListenerOutcome VPCLatticeClient::CreateListener(const CreateListenerReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/listeners");
   };
 
-  return CreateListenerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateListenerOutcome(result.GetResultWithOwnership()) : CreateListenerOutcome(std::move(result.GetError()));
 }
 
 CreateResourceConfigurationOutcome VPCLatticeClient::CreateResourceConfiguration(const CreateResourceConfigurationRequest& request) const {
@@ -303,7 +308,9 @@ CreateResourceConfigurationOutcome VPCLatticeClient::CreateResourceConfiguration
     endpointResolutionOutcome.GetResult().AddPathSegments("/resourceconfigurations");
   };
 
-  return CreateResourceConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateResourceConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateResourceConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateResourceGatewayOutcome VPCLatticeClient::CreateResourceGateway(const CreateResourceGatewayRequest& request) const {
@@ -312,7 +319,9 @@ CreateResourceGatewayOutcome VPCLatticeClient::CreateResourceGateway(const Creat
     endpointResolutionOutcome.GetResult().AddPathSegments("/resourcegateways");
   };
 
-  return CreateResourceGatewayOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateResourceGatewayOutcome(result.GetResultWithOwnership())
+                            : CreateResourceGatewayOutcome(std::move(result.GetError()));
 }
 
 CreateRuleOutcome VPCLatticeClient::CreateRule(const CreateRuleRequest& request) const {
@@ -336,7 +345,8 @@ CreateRuleOutcome VPCLatticeClient::CreateRule(const CreateRuleRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegments("/rules");
   };
 
-  return CreateRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRuleOutcome(result.GetResultWithOwnership()) : CreateRuleOutcome(std::move(result.GetError()));
 }
 
 CreateServiceOutcome VPCLatticeClient::CreateService(const CreateServiceRequest& request) const {
@@ -345,7 +355,8 @@ CreateServiceOutcome VPCLatticeClient::CreateService(const CreateServiceRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/services");
   };
 
-  return CreateServiceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateServiceOutcome(result.GetResultWithOwnership()) : CreateServiceOutcome(std::move(result.GetError()));
 }
 
 CreateServiceNetworkOutcome VPCLatticeClient::CreateServiceNetwork(const CreateServiceNetworkRequest& request) const {
@@ -354,7 +365,9 @@ CreateServiceNetworkOutcome VPCLatticeClient::CreateServiceNetwork(const CreateS
     endpointResolutionOutcome.GetResult().AddPathSegments("/servicenetworks");
   };
 
-  return CreateServiceNetworkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateServiceNetworkOutcome(result.GetResultWithOwnership())
+                            : CreateServiceNetworkOutcome(std::move(result.GetError()));
 }
 
 CreateServiceNetworkResourceAssociationOutcome VPCLatticeClient::CreateServiceNetworkResourceAssociation(
@@ -364,7 +377,9 @@ CreateServiceNetworkResourceAssociationOutcome VPCLatticeClient::CreateServiceNe
     endpointResolutionOutcome.GetResult().AddPathSegments("/servicenetworkresourceassociations");
   };
 
-  return CreateServiceNetworkResourceAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateServiceNetworkResourceAssociationOutcome(result.GetResultWithOwnership())
+                            : CreateServiceNetworkResourceAssociationOutcome(std::move(result.GetError()));
 }
 
 CreateServiceNetworkServiceAssociationOutcome VPCLatticeClient::CreateServiceNetworkServiceAssociation(
@@ -374,7 +389,9 @@ CreateServiceNetworkServiceAssociationOutcome VPCLatticeClient::CreateServiceNet
     endpointResolutionOutcome.GetResult().AddPathSegments("/servicenetworkserviceassociations");
   };
 
-  return CreateServiceNetworkServiceAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateServiceNetworkServiceAssociationOutcome(result.GetResultWithOwnership())
+                            : CreateServiceNetworkServiceAssociationOutcome(std::move(result.GetError()));
 }
 
 CreateServiceNetworkVpcAssociationOutcome VPCLatticeClient::CreateServiceNetworkVpcAssociation(
@@ -384,7 +401,9 @@ CreateServiceNetworkVpcAssociationOutcome VPCLatticeClient::CreateServiceNetwork
     endpointResolutionOutcome.GetResult().AddPathSegments("/servicenetworkvpcassociations");
   };
 
-  return CreateServiceNetworkVpcAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateServiceNetworkVpcAssociationOutcome(result.GetResultWithOwnership())
+                            : CreateServiceNetworkVpcAssociationOutcome(std::move(result.GetError()));
 }
 
 CreateTargetGroupOutcome VPCLatticeClient::CreateTargetGroup(const CreateTargetGroupRequest& request) const {
@@ -393,7 +412,9 @@ CreateTargetGroupOutcome VPCLatticeClient::CreateTargetGroup(const CreateTargetG
     endpointResolutionOutcome.GetResult().AddPathSegments("/targetgroups");
   };
 
-  return CreateTargetGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTargetGroupOutcome(result.GetResultWithOwnership())
+                            : CreateTargetGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteAccessLogSubscriptionOutcome VPCLatticeClient::DeleteAccessLogSubscription(const DeleteAccessLogSubscriptionRequest& request) const {
@@ -409,7 +430,9 @@ DeleteAccessLogSubscriptionOutcome VPCLatticeClient::DeleteAccessLogSubscription
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccessLogSubscriptionIdentifier());
   };
 
-  return DeleteAccessLogSubscriptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAccessLogSubscriptionOutcome(result.GetResultWithOwnership())
+                            : DeleteAccessLogSubscriptionOutcome(std::move(result.GetError()));
 }
 
 DeleteAuthPolicyOutcome VPCLatticeClient::DeleteAuthPolicy(const DeleteAuthPolicyRequest& request) const {
@@ -425,7 +448,9 @@ DeleteAuthPolicyOutcome VPCLatticeClient::DeleteAuthPolicy(const DeleteAuthPolic
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceIdentifier());
   };
 
-  return DeleteAuthPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAuthPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteAuthPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteDomainVerificationOutcome VPCLatticeClient::DeleteDomainVerification(const DeleteDomainVerificationRequest& request) const {
@@ -441,7 +466,9 @@ DeleteDomainVerificationOutcome VPCLatticeClient::DeleteDomainVerification(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainVerificationIdentifier());
   };
 
-  return DeleteDomainVerificationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDomainVerificationOutcome(result.GetResultWithOwnership())
+                            : DeleteDomainVerificationOutcome(std::move(result.GetError()));
 }
 
 DeleteListenerOutcome VPCLatticeClient::DeleteListener(const DeleteListenerRequest& request) const {
@@ -464,7 +491,8 @@ DeleteListenerOutcome VPCLatticeClient::DeleteListener(const DeleteListenerReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetListenerIdentifier());
   };
 
-  return DeleteListenerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteListenerOutcome(result.GetResultWithOwnership()) : DeleteListenerOutcome(std::move(result.GetError()));
 }
 
 DeleteResourceConfigurationOutcome VPCLatticeClient::DeleteResourceConfiguration(const DeleteResourceConfigurationRequest& request) const {
@@ -480,7 +508,9 @@ DeleteResourceConfigurationOutcome VPCLatticeClient::DeleteResourceConfiguration
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceConfigurationIdentifier());
   };
 
-  return DeleteResourceConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteResourceConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteResourceConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteResourceEndpointAssociationOutcome VPCLatticeClient::DeleteResourceEndpointAssociation(
@@ -497,7 +527,9 @@ DeleteResourceEndpointAssociationOutcome VPCLatticeClient::DeleteResourceEndpoin
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceEndpointAssociationIdentifier());
   };
 
-  return DeleteResourceEndpointAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteResourceEndpointAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteResourceEndpointAssociationOutcome(std::move(result.GetError()));
 }
 
 DeleteResourceGatewayOutcome VPCLatticeClient::DeleteResourceGateway(const DeleteResourceGatewayRequest& request) const {
@@ -513,7 +545,9 @@ DeleteResourceGatewayOutcome VPCLatticeClient::DeleteResourceGateway(const Delet
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceGatewayIdentifier());
   };
 
-  return DeleteResourceGatewayOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteResourceGatewayOutcome(result.GetResultWithOwnership())
+                            : DeleteResourceGatewayOutcome(std::move(result.GetError()));
 }
 
 DeleteResourcePolicyOutcome VPCLatticeClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const {
@@ -529,7 +563,9 @@ DeleteResourcePolicyOutcome VPCLatticeClient::DeleteResourcePolicy(const DeleteR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return DeleteResourcePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteRuleOutcome VPCLatticeClient::DeleteRule(const DeleteRuleRequest& request) const {
@@ -559,7 +595,8 @@ DeleteRuleOutcome VPCLatticeClient::DeleteRule(const DeleteRuleRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRuleIdentifier());
   };
 
-  return DeleteRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRuleOutcome(result.GetResultWithOwnership()) : DeleteRuleOutcome(std::move(result.GetError()));
 }
 
 DeleteServiceOutcome VPCLatticeClient::DeleteService(const DeleteServiceRequest& request) const {
@@ -575,7 +612,8 @@ DeleteServiceOutcome VPCLatticeClient::DeleteService(const DeleteServiceRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetServiceIdentifier());
   };
 
-  return DeleteServiceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteServiceOutcome(result.GetResultWithOwnership()) : DeleteServiceOutcome(std::move(result.GetError()));
 }
 
 DeleteServiceNetworkOutcome VPCLatticeClient::DeleteServiceNetwork(const DeleteServiceNetworkRequest& request) const {
@@ -591,7 +629,9 @@ DeleteServiceNetworkOutcome VPCLatticeClient::DeleteServiceNetwork(const DeleteS
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetServiceNetworkIdentifier());
   };
 
-  return DeleteServiceNetworkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteServiceNetworkOutcome(result.GetResultWithOwnership())
+                            : DeleteServiceNetworkOutcome(std::move(result.GetError()));
 }
 
 DeleteServiceNetworkResourceAssociationOutcome VPCLatticeClient::DeleteServiceNetworkResourceAssociation(
@@ -610,7 +650,9 @@ DeleteServiceNetworkResourceAssociationOutcome VPCLatticeClient::DeleteServiceNe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetServiceNetworkResourceAssociationIdentifier());
   };
 
-  return DeleteServiceNetworkResourceAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteServiceNetworkResourceAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteServiceNetworkResourceAssociationOutcome(std::move(result.GetError()));
 }
 
 DeleteServiceNetworkServiceAssociationOutcome VPCLatticeClient::DeleteServiceNetworkServiceAssociation(
@@ -628,7 +670,9 @@ DeleteServiceNetworkServiceAssociationOutcome VPCLatticeClient::DeleteServiceNet
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetServiceNetworkServiceAssociationIdentifier());
   };
 
-  return DeleteServiceNetworkServiceAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteServiceNetworkServiceAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteServiceNetworkServiceAssociationOutcome(std::move(result.GetError()));
 }
 
 DeleteServiceNetworkVpcAssociationOutcome VPCLatticeClient::DeleteServiceNetworkVpcAssociation(
@@ -646,7 +690,9 @@ DeleteServiceNetworkVpcAssociationOutcome VPCLatticeClient::DeleteServiceNetwork
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetServiceNetworkVpcAssociationIdentifier());
   };
 
-  return DeleteServiceNetworkVpcAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteServiceNetworkVpcAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteServiceNetworkVpcAssociationOutcome(std::move(result.GetError()));
 }
 
 DeleteTargetGroupOutcome VPCLatticeClient::DeleteTargetGroup(const DeleteTargetGroupRequest& request) const {
@@ -662,7 +708,9 @@ DeleteTargetGroupOutcome VPCLatticeClient::DeleteTargetGroup(const DeleteTargetG
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTargetGroupIdentifier());
   };
 
-  return DeleteTargetGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTargetGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteTargetGroupOutcome(std::move(result.GetError()));
 }
 
 DeregisterTargetsOutcome VPCLatticeClient::DeregisterTargets(const DeregisterTargetsRequest& request) const {
@@ -679,7 +727,9 @@ DeregisterTargetsOutcome VPCLatticeClient::DeregisterTargets(const DeregisterTar
     endpointResolutionOutcome.GetResult().AddPathSegments("/deregistertargets");
   };
 
-  return DeregisterTargetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterTargetsOutcome(result.GetResultWithOwnership())
+                            : DeregisterTargetsOutcome(std::move(result.GetError()));
 }
 
 GetAccessLogSubscriptionOutcome VPCLatticeClient::GetAccessLogSubscription(const GetAccessLogSubscriptionRequest& request) const {
@@ -695,7 +745,9 @@ GetAccessLogSubscriptionOutcome VPCLatticeClient::GetAccessLogSubscription(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccessLogSubscriptionIdentifier());
   };
 
-  return GetAccessLogSubscriptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAccessLogSubscriptionOutcome(result.GetResultWithOwnership())
+                            : GetAccessLogSubscriptionOutcome(std::move(result.GetError()));
 }
 
 GetAuthPolicyOutcome VPCLatticeClient::GetAuthPolicy(const GetAuthPolicyRequest& request) const {
@@ -711,7 +763,8 @@ GetAuthPolicyOutcome VPCLatticeClient::GetAuthPolicy(const GetAuthPolicyRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceIdentifier());
   };
 
-  return GetAuthPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAuthPolicyOutcome(result.GetResultWithOwnership()) : GetAuthPolicyOutcome(std::move(result.GetError()));
 }
 
 GetDomainVerificationOutcome VPCLatticeClient::GetDomainVerification(const GetDomainVerificationRequest& request) const {
@@ -727,7 +780,9 @@ GetDomainVerificationOutcome VPCLatticeClient::GetDomainVerification(const GetDo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainVerificationIdentifier());
   };
 
-  return GetDomainVerificationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDomainVerificationOutcome(result.GetResultWithOwnership())
+                            : GetDomainVerificationOutcome(std::move(result.GetError()));
 }
 
 GetListenerOutcome VPCLatticeClient::GetListener(const GetListenerRequest& request) const {
@@ -750,7 +805,8 @@ GetListenerOutcome VPCLatticeClient::GetListener(const GetListenerRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetListenerIdentifier());
   };
 
-  return GetListenerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetListenerOutcome(result.GetResultWithOwnership()) : GetListenerOutcome(std::move(result.GetError()));
 }
 
 GetResourceConfigurationOutcome VPCLatticeClient::GetResourceConfiguration(const GetResourceConfigurationRequest& request) const {
@@ -766,7 +822,9 @@ GetResourceConfigurationOutcome VPCLatticeClient::GetResourceConfiguration(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceConfigurationIdentifier());
   };
 
-  return GetResourceConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetResourceConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetResourceConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetResourceGatewayOutcome VPCLatticeClient::GetResourceGateway(const GetResourceGatewayRequest& request) const {
@@ -782,7 +840,9 @@ GetResourceGatewayOutcome VPCLatticeClient::GetResourceGateway(const GetResource
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceGatewayIdentifier());
   };
 
-  return GetResourceGatewayOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetResourceGatewayOutcome(result.GetResultWithOwnership())
+                            : GetResourceGatewayOutcome(std::move(result.GetError()));
 }
 
 GetResourcePolicyOutcome VPCLatticeClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const {
@@ -798,7 +858,9 @@ GetResourcePolicyOutcome VPCLatticeClient::GetResourcePolicy(const GetResourcePo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return GetResourcePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : GetResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 GetRuleOutcome VPCLatticeClient::GetRule(const GetRuleRequest& request) const {
@@ -828,7 +890,8 @@ GetRuleOutcome VPCLatticeClient::GetRule(const GetRuleRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRuleIdentifier());
   };
 
-  return GetRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRuleOutcome(result.GetResultWithOwnership()) : GetRuleOutcome(std::move(result.GetError()));
 }
 
 GetServiceOutcome VPCLatticeClient::GetService(const GetServiceRequest& request) const {
@@ -844,7 +907,8 @@ GetServiceOutcome VPCLatticeClient::GetService(const GetServiceRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetServiceIdentifier());
   };
 
-  return GetServiceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetServiceOutcome(result.GetResultWithOwnership()) : GetServiceOutcome(std::move(result.GetError()));
 }
 
 GetServiceNetworkOutcome VPCLatticeClient::GetServiceNetwork(const GetServiceNetworkRequest& request) const {
@@ -860,7 +924,9 @@ GetServiceNetworkOutcome VPCLatticeClient::GetServiceNetwork(const GetServiceNet
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetServiceNetworkIdentifier());
   };
 
-  return GetServiceNetworkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetServiceNetworkOutcome(result.GetResultWithOwnership())
+                            : GetServiceNetworkOutcome(std::move(result.GetError()));
 }
 
 GetServiceNetworkResourceAssociationOutcome VPCLatticeClient::GetServiceNetworkResourceAssociation(
@@ -878,7 +944,9 @@ GetServiceNetworkResourceAssociationOutcome VPCLatticeClient::GetServiceNetworkR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetServiceNetworkResourceAssociationIdentifier());
   };
 
-  return GetServiceNetworkResourceAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetServiceNetworkResourceAssociationOutcome(result.GetResultWithOwnership())
+                            : GetServiceNetworkResourceAssociationOutcome(std::move(result.GetError()));
 }
 
 GetServiceNetworkServiceAssociationOutcome VPCLatticeClient::GetServiceNetworkServiceAssociation(
@@ -896,7 +964,9 @@ GetServiceNetworkServiceAssociationOutcome VPCLatticeClient::GetServiceNetworkSe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetServiceNetworkServiceAssociationIdentifier());
   };
 
-  return GetServiceNetworkServiceAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetServiceNetworkServiceAssociationOutcome(result.GetResultWithOwnership())
+                            : GetServiceNetworkServiceAssociationOutcome(std::move(result.GetError()));
 }
 
 GetServiceNetworkVpcAssociationOutcome VPCLatticeClient::GetServiceNetworkVpcAssociation(
@@ -914,7 +984,9 @@ GetServiceNetworkVpcAssociationOutcome VPCLatticeClient::GetServiceNetworkVpcAss
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetServiceNetworkVpcAssociationIdentifier());
   };
 
-  return GetServiceNetworkVpcAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetServiceNetworkVpcAssociationOutcome(result.GetResultWithOwnership())
+                            : GetServiceNetworkVpcAssociationOutcome(std::move(result.GetError()));
 }
 
 GetTargetGroupOutcome VPCLatticeClient::GetTargetGroup(const GetTargetGroupRequest& request) const {
@@ -930,7 +1002,8 @@ GetTargetGroupOutcome VPCLatticeClient::GetTargetGroup(const GetTargetGroupReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTargetGroupIdentifier());
   };
 
-  return GetTargetGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTargetGroupOutcome(result.GetResultWithOwnership()) : GetTargetGroupOutcome(std::move(result.GetError()));
 }
 
 ListAccessLogSubscriptionsOutcome VPCLatticeClient::ListAccessLogSubscriptions(const ListAccessLogSubscriptionsRequest& request) const {
@@ -945,7 +1018,9 @@ ListAccessLogSubscriptionsOutcome VPCLatticeClient::ListAccessLogSubscriptions(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/accesslogsubscriptions");
   };
 
-  return ListAccessLogSubscriptionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAccessLogSubscriptionsOutcome(result.GetResultWithOwnership())
+                            : ListAccessLogSubscriptionsOutcome(std::move(result.GetError()));
 }
 
 ListDomainVerificationsOutcome VPCLatticeClient::ListDomainVerifications(const ListDomainVerificationsRequest& request) const {
@@ -954,7 +1029,9 @@ ListDomainVerificationsOutcome VPCLatticeClient::ListDomainVerifications(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/domainverifications");
   };
 
-  return ListDomainVerificationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDomainVerificationsOutcome(result.GetResultWithOwnership())
+                            : ListDomainVerificationsOutcome(std::move(result.GetError()));
 }
 
 ListListenersOutcome VPCLatticeClient::ListListeners(const ListListenersRequest& request) const {
@@ -971,7 +1048,8 @@ ListListenersOutcome VPCLatticeClient::ListListeners(const ListListenersRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/listeners");
   };
 
-  return ListListenersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListListenersOutcome(result.GetResultWithOwnership()) : ListListenersOutcome(std::move(result.GetError()));
 }
 
 ListResourceConfigurationsOutcome VPCLatticeClient::ListResourceConfigurations(const ListResourceConfigurationsRequest& request) const {
@@ -980,7 +1058,9 @@ ListResourceConfigurationsOutcome VPCLatticeClient::ListResourceConfigurations(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/resourceconfigurations");
   };
 
-  return ListResourceConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListResourceConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListResourceConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListResourceEndpointAssociationsOutcome VPCLatticeClient::ListResourceEndpointAssociations(
@@ -996,7 +1076,9 @@ ListResourceEndpointAssociationsOutcome VPCLatticeClient::ListResourceEndpointAs
     endpointResolutionOutcome.GetResult().AddPathSegments("/resourceendpointassociations");
   };
 
-  return ListResourceEndpointAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListResourceEndpointAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListResourceEndpointAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListResourceGatewaysOutcome VPCLatticeClient::ListResourceGateways(const ListResourceGatewaysRequest& request) const {
@@ -1005,7 +1087,9 @@ ListResourceGatewaysOutcome VPCLatticeClient::ListResourceGateways(const ListRes
     endpointResolutionOutcome.GetResult().AddPathSegments("/resourcegateways");
   };
 
-  return ListResourceGatewaysOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListResourceGatewaysOutcome(result.GetResultWithOwnership())
+                            : ListResourceGatewaysOutcome(std::move(result.GetError()));
 }
 
 ListRulesOutcome VPCLatticeClient::ListRules(const ListRulesRequest& request) const {
@@ -1029,7 +1113,8 @@ ListRulesOutcome VPCLatticeClient::ListRules(const ListRulesRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegments("/rules");
   };
 
-  return ListRulesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRulesOutcome(result.GetResultWithOwnership()) : ListRulesOutcome(std::move(result.GetError()));
 }
 
 ListServiceNetworkResourceAssociationsOutcome VPCLatticeClient::ListServiceNetworkResourceAssociations(
@@ -1039,7 +1124,9 @@ ListServiceNetworkResourceAssociationsOutcome VPCLatticeClient::ListServiceNetwo
     endpointResolutionOutcome.GetResult().AddPathSegments("/servicenetworkresourceassociations");
   };
 
-  return ListServiceNetworkResourceAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListServiceNetworkResourceAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListServiceNetworkResourceAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListServiceNetworkServiceAssociationsOutcome VPCLatticeClient::ListServiceNetworkServiceAssociations(
@@ -1049,7 +1136,9 @@ ListServiceNetworkServiceAssociationsOutcome VPCLatticeClient::ListServiceNetwor
     endpointResolutionOutcome.GetResult().AddPathSegments("/servicenetworkserviceassociations");
   };
 
-  return ListServiceNetworkServiceAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListServiceNetworkServiceAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListServiceNetworkServiceAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListServiceNetworkVpcAssociationsOutcome VPCLatticeClient::ListServiceNetworkVpcAssociations(
@@ -1059,7 +1148,9 @@ ListServiceNetworkVpcAssociationsOutcome VPCLatticeClient::ListServiceNetworkVpc
     endpointResolutionOutcome.GetResult().AddPathSegments("/servicenetworkvpcassociations");
   };
 
-  return ListServiceNetworkVpcAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListServiceNetworkVpcAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListServiceNetworkVpcAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListServiceNetworkVpcEndpointAssociationsOutcome VPCLatticeClient::ListServiceNetworkVpcEndpointAssociations(
@@ -1075,7 +1166,9 @@ ListServiceNetworkVpcEndpointAssociationsOutcome VPCLatticeClient::ListServiceNe
     endpointResolutionOutcome.GetResult().AddPathSegments("/servicenetworkvpcendpointassociations");
   };
 
-  return ListServiceNetworkVpcEndpointAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListServiceNetworkVpcEndpointAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListServiceNetworkVpcEndpointAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListServiceNetworksOutcome VPCLatticeClient::ListServiceNetworks(const ListServiceNetworksRequest& request) const {
@@ -1084,7 +1177,9 @@ ListServiceNetworksOutcome VPCLatticeClient::ListServiceNetworks(const ListServi
     endpointResolutionOutcome.GetResult().AddPathSegments("/servicenetworks");
   };
 
-  return ListServiceNetworksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListServiceNetworksOutcome(result.GetResultWithOwnership())
+                            : ListServiceNetworksOutcome(std::move(result.GetError()));
 }
 
 ListServicesOutcome VPCLatticeClient::ListServices(const ListServicesRequest& request) const {
@@ -1093,7 +1188,8 @@ ListServicesOutcome VPCLatticeClient::ListServices(const ListServicesRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/services");
   };
 
-  return ListServicesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListServicesOutcome(result.GetResultWithOwnership()) : ListServicesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome VPCLatticeClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -1109,7 +1205,9 @@ ListTagsForResourceOutcome VPCLatticeClient::ListTagsForResource(const ListTagsF
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTargetGroupsOutcome VPCLatticeClient::ListTargetGroups(const ListTargetGroupsRequest& request) const {
@@ -1118,7 +1216,9 @@ ListTargetGroupsOutcome VPCLatticeClient::ListTargetGroups(const ListTargetGroup
     endpointResolutionOutcome.GetResult().AddPathSegments("/targetgroups");
   };
 
-  return ListTargetGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTargetGroupsOutcome(result.GetResultWithOwnership())
+                            : ListTargetGroupsOutcome(std::move(result.GetError()));
 }
 
 ListTargetsOutcome VPCLatticeClient::ListTargets(const ListTargetsRequest& request) const {
@@ -1135,7 +1235,8 @@ ListTargetsOutcome VPCLatticeClient::ListTargets(const ListTargetsRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/listtargets");
   };
 
-  return ListTargetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTargetsOutcome(result.GetResultWithOwnership()) : ListTargetsOutcome(std::move(result.GetError()));
 }
 
 PutAuthPolicyOutcome VPCLatticeClient::PutAuthPolicy(const PutAuthPolicyRequest& request) const {
@@ -1151,7 +1252,8 @@ PutAuthPolicyOutcome VPCLatticeClient::PutAuthPolicy(const PutAuthPolicyRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceIdentifier());
   };
 
-  return PutAuthPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutAuthPolicyOutcome(result.GetResultWithOwnership()) : PutAuthPolicyOutcome(std::move(result.GetError()));
 }
 
 PutResourcePolicyOutcome VPCLatticeClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const {
@@ -1167,7 +1269,9 @@ PutResourcePolicyOutcome VPCLatticeClient::PutResourcePolicy(const PutResourcePo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return PutResourcePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : PutResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 RegisterTargetsOutcome VPCLatticeClient::RegisterTargets(const RegisterTargetsRequest& request) const {
@@ -1184,7 +1288,9 @@ RegisterTargetsOutcome VPCLatticeClient::RegisterTargets(const RegisterTargetsRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/registertargets");
   };
 
-  return RegisterTargetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterTargetsOutcome(result.GetResultWithOwnership())
+                            : RegisterTargetsOutcome(std::move(result.GetError()));
 }
 
 StartDomainVerificationOutcome VPCLatticeClient::StartDomainVerification(const StartDomainVerificationRequest& request) const {
@@ -1193,7 +1299,9 @@ StartDomainVerificationOutcome VPCLatticeClient::StartDomainVerification(const S
     endpointResolutionOutcome.GetResult().AddPathSegments("/domainverifications");
   };
 
-  return StartDomainVerificationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDomainVerificationOutcome(result.GetResultWithOwnership())
+                            : StartDomainVerificationOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome VPCLatticeClient::TagResource(const TagResourceRequest& request) const {
@@ -1209,7 +1317,8 @@ TagResourceOutcome VPCLatticeClient::TagResource(const TagResourceRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome VPCLatticeClient::UntagResource(const UntagResourceRequest& request) const {
@@ -1230,7 +1339,8 @@ UntagResourceOutcome VPCLatticeClient::UntagResource(const UntagResourceRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAccessLogSubscriptionOutcome VPCLatticeClient::UpdateAccessLogSubscription(const UpdateAccessLogSubscriptionRequest& request) const {
@@ -1246,7 +1356,9 @@ UpdateAccessLogSubscriptionOutcome VPCLatticeClient::UpdateAccessLogSubscription
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccessLogSubscriptionIdentifier());
   };
 
-  return UpdateAccessLogSubscriptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateAccessLogSubscriptionOutcome(result.GetResultWithOwnership())
+                            : UpdateAccessLogSubscriptionOutcome(std::move(result.GetError()));
 }
 
 UpdateListenerOutcome VPCLatticeClient::UpdateListener(const UpdateListenerRequest& request) const {
@@ -1269,7 +1381,8 @@ UpdateListenerOutcome VPCLatticeClient::UpdateListener(const UpdateListenerReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetListenerIdentifier());
   };
 
-  return UpdateListenerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateListenerOutcome(result.GetResultWithOwnership()) : UpdateListenerOutcome(std::move(result.GetError()));
 }
 
 UpdateResourceConfigurationOutcome VPCLatticeClient::UpdateResourceConfiguration(const UpdateResourceConfigurationRequest& request) const {
@@ -1285,7 +1398,9 @@ UpdateResourceConfigurationOutcome VPCLatticeClient::UpdateResourceConfiguration
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceConfigurationIdentifier());
   };
 
-  return UpdateResourceConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateResourceConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateResourceConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateResourceGatewayOutcome VPCLatticeClient::UpdateResourceGateway(const UpdateResourceGatewayRequest& request) const {
@@ -1301,7 +1416,9 @@ UpdateResourceGatewayOutcome VPCLatticeClient::UpdateResourceGateway(const Updat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceGatewayIdentifier());
   };
 
-  return UpdateResourceGatewayOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateResourceGatewayOutcome(result.GetResultWithOwnership())
+                            : UpdateResourceGatewayOutcome(std::move(result.GetError()));
 }
 
 UpdateRuleOutcome VPCLatticeClient::UpdateRule(const UpdateRuleRequest& request) const {
@@ -1331,7 +1448,8 @@ UpdateRuleOutcome VPCLatticeClient::UpdateRule(const UpdateRuleRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRuleIdentifier());
   };
 
-  return UpdateRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateRuleOutcome(result.GetResultWithOwnership()) : UpdateRuleOutcome(std::move(result.GetError()));
 }
 
 UpdateServiceOutcome VPCLatticeClient::UpdateService(const UpdateServiceRequest& request) const {
@@ -1347,7 +1465,8 @@ UpdateServiceOutcome VPCLatticeClient::UpdateService(const UpdateServiceRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetServiceIdentifier());
   };
 
-  return UpdateServiceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateServiceOutcome(result.GetResultWithOwnership()) : UpdateServiceOutcome(std::move(result.GetError()));
 }
 
 UpdateServiceNetworkOutcome VPCLatticeClient::UpdateServiceNetwork(const UpdateServiceNetworkRequest& request) const {
@@ -1363,7 +1482,9 @@ UpdateServiceNetworkOutcome VPCLatticeClient::UpdateServiceNetwork(const UpdateS
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetServiceNetworkIdentifier());
   };
 
-  return UpdateServiceNetworkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateServiceNetworkOutcome(result.GetResultWithOwnership())
+                            : UpdateServiceNetworkOutcome(std::move(result.GetError()));
 }
 
 UpdateServiceNetworkVpcAssociationOutcome VPCLatticeClient::UpdateServiceNetworkVpcAssociation(
@@ -1381,7 +1502,9 @@ UpdateServiceNetworkVpcAssociationOutcome VPCLatticeClient::UpdateServiceNetwork
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetServiceNetworkVpcAssociationIdentifier());
   };
 
-  return UpdateServiceNetworkVpcAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateServiceNetworkVpcAssociationOutcome(result.GetResultWithOwnership())
+                            : UpdateServiceNetworkVpcAssociationOutcome(std::move(result.GetError()));
 }
 
 UpdateTargetGroupOutcome VPCLatticeClient::UpdateTargetGroup(const UpdateTargetGroupRequest& request) const {
@@ -1397,5 +1520,7 @@ UpdateTargetGroupOutcome VPCLatticeClient::UpdateTargetGroup(const UpdateTargetG
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTargetGroupIdentifier());
   };
 
-  return UpdateTargetGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateTargetGroupOutcome(result.GetResultWithOwnership())
+                            : UpdateTargetGroupOutcome(std::move(result.GetError()));
 }

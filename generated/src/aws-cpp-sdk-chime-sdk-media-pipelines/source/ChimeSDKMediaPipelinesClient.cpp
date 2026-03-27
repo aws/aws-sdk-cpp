@@ -221,7 +221,9 @@ CreateMediaCapturePipelineOutcome ChimeSDKMediaPipelinesClient::CreateMediaCaptu
     endpointResolutionOutcome.GetResult().AddPathSegments("/sdk-media-capture-pipelines");
   };
 
-  return CreateMediaCapturePipelineOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMediaCapturePipelineOutcome(result.GetResultWithOwnership())
+                            : CreateMediaCapturePipelineOutcome(std::move(result.GetError()));
 }
 
 CreateMediaConcatenationPipelineOutcome ChimeSDKMediaPipelinesClient::CreateMediaConcatenationPipeline(
@@ -231,7 +233,9 @@ CreateMediaConcatenationPipelineOutcome ChimeSDKMediaPipelinesClient::CreateMedi
     endpointResolutionOutcome.GetResult().AddPathSegments("/sdk-media-concatenation-pipelines");
   };
 
-  return CreateMediaConcatenationPipelineOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMediaConcatenationPipelineOutcome(result.GetResultWithOwnership())
+                            : CreateMediaConcatenationPipelineOutcome(std::move(result.GetError()));
 }
 
 CreateMediaInsightsPipelineOutcome ChimeSDKMediaPipelinesClient::CreateMediaInsightsPipeline(
@@ -241,7 +245,9 @@ CreateMediaInsightsPipelineOutcome ChimeSDKMediaPipelinesClient::CreateMediaInsi
     endpointResolutionOutcome.GetResult().AddPathSegments("/media-insights-pipelines");
   };
 
-  return CreateMediaInsightsPipelineOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMediaInsightsPipelineOutcome(result.GetResultWithOwnership())
+                            : CreateMediaInsightsPipelineOutcome(std::move(result.GetError()));
 }
 
 CreateMediaInsightsPipelineConfigurationOutcome ChimeSDKMediaPipelinesClient::CreateMediaInsightsPipelineConfiguration(
@@ -251,7 +257,9 @@ CreateMediaInsightsPipelineConfigurationOutcome ChimeSDKMediaPipelinesClient::Cr
     endpointResolutionOutcome.GetResult().AddPathSegments("/media-insights-pipeline-configurations");
   };
 
-  return CreateMediaInsightsPipelineConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMediaInsightsPipelineConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateMediaInsightsPipelineConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateMediaLiveConnectorPipelineOutcome ChimeSDKMediaPipelinesClient::CreateMediaLiveConnectorPipeline(
@@ -261,7 +269,9 @@ CreateMediaLiveConnectorPipelineOutcome ChimeSDKMediaPipelinesClient::CreateMedi
     endpointResolutionOutcome.GetResult().AddPathSegments("/sdk-media-live-connector-pipelines");
   };
 
-  return CreateMediaLiveConnectorPipelineOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMediaLiveConnectorPipelineOutcome(result.GetResultWithOwnership())
+                            : CreateMediaLiveConnectorPipelineOutcome(std::move(result.GetError()));
 }
 
 CreateMediaPipelineKinesisVideoStreamPoolOutcome ChimeSDKMediaPipelinesClient::CreateMediaPipelineKinesisVideoStreamPool(
@@ -271,7 +281,9 @@ CreateMediaPipelineKinesisVideoStreamPoolOutcome ChimeSDKMediaPipelinesClient::C
     endpointResolutionOutcome.GetResult().AddPathSegments("/media-pipeline-kinesis-video-stream-pools");
   };
 
-  return CreateMediaPipelineKinesisVideoStreamPoolOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMediaPipelineKinesisVideoStreamPoolOutcome(result.GetResultWithOwnership())
+                            : CreateMediaPipelineKinesisVideoStreamPoolOutcome(std::move(result.GetError()));
 }
 
 CreateMediaStreamPipelineOutcome ChimeSDKMediaPipelinesClient::CreateMediaStreamPipeline(
@@ -281,7 +293,9 @@ CreateMediaStreamPipelineOutcome ChimeSDKMediaPipelinesClient::CreateMediaStream
     endpointResolutionOutcome.GetResult().AddPathSegments("/sdk-media-stream-pipelines");
   };
 
-  return CreateMediaStreamPipelineOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMediaStreamPipelineOutcome(result.GetResultWithOwnership())
+                            : CreateMediaStreamPipelineOutcome(std::move(result.GetError()));
 }
 
 DeleteMediaCapturePipelineOutcome ChimeSDKMediaPipelinesClient::DeleteMediaCapturePipeline(
@@ -298,7 +312,9 @@ DeleteMediaCapturePipelineOutcome ChimeSDKMediaPipelinesClient::DeleteMediaCaptu
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMediaPipelineId());
   };
 
-  return DeleteMediaCapturePipelineOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMediaCapturePipelineOutcome(result.GetResultWithOwnership())
+                            : DeleteMediaCapturePipelineOutcome(std::move(result.GetError()));
 }
 
 DeleteMediaInsightsPipelineConfigurationOutcome ChimeSDKMediaPipelinesClient::DeleteMediaInsightsPipelineConfiguration(
@@ -315,7 +331,9 @@ DeleteMediaInsightsPipelineConfigurationOutcome ChimeSDKMediaPipelinesClient::De
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteMediaInsightsPipelineConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMediaInsightsPipelineConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteMediaInsightsPipelineConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteMediaPipelineOutcome ChimeSDKMediaPipelinesClient::DeleteMediaPipeline(const DeleteMediaPipelineRequest& request) const {
@@ -331,7 +349,9 @@ DeleteMediaPipelineOutcome ChimeSDKMediaPipelinesClient::DeleteMediaPipeline(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMediaPipelineId());
   };
 
-  return DeleteMediaPipelineOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMediaPipelineOutcome(result.GetResultWithOwnership())
+                            : DeleteMediaPipelineOutcome(std::move(result.GetError()));
 }
 
 DeleteMediaPipelineKinesisVideoStreamPoolOutcome ChimeSDKMediaPipelinesClient::DeleteMediaPipelineKinesisVideoStreamPool(
@@ -348,7 +368,9 @@ DeleteMediaPipelineKinesisVideoStreamPoolOutcome ChimeSDKMediaPipelinesClient::D
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteMediaPipelineKinesisVideoStreamPoolOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMediaPipelineKinesisVideoStreamPoolOutcome(result.GetResultWithOwnership())
+                            : DeleteMediaPipelineKinesisVideoStreamPoolOutcome(std::move(result.GetError()));
 }
 
 GetMediaCapturePipelineOutcome ChimeSDKMediaPipelinesClient::GetMediaCapturePipeline(const GetMediaCapturePipelineRequest& request) const {
@@ -364,7 +386,9 @@ GetMediaCapturePipelineOutcome ChimeSDKMediaPipelinesClient::GetMediaCapturePipe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMediaPipelineId());
   };
 
-  return GetMediaCapturePipelineOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMediaCapturePipelineOutcome(result.GetResultWithOwnership())
+                            : GetMediaCapturePipelineOutcome(std::move(result.GetError()));
 }
 
 GetMediaInsightsPipelineConfigurationOutcome ChimeSDKMediaPipelinesClient::GetMediaInsightsPipelineConfiguration(
@@ -381,7 +405,9 @@ GetMediaInsightsPipelineConfigurationOutcome ChimeSDKMediaPipelinesClient::GetMe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetMediaInsightsPipelineConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMediaInsightsPipelineConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetMediaInsightsPipelineConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetMediaPipelineOutcome ChimeSDKMediaPipelinesClient::GetMediaPipeline(const GetMediaPipelineRequest& request) const {
@@ -397,7 +423,9 @@ GetMediaPipelineOutcome ChimeSDKMediaPipelinesClient::GetMediaPipeline(const Get
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMediaPipelineId());
   };
 
-  return GetMediaPipelineOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMediaPipelineOutcome(result.GetResultWithOwnership())
+                            : GetMediaPipelineOutcome(std::move(result.GetError()));
 }
 
 GetMediaPipelineKinesisVideoStreamPoolOutcome ChimeSDKMediaPipelinesClient::GetMediaPipelineKinesisVideoStreamPool(
@@ -414,7 +442,9 @@ GetMediaPipelineKinesisVideoStreamPoolOutcome ChimeSDKMediaPipelinesClient::GetM
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetMediaPipelineKinesisVideoStreamPoolOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMediaPipelineKinesisVideoStreamPoolOutcome(result.GetResultWithOwnership())
+                            : GetMediaPipelineKinesisVideoStreamPoolOutcome(std::move(result.GetError()));
 }
 
 GetSpeakerSearchTaskOutcome ChimeSDKMediaPipelinesClient::GetSpeakerSearchTask(const GetSpeakerSearchTaskRequest& request) const {
@@ -437,7 +467,9 @@ GetSpeakerSearchTaskOutcome ChimeSDKMediaPipelinesClient::GetSpeakerSearchTask(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSpeakerSearchTaskId());
   };
 
-  return GetSpeakerSearchTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSpeakerSearchTaskOutcome(result.GetResultWithOwnership())
+                            : GetSpeakerSearchTaskOutcome(std::move(result.GetError()));
 }
 
 GetVoiceToneAnalysisTaskOutcome ChimeSDKMediaPipelinesClient::GetVoiceToneAnalysisTask(
@@ -461,7 +493,9 @@ GetVoiceToneAnalysisTaskOutcome ChimeSDKMediaPipelinesClient::GetVoiceToneAnalys
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVoiceToneAnalysisTaskId());
   };
 
-  return GetVoiceToneAnalysisTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetVoiceToneAnalysisTaskOutcome(result.GetResultWithOwnership())
+                            : GetVoiceToneAnalysisTaskOutcome(std::move(result.GetError()));
 }
 
 ListMediaCapturePipelinesOutcome ChimeSDKMediaPipelinesClient::ListMediaCapturePipelines(
@@ -471,7 +505,9 @@ ListMediaCapturePipelinesOutcome ChimeSDKMediaPipelinesClient::ListMediaCaptureP
     endpointResolutionOutcome.GetResult().AddPathSegments("/sdk-media-capture-pipelines");
   };
 
-  return ListMediaCapturePipelinesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMediaCapturePipelinesOutcome(result.GetResultWithOwnership())
+                            : ListMediaCapturePipelinesOutcome(std::move(result.GetError()));
 }
 
 ListMediaInsightsPipelineConfigurationsOutcome ChimeSDKMediaPipelinesClient::ListMediaInsightsPipelineConfigurations(
@@ -481,7 +517,9 @@ ListMediaInsightsPipelineConfigurationsOutcome ChimeSDKMediaPipelinesClient::Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/media-insights-pipeline-configurations");
   };
 
-  return ListMediaInsightsPipelineConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMediaInsightsPipelineConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListMediaInsightsPipelineConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListMediaPipelineKinesisVideoStreamPoolsOutcome ChimeSDKMediaPipelinesClient::ListMediaPipelineKinesisVideoStreamPools(
@@ -491,7 +529,9 @@ ListMediaPipelineKinesisVideoStreamPoolsOutcome ChimeSDKMediaPipelinesClient::Li
     endpointResolutionOutcome.GetResult().AddPathSegments("/media-pipeline-kinesis-video-stream-pools");
   };
 
-  return ListMediaPipelineKinesisVideoStreamPoolsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMediaPipelineKinesisVideoStreamPoolsOutcome(result.GetResultWithOwnership())
+                            : ListMediaPipelineKinesisVideoStreamPoolsOutcome(std::move(result.GetError()));
 }
 
 ListMediaPipelinesOutcome ChimeSDKMediaPipelinesClient::ListMediaPipelines(const ListMediaPipelinesRequest& request) const {
@@ -500,7 +540,9 @@ ListMediaPipelinesOutcome ChimeSDKMediaPipelinesClient::ListMediaPipelines(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/sdk-media-pipelines");
   };
 
-  return ListMediaPipelinesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMediaPipelinesOutcome(result.GetResultWithOwnership())
+                            : ListMediaPipelinesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome ChimeSDKMediaPipelinesClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -515,7 +557,9 @@ ListTagsForResourceOutcome ChimeSDKMediaPipelinesClient::ListTagsForResource(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/tags");
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 StartSpeakerSearchTaskOutcome ChimeSDKMediaPipelinesClient::StartSpeakerSearchTask(const StartSpeakerSearchTaskRequest& request) const {
@@ -535,7 +579,9 @@ StartSpeakerSearchTaskOutcome ChimeSDKMediaPipelinesClient::StartSpeakerSearchTa
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return StartSpeakerSearchTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartSpeakerSearchTaskOutcome(result.GetResultWithOwnership())
+                            : StartSpeakerSearchTaskOutcome(std::move(result.GetError()));
 }
 
 StartVoiceToneAnalysisTaskOutcome ChimeSDKMediaPipelinesClient::StartVoiceToneAnalysisTask(
@@ -556,7 +602,9 @@ StartVoiceToneAnalysisTaskOutcome ChimeSDKMediaPipelinesClient::StartVoiceToneAn
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return StartVoiceToneAnalysisTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartVoiceToneAnalysisTaskOutcome(result.GetResultWithOwnership())
+                            : StartVoiceToneAnalysisTaskOutcome(std::move(result.GetError()));
 }
 
 StopSpeakerSearchTaskOutcome ChimeSDKMediaPipelinesClient::StopSpeakerSearchTask(const StopSpeakerSearchTaskRequest& request) const {
@@ -582,7 +630,9 @@ StopSpeakerSearchTaskOutcome ChimeSDKMediaPipelinesClient::StopSpeakerSearchTask
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return StopSpeakerSearchTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopSpeakerSearchTaskOutcome(result.GetResultWithOwnership())
+                            : StopSpeakerSearchTaskOutcome(std::move(result.GetError()));
 }
 
 StopVoiceToneAnalysisTaskOutcome ChimeSDKMediaPipelinesClient::StopVoiceToneAnalysisTask(
@@ -609,7 +659,9 @@ StopVoiceToneAnalysisTaskOutcome ChimeSDKMediaPipelinesClient::StopVoiceToneAnal
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return StopVoiceToneAnalysisTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopVoiceToneAnalysisTaskOutcome(result.GetResultWithOwnership())
+                            : StopVoiceToneAnalysisTaskOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ChimeSDKMediaPipelinesClient::TagResource(const TagResourceRequest& request) const {
@@ -621,7 +673,8 @@ TagResourceOutcome ChimeSDKMediaPipelinesClient::TagResource(const TagResourceRe
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome ChimeSDKMediaPipelinesClient::UntagResource(const UntagResourceRequest& request) const {
@@ -633,7 +686,8 @@ UntagResourceOutcome ChimeSDKMediaPipelinesClient::UntagResource(const UntagReso
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateMediaInsightsPipelineConfigurationOutcome ChimeSDKMediaPipelinesClient::UpdateMediaInsightsPipelineConfiguration(
@@ -650,7 +704,9 @@ UpdateMediaInsightsPipelineConfigurationOutcome ChimeSDKMediaPipelinesClient::Up
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateMediaInsightsPipelineConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateMediaInsightsPipelineConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateMediaInsightsPipelineConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateMediaInsightsPipelineStatusOutcome ChimeSDKMediaPipelinesClient::UpdateMediaInsightsPipelineStatus(
@@ -667,7 +723,9 @@ UpdateMediaInsightsPipelineStatusOutcome ChimeSDKMediaPipelinesClient::UpdateMed
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateMediaInsightsPipelineStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateMediaInsightsPipelineStatusOutcome(result.GetResultWithOwnership())
+                            : UpdateMediaInsightsPipelineStatusOutcome(std::move(result.GetError()));
 }
 
 UpdateMediaPipelineKinesisVideoStreamPoolOutcome ChimeSDKMediaPipelinesClient::UpdateMediaPipelineKinesisVideoStreamPool(
@@ -684,5 +742,7 @@ UpdateMediaPipelineKinesisVideoStreamPoolOutcome ChimeSDKMediaPipelinesClient::U
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateMediaPipelineKinesisVideoStreamPoolOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateMediaPipelineKinesisVideoStreamPoolOutcome(result.GetResultWithOwnership())
+                            : UpdateMediaPipelineKinesisVideoStreamPoolOutcome(std::move(result.GetError()));
 }

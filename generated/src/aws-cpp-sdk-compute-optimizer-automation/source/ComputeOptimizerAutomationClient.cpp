@@ -204,101 +204,144 @@ ComputeOptimizerAutomationClient::InvokeOperationOutcome ComputeOptimizerAutomat
 }
 
 AssociateAccountsOutcome ComputeOptimizerAutomationClient::AssociateAccounts(const AssociateAccountsRequest& request) const {
-  return AssociateAccountsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateAccountsOutcome(result.GetResultWithOwnership())
+                            : AssociateAccountsOutcome(std::move(result.GetError()));
 }
 
 CreateAutomationRuleOutcome ComputeOptimizerAutomationClient::CreateAutomationRule(const CreateAutomationRuleRequest& request) const {
-  return CreateAutomationRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAutomationRuleOutcome(result.GetResultWithOwnership())
+                            : CreateAutomationRuleOutcome(std::move(result.GetError()));
 }
 
 DeleteAutomationRuleOutcome ComputeOptimizerAutomationClient::DeleteAutomationRule(const DeleteAutomationRuleRequest& request) const {
-  return DeleteAutomationRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAutomationRuleOutcome(result.GetResultWithOwnership())
+                            : DeleteAutomationRuleOutcome(std::move(result.GetError()));
 }
 
 DisassociateAccountsOutcome ComputeOptimizerAutomationClient::DisassociateAccounts(const DisassociateAccountsRequest& request) const {
-  return DisassociateAccountsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateAccountsOutcome(result.GetResultWithOwnership())
+                            : DisassociateAccountsOutcome(std::move(result.GetError()));
 }
 
 GetAutomationEventOutcome ComputeOptimizerAutomationClient::GetAutomationEvent(const GetAutomationEventRequest& request) const {
-  return GetAutomationEventOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAutomationEventOutcome(result.GetResultWithOwnership())
+                            : GetAutomationEventOutcome(std::move(result.GetError()));
 }
 
 GetAutomationRuleOutcome ComputeOptimizerAutomationClient::GetAutomationRule(const GetAutomationRuleRequest& request) const {
-  return GetAutomationRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAutomationRuleOutcome(result.GetResultWithOwnership())
+                            : GetAutomationRuleOutcome(std::move(result.GetError()));
 }
 
 GetEnrollmentConfigurationOutcome ComputeOptimizerAutomationClient::GetEnrollmentConfiguration(
     const GetEnrollmentConfigurationRequest& request) const {
-  return GetEnrollmentConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEnrollmentConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetEnrollmentConfigurationOutcome(std::move(result.GetError()));
 }
 
 ListAccountsOutcome ComputeOptimizerAutomationClient::ListAccounts(const ListAccountsRequest& request) const {
-  return ListAccountsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAccountsOutcome(result.GetResultWithOwnership()) : ListAccountsOutcome(std::move(result.GetError()));
 }
 
 ListAutomationEventStepsOutcome ComputeOptimizerAutomationClient::ListAutomationEventSteps(
     const ListAutomationEventStepsRequest& request) const {
-  return ListAutomationEventStepsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAutomationEventStepsOutcome(result.GetResultWithOwnership())
+                            : ListAutomationEventStepsOutcome(std::move(result.GetError()));
 }
 
 ListAutomationEventSummariesOutcome ComputeOptimizerAutomationClient::ListAutomationEventSummaries(
     const ListAutomationEventSummariesRequest& request) const {
-  return ListAutomationEventSummariesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAutomationEventSummariesOutcome(result.GetResultWithOwnership())
+                            : ListAutomationEventSummariesOutcome(std::move(result.GetError()));
 }
 
 ListAutomationEventsOutcome ComputeOptimizerAutomationClient::ListAutomationEvents(const ListAutomationEventsRequest& request) const {
-  return ListAutomationEventsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAutomationEventsOutcome(result.GetResultWithOwnership())
+                            : ListAutomationEventsOutcome(std::move(result.GetError()));
 }
 
 ListAutomationRulePreviewOutcome ComputeOptimizerAutomationClient::ListAutomationRulePreview(
     const ListAutomationRulePreviewRequest& request) const {
-  return ListAutomationRulePreviewOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAutomationRulePreviewOutcome(result.GetResultWithOwnership())
+                            : ListAutomationRulePreviewOutcome(std::move(result.GetError()));
 }
 
 ListAutomationRulePreviewSummariesOutcome ComputeOptimizerAutomationClient::ListAutomationRulePreviewSummaries(
     const ListAutomationRulePreviewSummariesRequest& request) const {
-  return ListAutomationRulePreviewSummariesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAutomationRulePreviewSummariesOutcome(result.GetResultWithOwnership())
+                            : ListAutomationRulePreviewSummariesOutcome(std::move(result.GetError()));
 }
 
 ListAutomationRulesOutcome ComputeOptimizerAutomationClient::ListAutomationRules(const ListAutomationRulesRequest& request) const {
-  return ListAutomationRulesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAutomationRulesOutcome(result.GetResultWithOwnership())
+                            : ListAutomationRulesOutcome(std::move(result.GetError()));
 }
 
 ListRecommendedActionSummariesOutcome ComputeOptimizerAutomationClient::ListRecommendedActionSummaries(
     const ListRecommendedActionSummariesRequest& request) const {
-  return ListRecommendedActionSummariesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRecommendedActionSummariesOutcome(result.GetResultWithOwnership())
+                            : ListRecommendedActionSummariesOutcome(std::move(result.GetError()));
 }
 
 ListRecommendedActionsOutcome ComputeOptimizerAutomationClient::ListRecommendedActions(const ListRecommendedActionsRequest& request) const {
-  return ListRecommendedActionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRecommendedActionsOutcome(result.GetResultWithOwnership())
+                            : ListRecommendedActionsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome ComputeOptimizerAutomationClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 RollbackAutomationEventOutcome ComputeOptimizerAutomationClient::RollbackAutomationEvent(
     const RollbackAutomationEventRequest& request) const {
-  return RollbackAutomationEventOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RollbackAutomationEventOutcome(result.GetResultWithOwnership())
+                            : RollbackAutomationEventOutcome(std::move(result.GetError()));
 }
 
 StartAutomationEventOutcome ComputeOptimizerAutomationClient::StartAutomationEvent(const StartAutomationEventRequest& request) const {
-  return StartAutomationEventOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartAutomationEventOutcome(result.GetResultWithOwnership())
+                            : StartAutomationEventOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ComputeOptimizerAutomationClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome ComputeOptimizerAutomationClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAutomationRuleOutcome ComputeOptimizerAutomationClient::UpdateAutomationRule(const UpdateAutomationRuleRequest& request) const {
-  return UpdateAutomationRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAutomationRuleOutcome(result.GetResultWithOwnership())
+                            : UpdateAutomationRuleOutcome(std::move(result.GetError()));
 }
 
 UpdateEnrollmentConfigurationOutcome ComputeOptimizerAutomationClient::UpdateEnrollmentConfiguration(
     const UpdateEnrollmentConfigurationRequest& request) const {
-  return UpdateEnrollmentConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateEnrollmentConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateEnrollmentConfigurationOutcome(std::move(result.GetError()));
 }

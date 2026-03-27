@@ -211,8 +211,8 @@ GetClipOutcome KinesisVideoArchivedMediaClient::GetClip(const GetClipRequest& re
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetClip, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/getClip");
-        return GetClipOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? GetClipOutcome(result.GetResultWithOwnership()) : GetClipOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -226,7 +226,9 @@ GetDASHStreamingSessionURLOutcome KinesisVideoArchivedMediaClient::GetDASHStream
     endpointResolutionOutcome.GetResult().AddPathSegments("/getDASHStreamingSessionURL");
   };
 
-  return GetDASHStreamingSessionURLOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDASHStreamingSessionURLOutcome(result.GetResultWithOwnership())
+                            : GetDASHStreamingSessionURLOutcome(std::move(result.GetError()));
 }
 
 GetHLSStreamingSessionURLOutcome KinesisVideoArchivedMediaClient::GetHLSStreamingSessionURL(
@@ -236,7 +238,9 @@ GetHLSStreamingSessionURLOutcome KinesisVideoArchivedMediaClient::GetHLSStreamin
     endpointResolutionOutcome.GetResult().AddPathSegments("/getHLSStreamingSessionURL");
   };
 
-  return GetHLSStreamingSessionURLOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetHLSStreamingSessionURLOutcome(result.GetResultWithOwnership())
+                            : GetHLSStreamingSessionURLOutcome(std::move(result.GetError()));
 }
 
 GetImagesOutcome KinesisVideoArchivedMediaClient::GetImages(const GetImagesRequest& request) const {
@@ -245,7 +249,8 @@ GetImagesOutcome KinesisVideoArchivedMediaClient::GetImages(const GetImagesReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/getImages");
   };
 
-  return GetImagesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetImagesOutcome(result.GetResultWithOwnership()) : GetImagesOutcome(std::move(result.GetError()));
 }
 
 GetMediaForFragmentListOutcome KinesisVideoArchivedMediaClient::GetMediaForFragmentList(
@@ -271,8 +276,9 @@ GetMediaForFragmentListOutcome KinesisVideoArchivedMediaClient::GetMediaForFragm
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMediaForFragmentList, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/getMediaForFragmentList");
-        return GetMediaForFragmentListOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? GetMediaForFragmentListOutcome(result.GetResultWithOwnership())
+                                  : GetMediaForFragmentListOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -285,5 +291,6 @@ ListFragmentsOutcome KinesisVideoArchivedMediaClient::ListFragments(const ListFr
     endpointResolutionOutcome.GetResult().AddPathSegments("/listFragments");
   };
 
-  return ListFragmentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFragmentsOutcome(result.GetResultWithOwnership()) : ListFragmentsOutcome(std::move(result.GetError()));
 }

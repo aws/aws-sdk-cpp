@@ -187,64 +187,91 @@ HealthClient::InvokeOperationOutcome HealthClient::InvokeServiceOperation(const 
 
 DescribeAffectedAccountsForOrganizationOutcome HealthClient::DescribeAffectedAccountsForOrganization(
     const DescribeAffectedAccountsForOrganizationRequest& request) const {
-  return DescribeAffectedAccountsForOrganizationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAffectedAccountsForOrganizationOutcome(result.GetResultWithOwnership())
+                            : DescribeAffectedAccountsForOrganizationOutcome(std::move(result.GetError()));
 }
 
 DescribeAffectedEntitiesOutcome HealthClient::DescribeAffectedEntities(const DescribeAffectedEntitiesRequest& request) const {
-  return DescribeAffectedEntitiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAffectedEntitiesOutcome(result.GetResultWithOwnership())
+                            : DescribeAffectedEntitiesOutcome(std::move(result.GetError()));
 }
 
 DescribeAffectedEntitiesForOrganizationOutcome HealthClient::DescribeAffectedEntitiesForOrganization(
     const DescribeAffectedEntitiesForOrganizationRequest& request) const {
-  return DescribeAffectedEntitiesForOrganizationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAffectedEntitiesForOrganizationOutcome(result.GetResultWithOwnership())
+                            : DescribeAffectedEntitiesForOrganizationOutcome(std::move(result.GetError()));
 }
 
 DescribeEntityAggregatesOutcome HealthClient::DescribeEntityAggregates(const DescribeEntityAggregatesRequest& request) const {
-  return DescribeEntityAggregatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEntityAggregatesOutcome(result.GetResultWithOwnership())
+                            : DescribeEntityAggregatesOutcome(std::move(result.GetError()));
 }
 
 DescribeEntityAggregatesForOrganizationOutcome HealthClient::DescribeEntityAggregatesForOrganization(
     const DescribeEntityAggregatesForOrganizationRequest& request) const {
-  return DescribeEntityAggregatesForOrganizationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEntityAggregatesForOrganizationOutcome(result.GetResultWithOwnership())
+                            : DescribeEntityAggregatesForOrganizationOutcome(std::move(result.GetError()));
 }
 
 DescribeEventAggregatesOutcome HealthClient::DescribeEventAggregates(const DescribeEventAggregatesRequest& request) const {
-  return DescribeEventAggregatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEventAggregatesOutcome(result.GetResultWithOwnership())
+                            : DescribeEventAggregatesOutcome(std::move(result.GetError()));
 }
 
 DescribeEventDetailsOutcome HealthClient::DescribeEventDetails(const DescribeEventDetailsRequest& request) const {
-  return DescribeEventDetailsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEventDetailsOutcome(result.GetResultWithOwnership())
+                            : DescribeEventDetailsOutcome(std::move(result.GetError()));
 }
 
 DescribeEventDetailsForOrganizationOutcome HealthClient::DescribeEventDetailsForOrganization(
     const DescribeEventDetailsForOrganizationRequest& request) const {
-  return DescribeEventDetailsForOrganizationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEventDetailsForOrganizationOutcome(result.GetResultWithOwnership())
+                            : DescribeEventDetailsForOrganizationOutcome(std::move(result.GetError()));
 }
 
 DescribeEventTypesOutcome HealthClient::DescribeEventTypes(const DescribeEventTypesRequest& request) const {
-  return DescribeEventTypesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEventTypesOutcome(result.GetResultWithOwnership())
+                            : DescribeEventTypesOutcome(std::move(result.GetError()));
 }
 
 DescribeEventsOutcome HealthClient::DescribeEvents(const DescribeEventsRequest& request) const {
-  return DescribeEventsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEventsOutcome(result.GetResultWithOwnership()) : DescribeEventsOutcome(std::move(result.GetError()));
 }
 
 DescribeEventsForOrganizationOutcome HealthClient::DescribeEventsForOrganization(
     const DescribeEventsForOrganizationRequest& request) const {
-  return DescribeEventsForOrganizationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEventsForOrganizationOutcome(result.GetResultWithOwnership())
+                            : DescribeEventsForOrganizationOutcome(std::move(result.GetError()));
 }
 
 DescribeHealthServiceStatusForOrganizationOutcome HealthClient::DescribeHealthServiceStatusForOrganization(
     const DescribeHealthServiceStatusForOrganizationRequest& request) const {
-  return DescribeHealthServiceStatusForOrganizationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeHealthServiceStatusForOrganizationOutcome(result.GetResultWithOwnership())
+                            : DescribeHealthServiceStatusForOrganizationOutcome(std::move(result.GetError()));
 }
 
 DisableHealthServiceAccessForOrganizationOutcome HealthClient::DisableHealthServiceAccessForOrganization(
     const DisableHealthServiceAccessForOrganizationRequest& request) const {
-  return DisableHealthServiceAccessForOrganizationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableHealthServiceAccessForOrganizationOutcome(result.GetResultWithOwnership())
+                            : DisableHealthServiceAccessForOrganizationOutcome(std::move(result.GetError()));
 }
 
 EnableHealthServiceAccessForOrganizationOutcome HealthClient::EnableHealthServiceAccessForOrganization(
     const EnableHealthServiceAccessForOrganizationRequest& request) const {
-  return EnableHealthServiceAccessForOrganizationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableHealthServiceAccessForOrganizationOutcome(result.GetResultWithOwnership())
+                            : EnableHealthServiceAccessForOrganizationOutcome(std::move(result.GetError()));
 }

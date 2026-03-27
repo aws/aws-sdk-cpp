@@ -202,7 +202,9 @@ CreateNotificationRuleOutcome CodeStarNotificationsClient::CreateNotificationRul
     endpointResolutionOutcome.GetResult().AddPathSegments("/createNotificationRule");
   };
 
-  return CreateNotificationRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateNotificationRuleOutcome(result.GetResultWithOwnership())
+                            : CreateNotificationRuleOutcome(std::move(result.GetError()));
 }
 
 DeleteNotificationRuleOutcome CodeStarNotificationsClient::DeleteNotificationRule(const DeleteNotificationRuleRequest& request) const {
@@ -211,7 +213,9 @@ DeleteNotificationRuleOutcome CodeStarNotificationsClient::DeleteNotificationRul
     endpointResolutionOutcome.GetResult().AddPathSegments("/deleteNotificationRule");
   };
 
-  return DeleteNotificationRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteNotificationRuleOutcome(result.GetResultWithOwnership())
+                            : DeleteNotificationRuleOutcome(std::move(result.GetError()));
 }
 
 DeleteTargetOutcome CodeStarNotificationsClient::DeleteTarget(const DeleteTargetRequest& request) const {
@@ -220,7 +224,8 @@ DeleteTargetOutcome CodeStarNotificationsClient::DeleteTarget(const DeleteTarget
     endpointResolutionOutcome.GetResult().AddPathSegments("/deleteTarget");
   };
 
-  return DeleteTargetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTargetOutcome(result.GetResultWithOwnership()) : DeleteTargetOutcome(std::move(result.GetError()));
 }
 
 DescribeNotificationRuleOutcome CodeStarNotificationsClient::DescribeNotificationRule(
@@ -230,7 +235,9 @@ DescribeNotificationRuleOutcome CodeStarNotificationsClient::DescribeNotificatio
     endpointResolutionOutcome.GetResult().AddPathSegments("/describeNotificationRule");
   };
 
-  return DescribeNotificationRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeNotificationRuleOutcome(result.GetResultWithOwnership())
+                            : DescribeNotificationRuleOutcome(std::move(result.GetError()));
 }
 
 ListEventTypesOutcome CodeStarNotificationsClient::ListEventTypes(const ListEventTypesRequest& request) const {
@@ -239,7 +246,8 @@ ListEventTypesOutcome CodeStarNotificationsClient::ListEventTypes(const ListEven
     endpointResolutionOutcome.GetResult().AddPathSegments("/listEventTypes");
   };
 
-  return ListEventTypesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEventTypesOutcome(result.GetResultWithOwnership()) : ListEventTypesOutcome(std::move(result.GetError()));
 }
 
 ListNotificationRulesOutcome CodeStarNotificationsClient::ListNotificationRules(const ListNotificationRulesRequest& request) const {
@@ -248,7 +256,9 @@ ListNotificationRulesOutcome CodeStarNotificationsClient::ListNotificationRules(
     endpointResolutionOutcome.GetResult().AddPathSegments("/listNotificationRules");
   };
 
-  return ListNotificationRulesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListNotificationRulesOutcome(result.GetResultWithOwnership())
+                            : ListNotificationRulesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome CodeStarNotificationsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -257,7 +267,9 @@ ListTagsForResourceOutcome CodeStarNotificationsClient::ListTagsForResource(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/listTagsForResource");
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTargetsOutcome CodeStarNotificationsClient::ListTargets(const ListTargetsRequest& request) const {
@@ -266,7 +278,8 @@ ListTargetsOutcome CodeStarNotificationsClient::ListTargets(const ListTargetsReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/listTargets");
   };
 
-  return ListTargetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTargetsOutcome(result.GetResultWithOwnership()) : ListTargetsOutcome(std::move(result.GetError()));
 }
 
 SubscribeOutcome CodeStarNotificationsClient::Subscribe(const SubscribeRequest& request) const {
@@ -275,7 +288,8 @@ SubscribeOutcome CodeStarNotificationsClient::Subscribe(const SubscribeRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/subscribe");
   };
 
-  return SubscribeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SubscribeOutcome(result.GetResultWithOwnership()) : SubscribeOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome CodeStarNotificationsClient::TagResource(const TagResourceRequest& request) const {
@@ -284,7 +298,8 @@ TagResourceOutcome CodeStarNotificationsClient::TagResource(const TagResourceReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/tagResource");
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UnsubscribeOutcome CodeStarNotificationsClient::Unsubscribe(const UnsubscribeRequest& request) const {
@@ -293,7 +308,8 @@ UnsubscribeOutcome CodeStarNotificationsClient::Unsubscribe(const UnsubscribeReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/unsubscribe");
   };
 
-  return UnsubscribeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UnsubscribeOutcome(result.GetResultWithOwnership()) : UnsubscribeOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome CodeStarNotificationsClient::UntagResource(const UntagResourceRequest& request) const {
@@ -314,7 +330,8 @@ UntagResourceOutcome CodeStarNotificationsClient::UntagResource(const UntagResou
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateNotificationRuleOutcome CodeStarNotificationsClient::UpdateNotificationRule(const UpdateNotificationRuleRequest& request) const {
@@ -323,5 +340,7 @@ UpdateNotificationRuleOutcome CodeStarNotificationsClient::UpdateNotificationRul
     endpointResolutionOutcome.GetResult().AddPathSegments("/updateNotificationRule");
   };
 
-  return UpdateNotificationRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateNotificationRuleOutcome(result.GetResultWithOwnership())
+                            : UpdateNotificationRuleOutcome(std::move(result.GetError()));
 }

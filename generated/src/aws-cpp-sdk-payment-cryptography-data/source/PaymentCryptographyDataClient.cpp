@@ -211,7 +211,8 @@ DecryptDataOutcome PaymentCryptographyDataClient::DecryptData(const DecryptDataR
     endpointResolutionOutcome.GetResult().AddPathSegments("/decrypt");
   };
 
-  return DecryptDataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DecryptDataOutcome(result.GetResultWithOwnership()) : DecryptDataOutcome(std::move(result.GetError()));
 }
 
 EncryptDataOutcome PaymentCryptographyDataClient::EncryptData(const EncryptDataRequest& request) const {
@@ -228,7 +229,8 @@ EncryptDataOutcome PaymentCryptographyDataClient::EncryptData(const EncryptDataR
     endpointResolutionOutcome.GetResult().AddPathSegments("/encrypt");
   };
 
-  return EncryptDataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EncryptDataOutcome(result.GetResultWithOwnership()) : EncryptDataOutcome(std::move(result.GetError()));
 }
 
 GenerateAs2805KekValidationOutcome PaymentCryptographyDataClient::GenerateAs2805KekValidation(
@@ -238,7 +240,9 @@ GenerateAs2805KekValidationOutcome PaymentCryptographyDataClient::GenerateAs2805
     endpointResolutionOutcome.GetResult().AddPathSegments("/as2805kekvalidation/generate");
   };
 
-  return GenerateAs2805KekValidationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GenerateAs2805KekValidationOutcome(result.GetResultWithOwnership())
+                            : GenerateAs2805KekValidationOutcome(std::move(result.GetError()));
 }
 
 GenerateCardValidationDataOutcome PaymentCryptographyDataClient::GenerateCardValidationData(
@@ -248,7 +252,9 @@ GenerateCardValidationDataOutcome PaymentCryptographyDataClient::GenerateCardVal
     endpointResolutionOutcome.GetResult().AddPathSegments("/cardvalidationdata/generate");
   };
 
-  return GenerateCardValidationDataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GenerateCardValidationDataOutcome(result.GetResultWithOwnership())
+                            : GenerateCardValidationDataOutcome(std::move(result.GetError()));
 }
 
 GenerateMacOutcome PaymentCryptographyDataClient::GenerateMac(const GenerateMacRequest& request) const {
@@ -257,7 +263,8 @@ GenerateMacOutcome PaymentCryptographyDataClient::GenerateMac(const GenerateMacR
     endpointResolutionOutcome.GetResult().AddPathSegments("/mac/generate");
   };
 
-  return GenerateMacOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GenerateMacOutcome(result.GetResultWithOwnership()) : GenerateMacOutcome(std::move(result.GetError()));
 }
 
 GenerateMacEmvPinChangeOutcome PaymentCryptographyDataClient::GenerateMacEmvPinChange(const GenerateMacEmvPinChangeRequest& request) const {
@@ -266,7 +273,9 @@ GenerateMacEmvPinChangeOutcome PaymentCryptographyDataClient::GenerateMacEmvPinC
     endpointResolutionOutcome.GetResult().AddPathSegments("/macemvpinchange/generate");
   };
 
-  return GenerateMacEmvPinChangeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GenerateMacEmvPinChangeOutcome(result.GetResultWithOwnership())
+                            : GenerateMacEmvPinChangeOutcome(std::move(result.GetError()));
 }
 
 GeneratePinDataOutcome PaymentCryptographyDataClient::GeneratePinData(const GeneratePinDataRequest& request) const {
@@ -275,7 +284,9 @@ GeneratePinDataOutcome PaymentCryptographyDataClient::GeneratePinData(const Gene
     endpointResolutionOutcome.GetResult().AddPathSegments("/pindata/generate");
   };
 
-  return GeneratePinDataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GeneratePinDataOutcome(result.GetResultWithOwnership())
+                            : GeneratePinDataOutcome(std::move(result.GetError()));
 }
 
 ReEncryptDataOutcome PaymentCryptographyDataClient::ReEncryptData(const ReEncryptDataRequest& request) const {
@@ -292,7 +303,8 @@ ReEncryptDataOutcome PaymentCryptographyDataClient::ReEncryptData(const ReEncryp
     endpointResolutionOutcome.GetResult().AddPathSegments("/reencrypt");
   };
 
-  return ReEncryptDataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ReEncryptDataOutcome(result.GetResultWithOwnership()) : ReEncryptDataOutcome(std::move(result.GetError()));
 }
 
 TranslateKeyMaterialOutcome PaymentCryptographyDataClient::TranslateKeyMaterial(const TranslateKeyMaterialRequest& request) const {
@@ -301,7 +313,9 @@ TranslateKeyMaterialOutcome PaymentCryptographyDataClient::TranslateKeyMaterial(
     endpointResolutionOutcome.GetResult().AddPathSegments("/keymaterial/translate");
   };
 
-  return TranslateKeyMaterialOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TranslateKeyMaterialOutcome(result.GetResultWithOwnership())
+                            : TranslateKeyMaterialOutcome(std::move(result.GetError()));
 }
 
 TranslatePinDataOutcome PaymentCryptographyDataClient::TranslatePinData(const TranslatePinDataRequest& request) const {
@@ -310,7 +324,9 @@ TranslatePinDataOutcome PaymentCryptographyDataClient::TranslatePinData(const Tr
     endpointResolutionOutcome.GetResult().AddPathSegments("/pindata/translate");
   };
 
-  return TranslatePinDataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TranslatePinDataOutcome(result.GetResultWithOwnership())
+                            : TranslatePinDataOutcome(std::move(result.GetError()));
 }
 
 VerifyAuthRequestCryptogramOutcome PaymentCryptographyDataClient::VerifyAuthRequestCryptogram(
@@ -320,7 +336,9 @@ VerifyAuthRequestCryptogramOutcome PaymentCryptographyDataClient::VerifyAuthRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/cryptogram/verify");
   };
 
-  return VerifyAuthRequestCryptogramOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? VerifyAuthRequestCryptogramOutcome(result.GetResultWithOwnership())
+                            : VerifyAuthRequestCryptogramOutcome(std::move(result.GetError()));
 }
 
 VerifyCardValidationDataOutcome PaymentCryptographyDataClient::VerifyCardValidationData(
@@ -330,7 +348,9 @@ VerifyCardValidationDataOutcome PaymentCryptographyDataClient::VerifyCardValidat
     endpointResolutionOutcome.GetResult().AddPathSegments("/cardvalidationdata/verify");
   };
 
-  return VerifyCardValidationDataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? VerifyCardValidationDataOutcome(result.GetResultWithOwnership())
+                            : VerifyCardValidationDataOutcome(std::move(result.GetError()));
 }
 
 VerifyMacOutcome PaymentCryptographyDataClient::VerifyMac(const VerifyMacRequest& request) const {
@@ -339,7 +359,8 @@ VerifyMacOutcome PaymentCryptographyDataClient::VerifyMac(const VerifyMacRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/mac/verify");
   };
 
-  return VerifyMacOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? VerifyMacOutcome(result.GetResultWithOwnership()) : VerifyMacOutcome(std::move(result.GetError()));
 }
 
 VerifyPinDataOutcome PaymentCryptographyDataClient::VerifyPinData(const VerifyPinDataRequest& request) const {
@@ -348,5 +369,6 @@ VerifyPinDataOutcome PaymentCryptographyDataClient::VerifyPinData(const VerifyPi
     endpointResolutionOutcome.GetResult().AddPathSegments("/pindata/verify");
   };
 
-  return VerifyPinDataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? VerifyPinDataOutcome(result.GetResultWithOwnership()) : VerifyPinDataOutcome(std::move(result.GetError()));
 }

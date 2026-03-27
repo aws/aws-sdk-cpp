@@ -352,41 +352,59 @@ RDSClient::InvokeOperationOutcome RDSClient::InvokeServiceOperation(const Amazon
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 AddRoleToDBClusterOutcome RDSClient::AddRoleToDBCluster(const AddRoleToDBClusterRequest& request) const {
-  return AddRoleToDBClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddRoleToDBClusterOutcome(result.GetResultWithOwnership())
+                            : AddRoleToDBClusterOutcome(std::move(result.GetError()));
 }
 
 AddRoleToDBInstanceOutcome RDSClient::AddRoleToDBInstance(const AddRoleToDBInstanceRequest& request) const {
-  return AddRoleToDBInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddRoleToDBInstanceOutcome(result.GetResultWithOwnership())
+                            : AddRoleToDBInstanceOutcome(std::move(result.GetError()));
 }
 
 AddSourceIdentifierToSubscriptionOutcome RDSClient::AddSourceIdentifierToSubscription(
     const AddSourceIdentifierToSubscriptionRequest& request) const {
-  return AddSourceIdentifierToSubscriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddSourceIdentifierToSubscriptionOutcome(result.GetResultWithOwnership())
+                            : AddSourceIdentifierToSubscriptionOutcome(std::move(result.GetError()));
 }
 
 AddTagsToResourceOutcome RDSClient::AddTagsToResource(const AddTagsToResourceRequest& request) const {
-  return AddTagsToResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddTagsToResourceOutcome(result.GetResultWithOwnership())
+                            : AddTagsToResourceOutcome(std::move(result.GetError()));
 }
 
 ApplyPendingMaintenanceActionOutcome RDSClient::ApplyPendingMaintenanceAction(const ApplyPendingMaintenanceActionRequest& request) const {
-  return ApplyPendingMaintenanceActionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ApplyPendingMaintenanceActionOutcome(result.GetResultWithOwnership())
+                            : ApplyPendingMaintenanceActionOutcome(std::move(result.GetError()));
 }
 
 AuthorizeDBSecurityGroupIngressOutcome RDSClient::AuthorizeDBSecurityGroupIngress(
     const AuthorizeDBSecurityGroupIngressRequest& request) const {
-  return AuthorizeDBSecurityGroupIngressOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AuthorizeDBSecurityGroupIngressOutcome(result.GetResultWithOwnership())
+                            : AuthorizeDBSecurityGroupIngressOutcome(std::move(result.GetError()));
 }
 
 BacktrackDBClusterOutcome RDSClient::BacktrackDBCluster(const BacktrackDBClusterRequest& request) const {
-  return BacktrackDBClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BacktrackDBClusterOutcome(result.GetResultWithOwnership())
+                            : BacktrackDBClusterOutcome(std::move(result.GetError()));
 }
 
 CancelExportTaskOutcome RDSClient::CancelExportTask(const CancelExportTaskRequest& request) const {
-  return CancelExportTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelExportTaskOutcome(result.GetResultWithOwnership())
+                            : CancelExportTaskOutcome(std::move(result.GetError()));
 }
 
 CopyDBClusterParameterGroupOutcome RDSClient::CopyDBClusterParameterGroup(const CopyDBClusterParameterGroupRequest& request) const {
-  return CopyDBClusterParameterGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CopyDBClusterParameterGroupOutcome(result.GetResultWithOwnership())
+                            : CopyDBClusterParameterGroupOutcome(std::move(result.GetError()));
 }
 
 CopyDBClusterSnapshotOutcome RDSClient::CopyDBClusterSnapshot(const CopyDBClusterSnapshotRequest& request) const {
@@ -401,14 +419,20 @@ CopyDBClusterSnapshotOutcome RDSClient::CopyDBClusterSnapshot(const CopyDBCluste
                                                     Aws::Http::HttpMethod::HTTP_GET, request.GetSourceRegion().c_str(),
                                                     {{"DestinationRegion", m_region}}, 3600));
 
-    return CopyDBClusterSnapshotOutcome{InvokeServiceOperation(newRequest, Aws::Http::HttpMethod::HTTP_POST)};
+    auto result = InvokeServiceOperation(newRequest, Aws::Http::HttpMethod::HTTP_POST);
+    return result.IsSuccess() ? CopyDBClusterSnapshotOutcome(result.GetResultWithOwnership())
+                              : CopyDBClusterSnapshotOutcome(std::move(result.GetError()));
   }
 
-  return CopyDBClusterSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CopyDBClusterSnapshotOutcome(result.GetResultWithOwnership())
+                            : CopyDBClusterSnapshotOutcome(std::move(result.GetError()));
 }
 
 CopyDBParameterGroupOutcome RDSClient::CopyDBParameterGroup(const CopyDBParameterGroupRequest& request) const {
-  return CopyDBParameterGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CopyDBParameterGroupOutcome(result.GetResultWithOwnership())
+                            : CopyDBParameterGroupOutcome(std::move(result.GetError()));
 }
 
 CopyDBSnapshotOutcome RDSClient::CopyDBSnapshot(const CopyDBSnapshotRequest& request) const {
@@ -423,22 +447,31 @@ CopyDBSnapshotOutcome RDSClient::CopyDBSnapshot(const CopyDBSnapshotRequest& req
                                                     Aws::Http::HttpMethod::HTTP_GET, request.GetSourceRegion().c_str(),
                                                     {{"DestinationRegion", m_region}}, 3600));
 
-    return CopyDBSnapshotOutcome{InvokeServiceOperation(newRequest, Aws::Http::HttpMethod::HTTP_POST)};
+    auto result = InvokeServiceOperation(newRequest, Aws::Http::HttpMethod::HTTP_POST);
+    return result.IsSuccess() ? CopyDBSnapshotOutcome(result.GetResultWithOwnership())
+                              : CopyDBSnapshotOutcome(std::move(result.GetError()));
   }
 
-  return CopyDBSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CopyDBSnapshotOutcome(result.GetResultWithOwnership()) : CopyDBSnapshotOutcome(std::move(result.GetError()));
 }
 
 CopyOptionGroupOutcome RDSClient::CopyOptionGroup(const CopyOptionGroupRequest& request) const {
-  return CopyOptionGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CopyOptionGroupOutcome(result.GetResultWithOwnership())
+                            : CopyOptionGroupOutcome(std::move(result.GetError()));
 }
 
 CreateBlueGreenDeploymentOutcome RDSClient::CreateBlueGreenDeployment(const CreateBlueGreenDeploymentRequest& request) const {
-  return CreateBlueGreenDeploymentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBlueGreenDeploymentOutcome(result.GetResultWithOwnership())
+                            : CreateBlueGreenDeploymentOutcome(std::move(result.GetError()));
 }
 
 CreateCustomDBEngineVersionOutcome RDSClient::CreateCustomDBEngineVersion(const CreateCustomDBEngineVersionRequest& request) const {
-  return CreateCustomDBEngineVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCustomDBEngineVersionOutcome(result.GetResultWithOwnership())
+                            : CreateCustomDBEngineVersionOutcome(std::move(result.GetError()));
 }
 
 CreateDBClusterOutcome RDSClient::CreateDBCluster(const CreateDBClusterRequest& request) const {
@@ -453,26 +486,38 @@ CreateDBClusterOutcome RDSClient::CreateDBCluster(const CreateDBClusterRequest& 
                                                     Aws::Http::HttpMethod::HTTP_GET, request.GetSourceRegion().c_str(),
                                                     {{"DestinationRegion", m_region}}, 3600));
 
-    return CreateDBClusterOutcome{InvokeServiceOperation(newRequest, Aws::Http::HttpMethod::HTTP_POST)};
+    auto result = InvokeServiceOperation(newRequest, Aws::Http::HttpMethod::HTTP_POST);
+    return result.IsSuccess() ? CreateDBClusterOutcome(result.GetResultWithOwnership())
+                              : CreateDBClusterOutcome(std::move(result.GetError()));
   }
 
-  return CreateDBClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDBClusterOutcome(result.GetResultWithOwnership())
+                            : CreateDBClusterOutcome(std::move(result.GetError()));
 }
 
 CreateDBClusterEndpointOutcome RDSClient::CreateDBClusterEndpoint(const CreateDBClusterEndpointRequest& request) const {
-  return CreateDBClusterEndpointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDBClusterEndpointOutcome(result.GetResultWithOwnership())
+                            : CreateDBClusterEndpointOutcome(std::move(result.GetError()));
 }
 
 CreateDBClusterParameterGroupOutcome RDSClient::CreateDBClusterParameterGroup(const CreateDBClusterParameterGroupRequest& request) const {
-  return CreateDBClusterParameterGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDBClusterParameterGroupOutcome(result.GetResultWithOwnership())
+                            : CreateDBClusterParameterGroupOutcome(std::move(result.GetError()));
 }
 
 CreateDBClusterSnapshotOutcome RDSClient::CreateDBClusterSnapshot(const CreateDBClusterSnapshotRequest& request) const {
-  return CreateDBClusterSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDBClusterSnapshotOutcome(result.GetResultWithOwnership())
+                            : CreateDBClusterSnapshotOutcome(std::move(result.GetError()));
 }
 
 CreateDBInstanceOutcome RDSClient::CreateDBInstance(const CreateDBInstanceRequest& request) const {
-  return CreateDBInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDBInstanceOutcome(result.GetResultWithOwnership())
+                            : CreateDBInstanceOutcome(std::move(result.GetError()));
 }
 
 CreateDBInstanceReadReplicaOutcome RDSClient::CreateDBInstanceReadReplica(const CreateDBInstanceReadReplicaRequest& request) const {
@@ -487,561 +532,826 @@ CreateDBInstanceReadReplicaOutcome RDSClient::CreateDBInstanceReadReplica(const 
                                                     Aws::Http::HttpMethod::HTTP_GET, request.GetSourceRegion().c_str(),
                                                     {{"DestinationRegion", m_region}}, 3600));
 
-    return CreateDBInstanceReadReplicaOutcome{InvokeServiceOperation(newRequest, Aws::Http::HttpMethod::HTTP_POST)};
+    auto result = InvokeServiceOperation(newRequest, Aws::Http::HttpMethod::HTTP_POST);
+    return result.IsSuccess() ? CreateDBInstanceReadReplicaOutcome(result.GetResultWithOwnership())
+                              : CreateDBInstanceReadReplicaOutcome(std::move(result.GetError()));
   }
 
-  return CreateDBInstanceReadReplicaOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDBInstanceReadReplicaOutcome(result.GetResultWithOwnership())
+                            : CreateDBInstanceReadReplicaOutcome(std::move(result.GetError()));
 }
 
 CreateDBParameterGroupOutcome RDSClient::CreateDBParameterGroup(const CreateDBParameterGroupRequest& request) const {
-  return CreateDBParameterGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDBParameterGroupOutcome(result.GetResultWithOwnership())
+                            : CreateDBParameterGroupOutcome(std::move(result.GetError()));
 }
 
 CreateDBProxyOutcome RDSClient::CreateDBProxy(const CreateDBProxyRequest& request) const {
-  return CreateDBProxyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDBProxyOutcome(result.GetResultWithOwnership()) : CreateDBProxyOutcome(std::move(result.GetError()));
 }
 
 CreateDBProxyEndpointOutcome RDSClient::CreateDBProxyEndpoint(const CreateDBProxyEndpointRequest& request) const {
-  return CreateDBProxyEndpointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDBProxyEndpointOutcome(result.GetResultWithOwnership())
+                            : CreateDBProxyEndpointOutcome(std::move(result.GetError()));
 }
 
 CreateDBSecurityGroupOutcome RDSClient::CreateDBSecurityGroup(const CreateDBSecurityGroupRequest& request) const {
-  return CreateDBSecurityGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDBSecurityGroupOutcome(result.GetResultWithOwnership())
+                            : CreateDBSecurityGroupOutcome(std::move(result.GetError()));
 }
 
 CreateDBShardGroupOutcome RDSClient::CreateDBShardGroup(const CreateDBShardGroupRequest& request) const {
-  return CreateDBShardGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDBShardGroupOutcome(result.GetResultWithOwnership())
+                            : CreateDBShardGroupOutcome(std::move(result.GetError()));
 }
 
 CreateDBSnapshotOutcome RDSClient::CreateDBSnapshot(const CreateDBSnapshotRequest& request) const {
-  return CreateDBSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDBSnapshotOutcome(result.GetResultWithOwnership())
+                            : CreateDBSnapshotOutcome(std::move(result.GetError()));
 }
 
 CreateDBSubnetGroupOutcome RDSClient::CreateDBSubnetGroup(const CreateDBSubnetGroupRequest& request) const {
-  return CreateDBSubnetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDBSubnetGroupOutcome(result.GetResultWithOwnership())
+                            : CreateDBSubnetGroupOutcome(std::move(result.GetError()));
 }
 
 CreateEventSubscriptionOutcome RDSClient::CreateEventSubscription(const CreateEventSubscriptionRequest& request) const {
-  return CreateEventSubscriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEventSubscriptionOutcome(result.GetResultWithOwnership())
+                            : CreateEventSubscriptionOutcome(std::move(result.GetError()));
 }
 
 CreateGlobalClusterOutcome RDSClient::CreateGlobalCluster(const CreateGlobalClusterRequest& request) const {
-  return CreateGlobalClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGlobalClusterOutcome(result.GetResultWithOwnership())
+                            : CreateGlobalClusterOutcome(std::move(result.GetError()));
 }
 
 CreateIntegrationOutcome RDSClient::CreateIntegration(const CreateIntegrationRequest& request) const {
-  return CreateIntegrationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIntegrationOutcome(result.GetResultWithOwnership())
+                            : CreateIntegrationOutcome(std::move(result.GetError()));
 }
 
 CreateOptionGroupOutcome RDSClient::CreateOptionGroup(const CreateOptionGroupRequest& request) const {
-  return CreateOptionGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateOptionGroupOutcome(result.GetResultWithOwnership())
+                            : CreateOptionGroupOutcome(std::move(result.GetError()));
 }
 
 CreateTenantDatabaseOutcome RDSClient::CreateTenantDatabase(const CreateTenantDatabaseRequest& request) const {
-  return CreateTenantDatabaseOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTenantDatabaseOutcome(result.GetResultWithOwnership())
+                            : CreateTenantDatabaseOutcome(std::move(result.GetError()));
 }
 
 DeleteBlueGreenDeploymentOutcome RDSClient::DeleteBlueGreenDeployment(const DeleteBlueGreenDeploymentRequest& request) const {
-  return DeleteBlueGreenDeploymentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteBlueGreenDeploymentOutcome(result.GetResultWithOwnership())
+                            : DeleteBlueGreenDeploymentOutcome(std::move(result.GetError()));
 }
 
 DeleteCustomDBEngineVersionOutcome RDSClient::DeleteCustomDBEngineVersion(const DeleteCustomDBEngineVersionRequest& request) const {
-  return DeleteCustomDBEngineVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCustomDBEngineVersionOutcome(result.GetResultWithOwnership())
+                            : DeleteCustomDBEngineVersionOutcome(std::move(result.GetError()));
 }
 
 DeleteDBClusterOutcome RDSClient::DeleteDBCluster(const DeleteDBClusterRequest& request) const {
-  return DeleteDBClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDBClusterOutcome(result.GetResultWithOwnership())
+                            : DeleteDBClusterOutcome(std::move(result.GetError()));
 }
 
 DeleteDBClusterAutomatedBackupOutcome RDSClient::DeleteDBClusterAutomatedBackup(
     const DeleteDBClusterAutomatedBackupRequest& request) const {
-  return DeleteDBClusterAutomatedBackupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDBClusterAutomatedBackupOutcome(result.GetResultWithOwnership())
+                            : DeleteDBClusterAutomatedBackupOutcome(std::move(result.GetError()));
 }
 
 DeleteDBClusterEndpointOutcome RDSClient::DeleteDBClusterEndpoint(const DeleteDBClusterEndpointRequest& request) const {
-  return DeleteDBClusterEndpointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDBClusterEndpointOutcome(result.GetResultWithOwnership())
+                            : DeleteDBClusterEndpointOutcome(std::move(result.GetError()));
 }
 
 DeleteDBClusterParameterGroupOutcome RDSClient::DeleteDBClusterParameterGroup(const DeleteDBClusterParameterGroupRequest& request) const {
-  return DeleteDBClusterParameterGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDBClusterParameterGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteDBClusterParameterGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteDBClusterSnapshotOutcome RDSClient::DeleteDBClusterSnapshot(const DeleteDBClusterSnapshotRequest& request) const {
-  return DeleteDBClusterSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDBClusterSnapshotOutcome(result.GetResultWithOwnership())
+                            : DeleteDBClusterSnapshotOutcome(std::move(result.GetError()));
 }
 
 DeleteDBInstanceOutcome RDSClient::DeleteDBInstance(const DeleteDBInstanceRequest& request) const {
-  return DeleteDBInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDBInstanceOutcome(result.GetResultWithOwnership())
+                            : DeleteDBInstanceOutcome(std::move(result.GetError()));
 }
 
 DeleteDBInstanceAutomatedBackupOutcome RDSClient::DeleteDBInstanceAutomatedBackup(
     const DeleteDBInstanceAutomatedBackupRequest& request) const {
-  return DeleteDBInstanceAutomatedBackupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDBInstanceAutomatedBackupOutcome(result.GetResultWithOwnership())
+                            : DeleteDBInstanceAutomatedBackupOutcome(std::move(result.GetError()));
 }
 
 DeleteDBParameterGroupOutcome RDSClient::DeleteDBParameterGroup(const DeleteDBParameterGroupRequest& request) const {
-  return DeleteDBParameterGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDBParameterGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteDBParameterGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteDBProxyOutcome RDSClient::DeleteDBProxy(const DeleteDBProxyRequest& request) const {
-  return DeleteDBProxyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDBProxyOutcome(result.GetResultWithOwnership()) : DeleteDBProxyOutcome(std::move(result.GetError()));
 }
 
 DeleteDBProxyEndpointOutcome RDSClient::DeleteDBProxyEndpoint(const DeleteDBProxyEndpointRequest& request) const {
-  return DeleteDBProxyEndpointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDBProxyEndpointOutcome(result.GetResultWithOwnership())
+                            : DeleteDBProxyEndpointOutcome(std::move(result.GetError()));
 }
 
 DeleteDBSecurityGroupOutcome RDSClient::DeleteDBSecurityGroup(const DeleteDBSecurityGroupRequest& request) const {
-  return DeleteDBSecurityGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDBSecurityGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteDBSecurityGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteDBShardGroupOutcome RDSClient::DeleteDBShardGroup(const DeleteDBShardGroupRequest& request) const {
-  return DeleteDBShardGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDBShardGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteDBShardGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteDBSnapshotOutcome RDSClient::DeleteDBSnapshot(const DeleteDBSnapshotRequest& request) const {
-  return DeleteDBSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDBSnapshotOutcome(result.GetResultWithOwnership())
+                            : DeleteDBSnapshotOutcome(std::move(result.GetError()));
 }
 
 DeleteDBSubnetGroupOutcome RDSClient::DeleteDBSubnetGroup(const DeleteDBSubnetGroupRequest& request) const {
-  return DeleteDBSubnetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDBSubnetGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteDBSubnetGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteEventSubscriptionOutcome RDSClient::DeleteEventSubscription(const DeleteEventSubscriptionRequest& request) const {
-  return DeleteEventSubscriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteEventSubscriptionOutcome(result.GetResultWithOwnership())
+                            : DeleteEventSubscriptionOutcome(std::move(result.GetError()));
 }
 
 DeleteGlobalClusterOutcome RDSClient::DeleteGlobalCluster(const DeleteGlobalClusterRequest& request) const {
-  return DeleteGlobalClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteGlobalClusterOutcome(result.GetResultWithOwnership())
+                            : DeleteGlobalClusterOutcome(std::move(result.GetError()));
 }
 
 DeleteIntegrationOutcome RDSClient::DeleteIntegration(const DeleteIntegrationRequest& request) const {
-  return DeleteIntegrationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteIntegrationOutcome(result.GetResultWithOwnership())
+                            : DeleteIntegrationOutcome(std::move(result.GetError()));
 }
 
 DeleteOptionGroupOutcome RDSClient::DeleteOptionGroup(const DeleteOptionGroupRequest& request) const {
-  return DeleteOptionGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteOptionGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteOptionGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteTenantDatabaseOutcome RDSClient::DeleteTenantDatabase(const DeleteTenantDatabaseRequest& request) const {
-  return DeleteTenantDatabaseOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTenantDatabaseOutcome(result.GetResultWithOwnership())
+                            : DeleteTenantDatabaseOutcome(std::move(result.GetError()));
 }
 
 DeregisterDBProxyTargetsOutcome RDSClient::DeregisterDBProxyTargets(const DeregisterDBProxyTargetsRequest& request) const {
-  return DeregisterDBProxyTargetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterDBProxyTargetsOutcome(result.GetResultWithOwnership())
+                            : DeregisterDBProxyTargetsOutcome(std::move(result.GetError()));
 }
 
 DescribeAccountAttributesOutcome RDSClient::DescribeAccountAttributes(const DescribeAccountAttributesRequest& request) const {
-  return DescribeAccountAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAccountAttributesOutcome(result.GetResultWithOwnership())
+                            : DescribeAccountAttributesOutcome(std::move(result.GetError()));
 }
 
 DescribeBlueGreenDeploymentsOutcome RDSClient::DescribeBlueGreenDeployments(const DescribeBlueGreenDeploymentsRequest& request) const {
-  return DescribeBlueGreenDeploymentsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeBlueGreenDeploymentsOutcome(result.GetResultWithOwnership())
+                            : DescribeBlueGreenDeploymentsOutcome(std::move(result.GetError()));
 }
 
 DescribeCertificatesOutcome RDSClient::DescribeCertificates(const DescribeCertificatesRequest& request) const {
-  return DescribeCertificatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCertificatesOutcome(result.GetResultWithOwnership())
+                            : DescribeCertificatesOutcome(std::move(result.GetError()));
 }
 
 DescribeDBClusterAutomatedBackupsOutcome RDSClient::DescribeDBClusterAutomatedBackups(
     const DescribeDBClusterAutomatedBackupsRequest& request) const {
-  return DescribeDBClusterAutomatedBackupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBClusterAutomatedBackupsOutcome(result.GetResultWithOwnership())
+                            : DescribeDBClusterAutomatedBackupsOutcome(std::move(result.GetError()));
 }
 
 DescribeDBClusterBacktracksOutcome RDSClient::DescribeDBClusterBacktracks(const DescribeDBClusterBacktracksRequest& request) const {
-  return DescribeDBClusterBacktracksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBClusterBacktracksOutcome(result.GetResultWithOwnership())
+                            : DescribeDBClusterBacktracksOutcome(std::move(result.GetError()));
 }
 
 DescribeDBClusterEndpointsOutcome RDSClient::DescribeDBClusterEndpoints(const DescribeDBClusterEndpointsRequest& request) const {
-  return DescribeDBClusterEndpointsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBClusterEndpointsOutcome(result.GetResultWithOwnership())
+                            : DescribeDBClusterEndpointsOutcome(std::move(result.GetError()));
 }
 
 DescribeDBClusterParameterGroupsOutcome RDSClient::DescribeDBClusterParameterGroups(
     const DescribeDBClusterParameterGroupsRequest& request) const {
-  return DescribeDBClusterParameterGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBClusterParameterGroupsOutcome(result.GetResultWithOwnership())
+                            : DescribeDBClusterParameterGroupsOutcome(std::move(result.GetError()));
 }
 
 DescribeDBClusterParametersOutcome RDSClient::DescribeDBClusterParameters(const DescribeDBClusterParametersRequest& request) const {
-  return DescribeDBClusterParametersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBClusterParametersOutcome(result.GetResultWithOwnership())
+                            : DescribeDBClusterParametersOutcome(std::move(result.GetError()));
 }
 
 DescribeDBClusterSnapshotAttributesOutcome RDSClient::DescribeDBClusterSnapshotAttributes(
     const DescribeDBClusterSnapshotAttributesRequest& request) const {
-  return DescribeDBClusterSnapshotAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBClusterSnapshotAttributesOutcome(result.GetResultWithOwnership())
+                            : DescribeDBClusterSnapshotAttributesOutcome(std::move(result.GetError()));
 }
 
 DescribeDBClusterSnapshotsOutcome RDSClient::DescribeDBClusterSnapshots(const DescribeDBClusterSnapshotsRequest& request) const {
-  return DescribeDBClusterSnapshotsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBClusterSnapshotsOutcome(result.GetResultWithOwnership())
+                            : DescribeDBClusterSnapshotsOutcome(std::move(result.GetError()));
 }
 
 DescribeDBClustersOutcome RDSClient::DescribeDBClusters(const DescribeDBClustersRequest& request) const {
-  return DescribeDBClustersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBClustersOutcome(result.GetResultWithOwnership())
+                            : DescribeDBClustersOutcome(std::move(result.GetError()));
 }
 
 DescribeDBEngineVersionsOutcome RDSClient::DescribeDBEngineVersions(const DescribeDBEngineVersionsRequest& request) const {
-  return DescribeDBEngineVersionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBEngineVersionsOutcome(result.GetResultWithOwnership())
+                            : DescribeDBEngineVersionsOutcome(std::move(result.GetError()));
 }
 
 DescribeDBInstanceAutomatedBackupsOutcome RDSClient::DescribeDBInstanceAutomatedBackups(
     const DescribeDBInstanceAutomatedBackupsRequest& request) const {
-  return DescribeDBInstanceAutomatedBackupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBInstanceAutomatedBackupsOutcome(result.GetResultWithOwnership())
+                            : DescribeDBInstanceAutomatedBackupsOutcome(std::move(result.GetError()));
 }
 
 DescribeDBInstancesOutcome RDSClient::DescribeDBInstances(const DescribeDBInstancesRequest& request) const {
-  return DescribeDBInstancesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBInstancesOutcome(result.GetResultWithOwnership())
+                            : DescribeDBInstancesOutcome(std::move(result.GetError()));
 }
 
 DescribeDBLogFilesOutcome RDSClient::DescribeDBLogFiles(const DescribeDBLogFilesRequest& request) const {
-  return DescribeDBLogFilesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBLogFilesOutcome(result.GetResultWithOwnership())
+                            : DescribeDBLogFilesOutcome(std::move(result.GetError()));
 }
 
 DescribeDBMajorEngineVersionsOutcome RDSClient::DescribeDBMajorEngineVersions(const DescribeDBMajorEngineVersionsRequest& request) const {
-  return DescribeDBMajorEngineVersionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBMajorEngineVersionsOutcome(result.GetResultWithOwnership())
+                            : DescribeDBMajorEngineVersionsOutcome(std::move(result.GetError()));
 }
 
 DescribeDBParameterGroupsOutcome RDSClient::DescribeDBParameterGroups(const DescribeDBParameterGroupsRequest& request) const {
-  return DescribeDBParameterGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBParameterGroupsOutcome(result.GetResultWithOwnership())
+                            : DescribeDBParameterGroupsOutcome(std::move(result.GetError()));
 }
 
 DescribeDBParametersOutcome RDSClient::DescribeDBParameters(const DescribeDBParametersRequest& request) const {
-  return DescribeDBParametersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBParametersOutcome(result.GetResultWithOwnership())
+                            : DescribeDBParametersOutcome(std::move(result.GetError()));
 }
 
 DescribeDBProxiesOutcome RDSClient::DescribeDBProxies(const DescribeDBProxiesRequest& request) const {
-  return DescribeDBProxiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBProxiesOutcome(result.GetResultWithOwnership())
+                            : DescribeDBProxiesOutcome(std::move(result.GetError()));
 }
 
 DescribeDBProxyEndpointsOutcome RDSClient::DescribeDBProxyEndpoints(const DescribeDBProxyEndpointsRequest& request) const {
-  return DescribeDBProxyEndpointsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBProxyEndpointsOutcome(result.GetResultWithOwnership())
+                            : DescribeDBProxyEndpointsOutcome(std::move(result.GetError()));
 }
 
 DescribeDBProxyTargetGroupsOutcome RDSClient::DescribeDBProxyTargetGroups(const DescribeDBProxyTargetGroupsRequest& request) const {
-  return DescribeDBProxyTargetGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBProxyTargetGroupsOutcome(result.GetResultWithOwnership())
+                            : DescribeDBProxyTargetGroupsOutcome(std::move(result.GetError()));
 }
 
 DescribeDBProxyTargetsOutcome RDSClient::DescribeDBProxyTargets(const DescribeDBProxyTargetsRequest& request) const {
-  return DescribeDBProxyTargetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBProxyTargetsOutcome(result.GetResultWithOwnership())
+                            : DescribeDBProxyTargetsOutcome(std::move(result.GetError()));
 }
 
 DescribeDBRecommendationsOutcome RDSClient::DescribeDBRecommendations(const DescribeDBRecommendationsRequest& request) const {
-  return DescribeDBRecommendationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBRecommendationsOutcome(result.GetResultWithOwnership())
+                            : DescribeDBRecommendationsOutcome(std::move(result.GetError()));
 }
 
 DescribeDBSecurityGroupsOutcome RDSClient::DescribeDBSecurityGroups(const DescribeDBSecurityGroupsRequest& request) const {
-  return DescribeDBSecurityGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBSecurityGroupsOutcome(result.GetResultWithOwnership())
+                            : DescribeDBSecurityGroupsOutcome(std::move(result.GetError()));
 }
 
 DescribeDBShardGroupsOutcome RDSClient::DescribeDBShardGroups(const DescribeDBShardGroupsRequest& request) const {
-  return DescribeDBShardGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBShardGroupsOutcome(result.GetResultWithOwnership())
+                            : DescribeDBShardGroupsOutcome(std::move(result.GetError()));
 }
 
 DescribeDBSnapshotAttributesOutcome RDSClient::DescribeDBSnapshotAttributes(const DescribeDBSnapshotAttributesRequest& request) const {
-  return DescribeDBSnapshotAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBSnapshotAttributesOutcome(result.GetResultWithOwnership())
+                            : DescribeDBSnapshotAttributesOutcome(std::move(result.GetError()));
 }
 
 DescribeDBSnapshotTenantDatabasesOutcome RDSClient::DescribeDBSnapshotTenantDatabases(
     const DescribeDBSnapshotTenantDatabasesRequest& request) const {
-  return DescribeDBSnapshotTenantDatabasesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBSnapshotTenantDatabasesOutcome(result.GetResultWithOwnership())
+                            : DescribeDBSnapshotTenantDatabasesOutcome(std::move(result.GetError()));
 }
 
 DescribeDBSnapshotsOutcome RDSClient::DescribeDBSnapshots(const DescribeDBSnapshotsRequest& request) const {
-  return DescribeDBSnapshotsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBSnapshotsOutcome(result.GetResultWithOwnership())
+                            : DescribeDBSnapshotsOutcome(std::move(result.GetError()));
 }
 
 DescribeDBSubnetGroupsOutcome RDSClient::DescribeDBSubnetGroups(const DescribeDBSubnetGroupsRequest& request) const {
-  return DescribeDBSubnetGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBSubnetGroupsOutcome(result.GetResultWithOwnership())
+                            : DescribeDBSubnetGroupsOutcome(std::move(result.GetError()));
 }
 
 DescribeEngineDefaultClusterParametersOutcome RDSClient::DescribeEngineDefaultClusterParameters(
     const DescribeEngineDefaultClusterParametersRequest& request) const {
-  return DescribeEngineDefaultClusterParametersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEngineDefaultClusterParametersOutcome(result.GetResultWithOwnership())
+                            : DescribeEngineDefaultClusterParametersOutcome(std::move(result.GetError()));
 }
 
 DescribeEngineDefaultParametersOutcome RDSClient::DescribeEngineDefaultParameters(
     const DescribeEngineDefaultParametersRequest& request) const {
-  return DescribeEngineDefaultParametersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEngineDefaultParametersOutcome(result.GetResultWithOwnership())
+                            : DescribeEngineDefaultParametersOutcome(std::move(result.GetError()));
 }
 
 DescribeEventCategoriesOutcome RDSClient::DescribeEventCategories(const DescribeEventCategoriesRequest& request) const {
-  return DescribeEventCategoriesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEventCategoriesOutcome(result.GetResultWithOwnership())
+                            : DescribeEventCategoriesOutcome(std::move(result.GetError()));
 }
 
 DescribeEventSubscriptionsOutcome RDSClient::DescribeEventSubscriptions(const DescribeEventSubscriptionsRequest& request) const {
-  return DescribeEventSubscriptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEventSubscriptionsOutcome(result.GetResultWithOwnership())
+                            : DescribeEventSubscriptionsOutcome(std::move(result.GetError()));
 }
 
 DescribeEventsOutcome RDSClient::DescribeEvents(const DescribeEventsRequest& request) const {
-  return DescribeEventsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEventsOutcome(result.GetResultWithOwnership()) : DescribeEventsOutcome(std::move(result.GetError()));
 }
 
 DescribeExportTasksOutcome RDSClient::DescribeExportTasks(const DescribeExportTasksRequest& request) const {
-  return DescribeExportTasksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeExportTasksOutcome(result.GetResultWithOwnership())
+                            : DescribeExportTasksOutcome(std::move(result.GetError()));
 }
 
 DescribeGlobalClustersOutcome RDSClient::DescribeGlobalClusters(const DescribeGlobalClustersRequest& request) const {
-  return DescribeGlobalClustersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeGlobalClustersOutcome(result.GetResultWithOwnership())
+                            : DescribeGlobalClustersOutcome(std::move(result.GetError()));
 }
 
 DescribeIntegrationsOutcome RDSClient::DescribeIntegrations(const DescribeIntegrationsRequest& request) const {
-  return DescribeIntegrationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeIntegrationsOutcome(result.GetResultWithOwnership())
+                            : DescribeIntegrationsOutcome(std::move(result.GetError()));
 }
 
 DescribeOptionGroupOptionsOutcome RDSClient::DescribeOptionGroupOptions(const DescribeOptionGroupOptionsRequest& request) const {
-  return DescribeOptionGroupOptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeOptionGroupOptionsOutcome(result.GetResultWithOwnership())
+                            : DescribeOptionGroupOptionsOutcome(std::move(result.GetError()));
 }
 
 DescribeOptionGroupsOutcome RDSClient::DescribeOptionGroups(const DescribeOptionGroupsRequest& request) const {
-  return DescribeOptionGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeOptionGroupsOutcome(result.GetResultWithOwnership())
+                            : DescribeOptionGroupsOutcome(std::move(result.GetError()));
 }
 
 DescribeOrderableDBInstanceOptionsOutcome RDSClient::DescribeOrderableDBInstanceOptions(
     const DescribeOrderableDBInstanceOptionsRequest& request) const {
-  return DescribeOrderableDBInstanceOptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeOrderableDBInstanceOptionsOutcome(result.GetResultWithOwnership())
+                            : DescribeOrderableDBInstanceOptionsOutcome(std::move(result.GetError()));
 }
 
 DescribePendingMaintenanceActionsOutcome RDSClient::DescribePendingMaintenanceActions(
     const DescribePendingMaintenanceActionsRequest& request) const {
-  return DescribePendingMaintenanceActionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePendingMaintenanceActionsOutcome(result.GetResultWithOwnership())
+                            : DescribePendingMaintenanceActionsOutcome(std::move(result.GetError()));
 }
 
 DescribeReservedDBInstancesOutcome RDSClient::DescribeReservedDBInstances(const DescribeReservedDBInstancesRequest& request) const {
-  return DescribeReservedDBInstancesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeReservedDBInstancesOutcome(result.GetResultWithOwnership())
+                            : DescribeReservedDBInstancesOutcome(std::move(result.GetError()));
 }
 
 DescribeReservedDBInstancesOfferingsOutcome RDSClient::DescribeReservedDBInstancesOfferings(
     const DescribeReservedDBInstancesOfferingsRequest& request) const {
-  return DescribeReservedDBInstancesOfferingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeReservedDBInstancesOfferingsOutcome(result.GetResultWithOwnership())
+                            : DescribeReservedDBInstancesOfferingsOutcome(std::move(result.GetError()));
 }
 
 DescribeSourceRegionsOutcome RDSClient::DescribeSourceRegions(const DescribeSourceRegionsRequest& request) const {
-  return DescribeSourceRegionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSourceRegionsOutcome(result.GetResultWithOwnership())
+                            : DescribeSourceRegionsOutcome(std::move(result.GetError()));
 }
 
 DescribeTenantDatabasesOutcome RDSClient::DescribeTenantDatabases(const DescribeTenantDatabasesRequest& request) const {
-  return DescribeTenantDatabasesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTenantDatabasesOutcome(result.GetResultWithOwnership())
+                            : DescribeTenantDatabasesOutcome(std::move(result.GetError()));
 }
 
 DescribeValidDBInstanceModificationsOutcome RDSClient::DescribeValidDBInstanceModifications(
     const DescribeValidDBInstanceModificationsRequest& request) const {
-  return DescribeValidDBInstanceModificationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeValidDBInstanceModificationsOutcome(result.GetResultWithOwnership())
+                            : DescribeValidDBInstanceModificationsOutcome(std::move(result.GetError()));
 }
 
 DisableHttpEndpointOutcome RDSClient::DisableHttpEndpoint(const DisableHttpEndpointRequest& request) const {
-  return DisableHttpEndpointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableHttpEndpointOutcome(result.GetResultWithOwnership())
+                            : DisableHttpEndpointOutcome(std::move(result.GetError()));
 }
 
 DownloadDBLogFilePortionOutcome RDSClient::DownloadDBLogFilePortion(const DownloadDBLogFilePortionRequest& request) const {
-  return DownloadDBLogFilePortionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DownloadDBLogFilePortionOutcome(result.GetResultWithOwnership())
+                            : DownloadDBLogFilePortionOutcome(std::move(result.GetError()));
 }
 
 EnableHttpEndpointOutcome RDSClient::EnableHttpEndpoint(const EnableHttpEndpointRequest& request) const {
-  return EnableHttpEndpointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableHttpEndpointOutcome(result.GetResultWithOwnership())
+                            : EnableHttpEndpointOutcome(std::move(result.GetError()));
 }
 
 FailoverDBClusterOutcome RDSClient::FailoverDBCluster(const FailoverDBClusterRequest& request) const {
-  return FailoverDBClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? FailoverDBClusterOutcome(result.GetResultWithOwnership())
+                            : FailoverDBClusterOutcome(std::move(result.GetError()));
 }
 
 FailoverGlobalClusterOutcome RDSClient::FailoverGlobalCluster(const FailoverGlobalClusterRequest& request) const {
-  return FailoverGlobalClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? FailoverGlobalClusterOutcome(result.GetResultWithOwnership())
+                            : FailoverGlobalClusterOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome RDSClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ModifyActivityStreamOutcome RDSClient::ModifyActivityStream(const ModifyActivityStreamRequest& request) const {
-  return ModifyActivityStreamOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyActivityStreamOutcome(result.GetResultWithOwnership())
+                            : ModifyActivityStreamOutcome(std::move(result.GetError()));
 }
 
 ModifyCertificatesOutcome RDSClient::ModifyCertificates(const ModifyCertificatesRequest& request) const {
-  return ModifyCertificatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyCertificatesOutcome(result.GetResultWithOwnership())
+                            : ModifyCertificatesOutcome(std::move(result.GetError()));
 }
 
 ModifyCurrentDBClusterCapacityOutcome RDSClient::ModifyCurrentDBClusterCapacity(
     const ModifyCurrentDBClusterCapacityRequest& request) const {
-  return ModifyCurrentDBClusterCapacityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyCurrentDBClusterCapacityOutcome(result.GetResultWithOwnership())
+                            : ModifyCurrentDBClusterCapacityOutcome(std::move(result.GetError()));
 }
 
 ModifyCustomDBEngineVersionOutcome RDSClient::ModifyCustomDBEngineVersion(const ModifyCustomDBEngineVersionRequest& request) const {
-  return ModifyCustomDBEngineVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyCustomDBEngineVersionOutcome(result.GetResultWithOwnership())
+                            : ModifyCustomDBEngineVersionOutcome(std::move(result.GetError()));
 }
 
 ModifyDBClusterOutcome RDSClient::ModifyDBCluster(const ModifyDBClusterRequest& request) const {
-  return ModifyDBClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyDBClusterOutcome(result.GetResultWithOwnership())
+                            : ModifyDBClusterOutcome(std::move(result.GetError()));
 }
 
 ModifyDBClusterEndpointOutcome RDSClient::ModifyDBClusterEndpoint(const ModifyDBClusterEndpointRequest& request) const {
-  return ModifyDBClusterEndpointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyDBClusterEndpointOutcome(result.GetResultWithOwnership())
+                            : ModifyDBClusterEndpointOutcome(std::move(result.GetError()));
 }
 
 ModifyDBClusterParameterGroupOutcome RDSClient::ModifyDBClusterParameterGroup(const ModifyDBClusterParameterGroupRequest& request) const {
-  return ModifyDBClusterParameterGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyDBClusterParameterGroupOutcome(result.GetResultWithOwnership())
+                            : ModifyDBClusterParameterGroupOutcome(std::move(result.GetError()));
 }
 
 ModifyDBClusterSnapshotAttributeOutcome RDSClient::ModifyDBClusterSnapshotAttribute(
     const ModifyDBClusterSnapshotAttributeRequest& request) const {
-  return ModifyDBClusterSnapshotAttributeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyDBClusterSnapshotAttributeOutcome(result.GetResultWithOwnership())
+                            : ModifyDBClusterSnapshotAttributeOutcome(std::move(result.GetError()));
 }
 
 ModifyDBInstanceOutcome RDSClient::ModifyDBInstance(const ModifyDBInstanceRequest& request) const {
-  return ModifyDBInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyDBInstanceOutcome(result.GetResultWithOwnership())
+                            : ModifyDBInstanceOutcome(std::move(result.GetError()));
 }
 
 ModifyDBParameterGroupOutcome RDSClient::ModifyDBParameterGroup(const ModifyDBParameterGroupRequest& request) const {
-  return ModifyDBParameterGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyDBParameterGroupOutcome(result.GetResultWithOwnership())
+                            : ModifyDBParameterGroupOutcome(std::move(result.GetError()));
 }
 
 ModifyDBProxyOutcome RDSClient::ModifyDBProxy(const ModifyDBProxyRequest& request) const {
-  return ModifyDBProxyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyDBProxyOutcome(result.GetResultWithOwnership()) : ModifyDBProxyOutcome(std::move(result.GetError()));
 }
 
 ModifyDBProxyEndpointOutcome RDSClient::ModifyDBProxyEndpoint(const ModifyDBProxyEndpointRequest& request) const {
-  return ModifyDBProxyEndpointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyDBProxyEndpointOutcome(result.GetResultWithOwnership())
+                            : ModifyDBProxyEndpointOutcome(std::move(result.GetError()));
 }
 
 ModifyDBProxyTargetGroupOutcome RDSClient::ModifyDBProxyTargetGroup(const ModifyDBProxyTargetGroupRequest& request) const {
-  return ModifyDBProxyTargetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyDBProxyTargetGroupOutcome(result.GetResultWithOwnership())
+                            : ModifyDBProxyTargetGroupOutcome(std::move(result.GetError()));
 }
 
 ModifyDBRecommendationOutcome RDSClient::ModifyDBRecommendation(const ModifyDBRecommendationRequest& request) const {
-  return ModifyDBRecommendationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyDBRecommendationOutcome(result.GetResultWithOwnership())
+                            : ModifyDBRecommendationOutcome(std::move(result.GetError()));
 }
 
 ModifyDBShardGroupOutcome RDSClient::ModifyDBShardGroup(const ModifyDBShardGroupRequest& request) const {
-  return ModifyDBShardGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyDBShardGroupOutcome(result.GetResultWithOwnership())
+                            : ModifyDBShardGroupOutcome(std::move(result.GetError()));
 }
 
 ModifyDBSnapshotOutcome RDSClient::ModifyDBSnapshot(const ModifyDBSnapshotRequest& request) const {
-  return ModifyDBSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyDBSnapshotOutcome(result.GetResultWithOwnership())
+                            : ModifyDBSnapshotOutcome(std::move(result.GetError()));
 }
 
 ModifyDBSnapshotAttributeOutcome RDSClient::ModifyDBSnapshotAttribute(const ModifyDBSnapshotAttributeRequest& request) const {
-  return ModifyDBSnapshotAttributeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyDBSnapshotAttributeOutcome(result.GetResultWithOwnership())
+                            : ModifyDBSnapshotAttributeOutcome(std::move(result.GetError()));
 }
 
 ModifyDBSubnetGroupOutcome RDSClient::ModifyDBSubnetGroup(const ModifyDBSubnetGroupRequest& request) const {
-  return ModifyDBSubnetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyDBSubnetGroupOutcome(result.GetResultWithOwnership())
+                            : ModifyDBSubnetGroupOutcome(std::move(result.GetError()));
 }
 
 ModifyEventSubscriptionOutcome RDSClient::ModifyEventSubscription(const ModifyEventSubscriptionRequest& request) const {
-  return ModifyEventSubscriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyEventSubscriptionOutcome(result.GetResultWithOwnership())
+                            : ModifyEventSubscriptionOutcome(std::move(result.GetError()));
 }
 
 ModifyGlobalClusterOutcome RDSClient::ModifyGlobalCluster(const ModifyGlobalClusterRequest& request) const {
-  return ModifyGlobalClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyGlobalClusterOutcome(result.GetResultWithOwnership())
+                            : ModifyGlobalClusterOutcome(std::move(result.GetError()));
 }
 
 ModifyIntegrationOutcome RDSClient::ModifyIntegration(const ModifyIntegrationRequest& request) const {
-  return ModifyIntegrationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyIntegrationOutcome(result.GetResultWithOwnership())
+                            : ModifyIntegrationOutcome(std::move(result.GetError()));
 }
 
 ModifyOptionGroupOutcome RDSClient::ModifyOptionGroup(const ModifyOptionGroupRequest& request) const {
-  return ModifyOptionGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyOptionGroupOutcome(result.GetResultWithOwnership())
+                            : ModifyOptionGroupOutcome(std::move(result.GetError()));
 }
 
 ModifyTenantDatabaseOutcome RDSClient::ModifyTenantDatabase(const ModifyTenantDatabaseRequest& request) const {
-  return ModifyTenantDatabaseOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyTenantDatabaseOutcome(result.GetResultWithOwnership())
+                            : ModifyTenantDatabaseOutcome(std::move(result.GetError()));
 }
 
 PromoteReadReplicaOutcome RDSClient::PromoteReadReplica(const PromoteReadReplicaRequest& request) const {
-  return PromoteReadReplicaOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PromoteReadReplicaOutcome(result.GetResultWithOwnership())
+                            : PromoteReadReplicaOutcome(std::move(result.GetError()));
 }
 
 PromoteReadReplicaDBClusterOutcome RDSClient::PromoteReadReplicaDBCluster(const PromoteReadReplicaDBClusterRequest& request) const {
-  return PromoteReadReplicaDBClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PromoteReadReplicaDBClusterOutcome(result.GetResultWithOwnership())
+                            : PromoteReadReplicaDBClusterOutcome(std::move(result.GetError()));
 }
 
 PurchaseReservedDBInstancesOfferingOutcome RDSClient::PurchaseReservedDBInstancesOffering(
     const PurchaseReservedDBInstancesOfferingRequest& request) const {
-  return PurchaseReservedDBInstancesOfferingOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PurchaseReservedDBInstancesOfferingOutcome(result.GetResultWithOwnership())
+                            : PurchaseReservedDBInstancesOfferingOutcome(std::move(result.GetError()));
 }
 
 RebootDBClusterOutcome RDSClient::RebootDBCluster(const RebootDBClusterRequest& request) const {
-  return RebootDBClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RebootDBClusterOutcome(result.GetResultWithOwnership())
+                            : RebootDBClusterOutcome(std::move(result.GetError()));
 }
 
 RebootDBInstanceOutcome RDSClient::RebootDBInstance(const RebootDBInstanceRequest& request) const {
-  return RebootDBInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RebootDBInstanceOutcome(result.GetResultWithOwnership())
+                            : RebootDBInstanceOutcome(std::move(result.GetError()));
 }
 
 RebootDBShardGroupOutcome RDSClient::RebootDBShardGroup(const RebootDBShardGroupRequest& request) const {
-  return RebootDBShardGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RebootDBShardGroupOutcome(result.GetResultWithOwnership())
+                            : RebootDBShardGroupOutcome(std::move(result.GetError()));
 }
 
 RegisterDBProxyTargetsOutcome RDSClient::RegisterDBProxyTargets(const RegisterDBProxyTargetsRequest& request) const {
-  return RegisterDBProxyTargetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterDBProxyTargetsOutcome(result.GetResultWithOwnership())
+                            : RegisterDBProxyTargetsOutcome(std::move(result.GetError()));
 }
 
 RemoveFromGlobalClusterOutcome RDSClient::RemoveFromGlobalCluster(const RemoveFromGlobalClusterRequest& request) const {
-  return RemoveFromGlobalClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveFromGlobalClusterOutcome(result.GetResultWithOwnership())
+                            : RemoveFromGlobalClusterOutcome(std::move(result.GetError()));
 }
 
 RemoveRoleFromDBClusterOutcome RDSClient::RemoveRoleFromDBCluster(const RemoveRoleFromDBClusterRequest& request) const {
-  return RemoveRoleFromDBClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveRoleFromDBClusterOutcome(result.GetResultWithOwnership())
+                            : RemoveRoleFromDBClusterOutcome(std::move(result.GetError()));
 }
 
 RemoveRoleFromDBInstanceOutcome RDSClient::RemoveRoleFromDBInstance(const RemoveRoleFromDBInstanceRequest& request) const {
-  return RemoveRoleFromDBInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveRoleFromDBInstanceOutcome(result.GetResultWithOwnership())
+                            : RemoveRoleFromDBInstanceOutcome(std::move(result.GetError()));
 }
 
 RemoveSourceIdentifierFromSubscriptionOutcome RDSClient::RemoveSourceIdentifierFromSubscription(
     const RemoveSourceIdentifierFromSubscriptionRequest& request) const {
-  return RemoveSourceIdentifierFromSubscriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveSourceIdentifierFromSubscriptionOutcome(result.GetResultWithOwnership())
+                            : RemoveSourceIdentifierFromSubscriptionOutcome(std::move(result.GetError()));
 }
 
 RemoveTagsFromResourceOutcome RDSClient::RemoveTagsFromResource(const RemoveTagsFromResourceRequest& request) const {
-  return RemoveTagsFromResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveTagsFromResourceOutcome(result.GetResultWithOwnership())
+                            : RemoveTagsFromResourceOutcome(std::move(result.GetError()));
 }
 
 ResetDBClusterParameterGroupOutcome RDSClient::ResetDBClusterParameterGroup(const ResetDBClusterParameterGroupRequest& request) const {
-  return ResetDBClusterParameterGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResetDBClusterParameterGroupOutcome(result.GetResultWithOwnership())
+                            : ResetDBClusterParameterGroupOutcome(std::move(result.GetError()));
 }
 
 ResetDBParameterGroupOutcome RDSClient::ResetDBParameterGroup(const ResetDBParameterGroupRequest& request) const {
-  return ResetDBParameterGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResetDBParameterGroupOutcome(result.GetResultWithOwnership())
+                            : ResetDBParameterGroupOutcome(std::move(result.GetError()));
 }
 
 RestoreDBClusterFromS3Outcome RDSClient::RestoreDBClusterFromS3(const RestoreDBClusterFromS3Request& request) const {
-  return RestoreDBClusterFromS3Outcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RestoreDBClusterFromS3Outcome(result.GetResultWithOwnership())
+                            : RestoreDBClusterFromS3Outcome(std::move(result.GetError()));
 }
 
 RestoreDBClusterFromSnapshotOutcome RDSClient::RestoreDBClusterFromSnapshot(const RestoreDBClusterFromSnapshotRequest& request) const {
-  return RestoreDBClusterFromSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RestoreDBClusterFromSnapshotOutcome(result.GetResultWithOwnership())
+                            : RestoreDBClusterFromSnapshotOutcome(std::move(result.GetError()));
 }
 
 RestoreDBClusterToPointInTimeOutcome RDSClient::RestoreDBClusterToPointInTime(const RestoreDBClusterToPointInTimeRequest& request) const {
-  return RestoreDBClusterToPointInTimeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RestoreDBClusterToPointInTimeOutcome(result.GetResultWithOwnership())
+                            : RestoreDBClusterToPointInTimeOutcome(std::move(result.GetError()));
 }
 
 RestoreDBInstanceFromDBSnapshotOutcome RDSClient::RestoreDBInstanceFromDBSnapshot(
     const RestoreDBInstanceFromDBSnapshotRequest& request) const {
-  return RestoreDBInstanceFromDBSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RestoreDBInstanceFromDBSnapshotOutcome(result.GetResultWithOwnership())
+                            : RestoreDBInstanceFromDBSnapshotOutcome(std::move(result.GetError()));
 }
 
 RestoreDBInstanceFromS3Outcome RDSClient::RestoreDBInstanceFromS3(const RestoreDBInstanceFromS3Request& request) const {
-  return RestoreDBInstanceFromS3Outcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RestoreDBInstanceFromS3Outcome(result.GetResultWithOwnership())
+                            : RestoreDBInstanceFromS3Outcome(std::move(result.GetError()));
 }
 
 RestoreDBInstanceToPointInTimeOutcome RDSClient::RestoreDBInstanceToPointInTime(
     const RestoreDBInstanceToPointInTimeRequest& request) const {
-  return RestoreDBInstanceToPointInTimeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RestoreDBInstanceToPointInTimeOutcome(result.GetResultWithOwnership())
+                            : RestoreDBInstanceToPointInTimeOutcome(std::move(result.GetError()));
 }
 
 RevokeDBSecurityGroupIngressOutcome RDSClient::RevokeDBSecurityGroupIngress(const RevokeDBSecurityGroupIngressRequest& request) const {
-  return RevokeDBSecurityGroupIngressOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RevokeDBSecurityGroupIngressOutcome(result.GetResultWithOwnership())
+                            : RevokeDBSecurityGroupIngressOutcome(std::move(result.GetError()));
 }
 
 StartActivityStreamOutcome RDSClient::StartActivityStream(const StartActivityStreamRequest& request) const {
-  return StartActivityStreamOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartActivityStreamOutcome(result.GetResultWithOwnership())
+                            : StartActivityStreamOutcome(std::move(result.GetError()));
 }
 
 StartDBClusterOutcome RDSClient::StartDBCluster(const StartDBClusterRequest& request) const {
-  return StartDBClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDBClusterOutcome(result.GetResultWithOwnership()) : StartDBClusterOutcome(std::move(result.GetError()));
 }
 
 StartDBInstanceOutcome RDSClient::StartDBInstance(const StartDBInstanceRequest& request) const {
-  return StartDBInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDBInstanceOutcome(result.GetResultWithOwnership())
+                            : StartDBInstanceOutcome(std::move(result.GetError()));
 }
 
 StartDBInstanceAutomatedBackupsReplicationOutcome RDSClient::StartDBInstanceAutomatedBackupsReplication(
@@ -1057,43 +1367,61 @@ StartDBInstanceAutomatedBackupsReplicationOutcome RDSClient::StartDBInstanceAuto
                                                     Aws::Http::HttpMethod::HTTP_GET, request.GetSourceRegion().c_str(),
                                                     {{"DestinationRegion", m_region}}, 3600));
 
-    return StartDBInstanceAutomatedBackupsReplicationOutcome{InvokeServiceOperation(newRequest, Aws::Http::HttpMethod::HTTP_POST)};
+    auto result = InvokeServiceOperation(newRequest, Aws::Http::HttpMethod::HTTP_POST);
+    return result.IsSuccess() ? StartDBInstanceAutomatedBackupsReplicationOutcome(result.GetResultWithOwnership())
+                              : StartDBInstanceAutomatedBackupsReplicationOutcome(std::move(result.GetError()));
   }
 
-  return StartDBInstanceAutomatedBackupsReplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDBInstanceAutomatedBackupsReplicationOutcome(result.GetResultWithOwnership())
+                            : StartDBInstanceAutomatedBackupsReplicationOutcome(std::move(result.GetError()));
 }
 
 StartExportTaskOutcome RDSClient::StartExportTask(const StartExportTaskRequest& request) const {
-  return StartExportTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartExportTaskOutcome(result.GetResultWithOwnership())
+                            : StartExportTaskOutcome(std::move(result.GetError()));
 }
 
 StopActivityStreamOutcome RDSClient::StopActivityStream(const StopActivityStreamRequest& request) const {
-  return StopActivityStreamOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopActivityStreamOutcome(result.GetResultWithOwnership())
+                            : StopActivityStreamOutcome(std::move(result.GetError()));
 }
 
 StopDBClusterOutcome RDSClient::StopDBCluster(const StopDBClusterRequest& request) const {
-  return StopDBClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopDBClusterOutcome(result.GetResultWithOwnership()) : StopDBClusterOutcome(std::move(result.GetError()));
 }
 
 StopDBInstanceOutcome RDSClient::StopDBInstance(const StopDBInstanceRequest& request) const {
-  return StopDBInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopDBInstanceOutcome(result.GetResultWithOwnership()) : StopDBInstanceOutcome(std::move(result.GetError()));
 }
 
 StopDBInstanceAutomatedBackupsReplicationOutcome RDSClient::StopDBInstanceAutomatedBackupsReplication(
     const StopDBInstanceAutomatedBackupsReplicationRequest& request) const {
-  return StopDBInstanceAutomatedBackupsReplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopDBInstanceAutomatedBackupsReplicationOutcome(result.GetResultWithOwnership())
+                            : StopDBInstanceAutomatedBackupsReplicationOutcome(std::move(result.GetError()));
 }
 
 SwitchoverBlueGreenDeploymentOutcome RDSClient::SwitchoverBlueGreenDeployment(const SwitchoverBlueGreenDeploymentRequest& request) const {
-  return SwitchoverBlueGreenDeploymentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SwitchoverBlueGreenDeploymentOutcome(result.GetResultWithOwnership())
+                            : SwitchoverBlueGreenDeploymentOutcome(std::move(result.GetError()));
 }
 
 SwitchoverGlobalClusterOutcome RDSClient::SwitchoverGlobalCluster(const SwitchoverGlobalClusterRequest& request) const {
-  return SwitchoverGlobalClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SwitchoverGlobalClusterOutcome(result.GetResultWithOwnership())
+                            : SwitchoverGlobalClusterOutcome(std::move(result.GetError()));
 }
 
 SwitchoverReadReplicaOutcome RDSClient::SwitchoverReadReplica(const SwitchoverReadReplicaRequest& request) const {
-  return SwitchoverReadReplicaOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SwitchoverReadReplicaOutcome(result.GetResultWithOwnership())
+                            : SwitchoverReadReplicaOutcome(std::move(result.GetError()));
 }
 
 Aws::String RDSClient::GenerateConnectAuthToken(const char* dbHostName, const char* dbRegion, unsigned port, const char* dbUserName) const {

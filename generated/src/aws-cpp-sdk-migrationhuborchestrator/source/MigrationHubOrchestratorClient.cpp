@@ -220,7 +220,8 @@ CreateTemplateOutcome MigrationHubOrchestratorClient::CreateTemplate(const Creat
     endpointResolutionOutcome.GetResult().AddPathSegments("/template");
   };
 
-  return CreateTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTemplateOutcome(result.GetResultWithOwnership()) : CreateTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateWorkflowOutcome MigrationHubOrchestratorClient::CreateWorkflow(const CreateWorkflowRequest& request) const {
@@ -229,7 +230,8 @@ CreateWorkflowOutcome MigrationHubOrchestratorClient::CreateWorkflow(const Creat
     endpointResolutionOutcome.GetResult().AddPathSegments("/migrationworkflow/");
   };
 
-  return CreateWorkflowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWorkflowOutcome(result.GetResultWithOwnership()) : CreateWorkflowOutcome(std::move(result.GetError()));
 }
 
 CreateWorkflowStepOutcome MigrationHubOrchestratorClient::CreateWorkflowStep(const CreateWorkflowStepRequest& request) const {
@@ -238,7 +240,9 @@ CreateWorkflowStepOutcome MigrationHubOrchestratorClient::CreateWorkflowStep(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/workflowstep");
   };
 
-  return CreateWorkflowStepOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWorkflowStepOutcome(result.GetResultWithOwnership())
+                            : CreateWorkflowStepOutcome(std::move(result.GetError()));
 }
 
 CreateWorkflowStepGroupOutcome MigrationHubOrchestratorClient::CreateWorkflowStepGroup(
@@ -248,7 +252,9 @@ CreateWorkflowStepGroupOutcome MigrationHubOrchestratorClient::CreateWorkflowSte
     endpointResolutionOutcome.GetResult().AddPathSegments("/workflowstepgroups");
   };
 
-  return CreateWorkflowStepGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWorkflowStepGroupOutcome(result.GetResultWithOwnership())
+                            : CreateWorkflowStepGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteTemplateOutcome MigrationHubOrchestratorClient::DeleteTemplate(const DeleteTemplateRequest& request) const {
@@ -264,7 +270,8 @@ DeleteTemplateOutcome MigrationHubOrchestratorClient::DeleteTemplate(const Delet
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTemplateOutcome(result.GetResultWithOwnership()) : DeleteTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteWorkflowOutcome MigrationHubOrchestratorClient::DeleteWorkflow(const DeleteWorkflowRequest& request) const {
@@ -280,7 +287,8 @@ DeleteWorkflowOutcome MigrationHubOrchestratorClient::DeleteWorkflow(const Delet
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteWorkflowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteWorkflowOutcome(result.GetResultWithOwnership()) : DeleteWorkflowOutcome(std::move(result.GetError()));
 }
 
 DeleteWorkflowStepOutcome MigrationHubOrchestratorClient::DeleteWorkflowStep(const DeleteWorkflowStepRequest& request) const {
@@ -306,7 +314,9 @@ DeleteWorkflowStepOutcome MigrationHubOrchestratorClient::DeleteWorkflowStep(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteWorkflowStepOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteWorkflowStepOutcome(result.GetResultWithOwnership())
+                            : DeleteWorkflowStepOutcome(std::move(result.GetError()));
 }
 
 DeleteWorkflowStepGroupOutcome MigrationHubOrchestratorClient::DeleteWorkflowStepGroup(
@@ -328,7 +338,9 @@ DeleteWorkflowStepGroupOutcome MigrationHubOrchestratorClient::DeleteWorkflowSte
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteWorkflowStepGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteWorkflowStepGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteWorkflowStepGroupOutcome(std::move(result.GetError()));
 }
 
 GetTemplateOutcome MigrationHubOrchestratorClient::GetTemplate(const GetTemplateRequest& request) const {
@@ -344,7 +356,8 @@ GetTemplateOutcome MigrationHubOrchestratorClient::GetTemplate(const GetTemplate
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTemplateOutcome(result.GetResultWithOwnership()) : GetTemplateOutcome(std::move(result.GetError()));
 }
 
 GetTemplateStepOutcome MigrationHubOrchestratorClient::GetTemplateStep(const GetTemplateStepRequest& request) const {
@@ -370,7 +383,9 @@ GetTemplateStepOutcome MigrationHubOrchestratorClient::GetTemplateStep(const Get
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetTemplateStepOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTemplateStepOutcome(result.GetResultWithOwnership())
+                            : GetTemplateStepOutcome(std::move(result.GetError()));
 }
 
 GetTemplateStepGroupOutcome MigrationHubOrchestratorClient::GetTemplateStepGroup(const GetTemplateStepGroupRequest& request) const {
@@ -393,7 +408,9 @@ GetTemplateStepGroupOutcome MigrationHubOrchestratorClient::GetTemplateStepGroup
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetTemplateStepGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTemplateStepGroupOutcome(result.GetResultWithOwnership())
+                            : GetTemplateStepGroupOutcome(std::move(result.GetError()));
 }
 
 GetWorkflowOutcome MigrationHubOrchestratorClient::GetWorkflow(const GetWorkflowRequest& request) const {
@@ -409,7 +426,8 @@ GetWorkflowOutcome MigrationHubOrchestratorClient::GetWorkflow(const GetWorkflow
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetWorkflowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetWorkflowOutcome(result.GetResultWithOwnership()) : GetWorkflowOutcome(std::move(result.GetError()));
 }
 
 GetWorkflowStepOutcome MigrationHubOrchestratorClient::GetWorkflowStep(const GetWorkflowStepRequest& request) const {
@@ -435,7 +453,9 @@ GetWorkflowStepOutcome MigrationHubOrchestratorClient::GetWorkflowStep(const Get
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetWorkflowStepOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetWorkflowStepOutcome(result.GetResultWithOwnership())
+                            : GetWorkflowStepOutcome(std::move(result.GetError()));
 }
 
 GetWorkflowStepGroupOutcome MigrationHubOrchestratorClient::GetWorkflowStepGroup(const GetWorkflowStepGroupRequest& request) const {
@@ -456,7 +476,9 @@ GetWorkflowStepGroupOutcome MigrationHubOrchestratorClient::GetWorkflowStepGroup
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetWorkflowStepGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetWorkflowStepGroupOutcome(result.GetResultWithOwnership())
+                            : GetWorkflowStepGroupOutcome(std::move(result.GetError()));
 }
 
 ListPluginsOutcome MigrationHubOrchestratorClient::ListPlugins(const ListPluginsRequest& request) const {
@@ -465,7 +487,8 @@ ListPluginsOutcome MigrationHubOrchestratorClient::ListPlugins(const ListPlugins
     endpointResolutionOutcome.GetResult().AddPathSegments("/plugins");
   };
 
-  return ListPluginsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPluginsOutcome(result.GetResultWithOwnership()) : ListPluginsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome MigrationHubOrchestratorClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -481,7 +504,9 @@ ListTagsForResourceOutcome MigrationHubOrchestratorClient::ListTagsForResource(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTemplateStepGroupsOutcome MigrationHubOrchestratorClient::ListTemplateStepGroups(const ListTemplateStepGroupsRequest& request) const {
@@ -497,7 +522,9 @@ ListTemplateStepGroupsOutcome MigrationHubOrchestratorClient::ListTemplateStepGr
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTemplateId());
   };
 
-  return ListTemplateStepGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTemplateStepGroupsOutcome(result.GetResultWithOwnership())
+                            : ListTemplateStepGroupsOutcome(std::move(result.GetError()));
 }
 
 ListTemplateStepsOutcome MigrationHubOrchestratorClient::ListTemplateSteps(const ListTemplateStepsRequest& request) const {
@@ -517,7 +544,9 @@ ListTemplateStepsOutcome MigrationHubOrchestratorClient::ListTemplateSteps(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/templatesteps");
   };
 
-  return ListTemplateStepsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTemplateStepsOutcome(result.GetResultWithOwnership())
+                            : ListTemplateStepsOutcome(std::move(result.GetError()));
 }
 
 ListTemplatesOutcome MigrationHubOrchestratorClient::ListTemplates(const ListTemplatesRequest& request) const {
@@ -526,7 +555,8 @@ ListTemplatesOutcome MigrationHubOrchestratorClient::ListTemplates(const ListTem
     endpointResolutionOutcome.GetResult().AddPathSegments("/migrationworkflowtemplates");
   };
 
-  return ListTemplatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTemplatesOutcome(result.GetResultWithOwnership()) : ListTemplatesOutcome(std::move(result.GetError()));
 }
 
 ListWorkflowStepGroupsOutcome MigrationHubOrchestratorClient::ListWorkflowStepGroups(const ListWorkflowStepGroupsRequest& request) const {
@@ -541,7 +571,9 @@ ListWorkflowStepGroupsOutcome MigrationHubOrchestratorClient::ListWorkflowStepGr
     endpointResolutionOutcome.GetResult().AddPathSegments("/workflowstepgroups");
   };
 
-  return ListWorkflowStepGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListWorkflowStepGroupsOutcome(result.GetResultWithOwnership())
+                            : ListWorkflowStepGroupsOutcome(std::move(result.GetError()));
 }
 
 ListWorkflowStepsOutcome MigrationHubOrchestratorClient::ListWorkflowSteps(const ListWorkflowStepsRequest& request) const {
@@ -565,7 +597,9 @@ ListWorkflowStepsOutcome MigrationHubOrchestratorClient::ListWorkflowSteps(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/workflowsteps");
   };
 
-  return ListWorkflowStepsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListWorkflowStepsOutcome(result.GetResultWithOwnership())
+                            : ListWorkflowStepsOutcome(std::move(result.GetError()));
 }
 
 ListWorkflowsOutcome MigrationHubOrchestratorClient::ListWorkflows(const ListWorkflowsRequest& request) const {
@@ -574,7 +608,8 @@ ListWorkflowsOutcome MigrationHubOrchestratorClient::ListWorkflows(const ListWor
     endpointResolutionOutcome.GetResult().AddPathSegments("/migrationworkflows");
   };
 
-  return ListWorkflowsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListWorkflowsOutcome(result.GetResultWithOwnership()) : ListWorkflowsOutcome(std::move(result.GetError()));
 }
 
 RetryWorkflowStepOutcome MigrationHubOrchestratorClient::RetryWorkflowStep(const RetryWorkflowStepRequest& request) const {
@@ -600,7 +635,9 @@ RetryWorkflowStepOutcome MigrationHubOrchestratorClient::RetryWorkflowStep(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return RetryWorkflowStepOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RetryWorkflowStepOutcome(result.GetResultWithOwnership())
+                            : RetryWorkflowStepOutcome(std::move(result.GetError()));
 }
 
 StartWorkflowOutcome MigrationHubOrchestratorClient::StartWorkflow(const StartWorkflowRequest& request) const {
@@ -617,7 +654,8 @@ StartWorkflowOutcome MigrationHubOrchestratorClient::StartWorkflow(const StartWo
     endpointResolutionOutcome.GetResult().AddPathSegments("/start");
   };
 
-  return StartWorkflowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartWorkflowOutcome(result.GetResultWithOwnership()) : StartWorkflowOutcome(std::move(result.GetError()));
 }
 
 StopWorkflowOutcome MigrationHubOrchestratorClient::StopWorkflow(const StopWorkflowRequest& request) const {
@@ -634,7 +672,8 @@ StopWorkflowOutcome MigrationHubOrchestratorClient::StopWorkflow(const StopWorkf
     endpointResolutionOutcome.GetResult().AddPathSegments("/stop");
   };
 
-  return StopWorkflowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopWorkflowOutcome(result.GetResultWithOwnership()) : StopWorkflowOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome MigrationHubOrchestratorClient::TagResource(const TagResourceRequest& request) const {
@@ -650,7 +689,8 @@ TagResourceOutcome MigrationHubOrchestratorClient::TagResource(const TagResource
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome MigrationHubOrchestratorClient::UntagResource(const UntagResourceRequest& request) const {
@@ -671,7 +711,8 @@ UntagResourceOutcome MigrationHubOrchestratorClient::UntagResource(const UntagRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateTemplateOutcome MigrationHubOrchestratorClient::UpdateTemplate(const UpdateTemplateRequest& request) const {
@@ -687,7 +728,8 @@ UpdateTemplateOutcome MigrationHubOrchestratorClient::UpdateTemplate(const Updat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTemplateOutcome(result.GetResultWithOwnership()) : UpdateTemplateOutcome(std::move(result.GetError()));
 }
 
 UpdateWorkflowOutcome MigrationHubOrchestratorClient::UpdateWorkflow(const UpdateWorkflowRequest& request) const {
@@ -703,7 +745,8 @@ UpdateWorkflowOutcome MigrationHubOrchestratorClient::UpdateWorkflow(const Updat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateWorkflowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateWorkflowOutcome(result.GetResultWithOwnership()) : UpdateWorkflowOutcome(std::move(result.GetError()));
 }
 
 UpdateWorkflowStepOutcome MigrationHubOrchestratorClient::UpdateWorkflowStep(const UpdateWorkflowStepRequest& request) const {
@@ -719,7 +762,9 @@ UpdateWorkflowStepOutcome MigrationHubOrchestratorClient::UpdateWorkflowStep(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateWorkflowStepOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateWorkflowStepOutcome(result.GetResultWithOwnership())
+                            : UpdateWorkflowStepOutcome(std::move(result.GetError()));
 }
 
 UpdateWorkflowStepGroupOutcome MigrationHubOrchestratorClient::UpdateWorkflowStepGroup(
@@ -741,5 +786,7 @@ UpdateWorkflowStepGroupOutcome MigrationHubOrchestratorClient::UpdateWorkflowSte
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateWorkflowStepGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateWorkflowStepGroupOutcome(result.GetResultWithOwnership())
+                            : UpdateWorkflowStepGroupOutcome(std::move(result.GetError()));
 }

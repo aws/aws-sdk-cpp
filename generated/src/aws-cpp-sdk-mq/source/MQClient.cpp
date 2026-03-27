@@ -202,7 +202,8 @@ CreateBrokerOutcome MQClient::CreateBroker(const CreateBrokerRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/brokers");
   };
 
-  return CreateBrokerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBrokerOutcome(result.GetResultWithOwnership()) : CreateBrokerOutcome(std::move(result.GetError()));
 }
 
 CreateConfigurationOutcome MQClient::CreateConfiguration(const CreateConfigurationRequest& request) const {
@@ -211,7 +212,9 @@ CreateConfigurationOutcome MQClient::CreateConfiguration(const CreateConfigurati
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/configurations");
   };
 
-  return CreateConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateTagsOutcome MQClient::CreateTags(const CreateTagsRequest& request) const {
@@ -227,7 +230,8 @@ CreateTagsOutcome MQClient::CreateTags(const CreateTagsRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return CreateTagsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTagsOutcome(result.GetResultWithOwnership()) : CreateTagsOutcome(std::move(result.GetError()));
 }
 
 CreateUserOutcome MQClient::CreateUser(const CreateUserRequest& request) const {
@@ -250,7 +254,8 @@ CreateUserOutcome MQClient::CreateUser(const CreateUserRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUsername());
   };
 
-  return CreateUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateUserOutcome(result.GetResultWithOwnership()) : CreateUserOutcome(std::move(result.GetError()));
 }
 
 DeleteBrokerOutcome MQClient::DeleteBroker(const DeleteBrokerRequest& request) const {
@@ -266,7 +271,8 @@ DeleteBrokerOutcome MQClient::DeleteBroker(const DeleteBrokerRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBrokerId());
   };
 
-  return DeleteBrokerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBrokerOutcome(result.GetResultWithOwnership()) : DeleteBrokerOutcome(std::move(result.GetError()));
 }
 
 DeleteConfigurationOutcome MQClient::DeleteConfiguration(const DeleteConfigurationRequest& request) const {
@@ -282,7 +288,9 @@ DeleteConfigurationOutcome MQClient::DeleteConfiguration(const DeleteConfigurati
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfigurationId());
   };
 
-  return DeleteConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteTagsOutcome MQClient::DeleteTags(const DeleteTagsRequest& request) const {
@@ -303,7 +311,8 @@ DeleteTagsOutcome MQClient::DeleteTags(const DeleteTagsRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return DeleteTagsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTagsOutcome(result.GetResultWithOwnership()) : DeleteTagsOutcome(std::move(result.GetError()));
 }
 
 DeleteUserOutcome MQClient::DeleteUser(const DeleteUserRequest& request) const {
@@ -326,7 +335,8 @@ DeleteUserOutcome MQClient::DeleteUser(const DeleteUserRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUsername());
   };
 
-  return DeleteUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteUserOutcome(result.GetResultWithOwnership()) : DeleteUserOutcome(std::move(result.GetError()));
 }
 
 DescribeBrokerOutcome MQClient::DescribeBroker(const DescribeBrokerRequest& request) const {
@@ -342,7 +352,8 @@ DescribeBrokerOutcome MQClient::DescribeBroker(const DescribeBrokerRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBrokerId());
   };
 
-  return DescribeBrokerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeBrokerOutcome(result.GetResultWithOwnership()) : DescribeBrokerOutcome(std::move(result.GetError()));
 }
 
 DescribeBrokerEngineTypesOutcome MQClient::DescribeBrokerEngineTypes(const DescribeBrokerEngineTypesRequest& request) const {
@@ -351,7 +362,9 @@ DescribeBrokerEngineTypesOutcome MQClient::DescribeBrokerEngineTypes(const Descr
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/broker-engine-types");
   };
 
-  return DescribeBrokerEngineTypesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeBrokerEngineTypesOutcome(result.GetResultWithOwnership())
+                            : DescribeBrokerEngineTypesOutcome(std::move(result.GetError()));
 }
 
 DescribeBrokerInstanceOptionsOutcome MQClient::DescribeBrokerInstanceOptions(const DescribeBrokerInstanceOptionsRequest& request) const {
@@ -360,7 +373,9 @@ DescribeBrokerInstanceOptionsOutcome MQClient::DescribeBrokerInstanceOptions(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/broker-instance-options");
   };
 
-  return DescribeBrokerInstanceOptionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeBrokerInstanceOptionsOutcome(result.GetResultWithOwnership())
+                            : DescribeBrokerInstanceOptionsOutcome(std::move(result.GetError()));
 }
 
 DescribeConfigurationOutcome MQClient::DescribeConfiguration(const DescribeConfigurationRequest& request) const {
@@ -376,7 +391,9 @@ DescribeConfigurationOutcome MQClient::DescribeConfiguration(const DescribeConfi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfigurationId());
   };
 
-  return DescribeConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeConfigurationRevisionOutcome MQClient::DescribeConfigurationRevision(const DescribeConfigurationRevisionRequest& request) const {
@@ -399,7 +416,9 @@ DescribeConfigurationRevisionOutcome MQClient::DescribeConfigurationRevision(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfigurationRevision());
   };
 
-  return DescribeConfigurationRevisionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeConfigurationRevisionOutcome(result.GetResultWithOwnership())
+                            : DescribeConfigurationRevisionOutcome(std::move(result.GetError()));
 }
 
 DescribeUserOutcome MQClient::DescribeUser(const DescribeUserRequest& request) const {
@@ -422,7 +441,8 @@ DescribeUserOutcome MQClient::DescribeUser(const DescribeUserRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUsername());
   };
 
-  return DescribeUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeUserOutcome(result.GetResultWithOwnership()) : DescribeUserOutcome(std::move(result.GetError()));
 }
 
 ListBrokersOutcome MQClient::ListBrokers(const ListBrokersRequest& request) const {
@@ -431,7 +451,8 @@ ListBrokersOutcome MQClient::ListBrokers(const ListBrokersRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/brokers");
   };
 
-  return ListBrokersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListBrokersOutcome(result.GetResultWithOwnership()) : ListBrokersOutcome(std::move(result.GetError()));
 }
 
 ListConfigurationRevisionsOutcome MQClient::ListConfigurationRevisions(const ListConfigurationRevisionsRequest& request) const {
@@ -448,7 +469,9 @@ ListConfigurationRevisionsOutcome MQClient::ListConfigurationRevisions(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/revisions");
   };
 
-  return ListConfigurationRevisionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListConfigurationRevisionsOutcome(result.GetResultWithOwnership())
+                            : ListConfigurationRevisionsOutcome(std::move(result.GetError()));
 }
 
 ListConfigurationsOutcome MQClient::ListConfigurations(const ListConfigurationsRequest& request) const {
@@ -457,7 +480,9 @@ ListConfigurationsOutcome MQClient::ListConfigurations(const ListConfigurationsR
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/configurations");
   };
 
-  return ListConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListTagsOutcome MQClient::ListTags(const ListTagsRequest& request) const {
@@ -473,7 +498,8 @@ ListTagsOutcome MQClient::ListTags(const ListTagsRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsOutcome(result.GetResultWithOwnership()) : ListTagsOutcome(std::move(result.GetError()));
 }
 
 ListUsersOutcome MQClient::ListUsers(const ListUsersRequest& request) const {
@@ -490,7 +516,8 @@ ListUsersOutcome MQClient::ListUsers(const ListUsersRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/users");
   };
 
-  return ListUsersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListUsersOutcome(result.GetResultWithOwnership()) : ListUsersOutcome(std::move(result.GetError()));
 }
 
 PromoteOutcome MQClient::Promote(const PromoteRequest& request) const {
@@ -507,7 +534,8 @@ PromoteOutcome MQClient::Promote(const PromoteRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/promote");
   };
 
-  return PromoteOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PromoteOutcome(result.GetResultWithOwnership()) : PromoteOutcome(std::move(result.GetError()));
 }
 
 RebootBrokerOutcome MQClient::RebootBroker(const RebootBrokerRequest& request) const {
@@ -524,7 +552,8 @@ RebootBrokerOutcome MQClient::RebootBroker(const RebootBrokerRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegments("/reboot");
   };
 
-  return RebootBrokerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RebootBrokerOutcome(result.GetResultWithOwnership()) : RebootBrokerOutcome(std::move(result.GetError()));
 }
 
 UpdateBrokerOutcome MQClient::UpdateBroker(const UpdateBrokerRequest& request) const {
@@ -540,7 +569,8 @@ UpdateBrokerOutcome MQClient::UpdateBroker(const UpdateBrokerRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBrokerId());
   };
 
-  return UpdateBrokerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateBrokerOutcome(result.GetResultWithOwnership()) : UpdateBrokerOutcome(std::move(result.GetError()));
 }
 
 UpdateConfigurationOutcome MQClient::UpdateConfiguration(const UpdateConfigurationRequest& request) const {
@@ -556,7 +586,9 @@ UpdateConfigurationOutcome MQClient::UpdateConfiguration(const UpdateConfigurati
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfigurationId());
   };
 
-  return UpdateConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateUserOutcome MQClient::UpdateUser(const UpdateUserRequest& request) const {
@@ -579,5 +611,6 @@ UpdateUserOutcome MQClient::UpdateUser(const UpdateUserRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUsername());
   };
 
-  return UpdateUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateUserOutcome(result.GetResultWithOwnership()) : UpdateUserOutcome(std::move(result.GetError()));
 }

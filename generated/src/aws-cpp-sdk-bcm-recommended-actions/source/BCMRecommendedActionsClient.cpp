@@ -182,5 +182,7 @@ BCMRecommendedActionsClient::InvokeOperationOutcome BCMRecommendedActionsClient:
 }
 
 ListRecommendedActionsOutcome BCMRecommendedActionsClient::ListRecommendedActions(const ListRecommendedActionsRequest& request) const {
-  return ListRecommendedActionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRecommendedActionsOutcome(result.GetResultWithOwnership())
+                            : ListRecommendedActionsOutcome(std::move(result.GetError()));
 }

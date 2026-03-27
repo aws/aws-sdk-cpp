@@ -275,7 +275,9 @@ AcceptInboundConnectionOutcome OpenSearchServiceClient::AcceptInboundConnection(
     endpointResolutionOutcome.GetResult().AddPathSegments("/accept");
   };
 
-  return AcceptInboundConnectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AcceptInboundConnectionOutcome(result.GetResultWithOwnership())
+                            : AcceptInboundConnectionOutcome(std::move(result.GetError()));
 }
 
 AddDataSourceOutcome OpenSearchServiceClient::AddDataSource(const AddDataSourceRequest& request) const {
@@ -292,7 +294,8 @@ AddDataSourceOutcome OpenSearchServiceClient::AddDataSource(const AddDataSourceR
     endpointResolutionOutcome.GetResult().AddPathSegments("/dataSource");
   };
 
-  return AddDataSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddDataSourceOutcome(result.GetResultWithOwnership()) : AddDataSourceOutcome(std::move(result.GetError()));
 }
 
 AddDirectQueryDataSourceOutcome OpenSearchServiceClient::AddDirectQueryDataSource(const AddDirectQueryDataSourceRequest& request) const {
@@ -301,7 +304,9 @@ AddDirectQueryDataSourceOutcome OpenSearchServiceClient::AddDirectQueryDataSourc
     endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/directQueryDataSource");
   };
 
-  return AddDirectQueryDataSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddDirectQueryDataSourceOutcome(result.GetResultWithOwnership())
+                            : AddDirectQueryDataSourceOutcome(std::move(result.GetError()));
 }
 
 AddTagsOutcome OpenSearchServiceClient::AddTags(const AddTagsRequest& request) const {
@@ -310,7 +315,8 @@ AddTagsOutcome OpenSearchServiceClient::AddTags(const AddTagsRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/tags");
   };
 
-  return AddTagsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddTagsOutcome(result.GetResultWithOwnership()) : AddTagsOutcome(std::move(result.GetError()));
 }
 
 AssociatePackageOutcome OpenSearchServiceClient::AssociatePackage(const AssociatePackageRequest& request) const {
@@ -332,7 +338,9 @@ AssociatePackageOutcome OpenSearchServiceClient::AssociatePackage(const Associat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
   };
 
-  return AssociatePackageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociatePackageOutcome(result.GetResultWithOwnership())
+                            : AssociatePackageOutcome(std::move(result.GetError()));
 }
 
 AssociatePackagesOutcome OpenSearchServiceClient::AssociatePackages(const AssociatePackagesRequest& request) const {
@@ -341,7 +349,9 @@ AssociatePackagesOutcome OpenSearchServiceClient::AssociatePackages(const Associ
     endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/packages/associateMultiple");
   };
 
-  return AssociatePackagesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociatePackagesOutcome(result.GetResultWithOwnership())
+                            : AssociatePackagesOutcome(std::move(result.GetError()));
 }
 
 AuthorizeVpcEndpointAccessOutcome OpenSearchServiceClient::AuthorizeVpcEndpointAccess(
@@ -359,7 +369,9 @@ AuthorizeVpcEndpointAccessOutcome OpenSearchServiceClient::AuthorizeVpcEndpointA
     endpointResolutionOutcome.GetResult().AddPathSegments("/authorizeVpcEndpointAccess");
   };
 
-  return AuthorizeVpcEndpointAccessOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AuthorizeVpcEndpointAccessOutcome(result.GetResultWithOwnership())
+                            : AuthorizeVpcEndpointAccessOutcome(std::move(result.GetError()));
 }
 
 CancelDomainConfigChangeOutcome OpenSearchServiceClient::CancelDomainConfigChange(const CancelDomainConfigChangeRequest& request) const {
@@ -376,7 +388,9 @@ CancelDomainConfigChangeOutcome OpenSearchServiceClient::CancelDomainConfigChang
     endpointResolutionOutcome.GetResult().AddPathSegments("/config/cancel");
   };
 
-  return CancelDomainConfigChangeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelDomainConfigChangeOutcome(result.GetResultWithOwnership())
+                            : CancelDomainConfigChangeOutcome(std::move(result.GetError()));
 }
 
 CancelServiceSoftwareUpdateOutcome OpenSearchServiceClient::CancelServiceSoftwareUpdate(
@@ -386,7 +400,9 @@ CancelServiceSoftwareUpdateOutcome OpenSearchServiceClient::CancelServiceSoftwar
     endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/serviceSoftwareUpdate/cancel");
   };
 
-  return CancelServiceSoftwareUpdateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelServiceSoftwareUpdateOutcome(result.GetResultWithOwnership())
+                            : CancelServiceSoftwareUpdateOutcome(std::move(result.GetError()));
 }
 
 CreateApplicationOutcome OpenSearchServiceClient::CreateApplication(const CreateApplicationRequest& request) const {
@@ -395,7 +411,9 @@ CreateApplicationOutcome OpenSearchServiceClient::CreateApplication(const Create
     endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/application");
   };
 
-  return CreateApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateApplicationOutcome(result.GetResultWithOwnership())
+                            : CreateApplicationOutcome(std::move(result.GetError()));
 }
 
 CreateDomainOutcome OpenSearchServiceClient::CreateDomain(const CreateDomainRequest& request) const {
@@ -404,7 +422,8 @@ CreateDomainOutcome OpenSearchServiceClient::CreateDomain(const CreateDomainRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/domain");
   };
 
-  return CreateDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDomainOutcome(result.GetResultWithOwnership()) : CreateDomainOutcome(std::move(result.GetError()));
 }
 
 CreateIndexOutcome OpenSearchServiceClient::CreateIndex(const CreateIndexRequest& request) const {
@@ -421,7 +440,8 @@ CreateIndexOutcome OpenSearchServiceClient::CreateIndex(const CreateIndexRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/index");
   };
 
-  return CreateIndexOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIndexOutcome(result.GetResultWithOwnership()) : CreateIndexOutcome(std::move(result.GetError()));
 }
 
 CreateOutboundConnectionOutcome OpenSearchServiceClient::CreateOutboundConnection(const CreateOutboundConnectionRequest& request) const {
@@ -430,7 +450,9 @@ CreateOutboundConnectionOutcome OpenSearchServiceClient::CreateOutboundConnectio
     endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/cc/outboundConnection");
   };
 
-  return CreateOutboundConnectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateOutboundConnectionOutcome(result.GetResultWithOwnership())
+                            : CreateOutboundConnectionOutcome(std::move(result.GetError()));
 }
 
 CreatePackageOutcome OpenSearchServiceClient::CreatePackage(const CreatePackageRequest& request) const {
@@ -439,7 +461,8 @@ CreatePackageOutcome OpenSearchServiceClient::CreatePackage(const CreatePackageR
     endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/packages");
   };
 
-  return CreatePackageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePackageOutcome(result.GetResultWithOwnership()) : CreatePackageOutcome(std::move(result.GetError()));
 }
 
 CreateVpcEndpointOutcome OpenSearchServiceClient::CreateVpcEndpoint(const CreateVpcEndpointRequest& request) const {
@@ -448,7 +471,9 @@ CreateVpcEndpointOutcome OpenSearchServiceClient::CreateVpcEndpoint(const Create
     endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/vpcEndpoints");
   };
 
-  return CreateVpcEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateVpcEndpointOutcome(result.GetResultWithOwnership())
+                            : CreateVpcEndpointOutcome(std::move(result.GetError()));
 }
 
 DeleteApplicationOutcome OpenSearchServiceClient::DeleteApplication(const DeleteApplicationRequest& request) const {
@@ -464,7 +489,9 @@ DeleteApplicationOutcome OpenSearchServiceClient::DeleteApplication(const Delete
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteApplicationOutcome(result.GetResultWithOwnership())
+                            : DeleteApplicationOutcome(std::move(result.GetError()));
 }
 
 DeleteDataSourceOutcome OpenSearchServiceClient::DeleteDataSource(const DeleteDataSourceRequest& request) const {
@@ -487,7 +514,9 @@ DeleteDataSourceOutcome OpenSearchServiceClient::DeleteDataSource(const DeleteDa
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteDataSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDataSourceOutcome(result.GetResultWithOwnership())
+                            : DeleteDataSourceOutcome(std::move(result.GetError()));
 }
 
 DeleteDirectQueryDataSourceOutcome OpenSearchServiceClient::DeleteDirectQueryDataSource(
@@ -504,7 +533,9 @@ DeleteDirectQueryDataSourceOutcome OpenSearchServiceClient::DeleteDirectQueryDat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataSourceName());
   };
 
-  return DeleteDirectQueryDataSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDirectQueryDataSourceOutcome(result.GetResultWithOwnership())
+                            : DeleteDirectQueryDataSourceOutcome(std::move(result.GetError()));
 }
 
 DeleteDomainOutcome OpenSearchServiceClient::DeleteDomain(const DeleteDomainRequest& request) const {
@@ -520,7 +551,8 @@ DeleteDomainOutcome OpenSearchServiceClient::DeleteDomain(const DeleteDomainRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
   };
 
-  return DeleteDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDomainOutcome(result.GetResultWithOwnership()) : DeleteDomainOutcome(std::move(result.GetError()));
 }
 
 DeleteInboundConnectionOutcome OpenSearchServiceClient::DeleteInboundConnection(const DeleteInboundConnectionRequest& request) const {
@@ -536,7 +568,9 @@ DeleteInboundConnectionOutcome OpenSearchServiceClient::DeleteInboundConnection(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectionId());
   };
 
-  return DeleteInboundConnectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteInboundConnectionOutcome(result.GetResultWithOwnership())
+                            : DeleteInboundConnectionOutcome(std::move(result.GetError()));
 }
 
 DeleteIndexOutcome OpenSearchServiceClient::DeleteIndex(const DeleteIndexRequest& request) const {
@@ -559,7 +593,8 @@ DeleteIndexOutcome OpenSearchServiceClient::DeleteIndex(const DeleteIndexRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIndexName());
   };
 
-  return DeleteIndexOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteIndexOutcome(result.GetResultWithOwnership()) : DeleteIndexOutcome(std::move(result.GetError()));
 }
 
 DeleteOutboundConnectionOutcome OpenSearchServiceClient::DeleteOutboundConnection(const DeleteOutboundConnectionRequest& request) const {
@@ -575,7 +610,9 @@ DeleteOutboundConnectionOutcome OpenSearchServiceClient::DeleteOutboundConnectio
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectionId());
   };
 
-  return DeleteOutboundConnectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteOutboundConnectionOutcome(result.GetResultWithOwnership())
+                            : DeleteOutboundConnectionOutcome(std::move(result.GetError()));
 }
 
 DeletePackageOutcome OpenSearchServiceClient::DeletePackage(const DeletePackageRequest& request) const {
@@ -591,7 +628,8 @@ DeletePackageOutcome OpenSearchServiceClient::DeletePackage(const DeletePackageR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPackageID());
   };
 
-  return DeletePackageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePackageOutcome(result.GetResultWithOwnership()) : DeletePackageOutcome(std::move(result.GetError()));
 }
 
 DeleteVpcEndpointOutcome OpenSearchServiceClient::DeleteVpcEndpoint(const DeleteVpcEndpointRequest& request) const {
@@ -607,7 +645,9 @@ DeleteVpcEndpointOutcome OpenSearchServiceClient::DeleteVpcEndpoint(const Delete
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVpcEndpointId());
   };
 
-  return DeleteVpcEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteVpcEndpointOutcome(result.GetResultWithOwnership())
+                            : DeleteVpcEndpointOutcome(std::move(result.GetError()));
 }
 
 DescribeDomainOutcome OpenSearchServiceClient::DescribeDomain(const DescribeDomainRequest& request) const {
@@ -623,7 +663,8 @@ DescribeDomainOutcome OpenSearchServiceClient::DescribeDomain(const DescribeDoma
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
   };
 
-  return DescribeDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDomainOutcome(result.GetResultWithOwnership()) : DescribeDomainOutcome(std::move(result.GetError()));
 }
 
 DescribeDomainAutoTunesOutcome OpenSearchServiceClient::DescribeDomainAutoTunes(const DescribeDomainAutoTunesRequest& request) const {
@@ -640,7 +681,9 @@ DescribeDomainAutoTunesOutcome OpenSearchServiceClient::DescribeDomainAutoTunes(
     endpointResolutionOutcome.GetResult().AddPathSegments("/autoTunes");
   };
 
-  return DescribeDomainAutoTunesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDomainAutoTunesOutcome(result.GetResultWithOwnership())
+                            : DescribeDomainAutoTunesOutcome(std::move(result.GetError()));
 }
 
 DescribeDomainChangeProgressOutcome OpenSearchServiceClient::DescribeDomainChangeProgress(
@@ -658,7 +701,9 @@ DescribeDomainChangeProgressOutcome OpenSearchServiceClient::DescribeDomainChang
     endpointResolutionOutcome.GetResult().AddPathSegments("/progress");
   };
 
-  return DescribeDomainChangeProgressOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDomainChangeProgressOutcome(result.GetResultWithOwnership())
+                            : DescribeDomainChangeProgressOutcome(std::move(result.GetError()));
 }
 
 DescribeDomainConfigOutcome OpenSearchServiceClient::DescribeDomainConfig(const DescribeDomainConfigRequest& request) const {
@@ -675,7 +720,9 @@ DescribeDomainConfigOutcome OpenSearchServiceClient::DescribeDomainConfig(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/config");
   };
 
-  return DescribeDomainConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDomainConfigOutcome(result.GetResultWithOwnership())
+                            : DescribeDomainConfigOutcome(std::move(result.GetError()));
 }
 
 DescribeDomainHealthOutcome OpenSearchServiceClient::DescribeDomainHealth(const DescribeDomainHealthRequest& request) const {
@@ -692,7 +739,9 @@ DescribeDomainHealthOutcome OpenSearchServiceClient::DescribeDomainHealth(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/health");
   };
 
-  return DescribeDomainHealthOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDomainHealthOutcome(result.GetResultWithOwnership())
+                            : DescribeDomainHealthOutcome(std::move(result.GetError()));
 }
 
 DescribeDomainNodesOutcome OpenSearchServiceClient::DescribeDomainNodes(const DescribeDomainNodesRequest& request) const {
@@ -709,7 +758,9 @@ DescribeDomainNodesOutcome OpenSearchServiceClient::DescribeDomainNodes(const De
     endpointResolutionOutcome.GetResult().AddPathSegments("/nodes");
   };
 
-  return DescribeDomainNodesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDomainNodesOutcome(result.GetResultWithOwnership())
+                            : DescribeDomainNodesOutcome(std::move(result.GetError()));
 }
 
 DescribeDomainsOutcome OpenSearchServiceClient::DescribeDomains(const DescribeDomainsRequest& request) const {
@@ -718,7 +769,9 @@ DescribeDomainsOutcome OpenSearchServiceClient::DescribeDomains(const DescribeDo
     endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/domain-info");
   };
 
-  return DescribeDomainsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDomainsOutcome(result.GetResultWithOwnership())
+                            : DescribeDomainsOutcome(std::move(result.GetError()));
 }
 
 DescribeDryRunProgressOutcome OpenSearchServiceClient::DescribeDryRunProgress(const DescribeDryRunProgressRequest& request) const {
@@ -735,7 +788,9 @@ DescribeDryRunProgressOutcome OpenSearchServiceClient::DescribeDryRunProgress(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/dryRun");
   };
 
-  return DescribeDryRunProgressOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDryRunProgressOutcome(result.GetResultWithOwnership())
+                            : DescribeDryRunProgressOutcome(std::move(result.GetError()));
 }
 
 DescribeInboundConnectionsOutcome OpenSearchServiceClient::DescribeInboundConnections(
@@ -745,7 +800,9 @@ DescribeInboundConnectionsOutcome OpenSearchServiceClient::DescribeInboundConnec
     endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/cc/inboundConnection/search");
   };
 
-  return DescribeInboundConnectionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeInboundConnectionsOutcome(result.GetResultWithOwnership())
+                            : DescribeInboundConnectionsOutcome(std::move(result.GetError()));
 }
 
 DescribeInstanceTypeLimitsOutcome OpenSearchServiceClient::DescribeInstanceTypeLimits(
@@ -769,7 +826,9 @@ DescribeInstanceTypeLimitsOutcome OpenSearchServiceClient::DescribeInstanceTypeL
         OpenSearchPartitionInstanceTypeMapper::GetNameForOpenSearchPartitionInstanceType(request.GetInstanceType()));
   };
 
-  return DescribeInstanceTypeLimitsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeInstanceTypeLimitsOutcome(result.GetResultWithOwnership())
+                            : DescribeInstanceTypeLimitsOutcome(std::move(result.GetError()));
 }
 
 DescribeOutboundConnectionsOutcome OpenSearchServiceClient::DescribeOutboundConnections(
@@ -779,7 +838,9 @@ DescribeOutboundConnectionsOutcome OpenSearchServiceClient::DescribeOutboundConn
     endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/cc/outboundConnection/search");
   };
 
-  return DescribeOutboundConnectionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeOutboundConnectionsOutcome(result.GetResultWithOwnership())
+                            : DescribeOutboundConnectionsOutcome(std::move(result.GetError()));
 }
 
 DescribePackagesOutcome OpenSearchServiceClient::DescribePackages(const DescribePackagesRequest& request) const {
@@ -788,7 +849,9 @@ DescribePackagesOutcome OpenSearchServiceClient::DescribePackages(const Describe
     endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/packages/describe");
   };
 
-  return DescribePackagesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePackagesOutcome(result.GetResultWithOwnership())
+                            : DescribePackagesOutcome(std::move(result.GetError()));
 }
 
 DescribeReservedInstanceOfferingsOutcome OpenSearchServiceClient::DescribeReservedInstanceOfferings(
@@ -798,7 +861,9 @@ DescribeReservedInstanceOfferingsOutcome OpenSearchServiceClient::DescribeReserv
     endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/reservedInstanceOfferings");
   };
 
-  return DescribeReservedInstanceOfferingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeReservedInstanceOfferingsOutcome(result.GetResultWithOwnership())
+                            : DescribeReservedInstanceOfferingsOutcome(std::move(result.GetError()));
 }
 
 DescribeReservedInstancesOutcome OpenSearchServiceClient::DescribeReservedInstances(const DescribeReservedInstancesRequest& request) const {
@@ -807,7 +872,9 @@ DescribeReservedInstancesOutcome OpenSearchServiceClient::DescribeReservedInstan
     endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/reservedInstances");
   };
 
-  return DescribeReservedInstancesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeReservedInstancesOutcome(result.GetResultWithOwnership())
+                            : DescribeReservedInstancesOutcome(std::move(result.GetError()));
 }
 
 DescribeVpcEndpointsOutcome OpenSearchServiceClient::DescribeVpcEndpoints(const DescribeVpcEndpointsRequest& request) const {
@@ -816,7 +883,9 @@ DescribeVpcEndpointsOutcome OpenSearchServiceClient::DescribeVpcEndpoints(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/vpcEndpoints/describe");
   };
 
-  return DescribeVpcEndpointsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeVpcEndpointsOutcome(result.GetResultWithOwnership())
+                            : DescribeVpcEndpointsOutcome(std::move(result.GetError()));
 }
 
 DissociatePackageOutcome OpenSearchServiceClient::DissociatePackage(const DissociatePackageRequest& request) const {
@@ -838,7 +907,9 @@ DissociatePackageOutcome OpenSearchServiceClient::DissociatePackage(const Dissoc
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
   };
 
-  return DissociatePackageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DissociatePackageOutcome(result.GetResultWithOwnership())
+                            : DissociatePackageOutcome(std::move(result.GetError()));
 }
 
 DissociatePackagesOutcome OpenSearchServiceClient::DissociatePackages(const DissociatePackagesRequest& request) const {
@@ -847,7 +918,9 @@ DissociatePackagesOutcome OpenSearchServiceClient::DissociatePackages(const Diss
     endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/packages/dissociateMultiple");
   };
 
-  return DissociatePackagesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DissociatePackagesOutcome(result.GetResultWithOwnership())
+                            : DissociatePackagesOutcome(std::move(result.GetError()));
 }
 
 GetApplicationOutcome OpenSearchServiceClient::GetApplication(const GetApplicationRequest& request) const {
@@ -863,7 +936,8 @@ GetApplicationOutcome OpenSearchServiceClient::GetApplication(const GetApplicati
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetApplicationOutcome(result.GetResultWithOwnership()) : GetApplicationOutcome(std::move(result.GetError()));
 }
 
 GetCompatibleVersionsOutcome OpenSearchServiceClient::GetCompatibleVersions(const GetCompatibleVersionsRequest& request) const {
@@ -872,7 +946,9 @@ GetCompatibleVersionsOutcome OpenSearchServiceClient::GetCompatibleVersions(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/compatibleVersions");
   };
 
-  return GetCompatibleVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCompatibleVersionsOutcome(result.GetResultWithOwnership())
+                            : GetCompatibleVersionsOutcome(std::move(result.GetError()));
 }
 
 GetDataSourceOutcome OpenSearchServiceClient::GetDataSource(const GetDataSourceRequest& request) const {
@@ -895,7 +971,8 @@ GetDataSourceOutcome OpenSearchServiceClient::GetDataSource(const GetDataSourceR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return GetDataSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDataSourceOutcome(result.GetResultWithOwnership()) : GetDataSourceOutcome(std::move(result.GetError()));
 }
 
 GetDefaultApplicationSettingOutcome OpenSearchServiceClient::GetDefaultApplicationSetting(
@@ -905,7 +982,9 @@ GetDefaultApplicationSettingOutcome OpenSearchServiceClient::GetDefaultApplicati
     endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/defaultApplicationSetting");
   };
 
-  return GetDefaultApplicationSettingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDefaultApplicationSettingOutcome(result.GetResultWithOwnership())
+                            : GetDefaultApplicationSettingOutcome(std::move(result.GetError()));
 }
 
 GetDirectQueryDataSourceOutcome OpenSearchServiceClient::GetDirectQueryDataSource(const GetDirectQueryDataSourceRequest& request) const {
@@ -921,7 +1000,9 @@ GetDirectQueryDataSourceOutcome OpenSearchServiceClient::GetDirectQueryDataSourc
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataSourceName());
   };
 
-  return GetDirectQueryDataSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDirectQueryDataSourceOutcome(result.GetResultWithOwnership())
+                            : GetDirectQueryDataSourceOutcome(std::move(result.GetError()));
 }
 
 GetDomainMaintenanceStatusOutcome OpenSearchServiceClient::GetDomainMaintenanceStatus(
@@ -944,7 +1025,9 @@ GetDomainMaintenanceStatusOutcome OpenSearchServiceClient::GetDomainMaintenanceS
     endpointResolutionOutcome.GetResult().AddPathSegments("/domainMaintenance");
   };
 
-  return GetDomainMaintenanceStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDomainMaintenanceStatusOutcome(result.GetResultWithOwnership())
+                            : GetDomainMaintenanceStatusOutcome(std::move(result.GetError()));
 }
 
 GetIndexOutcome OpenSearchServiceClient::GetIndex(const GetIndexRequest& request) const {
@@ -967,7 +1050,8 @@ GetIndexOutcome OpenSearchServiceClient::GetIndex(const GetIndexRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIndexName());
   };
 
-  return GetIndexOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetIndexOutcome(result.GetResultWithOwnership()) : GetIndexOutcome(std::move(result.GetError()));
 }
 
 GetPackageVersionHistoryOutcome OpenSearchServiceClient::GetPackageVersionHistory(const GetPackageVersionHistoryRequest& request) const {
@@ -984,7 +1068,9 @@ GetPackageVersionHistoryOutcome OpenSearchServiceClient::GetPackageVersionHistor
     endpointResolutionOutcome.GetResult().AddPathSegments("/history");
   };
 
-  return GetPackageVersionHistoryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPackageVersionHistoryOutcome(result.GetResultWithOwnership())
+                            : GetPackageVersionHistoryOutcome(std::move(result.GetError()));
 }
 
 GetUpgradeHistoryOutcome OpenSearchServiceClient::GetUpgradeHistory(const GetUpgradeHistoryRequest& request) const {
@@ -1001,7 +1087,9 @@ GetUpgradeHistoryOutcome OpenSearchServiceClient::GetUpgradeHistory(const GetUpg
     endpointResolutionOutcome.GetResult().AddPathSegments("/history");
   };
 
-  return GetUpgradeHistoryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetUpgradeHistoryOutcome(result.GetResultWithOwnership())
+                            : GetUpgradeHistoryOutcome(std::move(result.GetError()));
 }
 
 GetUpgradeStatusOutcome OpenSearchServiceClient::GetUpgradeStatus(const GetUpgradeStatusRequest& request) const {
@@ -1018,7 +1106,9 @@ GetUpgradeStatusOutcome OpenSearchServiceClient::GetUpgradeStatus(const GetUpgra
     endpointResolutionOutcome.GetResult().AddPathSegments("/status");
   };
 
-  return GetUpgradeStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetUpgradeStatusOutcome(result.GetResultWithOwnership())
+                            : GetUpgradeStatusOutcome(std::move(result.GetError()));
 }
 
 ListApplicationsOutcome OpenSearchServiceClient::ListApplications(const ListApplicationsRequest& request) const {
@@ -1027,7 +1117,9 @@ ListApplicationsOutcome OpenSearchServiceClient::ListApplications(const ListAppl
     endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/list-applications");
   };
 
-  return ListApplicationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListApplicationsOutcome(result.GetResultWithOwnership())
+                            : ListApplicationsOutcome(std::move(result.GetError()));
 }
 
 ListDataSourcesOutcome OpenSearchServiceClient::ListDataSources(const ListDataSourcesRequest& request) const {
@@ -1044,7 +1136,9 @@ ListDataSourcesOutcome OpenSearchServiceClient::ListDataSources(const ListDataSo
     endpointResolutionOutcome.GetResult().AddPathSegments("/dataSource");
   };
 
-  return ListDataSourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDataSourcesOutcome(result.GetResultWithOwnership())
+                            : ListDataSourcesOutcome(std::move(result.GetError()));
 }
 
 ListDirectQueryDataSourcesOutcome OpenSearchServiceClient::ListDirectQueryDataSources(
@@ -1054,7 +1148,9 @@ ListDirectQueryDataSourcesOutcome OpenSearchServiceClient::ListDirectQueryDataSo
     endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/directQueryDataSource");
   };
 
-  return ListDirectQueryDataSourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDirectQueryDataSourcesOutcome(result.GetResultWithOwnership())
+                            : ListDirectQueryDataSourcesOutcome(std::move(result.GetError()));
 }
 
 ListDomainMaintenancesOutcome OpenSearchServiceClient::ListDomainMaintenances(const ListDomainMaintenancesRequest& request) const {
@@ -1071,7 +1167,9 @@ ListDomainMaintenancesOutcome OpenSearchServiceClient::ListDomainMaintenances(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/domainMaintenances");
   };
 
-  return ListDomainMaintenancesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDomainMaintenancesOutcome(result.GetResultWithOwnership())
+                            : ListDomainMaintenancesOutcome(std::move(result.GetError()));
 }
 
 ListDomainNamesOutcome OpenSearchServiceClient::ListDomainNames(const ListDomainNamesRequest& request) const {
@@ -1080,7 +1178,9 @@ ListDomainNamesOutcome OpenSearchServiceClient::ListDomainNames(const ListDomain
     endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/domain");
   };
 
-  return ListDomainNamesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDomainNamesOutcome(result.GetResultWithOwnership())
+                            : ListDomainNamesOutcome(std::move(result.GetError()));
 }
 
 ListDomainsForPackageOutcome OpenSearchServiceClient::ListDomainsForPackage(const ListDomainsForPackageRequest& request) const {
@@ -1097,7 +1197,9 @@ ListDomainsForPackageOutcome OpenSearchServiceClient::ListDomainsForPackage(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/domains");
   };
 
-  return ListDomainsForPackageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDomainsForPackageOutcome(result.GetResultWithOwnership())
+                            : ListDomainsForPackageOutcome(std::move(result.GetError()));
 }
 
 ListInstanceTypeDetailsOutcome OpenSearchServiceClient::ListInstanceTypeDetails(const ListInstanceTypeDetailsRequest& request) const {
@@ -1113,7 +1215,9 @@ ListInstanceTypeDetailsOutcome OpenSearchServiceClient::ListInstanceTypeDetails(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEngineVersion());
   };
 
-  return ListInstanceTypeDetailsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListInstanceTypeDetailsOutcome(result.GetResultWithOwnership())
+                            : ListInstanceTypeDetailsOutcome(std::move(result.GetError()));
 }
 
 ListPackagesForDomainOutcome OpenSearchServiceClient::ListPackagesForDomain(const ListPackagesForDomainRequest& request) const {
@@ -1130,7 +1234,9 @@ ListPackagesForDomainOutcome OpenSearchServiceClient::ListPackagesForDomain(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/packages");
   };
 
-  return ListPackagesForDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPackagesForDomainOutcome(result.GetResultWithOwnership())
+                            : ListPackagesForDomainOutcome(std::move(result.GetError()));
 }
 
 ListScheduledActionsOutcome OpenSearchServiceClient::ListScheduledActions(const ListScheduledActionsRequest& request) const {
@@ -1147,7 +1253,9 @@ ListScheduledActionsOutcome OpenSearchServiceClient::ListScheduledActions(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/scheduledActions");
   };
 
-  return ListScheduledActionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListScheduledActionsOutcome(result.GetResultWithOwnership())
+                            : ListScheduledActionsOutcome(std::move(result.GetError()));
 }
 
 ListTagsOutcome OpenSearchServiceClient::ListTags(const ListTagsRequest& request) const {
@@ -1162,7 +1270,8 @@ ListTagsOutcome OpenSearchServiceClient::ListTags(const ListTagsRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/tags/");
   };
 
-  return ListTagsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsOutcome(result.GetResultWithOwnership()) : ListTagsOutcome(std::move(result.GetError()));
 }
 
 ListVersionsOutcome OpenSearchServiceClient::ListVersions(const ListVersionsRequest& request) const {
@@ -1171,7 +1280,8 @@ ListVersionsOutcome OpenSearchServiceClient::ListVersions(const ListVersionsRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/versions");
   };
 
-  return ListVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListVersionsOutcome(result.GetResultWithOwnership()) : ListVersionsOutcome(std::move(result.GetError()));
 }
 
 ListVpcEndpointAccessOutcome OpenSearchServiceClient::ListVpcEndpointAccess(const ListVpcEndpointAccessRequest& request) const {
@@ -1188,7 +1298,9 @@ ListVpcEndpointAccessOutcome OpenSearchServiceClient::ListVpcEndpointAccess(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/listVpcEndpointAccess");
   };
 
-  return ListVpcEndpointAccessOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListVpcEndpointAccessOutcome(result.GetResultWithOwnership())
+                            : ListVpcEndpointAccessOutcome(std::move(result.GetError()));
 }
 
 ListVpcEndpointsOutcome OpenSearchServiceClient::ListVpcEndpoints(const ListVpcEndpointsRequest& request) const {
@@ -1197,7 +1309,9 @@ ListVpcEndpointsOutcome OpenSearchServiceClient::ListVpcEndpoints(const ListVpcE
     endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/vpcEndpoints");
   };
 
-  return ListVpcEndpointsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListVpcEndpointsOutcome(result.GetResultWithOwnership())
+                            : ListVpcEndpointsOutcome(std::move(result.GetError()));
 }
 
 ListVpcEndpointsForDomainOutcome OpenSearchServiceClient::ListVpcEndpointsForDomain(const ListVpcEndpointsForDomainRequest& request) const {
@@ -1214,7 +1328,9 @@ ListVpcEndpointsForDomainOutcome OpenSearchServiceClient::ListVpcEndpointsForDom
     endpointResolutionOutcome.GetResult().AddPathSegments("/vpcEndpoints");
   };
 
-  return ListVpcEndpointsForDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListVpcEndpointsForDomainOutcome(result.GetResultWithOwnership())
+                            : ListVpcEndpointsForDomainOutcome(std::move(result.GetError()));
 }
 
 PurchaseReservedInstanceOfferingOutcome OpenSearchServiceClient::PurchaseReservedInstanceOffering(
@@ -1224,7 +1340,9 @@ PurchaseReservedInstanceOfferingOutcome OpenSearchServiceClient::PurchaseReserve
     endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/purchaseReservedInstanceOffering");
   };
 
-  return PurchaseReservedInstanceOfferingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PurchaseReservedInstanceOfferingOutcome(result.GetResultWithOwnership())
+                            : PurchaseReservedInstanceOfferingOutcome(std::move(result.GetError()));
 }
 
 PutDefaultApplicationSettingOutcome OpenSearchServiceClient::PutDefaultApplicationSetting(
@@ -1234,7 +1352,9 @@ PutDefaultApplicationSettingOutcome OpenSearchServiceClient::PutDefaultApplicati
     endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/defaultApplicationSetting");
   };
 
-  return PutDefaultApplicationSettingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutDefaultApplicationSettingOutcome(result.GetResultWithOwnership())
+                            : PutDefaultApplicationSettingOutcome(std::move(result.GetError()));
 }
 
 RejectInboundConnectionOutcome OpenSearchServiceClient::RejectInboundConnection(const RejectInboundConnectionRequest& request) const {
@@ -1251,7 +1371,9 @@ RejectInboundConnectionOutcome OpenSearchServiceClient::RejectInboundConnection(
     endpointResolutionOutcome.GetResult().AddPathSegments("/reject");
   };
 
-  return RejectInboundConnectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? RejectInboundConnectionOutcome(result.GetResultWithOwnership())
+                            : RejectInboundConnectionOutcome(std::move(result.GetError()));
 }
 
 RemoveTagsOutcome OpenSearchServiceClient::RemoveTags(const RemoveTagsRequest& request) const {
@@ -1260,7 +1382,8 @@ RemoveTagsOutcome OpenSearchServiceClient::RemoveTags(const RemoveTagsRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/tags-removal");
   };
 
-  return RemoveTagsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveTagsOutcome(result.GetResultWithOwnership()) : RemoveTagsOutcome(std::move(result.GetError()));
 }
 
 RevokeVpcEndpointAccessOutcome OpenSearchServiceClient::RevokeVpcEndpointAccess(const RevokeVpcEndpointAccessRequest& request) const {
@@ -1277,7 +1400,9 @@ RevokeVpcEndpointAccessOutcome OpenSearchServiceClient::RevokeVpcEndpointAccess(
     endpointResolutionOutcome.GetResult().AddPathSegments("/revokeVpcEndpointAccess");
   };
 
-  return RevokeVpcEndpointAccessOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RevokeVpcEndpointAccessOutcome(result.GetResultWithOwnership())
+                            : RevokeVpcEndpointAccessOutcome(std::move(result.GetError()));
 }
 
 StartDomainMaintenanceOutcome OpenSearchServiceClient::StartDomainMaintenance(const StartDomainMaintenanceRequest& request) const {
@@ -1294,7 +1419,9 @@ StartDomainMaintenanceOutcome OpenSearchServiceClient::StartDomainMaintenance(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/domainMaintenance");
   };
 
-  return StartDomainMaintenanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDomainMaintenanceOutcome(result.GetResultWithOwnership())
+                            : StartDomainMaintenanceOutcome(std::move(result.GetError()));
 }
 
 StartServiceSoftwareUpdateOutcome OpenSearchServiceClient::StartServiceSoftwareUpdate(
@@ -1304,7 +1431,9 @@ StartServiceSoftwareUpdateOutcome OpenSearchServiceClient::StartServiceSoftwareU
     endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/serviceSoftwareUpdate/start");
   };
 
-  return StartServiceSoftwareUpdateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartServiceSoftwareUpdateOutcome(result.GetResultWithOwnership())
+                            : StartServiceSoftwareUpdateOutcome(std::move(result.GetError()));
 }
 
 UpdateApplicationOutcome OpenSearchServiceClient::UpdateApplication(const UpdateApplicationRequest& request) const {
@@ -1320,7 +1449,9 @@ UpdateApplicationOutcome OpenSearchServiceClient::UpdateApplication(const Update
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateApplicationOutcome(result.GetResultWithOwnership())
+                            : UpdateApplicationOutcome(std::move(result.GetError()));
 }
 
 UpdateDataSourceOutcome OpenSearchServiceClient::UpdateDataSource(const UpdateDataSourceRequest& request) const {
@@ -1343,7 +1474,9 @@ UpdateDataSourceOutcome OpenSearchServiceClient::UpdateDataSource(const UpdateDa
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return UpdateDataSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateDataSourceOutcome(result.GetResultWithOwnership())
+                            : UpdateDataSourceOutcome(std::move(result.GetError()));
 }
 
 UpdateDirectQueryDataSourceOutcome OpenSearchServiceClient::UpdateDirectQueryDataSource(
@@ -1360,7 +1493,9 @@ UpdateDirectQueryDataSourceOutcome OpenSearchServiceClient::UpdateDirectQueryDat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataSourceName());
   };
 
-  return UpdateDirectQueryDataSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateDirectQueryDataSourceOutcome(result.GetResultWithOwnership())
+                            : UpdateDirectQueryDataSourceOutcome(std::move(result.GetError()));
 }
 
 UpdateDomainConfigOutcome OpenSearchServiceClient::UpdateDomainConfig(const UpdateDomainConfigRequest& request) const {
@@ -1377,7 +1512,9 @@ UpdateDomainConfigOutcome OpenSearchServiceClient::UpdateDomainConfig(const Upda
     endpointResolutionOutcome.GetResult().AddPathSegments("/config");
   };
 
-  return UpdateDomainConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDomainConfigOutcome(result.GetResultWithOwnership())
+                            : UpdateDomainConfigOutcome(std::move(result.GetError()));
 }
 
 UpdateIndexOutcome OpenSearchServiceClient::UpdateIndex(const UpdateIndexRequest& request) const {
@@ -1400,7 +1537,8 @@ UpdateIndexOutcome OpenSearchServiceClient::UpdateIndex(const UpdateIndexRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIndexName());
   };
 
-  return UpdateIndexOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateIndexOutcome(result.GetResultWithOwnership()) : UpdateIndexOutcome(std::move(result.GetError()));
 }
 
 UpdatePackageOutcome OpenSearchServiceClient::UpdatePackage(const UpdatePackageRequest& request) const {
@@ -1409,7 +1547,8 @@ UpdatePackageOutcome OpenSearchServiceClient::UpdatePackage(const UpdatePackageR
     endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/packages/update");
   };
 
-  return UpdatePackageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePackageOutcome(result.GetResultWithOwnership()) : UpdatePackageOutcome(std::move(result.GetError()));
 }
 
 UpdatePackageScopeOutcome OpenSearchServiceClient::UpdatePackageScope(const UpdatePackageScopeRequest& request) const {
@@ -1418,7 +1557,9 @@ UpdatePackageScopeOutcome OpenSearchServiceClient::UpdatePackageScope(const Upda
     endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/packages/updateScope");
   };
 
-  return UpdatePackageScopeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePackageScopeOutcome(result.GetResultWithOwnership())
+                            : UpdatePackageScopeOutcome(std::move(result.GetError()));
 }
 
 UpdateScheduledActionOutcome OpenSearchServiceClient::UpdateScheduledAction(const UpdateScheduledActionRequest& request) const {
@@ -1435,7 +1576,9 @@ UpdateScheduledActionOutcome OpenSearchServiceClient::UpdateScheduledAction(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/scheduledAction/update");
   };
 
-  return UpdateScheduledActionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateScheduledActionOutcome(result.GetResultWithOwnership())
+                            : UpdateScheduledActionOutcome(std::move(result.GetError()));
 }
 
 UpdateVpcEndpointOutcome OpenSearchServiceClient::UpdateVpcEndpoint(const UpdateVpcEndpointRequest& request) const {
@@ -1444,7 +1587,9 @@ UpdateVpcEndpointOutcome OpenSearchServiceClient::UpdateVpcEndpoint(const Update
     endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/vpcEndpoints/update");
   };
 
-  return UpdateVpcEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateVpcEndpointOutcome(result.GetResultWithOwnership())
+                            : UpdateVpcEndpointOutcome(std::move(result.GetError()));
 }
 
 UpgradeDomainOutcome OpenSearchServiceClient::UpgradeDomain(const UpgradeDomainRequest& request) const {
@@ -1453,5 +1598,6 @@ UpgradeDomainOutcome OpenSearchServiceClient::UpgradeDomain(const UpgradeDomainR
     endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/upgradeDomain");
   };
 
-  return UpgradeDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpgradeDomainOutcome(result.GetResultWithOwnership()) : UpgradeDomainOutcome(std::move(result.GetError()));
 }

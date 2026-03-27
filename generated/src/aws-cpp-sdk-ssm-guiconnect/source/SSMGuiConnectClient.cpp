@@ -185,7 +185,9 @@ DeleteConnectionRecordingPreferencesOutcome SSMGuiConnectClient::DeleteConnectio
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteConnectionRecordingPreferences");
   };
 
-  return DeleteConnectionRecordingPreferencesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteConnectionRecordingPreferencesOutcome(result.GetResultWithOwnership())
+                            : DeleteConnectionRecordingPreferencesOutcome(std::move(result.GetError()));
 }
 
 GetConnectionRecordingPreferencesOutcome SSMGuiConnectClient::GetConnectionRecordingPreferences(
@@ -195,7 +197,9 @@ GetConnectionRecordingPreferencesOutcome SSMGuiConnectClient::GetConnectionRecor
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetConnectionRecordingPreferences");
   };
 
-  return GetConnectionRecordingPreferencesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetConnectionRecordingPreferencesOutcome(result.GetResultWithOwnership())
+                            : GetConnectionRecordingPreferencesOutcome(std::move(result.GetError()));
 }
 
 UpdateConnectionRecordingPreferencesOutcome SSMGuiConnectClient::UpdateConnectionRecordingPreferences(
@@ -205,5 +209,7 @@ UpdateConnectionRecordingPreferencesOutcome SSMGuiConnectClient::UpdateConnectio
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateConnectionRecordingPreferences");
   };
 
-  return UpdateConnectionRecordingPreferencesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateConnectionRecordingPreferencesOutcome(result.GetResultWithOwnership())
+                            : UpdateConnectionRecordingPreferencesOutcome(std::move(result.GetError()));
 }

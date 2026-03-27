@@ -216,7 +216,9 @@ AddStreamGroupLocationsOutcome GameLiftStreamsClient::AddStreamGroupLocations(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/locations");
   };
 
-  return AddStreamGroupLocationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddStreamGroupLocationsOutcome(result.GetResultWithOwnership())
+                            : AddStreamGroupLocationsOutcome(std::move(result.GetError()));
 }
 
 AssociateApplicationsOutcome GameLiftStreamsClient::AssociateApplications(const AssociateApplicationsRequest& request) const {
@@ -233,7 +235,9 @@ AssociateApplicationsOutcome GameLiftStreamsClient::AssociateApplications(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/associations");
   };
 
-  return AssociateApplicationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateApplicationsOutcome(result.GetResultWithOwnership())
+                            : AssociateApplicationsOutcome(std::move(result.GetError()));
 }
 
 CreateApplicationOutcome GameLiftStreamsClient::CreateApplication(const CreateApplicationRequest& request) const {
@@ -242,7 +246,9 @@ CreateApplicationOutcome GameLiftStreamsClient::CreateApplication(const CreateAp
     endpointResolutionOutcome.GetResult().AddPathSegments("/applications");
   };
 
-  return CreateApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateApplicationOutcome(result.GetResultWithOwnership())
+                            : CreateApplicationOutcome(std::move(result.GetError()));
 }
 
 CreateStreamGroupOutcome GameLiftStreamsClient::CreateStreamGroup(const CreateStreamGroupRequest& request) const {
@@ -251,7 +257,9 @@ CreateStreamGroupOutcome GameLiftStreamsClient::CreateStreamGroup(const CreateSt
     endpointResolutionOutcome.GetResult().AddPathSegments("/streamgroups");
   };
 
-  return CreateStreamGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateStreamGroupOutcome(result.GetResultWithOwnership())
+                            : CreateStreamGroupOutcome(std::move(result.GetError()));
 }
 
 CreateStreamSessionConnectionOutcome GameLiftStreamsClient::CreateStreamSessionConnection(
@@ -276,7 +284,9 @@ CreateStreamSessionConnectionOutcome GameLiftStreamsClient::CreateStreamSessionC
     endpointResolutionOutcome.GetResult().AddPathSegments("/connections");
   };
 
-  return CreateStreamSessionConnectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateStreamSessionConnectionOutcome(result.GetResultWithOwnership())
+                            : CreateStreamSessionConnectionOutcome(std::move(result.GetError()));
 }
 
 DeleteApplicationOutcome GameLiftStreamsClient::DeleteApplication(const DeleteApplicationRequest& request) const {
@@ -292,7 +302,9 @@ DeleteApplicationOutcome GameLiftStreamsClient::DeleteApplication(const DeleteAp
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteApplicationOutcome(result.GetResultWithOwnership())
+                            : DeleteApplicationOutcome(std::move(result.GetError()));
 }
 
 DeleteStreamGroupOutcome GameLiftStreamsClient::DeleteStreamGroup(const DeleteStreamGroupRequest& request) const {
@@ -308,7 +320,9 @@ DeleteStreamGroupOutcome GameLiftStreamsClient::DeleteStreamGroup(const DeleteSt
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteStreamGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteStreamGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteStreamGroupOutcome(std::move(result.GetError()));
 }
 
 DisassociateApplicationsOutcome GameLiftStreamsClient::DisassociateApplications(const DisassociateApplicationsRequest& request) const {
@@ -325,7 +339,9 @@ DisassociateApplicationsOutcome GameLiftStreamsClient::DisassociateApplications(
     endpointResolutionOutcome.GetResult().AddPathSegments("/disassociations");
   };
 
-  return DisassociateApplicationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateApplicationsOutcome(result.GetResultWithOwnership())
+                            : DisassociateApplicationsOutcome(std::move(result.GetError()));
 }
 
 ExportStreamSessionFilesOutcome GameLiftStreamsClient::ExportStreamSessionFiles(const ExportStreamSessionFilesRequest& request) const {
@@ -349,7 +365,9 @@ ExportStreamSessionFilesOutcome GameLiftStreamsClient::ExportStreamSessionFiles(
     endpointResolutionOutcome.GetResult().AddPathSegments("/exportfiles");
   };
 
-  return ExportStreamSessionFilesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? ExportStreamSessionFilesOutcome(result.GetResultWithOwnership())
+                            : ExportStreamSessionFilesOutcome(std::move(result.GetError()));
 }
 
 GetApplicationOutcome GameLiftStreamsClient::GetApplication(const GetApplicationRequest& request) const {
@@ -365,7 +383,8 @@ GetApplicationOutcome GameLiftStreamsClient::GetApplication(const GetApplication
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetApplicationOutcome(result.GetResultWithOwnership()) : GetApplicationOutcome(std::move(result.GetError()));
 }
 
 GetStreamGroupOutcome GameLiftStreamsClient::GetStreamGroup(const GetStreamGroupRequest& request) const {
@@ -381,7 +400,8 @@ GetStreamGroupOutcome GameLiftStreamsClient::GetStreamGroup(const GetStreamGroup
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetStreamGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetStreamGroupOutcome(result.GetResultWithOwnership()) : GetStreamGroupOutcome(std::move(result.GetError()));
 }
 
 GetStreamSessionOutcome GameLiftStreamsClient::GetStreamSession(const GetStreamSessionRequest& request) const {
@@ -404,7 +424,9 @@ GetStreamSessionOutcome GameLiftStreamsClient::GetStreamSession(const GetStreamS
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStreamSessionIdentifier());
   };
 
-  return GetStreamSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetStreamSessionOutcome(result.GetResultWithOwnership())
+                            : GetStreamSessionOutcome(std::move(result.GetError()));
 }
 
 ListApplicationsOutcome GameLiftStreamsClient::ListApplications(const ListApplicationsRequest& request) const {
@@ -413,7 +435,9 @@ ListApplicationsOutcome GameLiftStreamsClient::ListApplications(const ListApplic
     endpointResolutionOutcome.GetResult().AddPathSegments("/applications");
   };
 
-  return ListApplicationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListApplicationsOutcome(result.GetResultWithOwnership())
+                            : ListApplicationsOutcome(std::move(result.GetError()));
 }
 
 ListStreamGroupsOutcome GameLiftStreamsClient::ListStreamGroups(const ListStreamGroupsRequest& request) const {
@@ -422,7 +446,9 @@ ListStreamGroupsOutcome GameLiftStreamsClient::ListStreamGroups(const ListStream
     endpointResolutionOutcome.GetResult().AddPathSegments("/streamgroups");
   };
 
-  return ListStreamGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListStreamGroupsOutcome(result.GetResultWithOwnership())
+                            : ListStreamGroupsOutcome(std::move(result.GetError()));
 }
 
 ListStreamSessionsOutcome GameLiftStreamsClient::ListStreamSessions(const ListStreamSessionsRequest& request) const {
@@ -439,7 +465,9 @@ ListStreamSessionsOutcome GameLiftStreamsClient::ListStreamSessions(const ListSt
     endpointResolutionOutcome.GetResult().AddPathSegments("/streamsessions");
   };
 
-  return ListStreamSessionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListStreamSessionsOutcome(result.GetResultWithOwnership())
+                            : ListStreamSessionsOutcome(std::move(result.GetError()));
 }
 
 ListStreamSessionsByAccountOutcome GameLiftStreamsClient::ListStreamSessionsByAccount(
@@ -449,7 +477,9 @@ ListStreamSessionsByAccountOutcome GameLiftStreamsClient::ListStreamSessionsByAc
     endpointResolutionOutcome.GetResult().AddPathSegments("/streamsessions");
   };
 
-  return ListStreamSessionsByAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListStreamSessionsByAccountOutcome(result.GetResultWithOwnership())
+                            : ListStreamSessionsByAccountOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome GameLiftStreamsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -465,7 +495,9 @@ ListTagsForResourceOutcome GameLiftStreamsClient::ListTagsForResource(const List
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 RemoveStreamGroupLocationsOutcome GameLiftStreamsClient::RemoveStreamGroupLocations(
@@ -488,7 +520,9 @@ RemoveStreamGroupLocationsOutcome GameLiftStreamsClient::RemoveStreamGroupLocati
     endpointResolutionOutcome.GetResult().AddPathSegments("/locations");
   };
 
-  return RemoveStreamGroupLocationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? RemoveStreamGroupLocationsOutcome(result.GetResultWithOwnership())
+                            : RemoveStreamGroupLocationsOutcome(std::move(result.GetError()));
 }
 
 StartStreamSessionOutcome GameLiftStreamsClient::StartStreamSession(const StartStreamSessionRequest& request) const {
@@ -505,7 +539,9 @@ StartStreamSessionOutcome GameLiftStreamsClient::StartStreamSession(const StartS
     endpointResolutionOutcome.GetResult().AddPathSegments("/streamsessions");
   };
 
-  return StartStreamSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartStreamSessionOutcome(result.GetResultWithOwnership())
+                            : StartStreamSessionOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome GameLiftStreamsClient::TagResource(const TagResourceRequest& request) const {
@@ -521,7 +557,8 @@ TagResourceOutcome GameLiftStreamsClient::TagResource(const TagResourceRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 TerminateStreamSessionOutcome GameLiftStreamsClient::TerminateStreamSession(const TerminateStreamSessionRequest& request) const {
@@ -544,7 +581,9 @@ TerminateStreamSessionOutcome GameLiftStreamsClient::TerminateStreamSession(cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStreamSessionIdentifier());
   };
 
-  return TerminateStreamSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? TerminateStreamSessionOutcome(result.GetResultWithOwnership())
+                            : TerminateStreamSessionOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome GameLiftStreamsClient::UntagResource(const UntagResourceRequest& request) const {
@@ -565,7 +604,8 @@ UntagResourceOutcome GameLiftStreamsClient::UntagResource(const UntagResourceReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateApplicationOutcome GameLiftStreamsClient::UpdateApplication(const UpdateApplicationRequest& request) const {
@@ -581,7 +621,9 @@ UpdateApplicationOutcome GameLiftStreamsClient::UpdateApplication(const UpdateAp
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateApplicationOutcome(result.GetResultWithOwnership())
+                            : UpdateApplicationOutcome(std::move(result.GetError()));
 }
 
 UpdateStreamGroupOutcome GameLiftStreamsClient::UpdateStreamGroup(const UpdateStreamGroupRequest& request) const {
@@ -597,5 +639,7 @@ UpdateStreamGroupOutcome GameLiftStreamsClient::UpdateStreamGroup(const UpdateSt
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateStreamGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateStreamGroupOutcome(result.GetResultWithOwnership())
+                            : UpdateStreamGroupOutcome(std::move(result.GetError()));
 }

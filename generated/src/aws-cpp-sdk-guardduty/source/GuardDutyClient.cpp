@@ -273,7 +273,9 @@ AcceptAdministratorInvitationOutcome GuardDutyClient::AcceptAdministratorInvitat
     endpointResolutionOutcome.GetResult().AddPathSegments("/administrator");
   };
 
-  return AcceptAdministratorInvitationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptAdministratorInvitationOutcome(result.GetResultWithOwnership())
+                            : AcceptAdministratorInvitationOutcome(std::move(result.GetError()));
 }
 
 ArchiveFindingsOutcome GuardDutyClient::ArchiveFindings(const ArchiveFindingsRequest& request) const {
@@ -290,7 +292,9 @@ ArchiveFindingsOutcome GuardDutyClient::ArchiveFindings(const ArchiveFindingsReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/findings/archive");
   };
 
-  return ArchiveFindingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ArchiveFindingsOutcome(result.GetResultWithOwnership())
+                            : ArchiveFindingsOutcome(std::move(result.GetError()));
 }
 
 CreateDetectorOutcome GuardDutyClient::CreateDetector(const CreateDetectorRequest& request) const {
@@ -299,7 +303,8 @@ CreateDetectorOutcome GuardDutyClient::CreateDetector(const CreateDetectorReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/detector");
   };
 
-  return CreateDetectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDetectorOutcome(result.GetResultWithOwnership()) : CreateDetectorOutcome(std::move(result.GetError()));
 }
 
 CreateFilterOutcome GuardDutyClient::CreateFilter(const CreateFilterRequest& request) const {
@@ -316,7 +321,8 @@ CreateFilterOutcome GuardDutyClient::CreateFilter(const CreateFilterRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/filter");
   };
 
-  return CreateFilterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFilterOutcome(result.GetResultWithOwnership()) : CreateFilterOutcome(std::move(result.GetError()));
 }
 
 CreateIPSetOutcome GuardDutyClient::CreateIPSet(const CreateIPSetRequest& request) const {
@@ -333,7 +339,8 @@ CreateIPSetOutcome GuardDutyClient::CreateIPSet(const CreateIPSetRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/ipset");
   };
 
-  return CreateIPSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIPSetOutcome(result.GetResultWithOwnership()) : CreateIPSetOutcome(std::move(result.GetError()));
 }
 
 CreateMalwareProtectionPlanOutcome GuardDutyClient::CreateMalwareProtectionPlan(const CreateMalwareProtectionPlanRequest& request) const {
@@ -342,7 +349,9 @@ CreateMalwareProtectionPlanOutcome GuardDutyClient::CreateMalwareProtectionPlan(
     endpointResolutionOutcome.GetResult().AddPathSegments("/malware-protection-plan");
   };
 
-  return CreateMalwareProtectionPlanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMalwareProtectionPlanOutcome(result.GetResultWithOwnership())
+                            : CreateMalwareProtectionPlanOutcome(std::move(result.GetError()));
 }
 
 CreateMembersOutcome GuardDutyClient::CreateMembers(const CreateMembersRequest& request) const {
@@ -359,7 +368,8 @@ CreateMembersOutcome GuardDutyClient::CreateMembers(const CreateMembersRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/member");
   };
 
-  return CreateMembersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMembersOutcome(result.GetResultWithOwnership()) : CreateMembersOutcome(std::move(result.GetError()));
 }
 
 CreatePublishingDestinationOutcome GuardDutyClient::CreatePublishingDestination(const CreatePublishingDestinationRequest& request) const {
@@ -376,7 +386,9 @@ CreatePublishingDestinationOutcome GuardDutyClient::CreatePublishingDestination(
     endpointResolutionOutcome.GetResult().AddPathSegments("/publishingDestination");
   };
 
-  return CreatePublishingDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePublishingDestinationOutcome(result.GetResultWithOwnership())
+                            : CreatePublishingDestinationOutcome(std::move(result.GetError()));
 }
 
 CreateSampleFindingsOutcome GuardDutyClient::CreateSampleFindings(const CreateSampleFindingsRequest& request) const {
@@ -393,7 +405,9 @@ CreateSampleFindingsOutcome GuardDutyClient::CreateSampleFindings(const CreateSa
     endpointResolutionOutcome.GetResult().AddPathSegments("/findings/create");
   };
 
-  return CreateSampleFindingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSampleFindingsOutcome(result.GetResultWithOwnership())
+                            : CreateSampleFindingsOutcome(std::move(result.GetError()));
 }
 
 CreateThreatEntitySetOutcome GuardDutyClient::CreateThreatEntitySet(const CreateThreatEntitySetRequest& request) const {
@@ -410,7 +424,9 @@ CreateThreatEntitySetOutcome GuardDutyClient::CreateThreatEntitySet(const Create
     endpointResolutionOutcome.GetResult().AddPathSegments("/threatentityset");
   };
 
-  return CreateThreatEntitySetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateThreatEntitySetOutcome(result.GetResultWithOwnership())
+                            : CreateThreatEntitySetOutcome(std::move(result.GetError()));
 }
 
 CreateThreatIntelSetOutcome GuardDutyClient::CreateThreatIntelSet(const CreateThreatIntelSetRequest& request) const {
@@ -427,7 +443,9 @@ CreateThreatIntelSetOutcome GuardDutyClient::CreateThreatIntelSet(const CreateTh
     endpointResolutionOutcome.GetResult().AddPathSegments("/threatintelset");
   };
 
-  return CreateThreatIntelSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateThreatIntelSetOutcome(result.GetResultWithOwnership())
+                            : CreateThreatIntelSetOutcome(std::move(result.GetError()));
 }
 
 CreateTrustedEntitySetOutcome GuardDutyClient::CreateTrustedEntitySet(const CreateTrustedEntitySetRequest& request) const {
@@ -444,7 +462,9 @@ CreateTrustedEntitySetOutcome GuardDutyClient::CreateTrustedEntitySet(const Crea
     endpointResolutionOutcome.GetResult().AddPathSegments("/trustedentityset");
   };
 
-  return CreateTrustedEntitySetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTrustedEntitySetOutcome(result.GetResultWithOwnership())
+                            : CreateTrustedEntitySetOutcome(std::move(result.GetError()));
 }
 
 DeclineInvitationsOutcome GuardDutyClient::DeclineInvitations(const DeclineInvitationsRequest& request) const {
@@ -453,7 +473,9 @@ DeclineInvitationsOutcome GuardDutyClient::DeclineInvitations(const DeclineInvit
     endpointResolutionOutcome.GetResult().AddPathSegments("/invitation/decline");
   };
 
-  return DeclineInvitationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeclineInvitationsOutcome(result.GetResultWithOwnership())
+                            : DeclineInvitationsOutcome(std::move(result.GetError()));
 }
 
 DeleteDetectorOutcome GuardDutyClient::DeleteDetector(const DeleteDetectorRequest& request) const {
@@ -469,7 +491,8 @@ DeleteDetectorOutcome GuardDutyClient::DeleteDetector(const DeleteDetectorReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDetectorId());
   };
 
-  return DeleteDetectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDetectorOutcome(result.GetResultWithOwnership()) : DeleteDetectorOutcome(std::move(result.GetError()));
 }
 
 DeleteFilterOutcome GuardDutyClient::DeleteFilter(const DeleteFilterRequest& request) const {
@@ -492,7 +515,8 @@ DeleteFilterOutcome GuardDutyClient::DeleteFilter(const DeleteFilterRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFilterName());
   };
 
-  return DeleteFilterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteFilterOutcome(result.GetResultWithOwnership()) : DeleteFilterOutcome(std::move(result.GetError()));
 }
 
 DeleteIPSetOutcome GuardDutyClient::DeleteIPSet(const DeleteIPSetRequest& request) const {
@@ -515,7 +539,8 @@ DeleteIPSetOutcome GuardDutyClient::DeleteIPSet(const DeleteIPSetRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIpSetId());
   };
 
-  return DeleteIPSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteIPSetOutcome(result.GetResultWithOwnership()) : DeleteIPSetOutcome(std::move(result.GetError()));
 }
 
 DeleteInvitationsOutcome GuardDutyClient::DeleteInvitations(const DeleteInvitationsRequest& request) const {
@@ -524,7 +549,9 @@ DeleteInvitationsOutcome GuardDutyClient::DeleteInvitations(const DeleteInvitati
     endpointResolutionOutcome.GetResult().AddPathSegments("/invitation/delete");
   };
 
-  return DeleteInvitationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteInvitationsOutcome(result.GetResultWithOwnership())
+                            : DeleteInvitationsOutcome(std::move(result.GetError()));
 }
 
 DeleteMalwareProtectionPlanOutcome GuardDutyClient::DeleteMalwareProtectionPlan(const DeleteMalwareProtectionPlanRequest& request) const {
@@ -540,7 +567,9 @@ DeleteMalwareProtectionPlanOutcome GuardDutyClient::DeleteMalwareProtectionPlan(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMalwareProtectionPlanId());
   };
 
-  return DeleteMalwareProtectionPlanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMalwareProtectionPlanOutcome(result.GetResultWithOwnership())
+                            : DeleteMalwareProtectionPlanOutcome(std::move(result.GetError()));
 }
 
 DeleteMembersOutcome GuardDutyClient::DeleteMembers(const DeleteMembersRequest& request) const {
@@ -557,7 +586,8 @@ DeleteMembersOutcome GuardDutyClient::DeleteMembers(const DeleteMembersRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/member/delete");
   };
 
-  return DeleteMembersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteMembersOutcome(result.GetResultWithOwnership()) : DeleteMembersOutcome(std::move(result.GetError()));
 }
 
 DeletePublishingDestinationOutcome GuardDutyClient::DeletePublishingDestination(const DeletePublishingDestinationRequest& request) const {
@@ -580,7 +610,9 @@ DeletePublishingDestinationOutcome GuardDutyClient::DeletePublishingDestination(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDestinationId());
   };
 
-  return DeletePublishingDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePublishingDestinationOutcome(result.GetResultWithOwnership())
+                            : DeletePublishingDestinationOutcome(std::move(result.GetError()));
 }
 
 DeleteThreatEntitySetOutcome GuardDutyClient::DeleteThreatEntitySet(const DeleteThreatEntitySetRequest& request) const {
@@ -603,7 +635,9 @@ DeleteThreatEntitySetOutcome GuardDutyClient::DeleteThreatEntitySet(const Delete
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetThreatEntitySetId());
   };
 
-  return DeleteThreatEntitySetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteThreatEntitySetOutcome(result.GetResultWithOwnership())
+                            : DeleteThreatEntitySetOutcome(std::move(result.GetError()));
 }
 
 DeleteThreatIntelSetOutcome GuardDutyClient::DeleteThreatIntelSet(const DeleteThreatIntelSetRequest& request) const {
@@ -626,7 +660,9 @@ DeleteThreatIntelSetOutcome GuardDutyClient::DeleteThreatIntelSet(const DeleteTh
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetThreatIntelSetId());
   };
 
-  return DeleteThreatIntelSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteThreatIntelSetOutcome(result.GetResultWithOwnership())
+                            : DeleteThreatIntelSetOutcome(std::move(result.GetError()));
 }
 
 DeleteTrustedEntitySetOutcome GuardDutyClient::DeleteTrustedEntitySet(const DeleteTrustedEntitySetRequest& request) const {
@@ -649,7 +685,9 @@ DeleteTrustedEntitySetOutcome GuardDutyClient::DeleteTrustedEntitySet(const Dele
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrustedEntitySetId());
   };
 
-  return DeleteTrustedEntitySetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTrustedEntitySetOutcome(result.GetResultWithOwnership())
+                            : DeleteTrustedEntitySetOutcome(std::move(result.GetError()));
 }
 
 DescribeMalwareScansOutcome GuardDutyClient::DescribeMalwareScans(const DescribeMalwareScansRequest& request) const {
@@ -666,7 +704,9 @@ DescribeMalwareScansOutcome GuardDutyClient::DescribeMalwareScans(const Describe
     endpointResolutionOutcome.GetResult().AddPathSegments("/malware-scans");
   };
 
-  return DescribeMalwareScansOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeMalwareScansOutcome(result.GetResultWithOwnership())
+                            : DescribeMalwareScansOutcome(std::move(result.GetError()));
 }
 
 DescribeOrganizationConfigurationOutcome GuardDutyClient::DescribeOrganizationConfiguration(
@@ -684,7 +724,9 @@ DescribeOrganizationConfigurationOutcome GuardDutyClient::DescribeOrganizationCo
     endpointResolutionOutcome.GetResult().AddPathSegments("/admin");
   };
 
-  return DescribeOrganizationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeOrganizationConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeOrganizationConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribePublishingDestinationOutcome GuardDutyClient::DescribePublishingDestination(
@@ -708,7 +750,9 @@ DescribePublishingDestinationOutcome GuardDutyClient::DescribePublishingDestinat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDestinationId());
   };
 
-  return DescribePublishingDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribePublishingDestinationOutcome(result.GetResultWithOwnership())
+                            : DescribePublishingDestinationOutcome(std::move(result.GetError()));
 }
 
 DisableOrganizationAdminAccountOutcome GuardDutyClient::DisableOrganizationAdminAccount(
@@ -718,7 +762,9 @@ DisableOrganizationAdminAccountOutcome GuardDutyClient::DisableOrganizationAdmin
     endpointResolutionOutcome.GetResult().AddPathSegments("/admin/disable");
   };
 
-  return DisableOrganizationAdminAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableOrganizationAdminAccountOutcome(result.GetResultWithOwnership())
+                            : DisableOrganizationAdminAccountOutcome(std::move(result.GetError()));
 }
 
 DisassociateFromAdministratorAccountOutcome GuardDutyClient::DisassociateFromAdministratorAccount(
@@ -736,7 +782,9 @@ DisassociateFromAdministratorAccountOutcome GuardDutyClient::DisassociateFromAdm
     endpointResolutionOutcome.GetResult().AddPathSegments("/administrator/disassociate");
   };
 
-  return DisassociateFromAdministratorAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateFromAdministratorAccountOutcome(result.GetResultWithOwnership())
+                            : DisassociateFromAdministratorAccountOutcome(std::move(result.GetError()));
 }
 
 DisassociateMembersOutcome GuardDutyClient::DisassociateMembers(const DisassociateMembersRequest& request) const {
@@ -753,7 +801,9 @@ DisassociateMembersOutcome GuardDutyClient::DisassociateMembers(const Disassocia
     endpointResolutionOutcome.GetResult().AddPathSegments("/member/disassociate");
   };
 
-  return DisassociateMembersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateMembersOutcome(result.GetResultWithOwnership())
+                            : DisassociateMembersOutcome(std::move(result.GetError()));
 }
 
 EnableOrganizationAdminAccountOutcome GuardDutyClient::EnableOrganizationAdminAccount(
@@ -763,7 +813,9 @@ EnableOrganizationAdminAccountOutcome GuardDutyClient::EnableOrganizationAdminAc
     endpointResolutionOutcome.GetResult().AddPathSegments("/admin/enable");
   };
 
-  return EnableOrganizationAdminAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableOrganizationAdminAccountOutcome(result.GetResultWithOwnership())
+                            : EnableOrganizationAdminAccountOutcome(std::move(result.GetError()));
 }
 
 GetAdministratorAccountOutcome GuardDutyClient::GetAdministratorAccount(const GetAdministratorAccountRequest& request) const {
@@ -780,7 +832,9 @@ GetAdministratorAccountOutcome GuardDutyClient::GetAdministratorAccount(const Ge
     endpointResolutionOutcome.GetResult().AddPathSegments("/administrator");
   };
 
-  return GetAdministratorAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAdministratorAccountOutcome(result.GetResultWithOwnership())
+                            : GetAdministratorAccountOutcome(std::move(result.GetError()));
 }
 
 GetCoverageStatisticsOutcome GuardDutyClient::GetCoverageStatistics(const GetCoverageStatisticsRequest& request) const {
@@ -797,7 +851,9 @@ GetCoverageStatisticsOutcome GuardDutyClient::GetCoverageStatistics(const GetCov
     endpointResolutionOutcome.GetResult().AddPathSegments("/coverage/statistics");
   };
 
-  return GetCoverageStatisticsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCoverageStatisticsOutcome(result.GetResultWithOwnership())
+                            : GetCoverageStatisticsOutcome(std::move(result.GetError()));
 }
 
 GetDetectorOutcome GuardDutyClient::GetDetector(const GetDetectorRequest& request) const {
@@ -813,7 +869,8 @@ GetDetectorOutcome GuardDutyClient::GetDetector(const GetDetectorRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDetectorId());
   };
 
-  return GetDetectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDetectorOutcome(result.GetResultWithOwnership()) : GetDetectorOutcome(std::move(result.GetError()));
 }
 
 GetFilterOutcome GuardDutyClient::GetFilter(const GetFilterRequest& request) const {
@@ -836,7 +893,8 @@ GetFilterOutcome GuardDutyClient::GetFilter(const GetFilterRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFilterName());
   };
 
-  return GetFilterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFilterOutcome(result.GetResultWithOwnership()) : GetFilterOutcome(std::move(result.GetError()));
 }
 
 GetFindingsOutcome GuardDutyClient::GetFindings(const GetFindingsRequest& request) const {
@@ -853,7 +911,8 @@ GetFindingsOutcome GuardDutyClient::GetFindings(const GetFindingsRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/findings/get");
   };
 
-  return GetFindingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetFindingsOutcome(result.GetResultWithOwnership()) : GetFindingsOutcome(std::move(result.GetError()));
 }
 
 GetFindingsStatisticsOutcome GuardDutyClient::GetFindingsStatistics(const GetFindingsStatisticsRequest& request) const {
@@ -870,7 +929,9 @@ GetFindingsStatisticsOutcome GuardDutyClient::GetFindingsStatistics(const GetFin
     endpointResolutionOutcome.GetResult().AddPathSegments("/findings/statistics");
   };
 
-  return GetFindingsStatisticsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetFindingsStatisticsOutcome(result.GetResultWithOwnership())
+                            : GetFindingsStatisticsOutcome(std::move(result.GetError()));
 }
 
 GetIPSetOutcome GuardDutyClient::GetIPSet(const GetIPSetRequest& request) const {
@@ -893,7 +954,8 @@ GetIPSetOutcome GuardDutyClient::GetIPSet(const GetIPSetRequest& request) const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIpSetId());
   };
 
-  return GetIPSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetIPSetOutcome(result.GetResultWithOwnership()) : GetIPSetOutcome(std::move(result.GetError()));
 }
 
 GetInvitationsCountOutcome GuardDutyClient::GetInvitationsCount(const GetInvitationsCountRequest& request) const {
@@ -902,7 +964,9 @@ GetInvitationsCountOutcome GuardDutyClient::GetInvitationsCount(const GetInvitat
     endpointResolutionOutcome.GetResult().AddPathSegments("/invitation/count");
   };
 
-  return GetInvitationsCountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetInvitationsCountOutcome(result.GetResultWithOwnership())
+                            : GetInvitationsCountOutcome(std::move(result.GetError()));
 }
 
 GetMalwareProtectionPlanOutcome GuardDutyClient::GetMalwareProtectionPlan(const GetMalwareProtectionPlanRequest& request) const {
@@ -918,7 +982,9 @@ GetMalwareProtectionPlanOutcome GuardDutyClient::GetMalwareProtectionPlan(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMalwareProtectionPlanId());
   };
 
-  return GetMalwareProtectionPlanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMalwareProtectionPlanOutcome(result.GetResultWithOwnership())
+                            : GetMalwareProtectionPlanOutcome(std::move(result.GetError()));
 }
 
 GetMalwareScanOutcome GuardDutyClient::GetMalwareScan(const GetMalwareScanRequest& request) const {
@@ -934,7 +1000,8 @@ GetMalwareScanOutcome GuardDutyClient::GetMalwareScan(const GetMalwareScanReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetScanId());
   };
 
-  return GetMalwareScanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMalwareScanOutcome(result.GetResultWithOwnership()) : GetMalwareScanOutcome(std::move(result.GetError()));
 }
 
 GetMalwareScanSettingsOutcome GuardDutyClient::GetMalwareScanSettings(const GetMalwareScanSettingsRequest& request) const {
@@ -951,7 +1018,9 @@ GetMalwareScanSettingsOutcome GuardDutyClient::GetMalwareScanSettings(const GetM
     endpointResolutionOutcome.GetResult().AddPathSegments("/malware-scan-settings");
   };
 
-  return GetMalwareScanSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMalwareScanSettingsOutcome(result.GetResultWithOwnership())
+                            : GetMalwareScanSettingsOutcome(std::move(result.GetError()));
 }
 
 GetMemberDetectorsOutcome GuardDutyClient::GetMemberDetectors(const GetMemberDetectorsRequest& request) const {
@@ -968,7 +1037,9 @@ GetMemberDetectorsOutcome GuardDutyClient::GetMemberDetectors(const GetMemberDet
     endpointResolutionOutcome.GetResult().AddPathSegments("/member/detector/get");
   };
 
-  return GetMemberDetectorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetMemberDetectorsOutcome(result.GetResultWithOwnership())
+                            : GetMemberDetectorsOutcome(std::move(result.GetError()));
 }
 
 GetMembersOutcome GuardDutyClient::GetMembers(const GetMembersRequest& request) const {
@@ -985,7 +1056,8 @@ GetMembersOutcome GuardDutyClient::GetMembers(const GetMembersRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/member/get");
   };
 
-  return GetMembersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetMembersOutcome(result.GetResultWithOwnership()) : GetMembersOutcome(std::move(result.GetError()));
 }
 
 GetOrganizationStatisticsOutcome GuardDutyClient::GetOrganizationStatistics(const GetOrganizationStatisticsRequest& request) const {
@@ -994,7 +1066,9 @@ GetOrganizationStatisticsOutcome GuardDutyClient::GetOrganizationStatistics(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/organization/statistics");
   };
 
-  return GetOrganizationStatisticsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetOrganizationStatisticsOutcome(result.GetResultWithOwnership())
+                            : GetOrganizationStatisticsOutcome(std::move(result.GetError()));
 }
 
 GetRemainingFreeTrialDaysOutcome GuardDutyClient::GetRemainingFreeTrialDays(const GetRemainingFreeTrialDaysRequest& request) const {
@@ -1011,7 +1085,9 @@ GetRemainingFreeTrialDaysOutcome GuardDutyClient::GetRemainingFreeTrialDays(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/freeTrial/daysRemaining");
   };
 
-  return GetRemainingFreeTrialDaysOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRemainingFreeTrialDaysOutcome(result.GetResultWithOwnership())
+                            : GetRemainingFreeTrialDaysOutcome(std::move(result.GetError()));
 }
 
 GetThreatEntitySetOutcome GuardDutyClient::GetThreatEntitySet(const GetThreatEntitySetRequest& request) const {
@@ -1034,7 +1110,9 @@ GetThreatEntitySetOutcome GuardDutyClient::GetThreatEntitySet(const GetThreatEnt
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetThreatEntitySetId());
   };
 
-  return GetThreatEntitySetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetThreatEntitySetOutcome(result.GetResultWithOwnership())
+                            : GetThreatEntitySetOutcome(std::move(result.GetError()));
 }
 
 GetThreatIntelSetOutcome GuardDutyClient::GetThreatIntelSet(const GetThreatIntelSetRequest& request) const {
@@ -1057,7 +1135,9 @@ GetThreatIntelSetOutcome GuardDutyClient::GetThreatIntelSet(const GetThreatIntel
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetThreatIntelSetId());
   };
 
-  return GetThreatIntelSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetThreatIntelSetOutcome(result.GetResultWithOwnership())
+                            : GetThreatIntelSetOutcome(std::move(result.GetError()));
 }
 
 GetTrustedEntitySetOutcome GuardDutyClient::GetTrustedEntitySet(const GetTrustedEntitySetRequest& request) const {
@@ -1080,7 +1160,9 @@ GetTrustedEntitySetOutcome GuardDutyClient::GetTrustedEntitySet(const GetTrusted
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrustedEntitySetId());
   };
 
-  return GetTrustedEntitySetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTrustedEntitySetOutcome(result.GetResultWithOwnership())
+                            : GetTrustedEntitySetOutcome(std::move(result.GetError()));
 }
 
 GetUsageStatisticsOutcome GuardDutyClient::GetUsageStatistics(const GetUsageStatisticsRequest& request) const {
@@ -1097,7 +1179,9 @@ GetUsageStatisticsOutcome GuardDutyClient::GetUsageStatistics(const GetUsageStat
     endpointResolutionOutcome.GetResult().AddPathSegments("/usage/statistics");
   };
 
-  return GetUsageStatisticsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetUsageStatisticsOutcome(result.GetResultWithOwnership())
+                            : GetUsageStatisticsOutcome(std::move(result.GetError()));
 }
 
 InviteMembersOutcome GuardDutyClient::InviteMembers(const InviteMembersRequest& request) const {
@@ -1114,7 +1198,8 @@ InviteMembersOutcome GuardDutyClient::InviteMembers(const InviteMembersRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/member/invite");
   };
 
-  return InviteMembersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? InviteMembersOutcome(result.GetResultWithOwnership()) : InviteMembersOutcome(std::move(result.GetError()));
 }
 
 ListCoverageOutcome GuardDutyClient::ListCoverage(const ListCoverageRequest& request) const {
@@ -1131,7 +1216,8 @@ ListCoverageOutcome GuardDutyClient::ListCoverage(const ListCoverageRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/coverage");
   };
 
-  return ListCoverageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCoverageOutcome(result.GetResultWithOwnership()) : ListCoverageOutcome(std::move(result.GetError()));
 }
 
 ListDetectorsOutcome GuardDutyClient::ListDetectors(const ListDetectorsRequest& request) const {
@@ -1140,7 +1226,8 @@ ListDetectorsOutcome GuardDutyClient::ListDetectors(const ListDetectorsRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/detector");
   };
 
-  return ListDetectorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDetectorsOutcome(result.GetResultWithOwnership()) : ListDetectorsOutcome(std::move(result.GetError()));
 }
 
 ListFiltersOutcome GuardDutyClient::ListFilters(const ListFiltersRequest& request) const {
@@ -1157,7 +1244,8 @@ ListFiltersOutcome GuardDutyClient::ListFilters(const ListFiltersRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/filter");
   };
 
-  return ListFiltersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListFiltersOutcome(result.GetResultWithOwnership()) : ListFiltersOutcome(std::move(result.GetError()));
 }
 
 ListFindingsOutcome GuardDutyClient::ListFindings(const ListFindingsRequest& request) const {
@@ -1174,7 +1262,8 @@ ListFindingsOutcome GuardDutyClient::ListFindings(const ListFindingsRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/findings");
   };
 
-  return ListFindingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFindingsOutcome(result.GetResultWithOwnership()) : ListFindingsOutcome(std::move(result.GetError()));
 }
 
 ListIPSetsOutcome GuardDutyClient::ListIPSets(const ListIPSetsRequest& request) const {
@@ -1191,7 +1280,8 @@ ListIPSetsOutcome GuardDutyClient::ListIPSets(const ListIPSetsRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/ipset");
   };
 
-  return ListIPSetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListIPSetsOutcome(result.GetResultWithOwnership()) : ListIPSetsOutcome(std::move(result.GetError()));
 }
 
 ListInvitationsOutcome GuardDutyClient::ListInvitations(const ListInvitationsRequest& request) const {
@@ -1200,7 +1290,9 @@ ListInvitationsOutcome GuardDutyClient::ListInvitations(const ListInvitationsReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/invitation");
   };
 
-  return ListInvitationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListInvitationsOutcome(result.GetResultWithOwnership())
+                            : ListInvitationsOutcome(std::move(result.GetError()));
 }
 
 ListMalwareProtectionPlansOutcome GuardDutyClient::ListMalwareProtectionPlans(const ListMalwareProtectionPlansRequest& request) const {
@@ -1209,7 +1301,9 @@ ListMalwareProtectionPlansOutcome GuardDutyClient::ListMalwareProtectionPlans(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/malware-protection-plan");
   };
 
-  return ListMalwareProtectionPlansOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMalwareProtectionPlansOutcome(result.GetResultWithOwnership())
+                            : ListMalwareProtectionPlansOutcome(std::move(result.GetError()));
 }
 
 ListMalwareScansOutcome GuardDutyClient::ListMalwareScans(const ListMalwareScansRequest& request) const {
@@ -1218,7 +1312,9 @@ ListMalwareScansOutcome GuardDutyClient::ListMalwareScans(const ListMalwareScans
     endpointResolutionOutcome.GetResult().AddPathSegments("/malware-scan");
   };
 
-  return ListMalwareScansOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMalwareScansOutcome(result.GetResultWithOwnership())
+                            : ListMalwareScansOutcome(std::move(result.GetError()));
 }
 
 ListMembersOutcome GuardDutyClient::ListMembers(const ListMembersRequest& request) const {
@@ -1235,7 +1331,8 @@ ListMembersOutcome GuardDutyClient::ListMembers(const ListMembersRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/member");
   };
 
-  return ListMembersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMembersOutcome(result.GetResultWithOwnership()) : ListMembersOutcome(std::move(result.GetError()));
 }
 
 ListOrganizationAdminAccountsOutcome GuardDutyClient::ListOrganizationAdminAccounts(
@@ -1245,7 +1342,9 @@ ListOrganizationAdminAccountsOutcome GuardDutyClient::ListOrganizationAdminAccou
     endpointResolutionOutcome.GetResult().AddPathSegments("/admin");
   };
 
-  return ListOrganizationAdminAccountsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListOrganizationAdminAccountsOutcome(result.GetResultWithOwnership())
+                            : ListOrganizationAdminAccountsOutcome(std::move(result.GetError()));
 }
 
 ListPublishingDestinationsOutcome GuardDutyClient::ListPublishingDestinations(const ListPublishingDestinationsRequest& request) const {
@@ -1262,7 +1361,9 @@ ListPublishingDestinationsOutcome GuardDutyClient::ListPublishingDestinations(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/publishingDestination");
   };
 
-  return ListPublishingDestinationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPublishingDestinationsOutcome(result.GetResultWithOwnership())
+                            : ListPublishingDestinationsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome GuardDutyClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -1278,7 +1379,9 @@ ListTagsForResourceOutcome GuardDutyClient::ListTagsForResource(const ListTagsFo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListThreatEntitySetsOutcome GuardDutyClient::ListThreatEntitySets(const ListThreatEntitySetsRequest& request) const {
@@ -1295,7 +1398,9 @@ ListThreatEntitySetsOutcome GuardDutyClient::ListThreatEntitySets(const ListThre
     endpointResolutionOutcome.GetResult().AddPathSegments("/threatentityset");
   };
 
-  return ListThreatEntitySetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListThreatEntitySetsOutcome(result.GetResultWithOwnership())
+                            : ListThreatEntitySetsOutcome(std::move(result.GetError()));
 }
 
 ListThreatIntelSetsOutcome GuardDutyClient::ListThreatIntelSets(const ListThreatIntelSetsRequest& request) const {
@@ -1312,7 +1417,9 @@ ListThreatIntelSetsOutcome GuardDutyClient::ListThreatIntelSets(const ListThreat
     endpointResolutionOutcome.GetResult().AddPathSegments("/threatintelset");
   };
 
-  return ListThreatIntelSetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListThreatIntelSetsOutcome(result.GetResultWithOwnership())
+                            : ListThreatIntelSetsOutcome(std::move(result.GetError()));
 }
 
 ListTrustedEntitySetsOutcome GuardDutyClient::ListTrustedEntitySets(const ListTrustedEntitySetsRequest& request) const {
@@ -1329,7 +1436,9 @@ ListTrustedEntitySetsOutcome GuardDutyClient::ListTrustedEntitySets(const ListTr
     endpointResolutionOutcome.GetResult().AddPathSegments("/trustedentityset");
   };
 
-  return ListTrustedEntitySetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTrustedEntitySetsOutcome(result.GetResultWithOwnership())
+                            : ListTrustedEntitySetsOutcome(std::move(result.GetError()));
 }
 
 SendObjectMalwareScanOutcome GuardDutyClient::SendObjectMalwareScan(const SendObjectMalwareScanRequest& request) const {
@@ -1338,7 +1447,9 @@ SendObjectMalwareScanOutcome GuardDutyClient::SendObjectMalwareScan(const SendOb
     endpointResolutionOutcome.GetResult().AddPathSegments("/object-malware-scan/send");
   };
 
-  return SendObjectMalwareScanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendObjectMalwareScanOutcome(result.GetResultWithOwnership())
+                            : SendObjectMalwareScanOutcome(std::move(result.GetError()));
 }
 
 StartMalwareScanOutcome GuardDutyClient::StartMalwareScan(const StartMalwareScanRequest& request) const {
@@ -1347,7 +1458,9 @@ StartMalwareScanOutcome GuardDutyClient::StartMalwareScan(const StartMalwareScan
     endpointResolutionOutcome.GetResult().AddPathSegments("/malware-scan/start");
   };
 
-  return StartMalwareScanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartMalwareScanOutcome(result.GetResultWithOwnership())
+                            : StartMalwareScanOutcome(std::move(result.GetError()));
 }
 
 StartMonitoringMembersOutcome GuardDutyClient::StartMonitoringMembers(const StartMonitoringMembersRequest& request) const {
@@ -1364,7 +1477,9 @@ StartMonitoringMembersOutcome GuardDutyClient::StartMonitoringMembers(const Star
     endpointResolutionOutcome.GetResult().AddPathSegments("/member/start");
   };
 
-  return StartMonitoringMembersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartMonitoringMembersOutcome(result.GetResultWithOwnership())
+                            : StartMonitoringMembersOutcome(std::move(result.GetError()));
 }
 
 StopMonitoringMembersOutcome GuardDutyClient::StopMonitoringMembers(const StopMonitoringMembersRequest& request) const {
@@ -1381,7 +1496,9 @@ StopMonitoringMembersOutcome GuardDutyClient::StopMonitoringMembers(const StopMo
     endpointResolutionOutcome.GetResult().AddPathSegments("/member/stop");
   };
 
-  return StopMonitoringMembersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopMonitoringMembersOutcome(result.GetResultWithOwnership())
+                            : StopMonitoringMembersOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome GuardDutyClient::TagResource(const TagResourceRequest& request) const {
@@ -1397,7 +1514,8 @@ TagResourceOutcome GuardDutyClient::TagResource(const TagResourceRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UnarchiveFindingsOutcome GuardDutyClient::UnarchiveFindings(const UnarchiveFindingsRequest& request) const {
@@ -1414,7 +1532,9 @@ UnarchiveFindingsOutcome GuardDutyClient::UnarchiveFindings(const UnarchiveFindi
     endpointResolutionOutcome.GetResult().AddPathSegments("/findings/unarchive");
   };
 
-  return UnarchiveFindingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UnarchiveFindingsOutcome(result.GetResultWithOwnership())
+                            : UnarchiveFindingsOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome GuardDutyClient::UntagResource(const UntagResourceRequest& request) const {
@@ -1435,7 +1555,8 @@ UntagResourceOutcome GuardDutyClient::UntagResource(const UntagResourceRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateDetectorOutcome GuardDutyClient::UpdateDetector(const UpdateDetectorRequest& request) const {
@@ -1451,7 +1572,8 @@ UpdateDetectorOutcome GuardDutyClient::UpdateDetector(const UpdateDetectorReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDetectorId());
   };
 
-  return UpdateDetectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDetectorOutcome(result.GetResultWithOwnership()) : UpdateDetectorOutcome(std::move(result.GetError()));
 }
 
 UpdateFilterOutcome GuardDutyClient::UpdateFilter(const UpdateFilterRequest& request) const {
@@ -1474,7 +1596,8 @@ UpdateFilterOutcome GuardDutyClient::UpdateFilter(const UpdateFilterRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFilterName());
   };
 
-  return UpdateFilterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateFilterOutcome(result.GetResultWithOwnership()) : UpdateFilterOutcome(std::move(result.GetError()));
 }
 
 UpdateFindingsFeedbackOutcome GuardDutyClient::UpdateFindingsFeedback(const UpdateFindingsFeedbackRequest& request) const {
@@ -1491,7 +1614,9 @@ UpdateFindingsFeedbackOutcome GuardDutyClient::UpdateFindingsFeedback(const Upda
     endpointResolutionOutcome.GetResult().AddPathSegments("/findings/feedback");
   };
 
-  return UpdateFindingsFeedbackOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateFindingsFeedbackOutcome(result.GetResultWithOwnership())
+                            : UpdateFindingsFeedbackOutcome(std::move(result.GetError()));
 }
 
 UpdateIPSetOutcome GuardDutyClient::UpdateIPSet(const UpdateIPSetRequest& request) const {
@@ -1514,7 +1639,8 @@ UpdateIPSetOutcome GuardDutyClient::UpdateIPSet(const UpdateIPSetRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIpSetId());
   };
 
-  return UpdateIPSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateIPSetOutcome(result.GetResultWithOwnership()) : UpdateIPSetOutcome(std::move(result.GetError()));
 }
 
 UpdateMalwareProtectionPlanOutcome GuardDutyClient::UpdateMalwareProtectionPlan(const UpdateMalwareProtectionPlanRequest& request) const {
@@ -1530,7 +1656,9 @@ UpdateMalwareProtectionPlanOutcome GuardDutyClient::UpdateMalwareProtectionPlan(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMalwareProtectionPlanId());
   };
 
-  return UpdateMalwareProtectionPlanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateMalwareProtectionPlanOutcome(result.GetResultWithOwnership())
+                            : UpdateMalwareProtectionPlanOutcome(std::move(result.GetError()));
 }
 
 UpdateMalwareScanSettingsOutcome GuardDutyClient::UpdateMalwareScanSettings(const UpdateMalwareScanSettingsRequest& request) const {
@@ -1547,7 +1675,9 @@ UpdateMalwareScanSettingsOutcome GuardDutyClient::UpdateMalwareScanSettings(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/malware-scan-settings");
   };
 
-  return UpdateMalwareScanSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateMalwareScanSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdateMalwareScanSettingsOutcome(std::move(result.GetError()));
 }
 
 UpdateMemberDetectorsOutcome GuardDutyClient::UpdateMemberDetectors(const UpdateMemberDetectorsRequest& request) const {
@@ -1564,7 +1694,9 @@ UpdateMemberDetectorsOutcome GuardDutyClient::UpdateMemberDetectors(const Update
     endpointResolutionOutcome.GetResult().AddPathSegments("/member/detector/update");
   };
 
-  return UpdateMemberDetectorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateMemberDetectorsOutcome(result.GetResultWithOwnership())
+                            : UpdateMemberDetectorsOutcome(std::move(result.GetError()));
 }
 
 UpdateOrganizationConfigurationOutcome GuardDutyClient::UpdateOrganizationConfiguration(
@@ -1582,7 +1714,9 @@ UpdateOrganizationConfigurationOutcome GuardDutyClient::UpdateOrganizationConfig
     endpointResolutionOutcome.GetResult().AddPathSegments("/admin");
   };
 
-  return UpdateOrganizationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateOrganizationConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateOrganizationConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdatePublishingDestinationOutcome GuardDutyClient::UpdatePublishingDestination(const UpdatePublishingDestinationRequest& request) const {
@@ -1605,7 +1739,9 @@ UpdatePublishingDestinationOutcome GuardDutyClient::UpdatePublishingDestination(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDestinationId());
   };
 
-  return UpdatePublishingDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePublishingDestinationOutcome(result.GetResultWithOwnership())
+                            : UpdatePublishingDestinationOutcome(std::move(result.GetError()));
 }
 
 UpdateThreatEntitySetOutcome GuardDutyClient::UpdateThreatEntitySet(const UpdateThreatEntitySetRequest& request) const {
@@ -1628,7 +1764,9 @@ UpdateThreatEntitySetOutcome GuardDutyClient::UpdateThreatEntitySet(const Update
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetThreatEntitySetId());
   };
 
-  return UpdateThreatEntitySetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateThreatEntitySetOutcome(result.GetResultWithOwnership())
+                            : UpdateThreatEntitySetOutcome(std::move(result.GetError()));
 }
 
 UpdateThreatIntelSetOutcome GuardDutyClient::UpdateThreatIntelSet(const UpdateThreatIntelSetRequest& request) const {
@@ -1651,7 +1789,9 @@ UpdateThreatIntelSetOutcome GuardDutyClient::UpdateThreatIntelSet(const UpdateTh
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetThreatIntelSetId());
   };
 
-  return UpdateThreatIntelSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateThreatIntelSetOutcome(result.GetResultWithOwnership())
+                            : UpdateThreatIntelSetOutcome(std::move(result.GetError()));
 }
 
 UpdateTrustedEntitySetOutcome GuardDutyClient::UpdateTrustedEntitySet(const UpdateTrustedEntitySetRequest& request) const {
@@ -1674,5 +1814,7 @@ UpdateTrustedEntitySetOutcome GuardDutyClient::UpdateTrustedEntitySet(const Upda
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrustedEntitySetId());
   };
 
-  return UpdateTrustedEntitySetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTrustedEntitySetOutcome(result.GetResultWithOwnership())
+                            : UpdateTrustedEntitySetOutcome(std::move(result.GetError()));
 }

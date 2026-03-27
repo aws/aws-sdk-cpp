@@ -297,7 +297,9 @@ AssociateBackupVaultMpaApprovalTeamOutcome BackupClient::AssociateBackupVaultMpa
     endpointResolutionOutcome.GetResult().AddPathSegments("/mpaApprovalTeam");
   };
 
-  return AssociateBackupVaultMpaApprovalTeamOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateBackupVaultMpaApprovalTeamOutcome(result.GetResultWithOwnership())
+                            : AssociateBackupVaultMpaApprovalTeamOutcome(std::move(result.GetError()));
 }
 
 CancelLegalHoldOutcome BackupClient::CancelLegalHold(const CancelLegalHoldRequest& request) const {
@@ -318,7 +320,9 @@ CancelLegalHoldOutcome BackupClient::CancelLegalHold(const CancelLegalHoldReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLegalHoldId());
   };
 
-  return CancelLegalHoldOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? CancelLegalHoldOutcome(result.GetResultWithOwnership())
+                            : CancelLegalHoldOutcome(std::move(result.GetError()));
 }
 
 CreateBackupPlanOutcome BackupClient::CreateBackupPlan(const CreateBackupPlanRequest& request) const {
@@ -327,7 +331,9 @@ CreateBackupPlanOutcome BackupClient::CreateBackupPlan(const CreateBackupPlanReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/backup/plans/");
   };
 
-  return CreateBackupPlanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateBackupPlanOutcome(result.GetResultWithOwnership())
+                            : CreateBackupPlanOutcome(std::move(result.GetError()));
 }
 
 CreateBackupSelectionOutcome BackupClient::CreateBackupSelection(const CreateBackupSelectionRequest& request) const {
@@ -344,7 +350,9 @@ CreateBackupSelectionOutcome BackupClient::CreateBackupSelection(const CreateBac
     endpointResolutionOutcome.GetResult().AddPathSegments("/selections/");
   };
 
-  return CreateBackupSelectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateBackupSelectionOutcome(result.GetResultWithOwnership())
+                            : CreateBackupSelectionOutcome(std::move(result.GetError()));
 }
 
 CreateBackupVaultOutcome BackupClient::CreateBackupVault(const CreateBackupVaultRequest& request) const {
@@ -360,7 +368,9 @@ CreateBackupVaultOutcome BackupClient::CreateBackupVault(const CreateBackupVault
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackupVaultName());
   };
 
-  return CreateBackupVaultOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateBackupVaultOutcome(result.GetResultWithOwnership())
+                            : CreateBackupVaultOutcome(std::move(result.GetError()));
 }
 
 CreateFrameworkOutcome BackupClient::CreateFramework(const CreateFrameworkRequest& request) const {
@@ -369,7 +379,9 @@ CreateFrameworkOutcome BackupClient::CreateFramework(const CreateFrameworkReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/audit/frameworks");
   };
 
-  return CreateFrameworkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFrameworkOutcome(result.GetResultWithOwnership())
+                            : CreateFrameworkOutcome(std::move(result.GetError()));
 }
 
 CreateLegalHoldOutcome BackupClient::CreateLegalHold(const CreateLegalHoldRequest& request) const {
@@ -378,7 +390,9 @@ CreateLegalHoldOutcome BackupClient::CreateLegalHold(const CreateLegalHoldReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/legal-holds/");
   };
 
-  return CreateLegalHoldOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLegalHoldOutcome(result.GetResultWithOwnership())
+                            : CreateLegalHoldOutcome(std::move(result.GetError()));
 }
 
 CreateLogicallyAirGappedBackupVaultOutcome BackupClient::CreateLogicallyAirGappedBackupVault(
@@ -395,7 +409,9 @@ CreateLogicallyAirGappedBackupVaultOutcome BackupClient::CreateLogicallyAirGappe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackupVaultName());
   };
 
-  return CreateLogicallyAirGappedBackupVaultOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateLogicallyAirGappedBackupVaultOutcome(result.GetResultWithOwnership())
+                            : CreateLogicallyAirGappedBackupVaultOutcome(std::move(result.GetError()));
 }
 
 CreateReportPlanOutcome BackupClient::CreateReportPlan(const CreateReportPlanRequest& request) const {
@@ -404,7 +420,9 @@ CreateReportPlanOutcome BackupClient::CreateReportPlan(const CreateReportPlanReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/audit/report-plans");
   };
 
-  return CreateReportPlanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateReportPlanOutcome(result.GetResultWithOwnership())
+                            : CreateReportPlanOutcome(std::move(result.GetError()));
 }
 
 CreateRestoreAccessBackupVaultOutcome BackupClient::CreateRestoreAccessBackupVault(
@@ -414,7 +432,9 @@ CreateRestoreAccessBackupVaultOutcome BackupClient::CreateRestoreAccessBackupVau
     endpointResolutionOutcome.GetResult().AddPathSegments("/restore-access-backup-vaults");
   };
 
-  return CreateRestoreAccessBackupVaultOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateRestoreAccessBackupVaultOutcome(result.GetResultWithOwnership())
+                            : CreateRestoreAccessBackupVaultOutcome(std::move(result.GetError()));
 }
 
 CreateRestoreTestingPlanOutcome BackupClient::CreateRestoreTestingPlan(const CreateRestoreTestingPlanRequest& request) const {
@@ -423,7 +443,9 @@ CreateRestoreTestingPlanOutcome BackupClient::CreateRestoreTestingPlan(const Cre
     endpointResolutionOutcome.GetResult().AddPathSegments("/restore-testing/plans");
   };
 
-  return CreateRestoreTestingPlanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateRestoreTestingPlanOutcome(result.GetResultWithOwnership())
+                            : CreateRestoreTestingPlanOutcome(std::move(result.GetError()));
 }
 
 CreateRestoreTestingSelectionOutcome BackupClient::CreateRestoreTestingSelection(
@@ -441,7 +463,9 @@ CreateRestoreTestingSelectionOutcome BackupClient::CreateRestoreTestingSelection
     endpointResolutionOutcome.GetResult().AddPathSegments("/selections");
   };
 
-  return CreateRestoreTestingSelectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateRestoreTestingSelectionOutcome(result.GetResultWithOwnership())
+                            : CreateRestoreTestingSelectionOutcome(std::move(result.GetError()));
 }
 
 CreateTieringConfigurationOutcome BackupClient::CreateTieringConfiguration(const CreateTieringConfigurationRequest& request) const {
@@ -450,7 +474,9 @@ CreateTieringConfigurationOutcome BackupClient::CreateTieringConfiguration(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/tiering-configurations");
   };
 
-  return CreateTieringConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateTieringConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateTieringConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteBackupPlanOutcome BackupClient::DeleteBackupPlan(const DeleteBackupPlanRequest& request) const {
@@ -466,7 +492,9 @@ DeleteBackupPlanOutcome BackupClient::DeleteBackupPlan(const DeleteBackupPlanReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackupPlanId());
   };
 
-  return DeleteBackupPlanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBackupPlanOutcome(result.GetResultWithOwnership())
+                            : DeleteBackupPlanOutcome(std::move(result.GetError()));
 }
 
 DeleteBackupSelectionOutcome BackupClient::DeleteBackupSelection(const DeleteBackupSelectionRequest& request) const {
@@ -489,7 +517,9 @@ DeleteBackupSelectionOutcome BackupClient::DeleteBackupSelection(const DeleteBac
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSelectionId());
   };
 
-  return DeleteBackupSelectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBackupSelectionOutcome(result.GetResultWithOwnership())
+                            : DeleteBackupSelectionOutcome(std::move(result.GetError()));
 }
 
 DeleteBackupVaultOutcome BackupClient::DeleteBackupVault(const DeleteBackupVaultRequest& request) const {
@@ -505,7 +535,9 @@ DeleteBackupVaultOutcome BackupClient::DeleteBackupVault(const DeleteBackupVault
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackupVaultName());
   };
 
-  return DeleteBackupVaultOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBackupVaultOutcome(result.GetResultWithOwnership())
+                            : DeleteBackupVaultOutcome(std::move(result.GetError()));
 }
 
 DeleteBackupVaultAccessPolicyOutcome BackupClient::DeleteBackupVaultAccessPolicy(
@@ -523,7 +555,9 @@ DeleteBackupVaultAccessPolicyOutcome BackupClient::DeleteBackupVaultAccessPolicy
     endpointResolutionOutcome.GetResult().AddPathSegments("/access-policy");
   };
 
-  return DeleteBackupVaultAccessPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBackupVaultAccessPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteBackupVaultAccessPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteBackupVaultLockConfigurationOutcome BackupClient::DeleteBackupVaultLockConfiguration(
@@ -541,7 +575,9 @@ DeleteBackupVaultLockConfigurationOutcome BackupClient::DeleteBackupVaultLockCon
     endpointResolutionOutcome.GetResult().AddPathSegments("/vault-lock");
   };
 
-  return DeleteBackupVaultLockConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBackupVaultLockConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteBackupVaultLockConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteBackupVaultNotificationsOutcome BackupClient::DeleteBackupVaultNotifications(
@@ -559,7 +595,9 @@ DeleteBackupVaultNotificationsOutcome BackupClient::DeleteBackupVaultNotificatio
     endpointResolutionOutcome.GetResult().AddPathSegments("/notification-configuration");
   };
 
-  return DeleteBackupVaultNotificationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBackupVaultNotificationsOutcome(result.GetResultWithOwnership())
+                            : DeleteBackupVaultNotificationsOutcome(std::move(result.GetError()));
 }
 
 DeleteFrameworkOutcome BackupClient::DeleteFramework(const DeleteFrameworkRequest& request) const {
@@ -575,7 +613,9 @@ DeleteFrameworkOutcome BackupClient::DeleteFramework(const DeleteFrameworkReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFrameworkName());
   };
 
-  return DeleteFrameworkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteFrameworkOutcome(result.GetResultWithOwnership())
+                            : DeleteFrameworkOutcome(std::move(result.GetError()));
 }
 
 DeleteRecoveryPointOutcome BackupClient::DeleteRecoveryPoint(const DeleteRecoveryPointRequest& request) const {
@@ -598,7 +638,9 @@ DeleteRecoveryPointOutcome BackupClient::DeleteRecoveryPoint(const DeleteRecover
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecoveryPointArn());
   };
 
-  return DeleteRecoveryPointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRecoveryPointOutcome(result.GetResultWithOwnership())
+                            : DeleteRecoveryPointOutcome(std::move(result.GetError()));
 }
 
 DeleteReportPlanOutcome BackupClient::DeleteReportPlan(const DeleteReportPlanRequest& request) const {
@@ -614,7 +656,9 @@ DeleteReportPlanOutcome BackupClient::DeleteReportPlan(const DeleteReportPlanReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReportPlanName());
   };
 
-  return DeleteReportPlanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteReportPlanOutcome(result.GetResultWithOwnership())
+                            : DeleteReportPlanOutcome(std::move(result.GetError()));
 }
 
 DeleteRestoreTestingPlanOutcome BackupClient::DeleteRestoreTestingPlan(const DeleteRestoreTestingPlanRequest& request) const {
@@ -630,7 +674,9 @@ DeleteRestoreTestingPlanOutcome BackupClient::DeleteRestoreTestingPlan(const Del
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestoreTestingPlanName());
   };
 
-  return DeleteRestoreTestingPlanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRestoreTestingPlanOutcome(result.GetResultWithOwnership())
+                            : DeleteRestoreTestingPlanOutcome(std::move(result.GetError()));
 }
 
 DeleteRestoreTestingSelectionOutcome BackupClient::DeleteRestoreTestingSelection(
@@ -654,7 +700,9 @@ DeleteRestoreTestingSelectionOutcome BackupClient::DeleteRestoreTestingSelection
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestoreTestingSelectionName());
   };
 
-  return DeleteRestoreTestingSelectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRestoreTestingSelectionOutcome(result.GetResultWithOwnership())
+                            : DeleteRestoreTestingSelectionOutcome(std::move(result.GetError()));
 }
 
 DeleteTieringConfigurationOutcome BackupClient::DeleteTieringConfiguration(const DeleteTieringConfigurationRequest& request) const {
@@ -670,7 +718,9 @@ DeleteTieringConfigurationOutcome BackupClient::DeleteTieringConfiguration(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTieringConfigurationName());
   };
 
-  return DeleteTieringConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTieringConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteTieringConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeBackupJobOutcome BackupClient::DescribeBackupJob(const DescribeBackupJobRequest& request) const {
@@ -686,7 +736,9 @@ DescribeBackupJobOutcome BackupClient::DescribeBackupJob(const DescribeBackupJob
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackupJobId());
   };
 
-  return DescribeBackupJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeBackupJobOutcome(result.GetResultWithOwnership())
+                            : DescribeBackupJobOutcome(std::move(result.GetError()));
 }
 
 DescribeBackupVaultOutcome BackupClient::DescribeBackupVault(const DescribeBackupVaultRequest& request) const {
@@ -702,7 +754,9 @@ DescribeBackupVaultOutcome BackupClient::DescribeBackupVault(const DescribeBacku
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackupVaultName());
   };
 
-  return DescribeBackupVaultOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeBackupVaultOutcome(result.GetResultWithOwnership())
+                            : DescribeBackupVaultOutcome(std::move(result.GetError()));
 }
 
 DescribeCopyJobOutcome BackupClient::DescribeCopyJob(const DescribeCopyJobRequest& request) const {
@@ -718,7 +772,9 @@ DescribeCopyJobOutcome BackupClient::DescribeCopyJob(const DescribeCopyJobReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCopyJobId());
   };
 
-  return DescribeCopyJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeCopyJobOutcome(result.GetResultWithOwnership())
+                            : DescribeCopyJobOutcome(std::move(result.GetError()));
 }
 
 DescribeFrameworkOutcome BackupClient::DescribeFramework(const DescribeFrameworkRequest& request) const {
@@ -734,7 +790,9 @@ DescribeFrameworkOutcome BackupClient::DescribeFramework(const DescribeFramework
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFrameworkName());
   };
 
-  return DescribeFrameworkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeFrameworkOutcome(result.GetResultWithOwnership())
+                            : DescribeFrameworkOutcome(std::move(result.GetError()));
 }
 
 DescribeGlobalSettingsOutcome BackupClient::DescribeGlobalSettings(const DescribeGlobalSettingsRequest& request) const {
@@ -743,7 +801,9 @@ DescribeGlobalSettingsOutcome BackupClient::DescribeGlobalSettings(const Describ
     endpointResolutionOutcome.GetResult().AddPathSegments("/global-settings");
   };
 
-  return DescribeGlobalSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeGlobalSettingsOutcome(result.GetResultWithOwnership())
+                            : DescribeGlobalSettingsOutcome(std::move(result.GetError()));
 }
 
 DescribeProtectedResourceOutcome BackupClient::DescribeProtectedResource(const DescribeProtectedResourceRequest& request) const {
@@ -759,7 +819,9 @@ DescribeProtectedResourceOutcome BackupClient::DescribeProtectedResource(const D
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return DescribeProtectedResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeProtectedResourceOutcome(result.GetResultWithOwnership())
+                            : DescribeProtectedResourceOutcome(std::move(result.GetError()));
 }
 
 DescribeRecoveryPointOutcome BackupClient::DescribeRecoveryPoint(const DescribeRecoveryPointRequest& request) const {
@@ -782,7 +844,9 @@ DescribeRecoveryPointOutcome BackupClient::DescribeRecoveryPoint(const DescribeR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecoveryPointArn());
   };
 
-  return DescribeRecoveryPointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeRecoveryPointOutcome(result.GetResultWithOwnership())
+                            : DescribeRecoveryPointOutcome(std::move(result.GetError()));
 }
 
 DescribeRegionSettingsOutcome BackupClient::DescribeRegionSettings(const DescribeRegionSettingsRequest& request) const {
@@ -791,7 +855,9 @@ DescribeRegionSettingsOutcome BackupClient::DescribeRegionSettings(const Describ
     endpointResolutionOutcome.GetResult().AddPathSegments("/account-settings");
   };
 
-  return DescribeRegionSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeRegionSettingsOutcome(result.GetResultWithOwnership())
+                            : DescribeRegionSettingsOutcome(std::move(result.GetError()));
 }
 
 DescribeReportJobOutcome BackupClient::DescribeReportJob(const DescribeReportJobRequest& request) const {
@@ -807,7 +873,9 @@ DescribeReportJobOutcome BackupClient::DescribeReportJob(const DescribeReportJob
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReportJobId());
   };
 
-  return DescribeReportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeReportJobOutcome(result.GetResultWithOwnership())
+                            : DescribeReportJobOutcome(std::move(result.GetError()));
 }
 
 DescribeReportPlanOutcome BackupClient::DescribeReportPlan(const DescribeReportPlanRequest& request) const {
@@ -823,7 +891,9 @@ DescribeReportPlanOutcome BackupClient::DescribeReportPlan(const DescribeReportP
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReportPlanName());
   };
 
-  return DescribeReportPlanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeReportPlanOutcome(result.GetResultWithOwnership())
+                            : DescribeReportPlanOutcome(std::move(result.GetError()));
 }
 
 DescribeRestoreJobOutcome BackupClient::DescribeRestoreJob(const DescribeRestoreJobRequest& request) const {
@@ -839,7 +909,9 @@ DescribeRestoreJobOutcome BackupClient::DescribeRestoreJob(const DescribeRestore
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestoreJobId());
   };
 
-  return DescribeRestoreJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeRestoreJobOutcome(result.GetResultWithOwnership())
+                            : DescribeRestoreJobOutcome(std::move(result.GetError()));
 }
 
 DescribeScanJobOutcome BackupClient::DescribeScanJob(const DescribeScanJobRequest& request) const {
@@ -855,7 +927,9 @@ DescribeScanJobOutcome BackupClient::DescribeScanJob(const DescribeScanJobReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetScanJobId());
   };
 
-  return DescribeScanJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeScanJobOutcome(result.GetResultWithOwnership())
+                            : DescribeScanJobOutcome(std::move(result.GetError()));
 }
 
 DisassociateBackupVaultMpaApprovalTeamOutcome BackupClient::DisassociateBackupVaultMpaApprovalTeam(
@@ -876,7 +950,9 @@ DisassociateBackupVaultMpaApprovalTeamOutcome BackupClient::DisassociateBackupVa
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return DisassociateBackupVaultMpaApprovalTeamOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateBackupVaultMpaApprovalTeamOutcome(result.GetResultWithOwnership())
+                            : DisassociateBackupVaultMpaApprovalTeamOutcome(std::move(result.GetError()));
 }
 
 DisassociateRecoveryPointOutcome BackupClient::DisassociateRecoveryPoint(const DisassociateRecoveryPointRequest& request) const {
@@ -900,7 +976,9 @@ DisassociateRecoveryPointOutcome BackupClient::DisassociateRecoveryPoint(const D
     endpointResolutionOutcome.GetResult().AddPathSegments("/disassociate");
   };
 
-  return DisassociateRecoveryPointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateRecoveryPointOutcome(result.GetResultWithOwnership())
+                            : DisassociateRecoveryPointOutcome(std::move(result.GetError()));
 }
 
 DisassociateRecoveryPointFromParentOutcome BackupClient::DisassociateRecoveryPointFromParent(
@@ -925,7 +1003,9 @@ DisassociateRecoveryPointFromParentOutcome BackupClient::DisassociateRecoveryPoi
     endpointResolutionOutcome.GetResult().AddPathSegments("/parentAssociation");
   };
 
-  return DisassociateRecoveryPointFromParentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateRecoveryPointFromParentOutcome(result.GetResultWithOwnership())
+                            : DisassociateRecoveryPointFromParentOutcome(std::move(result.GetError()));
 }
 
 ExportBackupPlanTemplateOutcome BackupClient::ExportBackupPlanTemplate(const ExportBackupPlanTemplateRequest& request) const {
@@ -942,7 +1022,9 @@ ExportBackupPlanTemplateOutcome BackupClient::ExportBackupPlanTemplate(const Exp
     endpointResolutionOutcome.GetResult().AddPathSegments("/toTemplate/");
   };
 
-  return ExportBackupPlanTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ExportBackupPlanTemplateOutcome(result.GetResultWithOwnership())
+                            : ExportBackupPlanTemplateOutcome(std::move(result.GetError()));
 }
 
 GetBackupPlanOutcome BackupClient::GetBackupPlan(const GetBackupPlanRequest& request) const {
@@ -958,7 +1040,8 @@ GetBackupPlanOutcome BackupClient::GetBackupPlan(const GetBackupPlanRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackupPlanId());
   };
 
-  return GetBackupPlanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBackupPlanOutcome(result.GetResultWithOwnership()) : GetBackupPlanOutcome(std::move(result.GetError()));
 }
 
 GetBackupPlanFromJSONOutcome BackupClient::GetBackupPlanFromJSON(const GetBackupPlanFromJSONRequest& request) const {
@@ -967,7 +1050,9 @@ GetBackupPlanFromJSONOutcome BackupClient::GetBackupPlanFromJSON(const GetBackup
     endpointResolutionOutcome.GetResult().AddPathSegments("/backup/template/json/toPlan");
   };
 
-  return GetBackupPlanFromJSONOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetBackupPlanFromJSONOutcome(result.GetResultWithOwnership())
+                            : GetBackupPlanFromJSONOutcome(std::move(result.GetError()));
 }
 
 GetBackupPlanFromTemplateOutcome BackupClient::GetBackupPlanFromTemplate(const GetBackupPlanFromTemplateRequest& request) const {
@@ -984,7 +1069,9 @@ GetBackupPlanFromTemplateOutcome BackupClient::GetBackupPlanFromTemplate(const G
     endpointResolutionOutcome.GetResult().AddPathSegments("/toPlan");
   };
 
-  return GetBackupPlanFromTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBackupPlanFromTemplateOutcome(result.GetResultWithOwnership())
+                            : GetBackupPlanFromTemplateOutcome(std::move(result.GetError()));
 }
 
 GetBackupSelectionOutcome BackupClient::GetBackupSelection(const GetBackupSelectionRequest& request) const {
@@ -1007,7 +1094,9 @@ GetBackupSelectionOutcome BackupClient::GetBackupSelection(const GetBackupSelect
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSelectionId());
   };
 
-  return GetBackupSelectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBackupSelectionOutcome(result.GetResultWithOwnership())
+                            : GetBackupSelectionOutcome(std::move(result.GetError()));
 }
 
 GetBackupVaultAccessPolicyOutcome BackupClient::GetBackupVaultAccessPolicy(const GetBackupVaultAccessPolicyRequest& request) const {
@@ -1024,7 +1113,9 @@ GetBackupVaultAccessPolicyOutcome BackupClient::GetBackupVaultAccessPolicy(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/access-policy");
   };
 
-  return GetBackupVaultAccessPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBackupVaultAccessPolicyOutcome(result.GetResultWithOwnership())
+                            : GetBackupVaultAccessPolicyOutcome(std::move(result.GetError()));
 }
 
 GetBackupVaultNotificationsOutcome BackupClient::GetBackupVaultNotifications(const GetBackupVaultNotificationsRequest& request) const {
@@ -1041,7 +1132,9 @@ GetBackupVaultNotificationsOutcome BackupClient::GetBackupVaultNotifications(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/notification-configuration");
   };
 
-  return GetBackupVaultNotificationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBackupVaultNotificationsOutcome(result.GetResultWithOwnership())
+                            : GetBackupVaultNotificationsOutcome(std::move(result.GetError()));
 }
 
 GetLegalHoldOutcome BackupClient::GetLegalHold(const GetLegalHoldRequest& request) const {
@@ -1057,7 +1150,8 @@ GetLegalHoldOutcome BackupClient::GetLegalHold(const GetLegalHoldRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLegalHoldId());
   };
 
-  return GetLegalHoldOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetLegalHoldOutcome(result.GetResultWithOwnership()) : GetLegalHoldOutcome(std::move(result.GetError()));
 }
 
 GetRecoveryPointIndexDetailsOutcome BackupClient::GetRecoveryPointIndexDetails(const GetRecoveryPointIndexDetailsRequest& request) const {
@@ -1081,7 +1175,9 @@ GetRecoveryPointIndexDetailsOutcome BackupClient::GetRecoveryPointIndexDetails(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/index");
   };
 
-  return GetRecoveryPointIndexDetailsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRecoveryPointIndexDetailsOutcome(result.GetResultWithOwnership())
+                            : GetRecoveryPointIndexDetailsOutcome(std::move(result.GetError()));
 }
 
 GetRecoveryPointRestoreMetadataOutcome BackupClient::GetRecoveryPointRestoreMetadata(
@@ -1106,7 +1202,9 @@ GetRecoveryPointRestoreMetadataOutcome BackupClient::GetRecoveryPointRestoreMeta
     endpointResolutionOutcome.GetResult().AddPathSegments("/restore-metadata");
   };
 
-  return GetRecoveryPointRestoreMetadataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRecoveryPointRestoreMetadataOutcome(result.GetResultWithOwnership())
+                            : GetRecoveryPointRestoreMetadataOutcome(std::move(result.GetError()));
 }
 
 GetRestoreJobMetadataOutcome BackupClient::GetRestoreJobMetadata(const GetRestoreJobMetadataRequest& request) const {
@@ -1123,7 +1221,9 @@ GetRestoreJobMetadataOutcome BackupClient::GetRestoreJobMetadata(const GetRestor
     endpointResolutionOutcome.GetResult().AddPathSegments("/metadata");
   };
 
-  return GetRestoreJobMetadataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRestoreJobMetadataOutcome(result.GetResultWithOwnership())
+                            : GetRestoreJobMetadataOutcome(std::move(result.GetError()));
 }
 
 GetRestoreTestingInferredMetadataOutcome BackupClient::GetRestoreTestingInferredMetadata(
@@ -1144,7 +1244,9 @@ GetRestoreTestingInferredMetadataOutcome BackupClient::GetRestoreTestingInferred
     endpointResolutionOutcome.GetResult().AddPathSegments("/restore-testing/inferred-metadata");
   };
 
-  return GetRestoreTestingInferredMetadataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRestoreTestingInferredMetadataOutcome(result.GetResultWithOwnership())
+                            : GetRestoreTestingInferredMetadataOutcome(std::move(result.GetError()));
 }
 
 GetRestoreTestingPlanOutcome BackupClient::GetRestoreTestingPlan(const GetRestoreTestingPlanRequest& request) const {
@@ -1160,7 +1262,9 @@ GetRestoreTestingPlanOutcome BackupClient::GetRestoreTestingPlan(const GetRestor
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestoreTestingPlanName());
   };
 
-  return GetRestoreTestingPlanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRestoreTestingPlanOutcome(result.GetResultWithOwnership())
+                            : GetRestoreTestingPlanOutcome(std::move(result.GetError()));
 }
 
 GetRestoreTestingSelectionOutcome BackupClient::GetRestoreTestingSelection(const GetRestoreTestingSelectionRequest& request) const {
@@ -1183,7 +1287,9 @@ GetRestoreTestingSelectionOutcome BackupClient::GetRestoreTestingSelection(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestoreTestingSelectionName());
   };
 
-  return GetRestoreTestingSelectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRestoreTestingSelectionOutcome(result.GetResultWithOwnership())
+                            : GetRestoreTestingSelectionOutcome(std::move(result.GetError()));
 }
 
 GetSupportedResourceTypesOutcome BackupClient::GetSupportedResourceTypes(const GetSupportedResourceTypesRequest& request) const {
@@ -1192,7 +1298,9 @@ GetSupportedResourceTypesOutcome BackupClient::GetSupportedResourceTypes(const G
     endpointResolutionOutcome.GetResult().AddPathSegments("/supported-resource-types");
   };
 
-  return GetSupportedResourceTypesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSupportedResourceTypesOutcome(result.GetResultWithOwnership())
+                            : GetSupportedResourceTypesOutcome(std::move(result.GetError()));
 }
 
 GetTieringConfigurationOutcome BackupClient::GetTieringConfiguration(const GetTieringConfigurationRequest& request) const {
@@ -1208,7 +1316,9 @@ GetTieringConfigurationOutcome BackupClient::GetTieringConfiguration(const GetTi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTieringConfigurationName());
   };
 
-  return GetTieringConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTieringConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetTieringConfigurationOutcome(std::move(result.GetError()));
 }
 
 ListBackupJobSummariesOutcome BackupClient::ListBackupJobSummaries(const ListBackupJobSummariesRequest& request) const {
@@ -1217,7 +1327,9 @@ ListBackupJobSummariesOutcome BackupClient::ListBackupJobSummaries(const ListBac
     endpointResolutionOutcome.GetResult().AddPathSegments("/audit/backup-job-summaries");
   };
 
-  return ListBackupJobSummariesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListBackupJobSummariesOutcome(result.GetResultWithOwnership())
+                            : ListBackupJobSummariesOutcome(std::move(result.GetError()));
 }
 
 ListBackupJobsOutcome BackupClient::ListBackupJobs(const ListBackupJobsRequest& request) const {
@@ -1226,7 +1338,8 @@ ListBackupJobsOutcome BackupClient::ListBackupJobs(const ListBackupJobsRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/backup-jobs/");
   };
 
-  return ListBackupJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListBackupJobsOutcome(result.GetResultWithOwnership()) : ListBackupJobsOutcome(std::move(result.GetError()));
 }
 
 ListBackupPlanTemplatesOutcome BackupClient::ListBackupPlanTemplates(const ListBackupPlanTemplatesRequest& request) const {
@@ -1235,7 +1348,9 @@ ListBackupPlanTemplatesOutcome BackupClient::ListBackupPlanTemplates(const ListB
     endpointResolutionOutcome.GetResult().AddPathSegments("/backup/template/plans");
   };
 
-  return ListBackupPlanTemplatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListBackupPlanTemplatesOutcome(result.GetResultWithOwnership())
+                            : ListBackupPlanTemplatesOutcome(std::move(result.GetError()));
 }
 
 ListBackupPlanVersionsOutcome BackupClient::ListBackupPlanVersions(const ListBackupPlanVersionsRequest& request) const {
@@ -1252,7 +1367,9 @@ ListBackupPlanVersionsOutcome BackupClient::ListBackupPlanVersions(const ListBac
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions/");
   };
 
-  return ListBackupPlanVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListBackupPlanVersionsOutcome(result.GetResultWithOwnership())
+                            : ListBackupPlanVersionsOutcome(std::move(result.GetError()));
 }
 
 ListBackupPlansOutcome BackupClient::ListBackupPlans(const ListBackupPlansRequest& request) const {
@@ -1261,7 +1378,9 @@ ListBackupPlansOutcome BackupClient::ListBackupPlans(const ListBackupPlansReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/backup/plans/");
   };
 
-  return ListBackupPlansOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListBackupPlansOutcome(result.GetResultWithOwnership())
+                            : ListBackupPlansOutcome(std::move(result.GetError()));
 }
 
 ListBackupSelectionsOutcome BackupClient::ListBackupSelections(const ListBackupSelectionsRequest& request) const {
@@ -1278,7 +1397,9 @@ ListBackupSelectionsOutcome BackupClient::ListBackupSelections(const ListBackupS
     endpointResolutionOutcome.GetResult().AddPathSegments("/selections/");
   };
 
-  return ListBackupSelectionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListBackupSelectionsOutcome(result.GetResultWithOwnership())
+                            : ListBackupSelectionsOutcome(std::move(result.GetError()));
 }
 
 ListBackupVaultsOutcome BackupClient::ListBackupVaults(const ListBackupVaultsRequest& request) const {
@@ -1287,7 +1408,9 @@ ListBackupVaultsOutcome BackupClient::ListBackupVaults(const ListBackupVaultsReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/backup-vaults/");
   };
 
-  return ListBackupVaultsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListBackupVaultsOutcome(result.GetResultWithOwnership())
+                            : ListBackupVaultsOutcome(std::move(result.GetError()));
 }
 
 ListCopyJobSummariesOutcome BackupClient::ListCopyJobSummaries(const ListCopyJobSummariesRequest& request) const {
@@ -1296,7 +1419,9 @@ ListCopyJobSummariesOutcome BackupClient::ListCopyJobSummaries(const ListCopyJob
     endpointResolutionOutcome.GetResult().AddPathSegments("/audit/copy-job-summaries");
   };
 
-  return ListCopyJobSummariesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCopyJobSummariesOutcome(result.GetResultWithOwnership())
+                            : ListCopyJobSummariesOutcome(std::move(result.GetError()));
 }
 
 ListCopyJobsOutcome BackupClient::ListCopyJobs(const ListCopyJobsRequest& request) const {
@@ -1305,7 +1430,8 @@ ListCopyJobsOutcome BackupClient::ListCopyJobs(const ListCopyJobsRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/copy-jobs/");
   };
 
-  return ListCopyJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCopyJobsOutcome(result.GetResultWithOwnership()) : ListCopyJobsOutcome(std::move(result.GetError()));
 }
 
 ListFrameworksOutcome BackupClient::ListFrameworks(const ListFrameworksRequest& request) const {
@@ -1314,7 +1440,8 @@ ListFrameworksOutcome BackupClient::ListFrameworks(const ListFrameworksRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/audit/frameworks");
   };
 
-  return ListFrameworksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListFrameworksOutcome(result.GetResultWithOwnership()) : ListFrameworksOutcome(std::move(result.GetError()));
 }
 
 ListIndexedRecoveryPointsOutcome BackupClient::ListIndexedRecoveryPoints(const ListIndexedRecoveryPointsRequest& request) const {
@@ -1323,7 +1450,9 @@ ListIndexedRecoveryPointsOutcome BackupClient::ListIndexedRecoveryPoints(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/indexes/recovery-point/");
   };
 
-  return ListIndexedRecoveryPointsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListIndexedRecoveryPointsOutcome(result.GetResultWithOwnership())
+                            : ListIndexedRecoveryPointsOutcome(std::move(result.GetError()));
 }
 
 ListLegalHoldsOutcome BackupClient::ListLegalHolds(const ListLegalHoldsRequest& request) const {
@@ -1332,7 +1461,8 @@ ListLegalHoldsOutcome BackupClient::ListLegalHolds(const ListLegalHoldsRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/legal-holds/");
   };
 
-  return ListLegalHoldsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListLegalHoldsOutcome(result.GetResultWithOwnership()) : ListLegalHoldsOutcome(std::move(result.GetError()));
 }
 
 ListProtectedResourcesOutcome BackupClient::ListProtectedResources(const ListProtectedResourcesRequest& request) const {
@@ -1341,7 +1471,9 @@ ListProtectedResourcesOutcome BackupClient::ListProtectedResources(const ListPro
     endpointResolutionOutcome.GetResult().AddPathSegments("/resources/");
   };
 
-  return ListProtectedResourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListProtectedResourcesOutcome(result.GetResultWithOwnership())
+                            : ListProtectedResourcesOutcome(std::move(result.GetError()));
 }
 
 ListProtectedResourcesByBackupVaultOutcome BackupClient::ListProtectedResourcesByBackupVault(
@@ -1359,7 +1491,9 @@ ListProtectedResourcesByBackupVaultOutcome BackupClient::ListProtectedResourcesB
     endpointResolutionOutcome.GetResult().AddPathSegments("/resources/");
   };
 
-  return ListProtectedResourcesByBackupVaultOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListProtectedResourcesByBackupVaultOutcome(result.GetResultWithOwnership())
+                            : ListProtectedResourcesByBackupVaultOutcome(std::move(result.GetError()));
 }
 
 ListRecoveryPointsByBackupVaultOutcome BackupClient::ListRecoveryPointsByBackupVault(
@@ -1377,7 +1511,9 @@ ListRecoveryPointsByBackupVaultOutcome BackupClient::ListRecoveryPointsByBackupV
     endpointResolutionOutcome.GetResult().AddPathSegments("/recovery-points/");
   };
 
-  return ListRecoveryPointsByBackupVaultOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRecoveryPointsByBackupVaultOutcome(result.GetResultWithOwnership())
+                            : ListRecoveryPointsByBackupVaultOutcome(std::move(result.GetError()));
 }
 
 ListRecoveryPointsByLegalHoldOutcome BackupClient::ListRecoveryPointsByLegalHold(
@@ -1395,7 +1531,9 @@ ListRecoveryPointsByLegalHoldOutcome BackupClient::ListRecoveryPointsByLegalHold
     endpointResolutionOutcome.GetResult().AddPathSegments("/recovery-points");
   };
 
-  return ListRecoveryPointsByLegalHoldOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRecoveryPointsByLegalHoldOutcome(result.GetResultWithOwnership())
+                            : ListRecoveryPointsByLegalHoldOutcome(std::move(result.GetError()));
 }
 
 ListRecoveryPointsByResourceOutcome BackupClient::ListRecoveryPointsByResource(const ListRecoveryPointsByResourceRequest& request) const {
@@ -1412,7 +1550,9 @@ ListRecoveryPointsByResourceOutcome BackupClient::ListRecoveryPointsByResource(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/recovery-points/");
   };
 
-  return ListRecoveryPointsByResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRecoveryPointsByResourceOutcome(result.GetResultWithOwnership())
+                            : ListRecoveryPointsByResourceOutcome(std::move(result.GetError()));
 }
 
 ListReportJobsOutcome BackupClient::ListReportJobs(const ListReportJobsRequest& request) const {
@@ -1421,7 +1561,8 @@ ListReportJobsOutcome BackupClient::ListReportJobs(const ListReportJobsRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/audit/report-jobs");
   };
 
-  return ListReportJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListReportJobsOutcome(result.GetResultWithOwnership()) : ListReportJobsOutcome(std::move(result.GetError()));
 }
 
 ListReportPlansOutcome BackupClient::ListReportPlans(const ListReportPlansRequest& request) const {
@@ -1430,7 +1571,9 @@ ListReportPlansOutcome BackupClient::ListReportPlans(const ListReportPlansReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/audit/report-plans");
   };
 
-  return ListReportPlansOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListReportPlansOutcome(result.GetResultWithOwnership())
+                            : ListReportPlansOutcome(std::move(result.GetError()));
 }
 
 ListRestoreAccessBackupVaultsOutcome BackupClient::ListRestoreAccessBackupVaults(
@@ -1448,7 +1591,9 @@ ListRestoreAccessBackupVaultsOutcome BackupClient::ListRestoreAccessBackupVaults
     endpointResolutionOutcome.GetResult().AddPathSegments("/restore-access-backup-vaults/");
   };
 
-  return ListRestoreAccessBackupVaultsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRestoreAccessBackupVaultsOutcome(result.GetResultWithOwnership())
+                            : ListRestoreAccessBackupVaultsOutcome(std::move(result.GetError()));
 }
 
 ListRestoreJobSummariesOutcome BackupClient::ListRestoreJobSummaries(const ListRestoreJobSummariesRequest& request) const {
@@ -1457,7 +1602,9 @@ ListRestoreJobSummariesOutcome BackupClient::ListRestoreJobSummaries(const ListR
     endpointResolutionOutcome.GetResult().AddPathSegments("/audit/restore-job-summaries");
   };
 
-  return ListRestoreJobSummariesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRestoreJobSummariesOutcome(result.GetResultWithOwnership())
+                            : ListRestoreJobSummariesOutcome(std::move(result.GetError()));
 }
 
 ListRestoreJobsOutcome BackupClient::ListRestoreJobs(const ListRestoreJobsRequest& request) const {
@@ -1466,7 +1613,9 @@ ListRestoreJobsOutcome BackupClient::ListRestoreJobs(const ListRestoreJobsReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/restore-jobs/");
   };
 
-  return ListRestoreJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRestoreJobsOutcome(result.GetResultWithOwnership())
+                            : ListRestoreJobsOutcome(std::move(result.GetError()));
 }
 
 ListRestoreJobsByProtectedResourceOutcome BackupClient::ListRestoreJobsByProtectedResource(
@@ -1484,7 +1633,9 @@ ListRestoreJobsByProtectedResourceOutcome BackupClient::ListRestoreJobsByProtect
     endpointResolutionOutcome.GetResult().AddPathSegments("/restore-jobs/");
   };
 
-  return ListRestoreJobsByProtectedResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRestoreJobsByProtectedResourceOutcome(result.GetResultWithOwnership())
+                            : ListRestoreJobsByProtectedResourceOutcome(std::move(result.GetError()));
 }
 
 ListRestoreTestingPlansOutcome BackupClient::ListRestoreTestingPlans(const ListRestoreTestingPlansRequest& request) const {
@@ -1493,7 +1644,9 @@ ListRestoreTestingPlansOutcome BackupClient::ListRestoreTestingPlans(const ListR
     endpointResolutionOutcome.GetResult().AddPathSegments("/restore-testing/plans");
   };
 
-  return ListRestoreTestingPlansOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRestoreTestingPlansOutcome(result.GetResultWithOwnership())
+                            : ListRestoreTestingPlansOutcome(std::move(result.GetError()));
 }
 
 ListRestoreTestingSelectionsOutcome BackupClient::ListRestoreTestingSelections(const ListRestoreTestingSelectionsRequest& request) const {
@@ -1510,7 +1663,9 @@ ListRestoreTestingSelectionsOutcome BackupClient::ListRestoreTestingSelections(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/selections");
   };
 
-  return ListRestoreTestingSelectionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRestoreTestingSelectionsOutcome(result.GetResultWithOwnership())
+                            : ListRestoreTestingSelectionsOutcome(std::move(result.GetError()));
 }
 
 ListScanJobSummariesOutcome BackupClient::ListScanJobSummaries(const ListScanJobSummariesRequest& request) const {
@@ -1519,7 +1674,9 @@ ListScanJobSummariesOutcome BackupClient::ListScanJobSummaries(const ListScanJob
     endpointResolutionOutcome.GetResult().AddPathSegments("/audit/scan-job-summaries");
   };
 
-  return ListScanJobSummariesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListScanJobSummariesOutcome(result.GetResultWithOwnership())
+                            : ListScanJobSummariesOutcome(std::move(result.GetError()));
 }
 
 ListScanJobsOutcome BackupClient::ListScanJobs(const ListScanJobsRequest& request) const {
@@ -1528,7 +1685,8 @@ ListScanJobsOutcome BackupClient::ListScanJobs(const ListScanJobsRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/scan/jobs");
   };
 
-  return ListScanJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListScanJobsOutcome(result.GetResultWithOwnership()) : ListScanJobsOutcome(std::move(result.GetError()));
 }
 
 ListTagsOutcome BackupClient::ListTags(const ListTagsRequest& request) const {
@@ -1544,7 +1702,8 @@ ListTagsOutcome BackupClient::ListTags(const ListTagsRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsOutcome(result.GetResultWithOwnership()) : ListTagsOutcome(std::move(result.GetError()));
 }
 
 ListTieringConfigurationsOutcome BackupClient::ListTieringConfigurations(const ListTieringConfigurationsRequest& request) const {
@@ -1553,7 +1712,9 @@ ListTieringConfigurationsOutcome BackupClient::ListTieringConfigurations(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/tiering-configurations/");
   };
 
-  return ListTieringConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTieringConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListTieringConfigurationsOutcome(std::move(result.GetError()));
 }
 
 PutBackupVaultAccessPolicyOutcome BackupClient::PutBackupVaultAccessPolicy(const PutBackupVaultAccessPolicyRequest& request) const {
@@ -1570,7 +1731,9 @@ PutBackupVaultAccessPolicyOutcome BackupClient::PutBackupVaultAccessPolicy(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/access-policy");
   };
 
-  return PutBackupVaultAccessPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutBackupVaultAccessPolicyOutcome(result.GetResultWithOwnership())
+                            : PutBackupVaultAccessPolicyOutcome(std::move(result.GetError()));
 }
 
 PutBackupVaultLockConfigurationOutcome BackupClient::PutBackupVaultLockConfiguration(
@@ -1588,7 +1751,9 @@ PutBackupVaultLockConfigurationOutcome BackupClient::PutBackupVaultLockConfigura
     endpointResolutionOutcome.GetResult().AddPathSegments("/vault-lock");
   };
 
-  return PutBackupVaultLockConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutBackupVaultLockConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutBackupVaultLockConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutBackupVaultNotificationsOutcome BackupClient::PutBackupVaultNotifications(const PutBackupVaultNotificationsRequest& request) const {
@@ -1605,7 +1770,9 @@ PutBackupVaultNotificationsOutcome BackupClient::PutBackupVaultNotifications(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/notification-configuration");
   };
 
-  return PutBackupVaultNotificationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutBackupVaultNotificationsOutcome(result.GetResultWithOwnership())
+                            : PutBackupVaultNotificationsOutcome(std::move(result.GetError()));
 }
 
 PutRestoreValidationResultOutcome BackupClient::PutRestoreValidationResult(const PutRestoreValidationResultRequest& request) const {
@@ -1622,7 +1789,9 @@ PutRestoreValidationResultOutcome BackupClient::PutRestoreValidationResult(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/validations");
   };
 
-  return PutRestoreValidationResultOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutRestoreValidationResultOutcome(result.GetResultWithOwnership())
+                            : PutRestoreValidationResultOutcome(std::move(result.GetError()));
 }
 
 RevokeRestoreAccessBackupVaultOutcome BackupClient::RevokeRestoreAccessBackupVault(
@@ -1646,7 +1815,9 @@ RevokeRestoreAccessBackupVaultOutcome BackupClient::RevokeRestoreAccessBackupVau
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestoreAccessBackupVaultArn());
   };
 
-  return RevokeRestoreAccessBackupVaultOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? RevokeRestoreAccessBackupVaultOutcome(result.GetResultWithOwnership())
+                            : RevokeRestoreAccessBackupVaultOutcome(std::move(result.GetError()));
 }
 
 StartBackupJobOutcome BackupClient::StartBackupJob(const StartBackupJobRequest& request) const {
@@ -1655,7 +1826,8 @@ StartBackupJobOutcome BackupClient::StartBackupJob(const StartBackupJobRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/backup-jobs");
   };
 
-  return StartBackupJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StartBackupJobOutcome(result.GetResultWithOwnership()) : StartBackupJobOutcome(std::move(result.GetError()));
 }
 
 StartCopyJobOutcome BackupClient::StartCopyJob(const StartCopyJobRequest& request) const {
@@ -1664,7 +1836,8 @@ StartCopyJobOutcome BackupClient::StartCopyJob(const StartCopyJobRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/copy-jobs");
   };
 
-  return StartCopyJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StartCopyJobOutcome(result.GetResultWithOwnership()) : StartCopyJobOutcome(std::move(result.GetError()));
 }
 
 StartReportJobOutcome BackupClient::StartReportJob(const StartReportJobRequest& request) const {
@@ -1680,7 +1853,8 @@ StartReportJobOutcome BackupClient::StartReportJob(const StartReportJobRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReportPlanName());
   };
 
-  return StartReportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartReportJobOutcome(result.GetResultWithOwnership()) : StartReportJobOutcome(std::move(result.GetError()));
 }
 
 StartRestoreJobOutcome BackupClient::StartRestoreJob(const StartRestoreJobRequest& request) const {
@@ -1689,7 +1863,9 @@ StartRestoreJobOutcome BackupClient::StartRestoreJob(const StartRestoreJobReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/restore-jobs");
   };
 
-  return StartRestoreJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StartRestoreJobOutcome(result.GetResultWithOwnership())
+                            : StartRestoreJobOutcome(std::move(result.GetError()));
 }
 
 StartScanJobOutcome BackupClient::StartScanJob(const StartScanJobRequest& request) const {
@@ -1698,7 +1874,8 @@ StartScanJobOutcome BackupClient::StartScanJob(const StartScanJobRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/scan/job");
   };
 
-  return StartScanJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StartScanJobOutcome(result.GetResultWithOwnership()) : StartScanJobOutcome(std::move(result.GetError()));
 }
 
 StopBackupJobOutcome BackupClient::StopBackupJob(const StopBackupJobRequest& request) const {
@@ -1714,7 +1891,8 @@ StopBackupJobOutcome BackupClient::StopBackupJob(const StopBackupJobRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackupJobId());
   };
 
-  return StopBackupJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopBackupJobOutcome(result.GetResultWithOwnership()) : StopBackupJobOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome BackupClient::TagResource(const TagResourceRequest& request) const {
@@ -1730,7 +1908,8 @@ TagResourceOutcome BackupClient::TagResource(const TagResourceRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome BackupClient::UntagResource(const UntagResourceRequest& request) const {
@@ -1746,7 +1925,8 @@ UntagResourceOutcome BackupClient::UntagResource(const UntagResourceRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateBackupPlanOutcome BackupClient::UpdateBackupPlan(const UpdateBackupPlanRequest& request) const {
@@ -1762,7 +1942,9 @@ UpdateBackupPlanOutcome BackupClient::UpdateBackupPlan(const UpdateBackupPlanReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackupPlanId());
   };
 
-  return UpdateBackupPlanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateBackupPlanOutcome(result.GetResultWithOwnership())
+                            : UpdateBackupPlanOutcome(std::move(result.GetError()));
 }
 
 UpdateFrameworkOutcome BackupClient::UpdateFramework(const UpdateFrameworkRequest& request) const {
@@ -1778,7 +1960,9 @@ UpdateFrameworkOutcome BackupClient::UpdateFramework(const UpdateFrameworkReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFrameworkName());
   };
 
-  return UpdateFrameworkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateFrameworkOutcome(result.GetResultWithOwnership())
+                            : UpdateFrameworkOutcome(std::move(result.GetError()));
 }
 
 UpdateGlobalSettingsOutcome BackupClient::UpdateGlobalSettings(const UpdateGlobalSettingsRequest& request) const {
@@ -1787,7 +1971,9 @@ UpdateGlobalSettingsOutcome BackupClient::UpdateGlobalSettings(const UpdateGloba
     endpointResolutionOutcome.GetResult().AddPathSegments("/global-settings");
   };
 
-  return UpdateGlobalSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateGlobalSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdateGlobalSettingsOutcome(std::move(result.GetError()));
 }
 
 UpdateRecoveryPointIndexSettingsOutcome BackupClient::UpdateRecoveryPointIndexSettings(
@@ -1812,7 +1998,9 @@ UpdateRecoveryPointIndexSettingsOutcome BackupClient::UpdateRecoveryPointIndexSe
     endpointResolutionOutcome.GetResult().AddPathSegments("/index");
   };
 
-  return UpdateRecoveryPointIndexSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRecoveryPointIndexSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdateRecoveryPointIndexSettingsOutcome(std::move(result.GetError()));
 }
 
 UpdateRecoveryPointLifecycleOutcome BackupClient::UpdateRecoveryPointLifecycle(const UpdateRecoveryPointLifecycleRequest& request) const {
@@ -1835,7 +2023,9 @@ UpdateRecoveryPointLifecycleOutcome BackupClient::UpdateRecoveryPointLifecycle(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecoveryPointArn());
   };
 
-  return UpdateRecoveryPointLifecycleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRecoveryPointLifecycleOutcome(result.GetResultWithOwnership())
+                            : UpdateRecoveryPointLifecycleOutcome(std::move(result.GetError()));
 }
 
 UpdateRegionSettingsOutcome BackupClient::UpdateRegionSettings(const UpdateRegionSettingsRequest& request) const {
@@ -1844,7 +2034,9 @@ UpdateRegionSettingsOutcome BackupClient::UpdateRegionSettings(const UpdateRegio
     endpointResolutionOutcome.GetResult().AddPathSegments("/account-settings");
   };
 
-  return UpdateRegionSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateRegionSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdateRegionSettingsOutcome(std::move(result.GetError()));
 }
 
 UpdateReportPlanOutcome BackupClient::UpdateReportPlan(const UpdateReportPlanRequest& request) const {
@@ -1860,7 +2052,9 @@ UpdateReportPlanOutcome BackupClient::UpdateReportPlan(const UpdateReportPlanReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReportPlanName());
   };
 
-  return UpdateReportPlanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateReportPlanOutcome(result.GetResultWithOwnership())
+                            : UpdateReportPlanOutcome(std::move(result.GetError()));
 }
 
 UpdateRestoreTestingPlanOutcome BackupClient::UpdateRestoreTestingPlan(const UpdateRestoreTestingPlanRequest& request) const {
@@ -1876,7 +2070,9 @@ UpdateRestoreTestingPlanOutcome BackupClient::UpdateRestoreTestingPlan(const Upd
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestoreTestingPlanName());
   };
 
-  return UpdateRestoreTestingPlanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateRestoreTestingPlanOutcome(result.GetResultWithOwnership())
+                            : UpdateRestoreTestingPlanOutcome(std::move(result.GetError()));
 }
 
 UpdateRestoreTestingSelectionOutcome BackupClient::UpdateRestoreTestingSelection(
@@ -1900,7 +2096,9 @@ UpdateRestoreTestingSelectionOutcome BackupClient::UpdateRestoreTestingSelection
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestoreTestingSelectionName());
   };
 
-  return UpdateRestoreTestingSelectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateRestoreTestingSelectionOutcome(result.GetResultWithOwnership())
+                            : UpdateRestoreTestingSelectionOutcome(std::move(result.GetError()));
 }
 
 UpdateTieringConfigurationOutcome BackupClient::UpdateTieringConfiguration(const UpdateTieringConfigurationRequest& request) const {
@@ -1916,5 +2114,7 @@ UpdateTieringConfigurationOutcome BackupClient::UpdateTieringConfiguration(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTieringConfigurationName());
   };
 
-  return UpdateTieringConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateTieringConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateTieringConfigurationOutcome(std::move(result.GetError()));
 }

@@ -217,7 +217,9 @@ AssociateDefaultViewOutcome ResourceExplorer2Client::AssociateDefaultView(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/AssociateDefaultView");
   };
 
-  return AssociateDefaultViewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateDefaultViewOutcome(result.GetResultWithOwnership())
+                            : AssociateDefaultViewOutcome(std::move(result.GetError()));
 }
 
 BatchGetViewOutcome ResourceExplorer2Client::BatchGetView(const BatchGetViewRequest& request) const {
@@ -226,7 +228,8 @@ BatchGetViewOutcome ResourceExplorer2Client::BatchGetView(const BatchGetViewRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/BatchGetView");
   };
 
-  return BatchGetViewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetViewOutcome(result.GetResultWithOwnership()) : BatchGetViewOutcome(std::move(result.GetError()));
 }
 
 CreateIndexOutcome ResourceExplorer2Client::CreateIndex(const CreateIndexRequest& request) const {
@@ -235,7 +238,8 @@ CreateIndexOutcome ResourceExplorer2Client::CreateIndex(const CreateIndexRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateIndex");
   };
 
-  return CreateIndexOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIndexOutcome(result.GetResultWithOwnership()) : CreateIndexOutcome(std::move(result.GetError()));
 }
 
 CreateResourceExplorerSetupOutcome ResourceExplorer2Client::CreateResourceExplorerSetup(
@@ -245,7 +249,9 @@ CreateResourceExplorerSetupOutcome ResourceExplorer2Client::CreateResourceExplor
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateResourceExplorerSetup");
   };
 
-  return CreateResourceExplorerSetupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateResourceExplorerSetupOutcome(result.GetResultWithOwnership())
+                            : CreateResourceExplorerSetupOutcome(std::move(result.GetError()));
 }
 
 CreateViewOutcome ResourceExplorer2Client::CreateView(const CreateViewRequest& request) const {
@@ -254,7 +260,8 @@ CreateViewOutcome ResourceExplorer2Client::CreateView(const CreateViewRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateView");
   };
 
-  return CreateViewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateViewOutcome(result.GetResultWithOwnership()) : CreateViewOutcome(std::move(result.GetError()));
 }
 
 DeleteIndexOutcome ResourceExplorer2Client::DeleteIndex(const DeleteIndexRequest& request) const {
@@ -263,7 +270,8 @@ DeleteIndexOutcome ResourceExplorer2Client::DeleteIndex(const DeleteIndexRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteIndex");
   };
 
-  return DeleteIndexOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteIndexOutcome(result.GetResultWithOwnership()) : DeleteIndexOutcome(std::move(result.GetError()));
 }
 
 DeleteResourceExplorerSetupOutcome ResourceExplorer2Client::DeleteResourceExplorerSetup(
@@ -273,7 +281,9 @@ DeleteResourceExplorerSetupOutcome ResourceExplorer2Client::DeleteResourceExplor
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteResourceExplorerSetup");
   };
 
-  return DeleteResourceExplorerSetupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteResourceExplorerSetupOutcome(result.GetResultWithOwnership())
+                            : DeleteResourceExplorerSetupOutcome(std::move(result.GetError()));
 }
 
 DeleteViewOutcome ResourceExplorer2Client::DeleteView(const DeleteViewRequest& request) const {
@@ -282,7 +292,8 @@ DeleteViewOutcome ResourceExplorer2Client::DeleteView(const DeleteViewRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteView");
   };
 
-  return DeleteViewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteViewOutcome(result.GetResultWithOwnership()) : DeleteViewOutcome(std::move(result.GetError()));
 }
 
 DisassociateDefaultViewOutcome ResourceExplorer2Client::DisassociateDefaultView(const DisassociateDefaultViewRequest& request) const {
@@ -291,7 +302,9 @@ DisassociateDefaultViewOutcome ResourceExplorer2Client::DisassociateDefaultView(
     endpointResolutionOutcome.GetResult().AddPathSegments("/DisassociateDefaultView");
   };
 
-  return DisassociateDefaultViewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateDefaultViewOutcome(result.GetResultWithOwnership())
+                            : DisassociateDefaultViewOutcome(std::move(result.GetError()));
 }
 
 GetAccountLevelServiceConfigurationOutcome ResourceExplorer2Client::GetAccountLevelServiceConfiguration(
@@ -301,7 +314,9 @@ GetAccountLevelServiceConfigurationOutcome ResourceExplorer2Client::GetAccountLe
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetAccountLevelServiceConfiguration");
   };
 
-  return GetAccountLevelServiceConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAccountLevelServiceConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetAccountLevelServiceConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetDefaultViewOutcome ResourceExplorer2Client::GetDefaultView(const GetDefaultViewRequest& request) const {
@@ -310,7 +325,8 @@ GetDefaultViewOutcome ResourceExplorer2Client::GetDefaultView(const GetDefaultVi
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetDefaultView");
   };
 
-  return GetDefaultViewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDefaultViewOutcome(result.GetResultWithOwnership()) : GetDefaultViewOutcome(std::move(result.GetError()));
 }
 
 GetIndexOutcome ResourceExplorer2Client::GetIndex(const GetIndexRequest& request) const {
@@ -319,7 +335,8 @@ GetIndexOutcome ResourceExplorer2Client::GetIndex(const GetIndexRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetIndex");
   };
 
-  return GetIndexOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIndexOutcome(result.GetResultWithOwnership()) : GetIndexOutcome(std::move(result.GetError()));
 }
 
 GetManagedViewOutcome ResourceExplorer2Client::GetManagedView(const GetManagedViewRequest& request) const {
@@ -328,7 +345,8 @@ GetManagedViewOutcome ResourceExplorer2Client::GetManagedView(const GetManagedVi
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetManagedView");
   };
 
-  return GetManagedViewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetManagedViewOutcome(result.GetResultWithOwnership()) : GetManagedViewOutcome(std::move(result.GetError()));
 }
 
 GetResourceExplorerSetupOutcome ResourceExplorer2Client::GetResourceExplorerSetup(const GetResourceExplorerSetupRequest& request) const {
@@ -337,7 +355,9 @@ GetResourceExplorerSetupOutcome ResourceExplorer2Client::GetResourceExplorerSetu
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetResourceExplorerSetup");
   };
 
-  return GetResourceExplorerSetupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourceExplorerSetupOutcome(result.GetResultWithOwnership())
+                            : GetResourceExplorerSetupOutcome(std::move(result.GetError()));
 }
 
 GetServiceIndexOutcome ResourceExplorer2Client::GetServiceIndex(const GetServiceIndexRequest& request) const {
@@ -346,7 +366,9 @@ GetServiceIndexOutcome ResourceExplorer2Client::GetServiceIndex(const GetService
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetServiceIndex");
   };
 
-  return GetServiceIndexOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetServiceIndexOutcome(result.GetResultWithOwnership())
+                            : GetServiceIndexOutcome(std::move(result.GetError()));
 }
 
 GetServiceViewOutcome ResourceExplorer2Client::GetServiceView(const GetServiceViewRequest& request) const {
@@ -355,7 +377,8 @@ GetServiceViewOutcome ResourceExplorer2Client::GetServiceView(const GetServiceVi
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetServiceView");
   };
 
-  return GetServiceViewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetServiceViewOutcome(result.GetResultWithOwnership()) : GetServiceViewOutcome(std::move(result.GetError()));
 }
 
 GetViewOutcome ResourceExplorer2Client::GetView(const GetViewRequest& request) const {
@@ -364,7 +387,8 @@ GetViewOutcome ResourceExplorer2Client::GetView(const GetViewRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetView");
   };
 
-  return GetViewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetViewOutcome(result.GetResultWithOwnership()) : GetViewOutcome(std::move(result.GetError()));
 }
 
 ListIndexesOutcome ResourceExplorer2Client::ListIndexes(const ListIndexesRequest& request) const {
@@ -373,7 +397,8 @@ ListIndexesOutcome ResourceExplorer2Client::ListIndexes(const ListIndexesRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListIndexes");
   };
 
-  return ListIndexesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListIndexesOutcome(result.GetResultWithOwnership()) : ListIndexesOutcome(std::move(result.GetError()));
 }
 
 ListIndexesForMembersOutcome ResourceExplorer2Client::ListIndexesForMembers(const ListIndexesForMembersRequest& request) const {
@@ -382,7 +407,9 @@ ListIndexesForMembersOutcome ResourceExplorer2Client::ListIndexesForMembers(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListIndexesForMembers");
   };
 
-  return ListIndexesForMembersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListIndexesForMembersOutcome(result.GetResultWithOwnership())
+                            : ListIndexesForMembersOutcome(std::move(result.GetError()));
 }
 
 ListManagedViewsOutcome ResourceExplorer2Client::ListManagedViews(const ListManagedViewsRequest& request) const {
@@ -391,7 +418,9 @@ ListManagedViewsOutcome ResourceExplorer2Client::ListManagedViews(const ListMana
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListManagedViews");
   };
 
-  return ListManagedViewsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListManagedViewsOutcome(result.GetResultWithOwnership())
+                            : ListManagedViewsOutcome(std::move(result.GetError()));
 }
 
 ListResourcesOutcome ResourceExplorer2Client::ListResources(const ListResourcesRequest& request) const {
@@ -400,7 +429,8 @@ ListResourcesOutcome ResourceExplorer2Client::ListResources(const ListResourcesR
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListResources");
   };
 
-  return ListResourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResourcesOutcome(result.GetResultWithOwnership()) : ListResourcesOutcome(std::move(result.GetError()));
 }
 
 ListServiceIndexesOutcome ResourceExplorer2Client::ListServiceIndexes(const ListServiceIndexesRequest& request) const {
@@ -409,7 +439,9 @@ ListServiceIndexesOutcome ResourceExplorer2Client::ListServiceIndexes(const List
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListServiceIndexes");
   };
 
-  return ListServiceIndexesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListServiceIndexesOutcome(result.GetResultWithOwnership())
+                            : ListServiceIndexesOutcome(std::move(result.GetError()));
 }
 
 ListServiceViewsOutcome ResourceExplorer2Client::ListServiceViews(const ListServiceViewsRequest& request) const {
@@ -418,7 +450,9 @@ ListServiceViewsOutcome ResourceExplorer2Client::ListServiceViews(const ListServ
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListServiceViews");
   };
 
-  return ListServiceViewsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListServiceViewsOutcome(result.GetResultWithOwnership())
+                            : ListServiceViewsOutcome(std::move(result.GetError()));
 }
 
 ListStreamingAccessForServicesOutcome ResourceExplorer2Client::ListStreamingAccessForServices(
@@ -428,7 +462,9 @@ ListStreamingAccessForServicesOutcome ResourceExplorer2Client::ListStreamingAcce
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListStreamingAccessForServices");
   };
 
-  return ListStreamingAccessForServicesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListStreamingAccessForServicesOutcome(result.GetResultWithOwnership())
+                            : ListStreamingAccessForServicesOutcome(std::move(result.GetError()));
 }
 
 ListSupportedResourceTypesOutcome ResourceExplorer2Client::ListSupportedResourceTypes(
@@ -438,7 +474,9 @@ ListSupportedResourceTypesOutcome ResourceExplorer2Client::ListSupportedResource
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListSupportedResourceTypes");
   };
 
-  return ListSupportedResourceTypesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSupportedResourceTypesOutcome(result.GetResultWithOwnership())
+                            : ListSupportedResourceTypesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome ResourceExplorer2Client::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -454,7 +492,9 @@ ListTagsForResourceOutcome ResourceExplorer2Client::ListTagsForResource(const Li
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListViewsOutcome ResourceExplorer2Client::ListViews(const ListViewsRequest& request) const {
@@ -463,7 +503,8 @@ ListViewsOutcome ResourceExplorer2Client::ListViews(const ListViewsRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListViews");
   };
 
-  return ListViewsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListViewsOutcome(result.GetResultWithOwnership()) : ListViewsOutcome(std::move(result.GetError()));
 }
 
 SearchOutcome ResourceExplorer2Client::Search(const SearchRequest& request) const {
@@ -472,7 +513,8 @@ SearchOutcome ResourceExplorer2Client::Search(const SearchRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/Search");
   };
 
-  return SearchOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchOutcome(result.GetResultWithOwnership()) : SearchOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ResourceExplorer2Client::TagResource(const TagResourceRequest& request) const {
@@ -488,7 +530,8 @@ TagResourceOutcome ResourceExplorer2Client::TagResource(const TagResourceRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome ResourceExplorer2Client::UntagResource(const UntagResourceRequest& request) const {
@@ -509,7 +552,8 @@ UntagResourceOutcome ResourceExplorer2Client::UntagResource(const UntagResourceR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateIndexTypeOutcome ResourceExplorer2Client::UpdateIndexType(const UpdateIndexTypeRequest& request) const {
@@ -518,7 +562,9 @@ UpdateIndexTypeOutcome ResourceExplorer2Client::UpdateIndexType(const UpdateInde
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateIndexType");
   };
 
-  return UpdateIndexTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateIndexTypeOutcome(result.GetResultWithOwnership())
+                            : UpdateIndexTypeOutcome(std::move(result.GetError()));
 }
 
 UpdateViewOutcome ResourceExplorer2Client::UpdateView(const UpdateViewRequest& request) const {
@@ -527,5 +573,6 @@ UpdateViewOutcome ResourceExplorer2Client::UpdateView(const UpdateViewRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateView");
   };
 
-  return UpdateViewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateViewOutcome(result.GetResultWithOwnership()) : UpdateViewOutcome(std::move(result.GetError()));
 }

@@ -181,17 +181,22 @@ KeyspacesStreamsClient::InvokeOperationOutcome KeyspacesStreamsClient::InvokeSer
 }
 
 GetRecordsOutcome KeyspacesStreamsClient::GetRecords(const GetRecordsRequest& request) const {
-  return GetRecordsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRecordsOutcome(result.GetResultWithOwnership()) : GetRecordsOutcome(std::move(result.GetError()));
 }
 
 GetShardIteratorOutcome KeyspacesStreamsClient::GetShardIterator(const GetShardIteratorRequest& request) const {
-  return GetShardIteratorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetShardIteratorOutcome(result.GetResultWithOwnership())
+                            : GetShardIteratorOutcome(std::move(result.GetError()));
 }
 
 GetStreamOutcome KeyspacesStreamsClient::GetStream(const GetStreamRequest& request) const {
-  return GetStreamOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetStreamOutcome(result.GetResultWithOwnership()) : GetStreamOutcome(std::move(result.GetError()));
 }
 
 ListStreamsOutcome KeyspacesStreamsClient::ListStreams(const ListStreamsRequest& request) const {
-  return ListStreamsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListStreamsOutcome(result.GetResultWithOwnership()) : ListStreamsOutcome(std::move(result.GetError()));
 }

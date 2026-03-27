@@ -218,160 +218,229 @@ BCMPricingCalculatorClient::InvokeOperationOutcome BCMPricingCalculatorClient::I
 
 BatchCreateBillScenarioCommitmentModificationOutcome BCMPricingCalculatorClient::BatchCreateBillScenarioCommitmentModification(
     const BatchCreateBillScenarioCommitmentModificationRequest& request) const {
-  return BatchCreateBillScenarioCommitmentModificationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchCreateBillScenarioCommitmentModificationOutcome(result.GetResultWithOwnership())
+                            : BatchCreateBillScenarioCommitmentModificationOutcome(std::move(result.GetError()));
 }
 
 BatchCreateBillScenarioUsageModificationOutcome BCMPricingCalculatorClient::BatchCreateBillScenarioUsageModification(
     const BatchCreateBillScenarioUsageModificationRequest& request) const {
-  return BatchCreateBillScenarioUsageModificationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchCreateBillScenarioUsageModificationOutcome(result.GetResultWithOwnership())
+                            : BatchCreateBillScenarioUsageModificationOutcome(std::move(result.GetError()));
 }
 
 BatchCreateWorkloadEstimateUsageOutcome BCMPricingCalculatorClient::BatchCreateWorkloadEstimateUsage(
     const BatchCreateWorkloadEstimateUsageRequest& request) const {
-  return BatchCreateWorkloadEstimateUsageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchCreateWorkloadEstimateUsageOutcome(result.GetResultWithOwnership())
+                            : BatchCreateWorkloadEstimateUsageOutcome(std::move(result.GetError()));
 }
 
 BatchDeleteBillScenarioCommitmentModificationOutcome BCMPricingCalculatorClient::BatchDeleteBillScenarioCommitmentModification(
     const BatchDeleteBillScenarioCommitmentModificationRequest& request) const {
-  return BatchDeleteBillScenarioCommitmentModificationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeleteBillScenarioCommitmentModificationOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteBillScenarioCommitmentModificationOutcome(std::move(result.GetError()));
 }
 
 BatchDeleteBillScenarioUsageModificationOutcome BCMPricingCalculatorClient::BatchDeleteBillScenarioUsageModification(
     const BatchDeleteBillScenarioUsageModificationRequest& request) const {
-  return BatchDeleteBillScenarioUsageModificationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeleteBillScenarioUsageModificationOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteBillScenarioUsageModificationOutcome(std::move(result.GetError()));
 }
 
 BatchDeleteWorkloadEstimateUsageOutcome BCMPricingCalculatorClient::BatchDeleteWorkloadEstimateUsage(
     const BatchDeleteWorkloadEstimateUsageRequest& request) const {
-  return BatchDeleteWorkloadEstimateUsageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeleteWorkloadEstimateUsageOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteWorkloadEstimateUsageOutcome(std::move(result.GetError()));
 }
 
 BatchUpdateBillScenarioCommitmentModificationOutcome BCMPricingCalculatorClient::BatchUpdateBillScenarioCommitmentModification(
     const BatchUpdateBillScenarioCommitmentModificationRequest& request) const {
-  return BatchUpdateBillScenarioCommitmentModificationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchUpdateBillScenarioCommitmentModificationOutcome(result.GetResultWithOwnership())
+                            : BatchUpdateBillScenarioCommitmentModificationOutcome(std::move(result.GetError()));
 }
 
 BatchUpdateBillScenarioUsageModificationOutcome BCMPricingCalculatorClient::BatchUpdateBillScenarioUsageModification(
     const BatchUpdateBillScenarioUsageModificationRequest& request) const {
-  return BatchUpdateBillScenarioUsageModificationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchUpdateBillScenarioUsageModificationOutcome(result.GetResultWithOwnership())
+                            : BatchUpdateBillScenarioUsageModificationOutcome(std::move(result.GetError()));
 }
 
 BatchUpdateWorkloadEstimateUsageOutcome BCMPricingCalculatorClient::BatchUpdateWorkloadEstimateUsage(
     const BatchUpdateWorkloadEstimateUsageRequest& request) const {
-  return BatchUpdateWorkloadEstimateUsageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchUpdateWorkloadEstimateUsageOutcome(result.GetResultWithOwnership())
+                            : BatchUpdateWorkloadEstimateUsageOutcome(std::move(result.GetError()));
 }
 
 CreateBillEstimateOutcome BCMPricingCalculatorClient::CreateBillEstimate(const CreateBillEstimateRequest& request) const {
-  return CreateBillEstimateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBillEstimateOutcome(result.GetResultWithOwnership())
+                            : CreateBillEstimateOutcome(std::move(result.GetError()));
 }
 
 CreateBillScenarioOutcome BCMPricingCalculatorClient::CreateBillScenario(const CreateBillScenarioRequest& request) const {
-  return CreateBillScenarioOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBillScenarioOutcome(result.GetResultWithOwnership())
+                            : CreateBillScenarioOutcome(std::move(result.GetError()));
 }
 
 CreateWorkloadEstimateOutcome BCMPricingCalculatorClient::CreateWorkloadEstimate(const CreateWorkloadEstimateRequest& request) const {
-  return CreateWorkloadEstimateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWorkloadEstimateOutcome(result.GetResultWithOwnership())
+                            : CreateWorkloadEstimateOutcome(std::move(result.GetError()));
 }
 
 DeleteBillEstimateOutcome BCMPricingCalculatorClient::DeleteBillEstimate(const DeleteBillEstimateRequest& request) const {
-  return DeleteBillEstimateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteBillEstimateOutcome(result.GetResultWithOwnership())
+                            : DeleteBillEstimateOutcome(std::move(result.GetError()));
 }
 
 DeleteBillScenarioOutcome BCMPricingCalculatorClient::DeleteBillScenario(const DeleteBillScenarioRequest& request) const {
-  return DeleteBillScenarioOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteBillScenarioOutcome(result.GetResultWithOwnership())
+                            : DeleteBillScenarioOutcome(std::move(result.GetError()));
 }
 
 DeleteWorkloadEstimateOutcome BCMPricingCalculatorClient::DeleteWorkloadEstimate(const DeleteWorkloadEstimateRequest& request) const {
-  return DeleteWorkloadEstimateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteWorkloadEstimateOutcome(result.GetResultWithOwnership())
+                            : DeleteWorkloadEstimateOutcome(std::move(result.GetError()));
 }
 
 GetBillEstimateOutcome BCMPricingCalculatorClient::GetBillEstimate(const GetBillEstimateRequest& request) const {
-  return GetBillEstimateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetBillEstimateOutcome(result.GetResultWithOwnership())
+                            : GetBillEstimateOutcome(std::move(result.GetError()));
 }
 
 GetBillScenarioOutcome BCMPricingCalculatorClient::GetBillScenario(const GetBillScenarioRequest& request) const {
-  return GetBillScenarioOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetBillScenarioOutcome(result.GetResultWithOwnership())
+                            : GetBillScenarioOutcome(std::move(result.GetError()));
 }
 
 GetPreferencesOutcome BCMPricingCalculatorClient::GetPreferences(const GetPreferencesRequest& request) const {
-  return GetPreferencesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPreferencesOutcome(result.GetResultWithOwnership()) : GetPreferencesOutcome(std::move(result.GetError()));
 }
 
 GetWorkloadEstimateOutcome BCMPricingCalculatorClient::GetWorkloadEstimate(const GetWorkloadEstimateRequest& request) const {
-  return GetWorkloadEstimateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetWorkloadEstimateOutcome(result.GetResultWithOwnership())
+                            : GetWorkloadEstimateOutcome(std::move(result.GetError()));
 }
 
 ListBillEstimateCommitmentsOutcome BCMPricingCalculatorClient::ListBillEstimateCommitments(
     const ListBillEstimateCommitmentsRequest& request) const {
-  return ListBillEstimateCommitmentsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBillEstimateCommitmentsOutcome(result.GetResultWithOwnership())
+                            : ListBillEstimateCommitmentsOutcome(std::move(result.GetError()));
 }
 
 ListBillEstimateInputCommitmentModificationsOutcome BCMPricingCalculatorClient::ListBillEstimateInputCommitmentModifications(
     const ListBillEstimateInputCommitmentModificationsRequest& request) const {
-  return ListBillEstimateInputCommitmentModificationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBillEstimateInputCommitmentModificationsOutcome(result.GetResultWithOwnership())
+                            : ListBillEstimateInputCommitmentModificationsOutcome(std::move(result.GetError()));
 }
 
 ListBillEstimateInputUsageModificationsOutcome BCMPricingCalculatorClient::ListBillEstimateInputUsageModifications(
     const ListBillEstimateInputUsageModificationsRequest& request) const {
-  return ListBillEstimateInputUsageModificationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBillEstimateInputUsageModificationsOutcome(result.GetResultWithOwnership())
+                            : ListBillEstimateInputUsageModificationsOutcome(std::move(result.GetError()));
 }
 
 ListBillEstimateLineItemsOutcome BCMPricingCalculatorClient::ListBillEstimateLineItems(
     const ListBillEstimateLineItemsRequest& request) const {
-  return ListBillEstimateLineItemsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBillEstimateLineItemsOutcome(result.GetResultWithOwnership())
+                            : ListBillEstimateLineItemsOutcome(std::move(result.GetError()));
 }
 
 ListBillEstimatesOutcome BCMPricingCalculatorClient::ListBillEstimates(const ListBillEstimatesRequest& request) const {
-  return ListBillEstimatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBillEstimatesOutcome(result.GetResultWithOwnership())
+                            : ListBillEstimatesOutcome(std::move(result.GetError()));
 }
 
 ListBillScenarioCommitmentModificationsOutcome BCMPricingCalculatorClient::ListBillScenarioCommitmentModifications(
     const ListBillScenarioCommitmentModificationsRequest& request) const {
-  return ListBillScenarioCommitmentModificationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBillScenarioCommitmentModificationsOutcome(result.GetResultWithOwnership())
+                            : ListBillScenarioCommitmentModificationsOutcome(std::move(result.GetError()));
 }
 
 ListBillScenarioUsageModificationsOutcome BCMPricingCalculatorClient::ListBillScenarioUsageModifications(
     const ListBillScenarioUsageModificationsRequest& request) const {
-  return ListBillScenarioUsageModificationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBillScenarioUsageModificationsOutcome(result.GetResultWithOwnership())
+                            : ListBillScenarioUsageModificationsOutcome(std::move(result.GetError()));
 }
 
 ListBillScenariosOutcome BCMPricingCalculatorClient::ListBillScenarios(const ListBillScenariosRequest& request) const {
-  return ListBillScenariosOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBillScenariosOutcome(result.GetResultWithOwnership())
+                            : ListBillScenariosOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome BCMPricingCalculatorClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListWorkloadEstimateUsageOutcome BCMPricingCalculatorClient::ListWorkloadEstimateUsage(
     const ListWorkloadEstimateUsageRequest& request) const {
-  return ListWorkloadEstimateUsageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListWorkloadEstimateUsageOutcome(result.GetResultWithOwnership())
+                            : ListWorkloadEstimateUsageOutcome(std::move(result.GetError()));
 }
 
 ListWorkloadEstimatesOutcome BCMPricingCalculatorClient::ListWorkloadEstimates(const ListWorkloadEstimatesRequest& request) const {
-  return ListWorkloadEstimatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListWorkloadEstimatesOutcome(result.GetResultWithOwnership())
+                            : ListWorkloadEstimatesOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome BCMPricingCalculatorClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome BCMPricingCalculatorClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateBillEstimateOutcome BCMPricingCalculatorClient::UpdateBillEstimate(const UpdateBillEstimateRequest& request) const {
-  return UpdateBillEstimateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateBillEstimateOutcome(result.GetResultWithOwnership())
+                            : UpdateBillEstimateOutcome(std::move(result.GetError()));
 }
 
 UpdateBillScenarioOutcome BCMPricingCalculatorClient::UpdateBillScenario(const UpdateBillScenarioRequest& request) const {
-  return UpdateBillScenarioOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateBillScenarioOutcome(result.GetResultWithOwnership())
+                            : UpdateBillScenarioOutcome(std::move(result.GetError()));
 }
 
 UpdatePreferencesOutcome BCMPricingCalculatorClient::UpdatePreferences(const UpdatePreferencesRequest& request) const {
-  return UpdatePreferencesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePreferencesOutcome(result.GetResultWithOwnership())
+                            : UpdatePreferencesOutcome(std::move(result.GetError()));
 }
 
 UpdateWorkloadEstimateOutcome BCMPricingCalculatorClient::UpdateWorkloadEstimate(const UpdateWorkloadEstimateRequest& request) const {
-  return UpdateWorkloadEstimateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateWorkloadEstimateOutcome(result.GetResultWithOwnership())
+                            : UpdateWorkloadEstimateOutcome(std::move(result.GetError()));
 }

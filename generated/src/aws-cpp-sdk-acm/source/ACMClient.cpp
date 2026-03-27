@@ -186,65 +186,96 @@ ACMClient::InvokeOperationOutcome ACMClient::InvokeServiceOperation(const Amazon
 }
 
 AddTagsToCertificateOutcome ACMClient::AddTagsToCertificate(const AddTagsToCertificateRequest& request) const {
-  return AddTagsToCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddTagsToCertificateOutcome(result.GetResultWithOwnership())
+                            : AddTagsToCertificateOutcome(std::move(result.GetError()));
 }
 
 DeleteCertificateOutcome ACMClient::DeleteCertificate(const DeleteCertificateRequest& request) const {
-  return DeleteCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCertificateOutcome(result.GetResultWithOwnership())
+                            : DeleteCertificateOutcome(std::move(result.GetError()));
 }
 
 DescribeCertificateOutcome ACMClient::DescribeCertificate(const DescribeCertificateRequest& request) const {
-  return DescribeCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCertificateOutcome(result.GetResultWithOwnership())
+                            : DescribeCertificateOutcome(std::move(result.GetError()));
 }
 
 ExportCertificateOutcome ACMClient::ExportCertificate(const ExportCertificateRequest& request) const {
-  return ExportCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExportCertificateOutcome(result.GetResultWithOwnership())
+                            : ExportCertificateOutcome(std::move(result.GetError()));
 }
 
 GetAccountConfigurationOutcome ACMClient::GetAccountConfiguration(const GetAccountConfigurationRequest& request) const {
-  return GetAccountConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAccountConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetAccountConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetCertificateOutcome ACMClient::GetCertificate(const GetCertificateRequest& request) const {
-  return GetCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCertificateOutcome(result.GetResultWithOwnership()) : GetCertificateOutcome(std::move(result.GetError()));
 }
 
 ImportCertificateOutcome ACMClient::ImportCertificate(const ImportCertificateRequest& request) const {
-  return ImportCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportCertificateOutcome(result.GetResultWithOwnership())
+                            : ImportCertificateOutcome(std::move(result.GetError()));
 }
 
 ListCertificatesOutcome ACMClient::ListCertificates(const ListCertificatesRequest& request) const {
-  return ListCertificatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCertificatesOutcome(result.GetResultWithOwnership())
+                            : ListCertificatesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForCertificateOutcome ACMClient::ListTagsForCertificate(const ListTagsForCertificateRequest& request) const {
-  return ListTagsForCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForCertificateOutcome(result.GetResultWithOwnership())
+                            : ListTagsForCertificateOutcome(std::move(result.GetError()));
 }
 
 PutAccountConfigurationOutcome ACMClient::PutAccountConfiguration(const PutAccountConfigurationRequest& request) const {
-  return PutAccountConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutAccountConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutAccountConfigurationOutcome(std::move(result.GetError()));
 }
 
 RemoveTagsFromCertificateOutcome ACMClient::RemoveTagsFromCertificate(const RemoveTagsFromCertificateRequest& request) const {
-  return RemoveTagsFromCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveTagsFromCertificateOutcome(result.GetResultWithOwnership())
+                            : RemoveTagsFromCertificateOutcome(std::move(result.GetError()));
 }
 
 RenewCertificateOutcome ACMClient::RenewCertificate(const RenewCertificateRequest& request) const {
-  return RenewCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RenewCertificateOutcome(result.GetResultWithOwnership())
+                            : RenewCertificateOutcome(std::move(result.GetError()));
 }
 
 RequestCertificateOutcome ACMClient::RequestCertificate(const RequestCertificateRequest& request) const {
-  return RequestCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RequestCertificateOutcome(result.GetResultWithOwnership())
+                            : RequestCertificateOutcome(std::move(result.GetError()));
 }
 
 ResendValidationEmailOutcome ACMClient::ResendValidationEmail(const ResendValidationEmailRequest& request) const {
-  return ResendValidationEmailOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResendValidationEmailOutcome(result.GetResultWithOwnership())
+                            : ResendValidationEmailOutcome(std::move(result.GetError()));
 }
 
 RevokeCertificateOutcome ACMClient::RevokeCertificate(const RevokeCertificateRequest& request) const {
-  return RevokeCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RevokeCertificateOutcome(result.GetResultWithOwnership())
+                            : RevokeCertificateOutcome(std::move(result.GetError()));
 }
 
 UpdateCertificateOptionsOutcome ACMClient::UpdateCertificateOptions(const UpdateCertificateOptionsRequest& request) const {
-  return UpdateCertificateOptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCertificateOptionsOutcome(result.GetResultWithOwnership())
+                            : UpdateCertificateOptionsOutcome(std::move(result.GetError()));
 }

@@ -243,287 +243,405 @@ PersonalizeClient::InvokeOperationOutcome PersonalizeClient::InvokeServiceOperat
 }
 
 CreateBatchInferenceJobOutcome PersonalizeClient::CreateBatchInferenceJob(const CreateBatchInferenceJobRequest& request) const {
-  return CreateBatchInferenceJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBatchInferenceJobOutcome(result.GetResultWithOwnership())
+                            : CreateBatchInferenceJobOutcome(std::move(result.GetError()));
 }
 
 CreateBatchSegmentJobOutcome PersonalizeClient::CreateBatchSegmentJob(const CreateBatchSegmentJobRequest& request) const {
-  return CreateBatchSegmentJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBatchSegmentJobOutcome(result.GetResultWithOwnership())
+                            : CreateBatchSegmentJobOutcome(std::move(result.GetError()));
 }
 
 CreateCampaignOutcome PersonalizeClient::CreateCampaign(const CreateCampaignRequest& request) const {
-  return CreateCampaignOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCampaignOutcome(result.GetResultWithOwnership()) : CreateCampaignOutcome(std::move(result.GetError()));
 }
 
 CreateDataDeletionJobOutcome PersonalizeClient::CreateDataDeletionJob(const CreateDataDeletionJobRequest& request) const {
-  return CreateDataDeletionJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDataDeletionJobOutcome(result.GetResultWithOwnership())
+                            : CreateDataDeletionJobOutcome(std::move(result.GetError()));
 }
 
 CreateDatasetOutcome PersonalizeClient::CreateDataset(const CreateDatasetRequest& request) const {
-  return CreateDatasetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDatasetOutcome(result.GetResultWithOwnership()) : CreateDatasetOutcome(std::move(result.GetError()));
 }
 
 CreateDatasetExportJobOutcome PersonalizeClient::CreateDatasetExportJob(const CreateDatasetExportJobRequest& request) const {
-  return CreateDatasetExportJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDatasetExportJobOutcome(result.GetResultWithOwnership())
+                            : CreateDatasetExportJobOutcome(std::move(result.GetError()));
 }
 
 CreateDatasetGroupOutcome PersonalizeClient::CreateDatasetGroup(const CreateDatasetGroupRequest& request) const {
-  return CreateDatasetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDatasetGroupOutcome(result.GetResultWithOwnership())
+                            : CreateDatasetGroupOutcome(std::move(result.GetError()));
 }
 
 CreateDatasetImportJobOutcome PersonalizeClient::CreateDatasetImportJob(const CreateDatasetImportJobRequest& request) const {
-  return CreateDatasetImportJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDatasetImportJobOutcome(result.GetResultWithOwnership())
+                            : CreateDatasetImportJobOutcome(std::move(result.GetError()));
 }
 
 CreateEventTrackerOutcome PersonalizeClient::CreateEventTracker(const CreateEventTrackerRequest& request) const {
-  return CreateEventTrackerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEventTrackerOutcome(result.GetResultWithOwnership())
+                            : CreateEventTrackerOutcome(std::move(result.GetError()));
 }
 
 CreateFilterOutcome PersonalizeClient::CreateFilter(const CreateFilterRequest& request) const {
-  return CreateFilterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFilterOutcome(result.GetResultWithOwnership()) : CreateFilterOutcome(std::move(result.GetError()));
 }
 
 CreateMetricAttributionOutcome PersonalizeClient::CreateMetricAttribution(const CreateMetricAttributionRequest& request) const {
-  return CreateMetricAttributionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMetricAttributionOutcome(result.GetResultWithOwnership())
+                            : CreateMetricAttributionOutcome(std::move(result.GetError()));
 }
 
 CreateRecommenderOutcome PersonalizeClient::CreateRecommender(const CreateRecommenderRequest& request) const {
-  return CreateRecommenderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRecommenderOutcome(result.GetResultWithOwnership())
+                            : CreateRecommenderOutcome(std::move(result.GetError()));
 }
 
 CreateSchemaOutcome PersonalizeClient::CreateSchema(const CreateSchemaRequest& request) const {
-  return CreateSchemaOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSchemaOutcome(result.GetResultWithOwnership()) : CreateSchemaOutcome(std::move(result.GetError()));
 }
 
 CreateSolutionOutcome PersonalizeClient::CreateSolution(const CreateSolutionRequest& request) const {
-  return CreateSolutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSolutionOutcome(result.GetResultWithOwnership()) : CreateSolutionOutcome(std::move(result.GetError()));
 }
 
 CreateSolutionVersionOutcome PersonalizeClient::CreateSolutionVersion(const CreateSolutionVersionRequest& request) const {
-  return CreateSolutionVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSolutionVersionOutcome(result.GetResultWithOwnership())
+                            : CreateSolutionVersionOutcome(std::move(result.GetError()));
 }
 
 DeleteCampaignOutcome PersonalizeClient::DeleteCampaign(const DeleteCampaignRequest& request) const {
-  return DeleteCampaignOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCampaignOutcome(result.GetResultWithOwnership()) : DeleteCampaignOutcome(std::move(result.GetError()));
 }
 
 DeleteDatasetOutcome PersonalizeClient::DeleteDataset(const DeleteDatasetRequest& request) const {
-  return DeleteDatasetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDatasetOutcome(result.GetResultWithOwnership()) : DeleteDatasetOutcome(std::move(result.GetError()));
 }
 
 DeleteDatasetGroupOutcome PersonalizeClient::DeleteDatasetGroup(const DeleteDatasetGroupRequest& request) const {
-  return DeleteDatasetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDatasetGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteDatasetGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteEventTrackerOutcome PersonalizeClient::DeleteEventTracker(const DeleteEventTrackerRequest& request) const {
-  return DeleteEventTrackerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteEventTrackerOutcome(result.GetResultWithOwnership())
+                            : DeleteEventTrackerOutcome(std::move(result.GetError()));
 }
 
 DeleteFilterOutcome PersonalizeClient::DeleteFilter(const DeleteFilterRequest& request) const {
-  return DeleteFilterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteFilterOutcome(result.GetResultWithOwnership()) : DeleteFilterOutcome(std::move(result.GetError()));
 }
 
 DeleteMetricAttributionOutcome PersonalizeClient::DeleteMetricAttribution(const DeleteMetricAttributionRequest& request) const {
-  return DeleteMetricAttributionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteMetricAttributionOutcome(result.GetResultWithOwnership())
+                            : DeleteMetricAttributionOutcome(std::move(result.GetError()));
 }
 
 DeleteRecommenderOutcome PersonalizeClient::DeleteRecommender(const DeleteRecommenderRequest& request) const {
-  return DeleteRecommenderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRecommenderOutcome(result.GetResultWithOwnership())
+                            : DeleteRecommenderOutcome(std::move(result.GetError()));
 }
 
 DeleteSchemaOutcome PersonalizeClient::DeleteSchema(const DeleteSchemaRequest& request) const {
-  return DeleteSchemaOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSchemaOutcome(result.GetResultWithOwnership()) : DeleteSchemaOutcome(std::move(result.GetError()));
 }
 
 DeleteSolutionOutcome PersonalizeClient::DeleteSolution(const DeleteSolutionRequest& request) const {
-  return DeleteSolutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSolutionOutcome(result.GetResultWithOwnership()) : DeleteSolutionOutcome(std::move(result.GetError()));
 }
 
 DescribeAlgorithmOutcome PersonalizeClient::DescribeAlgorithm(const DescribeAlgorithmRequest& request) const {
-  return DescribeAlgorithmOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAlgorithmOutcome(result.GetResultWithOwnership())
+                            : DescribeAlgorithmOutcome(std::move(result.GetError()));
 }
 
 DescribeBatchInferenceJobOutcome PersonalizeClient::DescribeBatchInferenceJob(const DescribeBatchInferenceJobRequest& request) const {
-  return DescribeBatchInferenceJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeBatchInferenceJobOutcome(result.GetResultWithOwnership())
+                            : DescribeBatchInferenceJobOutcome(std::move(result.GetError()));
 }
 
 DescribeBatchSegmentJobOutcome PersonalizeClient::DescribeBatchSegmentJob(const DescribeBatchSegmentJobRequest& request) const {
-  return DescribeBatchSegmentJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeBatchSegmentJobOutcome(result.GetResultWithOwnership())
+                            : DescribeBatchSegmentJobOutcome(std::move(result.GetError()));
 }
 
 DescribeCampaignOutcome PersonalizeClient::DescribeCampaign(const DescribeCampaignRequest& request) const {
-  return DescribeCampaignOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCampaignOutcome(result.GetResultWithOwnership())
+                            : DescribeCampaignOutcome(std::move(result.GetError()));
 }
 
 DescribeDataDeletionJobOutcome PersonalizeClient::DescribeDataDeletionJob(const DescribeDataDeletionJobRequest& request) const {
-  return DescribeDataDeletionJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDataDeletionJobOutcome(result.GetResultWithOwnership())
+                            : DescribeDataDeletionJobOutcome(std::move(result.GetError()));
 }
 
 DescribeDatasetOutcome PersonalizeClient::DescribeDataset(const DescribeDatasetRequest& request) const {
-  return DescribeDatasetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDatasetOutcome(result.GetResultWithOwnership())
+                            : DescribeDatasetOutcome(std::move(result.GetError()));
 }
 
 DescribeDatasetExportJobOutcome PersonalizeClient::DescribeDatasetExportJob(const DescribeDatasetExportJobRequest& request) const {
-  return DescribeDatasetExportJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDatasetExportJobOutcome(result.GetResultWithOwnership())
+                            : DescribeDatasetExportJobOutcome(std::move(result.GetError()));
 }
 
 DescribeDatasetGroupOutcome PersonalizeClient::DescribeDatasetGroup(const DescribeDatasetGroupRequest& request) const {
-  return DescribeDatasetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDatasetGroupOutcome(result.GetResultWithOwnership())
+                            : DescribeDatasetGroupOutcome(std::move(result.GetError()));
 }
 
 DescribeDatasetImportJobOutcome PersonalizeClient::DescribeDatasetImportJob(const DescribeDatasetImportJobRequest& request) const {
-  return DescribeDatasetImportJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDatasetImportJobOutcome(result.GetResultWithOwnership())
+                            : DescribeDatasetImportJobOutcome(std::move(result.GetError()));
 }
 
 DescribeEventTrackerOutcome PersonalizeClient::DescribeEventTracker(const DescribeEventTrackerRequest& request) const {
-  return DescribeEventTrackerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEventTrackerOutcome(result.GetResultWithOwnership())
+                            : DescribeEventTrackerOutcome(std::move(result.GetError()));
 }
 
 DescribeFeatureTransformationOutcome PersonalizeClient::DescribeFeatureTransformation(
     const DescribeFeatureTransformationRequest& request) const {
-  return DescribeFeatureTransformationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeFeatureTransformationOutcome(result.GetResultWithOwnership())
+                            : DescribeFeatureTransformationOutcome(std::move(result.GetError()));
 }
 
 DescribeFilterOutcome PersonalizeClient::DescribeFilter(const DescribeFilterRequest& request) const {
-  return DescribeFilterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeFilterOutcome(result.GetResultWithOwnership()) : DescribeFilterOutcome(std::move(result.GetError()));
 }
 
 DescribeMetricAttributionOutcome PersonalizeClient::DescribeMetricAttribution(const DescribeMetricAttributionRequest& request) const {
-  return DescribeMetricAttributionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeMetricAttributionOutcome(result.GetResultWithOwnership())
+                            : DescribeMetricAttributionOutcome(std::move(result.GetError()));
 }
 
 DescribeRecipeOutcome PersonalizeClient::DescribeRecipe(const DescribeRecipeRequest& request) const {
-  return DescribeRecipeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRecipeOutcome(result.GetResultWithOwnership()) : DescribeRecipeOutcome(std::move(result.GetError()));
 }
 
 DescribeRecommenderOutcome PersonalizeClient::DescribeRecommender(const DescribeRecommenderRequest& request) const {
-  return DescribeRecommenderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRecommenderOutcome(result.GetResultWithOwnership())
+                            : DescribeRecommenderOutcome(std::move(result.GetError()));
 }
 
 DescribeSchemaOutcome PersonalizeClient::DescribeSchema(const DescribeSchemaRequest& request) const {
-  return DescribeSchemaOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSchemaOutcome(result.GetResultWithOwnership()) : DescribeSchemaOutcome(std::move(result.GetError()));
 }
 
 DescribeSolutionOutcome PersonalizeClient::DescribeSolution(const DescribeSolutionRequest& request) const {
-  return DescribeSolutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSolutionOutcome(result.GetResultWithOwnership())
+                            : DescribeSolutionOutcome(std::move(result.GetError()));
 }
 
 DescribeSolutionVersionOutcome PersonalizeClient::DescribeSolutionVersion(const DescribeSolutionVersionRequest& request) const {
-  return DescribeSolutionVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSolutionVersionOutcome(result.GetResultWithOwnership())
+                            : DescribeSolutionVersionOutcome(std::move(result.GetError()));
 }
 
 GetSolutionMetricsOutcome PersonalizeClient::GetSolutionMetrics(const GetSolutionMetricsRequest& request) const {
-  return GetSolutionMetricsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSolutionMetricsOutcome(result.GetResultWithOwnership())
+                            : GetSolutionMetricsOutcome(std::move(result.GetError()));
 }
 
 ListBatchInferenceJobsOutcome PersonalizeClient::ListBatchInferenceJobs(const ListBatchInferenceJobsRequest& request) const {
-  return ListBatchInferenceJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBatchInferenceJobsOutcome(result.GetResultWithOwnership())
+                            : ListBatchInferenceJobsOutcome(std::move(result.GetError()));
 }
 
 ListBatchSegmentJobsOutcome PersonalizeClient::ListBatchSegmentJobs(const ListBatchSegmentJobsRequest& request) const {
-  return ListBatchSegmentJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBatchSegmentJobsOutcome(result.GetResultWithOwnership())
+                            : ListBatchSegmentJobsOutcome(std::move(result.GetError()));
 }
 
 ListCampaignsOutcome PersonalizeClient::ListCampaigns(const ListCampaignsRequest& request) const {
-  return ListCampaignsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCampaignsOutcome(result.GetResultWithOwnership()) : ListCampaignsOutcome(std::move(result.GetError()));
 }
 
 ListDataDeletionJobsOutcome PersonalizeClient::ListDataDeletionJobs(const ListDataDeletionJobsRequest& request) const {
-  return ListDataDeletionJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDataDeletionJobsOutcome(result.GetResultWithOwnership())
+                            : ListDataDeletionJobsOutcome(std::move(result.GetError()));
 }
 
 ListDatasetExportJobsOutcome PersonalizeClient::ListDatasetExportJobs(const ListDatasetExportJobsRequest& request) const {
-  return ListDatasetExportJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDatasetExportJobsOutcome(result.GetResultWithOwnership())
+                            : ListDatasetExportJobsOutcome(std::move(result.GetError()));
 }
 
 ListDatasetGroupsOutcome PersonalizeClient::ListDatasetGroups(const ListDatasetGroupsRequest& request) const {
-  return ListDatasetGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDatasetGroupsOutcome(result.GetResultWithOwnership())
+                            : ListDatasetGroupsOutcome(std::move(result.GetError()));
 }
 
 ListDatasetImportJobsOutcome PersonalizeClient::ListDatasetImportJobs(const ListDatasetImportJobsRequest& request) const {
-  return ListDatasetImportJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDatasetImportJobsOutcome(result.GetResultWithOwnership())
+                            : ListDatasetImportJobsOutcome(std::move(result.GetError()));
 }
 
 ListDatasetsOutcome PersonalizeClient::ListDatasets(const ListDatasetsRequest& request) const {
-  return ListDatasetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDatasetsOutcome(result.GetResultWithOwnership()) : ListDatasetsOutcome(std::move(result.GetError()));
 }
 
 ListEventTrackersOutcome PersonalizeClient::ListEventTrackers(const ListEventTrackersRequest& request) const {
-  return ListEventTrackersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEventTrackersOutcome(result.GetResultWithOwnership())
+                            : ListEventTrackersOutcome(std::move(result.GetError()));
 }
 
 ListFiltersOutcome PersonalizeClient::ListFilters(const ListFiltersRequest& request) const {
-  return ListFiltersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFiltersOutcome(result.GetResultWithOwnership()) : ListFiltersOutcome(std::move(result.GetError()));
 }
 
 ListMetricAttributionMetricsOutcome PersonalizeClient::ListMetricAttributionMetrics(
     const ListMetricAttributionMetricsRequest& request) const {
-  return ListMetricAttributionMetricsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMetricAttributionMetricsOutcome(result.GetResultWithOwnership())
+                            : ListMetricAttributionMetricsOutcome(std::move(result.GetError()));
 }
 
 ListMetricAttributionsOutcome PersonalizeClient::ListMetricAttributions(const ListMetricAttributionsRequest& request) const {
-  return ListMetricAttributionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMetricAttributionsOutcome(result.GetResultWithOwnership())
+                            : ListMetricAttributionsOutcome(std::move(result.GetError()));
 }
 
 ListRecipesOutcome PersonalizeClient::ListRecipes(const ListRecipesRequest& request) const {
-  return ListRecipesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRecipesOutcome(result.GetResultWithOwnership()) : ListRecipesOutcome(std::move(result.GetError()));
 }
 
 ListRecommendersOutcome PersonalizeClient::ListRecommenders(const ListRecommendersRequest& request) const {
-  return ListRecommendersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRecommendersOutcome(result.GetResultWithOwnership())
+                            : ListRecommendersOutcome(std::move(result.GetError()));
 }
 
 ListSchemasOutcome PersonalizeClient::ListSchemas(const ListSchemasRequest& request) const {
-  return ListSchemasOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSchemasOutcome(result.GetResultWithOwnership()) : ListSchemasOutcome(std::move(result.GetError()));
 }
 
 ListSolutionVersionsOutcome PersonalizeClient::ListSolutionVersions(const ListSolutionVersionsRequest& request) const {
-  return ListSolutionVersionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSolutionVersionsOutcome(result.GetResultWithOwnership())
+                            : ListSolutionVersionsOutcome(std::move(result.GetError()));
 }
 
 ListSolutionsOutcome PersonalizeClient::ListSolutions(const ListSolutionsRequest& request) const {
-  return ListSolutionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSolutionsOutcome(result.GetResultWithOwnership()) : ListSolutionsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome PersonalizeClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 StartRecommenderOutcome PersonalizeClient::StartRecommender(const StartRecommenderRequest& request) const {
-  return StartRecommenderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartRecommenderOutcome(result.GetResultWithOwnership())
+                            : StartRecommenderOutcome(std::move(result.GetError()));
 }
 
 StopRecommenderOutcome PersonalizeClient::StopRecommender(const StopRecommenderRequest& request) const {
-  return StopRecommenderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopRecommenderOutcome(result.GetResultWithOwnership())
+                            : StopRecommenderOutcome(std::move(result.GetError()));
 }
 
 StopSolutionVersionCreationOutcome PersonalizeClient::StopSolutionVersionCreation(const StopSolutionVersionCreationRequest& request) const {
-  return StopSolutionVersionCreationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopSolutionVersionCreationOutcome(result.GetResultWithOwnership())
+                            : StopSolutionVersionCreationOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome PersonalizeClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome PersonalizeClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateCampaignOutcome PersonalizeClient::UpdateCampaign(const UpdateCampaignRequest& request) const {
-  return UpdateCampaignOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCampaignOutcome(result.GetResultWithOwnership()) : UpdateCampaignOutcome(std::move(result.GetError()));
 }
 
 UpdateDatasetOutcome PersonalizeClient::UpdateDataset(const UpdateDatasetRequest& request) const {
-  return UpdateDatasetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDatasetOutcome(result.GetResultWithOwnership()) : UpdateDatasetOutcome(std::move(result.GetError()));
 }
 
 UpdateMetricAttributionOutcome PersonalizeClient::UpdateMetricAttribution(const UpdateMetricAttributionRequest& request) const {
-  return UpdateMetricAttributionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateMetricAttributionOutcome(result.GetResultWithOwnership())
+                            : UpdateMetricAttributionOutcome(std::move(result.GetError()));
 }
 
 UpdateRecommenderOutcome PersonalizeClient::UpdateRecommender(const UpdateRecommenderRequest& request) const {
-  return UpdateRecommenderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRecommenderOutcome(result.GetResultWithOwnership())
+                            : UpdateRecommenderOutcome(std::move(result.GetError()));
 }
 
 UpdateSolutionOutcome PersonalizeClient::UpdateSolution(const UpdateSolutionRequest& request) const {
-  return UpdateSolutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSolutionOutcome(result.GetResultWithOwnership()) : UpdateSolutionOutcome(std::move(result.GetError()));
 }

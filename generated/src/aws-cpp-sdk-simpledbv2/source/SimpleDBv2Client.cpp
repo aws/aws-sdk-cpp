@@ -183,7 +183,8 @@ GetExportOutcome SimpleDBv2Client::GetExport(const GetExportRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/GetExport");
   };
 
-  return GetExportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetExportOutcome(result.GetResultWithOwnership()) : GetExportOutcome(std::move(result.GetError()));
 }
 
 ListExportsOutcome SimpleDBv2Client::ListExports(const ListExportsRequest& request) const {
@@ -192,7 +193,8 @@ ListExportsOutcome SimpleDBv2Client::ListExports(const ListExportsRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/ListExports");
   };
 
-  return ListExportsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListExportsOutcome(result.GetResultWithOwnership()) : ListExportsOutcome(std::move(result.GetError()));
 }
 
 StartDomainExportOutcome SimpleDBv2Client::StartDomainExport(const StartDomainExportRequest& request) const {
@@ -201,5 +203,7 @@ StartDomainExportOutcome SimpleDBv2Client::StartDomainExport(const StartDomainEx
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/StartDomainExport");
   };
 
-  return StartDomainExportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDomainExportOutcome(result.GetResultWithOwnership())
+                            : StartDomainExportOutcome(std::move(result.GetError()));
 }

@@ -192,78 +192,104 @@ IdentityStoreClient::InvokeOperationOutcome IdentityStoreClient::InvokeServiceOp
 }
 
 CreateGroupOutcome IdentityStoreClient::CreateGroup(const CreateGroupRequest& request) const {
-  return CreateGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGroupOutcome(result.GetResultWithOwnership()) : CreateGroupOutcome(std::move(result.GetError()));
 }
 
 CreateGroupMembershipOutcome IdentityStoreClient::CreateGroupMembership(const CreateGroupMembershipRequest& request) const {
-  return CreateGroupMembershipOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGroupMembershipOutcome(result.GetResultWithOwnership())
+                            : CreateGroupMembershipOutcome(std::move(result.GetError()));
 }
 
 CreateUserOutcome IdentityStoreClient::CreateUser(const CreateUserRequest& request) const {
-  return CreateUserOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateUserOutcome(result.GetResultWithOwnership()) : CreateUserOutcome(std::move(result.GetError()));
 }
 
 DeleteGroupOutcome IdentityStoreClient::DeleteGroup(const DeleteGroupRequest& request) const {
-  return DeleteGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteGroupOutcome(result.GetResultWithOwnership()) : DeleteGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteGroupMembershipOutcome IdentityStoreClient::DeleteGroupMembership(const DeleteGroupMembershipRequest& request) const {
-  return DeleteGroupMembershipOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteGroupMembershipOutcome(result.GetResultWithOwnership())
+                            : DeleteGroupMembershipOutcome(std::move(result.GetError()));
 }
 
 DeleteUserOutcome IdentityStoreClient::DeleteUser(const DeleteUserRequest& request) const {
-  return DeleteUserOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteUserOutcome(result.GetResultWithOwnership()) : DeleteUserOutcome(std::move(result.GetError()));
 }
 
 DescribeGroupOutcome IdentityStoreClient::DescribeGroup(const DescribeGroupRequest& request) const {
-  return DescribeGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeGroupOutcome(result.GetResultWithOwnership()) : DescribeGroupOutcome(std::move(result.GetError()));
 }
 
 DescribeGroupMembershipOutcome IdentityStoreClient::DescribeGroupMembership(const DescribeGroupMembershipRequest& request) const {
-  return DescribeGroupMembershipOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeGroupMembershipOutcome(result.GetResultWithOwnership())
+                            : DescribeGroupMembershipOutcome(std::move(result.GetError()));
 }
 
 DescribeUserOutcome IdentityStoreClient::DescribeUser(const DescribeUserRequest& request) const {
-  return DescribeUserOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeUserOutcome(result.GetResultWithOwnership()) : DescribeUserOutcome(std::move(result.GetError()));
 }
 
 GetGroupIdOutcome IdentityStoreClient::GetGroupId(const GetGroupIdRequest& request) const {
-  return GetGroupIdOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetGroupIdOutcome(result.GetResultWithOwnership()) : GetGroupIdOutcome(std::move(result.GetError()));
 }
 
 GetGroupMembershipIdOutcome IdentityStoreClient::GetGroupMembershipId(const GetGroupMembershipIdRequest& request) const {
-  return GetGroupMembershipIdOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetGroupMembershipIdOutcome(result.GetResultWithOwnership())
+                            : GetGroupMembershipIdOutcome(std::move(result.GetError()));
 }
 
 GetUserIdOutcome IdentityStoreClient::GetUserId(const GetUserIdRequest& request) const {
-  return GetUserIdOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetUserIdOutcome(result.GetResultWithOwnership()) : GetUserIdOutcome(std::move(result.GetError()));
 }
 
 IsMemberInGroupsOutcome IdentityStoreClient::IsMemberInGroups(const IsMemberInGroupsRequest& request) const {
-  return IsMemberInGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? IsMemberInGroupsOutcome(result.GetResultWithOwnership())
+                            : IsMemberInGroupsOutcome(std::move(result.GetError()));
 }
 
 ListGroupMembershipsOutcome IdentityStoreClient::ListGroupMemberships(const ListGroupMembershipsRequest& request) const {
-  return ListGroupMembershipsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListGroupMembershipsOutcome(result.GetResultWithOwnership())
+                            : ListGroupMembershipsOutcome(std::move(result.GetError()));
 }
 
 ListGroupMembershipsForMemberOutcome IdentityStoreClient::ListGroupMembershipsForMember(
     const ListGroupMembershipsForMemberRequest& request) const {
-  return ListGroupMembershipsForMemberOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListGroupMembershipsForMemberOutcome(result.GetResultWithOwnership())
+                            : ListGroupMembershipsForMemberOutcome(std::move(result.GetError()));
 }
 
 ListGroupsOutcome IdentityStoreClient::ListGroups(const ListGroupsRequest& request) const {
-  return ListGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListGroupsOutcome(result.GetResultWithOwnership()) : ListGroupsOutcome(std::move(result.GetError()));
 }
 
 ListUsersOutcome IdentityStoreClient::ListUsers(const ListUsersRequest& request) const {
-  return ListUsersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListUsersOutcome(result.GetResultWithOwnership()) : ListUsersOutcome(std::move(result.GetError()));
 }
 
 UpdateGroupOutcome IdentityStoreClient::UpdateGroup(const UpdateGroupRequest& request) const {
-  return UpdateGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateGroupOutcome(result.GetResultWithOwnership()) : UpdateGroupOutcome(std::move(result.GetError()));
 }
 
 UpdateUserOutcome IdentityStoreClient::UpdateUser(const UpdateUserRequest& request) const {
-  return UpdateUserOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateUserOutcome(result.GetResultWithOwnership()) : UpdateUserOutcome(std::move(result.GetError()));
 }

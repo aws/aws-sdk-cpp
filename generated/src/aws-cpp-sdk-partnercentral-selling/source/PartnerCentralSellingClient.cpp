@@ -224,186 +224,265 @@ PartnerCentralSellingClient::InvokeOperationOutcome PartnerCentralSellingClient:
 
 AcceptEngagementInvitationOutcome PartnerCentralSellingClient::AcceptEngagementInvitation(
     const AcceptEngagementInvitationRequest& request) const {
-  return AcceptEngagementInvitationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptEngagementInvitationOutcome(result.GetResultWithOwnership())
+                            : AcceptEngagementInvitationOutcome(std::move(result.GetError()));
 }
 
 AssignOpportunityOutcome PartnerCentralSellingClient::AssignOpportunity(const AssignOpportunityRequest& request) const {
-  return AssignOpportunityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssignOpportunityOutcome(result.GetResultWithOwnership())
+                            : AssignOpportunityOutcome(std::move(result.GetError()));
 }
 
 AssociateOpportunityOutcome PartnerCentralSellingClient::AssociateOpportunity(const AssociateOpportunityRequest& request) const {
-  return AssociateOpportunityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateOpportunityOutcome(result.GetResultWithOwnership())
+                            : AssociateOpportunityOutcome(std::move(result.GetError()));
 }
 
 CreateEngagementOutcome PartnerCentralSellingClient::CreateEngagement(const CreateEngagementRequest& request) const {
-  return CreateEngagementOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEngagementOutcome(result.GetResultWithOwnership())
+                            : CreateEngagementOutcome(std::move(result.GetError()));
 }
 
 CreateEngagementContextOutcome PartnerCentralSellingClient::CreateEngagementContext(const CreateEngagementContextRequest& request) const {
-  return CreateEngagementContextOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEngagementContextOutcome(result.GetResultWithOwnership())
+                            : CreateEngagementContextOutcome(std::move(result.GetError()));
 }
 
 CreateEngagementInvitationOutcome PartnerCentralSellingClient::CreateEngagementInvitation(
     const CreateEngagementInvitationRequest& request) const {
-  return CreateEngagementInvitationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEngagementInvitationOutcome(result.GetResultWithOwnership())
+                            : CreateEngagementInvitationOutcome(std::move(result.GetError()));
 }
 
 CreateOpportunityOutcome PartnerCentralSellingClient::CreateOpportunity(const CreateOpportunityRequest& request) const {
-  return CreateOpportunityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateOpportunityOutcome(result.GetResultWithOwnership())
+                            : CreateOpportunityOutcome(std::move(result.GetError()));
 }
 
 CreateResourceSnapshotOutcome PartnerCentralSellingClient::CreateResourceSnapshot(const CreateResourceSnapshotRequest& request) const {
-  return CreateResourceSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateResourceSnapshotOutcome(result.GetResultWithOwnership())
+                            : CreateResourceSnapshotOutcome(std::move(result.GetError()));
 }
 
 CreateResourceSnapshotJobOutcome PartnerCentralSellingClient::CreateResourceSnapshotJob(
     const CreateResourceSnapshotJobRequest& request) const {
-  return CreateResourceSnapshotJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateResourceSnapshotJobOutcome(result.GetResultWithOwnership())
+                            : CreateResourceSnapshotJobOutcome(std::move(result.GetError()));
 }
 
 DeleteResourceSnapshotJobOutcome PartnerCentralSellingClient::DeleteResourceSnapshotJob(
     const DeleteResourceSnapshotJobRequest& request) const {
-  return DeleteResourceSnapshotJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteResourceSnapshotJobOutcome(result.GetResultWithOwnership())
+                            : DeleteResourceSnapshotJobOutcome(std::move(result.GetError()));
 }
 
 DisassociateOpportunityOutcome PartnerCentralSellingClient::DisassociateOpportunity(const DisassociateOpportunityRequest& request) const {
-  return DisassociateOpportunityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateOpportunityOutcome(result.GetResultWithOwnership())
+                            : DisassociateOpportunityOutcome(std::move(result.GetError()));
 }
 
 GetAwsOpportunitySummaryOutcome PartnerCentralSellingClient::GetAwsOpportunitySummary(
     const GetAwsOpportunitySummaryRequest& request) const {
-  return GetAwsOpportunitySummaryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAwsOpportunitySummaryOutcome(result.GetResultWithOwnership())
+                            : GetAwsOpportunitySummaryOutcome(std::move(result.GetError()));
 }
 
 GetEngagementOutcome PartnerCentralSellingClient::GetEngagement(const GetEngagementRequest& request) const {
-  return GetEngagementOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEngagementOutcome(result.GetResultWithOwnership()) : GetEngagementOutcome(std::move(result.GetError()));
 }
 
 GetEngagementInvitationOutcome PartnerCentralSellingClient::GetEngagementInvitation(const GetEngagementInvitationRequest& request) const {
-  return GetEngagementInvitationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEngagementInvitationOutcome(result.GetResultWithOwnership())
+                            : GetEngagementInvitationOutcome(std::move(result.GetError()));
 }
 
 GetOpportunityOutcome PartnerCentralSellingClient::GetOpportunity(const GetOpportunityRequest& request) const {
-  return GetOpportunityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetOpportunityOutcome(result.GetResultWithOwnership()) : GetOpportunityOutcome(std::move(result.GetError()));
 }
 
 GetResourceSnapshotOutcome PartnerCentralSellingClient::GetResourceSnapshot(const GetResourceSnapshotRequest& request) const {
-  return GetResourceSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourceSnapshotOutcome(result.GetResultWithOwnership())
+                            : GetResourceSnapshotOutcome(std::move(result.GetError()));
 }
 
 GetResourceSnapshotJobOutcome PartnerCentralSellingClient::GetResourceSnapshotJob(const GetResourceSnapshotJobRequest& request) const {
-  return GetResourceSnapshotJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourceSnapshotJobOutcome(result.GetResultWithOwnership())
+                            : GetResourceSnapshotJobOutcome(std::move(result.GetError()));
 }
 
 GetSellingSystemSettingsOutcome PartnerCentralSellingClient::GetSellingSystemSettings(
     const GetSellingSystemSettingsRequest& request) const {
-  return GetSellingSystemSettingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSellingSystemSettingsOutcome(result.GetResultWithOwnership())
+                            : GetSellingSystemSettingsOutcome(std::move(result.GetError()));
 }
 
 ListEngagementByAcceptingInvitationTasksOutcome PartnerCentralSellingClient::ListEngagementByAcceptingInvitationTasks(
     const ListEngagementByAcceptingInvitationTasksRequest& request) const {
-  return ListEngagementByAcceptingInvitationTasksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEngagementByAcceptingInvitationTasksOutcome(result.GetResultWithOwnership())
+                            : ListEngagementByAcceptingInvitationTasksOutcome(std::move(result.GetError()));
 }
 
 ListEngagementFromOpportunityTasksOutcome PartnerCentralSellingClient::ListEngagementFromOpportunityTasks(
     const ListEngagementFromOpportunityTasksRequest& request) const {
-  return ListEngagementFromOpportunityTasksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEngagementFromOpportunityTasksOutcome(result.GetResultWithOwnership())
+                            : ListEngagementFromOpportunityTasksOutcome(std::move(result.GetError()));
 }
 
 ListEngagementInvitationsOutcome PartnerCentralSellingClient::ListEngagementInvitations(
     const ListEngagementInvitationsRequest& request) const {
-  return ListEngagementInvitationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEngagementInvitationsOutcome(result.GetResultWithOwnership())
+                            : ListEngagementInvitationsOutcome(std::move(result.GetError()));
 }
 
 ListEngagementMembersOutcome PartnerCentralSellingClient::ListEngagementMembers(const ListEngagementMembersRequest& request) const {
-  return ListEngagementMembersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEngagementMembersOutcome(result.GetResultWithOwnership())
+                            : ListEngagementMembersOutcome(std::move(result.GetError()));
 }
 
 ListEngagementResourceAssociationsOutcome PartnerCentralSellingClient::ListEngagementResourceAssociations(
     const ListEngagementResourceAssociationsRequest& request) const {
-  return ListEngagementResourceAssociationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEngagementResourceAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListEngagementResourceAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListEngagementsOutcome PartnerCentralSellingClient::ListEngagements(const ListEngagementsRequest& request) const {
-  return ListEngagementsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEngagementsOutcome(result.GetResultWithOwnership())
+                            : ListEngagementsOutcome(std::move(result.GetError()));
 }
 
 ListOpportunitiesOutcome PartnerCentralSellingClient::ListOpportunities(const ListOpportunitiesRequest& request) const {
-  return ListOpportunitiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListOpportunitiesOutcome(result.GetResultWithOwnership())
+                            : ListOpportunitiesOutcome(std::move(result.GetError()));
 }
 
 ListOpportunityFromEngagementTasksOutcome PartnerCentralSellingClient::ListOpportunityFromEngagementTasks(
     const ListOpportunityFromEngagementTasksRequest& request) const {
-  return ListOpportunityFromEngagementTasksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListOpportunityFromEngagementTasksOutcome(result.GetResultWithOwnership())
+                            : ListOpportunityFromEngagementTasksOutcome(std::move(result.GetError()));
 }
 
 ListResourceSnapshotJobsOutcome PartnerCentralSellingClient::ListResourceSnapshotJobs(
     const ListResourceSnapshotJobsRequest& request) const {
-  return ListResourceSnapshotJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResourceSnapshotJobsOutcome(result.GetResultWithOwnership())
+                            : ListResourceSnapshotJobsOutcome(std::move(result.GetError()));
 }
 
 ListResourceSnapshotsOutcome PartnerCentralSellingClient::ListResourceSnapshots(const ListResourceSnapshotsRequest& request) const {
-  return ListResourceSnapshotsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResourceSnapshotsOutcome(result.GetResultWithOwnership())
+                            : ListResourceSnapshotsOutcome(std::move(result.GetError()));
 }
 
 ListSolutionsOutcome PartnerCentralSellingClient::ListSolutions(const ListSolutionsRequest& request) const {
-  return ListSolutionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSolutionsOutcome(result.GetResultWithOwnership()) : ListSolutionsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome PartnerCentralSellingClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutSellingSystemSettingsOutcome PartnerCentralSellingClient::PutSellingSystemSettings(
     const PutSellingSystemSettingsRequest& request) const {
-  return PutSellingSystemSettingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutSellingSystemSettingsOutcome(result.GetResultWithOwnership())
+                            : PutSellingSystemSettingsOutcome(std::move(result.GetError()));
 }
 
 RejectEngagementInvitationOutcome PartnerCentralSellingClient::RejectEngagementInvitation(
     const RejectEngagementInvitationRequest& request) const {
-  return RejectEngagementInvitationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RejectEngagementInvitationOutcome(result.GetResultWithOwnership())
+                            : RejectEngagementInvitationOutcome(std::move(result.GetError()));
 }
 
 StartEngagementByAcceptingInvitationTaskOutcome PartnerCentralSellingClient::StartEngagementByAcceptingInvitationTask(
     const StartEngagementByAcceptingInvitationTaskRequest& request) const {
-  return StartEngagementByAcceptingInvitationTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartEngagementByAcceptingInvitationTaskOutcome(result.GetResultWithOwnership())
+                            : StartEngagementByAcceptingInvitationTaskOutcome(std::move(result.GetError()));
 }
 
 StartEngagementFromOpportunityTaskOutcome PartnerCentralSellingClient::StartEngagementFromOpportunityTask(
     const StartEngagementFromOpportunityTaskRequest& request) const {
-  return StartEngagementFromOpportunityTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartEngagementFromOpportunityTaskOutcome(result.GetResultWithOwnership())
+                            : StartEngagementFromOpportunityTaskOutcome(std::move(result.GetError()));
 }
 
 StartOpportunityFromEngagementTaskOutcome PartnerCentralSellingClient::StartOpportunityFromEngagementTask(
     const StartOpportunityFromEngagementTaskRequest& request) const {
-  return StartOpportunityFromEngagementTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartOpportunityFromEngagementTaskOutcome(result.GetResultWithOwnership())
+                            : StartOpportunityFromEngagementTaskOutcome(std::move(result.GetError()));
 }
 
 StartResourceSnapshotJobOutcome PartnerCentralSellingClient::StartResourceSnapshotJob(
     const StartResourceSnapshotJobRequest& request) const {
-  return StartResourceSnapshotJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartResourceSnapshotJobOutcome(result.GetResultWithOwnership())
+                            : StartResourceSnapshotJobOutcome(std::move(result.GetError()));
 }
 
 StopResourceSnapshotJobOutcome PartnerCentralSellingClient::StopResourceSnapshotJob(const StopResourceSnapshotJobRequest& request) const {
-  return StopResourceSnapshotJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopResourceSnapshotJobOutcome(result.GetResultWithOwnership())
+                            : StopResourceSnapshotJobOutcome(std::move(result.GetError()));
 }
 
 SubmitOpportunityOutcome PartnerCentralSellingClient::SubmitOpportunity(const SubmitOpportunityRequest& request) const {
-  return SubmitOpportunityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SubmitOpportunityOutcome(result.GetResultWithOwnership())
+                            : SubmitOpportunityOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome PartnerCentralSellingClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome PartnerCentralSellingClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateEngagementContextOutcome PartnerCentralSellingClient::UpdateEngagementContext(const UpdateEngagementContextRequest& request) const {
-  return UpdateEngagementContextOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateEngagementContextOutcome(result.GetResultWithOwnership())
+                            : UpdateEngagementContextOutcome(std::move(result.GetError()));
 }
 
 UpdateOpportunityOutcome PartnerCentralSellingClient::UpdateOpportunity(const UpdateOpportunityRequest& request) const {
-  return UpdateOpportunityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateOpportunityOutcome(result.GetResultWithOwnership())
+                            : UpdateOpportunityOutcome(std::move(result.GetError()));
 }

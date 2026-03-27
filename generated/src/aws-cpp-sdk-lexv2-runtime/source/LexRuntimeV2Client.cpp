@@ -219,7 +219,8 @@ DeleteSessionOutcome LexRuntimeV2Client::DeleteSession(const DeleteSessionReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
   };
 
-  return DeleteSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSessionOutcome(result.GetResultWithOwnership()) : DeleteSessionOutcome(std::move(result.GetError()));
 }
 
 GetSessionOutcome LexRuntimeV2Client::GetSession(const GetSessionRequest& request) const {
@@ -256,7 +257,8 @@ GetSessionOutcome LexRuntimeV2Client::GetSession(const GetSessionRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
   };
 
-  return GetSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSessionOutcome(result.GetResultWithOwnership()) : GetSessionOutcome(std::move(result.GetError()));
 }
 
 PutSessionOutcome LexRuntimeV2Client::PutSession(const PutSessionRequest& request) const {
@@ -308,8 +310,8 @@ PutSessionOutcome LexRuntimeV2Client::PutSession(const PutSessionRequest& reques
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLocaleId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/sessions/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
-        return PutSessionOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? PutSessionOutcome(result.GetResultWithOwnership()) : PutSessionOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -351,7 +353,8 @@ RecognizeTextOutcome LexRuntimeV2Client::RecognizeText(const RecognizeTextReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/text");
   };
 
-  return RecognizeTextOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RecognizeTextOutcome(result.GetResultWithOwnership()) : RecognizeTextOutcome(std::move(result.GetError()));
 }
 
 RecognizeUtteranceOutcome LexRuntimeV2Client::RecognizeUtterance(const RecognizeUtteranceRequest& request) const {
@@ -409,8 +412,9 @@ RecognizeUtteranceOutcome LexRuntimeV2Client::RecognizeUtterance(const Recognize
         endpointResolutionOutcome.GetResult().AddPathSegments("/sessions/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/utterance");
-        return RecognizeUtteranceOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? RecognizeUtteranceOutcome(result.GetResultWithOwnership())
+                                  : RecognizeUtteranceOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

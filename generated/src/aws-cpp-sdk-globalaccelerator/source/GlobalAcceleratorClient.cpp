@@ -233,252 +233,356 @@ GlobalAcceleratorClient::InvokeOperationOutcome GlobalAcceleratorClient::InvokeS
 }
 
 AddCustomRoutingEndpointsOutcome GlobalAcceleratorClient::AddCustomRoutingEndpoints(const AddCustomRoutingEndpointsRequest& request) const {
-  return AddCustomRoutingEndpointsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddCustomRoutingEndpointsOutcome(result.GetResultWithOwnership())
+                            : AddCustomRoutingEndpointsOutcome(std::move(result.GetError()));
 }
 
 AddEndpointsOutcome GlobalAcceleratorClient::AddEndpoints(const AddEndpointsRequest& request) const {
-  return AddEndpointsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddEndpointsOutcome(result.GetResultWithOwnership()) : AddEndpointsOutcome(std::move(result.GetError()));
 }
 
 AdvertiseByoipCidrOutcome GlobalAcceleratorClient::AdvertiseByoipCidr(const AdvertiseByoipCidrRequest& request) const {
-  return AdvertiseByoipCidrOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AdvertiseByoipCidrOutcome(result.GetResultWithOwnership())
+                            : AdvertiseByoipCidrOutcome(std::move(result.GetError()));
 }
 
 AllowCustomRoutingTrafficOutcome GlobalAcceleratorClient::AllowCustomRoutingTraffic(const AllowCustomRoutingTrafficRequest& request) const {
-  return AllowCustomRoutingTrafficOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AllowCustomRoutingTrafficOutcome(result.GetResultWithOwnership())
+                            : AllowCustomRoutingTrafficOutcome(std::move(result.GetError()));
 }
 
 CreateAcceleratorOutcome GlobalAcceleratorClient::CreateAccelerator(const CreateAcceleratorRequest& request) const {
-  return CreateAcceleratorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAcceleratorOutcome(result.GetResultWithOwnership())
+                            : CreateAcceleratorOutcome(std::move(result.GetError()));
 }
 
 CreateCrossAccountAttachmentOutcome GlobalAcceleratorClient::CreateCrossAccountAttachment(
     const CreateCrossAccountAttachmentRequest& request) const {
-  return CreateCrossAccountAttachmentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCrossAccountAttachmentOutcome(result.GetResultWithOwnership())
+                            : CreateCrossAccountAttachmentOutcome(std::move(result.GetError()));
 }
 
 CreateCustomRoutingAcceleratorOutcome GlobalAcceleratorClient::CreateCustomRoutingAccelerator(
     const CreateCustomRoutingAcceleratorRequest& request) const {
-  return CreateCustomRoutingAcceleratorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCustomRoutingAcceleratorOutcome(result.GetResultWithOwnership())
+                            : CreateCustomRoutingAcceleratorOutcome(std::move(result.GetError()));
 }
 
 CreateCustomRoutingEndpointGroupOutcome GlobalAcceleratorClient::CreateCustomRoutingEndpointGroup(
     const CreateCustomRoutingEndpointGroupRequest& request) const {
-  return CreateCustomRoutingEndpointGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCustomRoutingEndpointGroupOutcome(result.GetResultWithOwnership())
+                            : CreateCustomRoutingEndpointGroupOutcome(std::move(result.GetError()));
 }
 
 CreateCustomRoutingListenerOutcome GlobalAcceleratorClient::CreateCustomRoutingListener(
     const CreateCustomRoutingListenerRequest& request) const {
-  return CreateCustomRoutingListenerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCustomRoutingListenerOutcome(result.GetResultWithOwnership())
+                            : CreateCustomRoutingListenerOutcome(std::move(result.GetError()));
 }
 
 CreateEndpointGroupOutcome GlobalAcceleratorClient::CreateEndpointGroup(const CreateEndpointGroupRequest& request) const {
-  return CreateEndpointGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEndpointGroupOutcome(result.GetResultWithOwnership())
+                            : CreateEndpointGroupOutcome(std::move(result.GetError()));
 }
 
 CreateListenerOutcome GlobalAcceleratorClient::CreateListener(const CreateListenerRequest& request) const {
-  return CreateListenerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateListenerOutcome(result.GetResultWithOwnership()) : CreateListenerOutcome(std::move(result.GetError()));
 }
 
 DeleteAcceleratorOutcome GlobalAcceleratorClient::DeleteAccelerator(const DeleteAcceleratorRequest& request) const {
-  return DeleteAcceleratorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAcceleratorOutcome(result.GetResultWithOwnership())
+                            : DeleteAcceleratorOutcome(std::move(result.GetError()));
 }
 
 DeleteCrossAccountAttachmentOutcome GlobalAcceleratorClient::DeleteCrossAccountAttachment(
     const DeleteCrossAccountAttachmentRequest& request) const {
-  return DeleteCrossAccountAttachmentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCrossAccountAttachmentOutcome(result.GetResultWithOwnership())
+                            : DeleteCrossAccountAttachmentOutcome(std::move(result.GetError()));
 }
 
 DeleteCustomRoutingAcceleratorOutcome GlobalAcceleratorClient::DeleteCustomRoutingAccelerator(
     const DeleteCustomRoutingAcceleratorRequest& request) const {
-  return DeleteCustomRoutingAcceleratorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCustomRoutingAcceleratorOutcome(result.GetResultWithOwnership())
+                            : DeleteCustomRoutingAcceleratorOutcome(std::move(result.GetError()));
 }
 
 DeleteCustomRoutingEndpointGroupOutcome GlobalAcceleratorClient::DeleteCustomRoutingEndpointGroup(
     const DeleteCustomRoutingEndpointGroupRequest& request) const {
-  return DeleteCustomRoutingEndpointGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCustomRoutingEndpointGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteCustomRoutingEndpointGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteCustomRoutingListenerOutcome GlobalAcceleratorClient::DeleteCustomRoutingListener(
     const DeleteCustomRoutingListenerRequest& request) const {
-  return DeleteCustomRoutingListenerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCustomRoutingListenerOutcome(result.GetResultWithOwnership())
+                            : DeleteCustomRoutingListenerOutcome(std::move(result.GetError()));
 }
 
 DeleteEndpointGroupOutcome GlobalAcceleratorClient::DeleteEndpointGroup(const DeleteEndpointGroupRequest& request) const {
-  return DeleteEndpointGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteEndpointGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteEndpointGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteListenerOutcome GlobalAcceleratorClient::DeleteListener(const DeleteListenerRequest& request) const {
-  return DeleteListenerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteListenerOutcome(result.GetResultWithOwnership()) : DeleteListenerOutcome(std::move(result.GetError()));
 }
 
 DenyCustomRoutingTrafficOutcome GlobalAcceleratorClient::DenyCustomRoutingTraffic(const DenyCustomRoutingTrafficRequest& request) const {
-  return DenyCustomRoutingTrafficOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DenyCustomRoutingTrafficOutcome(result.GetResultWithOwnership())
+                            : DenyCustomRoutingTrafficOutcome(std::move(result.GetError()));
 }
 
 DeprovisionByoipCidrOutcome GlobalAcceleratorClient::DeprovisionByoipCidr(const DeprovisionByoipCidrRequest& request) const {
-  return DeprovisionByoipCidrOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeprovisionByoipCidrOutcome(result.GetResultWithOwnership())
+                            : DeprovisionByoipCidrOutcome(std::move(result.GetError()));
 }
 
 DescribeAcceleratorOutcome GlobalAcceleratorClient::DescribeAccelerator(const DescribeAcceleratorRequest& request) const {
-  return DescribeAcceleratorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAcceleratorOutcome(result.GetResultWithOwnership())
+                            : DescribeAcceleratorOutcome(std::move(result.GetError()));
 }
 
 DescribeAcceleratorAttributesOutcome GlobalAcceleratorClient::DescribeAcceleratorAttributes(
     const DescribeAcceleratorAttributesRequest& request) const {
-  return DescribeAcceleratorAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAcceleratorAttributesOutcome(result.GetResultWithOwnership())
+                            : DescribeAcceleratorAttributesOutcome(std::move(result.GetError()));
 }
 
 DescribeCrossAccountAttachmentOutcome GlobalAcceleratorClient::DescribeCrossAccountAttachment(
     const DescribeCrossAccountAttachmentRequest& request) const {
-  return DescribeCrossAccountAttachmentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCrossAccountAttachmentOutcome(result.GetResultWithOwnership())
+                            : DescribeCrossAccountAttachmentOutcome(std::move(result.GetError()));
 }
 
 DescribeCustomRoutingAcceleratorOutcome GlobalAcceleratorClient::DescribeCustomRoutingAccelerator(
     const DescribeCustomRoutingAcceleratorRequest& request) const {
-  return DescribeCustomRoutingAcceleratorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCustomRoutingAcceleratorOutcome(result.GetResultWithOwnership())
+                            : DescribeCustomRoutingAcceleratorOutcome(std::move(result.GetError()));
 }
 
 DescribeCustomRoutingAcceleratorAttributesOutcome GlobalAcceleratorClient::DescribeCustomRoutingAcceleratorAttributes(
     const DescribeCustomRoutingAcceleratorAttributesRequest& request) const {
-  return DescribeCustomRoutingAcceleratorAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCustomRoutingAcceleratorAttributesOutcome(result.GetResultWithOwnership())
+                            : DescribeCustomRoutingAcceleratorAttributesOutcome(std::move(result.GetError()));
 }
 
 DescribeCustomRoutingEndpointGroupOutcome GlobalAcceleratorClient::DescribeCustomRoutingEndpointGroup(
     const DescribeCustomRoutingEndpointGroupRequest& request) const {
-  return DescribeCustomRoutingEndpointGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCustomRoutingEndpointGroupOutcome(result.GetResultWithOwnership())
+                            : DescribeCustomRoutingEndpointGroupOutcome(std::move(result.GetError()));
 }
 
 DescribeCustomRoutingListenerOutcome GlobalAcceleratorClient::DescribeCustomRoutingListener(
     const DescribeCustomRoutingListenerRequest& request) const {
-  return DescribeCustomRoutingListenerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCustomRoutingListenerOutcome(result.GetResultWithOwnership())
+                            : DescribeCustomRoutingListenerOutcome(std::move(result.GetError()));
 }
 
 DescribeEndpointGroupOutcome GlobalAcceleratorClient::DescribeEndpointGroup(const DescribeEndpointGroupRequest& request) const {
-  return DescribeEndpointGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEndpointGroupOutcome(result.GetResultWithOwnership())
+                            : DescribeEndpointGroupOutcome(std::move(result.GetError()));
 }
 
 DescribeListenerOutcome GlobalAcceleratorClient::DescribeListener(const DescribeListenerRequest& request) const {
-  return DescribeListenerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeListenerOutcome(result.GetResultWithOwnership())
+                            : DescribeListenerOutcome(std::move(result.GetError()));
 }
 
 ListAcceleratorsOutcome GlobalAcceleratorClient::ListAccelerators(const ListAcceleratorsRequest& request) const {
-  return ListAcceleratorsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAcceleratorsOutcome(result.GetResultWithOwnership())
+                            : ListAcceleratorsOutcome(std::move(result.GetError()));
 }
 
 ListByoipCidrsOutcome GlobalAcceleratorClient::ListByoipCidrs(const ListByoipCidrsRequest& request) const {
-  return ListByoipCidrsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListByoipCidrsOutcome(result.GetResultWithOwnership()) : ListByoipCidrsOutcome(std::move(result.GetError()));
 }
 
 ListCrossAccountAttachmentsOutcome GlobalAcceleratorClient::ListCrossAccountAttachments(
     const ListCrossAccountAttachmentsRequest& request) const {
-  return ListCrossAccountAttachmentsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCrossAccountAttachmentsOutcome(result.GetResultWithOwnership())
+                            : ListCrossAccountAttachmentsOutcome(std::move(result.GetError()));
 }
 
 ListCrossAccountResourceAccountsOutcome GlobalAcceleratorClient::ListCrossAccountResourceAccounts(
     const ListCrossAccountResourceAccountsRequest& request) const {
-  return ListCrossAccountResourceAccountsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCrossAccountResourceAccountsOutcome(result.GetResultWithOwnership())
+                            : ListCrossAccountResourceAccountsOutcome(std::move(result.GetError()));
 }
 
 ListCrossAccountResourcesOutcome GlobalAcceleratorClient::ListCrossAccountResources(const ListCrossAccountResourcesRequest& request) const {
-  return ListCrossAccountResourcesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCrossAccountResourcesOutcome(result.GetResultWithOwnership())
+                            : ListCrossAccountResourcesOutcome(std::move(result.GetError()));
 }
 
 ListCustomRoutingAcceleratorsOutcome GlobalAcceleratorClient::ListCustomRoutingAccelerators(
     const ListCustomRoutingAcceleratorsRequest& request) const {
-  return ListCustomRoutingAcceleratorsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCustomRoutingAcceleratorsOutcome(result.GetResultWithOwnership())
+                            : ListCustomRoutingAcceleratorsOutcome(std::move(result.GetError()));
 }
 
 ListCustomRoutingEndpointGroupsOutcome GlobalAcceleratorClient::ListCustomRoutingEndpointGroups(
     const ListCustomRoutingEndpointGroupsRequest& request) const {
-  return ListCustomRoutingEndpointGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCustomRoutingEndpointGroupsOutcome(result.GetResultWithOwnership())
+                            : ListCustomRoutingEndpointGroupsOutcome(std::move(result.GetError()));
 }
 
 ListCustomRoutingListenersOutcome GlobalAcceleratorClient::ListCustomRoutingListeners(
     const ListCustomRoutingListenersRequest& request) const {
-  return ListCustomRoutingListenersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCustomRoutingListenersOutcome(result.GetResultWithOwnership())
+                            : ListCustomRoutingListenersOutcome(std::move(result.GetError()));
 }
 
 ListCustomRoutingPortMappingsOutcome GlobalAcceleratorClient::ListCustomRoutingPortMappings(
     const ListCustomRoutingPortMappingsRequest& request) const {
-  return ListCustomRoutingPortMappingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCustomRoutingPortMappingsOutcome(result.GetResultWithOwnership())
+                            : ListCustomRoutingPortMappingsOutcome(std::move(result.GetError()));
 }
 
 ListCustomRoutingPortMappingsByDestinationOutcome GlobalAcceleratorClient::ListCustomRoutingPortMappingsByDestination(
     const ListCustomRoutingPortMappingsByDestinationRequest& request) const {
-  return ListCustomRoutingPortMappingsByDestinationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCustomRoutingPortMappingsByDestinationOutcome(result.GetResultWithOwnership())
+                            : ListCustomRoutingPortMappingsByDestinationOutcome(std::move(result.GetError()));
 }
 
 ListEndpointGroupsOutcome GlobalAcceleratorClient::ListEndpointGroups(const ListEndpointGroupsRequest& request) const {
-  return ListEndpointGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEndpointGroupsOutcome(result.GetResultWithOwnership())
+                            : ListEndpointGroupsOutcome(std::move(result.GetError()));
 }
 
 ListListenersOutcome GlobalAcceleratorClient::ListListeners(const ListListenersRequest& request) const {
-  return ListListenersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListListenersOutcome(result.GetResultWithOwnership()) : ListListenersOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome GlobalAcceleratorClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ProvisionByoipCidrOutcome GlobalAcceleratorClient::ProvisionByoipCidr(const ProvisionByoipCidrRequest& request) const {
-  return ProvisionByoipCidrOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ProvisionByoipCidrOutcome(result.GetResultWithOwnership())
+                            : ProvisionByoipCidrOutcome(std::move(result.GetError()));
 }
 
 RemoveCustomRoutingEndpointsOutcome GlobalAcceleratorClient::RemoveCustomRoutingEndpoints(
     const RemoveCustomRoutingEndpointsRequest& request) const {
-  return RemoveCustomRoutingEndpointsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveCustomRoutingEndpointsOutcome(result.GetResultWithOwnership())
+                            : RemoveCustomRoutingEndpointsOutcome(std::move(result.GetError()));
 }
 
 RemoveEndpointsOutcome GlobalAcceleratorClient::RemoveEndpoints(const RemoveEndpointsRequest& request) const {
-  return RemoveEndpointsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveEndpointsOutcome(result.GetResultWithOwnership())
+                            : RemoveEndpointsOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome GlobalAcceleratorClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome GlobalAcceleratorClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAcceleratorOutcome GlobalAcceleratorClient::UpdateAccelerator(const UpdateAcceleratorRequest& request) const {
-  return UpdateAcceleratorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAcceleratorOutcome(result.GetResultWithOwnership())
+                            : UpdateAcceleratorOutcome(std::move(result.GetError()));
 }
 
 UpdateAcceleratorAttributesOutcome GlobalAcceleratorClient::UpdateAcceleratorAttributes(
     const UpdateAcceleratorAttributesRequest& request) const {
-  return UpdateAcceleratorAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAcceleratorAttributesOutcome(result.GetResultWithOwnership())
+                            : UpdateAcceleratorAttributesOutcome(std::move(result.GetError()));
 }
 
 UpdateCrossAccountAttachmentOutcome GlobalAcceleratorClient::UpdateCrossAccountAttachment(
     const UpdateCrossAccountAttachmentRequest& request) const {
-  return UpdateCrossAccountAttachmentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCrossAccountAttachmentOutcome(result.GetResultWithOwnership())
+                            : UpdateCrossAccountAttachmentOutcome(std::move(result.GetError()));
 }
 
 UpdateCustomRoutingAcceleratorOutcome GlobalAcceleratorClient::UpdateCustomRoutingAccelerator(
     const UpdateCustomRoutingAcceleratorRequest& request) const {
-  return UpdateCustomRoutingAcceleratorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCustomRoutingAcceleratorOutcome(result.GetResultWithOwnership())
+                            : UpdateCustomRoutingAcceleratorOutcome(std::move(result.GetError()));
 }
 
 UpdateCustomRoutingAcceleratorAttributesOutcome GlobalAcceleratorClient::UpdateCustomRoutingAcceleratorAttributes(
     const UpdateCustomRoutingAcceleratorAttributesRequest& request) const {
-  return UpdateCustomRoutingAcceleratorAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCustomRoutingAcceleratorAttributesOutcome(result.GetResultWithOwnership())
+                            : UpdateCustomRoutingAcceleratorAttributesOutcome(std::move(result.GetError()));
 }
 
 UpdateCustomRoutingListenerOutcome GlobalAcceleratorClient::UpdateCustomRoutingListener(
     const UpdateCustomRoutingListenerRequest& request) const {
-  return UpdateCustomRoutingListenerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCustomRoutingListenerOutcome(result.GetResultWithOwnership())
+                            : UpdateCustomRoutingListenerOutcome(std::move(result.GetError()));
 }
 
 UpdateEndpointGroupOutcome GlobalAcceleratorClient::UpdateEndpointGroup(const UpdateEndpointGroupRequest& request) const {
-  return UpdateEndpointGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateEndpointGroupOutcome(result.GetResultWithOwnership())
+                            : UpdateEndpointGroupOutcome(std::move(result.GetError()));
 }
 
 UpdateListenerOutcome GlobalAcceleratorClient::UpdateListener(const UpdateListenerRequest& request) const {
-  return UpdateListenerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateListenerOutcome(result.GetResultWithOwnership()) : UpdateListenerOutcome(std::move(result.GetError()));
 }
 
 WithdrawByoipCidrOutcome GlobalAcceleratorClient::WithdrawByoipCidr(const WithdrawByoipCidrRequest& request) const {
-  return WithdrawByoipCidrOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? WithdrawByoipCidrOutcome(result.GetResultWithOwnership())
+                            : WithdrawByoipCidrOutcome(std::move(result.GetError()));
 }

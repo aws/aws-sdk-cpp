@@ -212,7 +212,9 @@ CreateApplicationOutcome AppIntegrationsServiceClient::CreateApplication(const C
     endpointResolutionOutcome.GetResult().AddPathSegments("/applications");
   };
 
-  return CreateApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateApplicationOutcome(result.GetResultWithOwnership())
+                            : CreateApplicationOutcome(std::move(result.GetError()));
 }
 
 CreateDataIntegrationOutcome AppIntegrationsServiceClient::CreateDataIntegration(const CreateDataIntegrationRequest& request) const {
@@ -221,7 +223,9 @@ CreateDataIntegrationOutcome AppIntegrationsServiceClient::CreateDataIntegration
     endpointResolutionOutcome.GetResult().AddPathSegments("/dataIntegrations");
   };
 
-  return CreateDataIntegrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDataIntegrationOutcome(result.GetResultWithOwnership())
+                            : CreateDataIntegrationOutcome(std::move(result.GetError()));
 }
 
 CreateDataIntegrationAssociationOutcome AppIntegrationsServiceClient::CreateDataIntegrationAssociation(
@@ -239,7 +243,9 @@ CreateDataIntegrationAssociationOutcome AppIntegrationsServiceClient::CreateData
     endpointResolutionOutcome.GetResult().AddPathSegments("/associations");
   };
 
-  return CreateDataIntegrationAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDataIntegrationAssociationOutcome(result.GetResultWithOwnership())
+                            : CreateDataIntegrationAssociationOutcome(std::move(result.GetError()));
 }
 
 CreateEventIntegrationOutcome AppIntegrationsServiceClient::CreateEventIntegration(const CreateEventIntegrationRequest& request) const {
@@ -248,7 +254,9 @@ CreateEventIntegrationOutcome AppIntegrationsServiceClient::CreateEventIntegrati
     endpointResolutionOutcome.GetResult().AddPathSegments("/eventIntegrations");
   };
 
-  return CreateEventIntegrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEventIntegrationOutcome(result.GetResultWithOwnership())
+                            : CreateEventIntegrationOutcome(std::move(result.GetError()));
 }
 
 DeleteApplicationOutcome AppIntegrationsServiceClient::DeleteApplication(const DeleteApplicationRequest& request) const {
@@ -264,7 +272,9 @@ DeleteApplicationOutcome AppIntegrationsServiceClient::DeleteApplication(const D
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return DeleteApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteApplicationOutcome(result.GetResultWithOwnership())
+                            : DeleteApplicationOutcome(std::move(result.GetError()));
 }
 
 DeleteDataIntegrationOutcome AppIntegrationsServiceClient::DeleteDataIntegration(const DeleteDataIntegrationRequest& request) const {
@@ -280,7 +290,9 @@ DeleteDataIntegrationOutcome AppIntegrationsServiceClient::DeleteDataIntegration
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataIntegrationIdentifier());
   };
 
-  return DeleteDataIntegrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDataIntegrationOutcome(result.GetResultWithOwnership())
+                            : DeleteDataIntegrationOutcome(std::move(result.GetError()));
 }
 
 DeleteEventIntegrationOutcome AppIntegrationsServiceClient::DeleteEventIntegration(const DeleteEventIntegrationRequest& request) const {
@@ -296,7 +308,9 @@ DeleteEventIntegrationOutcome AppIntegrationsServiceClient::DeleteEventIntegrati
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteEventIntegrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteEventIntegrationOutcome(result.GetResultWithOwnership())
+                            : DeleteEventIntegrationOutcome(std::move(result.GetError()));
 }
 
 GetApplicationOutcome AppIntegrationsServiceClient::GetApplication(const GetApplicationRequest& request) const {
@@ -312,7 +326,8 @@ GetApplicationOutcome AppIntegrationsServiceClient::GetApplication(const GetAppl
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return GetApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetApplicationOutcome(result.GetResultWithOwnership()) : GetApplicationOutcome(std::move(result.GetError()));
 }
 
 GetDataIntegrationOutcome AppIntegrationsServiceClient::GetDataIntegration(const GetDataIntegrationRequest& request) const {
@@ -328,7 +343,9 @@ GetDataIntegrationOutcome AppIntegrationsServiceClient::GetDataIntegration(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetDataIntegrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDataIntegrationOutcome(result.GetResultWithOwnership())
+                            : GetDataIntegrationOutcome(std::move(result.GetError()));
 }
 
 GetEventIntegrationOutcome AppIntegrationsServiceClient::GetEventIntegration(const GetEventIntegrationRequest& request) const {
@@ -344,7 +361,9 @@ GetEventIntegrationOutcome AppIntegrationsServiceClient::GetEventIntegration(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return GetEventIntegrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEventIntegrationOutcome(result.GetResultWithOwnership())
+                            : GetEventIntegrationOutcome(std::move(result.GetError()));
 }
 
 ListApplicationAssociationsOutcome AppIntegrationsServiceClient::ListApplicationAssociations(
@@ -362,7 +381,9 @@ ListApplicationAssociationsOutcome AppIntegrationsServiceClient::ListApplication
     endpointResolutionOutcome.GetResult().AddPathSegments("/associations");
   };
 
-  return ListApplicationAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListApplicationAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListApplicationAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListApplicationsOutcome AppIntegrationsServiceClient::ListApplications(const ListApplicationsRequest& request) const {
@@ -371,7 +392,9 @@ ListApplicationsOutcome AppIntegrationsServiceClient::ListApplications(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/applications");
   };
 
-  return ListApplicationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListApplicationsOutcome(result.GetResultWithOwnership())
+                            : ListApplicationsOutcome(std::move(result.GetError()));
 }
 
 ListDataIntegrationAssociationsOutcome AppIntegrationsServiceClient::ListDataIntegrationAssociations(
@@ -389,7 +412,9 @@ ListDataIntegrationAssociationsOutcome AppIntegrationsServiceClient::ListDataInt
     endpointResolutionOutcome.GetResult().AddPathSegments("/associations");
   };
 
-  return ListDataIntegrationAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDataIntegrationAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListDataIntegrationAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListDataIntegrationsOutcome AppIntegrationsServiceClient::ListDataIntegrations(const ListDataIntegrationsRequest& request) const {
@@ -398,7 +423,9 @@ ListDataIntegrationsOutcome AppIntegrationsServiceClient::ListDataIntegrations(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/dataIntegrations");
   };
 
-  return ListDataIntegrationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDataIntegrationsOutcome(result.GetResultWithOwnership())
+                            : ListDataIntegrationsOutcome(std::move(result.GetError()));
 }
 
 ListEventIntegrationAssociationsOutcome AppIntegrationsServiceClient::ListEventIntegrationAssociations(
@@ -416,7 +443,9 @@ ListEventIntegrationAssociationsOutcome AppIntegrationsServiceClient::ListEventI
     endpointResolutionOutcome.GetResult().AddPathSegments("/associations");
   };
 
-  return ListEventIntegrationAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListEventIntegrationAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListEventIntegrationAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListEventIntegrationsOutcome AppIntegrationsServiceClient::ListEventIntegrations(const ListEventIntegrationsRequest& request) const {
@@ -425,7 +454,9 @@ ListEventIntegrationsOutcome AppIntegrationsServiceClient::ListEventIntegrations
     endpointResolutionOutcome.GetResult().AddPathSegments("/eventIntegrations");
   };
 
-  return ListEventIntegrationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListEventIntegrationsOutcome(result.GetResultWithOwnership())
+                            : ListEventIntegrationsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome AppIntegrationsServiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -441,7 +472,9 @@ ListTagsForResourceOutcome AppIntegrationsServiceClient::ListTagsForResource(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome AppIntegrationsServiceClient::TagResource(const TagResourceRequest& request) const {
@@ -457,7 +490,8 @@ TagResourceOutcome AppIntegrationsServiceClient::TagResource(const TagResourceRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome AppIntegrationsServiceClient::UntagResource(const UntagResourceRequest& request) const {
@@ -478,7 +512,8 @@ UntagResourceOutcome AppIntegrationsServiceClient::UntagResource(const UntagReso
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateApplicationOutcome AppIntegrationsServiceClient::UpdateApplication(const UpdateApplicationRequest& request) const {
@@ -494,7 +529,9 @@ UpdateApplicationOutcome AppIntegrationsServiceClient::UpdateApplication(const U
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return UpdateApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateApplicationOutcome(result.GetResultWithOwnership())
+                            : UpdateApplicationOutcome(std::move(result.GetError()));
 }
 
 UpdateDataIntegrationOutcome AppIntegrationsServiceClient::UpdateDataIntegration(const UpdateDataIntegrationRequest& request) const {
@@ -510,7 +547,9 @@ UpdateDataIntegrationOutcome AppIntegrationsServiceClient::UpdateDataIntegration
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateDataIntegrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateDataIntegrationOutcome(result.GetResultWithOwnership())
+                            : UpdateDataIntegrationOutcome(std::move(result.GetError()));
 }
 
 UpdateDataIntegrationAssociationOutcome AppIntegrationsServiceClient::UpdateDataIntegrationAssociation(
@@ -535,7 +574,9 @@ UpdateDataIntegrationAssociationOutcome AppIntegrationsServiceClient::UpdateData
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataIntegrationAssociationIdentifier());
   };
 
-  return UpdateDataIntegrationAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateDataIntegrationAssociationOutcome(result.GetResultWithOwnership())
+                            : UpdateDataIntegrationAssociationOutcome(std::move(result.GetError()));
 }
 
 UpdateEventIntegrationOutcome AppIntegrationsServiceClient::UpdateEventIntegration(const UpdateEventIntegrationRequest& request) const {
@@ -551,5 +592,7 @@ UpdateEventIntegrationOutcome AppIntegrationsServiceClient::UpdateEventIntegrati
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return UpdateEventIntegrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateEventIntegrationOutcome(result.GetResultWithOwnership())
+                            : UpdateEventIntegrationOutcome(std::move(result.GetError()));
 }

@@ -205,7 +205,8 @@ BulkPublishOutcome CognitoSyncClient::BulkPublish(const BulkPublishRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/bulkpublish");
   };
 
-  return BulkPublishOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BulkPublishOutcome(result.GetResultWithOwnership()) : BulkPublishOutcome(std::move(result.GetError()));
 }
 
 DeleteDatasetOutcome CognitoSyncClient::DeleteDataset(const DeleteDatasetRequest& request) const {
@@ -235,7 +236,8 @@ DeleteDatasetOutcome CognitoSyncClient::DeleteDataset(const DeleteDatasetRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetName());
   };
 
-  return DeleteDatasetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDatasetOutcome(result.GetResultWithOwnership()) : DeleteDatasetOutcome(std::move(result.GetError()));
 }
 
 DescribeDatasetOutcome CognitoSyncClient::DescribeDataset(const DescribeDatasetRequest& request) const {
@@ -265,7 +267,9 @@ DescribeDatasetOutcome CognitoSyncClient::DescribeDataset(const DescribeDatasetR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetName());
   };
 
-  return DescribeDatasetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDatasetOutcome(result.GetResultWithOwnership())
+                            : DescribeDatasetOutcome(std::move(result.GetError()));
 }
 
 DescribeIdentityPoolUsageOutcome CognitoSyncClient::DescribeIdentityPoolUsage(const DescribeIdentityPoolUsageRequest& request) const {
@@ -281,7 +285,9 @@ DescribeIdentityPoolUsageOutcome CognitoSyncClient::DescribeIdentityPoolUsage(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentityPoolId());
   };
 
-  return DescribeIdentityPoolUsageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeIdentityPoolUsageOutcome(result.GetResultWithOwnership())
+                            : DescribeIdentityPoolUsageOutcome(std::move(result.GetError()));
 }
 
 DescribeIdentityUsageOutcome CognitoSyncClient::DescribeIdentityUsage(const DescribeIdentityUsageRequest& request) const {
@@ -304,7 +310,9 @@ DescribeIdentityUsageOutcome CognitoSyncClient::DescribeIdentityUsage(const Desc
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentityId());
   };
 
-  return DescribeIdentityUsageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeIdentityUsageOutcome(result.GetResultWithOwnership())
+                            : DescribeIdentityUsageOutcome(std::move(result.GetError()));
 }
 
 GetBulkPublishDetailsOutcome CognitoSyncClient::GetBulkPublishDetails(const GetBulkPublishDetailsRequest& request) const {
@@ -321,7 +329,9 @@ GetBulkPublishDetailsOutcome CognitoSyncClient::GetBulkPublishDetails(const GetB
     endpointResolutionOutcome.GetResult().AddPathSegments("/getBulkPublishDetails");
   };
 
-  return GetBulkPublishDetailsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetBulkPublishDetailsOutcome(result.GetResultWithOwnership())
+                            : GetBulkPublishDetailsOutcome(std::move(result.GetError()));
 }
 
 GetCognitoEventsOutcome CognitoSyncClient::GetCognitoEvents(const GetCognitoEventsRequest& request) const {
@@ -338,7 +348,9 @@ GetCognitoEventsOutcome CognitoSyncClient::GetCognitoEvents(const GetCognitoEven
     endpointResolutionOutcome.GetResult().AddPathSegments("/events");
   };
 
-  return GetCognitoEventsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCognitoEventsOutcome(result.GetResultWithOwnership())
+                            : GetCognitoEventsOutcome(std::move(result.GetError()));
 }
 
 GetIdentityPoolConfigurationOutcome CognitoSyncClient::GetIdentityPoolConfiguration(
@@ -356,7 +368,9 @@ GetIdentityPoolConfigurationOutcome CognitoSyncClient::GetIdentityPoolConfigurat
     endpointResolutionOutcome.GetResult().AddPathSegments("/configuration");
   };
 
-  return GetIdentityPoolConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetIdentityPoolConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetIdentityPoolConfigurationOutcome(std::move(result.GetError()));
 }
 
 ListDatasetsOutcome CognitoSyncClient::ListDatasets(const ListDatasetsRequest& request) const {
@@ -380,7 +394,8 @@ ListDatasetsOutcome CognitoSyncClient::ListDatasets(const ListDatasetsRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/datasets");
   };
 
-  return ListDatasetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDatasetsOutcome(result.GetResultWithOwnership()) : ListDatasetsOutcome(std::move(result.GetError()));
 }
 
 ListIdentityPoolUsageOutcome CognitoSyncClient::ListIdentityPoolUsage(const ListIdentityPoolUsageRequest& request) const {
@@ -389,7 +404,9 @@ ListIdentityPoolUsageOutcome CognitoSyncClient::ListIdentityPoolUsage(const List
     endpointResolutionOutcome.GetResult().AddPathSegments("/identitypools");
   };
 
-  return ListIdentityPoolUsageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListIdentityPoolUsageOutcome(result.GetResultWithOwnership())
+                            : ListIdentityPoolUsageOutcome(std::move(result.GetError()));
 }
 
 ListRecordsOutcome CognitoSyncClient::ListRecords(const ListRecordsRequest& request) const {
@@ -420,7 +437,8 @@ ListRecordsOutcome CognitoSyncClient::ListRecords(const ListRecordsRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/records");
   };
 
-  return ListRecordsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRecordsOutcome(result.GetResultWithOwnership()) : ListRecordsOutcome(std::move(result.GetError()));
 }
 
 RegisterDeviceOutcome CognitoSyncClient::RegisterDevice(const RegisterDeviceRequest& request) const {
@@ -444,7 +462,8 @@ RegisterDeviceOutcome CognitoSyncClient::RegisterDevice(const RegisterDeviceRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/device");
   };
 
-  return RegisterDeviceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterDeviceOutcome(result.GetResultWithOwnership()) : RegisterDeviceOutcome(std::move(result.GetError()));
 }
 
 SetCognitoEventsOutcome CognitoSyncClient::SetCognitoEvents(const SetCognitoEventsRequest& request) const {
@@ -461,7 +480,9 @@ SetCognitoEventsOutcome CognitoSyncClient::SetCognitoEvents(const SetCognitoEven
     endpointResolutionOutcome.GetResult().AddPathSegments("/events");
   };
 
-  return SetCognitoEventsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetCognitoEventsOutcome(result.GetResultWithOwnership())
+                            : SetCognitoEventsOutcome(std::move(result.GetError()));
 }
 
 SetIdentityPoolConfigurationOutcome CognitoSyncClient::SetIdentityPoolConfiguration(
@@ -479,7 +500,9 @@ SetIdentityPoolConfigurationOutcome CognitoSyncClient::SetIdentityPoolConfigurat
     endpointResolutionOutcome.GetResult().AddPathSegments("/configuration");
   };
 
-  return SetIdentityPoolConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetIdentityPoolConfigurationOutcome(result.GetResultWithOwnership())
+                            : SetIdentityPoolConfigurationOutcome(std::move(result.GetError()));
 }
 
 SubscribeToDatasetOutcome CognitoSyncClient::SubscribeToDataset(const SubscribeToDatasetRequest& request) const {
@@ -516,7 +539,9 @@ SubscribeToDatasetOutcome CognitoSyncClient::SubscribeToDataset(const SubscribeT
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDeviceId());
   };
 
-  return SubscribeToDatasetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SubscribeToDatasetOutcome(result.GetResultWithOwnership())
+                            : SubscribeToDatasetOutcome(std::move(result.GetError()));
 }
 
 UnsubscribeFromDatasetOutcome CognitoSyncClient::UnsubscribeFromDataset(const UnsubscribeFromDatasetRequest& request) const {
@@ -553,7 +578,9 @@ UnsubscribeFromDatasetOutcome CognitoSyncClient::UnsubscribeFromDataset(const Un
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDeviceId());
   };
 
-  return UnsubscribeFromDatasetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UnsubscribeFromDatasetOutcome(result.GetResultWithOwnership())
+                            : UnsubscribeFromDatasetOutcome(std::move(result.GetError()));
 }
 
 UpdateRecordsOutcome CognitoSyncClient::UpdateRecords(const UpdateRecordsRequest& request) const {
@@ -583,5 +610,6 @@ UpdateRecordsOutcome CognitoSyncClient::UpdateRecords(const UpdateRecordsRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetName());
   };
 
-  return UpdateRecordsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRecordsOutcome(result.GetResultWithOwnership()) : UpdateRecordsOutcome(std::move(result.GetError()));
 }

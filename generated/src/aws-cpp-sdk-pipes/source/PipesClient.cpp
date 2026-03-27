@@ -197,7 +197,8 @@ CreatePipeOutcome PipesClient::CreatePipe(const CreatePipeRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return CreatePipeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePipeOutcome(result.GetResultWithOwnership()) : CreatePipeOutcome(std::move(result.GetError()));
 }
 
 DeletePipeOutcome PipesClient::DeletePipe(const DeletePipeRequest& request) const {
@@ -213,7 +214,8 @@ DeletePipeOutcome PipesClient::DeletePipe(const DeletePipeRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeletePipeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePipeOutcome(result.GetResultWithOwnership()) : DeletePipeOutcome(std::move(result.GetError()));
 }
 
 DescribePipeOutcome PipesClient::DescribePipe(const DescribePipeRequest& request) const {
@@ -229,7 +231,8 @@ DescribePipeOutcome PipesClient::DescribePipe(const DescribePipeRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DescribePipeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribePipeOutcome(result.GetResultWithOwnership()) : DescribePipeOutcome(std::move(result.GetError()));
 }
 
 ListPipesOutcome PipesClient::ListPipes(const ListPipesRequest& request) const {
@@ -238,7 +241,8 @@ ListPipesOutcome PipesClient::ListPipes(const ListPipesRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/pipes");
   };
 
-  return ListPipesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPipesOutcome(result.GetResultWithOwnership()) : ListPipesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome PipesClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -254,7 +258,9 @@ ListTagsForResourceOutcome PipesClient::ListTagsForResource(const ListTagsForRes
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 StartPipeOutcome PipesClient::StartPipe(const StartPipeRequest& request) const {
@@ -271,7 +277,8 @@ StartPipeOutcome PipesClient::StartPipe(const StartPipeRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/start");
   };
 
-  return StartPipeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartPipeOutcome(result.GetResultWithOwnership()) : StartPipeOutcome(std::move(result.GetError()));
 }
 
 StopPipeOutcome PipesClient::StopPipe(const StopPipeRequest& request) const {
@@ -288,7 +295,8 @@ StopPipeOutcome PipesClient::StopPipe(const StopPipeRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/stop");
   };
 
-  return StopPipeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopPipeOutcome(result.GetResultWithOwnership()) : StopPipeOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome PipesClient::TagResource(const TagResourceRequest& request) const {
@@ -304,7 +312,8 @@ TagResourceOutcome PipesClient::TagResource(const TagResourceRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome PipesClient::UntagResource(const UntagResourceRequest& request) const {
@@ -325,7 +334,8 @@ UntagResourceOutcome PipesClient::UntagResource(const UntagResourceRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdatePipeOutcome PipesClient::UpdatePipe(const UpdatePipeRequest& request) const {
@@ -341,5 +351,6 @@ UpdatePipeOutcome PipesClient::UpdatePipe(const UpdatePipeRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return UpdatePipeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdatePipeOutcome(result.GetResultWithOwnership()) : UpdatePipeOutcome(std::move(result.GetError()));
 }

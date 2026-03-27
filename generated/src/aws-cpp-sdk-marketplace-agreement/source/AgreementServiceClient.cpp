@@ -185,32 +185,46 @@ AgreementServiceClient::InvokeOperationOutcome AgreementServiceClient::InvokeSer
 
 CancelAgreementPaymentRequestOutcome AgreementServiceClient::CancelAgreementPaymentRequest(
     const CancelAgreementPaymentRequestRequest& request) const {
-  return CancelAgreementPaymentRequestOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelAgreementPaymentRequestOutcome(result.GetResultWithOwnership())
+                            : CancelAgreementPaymentRequestOutcome(std::move(result.GetError()));
 }
 
 DescribeAgreementOutcome AgreementServiceClient::DescribeAgreement(const DescribeAgreementRequest& request) const {
-  return DescribeAgreementOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAgreementOutcome(result.GetResultWithOwnership())
+                            : DescribeAgreementOutcome(std::move(result.GetError()));
 }
 
 GetAgreementPaymentRequestOutcome AgreementServiceClient::GetAgreementPaymentRequest(
     const GetAgreementPaymentRequestRequest& request) const {
-  return GetAgreementPaymentRequestOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAgreementPaymentRequestOutcome(result.GetResultWithOwnership())
+                            : GetAgreementPaymentRequestOutcome(std::move(result.GetError()));
 }
 
 GetAgreementTermsOutcome AgreementServiceClient::GetAgreementTerms(const GetAgreementTermsRequest& request) const {
-  return GetAgreementTermsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAgreementTermsOutcome(result.GetResultWithOwnership())
+                            : GetAgreementTermsOutcome(std::move(result.GetError()));
 }
 
 ListAgreementPaymentRequestsOutcome AgreementServiceClient::ListAgreementPaymentRequests(
     const ListAgreementPaymentRequestsRequest& request) const {
-  return ListAgreementPaymentRequestsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAgreementPaymentRequestsOutcome(result.GetResultWithOwnership())
+                            : ListAgreementPaymentRequestsOutcome(std::move(result.GetError()));
 }
 
 SearchAgreementsOutcome AgreementServiceClient::SearchAgreements(const SearchAgreementsRequest& request) const {
-  return SearchAgreementsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchAgreementsOutcome(result.GetResultWithOwnership())
+                            : SearchAgreementsOutcome(std::move(result.GetError()));
 }
 
 SendAgreementPaymentRequestOutcome AgreementServiceClient::SendAgreementPaymentRequest(
     const SendAgreementPaymentRequestRequest& request) const {
-  return SendAgreementPaymentRequestOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendAgreementPaymentRequestOutcome(result.GetResultWithOwnership())
+                            : SendAgreementPaymentRequestOutcome(std::move(result.GetError()));
 }

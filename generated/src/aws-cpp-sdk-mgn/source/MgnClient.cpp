@@ -273,7 +273,9 @@ ArchiveApplicationOutcome MgnClient::ArchiveApplication(const ArchiveApplication
     endpointResolutionOutcome.GetResult().AddPathSegments("/ArchiveApplication");
   };
 
-  return ArchiveApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ArchiveApplicationOutcome(result.GetResultWithOwnership())
+                            : ArchiveApplicationOutcome(std::move(result.GetError()));
 }
 
 ArchiveWaveOutcome MgnClient::ArchiveWave(const ArchiveWaveRequest& request) const {
@@ -282,7 +284,8 @@ ArchiveWaveOutcome MgnClient::ArchiveWave(const ArchiveWaveRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegments("/ArchiveWave");
   };
 
-  return ArchiveWaveOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ArchiveWaveOutcome(result.GetResultWithOwnership()) : ArchiveWaveOutcome(std::move(result.GetError()));
 }
 
 AssociateApplicationsOutcome MgnClient::AssociateApplications(const AssociateApplicationsRequest& request) const {
@@ -291,7 +294,9 @@ AssociateApplicationsOutcome MgnClient::AssociateApplications(const AssociateApp
     endpointResolutionOutcome.GetResult().AddPathSegments("/AssociateApplications");
   };
 
-  return AssociateApplicationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateApplicationsOutcome(result.GetResultWithOwnership())
+                            : AssociateApplicationsOutcome(std::move(result.GetError()));
 }
 
 AssociateSourceServersOutcome MgnClient::AssociateSourceServers(const AssociateSourceServersRequest& request) const {
@@ -300,7 +305,9 @@ AssociateSourceServersOutcome MgnClient::AssociateSourceServers(const AssociateS
     endpointResolutionOutcome.GetResult().AddPathSegments("/AssociateSourceServers");
   };
 
-  return AssociateSourceServersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateSourceServersOutcome(result.GetResultWithOwnership())
+                            : AssociateSourceServersOutcome(std::move(result.GetError()));
 }
 
 ChangeServerLifeCycleStateOutcome MgnClient::ChangeServerLifeCycleState(const ChangeServerLifeCycleStateRequest& request) const {
@@ -309,7 +316,9 @@ ChangeServerLifeCycleStateOutcome MgnClient::ChangeServerLifeCycleState(const Ch
     endpointResolutionOutcome.GetResult().AddPathSegments("/ChangeServerLifeCycleState");
   };
 
-  return ChangeServerLifeCycleStateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ChangeServerLifeCycleStateOutcome(result.GetResultWithOwnership())
+                            : ChangeServerLifeCycleStateOutcome(std::move(result.GetError()));
 }
 
 CreateApplicationOutcome MgnClient::CreateApplication(const CreateApplicationRequest& request) const {
@@ -318,7 +327,9 @@ CreateApplicationOutcome MgnClient::CreateApplication(const CreateApplicationReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateApplication");
   };
 
-  return CreateApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateApplicationOutcome(result.GetResultWithOwnership())
+                            : CreateApplicationOutcome(std::move(result.GetError()));
 }
 
 CreateConnectorOutcome MgnClient::CreateConnector(const CreateConnectorRequest& request) const {
@@ -327,7 +338,9 @@ CreateConnectorOutcome MgnClient::CreateConnector(const CreateConnectorRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateConnector");
   };
 
-  return CreateConnectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConnectorOutcome(result.GetResultWithOwnership())
+                            : CreateConnectorOutcome(std::move(result.GetError()));
 }
 
 CreateLaunchConfigurationTemplateOutcome MgnClient::CreateLaunchConfigurationTemplate(
@@ -337,7 +350,9 @@ CreateLaunchConfigurationTemplateOutcome MgnClient::CreateLaunchConfigurationTem
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateLaunchConfigurationTemplate");
   };
 
-  return CreateLaunchConfigurationTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLaunchConfigurationTemplateOutcome(result.GetResultWithOwnership())
+                            : CreateLaunchConfigurationTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateNetworkMigrationDefinitionOutcome MgnClient::CreateNetworkMigrationDefinition(
@@ -347,7 +362,9 @@ CreateNetworkMigrationDefinitionOutcome MgnClient::CreateNetworkMigrationDefinit
     endpointResolutionOutcome.GetResult().AddPathSegments("/network-migration/CreateNetworkMigrationDefinition");
   };
 
-  return CreateNetworkMigrationDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateNetworkMigrationDefinitionOutcome(result.GetResultWithOwnership())
+                            : CreateNetworkMigrationDefinitionOutcome(std::move(result.GetError()));
 }
 
 CreateReplicationConfigurationTemplateOutcome MgnClient::CreateReplicationConfigurationTemplate(
@@ -357,7 +374,9 @@ CreateReplicationConfigurationTemplateOutcome MgnClient::CreateReplicationConfig
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateReplicationConfigurationTemplate");
   };
 
-  return CreateReplicationConfigurationTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateReplicationConfigurationTemplateOutcome(result.GetResultWithOwnership())
+                            : CreateReplicationConfigurationTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateWaveOutcome MgnClient::CreateWave(const CreateWaveRequest& request) const {
@@ -366,7 +385,8 @@ CreateWaveOutcome MgnClient::CreateWave(const CreateWaveRequest& request) const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateWave");
   };
 
-  return CreateWaveOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWaveOutcome(result.GetResultWithOwnership()) : CreateWaveOutcome(std::move(result.GetError()));
 }
 
 DeleteApplicationOutcome MgnClient::DeleteApplication(const DeleteApplicationRequest& request) const {
@@ -375,7 +395,9 @@ DeleteApplicationOutcome MgnClient::DeleteApplication(const DeleteApplicationReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteApplication");
   };
 
-  return DeleteApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteApplicationOutcome(result.GetResultWithOwnership())
+                            : DeleteApplicationOutcome(std::move(result.GetError()));
 }
 
 DeleteConnectorOutcome MgnClient::DeleteConnector(const DeleteConnectorRequest& request) const {
@@ -384,7 +406,9 @@ DeleteConnectorOutcome MgnClient::DeleteConnector(const DeleteConnectorRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteConnector");
   };
 
-  return DeleteConnectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteConnectorOutcome(result.GetResultWithOwnership())
+                            : DeleteConnectorOutcome(std::move(result.GetError()));
 }
 
 DeleteJobOutcome MgnClient::DeleteJob(const DeleteJobRequest& request) const {
@@ -393,7 +417,8 @@ DeleteJobOutcome MgnClient::DeleteJob(const DeleteJobRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteJob");
   };
 
-  return DeleteJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteJobOutcome(result.GetResultWithOwnership()) : DeleteJobOutcome(std::move(result.GetError()));
 }
 
 DeleteLaunchConfigurationTemplateOutcome MgnClient::DeleteLaunchConfigurationTemplate(
@@ -403,7 +428,9 @@ DeleteLaunchConfigurationTemplateOutcome MgnClient::DeleteLaunchConfigurationTem
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteLaunchConfigurationTemplate");
   };
 
-  return DeleteLaunchConfigurationTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLaunchConfigurationTemplateOutcome(result.GetResultWithOwnership())
+                            : DeleteLaunchConfigurationTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteNetworkMigrationDefinitionOutcome MgnClient::DeleteNetworkMigrationDefinition(
@@ -413,7 +440,9 @@ DeleteNetworkMigrationDefinitionOutcome MgnClient::DeleteNetworkMigrationDefinit
     endpointResolutionOutcome.GetResult().AddPathSegments("/network-migration/DeleteNetworkMigrationDefinition");
   };
 
-  return DeleteNetworkMigrationDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteNetworkMigrationDefinitionOutcome(result.GetResultWithOwnership())
+                            : DeleteNetworkMigrationDefinitionOutcome(std::move(result.GetError()));
 }
 
 DeleteReplicationConfigurationTemplateOutcome MgnClient::DeleteReplicationConfigurationTemplate(
@@ -423,7 +452,9 @@ DeleteReplicationConfigurationTemplateOutcome MgnClient::DeleteReplicationConfig
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteReplicationConfigurationTemplate");
   };
 
-  return DeleteReplicationConfigurationTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteReplicationConfigurationTemplateOutcome(result.GetResultWithOwnership())
+                            : DeleteReplicationConfigurationTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteSourceServerOutcome MgnClient::DeleteSourceServer(const DeleteSourceServerRequest& request) const {
@@ -432,7 +463,9 @@ DeleteSourceServerOutcome MgnClient::DeleteSourceServer(const DeleteSourceServer
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteSourceServer");
   };
 
-  return DeleteSourceServerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSourceServerOutcome(result.GetResultWithOwnership())
+                            : DeleteSourceServerOutcome(std::move(result.GetError()));
 }
 
 DeleteVcenterClientOutcome MgnClient::DeleteVcenterClient(const DeleteVcenterClientRequest& request) const {
@@ -441,7 +474,9 @@ DeleteVcenterClientOutcome MgnClient::DeleteVcenterClient(const DeleteVcenterCli
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteVcenterClient");
   };
 
-  return DeleteVcenterClientOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVcenterClientOutcome(result.GetResultWithOwnership())
+                            : DeleteVcenterClientOutcome(std::move(result.GetError()));
 }
 
 DeleteWaveOutcome MgnClient::DeleteWave(const DeleteWaveRequest& request) const {
@@ -450,7 +485,8 @@ DeleteWaveOutcome MgnClient::DeleteWave(const DeleteWaveRequest& request) const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteWave");
   };
 
-  return DeleteWaveOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteWaveOutcome(result.GetResultWithOwnership()) : DeleteWaveOutcome(std::move(result.GetError()));
 }
 
 DescribeJobLogItemsOutcome MgnClient::DescribeJobLogItems(const DescribeJobLogItemsRequest& request) const {
@@ -459,7 +495,9 @@ DescribeJobLogItemsOutcome MgnClient::DescribeJobLogItems(const DescribeJobLogIt
     endpointResolutionOutcome.GetResult().AddPathSegments("/DescribeJobLogItems");
   };
 
-  return DescribeJobLogItemsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeJobLogItemsOutcome(result.GetResultWithOwnership())
+                            : DescribeJobLogItemsOutcome(std::move(result.GetError()));
 }
 
 DescribeJobsOutcome MgnClient::DescribeJobs(const DescribeJobsRequest& request) const {
@@ -468,7 +506,8 @@ DescribeJobsOutcome MgnClient::DescribeJobs(const DescribeJobsRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/DescribeJobs");
   };
 
-  return DescribeJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeJobsOutcome(result.GetResultWithOwnership()) : DescribeJobsOutcome(std::move(result.GetError()));
 }
 
 DescribeLaunchConfigurationTemplatesOutcome MgnClient::DescribeLaunchConfigurationTemplates(
@@ -478,7 +517,9 @@ DescribeLaunchConfigurationTemplatesOutcome MgnClient::DescribeLaunchConfigurati
     endpointResolutionOutcome.GetResult().AddPathSegments("/DescribeLaunchConfigurationTemplates");
   };
 
-  return DescribeLaunchConfigurationTemplatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeLaunchConfigurationTemplatesOutcome(result.GetResultWithOwnership())
+                            : DescribeLaunchConfigurationTemplatesOutcome(std::move(result.GetError()));
 }
 
 DescribeReplicationConfigurationTemplatesOutcome MgnClient::DescribeReplicationConfigurationTemplates(
@@ -488,7 +529,9 @@ DescribeReplicationConfigurationTemplatesOutcome MgnClient::DescribeReplicationC
     endpointResolutionOutcome.GetResult().AddPathSegments("/DescribeReplicationConfigurationTemplates");
   };
 
-  return DescribeReplicationConfigurationTemplatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeReplicationConfigurationTemplatesOutcome(result.GetResultWithOwnership())
+                            : DescribeReplicationConfigurationTemplatesOutcome(std::move(result.GetError()));
 }
 
 DescribeSourceServersOutcome MgnClient::DescribeSourceServers(const DescribeSourceServersRequest& request) const {
@@ -497,7 +540,9 @@ DescribeSourceServersOutcome MgnClient::DescribeSourceServers(const DescribeSour
     endpointResolutionOutcome.GetResult().AddPathSegments("/DescribeSourceServers");
   };
 
-  return DescribeSourceServersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSourceServersOutcome(result.GetResultWithOwnership())
+                            : DescribeSourceServersOutcome(std::move(result.GetError()));
 }
 
 DescribeVcenterClientsOutcome MgnClient::DescribeVcenterClients(const DescribeVcenterClientsRequest& request) const {
@@ -506,7 +551,9 @@ DescribeVcenterClientsOutcome MgnClient::DescribeVcenterClients(const DescribeVc
     endpointResolutionOutcome.GetResult().AddPathSegments("/DescribeVcenterClients");
   };
 
-  return DescribeVcenterClientsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeVcenterClientsOutcome(result.GetResultWithOwnership())
+                            : DescribeVcenterClientsOutcome(std::move(result.GetError()));
 }
 
 DisassociateApplicationsOutcome MgnClient::DisassociateApplications(const DisassociateApplicationsRequest& request) const {
@@ -515,7 +562,9 @@ DisassociateApplicationsOutcome MgnClient::DisassociateApplications(const Disass
     endpointResolutionOutcome.GetResult().AddPathSegments("/DisassociateApplications");
   };
 
-  return DisassociateApplicationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateApplicationsOutcome(result.GetResultWithOwnership())
+                            : DisassociateApplicationsOutcome(std::move(result.GetError()));
 }
 
 DisassociateSourceServersOutcome MgnClient::DisassociateSourceServers(const DisassociateSourceServersRequest& request) const {
@@ -524,7 +573,9 @@ DisassociateSourceServersOutcome MgnClient::DisassociateSourceServers(const Disa
     endpointResolutionOutcome.GetResult().AddPathSegments("/DisassociateSourceServers");
   };
 
-  return DisassociateSourceServersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateSourceServersOutcome(result.GetResultWithOwnership())
+                            : DisassociateSourceServersOutcome(std::move(result.GetError()));
 }
 
 DisconnectFromServiceOutcome MgnClient::DisconnectFromService(const DisconnectFromServiceRequest& request) const {
@@ -533,7 +584,9 @@ DisconnectFromServiceOutcome MgnClient::DisconnectFromService(const DisconnectFr
     endpointResolutionOutcome.GetResult().AddPathSegments("/DisconnectFromService");
   };
 
-  return DisconnectFromServiceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisconnectFromServiceOutcome(result.GetResultWithOwnership())
+                            : DisconnectFromServiceOutcome(std::move(result.GetError()));
 }
 
 FinalizeCutoverOutcome MgnClient::FinalizeCutover(const FinalizeCutoverRequest& request) const {
@@ -542,7 +595,9 @@ FinalizeCutoverOutcome MgnClient::FinalizeCutover(const FinalizeCutoverRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/FinalizeCutover");
   };
 
-  return FinalizeCutoverOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? FinalizeCutoverOutcome(result.GetResultWithOwnership())
+                            : FinalizeCutoverOutcome(std::move(result.GetError()));
 }
 
 GetLaunchConfigurationOutcome MgnClient::GetLaunchConfiguration(const GetLaunchConfigurationRequest& request) const {
@@ -551,7 +606,9 @@ GetLaunchConfigurationOutcome MgnClient::GetLaunchConfiguration(const GetLaunchC
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetLaunchConfiguration");
   };
 
-  return GetLaunchConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLaunchConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetLaunchConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetNetworkMigrationDefinitionOutcome MgnClient::GetNetworkMigrationDefinition(const GetNetworkMigrationDefinitionRequest& request) const {
@@ -560,7 +617,9 @@ GetNetworkMigrationDefinitionOutcome MgnClient::GetNetworkMigrationDefinition(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/network-migration/GetNetworkMigrationDefinition");
   };
 
-  return GetNetworkMigrationDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetNetworkMigrationDefinitionOutcome(result.GetResultWithOwnership())
+                            : GetNetworkMigrationDefinitionOutcome(std::move(result.GetError()));
 }
 
 GetNetworkMigrationMapperSegmentConstructOutcome MgnClient::GetNetworkMigrationMapperSegmentConstruct(
@@ -570,7 +629,9 @@ GetNetworkMigrationMapperSegmentConstructOutcome MgnClient::GetNetworkMigrationM
     endpointResolutionOutcome.GetResult().AddPathSegments("/network-migration/GetNetworkMigrationMapperSegmentConstruct");
   };
 
-  return GetNetworkMigrationMapperSegmentConstructOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetNetworkMigrationMapperSegmentConstructOutcome(result.GetResultWithOwnership())
+                            : GetNetworkMigrationMapperSegmentConstructOutcome(std::move(result.GetError()));
 }
 
 GetReplicationConfigurationOutcome MgnClient::GetReplicationConfiguration(const GetReplicationConfigurationRequest& request) const {
@@ -579,7 +640,9 @@ GetReplicationConfigurationOutcome MgnClient::GetReplicationConfiguration(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetReplicationConfiguration");
   };
 
-  return GetReplicationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetReplicationConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetReplicationConfigurationOutcome(std::move(result.GetError()));
 }
 
 InitializeServiceOutcome MgnClient::InitializeService(const InitializeServiceRequest& request) const {
@@ -588,7 +651,9 @@ InitializeServiceOutcome MgnClient::InitializeService(const InitializeServiceReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/InitializeService");
   };
 
-  return InitializeServiceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? InitializeServiceOutcome(result.GetResultWithOwnership())
+                            : InitializeServiceOutcome(std::move(result.GetError()));
 }
 
 ListApplicationsOutcome MgnClient::ListApplications(const ListApplicationsRequest& request) const {
@@ -597,7 +662,9 @@ ListApplicationsOutcome MgnClient::ListApplications(const ListApplicationsReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListApplications");
   };
 
-  return ListApplicationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListApplicationsOutcome(result.GetResultWithOwnership())
+                            : ListApplicationsOutcome(std::move(result.GetError()));
 }
 
 ListConnectorsOutcome MgnClient::ListConnectors(const ListConnectorsRequest& request) const {
@@ -606,7 +673,8 @@ ListConnectorsOutcome MgnClient::ListConnectors(const ListConnectorsRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListConnectors");
   };
 
-  return ListConnectorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListConnectorsOutcome(result.GetResultWithOwnership()) : ListConnectorsOutcome(std::move(result.GetError()));
 }
 
 ListExportErrorsOutcome MgnClient::ListExportErrors(const ListExportErrorsRequest& request) const {
@@ -615,7 +683,9 @@ ListExportErrorsOutcome MgnClient::ListExportErrors(const ListExportErrorsReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListExportErrors");
   };
 
-  return ListExportErrorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListExportErrorsOutcome(result.GetResultWithOwnership())
+                            : ListExportErrorsOutcome(std::move(result.GetError()));
 }
 
 ListExportsOutcome MgnClient::ListExports(const ListExportsRequest& request) const {
@@ -624,7 +694,8 @@ ListExportsOutcome MgnClient::ListExports(const ListExportsRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListExports");
   };
 
-  return ListExportsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListExportsOutcome(result.GetResultWithOwnership()) : ListExportsOutcome(std::move(result.GetError()));
 }
 
 ListImportErrorsOutcome MgnClient::ListImportErrors(const ListImportErrorsRequest& request) const {
@@ -633,7 +704,9 @@ ListImportErrorsOutcome MgnClient::ListImportErrors(const ListImportErrorsReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListImportErrors");
   };
 
-  return ListImportErrorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListImportErrorsOutcome(result.GetResultWithOwnership())
+                            : ListImportErrorsOutcome(std::move(result.GetError()));
 }
 
 ListImportFileEnrichmentsOutcome MgnClient::ListImportFileEnrichments(const ListImportFileEnrichmentsRequest& request) const {
@@ -642,7 +715,9 @@ ListImportFileEnrichmentsOutcome MgnClient::ListImportFileEnrichments(const List
     endpointResolutionOutcome.GetResult().AddPathSegments("/network-migration/ListImportFileEnrichments");
   };
 
-  return ListImportFileEnrichmentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListImportFileEnrichmentsOutcome(result.GetResultWithOwnership())
+                            : ListImportFileEnrichmentsOutcome(std::move(result.GetError()));
 }
 
 ListImportsOutcome MgnClient::ListImports(const ListImportsRequest& request) const {
@@ -651,7 +726,8 @@ ListImportsOutcome MgnClient::ListImports(const ListImportsRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListImports");
   };
 
-  return ListImportsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListImportsOutcome(result.GetResultWithOwnership()) : ListImportsOutcome(std::move(result.GetError()));
 }
 
 ListManagedAccountsOutcome MgnClient::ListManagedAccounts(const ListManagedAccountsRequest& request) const {
@@ -660,7 +736,9 @@ ListManagedAccountsOutcome MgnClient::ListManagedAccounts(const ListManagedAccou
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListManagedAccounts");
   };
 
-  return ListManagedAccountsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListManagedAccountsOutcome(result.GetResultWithOwnership())
+                            : ListManagedAccountsOutcome(std::move(result.GetError()));
 }
 
 ListNetworkMigrationAnalysesOutcome MgnClient::ListNetworkMigrationAnalyses(const ListNetworkMigrationAnalysesRequest& request) const {
@@ -669,7 +747,9 @@ ListNetworkMigrationAnalysesOutcome MgnClient::ListNetworkMigrationAnalyses(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/network-migration/ListNetworkMigrationAnalyses");
   };
 
-  return ListNetworkMigrationAnalysesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListNetworkMigrationAnalysesOutcome(result.GetResultWithOwnership())
+                            : ListNetworkMigrationAnalysesOutcome(std::move(result.GetError()));
 }
 
 ListNetworkMigrationAnalysisResultsOutcome MgnClient::ListNetworkMigrationAnalysisResults(
@@ -679,7 +759,9 @@ ListNetworkMigrationAnalysisResultsOutcome MgnClient::ListNetworkMigrationAnalys
     endpointResolutionOutcome.GetResult().AddPathSegments("/network-migration/ListNetworkMigrationAnalysisResults");
   };
 
-  return ListNetworkMigrationAnalysisResultsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListNetworkMigrationAnalysisResultsOutcome(result.GetResultWithOwnership())
+                            : ListNetworkMigrationAnalysisResultsOutcome(std::move(result.GetError()));
 }
 
 ListNetworkMigrationCodeGenerationSegmentsOutcome MgnClient::ListNetworkMigrationCodeGenerationSegments(
@@ -689,7 +771,9 @@ ListNetworkMigrationCodeGenerationSegmentsOutcome MgnClient::ListNetworkMigratio
     endpointResolutionOutcome.GetResult().AddPathSegments("/network-migration/ListNetworkMigrationCodeGenerationSegments");
   };
 
-  return ListNetworkMigrationCodeGenerationSegmentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListNetworkMigrationCodeGenerationSegmentsOutcome(result.GetResultWithOwnership())
+                            : ListNetworkMigrationCodeGenerationSegmentsOutcome(std::move(result.GetError()));
 }
 
 ListNetworkMigrationCodeGenerationsOutcome MgnClient::ListNetworkMigrationCodeGenerations(
@@ -699,7 +783,9 @@ ListNetworkMigrationCodeGenerationsOutcome MgnClient::ListNetworkMigrationCodeGe
     endpointResolutionOutcome.GetResult().AddPathSegments("/network-migration/ListNetworkMigrationCodeGenerations");
   };
 
-  return ListNetworkMigrationCodeGenerationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListNetworkMigrationCodeGenerationsOutcome(result.GetResultWithOwnership())
+                            : ListNetworkMigrationCodeGenerationsOutcome(std::move(result.GetError()));
 }
 
 ListNetworkMigrationDefinitionsOutcome MgnClient::ListNetworkMigrationDefinitions(
@@ -709,7 +795,9 @@ ListNetworkMigrationDefinitionsOutcome MgnClient::ListNetworkMigrationDefinition
     endpointResolutionOutcome.GetResult().AddPathSegments("/network-migration/ListNetworkMigrationDefinitions");
   };
 
-  return ListNetworkMigrationDefinitionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListNetworkMigrationDefinitionsOutcome(result.GetResultWithOwnership())
+                            : ListNetworkMigrationDefinitionsOutcome(std::move(result.GetError()));
 }
 
 ListNetworkMigrationDeployedStacksOutcome MgnClient::ListNetworkMigrationDeployedStacks(
@@ -719,7 +807,9 @@ ListNetworkMigrationDeployedStacksOutcome MgnClient::ListNetworkMigrationDeploye
     endpointResolutionOutcome.GetResult().AddPathSegments("/network-migration/ListNetworkMigrationDeployedStacks");
   };
 
-  return ListNetworkMigrationDeployedStacksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListNetworkMigrationDeployedStacksOutcome(result.GetResultWithOwnership())
+                            : ListNetworkMigrationDeployedStacksOutcome(std::move(result.GetError()));
 }
 
 ListNetworkMigrationDeploymentsOutcome MgnClient::ListNetworkMigrationDeployments(
@@ -729,7 +819,9 @@ ListNetworkMigrationDeploymentsOutcome MgnClient::ListNetworkMigrationDeployment
     endpointResolutionOutcome.GetResult().AddPathSegments("/network-migration/ListNetworkMigrationDeployments");
   };
 
-  return ListNetworkMigrationDeploymentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListNetworkMigrationDeploymentsOutcome(result.GetResultWithOwnership())
+                            : ListNetworkMigrationDeploymentsOutcome(std::move(result.GetError()));
 }
 
 ListNetworkMigrationExecutionsOutcome MgnClient::ListNetworkMigrationExecutions(
@@ -739,7 +831,9 @@ ListNetworkMigrationExecutionsOutcome MgnClient::ListNetworkMigrationExecutions(
     endpointResolutionOutcome.GetResult().AddPathSegments("/network-migration/ListNetworkMigrationExecutions");
   };
 
-  return ListNetworkMigrationExecutionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListNetworkMigrationExecutionsOutcome(result.GetResultWithOwnership())
+                            : ListNetworkMigrationExecutionsOutcome(std::move(result.GetError()));
 }
 
 ListNetworkMigrationMapperSegmentConstructsOutcome MgnClient::ListNetworkMigrationMapperSegmentConstructs(
@@ -749,7 +843,9 @@ ListNetworkMigrationMapperSegmentConstructsOutcome MgnClient::ListNetworkMigrati
     endpointResolutionOutcome.GetResult().AddPathSegments("/network-migration/ListNetworkMigrationMapperSegmentConstructs");
   };
 
-  return ListNetworkMigrationMapperSegmentConstructsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListNetworkMigrationMapperSegmentConstructsOutcome(result.GetResultWithOwnership())
+                            : ListNetworkMigrationMapperSegmentConstructsOutcome(std::move(result.GetError()));
 }
 
 ListNetworkMigrationMapperSegmentsOutcome MgnClient::ListNetworkMigrationMapperSegments(
@@ -759,7 +855,9 @@ ListNetworkMigrationMapperSegmentsOutcome MgnClient::ListNetworkMigrationMapperS
     endpointResolutionOutcome.GetResult().AddPathSegments("/network-migration/ListNetworkMigrationMapperSegments");
   };
 
-  return ListNetworkMigrationMapperSegmentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListNetworkMigrationMapperSegmentsOutcome(result.GetResultWithOwnership())
+                            : ListNetworkMigrationMapperSegmentsOutcome(std::move(result.GetError()));
 }
 
 ListNetworkMigrationMappingUpdatesOutcome MgnClient::ListNetworkMigrationMappingUpdates(
@@ -769,7 +867,9 @@ ListNetworkMigrationMappingUpdatesOutcome MgnClient::ListNetworkMigrationMapping
     endpointResolutionOutcome.GetResult().AddPathSegments("/network-migration/ListNetworkMigrationMappingUpdates");
   };
 
-  return ListNetworkMigrationMappingUpdatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListNetworkMigrationMappingUpdatesOutcome(result.GetResultWithOwnership())
+                            : ListNetworkMigrationMappingUpdatesOutcome(std::move(result.GetError()));
 }
 
 ListNetworkMigrationMappingsOutcome MgnClient::ListNetworkMigrationMappings(const ListNetworkMigrationMappingsRequest& request) const {
@@ -778,7 +878,9 @@ ListNetworkMigrationMappingsOutcome MgnClient::ListNetworkMigrationMappings(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/network-migration/ListNetworkMigrationMappings");
   };
 
-  return ListNetworkMigrationMappingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListNetworkMigrationMappingsOutcome(result.GetResultWithOwnership())
+                            : ListNetworkMigrationMappingsOutcome(std::move(result.GetError()));
 }
 
 ListSourceServerActionsOutcome MgnClient::ListSourceServerActions(const ListSourceServerActionsRequest& request) const {
@@ -787,7 +889,9 @@ ListSourceServerActionsOutcome MgnClient::ListSourceServerActions(const ListSour
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListSourceServerActions");
   };
 
-  return ListSourceServerActionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSourceServerActionsOutcome(result.GetResultWithOwnership())
+                            : ListSourceServerActionsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome MgnClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -803,7 +907,9 @@ ListTagsForResourceOutcome MgnClient::ListTagsForResource(const ListTagsForResou
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTemplateActionsOutcome MgnClient::ListTemplateActions(const ListTemplateActionsRequest& request) const {
@@ -812,7 +918,9 @@ ListTemplateActionsOutcome MgnClient::ListTemplateActions(const ListTemplateActi
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListTemplateActions");
   };
 
-  return ListTemplateActionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTemplateActionsOutcome(result.GetResultWithOwnership())
+                            : ListTemplateActionsOutcome(std::move(result.GetError()));
 }
 
 ListWavesOutcome MgnClient::ListWaves(const ListWavesRequest& request) const {
@@ -821,7 +929,8 @@ ListWavesOutcome MgnClient::ListWaves(const ListWavesRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListWaves");
   };
 
-  return ListWavesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListWavesOutcome(result.GetResultWithOwnership()) : ListWavesOutcome(std::move(result.GetError()));
 }
 
 MarkAsArchivedOutcome MgnClient::MarkAsArchived(const MarkAsArchivedRequest& request) const {
@@ -830,7 +939,8 @@ MarkAsArchivedOutcome MgnClient::MarkAsArchived(const MarkAsArchivedRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/MarkAsArchived");
   };
 
-  return MarkAsArchivedOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? MarkAsArchivedOutcome(result.GetResultWithOwnership()) : MarkAsArchivedOutcome(std::move(result.GetError()));
 }
 
 PauseReplicationOutcome MgnClient::PauseReplication(const PauseReplicationRequest& request) const {
@@ -839,7 +949,9 @@ PauseReplicationOutcome MgnClient::PauseReplication(const PauseReplicationReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/PauseReplication");
   };
 
-  return PauseReplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PauseReplicationOutcome(result.GetResultWithOwnership())
+                            : PauseReplicationOutcome(std::move(result.GetError()));
 }
 
 PutSourceServerActionOutcome MgnClient::PutSourceServerAction(const PutSourceServerActionRequest& request) const {
@@ -848,7 +960,9 @@ PutSourceServerActionOutcome MgnClient::PutSourceServerAction(const PutSourceSer
     endpointResolutionOutcome.GetResult().AddPathSegments("/PutSourceServerAction");
   };
 
-  return PutSourceServerActionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutSourceServerActionOutcome(result.GetResultWithOwnership())
+                            : PutSourceServerActionOutcome(std::move(result.GetError()));
 }
 
 PutTemplateActionOutcome MgnClient::PutTemplateAction(const PutTemplateActionRequest& request) const {
@@ -857,7 +971,9 @@ PutTemplateActionOutcome MgnClient::PutTemplateAction(const PutTemplateActionReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/PutTemplateAction");
   };
 
-  return PutTemplateActionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutTemplateActionOutcome(result.GetResultWithOwnership())
+                            : PutTemplateActionOutcome(std::move(result.GetError()));
 }
 
 RemoveSourceServerActionOutcome MgnClient::RemoveSourceServerAction(const RemoveSourceServerActionRequest& request) const {
@@ -866,7 +982,9 @@ RemoveSourceServerActionOutcome MgnClient::RemoveSourceServerAction(const Remove
     endpointResolutionOutcome.GetResult().AddPathSegments("/RemoveSourceServerAction");
   };
 
-  return RemoveSourceServerActionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveSourceServerActionOutcome(result.GetResultWithOwnership())
+                            : RemoveSourceServerActionOutcome(std::move(result.GetError()));
 }
 
 RemoveTemplateActionOutcome MgnClient::RemoveTemplateAction(const RemoveTemplateActionRequest& request) const {
@@ -875,7 +993,9 @@ RemoveTemplateActionOutcome MgnClient::RemoveTemplateAction(const RemoveTemplate
     endpointResolutionOutcome.GetResult().AddPathSegments("/RemoveTemplateAction");
   };
 
-  return RemoveTemplateActionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveTemplateActionOutcome(result.GetResultWithOwnership())
+                            : RemoveTemplateActionOutcome(std::move(result.GetError()));
 }
 
 ResumeReplicationOutcome MgnClient::ResumeReplication(const ResumeReplicationRequest& request) const {
@@ -884,7 +1004,9 @@ ResumeReplicationOutcome MgnClient::ResumeReplication(const ResumeReplicationReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/ResumeReplication");
   };
 
-  return ResumeReplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResumeReplicationOutcome(result.GetResultWithOwnership())
+                            : ResumeReplicationOutcome(std::move(result.GetError()));
 }
 
 RetryDataReplicationOutcome MgnClient::RetryDataReplication(const RetryDataReplicationRequest& request) const {
@@ -893,7 +1015,9 @@ RetryDataReplicationOutcome MgnClient::RetryDataReplication(const RetryDataRepli
     endpointResolutionOutcome.GetResult().AddPathSegments("/RetryDataReplication");
   };
 
-  return RetryDataReplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RetryDataReplicationOutcome(result.GetResultWithOwnership())
+                            : RetryDataReplicationOutcome(std::move(result.GetError()));
 }
 
 StartCutoverOutcome MgnClient::StartCutover(const StartCutoverRequest& request) const {
@@ -902,7 +1026,8 @@ StartCutoverOutcome MgnClient::StartCutover(const StartCutoverRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/StartCutover");
   };
 
-  return StartCutoverOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartCutoverOutcome(result.GetResultWithOwnership()) : StartCutoverOutcome(std::move(result.GetError()));
 }
 
 StartExportOutcome MgnClient::StartExport(const StartExportRequest& request) const {
@@ -911,7 +1036,8 @@ StartExportOutcome MgnClient::StartExport(const StartExportRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegments("/StartExport");
   };
 
-  return StartExportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartExportOutcome(result.GetResultWithOwnership()) : StartExportOutcome(std::move(result.GetError()));
 }
 
 StartImportOutcome MgnClient::StartImport(const StartImportRequest& request) const {
@@ -920,7 +1046,8 @@ StartImportOutcome MgnClient::StartImport(const StartImportRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegments("/StartImport");
   };
 
-  return StartImportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartImportOutcome(result.GetResultWithOwnership()) : StartImportOutcome(std::move(result.GetError()));
 }
 
 StartImportFileEnrichmentOutcome MgnClient::StartImportFileEnrichment(const StartImportFileEnrichmentRequest& request) const {
@@ -929,7 +1056,9 @@ StartImportFileEnrichmentOutcome MgnClient::StartImportFileEnrichment(const Star
     endpointResolutionOutcome.GetResult().AddPathSegments("/network-migration/StartImportFileEnrichment");
   };
 
-  return StartImportFileEnrichmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartImportFileEnrichmentOutcome(result.GetResultWithOwnership())
+                            : StartImportFileEnrichmentOutcome(std::move(result.GetError()));
 }
 
 StartNetworkMigrationAnalysisOutcome MgnClient::StartNetworkMigrationAnalysis(const StartNetworkMigrationAnalysisRequest& request) const {
@@ -938,7 +1067,9 @@ StartNetworkMigrationAnalysisOutcome MgnClient::StartNetworkMigrationAnalysis(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/network-migration/StartNetworkMigrationAnalysis");
   };
 
-  return StartNetworkMigrationAnalysisOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartNetworkMigrationAnalysisOutcome(result.GetResultWithOwnership())
+                            : StartNetworkMigrationAnalysisOutcome(std::move(result.GetError()));
 }
 
 StartNetworkMigrationCodeGenerationOutcome MgnClient::StartNetworkMigrationCodeGeneration(
@@ -948,7 +1079,9 @@ StartNetworkMigrationCodeGenerationOutcome MgnClient::StartNetworkMigrationCodeG
     endpointResolutionOutcome.GetResult().AddPathSegments("/network-migration/StartNetworkMigrationCodeGeneration");
   };
 
-  return StartNetworkMigrationCodeGenerationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartNetworkMigrationCodeGenerationOutcome(result.GetResultWithOwnership())
+                            : StartNetworkMigrationCodeGenerationOutcome(std::move(result.GetError()));
 }
 
 StartNetworkMigrationDeploymentOutcome MgnClient::StartNetworkMigrationDeployment(
@@ -958,7 +1091,9 @@ StartNetworkMigrationDeploymentOutcome MgnClient::StartNetworkMigrationDeploymen
     endpointResolutionOutcome.GetResult().AddPathSegments("/network-migration/StartNetworkMigrationDeployment");
   };
 
-  return StartNetworkMigrationDeploymentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartNetworkMigrationDeploymentOutcome(result.GetResultWithOwnership())
+                            : StartNetworkMigrationDeploymentOutcome(std::move(result.GetError()));
 }
 
 StartNetworkMigrationMappingOutcome MgnClient::StartNetworkMigrationMapping(const StartNetworkMigrationMappingRequest& request) const {
@@ -967,7 +1102,9 @@ StartNetworkMigrationMappingOutcome MgnClient::StartNetworkMigrationMapping(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/network-migration/StartNetworkMigrationMapping");
   };
 
-  return StartNetworkMigrationMappingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartNetworkMigrationMappingOutcome(result.GetResultWithOwnership())
+                            : StartNetworkMigrationMappingOutcome(std::move(result.GetError()));
 }
 
 StartNetworkMigrationMappingUpdateOutcome MgnClient::StartNetworkMigrationMappingUpdate(
@@ -977,7 +1114,9 @@ StartNetworkMigrationMappingUpdateOutcome MgnClient::StartNetworkMigrationMappin
     endpointResolutionOutcome.GetResult().AddPathSegments("/network-migration/StartNetworkMigrationMappingUpdate");
   };
 
-  return StartNetworkMigrationMappingUpdateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartNetworkMigrationMappingUpdateOutcome(result.GetResultWithOwnership())
+                            : StartNetworkMigrationMappingUpdateOutcome(std::move(result.GetError()));
 }
 
 StartReplicationOutcome MgnClient::StartReplication(const StartReplicationRequest& request) const {
@@ -986,7 +1125,9 @@ StartReplicationOutcome MgnClient::StartReplication(const StartReplicationReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/StartReplication");
   };
 
-  return StartReplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartReplicationOutcome(result.GetResultWithOwnership())
+                            : StartReplicationOutcome(std::move(result.GetError()));
 }
 
 StartTestOutcome MgnClient::StartTest(const StartTestRequest& request) const {
@@ -995,7 +1136,8 @@ StartTestOutcome MgnClient::StartTest(const StartTestRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/StartTest");
   };
 
-  return StartTestOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartTestOutcome(result.GetResultWithOwnership()) : StartTestOutcome(std::move(result.GetError()));
 }
 
 StopReplicationOutcome MgnClient::StopReplication(const StopReplicationRequest& request) const {
@@ -1004,7 +1146,9 @@ StopReplicationOutcome MgnClient::StopReplication(const StopReplicationRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/StopReplication");
   };
 
-  return StopReplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopReplicationOutcome(result.GetResultWithOwnership())
+                            : StopReplicationOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome MgnClient::TagResource(const TagResourceRequest& request) const {
@@ -1020,7 +1164,8 @@ TagResourceOutcome MgnClient::TagResource(const TagResourceRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 TerminateTargetInstancesOutcome MgnClient::TerminateTargetInstances(const TerminateTargetInstancesRequest& request) const {
@@ -1029,7 +1174,9 @@ TerminateTargetInstancesOutcome MgnClient::TerminateTargetInstances(const Termin
     endpointResolutionOutcome.GetResult().AddPathSegments("/TerminateTargetInstances");
   };
 
-  return TerminateTargetInstancesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TerminateTargetInstancesOutcome(result.GetResultWithOwnership())
+                            : TerminateTargetInstancesOutcome(std::move(result.GetError()));
 }
 
 UnarchiveApplicationOutcome MgnClient::UnarchiveApplication(const UnarchiveApplicationRequest& request) const {
@@ -1038,7 +1185,9 @@ UnarchiveApplicationOutcome MgnClient::UnarchiveApplication(const UnarchiveAppli
     endpointResolutionOutcome.GetResult().AddPathSegments("/UnarchiveApplication");
   };
 
-  return UnarchiveApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UnarchiveApplicationOutcome(result.GetResultWithOwnership())
+                            : UnarchiveApplicationOutcome(std::move(result.GetError()));
 }
 
 UnarchiveWaveOutcome MgnClient::UnarchiveWave(const UnarchiveWaveRequest& request) const {
@@ -1047,7 +1196,8 @@ UnarchiveWaveOutcome MgnClient::UnarchiveWave(const UnarchiveWaveRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/UnarchiveWave");
   };
 
-  return UnarchiveWaveOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UnarchiveWaveOutcome(result.GetResultWithOwnership()) : UnarchiveWaveOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome MgnClient::UntagResource(const UntagResourceRequest& request) const {
@@ -1068,7 +1218,8 @@ UntagResourceOutcome MgnClient::UntagResource(const UntagResourceRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateApplicationOutcome MgnClient::UpdateApplication(const UpdateApplicationRequest& request) const {
@@ -1077,7 +1228,9 @@ UpdateApplicationOutcome MgnClient::UpdateApplication(const UpdateApplicationReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateApplication");
   };
 
-  return UpdateApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateApplicationOutcome(result.GetResultWithOwnership())
+                            : UpdateApplicationOutcome(std::move(result.GetError()));
 }
 
 UpdateConnectorOutcome MgnClient::UpdateConnector(const UpdateConnectorRequest& request) const {
@@ -1086,7 +1239,9 @@ UpdateConnectorOutcome MgnClient::UpdateConnector(const UpdateConnectorRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateConnector");
   };
 
-  return UpdateConnectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateConnectorOutcome(result.GetResultWithOwnership())
+                            : UpdateConnectorOutcome(std::move(result.GetError()));
 }
 
 UpdateLaunchConfigurationOutcome MgnClient::UpdateLaunchConfiguration(const UpdateLaunchConfigurationRequest& request) const {
@@ -1095,7 +1250,9 @@ UpdateLaunchConfigurationOutcome MgnClient::UpdateLaunchConfiguration(const Upda
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateLaunchConfiguration");
   };
 
-  return UpdateLaunchConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLaunchConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateLaunchConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateLaunchConfigurationTemplateOutcome MgnClient::UpdateLaunchConfigurationTemplate(
@@ -1105,7 +1262,9 @@ UpdateLaunchConfigurationTemplateOutcome MgnClient::UpdateLaunchConfigurationTem
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateLaunchConfigurationTemplate");
   };
 
-  return UpdateLaunchConfigurationTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLaunchConfigurationTemplateOutcome(result.GetResultWithOwnership())
+                            : UpdateLaunchConfigurationTemplateOutcome(std::move(result.GetError()));
 }
 
 UpdateNetworkMigrationDefinitionOutcome MgnClient::UpdateNetworkMigrationDefinition(
@@ -1115,7 +1274,9 @@ UpdateNetworkMigrationDefinitionOutcome MgnClient::UpdateNetworkMigrationDefinit
     endpointResolutionOutcome.GetResult().AddPathSegments("/network-migration/UpdateNetworkMigrationDefinition");
   };
 
-  return UpdateNetworkMigrationDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateNetworkMigrationDefinitionOutcome(result.GetResultWithOwnership())
+                            : UpdateNetworkMigrationDefinitionOutcome(std::move(result.GetError()));
 }
 
 UpdateNetworkMigrationMapperSegmentOutcome MgnClient::UpdateNetworkMigrationMapperSegment(
@@ -1125,7 +1286,9 @@ UpdateNetworkMigrationMapperSegmentOutcome MgnClient::UpdateNetworkMigrationMapp
     endpointResolutionOutcome.GetResult().AddPathSegments("/network-migration/UpdateNetworkMigrationMapperSegment");
   };
 
-  return UpdateNetworkMigrationMapperSegmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateNetworkMigrationMapperSegmentOutcome(result.GetResultWithOwnership())
+                            : UpdateNetworkMigrationMapperSegmentOutcome(std::move(result.GetError()));
 }
 
 UpdateReplicationConfigurationOutcome MgnClient::UpdateReplicationConfiguration(
@@ -1135,7 +1298,9 @@ UpdateReplicationConfigurationOutcome MgnClient::UpdateReplicationConfiguration(
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateReplicationConfiguration");
   };
 
-  return UpdateReplicationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateReplicationConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateReplicationConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateReplicationConfigurationTemplateOutcome MgnClient::UpdateReplicationConfigurationTemplate(
@@ -1145,7 +1310,9 @@ UpdateReplicationConfigurationTemplateOutcome MgnClient::UpdateReplicationConfig
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateReplicationConfigurationTemplate");
   };
 
-  return UpdateReplicationConfigurationTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateReplicationConfigurationTemplateOutcome(result.GetResultWithOwnership())
+                            : UpdateReplicationConfigurationTemplateOutcome(std::move(result.GetError()));
 }
 
 UpdateSourceServerOutcome MgnClient::UpdateSourceServer(const UpdateSourceServerRequest& request) const {
@@ -1154,7 +1321,9 @@ UpdateSourceServerOutcome MgnClient::UpdateSourceServer(const UpdateSourceServer
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateSourceServer");
   };
 
-  return UpdateSourceServerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSourceServerOutcome(result.GetResultWithOwnership())
+                            : UpdateSourceServerOutcome(std::move(result.GetError()));
 }
 
 UpdateSourceServerReplicationTypeOutcome MgnClient::UpdateSourceServerReplicationType(
@@ -1164,7 +1333,9 @@ UpdateSourceServerReplicationTypeOutcome MgnClient::UpdateSourceServerReplicatio
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateSourceServerReplicationType");
   };
 
-  return UpdateSourceServerReplicationTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSourceServerReplicationTypeOutcome(result.GetResultWithOwnership())
+                            : UpdateSourceServerReplicationTypeOutcome(std::move(result.GetError()));
 }
 
 UpdateWaveOutcome MgnClient::UpdateWave(const UpdateWaveRequest& request) const {
@@ -1173,5 +1344,6 @@ UpdateWaveOutcome MgnClient::UpdateWave(const UpdateWaveRequest& request) const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateWave");
   };
 
-  return UpdateWaveOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateWaveOutcome(result.GetResultWithOwnership()) : UpdateWaveOutcome(std::move(result.GetError()));
 }

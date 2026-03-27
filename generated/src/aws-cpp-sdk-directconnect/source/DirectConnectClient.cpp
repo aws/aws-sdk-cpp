@@ -233,259 +233,367 @@ DirectConnectClient::InvokeOperationOutcome DirectConnectClient::InvokeServiceOp
 
 AcceptDirectConnectGatewayAssociationProposalOutcome DirectConnectClient::AcceptDirectConnectGatewayAssociationProposal(
     const AcceptDirectConnectGatewayAssociationProposalRequest& request) const {
-  return AcceptDirectConnectGatewayAssociationProposalOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptDirectConnectGatewayAssociationProposalOutcome(result.GetResultWithOwnership())
+                            : AcceptDirectConnectGatewayAssociationProposalOutcome(std::move(result.GetError()));
 }
 
 AllocateHostedConnectionOutcome DirectConnectClient::AllocateHostedConnection(const AllocateHostedConnectionRequest& request) const {
-  return AllocateHostedConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AllocateHostedConnectionOutcome(result.GetResultWithOwnership())
+                            : AllocateHostedConnectionOutcome(std::move(result.GetError()));
 }
 
 AllocatePrivateVirtualInterfaceOutcome DirectConnectClient::AllocatePrivateVirtualInterface(
     const AllocatePrivateVirtualInterfaceRequest& request) const {
-  return AllocatePrivateVirtualInterfaceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AllocatePrivateVirtualInterfaceOutcome(result.GetResultWithOwnership())
+                            : AllocatePrivateVirtualInterfaceOutcome(std::move(result.GetError()));
 }
 
 AllocatePublicVirtualInterfaceOutcome DirectConnectClient::AllocatePublicVirtualInterface(
     const AllocatePublicVirtualInterfaceRequest& request) const {
-  return AllocatePublicVirtualInterfaceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AllocatePublicVirtualInterfaceOutcome(result.GetResultWithOwnership())
+                            : AllocatePublicVirtualInterfaceOutcome(std::move(result.GetError()));
 }
 
 AllocateTransitVirtualInterfaceOutcome DirectConnectClient::AllocateTransitVirtualInterface(
     const AllocateTransitVirtualInterfaceRequest& request) const {
-  return AllocateTransitVirtualInterfaceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AllocateTransitVirtualInterfaceOutcome(result.GetResultWithOwnership())
+                            : AllocateTransitVirtualInterfaceOutcome(std::move(result.GetError()));
 }
 
 AssociateConnectionWithLagOutcome DirectConnectClient::AssociateConnectionWithLag(const AssociateConnectionWithLagRequest& request) const {
-  return AssociateConnectionWithLagOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateConnectionWithLagOutcome(result.GetResultWithOwnership())
+                            : AssociateConnectionWithLagOutcome(std::move(result.GetError()));
 }
 
 AssociateHostedConnectionOutcome DirectConnectClient::AssociateHostedConnection(const AssociateHostedConnectionRequest& request) const {
-  return AssociateHostedConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateHostedConnectionOutcome(result.GetResultWithOwnership())
+                            : AssociateHostedConnectionOutcome(std::move(result.GetError()));
 }
 
 AssociateMacSecKeyOutcome DirectConnectClient::AssociateMacSecKey(const AssociateMacSecKeyRequest& request) const {
-  return AssociateMacSecKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateMacSecKeyOutcome(result.GetResultWithOwnership())
+                            : AssociateMacSecKeyOutcome(std::move(result.GetError()));
 }
 
 AssociateVirtualInterfaceOutcome DirectConnectClient::AssociateVirtualInterface(const AssociateVirtualInterfaceRequest& request) const {
-  return AssociateVirtualInterfaceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateVirtualInterfaceOutcome(result.GetResultWithOwnership())
+                            : AssociateVirtualInterfaceOutcome(std::move(result.GetError()));
 }
 
 ConfirmConnectionOutcome DirectConnectClient::ConfirmConnection(const ConfirmConnectionRequest& request) const {
-  return ConfirmConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ConfirmConnectionOutcome(result.GetResultWithOwnership())
+                            : ConfirmConnectionOutcome(std::move(result.GetError()));
 }
 
 ConfirmCustomerAgreementOutcome DirectConnectClient::ConfirmCustomerAgreement(const ConfirmCustomerAgreementRequest& request) const {
-  return ConfirmCustomerAgreementOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ConfirmCustomerAgreementOutcome(result.GetResultWithOwnership())
+                            : ConfirmCustomerAgreementOutcome(std::move(result.GetError()));
 }
 
 ConfirmPrivateVirtualInterfaceOutcome DirectConnectClient::ConfirmPrivateVirtualInterface(
     const ConfirmPrivateVirtualInterfaceRequest& request) const {
-  return ConfirmPrivateVirtualInterfaceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ConfirmPrivateVirtualInterfaceOutcome(result.GetResultWithOwnership())
+                            : ConfirmPrivateVirtualInterfaceOutcome(std::move(result.GetError()));
 }
 
 ConfirmPublicVirtualInterfaceOutcome DirectConnectClient::ConfirmPublicVirtualInterface(
     const ConfirmPublicVirtualInterfaceRequest& request) const {
-  return ConfirmPublicVirtualInterfaceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ConfirmPublicVirtualInterfaceOutcome(result.GetResultWithOwnership())
+                            : ConfirmPublicVirtualInterfaceOutcome(std::move(result.GetError()));
 }
 
 ConfirmTransitVirtualInterfaceOutcome DirectConnectClient::ConfirmTransitVirtualInterface(
     const ConfirmTransitVirtualInterfaceRequest& request) const {
-  return ConfirmTransitVirtualInterfaceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ConfirmTransitVirtualInterfaceOutcome(result.GetResultWithOwnership())
+                            : ConfirmTransitVirtualInterfaceOutcome(std::move(result.GetError()));
 }
 
 CreateBGPPeerOutcome DirectConnectClient::CreateBGPPeer(const CreateBGPPeerRequest& request) const {
-  return CreateBGPPeerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBGPPeerOutcome(result.GetResultWithOwnership()) : CreateBGPPeerOutcome(std::move(result.GetError()));
 }
 
 CreateConnectionOutcome DirectConnectClient::CreateConnection(const CreateConnectionRequest& request) const {
-  return CreateConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConnectionOutcome(result.GetResultWithOwnership())
+                            : CreateConnectionOutcome(std::move(result.GetError()));
 }
 
 CreateDirectConnectGatewayOutcome DirectConnectClient::CreateDirectConnectGateway(const CreateDirectConnectGatewayRequest& request) const {
-  return CreateDirectConnectGatewayOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDirectConnectGatewayOutcome(result.GetResultWithOwnership())
+                            : CreateDirectConnectGatewayOutcome(std::move(result.GetError()));
 }
 
 CreateDirectConnectGatewayAssociationOutcome DirectConnectClient::CreateDirectConnectGatewayAssociation(
     const CreateDirectConnectGatewayAssociationRequest& request) const {
-  return CreateDirectConnectGatewayAssociationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDirectConnectGatewayAssociationOutcome(result.GetResultWithOwnership())
+                            : CreateDirectConnectGatewayAssociationOutcome(std::move(result.GetError()));
 }
 
 CreateDirectConnectGatewayAssociationProposalOutcome DirectConnectClient::CreateDirectConnectGatewayAssociationProposal(
     const CreateDirectConnectGatewayAssociationProposalRequest& request) const {
-  return CreateDirectConnectGatewayAssociationProposalOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDirectConnectGatewayAssociationProposalOutcome(result.GetResultWithOwnership())
+                            : CreateDirectConnectGatewayAssociationProposalOutcome(std::move(result.GetError()));
 }
 
 CreateInterconnectOutcome DirectConnectClient::CreateInterconnect(const CreateInterconnectRequest& request) const {
-  return CreateInterconnectOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateInterconnectOutcome(result.GetResultWithOwnership())
+                            : CreateInterconnectOutcome(std::move(result.GetError()));
 }
 
 CreateLagOutcome DirectConnectClient::CreateLag(const CreateLagRequest& request) const {
-  return CreateLagOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLagOutcome(result.GetResultWithOwnership()) : CreateLagOutcome(std::move(result.GetError()));
 }
 
 CreatePrivateVirtualInterfaceOutcome DirectConnectClient::CreatePrivateVirtualInterface(
     const CreatePrivateVirtualInterfaceRequest& request) const {
-  return CreatePrivateVirtualInterfaceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePrivateVirtualInterfaceOutcome(result.GetResultWithOwnership())
+                            : CreatePrivateVirtualInterfaceOutcome(std::move(result.GetError()));
 }
 
 CreatePublicVirtualInterfaceOutcome DirectConnectClient::CreatePublicVirtualInterface(
     const CreatePublicVirtualInterfaceRequest& request) const {
-  return CreatePublicVirtualInterfaceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePublicVirtualInterfaceOutcome(result.GetResultWithOwnership())
+                            : CreatePublicVirtualInterfaceOutcome(std::move(result.GetError()));
 }
 
 CreateTransitVirtualInterfaceOutcome DirectConnectClient::CreateTransitVirtualInterface(
     const CreateTransitVirtualInterfaceRequest& request) const {
-  return CreateTransitVirtualInterfaceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTransitVirtualInterfaceOutcome(result.GetResultWithOwnership())
+                            : CreateTransitVirtualInterfaceOutcome(std::move(result.GetError()));
 }
 
 DeleteBGPPeerOutcome DirectConnectClient::DeleteBGPPeer(const DeleteBGPPeerRequest& request) const {
-  return DeleteBGPPeerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteBGPPeerOutcome(result.GetResultWithOwnership()) : DeleteBGPPeerOutcome(std::move(result.GetError()));
 }
 
 DeleteConnectionOutcome DirectConnectClient::DeleteConnection(const DeleteConnectionRequest& request) const {
-  return DeleteConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteConnectionOutcome(result.GetResultWithOwnership())
+                            : DeleteConnectionOutcome(std::move(result.GetError()));
 }
 
 DeleteDirectConnectGatewayOutcome DirectConnectClient::DeleteDirectConnectGateway(const DeleteDirectConnectGatewayRequest& request) const {
-  return DeleteDirectConnectGatewayOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDirectConnectGatewayOutcome(result.GetResultWithOwnership())
+                            : DeleteDirectConnectGatewayOutcome(std::move(result.GetError()));
 }
 
 DeleteDirectConnectGatewayAssociationOutcome DirectConnectClient::DeleteDirectConnectGatewayAssociation(
     const DeleteDirectConnectGatewayAssociationRequest& request) const {
-  return DeleteDirectConnectGatewayAssociationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDirectConnectGatewayAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteDirectConnectGatewayAssociationOutcome(std::move(result.GetError()));
 }
 
 DeleteDirectConnectGatewayAssociationProposalOutcome DirectConnectClient::DeleteDirectConnectGatewayAssociationProposal(
     const DeleteDirectConnectGatewayAssociationProposalRequest& request) const {
-  return DeleteDirectConnectGatewayAssociationProposalOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDirectConnectGatewayAssociationProposalOutcome(result.GetResultWithOwnership())
+                            : DeleteDirectConnectGatewayAssociationProposalOutcome(std::move(result.GetError()));
 }
 
 DeleteInterconnectOutcome DirectConnectClient::DeleteInterconnect(const DeleteInterconnectRequest& request) const {
-  return DeleteInterconnectOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteInterconnectOutcome(result.GetResultWithOwnership())
+                            : DeleteInterconnectOutcome(std::move(result.GetError()));
 }
 
 DeleteLagOutcome DirectConnectClient::DeleteLag(const DeleteLagRequest& request) const {
-  return DeleteLagOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLagOutcome(result.GetResultWithOwnership()) : DeleteLagOutcome(std::move(result.GetError()));
 }
 
 DeleteVirtualInterfaceOutcome DirectConnectClient::DeleteVirtualInterface(const DeleteVirtualInterfaceRequest& request) const {
-  return DeleteVirtualInterfaceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVirtualInterfaceOutcome(result.GetResultWithOwnership())
+                            : DeleteVirtualInterfaceOutcome(std::move(result.GetError()));
 }
 
 DescribeConnectionsOutcome DirectConnectClient::DescribeConnections(const DescribeConnectionsRequest& request) const {
-  return DescribeConnectionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeConnectionsOutcome(result.GetResultWithOwnership())
+                            : DescribeConnectionsOutcome(std::move(result.GetError()));
 }
 
 DescribeCustomerMetadataOutcome DirectConnectClient::DescribeCustomerMetadata(const DescribeCustomerMetadataRequest& request) const {
-  return DescribeCustomerMetadataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCustomerMetadataOutcome(result.GetResultWithOwnership())
+                            : DescribeCustomerMetadataOutcome(std::move(result.GetError()));
 }
 
 DescribeDirectConnectGatewayAssociationProposalsOutcome DirectConnectClient::DescribeDirectConnectGatewayAssociationProposals(
     const DescribeDirectConnectGatewayAssociationProposalsRequest& request) const {
-  return DescribeDirectConnectGatewayAssociationProposalsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDirectConnectGatewayAssociationProposalsOutcome(result.GetResultWithOwnership())
+                            : DescribeDirectConnectGatewayAssociationProposalsOutcome(std::move(result.GetError()));
 }
 
 DescribeDirectConnectGatewayAssociationsOutcome DirectConnectClient::DescribeDirectConnectGatewayAssociations(
     const DescribeDirectConnectGatewayAssociationsRequest& request) const {
-  return DescribeDirectConnectGatewayAssociationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDirectConnectGatewayAssociationsOutcome(result.GetResultWithOwnership())
+                            : DescribeDirectConnectGatewayAssociationsOutcome(std::move(result.GetError()));
 }
 
 DescribeDirectConnectGatewayAttachmentsOutcome DirectConnectClient::DescribeDirectConnectGatewayAttachments(
     const DescribeDirectConnectGatewayAttachmentsRequest& request) const {
-  return DescribeDirectConnectGatewayAttachmentsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDirectConnectGatewayAttachmentsOutcome(result.GetResultWithOwnership())
+                            : DescribeDirectConnectGatewayAttachmentsOutcome(std::move(result.GetError()));
 }
 
 DescribeDirectConnectGatewaysOutcome DirectConnectClient::DescribeDirectConnectGateways(
     const DescribeDirectConnectGatewaysRequest& request) const {
-  return DescribeDirectConnectGatewaysOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDirectConnectGatewaysOutcome(result.GetResultWithOwnership())
+                            : DescribeDirectConnectGatewaysOutcome(std::move(result.GetError()));
 }
 
 DescribeHostedConnectionsOutcome DirectConnectClient::DescribeHostedConnections(const DescribeHostedConnectionsRequest& request) const {
-  return DescribeHostedConnectionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeHostedConnectionsOutcome(result.GetResultWithOwnership())
+                            : DescribeHostedConnectionsOutcome(std::move(result.GetError()));
 }
 
 DescribeInterconnectsOutcome DirectConnectClient::DescribeInterconnects(const DescribeInterconnectsRequest& request) const {
-  return DescribeInterconnectsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeInterconnectsOutcome(result.GetResultWithOwnership())
+                            : DescribeInterconnectsOutcome(std::move(result.GetError()));
 }
 
 DescribeLagsOutcome DirectConnectClient::DescribeLags(const DescribeLagsRequest& request) const {
-  return DescribeLagsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeLagsOutcome(result.GetResultWithOwnership()) : DescribeLagsOutcome(std::move(result.GetError()));
 }
 
 DescribeLoaOutcome DirectConnectClient::DescribeLoa(const DescribeLoaRequest& request) const {
-  return DescribeLoaOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeLoaOutcome(result.GetResultWithOwnership()) : DescribeLoaOutcome(std::move(result.GetError()));
 }
 
 DescribeLocationsOutcome DirectConnectClient::DescribeLocations(const DescribeLocationsRequest& request) const {
-  return DescribeLocationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeLocationsOutcome(result.GetResultWithOwnership())
+                            : DescribeLocationsOutcome(std::move(result.GetError()));
 }
 
 DescribeRouterConfigurationOutcome DirectConnectClient::DescribeRouterConfiguration(
     const DescribeRouterConfigurationRequest& request) const {
-  return DescribeRouterConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRouterConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeRouterConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeTagsOutcome DirectConnectClient::DescribeTags(const DescribeTagsRequest& request) const {
-  return DescribeTagsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTagsOutcome(result.GetResultWithOwnership()) : DescribeTagsOutcome(std::move(result.GetError()));
 }
 
 DescribeVirtualGatewaysOutcome DirectConnectClient::DescribeVirtualGateways(const DescribeVirtualGatewaysRequest& request) const {
-  return DescribeVirtualGatewaysOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeVirtualGatewaysOutcome(result.GetResultWithOwnership())
+                            : DescribeVirtualGatewaysOutcome(std::move(result.GetError()));
 }
 
 DescribeVirtualInterfacesOutcome DirectConnectClient::DescribeVirtualInterfaces(const DescribeVirtualInterfacesRequest& request) const {
-  return DescribeVirtualInterfacesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeVirtualInterfacesOutcome(result.GetResultWithOwnership())
+                            : DescribeVirtualInterfacesOutcome(std::move(result.GetError()));
 }
 
 DisassociateConnectionFromLagOutcome DirectConnectClient::DisassociateConnectionFromLag(
     const DisassociateConnectionFromLagRequest& request) const {
-  return DisassociateConnectionFromLagOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateConnectionFromLagOutcome(result.GetResultWithOwnership())
+                            : DisassociateConnectionFromLagOutcome(std::move(result.GetError()));
 }
 
 DisassociateMacSecKeyOutcome DirectConnectClient::DisassociateMacSecKey(const DisassociateMacSecKeyRequest& request) const {
-  return DisassociateMacSecKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateMacSecKeyOutcome(result.GetResultWithOwnership())
+                            : DisassociateMacSecKeyOutcome(std::move(result.GetError()));
 }
 
 ListVirtualInterfaceTestHistoryOutcome DirectConnectClient::ListVirtualInterfaceTestHistory(
     const ListVirtualInterfaceTestHistoryRequest& request) const {
-  return ListVirtualInterfaceTestHistoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListVirtualInterfaceTestHistoryOutcome(result.GetResultWithOwnership())
+                            : ListVirtualInterfaceTestHistoryOutcome(std::move(result.GetError()));
 }
 
 StartBgpFailoverTestOutcome DirectConnectClient::StartBgpFailoverTest(const StartBgpFailoverTestRequest& request) const {
-  return StartBgpFailoverTestOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartBgpFailoverTestOutcome(result.GetResultWithOwnership())
+                            : StartBgpFailoverTestOutcome(std::move(result.GetError()));
 }
 
 StopBgpFailoverTestOutcome DirectConnectClient::StopBgpFailoverTest(const StopBgpFailoverTestRequest& request) const {
-  return StopBgpFailoverTestOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopBgpFailoverTestOutcome(result.GetResultWithOwnership())
+                            : StopBgpFailoverTestOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome DirectConnectClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome DirectConnectClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateConnectionOutcome DirectConnectClient::UpdateConnection(const UpdateConnectionRequest& request) const {
-  return UpdateConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateConnectionOutcome(result.GetResultWithOwnership())
+                            : UpdateConnectionOutcome(std::move(result.GetError()));
 }
 
 UpdateDirectConnectGatewayOutcome DirectConnectClient::UpdateDirectConnectGateway(const UpdateDirectConnectGatewayRequest& request) const {
-  return UpdateDirectConnectGatewayOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDirectConnectGatewayOutcome(result.GetResultWithOwnership())
+                            : UpdateDirectConnectGatewayOutcome(std::move(result.GetError()));
 }
 
 UpdateDirectConnectGatewayAssociationOutcome DirectConnectClient::UpdateDirectConnectGatewayAssociation(
     const UpdateDirectConnectGatewayAssociationRequest& request) const {
-  return UpdateDirectConnectGatewayAssociationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDirectConnectGatewayAssociationOutcome(result.GetResultWithOwnership())
+                            : UpdateDirectConnectGatewayAssociationOutcome(std::move(result.GetError()));
 }
 
 UpdateLagOutcome DirectConnectClient::UpdateLag(const UpdateLagRequest& request) const {
-  return UpdateLagOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLagOutcome(result.GetResultWithOwnership()) : UpdateLagOutcome(std::move(result.GetError()));
 }
 
 UpdateVirtualInterfaceAttributesOutcome DirectConnectClient::UpdateVirtualInterfaceAttributes(
     const UpdateVirtualInterfaceAttributesRequest& request) const {
-  return UpdateVirtualInterfaceAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateVirtualInterfaceAttributesOutcome(result.GetResultWithOwnership())
+                            : UpdateVirtualInterfaceAttributesOutcome(std::move(result.GetError()));
 }

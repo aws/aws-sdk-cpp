@@ -198,7 +198,9 @@ DeleteConnectionOutcome IoTDataPlaneClient::DeleteConnection(const DeleteConnect
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClientId());
   };
 
-  return DeleteConnectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConnectionOutcome(result.GetResultWithOwnership())
+                            : DeleteConnectionOutcome(std::move(result.GetError()));
 }
 
 DeleteThingShadowOutcome IoTDataPlaneClient::DeleteThingShadow(const DeleteThingShadowRequest& request) const {
@@ -230,8 +232,9 @@ DeleteThingShadowOutcome IoTDataPlaneClient::DeleteThingShadow(const DeleteThing
         endpointResolutionOutcome.GetResult().AddPathSegments("/things/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetThingName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/shadow");
-        return DeleteThingShadowOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return result.IsSuccess() ? DeleteThingShadowOutcome(result.GetResultWithOwnership())
+                                  : DeleteThingShadowOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -251,7 +254,9 @@ GetRetainedMessageOutcome IoTDataPlaneClient::GetRetainedMessage(const GetRetain
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTopic());
   };
 
-  return GetRetainedMessageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRetainedMessageOutcome(result.GetResultWithOwnership())
+                            : GetRetainedMessageOutcome(std::move(result.GetError()));
 }
 
 GetThingShadowOutcome IoTDataPlaneClient::GetThingShadow(const GetThingShadowRequest& request) const {
@@ -283,8 +288,9 @@ GetThingShadowOutcome IoTDataPlaneClient::GetThingShadow(const GetThingShadowReq
         endpointResolutionOutcome.GetResult().AddPathSegments("/things/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetThingName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/shadow");
-        return GetThingShadowOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetThingShadowOutcome(result.GetResultWithOwnership())
+                                  : GetThingShadowOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -304,7 +310,9 @@ ListNamedShadowsForThingOutcome IoTDataPlaneClient::ListNamedShadowsForThing(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetThingName());
   };
 
-  return ListNamedShadowsForThingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListNamedShadowsForThingOutcome(result.GetResultWithOwnership())
+                            : ListNamedShadowsForThingOutcome(std::move(result.GetError()));
 }
 
 ListRetainedMessagesOutcome IoTDataPlaneClient::ListRetainedMessages(const ListRetainedMessagesRequest& request) const {
@@ -313,7 +321,9 @@ ListRetainedMessagesOutcome IoTDataPlaneClient::ListRetainedMessages(const ListR
     endpointResolutionOutcome.GetResult().AddPathSegments("/retainedMessage");
   };
 
-  return ListRetainedMessagesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRetainedMessagesOutcome(result.GetResultWithOwnership())
+                            : ListRetainedMessagesOutcome(std::move(result.GetError()));
 }
 
 PublishOutcome IoTDataPlaneClient::Publish(const PublishRequest& request) const {
@@ -329,7 +339,8 @@ PublishOutcome IoTDataPlaneClient::Publish(const PublishRequest& request) const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTopic());
   };
 
-  return PublishOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PublishOutcome(result.GetResultWithOwnership()) : PublishOutcome(std::move(result.GetError()));
 }
 
 UpdateThingShadowOutcome IoTDataPlaneClient::UpdateThingShadow(const UpdateThingShadowRequest& request) const {
@@ -361,8 +372,9 @@ UpdateThingShadowOutcome IoTDataPlaneClient::UpdateThingShadow(const UpdateThing
         endpointResolutionOutcome.GetResult().AddPathSegments("/things/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetThingName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/shadow");
-        return UpdateThingShadowOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? UpdateThingShadowOutcome(result.GetResultWithOwnership())
+                                  : UpdateThingShadowOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

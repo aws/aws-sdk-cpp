@@ -207,7 +207,8 @@ CreateCampaignOutcome ConnectCampaignsClient::CreateCampaign(const CreateCampaig
     endpointResolutionOutcome.GetResult().AddPathSegments("/campaigns");
   };
 
-  return CreateCampaignOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateCampaignOutcome(result.GetResultWithOwnership()) : CreateCampaignOutcome(std::move(result.GetError()));
 }
 
 DeleteCampaignOutcome ConnectCampaignsClient::DeleteCampaign(const DeleteCampaignRequest& request) const {
@@ -223,7 +224,8 @@ DeleteCampaignOutcome ConnectCampaignsClient::DeleteCampaign(const DeleteCampaig
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteCampaignOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCampaignOutcome(result.GetResultWithOwnership()) : DeleteCampaignOutcome(std::move(result.GetError()));
 }
 
 DeleteConnectInstanceConfigOutcome ConnectCampaignsClient::DeleteConnectInstanceConfig(
@@ -241,7 +243,9 @@ DeleteConnectInstanceConfigOutcome ConnectCampaignsClient::DeleteConnectInstance
     endpointResolutionOutcome.GetResult().AddPathSegments("/config");
   };
 
-  return DeleteConnectInstanceConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConnectInstanceConfigOutcome(result.GetResultWithOwnership())
+                            : DeleteConnectInstanceConfigOutcome(std::move(result.GetError()));
 }
 
 DeleteInstanceOnboardingJobOutcome ConnectCampaignsClient::DeleteInstanceOnboardingJob(
@@ -259,7 +263,9 @@ DeleteInstanceOnboardingJobOutcome ConnectCampaignsClient::DeleteInstanceOnboard
     endpointResolutionOutcome.GetResult().AddPathSegments("/onboarding");
   };
 
-  return DeleteInstanceOnboardingJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteInstanceOnboardingJobOutcome(result.GetResultWithOwnership())
+                            : DeleteInstanceOnboardingJobOutcome(std::move(result.GetError()));
 }
 
 DescribeCampaignOutcome ConnectCampaignsClient::DescribeCampaign(const DescribeCampaignRequest& request) const {
@@ -275,7 +281,9 @@ DescribeCampaignOutcome ConnectCampaignsClient::DescribeCampaign(const DescribeC
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DescribeCampaignOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeCampaignOutcome(result.GetResultWithOwnership())
+                            : DescribeCampaignOutcome(std::move(result.GetError()));
 }
 
 GetCampaignStateOutcome ConnectCampaignsClient::GetCampaignState(const GetCampaignStateRequest& request) const {
@@ -292,7 +300,9 @@ GetCampaignStateOutcome ConnectCampaignsClient::GetCampaignState(const GetCampai
     endpointResolutionOutcome.GetResult().AddPathSegments("/state");
   };
 
-  return GetCampaignStateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCampaignStateOutcome(result.GetResultWithOwnership())
+                            : GetCampaignStateOutcome(std::move(result.GetError()));
 }
 
 GetCampaignStateBatchOutcome ConnectCampaignsClient::GetCampaignStateBatch(const GetCampaignStateBatchRequest& request) const {
@@ -301,7 +311,9 @@ GetCampaignStateBatchOutcome ConnectCampaignsClient::GetCampaignStateBatch(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/campaigns-state");
   };
 
-  return GetCampaignStateBatchOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCampaignStateBatchOutcome(result.GetResultWithOwnership())
+                            : GetCampaignStateBatchOutcome(std::move(result.GetError()));
 }
 
 GetConnectInstanceConfigOutcome ConnectCampaignsClient::GetConnectInstanceConfig(const GetConnectInstanceConfigRequest& request) const {
@@ -318,7 +330,9 @@ GetConnectInstanceConfigOutcome ConnectCampaignsClient::GetConnectInstanceConfig
     endpointResolutionOutcome.GetResult().AddPathSegments("/config");
   };
 
-  return GetConnectInstanceConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConnectInstanceConfigOutcome(result.GetResultWithOwnership())
+                            : GetConnectInstanceConfigOutcome(std::move(result.GetError()));
 }
 
 GetInstanceOnboardingJobStatusOutcome ConnectCampaignsClient::GetInstanceOnboardingJobStatus(
@@ -336,7 +350,9 @@ GetInstanceOnboardingJobStatusOutcome ConnectCampaignsClient::GetInstanceOnboard
     endpointResolutionOutcome.GetResult().AddPathSegments("/onboarding");
   };
 
-  return GetInstanceOnboardingJobStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetInstanceOnboardingJobStatusOutcome(result.GetResultWithOwnership())
+                            : GetInstanceOnboardingJobStatusOutcome(std::move(result.GetError()));
 }
 
 ListCampaignsOutcome ConnectCampaignsClient::ListCampaigns(const ListCampaignsRequest& request) const {
@@ -345,7 +361,8 @@ ListCampaignsOutcome ConnectCampaignsClient::ListCampaigns(const ListCampaignsRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/campaigns-summary");
   };
 
-  return ListCampaignsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCampaignsOutcome(result.GetResultWithOwnership()) : ListCampaignsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome ConnectCampaignsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -361,7 +378,9 @@ ListTagsForResourceOutcome ConnectCampaignsClient::ListTagsForResource(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PauseCampaignOutcome ConnectCampaignsClient::PauseCampaign(const PauseCampaignRequest& request) const {
@@ -378,7 +397,8 @@ PauseCampaignOutcome ConnectCampaignsClient::PauseCampaign(const PauseCampaignRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/pause");
   };
 
-  return PauseCampaignOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PauseCampaignOutcome(result.GetResultWithOwnership()) : PauseCampaignOutcome(std::move(result.GetError()));
 }
 
 PutDialRequestBatchOutcome ConnectCampaignsClient::PutDialRequestBatch(const PutDialRequestBatchRequest& request) const {
@@ -395,7 +415,9 @@ PutDialRequestBatchOutcome ConnectCampaignsClient::PutDialRequestBatch(const Put
     endpointResolutionOutcome.GetResult().AddPathSegments("/dial-requests");
   };
 
-  return PutDialRequestBatchOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutDialRequestBatchOutcome(result.GetResultWithOwnership())
+                            : PutDialRequestBatchOutcome(std::move(result.GetError()));
 }
 
 ResumeCampaignOutcome ConnectCampaignsClient::ResumeCampaign(const ResumeCampaignRequest& request) const {
@@ -412,7 +434,8 @@ ResumeCampaignOutcome ConnectCampaignsClient::ResumeCampaign(const ResumeCampaig
     endpointResolutionOutcome.GetResult().AddPathSegments("/resume");
   };
 
-  return ResumeCampaignOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResumeCampaignOutcome(result.GetResultWithOwnership()) : ResumeCampaignOutcome(std::move(result.GetError()));
 }
 
 StartCampaignOutcome ConnectCampaignsClient::StartCampaign(const StartCampaignRequest& request) const {
@@ -429,7 +452,8 @@ StartCampaignOutcome ConnectCampaignsClient::StartCampaign(const StartCampaignRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/start");
   };
 
-  return StartCampaignOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartCampaignOutcome(result.GetResultWithOwnership()) : StartCampaignOutcome(std::move(result.GetError()));
 }
 
 StartInstanceOnboardingJobOutcome ConnectCampaignsClient::StartInstanceOnboardingJob(
@@ -447,7 +471,9 @@ StartInstanceOnboardingJobOutcome ConnectCampaignsClient::StartInstanceOnboardin
     endpointResolutionOutcome.GetResult().AddPathSegments("/onboarding");
   };
 
-  return StartInstanceOnboardingJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StartInstanceOnboardingJobOutcome(result.GetResultWithOwnership())
+                            : StartInstanceOnboardingJobOutcome(std::move(result.GetError()));
 }
 
 StopCampaignOutcome ConnectCampaignsClient::StopCampaign(const StopCampaignRequest& request) const {
@@ -464,7 +490,8 @@ StopCampaignOutcome ConnectCampaignsClient::StopCampaign(const StopCampaignReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/stop");
   };
 
-  return StopCampaignOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopCampaignOutcome(result.GetResultWithOwnership()) : StopCampaignOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ConnectCampaignsClient::TagResource(const TagResourceRequest& request) const {
@@ -480,7 +507,8 @@ TagResourceOutcome ConnectCampaignsClient::TagResource(const TagResourceRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome ConnectCampaignsClient::UntagResource(const UntagResourceRequest& request) const {
@@ -501,7 +529,8 @@ UntagResourceOutcome ConnectCampaignsClient::UntagResource(const UntagResourceRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateCampaignDialerConfigOutcome ConnectCampaignsClient::UpdateCampaignDialerConfig(
@@ -519,7 +548,9 @@ UpdateCampaignDialerConfigOutcome ConnectCampaignsClient::UpdateCampaignDialerCo
     endpointResolutionOutcome.GetResult().AddPathSegments("/dialer-config");
   };
 
-  return UpdateCampaignDialerConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCampaignDialerConfigOutcome(result.GetResultWithOwnership())
+                            : UpdateCampaignDialerConfigOutcome(std::move(result.GetError()));
 }
 
 UpdateCampaignNameOutcome ConnectCampaignsClient::UpdateCampaignName(const UpdateCampaignNameRequest& request) const {
@@ -536,7 +567,9 @@ UpdateCampaignNameOutcome ConnectCampaignsClient::UpdateCampaignName(const Updat
     endpointResolutionOutcome.GetResult().AddPathSegments("/name");
   };
 
-  return UpdateCampaignNameOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCampaignNameOutcome(result.GetResultWithOwnership())
+                            : UpdateCampaignNameOutcome(std::move(result.GetError()));
 }
 
 UpdateCampaignOutboundCallConfigOutcome ConnectCampaignsClient::UpdateCampaignOutboundCallConfig(
@@ -554,5 +587,7 @@ UpdateCampaignOutboundCallConfigOutcome ConnectCampaignsClient::UpdateCampaignOu
     endpointResolutionOutcome.GetResult().AddPathSegments("/outbound-call-config");
   };
 
-  return UpdateCampaignOutboundCallConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCampaignOutboundCallConfigOutcome(result.GetResultWithOwnership())
+                            : UpdateCampaignOutboundCallConfigOutcome(std::move(result.GetError()));
 }

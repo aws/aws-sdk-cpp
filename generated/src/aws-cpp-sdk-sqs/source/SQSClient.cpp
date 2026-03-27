@@ -193,93 +193,127 @@ SQSClient::InvokeOperationOutcome SQSClient::InvokeServiceOperation(const Amazon
 }
 
 AddPermissionOutcome SQSClient::AddPermission(const AddPermissionRequest& request) const {
-  return AddPermissionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddPermissionOutcome(result.GetResultWithOwnership()) : AddPermissionOutcome(std::move(result.GetError()));
 }
 
 CancelMessageMoveTaskOutcome SQSClient::CancelMessageMoveTask(const CancelMessageMoveTaskRequest& request) const {
-  return CancelMessageMoveTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelMessageMoveTaskOutcome(result.GetResultWithOwnership())
+                            : CancelMessageMoveTaskOutcome(std::move(result.GetError()));
 }
 
 ChangeMessageVisibilityOutcome SQSClient::ChangeMessageVisibility(const ChangeMessageVisibilityRequest& request) const {
-  return ChangeMessageVisibilityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ChangeMessageVisibilityOutcome(result.GetResultWithOwnership())
+                            : ChangeMessageVisibilityOutcome(std::move(result.GetError()));
 }
 
 ChangeMessageVisibilityBatchOutcome SQSClient::ChangeMessageVisibilityBatch(const ChangeMessageVisibilityBatchRequest& request) const {
-  return ChangeMessageVisibilityBatchOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ChangeMessageVisibilityBatchOutcome(result.GetResultWithOwnership())
+                            : ChangeMessageVisibilityBatchOutcome(std::move(result.GetError()));
 }
 
 CreateQueueOutcome SQSClient::CreateQueue(const CreateQueueRequest& request) const {
-  return CreateQueueOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateQueueOutcome(result.GetResultWithOwnership()) : CreateQueueOutcome(std::move(result.GetError()));
 }
 
 DeleteMessageOutcome SQSClient::DeleteMessage(const DeleteMessageRequest& request) const {
-  return DeleteMessageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteMessageOutcome(result.GetResultWithOwnership()) : DeleteMessageOutcome(std::move(result.GetError()));
 }
 
 DeleteMessageBatchOutcome SQSClient::DeleteMessageBatch(const DeleteMessageBatchRequest& request) const {
-  return DeleteMessageBatchOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteMessageBatchOutcome(result.GetResultWithOwnership())
+                            : DeleteMessageBatchOutcome(std::move(result.GetError()));
 }
 
 DeleteQueueOutcome SQSClient::DeleteQueue(const DeleteQueueRequest& request) const {
-  return DeleteQueueOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteQueueOutcome(result.GetResultWithOwnership()) : DeleteQueueOutcome(std::move(result.GetError()));
 }
 
 GetQueueAttributesOutcome SQSClient::GetQueueAttributes(const GetQueueAttributesRequest& request) const {
-  return GetQueueAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetQueueAttributesOutcome(result.GetResultWithOwnership())
+                            : GetQueueAttributesOutcome(std::move(result.GetError()));
 }
 
 GetQueueUrlOutcome SQSClient::GetQueueUrl(const GetQueueUrlRequest& request) const {
-  return GetQueueUrlOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetQueueUrlOutcome(result.GetResultWithOwnership()) : GetQueueUrlOutcome(std::move(result.GetError()));
 }
 
 ListDeadLetterSourceQueuesOutcome SQSClient::ListDeadLetterSourceQueues(const ListDeadLetterSourceQueuesRequest& request) const {
-  return ListDeadLetterSourceQueuesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDeadLetterSourceQueuesOutcome(result.GetResultWithOwnership())
+                            : ListDeadLetterSourceQueuesOutcome(std::move(result.GetError()));
 }
 
 ListMessageMoveTasksOutcome SQSClient::ListMessageMoveTasks(const ListMessageMoveTasksRequest& request) const {
-  return ListMessageMoveTasksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMessageMoveTasksOutcome(result.GetResultWithOwnership())
+                            : ListMessageMoveTasksOutcome(std::move(result.GetError()));
 }
 
 ListQueueTagsOutcome SQSClient::ListQueueTags(const ListQueueTagsRequest& request) const {
-  return ListQueueTagsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListQueueTagsOutcome(result.GetResultWithOwnership()) : ListQueueTagsOutcome(std::move(result.GetError()));
 }
 
 ListQueuesOutcome SQSClient::ListQueues(const ListQueuesRequest& request) const {
-  return ListQueuesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListQueuesOutcome(result.GetResultWithOwnership()) : ListQueuesOutcome(std::move(result.GetError()));
 }
 
 PurgeQueueOutcome SQSClient::PurgeQueue(const PurgeQueueRequest& request) const {
-  return PurgeQueueOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PurgeQueueOutcome(result.GetResultWithOwnership()) : PurgeQueueOutcome(std::move(result.GetError()));
 }
 
 ReceiveMessageOutcome SQSClient::ReceiveMessage(const ReceiveMessageRequest& request) const {
-  return ReceiveMessageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ReceiveMessageOutcome(result.GetResultWithOwnership()) : ReceiveMessageOutcome(std::move(result.GetError()));
 }
 
 RemovePermissionOutcome SQSClient::RemovePermission(const RemovePermissionRequest& request) const {
-  return RemovePermissionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemovePermissionOutcome(result.GetResultWithOwnership())
+                            : RemovePermissionOutcome(std::move(result.GetError()));
 }
 
 SendMessageOutcome SQSClient::SendMessage(const SendMessageRequest& request) const {
-  return SendMessageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendMessageOutcome(result.GetResultWithOwnership()) : SendMessageOutcome(std::move(result.GetError()));
 }
 
 SendMessageBatchOutcome SQSClient::SendMessageBatch(const SendMessageBatchRequest& request) const {
-  return SendMessageBatchOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendMessageBatchOutcome(result.GetResultWithOwnership())
+                            : SendMessageBatchOutcome(std::move(result.GetError()));
 }
 
 SetQueueAttributesOutcome SQSClient::SetQueueAttributes(const SetQueueAttributesRequest& request) const {
-  return SetQueueAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetQueueAttributesOutcome(result.GetResultWithOwnership())
+                            : SetQueueAttributesOutcome(std::move(result.GetError()));
 }
 
 StartMessageMoveTaskOutcome SQSClient::StartMessageMoveTask(const StartMessageMoveTaskRequest& request) const {
-  return StartMessageMoveTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartMessageMoveTaskOutcome(result.GetResultWithOwnership())
+                            : StartMessageMoveTaskOutcome(std::move(result.GetError()));
 }
 
 TagQueueOutcome SQSClient::TagQueue(const TagQueueRequest& request) const {
-  return TagQueueOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagQueueOutcome(result.GetResultWithOwnership()) : TagQueueOutcome(std::move(result.GetError()));
 }
 
 UntagQueueOutcome SQSClient::UntagQueue(const UntagQueueRequest& request) const {
-  return UntagQueueOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagQueueOutcome(result.GetResultWithOwnership()) : UntagQueueOutcome(std::move(result.GetError()));
 }

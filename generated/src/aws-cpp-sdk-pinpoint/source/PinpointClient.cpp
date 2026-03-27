@@ -302,7 +302,8 @@ CreateAppOutcome PinpointClient::CreateApp(const CreateAppRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/apps");
   };
 
-  return CreateAppOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAppOutcome(result.GetResultWithOwnership()) : CreateAppOutcome(std::move(result.GetError()));
 }
 
 CreateCampaignOutcome PinpointClient::CreateCampaign(const CreateCampaignRequest& request) const {
@@ -319,7 +320,8 @@ CreateCampaignOutcome PinpointClient::CreateCampaign(const CreateCampaignRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/campaigns");
   };
 
-  return CreateCampaignOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCampaignOutcome(result.GetResultWithOwnership()) : CreateCampaignOutcome(std::move(result.GetError()));
 }
 
 CreateEmailTemplateOutcome PinpointClient::CreateEmailTemplate(const CreateEmailTemplateRequest& request) const {
@@ -336,7 +338,9 @@ CreateEmailTemplateOutcome PinpointClient::CreateEmailTemplate(const CreateEmail
     endpointResolutionOutcome.GetResult().AddPathSegments("/email");
   };
 
-  return CreateEmailTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEmailTemplateOutcome(result.GetResultWithOwnership())
+                            : CreateEmailTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateExportJobOutcome PinpointClient::CreateExportJob(const CreateExportJobRequest& request) const {
@@ -353,7 +357,9 @@ CreateExportJobOutcome PinpointClient::CreateExportJob(const CreateExportJobRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/export");
   };
 
-  return CreateExportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateExportJobOutcome(result.GetResultWithOwnership())
+                            : CreateExportJobOutcome(std::move(result.GetError()));
 }
 
 CreateImportJobOutcome PinpointClient::CreateImportJob(const CreateImportJobRequest& request) const {
@@ -370,7 +376,9 @@ CreateImportJobOutcome PinpointClient::CreateImportJob(const CreateImportJobRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/import");
   };
 
-  return CreateImportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateImportJobOutcome(result.GetResultWithOwnership())
+                            : CreateImportJobOutcome(std::move(result.GetError()));
 }
 
 CreateInAppTemplateOutcome PinpointClient::CreateInAppTemplate(const CreateInAppTemplateRequest& request) const {
@@ -387,7 +395,9 @@ CreateInAppTemplateOutcome PinpointClient::CreateInAppTemplate(const CreateInApp
     endpointResolutionOutcome.GetResult().AddPathSegments("/inapp");
   };
 
-  return CreateInAppTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateInAppTemplateOutcome(result.GetResultWithOwnership())
+                            : CreateInAppTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateJourneyOutcome PinpointClient::CreateJourney(const CreateJourneyRequest& request) const {
@@ -404,7 +414,8 @@ CreateJourneyOutcome PinpointClient::CreateJourney(const CreateJourneyRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/journeys");
   };
 
-  return CreateJourneyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateJourneyOutcome(result.GetResultWithOwnership()) : CreateJourneyOutcome(std::move(result.GetError()));
 }
 
 CreatePushTemplateOutcome PinpointClient::CreatePushTemplate(const CreatePushTemplateRequest& request) const {
@@ -421,7 +432,9 @@ CreatePushTemplateOutcome PinpointClient::CreatePushTemplate(const CreatePushTem
     endpointResolutionOutcome.GetResult().AddPathSegments("/push");
   };
 
-  return CreatePushTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePushTemplateOutcome(result.GetResultWithOwnership())
+                            : CreatePushTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateRecommenderConfigurationOutcome PinpointClient::CreateRecommenderConfiguration(
@@ -431,7 +444,9 @@ CreateRecommenderConfigurationOutcome PinpointClient::CreateRecommenderConfigura
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/recommenders");
   };
 
-  return CreateRecommenderConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRecommenderConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateRecommenderConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateSegmentOutcome PinpointClient::CreateSegment(const CreateSegmentRequest& request) const {
@@ -448,7 +463,8 @@ CreateSegmentOutcome PinpointClient::CreateSegment(const CreateSegmentRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/segments");
   };
 
-  return CreateSegmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSegmentOutcome(result.GetResultWithOwnership()) : CreateSegmentOutcome(std::move(result.GetError()));
 }
 
 CreateSmsTemplateOutcome PinpointClient::CreateSmsTemplate(const CreateSmsTemplateRequest& request) const {
@@ -465,7 +481,9 @@ CreateSmsTemplateOutcome PinpointClient::CreateSmsTemplate(const CreateSmsTempla
     endpointResolutionOutcome.GetResult().AddPathSegments("/sms");
   };
 
-  return CreateSmsTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSmsTemplateOutcome(result.GetResultWithOwnership())
+                            : CreateSmsTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateVoiceTemplateOutcome PinpointClient::CreateVoiceTemplate(const CreateVoiceTemplateRequest& request) const {
@@ -482,7 +500,9 @@ CreateVoiceTemplateOutcome PinpointClient::CreateVoiceTemplate(const CreateVoice
     endpointResolutionOutcome.GetResult().AddPathSegments("/voice");
   };
 
-  return CreateVoiceTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateVoiceTemplateOutcome(result.GetResultWithOwnership())
+                            : CreateVoiceTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteAdmChannelOutcome PinpointClient::DeleteAdmChannel(const DeleteAdmChannelRequest& request) const {
@@ -499,7 +519,9 @@ DeleteAdmChannelOutcome PinpointClient::DeleteAdmChannel(const DeleteAdmChannelR
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels/adm");
   };
 
-  return DeleteAdmChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAdmChannelOutcome(result.GetResultWithOwnership())
+                            : DeleteAdmChannelOutcome(std::move(result.GetError()));
 }
 
 DeleteApnsChannelOutcome PinpointClient::DeleteApnsChannel(const DeleteApnsChannelRequest& request) const {
@@ -516,7 +538,9 @@ DeleteApnsChannelOutcome PinpointClient::DeleteApnsChannel(const DeleteApnsChann
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels/apns");
   };
 
-  return DeleteApnsChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteApnsChannelOutcome(result.GetResultWithOwnership())
+                            : DeleteApnsChannelOutcome(std::move(result.GetError()));
 }
 
 DeleteApnsSandboxChannelOutcome PinpointClient::DeleteApnsSandboxChannel(const DeleteApnsSandboxChannelRequest& request) const {
@@ -533,7 +557,9 @@ DeleteApnsSandboxChannelOutcome PinpointClient::DeleteApnsSandboxChannel(const D
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels/apns_sandbox");
   };
 
-  return DeleteApnsSandboxChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteApnsSandboxChannelOutcome(result.GetResultWithOwnership())
+                            : DeleteApnsSandboxChannelOutcome(std::move(result.GetError()));
 }
 
 DeleteApnsVoipChannelOutcome PinpointClient::DeleteApnsVoipChannel(const DeleteApnsVoipChannelRequest& request) const {
@@ -550,7 +576,9 @@ DeleteApnsVoipChannelOutcome PinpointClient::DeleteApnsVoipChannel(const DeleteA
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels/apns_voip");
   };
 
-  return DeleteApnsVoipChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteApnsVoipChannelOutcome(result.GetResultWithOwnership())
+                            : DeleteApnsVoipChannelOutcome(std::move(result.GetError()));
 }
 
 DeleteApnsVoipSandboxChannelOutcome PinpointClient::DeleteApnsVoipSandboxChannel(const DeleteApnsVoipSandboxChannelRequest& request) const {
@@ -567,7 +595,9 @@ DeleteApnsVoipSandboxChannelOutcome PinpointClient::DeleteApnsVoipSandboxChannel
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels/apns_voip_sandbox");
   };
 
-  return DeleteApnsVoipSandboxChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteApnsVoipSandboxChannelOutcome(result.GetResultWithOwnership())
+                            : DeleteApnsVoipSandboxChannelOutcome(std::move(result.GetError()));
 }
 
 DeleteAppOutcome PinpointClient::DeleteApp(const DeleteAppRequest& request) const {
@@ -583,7 +613,8 @@ DeleteAppOutcome PinpointClient::DeleteApp(const DeleteAppRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
   };
 
-  return DeleteAppOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAppOutcome(result.GetResultWithOwnership()) : DeleteAppOutcome(std::move(result.GetError()));
 }
 
 DeleteBaiduChannelOutcome PinpointClient::DeleteBaiduChannel(const DeleteBaiduChannelRequest& request) const {
@@ -600,7 +631,9 @@ DeleteBaiduChannelOutcome PinpointClient::DeleteBaiduChannel(const DeleteBaiduCh
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels/baidu");
   };
 
-  return DeleteBaiduChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBaiduChannelOutcome(result.GetResultWithOwnership())
+                            : DeleteBaiduChannelOutcome(std::move(result.GetError()));
 }
 
 DeleteCampaignOutcome PinpointClient::DeleteCampaign(const DeleteCampaignRequest& request) const {
@@ -623,7 +656,8 @@ DeleteCampaignOutcome PinpointClient::DeleteCampaign(const DeleteCampaignRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCampaignId());
   };
 
-  return DeleteCampaignOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCampaignOutcome(result.GetResultWithOwnership()) : DeleteCampaignOutcome(std::move(result.GetError()));
 }
 
 DeleteEmailChannelOutcome PinpointClient::DeleteEmailChannel(const DeleteEmailChannelRequest& request) const {
@@ -640,7 +674,9 @@ DeleteEmailChannelOutcome PinpointClient::DeleteEmailChannel(const DeleteEmailCh
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels/email");
   };
 
-  return DeleteEmailChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteEmailChannelOutcome(result.GetResultWithOwnership())
+                            : DeleteEmailChannelOutcome(std::move(result.GetError()));
 }
 
 DeleteEmailTemplateOutcome PinpointClient::DeleteEmailTemplate(const DeleteEmailTemplateRequest& request) const {
@@ -657,7 +693,9 @@ DeleteEmailTemplateOutcome PinpointClient::DeleteEmailTemplate(const DeleteEmail
     endpointResolutionOutcome.GetResult().AddPathSegments("/email");
   };
 
-  return DeleteEmailTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteEmailTemplateOutcome(result.GetResultWithOwnership())
+                            : DeleteEmailTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteEndpointOutcome PinpointClient::DeleteEndpoint(const DeleteEndpointRequest& request) const {
@@ -680,7 +718,8 @@ DeleteEndpointOutcome PinpointClient::DeleteEndpoint(const DeleteEndpointRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEndpointId());
   };
 
-  return DeleteEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteEndpointOutcome(result.GetResultWithOwnership()) : DeleteEndpointOutcome(std::move(result.GetError()));
 }
 
 DeleteEventStreamOutcome PinpointClient::DeleteEventStream(const DeleteEventStreamRequest& request) const {
@@ -697,7 +736,9 @@ DeleteEventStreamOutcome PinpointClient::DeleteEventStream(const DeleteEventStre
     endpointResolutionOutcome.GetResult().AddPathSegments("/eventstream");
   };
 
-  return DeleteEventStreamOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteEventStreamOutcome(result.GetResultWithOwnership())
+                            : DeleteEventStreamOutcome(std::move(result.GetError()));
 }
 
 DeleteGcmChannelOutcome PinpointClient::DeleteGcmChannel(const DeleteGcmChannelRequest& request) const {
@@ -714,7 +755,9 @@ DeleteGcmChannelOutcome PinpointClient::DeleteGcmChannel(const DeleteGcmChannelR
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels/gcm");
   };
 
-  return DeleteGcmChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteGcmChannelOutcome(result.GetResultWithOwnership())
+                            : DeleteGcmChannelOutcome(std::move(result.GetError()));
 }
 
 DeleteInAppTemplateOutcome PinpointClient::DeleteInAppTemplate(const DeleteInAppTemplateRequest& request) const {
@@ -731,7 +774,9 @@ DeleteInAppTemplateOutcome PinpointClient::DeleteInAppTemplate(const DeleteInApp
     endpointResolutionOutcome.GetResult().AddPathSegments("/inapp");
   };
 
-  return DeleteInAppTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteInAppTemplateOutcome(result.GetResultWithOwnership())
+                            : DeleteInAppTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteJourneyOutcome PinpointClient::DeleteJourney(const DeleteJourneyRequest& request) const {
@@ -754,7 +799,8 @@ DeleteJourneyOutcome PinpointClient::DeleteJourney(const DeleteJourneyRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJourneyId());
   };
 
-  return DeleteJourneyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteJourneyOutcome(result.GetResultWithOwnership()) : DeleteJourneyOutcome(std::move(result.GetError()));
 }
 
 DeletePushTemplateOutcome PinpointClient::DeletePushTemplate(const DeletePushTemplateRequest& request) const {
@@ -771,7 +817,9 @@ DeletePushTemplateOutcome PinpointClient::DeletePushTemplate(const DeletePushTem
     endpointResolutionOutcome.GetResult().AddPathSegments("/push");
   };
 
-  return DeletePushTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePushTemplateOutcome(result.GetResultWithOwnership())
+                            : DeletePushTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteRecommenderConfigurationOutcome PinpointClient::DeleteRecommenderConfiguration(
@@ -788,7 +836,9 @@ DeleteRecommenderConfigurationOutcome PinpointClient::DeleteRecommenderConfigura
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommenderId());
   };
 
-  return DeleteRecommenderConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRecommenderConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteRecommenderConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteSegmentOutcome PinpointClient::DeleteSegment(const DeleteSegmentRequest& request) const {
@@ -811,7 +861,8 @@ DeleteSegmentOutcome PinpointClient::DeleteSegment(const DeleteSegmentRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSegmentId());
   };
 
-  return DeleteSegmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSegmentOutcome(result.GetResultWithOwnership()) : DeleteSegmentOutcome(std::move(result.GetError()));
 }
 
 DeleteSmsChannelOutcome PinpointClient::DeleteSmsChannel(const DeleteSmsChannelRequest& request) const {
@@ -828,7 +879,9 @@ DeleteSmsChannelOutcome PinpointClient::DeleteSmsChannel(const DeleteSmsChannelR
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels/sms");
   };
 
-  return DeleteSmsChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSmsChannelOutcome(result.GetResultWithOwnership())
+                            : DeleteSmsChannelOutcome(std::move(result.GetError()));
 }
 
 DeleteSmsTemplateOutcome PinpointClient::DeleteSmsTemplate(const DeleteSmsTemplateRequest& request) const {
@@ -845,7 +898,9 @@ DeleteSmsTemplateOutcome PinpointClient::DeleteSmsTemplate(const DeleteSmsTempla
     endpointResolutionOutcome.GetResult().AddPathSegments("/sms");
   };
 
-  return DeleteSmsTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSmsTemplateOutcome(result.GetResultWithOwnership())
+                            : DeleteSmsTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteUserEndpointsOutcome PinpointClient::DeleteUserEndpoints(const DeleteUserEndpointsRequest& request) const {
@@ -868,7 +923,9 @@ DeleteUserEndpointsOutcome PinpointClient::DeleteUserEndpoints(const DeleteUserE
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserId());
   };
 
-  return DeleteUserEndpointsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteUserEndpointsOutcome(result.GetResultWithOwnership())
+                            : DeleteUserEndpointsOutcome(std::move(result.GetError()));
 }
 
 DeleteVoiceChannelOutcome PinpointClient::DeleteVoiceChannel(const DeleteVoiceChannelRequest& request) const {
@@ -885,7 +942,9 @@ DeleteVoiceChannelOutcome PinpointClient::DeleteVoiceChannel(const DeleteVoiceCh
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels/voice");
   };
 
-  return DeleteVoiceChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteVoiceChannelOutcome(result.GetResultWithOwnership())
+                            : DeleteVoiceChannelOutcome(std::move(result.GetError()));
 }
 
 DeleteVoiceTemplateOutcome PinpointClient::DeleteVoiceTemplate(const DeleteVoiceTemplateRequest& request) const {
@@ -902,7 +961,9 @@ DeleteVoiceTemplateOutcome PinpointClient::DeleteVoiceTemplate(const DeleteVoice
     endpointResolutionOutcome.GetResult().AddPathSegments("/voice");
   };
 
-  return DeleteVoiceTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteVoiceTemplateOutcome(result.GetResultWithOwnership())
+                            : DeleteVoiceTemplateOutcome(std::move(result.GetError()));
 }
 
 GetAdmChannelOutcome PinpointClient::GetAdmChannel(const GetAdmChannelRequest& request) const {
@@ -919,7 +980,8 @@ GetAdmChannelOutcome PinpointClient::GetAdmChannel(const GetAdmChannelRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels/adm");
   };
 
-  return GetAdmChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAdmChannelOutcome(result.GetResultWithOwnership()) : GetAdmChannelOutcome(std::move(result.GetError()));
 }
 
 GetApnsChannelOutcome PinpointClient::GetApnsChannel(const GetApnsChannelRequest& request) const {
@@ -936,7 +998,8 @@ GetApnsChannelOutcome PinpointClient::GetApnsChannel(const GetApnsChannelRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels/apns");
   };
 
-  return GetApnsChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetApnsChannelOutcome(result.GetResultWithOwnership()) : GetApnsChannelOutcome(std::move(result.GetError()));
 }
 
 GetApnsSandboxChannelOutcome PinpointClient::GetApnsSandboxChannel(const GetApnsSandboxChannelRequest& request) const {
@@ -953,7 +1016,9 @@ GetApnsSandboxChannelOutcome PinpointClient::GetApnsSandboxChannel(const GetApns
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels/apns_sandbox");
   };
 
-  return GetApnsSandboxChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetApnsSandboxChannelOutcome(result.GetResultWithOwnership())
+                            : GetApnsSandboxChannelOutcome(std::move(result.GetError()));
 }
 
 GetApnsVoipChannelOutcome PinpointClient::GetApnsVoipChannel(const GetApnsVoipChannelRequest& request) const {
@@ -970,7 +1035,9 @@ GetApnsVoipChannelOutcome PinpointClient::GetApnsVoipChannel(const GetApnsVoipCh
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels/apns_voip");
   };
 
-  return GetApnsVoipChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetApnsVoipChannelOutcome(result.GetResultWithOwnership())
+                            : GetApnsVoipChannelOutcome(std::move(result.GetError()));
 }
 
 GetApnsVoipSandboxChannelOutcome PinpointClient::GetApnsVoipSandboxChannel(const GetApnsVoipSandboxChannelRequest& request) const {
@@ -987,7 +1054,9 @@ GetApnsVoipSandboxChannelOutcome PinpointClient::GetApnsVoipSandboxChannel(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels/apns_voip_sandbox");
   };
 
-  return GetApnsVoipSandboxChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetApnsVoipSandboxChannelOutcome(result.GetResultWithOwnership())
+                            : GetApnsVoipSandboxChannelOutcome(std::move(result.GetError()));
 }
 
 GetAppOutcome PinpointClient::GetApp(const GetAppRequest& request) const {
@@ -1003,7 +1072,8 @@ GetAppOutcome PinpointClient::GetApp(const GetAppRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
   };
 
-  return GetAppOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAppOutcome(result.GetResultWithOwnership()) : GetAppOutcome(std::move(result.GetError()));
 }
 
 GetApplicationDateRangeKpiOutcome PinpointClient::GetApplicationDateRangeKpi(const GetApplicationDateRangeKpiRequest& request) const {
@@ -1026,7 +1096,9 @@ GetApplicationDateRangeKpiOutcome PinpointClient::GetApplicationDateRangeKpi(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKpiName());
   };
 
-  return GetApplicationDateRangeKpiOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetApplicationDateRangeKpiOutcome(result.GetResultWithOwnership())
+                            : GetApplicationDateRangeKpiOutcome(std::move(result.GetError()));
 }
 
 GetApplicationSettingsOutcome PinpointClient::GetApplicationSettings(const GetApplicationSettingsRequest& request) const {
@@ -1043,7 +1115,9 @@ GetApplicationSettingsOutcome PinpointClient::GetApplicationSettings(const GetAp
     endpointResolutionOutcome.GetResult().AddPathSegments("/settings");
   };
 
-  return GetApplicationSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetApplicationSettingsOutcome(result.GetResultWithOwnership())
+                            : GetApplicationSettingsOutcome(std::move(result.GetError()));
 }
 
 GetAppsOutcome PinpointClient::GetApps(const GetAppsRequest& request) const {
@@ -1052,7 +1126,8 @@ GetAppsOutcome PinpointClient::GetApps(const GetAppsRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/apps");
   };
 
-  return GetAppsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAppsOutcome(result.GetResultWithOwnership()) : GetAppsOutcome(std::move(result.GetError()));
 }
 
 GetBaiduChannelOutcome PinpointClient::GetBaiduChannel(const GetBaiduChannelRequest& request) const {
@@ -1069,7 +1144,9 @@ GetBaiduChannelOutcome PinpointClient::GetBaiduChannel(const GetBaiduChannelRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels/baidu");
   };
 
-  return GetBaiduChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBaiduChannelOutcome(result.GetResultWithOwnership())
+                            : GetBaiduChannelOutcome(std::move(result.GetError()));
 }
 
 GetCampaignOutcome PinpointClient::GetCampaign(const GetCampaignRequest& request) const {
@@ -1092,7 +1169,8 @@ GetCampaignOutcome PinpointClient::GetCampaign(const GetCampaignRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCampaignId());
   };
 
-  return GetCampaignOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCampaignOutcome(result.GetResultWithOwnership()) : GetCampaignOutcome(std::move(result.GetError()));
 }
 
 GetCampaignActivitiesOutcome PinpointClient::GetCampaignActivities(const GetCampaignActivitiesRequest& request) const {
@@ -1116,7 +1194,9 @@ GetCampaignActivitiesOutcome PinpointClient::GetCampaignActivities(const GetCamp
     endpointResolutionOutcome.GetResult().AddPathSegments("/activities");
   };
 
-  return GetCampaignActivitiesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCampaignActivitiesOutcome(result.GetResultWithOwnership())
+                            : GetCampaignActivitiesOutcome(std::move(result.GetError()));
 }
 
 GetCampaignDateRangeKpiOutcome PinpointClient::GetCampaignDateRangeKpi(const GetCampaignDateRangeKpiRequest& request) const {
@@ -1146,7 +1226,9 @@ GetCampaignDateRangeKpiOutcome PinpointClient::GetCampaignDateRangeKpi(const Get
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKpiName());
   };
 
-  return GetCampaignDateRangeKpiOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCampaignDateRangeKpiOutcome(result.GetResultWithOwnership())
+                            : GetCampaignDateRangeKpiOutcome(std::move(result.GetError()));
 }
 
 GetCampaignVersionOutcome PinpointClient::GetCampaignVersion(const GetCampaignVersionRequest& request) const {
@@ -1176,7 +1258,9 @@ GetCampaignVersionOutcome PinpointClient::GetCampaignVersion(const GetCampaignVe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersion());
   };
 
-  return GetCampaignVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCampaignVersionOutcome(result.GetResultWithOwnership())
+                            : GetCampaignVersionOutcome(std::move(result.GetError()));
 }
 
 GetCampaignVersionsOutcome PinpointClient::GetCampaignVersions(const GetCampaignVersionsRequest& request) const {
@@ -1200,7 +1284,9 @@ GetCampaignVersionsOutcome PinpointClient::GetCampaignVersions(const GetCampaign
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
   };
 
-  return GetCampaignVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCampaignVersionsOutcome(result.GetResultWithOwnership())
+                            : GetCampaignVersionsOutcome(std::move(result.GetError()));
 }
 
 GetCampaignsOutcome PinpointClient::GetCampaigns(const GetCampaignsRequest& request) const {
@@ -1217,7 +1303,8 @@ GetCampaignsOutcome PinpointClient::GetCampaigns(const GetCampaignsRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/campaigns");
   };
 
-  return GetCampaignsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCampaignsOutcome(result.GetResultWithOwnership()) : GetCampaignsOutcome(std::move(result.GetError()));
 }
 
 GetChannelsOutcome PinpointClient::GetChannels(const GetChannelsRequest& request) const {
@@ -1234,7 +1321,8 @@ GetChannelsOutcome PinpointClient::GetChannels(const GetChannelsRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels");
   };
 
-  return GetChannelsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetChannelsOutcome(result.GetResultWithOwnership()) : GetChannelsOutcome(std::move(result.GetError()));
 }
 
 GetEmailChannelOutcome PinpointClient::GetEmailChannel(const GetEmailChannelRequest& request) const {
@@ -1251,7 +1339,9 @@ GetEmailChannelOutcome PinpointClient::GetEmailChannel(const GetEmailChannelRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels/email");
   };
 
-  return GetEmailChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEmailChannelOutcome(result.GetResultWithOwnership())
+                            : GetEmailChannelOutcome(std::move(result.GetError()));
 }
 
 GetEmailTemplateOutcome PinpointClient::GetEmailTemplate(const GetEmailTemplateRequest& request) const {
@@ -1268,7 +1358,9 @@ GetEmailTemplateOutcome PinpointClient::GetEmailTemplate(const GetEmailTemplateR
     endpointResolutionOutcome.GetResult().AddPathSegments("/email");
   };
 
-  return GetEmailTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEmailTemplateOutcome(result.GetResultWithOwnership())
+                            : GetEmailTemplateOutcome(std::move(result.GetError()));
 }
 
 GetEndpointOutcome PinpointClient::GetEndpoint(const GetEndpointRequest& request) const {
@@ -1291,7 +1383,8 @@ GetEndpointOutcome PinpointClient::GetEndpoint(const GetEndpointRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEndpointId());
   };
 
-  return GetEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEndpointOutcome(result.GetResultWithOwnership()) : GetEndpointOutcome(std::move(result.GetError()));
 }
 
 GetEventStreamOutcome PinpointClient::GetEventStream(const GetEventStreamRequest& request) const {
@@ -1308,7 +1401,8 @@ GetEventStreamOutcome PinpointClient::GetEventStream(const GetEventStreamRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/eventstream");
   };
 
-  return GetEventStreamOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEventStreamOutcome(result.GetResultWithOwnership()) : GetEventStreamOutcome(std::move(result.GetError()));
 }
 
 GetExportJobOutcome PinpointClient::GetExportJob(const GetExportJobRequest& request) const {
@@ -1331,7 +1425,8 @@ GetExportJobOutcome PinpointClient::GetExportJob(const GetExportJobRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return GetExportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetExportJobOutcome(result.GetResultWithOwnership()) : GetExportJobOutcome(std::move(result.GetError()));
 }
 
 GetExportJobsOutcome PinpointClient::GetExportJobs(const GetExportJobsRequest& request) const {
@@ -1348,7 +1443,8 @@ GetExportJobsOutcome PinpointClient::GetExportJobs(const GetExportJobsRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/export");
   };
 
-  return GetExportJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetExportJobsOutcome(result.GetResultWithOwnership()) : GetExportJobsOutcome(std::move(result.GetError()));
 }
 
 GetGcmChannelOutcome PinpointClient::GetGcmChannel(const GetGcmChannelRequest& request) const {
@@ -1365,7 +1461,8 @@ GetGcmChannelOutcome PinpointClient::GetGcmChannel(const GetGcmChannelRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels/gcm");
   };
 
-  return GetGcmChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetGcmChannelOutcome(result.GetResultWithOwnership()) : GetGcmChannelOutcome(std::move(result.GetError()));
 }
 
 GetImportJobOutcome PinpointClient::GetImportJob(const GetImportJobRequest& request) const {
@@ -1388,7 +1485,8 @@ GetImportJobOutcome PinpointClient::GetImportJob(const GetImportJobRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return GetImportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetImportJobOutcome(result.GetResultWithOwnership()) : GetImportJobOutcome(std::move(result.GetError()));
 }
 
 GetImportJobsOutcome PinpointClient::GetImportJobs(const GetImportJobsRequest& request) const {
@@ -1405,7 +1503,8 @@ GetImportJobsOutcome PinpointClient::GetImportJobs(const GetImportJobsRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/import");
   };
 
-  return GetImportJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetImportJobsOutcome(result.GetResultWithOwnership()) : GetImportJobsOutcome(std::move(result.GetError()));
 }
 
 GetInAppMessagesOutcome PinpointClient::GetInAppMessages(const GetInAppMessagesRequest& request) const {
@@ -1429,7 +1528,9 @@ GetInAppMessagesOutcome PinpointClient::GetInAppMessages(const GetInAppMessagesR
     endpointResolutionOutcome.GetResult().AddPathSegments("/inappmessages");
   };
 
-  return GetInAppMessagesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetInAppMessagesOutcome(result.GetResultWithOwnership())
+                            : GetInAppMessagesOutcome(std::move(result.GetError()));
 }
 
 GetInAppTemplateOutcome PinpointClient::GetInAppTemplate(const GetInAppTemplateRequest& request) const {
@@ -1446,7 +1547,9 @@ GetInAppTemplateOutcome PinpointClient::GetInAppTemplate(const GetInAppTemplateR
     endpointResolutionOutcome.GetResult().AddPathSegments("/inapp");
   };
 
-  return GetInAppTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetInAppTemplateOutcome(result.GetResultWithOwnership())
+                            : GetInAppTemplateOutcome(std::move(result.GetError()));
 }
 
 GetJourneyOutcome PinpointClient::GetJourney(const GetJourneyRequest& request) const {
@@ -1469,7 +1572,8 @@ GetJourneyOutcome PinpointClient::GetJourney(const GetJourneyRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJourneyId());
   };
 
-  return GetJourneyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetJourneyOutcome(result.GetResultWithOwnership()) : GetJourneyOutcome(std::move(result.GetError()));
 }
 
 GetJourneyDateRangeKpiOutcome PinpointClient::GetJourneyDateRangeKpi(const GetJourneyDateRangeKpiRequest& request) const {
@@ -1499,7 +1603,9 @@ GetJourneyDateRangeKpiOutcome PinpointClient::GetJourneyDateRangeKpi(const GetJo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKpiName());
   };
 
-  return GetJourneyDateRangeKpiOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetJourneyDateRangeKpiOutcome(result.GetResultWithOwnership())
+                            : GetJourneyDateRangeKpiOutcome(std::move(result.GetError()));
 }
 
 GetJourneyExecutionActivityMetricsOutcome PinpointClient::GetJourneyExecutionActivityMetrics(
@@ -1531,7 +1637,9 @@ GetJourneyExecutionActivityMetricsOutcome PinpointClient::GetJourneyExecutionAct
     endpointResolutionOutcome.GetResult().AddPathSegments("/execution-metrics");
   };
 
-  return GetJourneyExecutionActivityMetricsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetJourneyExecutionActivityMetricsOutcome(result.GetResultWithOwnership())
+                            : GetJourneyExecutionActivityMetricsOutcome(std::move(result.GetError()));
 }
 
 GetJourneyExecutionMetricsOutcome PinpointClient::GetJourneyExecutionMetrics(const GetJourneyExecutionMetricsRequest& request) const {
@@ -1555,7 +1663,9 @@ GetJourneyExecutionMetricsOutcome PinpointClient::GetJourneyExecutionMetrics(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/execution-metrics");
   };
 
-  return GetJourneyExecutionMetricsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetJourneyExecutionMetricsOutcome(result.GetResultWithOwnership())
+                            : GetJourneyExecutionMetricsOutcome(std::move(result.GetError()));
 }
 
 GetJourneyRunExecutionActivityMetricsOutcome PinpointClient::GetJourneyRunExecutionActivityMetrics(
@@ -1594,7 +1704,9 @@ GetJourneyRunExecutionActivityMetricsOutcome PinpointClient::GetJourneyRunExecut
     endpointResolutionOutcome.GetResult().AddPathSegments("/execution-metrics");
   };
 
-  return GetJourneyRunExecutionActivityMetricsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetJourneyRunExecutionActivityMetricsOutcome(result.GetResultWithOwnership())
+                            : GetJourneyRunExecutionActivityMetricsOutcome(std::move(result.GetError()));
 }
 
 GetJourneyRunExecutionMetricsOutcome PinpointClient::GetJourneyRunExecutionMetrics(
@@ -1626,7 +1738,9 @@ GetJourneyRunExecutionMetricsOutcome PinpointClient::GetJourneyRunExecutionMetri
     endpointResolutionOutcome.GetResult().AddPathSegments("/execution-metrics");
   };
 
-  return GetJourneyRunExecutionMetricsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetJourneyRunExecutionMetricsOutcome(result.GetResultWithOwnership())
+                            : GetJourneyRunExecutionMetricsOutcome(std::move(result.GetError()));
 }
 
 GetJourneyRunsOutcome PinpointClient::GetJourneyRuns(const GetJourneyRunsRequest& request) const {
@@ -1650,7 +1764,8 @@ GetJourneyRunsOutcome PinpointClient::GetJourneyRuns(const GetJourneyRunsRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/runs");
   };
 
-  return GetJourneyRunsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetJourneyRunsOutcome(result.GetResultWithOwnership()) : GetJourneyRunsOutcome(std::move(result.GetError()));
 }
 
 GetPushTemplateOutcome PinpointClient::GetPushTemplate(const GetPushTemplateRequest& request) const {
@@ -1667,7 +1782,9 @@ GetPushTemplateOutcome PinpointClient::GetPushTemplate(const GetPushTemplateRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/push");
   };
 
-  return GetPushTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPushTemplateOutcome(result.GetResultWithOwnership())
+                            : GetPushTemplateOutcome(std::move(result.GetError()));
 }
 
 GetRecommenderConfigurationOutcome PinpointClient::GetRecommenderConfiguration(const GetRecommenderConfigurationRequest& request) const {
@@ -1683,7 +1800,9 @@ GetRecommenderConfigurationOutcome PinpointClient::GetRecommenderConfiguration(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommenderId());
   };
 
-  return GetRecommenderConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRecommenderConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetRecommenderConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetRecommenderConfigurationsOutcome PinpointClient::GetRecommenderConfigurations(const GetRecommenderConfigurationsRequest& request) const {
@@ -1692,7 +1811,9 @@ GetRecommenderConfigurationsOutcome PinpointClient::GetRecommenderConfigurations
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/recommenders");
   };
 
-  return GetRecommenderConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRecommenderConfigurationsOutcome(result.GetResultWithOwnership())
+                            : GetRecommenderConfigurationsOutcome(std::move(result.GetError()));
 }
 
 GetSegmentOutcome PinpointClient::GetSegment(const GetSegmentRequest& request) const {
@@ -1715,7 +1836,8 @@ GetSegmentOutcome PinpointClient::GetSegment(const GetSegmentRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSegmentId());
   };
 
-  return GetSegmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSegmentOutcome(result.GetResultWithOwnership()) : GetSegmentOutcome(std::move(result.GetError()));
 }
 
 GetSegmentExportJobsOutcome PinpointClient::GetSegmentExportJobs(const GetSegmentExportJobsRequest& request) const {
@@ -1739,7 +1861,9 @@ GetSegmentExportJobsOutcome PinpointClient::GetSegmentExportJobs(const GetSegmen
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/export");
   };
 
-  return GetSegmentExportJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSegmentExportJobsOutcome(result.GetResultWithOwnership())
+                            : GetSegmentExportJobsOutcome(std::move(result.GetError()));
 }
 
 GetSegmentImportJobsOutcome PinpointClient::GetSegmentImportJobs(const GetSegmentImportJobsRequest& request) const {
@@ -1763,7 +1887,9 @@ GetSegmentImportJobsOutcome PinpointClient::GetSegmentImportJobs(const GetSegmen
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/import");
   };
 
-  return GetSegmentImportJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSegmentImportJobsOutcome(result.GetResultWithOwnership())
+                            : GetSegmentImportJobsOutcome(std::move(result.GetError()));
 }
 
 GetSegmentVersionOutcome PinpointClient::GetSegmentVersion(const GetSegmentVersionRequest& request) const {
@@ -1793,7 +1919,9 @@ GetSegmentVersionOutcome PinpointClient::GetSegmentVersion(const GetSegmentVersi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersion());
   };
 
-  return GetSegmentVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSegmentVersionOutcome(result.GetResultWithOwnership())
+                            : GetSegmentVersionOutcome(std::move(result.GetError()));
 }
 
 GetSegmentVersionsOutcome PinpointClient::GetSegmentVersions(const GetSegmentVersionsRequest& request) const {
@@ -1817,7 +1945,9 @@ GetSegmentVersionsOutcome PinpointClient::GetSegmentVersions(const GetSegmentVer
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
   };
 
-  return GetSegmentVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSegmentVersionsOutcome(result.GetResultWithOwnership())
+                            : GetSegmentVersionsOutcome(std::move(result.GetError()));
 }
 
 GetSegmentsOutcome PinpointClient::GetSegments(const GetSegmentsRequest& request) const {
@@ -1834,7 +1964,8 @@ GetSegmentsOutcome PinpointClient::GetSegments(const GetSegmentsRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/segments");
   };
 
-  return GetSegmentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSegmentsOutcome(result.GetResultWithOwnership()) : GetSegmentsOutcome(std::move(result.GetError()));
 }
 
 GetSmsChannelOutcome PinpointClient::GetSmsChannel(const GetSmsChannelRequest& request) const {
@@ -1851,7 +1982,8 @@ GetSmsChannelOutcome PinpointClient::GetSmsChannel(const GetSmsChannelRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels/sms");
   };
 
-  return GetSmsChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSmsChannelOutcome(result.GetResultWithOwnership()) : GetSmsChannelOutcome(std::move(result.GetError()));
 }
 
 GetSmsTemplateOutcome PinpointClient::GetSmsTemplate(const GetSmsTemplateRequest& request) const {
@@ -1868,7 +2000,8 @@ GetSmsTemplateOutcome PinpointClient::GetSmsTemplate(const GetSmsTemplateRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/sms");
   };
 
-  return GetSmsTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSmsTemplateOutcome(result.GetResultWithOwnership()) : GetSmsTemplateOutcome(std::move(result.GetError()));
 }
 
 GetUserEndpointsOutcome PinpointClient::GetUserEndpoints(const GetUserEndpointsRequest& request) const {
@@ -1891,7 +2024,9 @@ GetUserEndpointsOutcome PinpointClient::GetUserEndpoints(const GetUserEndpointsR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserId());
   };
 
-  return GetUserEndpointsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetUserEndpointsOutcome(result.GetResultWithOwnership())
+                            : GetUserEndpointsOutcome(std::move(result.GetError()));
 }
 
 GetVoiceChannelOutcome PinpointClient::GetVoiceChannel(const GetVoiceChannelRequest& request) const {
@@ -1908,7 +2043,9 @@ GetVoiceChannelOutcome PinpointClient::GetVoiceChannel(const GetVoiceChannelRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels/voice");
   };
 
-  return GetVoiceChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetVoiceChannelOutcome(result.GetResultWithOwnership())
+                            : GetVoiceChannelOutcome(std::move(result.GetError()));
 }
 
 GetVoiceTemplateOutcome PinpointClient::GetVoiceTemplate(const GetVoiceTemplateRequest& request) const {
@@ -1925,7 +2062,9 @@ GetVoiceTemplateOutcome PinpointClient::GetVoiceTemplate(const GetVoiceTemplateR
     endpointResolutionOutcome.GetResult().AddPathSegments("/voice");
   };
 
-  return GetVoiceTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetVoiceTemplateOutcome(result.GetResultWithOwnership())
+                            : GetVoiceTemplateOutcome(std::move(result.GetError()));
 }
 
 ListJourneysOutcome PinpointClient::ListJourneys(const ListJourneysRequest& request) const {
@@ -1942,7 +2081,8 @@ ListJourneysOutcome PinpointClient::ListJourneys(const ListJourneysRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/journeys");
   };
 
-  return ListJourneysOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListJourneysOutcome(result.GetResultWithOwnership()) : ListJourneysOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome PinpointClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -1958,7 +2098,9 @@ ListTagsForResourceOutcome PinpointClient::ListTagsForResource(const ListTagsFor
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTemplateVersionsOutcome PinpointClient::ListTemplateVersions(const ListTemplateVersionsRequest& request) const {
@@ -1981,7 +2123,9 @@ ListTemplateVersionsOutcome PinpointClient::ListTemplateVersions(const ListTempl
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
   };
 
-  return ListTemplateVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTemplateVersionsOutcome(result.GetResultWithOwnership())
+                            : ListTemplateVersionsOutcome(std::move(result.GetError()));
 }
 
 ListTemplatesOutcome PinpointClient::ListTemplates(const ListTemplatesRequest& request) const {
@@ -1990,7 +2134,8 @@ ListTemplatesOutcome PinpointClient::ListTemplates(const ListTemplatesRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/templates");
   };
 
-  return ListTemplatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTemplatesOutcome(result.GetResultWithOwnership()) : ListTemplatesOutcome(std::move(result.GetError()));
 }
 
 PhoneNumberValidateOutcome PinpointClient::PhoneNumberValidate(const PhoneNumberValidateRequest& request) const {
@@ -1999,7 +2144,9 @@ PhoneNumberValidateOutcome PinpointClient::PhoneNumberValidate(const PhoneNumber
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/phone/number/validate");
   };
 
-  return PhoneNumberValidateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PhoneNumberValidateOutcome(result.GetResultWithOwnership())
+                            : PhoneNumberValidateOutcome(std::move(result.GetError()));
 }
 
 PutEventStreamOutcome PinpointClient::PutEventStream(const PutEventStreamRequest& request) const {
@@ -2016,7 +2163,8 @@ PutEventStreamOutcome PinpointClient::PutEventStream(const PutEventStreamRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/eventstream");
   };
 
-  return PutEventStreamOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutEventStreamOutcome(result.GetResultWithOwnership()) : PutEventStreamOutcome(std::move(result.GetError()));
 }
 
 PutEventsOutcome PinpointClient::PutEvents(const PutEventsRequest& request) const {
@@ -2033,7 +2181,8 @@ PutEventsOutcome PinpointClient::PutEvents(const PutEventsRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/events");
   };
 
-  return PutEventsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutEventsOutcome(result.GetResultWithOwnership()) : PutEventsOutcome(std::move(result.GetError()));
 }
 
 RemoveAttributesOutcome PinpointClient::RemoveAttributes(const RemoveAttributesRequest& request) const {
@@ -2056,7 +2205,9 @@ RemoveAttributesOutcome PinpointClient::RemoveAttributes(const RemoveAttributesR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAttributeType());
   };
 
-  return RemoveAttributesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? RemoveAttributesOutcome(result.GetResultWithOwnership())
+                            : RemoveAttributesOutcome(std::move(result.GetError()));
 }
 
 SendMessagesOutcome PinpointClient::SendMessages(const SendMessagesRequest& request) const {
@@ -2073,7 +2224,8 @@ SendMessagesOutcome PinpointClient::SendMessages(const SendMessagesRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/messages");
   };
 
-  return SendMessagesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendMessagesOutcome(result.GetResultWithOwnership()) : SendMessagesOutcome(std::move(result.GetError()));
 }
 
 SendOTPMessageOutcome PinpointClient::SendOTPMessage(const SendOTPMessageRequest& request) const {
@@ -2090,7 +2242,8 @@ SendOTPMessageOutcome PinpointClient::SendOTPMessage(const SendOTPMessageRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/otp");
   };
 
-  return SendOTPMessageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendOTPMessageOutcome(result.GetResultWithOwnership()) : SendOTPMessageOutcome(std::move(result.GetError()));
 }
 
 SendUsersMessagesOutcome PinpointClient::SendUsersMessages(const SendUsersMessagesRequest& request) const {
@@ -2107,7 +2260,9 @@ SendUsersMessagesOutcome PinpointClient::SendUsersMessages(const SendUsersMessag
     endpointResolutionOutcome.GetResult().AddPathSegments("/users-messages");
   };
 
-  return SendUsersMessagesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendUsersMessagesOutcome(result.GetResultWithOwnership())
+                            : SendUsersMessagesOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome PinpointClient::TagResource(const TagResourceRequest& request) const {
@@ -2123,7 +2278,8 @@ TagResourceOutcome PinpointClient::TagResource(const TagResourceRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome PinpointClient::UntagResource(const UntagResourceRequest& request) const {
@@ -2144,7 +2300,8 @@ UntagResourceOutcome PinpointClient::UntagResource(const UntagResourceRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAdmChannelOutcome PinpointClient::UpdateAdmChannel(const UpdateAdmChannelRequest& request) const {
@@ -2161,7 +2318,9 @@ UpdateAdmChannelOutcome PinpointClient::UpdateAdmChannel(const UpdateAdmChannelR
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels/adm");
   };
 
-  return UpdateAdmChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateAdmChannelOutcome(result.GetResultWithOwnership())
+                            : UpdateAdmChannelOutcome(std::move(result.GetError()));
 }
 
 UpdateApnsChannelOutcome PinpointClient::UpdateApnsChannel(const UpdateApnsChannelRequest& request) const {
@@ -2178,7 +2337,9 @@ UpdateApnsChannelOutcome PinpointClient::UpdateApnsChannel(const UpdateApnsChann
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels/apns");
   };
 
-  return UpdateApnsChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateApnsChannelOutcome(result.GetResultWithOwnership())
+                            : UpdateApnsChannelOutcome(std::move(result.GetError()));
 }
 
 UpdateApnsSandboxChannelOutcome PinpointClient::UpdateApnsSandboxChannel(const UpdateApnsSandboxChannelRequest& request) const {
@@ -2195,7 +2356,9 @@ UpdateApnsSandboxChannelOutcome PinpointClient::UpdateApnsSandboxChannel(const U
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels/apns_sandbox");
   };
 
-  return UpdateApnsSandboxChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateApnsSandboxChannelOutcome(result.GetResultWithOwnership())
+                            : UpdateApnsSandboxChannelOutcome(std::move(result.GetError()));
 }
 
 UpdateApnsVoipChannelOutcome PinpointClient::UpdateApnsVoipChannel(const UpdateApnsVoipChannelRequest& request) const {
@@ -2212,7 +2375,9 @@ UpdateApnsVoipChannelOutcome PinpointClient::UpdateApnsVoipChannel(const UpdateA
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels/apns_voip");
   };
 
-  return UpdateApnsVoipChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateApnsVoipChannelOutcome(result.GetResultWithOwnership())
+                            : UpdateApnsVoipChannelOutcome(std::move(result.GetError()));
 }
 
 UpdateApnsVoipSandboxChannelOutcome PinpointClient::UpdateApnsVoipSandboxChannel(const UpdateApnsVoipSandboxChannelRequest& request) const {
@@ -2229,7 +2394,9 @@ UpdateApnsVoipSandboxChannelOutcome PinpointClient::UpdateApnsVoipSandboxChannel
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels/apns_voip_sandbox");
   };
 
-  return UpdateApnsVoipSandboxChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateApnsVoipSandboxChannelOutcome(result.GetResultWithOwnership())
+                            : UpdateApnsVoipSandboxChannelOutcome(std::move(result.GetError()));
 }
 
 UpdateApplicationSettingsOutcome PinpointClient::UpdateApplicationSettings(const UpdateApplicationSettingsRequest& request) const {
@@ -2246,7 +2413,9 @@ UpdateApplicationSettingsOutcome PinpointClient::UpdateApplicationSettings(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/settings");
   };
 
-  return UpdateApplicationSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateApplicationSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdateApplicationSettingsOutcome(std::move(result.GetError()));
 }
 
 UpdateBaiduChannelOutcome PinpointClient::UpdateBaiduChannel(const UpdateBaiduChannelRequest& request) const {
@@ -2263,7 +2432,9 @@ UpdateBaiduChannelOutcome PinpointClient::UpdateBaiduChannel(const UpdateBaiduCh
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels/baidu");
   };
 
-  return UpdateBaiduChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateBaiduChannelOutcome(result.GetResultWithOwnership())
+                            : UpdateBaiduChannelOutcome(std::move(result.GetError()));
 }
 
 UpdateCampaignOutcome PinpointClient::UpdateCampaign(const UpdateCampaignRequest& request) const {
@@ -2286,7 +2457,8 @@ UpdateCampaignOutcome PinpointClient::UpdateCampaign(const UpdateCampaignRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCampaignId());
   };
 
-  return UpdateCampaignOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateCampaignOutcome(result.GetResultWithOwnership()) : UpdateCampaignOutcome(std::move(result.GetError()));
 }
 
 UpdateEmailChannelOutcome PinpointClient::UpdateEmailChannel(const UpdateEmailChannelRequest& request) const {
@@ -2303,7 +2475,9 @@ UpdateEmailChannelOutcome PinpointClient::UpdateEmailChannel(const UpdateEmailCh
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels/email");
   };
 
-  return UpdateEmailChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateEmailChannelOutcome(result.GetResultWithOwnership())
+                            : UpdateEmailChannelOutcome(std::move(result.GetError()));
 }
 
 UpdateEmailTemplateOutcome PinpointClient::UpdateEmailTemplate(const UpdateEmailTemplateRequest& request) const {
@@ -2320,7 +2494,9 @@ UpdateEmailTemplateOutcome PinpointClient::UpdateEmailTemplate(const UpdateEmail
     endpointResolutionOutcome.GetResult().AddPathSegments("/email");
   };
 
-  return UpdateEmailTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateEmailTemplateOutcome(result.GetResultWithOwnership())
+                            : UpdateEmailTemplateOutcome(std::move(result.GetError()));
 }
 
 UpdateEndpointOutcome PinpointClient::UpdateEndpoint(const UpdateEndpointRequest& request) const {
@@ -2343,7 +2519,8 @@ UpdateEndpointOutcome PinpointClient::UpdateEndpoint(const UpdateEndpointRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEndpointId());
   };
 
-  return UpdateEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateEndpointOutcome(result.GetResultWithOwnership()) : UpdateEndpointOutcome(std::move(result.GetError()));
 }
 
 UpdateEndpointsBatchOutcome PinpointClient::UpdateEndpointsBatch(const UpdateEndpointsBatchRequest& request) const {
@@ -2360,7 +2537,9 @@ UpdateEndpointsBatchOutcome PinpointClient::UpdateEndpointsBatch(const UpdateEnd
     endpointResolutionOutcome.GetResult().AddPathSegments("/endpoints");
   };
 
-  return UpdateEndpointsBatchOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateEndpointsBatchOutcome(result.GetResultWithOwnership())
+                            : UpdateEndpointsBatchOutcome(std::move(result.GetError()));
 }
 
 UpdateGcmChannelOutcome PinpointClient::UpdateGcmChannel(const UpdateGcmChannelRequest& request) const {
@@ -2377,7 +2556,9 @@ UpdateGcmChannelOutcome PinpointClient::UpdateGcmChannel(const UpdateGcmChannelR
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels/gcm");
   };
 
-  return UpdateGcmChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateGcmChannelOutcome(result.GetResultWithOwnership())
+                            : UpdateGcmChannelOutcome(std::move(result.GetError()));
 }
 
 UpdateInAppTemplateOutcome PinpointClient::UpdateInAppTemplate(const UpdateInAppTemplateRequest& request) const {
@@ -2394,7 +2575,9 @@ UpdateInAppTemplateOutcome PinpointClient::UpdateInAppTemplate(const UpdateInApp
     endpointResolutionOutcome.GetResult().AddPathSegments("/inapp");
   };
 
-  return UpdateInAppTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateInAppTemplateOutcome(result.GetResultWithOwnership())
+                            : UpdateInAppTemplateOutcome(std::move(result.GetError()));
 }
 
 UpdateJourneyOutcome PinpointClient::UpdateJourney(const UpdateJourneyRequest& request) const {
@@ -2417,7 +2600,8 @@ UpdateJourneyOutcome PinpointClient::UpdateJourney(const UpdateJourneyRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJourneyId());
   };
 
-  return UpdateJourneyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateJourneyOutcome(result.GetResultWithOwnership()) : UpdateJourneyOutcome(std::move(result.GetError()));
 }
 
 UpdateJourneyStateOutcome PinpointClient::UpdateJourneyState(const UpdateJourneyStateRequest& request) const {
@@ -2441,7 +2625,9 @@ UpdateJourneyStateOutcome PinpointClient::UpdateJourneyState(const UpdateJourney
     endpointResolutionOutcome.GetResult().AddPathSegments("/state");
   };
 
-  return UpdateJourneyStateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateJourneyStateOutcome(result.GetResultWithOwnership())
+                            : UpdateJourneyStateOutcome(std::move(result.GetError()));
 }
 
 UpdatePushTemplateOutcome PinpointClient::UpdatePushTemplate(const UpdatePushTemplateRequest& request) const {
@@ -2458,7 +2644,9 @@ UpdatePushTemplateOutcome PinpointClient::UpdatePushTemplate(const UpdatePushTem
     endpointResolutionOutcome.GetResult().AddPathSegments("/push");
   };
 
-  return UpdatePushTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdatePushTemplateOutcome(result.GetResultWithOwnership())
+                            : UpdatePushTemplateOutcome(std::move(result.GetError()));
 }
 
 UpdateRecommenderConfigurationOutcome PinpointClient::UpdateRecommenderConfiguration(
@@ -2475,7 +2663,9 @@ UpdateRecommenderConfigurationOutcome PinpointClient::UpdateRecommenderConfigura
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommenderId());
   };
 
-  return UpdateRecommenderConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateRecommenderConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateRecommenderConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateSegmentOutcome PinpointClient::UpdateSegment(const UpdateSegmentRequest& request) const {
@@ -2498,7 +2688,8 @@ UpdateSegmentOutcome PinpointClient::UpdateSegment(const UpdateSegmentRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSegmentId());
   };
 
-  return UpdateSegmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateSegmentOutcome(result.GetResultWithOwnership()) : UpdateSegmentOutcome(std::move(result.GetError()));
 }
 
 UpdateSmsChannelOutcome PinpointClient::UpdateSmsChannel(const UpdateSmsChannelRequest& request) const {
@@ -2515,7 +2706,9 @@ UpdateSmsChannelOutcome PinpointClient::UpdateSmsChannel(const UpdateSmsChannelR
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels/sms");
   };
 
-  return UpdateSmsChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateSmsChannelOutcome(result.GetResultWithOwnership())
+                            : UpdateSmsChannelOutcome(std::move(result.GetError()));
 }
 
 UpdateSmsTemplateOutcome PinpointClient::UpdateSmsTemplate(const UpdateSmsTemplateRequest& request) const {
@@ -2532,7 +2725,9 @@ UpdateSmsTemplateOutcome PinpointClient::UpdateSmsTemplate(const UpdateSmsTempla
     endpointResolutionOutcome.GetResult().AddPathSegments("/sms");
   };
 
-  return UpdateSmsTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateSmsTemplateOutcome(result.GetResultWithOwnership())
+                            : UpdateSmsTemplateOutcome(std::move(result.GetError()));
 }
 
 UpdateTemplateActiveVersionOutcome PinpointClient::UpdateTemplateActiveVersion(const UpdateTemplateActiveVersionRequest& request) const {
@@ -2555,7 +2750,9 @@ UpdateTemplateActiveVersionOutcome PinpointClient::UpdateTemplateActiveVersion(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/active-version");
   };
 
-  return UpdateTemplateActiveVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateTemplateActiveVersionOutcome(result.GetResultWithOwnership())
+                            : UpdateTemplateActiveVersionOutcome(std::move(result.GetError()));
 }
 
 UpdateVoiceChannelOutcome PinpointClient::UpdateVoiceChannel(const UpdateVoiceChannelRequest& request) const {
@@ -2572,7 +2769,9 @@ UpdateVoiceChannelOutcome PinpointClient::UpdateVoiceChannel(const UpdateVoiceCh
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels/voice");
   };
 
-  return UpdateVoiceChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateVoiceChannelOutcome(result.GetResultWithOwnership())
+                            : UpdateVoiceChannelOutcome(std::move(result.GetError()));
 }
 
 UpdateVoiceTemplateOutcome PinpointClient::UpdateVoiceTemplate(const UpdateVoiceTemplateRequest& request) const {
@@ -2589,7 +2788,9 @@ UpdateVoiceTemplateOutcome PinpointClient::UpdateVoiceTemplate(const UpdateVoice
     endpointResolutionOutcome.GetResult().AddPathSegments("/voice");
   };
 
-  return UpdateVoiceTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateVoiceTemplateOutcome(result.GetResultWithOwnership())
+                            : UpdateVoiceTemplateOutcome(std::move(result.GetError()));
 }
 
 VerifyOTPMessageOutcome PinpointClient::VerifyOTPMessage(const VerifyOTPMessageRequest& request) const {
@@ -2606,5 +2807,7 @@ VerifyOTPMessageOutcome PinpointClient::VerifyOTPMessage(const VerifyOTPMessageR
     endpointResolutionOutcome.GetResult().AddPathSegments("/verify-otp");
   };
 
-  return VerifyOTPMessageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? VerifyOTPMessageOutcome(result.GetResultWithOwnership())
+                            : VerifyOTPMessageOutcome(std::move(result.GetError()));
 }

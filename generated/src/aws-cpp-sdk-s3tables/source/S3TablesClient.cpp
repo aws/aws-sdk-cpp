@@ -236,7 +236,9 @@ CreateNamespaceOutcome S3TablesClient::CreateNamespace(const CreateNamespaceRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTableBucketARN());
   };
 
-  return CreateNamespaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateNamespaceOutcome(result.GetResultWithOwnership())
+                            : CreateNamespaceOutcome(std::move(result.GetError()));
 }
 
 CreateTableOutcome S3TablesClient::CreateTable(const CreateTableRequest& request) const {
@@ -258,7 +260,8 @@ CreateTableOutcome S3TablesClient::CreateTable(const CreateTableRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNamespace());
   };
 
-  return CreateTableOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateTableOutcome(result.GetResultWithOwnership()) : CreateTableOutcome(std::move(result.GetError()));
 }
 
 CreateTableBucketOutcome S3TablesClient::CreateTableBucket(const CreateTableBucketRequest& request) const {
@@ -267,7 +270,9 @@ CreateTableBucketOutcome S3TablesClient::CreateTableBucket(const CreateTableBuck
     endpointResolutionOutcome.GetResult().AddPathSegments("/buckets");
   };
 
-  return CreateTableBucketOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateTableBucketOutcome(result.GetResultWithOwnership())
+                            : CreateTableBucketOutcome(std::move(result.GetError()));
 }
 
 DeleteNamespaceOutcome S3TablesClient::DeleteNamespace(const DeleteNamespaceRequest& request) const {
@@ -289,7 +294,9 @@ DeleteNamespaceOutcome S3TablesClient::DeleteNamespace(const DeleteNamespaceRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNamespace());
   };
 
-  return DeleteNamespaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteNamespaceOutcome(result.GetResultWithOwnership())
+                            : DeleteNamespaceOutcome(std::move(result.GetError()));
 }
 
 DeleteTableOutcome S3TablesClient::DeleteTable(const DeleteTableRequest& request) const {
@@ -317,7 +324,8 @@ DeleteTableOutcome S3TablesClient::DeleteTable(const DeleteTableRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteTableOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTableOutcome(result.GetResultWithOwnership()) : DeleteTableOutcome(std::move(result.GetError()));
 }
 
 DeleteTableBucketOutcome S3TablesClient::DeleteTableBucket(const DeleteTableBucketRequest& request) const {
@@ -333,7 +341,9 @@ DeleteTableBucketOutcome S3TablesClient::DeleteTableBucket(const DeleteTableBuck
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTableBucketARN());
   };
 
-  return DeleteTableBucketOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTableBucketOutcome(result.GetResultWithOwnership())
+                            : DeleteTableBucketOutcome(std::move(result.GetError()));
 }
 
 DeleteTableBucketEncryptionOutcome S3TablesClient::DeleteTableBucketEncryption(const DeleteTableBucketEncryptionRequest& request) const {
@@ -350,7 +360,9 @@ DeleteTableBucketEncryptionOutcome S3TablesClient::DeleteTableBucketEncryption(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/encryption");
   };
 
-  return DeleteTableBucketEncryptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTableBucketEncryptionOutcome(result.GetResultWithOwnership())
+                            : DeleteTableBucketEncryptionOutcome(std::move(result.GetError()));
 }
 
 DeleteTableBucketMetricsConfigurationOutcome S3TablesClient::DeleteTableBucketMetricsConfiguration(
@@ -368,7 +380,9 @@ DeleteTableBucketMetricsConfigurationOutcome S3TablesClient::DeleteTableBucketMe
     endpointResolutionOutcome.GetResult().AddPathSegments("/metrics");
   };
 
-  return DeleteTableBucketMetricsConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTableBucketMetricsConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteTableBucketMetricsConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteTableBucketPolicyOutcome S3TablesClient::DeleteTableBucketPolicy(const DeleteTableBucketPolicyRequest& request) const {
@@ -385,7 +399,9 @@ DeleteTableBucketPolicyOutcome S3TablesClient::DeleteTableBucketPolicy(const Del
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return DeleteTableBucketPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTableBucketPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteTableBucketPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteTableBucketReplicationOutcome S3TablesClient::DeleteTableBucketReplication(const DeleteTableBucketReplicationRequest& request) const {
@@ -400,7 +416,9 @@ DeleteTableBucketReplicationOutcome S3TablesClient::DeleteTableBucketReplication
     endpointResolutionOutcome.GetResult().AddPathSegments("/table-bucket-replication");
   };
 
-  return DeleteTableBucketReplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTableBucketReplicationOutcome(result.GetResultWithOwnership())
+                            : DeleteTableBucketReplicationOutcome(std::move(result.GetError()));
 }
 
 DeleteTablePolicyOutcome S3TablesClient::DeleteTablePolicy(const DeleteTablePolicyRequest& request) const {
@@ -429,7 +447,9 @@ DeleteTablePolicyOutcome S3TablesClient::DeleteTablePolicy(const DeleteTablePoli
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return DeleteTablePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTablePolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteTablePolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteTableReplicationOutcome S3TablesClient::DeleteTableReplication(const DeleteTableReplicationRequest& request) const {
@@ -449,7 +469,9 @@ DeleteTableReplicationOutcome S3TablesClient::DeleteTableReplication(const Delet
     endpointResolutionOutcome.GetResult().AddPathSegments("/table-replication");
   };
 
-  return DeleteTableReplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTableReplicationOutcome(result.GetResultWithOwnership())
+                            : DeleteTableReplicationOutcome(std::move(result.GetError()));
 }
 
 GetNamespaceOutcome S3TablesClient::GetNamespace(const GetNamespaceRequest& request) const {
@@ -471,7 +493,8 @@ GetNamespaceOutcome S3TablesClient::GetNamespace(const GetNamespaceRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNamespace());
   };
 
-  return GetNamespaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetNamespaceOutcome(result.GetResultWithOwnership()) : GetNamespaceOutcome(std::move(result.GetError()));
 }
 
 GetTableOutcome S3TablesClient::GetTable(const GetTableRequest& request) const {
@@ -480,7 +503,8 @@ GetTableOutcome S3TablesClient::GetTable(const GetTableRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-table");
   };
 
-  return GetTableOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTableOutcome(result.GetResultWithOwnership()) : GetTableOutcome(std::move(result.GetError()));
 }
 
 GetTableBucketOutcome S3TablesClient::GetTableBucket(const GetTableBucketRequest& request) const {
@@ -496,7 +520,8 @@ GetTableBucketOutcome S3TablesClient::GetTableBucket(const GetTableBucketRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTableBucketARN());
   };
 
-  return GetTableBucketOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTableBucketOutcome(result.GetResultWithOwnership()) : GetTableBucketOutcome(std::move(result.GetError()));
 }
 
 GetTableBucketEncryptionOutcome S3TablesClient::GetTableBucketEncryption(const GetTableBucketEncryptionRequest& request) const {
@@ -513,7 +538,9 @@ GetTableBucketEncryptionOutcome S3TablesClient::GetTableBucketEncryption(const G
     endpointResolutionOutcome.GetResult().AddPathSegments("/encryption");
   };
 
-  return GetTableBucketEncryptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTableBucketEncryptionOutcome(result.GetResultWithOwnership())
+                            : GetTableBucketEncryptionOutcome(std::move(result.GetError()));
 }
 
 GetTableBucketMaintenanceConfigurationOutcome S3TablesClient::GetTableBucketMaintenanceConfiguration(
@@ -531,7 +558,9 @@ GetTableBucketMaintenanceConfigurationOutcome S3TablesClient::GetTableBucketMain
     endpointResolutionOutcome.GetResult().AddPathSegments("/maintenance");
   };
 
-  return GetTableBucketMaintenanceConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTableBucketMaintenanceConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetTableBucketMaintenanceConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetTableBucketMetricsConfigurationOutcome S3TablesClient::GetTableBucketMetricsConfiguration(
@@ -549,7 +578,9 @@ GetTableBucketMetricsConfigurationOutcome S3TablesClient::GetTableBucketMetricsC
     endpointResolutionOutcome.GetResult().AddPathSegments("/metrics");
   };
 
-  return GetTableBucketMetricsConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTableBucketMetricsConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetTableBucketMetricsConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetTableBucketPolicyOutcome S3TablesClient::GetTableBucketPolicy(const GetTableBucketPolicyRequest& request) const {
@@ -566,7 +597,9 @@ GetTableBucketPolicyOutcome S3TablesClient::GetTableBucketPolicy(const GetTableB
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return GetTableBucketPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTableBucketPolicyOutcome(result.GetResultWithOwnership())
+                            : GetTableBucketPolicyOutcome(std::move(result.GetError()));
 }
 
 GetTableBucketReplicationOutcome S3TablesClient::GetTableBucketReplication(const GetTableBucketReplicationRequest& request) const {
@@ -581,7 +614,9 @@ GetTableBucketReplicationOutcome S3TablesClient::GetTableBucketReplication(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/table-bucket-replication");
   };
 
-  return GetTableBucketReplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTableBucketReplicationOutcome(result.GetResultWithOwnership())
+                            : GetTableBucketReplicationOutcome(std::move(result.GetError()));
 }
 
 GetTableBucketStorageClassOutcome S3TablesClient::GetTableBucketStorageClass(const GetTableBucketStorageClassRequest& request) const {
@@ -598,7 +633,9 @@ GetTableBucketStorageClassOutcome S3TablesClient::GetTableBucketStorageClass(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/storage-class");
   };
 
-  return GetTableBucketStorageClassOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTableBucketStorageClassOutcome(result.GetResultWithOwnership())
+                            : GetTableBucketStorageClassOutcome(std::move(result.GetError()));
 }
 
 GetTableEncryptionOutcome S3TablesClient::GetTableEncryption(const GetTableEncryptionRequest& request) const {
@@ -627,7 +664,9 @@ GetTableEncryptionOutcome S3TablesClient::GetTableEncryption(const GetTableEncry
     endpointResolutionOutcome.GetResult().AddPathSegments("/encryption");
   };
 
-  return GetTableEncryptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTableEncryptionOutcome(result.GetResultWithOwnership())
+                            : GetTableEncryptionOutcome(std::move(result.GetError()));
 }
 
 GetTableMaintenanceConfigurationOutcome S3TablesClient::GetTableMaintenanceConfiguration(
@@ -657,7 +696,9 @@ GetTableMaintenanceConfigurationOutcome S3TablesClient::GetTableMaintenanceConfi
     endpointResolutionOutcome.GetResult().AddPathSegments("/maintenance");
   };
 
-  return GetTableMaintenanceConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTableMaintenanceConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetTableMaintenanceConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetTableMaintenanceJobStatusOutcome S3TablesClient::GetTableMaintenanceJobStatus(const GetTableMaintenanceJobStatusRequest& request) const {
@@ -686,7 +727,9 @@ GetTableMaintenanceJobStatusOutcome S3TablesClient::GetTableMaintenanceJobStatus
     endpointResolutionOutcome.GetResult().AddPathSegments("/maintenance-job-status");
   };
 
-  return GetTableMaintenanceJobStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTableMaintenanceJobStatusOutcome(result.GetResultWithOwnership())
+                            : GetTableMaintenanceJobStatusOutcome(std::move(result.GetError()));
 }
 
 GetTableMetadataLocationOutcome S3TablesClient::GetTableMetadataLocation(const GetTableMetadataLocationRequest& request) const {
@@ -715,7 +758,9 @@ GetTableMetadataLocationOutcome S3TablesClient::GetTableMetadataLocation(const G
     endpointResolutionOutcome.GetResult().AddPathSegments("/metadata-location");
   };
 
-  return GetTableMetadataLocationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTableMetadataLocationOutcome(result.GetResultWithOwnership())
+                            : GetTableMetadataLocationOutcome(std::move(result.GetError()));
 }
 
 GetTablePolicyOutcome S3TablesClient::GetTablePolicy(const GetTablePolicyRequest& request) const {
@@ -744,7 +789,8 @@ GetTablePolicyOutcome S3TablesClient::GetTablePolicy(const GetTablePolicyRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return GetTablePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTablePolicyOutcome(result.GetResultWithOwnership()) : GetTablePolicyOutcome(std::move(result.GetError()));
 }
 
 GetTableRecordExpirationConfigurationOutcome S3TablesClient::GetTableRecordExpirationConfiguration(
@@ -760,7 +806,9 @@ GetTableRecordExpirationConfigurationOutcome S3TablesClient::GetTableRecordExpir
     endpointResolutionOutcome.GetResult().AddPathSegments("/table-record-expiration");
   };
 
-  return GetTableRecordExpirationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTableRecordExpirationConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetTableRecordExpirationConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetTableRecordExpirationJobStatusOutcome S3TablesClient::GetTableRecordExpirationJobStatus(
@@ -776,7 +824,9 @@ GetTableRecordExpirationJobStatusOutcome S3TablesClient::GetTableRecordExpiratio
     endpointResolutionOutcome.GetResult().AddPathSegments("/table-record-expiration-job-status");
   };
 
-  return GetTableRecordExpirationJobStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTableRecordExpirationJobStatusOutcome(result.GetResultWithOwnership())
+                            : GetTableRecordExpirationJobStatusOutcome(std::move(result.GetError()));
 }
 
 GetTableReplicationOutcome S3TablesClient::GetTableReplication(const GetTableReplicationRequest& request) const {
@@ -791,7 +841,9 @@ GetTableReplicationOutcome S3TablesClient::GetTableReplication(const GetTableRep
     endpointResolutionOutcome.GetResult().AddPathSegments("/table-replication");
   };
 
-  return GetTableReplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTableReplicationOutcome(result.GetResultWithOwnership())
+                            : GetTableReplicationOutcome(std::move(result.GetError()));
 }
 
 GetTableReplicationStatusOutcome S3TablesClient::GetTableReplicationStatus(const GetTableReplicationStatusRequest& request) const {
@@ -806,7 +858,9 @@ GetTableReplicationStatusOutcome S3TablesClient::GetTableReplicationStatus(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/replication-status");
   };
 
-  return GetTableReplicationStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTableReplicationStatusOutcome(result.GetResultWithOwnership())
+                            : GetTableReplicationStatusOutcome(std::move(result.GetError()));
 }
 
 GetTableStorageClassOutcome S3TablesClient::GetTableStorageClass(const GetTableStorageClassRequest& request) const {
@@ -835,7 +889,9 @@ GetTableStorageClassOutcome S3TablesClient::GetTableStorageClass(const GetTableS
     endpointResolutionOutcome.GetResult().AddPathSegments("/storage-class");
   };
 
-  return GetTableStorageClassOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTableStorageClassOutcome(result.GetResultWithOwnership())
+                            : GetTableStorageClassOutcome(std::move(result.GetError()));
 }
 
 ListNamespacesOutcome S3TablesClient::ListNamespaces(const ListNamespacesRequest& request) const {
@@ -851,7 +907,8 @@ ListNamespacesOutcome S3TablesClient::ListNamespaces(const ListNamespacesRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTableBucketARN());
   };
 
-  return ListNamespacesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListNamespacesOutcome(result.GetResultWithOwnership()) : ListNamespacesOutcome(std::move(result.GetError()));
 }
 
 ListTableBucketsOutcome S3TablesClient::ListTableBuckets(const ListTableBucketsRequest& request) const {
@@ -860,7 +917,9 @@ ListTableBucketsOutcome S3TablesClient::ListTableBuckets(const ListTableBucketsR
     endpointResolutionOutcome.GetResult().AddPathSegments("/buckets");
   };
 
-  return ListTableBucketsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTableBucketsOutcome(result.GetResultWithOwnership())
+                            : ListTableBucketsOutcome(std::move(result.GetError()));
 }
 
 ListTablesOutcome S3TablesClient::ListTables(const ListTablesRequest& request) const {
@@ -876,7 +935,8 @@ ListTablesOutcome S3TablesClient::ListTables(const ListTablesRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTableBucketARN());
   };
 
-  return ListTablesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTablesOutcome(result.GetResultWithOwnership()) : ListTablesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome S3TablesClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -892,7 +952,9 @@ ListTagsForResourceOutcome S3TablesClient::ListTagsForResource(const ListTagsFor
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutTableBucketEncryptionOutcome S3TablesClient::PutTableBucketEncryption(const PutTableBucketEncryptionRequest& request) const {
@@ -909,7 +971,9 @@ PutTableBucketEncryptionOutcome S3TablesClient::PutTableBucketEncryption(const P
     endpointResolutionOutcome.GetResult().AddPathSegments("/encryption");
   };
 
-  return PutTableBucketEncryptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutTableBucketEncryptionOutcome(result.GetResultWithOwnership())
+                            : PutTableBucketEncryptionOutcome(std::move(result.GetError()));
 }
 
 PutTableBucketMaintenanceConfigurationOutcome S3TablesClient::PutTableBucketMaintenanceConfiguration(
@@ -934,7 +998,9 @@ PutTableBucketMaintenanceConfigurationOutcome S3TablesClient::PutTableBucketMain
         TableBucketMaintenanceTypeMapper::GetNameForTableBucketMaintenanceType(request.GetType()));
   };
 
-  return PutTableBucketMaintenanceConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutTableBucketMaintenanceConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutTableBucketMaintenanceConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutTableBucketMetricsConfigurationOutcome S3TablesClient::PutTableBucketMetricsConfiguration(
@@ -952,7 +1018,9 @@ PutTableBucketMetricsConfigurationOutcome S3TablesClient::PutTableBucketMetricsC
     endpointResolutionOutcome.GetResult().AddPathSegments("/metrics");
   };
 
-  return PutTableBucketMetricsConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutTableBucketMetricsConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutTableBucketMetricsConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutTableBucketPolicyOutcome S3TablesClient::PutTableBucketPolicy(const PutTableBucketPolicyRequest& request) const {
@@ -969,7 +1037,9 @@ PutTableBucketPolicyOutcome S3TablesClient::PutTableBucketPolicy(const PutTableB
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return PutTableBucketPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutTableBucketPolicyOutcome(result.GetResultWithOwnership())
+                            : PutTableBucketPolicyOutcome(std::move(result.GetError()));
 }
 
 PutTableBucketReplicationOutcome S3TablesClient::PutTableBucketReplication(const PutTableBucketReplicationRequest& request) const {
@@ -984,7 +1054,9 @@ PutTableBucketReplicationOutcome S3TablesClient::PutTableBucketReplication(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/table-bucket-replication");
   };
 
-  return PutTableBucketReplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutTableBucketReplicationOutcome(result.GetResultWithOwnership())
+                            : PutTableBucketReplicationOutcome(std::move(result.GetError()));
 }
 
 PutTableBucketStorageClassOutcome S3TablesClient::PutTableBucketStorageClass(const PutTableBucketStorageClassRequest& request) const {
@@ -1001,7 +1073,9 @@ PutTableBucketStorageClassOutcome S3TablesClient::PutTableBucketStorageClass(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/storage-class");
   };
 
-  return PutTableBucketStorageClassOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutTableBucketStorageClassOutcome(result.GetResultWithOwnership())
+                            : PutTableBucketStorageClassOutcome(std::move(result.GetError()));
 }
 
 PutTableMaintenanceConfigurationOutcome S3TablesClient::PutTableMaintenanceConfiguration(
@@ -1037,7 +1111,9 @@ PutTableMaintenanceConfigurationOutcome S3TablesClient::PutTableMaintenanceConfi
     endpointResolutionOutcome.GetResult().AddPathSegment(TableMaintenanceTypeMapper::GetNameForTableMaintenanceType(request.GetType()));
   };
 
-  return PutTableMaintenanceConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutTableMaintenanceConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutTableMaintenanceConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutTablePolicyOutcome S3TablesClient::PutTablePolicy(const PutTablePolicyRequest& request) const {
@@ -1066,7 +1142,8 @@ PutTablePolicyOutcome S3TablesClient::PutTablePolicy(const PutTablePolicyRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return PutTablePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutTablePolicyOutcome(result.GetResultWithOwnership()) : PutTablePolicyOutcome(std::move(result.GetError()));
 }
 
 PutTableRecordExpirationConfigurationOutcome S3TablesClient::PutTableRecordExpirationConfiguration(
@@ -1082,7 +1159,9 @@ PutTableRecordExpirationConfigurationOutcome S3TablesClient::PutTableRecordExpir
     endpointResolutionOutcome.GetResult().AddPathSegments("/table-record-expiration");
   };
 
-  return PutTableRecordExpirationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutTableRecordExpirationConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutTableRecordExpirationConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutTableReplicationOutcome S3TablesClient::PutTableReplication(const PutTableReplicationRequest& request) const {
@@ -1097,7 +1176,9 @@ PutTableReplicationOutcome S3TablesClient::PutTableReplication(const PutTableRep
     endpointResolutionOutcome.GetResult().AddPathSegments("/table-replication");
   };
 
-  return PutTableReplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutTableReplicationOutcome(result.GetResultWithOwnership())
+                            : PutTableReplicationOutcome(std::move(result.GetError()));
 }
 
 RenameTableOutcome S3TablesClient::RenameTable(const RenameTableRequest& request) const {
@@ -1126,7 +1207,8 @@ RenameTableOutcome S3TablesClient::RenameTable(const RenameTableRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/rename");
   };
 
-  return RenameTableOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? RenameTableOutcome(result.GetResultWithOwnership()) : RenameTableOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome S3TablesClient::TagResource(const TagResourceRequest& request) const {
@@ -1142,7 +1224,8 @@ TagResourceOutcome S3TablesClient::TagResource(const TagResourceRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome S3TablesClient::UntagResource(const UntagResourceRequest& request) const {
@@ -1163,7 +1246,8 @@ UntagResourceOutcome S3TablesClient::UntagResource(const UntagResourceRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateTableMetadataLocationOutcome S3TablesClient::UpdateTableMetadataLocation(const UpdateTableMetadataLocationRequest& request) const {
@@ -1192,5 +1276,7 @@ UpdateTableMetadataLocationOutcome S3TablesClient::UpdateTableMetadataLocation(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/metadata-location");
   };
 
-  return UpdateTableMetadataLocationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateTableMetadataLocationOutcome(result.GetResultWithOwnership())
+                            : UpdateTableMetadataLocationOutcome(std::move(result.GetError()));
 }

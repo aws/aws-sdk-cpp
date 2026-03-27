@@ -225,214 +225,306 @@ DataSyncClient::InvokeOperationOutcome DataSyncClient::InvokeServiceOperation(co
 }
 
 CancelTaskExecutionOutcome DataSyncClient::CancelTaskExecution(const CancelTaskExecutionRequest& request) const {
-  return CancelTaskExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelTaskExecutionOutcome(result.GetResultWithOwnership())
+                            : CancelTaskExecutionOutcome(std::move(result.GetError()));
 }
 
 CreateAgentOutcome DataSyncClient::CreateAgent(const CreateAgentRequest& request) const {
-  return CreateAgentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAgentOutcome(result.GetResultWithOwnership()) : CreateAgentOutcome(std::move(result.GetError()));
 }
 
 CreateLocationAzureBlobOutcome DataSyncClient::CreateLocationAzureBlob(const CreateLocationAzureBlobRequest& request) const {
-  return CreateLocationAzureBlobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLocationAzureBlobOutcome(result.GetResultWithOwnership())
+                            : CreateLocationAzureBlobOutcome(std::move(result.GetError()));
 }
 
 CreateLocationEfsOutcome DataSyncClient::CreateLocationEfs(const CreateLocationEfsRequest& request) const {
-  return CreateLocationEfsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLocationEfsOutcome(result.GetResultWithOwnership())
+                            : CreateLocationEfsOutcome(std::move(result.GetError()));
 }
 
 CreateLocationFsxLustreOutcome DataSyncClient::CreateLocationFsxLustre(const CreateLocationFsxLustreRequest& request) const {
-  return CreateLocationFsxLustreOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLocationFsxLustreOutcome(result.GetResultWithOwnership())
+                            : CreateLocationFsxLustreOutcome(std::move(result.GetError()));
 }
 
 CreateLocationFsxOntapOutcome DataSyncClient::CreateLocationFsxOntap(const CreateLocationFsxOntapRequest& request) const {
-  return CreateLocationFsxOntapOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLocationFsxOntapOutcome(result.GetResultWithOwnership())
+                            : CreateLocationFsxOntapOutcome(std::move(result.GetError()));
 }
 
 CreateLocationFsxOpenZfsOutcome DataSyncClient::CreateLocationFsxOpenZfs(const CreateLocationFsxOpenZfsRequest& request) const {
-  return CreateLocationFsxOpenZfsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLocationFsxOpenZfsOutcome(result.GetResultWithOwnership())
+                            : CreateLocationFsxOpenZfsOutcome(std::move(result.GetError()));
 }
 
 CreateLocationFsxWindowsOutcome DataSyncClient::CreateLocationFsxWindows(const CreateLocationFsxWindowsRequest& request) const {
-  return CreateLocationFsxWindowsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLocationFsxWindowsOutcome(result.GetResultWithOwnership())
+                            : CreateLocationFsxWindowsOutcome(std::move(result.GetError()));
 }
 
 CreateLocationHdfsOutcome DataSyncClient::CreateLocationHdfs(const CreateLocationHdfsRequest& request) const {
-  return CreateLocationHdfsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLocationHdfsOutcome(result.GetResultWithOwnership())
+                            : CreateLocationHdfsOutcome(std::move(result.GetError()));
 }
 
 CreateLocationNfsOutcome DataSyncClient::CreateLocationNfs(const CreateLocationNfsRequest& request) const {
-  return CreateLocationNfsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLocationNfsOutcome(result.GetResultWithOwnership())
+                            : CreateLocationNfsOutcome(std::move(result.GetError()));
 }
 
 CreateLocationObjectStorageOutcome DataSyncClient::CreateLocationObjectStorage(const CreateLocationObjectStorageRequest& request) const {
-  return CreateLocationObjectStorageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLocationObjectStorageOutcome(result.GetResultWithOwnership())
+                            : CreateLocationObjectStorageOutcome(std::move(result.GetError()));
 }
 
 CreateLocationS3Outcome DataSyncClient::CreateLocationS3(const CreateLocationS3Request& request) const {
-  return CreateLocationS3Outcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLocationS3Outcome(result.GetResultWithOwnership())
+                            : CreateLocationS3Outcome(std::move(result.GetError()));
 }
 
 CreateLocationSmbOutcome DataSyncClient::CreateLocationSmb(const CreateLocationSmbRequest& request) const {
-  return CreateLocationSmbOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLocationSmbOutcome(result.GetResultWithOwnership())
+                            : CreateLocationSmbOutcome(std::move(result.GetError()));
 }
 
 CreateTaskOutcome DataSyncClient::CreateTask(const CreateTaskRequest& request) const {
-  return CreateTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTaskOutcome(result.GetResultWithOwnership()) : CreateTaskOutcome(std::move(result.GetError()));
 }
 
 DeleteAgentOutcome DataSyncClient::DeleteAgent(const DeleteAgentRequest& request) const {
-  return DeleteAgentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAgentOutcome(result.GetResultWithOwnership()) : DeleteAgentOutcome(std::move(result.GetError()));
 }
 
 DeleteLocationOutcome DataSyncClient::DeleteLocation(const DeleteLocationRequest& request) const {
-  return DeleteLocationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLocationOutcome(result.GetResultWithOwnership()) : DeleteLocationOutcome(std::move(result.GetError()));
 }
 
 DeleteTaskOutcome DataSyncClient::DeleteTask(const DeleteTaskRequest& request) const {
-  return DeleteTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTaskOutcome(result.GetResultWithOwnership()) : DeleteTaskOutcome(std::move(result.GetError()));
 }
 
 DescribeAgentOutcome DataSyncClient::DescribeAgent(const DescribeAgentRequest& request) const {
-  return DescribeAgentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAgentOutcome(result.GetResultWithOwnership()) : DescribeAgentOutcome(std::move(result.GetError()));
 }
 
 DescribeLocationAzureBlobOutcome DataSyncClient::DescribeLocationAzureBlob(const DescribeLocationAzureBlobRequest& request) const {
-  return DescribeLocationAzureBlobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeLocationAzureBlobOutcome(result.GetResultWithOwnership())
+                            : DescribeLocationAzureBlobOutcome(std::move(result.GetError()));
 }
 
 DescribeLocationEfsOutcome DataSyncClient::DescribeLocationEfs(const DescribeLocationEfsRequest& request) const {
-  return DescribeLocationEfsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeLocationEfsOutcome(result.GetResultWithOwnership())
+                            : DescribeLocationEfsOutcome(std::move(result.GetError()));
 }
 
 DescribeLocationFsxLustreOutcome DataSyncClient::DescribeLocationFsxLustre(const DescribeLocationFsxLustreRequest& request) const {
-  return DescribeLocationFsxLustreOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeLocationFsxLustreOutcome(result.GetResultWithOwnership())
+                            : DescribeLocationFsxLustreOutcome(std::move(result.GetError()));
 }
 
 DescribeLocationFsxOntapOutcome DataSyncClient::DescribeLocationFsxOntap(const DescribeLocationFsxOntapRequest& request) const {
-  return DescribeLocationFsxOntapOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeLocationFsxOntapOutcome(result.GetResultWithOwnership())
+                            : DescribeLocationFsxOntapOutcome(std::move(result.GetError()));
 }
 
 DescribeLocationFsxOpenZfsOutcome DataSyncClient::DescribeLocationFsxOpenZfs(const DescribeLocationFsxOpenZfsRequest& request) const {
-  return DescribeLocationFsxOpenZfsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeLocationFsxOpenZfsOutcome(result.GetResultWithOwnership())
+                            : DescribeLocationFsxOpenZfsOutcome(std::move(result.GetError()));
 }
 
 DescribeLocationFsxWindowsOutcome DataSyncClient::DescribeLocationFsxWindows(const DescribeLocationFsxWindowsRequest& request) const {
-  return DescribeLocationFsxWindowsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeLocationFsxWindowsOutcome(result.GetResultWithOwnership())
+                            : DescribeLocationFsxWindowsOutcome(std::move(result.GetError()));
 }
 
 DescribeLocationHdfsOutcome DataSyncClient::DescribeLocationHdfs(const DescribeLocationHdfsRequest& request) const {
-  return DescribeLocationHdfsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeLocationHdfsOutcome(result.GetResultWithOwnership())
+                            : DescribeLocationHdfsOutcome(std::move(result.GetError()));
 }
 
 DescribeLocationNfsOutcome DataSyncClient::DescribeLocationNfs(const DescribeLocationNfsRequest& request) const {
-  return DescribeLocationNfsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeLocationNfsOutcome(result.GetResultWithOwnership())
+                            : DescribeLocationNfsOutcome(std::move(result.GetError()));
 }
 
 DescribeLocationObjectStorageOutcome DataSyncClient::DescribeLocationObjectStorage(
     const DescribeLocationObjectStorageRequest& request) const {
-  return DescribeLocationObjectStorageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeLocationObjectStorageOutcome(result.GetResultWithOwnership())
+                            : DescribeLocationObjectStorageOutcome(std::move(result.GetError()));
 }
 
 DescribeLocationS3Outcome DataSyncClient::DescribeLocationS3(const DescribeLocationS3Request& request) const {
-  return DescribeLocationS3Outcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeLocationS3Outcome(result.GetResultWithOwnership())
+                            : DescribeLocationS3Outcome(std::move(result.GetError()));
 }
 
 DescribeLocationSmbOutcome DataSyncClient::DescribeLocationSmb(const DescribeLocationSmbRequest& request) const {
-  return DescribeLocationSmbOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeLocationSmbOutcome(result.GetResultWithOwnership())
+                            : DescribeLocationSmbOutcome(std::move(result.GetError()));
 }
 
 DescribeTaskOutcome DataSyncClient::DescribeTask(const DescribeTaskRequest& request) const {
-  return DescribeTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTaskOutcome(result.GetResultWithOwnership()) : DescribeTaskOutcome(std::move(result.GetError()));
 }
 
 DescribeTaskExecutionOutcome DataSyncClient::DescribeTaskExecution(const DescribeTaskExecutionRequest& request) const {
-  return DescribeTaskExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTaskExecutionOutcome(result.GetResultWithOwnership())
+                            : DescribeTaskExecutionOutcome(std::move(result.GetError()));
 }
 
 ListAgentsOutcome DataSyncClient::ListAgents(const ListAgentsRequest& request) const {
-  return ListAgentsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAgentsOutcome(result.GetResultWithOwnership()) : ListAgentsOutcome(std::move(result.GetError()));
 }
 
 ListLocationsOutcome DataSyncClient::ListLocations(const ListLocationsRequest& request) const {
-  return ListLocationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLocationsOutcome(result.GetResultWithOwnership()) : ListLocationsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome DataSyncClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTaskExecutionsOutcome DataSyncClient::ListTaskExecutions(const ListTaskExecutionsRequest& request) const {
-  return ListTaskExecutionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTaskExecutionsOutcome(result.GetResultWithOwnership())
+                            : ListTaskExecutionsOutcome(std::move(result.GetError()));
 }
 
 ListTasksOutcome DataSyncClient::ListTasks(const ListTasksRequest& request) const {
-  return ListTasksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTasksOutcome(result.GetResultWithOwnership()) : ListTasksOutcome(std::move(result.GetError()));
 }
 
 StartTaskExecutionOutcome DataSyncClient::StartTaskExecution(const StartTaskExecutionRequest& request) const {
-  return StartTaskExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartTaskExecutionOutcome(result.GetResultWithOwnership())
+                            : StartTaskExecutionOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome DataSyncClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome DataSyncClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAgentOutcome DataSyncClient::UpdateAgent(const UpdateAgentRequest& request) const {
-  return UpdateAgentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAgentOutcome(result.GetResultWithOwnership()) : UpdateAgentOutcome(std::move(result.GetError()));
 }
 
 UpdateLocationAzureBlobOutcome DataSyncClient::UpdateLocationAzureBlob(const UpdateLocationAzureBlobRequest& request) const {
-  return UpdateLocationAzureBlobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLocationAzureBlobOutcome(result.GetResultWithOwnership())
+                            : UpdateLocationAzureBlobOutcome(std::move(result.GetError()));
 }
 
 UpdateLocationEfsOutcome DataSyncClient::UpdateLocationEfs(const UpdateLocationEfsRequest& request) const {
-  return UpdateLocationEfsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLocationEfsOutcome(result.GetResultWithOwnership())
+                            : UpdateLocationEfsOutcome(std::move(result.GetError()));
 }
 
 UpdateLocationFsxLustreOutcome DataSyncClient::UpdateLocationFsxLustre(const UpdateLocationFsxLustreRequest& request) const {
-  return UpdateLocationFsxLustreOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLocationFsxLustreOutcome(result.GetResultWithOwnership())
+                            : UpdateLocationFsxLustreOutcome(std::move(result.GetError()));
 }
 
 UpdateLocationFsxOntapOutcome DataSyncClient::UpdateLocationFsxOntap(const UpdateLocationFsxOntapRequest& request) const {
-  return UpdateLocationFsxOntapOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLocationFsxOntapOutcome(result.GetResultWithOwnership())
+                            : UpdateLocationFsxOntapOutcome(std::move(result.GetError()));
 }
 
 UpdateLocationFsxOpenZfsOutcome DataSyncClient::UpdateLocationFsxOpenZfs(const UpdateLocationFsxOpenZfsRequest& request) const {
-  return UpdateLocationFsxOpenZfsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLocationFsxOpenZfsOutcome(result.GetResultWithOwnership())
+                            : UpdateLocationFsxOpenZfsOutcome(std::move(result.GetError()));
 }
 
 UpdateLocationFsxWindowsOutcome DataSyncClient::UpdateLocationFsxWindows(const UpdateLocationFsxWindowsRequest& request) const {
-  return UpdateLocationFsxWindowsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLocationFsxWindowsOutcome(result.GetResultWithOwnership())
+                            : UpdateLocationFsxWindowsOutcome(std::move(result.GetError()));
 }
 
 UpdateLocationHdfsOutcome DataSyncClient::UpdateLocationHdfs(const UpdateLocationHdfsRequest& request) const {
-  return UpdateLocationHdfsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLocationHdfsOutcome(result.GetResultWithOwnership())
+                            : UpdateLocationHdfsOutcome(std::move(result.GetError()));
 }
 
 UpdateLocationNfsOutcome DataSyncClient::UpdateLocationNfs(const UpdateLocationNfsRequest& request) const {
-  return UpdateLocationNfsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLocationNfsOutcome(result.GetResultWithOwnership())
+                            : UpdateLocationNfsOutcome(std::move(result.GetError()));
 }
 
 UpdateLocationObjectStorageOutcome DataSyncClient::UpdateLocationObjectStorage(const UpdateLocationObjectStorageRequest& request) const {
-  return UpdateLocationObjectStorageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLocationObjectStorageOutcome(result.GetResultWithOwnership())
+                            : UpdateLocationObjectStorageOutcome(std::move(result.GetError()));
 }
 
 UpdateLocationS3Outcome DataSyncClient::UpdateLocationS3(const UpdateLocationS3Request& request) const {
-  return UpdateLocationS3Outcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLocationS3Outcome(result.GetResultWithOwnership())
+                            : UpdateLocationS3Outcome(std::move(result.GetError()));
 }
 
 UpdateLocationSmbOutcome DataSyncClient::UpdateLocationSmb(const UpdateLocationSmbRequest& request) const {
-  return UpdateLocationSmbOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLocationSmbOutcome(result.GetResultWithOwnership())
+                            : UpdateLocationSmbOutcome(std::move(result.GetError()));
 }
 
 UpdateTaskOutcome DataSyncClient::UpdateTask(const UpdateTaskRequest& request) const {
-  return UpdateTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTaskOutcome(result.GetResultWithOwnership()) : UpdateTaskOutcome(std::move(result.GetError()));
 }
 
 UpdateTaskExecutionOutcome DataSyncClient::UpdateTaskExecution(const UpdateTaskExecutionRequest& request) const {
-  return UpdateTaskExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTaskExecutionOutcome(result.GetResultWithOwnership())
+                            : UpdateTaskExecutionOutcome(std::move(result.GetError()));
 }

@@ -221,7 +221,8 @@ CreateCellOutcome Route53RecoveryReadinessClient::CreateCell(const CreateCellReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/cells");
   };
 
-  return CreateCellOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCellOutcome(result.GetResultWithOwnership()) : CreateCellOutcome(std::move(result.GetError()));
 }
 
 CreateCrossAccountAuthorizationOutcome Route53RecoveryReadinessClient::CreateCrossAccountAuthorization(
@@ -231,7 +232,9 @@ CreateCrossAccountAuthorizationOutcome Route53RecoveryReadinessClient::CreateCro
     endpointResolutionOutcome.GetResult().AddPathSegments("/crossaccountauthorizations");
   };
 
-  return CreateCrossAccountAuthorizationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCrossAccountAuthorizationOutcome(result.GetResultWithOwnership())
+                            : CreateCrossAccountAuthorizationOutcome(std::move(result.GetError()));
 }
 
 CreateReadinessCheckOutcome Route53RecoveryReadinessClient::CreateReadinessCheck(const CreateReadinessCheckRequest& request) const {
@@ -240,7 +243,9 @@ CreateReadinessCheckOutcome Route53RecoveryReadinessClient::CreateReadinessCheck
     endpointResolutionOutcome.GetResult().AddPathSegments("/readinesschecks");
   };
 
-  return CreateReadinessCheckOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateReadinessCheckOutcome(result.GetResultWithOwnership())
+                            : CreateReadinessCheckOutcome(std::move(result.GetError()));
 }
 
 CreateRecoveryGroupOutcome Route53RecoveryReadinessClient::CreateRecoveryGroup(const CreateRecoveryGroupRequest& request) const {
@@ -249,7 +254,9 @@ CreateRecoveryGroupOutcome Route53RecoveryReadinessClient::CreateRecoveryGroup(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/recoverygroups");
   };
 
-  return CreateRecoveryGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRecoveryGroupOutcome(result.GetResultWithOwnership())
+                            : CreateRecoveryGroupOutcome(std::move(result.GetError()));
 }
 
 CreateResourceSetOutcome Route53RecoveryReadinessClient::CreateResourceSet(const CreateResourceSetRequest& request) const {
@@ -258,7 +265,9 @@ CreateResourceSetOutcome Route53RecoveryReadinessClient::CreateResourceSet(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/resourcesets");
   };
 
-  return CreateResourceSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateResourceSetOutcome(result.GetResultWithOwnership())
+                            : CreateResourceSetOutcome(std::move(result.GetError()));
 }
 
 DeleteCellOutcome Route53RecoveryReadinessClient::DeleteCell(const DeleteCellRequest& request) const {
@@ -274,7 +283,8 @@ DeleteCellOutcome Route53RecoveryReadinessClient::DeleteCell(const DeleteCellReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCellName());
   };
 
-  return DeleteCellOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCellOutcome(result.GetResultWithOwnership()) : DeleteCellOutcome(std::move(result.GetError()));
 }
 
 DeleteCrossAccountAuthorizationOutcome Route53RecoveryReadinessClient::DeleteCrossAccountAuthorization(
@@ -292,7 +302,9 @@ DeleteCrossAccountAuthorizationOutcome Route53RecoveryReadinessClient::DeleteCro
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCrossAccountAuthorization());
   };
 
-  return DeleteCrossAccountAuthorizationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCrossAccountAuthorizationOutcome(result.GetResultWithOwnership())
+                            : DeleteCrossAccountAuthorizationOutcome(std::move(result.GetError()));
 }
 
 DeleteReadinessCheckOutcome Route53RecoveryReadinessClient::DeleteReadinessCheck(const DeleteReadinessCheckRequest& request) const {
@@ -308,7 +320,9 @@ DeleteReadinessCheckOutcome Route53RecoveryReadinessClient::DeleteReadinessCheck
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReadinessCheckName());
   };
 
-  return DeleteReadinessCheckOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteReadinessCheckOutcome(result.GetResultWithOwnership())
+                            : DeleteReadinessCheckOutcome(std::move(result.GetError()));
 }
 
 DeleteRecoveryGroupOutcome Route53RecoveryReadinessClient::DeleteRecoveryGroup(const DeleteRecoveryGroupRequest& request) const {
@@ -324,7 +338,9 @@ DeleteRecoveryGroupOutcome Route53RecoveryReadinessClient::DeleteRecoveryGroup(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecoveryGroupName());
   };
 
-  return DeleteRecoveryGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRecoveryGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteRecoveryGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteResourceSetOutcome Route53RecoveryReadinessClient::DeleteResourceSet(const DeleteResourceSetRequest& request) const {
@@ -340,7 +356,9 @@ DeleteResourceSetOutcome Route53RecoveryReadinessClient::DeleteResourceSet(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceSetName());
   };
 
-  return DeleteResourceSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteResourceSetOutcome(result.GetResultWithOwnership())
+                            : DeleteResourceSetOutcome(std::move(result.GetError()));
 }
 
 GetArchitectureRecommendationsOutcome Route53RecoveryReadinessClient::GetArchitectureRecommendations(
@@ -358,7 +376,9 @@ GetArchitectureRecommendationsOutcome Route53RecoveryReadinessClient::GetArchite
     endpointResolutionOutcome.GetResult().AddPathSegments("/architectureRecommendations");
   };
 
-  return GetArchitectureRecommendationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetArchitectureRecommendationsOutcome(result.GetResultWithOwnership())
+                            : GetArchitectureRecommendationsOutcome(std::move(result.GetError()));
 }
 
 GetCellOutcome Route53RecoveryReadinessClient::GetCell(const GetCellRequest& request) const {
@@ -374,7 +394,8 @@ GetCellOutcome Route53RecoveryReadinessClient::GetCell(const GetCellRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCellName());
   };
 
-  return GetCellOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCellOutcome(result.GetResultWithOwnership()) : GetCellOutcome(std::move(result.GetError()));
 }
 
 GetCellReadinessSummaryOutcome Route53RecoveryReadinessClient::GetCellReadinessSummary(
@@ -391,7 +412,9 @@ GetCellReadinessSummaryOutcome Route53RecoveryReadinessClient::GetCellReadinessS
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCellName());
   };
 
-  return GetCellReadinessSummaryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCellReadinessSummaryOutcome(result.GetResultWithOwnership())
+                            : GetCellReadinessSummaryOutcome(std::move(result.GetError()));
 }
 
 GetReadinessCheckOutcome Route53RecoveryReadinessClient::GetReadinessCheck(const GetReadinessCheckRequest& request) const {
@@ -407,7 +430,9 @@ GetReadinessCheckOutcome Route53RecoveryReadinessClient::GetReadinessCheck(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReadinessCheckName());
   };
 
-  return GetReadinessCheckOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetReadinessCheckOutcome(result.GetResultWithOwnership())
+                            : GetReadinessCheckOutcome(std::move(result.GetError()));
 }
 
 GetReadinessCheckResourceStatusOutcome Route53RecoveryReadinessClient::GetReadinessCheckResourceStatus(
@@ -432,7 +457,9 @@ GetReadinessCheckResourceStatusOutcome Route53RecoveryReadinessClient::GetReadin
     endpointResolutionOutcome.GetResult().AddPathSegments("/status");
   };
 
-  return GetReadinessCheckResourceStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetReadinessCheckResourceStatusOutcome(result.GetResultWithOwnership())
+                            : GetReadinessCheckResourceStatusOutcome(std::move(result.GetError()));
 }
 
 GetReadinessCheckStatusOutcome Route53RecoveryReadinessClient::GetReadinessCheckStatus(
@@ -450,7 +477,9 @@ GetReadinessCheckStatusOutcome Route53RecoveryReadinessClient::GetReadinessCheck
     endpointResolutionOutcome.GetResult().AddPathSegments("/status");
   };
 
-  return GetReadinessCheckStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetReadinessCheckStatusOutcome(result.GetResultWithOwnership())
+                            : GetReadinessCheckStatusOutcome(std::move(result.GetError()));
 }
 
 GetRecoveryGroupOutcome Route53RecoveryReadinessClient::GetRecoveryGroup(const GetRecoveryGroupRequest& request) const {
@@ -466,7 +495,9 @@ GetRecoveryGroupOutcome Route53RecoveryReadinessClient::GetRecoveryGroup(const G
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecoveryGroupName());
   };
 
-  return GetRecoveryGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRecoveryGroupOutcome(result.GetResultWithOwnership())
+                            : GetRecoveryGroupOutcome(std::move(result.GetError()));
 }
 
 GetRecoveryGroupReadinessSummaryOutcome Route53RecoveryReadinessClient::GetRecoveryGroupReadinessSummary(
@@ -483,7 +514,9 @@ GetRecoveryGroupReadinessSummaryOutcome Route53RecoveryReadinessClient::GetRecov
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecoveryGroupName());
   };
 
-  return GetRecoveryGroupReadinessSummaryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRecoveryGroupReadinessSummaryOutcome(result.GetResultWithOwnership())
+                            : GetRecoveryGroupReadinessSummaryOutcome(std::move(result.GetError()));
 }
 
 GetResourceSetOutcome Route53RecoveryReadinessClient::GetResourceSet(const GetResourceSetRequest& request) const {
@@ -499,7 +532,8 @@ GetResourceSetOutcome Route53RecoveryReadinessClient::GetResourceSet(const GetRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceSetName());
   };
 
-  return GetResourceSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetResourceSetOutcome(result.GetResultWithOwnership()) : GetResourceSetOutcome(std::move(result.GetError()));
 }
 
 ListCellsOutcome Route53RecoveryReadinessClient::ListCells(const ListCellsRequest& request) const {
@@ -508,7 +542,8 @@ ListCellsOutcome Route53RecoveryReadinessClient::ListCells(const ListCellsReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/cells");
   };
 
-  return ListCellsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCellsOutcome(result.GetResultWithOwnership()) : ListCellsOutcome(std::move(result.GetError()));
 }
 
 ListCrossAccountAuthorizationsOutcome Route53RecoveryReadinessClient::ListCrossAccountAuthorizations(
@@ -518,7 +553,9 @@ ListCrossAccountAuthorizationsOutcome Route53RecoveryReadinessClient::ListCrossA
     endpointResolutionOutcome.GetResult().AddPathSegments("/crossaccountauthorizations");
   };
 
-  return ListCrossAccountAuthorizationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCrossAccountAuthorizationsOutcome(result.GetResultWithOwnership())
+                            : ListCrossAccountAuthorizationsOutcome(std::move(result.GetError()));
 }
 
 ListReadinessChecksOutcome Route53RecoveryReadinessClient::ListReadinessChecks(const ListReadinessChecksRequest& request) const {
@@ -527,7 +564,9 @@ ListReadinessChecksOutcome Route53RecoveryReadinessClient::ListReadinessChecks(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/readinesschecks");
   };
 
-  return ListReadinessChecksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListReadinessChecksOutcome(result.GetResultWithOwnership())
+                            : ListReadinessChecksOutcome(std::move(result.GetError()));
 }
 
 ListRecoveryGroupsOutcome Route53RecoveryReadinessClient::ListRecoveryGroups(const ListRecoveryGroupsRequest& request) const {
@@ -536,7 +575,9 @@ ListRecoveryGroupsOutcome Route53RecoveryReadinessClient::ListRecoveryGroups(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/recoverygroups");
   };
 
-  return ListRecoveryGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRecoveryGroupsOutcome(result.GetResultWithOwnership())
+                            : ListRecoveryGroupsOutcome(std::move(result.GetError()));
 }
 
 ListResourceSetsOutcome Route53RecoveryReadinessClient::ListResourceSets(const ListResourceSetsRequest& request) const {
@@ -545,7 +586,9 @@ ListResourceSetsOutcome Route53RecoveryReadinessClient::ListResourceSets(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/resourcesets");
   };
 
-  return ListResourceSetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListResourceSetsOutcome(result.GetResultWithOwnership())
+                            : ListResourceSetsOutcome(std::move(result.GetError()));
 }
 
 ListRulesOutcome Route53RecoveryReadinessClient::ListRules(const ListRulesRequest& request) const {
@@ -554,7 +597,8 @@ ListRulesOutcome Route53RecoveryReadinessClient::ListRules(const ListRulesReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/rules");
   };
 
-  return ListRulesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRulesOutcome(result.GetResultWithOwnership()) : ListRulesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourcesOutcome Route53RecoveryReadinessClient::ListTagsForResources(const ListTagsForResourcesRequest& request) const {
@@ -570,7 +614,9 @@ ListTagsForResourcesOutcome Route53RecoveryReadinessClient::ListTagsForResources
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourcesOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourcesOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome Route53RecoveryReadinessClient::TagResource(const TagResourceRequest& request) const {
@@ -586,7 +632,8 @@ TagResourceOutcome Route53RecoveryReadinessClient::TagResource(const TagResource
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome Route53RecoveryReadinessClient::UntagResource(const UntagResourceRequest& request) const {
@@ -607,7 +654,8 @@ UntagResourceOutcome Route53RecoveryReadinessClient::UntagResource(const UntagRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateCellOutcome Route53RecoveryReadinessClient::UpdateCell(const UpdateCellRequest& request) const {
@@ -623,7 +671,8 @@ UpdateCellOutcome Route53RecoveryReadinessClient::UpdateCell(const UpdateCellReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCellName());
   };
 
-  return UpdateCellOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateCellOutcome(result.GetResultWithOwnership()) : UpdateCellOutcome(std::move(result.GetError()));
 }
 
 UpdateReadinessCheckOutcome Route53RecoveryReadinessClient::UpdateReadinessCheck(const UpdateReadinessCheckRequest& request) const {
@@ -639,7 +688,9 @@ UpdateReadinessCheckOutcome Route53RecoveryReadinessClient::UpdateReadinessCheck
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReadinessCheckName());
   };
 
-  return UpdateReadinessCheckOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateReadinessCheckOutcome(result.GetResultWithOwnership())
+                            : UpdateReadinessCheckOutcome(std::move(result.GetError()));
 }
 
 UpdateRecoveryGroupOutcome Route53RecoveryReadinessClient::UpdateRecoveryGroup(const UpdateRecoveryGroupRequest& request) const {
@@ -655,7 +706,9 @@ UpdateRecoveryGroupOutcome Route53RecoveryReadinessClient::UpdateRecoveryGroup(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecoveryGroupName());
   };
 
-  return UpdateRecoveryGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateRecoveryGroupOutcome(result.GetResultWithOwnership())
+                            : UpdateRecoveryGroupOutcome(std::move(result.GetError()));
 }
 
 UpdateResourceSetOutcome Route53RecoveryReadinessClient::UpdateResourceSet(const UpdateResourceSetRequest& request) const {
@@ -671,5 +724,7 @@ UpdateResourceSetOutcome Route53RecoveryReadinessClient::UpdateResourceSet(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceSetName());
   };
 
-  return UpdateResourceSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateResourceSetOutcome(result.GetResultWithOwnership())
+                            : UpdateResourceSetOutcome(std::move(result.GetError()));
 }

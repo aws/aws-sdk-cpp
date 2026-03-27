@@ -300,550 +300,781 @@ DatabaseMigrationServiceClient::InvokeOperationOutcome DatabaseMigrationServiceC
 }
 
 AddTagsToResourceOutcome DatabaseMigrationServiceClient::AddTagsToResource(const AddTagsToResourceRequest& request) const {
-  return AddTagsToResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddTagsToResourceOutcome(result.GetResultWithOwnership())
+                            : AddTagsToResourceOutcome(std::move(result.GetError()));
 }
 
 ApplyPendingMaintenanceActionOutcome DatabaseMigrationServiceClient::ApplyPendingMaintenanceAction(
     const ApplyPendingMaintenanceActionRequest& request) const {
-  return ApplyPendingMaintenanceActionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ApplyPendingMaintenanceActionOutcome(result.GetResultWithOwnership())
+                            : ApplyPendingMaintenanceActionOutcome(std::move(result.GetError()));
 }
 
 BatchStartRecommendationsOutcome DatabaseMigrationServiceClient::BatchStartRecommendations(
     const BatchStartRecommendationsRequest& request) const {
-  return BatchStartRecommendationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchStartRecommendationsOutcome(result.GetResultWithOwnership())
+                            : BatchStartRecommendationsOutcome(std::move(result.GetError()));
 }
 
 CancelMetadataModelConversionOutcome DatabaseMigrationServiceClient::CancelMetadataModelConversion(
     const CancelMetadataModelConversionRequest& request) const {
-  return CancelMetadataModelConversionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelMetadataModelConversionOutcome(result.GetResultWithOwnership())
+                            : CancelMetadataModelConversionOutcome(std::move(result.GetError()));
 }
 
 CancelMetadataModelCreationOutcome DatabaseMigrationServiceClient::CancelMetadataModelCreation(
     const CancelMetadataModelCreationRequest& request) const {
-  return CancelMetadataModelCreationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelMetadataModelCreationOutcome(result.GetResultWithOwnership())
+                            : CancelMetadataModelCreationOutcome(std::move(result.GetError()));
 }
 
 CancelReplicationTaskAssessmentRunOutcome DatabaseMigrationServiceClient::CancelReplicationTaskAssessmentRun(
     const CancelReplicationTaskAssessmentRunRequest& request) const {
-  return CancelReplicationTaskAssessmentRunOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelReplicationTaskAssessmentRunOutcome(result.GetResultWithOwnership())
+                            : CancelReplicationTaskAssessmentRunOutcome(std::move(result.GetError()));
 }
 
 CreateDataMigrationOutcome DatabaseMigrationServiceClient::CreateDataMigration(const CreateDataMigrationRequest& request) const {
-  return CreateDataMigrationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDataMigrationOutcome(result.GetResultWithOwnership())
+                            : CreateDataMigrationOutcome(std::move(result.GetError()));
 }
 
 CreateDataProviderOutcome DatabaseMigrationServiceClient::CreateDataProvider(const CreateDataProviderRequest& request) const {
-  return CreateDataProviderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDataProviderOutcome(result.GetResultWithOwnership())
+                            : CreateDataProviderOutcome(std::move(result.GetError()));
 }
 
 CreateEndpointOutcome DatabaseMigrationServiceClient::CreateEndpoint(const CreateEndpointRequest& request) const {
-  return CreateEndpointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEndpointOutcome(result.GetResultWithOwnership()) : CreateEndpointOutcome(std::move(result.GetError()));
 }
 
 CreateEventSubscriptionOutcome DatabaseMigrationServiceClient::CreateEventSubscription(
     const CreateEventSubscriptionRequest& request) const {
-  return CreateEventSubscriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEventSubscriptionOutcome(result.GetResultWithOwnership())
+                            : CreateEventSubscriptionOutcome(std::move(result.GetError()));
 }
 
 CreateFleetAdvisorCollectorOutcome DatabaseMigrationServiceClient::CreateFleetAdvisorCollector(
     const CreateFleetAdvisorCollectorRequest& request) const {
-  return CreateFleetAdvisorCollectorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFleetAdvisorCollectorOutcome(result.GetResultWithOwnership())
+                            : CreateFleetAdvisorCollectorOutcome(std::move(result.GetError()));
 }
 
 CreateInstanceProfileOutcome DatabaseMigrationServiceClient::CreateInstanceProfile(const CreateInstanceProfileRequest& request) const {
-  return CreateInstanceProfileOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateInstanceProfileOutcome(result.GetResultWithOwnership())
+                            : CreateInstanceProfileOutcome(std::move(result.GetError()));
 }
 
 CreateMigrationProjectOutcome DatabaseMigrationServiceClient::CreateMigrationProject(const CreateMigrationProjectRequest& request) const {
-  return CreateMigrationProjectOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMigrationProjectOutcome(result.GetResultWithOwnership())
+                            : CreateMigrationProjectOutcome(std::move(result.GetError()));
 }
 
 CreateReplicationConfigOutcome DatabaseMigrationServiceClient::CreateReplicationConfig(
     const CreateReplicationConfigRequest& request) const {
-  return CreateReplicationConfigOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateReplicationConfigOutcome(result.GetResultWithOwnership())
+                            : CreateReplicationConfigOutcome(std::move(result.GetError()));
 }
 
 CreateReplicationInstanceOutcome DatabaseMigrationServiceClient::CreateReplicationInstance(
     const CreateReplicationInstanceRequest& request) const {
-  return CreateReplicationInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateReplicationInstanceOutcome(result.GetResultWithOwnership())
+                            : CreateReplicationInstanceOutcome(std::move(result.GetError()));
 }
 
 CreateReplicationSubnetGroupOutcome DatabaseMigrationServiceClient::CreateReplicationSubnetGroup(
     const CreateReplicationSubnetGroupRequest& request) const {
-  return CreateReplicationSubnetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateReplicationSubnetGroupOutcome(result.GetResultWithOwnership())
+                            : CreateReplicationSubnetGroupOutcome(std::move(result.GetError()));
 }
 
 CreateReplicationTaskOutcome DatabaseMigrationServiceClient::CreateReplicationTask(const CreateReplicationTaskRequest& request) const {
-  return CreateReplicationTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateReplicationTaskOutcome(result.GetResultWithOwnership())
+                            : CreateReplicationTaskOutcome(std::move(result.GetError()));
 }
 
 DeleteCertificateOutcome DatabaseMigrationServiceClient::DeleteCertificate(const DeleteCertificateRequest& request) const {
-  return DeleteCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCertificateOutcome(result.GetResultWithOwnership())
+                            : DeleteCertificateOutcome(std::move(result.GetError()));
 }
 
 DeleteConnectionOutcome DatabaseMigrationServiceClient::DeleteConnection(const DeleteConnectionRequest& request) const {
-  return DeleteConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteConnectionOutcome(result.GetResultWithOwnership())
+                            : DeleteConnectionOutcome(std::move(result.GetError()));
 }
 
 DeleteDataMigrationOutcome DatabaseMigrationServiceClient::DeleteDataMigration(const DeleteDataMigrationRequest& request) const {
-  return DeleteDataMigrationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDataMigrationOutcome(result.GetResultWithOwnership())
+                            : DeleteDataMigrationOutcome(std::move(result.GetError()));
 }
 
 DeleteDataProviderOutcome DatabaseMigrationServiceClient::DeleteDataProvider(const DeleteDataProviderRequest& request) const {
-  return DeleteDataProviderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDataProviderOutcome(result.GetResultWithOwnership())
+                            : DeleteDataProviderOutcome(std::move(result.GetError()));
 }
 
 DeleteEndpointOutcome DatabaseMigrationServiceClient::DeleteEndpoint(const DeleteEndpointRequest& request) const {
-  return DeleteEndpointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteEndpointOutcome(result.GetResultWithOwnership()) : DeleteEndpointOutcome(std::move(result.GetError()));
 }
 
 DeleteEventSubscriptionOutcome DatabaseMigrationServiceClient::DeleteEventSubscription(
     const DeleteEventSubscriptionRequest& request) const {
-  return DeleteEventSubscriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteEventSubscriptionOutcome(result.GetResultWithOwnership())
+                            : DeleteEventSubscriptionOutcome(std::move(result.GetError()));
 }
 
 DeleteFleetAdvisorCollectorOutcome DatabaseMigrationServiceClient::DeleteFleetAdvisorCollector(
     const DeleteFleetAdvisorCollectorRequest& request) const {
-  return DeleteFleetAdvisorCollectorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteFleetAdvisorCollectorOutcome(result.GetResultWithOwnership())
+                            : DeleteFleetAdvisorCollectorOutcome(std::move(result.GetError()));
 }
 
 DeleteFleetAdvisorDatabasesOutcome DatabaseMigrationServiceClient::DeleteFleetAdvisorDatabases(
     const DeleteFleetAdvisorDatabasesRequest& request) const {
-  return DeleteFleetAdvisorDatabasesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteFleetAdvisorDatabasesOutcome(result.GetResultWithOwnership())
+                            : DeleteFleetAdvisorDatabasesOutcome(std::move(result.GetError()));
 }
 
 DeleteInstanceProfileOutcome DatabaseMigrationServiceClient::DeleteInstanceProfile(const DeleteInstanceProfileRequest& request) const {
-  return DeleteInstanceProfileOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteInstanceProfileOutcome(result.GetResultWithOwnership())
+                            : DeleteInstanceProfileOutcome(std::move(result.GetError()));
 }
 
 DeleteMigrationProjectOutcome DatabaseMigrationServiceClient::DeleteMigrationProject(const DeleteMigrationProjectRequest& request) const {
-  return DeleteMigrationProjectOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteMigrationProjectOutcome(result.GetResultWithOwnership())
+                            : DeleteMigrationProjectOutcome(std::move(result.GetError()));
 }
 
 DeleteReplicationConfigOutcome DatabaseMigrationServiceClient::DeleteReplicationConfig(
     const DeleteReplicationConfigRequest& request) const {
-  return DeleteReplicationConfigOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteReplicationConfigOutcome(result.GetResultWithOwnership())
+                            : DeleteReplicationConfigOutcome(std::move(result.GetError()));
 }
 
 DeleteReplicationInstanceOutcome DatabaseMigrationServiceClient::DeleteReplicationInstance(
     const DeleteReplicationInstanceRequest& request) const {
-  return DeleteReplicationInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteReplicationInstanceOutcome(result.GetResultWithOwnership())
+                            : DeleteReplicationInstanceOutcome(std::move(result.GetError()));
 }
 
 DeleteReplicationSubnetGroupOutcome DatabaseMigrationServiceClient::DeleteReplicationSubnetGroup(
     const DeleteReplicationSubnetGroupRequest& request) const {
-  return DeleteReplicationSubnetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteReplicationSubnetGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteReplicationSubnetGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteReplicationTaskOutcome DatabaseMigrationServiceClient::DeleteReplicationTask(const DeleteReplicationTaskRequest& request) const {
-  return DeleteReplicationTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteReplicationTaskOutcome(result.GetResultWithOwnership())
+                            : DeleteReplicationTaskOutcome(std::move(result.GetError()));
 }
 
 DeleteReplicationTaskAssessmentRunOutcome DatabaseMigrationServiceClient::DeleteReplicationTaskAssessmentRun(
     const DeleteReplicationTaskAssessmentRunRequest& request) const {
-  return DeleteReplicationTaskAssessmentRunOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteReplicationTaskAssessmentRunOutcome(result.GetResultWithOwnership())
+                            : DeleteReplicationTaskAssessmentRunOutcome(std::move(result.GetError()));
 }
 
 DescribeAccountAttributesOutcome DatabaseMigrationServiceClient::DescribeAccountAttributes(
     const DescribeAccountAttributesRequest& request) const {
-  return DescribeAccountAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAccountAttributesOutcome(result.GetResultWithOwnership())
+                            : DescribeAccountAttributesOutcome(std::move(result.GetError()));
 }
 
 DescribeApplicableIndividualAssessmentsOutcome DatabaseMigrationServiceClient::DescribeApplicableIndividualAssessments(
     const DescribeApplicableIndividualAssessmentsRequest& request) const {
-  return DescribeApplicableIndividualAssessmentsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeApplicableIndividualAssessmentsOutcome(result.GetResultWithOwnership())
+                            : DescribeApplicableIndividualAssessmentsOutcome(std::move(result.GetError()));
 }
 
 DescribeCertificatesOutcome DatabaseMigrationServiceClient::DescribeCertificates(const DescribeCertificatesRequest& request) const {
-  return DescribeCertificatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCertificatesOutcome(result.GetResultWithOwnership())
+                            : DescribeCertificatesOutcome(std::move(result.GetError()));
 }
 
 DescribeConnectionsOutcome DatabaseMigrationServiceClient::DescribeConnections(const DescribeConnectionsRequest& request) const {
-  return DescribeConnectionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeConnectionsOutcome(result.GetResultWithOwnership())
+                            : DescribeConnectionsOutcome(std::move(result.GetError()));
 }
 
 DescribeConversionConfigurationOutcome DatabaseMigrationServiceClient::DescribeConversionConfiguration(
     const DescribeConversionConfigurationRequest& request) const {
-  return DescribeConversionConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeConversionConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeConversionConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeDataMigrationsOutcome DatabaseMigrationServiceClient::DescribeDataMigrations(const DescribeDataMigrationsRequest& request) const {
-  return DescribeDataMigrationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDataMigrationsOutcome(result.GetResultWithOwnership())
+                            : DescribeDataMigrationsOutcome(std::move(result.GetError()));
 }
 
 DescribeDataProvidersOutcome DatabaseMigrationServiceClient::DescribeDataProviders(const DescribeDataProvidersRequest& request) const {
-  return DescribeDataProvidersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDataProvidersOutcome(result.GetResultWithOwnership())
+                            : DescribeDataProvidersOutcome(std::move(result.GetError()));
 }
 
 DescribeEndpointSettingsOutcome DatabaseMigrationServiceClient::DescribeEndpointSettings(
     const DescribeEndpointSettingsRequest& request) const {
-  return DescribeEndpointSettingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEndpointSettingsOutcome(result.GetResultWithOwnership())
+                            : DescribeEndpointSettingsOutcome(std::move(result.GetError()));
 }
 
 DescribeEndpointTypesOutcome DatabaseMigrationServiceClient::DescribeEndpointTypes(const DescribeEndpointTypesRequest& request) const {
-  return DescribeEndpointTypesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEndpointTypesOutcome(result.GetResultWithOwnership())
+                            : DescribeEndpointTypesOutcome(std::move(result.GetError()));
 }
 
 DescribeEndpointsOutcome DatabaseMigrationServiceClient::DescribeEndpoints(const DescribeEndpointsRequest& request) const {
-  return DescribeEndpointsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEndpointsOutcome(result.GetResultWithOwnership())
+                            : DescribeEndpointsOutcome(std::move(result.GetError()));
 }
 
 DescribeEngineVersionsOutcome DatabaseMigrationServiceClient::DescribeEngineVersions(const DescribeEngineVersionsRequest& request) const {
-  return DescribeEngineVersionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEngineVersionsOutcome(result.GetResultWithOwnership())
+                            : DescribeEngineVersionsOutcome(std::move(result.GetError()));
 }
 
 DescribeEventCategoriesOutcome DatabaseMigrationServiceClient::DescribeEventCategories(
     const DescribeEventCategoriesRequest& request) const {
-  return DescribeEventCategoriesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEventCategoriesOutcome(result.GetResultWithOwnership())
+                            : DescribeEventCategoriesOutcome(std::move(result.GetError()));
 }
 
 DescribeEventSubscriptionsOutcome DatabaseMigrationServiceClient::DescribeEventSubscriptions(
     const DescribeEventSubscriptionsRequest& request) const {
-  return DescribeEventSubscriptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEventSubscriptionsOutcome(result.GetResultWithOwnership())
+                            : DescribeEventSubscriptionsOutcome(std::move(result.GetError()));
 }
 
 DescribeEventsOutcome DatabaseMigrationServiceClient::DescribeEvents(const DescribeEventsRequest& request) const {
-  return DescribeEventsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEventsOutcome(result.GetResultWithOwnership()) : DescribeEventsOutcome(std::move(result.GetError()));
 }
 
 DescribeExtensionPackAssociationsOutcome DatabaseMigrationServiceClient::DescribeExtensionPackAssociations(
     const DescribeExtensionPackAssociationsRequest& request) const {
-  return DescribeExtensionPackAssociationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeExtensionPackAssociationsOutcome(result.GetResultWithOwnership())
+                            : DescribeExtensionPackAssociationsOutcome(std::move(result.GetError()));
 }
 
 DescribeFleetAdvisorCollectorsOutcome DatabaseMigrationServiceClient::DescribeFleetAdvisorCollectors(
     const DescribeFleetAdvisorCollectorsRequest& request) const {
-  return DescribeFleetAdvisorCollectorsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeFleetAdvisorCollectorsOutcome(result.GetResultWithOwnership())
+                            : DescribeFleetAdvisorCollectorsOutcome(std::move(result.GetError()));
 }
 
 DescribeFleetAdvisorDatabasesOutcome DatabaseMigrationServiceClient::DescribeFleetAdvisorDatabases(
     const DescribeFleetAdvisorDatabasesRequest& request) const {
-  return DescribeFleetAdvisorDatabasesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeFleetAdvisorDatabasesOutcome(result.GetResultWithOwnership())
+                            : DescribeFleetAdvisorDatabasesOutcome(std::move(result.GetError()));
 }
 
 DescribeFleetAdvisorLsaAnalysisOutcome DatabaseMigrationServiceClient::DescribeFleetAdvisorLsaAnalysis(
     const DescribeFleetAdvisorLsaAnalysisRequest& request) const {
-  return DescribeFleetAdvisorLsaAnalysisOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeFleetAdvisorLsaAnalysisOutcome(result.GetResultWithOwnership())
+                            : DescribeFleetAdvisorLsaAnalysisOutcome(std::move(result.GetError()));
 }
 
 DescribeFleetAdvisorSchemaObjectSummaryOutcome DatabaseMigrationServiceClient::DescribeFleetAdvisorSchemaObjectSummary(
     const DescribeFleetAdvisorSchemaObjectSummaryRequest& request) const {
-  return DescribeFleetAdvisorSchemaObjectSummaryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeFleetAdvisorSchemaObjectSummaryOutcome(result.GetResultWithOwnership())
+                            : DescribeFleetAdvisorSchemaObjectSummaryOutcome(std::move(result.GetError()));
 }
 
 DescribeFleetAdvisorSchemasOutcome DatabaseMigrationServiceClient::DescribeFleetAdvisorSchemas(
     const DescribeFleetAdvisorSchemasRequest& request) const {
-  return DescribeFleetAdvisorSchemasOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeFleetAdvisorSchemasOutcome(result.GetResultWithOwnership())
+                            : DescribeFleetAdvisorSchemasOutcome(std::move(result.GetError()));
 }
 
 DescribeInstanceProfilesOutcome DatabaseMigrationServiceClient::DescribeInstanceProfiles(
     const DescribeInstanceProfilesRequest& request) const {
-  return DescribeInstanceProfilesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeInstanceProfilesOutcome(result.GetResultWithOwnership())
+                            : DescribeInstanceProfilesOutcome(std::move(result.GetError()));
 }
 
 DescribeMetadataModelOutcome DatabaseMigrationServiceClient::DescribeMetadataModel(const DescribeMetadataModelRequest& request) const {
-  return DescribeMetadataModelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeMetadataModelOutcome(result.GetResultWithOwnership())
+                            : DescribeMetadataModelOutcome(std::move(result.GetError()));
 }
 
 DescribeMetadataModelAssessmentsOutcome DatabaseMigrationServiceClient::DescribeMetadataModelAssessments(
     const DescribeMetadataModelAssessmentsRequest& request) const {
-  return DescribeMetadataModelAssessmentsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeMetadataModelAssessmentsOutcome(result.GetResultWithOwnership())
+                            : DescribeMetadataModelAssessmentsOutcome(std::move(result.GetError()));
 }
 
 DescribeMetadataModelChildrenOutcome DatabaseMigrationServiceClient::DescribeMetadataModelChildren(
     const DescribeMetadataModelChildrenRequest& request) const {
-  return DescribeMetadataModelChildrenOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeMetadataModelChildrenOutcome(result.GetResultWithOwnership())
+                            : DescribeMetadataModelChildrenOutcome(std::move(result.GetError()));
 }
 
 DescribeMetadataModelConversionsOutcome DatabaseMigrationServiceClient::DescribeMetadataModelConversions(
     const DescribeMetadataModelConversionsRequest& request) const {
-  return DescribeMetadataModelConversionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeMetadataModelConversionsOutcome(result.GetResultWithOwnership())
+                            : DescribeMetadataModelConversionsOutcome(std::move(result.GetError()));
 }
 
 DescribeMetadataModelCreationsOutcome DatabaseMigrationServiceClient::DescribeMetadataModelCreations(
     const DescribeMetadataModelCreationsRequest& request) const {
-  return DescribeMetadataModelCreationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeMetadataModelCreationsOutcome(result.GetResultWithOwnership())
+                            : DescribeMetadataModelCreationsOutcome(std::move(result.GetError()));
 }
 
 DescribeMetadataModelExportsAsScriptOutcome DatabaseMigrationServiceClient::DescribeMetadataModelExportsAsScript(
     const DescribeMetadataModelExportsAsScriptRequest& request) const {
-  return DescribeMetadataModelExportsAsScriptOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeMetadataModelExportsAsScriptOutcome(result.GetResultWithOwnership())
+                            : DescribeMetadataModelExportsAsScriptOutcome(std::move(result.GetError()));
 }
 
 DescribeMetadataModelExportsToTargetOutcome DatabaseMigrationServiceClient::DescribeMetadataModelExportsToTarget(
     const DescribeMetadataModelExportsToTargetRequest& request) const {
-  return DescribeMetadataModelExportsToTargetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeMetadataModelExportsToTargetOutcome(result.GetResultWithOwnership())
+                            : DescribeMetadataModelExportsToTargetOutcome(std::move(result.GetError()));
 }
 
 DescribeMetadataModelImportsOutcome DatabaseMigrationServiceClient::DescribeMetadataModelImports(
     const DescribeMetadataModelImportsRequest& request) const {
-  return DescribeMetadataModelImportsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeMetadataModelImportsOutcome(result.GetResultWithOwnership())
+                            : DescribeMetadataModelImportsOutcome(std::move(result.GetError()));
 }
 
 DescribeMigrationProjectsOutcome DatabaseMigrationServiceClient::DescribeMigrationProjects(
     const DescribeMigrationProjectsRequest& request) const {
-  return DescribeMigrationProjectsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeMigrationProjectsOutcome(result.GetResultWithOwnership())
+                            : DescribeMigrationProjectsOutcome(std::move(result.GetError()));
 }
 
 DescribeOrderableReplicationInstancesOutcome DatabaseMigrationServiceClient::DescribeOrderableReplicationInstances(
     const DescribeOrderableReplicationInstancesRequest& request) const {
-  return DescribeOrderableReplicationInstancesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeOrderableReplicationInstancesOutcome(result.GetResultWithOwnership())
+                            : DescribeOrderableReplicationInstancesOutcome(std::move(result.GetError()));
 }
 
 DescribePendingMaintenanceActionsOutcome DatabaseMigrationServiceClient::DescribePendingMaintenanceActions(
     const DescribePendingMaintenanceActionsRequest& request) const {
-  return DescribePendingMaintenanceActionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePendingMaintenanceActionsOutcome(result.GetResultWithOwnership())
+                            : DescribePendingMaintenanceActionsOutcome(std::move(result.GetError()));
 }
 
 DescribeRecommendationLimitationsOutcome DatabaseMigrationServiceClient::DescribeRecommendationLimitations(
     const DescribeRecommendationLimitationsRequest& request) const {
-  return DescribeRecommendationLimitationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRecommendationLimitationsOutcome(result.GetResultWithOwnership())
+                            : DescribeRecommendationLimitationsOutcome(std::move(result.GetError()));
 }
 
 DescribeRecommendationsOutcome DatabaseMigrationServiceClient::DescribeRecommendations(
     const DescribeRecommendationsRequest& request) const {
-  return DescribeRecommendationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRecommendationsOutcome(result.GetResultWithOwnership())
+                            : DescribeRecommendationsOutcome(std::move(result.GetError()));
 }
 
 DescribeRefreshSchemasStatusOutcome DatabaseMigrationServiceClient::DescribeRefreshSchemasStatus(
     const DescribeRefreshSchemasStatusRequest& request) const {
-  return DescribeRefreshSchemasStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRefreshSchemasStatusOutcome(result.GetResultWithOwnership())
+                            : DescribeRefreshSchemasStatusOutcome(std::move(result.GetError()));
 }
 
 DescribeReplicationConfigsOutcome DatabaseMigrationServiceClient::DescribeReplicationConfigs(
     const DescribeReplicationConfigsRequest& request) const {
-  return DescribeReplicationConfigsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeReplicationConfigsOutcome(result.GetResultWithOwnership())
+                            : DescribeReplicationConfigsOutcome(std::move(result.GetError()));
 }
 
 DescribeReplicationInstanceTaskLogsOutcome DatabaseMigrationServiceClient::DescribeReplicationInstanceTaskLogs(
     const DescribeReplicationInstanceTaskLogsRequest& request) const {
-  return DescribeReplicationInstanceTaskLogsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeReplicationInstanceTaskLogsOutcome(result.GetResultWithOwnership())
+                            : DescribeReplicationInstanceTaskLogsOutcome(std::move(result.GetError()));
 }
 
 DescribeReplicationInstancesOutcome DatabaseMigrationServiceClient::DescribeReplicationInstances(
     const DescribeReplicationInstancesRequest& request) const {
-  return DescribeReplicationInstancesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeReplicationInstancesOutcome(result.GetResultWithOwnership())
+                            : DescribeReplicationInstancesOutcome(std::move(result.GetError()));
 }
 
 DescribeReplicationSubnetGroupsOutcome DatabaseMigrationServiceClient::DescribeReplicationSubnetGroups(
     const DescribeReplicationSubnetGroupsRequest& request) const {
-  return DescribeReplicationSubnetGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeReplicationSubnetGroupsOutcome(result.GetResultWithOwnership())
+                            : DescribeReplicationSubnetGroupsOutcome(std::move(result.GetError()));
 }
 
 DescribeReplicationTableStatisticsOutcome DatabaseMigrationServiceClient::DescribeReplicationTableStatistics(
     const DescribeReplicationTableStatisticsRequest& request) const {
-  return DescribeReplicationTableStatisticsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeReplicationTableStatisticsOutcome(result.GetResultWithOwnership())
+                            : DescribeReplicationTableStatisticsOutcome(std::move(result.GetError()));
 }
 
 DescribeReplicationTaskAssessmentResultsOutcome DatabaseMigrationServiceClient::DescribeReplicationTaskAssessmentResults(
     const DescribeReplicationTaskAssessmentResultsRequest& request) const {
-  return DescribeReplicationTaskAssessmentResultsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeReplicationTaskAssessmentResultsOutcome(result.GetResultWithOwnership())
+                            : DescribeReplicationTaskAssessmentResultsOutcome(std::move(result.GetError()));
 }
 
 DescribeReplicationTaskAssessmentRunsOutcome DatabaseMigrationServiceClient::DescribeReplicationTaskAssessmentRuns(
     const DescribeReplicationTaskAssessmentRunsRequest& request) const {
-  return DescribeReplicationTaskAssessmentRunsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeReplicationTaskAssessmentRunsOutcome(result.GetResultWithOwnership())
+                            : DescribeReplicationTaskAssessmentRunsOutcome(std::move(result.GetError()));
 }
 
 DescribeReplicationTaskIndividualAssessmentsOutcome DatabaseMigrationServiceClient::DescribeReplicationTaskIndividualAssessments(
     const DescribeReplicationTaskIndividualAssessmentsRequest& request) const {
-  return DescribeReplicationTaskIndividualAssessmentsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeReplicationTaskIndividualAssessmentsOutcome(result.GetResultWithOwnership())
+                            : DescribeReplicationTaskIndividualAssessmentsOutcome(std::move(result.GetError()));
 }
 
 DescribeReplicationTasksOutcome DatabaseMigrationServiceClient::DescribeReplicationTasks(
     const DescribeReplicationTasksRequest& request) const {
-  return DescribeReplicationTasksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeReplicationTasksOutcome(result.GetResultWithOwnership())
+                            : DescribeReplicationTasksOutcome(std::move(result.GetError()));
 }
 
 DescribeReplicationsOutcome DatabaseMigrationServiceClient::DescribeReplications(const DescribeReplicationsRequest& request) const {
-  return DescribeReplicationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeReplicationsOutcome(result.GetResultWithOwnership())
+                            : DescribeReplicationsOutcome(std::move(result.GetError()));
 }
 
 DescribeSchemasOutcome DatabaseMigrationServiceClient::DescribeSchemas(const DescribeSchemasRequest& request) const {
-  return DescribeSchemasOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSchemasOutcome(result.GetResultWithOwnership())
+                            : DescribeSchemasOutcome(std::move(result.GetError()));
 }
 
 DescribeTableStatisticsOutcome DatabaseMigrationServiceClient::DescribeTableStatistics(
     const DescribeTableStatisticsRequest& request) const {
-  return DescribeTableStatisticsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTableStatisticsOutcome(result.GetResultWithOwnership())
+                            : DescribeTableStatisticsOutcome(std::move(result.GetError()));
 }
 
 ExportMetadataModelAssessmentOutcome DatabaseMigrationServiceClient::ExportMetadataModelAssessment(
     const ExportMetadataModelAssessmentRequest& request) const {
-  return ExportMetadataModelAssessmentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExportMetadataModelAssessmentOutcome(result.GetResultWithOwnership())
+                            : ExportMetadataModelAssessmentOutcome(std::move(result.GetError()));
 }
 
 GetTargetSelectionRulesOutcome DatabaseMigrationServiceClient::GetTargetSelectionRules(
     const GetTargetSelectionRulesRequest& request) const {
-  return GetTargetSelectionRulesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTargetSelectionRulesOutcome(result.GetResultWithOwnership())
+                            : GetTargetSelectionRulesOutcome(std::move(result.GetError()));
 }
 
 ImportCertificateOutcome DatabaseMigrationServiceClient::ImportCertificate(const ImportCertificateRequest& request) const {
-  return ImportCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportCertificateOutcome(result.GetResultWithOwnership())
+                            : ImportCertificateOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome DatabaseMigrationServiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ModifyConversionConfigurationOutcome DatabaseMigrationServiceClient::ModifyConversionConfiguration(
     const ModifyConversionConfigurationRequest& request) const {
-  return ModifyConversionConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyConversionConfigurationOutcome(result.GetResultWithOwnership())
+                            : ModifyConversionConfigurationOutcome(std::move(result.GetError()));
 }
 
 ModifyDataMigrationOutcome DatabaseMigrationServiceClient::ModifyDataMigration(const ModifyDataMigrationRequest& request) const {
-  return ModifyDataMigrationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyDataMigrationOutcome(result.GetResultWithOwnership())
+                            : ModifyDataMigrationOutcome(std::move(result.GetError()));
 }
 
 ModifyDataProviderOutcome DatabaseMigrationServiceClient::ModifyDataProvider(const ModifyDataProviderRequest& request) const {
-  return ModifyDataProviderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyDataProviderOutcome(result.GetResultWithOwnership())
+                            : ModifyDataProviderOutcome(std::move(result.GetError()));
 }
 
 ModifyEndpointOutcome DatabaseMigrationServiceClient::ModifyEndpoint(const ModifyEndpointRequest& request) const {
-  return ModifyEndpointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyEndpointOutcome(result.GetResultWithOwnership()) : ModifyEndpointOutcome(std::move(result.GetError()));
 }
 
 ModifyEventSubscriptionOutcome DatabaseMigrationServiceClient::ModifyEventSubscription(
     const ModifyEventSubscriptionRequest& request) const {
-  return ModifyEventSubscriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyEventSubscriptionOutcome(result.GetResultWithOwnership())
+                            : ModifyEventSubscriptionOutcome(std::move(result.GetError()));
 }
 
 ModifyInstanceProfileOutcome DatabaseMigrationServiceClient::ModifyInstanceProfile(const ModifyInstanceProfileRequest& request) const {
-  return ModifyInstanceProfileOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyInstanceProfileOutcome(result.GetResultWithOwnership())
+                            : ModifyInstanceProfileOutcome(std::move(result.GetError()));
 }
 
 ModifyMigrationProjectOutcome DatabaseMigrationServiceClient::ModifyMigrationProject(const ModifyMigrationProjectRequest& request) const {
-  return ModifyMigrationProjectOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyMigrationProjectOutcome(result.GetResultWithOwnership())
+                            : ModifyMigrationProjectOutcome(std::move(result.GetError()));
 }
 
 ModifyReplicationConfigOutcome DatabaseMigrationServiceClient::ModifyReplicationConfig(
     const ModifyReplicationConfigRequest& request) const {
-  return ModifyReplicationConfigOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyReplicationConfigOutcome(result.GetResultWithOwnership())
+                            : ModifyReplicationConfigOutcome(std::move(result.GetError()));
 }
 
 ModifyReplicationInstanceOutcome DatabaseMigrationServiceClient::ModifyReplicationInstance(
     const ModifyReplicationInstanceRequest& request) const {
-  return ModifyReplicationInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyReplicationInstanceOutcome(result.GetResultWithOwnership())
+                            : ModifyReplicationInstanceOutcome(std::move(result.GetError()));
 }
 
 ModifyReplicationSubnetGroupOutcome DatabaseMigrationServiceClient::ModifyReplicationSubnetGroup(
     const ModifyReplicationSubnetGroupRequest& request) const {
-  return ModifyReplicationSubnetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyReplicationSubnetGroupOutcome(result.GetResultWithOwnership())
+                            : ModifyReplicationSubnetGroupOutcome(std::move(result.GetError()));
 }
 
 ModifyReplicationTaskOutcome DatabaseMigrationServiceClient::ModifyReplicationTask(const ModifyReplicationTaskRequest& request) const {
-  return ModifyReplicationTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyReplicationTaskOutcome(result.GetResultWithOwnership())
+                            : ModifyReplicationTaskOutcome(std::move(result.GetError()));
 }
 
 MoveReplicationTaskOutcome DatabaseMigrationServiceClient::MoveReplicationTask(const MoveReplicationTaskRequest& request) const {
-  return MoveReplicationTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? MoveReplicationTaskOutcome(result.GetResultWithOwnership())
+                            : MoveReplicationTaskOutcome(std::move(result.GetError()));
 }
 
 RebootReplicationInstanceOutcome DatabaseMigrationServiceClient::RebootReplicationInstance(
     const RebootReplicationInstanceRequest& request) const {
-  return RebootReplicationInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RebootReplicationInstanceOutcome(result.GetResultWithOwnership())
+                            : RebootReplicationInstanceOutcome(std::move(result.GetError()));
 }
 
 RefreshSchemasOutcome DatabaseMigrationServiceClient::RefreshSchemas(const RefreshSchemasRequest& request) const {
-  return RefreshSchemasOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RefreshSchemasOutcome(result.GetResultWithOwnership()) : RefreshSchemasOutcome(std::move(result.GetError()));
 }
 
 ReloadReplicationTablesOutcome DatabaseMigrationServiceClient::ReloadReplicationTables(
     const ReloadReplicationTablesRequest& request) const {
-  return ReloadReplicationTablesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ReloadReplicationTablesOutcome(result.GetResultWithOwnership())
+                            : ReloadReplicationTablesOutcome(std::move(result.GetError()));
 }
 
 ReloadTablesOutcome DatabaseMigrationServiceClient::ReloadTables(const ReloadTablesRequest& request) const {
-  return ReloadTablesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ReloadTablesOutcome(result.GetResultWithOwnership()) : ReloadTablesOutcome(std::move(result.GetError()));
 }
 
 RemoveTagsFromResourceOutcome DatabaseMigrationServiceClient::RemoveTagsFromResource(const RemoveTagsFromResourceRequest& request) const {
-  return RemoveTagsFromResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveTagsFromResourceOutcome(result.GetResultWithOwnership())
+                            : RemoveTagsFromResourceOutcome(std::move(result.GetError()));
 }
 
 RunFleetAdvisorLsaAnalysisOutcome DatabaseMigrationServiceClient::RunFleetAdvisorLsaAnalysis(
     const RunFleetAdvisorLsaAnalysisRequest& request) const {
-  return RunFleetAdvisorLsaAnalysisOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RunFleetAdvisorLsaAnalysisOutcome(result.GetResultWithOwnership())
+                            : RunFleetAdvisorLsaAnalysisOutcome(std::move(result.GetError()));
 }
 
 StartDataMigrationOutcome DatabaseMigrationServiceClient::StartDataMigration(const StartDataMigrationRequest& request) const {
-  return StartDataMigrationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDataMigrationOutcome(result.GetResultWithOwnership())
+                            : StartDataMigrationOutcome(std::move(result.GetError()));
 }
 
 StartExtensionPackAssociationOutcome DatabaseMigrationServiceClient::StartExtensionPackAssociation(
     const StartExtensionPackAssociationRequest& request) const {
-  return StartExtensionPackAssociationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartExtensionPackAssociationOutcome(result.GetResultWithOwnership())
+                            : StartExtensionPackAssociationOutcome(std::move(result.GetError()));
 }
 
 StartMetadataModelAssessmentOutcome DatabaseMigrationServiceClient::StartMetadataModelAssessment(
     const StartMetadataModelAssessmentRequest& request) const {
-  return StartMetadataModelAssessmentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartMetadataModelAssessmentOutcome(result.GetResultWithOwnership())
+                            : StartMetadataModelAssessmentOutcome(std::move(result.GetError()));
 }
 
 StartMetadataModelConversionOutcome DatabaseMigrationServiceClient::StartMetadataModelConversion(
     const StartMetadataModelConversionRequest& request) const {
-  return StartMetadataModelConversionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartMetadataModelConversionOutcome(result.GetResultWithOwnership())
+                            : StartMetadataModelConversionOutcome(std::move(result.GetError()));
 }
 
 StartMetadataModelCreationOutcome DatabaseMigrationServiceClient::StartMetadataModelCreation(
     const StartMetadataModelCreationRequest& request) const {
-  return StartMetadataModelCreationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartMetadataModelCreationOutcome(result.GetResultWithOwnership())
+                            : StartMetadataModelCreationOutcome(std::move(result.GetError()));
 }
 
 StartMetadataModelExportAsScriptOutcome DatabaseMigrationServiceClient::StartMetadataModelExportAsScript(
     const StartMetadataModelExportAsScriptRequest& request) const {
-  return StartMetadataModelExportAsScriptOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartMetadataModelExportAsScriptOutcome(result.GetResultWithOwnership())
+                            : StartMetadataModelExportAsScriptOutcome(std::move(result.GetError()));
 }
 
 StartMetadataModelExportToTargetOutcome DatabaseMigrationServiceClient::StartMetadataModelExportToTarget(
     const StartMetadataModelExportToTargetRequest& request) const {
-  return StartMetadataModelExportToTargetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartMetadataModelExportToTargetOutcome(result.GetResultWithOwnership())
+                            : StartMetadataModelExportToTargetOutcome(std::move(result.GetError()));
 }
 
 StartMetadataModelImportOutcome DatabaseMigrationServiceClient::StartMetadataModelImport(
     const StartMetadataModelImportRequest& request) const {
-  return StartMetadataModelImportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartMetadataModelImportOutcome(result.GetResultWithOwnership())
+                            : StartMetadataModelImportOutcome(std::move(result.GetError()));
 }
 
 StartRecommendationsOutcome DatabaseMigrationServiceClient::StartRecommendations(const StartRecommendationsRequest& request) const {
-  return StartRecommendationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartRecommendationsOutcome(result.GetResultWithOwnership())
+                            : StartRecommendationsOutcome(std::move(result.GetError()));
 }
 
 StartReplicationOutcome DatabaseMigrationServiceClient::StartReplication(const StartReplicationRequest& request) const {
-  return StartReplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartReplicationOutcome(result.GetResultWithOwnership())
+                            : StartReplicationOutcome(std::move(result.GetError()));
 }
 
 StartReplicationTaskOutcome DatabaseMigrationServiceClient::StartReplicationTask(const StartReplicationTaskRequest& request) const {
-  return StartReplicationTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartReplicationTaskOutcome(result.GetResultWithOwnership())
+                            : StartReplicationTaskOutcome(std::move(result.GetError()));
 }
 
 StartReplicationTaskAssessmentOutcome DatabaseMigrationServiceClient::StartReplicationTaskAssessment(
     const StartReplicationTaskAssessmentRequest& request) const {
-  return StartReplicationTaskAssessmentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartReplicationTaskAssessmentOutcome(result.GetResultWithOwnership())
+                            : StartReplicationTaskAssessmentOutcome(std::move(result.GetError()));
 }
 
 StartReplicationTaskAssessmentRunOutcome DatabaseMigrationServiceClient::StartReplicationTaskAssessmentRun(
     const StartReplicationTaskAssessmentRunRequest& request) const {
-  return StartReplicationTaskAssessmentRunOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartReplicationTaskAssessmentRunOutcome(result.GetResultWithOwnership())
+                            : StartReplicationTaskAssessmentRunOutcome(std::move(result.GetError()));
 }
 
 StopDataMigrationOutcome DatabaseMigrationServiceClient::StopDataMigration(const StopDataMigrationRequest& request) const {
-  return StopDataMigrationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopDataMigrationOutcome(result.GetResultWithOwnership())
+                            : StopDataMigrationOutcome(std::move(result.GetError()));
 }
 
 StopReplicationOutcome DatabaseMigrationServiceClient::StopReplication(const StopReplicationRequest& request) const {
-  return StopReplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopReplicationOutcome(result.GetResultWithOwnership())
+                            : StopReplicationOutcome(std::move(result.GetError()));
 }
 
 StopReplicationTaskOutcome DatabaseMigrationServiceClient::StopReplicationTask(const StopReplicationTaskRequest& request) const {
-  return StopReplicationTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopReplicationTaskOutcome(result.GetResultWithOwnership())
+                            : StopReplicationTaskOutcome(std::move(result.GetError()));
 }
 
 TestConnectionOutcome DatabaseMigrationServiceClient::TestConnection(const TestConnectionRequest& request) const {
-  return TestConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TestConnectionOutcome(result.GetResultWithOwnership()) : TestConnectionOutcome(std::move(result.GetError()));
 }
 
 UpdateSubscriptionsToEventBridgeOutcome DatabaseMigrationServiceClient::UpdateSubscriptionsToEventBridge(
     const UpdateSubscriptionsToEventBridgeRequest& request) const {
-  return UpdateSubscriptionsToEventBridgeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSubscriptionsToEventBridgeOutcome(result.GetResultWithOwnership())
+                            : UpdateSubscriptionsToEventBridgeOutcome(std::move(result.GetError()));
 }

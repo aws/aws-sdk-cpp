@@ -263,398 +263,570 @@ ServiceCatalogClient::InvokeOperationOutcome ServiceCatalogClient::InvokeService
 }
 
 AcceptPortfolioShareOutcome ServiceCatalogClient::AcceptPortfolioShare(const AcceptPortfolioShareRequest& request) const {
-  return AcceptPortfolioShareOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptPortfolioShareOutcome(result.GetResultWithOwnership())
+                            : AcceptPortfolioShareOutcome(std::move(result.GetError()));
 }
 
 AssociateBudgetWithResourceOutcome ServiceCatalogClient::AssociateBudgetWithResource(
     const AssociateBudgetWithResourceRequest& request) const {
-  return AssociateBudgetWithResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateBudgetWithResourceOutcome(result.GetResultWithOwnership())
+                            : AssociateBudgetWithResourceOutcome(std::move(result.GetError()));
 }
 
 AssociatePrincipalWithPortfolioOutcome ServiceCatalogClient::AssociatePrincipalWithPortfolio(
     const AssociatePrincipalWithPortfolioRequest& request) const {
-  return AssociatePrincipalWithPortfolioOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociatePrincipalWithPortfolioOutcome(result.GetResultWithOwnership())
+                            : AssociatePrincipalWithPortfolioOutcome(std::move(result.GetError()));
 }
 
 AssociateProductWithPortfolioOutcome ServiceCatalogClient::AssociateProductWithPortfolio(
     const AssociateProductWithPortfolioRequest& request) const {
-  return AssociateProductWithPortfolioOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateProductWithPortfolioOutcome(result.GetResultWithOwnership())
+                            : AssociateProductWithPortfolioOutcome(std::move(result.GetError()));
 }
 
 AssociateServiceActionWithProvisioningArtifactOutcome ServiceCatalogClient::AssociateServiceActionWithProvisioningArtifact(
     const AssociateServiceActionWithProvisioningArtifactRequest& request) const {
-  return AssociateServiceActionWithProvisioningArtifactOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateServiceActionWithProvisioningArtifactOutcome(result.GetResultWithOwnership())
+                            : AssociateServiceActionWithProvisioningArtifactOutcome(std::move(result.GetError()));
 }
 
 AssociateTagOptionWithResourceOutcome ServiceCatalogClient::AssociateTagOptionWithResource(
     const AssociateTagOptionWithResourceRequest& request) const {
-  return AssociateTagOptionWithResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateTagOptionWithResourceOutcome(result.GetResultWithOwnership())
+                            : AssociateTagOptionWithResourceOutcome(std::move(result.GetError()));
 }
 
 BatchAssociateServiceActionWithProvisioningArtifactOutcome ServiceCatalogClient::BatchAssociateServiceActionWithProvisioningArtifact(
     const BatchAssociateServiceActionWithProvisioningArtifactRequest& request) const {
-  return BatchAssociateServiceActionWithProvisioningArtifactOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchAssociateServiceActionWithProvisioningArtifactOutcome(result.GetResultWithOwnership())
+                            : BatchAssociateServiceActionWithProvisioningArtifactOutcome(std::move(result.GetError()));
 }
 
 BatchDisassociateServiceActionFromProvisioningArtifactOutcome ServiceCatalogClient::BatchDisassociateServiceActionFromProvisioningArtifact(
     const BatchDisassociateServiceActionFromProvisioningArtifactRequest& request) const {
-  return BatchDisassociateServiceActionFromProvisioningArtifactOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDisassociateServiceActionFromProvisioningArtifactOutcome(result.GetResultWithOwnership())
+                            : BatchDisassociateServiceActionFromProvisioningArtifactOutcome(std::move(result.GetError()));
 }
 
 CopyProductOutcome ServiceCatalogClient::CopyProduct(const CopyProductRequest& request) const {
-  return CopyProductOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CopyProductOutcome(result.GetResultWithOwnership()) : CopyProductOutcome(std::move(result.GetError()));
 }
 
 CreateConstraintOutcome ServiceCatalogClient::CreateConstraint(const CreateConstraintRequest& request) const {
-  return CreateConstraintOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConstraintOutcome(result.GetResultWithOwnership())
+                            : CreateConstraintOutcome(std::move(result.GetError()));
 }
 
 CreatePortfolioOutcome ServiceCatalogClient::CreatePortfolio(const CreatePortfolioRequest& request) const {
-  return CreatePortfolioOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePortfolioOutcome(result.GetResultWithOwnership())
+                            : CreatePortfolioOutcome(std::move(result.GetError()));
 }
 
 CreatePortfolioShareOutcome ServiceCatalogClient::CreatePortfolioShare(const CreatePortfolioShareRequest& request) const {
-  return CreatePortfolioShareOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePortfolioShareOutcome(result.GetResultWithOwnership())
+                            : CreatePortfolioShareOutcome(std::move(result.GetError()));
 }
 
 CreateProductOutcome ServiceCatalogClient::CreateProduct(const CreateProductRequest& request) const {
-  return CreateProductOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProductOutcome(result.GetResultWithOwnership()) : CreateProductOutcome(std::move(result.GetError()));
 }
 
 CreateProvisionedProductPlanOutcome ServiceCatalogClient::CreateProvisionedProductPlan(
     const CreateProvisionedProductPlanRequest& request) const {
-  return CreateProvisionedProductPlanOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProvisionedProductPlanOutcome(result.GetResultWithOwnership())
+                            : CreateProvisionedProductPlanOutcome(std::move(result.GetError()));
 }
 
 CreateProvisioningArtifactOutcome ServiceCatalogClient::CreateProvisioningArtifact(const CreateProvisioningArtifactRequest& request) const {
-  return CreateProvisioningArtifactOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProvisioningArtifactOutcome(result.GetResultWithOwnership())
+                            : CreateProvisioningArtifactOutcome(std::move(result.GetError()));
 }
 
 CreateServiceActionOutcome ServiceCatalogClient::CreateServiceAction(const CreateServiceActionRequest& request) const {
-  return CreateServiceActionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateServiceActionOutcome(result.GetResultWithOwnership())
+                            : CreateServiceActionOutcome(std::move(result.GetError()));
 }
 
 CreateTagOptionOutcome ServiceCatalogClient::CreateTagOption(const CreateTagOptionRequest& request) const {
-  return CreateTagOptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTagOptionOutcome(result.GetResultWithOwnership())
+                            : CreateTagOptionOutcome(std::move(result.GetError()));
 }
 
 DeleteConstraintOutcome ServiceCatalogClient::DeleteConstraint(const DeleteConstraintRequest& request) const {
-  return DeleteConstraintOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteConstraintOutcome(result.GetResultWithOwnership())
+                            : DeleteConstraintOutcome(std::move(result.GetError()));
 }
 
 DeletePortfolioOutcome ServiceCatalogClient::DeletePortfolio(const DeletePortfolioRequest& request) const {
-  return DeletePortfolioOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePortfolioOutcome(result.GetResultWithOwnership())
+                            : DeletePortfolioOutcome(std::move(result.GetError()));
 }
 
 DeletePortfolioShareOutcome ServiceCatalogClient::DeletePortfolioShare(const DeletePortfolioShareRequest& request) const {
-  return DeletePortfolioShareOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePortfolioShareOutcome(result.GetResultWithOwnership())
+                            : DeletePortfolioShareOutcome(std::move(result.GetError()));
 }
 
 DeleteProductOutcome ServiceCatalogClient::DeleteProduct(const DeleteProductRequest& request) const {
-  return DeleteProductOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteProductOutcome(result.GetResultWithOwnership()) : DeleteProductOutcome(std::move(result.GetError()));
 }
 
 DeleteProvisionedProductPlanOutcome ServiceCatalogClient::DeleteProvisionedProductPlan(
     const DeleteProvisionedProductPlanRequest& request) const {
-  return DeleteProvisionedProductPlanOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteProvisionedProductPlanOutcome(result.GetResultWithOwnership())
+                            : DeleteProvisionedProductPlanOutcome(std::move(result.GetError()));
 }
 
 DeleteProvisioningArtifactOutcome ServiceCatalogClient::DeleteProvisioningArtifact(const DeleteProvisioningArtifactRequest& request) const {
-  return DeleteProvisioningArtifactOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteProvisioningArtifactOutcome(result.GetResultWithOwnership())
+                            : DeleteProvisioningArtifactOutcome(std::move(result.GetError()));
 }
 
 DeleteServiceActionOutcome ServiceCatalogClient::DeleteServiceAction(const DeleteServiceActionRequest& request) const {
-  return DeleteServiceActionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteServiceActionOutcome(result.GetResultWithOwnership())
+                            : DeleteServiceActionOutcome(std::move(result.GetError()));
 }
 
 DeleteTagOptionOutcome ServiceCatalogClient::DeleteTagOption(const DeleteTagOptionRequest& request) const {
-  return DeleteTagOptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTagOptionOutcome(result.GetResultWithOwnership())
+                            : DeleteTagOptionOutcome(std::move(result.GetError()));
 }
 
 DescribeConstraintOutcome ServiceCatalogClient::DescribeConstraint(const DescribeConstraintRequest& request) const {
-  return DescribeConstraintOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeConstraintOutcome(result.GetResultWithOwnership())
+                            : DescribeConstraintOutcome(std::move(result.GetError()));
 }
 
 DescribeCopyProductStatusOutcome ServiceCatalogClient::DescribeCopyProductStatus(const DescribeCopyProductStatusRequest& request) const {
-  return DescribeCopyProductStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCopyProductStatusOutcome(result.GetResultWithOwnership())
+                            : DescribeCopyProductStatusOutcome(std::move(result.GetError()));
 }
 
 DescribePortfolioOutcome ServiceCatalogClient::DescribePortfolio(const DescribePortfolioRequest& request) const {
-  return DescribePortfolioOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePortfolioOutcome(result.GetResultWithOwnership())
+                            : DescribePortfolioOutcome(std::move(result.GetError()));
 }
 
 DescribePortfolioShareStatusOutcome ServiceCatalogClient::DescribePortfolioShareStatus(
     const DescribePortfolioShareStatusRequest& request) const {
-  return DescribePortfolioShareStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePortfolioShareStatusOutcome(result.GetResultWithOwnership())
+                            : DescribePortfolioShareStatusOutcome(std::move(result.GetError()));
 }
 
 DescribePortfolioSharesOutcome ServiceCatalogClient::DescribePortfolioShares(const DescribePortfolioSharesRequest& request) const {
-  return DescribePortfolioSharesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePortfolioSharesOutcome(result.GetResultWithOwnership())
+                            : DescribePortfolioSharesOutcome(std::move(result.GetError()));
 }
 
 DescribeProductOutcome ServiceCatalogClient::DescribeProduct(const DescribeProductRequest& request) const {
-  return DescribeProductOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeProductOutcome(result.GetResultWithOwnership())
+                            : DescribeProductOutcome(std::move(result.GetError()));
 }
 
 DescribeProductAsAdminOutcome ServiceCatalogClient::DescribeProductAsAdmin(const DescribeProductAsAdminRequest& request) const {
-  return DescribeProductAsAdminOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeProductAsAdminOutcome(result.GetResultWithOwnership())
+                            : DescribeProductAsAdminOutcome(std::move(result.GetError()));
 }
 
 DescribeProductViewOutcome ServiceCatalogClient::DescribeProductView(const DescribeProductViewRequest& request) const {
-  return DescribeProductViewOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeProductViewOutcome(result.GetResultWithOwnership())
+                            : DescribeProductViewOutcome(std::move(result.GetError()));
 }
 
 DescribeProvisionedProductOutcome ServiceCatalogClient::DescribeProvisionedProduct(const DescribeProvisionedProductRequest& request) const {
-  return DescribeProvisionedProductOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeProvisionedProductOutcome(result.GetResultWithOwnership())
+                            : DescribeProvisionedProductOutcome(std::move(result.GetError()));
 }
 
 DescribeProvisionedProductPlanOutcome ServiceCatalogClient::DescribeProvisionedProductPlan(
     const DescribeProvisionedProductPlanRequest& request) const {
-  return DescribeProvisionedProductPlanOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeProvisionedProductPlanOutcome(result.GetResultWithOwnership())
+                            : DescribeProvisionedProductPlanOutcome(std::move(result.GetError()));
 }
 
 DescribeProvisioningArtifactOutcome ServiceCatalogClient::DescribeProvisioningArtifact(
     const DescribeProvisioningArtifactRequest& request) const {
-  return DescribeProvisioningArtifactOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeProvisioningArtifactOutcome(result.GetResultWithOwnership())
+                            : DescribeProvisioningArtifactOutcome(std::move(result.GetError()));
 }
 
 DescribeProvisioningParametersOutcome ServiceCatalogClient::DescribeProvisioningParameters(
     const DescribeProvisioningParametersRequest& request) const {
-  return DescribeProvisioningParametersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeProvisioningParametersOutcome(result.GetResultWithOwnership())
+                            : DescribeProvisioningParametersOutcome(std::move(result.GetError()));
 }
 
 DescribeRecordOutcome ServiceCatalogClient::DescribeRecord(const DescribeRecordRequest& request) const {
-  return DescribeRecordOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRecordOutcome(result.GetResultWithOwnership()) : DescribeRecordOutcome(std::move(result.GetError()));
 }
 
 DescribeServiceActionOutcome ServiceCatalogClient::DescribeServiceAction(const DescribeServiceActionRequest& request) const {
-  return DescribeServiceActionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeServiceActionOutcome(result.GetResultWithOwnership())
+                            : DescribeServiceActionOutcome(std::move(result.GetError()));
 }
 
 DescribeServiceActionExecutionParametersOutcome ServiceCatalogClient::DescribeServiceActionExecutionParameters(
     const DescribeServiceActionExecutionParametersRequest& request) const {
-  return DescribeServiceActionExecutionParametersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeServiceActionExecutionParametersOutcome(result.GetResultWithOwnership())
+                            : DescribeServiceActionExecutionParametersOutcome(std::move(result.GetError()));
 }
 
 DescribeTagOptionOutcome ServiceCatalogClient::DescribeTagOption(const DescribeTagOptionRequest& request) const {
-  return DescribeTagOptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTagOptionOutcome(result.GetResultWithOwnership())
+                            : DescribeTagOptionOutcome(std::move(result.GetError()));
 }
 
 DisableAWSOrganizationsAccessOutcome ServiceCatalogClient::DisableAWSOrganizationsAccess(
     const DisableAWSOrganizationsAccessRequest& request) const {
-  return DisableAWSOrganizationsAccessOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableAWSOrganizationsAccessOutcome(result.GetResultWithOwnership())
+                            : DisableAWSOrganizationsAccessOutcome(std::move(result.GetError()));
 }
 
 DisassociateBudgetFromResourceOutcome ServiceCatalogClient::DisassociateBudgetFromResource(
     const DisassociateBudgetFromResourceRequest& request) const {
-  return DisassociateBudgetFromResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateBudgetFromResourceOutcome(result.GetResultWithOwnership())
+                            : DisassociateBudgetFromResourceOutcome(std::move(result.GetError()));
 }
 
 DisassociatePrincipalFromPortfolioOutcome ServiceCatalogClient::DisassociatePrincipalFromPortfolio(
     const DisassociatePrincipalFromPortfolioRequest& request) const {
-  return DisassociatePrincipalFromPortfolioOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociatePrincipalFromPortfolioOutcome(result.GetResultWithOwnership())
+                            : DisassociatePrincipalFromPortfolioOutcome(std::move(result.GetError()));
 }
 
 DisassociateProductFromPortfolioOutcome ServiceCatalogClient::DisassociateProductFromPortfolio(
     const DisassociateProductFromPortfolioRequest& request) const {
-  return DisassociateProductFromPortfolioOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateProductFromPortfolioOutcome(result.GetResultWithOwnership())
+                            : DisassociateProductFromPortfolioOutcome(std::move(result.GetError()));
 }
 
 DisassociateServiceActionFromProvisioningArtifactOutcome ServiceCatalogClient::DisassociateServiceActionFromProvisioningArtifact(
     const DisassociateServiceActionFromProvisioningArtifactRequest& request) const {
-  return DisassociateServiceActionFromProvisioningArtifactOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateServiceActionFromProvisioningArtifactOutcome(result.GetResultWithOwnership())
+                            : DisassociateServiceActionFromProvisioningArtifactOutcome(std::move(result.GetError()));
 }
 
 DisassociateTagOptionFromResourceOutcome ServiceCatalogClient::DisassociateTagOptionFromResource(
     const DisassociateTagOptionFromResourceRequest& request) const {
-  return DisassociateTagOptionFromResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateTagOptionFromResourceOutcome(result.GetResultWithOwnership())
+                            : DisassociateTagOptionFromResourceOutcome(std::move(result.GetError()));
 }
 
 EnableAWSOrganizationsAccessOutcome ServiceCatalogClient::EnableAWSOrganizationsAccess(
     const EnableAWSOrganizationsAccessRequest& request) const {
-  return EnableAWSOrganizationsAccessOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableAWSOrganizationsAccessOutcome(result.GetResultWithOwnership())
+                            : EnableAWSOrganizationsAccessOutcome(std::move(result.GetError()));
 }
 
 ExecuteProvisionedProductPlanOutcome ServiceCatalogClient::ExecuteProvisionedProductPlan(
     const ExecuteProvisionedProductPlanRequest& request) const {
-  return ExecuteProvisionedProductPlanOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExecuteProvisionedProductPlanOutcome(result.GetResultWithOwnership())
+                            : ExecuteProvisionedProductPlanOutcome(std::move(result.GetError()));
 }
 
 ExecuteProvisionedProductServiceActionOutcome ServiceCatalogClient::ExecuteProvisionedProductServiceAction(
     const ExecuteProvisionedProductServiceActionRequest& request) const {
-  return ExecuteProvisionedProductServiceActionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExecuteProvisionedProductServiceActionOutcome(result.GetResultWithOwnership())
+                            : ExecuteProvisionedProductServiceActionOutcome(std::move(result.GetError()));
 }
 
 GetAWSOrganizationsAccessStatusOutcome ServiceCatalogClient::GetAWSOrganizationsAccessStatus(
     const GetAWSOrganizationsAccessStatusRequest& request) const {
-  return GetAWSOrganizationsAccessStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAWSOrganizationsAccessStatusOutcome(result.GetResultWithOwnership())
+                            : GetAWSOrganizationsAccessStatusOutcome(std::move(result.GetError()));
 }
 
 GetProvisionedProductOutputsOutcome ServiceCatalogClient::GetProvisionedProductOutputs(
     const GetProvisionedProductOutputsRequest& request) const {
-  return GetProvisionedProductOutputsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetProvisionedProductOutputsOutcome(result.GetResultWithOwnership())
+                            : GetProvisionedProductOutputsOutcome(std::move(result.GetError()));
 }
 
 ImportAsProvisionedProductOutcome ServiceCatalogClient::ImportAsProvisionedProduct(const ImportAsProvisionedProductRequest& request) const {
-  return ImportAsProvisionedProductOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportAsProvisionedProductOutcome(result.GetResultWithOwnership())
+                            : ImportAsProvisionedProductOutcome(std::move(result.GetError()));
 }
 
 ListAcceptedPortfolioSharesOutcome ServiceCatalogClient::ListAcceptedPortfolioShares(
     const ListAcceptedPortfolioSharesRequest& request) const {
-  return ListAcceptedPortfolioSharesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAcceptedPortfolioSharesOutcome(result.GetResultWithOwnership())
+                            : ListAcceptedPortfolioSharesOutcome(std::move(result.GetError()));
 }
 
 ListBudgetsForResourceOutcome ServiceCatalogClient::ListBudgetsForResource(const ListBudgetsForResourceRequest& request) const {
-  return ListBudgetsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBudgetsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListBudgetsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListConstraintsForPortfolioOutcome ServiceCatalogClient::ListConstraintsForPortfolio(
     const ListConstraintsForPortfolioRequest& request) const {
-  return ListConstraintsForPortfolioOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListConstraintsForPortfolioOutcome(result.GetResultWithOwnership())
+                            : ListConstraintsForPortfolioOutcome(std::move(result.GetError()));
 }
 
 ListLaunchPathsOutcome ServiceCatalogClient::ListLaunchPaths(const ListLaunchPathsRequest& request) const {
-  return ListLaunchPathsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLaunchPathsOutcome(result.GetResultWithOwnership())
+                            : ListLaunchPathsOutcome(std::move(result.GetError()));
 }
 
 ListOrganizationPortfolioAccessOutcome ServiceCatalogClient::ListOrganizationPortfolioAccess(
     const ListOrganizationPortfolioAccessRequest& request) const {
-  return ListOrganizationPortfolioAccessOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListOrganizationPortfolioAccessOutcome(result.GetResultWithOwnership())
+                            : ListOrganizationPortfolioAccessOutcome(std::move(result.GetError()));
 }
 
 ListPortfolioAccessOutcome ServiceCatalogClient::ListPortfolioAccess(const ListPortfolioAccessRequest& request) const {
-  return ListPortfolioAccessOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPortfolioAccessOutcome(result.GetResultWithOwnership())
+                            : ListPortfolioAccessOutcome(std::move(result.GetError()));
 }
 
 ListPortfoliosOutcome ServiceCatalogClient::ListPortfolios(const ListPortfoliosRequest& request) const {
-  return ListPortfoliosOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPortfoliosOutcome(result.GetResultWithOwnership()) : ListPortfoliosOutcome(std::move(result.GetError()));
 }
 
 ListPortfoliosForProductOutcome ServiceCatalogClient::ListPortfoliosForProduct(const ListPortfoliosForProductRequest& request) const {
-  return ListPortfoliosForProductOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPortfoliosForProductOutcome(result.GetResultWithOwnership())
+                            : ListPortfoliosForProductOutcome(std::move(result.GetError()));
 }
 
 ListPrincipalsForPortfolioOutcome ServiceCatalogClient::ListPrincipalsForPortfolio(const ListPrincipalsForPortfolioRequest& request) const {
-  return ListPrincipalsForPortfolioOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPrincipalsForPortfolioOutcome(result.GetResultWithOwnership())
+                            : ListPrincipalsForPortfolioOutcome(std::move(result.GetError()));
 }
 
 ListProvisionedProductPlansOutcome ServiceCatalogClient::ListProvisionedProductPlans(
     const ListProvisionedProductPlansRequest& request) const {
-  return ListProvisionedProductPlansOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListProvisionedProductPlansOutcome(result.GetResultWithOwnership())
+                            : ListProvisionedProductPlansOutcome(std::move(result.GetError()));
 }
 
 ListProvisioningArtifactsOutcome ServiceCatalogClient::ListProvisioningArtifacts(const ListProvisioningArtifactsRequest& request) const {
-  return ListProvisioningArtifactsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListProvisioningArtifactsOutcome(result.GetResultWithOwnership())
+                            : ListProvisioningArtifactsOutcome(std::move(result.GetError()));
 }
 
 ListProvisioningArtifactsForServiceActionOutcome ServiceCatalogClient::ListProvisioningArtifactsForServiceAction(
     const ListProvisioningArtifactsForServiceActionRequest& request) const {
-  return ListProvisioningArtifactsForServiceActionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListProvisioningArtifactsForServiceActionOutcome(result.GetResultWithOwnership())
+                            : ListProvisioningArtifactsForServiceActionOutcome(std::move(result.GetError()));
 }
 
 ListRecordHistoryOutcome ServiceCatalogClient::ListRecordHistory(const ListRecordHistoryRequest& request) const {
-  return ListRecordHistoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRecordHistoryOutcome(result.GetResultWithOwnership())
+                            : ListRecordHistoryOutcome(std::move(result.GetError()));
 }
 
 ListResourcesForTagOptionOutcome ServiceCatalogClient::ListResourcesForTagOption(const ListResourcesForTagOptionRequest& request) const {
-  return ListResourcesForTagOptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResourcesForTagOptionOutcome(result.GetResultWithOwnership())
+                            : ListResourcesForTagOptionOutcome(std::move(result.GetError()));
 }
 
 ListServiceActionsOutcome ServiceCatalogClient::ListServiceActions(const ListServiceActionsRequest& request) const {
-  return ListServiceActionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListServiceActionsOutcome(result.GetResultWithOwnership())
+                            : ListServiceActionsOutcome(std::move(result.GetError()));
 }
 
 ListServiceActionsForProvisioningArtifactOutcome ServiceCatalogClient::ListServiceActionsForProvisioningArtifact(
     const ListServiceActionsForProvisioningArtifactRequest& request) const {
-  return ListServiceActionsForProvisioningArtifactOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListServiceActionsForProvisioningArtifactOutcome(result.GetResultWithOwnership())
+                            : ListServiceActionsForProvisioningArtifactOutcome(std::move(result.GetError()));
 }
 
 ListStackInstancesForProvisionedProductOutcome ServiceCatalogClient::ListStackInstancesForProvisionedProduct(
     const ListStackInstancesForProvisionedProductRequest& request) const {
-  return ListStackInstancesForProvisionedProductOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListStackInstancesForProvisionedProductOutcome(result.GetResultWithOwnership())
+                            : ListStackInstancesForProvisionedProductOutcome(std::move(result.GetError()));
 }
 
 ListTagOptionsOutcome ServiceCatalogClient::ListTagOptions(const ListTagOptionsRequest& request) const {
-  return ListTagOptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagOptionsOutcome(result.GetResultWithOwnership()) : ListTagOptionsOutcome(std::move(result.GetError()));
 }
 
 NotifyProvisionProductEngineWorkflowResultOutcome ServiceCatalogClient::NotifyProvisionProductEngineWorkflowResult(
     const NotifyProvisionProductEngineWorkflowResultRequest& request) const {
-  return NotifyProvisionProductEngineWorkflowResultOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? NotifyProvisionProductEngineWorkflowResultOutcome(result.GetResultWithOwnership())
+                            : NotifyProvisionProductEngineWorkflowResultOutcome(std::move(result.GetError()));
 }
 
 NotifyTerminateProvisionedProductEngineWorkflowResultOutcome ServiceCatalogClient::NotifyTerminateProvisionedProductEngineWorkflowResult(
     const NotifyTerminateProvisionedProductEngineWorkflowResultRequest& request) const {
-  return NotifyTerminateProvisionedProductEngineWorkflowResultOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? NotifyTerminateProvisionedProductEngineWorkflowResultOutcome(result.GetResultWithOwnership())
+                            : NotifyTerminateProvisionedProductEngineWorkflowResultOutcome(std::move(result.GetError()));
 }
 
 NotifyUpdateProvisionedProductEngineWorkflowResultOutcome ServiceCatalogClient::NotifyUpdateProvisionedProductEngineWorkflowResult(
     const NotifyUpdateProvisionedProductEngineWorkflowResultRequest& request) const {
-  return NotifyUpdateProvisionedProductEngineWorkflowResultOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? NotifyUpdateProvisionedProductEngineWorkflowResultOutcome(result.GetResultWithOwnership())
+                            : NotifyUpdateProvisionedProductEngineWorkflowResultOutcome(std::move(result.GetError()));
 }
 
 ProvisionProductOutcome ServiceCatalogClient::ProvisionProduct(const ProvisionProductRequest& request) const {
-  return ProvisionProductOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ProvisionProductOutcome(result.GetResultWithOwnership())
+                            : ProvisionProductOutcome(std::move(result.GetError()));
 }
 
 RejectPortfolioShareOutcome ServiceCatalogClient::RejectPortfolioShare(const RejectPortfolioShareRequest& request) const {
-  return RejectPortfolioShareOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RejectPortfolioShareOutcome(result.GetResultWithOwnership())
+                            : RejectPortfolioShareOutcome(std::move(result.GetError()));
 }
 
 ScanProvisionedProductsOutcome ServiceCatalogClient::ScanProvisionedProducts(const ScanProvisionedProductsRequest& request) const {
-  return ScanProvisionedProductsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ScanProvisionedProductsOutcome(result.GetResultWithOwnership())
+                            : ScanProvisionedProductsOutcome(std::move(result.GetError()));
 }
 
 SearchProductsOutcome ServiceCatalogClient::SearchProducts(const SearchProductsRequest& request) const {
-  return SearchProductsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchProductsOutcome(result.GetResultWithOwnership()) : SearchProductsOutcome(std::move(result.GetError()));
 }
 
 SearchProductsAsAdminOutcome ServiceCatalogClient::SearchProductsAsAdmin(const SearchProductsAsAdminRequest& request) const {
-  return SearchProductsAsAdminOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchProductsAsAdminOutcome(result.GetResultWithOwnership())
+                            : SearchProductsAsAdminOutcome(std::move(result.GetError()));
 }
 
 SearchProvisionedProductsOutcome ServiceCatalogClient::SearchProvisionedProducts(const SearchProvisionedProductsRequest& request) const {
-  return SearchProvisionedProductsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchProvisionedProductsOutcome(result.GetResultWithOwnership())
+                            : SearchProvisionedProductsOutcome(std::move(result.GetError()));
 }
 
 TerminateProvisionedProductOutcome ServiceCatalogClient::TerminateProvisionedProduct(
     const TerminateProvisionedProductRequest& request) const {
-  return TerminateProvisionedProductOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TerminateProvisionedProductOutcome(result.GetResultWithOwnership())
+                            : TerminateProvisionedProductOutcome(std::move(result.GetError()));
 }
 
 UpdateConstraintOutcome ServiceCatalogClient::UpdateConstraint(const UpdateConstraintRequest& request) const {
-  return UpdateConstraintOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateConstraintOutcome(result.GetResultWithOwnership())
+                            : UpdateConstraintOutcome(std::move(result.GetError()));
 }
 
 UpdatePortfolioOutcome ServiceCatalogClient::UpdatePortfolio(const UpdatePortfolioRequest& request) const {
-  return UpdatePortfolioOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePortfolioOutcome(result.GetResultWithOwnership())
+                            : UpdatePortfolioOutcome(std::move(result.GetError()));
 }
 
 UpdatePortfolioShareOutcome ServiceCatalogClient::UpdatePortfolioShare(const UpdatePortfolioShareRequest& request) const {
-  return UpdatePortfolioShareOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePortfolioShareOutcome(result.GetResultWithOwnership())
+                            : UpdatePortfolioShareOutcome(std::move(result.GetError()));
 }
 
 UpdateProductOutcome ServiceCatalogClient::UpdateProduct(const UpdateProductRequest& request) const {
-  return UpdateProductOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateProductOutcome(result.GetResultWithOwnership()) : UpdateProductOutcome(std::move(result.GetError()));
 }
 
 UpdateProvisionedProductOutcome ServiceCatalogClient::UpdateProvisionedProduct(const UpdateProvisionedProductRequest& request) const {
-  return UpdateProvisionedProductOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateProvisionedProductOutcome(result.GetResultWithOwnership())
+                            : UpdateProvisionedProductOutcome(std::move(result.GetError()));
 }
 
 UpdateProvisionedProductPropertiesOutcome ServiceCatalogClient::UpdateProvisionedProductProperties(
     const UpdateProvisionedProductPropertiesRequest& request) const {
-  return UpdateProvisionedProductPropertiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateProvisionedProductPropertiesOutcome(result.GetResultWithOwnership())
+                            : UpdateProvisionedProductPropertiesOutcome(std::move(result.GetError()));
 }
 
 UpdateProvisioningArtifactOutcome ServiceCatalogClient::UpdateProvisioningArtifact(const UpdateProvisioningArtifactRequest& request) const {
-  return UpdateProvisioningArtifactOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateProvisioningArtifactOutcome(result.GetResultWithOwnership())
+                            : UpdateProvisioningArtifactOutcome(std::move(result.GetError()));
 }
 
 UpdateServiceActionOutcome ServiceCatalogClient::UpdateServiceAction(const UpdateServiceActionRequest& request) const {
-  return UpdateServiceActionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateServiceActionOutcome(result.GetResultWithOwnership())
+                            : UpdateServiceActionOutcome(std::move(result.GetError()));
 }
 
 UpdateTagOptionOutcome ServiceCatalogClient::UpdateTagOption(const UpdateTagOptionRequest& request) const {
-  return UpdateTagOptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTagOptionOutcome(result.GetResultWithOwnership())
+                            : UpdateTagOptionOutcome(std::move(result.GetError()));
 }

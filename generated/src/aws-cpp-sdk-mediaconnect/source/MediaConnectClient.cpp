@@ -271,7 +271,9 @@ AddBridgeOutputsOutcome MediaConnectClient::AddBridgeOutputs(const AddBridgeOutp
     endpointResolutionOutcome.GetResult().AddPathSegments("/outputs");
   };
 
-  return AddBridgeOutputsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddBridgeOutputsOutcome(result.GetResultWithOwnership())
+                            : AddBridgeOutputsOutcome(std::move(result.GetError()));
 }
 
 AddBridgeSourcesOutcome MediaConnectClient::AddBridgeSources(const AddBridgeSourcesRequest& request) const {
@@ -288,7 +290,9 @@ AddBridgeSourcesOutcome MediaConnectClient::AddBridgeSources(const AddBridgeSour
     endpointResolutionOutcome.GetResult().AddPathSegments("/sources");
   };
 
-  return AddBridgeSourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddBridgeSourcesOutcome(result.GetResultWithOwnership())
+                            : AddBridgeSourcesOutcome(std::move(result.GetError()));
 }
 
 AddFlowMediaStreamsOutcome MediaConnectClient::AddFlowMediaStreams(const AddFlowMediaStreamsRequest& request) const {
@@ -305,7 +309,9 @@ AddFlowMediaStreamsOutcome MediaConnectClient::AddFlowMediaStreams(const AddFlow
     endpointResolutionOutcome.GetResult().AddPathSegments("/mediaStreams");
   };
 
-  return AddFlowMediaStreamsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddFlowMediaStreamsOutcome(result.GetResultWithOwnership())
+                            : AddFlowMediaStreamsOutcome(std::move(result.GetError()));
 }
 
 AddFlowOutputsOutcome MediaConnectClient::AddFlowOutputs(const AddFlowOutputsRequest& request) const {
@@ -322,7 +328,8 @@ AddFlowOutputsOutcome MediaConnectClient::AddFlowOutputs(const AddFlowOutputsReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/outputs");
   };
 
-  return AddFlowOutputsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddFlowOutputsOutcome(result.GetResultWithOwnership()) : AddFlowOutputsOutcome(std::move(result.GetError()));
 }
 
 AddFlowSourcesOutcome MediaConnectClient::AddFlowSources(const AddFlowSourcesRequest& request) const {
@@ -339,7 +346,8 @@ AddFlowSourcesOutcome MediaConnectClient::AddFlowSources(const AddFlowSourcesReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/source");
   };
 
-  return AddFlowSourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddFlowSourcesOutcome(result.GetResultWithOwnership()) : AddFlowSourcesOutcome(std::move(result.GetError()));
 }
 
 AddFlowVpcInterfacesOutcome MediaConnectClient::AddFlowVpcInterfaces(const AddFlowVpcInterfacesRequest& request) const {
@@ -356,7 +364,9 @@ AddFlowVpcInterfacesOutcome MediaConnectClient::AddFlowVpcInterfaces(const AddFl
     endpointResolutionOutcome.GetResult().AddPathSegments("/vpcInterfaces");
   };
 
-  return AddFlowVpcInterfacesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddFlowVpcInterfacesOutcome(result.GetResultWithOwnership())
+                            : AddFlowVpcInterfacesOutcome(std::move(result.GetError()));
 }
 
 BatchGetRouterInputOutcome MediaConnectClient::BatchGetRouterInput(const BatchGetRouterInputRequest& request) const {
@@ -371,7 +381,9 @@ BatchGetRouterInputOutcome MediaConnectClient::BatchGetRouterInput(const BatchGe
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/routerInputs");
   };
 
-  return BatchGetRouterInputOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? BatchGetRouterInputOutcome(result.GetResultWithOwnership())
+                            : BatchGetRouterInputOutcome(std::move(result.GetError()));
 }
 
 BatchGetRouterNetworkInterfaceOutcome MediaConnectClient::BatchGetRouterNetworkInterface(
@@ -387,7 +399,9 @@ BatchGetRouterNetworkInterfaceOutcome MediaConnectClient::BatchGetRouterNetworkI
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/routerNetworkInterfaces");
   };
 
-  return BatchGetRouterNetworkInterfaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? BatchGetRouterNetworkInterfaceOutcome(result.GetResultWithOwnership())
+                            : BatchGetRouterNetworkInterfaceOutcome(std::move(result.GetError()));
 }
 
 BatchGetRouterOutputOutcome MediaConnectClient::BatchGetRouterOutput(const BatchGetRouterOutputRequest& request) const {
@@ -402,7 +416,9 @@ BatchGetRouterOutputOutcome MediaConnectClient::BatchGetRouterOutput(const Batch
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/routerOutputs");
   };
 
-  return BatchGetRouterOutputOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? BatchGetRouterOutputOutcome(result.GetResultWithOwnership())
+                            : BatchGetRouterOutputOutcome(std::move(result.GetError()));
 }
 
 CreateBridgeOutcome MediaConnectClient::CreateBridge(const CreateBridgeRequest& request) const {
@@ -411,7 +427,8 @@ CreateBridgeOutcome MediaConnectClient::CreateBridge(const CreateBridgeRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/bridges");
   };
 
-  return CreateBridgeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBridgeOutcome(result.GetResultWithOwnership()) : CreateBridgeOutcome(std::move(result.GetError()));
 }
 
 CreateFlowOutcome MediaConnectClient::CreateFlow(const CreateFlowRequest& request) const {
@@ -420,7 +437,8 @@ CreateFlowOutcome MediaConnectClient::CreateFlow(const CreateFlowRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/flows");
   };
 
-  return CreateFlowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFlowOutcome(result.GetResultWithOwnership()) : CreateFlowOutcome(std::move(result.GetError()));
 }
 
 CreateGatewayOutcome MediaConnectClient::CreateGateway(const CreateGatewayRequest& request) const {
@@ -429,7 +447,8 @@ CreateGatewayOutcome MediaConnectClient::CreateGateway(const CreateGatewayReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/gateways");
   };
 
-  return CreateGatewayOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGatewayOutcome(result.GetResultWithOwnership()) : CreateGatewayOutcome(std::move(result.GetError()));
 }
 
 CreateRouterInputOutcome MediaConnectClient::CreateRouterInput(const CreateRouterInputRequest& request) const {
@@ -438,7 +457,9 @@ CreateRouterInputOutcome MediaConnectClient::CreateRouterInput(const CreateRoute
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/routerInput");
   };
 
-  return CreateRouterInputOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRouterInputOutcome(result.GetResultWithOwnership())
+                            : CreateRouterInputOutcome(std::move(result.GetError()));
 }
 
 CreateRouterNetworkInterfaceOutcome MediaConnectClient::CreateRouterNetworkInterface(
@@ -448,7 +469,9 @@ CreateRouterNetworkInterfaceOutcome MediaConnectClient::CreateRouterNetworkInter
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/routerNetworkInterface");
   };
 
-  return CreateRouterNetworkInterfaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRouterNetworkInterfaceOutcome(result.GetResultWithOwnership())
+                            : CreateRouterNetworkInterfaceOutcome(std::move(result.GetError()));
 }
 
 CreateRouterOutputOutcome MediaConnectClient::CreateRouterOutput(const CreateRouterOutputRequest& request) const {
@@ -457,7 +480,9 @@ CreateRouterOutputOutcome MediaConnectClient::CreateRouterOutput(const CreateRou
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/routerOutput");
   };
 
-  return CreateRouterOutputOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRouterOutputOutcome(result.GetResultWithOwnership())
+                            : CreateRouterOutputOutcome(std::move(result.GetError()));
 }
 
 DeleteBridgeOutcome MediaConnectClient::DeleteBridge(const DeleteBridgeRequest& request) const {
@@ -473,7 +498,8 @@ DeleteBridgeOutcome MediaConnectClient::DeleteBridge(const DeleteBridgeRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBridgeArn());
   };
 
-  return DeleteBridgeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBridgeOutcome(result.GetResultWithOwnership()) : DeleteBridgeOutcome(std::move(result.GetError()));
 }
 
 DeleteFlowOutcome MediaConnectClient::DeleteFlow(const DeleteFlowRequest& request) const {
@@ -489,7 +515,8 @@ DeleteFlowOutcome MediaConnectClient::DeleteFlow(const DeleteFlowRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFlowArn());
   };
 
-  return DeleteFlowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteFlowOutcome(result.GetResultWithOwnership()) : DeleteFlowOutcome(std::move(result.GetError()));
 }
 
 DeleteGatewayOutcome MediaConnectClient::DeleteGateway(const DeleteGatewayRequest& request) const {
@@ -505,7 +532,8 @@ DeleteGatewayOutcome MediaConnectClient::DeleteGateway(const DeleteGatewayReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGatewayArn());
   };
 
-  return DeleteGatewayOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteGatewayOutcome(result.GetResultWithOwnership()) : DeleteGatewayOutcome(std::move(result.GetError()));
 }
 
 DeleteRouterInputOutcome MediaConnectClient::DeleteRouterInput(const DeleteRouterInputRequest& request) const {
@@ -521,7 +549,9 @@ DeleteRouterInputOutcome MediaConnectClient::DeleteRouterInput(const DeleteRoute
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return DeleteRouterInputOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRouterInputOutcome(result.GetResultWithOwnership())
+                            : DeleteRouterInputOutcome(std::move(result.GetError()));
 }
 
 DeleteRouterNetworkInterfaceOutcome MediaConnectClient::DeleteRouterNetworkInterface(
@@ -538,7 +568,9 @@ DeleteRouterNetworkInterfaceOutcome MediaConnectClient::DeleteRouterNetworkInter
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return DeleteRouterNetworkInterfaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRouterNetworkInterfaceOutcome(result.GetResultWithOwnership())
+                            : DeleteRouterNetworkInterfaceOutcome(std::move(result.GetError()));
 }
 
 DeleteRouterOutputOutcome MediaConnectClient::DeleteRouterOutput(const DeleteRouterOutputRequest& request) const {
@@ -554,7 +586,9 @@ DeleteRouterOutputOutcome MediaConnectClient::DeleteRouterOutput(const DeleteRou
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return DeleteRouterOutputOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRouterOutputOutcome(result.GetResultWithOwnership())
+                            : DeleteRouterOutputOutcome(std::move(result.GetError()));
 }
 
 DeregisterGatewayInstanceOutcome MediaConnectClient::DeregisterGatewayInstance(const DeregisterGatewayInstanceRequest& request) const {
@@ -570,7 +604,9 @@ DeregisterGatewayInstanceOutcome MediaConnectClient::DeregisterGatewayInstance(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGatewayInstanceArn());
   };
 
-  return DeregisterGatewayInstanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeregisterGatewayInstanceOutcome(result.GetResultWithOwnership())
+                            : DeregisterGatewayInstanceOutcome(std::move(result.GetError()));
 }
 
 DescribeBridgeOutcome MediaConnectClient::DescribeBridge(const DescribeBridgeRequest& request) const {
@@ -586,7 +622,8 @@ DescribeBridgeOutcome MediaConnectClient::DescribeBridge(const DescribeBridgeReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBridgeArn());
   };
 
-  return DescribeBridgeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeBridgeOutcome(result.GetResultWithOwnership()) : DescribeBridgeOutcome(std::move(result.GetError()));
 }
 
 DescribeFlowOutcome MediaConnectClient::DescribeFlow(const DescribeFlowRequest& request) const {
@@ -602,7 +639,8 @@ DescribeFlowOutcome MediaConnectClient::DescribeFlow(const DescribeFlowRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFlowArn());
   };
 
-  return DescribeFlowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeFlowOutcome(result.GetResultWithOwnership()) : DescribeFlowOutcome(std::move(result.GetError()));
 }
 
 DescribeFlowSourceMetadataOutcome MediaConnectClient::DescribeFlowSourceMetadata(const DescribeFlowSourceMetadataRequest& request) const {
@@ -619,7 +657,9 @@ DescribeFlowSourceMetadataOutcome MediaConnectClient::DescribeFlowSourceMetadata
     endpointResolutionOutcome.GetResult().AddPathSegments("/source-metadata");
   };
 
-  return DescribeFlowSourceMetadataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeFlowSourceMetadataOutcome(result.GetResultWithOwnership())
+                            : DescribeFlowSourceMetadataOutcome(std::move(result.GetError()));
 }
 
 DescribeFlowSourceThumbnailOutcome MediaConnectClient::DescribeFlowSourceThumbnail(
@@ -637,7 +677,9 @@ DescribeFlowSourceThumbnailOutcome MediaConnectClient::DescribeFlowSourceThumbna
     endpointResolutionOutcome.GetResult().AddPathSegments("/source-thumbnail");
   };
 
-  return DescribeFlowSourceThumbnailOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeFlowSourceThumbnailOutcome(result.GetResultWithOwnership())
+                            : DescribeFlowSourceThumbnailOutcome(std::move(result.GetError()));
 }
 
 DescribeGatewayOutcome MediaConnectClient::DescribeGateway(const DescribeGatewayRequest& request) const {
@@ -653,7 +695,9 @@ DescribeGatewayOutcome MediaConnectClient::DescribeGateway(const DescribeGateway
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGatewayArn());
   };
 
-  return DescribeGatewayOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeGatewayOutcome(result.GetResultWithOwnership())
+                            : DescribeGatewayOutcome(std::move(result.GetError()));
 }
 
 DescribeGatewayInstanceOutcome MediaConnectClient::DescribeGatewayInstance(const DescribeGatewayInstanceRequest& request) const {
@@ -669,7 +713,9 @@ DescribeGatewayInstanceOutcome MediaConnectClient::DescribeGatewayInstance(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGatewayInstanceArn());
   };
 
-  return DescribeGatewayInstanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeGatewayInstanceOutcome(result.GetResultWithOwnership())
+                            : DescribeGatewayInstanceOutcome(std::move(result.GetError()));
 }
 
 DescribeOfferingOutcome MediaConnectClient::DescribeOffering(const DescribeOfferingRequest& request) const {
@@ -685,7 +731,9 @@ DescribeOfferingOutcome MediaConnectClient::DescribeOffering(const DescribeOffer
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOfferingArn());
   };
 
-  return DescribeOfferingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeOfferingOutcome(result.GetResultWithOwnership())
+                            : DescribeOfferingOutcome(std::move(result.GetError()));
 }
 
 DescribeReservationOutcome MediaConnectClient::DescribeReservation(const DescribeReservationRequest& request) const {
@@ -701,7 +749,9 @@ DescribeReservationOutcome MediaConnectClient::DescribeReservation(const Describ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReservationArn());
   };
 
-  return DescribeReservationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeReservationOutcome(result.GetResultWithOwnership())
+                            : DescribeReservationOutcome(std::move(result.GetError()));
 }
 
 GetRouterInputOutcome MediaConnectClient::GetRouterInput(const GetRouterInputRequest& request) const {
@@ -717,7 +767,8 @@ GetRouterInputOutcome MediaConnectClient::GetRouterInput(const GetRouterInputReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return GetRouterInputOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRouterInputOutcome(result.GetResultWithOwnership()) : GetRouterInputOutcome(std::move(result.GetError()));
 }
 
 GetRouterInputSourceMetadataOutcome MediaConnectClient::GetRouterInputSourceMetadata(
@@ -735,7 +786,9 @@ GetRouterInputSourceMetadataOutcome MediaConnectClient::GetRouterInputSourceMeta
     endpointResolutionOutcome.GetResult().AddPathSegments("/source-metadata");
   };
 
-  return GetRouterInputSourceMetadataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRouterInputSourceMetadataOutcome(result.GetResultWithOwnership())
+                            : GetRouterInputSourceMetadataOutcome(std::move(result.GetError()));
 }
 
 GetRouterInputThumbnailOutcome MediaConnectClient::GetRouterInputThumbnail(const GetRouterInputThumbnailRequest& request) const {
@@ -752,7 +805,9 @@ GetRouterInputThumbnailOutcome MediaConnectClient::GetRouterInputThumbnail(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/thumbnail");
   };
 
-  return GetRouterInputThumbnailOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRouterInputThumbnailOutcome(result.GetResultWithOwnership())
+                            : GetRouterInputThumbnailOutcome(std::move(result.GetError()));
 }
 
 GetRouterNetworkInterfaceOutcome MediaConnectClient::GetRouterNetworkInterface(const GetRouterNetworkInterfaceRequest& request) const {
@@ -768,7 +823,9 @@ GetRouterNetworkInterfaceOutcome MediaConnectClient::GetRouterNetworkInterface(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return GetRouterNetworkInterfaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRouterNetworkInterfaceOutcome(result.GetResultWithOwnership())
+                            : GetRouterNetworkInterfaceOutcome(std::move(result.GetError()));
 }
 
 GetRouterOutputOutcome MediaConnectClient::GetRouterOutput(const GetRouterOutputRequest& request) const {
@@ -784,7 +841,9 @@ GetRouterOutputOutcome MediaConnectClient::GetRouterOutput(const GetRouterOutput
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return GetRouterOutputOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRouterOutputOutcome(result.GetResultWithOwnership())
+                            : GetRouterOutputOutcome(std::move(result.GetError()));
 }
 
 GrantFlowEntitlementsOutcome MediaConnectClient::GrantFlowEntitlements(const GrantFlowEntitlementsRequest& request) const {
@@ -801,7 +860,9 @@ GrantFlowEntitlementsOutcome MediaConnectClient::GrantFlowEntitlements(const Gra
     endpointResolutionOutcome.GetResult().AddPathSegments("/entitlements");
   };
 
-  return GrantFlowEntitlementsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GrantFlowEntitlementsOutcome(result.GetResultWithOwnership())
+                            : GrantFlowEntitlementsOutcome(std::move(result.GetError()));
 }
 
 ListBridgesOutcome MediaConnectClient::ListBridges(const ListBridgesRequest& request) const {
@@ -810,7 +871,8 @@ ListBridgesOutcome MediaConnectClient::ListBridges(const ListBridgesRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/bridges");
   };
 
-  return ListBridgesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListBridgesOutcome(result.GetResultWithOwnership()) : ListBridgesOutcome(std::move(result.GetError()));
 }
 
 ListEntitlementsOutcome MediaConnectClient::ListEntitlements(const ListEntitlementsRequest& request) const {
@@ -819,7 +881,9 @@ ListEntitlementsOutcome MediaConnectClient::ListEntitlements(const ListEntitleme
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/entitlements");
   };
 
-  return ListEntitlementsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListEntitlementsOutcome(result.GetResultWithOwnership())
+                            : ListEntitlementsOutcome(std::move(result.GetError()));
 }
 
 ListFlowsOutcome MediaConnectClient::ListFlows(const ListFlowsRequest& request) const {
@@ -828,7 +892,8 @@ ListFlowsOutcome MediaConnectClient::ListFlows(const ListFlowsRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/flows");
   };
 
-  return ListFlowsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListFlowsOutcome(result.GetResultWithOwnership()) : ListFlowsOutcome(std::move(result.GetError()));
 }
 
 ListGatewayInstancesOutcome MediaConnectClient::ListGatewayInstances(const ListGatewayInstancesRequest& request) const {
@@ -837,7 +902,9 @@ ListGatewayInstancesOutcome MediaConnectClient::ListGatewayInstances(const ListG
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/gateway-instances");
   };
 
-  return ListGatewayInstancesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListGatewayInstancesOutcome(result.GetResultWithOwnership())
+                            : ListGatewayInstancesOutcome(std::move(result.GetError()));
 }
 
 ListGatewaysOutcome MediaConnectClient::ListGateways(const ListGatewaysRequest& request) const {
@@ -846,7 +913,8 @@ ListGatewaysOutcome MediaConnectClient::ListGateways(const ListGatewaysRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/gateways");
   };
 
-  return ListGatewaysOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListGatewaysOutcome(result.GetResultWithOwnership()) : ListGatewaysOutcome(std::move(result.GetError()));
 }
 
 ListOfferingsOutcome MediaConnectClient::ListOfferings(const ListOfferingsRequest& request) const {
@@ -855,7 +923,8 @@ ListOfferingsOutcome MediaConnectClient::ListOfferings(const ListOfferingsReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/offerings");
   };
 
-  return ListOfferingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListOfferingsOutcome(result.GetResultWithOwnership()) : ListOfferingsOutcome(std::move(result.GetError()));
 }
 
 ListReservationsOutcome MediaConnectClient::ListReservations(const ListReservationsRequest& request) const {
@@ -864,7 +933,9 @@ ListReservationsOutcome MediaConnectClient::ListReservations(const ListReservati
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/reservations");
   };
 
-  return ListReservationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListReservationsOutcome(result.GetResultWithOwnership())
+                            : ListReservationsOutcome(std::move(result.GetError()));
 }
 
 ListRouterInputsOutcome MediaConnectClient::ListRouterInputs(const ListRouterInputsRequest& request) const {
@@ -873,7 +944,9 @@ ListRouterInputsOutcome MediaConnectClient::ListRouterInputs(const ListRouterInp
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/routerInputs");
   };
 
-  return ListRouterInputsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRouterInputsOutcome(result.GetResultWithOwnership())
+                            : ListRouterInputsOutcome(std::move(result.GetError()));
 }
 
 ListRouterNetworkInterfacesOutcome MediaConnectClient::ListRouterNetworkInterfaces(
@@ -883,7 +956,9 @@ ListRouterNetworkInterfacesOutcome MediaConnectClient::ListRouterNetworkInterfac
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/routerNetworkInterfaces");
   };
 
-  return ListRouterNetworkInterfacesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRouterNetworkInterfacesOutcome(result.GetResultWithOwnership())
+                            : ListRouterNetworkInterfacesOutcome(std::move(result.GetError()));
 }
 
 ListRouterOutputsOutcome MediaConnectClient::ListRouterOutputs(const ListRouterOutputsRequest& request) const {
@@ -892,7 +967,9 @@ ListRouterOutputsOutcome MediaConnectClient::ListRouterOutputs(const ListRouterO
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/routerOutputs");
   };
 
-  return ListRouterOutputsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRouterOutputsOutcome(result.GetResultWithOwnership())
+                            : ListRouterOutputsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForGlobalResourceOutcome MediaConnectClient::ListTagsForGlobalResource(const ListTagsForGlobalResourceRequest& request) const {
@@ -908,7 +985,9 @@ ListTagsForGlobalResourceOutcome MediaConnectClient::ListTagsForGlobalResource(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForGlobalResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForGlobalResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForGlobalResourceOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome MediaConnectClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -924,7 +1003,9 @@ ListTagsForResourceOutcome MediaConnectClient::ListTagsForResource(const ListTag
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PurchaseOfferingOutcome MediaConnectClient::PurchaseOffering(const PurchaseOfferingRequest& request) const {
@@ -940,7 +1021,9 @@ PurchaseOfferingOutcome MediaConnectClient::PurchaseOffering(const PurchaseOffer
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOfferingArn());
   };
 
-  return PurchaseOfferingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PurchaseOfferingOutcome(result.GetResultWithOwnership())
+                            : PurchaseOfferingOutcome(std::move(result.GetError()));
 }
 
 RemoveBridgeOutputOutcome MediaConnectClient::RemoveBridgeOutput(const RemoveBridgeOutputRequest& request) const {
@@ -963,7 +1046,9 @@ RemoveBridgeOutputOutcome MediaConnectClient::RemoveBridgeOutput(const RemoveBri
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOutputName());
   };
 
-  return RemoveBridgeOutputOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? RemoveBridgeOutputOutcome(result.GetResultWithOwnership())
+                            : RemoveBridgeOutputOutcome(std::move(result.GetError()));
 }
 
 RemoveBridgeSourceOutcome MediaConnectClient::RemoveBridgeSource(const RemoveBridgeSourceRequest& request) const {
@@ -986,7 +1071,9 @@ RemoveBridgeSourceOutcome MediaConnectClient::RemoveBridgeSource(const RemoveBri
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSourceName());
   };
 
-  return RemoveBridgeSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? RemoveBridgeSourceOutcome(result.GetResultWithOwnership())
+                            : RemoveBridgeSourceOutcome(std::move(result.GetError()));
 }
 
 RemoveFlowMediaStreamOutcome MediaConnectClient::RemoveFlowMediaStream(const RemoveFlowMediaStreamRequest& request) const {
@@ -1009,7 +1096,9 @@ RemoveFlowMediaStreamOutcome MediaConnectClient::RemoveFlowMediaStream(const Rem
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMediaStreamName());
   };
 
-  return RemoveFlowMediaStreamOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? RemoveFlowMediaStreamOutcome(result.GetResultWithOwnership())
+                            : RemoveFlowMediaStreamOutcome(std::move(result.GetError()));
 }
 
 RemoveFlowOutputOutcome MediaConnectClient::RemoveFlowOutput(const RemoveFlowOutputRequest& request) const {
@@ -1032,7 +1121,9 @@ RemoveFlowOutputOutcome MediaConnectClient::RemoveFlowOutput(const RemoveFlowOut
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOutputArn());
   };
 
-  return RemoveFlowOutputOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? RemoveFlowOutputOutcome(result.GetResultWithOwnership())
+                            : RemoveFlowOutputOutcome(std::move(result.GetError()));
 }
 
 RemoveFlowSourceOutcome MediaConnectClient::RemoveFlowSource(const RemoveFlowSourceRequest& request) const {
@@ -1055,7 +1146,9 @@ RemoveFlowSourceOutcome MediaConnectClient::RemoveFlowSource(const RemoveFlowSou
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSourceArn());
   };
 
-  return RemoveFlowSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? RemoveFlowSourceOutcome(result.GetResultWithOwnership())
+                            : RemoveFlowSourceOutcome(std::move(result.GetError()));
 }
 
 RemoveFlowVpcInterfaceOutcome MediaConnectClient::RemoveFlowVpcInterface(const RemoveFlowVpcInterfaceRequest& request) const {
@@ -1078,7 +1171,9 @@ RemoveFlowVpcInterfaceOutcome MediaConnectClient::RemoveFlowVpcInterface(const R
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVpcInterfaceName());
   };
 
-  return RemoveFlowVpcInterfaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? RemoveFlowVpcInterfaceOutcome(result.GetResultWithOwnership())
+                            : RemoveFlowVpcInterfaceOutcome(std::move(result.GetError()));
 }
 
 RestartRouterInputOutcome MediaConnectClient::RestartRouterInput(const RestartRouterInputRequest& request) const {
@@ -1094,7 +1189,9 @@ RestartRouterInputOutcome MediaConnectClient::RestartRouterInput(const RestartRo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return RestartRouterInputOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RestartRouterInputOutcome(result.GetResultWithOwnership())
+                            : RestartRouterInputOutcome(std::move(result.GetError()));
 }
 
 RestartRouterOutputOutcome MediaConnectClient::RestartRouterOutput(const RestartRouterOutputRequest& request) const {
@@ -1110,7 +1207,9 @@ RestartRouterOutputOutcome MediaConnectClient::RestartRouterOutput(const Restart
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return RestartRouterOutputOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RestartRouterOutputOutcome(result.GetResultWithOwnership())
+                            : RestartRouterOutputOutcome(std::move(result.GetError()));
 }
 
 RevokeFlowEntitlementOutcome MediaConnectClient::RevokeFlowEntitlement(const RevokeFlowEntitlementRequest& request) const {
@@ -1133,7 +1232,9 @@ RevokeFlowEntitlementOutcome MediaConnectClient::RevokeFlowEntitlement(const Rev
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEntitlementArn());
   };
 
-  return RevokeFlowEntitlementOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? RevokeFlowEntitlementOutcome(result.GetResultWithOwnership())
+                            : RevokeFlowEntitlementOutcome(std::move(result.GetError()));
 }
 
 StartFlowOutcome MediaConnectClient::StartFlow(const StartFlowRequest& request) const {
@@ -1149,7 +1250,8 @@ StartFlowOutcome MediaConnectClient::StartFlow(const StartFlowRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFlowArn());
   };
 
-  return StartFlowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartFlowOutcome(result.GetResultWithOwnership()) : StartFlowOutcome(std::move(result.GetError()));
 }
 
 StartRouterInputOutcome MediaConnectClient::StartRouterInput(const StartRouterInputRequest& request) const {
@@ -1165,7 +1267,9 @@ StartRouterInputOutcome MediaConnectClient::StartRouterInput(const StartRouterIn
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return StartRouterInputOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartRouterInputOutcome(result.GetResultWithOwnership())
+                            : StartRouterInputOutcome(std::move(result.GetError()));
 }
 
 StartRouterOutputOutcome MediaConnectClient::StartRouterOutput(const StartRouterOutputRequest& request) const {
@@ -1181,7 +1285,9 @@ StartRouterOutputOutcome MediaConnectClient::StartRouterOutput(const StartRouter
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return StartRouterOutputOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartRouterOutputOutcome(result.GetResultWithOwnership())
+                            : StartRouterOutputOutcome(std::move(result.GetError()));
 }
 
 StopFlowOutcome MediaConnectClient::StopFlow(const StopFlowRequest& request) const {
@@ -1197,7 +1303,8 @@ StopFlowOutcome MediaConnectClient::StopFlow(const StopFlowRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFlowArn());
   };
 
-  return StopFlowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopFlowOutcome(result.GetResultWithOwnership()) : StopFlowOutcome(std::move(result.GetError()));
 }
 
 StopRouterInputOutcome MediaConnectClient::StopRouterInput(const StopRouterInputRequest& request) const {
@@ -1213,7 +1320,9 @@ StopRouterInputOutcome MediaConnectClient::StopRouterInput(const StopRouterInput
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return StopRouterInputOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopRouterInputOutcome(result.GetResultWithOwnership())
+                            : StopRouterInputOutcome(std::move(result.GetError()));
 }
 
 StopRouterOutputOutcome MediaConnectClient::StopRouterOutput(const StopRouterOutputRequest& request) const {
@@ -1229,7 +1338,9 @@ StopRouterOutputOutcome MediaConnectClient::StopRouterOutput(const StopRouterOut
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return StopRouterOutputOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopRouterOutputOutcome(result.GetResultWithOwnership())
+                            : StopRouterOutputOutcome(std::move(result.GetError()));
 }
 
 TagGlobalResourceOutcome MediaConnectClient::TagGlobalResource(const TagGlobalResourceRequest& request) const {
@@ -1245,7 +1356,9 @@ TagGlobalResourceOutcome MediaConnectClient::TagGlobalResource(const TagGlobalRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagGlobalResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagGlobalResourceOutcome(result.GetResultWithOwnership())
+                            : TagGlobalResourceOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome MediaConnectClient::TagResource(const TagResourceRequest& request) const {
@@ -1261,7 +1374,8 @@ TagResourceOutcome MediaConnectClient::TagResource(const TagResourceRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 TakeRouterInputOutcome MediaConnectClient::TakeRouterInput(const TakeRouterInputRequest& request) const {
@@ -1277,7 +1391,9 @@ TakeRouterInputOutcome MediaConnectClient::TakeRouterInput(const TakeRouterInput
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRouterOutputArn());
   };
 
-  return TakeRouterInputOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? TakeRouterInputOutcome(result.GetResultWithOwnership())
+                            : TakeRouterInputOutcome(std::move(result.GetError()));
 }
 
 UntagGlobalResourceOutcome MediaConnectClient::UntagGlobalResource(const UntagGlobalResourceRequest& request) const {
@@ -1298,7 +1414,9 @@ UntagGlobalResourceOutcome MediaConnectClient::UntagGlobalResource(const UntagGl
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagGlobalResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagGlobalResourceOutcome(result.GetResultWithOwnership())
+                            : UntagGlobalResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome MediaConnectClient::UntagResource(const UntagResourceRequest& request) const {
@@ -1319,7 +1437,8 @@ UntagResourceOutcome MediaConnectClient::UntagResource(const UntagResourceReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateBridgeOutcome MediaConnectClient::UpdateBridge(const UpdateBridgeRequest& request) const {
@@ -1335,7 +1454,8 @@ UpdateBridgeOutcome MediaConnectClient::UpdateBridge(const UpdateBridgeRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBridgeArn());
   };
 
-  return UpdateBridgeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateBridgeOutcome(result.GetResultWithOwnership()) : UpdateBridgeOutcome(std::move(result.GetError()));
 }
 
 UpdateBridgeOutputOutcome MediaConnectClient::UpdateBridgeOutput(const UpdateBridgeOutputRequest& request) const {
@@ -1358,7 +1478,9 @@ UpdateBridgeOutputOutcome MediaConnectClient::UpdateBridgeOutput(const UpdateBri
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOutputName());
   };
 
-  return UpdateBridgeOutputOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateBridgeOutputOutcome(result.GetResultWithOwnership())
+                            : UpdateBridgeOutputOutcome(std::move(result.GetError()));
 }
 
 UpdateBridgeSourceOutcome MediaConnectClient::UpdateBridgeSource(const UpdateBridgeSourceRequest& request) const {
@@ -1381,7 +1503,9 @@ UpdateBridgeSourceOutcome MediaConnectClient::UpdateBridgeSource(const UpdateBri
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSourceName());
   };
 
-  return UpdateBridgeSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateBridgeSourceOutcome(result.GetResultWithOwnership())
+                            : UpdateBridgeSourceOutcome(std::move(result.GetError()));
 }
 
 UpdateBridgeStateOutcome MediaConnectClient::UpdateBridgeState(const UpdateBridgeStateRequest& request) const {
@@ -1398,7 +1522,9 @@ UpdateBridgeStateOutcome MediaConnectClient::UpdateBridgeState(const UpdateBridg
     endpointResolutionOutcome.GetResult().AddPathSegments("/state");
   };
 
-  return UpdateBridgeStateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateBridgeStateOutcome(result.GetResultWithOwnership())
+                            : UpdateBridgeStateOutcome(std::move(result.GetError()));
 }
 
 UpdateFlowOutcome MediaConnectClient::UpdateFlow(const UpdateFlowRequest& request) const {
@@ -1414,7 +1540,8 @@ UpdateFlowOutcome MediaConnectClient::UpdateFlow(const UpdateFlowRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFlowArn());
   };
 
-  return UpdateFlowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateFlowOutcome(result.GetResultWithOwnership()) : UpdateFlowOutcome(std::move(result.GetError()));
 }
 
 UpdateFlowEntitlementOutcome MediaConnectClient::UpdateFlowEntitlement(const UpdateFlowEntitlementRequest& request) const {
@@ -1437,7 +1564,9 @@ UpdateFlowEntitlementOutcome MediaConnectClient::UpdateFlowEntitlement(const Upd
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEntitlementArn());
   };
 
-  return UpdateFlowEntitlementOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateFlowEntitlementOutcome(result.GetResultWithOwnership())
+                            : UpdateFlowEntitlementOutcome(std::move(result.GetError()));
 }
 
 UpdateFlowMediaStreamOutcome MediaConnectClient::UpdateFlowMediaStream(const UpdateFlowMediaStreamRequest& request) const {
@@ -1460,7 +1589,9 @@ UpdateFlowMediaStreamOutcome MediaConnectClient::UpdateFlowMediaStream(const Upd
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMediaStreamName());
   };
 
-  return UpdateFlowMediaStreamOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateFlowMediaStreamOutcome(result.GetResultWithOwnership())
+                            : UpdateFlowMediaStreamOutcome(std::move(result.GetError()));
 }
 
 UpdateFlowOutputOutcome MediaConnectClient::UpdateFlowOutput(const UpdateFlowOutputRequest& request) const {
@@ -1483,7 +1614,9 @@ UpdateFlowOutputOutcome MediaConnectClient::UpdateFlowOutput(const UpdateFlowOut
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOutputArn());
   };
 
-  return UpdateFlowOutputOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateFlowOutputOutcome(result.GetResultWithOwnership())
+                            : UpdateFlowOutputOutcome(std::move(result.GetError()));
 }
 
 UpdateFlowSourceOutcome MediaConnectClient::UpdateFlowSource(const UpdateFlowSourceRequest& request) const {
@@ -1506,7 +1639,9 @@ UpdateFlowSourceOutcome MediaConnectClient::UpdateFlowSource(const UpdateFlowSou
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSourceArn());
   };
 
-  return UpdateFlowSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateFlowSourceOutcome(result.GetResultWithOwnership())
+                            : UpdateFlowSourceOutcome(std::move(result.GetError()));
 }
 
 UpdateGatewayInstanceOutcome MediaConnectClient::UpdateGatewayInstance(const UpdateGatewayInstanceRequest& request) const {
@@ -1522,7 +1657,9 @@ UpdateGatewayInstanceOutcome MediaConnectClient::UpdateGatewayInstance(const Upd
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGatewayInstanceArn());
   };
 
-  return UpdateGatewayInstanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateGatewayInstanceOutcome(result.GetResultWithOwnership())
+                            : UpdateGatewayInstanceOutcome(std::move(result.GetError()));
 }
 
 UpdateRouterInputOutcome MediaConnectClient::UpdateRouterInput(const UpdateRouterInputRequest& request) const {
@@ -1538,7 +1675,9 @@ UpdateRouterInputOutcome MediaConnectClient::UpdateRouterInput(const UpdateRoute
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return UpdateRouterInputOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateRouterInputOutcome(result.GetResultWithOwnership())
+                            : UpdateRouterInputOutcome(std::move(result.GetError()));
 }
 
 UpdateRouterNetworkInterfaceOutcome MediaConnectClient::UpdateRouterNetworkInterface(
@@ -1555,7 +1694,9 @@ UpdateRouterNetworkInterfaceOutcome MediaConnectClient::UpdateRouterNetworkInter
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return UpdateRouterNetworkInterfaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateRouterNetworkInterfaceOutcome(result.GetResultWithOwnership())
+                            : UpdateRouterNetworkInterfaceOutcome(std::move(result.GetError()));
 }
 
 UpdateRouterOutputOutcome MediaConnectClient::UpdateRouterOutput(const UpdateRouterOutputRequest& request) const {
@@ -1571,5 +1712,7 @@ UpdateRouterOutputOutcome MediaConnectClient::UpdateRouterOutput(const UpdateRou
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return UpdateRouterOutputOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateRouterOutputOutcome(result.GetResultWithOwnership())
+                            : UpdateRouterOutputOutcome(std::move(result.GetError()));
 }

@@ -231,172 +231,245 @@ SNSClient::InvokeOperationOutcome SNSClient::InvokeServiceOperation(const Amazon
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 AddPermissionOutcome SNSClient::AddPermission(const AddPermissionRequest& request) const {
-  return AddPermissionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddPermissionOutcome(result.GetResultWithOwnership()) : AddPermissionOutcome(std::move(result.GetError()));
 }
 
 CheckIfPhoneNumberIsOptedOutOutcome SNSClient::CheckIfPhoneNumberIsOptedOut(const CheckIfPhoneNumberIsOptedOutRequest& request) const {
-  return CheckIfPhoneNumberIsOptedOutOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CheckIfPhoneNumberIsOptedOutOutcome(result.GetResultWithOwnership())
+                            : CheckIfPhoneNumberIsOptedOutOutcome(std::move(result.GetError()));
 }
 
 ConfirmSubscriptionOutcome SNSClient::ConfirmSubscription(const ConfirmSubscriptionRequest& request) const {
-  return ConfirmSubscriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ConfirmSubscriptionOutcome(result.GetResultWithOwnership())
+                            : ConfirmSubscriptionOutcome(std::move(result.GetError()));
 }
 
 CreatePlatformApplicationOutcome SNSClient::CreatePlatformApplication(const CreatePlatformApplicationRequest& request) const {
-  return CreatePlatformApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePlatformApplicationOutcome(result.GetResultWithOwnership())
+                            : CreatePlatformApplicationOutcome(std::move(result.GetError()));
 }
 
 CreatePlatformEndpointOutcome SNSClient::CreatePlatformEndpoint(const CreatePlatformEndpointRequest& request) const {
-  return CreatePlatformEndpointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePlatformEndpointOutcome(result.GetResultWithOwnership())
+                            : CreatePlatformEndpointOutcome(std::move(result.GetError()));
 }
 
 CreateSMSSandboxPhoneNumberOutcome SNSClient::CreateSMSSandboxPhoneNumber(const CreateSMSSandboxPhoneNumberRequest& request) const {
-  return CreateSMSSandboxPhoneNumberOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSMSSandboxPhoneNumberOutcome(result.GetResultWithOwnership())
+                            : CreateSMSSandboxPhoneNumberOutcome(std::move(result.GetError()));
 }
 
 CreateTopicOutcome SNSClient::CreateTopic(const CreateTopicRequest& request) const {
-  return CreateTopicOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTopicOutcome(result.GetResultWithOwnership()) : CreateTopicOutcome(std::move(result.GetError()));
 }
 
 DeleteEndpointOutcome SNSClient::DeleteEndpoint(const DeleteEndpointRequest& request) const {
-  return DeleteEndpointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteEndpointOutcome(result.GetResultWithOwnership()) : DeleteEndpointOutcome(std::move(result.GetError()));
 }
 
 DeletePlatformApplicationOutcome SNSClient::DeletePlatformApplication(const DeletePlatformApplicationRequest& request) const {
-  return DeletePlatformApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePlatformApplicationOutcome(result.GetResultWithOwnership())
+                            : DeletePlatformApplicationOutcome(std::move(result.GetError()));
 }
 
 DeleteSMSSandboxPhoneNumberOutcome SNSClient::DeleteSMSSandboxPhoneNumber(const DeleteSMSSandboxPhoneNumberRequest& request) const {
-  return DeleteSMSSandboxPhoneNumberOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSMSSandboxPhoneNumberOutcome(result.GetResultWithOwnership())
+                            : DeleteSMSSandboxPhoneNumberOutcome(std::move(result.GetError()));
 }
 
 DeleteTopicOutcome SNSClient::DeleteTopic(const DeleteTopicRequest& request) const {
-  return DeleteTopicOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTopicOutcome(result.GetResultWithOwnership()) : DeleteTopicOutcome(std::move(result.GetError()));
 }
 
 GetDataProtectionPolicyOutcome SNSClient::GetDataProtectionPolicy(const GetDataProtectionPolicyRequest& request) const {
-  return GetDataProtectionPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDataProtectionPolicyOutcome(result.GetResultWithOwnership())
+                            : GetDataProtectionPolicyOutcome(std::move(result.GetError()));
 }
 
 GetEndpointAttributesOutcome SNSClient::GetEndpointAttributes(const GetEndpointAttributesRequest& request) const {
-  return GetEndpointAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEndpointAttributesOutcome(result.GetResultWithOwnership())
+                            : GetEndpointAttributesOutcome(std::move(result.GetError()));
 }
 
 GetPlatformApplicationAttributesOutcome SNSClient::GetPlatformApplicationAttributes(
     const GetPlatformApplicationAttributesRequest& request) const {
-  return GetPlatformApplicationAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPlatformApplicationAttributesOutcome(result.GetResultWithOwnership())
+                            : GetPlatformApplicationAttributesOutcome(std::move(result.GetError()));
 }
 
 GetSMSAttributesOutcome SNSClient::GetSMSAttributes(const GetSMSAttributesRequest& request) const {
-  return GetSMSAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSMSAttributesOutcome(result.GetResultWithOwnership())
+                            : GetSMSAttributesOutcome(std::move(result.GetError()));
 }
 
 GetSMSSandboxAccountStatusOutcome SNSClient::GetSMSSandboxAccountStatus(const GetSMSSandboxAccountStatusRequest& request) const {
-  return GetSMSSandboxAccountStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSMSSandboxAccountStatusOutcome(result.GetResultWithOwnership())
+                            : GetSMSSandboxAccountStatusOutcome(std::move(result.GetError()));
 }
 
 GetSubscriptionAttributesOutcome SNSClient::GetSubscriptionAttributes(const GetSubscriptionAttributesRequest& request) const {
-  return GetSubscriptionAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSubscriptionAttributesOutcome(result.GetResultWithOwnership())
+                            : GetSubscriptionAttributesOutcome(std::move(result.GetError()));
 }
 
 GetTopicAttributesOutcome SNSClient::GetTopicAttributes(const GetTopicAttributesRequest& request) const {
-  return GetTopicAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTopicAttributesOutcome(result.GetResultWithOwnership())
+                            : GetTopicAttributesOutcome(std::move(result.GetError()));
 }
 
 ListEndpointsByPlatformApplicationOutcome SNSClient::ListEndpointsByPlatformApplication(
     const ListEndpointsByPlatformApplicationRequest& request) const {
-  return ListEndpointsByPlatformApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEndpointsByPlatformApplicationOutcome(result.GetResultWithOwnership())
+                            : ListEndpointsByPlatformApplicationOutcome(std::move(result.GetError()));
 }
 
 ListOriginationNumbersOutcome SNSClient::ListOriginationNumbers(const ListOriginationNumbersRequest& request) const {
-  return ListOriginationNumbersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListOriginationNumbersOutcome(result.GetResultWithOwnership())
+                            : ListOriginationNumbersOutcome(std::move(result.GetError()));
 }
 
 ListPhoneNumbersOptedOutOutcome SNSClient::ListPhoneNumbersOptedOut(const ListPhoneNumbersOptedOutRequest& request) const {
-  return ListPhoneNumbersOptedOutOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPhoneNumbersOptedOutOutcome(result.GetResultWithOwnership())
+                            : ListPhoneNumbersOptedOutOutcome(std::move(result.GetError()));
 }
 
 ListPlatformApplicationsOutcome SNSClient::ListPlatformApplications(const ListPlatformApplicationsRequest& request) const {
-  return ListPlatformApplicationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPlatformApplicationsOutcome(result.GetResultWithOwnership())
+                            : ListPlatformApplicationsOutcome(std::move(result.GetError()));
 }
 
 ListSMSSandboxPhoneNumbersOutcome SNSClient::ListSMSSandboxPhoneNumbers(const ListSMSSandboxPhoneNumbersRequest& request) const {
-  return ListSMSSandboxPhoneNumbersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSMSSandboxPhoneNumbersOutcome(result.GetResultWithOwnership())
+                            : ListSMSSandboxPhoneNumbersOutcome(std::move(result.GetError()));
 }
 
 ListSubscriptionsOutcome SNSClient::ListSubscriptions(const ListSubscriptionsRequest& request) const {
-  return ListSubscriptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSubscriptionsOutcome(result.GetResultWithOwnership())
+                            : ListSubscriptionsOutcome(std::move(result.GetError()));
 }
 
 ListSubscriptionsByTopicOutcome SNSClient::ListSubscriptionsByTopic(const ListSubscriptionsByTopicRequest& request) const {
-  return ListSubscriptionsByTopicOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSubscriptionsByTopicOutcome(result.GetResultWithOwnership())
+                            : ListSubscriptionsByTopicOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome SNSClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTopicsOutcome SNSClient::ListTopics(const ListTopicsRequest& request) const {
-  return ListTopicsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTopicsOutcome(result.GetResultWithOwnership()) : ListTopicsOutcome(std::move(result.GetError()));
 }
 
 OptInPhoneNumberOutcome SNSClient::OptInPhoneNumber(const OptInPhoneNumberRequest& request) const {
-  return OptInPhoneNumberOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? OptInPhoneNumberOutcome(result.GetResultWithOwnership())
+                            : OptInPhoneNumberOutcome(std::move(result.GetError()));
 }
 
 PublishOutcome SNSClient::Publish(const PublishRequest& request) const {
-  return PublishOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PublishOutcome(result.GetResultWithOwnership()) : PublishOutcome(std::move(result.GetError()));
 }
 
 PublishBatchOutcome SNSClient::PublishBatch(const PublishBatchRequest& request) const {
-  return PublishBatchOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PublishBatchOutcome(result.GetResultWithOwnership()) : PublishBatchOutcome(std::move(result.GetError()));
 }
 
 PutDataProtectionPolicyOutcome SNSClient::PutDataProtectionPolicy(const PutDataProtectionPolicyRequest& request) const {
-  return PutDataProtectionPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutDataProtectionPolicyOutcome(result.GetResultWithOwnership())
+                            : PutDataProtectionPolicyOutcome(std::move(result.GetError()));
 }
 
 RemovePermissionOutcome SNSClient::RemovePermission(const RemovePermissionRequest& request) const {
-  return RemovePermissionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemovePermissionOutcome(result.GetResultWithOwnership())
+                            : RemovePermissionOutcome(std::move(result.GetError()));
 }
 
 SetEndpointAttributesOutcome SNSClient::SetEndpointAttributes(const SetEndpointAttributesRequest& request) const {
-  return SetEndpointAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetEndpointAttributesOutcome(result.GetResultWithOwnership())
+                            : SetEndpointAttributesOutcome(std::move(result.GetError()));
 }
 
 SetPlatformApplicationAttributesOutcome SNSClient::SetPlatformApplicationAttributes(
     const SetPlatformApplicationAttributesRequest& request) const {
-  return SetPlatformApplicationAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetPlatformApplicationAttributesOutcome(result.GetResultWithOwnership())
+                            : SetPlatformApplicationAttributesOutcome(std::move(result.GetError()));
 }
 
 SetSMSAttributesOutcome SNSClient::SetSMSAttributes(const SetSMSAttributesRequest& request) const {
-  return SetSMSAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetSMSAttributesOutcome(result.GetResultWithOwnership())
+                            : SetSMSAttributesOutcome(std::move(result.GetError()));
 }
 
 SetSubscriptionAttributesOutcome SNSClient::SetSubscriptionAttributes(const SetSubscriptionAttributesRequest& request) const {
-  return SetSubscriptionAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetSubscriptionAttributesOutcome(result.GetResultWithOwnership())
+                            : SetSubscriptionAttributesOutcome(std::move(result.GetError()));
 }
 
 SetTopicAttributesOutcome SNSClient::SetTopicAttributes(const SetTopicAttributesRequest& request) const {
-  return SetTopicAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetTopicAttributesOutcome(result.GetResultWithOwnership())
+                            : SetTopicAttributesOutcome(std::move(result.GetError()));
 }
 
 SubscribeOutcome SNSClient::Subscribe(const SubscribeRequest& request) const {
-  return SubscribeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SubscribeOutcome(result.GetResultWithOwnership()) : SubscribeOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome SNSClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UnsubscribeOutcome SNSClient::Unsubscribe(const UnsubscribeRequest& request) const {
-  return UnsubscribeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UnsubscribeOutcome(result.GetResultWithOwnership()) : UnsubscribeOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome SNSClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 VerifySMSSandboxPhoneNumberOutcome SNSClient::VerifySMSSandboxPhoneNumber(const VerifySMSSandboxPhoneNumberRequest& request) const {
-  return VerifySMSSandboxPhoneNumberOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? VerifySMSSandboxPhoneNumberOutcome(result.GetResultWithOwnership())
+                            : VerifySMSSandboxPhoneNumberOutcome(std::move(result.GetError()));
 }

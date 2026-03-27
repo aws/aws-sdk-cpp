@@ -221,7 +221,9 @@ AssociateLibraryItemReviewOutcome QAppsClient::AssociateLibraryItemReview(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/catalog.associateItemRating");
   };
 
-  return AssociateLibraryItemReviewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateLibraryItemReviewOutcome(result.GetResultWithOwnership())
+                            : AssociateLibraryItemReviewOutcome(std::move(result.GetError()));
 }
 
 AssociateQAppWithUserOutcome QAppsClient::AssociateQAppWithUser(const AssociateQAppWithUserRequest& request) const {
@@ -236,7 +238,9 @@ AssociateQAppWithUserOutcome QAppsClient::AssociateQAppWithUser(const AssociateQ
     endpointResolutionOutcome.GetResult().AddPathSegments("/apps.install");
   };
 
-  return AssociateQAppWithUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateQAppWithUserOutcome(result.GetResultWithOwnership())
+                            : AssociateQAppWithUserOutcome(std::move(result.GetError()));
 }
 
 BatchCreateCategoryOutcome QAppsClient::BatchCreateCategory(const BatchCreateCategoryRequest& request) const {
@@ -251,7 +255,9 @@ BatchCreateCategoryOutcome QAppsClient::BatchCreateCategory(const BatchCreateCat
     endpointResolutionOutcome.GetResult().AddPathSegments("/catalog.createCategories");
   };
 
-  return BatchCreateCategoryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchCreateCategoryOutcome(result.GetResultWithOwnership())
+                            : BatchCreateCategoryOutcome(std::move(result.GetError()));
 }
 
 BatchDeleteCategoryOutcome QAppsClient::BatchDeleteCategory(const BatchDeleteCategoryRequest& request) const {
@@ -266,7 +272,9 @@ BatchDeleteCategoryOutcome QAppsClient::BatchDeleteCategory(const BatchDeleteCat
     endpointResolutionOutcome.GetResult().AddPathSegments("/catalog.deleteCategories");
   };
 
-  return BatchDeleteCategoryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeleteCategoryOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteCategoryOutcome(std::move(result.GetError()));
 }
 
 BatchUpdateCategoryOutcome QAppsClient::BatchUpdateCategory(const BatchUpdateCategoryRequest& request) const {
@@ -281,7 +289,9 @@ BatchUpdateCategoryOutcome QAppsClient::BatchUpdateCategory(const BatchUpdateCat
     endpointResolutionOutcome.GetResult().AddPathSegments("/catalog.updateCategories");
   };
 
-  return BatchUpdateCategoryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchUpdateCategoryOutcome(result.GetResultWithOwnership())
+                            : BatchUpdateCategoryOutcome(std::move(result.GetError()));
 }
 
 CreateLibraryItemOutcome QAppsClient::CreateLibraryItem(const CreateLibraryItemRequest& request) const {
@@ -296,7 +306,9 @@ CreateLibraryItemOutcome QAppsClient::CreateLibraryItem(const CreateLibraryItemR
     endpointResolutionOutcome.GetResult().AddPathSegments("/catalog.createItem");
   };
 
-  return CreateLibraryItemOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLibraryItemOutcome(result.GetResultWithOwnership())
+                            : CreateLibraryItemOutcome(std::move(result.GetError()));
 }
 
 CreatePresignedUrlOutcome QAppsClient::CreatePresignedUrl(const CreatePresignedUrlRequest& request) const {
@@ -311,7 +323,9 @@ CreatePresignedUrlOutcome QAppsClient::CreatePresignedUrl(const CreatePresignedU
     endpointResolutionOutcome.GetResult().AddPathSegments("/apps.createPresignedUrl");
   };
 
-  return CreatePresignedUrlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePresignedUrlOutcome(result.GetResultWithOwnership())
+                            : CreatePresignedUrlOutcome(std::move(result.GetError()));
 }
 
 CreateQAppOutcome QAppsClient::CreateQApp(const CreateQAppRequest& request) const {
@@ -326,7 +340,8 @@ CreateQAppOutcome QAppsClient::CreateQApp(const CreateQAppRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/apps.create");
   };
 
-  return CreateQAppOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateQAppOutcome(result.GetResultWithOwnership()) : CreateQAppOutcome(std::move(result.GetError()));
 }
 
 DeleteLibraryItemOutcome QAppsClient::DeleteLibraryItem(const DeleteLibraryItemRequest& request) const {
@@ -341,7 +356,9 @@ DeleteLibraryItemOutcome QAppsClient::DeleteLibraryItem(const DeleteLibraryItemR
     endpointResolutionOutcome.GetResult().AddPathSegments("/catalog.deleteItem");
   };
 
-  return DeleteLibraryItemOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLibraryItemOutcome(result.GetResultWithOwnership())
+                            : DeleteLibraryItemOutcome(std::move(result.GetError()));
 }
 
 DeleteQAppOutcome QAppsClient::DeleteQApp(const DeleteQAppRequest& request) const {
@@ -356,7 +373,8 @@ DeleteQAppOutcome QAppsClient::DeleteQApp(const DeleteQAppRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/apps.delete");
   };
 
-  return DeleteQAppOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteQAppOutcome(result.GetResultWithOwnership()) : DeleteQAppOutcome(std::move(result.GetError()));
 }
 
 DescribeQAppPermissionsOutcome QAppsClient::DescribeQAppPermissions(const DescribeQAppPermissionsRequest& request) const {
@@ -376,7 +394,9 @@ DescribeQAppPermissionsOutcome QAppsClient::DescribeQAppPermissions(const Descri
     endpointResolutionOutcome.GetResult().AddPathSegments("/apps.describeQAppPermissions");
   };
 
-  return DescribeQAppPermissionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeQAppPermissionsOutcome(result.GetResultWithOwnership())
+                            : DescribeQAppPermissionsOutcome(std::move(result.GetError()));
 }
 
 DisassociateLibraryItemReviewOutcome QAppsClient::DisassociateLibraryItemReview(const DisassociateLibraryItemReviewRequest& request) const {
@@ -391,7 +411,9 @@ DisassociateLibraryItemReviewOutcome QAppsClient::DisassociateLibraryItemReview(
     endpointResolutionOutcome.GetResult().AddPathSegments("/catalog.disassociateItemRating");
   };
 
-  return DisassociateLibraryItemReviewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateLibraryItemReviewOutcome(result.GetResultWithOwnership())
+                            : DisassociateLibraryItemReviewOutcome(std::move(result.GetError()));
 }
 
 DisassociateQAppFromUserOutcome QAppsClient::DisassociateQAppFromUser(const DisassociateQAppFromUserRequest& request) const {
@@ -406,7 +428,9 @@ DisassociateQAppFromUserOutcome QAppsClient::DisassociateQAppFromUser(const Disa
     endpointResolutionOutcome.GetResult().AddPathSegments("/apps.uninstall");
   };
 
-  return DisassociateQAppFromUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateQAppFromUserOutcome(result.GetResultWithOwnership())
+                            : DisassociateQAppFromUserOutcome(std::move(result.GetError()));
 }
 
 ExportQAppSessionDataOutcome QAppsClient::ExportQAppSessionData(const ExportQAppSessionDataRequest& request) const {
@@ -421,7 +445,9 @@ ExportQAppSessionDataOutcome QAppsClient::ExportQAppSessionData(const ExportQApp
     endpointResolutionOutcome.GetResult().AddPathSegments("/runtime.exportQAppSessionData");
   };
 
-  return ExportQAppSessionDataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExportQAppSessionDataOutcome(result.GetResultWithOwnership())
+                            : ExportQAppSessionDataOutcome(std::move(result.GetError()));
 }
 
 GetLibraryItemOutcome QAppsClient::GetLibraryItem(const GetLibraryItemRequest& request) const {
@@ -441,7 +467,8 @@ GetLibraryItemOutcome QAppsClient::GetLibraryItem(const GetLibraryItemRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/catalog.getItem");
   };
 
-  return GetLibraryItemOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetLibraryItemOutcome(result.GetResultWithOwnership()) : GetLibraryItemOutcome(std::move(result.GetError()));
 }
 
 GetQAppOutcome QAppsClient::GetQApp(const GetQAppRequest& request) const {
@@ -461,7 +488,8 @@ GetQAppOutcome QAppsClient::GetQApp(const GetQAppRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/apps.get");
   };
 
-  return GetQAppOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetQAppOutcome(result.GetResultWithOwnership()) : GetQAppOutcome(std::move(result.GetError()));
 }
 
 GetQAppSessionOutcome QAppsClient::GetQAppSession(const GetQAppSessionRequest& request) const {
@@ -481,7 +509,8 @@ GetQAppSessionOutcome QAppsClient::GetQAppSession(const GetQAppSessionRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/runtime.getQAppSession");
   };
 
-  return GetQAppSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetQAppSessionOutcome(result.GetResultWithOwnership()) : GetQAppSessionOutcome(std::move(result.GetError()));
 }
 
 GetQAppSessionMetadataOutcome QAppsClient::GetQAppSessionMetadata(const GetQAppSessionMetadataRequest& request) const {
@@ -501,7 +530,9 @@ GetQAppSessionMetadataOutcome QAppsClient::GetQAppSessionMetadata(const GetQAppS
     endpointResolutionOutcome.GetResult().AddPathSegments("/runtime.getQAppSessionMetadata");
   };
 
-  return GetQAppSessionMetadataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetQAppSessionMetadataOutcome(result.GetResultWithOwnership())
+                            : GetQAppSessionMetadataOutcome(std::move(result.GetError()));
 }
 
 ImportDocumentOutcome QAppsClient::ImportDocument(const ImportDocumentRequest& request) const {
@@ -516,7 +547,8 @@ ImportDocumentOutcome QAppsClient::ImportDocument(const ImportDocumentRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/apps.importDocument");
   };
 
-  return ImportDocumentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportDocumentOutcome(result.GetResultWithOwnership()) : ImportDocumentOutcome(std::move(result.GetError()));
 }
 
 ListCategoriesOutcome QAppsClient::ListCategories(const ListCategoriesRequest& request) const {
@@ -531,7 +563,8 @@ ListCategoriesOutcome QAppsClient::ListCategories(const ListCategoriesRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/catalog.listCategories");
   };
 
-  return ListCategoriesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCategoriesOutcome(result.GetResultWithOwnership()) : ListCategoriesOutcome(std::move(result.GetError()));
 }
 
 ListLibraryItemsOutcome QAppsClient::ListLibraryItems(const ListLibraryItemsRequest& request) const {
@@ -546,7 +579,9 @@ ListLibraryItemsOutcome QAppsClient::ListLibraryItems(const ListLibraryItemsRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/catalog.list");
   };
 
-  return ListLibraryItemsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListLibraryItemsOutcome(result.GetResultWithOwnership())
+                            : ListLibraryItemsOutcome(std::move(result.GetError()));
 }
 
 ListQAppSessionDataOutcome QAppsClient::ListQAppSessionData(const ListQAppSessionDataRequest& request) const {
@@ -566,7 +601,9 @@ ListQAppSessionDataOutcome QAppsClient::ListQAppSessionData(const ListQAppSessio
     endpointResolutionOutcome.GetResult().AddPathSegments("/runtime.listQAppSessionData");
   };
 
-  return ListQAppSessionDataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListQAppSessionDataOutcome(result.GetResultWithOwnership())
+                            : ListQAppSessionDataOutcome(std::move(result.GetError()));
 }
 
 ListQAppsOutcome QAppsClient::ListQApps(const ListQAppsRequest& request) const {
@@ -581,7 +618,8 @@ ListQAppsOutcome QAppsClient::ListQApps(const ListQAppsRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/apps.list");
   };
 
-  return ListQAppsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListQAppsOutcome(result.GetResultWithOwnership()) : ListQAppsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome QAppsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -597,7 +635,9 @@ ListTagsForResourceOutcome QAppsClient::ListTagsForResource(const ListTagsForRes
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceARN());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PredictQAppOutcome QAppsClient::PredictQApp(const PredictQAppRequest& request) const {
@@ -612,7 +652,8 @@ PredictQAppOutcome QAppsClient::PredictQApp(const PredictQAppRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegments("/apps.predictQApp");
   };
 
-  return PredictQAppOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PredictQAppOutcome(result.GetResultWithOwnership()) : PredictQAppOutcome(std::move(result.GetError()));
 }
 
 StartQAppSessionOutcome QAppsClient::StartQAppSession(const StartQAppSessionRequest& request) const {
@@ -627,7 +668,9 @@ StartQAppSessionOutcome QAppsClient::StartQAppSession(const StartQAppSessionRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/runtime.startQAppSession");
   };
 
-  return StartQAppSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartQAppSessionOutcome(result.GetResultWithOwnership())
+                            : StartQAppSessionOutcome(std::move(result.GetError()));
 }
 
 StopQAppSessionOutcome QAppsClient::StopQAppSession(const StopQAppSessionRequest& request) const {
@@ -642,7 +685,9 @@ StopQAppSessionOutcome QAppsClient::StopQAppSession(const StopQAppSessionRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/runtime.deleteMiniAppRun");
   };
 
-  return StopQAppSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopQAppSessionOutcome(result.GetResultWithOwnership())
+                            : StopQAppSessionOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome QAppsClient::TagResource(const TagResourceRequest& request) const {
@@ -658,7 +703,8 @@ TagResourceOutcome QAppsClient::TagResource(const TagResourceRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceARN());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome QAppsClient::UntagResource(const UntagResourceRequest& request) const {
@@ -679,7 +725,8 @@ UntagResourceOutcome QAppsClient::UntagResource(const UntagResourceRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceARN());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateLibraryItemOutcome QAppsClient::UpdateLibraryItem(const UpdateLibraryItemRequest& request) const {
@@ -694,7 +741,9 @@ UpdateLibraryItemOutcome QAppsClient::UpdateLibraryItem(const UpdateLibraryItemR
     endpointResolutionOutcome.GetResult().AddPathSegments("/catalog.updateItem");
   };
 
-  return UpdateLibraryItemOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLibraryItemOutcome(result.GetResultWithOwnership())
+                            : UpdateLibraryItemOutcome(std::move(result.GetError()));
 }
 
 UpdateLibraryItemMetadataOutcome QAppsClient::UpdateLibraryItemMetadata(const UpdateLibraryItemMetadataRequest& request) const {
@@ -709,7 +758,9 @@ UpdateLibraryItemMetadataOutcome QAppsClient::UpdateLibraryItemMetadata(const Up
     endpointResolutionOutcome.GetResult().AddPathSegments("/catalog.updateItemMetadata");
   };
 
-  return UpdateLibraryItemMetadataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLibraryItemMetadataOutcome(result.GetResultWithOwnership())
+                            : UpdateLibraryItemMetadataOutcome(std::move(result.GetError()));
 }
 
 UpdateQAppOutcome QAppsClient::UpdateQApp(const UpdateQAppRequest& request) const {
@@ -724,7 +775,8 @@ UpdateQAppOutcome QAppsClient::UpdateQApp(const UpdateQAppRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/apps.update");
   };
 
-  return UpdateQAppOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateQAppOutcome(result.GetResultWithOwnership()) : UpdateQAppOutcome(std::move(result.GetError()));
 }
 
 UpdateQAppPermissionsOutcome QAppsClient::UpdateQAppPermissions(const UpdateQAppPermissionsRequest& request) const {
@@ -739,7 +791,9 @@ UpdateQAppPermissionsOutcome QAppsClient::UpdateQAppPermissions(const UpdateQApp
     endpointResolutionOutcome.GetResult().AddPathSegments("/apps.updateQAppPermissions");
   };
 
-  return UpdateQAppPermissionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateQAppPermissionsOutcome(result.GetResultWithOwnership())
+                            : UpdateQAppPermissionsOutcome(std::move(result.GetError()));
 }
 
 UpdateQAppSessionOutcome QAppsClient::UpdateQAppSession(const UpdateQAppSessionRequest& request) const {
@@ -754,7 +808,9 @@ UpdateQAppSessionOutcome QAppsClient::UpdateQAppSession(const UpdateQAppSessionR
     endpointResolutionOutcome.GetResult().AddPathSegments("/runtime.updateQAppSession");
   };
 
-  return UpdateQAppSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateQAppSessionOutcome(result.GetResultWithOwnership())
+                            : UpdateQAppSessionOutcome(std::move(result.GetError()));
 }
 
 UpdateQAppSessionMetadataOutcome QAppsClient::UpdateQAppSessionMetadata(const UpdateQAppSessionMetadataRequest& request) const {
@@ -769,5 +825,7 @@ UpdateQAppSessionMetadataOutcome QAppsClient::UpdateQAppSessionMetadata(const Up
     endpointResolutionOutcome.GetResult().AddPathSegments("/runtime.updateQAppSessionMetadata");
   };
 
-  return UpdateQAppSessionMetadataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateQAppSessionMetadataOutcome(result.GetResultWithOwnership())
+                            : UpdateQAppSessionMetadataOutcome(std::move(result.GetError()));
 }

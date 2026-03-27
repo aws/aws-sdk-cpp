@@ -256,342 +256,488 @@ NetworkFirewallClient::InvokeOperationOutcome NetworkFirewallClient::InvokeServi
 
 AcceptNetworkFirewallTransitGatewayAttachmentOutcome NetworkFirewallClient::AcceptNetworkFirewallTransitGatewayAttachment(
     const AcceptNetworkFirewallTransitGatewayAttachmentRequest& request) const {
-  return AcceptNetworkFirewallTransitGatewayAttachmentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptNetworkFirewallTransitGatewayAttachmentOutcome(result.GetResultWithOwnership())
+                            : AcceptNetworkFirewallTransitGatewayAttachmentOutcome(std::move(result.GetError()));
 }
 
 AssociateAvailabilityZonesOutcome NetworkFirewallClient::AssociateAvailabilityZones(
     const AssociateAvailabilityZonesRequest& request) const {
-  return AssociateAvailabilityZonesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateAvailabilityZonesOutcome(result.GetResultWithOwnership())
+                            : AssociateAvailabilityZonesOutcome(std::move(result.GetError()));
 }
 
 AssociateFirewallPolicyOutcome NetworkFirewallClient::AssociateFirewallPolicy(const AssociateFirewallPolicyRequest& request) const {
-  return AssociateFirewallPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateFirewallPolicyOutcome(result.GetResultWithOwnership())
+                            : AssociateFirewallPolicyOutcome(std::move(result.GetError()));
 }
 
 AssociateSubnetsOutcome NetworkFirewallClient::AssociateSubnets(const AssociateSubnetsRequest& request) const {
-  return AssociateSubnetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateSubnetsOutcome(result.GetResultWithOwnership())
+                            : AssociateSubnetsOutcome(std::move(result.GetError()));
 }
 
 AttachRuleGroupsToProxyConfigurationOutcome NetworkFirewallClient::AttachRuleGroupsToProxyConfiguration(
     const AttachRuleGroupsToProxyConfigurationRequest& request) const {
-  return AttachRuleGroupsToProxyConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AttachRuleGroupsToProxyConfigurationOutcome(result.GetResultWithOwnership())
+                            : AttachRuleGroupsToProxyConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateFirewallOutcome NetworkFirewallClient::CreateFirewall(const CreateFirewallRequest& request) const {
-  return CreateFirewallOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFirewallOutcome(result.GetResultWithOwnership()) : CreateFirewallOutcome(std::move(result.GetError()));
 }
 
 CreateFirewallPolicyOutcome NetworkFirewallClient::CreateFirewallPolicy(const CreateFirewallPolicyRequest& request) const {
-  return CreateFirewallPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFirewallPolicyOutcome(result.GetResultWithOwnership())
+                            : CreateFirewallPolicyOutcome(std::move(result.GetError()));
 }
 
 CreateProxyOutcome NetworkFirewallClient::CreateProxy(const CreateProxyRequest& request) const {
-  return CreateProxyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProxyOutcome(result.GetResultWithOwnership()) : CreateProxyOutcome(std::move(result.GetError()));
 }
 
 CreateProxyConfigurationOutcome NetworkFirewallClient::CreateProxyConfiguration(const CreateProxyConfigurationRequest& request) const {
-  return CreateProxyConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProxyConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateProxyConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateProxyRuleGroupOutcome NetworkFirewallClient::CreateProxyRuleGroup(const CreateProxyRuleGroupRequest& request) const {
-  return CreateProxyRuleGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProxyRuleGroupOutcome(result.GetResultWithOwnership())
+                            : CreateProxyRuleGroupOutcome(std::move(result.GetError()));
 }
 
 CreateProxyRulesOutcome NetworkFirewallClient::CreateProxyRules(const CreateProxyRulesRequest& request) const {
-  return CreateProxyRulesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProxyRulesOutcome(result.GetResultWithOwnership())
+                            : CreateProxyRulesOutcome(std::move(result.GetError()));
 }
 
 CreateRuleGroupOutcome NetworkFirewallClient::CreateRuleGroup(const CreateRuleGroupRequest& request) const {
-  return CreateRuleGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRuleGroupOutcome(result.GetResultWithOwnership())
+                            : CreateRuleGroupOutcome(std::move(result.GetError()));
 }
 
 CreateTLSInspectionConfigurationOutcome NetworkFirewallClient::CreateTLSInspectionConfiguration(
     const CreateTLSInspectionConfigurationRequest& request) const {
-  return CreateTLSInspectionConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTLSInspectionConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateTLSInspectionConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateVpcEndpointAssociationOutcome NetworkFirewallClient::CreateVpcEndpointAssociation(
     const CreateVpcEndpointAssociationRequest& request) const {
-  return CreateVpcEndpointAssociationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateVpcEndpointAssociationOutcome(result.GetResultWithOwnership())
+                            : CreateVpcEndpointAssociationOutcome(std::move(result.GetError()));
 }
 
 DeleteFirewallOutcome NetworkFirewallClient::DeleteFirewall(const DeleteFirewallRequest& request) const {
-  return DeleteFirewallOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteFirewallOutcome(result.GetResultWithOwnership()) : DeleteFirewallOutcome(std::move(result.GetError()));
 }
 
 DeleteFirewallPolicyOutcome NetworkFirewallClient::DeleteFirewallPolicy(const DeleteFirewallPolicyRequest& request) const {
-  return DeleteFirewallPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteFirewallPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteFirewallPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteNetworkFirewallTransitGatewayAttachmentOutcome NetworkFirewallClient::DeleteNetworkFirewallTransitGatewayAttachment(
     const DeleteNetworkFirewallTransitGatewayAttachmentRequest& request) const {
-  return DeleteNetworkFirewallTransitGatewayAttachmentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteNetworkFirewallTransitGatewayAttachmentOutcome(result.GetResultWithOwnership())
+                            : DeleteNetworkFirewallTransitGatewayAttachmentOutcome(std::move(result.GetError()));
 }
 
 DeleteProxyOutcome NetworkFirewallClient::DeleteProxy(const DeleteProxyRequest& request) const {
-  return DeleteProxyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteProxyOutcome(result.GetResultWithOwnership()) : DeleteProxyOutcome(std::move(result.GetError()));
 }
 
 DeleteProxyConfigurationOutcome NetworkFirewallClient::DeleteProxyConfiguration(const DeleteProxyConfigurationRequest& request) const {
-  return DeleteProxyConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteProxyConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteProxyConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteProxyRuleGroupOutcome NetworkFirewallClient::DeleteProxyRuleGroup(const DeleteProxyRuleGroupRequest& request) const {
-  return DeleteProxyRuleGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteProxyRuleGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteProxyRuleGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteProxyRulesOutcome NetworkFirewallClient::DeleteProxyRules(const DeleteProxyRulesRequest& request) const {
-  return DeleteProxyRulesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteProxyRulesOutcome(result.GetResultWithOwnership())
+                            : DeleteProxyRulesOutcome(std::move(result.GetError()));
 }
 
 DeleteResourcePolicyOutcome NetworkFirewallClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const {
-  return DeleteResourcePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteRuleGroupOutcome NetworkFirewallClient::DeleteRuleGroup(const DeleteRuleGroupRequest& request) const {
-  return DeleteRuleGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRuleGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteRuleGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteTLSInspectionConfigurationOutcome NetworkFirewallClient::DeleteTLSInspectionConfiguration(
     const DeleteTLSInspectionConfigurationRequest& request) const {
-  return DeleteTLSInspectionConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTLSInspectionConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteTLSInspectionConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteVpcEndpointAssociationOutcome NetworkFirewallClient::DeleteVpcEndpointAssociation(
     const DeleteVpcEndpointAssociationRequest& request) const {
-  return DeleteVpcEndpointAssociationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVpcEndpointAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteVpcEndpointAssociationOutcome(std::move(result.GetError()));
 }
 
 DescribeFirewallOutcome NetworkFirewallClient::DescribeFirewall(const DescribeFirewallRequest& request) const {
-  return DescribeFirewallOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeFirewallOutcome(result.GetResultWithOwnership())
+                            : DescribeFirewallOutcome(std::move(result.GetError()));
 }
 
 DescribeFirewallMetadataOutcome NetworkFirewallClient::DescribeFirewallMetadata(const DescribeFirewallMetadataRequest& request) const {
-  return DescribeFirewallMetadataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeFirewallMetadataOutcome(result.GetResultWithOwnership())
+                            : DescribeFirewallMetadataOutcome(std::move(result.GetError()));
 }
 
 DescribeFirewallPolicyOutcome NetworkFirewallClient::DescribeFirewallPolicy(const DescribeFirewallPolicyRequest& request) const {
-  return DescribeFirewallPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeFirewallPolicyOutcome(result.GetResultWithOwnership())
+                            : DescribeFirewallPolicyOutcome(std::move(result.GetError()));
 }
 
 DescribeFlowOperationOutcome NetworkFirewallClient::DescribeFlowOperation(const DescribeFlowOperationRequest& request) const {
-  return DescribeFlowOperationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeFlowOperationOutcome(result.GetResultWithOwnership())
+                            : DescribeFlowOperationOutcome(std::move(result.GetError()));
 }
 
 DescribeLoggingConfigurationOutcome NetworkFirewallClient::DescribeLoggingConfiguration(
     const DescribeLoggingConfigurationRequest& request) const {
-  return DescribeLoggingConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeLoggingConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeLoggingConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeProxyOutcome NetworkFirewallClient::DescribeProxy(const DescribeProxyRequest& request) const {
-  return DescribeProxyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeProxyOutcome(result.GetResultWithOwnership()) : DescribeProxyOutcome(std::move(result.GetError()));
 }
 
 DescribeProxyConfigurationOutcome NetworkFirewallClient::DescribeProxyConfiguration(
     const DescribeProxyConfigurationRequest& request) const {
-  return DescribeProxyConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeProxyConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeProxyConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeProxyRuleOutcome NetworkFirewallClient::DescribeProxyRule(const DescribeProxyRuleRequest& request) const {
-  return DescribeProxyRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeProxyRuleOutcome(result.GetResultWithOwnership())
+                            : DescribeProxyRuleOutcome(std::move(result.GetError()));
 }
 
 DescribeProxyRuleGroupOutcome NetworkFirewallClient::DescribeProxyRuleGroup(const DescribeProxyRuleGroupRequest& request) const {
-  return DescribeProxyRuleGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeProxyRuleGroupOutcome(result.GetResultWithOwnership())
+                            : DescribeProxyRuleGroupOutcome(std::move(result.GetError()));
 }
 
 DescribeResourcePolicyOutcome NetworkFirewallClient::DescribeResourcePolicy(const DescribeResourcePolicyRequest& request) const {
-  return DescribeResourcePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : DescribeResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 DescribeRuleGroupOutcome NetworkFirewallClient::DescribeRuleGroup(const DescribeRuleGroupRequest& request) const {
-  return DescribeRuleGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRuleGroupOutcome(result.GetResultWithOwnership())
+                            : DescribeRuleGroupOutcome(std::move(result.GetError()));
 }
 
 DescribeRuleGroupMetadataOutcome NetworkFirewallClient::DescribeRuleGroupMetadata(const DescribeRuleGroupMetadataRequest& request) const {
-  return DescribeRuleGroupMetadataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRuleGroupMetadataOutcome(result.GetResultWithOwnership())
+                            : DescribeRuleGroupMetadataOutcome(std::move(result.GetError()));
 }
 
 DescribeRuleGroupSummaryOutcome NetworkFirewallClient::DescribeRuleGroupSummary(const DescribeRuleGroupSummaryRequest& request) const {
-  return DescribeRuleGroupSummaryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRuleGroupSummaryOutcome(result.GetResultWithOwnership())
+                            : DescribeRuleGroupSummaryOutcome(std::move(result.GetError()));
 }
 
 DescribeTLSInspectionConfigurationOutcome NetworkFirewallClient::DescribeTLSInspectionConfiguration(
     const DescribeTLSInspectionConfigurationRequest& request) const {
-  return DescribeTLSInspectionConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTLSInspectionConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeTLSInspectionConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeVpcEndpointAssociationOutcome NetworkFirewallClient::DescribeVpcEndpointAssociation(
     const DescribeVpcEndpointAssociationRequest& request) const {
-  return DescribeVpcEndpointAssociationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeVpcEndpointAssociationOutcome(result.GetResultWithOwnership())
+                            : DescribeVpcEndpointAssociationOutcome(std::move(result.GetError()));
 }
 
 DetachRuleGroupsFromProxyConfigurationOutcome NetworkFirewallClient::DetachRuleGroupsFromProxyConfiguration(
     const DetachRuleGroupsFromProxyConfigurationRequest& request) const {
-  return DetachRuleGroupsFromProxyConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DetachRuleGroupsFromProxyConfigurationOutcome(result.GetResultWithOwnership())
+                            : DetachRuleGroupsFromProxyConfigurationOutcome(std::move(result.GetError()));
 }
 
 DisassociateAvailabilityZonesOutcome NetworkFirewallClient::DisassociateAvailabilityZones(
     const DisassociateAvailabilityZonesRequest& request) const {
-  return DisassociateAvailabilityZonesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateAvailabilityZonesOutcome(result.GetResultWithOwnership())
+                            : DisassociateAvailabilityZonesOutcome(std::move(result.GetError()));
 }
 
 DisassociateSubnetsOutcome NetworkFirewallClient::DisassociateSubnets(const DisassociateSubnetsRequest& request) const {
-  return DisassociateSubnetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateSubnetsOutcome(result.GetResultWithOwnership())
+                            : DisassociateSubnetsOutcome(std::move(result.GetError()));
 }
 
 GetAnalysisReportResultsOutcome NetworkFirewallClient::GetAnalysisReportResults(const GetAnalysisReportResultsRequest& request) const {
-  return GetAnalysisReportResultsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAnalysisReportResultsOutcome(result.GetResultWithOwnership())
+                            : GetAnalysisReportResultsOutcome(std::move(result.GetError()));
 }
 
 ListAnalysisReportsOutcome NetworkFirewallClient::ListAnalysisReports(const ListAnalysisReportsRequest& request) const {
-  return ListAnalysisReportsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAnalysisReportsOutcome(result.GetResultWithOwnership())
+                            : ListAnalysisReportsOutcome(std::move(result.GetError()));
 }
 
 ListFirewallPoliciesOutcome NetworkFirewallClient::ListFirewallPolicies(const ListFirewallPoliciesRequest& request) const {
-  return ListFirewallPoliciesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFirewallPoliciesOutcome(result.GetResultWithOwnership())
+                            : ListFirewallPoliciesOutcome(std::move(result.GetError()));
 }
 
 ListFirewallsOutcome NetworkFirewallClient::ListFirewalls(const ListFirewallsRequest& request) const {
-  return ListFirewallsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFirewallsOutcome(result.GetResultWithOwnership()) : ListFirewallsOutcome(std::move(result.GetError()));
 }
 
 ListFlowOperationResultsOutcome NetworkFirewallClient::ListFlowOperationResults(const ListFlowOperationResultsRequest& request) const {
-  return ListFlowOperationResultsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFlowOperationResultsOutcome(result.GetResultWithOwnership())
+                            : ListFlowOperationResultsOutcome(std::move(result.GetError()));
 }
 
 ListFlowOperationsOutcome NetworkFirewallClient::ListFlowOperations(const ListFlowOperationsRequest& request) const {
-  return ListFlowOperationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFlowOperationsOutcome(result.GetResultWithOwnership())
+                            : ListFlowOperationsOutcome(std::move(result.GetError()));
 }
 
 ListProxiesOutcome NetworkFirewallClient::ListProxies(const ListProxiesRequest& request) const {
-  return ListProxiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListProxiesOutcome(result.GetResultWithOwnership()) : ListProxiesOutcome(std::move(result.GetError()));
 }
 
 ListProxyConfigurationsOutcome NetworkFirewallClient::ListProxyConfigurations(const ListProxyConfigurationsRequest& request) const {
-  return ListProxyConfigurationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListProxyConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListProxyConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListProxyRuleGroupsOutcome NetworkFirewallClient::ListProxyRuleGroups(const ListProxyRuleGroupsRequest& request) const {
-  return ListProxyRuleGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListProxyRuleGroupsOutcome(result.GetResultWithOwnership())
+                            : ListProxyRuleGroupsOutcome(std::move(result.GetError()));
 }
 
 ListRuleGroupsOutcome NetworkFirewallClient::ListRuleGroups(const ListRuleGroupsRequest& request) const {
-  return ListRuleGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRuleGroupsOutcome(result.GetResultWithOwnership()) : ListRuleGroupsOutcome(std::move(result.GetError()));
 }
 
 ListTLSInspectionConfigurationsOutcome NetworkFirewallClient::ListTLSInspectionConfigurations(
     const ListTLSInspectionConfigurationsRequest& request) const {
-  return ListTLSInspectionConfigurationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTLSInspectionConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListTLSInspectionConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome NetworkFirewallClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListVpcEndpointAssociationsOutcome NetworkFirewallClient::ListVpcEndpointAssociations(
     const ListVpcEndpointAssociationsRequest& request) const {
-  return ListVpcEndpointAssociationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListVpcEndpointAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListVpcEndpointAssociationsOutcome(std::move(result.GetError()));
 }
 
 PutResourcePolicyOutcome NetworkFirewallClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const {
-  return PutResourcePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : PutResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 RejectNetworkFirewallTransitGatewayAttachmentOutcome NetworkFirewallClient::RejectNetworkFirewallTransitGatewayAttachment(
     const RejectNetworkFirewallTransitGatewayAttachmentRequest& request) const {
-  return RejectNetworkFirewallTransitGatewayAttachmentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RejectNetworkFirewallTransitGatewayAttachmentOutcome(result.GetResultWithOwnership())
+                            : RejectNetworkFirewallTransitGatewayAttachmentOutcome(std::move(result.GetError()));
 }
 
 StartAnalysisReportOutcome NetworkFirewallClient::StartAnalysisReport(const StartAnalysisReportRequest& request) const {
-  return StartAnalysisReportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartAnalysisReportOutcome(result.GetResultWithOwnership())
+                            : StartAnalysisReportOutcome(std::move(result.GetError()));
 }
 
 StartFlowCaptureOutcome NetworkFirewallClient::StartFlowCapture(const StartFlowCaptureRequest& request) const {
-  return StartFlowCaptureOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartFlowCaptureOutcome(result.GetResultWithOwnership())
+                            : StartFlowCaptureOutcome(std::move(result.GetError()));
 }
 
 StartFlowFlushOutcome NetworkFirewallClient::StartFlowFlush(const StartFlowFlushRequest& request) const {
-  return StartFlowFlushOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartFlowFlushOutcome(result.GetResultWithOwnership()) : StartFlowFlushOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome NetworkFirewallClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome NetworkFirewallClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAvailabilityZoneChangeProtectionOutcome NetworkFirewallClient::UpdateAvailabilityZoneChangeProtection(
     const UpdateAvailabilityZoneChangeProtectionRequest& request) const {
-  return UpdateAvailabilityZoneChangeProtectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAvailabilityZoneChangeProtectionOutcome(result.GetResultWithOwnership())
+                            : UpdateAvailabilityZoneChangeProtectionOutcome(std::move(result.GetError()));
 }
 
 UpdateFirewallAnalysisSettingsOutcome NetworkFirewallClient::UpdateFirewallAnalysisSettings(
     const UpdateFirewallAnalysisSettingsRequest& request) const {
-  return UpdateFirewallAnalysisSettingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateFirewallAnalysisSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdateFirewallAnalysisSettingsOutcome(std::move(result.GetError()));
 }
 
 UpdateFirewallDeleteProtectionOutcome NetworkFirewallClient::UpdateFirewallDeleteProtection(
     const UpdateFirewallDeleteProtectionRequest& request) const {
-  return UpdateFirewallDeleteProtectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateFirewallDeleteProtectionOutcome(result.GetResultWithOwnership())
+                            : UpdateFirewallDeleteProtectionOutcome(std::move(result.GetError()));
 }
 
 UpdateFirewallDescriptionOutcome NetworkFirewallClient::UpdateFirewallDescription(const UpdateFirewallDescriptionRequest& request) const {
-  return UpdateFirewallDescriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateFirewallDescriptionOutcome(result.GetResultWithOwnership())
+                            : UpdateFirewallDescriptionOutcome(std::move(result.GetError()));
 }
 
 UpdateFirewallEncryptionConfigurationOutcome NetworkFirewallClient::UpdateFirewallEncryptionConfiguration(
     const UpdateFirewallEncryptionConfigurationRequest& request) const {
-  return UpdateFirewallEncryptionConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateFirewallEncryptionConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateFirewallEncryptionConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateFirewallPolicyOutcome NetworkFirewallClient::UpdateFirewallPolicy(const UpdateFirewallPolicyRequest& request) const {
-  return UpdateFirewallPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateFirewallPolicyOutcome(result.GetResultWithOwnership())
+                            : UpdateFirewallPolicyOutcome(std::move(result.GetError()));
 }
 
 UpdateFirewallPolicyChangeProtectionOutcome NetworkFirewallClient::UpdateFirewallPolicyChangeProtection(
     const UpdateFirewallPolicyChangeProtectionRequest& request) const {
-  return UpdateFirewallPolicyChangeProtectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateFirewallPolicyChangeProtectionOutcome(result.GetResultWithOwnership())
+                            : UpdateFirewallPolicyChangeProtectionOutcome(std::move(result.GetError()));
 }
 
 UpdateLoggingConfigurationOutcome NetworkFirewallClient::UpdateLoggingConfiguration(
     const UpdateLoggingConfigurationRequest& request) const {
-  return UpdateLoggingConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLoggingConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateLoggingConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateProxyOutcome NetworkFirewallClient::UpdateProxy(const UpdateProxyRequest& request) const {
-  return UpdateProxyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateProxyOutcome(result.GetResultWithOwnership()) : UpdateProxyOutcome(std::move(result.GetError()));
 }
 
 UpdateProxyConfigurationOutcome NetworkFirewallClient::UpdateProxyConfiguration(const UpdateProxyConfigurationRequest& request) const {
-  return UpdateProxyConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateProxyConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateProxyConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateProxyRuleOutcome NetworkFirewallClient::UpdateProxyRule(const UpdateProxyRuleRequest& request) const {
-  return UpdateProxyRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateProxyRuleOutcome(result.GetResultWithOwnership())
+                            : UpdateProxyRuleOutcome(std::move(result.GetError()));
 }
 
 UpdateProxyRuleGroupPrioritiesOutcome NetworkFirewallClient::UpdateProxyRuleGroupPriorities(
     const UpdateProxyRuleGroupPrioritiesRequest& request) const {
-  return UpdateProxyRuleGroupPrioritiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateProxyRuleGroupPrioritiesOutcome(result.GetResultWithOwnership())
+                            : UpdateProxyRuleGroupPrioritiesOutcome(std::move(result.GetError()));
 }
 
 UpdateProxyRulePrioritiesOutcome NetworkFirewallClient::UpdateProxyRulePriorities(const UpdateProxyRulePrioritiesRequest& request) const {
-  return UpdateProxyRulePrioritiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateProxyRulePrioritiesOutcome(result.GetResultWithOwnership())
+                            : UpdateProxyRulePrioritiesOutcome(std::move(result.GetError()));
 }
 
 UpdateRuleGroupOutcome NetworkFirewallClient::UpdateRuleGroup(const UpdateRuleGroupRequest& request) const {
-  return UpdateRuleGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRuleGroupOutcome(result.GetResultWithOwnership())
+                            : UpdateRuleGroupOutcome(std::move(result.GetError()));
 }
 
 UpdateSubnetChangeProtectionOutcome NetworkFirewallClient::UpdateSubnetChangeProtection(
     const UpdateSubnetChangeProtectionRequest& request) const {
-  return UpdateSubnetChangeProtectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSubnetChangeProtectionOutcome(result.GetResultWithOwnership())
+                            : UpdateSubnetChangeProtectionOutcome(std::move(result.GetError()));
 }
 
 UpdateTLSInspectionConfigurationOutcome NetworkFirewallClient::UpdateTLSInspectionConfiguration(
     const UpdateTLSInspectionConfigurationRequest& request) const {
-  return UpdateTLSInspectionConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTLSInspectionConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateTLSInspectionConfigurationOutcome(std::move(result.GetError()));
 }

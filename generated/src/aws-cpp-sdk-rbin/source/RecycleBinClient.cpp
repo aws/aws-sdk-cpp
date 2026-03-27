@@ -190,7 +190,8 @@ CreateRuleOutcome RecycleBinClient::CreateRule(const CreateRuleRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegments("/rules");
   };
 
-  return CreateRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRuleOutcome(result.GetResultWithOwnership()) : CreateRuleOutcome(std::move(result.GetError()));
 }
 
 DeleteRuleOutcome RecycleBinClient::DeleteRule(const DeleteRuleRequest& request) const {
@@ -206,7 +207,8 @@ DeleteRuleOutcome RecycleBinClient::DeleteRule(const DeleteRuleRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRuleOutcome(result.GetResultWithOwnership()) : DeleteRuleOutcome(std::move(result.GetError()));
 }
 
 GetRuleOutcome RecycleBinClient::GetRule(const GetRuleRequest& request) const {
@@ -222,7 +224,8 @@ GetRuleOutcome RecycleBinClient::GetRule(const GetRuleRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRuleOutcome(result.GetResultWithOwnership()) : GetRuleOutcome(std::move(result.GetError()));
 }
 
 ListRulesOutcome RecycleBinClient::ListRules(const ListRulesRequest& request) const {
@@ -231,7 +234,8 @@ ListRulesOutcome RecycleBinClient::ListRules(const ListRulesRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-rules");
   };
 
-  return ListRulesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRulesOutcome(result.GetResultWithOwnership()) : ListRulesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome RecycleBinClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -247,7 +251,9 @@ ListTagsForResourceOutcome RecycleBinClient::ListTagsForResource(const ListTagsF
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 LockRuleOutcome RecycleBinClient::LockRule(const LockRuleRequest& request) const {
@@ -264,7 +270,8 @@ LockRuleOutcome RecycleBinClient::LockRule(const LockRuleRequest& request) const
     endpointResolutionOutcome.GetResult().AddPathSegments("/lock");
   };
 
-  return LockRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? LockRuleOutcome(result.GetResultWithOwnership()) : LockRuleOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome RecycleBinClient::TagResource(const TagResourceRequest& request) const {
@@ -280,7 +287,8 @@ TagResourceOutcome RecycleBinClient::TagResource(const TagResourceRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UnlockRuleOutcome RecycleBinClient::UnlockRule(const UnlockRuleRequest& request) const {
@@ -297,7 +305,8 @@ UnlockRuleOutcome RecycleBinClient::UnlockRule(const UnlockRuleRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegments("/unlock");
   };
 
-  return UnlockRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UnlockRuleOutcome(result.GetResultWithOwnership()) : UnlockRuleOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome RecycleBinClient::UntagResource(const UntagResourceRequest& request) const {
@@ -318,7 +327,8 @@ UntagResourceOutcome RecycleBinClient::UntagResource(const UntagResourceRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateRuleOutcome RecycleBinClient::UpdateRule(const UpdateRuleRequest& request) const {
@@ -334,5 +344,6 @@ UpdateRuleOutcome RecycleBinClient::UpdateRule(const UpdateRuleRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateRuleOutcome(result.GetResultWithOwnership()) : UpdateRuleOutcome(std::move(result.GetError()));
 }

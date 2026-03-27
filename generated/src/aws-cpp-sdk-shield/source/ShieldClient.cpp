@@ -207,148 +207,214 @@ ShieldClient::InvokeOperationOutcome ShieldClient::InvokeServiceOperation(const 
 }
 
 AssociateDRTLogBucketOutcome ShieldClient::AssociateDRTLogBucket(const AssociateDRTLogBucketRequest& request) const {
-  return AssociateDRTLogBucketOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateDRTLogBucketOutcome(result.GetResultWithOwnership())
+                            : AssociateDRTLogBucketOutcome(std::move(result.GetError()));
 }
 
 AssociateDRTRoleOutcome ShieldClient::AssociateDRTRole(const AssociateDRTRoleRequest& request) const {
-  return AssociateDRTRoleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateDRTRoleOutcome(result.GetResultWithOwnership())
+                            : AssociateDRTRoleOutcome(std::move(result.GetError()));
 }
 
 AssociateHealthCheckOutcome ShieldClient::AssociateHealthCheck(const AssociateHealthCheckRequest& request) const {
-  return AssociateHealthCheckOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateHealthCheckOutcome(result.GetResultWithOwnership())
+                            : AssociateHealthCheckOutcome(std::move(result.GetError()));
 }
 
 AssociateProactiveEngagementDetailsOutcome ShieldClient::AssociateProactiveEngagementDetails(
     const AssociateProactiveEngagementDetailsRequest& request) const {
-  return AssociateProactiveEngagementDetailsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateProactiveEngagementDetailsOutcome(result.GetResultWithOwnership())
+                            : AssociateProactiveEngagementDetailsOutcome(std::move(result.GetError()));
 }
 
 CreateProtectionOutcome ShieldClient::CreateProtection(const CreateProtectionRequest& request) const {
-  return CreateProtectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProtectionOutcome(result.GetResultWithOwnership())
+                            : CreateProtectionOutcome(std::move(result.GetError()));
 }
 
 CreateProtectionGroupOutcome ShieldClient::CreateProtectionGroup(const CreateProtectionGroupRequest& request) const {
-  return CreateProtectionGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProtectionGroupOutcome(result.GetResultWithOwnership())
+                            : CreateProtectionGroupOutcome(std::move(result.GetError()));
 }
 
 CreateSubscriptionOutcome ShieldClient::CreateSubscription(const CreateSubscriptionRequest& request) const {
-  return CreateSubscriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSubscriptionOutcome(result.GetResultWithOwnership())
+                            : CreateSubscriptionOutcome(std::move(result.GetError()));
 }
 
 DeleteProtectionOutcome ShieldClient::DeleteProtection(const DeleteProtectionRequest& request) const {
-  return DeleteProtectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteProtectionOutcome(result.GetResultWithOwnership())
+                            : DeleteProtectionOutcome(std::move(result.GetError()));
 }
 
 DeleteProtectionGroupOutcome ShieldClient::DeleteProtectionGroup(const DeleteProtectionGroupRequest& request) const {
-  return DeleteProtectionGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteProtectionGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteProtectionGroupOutcome(std::move(result.GetError()));
 }
 
 DescribeAttackOutcome ShieldClient::DescribeAttack(const DescribeAttackRequest& request) const {
-  return DescribeAttackOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAttackOutcome(result.GetResultWithOwnership()) : DescribeAttackOutcome(std::move(result.GetError()));
 }
 
 DescribeAttackStatisticsOutcome ShieldClient::DescribeAttackStatistics(const DescribeAttackStatisticsRequest& request) const {
-  return DescribeAttackStatisticsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAttackStatisticsOutcome(result.GetResultWithOwnership())
+                            : DescribeAttackStatisticsOutcome(std::move(result.GetError()));
 }
 
 DescribeDRTAccessOutcome ShieldClient::DescribeDRTAccess(const DescribeDRTAccessRequest& request) const {
-  return DescribeDRTAccessOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDRTAccessOutcome(result.GetResultWithOwnership())
+                            : DescribeDRTAccessOutcome(std::move(result.GetError()));
 }
 
 DescribeEmergencyContactSettingsOutcome ShieldClient::DescribeEmergencyContactSettings(
     const DescribeEmergencyContactSettingsRequest& request) const {
-  return DescribeEmergencyContactSettingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEmergencyContactSettingsOutcome(result.GetResultWithOwnership())
+                            : DescribeEmergencyContactSettingsOutcome(std::move(result.GetError()));
 }
 
 DescribeProtectionOutcome ShieldClient::DescribeProtection(const DescribeProtectionRequest& request) const {
-  return DescribeProtectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeProtectionOutcome(result.GetResultWithOwnership())
+                            : DescribeProtectionOutcome(std::move(result.GetError()));
 }
 
 DescribeProtectionGroupOutcome ShieldClient::DescribeProtectionGroup(const DescribeProtectionGroupRequest& request) const {
-  return DescribeProtectionGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeProtectionGroupOutcome(result.GetResultWithOwnership())
+                            : DescribeProtectionGroupOutcome(std::move(result.GetError()));
 }
 
 DescribeSubscriptionOutcome ShieldClient::DescribeSubscription(const DescribeSubscriptionRequest& request) const {
-  return DescribeSubscriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSubscriptionOutcome(result.GetResultWithOwnership())
+                            : DescribeSubscriptionOutcome(std::move(result.GetError()));
 }
 
 DisableApplicationLayerAutomaticResponseOutcome ShieldClient::DisableApplicationLayerAutomaticResponse(
     const DisableApplicationLayerAutomaticResponseRequest& request) const {
-  return DisableApplicationLayerAutomaticResponseOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableApplicationLayerAutomaticResponseOutcome(result.GetResultWithOwnership())
+                            : DisableApplicationLayerAutomaticResponseOutcome(std::move(result.GetError()));
 }
 
 DisableProactiveEngagementOutcome ShieldClient::DisableProactiveEngagement(const DisableProactiveEngagementRequest& request) const {
-  return DisableProactiveEngagementOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableProactiveEngagementOutcome(result.GetResultWithOwnership())
+                            : DisableProactiveEngagementOutcome(std::move(result.GetError()));
 }
 
 DisassociateDRTLogBucketOutcome ShieldClient::DisassociateDRTLogBucket(const DisassociateDRTLogBucketRequest& request) const {
-  return DisassociateDRTLogBucketOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateDRTLogBucketOutcome(result.GetResultWithOwnership())
+                            : DisassociateDRTLogBucketOutcome(std::move(result.GetError()));
 }
 
 DisassociateDRTRoleOutcome ShieldClient::DisassociateDRTRole(const DisassociateDRTRoleRequest& request) const {
-  return DisassociateDRTRoleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateDRTRoleOutcome(result.GetResultWithOwnership())
+                            : DisassociateDRTRoleOutcome(std::move(result.GetError()));
 }
 
 DisassociateHealthCheckOutcome ShieldClient::DisassociateHealthCheck(const DisassociateHealthCheckRequest& request) const {
-  return DisassociateHealthCheckOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateHealthCheckOutcome(result.GetResultWithOwnership())
+                            : DisassociateHealthCheckOutcome(std::move(result.GetError()));
 }
 
 EnableApplicationLayerAutomaticResponseOutcome ShieldClient::EnableApplicationLayerAutomaticResponse(
     const EnableApplicationLayerAutomaticResponseRequest& request) const {
-  return EnableApplicationLayerAutomaticResponseOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableApplicationLayerAutomaticResponseOutcome(result.GetResultWithOwnership())
+                            : EnableApplicationLayerAutomaticResponseOutcome(std::move(result.GetError()));
 }
 
 EnableProactiveEngagementOutcome ShieldClient::EnableProactiveEngagement(const EnableProactiveEngagementRequest& request) const {
-  return EnableProactiveEngagementOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableProactiveEngagementOutcome(result.GetResultWithOwnership())
+                            : EnableProactiveEngagementOutcome(std::move(result.GetError()));
 }
 
 GetSubscriptionStateOutcome ShieldClient::GetSubscriptionState(const GetSubscriptionStateRequest& request) const {
-  return GetSubscriptionStateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSubscriptionStateOutcome(result.GetResultWithOwnership())
+                            : GetSubscriptionStateOutcome(std::move(result.GetError()));
 }
 
 ListAttacksOutcome ShieldClient::ListAttacks(const ListAttacksRequest& request) const {
-  return ListAttacksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAttacksOutcome(result.GetResultWithOwnership()) : ListAttacksOutcome(std::move(result.GetError()));
 }
 
 ListProtectionGroupsOutcome ShieldClient::ListProtectionGroups(const ListProtectionGroupsRequest& request) const {
-  return ListProtectionGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListProtectionGroupsOutcome(result.GetResultWithOwnership())
+                            : ListProtectionGroupsOutcome(std::move(result.GetError()));
 }
 
 ListProtectionsOutcome ShieldClient::ListProtections(const ListProtectionsRequest& request) const {
-  return ListProtectionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListProtectionsOutcome(result.GetResultWithOwnership())
+                            : ListProtectionsOutcome(std::move(result.GetError()));
 }
 
 ListResourcesInProtectionGroupOutcome ShieldClient::ListResourcesInProtectionGroup(
     const ListResourcesInProtectionGroupRequest& request) const {
-  return ListResourcesInProtectionGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResourcesInProtectionGroupOutcome(result.GetResultWithOwnership())
+                            : ListResourcesInProtectionGroupOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome ShieldClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ShieldClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome ShieldClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateApplicationLayerAutomaticResponseOutcome ShieldClient::UpdateApplicationLayerAutomaticResponse(
     const UpdateApplicationLayerAutomaticResponseRequest& request) const {
-  return UpdateApplicationLayerAutomaticResponseOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateApplicationLayerAutomaticResponseOutcome(result.GetResultWithOwnership())
+                            : UpdateApplicationLayerAutomaticResponseOutcome(std::move(result.GetError()));
 }
 
 UpdateEmergencyContactSettingsOutcome ShieldClient::UpdateEmergencyContactSettings(
     const UpdateEmergencyContactSettingsRequest& request) const {
-  return UpdateEmergencyContactSettingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateEmergencyContactSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdateEmergencyContactSettingsOutcome(std::move(result.GetError()));
 }
 
 UpdateProtectionGroupOutcome ShieldClient::UpdateProtectionGroup(const UpdateProtectionGroupRequest& request) const {
-  return UpdateProtectionGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateProtectionGroupOutcome(result.GetResultWithOwnership())
+                            : UpdateProtectionGroupOutcome(std::move(result.GetError()));
 }
 
 UpdateSubscriptionOutcome ShieldClient::UpdateSubscription(const UpdateSubscriptionRequest& request) const {
-  return UpdateSubscriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSubscriptionOutcome(result.GetResultWithOwnership())
+                            : UpdateSubscriptionOutcome(std::move(result.GetError()));
 }

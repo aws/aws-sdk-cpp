@@ -293,7 +293,9 @@ AssociateAssetsOutcome IoTSiteWiseClient::AssociateAssets(const AssociateAssetsR
     endpointResolutionOutcome.GetResult().AddPathSegments("/associate");
   };
 
-  return AssociateAssetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateAssetsOutcome(result.GetResultWithOwnership())
+                            : AssociateAssetsOutcome(std::move(result.GetError()));
 }
 
 AssociateTimeSeriesToAssetPropertyOutcome IoTSiteWiseClient::AssociateTimeSeriesToAssetProperty(
@@ -319,7 +321,9 @@ AssociateTimeSeriesToAssetPropertyOutcome IoTSiteWiseClient::AssociateTimeSeries
     endpointResolutionOutcome.GetResult().AddPathSegments("/timeseries/associate/");
   };
 
-  return AssociateTimeSeriesToAssetPropertyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateTimeSeriesToAssetPropertyOutcome(result.GetResultWithOwnership())
+                            : AssociateTimeSeriesToAssetPropertyOutcome(std::move(result.GetError()));
 }
 
 BatchAssociateProjectAssetsOutcome IoTSiteWiseClient::BatchAssociateProjectAssets(const BatchAssociateProjectAssetsRequest& request) const {
@@ -336,7 +340,9 @@ BatchAssociateProjectAssetsOutcome IoTSiteWiseClient::BatchAssociateProjectAsset
     endpointResolutionOutcome.GetResult().AddPathSegments("/assets/associate");
   };
 
-  return BatchAssociateProjectAssetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchAssociateProjectAssetsOutcome(result.GetResultWithOwnership())
+                            : BatchAssociateProjectAssetsOutcome(std::move(result.GetError()));
 }
 
 BatchDisassociateProjectAssetsOutcome IoTSiteWiseClient::BatchDisassociateProjectAssets(
@@ -354,7 +360,9 @@ BatchDisassociateProjectAssetsOutcome IoTSiteWiseClient::BatchDisassociateProjec
     endpointResolutionOutcome.GetResult().AddPathSegments("/assets/disassociate");
   };
 
-  return BatchDisassociateProjectAssetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDisassociateProjectAssetsOutcome(result.GetResultWithOwnership())
+                            : BatchDisassociateProjectAssetsOutcome(std::move(result.GetError()));
 }
 
 BatchGetAssetPropertyAggregatesOutcome IoTSiteWiseClient::BatchGetAssetPropertyAggregates(
@@ -364,7 +372,9 @@ BatchGetAssetPropertyAggregatesOutcome IoTSiteWiseClient::BatchGetAssetPropertyA
     endpointResolutionOutcome.GetResult().AddPathSegments("/properties/batch/aggregates");
   };
 
-  return BatchGetAssetPropertyAggregatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetAssetPropertyAggregatesOutcome(result.GetResultWithOwnership())
+                            : BatchGetAssetPropertyAggregatesOutcome(std::move(result.GetError()));
 }
 
 BatchGetAssetPropertyValueOutcome IoTSiteWiseClient::BatchGetAssetPropertyValue(const BatchGetAssetPropertyValueRequest& request) const {
@@ -373,7 +383,9 @@ BatchGetAssetPropertyValueOutcome IoTSiteWiseClient::BatchGetAssetPropertyValue(
     endpointResolutionOutcome.GetResult().AddPathSegments("/properties/batch/latest");
   };
 
-  return BatchGetAssetPropertyValueOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetAssetPropertyValueOutcome(result.GetResultWithOwnership())
+                            : BatchGetAssetPropertyValueOutcome(std::move(result.GetError()));
 }
 
 BatchGetAssetPropertyValueHistoryOutcome IoTSiteWiseClient::BatchGetAssetPropertyValueHistory(
@@ -383,7 +395,9 @@ BatchGetAssetPropertyValueHistoryOutcome IoTSiteWiseClient::BatchGetAssetPropert
     endpointResolutionOutcome.GetResult().AddPathSegments("/properties/batch/history");
   };
 
-  return BatchGetAssetPropertyValueHistoryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetAssetPropertyValueHistoryOutcome(result.GetResultWithOwnership())
+                            : BatchGetAssetPropertyValueHistoryOutcome(std::move(result.GetError()));
 }
 
 BatchPutAssetPropertyValueOutcome IoTSiteWiseClient::BatchPutAssetPropertyValue(const BatchPutAssetPropertyValueRequest& request) const {
@@ -392,7 +406,9 @@ BatchPutAssetPropertyValueOutcome IoTSiteWiseClient::BatchPutAssetPropertyValue(
     endpointResolutionOutcome.GetResult().AddPathSegments("/properties");
   };
 
-  return BatchPutAssetPropertyValueOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchPutAssetPropertyValueOutcome(result.GetResultWithOwnership())
+                            : BatchPutAssetPropertyValueOutcome(std::move(result.GetError()));
 }
 
 CreateAccessPolicyOutcome IoTSiteWiseClient::CreateAccessPolicy(const CreateAccessPolicyRequest& request) const {
@@ -401,7 +417,9 @@ CreateAccessPolicyOutcome IoTSiteWiseClient::CreateAccessPolicy(const CreateAcce
     endpointResolutionOutcome.GetResult().AddPathSegments("/access-policies");
   };
 
-  return CreateAccessPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAccessPolicyOutcome(result.GetResultWithOwnership())
+                            : CreateAccessPolicyOutcome(std::move(result.GetError()));
 }
 
 CreateAssetOutcome IoTSiteWiseClient::CreateAsset(const CreateAssetRequest& request) const {
@@ -410,7 +428,8 @@ CreateAssetOutcome IoTSiteWiseClient::CreateAsset(const CreateAssetRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/assets");
   };
 
-  return CreateAssetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAssetOutcome(result.GetResultWithOwnership()) : CreateAssetOutcome(std::move(result.GetError()));
 }
 
 CreateAssetModelOutcome IoTSiteWiseClient::CreateAssetModel(const CreateAssetModelRequest& request) const {
@@ -419,7 +438,9 @@ CreateAssetModelOutcome IoTSiteWiseClient::CreateAssetModel(const CreateAssetMod
     endpointResolutionOutcome.GetResult().AddPathSegments("/asset-models");
   };
 
-  return CreateAssetModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAssetModelOutcome(result.GetResultWithOwnership())
+                            : CreateAssetModelOutcome(std::move(result.GetError()));
 }
 
 CreateAssetModelCompositeModelOutcome IoTSiteWiseClient::CreateAssetModelCompositeModel(
@@ -437,7 +458,9 @@ CreateAssetModelCompositeModelOutcome IoTSiteWiseClient::CreateAssetModelComposi
     endpointResolutionOutcome.GetResult().AddPathSegments("/composite-models");
   };
 
-  return CreateAssetModelCompositeModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAssetModelCompositeModelOutcome(result.GetResultWithOwnership())
+                            : CreateAssetModelCompositeModelOutcome(std::move(result.GetError()));
 }
 
 CreateBulkImportJobOutcome IoTSiteWiseClient::CreateBulkImportJob(const CreateBulkImportJobRequest& request) const {
@@ -446,7 +469,9 @@ CreateBulkImportJobOutcome IoTSiteWiseClient::CreateBulkImportJob(const CreateBu
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobs");
   };
 
-  return CreateBulkImportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBulkImportJobOutcome(result.GetResultWithOwnership())
+                            : CreateBulkImportJobOutcome(std::move(result.GetError()));
 }
 
 CreateComputationModelOutcome IoTSiteWiseClient::CreateComputationModel(const CreateComputationModelRequest& request) const {
@@ -455,7 +480,9 @@ CreateComputationModelOutcome IoTSiteWiseClient::CreateComputationModel(const Cr
     endpointResolutionOutcome.GetResult().AddPathSegments("/computation-models");
   };
 
-  return CreateComputationModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateComputationModelOutcome(result.GetResultWithOwnership())
+                            : CreateComputationModelOutcome(std::move(result.GetError()));
 }
 
 CreateDashboardOutcome IoTSiteWiseClient::CreateDashboard(const CreateDashboardRequest& request) const {
@@ -464,7 +491,9 @@ CreateDashboardOutcome IoTSiteWiseClient::CreateDashboard(const CreateDashboardR
     endpointResolutionOutcome.GetResult().AddPathSegments("/dashboards");
   };
 
-  return CreateDashboardOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDashboardOutcome(result.GetResultWithOwnership())
+                            : CreateDashboardOutcome(std::move(result.GetError()));
 }
 
 CreateDatasetOutcome IoTSiteWiseClient::CreateDataset(const CreateDatasetRequest& request) const {
@@ -473,7 +502,8 @@ CreateDatasetOutcome IoTSiteWiseClient::CreateDataset(const CreateDatasetRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/datasets");
   };
 
-  return CreateDatasetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDatasetOutcome(result.GetResultWithOwnership()) : CreateDatasetOutcome(std::move(result.GetError()));
 }
 
 CreateGatewayOutcome IoTSiteWiseClient::CreateGateway(const CreateGatewayRequest& request) const {
@@ -482,7 +512,8 @@ CreateGatewayOutcome IoTSiteWiseClient::CreateGateway(const CreateGatewayRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/20200301/gateways");
   };
 
-  return CreateGatewayOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGatewayOutcome(result.GetResultWithOwnership()) : CreateGatewayOutcome(std::move(result.GetError()));
 }
 
 CreatePortalOutcome IoTSiteWiseClient::CreatePortal(const CreatePortalRequest& request) const {
@@ -491,7 +522,8 @@ CreatePortalOutcome IoTSiteWiseClient::CreatePortal(const CreatePortalRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/portals");
   };
 
-  return CreatePortalOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePortalOutcome(result.GetResultWithOwnership()) : CreatePortalOutcome(std::move(result.GetError()));
 }
 
 CreateProjectOutcome IoTSiteWiseClient::CreateProject(const CreateProjectRequest& request) const {
@@ -500,7 +532,8 @@ CreateProjectOutcome IoTSiteWiseClient::CreateProject(const CreateProjectRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/projects");
   };
 
-  return CreateProjectOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProjectOutcome(result.GetResultWithOwnership()) : CreateProjectOutcome(std::move(result.GetError()));
 }
 
 DeleteAccessPolicyOutcome IoTSiteWiseClient::DeleteAccessPolicy(const DeleteAccessPolicyRequest& request) const {
@@ -516,7 +549,9 @@ DeleteAccessPolicyOutcome IoTSiteWiseClient::DeleteAccessPolicy(const DeleteAcce
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccessPolicyId());
   };
 
-  return DeleteAccessPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAccessPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteAccessPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteAssetOutcome IoTSiteWiseClient::DeleteAsset(const DeleteAssetRequest& request) const {
@@ -532,7 +567,8 @@ DeleteAssetOutcome IoTSiteWiseClient::DeleteAsset(const DeleteAssetRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssetId());
   };
 
-  return DeleteAssetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAssetOutcome(result.GetResultWithOwnership()) : DeleteAssetOutcome(std::move(result.GetError()));
 }
 
 DeleteAssetModelOutcome IoTSiteWiseClient::DeleteAssetModel(const DeleteAssetModelRequest& request) const {
@@ -548,7 +584,9 @@ DeleteAssetModelOutcome IoTSiteWiseClient::DeleteAssetModel(const DeleteAssetMod
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssetModelId());
   };
 
-  return DeleteAssetModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAssetModelOutcome(result.GetResultWithOwnership())
+                            : DeleteAssetModelOutcome(std::move(result.GetError()));
 }
 
 DeleteAssetModelCompositeModelOutcome IoTSiteWiseClient::DeleteAssetModelCompositeModel(
@@ -572,7 +610,9 @@ DeleteAssetModelCompositeModelOutcome IoTSiteWiseClient::DeleteAssetModelComposi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssetModelCompositeModelId());
   };
 
-  return DeleteAssetModelCompositeModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAssetModelCompositeModelOutcome(result.GetResultWithOwnership())
+                            : DeleteAssetModelCompositeModelOutcome(std::move(result.GetError()));
 }
 
 DeleteAssetModelInterfaceRelationshipOutcome IoTSiteWiseClient::DeleteAssetModelInterfaceRelationship(
@@ -597,7 +637,9 @@ DeleteAssetModelInterfaceRelationshipOutcome IoTSiteWiseClient::DeleteAssetModel
     endpointResolutionOutcome.GetResult().AddPathSegments("/asset-model-interface-relationship");
   };
 
-  return DeleteAssetModelInterfaceRelationshipOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAssetModelInterfaceRelationshipOutcome(result.GetResultWithOwnership())
+                            : DeleteAssetModelInterfaceRelationshipOutcome(std::move(result.GetError()));
 }
 
 DeleteComputationModelOutcome IoTSiteWiseClient::DeleteComputationModel(const DeleteComputationModelRequest& request) const {
@@ -613,7 +655,9 @@ DeleteComputationModelOutcome IoTSiteWiseClient::DeleteComputationModel(const De
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetComputationModelId());
   };
 
-  return DeleteComputationModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteComputationModelOutcome(result.GetResultWithOwnership())
+                            : DeleteComputationModelOutcome(std::move(result.GetError()));
 }
 
 DeleteDashboardOutcome IoTSiteWiseClient::DeleteDashboard(const DeleteDashboardRequest& request) const {
@@ -629,7 +673,9 @@ DeleteDashboardOutcome IoTSiteWiseClient::DeleteDashboard(const DeleteDashboardR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDashboardId());
   };
 
-  return DeleteDashboardOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDashboardOutcome(result.GetResultWithOwnership())
+                            : DeleteDashboardOutcome(std::move(result.GetError()));
 }
 
 DeleteDatasetOutcome IoTSiteWiseClient::DeleteDataset(const DeleteDatasetRequest& request) const {
@@ -645,7 +691,8 @@ DeleteDatasetOutcome IoTSiteWiseClient::DeleteDataset(const DeleteDatasetRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetId());
   };
 
-  return DeleteDatasetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDatasetOutcome(result.GetResultWithOwnership()) : DeleteDatasetOutcome(std::move(result.GetError()));
 }
 
 DeleteGatewayOutcome IoTSiteWiseClient::DeleteGateway(const DeleteGatewayRequest& request) const {
@@ -661,7 +708,8 @@ DeleteGatewayOutcome IoTSiteWiseClient::DeleteGateway(const DeleteGatewayRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGatewayId());
   };
 
-  return DeleteGatewayOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteGatewayOutcome(result.GetResultWithOwnership()) : DeleteGatewayOutcome(std::move(result.GetError()));
 }
 
 DeletePortalOutcome IoTSiteWiseClient::DeletePortal(const DeletePortalRequest& request) const {
@@ -677,7 +725,8 @@ DeletePortalOutcome IoTSiteWiseClient::DeletePortal(const DeletePortalRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPortalId());
   };
 
-  return DeletePortalOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePortalOutcome(result.GetResultWithOwnership()) : DeletePortalOutcome(std::move(result.GetError()));
 }
 
 DeleteProjectOutcome IoTSiteWiseClient::DeleteProject(const DeleteProjectRequest& request) const {
@@ -693,7 +742,8 @@ DeleteProjectOutcome IoTSiteWiseClient::DeleteProject(const DeleteProjectRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProjectId());
   };
 
-  return DeleteProjectOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteProjectOutcome(result.GetResultWithOwnership()) : DeleteProjectOutcome(std::move(result.GetError()));
 }
 
 DeleteTimeSeriesOutcome IoTSiteWiseClient::DeleteTimeSeries(const DeleteTimeSeriesRequest& request) const {
@@ -702,7 +752,9 @@ DeleteTimeSeriesOutcome IoTSiteWiseClient::DeleteTimeSeries(const DeleteTimeSeri
     endpointResolutionOutcome.GetResult().AddPathSegments("/timeseries/delete/");
   };
 
-  return DeleteTimeSeriesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTimeSeriesOutcome(result.GetResultWithOwnership())
+                            : DeleteTimeSeriesOutcome(std::move(result.GetError()));
 }
 
 DescribeAccessPolicyOutcome IoTSiteWiseClient::DescribeAccessPolicy(const DescribeAccessPolicyRequest& request) const {
@@ -718,7 +770,9 @@ DescribeAccessPolicyOutcome IoTSiteWiseClient::DescribeAccessPolicy(const Descri
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccessPolicyId());
   };
 
-  return DescribeAccessPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAccessPolicyOutcome(result.GetResultWithOwnership())
+                            : DescribeAccessPolicyOutcome(std::move(result.GetError()));
 }
 
 DescribeActionOutcome IoTSiteWiseClient::DescribeAction(const DescribeActionRequest& request) const {
@@ -734,7 +788,8 @@ DescribeActionOutcome IoTSiteWiseClient::DescribeAction(const DescribeActionRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetActionId());
   };
 
-  return DescribeActionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeActionOutcome(result.GetResultWithOwnership()) : DescribeActionOutcome(std::move(result.GetError()));
 }
 
 DescribeAssetOutcome IoTSiteWiseClient::DescribeAsset(const DescribeAssetRequest& request) const {
@@ -750,7 +805,8 @@ DescribeAssetOutcome IoTSiteWiseClient::DescribeAsset(const DescribeAssetRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssetId());
   };
 
-  return DescribeAssetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAssetOutcome(result.GetResultWithOwnership()) : DescribeAssetOutcome(std::move(result.GetError()));
 }
 
 DescribeAssetCompositeModelOutcome IoTSiteWiseClient::DescribeAssetCompositeModel(const DescribeAssetCompositeModelRequest& request) const {
@@ -773,7 +829,9 @@ DescribeAssetCompositeModelOutcome IoTSiteWiseClient::DescribeAssetCompositeMode
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssetCompositeModelId());
   };
 
-  return DescribeAssetCompositeModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAssetCompositeModelOutcome(result.GetResultWithOwnership())
+                            : DescribeAssetCompositeModelOutcome(std::move(result.GetError()));
 }
 
 DescribeAssetModelOutcome IoTSiteWiseClient::DescribeAssetModel(const DescribeAssetModelRequest& request) const {
@@ -789,7 +847,9 @@ DescribeAssetModelOutcome IoTSiteWiseClient::DescribeAssetModel(const DescribeAs
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssetModelId());
   };
 
-  return DescribeAssetModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAssetModelOutcome(result.GetResultWithOwnership())
+                            : DescribeAssetModelOutcome(std::move(result.GetError()));
 }
 
 DescribeAssetModelCompositeModelOutcome IoTSiteWiseClient::DescribeAssetModelCompositeModel(
@@ -813,7 +873,9 @@ DescribeAssetModelCompositeModelOutcome IoTSiteWiseClient::DescribeAssetModelCom
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssetModelCompositeModelId());
   };
 
-  return DescribeAssetModelCompositeModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAssetModelCompositeModelOutcome(result.GetResultWithOwnership())
+                            : DescribeAssetModelCompositeModelOutcome(std::move(result.GetError()));
 }
 
 DescribeAssetModelInterfaceRelationshipOutcome IoTSiteWiseClient::DescribeAssetModelInterfaceRelationship(
@@ -838,7 +900,9 @@ DescribeAssetModelInterfaceRelationshipOutcome IoTSiteWiseClient::DescribeAssetM
     endpointResolutionOutcome.GetResult().AddPathSegments("/asset-model-interface-relationship");
   };
 
-  return DescribeAssetModelInterfaceRelationshipOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAssetModelInterfaceRelationshipOutcome(result.GetResultWithOwnership())
+                            : DescribeAssetModelInterfaceRelationshipOutcome(std::move(result.GetError()));
 }
 
 DescribeAssetPropertyOutcome IoTSiteWiseClient::DescribeAssetProperty(const DescribeAssetPropertyRequest& request) const {
@@ -861,7 +925,9 @@ DescribeAssetPropertyOutcome IoTSiteWiseClient::DescribeAssetProperty(const Desc
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPropertyId());
   };
 
-  return DescribeAssetPropertyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAssetPropertyOutcome(result.GetResultWithOwnership())
+                            : DescribeAssetPropertyOutcome(std::move(result.GetError()));
 }
 
 DescribeBulkImportJobOutcome IoTSiteWiseClient::DescribeBulkImportJob(const DescribeBulkImportJobRequest& request) const {
@@ -877,7 +943,9 @@ DescribeBulkImportJobOutcome IoTSiteWiseClient::DescribeBulkImportJob(const Desc
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return DescribeBulkImportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeBulkImportJobOutcome(result.GetResultWithOwnership())
+                            : DescribeBulkImportJobOutcome(std::move(result.GetError()));
 }
 
 DescribeComputationModelOutcome IoTSiteWiseClient::DescribeComputationModel(const DescribeComputationModelRequest& request) const {
@@ -893,7 +961,9 @@ DescribeComputationModelOutcome IoTSiteWiseClient::DescribeComputationModel(cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetComputationModelId());
   };
 
-  return DescribeComputationModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeComputationModelOutcome(result.GetResultWithOwnership())
+                            : DescribeComputationModelOutcome(std::move(result.GetError()));
 }
 
 DescribeComputationModelExecutionSummaryOutcome IoTSiteWiseClient::DescribeComputationModelExecutionSummary(
@@ -911,7 +981,9 @@ DescribeComputationModelExecutionSummaryOutcome IoTSiteWiseClient::DescribeCompu
     endpointResolutionOutcome.GetResult().AddPathSegments("/execution-summary");
   };
 
-  return DescribeComputationModelExecutionSummaryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeComputationModelExecutionSummaryOutcome(result.GetResultWithOwnership())
+                            : DescribeComputationModelExecutionSummaryOutcome(std::move(result.GetError()));
 }
 
 DescribeDashboardOutcome IoTSiteWiseClient::DescribeDashboard(const DescribeDashboardRequest& request) const {
@@ -927,7 +999,9 @@ DescribeDashboardOutcome IoTSiteWiseClient::DescribeDashboard(const DescribeDash
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDashboardId());
   };
 
-  return DescribeDashboardOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDashboardOutcome(result.GetResultWithOwnership())
+                            : DescribeDashboardOutcome(std::move(result.GetError()));
 }
 
 DescribeDatasetOutcome IoTSiteWiseClient::DescribeDataset(const DescribeDatasetRequest& request) const {
@@ -943,7 +1017,9 @@ DescribeDatasetOutcome IoTSiteWiseClient::DescribeDataset(const DescribeDatasetR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetId());
   };
 
-  return DescribeDatasetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDatasetOutcome(result.GetResultWithOwnership())
+                            : DescribeDatasetOutcome(std::move(result.GetError()));
 }
 
 DescribeDefaultEncryptionConfigurationOutcome IoTSiteWiseClient::DescribeDefaultEncryptionConfiguration(
@@ -953,7 +1029,9 @@ DescribeDefaultEncryptionConfigurationOutcome IoTSiteWiseClient::DescribeDefault
     endpointResolutionOutcome.GetResult().AddPathSegments("/configuration/account/encryption");
   };
 
-  return DescribeDefaultEncryptionConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDefaultEncryptionConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeDefaultEncryptionConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeExecutionOutcome IoTSiteWiseClient::DescribeExecution(const DescribeExecutionRequest& request) const {
@@ -969,7 +1047,9 @@ DescribeExecutionOutcome IoTSiteWiseClient::DescribeExecution(const DescribeExec
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExecutionId());
   };
 
-  return DescribeExecutionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeExecutionOutcome(result.GetResultWithOwnership())
+                            : DescribeExecutionOutcome(std::move(result.GetError()));
 }
 
 DescribeGatewayOutcome IoTSiteWiseClient::DescribeGateway(const DescribeGatewayRequest& request) const {
@@ -985,7 +1065,9 @@ DescribeGatewayOutcome IoTSiteWiseClient::DescribeGateway(const DescribeGatewayR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGatewayId());
   };
 
-  return DescribeGatewayOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeGatewayOutcome(result.GetResultWithOwnership())
+                            : DescribeGatewayOutcome(std::move(result.GetError()));
 }
 
 DescribeGatewayCapabilityConfigurationOutcome IoTSiteWiseClient::DescribeGatewayCapabilityConfiguration(
@@ -1009,7 +1091,9 @@ DescribeGatewayCapabilityConfigurationOutcome IoTSiteWiseClient::DescribeGateway
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCapabilityNamespace());
   };
 
-  return DescribeGatewayCapabilityConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeGatewayCapabilityConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeGatewayCapabilityConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeLoggingOptionsOutcome IoTSiteWiseClient::DescribeLoggingOptions(const DescribeLoggingOptionsRequest& request) const {
@@ -1018,7 +1102,9 @@ DescribeLoggingOptionsOutcome IoTSiteWiseClient::DescribeLoggingOptions(const De
     endpointResolutionOutcome.GetResult().AddPathSegments("/logging");
   };
 
-  return DescribeLoggingOptionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeLoggingOptionsOutcome(result.GetResultWithOwnership())
+                            : DescribeLoggingOptionsOutcome(std::move(result.GetError()));
 }
 
 DescribePortalOutcome IoTSiteWiseClient::DescribePortal(const DescribePortalRequest& request) const {
@@ -1034,7 +1120,8 @@ DescribePortalOutcome IoTSiteWiseClient::DescribePortal(const DescribePortalRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPortalId());
   };
 
-  return DescribePortalOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribePortalOutcome(result.GetResultWithOwnership()) : DescribePortalOutcome(std::move(result.GetError()));
 }
 
 DescribeProjectOutcome IoTSiteWiseClient::DescribeProject(const DescribeProjectRequest& request) const {
@@ -1050,7 +1137,9 @@ DescribeProjectOutcome IoTSiteWiseClient::DescribeProject(const DescribeProjectR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProjectId());
   };
 
-  return DescribeProjectOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeProjectOutcome(result.GetResultWithOwnership())
+                            : DescribeProjectOutcome(std::move(result.GetError()));
 }
 
 DescribeStorageConfigurationOutcome IoTSiteWiseClient::DescribeStorageConfiguration(
@@ -1060,7 +1149,9 @@ DescribeStorageConfigurationOutcome IoTSiteWiseClient::DescribeStorageConfigurat
     endpointResolutionOutcome.GetResult().AddPathSegments("/configuration/account/storage");
   };
 
-  return DescribeStorageConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeStorageConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeStorageConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeTimeSeriesOutcome IoTSiteWiseClient::DescribeTimeSeries(const DescribeTimeSeriesRequest& request) const {
@@ -1069,7 +1160,9 @@ DescribeTimeSeriesOutcome IoTSiteWiseClient::DescribeTimeSeries(const DescribeTi
     endpointResolutionOutcome.GetResult().AddPathSegments("/timeseries/describe/");
   };
 
-  return DescribeTimeSeriesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeTimeSeriesOutcome(result.GetResultWithOwnership())
+                            : DescribeTimeSeriesOutcome(std::move(result.GetError()));
 }
 
 DisassociateAssetsOutcome IoTSiteWiseClient::DisassociateAssets(const DisassociateAssetsRequest& request) const {
@@ -1086,7 +1179,9 @@ DisassociateAssetsOutcome IoTSiteWiseClient::DisassociateAssets(const Disassocia
     endpointResolutionOutcome.GetResult().AddPathSegments("/disassociate");
   };
 
-  return DisassociateAssetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateAssetsOutcome(result.GetResultWithOwnership())
+                            : DisassociateAssetsOutcome(std::move(result.GetError()));
 }
 
 DisassociateTimeSeriesFromAssetPropertyOutcome IoTSiteWiseClient::DisassociateTimeSeriesFromAssetProperty(
@@ -1112,7 +1207,9 @@ DisassociateTimeSeriesFromAssetPropertyOutcome IoTSiteWiseClient::DisassociateTi
     endpointResolutionOutcome.GetResult().AddPathSegments("/timeseries/disassociate/");
   };
 
-  return DisassociateTimeSeriesFromAssetPropertyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateTimeSeriesFromAssetPropertyOutcome(result.GetResultWithOwnership())
+                            : DisassociateTimeSeriesFromAssetPropertyOutcome(std::move(result.GetError()));
 }
 
 ExecuteActionOutcome IoTSiteWiseClient::ExecuteAction(const ExecuteActionRequest& request) const {
@@ -1121,7 +1218,8 @@ ExecuteActionOutcome IoTSiteWiseClient::ExecuteAction(const ExecuteActionRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/actions");
   };
 
-  return ExecuteActionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExecuteActionOutcome(result.GetResultWithOwnership()) : ExecuteActionOutcome(std::move(result.GetError()));
 }
 
 ExecuteQueryOutcome IoTSiteWiseClient::ExecuteQuery(const ExecuteQueryRequest& request) const {
@@ -1130,7 +1228,8 @@ ExecuteQueryOutcome IoTSiteWiseClient::ExecuteQuery(const ExecuteQueryRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/queries/execution");
   };
 
-  return ExecuteQueryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExecuteQueryOutcome(result.GetResultWithOwnership()) : ExecuteQueryOutcome(std::move(result.GetError()));
 }
 
 GetAssetPropertyAggregatesOutcome IoTSiteWiseClient::GetAssetPropertyAggregates(const GetAssetPropertyAggregatesRequest& request) const {
@@ -1160,7 +1259,9 @@ GetAssetPropertyAggregatesOutcome IoTSiteWiseClient::GetAssetPropertyAggregates(
     endpointResolutionOutcome.GetResult().AddPathSegments("/properties/aggregates");
   };
 
-  return GetAssetPropertyAggregatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAssetPropertyAggregatesOutcome(result.GetResultWithOwnership())
+                            : GetAssetPropertyAggregatesOutcome(std::move(result.GetError()));
 }
 
 GetAssetPropertyValueOutcome IoTSiteWiseClient::GetAssetPropertyValue(const GetAssetPropertyValueRequest& request) const {
@@ -1169,7 +1270,9 @@ GetAssetPropertyValueOutcome IoTSiteWiseClient::GetAssetPropertyValue(const GetA
     endpointResolutionOutcome.GetResult().AddPathSegments("/properties/latest");
   };
 
-  return GetAssetPropertyValueOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAssetPropertyValueOutcome(result.GetResultWithOwnership())
+                            : GetAssetPropertyValueOutcome(std::move(result.GetError()));
 }
 
 GetAssetPropertyValueHistoryOutcome IoTSiteWiseClient::GetAssetPropertyValueHistory(
@@ -1179,7 +1282,9 @@ GetAssetPropertyValueHistoryOutcome IoTSiteWiseClient::GetAssetPropertyValueHist
     endpointResolutionOutcome.GetResult().AddPathSegments("/properties/history");
   };
 
-  return GetAssetPropertyValueHistoryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAssetPropertyValueHistoryOutcome(result.GetResultWithOwnership())
+                            : GetAssetPropertyValueHistoryOutcome(std::move(result.GetError()));
 }
 
 GetInterpolatedAssetPropertyValuesOutcome IoTSiteWiseClient::GetInterpolatedAssetPropertyValues(
@@ -1215,7 +1320,9 @@ GetInterpolatedAssetPropertyValuesOutcome IoTSiteWiseClient::GetInterpolatedAsse
     endpointResolutionOutcome.GetResult().AddPathSegments("/properties/interpolated");
   };
 
-  return GetInterpolatedAssetPropertyValuesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetInterpolatedAssetPropertyValuesOutcome(result.GetResultWithOwnership())
+                            : GetInterpolatedAssetPropertyValuesOutcome(std::move(result.GetError()));
 }
 
 InvokeAssistantOutcome IoTSiteWiseClient::InvokeAssistant(InvokeAssistantRequest& request) const {
@@ -1254,7 +1361,9 @@ InvokeAssistantOutcome IoTSiteWiseClient::InvokeAssistant(InvokeAssistantRequest
             }
           });
         }
-        return InvokeAssistantOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? InvokeAssistantOutcome(result.GetResultWithOwnership())
+                                  : InvokeAssistantOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1267,7 +1376,9 @@ ListAccessPoliciesOutcome IoTSiteWiseClient::ListAccessPolicies(const ListAccess
     endpointResolutionOutcome.GetResult().AddPathSegments("/access-policies");
   };
 
-  return ListAccessPoliciesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAccessPoliciesOutcome(result.GetResultWithOwnership())
+                            : ListAccessPoliciesOutcome(std::move(result.GetError()));
 }
 
 ListActionsOutcome IoTSiteWiseClient::ListActions(const ListActionsRequest& request) const {
@@ -1287,7 +1398,8 @@ ListActionsOutcome IoTSiteWiseClient::ListActions(const ListActionsRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/actions");
   };
 
-  return ListActionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListActionsOutcome(result.GetResultWithOwnership()) : ListActionsOutcome(std::move(result.GetError()));
 }
 
 ListAssetModelCompositeModelsOutcome IoTSiteWiseClient::ListAssetModelCompositeModels(
@@ -1305,7 +1417,9 @@ ListAssetModelCompositeModelsOutcome IoTSiteWiseClient::ListAssetModelCompositeM
     endpointResolutionOutcome.GetResult().AddPathSegments("/composite-models");
   };
 
-  return ListAssetModelCompositeModelsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAssetModelCompositeModelsOutcome(result.GetResultWithOwnership())
+                            : ListAssetModelCompositeModelsOutcome(std::move(result.GetError()));
 }
 
 ListAssetModelPropertiesOutcome IoTSiteWiseClient::ListAssetModelProperties(const ListAssetModelPropertiesRequest& request) const {
@@ -1322,7 +1436,9 @@ ListAssetModelPropertiesOutcome IoTSiteWiseClient::ListAssetModelProperties(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/properties");
   };
 
-  return ListAssetModelPropertiesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAssetModelPropertiesOutcome(result.GetResultWithOwnership())
+                            : ListAssetModelPropertiesOutcome(std::move(result.GetError()));
 }
 
 ListAssetModelsOutcome IoTSiteWiseClient::ListAssetModels(const ListAssetModelsRequest& request) const {
@@ -1331,7 +1447,9 @@ ListAssetModelsOutcome IoTSiteWiseClient::ListAssetModels(const ListAssetModelsR
     endpointResolutionOutcome.GetResult().AddPathSegments("/asset-models");
   };
 
-  return ListAssetModelsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAssetModelsOutcome(result.GetResultWithOwnership())
+                            : ListAssetModelsOutcome(std::move(result.GetError()));
 }
 
 ListAssetPropertiesOutcome IoTSiteWiseClient::ListAssetProperties(const ListAssetPropertiesRequest& request) const {
@@ -1348,7 +1466,9 @@ ListAssetPropertiesOutcome IoTSiteWiseClient::ListAssetProperties(const ListAsse
     endpointResolutionOutcome.GetResult().AddPathSegments("/properties");
   };
 
-  return ListAssetPropertiesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAssetPropertiesOutcome(result.GetResultWithOwnership())
+                            : ListAssetPropertiesOutcome(std::move(result.GetError()));
 }
 
 ListAssetRelationshipsOutcome IoTSiteWiseClient::ListAssetRelationships(const ListAssetRelationshipsRequest& request) const {
@@ -1370,7 +1490,9 @@ ListAssetRelationshipsOutcome IoTSiteWiseClient::ListAssetRelationships(const Li
     endpointResolutionOutcome.GetResult().AddPathSegments("/assetRelationships");
   };
 
-  return ListAssetRelationshipsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAssetRelationshipsOutcome(result.GetResultWithOwnership())
+                            : ListAssetRelationshipsOutcome(std::move(result.GetError()));
 }
 
 ListAssetsOutcome IoTSiteWiseClient::ListAssets(const ListAssetsRequest& request) const {
@@ -1379,7 +1501,8 @@ ListAssetsOutcome IoTSiteWiseClient::ListAssets(const ListAssetsRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/assets");
   };
 
-  return ListAssetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAssetsOutcome(result.GetResultWithOwnership()) : ListAssetsOutcome(std::move(result.GetError()));
 }
 
 ListAssociatedAssetsOutcome IoTSiteWiseClient::ListAssociatedAssets(const ListAssociatedAssetsRequest& request) const {
@@ -1396,7 +1519,9 @@ ListAssociatedAssetsOutcome IoTSiteWiseClient::ListAssociatedAssets(const ListAs
     endpointResolutionOutcome.GetResult().AddPathSegments("/hierarchies");
   };
 
-  return ListAssociatedAssetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAssociatedAssetsOutcome(result.GetResultWithOwnership())
+                            : ListAssociatedAssetsOutcome(std::move(result.GetError()));
 }
 
 ListBulkImportJobsOutcome IoTSiteWiseClient::ListBulkImportJobs(const ListBulkImportJobsRequest& request) const {
@@ -1405,7 +1530,9 @@ ListBulkImportJobsOutcome IoTSiteWiseClient::ListBulkImportJobs(const ListBulkIm
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobs");
   };
 
-  return ListBulkImportJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListBulkImportJobsOutcome(result.GetResultWithOwnership())
+                            : ListBulkImportJobsOutcome(std::move(result.GetError()));
 }
 
 ListCompositionRelationshipsOutcome IoTSiteWiseClient::ListCompositionRelationships(
@@ -1423,7 +1550,9 @@ ListCompositionRelationshipsOutcome IoTSiteWiseClient::ListCompositionRelationsh
     endpointResolutionOutcome.GetResult().AddPathSegments("/composition-relationships");
   };
 
-  return ListCompositionRelationshipsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCompositionRelationshipsOutcome(result.GetResultWithOwnership())
+                            : ListCompositionRelationshipsOutcome(std::move(result.GetError()));
 }
 
 ListComputationModelDataBindingUsagesOutcome IoTSiteWiseClient::ListComputationModelDataBindingUsages(
@@ -1433,7 +1562,9 @@ ListComputationModelDataBindingUsagesOutcome IoTSiteWiseClient::ListComputationM
     endpointResolutionOutcome.GetResult().AddPathSegments("/computation-models/data-binding-usages");
   };
 
-  return ListComputationModelDataBindingUsagesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListComputationModelDataBindingUsagesOutcome(result.GetResultWithOwnership())
+                            : ListComputationModelDataBindingUsagesOutcome(std::move(result.GetError()));
 }
 
 ListComputationModelResolveToResourcesOutcome IoTSiteWiseClient::ListComputationModelResolveToResources(
@@ -1451,7 +1582,9 @@ ListComputationModelResolveToResourcesOutcome IoTSiteWiseClient::ListComputation
     endpointResolutionOutcome.GetResult().AddPathSegments("/resolve-to-resources");
   };
 
-  return ListComputationModelResolveToResourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListComputationModelResolveToResourcesOutcome(result.GetResultWithOwnership())
+                            : ListComputationModelResolveToResourcesOutcome(std::move(result.GetError()));
 }
 
 ListComputationModelsOutcome IoTSiteWiseClient::ListComputationModels(const ListComputationModelsRequest& request) const {
@@ -1460,7 +1593,9 @@ ListComputationModelsOutcome IoTSiteWiseClient::ListComputationModels(const List
     endpointResolutionOutcome.GetResult().AddPathSegments("/computation-models");
   };
 
-  return ListComputationModelsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListComputationModelsOutcome(result.GetResultWithOwnership())
+                            : ListComputationModelsOutcome(std::move(result.GetError()));
 }
 
 ListDashboardsOutcome IoTSiteWiseClient::ListDashboards(const ListDashboardsRequest& request) const {
@@ -1475,7 +1610,8 @@ ListDashboardsOutcome IoTSiteWiseClient::ListDashboards(const ListDashboardsRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/dashboards");
   };
 
-  return ListDashboardsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDashboardsOutcome(result.GetResultWithOwnership()) : ListDashboardsOutcome(std::move(result.GetError()));
 }
 
 ListDatasetsOutcome IoTSiteWiseClient::ListDatasets(const ListDatasetsRequest& request) const {
@@ -1490,7 +1626,8 @@ ListDatasetsOutcome IoTSiteWiseClient::ListDatasets(const ListDatasetsRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/datasets");
   };
 
-  return ListDatasetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDatasetsOutcome(result.GetResultWithOwnership()) : ListDatasetsOutcome(std::move(result.GetError()));
 }
 
 ListExecutionsOutcome IoTSiteWiseClient::ListExecutions(const ListExecutionsRequest& request) const {
@@ -1510,7 +1647,8 @@ ListExecutionsOutcome IoTSiteWiseClient::ListExecutions(const ListExecutionsRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/executions");
   };
 
-  return ListExecutionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListExecutionsOutcome(result.GetResultWithOwnership()) : ListExecutionsOutcome(std::move(result.GetError()));
 }
 
 ListGatewaysOutcome IoTSiteWiseClient::ListGateways(const ListGatewaysRequest& request) const {
@@ -1519,7 +1657,8 @@ ListGatewaysOutcome IoTSiteWiseClient::ListGateways(const ListGatewaysRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/20200301/gateways");
   };
 
-  return ListGatewaysOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListGatewaysOutcome(result.GetResultWithOwnership()) : ListGatewaysOutcome(std::move(result.GetError()));
 }
 
 ListInterfaceRelationshipsOutcome IoTSiteWiseClient::ListInterfaceRelationships(const ListInterfaceRelationshipsRequest& request) const {
@@ -1536,7 +1675,9 @@ ListInterfaceRelationshipsOutcome IoTSiteWiseClient::ListInterfaceRelationships(
     endpointResolutionOutcome.GetResult().AddPathSegments("/asset-models");
   };
 
-  return ListInterfaceRelationshipsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListInterfaceRelationshipsOutcome(result.GetResultWithOwnership())
+                            : ListInterfaceRelationshipsOutcome(std::move(result.GetError()));
 }
 
 ListPortalsOutcome IoTSiteWiseClient::ListPortals(const ListPortalsRequest& request) const {
@@ -1545,7 +1686,8 @@ ListPortalsOutcome IoTSiteWiseClient::ListPortals(const ListPortalsRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/portals");
   };
 
-  return ListPortalsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPortalsOutcome(result.GetResultWithOwnership()) : ListPortalsOutcome(std::move(result.GetError()));
 }
 
 ListProjectAssetsOutcome IoTSiteWiseClient::ListProjectAssets(const ListProjectAssetsRequest& request) const {
@@ -1562,7 +1704,9 @@ ListProjectAssetsOutcome IoTSiteWiseClient::ListProjectAssets(const ListProjectA
     endpointResolutionOutcome.GetResult().AddPathSegments("/assets");
   };
 
-  return ListProjectAssetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListProjectAssetsOutcome(result.GetResultWithOwnership())
+                            : ListProjectAssetsOutcome(std::move(result.GetError()));
 }
 
 ListProjectsOutcome IoTSiteWiseClient::ListProjects(const ListProjectsRequest& request) const {
@@ -1577,7 +1721,8 @@ ListProjectsOutcome IoTSiteWiseClient::ListProjects(const ListProjectsRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/projects");
   };
 
-  return ListProjectsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListProjectsOutcome(result.GetResultWithOwnership()) : ListProjectsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome IoTSiteWiseClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -1592,7 +1737,9 @@ ListTagsForResourceOutcome IoTSiteWiseClient::ListTagsForResource(const ListTags
     endpointResolutionOutcome.GetResult().AddPathSegments("/tags");
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTimeSeriesOutcome IoTSiteWiseClient::ListTimeSeries(const ListTimeSeriesRequest& request) const {
@@ -1601,7 +1748,8 @@ ListTimeSeriesOutcome IoTSiteWiseClient::ListTimeSeries(const ListTimeSeriesRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/timeseries/");
   };
 
-  return ListTimeSeriesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTimeSeriesOutcome(result.GetResultWithOwnership()) : ListTimeSeriesOutcome(std::move(result.GetError()));
 }
 
 PutAssetModelInterfaceRelationshipOutcome IoTSiteWiseClient::PutAssetModelInterfaceRelationship(
@@ -1626,7 +1774,9 @@ PutAssetModelInterfaceRelationshipOutcome IoTSiteWiseClient::PutAssetModelInterf
     endpointResolutionOutcome.GetResult().AddPathSegments("/asset-model-interface-relationship");
   };
 
-  return PutAssetModelInterfaceRelationshipOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutAssetModelInterfaceRelationshipOutcome(result.GetResultWithOwnership())
+                            : PutAssetModelInterfaceRelationshipOutcome(std::move(result.GetError()));
 }
 
 PutDefaultEncryptionConfigurationOutcome IoTSiteWiseClient::PutDefaultEncryptionConfiguration(
@@ -1636,7 +1786,9 @@ PutDefaultEncryptionConfigurationOutcome IoTSiteWiseClient::PutDefaultEncryption
     endpointResolutionOutcome.GetResult().AddPathSegments("/configuration/account/encryption");
   };
 
-  return PutDefaultEncryptionConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutDefaultEncryptionConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutDefaultEncryptionConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutLoggingOptionsOutcome IoTSiteWiseClient::PutLoggingOptions(const PutLoggingOptionsRequest& request) const {
@@ -1645,7 +1797,9 @@ PutLoggingOptionsOutcome IoTSiteWiseClient::PutLoggingOptions(const PutLoggingOp
     endpointResolutionOutcome.GetResult().AddPathSegments("/logging");
   };
 
-  return PutLoggingOptionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutLoggingOptionsOutcome(result.GetResultWithOwnership())
+                            : PutLoggingOptionsOutcome(std::move(result.GetError()));
 }
 
 PutStorageConfigurationOutcome IoTSiteWiseClient::PutStorageConfiguration(const PutStorageConfigurationRequest& request) const {
@@ -1654,7 +1808,9 @@ PutStorageConfigurationOutcome IoTSiteWiseClient::PutStorageConfiguration(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/configuration/account/storage");
   };
 
-  return PutStorageConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutStorageConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutStorageConfigurationOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome IoTSiteWiseClient::TagResource(const TagResourceRequest& request) const {
@@ -1669,7 +1825,8 @@ TagResourceOutcome IoTSiteWiseClient::TagResource(const TagResourceRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/tags");
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome IoTSiteWiseClient::UntagResource(const UntagResourceRequest& request) const {
@@ -1689,7 +1846,8 @@ UntagResourceOutcome IoTSiteWiseClient::UntagResource(const UntagResourceRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/tags");
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAccessPolicyOutcome IoTSiteWiseClient::UpdateAccessPolicy(const UpdateAccessPolicyRequest& request) const {
@@ -1705,7 +1863,9 @@ UpdateAccessPolicyOutcome IoTSiteWiseClient::UpdateAccessPolicy(const UpdateAcce
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccessPolicyId());
   };
 
-  return UpdateAccessPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateAccessPolicyOutcome(result.GetResultWithOwnership())
+                            : UpdateAccessPolicyOutcome(std::move(result.GetError()));
 }
 
 UpdateAssetOutcome IoTSiteWiseClient::UpdateAsset(const UpdateAssetRequest& request) const {
@@ -1721,7 +1881,8 @@ UpdateAssetOutcome IoTSiteWiseClient::UpdateAsset(const UpdateAssetRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssetId());
   };
 
-  return UpdateAssetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateAssetOutcome(result.GetResultWithOwnership()) : UpdateAssetOutcome(std::move(result.GetError()));
 }
 
 UpdateAssetModelOutcome IoTSiteWiseClient::UpdateAssetModel(const UpdateAssetModelRequest& request) const {
@@ -1737,7 +1898,9 @@ UpdateAssetModelOutcome IoTSiteWiseClient::UpdateAssetModel(const UpdateAssetMod
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssetModelId());
   };
 
-  return UpdateAssetModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateAssetModelOutcome(result.GetResultWithOwnership())
+                            : UpdateAssetModelOutcome(std::move(result.GetError()));
 }
 
 UpdateAssetModelCompositeModelOutcome IoTSiteWiseClient::UpdateAssetModelCompositeModel(
@@ -1761,7 +1924,9 @@ UpdateAssetModelCompositeModelOutcome IoTSiteWiseClient::UpdateAssetModelComposi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssetModelCompositeModelId());
   };
 
-  return UpdateAssetModelCompositeModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateAssetModelCompositeModelOutcome(result.GetResultWithOwnership())
+                            : UpdateAssetModelCompositeModelOutcome(std::move(result.GetError()));
 }
 
 UpdateAssetPropertyOutcome IoTSiteWiseClient::UpdateAssetProperty(const UpdateAssetPropertyRequest& request) const {
@@ -1784,7 +1949,9 @@ UpdateAssetPropertyOutcome IoTSiteWiseClient::UpdateAssetProperty(const UpdateAs
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPropertyId());
   };
 
-  return UpdateAssetPropertyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateAssetPropertyOutcome(result.GetResultWithOwnership())
+                            : UpdateAssetPropertyOutcome(std::move(result.GetError()));
 }
 
 UpdateComputationModelOutcome IoTSiteWiseClient::UpdateComputationModel(const UpdateComputationModelRequest& request) const {
@@ -1800,7 +1967,9 @@ UpdateComputationModelOutcome IoTSiteWiseClient::UpdateComputationModel(const Up
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetComputationModelId());
   };
 
-  return UpdateComputationModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateComputationModelOutcome(result.GetResultWithOwnership())
+                            : UpdateComputationModelOutcome(std::move(result.GetError()));
 }
 
 UpdateDashboardOutcome IoTSiteWiseClient::UpdateDashboard(const UpdateDashboardRequest& request) const {
@@ -1816,7 +1985,9 @@ UpdateDashboardOutcome IoTSiteWiseClient::UpdateDashboard(const UpdateDashboardR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDashboardId());
   };
 
-  return UpdateDashboardOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateDashboardOutcome(result.GetResultWithOwnership())
+                            : UpdateDashboardOutcome(std::move(result.GetError()));
 }
 
 UpdateDatasetOutcome IoTSiteWiseClient::UpdateDataset(const UpdateDatasetRequest& request) const {
@@ -1832,7 +2003,8 @@ UpdateDatasetOutcome IoTSiteWiseClient::UpdateDataset(const UpdateDatasetRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetId());
   };
 
-  return UpdateDatasetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateDatasetOutcome(result.GetResultWithOwnership()) : UpdateDatasetOutcome(std::move(result.GetError()));
 }
 
 UpdateGatewayOutcome IoTSiteWiseClient::UpdateGateway(const UpdateGatewayRequest& request) const {
@@ -1848,7 +2020,8 @@ UpdateGatewayOutcome IoTSiteWiseClient::UpdateGateway(const UpdateGatewayRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGatewayId());
   };
 
-  return UpdateGatewayOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateGatewayOutcome(result.GetResultWithOwnership()) : UpdateGatewayOutcome(std::move(result.GetError()));
 }
 
 UpdateGatewayCapabilityConfigurationOutcome IoTSiteWiseClient::UpdateGatewayCapabilityConfiguration(
@@ -1866,7 +2039,9 @@ UpdateGatewayCapabilityConfigurationOutcome IoTSiteWiseClient::UpdateGatewayCapa
     endpointResolutionOutcome.GetResult().AddPathSegments("/capability");
   };
 
-  return UpdateGatewayCapabilityConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateGatewayCapabilityConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateGatewayCapabilityConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdatePortalOutcome IoTSiteWiseClient::UpdatePortal(const UpdatePortalRequest& request) const {
@@ -1882,7 +2057,8 @@ UpdatePortalOutcome IoTSiteWiseClient::UpdatePortal(const UpdatePortalRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPortalId());
   };
 
-  return UpdatePortalOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdatePortalOutcome(result.GetResultWithOwnership()) : UpdatePortalOutcome(std::move(result.GetError()));
 }
 
 UpdateProjectOutcome IoTSiteWiseClient::UpdateProject(const UpdateProjectRequest& request) const {
@@ -1898,5 +2074,6 @@ UpdateProjectOutcome IoTSiteWiseClient::UpdateProject(const UpdateProjectRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProjectId());
   };
 
-  return UpdateProjectOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateProjectOutcome(result.GetResultWithOwnership()) : UpdateProjectOutcome(std::move(result.GetError()));
 }

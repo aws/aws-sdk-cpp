@@ -199,7 +199,9 @@ CreateConnectorOutcome KafkaConnectClient::CreateConnector(const CreateConnector
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/connectors");
   };
 
-  return CreateConnectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConnectorOutcome(result.GetResultWithOwnership())
+                            : CreateConnectorOutcome(std::move(result.GetError()));
 }
 
 CreateCustomPluginOutcome KafkaConnectClient::CreateCustomPlugin(const CreateCustomPluginRequest& request) const {
@@ -208,7 +210,9 @@ CreateCustomPluginOutcome KafkaConnectClient::CreateCustomPlugin(const CreateCus
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/custom-plugins");
   };
 
-  return CreateCustomPluginOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCustomPluginOutcome(result.GetResultWithOwnership())
+                            : CreateCustomPluginOutcome(std::move(result.GetError()));
 }
 
 CreateWorkerConfigurationOutcome KafkaConnectClient::CreateWorkerConfiguration(const CreateWorkerConfigurationRequest& request) const {
@@ -217,7 +221,9 @@ CreateWorkerConfigurationOutcome KafkaConnectClient::CreateWorkerConfiguration(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/worker-configurations");
   };
 
-  return CreateWorkerConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWorkerConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateWorkerConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteConnectorOutcome KafkaConnectClient::DeleteConnector(const DeleteConnectorRequest& request) const {
@@ -233,7 +239,9 @@ DeleteConnectorOutcome KafkaConnectClient::DeleteConnector(const DeleteConnector
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectorArn());
   };
 
-  return DeleteConnectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConnectorOutcome(result.GetResultWithOwnership())
+                            : DeleteConnectorOutcome(std::move(result.GetError()));
 }
 
 DeleteCustomPluginOutcome KafkaConnectClient::DeleteCustomPlugin(const DeleteCustomPluginRequest& request) const {
@@ -249,7 +257,9 @@ DeleteCustomPluginOutcome KafkaConnectClient::DeleteCustomPlugin(const DeleteCus
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCustomPluginArn());
   };
 
-  return DeleteCustomPluginOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCustomPluginOutcome(result.GetResultWithOwnership())
+                            : DeleteCustomPluginOutcome(std::move(result.GetError()));
 }
 
 DeleteWorkerConfigurationOutcome KafkaConnectClient::DeleteWorkerConfiguration(const DeleteWorkerConfigurationRequest& request) const {
@@ -265,7 +275,9 @@ DeleteWorkerConfigurationOutcome KafkaConnectClient::DeleteWorkerConfiguration(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkerConfigurationArn());
   };
 
-  return DeleteWorkerConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteWorkerConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteWorkerConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeConnectorOutcome KafkaConnectClient::DescribeConnector(const DescribeConnectorRequest& request) const {
@@ -281,7 +293,9 @@ DescribeConnectorOutcome KafkaConnectClient::DescribeConnector(const DescribeCon
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectorArn());
   };
 
-  return DescribeConnectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeConnectorOutcome(result.GetResultWithOwnership())
+                            : DescribeConnectorOutcome(std::move(result.GetError()));
 }
 
 DescribeConnectorOperationOutcome KafkaConnectClient::DescribeConnectorOperation(const DescribeConnectorOperationRequest& request) const {
@@ -297,7 +311,9 @@ DescribeConnectorOperationOutcome KafkaConnectClient::DescribeConnectorOperation
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectorOperationArn());
   };
 
-  return DescribeConnectorOperationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeConnectorOperationOutcome(result.GetResultWithOwnership())
+                            : DescribeConnectorOperationOutcome(std::move(result.GetError()));
 }
 
 DescribeCustomPluginOutcome KafkaConnectClient::DescribeCustomPlugin(const DescribeCustomPluginRequest& request) const {
@@ -313,7 +329,9 @@ DescribeCustomPluginOutcome KafkaConnectClient::DescribeCustomPlugin(const Descr
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCustomPluginArn());
   };
 
-  return DescribeCustomPluginOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeCustomPluginOutcome(result.GetResultWithOwnership())
+                            : DescribeCustomPluginOutcome(std::move(result.GetError()));
 }
 
 DescribeWorkerConfigurationOutcome KafkaConnectClient::DescribeWorkerConfiguration(
@@ -330,7 +348,9 @@ DescribeWorkerConfigurationOutcome KafkaConnectClient::DescribeWorkerConfigurati
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkerConfigurationArn());
   };
 
-  return DescribeWorkerConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeWorkerConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeWorkerConfigurationOutcome(std::move(result.GetError()));
 }
 
 ListConnectorOperationsOutcome KafkaConnectClient::ListConnectorOperations(const ListConnectorOperationsRequest& request) const {
@@ -347,7 +367,9 @@ ListConnectorOperationsOutcome KafkaConnectClient::ListConnectorOperations(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/operations");
   };
 
-  return ListConnectorOperationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListConnectorOperationsOutcome(result.GetResultWithOwnership())
+                            : ListConnectorOperationsOutcome(std::move(result.GetError()));
 }
 
 ListConnectorsOutcome KafkaConnectClient::ListConnectors(const ListConnectorsRequest& request) const {
@@ -356,7 +378,8 @@ ListConnectorsOutcome KafkaConnectClient::ListConnectors(const ListConnectorsReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/connectors");
   };
 
-  return ListConnectorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListConnectorsOutcome(result.GetResultWithOwnership()) : ListConnectorsOutcome(std::move(result.GetError()));
 }
 
 ListCustomPluginsOutcome KafkaConnectClient::ListCustomPlugins(const ListCustomPluginsRequest& request) const {
@@ -365,7 +388,9 @@ ListCustomPluginsOutcome KafkaConnectClient::ListCustomPlugins(const ListCustomP
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/custom-plugins");
   };
 
-  return ListCustomPluginsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCustomPluginsOutcome(result.GetResultWithOwnership())
+                            : ListCustomPluginsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome KafkaConnectClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -381,7 +406,9 @@ ListTagsForResourceOutcome KafkaConnectClient::ListTagsForResource(const ListTag
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListWorkerConfigurationsOutcome KafkaConnectClient::ListWorkerConfigurations(const ListWorkerConfigurationsRequest& request) const {
@@ -390,7 +417,9 @@ ListWorkerConfigurationsOutcome KafkaConnectClient::ListWorkerConfigurations(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/worker-configurations");
   };
 
-  return ListWorkerConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListWorkerConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListWorkerConfigurationsOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome KafkaConnectClient::TagResource(const TagResourceRequest& request) const {
@@ -406,7 +435,8 @@ TagResourceOutcome KafkaConnectClient::TagResource(const TagResourceRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome KafkaConnectClient::UntagResource(const UntagResourceRequest& request) const {
@@ -427,7 +457,8 @@ UntagResourceOutcome KafkaConnectClient::UntagResource(const UntagResourceReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateConnectorOutcome KafkaConnectClient::UpdateConnector(const UpdateConnectorRequest& request) const {
@@ -448,5 +479,7 @@ UpdateConnectorOutcome KafkaConnectClient::UpdateConnector(const UpdateConnector
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectorArn());
   };
 
-  return UpdateConnectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateConnectorOutcome(result.GetResultWithOwnership())
+                            : UpdateConnectorOutcome(std::move(result.GetError()));
 }

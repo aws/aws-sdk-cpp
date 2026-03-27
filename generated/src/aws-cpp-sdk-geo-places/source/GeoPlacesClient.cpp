@@ -187,7 +187,8 @@ AutocompleteOutcome GeoPlacesClient::Autocomplete(const AutocompleteRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/autocomplete");
   };
 
-  return AutocompleteOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AutocompleteOutcome(result.GetResultWithOwnership()) : AutocompleteOutcome(std::move(result.GetError()));
 }
 
 GeocodeOutcome GeoPlacesClient::Geocode(const GeocodeRequest& request) const {
@@ -196,7 +197,8 @@ GeocodeOutcome GeoPlacesClient::Geocode(const GeocodeRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/geocode");
   };
 
-  return GeocodeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GeocodeOutcome(result.GetResultWithOwnership()) : GeocodeOutcome(std::move(result.GetError()));
 }
 
 GetPlaceOutcome GeoPlacesClient::GetPlace(const GetPlaceRequest& request) const {
@@ -212,7 +214,8 @@ GetPlaceOutcome GeoPlacesClient::GetPlace(const GetPlaceRequest& request) const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPlaceId());
   };
 
-  return GetPlaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPlaceOutcome(result.GetResultWithOwnership()) : GetPlaceOutcome(std::move(result.GetError()));
 }
 
 ReverseGeocodeOutcome GeoPlacesClient::ReverseGeocode(const ReverseGeocodeRequest& request) const {
@@ -221,7 +224,8 @@ ReverseGeocodeOutcome GeoPlacesClient::ReverseGeocode(const ReverseGeocodeReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/reverse-geocode");
   };
 
-  return ReverseGeocodeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ReverseGeocodeOutcome(result.GetResultWithOwnership()) : ReverseGeocodeOutcome(std::move(result.GetError()));
 }
 
 SearchNearbyOutcome GeoPlacesClient::SearchNearby(const SearchNearbyRequest& request) const {
@@ -230,7 +234,8 @@ SearchNearbyOutcome GeoPlacesClient::SearchNearby(const SearchNearbyRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/search-nearby");
   };
 
-  return SearchNearbyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchNearbyOutcome(result.GetResultWithOwnership()) : SearchNearbyOutcome(std::move(result.GetError()));
 }
 
 SearchTextOutcome GeoPlacesClient::SearchText(const SearchTextRequest& request) const {
@@ -239,7 +244,8 @@ SearchTextOutcome GeoPlacesClient::SearchText(const SearchTextRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/search-text");
   };
 
-  return SearchTextOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchTextOutcome(result.GetResultWithOwnership()) : SearchTextOutcome(std::move(result.GetError()));
 }
 
 SuggestOutcome GeoPlacesClient::Suggest(const SuggestRequest& request) const {
@@ -248,5 +254,6 @@ SuggestOutcome GeoPlacesClient::Suggest(const SuggestRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/suggest");
   };
 
-  return SuggestOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SuggestOutcome(result.GetResultWithOwnership()) : SuggestOutcome(std::move(result.GetError()));
 }

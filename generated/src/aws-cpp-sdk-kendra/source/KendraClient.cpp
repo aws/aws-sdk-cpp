@@ -239,280 +239,396 @@ KendraClient::InvokeOperationOutcome KendraClient::InvokeServiceOperation(const 
 
 AssociateEntitiesToExperienceOutcome KendraClient::AssociateEntitiesToExperience(
     const AssociateEntitiesToExperienceRequest& request) const {
-  return AssociateEntitiesToExperienceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateEntitiesToExperienceOutcome(result.GetResultWithOwnership())
+                            : AssociateEntitiesToExperienceOutcome(std::move(result.GetError()));
 }
 
 AssociatePersonasToEntitiesOutcome KendraClient::AssociatePersonasToEntities(const AssociatePersonasToEntitiesRequest& request) const {
-  return AssociatePersonasToEntitiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociatePersonasToEntitiesOutcome(result.GetResultWithOwnership())
+                            : AssociatePersonasToEntitiesOutcome(std::move(result.GetError()));
 }
 
 BatchDeleteDocumentOutcome KendraClient::BatchDeleteDocument(const BatchDeleteDocumentRequest& request) const {
-  return BatchDeleteDocumentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeleteDocumentOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteDocumentOutcome(std::move(result.GetError()));
 }
 
 BatchDeleteFeaturedResultsSetOutcome KendraClient::BatchDeleteFeaturedResultsSet(
     const BatchDeleteFeaturedResultsSetRequest& request) const {
-  return BatchDeleteFeaturedResultsSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeleteFeaturedResultsSetOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteFeaturedResultsSetOutcome(std::move(result.GetError()));
 }
 
 BatchGetDocumentStatusOutcome KendraClient::BatchGetDocumentStatus(const BatchGetDocumentStatusRequest& request) const {
-  return BatchGetDocumentStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetDocumentStatusOutcome(result.GetResultWithOwnership())
+                            : BatchGetDocumentStatusOutcome(std::move(result.GetError()));
 }
 
 BatchPutDocumentOutcome KendraClient::BatchPutDocument(const BatchPutDocumentRequest& request) const {
-  return BatchPutDocumentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchPutDocumentOutcome(result.GetResultWithOwnership())
+                            : BatchPutDocumentOutcome(std::move(result.GetError()));
 }
 
 ClearQuerySuggestionsOutcome KendraClient::ClearQuerySuggestions(const ClearQuerySuggestionsRequest& request) const {
-  return ClearQuerySuggestionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ClearQuerySuggestionsOutcome(result.GetResultWithOwnership())
+                            : ClearQuerySuggestionsOutcome(std::move(result.GetError()));
 }
 
 CreateAccessControlConfigurationOutcome KendraClient::CreateAccessControlConfiguration(
     const CreateAccessControlConfigurationRequest& request) const {
-  return CreateAccessControlConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAccessControlConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateAccessControlConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateDataSourceOutcome KendraClient::CreateDataSource(const CreateDataSourceRequest& request) const {
-  return CreateDataSourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDataSourceOutcome(result.GetResultWithOwnership())
+                            : CreateDataSourceOutcome(std::move(result.GetError()));
 }
 
 CreateExperienceOutcome KendraClient::CreateExperience(const CreateExperienceRequest& request) const {
-  return CreateExperienceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateExperienceOutcome(result.GetResultWithOwnership())
+                            : CreateExperienceOutcome(std::move(result.GetError()));
 }
 
 CreateFaqOutcome KendraClient::CreateFaq(const CreateFaqRequest& request) const {
-  return CreateFaqOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFaqOutcome(result.GetResultWithOwnership()) : CreateFaqOutcome(std::move(result.GetError()));
 }
 
 CreateFeaturedResultsSetOutcome KendraClient::CreateFeaturedResultsSet(const CreateFeaturedResultsSetRequest& request) const {
-  return CreateFeaturedResultsSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFeaturedResultsSetOutcome(result.GetResultWithOwnership())
+                            : CreateFeaturedResultsSetOutcome(std::move(result.GetError()));
 }
 
 CreateIndexOutcome KendraClient::CreateIndex(const CreateIndexRequest& request) const {
-  return CreateIndexOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIndexOutcome(result.GetResultWithOwnership()) : CreateIndexOutcome(std::move(result.GetError()));
 }
 
 CreateQuerySuggestionsBlockListOutcome KendraClient::CreateQuerySuggestionsBlockList(
     const CreateQuerySuggestionsBlockListRequest& request) const {
-  return CreateQuerySuggestionsBlockListOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateQuerySuggestionsBlockListOutcome(result.GetResultWithOwnership())
+                            : CreateQuerySuggestionsBlockListOutcome(std::move(result.GetError()));
 }
 
 CreateThesaurusOutcome KendraClient::CreateThesaurus(const CreateThesaurusRequest& request) const {
-  return CreateThesaurusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateThesaurusOutcome(result.GetResultWithOwnership())
+                            : CreateThesaurusOutcome(std::move(result.GetError()));
 }
 
 DeleteAccessControlConfigurationOutcome KendraClient::DeleteAccessControlConfiguration(
     const DeleteAccessControlConfigurationRequest& request) const {
-  return DeleteAccessControlConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAccessControlConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteAccessControlConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteDataSourceOutcome KendraClient::DeleteDataSource(const DeleteDataSourceRequest& request) const {
-  return DeleteDataSourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDataSourceOutcome(result.GetResultWithOwnership())
+                            : DeleteDataSourceOutcome(std::move(result.GetError()));
 }
 
 DeleteExperienceOutcome KendraClient::DeleteExperience(const DeleteExperienceRequest& request) const {
-  return DeleteExperienceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteExperienceOutcome(result.GetResultWithOwnership())
+                            : DeleteExperienceOutcome(std::move(result.GetError()));
 }
 
 DeleteFaqOutcome KendraClient::DeleteFaq(const DeleteFaqRequest& request) const {
-  return DeleteFaqOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteFaqOutcome(result.GetResultWithOwnership()) : DeleteFaqOutcome(std::move(result.GetError()));
 }
 
 DeleteIndexOutcome KendraClient::DeleteIndex(const DeleteIndexRequest& request) const {
-  return DeleteIndexOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteIndexOutcome(result.GetResultWithOwnership()) : DeleteIndexOutcome(std::move(result.GetError()));
 }
 
 DeletePrincipalMappingOutcome KendraClient::DeletePrincipalMapping(const DeletePrincipalMappingRequest& request) const {
-  return DeletePrincipalMappingOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePrincipalMappingOutcome(result.GetResultWithOwnership())
+                            : DeletePrincipalMappingOutcome(std::move(result.GetError()));
 }
 
 DeleteQuerySuggestionsBlockListOutcome KendraClient::DeleteQuerySuggestionsBlockList(
     const DeleteQuerySuggestionsBlockListRequest& request) const {
-  return DeleteQuerySuggestionsBlockListOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteQuerySuggestionsBlockListOutcome(result.GetResultWithOwnership())
+                            : DeleteQuerySuggestionsBlockListOutcome(std::move(result.GetError()));
 }
 
 DeleteThesaurusOutcome KendraClient::DeleteThesaurus(const DeleteThesaurusRequest& request) const {
-  return DeleteThesaurusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteThesaurusOutcome(result.GetResultWithOwnership())
+                            : DeleteThesaurusOutcome(std::move(result.GetError()));
 }
 
 DescribeAccessControlConfigurationOutcome KendraClient::DescribeAccessControlConfiguration(
     const DescribeAccessControlConfigurationRequest& request) const {
-  return DescribeAccessControlConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAccessControlConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeAccessControlConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeDataSourceOutcome KendraClient::DescribeDataSource(const DescribeDataSourceRequest& request) const {
-  return DescribeDataSourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDataSourceOutcome(result.GetResultWithOwnership())
+                            : DescribeDataSourceOutcome(std::move(result.GetError()));
 }
 
 DescribeExperienceOutcome KendraClient::DescribeExperience(const DescribeExperienceRequest& request) const {
-  return DescribeExperienceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeExperienceOutcome(result.GetResultWithOwnership())
+                            : DescribeExperienceOutcome(std::move(result.GetError()));
 }
 
 DescribeFaqOutcome KendraClient::DescribeFaq(const DescribeFaqRequest& request) const {
-  return DescribeFaqOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeFaqOutcome(result.GetResultWithOwnership()) : DescribeFaqOutcome(std::move(result.GetError()));
 }
 
 DescribeFeaturedResultsSetOutcome KendraClient::DescribeFeaturedResultsSet(const DescribeFeaturedResultsSetRequest& request) const {
-  return DescribeFeaturedResultsSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeFeaturedResultsSetOutcome(result.GetResultWithOwnership())
+                            : DescribeFeaturedResultsSetOutcome(std::move(result.GetError()));
 }
 
 DescribeIndexOutcome KendraClient::DescribeIndex(const DescribeIndexRequest& request) const {
-  return DescribeIndexOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeIndexOutcome(result.GetResultWithOwnership()) : DescribeIndexOutcome(std::move(result.GetError()));
 }
 
 DescribePrincipalMappingOutcome KendraClient::DescribePrincipalMapping(const DescribePrincipalMappingRequest& request) const {
-  return DescribePrincipalMappingOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePrincipalMappingOutcome(result.GetResultWithOwnership())
+                            : DescribePrincipalMappingOutcome(std::move(result.GetError()));
 }
 
 DescribeQuerySuggestionsBlockListOutcome KendraClient::DescribeQuerySuggestionsBlockList(
     const DescribeQuerySuggestionsBlockListRequest& request) const {
-  return DescribeQuerySuggestionsBlockListOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeQuerySuggestionsBlockListOutcome(result.GetResultWithOwnership())
+                            : DescribeQuerySuggestionsBlockListOutcome(std::move(result.GetError()));
 }
 
 DescribeQuerySuggestionsConfigOutcome KendraClient::DescribeQuerySuggestionsConfig(
     const DescribeQuerySuggestionsConfigRequest& request) const {
-  return DescribeQuerySuggestionsConfigOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeQuerySuggestionsConfigOutcome(result.GetResultWithOwnership())
+                            : DescribeQuerySuggestionsConfigOutcome(std::move(result.GetError()));
 }
 
 DescribeThesaurusOutcome KendraClient::DescribeThesaurus(const DescribeThesaurusRequest& request) const {
-  return DescribeThesaurusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeThesaurusOutcome(result.GetResultWithOwnership())
+                            : DescribeThesaurusOutcome(std::move(result.GetError()));
 }
 
 DisassociateEntitiesFromExperienceOutcome KendraClient::DisassociateEntitiesFromExperience(
     const DisassociateEntitiesFromExperienceRequest& request) const {
-  return DisassociateEntitiesFromExperienceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateEntitiesFromExperienceOutcome(result.GetResultWithOwnership())
+                            : DisassociateEntitiesFromExperienceOutcome(std::move(result.GetError()));
 }
 
 DisassociatePersonasFromEntitiesOutcome KendraClient::DisassociatePersonasFromEntities(
     const DisassociatePersonasFromEntitiesRequest& request) const {
-  return DisassociatePersonasFromEntitiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociatePersonasFromEntitiesOutcome(result.GetResultWithOwnership())
+                            : DisassociatePersonasFromEntitiesOutcome(std::move(result.GetError()));
 }
 
 GetQuerySuggestionsOutcome KendraClient::GetQuerySuggestions(const GetQuerySuggestionsRequest& request) const {
-  return GetQuerySuggestionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetQuerySuggestionsOutcome(result.GetResultWithOwnership())
+                            : GetQuerySuggestionsOutcome(std::move(result.GetError()));
 }
 
 GetSnapshotsOutcome KendraClient::GetSnapshots(const GetSnapshotsRequest& request) const {
-  return GetSnapshotsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSnapshotsOutcome(result.GetResultWithOwnership()) : GetSnapshotsOutcome(std::move(result.GetError()));
 }
 
 ListAccessControlConfigurationsOutcome KendraClient::ListAccessControlConfigurations(
     const ListAccessControlConfigurationsRequest& request) const {
-  return ListAccessControlConfigurationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAccessControlConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListAccessControlConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListDataSourceSyncJobsOutcome KendraClient::ListDataSourceSyncJobs(const ListDataSourceSyncJobsRequest& request) const {
-  return ListDataSourceSyncJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDataSourceSyncJobsOutcome(result.GetResultWithOwnership())
+                            : ListDataSourceSyncJobsOutcome(std::move(result.GetError()));
 }
 
 ListDataSourcesOutcome KendraClient::ListDataSources(const ListDataSourcesRequest& request) const {
-  return ListDataSourcesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDataSourcesOutcome(result.GetResultWithOwnership())
+                            : ListDataSourcesOutcome(std::move(result.GetError()));
 }
 
 ListEntityPersonasOutcome KendraClient::ListEntityPersonas(const ListEntityPersonasRequest& request) const {
-  return ListEntityPersonasOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEntityPersonasOutcome(result.GetResultWithOwnership())
+                            : ListEntityPersonasOutcome(std::move(result.GetError()));
 }
 
 ListExperienceEntitiesOutcome KendraClient::ListExperienceEntities(const ListExperienceEntitiesRequest& request) const {
-  return ListExperienceEntitiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListExperienceEntitiesOutcome(result.GetResultWithOwnership())
+                            : ListExperienceEntitiesOutcome(std::move(result.GetError()));
 }
 
 ListExperiencesOutcome KendraClient::ListExperiences(const ListExperiencesRequest& request) const {
-  return ListExperiencesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListExperiencesOutcome(result.GetResultWithOwnership())
+                            : ListExperiencesOutcome(std::move(result.GetError()));
 }
 
 ListFaqsOutcome KendraClient::ListFaqs(const ListFaqsRequest& request) const {
-  return ListFaqsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFaqsOutcome(result.GetResultWithOwnership()) : ListFaqsOutcome(std::move(result.GetError()));
 }
 
 ListFeaturedResultsSetsOutcome KendraClient::ListFeaturedResultsSets(const ListFeaturedResultsSetsRequest& request) const {
-  return ListFeaturedResultsSetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFeaturedResultsSetsOutcome(result.GetResultWithOwnership())
+                            : ListFeaturedResultsSetsOutcome(std::move(result.GetError()));
 }
 
 ListGroupsOlderThanOrderingIdOutcome KendraClient::ListGroupsOlderThanOrderingId(
     const ListGroupsOlderThanOrderingIdRequest& request) const {
-  return ListGroupsOlderThanOrderingIdOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListGroupsOlderThanOrderingIdOutcome(result.GetResultWithOwnership())
+                            : ListGroupsOlderThanOrderingIdOutcome(std::move(result.GetError()));
 }
 
 ListIndicesOutcome KendraClient::ListIndices(const ListIndicesRequest& request) const {
-  return ListIndicesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListIndicesOutcome(result.GetResultWithOwnership()) : ListIndicesOutcome(std::move(result.GetError()));
 }
 
 ListQuerySuggestionsBlockListsOutcome KendraClient::ListQuerySuggestionsBlockLists(
     const ListQuerySuggestionsBlockListsRequest& request) const {
-  return ListQuerySuggestionsBlockListsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListQuerySuggestionsBlockListsOutcome(result.GetResultWithOwnership())
+                            : ListQuerySuggestionsBlockListsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome KendraClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListThesauriOutcome KendraClient::ListThesauri(const ListThesauriRequest& request) const {
-  return ListThesauriOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListThesauriOutcome(result.GetResultWithOwnership()) : ListThesauriOutcome(std::move(result.GetError()));
 }
 
 PutPrincipalMappingOutcome KendraClient::PutPrincipalMapping(const PutPrincipalMappingRequest& request) const {
-  return PutPrincipalMappingOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutPrincipalMappingOutcome(result.GetResultWithOwnership())
+                            : PutPrincipalMappingOutcome(std::move(result.GetError()));
 }
 
 QueryOutcome KendraClient::Query(const QueryRequest& request) const {
-  return QueryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? QueryOutcome(result.GetResultWithOwnership()) : QueryOutcome(std::move(result.GetError()));
 }
 
 RetrieveOutcome KendraClient::Retrieve(const RetrieveRequest& request) const {
-  return RetrieveOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RetrieveOutcome(result.GetResultWithOwnership()) : RetrieveOutcome(std::move(result.GetError()));
 }
 
 StartDataSourceSyncJobOutcome KendraClient::StartDataSourceSyncJob(const StartDataSourceSyncJobRequest& request) const {
-  return StartDataSourceSyncJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDataSourceSyncJobOutcome(result.GetResultWithOwnership())
+                            : StartDataSourceSyncJobOutcome(std::move(result.GetError()));
 }
 
 StopDataSourceSyncJobOutcome KendraClient::StopDataSourceSyncJob(const StopDataSourceSyncJobRequest& request) const {
-  return StopDataSourceSyncJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopDataSourceSyncJobOutcome(result.GetResultWithOwnership())
+                            : StopDataSourceSyncJobOutcome(std::move(result.GetError()));
 }
 
 SubmitFeedbackOutcome KendraClient::SubmitFeedback(const SubmitFeedbackRequest& request) const {
-  return SubmitFeedbackOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SubmitFeedbackOutcome(result.GetResultWithOwnership()) : SubmitFeedbackOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome KendraClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome KendraClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAccessControlConfigurationOutcome KendraClient::UpdateAccessControlConfiguration(
     const UpdateAccessControlConfigurationRequest& request) const {
-  return UpdateAccessControlConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAccessControlConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateAccessControlConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateDataSourceOutcome KendraClient::UpdateDataSource(const UpdateDataSourceRequest& request) const {
-  return UpdateDataSourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDataSourceOutcome(result.GetResultWithOwnership())
+                            : UpdateDataSourceOutcome(std::move(result.GetError()));
 }
 
 UpdateExperienceOutcome KendraClient::UpdateExperience(const UpdateExperienceRequest& request) const {
-  return UpdateExperienceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateExperienceOutcome(result.GetResultWithOwnership())
+                            : UpdateExperienceOutcome(std::move(result.GetError()));
 }
 
 UpdateFeaturedResultsSetOutcome KendraClient::UpdateFeaturedResultsSet(const UpdateFeaturedResultsSetRequest& request) const {
-  return UpdateFeaturedResultsSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateFeaturedResultsSetOutcome(result.GetResultWithOwnership())
+                            : UpdateFeaturedResultsSetOutcome(std::move(result.GetError()));
 }
 
 UpdateIndexOutcome KendraClient::UpdateIndex(const UpdateIndexRequest& request) const {
-  return UpdateIndexOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateIndexOutcome(result.GetResultWithOwnership()) : UpdateIndexOutcome(std::move(result.GetError()));
 }
 
 UpdateQuerySuggestionsBlockListOutcome KendraClient::UpdateQuerySuggestionsBlockList(
     const UpdateQuerySuggestionsBlockListRequest& request) const {
-  return UpdateQuerySuggestionsBlockListOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateQuerySuggestionsBlockListOutcome(result.GetResultWithOwnership())
+                            : UpdateQuerySuggestionsBlockListOutcome(std::move(result.GetError()));
 }
 
 UpdateQuerySuggestionsConfigOutcome KendraClient::UpdateQuerySuggestionsConfig(const UpdateQuerySuggestionsConfigRequest& request) const {
-  return UpdateQuerySuggestionsConfigOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateQuerySuggestionsConfigOutcome(result.GetResultWithOwnership())
+                            : UpdateQuerySuggestionsConfigOutcome(std::move(result.GetError()));
 }
 
 UpdateThesaurusOutcome KendraClient::UpdateThesaurus(const UpdateThesaurusRequest& request) const {
-  return UpdateThesaurusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateThesaurusOutcome(result.GetResultWithOwnership())
+                            : UpdateThesaurusOutcome(std::move(result.GetError()));
 }

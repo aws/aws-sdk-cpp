@@ -212,7 +212,9 @@ ActivateEmailContactOutcome NotificationsContactsClient::ActivateEmailContact(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCode());
   };
 
-  return ActivateEmailContactOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? ActivateEmailContactOutcome(result.GetResultWithOwnership())
+                            : ActivateEmailContactOutcome(std::move(result.GetError()));
 }
 
 CreateEmailContactOutcome NotificationsContactsClient::CreateEmailContact(const CreateEmailContactRequest& request) const {
@@ -221,7 +223,9 @@ CreateEmailContactOutcome NotificationsContactsClient::CreateEmailContact(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/2022-09-19/emailcontacts");
   };
 
-  return CreateEmailContactOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEmailContactOutcome(result.GetResultWithOwnership())
+                            : CreateEmailContactOutcome(std::move(result.GetError()));
 }
 
 DeleteEmailContactOutcome NotificationsContactsClient::DeleteEmailContact(const DeleteEmailContactRequest& request) const {
@@ -237,7 +241,9 @@ DeleteEmailContactOutcome NotificationsContactsClient::DeleteEmailContact(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return DeleteEmailContactOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteEmailContactOutcome(result.GetResultWithOwnership())
+                            : DeleteEmailContactOutcome(std::move(result.GetError()));
 }
 
 GetEmailContactOutcome NotificationsContactsClient::GetEmailContact(const GetEmailContactRequest& request) const {
@@ -253,7 +259,9 @@ GetEmailContactOutcome NotificationsContactsClient::GetEmailContact(const GetEma
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return GetEmailContactOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEmailContactOutcome(result.GetResultWithOwnership())
+                            : GetEmailContactOutcome(std::move(result.GetError()));
 }
 
 ListEmailContactsOutcome NotificationsContactsClient::ListEmailContacts(const ListEmailContactsRequest& request) const {
@@ -262,7 +270,9 @@ ListEmailContactsOutcome NotificationsContactsClient::ListEmailContacts(const Li
     endpointResolutionOutcome.GetResult().AddPathSegments("/emailcontacts");
   };
 
-  return ListEmailContactsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListEmailContactsOutcome(result.GetResultWithOwnership())
+                            : ListEmailContactsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome NotificationsContactsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -278,7 +288,9 @@ ListTagsForResourceOutcome NotificationsContactsClient::ListTagsForResource(cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 SendActivationCodeOutcome NotificationsContactsClient::SendActivationCode(const SendActivationCodeRequest& request) const {
@@ -295,7 +307,9 @@ SendActivationCodeOutcome NotificationsContactsClient::SendActivationCode(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/activate/send");
   };
 
-  return SendActivationCodeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendActivationCodeOutcome(result.GetResultWithOwnership())
+                            : SendActivationCodeOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome NotificationsContactsClient::TagResource(const TagResourceRequest& request) const {
@@ -311,7 +325,8 @@ TagResourceOutcome NotificationsContactsClient::TagResource(const TagResourceReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome NotificationsContactsClient::UntagResource(const UntagResourceRequest& request) const {
@@ -332,5 +347,6 @@ UntagResourceOutcome NotificationsContactsClient::UntagResource(const UntagResou
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }

@@ -218,7 +218,9 @@ ApplyArchiveRuleOutcome AccessAnalyzerClient::ApplyArchiveRule(const ApplyArchiv
     endpointResolutionOutcome.GetResult().AddPathSegments("/archive-rule");
   };
 
-  return ApplyArchiveRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? ApplyArchiveRuleOutcome(result.GetResultWithOwnership())
+                            : ApplyArchiveRuleOutcome(std::move(result.GetError()));
 }
 
 CancelPolicyGenerationOutcome AccessAnalyzerClient::CancelPolicyGeneration(const CancelPolicyGenerationRequest& request) const {
@@ -234,7 +236,9 @@ CancelPolicyGenerationOutcome AccessAnalyzerClient::CancelPolicyGeneration(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return CancelPolicyGenerationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CancelPolicyGenerationOutcome(result.GetResultWithOwnership())
+                            : CancelPolicyGenerationOutcome(std::move(result.GetError()));
 }
 
 CheckAccessNotGrantedOutcome AccessAnalyzerClient::CheckAccessNotGranted(const CheckAccessNotGrantedRequest& request) const {
@@ -243,7 +247,9 @@ CheckAccessNotGrantedOutcome AccessAnalyzerClient::CheckAccessNotGranted(const C
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy/check-access-not-granted");
   };
 
-  return CheckAccessNotGrantedOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CheckAccessNotGrantedOutcome(result.GetResultWithOwnership())
+                            : CheckAccessNotGrantedOutcome(std::move(result.GetError()));
 }
 
 CheckNoNewAccessOutcome AccessAnalyzerClient::CheckNoNewAccess(const CheckNoNewAccessRequest& request) const {
@@ -252,7 +258,9 @@ CheckNoNewAccessOutcome AccessAnalyzerClient::CheckNoNewAccess(const CheckNoNewA
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy/check-no-new-access");
   };
 
-  return CheckNoNewAccessOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CheckNoNewAccessOutcome(result.GetResultWithOwnership())
+                            : CheckNoNewAccessOutcome(std::move(result.GetError()));
 }
 
 CheckNoPublicAccessOutcome AccessAnalyzerClient::CheckNoPublicAccess(const CheckNoPublicAccessRequest& request) const {
@@ -261,7 +269,9 @@ CheckNoPublicAccessOutcome AccessAnalyzerClient::CheckNoPublicAccess(const Check
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy/check-no-public-access");
   };
 
-  return CheckNoPublicAccessOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CheckNoPublicAccessOutcome(result.GetResultWithOwnership())
+                            : CheckNoPublicAccessOutcome(std::move(result.GetError()));
 }
 
 CreateAccessPreviewOutcome AccessAnalyzerClient::CreateAccessPreview(const CreateAccessPreviewRequest& request) const {
@@ -270,7 +280,9 @@ CreateAccessPreviewOutcome AccessAnalyzerClient::CreateAccessPreview(const Creat
     endpointResolutionOutcome.GetResult().AddPathSegments("/access-preview");
   };
 
-  return CreateAccessPreviewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateAccessPreviewOutcome(result.GetResultWithOwnership())
+                            : CreateAccessPreviewOutcome(std::move(result.GetError()));
 }
 
 CreateAnalyzerOutcome AccessAnalyzerClient::CreateAnalyzer(const CreateAnalyzerRequest& request) const {
@@ -279,7 +291,8 @@ CreateAnalyzerOutcome AccessAnalyzerClient::CreateAnalyzer(const CreateAnalyzerR
     endpointResolutionOutcome.GetResult().AddPathSegments("/analyzer");
   };
 
-  return CreateAnalyzerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateAnalyzerOutcome(result.GetResultWithOwnership()) : CreateAnalyzerOutcome(std::move(result.GetError()));
 }
 
 CreateArchiveRuleOutcome AccessAnalyzerClient::CreateArchiveRule(const CreateArchiveRuleRequest& request) const {
@@ -296,7 +309,9 @@ CreateArchiveRuleOutcome AccessAnalyzerClient::CreateArchiveRule(const CreateArc
     endpointResolutionOutcome.GetResult().AddPathSegments("/archive-rule");
   };
 
-  return CreateArchiveRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateArchiveRuleOutcome(result.GetResultWithOwnership())
+                            : CreateArchiveRuleOutcome(std::move(result.GetError()));
 }
 
 DeleteAnalyzerOutcome AccessAnalyzerClient::DeleteAnalyzer(const DeleteAnalyzerRequest& request) const {
@@ -312,7 +327,8 @@ DeleteAnalyzerOutcome AccessAnalyzerClient::DeleteAnalyzer(const DeleteAnalyzerR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAnalyzerName());
   };
 
-  return DeleteAnalyzerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAnalyzerOutcome(result.GetResultWithOwnership()) : DeleteAnalyzerOutcome(std::move(result.GetError()));
 }
 
 DeleteArchiveRuleOutcome AccessAnalyzerClient::DeleteArchiveRule(const DeleteArchiveRuleRequest& request) const {
@@ -335,7 +351,9 @@ DeleteArchiveRuleOutcome AccessAnalyzerClient::DeleteArchiveRule(const DeleteArc
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRuleName());
   };
 
-  return DeleteArchiveRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteArchiveRuleOutcome(result.GetResultWithOwnership())
+                            : DeleteArchiveRuleOutcome(std::move(result.GetError()));
 }
 
 GenerateFindingRecommendationOutcome AccessAnalyzerClient::GenerateFindingRecommendation(
@@ -357,7 +375,9 @@ GenerateFindingRecommendationOutcome AccessAnalyzerClient::GenerateFindingRecomm
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GenerateFindingRecommendationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GenerateFindingRecommendationOutcome(result.GetResultWithOwnership())
+                            : GenerateFindingRecommendationOutcome(std::move(result.GetError()));
 }
 
 GetAccessPreviewOutcome AccessAnalyzerClient::GetAccessPreview(const GetAccessPreviewRequest& request) const {
@@ -378,7 +398,9 @@ GetAccessPreviewOutcome AccessAnalyzerClient::GetAccessPreview(const GetAccessPr
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccessPreviewId());
   };
 
-  return GetAccessPreviewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAccessPreviewOutcome(result.GetResultWithOwnership())
+                            : GetAccessPreviewOutcome(std::move(result.GetError()));
 }
 
 GetAnalyzedResourceOutcome AccessAnalyzerClient::GetAnalyzedResource(const GetAnalyzedResourceRequest& request) const {
@@ -398,7 +420,9 @@ GetAnalyzedResourceOutcome AccessAnalyzerClient::GetAnalyzedResource(const GetAn
     endpointResolutionOutcome.GetResult().AddPathSegments("/analyzed-resource");
   };
 
-  return GetAnalyzedResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAnalyzedResourceOutcome(result.GetResultWithOwnership())
+                            : GetAnalyzedResourceOutcome(std::move(result.GetError()));
 }
 
 GetAnalyzerOutcome AccessAnalyzerClient::GetAnalyzer(const GetAnalyzerRequest& request) const {
@@ -414,7 +438,8 @@ GetAnalyzerOutcome AccessAnalyzerClient::GetAnalyzer(const GetAnalyzerRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAnalyzerName());
   };
 
-  return GetAnalyzerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAnalyzerOutcome(result.GetResultWithOwnership()) : GetAnalyzerOutcome(std::move(result.GetError()));
 }
 
 GetArchiveRuleOutcome AccessAnalyzerClient::GetArchiveRule(const GetArchiveRuleRequest& request) const {
@@ -437,7 +462,8 @@ GetArchiveRuleOutcome AccessAnalyzerClient::GetArchiveRule(const GetArchiveRuleR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRuleName());
   };
 
-  return GetArchiveRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetArchiveRuleOutcome(result.GetResultWithOwnership()) : GetArchiveRuleOutcome(std::move(result.GetError()));
 }
 
 GetFindingOutcome AccessAnalyzerClient::GetFinding(const GetFindingRequest& request) const {
@@ -458,7 +484,8 @@ GetFindingOutcome AccessAnalyzerClient::GetFinding(const GetFindingRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetFindingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFindingOutcome(result.GetResultWithOwnership()) : GetFindingOutcome(std::move(result.GetError()));
 }
 
 GetFindingRecommendationOutcome AccessAnalyzerClient::GetFindingRecommendation(const GetFindingRecommendationRequest& request) const {
@@ -479,7 +506,9 @@ GetFindingRecommendationOutcome AccessAnalyzerClient::GetFindingRecommendation(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetFindingRecommendationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFindingRecommendationOutcome(result.GetResultWithOwnership())
+                            : GetFindingRecommendationOutcome(std::move(result.GetError()));
 }
 
 GetFindingV2Outcome AccessAnalyzerClient::GetFindingV2(const GetFindingV2Request& request) const {
@@ -500,7 +529,8 @@ GetFindingV2Outcome AccessAnalyzerClient::GetFindingV2(const GetFindingV2Request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetFindingV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFindingV2Outcome(result.GetResultWithOwnership()) : GetFindingV2Outcome(std::move(result.GetError()));
 }
 
 GetFindingsStatisticsOutcome AccessAnalyzerClient::GetFindingsStatistics(const GetFindingsStatisticsRequest& request) const {
@@ -509,7 +539,9 @@ GetFindingsStatisticsOutcome AccessAnalyzerClient::GetFindingsStatistics(const G
     endpointResolutionOutcome.GetResult().AddPathSegments("/analyzer/findings/statistics");
   };
 
-  return GetFindingsStatisticsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetFindingsStatisticsOutcome(result.GetResultWithOwnership())
+                            : GetFindingsStatisticsOutcome(std::move(result.GetError()));
 }
 
 GetGeneratedPolicyOutcome AccessAnalyzerClient::GetGeneratedPolicy(const GetGeneratedPolicyRequest& request) const {
@@ -525,7 +557,9 @@ GetGeneratedPolicyOutcome AccessAnalyzerClient::GetGeneratedPolicy(const GetGene
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return GetGeneratedPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetGeneratedPolicyOutcome(result.GetResultWithOwnership())
+                            : GetGeneratedPolicyOutcome(std::move(result.GetError()));
 }
 
 ListAccessPreviewFindingsOutcome AccessAnalyzerClient::ListAccessPreviewFindings(const ListAccessPreviewFindingsRequest& request) const {
@@ -541,7 +575,9 @@ ListAccessPreviewFindingsOutcome AccessAnalyzerClient::ListAccessPreviewFindings
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccessPreviewId());
   };
 
-  return ListAccessPreviewFindingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAccessPreviewFindingsOutcome(result.GetResultWithOwnership())
+                            : ListAccessPreviewFindingsOutcome(std::move(result.GetError()));
 }
 
 ListAccessPreviewsOutcome AccessAnalyzerClient::ListAccessPreviews(const ListAccessPreviewsRequest& request) const {
@@ -556,7 +592,9 @@ ListAccessPreviewsOutcome AccessAnalyzerClient::ListAccessPreviews(const ListAcc
     endpointResolutionOutcome.GetResult().AddPathSegments("/access-preview");
   };
 
-  return ListAccessPreviewsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAccessPreviewsOutcome(result.GetResultWithOwnership())
+                            : ListAccessPreviewsOutcome(std::move(result.GetError()));
 }
 
 ListAnalyzedResourcesOutcome AccessAnalyzerClient::ListAnalyzedResources(const ListAnalyzedResourcesRequest& request) const {
@@ -565,7 +603,9 @@ ListAnalyzedResourcesOutcome AccessAnalyzerClient::ListAnalyzedResources(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/analyzed-resource");
   };
 
-  return ListAnalyzedResourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAnalyzedResourcesOutcome(result.GetResultWithOwnership())
+                            : ListAnalyzedResourcesOutcome(std::move(result.GetError()));
 }
 
 ListAnalyzersOutcome AccessAnalyzerClient::ListAnalyzers(const ListAnalyzersRequest& request) const {
@@ -574,7 +614,8 @@ ListAnalyzersOutcome AccessAnalyzerClient::ListAnalyzers(const ListAnalyzersRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/analyzer");
   };
 
-  return ListAnalyzersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAnalyzersOutcome(result.GetResultWithOwnership()) : ListAnalyzersOutcome(std::move(result.GetError()));
 }
 
 ListArchiveRulesOutcome AccessAnalyzerClient::ListArchiveRules(const ListArchiveRulesRequest& request) const {
@@ -591,7 +632,9 @@ ListArchiveRulesOutcome AccessAnalyzerClient::ListArchiveRules(const ListArchive
     endpointResolutionOutcome.GetResult().AddPathSegments("/archive-rule");
   };
 
-  return ListArchiveRulesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListArchiveRulesOutcome(result.GetResultWithOwnership())
+                            : ListArchiveRulesOutcome(std::move(result.GetError()));
 }
 
 ListFindingsOutcome AccessAnalyzerClient::ListFindings(const ListFindingsRequest& request) const {
@@ -600,7 +643,8 @@ ListFindingsOutcome AccessAnalyzerClient::ListFindings(const ListFindingsRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/finding");
   };
 
-  return ListFindingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFindingsOutcome(result.GetResultWithOwnership()) : ListFindingsOutcome(std::move(result.GetError()));
 }
 
 ListFindingsV2Outcome AccessAnalyzerClient::ListFindingsV2(const ListFindingsV2Request& request) const {
@@ -609,7 +653,8 @@ ListFindingsV2Outcome AccessAnalyzerClient::ListFindingsV2(const ListFindingsV2R
     endpointResolutionOutcome.GetResult().AddPathSegments("/findingv2");
   };
 
-  return ListFindingsV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFindingsV2Outcome(result.GetResultWithOwnership()) : ListFindingsV2Outcome(std::move(result.GetError()));
 }
 
 ListPolicyGenerationsOutcome AccessAnalyzerClient::ListPolicyGenerations(const ListPolicyGenerationsRequest& request) const {
@@ -618,7 +663,9 @@ ListPolicyGenerationsOutcome AccessAnalyzerClient::ListPolicyGenerations(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy/generation");
   };
 
-  return ListPolicyGenerationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPolicyGenerationsOutcome(result.GetResultWithOwnership())
+                            : ListPolicyGenerationsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome AccessAnalyzerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -634,7 +681,9 @@ ListTagsForResourceOutcome AccessAnalyzerClient::ListTagsForResource(const ListT
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 StartPolicyGenerationOutcome AccessAnalyzerClient::StartPolicyGeneration(const StartPolicyGenerationRequest& request) const {
@@ -643,7 +692,9 @@ StartPolicyGenerationOutcome AccessAnalyzerClient::StartPolicyGeneration(const S
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy/generation");
   };
 
-  return StartPolicyGenerationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StartPolicyGenerationOutcome(result.GetResultWithOwnership())
+                            : StartPolicyGenerationOutcome(std::move(result.GetError()));
 }
 
 StartResourceScanOutcome AccessAnalyzerClient::StartResourceScan(const StartResourceScanRequest& request) const {
@@ -652,7 +703,9 @@ StartResourceScanOutcome AccessAnalyzerClient::StartResourceScan(const StartReso
     endpointResolutionOutcome.GetResult().AddPathSegments("/resource/scan");
   };
 
-  return StartResourceScanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartResourceScanOutcome(result.GetResultWithOwnership())
+                            : StartResourceScanOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome AccessAnalyzerClient::TagResource(const TagResourceRequest& request) const {
@@ -668,7 +721,8 @@ TagResourceOutcome AccessAnalyzerClient::TagResource(const TagResourceRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome AccessAnalyzerClient::UntagResource(const UntagResourceRequest& request) const {
@@ -689,7 +743,8 @@ UntagResourceOutcome AccessAnalyzerClient::UntagResource(const UntagResourceRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAnalyzerOutcome AccessAnalyzerClient::UpdateAnalyzer(const UpdateAnalyzerRequest& request) const {
@@ -705,7 +760,8 @@ UpdateAnalyzerOutcome AccessAnalyzerClient::UpdateAnalyzer(const UpdateAnalyzerR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAnalyzerName());
   };
 
-  return UpdateAnalyzerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateAnalyzerOutcome(result.GetResultWithOwnership()) : UpdateAnalyzerOutcome(std::move(result.GetError()));
 }
 
 UpdateArchiveRuleOutcome AccessAnalyzerClient::UpdateArchiveRule(const UpdateArchiveRuleRequest& request) const {
@@ -728,7 +784,9 @@ UpdateArchiveRuleOutcome AccessAnalyzerClient::UpdateArchiveRule(const UpdateArc
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRuleName());
   };
 
-  return UpdateArchiveRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateArchiveRuleOutcome(result.GetResultWithOwnership())
+                            : UpdateArchiveRuleOutcome(std::move(result.GetError()));
 }
 
 UpdateFindingsOutcome AccessAnalyzerClient::UpdateFindings(const UpdateFindingsRequest& request) const {
@@ -737,7 +795,8 @@ UpdateFindingsOutcome AccessAnalyzerClient::UpdateFindings(const UpdateFindingsR
     endpointResolutionOutcome.GetResult().AddPathSegments("/finding");
   };
 
-  return UpdateFindingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateFindingsOutcome(result.GetResultWithOwnership()) : UpdateFindingsOutcome(std::move(result.GetError()));
 }
 
 ValidatePolicyOutcome AccessAnalyzerClient::ValidatePolicy(const ValidatePolicyRequest& request) const {
@@ -746,5 +805,6 @@ ValidatePolicyOutcome AccessAnalyzerClient::ValidatePolicy(const ValidatePolicyR
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy/validation");
   };
 
-  return ValidatePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ValidatePolicyOutcome(result.GetResultWithOwnership()) : ValidatePolicyOutcome(std::move(result.GetError()));
 }

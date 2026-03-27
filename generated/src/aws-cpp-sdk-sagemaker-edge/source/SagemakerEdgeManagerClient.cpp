@@ -192,7 +192,8 @@ GetDeploymentsOutcome SagemakerEdgeManagerClient::GetDeployments(const GetDeploy
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetDeployments");
   };
 
-  return GetDeploymentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDeploymentsOutcome(result.GetResultWithOwnership()) : GetDeploymentsOutcome(std::move(result.GetError()));
 }
 
 GetDeviceRegistrationOutcome SagemakerEdgeManagerClient::GetDeviceRegistration(const GetDeviceRegistrationRequest& request) const {
@@ -201,7 +202,9 @@ GetDeviceRegistrationOutcome SagemakerEdgeManagerClient::GetDeviceRegistration(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetDeviceRegistration");
   };
 
-  return GetDeviceRegistrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDeviceRegistrationOutcome(result.GetResultWithOwnership())
+                            : GetDeviceRegistrationOutcome(std::move(result.GetError()));
 }
 
 SendHeartbeatOutcome SagemakerEdgeManagerClient::SendHeartbeat(const SendHeartbeatRequest& request) const {
@@ -210,5 +213,6 @@ SendHeartbeatOutcome SagemakerEdgeManagerClient::SendHeartbeat(const SendHeartbe
     endpointResolutionOutcome.GetResult().AddPathSegments("/SendHeartbeat");
   };
 
-  return SendHeartbeatOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendHeartbeatOutcome(result.GetResultWithOwnership()) : SendHeartbeatOutcome(std::move(result.GetError()));
 }

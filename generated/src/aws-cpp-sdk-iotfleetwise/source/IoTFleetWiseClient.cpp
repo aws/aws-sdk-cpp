@@ -230,230 +230,327 @@ IoTFleetWiseClient::InvokeOperationOutcome IoTFleetWiseClient::InvokeServiceOper
 }
 
 AssociateVehicleFleetOutcome IoTFleetWiseClient::AssociateVehicleFleet(const AssociateVehicleFleetRequest& request) const {
-  return AssociateVehicleFleetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateVehicleFleetOutcome(result.GetResultWithOwnership())
+                            : AssociateVehicleFleetOutcome(std::move(result.GetError()));
 }
 
 BatchCreateVehicleOutcome IoTFleetWiseClient::BatchCreateVehicle(const BatchCreateVehicleRequest& request) const {
-  return BatchCreateVehicleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchCreateVehicleOutcome(result.GetResultWithOwnership())
+                            : BatchCreateVehicleOutcome(std::move(result.GetError()));
 }
 
 BatchUpdateVehicleOutcome IoTFleetWiseClient::BatchUpdateVehicle(const BatchUpdateVehicleRequest& request) const {
-  return BatchUpdateVehicleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchUpdateVehicleOutcome(result.GetResultWithOwnership())
+                            : BatchUpdateVehicleOutcome(std::move(result.GetError()));
 }
 
 CreateCampaignOutcome IoTFleetWiseClient::CreateCampaign(const CreateCampaignRequest& request) const {
-  return CreateCampaignOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCampaignOutcome(result.GetResultWithOwnership()) : CreateCampaignOutcome(std::move(result.GetError()));
 }
 
 CreateDecoderManifestOutcome IoTFleetWiseClient::CreateDecoderManifest(const CreateDecoderManifestRequest& request) const {
-  return CreateDecoderManifestOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDecoderManifestOutcome(result.GetResultWithOwnership())
+                            : CreateDecoderManifestOutcome(std::move(result.GetError()));
 }
 
 CreateFleetOutcome IoTFleetWiseClient::CreateFleet(const CreateFleetRequest& request) const {
-  return CreateFleetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFleetOutcome(result.GetResultWithOwnership()) : CreateFleetOutcome(std::move(result.GetError()));
 }
 
 CreateModelManifestOutcome IoTFleetWiseClient::CreateModelManifest(const CreateModelManifestRequest& request) const {
-  return CreateModelManifestOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateModelManifestOutcome(result.GetResultWithOwnership())
+                            : CreateModelManifestOutcome(std::move(result.GetError()));
 }
 
 CreateSignalCatalogOutcome IoTFleetWiseClient::CreateSignalCatalog(const CreateSignalCatalogRequest& request) const {
-  return CreateSignalCatalogOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSignalCatalogOutcome(result.GetResultWithOwnership())
+                            : CreateSignalCatalogOutcome(std::move(result.GetError()));
 }
 
 CreateStateTemplateOutcome IoTFleetWiseClient::CreateStateTemplate(const CreateStateTemplateRequest& request) const {
-  return CreateStateTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateStateTemplateOutcome(result.GetResultWithOwnership())
+                            : CreateStateTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateVehicleOutcome IoTFleetWiseClient::CreateVehicle(const CreateVehicleRequest& request) const {
-  return CreateVehicleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateVehicleOutcome(result.GetResultWithOwnership()) : CreateVehicleOutcome(std::move(result.GetError()));
 }
 
 DeleteCampaignOutcome IoTFleetWiseClient::DeleteCampaign(const DeleteCampaignRequest& request) const {
-  return DeleteCampaignOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCampaignOutcome(result.GetResultWithOwnership()) : DeleteCampaignOutcome(std::move(result.GetError()));
 }
 
 DeleteDecoderManifestOutcome IoTFleetWiseClient::DeleteDecoderManifest(const DeleteDecoderManifestRequest& request) const {
-  return DeleteDecoderManifestOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDecoderManifestOutcome(result.GetResultWithOwnership())
+                            : DeleteDecoderManifestOutcome(std::move(result.GetError()));
 }
 
 DeleteFleetOutcome IoTFleetWiseClient::DeleteFleet(const DeleteFleetRequest& request) const {
-  return DeleteFleetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteFleetOutcome(result.GetResultWithOwnership()) : DeleteFleetOutcome(std::move(result.GetError()));
 }
 
 DeleteModelManifestOutcome IoTFleetWiseClient::DeleteModelManifest(const DeleteModelManifestRequest& request) const {
-  return DeleteModelManifestOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteModelManifestOutcome(result.GetResultWithOwnership())
+                            : DeleteModelManifestOutcome(std::move(result.GetError()));
 }
 
 DeleteSignalCatalogOutcome IoTFleetWiseClient::DeleteSignalCatalog(const DeleteSignalCatalogRequest& request) const {
-  return DeleteSignalCatalogOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSignalCatalogOutcome(result.GetResultWithOwnership())
+                            : DeleteSignalCatalogOutcome(std::move(result.GetError()));
 }
 
 DeleteStateTemplateOutcome IoTFleetWiseClient::DeleteStateTemplate(const DeleteStateTemplateRequest& request) const {
-  return DeleteStateTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteStateTemplateOutcome(result.GetResultWithOwnership())
+                            : DeleteStateTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteVehicleOutcome IoTFleetWiseClient::DeleteVehicle(const DeleteVehicleRequest& request) const {
-  return DeleteVehicleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVehicleOutcome(result.GetResultWithOwnership()) : DeleteVehicleOutcome(std::move(result.GetError()));
 }
 
 DisassociateVehicleFleetOutcome IoTFleetWiseClient::DisassociateVehicleFleet(const DisassociateVehicleFleetRequest& request) const {
-  return DisassociateVehicleFleetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateVehicleFleetOutcome(result.GetResultWithOwnership())
+                            : DisassociateVehicleFleetOutcome(std::move(result.GetError()));
 }
 
 GetCampaignOutcome IoTFleetWiseClient::GetCampaign(const GetCampaignRequest& request) const {
-  return GetCampaignOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCampaignOutcome(result.GetResultWithOwnership()) : GetCampaignOutcome(std::move(result.GetError()));
 }
 
 GetDecoderManifestOutcome IoTFleetWiseClient::GetDecoderManifest(const GetDecoderManifestRequest& request) const {
-  return GetDecoderManifestOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDecoderManifestOutcome(result.GetResultWithOwnership())
+                            : GetDecoderManifestOutcome(std::move(result.GetError()));
 }
 
 GetEncryptionConfigurationOutcome IoTFleetWiseClient::GetEncryptionConfiguration(const GetEncryptionConfigurationRequest& request) const {
-  return GetEncryptionConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEncryptionConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetEncryptionConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetFleetOutcome IoTFleetWiseClient::GetFleet(const GetFleetRequest& request) const {
-  return GetFleetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetFleetOutcome(result.GetResultWithOwnership()) : GetFleetOutcome(std::move(result.GetError()));
 }
 
 GetLoggingOptionsOutcome IoTFleetWiseClient::GetLoggingOptions(const GetLoggingOptionsRequest& request) const {
-  return GetLoggingOptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLoggingOptionsOutcome(result.GetResultWithOwnership())
+                            : GetLoggingOptionsOutcome(std::move(result.GetError()));
 }
 
 GetModelManifestOutcome IoTFleetWiseClient::GetModelManifest(const GetModelManifestRequest& request) const {
-  return GetModelManifestOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetModelManifestOutcome(result.GetResultWithOwnership())
+                            : GetModelManifestOutcome(std::move(result.GetError()));
 }
 
 GetRegisterAccountStatusOutcome IoTFleetWiseClient::GetRegisterAccountStatus(const GetRegisterAccountStatusRequest& request) const {
-  return GetRegisterAccountStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRegisterAccountStatusOutcome(result.GetResultWithOwnership())
+                            : GetRegisterAccountStatusOutcome(std::move(result.GetError()));
 }
 
 GetSignalCatalogOutcome IoTFleetWiseClient::GetSignalCatalog(const GetSignalCatalogRequest& request) const {
-  return GetSignalCatalogOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSignalCatalogOutcome(result.GetResultWithOwnership())
+                            : GetSignalCatalogOutcome(std::move(result.GetError()));
 }
 
 GetStateTemplateOutcome IoTFleetWiseClient::GetStateTemplate(const GetStateTemplateRequest& request) const {
-  return GetStateTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetStateTemplateOutcome(result.GetResultWithOwnership())
+                            : GetStateTemplateOutcome(std::move(result.GetError()));
 }
 
 GetVehicleOutcome IoTFleetWiseClient::GetVehicle(const GetVehicleRequest& request) const {
-  return GetVehicleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetVehicleOutcome(result.GetResultWithOwnership()) : GetVehicleOutcome(std::move(result.GetError()));
 }
 
 GetVehicleStatusOutcome IoTFleetWiseClient::GetVehicleStatus(const GetVehicleStatusRequest& request) const {
-  return GetVehicleStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetVehicleStatusOutcome(result.GetResultWithOwnership())
+                            : GetVehicleStatusOutcome(std::move(result.GetError()));
 }
 
 ImportDecoderManifestOutcome IoTFleetWiseClient::ImportDecoderManifest(const ImportDecoderManifestRequest& request) const {
-  return ImportDecoderManifestOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportDecoderManifestOutcome(result.GetResultWithOwnership())
+                            : ImportDecoderManifestOutcome(std::move(result.GetError()));
 }
 
 ImportSignalCatalogOutcome IoTFleetWiseClient::ImportSignalCatalog(const ImportSignalCatalogRequest& request) const {
-  return ImportSignalCatalogOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportSignalCatalogOutcome(result.GetResultWithOwnership())
+                            : ImportSignalCatalogOutcome(std::move(result.GetError()));
 }
 
 ListCampaignsOutcome IoTFleetWiseClient::ListCampaigns(const ListCampaignsRequest& request) const {
-  return ListCampaignsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCampaignsOutcome(result.GetResultWithOwnership()) : ListCampaignsOutcome(std::move(result.GetError()));
 }
 
 ListDecoderManifestNetworkInterfacesOutcome IoTFleetWiseClient::ListDecoderManifestNetworkInterfaces(
     const ListDecoderManifestNetworkInterfacesRequest& request) const {
-  return ListDecoderManifestNetworkInterfacesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDecoderManifestNetworkInterfacesOutcome(result.GetResultWithOwnership())
+                            : ListDecoderManifestNetworkInterfacesOutcome(std::move(result.GetError()));
 }
 
 ListDecoderManifestSignalsOutcome IoTFleetWiseClient::ListDecoderManifestSignals(const ListDecoderManifestSignalsRequest& request) const {
-  return ListDecoderManifestSignalsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDecoderManifestSignalsOutcome(result.GetResultWithOwnership())
+                            : ListDecoderManifestSignalsOutcome(std::move(result.GetError()));
 }
 
 ListDecoderManifestsOutcome IoTFleetWiseClient::ListDecoderManifests(const ListDecoderManifestsRequest& request) const {
-  return ListDecoderManifestsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDecoderManifestsOutcome(result.GetResultWithOwnership())
+                            : ListDecoderManifestsOutcome(std::move(result.GetError()));
 }
 
 ListFleetsOutcome IoTFleetWiseClient::ListFleets(const ListFleetsRequest& request) const {
-  return ListFleetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFleetsOutcome(result.GetResultWithOwnership()) : ListFleetsOutcome(std::move(result.GetError()));
 }
 
 ListFleetsForVehicleOutcome IoTFleetWiseClient::ListFleetsForVehicle(const ListFleetsForVehicleRequest& request) const {
-  return ListFleetsForVehicleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFleetsForVehicleOutcome(result.GetResultWithOwnership())
+                            : ListFleetsForVehicleOutcome(std::move(result.GetError()));
 }
 
 ListModelManifestNodesOutcome IoTFleetWiseClient::ListModelManifestNodes(const ListModelManifestNodesRequest& request) const {
-  return ListModelManifestNodesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListModelManifestNodesOutcome(result.GetResultWithOwnership())
+                            : ListModelManifestNodesOutcome(std::move(result.GetError()));
 }
 
 ListModelManifestsOutcome IoTFleetWiseClient::ListModelManifests(const ListModelManifestsRequest& request) const {
-  return ListModelManifestsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListModelManifestsOutcome(result.GetResultWithOwnership())
+                            : ListModelManifestsOutcome(std::move(result.GetError()));
 }
 
 ListSignalCatalogNodesOutcome IoTFleetWiseClient::ListSignalCatalogNodes(const ListSignalCatalogNodesRequest& request) const {
-  return ListSignalCatalogNodesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSignalCatalogNodesOutcome(result.GetResultWithOwnership())
+                            : ListSignalCatalogNodesOutcome(std::move(result.GetError()));
 }
 
 ListSignalCatalogsOutcome IoTFleetWiseClient::ListSignalCatalogs(const ListSignalCatalogsRequest& request) const {
-  return ListSignalCatalogsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSignalCatalogsOutcome(result.GetResultWithOwnership())
+                            : ListSignalCatalogsOutcome(std::move(result.GetError()));
 }
 
 ListStateTemplatesOutcome IoTFleetWiseClient::ListStateTemplates(const ListStateTemplatesRequest& request) const {
-  return ListStateTemplatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListStateTemplatesOutcome(result.GetResultWithOwnership())
+                            : ListStateTemplatesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome IoTFleetWiseClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListVehiclesOutcome IoTFleetWiseClient::ListVehicles(const ListVehiclesRequest& request) const {
-  return ListVehiclesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListVehiclesOutcome(result.GetResultWithOwnership()) : ListVehiclesOutcome(std::move(result.GetError()));
 }
 
 ListVehiclesInFleetOutcome IoTFleetWiseClient::ListVehiclesInFleet(const ListVehiclesInFleetRequest& request) const {
-  return ListVehiclesInFleetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListVehiclesInFleetOutcome(result.GetResultWithOwnership())
+                            : ListVehiclesInFleetOutcome(std::move(result.GetError()));
 }
 
 PutEncryptionConfigurationOutcome IoTFleetWiseClient::PutEncryptionConfiguration(const PutEncryptionConfigurationRequest& request) const {
-  return PutEncryptionConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutEncryptionConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutEncryptionConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutLoggingOptionsOutcome IoTFleetWiseClient::PutLoggingOptions(const PutLoggingOptionsRequest& request) const {
-  return PutLoggingOptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutLoggingOptionsOutcome(result.GetResultWithOwnership())
+                            : PutLoggingOptionsOutcome(std::move(result.GetError()));
 }
 
 RegisterAccountOutcome IoTFleetWiseClient::RegisterAccount(const RegisterAccountRequest& request) const {
-  return RegisterAccountOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterAccountOutcome(result.GetResultWithOwnership())
+                            : RegisterAccountOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome IoTFleetWiseClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome IoTFleetWiseClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateCampaignOutcome IoTFleetWiseClient::UpdateCampaign(const UpdateCampaignRequest& request) const {
-  return UpdateCampaignOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCampaignOutcome(result.GetResultWithOwnership()) : UpdateCampaignOutcome(std::move(result.GetError()));
 }
 
 UpdateDecoderManifestOutcome IoTFleetWiseClient::UpdateDecoderManifest(const UpdateDecoderManifestRequest& request) const {
-  return UpdateDecoderManifestOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDecoderManifestOutcome(result.GetResultWithOwnership())
+                            : UpdateDecoderManifestOutcome(std::move(result.GetError()));
 }
 
 UpdateFleetOutcome IoTFleetWiseClient::UpdateFleet(const UpdateFleetRequest& request) const {
-  return UpdateFleetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateFleetOutcome(result.GetResultWithOwnership()) : UpdateFleetOutcome(std::move(result.GetError()));
 }
 
 UpdateModelManifestOutcome IoTFleetWiseClient::UpdateModelManifest(const UpdateModelManifestRequest& request) const {
-  return UpdateModelManifestOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateModelManifestOutcome(result.GetResultWithOwnership())
+                            : UpdateModelManifestOutcome(std::move(result.GetError()));
 }
 
 UpdateSignalCatalogOutcome IoTFleetWiseClient::UpdateSignalCatalog(const UpdateSignalCatalogRequest& request) const {
-  return UpdateSignalCatalogOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSignalCatalogOutcome(result.GetResultWithOwnership())
+                            : UpdateSignalCatalogOutcome(std::move(result.GetError()));
 }
 
 UpdateStateTemplateOutcome IoTFleetWiseClient::UpdateStateTemplate(const UpdateStateTemplateRequest& request) const {
-  return UpdateStateTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateStateTemplateOutcome(result.GetResultWithOwnership())
+                            : UpdateStateTemplateOutcome(std::move(result.GetError()));
 }
 
 UpdateVehicleOutcome IoTFleetWiseClient::UpdateVehicle(const UpdateVehicleRequest& request) const {
-  return UpdateVehicleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateVehicleOutcome(result.GetResultWithOwnership()) : UpdateVehicleOutcome(std::move(result.GetError()));
 }
