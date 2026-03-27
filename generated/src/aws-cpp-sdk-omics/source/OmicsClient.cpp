@@ -30,6 +30,7 @@
 #include <aws/omics/model/CompleteMultipartReadSetUploadRequest.h>
 #include <aws/omics/model/CreateAnnotationStoreRequest.h>
 #include <aws/omics/model/CreateAnnotationStoreVersionRequest.h>
+#include <aws/omics/model/CreateConfigurationRequest.h>
 #include <aws/omics/model/CreateMultipartReadSetUploadRequest.h>
 #include <aws/omics/model/CreateReferenceStoreRequest.h>
 #include <aws/omics/model/CreateRunCacheRequest.h>
@@ -42,6 +43,7 @@
 #include <aws/omics/model/DeleteAnnotationStoreRequest.h>
 #include <aws/omics/model/DeleteAnnotationStoreVersionsRequest.h>
 #include <aws/omics/model/DeleteBatchRequest.h>
+#include <aws/omics/model/DeleteConfigurationRequest.h>
 #include <aws/omics/model/DeleteReferenceRequest.h>
 #include <aws/omics/model/DeleteReferenceStoreRequest.h>
 #include <aws/omics/model/DeleteRunBatchRequest.h>
@@ -58,6 +60,7 @@
 #include <aws/omics/model/GetAnnotationStoreRequest.h>
 #include <aws/omics/model/GetAnnotationStoreVersionRequest.h>
 #include <aws/omics/model/GetBatchRequest.h>
+#include <aws/omics/model/GetConfigurationRequest.h>
 #include <aws/omics/model/GetReadSetActivationJobRequest.h>
 #include <aws/omics/model/GetReadSetExportJobRequest.h>
 #include <aws/omics/model/GetReadSetImportJobRequest.h>
@@ -82,6 +85,7 @@
 #include <aws/omics/model/ListAnnotationStoreVersionsRequest.h>
 #include <aws/omics/model/ListAnnotationStoresRequest.h>
 #include <aws/omics/model/ListBatchRequest.h>
+#include <aws/omics/model/ListConfigurationsRequest.h>
 #include <aws/omics/model/ListMultipartReadSetUploadsRequest.h>
 #include <aws/omics/model/ListReadSetActivationJobsRequest.h>
 #include <aws/omics/model/ListReadSetExportJobsRequest.h>
@@ -462,6 +466,17 @@ CreateAnnotationStoreVersionOutcome OmicsClient::CreateAnnotationStoreVersion(co
                             : CreateAnnotationStoreVersionOutcome(std::move(result.GetError()));
 }
 
+CreateConfigurationOutcome OmicsClient::CreateConfiguration(const CreateConfigurationRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/configuration");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateConfigurationOutcome(std::move(result.GetError()));
+}
+
 CreateMultipartReadSetUploadOutcome OmicsClient::CreateMultipartReadSetUpload(const CreateMultipartReadSetUploadRequest& request) const {
   if (!request.SequenceStoreIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("CreateMultipartReadSetUpload", "Required field: SequenceStoreId, is not set");
@@ -625,6 +640,24 @@ DeleteBatchOutcome OmicsClient::DeleteBatch(const DeleteBatchRequest& request) c
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteBatchOutcome(result.GetResultWithOwnership()) : DeleteBatchOutcome(std::move(result.GetError()));
+}
+
+DeleteConfigurationOutcome OmicsClient::DeleteConfiguration(const DeleteConfigurationRequest& request) const {
+  if (!request.NameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteConfiguration", "Required field: Name, is not set");
+    return DeleteConfigurationOutcome(
+        Aws::Client::AWSError<OmicsErrors>(OmicsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/configuration/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteReferenceOutcome OmicsClient::DeleteReference(const DeleteReferenceRequest& request) const {
@@ -920,6 +953,24 @@ GetBatchOutcome OmicsClient::GetBatch(const GetBatchRequest& request) const {
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetBatchOutcome(result.GetResultWithOwnership()) : GetBatchOutcome(std::move(result.GetError()));
+}
+
+GetConfigurationOutcome OmicsClient::GetConfiguration(const GetConfigurationRequest& request) const {
+  if (!request.NameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetConfiguration", "Required field: Name, is not set");
+    return GetConfigurationOutcome(
+        Aws::Client::AWSError<OmicsErrors>(OmicsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/configuration/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetReadSetOutcome OmicsClient::GetReadSet(const GetReadSetRequest& request) const {
@@ -1448,6 +1499,17 @@ ListBatchOutcome OmicsClient::ListBatch(const ListBatchRequest& request) const {
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListBatchOutcome(result.GetResultWithOwnership()) : ListBatchOutcome(std::move(result.GetError()));
+}
+
+ListConfigurationsOutcome OmicsClient::ListConfigurations(const ListConfigurationsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/configuration");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListMultipartReadSetUploadsOutcome OmicsClient::ListMultipartReadSetUploads(const ListMultipartReadSetUploadsRequest& request) const {

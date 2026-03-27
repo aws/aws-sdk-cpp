@@ -60,6 +60,10 @@ ToolArguments& ToolArguments::operator=(JsonView jsonValue) {
     m_taskId = jsonValue.GetString("taskId");
     m_taskIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("runtime")) {
+    m_runtime = LanguageRuntimeMapper::GetLanguageRuntimeForName(jsonValue.GetString("runtime"));
+    m_runtimeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -108,6 +112,10 @@ JsonValue ToolArguments::Jsonize() const {
 
   if (m_taskIdHasBeenSet) {
     payload.WithString("taskId", m_taskId);
+  }
+
+  if (m_runtimeHasBeenSet) {
+    payload.WithString("runtime", LanguageRuntimeMapper::GetNameForLanguageRuntime(m_runtime));
   }
 
   return payload;

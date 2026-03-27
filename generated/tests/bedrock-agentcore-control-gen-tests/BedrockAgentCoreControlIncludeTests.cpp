@@ -53,6 +53,7 @@
 #include <aws/bedrock-agentcore-control/model/CloudWatchLogsInputConfig.h>
 #include <aws/bedrock-agentcore-control/model/CloudWatchOutputConfig.h>
 #include <aws/bedrock-agentcore-control/model/Code.h>
+#include <aws/bedrock-agentcore-control/model/CodeBasedEvaluatorConfig.h>
 #include <aws/bedrock-agentcore-control/model/CodeConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/CodeInterpreterNetworkConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/CodeInterpreterNetworkMode.h>
@@ -229,6 +230,7 @@
 #include <aws/bedrock-agentcore-control/model/KeyType.h>
 #include <aws/bedrock-agentcore-control/model/KinesisResource.h>
 #include <aws/bedrock-agentcore-control/model/KmsConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/LambdaEvaluatorConfig.h>
 #include <aws/bedrock-agentcore-control/model/LambdaInterceptorConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/LifecycleConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/LinkedinOauth2ProviderConfigInput.h>

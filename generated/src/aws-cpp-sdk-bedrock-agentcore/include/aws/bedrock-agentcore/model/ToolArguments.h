@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
 #include <aws/bedrock-agentcore/model/InputContentBlock.h>
+#include <aws/bedrock-agentcore/model/LanguageRuntime.h>
 #include <aws/bedrock-agentcore/model/ProgrammingLanguage.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -60,8 +61,7 @@ class ToolArguments {
   ///@{
   /**
    * <p>The programming language of the code to execute. This tells the code
-   * interpreter which language runtime to use for execution. Common values include
-   * 'python', 'javascript', and 'r'.</p>
+   * interpreter which language runtime to use for execution.</p>
    */
   inline ProgrammingLanguage GetLanguage() const { return m_language; }
   inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
@@ -210,6 +210,23 @@ class ToolArguments {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The runtime environment to use for code execution. If not specified, defaults
+   * to <code>deno</code> for JavaScript and TypeScript.</p>
+   */
+  inline LanguageRuntime GetRuntime() const { return m_runtime; }
+  inline bool RuntimeHasBeenSet() const { return m_runtimeHasBeenSet; }
+  inline void SetRuntime(LanguageRuntime value) {
+    m_runtimeHasBeenSet = true;
+    m_runtime = value;
+  }
+  inline ToolArguments& WithRuntime(LanguageRuntime value) {
+    SetRuntime(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_code;
 
@@ -228,6 +245,8 @@ class ToolArguments {
   Aws::String m_directoryPath;
 
   Aws::String m_taskId;
+
+  LanguageRuntime m_runtime{LanguageRuntime::NOT_SET};
   bool m_codeHasBeenSet = false;
   bool m_languageHasBeenSet = false;
   bool m_clearContextHasBeenSet = false;
@@ -237,6 +256,7 @@ class ToolArguments {
   bool m_contentHasBeenSet = false;
   bool m_directoryPathHasBeenSet = false;
   bool m_taskIdHasBeenSet = false;
+  bool m_runtimeHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -49,6 +49,14 @@ StartRunResult& StartRunResult::operator=(const Aws::AmazonWebServiceResult<Json
     m_runOutputUri = jsonValue.GetString("runOutputUri");
     m_runOutputUriHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("configuration")) {
+    m_configuration = jsonValue.GetObject("configuration");
+    m_configurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("networkingMode")) {
+    m_networkingMode = jsonValue.GetString("networkingMode");
+    m_networkingModeHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

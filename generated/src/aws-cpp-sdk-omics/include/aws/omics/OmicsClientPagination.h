@@ -10,6 +10,7 @@
 #include <aws/omics/model/ListAnnotationStoreVersionsPaginationTraits.h>
 #include <aws/omics/model/ListAnnotationStoresPaginationTraits.h>
 #include <aws/omics/model/ListBatchPaginationTraits.h>
+#include <aws/omics/model/ListConfigurationsPaginationTraits.h>
 #include <aws/omics/model/ListMultipartReadSetUploadsPaginationTraits.h>
 #include <aws/omics/model/ListReadSetActivationJobsPaginationTraits.h>
 #include <aws/omics/model/ListReadSetExportJobsPaginationTraits.h>
@@ -44,6 +45,8 @@ using ListAnnotationStoreVersionsPaginator =
                                       Pagination::ListAnnotationStoreVersionsPaginationTraits<OmicsClient>>;
 using ListBatchPaginator =
     Aws::Utils::Pagination::Paginator<OmicsClient, Model::ListBatchRequest, Pagination::ListBatchPaginationTraits<OmicsClient>>;
+using ListConfigurationsPaginator = Aws::Utils::Pagination::Paginator<OmicsClient, Model::ListConfigurationsRequest,
+                                                                      Pagination::ListConfigurationsPaginationTraits<OmicsClient>>;
 using ListMultipartReadSetUploadsPaginator =
     Aws::Utils::Pagination::Paginator<OmicsClient, Model::ListMultipartReadSetUploadsRequest,
                                       Pagination::ListMultipartReadSetUploadsPaginationTraits<OmicsClient>>;

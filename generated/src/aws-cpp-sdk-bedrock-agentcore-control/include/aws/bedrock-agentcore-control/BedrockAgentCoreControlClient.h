@@ -248,8 +248,9 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
 
   /**
    * <p> Creates a custom evaluator for agent quality assessment. Custom evaluators
-   * use LLM-as-a-Judge configurations with user-defined prompts, rating scales, and
-   * model settings to evaluate agent performance at tool call, trace, or session
+   * can use either LLM-as-a-Judge configurations with user-defined prompts, rating
+   * scales, and model settings, or code-based configurations with customer-managed
+   * Lambda functions to evaluate agent performance at tool call, trace, or session
    * levels. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateEvaluator">AWS
    * API Reference</a></p>

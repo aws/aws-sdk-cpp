@@ -34,7 +34,7 @@ class EvaluateRequest : public BedrockAgentCoreRequest {
   /**
    * <p> The unique identifier of the evaluator to use for scoring. Can be a built-in
    * evaluator (e.g., <code>Builtin.Helpfulness</code>,
-   * <code>Builtin.Correctness</code>) or a custom evaluator ARN created through the
+   * <code>Builtin.Correctness</code>) or a custom evaluator Id created through the
    * control plane API. </p>
    */
   inline const Aws::String& GetEvaluatorId() const { return m_evaluatorId; }

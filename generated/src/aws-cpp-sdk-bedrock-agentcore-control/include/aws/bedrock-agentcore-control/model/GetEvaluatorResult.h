@@ -101,8 +101,8 @@ class GetEvaluatorResult {
 
   ///@{
   /**
-   * <p> The configuration of the evaluator, including LLM-as-a-Judge settings for
-   * custom evaluators. </p>
+   * <p> The configuration of the evaluator, including LLM-as-a-Judge or code-based
+   * settings. </p>
    */
   inline const EvaluatorConfig& GetEvaluatorConfig() const { return m_evaluatorConfig; }
   template <typename EvaluatorConfigT = EvaluatorConfig>

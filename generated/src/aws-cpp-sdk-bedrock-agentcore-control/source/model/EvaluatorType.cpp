@@ -17,6 +17,7 @@ namespace EvaluatorTypeMapper {
 
 static const int Builtin_HASH = HashingUtils::HashString("Builtin");
 static const int Custom_HASH = HashingUtils::HashString("Custom");
+static const int CustomCode_HASH = HashingUtils::HashString("CustomCode");
 
 EvaluatorType GetEvaluatorTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ EvaluatorType GetEvaluatorTypeForName(const Aws::String& name) {
     return EvaluatorType::Builtin;
   } else if (hashCode == Custom_HASH) {
     return EvaluatorType::Custom;
+  } else if (hashCode == CustomCode_HASH) {
+    return EvaluatorType::CustomCode;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForEvaluatorType(EvaluatorType enumValue) {
       return "Builtin";
     case EvaluatorType::Custom:
       return "Custom";
+    case EvaluatorType::CustomCode:
+      return "CustomCode";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {
