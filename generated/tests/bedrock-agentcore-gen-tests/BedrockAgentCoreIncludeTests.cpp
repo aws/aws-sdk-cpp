@@ -102,6 +102,7 @@
 #include <aws/bedrock-agentcore/model/InvokeCodeInterpreterHandler.h>
 #include <aws/bedrock-agentcore/model/InvokeCodeInterpreterInitialResponse.h>
 #include <aws/bedrock-agentcore/model/InvokeCodeInterpreterRequest.h>
+#include <aws/bedrock-agentcore/model/LanguageRuntime.h>
 #include <aws/bedrock-agentcore/model/LeftExpression.h>
 #include <aws/bedrock-agentcore/model/ListActorsRequest.h>
 #include <aws/bedrock-agentcore/model/ListActorsResult.h>

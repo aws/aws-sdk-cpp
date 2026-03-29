@@ -23,7 +23,7 @@ namespace Model {
  * <p>Wrapper for updating an optional Description field with PATCH semantics. When
  * present in an update request, the description is replaced with optionalValue.
  * When absent, the description is left unchanged. To unset the description,
- * include the wrapper with optionalValue set to null.</p><p><h3>See Also:</h3>
+ * include the wrapper with optionalValue not specified.</p><p><h3>See Also:</h3>
  * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdatedDescription">AWS
  * API Reference</a></p>
@@ -38,7 +38,7 @@ class UpdatedDescription {
   ///@{
   /**
    * <p>Represents an optional value that is used to update the human-readable
-   * description of the resource. If set to null, it will clear the current
+   * description of the resource. If not specified, it will clear the current
    * description of the resource.</p>
    */
   inline const Aws::String& GetOptionalValue() const { return m_optionalValue; }

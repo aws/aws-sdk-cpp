@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/omics/Omics_EXPORTS.h>
+#include <aws/omics/model/ConfigurationDetails.h>
 #include <aws/omics/model/RunStatus.h>
 
 #include <utility>
@@ -136,6 +137,40 @@ class StartRunResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Configuration details for the workflow run.</p>
+   */
+  inline const ConfigurationDetails& GetConfiguration() const { return m_configuration; }
+  template <typename ConfigurationT = ConfigurationDetails>
+  void SetConfiguration(ConfigurationT&& value) {
+    m_configurationHasBeenSet = true;
+    m_configuration = std::forward<ConfigurationT>(value);
+  }
+  template <typename ConfigurationT = ConfigurationDetails>
+  StartRunResult& WithConfiguration(ConfigurationT&& value) {
+    SetConfiguration(std::forward<ConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Networking mode for the workflow run.</p>
+   */
+  inline const Aws::String& GetNetworkingMode() const { return m_networkingMode; }
+  template <typename NetworkingModeT = Aws::String>
+  void SetNetworkingMode(NetworkingModeT&& value) {
+    m_networkingModeHasBeenSet = true;
+    m_networkingMode = std::forward<NetworkingModeT>(value);
+  }
+  template <typename NetworkingModeT = Aws::String>
+  StartRunResult& WithNetworkingMode(NetworkingModeT&& value) {
+    SetNetworkingMode(std::forward<NetworkingModeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -164,6 +199,10 @@ class StartRunResult {
 
   Aws::String m_runOutputUri;
 
+  ConfigurationDetails m_configuration;
+
+  Aws::String m_networkingMode;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
@@ -172,6 +211,8 @@ class StartRunResult {
   bool m_tagsHasBeenSet = false;
   bool m_uuidHasBeenSet = false;
   bool m_runOutputUriHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_networkingModeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

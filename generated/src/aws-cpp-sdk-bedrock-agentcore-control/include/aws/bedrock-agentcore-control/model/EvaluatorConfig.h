@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/CodeBasedEvaluatorConfig.h>
 #include <aws/bedrock-agentcore-control/model/LlmAsAJudgeEvaluatorConfig.h>
 
 #include <utility>
@@ -50,9 +51,31 @@ class EvaluatorConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> Configuration for a code-based evaluator that uses a customer-managed Lambda
+   * function to programmatically assess agent performance. </p>
+   */
+  inline const CodeBasedEvaluatorConfig& GetCodeBased() const { return m_codeBased; }
+  inline bool CodeBasedHasBeenSet() const { return m_codeBasedHasBeenSet; }
+  template <typename CodeBasedT = CodeBasedEvaluatorConfig>
+  void SetCodeBased(CodeBasedT&& value) {
+    m_codeBasedHasBeenSet = true;
+    m_codeBased = std::forward<CodeBasedT>(value);
+  }
+  template <typename CodeBasedT = CodeBasedEvaluatorConfig>
+  EvaluatorConfig& WithCodeBased(CodeBasedT&& value) {
+    SetCodeBased(std::forward<CodeBasedT>(value));
+    return *this;
+  }
+  ///@}
  private:
   LlmAsAJudgeEvaluatorConfig m_llmAsAJudge;
+
+  CodeBasedEvaluatorConfig m_codeBased;
   bool m_llmAsAJudgeHasBeenSet = false;
+  bool m_codeBasedHasBeenSet = false;
 };
 
 }  // namespace Model

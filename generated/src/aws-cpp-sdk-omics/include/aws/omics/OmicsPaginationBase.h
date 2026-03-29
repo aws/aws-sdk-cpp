@@ -11,6 +11,7 @@
 #include <aws/omics/model/ListAnnotationStoreVersionsPaginationTraits.h>
 #include <aws/omics/model/ListAnnotationStoresPaginationTraits.h>
 #include <aws/omics/model/ListBatchPaginationTraits.h>
+#include <aws/omics/model/ListConfigurationsPaginationTraits.h>
 #include <aws/omics/model/ListMultipartReadSetUploadsPaginationTraits.h>
 #include <aws/omics/model/ListReadSetActivationJobsPaginationTraits.h>
 #include <aws/omics/model/ListReadSetExportJobsPaginationTraits.h>
@@ -85,6 +86,18 @@ class OmicsPaginationBase {
   ListBatchPaginator(const Model::ListBatchRequest& request) {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBatchRequest, Pagination::ListBatchPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListConfigurations operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConfigurationsRequest,
+                                    Pagination::ListConfigurationsPaginationTraits<DerivedClient>>
+  ListConfigurationsPaginator(const Model::ListConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConfigurationsRequest,
+                                             Pagination::ListConfigurationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

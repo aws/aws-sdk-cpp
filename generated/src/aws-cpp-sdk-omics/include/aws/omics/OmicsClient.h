@@ -398,6 +398,32 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Create a new configuration.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateConfigurationOutcome CreateConfiguration(const Model::CreateConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateConfiguration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateConfigurationRequestT = Model::CreateConfigurationRequest>
+  Model::CreateConfigurationOutcomeCallable CreateConfigurationCallable(const CreateConfigurationRequestT& request) const {
+    return SubmitCallable(&OmicsClient::CreateConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for CreateConfiguration that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateConfigurationRequestT = Model::CreateConfigurationRequest>
+  void CreateConfigurationAsync(const CreateConfigurationRequestT& request, const CreateConfigurationResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OmicsClient::CreateConfiguration, request, handler, context);
+  }
+
+  /**
    * <p>Initiates a multipart read set upload for uploading partitioned source files
    * into a sequence store. You can directly import source files from an EC2 instance
    * and other local compute, or from an S3 bucket. To separate these source files
@@ -829,6 +855,32 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient,
   void DeleteBatchAsync(const DeleteBatchRequestT& request, const DeleteBatchResponseReceivedHandler& handler,
                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OmicsClient::DeleteBatch, request, handler, context);
+  }
+
+  /**
+   * <p>Delete an existing configuration.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteConfigurationOutcome DeleteConfiguration(const Model::DeleteConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteConfiguration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteConfigurationRequestT = Model::DeleteConfigurationRequest>
+  Model::DeleteConfigurationOutcomeCallable DeleteConfigurationCallable(const DeleteConfigurationRequestT& request) const {
+    return SubmitCallable(&OmicsClient::DeleteConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteConfiguration that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteConfigurationRequestT = Model::DeleteConfigurationRequest>
+  void DeleteConfigurationAsync(const DeleteConfigurationRequestT& request, const DeleteConfigurationResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OmicsClient::DeleteConfiguration, request, handler, context);
   }
 
   /**
@@ -1325,6 +1377,33 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient,
   void GetBatchAsync(const GetBatchRequestT& request, const GetBatchResponseReceivedHandler& handler,
                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OmicsClient::GetBatch, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieve configuration details for specified name.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetConfigurationOutcome GetConfiguration(const Model::GetConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetConfiguration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetConfigurationRequestT = Model::GetConfigurationRequest>
+  Model::GetConfigurationOutcomeCallable GetConfigurationCallable(const GetConfigurationRequestT& request) const {
+    return SubmitCallable(&OmicsClient::GetConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for GetConfiguration that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetConfigurationRequestT = Model::GetConfigurationRequest>
+  void GetConfigurationAsync(const GetConfigurationRequestT& request, const GetConfigurationResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OmicsClient::GetConfiguration, request, handler, context);
   }
 
   /**
@@ -2016,6 +2095,33 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient,
                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                       const ListBatchRequestT& request = {}) const {
     return SubmitAsync(&OmicsClient::ListBatch, request, handler, context);
+  }
+
+  /**
+   * <p>List all configurations for the account.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListConfigurations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListConfigurationsOutcome ListConfigurations(const Model::ListConfigurationsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListConfigurations that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListConfigurationsRequestT = Model::ListConfigurationsRequest>
+  Model::ListConfigurationsOutcomeCallable ListConfigurationsCallable(const ListConfigurationsRequestT& request = {}) const {
+    return SubmitCallable(&OmicsClient::ListConfigurations, request);
+  }
+
+  /**
+   * An Async wrapper for ListConfigurations that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListConfigurationsRequestT = Model::ListConfigurationsRequest>
+  void ListConfigurationsAsync(const ListConfigurationsResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                               const ListConfigurationsRequestT& request = {}) const {
+    return SubmitAsync(&OmicsClient::ListConfigurations, request, handler, context);
   }
 
   /**

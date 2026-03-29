@@ -144,22 +144,22 @@ class StartLoaderJobRequest : public NeptunedataRequest {
    * <p>The load job mode.</p> <p> <i>Allowed values</i>: <code>RESUME</code>,
    * <code>NEW</code>, <code>AUTO</code>.</p> <p> <i>Default value</i>:
    * <code>AUTO</code>.</p> <p class="title"> <b/> </p> <ul> <li> <p>
-   * <code>RESUME</code>   –   In RESUME mode, the loader looks for a previous load
-   * from this source, and if it finds one, resumes that load job. If no previous
-   * load job is found, the loader stops.</p> <p>The loader avoids reloading files
-   * that were successfully loaded in a previous job. It only tries to process failed
-   * files. If you dropped previously loaded data from your Neptune cluster, that
-   * data is not reloaded in this mode. If a previous load job loaded all files from
-   * the same source successfully, nothing is reloaded, and the loader returns
-   * success.</p> </li> <li> <p> <code>NEW</code>   –   In NEW mode, the creates a
-   * new load request regardless of any previous loads. You can use this mode to
-   * reload all the data from a source after dropping previously loaded data from
-   * your Neptune cluster, or to load new data available at the same source.</p>
-   * </li> <li> <p> <code>AUTO</code>   –   In AUTO mode, the loader looks for a
-   * previous load job from the same source, and if it finds one, resumes that job,
-   * just as in <code>RESUME</code> mode.</p> <p>If the loader doesn't find a
-   * previous load job from the same source, it loads all data from the source, just
-   * as in <code>NEW</code> mode.</p> </li> </ul>
+   * <code>RESUME</code> - In RESUME mode, the loader looks for a previous load from
+   * this source, and if it finds one, resumes that load job. If no previous load job
+   * is found, the loader stops.</p> <p>The loader avoids reloading files that were
+   * successfully loaded in a previous job. It only tries to process failed files. If
+   * you dropped previously loaded data from your Neptune cluster, that data is not
+   * reloaded in this mode. If a previous load job loaded all files from the same
+   * source successfully, nothing is reloaded, and the loader returns success.</p>
+   * </li> <li> <p> <code>NEW</code> - In NEW mode, the creates a new load request
+   * regardless of any previous loads. You can use this mode to reload all the data
+   * from a source after dropping previously loaded data from your Neptune cluster,
+   * or to load new data available at the same source.</p> </li> <li> <p>
+   * <code>AUTO</code> - In AUTO mode, the loader looks for a previous load job from
+   * the same source, and if it finds one, resumes that job, just as in
+   * <code>RESUME</code> mode.</p> <p>If the loader doesn't find a previous load job
+   * from the same source, it loads all data from the source, just as in
+   * <code>NEW</code> mode.</p> </li> </ul>
    */
   inline Mode GetMode() const { return m_mode; }
   inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
@@ -175,8 +175,8 @@ class StartLoaderJobRequest : public NeptunedataRequest {
 
   ///@{
   /**
-   * <p> <b> <code>failOnError</code> </b>   –   A flag to toggle a complete stop on
-   * an error.</p> <p> <i>Allowed values</i>: <code>"TRUE"</code>,
+   * <p> <b> <code>failOnError</code> </b> - A flag to toggle a complete stop on an
+   * error.</p> <p> <i>Allowed values</i>: <code>"TRUE"</code>,
    * <code>"FALSE"</code>.</p> <p> <i>Default value</i>: <code>"TRUE"</code>.</p>
    * <p>When this parameter is set to <code>"FALSE"</code>, the loader tries to load
    * all the data in the location specified, skipping any entries with errors.</p>
@@ -233,14 +233,14 @@ class StartLoaderJobRequest : public NeptunedataRequest {
    * <p> <b> <code>parserConfiguration</code> </b>   –   An optional object with
    * additional parser configuration values. Each of the child parameters is also
    * optional:</p> <p class="title"> <b/> </p> <ul> <li> <p> <b>
-   * <code>namedGraphUri</code> </b>   –   The default graph for all RDF formats when
-   * no graph is specified (for non-quads formats and NQUAD entries with no
-   * graph).</p> <p>The default is
+   * <code>namedGraphUri</code> </b> - The default graph for all RDF formats when no
+   * graph is specified (for non-quads formats and NQUAD entries with no graph).</p>
+   * <p>The default is
    * <code>https://aws.amazon.com/neptune/vocab/v01/DefaultNamedGraph</code>.</p>
-   * </li> <li> <p> <b> <code>baseUri</code> </b>   –   The base URI for RDF/XML and
+   * </li> <li> <p> <b> <code>baseUri</code> </b> - The base URI for RDF/XML and
    * Turtle formats.</p> <p>The default is
    * <code>https://aws.amazon.com/neptune/default</code>.</p> </li> <li> <p> <b>
-   * <code>allowEmptyStrings</code> </b>   –   Gremlin users need to be able to pass
+   * <code>allowEmptyStrings</code> </b> - Gremlin users need to be able to pass
    * empty string values("") as node and edge properties when loading CSV data. If
    * <code>allowEmptyStrings</code> is set to <code>false</code> (the default), such
    * empty strings are treated as nulls and are not loaded.</p> <p>If
@@ -396,14 +396,14 @@ class StartLoaderJobRequest : public NeptunedataRequest {
 
   ///@{
   /**
-   * <p> <b> <code>edgeOnlyLoad</code> </b>   –   A flag that controls file
-   * processing order during bulk loading.</p> <p> <i>Allowed values</i>:
-   * <code>"TRUE"</code>, <code>"FALSE"</code>.</p> <p> <i>Default value</i>:
-   * <code>"FALSE"</code>.</p> <p>When this parameter is set to "FALSE", the loader
-   * automatically loads vertex files first, then edge files afterwards. It does this
-   * by first scanning all files to determine their contents (vertices or edges).
-   * When this parameter is set to "TRUE", the loader skips the initial scanning
-   * phase and immediately loads all files in the order they appear.</p>
+   * <p> <b> <code>edgeOnlyLoad</code> </b> - A flag that controls file processing
+   * order during bulk loading.</p> <p> <i>Allowed values</i>: <code>"TRUE"</code>,
+   * <code>"FALSE"</code>.</p> <p> <i>Default value</i>: <code>"FALSE"</code>.</p>
+   * <p>When this parameter is set to "FALSE", the loader automatically loads vertex
+   * files first, then edge files afterwards. It does this by first scanning all
+   * files to determine their contents (vertices or edges). When this parameter is
+   * set to "TRUE", the loader skips the initial scanning phase and immediately loads
+   * all files in the order they appear.</p>
    */
   inline bool GetEdgeOnlyLoad() const { return m_edgeOnlyLoad; }
   inline bool EdgeOnlyLoadHasBeenSet() const { return m_edgeOnlyLoadHasBeenSet; }

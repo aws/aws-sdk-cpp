@@ -97,5 +97,13 @@ Aws::String StartRunRequest::SerializePayload() const {
     payload.WithString("workflowVersionName", m_workflowVersionName);
   }
 
+  if (m_networkingModeHasBeenSet) {
+    payload.WithString("networkingMode", NetworkingModeMapper::GetNameForNetworkingMode(m_networkingMode));
+  }
+
+  if (m_configurationNameHasBeenSet) {
+    payload.WithString("configurationName", m_configurationName);
+  }
+
   return payload.View().WriteReadable();
 }
