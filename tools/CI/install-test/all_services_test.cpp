@@ -121,6 +121,7 @@
 #include <aws/deadline/DeadlineClient.h>
 #include <aws/detective/DetectiveClient.h>
 #include <aws/devicefarm/DeviceFarmClient.h>
+#include <aws/devops-agent/DevOpsAgentClient.h>
 #include <aws/devops-guru/DevOpsGuruClient.h>
 #include <aws/directconnect/DirectConnectClient.h>
 #include <aws/directory-service-data/DirectoryServiceDataClient.h>

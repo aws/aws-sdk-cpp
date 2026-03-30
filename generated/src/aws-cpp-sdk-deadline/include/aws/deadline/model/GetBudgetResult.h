@@ -28,6 +28,13 @@ class JsonValue;
 }  // namespace Utils
 namespace deadline {
 namespace Model {
+/**
+ * <p>Mixin that adds an optional ARN field to response structures. Apply to
+ * SummaryMixins (flows into Get, Summary, and BatchGet) and Create
+ * outputs.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetBudgetResponse">AWS
+ * API Reference</a></p>
+ */
 class GetBudgetResult {
  public:
   AWS_DEADLINE_API GetBudgetResult() = default;
@@ -106,25 +113,6 @@ class GetBudgetResult {
 
   ///@{
   /**
-   * <p>The description of the budget.</p>  <p>This field can store any
-   * content. Escape or encode this content before displaying it on a webpage or any
-   * other system that might interpret the content of this field.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  GetBudgetResult& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The consumed usage limit for the budget.</p>
    */
   inline double GetApproximateDollarLimit() const { return m_approximateDollarLimit; }
@@ -151,46 +139,6 @@ class GetBudgetResult {
   template <typename UsagesT = ConsumedUsages>
   GetBudgetResult& WithUsages(UsagesT&& value) {
     SetUsages(std::forward<UsagesT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The budget actions for the budget.</p>
-   */
-  inline const Aws::Vector<ResponseBudgetAction>& GetActions() const { return m_actions; }
-  template <typename ActionsT = Aws::Vector<ResponseBudgetAction>>
-  void SetActions(ActionsT&& value) {
-    m_actionsHasBeenSet = true;
-    m_actions = std::forward<ActionsT>(value);
-  }
-  template <typename ActionsT = Aws::Vector<ResponseBudgetAction>>
-  GetBudgetResult& WithActions(ActionsT&& value) {
-    SetActions(std::forward<ActionsT>(value));
-    return *this;
-  }
-  template <typename ActionsT = ResponseBudgetAction>
-  GetBudgetResult& AddActions(ActionsT&& value) {
-    m_actionsHasBeenSet = true;
-    m_actions.emplace_back(std::forward<ActionsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The budget schedule.</p>
-   */
-  inline const BudgetSchedule& GetSchedule() const { return m_schedule; }
-  template <typename ScheduleT = BudgetSchedule>
-  void SetSchedule(ScheduleT&& value) {
-    m_scheduleHasBeenSet = true;
-    m_schedule = std::forward<ScheduleT>(value);
-  }
-  template <typename ScheduleT = BudgetSchedule>
-  GetBudgetResult& WithSchedule(ScheduleT&& value) {
-    SetSchedule(std::forward<ScheduleT>(value));
     return *this;
   }
   ///@}
@@ -265,6 +213,65 @@ class GetBudgetResult {
 
   ///@{
   /**
+   * <p>The description of the budget.</p>  <p>This field can store any
+   * content. Escape or encode this content before displaying it on a webpage or any
+   * other system that might interpret the content of this field.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  GetBudgetResult& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The budget actions for the budget.</p>
+   */
+  inline const Aws::Vector<ResponseBudgetAction>& GetActions() const { return m_actions; }
+  template <typename ActionsT = Aws::Vector<ResponseBudgetAction>>
+  void SetActions(ActionsT&& value) {
+    m_actionsHasBeenSet = true;
+    m_actions = std::forward<ActionsT>(value);
+  }
+  template <typename ActionsT = Aws::Vector<ResponseBudgetAction>>
+  GetBudgetResult& WithActions(ActionsT&& value) {
+    SetActions(std::forward<ActionsT>(value));
+    return *this;
+  }
+  template <typename ActionsT = ResponseBudgetAction>
+  GetBudgetResult& AddActions(ActionsT&& value) {
+    m_actionsHasBeenSet = true;
+    m_actions.emplace_back(std::forward<ActionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The budget schedule.</p>
+   */
+  inline const BudgetSchedule& GetSchedule() const { return m_schedule; }
+  template <typename ScheduleT = BudgetSchedule>
+  void SetSchedule(ScheduleT&& value) {
+    m_scheduleHasBeenSet = true;
+    m_schedule = std::forward<ScheduleT>(value);
+  }
+  template <typename ScheduleT = BudgetSchedule>
+  GetBudgetResult& WithSchedule(ScheduleT&& value) {
+    SetSchedule(std::forward<ScheduleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The date and time the queue stopped.</p>
    */
   inline const Aws::Utils::DateTime& GetQueueStoppedAt() const { return m_queueStoppedAt; }
@@ -305,15 +312,9 @@ class GetBudgetResult {
 
   Aws::String m_displayName;
 
-  Aws::String m_description;
-
   double m_approximateDollarLimit{0.0};
 
   ConsumedUsages m_usages;
-
-  Aws::Vector<ResponseBudgetAction> m_actions;
-
-  BudgetSchedule m_schedule;
 
   Aws::String m_createdBy;
 
@@ -323,6 +324,12 @@ class GetBudgetResult {
 
   Aws::Utils::DateTime m_updatedAt{};
 
+  Aws::String m_description;
+
+  Aws::Vector<ResponseBudgetAction> m_actions;
+
+  BudgetSchedule m_schedule;
+
   Aws::Utils::DateTime m_queueStoppedAt{};
 
   Aws::String m_requestId;
@@ -331,15 +338,15 @@ class GetBudgetResult {
   bool m_usageTrackingResourceHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
   bool m_approximateDollarLimitHasBeenSet = false;
   bool m_usagesHasBeenSet = false;
-  bool m_actionsHasBeenSet = false;
-  bool m_scheduleHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedByHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
   bool m_queueStoppedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

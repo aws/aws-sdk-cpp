@@ -30,7 +30,8 @@ class InvokeAgentRuntimeCommandInitialResponse {
 
   ///@{
   /**
-   * <p>Runtime session identifier</p>
+   * <p>The unique identifier of the runtime session in which the command was
+   * executed.</p>
    */
   inline const Aws::String& GetRuntimeSessionId() const { return m_runtimeSessionId; }
   inline bool RuntimeSessionIdHasBeenSet() const { return m_runtimeSessionIdHasBeenSet; }

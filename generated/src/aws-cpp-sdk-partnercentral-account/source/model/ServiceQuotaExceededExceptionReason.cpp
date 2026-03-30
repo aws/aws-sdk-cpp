@@ -17,6 +17,11 @@ namespace ServiceQuotaExceededExceptionReasonMapper {
 
 static const int LIMIT_EXCEEDED_NUMBER_OF_EMAIL_HASH = HashingUtils::HashString("LIMIT_EXCEEDED_NUMBER_OF_EMAIL");
 static const int LIMIT_EXCEEDED_NUMBER_OF_DOMAIN_HASH = HashingUtils::HashString("LIMIT_EXCEEDED_NUMBER_OF_DOMAIN");
+static const int LIMIT_EXCEEDED_NUMBER_OF_CONNECTION_INVITATION_PER_DAY_HASH =
+    HashingUtils::HashString("LIMIT_EXCEEDED_NUMBER_OF_CONNECTION_INVITATION_PER_DAY");
+static const int LIMIT_EXCEEDED_NUMBER_OF_ACTIVE_CONNECTION_HASH = HashingUtils::HashString("LIMIT_EXCEEDED_NUMBER_OF_ACTIVE_CONNECTION");
+static const int LIMIT_EXCEEDED_NUMBER_OF_OPEN_CONNECTION_INVITATION_HASH =
+    HashingUtils::HashString("LIMIT_EXCEEDED_NUMBER_OF_OPEN_CONNECTION_INVITATION");
 
 ServiceQuotaExceededExceptionReason GetServiceQuotaExceededExceptionReasonForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +29,12 @@ ServiceQuotaExceededExceptionReason GetServiceQuotaExceededExceptionReasonForNam
     return ServiceQuotaExceededExceptionReason::LIMIT_EXCEEDED_NUMBER_OF_EMAIL;
   } else if (hashCode == LIMIT_EXCEEDED_NUMBER_OF_DOMAIN_HASH) {
     return ServiceQuotaExceededExceptionReason::LIMIT_EXCEEDED_NUMBER_OF_DOMAIN;
+  } else if (hashCode == LIMIT_EXCEEDED_NUMBER_OF_CONNECTION_INVITATION_PER_DAY_HASH) {
+    return ServiceQuotaExceededExceptionReason::LIMIT_EXCEEDED_NUMBER_OF_CONNECTION_INVITATION_PER_DAY;
+  } else if (hashCode == LIMIT_EXCEEDED_NUMBER_OF_ACTIVE_CONNECTION_HASH) {
+    return ServiceQuotaExceededExceptionReason::LIMIT_EXCEEDED_NUMBER_OF_ACTIVE_CONNECTION;
+  } else if (hashCode == LIMIT_EXCEEDED_NUMBER_OF_OPEN_CONNECTION_INVITATION_HASH) {
+    return ServiceQuotaExceededExceptionReason::LIMIT_EXCEEDED_NUMBER_OF_OPEN_CONNECTION_INVITATION;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +53,12 @@ Aws::String GetNameForServiceQuotaExceededExceptionReason(ServiceQuotaExceededEx
       return "LIMIT_EXCEEDED_NUMBER_OF_EMAIL";
     case ServiceQuotaExceededExceptionReason::LIMIT_EXCEEDED_NUMBER_OF_DOMAIN:
       return "LIMIT_EXCEEDED_NUMBER_OF_DOMAIN";
+    case ServiceQuotaExceededExceptionReason::LIMIT_EXCEEDED_NUMBER_OF_CONNECTION_INVITATION_PER_DAY:
+      return "LIMIT_EXCEEDED_NUMBER_OF_CONNECTION_INVITATION_PER_DAY";
+    case ServiceQuotaExceededExceptionReason::LIMIT_EXCEEDED_NUMBER_OF_ACTIVE_CONNECTION:
+      return "LIMIT_EXCEEDED_NUMBER_OF_ACTIVE_CONNECTION";
+    case ServiceQuotaExceededExceptionReason::LIMIT_EXCEEDED_NUMBER_OF_OPEN_CONNECTION_INVITATION:
+      return "LIMIT_EXCEEDED_NUMBER_OF_OPEN_CONNECTION_INVITATION";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

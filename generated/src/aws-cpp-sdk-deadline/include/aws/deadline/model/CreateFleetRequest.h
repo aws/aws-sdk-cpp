@@ -19,6 +19,11 @@ namespace deadline {
 namespace Model {
 
 /**
+ * <p>Shared displayName + description for Create operations where both are
+ * present. displayName is @required here - this mixin is Create-only by design
+ * (Update has optional displayName).</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateFleetRequest">AWS
+ * API Reference</a></p>
  */
 class CreateFleetRequest : public DeadlineRequest {
  public:
@@ -36,6 +41,24 @@ class CreateFleetRequest : public DeadlineRequest {
 
   ///@{
   /**
+   * <p>The farm ID of the farm to connect to the fleet.</p>
+   */
+  inline const Aws::String& GetFarmId() const { return m_farmId; }
+  inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
+  template <typename FarmIdT = Aws::String>
+  void SetFarmId(FarmIdT&& value) {
+    m_farmIdHasBeenSet = true;
+    m_farmId = std::forward<FarmIdT>(value);
+  }
+  template <typename FarmIdT = Aws::String>
+  CreateFleetRequest& WithFarmId(FarmIdT&& value) {
+    SetFarmId(std::forward<FarmIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The unique token which the server uses to recognize retries of the same
    * request.</p>
    */
@@ -49,24 +72,6 @@ class CreateFleetRequest : public DeadlineRequest {
   template <typename ClientTokenT = Aws::String>
   CreateFleetRequest& WithClientToken(ClientTokenT&& value) {
     SetClientToken(std::forward<ClientTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The farm ID of the farm to connect to the fleet.</p>
-   */
-  inline const Aws::String& GetFarmId() const { return m_farmId; }
-  inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
-  template <typename FarmIdT = Aws::String>
-  void SetFarmId(FarmIdT&& value) {
-    m_farmIdHasBeenSet = true;
-    m_farmId = std::forward<FarmIdT>(value);
-  }
-  template <typename FarmIdT = Aws::String>
-  CreateFleetRequest& WithFarmId(FarmIdT&& value) {
-    SetFarmId(std::forward<FarmIdT>(value));
     return *this;
   }
   ///@}
@@ -232,9 +237,9 @@ class CreateFleetRequest : public DeadlineRequest {
   }
   ///@}
  private:
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-
   Aws::String m_farmId;
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
   Aws::String m_displayName;
 
@@ -251,8 +256,8 @@ class CreateFleetRequest : public DeadlineRequest {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   HostConfiguration m_hostConfiguration;
-  bool m_clientTokenHasBeenSet = true;
   bool m_farmIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_displayNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;

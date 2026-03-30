@@ -22,6 +22,13 @@ class JsonValue;
 }  // namespace Utils
 namespace deadline {
 namespace Model {
+/**
+ * <p>Mixin that adds an optional ARN field to response structures. Apply to
+ * SummaryMixins (flows into Get, Summary, and BatchGet) and Create
+ * outputs.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetMonitorResponse">AWS
+ * API Reference</a></p>
+ */
 class GetMonitorResult {
  public:
   AWS_DEADLINE_API GetMonitorResult() = default;

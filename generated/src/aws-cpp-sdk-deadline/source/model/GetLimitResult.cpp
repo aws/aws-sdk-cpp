@@ -22,17 +22,17 @@ GetLimitResult::GetLimitResult(const Aws::AmazonWebServiceResult<JsonValue>& res
 GetLimitResult& GetLimitResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("displayName")) {
-    m_displayName = jsonValue.GetString("displayName");
-    m_displayNameHasBeenSet = true;
+  if (jsonValue.ValueExists("farmId")) {
+    m_farmId = jsonValue.GetString("farmId");
+    m_farmIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("amountRequirementName")) {
-    m_amountRequirementName = jsonValue.GetString("amountRequirementName");
-    m_amountRequirementNameHasBeenSet = true;
+  if (jsonValue.ValueExists("limitId")) {
+    m_limitId = jsonValue.GetString("limitId");
+    m_limitIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("maxCount")) {
-    m_maxCount = jsonValue.GetInteger("maxCount");
-    m_maxCountHasBeenSet = true;
+  if (jsonValue.ValueExists("currentCount")) {
+    m_currentCount = jsonValue.GetInteger("currentCount");
+    m_currentCountHasBeenSet = true;
   }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
@@ -50,17 +50,17 @@ GetLimitResult& GetLimitResult::operator=(const Aws::AmazonWebServiceResult<Json
     m_updatedBy = jsonValue.GetString("updatedBy");
     m_updatedByHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("farmId")) {
-    m_farmId = jsonValue.GetString("farmId");
-    m_farmIdHasBeenSet = true;
+  if (jsonValue.ValueExists("displayName")) {
+    m_displayName = jsonValue.GetString("displayName");
+    m_displayNameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("limitId")) {
-    m_limitId = jsonValue.GetString("limitId");
-    m_limitIdHasBeenSet = true;
+  if (jsonValue.ValueExists("amountRequirementName")) {
+    m_amountRequirementName = jsonValue.GetString("amountRequirementName");
+    m_amountRequirementNameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("currentCount")) {
-    m_currentCount = jsonValue.GetInteger("currentCount");
-    m_currentCountHasBeenSet = true;
+  if (jsonValue.ValueExists("maxCount")) {
+    m_maxCount = jsonValue.GetInteger("maxCount");
+    m_maxCountHasBeenSet = true;
   }
   if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");

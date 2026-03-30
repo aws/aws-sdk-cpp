@@ -54,6 +54,7 @@
 #include <aws/appstream/model/CertificateBasedAuthStatus.h>
 #include <aws/appstream/model/ComputeCapacity.h>
 #include <aws/appstream/model/ComputeCapacityStatus.h>
+#include <aws/appstream/model/ContentRedirection.h>
 #include <aws/appstream/model/CopyImageRequest.h>
 #include <aws/appstream/model/CopyImageResult.h>
 #include <aws/appstream/model/CreateAppBlockBuilderRequest.h>
@@ -275,6 +276,7 @@
 #include <aws/appstream/model/UpdateStackResult.h>
 #include <aws/appstream/model/UpdateThemeForStackRequest.h>
 #include <aws/appstream/model/UpdateThemeForStackResult.h>
+#include <aws/appstream/model/UrlRedirectionConfig.h>
 #include <aws/appstream/model/UsageReportExecutionErrorCode.h>
 #include <aws/appstream/model/UsageReportSchedule.h>
 #include <aws/appstream/model/UsageReportSubscription.h>

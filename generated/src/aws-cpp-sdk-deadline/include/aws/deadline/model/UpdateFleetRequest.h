@@ -35,25 +35,6 @@ class UpdateFleetRequest : public DeadlineRequest {
 
   ///@{
   /**
-   * <p>The unique token which the server uses to recognize retries of the same
-   * request.</p>
-   */
-  inline const Aws::String& GetClientToken() const { return m_clientToken; }
-  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-  template <typename ClientTokenT = Aws::String>
-  void SetClientToken(ClientTokenT&& value) {
-    m_clientTokenHasBeenSet = true;
-    m_clientToken = std::forward<ClientTokenT>(value);
-  }
-  template <typename ClientTokenT = Aws::String>
-  UpdateFleetRequest& WithClientToken(ClientTokenT&& value) {
-    SetClientToken(std::forward<ClientTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The farm ID to update.</p>
    */
   inline const Aws::String& GetFarmId() const { return m_farmId; }
@@ -84,6 +65,25 @@ class UpdateFleetRequest : public DeadlineRequest {
   template <typename FleetIdT = Aws::String>
   UpdateFleetRequest& WithFleetId(FleetIdT&& value) {
     SetFleetId(std::forward<FleetIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique token which the server uses to recognize retries of the same
+   * request.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  UpdateFleetRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
     return *this;
   }
   ///@}
@@ -224,11 +224,11 @@ class UpdateFleetRequest : public DeadlineRequest {
   }
   ///@}
  private:
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-
   Aws::String m_farmId;
 
   Aws::String m_fleetId;
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
   Aws::String m_displayName;
 
@@ -243,9 +243,9 @@ class UpdateFleetRequest : public DeadlineRequest {
   FleetConfiguration m_configuration;
 
   HostConfiguration m_hostConfiguration;
-  bool m_clientTokenHasBeenSet = true;
   bool m_farmIdHasBeenSet = false;
   bool m_fleetIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_displayNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;

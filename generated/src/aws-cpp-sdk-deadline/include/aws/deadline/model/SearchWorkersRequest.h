@@ -18,6 +18,10 @@ namespace deadline {
 namespace Model {
 
 /**
+ * <p>Shared input fields for all Search operations (filterExpressions,
+ * sortExpressions, itemOffset, pageSize).</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/SearchWorkersRequest">AWS
+ * API Reference</a></p>
  */
 class SearchWorkersRequest : public DeadlineRequest {
  public:
@@ -45,30 +49,6 @@ class SearchWorkersRequest : public DeadlineRequest {
   template <typename FarmIdT = Aws::String>
   SearchWorkersRequest& WithFarmId(FarmIdT&& value) {
     SetFarmId(std::forward<FarmIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The fleet ID of the workers to search for.</p>
-   */
-  inline const Aws::Vector<Aws::String>& GetFleetIds() const { return m_fleetIds; }
-  inline bool FleetIdsHasBeenSet() const { return m_fleetIdsHasBeenSet; }
-  template <typename FleetIdsT = Aws::Vector<Aws::String>>
-  void SetFleetIds(FleetIdsT&& value) {
-    m_fleetIdsHasBeenSet = true;
-    m_fleetIds = std::forward<FleetIdsT>(value);
-  }
-  template <typename FleetIdsT = Aws::Vector<Aws::String>>
-  SearchWorkersRequest& WithFleetIds(FleetIdsT&& value) {
-    SetFleetIds(std::forward<FleetIdsT>(value));
-    return *this;
-  }
-  template <typename FleetIdsT = Aws::String>
-  SearchWorkersRequest& AddFleetIds(FleetIdsT&& value) {
-    m_fleetIdsHasBeenSet = true;
-    m_fleetIds.emplace_back(std::forward<FleetIdsT>(value));
     return *this;
   }
   ///@}
@@ -146,10 +126,32 @@ class SearchWorkersRequest : public DeadlineRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The fleet ID of the workers to search for.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetFleetIds() const { return m_fleetIds; }
+  inline bool FleetIdsHasBeenSet() const { return m_fleetIdsHasBeenSet; }
+  template <typename FleetIdsT = Aws::Vector<Aws::String>>
+  void SetFleetIds(FleetIdsT&& value) {
+    m_fleetIdsHasBeenSet = true;
+    m_fleetIds = std::forward<FleetIdsT>(value);
+  }
+  template <typename FleetIdsT = Aws::Vector<Aws::String>>
+  SearchWorkersRequest& WithFleetIds(FleetIdsT&& value) {
+    SetFleetIds(std::forward<FleetIdsT>(value));
+    return *this;
+  }
+  template <typename FleetIdsT = Aws::String>
+  SearchWorkersRequest& AddFleetIds(FleetIdsT&& value) {
+    m_fleetIdsHasBeenSet = true;
+    m_fleetIds.emplace_back(std::forward<FleetIdsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_farmId;
-
-  Aws::Vector<Aws::String> m_fleetIds;
 
   SearchGroupedFilterExpressions m_filterExpressions;
 
@@ -158,12 +160,14 @@ class SearchWorkersRequest : public DeadlineRequest {
   int m_itemOffset{0};
 
   int m_pageSize{0};
+
+  Aws::Vector<Aws::String> m_fleetIds;
   bool m_farmIdHasBeenSet = false;
-  bool m_fleetIdsHasBeenSet = false;
   bool m_filterExpressionsHasBeenSet = false;
   bool m_sortExpressionsHasBeenSet = false;
   bool m_itemOffsetHasBeenSet = false;
   bool m_pageSizeHasBeenSet = false;
+  bool m_fleetIdsHasBeenSet = false;
 };
 
 }  // namespace Model

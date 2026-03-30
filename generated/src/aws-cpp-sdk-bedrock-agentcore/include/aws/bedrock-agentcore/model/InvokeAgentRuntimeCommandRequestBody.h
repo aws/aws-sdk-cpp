@@ -20,7 +20,9 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Request body for InvokeAgentRuntimeCommand</p><p><h3>See Also:</h3>   <a
+ * <p>The request body structure for the <code>InvokeAgentRuntimeCommand</code>
+ * operation, containing the command to execute and optional configuration
+ * parameters.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/InvokeAgentRuntimeCommandRequestBody">AWS
  * API Reference</a></p>
  */
@@ -33,7 +35,8 @@ class InvokeAgentRuntimeCommandRequestBody {
 
   ///@{
   /**
-   * <p>The command to execute in the runtime container</p>
+   * <p>The shell command to execute on the agent runtime. This command is executed
+   * in the runtime environment and its output is streamed back to the caller.</p>
    */
   inline const Aws::String& GetCommand() const { return m_command; }
   inline bool CommandHasBeenSet() const { return m_commandHasBeenSet; }
@@ -51,7 +54,9 @@ class InvokeAgentRuntimeCommandRequestBody {
 
   ///@{
   /**
-   * <p>Command timeout in seconds (default: 300, min:1, max: 3600)</p>
+   * <p>The maximum duration in seconds to wait for the command to complete. If the
+   * command execution exceeds this timeout, it will be terminated. Default is 300
+   * seconds. Minimum is 1 second. Maximum is 3600 seconds.</p>
    */
   inline int GetTimeout() const { return m_timeout; }
   inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }

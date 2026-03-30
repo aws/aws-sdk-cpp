@@ -1039,6 +1039,35 @@ class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AW
   }
 
   /**
+   * <p>Describes the details of an existing insight for an Amazon OpenSearch Service
+   * domain. Returns detailed fields associated with the specified insight, such as
+   * text descriptions and metric data.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeInsightDetails">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeInsightDetailsOutcome DescribeInsightDetails(const Model::DescribeInsightDetailsRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeInsightDetails that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeInsightDetailsRequestT = Model::DescribeInsightDetailsRequest>
+  Model::DescribeInsightDetailsOutcomeCallable DescribeInsightDetailsCallable(const DescribeInsightDetailsRequestT& request) const {
+    return SubmitCallable(&OpenSearchServiceClient::DescribeInsightDetails, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeInsightDetails that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeInsightDetailsRequestT = Model::DescribeInsightDetailsRequest>
+  void DescribeInsightDetailsAsync(const DescribeInsightDetailsRequestT& request,
+                                   const DescribeInsightDetailsResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServiceClient::DescribeInsightDetails, request, handler, context);
+  }
+
+  /**
    * <p>Describes the instance count, storage, and master node limits for a given
    * OpenSearch or Elasticsearch version and instance type.</p><p><h3>See Also:</h3>
    * <a
@@ -1729,6 +1758,33 @@ class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AW
   void ListDomainsForPackageAsync(const ListDomainsForPackageRequestT& request, const ListDomainsForPackageResponseReceivedHandler& handler,
                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OpenSearchServiceClient::ListDomainsForPackage, request, handler, context);
+  }
+
+  /**
+   * <p>Lists insights for an Amazon OpenSearch Service domain or Amazon Web Services
+   * account. Returns a paginated list of insights based on the specified entity,
+   * filters, time range, and sort order.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListInsights">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListInsightsOutcome ListInsights(const Model::ListInsightsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListInsights that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListInsightsRequestT = Model::ListInsightsRequest>
+  Model::ListInsightsOutcomeCallable ListInsightsCallable(const ListInsightsRequestT& request) const {
+    return SubmitCallable(&OpenSearchServiceClient::ListInsights, request);
+  }
+
+  /**
+   * An Async wrapper for ListInsights that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListInsightsRequestT = Model::ListInsightsRequest>
+  void ListInsightsAsync(const ListInsightsRequestT& request, const ListInsightsResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServiceClient::ListInsights, request, handler, context);
   }
 
   /**

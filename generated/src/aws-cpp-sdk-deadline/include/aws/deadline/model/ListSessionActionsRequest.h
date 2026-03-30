@@ -18,6 +18,10 @@ namespace deadline {
 namespace Model {
 
 /**
+ * <p>Shared pagination fields for List operation inputs (nextToken +
+ * maxResults).</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListSessionActionsRequest">AWS
+ * API Reference</a></p>
  */
 class ListSessionActionsRequest : public DeadlineRequest {
  public:
@@ -89,42 +93,6 @@ class ListSessionActionsRequest : public DeadlineRequest {
 
   ///@{
   /**
-   * <p>The session ID to include on the sessions action list.</p>
-   */
-  inline const Aws::String& GetSessionId() const { return m_sessionId; }
-  inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-  template <typename SessionIdT = Aws::String>
-  void SetSessionId(SessionIdT&& value) {
-    m_sessionIdHasBeenSet = true;
-    m_sessionId = std::forward<SessionIdT>(value);
-  }
-  template <typename SessionIdT = Aws::String>
-  ListSessionActionsRequest& WithSessionId(SessionIdT&& value) {
-    SetSessionId(std::forward<SessionIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The task ID for the session actions list.</p>
-   */
-  inline const Aws::String& GetTaskId() const { return m_taskId; }
-  inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
-  template <typename TaskIdT = Aws::String>
-  void SetTaskId(TaskIdT&& value) {
-    m_taskIdHasBeenSet = true;
-    m_taskId = std::forward<TaskIdT>(value);
-  }
-  template <typename TaskIdT = Aws::String>
-  ListSessionActionsRequest& WithTaskId(TaskIdT&& value) {
-    SetTaskId(std::forward<TaskIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The token for the next set of results, or <code>null</code> to start from the
    * beginning.</p>
    */
@@ -158,6 +126,42 @@ class ListSessionActionsRequest : public DeadlineRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The session ID to include on the sessions action list.</p>
+   */
+  inline const Aws::String& GetSessionId() const { return m_sessionId; }
+  inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
+  template <typename SessionIdT = Aws::String>
+  void SetSessionId(SessionIdT&& value) {
+    m_sessionIdHasBeenSet = true;
+    m_sessionId = std::forward<SessionIdT>(value);
+  }
+  template <typename SessionIdT = Aws::String>
+  ListSessionActionsRequest& WithSessionId(SessionIdT&& value) {
+    SetSessionId(std::forward<SessionIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The task ID for the session actions list.</p>
+   */
+  inline const Aws::String& GetTaskId() const { return m_taskId; }
+  inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
+  template <typename TaskIdT = Aws::String>
+  void SetTaskId(TaskIdT&& value) {
+    m_taskIdHasBeenSet = true;
+    m_taskId = std::forward<TaskIdT>(value);
+  }
+  template <typename TaskIdT = Aws::String>
+  ListSessionActionsRequest& WithTaskId(TaskIdT&& value) {
+    SetTaskId(std::forward<TaskIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_farmId;
 
@@ -165,20 +169,20 @@ class ListSessionActionsRequest : public DeadlineRequest {
 
   Aws::String m_jobId;
 
-  Aws::String m_sessionId;
-
-  Aws::String m_taskId;
-
   Aws::String m_nextToken;
 
   int m_maxResults{0};
+
+  Aws::String m_sessionId;
+
+  Aws::String m_taskId;
   bool m_farmIdHasBeenSet = false;
   bool m_queueIdHasBeenSet = false;
   bool m_jobIdHasBeenSet = false;
-  bool m_sessionIdHasBeenSet = false;
-  bool m_taskIdHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_taskIdHasBeenSet = false;
 };
 
 }  // namespace Model

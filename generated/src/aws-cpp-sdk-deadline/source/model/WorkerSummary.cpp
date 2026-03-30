@@ -18,10 +18,6 @@ namespace Model {
 WorkerSummary::WorkerSummary(JsonView jsonValue) { *this = jsonValue; }
 
 WorkerSummary& WorkerSummary::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("workerId")) {
-    m_workerId = jsonValue.GetString("workerId");
-    m_workerIdHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("farmId")) {
     m_farmId = jsonValue.GetString("farmId");
     m_farmIdHasBeenSet = true;
@@ -30,13 +26,17 @@ WorkerSummary& WorkerSummary::operator=(JsonView jsonValue) {
     m_fleetId = jsonValue.GetString("fleetId");
     m_fleetIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("status")) {
-    m_status = WorkerStatusMapper::GetWorkerStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
+  if (jsonValue.ValueExists("workerId")) {
+    m_workerId = jsonValue.GetString("workerId");
+    m_workerIdHasBeenSet = true;
   }
   if (jsonValue.ValueExists("hostProperties")) {
     m_hostProperties = jsonValue.GetObject("hostProperties");
     m_hostPropertiesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("status")) {
+    m_status = WorkerStatusMapper::GetWorkerStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
   }
   if (jsonValue.ValueExists("log")) {
     m_log = jsonValue.GetObject("log");
@@ -64,10 +64,6 @@ WorkerSummary& WorkerSummary::operator=(JsonView jsonValue) {
 JsonValue WorkerSummary::Jsonize() const {
   JsonValue payload;
 
-  if (m_workerIdHasBeenSet) {
-    payload.WithString("workerId", m_workerId);
-  }
-
   if (m_farmIdHasBeenSet) {
     payload.WithString("farmId", m_farmId);
   }
@@ -76,12 +72,16 @@ JsonValue WorkerSummary::Jsonize() const {
     payload.WithString("fleetId", m_fleetId);
   }
 
-  if (m_statusHasBeenSet) {
-    payload.WithString("status", WorkerStatusMapper::GetNameForWorkerStatus(m_status));
+  if (m_workerIdHasBeenSet) {
+    payload.WithString("workerId", m_workerId);
   }
 
   if (m_hostPropertiesHasBeenSet) {
     payload.WithObject("hostProperties", m_hostProperties.Jsonize());
+  }
+
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", WorkerStatusMapper::GetNameForWorkerStatus(m_status));
   }
 
   if (m_logHasBeenSet) {

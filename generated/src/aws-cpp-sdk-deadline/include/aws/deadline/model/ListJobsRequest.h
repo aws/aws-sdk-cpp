@@ -18,6 +18,10 @@ namespace deadline {
 namespace Model {
 
 /**
+ * <p>Shared pagination fields for List operation inputs (nextToken +
+ * maxResults).</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListJobsRequest">AWS
+ * API Reference</a></p>
  */
 class ListJobsRequest : public DeadlineRequest {
  public:
@@ -47,24 +51,6 @@ class ListJobsRequest : public DeadlineRequest {
   template <typename FarmIdT = Aws::String>
   ListJobsRequest& WithFarmId(FarmIdT&& value) {
     SetFarmId(std::forward<FarmIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The principal ID of the members on the jobs.</p>
-   */
-  inline const Aws::String& GetPrincipalId() const { return m_principalId; }
-  inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
-  template <typename PrincipalIdT = Aws::String>
-  void SetPrincipalId(PrincipalIdT&& value) {
-    m_principalIdHasBeenSet = true;
-    m_principalId = std::forward<PrincipalIdT>(value);
-  }
-  template <typename PrincipalIdT = Aws::String>
-  ListJobsRequest& WithPrincipalId(PrincipalIdT&& value) {
-    SetPrincipalId(std::forward<PrincipalIdT>(value));
     return *this;
   }
   ///@}
@@ -122,21 +108,39 @@ class ListJobsRequest : public DeadlineRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The principal ID of the members on the jobs.</p>
+   */
+  inline const Aws::String& GetPrincipalId() const { return m_principalId; }
+  inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
+  template <typename PrincipalIdT = Aws::String>
+  void SetPrincipalId(PrincipalIdT&& value) {
+    m_principalIdHasBeenSet = true;
+    m_principalId = std::forward<PrincipalIdT>(value);
+  }
+  template <typename PrincipalIdT = Aws::String>
+  ListJobsRequest& WithPrincipalId(PrincipalIdT&& value) {
+    SetPrincipalId(std::forward<PrincipalIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_farmId;
-
-  Aws::String m_principalId;
 
   Aws::String m_queueId;
 
   Aws::String m_nextToken;
 
   int m_maxResults{0};
+
+  Aws::String m_principalId;
   bool m_farmIdHasBeenSet = false;
-  bool m_principalIdHasBeenSet = false;
   bool m_queueIdHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
+  bool m_principalIdHasBeenSet = false;
 };
 
 }  // namespace Model

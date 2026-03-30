@@ -34,6 +34,10 @@ InstanceLaunchTemplateUpdate& InstanceLaunchTemplateUpdate::operator=(JsonView j
     m_instanceMetadataTagsPropagation = jsonValue.GetBool("instanceMetadataTagsPropagation");
     m_instanceMetadataTagsPropagationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("localStorageConfiguration")) {
+    m_localStorageConfiguration = jsonValue.GetObject("localStorageConfiguration");
+    m_localStorageConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("monitoring")) {
     m_monitoring = ManagedInstancesMonitoringOptionsMapper::GetManagedInstancesMonitoringOptionsForName(jsonValue.GetString("monitoring"));
     m_monitoringHasBeenSet = true;
@@ -66,6 +70,10 @@ JsonValue InstanceLaunchTemplateUpdate::Jsonize() const {
 
   if (m_instanceMetadataTagsPropagationHasBeenSet) {
     payload.WithBool("instanceMetadataTagsPropagation", m_instanceMetadataTagsPropagation);
+  }
+
+  if (m_localStorageConfigurationHasBeenSet) {
+    payload.WithObject("localStorageConfiguration", m_localStorageConfiguration.Jsonize());
   }
 
   if (m_monitoringHasBeenSet) {

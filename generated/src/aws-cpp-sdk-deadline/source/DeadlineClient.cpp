@@ -603,15 +603,15 @@ CopyJobTemplateOutcome DeadlineClient::CopyJobTemplate(const CopyJobTemplateRequ
     return CopyJobTemplateOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                         "Missing required field [FarmId]", false));
   }
-  if (!request.JobIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("CopyJobTemplate", "Required field: JobId, is not set");
-    return CopyJobTemplateOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                        "Missing required field [JobId]", false));
-  }
   if (!request.QueueIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("CopyJobTemplate", "Required field: QueueId, is not set");
     return CopyJobTemplateOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                         "Missing required field [QueueId]", false));
+  }
+  if (!request.JobIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CopyJobTemplate", "Required field: JobId, is not set");
+    return CopyJobTemplateOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                        "Missing required field [JobId]", false));
   }
 
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
@@ -2003,15 +2003,15 @@ ListJobParameterDefinitionsOutcome DeadlineClient::ListJobParameterDefinitions(c
     return ListJobParameterDefinitionsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                     "Missing required field [FarmId]", false));
   }
-  if (!request.JobIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListJobParameterDefinitions", "Required field: JobId, is not set");
-    return ListJobParameterDefinitionsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                                    "Missing required field [JobId]", false));
-  }
   if (!request.QueueIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListJobParameterDefinitions", "Required field: QueueId, is not set");
     return ListJobParameterDefinitionsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                     "Missing required field [QueueId]", false));
+  }
+  if (!request.JobIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListJobParameterDefinitions", "Required field: JobId, is not set");
+    return ListJobParameterDefinitionsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                    "Missing required field [JobId]", false));
   }
 
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {

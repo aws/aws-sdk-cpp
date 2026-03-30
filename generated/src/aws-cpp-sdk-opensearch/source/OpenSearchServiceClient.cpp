@@ -53,6 +53,7 @@
 #include <aws/opensearch/model/DescribeDomainsRequest.h>
 #include <aws/opensearch/model/DescribeDryRunProgressRequest.h>
 #include <aws/opensearch/model/DescribeInboundConnectionsRequest.h>
+#include <aws/opensearch/model/DescribeInsightDetailsRequest.h>
 #include <aws/opensearch/model/DescribeInstanceTypeLimitsRequest.h>
 #include <aws/opensearch/model/DescribeOutboundConnectionsRequest.h>
 #include <aws/opensearch/model/DescribePackagesRequest.h>
@@ -77,6 +78,7 @@
 #include <aws/opensearch/model/ListDomainMaintenancesRequest.h>
 #include <aws/opensearch/model/ListDomainNamesRequest.h>
 #include <aws/opensearch/model/ListDomainsForPackageRequest.h>
+#include <aws/opensearch/model/ListInsightsRequest.h>
 #include <aws/opensearch/model/ListInstanceTypeDetailsRequest.h>
 #include <aws/opensearch/model/ListPackagesForDomainRequest.h>
 #include <aws/opensearch/model/ListScheduledActionsRequest.h>
@@ -805,6 +807,17 @@ DescribeInboundConnectionsOutcome OpenSearchServiceClient::DescribeInboundConnec
                             : DescribeInboundConnectionsOutcome(std::move(result.GetError()));
 }
 
+DescribeInsightDetailsOutcome OpenSearchServiceClient::DescribeInsightDetails(const DescribeInsightDetailsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/insight-details");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeInsightDetailsOutcome(result.GetResultWithOwnership())
+                            : DescribeInsightDetailsOutcome(std::move(result.GetError()));
+}
+
 DescribeInstanceTypeLimitsOutcome OpenSearchServiceClient::DescribeInstanceTypeLimits(
     const DescribeInstanceTypeLimitsRequest& request) const {
   if (!request.InstanceTypeHasBeenSet()) {
@@ -1200,6 +1213,16 @@ ListDomainsForPackageOutcome OpenSearchServiceClient::ListDomainsForPackage(cons
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListDomainsForPackageOutcome(result.GetResultWithOwnership())
                             : ListDomainsForPackageOutcome(std::move(result.GetError()));
+}
+
+ListInsightsOutcome OpenSearchServiceClient::ListInsights(const ListInsightsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/insights");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListInsightsOutcome(result.GetResultWithOwnership()) : ListInsightsOutcome(std::move(result.GetError()));
 }
 
 ListInstanceTypeDetailsOutcome OpenSearchServiceClient::ListInstanceTypeDetails(const ListInstanceTypeDetailsRequest& request) const {

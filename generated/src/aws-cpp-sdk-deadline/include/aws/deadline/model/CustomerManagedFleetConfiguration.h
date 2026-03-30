@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/deadline/Deadline_EXPORTS.h>
 #include <aws/deadline/model/AutoScalingMode.h>
+#include <aws/deadline/model/CustomerManagedAutoScalingConfiguration.h>
 #include <aws/deadline/model/CustomerManagedWorkerCapabilities.h>
 #include <aws/deadline/model/TagPropagationMode.h>
 
@@ -47,6 +48,24 @@ class CustomerManagedFleetConfiguration {
   }
   inline CustomerManagedFleetConfiguration& WithMode(AutoScalingMode value) {
     SetMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The auto scaling configuration options for the customer managed fleet.</p>
+   */
+  inline const CustomerManagedAutoScalingConfiguration& GetAutoScalingConfiguration() const { return m_autoScalingConfiguration; }
+  inline bool AutoScalingConfigurationHasBeenSet() const { return m_autoScalingConfigurationHasBeenSet; }
+  template <typename AutoScalingConfigurationT = CustomerManagedAutoScalingConfiguration>
+  void SetAutoScalingConfiguration(AutoScalingConfigurationT&& value) {
+    m_autoScalingConfigurationHasBeenSet = true;
+    m_autoScalingConfiguration = std::forward<AutoScalingConfigurationT>(value);
+  }
+  template <typename AutoScalingConfigurationT = CustomerManagedAutoScalingConfiguration>
+  CustomerManagedFleetConfiguration& WithAutoScalingConfiguration(AutoScalingConfigurationT&& value) {
+    SetAutoScalingConfiguration(std::forward<AutoScalingConfigurationT>(value));
     return *this;
   }
   ///@}
@@ -105,12 +124,15 @@ class CustomerManagedFleetConfiguration {
  private:
   AutoScalingMode m_mode{AutoScalingMode::NOT_SET};
 
+  CustomerManagedAutoScalingConfiguration m_autoScalingConfiguration;
+
   CustomerManagedWorkerCapabilities m_workerCapabilities;
 
   Aws::String m_storageProfileId;
 
   TagPropagationMode m_tagPropagationMode{TagPropagationMode::NOT_SET};
   bool m_modeHasBeenSet = false;
+  bool m_autoScalingConfigurationHasBeenSet = false;
   bool m_workerCapabilitiesHasBeenSet = false;
   bool m_storageProfileIdHasBeenSet = false;
   bool m_tagPropagationModeHasBeenSet = false;

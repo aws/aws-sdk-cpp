@@ -1008,14 +1008,17 @@ class AWS_LAKEFORMATION_API LakeFormationClient : public Aws::Client::AWSJsonCli
    * <p>Allows a user or application in a secure environment to access data in a
    * specific Amazon S3 location registered with Lake Formation by providing
    * temporary scoped credentials that are limited to the requested data location and
-   * the caller's authorized access level.</p> <p> The API operation returns an error
-   * in the following scenarios:</p> <ul> <li> <p>The data location is not registered
-   * with Lake Formation. </p> </li> <li> <p>No Glue table is associated with the
-   * data location.</p> </li> <li> <p>The caller doesn't have required permissions on
-   * the associated table. The caller must have <code>SELECT</code> or
-   * <code>SUPER</code> permissions on the associated table, and credential vending
-   * for full table access must be enabled in the data lake settings. </p> <p>For
-   * more information, see <a
+   * the caller's authorized access level.</p> <p> <code>GetDataAccess</code> is
+   * logged in CloudTrail whenever a principal requests temporary data location
+   * credentials to access data in a data lake location that is registered with Lake
+   * Formation.</p> <p> The API operation returns an error in the following
+   * scenarios:</p> <ul> <li> <p>The data location is not registered with Lake
+   * Formation. </p> </li> <li> <p>No Glue table is associated with the data
+   * location.</p> </li> <li> <p>The caller doesn't have required permissions on the
+   * associated table. The caller must have <code>SELECT</code> or <code>SUPER</code>
+   * permissions on the associated table, and credential vending for full table
+   * access must be enabled in the data lake settings. </p> <p>For more information,
+   * see <a
    * href="https://docs.aws.amazon.com/lake-formation/latest/dg/full-table-credential-vending.html">Application
    * integration for full table access</a>.</p> </li> <li> <p>The data location is in
    * a different Amazon Web Services Region. Lake Formation doesn't support

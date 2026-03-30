@@ -94,6 +94,7 @@
 #include <aws/deadline/model/CreateStorageProfileResult.h>
 #include <aws/deadline/model/CreateWorkerRequest.h>
 #include <aws/deadline/model/CreateWorkerResult.h>
+#include <aws/deadline/model/CustomerManagedAutoScalingConfiguration.h>
 #include <aws/deadline/model/CustomerManagedFleetConfiguration.h>
 #include <aws/deadline/model/CustomerManagedFleetOperatingSystemFamily.h>
 #include <aws/deadline/model/CustomerManagedWorkerCapabilities.h>
@@ -327,6 +328,7 @@
 #include <aws/deadline/model/SearchTermMatchingType.h>
 #include <aws/deadline/model/SearchWorkersRequest.h>
 #include <aws/deadline/model/SearchWorkersResult.h>
+#include <aws/deadline/model/ServiceManagedEc2AutoScalingConfiguration.h>
 #include <aws/deadline/model/ServiceManagedEc2FleetConfiguration.h>
 #include <aws/deadline/model/ServiceManagedEc2InstanceCapabilities.h>
 #include <aws/deadline/model/ServiceManagedEc2InstanceMarketOptions.h>

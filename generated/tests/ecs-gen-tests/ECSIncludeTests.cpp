@@ -226,6 +226,7 @@
 #include <aws/ecs/model/ManagedCertificate.h>
 #include <aws/ecs/model/ManagedDraining.h>
 #include <aws/ecs/model/ManagedIngressPath.h>
+#include <aws/ecs/model/ManagedInstancesLocalStorageConfiguration.h>
 #include <aws/ecs/model/ManagedInstancesMonitoringOptions.h>
 #include <aws/ecs/model/ManagedInstancesNetworkConfiguration.h>
 #include <aws/ecs/model/ManagedInstancesProvider.h>

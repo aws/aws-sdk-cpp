@@ -152,7 +152,11 @@ class DescribeScalingActivitiesRequest : public AutoScalingRequest {
    * <code>AutoScalingGroupName</code> parameter. For valid <code>StatusCode</code>
    * values, see <a
    * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_Activity.html">Activity</a>
-   * in the <i>Amazon EC2 Auto Scaling API Reference</i>. </p> </li> </ul>
+   * in the <i>Amazon EC2 Auto Scaling API Reference</i>. </p> </li> </ul> <p>
+   * <code>StartTimeLowerBound</code> and <code>StartTimeUpperBound</code> accept ISO
+   * 8601 formatted timestamps. Timestamps without a timezone offset are assumed to
+   * be UTC. </p> <ul> <li> <p> <code>2000-01-18T08:15:00Z</code> </p> </li> <li> <p>
+   * <code>2000-01-18T16:15:00+08:00</code> </p> </li> </ul>
    */
   inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
   inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }

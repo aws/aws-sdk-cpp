@@ -19,18 +19,6 @@ Aws::String ListQueueLimitAssociationsRequest::SerializePayload() const { return
 
 void ListQueueLimitAssociationsRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
-  if (m_queueIdHasBeenSet) {
-    ss << m_queueId;
-    uri.AddQueryStringParameter("queueId", ss.str());
-    ss.str("");
-  }
-
-  if (m_limitIdHasBeenSet) {
-    ss << m_limitId;
-    uri.AddQueryStringParameter("limitId", ss.str());
-    ss.str("");
-  }
-
   if (m_nextTokenHasBeenSet) {
     ss << m_nextToken;
     uri.AddQueryStringParameter("nextToken", ss.str());
@@ -40,6 +28,18 @@ void ListQueueLimitAssociationsRequest::AddQueryStringParameters(URI& uri) const
   if (m_maxResultsHasBeenSet) {
     ss << m_maxResults;
     uri.AddQueryStringParameter("maxResults", ss.str());
+    ss.str("");
+  }
+
+  if (m_queueIdHasBeenSet) {
+    ss << m_queueId;
+    uri.AddQueryStringParameter("queueId", ss.str());
+    ss.str("");
+  }
+
+  if (m_limitIdHasBeenSet) {
+    ss << m_limitId;
+    uri.AddQueryStringParameter("limitId", ss.str());
     ss.str("");
   }
 }

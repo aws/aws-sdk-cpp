@@ -132,6 +132,8 @@
 #include <aws/opensearch/model/DescribeDryRunProgressResult.h>
 #include <aws/opensearch/model/DescribeInboundConnectionsRequest.h>
 #include <aws/opensearch/model/DescribeInboundConnectionsResult.h>
+#include <aws/opensearch/model/DescribeInsightDetailsRequest.h>
+#include <aws/opensearch/model/DescribeInsightDetailsResult.h>
 #include <aws/opensearch/model/DescribeInstanceTypeLimitsRequest.h>
 #include <aws/opensearch/model/DescribeInstanceTypeLimitsResult.h>
 #include <aws/opensearch/model/DescribeOutboundConnectionsRequest.h>
@@ -211,6 +213,16 @@
 #include <aws/opensearch/model/InboundConnectionStatusCode.h>
 #include <aws/opensearch/model/IndexStatus.h>
 #include <aws/opensearch/model/InitiatedBy.h>
+#include <aws/opensearch/model/Insight.h>
+#include <aws/opensearch/model/InsightEntity.h>
+#include <aws/opensearch/model/InsightEntityType.h>
+#include <aws/opensearch/model/InsightField.h>
+#include <aws/opensearch/model/InsightFieldType.h>
+#include <aws/opensearch/model/InsightPriorityLevel.h>
+#include <aws/opensearch/model/InsightSortOrder.h>
+#include <aws/opensearch/model/InsightStatus.h>
+#include <aws/opensearch/model/InsightTimeRange.h>
+#include <aws/opensearch/model/InsightType.h>
 #include <aws/opensearch/model/InstanceCountLimits.h>
 #include <aws/opensearch/model/InstanceLimits.h>
 #include <aws/opensearch/model/InstanceTypeDetails.h>
@@ -230,6 +242,8 @@
 #include <aws/opensearch/model/ListDomainNamesResult.h>
 #include <aws/opensearch/model/ListDomainsForPackageRequest.h>
 #include <aws/opensearch/model/ListDomainsForPackageResult.h>
+#include <aws/opensearch/model/ListInsightsRequest.h>
+#include <aws/opensearch/model/ListInsightsResult.h>
 #include <aws/opensearch/model/ListInstanceTypeDetailsRequest.h>
 #include <aws/opensearch/model/ListInstanceTypeDetailsResult.h>
 #include <aws/opensearch/model/ListPackagesForDomainRequest.h>

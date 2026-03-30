@@ -25,15 +25,15 @@ void ListFarmsRequest::AddQueryStringParameters(URI& uri) const {
     ss.str("");
   }
 
-  if (m_principalIdHasBeenSet) {
-    ss << m_principalId;
-    uri.AddQueryStringParameter("principalId", ss.str());
-    ss.str("");
-  }
-
   if (m_maxResultsHasBeenSet) {
     ss << m_maxResults;
     uri.AddQueryStringParameter("maxResults", ss.str());
+    ss.str("");
+  }
+
+  if (m_principalIdHasBeenSet) {
+    ss << m_principalId;
+    uri.AddQueryStringParameter("principalId", ss.str());
     ss.str("");
   }
 }

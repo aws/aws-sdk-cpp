@@ -34,6 +34,10 @@ ServiceManagedEc2FleetConfiguration& ServiceManagedEc2FleetConfiguration::operat
     m_storageProfileId = jsonValue.GetString("storageProfileId");
     m_storageProfileIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("autoScalingConfiguration")) {
+    m_autoScalingConfiguration = jsonValue.GetObject("autoScalingConfiguration");
+    m_autoScalingConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue ServiceManagedEc2FleetConfiguration::Jsonize() const {
 
   if (m_storageProfileIdHasBeenSet) {
     payload.WithString("storageProfileId", m_storageProfileId);
+  }
+
+  if (m_autoScalingConfigurationHasBeenSet) {
+    payload.WithObject("autoScalingConfiguration", m_autoScalingConfiguration.Jsonize());
   }
 
   return payload;

@@ -90,7 +90,9 @@ class UpdateFarmRequest : public DeadlineRequest {
 
   ///@{
   /**
-   * <p>The cost scale factor of the farm to update.</p>
+   * <p>A multiplier applied to the farm's calculated costs for usage data and budget
+   * tracking. A value less than 1 represents a discount, a value greater than 1
+   * represents a premium, and a value of 1 represents no adjustment.</p>
    */
   inline double GetCostScaleFactor() const { return m_costScaleFactor; }
   inline bool CostScaleFactorHasBeenSet() const { return m_costScaleFactorHasBeenSet; }

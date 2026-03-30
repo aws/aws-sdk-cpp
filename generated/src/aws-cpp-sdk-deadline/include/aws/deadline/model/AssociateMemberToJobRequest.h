@@ -17,6 +17,11 @@ namespace deadline {
 namespace Model {
 
 /**
+ * <p>Shared member fields for Associate inputs and {Resource}Member response
+ * structures. principalId is excluded because it has @httpLabel on inputs but not
+ * on responses.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AssociateMemberToJobRequest">AWS
+ * API Reference</a></p>
  */
 class AssociateMemberToJobRequest : public DeadlineRequest {
  public:
@@ -86,24 +91,6 @@ class AssociateMemberToJobRequest : public DeadlineRequest {
 
   ///@{
   /**
-   * <p>The member's principal ID to associate with the job.</p>
-   */
-  inline const Aws::String& GetPrincipalId() const { return m_principalId; }
-  inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
-  template <typename PrincipalIdT = Aws::String>
-  void SetPrincipalId(PrincipalIdT&& value) {
-    m_principalIdHasBeenSet = true;
-    m_principalId = std::forward<PrincipalIdT>(value);
-  }
-  template <typename PrincipalIdT = Aws::String>
-  AssociateMemberToJobRequest& WithPrincipalId(PrincipalIdT&& value) {
-    SetPrincipalId(std::forward<PrincipalIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The member's principal type to associate with the job.</p>
    */
   inline PrincipalType GetPrincipalType() const { return m_principalType; }
@@ -151,6 +138,24 @@ class AssociateMemberToJobRequest : public DeadlineRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The member's principal ID to associate with the job.</p>
+   */
+  inline const Aws::String& GetPrincipalId() const { return m_principalId; }
+  inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
+  template <typename PrincipalIdT = Aws::String>
+  void SetPrincipalId(PrincipalIdT&& value) {
+    m_principalIdHasBeenSet = true;
+    m_principalId = std::forward<PrincipalIdT>(value);
+  }
+  template <typename PrincipalIdT = Aws::String>
+  AssociateMemberToJobRequest& WithPrincipalId(PrincipalIdT&& value) {
+    SetPrincipalId(std::forward<PrincipalIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_farmId;
 
@@ -158,20 +163,20 @@ class AssociateMemberToJobRequest : public DeadlineRequest {
 
   Aws::String m_jobId;
 
-  Aws::String m_principalId;
-
   PrincipalType m_principalType{PrincipalType::NOT_SET};
 
   Aws::String m_identityStoreId;
 
   MembershipLevel m_membershipLevel{MembershipLevel::NOT_SET};
+
+  Aws::String m_principalId;
   bool m_farmIdHasBeenSet = false;
   bool m_queueIdHasBeenSet = false;
   bool m_jobIdHasBeenSet = false;
-  bool m_principalIdHasBeenSet = false;
   bool m_principalTypeHasBeenSet = false;
   bool m_identityStoreIdHasBeenSet = false;
   bool m_membershipLevelHasBeenSet = false;
+  bool m_principalIdHasBeenSet = false;
 };
 
 }  // namespace Model

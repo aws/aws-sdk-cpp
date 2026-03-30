@@ -119,6 +119,7 @@
 #include <aws/sagemaker/model/AutoRollbackConfig.h>
 #include <aws/sagemaker/model/Autotune.h>
 #include <aws/sagemaker/model/AutotuneMode.h>
+#include <aws/sagemaker/model/AvailabilityZoneBalanceEnforcementMode.h>
 #include <aws/sagemaker/model/AvailableUpgrade.h>
 #include <aws/sagemaker/model/AwsManagedHumanLoopRequestSource.h>
 #include <aws/sagemaker/model/BaseModel.h>
@@ -857,6 +858,7 @@
 #include <aws/sagemaker/model/ImageVersionStatus.h>
 #include <aws/sagemaker/model/ImportHubContentRequest.h>
 #include <aws/sagemaker/model/ImportHubContentResult.h>
+#include <aws/sagemaker/model/InferenceComponentAvailabilityZoneBalance.h>
 #include <aws/sagemaker/model/InferenceComponentCapacitySize.h>
 #include <aws/sagemaker/model/InferenceComponentCapacitySizeType.h>
 #include <aws/sagemaker/model/InferenceComponentComputeResourceRequirements.h>
@@ -866,9 +868,11 @@
 #include <aws/sagemaker/model/InferenceComponentDataCacheConfigSummary.h>
 #include <aws/sagemaker/model/InferenceComponentDeploymentConfig.h>
 #include <aws/sagemaker/model/InferenceComponentMetadata.h>
+#include <aws/sagemaker/model/InferenceComponentPlacementStrategy.h>
 #include <aws/sagemaker/model/InferenceComponentRollingUpdatePolicy.h>
 #include <aws/sagemaker/model/InferenceComponentRuntimeConfig.h>
 #include <aws/sagemaker/model/InferenceComponentRuntimeConfigSummary.h>
+#include <aws/sagemaker/model/InferenceComponentSchedulingConfig.h>
 #include <aws/sagemaker/model/InferenceComponentSortKey.h>
 #include <aws/sagemaker/model/InferenceComponentSpecification.h>
 #include <aws/sagemaker/model/InferenceComponentSpecificationSummary.h>
@@ -1116,6 +1120,7 @@
 #include <aws/sagemaker/model/MIGProfileType.h>
 #include <aws/sagemaker/model/MLflowConfiguration.h>
 #include <aws/sagemaker/model/MaintenanceStatus.h>
+#include <aws/sagemaker/model/ManagedInstanceScalingScaleInStrategy.h>
 #include <aws/sagemaker/model/ManagedInstanceScalingStatus.h>
 #include <aws/sagemaker/model/MemberDefinition.h>
 #include <aws/sagemaker/model/MetadataProperties.h>
@@ -1361,6 +1366,7 @@
 #include <aws/sagemaker/model/ProductionVariantInferenceAmiVersion.h>
 #include <aws/sagemaker/model/ProductionVariantInstanceType.h>
 #include <aws/sagemaker/model/ProductionVariantManagedInstanceScaling.h>
+#include <aws/sagemaker/model/ProductionVariantManagedInstanceScalingScaleInPolicy.h>
 #include <aws/sagemaker/model/ProductionVariantRoutingConfig.h>
 #include <aws/sagemaker/model/ProductionVariantServerlessConfig.h>
 #include <aws/sagemaker/model/ProductionVariantServerlessUpdateConfig.h>

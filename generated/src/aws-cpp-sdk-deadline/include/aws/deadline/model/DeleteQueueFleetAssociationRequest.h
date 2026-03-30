@@ -15,6 +15,11 @@ namespace deadline {
 namespace Model {
 
 /**
+ * <p>Identifier mixin for queue-fleet association operations. Composes
+ * QueueIdentifierMixin (farmId + queueId) and adds fleetId.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteQueueFleetAssociationRequest">AWS
+ * API Reference</a></p>
  */
 class DeleteQueueFleetAssociationRequest : public DeadlineRequest {
  public:

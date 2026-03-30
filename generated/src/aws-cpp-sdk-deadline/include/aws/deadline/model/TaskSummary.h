@@ -140,30 +140,6 @@ class TaskSummary {
 
   ///@{
   /**
-   * <p>The task parameters.</p>
-   */
-  inline const Aws::Map<Aws::String, TaskParameterValue>& GetParameters() const { return m_parameters; }
-  inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-  template <typename ParametersT = Aws::Map<Aws::String, TaskParameterValue>>
-  void SetParameters(ParametersT&& value) {
-    m_parametersHasBeenSet = true;
-    m_parameters = std::forward<ParametersT>(value);
-  }
-  template <typename ParametersT = Aws::Map<Aws::String, TaskParameterValue>>
-  TaskSummary& WithParameters(ParametersT&& value) {
-    SetParameters(std::forward<ParametersT>(value));
-    return *this;
-  }
-  template <typename ParametersKeyT = Aws::String, typename ParametersValueT = TaskParameterValue>
-  TaskSummary& AddParameters(ParametersKeyT&& key, ParametersValueT&& value) {
-    m_parametersHasBeenSet = true;
-    m_parameters.emplace(std::forward<ParametersKeyT>(key), std::forward<ParametersValueT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The date and time the resource started running.</p>
    */
   inline const Aws::Utils::DateTime& GetStartedAt() const { return m_startedAt; }
@@ -251,6 +227,30 @@ class TaskSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The task parameters.</p>
+   */
+  inline const Aws::Map<Aws::String, TaskParameterValue>& GetParameters() const { return m_parameters; }
+  inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
+  template <typename ParametersT = Aws::Map<Aws::String, TaskParameterValue>>
+  void SetParameters(ParametersT&& value) {
+    m_parametersHasBeenSet = true;
+    m_parameters = std::forward<ParametersT>(value);
+  }
+  template <typename ParametersT = Aws::Map<Aws::String, TaskParameterValue>>
+  TaskSummary& WithParameters(ParametersT&& value) {
+    SetParameters(std::forward<ParametersT>(value));
+    return *this;
+  }
+  template <typename ParametersKeyT = Aws::String, typename ParametersValueT = TaskParameterValue>
+  TaskSummary& AddParameters(ParametersKeyT&& key, ParametersValueT&& value) {
+    m_parametersHasBeenSet = true;
+    m_parameters.emplace(std::forward<ParametersKeyT>(key), std::forward<ParametersValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_taskId;
 
@@ -264,8 +264,6 @@ class TaskSummary {
 
   int m_failureRetryCount{0};
 
-  Aws::Map<Aws::String, TaskParameterValue> m_parameters;
-
   Aws::Utils::DateTime m_startedAt{};
 
   Aws::Utils::DateTime m_endedAt{};
@@ -275,18 +273,20 @@ class TaskSummary {
   Aws::String m_updatedBy;
 
   Aws::String m_latestSessionActionId;
+
+  Aws::Map<Aws::String, TaskParameterValue> m_parameters;
   bool m_taskIdHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
   bool m_runStatusHasBeenSet = false;
   bool m_targetRunStatusHasBeenSet = false;
   bool m_failureRetryCountHasBeenSet = false;
-  bool m_parametersHasBeenSet = false;
   bool m_startedAtHasBeenSet = false;
   bool m_endedAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_updatedByHasBeenSet = false;
   bool m_latestSessionActionIdHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
 };
 
 }  // namespace Model

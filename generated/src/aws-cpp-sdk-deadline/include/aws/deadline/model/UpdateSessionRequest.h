@@ -34,41 +34,6 @@ class UpdateSessionRequest : public DeadlineRequest {
 
   ///@{
   /**
-   * <p>The unique token which the server uses to recognize retries of the same
-   * request.</p>
-   */
-  inline const Aws::String& GetClientToken() const { return m_clientToken; }
-  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-  template <typename ClientTokenT = Aws::String>
-  void SetClientToken(ClientTokenT&& value) {
-    m_clientTokenHasBeenSet = true;
-    m_clientToken = std::forward<ClientTokenT>(value);
-  }
-  template <typename ClientTokenT = Aws::String>
-  UpdateSessionRequest& WithClientToken(ClientTokenT&& value) {
-    SetClientToken(std::forward<ClientTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The life cycle status to update in the session.</p>
-   */
-  inline SessionLifecycleTargetStatus GetTargetLifecycleStatus() const { return m_targetLifecycleStatus; }
-  inline bool TargetLifecycleStatusHasBeenSet() const { return m_targetLifecycleStatusHasBeenSet; }
-  inline void SetTargetLifecycleStatus(SessionLifecycleTargetStatus value) {
-    m_targetLifecycleStatusHasBeenSet = true;
-    m_targetLifecycleStatus = value;
-  }
-  inline UpdateSessionRequest& WithTargetLifecycleStatus(SessionLifecycleTargetStatus value) {
-    SetTargetLifecycleStatus(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The farm ID to update in the session.</p>
    */
   inline const Aws::String& GetFarmId() const { return m_farmId; }
@@ -138,11 +103,42 @@ class UpdateSessionRequest : public DeadlineRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The unique token which the server uses to recognize retries of the same
+   * request.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  UpdateSessionRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The life cycle status to update in the session.</p>
+   */
+  inline SessionLifecycleTargetStatus GetTargetLifecycleStatus() const { return m_targetLifecycleStatus; }
+  inline bool TargetLifecycleStatusHasBeenSet() const { return m_targetLifecycleStatusHasBeenSet; }
+  inline void SetTargetLifecycleStatus(SessionLifecycleTargetStatus value) {
+    m_targetLifecycleStatusHasBeenSet = true;
+    m_targetLifecycleStatus = value;
+  }
+  inline UpdateSessionRequest& WithTargetLifecycleStatus(SessionLifecycleTargetStatus value) {
+    SetTargetLifecycleStatus(value);
+    return *this;
+  }
+  ///@}
  private:
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-
-  SessionLifecycleTargetStatus m_targetLifecycleStatus{SessionLifecycleTargetStatus::NOT_SET};
-
   Aws::String m_farmId;
 
   Aws::String m_queueId;
@@ -150,12 +146,16 @@ class UpdateSessionRequest : public DeadlineRequest {
   Aws::String m_jobId;
 
   Aws::String m_sessionId;
-  bool m_clientTokenHasBeenSet = true;
-  bool m_targetLifecycleStatusHasBeenSet = false;
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+
+  SessionLifecycleTargetStatus m_targetLifecycleStatus{SessionLifecycleTargetStatus::NOT_SET};
   bool m_farmIdHasBeenSet = false;
   bool m_queueIdHasBeenSet = false;
   bool m_jobIdHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_targetLifecycleStatusHasBeenSet = false;
 };
 
 }  // namespace Model

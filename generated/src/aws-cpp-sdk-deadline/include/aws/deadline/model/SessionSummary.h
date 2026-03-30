@@ -142,6 +142,22 @@ class SessionSummary {
 
   ///@{
   /**
+   * <p>The target life cycle status for the session.</p>
+   */
+  inline SessionLifecycleTargetStatus GetTargetLifecycleStatus() const { return m_targetLifecycleStatus; }
+  inline bool TargetLifecycleStatusHasBeenSet() const { return m_targetLifecycleStatusHasBeenSet; }
+  inline void SetTargetLifecycleStatus(SessionLifecycleTargetStatus value) {
+    m_targetLifecycleStatusHasBeenSet = true;
+    m_targetLifecycleStatus = value;
+  }
+  inline SessionSummary& WithTargetLifecycleStatus(SessionLifecycleTargetStatus value) {
+    SetTargetLifecycleStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The date and time the resource was updated.</p>
    */
   inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
@@ -175,22 +191,6 @@ class SessionSummary {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The target life cycle status for the session.</p>
-   */
-  inline SessionLifecycleTargetStatus GetTargetLifecycleStatus() const { return m_targetLifecycleStatus; }
-  inline bool TargetLifecycleStatusHasBeenSet() const { return m_targetLifecycleStatusHasBeenSet; }
-  inline void SetTargetLifecycleStatus(SessionLifecycleTargetStatus value) {
-    m_targetLifecycleStatusHasBeenSet = true;
-    m_targetLifecycleStatus = value;
-  }
-  inline SessionSummary& WithTargetLifecycleStatus(SessionLifecycleTargetStatus value) {
-    SetTargetLifecycleStatus(value);
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_sessionId;
 
@@ -204,20 +204,20 @@ class SessionSummary {
 
   Aws::Utils::DateTime m_endedAt{};
 
+  SessionLifecycleTargetStatus m_targetLifecycleStatus{SessionLifecycleTargetStatus::NOT_SET};
+
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::String m_updatedBy;
-
-  SessionLifecycleTargetStatus m_targetLifecycleStatus{SessionLifecycleTargetStatus::NOT_SET};
   bool m_sessionIdHasBeenSet = false;
   bool m_fleetIdHasBeenSet = false;
   bool m_workerIdHasBeenSet = false;
   bool m_startedAtHasBeenSet = false;
   bool m_lifecycleStatusHasBeenSet = false;
   bool m_endedAtHasBeenSet = false;
+  bool m_targetLifecycleStatusHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_updatedByHasBeenSet = false;
-  bool m_targetLifecycleStatusHasBeenSet = false;
 };
 
 }  // namespace Model

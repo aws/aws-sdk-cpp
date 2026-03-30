@@ -38,10 +38,6 @@ GetSessionResult& GetSessionResult::operator=(const Aws::AmazonWebServiceResult<
     m_startedAt = jsonValue.GetString("startedAt");
     m_startedAtHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("log")) {
-    m_log = jsonValue.GetObject("log");
-    m_logHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("lifecycleStatus")) {
     m_lifecycleStatus = SessionLifecycleStatusMapper::GetSessionLifecycleStatusForName(jsonValue.GetString("lifecycleStatus"));
     m_lifecycleStatusHasBeenSet = true;
@@ -49,6 +45,11 @@ GetSessionResult& GetSessionResult::operator=(const Aws::AmazonWebServiceResult<
   if (jsonValue.ValueExists("endedAt")) {
     m_endedAt = jsonValue.GetString("endedAt");
     m_endedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("targetLifecycleStatus")) {
+    m_targetLifecycleStatus =
+        SessionLifecycleTargetStatusMapper::GetSessionLifecycleTargetStatusForName(jsonValue.GetString("targetLifecycleStatus"));
+    m_targetLifecycleStatusHasBeenSet = true;
   }
   if (jsonValue.ValueExists("updatedAt")) {
     m_updatedAt = jsonValue.GetString("updatedAt");
@@ -58,10 +59,9 @@ GetSessionResult& GetSessionResult::operator=(const Aws::AmazonWebServiceResult<
     m_updatedBy = jsonValue.GetString("updatedBy");
     m_updatedByHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("targetLifecycleStatus")) {
-    m_targetLifecycleStatus =
-        SessionLifecycleTargetStatusMapper::GetSessionLifecycleTargetStatusForName(jsonValue.GetString("targetLifecycleStatus"));
-    m_targetLifecycleStatusHasBeenSet = true;
+  if (jsonValue.ValueExists("log")) {
+    m_log = jsonValue.GetObject("log");
+    m_logHasBeenSet = true;
   }
   if (jsonValue.ValueExists("hostProperties")) {
     m_hostProperties = jsonValue.GetObject("hostProperties");

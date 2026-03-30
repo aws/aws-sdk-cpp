@@ -19,6 +19,10 @@ namespace deadline {
 namespace Model {
 
 /**
+ * <p>Shared pagination fields for List operation inputs (nextToken +
+ * maxResults).</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListFleetsRequest">AWS
+ * API Reference</a></p>
  */
 class ListFleetsRequest : public DeadlineRequest {
  public:
@@ -48,6 +52,42 @@ class ListFleetsRequest : public DeadlineRequest {
   template <typename FarmIdT = Aws::String>
   ListFleetsRequest& WithFarmId(FarmIdT&& value) {
     SetFarmId(std::forward<FarmIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The token for the next set of results, or <code>null</code> to start from the
+   * beginning.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListFleetsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The maximum number of results to return. Use this parameter with
+   * <code>NextToken</code> to get results as a set of sequential pages.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListFleetsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
     return *this;
   }
   ///@}
@@ -106,60 +146,24 @@ class ListFleetsRequest : public DeadlineRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The token for the next set of results, or <code>null</code> to start from the
-   * beginning.</p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  ListFleetsRequest& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The maximum number of results to return. Use this parameter with
-   * <code>NextToken</code> to get results as a set of sequential pages.</p>
-   */
-  inline int GetMaxResults() const { return m_maxResults; }
-  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-  inline void SetMaxResults(int value) {
-    m_maxResultsHasBeenSet = true;
-    m_maxResults = value;
-  }
-  inline ListFleetsRequest& WithMaxResults(int value) {
-    SetMaxResults(value);
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_farmId;
+
+  Aws::String m_nextToken;
+
+  int m_maxResults{0};
 
   Aws::String m_principalId;
 
   Aws::String m_displayName;
 
   FleetStatus m_status{FleetStatus::NOT_SET};
-
-  Aws::String m_nextToken;
-
-  int m_maxResults{0};
   bool m_farmIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_principalIdHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
-  bool m_nextTokenHasBeenSet = false;
-  bool m_maxResultsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -21,9 +21,10 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Streaming output for InvokeAgentRuntimeCommand operation Delivers typed
- * events: contentStart (first), contentDelta (middle), contentStop
- * (last)</p><p><h3>See Also:</h3>   <a
+ * <p>The streaming output union for the <code>InvokeAgentRuntimeCommand</code>
+ * operation. This union delivers typed events: <code>contentStart</code> (first),
+ * <code>contentDelta</code> (middle), and <code>contentStop</code>
+ * (last).</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/InvokeAgentRuntimeCommandStreamOutput">AWS
  * API Reference</a></p>
  */
@@ -36,7 +37,8 @@ class InvokeAgentRuntimeCommandStreamOutput {
 
   ///@{
   /**
-   * <p>Response chunk containing command execution events</p>
+   * <p>A response chunk containing command execution events such as content start,
+   * content delta, or content stop events.</p>
    */
   inline const ResponseChunk& GetChunk() const { return m_chunk; }
   inline bool ChunkHasBeenSet() const { return m_chunkHasBeenSet; }
@@ -54,7 +56,7 @@ class InvokeAgentRuntimeCommandStreamOutput {
 
   ///@{
   /**
-   * <p>Exception events for error streaming</p>
+   * <p>Exception events for error streaming.</p>
    */
   inline const BedrockAgentCoreError& GetAccessDeniedException() const { return m_accessDeniedException; }
   inline bool AccessDeniedExceptionHasBeenSet() const { return m_accessDeniedExceptionHasBeenSet; }

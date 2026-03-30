@@ -8,6 +8,7 @@
 #include <aws/bedrock-agentcore/model/Context.h>
 #include <aws/bedrock-agentcore/model/TokenUsage.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -235,6 +236,32 @@ class EvaluationResultContent {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The list of reference input field names that were provided but not used by
+   * the evaluator. Helps identify which ground truth data was not consumed during
+   * evaluation. </p>
+   */
+  inline const Aws::Vector<Aws::String>& GetIgnoredReferenceInputFields() const { return m_ignoredReferenceInputFields; }
+  inline bool IgnoredReferenceInputFieldsHasBeenSet() const { return m_ignoredReferenceInputFieldsHasBeenSet; }
+  template <typename IgnoredReferenceInputFieldsT = Aws::Vector<Aws::String>>
+  void SetIgnoredReferenceInputFields(IgnoredReferenceInputFieldsT&& value) {
+    m_ignoredReferenceInputFieldsHasBeenSet = true;
+    m_ignoredReferenceInputFields = std::forward<IgnoredReferenceInputFieldsT>(value);
+  }
+  template <typename IgnoredReferenceInputFieldsT = Aws::Vector<Aws::String>>
+  EvaluationResultContent& WithIgnoredReferenceInputFields(IgnoredReferenceInputFieldsT&& value) {
+    SetIgnoredReferenceInputFields(std::forward<IgnoredReferenceInputFieldsT>(value));
+    return *this;
+  }
+  template <typename IgnoredReferenceInputFieldsT = Aws::String>
+  EvaluationResultContent& AddIgnoredReferenceInputFields(IgnoredReferenceInputFieldsT&& value) {
+    m_ignoredReferenceInputFieldsHasBeenSet = true;
+    m_ignoredReferenceInputFields.emplace_back(std::forward<IgnoredReferenceInputFieldsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_evaluatorArn;
 
@@ -255,6 +282,8 @@ class EvaluationResultContent {
   Aws::String m_errorMessage;
 
   Aws::String m_errorCode;
+
+  Aws::Vector<Aws::String> m_ignoredReferenceInputFields;
   bool m_evaluatorArnHasBeenSet = false;
   bool m_evaluatorIdHasBeenSet = false;
   bool m_evaluatorNameHasBeenSet = false;
@@ -265,6 +294,7 @@ class EvaluationResultContent {
   bool m_tokenUsageHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
   bool m_errorCodeHasBeenSet = false;
+  bool m_ignoredReferenceInputFieldsHasBeenSet = false;
 };
 
 }  // namespace Model

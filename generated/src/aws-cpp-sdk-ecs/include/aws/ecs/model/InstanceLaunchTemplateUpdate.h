@@ -8,6 +8,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/model/CapacityReservationRequest.h>
 #include <aws/ecs/model/InstanceRequirementsRequest.h>
+#include <aws/ecs/model/ManagedInstancesLocalStorageConfiguration.h>
 #include <aws/ecs/model/ManagedInstancesMonitoringOptions.h>
 #include <aws/ecs/model/ManagedInstancesNetworkConfiguration.h>
 #include <aws/ecs/model/ManagedInstancesStorageConfiguration.h>
@@ -132,6 +133,26 @@ class InstanceLaunchTemplateUpdate {
 
   ///@{
   /**
+   * <p>The updated local storage configuration for Amazon ECS Managed Instances.
+   * Changes to local storage settings apply to new instances launched after the
+   * update.</p>
+   */
+  inline const ManagedInstancesLocalStorageConfiguration& GetLocalStorageConfiguration() const { return m_localStorageConfiguration; }
+  inline bool LocalStorageConfigurationHasBeenSet() const { return m_localStorageConfigurationHasBeenSet; }
+  template <typename LocalStorageConfigurationT = ManagedInstancesLocalStorageConfiguration>
+  void SetLocalStorageConfiguration(LocalStorageConfigurationT&& value) {
+    m_localStorageConfigurationHasBeenSet = true;
+    m_localStorageConfiguration = std::forward<LocalStorageConfigurationT>(value);
+  }
+  template <typename LocalStorageConfigurationT = ManagedInstancesLocalStorageConfiguration>
+  InstanceLaunchTemplateUpdate& WithLocalStorageConfiguration(LocalStorageConfigurationT&& value) {
+    SetLocalStorageConfiguration(std::forward<LocalStorageConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>CloudWatch provides two categories of monitoring: basic monitoring and
    * detailed monitoring. By default, your managed instance is configured for basic
    * monitoring. You can optionally enable detailed monitoring to help you more
@@ -202,6 +223,8 @@ class InstanceLaunchTemplateUpdate {
 
   bool m_instanceMetadataTagsPropagation{false};
 
+  ManagedInstancesLocalStorageConfiguration m_localStorageConfiguration;
+
   ManagedInstancesMonitoringOptions m_monitoring{ManagedInstancesMonitoringOptions::NOT_SET};
 
   InstanceRequirementsRequest m_instanceRequirements;
@@ -211,6 +234,7 @@ class InstanceLaunchTemplateUpdate {
   bool m_networkConfigurationHasBeenSet = false;
   bool m_storageConfigurationHasBeenSet = false;
   bool m_instanceMetadataTagsPropagationHasBeenSet = false;
+  bool m_localStorageConfigurationHasBeenSet = false;
   bool m_monitoringHasBeenSet = false;
   bool m_instanceRequirementsHasBeenSet = false;
   bool m_capacityReservationsHasBeenSet = false;

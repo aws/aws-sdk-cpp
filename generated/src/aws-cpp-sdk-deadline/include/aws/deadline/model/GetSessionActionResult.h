@@ -134,6 +134,30 @@ class GetSessionActionResult {
 
   ///@{
   /**
+   * <p>The list of manifest properties that describe file attachments for the task
+   * run.</p>
+   */
+  inline const Aws::Vector<TaskRunManifestPropertiesResponse>& GetManifests() const { return m_manifests; }
+  template <typename ManifestsT = Aws::Vector<TaskRunManifestPropertiesResponse>>
+  void SetManifests(ManifestsT&& value) {
+    m_manifestsHasBeenSet = true;
+    m_manifests = std::forward<ManifestsT>(value);
+  }
+  template <typename ManifestsT = Aws::Vector<TaskRunManifestPropertiesResponse>>
+  GetSessionActionResult& WithManifests(ManifestsT&& value) {
+    SetManifests(std::forward<ManifestsT>(value));
+    return *this;
+  }
+  template <typename ManifestsT = TaskRunManifestPropertiesResponse>
+  GetSessionActionResult& AddManifests(ManifestsT&& value) {
+    m_manifestsHasBeenSet = true;
+    m_manifests.emplace_back(std::forward<ManifestsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The session ID for the session action.</p>
    */
   inline const Aws::String& GetSessionId() const { return m_sessionId; }
@@ -184,23 +208,6 @@ class GetSessionActionResult {
 
   ///@{
   /**
-   * <p>The session action definition.</p>
-   */
-  inline const SessionActionDefinition& GetDefinition() const { return m_definition; }
-  template <typename DefinitionT = SessionActionDefinition>
-  void SetDefinition(DefinitionT&& value) {
-    m_definitionHasBeenSet = true;
-    m_definition = std::forward<DefinitionT>(value);
-  }
-  template <typename DefinitionT = SessionActionDefinition>
-  GetSessionActionResult& WithDefinition(DefinitionT&& value) {
-    SetDefinition(std::forward<DefinitionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The limits and their amounts acquired during a session action. If no limits
    * were acquired during the session, this field isn't returned.</p>
    */
@@ -225,24 +232,17 @@ class GetSessionActionResult {
 
   ///@{
   /**
-   * <p>The list of manifest properties that describe file attachments for the task
-   * run.</p>
+   * <p>The session action definition.</p>
    */
-  inline const Aws::Vector<TaskRunManifestPropertiesResponse>& GetManifests() const { return m_manifests; }
-  template <typename ManifestsT = Aws::Vector<TaskRunManifestPropertiesResponse>>
-  void SetManifests(ManifestsT&& value) {
-    m_manifestsHasBeenSet = true;
-    m_manifests = std::forward<ManifestsT>(value);
+  inline const SessionActionDefinition& GetDefinition() const { return m_definition; }
+  template <typename DefinitionT = SessionActionDefinition>
+  void SetDefinition(DefinitionT&& value) {
+    m_definitionHasBeenSet = true;
+    m_definition = std::forward<DefinitionT>(value);
   }
-  template <typename ManifestsT = Aws::Vector<TaskRunManifestPropertiesResponse>>
-  GetSessionActionResult& WithManifests(ManifestsT&& value) {
-    SetManifests(std::forward<ManifestsT>(value));
-    return *this;
-  }
-  template <typename ManifestsT = TaskRunManifestPropertiesResponse>
-  GetSessionActionResult& AddManifests(ManifestsT&& value) {
-    m_manifestsHasBeenSet = true;
-    m_manifests.emplace_back(std::forward<ManifestsT>(value));
+  template <typename DefinitionT = SessionActionDefinition>
+  GetSessionActionResult& WithDefinition(DefinitionT&& value) {
+    SetDefinition(std::forward<DefinitionT>(value));
     return *this;
   }
   ///@}
@@ -276,17 +276,17 @@ class GetSessionActionResult {
 
   double m_progressPercent{0.0};
 
+  Aws::Vector<TaskRunManifestPropertiesResponse> m_manifests;
+
   Aws::String m_sessionId;
 
   int m_processExitCode{0};
 
   Aws::String m_progressMessage;
 
-  SessionActionDefinition m_definition;
-
   Aws::Vector<AcquiredLimit> m_acquiredLimits;
 
-  Aws::Vector<TaskRunManifestPropertiesResponse> m_manifests;
+  SessionActionDefinition m_definition;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
@@ -296,12 +296,12 @@ class GetSessionActionResult {
   bool m_endedAtHasBeenSet = false;
   bool m_workerUpdatedAtHasBeenSet = false;
   bool m_progressPercentHasBeenSet = false;
+  bool m_manifestsHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;
   bool m_processExitCodeHasBeenSet = false;
   bool m_progressMessageHasBeenSet = false;
-  bool m_definitionHasBeenSet = false;
   bool m_acquiredLimitsHasBeenSet = false;
-  bool m_manifestsHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -18,7 +18,7 @@ namespace Model {
 
 /**
  * <p>The storage configuration for Amazon ECS Managed Instances. This defines the
- * root volume configuration for the instances.</p><p><h3>See Also:</h3>   <a
+ * data volume configuration for the instances.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ManagedInstancesStorageConfiguration">AWS
  * API Reference</a></p>
  */
@@ -31,7 +31,7 @@ class ManagedInstancesStorageConfiguration {
 
   ///@{
   /**
-   * <p>The size of the tasks volume.</p>
+   * <p>The size of the data volume.</p>
    */
   inline int GetStorageSizeGiB() const { return m_storageSizeGiB; }
   inline bool StorageSizeGiBHasBeenSet() const { return m_storageSizeGiBHasBeenSet; }

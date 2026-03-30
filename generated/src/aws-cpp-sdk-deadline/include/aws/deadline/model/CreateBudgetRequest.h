@@ -21,6 +21,11 @@ namespace deadline {
 namespace Model {
 
 /**
+ * <p>Shared displayName + description for Create operations where both are
+ * present. displayName is @required here - this mixin is Create-only by design
+ * (Update has optional displayName).</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateBudgetRequest">AWS
+ * API Reference</a></p>
  */
 class CreateBudgetRequest : public DeadlineRequest {
  public:
@@ -38,25 +43,6 @@ class CreateBudgetRequest : public DeadlineRequest {
 
   ///@{
   /**
-   * <p>The unique token which the server uses to recognize retries of the same
-   * request.</p>
-   */
-  inline const Aws::String& GetClientToken() const { return m_clientToken; }
-  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-  template <typename ClientTokenT = Aws::String>
-  void SetClientToken(ClientTokenT&& value) {
-    m_clientTokenHasBeenSet = true;
-    m_clientToken = std::forward<ClientTokenT>(value);
-  }
-  template <typename ClientTokenT = Aws::String>
-  CreateBudgetRequest& WithClientToken(ClientTokenT&& value) {
-    SetClientToken(std::forward<ClientTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The farm ID to include in this budget.</p>
    */
   inline const Aws::String& GetFarmId() const { return m_farmId; }
@@ -69,24 +55,6 @@ class CreateBudgetRequest : public DeadlineRequest {
   template <typename FarmIdT = Aws::String>
   CreateBudgetRequest& WithFarmId(FarmIdT&& value) {
     SetFarmId(std::forward<FarmIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The queue ID provided to this budget to track usage.</p>
-   */
-  inline const UsageTrackingResource& GetUsageTrackingResource() const { return m_usageTrackingResource; }
-  inline bool UsageTrackingResourceHasBeenSet() const { return m_usageTrackingResourceHasBeenSet; }
-  template <typename UsageTrackingResourceT = UsageTrackingResource>
-  void SetUsageTrackingResource(UsageTrackingResourceT&& value) {
-    m_usageTrackingResourceHasBeenSet = true;
-    m_usageTrackingResource = std::forward<UsageTrackingResourceT>(value);
-  }
-  template <typename UsageTrackingResourceT = UsageTrackingResource>
-  CreateBudgetRequest& WithUsageTrackingResource(UsageTrackingResourceT&& value) {
-    SetUsageTrackingResource(std::forward<UsageTrackingResourceT>(value));
     return *this;
   }
   ///@}
@@ -127,6 +95,43 @@ class CreateBudgetRequest : public DeadlineRequest {
   template <typename DescriptionT = Aws::String>
   CreateBudgetRequest& WithDescription(DescriptionT&& value) {
     SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique token which the server uses to recognize retries of the same
+   * request.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  CreateBudgetRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The queue ID provided to this budget to track usage.</p>
+   */
+  inline const UsageTrackingResource& GetUsageTrackingResource() const { return m_usageTrackingResource; }
+  inline bool UsageTrackingResourceHasBeenSet() const { return m_usageTrackingResourceHasBeenSet; }
+  template <typename UsageTrackingResourceT = UsageTrackingResource>
+  void SetUsageTrackingResource(UsageTrackingResourceT&& value) {
+    m_usageTrackingResourceHasBeenSet = true;
+    m_usageTrackingResource = std::forward<UsageTrackingResourceT>(value);
+  }
+  template <typename UsageTrackingResourceT = UsageTrackingResource>
+  CreateBudgetRequest& WithUsageTrackingResource(UsageTrackingResourceT&& value) {
+    SetUsageTrackingResource(std::forward<UsageTrackingResourceT>(value));
     return *this;
   }
   ///@}
@@ -214,15 +219,15 @@ class CreateBudgetRequest : public DeadlineRequest {
   }
   ///@}
  private:
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-
   Aws::String m_farmId;
-
-  UsageTrackingResource m_usageTrackingResource;
 
   Aws::String m_displayName;
 
   Aws::String m_description;
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+
+  UsageTrackingResource m_usageTrackingResource;
 
   double m_approximateDollarLimit{0.0};
 
@@ -231,11 +236,11 @@ class CreateBudgetRequest : public DeadlineRequest {
   BudgetSchedule m_schedule;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_clientTokenHasBeenSet = true;
   bool m_farmIdHasBeenSet = false;
-  bool m_usageTrackingResourceHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_usageTrackingResourceHasBeenSet = false;
   bool m_approximateDollarLimitHasBeenSet = false;
   bool m_actionsHasBeenSet = false;
   bool m_scheduleHasBeenSet = false;

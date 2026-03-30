@@ -34,41 +34,6 @@ class UpdateStepRequest : public DeadlineRequest {
 
   ///@{
   /**
-   * <p>The task status to update the step's tasks to.</p>
-   */
-  inline StepTargetTaskRunStatus GetTargetTaskRunStatus() const { return m_targetTaskRunStatus; }
-  inline bool TargetTaskRunStatusHasBeenSet() const { return m_targetTaskRunStatusHasBeenSet; }
-  inline void SetTargetTaskRunStatus(StepTargetTaskRunStatus value) {
-    m_targetTaskRunStatusHasBeenSet = true;
-    m_targetTaskRunStatus = value;
-  }
-  inline UpdateStepRequest& WithTargetTaskRunStatus(StepTargetTaskRunStatus value) {
-    SetTargetTaskRunStatus(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The unique token which the server uses to recognize retries of the same
-   * request.</p>
-   */
-  inline const Aws::String& GetClientToken() const { return m_clientToken; }
-  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-  template <typename ClientTokenT = Aws::String>
-  void SetClientToken(ClientTokenT&& value) {
-    m_clientTokenHasBeenSet = true;
-    m_clientToken = std::forward<ClientTokenT>(value);
-  }
-  template <typename ClientTokenT = Aws::String>
-  UpdateStepRequest& WithClientToken(ClientTokenT&& value) {
-    SetClientToken(std::forward<ClientTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The farm ID to update.</p>
    */
   inline const Aws::String& GetFarmId() const { return m_farmId; }
@@ -138,11 +103,42 @@ class UpdateStepRequest : public DeadlineRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The unique token which the server uses to recognize retries of the same
+   * request.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  UpdateStepRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The task status to update the step's tasks to.</p>
+   */
+  inline StepTargetTaskRunStatus GetTargetTaskRunStatus() const { return m_targetTaskRunStatus; }
+  inline bool TargetTaskRunStatusHasBeenSet() const { return m_targetTaskRunStatusHasBeenSet; }
+  inline void SetTargetTaskRunStatus(StepTargetTaskRunStatus value) {
+    m_targetTaskRunStatusHasBeenSet = true;
+    m_targetTaskRunStatus = value;
+  }
+  inline UpdateStepRequest& WithTargetTaskRunStatus(StepTargetTaskRunStatus value) {
+    SetTargetTaskRunStatus(value);
+    return *this;
+  }
+  ///@}
  private:
-  StepTargetTaskRunStatus m_targetTaskRunStatus{StepTargetTaskRunStatus::NOT_SET};
-
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-
   Aws::String m_farmId;
 
   Aws::String m_queueId;
@@ -150,12 +146,16 @@ class UpdateStepRequest : public DeadlineRequest {
   Aws::String m_jobId;
 
   Aws::String m_stepId;
-  bool m_targetTaskRunStatusHasBeenSet = false;
-  bool m_clientTokenHasBeenSet = true;
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+
+  StepTargetTaskRunStatus m_targetTaskRunStatus{StepTargetTaskRunStatus::NOT_SET};
   bool m_farmIdHasBeenSet = false;
   bool m_queueIdHasBeenSet = false;
   bool m_jobIdHasBeenSet = false;
   bool m_stepIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_targetTaskRunStatusHasBeenSet = false;
 };
 
 }  // namespace Model
