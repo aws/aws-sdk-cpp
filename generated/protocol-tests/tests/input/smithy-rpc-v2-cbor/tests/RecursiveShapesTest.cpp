@@ -49,7 +49,7 @@ AWS_PROTOCOL_TEST(RecursiveShapes, RpcV2CborRecursiveShapes) {
   expectedRq.method = "POST";
   expectedRq.body = "v2ZuZXN0ZWS/Y2Zvb2RGb28xZm5lc3RlZL9jYmFyZEJhcjFvcmVjdXJzaXZlTWVtYmVyv2Nmb29kRm9vMmZuZXN0ZWS/Y2JhcmRCYXIy//////8=";
   expectedRq.uri = "/service/RpcV2Protocol/operation/RecursiveShapes";
-  expectedRq.headers = {{"Accept", R"(application/cbor)"}, {"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  expectedRq.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Accept", R"(application/cbor)"}, {"Content-Type", R"(application/cbor)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const RecursiveShapesResult& result = outcome.GetResult();

@@ -54,9 +54,9 @@ class HttpRequestWithFloatLabelsRequest : public RestJsonProtocolRequest {
   ///@}
  private:
   double m_float{0.0};
-  bool m_floatHasBeenSet = false;
 
   double m_double{0.0};
+  bool m_floatHasBeenSet = false;
   bool m_doubleHasBeenSet = false;
 };
 

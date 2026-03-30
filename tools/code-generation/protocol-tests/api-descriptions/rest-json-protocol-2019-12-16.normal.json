@@ -21,7 +21,8 @@
         "responseCode":200
       },
       "input":{"shape":"AllQueryStringTypesInput"},
-      "documentation":"<p>This example uses all query string types.</p>"
+      "documentation":"<p>This example uses all query string types.</p>",
+      "readonly":true
     },
     "ConstantAndVariableQueryString":{
       "name":"ConstantAndVariableQueryString",
@@ -31,7 +32,8 @@
         "responseCode":200
       },
       "input":{"shape":"ConstantAndVariableQueryStringInput"},
-      "documentation":"<p>This example uses fixed query string params and variable query string params. The fixed query string parameters and variable parameters must both be serialized (implementations may need to merge them together).</p>"
+      "documentation":"<p>This example uses fixed query string params and variable query string params. The fixed query string parameters and variable parameters must both be serialized (implementations may need to merge them together).</p>",
+      "readonly":true
     },
     "ConstantQueryString":{
       "name":"ConstantQueryString",
@@ -41,7 +43,8 @@
         "responseCode":200
       },
       "input":{"shape":"ConstantQueryStringInput"},
-      "documentation":"<p>This example uses a constant query string parameters and a label. This simply tests that labels and query string parameters are compatible. The fixed query string parameter named &quot;hello&quot; should in no way conflict with the label, <code>{hello}</code>.</p>"
+      "documentation":"<p>This example uses a constant query string parameters and a label. This simply tests that labels and query string parameters are compatible. The fixed query string parameter named &quot;hello&quot; should in no way conflict with the label, <code>{hello}</code>.</p>",
+      "readonly":true
     },
     "ContentTypeParameters":{
       "name":"ContentTypeParameters",
@@ -162,7 +165,8 @@
         "method":"GET",
         "requestUri":"/HostWithPathOperation",
         "responseCode":200
-      }
+      },
+      "readonly":true
     },
     "HttpChecksumRequired":{
       "name":"HttpChecksumRequired",
@@ -175,6 +179,18 @@
       "output":{"shape":"HttpChecksumRequiredInputOutput"},
       "documentation":"<p>This example tests httpChecksumRequired trait</p>",
       "httpChecksumRequired":true
+    },
+    "HttpEmptyPrefixHeaders":{
+      "name":"HttpEmptyPrefixHeaders",
+      "http":{
+        "method":"GET",
+        "requestUri":"/HttpEmptyPrefixHeaders",
+        "responseCode":200
+      },
+      "input":{"shape":"HttpEmptyPrefixHeadersInput"},
+      "output":{"shape":"HttpEmptyPrefixHeadersOutput"},
+      "documentation":"<p>Clients that perform this test extract all headers from the response.</p>",
+      "readonly":true
     },
     "HttpEnumPayload":{
       "name":"HttpEnumPayload",
@@ -230,7 +246,8 @@
       },
       "input":{"shape":"HttpPrefixHeadersInput"},
       "output":{"shape":"HttpPrefixHeadersOutput"},
-      "documentation":"<p>This examples adds headers to the input of a request and response by prefix.</p>"
+      "documentation":"<p>This examples adds headers to the input of a request and response by prefix.</p>",
+      "readonly":true
     },
     "HttpPrefixHeadersInResponse":{
       "name":"HttpPrefixHeadersInResponse",
@@ -241,7 +258,19 @@
       },
       "input":{"shape":"HttpPrefixHeadersInResponseInput"},
       "output":{"shape":"HttpPrefixHeadersInResponseOutput"},
-      "documentation":"<p>Clients that perform this test extract all headers from the response.</p>"
+      "documentation":"<p>Clients that perform this test extract all headers from the response.</p>",
+      "readonly":true
+    },
+    "HttpQueryParamsOnlyOperation":{
+      "name":"HttpQueryParamsOnlyOperation",
+      "http":{
+        "method":"GET",
+        "requestUri":"/http-query-params-only",
+        "responseCode":200
+      },
+      "input":{"shape":"HttpQueryParamsOnlyInput"},
+      "documentation":"<p>This example tests httpQueryParams when no other query parameters exist.</p>",
+      "readonly":true
     },
     "HttpRequestWithFloatLabels":{
       "name":"HttpRequestWithFloatLabels",
@@ -250,7 +279,8 @@
         "requestUri":"/FloatHttpLabels/{float}/{double}",
         "responseCode":200
       },
-      "input":{"shape":"HttpRequestWithFloatLabelsInput"}
+      "input":{"shape":"HttpRequestWithFloatLabelsInput"},
+      "readonly":true
     },
     "HttpRequestWithGreedyLabelInPath":{
       "name":"HttpRequestWithGreedyLabelInPath",
@@ -259,7 +289,8 @@
         "requestUri":"/HttpRequestWithGreedyLabelInPath/foo/{foo}/baz/{baz+}",
         "responseCode":200
       },
-      "input":{"shape":"HttpRequestWithGreedyLabelInPathInput"}
+      "input":{"shape":"HttpRequestWithGreedyLabelInPathInput"},
+      "readonly":true
     },
     "HttpRequestWithLabels":{
       "name":"HttpRequestWithLabels",
@@ -269,7 +300,8 @@
         "responseCode":200
       },
       "input":{"shape":"HttpRequestWithLabelsInput"},
-      "documentation":"<p>The example tests how requests are serialized when there's no input payload but there are HTTP labels.</p>"
+      "documentation":"<p>The example tests how requests are serialized when there's no input payload but there are HTTP labels.</p>",
+      "readonly":true
     },
     "HttpRequestWithLabelsAndTimestampFormat":{
       "name":"HttpRequestWithLabelsAndTimestampFormat",
@@ -279,7 +311,8 @@
         "responseCode":200
       },
       "input":{"shape":"HttpRequestWithLabelsAndTimestampFormatInput"},
-      "documentation":"<p>The example tests how requests serialize different timestamp formats in the URI path.</p>"
+      "documentation":"<p>The example tests how requests serialize different timestamp formats in the URI path.</p>",
+      "readonly":true
     },
     "HttpRequestWithRegexLiteral":{
       "name":"HttpRequestWithRegexLiteral",
@@ -288,7 +321,8 @@
         "requestUri":"/ReDosLiteral/{str}/(a+)+",
         "responseCode":200
       },
-      "input":{"shape":"HttpRequestWithRegexLiteralInput"}
+      "input":{"shape":"HttpRequestWithRegexLiteralInput"},
+      "readonly":true
     },
     "HttpResponseCode":{
       "name":"HttpResponseCode",
@@ -318,7 +352,8 @@
         "responseCode":200
       },
       "output":{"shape":"IgnoreQueryParamsInResponseOutput"},
-      "documentation":"<p>This example ensures that query string bound request parameters are serialized in the body of responses if the structure is used in both the request and response.</p>"
+      "documentation":"<p>This example ensures that query string bound request parameters are serialized in the body of responses if the structure is used in both the request and response.</p>",
+      "readonly":true
     },
     "InputAndOutputWithHeaders":{
       "name":"InputAndOutputWithHeaders",
@@ -421,7 +456,8 @@
       },
       "input":{"shape":"MediaTypeHeaderInput"},
       "output":{"shape":"MediaTypeHeaderOutput"},
-      "documentation":"<p>This example ensures that mediaType strings are base64 encoded in headers.</p>"
+      "documentation":"<p>This example ensures that mediaType strings are base64 encoded in headers.</p>",
+      "readonly":true
     },
     "NoInputAndNoOutput":{
       "name":"NoInputAndNoOutput",
@@ -451,7 +487,8 @@
       },
       "input":{"shape":"NullAndEmptyHeadersIO"},
       "output":{"shape":"NullAndEmptyHeadersIO"},
-      "documentation":"<p>Null headers are not sent over the wire, empty headers are serialized to &quot;&quot;</p>"
+      "documentation":"<p>Null headers are not sent over the wire, empty headers are serialized to &quot;&quot;</p>",
+      "readonly":true
     },
     "NullAndEmptyHeadersServer":{
       "name":"NullAndEmptyHeadersServer",
@@ -462,7 +499,8 @@
       },
       "input":{"shape":"NullAndEmptyHeadersIO"},
       "output":{"shape":"NullAndEmptyHeadersIO"},
-      "documentation":"<p>Null headers are not sent over the wire, empty headers are serialized to &quot;&quot;</p>"
+      "documentation":"<p>Null headers are not sent over the wire, empty headers are serialized to &quot;&quot;</p>",
+      "readonly":true
     },
     "OmitsNullSerializesEmptyString":{
       "name":"OmitsNullSerializesEmptyString",
@@ -472,7 +510,8 @@
         "responseCode":200
       },
       "input":{"shape":"OmitsNullSerializesEmptyStringInput"},
-      "documentation":"<p>Omits null, but serializes empty string value.</p>"
+      "documentation":"<p>Omits null, but serializes empty string value.</p>",
+      "readonly":true
     },
     "OmitsSerializingEmptyLists":{
       "name":"OmitsSerializingEmptyLists",
@@ -553,7 +592,8 @@
         "responseCode":201
       },
       "input":{"shape":"ResponseCodeHttpFallbackInputOutput"},
-      "output":{"shape":"ResponseCodeHttpFallbackInputOutput"}
+      "output":{"shape":"ResponseCodeHttpFallbackInputOutput"},
+      "readonly":true
     },
     "ResponseCodeRequired":{
       "name":"ResponseCodeRequired",
@@ -562,7 +602,8 @@
         "requestUri":"/responseCodeRequired",
         "responseCode":200
       },
-      "output":{"shape":"ResponseCodeRequiredOutput"}
+      "output":{"shape":"ResponseCodeRequiredOutput"},
+      "readonly":true
     },
     "SimpleScalarProperties":{
       "name":"SimpleScalarProperties",
@@ -574,6 +615,28 @@
       "input":{"shape":"SimpleScalarPropertiesInputOutput"},
       "output":{"shape":"SimpleScalarPropertiesInputOutput"},
       "idempotent":true
+    },
+    "SparseJsonLists":{
+      "name":"SparseJsonLists",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/SparseJsonLists",
+        "responseCode":200
+      },
+      "input":{"shape":"SparseJsonListsInputOutput"},
+      "output":{"shape":"SparseJsonListsInputOutput"},
+      "idempotent":true
+    },
+    "SparseJsonMaps":{
+      "name":"SparseJsonMaps",
+      "http":{
+        "method":"POST",
+        "requestUri":"/SparseJsonMaps",
+        "responseCode":200
+      },
+      "input":{"shape":"SparseJsonMapsInputOutput"},
+      "output":{"shape":"SparseJsonMapsInputOutput"},
+      "documentation":"<p>This example tests sparse map serialization.</p>"
     },
     "TestBodyStructure":{
       "name":"TestBodyStructure",
@@ -595,7 +658,8 @@
         "responseCode":200
       },
       "output":{"shape":"TestNoPayloadInputOutput"},
-      "documentation":"<p>This example GET operation has no input and serializes a request without a HTTP body.</p> <p>These tests are to ensure we do not attach a body or related headers (Content-Length, Content-Type) to operations that semantically cannot produce an HTTP body.</p>"
+      "documentation":"<p>This example GET operation has no input and serializes a request without a HTTP body.</p> <p>These tests are to ensure we do not attach a body or related headers (Content-Length, Content-Type) to operations that semantically cannot produce an HTTP body.</p>",
+      "readonly":true
     },
     "TestGetNoPayload":{
       "name":"TestGetNoPayload",
@@ -606,7 +670,8 @@
       },
       "input":{"shape":"TestNoPayloadInputOutput"},
       "output":{"shape":"TestNoPayloadInputOutput"},
-      "documentation":"<p>This example GET operation serializes a request without a modeled HTTP body.</p> <p>These tests are to ensure we do not attach a body or related headers (Content-Length, Content-Type) to operations that semantically cannot produce an HTTP body.</p>"
+      "documentation":"<p>This example GET operation serializes a request without a modeled HTTP body.</p> <p>These tests are to ensure we do not attach a body or related headers (Content-Length, Content-Type) to operations that semantically cannot produce an HTTP body.</p>",
+      "readonly":true
     },
     "TestPayloadBlob":{
       "name":"TestPayloadBlob",
@@ -854,8 +919,7 @@
     },
     "ContentTypeParametersOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DateTime":{
       "type":"timestamp",
@@ -894,8 +958,7 @@
     },
     "Document":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "document":true
     },
     "DocumentTypeAsMapValueInputOutput":{
@@ -933,13 +996,11 @@
     },
     "EmptyInputAndEmptyOutputInput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "EmptyInputAndEmptyOutputOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "EnumPayloadInput":{
       "type":"structure",
@@ -981,8 +1042,7 @@
     },
     "FooError":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "documentation":"<p>This error has test cases that test some of the dark corners of Amazon service framework history. It should only be implemented by clients.</p>",
       "error":{"httpStatusCode":500},
       "exception":true,
@@ -1030,6 +1090,36 @@
       "type":"timestamp",
       "timestampFormat":"rfc822"
     },
+    "HttpEmptyPrefixHeadersInput":{
+      "type":"structure",
+      "members":{
+        "prefixHeaders":{
+          "shape":"StringMap",
+          "location":"headers",
+          "locationName":""
+        },
+        "specificHeader":{
+          "shape":"String",
+          "location":"header",
+          "locationName":"hello"
+        }
+      }
+    },
+    "HttpEmptyPrefixHeadersOutput":{
+      "type":"structure",
+      "members":{
+        "prefixHeaders":{
+          "shape":"StringMap",
+          "location":"headers",
+          "locationName":""
+        },
+        "specificHeader":{
+          "shape":"String",
+          "location":"header",
+          "locationName":"hello"
+        }
+      }
+    },
     "HttpPayloadTraitsInputOutput":{
       "type":"structure",
       "members":{
@@ -1058,8 +1148,7 @@
     },
     "HttpPrefixHeadersInResponseInput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "HttpPrefixHeadersInResponseOutput":{
       "type":"structure",
@@ -1098,6 +1187,15 @@
           "shape":"StringMap",
           "location":"headers",
           "locationName":"x-foo-"
+        }
+      }
+    },
+    "HttpQueryParamsOnlyInput":{
+      "type":"structure",
+      "members":{
+        "queryMap":{
+          "shape":"QueryMap",
+          "location":"querystring"
         }
       }
     },
@@ -1536,8 +1634,7 @@
     },
     "NoInputAndOutputOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "NullAndEmptyHeadersIO":{
       "type":"structure",
@@ -1655,6 +1752,11 @@
         }
       }
     },
+    "QueryMap":{
+      "type":"map",
+      "key":{"shape":"String"},
+      "value":{"shape":"String"}
+    },
     "QueryParamsAsStringListMapInput":{
       "type":"structure",
       "members":{
@@ -1711,8 +1813,7 @@
     },
     "ResponseCodeHttpFallbackInputOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "ResponseCodeRequiredOutput":{
       "type":"structure",
@@ -1745,6 +1846,63 @@
           "locationName":"DoubleDribble"
         }
       }
+    },
+    "SparseBooleanMap":{
+      "type":"map",
+      "key":{"shape":"String"},
+      "value":{"shape":"Boolean"},
+      "sparse":true
+    },
+    "SparseJsonListsInputOutput":{
+      "type":"structure",
+      "members":{
+        "sparseStringList":{"shape":"SparseStringList"},
+        "sparseShortList":{"shape":"SparseShortList"}
+      }
+    },
+    "SparseJsonMapsInputOutput":{
+      "type":"structure",
+      "members":{
+        "sparseStructMap":{"shape":"SparseStructMap"},
+        "sparseNumberMap":{"shape":"SparseNumberMap"},
+        "sparseBooleanMap":{"shape":"SparseBooleanMap"},
+        "sparseStringMap":{"shape":"SparseStringMap"},
+        "sparseSetMap":{"shape":"SparseSetMap"}
+      }
+    },
+    "SparseNumberMap":{
+      "type":"map",
+      "key":{"shape":"String"},
+      "value":{"shape":"Integer"},
+      "sparse":true
+    },
+    "SparseSetMap":{
+      "type":"map",
+      "key":{"shape":"String"},
+      "value":{"shape":"StringSet"},
+      "sparse":true
+    },
+    "SparseShortList":{
+      "type":"list",
+      "member":{"shape":"Integer"},
+      "sparse":true
+    },
+    "SparseStringList":{
+      "type":"list",
+      "member":{"shape":"String"},
+      "sparse":true
+    },
+    "SparseStringMap":{
+      "type":"map",
+      "key":{"shape":"String"},
+      "value":{"shape":"String"},
+      "sparse":true
+    },
+    "SparseStructMap":{
+      "type":"map",
+      "key":{"shape":"String"},
+      "value":{"shape":"GreetingStruct"},
+      "sparse":true
     },
     "String":{"type":"string"},
     "StringEnum":{
@@ -1930,6 +2088,5 @@
       },
       "union":true
     }
-  },
-  "documentation":"<p>A REST JSON service that sends JSON requests and responses.</p>"
+  }
 }

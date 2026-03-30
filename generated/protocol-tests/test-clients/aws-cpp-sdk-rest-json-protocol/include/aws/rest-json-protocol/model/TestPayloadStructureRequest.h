@@ -80,12 +80,12 @@ class TestPayloadStructureRequest : public RestJsonProtocolRequest {
   ///@}
  private:
   Aws::String m_testId;
-  bool m_testIdHasBeenSet = false;
 
   PayloadConfig m_payloadConfig;
-  bool m_payloadConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_testIdHasBeenSet = false;
+  bool m_payloadConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -12,6 +12,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/Optional.h>
 
 #include <utility>
 
@@ -113,14 +114,14 @@ class AuditEvent {
   /**
    * <p>A list of Case Audit History event fields.</p>
    */
-  inline const Aws::Vector<AuditEventField>& GetFields() const { return m_fields; }
+  inline const Aws::Vector<Aws::Crt::Optional<AuditEventField>>& GetFields() const { return m_fields; }
   inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
-  template <typename FieldsT = Aws::Vector<AuditEventField>>
+  template <typename FieldsT = Aws::Vector<Aws::Crt::Optional<AuditEventField>>>
   void SetFields(FieldsT&& value) {
     m_fieldsHasBeenSet = true;
     m_fields = std::forward<FieldsT>(value);
   }
-  template <typename FieldsT = Aws::Vector<AuditEventField>>
+  template <typename FieldsT = Aws::Vector<Aws::Crt::Optional<AuditEventField>>>
   AuditEvent& WithFields(FieldsT&& value) {
     SetFields(std::forward<FieldsT>(value));
     return *this;
@@ -129,6 +130,11 @@ class AuditEvent {
   AuditEvent& AddFields(FieldsT&& value) {
     m_fieldsHasBeenSet = true;
     m_fields.emplace_back(std::forward<FieldsT>(value));
+    return *this;
+  }
+  inline AuditEvent& AddFields(Aws::Crt::Optional<AuditEventField> value) {
+    m_fieldsHasBeenSet = true;
+    m_fields.push_back(value);
     return *this;
   }
   ///@}
@@ -159,7 +165,7 @@ class AuditEvent {
 
   Aws::Utils::DateTime m_performedTime{};
 
-  Aws::Vector<AuditEventField> m_fields;
+  Aws::Vector<Aws::Crt::Optional<AuditEventField>> m_fields;
 
   AuditEventPerformedBy m_performedBy;
   bool m_eventIdHasBeenSet = false;

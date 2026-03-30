@@ -37,7 +37,11 @@ AuditEvent& AuditEvent::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("fields")) {
     Aws::Utils::Array<JsonView> fieldsJsonList = jsonValue.GetArray("fields");
     for (unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex) {
-      m_fields.push_back(fieldsJsonList[fieldsIndex].AsObject());
+      if (fieldsJsonList[fieldsIndex].IsNull()) {
+        m_fields.emplace_back();
+        continue;
+      }
+      m_fields.emplace_back(fieldsJsonList[fieldsIndex].AsObject());
     }
     m_fieldsHasBeenSet = true;
   }
@@ -70,7 +74,11 @@ JsonValue AuditEvent::Jsonize() const {
   if (m_fieldsHasBeenSet) {
     Aws::Utils::Array<JsonValue> fieldsJsonList(m_fields.size());
     for (unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex) {
-      fieldsJsonList[fieldsIndex].AsObject(m_fields[fieldsIndex].Jsonize());
+      if (!m_fields[fieldsIndex].has_value()) {
+        fieldsJsonList[fieldsIndex].AsNull();
+        continue;
+      }
+      fieldsJsonList[fieldsIndex].AsObject(m_fields[fieldsIndex]->Jsonize());
     }
     payload.WithArray("fields", std::move(fieldsJsonList));
   }

@@ -48,6 +48,8 @@
 #include <aws/json-protocol/model/PutWithContentEncodingRequest.h>
 #include <aws/json-protocol/model/SimpleScalarPropertiesRequest.h>
 #include <aws/json-protocol/model/SimpleScalarPropertiesResult.h>
+#include <aws/json-protocol/model/SparseNullsOperationRequest.h>
+#include <aws/json-protocol/model/SparseNullsOperationResult.h>
 /* End of service model headers required in JsonProtocolClient header */
 
 namespace Aws {
@@ -98,6 +100,7 @@ class OperationWithOptionalInputOutputRequest;
 class PutAndGetInlineDocumentsRequest;
 class PutWithContentEncodingRequest;
 class SimpleScalarPropertiesRequest;
+class SparseNullsOperationRequest;
 /* End of service model forward declarations required in JsonProtocolClient header */
 
 /* Service model Outcome class definitions */
@@ -118,6 +121,7 @@ typedef Aws::Utils::Outcome<OperationWithOptionalInputOutputResult, JsonProtocol
 typedef Aws::Utils::Outcome<PutAndGetInlineDocumentsResult, JsonProtocolError> PutAndGetInlineDocumentsOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, JsonProtocolError> PutWithContentEncodingOutcome;
 typedef Aws::Utils::Outcome<SimpleScalarPropertiesResult, JsonProtocolError> SimpleScalarPropertiesOutcome;
+typedef Aws::Utils::Outcome<SparseNullsOperationResult, JsonProtocolError> SparseNullsOperationOutcome;
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
@@ -138,6 +142,7 @@ typedef std::future<OperationWithOptionalInputOutputOutcome> OperationWithOption
 typedef std::future<PutAndGetInlineDocumentsOutcome> PutAndGetInlineDocumentsOutcomeCallable;
 typedef std::future<PutWithContentEncodingOutcome> PutWithContentEncodingOutcomeCallable;
 typedef std::future<SimpleScalarPropertiesOutcome> SimpleScalarPropertiesOutcomeCallable;
+typedef std::future<SparseNullsOperationOutcome> SparseNullsOperationOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
 
@@ -197,6 +202,9 @@ typedef std::function<void(const JsonProtocolClient*, const Model::PutWithConten
 typedef std::function<void(const JsonProtocolClient*, const Model::SimpleScalarPropertiesRequest&,
                            const Model::SimpleScalarPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SimpleScalarPropertiesResponseReceivedHandler;
+typedef std::function<void(const JsonProtocolClient*, const Model::SparseNullsOperationRequest&, const Model::SparseNullsOperationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    SparseNullsOperationResponseReceivedHandler;
 /* End of service model async handlers definitions */
 }  // namespace JsonProtocol
 }  // namespace Aws

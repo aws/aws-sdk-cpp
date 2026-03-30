@@ -16,7 +16,7 @@ AWS_PROTOCOL_TEST(JsonIntEnums, AwsJson11IntEnums) {
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.JsonIntEnums)"}};
+  mockRs.headers = {{"X-Amz-Target", R"(JsonProtocol.JsonIntEnums)"}, {"Content-Type", R"(application/x-amz-json-1.1)"}};
   mockRs.body =
       "ewogICAgImludEVudW0xIjogMSwKICAgICJpbnRFbnVtMiI6IDIsCiAgICAiaW50RW51bTMiOiAzLAogICAgImludEVudW1MaXN0IjogWwogICAgICAgIDEsCiAgICAgICAg"
       "MgogICAgXSwKICAgICJpbnRFbnVtU2V0IjogWwogICAgICAgIDEsCiAgICAgICAgMgogICAgXSwKICAgICJpbnRFbnVtTWFwIjogewogICAgICAgICJhIjogMSwKICAgICAg"

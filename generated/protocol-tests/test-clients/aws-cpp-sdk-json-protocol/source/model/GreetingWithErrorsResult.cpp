@@ -20,6 +20,7 @@ using namespace Aws;
 GreetingWithErrorsResult::GreetingWithErrorsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GreetingWithErrorsResult& GreetingWithErrorsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("greeting")) {
     m_greeting = jsonValue.GetString("greeting");

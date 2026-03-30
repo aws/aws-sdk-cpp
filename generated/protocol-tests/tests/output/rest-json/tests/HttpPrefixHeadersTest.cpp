@@ -16,7 +16,7 @@ AWS_PROTOCOL_TEST(HttpPrefixHeaders, RestJsonHttpPrefixHeadersArePresent) {
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"x-foo", R"(Foo)"}, {"x-foo-abc", R"(Abc value)"}, {"x-foo-def", R"(Def value)"}};
+  mockRs.headers = {{"x-foo", R"(Foo)"}, {"x-foo-def", R"(Def value)"}, {"x-foo-abc", R"(Abc value)"}};
   SetMockResponse(mockRs);
 
   HttpPrefixHeadersRequest request;

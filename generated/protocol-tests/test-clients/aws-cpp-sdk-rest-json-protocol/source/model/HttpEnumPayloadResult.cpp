@@ -20,6 +20,7 @@ using namespace Aws;
 HttpEnumPayloadResult::HttpEnumPayloadResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 HttpEnumPayloadResult& HttpEnumPayloadResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_payload = StringEnumMapper::GetStringEnumForName(jsonValue.GetString("payload"));
   m_payloadHasBeenSet = true;

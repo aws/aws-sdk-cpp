@@ -23,6 +23,7 @@ OperationWithOptionalInputOutputResult::OperationWithOptionalInputOutputResult(c
 
 OperationWithOptionalInputOutputResult& OperationWithOptionalInputOutputResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetString("Value");

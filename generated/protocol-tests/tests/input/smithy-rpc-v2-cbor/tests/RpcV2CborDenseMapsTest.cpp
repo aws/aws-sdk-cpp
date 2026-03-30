@@ -37,7 +37,7 @@ AWS_PROTOCOL_TEST(RpcV2CborDenseMaps, RpcV2CborMaps) {
   expectedRq.method = "POST";
   expectedRq.body = "oW5kZW5zZVN0cnVjdE1hcKJjZm9voWJoaWV0aGVyZWNiYXqhYmhpY2J5ZQ==";
   expectedRq.uri = "/service/RpcV2Protocol/operation/RpcV2CborDenseMaps";
-  expectedRq.headers = {{"Accept", R"(application/cbor)"}, {"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  expectedRq.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Accept", R"(application/cbor)"}, {"Content-Type", R"(application/cbor)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const RpcV2CborDenseMapsResult& result = outcome.GetResult();
@@ -76,7 +76,7 @@ AWS_PROTOCOL_TEST(RpcV2CborDenseMaps, RpcV2CborSerializesZeroValuesInMaps) {
   expectedRq.method = "POST";
   expectedRq.body = "om5kZW5zZU51bWJlck1hcKFheABvZGVuc2VCb29sZWFuTWFwoWF49A==";
   expectedRq.uri = "/service/RpcV2Protocol/operation/RpcV2CborDenseMaps";
-  expectedRq.headers = {{"Accept", R"(application/cbor)"}, {"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  expectedRq.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Accept", R"(application/cbor)"}, {"Content-Type", R"(application/cbor)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const RpcV2CborDenseMapsResult& result = outcome.GetResult();
@@ -110,7 +110,7 @@ AWS_PROTOCOL_TEST(RpcV2CborDenseMaps, RpcV2CborSerializesDenseSetMap) {
   expectedRq.method = "POST";
   expectedRq.body = "oWtkZW5zZVNldE1hcKJheIBheYJhYWFi";
   expectedRq.uri = "/service/RpcV2Protocol/operation/RpcV2CborDenseMaps";
-  expectedRq.headers = {{"Accept", R"(application/cbor)"}, {"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  expectedRq.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Accept", R"(application/cbor)"}, {"Content-Type", R"(application/cbor)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const RpcV2CborDenseMapsResult& result = outcome.GetResult();

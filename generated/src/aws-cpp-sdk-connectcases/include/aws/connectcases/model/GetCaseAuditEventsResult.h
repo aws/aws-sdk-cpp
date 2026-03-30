@@ -9,6 +9,7 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/Optional.h>
 
 #include <utility>
 
@@ -52,13 +53,13 @@ class GetCaseAuditEventsResult {
    * <p>A list of case audits where each represents a particular edit of the
    * case.</p>
    */
-  inline const Aws::Vector<AuditEvent>& GetAuditEvents() const { return m_auditEvents; }
-  template <typename AuditEventsT = Aws::Vector<AuditEvent>>
+  inline const Aws::Vector<Aws::Crt::Optional<AuditEvent>>& GetAuditEvents() const { return m_auditEvents; }
+  template <typename AuditEventsT = Aws::Vector<Aws::Crt::Optional<AuditEvent>>>
   void SetAuditEvents(AuditEventsT&& value) {
     m_auditEventsHasBeenSet = true;
     m_auditEvents = std::forward<AuditEventsT>(value);
   }
-  template <typename AuditEventsT = Aws::Vector<AuditEvent>>
+  template <typename AuditEventsT = Aws::Vector<Aws::Crt::Optional<AuditEvent>>>
   GetCaseAuditEventsResult& WithAuditEvents(AuditEventsT&& value) {
     SetAuditEvents(std::forward<AuditEventsT>(value));
     return *this;
@@ -67,6 +68,11 @@ class GetCaseAuditEventsResult {
   GetCaseAuditEventsResult& AddAuditEvents(AuditEventsT&& value) {
     m_auditEventsHasBeenSet = true;
     m_auditEvents.emplace_back(std::forward<AuditEventsT>(value));
+    return *this;
+  }
+  inline GetCaseAuditEventsResult& AddAuditEvents(Aws::Crt::Optional<AuditEvent> value) {
+    m_auditEventsHasBeenSet = true;
+    m_auditEvents.push_back(value);
     return *this;
   }
   ///@}
@@ -90,7 +96,7 @@ class GetCaseAuditEventsResult {
  private:
   Aws::String m_nextToken;
 
-  Aws::Vector<AuditEvent> m_auditEvents;
+  Aws::Vector<Aws::Crt::Optional<AuditEvent>> m_auditEvents;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;

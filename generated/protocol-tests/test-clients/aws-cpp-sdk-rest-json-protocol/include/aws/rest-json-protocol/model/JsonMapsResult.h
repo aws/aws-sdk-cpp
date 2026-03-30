@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -146,23 +147,26 @@ class JsonMapsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Map<Aws::String, GreetingStruct> m_denseStructMap;
-  bool m_denseStructMapHasBeenSet = false;
 
   Aws::Map<Aws::String, int> m_denseNumberMap;
-  bool m_denseNumberMapHasBeenSet = false;
 
   Aws::Map<Aws::String, bool> m_denseBooleanMap;
-  bool m_denseBooleanMapHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_denseStringMap;
-  bool m_denseStringMapHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_denseSetMap;
-  bool m_denseSetMapHasBeenSet = false;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_denseStructMapHasBeenSet = false;
+  bool m_denseNumberMapHasBeenSet = false;
+  bool m_denseBooleanMapHasBeenSet = false;
+  bool m_denseStringMapHasBeenSet = false;
+  bool m_denseSetMapHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

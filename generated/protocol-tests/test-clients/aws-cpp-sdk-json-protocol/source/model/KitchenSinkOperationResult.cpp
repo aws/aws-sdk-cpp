@@ -21,6 +21,7 @@ using namespace Aws;
 KitchenSinkOperationResult::KitchenSinkOperationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 KitchenSinkOperationResult& KitchenSinkOperationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Blob")) {
     m_blob = HashingUtils::Base64Decode(jsonValue.GetString("Blob"));
@@ -61,13 +62,13 @@ KitchenSinkOperationResult& KitchenSinkOperationResult::operator=(const Aws::Ama
   if (jsonValue.ValueExists("ListOfLists")) {
     Aws::Utils::Array<JsonView> listOfListsJsonList = jsonValue.GetArray("ListOfLists");
     for (unsigned listOfListsIndex = 0; listOfListsIndex < listOfListsJsonList.GetLength(); ++listOfListsIndex) {
-      Aws::Utils::Array<JsonView> listOfStringsJsonList = listOfListsJsonList[listOfListsIndex].AsArray();
-      Aws::Vector<Aws::String> listOfStringsList;
-      listOfStringsList.reserve((size_t)listOfStringsJsonList.GetLength());
-      for (unsigned listOfStringsIndex = 0; listOfStringsIndex < listOfStringsJsonList.GetLength(); ++listOfStringsIndex) {
-        listOfStringsList.push_back(listOfStringsJsonList[listOfStringsIndex].AsString());
+      Aws::Utils::Array<JsonView> listOfStrings2JsonList = listOfListsJsonList[listOfListsIndex].AsArray();
+      Aws::Vector<Aws::String> listOfStrings2List;
+      listOfStrings2List.reserve((size_t)listOfStrings2JsonList.GetLength());
+      for (unsigned listOfStrings2Index = 0; listOfStrings2Index < listOfStrings2JsonList.GetLength(); ++listOfStrings2Index) {
+        listOfStrings2List.push_back(listOfStrings2JsonList[listOfStrings2Index].AsString());
       }
-      m_listOfLists.push_back(std::move(listOfStringsList));
+      m_listOfLists.push_back(std::move(listOfStrings2List));
     }
     m_listOfListsHasBeenSet = true;
   }
@@ -75,12 +76,12 @@ KitchenSinkOperationResult& KitchenSinkOperationResult::operator=(const Aws::Ama
     Aws::Utils::Array<JsonView> listOfMapsOfStringsJsonList = jsonValue.GetArray("ListOfMapsOfStrings");
     for (unsigned listOfMapsOfStringsIndex = 0; listOfMapsOfStringsIndex < listOfMapsOfStringsJsonList.GetLength();
          ++listOfMapsOfStringsIndex) {
-      Aws::Map<Aws::String, JsonView> mapOfStringsJsonMap = listOfMapsOfStringsJsonList[listOfMapsOfStringsIndex].GetAllObjects();
-      Aws::Map<Aws::String, Aws::String> mapOfStringsMap;
-      for (auto& mapOfStringsItem : mapOfStringsJsonMap) {
-        mapOfStringsMap[mapOfStringsItem.first] = mapOfStringsItem.second.AsString();
+      Aws::Map<Aws::String, JsonView> mapOfStrings2JsonMap = listOfMapsOfStringsJsonList[listOfMapsOfStringsIndex].GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> mapOfStrings2Map;
+      for (auto& mapOfStrings2Item : mapOfStrings2JsonMap) {
+        mapOfStrings2Map[mapOfStrings2Item.first] = mapOfStrings2Item.second.AsString();
       }
-      m_listOfMapsOfStrings.push_back(std::move(mapOfStringsMap));
+      m_listOfMapsOfStrings.push_back(std::move(mapOfStrings2Map));
     }
     m_listOfMapsOfStringsHasBeenSet = true;
   }
@@ -105,25 +106,25 @@ KitchenSinkOperationResult& KitchenSinkOperationResult::operator=(const Aws::Ama
   if (jsonValue.ValueExists("MapOfListsOfStrings")) {
     Aws::Map<Aws::String, JsonView> mapOfListsOfStringsJsonMap = jsonValue.GetObject("MapOfListsOfStrings").GetAllObjects();
     for (auto& mapOfListsOfStringsItem : mapOfListsOfStringsJsonMap) {
-      Aws::Utils::Array<JsonView> listOfStringsJsonList = mapOfListsOfStringsItem.second.AsArray();
-      Aws::Vector<Aws::String> listOfStringsList;
-      listOfStringsList.reserve((size_t)listOfStringsJsonList.GetLength());
-      for (unsigned listOfStringsIndex = 0; listOfStringsIndex < listOfStringsJsonList.GetLength(); ++listOfStringsIndex) {
-        listOfStringsList.push_back(listOfStringsJsonList[listOfStringsIndex].AsString());
+      Aws::Utils::Array<JsonView> listOfStrings2JsonList = mapOfListsOfStringsItem.second.AsArray();
+      Aws::Vector<Aws::String> listOfStrings2List;
+      listOfStrings2List.reserve((size_t)listOfStrings2JsonList.GetLength());
+      for (unsigned listOfStrings2Index = 0; listOfStrings2Index < listOfStrings2JsonList.GetLength(); ++listOfStrings2Index) {
+        listOfStrings2List.push_back(listOfStrings2JsonList[listOfStrings2Index].AsString());
       }
-      m_mapOfListsOfStrings[mapOfListsOfStringsItem.first] = std::move(listOfStringsList);
+      m_mapOfListsOfStrings[mapOfListsOfStringsItem.first] = std::move(listOfStrings2List);
     }
     m_mapOfListsOfStringsHasBeenSet = true;
   }
   if (jsonValue.ValueExists("MapOfMaps")) {
     Aws::Map<Aws::String, JsonView> mapOfMapsJsonMap = jsonValue.GetObject("MapOfMaps").GetAllObjects();
     for (auto& mapOfMapsItem : mapOfMapsJsonMap) {
-      Aws::Map<Aws::String, JsonView> mapOfStringsJsonMap = mapOfMapsItem.second.GetAllObjects();
-      Aws::Map<Aws::String, Aws::String> mapOfStringsMap;
-      for (auto& mapOfStringsItem : mapOfStringsJsonMap) {
-        mapOfStringsMap[mapOfStringsItem.first] = mapOfStringsItem.second.AsString();
+      Aws::Map<Aws::String, JsonView> mapOfStrings2JsonMap = mapOfMapsItem.second.GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> mapOfStrings2Map;
+      for (auto& mapOfStrings2Item : mapOfStrings2JsonMap) {
+        mapOfStrings2Map[mapOfStrings2Item.first] = mapOfStrings2Item.second.AsString();
       }
-      m_mapOfMaps[mapOfMapsItem.first] = std::move(mapOfStringsMap);
+      m_mapOfMaps[mapOfMapsItem.first] = std::move(mapOfStrings2Map);
     }
     m_mapOfMapsHasBeenSet = true;
   }

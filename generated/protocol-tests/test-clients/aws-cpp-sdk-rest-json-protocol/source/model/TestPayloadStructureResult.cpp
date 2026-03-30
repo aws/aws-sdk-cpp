@@ -20,6 +20,7 @@ using namespace Aws;
 TestPayloadStructureResult::TestPayloadStructureResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 TestPayloadStructureResult& TestPayloadStructureResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_payloadConfig = jsonValue;
   m_payloadConfigHasBeenSet = true;

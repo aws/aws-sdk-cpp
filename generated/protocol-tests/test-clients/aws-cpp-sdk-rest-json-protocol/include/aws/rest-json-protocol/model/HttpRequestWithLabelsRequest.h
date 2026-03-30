@@ -151,27 +151,27 @@ class HttpRequestWithLabelsRequest : public RestJsonProtocolRequest {
   ///@}
  private:
   Aws::String m_string;
-  bool m_stringHasBeenSet = false;
 
   int m_short{0};
-  bool m_shortHasBeenSet = false;
 
   int m_integer{0};
-  bool m_integerHasBeenSet = false;
 
   long long m_long{0};
-  bool m_longHasBeenSet = false;
 
   double m_float{0.0};
-  bool m_floatHasBeenSet = false;
 
   double m_double{0.0};
-  bool m_doubleHasBeenSet = false;
 
   bool m_boolean{false};
-  bool m_booleanHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
+  bool m_stringHasBeenSet = false;
+  bool m_shortHasBeenSet = false;
+  bool m_integerHasBeenSet = false;
+  bool m_longHasBeenSet = false;
+  bool m_floatHasBeenSet = false;
+  bool m_doubleHasBeenSet = false;
+  bool m_booleanHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

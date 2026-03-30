@@ -63,9 +63,7 @@ ComplexError& ComplexError::operator=(const std::shared_ptr<Aws::Crt::Cbor::Cbor
               else if (initialKeyStr == "Nested") {
                 m_nested = ComplexNestedErrorData(decoder);
                 m_nestedHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -125,9 +123,7 @@ ComplexError& ComplexError::operator=(const std::shared_ptr<Aws::Crt::Cbor::Cbor
             else if (initialKeyStr == "Nested") {
               m_nested = ComplexNestedErrorData(decoder);
               m_nestedHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

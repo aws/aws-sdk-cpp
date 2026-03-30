@@ -516,8 +516,33 @@ class AWS_JSONPROTOCOL_API JsonProtocolClient : public Aws::Client::AWSJsonClien
     return SubmitAsync(&JsonProtocolClient::SimpleScalarProperties, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<JsonProtocolEndpointProviderBase>& accessEndpointProvider();
+  /**
+   *
+   */
+  virtual Model::SparseNullsOperationOutcome SparseNullsOperation(const Model::SparseNullsOperationRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for SparseNullsOperation that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename SparseNullsOperationRequestT = Model::SparseNullsOperationRequest>
+  Model::SparseNullsOperationOutcomeCallable SparseNullsOperationCallable(const SparseNullsOperationRequestT& request = {}) const {
+    return SubmitCallable(&JsonProtocolClient::SparseNullsOperation, request);
+  }
+
+  /**
+   * An Async wrapper for SparseNullsOperation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename SparseNullsOperationRequestT = Model::SparseNullsOperationRequest>
+  void SparseNullsOperationAsync(const SparseNullsOperationResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                 const SparseNullsOperationRequestT& request = {}) const {
+    return SubmitAsync(&JsonProtocolClient::SparseNullsOperation, request, handler, context);
+  }
+
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<JsonProtocolEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<JsonProtocolClient>;

@@ -35,14 +35,27 @@
 #end
 ## --- MAP VALUE ---
 #if($member.shape.mapValue.shape.structure)
+#if($member.shape.sparse)
+  ${spaces}  if(item.second.has_value()) {
+  ${spaces}    item.second.value().OutputToStream(ss, "${macro.mapLocationName}.", ${macro.varName}Count, ".${macro.valueLocationName}");
+  ${spaces}  }
+#else
   ${spaces}  item.second.OutputToStream(ss, "${macro.mapLocationName}.", ${macro.varName}Count, ".${macro.valueLocationName}");
+#end
 #else
 #set($macro.equals='=')
 #if($member.shape.mapValue.shape.list || $member.shape.mapValue.shape.map)
 #set($macro.equals='')
 #end
+#if($member.shape.sparse)
+  ${spaces}    if(item.second.has_value()) {
+  ${spaces}      ss << "${macro.mapLocationName}." << ${macro.varName}Count << ".${macro.valueLocationName}${macro.equals}"
+  ${spaces}          << #serializeQuerySingleElementToText($spaces, $member.shape.mapValue, "item.second.value()") << "&";
+  ${spaces}    }
+#else
   ${spaces}  ss << "${macro.mapLocationName}." << ${macro.varName}Count << ".${macro.valueLocationName}${macro.equals}"
   ${spaces}      << #serializeQuerySingleElementToText($spaces, $member.shape.mapValue, "item.second") << "&";
+#end
 #end
   ${spaces}  ${macro.varName}Count++;
   ${spaces}}

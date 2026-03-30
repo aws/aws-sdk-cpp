@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/json-protocol/JsonProtocol_EXPORTS.h>
 
@@ -55,11 +56,14 @@ class NullOperationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_string;
-  bool m_stringHasBeenSet = false;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_stringHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -20,6 +20,7 @@ using namespace Aws;
 PutAndGetInlineDocumentsResult::PutAndGetInlineDocumentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutAndGetInlineDocumentsResult& PutAndGetInlineDocumentsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("inlineDocument")) {
     m_inlineDocument = jsonValue.GetObject("inlineDocument");

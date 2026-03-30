@@ -37,8 +37,12 @@
 #include <aws/rpcv2protocol/model/RpcV2CborDenseMapsResult.h>
 #include <aws/rpcv2protocol/model/RpcV2CborListsRequest.h>
 #include <aws/rpcv2protocol/model/RpcV2CborListsResult.h>
+#include <aws/rpcv2protocol/model/RpcV2CborSparseMapsRequest.h>
+#include <aws/rpcv2protocol/model/RpcV2CborSparseMapsResult.h>
 #include <aws/rpcv2protocol/model/SimpleScalarPropertiesRequest.h>
 #include <aws/rpcv2protocol/model/SimpleScalarPropertiesResult.h>
+#include <aws/rpcv2protocol/model/SparseNullsOperationRequest.h>
+#include <aws/rpcv2protocol/model/SparseNullsOperationResult.h>
 /* End of service model headers required in RpcV2ProtocolClient header */
 
 namespace Aws {
@@ -81,7 +85,9 @@ class OptionalInputOutputRequest;
 class RecursiveShapesRequest;
 class RpcV2CborDenseMapsRequest;
 class RpcV2CborListsRequest;
+class RpcV2CborSparseMapsRequest;
 class SimpleScalarPropertiesRequest;
+class SparseNullsOperationRequest;
 /* End of service model forward declarations required in RpcV2ProtocolClient header */
 
 /* Service model Outcome class definitions */
@@ -94,7 +100,9 @@ typedef Aws::Utils::Outcome<OptionalInputOutputResult, RpcV2ProtocolError> Optio
 typedef Aws::Utils::Outcome<RecursiveShapesResult, RpcV2ProtocolError> RecursiveShapesOutcome;
 typedef Aws::Utils::Outcome<RpcV2CborDenseMapsResult, RpcV2ProtocolError> RpcV2CborDenseMapsOutcome;
 typedef Aws::Utils::Outcome<RpcV2CborListsResult, RpcV2ProtocolError> RpcV2CborListsOutcome;
+typedef Aws::Utils::Outcome<RpcV2CborSparseMapsResult, RpcV2ProtocolError> RpcV2CborSparseMapsOutcome;
 typedef Aws::Utils::Outcome<SimpleScalarPropertiesResult, RpcV2ProtocolError> SimpleScalarPropertiesOutcome;
+typedef Aws::Utils::Outcome<SparseNullsOperationResult, RpcV2ProtocolError> SparseNullsOperationOutcome;
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
@@ -107,7 +115,9 @@ typedef std::future<OptionalInputOutputOutcome> OptionalInputOutputOutcomeCallab
 typedef std::future<RecursiveShapesOutcome> RecursiveShapesOutcomeCallable;
 typedef std::future<RpcV2CborDenseMapsOutcome> RpcV2CborDenseMapsOutcomeCallable;
 typedef std::future<RpcV2CborListsOutcome> RpcV2CborListsOutcomeCallable;
+typedef std::future<RpcV2CborSparseMapsOutcome> RpcV2CborSparseMapsOutcomeCallable;
 typedef std::future<SimpleScalarPropertiesOutcome> SimpleScalarPropertiesOutcomeCallable;
+typedef std::future<SparseNullsOperationOutcome> SparseNullsOperationOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
 
@@ -141,9 +151,15 @@ typedef std::function<void(const RpcV2ProtocolClient*, const Model::RpcV2CborDen
 typedef std::function<void(const RpcV2ProtocolClient*, const Model::RpcV2CborListsRequest&, const Model::RpcV2CborListsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     RpcV2CborListsResponseReceivedHandler;
+typedef std::function<void(const RpcV2ProtocolClient*, const Model::RpcV2CborSparseMapsRequest&, const Model::RpcV2CborSparseMapsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    RpcV2CborSparseMapsResponseReceivedHandler;
 typedef std::function<void(const RpcV2ProtocolClient*, const Model::SimpleScalarPropertiesRequest&,
                            const Model::SimpleScalarPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SimpleScalarPropertiesResponseReceivedHandler;
+typedef std::function<void(const RpcV2ProtocolClient*, const Model::SparseNullsOperationRequest&, const Model::SparseNullsOperationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    SparseNullsOperationResponseReceivedHandler;
 /* End of service model async handlers definitions */
 }  // namespace RpcV2Protocol
 }  // namespace Aws

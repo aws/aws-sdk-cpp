@@ -25,8 +25,8 @@ AWS_PROTOCOL_TEST(EndpointWithHostLabelOperation, AwsJson11EndpointTraitWithHost
   expectedRq.body = "eyJsYWJlbCI6ICJiYXIifQ==";
   expectedRq.uri = "/";
   expectedRq.host = "foo.bar.example.com";
-  expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"},
-                        {"X-Amz-Target", R"(JsonProtocol.EndpointWithHostLabelOperation)"}};
+  expectedRq.headers = {{"X-Amz-Target", R"(JsonProtocol.EndpointWithHostLabelOperation)"},
+                        {"Content-Type", R"(application/x-amz-json-1.1)"}};
   ValidateRequestSent(expectedRq);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

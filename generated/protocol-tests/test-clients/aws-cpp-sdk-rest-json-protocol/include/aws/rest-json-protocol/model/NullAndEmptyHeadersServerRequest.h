@@ -102,15 +102,15 @@ class NullAndEmptyHeadersServerRequest : public RestJsonProtocolRequest {
   ///@}
  private:
   Aws::String m_a;
-  bool m_aHasBeenSet = false;
 
   Aws::String m_b;
-  bool m_bHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_c;
-  bool m_cHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aHasBeenSet = false;
+  bool m_bHasBeenSet = false;
+  bool m_cHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

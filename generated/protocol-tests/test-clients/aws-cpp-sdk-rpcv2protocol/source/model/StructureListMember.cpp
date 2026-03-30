@@ -88,9 +88,7 @@ StructureListMember& StructureListMember::operator=(const std::shared_ptr<Aws::C
                   }
                 }
                 m_bHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -175,9 +173,7 @@ StructureListMember& StructureListMember::operator=(const std::shared_ptr<Aws::C
                 }
               }
               m_bHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

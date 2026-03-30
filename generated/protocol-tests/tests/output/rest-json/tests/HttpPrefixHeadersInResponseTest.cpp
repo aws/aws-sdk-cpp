@@ -16,7 +16,7 @@ AWS_PROTOCOL_TEST(HttpPrefixHeadersInResponse, HttpPrefixHeadersResponse) {
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"hello", R"(Hello)"}, {"x-foo", R"(Foo)"}};
+  mockRs.headers = {{"x-foo", R"(Foo)"}, {"hello", R"(Hello)"}};
   SetMockResponse(mockRs);
 
   HttpPrefixHeadersInResponseRequest request;

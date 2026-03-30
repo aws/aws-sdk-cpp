@@ -20,6 +20,7 @@ using namespace Aws;
 NullOperationResult::NullOperationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 NullOperationResult& NullOperationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("string")) {
     m_string = jsonValue.GetString("string");

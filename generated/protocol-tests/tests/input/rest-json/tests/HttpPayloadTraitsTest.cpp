@@ -27,7 +27,7 @@ AWS_PROTOCOL_TEST(HttpPayloadTraits, RestJsonHttpPayloadTraitsWithBlob) {
   expectedRq.method = "POST";
   expectedRq.body = "YmxvYmJ5IGJsb2IgYmxvYg==";
   expectedRq.uri = "/HttpPayloadTraits";
-  expectedRq.headers = {{"Content-Type", R"(application/octet-stream)"}, {"X-Foo", R"(Foo)"}};
+  expectedRq.headers = {{"X-Foo", R"(Foo)"}, {"Content-Type", R"(application/octet-stream)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();

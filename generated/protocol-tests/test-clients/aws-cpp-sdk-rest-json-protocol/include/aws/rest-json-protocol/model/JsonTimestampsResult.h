@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rest-json-protocol/RestJsonProtocol_EXPORTS.h>
@@ -146,29 +147,32 @@ class JsonTimestampsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::DateTime m_normal{};
-  bool m_normalHasBeenSet = false;
 
   Aws::Utils::DateTime m_dateTime{};
-  bool m_dateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_dateTimeOnTarget{};
-  bool m_dateTimeOnTargetHasBeenSet = false;
 
   Aws::Utils::DateTime m_epochSeconds{};
-  bool m_epochSecondsHasBeenSet = false;
 
   Aws::Utils::DateTime m_epochSecondsOnTarget{};
-  bool m_epochSecondsOnTargetHasBeenSet = false;
 
   Aws::Utils::DateTime m_httpDate{};
-  bool m_httpDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_httpDateOnTarget{};
-  bool m_httpDateOnTargetHasBeenSet = false;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_normalHasBeenSet = false;
+  bool m_dateTimeHasBeenSet = false;
+  bool m_dateTimeOnTargetHasBeenSet = false;
+  bool m_epochSecondsHasBeenSet = false;
+  bool m_epochSecondsOnTargetHasBeenSet = false;
+  bool m_httpDateHasBeenSet = false;
+  bool m_httpDateOnTargetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -186,24 +186,24 @@ class OmitsSerializingEmptyListsRequest : public RestJsonProtocolRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_queryStringList;
-  bool m_queryStringListHasBeenSet = false;
 
   Aws::Vector<int> m_queryIntegerList;
-  bool m_queryIntegerListHasBeenSet = false;
 
   Aws::Vector<double> m_queryDoubleList;
-  bool m_queryDoubleListHasBeenSet = false;
 
   Aws::Vector<bool> m_queryBooleanList;
-  bool m_queryBooleanListHasBeenSet = false;
 
   Aws::Vector<Aws::Utils::DateTime> m_queryTimestampList;
-  bool m_queryTimestampListHasBeenSet = false;
 
   Aws::Vector<FooEnum> m_queryEnumList;
-  bool m_queryEnumListHasBeenSet = false;
 
   Aws::Vector<int> m_queryIntegerEnumList;
+  bool m_queryStringListHasBeenSet = false;
+  bool m_queryIntegerListHasBeenSet = false;
+  bool m_queryDoubleListHasBeenSet = false;
+  bool m_queryBooleanListHasBeenSet = false;
+  bool m_queryTimestampListHasBeenSet = false;
+  bool m_queryEnumListHasBeenSet = false;
   bool m_queryIntegerEnumListHasBeenSet = false;
 };
 

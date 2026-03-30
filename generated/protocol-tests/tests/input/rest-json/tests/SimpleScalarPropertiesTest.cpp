@@ -36,7 +36,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RestJsonSimpleScalarProperties) {
       "eXRlVmFsdWUiOiAxLAogICAgInNob3J0VmFsdWUiOiAyLAogICAgImludGVnZXJWYWx1ZSI6IDMsCiAgICAibG9uZ1ZhbHVlIjogNCwKICAgICJmbG9hdFZhbHVlIjogNS41"
       "LAogICAgIkRvdWJsZURyaWJibGUiOiA2LjUKfQ==";
   expectedRq.uri = "/SimpleScalarProperties";
-  expectedRq.headers = {{"Content-Type", R"(application/json)"}, {"X-Foo", R"(Foo)"}};
+  expectedRq.headers = {{"X-Foo", R"(Foo)"}, {"Content-Type", R"(application/json)"}};
   ValidateRequestSent(expectedRq);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

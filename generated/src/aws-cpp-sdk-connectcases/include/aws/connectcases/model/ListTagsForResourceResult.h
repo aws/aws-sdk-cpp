@@ -8,6 +8,7 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/Optional.h>
 
 #include <utility>
 
@@ -33,21 +34,26 @@ class ListTagsForResourceResult {
    * <p>A map of of key-value pairs that represent tags on a resource. Tags are used
    * to organize, track, or control access for this resource.</p>
    */
-  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
-  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  inline const Aws::Map<Aws::String, Aws::Crt::Optional<Aws::String>>& GetTags() const { return m_tags; }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::Crt::Optional<Aws::String>>>
   void SetTags(TagsT&& value) {
     m_tagsHasBeenSet = true;
     m_tags = std::forward<TagsT>(value);
   }
-  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  template <typename TagsT = Aws::Map<Aws::String, Aws::Crt::Optional<Aws::String>>>
   ListTagsForResourceResult& WithTags(TagsT&& value) {
     SetTags(std::forward<TagsT>(value));
     return *this;
   }
-  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::Crt::Optional<Aws::String>>
   ListTagsForResourceResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
     m_tagsHasBeenSet = true;
     m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
+    return *this;
+  }
+  inline ListTagsForResourceResult& AddTags(Aws::String key, Aws::Crt::Optional<Aws::String> value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace(key, value);
     return *this;
   }
   ///@}
@@ -69,7 +75,7 @@ class ListTagsForResourceResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
-  Aws::Map<Aws::String, Aws::String> m_tags;
+  Aws::Map<Aws::String, Aws::Crt::Optional<Aws::String>> m_tags;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;

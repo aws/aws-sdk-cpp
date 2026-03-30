@@ -13,9 +13,6 @@
 
 namespace Aws {
 namespace RestJsonProtocol {
-/**
- * <p>A REST JSON service that sends JSON requests and responses.</p>
- */
 class AWS_RESTJSONPROTOCOL_API RestJsonProtocolClient : public Aws::Client::AWSJsonClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<RestJsonProtocolClient> {
  public:
@@ -491,6 +488,34 @@ class AWS_RESTJSONPROTOCOL_API RestJsonProtocolClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Clients that perform this test extract all headers from the
+   * response.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/HttpEmptyPrefixHeaders">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::HttpEmptyPrefixHeadersOutcome HttpEmptyPrefixHeaders(const Model::HttpEmptyPrefixHeadersRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for HttpEmptyPrefixHeaders that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename HttpEmptyPrefixHeadersRequestT = Model::HttpEmptyPrefixHeadersRequest>
+  Model::HttpEmptyPrefixHeadersOutcomeCallable HttpEmptyPrefixHeadersCallable(const HttpEmptyPrefixHeadersRequestT& request = {}) const {
+    return SubmitCallable(&RestJsonProtocolClient::HttpEmptyPrefixHeaders, request);
+  }
+
+  /**
+   * An Async wrapper for HttpEmptyPrefixHeaders that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename HttpEmptyPrefixHeadersRequestT = Model::HttpEmptyPrefixHeadersRequest>
+  void HttpEmptyPrefixHeadersAsync(const HttpEmptyPrefixHeadersResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                   const HttpEmptyPrefixHeadersRequestT& request = {}) const {
+    return SubmitAsync(&RestJsonProtocolClient::HttpEmptyPrefixHeaders, request, handler, context);
+  }
+
+  /**
    *
    */
   virtual Model::HttpEnumPayloadOutcome HttpEnumPayload(const Model::HttpEnumPayloadRequest& request = {}) const;
@@ -656,6 +681,36 @@ class AWS_RESTJSONPROTOCOL_API RestJsonProtocolClient : public Aws::Client::AWSJ
                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                         const HttpPrefixHeadersInResponseRequestT& request = {}) const {
     return SubmitAsync(&RestJsonProtocolClient::HttpPrefixHeadersInResponse, request, handler, context);
+  }
+
+  /**
+   * <p>This example tests httpQueryParams when no other query parameters
+   * exist.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/HttpQueryParamsOnlyOperation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::HttpQueryParamsOnlyOperationOutcome HttpQueryParamsOnlyOperation(
+      const Model::HttpQueryParamsOnlyOperationRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for HttpQueryParamsOnlyOperation that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename HttpQueryParamsOnlyOperationRequestT = Model::HttpQueryParamsOnlyOperationRequest>
+  Model::HttpQueryParamsOnlyOperationOutcomeCallable HttpQueryParamsOnlyOperationCallable(
+      const HttpQueryParamsOnlyOperationRequestT& request = {}) const {
+    return SubmitCallable(&RestJsonProtocolClient::HttpQueryParamsOnlyOperation, request);
+  }
+
+  /**
+   * An Async wrapper for HttpQueryParamsOnlyOperation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename HttpQueryParamsOnlyOperationRequestT = Model::HttpQueryParamsOnlyOperationRequest>
+  void HttpQueryParamsOnlyOperationAsync(const HttpQueryParamsOnlyOperationResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                         const HttpQueryParamsOnlyOperationRequestT& request = {}) const {
+    return SubmitAsync(&RestJsonProtocolClient::HttpQueryParamsOnlyOperation, request, handler, context);
   }
 
   /**
@@ -1541,6 +1596,56 @@ class AWS_RESTJSONPROTOCOL_API RestJsonProtocolClient : public Aws::Client::AWSJ
   }
 
   /**
+   *
+   */
+  virtual Model::SparseJsonListsOutcome SparseJsonLists(const Model::SparseJsonListsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for SparseJsonLists that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename SparseJsonListsRequestT = Model::SparseJsonListsRequest>
+  Model::SparseJsonListsOutcomeCallable SparseJsonListsCallable(const SparseJsonListsRequestT& request = {}) const {
+    return SubmitCallable(&RestJsonProtocolClient::SparseJsonLists, request);
+  }
+
+  /**
+   * An Async wrapper for SparseJsonLists that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename SparseJsonListsRequestT = Model::SparseJsonListsRequest>
+  void SparseJsonListsAsync(const SparseJsonListsResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                            const SparseJsonListsRequestT& request = {}) const {
+    return SubmitAsync(&RestJsonProtocolClient::SparseJsonLists, request, handler, context);
+  }
+
+  /**
+   * <p>This example tests sparse map serialization.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/SparseJsonMaps">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SparseJsonMapsOutcome SparseJsonMaps(const Model::SparseJsonMapsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for SparseJsonMaps that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename SparseJsonMapsRequestT = Model::SparseJsonMapsRequest>
+  Model::SparseJsonMapsOutcomeCallable SparseJsonMapsCallable(const SparseJsonMapsRequestT& request = {}) const {
+    return SubmitCallable(&RestJsonProtocolClient::SparseJsonMaps, request);
+  }
+
+  /**
+   * An Async wrapper for SparseJsonMaps that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename SparseJsonMapsRequestT = Model::SparseJsonMapsRequest>
+  void SparseJsonMapsAsync(const SparseJsonMapsResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                           const SparseJsonMapsRequestT& request = {}) const {
+    return SubmitAsync(&RestJsonProtocolClient::SparseJsonMaps, request, handler, context);
+  }
+
+  /**
    * <p>This example operation serializes a structure in the HTTP body.</p> <p>It
    * should ensure Content-Type: application/json is used in all requests and that an
    * &quot;empty&quot; body is an empty JSON document ({}).</p><p><h3>See Also:</h3>
@@ -1806,8 +1911,8 @@ class AWS_RESTJSONPROTOCOL_API RestJsonProtocolClient : public Aws::Client::AWSJ
     return SubmitAsync(&RestJsonProtocolClient::UnitInputAndOutput, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<RestJsonProtocolEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<RestJsonProtocolEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<RestJsonProtocolClient>;
