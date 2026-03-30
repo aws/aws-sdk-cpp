@@ -217,7 +217,8 @@ CreateAppOutcome AmplifyClient::CreateApp(const CreateAppRequest& request) const
     endpointResolutionOutcome.GetResult().AddPathSegments("/apps");
   };
 
-  return CreateAppOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAppOutcome(result.GetResultWithOwnership()) : CreateAppOutcome(std::move(result.GetError()));
 }
 
 CreateBackendEnvironmentOutcome AmplifyClient::CreateBackendEnvironment(const CreateBackendEnvironmentRequest& request) const {
@@ -234,7 +235,9 @@ CreateBackendEnvironmentOutcome AmplifyClient::CreateBackendEnvironment(const Cr
     endpointResolutionOutcome.GetResult().AddPathSegments("/backendenvironments");
   };
 
-  return CreateBackendEnvironmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBackendEnvironmentOutcome(result.GetResultWithOwnership())
+                            : CreateBackendEnvironmentOutcome(std::move(result.GetError()));
 }
 
 CreateBranchOutcome AmplifyClient::CreateBranch(const CreateBranchRequest& request) const {
@@ -251,7 +254,8 @@ CreateBranchOutcome AmplifyClient::CreateBranch(const CreateBranchRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/branches");
   };
 
-  return CreateBranchOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBranchOutcome(result.GetResultWithOwnership()) : CreateBranchOutcome(std::move(result.GetError()));
 }
 
 CreateDeploymentOutcome AmplifyClient::CreateDeployment(const CreateDeploymentRequest& request) const {
@@ -275,7 +279,9 @@ CreateDeploymentOutcome AmplifyClient::CreateDeployment(const CreateDeploymentRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/deployments");
   };
 
-  return CreateDeploymentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDeploymentOutcome(result.GetResultWithOwnership())
+                            : CreateDeploymentOutcome(std::move(result.GetError()));
 }
 
 CreateDomainAssociationOutcome AmplifyClient::CreateDomainAssociation(const CreateDomainAssociationRequest& request) const {
@@ -292,7 +298,9 @@ CreateDomainAssociationOutcome AmplifyClient::CreateDomainAssociation(const Crea
     endpointResolutionOutcome.GetResult().AddPathSegments("/domains");
   };
 
-  return CreateDomainAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDomainAssociationOutcome(result.GetResultWithOwnership())
+                            : CreateDomainAssociationOutcome(std::move(result.GetError()));
 }
 
 CreateWebhookOutcome AmplifyClient::CreateWebhook(const CreateWebhookRequest& request) const {
@@ -309,7 +317,8 @@ CreateWebhookOutcome AmplifyClient::CreateWebhook(const CreateWebhookRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/webhooks");
   };
 
-  return CreateWebhookOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWebhookOutcome(result.GetResultWithOwnership()) : CreateWebhookOutcome(std::move(result.GetError()));
 }
 
 DeleteAppOutcome AmplifyClient::DeleteApp(const DeleteAppRequest& request) const {
@@ -325,7 +334,8 @@ DeleteAppOutcome AmplifyClient::DeleteApp(const DeleteAppRequest& request) const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
   };
 
-  return DeleteAppOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAppOutcome(result.GetResultWithOwnership()) : DeleteAppOutcome(std::move(result.GetError()));
 }
 
 DeleteBackendEnvironmentOutcome AmplifyClient::DeleteBackendEnvironment(const DeleteBackendEnvironmentRequest& request) const {
@@ -348,7 +358,9 @@ DeleteBackendEnvironmentOutcome AmplifyClient::DeleteBackendEnvironment(const De
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentName());
   };
 
-  return DeleteBackendEnvironmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBackendEnvironmentOutcome(result.GetResultWithOwnership())
+                            : DeleteBackendEnvironmentOutcome(std::move(result.GetError()));
 }
 
 DeleteBranchOutcome AmplifyClient::DeleteBranch(const DeleteBranchRequest& request) const {
@@ -371,7 +383,8 @@ DeleteBranchOutcome AmplifyClient::DeleteBranch(const DeleteBranchRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBranchName());
   };
 
-  return DeleteBranchOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBranchOutcome(result.GetResultWithOwnership()) : DeleteBranchOutcome(std::move(result.GetError()));
 }
 
 DeleteDomainAssociationOutcome AmplifyClient::DeleteDomainAssociation(const DeleteDomainAssociationRequest& request) const {
@@ -394,7 +407,9 @@ DeleteDomainAssociationOutcome AmplifyClient::DeleteDomainAssociation(const Dele
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
   };
 
-  return DeleteDomainAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDomainAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteDomainAssociationOutcome(std::move(result.GetError()));
 }
 
 DeleteJobOutcome AmplifyClient::DeleteJob(const DeleteJobRequest& request) const {
@@ -424,7 +439,8 @@ DeleteJobOutcome AmplifyClient::DeleteJob(const DeleteJobRequest& request) const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return DeleteJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteJobOutcome(result.GetResultWithOwnership()) : DeleteJobOutcome(std::move(result.GetError()));
 }
 
 DeleteWebhookOutcome AmplifyClient::DeleteWebhook(const DeleteWebhookRequest& request) const {
@@ -440,7 +456,8 @@ DeleteWebhookOutcome AmplifyClient::DeleteWebhook(const DeleteWebhookRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWebhookId());
   };
 
-  return DeleteWebhookOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteWebhookOutcome(result.GetResultWithOwnership()) : DeleteWebhookOutcome(std::move(result.GetError()));
 }
 
 GenerateAccessLogsOutcome AmplifyClient::GenerateAccessLogs(const GenerateAccessLogsRequest& request) const {
@@ -457,7 +474,9 @@ GenerateAccessLogsOutcome AmplifyClient::GenerateAccessLogs(const GenerateAccess
     endpointResolutionOutcome.GetResult().AddPathSegments("/accesslogs");
   };
 
-  return GenerateAccessLogsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GenerateAccessLogsOutcome(result.GetResultWithOwnership())
+                            : GenerateAccessLogsOutcome(std::move(result.GetError()));
 }
 
 GetAppOutcome AmplifyClient::GetApp(const GetAppRequest& request) const {
@@ -473,7 +492,8 @@ GetAppOutcome AmplifyClient::GetApp(const GetAppRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
   };
 
-  return GetAppOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAppOutcome(result.GetResultWithOwnership()) : GetAppOutcome(std::move(result.GetError()));
 }
 
 GetArtifactUrlOutcome AmplifyClient::GetArtifactUrl(const GetArtifactUrlRequest& request) const {
@@ -489,7 +509,8 @@ GetArtifactUrlOutcome AmplifyClient::GetArtifactUrl(const GetArtifactUrlRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArtifactId());
   };
 
-  return GetArtifactUrlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetArtifactUrlOutcome(result.GetResultWithOwnership()) : GetArtifactUrlOutcome(std::move(result.GetError()));
 }
 
 GetBackendEnvironmentOutcome AmplifyClient::GetBackendEnvironment(const GetBackendEnvironmentRequest& request) const {
@@ -512,7 +533,9 @@ GetBackendEnvironmentOutcome AmplifyClient::GetBackendEnvironment(const GetBacke
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentName());
   };
 
-  return GetBackendEnvironmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBackendEnvironmentOutcome(result.GetResultWithOwnership())
+                            : GetBackendEnvironmentOutcome(std::move(result.GetError()));
 }
 
 GetBranchOutcome AmplifyClient::GetBranch(const GetBranchRequest& request) const {
@@ -535,7 +558,8 @@ GetBranchOutcome AmplifyClient::GetBranch(const GetBranchRequest& request) const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBranchName());
   };
 
-  return GetBranchOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBranchOutcome(result.GetResultWithOwnership()) : GetBranchOutcome(std::move(result.GetError()));
 }
 
 GetDomainAssociationOutcome AmplifyClient::GetDomainAssociation(const GetDomainAssociationRequest& request) const {
@@ -558,7 +582,9 @@ GetDomainAssociationOutcome AmplifyClient::GetDomainAssociation(const GetDomainA
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
   };
 
-  return GetDomainAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDomainAssociationOutcome(result.GetResultWithOwnership())
+                            : GetDomainAssociationOutcome(std::move(result.GetError()));
 }
 
 GetJobOutcome AmplifyClient::GetJob(const GetJobRequest& request) const {
@@ -588,7 +614,8 @@ GetJobOutcome AmplifyClient::GetJob(const GetJobRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return GetJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetJobOutcome(result.GetResultWithOwnership()) : GetJobOutcome(std::move(result.GetError()));
 }
 
 GetWebhookOutcome AmplifyClient::GetWebhook(const GetWebhookRequest& request) const {
@@ -604,7 +631,8 @@ GetWebhookOutcome AmplifyClient::GetWebhook(const GetWebhookRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWebhookId());
   };
 
-  return GetWebhookOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetWebhookOutcome(result.GetResultWithOwnership()) : GetWebhookOutcome(std::move(result.GetError()));
 }
 
 ListAppsOutcome AmplifyClient::ListApps(const ListAppsRequest& request) const {
@@ -613,7 +641,8 @@ ListAppsOutcome AmplifyClient::ListApps(const ListAppsRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/apps");
   };
 
-  return ListAppsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAppsOutcome(result.GetResultWithOwnership()) : ListAppsOutcome(std::move(result.GetError()));
 }
 
 ListArtifactsOutcome AmplifyClient::ListArtifacts(const ListArtifactsRequest& request) const {
@@ -644,7 +673,8 @@ ListArtifactsOutcome AmplifyClient::ListArtifacts(const ListArtifactsRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/artifacts");
   };
 
-  return ListArtifactsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListArtifactsOutcome(result.GetResultWithOwnership()) : ListArtifactsOutcome(std::move(result.GetError()));
 }
 
 ListBackendEnvironmentsOutcome AmplifyClient::ListBackendEnvironments(const ListBackendEnvironmentsRequest& request) const {
@@ -661,7 +691,9 @@ ListBackendEnvironmentsOutcome AmplifyClient::ListBackendEnvironments(const List
     endpointResolutionOutcome.GetResult().AddPathSegments("/backendenvironments");
   };
 
-  return ListBackendEnvironmentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListBackendEnvironmentsOutcome(result.GetResultWithOwnership())
+                            : ListBackendEnvironmentsOutcome(std::move(result.GetError()));
 }
 
 ListBranchesOutcome AmplifyClient::ListBranches(const ListBranchesRequest& request) const {
@@ -678,7 +710,8 @@ ListBranchesOutcome AmplifyClient::ListBranches(const ListBranchesRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/branches");
   };
 
-  return ListBranchesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListBranchesOutcome(result.GetResultWithOwnership()) : ListBranchesOutcome(std::move(result.GetError()));
 }
 
 ListDomainAssociationsOutcome AmplifyClient::ListDomainAssociations(const ListDomainAssociationsRequest& request) const {
@@ -695,7 +728,9 @@ ListDomainAssociationsOutcome AmplifyClient::ListDomainAssociations(const ListDo
     endpointResolutionOutcome.GetResult().AddPathSegments("/domains");
   };
 
-  return ListDomainAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDomainAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListDomainAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListJobsOutcome AmplifyClient::ListJobs(const ListJobsRequest& request) const {
@@ -719,7 +754,8 @@ ListJobsOutcome AmplifyClient::ListJobs(const ListJobsRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobs");
   };
 
-  return ListJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListJobsOutcome(result.GetResultWithOwnership()) : ListJobsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome AmplifyClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -735,7 +771,9 @@ ListTagsForResourceOutcome AmplifyClient::ListTagsForResource(const ListTagsForR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListWebhooksOutcome AmplifyClient::ListWebhooks(const ListWebhooksRequest& request) const {
@@ -752,7 +790,8 @@ ListWebhooksOutcome AmplifyClient::ListWebhooks(const ListWebhooksRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/webhooks");
   };
 
-  return ListWebhooksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListWebhooksOutcome(result.GetResultWithOwnership()) : ListWebhooksOutcome(std::move(result.GetError()));
 }
 
 StartDeploymentOutcome AmplifyClient::StartDeployment(const StartDeploymentRequest& request) const {
@@ -776,7 +815,9 @@ StartDeploymentOutcome AmplifyClient::StartDeployment(const StartDeploymentReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/deployments/start");
   };
 
-  return StartDeploymentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDeploymentOutcome(result.GetResultWithOwnership())
+                            : StartDeploymentOutcome(std::move(result.GetError()));
 }
 
 StartJobOutcome AmplifyClient::StartJob(const StartJobRequest& request) const {
@@ -800,7 +841,8 @@ StartJobOutcome AmplifyClient::StartJob(const StartJobRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobs");
   };
 
-  return StartJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartJobOutcome(result.GetResultWithOwnership()) : StartJobOutcome(std::move(result.GetError()));
 }
 
 StopJobOutcome AmplifyClient::StopJob(const StopJobRequest& request) const {
@@ -831,7 +873,8 @@ StopJobOutcome AmplifyClient::StopJob(const StopJobRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/stop");
   };
 
-  return StopJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? StopJobOutcome(result.GetResultWithOwnership()) : StopJobOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome AmplifyClient::TagResource(const TagResourceRequest& request) const {
@@ -847,7 +890,8 @@ TagResourceOutcome AmplifyClient::TagResource(const TagResourceRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome AmplifyClient::UntagResource(const UntagResourceRequest& request) const {
@@ -868,7 +912,8 @@ UntagResourceOutcome AmplifyClient::UntagResource(const UntagResourceRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAppOutcome AmplifyClient::UpdateApp(const UpdateAppRequest& request) const {
@@ -884,7 +929,8 @@ UpdateAppOutcome AmplifyClient::UpdateApp(const UpdateAppRequest& request) const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
   };
 
-  return UpdateAppOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAppOutcome(result.GetResultWithOwnership()) : UpdateAppOutcome(std::move(result.GetError()));
 }
 
 UpdateBranchOutcome AmplifyClient::UpdateBranch(const UpdateBranchRequest& request) const {
@@ -907,7 +953,8 @@ UpdateBranchOutcome AmplifyClient::UpdateBranch(const UpdateBranchRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBranchName());
   };
 
-  return UpdateBranchOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateBranchOutcome(result.GetResultWithOwnership()) : UpdateBranchOutcome(std::move(result.GetError()));
 }
 
 UpdateDomainAssociationOutcome AmplifyClient::UpdateDomainAssociation(const UpdateDomainAssociationRequest& request) const {
@@ -930,7 +977,9 @@ UpdateDomainAssociationOutcome AmplifyClient::UpdateDomainAssociation(const Upda
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
   };
 
-  return UpdateDomainAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDomainAssociationOutcome(result.GetResultWithOwnership())
+                            : UpdateDomainAssociationOutcome(std::move(result.GetError()));
 }
 
 UpdateWebhookOutcome AmplifyClient::UpdateWebhook(const UpdateWebhookRequest& request) const {
@@ -946,5 +995,6 @@ UpdateWebhookOutcome AmplifyClient::UpdateWebhook(const UpdateWebhookRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWebhookId());
   };
 
-  return UpdateWebhookOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateWebhookOutcome(result.GetResultWithOwnership()) : UpdateWebhookOutcome(std::move(result.GetError()));
 }

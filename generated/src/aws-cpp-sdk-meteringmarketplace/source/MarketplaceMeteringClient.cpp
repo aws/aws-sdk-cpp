@@ -181,17 +181,23 @@ MarketplaceMeteringClient::InvokeOperationOutcome MarketplaceMeteringClient::Inv
 }
 
 BatchMeterUsageOutcome MarketplaceMeteringClient::BatchMeterUsage(const BatchMeterUsageRequest& request) const {
-  return BatchMeterUsageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchMeterUsageOutcome(result.GetResultWithOwnership())
+                            : BatchMeterUsageOutcome(std::move(result.GetError()));
 }
 
 MeterUsageOutcome MarketplaceMeteringClient::MeterUsage(const MeterUsageRequest& request) const {
-  return MeterUsageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? MeterUsageOutcome(result.GetResultWithOwnership()) : MeterUsageOutcome(std::move(result.GetError()));
 }
 
 RegisterUsageOutcome MarketplaceMeteringClient::RegisterUsage(const RegisterUsageRequest& request) const {
-  return RegisterUsageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterUsageOutcome(result.GetResultWithOwnership()) : RegisterUsageOutcome(std::move(result.GetError()));
 }
 
 ResolveCustomerOutcome MarketplaceMeteringClient::ResolveCustomer(const ResolveCustomerRequest& request) const {
-  return ResolveCustomerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResolveCustomerOutcome(result.GetResultWithOwnership())
+                            : ResolveCustomerOutcome(std::move(result.GetError()));
 }

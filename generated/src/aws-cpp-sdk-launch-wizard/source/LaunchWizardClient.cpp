@@ -196,7 +196,9 @@ CreateDeploymentOutcome LaunchWizardClient::CreateDeployment(const CreateDeploym
     endpointResolutionOutcome.GetResult().AddPathSegments("/createDeployment");
   };
 
-  return CreateDeploymentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDeploymentOutcome(result.GetResultWithOwnership())
+                            : CreateDeploymentOutcome(std::move(result.GetError()));
 }
 
 DeleteDeploymentOutcome LaunchWizardClient::DeleteDeployment(const DeleteDeploymentRequest& request) const {
@@ -205,7 +207,9 @@ DeleteDeploymentOutcome LaunchWizardClient::DeleteDeployment(const DeleteDeploym
     endpointResolutionOutcome.GetResult().AddPathSegments("/deleteDeployment");
   };
 
-  return DeleteDeploymentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDeploymentOutcome(result.GetResultWithOwnership())
+                            : DeleteDeploymentOutcome(std::move(result.GetError()));
 }
 
 GetDeploymentOutcome LaunchWizardClient::GetDeployment(const GetDeploymentRequest& request) const {
@@ -214,7 +218,8 @@ GetDeploymentOutcome LaunchWizardClient::GetDeployment(const GetDeploymentReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/getDeployment");
   };
 
-  return GetDeploymentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDeploymentOutcome(result.GetResultWithOwnership()) : GetDeploymentOutcome(std::move(result.GetError()));
 }
 
 GetDeploymentPatternVersionOutcome LaunchWizardClient::GetDeploymentPatternVersion(
@@ -224,7 +229,9 @@ GetDeploymentPatternVersionOutcome LaunchWizardClient::GetDeploymentPatternVersi
     endpointResolutionOutcome.GetResult().AddPathSegments("/getDeploymentPatternVersion");
   };
 
-  return GetDeploymentPatternVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDeploymentPatternVersionOutcome(result.GetResultWithOwnership())
+                            : GetDeploymentPatternVersionOutcome(std::move(result.GetError()));
 }
 
 GetWorkloadOutcome LaunchWizardClient::GetWorkload(const GetWorkloadRequest& request) const {
@@ -233,7 +240,8 @@ GetWorkloadOutcome LaunchWizardClient::GetWorkload(const GetWorkloadRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/getWorkload");
   };
 
-  return GetWorkloadOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetWorkloadOutcome(result.GetResultWithOwnership()) : GetWorkloadOutcome(std::move(result.GetError()));
 }
 
 GetWorkloadDeploymentPatternOutcome LaunchWizardClient::GetWorkloadDeploymentPattern(
@@ -243,7 +251,9 @@ GetWorkloadDeploymentPatternOutcome LaunchWizardClient::GetWorkloadDeploymentPat
     endpointResolutionOutcome.GetResult().AddPathSegments("/getWorkloadDeploymentPattern");
   };
 
-  return GetWorkloadDeploymentPatternOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetWorkloadDeploymentPatternOutcome(result.GetResultWithOwnership())
+                            : GetWorkloadDeploymentPatternOutcome(std::move(result.GetError()));
 }
 
 ListDeploymentEventsOutcome LaunchWizardClient::ListDeploymentEvents(const ListDeploymentEventsRequest& request) const {
@@ -252,7 +262,9 @@ ListDeploymentEventsOutcome LaunchWizardClient::ListDeploymentEvents(const ListD
     endpointResolutionOutcome.GetResult().AddPathSegments("/listDeploymentEvents");
   };
 
-  return ListDeploymentEventsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDeploymentEventsOutcome(result.GetResultWithOwnership())
+                            : ListDeploymentEventsOutcome(std::move(result.GetError()));
 }
 
 ListDeploymentPatternVersionsOutcome LaunchWizardClient::ListDeploymentPatternVersions(
@@ -262,7 +274,9 @@ ListDeploymentPatternVersionsOutcome LaunchWizardClient::ListDeploymentPatternVe
     endpointResolutionOutcome.GetResult().AddPathSegments("/listDeploymentPatternVersions");
   };
 
-  return ListDeploymentPatternVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDeploymentPatternVersionsOutcome(result.GetResultWithOwnership())
+                            : ListDeploymentPatternVersionsOutcome(std::move(result.GetError()));
 }
 
 ListDeploymentsOutcome LaunchWizardClient::ListDeployments(const ListDeploymentsRequest& request) const {
@@ -271,7 +285,9 @@ ListDeploymentsOutcome LaunchWizardClient::ListDeployments(const ListDeployments
     endpointResolutionOutcome.GetResult().AddPathSegments("/listDeployments");
   };
 
-  return ListDeploymentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDeploymentsOutcome(result.GetResultWithOwnership())
+                            : ListDeploymentsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome LaunchWizardClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -287,7 +303,9 @@ ListTagsForResourceOutcome LaunchWizardClient::ListTagsForResource(const ListTag
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListWorkloadDeploymentPatternsOutcome LaunchWizardClient::ListWorkloadDeploymentPatterns(
@@ -297,7 +315,9 @@ ListWorkloadDeploymentPatternsOutcome LaunchWizardClient::ListWorkloadDeployment
     endpointResolutionOutcome.GetResult().AddPathSegments("/listWorkloadDeploymentPatterns");
   };
 
-  return ListWorkloadDeploymentPatternsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListWorkloadDeploymentPatternsOutcome(result.GetResultWithOwnership())
+                            : ListWorkloadDeploymentPatternsOutcome(std::move(result.GetError()));
 }
 
 ListWorkloadsOutcome LaunchWizardClient::ListWorkloads(const ListWorkloadsRequest& request) const {
@@ -306,7 +326,8 @@ ListWorkloadsOutcome LaunchWizardClient::ListWorkloads(const ListWorkloadsReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/listWorkloads");
   };
 
-  return ListWorkloadsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListWorkloadsOutcome(result.GetResultWithOwnership()) : ListWorkloadsOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome LaunchWizardClient::TagResource(const TagResourceRequest& request) const {
@@ -322,7 +343,8 @@ TagResourceOutcome LaunchWizardClient::TagResource(const TagResourceRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome LaunchWizardClient::UntagResource(const UntagResourceRequest& request) const {
@@ -343,7 +365,8 @@ UntagResourceOutcome LaunchWizardClient::UntagResource(const UntagResourceReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateDeploymentOutcome LaunchWizardClient::UpdateDeployment(const UpdateDeploymentRequest& request) const {
@@ -352,5 +375,7 @@ UpdateDeploymentOutcome LaunchWizardClient::UpdateDeployment(const UpdateDeploym
     endpointResolutionOutcome.GetResult().AddPathSegments("/updateDeployment");
   };
 
-  return UpdateDeploymentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDeploymentOutcome(result.GetResultWithOwnership())
+                            : UpdateDeploymentOutcome(std::move(result.GetError()));
 }

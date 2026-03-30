@@ -185,53 +185,77 @@ HealthLakeClient::InvokeOperationOutcome HealthLakeClient::InvokeServiceOperatio
 }
 
 CreateFHIRDatastoreOutcome HealthLakeClient::CreateFHIRDatastore(const CreateFHIRDatastoreRequest& request) const {
-  return CreateFHIRDatastoreOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFHIRDatastoreOutcome(result.GetResultWithOwnership())
+                            : CreateFHIRDatastoreOutcome(std::move(result.GetError()));
 }
 
 DeleteFHIRDatastoreOutcome HealthLakeClient::DeleteFHIRDatastore(const DeleteFHIRDatastoreRequest& request) const {
-  return DeleteFHIRDatastoreOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteFHIRDatastoreOutcome(result.GetResultWithOwnership())
+                            : DeleteFHIRDatastoreOutcome(std::move(result.GetError()));
 }
 
 DescribeFHIRDatastoreOutcome HealthLakeClient::DescribeFHIRDatastore(const DescribeFHIRDatastoreRequest& request) const {
-  return DescribeFHIRDatastoreOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeFHIRDatastoreOutcome(result.GetResultWithOwnership())
+                            : DescribeFHIRDatastoreOutcome(std::move(result.GetError()));
 }
 
 DescribeFHIRExportJobOutcome HealthLakeClient::DescribeFHIRExportJob(const DescribeFHIRExportJobRequest& request) const {
-  return DescribeFHIRExportJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeFHIRExportJobOutcome(result.GetResultWithOwnership())
+                            : DescribeFHIRExportJobOutcome(std::move(result.GetError()));
 }
 
 DescribeFHIRImportJobOutcome HealthLakeClient::DescribeFHIRImportJob(const DescribeFHIRImportJobRequest& request) const {
-  return DescribeFHIRImportJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeFHIRImportJobOutcome(result.GetResultWithOwnership())
+                            : DescribeFHIRImportJobOutcome(std::move(result.GetError()));
 }
 
 ListFHIRDatastoresOutcome HealthLakeClient::ListFHIRDatastores(const ListFHIRDatastoresRequest& request) const {
-  return ListFHIRDatastoresOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFHIRDatastoresOutcome(result.GetResultWithOwnership())
+                            : ListFHIRDatastoresOutcome(std::move(result.GetError()));
 }
 
 ListFHIRExportJobsOutcome HealthLakeClient::ListFHIRExportJobs(const ListFHIRExportJobsRequest& request) const {
-  return ListFHIRExportJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFHIRExportJobsOutcome(result.GetResultWithOwnership())
+                            : ListFHIRExportJobsOutcome(std::move(result.GetError()));
 }
 
 ListFHIRImportJobsOutcome HealthLakeClient::ListFHIRImportJobs(const ListFHIRImportJobsRequest& request) const {
-  return ListFHIRImportJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFHIRImportJobsOutcome(result.GetResultWithOwnership())
+                            : ListFHIRImportJobsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome HealthLakeClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 StartFHIRExportJobOutcome HealthLakeClient::StartFHIRExportJob(const StartFHIRExportJobRequest& request) const {
-  return StartFHIRExportJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartFHIRExportJobOutcome(result.GetResultWithOwnership())
+                            : StartFHIRExportJobOutcome(std::move(result.GetError()));
 }
 
 StartFHIRImportJobOutcome HealthLakeClient::StartFHIRImportJob(const StartFHIRImportJobRequest& request) const {
-  return StartFHIRImportJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartFHIRImportJobOutcome(result.GetResultWithOwnership())
+                            : StartFHIRImportJobOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome HealthLakeClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome HealthLakeClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }

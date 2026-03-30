@@ -202,41 +202,54 @@ SimpleDBClient::InvokeOperationOutcome SimpleDBClient::InvokeServiceOperation(co
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 BatchDeleteAttributesOutcome SimpleDBClient::BatchDeleteAttributes(const BatchDeleteAttributesRequest& request) const {
-  return BatchDeleteAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeleteAttributesOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteAttributesOutcome(std::move(result.GetError()));
 }
 
 BatchPutAttributesOutcome SimpleDBClient::BatchPutAttributes(const BatchPutAttributesRequest& request) const {
-  return BatchPutAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchPutAttributesOutcome(result.GetResultWithOwnership())
+                            : BatchPutAttributesOutcome(std::move(result.GetError()));
 }
 
 CreateDomainOutcome SimpleDBClient::CreateDomain(const CreateDomainRequest& request) const {
-  return CreateDomainOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDomainOutcome(result.GetResultWithOwnership()) : CreateDomainOutcome(std::move(result.GetError()));
 }
 
 DeleteAttributesOutcome SimpleDBClient::DeleteAttributes(const DeleteAttributesRequest& request) const {
-  return DeleteAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAttributesOutcome(result.GetResultWithOwnership())
+                            : DeleteAttributesOutcome(std::move(result.GetError()));
 }
 
 DeleteDomainOutcome SimpleDBClient::DeleteDomain(const DeleteDomainRequest& request) const {
-  return DeleteDomainOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDomainOutcome(result.GetResultWithOwnership()) : DeleteDomainOutcome(std::move(result.GetError()));
 }
 
 DomainMetadataOutcome SimpleDBClient::DomainMetadata(const DomainMetadataRequest& request) const {
-  return DomainMetadataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DomainMetadataOutcome(result.GetResultWithOwnership()) : DomainMetadataOutcome(std::move(result.GetError()));
 }
 
 GetAttributesOutcome SimpleDBClient::GetAttributes(const GetAttributesRequest& request) const {
-  return GetAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAttributesOutcome(result.GetResultWithOwnership()) : GetAttributesOutcome(std::move(result.GetError()));
 }
 
 ListDomainsOutcome SimpleDBClient::ListDomains(const ListDomainsRequest& request) const {
-  return ListDomainsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDomainsOutcome(result.GetResultWithOwnership()) : ListDomainsOutcome(std::move(result.GetError()));
 }
 
 PutAttributesOutcome SimpleDBClient::PutAttributes(const PutAttributesRequest& request) const {
-  return PutAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutAttributesOutcome(result.GetResultWithOwnership()) : PutAttributesOutcome(std::move(result.GetError()));
 }
 
 SelectOutcome SimpleDBClient::Select(const SelectRequest& request) const {
-  return SelectOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SelectOutcome(result.GetResultWithOwnership()) : SelectOutcome(std::move(result.GetError()));
 }

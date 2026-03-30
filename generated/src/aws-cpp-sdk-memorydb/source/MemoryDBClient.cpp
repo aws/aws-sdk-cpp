@@ -217,186 +217,257 @@ MemoryDBClient::InvokeOperationOutcome MemoryDBClient::InvokeServiceOperation(co
 }
 
 BatchUpdateClusterOutcome MemoryDBClient::BatchUpdateCluster(const BatchUpdateClusterRequest& request) const {
-  return BatchUpdateClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchUpdateClusterOutcome(result.GetResultWithOwnership())
+                            : BatchUpdateClusterOutcome(std::move(result.GetError()));
 }
 
 CopySnapshotOutcome MemoryDBClient::CopySnapshot(const CopySnapshotRequest& request) const {
-  return CopySnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CopySnapshotOutcome(result.GetResultWithOwnership()) : CopySnapshotOutcome(std::move(result.GetError()));
 }
 
 CreateACLOutcome MemoryDBClient::CreateACL(const CreateACLRequest& request) const {
-  return CreateACLOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateACLOutcome(result.GetResultWithOwnership()) : CreateACLOutcome(std::move(result.GetError()));
 }
 
 CreateClusterOutcome MemoryDBClient::CreateCluster(const CreateClusterRequest& request) const {
-  return CreateClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateClusterOutcome(result.GetResultWithOwnership()) : CreateClusterOutcome(std::move(result.GetError()));
 }
 
 CreateMultiRegionClusterOutcome MemoryDBClient::CreateMultiRegionCluster(const CreateMultiRegionClusterRequest& request) const {
-  return CreateMultiRegionClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMultiRegionClusterOutcome(result.GetResultWithOwnership())
+                            : CreateMultiRegionClusterOutcome(std::move(result.GetError()));
 }
 
 CreateParameterGroupOutcome MemoryDBClient::CreateParameterGroup(const CreateParameterGroupRequest& request) const {
-  return CreateParameterGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateParameterGroupOutcome(result.GetResultWithOwnership())
+                            : CreateParameterGroupOutcome(std::move(result.GetError()));
 }
 
 CreateSnapshotOutcome MemoryDBClient::CreateSnapshot(const CreateSnapshotRequest& request) const {
-  return CreateSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSnapshotOutcome(result.GetResultWithOwnership()) : CreateSnapshotOutcome(std::move(result.GetError()));
 }
 
 CreateSubnetGroupOutcome MemoryDBClient::CreateSubnetGroup(const CreateSubnetGroupRequest& request) const {
-  return CreateSubnetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSubnetGroupOutcome(result.GetResultWithOwnership())
+                            : CreateSubnetGroupOutcome(std::move(result.GetError()));
 }
 
 CreateUserOutcome MemoryDBClient::CreateUser(const CreateUserRequest& request) const {
-  return CreateUserOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateUserOutcome(result.GetResultWithOwnership()) : CreateUserOutcome(std::move(result.GetError()));
 }
 
 DeleteACLOutcome MemoryDBClient::DeleteACL(const DeleteACLRequest& request) const {
-  return DeleteACLOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteACLOutcome(result.GetResultWithOwnership()) : DeleteACLOutcome(std::move(result.GetError()));
 }
 
 DeleteClusterOutcome MemoryDBClient::DeleteCluster(const DeleteClusterRequest& request) const {
-  return DeleteClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteClusterOutcome(result.GetResultWithOwnership()) : DeleteClusterOutcome(std::move(result.GetError()));
 }
 
 DeleteMultiRegionClusterOutcome MemoryDBClient::DeleteMultiRegionCluster(const DeleteMultiRegionClusterRequest& request) const {
-  return DeleteMultiRegionClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteMultiRegionClusterOutcome(result.GetResultWithOwnership())
+                            : DeleteMultiRegionClusterOutcome(std::move(result.GetError()));
 }
 
 DeleteParameterGroupOutcome MemoryDBClient::DeleteParameterGroup(const DeleteParameterGroupRequest& request) const {
-  return DeleteParameterGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteParameterGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteParameterGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteSnapshotOutcome MemoryDBClient::DeleteSnapshot(const DeleteSnapshotRequest& request) const {
-  return DeleteSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSnapshotOutcome(result.GetResultWithOwnership()) : DeleteSnapshotOutcome(std::move(result.GetError()));
 }
 
 DeleteSubnetGroupOutcome MemoryDBClient::DeleteSubnetGroup(const DeleteSubnetGroupRequest& request) const {
-  return DeleteSubnetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSubnetGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteSubnetGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteUserOutcome MemoryDBClient::DeleteUser(const DeleteUserRequest& request) const {
-  return DeleteUserOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteUserOutcome(result.GetResultWithOwnership()) : DeleteUserOutcome(std::move(result.GetError()));
 }
 
 DescribeACLsOutcome MemoryDBClient::DescribeACLs(const DescribeACLsRequest& request) const {
-  return DescribeACLsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeACLsOutcome(result.GetResultWithOwnership()) : DescribeACLsOutcome(std::move(result.GetError()));
 }
 
 DescribeClustersOutcome MemoryDBClient::DescribeClusters(const DescribeClustersRequest& request) const {
-  return DescribeClustersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeClustersOutcome(result.GetResultWithOwnership())
+                            : DescribeClustersOutcome(std::move(result.GetError()));
 }
 
 DescribeEngineVersionsOutcome MemoryDBClient::DescribeEngineVersions(const DescribeEngineVersionsRequest& request) const {
-  return DescribeEngineVersionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEngineVersionsOutcome(result.GetResultWithOwnership())
+                            : DescribeEngineVersionsOutcome(std::move(result.GetError()));
 }
 
 DescribeEventsOutcome MemoryDBClient::DescribeEvents(const DescribeEventsRequest& request) const {
-  return DescribeEventsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEventsOutcome(result.GetResultWithOwnership()) : DescribeEventsOutcome(std::move(result.GetError()));
 }
 
 DescribeMultiRegionClustersOutcome MemoryDBClient::DescribeMultiRegionClusters(const DescribeMultiRegionClustersRequest& request) const {
-  return DescribeMultiRegionClustersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeMultiRegionClustersOutcome(result.GetResultWithOwnership())
+                            : DescribeMultiRegionClustersOutcome(std::move(result.GetError()));
 }
 
 DescribeMultiRegionParameterGroupsOutcome MemoryDBClient::DescribeMultiRegionParameterGroups(
     const DescribeMultiRegionParameterGroupsRequest& request) const {
-  return DescribeMultiRegionParameterGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeMultiRegionParameterGroupsOutcome(result.GetResultWithOwnership())
+                            : DescribeMultiRegionParameterGroupsOutcome(std::move(result.GetError()));
 }
 
 DescribeMultiRegionParametersOutcome MemoryDBClient::DescribeMultiRegionParameters(
     const DescribeMultiRegionParametersRequest& request) const {
-  return DescribeMultiRegionParametersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeMultiRegionParametersOutcome(result.GetResultWithOwnership())
+                            : DescribeMultiRegionParametersOutcome(std::move(result.GetError()));
 }
 
 DescribeParameterGroupsOutcome MemoryDBClient::DescribeParameterGroups(const DescribeParameterGroupsRequest& request) const {
-  return DescribeParameterGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeParameterGroupsOutcome(result.GetResultWithOwnership())
+                            : DescribeParameterGroupsOutcome(std::move(result.GetError()));
 }
 
 DescribeParametersOutcome MemoryDBClient::DescribeParameters(const DescribeParametersRequest& request) const {
-  return DescribeParametersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeParametersOutcome(result.GetResultWithOwnership())
+                            : DescribeParametersOutcome(std::move(result.GetError()));
 }
 
 DescribeReservedNodesOutcome MemoryDBClient::DescribeReservedNodes(const DescribeReservedNodesRequest& request) const {
-  return DescribeReservedNodesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeReservedNodesOutcome(result.GetResultWithOwnership())
+                            : DescribeReservedNodesOutcome(std::move(result.GetError()));
 }
 
 DescribeReservedNodesOfferingsOutcome MemoryDBClient::DescribeReservedNodesOfferings(
     const DescribeReservedNodesOfferingsRequest& request) const {
-  return DescribeReservedNodesOfferingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeReservedNodesOfferingsOutcome(result.GetResultWithOwnership())
+                            : DescribeReservedNodesOfferingsOutcome(std::move(result.GetError()));
 }
 
 DescribeServiceUpdatesOutcome MemoryDBClient::DescribeServiceUpdates(const DescribeServiceUpdatesRequest& request) const {
-  return DescribeServiceUpdatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeServiceUpdatesOutcome(result.GetResultWithOwnership())
+                            : DescribeServiceUpdatesOutcome(std::move(result.GetError()));
 }
 
 DescribeSnapshotsOutcome MemoryDBClient::DescribeSnapshots(const DescribeSnapshotsRequest& request) const {
-  return DescribeSnapshotsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSnapshotsOutcome(result.GetResultWithOwnership())
+                            : DescribeSnapshotsOutcome(std::move(result.GetError()));
 }
 
 DescribeSubnetGroupsOutcome MemoryDBClient::DescribeSubnetGroups(const DescribeSubnetGroupsRequest& request) const {
-  return DescribeSubnetGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSubnetGroupsOutcome(result.GetResultWithOwnership())
+                            : DescribeSubnetGroupsOutcome(std::move(result.GetError()));
 }
 
 DescribeUsersOutcome MemoryDBClient::DescribeUsers(const DescribeUsersRequest& request) const {
-  return DescribeUsersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeUsersOutcome(result.GetResultWithOwnership()) : DescribeUsersOutcome(std::move(result.GetError()));
 }
 
 FailoverShardOutcome MemoryDBClient::FailoverShard(const FailoverShardRequest& request) const {
-  return FailoverShardOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? FailoverShardOutcome(result.GetResultWithOwnership()) : FailoverShardOutcome(std::move(result.GetError()));
 }
 
 ListAllowedMultiRegionClusterUpdatesOutcome MemoryDBClient::ListAllowedMultiRegionClusterUpdates(
     const ListAllowedMultiRegionClusterUpdatesRequest& request) const {
-  return ListAllowedMultiRegionClusterUpdatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAllowedMultiRegionClusterUpdatesOutcome(result.GetResultWithOwnership())
+                            : ListAllowedMultiRegionClusterUpdatesOutcome(std::move(result.GetError()));
 }
 
 ListAllowedNodeTypeUpdatesOutcome MemoryDBClient::ListAllowedNodeTypeUpdates(const ListAllowedNodeTypeUpdatesRequest& request) const {
-  return ListAllowedNodeTypeUpdatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAllowedNodeTypeUpdatesOutcome(result.GetResultWithOwnership())
+                            : ListAllowedNodeTypeUpdatesOutcome(std::move(result.GetError()));
 }
 
 ListTagsOutcome MemoryDBClient::ListTags(const ListTagsRequest& request) const {
-  return ListTagsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsOutcome(result.GetResultWithOwnership()) : ListTagsOutcome(std::move(result.GetError()));
 }
 
 PurchaseReservedNodesOfferingOutcome MemoryDBClient::PurchaseReservedNodesOffering(
     const PurchaseReservedNodesOfferingRequest& request) const {
-  return PurchaseReservedNodesOfferingOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PurchaseReservedNodesOfferingOutcome(result.GetResultWithOwnership())
+                            : PurchaseReservedNodesOfferingOutcome(std::move(result.GetError()));
 }
 
 ResetParameterGroupOutcome MemoryDBClient::ResetParameterGroup(const ResetParameterGroupRequest& request) const {
-  return ResetParameterGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResetParameterGroupOutcome(result.GetResultWithOwnership())
+                            : ResetParameterGroupOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome MemoryDBClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome MemoryDBClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateACLOutcome MemoryDBClient::UpdateACL(const UpdateACLRequest& request) const {
-  return UpdateACLOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateACLOutcome(result.GetResultWithOwnership()) : UpdateACLOutcome(std::move(result.GetError()));
 }
 
 UpdateClusterOutcome MemoryDBClient::UpdateCluster(const UpdateClusterRequest& request) const {
-  return UpdateClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateClusterOutcome(result.GetResultWithOwnership()) : UpdateClusterOutcome(std::move(result.GetError()));
 }
 
 UpdateMultiRegionClusterOutcome MemoryDBClient::UpdateMultiRegionCluster(const UpdateMultiRegionClusterRequest& request) const {
-  return UpdateMultiRegionClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateMultiRegionClusterOutcome(result.GetResultWithOwnership())
+                            : UpdateMultiRegionClusterOutcome(std::move(result.GetError()));
 }
 
 UpdateParameterGroupOutcome MemoryDBClient::UpdateParameterGroup(const UpdateParameterGroupRequest& request) const {
-  return UpdateParameterGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateParameterGroupOutcome(result.GetResultWithOwnership())
+                            : UpdateParameterGroupOutcome(std::move(result.GetError()));
 }
 
 UpdateSubnetGroupOutcome MemoryDBClient::UpdateSubnetGroup(const UpdateSubnetGroupRequest& request) const {
-  return UpdateSubnetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSubnetGroupOutcome(result.GetResultWithOwnership())
+                            : UpdateSubnetGroupOutcome(std::move(result.GetError()));
 }
 
 UpdateUserOutcome MemoryDBClient::UpdateUser(const UpdateUserRequest& request) const {
-  return UpdateUserOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateUserOutcome(result.GetResultWithOwnership()) : UpdateUserOutcome(std::move(result.GetError()));
 }

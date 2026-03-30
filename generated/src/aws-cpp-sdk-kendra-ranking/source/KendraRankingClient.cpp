@@ -182,38 +182,53 @@ KendraRankingClient::InvokeOperationOutcome KendraRankingClient::InvokeServiceOp
 }
 
 CreateRescoreExecutionPlanOutcome KendraRankingClient::CreateRescoreExecutionPlan(const CreateRescoreExecutionPlanRequest& request) const {
-  return CreateRescoreExecutionPlanOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRescoreExecutionPlanOutcome(result.GetResultWithOwnership())
+                            : CreateRescoreExecutionPlanOutcome(std::move(result.GetError()));
 }
 
 DeleteRescoreExecutionPlanOutcome KendraRankingClient::DeleteRescoreExecutionPlan(const DeleteRescoreExecutionPlanRequest& request) const {
-  return DeleteRescoreExecutionPlanOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRescoreExecutionPlanOutcome(result.GetResultWithOwnership())
+                            : DeleteRescoreExecutionPlanOutcome(std::move(result.GetError()));
 }
 
 DescribeRescoreExecutionPlanOutcome KendraRankingClient::DescribeRescoreExecutionPlan(
     const DescribeRescoreExecutionPlanRequest& request) const {
-  return DescribeRescoreExecutionPlanOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRescoreExecutionPlanOutcome(result.GetResultWithOwnership())
+                            : DescribeRescoreExecutionPlanOutcome(std::move(result.GetError()));
 }
 
 ListRescoreExecutionPlansOutcome KendraRankingClient::ListRescoreExecutionPlans(const ListRescoreExecutionPlansRequest& request) const {
-  return ListRescoreExecutionPlansOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRescoreExecutionPlansOutcome(result.GetResultWithOwnership())
+                            : ListRescoreExecutionPlansOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome KendraRankingClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 RescoreOutcome KendraRankingClient::Rescore(const RescoreRequest& request) const {
-  return RescoreOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RescoreOutcome(result.GetResultWithOwnership()) : RescoreOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome KendraRankingClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome KendraRankingClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateRescoreExecutionPlanOutcome KendraRankingClient::UpdateRescoreExecutionPlan(const UpdateRescoreExecutionPlanRequest& request) const {
-  return UpdateRescoreExecutionPlanOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRescoreExecutionPlanOutcome(result.GetResultWithOwnership())
+                            : UpdateRescoreExecutionPlanOutcome(std::move(result.GetError()));
 }

@@ -184,7 +184,8 @@ CreateTokenOutcome SSOOIDCClient::CreateToken(const CreateTokenRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegments("/token");
   };
 
-  return CreateTokenOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTokenOutcome(result.GetResultWithOwnership()) : CreateTokenOutcome(std::move(result.GetError()));
 }
 
 CreateTokenWithIAMOutcome SSOOIDCClient::CreateTokenWithIAM(const CreateTokenWithIAMRequest& request) const {
@@ -196,7 +197,9 @@ CreateTokenWithIAMOutcome SSOOIDCClient::CreateTokenWithIAM(const CreateTokenWit
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return CreateTokenWithIAMOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTokenWithIAMOutcome(result.GetResultWithOwnership())
+                            : CreateTokenWithIAMOutcome(std::move(result.GetError()));
 }
 
 RegisterClientOutcome SSOOIDCClient::RegisterClient(const RegisterClientRequest& request) const {
@@ -205,7 +208,8 @@ RegisterClientOutcome SSOOIDCClient::RegisterClient(const RegisterClientRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/client/register");
   };
 
-  return RegisterClientOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterClientOutcome(result.GetResultWithOwnership()) : RegisterClientOutcome(std::move(result.GetError()));
 }
 
 StartDeviceAuthorizationOutcome SSOOIDCClient::StartDeviceAuthorization(const StartDeviceAuthorizationRequest& request) const {
@@ -214,5 +218,7 @@ StartDeviceAuthorizationOutcome SSOOIDCClient::StartDeviceAuthorization(const St
     endpointResolutionOutcome.GetResult().AddPathSegments("/device_authorization");
   };
 
-  return StartDeviceAuthorizationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDeviceAuthorizationOutcome(result.GetResultWithOwnership())
+                            : StartDeviceAuthorizationOutcome(std::move(result.GetError()));
 }

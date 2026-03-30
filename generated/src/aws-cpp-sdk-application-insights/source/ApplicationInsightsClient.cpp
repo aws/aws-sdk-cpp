@@ -210,137 +210,194 @@ ApplicationInsightsClient::InvokeOperationOutcome ApplicationInsightsClient::Inv
 }
 
 AddWorkloadOutcome ApplicationInsightsClient::AddWorkload(const AddWorkloadRequest& request) const {
-  return AddWorkloadOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddWorkloadOutcome(result.GetResultWithOwnership()) : AddWorkloadOutcome(std::move(result.GetError()));
 }
 
 CreateApplicationOutcome ApplicationInsightsClient::CreateApplication(const CreateApplicationRequest& request) const {
-  return CreateApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateApplicationOutcome(result.GetResultWithOwnership())
+                            : CreateApplicationOutcome(std::move(result.GetError()));
 }
 
 CreateComponentOutcome ApplicationInsightsClient::CreateComponent(const CreateComponentRequest& request) const {
-  return CreateComponentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateComponentOutcome(result.GetResultWithOwnership())
+                            : CreateComponentOutcome(std::move(result.GetError()));
 }
 
 CreateLogPatternOutcome ApplicationInsightsClient::CreateLogPattern(const CreateLogPatternRequest& request) const {
-  return CreateLogPatternOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLogPatternOutcome(result.GetResultWithOwnership())
+                            : CreateLogPatternOutcome(std::move(result.GetError()));
 }
 
 DeleteApplicationOutcome ApplicationInsightsClient::DeleteApplication(const DeleteApplicationRequest& request) const {
-  return DeleteApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteApplicationOutcome(result.GetResultWithOwnership())
+                            : DeleteApplicationOutcome(std::move(result.GetError()));
 }
 
 DeleteComponentOutcome ApplicationInsightsClient::DeleteComponent(const DeleteComponentRequest& request) const {
-  return DeleteComponentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteComponentOutcome(result.GetResultWithOwnership())
+                            : DeleteComponentOutcome(std::move(result.GetError()));
 }
 
 DeleteLogPatternOutcome ApplicationInsightsClient::DeleteLogPattern(const DeleteLogPatternRequest& request) const {
-  return DeleteLogPatternOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLogPatternOutcome(result.GetResultWithOwnership())
+                            : DeleteLogPatternOutcome(std::move(result.GetError()));
 }
 
 DescribeApplicationOutcome ApplicationInsightsClient::DescribeApplication(const DescribeApplicationRequest& request) const {
-  return DescribeApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeApplicationOutcome(result.GetResultWithOwnership())
+                            : DescribeApplicationOutcome(std::move(result.GetError()));
 }
 
 DescribeComponentOutcome ApplicationInsightsClient::DescribeComponent(const DescribeComponentRequest& request) const {
-  return DescribeComponentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeComponentOutcome(result.GetResultWithOwnership())
+                            : DescribeComponentOutcome(std::move(result.GetError()));
 }
 
 DescribeComponentConfigurationOutcome ApplicationInsightsClient::DescribeComponentConfiguration(
     const DescribeComponentConfigurationRequest& request) const {
-  return DescribeComponentConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeComponentConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeComponentConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeComponentConfigurationRecommendationOutcome ApplicationInsightsClient::DescribeComponentConfigurationRecommendation(
     const DescribeComponentConfigurationRecommendationRequest& request) const {
-  return DescribeComponentConfigurationRecommendationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeComponentConfigurationRecommendationOutcome(result.GetResultWithOwnership())
+                            : DescribeComponentConfigurationRecommendationOutcome(std::move(result.GetError()));
 }
 
 DescribeLogPatternOutcome ApplicationInsightsClient::DescribeLogPattern(const DescribeLogPatternRequest& request) const {
-  return DescribeLogPatternOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeLogPatternOutcome(result.GetResultWithOwnership())
+                            : DescribeLogPatternOutcome(std::move(result.GetError()));
 }
 
 DescribeObservationOutcome ApplicationInsightsClient::DescribeObservation(const DescribeObservationRequest& request) const {
-  return DescribeObservationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeObservationOutcome(result.GetResultWithOwnership())
+                            : DescribeObservationOutcome(std::move(result.GetError()));
 }
 
 DescribeProblemOutcome ApplicationInsightsClient::DescribeProblem(const DescribeProblemRequest& request) const {
-  return DescribeProblemOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeProblemOutcome(result.GetResultWithOwnership())
+                            : DescribeProblemOutcome(std::move(result.GetError()));
 }
 
 DescribeProblemObservationsOutcome ApplicationInsightsClient::DescribeProblemObservations(
     const DescribeProblemObservationsRequest& request) const {
-  return DescribeProblemObservationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeProblemObservationsOutcome(result.GetResultWithOwnership())
+                            : DescribeProblemObservationsOutcome(std::move(result.GetError()));
 }
 
 DescribeWorkloadOutcome ApplicationInsightsClient::DescribeWorkload(const DescribeWorkloadRequest& request) const {
-  return DescribeWorkloadOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeWorkloadOutcome(result.GetResultWithOwnership())
+                            : DescribeWorkloadOutcome(std::move(result.GetError()));
 }
 
 ListApplicationsOutcome ApplicationInsightsClient::ListApplications(const ListApplicationsRequest& request) const {
-  return ListApplicationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListApplicationsOutcome(result.GetResultWithOwnership())
+                            : ListApplicationsOutcome(std::move(result.GetError()));
 }
 
 ListComponentsOutcome ApplicationInsightsClient::ListComponents(const ListComponentsRequest& request) const {
-  return ListComponentsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListComponentsOutcome(result.GetResultWithOwnership()) : ListComponentsOutcome(std::move(result.GetError()));
 }
 
 ListConfigurationHistoryOutcome ApplicationInsightsClient::ListConfigurationHistory(const ListConfigurationHistoryRequest& request) const {
-  return ListConfigurationHistoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListConfigurationHistoryOutcome(result.GetResultWithOwnership())
+                            : ListConfigurationHistoryOutcome(std::move(result.GetError()));
 }
 
 ListLogPatternSetsOutcome ApplicationInsightsClient::ListLogPatternSets(const ListLogPatternSetsRequest& request) const {
-  return ListLogPatternSetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLogPatternSetsOutcome(result.GetResultWithOwnership())
+                            : ListLogPatternSetsOutcome(std::move(result.GetError()));
 }
 
 ListLogPatternsOutcome ApplicationInsightsClient::ListLogPatterns(const ListLogPatternsRequest& request) const {
-  return ListLogPatternsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLogPatternsOutcome(result.GetResultWithOwnership())
+                            : ListLogPatternsOutcome(std::move(result.GetError()));
 }
 
 ListProblemsOutcome ApplicationInsightsClient::ListProblems(const ListProblemsRequest& request) const {
-  return ListProblemsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListProblemsOutcome(result.GetResultWithOwnership()) : ListProblemsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome ApplicationInsightsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListWorkloadsOutcome ApplicationInsightsClient::ListWorkloads(const ListWorkloadsRequest& request) const {
-  return ListWorkloadsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListWorkloadsOutcome(result.GetResultWithOwnership()) : ListWorkloadsOutcome(std::move(result.GetError()));
 }
 
 RemoveWorkloadOutcome ApplicationInsightsClient::RemoveWorkload(const RemoveWorkloadRequest& request) const {
-  return RemoveWorkloadOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveWorkloadOutcome(result.GetResultWithOwnership()) : RemoveWorkloadOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ApplicationInsightsClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome ApplicationInsightsClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateApplicationOutcome ApplicationInsightsClient::UpdateApplication(const UpdateApplicationRequest& request) const {
-  return UpdateApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateApplicationOutcome(result.GetResultWithOwnership())
+                            : UpdateApplicationOutcome(std::move(result.GetError()));
 }
 
 UpdateComponentOutcome ApplicationInsightsClient::UpdateComponent(const UpdateComponentRequest& request) const {
-  return UpdateComponentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateComponentOutcome(result.GetResultWithOwnership())
+                            : UpdateComponentOutcome(std::move(result.GetError()));
 }
 
 UpdateComponentConfigurationOutcome ApplicationInsightsClient::UpdateComponentConfiguration(
     const UpdateComponentConfigurationRequest& request) const {
-  return UpdateComponentConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateComponentConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateComponentConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateLogPatternOutcome ApplicationInsightsClient::UpdateLogPattern(const UpdateLogPatternRequest& request) const {
-  return UpdateLogPatternOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLogPatternOutcome(result.GetResultWithOwnership())
+                            : UpdateLogPatternOutcome(std::move(result.GetError()));
 }
 
 UpdateProblemOutcome ApplicationInsightsClient::UpdateProblem(const UpdateProblemRequest& request) const {
-  return UpdateProblemOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateProblemOutcome(result.GetResultWithOwnership()) : UpdateProblemOutcome(std::move(result.GetError()));
 }
 
 UpdateWorkloadOutcome ApplicationInsightsClient::UpdateWorkload(const UpdateWorkloadRequest& request) const {
-  return UpdateWorkloadOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateWorkloadOutcome(result.GetResultWithOwnership()) : UpdateWorkloadOutcome(std::move(result.GetError()));
 }

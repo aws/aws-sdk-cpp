@@ -262,25 +262,35 @@ NeptuneClient::InvokeOperationOutcome NeptuneClient::InvokeServiceOperation(cons
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 AddRoleToDBClusterOutcome NeptuneClient::AddRoleToDBCluster(const AddRoleToDBClusterRequest& request) const {
-  return AddRoleToDBClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddRoleToDBClusterOutcome(result.GetResultWithOwnership())
+                            : AddRoleToDBClusterOutcome(std::move(result.GetError()));
 }
 
 AddSourceIdentifierToSubscriptionOutcome NeptuneClient::AddSourceIdentifierToSubscription(
     const AddSourceIdentifierToSubscriptionRequest& request) const {
-  return AddSourceIdentifierToSubscriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddSourceIdentifierToSubscriptionOutcome(result.GetResultWithOwnership())
+                            : AddSourceIdentifierToSubscriptionOutcome(std::move(result.GetError()));
 }
 
 AddTagsToResourceOutcome NeptuneClient::AddTagsToResource(const AddTagsToResourceRequest& request) const {
-  return AddTagsToResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddTagsToResourceOutcome(result.GetResultWithOwnership())
+                            : AddTagsToResourceOutcome(std::move(result.GetError()));
 }
 
 ApplyPendingMaintenanceActionOutcome NeptuneClient::ApplyPendingMaintenanceAction(
     const ApplyPendingMaintenanceActionRequest& request) const {
-  return ApplyPendingMaintenanceActionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ApplyPendingMaintenanceActionOutcome(result.GetResultWithOwnership())
+                            : ApplyPendingMaintenanceActionOutcome(std::move(result.GetError()));
 }
 
 CopyDBClusterParameterGroupOutcome NeptuneClient::CopyDBClusterParameterGroup(const CopyDBClusterParameterGroupRequest& request) const {
-  return CopyDBClusterParameterGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CopyDBClusterParameterGroupOutcome(result.GetResultWithOwnership())
+                            : CopyDBClusterParameterGroupOutcome(std::move(result.GetError()));
 }
 
 CopyDBClusterSnapshotOutcome NeptuneClient::CopyDBClusterSnapshot(const CopyDBClusterSnapshotRequest& request) const {
@@ -295,14 +305,20 @@ CopyDBClusterSnapshotOutcome NeptuneClient::CopyDBClusterSnapshot(const CopyDBCl
                                                     Aws::Http::HttpMethod::HTTP_GET, request.GetSourceRegion().c_str(),
                                                     {{"DestinationRegion", m_region}}, 3600));
 
-    return CopyDBClusterSnapshotOutcome{InvokeServiceOperation(newRequest, Aws::Http::HttpMethod::HTTP_POST)};
+    auto result = InvokeServiceOperation(newRequest, Aws::Http::HttpMethod::HTTP_POST);
+    return result.IsSuccess() ? CopyDBClusterSnapshotOutcome(result.GetResultWithOwnership())
+                              : CopyDBClusterSnapshotOutcome(std::move(result.GetError()));
   }
 
-  return CopyDBClusterSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CopyDBClusterSnapshotOutcome(result.GetResultWithOwnership())
+                            : CopyDBClusterSnapshotOutcome(std::move(result.GetError()));
 }
 
 CopyDBParameterGroupOutcome NeptuneClient::CopyDBParameterGroup(const CopyDBParameterGroupRequest& request) const {
-  return CopyDBParameterGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CopyDBParameterGroupOutcome(result.GetResultWithOwnership())
+                            : CopyDBParameterGroupOutcome(std::move(result.GetError()));
 }
 
 CreateDBClusterOutcome NeptuneClient::CreateDBCluster(const CreateDBClusterRequest& request) const {
@@ -317,269 +333,394 @@ CreateDBClusterOutcome NeptuneClient::CreateDBCluster(const CreateDBClusterReque
                                                     Aws::Http::HttpMethod::HTTP_GET, request.GetSourceRegion().c_str(),
                                                     {{"DestinationRegion", m_region}}, 3600));
 
-    return CreateDBClusterOutcome{InvokeServiceOperation(newRequest, Aws::Http::HttpMethod::HTTP_POST)};
+    auto result = InvokeServiceOperation(newRequest, Aws::Http::HttpMethod::HTTP_POST);
+    return result.IsSuccess() ? CreateDBClusterOutcome(result.GetResultWithOwnership())
+                              : CreateDBClusterOutcome(std::move(result.GetError()));
   }
 
-  return CreateDBClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDBClusterOutcome(result.GetResultWithOwnership())
+                            : CreateDBClusterOutcome(std::move(result.GetError()));
 }
 
 CreateDBClusterEndpointOutcome NeptuneClient::CreateDBClusterEndpoint(const CreateDBClusterEndpointRequest& request) const {
-  return CreateDBClusterEndpointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDBClusterEndpointOutcome(result.GetResultWithOwnership())
+                            : CreateDBClusterEndpointOutcome(std::move(result.GetError()));
 }
 
 CreateDBClusterParameterGroupOutcome NeptuneClient::CreateDBClusterParameterGroup(
     const CreateDBClusterParameterGroupRequest& request) const {
-  return CreateDBClusterParameterGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDBClusterParameterGroupOutcome(result.GetResultWithOwnership())
+                            : CreateDBClusterParameterGroupOutcome(std::move(result.GetError()));
 }
 
 CreateDBClusterSnapshotOutcome NeptuneClient::CreateDBClusterSnapshot(const CreateDBClusterSnapshotRequest& request) const {
-  return CreateDBClusterSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDBClusterSnapshotOutcome(result.GetResultWithOwnership())
+                            : CreateDBClusterSnapshotOutcome(std::move(result.GetError()));
 }
 
 CreateDBInstanceOutcome NeptuneClient::CreateDBInstance(const CreateDBInstanceRequest& request) const {
-  return CreateDBInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDBInstanceOutcome(result.GetResultWithOwnership())
+                            : CreateDBInstanceOutcome(std::move(result.GetError()));
 }
 
 CreateDBParameterGroupOutcome NeptuneClient::CreateDBParameterGroup(const CreateDBParameterGroupRequest& request) const {
-  return CreateDBParameterGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDBParameterGroupOutcome(result.GetResultWithOwnership())
+                            : CreateDBParameterGroupOutcome(std::move(result.GetError()));
 }
 
 CreateDBSubnetGroupOutcome NeptuneClient::CreateDBSubnetGroup(const CreateDBSubnetGroupRequest& request) const {
-  return CreateDBSubnetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDBSubnetGroupOutcome(result.GetResultWithOwnership())
+                            : CreateDBSubnetGroupOutcome(std::move(result.GetError()));
 }
 
 CreateEventSubscriptionOutcome NeptuneClient::CreateEventSubscription(const CreateEventSubscriptionRequest& request) const {
-  return CreateEventSubscriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEventSubscriptionOutcome(result.GetResultWithOwnership())
+                            : CreateEventSubscriptionOutcome(std::move(result.GetError()));
 }
 
 CreateGlobalClusterOutcome NeptuneClient::CreateGlobalCluster(const CreateGlobalClusterRequest& request) const {
-  return CreateGlobalClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGlobalClusterOutcome(result.GetResultWithOwnership())
+                            : CreateGlobalClusterOutcome(std::move(result.GetError()));
 }
 
 DeleteDBClusterOutcome NeptuneClient::DeleteDBCluster(const DeleteDBClusterRequest& request) const {
-  return DeleteDBClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDBClusterOutcome(result.GetResultWithOwnership())
+                            : DeleteDBClusterOutcome(std::move(result.GetError()));
 }
 
 DeleteDBClusterEndpointOutcome NeptuneClient::DeleteDBClusterEndpoint(const DeleteDBClusterEndpointRequest& request) const {
-  return DeleteDBClusterEndpointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDBClusterEndpointOutcome(result.GetResultWithOwnership())
+                            : DeleteDBClusterEndpointOutcome(std::move(result.GetError()));
 }
 
 DeleteDBClusterParameterGroupOutcome NeptuneClient::DeleteDBClusterParameterGroup(
     const DeleteDBClusterParameterGroupRequest& request) const {
-  return DeleteDBClusterParameterGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDBClusterParameterGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteDBClusterParameterGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteDBClusterSnapshotOutcome NeptuneClient::DeleteDBClusterSnapshot(const DeleteDBClusterSnapshotRequest& request) const {
-  return DeleteDBClusterSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDBClusterSnapshotOutcome(result.GetResultWithOwnership())
+                            : DeleteDBClusterSnapshotOutcome(std::move(result.GetError()));
 }
 
 DeleteDBInstanceOutcome NeptuneClient::DeleteDBInstance(const DeleteDBInstanceRequest& request) const {
-  return DeleteDBInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDBInstanceOutcome(result.GetResultWithOwnership())
+                            : DeleteDBInstanceOutcome(std::move(result.GetError()));
 }
 
 DeleteDBParameterGroupOutcome NeptuneClient::DeleteDBParameterGroup(const DeleteDBParameterGroupRequest& request) const {
-  return DeleteDBParameterGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDBParameterGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteDBParameterGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteDBSubnetGroupOutcome NeptuneClient::DeleteDBSubnetGroup(const DeleteDBSubnetGroupRequest& request) const {
-  return DeleteDBSubnetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDBSubnetGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteDBSubnetGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteEventSubscriptionOutcome NeptuneClient::DeleteEventSubscription(const DeleteEventSubscriptionRequest& request) const {
-  return DeleteEventSubscriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteEventSubscriptionOutcome(result.GetResultWithOwnership())
+                            : DeleteEventSubscriptionOutcome(std::move(result.GetError()));
 }
 
 DeleteGlobalClusterOutcome NeptuneClient::DeleteGlobalCluster(const DeleteGlobalClusterRequest& request) const {
-  return DeleteGlobalClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteGlobalClusterOutcome(result.GetResultWithOwnership())
+                            : DeleteGlobalClusterOutcome(std::move(result.GetError()));
 }
 
 DescribeDBClusterEndpointsOutcome NeptuneClient::DescribeDBClusterEndpoints(const DescribeDBClusterEndpointsRequest& request) const {
-  return DescribeDBClusterEndpointsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBClusterEndpointsOutcome(result.GetResultWithOwnership())
+                            : DescribeDBClusterEndpointsOutcome(std::move(result.GetError()));
 }
 
 DescribeDBClusterParameterGroupsOutcome NeptuneClient::DescribeDBClusterParameterGroups(
     const DescribeDBClusterParameterGroupsRequest& request) const {
-  return DescribeDBClusterParameterGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBClusterParameterGroupsOutcome(result.GetResultWithOwnership())
+                            : DescribeDBClusterParameterGroupsOutcome(std::move(result.GetError()));
 }
 
 DescribeDBClusterParametersOutcome NeptuneClient::DescribeDBClusterParameters(const DescribeDBClusterParametersRequest& request) const {
-  return DescribeDBClusterParametersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBClusterParametersOutcome(result.GetResultWithOwnership())
+                            : DescribeDBClusterParametersOutcome(std::move(result.GetError()));
 }
 
 DescribeDBClusterSnapshotAttributesOutcome NeptuneClient::DescribeDBClusterSnapshotAttributes(
     const DescribeDBClusterSnapshotAttributesRequest& request) const {
-  return DescribeDBClusterSnapshotAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBClusterSnapshotAttributesOutcome(result.GetResultWithOwnership())
+                            : DescribeDBClusterSnapshotAttributesOutcome(std::move(result.GetError()));
 }
 
 DescribeDBClusterSnapshotsOutcome NeptuneClient::DescribeDBClusterSnapshots(const DescribeDBClusterSnapshotsRequest& request) const {
-  return DescribeDBClusterSnapshotsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBClusterSnapshotsOutcome(result.GetResultWithOwnership())
+                            : DescribeDBClusterSnapshotsOutcome(std::move(result.GetError()));
 }
 
 DescribeDBClustersOutcome NeptuneClient::DescribeDBClusters(const DescribeDBClustersRequest& request) const {
-  return DescribeDBClustersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBClustersOutcome(result.GetResultWithOwnership())
+                            : DescribeDBClustersOutcome(std::move(result.GetError()));
 }
 
 DescribeDBEngineVersionsOutcome NeptuneClient::DescribeDBEngineVersions(const DescribeDBEngineVersionsRequest& request) const {
-  return DescribeDBEngineVersionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBEngineVersionsOutcome(result.GetResultWithOwnership())
+                            : DescribeDBEngineVersionsOutcome(std::move(result.GetError()));
 }
 
 DescribeDBInstancesOutcome NeptuneClient::DescribeDBInstances(const DescribeDBInstancesRequest& request) const {
-  return DescribeDBInstancesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBInstancesOutcome(result.GetResultWithOwnership())
+                            : DescribeDBInstancesOutcome(std::move(result.GetError()));
 }
 
 DescribeDBParameterGroupsOutcome NeptuneClient::DescribeDBParameterGroups(const DescribeDBParameterGroupsRequest& request) const {
-  return DescribeDBParameterGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBParameterGroupsOutcome(result.GetResultWithOwnership())
+                            : DescribeDBParameterGroupsOutcome(std::move(result.GetError()));
 }
 
 DescribeDBParametersOutcome NeptuneClient::DescribeDBParameters(const DescribeDBParametersRequest& request) const {
-  return DescribeDBParametersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBParametersOutcome(result.GetResultWithOwnership())
+                            : DescribeDBParametersOutcome(std::move(result.GetError()));
 }
 
 DescribeDBSubnetGroupsOutcome NeptuneClient::DescribeDBSubnetGroups(const DescribeDBSubnetGroupsRequest& request) const {
-  return DescribeDBSubnetGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBSubnetGroupsOutcome(result.GetResultWithOwnership())
+                            : DescribeDBSubnetGroupsOutcome(std::move(result.GetError()));
 }
 
 DescribeEngineDefaultClusterParametersOutcome NeptuneClient::DescribeEngineDefaultClusterParameters(
     const DescribeEngineDefaultClusterParametersRequest& request) const {
-  return DescribeEngineDefaultClusterParametersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEngineDefaultClusterParametersOutcome(result.GetResultWithOwnership())
+                            : DescribeEngineDefaultClusterParametersOutcome(std::move(result.GetError()));
 }
 
 DescribeEngineDefaultParametersOutcome NeptuneClient::DescribeEngineDefaultParameters(
     const DescribeEngineDefaultParametersRequest& request) const {
-  return DescribeEngineDefaultParametersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEngineDefaultParametersOutcome(result.GetResultWithOwnership())
+                            : DescribeEngineDefaultParametersOutcome(std::move(result.GetError()));
 }
 
 DescribeEventCategoriesOutcome NeptuneClient::DescribeEventCategories(const DescribeEventCategoriesRequest& request) const {
-  return DescribeEventCategoriesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEventCategoriesOutcome(result.GetResultWithOwnership())
+                            : DescribeEventCategoriesOutcome(std::move(result.GetError()));
 }
 
 DescribeEventSubscriptionsOutcome NeptuneClient::DescribeEventSubscriptions(const DescribeEventSubscriptionsRequest& request) const {
-  return DescribeEventSubscriptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEventSubscriptionsOutcome(result.GetResultWithOwnership())
+                            : DescribeEventSubscriptionsOutcome(std::move(result.GetError()));
 }
 
 DescribeEventsOutcome NeptuneClient::DescribeEvents(const DescribeEventsRequest& request) const {
-  return DescribeEventsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEventsOutcome(result.GetResultWithOwnership()) : DescribeEventsOutcome(std::move(result.GetError()));
 }
 
 DescribeGlobalClustersOutcome NeptuneClient::DescribeGlobalClusters(const DescribeGlobalClustersRequest& request) const {
-  return DescribeGlobalClustersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeGlobalClustersOutcome(result.GetResultWithOwnership())
+                            : DescribeGlobalClustersOutcome(std::move(result.GetError()));
 }
 
 DescribeOrderableDBInstanceOptionsOutcome NeptuneClient::DescribeOrderableDBInstanceOptions(
     const DescribeOrderableDBInstanceOptionsRequest& request) const {
-  return DescribeOrderableDBInstanceOptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeOrderableDBInstanceOptionsOutcome(result.GetResultWithOwnership())
+                            : DescribeOrderableDBInstanceOptionsOutcome(std::move(result.GetError()));
 }
 
 DescribePendingMaintenanceActionsOutcome NeptuneClient::DescribePendingMaintenanceActions(
     const DescribePendingMaintenanceActionsRequest& request) const {
-  return DescribePendingMaintenanceActionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePendingMaintenanceActionsOutcome(result.GetResultWithOwnership())
+                            : DescribePendingMaintenanceActionsOutcome(std::move(result.GetError()));
 }
 
 DescribeValidDBInstanceModificationsOutcome NeptuneClient::DescribeValidDBInstanceModifications(
     const DescribeValidDBInstanceModificationsRequest& request) const {
-  return DescribeValidDBInstanceModificationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeValidDBInstanceModificationsOutcome(result.GetResultWithOwnership())
+                            : DescribeValidDBInstanceModificationsOutcome(std::move(result.GetError()));
 }
 
 FailoverDBClusterOutcome NeptuneClient::FailoverDBCluster(const FailoverDBClusterRequest& request) const {
-  return FailoverDBClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? FailoverDBClusterOutcome(result.GetResultWithOwnership())
+                            : FailoverDBClusterOutcome(std::move(result.GetError()));
 }
 
 FailoverGlobalClusterOutcome NeptuneClient::FailoverGlobalCluster(const FailoverGlobalClusterRequest& request) const {
-  return FailoverGlobalClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? FailoverGlobalClusterOutcome(result.GetResultWithOwnership())
+                            : FailoverGlobalClusterOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome NeptuneClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ModifyDBClusterOutcome NeptuneClient::ModifyDBCluster(const ModifyDBClusterRequest& request) const {
-  return ModifyDBClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyDBClusterOutcome(result.GetResultWithOwnership())
+                            : ModifyDBClusterOutcome(std::move(result.GetError()));
 }
 
 ModifyDBClusterEndpointOutcome NeptuneClient::ModifyDBClusterEndpoint(const ModifyDBClusterEndpointRequest& request) const {
-  return ModifyDBClusterEndpointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyDBClusterEndpointOutcome(result.GetResultWithOwnership())
+                            : ModifyDBClusterEndpointOutcome(std::move(result.GetError()));
 }
 
 ModifyDBClusterParameterGroupOutcome NeptuneClient::ModifyDBClusterParameterGroup(
     const ModifyDBClusterParameterGroupRequest& request) const {
-  return ModifyDBClusterParameterGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyDBClusterParameterGroupOutcome(result.GetResultWithOwnership())
+                            : ModifyDBClusterParameterGroupOutcome(std::move(result.GetError()));
 }
 
 ModifyDBClusterSnapshotAttributeOutcome NeptuneClient::ModifyDBClusterSnapshotAttribute(
     const ModifyDBClusterSnapshotAttributeRequest& request) const {
-  return ModifyDBClusterSnapshotAttributeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyDBClusterSnapshotAttributeOutcome(result.GetResultWithOwnership())
+                            : ModifyDBClusterSnapshotAttributeOutcome(std::move(result.GetError()));
 }
 
 ModifyDBInstanceOutcome NeptuneClient::ModifyDBInstance(const ModifyDBInstanceRequest& request) const {
-  return ModifyDBInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyDBInstanceOutcome(result.GetResultWithOwnership())
+                            : ModifyDBInstanceOutcome(std::move(result.GetError()));
 }
 
 ModifyDBParameterGroupOutcome NeptuneClient::ModifyDBParameterGroup(const ModifyDBParameterGroupRequest& request) const {
-  return ModifyDBParameterGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyDBParameterGroupOutcome(result.GetResultWithOwnership())
+                            : ModifyDBParameterGroupOutcome(std::move(result.GetError()));
 }
 
 ModifyDBSubnetGroupOutcome NeptuneClient::ModifyDBSubnetGroup(const ModifyDBSubnetGroupRequest& request) const {
-  return ModifyDBSubnetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyDBSubnetGroupOutcome(result.GetResultWithOwnership())
+                            : ModifyDBSubnetGroupOutcome(std::move(result.GetError()));
 }
 
 ModifyEventSubscriptionOutcome NeptuneClient::ModifyEventSubscription(const ModifyEventSubscriptionRequest& request) const {
-  return ModifyEventSubscriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyEventSubscriptionOutcome(result.GetResultWithOwnership())
+                            : ModifyEventSubscriptionOutcome(std::move(result.GetError()));
 }
 
 ModifyGlobalClusterOutcome NeptuneClient::ModifyGlobalCluster(const ModifyGlobalClusterRequest& request) const {
-  return ModifyGlobalClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyGlobalClusterOutcome(result.GetResultWithOwnership())
+                            : ModifyGlobalClusterOutcome(std::move(result.GetError()));
 }
 
 PromoteReadReplicaDBClusterOutcome NeptuneClient::PromoteReadReplicaDBCluster(const PromoteReadReplicaDBClusterRequest& request) const {
-  return PromoteReadReplicaDBClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PromoteReadReplicaDBClusterOutcome(result.GetResultWithOwnership())
+                            : PromoteReadReplicaDBClusterOutcome(std::move(result.GetError()));
 }
 
 RebootDBInstanceOutcome NeptuneClient::RebootDBInstance(const RebootDBInstanceRequest& request) const {
-  return RebootDBInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RebootDBInstanceOutcome(result.GetResultWithOwnership())
+                            : RebootDBInstanceOutcome(std::move(result.GetError()));
 }
 
 RemoveFromGlobalClusterOutcome NeptuneClient::RemoveFromGlobalCluster(const RemoveFromGlobalClusterRequest& request) const {
-  return RemoveFromGlobalClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveFromGlobalClusterOutcome(result.GetResultWithOwnership())
+                            : RemoveFromGlobalClusterOutcome(std::move(result.GetError()));
 }
 
 RemoveRoleFromDBClusterOutcome NeptuneClient::RemoveRoleFromDBCluster(const RemoveRoleFromDBClusterRequest& request) const {
-  return RemoveRoleFromDBClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveRoleFromDBClusterOutcome(result.GetResultWithOwnership())
+                            : RemoveRoleFromDBClusterOutcome(std::move(result.GetError()));
 }
 
 RemoveSourceIdentifierFromSubscriptionOutcome NeptuneClient::RemoveSourceIdentifierFromSubscription(
     const RemoveSourceIdentifierFromSubscriptionRequest& request) const {
-  return RemoveSourceIdentifierFromSubscriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveSourceIdentifierFromSubscriptionOutcome(result.GetResultWithOwnership())
+                            : RemoveSourceIdentifierFromSubscriptionOutcome(std::move(result.GetError()));
 }
 
 RemoveTagsFromResourceOutcome NeptuneClient::RemoveTagsFromResource(const RemoveTagsFromResourceRequest& request) const {
-  return RemoveTagsFromResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveTagsFromResourceOutcome(result.GetResultWithOwnership())
+                            : RemoveTagsFromResourceOutcome(std::move(result.GetError()));
 }
 
 ResetDBClusterParameterGroupOutcome NeptuneClient::ResetDBClusterParameterGroup(const ResetDBClusterParameterGroupRequest& request) const {
-  return ResetDBClusterParameterGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResetDBClusterParameterGroupOutcome(result.GetResultWithOwnership())
+                            : ResetDBClusterParameterGroupOutcome(std::move(result.GetError()));
 }
 
 ResetDBParameterGroupOutcome NeptuneClient::ResetDBParameterGroup(const ResetDBParameterGroupRequest& request) const {
-  return ResetDBParameterGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResetDBParameterGroupOutcome(result.GetResultWithOwnership())
+                            : ResetDBParameterGroupOutcome(std::move(result.GetError()));
 }
 
 RestoreDBClusterFromSnapshotOutcome NeptuneClient::RestoreDBClusterFromSnapshot(const RestoreDBClusterFromSnapshotRequest& request) const {
-  return RestoreDBClusterFromSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RestoreDBClusterFromSnapshotOutcome(result.GetResultWithOwnership())
+                            : RestoreDBClusterFromSnapshotOutcome(std::move(result.GetError()));
 }
 
 RestoreDBClusterToPointInTimeOutcome NeptuneClient::RestoreDBClusterToPointInTime(
     const RestoreDBClusterToPointInTimeRequest& request) const {
-  return RestoreDBClusterToPointInTimeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RestoreDBClusterToPointInTimeOutcome(result.GetResultWithOwnership())
+                            : RestoreDBClusterToPointInTimeOutcome(std::move(result.GetError()));
 }
 
 StartDBClusterOutcome NeptuneClient::StartDBCluster(const StartDBClusterRequest& request) const {
-  return StartDBClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDBClusterOutcome(result.GetResultWithOwnership()) : StartDBClusterOutcome(std::move(result.GetError()));
 }
 
 StopDBClusterOutcome NeptuneClient::StopDBCluster(const StopDBClusterRequest& request) const {
-  return StopDBClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopDBClusterOutcome(result.GetResultWithOwnership()) : StopDBClusterOutcome(std::move(result.GetError()));
 }
 
 SwitchoverGlobalClusterOutcome NeptuneClient::SwitchoverGlobalCluster(const SwitchoverGlobalClusterRequest& request) const {
-  return SwitchoverGlobalClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SwitchoverGlobalClusterOutcome(result.GetResultWithOwnership())
+                            : SwitchoverGlobalClusterOutcome(std::move(result.GetError()));
 }

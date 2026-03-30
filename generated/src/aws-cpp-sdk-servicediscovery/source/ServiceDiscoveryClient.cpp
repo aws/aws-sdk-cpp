@@ -207,122 +207,169 @@ ServiceDiscoveryClient::InvokeOperationOutcome ServiceDiscoveryClient::InvokeSer
 }
 
 CreateHttpNamespaceOutcome ServiceDiscoveryClient::CreateHttpNamespace(const CreateHttpNamespaceRequest& request) const {
-  return CreateHttpNamespaceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateHttpNamespaceOutcome(result.GetResultWithOwnership())
+                            : CreateHttpNamespaceOutcome(std::move(result.GetError()));
 }
 
 CreatePrivateDnsNamespaceOutcome ServiceDiscoveryClient::CreatePrivateDnsNamespace(const CreatePrivateDnsNamespaceRequest& request) const {
-  return CreatePrivateDnsNamespaceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePrivateDnsNamespaceOutcome(result.GetResultWithOwnership())
+                            : CreatePrivateDnsNamespaceOutcome(std::move(result.GetError()));
 }
 
 CreatePublicDnsNamespaceOutcome ServiceDiscoveryClient::CreatePublicDnsNamespace(const CreatePublicDnsNamespaceRequest& request) const {
-  return CreatePublicDnsNamespaceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePublicDnsNamespaceOutcome(result.GetResultWithOwnership())
+                            : CreatePublicDnsNamespaceOutcome(std::move(result.GetError()));
 }
 
 CreateServiceOutcome ServiceDiscoveryClient::CreateService(const CreateServiceRequest& request) const {
-  return CreateServiceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateServiceOutcome(result.GetResultWithOwnership()) : CreateServiceOutcome(std::move(result.GetError()));
 }
 
 DeleteNamespaceOutcome ServiceDiscoveryClient::DeleteNamespace(const DeleteNamespaceRequest& request) const {
-  return DeleteNamespaceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteNamespaceOutcome(result.GetResultWithOwnership())
+                            : DeleteNamespaceOutcome(std::move(result.GetError()));
 }
 
 DeleteServiceOutcome ServiceDiscoveryClient::DeleteService(const DeleteServiceRequest& request) const {
-  return DeleteServiceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteServiceOutcome(result.GetResultWithOwnership()) : DeleteServiceOutcome(std::move(result.GetError()));
 }
 
 DeleteServiceAttributesOutcome ServiceDiscoveryClient::DeleteServiceAttributes(const DeleteServiceAttributesRequest& request) const {
-  return DeleteServiceAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteServiceAttributesOutcome(result.GetResultWithOwnership())
+                            : DeleteServiceAttributesOutcome(std::move(result.GetError()));
 }
 
 DeregisterInstanceOutcome ServiceDiscoveryClient::DeregisterInstance(const DeregisterInstanceRequest& request) const {
-  return DeregisterInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterInstanceOutcome(result.GetResultWithOwnership())
+                            : DeregisterInstanceOutcome(std::move(result.GetError()));
 }
 
 DiscoverInstancesOutcome ServiceDiscoveryClient::DiscoverInstances(const DiscoverInstancesRequest& request) const {
-  return DiscoverInstancesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DiscoverInstancesOutcome(result.GetResultWithOwnership())
+                            : DiscoverInstancesOutcome(std::move(result.GetError()));
 }
 
 DiscoverInstancesRevisionOutcome ServiceDiscoveryClient::DiscoverInstancesRevision(const DiscoverInstancesRevisionRequest& request) const {
-  return DiscoverInstancesRevisionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DiscoverInstancesRevisionOutcome(result.GetResultWithOwnership())
+                            : DiscoverInstancesRevisionOutcome(std::move(result.GetError()));
 }
 
 GetInstanceOutcome ServiceDiscoveryClient::GetInstance(const GetInstanceRequest& request) const {
-  return GetInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetInstanceOutcome(result.GetResultWithOwnership()) : GetInstanceOutcome(std::move(result.GetError()));
 }
 
 GetInstancesHealthStatusOutcome ServiceDiscoveryClient::GetInstancesHealthStatus(const GetInstancesHealthStatusRequest& request) const {
-  return GetInstancesHealthStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetInstancesHealthStatusOutcome(result.GetResultWithOwnership())
+                            : GetInstancesHealthStatusOutcome(std::move(result.GetError()));
 }
 
 GetNamespaceOutcome ServiceDiscoveryClient::GetNamespace(const GetNamespaceRequest& request) const {
-  return GetNamespaceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetNamespaceOutcome(result.GetResultWithOwnership()) : GetNamespaceOutcome(std::move(result.GetError()));
 }
 
 GetOperationOutcome ServiceDiscoveryClient::GetOperation(const GetOperationRequest& request) const {
-  return GetOperationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetOperationOutcome(result.GetResultWithOwnership()) : GetOperationOutcome(std::move(result.GetError()));
 }
 
 GetServiceOutcome ServiceDiscoveryClient::GetService(const GetServiceRequest& request) const {
-  return GetServiceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetServiceOutcome(result.GetResultWithOwnership()) : GetServiceOutcome(std::move(result.GetError()));
 }
 
 GetServiceAttributesOutcome ServiceDiscoveryClient::GetServiceAttributes(const GetServiceAttributesRequest& request) const {
-  return GetServiceAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetServiceAttributesOutcome(result.GetResultWithOwnership())
+                            : GetServiceAttributesOutcome(std::move(result.GetError()));
 }
 
 ListInstancesOutcome ServiceDiscoveryClient::ListInstances(const ListInstancesRequest& request) const {
-  return ListInstancesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListInstancesOutcome(result.GetResultWithOwnership()) : ListInstancesOutcome(std::move(result.GetError()));
 }
 
 ListNamespacesOutcome ServiceDiscoveryClient::ListNamespaces(const ListNamespacesRequest& request) const {
-  return ListNamespacesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListNamespacesOutcome(result.GetResultWithOwnership()) : ListNamespacesOutcome(std::move(result.GetError()));
 }
 
 ListOperationsOutcome ServiceDiscoveryClient::ListOperations(const ListOperationsRequest& request) const {
-  return ListOperationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListOperationsOutcome(result.GetResultWithOwnership()) : ListOperationsOutcome(std::move(result.GetError()));
 }
 
 ListServicesOutcome ServiceDiscoveryClient::ListServices(const ListServicesRequest& request) const {
-  return ListServicesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListServicesOutcome(result.GetResultWithOwnership()) : ListServicesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome ServiceDiscoveryClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 RegisterInstanceOutcome ServiceDiscoveryClient::RegisterInstance(const RegisterInstanceRequest& request) const {
-  return RegisterInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterInstanceOutcome(result.GetResultWithOwnership())
+                            : RegisterInstanceOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ServiceDiscoveryClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome ServiceDiscoveryClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateHttpNamespaceOutcome ServiceDiscoveryClient::UpdateHttpNamespace(const UpdateHttpNamespaceRequest& request) const {
-  return UpdateHttpNamespaceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateHttpNamespaceOutcome(result.GetResultWithOwnership())
+                            : UpdateHttpNamespaceOutcome(std::move(result.GetError()));
 }
 
 UpdateInstanceCustomHealthStatusOutcome ServiceDiscoveryClient::UpdateInstanceCustomHealthStatus(
     const UpdateInstanceCustomHealthStatusRequest& request) const {
-  return UpdateInstanceCustomHealthStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateInstanceCustomHealthStatusOutcome(result.GetResultWithOwnership())
+                            : UpdateInstanceCustomHealthStatusOutcome(std::move(result.GetError()));
 }
 
 UpdatePrivateDnsNamespaceOutcome ServiceDiscoveryClient::UpdatePrivateDnsNamespace(const UpdatePrivateDnsNamespaceRequest& request) const {
-  return UpdatePrivateDnsNamespaceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePrivateDnsNamespaceOutcome(result.GetResultWithOwnership())
+                            : UpdatePrivateDnsNamespaceOutcome(std::move(result.GetError()));
 }
 
 UpdatePublicDnsNamespaceOutcome ServiceDiscoveryClient::UpdatePublicDnsNamespace(const UpdatePublicDnsNamespaceRequest& request) const {
-  return UpdatePublicDnsNamespaceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePublicDnsNamespaceOutcome(result.GetResultWithOwnership())
+                            : UpdatePublicDnsNamespaceOutcome(std::move(result.GetError()));
 }
 
 UpdateServiceOutcome ServiceDiscoveryClient::UpdateService(const UpdateServiceRequest& request) const {
-  return UpdateServiceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateServiceOutcome(result.GetResultWithOwnership()) : UpdateServiceOutcome(std::move(result.GetError()));
 }
 
 UpdateServiceAttributesOutcome ServiceDiscoveryClient::UpdateServiceAttributes(const UpdateServiceAttributesRequest& request) const {
-  return UpdateServiceAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateServiceAttributesOutcome(result.GetResultWithOwnership())
+                            : UpdateServiceAttributesOutcome(std::move(result.GetError()));
 }

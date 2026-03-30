@@ -186,7 +186,9 @@ BatchExecuteStatementOutcome RDSDataServiceClient::BatchExecuteStatement(const B
     endpointResolutionOutcome.GetResult().AddPathSegments("/BatchExecute");
   };
 
-  return BatchExecuteStatementOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchExecuteStatementOutcome(result.GetResultWithOwnership())
+                            : BatchExecuteStatementOutcome(std::move(result.GetError()));
 }
 
 BeginTransactionOutcome RDSDataServiceClient::BeginTransaction(const BeginTransactionRequest& request) const {
@@ -195,7 +197,9 @@ BeginTransactionOutcome RDSDataServiceClient::BeginTransaction(const BeginTransa
     endpointResolutionOutcome.GetResult().AddPathSegments("/BeginTransaction");
   };
 
-  return BeginTransactionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BeginTransactionOutcome(result.GetResultWithOwnership())
+                            : BeginTransactionOutcome(std::move(result.GetError()));
 }
 
 CommitTransactionOutcome RDSDataServiceClient::CommitTransaction(const CommitTransactionRequest& request) const {
@@ -204,7 +208,9 @@ CommitTransactionOutcome RDSDataServiceClient::CommitTransaction(const CommitTra
     endpointResolutionOutcome.GetResult().AddPathSegments("/CommitTransaction");
   };
 
-  return CommitTransactionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CommitTransactionOutcome(result.GetResultWithOwnership())
+                            : CommitTransactionOutcome(std::move(result.GetError()));
 }
 
 ExecuteStatementOutcome RDSDataServiceClient::ExecuteStatement(const ExecuteStatementRequest& request) const {
@@ -213,7 +219,9 @@ ExecuteStatementOutcome RDSDataServiceClient::ExecuteStatement(const ExecuteStat
     endpointResolutionOutcome.GetResult().AddPathSegments("/Execute");
   };
 
-  return ExecuteStatementOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExecuteStatementOutcome(result.GetResultWithOwnership())
+                            : ExecuteStatementOutcome(std::move(result.GetError()));
 }
 
 RollbackTransactionOutcome RDSDataServiceClient::RollbackTransaction(const RollbackTransactionRequest& request) const {
@@ -222,5 +230,7 @@ RollbackTransactionOutcome RDSDataServiceClient::RollbackTransaction(const Rollb
     endpointResolutionOutcome.GetResult().AddPathSegments("/RollbackTransaction");
   };
 
-  return RollbackTransactionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RollbackTransactionOutcome(result.GetResultWithOwnership())
+                            : RollbackTransactionOutcome(std::move(result.GetError()));
 }

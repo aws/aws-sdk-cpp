@@ -203,107 +203,153 @@ ComprehendMedicalClient::InvokeOperationOutcome ComprehendMedicalClient::InvokeS
 
 DescribeEntitiesDetectionV2JobOutcome ComprehendMedicalClient::DescribeEntitiesDetectionV2Job(
     const DescribeEntitiesDetectionV2JobRequest& request) const {
-  return DescribeEntitiesDetectionV2JobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEntitiesDetectionV2JobOutcome(result.GetResultWithOwnership())
+                            : DescribeEntitiesDetectionV2JobOutcome(std::move(result.GetError()));
 }
 
 DescribeICD10CMInferenceJobOutcome ComprehendMedicalClient::DescribeICD10CMInferenceJob(
     const DescribeICD10CMInferenceJobRequest& request) const {
-  return DescribeICD10CMInferenceJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeICD10CMInferenceJobOutcome(result.GetResultWithOwnership())
+                            : DescribeICD10CMInferenceJobOutcome(std::move(result.GetError()));
 }
 
 DescribePHIDetectionJobOutcome ComprehendMedicalClient::DescribePHIDetectionJob(const DescribePHIDetectionJobRequest& request) const {
-  return DescribePHIDetectionJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePHIDetectionJobOutcome(result.GetResultWithOwnership())
+                            : DescribePHIDetectionJobOutcome(std::move(result.GetError()));
 }
 
 DescribeRxNormInferenceJobOutcome ComprehendMedicalClient::DescribeRxNormInferenceJob(
     const DescribeRxNormInferenceJobRequest& request) const {
-  return DescribeRxNormInferenceJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRxNormInferenceJobOutcome(result.GetResultWithOwnership())
+                            : DescribeRxNormInferenceJobOutcome(std::move(result.GetError()));
 }
 
 DescribeSNOMEDCTInferenceJobOutcome ComprehendMedicalClient::DescribeSNOMEDCTInferenceJob(
     const DescribeSNOMEDCTInferenceJobRequest& request) const {
-  return DescribeSNOMEDCTInferenceJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSNOMEDCTInferenceJobOutcome(result.GetResultWithOwnership())
+                            : DescribeSNOMEDCTInferenceJobOutcome(std::move(result.GetError()));
 }
 
 DetectEntitiesV2Outcome ComprehendMedicalClient::DetectEntitiesV2(const DetectEntitiesV2Request& request) const {
-  return DetectEntitiesV2Outcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DetectEntitiesV2Outcome(result.GetResultWithOwnership())
+                            : DetectEntitiesV2Outcome(std::move(result.GetError()));
 }
 
 DetectPHIOutcome ComprehendMedicalClient::DetectPHI(const DetectPHIRequest& request) const {
-  return DetectPHIOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DetectPHIOutcome(result.GetResultWithOwnership()) : DetectPHIOutcome(std::move(result.GetError()));
 }
 
 InferICD10CMOutcome ComprehendMedicalClient::InferICD10CM(const InferICD10CMRequest& request) const {
-  return InferICD10CMOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? InferICD10CMOutcome(result.GetResultWithOwnership()) : InferICD10CMOutcome(std::move(result.GetError()));
 }
 
 InferRxNormOutcome ComprehendMedicalClient::InferRxNorm(const InferRxNormRequest& request) const {
-  return InferRxNormOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? InferRxNormOutcome(result.GetResultWithOwnership()) : InferRxNormOutcome(std::move(result.GetError()));
 }
 
 InferSNOMEDCTOutcome ComprehendMedicalClient::InferSNOMEDCT(const InferSNOMEDCTRequest& request) const {
-  return InferSNOMEDCTOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? InferSNOMEDCTOutcome(result.GetResultWithOwnership()) : InferSNOMEDCTOutcome(std::move(result.GetError()));
 }
 
 ListEntitiesDetectionV2JobsOutcome ComprehendMedicalClient::ListEntitiesDetectionV2Jobs(
     const ListEntitiesDetectionV2JobsRequest& request) const {
-  return ListEntitiesDetectionV2JobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEntitiesDetectionV2JobsOutcome(result.GetResultWithOwnership())
+                            : ListEntitiesDetectionV2JobsOutcome(std::move(result.GetError()));
 }
 
 ListICD10CMInferenceJobsOutcome ComprehendMedicalClient::ListICD10CMInferenceJobs(const ListICD10CMInferenceJobsRequest& request) const {
-  return ListICD10CMInferenceJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListICD10CMInferenceJobsOutcome(result.GetResultWithOwnership())
+                            : ListICD10CMInferenceJobsOutcome(std::move(result.GetError()));
 }
 
 ListPHIDetectionJobsOutcome ComprehendMedicalClient::ListPHIDetectionJobs(const ListPHIDetectionJobsRequest& request) const {
-  return ListPHIDetectionJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPHIDetectionJobsOutcome(result.GetResultWithOwnership())
+                            : ListPHIDetectionJobsOutcome(std::move(result.GetError()));
 }
 
 ListRxNormInferenceJobsOutcome ComprehendMedicalClient::ListRxNormInferenceJobs(const ListRxNormInferenceJobsRequest& request) const {
-  return ListRxNormInferenceJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRxNormInferenceJobsOutcome(result.GetResultWithOwnership())
+                            : ListRxNormInferenceJobsOutcome(std::move(result.GetError()));
 }
 
 ListSNOMEDCTInferenceJobsOutcome ComprehendMedicalClient::ListSNOMEDCTInferenceJobs(const ListSNOMEDCTInferenceJobsRequest& request) const {
-  return ListSNOMEDCTInferenceJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSNOMEDCTInferenceJobsOutcome(result.GetResultWithOwnership())
+                            : ListSNOMEDCTInferenceJobsOutcome(std::move(result.GetError()));
 }
 
 StartEntitiesDetectionV2JobOutcome ComprehendMedicalClient::StartEntitiesDetectionV2Job(
     const StartEntitiesDetectionV2JobRequest& request) const {
-  return StartEntitiesDetectionV2JobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartEntitiesDetectionV2JobOutcome(result.GetResultWithOwnership())
+                            : StartEntitiesDetectionV2JobOutcome(std::move(result.GetError()));
 }
 
 StartICD10CMInferenceJobOutcome ComprehendMedicalClient::StartICD10CMInferenceJob(const StartICD10CMInferenceJobRequest& request) const {
-  return StartICD10CMInferenceJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartICD10CMInferenceJobOutcome(result.GetResultWithOwnership())
+                            : StartICD10CMInferenceJobOutcome(std::move(result.GetError()));
 }
 
 StartPHIDetectionJobOutcome ComprehendMedicalClient::StartPHIDetectionJob(const StartPHIDetectionJobRequest& request) const {
-  return StartPHIDetectionJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartPHIDetectionJobOutcome(result.GetResultWithOwnership())
+                            : StartPHIDetectionJobOutcome(std::move(result.GetError()));
 }
 
 StartRxNormInferenceJobOutcome ComprehendMedicalClient::StartRxNormInferenceJob(const StartRxNormInferenceJobRequest& request) const {
-  return StartRxNormInferenceJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartRxNormInferenceJobOutcome(result.GetResultWithOwnership())
+                            : StartRxNormInferenceJobOutcome(std::move(result.GetError()));
 }
 
 StartSNOMEDCTInferenceJobOutcome ComprehendMedicalClient::StartSNOMEDCTInferenceJob(const StartSNOMEDCTInferenceJobRequest& request) const {
-  return StartSNOMEDCTInferenceJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartSNOMEDCTInferenceJobOutcome(result.GetResultWithOwnership())
+                            : StartSNOMEDCTInferenceJobOutcome(std::move(result.GetError()));
 }
 
 StopEntitiesDetectionV2JobOutcome ComprehendMedicalClient::StopEntitiesDetectionV2Job(
     const StopEntitiesDetectionV2JobRequest& request) const {
-  return StopEntitiesDetectionV2JobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopEntitiesDetectionV2JobOutcome(result.GetResultWithOwnership())
+                            : StopEntitiesDetectionV2JobOutcome(std::move(result.GetError()));
 }
 
 StopICD10CMInferenceJobOutcome ComprehendMedicalClient::StopICD10CMInferenceJob(const StopICD10CMInferenceJobRequest& request) const {
-  return StopICD10CMInferenceJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopICD10CMInferenceJobOutcome(result.GetResultWithOwnership())
+                            : StopICD10CMInferenceJobOutcome(std::move(result.GetError()));
 }
 
 StopPHIDetectionJobOutcome ComprehendMedicalClient::StopPHIDetectionJob(const StopPHIDetectionJobRequest& request) const {
-  return StopPHIDetectionJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopPHIDetectionJobOutcome(result.GetResultWithOwnership())
+                            : StopPHIDetectionJobOutcome(std::move(result.GetError()));
 }
 
 StopRxNormInferenceJobOutcome ComprehendMedicalClient::StopRxNormInferenceJob(const StopRxNormInferenceJobRequest& request) const {
-  return StopRxNormInferenceJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopRxNormInferenceJobOutcome(result.GetResultWithOwnership())
+                            : StopRxNormInferenceJobOutcome(std::move(result.GetError()));
 }
 
 StopSNOMEDCTInferenceJobOutcome ComprehendMedicalClient::StopSNOMEDCTInferenceJob(const StopSNOMEDCTInferenceJobRequest& request) const {
-  return StopSNOMEDCTInferenceJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopSNOMEDCTInferenceJobOutcome(result.GetResultWithOwnership())
+                            : StopSNOMEDCTInferenceJobOutcome(std::move(result.GetError()));
 }

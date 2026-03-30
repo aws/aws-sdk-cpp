@@ -198,76 +198,106 @@ PartnerCentralBenefitsClient::InvokeOperationOutcome PartnerCentralBenefitsClien
 }
 
 AmendBenefitApplicationOutcome PartnerCentralBenefitsClient::AmendBenefitApplication(const AmendBenefitApplicationRequest& request) const {
-  return AmendBenefitApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AmendBenefitApplicationOutcome(result.GetResultWithOwnership())
+                            : AmendBenefitApplicationOutcome(std::move(result.GetError()));
 }
 
 AssociateBenefitApplicationResourceOutcome PartnerCentralBenefitsClient::AssociateBenefitApplicationResource(
     const AssociateBenefitApplicationResourceRequest& request) const {
-  return AssociateBenefitApplicationResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateBenefitApplicationResourceOutcome(result.GetResultWithOwnership())
+                            : AssociateBenefitApplicationResourceOutcome(std::move(result.GetError()));
 }
 
 CancelBenefitApplicationOutcome PartnerCentralBenefitsClient::CancelBenefitApplication(
     const CancelBenefitApplicationRequest& request) const {
-  return CancelBenefitApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelBenefitApplicationOutcome(result.GetResultWithOwnership())
+                            : CancelBenefitApplicationOutcome(std::move(result.GetError()));
 }
 
 CreateBenefitApplicationOutcome PartnerCentralBenefitsClient::CreateBenefitApplication(
     const CreateBenefitApplicationRequest& request) const {
-  return CreateBenefitApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBenefitApplicationOutcome(result.GetResultWithOwnership())
+                            : CreateBenefitApplicationOutcome(std::move(result.GetError()));
 }
 
 DisassociateBenefitApplicationResourceOutcome PartnerCentralBenefitsClient::DisassociateBenefitApplicationResource(
     const DisassociateBenefitApplicationResourceRequest& request) const {
-  return DisassociateBenefitApplicationResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateBenefitApplicationResourceOutcome(result.GetResultWithOwnership())
+                            : DisassociateBenefitApplicationResourceOutcome(std::move(result.GetError()));
 }
 
 GetBenefitOutcome PartnerCentralBenefitsClient::GetBenefit(const GetBenefitRequest& request) const {
-  return GetBenefitOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetBenefitOutcome(result.GetResultWithOwnership()) : GetBenefitOutcome(std::move(result.GetError()));
 }
 
 GetBenefitAllocationOutcome PartnerCentralBenefitsClient::GetBenefitAllocation(const GetBenefitAllocationRequest& request) const {
-  return GetBenefitAllocationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetBenefitAllocationOutcome(result.GetResultWithOwnership())
+                            : GetBenefitAllocationOutcome(std::move(result.GetError()));
 }
 
 GetBenefitApplicationOutcome PartnerCentralBenefitsClient::GetBenefitApplication(const GetBenefitApplicationRequest& request) const {
-  return GetBenefitApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetBenefitApplicationOutcome(result.GetResultWithOwnership())
+                            : GetBenefitApplicationOutcome(std::move(result.GetError()));
 }
 
 ListBenefitAllocationsOutcome PartnerCentralBenefitsClient::ListBenefitAllocations(const ListBenefitAllocationsRequest& request) const {
-  return ListBenefitAllocationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBenefitAllocationsOutcome(result.GetResultWithOwnership())
+                            : ListBenefitAllocationsOutcome(std::move(result.GetError()));
 }
 
 ListBenefitApplicationsOutcome PartnerCentralBenefitsClient::ListBenefitApplications(const ListBenefitApplicationsRequest& request) const {
-  return ListBenefitApplicationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBenefitApplicationsOutcome(result.GetResultWithOwnership())
+                            : ListBenefitApplicationsOutcome(std::move(result.GetError()));
 }
 
 ListBenefitsOutcome PartnerCentralBenefitsClient::ListBenefits(const ListBenefitsRequest& request) const {
-  return ListBenefitsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBenefitsOutcome(result.GetResultWithOwnership()) : ListBenefitsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome PartnerCentralBenefitsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 RecallBenefitApplicationOutcome PartnerCentralBenefitsClient::RecallBenefitApplication(
     const RecallBenefitApplicationRequest& request) const {
-  return RecallBenefitApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RecallBenefitApplicationOutcome(result.GetResultWithOwnership())
+                            : RecallBenefitApplicationOutcome(std::move(result.GetError()));
 }
 
 SubmitBenefitApplicationOutcome PartnerCentralBenefitsClient::SubmitBenefitApplication(
     const SubmitBenefitApplicationRequest& request) const {
-  return SubmitBenefitApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SubmitBenefitApplicationOutcome(result.GetResultWithOwnership())
+                            : SubmitBenefitApplicationOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome PartnerCentralBenefitsClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome PartnerCentralBenefitsClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateBenefitApplicationOutcome PartnerCentralBenefitsClient::UpdateBenefitApplication(
     const UpdateBenefitApplicationRequest& request) const {
-  return UpdateBenefitApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateBenefitApplicationOutcome(result.GetResultWithOwnership())
+                            : UpdateBenefitApplicationOutcome(std::move(result.GetError()));
 }

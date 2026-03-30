@@ -365,728 +365,1039 @@ IAMClient::InvokeOperationOutcome IAMClient::InvokeServiceOperation(const Amazon
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 AcceptDelegationRequestOutcome IAMClient::AcceptDelegationRequest(const AcceptDelegationRequestRequest& request) const {
-  return AcceptDelegationRequestOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptDelegationRequestOutcome(result.GetResultWithOwnership())
+                            : AcceptDelegationRequestOutcome(std::move(result.GetError()));
 }
 
 AddClientIDToOpenIDConnectProviderOutcome IAMClient::AddClientIDToOpenIDConnectProvider(
     const AddClientIDToOpenIDConnectProviderRequest& request) const {
-  return AddClientIDToOpenIDConnectProviderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddClientIDToOpenIDConnectProviderOutcome(result.GetResultWithOwnership())
+                            : AddClientIDToOpenIDConnectProviderOutcome(std::move(result.GetError()));
 }
 
 AddRoleToInstanceProfileOutcome IAMClient::AddRoleToInstanceProfile(const AddRoleToInstanceProfileRequest& request) const {
-  return AddRoleToInstanceProfileOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddRoleToInstanceProfileOutcome(result.GetResultWithOwnership())
+                            : AddRoleToInstanceProfileOutcome(std::move(result.GetError()));
 }
 
 AddUserToGroupOutcome IAMClient::AddUserToGroup(const AddUserToGroupRequest& request) const {
-  return AddUserToGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddUserToGroupOutcome(result.GetResultWithOwnership()) : AddUserToGroupOutcome(std::move(result.GetError()));
 }
 
 AssociateDelegationRequestOutcome IAMClient::AssociateDelegationRequest(const AssociateDelegationRequestRequest& request) const {
-  return AssociateDelegationRequestOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateDelegationRequestOutcome(result.GetResultWithOwnership())
+                            : AssociateDelegationRequestOutcome(std::move(result.GetError()));
 }
 
 AttachGroupPolicyOutcome IAMClient::AttachGroupPolicy(const AttachGroupPolicyRequest& request) const {
-  return AttachGroupPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AttachGroupPolicyOutcome(result.GetResultWithOwnership())
+                            : AttachGroupPolicyOutcome(std::move(result.GetError()));
 }
 
 AttachRolePolicyOutcome IAMClient::AttachRolePolicy(const AttachRolePolicyRequest& request) const {
-  return AttachRolePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AttachRolePolicyOutcome(result.GetResultWithOwnership())
+                            : AttachRolePolicyOutcome(std::move(result.GetError()));
 }
 
 AttachUserPolicyOutcome IAMClient::AttachUserPolicy(const AttachUserPolicyRequest& request) const {
-  return AttachUserPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AttachUserPolicyOutcome(result.GetResultWithOwnership())
+                            : AttachUserPolicyOutcome(std::move(result.GetError()));
 }
 
 ChangePasswordOutcome IAMClient::ChangePassword(const ChangePasswordRequest& request) const {
-  return ChangePasswordOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ChangePasswordOutcome(result.GetResultWithOwnership()) : ChangePasswordOutcome(std::move(result.GetError()));
 }
 
 CreateAccessKeyOutcome IAMClient::CreateAccessKey(const CreateAccessKeyRequest& request) const {
-  return CreateAccessKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAccessKeyOutcome(result.GetResultWithOwnership())
+                            : CreateAccessKeyOutcome(std::move(result.GetError()));
 }
 
 CreateAccountAliasOutcome IAMClient::CreateAccountAlias(const CreateAccountAliasRequest& request) const {
-  return CreateAccountAliasOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAccountAliasOutcome(result.GetResultWithOwnership())
+                            : CreateAccountAliasOutcome(std::move(result.GetError()));
 }
 
 CreateDelegationRequestOutcome IAMClient::CreateDelegationRequest(const CreateDelegationRequestRequest& request) const {
-  return CreateDelegationRequestOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDelegationRequestOutcome(result.GetResultWithOwnership())
+                            : CreateDelegationRequestOutcome(std::move(result.GetError()));
 }
 
 CreateGroupOutcome IAMClient::CreateGroup(const CreateGroupRequest& request) const {
-  return CreateGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGroupOutcome(result.GetResultWithOwnership()) : CreateGroupOutcome(std::move(result.GetError()));
 }
 
 CreateInstanceProfileOutcome IAMClient::CreateInstanceProfile(const CreateInstanceProfileRequest& request) const {
-  return CreateInstanceProfileOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateInstanceProfileOutcome(result.GetResultWithOwnership())
+                            : CreateInstanceProfileOutcome(std::move(result.GetError()));
 }
 
 CreateLoginProfileOutcome IAMClient::CreateLoginProfile(const CreateLoginProfileRequest& request) const {
-  return CreateLoginProfileOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLoginProfileOutcome(result.GetResultWithOwnership())
+                            : CreateLoginProfileOutcome(std::move(result.GetError()));
 }
 
 CreateOpenIDConnectProviderOutcome IAMClient::CreateOpenIDConnectProvider(const CreateOpenIDConnectProviderRequest& request) const {
-  return CreateOpenIDConnectProviderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateOpenIDConnectProviderOutcome(result.GetResultWithOwnership())
+                            : CreateOpenIDConnectProviderOutcome(std::move(result.GetError()));
 }
 
 CreatePolicyOutcome IAMClient::CreatePolicy(const CreatePolicyRequest& request) const {
-  return CreatePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePolicyOutcome(result.GetResultWithOwnership()) : CreatePolicyOutcome(std::move(result.GetError()));
 }
 
 CreatePolicyVersionOutcome IAMClient::CreatePolicyVersion(const CreatePolicyVersionRequest& request) const {
-  return CreatePolicyVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePolicyVersionOutcome(result.GetResultWithOwnership())
+                            : CreatePolicyVersionOutcome(std::move(result.GetError()));
 }
 
 CreateRoleOutcome IAMClient::CreateRole(const CreateRoleRequest& request) const {
-  return CreateRoleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRoleOutcome(result.GetResultWithOwnership()) : CreateRoleOutcome(std::move(result.GetError()));
 }
 
 CreateSAMLProviderOutcome IAMClient::CreateSAMLProvider(const CreateSAMLProviderRequest& request) const {
-  return CreateSAMLProviderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSAMLProviderOutcome(result.GetResultWithOwnership())
+                            : CreateSAMLProviderOutcome(std::move(result.GetError()));
 }
 
 CreateServiceLinkedRoleOutcome IAMClient::CreateServiceLinkedRole(const CreateServiceLinkedRoleRequest& request) const {
-  return CreateServiceLinkedRoleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateServiceLinkedRoleOutcome(result.GetResultWithOwnership())
+                            : CreateServiceLinkedRoleOutcome(std::move(result.GetError()));
 }
 
 CreateServiceSpecificCredentialOutcome IAMClient::CreateServiceSpecificCredential(
     const CreateServiceSpecificCredentialRequest& request) const {
-  return CreateServiceSpecificCredentialOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateServiceSpecificCredentialOutcome(result.GetResultWithOwnership())
+                            : CreateServiceSpecificCredentialOutcome(std::move(result.GetError()));
 }
 
 CreateUserOutcome IAMClient::CreateUser(const CreateUserRequest& request) const {
-  return CreateUserOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateUserOutcome(result.GetResultWithOwnership()) : CreateUserOutcome(std::move(result.GetError()));
 }
 
 CreateVirtualMFADeviceOutcome IAMClient::CreateVirtualMFADevice(const CreateVirtualMFADeviceRequest& request) const {
-  return CreateVirtualMFADeviceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateVirtualMFADeviceOutcome(result.GetResultWithOwnership())
+                            : CreateVirtualMFADeviceOutcome(std::move(result.GetError()));
 }
 
 DeactivateMFADeviceOutcome IAMClient::DeactivateMFADevice(const DeactivateMFADeviceRequest& request) const {
-  return DeactivateMFADeviceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeactivateMFADeviceOutcome(result.GetResultWithOwnership())
+                            : DeactivateMFADeviceOutcome(std::move(result.GetError()));
 }
 
 DeleteAccessKeyOutcome IAMClient::DeleteAccessKey(const DeleteAccessKeyRequest& request) const {
-  return DeleteAccessKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAccessKeyOutcome(result.GetResultWithOwnership())
+                            : DeleteAccessKeyOutcome(std::move(result.GetError()));
 }
 
 DeleteAccountAliasOutcome IAMClient::DeleteAccountAlias(const DeleteAccountAliasRequest& request) const {
-  return DeleteAccountAliasOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAccountAliasOutcome(result.GetResultWithOwnership())
+                            : DeleteAccountAliasOutcome(std::move(result.GetError()));
 }
 
 DeleteAccountPasswordPolicyOutcome IAMClient::DeleteAccountPasswordPolicy(const DeleteAccountPasswordPolicyRequest& request) const {
-  return DeleteAccountPasswordPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAccountPasswordPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteAccountPasswordPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteGroupOutcome IAMClient::DeleteGroup(const DeleteGroupRequest& request) const {
-  return DeleteGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteGroupOutcome(result.GetResultWithOwnership()) : DeleteGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteGroupPolicyOutcome IAMClient::DeleteGroupPolicy(const DeleteGroupPolicyRequest& request) const {
-  return DeleteGroupPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteGroupPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteGroupPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteInstanceProfileOutcome IAMClient::DeleteInstanceProfile(const DeleteInstanceProfileRequest& request) const {
-  return DeleteInstanceProfileOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteInstanceProfileOutcome(result.GetResultWithOwnership())
+                            : DeleteInstanceProfileOutcome(std::move(result.GetError()));
 }
 
 DeleteLoginProfileOutcome IAMClient::DeleteLoginProfile(const DeleteLoginProfileRequest& request) const {
-  return DeleteLoginProfileOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLoginProfileOutcome(result.GetResultWithOwnership())
+                            : DeleteLoginProfileOutcome(std::move(result.GetError()));
 }
 
 DeleteOpenIDConnectProviderOutcome IAMClient::DeleteOpenIDConnectProvider(const DeleteOpenIDConnectProviderRequest& request) const {
-  return DeleteOpenIDConnectProviderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteOpenIDConnectProviderOutcome(result.GetResultWithOwnership())
+                            : DeleteOpenIDConnectProviderOutcome(std::move(result.GetError()));
 }
 
 DeletePolicyOutcome IAMClient::DeletePolicy(const DeletePolicyRequest& request) const {
-  return DeletePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePolicyOutcome(result.GetResultWithOwnership()) : DeletePolicyOutcome(std::move(result.GetError()));
 }
 
 DeletePolicyVersionOutcome IAMClient::DeletePolicyVersion(const DeletePolicyVersionRequest& request) const {
-  return DeletePolicyVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePolicyVersionOutcome(result.GetResultWithOwnership())
+                            : DeletePolicyVersionOutcome(std::move(result.GetError()));
 }
 
 DeleteRoleOutcome IAMClient::DeleteRole(const DeleteRoleRequest& request) const {
-  return DeleteRoleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRoleOutcome(result.GetResultWithOwnership()) : DeleteRoleOutcome(std::move(result.GetError()));
 }
 
 DeleteRolePermissionsBoundaryOutcome IAMClient::DeleteRolePermissionsBoundary(const DeleteRolePermissionsBoundaryRequest& request) const {
-  return DeleteRolePermissionsBoundaryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRolePermissionsBoundaryOutcome(result.GetResultWithOwnership())
+                            : DeleteRolePermissionsBoundaryOutcome(std::move(result.GetError()));
 }
 
 DeleteRolePolicyOutcome IAMClient::DeleteRolePolicy(const DeleteRolePolicyRequest& request) const {
-  return DeleteRolePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRolePolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteRolePolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteSAMLProviderOutcome IAMClient::DeleteSAMLProvider(const DeleteSAMLProviderRequest& request) const {
-  return DeleteSAMLProviderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSAMLProviderOutcome(result.GetResultWithOwnership())
+                            : DeleteSAMLProviderOutcome(std::move(result.GetError()));
 }
 
 DeleteSSHPublicKeyOutcome IAMClient::DeleteSSHPublicKey(const DeleteSSHPublicKeyRequest& request) const {
-  return DeleteSSHPublicKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSSHPublicKeyOutcome(result.GetResultWithOwnership())
+                            : DeleteSSHPublicKeyOutcome(std::move(result.GetError()));
 }
 
 DeleteServerCertificateOutcome IAMClient::DeleteServerCertificate(const DeleteServerCertificateRequest& request) const {
-  return DeleteServerCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteServerCertificateOutcome(result.GetResultWithOwnership())
+                            : DeleteServerCertificateOutcome(std::move(result.GetError()));
 }
 
 DeleteServiceLinkedRoleOutcome IAMClient::DeleteServiceLinkedRole(const DeleteServiceLinkedRoleRequest& request) const {
-  return DeleteServiceLinkedRoleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteServiceLinkedRoleOutcome(result.GetResultWithOwnership())
+                            : DeleteServiceLinkedRoleOutcome(std::move(result.GetError()));
 }
 
 DeleteServiceSpecificCredentialOutcome IAMClient::DeleteServiceSpecificCredential(
     const DeleteServiceSpecificCredentialRequest& request) const {
-  return DeleteServiceSpecificCredentialOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteServiceSpecificCredentialOutcome(result.GetResultWithOwnership())
+                            : DeleteServiceSpecificCredentialOutcome(std::move(result.GetError()));
 }
 
 DeleteSigningCertificateOutcome IAMClient::DeleteSigningCertificate(const DeleteSigningCertificateRequest& request) const {
-  return DeleteSigningCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSigningCertificateOutcome(result.GetResultWithOwnership())
+                            : DeleteSigningCertificateOutcome(std::move(result.GetError()));
 }
 
 DeleteUserOutcome IAMClient::DeleteUser(const DeleteUserRequest& request) const {
-  return DeleteUserOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteUserOutcome(result.GetResultWithOwnership()) : DeleteUserOutcome(std::move(result.GetError()));
 }
 
 DeleteUserPermissionsBoundaryOutcome IAMClient::DeleteUserPermissionsBoundary(const DeleteUserPermissionsBoundaryRequest& request) const {
-  return DeleteUserPermissionsBoundaryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteUserPermissionsBoundaryOutcome(result.GetResultWithOwnership())
+                            : DeleteUserPermissionsBoundaryOutcome(std::move(result.GetError()));
 }
 
 DeleteUserPolicyOutcome IAMClient::DeleteUserPolicy(const DeleteUserPolicyRequest& request) const {
-  return DeleteUserPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteUserPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteUserPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteVirtualMFADeviceOutcome IAMClient::DeleteVirtualMFADevice(const DeleteVirtualMFADeviceRequest& request) const {
-  return DeleteVirtualMFADeviceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVirtualMFADeviceOutcome(result.GetResultWithOwnership())
+                            : DeleteVirtualMFADeviceOutcome(std::move(result.GetError()));
 }
 
 DetachGroupPolicyOutcome IAMClient::DetachGroupPolicy(const DetachGroupPolicyRequest& request) const {
-  return DetachGroupPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DetachGroupPolicyOutcome(result.GetResultWithOwnership())
+                            : DetachGroupPolicyOutcome(std::move(result.GetError()));
 }
 
 DetachRolePolicyOutcome IAMClient::DetachRolePolicy(const DetachRolePolicyRequest& request) const {
-  return DetachRolePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DetachRolePolicyOutcome(result.GetResultWithOwnership())
+                            : DetachRolePolicyOutcome(std::move(result.GetError()));
 }
 
 DetachUserPolicyOutcome IAMClient::DetachUserPolicy(const DetachUserPolicyRequest& request) const {
-  return DetachUserPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DetachUserPolicyOutcome(result.GetResultWithOwnership())
+                            : DetachUserPolicyOutcome(std::move(result.GetError()));
 }
 
 DisableOrganizationsRootCredentialsManagementOutcome IAMClient::DisableOrganizationsRootCredentialsManagement(
     const DisableOrganizationsRootCredentialsManagementRequest& request) const {
-  return DisableOrganizationsRootCredentialsManagementOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableOrganizationsRootCredentialsManagementOutcome(result.GetResultWithOwnership())
+                            : DisableOrganizationsRootCredentialsManagementOutcome(std::move(result.GetError()));
 }
 
 DisableOrganizationsRootSessionsOutcome IAMClient::DisableOrganizationsRootSessions(
     const DisableOrganizationsRootSessionsRequest& request) const {
-  return DisableOrganizationsRootSessionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableOrganizationsRootSessionsOutcome(result.GetResultWithOwnership())
+                            : DisableOrganizationsRootSessionsOutcome(std::move(result.GetError()));
 }
 
 DisableOutboundWebIdentityFederationOutcome IAMClient::DisableOutboundWebIdentityFederation(
     const DisableOutboundWebIdentityFederationRequest& request) const {
-  return DisableOutboundWebIdentityFederationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableOutboundWebIdentityFederationOutcome(result.GetResultWithOwnership())
+                            : DisableOutboundWebIdentityFederationOutcome(std::move(result.GetError()));
 }
 
 EnableMFADeviceOutcome IAMClient::EnableMFADevice(const EnableMFADeviceRequest& request) const {
-  return EnableMFADeviceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableMFADeviceOutcome(result.GetResultWithOwnership())
+                            : EnableMFADeviceOutcome(std::move(result.GetError()));
 }
 
 EnableOrganizationsRootCredentialsManagementOutcome IAMClient::EnableOrganizationsRootCredentialsManagement(
     const EnableOrganizationsRootCredentialsManagementRequest& request) const {
-  return EnableOrganizationsRootCredentialsManagementOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableOrganizationsRootCredentialsManagementOutcome(result.GetResultWithOwnership())
+                            : EnableOrganizationsRootCredentialsManagementOutcome(std::move(result.GetError()));
 }
 
 EnableOrganizationsRootSessionsOutcome IAMClient::EnableOrganizationsRootSessions(
     const EnableOrganizationsRootSessionsRequest& request) const {
-  return EnableOrganizationsRootSessionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableOrganizationsRootSessionsOutcome(result.GetResultWithOwnership())
+                            : EnableOrganizationsRootSessionsOutcome(std::move(result.GetError()));
 }
 
 EnableOutboundWebIdentityFederationOutcome IAMClient::EnableOutboundWebIdentityFederation(
     const EnableOutboundWebIdentityFederationRequest& request) const {
-  return EnableOutboundWebIdentityFederationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableOutboundWebIdentityFederationOutcome(result.GetResultWithOwnership())
+                            : EnableOutboundWebIdentityFederationOutcome(std::move(result.GetError()));
 }
 
 GenerateCredentialReportOutcome IAMClient::GenerateCredentialReport(const GenerateCredentialReportRequest& request) const {
-  return GenerateCredentialReportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GenerateCredentialReportOutcome(result.GetResultWithOwnership())
+                            : GenerateCredentialReportOutcome(std::move(result.GetError()));
 }
 
 GenerateOrganizationsAccessReportOutcome IAMClient::GenerateOrganizationsAccessReport(
     const GenerateOrganizationsAccessReportRequest& request) const {
-  return GenerateOrganizationsAccessReportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GenerateOrganizationsAccessReportOutcome(result.GetResultWithOwnership())
+                            : GenerateOrganizationsAccessReportOutcome(std::move(result.GetError()));
 }
 
 GenerateServiceLastAccessedDetailsOutcome IAMClient::GenerateServiceLastAccessedDetails(
     const GenerateServiceLastAccessedDetailsRequest& request) const {
-  return GenerateServiceLastAccessedDetailsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GenerateServiceLastAccessedDetailsOutcome(result.GetResultWithOwnership())
+                            : GenerateServiceLastAccessedDetailsOutcome(std::move(result.GetError()));
 }
 
 GetAccessKeyLastUsedOutcome IAMClient::GetAccessKeyLastUsed(const GetAccessKeyLastUsedRequest& request) const {
-  return GetAccessKeyLastUsedOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAccessKeyLastUsedOutcome(result.GetResultWithOwnership())
+                            : GetAccessKeyLastUsedOutcome(std::move(result.GetError()));
 }
 
 GetAccountAuthorizationDetailsOutcome IAMClient::GetAccountAuthorizationDetails(
     const GetAccountAuthorizationDetailsRequest& request) const {
-  return GetAccountAuthorizationDetailsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAccountAuthorizationDetailsOutcome(result.GetResultWithOwnership())
+                            : GetAccountAuthorizationDetailsOutcome(std::move(result.GetError()));
 }
 
 GetAccountPasswordPolicyOutcome IAMClient::GetAccountPasswordPolicy(const GetAccountPasswordPolicyRequest& request) const {
-  return GetAccountPasswordPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAccountPasswordPolicyOutcome(result.GetResultWithOwnership())
+                            : GetAccountPasswordPolicyOutcome(std::move(result.GetError()));
 }
 
 GetAccountSummaryOutcome IAMClient::GetAccountSummary(const GetAccountSummaryRequest& request) const {
-  return GetAccountSummaryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAccountSummaryOutcome(result.GetResultWithOwnership())
+                            : GetAccountSummaryOutcome(std::move(result.GetError()));
 }
 
 GetContextKeysForCustomPolicyOutcome IAMClient::GetContextKeysForCustomPolicy(const GetContextKeysForCustomPolicyRequest& request) const {
-  return GetContextKeysForCustomPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetContextKeysForCustomPolicyOutcome(result.GetResultWithOwnership())
+                            : GetContextKeysForCustomPolicyOutcome(std::move(result.GetError()));
 }
 
 GetContextKeysForPrincipalPolicyOutcome IAMClient::GetContextKeysForPrincipalPolicy(
     const GetContextKeysForPrincipalPolicyRequest& request) const {
-  return GetContextKeysForPrincipalPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetContextKeysForPrincipalPolicyOutcome(result.GetResultWithOwnership())
+                            : GetContextKeysForPrincipalPolicyOutcome(std::move(result.GetError()));
 }
 
 GetCredentialReportOutcome IAMClient::GetCredentialReport(const GetCredentialReportRequest& request) const {
-  return GetCredentialReportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCredentialReportOutcome(result.GetResultWithOwnership())
+                            : GetCredentialReportOutcome(std::move(result.GetError()));
 }
 
 GetDelegationRequestOutcome IAMClient::GetDelegationRequest(const GetDelegationRequestRequest& request) const {
-  return GetDelegationRequestOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDelegationRequestOutcome(result.GetResultWithOwnership())
+                            : GetDelegationRequestOutcome(std::move(result.GetError()));
 }
 
 GetGroupOutcome IAMClient::GetGroup(const GetGroupRequest& request) const {
-  return GetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetGroupOutcome(result.GetResultWithOwnership()) : GetGroupOutcome(std::move(result.GetError()));
 }
 
 GetGroupPolicyOutcome IAMClient::GetGroupPolicy(const GetGroupPolicyRequest& request) const {
-  return GetGroupPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetGroupPolicyOutcome(result.GetResultWithOwnership()) : GetGroupPolicyOutcome(std::move(result.GetError()));
 }
 
 GetHumanReadableSummaryOutcome IAMClient::GetHumanReadableSummary(const GetHumanReadableSummaryRequest& request) const {
-  return GetHumanReadableSummaryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetHumanReadableSummaryOutcome(result.GetResultWithOwnership())
+                            : GetHumanReadableSummaryOutcome(std::move(result.GetError()));
 }
 
 GetInstanceProfileOutcome IAMClient::GetInstanceProfile(const GetInstanceProfileRequest& request) const {
-  return GetInstanceProfileOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetInstanceProfileOutcome(result.GetResultWithOwnership())
+                            : GetInstanceProfileOutcome(std::move(result.GetError()));
 }
 
 GetLoginProfileOutcome IAMClient::GetLoginProfile(const GetLoginProfileRequest& request) const {
-  return GetLoginProfileOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLoginProfileOutcome(result.GetResultWithOwnership())
+                            : GetLoginProfileOutcome(std::move(result.GetError()));
 }
 
 GetMFADeviceOutcome IAMClient::GetMFADevice(const GetMFADeviceRequest& request) const {
-  return GetMFADeviceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetMFADeviceOutcome(result.GetResultWithOwnership()) : GetMFADeviceOutcome(std::move(result.GetError()));
 }
 
 GetOpenIDConnectProviderOutcome IAMClient::GetOpenIDConnectProvider(const GetOpenIDConnectProviderRequest& request) const {
-  return GetOpenIDConnectProviderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetOpenIDConnectProviderOutcome(result.GetResultWithOwnership())
+                            : GetOpenIDConnectProviderOutcome(std::move(result.GetError()));
 }
 
 GetOrganizationsAccessReportOutcome IAMClient::GetOrganizationsAccessReport(const GetOrganizationsAccessReportRequest& request) const {
-  return GetOrganizationsAccessReportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetOrganizationsAccessReportOutcome(result.GetResultWithOwnership())
+                            : GetOrganizationsAccessReportOutcome(std::move(result.GetError()));
 }
 
 GetOutboundWebIdentityFederationInfoOutcome IAMClient::GetOutboundWebIdentityFederationInfo(
     const GetOutboundWebIdentityFederationInfoRequest& request) const {
-  return GetOutboundWebIdentityFederationInfoOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetOutboundWebIdentityFederationInfoOutcome(result.GetResultWithOwnership())
+                            : GetOutboundWebIdentityFederationInfoOutcome(std::move(result.GetError()));
 }
 
 GetPolicyOutcome IAMClient::GetPolicy(const GetPolicyRequest& request) const {
-  return GetPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPolicyOutcome(result.GetResultWithOwnership()) : GetPolicyOutcome(std::move(result.GetError()));
 }
 
 GetPolicyVersionOutcome IAMClient::GetPolicyVersion(const GetPolicyVersionRequest& request) const {
-  return GetPolicyVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPolicyVersionOutcome(result.GetResultWithOwnership())
+                            : GetPolicyVersionOutcome(std::move(result.GetError()));
 }
 
 GetRoleOutcome IAMClient::GetRole(const GetRoleRequest& request) const {
-  return GetRoleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRoleOutcome(result.GetResultWithOwnership()) : GetRoleOutcome(std::move(result.GetError()));
 }
 
 GetRolePolicyOutcome IAMClient::GetRolePolicy(const GetRolePolicyRequest& request) const {
-  return GetRolePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRolePolicyOutcome(result.GetResultWithOwnership()) : GetRolePolicyOutcome(std::move(result.GetError()));
 }
 
 GetSAMLProviderOutcome IAMClient::GetSAMLProvider(const GetSAMLProviderRequest& request) const {
-  return GetSAMLProviderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSAMLProviderOutcome(result.GetResultWithOwnership())
+                            : GetSAMLProviderOutcome(std::move(result.GetError()));
 }
 
 GetSSHPublicKeyOutcome IAMClient::GetSSHPublicKey(const GetSSHPublicKeyRequest& request) const {
-  return GetSSHPublicKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSSHPublicKeyOutcome(result.GetResultWithOwnership())
+                            : GetSSHPublicKeyOutcome(std::move(result.GetError()));
 }
 
 GetServerCertificateOutcome IAMClient::GetServerCertificate(const GetServerCertificateRequest& request) const {
-  return GetServerCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetServerCertificateOutcome(result.GetResultWithOwnership())
+                            : GetServerCertificateOutcome(std::move(result.GetError()));
 }
 
 GetServiceLastAccessedDetailsOutcome IAMClient::GetServiceLastAccessedDetails(const GetServiceLastAccessedDetailsRequest& request) const {
-  return GetServiceLastAccessedDetailsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetServiceLastAccessedDetailsOutcome(result.GetResultWithOwnership())
+                            : GetServiceLastAccessedDetailsOutcome(std::move(result.GetError()));
 }
 
 GetServiceLastAccessedDetailsWithEntitiesOutcome IAMClient::GetServiceLastAccessedDetailsWithEntities(
     const GetServiceLastAccessedDetailsWithEntitiesRequest& request) const {
-  return GetServiceLastAccessedDetailsWithEntitiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetServiceLastAccessedDetailsWithEntitiesOutcome(result.GetResultWithOwnership())
+                            : GetServiceLastAccessedDetailsWithEntitiesOutcome(std::move(result.GetError()));
 }
 
 GetServiceLinkedRoleDeletionStatusOutcome IAMClient::GetServiceLinkedRoleDeletionStatus(
     const GetServiceLinkedRoleDeletionStatusRequest& request) const {
-  return GetServiceLinkedRoleDeletionStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetServiceLinkedRoleDeletionStatusOutcome(result.GetResultWithOwnership())
+                            : GetServiceLinkedRoleDeletionStatusOutcome(std::move(result.GetError()));
 }
 
 GetUserOutcome IAMClient::GetUser(const GetUserRequest& request) const {
-  return GetUserOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetUserOutcome(result.GetResultWithOwnership()) : GetUserOutcome(std::move(result.GetError()));
 }
 
 GetUserPolicyOutcome IAMClient::GetUserPolicy(const GetUserPolicyRequest& request) const {
-  return GetUserPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetUserPolicyOutcome(result.GetResultWithOwnership()) : GetUserPolicyOutcome(std::move(result.GetError()));
 }
 
 ListAccessKeysOutcome IAMClient::ListAccessKeys(const ListAccessKeysRequest& request) const {
-  return ListAccessKeysOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAccessKeysOutcome(result.GetResultWithOwnership()) : ListAccessKeysOutcome(std::move(result.GetError()));
 }
 
 ListAccountAliasesOutcome IAMClient::ListAccountAliases(const ListAccountAliasesRequest& request) const {
-  return ListAccountAliasesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAccountAliasesOutcome(result.GetResultWithOwnership())
+                            : ListAccountAliasesOutcome(std::move(result.GetError()));
 }
 
 ListAttachedGroupPoliciesOutcome IAMClient::ListAttachedGroupPolicies(const ListAttachedGroupPoliciesRequest& request) const {
-  return ListAttachedGroupPoliciesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAttachedGroupPoliciesOutcome(result.GetResultWithOwnership())
+                            : ListAttachedGroupPoliciesOutcome(std::move(result.GetError()));
 }
 
 ListAttachedRolePoliciesOutcome IAMClient::ListAttachedRolePolicies(const ListAttachedRolePoliciesRequest& request) const {
-  return ListAttachedRolePoliciesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAttachedRolePoliciesOutcome(result.GetResultWithOwnership())
+                            : ListAttachedRolePoliciesOutcome(std::move(result.GetError()));
 }
 
 ListAttachedUserPoliciesOutcome IAMClient::ListAttachedUserPolicies(const ListAttachedUserPoliciesRequest& request) const {
-  return ListAttachedUserPoliciesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAttachedUserPoliciesOutcome(result.GetResultWithOwnership())
+                            : ListAttachedUserPoliciesOutcome(std::move(result.GetError()));
 }
 
 ListDelegationRequestsOutcome IAMClient::ListDelegationRequests(const ListDelegationRequestsRequest& request) const {
-  return ListDelegationRequestsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDelegationRequestsOutcome(result.GetResultWithOwnership())
+                            : ListDelegationRequestsOutcome(std::move(result.GetError()));
 }
 
 ListEntitiesForPolicyOutcome IAMClient::ListEntitiesForPolicy(const ListEntitiesForPolicyRequest& request) const {
-  return ListEntitiesForPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEntitiesForPolicyOutcome(result.GetResultWithOwnership())
+                            : ListEntitiesForPolicyOutcome(std::move(result.GetError()));
 }
 
 ListGroupPoliciesOutcome IAMClient::ListGroupPolicies(const ListGroupPoliciesRequest& request) const {
-  return ListGroupPoliciesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListGroupPoliciesOutcome(result.GetResultWithOwnership())
+                            : ListGroupPoliciesOutcome(std::move(result.GetError()));
 }
 
 ListGroupsOutcome IAMClient::ListGroups(const ListGroupsRequest& request) const {
-  return ListGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListGroupsOutcome(result.GetResultWithOwnership()) : ListGroupsOutcome(std::move(result.GetError()));
 }
 
 ListGroupsForUserOutcome IAMClient::ListGroupsForUser(const ListGroupsForUserRequest& request) const {
-  return ListGroupsForUserOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListGroupsForUserOutcome(result.GetResultWithOwnership())
+                            : ListGroupsForUserOutcome(std::move(result.GetError()));
 }
 
 ListInstanceProfileTagsOutcome IAMClient::ListInstanceProfileTags(const ListInstanceProfileTagsRequest& request) const {
-  return ListInstanceProfileTagsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListInstanceProfileTagsOutcome(result.GetResultWithOwnership())
+                            : ListInstanceProfileTagsOutcome(std::move(result.GetError()));
 }
 
 ListInstanceProfilesOutcome IAMClient::ListInstanceProfiles(const ListInstanceProfilesRequest& request) const {
-  return ListInstanceProfilesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListInstanceProfilesOutcome(result.GetResultWithOwnership())
+                            : ListInstanceProfilesOutcome(std::move(result.GetError()));
 }
 
 ListInstanceProfilesForRoleOutcome IAMClient::ListInstanceProfilesForRole(const ListInstanceProfilesForRoleRequest& request) const {
-  return ListInstanceProfilesForRoleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListInstanceProfilesForRoleOutcome(result.GetResultWithOwnership())
+                            : ListInstanceProfilesForRoleOutcome(std::move(result.GetError()));
 }
 
 ListMFADeviceTagsOutcome IAMClient::ListMFADeviceTags(const ListMFADeviceTagsRequest& request) const {
-  return ListMFADeviceTagsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMFADeviceTagsOutcome(result.GetResultWithOwnership())
+                            : ListMFADeviceTagsOutcome(std::move(result.GetError()));
 }
 
 ListMFADevicesOutcome IAMClient::ListMFADevices(const ListMFADevicesRequest& request) const {
-  return ListMFADevicesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMFADevicesOutcome(result.GetResultWithOwnership()) : ListMFADevicesOutcome(std::move(result.GetError()));
 }
 
 ListOpenIDConnectProviderTagsOutcome IAMClient::ListOpenIDConnectProviderTags(const ListOpenIDConnectProviderTagsRequest& request) const {
-  return ListOpenIDConnectProviderTagsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListOpenIDConnectProviderTagsOutcome(result.GetResultWithOwnership())
+                            : ListOpenIDConnectProviderTagsOutcome(std::move(result.GetError()));
 }
 
 ListOpenIDConnectProvidersOutcome IAMClient::ListOpenIDConnectProviders(const ListOpenIDConnectProvidersRequest& request) const {
-  return ListOpenIDConnectProvidersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListOpenIDConnectProvidersOutcome(result.GetResultWithOwnership())
+                            : ListOpenIDConnectProvidersOutcome(std::move(result.GetError()));
 }
 
 ListOrganizationsFeaturesOutcome IAMClient::ListOrganizationsFeatures(const ListOrganizationsFeaturesRequest& request) const {
-  return ListOrganizationsFeaturesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListOrganizationsFeaturesOutcome(result.GetResultWithOwnership())
+                            : ListOrganizationsFeaturesOutcome(std::move(result.GetError()));
 }
 
 ListPoliciesOutcome IAMClient::ListPolicies(const ListPoliciesRequest& request) const {
-  return ListPoliciesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPoliciesOutcome(result.GetResultWithOwnership()) : ListPoliciesOutcome(std::move(result.GetError()));
 }
 
 ListPoliciesGrantingServiceAccessOutcome IAMClient::ListPoliciesGrantingServiceAccess(
     const ListPoliciesGrantingServiceAccessRequest& request) const {
-  return ListPoliciesGrantingServiceAccessOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPoliciesGrantingServiceAccessOutcome(result.GetResultWithOwnership())
+                            : ListPoliciesGrantingServiceAccessOutcome(std::move(result.GetError()));
 }
 
 ListPolicyTagsOutcome IAMClient::ListPolicyTags(const ListPolicyTagsRequest& request) const {
-  return ListPolicyTagsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPolicyTagsOutcome(result.GetResultWithOwnership()) : ListPolicyTagsOutcome(std::move(result.GetError()));
 }
 
 ListPolicyVersionsOutcome IAMClient::ListPolicyVersions(const ListPolicyVersionsRequest& request) const {
-  return ListPolicyVersionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPolicyVersionsOutcome(result.GetResultWithOwnership())
+                            : ListPolicyVersionsOutcome(std::move(result.GetError()));
 }
 
 ListRolePoliciesOutcome IAMClient::ListRolePolicies(const ListRolePoliciesRequest& request) const {
-  return ListRolePoliciesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRolePoliciesOutcome(result.GetResultWithOwnership())
+                            : ListRolePoliciesOutcome(std::move(result.GetError()));
 }
 
 ListRoleTagsOutcome IAMClient::ListRoleTags(const ListRoleTagsRequest& request) const {
-  return ListRoleTagsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRoleTagsOutcome(result.GetResultWithOwnership()) : ListRoleTagsOutcome(std::move(result.GetError()));
 }
 
 ListRolesOutcome IAMClient::ListRoles(const ListRolesRequest& request) const {
-  return ListRolesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRolesOutcome(result.GetResultWithOwnership()) : ListRolesOutcome(std::move(result.GetError()));
 }
 
 ListSAMLProviderTagsOutcome IAMClient::ListSAMLProviderTags(const ListSAMLProviderTagsRequest& request) const {
-  return ListSAMLProviderTagsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSAMLProviderTagsOutcome(result.GetResultWithOwnership())
+                            : ListSAMLProviderTagsOutcome(std::move(result.GetError()));
 }
 
 ListSAMLProvidersOutcome IAMClient::ListSAMLProviders(const ListSAMLProvidersRequest& request) const {
-  return ListSAMLProvidersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSAMLProvidersOutcome(result.GetResultWithOwnership())
+                            : ListSAMLProvidersOutcome(std::move(result.GetError()));
 }
 
 ListSSHPublicKeysOutcome IAMClient::ListSSHPublicKeys(const ListSSHPublicKeysRequest& request) const {
-  return ListSSHPublicKeysOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSSHPublicKeysOutcome(result.GetResultWithOwnership())
+                            : ListSSHPublicKeysOutcome(std::move(result.GetError()));
 }
 
 ListServerCertificateTagsOutcome IAMClient::ListServerCertificateTags(const ListServerCertificateTagsRequest& request) const {
-  return ListServerCertificateTagsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListServerCertificateTagsOutcome(result.GetResultWithOwnership())
+                            : ListServerCertificateTagsOutcome(std::move(result.GetError()));
 }
 
 ListServerCertificatesOutcome IAMClient::ListServerCertificates(const ListServerCertificatesRequest& request) const {
-  return ListServerCertificatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListServerCertificatesOutcome(result.GetResultWithOwnership())
+                            : ListServerCertificatesOutcome(std::move(result.GetError()));
 }
 
 ListServiceSpecificCredentialsOutcome IAMClient::ListServiceSpecificCredentials(
     const ListServiceSpecificCredentialsRequest& request) const {
-  return ListServiceSpecificCredentialsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListServiceSpecificCredentialsOutcome(result.GetResultWithOwnership())
+                            : ListServiceSpecificCredentialsOutcome(std::move(result.GetError()));
 }
 
 ListSigningCertificatesOutcome IAMClient::ListSigningCertificates(const ListSigningCertificatesRequest& request) const {
-  return ListSigningCertificatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSigningCertificatesOutcome(result.GetResultWithOwnership())
+                            : ListSigningCertificatesOutcome(std::move(result.GetError()));
 }
 
 ListUserPoliciesOutcome IAMClient::ListUserPolicies(const ListUserPoliciesRequest& request) const {
-  return ListUserPoliciesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListUserPoliciesOutcome(result.GetResultWithOwnership())
+                            : ListUserPoliciesOutcome(std::move(result.GetError()));
 }
 
 ListUserTagsOutcome IAMClient::ListUserTags(const ListUserTagsRequest& request) const {
-  return ListUserTagsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListUserTagsOutcome(result.GetResultWithOwnership()) : ListUserTagsOutcome(std::move(result.GetError()));
 }
 
 ListUsersOutcome IAMClient::ListUsers(const ListUsersRequest& request) const {
-  return ListUsersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListUsersOutcome(result.GetResultWithOwnership()) : ListUsersOutcome(std::move(result.GetError()));
 }
 
 ListVirtualMFADevicesOutcome IAMClient::ListVirtualMFADevices(const ListVirtualMFADevicesRequest& request) const {
-  return ListVirtualMFADevicesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListVirtualMFADevicesOutcome(result.GetResultWithOwnership())
+                            : ListVirtualMFADevicesOutcome(std::move(result.GetError()));
 }
 
 PutGroupPolicyOutcome IAMClient::PutGroupPolicy(const PutGroupPolicyRequest& request) const {
-  return PutGroupPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutGroupPolicyOutcome(result.GetResultWithOwnership()) : PutGroupPolicyOutcome(std::move(result.GetError()));
 }
 
 PutRolePermissionsBoundaryOutcome IAMClient::PutRolePermissionsBoundary(const PutRolePermissionsBoundaryRequest& request) const {
-  return PutRolePermissionsBoundaryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutRolePermissionsBoundaryOutcome(result.GetResultWithOwnership())
+                            : PutRolePermissionsBoundaryOutcome(std::move(result.GetError()));
 }
 
 PutRolePolicyOutcome IAMClient::PutRolePolicy(const PutRolePolicyRequest& request) const {
-  return PutRolePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutRolePolicyOutcome(result.GetResultWithOwnership()) : PutRolePolicyOutcome(std::move(result.GetError()));
 }
 
 PutUserPermissionsBoundaryOutcome IAMClient::PutUserPermissionsBoundary(const PutUserPermissionsBoundaryRequest& request) const {
-  return PutUserPermissionsBoundaryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutUserPermissionsBoundaryOutcome(result.GetResultWithOwnership())
+                            : PutUserPermissionsBoundaryOutcome(std::move(result.GetError()));
 }
 
 PutUserPolicyOutcome IAMClient::PutUserPolicy(const PutUserPolicyRequest& request) const {
-  return PutUserPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutUserPolicyOutcome(result.GetResultWithOwnership()) : PutUserPolicyOutcome(std::move(result.GetError()));
 }
 
 RejectDelegationRequestOutcome IAMClient::RejectDelegationRequest(const RejectDelegationRequestRequest& request) const {
-  return RejectDelegationRequestOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RejectDelegationRequestOutcome(result.GetResultWithOwnership())
+                            : RejectDelegationRequestOutcome(std::move(result.GetError()));
 }
 
 RemoveClientIDFromOpenIDConnectProviderOutcome IAMClient::RemoveClientIDFromOpenIDConnectProvider(
     const RemoveClientIDFromOpenIDConnectProviderRequest& request) const {
-  return RemoveClientIDFromOpenIDConnectProviderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveClientIDFromOpenIDConnectProviderOutcome(result.GetResultWithOwnership())
+                            : RemoveClientIDFromOpenIDConnectProviderOutcome(std::move(result.GetError()));
 }
 
 RemoveRoleFromInstanceProfileOutcome IAMClient::RemoveRoleFromInstanceProfile(const RemoveRoleFromInstanceProfileRequest& request) const {
-  return RemoveRoleFromInstanceProfileOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveRoleFromInstanceProfileOutcome(result.GetResultWithOwnership())
+                            : RemoveRoleFromInstanceProfileOutcome(std::move(result.GetError()));
 }
 
 RemoveUserFromGroupOutcome IAMClient::RemoveUserFromGroup(const RemoveUserFromGroupRequest& request) const {
-  return RemoveUserFromGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveUserFromGroupOutcome(result.GetResultWithOwnership())
+                            : RemoveUserFromGroupOutcome(std::move(result.GetError()));
 }
 
 ResetServiceSpecificCredentialOutcome IAMClient::ResetServiceSpecificCredential(
     const ResetServiceSpecificCredentialRequest& request) const {
-  return ResetServiceSpecificCredentialOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResetServiceSpecificCredentialOutcome(result.GetResultWithOwnership())
+                            : ResetServiceSpecificCredentialOutcome(std::move(result.GetError()));
 }
 
 ResyncMFADeviceOutcome IAMClient::ResyncMFADevice(const ResyncMFADeviceRequest& request) const {
-  return ResyncMFADeviceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResyncMFADeviceOutcome(result.GetResultWithOwnership())
+                            : ResyncMFADeviceOutcome(std::move(result.GetError()));
 }
 
 SendDelegationTokenOutcome IAMClient::SendDelegationToken(const SendDelegationTokenRequest& request) const {
-  return SendDelegationTokenOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendDelegationTokenOutcome(result.GetResultWithOwnership())
+                            : SendDelegationTokenOutcome(std::move(result.GetError()));
 }
 
 SetDefaultPolicyVersionOutcome IAMClient::SetDefaultPolicyVersion(const SetDefaultPolicyVersionRequest& request) const {
-  return SetDefaultPolicyVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetDefaultPolicyVersionOutcome(result.GetResultWithOwnership())
+                            : SetDefaultPolicyVersionOutcome(std::move(result.GetError()));
 }
 
 SetSecurityTokenServicePreferencesOutcome IAMClient::SetSecurityTokenServicePreferences(
     const SetSecurityTokenServicePreferencesRequest& request) const {
-  return SetSecurityTokenServicePreferencesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetSecurityTokenServicePreferencesOutcome(result.GetResultWithOwnership())
+                            : SetSecurityTokenServicePreferencesOutcome(std::move(result.GetError()));
 }
 
 SimulateCustomPolicyOutcome IAMClient::SimulateCustomPolicy(const SimulateCustomPolicyRequest& request) const {
-  return SimulateCustomPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SimulateCustomPolicyOutcome(result.GetResultWithOwnership())
+                            : SimulateCustomPolicyOutcome(std::move(result.GetError()));
 }
 
 SimulatePrincipalPolicyOutcome IAMClient::SimulatePrincipalPolicy(const SimulatePrincipalPolicyRequest& request) const {
-  return SimulatePrincipalPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SimulatePrincipalPolicyOutcome(result.GetResultWithOwnership())
+                            : SimulatePrincipalPolicyOutcome(std::move(result.GetError()));
 }
 
 TagInstanceProfileOutcome IAMClient::TagInstanceProfile(const TagInstanceProfileRequest& request) const {
-  return TagInstanceProfileOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagInstanceProfileOutcome(result.GetResultWithOwnership())
+                            : TagInstanceProfileOutcome(std::move(result.GetError()));
 }
 
 TagMFADeviceOutcome IAMClient::TagMFADevice(const TagMFADeviceRequest& request) const {
-  return TagMFADeviceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagMFADeviceOutcome(result.GetResultWithOwnership()) : TagMFADeviceOutcome(std::move(result.GetError()));
 }
 
 TagOpenIDConnectProviderOutcome IAMClient::TagOpenIDConnectProvider(const TagOpenIDConnectProviderRequest& request) const {
-  return TagOpenIDConnectProviderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagOpenIDConnectProviderOutcome(result.GetResultWithOwnership())
+                            : TagOpenIDConnectProviderOutcome(std::move(result.GetError()));
 }
 
 TagPolicyOutcome IAMClient::TagPolicy(const TagPolicyRequest& request) const {
-  return TagPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagPolicyOutcome(result.GetResultWithOwnership()) : TagPolicyOutcome(std::move(result.GetError()));
 }
 
 TagRoleOutcome IAMClient::TagRole(const TagRoleRequest& request) const {
-  return TagRoleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagRoleOutcome(result.GetResultWithOwnership()) : TagRoleOutcome(std::move(result.GetError()));
 }
 
 TagSAMLProviderOutcome IAMClient::TagSAMLProvider(const TagSAMLProviderRequest& request) const {
-  return TagSAMLProviderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagSAMLProviderOutcome(result.GetResultWithOwnership())
+                            : TagSAMLProviderOutcome(std::move(result.GetError()));
 }
 
 TagServerCertificateOutcome IAMClient::TagServerCertificate(const TagServerCertificateRequest& request) const {
-  return TagServerCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagServerCertificateOutcome(result.GetResultWithOwnership())
+                            : TagServerCertificateOutcome(std::move(result.GetError()));
 }
 
 TagUserOutcome IAMClient::TagUser(const TagUserRequest& request) const {
-  return TagUserOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagUserOutcome(result.GetResultWithOwnership()) : TagUserOutcome(std::move(result.GetError()));
 }
 
 UntagInstanceProfileOutcome IAMClient::UntagInstanceProfile(const UntagInstanceProfileRequest& request) const {
-  return UntagInstanceProfileOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagInstanceProfileOutcome(result.GetResultWithOwnership())
+                            : UntagInstanceProfileOutcome(std::move(result.GetError()));
 }
 
 UntagMFADeviceOutcome IAMClient::UntagMFADevice(const UntagMFADeviceRequest& request) const {
-  return UntagMFADeviceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagMFADeviceOutcome(result.GetResultWithOwnership()) : UntagMFADeviceOutcome(std::move(result.GetError()));
 }
 
 UntagOpenIDConnectProviderOutcome IAMClient::UntagOpenIDConnectProvider(const UntagOpenIDConnectProviderRequest& request) const {
-  return UntagOpenIDConnectProviderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagOpenIDConnectProviderOutcome(result.GetResultWithOwnership())
+                            : UntagOpenIDConnectProviderOutcome(std::move(result.GetError()));
 }
 
 UntagPolicyOutcome IAMClient::UntagPolicy(const UntagPolicyRequest& request) const {
-  return UntagPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagPolicyOutcome(result.GetResultWithOwnership()) : UntagPolicyOutcome(std::move(result.GetError()));
 }
 
 UntagRoleOutcome IAMClient::UntagRole(const UntagRoleRequest& request) const {
-  return UntagRoleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagRoleOutcome(result.GetResultWithOwnership()) : UntagRoleOutcome(std::move(result.GetError()));
 }
 
 UntagSAMLProviderOutcome IAMClient::UntagSAMLProvider(const UntagSAMLProviderRequest& request) const {
-  return UntagSAMLProviderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagSAMLProviderOutcome(result.GetResultWithOwnership())
+                            : UntagSAMLProviderOutcome(std::move(result.GetError()));
 }
 
 UntagServerCertificateOutcome IAMClient::UntagServerCertificate(const UntagServerCertificateRequest& request) const {
-  return UntagServerCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagServerCertificateOutcome(result.GetResultWithOwnership())
+                            : UntagServerCertificateOutcome(std::move(result.GetError()));
 }
 
 UntagUserOutcome IAMClient::UntagUser(const UntagUserRequest& request) const {
-  return UntagUserOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagUserOutcome(result.GetResultWithOwnership()) : UntagUserOutcome(std::move(result.GetError()));
 }
 
 UpdateAccessKeyOutcome IAMClient::UpdateAccessKey(const UpdateAccessKeyRequest& request) const {
-  return UpdateAccessKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAccessKeyOutcome(result.GetResultWithOwnership())
+                            : UpdateAccessKeyOutcome(std::move(result.GetError()));
 }
 
 UpdateAccountPasswordPolicyOutcome IAMClient::UpdateAccountPasswordPolicy(const UpdateAccountPasswordPolicyRequest& request) const {
-  return UpdateAccountPasswordPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAccountPasswordPolicyOutcome(result.GetResultWithOwnership())
+                            : UpdateAccountPasswordPolicyOutcome(std::move(result.GetError()));
 }
 
 UpdateAssumeRolePolicyOutcome IAMClient::UpdateAssumeRolePolicy(const UpdateAssumeRolePolicyRequest& request) const {
-  return UpdateAssumeRolePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAssumeRolePolicyOutcome(result.GetResultWithOwnership())
+                            : UpdateAssumeRolePolicyOutcome(std::move(result.GetError()));
 }
 
 UpdateDelegationRequestOutcome IAMClient::UpdateDelegationRequest(const UpdateDelegationRequestRequest& request) const {
-  return UpdateDelegationRequestOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDelegationRequestOutcome(result.GetResultWithOwnership())
+                            : UpdateDelegationRequestOutcome(std::move(result.GetError()));
 }
 
 UpdateGroupOutcome IAMClient::UpdateGroup(const UpdateGroupRequest& request) const {
-  return UpdateGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateGroupOutcome(result.GetResultWithOwnership()) : UpdateGroupOutcome(std::move(result.GetError()));
 }
 
 UpdateLoginProfileOutcome IAMClient::UpdateLoginProfile(const UpdateLoginProfileRequest& request) const {
-  return UpdateLoginProfileOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLoginProfileOutcome(result.GetResultWithOwnership())
+                            : UpdateLoginProfileOutcome(std::move(result.GetError()));
 }
 
 UpdateOpenIDConnectProviderThumbprintOutcome IAMClient::UpdateOpenIDConnectProviderThumbprint(
     const UpdateOpenIDConnectProviderThumbprintRequest& request) const {
-  return UpdateOpenIDConnectProviderThumbprintOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateOpenIDConnectProviderThumbprintOutcome(result.GetResultWithOwnership())
+                            : UpdateOpenIDConnectProviderThumbprintOutcome(std::move(result.GetError()));
 }
 
 UpdateRoleOutcome IAMClient::UpdateRole(const UpdateRoleRequest& request) const {
-  return UpdateRoleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRoleOutcome(result.GetResultWithOwnership()) : UpdateRoleOutcome(std::move(result.GetError()));
 }
 
 UpdateRoleDescriptionOutcome IAMClient::UpdateRoleDescription(const UpdateRoleDescriptionRequest& request) const {
-  return UpdateRoleDescriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRoleDescriptionOutcome(result.GetResultWithOwnership())
+                            : UpdateRoleDescriptionOutcome(std::move(result.GetError()));
 }
 
 UpdateSAMLProviderOutcome IAMClient::UpdateSAMLProvider(const UpdateSAMLProviderRequest& request) const {
-  return UpdateSAMLProviderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSAMLProviderOutcome(result.GetResultWithOwnership())
+                            : UpdateSAMLProviderOutcome(std::move(result.GetError()));
 }
 
 UpdateSSHPublicKeyOutcome IAMClient::UpdateSSHPublicKey(const UpdateSSHPublicKeyRequest& request) const {
-  return UpdateSSHPublicKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSSHPublicKeyOutcome(result.GetResultWithOwnership())
+                            : UpdateSSHPublicKeyOutcome(std::move(result.GetError()));
 }
 
 UpdateServerCertificateOutcome IAMClient::UpdateServerCertificate(const UpdateServerCertificateRequest& request) const {
-  return UpdateServerCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateServerCertificateOutcome(result.GetResultWithOwnership())
+                            : UpdateServerCertificateOutcome(std::move(result.GetError()));
 }
 
 UpdateServiceSpecificCredentialOutcome IAMClient::UpdateServiceSpecificCredential(
     const UpdateServiceSpecificCredentialRequest& request) const {
-  return UpdateServiceSpecificCredentialOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateServiceSpecificCredentialOutcome(result.GetResultWithOwnership())
+                            : UpdateServiceSpecificCredentialOutcome(std::move(result.GetError()));
 }
 
 UpdateSigningCertificateOutcome IAMClient::UpdateSigningCertificate(const UpdateSigningCertificateRequest& request) const {
-  return UpdateSigningCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSigningCertificateOutcome(result.GetResultWithOwnership())
+                            : UpdateSigningCertificateOutcome(std::move(result.GetError()));
 }
 
 UpdateUserOutcome IAMClient::UpdateUser(const UpdateUserRequest& request) const {
-  return UpdateUserOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateUserOutcome(result.GetResultWithOwnership()) : UpdateUserOutcome(std::move(result.GetError()));
 }
 
 UploadSSHPublicKeyOutcome IAMClient::UploadSSHPublicKey(const UploadSSHPublicKeyRequest& request) const {
-  return UploadSSHPublicKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UploadSSHPublicKeyOutcome(result.GetResultWithOwnership())
+                            : UploadSSHPublicKeyOutcome(std::move(result.GetError()));
 }
 
 UploadServerCertificateOutcome IAMClient::UploadServerCertificate(const UploadServerCertificateRequest& request) const {
-  return UploadServerCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UploadServerCertificateOutcome(result.GetResultWithOwnership())
+                            : UploadServerCertificateOutcome(std::move(result.GetError()));
 }
 
 UploadSigningCertificateOutcome IAMClient::UploadSigningCertificate(const UploadSigningCertificateRequest& request) const {
-  return UploadSigningCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UploadSigningCertificateOutcome(result.GetResultWithOwnership())
+                            : UploadSigningCertificateOutcome(std::move(result.GetError()));
 }

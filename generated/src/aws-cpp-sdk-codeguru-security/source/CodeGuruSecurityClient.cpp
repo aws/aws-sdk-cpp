@@ -198,7 +198,9 @@ BatchGetFindingsOutcome CodeGuruSecurityClient::BatchGetFindings(const BatchGetF
     endpointResolutionOutcome.GetResult().AddPathSegments("/batchGetFindings");
   };
 
-  return BatchGetFindingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetFindingsOutcome(result.GetResultWithOwnership())
+                            : BatchGetFindingsOutcome(std::move(result.GetError()));
 }
 
 CreateScanOutcome CodeGuruSecurityClient::CreateScan(const CreateScanRequest& request) const {
@@ -207,7 +209,8 @@ CreateScanOutcome CodeGuruSecurityClient::CreateScan(const CreateScanRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/scans");
   };
 
-  return CreateScanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateScanOutcome(result.GetResultWithOwnership()) : CreateScanOutcome(std::move(result.GetError()));
 }
 
 CreateUploadUrlOutcome CodeGuruSecurityClient::CreateUploadUrl(const CreateUploadUrlRequest& request) const {
@@ -216,7 +219,9 @@ CreateUploadUrlOutcome CodeGuruSecurityClient::CreateUploadUrl(const CreateUploa
     endpointResolutionOutcome.GetResult().AddPathSegments("/uploadUrl");
   };
 
-  return CreateUploadUrlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateUploadUrlOutcome(result.GetResultWithOwnership())
+                            : CreateUploadUrlOutcome(std::move(result.GetError()));
 }
 
 GetAccountConfigurationOutcome CodeGuruSecurityClient::GetAccountConfiguration(const GetAccountConfigurationRequest& request) const {
@@ -225,7 +230,9 @@ GetAccountConfigurationOutcome CodeGuruSecurityClient::GetAccountConfiguration(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/accountConfiguration/get");
   };
 
-  return GetAccountConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAccountConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetAccountConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetFindingsOutcome CodeGuruSecurityClient::GetFindings(const GetFindingsRequest& request) const {
@@ -241,7 +248,8 @@ GetFindingsOutcome CodeGuruSecurityClient::GetFindings(const GetFindingsRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetScanName());
   };
 
-  return GetFindingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFindingsOutcome(result.GetResultWithOwnership()) : GetFindingsOutcome(std::move(result.GetError()));
 }
 
 GetMetricsSummaryOutcome CodeGuruSecurityClient::GetMetricsSummary(const GetMetricsSummaryRequest& request) const {
@@ -256,7 +264,9 @@ GetMetricsSummaryOutcome CodeGuruSecurityClient::GetMetricsSummary(const GetMetr
     endpointResolutionOutcome.GetResult().AddPathSegments("/metrics/summary");
   };
 
-  return GetMetricsSummaryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMetricsSummaryOutcome(result.GetResultWithOwnership())
+                            : GetMetricsSummaryOutcome(std::move(result.GetError()));
 }
 
 GetScanOutcome CodeGuruSecurityClient::GetScan(const GetScanRequest& request) const {
@@ -272,7 +282,8 @@ GetScanOutcome CodeGuruSecurityClient::GetScan(const GetScanRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetScanName());
   };
 
-  return GetScanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetScanOutcome(result.GetResultWithOwnership()) : GetScanOutcome(std::move(result.GetError()));
 }
 
 ListFindingsMetricsOutcome CodeGuruSecurityClient::ListFindingsMetrics(const ListFindingsMetricsRequest& request) const {
@@ -292,7 +303,9 @@ ListFindingsMetricsOutcome CodeGuruSecurityClient::ListFindingsMetrics(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/metrics/findings");
   };
 
-  return ListFindingsMetricsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListFindingsMetricsOutcome(result.GetResultWithOwnership())
+                            : ListFindingsMetricsOutcome(std::move(result.GetError()));
 }
 
 ListScansOutcome CodeGuruSecurityClient::ListScans(const ListScansRequest& request) const {
@@ -301,7 +314,8 @@ ListScansOutcome CodeGuruSecurityClient::ListScans(const ListScansRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/scans");
   };
 
-  return ListScansOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListScansOutcome(result.GetResultWithOwnership()) : ListScansOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome CodeGuruSecurityClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -317,7 +331,9 @@ ListTagsForResourceOutcome CodeGuruSecurityClient::ListTagsForResource(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome CodeGuruSecurityClient::TagResource(const TagResourceRequest& request) const {
@@ -333,7 +349,8 @@ TagResourceOutcome CodeGuruSecurityClient::TagResource(const TagResourceRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome CodeGuruSecurityClient::UntagResource(const UntagResourceRequest& request) const {
@@ -354,7 +371,8 @@ UntagResourceOutcome CodeGuruSecurityClient::UntagResource(const UntagResourceRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAccountConfigurationOutcome CodeGuruSecurityClient::UpdateAccountConfiguration(
@@ -364,5 +382,7 @@ UpdateAccountConfigurationOutcome CodeGuruSecurityClient::UpdateAccountConfigura
     endpointResolutionOutcome.GetResult().AddPathSegments("/updateAccountConfiguration");
   };
 
-  return UpdateAccountConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateAccountConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateAccountConfigurationOutcome(std::move(result.GetError()));
 }

@@ -83,7 +83,9 @@ UpdateDataSourcePermissionsOutcome QuickSightClient::UpdateDataSourcePermissions
     endpointResolutionOutcome.GetResult().AddPathSegments("/permissions");
   };
 
-  return UpdateDataSourcePermissionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDataSourcePermissionsOutcome(result.GetResultWithOwnership())
+                            : UpdateDataSourcePermissionsOutcome(std::move(result.GetError()));
 }
 
 UpdateDefaultQBusinessApplicationOutcome QuickSightClient::UpdateDefaultQBusinessApplication(
@@ -101,7 +103,9 @@ UpdateDefaultQBusinessApplicationOutcome QuickSightClient::UpdateDefaultQBusines
     endpointResolutionOutcome.GetResult().AddPathSegments("/default-qbusiness-application");
   };
 
-  return UpdateDefaultQBusinessApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateDefaultQBusinessApplicationOutcome(result.GetResultWithOwnership())
+                            : UpdateDefaultQBusinessApplicationOutcome(std::move(result.GetError()));
 }
 
 UpdateFlowPermissionsOutcome QuickSightClient::UpdateFlowPermissions(const UpdateFlowPermissionsRequest& request) const {
@@ -125,7 +129,9 @@ UpdateFlowPermissionsOutcome QuickSightClient::UpdateFlowPermissions(const Updat
     endpointResolutionOutcome.GetResult().AddPathSegments("/permissions");
   };
 
-  return UpdateFlowPermissionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateFlowPermissionsOutcome(result.GetResultWithOwnership())
+                            : UpdateFlowPermissionsOutcome(std::move(result.GetError()));
 }
 
 UpdateFolderOutcome QuickSightClient::UpdateFolder(const UpdateFolderRequest& request) const {
@@ -148,7 +154,8 @@ UpdateFolderOutcome QuickSightClient::UpdateFolder(const UpdateFolderRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFolderId());
   };
 
-  return UpdateFolderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateFolderOutcome(result.GetResultWithOwnership()) : UpdateFolderOutcome(std::move(result.GetError()));
 }
 
 UpdateFolderPermissionsOutcome QuickSightClient::UpdateFolderPermissions(const UpdateFolderPermissionsRequest& request) const {
@@ -172,7 +179,9 @@ UpdateFolderPermissionsOutcome QuickSightClient::UpdateFolderPermissions(const U
     endpointResolutionOutcome.GetResult().AddPathSegments("/permissions");
   };
 
-  return UpdateFolderPermissionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateFolderPermissionsOutcome(result.GetResultWithOwnership())
+                            : UpdateFolderPermissionsOutcome(std::move(result.GetError()));
 }
 
 UpdateGroupOutcome QuickSightClient::UpdateGroup(const UpdateGroupRequest& request) const {
@@ -202,7 +211,8 @@ UpdateGroupOutcome QuickSightClient::UpdateGroup(const UpdateGroupRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGroupName());
   };
 
-  return UpdateGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateGroupOutcome(result.GetResultWithOwnership()) : UpdateGroupOutcome(std::move(result.GetError()));
 }
 
 UpdateIAMPolicyAssignmentOutcome QuickSightClient::UpdateIAMPolicyAssignment(const UpdateIAMPolicyAssignmentRequest& request) const {
@@ -232,7 +242,9 @@ UpdateIAMPolicyAssignmentOutcome QuickSightClient::UpdateIAMPolicyAssignment(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssignmentName());
   };
 
-  return UpdateIAMPolicyAssignmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateIAMPolicyAssignmentOutcome(result.GetResultWithOwnership())
+                            : UpdateIAMPolicyAssignmentOutcome(std::move(result.GetError()));
 }
 
 UpdateIdentityPropagationConfigOutcome QuickSightClient::UpdateIdentityPropagationConfig(
@@ -256,7 +268,9 @@ UpdateIdentityPropagationConfigOutcome QuickSightClient::UpdateIdentityPropagati
     endpointResolutionOutcome.GetResult().AddPathSegment(ServiceTypeMapper::GetNameForServiceType(request.GetService()));
   };
 
-  return UpdateIdentityPropagationConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateIdentityPropagationConfigOutcome(result.GetResultWithOwnership())
+                            : UpdateIdentityPropagationConfigOutcome(std::move(result.GetError()));
 }
 
 UpdateIpRestrictionOutcome QuickSightClient::UpdateIpRestriction(const UpdateIpRestrictionRequest& request) const {
@@ -273,7 +287,9 @@ UpdateIpRestrictionOutcome QuickSightClient::UpdateIpRestriction(const UpdateIpR
     endpointResolutionOutcome.GetResult().AddPathSegments("/ip-restriction");
   };
 
-  return UpdateIpRestrictionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateIpRestrictionOutcome(result.GetResultWithOwnership())
+                            : UpdateIpRestrictionOutcome(std::move(result.GetError()));
 }
 
 UpdateKeyRegistrationOutcome QuickSightClient::UpdateKeyRegistration(const UpdateKeyRegistrationRequest& request) const {
@@ -290,7 +306,9 @@ UpdateKeyRegistrationOutcome QuickSightClient::UpdateKeyRegistration(const Updat
     endpointResolutionOutcome.GetResult().AddPathSegments("/key-registration");
   };
 
-  return UpdateKeyRegistrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateKeyRegistrationOutcome(result.GetResultWithOwnership())
+                            : UpdateKeyRegistrationOutcome(std::move(result.GetError()));
 }
 
 UpdatePublicSharingSettingsOutcome QuickSightClient::UpdatePublicSharingSettings(const UpdatePublicSharingSettingsRequest& request) const {
@@ -307,7 +325,9 @@ UpdatePublicSharingSettingsOutcome QuickSightClient::UpdatePublicSharingSettings
     endpointResolutionOutcome.GetResult().AddPathSegments("/public-sharing-settings");
   };
 
-  return UpdatePublicSharingSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdatePublicSharingSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdatePublicSharingSettingsOutcome(std::move(result.GetError()));
 }
 
 UpdateQPersonalizationConfigurationOutcome QuickSightClient::UpdateQPersonalizationConfiguration(
@@ -325,7 +345,9 @@ UpdateQPersonalizationConfigurationOutcome QuickSightClient::UpdateQPersonalizat
     endpointResolutionOutcome.GetResult().AddPathSegments("/q-personalization-configuration");
   };
 
-  return UpdateQPersonalizationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateQPersonalizationConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateQPersonalizationConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateQuickSightQSearchConfigurationOutcome QuickSightClient::UpdateQuickSightQSearchConfiguration(
@@ -343,7 +365,9 @@ UpdateQuickSightQSearchConfigurationOutcome QuickSightClient::UpdateQuickSightQS
     endpointResolutionOutcome.GetResult().AddPathSegments("/quicksight-q-search-configuration");
   };
 
-  return UpdateQuickSightQSearchConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateQuickSightQSearchConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateQuickSightQSearchConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateRefreshScheduleOutcome QuickSightClient::UpdateRefreshSchedule(const UpdateRefreshScheduleRequest& request) const {
@@ -367,7 +391,9 @@ UpdateRefreshScheduleOutcome QuickSightClient::UpdateRefreshSchedule(const Updat
     endpointResolutionOutcome.GetResult().AddPathSegments("/refresh-schedules");
   };
 
-  return UpdateRefreshScheduleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateRefreshScheduleOutcome(result.GetResultWithOwnership())
+                            : UpdateRefreshScheduleOutcome(std::move(result.GetError()));
 }
 
 UpdateRoleCustomPermissionOutcome QuickSightClient::UpdateRoleCustomPermission(const UpdateRoleCustomPermissionRequest& request) const {
@@ -398,7 +424,9 @@ UpdateRoleCustomPermissionOutcome QuickSightClient::UpdateRoleCustomPermission(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/custom-permission");
   };
 
-  return UpdateRoleCustomPermissionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateRoleCustomPermissionOutcome(result.GetResultWithOwnership())
+                            : UpdateRoleCustomPermissionOutcome(std::move(result.GetError()));
 }
 
 UpdateSPICECapacityConfigurationOutcome QuickSightClient::UpdateSPICECapacityConfiguration(
@@ -416,7 +444,9 @@ UpdateSPICECapacityConfigurationOutcome QuickSightClient::UpdateSPICECapacityCon
     endpointResolutionOutcome.GetResult().AddPathSegments("/spice-capacity-configuration");
   };
 
-  return UpdateSPICECapacityConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSPICECapacityConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateSPICECapacityConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateSelfUpgradeOutcome QuickSightClient::UpdateSelfUpgrade(const UpdateSelfUpgradeRequest& request) const {
@@ -440,7 +470,9 @@ UpdateSelfUpgradeOutcome QuickSightClient::UpdateSelfUpgrade(const UpdateSelfUpg
     endpointResolutionOutcome.GetResult().AddPathSegments("/update-self-upgrade-request");
   };
 
-  return UpdateSelfUpgradeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSelfUpgradeOutcome(result.GetResultWithOwnership())
+                            : UpdateSelfUpgradeOutcome(std::move(result.GetError()));
 }
 
 UpdateSelfUpgradeConfigurationOutcome QuickSightClient::UpdateSelfUpgradeConfiguration(
@@ -465,7 +497,9 @@ UpdateSelfUpgradeConfigurationOutcome QuickSightClient::UpdateSelfUpgradeConfigu
     endpointResolutionOutcome.GetResult().AddPathSegments("/self-upgrade-configuration");
   };
 
-  return UpdateSelfUpgradeConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateSelfUpgradeConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateSelfUpgradeConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateTemplateOutcome QuickSightClient::UpdateTemplate(const UpdateTemplateRequest& request) const {
@@ -488,7 +522,8 @@ UpdateTemplateOutcome QuickSightClient::UpdateTemplate(const UpdateTemplateReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTemplateId());
   };
 
-  return UpdateTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateTemplateOutcome(result.GetResultWithOwnership()) : UpdateTemplateOutcome(std::move(result.GetError()));
 }
 
 UpdateTemplateAliasOutcome QuickSightClient::UpdateTemplateAlias(const UpdateTemplateAliasRequest& request) const {
@@ -518,7 +553,9 @@ UpdateTemplateAliasOutcome QuickSightClient::UpdateTemplateAlias(const UpdateTem
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAliasName());
   };
 
-  return UpdateTemplateAliasOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateTemplateAliasOutcome(result.GetResultWithOwnership())
+                            : UpdateTemplateAliasOutcome(std::move(result.GetError()));
 }
 
 UpdateTemplatePermissionsOutcome QuickSightClient::UpdateTemplatePermissions(const UpdateTemplatePermissionsRequest& request) const {
@@ -542,7 +579,9 @@ UpdateTemplatePermissionsOutcome QuickSightClient::UpdateTemplatePermissions(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/permissions");
   };
 
-  return UpdateTemplatePermissionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateTemplatePermissionsOutcome(result.GetResultWithOwnership())
+                            : UpdateTemplatePermissionsOutcome(std::move(result.GetError()));
 }
 
 UpdateThemeOutcome QuickSightClient::UpdateTheme(const UpdateThemeRequest& request) const {
@@ -565,7 +604,8 @@ UpdateThemeOutcome QuickSightClient::UpdateTheme(const UpdateThemeRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetThemeId());
   };
 
-  return UpdateThemeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateThemeOutcome(result.GetResultWithOwnership()) : UpdateThemeOutcome(std::move(result.GetError()));
 }
 
 UpdateThemeAliasOutcome QuickSightClient::UpdateThemeAlias(const UpdateThemeAliasRequest& request) const {
@@ -595,7 +635,9 @@ UpdateThemeAliasOutcome QuickSightClient::UpdateThemeAlias(const UpdateThemeAlia
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAliasName());
   };
 
-  return UpdateThemeAliasOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateThemeAliasOutcome(result.GetResultWithOwnership())
+                            : UpdateThemeAliasOutcome(std::move(result.GetError()));
 }
 
 UpdateThemePermissionsOutcome QuickSightClient::UpdateThemePermissions(const UpdateThemePermissionsRequest& request) const {
@@ -619,7 +661,9 @@ UpdateThemePermissionsOutcome QuickSightClient::UpdateThemePermissions(const Upd
     endpointResolutionOutcome.GetResult().AddPathSegments("/permissions");
   };
 
-  return UpdateThemePermissionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateThemePermissionsOutcome(result.GetResultWithOwnership())
+                            : UpdateThemePermissionsOutcome(std::move(result.GetError()));
 }
 
 UpdateTopicOutcome QuickSightClient::UpdateTopic(const UpdateTopicRequest& request) const {
@@ -642,7 +686,8 @@ UpdateTopicOutcome QuickSightClient::UpdateTopic(const UpdateTopicRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTopicId());
   };
 
-  return UpdateTopicOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateTopicOutcome(result.GetResultWithOwnership()) : UpdateTopicOutcome(std::move(result.GetError()));
 }
 
 UpdateTopicPermissionsOutcome QuickSightClient::UpdateTopicPermissions(const UpdateTopicPermissionsRequest& request) const {
@@ -666,7 +711,9 @@ UpdateTopicPermissionsOutcome QuickSightClient::UpdateTopicPermissions(const Upd
     endpointResolutionOutcome.GetResult().AddPathSegments("/permissions");
   };
 
-  return UpdateTopicPermissionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateTopicPermissionsOutcome(result.GetResultWithOwnership())
+                            : UpdateTopicPermissionsOutcome(std::move(result.GetError()));
 }
 
 UpdateTopicRefreshScheduleOutcome QuickSightClient::UpdateTopicRefreshSchedule(const UpdateTopicRefreshScheduleRequest& request) const {
@@ -696,7 +743,9 @@ UpdateTopicRefreshScheduleOutcome QuickSightClient::UpdateTopicRefreshSchedule(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetId());
   };
 
-  return UpdateTopicRefreshScheduleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateTopicRefreshScheduleOutcome(result.GetResultWithOwnership())
+                            : UpdateTopicRefreshScheduleOutcome(std::move(result.GetError()));
 }
 
 UpdateUserOutcome QuickSightClient::UpdateUser(const UpdateUserRequest& request) const {
@@ -726,7 +775,8 @@ UpdateUserOutcome QuickSightClient::UpdateUser(const UpdateUserRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserName());
   };
 
-  return UpdateUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateUserOutcome(result.GetResultWithOwnership()) : UpdateUserOutcome(std::move(result.GetError()));
 }
 
 UpdateUserCustomPermissionOutcome QuickSightClient::UpdateUserCustomPermission(const UpdateUserCustomPermissionRequest& request) const {
@@ -757,7 +807,9 @@ UpdateUserCustomPermissionOutcome QuickSightClient::UpdateUserCustomPermission(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/custom-permission");
   };
 
-  return UpdateUserCustomPermissionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateUserCustomPermissionOutcome(result.GetResultWithOwnership())
+                            : UpdateUserCustomPermissionOutcome(std::move(result.GetError()));
 }
 
 UpdateVPCConnectionOutcome QuickSightClient::UpdateVPCConnection(const UpdateVPCConnectionRequest& request) const {
@@ -780,5 +832,7 @@ UpdateVPCConnectionOutcome QuickSightClient::UpdateVPCConnection(const UpdateVPC
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVPCConnectionId());
   };
 
-  return UpdateVPCConnectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateVPCConnectionOutcome(result.GetResultWithOwnership())
+                            : UpdateVPCConnectionOutcome(std::move(result.GetError()));
 }

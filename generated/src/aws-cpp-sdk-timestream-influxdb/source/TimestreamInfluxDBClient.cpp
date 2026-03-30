@@ -196,78 +196,111 @@ TimestreamInfluxDBClient::InvokeOperationOutcome TimestreamInfluxDBClient::Invok
 }
 
 CreateDbClusterOutcome TimestreamInfluxDBClient::CreateDbCluster(const CreateDbClusterRequest& request) const {
-  return CreateDbClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDbClusterOutcome(result.GetResultWithOwnership())
+                            : CreateDbClusterOutcome(std::move(result.GetError()));
 }
 
 CreateDbInstanceOutcome TimestreamInfluxDBClient::CreateDbInstance(const CreateDbInstanceRequest& request) const {
-  return CreateDbInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDbInstanceOutcome(result.GetResultWithOwnership())
+                            : CreateDbInstanceOutcome(std::move(result.GetError()));
 }
 
 CreateDbParameterGroupOutcome TimestreamInfluxDBClient::CreateDbParameterGroup(const CreateDbParameterGroupRequest& request) const {
-  return CreateDbParameterGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDbParameterGroupOutcome(result.GetResultWithOwnership())
+                            : CreateDbParameterGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteDbClusterOutcome TimestreamInfluxDBClient::DeleteDbCluster(const DeleteDbClusterRequest& request) const {
-  return DeleteDbClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDbClusterOutcome(result.GetResultWithOwnership())
+                            : DeleteDbClusterOutcome(std::move(result.GetError()));
 }
 
 DeleteDbInstanceOutcome TimestreamInfluxDBClient::DeleteDbInstance(const DeleteDbInstanceRequest& request) const {
-  return DeleteDbInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDbInstanceOutcome(result.GetResultWithOwnership())
+                            : DeleteDbInstanceOutcome(std::move(result.GetError()));
 }
 
 GetDbClusterOutcome TimestreamInfluxDBClient::GetDbCluster(const GetDbClusterRequest& request) const {
-  return GetDbClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDbClusterOutcome(result.GetResultWithOwnership()) : GetDbClusterOutcome(std::move(result.GetError()));
 }
 
 GetDbInstanceOutcome TimestreamInfluxDBClient::GetDbInstance(const GetDbInstanceRequest& request) const {
-  return GetDbInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDbInstanceOutcome(result.GetResultWithOwnership()) : GetDbInstanceOutcome(std::move(result.GetError()));
 }
 
 GetDbParameterGroupOutcome TimestreamInfluxDBClient::GetDbParameterGroup(const GetDbParameterGroupRequest& request) const {
-  return GetDbParameterGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDbParameterGroupOutcome(result.GetResultWithOwnership())
+                            : GetDbParameterGroupOutcome(std::move(result.GetError()));
 }
 
 ListDbClustersOutcome TimestreamInfluxDBClient::ListDbClusters(const ListDbClustersRequest& request) const {
-  return ListDbClustersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDbClustersOutcome(result.GetResultWithOwnership()) : ListDbClustersOutcome(std::move(result.GetError()));
 }
 
 ListDbInstancesOutcome TimestreamInfluxDBClient::ListDbInstances(const ListDbInstancesRequest& request) const {
-  return ListDbInstancesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDbInstancesOutcome(result.GetResultWithOwnership())
+                            : ListDbInstancesOutcome(std::move(result.GetError()));
 }
 
 ListDbInstancesForClusterOutcome TimestreamInfluxDBClient::ListDbInstancesForCluster(
     const ListDbInstancesForClusterRequest& request) const {
-  return ListDbInstancesForClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDbInstancesForClusterOutcome(result.GetResultWithOwnership())
+                            : ListDbInstancesForClusterOutcome(std::move(result.GetError()));
 }
 
 ListDbParameterGroupsOutcome TimestreamInfluxDBClient::ListDbParameterGroups(const ListDbParameterGroupsRequest& request) const {
-  return ListDbParameterGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDbParameterGroupsOutcome(result.GetResultWithOwnership())
+                            : ListDbParameterGroupsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome TimestreamInfluxDBClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 RebootDbClusterOutcome TimestreamInfluxDBClient::RebootDbCluster(const RebootDbClusterRequest& request) const {
-  return RebootDbClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RebootDbClusterOutcome(result.GetResultWithOwnership())
+                            : RebootDbClusterOutcome(std::move(result.GetError()));
 }
 
 RebootDbInstanceOutcome TimestreamInfluxDBClient::RebootDbInstance(const RebootDbInstanceRequest& request) const {
-  return RebootDbInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RebootDbInstanceOutcome(result.GetResultWithOwnership())
+                            : RebootDbInstanceOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome TimestreamInfluxDBClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome TimestreamInfluxDBClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateDbClusterOutcome TimestreamInfluxDBClient::UpdateDbCluster(const UpdateDbClusterRequest& request) const {
-  return UpdateDbClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDbClusterOutcome(result.GetResultWithOwnership())
+                            : UpdateDbClusterOutcome(std::move(result.GetError()));
 }
 
 UpdateDbInstanceOutcome TimestreamInfluxDBClient::UpdateDbInstance(const UpdateDbInstanceRequest& request) const {
-  return UpdateDbInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDbInstanceOutcome(result.GetResultWithOwnership())
+                            : UpdateDbInstanceOutcome(std::move(result.GetError()));
 }

@@ -214,7 +214,9 @@ AssociateCertificateOutcome MediaConvertClient::AssociateCertificate(const Assoc
     endpointResolutionOutcome.GetResult().AddPathSegments("/2017-08-29/certificates");
   };
 
-  return AssociateCertificateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateCertificateOutcome(result.GetResultWithOwnership())
+                            : AssociateCertificateOutcome(std::move(result.GetError()));
 }
 
 CancelJobOutcome MediaConvertClient::CancelJob(const CancelJobRequest& request) const {
@@ -230,7 +232,8 @@ CancelJobOutcome MediaConvertClient::CancelJob(const CancelJobRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return CancelJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? CancelJobOutcome(result.GetResultWithOwnership()) : CancelJobOutcome(std::move(result.GetError()));
 }
 
 CreateJobOutcome MediaConvertClient::CreateJob(const CreateJobRequest& request) const {
@@ -239,7 +242,8 @@ CreateJobOutcome MediaConvertClient::CreateJob(const CreateJobRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/2017-08-29/jobs");
   };
 
-  return CreateJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateJobOutcome(result.GetResultWithOwnership()) : CreateJobOutcome(std::move(result.GetError()));
 }
 
 CreateJobTemplateOutcome MediaConvertClient::CreateJobTemplate(const CreateJobTemplateRequest& request) const {
@@ -248,7 +252,9 @@ CreateJobTemplateOutcome MediaConvertClient::CreateJobTemplate(const CreateJobTe
     endpointResolutionOutcome.GetResult().AddPathSegments("/2017-08-29/jobTemplates");
   };
 
-  return CreateJobTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateJobTemplateOutcome(result.GetResultWithOwnership())
+                            : CreateJobTemplateOutcome(std::move(result.GetError()));
 }
 
 CreatePresetOutcome MediaConvertClient::CreatePreset(const CreatePresetRequest& request) const {
@@ -257,7 +263,8 @@ CreatePresetOutcome MediaConvertClient::CreatePreset(const CreatePresetRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/2017-08-29/presets");
   };
 
-  return CreatePresetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePresetOutcome(result.GetResultWithOwnership()) : CreatePresetOutcome(std::move(result.GetError()));
 }
 
 CreateQueueOutcome MediaConvertClient::CreateQueue(const CreateQueueRequest& request) const {
@@ -266,7 +273,8 @@ CreateQueueOutcome MediaConvertClient::CreateQueue(const CreateQueueRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/2017-08-29/queues");
   };
 
-  return CreateQueueOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateQueueOutcome(result.GetResultWithOwnership()) : CreateQueueOutcome(std::move(result.GetError()));
 }
 
 CreateResourceShareOutcome MediaConvertClient::CreateResourceShare(const CreateResourceShareRequest& request) const {
@@ -275,7 +283,9 @@ CreateResourceShareOutcome MediaConvertClient::CreateResourceShare(const CreateR
     endpointResolutionOutcome.GetResult().AddPathSegments("/2017-08-29/resourceShares");
   };
 
-  return CreateResourceShareOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateResourceShareOutcome(result.GetResultWithOwnership())
+                            : CreateResourceShareOutcome(std::move(result.GetError()));
 }
 
 DeleteJobTemplateOutcome MediaConvertClient::DeleteJobTemplate(const DeleteJobTemplateRequest& request) const {
@@ -291,7 +301,9 @@ DeleteJobTemplateOutcome MediaConvertClient::DeleteJobTemplate(const DeleteJobTe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteJobTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteJobTemplateOutcome(result.GetResultWithOwnership())
+                            : DeleteJobTemplateOutcome(std::move(result.GetError()));
 }
 
 DeletePolicyOutcome MediaConvertClient::DeletePolicy(const DeletePolicyRequest& request) const {
@@ -300,7 +312,8 @@ DeletePolicyOutcome MediaConvertClient::DeletePolicy(const DeletePolicyRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/2017-08-29/policy");
   };
 
-  return DeletePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePolicyOutcome(result.GetResultWithOwnership()) : DeletePolicyOutcome(std::move(result.GetError()));
 }
 
 DeletePresetOutcome MediaConvertClient::DeletePreset(const DeletePresetRequest& request) const {
@@ -316,7 +329,8 @@ DeletePresetOutcome MediaConvertClient::DeletePreset(const DeletePresetRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeletePresetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePresetOutcome(result.GetResultWithOwnership()) : DeletePresetOutcome(std::move(result.GetError()));
 }
 
 DeleteQueueOutcome MediaConvertClient::DeleteQueue(const DeleteQueueRequest& request) const {
@@ -332,7 +346,8 @@ DeleteQueueOutcome MediaConvertClient::DeleteQueue(const DeleteQueueRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteQueueOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteQueueOutcome(result.GetResultWithOwnership()) : DeleteQueueOutcome(std::move(result.GetError()));
 }
 
 DisassociateCertificateOutcome MediaConvertClient::DisassociateCertificate(const DisassociateCertificateRequest& request) const {
@@ -348,7 +363,9 @@ DisassociateCertificateOutcome MediaConvertClient::DisassociateCertificate(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return DisassociateCertificateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateCertificateOutcome(result.GetResultWithOwnership())
+                            : DisassociateCertificateOutcome(std::move(result.GetError()));
 }
 
 GetJobOutcome MediaConvertClient::GetJob(const GetJobRequest& request) const {
@@ -364,7 +381,8 @@ GetJobOutcome MediaConvertClient::GetJob(const GetJobRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetJobOutcome(result.GetResultWithOwnership()) : GetJobOutcome(std::move(result.GetError()));
 }
 
 GetJobTemplateOutcome MediaConvertClient::GetJobTemplate(const GetJobTemplateRequest& request) const {
@@ -380,7 +398,8 @@ GetJobTemplateOutcome MediaConvertClient::GetJobTemplate(const GetJobTemplateReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return GetJobTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetJobTemplateOutcome(result.GetResultWithOwnership()) : GetJobTemplateOutcome(std::move(result.GetError()));
 }
 
 GetJobsQueryResultsOutcome MediaConvertClient::GetJobsQueryResults(const GetJobsQueryResultsRequest& request) const {
@@ -396,7 +415,9 @@ GetJobsQueryResultsOutcome MediaConvertClient::GetJobsQueryResults(const GetJobs
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetJobsQueryResultsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetJobsQueryResultsOutcome(result.GetResultWithOwnership())
+                            : GetJobsQueryResultsOutcome(std::move(result.GetError()));
 }
 
 GetPolicyOutcome MediaConvertClient::GetPolicy(const GetPolicyRequest& request) const {
@@ -405,7 +426,8 @@ GetPolicyOutcome MediaConvertClient::GetPolicy(const GetPolicyRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/2017-08-29/policy");
   };
 
-  return GetPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPolicyOutcome(result.GetResultWithOwnership()) : GetPolicyOutcome(std::move(result.GetError()));
 }
 
 GetPresetOutcome MediaConvertClient::GetPreset(const GetPresetRequest& request) const {
@@ -421,7 +443,8 @@ GetPresetOutcome MediaConvertClient::GetPreset(const GetPresetRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return GetPresetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPresetOutcome(result.GetResultWithOwnership()) : GetPresetOutcome(std::move(result.GetError()));
 }
 
 GetQueueOutcome MediaConvertClient::GetQueue(const GetQueueRequest& request) const {
@@ -437,7 +460,8 @@ GetQueueOutcome MediaConvertClient::GetQueue(const GetQueueRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return GetQueueOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetQueueOutcome(result.GetResultWithOwnership()) : GetQueueOutcome(std::move(result.GetError()));
 }
 
 ListJobTemplatesOutcome MediaConvertClient::ListJobTemplates(const ListJobTemplatesRequest& request) const {
@@ -446,7 +470,9 @@ ListJobTemplatesOutcome MediaConvertClient::ListJobTemplates(const ListJobTempla
     endpointResolutionOutcome.GetResult().AddPathSegments("/2017-08-29/jobTemplates");
   };
 
-  return ListJobTemplatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListJobTemplatesOutcome(result.GetResultWithOwnership())
+                            : ListJobTemplatesOutcome(std::move(result.GetError()));
 }
 
 ListJobsOutcome MediaConvertClient::ListJobs(const ListJobsRequest& request) const {
@@ -455,7 +481,8 @@ ListJobsOutcome MediaConvertClient::ListJobs(const ListJobsRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegments("/2017-08-29/jobs");
   };
 
-  return ListJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListJobsOutcome(result.GetResultWithOwnership()) : ListJobsOutcome(std::move(result.GetError()));
 }
 
 ListPresetsOutcome MediaConvertClient::ListPresets(const ListPresetsRequest& request) const {
@@ -464,7 +491,8 @@ ListPresetsOutcome MediaConvertClient::ListPresets(const ListPresetsRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/2017-08-29/presets");
   };
 
-  return ListPresetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPresetsOutcome(result.GetResultWithOwnership()) : ListPresetsOutcome(std::move(result.GetError()));
 }
 
 ListQueuesOutcome MediaConvertClient::ListQueues(const ListQueuesRequest& request) const {
@@ -473,7 +501,8 @@ ListQueuesOutcome MediaConvertClient::ListQueues(const ListQueuesRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/2017-08-29/queues");
   };
 
-  return ListQueuesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListQueuesOutcome(result.GetResultWithOwnership()) : ListQueuesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome MediaConvertClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -489,7 +518,9 @@ ListTagsForResourceOutcome MediaConvertClient::ListTagsForResource(const ListTag
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListVersionsOutcome MediaConvertClient::ListVersions(const ListVersionsRequest& request) const {
@@ -498,7 +529,8 @@ ListVersionsOutcome MediaConvertClient::ListVersions(const ListVersionsRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/2017-08-29/versions");
   };
 
-  return ListVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListVersionsOutcome(result.GetResultWithOwnership()) : ListVersionsOutcome(std::move(result.GetError()));
 }
 
 ProbeOutcome MediaConvertClient::Probe(const ProbeRequest& request) const {
@@ -507,7 +539,8 @@ ProbeOutcome MediaConvertClient::Probe(const ProbeRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/2017-08-29/probe");
   };
 
-  return ProbeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ProbeOutcome(result.GetResultWithOwnership()) : ProbeOutcome(std::move(result.GetError()));
 }
 
 PutPolicyOutcome MediaConvertClient::PutPolicy(const PutPolicyRequest& request) const {
@@ -516,7 +549,8 @@ PutPolicyOutcome MediaConvertClient::PutPolicy(const PutPolicyRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/2017-08-29/policy");
   };
 
-  return PutPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutPolicyOutcome(result.GetResultWithOwnership()) : PutPolicyOutcome(std::move(result.GetError()));
 }
 
 SearchJobsOutcome MediaConvertClient::SearchJobs(const SearchJobsRequest& request) const {
@@ -525,7 +559,8 @@ SearchJobsOutcome MediaConvertClient::SearchJobs(const SearchJobsRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/2017-08-29/search");
   };
 
-  return SearchJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? SearchJobsOutcome(result.GetResultWithOwnership()) : SearchJobsOutcome(std::move(result.GetError()));
 }
 
 StartJobsQueryOutcome MediaConvertClient::StartJobsQuery(const StartJobsQueryRequest& request) const {
@@ -534,7 +569,8 @@ StartJobsQueryOutcome MediaConvertClient::StartJobsQuery(const StartJobsQueryReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/2017-08-29/jobsQueries");
   };
 
-  return StartJobsQueryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartJobsQueryOutcome(result.GetResultWithOwnership()) : StartJobsQueryOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome MediaConvertClient::TagResource(const TagResourceRequest& request) const {
@@ -543,7 +579,8 @@ TagResourceOutcome MediaConvertClient::TagResource(const TagResourceRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/2017-08-29/tags");
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome MediaConvertClient::UntagResource(const UntagResourceRequest& request) const {
@@ -559,7 +596,8 @@ UntagResourceOutcome MediaConvertClient::UntagResource(const UntagResourceReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateJobTemplateOutcome MediaConvertClient::UpdateJobTemplate(const UpdateJobTemplateRequest& request) const {
@@ -575,7 +613,9 @@ UpdateJobTemplateOutcome MediaConvertClient::UpdateJobTemplate(const UpdateJobTe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return UpdateJobTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateJobTemplateOutcome(result.GetResultWithOwnership())
+                            : UpdateJobTemplateOutcome(std::move(result.GetError()));
 }
 
 UpdatePresetOutcome MediaConvertClient::UpdatePreset(const UpdatePresetRequest& request) const {
@@ -591,7 +631,8 @@ UpdatePresetOutcome MediaConvertClient::UpdatePreset(const UpdatePresetRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return UpdatePresetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdatePresetOutcome(result.GetResultWithOwnership()) : UpdatePresetOutcome(std::move(result.GetError()));
 }
 
 UpdateQueueOutcome MediaConvertClient::UpdateQueue(const UpdateQueueRequest& request) const {
@@ -607,5 +648,6 @@ UpdateQueueOutcome MediaConvertClient::UpdateQueue(const UpdateQueueRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return UpdateQueueOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateQueueOutcome(result.GetResultWithOwnership()) : UpdateQueueOutcome(std::move(result.GetError()));
 }

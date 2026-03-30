@@ -231,239 +231,334 @@ CodeBuildClient::InvokeOperationOutcome CodeBuildClient::InvokeServiceOperation(
 }
 
 BatchDeleteBuildsOutcome CodeBuildClient::BatchDeleteBuilds(const BatchDeleteBuildsRequest& request) const {
-  return BatchDeleteBuildsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeleteBuildsOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteBuildsOutcome(std::move(result.GetError()));
 }
 
 BatchGetBuildBatchesOutcome CodeBuildClient::BatchGetBuildBatches(const BatchGetBuildBatchesRequest& request) const {
-  return BatchGetBuildBatchesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetBuildBatchesOutcome(result.GetResultWithOwnership())
+                            : BatchGetBuildBatchesOutcome(std::move(result.GetError()));
 }
 
 BatchGetBuildsOutcome CodeBuildClient::BatchGetBuilds(const BatchGetBuildsRequest& request) const {
-  return BatchGetBuildsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetBuildsOutcome(result.GetResultWithOwnership()) : BatchGetBuildsOutcome(std::move(result.GetError()));
 }
 
 BatchGetCommandExecutionsOutcome CodeBuildClient::BatchGetCommandExecutions(const BatchGetCommandExecutionsRequest& request) const {
-  return BatchGetCommandExecutionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetCommandExecutionsOutcome(result.GetResultWithOwnership())
+                            : BatchGetCommandExecutionsOutcome(std::move(result.GetError()));
 }
 
 BatchGetFleetsOutcome CodeBuildClient::BatchGetFleets(const BatchGetFleetsRequest& request) const {
-  return BatchGetFleetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetFleetsOutcome(result.GetResultWithOwnership()) : BatchGetFleetsOutcome(std::move(result.GetError()));
 }
 
 BatchGetProjectsOutcome CodeBuildClient::BatchGetProjects(const BatchGetProjectsRequest& request) const {
-  return BatchGetProjectsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetProjectsOutcome(result.GetResultWithOwnership())
+                            : BatchGetProjectsOutcome(std::move(result.GetError()));
 }
 
 BatchGetReportGroupsOutcome CodeBuildClient::BatchGetReportGroups(const BatchGetReportGroupsRequest& request) const {
-  return BatchGetReportGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetReportGroupsOutcome(result.GetResultWithOwnership())
+                            : BatchGetReportGroupsOutcome(std::move(result.GetError()));
 }
 
 BatchGetReportsOutcome CodeBuildClient::BatchGetReports(const BatchGetReportsRequest& request) const {
-  return BatchGetReportsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetReportsOutcome(result.GetResultWithOwnership())
+                            : BatchGetReportsOutcome(std::move(result.GetError()));
 }
 
 BatchGetSandboxesOutcome CodeBuildClient::BatchGetSandboxes(const BatchGetSandboxesRequest& request) const {
-  return BatchGetSandboxesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetSandboxesOutcome(result.GetResultWithOwnership())
+                            : BatchGetSandboxesOutcome(std::move(result.GetError()));
 }
 
 CreateFleetOutcome CodeBuildClient::CreateFleet(const CreateFleetRequest& request) const {
-  return CreateFleetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFleetOutcome(result.GetResultWithOwnership()) : CreateFleetOutcome(std::move(result.GetError()));
 }
 
 CreateProjectOutcome CodeBuildClient::CreateProject(const CreateProjectRequest& request) const {
-  return CreateProjectOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProjectOutcome(result.GetResultWithOwnership()) : CreateProjectOutcome(std::move(result.GetError()));
 }
 
 CreateReportGroupOutcome CodeBuildClient::CreateReportGroup(const CreateReportGroupRequest& request) const {
-  return CreateReportGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateReportGroupOutcome(result.GetResultWithOwnership())
+                            : CreateReportGroupOutcome(std::move(result.GetError()));
 }
 
 CreateWebhookOutcome CodeBuildClient::CreateWebhook(const CreateWebhookRequest& request) const {
-  return CreateWebhookOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWebhookOutcome(result.GetResultWithOwnership()) : CreateWebhookOutcome(std::move(result.GetError()));
 }
 
 DeleteBuildBatchOutcome CodeBuildClient::DeleteBuildBatch(const DeleteBuildBatchRequest& request) const {
-  return DeleteBuildBatchOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteBuildBatchOutcome(result.GetResultWithOwnership())
+                            : DeleteBuildBatchOutcome(std::move(result.GetError()));
 }
 
 DeleteFleetOutcome CodeBuildClient::DeleteFleet(const DeleteFleetRequest& request) const {
-  return DeleteFleetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteFleetOutcome(result.GetResultWithOwnership()) : DeleteFleetOutcome(std::move(result.GetError()));
 }
 
 DeleteProjectOutcome CodeBuildClient::DeleteProject(const DeleteProjectRequest& request) const {
-  return DeleteProjectOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteProjectOutcome(result.GetResultWithOwnership()) : DeleteProjectOutcome(std::move(result.GetError()));
 }
 
 DeleteReportOutcome CodeBuildClient::DeleteReport(const DeleteReportRequest& request) const {
-  return DeleteReportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteReportOutcome(result.GetResultWithOwnership()) : DeleteReportOutcome(std::move(result.GetError()));
 }
 
 DeleteReportGroupOutcome CodeBuildClient::DeleteReportGroup(const DeleteReportGroupRequest& request) const {
-  return DeleteReportGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteReportGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteReportGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteResourcePolicyOutcome CodeBuildClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const {
-  return DeleteResourcePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteSourceCredentialsOutcome CodeBuildClient::DeleteSourceCredentials(const DeleteSourceCredentialsRequest& request) const {
-  return DeleteSourceCredentialsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSourceCredentialsOutcome(result.GetResultWithOwnership())
+                            : DeleteSourceCredentialsOutcome(std::move(result.GetError()));
 }
 
 DeleteWebhookOutcome CodeBuildClient::DeleteWebhook(const DeleteWebhookRequest& request) const {
-  return DeleteWebhookOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteWebhookOutcome(result.GetResultWithOwnership()) : DeleteWebhookOutcome(std::move(result.GetError()));
 }
 
 DescribeCodeCoveragesOutcome CodeBuildClient::DescribeCodeCoverages(const DescribeCodeCoveragesRequest& request) const {
-  return DescribeCodeCoveragesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCodeCoveragesOutcome(result.GetResultWithOwnership())
+                            : DescribeCodeCoveragesOutcome(std::move(result.GetError()));
 }
 
 DescribeTestCasesOutcome CodeBuildClient::DescribeTestCases(const DescribeTestCasesRequest& request) const {
-  return DescribeTestCasesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTestCasesOutcome(result.GetResultWithOwnership())
+                            : DescribeTestCasesOutcome(std::move(result.GetError()));
 }
 
 GetReportGroupTrendOutcome CodeBuildClient::GetReportGroupTrend(const GetReportGroupTrendRequest& request) const {
-  return GetReportGroupTrendOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetReportGroupTrendOutcome(result.GetResultWithOwnership())
+                            : GetReportGroupTrendOutcome(std::move(result.GetError()));
 }
 
 GetResourcePolicyOutcome CodeBuildClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const {
-  return GetResourcePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : GetResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 ImportSourceCredentialsOutcome CodeBuildClient::ImportSourceCredentials(const ImportSourceCredentialsRequest& request) const {
-  return ImportSourceCredentialsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportSourceCredentialsOutcome(result.GetResultWithOwnership())
+                            : ImportSourceCredentialsOutcome(std::move(result.GetError()));
 }
 
 InvalidateProjectCacheOutcome CodeBuildClient::InvalidateProjectCache(const InvalidateProjectCacheRequest& request) const {
-  return InvalidateProjectCacheOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? InvalidateProjectCacheOutcome(result.GetResultWithOwnership())
+                            : InvalidateProjectCacheOutcome(std::move(result.GetError()));
 }
 
 ListBuildBatchesOutcome CodeBuildClient::ListBuildBatches(const ListBuildBatchesRequest& request) const {
-  return ListBuildBatchesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBuildBatchesOutcome(result.GetResultWithOwnership())
+                            : ListBuildBatchesOutcome(std::move(result.GetError()));
 }
 
 ListBuildBatchesForProjectOutcome CodeBuildClient::ListBuildBatchesForProject(const ListBuildBatchesForProjectRequest& request) const {
-  return ListBuildBatchesForProjectOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBuildBatchesForProjectOutcome(result.GetResultWithOwnership())
+                            : ListBuildBatchesForProjectOutcome(std::move(result.GetError()));
 }
 
 ListBuildsOutcome CodeBuildClient::ListBuilds(const ListBuildsRequest& request) const {
-  return ListBuildsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBuildsOutcome(result.GetResultWithOwnership()) : ListBuildsOutcome(std::move(result.GetError()));
 }
 
 ListBuildsForProjectOutcome CodeBuildClient::ListBuildsForProject(const ListBuildsForProjectRequest& request) const {
-  return ListBuildsForProjectOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBuildsForProjectOutcome(result.GetResultWithOwnership())
+                            : ListBuildsForProjectOutcome(std::move(result.GetError()));
 }
 
 ListCommandExecutionsForSandboxOutcome CodeBuildClient::ListCommandExecutionsForSandbox(
     const ListCommandExecutionsForSandboxRequest& request) const {
-  return ListCommandExecutionsForSandboxOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCommandExecutionsForSandboxOutcome(result.GetResultWithOwnership())
+                            : ListCommandExecutionsForSandboxOutcome(std::move(result.GetError()));
 }
 
 ListCuratedEnvironmentImagesOutcome CodeBuildClient::ListCuratedEnvironmentImages(
     const ListCuratedEnvironmentImagesRequest& request) const {
-  return ListCuratedEnvironmentImagesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCuratedEnvironmentImagesOutcome(result.GetResultWithOwnership())
+                            : ListCuratedEnvironmentImagesOutcome(std::move(result.GetError()));
 }
 
 ListFleetsOutcome CodeBuildClient::ListFleets(const ListFleetsRequest& request) const {
-  return ListFleetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFleetsOutcome(result.GetResultWithOwnership()) : ListFleetsOutcome(std::move(result.GetError()));
 }
 
 ListProjectsOutcome CodeBuildClient::ListProjects(const ListProjectsRequest& request) const {
-  return ListProjectsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListProjectsOutcome(result.GetResultWithOwnership()) : ListProjectsOutcome(std::move(result.GetError()));
 }
 
 ListReportGroupsOutcome CodeBuildClient::ListReportGroups(const ListReportGroupsRequest& request) const {
-  return ListReportGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListReportGroupsOutcome(result.GetResultWithOwnership())
+                            : ListReportGroupsOutcome(std::move(result.GetError()));
 }
 
 ListReportsOutcome CodeBuildClient::ListReports(const ListReportsRequest& request) const {
-  return ListReportsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListReportsOutcome(result.GetResultWithOwnership()) : ListReportsOutcome(std::move(result.GetError()));
 }
 
 ListReportsForReportGroupOutcome CodeBuildClient::ListReportsForReportGroup(const ListReportsForReportGroupRequest& request) const {
-  return ListReportsForReportGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListReportsForReportGroupOutcome(result.GetResultWithOwnership())
+                            : ListReportsForReportGroupOutcome(std::move(result.GetError()));
 }
 
 ListSandboxesOutcome CodeBuildClient::ListSandboxes(const ListSandboxesRequest& request) const {
-  return ListSandboxesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSandboxesOutcome(result.GetResultWithOwnership()) : ListSandboxesOutcome(std::move(result.GetError()));
 }
 
 ListSandboxesForProjectOutcome CodeBuildClient::ListSandboxesForProject(const ListSandboxesForProjectRequest& request) const {
-  return ListSandboxesForProjectOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSandboxesForProjectOutcome(result.GetResultWithOwnership())
+                            : ListSandboxesForProjectOutcome(std::move(result.GetError()));
 }
 
 ListSharedProjectsOutcome CodeBuildClient::ListSharedProjects(const ListSharedProjectsRequest& request) const {
-  return ListSharedProjectsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSharedProjectsOutcome(result.GetResultWithOwnership())
+                            : ListSharedProjectsOutcome(std::move(result.GetError()));
 }
 
 ListSharedReportGroupsOutcome CodeBuildClient::ListSharedReportGroups(const ListSharedReportGroupsRequest& request) const {
-  return ListSharedReportGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSharedReportGroupsOutcome(result.GetResultWithOwnership())
+                            : ListSharedReportGroupsOutcome(std::move(result.GetError()));
 }
 
 ListSourceCredentialsOutcome CodeBuildClient::ListSourceCredentials(const ListSourceCredentialsRequest& request) const {
-  return ListSourceCredentialsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSourceCredentialsOutcome(result.GetResultWithOwnership())
+                            : ListSourceCredentialsOutcome(std::move(result.GetError()));
 }
 
 PutResourcePolicyOutcome CodeBuildClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const {
-  return PutResourcePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : PutResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 RetryBuildOutcome CodeBuildClient::RetryBuild(const RetryBuildRequest& request) const {
-  return RetryBuildOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RetryBuildOutcome(result.GetResultWithOwnership()) : RetryBuildOutcome(std::move(result.GetError()));
 }
 
 RetryBuildBatchOutcome CodeBuildClient::RetryBuildBatch(const RetryBuildBatchRequest& request) const {
-  return RetryBuildBatchOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RetryBuildBatchOutcome(result.GetResultWithOwnership())
+                            : RetryBuildBatchOutcome(std::move(result.GetError()));
 }
 
 StartBuildOutcome CodeBuildClient::StartBuild(const StartBuildRequest& request) const {
-  return StartBuildOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartBuildOutcome(result.GetResultWithOwnership()) : StartBuildOutcome(std::move(result.GetError()));
 }
 
 StartBuildBatchOutcome CodeBuildClient::StartBuildBatch(const StartBuildBatchRequest& request) const {
-  return StartBuildBatchOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartBuildBatchOutcome(result.GetResultWithOwnership())
+                            : StartBuildBatchOutcome(std::move(result.GetError()));
 }
 
 StartCommandExecutionOutcome CodeBuildClient::StartCommandExecution(const StartCommandExecutionRequest& request) const {
-  return StartCommandExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartCommandExecutionOutcome(result.GetResultWithOwnership())
+                            : StartCommandExecutionOutcome(std::move(result.GetError()));
 }
 
 StartSandboxOutcome CodeBuildClient::StartSandbox(const StartSandboxRequest& request) const {
-  return StartSandboxOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartSandboxOutcome(result.GetResultWithOwnership()) : StartSandboxOutcome(std::move(result.GetError()));
 }
 
 StartSandboxConnectionOutcome CodeBuildClient::StartSandboxConnection(const StartSandboxConnectionRequest& request) const {
-  return StartSandboxConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartSandboxConnectionOutcome(result.GetResultWithOwnership())
+                            : StartSandboxConnectionOutcome(std::move(result.GetError()));
 }
 
 StopBuildOutcome CodeBuildClient::StopBuild(const StopBuildRequest& request) const {
-  return StopBuildOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopBuildOutcome(result.GetResultWithOwnership()) : StopBuildOutcome(std::move(result.GetError()));
 }
 
 StopBuildBatchOutcome CodeBuildClient::StopBuildBatch(const StopBuildBatchRequest& request) const {
-  return StopBuildBatchOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopBuildBatchOutcome(result.GetResultWithOwnership()) : StopBuildBatchOutcome(std::move(result.GetError()));
 }
 
 StopSandboxOutcome CodeBuildClient::StopSandbox(const StopSandboxRequest& request) const {
-  return StopSandboxOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopSandboxOutcome(result.GetResultWithOwnership()) : StopSandboxOutcome(std::move(result.GetError()));
 }
 
 UpdateFleetOutcome CodeBuildClient::UpdateFleet(const UpdateFleetRequest& request) const {
-  return UpdateFleetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateFleetOutcome(result.GetResultWithOwnership()) : UpdateFleetOutcome(std::move(result.GetError()));
 }
 
 UpdateProjectOutcome CodeBuildClient::UpdateProject(const UpdateProjectRequest& request) const {
-  return UpdateProjectOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateProjectOutcome(result.GetResultWithOwnership()) : UpdateProjectOutcome(std::move(result.GetError()));
 }
 
 UpdateProjectVisibilityOutcome CodeBuildClient::UpdateProjectVisibility(const UpdateProjectVisibilityRequest& request) const {
-  return UpdateProjectVisibilityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateProjectVisibilityOutcome(result.GetResultWithOwnership())
+                            : UpdateProjectVisibilityOutcome(std::move(result.GetError()));
 }
 
 UpdateReportGroupOutcome CodeBuildClient::UpdateReportGroup(const UpdateReportGroupRequest& request) const {
-  return UpdateReportGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateReportGroupOutcome(result.GetResultWithOwnership())
+                            : UpdateReportGroupOutcome(std::move(result.GetError()));
 }
 
 UpdateWebhookOutcome CodeBuildClient::UpdateWebhook(const UpdateWebhookRequest& request) const {
-  return UpdateWebhookOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateWebhookOutcome(result.GetResultWithOwnership()) : UpdateWebhookOutcome(std::move(result.GetError()));
 }

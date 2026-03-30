@@ -216,7 +216,8 @@ BatchGetTracesOutcome XRayClient::BatchGetTraces(const BatchGetTracesRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/Traces");
   };
 
-  return BatchGetTracesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetTracesOutcome(result.GetResultWithOwnership()) : BatchGetTracesOutcome(std::move(result.GetError()));
 }
 
 CancelTraceRetrievalOutcome XRayClient::CancelTraceRetrieval(const CancelTraceRetrievalRequest& request) const {
@@ -225,7 +226,9 @@ CancelTraceRetrievalOutcome XRayClient::CancelTraceRetrieval(const CancelTraceRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/CancelTraceRetrieval");
   };
 
-  return CancelTraceRetrievalOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelTraceRetrievalOutcome(result.GetResultWithOwnership())
+                            : CancelTraceRetrievalOutcome(std::move(result.GetError()));
 }
 
 CreateGroupOutcome XRayClient::CreateGroup(const CreateGroupRequest& request) const {
@@ -234,7 +237,8 @@ CreateGroupOutcome XRayClient::CreateGroup(const CreateGroupRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateGroup");
   };
 
-  return CreateGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGroupOutcome(result.GetResultWithOwnership()) : CreateGroupOutcome(std::move(result.GetError()));
 }
 
 CreateSamplingRuleOutcome XRayClient::CreateSamplingRule(const CreateSamplingRuleRequest& request) const {
@@ -243,7 +247,9 @@ CreateSamplingRuleOutcome XRayClient::CreateSamplingRule(const CreateSamplingRul
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateSamplingRule");
   };
 
-  return CreateSamplingRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSamplingRuleOutcome(result.GetResultWithOwnership())
+                            : CreateSamplingRuleOutcome(std::move(result.GetError()));
 }
 
 DeleteGroupOutcome XRayClient::DeleteGroup(const DeleteGroupRequest& request) const {
@@ -252,7 +258,8 @@ DeleteGroupOutcome XRayClient::DeleteGroup(const DeleteGroupRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteGroup");
   };
 
-  return DeleteGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteGroupOutcome(result.GetResultWithOwnership()) : DeleteGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteResourcePolicyOutcome XRayClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const {
@@ -261,7 +268,9 @@ DeleteResourcePolicyOutcome XRayClient::DeleteResourcePolicy(const DeleteResourc
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteResourcePolicy");
   };
 
-  return DeleteResourcePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteSamplingRuleOutcome XRayClient::DeleteSamplingRule(const DeleteSamplingRuleRequest& request) const {
@@ -270,7 +279,9 @@ DeleteSamplingRuleOutcome XRayClient::DeleteSamplingRule(const DeleteSamplingRul
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteSamplingRule");
   };
 
-  return DeleteSamplingRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSamplingRuleOutcome(result.GetResultWithOwnership())
+                            : DeleteSamplingRuleOutcome(std::move(result.GetError()));
 }
 
 GetEncryptionConfigOutcome XRayClient::GetEncryptionConfig(const GetEncryptionConfigRequest& request) const {
@@ -279,7 +290,9 @@ GetEncryptionConfigOutcome XRayClient::GetEncryptionConfig(const GetEncryptionCo
     endpointResolutionOutcome.GetResult().AddPathSegments("/EncryptionConfig");
   };
 
-  return GetEncryptionConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEncryptionConfigOutcome(result.GetResultWithOwnership())
+                            : GetEncryptionConfigOutcome(std::move(result.GetError()));
 }
 
 GetGroupOutcome XRayClient::GetGroup(const GetGroupRequest& request) const {
@@ -288,7 +301,8 @@ GetGroupOutcome XRayClient::GetGroup(const GetGroupRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetGroup");
   };
 
-  return GetGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetGroupOutcome(result.GetResultWithOwnership()) : GetGroupOutcome(std::move(result.GetError()));
 }
 
 GetGroupsOutcome XRayClient::GetGroups(const GetGroupsRequest& request) const {
@@ -297,7 +311,8 @@ GetGroupsOutcome XRayClient::GetGroups(const GetGroupsRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/Groups");
   };
 
-  return GetGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetGroupsOutcome(result.GetResultWithOwnership()) : GetGroupsOutcome(std::move(result.GetError()));
 }
 
 GetIndexingRulesOutcome XRayClient::GetIndexingRules(const GetIndexingRulesRequest& request) const {
@@ -306,7 +321,9 @@ GetIndexingRulesOutcome XRayClient::GetIndexingRules(const GetIndexingRulesReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetIndexingRules");
   };
 
-  return GetIndexingRulesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIndexingRulesOutcome(result.GetResultWithOwnership())
+                            : GetIndexingRulesOutcome(std::move(result.GetError()));
 }
 
 GetInsightOutcome XRayClient::GetInsight(const GetInsightRequest& request) const {
@@ -315,7 +332,8 @@ GetInsightOutcome XRayClient::GetInsight(const GetInsightRequest& request) const
     endpointResolutionOutcome.GetResult().AddPathSegments("/Insight");
   };
 
-  return GetInsightOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetInsightOutcome(result.GetResultWithOwnership()) : GetInsightOutcome(std::move(result.GetError()));
 }
 
 GetInsightEventsOutcome XRayClient::GetInsightEvents(const GetInsightEventsRequest& request) const {
@@ -324,7 +342,9 @@ GetInsightEventsOutcome XRayClient::GetInsightEvents(const GetInsightEventsReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/InsightEvents");
   };
 
-  return GetInsightEventsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetInsightEventsOutcome(result.GetResultWithOwnership())
+                            : GetInsightEventsOutcome(std::move(result.GetError()));
 }
 
 GetInsightImpactGraphOutcome XRayClient::GetInsightImpactGraph(const GetInsightImpactGraphRequest& request) const {
@@ -333,7 +353,9 @@ GetInsightImpactGraphOutcome XRayClient::GetInsightImpactGraph(const GetInsightI
     endpointResolutionOutcome.GetResult().AddPathSegments("/InsightImpactGraph");
   };
 
-  return GetInsightImpactGraphOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetInsightImpactGraphOutcome(result.GetResultWithOwnership())
+                            : GetInsightImpactGraphOutcome(std::move(result.GetError()));
 }
 
 GetInsightSummariesOutcome XRayClient::GetInsightSummaries(const GetInsightSummariesRequest& request) const {
@@ -342,7 +364,9 @@ GetInsightSummariesOutcome XRayClient::GetInsightSummaries(const GetInsightSumma
     endpointResolutionOutcome.GetResult().AddPathSegments("/InsightSummaries");
   };
 
-  return GetInsightSummariesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetInsightSummariesOutcome(result.GetResultWithOwnership())
+                            : GetInsightSummariesOutcome(std::move(result.GetError()));
 }
 
 GetRetrievedTracesGraphOutcome XRayClient::GetRetrievedTracesGraph(const GetRetrievedTracesGraphRequest& request) const {
@@ -351,7 +375,9 @@ GetRetrievedTracesGraphOutcome XRayClient::GetRetrievedTracesGraph(const GetRetr
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetRetrievedTracesGraph");
   };
 
-  return GetRetrievedTracesGraphOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRetrievedTracesGraphOutcome(result.GetResultWithOwnership())
+                            : GetRetrievedTracesGraphOutcome(std::move(result.GetError()));
 }
 
 GetSamplingRulesOutcome XRayClient::GetSamplingRules(const GetSamplingRulesRequest& request) const {
@@ -360,7 +386,9 @@ GetSamplingRulesOutcome XRayClient::GetSamplingRules(const GetSamplingRulesReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetSamplingRules");
   };
 
-  return GetSamplingRulesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSamplingRulesOutcome(result.GetResultWithOwnership())
+                            : GetSamplingRulesOutcome(std::move(result.GetError()));
 }
 
 GetSamplingStatisticSummariesOutcome XRayClient::GetSamplingStatisticSummaries(const GetSamplingStatisticSummariesRequest& request) const {
@@ -369,7 +397,9 @@ GetSamplingStatisticSummariesOutcome XRayClient::GetSamplingStatisticSummaries(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/SamplingStatisticSummaries");
   };
 
-  return GetSamplingStatisticSummariesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSamplingStatisticSummariesOutcome(result.GetResultWithOwnership())
+                            : GetSamplingStatisticSummariesOutcome(std::move(result.GetError()));
 }
 
 GetSamplingTargetsOutcome XRayClient::GetSamplingTargets(const GetSamplingTargetsRequest& request) const {
@@ -378,7 +408,9 @@ GetSamplingTargetsOutcome XRayClient::GetSamplingTargets(const GetSamplingTarget
     endpointResolutionOutcome.GetResult().AddPathSegments("/SamplingTargets");
   };
 
-  return GetSamplingTargetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSamplingTargetsOutcome(result.GetResultWithOwnership())
+                            : GetSamplingTargetsOutcome(std::move(result.GetError()));
 }
 
 GetServiceGraphOutcome XRayClient::GetServiceGraph(const GetServiceGraphRequest& request) const {
@@ -387,7 +419,9 @@ GetServiceGraphOutcome XRayClient::GetServiceGraph(const GetServiceGraphRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/ServiceGraph");
   };
 
-  return GetServiceGraphOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetServiceGraphOutcome(result.GetResultWithOwnership())
+                            : GetServiceGraphOutcome(std::move(result.GetError()));
 }
 
 GetTimeSeriesServiceStatisticsOutcome XRayClient::GetTimeSeriesServiceStatistics(
@@ -397,7 +431,9 @@ GetTimeSeriesServiceStatisticsOutcome XRayClient::GetTimeSeriesServiceStatistics
     endpointResolutionOutcome.GetResult().AddPathSegments("/TimeSeriesServiceStatistics");
   };
 
-  return GetTimeSeriesServiceStatisticsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTimeSeriesServiceStatisticsOutcome(result.GetResultWithOwnership())
+                            : GetTimeSeriesServiceStatisticsOutcome(std::move(result.GetError()));
 }
 
 GetTraceGraphOutcome XRayClient::GetTraceGraph(const GetTraceGraphRequest& request) const {
@@ -406,7 +442,8 @@ GetTraceGraphOutcome XRayClient::GetTraceGraph(const GetTraceGraphRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/TraceGraph");
   };
 
-  return GetTraceGraphOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTraceGraphOutcome(result.GetResultWithOwnership()) : GetTraceGraphOutcome(std::move(result.GetError()));
 }
 
 GetTraceSegmentDestinationOutcome XRayClient::GetTraceSegmentDestination(const GetTraceSegmentDestinationRequest& request) const {
@@ -415,7 +452,9 @@ GetTraceSegmentDestinationOutcome XRayClient::GetTraceSegmentDestination(const G
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetTraceSegmentDestination");
   };
 
-  return GetTraceSegmentDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTraceSegmentDestinationOutcome(result.GetResultWithOwnership())
+                            : GetTraceSegmentDestinationOutcome(std::move(result.GetError()));
 }
 
 GetTraceSummariesOutcome XRayClient::GetTraceSummaries(const GetTraceSummariesRequest& request) const {
@@ -424,7 +463,9 @@ GetTraceSummariesOutcome XRayClient::GetTraceSummaries(const GetTraceSummariesRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/TraceSummaries");
   };
 
-  return GetTraceSummariesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTraceSummariesOutcome(result.GetResultWithOwnership())
+                            : GetTraceSummariesOutcome(std::move(result.GetError()));
 }
 
 ListResourcePoliciesOutcome XRayClient::ListResourcePolicies(const ListResourcePoliciesRequest& request) const {
@@ -433,7 +474,9 @@ ListResourcePoliciesOutcome XRayClient::ListResourcePolicies(const ListResourceP
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListResourcePolicies");
   };
 
-  return ListResourcePoliciesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResourcePoliciesOutcome(result.GetResultWithOwnership())
+                            : ListResourcePoliciesOutcome(std::move(result.GetError()));
 }
 
 ListRetrievedTracesOutcome XRayClient::ListRetrievedTraces(const ListRetrievedTracesRequest& request) const {
@@ -442,7 +485,9 @@ ListRetrievedTracesOutcome XRayClient::ListRetrievedTraces(const ListRetrievedTr
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListRetrievedTraces");
   };
 
-  return ListRetrievedTracesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRetrievedTracesOutcome(result.GetResultWithOwnership())
+                            : ListRetrievedTracesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome XRayClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -451,7 +496,9 @@ ListTagsForResourceOutcome XRayClient::ListTagsForResource(const ListTagsForReso
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListTagsForResource");
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutEncryptionConfigOutcome XRayClient::PutEncryptionConfig(const PutEncryptionConfigRequest& request) const {
@@ -460,7 +507,9 @@ PutEncryptionConfigOutcome XRayClient::PutEncryptionConfig(const PutEncryptionCo
     endpointResolutionOutcome.GetResult().AddPathSegments("/PutEncryptionConfig");
   };
 
-  return PutEncryptionConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutEncryptionConfigOutcome(result.GetResultWithOwnership())
+                            : PutEncryptionConfigOutcome(std::move(result.GetError()));
 }
 
 PutResourcePolicyOutcome XRayClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const {
@@ -469,7 +518,9 @@ PutResourcePolicyOutcome XRayClient::PutResourcePolicy(const PutResourcePolicyRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/PutResourcePolicy");
   };
 
-  return PutResourcePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : PutResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 PutTelemetryRecordsOutcome XRayClient::PutTelemetryRecords(const PutTelemetryRecordsRequest& request) const {
@@ -478,7 +529,9 @@ PutTelemetryRecordsOutcome XRayClient::PutTelemetryRecords(const PutTelemetryRec
     endpointResolutionOutcome.GetResult().AddPathSegments("/TelemetryRecords");
   };
 
-  return PutTelemetryRecordsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutTelemetryRecordsOutcome(result.GetResultWithOwnership())
+                            : PutTelemetryRecordsOutcome(std::move(result.GetError()));
 }
 
 PutTraceSegmentsOutcome XRayClient::PutTraceSegments(const PutTraceSegmentsRequest& request) const {
@@ -487,7 +540,9 @@ PutTraceSegmentsOutcome XRayClient::PutTraceSegments(const PutTraceSegmentsReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/TraceSegments");
   };
 
-  return PutTraceSegmentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutTraceSegmentsOutcome(result.GetResultWithOwnership())
+                            : PutTraceSegmentsOutcome(std::move(result.GetError()));
 }
 
 StartTraceRetrievalOutcome XRayClient::StartTraceRetrieval(const StartTraceRetrievalRequest& request) const {
@@ -496,7 +551,9 @@ StartTraceRetrievalOutcome XRayClient::StartTraceRetrieval(const StartTraceRetri
     endpointResolutionOutcome.GetResult().AddPathSegments("/StartTraceRetrieval");
   };
 
-  return StartTraceRetrievalOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartTraceRetrievalOutcome(result.GetResultWithOwnership())
+                            : StartTraceRetrievalOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome XRayClient::TagResource(const TagResourceRequest& request) const {
@@ -505,7 +562,8 @@ TagResourceOutcome XRayClient::TagResource(const TagResourceRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegments("/TagResource");
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome XRayClient::UntagResource(const UntagResourceRequest& request) const {
@@ -514,7 +572,8 @@ UntagResourceOutcome XRayClient::UntagResource(const UntagResourceRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/UntagResource");
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateGroupOutcome XRayClient::UpdateGroup(const UpdateGroupRequest& request) const {
@@ -523,7 +582,8 @@ UpdateGroupOutcome XRayClient::UpdateGroup(const UpdateGroupRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateGroup");
   };
 
-  return UpdateGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateGroupOutcome(result.GetResultWithOwnership()) : UpdateGroupOutcome(std::move(result.GetError()));
 }
 
 UpdateIndexingRuleOutcome XRayClient::UpdateIndexingRule(const UpdateIndexingRuleRequest& request) const {
@@ -532,7 +592,9 @@ UpdateIndexingRuleOutcome XRayClient::UpdateIndexingRule(const UpdateIndexingRul
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateIndexingRule");
   };
 
-  return UpdateIndexingRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateIndexingRuleOutcome(result.GetResultWithOwnership())
+                            : UpdateIndexingRuleOutcome(std::move(result.GetError()));
 }
 
 UpdateSamplingRuleOutcome XRayClient::UpdateSamplingRule(const UpdateSamplingRuleRequest& request) const {
@@ -541,7 +603,9 @@ UpdateSamplingRuleOutcome XRayClient::UpdateSamplingRule(const UpdateSamplingRul
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateSamplingRule");
   };
 
-  return UpdateSamplingRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSamplingRuleOutcome(result.GetResultWithOwnership())
+                            : UpdateSamplingRuleOutcome(std::move(result.GetError()));
 }
 
 UpdateTraceSegmentDestinationOutcome XRayClient::UpdateTraceSegmentDestination(const UpdateTraceSegmentDestinationRequest& request) const {
@@ -550,5 +614,7 @@ UpdateTraceSegmentDestinationOutcome XRayClient::UpdateTraceSegmentDestination(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateTraceSegmentDestination");
   };
 
-  return UpdateTraceSegmentDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTraceSegmentDestinationOutcome(result.GetResultWithOwnership())
+                            : UpdateTraceSegmentDestinationOutcome(std::move(result.GetError()));
 }

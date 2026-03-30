@@ -207,7 +207,9 @@ AddProfilePermissionOutcome SignerClient::AddProfilePermission(const AddProfileP
     endpointResolutionOutcome.GetResult().AddPathSegments("/permissions");
   };
 
-  return AddProfilePermissionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddProfilePermissionOutcome(result.GetResultWithOwnership())
+                            : AddProfilePermissionOutcome(std::move(result.GetError()));
 }
 
 CancelSigningProfileOutcome SignerClient::CancelSigningProfile(const CancelSigningProfileRequest& request) const {
@@ -223,7 +225,9 @@ CancelSigningProfileOutcome SignerClient::CancelSigningProfile(const CancelSigni
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileName());
   };
 
-  return CancelSigningProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? CancelSigningProfileOutcome(result.GetResultWithOwnership())
+                            : CancelSigningProfileOutcome(std::move(result.GetError()));
 }
 
 DescribeSigningJobOutcome SignerClient::DescribeSigningJob(const DescribeSigningJobRequest& request) const {
@@ -239,7 +243,9 @@ DescribeSigningJobOutcome SignerClient::DescribeSigningJob(const DescribeSigning
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return DescribeSigningJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeSigningJobOutcome(result.GetResultWithOwnership())
+                            : DescribeSigningJobOutcome(std::move(result.GetError()));
 }
 
 GetRevocationStatusOutcome SignerClient::GetRevocationStatus(const GetRevocationStatusRequest& request) const {
@@ -274,7 +280,9 @@ GetRevocationStatusOutcome SignerClient::GetRevocationStatus(const GetRevocation
     endpointResolutionOutcome.GetResult().AddPathSegments("/revocations");
   };
 
-  return GetRevocationStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRevocationStatusOutcome(result.GetResultWithOwnership())
+                            : GetRevocationStatusOutcome(std::move(result.GetError()));
 }
 
 GetSigningPlatformOutcome SignerClient::GetSigningPlatform(const GetSigningPlatformRequest& request) const {
@@ -290,7 +298,9 @@ GetSigningPlatformOutcome SignerClient::GetSigningPlatform(const GetSigningPlatf
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPlatformId());
   };
 
-  return GetSigningPlatformOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSigningPlatformOutcome(result.GetResultWithOwnership())
+                            : GetSigningPlatformOutcome(std::move(result.GetError()));
 }
 
 GetSigningProfileOutcome SignerClient::GetSigningProfile(const GetSigningProfileRequest& request) const {
@@ -306,7 +316,9 @@ GetSigningProfileOutcome SignerClient::GetSigningProfile(const GetSigningProfile
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileName());
   };
 
-  return GetSigningProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSigningProfileOutcome(result.GetResultWithOwnership())
+                            : GetSigningProfileOutcome(std::move(result.GetError()));
 }
 
 ListProfilePermissionsOutcome SignerClient::ListProfilePermissions(const ListProfilePermissionsRequest& request) const {
@@ -323,7 +335,9 @@ ListProfilePermissionsOutcome SignerClient::ListProfilePermissions(const ListPro
     endpointResolutionOutcome.GetResult().AddPathSegments("/permissions");
   };
 
-  return ListProfilePermissionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListProfilePermissionsOutcome(result.GetResultWithOwnership())
+                            : ListProfilePermissionsOutcome(std::move(result.GetError()));
 }
 
 ListSigningJobsOutcome SignerClient::ListSigningJobs(const ListSigningJobsRequest& request) const {
@@ -332,7 +346,9 @@ ListSigningJobsOutcome SignerClient::ListSigningJobs(const ListSigningJobsReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/signing-jobs");
   };
 
-  return ListSigningJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSigningJobsOutcome(result.GetResultWithOwnership())
+                            : ListSigningJobsOutcome(std::move(result.GetError()));
 }
 
 ListSigningPlatformsOutcome SignerClient::ListSigningPlatforms(const ListSigningPlatformsRequest& request) const {
@@ -341,7 +357,9 @@ ListSigningPlatformsOutcome SignerClient::ListSigningPlatforms(const ListSigning
     endpointResolutionOutcome.GetResult().AddPathSegments("/signing-platforms");
   };
 
-  return ListSigningPlatformsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSigningPlatformsOutcome(result.GetResultWithOwnership())
+                            : ListSigningPlatformsOutcome(std::move(result.GetError()));
 }
 
 ListSigningProfilesOutcome SignerClient::ListSigningProfiles(const ListSigningProfilesRequest& request) const {
@@ -350,7 +368,9 @@ ListSigningProfilesOutcome SignerClient::ListSigningProfiles(const ListSigningPr
     endpointResolutionOutcome.GetResult().AddPathSegments("/signing-profiles");
   };
 
-  return ListSigningProfilesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSigningProfilesOutcome(result.GetResultWithOwnership())
+                            : ListSigningProfilesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome SignerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -366,7 +386,9 @@ ListTagsForResourceOutcome SignerClient::ListTagsForResource(const ListTagsForRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutSigningProfileOutcome SignerClient::PutSigningProfile(const PutSigningProfileRequest& request) const {
@@ -382,7 +404,9 @@ PutSigningProfileOutcome SignerClient::PutSigningProfile(const PutSigningProfile
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileName());
   };
 
-  return PutSigningProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutSigningProfileOutcome(result.GetResultWithOwnership())
+                            : PutSigningProfileOutcome(std::move(result.GetError()));
 }
 
 RemoveProfilePermissionOutcome SignerClient::RemoveProfilePermission(const RemoveProfilePermissionRequest& request) const {
@@ -410,7 +434,9 @@ RemoveProfilePermissionOutcome SignerClient::RemoveProfilePermission(const Remov
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStatementId());
   };
 
-  return RemoveProfilePermissionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? RemoveProfilePermissionOutcome(result.GetResultWithOwnership())
+                            : RemoveProfilePermissionOutcome(std::move(result.GetError()));
 }
 
 RevokeSignatureOutcome SignerClient::RevokeSignature(const RevokeSignatureRequest& request) const {
@@ -427,7 +453,9 @@ RevokeSignatureOutcome SignerClient::RevokeSignature(const RevokeSignatureReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/revoke");
   };
 
-  return RevokeSignatureOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? RevokeSignatureOutcome(result.GetResultWithOwnership())
+                            : RevokeSignatureOutcome(std::move(result.GetError()));
 }
 
 RevokeSigningProfileOutcome SignerClient::RevokeSigningProfile(const RevokeSigningProfileRequest& request) const {
@@ -444,7 +472,9 @@ RevokeSigningProfileOutcome SignerClient::RevokeSigningProfile(const RevokeSigni
     endpointResolutionOutcome.GetResult().AddPathSegments("/revoke");
   };
 
-  return RevokeSigningProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? RevokeSigningProfileOutcome(result.GetResultWithOwnership())
+                            : RevokeSigningProfileOutcome(std::move(result.GetError()));
 }
 
 SignPayloadOutcome SignerClient::SignPayload(const SignPayloadRequest& request) const {
@@ -453,7 +483,8 @@ SignPayloadOutcome SignerClient::SignPayload(const SignPayloadRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/signing-jobs/with-payload");
   };
 
-  return SignPayloadOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SignPayloadOutcome(result.GetResultWithOwnership()) : SignPayloadOutcome(std::move(result.GetError()));
 }
 
 StartSigningJobOutcome SignerClient::StartSigningJob(const StartSigningJobRequest& request) const {
@@ -462,7 +493,9 @@ StartSigningJobOutcome SignerClient::StartSigningJob(const StartSigningJobReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/signing-jobs");
   };
 
-  return StartSigningJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartSigningJobOutcome(result.GetResultWithOwnership())
+                            : StartSigningJobOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome SignerClient::TagResource(const TagResourceRequest& request) const {
@@ -478,7 +511,8 @@ TagResourceOutcome SignerClient::TagResource(const TagResourceRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome SignerClient::UntagResource(const UntagResourceRequest& request) const {
@@ -499,5 +533,6 @@ UntagResourceOutcome SignerClient::UntagResource(const UntagResourceRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }

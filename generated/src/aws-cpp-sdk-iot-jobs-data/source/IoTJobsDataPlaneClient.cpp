@@ -204,7 +204,9 @@ DescribeJobExecutionOutcome IoTJobsDataPlaneClient::DescribeJobExecution(const D
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return DescribeJobExecutionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeJobExecutionOutcome(result.GetResultWithOwnership())
+                            : DescribeJobExecutionOutcome(std::move(result.GetError()));
 }
 
 GetPendingJobExecutionsOutcome IoTJobsDataPlaneClient::GetPendingJobExecutions(const GetPendingJobExecutionsRequest& request) const {
@@ -221,7 +223,9 @@ GetPendingJobExecutionsOutcome IoTJobsDataPlaneClient::GetPendingJobExecutions(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobs");
   };
 
-  return GetPendingJobExecutionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPendingJobExecutionsOutcome(result.GetResultWithOwnership())
+                            : GetPendingJobExecutionsOutcome(std::move(result.GetError()));
 }
 
 StartCommandExecutionOutcome IoTJobsDataPlaneClient::StartCommandExecution(const StartCommandExecutionRequest& request) const {
@@ -230,7 +234,9 @@ StartCommandExecutionOutcome IoTJobsDataPlaneClient::StartCommandExecution(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/command-executions");
   };
 
-  return StartCommandExecutionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartCommandExecutionOutcome(result.GetResultWithOwnership())
+                            : StartCommandExecutionOutcome(std::move(result.GetError()));
 }
 
 StartNextPendingJobExecutionOutcome IoTJobsDataPlaneClient::StartNextPendingJobExecution(
@@ -248,7 +254,9 @@ StartNextPendingJobExecutionOutcome IoTJobsDataPlaneClient::StartNextPendingJobE
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/$next");
   };
 
-  return StartNextPendingJobExecutionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StartNextPendingJobExecutionOutcome(result.GetResultWithOwnership())
+                            : StartNextPendingJobExecutionOutcome(std::move(result.GetError()));
 }
 
 UpdateJobExecutionOutcome IoTJobsDataPlaneClient::UpdateJobExecution(const UpdateJobExecutionRequest& request) const {
@@ -271,5 +279,7 @@ UpdateJobExecutionOutcome IoTJobsDataPlaneClient::UpdateJobExecution(const Updat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return UpdateJobExecutionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateJobExecutionOutcome(result.GetResultWithOwnership())
+                            : UpdateJobExecutionOutcome(std::move(result.GetError()));
 }

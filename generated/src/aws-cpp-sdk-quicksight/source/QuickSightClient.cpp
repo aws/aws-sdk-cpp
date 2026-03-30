@@ -296,7 +296,9 @@ BatchCreateTopicReviewedAnswerOutcome QuickSightClient::BatchCreateTopicReviewed
     endpointResolutionOutcome.GetResult().AddPathSegments("/batch-create-reviewed-answers");
   };
 
-  return BatchCreateTopicReviewedAnswerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchCreateTopicReviewedAnswerOutcome(result.GetResultWithOwnership())
+                            : BatchCreateTopicReviewedAnswerOutcome(std::move(result.GetError()));
 }
 
 BatchDeleteTopicReviewedAnswerOutcome QuickSightClient::BatchDeleteTopicReviewedAnswer(
@@ -321,7 +323,9 @@ BatchDeleteTopicReviewedAnswerOutcome QuickSightClient::BatchDeleteTopicReviewed
     endpointResolutionOutcome.GetResult().AddPathSegments("/batch-delete-reviewed-answers");
   };
 
-  return BatchDeleteTopicReviewedAnswerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeleteTopicReviewedAnswerOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteTopicReviewedAnswerOutcome(std::move(result.GetError()));
 }
 
 CancelIngestionOutcome QuickSightClient::CancelIngestion(const CancelIngestionRequest& request) const {
@@ -351,7 +355,9 @@ CancelIngestionOutcome QuickSightClient::CancelIngestion(const CancelIngestionRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIngestionId());
   };
 
-  return CancelIngestionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? CancelIngestionOutcome(result.GetResultWithOwnership())
+                            : CancelIngestionOutcome(std::move(result.GetError()));
 }
 
 CreateAccountCustomizationOutcome QuickSightClient::CreateAccountCustomization(const CreateAccountCustomizationRequest& request) const {
@@ -368,7 +374,9 @@ CreateAccountCustomizationOutcome QuickSightClient::CreateAccountCustomization(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/customizations");
   };
 
-  return CreateAccountCustomizationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAccountCustomizationOutcome(result.GetResultWithOwnership())
+                            : CreateAccountCustomizationOutcome(std::move(result.GetError()));
 }
 
 CreateAccountSubscriptionOutcome QuickSightClient::CreateAccountSubscription(const CreateAccountSubscriptionRequest& request) const {
@@ -384,7 +392,9 @@ CreateAccountSubscriptionOutcome QuickSightClient::CreateAccountSubscription(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
   };
 
-  return CreateAccountSubscriptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAccountSubscriptionOutcome(result.GetResultWithOwnership())
+                            : CreateAccountSubscriptionOutcome(std::move(result.GetError()));
 }
 
 CreateActionConnectorOutcome QuickSightClient::CreateActionConnector(const CreateActionConnectorRequest& request) const {
@@ -401,7 +411,9 @@ CreateActionConnectorOutcome QuickSightClient::CreateActionConnector(const Creat
     endpointResolutionOutcome.GetResult().AddPathSegments("/action-connectors");
   };
 
-  return CreateActionConnectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateActionConnectorOutcome(result.GetResultWithOwnership())
+                            : CreateActionConnectorOutcome(std::move(result.GetError()));
 }
 
 CreateAnalysisOutcome QuickSightClient::CreateAnalysis(const CreateAnalysisRequest& request) const {
@@ -424,7 +436,8 @@ CreateAnalysisOutcome QuickSightClient::CreateAnalysis(const CreateAnalysisReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAnalysisId());
   };
 
-  return CreateAnalysisOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAnalysisOutcome(result.GetResultWithOwnership()) : CreateAnalysisOutcome(std::move(result.GetError()));
 }
 
 CreateBrandOutcome QuickSightClient::CreateBrand(const CreateBrandRequest& request) const {
@@ -447,7 +460,8 @@ CreateBrandOutcome QuickSightClient::CreateBrand(const CreateBrandRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBrandId());
   };
 
-  return CreateBrandOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBrandOutcome(result.GetResultWithOwnership()) : CreateBrandOutcome(std::move(result.GetError()));
 }
 
 CreateCustomPermissionsOutcome QuickSightClient::CreateCustomPermissions(const CreateCustomPermissionsRequest& request) const {
@@ -464,7 +478,9 @@ CreateCustomPermissionsOutcome QuickSightClient::CreateCustomPermissions(const C
     endpointResolutionOutcome.GetResult().AddPathSegments("/custom-permissions");
   };
 
-  return CreateCustomPermissionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCustomPermissionsOutcome(result.GetResultWithOwnership())
+                            : CreateCustomPermissionsOutcome(std::move(result.GetError()));
 }
 
 CreateDashboardOutcome QuickSightClient::CreateDashboard(const CreateDashboardRequest& request) const {
@@ -487,7 +503,9 @@ CreateDashboardOutcome QuickSightClient::CreateDashboard(const CreateDashboardRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDashboardId());
   };
 
-  return CreateDashboardOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDashboardOutcome(result.GetResultWithOwnership())
+                            : CreateDashboardOutcome(std::move(result.GetError()));
 }
 
 CreateDataSetOutcome QuickSightClient::CreateDataSet(const CreateDataSetRequest& request) const {
@@ -504,7 +522,8 @@ CreateDataSetOutcome QuickSightClient::CreateDataSet(const CreateDataSetRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/data-sets");
   };
 
-  return CreateDataSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDataSetOutcome(result.GetResultWithOwnership()) : CreateDataSetOutcome(std::move(result.GetError()));
 }
 
 CreateDataSourceOutcome QuickSightClient::CreateDataSource(const CreateDataSourceRequest& request) const {
@@ -521,7 +540,9 @@ CreateDataSourceOutcome QuickSightClient::CreateDataSource(const CreateDataSourc
     endpointResolutionOutcome.GetResult().AddPathSegments("/data-sources");
   };
 
-  return CreateDataSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDataSourceOutcome(result.GetResultWithOwnership())
+                            : CreateDataSourceOutcome(std::move(result.GetError()));
 }
 
 CreateFolderOutcome QuickSightClient::CreateFolder(const CreateFolderRequest& request) const {
@@ -544,7 +565,8 @@ CreateFolderOutcome QuickSightClient::CreateFolder(const CreateFolderRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFolderId());
   };
 
-  return CreateFolderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFolderOutcome(result.GetResultWithOwnership()) : CreateFolderOutcome(std::move(result.GetError()));
 }
 
 CreateFolderMembershipOutcome QuickSightClient::CreateFolderMembership(const CreateFolderMembershipRequest& request) const {
@@ -580,7 +602,9 @@ CreateFolderMembershipOutcome QuickSightClient::CreateFolderMembership(const Cre
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemberId());
   };
 
-  return CreateFolderMembershipOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateFolderMembershipOutcome(result.GetResultWithOwnership())
+                            : CreateFolderMembershipOutcome(std::move(result.GetError()));
 }
 
 CreateGroupOutcome QuickSightClient::CreateGroup(const CreateGroupRequest& request) const {
@@ -604,7 +628,8 @@ CreateGroupOutcome QuickSightClient::CreateGroup(const CreateGroupRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/groups");
   };
 
-  return CreateGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGroupOutcome(result.GetResultWithOwnership()) : CreateGroupOutcome(std::move(result.GetError()));
 }
 
 CreateGroupMembershipOutcome QuickSightClient::CreateGroupMembership(const CreateGroupMembershipRequest& request) const {
@@ -641,7 +666,9 @@ CreateGroupMembershipOutcome QuickSightClient::CreateGroupMembership(const Creat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemberName());
   };
 
-  return CreateGroupMembershipOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateGroupMembershipOutcome(result.GetResultWithOwnership())
+                            : CreateGroupMembershipOutcome(std::move(result.GetError()));
 }
 
 CreateIAMPolicyAssignmentOutcome QuickSightClient::CreateIAMPolicyAssignment(const CreateIAMPolicyAssignmentRequest& request) const {
@@ -665,7 +692,9 @@ CreateIAMPolicyAssignmentOutcome QuickSightClient::CreateIAMPolicyAssignment(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/iam-policy-assignments/");
   };
 
-  return CreateIAMPolicyAssignmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIAMPolicyAssignmentOutcome(result.GetResultWithOwnership())
+                            : CreateIAMPolicyAssignmentOutcome(std::move(result.GetError()));
 }
 
 CreateIngestionOutcome QuickSightClient::CreateIngestion(const CreateIngestionRequest& request) const {
@@ -695,7 +724,9 @@ CreateIngestionOutcome QuickSightClient::CreateIngestion(const CreateIngestionRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIngestionId());
   };
 
-  return CreateIngestionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateIngestionOutcome(result.GetResultWithOwnership())
+                            : CreateIngestionOutcome(std::move(result.GetError()));
 }
 
 CreateNamespaceOutcome QuickSightClient::CreateNamespace(const CreateNamespaceRequest& request) const {
@@ -711,7 +742,9 @@ CreateNamespaceOutcome QuickSightClient::CreateNamespace(const CreateNamespaceRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
   };
 
-  return CreateNamespaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateNamespaceOutcome(result.GetResultWithOwnership())
+                            : CreateNamespaceOutcome(std::move(result.GetError()));
 }
 
 CreateRefreshScheduleOutcome QuickSightClient::CreateRefreshSchedule(const CreateRefreshScheduleRequest& request) const {
@@ -735,7 +768,9 @@ CreateRefreshScheduleOutcome QuickSightClient::CreateRefreshSchedule(const Creat
     endpointResolutionOutcome.GetResult().AddPathSegments("/refresh-schedules");
   };
 
-  return CreateRefreshScheduleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRefreshScheduleOutcome(result.GetResultWithOwnership())
+                            : CreateRefreshScheduleOutcome(std::move(result.GetError()));
 }
 
 CreateRoleMembershipOutcome QuickSightClient::CreateRoleMembership(const CreateRoleMembershipRequest& request) const {
@@ -772,7 +807,9 @@ CreateRoleMembershipOutcome QuickSightClient::CreateRoleMembership(const CreateR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemberName());
   };
 
-  return CreateRoleMembershipOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRoleMembershipOutcome(result.GetResultWithOwnership())
+                            : CreateRoleMembershipOutcome(std::move(result.GetError()));
 }
 
 CreateTemplateOutcome QuickSightClient::CreateTemplate(const CreateTemplateRequest& request) const {
@@ -795,7 +832,8 @@ CreateTemplateOutcome QuickSightClient::CreateTemplate(const CreateTemplateReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTemplateId());
   };
 
-  return CreateTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTemplateOutcome(result.GetResultWithOwnership()) : CreateTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateTemplateAliasOutcome QuickSightClient::CreateTemplateAlias(const CreateTemplateAliasRequest& request) const {
@@ -825,7 +863,9 @@ CreateTemplateAliasOutcome QuickSightClient::CreateTemplateAlias(const CreateTem
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAliasName());
   };
 
-  return CreateTemplateAliasOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTemplateAliasOutcome(result.GetResultWithOwnership())
+                            : CreateTemplateAliasOutcome(std::move(result.GetError()));
 }
 
 CreateThemeOutcome QuickSightClient::CreateTheme(const CreateThemeRequest& request) const {
@@ -848,7 +888,8 @@ CreateThemeOutcome QuickSightClient::CreateTheme(const CreateThemeRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetThemeId());
   };
 
-  return CreateThemeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateThemeOutcome(result.GetResultWithOwnership()) : CreateThemeOutcome(std::move(result.GetError()));
 }
 
 CreateThemeAliasOutcome QuickSightClient::CreateThemeAlias(const CreateThemeAliasRequest& request) const {
@@ -878,7 +919,9 @@ CreateThemeAliasOutcome QuickSightClient::CreateThemeAlias(const CreateThemeAlia
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAliasName());
   };
 
-  return CreateThemeAliasOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateThemeAliasOutcome(result.GetResultWithOwnership())
+                            : CreateThemeAliasOutcome(std::move(result.GetError()));
 }
 
 CreateTopicOutcome QuickSightClient::CreateTopic(const CreateTopicRequest& request) const {
@@ -895,7 +938,8 @@ CreateTopicOutcome QuickSightClient::CreateTopic(const CreateTopicRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/topics");
   };
 
-  return CreateTopicOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTopicOutcome(result.GetResultWithOwnership()) : CreateTopicOutcome(std::move(result.GetError()));
 }
 
 CreateTopicRefreshScheduleOutcome QuickSightClient::CreateTopicRefreshSchedule(const CreateTopicRefreshScheduleRequest& request) const {
@@ -919,7 +963,9 @@ CreateTopicRefreshScheduleOutcome QuickSightClient::CreateTopicRefreshSchedule(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/schedules");
   };
 
-  return CreateTopicRefreshScheduleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTopicRefreshScheduleOutcome(result.GetResultWithOwnership())
+                            : CreateTopicRefreshScheduleOutcome(std::move(result.GetError()));
 }
 
 CreateVPCConnectionOutcome QuickSightClient::CreateVPCConnection(const CreateVPCConnectionRequest& request) const {
@@ -936,7 +982,9 @@ CreateVPCConnectionOutcome QuickSightClient::CreateVPCConnection(const CreateVPC
     endpointResolutionOutcome.GetResult().AddPathSegments("/vpc-connections");
   };
 
-  return CreateVPCConnectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateVPCConnectionOutcome(result.GetResultWithOwnership())
+                            : CreateVPCConnectionOutcome(std::move(result.GetError()));
 }
 
 DeleteAccountCustomPermissionOutcome QuickSightClient::DeleteAccountCustomPermission(
@@ -954,7 +1002,9 @@ DeleteAccountCustomPermissionOutcome QuickSightClient::DeleteAccountCustomPermis
     endpointResolutionOutcome.GetResult().AddPathSegments("/custom-permission");
   };
 
-  return DeleteAccountCustomPermissionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAccountCustomPermissionOutcome(result.GetResultWithOwnership())
+                            : DeleteAccountCustomPermissionOutcome(std::move(result.GetError()));
 }
 
 DeleteAccountCustomizationOutcome QuickSightClient::DeleteAccountCustomization(const DeleteAccountCustomizationRequest& request) const {
@@ -971,7 +1021,9 @@ DeleteAccountCustomizationOutcome QuickSightClient::DeleteAccountCustomization(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/customizations");
   };
 
-  return DeleteAccountCustomizationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAccountCustomizationOutcome(result.GetResultWithOwnership())
+                            : DeleteAccountCustomizationOutcome(std::move(result.GetError()));
 }
 
 DeleteAccountSubscriptionOutcome QuickSightClient::DeleteAccountSubscription(const DeleteAccountSubscriptionRequest& request) const {
@@ -987,7 +1039,9 @@ DeleteAccountSubscriptionOutcome QuickSightClient::DeleteAccountSubscription(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
   };
 
-  return DeleteAccountSubscriptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAccountSubscriptionOutcome(result.GetResultWithOwnership())
+                            : DeleteAccountSubscriptionOutcome(std::move(result.GetError()));
 }
 
 DeleteActionConnectorOutcome QuickSightClient::DeleteActionConnector(const DeleteActionConnectorRequest& request) const {
@@ -1010,7 +1064,9 @@ DeleteActionConnectorOutcome QuickSightClient::DeleteActionConnector(const Delet
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetActionConnectorId());
   };
 
-  return DeleteActionConnectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteActionConnectorOutcome(result.GetResultWithOwnership())
+                            : DeleteActionConnectorOutcome(std::move(result.GetError()));
 }
 
 DeleteAnalysisOutcome QuickSightClient::DeleteAnalysis(const DeleteAnalysisRequest& request) const {
@@ -1033,7 +1089,8 @@ DeleteAnalysisOutcome QuickSightClient::DeleteAnalysis(const DeleteAnalysisReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAnalysisId());
   };
 
-  return DeleteAnalysisOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAnalysisOutcome(result.GetResultWithOwnership()) : DeleteAnalysisOutcome(std::move(result.GetError()));
 }
 
 DeleteBrandOutcome QuickSightClient::DeleteBrand(const DeleteBrandRequest& request) const {
@@ -1056,7 +1113,8 @@ DeleteBrandOutcome QuickSightClient::DeleteBrand(const DeleteBrandRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBrandId());
   };
 
-  return DeleteBrandOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBrandOutcome(result.GetResultWithOwnership()) : DeleteBrandOutcome(std::move(result.GetError()));
 }
 
 DeleteBrandAssignmentOutcome QuickSightClient::DeleteBrandAssignment(const DeleteBrandAssignmentRequest& request) const {
@@ -1073,7 +1131,9 @@ DeleteBrandAssignmentOutcome QuickSightClient::DeleteBrandAssignment(const Delet
     endpointResolutionOutcome.GetResult().AddPathSegments("/brandassignments");
   };
 
-  return DeleteBrandAssignmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBrandAssignmentOutcome(result.GetResultWithOwnership())
+                            : DeleteBrandAssignmentOutcome(std::move(result.GetError()));
 }
 
 DeleteCustomPermissionsOutcome QuickSightClient::DeleteCustomPermissions(const DeleteCustomPermissionsRequest& request) const {
@@ -1096,7 +1156,9 @@ DeleteCustomPermissionsOutcome QuickSightClient::DeleteCustomPermissions(const D
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCustomPermissionsName());
   };
 
-  return DeleteCustomPermissionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCustomPermissionsOutcome(result.GetResultWithOwnership())
+                            : DeleteCustomPermissionsOutcome(std::move(result.GetError()));
 }
 
 DeleteDashboardOutcome QuickSightClient::DeleteDashboard(const DeleteDashboardRequest& request) const {
@@ -1119,7 +1181,9 @@ DeleteDashboardOutcome QuickSightClient::DeleteDashboard(const DeleteDashboardRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDashboardId());
   };
 
-  return DeleteDashboardOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDashboardOutcome(result.GetResultWithOwnership())
+                            : DeleteDashboardOutcome(std::move(result.GetError()));
 }
 
 DeleteDataSetOutcome QuickSightClient::DeleteDataSet(const DeleteDataSetRequest& request) const {
@@ -1142,7 +1206,8 @@ DeleteDataSetOutcome QuickSightClient::DeleteDataSet(const DeleteDataSetRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataSetId());
   };
 
-  return DeleteDataSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDataSetOutcome(result.GetResultWithOwnership()) : DeleteDataSetOutcome(std::move(result.GetError()));
 }
 
 DeleteDataSetRefreshPropertiesOutcome QuickSightClient::DeleteDataSetRefreshProperties(
@@ -1167,7 +1232,9 @@ DeleteDataSetRefreshPropertiesOutcome QuickSightClient::DeleteDataSetRefreshProp
     endpointResolutionOutcome.GetResult().AddPathSegments("/refresh-properties");
   };
 
-  return DeleteDataSetRefreshPropertiesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDataSetRefreshPropertiesOutcome(result.GetResultWithOwnership())
+                            : DeleteDataSetRefreshPropertiesOutcome(std::move(result.GetError()));
 }
 
 DeleteDataSourceOutcome QuickSightClient::DeleteDataSource(const DeleteDataSourceRequest& request) const {
@@ -1190,7 +1257,9 @@ DeleteDataSourceOutcome QuickSightClient::DeleteDataSource(const DeleteDataSourc
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataSourceId());
   };
 
-  return DeleteDataSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDataSourceOutcome(result.GetResultWithOwnership())
+                            : DeleteDataSourceOutcome(std::move(result.GetError()));
 }
 
 DeleteDefaultQBusinessApplicationOutcome QuickSightClient::DeleteDefaultQBusinessApplication(
@@ -1208,7 +1277,9 @@ DeleteDefaultQBusinessApplicationOutcome QuickSightClient::DeleteDefaultQBusines
     endpointResolutionOutcome.GetResult().AddPathSegments("/default-qbusiness-application");
   };
 
-  return DeleteDefaultQBusinessApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDefaultQBusinessApplicationOutcome(result.GetResultWithOwnership())
+                            : DeleteDefaultQBusinessApplicationOutcome(std::move(result.GetError()));
 }
 
 DeleteFolderOutcome QuickSightClient::DeleteFolder(const DeleteFolderRequest& request) const {
@@ -1231,7 +1302,8 @@ DeleteFolderOutcome QuickSightClient::DeleteFolder(const DeleteFolderRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFolderId());
   };
 
-  return DeleteFolderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteFolderOutcome(result.GetResultWithOwnership()) : DeleteFolderOutcome(std::move(result.GetError()));
 }
 
 DeleteFolderMembershipOutcome QuickSightClient::DeleteFolderMembership(const DeleteFolderMembershipRequest& request) const {
@@ -1267,7 +1339,9 @@ DeleteFolderMembershipOutcome QuickSightClient::DeleteFolderMembership(const Del
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemberId());
   };
 
-  return DeleteFolderMembershipOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteFolderMembershipOutcome(result.GetResultWithOwnership())
+                            : DeleteFolderMembershipOutcome(std::move(result.GetError()));
 }
 
 DeleteGroupOutcome QuickSightClient::DeleteGroup(const DeleteGroupRequest& request) const {
@@ -1297,7 +1371,8 @@ DeleteGroupOutcome QuickSightClient::DeleteGroup(const DeleteGroupRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGroupName());
   };
 
-  return DeleteGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteGroupOutcome(result.GetResultWithOwnership()) : DeleteGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteGroupMembershipOutcome QuickSightClient::DeleteGroupMembership(const DeleteGroupMembershipRequest& request) const {
@@ -1334,7 +1409,9 @@ DeleteGroupMembershipOutcome QuickSightClient::DeleteGroupMembership(const Delet
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemberName());
   };
 
-  return DeleteGroupMembershipOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteGroupMembershipOutcome(result.GetResultWithOwnership())
+                            : DeleteGroupMembershipOutcome(std::move(result.GetError()));
 }
 
 DeleteIAMPolicyAssignmentOutcome QuickSightClient::DeleteIAMPolicyAssignment(const DeleteIAMPolicyAssignmentRequest& request) const {
@@ -1364,7 +1441,9 @@ DeleteIAMPolicyAssignmentOutcome QuickSightClient::DeleteIAMPolicyAssignment(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssignmentName());
   };
 
-  return DeleteIAMPolicyAssignmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteIAMPolicyAssignmentOutcome(result.GetResultWithOwnership())
+                            : DeleteIAMPolicyAssignmentOutcome(std::move(result.GetError()));
 }
 
 DeleteIdentityPropagationConfigOutcome QuickSightClient::DeleteIdentityPropagationConfig(
@@ -1388,7 +1467,9 @@ DeleteIdentityPropagationConfigOutcome QuickSightClient::DeleteIdentityPropagati
     endpointResolutionOutcome.GetResult().AddPathSegment(ServiceTypeMapper::GetNameForServiceType(request.GetService()));
   };
 
-  return DeleteIdentityPropagationConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteIdentityPropagationConfigOutcome(result.GetResultWithOwnership())
+                            : DeleteIdentityPropagationConfigOutcome(std::move(result.GetError()));
 }
 
 DeleteNamespaceOutcome QuickSightClient::DeleteNamespace(const DeleteNamespaceRequest& request) const {
@@ -1411,7 +1492,9 @@ DeleteNamespaceOutcome QuickSightClient::DeleteNamespace(const DeleteNamespaceRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNamespace());
   };
 
-  return DeleteNamespaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteNamespaceOutcome(result.GetResultWithOwnership())
+                            : DeleteNamespaceOutcome(std::move(result.GetError()));
 }
 
 DeleteRefreshScheduleOutcome QuickSightClient::DeleteRefreshSchedule(const DeleteRefreshScheduleRequest& request) const {
@@ -1441,7 +1524,9 @@ DeleteRefreshScheduleOutcome QuickSightClient::DeleteRefreshSchedule(const Delet
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetScheduleId());
   };
 
-  return DeleteRefreshScheduleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRefreshScheduleOutcome(result.GetResultWithOwnership())
+                            : DeleteRefreshScheduleOutcome(std::move(result.GetError()));
 }
 
 DeleteRoleCustomPermissionOutcome QuickSightClient::DeleteRoleCustomPermission(const DeleteRoleCustomPermissionRequest& request) const {
@@ -1472,7 +1557,9 @@ DeleteRoleCustomPermissionOutcome QuickSightClient::DeleteRoleCustomPermission(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/custom-permission");
   };
 
-  return DeleteRoleCustomPermissionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRoleCustomPermissionOutcome(result.GetResultWithOwnership())
+                            : DeleteRoleCustomPermissionOutcome(std::move(result.GetError()));
 }
 
 DeleteRoleMembershipOutcome QuickSightClient::DeleteRoleMembership(const DeleteRoleMembershipRequest& request) const {
@@ -1509,7 +1596,9 @@ DeleteRoleMembershipOutcome QuickSightClient::DeleteRoleMembership(const DeleteR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemberName());
   };
 
-  return DeleteRoleMembershipOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRoleMembershipOutcome(result.GetResultWithOwnership())
+                            : DeleteRoleMembershipOutcome(std::move(result.GetError()));
 }
 
 DeleteTemplateOutcome QuickSightClient::DeleteTemplate(const DeleteTemplateRequest& request) const {
@@ -1532,7 +1621,8 @@ DeleteTemplateOutcome QuickSightClient::DeleteTemplate(const DeleteTemplateReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTemplateId());
   };
 
-  return DeleteTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTemplateOutcome(result.GetResultWithOwnership()) : DeleteTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteTemplateAliasOutcome QuickSightClient::DeleteTemplateAlias(const DeleteTemplateAliasRequest& request) const {
@@ -1562,7 +1652,9 @@ DeleteTemplateAliasOutcome QuickSightClient::DeleteTemplateAlias(const DeleteTem
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAliasName());
   };
 
-  return DeleteTemplateAliasOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTemplateAliasOutcome(result.GetResultWithOwnership())
+                            : DeleteTemplateAliasOutcome(std::move(result.GetError()));
 }
 
 DeleteThemeOutcome QuickSightClient::DeleteTheme(const DeleteThemeRequest& request) const {
@@ -1585,7 +1677,8 @@ DeleteThemeOutcome QuickSightClient::DeleteTheme(const DeleteThemeRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetThemeId());
   };
 
-  return DeleteThemeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteThemeOutcome(result.GetResultWithOwnership()) : DeleteThemeOutcome(std::move(result.GetError()));
 }
 
 DeleteThemeAliasOutcome QuickSightClient::DeleteThemeAlias(const DeleteThemeAliasRequest& request) const {
@@ -1615,7 +1708,9 @@ DeleteThemeAliasOutcome QuickSightClient::DeleteThemeAlias(const DeleteThemeAlia
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAliasName());
   };
 
-  return DeleteThemeAliasOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteThemeAliasOutcome(result.GetResultWithOwnership())
+                            : DeleteThemeAliasOutcome(std::move(result.GetError()));
 }
 
 DeleteTopicOutcome QuickSightClient::DeleteTopic(const DeleteTopicRequest& request) const {
@@ -1638,7 +1733,8 @@ DeleteTopicOutcome QuickSightClient::DeleteTopic(const DeleteTopicRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTopicId());
   };
 
-  return DeleteTopicOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTopicOutcome(result.GetResultWithOwnership()) : DeleteTopicOutcome(std::move(result.GetError()));
 }
 
 DeleteTopicRefreshScheduleOutcome QuickSightClient::DeleteTopicRefreshSchedule(const DeleteTopicRefreshScheduleRequest& request) const {
@@ -1668,7 +1764,9 @@ DeleteTopicRefreshScheduleOutcome QuickSightClient::DeleteTopicRefreshSchedule(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetId());
   };
 
-  return DeleteTopicRefreshScheduleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTopicRefreshScheduleOutcome(result.GetResultWithOwnership())
+                            : DeleteTopicRefreshScheduleOutcome(std::move(result.GetError()));
 }
 
 DeleteUserOutcome QuickSightClient::DeleteUser(const DeleteUserRequest& request) const {
@@ -1698,7 +1796,8 @@ DeleteUserOutcome QuickSightClient::DeleteUser(const DeleteUserRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserName());
   };
 
-  return DeleteUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteUserOutcome(result.GetResultWithOwnership()) : DeleteUserOutcome(std::move(result.GetError()));
 }
 
 DeleteUserByPrincipalIdOutcome QuickSightClient::DeleteUserByPrincipalId(const DeleteUserByPrincipalIdRequest& request) const {
@@ -1728,7 +1827,9 @@ DeleteUserByPrincipalIdOutcome QuickSightClient::DeleteUserByPrincipalId(const D
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalId());
   };
 
-  return DeleteUserByPrincipalIdOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteUserByPrincipalIdOutcome(result.GetResultWithOwnership())
+                            : DeleteUserByPrincipalIdOutcome(std::move(result.GetError()));
 }
 
 DeleteUserCustomPermissionOutcome QuickSightClient::DeleteUserCustomPermission(const DeleteUserCustomPermissionRequest& request) const {
@@ -1759,7 +1860,9 @@ DeleteUserCustomPermissionOutcome QuickSightClient::DeleteUserCustomPermission(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/custom-permission");
   };
 
-  return DeleteUserCustomPermissionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteUserCustomPermissionOutcome(result.GetResultWithOwnership())
+                            : DeleteUserCustomPermissionOutcome(std::move(result.GetError()));
 }
 
 DeleteVPCConnectionOutcome QuickSightClient::DeleteVPCConnection(const DeleteVPCConnectionRequest& request) const {
@@ -1782,7 +1885,9 @@ DeleteVPCConnectionOutcome QuickSightClient::DeleteVPCConnection(const DeleteVPC
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVPCConnectionId());
   };
 
-  return DeleteVPCConnectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteVPCConnectionOutcome(result.GetResultWithOwnership())
+                            : DeleteVPCConnectionOutcome(std::move(result.GetError()));
 }
 
 DescribeAccountCustomPermissionOutcome QuickSightClient::DescribeAccountCustomPermission(
@@ -1800,7 +1905,9 @@ DescribeAccountCustomPermissionOutcome QuickSightClient::DescribeAccountCustomPe
     endpointResolutionOutcome.GetResult().AddPathSegments("/custom-permission");
   };
 
-  return DescribeAccountCustomPermissionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAccountCustomPermissionOutcome(result.GetResultWithOwnership())
+                            : DescribeAccountCustomPermissionOutcome(std::move(result.GetError()));
 }
 
 DescribeAccountCustomizationOutcome QuickSightClient::DescribeAccountCustomization(
@@ -1818,7 +1925,9 @@ DescribeAccountCustomizationOutcome QuickSightClient::DescribeAccountCustomizati
     endpointResolutionOutcome.GetResult().AddPathSegments("/customizations");
   };
 
-  return DescribeAccountCustomizationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAccountCustomizationOutcome(result.GetResultWithOwnership())
+                            : DescribeAccountCustomizationOutcome(std::move(result.GetError()));
 }
 
 DescribeAccountSettingsOutcome QuickSightClient::DescribeAccountSettings(const DescribeAccountSettingsRequest& request) const {
@@ -1835,7 +1944,9 @@ DescribeAccountSettingsOutcome QuickSightClient::DescribeAccountSettings(const D
     endpointResolutionOutcome.GetResult().AddPathSegments("/settings");
   };
 
-  return DescribeAccountSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAccountSettingsOutcome(result.GetResultWithOwnership())
+                            : DescribeAccountSettingsOutcome(std::move(result.GetError()));
 }
 
 DescribeAccountSubscriptionOutcome QuickSightClient::DescribeAccountSubscription(const DescribeAccountSubscriptionRequest& request) const {
@@ -1851,7 +1962,9 @@ DescribeAccountSubscriptionOutcome QuickSightClient::DescribeAccountSubscription
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
   };
 
-  return DescribeAccountSubscriptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAccountSubscriptionOutcome(result.GetResultWithOwnership())
+                            : DescribeAccountSubscriptionOutcome(std::move(result.GetError()));
 }
 
 DescribeActionConnectorOutcome QuickSightClient::DescribeActionConnector(const DescribeActionConnectorRequest& request) const {
@@ -1874,7 +1987,9 @@ DescribeActionConnectorOutcome QuickSightClient::DescribeActionConnector(const D
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetActionConnectorId());
   };
 
-  return DescribeActionConnectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeActionConnectorOutcome(result.GetResultWithOwnership())
+                            : DescribeActionConnectorOutcome(std::move(result.GetError()));
 }
 
 DescribeActionConnectorPermissionsOutcome QuickSightClient::DescribeActionConnectorPermissions(
@@ -1899,7 +2014,9 @@ DescribeActionConnectorPermissionsOutcome QuickSightClient::DescribeActionConnec
     endpointResolutionOutcome.GetResult().AddPathSegments("/permissions");
   };
 
-  return DescribeActionConnectorPermissionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeActionConnectorPermissionsOutcome(result.GetResultWithOwnership())
+                            : DescribeActionConnectorPermissionsOutcome(std::move(result.GetError()));
 }
 
 DescribeAnalysisOutcome QuickSightClient::DescribeAnalysis(const DescribeAnalysisRequest& request) const {
@@ -1922,7 +2039,9 @@ DescribeAnalysisOutcome QuickSightClient::DescribeAnalysis(const DescribeAnalysi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAnalysisId());
   };
 
-  return DescribeAnalysisOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAnalysisOutcome(result.GetResultWithOwnership())
+                            : DescribeAnalysisOutcome(std::move(result.GetError()));
 }
 
 DescribeAnalysisDefinitionOutcome QuickSightClient::DescribeAnalysisDefinition(const DescribeAnalysisDefinitionRequest& request) const {
@@ -1946,7 +2065,9 @@ DescribeAnalysisDefinitionOutcome QuickSightClient::DescribeAnalysisDefinition(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/definition");
   };
 
-  return DescribeAnalysisDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAnalysisDefinitionOutcome(result.GetResultWithOwnership())
+                            : DescribeAnalysisDefinitionOutcome(std::move(result.GetError()));
 }
 
 DescribeAnalysisPermissionsOutcome QuickSightClient::DescribeAnalysisPermissions(const DescribeAnalysisPermissionsRequest& request) const {
@@ -1970,7 +2091,9 @@ DescribeAnalysisPermissionsOutcome QuickSightClient::DescribeAnalysisPermissions
     endpointResolutionOutcome.GetResult().AddPathSegments("/permissions");
   };
 
-  return DescribeAnalysisPermissionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAnalysisPermissionsOutcome(result.GetResultWithOwnership())
+                            : DescribeAnalysisPermissionsOutcome(std::move(result.GetError()));
 }
 
 DescribeAssetBundleExportJobOutcome QuickSightClient::DescribeAssetBundleExportJob(
@@ -1994,7 +2117,9 @@ DescribeAssetBundleExportJobOutcome QuickSightClient::DescribeAssetBundleExportJ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssetBundleExportJobId());
   };
 
-  return DescribeAssetBundleExportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAssetBundleExportJobOutcome(result.GetResultWithOwnership())
+                            : DescribeAssetBundleExportJobOutcome(std::move(result.GetError()));
 }
 
 DescribeAssetBundleImportJobOutcome QuickSightClient::DescribeAssetBundleImportJob(
@@ -2018,7 +2143,9 @@ DescribeAssetBundleImportJobOutcome QuickSightClient::DescribeAssetBundleImportJ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssetBundleImportJobId());
   };
 
-  return DescribeAssetBundleImportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAssetBundleImportJobOutcome(result.GetResultWithOwnership())
+                            : DescribeAssetBundleImportJobOutcome(std::move(result.GetError()));
 }
 
 DescribeBrandOutcome QuickSightClient::DescribeBrand(const DescribeBrandRequest& request) const {
@@ -2041,7 +2168,8 @@ DescribeBrandOutcome QuickSightClient::DescribeBrand(const DescribeBrandRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBrandId());
   };
 
-  return DescribeBrandOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeBrandOutcome(result.GetResultWithOwnership()) : DescribeBrandOutcome(std::move(result.GetError()));
 }
 
 DescribeBrandAssignmentOutcome QuickSightClient::DescribeBrandAssignment(const DescribeBrandAssignmentRequest& request) const {
@@ -2058,7 +2186,9 @@ DescribeBrandAssignmentOutcome QuickSightClient::DescribeBrandAssignment(const D
     endpointResolutionOutcome.GetResult().AddPathSegments("/brandassignments");
   };
 
-  return DescribeBrandAssignmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeBrandAssignmentOutcome(result.GetResultWithOwnership())
+                            : DescribeBrandAssignmentOutcome(std::move(result.GetError()));
 }
 
 DescribeBrandPublishedVersionOutcome QuickSightClient::DescribeBrandPublishedVersion(
@@ -2083,7 +2213,9 @@ DescribeBrandPublishedVersionOutcome QuickSightClient::DescribeBrandPublishedVer
     endpointResolutionOutcome.GetResult().AddPathSegments("/publishedversion");
   };
 
-  return DescribeBrandPublishedVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeBrandPublishedVersionOutcome(result.GetResultWithOwnership())
+                            : DescribeBrandPublishedVersionOutcome(std::move(result.GetError()));
 }
 
 DescribeCustomPermissionsOutcome QuickSightClient::DescribeCustomPermissions(const DescribeCustomPermissionsRequest& request) const {
@@ -2106,7 +2238,9 @@ DescribeCustomPermissionsOutcome QuickSightClient::DescribeCustomPermissions(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCustomPermissionsName());
   };
 
-  return DescribeCustomPermissionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeCustomPermissionsOutcome(result.GetResultWithOwnership())
+                            : DescribeCustomPermissionsOutcome(std::move(result.GetError()));
 }
 
 DescribeDashboardOutcome QuickSightClient::DescribeDashboard(const DescribeDashboardRequest& request) const {
@@ -2129,7 +2263,9 @@ DescribeDashboardOutcome QuickSightClient::DescribeDashboard(const DescribeDashb
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDashboardId());
   };
 
-  return DescribeDashboardOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDashboardOutcome(result.GetResultWithOwnership())
+                            : DescribeDashboardOutcome(std::move(result.GetError()));
 }
 
 DescribeDashboardDefinitionOutcome QuickSightClient::DescribeDashboardDefinition(const DescribeDashboardDefinitionRequest& request) const {
@@ -2153,7 +2289,9 @@ DescribeDashboardDefinitionOutcome QuickSightClient::DescribeDashboardDefinition
     endpointResolutionOutcome.GetResult().AddPathSegments("/definition");
   };
 
-  return DescribeDashboardDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDashboardDefinitionOutcome(result.GetResultWithOwnership())
+                            : DescribeDashboardDefinitionOutcome(std::move(result.GetError()));
 }
 
 DescribeDashboardPermissionsOutcome QuickSightClient::DescribeDashboardPermissions(
@@ -2178,7 +2316,9 @@ DescribeDashboardPermissionsOutcome QuickSightClient::DescribeDashboardPermissio
     endpointResolutionOutcome.GetResult().AddPathSegments("/permissions");
   };
 
-  return DescribeDashboardPermissionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDashboardPermissionsOutcome(result.GetResultWithOwnership())
+                            : DescribeDashboardPermissionsOutcome(std::move(result.GetError()));
 }
 
 DescribeDashboardSnapshotJobOutcome QuickSightClient::DescribeDashboardSnapshotJob(
@@ -2209,7 +2349,9 @@ DescribeDashboardSnapshotJobOutcome QuickSightClient::DescribeDashboardSnapshotJ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSnapshotJobId());
   };
 
-  return DescribeDashboardSnapshotJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDashboardSnapshotJobOutcome(result.GetResultWithOwnership())
+                            : DescribeDashboardSnapshotJobOutcome(std::move(result.GetError()));
 }
 
 DescribeDashboardSnapshotJobResultOutcome QuickSightClient::DescribeDashboardSnapshotJobResult(
@@ -2241,7 +2383,9 @@ DescribeDashboardSnapshotJobResultOutcome QuickSightClient::DescribeDashboardSna
     endpointResolutionOutcome.GetResult().AddPathSegments("/result");
   };
 
-  return DescribeDashboardSnapshotJobResultOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDashboardSnapshotJobResultOutcome(result.GetResultWithOwnership())
+                            : DescribeDashboardSnapshotJobResultOutcome(std::move(result.GetError()));
 }
 
 DescribeDashboardsQAConfigurationOutcome QuickSightClient::DescribeDashboardsQAConfiguration(
@@ -2259,7 +2403,9 @@ DescribeDashboardsQAConfigurationOutcome QuickSightClient::DescribeDashboardsQAC
     endpointResolutionOutcome.GetResult().AddPathSegments("/dashboards-qa-configuration");
   };
 
-  return DescribeDashboardsQAConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDashboardsQAConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeDashboardsQAConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeDataSetOutcome QuickSightClient::DescribeDataSet(const DescribeDataSetRequest& request) const {
@@ -2282,7 +2428,9 @@ DescribeDataSetOutcome QuickSightClient::DescribeDataSet(const DescribeDataSetRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataSetId());
   };
 
-  return DescribeDataSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDataSetOutcome(result.GetResultWithOwnership())
+                            : DescribeDataSetOutcome(std::move(result.GetError()));
 }
 
 DescribeDataSetPermissionsOutcome QuickSightClient::DescribeDataSetPermissions(const DescribeDataSetPermissionsRequest& request) const {
@@ -2306,7 +2454,9 @@ DescribeDataSetPermissionsOutcome QuickSightClient::DescribeDataSetPermissions(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/permissions");
   };
 
-  return DescribeDataSetPermissionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDataSetPermissionsOutcome(result.GetResultWithOwnership())
+                            : DescribeDataSetPermissionsOutcome(std::move(result.GetError()));
 }
 
 DescribeDataSetRefreshPropertiesOutcome QuickSightClient::DescribeDataSetRefreshProperties(
@@ -2331,7 +2481,9 @@ DescribeDataSetRefreshPropertiesOutcome QuickSightClient::DescribeDataSetRefresh
     endpointResolutionOutcome.GetResult().AddPathSegments("/refresh-properties");
   };
 
-  return DescribeDataSetRefreshPropertiesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDataSetRefreshPropertiesOutcome(result.GetResultWithOwnership())
+                            : DescribeDataSetRefreshPropertiesOutcome(std::move(result.GetError()));
 }
 
 DescribeDataSourceOutcome QuickSightClient::DescribeDataSource(const DescribeDataSourceRequest& request) const {
@@ -2354,7 +2506,9 @@ DescribeDataSourceOutcome QuickSightClient::DescribeDataSource(const DescribeDat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataSourceId());
   };
 
-  return DescribeDataSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDataSourceOutcome(result.GetResultWithOwnership())
+                            : DescribeDataSourceOutcome(std::move(result.GetError()));
 }
 
 DescribeDataSourcePermissionsOutcome QuickSightClient::DescribeDataSourcePermissions(
@@ -2379,7 +2533,9 @@ DescribeDataSourcePermissionsOutcome QuickSightClient::DescribeDataSourcePermiss
     endpointResolutionOutcome.GetResult().AddPathSegments("/permissions");
   };
 
-  return DescribeDataSourcePermissionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDataSourcePermissionsOutcome(result.GetResultWithOwnership())
+                            : DescribeDataSourcePermissionsOutcome(std::move(result.GetError()));
 }
 
 DescribeDefaultQBusinessApplicationOutcome QuickSightClient::DescribeDefaultQBusinessApplication(
@@ -2397,7 +2553,9 @@ DescribeDefaultQBusinessApplicationOutcome QuickSightClient::DescribeDefaultQBus
     endpointResolutionOutcome.GetResult().AddPathSegments("/default-qbusiness-application");
   };
 
-  return DescribeDefaultQBusinessApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDefaultQBusinessApplicationOutcome(result.GetResultWithOwnership())
+                            : DescribeDefaultQBusinessApplicationOutcome(std::move(result.GetError()));
 }
 
 DescribeFolderOutcome QuickSightClient::DescribeFolder(const DescribeFolderRequest& request) const {
@@ -2420,7 +2578,8 @@ DescribeFolderOutcome QuickSightClient::DescribeFolder(const DescribeFolderReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFolderId());
   };
 
-  return DescribeFolderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeFolderOutcome(result.GetResultWithOwnership()) : DescribeFolderOutcome(std::move(result.GetError()));
 }
 
 DescribeFolderPermissionsOutcome QuickSightClient::DescribeFolderPermissions(const DescribeFolderPermissionsRequest& request) const {
@@ -2444,7 +2603,9 @@ DescribeFolderPermissionsOutcome QuickSightClient::DescribeFolderPermissions(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/permissions");
   };
 
-  return DescribeFolderPermissionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeFolderPermissionsOutcome(result.GetResultWithOwnership())
+                            : DescribeFolderPermissionsOutcome(std::move(result.GetError()));
 }
 
 DescribeFolderResolvedPermissionsOutcome QuickSightClient::DescribeFolderResolvedPermissions(
@@ -2469,7 +2630,9 @@ DescribeFolderResolvedPermissionsOutcome QuickSightClient::DescribeFolderResolve
     endpointResolutionOutcome.GetResult().AddPathSegments("/resolved-permissions");
   };
 
-  return DescribeFolderResolvedPermissionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeFolderResolvedPermissionsOutcome(result.GetResultWithOwnership())
+                            : DescribeFolderResolvedPermissionsOutcome(std::move(result.GetError()));
 }
 
 DescribeGroupOutcome QuickSightClient::DescribeGroup(const DescribeGroupRequest& request) const {
@@ -2499,7 +2662,8 @@ DescribeGroupOutcome QuickSightClient::DescribeGroup(const DescribeGroupRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGroupName());
   };
 
-  return DescribeGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeGroupOutcome(result.GetResultWithOwnership()) : DescribeGroupOutcome(std::move(result.GetError()));
 }
 
 DescribeGroupMembershipOutcome QuickSightClient::DescribeGroupMembership(const DescribeGroupMembershipRequest& request) const {
@@ -2536,7 +2700,9 @@ DescribeGroupMembershipOutcome QuickSightClient::DescribeGroupMembership(const D
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemberName());
   };
 
-  return DescribeGroupMembershipOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeGroupMembershipOutcome(result.GetResultWithOwnership())
+                            : DescribeGroupMembershipOutcome(std::move(result.GetError()));
 }
 
 DescribeIAMPolicyAssignmentOutcome QuickSightClient::DescribeIAMPolicyAssignment(const DescribeIAMPolicyAssignmentRequest& request) const {
@@ -2566,7 +2732,9 @@ DescribeIAMPolicyAssignmentOutcome QuickSightClient::DescribeIAMPolicyAssignment
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssignmentName());
   };
 
-  return DescribeIAMPolicyAssignmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeIAMPolicyAssignmentOutcome(result.GetResultWithOwnership())
+                            : DescribeIAMPolicyAssignmentOutcome(std::move(result.GetError()));
 }
 
 DescribeIngestionOutcome QuickSightClient::DescribeIngestion(const DescribeIngestionRequest& request) const {
@@ -2596,7 +2764,9 @@ DescribeIngestionOutcome QuickSightClient::DescribeIngestion(const DescribeInges
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIngestionId());
   };
 
-  return DescribeIngestionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeIngestionOutcome(result.GetResultWithOwnership())
+                            : DescribeIngestionOutcome(std::move(result.GetError()));
 }
 
 DescribeIpRestrictionOutcome QuickSightClient::DescribeIpRestriction(const DescribeIpRestrictionRequest& request) const {
@@ -2613,7 +2783,9 @@ DescribeIpRestrictionOutcome QuickSightClient::DescribeIpRestriction(const Descr
     endpointResolutionOutcome.GetResult().AddPathSegments("/ip-restriction");
   };
 
-  return DescribeIpRestrictionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeIpRestrictionOutcome(result.GetResultWithOwnership())
+                            : DescribeIpRestrictionOutcome(std::move(result.GetError()));
 }
 
 DescribeKeyRegistrationOutcome QuickSightClient::DescribeKeyRegistration(const DescribeKeyRegistrationRequest& request) const {
@@ -2630,7 +2802,9 @@ DescribeKeyRegistrationOutcome QuickSightClient::DescribeKeyRegistration(const D
     endpointResolutionOutcome.GetResult().AddPathSegments("/key-registration");
   };
 
-  return DescribeKeyRegistrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeKeyRegistrationOutcome(result.GetResultWithOwnership())
+                            : DescribeKeyRegistrationOutcome(std::move(result.GetError()));
 }
 
 DescribeNamespaceOutcome QuickSightClient::DescribeNamespace(const DescribeNamespaceRequest& request) const {
@@ -2653,7 +2827,9 @@ DescribeNamespaceOutcome QuickSightClient::DescribeNamespace(const DescribeNames
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNamespace());
   };
 
-  return DescribeNamespaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeNamespaceOutcome(result.GetResultWithOwnership())
+                            : DescribeNamespaceOutcome(std::move(result.GetError()));
 }
 
 DescribeQPersonalizationConfigurationOutcome QuickSightClient::DescribeQPersonalizationConfiguration(
@@ -2671,7 +2847,9 @@ DescribeQPersonalizationConfigurationOutcome QuickSightClient::DescribeQPersonal
     endpointResolutionOutcome.GetResult().AddPathSegments("/q-personalization-configuration");
   };
 
-  return DescribeQPersonalizationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeQPersonalizationConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeQPersonalizationConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeQuickSightQSearchConfigurationOutcome QuickSightClient::DescribeQuickSightQSearchConfiguration(
@@ -2689,5 +2867,7 @@ DescribeQuickSightQSearchConfigurationOutcome QuickSightClient::DescribeQuickSig
     endpointResolutionOutcome.GetResult().AddPathSegments("/quicksight-q-search-configuration");
   };
 
-  return DescribeQuickSightQSearchConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeQuickSightQSearchConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeQuickSightQSearchConfigurationOutcome(std::move(result.GetError()));
 }

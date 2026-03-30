@@ -270,257 +270,370 @@ EC2Client::InvokeOperationOutcome EC2Client::InvokeServiceOperation(const Amazon
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 AcceptAddressTransferOutcome EC2Client::AcceptAddressTransfer(const AcceptAddressTransferRequest& request) const {
-  return AcceptAddressTransferOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptAddressTransferOutcome(result.GetResultWithOwnership())
+                            : AcceptAddressTransferOutcome(std::move(result.GetError()));
 }
 
 AcceptCapacityReservationBillingOwnershipOutcome EC2Client::AcceptCapacityReservationBillingOwnership(
     const AcceptCapacityReservationBillingOwnershipRequest& request) const {
-  return AcceptCapacityReservationBillingOwnershipOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptCapacityReservationBillingOwnershipOutcome(result.GetResultWithOwnership())
+                            : AcceptCapacityReservationBillingOwnershipOutcome(std::move(result.GetError()));
 }
 
 AcceptReservedInstancesExchangeQuoteOutcome EC2Client::AcceptReservedInstancesExchangeQuote(
     const AcceptReservedInstancesExchangeQuoteRequest& request) const {
-  return AcceptReservedInstancesExchangeQuoteOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptReservedInstancesExchangeQuoteOutcome(result.GetResultWithOwnership())
+                            : AcceptReservedInstancesExchangeQuoteOutcome(std::move(result.GetError()));
 }
 
 AcceptTransitGatewayMulticastDomainAssociationsOutcome EC2Client::AcceptTransitGatewayMulticastDomainAssociations(
     const AcceptTransitGatewayMulticastDomainAssociationsRequest& request) const {
-  return AcceptTransitGatewayMulticastDomainAssociationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptTransitGatewayMulticastDomainAssociationsOutcome(result.GetResultWithOwnership())
+                            : AcceptTransitGatewayMulticastDomainAssociationsOutcome(std::move(result.GetError()));
 }
 
 AcceptTransitGatewayPeeringAttachmentOutcome EC2Client::AcceptTransitGatewayPeeringAttachment(
     const AcceptTransitGatewayPeeringAttachmentRequest& request) const {
-  return AcceptTransitGatewayPeeringAttachmentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptTransitGatewayPeeringAttachmentOutcome(result.GetResultWithOwnership())
+                            : AcceptTransitGatewayPeeringAttachmentOutcome(std::move(result.GetError()));
 }
 
 AcceptTransitGatewayVpcAttachmentOutcome EC2Client::AcceptTransitGatewayVpcAttachment(
     const AcceptTransitGatewayVpcAttachmentRequest& request) const {
-  return AcceptTransitGatewayVpcAttachmentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptTransitGatewayVpcAttachmentOutcome(result.GetResultWithOwnership())
+                            : AcceptTransitGatewayVpcAttachmentOutcome(std::move(result.GetError()));
 }
 
 AcceptVpcEndpointConnectionsOutcome EC2Client::AcceptVpcEndpointConnections(const AcceptVpcEndpointConnectionsRequest& request) const {
-  return AcceptVpcEndpointConnectionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptVpcEndpointConnectionsOutcome(result.GetResultWithOwnership())
+                            : AcceptVpcEndpointConnectionsOutcome(std::move(result.GetError()));
 }
 
 AcceptVpcPeeringConnectionOutcome EC2Client::AcceptVpcPeeringConnection(const AcceptVpcPeeringConnectionRequest& request) const {
-  return AcceptVpcPeeringConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptVpcPeeringConnectionOutcome(result.GetResultWithOwnership())
+                            : AcceptVpcPeeringConnectionOutcome(std::move(result.GetError()));
 }
 
 AdvertiseByoipCidrOutcome EC2Client::AdvertiseByoipCidr(const AdvertiseByoipCidrRequest& request) const {
-  return AdvertiseByoipCidrOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AdvertiseByoipCidrOutcome(result.GetResultWithOwnership())
+                            : AdvertiseByoipCidrOutcome(std::move(result.GetError()));
 }
 
 AllocateAddressOutcome EC2Client::AllocateAddress(const AllocateAddressRequest& request) const {
-  return AllocateAddressOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AllocateAddressOutcome(result.GetResultWithOwnership())
+                            : AllocateAddressOutcome(std::move(result.GetError()));
 }
 
 AllocateHostsOutcome EC2Client::AllocateHosts(const AllocateHostsRequest& request) const {
-  return AllocateHostsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AllocateHostsOutcome(result.GetResultWithOwnership()) : AllocateHostsOutcome(std::move(result.GetError()));
 }
 
 AllocateIpamPoolCidrOutcome EC2Client::AllocateIpamPoolCidr(const AllocateIpamPoolCidrRequest& request) const {
-  return AllocateIpamPoolCidrOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AllocateIpamPoolCidrOutcome(result.GetResultWithOwnership())
+                            : AllocateIpamPoolCidrOutcome(std::move(result.GetError()));
 }
 
 ApplySecurityGroupsToClientVpnTargetNetworkOutcome EC2Client::ApplySecurityGroupsToClientVpnTargetNetwork(
     const ApplySecurityGroupsToClientVpnTargetNetworkRequest& request) const {
-  return ApplySecurityGroupsToClientVpnTargetNetworkOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ApplySecurityGroupsToClientVpnTargetNetworkOutcome(result.GetResultWithOwnership())
+                            : ApplySecurityGroupsToClientVpnTargetNetworkOutcome(std::move(result.GetError()));
 }
 
 AssignIpv6AddressesOutcome EC2Client::AssignIpv6Addresses(const AssignIpv6AddressesRequest& request) const {
-  return AssignIpv6AddressesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssignIpv6AddressesOutcome(result.GetResultWithOwnership())
+                            : AssignIpv6AddressesOutcome(std::move(result.GetError()));
 }
 
 AssignPrivateIpAddressesOutcome EC2Client::AssignPrivateIpAddresses(const AssignPrivateIpAddressesRequest& request) const {
-  return AssignPrivateIpAddressesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssignPrivateIpAddressesOutcome(result.GetResultWithOwnership())
+                            : AssignPrivateIpAddressesOutcome(std::move(result.GetError()));
 }
 
 AssignPrivateNatGatewayAddressOutcome EC2Client::AssignPrivateNatGatewayAddress(
     const AssignPrivateNatGatewayAddressRequest& request) const {
-  return AssignPrivateNatGatewayAddressOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssignPrivateNatGatewayAddressOutcome(result.GetResultWithOwnership())
+                            : AssignPrivateNatGatewayAddressOutcome(std::move(result.GetError()));
 }
 
 AssociateAddressOutcome EC2Client::AssociateAddress(const AssociateAddressRequest& request) const {
-  return AssociateAddressOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateAddressOutcome(result.GetResultWithOwnership())
+                            : AssociateAddressOutcome(std::move(result.GetError()));
 }
 
 AssociateCapacityReservationBillingOwnerOutcome EC2Client::AssociateCapacityReservationBillingOwner(
     const AssociateCapacityReservationBillingOwnerRequest& request) const {
-  return AssociateCapacityReservationBillingOwnerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateCapacityReservationBillingOwnerOutcome(result.GetResultWithOwnership())
+                            : AssociateCapacityReservationBillingOwnerOutcome(std::move(result.GetError()));
 }
 
 AssociateClientVpnTargetNetworkOutcome EC2Client::AssociateClientVpnTargetNetwork(
     const AssociateClientVpnTargetNetworkRequest& request) const {
-  return AssociateClientVpnTargetNetworkOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateClientVpnTargetNetworkOutcome(result.GetResultWithOwnership())
+                            : AssociateClientVpnTargetNetworkOutcome(std::move(result.GetError()));
 }
 
 AssociateDhcpOptionsOutcome EC2Client::AssociateDhcpOptions(const AssociateDhcpOptionsRequest& request) const {
-  return AssociateDhcpOptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateDhcpOptionsOutcome(result.GetResultWithOwnership())
+                            : AssociateDhcpOptionsOutcome(std::move(result.GetError()));
 }
 
 AssociateEnclaveCertificateIamRoleOutcome EC2Client::AssociateEnclaveCertificateIamRole(
     const AssociateEnclaveCertificateIamRoleRequest& request) const {
-  return AssociateEnclaveCertificateIamRoleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateEnclaveCertificateIamRoleOutcome(result.GetResultWithOwnership())
+                            : AssociateEnclaveCertificateIamRoleOutcome(std::move(result.GetError()));
 }
 
 AssociateIamInstanceProfileOutcome EC2Client::AssociateIamInstanceProfile(const AssociateIamInstanceProfileRequest& request) const {
-  return AssociateIamInstanceProfileOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateIamInstanceProfileOutcome(result.GetResultWithOwnership())
+                            : AssociateIamInstanceProfileOutcome(std::move(result.GetError()));
 }
 
 AssociateInstanceEventWindowOutcome EC2Client::AssociateInstanceEventWindow(const AssociateInstanceEventWindowRequest& request) const {
-  return AssociateInstanceEventWindowOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateInstanceEventWindowOutcome(result.GetResultWithOwnership())
+                            : AssociateInstanceEventWindowOutcome(std::move(result.GetError()));
 }
 
 AssociateIpamByoasnOutcome EC2Client::AssociateIpamByoasn(const AssociateIpamByoasnRequest& request) const {
-  return AssociateIpamByoasnOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateIpamByoasnOutcome(result.GetResultWithOwnership())
+                            : AssociateIpamByoasnOutcome(std::move(result.GetError()));
 }
 
 AssociateIpamResourceDiscoveryOutcome EC2Client::AssociateIpamResourceDiscovery(
     const AssociateIpamResourceDiscoveryRequest& request) const {
-  return AssociateIpamResourceDiscoveryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateIpamResourceDiscoveryOutcome(result.GetResultWithOwnership())
+                            : AssociateIpamResourceDiscoveryOutcome(std::move(result.GetError()));
 }
 
 AssociateNatGatewayAddressOutcome EC2Client::AssociateNatGatewayAddress(const AssociateNatGatewayAddressRequest& request) const {
-  return AssociateNatGatewayAddressOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateNatGatewayAddressOutcome(result.GetResultWithOwnership())
+                            : AssociateNatGatewayAddressOutcome(std::move(result.GetError()));
 }
 
 AssociateRouteServerOutcome EC2Client::AssociateRouteServer(const AssociateRouteServerRequest& request) const {
-  return AssociateRouteServerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateRouteServerOutcome(result.GetResultWithOwnership())
+                            : AssociateRouteServerOutcome(std::move(result.GetError()));
 }
 
 AssociateRouteTableOutcome EC2Client::AssociateRouteTable(const AssociateRouteTableRequest& request) const {
-  return AssociateRouteTableOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateRouteTableOutcome(result.GetResultWithOwnership())
+                            : AssociateRouteTableOutcome(std::move(result.GetError()));
 }
 
 AssociateSecurityGroupVpcOutcome EC2Client::AssociateSecurityGroupVpc(const AssociateSecurityGroupVpcRequest& request) const {
-  return AssociateSecurityGroupVpcOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateSecurityGroupVpcOutcome(result.GetResultWithOwnership())
+                            : AssociateSecurityGroupVpcOutcome(std::move(result.GetError()));
 }
 
 AssociateSubnetCidrBlockOutcome EC2Client::AssociateSubnetCidrBlock(const AssociateSubnetCidrBlockRequest& request) const {
-  return AssociateSubnetCidrBlockOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateSubnetCidrBlockOutcome(result.GetResultWithOwnership())
+                            : AssociateSubnetCidrBlockOutcome(std::move(result.GetError()));
 }
 
 AssociateTransitGatewayMulticastDomainOutcome EC2Client::AssociateTransitGatewayMulticastDomain(
     const AssociateTransitGatewayMulticastDomainRequest& request) const {
-  return AssociateTransitGatewayMulticastDomainOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateTransitGatewayMulticastDomainOutcome(result.GetResultWithOwnership())
+                            : AssociateTransitGatewayMulticastDomainOutcome(std::move(result.GetError()));
 }
 
 AssociateTransitGatewayPolicyTableOutcome EC2Client::AssociateTransitGatewayPolicyTable(
     const AssociateTransitGatewayPolicyTableRequest& request) const {
-  return AssociateTransitGatewayPolicyTableOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateTransitGatewayPolicyTableOutcome(result.GetResultWithOwnership())
+                            : AssociateTransitGatewayPolicyTableOutcome(std::move(result.GetError()));
 }
 
 AssociateTransitGatewayRouteTableOutcome EC2Client::AssociateTransitGatewayRouteTable(
     const AssociateTransitGatewayRouteTableRequest& request) const {
-  return AssociateTransitGatewayRouteTableOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateTransitGatewayRouteTableOutcome(result.GetResultWithOwnership())
+                            : AssociateTransitGatewayRouteTableOutcome(std::move(result.GetError()));
 }
 
 AssociateTrunkInterfaceOutcome EC2Client::AssociateTrunkInterface(const AssociateTrunkInterfaceRequest& request) const {
-  return AssociateTrunkInterfaceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateTrunkInterfaceOutcome(result.GetResultWithOwnership())
+                            : AssociateTrunkInterfaceOutcome(std::move(result.GetError()));
 }
 
 AssociateVpcCidrBlockOutcome EC2Client::AssociateVpcCidrBlock(const AssociateVpcCidrBlockRequest& request) const {
-  return AssociateVpcCidrBlockOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateVpcCidrBlockOutcome(result.GetResultWithOwnership())
+                            : AssociateVpcCidrBlockOutcome(std::move(result.GetError()));
 }
 
 AttachClassicLinkVpcOutcome EC2Client::AttachClassicLinkVpc(const AttachClassicLinkVpcRequest& request) const {
-  return AttachClassicLinkVpcOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AttachClassicLinkVpcOutcome(result.GetResultWithOwnership())
+                            : AttachClassicLinkVpcOutcome(std::move(result.GetError()));
 }
 
 AttachInternetGatewayOutcome EC2Client::AttachInternetGateway(const AttachInternetGatewayRequest& request) const {
-  return AttachInternetGatewayOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AttachInternetGatewayOutcome(result.GetResultWithOwnership())
+                            : AttachInternetGatewayOutcome(std::move(result.GetError()));
 }
 
 AttachNetworkInterfaceOutcome EC2Client::AttachNetworkInterface(const AttachNetworkInterfaceRequest& request) const {
-  return AttachNetworkInterfaceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AttachNetworkInterfaceOutcome(result.GetResultWithOwnership())
+                            : AttachNetworkInterfaceOutcome(std::move(result.GetError()));
 }
 
 AttachVerifiedAccessTrustProviderOutcome EC2Client::AttachVerifiedAccessTrustProvider(
     const AttachVerifiedAccessTrustProviderRequest& request) const {
-  return AttachVerifiedAccessTrustProviderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AttachVerifiedAccessTrustProviderOutcome(result.GetResultWithOwnership())
+                            : AttachVerifiedAccessTrustProviderOutcome(std::move(result.GetError()));
 }
 
 AttachVolumeOutcome EC2Client::AttachVolume(const AttachVolumeRequest& request) const {
-  return AttachVolumeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AttachVolumeOutcome(result.GetResultWithOwnership()) : AttachVolumeOutcome(std::move(result.GetError()));
 }
 
 AttachVpnGatewayOutcome EC2Client::AttachVpnGateway(const AttachVpnGatewayRequest& request) const {
-  return AttachVpnGatewayOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AttachVpnGatewayOutcome(result.GetResultWithOwnership())
+                            : AttachVpnGatewayOutcome(std::move(result.GetError()));
 }
 
 AuthorizeClientVpnIngressOutcome EC2Client::AuthorizeClientVpnIngress(const AuthorizeClientVpnIngressRequest& request) const {
-  return AuthorizeClientVpnIngressOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AuthorizeClientVpnIngressOutcome(result.GetResultWithOwnership())
+                            : AuthorizeClientVpnIngressOutcome(std::move(result.GetError()));
 }
 
 AuthorizeSecurityGroupEgressOutcome EC2Client::AuthorizeSecurityGroupEgress(const AuthorizeSecurityGroupEgressRequest& request) const {
-  return AuthorizeSecurityGroupEgressOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AuthorizeSecurityGroupEgressOutcome(result.GetResultWithOwnership())
+                            : AuthorizeSecurityGroupEgressOutcome(std::move(result.GetError()));
 }
 
 AuthorizeSecurityGroupIngressOutcome EC2Client::AuthorizeSecurityGroupIngress(const AuthorizeSecurityGroupIngressRequest& request) const {
-  return AuthorizeSecurityGroupIngressOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AuthorizeSecurityGroupIngressOutcome(result.GetResultWithOwnership())
+                            : AuthorizeSecurityGroupIngressOutcome(std::move(result.GetError()));
 }
 
 BundleInstanceOutcome EC2Client::BundleInstance(const BundleInstanceRequest& request) const {
-  return BundleInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BundleInstanceOutcome(result.GetResultWithOwnership()) : BundleInstanceOutcome(std::move(result.GetError()));
 }
 
 CancelBundleTaskOutcome EC2Client::CancelBundleTask(const CancelBundleTaskRequest& request) const {
-  return CancelBundleTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelBundleTaskOutcome(result.GetResultWithOwnership())
+                            : CancelBundleTaskOutcome(std::move(result.GetError()));
 }
 
 CancelCapacityReservationOutcome EC2Client::CancelCapacityReservation(const CancelCapacityReservationRequest& request) const {
-  return CancelCapacityReservationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelCapacityReservationOutcome(result.GetResultWithOwnership())
+                            : CancelCapacityReservationOutcome(std::move(result.GetError()));
 }
 
 CancelCapacityReservationFleetsOutcome EC2Client::CancelCapacityReservationFleets(
     const CancelCapacityReservationFleetsRequest& request) const {
-  return CancelCapacityReservationFleetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelCapacityReservationFleetsOutcome(result.GetResultWithOwnership())
+                            : CancelCapacityReservationFleetsOutcome(std::move(result.GetError()));
 }
 
 CancelConversionTaskOutcome EC2Client::CancelConversionTask(const CancelConversionTaskRequest& request) const {
-  return CancelConversionTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelConversionTaskOutcome(result.GetResultWithOwnership())
+                            : CancelConversionTaskOutcome(std::move(result.GetError()));
 }
 
 CancelDeclarativePoliciesReportOutcome EC2Client::CancelDeclarativePoliciesReport(
     const CancelDeclarativePoliciesReportRequest& request) const {
-  return CancelDeclarativePoliciesReportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelDeclarativePoliciesReportOutcome(result.GetResultWithOwnership())
+                            : CancelDeclarativePoliciesReportOutcome(std::move(result.GetError()));
 }
 
 CancelExportTaskOutcome EC2Client::CancelExportTask(const CancelExportTaskRequest& request) const {
-  return CancelExportTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelExportTaskOutcome(result.GetResultWithOwnership())
+                            : CancelExportTaskOutcome(std::move(result.GetError()));
 }
 
 CancelImageLaunchPermissionOutcome EC2Client::CancelImageLaunchPermission(const CancelImageLaunchPermissionRequest& request) const {
-  return CancelImageLaunchPermissionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelImageLaunchPermissionOutcome(result.GetResultWithOwnership())
+                            : CancelImageLaunchPermissionOutcome(std::move(result.GetError()));
 }
 
 CancelImportTaskOutcome EC2Client::CancelImportTask(const CancelImportTaskRequest& request) const {
-  return CancelImportTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelImportTaskOutcome(result.GetResultWithOwnership())
+                            : CancelImportTaskOutcome(std::move(result.GetError()));
 }
 
 CancelReservedInstancesListingOutcome EC2Client::CancelReservedInstancesListing(
     const CancelReservedInstancesListingRequest& request) const {
-  return CancelReservedInstancesListingOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelReservedInstancesListingOutcome(result.GetResultWithOwnership())
+                            : CancelReservedInstancesListingOutcome(std::move(result.GetError()));
 }
 
 CancelSpotFleetRequestsOutcome EC2Client::CancelSpotFleetRequests(const CancelSpotFleetRequestsRequest& request) const {
-  return CancelSpotFleetRequestsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelSpotFleetRequestsOutcome(result.GetResultWithOwnership())
+                            : CancelSpotFleetRequestsOutcome(std::move(result.GetError()));
 }
 
 CancelSpotInstanceRequestsOutcome EC2Client::CancelSpotInstanceRequests(const CancelSpotInstanceRequestsRequest& request) const {
-  return CancelSpotInstanceRequestsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelSpotInstanceRequestsOutcome(result.GetResultWithOwnership())
+                            : CancelSpotInstanceRequestsOutcome(std::move(result.GetError()));
 }
 
 ConfirmProductInstanceOutcome EC2Client::ConfirmProductInstance(const ConfirmProductInstanceRequest& request) const {
-  return ConfirmProductInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ConfirmProductInstanceOutcome(result.GetResultWithOwnership())
+                            : ConfirmProductInstanceOutcome(std::move(result.GetError()));
 }
 
 CopyFpgaImageOutcome EC2Client::CopyFpgaImage(const CopyFpgaImageRequest& request) const {
-  return CopyFpgaImageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CopyFpgaImageOutcome(result.GetResultWithOwnership()) : CopyFpgaImageOutcome(std::move(result.GetError()));
 }
 
 CopyImageOutcome EC2Client::CopyImage(const CopyImageRequest& request) const {
-  return CopyImageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CopyImageOutcome(result.GetResultWithOwnership()) : CopyImageOutcome(std::move(result.GetError()));
 }
 
 CopySnapshotOutcome EC2Client::CopySnapshot(const CopySnapshotRequest& request) const {
@@ -535,178 +648,250 @@ CopySnapshotOutcome EC2Client::CopySnapshot(const CopySnapshotRequest& request) 
                                                     Aws::Http::HttpMethod::HTTP_GET, request.GetSourceRegion().c_str(),
                                                     {{"DestinationRegion", m_region}}, 3600));
 
-    return CopySnapshotOutcome{InvokeServiceOperation(newRequest, Aws::Http::HttpMethod::HTTP_POST)};
+    auto result = InvokeServiceOperation(newRequest, Aws::Http::HttpMethod::HTTP_POST);
+    return result.IsSuccess() ? CopySnapshotOutcome(result.GetResultWithOwnership()) : CopySnapshotOutcome(std::move(result.GetError()));
   }
 
-  return CopySnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CopySnapshotOutcome(result.GetResultWithOwnership()) : CopySnapshotOutcome(std::move(result.GetError()));
 }
 
 CopyVolumesOutcome EC2Client::CopyVolumes(const CopyVolumesRequest& request) const {
-  return CopyVolumesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CopyVolumesOutcome(result.GetResultWithOwnership()) : CopyVolumesOutcome(std::move(result.GetError()));
 }
 
 CreateCapacityManagerDataExportOutcome EC2Client::CreateCapacityManagerDataExport(
     const CreateCapacityManagerDataExportRequest& request) const {
-  return CreateCapacityManagerDataExportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCapacityManagerDataExportOutcome(result.GetResultWithOwnership())
+                            : CreateCapacityManagerDataExportOutcome(std::move(result.GetError()));
 }
 
 CreateCapacityReservationOutcome EC2Client::CreateCapacityReservation(const CreateCapacityReservationRequest& request) const {
-  return CreateCapacityReservationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCapacityReservationOutcome(result.GetResultWithOwnership())
+                            : CreateCapacityReservationOutcome(std::move(result.GetError()));
 }
 
 CreateCapacityReservationBySplittingOutcome EC2Client::CreateCapacityReservationBySplitting(
     const CreateCapacityReservationBySplittingRequest& request) const {
-  return CreateCapacityReservationBySplittingOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCapacityReservationBySplittingOutcome(result.GetResultWithOwnership())
+                            : CreateCapacityReservationBySplittingOutcome(std::move(result.GetError()));
 }
 
 CreateCapacityReservationFleetOutcome EC2Client::CreateCapacityReservationFleet(
     const CreateCapacityReservationFleetRequest& request) const {
-  return CreateCapacityReservationFleetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCapacityReservationFleetOutcome(result.GetResultWithOwnership())
+                            : CreateCapacityReservationFleetOutcome(std::move(result.GetError()));
 }
 
 CreateCarrierGatewayOutcome EC2Client::CreateCarrierGateway(const CreateCarrierGatewayRequest& request) const {
-  return CreateCarrierGatewayOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCarrierGatewayOutcome(result.GetResultWithOwnership())
+                            : CreateCarrierGatewayOutcome(std::move(result.GetError()));
 }
 
 CreateClientVpnEndpointOutcome EC2Client::CreateClientVpnEndpoint(const CreateClientVpnEndpointRequest& request) const {
-  return CreateClientVpnEndpointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateClientVpnEndpointOutcome(result.GetResultWithOwnership())
+                            : CreateClientVpnEndpointOutcome(std::move(result.GetError()));
 }
 
 CreateClientVpnRouteOutcome EC2Client::CreateClientVpnRoute(const CreateClientVpnRouteRequest& request) const {
-  return CreateClientVpnRouteOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateClientVpnRouteOutcome(result.GetResultWithOwnership())
+                            : CreateClientVpnRouteOutcome(std::move(result.GetError()));
 }
 
 CreateCoipCidrOutcome EC2Client::CreateCoipCidr(const CreateCoipCidrRequest& request) const {
-  return CreateCoipCidrOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCoipCidrOutcome(result.GetResultWithOwnership()) : CreateCoipCidrOutcome(std::move(result.GetError()));
 }
 
 CreateCoipPoolOutcome EC2Client::CreateCoipPool(const CreateCoipPoolRequest& request) const {
-  return CreateCoipPoolOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCoipPoolOutcome(result.GetResultWithOwnership()) : CreateCoipPoolOutcome(std::move(result.GetError()));
 }
 
 CreateCustomerGatewayOutcome EC2Client::CreateCustomerGateway(const CreateCustomerGatewayRequest& request) const {
-  return CreateCustomerGatewayOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCustomerGatewayOutcome(result.GetResultWithOwnership())
+                            : CreateCustomerGatewayOutcome(std::move(result.GetError()));
 }
 
 CreateDefaultSubnetOutcome EC2Client::CreateDefaultSubnet(const CreateDefaultSubnetRequest& request) const {
-  return CreateDefaultSubnetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDefaultSubnetOutcome(result.GetResultWithOwnership())
+                            : CreateDefaultSubnetOutcome(std::move(result.GetError()));
 }
 
 CreateDefaultVpcOutcome EC2Client::CreateDefaultVpc(const CreateDefaultVpcRequest& request) const {
-  return CreateDefaultVpcOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDefaultVpcOutcome(result.GetResultWithOwnership())
+                            : CreateDefaultVpcOutcome(std::move(result.GetError()));
 }
 
 CreateDelegateMacVolumeOwnershipTaskOutcome EC2Client::CreateDelegateMacVolumeOwnershipTask(
     const CreateDelegateMacVolumeOwnershipTaskRequest& request) const {
-  return CreateDelegateMacVolumeOwnershipTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDelegateMacVolumeOwnershipTaskOutcome(result.GetResultWithOwnership())
+                            : CreateDelegateMacVolumeOwnershipTaskOutcome(std::move(result.GetError()));
 }
 
 CreateDhcpOptionsOutcome EC2Client::CreateDhcpOptions(const CreateDhcpOptionsRequest& request) const {
-  return CreateDhcpOptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDhcpOptionsOutcome(result.GetResultWithOwnership())
+                            : CreateDhcpOptionsOutcome(std::move(result.GetError()));
 }
 
 CreateEgressOnlyInternetGatewayOutcome EC2Client::CreateEgressOnlyInternetGateway(
     const CreateEgressOnlyInternetGatewayRequest& request) const {
-  return CreateEgressOnlyInternetGatewayOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEgressOnlyInternetGatewayOutcome(result.GetResultWithOwnership())
+                            : CreateEgressOnlyInternetGatewayOutcome(std::move(result.GetError()));
 }
 
 CreateFleetOutcome EC2Client::CreateFleet(const CreateFleetRequest& request) const {
-  return CreateFleetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFleetOutcome(result.GetResultWithOwnership()) : CreateFleetOutcome(std::move(result.GetError()));
 }
 
 CreateFlowLogsOutcome EC2Client::CreateFlowLogs(const CreateFlowLogsRequest& request) const {
-  return CreateFlowLogsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFlowLogsOutcome(result.GetResultWithOwnership()) : CreateFlowLogsOutcome(std::move(result.GetError()));
 }
 
 CreateFpgaImageOutcome EC2Client::CreateFpgaImage(const CreateFpgaImageRequest& request) const {
-  return CreateFpgaImageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFpgaImageOutcome(result.GetResultWithOwnership())
+                            : CreateFpgaImageOutcome(std::move(result.GetError()));
 }
 
 CreateImageOutcome EC2Client::CreateImage(const CreateImageRequest& request) const {
-  return CreateImageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateImageOutcome(result.GetResultWithOwnership()) : CreateImageOutcome(std::move(result.GetError()));
 }
 
 CreateImageUsageReportOutcome EC2Client::CreateImageUsageReport(const CreateImageUsageReportRequest& request) const {
-  return CreateImageUsageReportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateImageUsageReportOutcome(result.GetResultWithOwnership())
+                            : CreateImageUsageReportOutcome(std::move(result.GetError()));
 }
 
 CreateInstanceConnectEndpointOutcome EC2Client::CreateInstanceConnectEndpoint(const CreateInstanceConnectEndpointRequest& request) const {
-  return CreateInstanceConnectEndpointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateInstanceConnectEndpointOutcome(result.GetResultWithOwnership())
+                            : CreateInstanceConnectEndpointOutcome(std::move(result.GetError()));
 }
 
 CreateInstanceEventWindowOutcome EC2Client::CreateInstanceEventWindow(const CreateInstanceEventWindowRequest& request) const {
-  return CreateInstanceEventWindowOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateInstanceEventWindowOutcome(result.GetResultWithOwnership())
+                            : CreateInstanceEventWindowOutcome(std::move(result.GetError()));
 }
 
 CreateInstanceExportTaskOutcome EC2Client::CreateInstanceExportTask(const CreateInstanceExportTaskRequest& request) const {
-  return CreateInstanceExportTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateInstanceExportTaskOutcome(result.GetResultWithOwnership())
+                            : CreateInstanceExportTaskOutcome(std::move(result.GetError()));
 }
 
 CreateInternetGatewayOutcome EC2Client::CreateInternetGateway(const CreateInternetGatewayRequest& request) const {
-  return CreateInternetGatewayOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateInternetGatewayOutcome(result.GetResultWithOwnership())
+                            : CreateInternetGatewayOutcome(std::move(result.GetError()));
 }
 
 CreateInterruptibleCapacityReservationAllocationOutcome EC2Client::CreateInterruptibleCapacityReservationAllocation(
     const CreateInterruptibleCapacityReservationAllocationRequest& request) const {
-  return CreateInterruptibleCapacityReservationAllocationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateInterruptibleCapacityReservationAllocationOutcome(result.GetResultWithOwnership())
+                            : CreateInterruptibleCapacityReservationAllocationOutcome(std::move(result.GetError()));
 }
 
 CreateIpamOutcome EC2Client::CreateIpam(const CreateIpamRequest& request) const {
-  return CreateIpamOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIpamOutcome(result.GetResultWithOwnership()) : CreateIpamOutcome(std::move(result.GetError()));
 }
 
 CreateIpamExternalResourceVerificationTokenOutcome EC2Client::CreateIpamExternalResourceVerificationToken(
     const CreateIpamExternalResourceVerificationTokenRequest& request) const {
-  return CreateIpamExternalResourceVerificationTokenOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIpamExternalResourceVerificationTokenOutcome(result.GetResultWithOwnership())
+                            : CreateIpamExternalResourceVerificationTokenOutcome(std::move(result.GetError()));
 }
 
 CreateIpamPolicyOutcome EC2Client::CreateIpamPolicy(const CreateIpamPolicyRequest& request) const {
-  return CreateIpamPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIpamPolicyOutcome(result.GetResultWithOwnership())
+                            : CreateIpamPolicyOutcome(std::move(result.GetError()));
 }
 
 CreateIpamPoolOutcome EC2Client::CreateIpamPool(const CreateIpamPoolRequest& request) const {
-  return CreateIpamPoolOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIpamPoolOutcome(result.GetResultWithOwnership()) : CreateIpamPoolOutcome(std::move(result.GetError()));
 }
 
 CreateIpamPrefixListResolverOutcome EC2Client::CreateIpamPrefixListResolver(const CreateIpamPrefixListResolverRequest& request) const {
-  return CreateIpamPrefixListResolverOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIpamPrefixListResolverOutcome(result.GetResultWithOwnership())
+                            : CreateIpamPrefixListResolverOutcome(std::move(result.GetError()));
 }
 
 CreateIpamPrefixListResolverTargetOutcome EC2Client::CreateIpamPrefixListResolverTarget(
     const CreateIpamPrefixListResolverTargetRequest& request) const {
-  return CreateIpamPrefixListResolverTargetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIpamPrefixListResolverTargetOutcome(result.GetResultWithOwnership())
+                            : CreateIpamPrefixListResolverTargetOutcome(std::move(result.GetError()));
 }
 
 CreateIpamResourceDiscoveryOutcome EC2Client::CreateIpamResourceDiscovery(const CreateIpamResourceDiscoveryRequest& request) const {
-  return CreateIpamResourceDiscoveryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIpamResourceDiscoveryOutcome(result.GetResultWithOwnership())
+                            : CreateIpamResourceDiscoveryOutcome(std::move(result.GetError()));
 }
 
 CreateIpamScopeOutcome EC2Client::CreateIpamScope(const CreateIpamScopeRequest& request) const {
-  return CreateIpamScopeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIpamScopeOutcome(result.GetResultWithOwnership())
+                            : CreateIpamScopeOutcome(std::move(result.GetError()));
 }
 
 CreateKeyPairOutcome EC2Client::CreateKeyPair(const CreateKeyPairRequest& request) const {
-  return CreateKeyPairOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateKeyPairOutcome(result.GetResultWithOwnership()) : CreateKeyPairOutcome(std::move(result.GetError()));
 }
 
 CreateLaunchTemplateOutcome EC2Client::CreateLaunchTemplate(const CreateLaunchTemplateRequest& request) const {
-  return CreateLaunchTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLaunchTemplateOutcome(result.GetResultWithOwnership())
+                            : CreateLaunchTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateLaunchTemplateVersionOutcome EC2Client::CreateLaunchTemplateVersion(const CreateLaunchTemplateVersionRequest& request) const {
-  return CreateLaunchTemplateVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLaunchTemplateVersionOutcome(result.GetResultWithOwnership())
+                            : CreateLaunchTemplateVersionOutcome(std::move(result.GetError()));
 }
 
 CreateLocalGatewayRouteOutcome EC2Client::CreateLocalGatewayRoute(const CreateLocalGatewayRouteRequest& request) const {
-  return CreateLocalGatewayRouteOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLocalGatewayRouteOutcome(result.GetResultWithOwnership())
+                            : CreateLocalGatewayRouteOutcome(std::move(result.GetError()));
 }
 
 CreateLocalGatewayRouteTableOutcome EC2Client::CreateLocalGatewayRouteTable(const CreateLocalGatewayRouteTableRequest& request) const {
-  return CreateLocalGatewayRouteTableOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLocalGatewayRouteTableOutcome(result.GetResultWithOwnership())
+                            : CreateLocalGatewayRouteTableOutcome(std::move(result.GetError()));
 }
 
 CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome EC2Client::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation(
     const CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest& request) const {
-  return CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome{
-      InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome(result.GetResultWithOwnership())
+                            : CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome(std::move(result.GetError()));
 }

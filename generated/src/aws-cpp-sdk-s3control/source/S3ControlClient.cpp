@@ -297,7 +297,9 @@ AssociateAccessGrantsIdentityCenterOutcome S3ControlClient::AssociateAccessGrant
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance/identitycenter");
   };
 
-  return AssociateAccessGrantsIdentityCenterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateAccessGrantsIdentityCenterOutcome(result.GetResultWithOwnership())
+                            : AssociateAccessGrantsIdentityCenterOutcome(std::move(result.GetError()));
 }
 
 CreateAccessGrantOutcome S3ControlClient::CreateAccessGrant(const CreateAccessGrantRequest& request) const {
@@ -312,7 +314,9 @@ CreateAccessGrantOutcome S3ControlClient::CreateAccessGrant(const CreateAccessGr
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance/grant");
   };
 
-  return CreateAccessGrantOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAccessGrantOutcome(result.GetResultWithOwnership())
+                            : CreateAccessGrantOutcome(std::move(result.GetError()));
 }
 
 CreateAccessGrantsInstanceOutcome S3ControlClient::CreateAccessGrantsInstance(const CreateAccessGrantsInstanceRequest& request) const {
@@ -327,7 +331,9 @@ CreateAccessGrantsInstanceOutcome S3ControlClient::CreateAccessGrantsInstance(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance");
   };
 
-  return CreateAccessGrantsInstanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAccessGrantsInstanceOutcome(result.GetResultWithOwnership())
+                            : CreateAccessGrantsInstanceOutcome(std::move(result.GetError()));
 }
 
 CreateAccessGrantsLocationOutcome S3ControlClient::CreateAccessGrantsLocation(const CreateAccessGrantsLocationRequest& request) const {
@@ -342,7 +348,9 @@ CreateAccessGrantsLocationOutcome S3ControlClient::CreateAccessGrantsLocation(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance/location");
   };
 
-  return CreateAccessGrantsLocationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAccessGrantsLocationOutcome(result.GetResultWithOwnership())
+                            : CreateAccessGrantsLocationOutcome(std::move(result.GetError()));
 }
 
 CreateAccessPointOutcome S3ControlClient::CreateAccessPoint(const CreateAccessPointRequest& request) const {
@@ -358,7 +366,9 @@ CreateAccessPointOutcome S3ControlClient::CreateAccessPoint(const CreateAccessPo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return CreateAccessPointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateAccessPointOutcome(result.GetResultWithOwnership())
+                            : CreateAccessPointOutcome(std::move(result.GetError()));
 }
 
 CreateAccessPointForObjectLambdaOutcome S3ControlClient::CreateAccessPointForObjectLambda(
@@ -375,7 +385,9 @@ CreateAccessPointForObjectLambdaOutcome S3ControlClient::CreateAccessPointForObj
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return CreateAccessPointForObjectLambdaOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateAccessPointForObjectLambdaOutcome(result.GetResultWithOwnership())
+                            : CreateAccessPointForObjectLambdaOutcome(std::move(result.GetError()));
 }
 
 CreateBucketOutcome S3ControlClient::CreateBucket(const CreateBucketRequest& request) const {
@@ -391,7 +403,8 @@ CreateBucketOutcome S3ControlClient::CreateBucket(const CreateBucketRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBucket());
   };
 
-  return CreateBucketOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateBucketOutcome(result.GetResultWithOwnership()) : CreateBucketOutcome(std::move(result.GetError()));
 }
 
 CreateJobOutcome S3ControlClient::CreateJob(const CreateJobRequest& request) const {
@@ -406,7 +419,8 @@ CreateJobOutcome S3ControlClient::CreateJob(const CreateJobRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/jobs");
   };
 
-  return CreateJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateJobOutcome(result.GetResultWithOwnership()) : CreateJobOutcome(std::move(result.GetError()));
 }
 
 CreateMultiRegionAccessPointOutcome S3ControlClient::CreateMultiRegionAccessPoint(
@@ -422,7 +436,9 @@ CreateMultiRegionAccessPointOutcome S3ControlClient::CreateMultiRegionAccessPoin
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/async-requests/mrap/create");
   };
 
-  return CreateMultiRegionAccessPointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMultiRegionAccessPointOutcome(result.GetResultWithOwnership())
+                            : CreateMultiRegionAccessPointOutcome(std::move(result.GetError()));
 }
 
 CreateStorageLensGroupOutcome S3ControlClient::CreateStorageLensGroup(const CreateStorageLensGroupRequest& request) const {
@@ -437,7 +453,9 @@ CreateStorageLensGroupOutcome S3ControlClient::CreateStorageLensGroup(const Crea
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/storagelensgroup");
   };
 
-  return CreateStorageLensGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateStorageLensGroupOutcome(result.GetResultWithOwnership())
+                            : CreateStorageLensGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteAccessGrantOutcome S3ControlClient::DeleteAccessGrant(const DeleteAccessGrantRequest& request) const {
@@ -458,7 +476,9 @@ DeleteAccessGrantOutcome S3ControlClient::DeleteAccessGrant(const DeleteAccessGr
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccessGrantId());
   };
 
-  return DeleteAccessGrantOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAccessGrantOutcome(result.GetResultWithOwnership())
+                            : DeleteAccessGrantOutcome(std::move(result.GetError()));
 }
 
 DeleteAccessGrantsInstanceOutcome S3ControlClient::DeleteAccessGrantsInstance(const DeleteAccessGrantsInstanceRequest& request) const {
@@ -473,7 +493,9 @@ DeleteAccessGrantsInstanceOutcome S3ControlClient::DeleteAccessGrantsInstance(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance");
   };
 
-  return DeleteAccessGrantsInstanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAccessGrantsInstanceOutcome(result.GetResultWithOwnership())
+                            : DeleteAccessGrantsInstanceOutcome(std::move(result.GetError()));
 }
 
 DeleteAccessGrantsInstanceResourcePolicyOutcome S3ControlClient::DeleteAccessGrantsInstanceResourcePolicy(
@@ -489,7 +511,9 @@ DeleteAccessGrantsInstanceResourcePolicyOutcome S3ControlClient::DeleteAccessGra
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance/resourcepolicy");
   };
 
-  return DeleteAccessGrantsInstanceResourcePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAccessGrantsInstanceResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteAccessGrantsInstanceResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteAccessGrantsLocationOutcome S3ControlClient::DeleteAccessGrantsLocation(const DeleteAccessGrantsLocationRequest& request) const {
@@ -510,7 +534,9 @@ DeleteAccessGrantsLocationOutcome S3ControlClient::DeleteAccessGrantsLocation(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccessGrantsLocationId());
   };
 
-  return DeleteAccessGrantsLocationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAccessGrantsLocationOutcome(result.GetResultWithOwnership())
+                            : DeleteAccessGrantsLocationOutcome(std::move(result.GetError()));
 }
 
 DeleteAccessPointOutcome S3ControlClient::DeleteAccessPoint(const DeleteAccessPointRequest& request) const {
@@ -526,7 +552,9 @@ DeleteAccessPointOutcome S3ControlClient::DeleteAccessPoint(const DeleteAccessPo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteAccessPointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAccessPointOutcome(result.GetResultWithOwnership())
+                            : DeleteAccessPointOutcome(std::move(result.GetError()));
 }
 
 DeleteAccessPointForObjectLambdaOutcome S3ControlClient::DeleteAccessPointForObjectLambda(
@@ -543,7 +571,9 @@ DeleteAccessPointForObjectLambdaOutcome S3ControlClient::DeleteAccessPointForObj
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteAccessPointForObjectLambdaOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAccessPointForObjectLambdaOutcome(result.GetResultWithOwnership())
+                            : DeleteAccessPointForObjectLambdaOutcome(std::move(result.GetError()));
 }
 
 DeleteAccessPointPolicyOutcome S3ControlClient::DeleteAccessPointPolicy(const DeleteAccessPointPolicyRequest& request) const {
@@ -560,7 +590,9 @@ DeleteAccessPointPolicyOutcome S3ControlClient::DeleteAccessPointPolicy(const De
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return DeleteAccessPointPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAccessPointPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteAccessPointPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteAccessPointPolicyForObjectLambdaOutcome S3ControlClient::DeleteAccessPointPolicyForObjectLambda(
@@ -578,7 +610,9 @@ DeleteAccessPointPolicyForObjectLambdaOutcome S3ControlClient::DeleteAccessPoint
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return DeleteAccessPointPolicyForObjectLambdaOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAccessPointPolicyForObjectLambdaOutcome(result.GetResultWithOwnership())
+                            : DeleteAccessPointPolicyForObjectLambdaOutcome(std::move(result.GetError()));
 }
 
 DeleteAccessPointScopeOutcome S3ControlClient::DeleteAccessPointScope(const DeleteAccessPointScopeRequest& request) const {
@@ -595,7 +629,9 @@ DeleteAccessPointScopeOutcome S3ControlClient::DeleteAccessPointScope(const Dele
     endpointResolutionOutcome.GetResult().AddPathSegments("/scope");
   };
 
-  return DeleteAccessPointScopeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAccessPointScopeOutcome(result.GetResultWithOwnership())
+                            : DeleteAccessPointScopeOutcome(std::move(result.GetError()));
 }
 
 DeleteBucketOutcome S3ControlClient::DeleteBucket(const DeleteBucketRequest& request) const {
@@ -611,7 +647,8 @@ DeleteBucketOutcome S3ControlClient::DeleteBucket(const DeleteBucketRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBucket());
   };
 
-  return DeleteBucketOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBucketOutcome(result.GetResultWithOwnership()) : DeleteBucketOutcome(std::move(result.GetError()));
 }
 
 DeleteBucketLifecycleConfigurationOutcome S3ControlClient::DeleteBucketLifecycleConfiguration(
@@ -629,7 +666,9 @@ DeleteBucketLifecycleConfigurationOutcome S3ControlClient::DeleteBucketLifecycle
     endpointResolutionOutcome.GetResult().AddPathSegments("/lifecycleconfiguration");
   };
 
-  return DeleteBucketLifecycleConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBucketLifecycleConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteBucketLifecycleConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteBucketPolicyOutcome S3ControlClient::DeleteBucketPolicy(const DeleteBucketPolicyRequest& request) const {
@@ -646,7 +685,9 @@ DeleteBucketPolicyOutcome S3ControlClient::DeleteBucketPolicy(const DeleteBucket
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return DeleteBucketPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBucketPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteBucketPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteBucketReplicationOutcome S3ControlClient::DeleteBucketReplication(const DeleteBucketReplicationRequest& request) const {
@@ -663,7 +704,9 @@ DeleteBucketReplicationOutcome S3ControlClient::DeleteBucketReplication(const De
     endpointResolutionOutcome.GetResult().AddPathSegments("/replication");
   };
 
-  return DeleteBucketReplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBucketReplicationOutcome(result.GetResultWithOwnership())
+                            : DeleteBucketReplicationOutcome(std::move(result.GetError()));
 }
 
 DeleteBucketTaggingOutcome S3ControlClient::DeleteBucketTagging(const DeleteBucketTaggingRequest& request) const {
@@ -680,7 +723,9 @@ DeleteBucketTaggingOutcome S3ControlClient::DeleteBucketTagging(const DeleteBuck
     endpointResolutionOutcome.GetResult().AddPathSegments("/tagging");
   };
 
-  return DeleteBucketTaggingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBucketTaggingOutcome(result.GetResultWithOwnership())
+                            : DeleteBucketTaggingOutcome(std::move(result.GetError()));
 }
 
 DeleteJobTaggingOutcome S3ControlClient::DeleteJobTagging(const DeleteJobTaggingRequest& request) const {
@@ -702,7 +747,9 @@ DeleteJobTaggingOutcome S3ControlClient::DeleteJobTagging(const DeleteJobTagging
     endpointResolutionOutcome.GetResult().AddPathSegments("/tagging");
   };
 
-  return DeleteJobTaggingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteJobTaggingOutcome(result.GetResultWithOwnership())
+                            : DeleteJobTaggingOutcome(std::move(result.GetError()));
 }
 
 DeleteMultiRegionAccessPointOutcome S3ControlClient::DeleteMultiRegionAccessPoint(
@@ -718,7 +765,9 @@ DeleteMultiRegionAccessPointOutcome S3ControlClient::DeleteMultiRegionAccessPoin
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/async-requests/mrap/delete");
   };
 
-  return DeleteMultiRegionAccessPointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteMultiRegionAccessPointOutcome(result.GetResultWithOwnership())
+                            : DeleteMultiRegionAccessPointOutcome(std::move(result.GetError()));
 }
 
 DeletePublicAccessBlockOutcome S3ControlClient::DeletePublicAccessBlock(const DeletePublicAccessBlockRequest& request) const {
@@ -733,7 +782,9 @@ DeletePublicAccessBlockOutcome S3ControlClient::DeletePublicAccessBlock(const De
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/configuration/publicAccessBlock");
   };
 
-  return DeletePublicAccessBlockOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePublicAccessBlockOutcome(result.GetResultWithOwnership())
+                            : DeletePublicAccessBlockOutcome(std::move(result.GetError()));
 }
 
 DeleteStorageLensConfigurationOutcome S3ControlClient::DeleteStorageLensConfiguration(
@@ -755,7 +806,9 @@ DeleteStorageLensConfigurationOutcome S3ControlClient::DeleteStorageLensConfigur
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfigId());
   };
 
-  return DeleteStorageLensConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteStorageLensConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteStorageLensConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteStorageLensConfigurationTaggingOutcome S3ControlClient::DeleteStorageLensConfigurationTagging(
@@ -778,7 +831,9 @@ DeleteStorageLensConfigurationTaggingOutcome S3ControlClient::DeleteStorageLensC
     endpointResolutionOutcome.GetResult().AddPathSegments("/tagging");
   };
 
-  return DeleteStorageLensConfigurationTaggingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteStorageLensConfigurationTaggingOutcome(result.GetResultWithOwnership())
+                            : DeleteStorageLensConfigurationTaggingOutcome(std::move(result.GetError()));
 }
 
 DeleteStorageLensGroupOutcome S3ControlClient::DeleteStorageLensGroup(const DeleteStorageLensGroupRequest& request) const {
@@ -794,7 +849,9 @@ DeleteStorageLensGroupOutcome S3ControlClient::DeleteStorageLensGroup(const Dele
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteStorageLensGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteStorageLensGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteStorageLensGroupOutcome(std::move(result.GetError()));
 }
 
 DescribeJobOutcome S3ControlClient::DescribeJob(const DescribeJobRequest& request) const {
@@ -815,7 +872,8 @@ DescribeJobOutcome S3ControlClient::DescribeJob(const DescribeJobRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return DescribeJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeJobOutcome(result.GetResultWithOwnership()) : DescribeJobOutcome(std::move(result.GetError()));
 }
 
 DescribeMultiRegionAccessPointOperationOutcome S3ControlClient::DescribeMultiRegionAccessPointOperation(
@@ -837,7 +895,9 @@ DescribeMultiRegionAccessPointOperationOutcome S3ControlClient::DescribeMultiReg
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetRequestTokenARN());
   };
 
-  return DescribeMultiRegionAccessPointOperationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeMultiRegionAccessPointOperationOutcome(result.GetResultWithOwnership())
+                            : DescribeMultiRegionAccessPointOperationOutcome(std::move(result.GetError()));
 }
 
 DissociateAccessGrantsIdentityCenterOutcome S3ControlClient::DissociateAccessGrantsIdentityCenter(
@@ -853,7 +913,9 @@ DissociateAccessGrantsIdentityCenterOutcome S3ControlClient::DissociateAccessGra
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance/identitycenter");
   };
 
-  return DissociateAccessGrantsIdentityCenterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DissociateAccessGrantsIdentityCenterOutcome(result.GetResultWithOwnership())
+                            : DissociateAccessGrantsIdentityCenterOutcome(std::move(result.GetError()));
 }
 
 GetAccessGrantOutcome S3ControlClient::GetAccessGrant(const GetAccessGrantRequest& request) const {
@@ -874,7 +936,8 @@ GetAccessGrantOutcome S3ControlClient::GetAccessGrant(const GetAccessGrantReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccessGrantId());
   };
 
-  return GetAccessGrantOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAccessGrantOutcome(result.GetResultWithOwnership()) : GetAccessGrantOutcome(std::move(result.GetError()));
 }
 
 GetAccessGrantsInstanceOutcome S3ControlClient::GetAccessGrantsInstance(const GetAccessGrantsInstanceRequest& request) const {
@@ -889,7 +952,9 @@ GetAccessGrantsInstanceOutcome S3ControlClient::GetAccessGrantsInstance(const Ge
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance");
   };
 
-  return GetAccessGrantsInstanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAccessGrantsInstanceOutcome(result.GetResultWithOwnership())
+                            : GetAccessGrantsInstanceOutcome(std::move(result.GetError()));
 }
 
 GetAccessGrantsInstanceForPrefixOutcome S3ControlClient::GetAccessGrantsInstanceForPrefix(
@@ -910,7 +975,9 @@ GetAccessGrantsInstanceForPrefixOutcome S3ControlClient::GetAccessGrantsInstance
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance/prefix");
   };
 
-  return GetAccessGrantsInstanceForPrefixOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAccessGrantsInstanceForPrefixOutcome(result.GetResultWithOwnership())
+                            : GetAccessGrantsInstanceForPrefixOutcome(std::move(result.GetError()));
 }
 
 GetAccessGrantsInstanceResourcePolicyOutcome S3ControlClient::GetAccessGrantsInstanceResourcePolicy(
@@ -926,7 +993,9 @@ GetAccessGrantsInstanceResourcePolicyOutcome S3ControlClient::GetAccessGrantsIns
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance/resourcepolicy");
   };
 
-  return GetAccessGrantsInstanceResourcePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAccessGrantsInstanceResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : GetAccessGrantsInstanceResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 GetAccessGrantsLocationOutcome S3ControlClient::GetAccessGrantsLocation(const GetAccessGrantsLocationRequest& request) const {
@@ -947,7 +1016,9 @@ GetAccessGrantsLocationOutcome S3ControlClient::GetAccessGrantsLocation(const Ge
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccessGrantsLocationId());
   };
 
-  return GetAccessGrantsLocationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAccessGrantsLocationOutcome(result.GetResultWithOwnership())
+                            : GetAccessGrantsLocationOutcome(std::move(result.GetError()));
 }
 
 GetAccessPointOutcome S3ControlClient::GetAccessPoint(const GetAccessPointRequest& request) const {
@@ -963,7 +1034,8 @@ GetAccessPointOutcome S3ControlClient::GetAccessPoint(const GetAccessPointReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return GetAccessPointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAccessPointOutcome(result.GetResultWithOwnership()) : GetAccessPointOutcome(std::move(result.GetError()));
 }
 
 GetAccessPointConfigurationForObjectLambdaOutcome S3ControlClient::GetAccessPointConfigurationForObjectLambda(
@@ -981,7 +1053,9 @@ GetAccessPointConfigurationForObjectLambdaOutcome S3ControlClient::GetAccessPoin
     endpointResolutionOutcome.GetResult().AddPathSegments("/configuration");
   };
 
-  return GetAccessPointConfigurationForObjectLambdaOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAccessPointConfigurationForObjectLambdaOutcome(result.GetResultWithOwnership())
+                            : GetAccessPointConfigurationForObjectLambdaOutcome(std::move(result.GetError()));
 }
 
 GetAccessPointForObjectLambdaOutcome S3ControlClient::GetAccessPointForObjectLambda(
@@ -998,7 +1072,9 @@ GetAccessPointForObjectLambdaOutcome S3ControlClient::GetAccessPointForObjectLam
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return GetAccessPointForObjectLambdaOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAccessPointForObjectLambdaOutcome(result.GetResultWithOwnership())
+                            : GetAccessPointForObjectLambdaOutcome(std::move(result.GetError()));
 }
 
 GetAccessPointPolicyOutcome S3ControlClient::GetAccessPointPolicy(const GetAccessPointPolicyRequest& request) const {
@@ -1015,7 +1091,9 @@ GetAccessPointPolicyOutcome S3ControlClient::GetAccessPointPolicy(const GetAcces
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return GetAccessPointPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAccessPointPolicyOutcome(result.GetResultWithOwnership())
+                            : GetAccessPointPolicyOutcome(std::move(result.GetError()));
 }
 
 GetAccessPointPolicyForObjectLambdaOutcome S3ControlClient::GetAccessPointPolicyForObjectLambda(
@@ -1033,7 +1111,9 @@ GetAccessPointPolicyForObjectLambdaOutcome S3ControlClient::GetAccessPointPolicy
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return GetAccessPointPolicyForObjectLambdaOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAccessPointPolicyForObjectLambdaOutcome(result.GetResultWithOwnership())
+                            : GetAccessPointPolicyForObjectLambdaOutcome(std::move(result.GetError()));
 }
 
 GetAccessPointPolicyStatusOutcome S3ControlClient::GetAccessPointPolicyStatus(const GetAccessPointPolicyStatusRequest& request) const {
@@ -1050,7 +1130,9 @@ GetAccessPointPolicyStatusOutcome S3ControlClient::GetAccessPointPolicyStatus(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/policyStatus");
   };
 
-  return GetAccessPointPolicyStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAccessPointPolicyStatusOutcome(result.GetResultWithOwnership())
+                            : GetAccessPointPolicyStatusOutcome(std::move(result.GetError()));
 }
 
 GetAccessPointPolicyStatusForObjectLambdaOutcome S3ControlClient::GetAccessPointPolicyStatusForObjectLambda(
@@ -1068,7 +1150,9 @@ GetAccessPointPolicyStatusForObjectLambdaOutcome S3ControlClient::GetAccessPoint
     endpointResolutionOutcome.GetResult().AddPathSegments("/policyStatus");
   };
 
-  return GetAccessPointPolicyStatusForObjectLambdaOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAccessPointPolicyStatusForObjectLambdaOutcome(result.GetResultWithOwnership())
+                            : GetAccessPointPolicyStatusForObjectLambdaOutcome(std::move(result.GetError()));
 }
 
 GetAccessPointScopeOutcome S3ControlClient::GetAccessPointScope(const GetAccessPointScopeRequest& request) const {
@@ -1085,7 +1169,9 @@ GetAccessPointScopeOutcome S3ControlClient::GetAccessPointScope(const GetAccessP
     endpointResolutionOutcome.GetResult().AddPathSegments("/scope");
   };
 
-  return GetAccessPointScopeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAccessPointScopeOutcome(result.GetResultWithOwnership())
+                            : GetAccessPointScopeOutcome(std::move(result.GetError()));
 }
 
 GetBucketOutcome S3ControlClient::GetBucket(const GetBucketRequest& request) const {
@@ -1101,7 +1187,8 @@ GetBucketOutcome S3ControlClient::GetBucket(const GetBucketRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBucket());
   };
 
-  return GetBucketOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBucketOutcome(result.GetResultWithOwnership()) : GetBucketOutcome(std::move(result.GetError()));
 }
 
 GetBucketLifecycleConfigurationOutcome S3ControlClient::GetBucketLifecycleConfiguration(
@@ -1119,7 +1206,9 @@ GetBucketLifecycleConfigurationOutcome S3ControlClient::GetBucketLifecycleConfig
     endpointResolutionOutcome.GetResult().AddPathSegments("/lifecycleconfiguration");
   };
 
-  return GetBucketLifecycleConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBucketLifecycleConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetBucketLifecycleConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetBucketPolicyOutcome S3ControlClient::GetBucketPolicy(const GetBucketPolicyRequest& request) const {
@@ -1136,7 +1225,9 @@ GetBucketPolicyOutcome S3ControlClient::GetBucketPolicy(const GetBucketPolicyReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return GetBucketPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBucketPolicyOutcome(result.GetResultWithOwnership())
+                            : GetBucketPolicyOutcome(std::move(result.GetError()));
 }
 
 GetBucketReplicationOutcome S3ControlClient::GetBucketReplication(const GetBucketReplicationRequest& request) const {
@@ -1153,7 +1244,9 @@ GetBucketReplicationOutcome S3ControlClient::GetBucketReplication(const GetBucke
     endpointResolutionOutcome.GetResult().AddPathSegments("/replication");
   };
 
-  return GetBucketReplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBucketReplicationOutcome(result.GetResultWithOwnership())
+                            : GetBucketReplicationOutcome(std::move(result.GetError()));
 }
 
 GetBucketTaggingOutcome S3ControlClient::GetBucketTagging(const GetBucketTaggingRequest& request) const {
@@ -1170,7 +1263,9 @@ GetBucketTaggingOutcome S3ControlClient::GetBucketTagging(const GetBucketTagging
     endpointResolutionOutcome.GetResult().AddPathSegments("/tagging");
   };
 
-  return GetBucketTaggingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBucketTaggingOutcome(result.GetResultWithOwnership())
+                            : GetBucketTaggingOutcome(std::move(result.GetError()));
 }
 
 GetBucketVersioningOutcome S3ControlClient::GetBucketVersioning(const GetBucketVersioningRequest& request) const {
@@ -1187,7 +1282,9 @@ GetBucketVersioningOutcome S3ControlClient::GetBucketVersioning(const GetBucketV
     endpointResolutionOutcome.GetResult().AddPathSegments("/versioning");
   };
 
-  return GetBucketVersioningOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBucketVersioningOutcome(result.GetResultWithOwnership())
+                            : GetBucketVersioningOutcome(std::move(result.GetError()));
 }
 
 GetDataAccessOutcome S3ControlClient::GetDataAccess(const GetDataAccessRequest& request) const {
@@ -1212,7 +1309,8 @@ GetDataAccessOutcome S3ControlClient::GetDataAccess(const GetDataAccessRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance/dataaccess");
   };
 
-  return GetDataAccessOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDataAccessOutcome(result.GetResultWithOwnership()) : GetDataAccessOutcome(std::move(result.GetError()));
 }
 
 GetJobTaggingOutcome S3ControlClient::GetJobTagging(const GetJobTaggingRequest& request) const {
@@ -1234,7 +1332,8 @@ GetJobTaggingOutcome S3ControlClient::GetJobTagging(const GetJobTaggingRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/tagging");
   };
 
-  return GetJobTaggingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetJobTaggingOutcome(result.GetResultWithOwnership()) : GetJobTaggingOutcome(std::move(result.GetError()));
 }
 
 GetMultiRegionAccessPointOutcome S3ControlClient::GetMultiRegionAccessPoint(const GetMultiRegionAccessPointRequest& request) const {
@@ -1250,7 +1349,9 @@ GetMultiRegionAccessPointOutcome S3ControlClient::GetMultiRegionAccessPoint(cons
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetName());
   };
 
-  return GetMultiRegionAccessPointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMultiRegionAccessPointOutcome(result.GetResultWithOwnership())
+                            : GetMultiRegionAccessPointOutcome(std::move(result.GetError()));
 }
 
 GetMultiRegionAccessPointPolicyOutcome S3ControlClient::GetMultiRegionAccessPointPolicy(
@@ -1268,7 +1369,9 @@ GetMultiRegionAccessPointPolicyOutcome S3ControlClient::GetMultiRegionAccessPoin
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return GetMultiRegionAccessPointPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMultiRegionAccessPointPolicyOutcome(result.GetResultWithOwnership())
+                            : GetMultiRegionAccessPointPolicyOutcome(std::move(result.GetError()));
 }
 
 GetMultiRegionAccessPointPolicyStatusOutcome S3ControlClient::GetMultiRegionAccessPointPolicyStatus(
@@ -1286,7 +1389,9 @@ GetMultiRegionAccessPointPolicyStatusOutcome S3ControlClient::GetMultiRegionAcce
     endpointResolutionOutcome.GetResult().AddPathSegments("/policystatus");
   };
 
-  return GetMultiRegionAccessPointPolicyStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMultiRegionAccessPointPolicyStatusOutcome(result.GetResultWithOwnership())
+                            : GetMultiRegionAccessPointPolicyStatusOutcome(std::move(result.GetError()));
 }
 
 GetMultiRegionAccessPointRoutesOutcome S3ControlClient::GetMultiRegionAccessPointRoutes(
@@ -1309,7 +1414,9 @@ GetMultiRegionAccessPointRoutesOutcome S3ControlClient::GetMultiRegionAccessPoin
     endpointResolutionOutcome.GetResult().AddPathSegments("/routes");
   };
 
-  return GetMultiRegionAccessPointRoutesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMultiRegionAccessPointRoutesOutcome(result.GetResultWithOwnership())
+                            : GetMultiRegionAccessPointRoutesOutcome(std::move(result.GetError()));
 }
 
 GetPublicAccessBlockOutcome S3ControlClient::GetPublicAccessBlock(const GetPublicAccessBlockRequest& request) const {
@@ -1324,7 +1431,9 @@ GetPublicAccessBlockOutcome S3ControlClient::GetPublicAccessBlock(const GetPubli
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/configuration/publicAccessBlock");
   };
 
-  return GetPublicAccessBlockOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPublicAccessBlockOutcome(result.GetResultWithOwnership())
+                            : GetPublicAccessBlockOutcome(std::move(result.GetError()));
 }
 
 GetStorageLensConfigurationOutcome S3ControlClient::GetStorageLensConfiguration(const GetStorageLensConfigurationRequest& request) const {
@@ -1345,7 +1454,9 @@ GetStorageLensConfigurationOutcome S3ControlClient::GetStorageLensConfiguration(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfigId());
   };
 
-  return GetStorageLensConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetStorageLensConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetStorageLensConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetStorageLensConfigurationTaggingOutcome S3ControlClient::GetStorageLensConfigurationTagging(
@@ -1368,7 +1479,9 @@ GetStorageLensConfigurationTaggingOutcome S3ControlClient::GetStorageLensConfigu
     endpointResolutionOutcome.GetResult().AddPathSegments("/tagging");
   };
 
-  return GetStorageLensConfigurationTaggingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetStorageLensConfigurationTaggingOutcome(result.GetResultWithOwnership())
+                            : GetStorageLensConfigurationTaggingOutcome(std::move(result.GetError()));
 }
 
 GetStorageLensGroupOutcome S3ControlClient::GetStorageLensGroup(const GetStorageLensGroupRequest& request) const {
@@ -1384,7 +1497,9 @@ GetStorageLensGroupOutcome S3ControlClient::GetStorageLensGroup(const GetStorage
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return GetStorageLensGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetStorageLensGroupOutcome(result.GetResultWithOwnership())
+                            : GetStorageLensGroupOutcome(std::move(result.GetError()));
 }
 
 ListAccessGrantsOutcome S3ControlClient::ListAccessGrants(const ListAccessGrantsRequest& request) const {
@@ -1399,7 +1514,9 @@ ListAccessGrantsOutcome S3ControlClient::ListAccessGrants(const ListAccessGrants
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance/grants");
   };
 
-  return ListAccessGrantsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAccessGrantsOutcome(result.GetResultWithOwnership())
+                            : ListAccessGrantsOutcome(std::move(result.GetError()));
 }
 
 ListAccessGrantsInstancesOutcome S3ControlClient::ListAccessGrantsInstances(const ListAccessGrantsInstancesRequest& request) const {
@@ -1414,7 +1531,9 @@ ListAccessGrantsInstancesOutcome S3ControlClient::ListAccessGrantsInstances(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstances");
   };
 
-  return ListAccessGrantsInstancesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAccessGrantsInstancesOutcome(result.GetResultWithOwnership())
+                            : ListAccessGrantsInstancesOutcome(std::move(result.GetError()));
 }
 
 ListAccessGrantsLocationsOutcome S3ControlClient::ListAccessGrantsLocations(const ListAccessGrantsLocationsRequest& request) const {
@@ -1429,7 +1548,9 @@ ListAccessGrantsLocationsOutcome S3ControlClient::ListAccessGrantsLocations(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance/locations");
   };
 
-  return ListAccessGrantsLocationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAccessGrantsLocationsOutcome(result.GetResultWithOwnership())
+                            : ListAccessGrantsLocationsOutcome(std::move(result.GetError()));
 }
 
 ListAccessPointsOutcome S3ControlClient::ListAccessPoints(const ListAccessPointsRequest& request) const {
@@ -1438,7 +1559,9 @@ ListAccessPointsOutcome S3ControlClient::ListAccessPoints(const ListAccessPoints
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accesspoint");
   };
 
-  return ListAccessPointsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAccessPointsOutcome(result.GetResultWithOwnership())
+                            : ListAccessPointsOutcome(std::move(result.GetError()));
 }
 
 ListAccessPointsForDirectoryBucketsOutcome S3ControlClient::ListAccessPointsForDirectoryBuckets(
@@ -1454,7 +1577,9 @@ ListAccessPointsForDirectoryBucketsOutcome S3ControlClient::ListAccessPointsForD
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accesspointfordirectory");
   };
 
-  return ListAccessPointsForDirectoryBucketsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAccessPointsForDirectoryBucketsOutcome(result.GetResultWithOwnership())
+                            : ListAccessPointsForDirectoryBucketsOutcome(std::move(result.GetError()));
 }
 
 ListAccessPointsForObjectLambdaOutcome S3ControlClient::ListAccessPointsForObjectLambda(
@@ -1470,7 +1595,9 @@ ListAccessPointsForObjectLambdaOutcome S3ControlClient::ListAccessPointsForObjec
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accesspointforobjectlambda");
   };
 
-  return ListAccessPointsForObjectLambdaOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAccessPointsForObjectLambdaOutcome(result.GetResultWithOwnership())
+                            : ListAccessPointsForObjectLambdaOutcome(std::move(result.GetError()));
 }
 
 ListCallerAccessGrantsOutcome S3ControlClient::ListCallerAccessGrants(const ListCallerAccessGrantsRequest& request) const {
@@ -1485,7 +1612,9 @@ ListCallerAccessGrantsOutcome S3ControlClient::ListCallerAccessGrants(const List
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance/caller/grants");
   };
 
-  return ListCallerAccessGrantsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCallerAccessGrantsOutcome(result.GetResultWithOwnership())
+                            : ListCallerAccessGrantsOutcome(std::move(result.GetError()));
 }
 
 ListJobsOutcome S3ControlClient::ListJobs(const ListJobsRequest& request) const {
@@ -1500,7 +1629,8 @@ ListJobsOutcome S3ControlClient::ListJobs(const ListJobsRequest& request) const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/jobs");
   };
 
-  return ListJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListJobsOutcome(result.GetResultWithOwnership()) : ListJobsOutcome(std::move(result.GetError()));
 }
 
 ListMultiRegionAccessPointsOutcome S3ControlClient::ListMultiRegionAccessPoints(const ListMultiRegionAccessPointsRequest& request) const {
@@ -1515,7 +1645,9 @@ ListMultiRegionAccessPointsOutcome S3ControlClient::ListMultiRegionAccessPoints(
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/mrap/instances");
   };
 
-  return ListMultiRegionAccessPointsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMultiRegionAccessPointsOutcome(result.GetResultWithOwnership())
+                            : ListMultiRegionAccessPointsOutcome(std::move(result.GetError()));
 }
 
 ListRegionalBucketsOutcome S3ControlClient::ListRegionalBuckets(const ListRegionalBucketsRequest& request) const {
@@ -1530,7 +1662,9 @@ ListRegionalBucketsOutcome S3ControlClient::ListRegionalBuckets(const ListRegion
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/bucket");
   };
 
-  return ListRegionalBucketsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRegionalBucketsOutcome(result.GetResultWithOwnership())
+                            : ListRegionalBucketsOutcome(std::move(result.GetError()));
 }
 
 ListStorageLensConfigurationsOutcome S3ControlClient::ListStorageLensConfigurations(
@@ -1546,7 +1680,9 @@ ListStorageLensConfigurationsOutcome S3ControlClient::ListStorageLensConfigurati
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/storagelens");
   };
 
-  return ListStorageLensConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListStorageLensConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListStorageLensConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListStorageLensGroupsOutcome S3ControlClient::ListStorageLensGroups(const ListStorageLensGroupsRequest& request) const {
@@ -1561,7 +1697,9 @@ ListStorageLensGroupsOutcome S3ControlClient::ListStorageLensGroups(const ListSt
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/storagelensgroup");
   };
 
-  return ListStorageLensGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListStorageLensGroupsOutcome(result.GetResultWithOwnership())
+                            : ListStorageLensGroupsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome S3ControlClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -1583,7 +1721,9 @@ ListTagsForResourceOutcome S3ControlClient::ListTagsForResource(const ListTagsFo
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutAccessGrantsInstanceResourcePolicyOutcome S3ControlClient::PutAccessGrantsInstanceResourcePolicy(
@@ -1599,7 +1739,9 @@ PutAccessGrantsInstanceResourcePolicyOutcome S3ControlClient::PutAccessGrantsIns
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance/resourcepolicy");
   };
 
-  return PutAccessGrantsInstanceResourcePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutAccessGrantsInstanceResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : PutAccessGrantsInstanceResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 PutAccessPointConfigurationForObjectLambdaOutcome S3ControlClient::PutAccessPointConfigurationForObjectLambda(
@@ -1617,7 +1759,9 @@ PutAccessPointConfigurationForObjectLambdaOutcome S3ControlClient::PutAccessPoin
     endpointResolutionOutcome.GetResult().AddPathSegments("/configuration");
   };
 
-  return PutAccessPointConfigurationForObjectLambdaOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutAccessPointConfigurationForObjectLambdaOutcome(result.GetResultWithOwnership())
+                            : PutAccessPointConfigurationForObjectLambdaOutcome(std::move(result.GetError()));
 }
 
 PutAccessPointPolicyOutcome S3ControlClient::PutAccessPointPolicy(const PutAccessPointPolicyRequest& request) const {
@@ -1634,7 +1778,9 @@ PutAccessPointPolicyOutcome S3ControlClient::PutAccessPointPolicy(const PutAcces
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return PutAccessPointPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutAccessPointPolicyOutcome(result.GetResultWithOwnership())
+                            : PutAccessPointPolicyOutcome(std::move(result.GetError()));
 }
 
 PutAccessPointPolicyForObjectLambdaOutcome S3ControlClient::PutAccessPointPolicyForObjectLambda(
@@ -1652,7 +1798,9 @@ PutAccessPointPolicyForObjectLambdaOutcome S3ControlClient::PutAccessPointPolicy
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return PutAccessPointPolicyForObjectLambdaOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutAccessPointPolicyForObjectLambdaOutcome(result.GetResultWithOwnership())
+                            : PutAccessPointPolicyForObjectLambdaOutcome(std::move(result.GetError()));
 }
 
 PutAccessPointScopeOutcome S3ControlClient::PutAccessPointScope(const PutAccessPointScopeRequest& request) const {
@@ -1669,7 +1817,9 @@ PutAccessPointScopeOutcome S3ControlClient::PutAccessPointScope(const PutAccessP
     endpointResolutionOutcome.GetResult().AddPathSegments("/scope");
   };
 
-  return PutAccessPointScopeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutAccessPointScopeOutcome(result.GetResultWithOwnership())
+                            : PutAccessPointScopeOutcome(std::move(result.GetError()));
 }
 
 PutBucketLifecycleConfigurationOutcome S3ControlClient::PutBucketLifecycleConfiguration(
@@ -1687,7 +1837,9 @@ PutBucketLifecycleConfigurationOutcome S3ControlClient::PutBucketLifecycleConfig
     endpointResolutionOutcome.GetResult().AddPathSegments("/lifecycleconfiguration");
   };
 
-  return PutBucketLifecycleConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutBucketLifecycleConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutBucketLifecycleConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutBucketPolicyOutcome S3ControlClient::PutBucketPolicy(const PutBucketPolicyRequest& request) const {
@@ -1704,7 +1856,9 @@ PutBucketPolicyOutcome S3ControlClient::PutBucketPolicy(const PutBucketPolicyReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return PutBucketPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutBucketPolicyOutcome(result.GetResultWithOwnership())
+                            : PutBucketPolicyOutcome(std::move(result.GetError()));
 }
 
 PutBucketReplicationOutcome S3ControlClient::PutBucketReplication(const PutBucketReplicationRequest& request) const {
@@ -1721,7 +1875,9 @@ PutBucketReplicationOutcome S3ControlClient::PutBucketReplication(const PutBucke
     endpointResolutionOutcome.GetResult().AddPathSegments("/replication");
   };
 
-  return PutBucketReplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutBucketReplicationOutcome(result.GetResultWithOwnership())
+                            : PutBucketReplicationOutcome(std::move(result.GetError()));
 }
 
 PutBucketTaggingOutcome S3ControlClient::PutBucketTagging(const PutBucketTaggingRequest& request) const {
@@ -1738,7 +1894,9 @@ PutBucketTaggingOutcome S3ControlClient::PutBucketTagging(const PutBucketTagging
     endpointResolutionOutcome.GetResult().AddPathSegments("/tagging");
   };
 
-  return PutBucketTaggingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutBucketTaggingOutcome(result.GetResultWithOwnership())
+                            : PutBucketTaggingOutcome(std::move(result.GetError()));
 }
 
 PutBucketVersioningOutcome S3ControlClient::PutBucketVersioning(const PutBucketVersioningRequest& request) const {
@@ -1755,7 +1913,9 @@ PutBucketVersioningOutcome S3ControlClient::PutBucketVersioning(const PutBucketV
     endpointResolutionOutcome.GetResult().AddPathSegments("/versioning");
   };
 
-  return PutBucketVersioningOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutBucketVersioningOutcome(result.GetResultWithOwnership())
+                            : PutBucketVersioningOutcome(std::move(result.GetError()));
 }
 
 PutJobTaggingOutcome S3ControlClient::PutJobTagging(const PutJobTaggingRequest& request) const {
@@ -1777,7 +1937,8 @@ PutJobTaggingOutcome S3ControlClient::PutJobTagging(const PutJobTaggingRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/tagging");
   };
 
-  return PutJobTaggingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutJobTaggingOutcome(result.GetResultWithOwnership()) : PutJobTaggingOutcome(std::move(result.GetError()));
 }
 
 PutMultiRegionAccessPointPolicyOutcome S3ControlClient::PutMultiRegionAccessPointPolicy(
@@ -1793,7 +1954,9 @@ PutMultiRegionAccessPointPolicyOutcome S3ControlClient::PutMultiRegionAccessPoin
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/async-requests/mrap/put-policy");
   };
 
-  return PutMultiRegionAccessPointPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutMultiRegionAccessPointPolicyOutcome(result.GetResultWithOwnership())
+                            : PutMultiRegionAccessPointPolicyOutcome(std::move(result.GetError()));
 }
 
 PutPublicAccessBlockOutcome S3ControlClient::PutPublicAccessBlock(const PutPublicAccessBlockRequest& request) const {
@@ -1808,7 +1971,9 @@ PutPublicAccessBlockOutcome S3ControlClient::PutPublicAccessBlock(const PutPubli
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/configuration/publicAccessBlock");
   };
 
-  return PutPublicAccessBlockOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutPublicAccessBlockOutcome(result.GetResultWithOwnership())
+                            : PutPublicAccessBlockOutcome(std::move(result.GetError()));
 }
 
 PutStorageLensConfigurationOutcome S3ControlClient::PutStorageLensConfiguration(const PutStorageLensConfigurationRequest& request) const {
@@ -1829,7 +1994,9 @@ PutStorageLensConfigurationOutcome S3ControlClient::PutStorageLensConfiguration(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfigId());
   };
 
-  return PutStorageLensConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutStorageLensConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutStorageLensConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutStorageLensConfigurationTaggingOutcome S3ControlClient::PutStorageLensConfigurationTagging(
@@ -1852,7 +2019,9 @@ PutStorageLensConfigurationTaggingOutcome S3ControlClient::PutStorageLensConfigu
     endpointResolutionOutcome.GetResult().AddPathSegments("/tagging");
   };
 
-  return PutStorageLensConfigurationTaggingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutStorageLensConfigurationTaggingOutcome(result.GetResultWithOwnership())
+                            : PutStorageLensConfigurationTaggingOutcome(std::move(result.GetError()));
 }
 
 SubmitMultiRegionAccessPointRoutesOutcome S3ControlClient::SubmitMultiRegionAccessPointRoutes(
@@ -1875,7 +2044,9 @@ SubmitMultiRegionAccessPointRoutesOutcome S3ControlClient::SubmitMultiRegionAcce
     endpointResolutionOutcome.GetResult().AddPathSegments("/routes");
   };
 
-  return SubmitMultiRegionAccessPointRoutesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? SubmitMultiRegionAccessPointRoutesOutcome(result.GetResultWithOwnership())
+                            : SubmitMultiRegionAccessPointRoutesOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome S3ControlClient::TagResource(const TagResourceRequest& request) const {
@@ -1897,7 +2068,8 @@ TagResourceOutcome S3ControlClient::TagResource(const TagResourceRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome S3ControlClient::UntagResource(const UntagResourceRequest& request) const {
@@ -1924,7 +2096,8 @@ UntagResourceOutcome S3ControlClient::UntagResource(const UntagResourceRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAccessGrantsLocationOutcome S3ControlClient::UpdateAccessGrantsLocation(const UpdateAccessGrantsLocationRequest& request) const {
@@ -1945,7 +2118,9 @@ UpdateAccessGrantsLocationOutcome S3ControlClient::UpdateAccessGrantsLocation(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccessGrantsLocationId());
   };
 
-  return UpdateAccessGrantsLocationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateAccessGrantsLocationOutcome(result.GetResultWithOwnership())
+                            : UpdateAccessGrantsLocationOutcome(std::move(result.GetError()));
 }
 
 UpdateJobPriorityOutcome S3ControlClient::UpdateJobPriority(const UpdateJobPriorityRequest& request) const {
@@ -1972,7 +2147,9 @@ UpdateJobPriorityOutcome S3ControlClient::UpdateJobPriority(const UpdateJobPrior
     endpointResolutionOutcome.GetResult().AddPathSegments("/priority");
   };
 
-  return UpdateJobPriorityOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateJobPriorityOutcome(result.GetResultWithOwnership())
+                            : UpdateJobPriorityOutcome(std::move(result.GetError()));
 }
 
 UpdateJobStatusOutcome S3ControlClient::UpdateJobStatus(const UpdateJobStatusRequest& request) const {
@@ -1999,7 +2176,9 @@ UpdateJobStatusOutcome S3ControlClient::UpdateJobStatus(const UpdateJobStatusReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/status");
   };
 
-  return UpdateJobStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateJobStatusOutcome(result.GetResultWithOwnership())
+                            : UpdateJobStatusOutcome(std::move(result.GetError()));
 }
 
 UpdateStorageLensGroupOutcome S3ControlClient::UpdateStorageLensGroup(const UpdateStorageLensGroupRequest& request) const {
@@ -2015,5 +2194,7 @@ UpdateStorageLensGroupOutcome S3ControlClient::UpdateStorageLensGroup(const Upda
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return UpdateStorageLensGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateStorageLensGroupOutcome(result.GetResultWithOwnership())
+                            : UpdateStorageLensGroupOutcome(std::move(result.GetError()));
 }

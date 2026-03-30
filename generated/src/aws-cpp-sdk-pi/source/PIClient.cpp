@@ -184,55 +184,79 @@ PIClient::InvokeOperationOutcome PIClient::InvokeServiceOperation(const AmazonWe
 
 CreatePerformanceAnalysisReportOutcome PIClient::CreatePerformanceAnalysisReport(
     const CreatePerformanceAnalysisReportRequest& request) const {
-  return CreatePerformanceAnalysisReportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePerformanceAnalysisReportOutcome(result.GetResultWithOwnership())
+                            : CreatePerformanceAnalysisReportOutcome(std::move(result.GetError()));
 }
 
 DeletePerformanceAnalysisReportOutcome PIClient::DeletePerformanceAnalysisReport(
     const DeletePerformanceAnalysisReportRequest& request) const {
-  return DeletePerformanceAnalysisReportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePerformanceAnalysisReportOutcome(result.GetResultWithOwnership())
+                            : DeletePerformanceAnalysisReportOutcome(std::move(result.GetError()));
 }
 
 DescribeDimensionKeysOutcome PIClient::DescribeDimensionKeys(const DescribeDimensionKeysRequest& request) const {
-  return DescribeDimensionKeysOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDimensionKeysOutcome(result.GetResultWithOwnership())
+                            : DescribeDimensionKeysOutcome(std::move(result.GetError()));
 }
 
 GetDimensionKeyDetailsOutcome PIClient::GetDimensionKeyDetails(const GetDimensionKeyDetailsRequest& request) const {
-  return GetDimensionKeyDetailsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDimensionKeyDetailsOutcome(result.GetResultWithOwnership())
+                            : GetDimensionKeyDetailsOutcome(std::move(result.GetError()));
 }
 
 GetPerformanceAnalysisReportOutcome PIClient::GetPerformanceAnalysisReport(const GetPerformanceAnalysisReportRequest& request) const {
-  return GetPerformanceAnalysisReportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPerformanceAnalysisReportOutcome(result.GetResultWithOwnership())
+                            : GetPerformanceAnalysisReportOutcome(std::move(result.GetError()));
 }
 
 GetResourceMetadataOutcome PIClient::GetResourceMetadata(const GetResourceMetadataRequest& request) const {
-  return GetResourceMetadataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourceMetadataOutcome(result.GetResultWithOwnership())
+                            : GetResourceMetadataOutcome(std::move(result.GetError()));
 }
 
 GetResourceMetricsOutcome PIClient::GetResourceMetrics(const GetResourceMetricsRequest& request) const {
-  return GetResourceMetricsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourceMetricsOutcome(result.GetResultWithOwnership())
+                            : GetResourceMetricsOutcome(std::move(result.GetError()));
 }
 
 ListAvailableResourceDimensionsOutcome PIClient::ListAvailableResourceDimensions(
     const ListAvailableResourceDimensionsRequest& request) const {
-  return ListAvailableResourceDimensionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAvailableResourceDimensionsOutcome(result.GetResultWithOwnership())
+                            : ListAvailableResourceDimensionsOutcome(std::move(result.GetError()));
 }
 
 ListAvailableResourceMetricsOutcome PIClient::ListAvailableResourceMetrics(const ListAvailableResourceMetricsRequest& request) const {
-  return ListAvailableResourceMetricsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAvailableResourceMetricsOutcome(result.GetResultWithOwnership())
+                            : ListAvailableResourceMetricsOutcome(std::move(result.GetError()));
 }
 
 ListPerformanceAnalysisReportsOutcome PIClient::ListPerformanceAnalysisReports(const ListPerformanceAnalysisReportsRequest& request) const {
-  return ListPerformanceAnalysisReportsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPerformanceAnalysisReportsOutcome(result.GetResultWithOwnership())
+                            : ListPerformanceAnalysisReportsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome PIClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome PIClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome PIClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }

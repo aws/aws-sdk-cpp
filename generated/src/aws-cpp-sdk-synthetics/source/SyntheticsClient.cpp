@@ -210,7 +210,9 @@ AssociateResourceOutcome SyntheticsClient::AssociateResource(const AssociateReso
     endpointResolutionOutcome.GetResult().AddPathSegments("/associate");
   };
 
-  return AssociateResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? AssociateResourceOutcome(result.GetResultWithOwnership())
+                            : AssociateResourceOutcome(std::move(result.GetError()));
 }
 
 CreateCanaryOutcome SyntheticsClient::CreateCanary(const CreateCanaryRequest& request) const {
@@ -219,7 +221,8 @@ CreateCanaryOutcome SyntheticsClient::CreateCanary(const CreateCanaryRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/canary");
   };
 
-  return CreateCanaryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCanaryOutcome(result.GetResultWithOwnership()) : CreateCanaryOutcome(std::move(result.GetError()));
 }
 
 CreateGroupOutcome SyntheticsClient::CreateGroup(const CreateGroupRequest& request) const {
@@ -228,7 +231,8 @@ CreateGroupOutcome SyntheticsClient::CreateGroup(const CreateGroupRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/group");
   };
 
-  return CreateGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGroupOutcome(result.GetResultWithOwnership()) : CreateGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteCanaryOutcome SyntheticsClient::DeleteCanary(const DeleteCanaryRequest& request) const {
@@ -244,7 +248,8 @@ DeleteCanaryOutcome SyntheticsClient::DeleteCanary(const DeleteCanaryRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteCanaryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCanaryOutcome(result.GetResultWithOwnership()) : DeleteCanaryOutcome(std::move(result.GetError()));
 }
 
 DeleteGroupOutcome SyntheticsClient::DeleteGroup(const DeleteGroupRequest& request) const {
@@ -260,7 +265,8 @@ DeleteGroupOutcome SyntheticsClient::DeleteGroup(const DeleteGroupRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGroupIdentifier());
   };
 
-  return DeleteGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteGroupOutcome(result.GetResultWithOwnership()) : DeleteGroupOutcome(std::move(result.GetError()));
 }
 
 DescribeCanariesOutcome SyntheticsClient::DescribeCanaries(const DescribeCanariesRequest& request) const {
@@ -269,7 +275,9 @@ DescribeCanariesOutcome SyntheticsClient::DescribeCanaries(const DescribeCanarie
     endpointResolutionOutcome.GetResult().AddPathSegments("/canaries");
   };
 
-  return DescribeCanariesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCanariesOutcome(result.GetResultWithOwnership())
+                            : DescribeCanariesOutcome(std::move(result.GetError()));
 }
 
 DescribeCanariesLastRunOutcome SyntheticsClient::DescribeCanariesLastRun(const DescribeCanariesLastRunRequest& request) const {
@@ -278,7 +286,9 @@ DescribeCanariesLastRunOutcome SyntheticsClient::DescribeCanariesLastRun(const D
     endpointResolutionOutcome.GetResult().AddPathSegments("/canaries/last-run");
   };
 
-  return DescribeCanariesLastRunOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCanariesLastRunOutcome(result.GetResultWithOwnership())
+                            : DescribeCanariesLastRunOutcome(std::move(result.GetError()));
 }
 
 DescribeRuntimeVersionsOutcome SyntheticsClient::DescribeRuntimeVersions(const DescribeRuntimeVersionsRequest& request) const {
@@ -287,7 +297,9 @@ DescribeRuntimeVersionsOutcome SyntheticsClient::DescribeRuntimeVersions(const D
     endpointResolutionOutcome.GetResult().AddPathSegments("/runtime-versions");
   };
 
-  return DescribeRuntimeVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRuntimeVersionsOutcome(result.GetResultWithOwnership())
+                            : DescribeRuntimeVersionsOutcome(std::move(result.GetError()));
 }
 
 DisassociateResourceOutcome SyntheticsClient::DisassociateResource(const DisassociateResourceRequest& request) const {
@@ -304,7 +316,9 @@ DisassociateResourceOutcome SyntheticsClient::DisassociateResource(const Disasso
     endpointResolutionOutcome.GetResult().AddPathSegments("/disassociate");
   };
 
-  return DisassociateResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? DisassociateResourceOutcome(result.GetResultWithOwnership())
+                            : DisassociateResourceOutcome(std::move(result.GetError()));
 }
 
 GetCanaryOutcome SyntheticsClient::GetCanary(const GetCanaryRequest& request) const {
@@ -320,7 +334,8 @@ GetCanaryOutcome SyntheticsClient::GetCanary(const GetCanaryRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return GetCanaryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCanaryOutcome(result.GetResultWithOwnership()) : GetCanaryOutcome(std::move(result.GetError()));
 }
 
 GetCanaryRunsOutcome SyntheticsClient::GetCanaryRuns(const GetCanaryRunsRequest& request) const {
@@ -337,7 +352,8 @@ GetCanaryRunsOutcome SyntheticsClient::GetCanaryRuns(const GetCanaryRunsRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/runs");
   };
 
-  return GetCanaryRunsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCanaryRunsOutcome(result.GetResultWithOwnership()) : GetCanaryRunsOutcome(std::move(result.GetError()));
 }
 
 GetGroupOutcome SyntheticsClient::GetGroup(const GetGroupRequest& request) const {
@@ -353,7 +369,8 @@ GetGroupOutcome SyntheticsClient::GetGroup(const GetGroupRequest& request) const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGroupIdentifier());
   };
 
-  return GetGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetGroupOutcome(result.GetResultWithOwnership()) : GetGroupOutcome(std::move(result.GetError()));
 }
 
 ListAssociatedGroupsOutcome SyntheticsClient::ListAssociatedGroups(const ListAssociatedGroupsRequest& request) const {
@@ -370,7 +387,9 @@ ListAssociatedGroupsOutcome SyntheticsClient::ListAssociatedGroups(const ListAss
     endpointResolutionOutcome.GetResult().AddPathSegments("/groups");
   };
 
-  return ListAssociatedGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAssociatedGroupsOutcome(result.GetResultWithOwnership())
+                            : ListAssociatedGroupsOutcome(std::move(result.GetError()));
 }
 
 ListGroupResourcesOutcome SyntheticsClient::ListGroupResources(const ListGroupResourcesRequest& request) const {
@@ -387,7 +406,9 @@ ListGroupResourcesOutcome SyntheticsClient::ListGroupResources(const ListGroupRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/resources");
   };
 
-  return ListGroupResourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListGroupResourcesOutcome(result.GetResultWithOwnership())
+                            : ListGroupResourcesOutcome(std::move(result.GetError()));
 }
 
 ListGroupsOutcome SyntheticsClient::ListGroups(const ListGroupsRequest& request) const {
@@ -396,7 +417,8 @@ ListGroupsOutcome SyntheticsClient::ListGroups(const ListGroupsRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegments("/groups");
   };
 
-  return ListGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListGroupsOutcome(result.GetResultWithOwnership()) : ListGroupsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome SyntheticsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -412,7 +434,9 @@ ListTagsForResourceOutcome SyntheticsClient::ListTagsForResource(const ListTagsF
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 StartCanaryOutcome SyntheticsClient::StartCanary(const StartCanaryRequest& request) const {
@@ -429,7 +453,8 @@ StartCanaryOutcome SyntheticsClient::StartCanary(const StartCanaryRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/start");
   };
 
-  return StartCanaryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartCanaryOutcome(result.GetResultWithOwnership()) : StartCanaryOutcome(std::move(result.GetError()));
 }
 
 StartCanaryDryRunOutcome SyntheticsClient::StartCanaryDryRun(const StartCanaryDryRunRequest& request) const {
@@ -446,7 +471,9 @@ StartCanaryDryRunOutcome SyntheticsClient::StartCanaryDryRun(const StartCanaryDr
     endpointResolutionOutcome.GetResult().AddPathSegments("/dry-run/start");
   };
 
-  return StartCanaryDryRunOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartCanaryDryRunOutcome(result.GetResultWithOwnership())
+                            : StartCanaryDryRunOutcome(std::move(result.GetError()));
 }
 
 StopCanaryOutcome SyntheticsClient::StopCanary(const StopCanaryRequest& request) const {
@@ -463,7 +490,8 @@ StopCanaryOutcome SyntheticsClient::StopCanary(const StopCanaryRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegments("/stop");
   };
 
-  return StopCanaryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopCanaryOutcome(result.GetResultWithOwnership()) : StopCanaryOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome SyntheticsClient::TagResource(const TagResourceRequest& request) const {
@@ -479,7 +507,8 @@ TagResourceOutcome SyntheticsClient::TagResource(const TagResourceRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome SyntheticsClient::UntagResource(const UntagResourceRequest& request) const {
@@ -500,7 +529,8 @@ UntagResourceOutcome SyntheticsClient::UntagResource(const UntagResourceRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateCanaryOutcome SyntheticsClient::UpdateCanary(const UpdateCanaryRequest& request) const {
@@ -516,5 +546,6 @@ UpdateCanaryOutcome SyntheticsClient::UpdateCanary(const UpdateCanaryRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return UpdateCanaryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateCanaryOutcome(result.GetResultWithOwnership()) : UpdateCanaryOutcome(std::move(result.GetError()));
 }

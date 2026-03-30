@@ -203,110 +203,146 @@ PaymentCryptographyClient::InvokeOperationOutcome PaymentCryptographyClient::Inv
 }
 
 AddKeyReplicationRegionsOutcome PaymentCryptographyClient::AddKeyReplicationRegions(const AddKeyReplicationRegionsRequest& request) const {
-  return AddKeyReplicationRegionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddKeyReplicationRegionsOutcome(result.GetResultWithOwnership())
+                            : AddKeyReplicationRegionsOutcome(std::move(result.GetError()));
 }
 
 CreateAliasOutcome PaymentCryptographyClient::CreateAlias(const CreateAliasRequest& request) const {
-  return CreateAliasOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAliasOutcome(result.GetResultWithOwnership()) : CreateAliasOutcome(std::move(result.GetError()));
 }
 
 CreateKeyOutcome PaymentCryptographyClient::CreateKey(const CreateKeyRequest& request) const {
-  return CreateKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateKeyOutcome(result.GetResultWithOwnership()) : CreateKeyOutcome(std::move(result.GetError()));
 }
 
 DeleteAliasOutcome PaymentCryptographyClient::DeleteAlias(const DeleteAliasRequest& request) const {
-  return DeleteAliasOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAliasOutcome(result.GetResultWithOwnership()) : DeleteAliasOutcome(std::move(result.GetError()));
 }
 
 DeleteKeyOutcome PaymentCryptographyClient::DeleteKey(const DeleteKeyRequest& request) const {
-  return DeleteKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteKeyOutcome(result.GetResultWithOwnership()) : DeleteKeyOutcome(std::move(result.GetError()));
 }
 
 DisableDefaultKeyReplicationRegionsOutcome PaymentCryptographyClient::DisableDefaultKeyReplicationRegions(
     const DisableDefaultKeyReplicationRegionsRequest& request) const {
-  return DisableDefaultKeyReplicationRegionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableDefaultKeyReplicationRegionsOutcome(result.GetResultWithOwnership())
+                            : DisableDefaultKeyReplicationRegionsOutcome(std::move(result.GetError()));
 }
 
 EnableDefaultKeyReplicationRegionsOutcome PaymentCryptographyClient::EnableDefaultKeyReplicationRegions(
     const EnableDefaultKeyReplicationRegionsRequest& request) const {
-  return EnableDefaultKeyReplicationRegionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableDefaultKeyReplicationRegionsOutcome(result.GetResultWithOwnership())
+                            : EnableDefaultKeyReplicationRegionsOutcome(std::move(result.GetError()));
 }
 
 ExportKeyOutcome PaymentCryptographyClient::ExportKey(const ExportKeyRequest& request) const {
-  return ExportKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExportKeyOutcome(result.GetResultWithOwnership()) : ExportKeyOutcome(std::move(result.GetError()));
 }
 
 GetAliasOutcome PaymentCryptographyClient::GetAlias(const GetAliasRequest& request) const {
-  return GetAliasOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAliasOutcome(result.GetResultWithOwnership()) : GetAliasOutcome(std::move(result.GetError()));
 }
 
 GetCertificateSigningRequestOutcome PaymentCryptographyClient::GetCertificateSigningRequest(
     const GetCertificateSigningRequestRequest& request) const {
-  return GetCertificateSigningRequestOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCertificateSigningRequestOutcome(result.GetResultWithOwnership())
+                            : GetCertificateSigningRequestOutcome(std::move(result.GetError()));
 }
 
 GetDefaultKeyReplicationRegionsOutcome PaymentCryptographyClient::GetDefaultKeyReplicationRegions(
     const GetDefaultKeyReplicationRegionsRequest& request) const {
-  return GetDefaultKeyReplicationRegionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDefaultKeyReplicationRegionsOutcome(result.GetResultWithOwnership())
+                            : GetDefaultKeyReplicationRegionsOutcome(std::move(result.GetError()));
 }
 
 GetKeyOutcome PaymentCryptographyClient::GetKey(const GetKeyRequest& request) const {
-  return GetKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetKeyOutcome(result.GetResultWithOwnership()) : GetKeyOutcome(std::move(result.GetError()));
 }
 
 GetParametersForExportOutcome PaymentCryptographyClient::GetParametersForExport(const GetParametersForExportRequest& request) const {
-  return GetParametersForExportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetParametersForExportOutcome(result.GetResultWithOwnership())
+                            : GetParametersForExportOutcome(std::move(result.GetError()));
 }
 
 GetParametersForImportOutcome PaymentCryptographyClient::GetParametersForImport(const GetParametersForImportRequest& request) const {
-  return GetParametersForImportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetParametersForImportOutcome(result.GetResultWithOwnership())
+                            : GetParametersForImportOutcome(std::move(result.GetError()));
 }
 
 GetPublicKeyCertificateOutcome PaymentCryptographyClient::GetPublicKeyCertificate(const GetPublicKeyCertificateRequest& request) const {
-  return GetPublicKeyCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPublicKeyCertificateOutcome(result.GetResultWithOwnership())
+                            : GetPublicKeyCertificateOutcome(std::move(result.GetError()));
 }
 
 ImportKeyOutcome PaymentCryptographyClient::ImportKey(const ImportKeyRequest& request) const {
-  return ImportKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportKeyOutcome(result.GetResultWithOwnership()) : ImportKeyOutcome(std::move(result.GetError()));
 }
 
 ListAliasesOutcome PaymentCryptographyClient::ListAliases(const ListAliasesRequest& request) const {
-  return ListAliasesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAliasesOutcome(result.GetResultWithOwnership()) : ListAliasesOutcome(std::move(result.GetError()));
 }
 
 ListKeysOutcome PaymentCryptographyClient::ListKeys(const ListKeysRequest& request) const {
-  return ListKeysOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListKeysOutcome(result.GetResultWithOwnership()) : ListKeysOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome PaymentCryptographyClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 RemoveKeyReplicationRegionsOutcome PaymentCryptographyClient::RemoveKeyReplicationRegions(
     const RemoveKeyReplicationRegionsRequest& request) const {
-  return RemoveKeyReplicationRegionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveKeyReplicationRegionsOutcome(result.GetResultWithOwnership())
+                            : RemoveKeyReplicationRegionsOutcome(std::move(result.GetError()));
 }
 
 RestoreKeyOutcome PaymentCryptographyClient::RestoreKey(const RestoreKeyRequest& request) const {
-  return RestoreKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RestoreKeyOutcome(result.GetResultWithOwnership()) : RestoreKeyOutcome(std::move(result.GetError()));
 }
 
 StartKeyUsageOutcome PaymentCryptographyClient::StartKeyUsage(const StartKeyUsageRequest& request) const {
-  return StartKeyUsageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartKeyUsageOutcome(result.GetResultWithOwnership()) : StartKeyUsageOutcome(std::move(result.GetError()));
 }
 
 StopKeyUsageOutcome PaymentCryptographyClient::StopKeyUsage(const StopKeyUsageRequest& request) const {
-  return StopKeyUsageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopKeyUsageOutcome(result.GetResultWithOwnership()) : StopKeyUsageOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome PaymentCryptographyClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome PaymentCryptographyClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAliasOutcome PaymentCryptographyClient::UpdateAlias(const UpdateAliasRequest& request) const {
-  return UpdateAliasOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAliasOutcome(result.GetResultWithOwnership()) : UpdateAliasOutcome(std::move(result.GetError()));
 }

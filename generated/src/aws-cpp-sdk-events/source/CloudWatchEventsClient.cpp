@@ -228,207 +228,286 @@ CloudWatchEventsClient::InvokeOperationOutcome CloudWatchEventsClient::InvokeSer
 }
 
 ActivateEventSourceOutcome CloudWatchEventsClient::ActivateEventSource(const ActivateEventSourceRequest& request) const {
-  return ActivateEventSourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ActivateEventSourceOutcome(result.GetResultWithOwnership())
+                            : ActivateEventSourceOutcome(std::move(result.GetError()));
 }
 
 CancelReplayOutcome CloudWatchEventsClient::CancelReplay(const CancelReplayRequest& request) const {
-  return CancelReplayOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelReplayOutcome(result.GetResultWithOwnership()) : CancelReplayOutcome(std::move(result.GetError()));
 }
 
 CreateApiDestinationOutcome CloudWatchEventsClient::CreateApiDestination(const CreateApiDestinationRequest& request) const {
-  return CreateApiDestinationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateApiDestinationOutcome(result.GetResultWithOwnership())
+                            : CreateApiDestinationOutcome(std::move(result.GetError()));
 }
 
 CreateArchiveOutcome CloudWatchEventsClient::CreateArchive(const CreateArchiveRequest& request) const {
-  return CreateArchiveOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateArchiveOutcome(result.GetResultWithOwnership()) : CreateArchiveOutcome(std::move(result.GetError()));
 }
 
 CreateConnectionOutcome CloudWatchEventsClient::CreateConnection(const CreateConnectionRequest& request) const {
-  return CreateConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConnectionOutcome(result.GetResultWithOwnership())
+                            : CreateConnectionOutcome(std::move(result.GetError()));
 }
 
 CreateEventBusOutcome CloudWatchEventsClient::CreateEventBus(const CreateEventBusRequest& request) const {
-  return CreateEventBusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEventBusOutcome(result.GetResultWithOwnership()) : CreateEventBusOutcome(std::move(result.GetError()));
 }
 
 CreatePartnerEventSourceOutcome CloudWatchEventsClient::CreatePartnerEventSource(const CreatePartnerEventSourceRequest& request) const {
-  return CreatePartnerEventSourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePartnerEventSourceOutcome(result.GetResultWithOwnership())
+                            : CreatePartnerEventSourceOutcome(std::move(result.GetError()));
 }
 
 DeactivateEventSourceOutcome CloudWatchEventsClient::DeactivateEventSource(const DeactivateEventSourceRequest& request) const {
-  return DeactivateEventSourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeactivateEventSourceOutcome(result.GetResultWithOwnership())
+                            : DeactivateEventSourceOutcome(std::move(result.GetError()));
 }
 
 DeauthorizeConnectionOutcome CloudWatchEventsClient::DeauthorizeConnection(const DeauthorizeConnectionRequest& request) const {
-  return DeauthorizeConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeauthorizeConnectionOutcome(result.GetResultWithOwnership())
+                            : DeauthorizeConnectionOutcome(std::move(result.GetError()));
 }
 
 DeleteApiDestinationOutcome CloudWatchEventsClient::DeleteApiDestination(const DeleteApiDestinationRequest& request) const {
-  return DeleteApiDestinationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteApiDestinationOutcome(result.GetResultWithOwnership())
+                            : DeleteApiDestinationOutcome(std::move(result.GetError()));
 }
 
 DeleteArchiveOutcome CloudWatchEventsClient::DeleteArchive(const DeleteArchiveRequest& request) const {
-  return DeleteArchiveOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteArchiveOutcome(result.GetResultWithOwnership()) : DeleteArchiveOutcome(std::move(result.GetError()));
 }
 
 DeleteConnectionOutcome CloudWatchEventsClient::DeleteConnection(const DeleteConnectionRequest& request) const {
-  return DeleteConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteConnectionOutcome(result.GetResultWithOwnership())
+                            : DeleteConnectionOutcome(std::move(result.GetError()));
 }
 
 DeleteEventBusOutcome CloudWatchEventsClient::DeleteEventBus(const DeleteEventBusRequest& request) const {
-  return DeleteEventBusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteEventBusOutcome(result.GetResultWithOwnership()) : DeleteEventBusOutcome(std::move(result.GetError()));
 }
 
 DeletePartnerEventSourceOutcome CloudWatchEventsClient::DeletePartnerEventSource(const DeletePartnerEventSourceRequest& request) const {
-  return DeletePartnerEventSourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePartnerEventSourceOutcome(result.GetResultWithOwnership())
+                            : DeletePartnerEventSourceOutcome(std::move(result.GetError()));
 }
 
 DeleteRuleOutcome CloudWatchEventsClient::DeleteRule(const DeleteRuleRequest& request) const {
-  return DeleteRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRuleOutcome(result.GetResultWithOwnership()) : DeleteRuleOutcome(std::move(result.GetError()));
 }
 
 DescribeApiDestinationOutcome CloudWatchEventsClient::DescribeApiDestination(const DescribeApiDestinationRequest& request) const {
-  return DescribeApiDestinationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeApiDestinationOutcome(result.GetResultWithOwnership())
+                            : DescribeApiDestinationOutcome(std::move(result.GetError()));
 }
 
 DescribeArchiveOutcome CloudWatchEventsClient::DescribeArchive(const DescribeArchiveRequest& request) const {
-  return DescribeArchiveOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeArchiveOutcome(result.GetResultWithOwnership())
+                            : DescribeArchiveOutcome(std::move(result.GetError()));
 }
 
 DescribeConnectionOutcome CloudWatchEventsClient::DescribeConnection(const DescribeConnectionRequest& request) const {
-  return DescribeConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeConnectionOutcome(result.GetResultWithOwnership())
+                            : DescribeConnectionOutcome(std::move(result.GetError()));
 }
 
 DescribeEventBusOutcome CloudWatchEventsClient::DescribeEventBus(const DescribeEventBusRequest& request) const {
-  return DescribeEventBusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEventBusOutcome(result.GetResultWithOwnership())
+                            : DescribeEventBusOutcome(std::move(result.GetError()));
 }
 
 DescribeEventSourceOutcome CloudWatchEventsClient::DescribeEventSource(const DescribeEventSourceRequest& request) const {
-  return DescribeEventSourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEventSourceOutcome(result.GetResultWithOwnership())
+                            : DescribeEventSourceOutcome(std::move(result.GetError()));
 }
 
 DescribePartnerEventSourceOutcome CloudWatchEventsClient::DescribePartnerEventSource(
     const DescribePartnerEventSourceRequest& request) const {
-  return DescribePartnerEventSourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePartnerEventSourceOutcome(result.GetResultWithOwnership())
+                            : DescribePartnerEventSourceOutcome(std::move(result.GetError()));
 }
 
 DescribeReplayOutcome CloudWatchEventsClient::DescribeReplay(const DescribeReplayRequest& request) const {
-  return DescribeReplayOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeReplayOutcome(result.GetResultWithOwnership()) : DescribeReplayOutcome(std::move(result.GetError()));
 }
 
 DescribeRuleOutcome CloudWatchEventsClient::DescribeRule(const DescribeRuleRequest& request) const {
-  return DescribeRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRuleOutcome(result.GetResultWithOwnership()) : DescribeRuleOutcome(std::move(result.GetError()));
 }
 
 DisableRuleOutcome CloudWatchEventsClient::DisableRule(const DisableRuleRequest& request) const {
-  return DisableRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableRuleOutcome(result.GetResultWithOwnership()) : DisableRuleOutcome(std::move(result.GetError()));
 }
 
 EnableRuleOutcome CloudWatchEventsClient::EnableRule(const EnableRuleRequest& request) const {
-  return EnableRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableRuleOutcome(result.GetResultWithOwnership()) : EnableRuleOutcome(std::move(result.GetError()));
 }
 
 ListApiDestinationsOutcome CloudWatchEventsClient::ListApiDestinations(const ListApiDestinationsRequest& request) const {
-  return ListApiDestinationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListApiDestinationsOutcome(result.GetResultWithOwnership())
+                            : ListApiDestinationsOutcome(std::move(result.GetError()));
 }
 
 ListArchivesOutcome CloudWatchEventsClient::ListArchives(const ListArchivesRequest& request) const {
-  return ListArchivesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListArchivesOutcome(result.GetResultWithOwnership()) : ListArchivesOutcome(std::move(result.GetError()));
 }
 
 ListConnectionsOutcome CloudWatchEventsClient::ListConnections(const ListConnectionsRequest& request) const {
-  return ListConnectionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListConnectionsOutcome(result.GetResultWithOwnership())
+                            : ListConnectionsOutcome(std::move(result.GetError()));
 }
 
 ListEventBusesOutcome CloudWatchEventsClient::ListEventBuses(const ListEventBusesRequest& request) const {
-  return ListEventBusesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEventBusesOutcome(result.GetResultWithOwnership()) : ListEventBusesOutcome(std::move(result.GetError()));
 }
 
 ListEventSourcesOutcome CloudWatchEventsClient::ListEventSources(const ListEventSourcesRequest& request) const {
-  return ListEventSourcesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEventSourcesOutcome(result.GetResultWithOwnership())
+                            : ListEventSourcesOutcome(std::move(result.GetError()));
 }
 
 ListPartnerEventSourceAccountsOutcome CloudWatchEventsClient::ListPartnerEventSourceAccounts(
     const ListPartnerEventSourceAccountsRequest& request) const {
-  return ListPartnerEventSourceAccountsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPartnerEventSourceAccountsOutcome(result.GetResultWithOwnership())
+                            : ListPartnerEventSourceAccountsOutcome(std::move(result.GetError()));
 }
 
 ListPartnerEventSourcesOutcome CloudWatchEventsClient::ListPartnerEventSources(const ListPartnerEventSourcesRequest& request) const {
-  return ListPartnerEventSourcesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPartnerEventSourcesOutcome(result.GetResultWithOwnership())
+                            : ListPartnerEventSourcesOutcome(std::move(result.GetError()));
 }
 
 ListReplaysOutcome CloudWatchEventsClient::ListReplays(const ListReplaysRequest& request) const {
-  return ListReplaysOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListReplaysOutcome(result.GetResultWithOwnership()) : ListReplaysOutcome(std::move(result.GetError()));
 }
 
 ListRuleNamesByTargetOutcome CloudWatchEventsClient::ListRuleNamesByTarget(const ListRuleNamesByTargetRequest& request) const {
-  return ListRuleNamesByTargetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRuleNamesByTargetOutcome(result.GetResultWithOwnership())
+                            : ListRuleNamesByTargetOutcome(std::move(result.GetError()));
 }
 
 ListRulesOutcome CloudWatchEventsClient::ListRules(const ListRulesRequest& request) const {
-  return ListRulesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRulesOutcome(result.GetResultWithOwnership()) : ListRulesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome CloudWatchEventsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTargetsByRuleOutcome CloudWatchEventsClient::ListTargetsByRule(const ListTargetsByRuleRequest& request) const {
-  return ListTargetsByRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTargetsByRuleOutcome(result.GetResultWithOwnership())
+                            : ListTargetsByRuleOutcome(std::move(result.GetError()));
 }
 
 PutEventsOutcome CloudWatchEventsClient::PutEvents(const PutEventsRequest& request) const {
-  return PutEventsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutEventsOutcome(result.GetResultWithOwnership()) : PutEventsOutcome(std::move(result.GetError()));
 }
 
 PutPartnerEventsOutcome CloudWatchEventsClient::PutPartnerEvents(const PutPartnerEventsRequest& request) const {
-  return PutPartnerEventsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutPartnerEventsOutcome(result.GetResultWithOwnership())
+                            : PutPartnerEventsOutcome(std::move(result.GetError()));
 }
 
 PutPermissionOutcome CloudWatchEventsClient::PutPermission(const PutPermissionRequest& request) const {
-  return PutPermissionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutPermissionOutcome(result.GetResultWithOwnership()) : PutPermissionOutcome(std::move(result.GetError()));
 }
 
 PutRuleOutcome CloudWatchEventsClient::PutRule(const PutRuleRequest& request) const {
-  return PutRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutRuleOutcome(result.GetResultWithOwnership()) : PutRuleOutcome(std::move(result.GetError()));
 }
 
 PutTargetsOutcome CloudWatchEventsClient::PutTargets(const PutTargetsRequest& request) const {
-  return PutTargetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutTargetsOutcome(result.GetResultWithOwnership()) : PutTargetsOutcome(std::move(result.GetError()));
 }
 
 RemovePermissionOutcome CloudWatchEventsClient::RemovePermission(const RemovePermissionRequest& request) const {
-  return RemovePermissionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemovePermissionOutcome(result.GetResultWithOwnership())
+                            : RemovePermissionOutcome(std::move(result.GetError()));
 }
 
 RemoveTargetsOutcome CloudWatchEventsClient::RemoveTargets(const RemoveTargetsRequest& request) const {
-  return RemoveTargetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveTargetsOutcome(result.GetResultWithOwnership()) : RemoveTargetsOutcome(std::move(result.GetError()));
 }
 
 StartReplayOutcome CloudWatchEventsClient::StartReplay(const StartReplayRequest& request) const {
-  return StartReplayOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartReplayOutcome(result.GetResultWithOwnership()) : StartReplayOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome CloudWatchEventsClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 TestEventPatternOutcome CloudWatchEventsClient::TestEventPattern(const TestEventPatternRequest& request) const {
-  return TestEventPatternOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TestEventPatternOutcome(result.GetResultWithOwnership())
+                            : TestEventPatternOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome CloudWatchEventsClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateApiDestinationOutcome CloudWatchEventsClient::UpdateApiDestination(const UpdateApiDestinationRequest& request) const {
-  return UpdateApiDestinationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateApiDestinationOutcome(result.GetResultWithOwnership())
+                            : UpdateApiDestinationOutcome(std::move(result.GetError()));
 }
 
 UpdateArchiveOutcome CloudWatchEventsClient::UpdateArchive(const UpdateArchiveRequest& request) const {
-  return UpdateArchiveOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateArchiveOutcome(result.GetResultWithOwnership()) : UpdateArchiveOutcome(std::move(result.GetError()));
 }
 
 UpdateConnectionOutcome CloudWatchEventsClient::UpdateConnection(const UpdateConnectionRequest& request) const {
-  return UpdateConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateConnectionOutcome(result.GetResultWithOwnership())
+                            : UpdateConnectionOutcome(std::move(result.GetError()));
 }

@@ -286,7 +286,9 @@ AssociatePhoneNumbersWithVoiceConnectorOutcome ChimeSDKVoiceClient::AssociatePho
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return AssociatePhoneNumbersWithVoiceConnectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociatePhoneNumbersWithVoiceConnectorOutcome(result.GetResultWithOwnership())
+                            : AssociatePhoneNumbersWithVoiceConnectorOutcome(std::move(result.GetError()));
 }
 
 AssociatePhoneNumbersWithVoiceConnectorGroupOutcome ChimeSDKVoiceClient::AssociatePhoneNumbersWithVoiceConnectorGroup(
@@ -306,8 +308,9 @@ AssociatePhoneNumbersWithVoiceConnectorGroupOutcome ChimeSDKVoiceClient::Associa
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return AssociatePhoneNumbersWithVoiceConnectorGroupOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociatePhoneNumbersWithVoiceConnectorGroupOutcome(result.GetResultWithOwnership())
+                            : AssociatePhoneNumbersWithVoiceConnectorGroupOutcome(std::move(result.GetError()));
 }
 
 BatchDeletePhoneNumberOutcome ChimeSDKVoiceClient::BatchDeletePhoneNumber(const BatchDeletePhoneNumberRequest& request) const {
@@ -319,7 +322,9 @@ BatchDeletePhoneNumberOutcome ChimeSDKVoiceClient::BatchDeletePhoneNumber(const 
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return BatchDeletePhoneNumberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeletePhoneNumberOutcome(result.GetResultWithOwnership())
+                            : BatchDeletePhoneNumberOutcome(std::move(result.GetError()));
 }
 
 BatchUpdatePhoneNumberOutcome ChimeSDKVoiceClient::BatchUpdatePhoneNumber(const BatchUpdatePhoneNumberRequest& request) const {
@@ -331,7 +336,9 @@ BatchUpdatePhoneNumberOutcome ChimeSDKVoiceClient::BatchUpdatePhoneNumber(const 
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return BatchUpdatePhoneNumberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchUpdatePhoneNumberOutcome(result.GetResultWithOwnership())
+                            : BatchUpdatePhoneNumberOutcome(std::move(result.GetError()));
 }
 
 CreatePhoneNumberOrderOutcome ChimeSDKVoiceClient::CreatePhoneNumberOrder(const CreatePhoneNumberOrderRequest& request) const {
@@ -340,7 +347,9 @@ CreatePhoneNumberOrderOutcome ChimeSDKVoiceClient::CreatePhoneNumberOrder(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/phone-number-orders");
   };
 
-  return CreatePhoneNumberOrderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePhoneNumberOrderOutcome(result.GetResultWithOwnership())
+                            : CreatePhoneNumberOrderOutcome(std::move(result.GetError()));
 }
 
 CreateProxySessionOutcome ChimeSDKVoiceClient::CreateProxySession(const CreateProxySessionRequest& request) const {
@@ -357,7 +366,9 @@ CreateProxySessionOutcome ChimeSDKVoiceClient::CreateProxySession(const CreatePr
     endpointResolutionOutcome.GetResult().AddPathSegments("/proxy-sessions");
   };
 
-  return CreateProxySessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProxySessionOutcome(result.GetResultWithOwnership())
+                            : CreateProxySessionOutcome(std::move(result.GetError()));
 }
 
 CreateSipMediaApplicationOutcome ChimeSDKVoiceClient::CreateSipMediaApplication(const CreateSipMediaApplicationRequest& request) const {
@@ -366,7 +377,9 @@ CreateSipMediaApplicationOutcome ChimeSDKVoiceClient::CreateSipMediaApplication(
     endpointResolutionOutcome.GetResult().AddPathSegments("/sip-media-applications");
   };
 
-  return CreateSipMediaApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSipMediaApplicationOutcome(result.GetResultWithOwnership())
+                            : CreateSipMediaApplicationOutcome(std::move(result.GetError()));
 }
 
 CreateSipMediaApplicationCallOutcome ChimeSDKVoiceClient::CreateSipMediaApplicationCall(
@@ -384,7 +397,9 @@ CreateSipMediaApplicationCallOutcome ChimeSDKVoiceClient::CreateSipMediaApplicat
     endpointResolutionOutcome.GetResult().AddPathSegments("/calls");
   };
 
-  return CreateSipMediaApplicationCallOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSipMediaApplicationCallOutcome(result.GetResultWithOwnership())
+                            : CreateSipMediaApplicationCallOutcome(std::move(result.GetError()));
 }
 
 CreateSipRuleOutcome ChimeSDKVoiceClient::CreateSipRule(const CreateSipRuleRequest& request) const {
@@ -393,7 +408,8 @@ CreateSipRuleOutcome ChimeSDKVoiceClient::CreateSipRule(const CreateSipRuleReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/sip-rules");
   };
 
-  return CreateSipRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSipRuleOutcome(result.GetResultWithOwnership()) : CreateSipRuleOutcome(std::move(result.GetError()));
 }
 
 CreateVoiceConnectorOutcome ChimeSDKVoiceClient::CreateVoiceConnector(const CreateVoiceConnectorRequest& request) const {
@@ -402,7 +418,9 @@ CreateVoiceConnectorOutcome ChimeSDKVoiceClient::CreateVoiceConnector(const Crea
     endpointResolutionOutcome.GetResult().AddPathSegments("/voice-connectors");
   };
 
-  return CreateVoiceConnectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateVoiceConnectorOutcome(result.GetResultWithOwnership())
+                            : CreateVoiceConnectorOutcome(std::move(result.GetError()));
 }
 
 CreateVoiceConnectorGroupOutcome ChimeSDKVoiceClient::CreateVoiceConnectorGroup(const CreateVoiceConnectorGroupRequest& request) const {
@@ -411,7 +429,9 @@ CreateVoiceConnectorGroupOutcome ChimeSDKVoiceClient::CreateVoiceConnectorGroup(
     endpointResolutionOutcome.GetResult().AddPathSegments("/voice-connector-groups");
   };
 
-  return CreateVoiceConnectorGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateVoiceConnectorGroupOutcome(result.GetResultWithOwnership())
+                            : CreateVoiceConnectorGroupOutcome(std::move(result.GetError()));
 }
 
 CreateVoiceProfileOutcome ChimeSDKVoiceClient::CreateVoiceProfile(const CreateVoiceProfileRequest& request) const {
@@ -420,7 +440,9 @@ CreateVoiceProfileOutcome ChimeSDKVoiceClient::CreateVoiceProfile(const CreateVo
     endpointResolutionOutcome.GetResult().AddPathSegments("/voice-profiles");
   };
 
-  return CreateVoiceProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateVoiceProfileOutcome(result.GetResultWithOwnership())
+                            : CreateVoiceProfileOutcome(std::move(result.GetError()));
 }
 
 CreateVoiceProfileDomainOutcome ChimeSDKVoiceClient::CreateVoiceProfileDomain(const CreateVoiceProfileDomainRequest& request) const {
@@ -429,7 +451,9 @@ CreateVoiceProfileDomainOutcome ChimeSDKVoiceClient::CreateVoiceProfileDomain(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/voice-profile-domains");
   };
 
-  return CreateVoiceProfileDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateVoiceProfileDomainOutcome(result.GetResultWithOwnership())
+                            : CreateVoiceProfileDomainOutcome(std::move(result.GetError()));
 }
 
 DeletePhoneNumberOutcome ChimeSDKVoiceClient::DeletePhoneNumber(const DeletePhoneNumberRequest& request) const {
@@ -445,7 +469,9 @@ DeletePhoneNumberOutcome ChimeSDKVoiceClient::DeletePhoneNumber(const DeletePhon
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPhoneNumberId());
   };
 
-  return DeletePhoneNumberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePhoneNumberOutcome(result.GetResultWithOwnership())
+                            : DeletePhoneNumberOutcome(std::move(result.GetError()));
 }
 
 DeleteProxySessionOutcome ChimeSDKVoiceClient::DeleteProxySession(const DeleteProxySessionRequest& request) const {
@@ -468,7 +494,9 @@ DeleteProxySessionOutcome ChimeSDKVoiceClient::DeleteProxySession(const DeletePr
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProxySessionId());
   };
 
-  return DeleteProxySessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteProxySessionOutcome(result.GetResultWithOwnership())
+                            : DeleteProxySessionOutcome(std::move(result.GetError()));
 }
 
 DeleteSipMediaApplicationOutcome ChimeSDKVoiceClient::DeleteSipMediaApplication(const DeleteSipMediaApplicationRequest& request) const {
@@ -484,7 +512,9 @@ DeleteSipMediaApplicationOutcome ChimeSDKVoiceClient::DeleteSipMediaApplication(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSipMediaApplicationId());
   };
 
-  return DeleteSipMediaApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSipMediaApplicationOutcome(result.GetResultWithOwnership())
+                            : DeleteSipMediaApplicationOutcome(std::move(result.GetError()));
 }
 
 DeleteSipRuleOutcome ChimeSDKVoiceClient::DeleteSipRule(const DeleteSipRuleRequest& request) const {
@@ -500,7 +530,8 @@ DeleteSipRuleOutcome ChimeSDKVoiceClient::DeleteSipRule(const DeleteSipRuleReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSipRuleId());
   };
 
-  return DeleteSipRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSipRuleOutcome(result.GetResultWithOwnership()) : DeleteSipRuleOutcome(std::move(result.GetError()));
 }
 
 DeleteVoiceConnectorOutcome ChimeSDKVoiceClient::DeleteVoiceConnector(const DeleteVoiceConnectorRequest& request) const {
@@ -516,7 +547,9 @@ DeleteVoiceConnectorOutcome ChimeSDKVoiceClient::DeleteVoiceConnector(const Dele
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVoiceConnectorId());
   };
 
-  return DeleteVoiceConnectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteVoiceConnectorOutcome(result.GetResultWithOwnership())
+                            : DeleteVoiceConnectorOutcome(std::move(result.GetError()));
 }
 
 DeleteVoiceConnectorEmergencyCallingConfigurationOutcome ChimeSDKVoiceClient::DeleteVoiceConnectorEmergencyCallingConfiguration(
@@ -534,8 +567,9 @@ DeleteVoiceConnectorEmergencyCallingConfigurationOutcome ChimeSDKVoiceClient::De
     endpointResolutionOutcome.GetResult().AddPathSegments("/emergency-calling-configuration");
   };
 
-  return DeleteVoiceConnectorEmergencyCallingConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteVoiceConnectorEmergencyCallingConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteVoiceConnectorEmergencyCallingConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteVoiceConnectorExternalSystemsConfigurationOutcome ChimeSDKVoiceClient::DeleteVoiceConnectorExternalSystemsConfiguration(
@@ -553,8 +587,9 @@ DeleteVoiceConnectorExternalSystemsConfigurationOutcome ChimeSDKVoiceClient::Del
     endpointResolutionOutcome.GetResult().AddPathSegments("/external-systems-configuration");
   };
 
-  return DeleteVoiceConnectorExternalSystemsConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteVoiceConnectorExternalSystemsConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteVoiceConnectorExternalSystemsConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteVoiceConnectorGroupOutcome ChimeSDKVoiceClient::DeleteVoiceConnectorGroup(const DeleteVoiceConnectorGroupRequest& request) const {
@@ -570,7 +605,9 @@ DeleteVoiceConnectorGroupOutcome ChimeSDKVoiceClient::DeleteVoiceConnectorGroup(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVoiceConnectorGroupId());
   };
 
-  return DeleteVoiceConnectorGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteVoiceConnectorGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteVoiceConnectorGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteVoiceConnectorOriginationOutcome ChimeSDKVoiceClient::DeleteVoiceConnectorOrigination(
@@ -588,7 +625,9 @@ DeleteVoiceConnectorOriginationOutcome ChimeSDKVoiceClient::DeleteVoiceConnector
     endpointResolutionOutcome.GetResult().AddPathSegments("/origination");
   };
 
-  return DeleteVoiceConnectorOriginationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteVoiceConnectorOriginationOutcome(result.GetResultWithOwnership())
+                            : DeleteVoiceConnectorOriginationOutcome(std::move(result.GetError()));
 }
 
 DeleteVoiceConnectorProxyOutcome ChimeSDKVoiceClient::DeleteVoiceConnectorProxy(const DeleteVoiceConnectorProxyRequest& request) const {
@@ -605,7 +644,9 @@ DeleteVoiceConnectorProxyOutcome ChimeSDKVoiceClient::DeleteVoiceConnectorProxy(
     endpointResolutionOutcome.GetResult().AddPathSegments("/programmable-numbers/proxy");
   };
 
-  return DeleteVoiceConnectorProxyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteVoiceConnectorProxyOutcome(result.GetResultWithOwnership())
+                            : DeleteVoiceConnectorProxyOutcome(std::move(result.GetError()));
 }
 
 DeleteVoiceConnectorStreamingConfigurationOutcome ChimeSDKVoiceClient::DeleteVoiceConnectorStreamingConfiguration(
@@ -623,8 +664,9 @@ DeleteVoiceConnectorStreamingConfigurationOutcome ChimeSDKVoiceClient::DeleteVoi
     endpointResolutionOutcome.GetResult().AddPathSegments("/streaming-configuration");
   };
 
-  return DeleteVoiceConnectorStreamingConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteVoiceConnectorStreamingConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteVoiceConnectorStreamingConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteVoiceConnectorTerminationOutcome ChimeSDKVoiceClient::DeleteVoiceConnectorTermination(
@@ -642,7 +684,9 @@ DeleteVoiceConnectorTerminationOutcome ChimeSDKVoiceClient::DeleteVoiceConnector
     endpointResolutionOutcome.GetResult().AddPathSegments("/termination");
   };
 
-  return DeleteVoiceConnectorTerminationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteVoiceConnectorTerminationOutcome(result.GetResultWithOwnership())
+                            : DeleteVoiceConnectorTerminationOutcome(std::move(result.GetError()));
 }
 
 DeleteVoiceConnectorTerminationCredentialsOutcome ChimeSDKVoiceClient::DeleteVoiceConnectorTerminationCredentials(
@@ -663,7 +707,9 @@ DeleteVoiceConnectorTerminationCredentialsOutcome ChimeSDKVoiceClient::DeleteVoi
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return DeleteVoiceConnectorTerminationCredentialsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVoiceConnectorTerminationCredentialsOutcome(result.GetResultWithOwnership())
+                            : DeleteVoiceConnectorTerminationCredentialsOutcome(std::move(result.GetError()));
 }
 
 DeleteVoiceProfileOutcome ChimeSDKVoiceClient::DeleteVoiceProfile(const DeleteVoiceProfileRequest& request) const {
@@ -679,7 +725,9 @@ DeleteVoiceProfileOutcome ChimeSDKVoiceClient::DeleteVoiceProfile(const DeleteVo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVoiceProfileId());
   };
 
-  return DeleteVoiceProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteVoiceProfileOutcome(result.GetResultWithOwnership())
+                            : DeleteVoiceProfileOutcome(std::move(result.GetError()));
 }
 
 DeleteVoiceProfileDomainOutcome ChimeSDKVoiceClient::DeleteVoiceProfileDomain(const DeleteVoiceProfileDomainRequest& request) const {
@@ -695,7 +743,9 @@ DeleteVoiceProfileDomainOutcome ChimeSDKVoiceClient::DeleteVoiceProfileDomain(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVoiceProfileDomainId());
   };
 
-  return DeleteVoiceProfileDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteVoiceProfileDomainOutcome(result.GetResultWithOwnership())
+                            : DeleteVoiceProfileDomainOutcome(std::move(result.GetError()));
 }
 
 DisassociatePhoneNumbersFromVoiceConnectorOutcome ChimeSDKVoiceClient::DisassociatePhoneNumbersFromVoiceConnector(
@@ -715,7 +765,9 @@ DisassociatePhoneNumbersFromVoiceConnectorOutcome ChimeSDKVoiceClient::Disassoci
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return DisassociatePhoneNumbersFromVoiceConnectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociatePhoneNumbersFromVoiceConnectorOutcome(result.GetResultWithOwnership())
+                            : DisassociatePhoneNumbersFromVoiceConnectorOutcome(std::move(result.GetError()));
 }
 
 DisassociatePhoneNumbersFromVoiceConnectorGroupOutcome ChimeSDKVoiceClient::DisassociatePhoneNumbersFromVoiceConnectorGroup(
@@ -735,8 +787,9 @@ DisassociatePhoneNumbersFromVoiceConnectorGroupOutcome ChimeSDKVoiceClient::Disa
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return DisassociatePhoneNumbersFromVoiceConnectorGroupOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociatePhoneNumbersFromVoiceConnectorGroupOutcome(result.GetResultWithOwnership())
+                            : DisassociatePhoneNumbersFromVoiceConnectorGroupOutcome(std::move(result.GetError()));
 }
 
 GetGlobalSettingsOutcome ChimeSDKVoiceClient::GetGlobalSettings(const GetGlobalSettingsRequest& request) const {
@@ -745,7 +798,9 @@ GetGlobalSettingsOutcome ChimeSDKVoiceClient::GetGlobalSettings(const GetGlobalS
     endpointResolutionOutcome.GetResult().AddPathSegments("/settings");
   };
 
-  return GetGlobalSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetGlobalSettingsOutcome(result.GetResultWithOwnership())
+                            : GetGlobalSettingsOutcome(std::move(result.GetError()));
 }
 
 GetPhoneNumberOutcome ChimeSDKVoiceClient::GetPhoneNumber(const GetPhoneNumberRequest& request) const {
@@ -761,7 +816,8 @@ GetPhoneNumberOutcome ChimeSDKVoiceClient::GetPhoneNumber(const GetPhoneNumberRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPhoneNumberId());
   };
 
-  return GetPhoneNumberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPhoneNumberOutcome(result.GetResultWithOwnership()) : GetPhoneNumberOutcome(std::move(result.GetError()));
 }
 
 GetPhoneNumberOrderOutcome ChimeSDKVoiceClient::GetPhoneNumberOrder(const GetPhoneNumberOrderRequest& request) const {
@@ -777,7 +833,9 @@ GetPhoneNumberOrderOutcome ChimeSDKVoiceClient::GetPhoneNumberOrder(const GetPho
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPhoneNumberOrderId());
   };
 
-  return GetPhoneNumberOrderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPhoneNumberOrderOutcome(result.GetResultWithOwnership())
+                            : GetPhoneNumberOrderOutcome(std::move(result.GetError()));
 }
 
 GetPhoneNumberSettingsOutcome ChimeSDKVoiceClient::GetPhoneNumberSettings(const GetPhoneNumberSettingsRequest& request) const {
@@ -786,7 +844,9 @@ GetPhoneNumberSettingsOutcome ChimeSDKVoiceClient::GetPhoneNumberSettings(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/settings/phone-number");
   };
 
-  return GetPhoneNumberSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPhoneNumberSettingsOutcome(result.GetResultWithOwnership())
+                            : GetPhoneNumberSettingsOutcome(std::move(result.GetError()));
 }
 
 GetProxySessionOutcome ChimeSDKVoiceClient::GetProxySession(const GetProxySessionRequest& request) const {
@@ -809,7 +869,9 @@ GetProxySessionOutcome ChimeSDKVoiceClient::GetProxySession(const GetProxySessio
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProxySessionId());
   };
 
-  return GetProxySessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetProxySessionOutcome(result.GetResultWithOwnership())
+                            : GetProxySessionOutcome(std::move(result.GetError()));
 }
 
 GetSipMediaApplicationOutcome ChimeSDKVoiceClient::GetSipMediaApplication(const GetSipMediaApplicationRequest& request) const {
@@ -825,7 +887,9 @@ GetSipMediaApplicationOutcome ChimeSDKVoiceClient::GetSipMediaApplication(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSipMediaApplicationId());
   };
 
-  return GetSipMediaApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSipMediaApplicationOutcome(result.GetResultWithOwnership())
+                            : GetSipMediaApplicationOutcome(std::move(result.GetError()));
 }
 
 GetSipMediaApplicationLoggingConfigurationOutcome ChimeSDKVoiceClient::GetSipMediaApplicationLoggingConfiguration(
@@ -843,7 +907,9 @@ GetSipMediaApplicationLoggingConfigurationOutcome ChimeSDKVoiceClient::GetSipMed
     endpointResolutionOutcome.GetResult().AddPathSegments("/logging-configuration");
   };
 
-  return GetSipMediaApplicationLoggingConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSipMediaApplicationLoggingConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetSipMediaApplicationLoggingConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetSipRuleOutcome ChimeSDKVoiceClient::GetSipRule(const GetSipRuleRequest& request) const {
@@ -859,7 +925,8 @@ GetSipRuleOutcome ChimeSDKVoiceClient::GetSipRule(const GetSipRuleRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSipRuleId());
   };
 
-  return GetSipRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSipRuleOutcome(result.GetResultWithOwnership()) : GetSipRuleOutcome(std::move(result.GetError()));
 }
 
 GetSpeakerSearchTaskOutcome ChimeSDKVoiceClient::GetSpeakerSearchTask(const GetSpeakerSearchTaskRequest& request) const {
@@ -882,7 +949,9 @@ GetSpeakerSearchTaskOutcome ChimeSDKVoiceClient::GetSpeakerSearchTask(const GetS
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSpeakerSearchTaskId());
   };
 
-  return GetSpeakerSearchTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSpeakerSearchTaskOutcome(result.GetResultWithOwnership())
+                            : GetSpeakerSearchTaskOutcome(std::move(result.GetError()));
 }
 
 GetVoiceConnectorOutcome ChimeSDKVoiceClient::GetVoiceConnector(const GetVoiceConnectorRequest& request) const {
@@ -898,7 +967,9 @@ GetVoiceConnectorOutcome ChimeSDKVoiceClient::GetVoiceConnector(const GetVoiceCo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVoiceConnectorId());
   };
 
-  return GetVoiceConnectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetVoiceConnectorOutcome(result.GetResultWithOwnership())
+                            : GetVoiceConnectorOutcome(std::move(result.GetError()));
 }
 
 GetVoiceConnectorEmergencyCallingConfigurationOutcome ChimeSDKVoiceClient::GetVoiceConnectorEmergencyCallingConfiguration(
@@ -916,8 +987,9 @@ GetVoiceConnectorEmergencyCallingConfigurationOutcome ChimeSDKVoiceClient::GetVo
     endpointResolutionOutcome.GetResult().AddPathSegments("/emergency-calling-configuration");
   };
 
-  return GetVoiceConnectorEmergencyCallingConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetVoiceConnectorEmergencyCallingConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetVoiceConnectorEmergencyCallingConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetVoiceConnectorExternalSystemsConfigurationOutcome ChimeSDKVoiceClient::GetVoiceConnectorExternalSystemsConfiguration(
@@ -935,8 +1007,9 @@ GetVoiceConnectorExternalSystemsConfigurationOutcome ChimeSDKVoiceClient::GetVoi
     endpointResolutionOutcome.GetResult().AddPathSegments("/external-systems-configuration");
   };
 
-  return GetVoiceConnectorExternalSystemsConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetVoiceConnectorExternalSystemsConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetVoiceConnectorExternalSystemsConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetVoiceConnectorGroupOutcome ChimeSDKVoiceClient::GetVoiceConnectorGroup(const GetVoiceConnectorGroupRequest& request) const {
@@ -952,7 +1025,9 @@ GetVoiceConnectorGroupOutcome ChimeSDKVoiceClient::GetVoiceConnectorGroup(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVoiceConnectorGroupId());
   };
 
-  return GetVoiceConnectorGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetVoiceConnectorGroupOutcome(result.GetResultWithOwnership())
+                            : GetVoiceConnectorGroupOutcome(std::move(result.GetError()));
 }
 
 GetVoiceConnectorLoggingConfigurationOutcome ChimeSDKVoiceClient::GetVoiceConnectorLoggingConfiguration(
@@ -970,7 +1045,9 @@ GetVoiceConnectorLoggingConfigurationOutcome ChimeSDKVoiceClient::GetVoiceConnec
     endpointResolutionOutcome.GetResult().AddPathSegments("/logging-configuration");
   };
 
-  return GetVoiceConnectorLoggingConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetVoiceConnectorLoggingConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetVoiceConnectorLoggingConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetVoiceConnectorOriginationOutcome ChimeSDKVoiceClient::GetVoiceConnectorOrigination(
@@ -988,7 +1065,9 @@ GetVoiceConnectorOriginationOutcome ChimeSDKVoiceClient::GetVoiceConnectorOrigin
     endpointResolutionOutcome.GetResult().AddPathSegments("/origination");
   };
 
-  return GetVoiceConnectorOriginationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetVoiceConnectorOriginationOutcome(result.GetResultWithOwnership())
+                            : GetVoiceConnectorOriginationOutcome(std::move(result.GetError()));
 }
 
 GetVoiceConnectorProxyOutcome ChimeSDKVoiceClient::GetVoiceConnectorProxy(const GetVoiceConnectorProxyRequest& request) const {
@@ -1005,7 +1084,9 @@ GetVoiceConnectorProxyOutcome ChimeSDKVoiceClient::GetVoiceConnectorProxy(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/programmable-numbers/proxy");
   };
 
-  return GetVoiceConnectorProxyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetVoiceConnectorProxyOutcome(result.GetResultWithOwnership())
+                            : GetVoiceConnectorProxyOutcome(std::move(result.GetError()));
 }
 
 GetVoiceConnectorStreamingConfigurationOutcome ChimeSDKVoiceClient::GetVoiceConnectorStreamingConfiguration(
@@ -1023,7 +1104,9 @@ GetVoiceConnectorStreamingConfigurationOutcome ChimeSDKVoiceClient::GetVoiceConn
     endpointResolutionOutcome.GetResult().AddPathSegments("/streaming-configuration");
   };
 
-  return GetVoiceConnectorStreamingConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetVoiceConnectorStreamingConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetVoiceConnectorStreamingConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetVoiceConnectorTerminationOutcome ChimeSDKVoiceClient::GetVoiceConnectorTermination(
@@ -1041,7 +1124,9 @@ GetVoiceConnectorTerminationOutcome ChimeSDKVoiceClient::GetVoiceConnectorTermin
     endpointResolutionOutcome.GetResult().AddPathSegments("/termination");
   };
 
-  return GetVoiceConnectorTerminationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetVoiceConnectorTerminationOutcome(result.GetResultWithOwnership())
+                            : GetVoiceConnectorTerminationOutcome(std::move(result.GetError()));
 }
 
 GetVoiceConnectorTerminationHealthOutcome ChimeSDKVoiceClient::GetVoiceConnectorTerminationHealth(
@@ -1059,7 +1144,9 @@ GetVoiceConnectorTerminationHealthOutcome ChimeSDKVoiceClient::GetVoiceConnector
     endpointResolutionOutcome.GetResult().AddPathSegments("/termination/health");
   };
 
-  return GetVoiceConnectorTerminationHealthOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetVoiceConnectorTerminationHealthOutcome(result.GetResultWithOwnership())
+                            : GetVoiceConnectorTerminationHealthOutcome(std::move(result.GetError()));
 }
 
 GetVoiceProfileOutcome ChimeSDKVoiceClient::GetVoiceProfile(const GetVoiceProfileRequest& request) const {
@@ -1075,7 +1162,9 @@ GetVoiceProfileOutcome ChimeSDKVoiceClient::GetVoiceProfile(const GetVoiceProfil
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVoiceProfileId());
   };
 
-  return GetVoiceProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetVoiceProfileOutcome(result.GetResultWithOwnership())
+                            : GetVoiceProfileOutcome(std::move(result.GetError()));
 }
 
 GetVoiceProfileDomainOutcome ChimeSDKVoiceClient::GetVoiceProfileDomain(const GetVoiceProfileDomainRequest& request) const {
@@ -1091,7 +1180,9 @@ GetVoiceProfileDomainOutcome ChimeSDKVoiceClient::GetVoiceProfileDomain(const Ge
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVoiceProfileDomainId());
   };
 
-  return GetVoiceProfileDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetVoiceProfileDomainOutcome(result.GetResultWithOwnership())
+                            : GetVoiceProfileDomainOutcome(std::move(result.GetError()));
 }
 
 GetVoiceToneAnalysisTaskOutcome ChimeSDKVoiceClient::GetVoiceToneAnalysisTask(const GetVoiceToneAnalysisTaskRequest& request) const {
@@ -1119,7 +1210,9 @@ GetVoiceToneAnalysisTaskOutcome ChimeSDKVoiceClient::GetVoiceToneAnalysisTask(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVoiceToneAnalysisTaskId());
   };
 
-  return GetVoiceToneAnalysisTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetVoiceToneAnalysisTaskOutcome(result.GetResultWithOwnership())
+                            : GetVoiceToneAnalysisTaskOutcome(std::move(result.GetError()));
 }
 
 ListAvailableVoiceConnectorRegionsOutcome ChimeSDKVoiceClient::ListAvailableVoiceConnectorRegions(
@@ -1129,7 +1222,9 @@ ListAvailableVoiceConnectorRegionsOutcome ChimeSDKVoiceClient::ListAvailableVoic
     endpointResolutionOutcome.GetResult().AddPathSegments("/voice-connector-regions");
   };
 
-  return ListAvailableVoiceConnectorRegionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAvailableVoiceConnectorRegionsOutcome(result.GetResultWithOwnership())
+                            : ListAvailableVoiceConnectorRegionsOutcome(std::move(result.GetError()));
 }
 
 ListPhoneNumberOrdersOutcome ChimeSDKVoiceClient::ListPhoneNumberOrders(const ListPhoneNumberOrdersRequest& request) const {
@@ -1138,7 +1233,9 @@ ListPhoneNumberOrdersOutcome ChimeSDKVoiceClient::ListPhoneNumberOrders(const Li
     endpointResolutionOutcome.GetResult().AddPathSegments("/phone-number-orders");
   };
 
-  return ListPhoneNumberOrdersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPhoneNumberOrdersOutcome(result.GetResultWithOwnership())
+                            : ListPhoneNumberOrdersOutcome(std::move(result.GetError()));
 }
 
 ListPhoneNumbersOutcome ChimeSDKVoiceClient::ListPhoneNumbers(const ListPhoneNumbersRequest& request) const {
@@ -1147,7 +1244,9 @@ ListPhoneNumbersOutcome ChimeSDKVoiceClient::ListPhoneNumbers(const ListPhoneNum
     endpointResolutionOutcome.GetResult().AddPathSegments("/phone-numbers");
   };
 
-  return ListPhoneNumbersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPhoneNumbersOutcome(result.GetResultWithOwnership())
+                            : ListPhoneNumbersOutcome(std::move(result.GetError()));
 }
 
 ListProxySessionsOutcome ChimeSDKVoiceClient::ListProxySessions(const ListProxySessionsRequest& request) const {
@@ -1164,7 +1263,9 @@ ListProxySessionsOutcome ChimeSDKVoiceClient::ListProxySessions(const ListProxyS
     endpointResolutionOutcome.GetResult().AddPathSegments("/proxy-sessions");
   };
 
-  return ListProxySessionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListProxySessionsOutcome(result.GetResultWithOwnership())
+                            : ListProxySessionsOutcome(std::move(result.GetError()));
 }
 
 ListSipMediaApplicationsOutcome ChimeSDKVoiceClient::ListSipMediaApplications(const ListSipMediaApplicationsRequest& request) const {
@@ -1173,7 +1274,9 @@ ListSipMediaApplicationsOutcome ChimeSDKVoiceClient::ListSipMediaApplications(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/sip-media-applications");
   };
 
-  return ListSipMediaApplicationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSipMediaApplicationsOutcome(result.GetResultWithOwnership())
+                            : ListSipMediaApplicationsOutcome(std::move(result.GetError()));
 }
 
 ListSipRulesOutcome ChimeSDKVoiceClient::ListSipRules(const ListSipRulesRequest& request) const {
@@ -1182,7 +1285,8 @@ ListSipRulesOutcome ChimeSDKVoiceClient::ListSipRules(const ListSipRulesRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/sip-rules");
   };
 
-  return ListSipRulesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSipRulesOutcome(result.GetResultWithOwnership()) : ListSipRulesOutcome(std::move(result.GetError()));
 }
 
 ListSupportedPhoneNumberCountriesOutcome ChimeSDKVoiceClient::ListSupportedPhoneNumberCountries(
@@ -1198,7 +1302,9 @@ ListSupportedPhoneNumberCountriesOutcome ChimeSDKVoiceClient::ListSupportedPhone
     endpointResolutionOutcome.GetResult().AddPathSegments("/phone-number-countries");
   };
 
-  return ListSupportedPhoneNumberCountriesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSupportedPhoneNumberCountriesOutcome(result.GetResultWithOwnership())
+                            : ListSupportedPhoneNumberCountriesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome ChimeSDKVoiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -1213,7 +1319,9 @@ ListTagsForResourceOutcome ChimeSDKVoiceClient::ListTagsForResource(const ListTa
     endpointResolutionOutcome.GetResult().AddPathSegments("/tags");
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListVoiceConnectorGroupsOutcome ChimeSDKVoiceClient::ListVoiceConnectorGroups(const ListVoiceConnectorGroupsRequest& request) const {
@@ -1222,7 +1330,9 @@ ListVoiceConnectorGroupsOutcome ChimeSDKVoiceClient::ListVoiceConnectorGroups(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/voice-connector-groups");
   };
 
-  return ListVoiceConnectorGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListVoiceConnectorGroupsOutcome(result.GetResultWithOwnership())
+                            : ListVoiceConnectorGroupsOutcome(std::move(result.GetError()));
 }
 
 ListVoiceConnectorTerminationCredentialsOutcome ChimeSDKVoiceClient::ListVoiceConnectorTerminationCredentials(
@@ -1240,7 +1350,9 @@ ListVoiceConnectorTerminationCredentialsOutcome ChimeSDKVoiceClient::ListVoiceCo
     endpointResolutionOutcome.GetResult().AddPathSegments("/termination/credentials");
   };
 
-  return ListVoiceConnectorTerminationCredentialsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListVoiceConnectorTerminationCredentialsOutcome(result.GetResultWithOwnership())
+                            : ListVoiceConnectorTerminationCredentialsOutcome(std::move(result.GetError()));
 }
 
 ListVoiceConnectorsOutcome ChimeSDKVoiceClient::ListVoiceConnectors(const ListVoiceConnectorsRequest& request) const {
@@ -1249,7 +1361,9 @@ ListVoiceConnectorsOutcome ChimeSDKVoiceClient::ListVoiceConnectors(const ListVo
     endpointResolutionOutcome.GetResult().AddPathSegments("/voice-connectors");
   };
 
-  return ListVoiceConnectorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListVoiceConnectorsOutcome(result.GetResultWithOwnership())
+                            : ListVoiceConnectorsOutcome(std::move(result.GetError()));
 }
 
 ListVoiceProfileDomainsOutcome ChimeSDKVoiceClient::ListVoiceProfileDomains(const ListVoiceProfileDomainsRequest& request) const {
@@ -1258,7 +1372,9 @@ ListVoiceProfileDomainsOutcome ChimeSDKVoiceClient::ListVoiceProfileDomains(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/voice-profile-domains");
   };
 
-  return ListVoiceProfileDomainsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListVoiceProfileDomainsOutcome(result.GetResultWithOwnership())
+                            : ListVoiceProfileDomainsOutcome(std::move(result.GetError()));
 }
 
 ListVoiceProfilesOutcome ChimeSDKVoiceClient::ListVoiceProfiles(const ListVoiceProfilesRequest& request) const {
@@ -1273,7 +1389,9 @@ ListVoiceProfilesOutcome ChimeSDKVoiceClient::ListVoiceProfiles(const ListVoiceP
     endpointResolutionOutcome.GetResult().AddPathSegments("/voice-profiles");
   };
 
-  return ListVoiceProfilesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListVoiceProfilesOutcome(result.GetResultWithOwnership())
+                            : ListVoiceProfilesOutcome(std::move(result.GetError()));
 }
 
 PutSipMediaApplicationLoggingConfigurationOutcome ChimeSDKVoiceClient::PutSipMediaApplicationLoggingConfiguration(
@@ -1291,7 +1409,9 @@ PutSipMediaApplicationLoggingConfigurationOutcome ChimeSDKVoiceClient::PutSipMed
     endpointResolutionOutcome.GetResult().AddPathSegments("/logging-configuration");
   };
 
-  return PutSipMediaApplicationLoggingConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutSipMediaApplicationLoggingConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutSipMediaApplicationLoggingConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutVoiceConnectorEmergencyCallingConfigurationOutcome ChimeSDKVoiceClient::PutVoiceConnectorEmergencyCallingConfiguration(
@@ -1309,8 +1429,9 @@ PutVoiceConnectorEmergencyCallingConfigurationOutcome ChimeSDKVoiceClient::PutVo
     endpointResolutionOutcome.GetResult().AddPathSegments("/emergency-calling-configuration");
   };
 
-  return PutVoiceConnectorEmergencyCallingConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutVoiceConnectorEmergencyCallingConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutVoiceConnectorEmergencyCallingConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutVoiceConnectorExternalSystemsConfigurationOutcome ChimeSDKVoiceClient::PutVoiceConnectorExternalSystemsConfiguration(
@@ -1328,8 +1449,9 @@ PutVoiceConnectorExternalSystemsConfigurationOutcome ChimeSDKVoiceClient::PutVoi
     endpointResolutionOutcome.GetResult().AddPathSegments("/external-systems-configuration");
   };
 
-  return PutVoiceConnectorExternalSystemsConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutVoiceConnectorExternalSystemsConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutVoiceConnectorExternalSystemsConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutVoiceConnectorLoggingConfigurationOutcome ChimeSDKVoiceClient::PutVoiceConnectorLoggingConfiguration(
@@ -1347,7 +1469,9 @@ PutVoiceConnectorLoggingConfigurationOutcome ChimeSDKVoiceClient::PutVoiceConnec
     endpointResolutionOutcome.GetResult().AddPathSegments("/logging-configuration");
   };
 
-  return PutVoiceConnectorLoggingConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutVoiceConnectorLoggingConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutVoiceConnectorLoggingConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutVoiceConnectorOriginationOutcome ChimeSDKVoiceClient::PutVoiceConnectorOrigination(
@@ -1365,7 +1489,9 @@ PutVoiceConnectorOriginationOutcome ChimeSDKVoiceClient::PutVoiceConnectorOrigin
     endpointResolutionOutcome.GetResult().AddPathSegments("/origination");
   };
 
-  return PutVoiceConnectorOriginationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutVoiceConnectorOriginationOutcome(result.GetResultWithOwnership())
+                            : PutVoiceConnectorOriginationOutcome(std::move(result.GetError()));
 }
 
 PutVoiceConnectorProxyOutcome ChimeSDKVoiceClient::PutVoiceConnectorProxy(const PutVoiceConnectorProxyRequest& request) const {
@@ -1382,7 +1508,9 @@ PutVoiceConnectorProxyOutcome ChimeSDKVoiceClient::PutVoiceConnectorProxy(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/programmable-numbers/proxy");
   };
 
-  return PutVoiceConnectorProxyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutVoiceConnectorProxyOutcome(result.GetResultWithOwnership())
+                            : PutVoiceConnectorProxyOutcome(std::move(result.GetError()));
 }
 
 PutVoiceConnectorStreamingConfigurationOutcome ChimeSDKVoiceClient::PutVoiceConnectorStreamingConfiguration(
@@ -1400,7 +1528,9 @@ PutVoiceConnectorStreamingConfigurationOutcome ChimeSDKVoiceClient::PutVoiceConn
     endpointResolutionOutcome.GetResult().AddPathSegments("/streaming-configuration");
   };
 
-  return PutVoiceConnectorStreamingConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutVoiceConnectorStreamingConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutVoiceConnectorStreamingConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutVoiceConnectorTerminationOutcome ChimeSDKVoiceClient::PutVoiceConnectorTermination(
@@ -1418,7 +1548,9 @@ PutVoiceConnectorTerminationOutcome ChimeSDKVoiceClient::PutVoiceConnectorTermin
     endpointResolutionOutcome.GetResult().AddPathSegments("/termination");
   };
 
-  return PutVoiceConnectorTerminationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutVoiceConnectorTerminationOutcome(result.GetResultWithOwnership())
+                            : PutVoiceConnectorTerminationOutcome(std::move(result.GetError()));
 }
 
 PutVoiceConnectorTerminationCredentialsOutcome ChimeSDKVoiceClient::PutVoiceConnectorTerminationCredentials(
@@ -1439,7 +1571,9 @@ PutVoiceConnectorTerminationCredentialsOutcome ChimeSDKVoiceClient::PutVoiceConn
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return PutVoiceConnectorTerminationCredentialsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutVoiceConnectorTerminationCredentialsOutcome(result.GetResultWithOwnership())
+                            : PutVoiceConnectorTerminationCredentialsOutcome(std::move(result.GetError()));
 }
 
 RestorePhoneNumberOutcome ChimeSDKVoiceClient::RestorePhoneNumber(const RestorePhoneNumberRequest& request) const {
@@ -1458,7 +1592,9 @@ RestorePhoneNumberOutcome ChimeSDKVoiceClient::RestorePhoneNumber(const RestoreP
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return RestorePhoneNumberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RestorePhoneNumberOutcome(result.GetResultWithOwnership())
+                            : RestorePhoneNumberOutcome(std::move(result.GetError()));
 }
 
 SearchAvailablePhoneNumbersOutcome ChimeSDKVoiceClient::SearchAvailablePhoneNumbers(
@@ -1471,7 +1607,9 @@ SearchAvailablePhoneNumbersOutcome ChimeSDKVoiceClient::SearchAvailablePhoneNumb
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return SearchAvailablePhoneNumbersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? SearchAvailablePhoneNumbersOutcome(result.GetResultWithOwnership())
+                            : SearchAvailablePhoneNumbersOutcome(std::move(result.GetError()));
 }
 
 StartSpeakerSearchTaskOutcome ChimeSDKVoiceClient::StartSpeakerSearchTask(const StartSpeakerSearchTaskRequest& request) const {
@@ -1488,7 +1626,9 @@ StartSpeakerSearchTaskOutcome ChimeSDKVoiceClient::StartSpeakerSearchTask(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/speaker-search-tasks");
   };
 
-  return StartSpeakerSearchTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartSpeakerSearchTaskOutcome(result.GetResultWithOwnership())
+                            : StartSpeakerSearchTaskOutcome(std::move(result.GetError()));
 }
 
 StartVoiceToneAnalysisTaskOutcome ChimeSDKVoiceClient::StartVoiceToneAnalysisTask(const StartVoiceToneAnalysisTaskRequest& request) const {
@@ -1505,7 +1645,9 @@ StartVoiceToneAnalysisTaskOutcome ChimeSDKVoiceClient::StartVoiceToneAnalysisTas
     endpointResolutionOutcome.GetResult().AddPathSegments("/voice-tone-analysis-tasks");
   };
 
-  return StartVoiceToneAnalysisTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartVoiceToneAnalysisTaskOutcome(result.GetResultWithOwnership())
+                            : StartVoiceToneAnalysisTaskOutcome(std::move(result.GetError()));
 }
 
 StopSpeakerSearchTaskOutcome ChimeSDKVoiceClient::StopSpeakerSearchTask(const StopSpeakerSearchTaskRequest& request) const {
@@ -1531,7 +1673,9 @@ StopSpeakerSearchTaskOutcome ChimeSDKVoiceClient::StopSpeakerSearchTask(const St
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return StopSpeakerSearchTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopSpeakerSearchTaskOutcome(result.GetResultWithOwnership())
+                            : StopSpeakerSearchTaskOutcome(std::move(result.GetError()));
 }
 
 StopVoiceToneAnalysisTaskOutcome ChimeSDKVoiceClient::StopVoiceToneAnalysisTask(const StopVoiceToneAnalysisTaskRequest& request) const {
@@ -1557,7 +1701,9 @@ StopVoiceToneAnalysisTaskOutcome ChimeSDKVoiceClient::StopVoiceToneAnalysisTask(
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return StopVoiceToneAnalysisTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopVoiceToneAnalysisTaskOutcome(result.GetResultWithOwnership())
+                            : StopVoiceToneAnalysisTaskOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ChimeSDKVoiceClient::TagResource(const TagResourceRequest& request) const {
@@ -1569,7 +1715,8 @@ TagResourceOutcome ChimeSDKVoiceClient::TagResource(const TagResourceRequest& re
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome ChimeSDKVoiceClient::UntagResource(const UntagResourceRequest& request) const {
@@ -1581,7 +1728,8 @@ UntagResourceOutcome ChimeSDKVoiceClient::UntagResource(const UntagResourceReque
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateGlobalSettingsOutcome ChimeSDKVoiceClient::UpdateGlobalSettings(const UpdateGlobalSettingsRequest& request) const {
@@ -1590,7 +1738,9 @@ UpdateGlobalSettingsOutcome ChimeSDKVoiceClient::UpdateGlobalSettings(const Upda
     endpointResolutionOutcome.GetResult().AddPathSegments("/settings");
   };
 
-  return UpdateGlobalSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateGlobalSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdateGlobalSettingsOutcome(std::move(result.GetError()));
 }
 
 UpdatePhoneNumberOutcome ChimeSDKVoiceClient::UpdatePhoneNumber(const UpdatePhoneNumberRequest& request) const {
@@ -1606,7 +1756,9 @@ UpdatePhoneNumberOutcome ChimeSDKVoiceClient::UpdatePhoneNumber(const UpdatePhon
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPhoneNumberId());
   };
 
-  return UpdatePhoneNumberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePhoneNumberOutcome(result.GetResultWithOwnership())
+                            : UpdatePhoneNumberOutcome(std::move(result.GetError()));
 }
 
 UpdatePhoneNumberSettingsOutcome ChimeSDKVoiceClient::UpdatePhoneNumberSettings(const UpdatePhoneNumberSettingsRequest& request) const {
@@ -1615,7 +1767,9 @@ UpdatePhoneNumberSettingsOutcome ChimeSDKVoiceClient::UpdatePhoneNumberSettings(
     endpointResolutionOutcome.GetResult().AddPathSegments("/settings/phone-number");
   };
 
-  return UpdatePhoneNumberSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdatePhoneNumberSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdatePhoneNumberSettingsOutcome(std::move(result.GetError()));
 }
 
 UpdateProxySessionOutcome ChimeSDKVoiceClient::UpdateProxySession(const UpdateProxySessionRequest& request) const {
@@ -1638,7 +1792,9 @@ UpdateProxySessionOutcome ChimeSDKVoiceClient::UpdateProxySession(const UpdatePr
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProxySessionId());
   };
 
-  return UpdateProxySessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateProxySessionOutcome(result.GetResultWithOwnership())
+                            : UpdateProxySessionOutcome(std::move(result.GetError()));
 }
 
 UpdateSipMediaApplicationOutcome ChimeSDKVoiceClient::UpdateSipMediaApplication(const UpdateSipMediaApplicationRequest& request) const {
@@ -1654,7 +1810,9 @@ UpdateSipMediaApplicationOutcome ChimeSDKVoiceClient::UpdateSipMediaApplication(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSipMediaApplicationId());
   };
 
-  return UpdateSipMediaApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateSipMediaApplicationOutcome(result.GetResultWithOwnership())
+                            : UpdateSipMediaApplicationOutcome(std::move(result.GetError()));
 }
 
 UpdateSipMediaApplicationCallOutcome ChimeSDKVoiceClient::UpdateSipMediaApplicationCall(
@@ -1678,7 +1836,9 @@ UpdateSipMediaApplicationCallOutcome ChimeSDKVoiceClient::UpdateSipMediaApplicat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTransactionId());
   };
 
-  return UpdateSipMediaApplicationCallOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSipMediaApplicationCallOutcome(result.GetResultWithOwnership())
+                            : UpdateSipMediaApplicationCallOutcome(std::move(result.GetError()));
 }
 
 UpdateSipRuleOutcome ChimeSDKVoiceClient::UpdateSipRule(const UpdateSipRuleRequest& request) const {
@@ -1694,7 +1854,8 @@ UpdateSipRuleOutcome ChimeSDKVoiceClient::UpdateSipRule(const UpdateSipRuleReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSipRuleId());
   };
 
-  return UpdateSipRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateSipRuleOutcome(result.GetResultWithOwnership()) : UpdateSipRuleOutcome(std::move(result.GetError()));
 }
 
 UpdateVoiceConnectorOutcome ChimeSDKVoiceClient::UpdateVoiceConnector(const UpdateVoiceConnectorRequest& request) const {
@@ -1710,7 +1871,9 @@ UpdateVoiceConnectorOutcome ChimeSDKVoiceClient::UpdateVoiceConnector(const Upda
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVoiceConnectorId());
   };
 
-  return UpdateVoiceConnectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateVoiceConnectorOutcome(result.GetResultWithOwnership())
+                            : UpdateVoiceConnectorOutcome(std::move(result.GetError()));
 }
 
 UpdateVoiceConnectorGroupOutcome ChimeSDKVoiceClient::UpdateVoiceConnectorGroup(const UpdateVoiceConnectorGroupRequest& request) const {
@@ -1726,7 +1889,9 @@ UpdateVoiceConnectorGroupOutcome ChimeSDKVoiceClient::UpdateVoiceConnectorGroup(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVoiceConnectorGroupId());
   };
 
-  return UpdateVoiceConnectorGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateVoiceConnectorGroupOutcome(result.GetResultWithOwnership())
+                            : UpdateVoiceConnectorGroupOutcome(std::move(result.GetError()));
 }
 
 UpdateVoiceProfileOutcome ChimeSDKVoiceClient::UpdateVoiceProfile(const UpdateVoiceProfileRequest& request) const {
@@ -1742,7 +1907,9 @@ UpdateVoiceProfileOutcome ChimeSDKVoiceClient::UpdateVoiceProfile(const UpdateVo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVoiceProfileId());
   };
 
-  return UpdateVoiceProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateVoiceProfileOutcome(result.GetResultWithOwnership())
+                            : UpdateVoiceProfileOutcome(std::move(result.GetError()));
 }
 
 UpdateVoiceProfileDomainOutcome ChimeSDKVoiceClient::UpdateVoiceProfileDomain(const UpdateVoiceProfileDomainRequest& request) const {
@@ -1758,7 +1925,9 @@ UpdateVoiceProfileDomainOutcome ChimeSDKVoiceClient::UpdateVoiceProfileDomain(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVoiceProfileDomainId());
   };
 
-  return UpdateVoiceProfileDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateVoiceProfileDomainOutcome(result.GetResultWithOwnership())
+                            : UpdateVoiceProfileDomainOutcome(std::move(result.GetError()));
 }
 
 ValidateE911AddressOutcome ChimeSDKVoiceClient::ValidateE911Address(const ValidateE911AddressRequest& request) const {
@@ -1767,5 +1936,7 @@ ValidateE911AddressOutcome ChimeSDKVoiceClient::ValidateE911Address(const Valida
     endpointResolutionOutcome.GetResult().AddPathSegments("/emergency-calling/address");
   };
 
-  return ValidateE911AddressOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ValidateE911AddressOutcome(result.GetResultWithOwnership())
+                            : ValidateE911AddressOutcome(std::move(result.GetError()));
 }

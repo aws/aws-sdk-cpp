@@ -199,7 +199,8 @@ CreateIndexOutcome S3VectorsClient::CreateIndex(const CreateIndexRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateIndex");
   };
 
-  return CreateIndexOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIndexOutcome(result.GetResultWithOwnership()) : CreateIndexOutcome(std::move(result.GetError()));
 }
 
 CreateVectorBucketOutcome S3VectorsClient::CreateVectorBucket(const CreateVectorBucketRequest& request) const {
@@ -208,7 +209,9 @@ CreateVectorBucketOutcome S3VectorsClient::CreateVectorBucket(const CreateVector
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateVectorBucket");
   };
 
-  return CreateVectorBucketOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateVectorBucketOutcome(result.GetResultWithOwnership())
+                            : CreateVectorBucketOutcome(std::move(result.GetError()));
 }
 
 DeleteIndexOutcome S3VectorsClient::DeleteIndex(const DeleteIndexRequest& request) const {
@@ -217,7 +220,8 @@ DeleteIndexOutcome S3VectorsClient::DeleteIndex(const DeleteIndexRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteIndex");
   };
 
-  return DeleteIndexOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteIndexOutcome(result.GetResultWithOwnership()) : DeleteIndexOutcome(std::move(result.GetError()));
 }
 
 DeleteVectorBucketOutcome S3VectorsClient::DeleteVectorBucket(const DeleteVectorBucketRequest& request) const {
@@ -226,7 +230,9 @@ DeleteVectorBucketOutcome S3VectorsClient::DeleteVectorBucket(const DeleteVector
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteVectorBucket");
   };
 
-  return DeleteVectorBucketOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVectorBucketOutcome(result.GetResultWithOwnership())
+                            : DeleteVectorBucketOutcome(std::move(result.GetError()));
 }
 
 DeleteVectorBucketPolicyOutcome S3VectorsClient::DeleteVectorBucketPolicy(const DeleteVectorBucketPolicyRequest& request) const {
@@ -235,7 +241,9 @@ DeleteVectorBucketPolicyOutcome S3VectorsClient::DeleteVectorBucketPolicy(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteVectorBucketPolicy");
   };
 
-  return DeleteVectorBucketPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVectorBucketPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteVectorBucketPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteVectorsOutcome S3VectorsClient::DeleteVectors(const DeleteVectorsRequest& request) const {
@@ -244,7 +252,8 @@ DeleteVectorsOutcome S3VectorsClient::DeleteVectors(const DeleteVectorsRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteVectors");
   };
 
-  return DeleteVectorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVectorsOutcome(result.GetResultWithOwnership()) : DeleteVectorsOutcome(std::move(result.GetError()));
 }
 
 GetIndexOutcome S3VectorsClient::GetIndex(const GetIndexRequest& request) const {
@@ -253,7 +262,8 @@ GetIndexOutcome S3VectorsClient::GetIndex(const GetIndexRequest& request) const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetIndex");
   };
 
-  return GetIndexOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIndexOutcome(result.GetResultWithOwnership()) : GetIndexOutcome(std::move(result.GetError()));
 }
 
 GetVectorBucketOutcome S3VectorsClient::GetVectorBucket(const GetVectorBucketRequest& request) const {
@@ -262,7 +272,9 @@ GetVectorBucketOutcome S3VectorsClient::GetVectorBucket(const GetVectorBucketReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetVectorBucket");
   };
 
-  return GetVectorBucketOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetVectorBucketOutcome(result.GetResultWithOwnership())
+                            : GetVectorBucketOutcome(std::move(result.GetError()));
 }
 
 GetVectorBucketPolicyOutcome S3VectorsClient::GetVectorBucketPolicy(const GetVectorBucketPolicyRequest& request) const {
@@ -271,7 +283,9 @@ GetVectorBucketPolicyOutcome S3VectorsClient::GetVectorBucketPolicy(const GetVec
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetVectorBucketPolicy");
   };
 
-  return GetVectorBucketPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetVectorBucketPolicyOutcome(result.GetResultWithOwnership())
+                            : GetVectorBucketPolicyOutcome(std::move(result.GetError()));
 }
 
 GetVectorsOutcome S3VectorsClient::GetVectors(const GetVectorsRequest& request) const {
@@ -280,7 +294,8 @@ GetVectorsOutcome S3VectorsClient::GetVectors(const GetVectorsRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetVectors");
   };
 
-  return GetVectorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetVectorsOutcome(result.GetResultWithOwnership()) : GetVectorsOutcome(std::move(result.GetError()));
 }
 
 ListIndexesOutcome S3VectorsClient::ListIndexes(const ListIndexesRequest& request) const {
@@ -289,7 +304,8 @@ ListIndexesOutcome S3VectorsClient::ListIndexes(const ListIndexesRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListIndexes");
   };
 
-  return ListIndexesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListIndexesOutcome(result.GetResultWithOwnership()) : ListIndexesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome S3VectorsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -305,7 +321,9 @@ ListTagsForResourceOutcome S3VectorsClient::ListTagsForResource(const ListTagsFo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListVectorBucketsOutcome S3VectorsClient::ListVectorBuckets(const ListVectorBucketsRequest& request) const {
@@ -314,7 +332,9 @@ ListVectorBucketsOutcome S3VectorsClient::ListVectorBuckets(const ListVectorBuck
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListVectorBuckets");
   };
 
-  return ListVectorBucketsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListVectorBucketsOutcome(result.GetResultWithOwnership())
+                            : ListVectorBucketsOutcome(std::move(result.GetError()));
 }
 
 ListVectorsOutcome S3VectorsClient::ListVectors(const ListVectorsRequest& request) const {
@@ -323,7 +343,8 @@ ListVectorsOutcome S3VectorsClient::ListVectors(const ListVectorsRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListVectors");
   };
 
-  return ListVectorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListVectorsOutcome(result.GetResultWithOwnership()) : ListVectorsOutcome(std::move(result.GetError()));
 }
 
 PutVectorBucketPolicyOutcome S3VectorsClient::PutVectorBucketPolicy(const PutVectorBucketPolicyRequest& request) const {
@@ -332,7 +353,9 @@ PutVectorBucketPolicyOutcome S3VectorsClient::PutVectorBucketPolicy(const PutVec
     endpointResolutionOutcome.GetResult().AddPathSegments("/PutVectorBucketPolicy");
   };
 
-  return PutVectorBucketPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutVectorBucketPolicyOutcome(result.GetResultWithOwnership())
+                            : PutVectorBucketPolicyOutcome(std::move(result.GetError()));
 }
 
 PutVectorsOutcome S3VectorsClient::PutVectors(const PutVectorsRequest& request) const {
@@ -341,7 +364,8 @@ PutVectorsOutcome S3VectorsClient::PutVectors(const PutVectorsRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/PutVectors");
   };
 
-  return PutVectorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutVectorsOutcome(result.GetResultWithOwnership()) : PutVectorsOutcome(std::move(result.GetError()));
 }
 
 QueryVectorsOutcome S3VectorsClient::QueryVectors(const QueryVectorsRequest& request) const {
@@ -350,7 +374,8 @@ QueryVectorsOutcome S3VectorsClient::QueryVectors(const QueryVectorsRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/QueryVectors");
   };
 
-  return QueryVectorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? QueryVectorsOutcome(result.GetResultWithOwnership()) : QueryVectorsOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome S3VectorsClient::TagResource(const TagResourceRequest& request) const {
@@ -366,7 +391,8 @@ TagResourceOutcome S3VectorsClient::TagResource(const TagResourceRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome S3VectorsClient::UntagResource(const UntagResourceRequest& request) const {
@@ -387,5 +413,6 @@ UntagResourceOutcome S3VectorsClient::UntagResource(const UntagResourceRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }

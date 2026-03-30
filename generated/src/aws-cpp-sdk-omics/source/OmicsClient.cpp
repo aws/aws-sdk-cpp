@@ -30,6 +30,7 @@
 #include <aws/omics/model/CompleteMultipartReadSetUploadRequest.h>
 #include <aws/omics/model/CreateAnnotationStoreRequest.h>
 #include <aws/omics/model/CreateAnnotationStoreVersionRequest.h>
+#include <aws/omics/model/CreateConfigurationRequest.h>
 #include <aws/omics/model/CreateMultipartReadSetUploadRequest.h>
 #include <aws/omics/model/CreateReferenceStoreRequest.h>
 #include <aws/omics/model/CreateRunCacheRequest.h>
@@ -42,6 +43,7 @@
 #include <aws/omics/model/DeleteAnnotationStoreRequest.h>
 #include <aws/omics/model/DeleteAnnotationStoreVersionsRequest.h>
 #include <aws/omics/model/DeleteBatchRequest.h>
+#include <aws/omics/model/DeleteConfigurationRequest.h>
 #include <aws/omics/model/DeleteReferenceRequest.h>
 #include <aws/omics/model/DeleteReferenceStoreRequest.h>
 #include <aws/omics/model/DeleteRunBatchRequest.h>
@@ -58,6 +60,7 @@
 #include <aws/omics/model/GetAnnotationStoreRequest.h>
 #include <aws/omics/model/GetAnnotationStoreVersionRequest.h>
 #include <aws/omics/model/GetBatchRequest.h>
+#include <aws/omics/model/GetConfigurationRequest.h>
 #include <aws/omics/model/GetReadSetActivationJobRequest.h>
 #include <aws/omics/model/GetReadSetExportJobRequest.h>
 #include <aws/omics/model/GetReadSetImportJobRequest.h>
@@ -82,6 +85,7 @@
 #include <aws/omics/model/ListAnnotationStoreVersionsRequest.h>
 #include <aws/omics/model/ListAnnotationStoresRequest.h>
 #include <aws/omics/model/ListBatchRequest.h>
+#include <aws/omics/model/ListConfigurationsRequest.h>
 #include <aws/omics/model/ListMultipartReadSetUploadsRequest.h>
 #include <aws/omics/model/ListReadSetActivationJobsRequest.h>
 #include <aws/omics/model/ListReadSetExportJobsRequest.h>
@@ -300,7 +304,9 @@ AbortMultipartReadSetUploadOutcome OmicsClient::AbortMultipartReadSetUpload(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/abort");
   };
 
-  return AbortMultipartReadSetUploadOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? AbortMultipartReadSetUploadOutcome(result.GetResultWithOwnership())
+                            : AbortMultipartReadSetUploadOutcome(std::move(result.GetError()));
 }
 
 AcceptShareOutcome OmicsClient::AcceptShare(const AcceptShareRequest& request) const {
@@ -316,7 +322,8 @@ AcceptShareOutcome OmicsClient::AcceptShare(const AcceptShareRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetShareId());
   };
 
-  return AcceptShareOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptShareOutcome(result.GetResultWithOwnership()) : AcceptShareOutcome(std::move(result.GetError()));
 }
 
 BatchDeleteReadSetOutcome OmicsClient::BatchDeleteReadSet(const BatchDeleteReadSetRequest& request) const {
@@ -333,7 +340,9 @@ BatchDeleteReadSetOutcome OmicsClient::BatchDeleteReadSet(const BatchDeleteReadS
     endpointResolutionOutcome.GetResult().AddPathSegments("/readset/batch/delete");
   };
 
-  return BatchDeleteReadSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeleteReadSetOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteReadSetOutcome(std::move(result.GetError()));
 }
 
 CancelAnnotationImportJobOutcome OmicsClient::CancelAnnotationImportJob(const CancelAnnotationImportJobRequest& request) const {
@@ -349,7 +358,9 @@ CancelAnnotationImportJobOutcome OmicsClient::CancelAnnotationImportJob(const Ca
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return CancelAnnotationImportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? CancelAnnotationImportJobOutcome(result.GetResultWithOwnership())
+                            : CancelAnnotationImportJobOutcome(std::move(result.GetError()));
 }
 
 CancelRunOutcome OmicsClient::CancelRun(const CancelRunRequest& request) const {
@@ -366,7 +377,8 @@ CancelRunOutcome OmicsClient::CancelRun(const CancelRunRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/cancel");
   };
 
-  return CancelRunOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelRunOutcome(result.GetResultWithOwnership()) : CancelRunOutcome(std::move(result.GetError()));
 }
 
 CancelRunBatchOutcome OmicsClient::CancelRunBatch(const CancelRunBatchRequest& request) const {
@@ -375,7 +387,8 @@ CancelRunBatchOutcome OmicsClient::CancelRunBatch(const CancelRunBatchRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/runBatch/cancel");
   };
 
-  return CancelRunBatchOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelRunBatchOutcome(result.GetResultWithOwnership()) : CancelRunBatchOutcome(std::move(result.GetError()));
 }
 
 CancelVariantImportJobOutcome OmicsClient::CancelVariantImportJob(const CancelVariantImportJobRequest& request) const {
@@ -391,7 +404,9 @@ CancelVariantImportJobOutcome OmicsClient::CancelVariantImportJob(const CancelVa
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return CancelVariantImportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? CancelVariantImportJobOutcome(result.GetResultWithOwnership())
+                            : CancelVariantImportJobOutcome(std::move(result.GetError()));
 }
 
 CompleteMultipartReadSetUploadOutcome OmicsClient::CompleteMultipartReadSetUpload(
@@ -416,7 +431,9 @@ CompleteMultipartReadSetUploadOutcome OmicsClient::CompleteMultipartReadSetUploa
     endpointResolutionOutcome.GetResult().AddPathSegments("/complete");
   };
 
-  return CompleteMultipartReadSetUploadOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CompleteMultipartReadSetUploadOutcome(result.GetResultWithOwnership())
+                            : CompleteMultipartReadSetUploadOutcome(std::move(result.GetError()));
 }
 
 CreateAnnotationStoreOutcome OmicsClient::CreateAnnotationStore(const CreateAnnotationStoreRequest& request) const {
@@ -425,7 +442,9 @@ CreateAnnotationStoreOutcome OmicsClient::CreateAnnotationStore(const CreateAnno
     endpointResolutionOutcome.GetResult().AddPathSegments("/annotationStore");
   };
 
-  return CreateAnnotationStoreOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAnnotationStoreOutcome(result.GetResultWithOwnership())
+                            : CreateAnnotationStoreOutcome(std::move(result.GetError()));
 }
 
 CreateAnnotationStoreVersionOutcome OmicsClient::CreateAnnotationStoreVersion(const CreateAnnotationStoreVersionRequest& request) const {
@@ -442,7 +461,20 @@ CreateAnnotationStoreVersionOutcome OmicsClient::CreateAnnotationStoreVersion(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/version");
   };
 
-  return CreateAnnotationStoreVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAnnotationStoreVersionOutcome(result.GetResultWithOwnership())
+                            : CreateAnnotationStoreVersionOutcome(std::move(result.GetError()));
+}
+
+CreateConfigurationOutcome OmicsClient::CreateConfiguration(const CreateConfigurationRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/configuration");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateMultipartReadSetUploadOutcome OmicsClient::CreateMultipartReadSetUpload(const CreateMultipartReadSetUploadRequest& request) const {
@@ -459,7 +491,9 @@ CreateMultipartReadSetUploadOutcome OmicsClient::CreateMultipartReadSetUpload(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/upload");
   };
 
-  return CreateMultipartReadSetUploadOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMultipartReadSetUploadOutcome(result.GetResultWithOwnership())
+                            : CreateMultipartReadSetUploadOutcome(std::move(result.GetError()));
 }
 
 CreateReferenceStoreOutcome OmicsClient::CreateReferenceStore(const CreateReferenceStoreRequest& request) const {
@@ -468,7 +502,9 @@ CreateReferenceStoreOutcome OmicsClient::CreateReferenceStore(const CreateRefere
     endpointResolutionOutcome.GetResult().AddPathSegments("/referencestore");
   };
 
-  return CreateReferenceStoreOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateReferenceStoreOutcome(result.GetResultWithOwnership())
+                            : CreateReferenceStoreOutcome(std::move(result.GetError()));
 }
 
 CreateRunCacheOutcome OmicsClient::CreateRunCache(const CreateRunCacheRequest& request) const {
@@ -477,7 +513,8 @@ CreateRunCacheOutcome OmicsClient::CreateRunCache(const CreateRunCacheRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/runCache");
   };
 
-  return CreateRunCacheOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRunCacheOutcome(result.GetResultWithOwnership()) : CreateRunCacheOutcome(std::move(result.GetError()));
 }
 
 CreateRunGroupOutcome OmicsClient::CreateRunGroup(const CreateRunGroupRequest& request) const {
@@ -486,7 +523,8 @@ CreateRunGroupOutcome OmicsClient::CreateRunGroup(const CreateRunGroupRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/runGroup");
   };
 
-  return CreateRunGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRunGroupOutcome(result.GetResultWithOwnership()) : CreateRunGroupOutcome(std::move(result.GetError()));
 }
 
 CreateSequenceStoreOutcome OmicsClient::CreateSequenceStore(const CreateSequenceStoreRequest& request) const {
@@ -495,7 +533,9 @@ CreateSequenceStoreOutcome OmicsClient::CreateSequenceStore(const CreateSequence
     endpointResolutionOutcome.GetResult().AddPathSegments("/sequencestore");
   };
 
-  return CreateSequenceStoreOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSequenceStoreOutcome(result.GetResultWithOwnership())
+                            : CreateSequenceStoreOutcome(std::move(result.GetError()));
 }
 
 CreateShareOutcome OmicsClient::CreateShare(const CreateShareRequest& request) const {
@@ -504,7 +544,8 @@ CreateShareOutcome OmicsClient::CreateShare(const CreateShareRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegments("/share");
   };
 
-  return CreateShareOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateShareOutcome(result.GetResultWithOwnership()) : CreateShareOutcome(std::move(result.GetError()));
 }
 
 CreateVariantStoreOutcome OmicsClient::CreateVariantStore(const CreateVariantStoreRequest& request) const {
@@ -513,7 +554,9 @@ CreateVariantStoreOutcome OmicsClient::CreateVariantStore(const CreateVariantSto
     endpointResolutionOutcome.GetResult().AddPathSegments("/variantStore");
   };
 
-  return CreateVariantStoreOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateVariantStoreOutcome(result.GetResultWithOwnership())
+                            : CreateVariantStoreOutcome(std::move(result.GetError()));
 }
 
 CreateWorkflowOutcome OmicsClient::CreateWorkflow(const CreateWorkflowRequest& request) const {
@@ -522,7 +565,8 @@ CreateWorkflowOutcome OmicsClient::CreateWorkflow(const CreateWorkflowRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/workflow");
   };
 
-  return CreateWorkflowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWorkflowOutcome(result.GetResultWithOwnership()) : CreateWorkflowOutcome(std::move(result.GetError()));
 }
 
 CreateWorkflowVersionOutcome OmicsClient::CreateWorkflowVersion(const CreateWorkflowVersionRequest& request) const {
@@ -539,7 +583,9 @@ CreateWorkflowVersionOutcome OmicsClient::CreateWorkflowVersion(const CreateWork
     endpointResolutionOutcome.GetResult().AddPathSegments("/version");
   };
 
-  return CreateWorkflowVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWorkflowVersionOutcome(result.GetResultWithOwnership())
+                            : CreateWorkflowVersionOutcome(std::move(result.GetError()));
 }
 
 DeleteAnnotationStoreOutcome OmicsClient::DeleteAnnotationStore(const DeleteAnnotationStoreRequest& request) const {
@@ -555,7 +601,9 @@ DeleteAnnotationStoreOutcome OmicsClient::DeleteAnnotationStore(const DeleteAnno
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteAnnotationStoreOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAnnotationStoreOutcome(result.GetResultWithOwnership())
+                            : DeleteAnnotationStoreOutcome(std::move(result.GetError()));
 }
 
 DeleteAnnotationStoreVersionsOutcome OmicsClient::DeleteAnnotationStoreVersions(const DeleteAnnotationStoreVersionsRequest& request) const {
@@ -572,7 +620,9 @@ DeleteAnnotationStoreVersionsOutcome OmicsClient::DeleteAnnotationStoreVersions(
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions/delete");
   };
 
-  return DeleteAnnotationStoreVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAnnotationStoreVersionsOutcome(result.GetResultWithOwnership())
+                            : DeleteAnnotationStoreVersionsOutcome(std::move(result.GetError()));
 }
 
 DeleteBatchOutcome OmicsClient::DeleteBatch(const DeleteBatchRequest& request) const {
@@ -588,7 +638,26 @@ DeleteBatchOutcome OmicsClient::DeleteBatch(const DeleteBatchRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBatchId());
   };
 
-  return DeleteBatchOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBatchOutcome(result.GetResultWithOwnership()) : DeleteBatchOutcome(std::move(result.GetError()));
+}
+
+DeleteConfigurationOutcome OmicsClient::DeleteConfiguration(const DeleteConfigurationRequest& request) const {
+  if (!request.NameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteConfiguration", "Required field: Name, is not set");
+    return DeleteConfigurationOutcome(
+        Aws::Client::AWSError<OmicsErrors>(OmicsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/configuration/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteReferenceOutcome OmicsClient::DeleteReference(const DeleteReferenceRequest& request) const {
@@ -611,7 +680,9 @@ DeleteReferenceOutcome OmicsClient::DeleteReference(const DeleteReferenceRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteReferenceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteReferenceOutcome(result.GetResultWithOwnership())
+                            : DeleteReferenceOutcome(std::move(result.GetError()));
 }
 
 DeleteReferenceStoreOutcome OmicsClient::DeleteReferenceStore(const DeleteReferenceStoreRequest& request) const {
@@ -627,7 +698,9 @@ DeleteReferenceStoreOutcome OmicsClient::DeleteReferenceStore(const DeleteRefere
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteReferenceStoreOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteReferenceStoreOutcome(result.GetResultWithOwnership())
+                            : DeleteReferenceStoreOutcome(std::move(result.GetError()));
 }
 
 DeleteRunOutcome OmicsClient::DeleteRun(const DeleteRunRequest& request) const {
@@ -643,7 +716,8 @@ DeleteRunOutcome OmicsClient::DeleteRun(const DeleteRunRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteRunOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRunOutcome(result.GetResultWithOwnership()) : DeleteRunOutcome(std::move(result.GetError()));
 }
 
 DeleteRunBatchOutcome OmicsClient::DeleteRunBatch(const DeleteRunBatchRequest& request) const {
@@ -652,7 +726,8 @@ DeleteRunBatchOutcome OmicsClient::DeleteRunBatch(const DeleteRunBatchRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/runBatch/delete");
   };
 
-  return DeleteRunBatchOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRunBatchOutcome(result.GetResultWithOwnership()) : DeleteRunBatchOutcome(std::move(result.GetError()));
 }
 
 DeleteRunCacheOutcome OmicsClient::DeleteRunCache(const DeleteRunCacheRequest& request) const {
@@ -668,7 +743,8 @@ DeleteRunCacheOutcome OmicsClient::DeleteRunCache(const DeleteRunCacheRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteRunCacheOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRunCacheOutcome(result.GetResultWithOwnership()) : DeleteRunCacheOutcome(std::move(result.GetError()));
 }
 
 DeleteRunGroupOutcome OmicsClient::DeleteRunGroup(const DeleteRunGroupRequest& request) const {
@@ -684,7 +760,8 @@ DeleteRunGroupOutcome OmicsClient::DeleteRunGroup(const DeleteRunGroupRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteRunGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRunGroupOutcome(result.GetResultWithOwnership()) : DeleteRunGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteS3AccessPolicyOutcome OmicsClient::DeleteS3AccessPolicy(const DeleteS3AccessPolicyRequest& request) const {
@@ -700,7 +777,9 @@ DeleteS3AccessPolicyOutcome OmicsClient::DeleteS3AccessPolicy(const DeleteS3Acce
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetS3AccessPointArn());
   };
 
-  return DeleteS3AccessPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteS3AccessPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteS3AccessPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteSequenceStoreOutcome OmicsClient::DeleteSequenceStore(const DeleteSequenceStoreRequest& request) const {
@@ -716,7 +795,9 @@ DeleteSequenceStoreOutcome OmicsClient::DeleteSequenceStore(const DeleteSequence
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteSequenceStoreOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSequenceStoreOutcome(result.GetResultWithOwnership())
+                            : DeleteSequenceStoreOutcome(std::move(result.GetError()));
 }
 
 DeleteShareOutcome OmicsClient::DeleteShare(const DeleteShareRequest& request) const {
@@ -732,7 +813,8 @@ DeleteShareOutcome OmicsClient::DeleteShare(const DeleteShareRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetShareId());
   };
 
-  return DeleteShareOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteShareOutcome(result.GetResultWithOwnership()) : DeleteShareOutcome(std::move(result.GetError()));
 }
 
 DeleteVariantStoreOutcome OmicsClient::DeleteVariantStore(const DeleteVariantStoreRequest& request) const {
@@ -748,7 +830,9 @@ DeleteVariantStoreOutcome OmicsClient::DeleteVariantStore(const DeleteVariantSto
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteVariantStoreOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteVariantStoreOutcome(result.GetResultWithOwnership())
+                            : DeleteVariantStoreOutcome(std::move(result.GetError()));
 }
 
 DeleteWorkflowOutcome OmicsClient::DeleteWorkflow(const DeleteWorkflowRequest& request) const {
@@ -764,7 +848,8 @@ DeleteWorkflowOutcome OmicsClient::DeleteWorkflow(const DeleteWorkflowRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteWorkflowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteWorkflowOutcome(result.GetResultWithOwnership()) : DeleteWorkflowOutcome(std::move(result.GetError()));
 }
 
 DeleteWorkflowVersionOutcome OmicsClient::DeleteWorkflowVersion(const DeleteWorkflowVersionRequest& request) const {
@@ -787,7 +872,9 @@ DeleteWorkflowVersionOutcome OmicsClient::DeleteWorkflowVersion(const DeleteWork
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionName());
   };
 
-  return DeleteWorkflowVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteWorkflowVersionOutcome(result.GetResultWithOwnership())
+                            : DeleteWorkflowVersionOutcome(std::move(result.GetError()));
 }
 
 GetAnnotationImportJobOutcome OmicsClient::GetAnnotationImportJob(const GetAnnotationImportJobRequest& request) const {
@@ -803,7 +890,9 @@ GetAnnotationImportJobOutcome OmicsClient::GetAnnotationImportJob(const GetAnnot
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return GetAnnotationImportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAnnotationImportJobOutcome(result.GetResultWithOwnership())
+                            : GetAnnotationImportJobOutcome(std::move(result.GetError()));
 }
 
 GetAnnotationStoreOutcome OmicsClient::GetAnnotationStore(const GetAnnotationStoreRequest& request) const {
@@ -819,7 +908,9 @@ GetAnnotationStoreOutcome OmicsClient::GetAnnotationStore(const GetAnnotationSto
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return GetAnnotationStoreOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAnnotationStoreOutcome(result.GetResultWithOwnership())
+                            : GetAnnotationStoreOutcome(std::move(result.GetError()));
 }
 
 GetAnnotationStoreVersionOutcome OmicsClient::GetAnnotationStoreVersion(const GetAnnotationStoreVersionRequest& request) const {
@@ -842,7 +933,9 @@ GetAnnotationStoreVersionOutcome OmicsClient::GetAnnotationStoreVersion(const Ge
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionName());
   };
 
-  return GetAnnotationStoreVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAnnotationStoreVersionOutcome(result.GetResultWithOwnership())
+                            : GetAnnotationStoreVersionOutcome(std::move(result.GetError()));
 }
 
 GetBatchOutcome OmicsClient::GetBatch(const GetBatchRequest& request) const {
@@ -858,7 +951,26 @@ GetBatchOutcome OmicsClient::GetBatch(const GetBatchRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBatchId());
   };
 
-  return GetBatchOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBatchOutcome(result.GetResultWithOwnership()) : GetBatchOutcome(std::move(result.GetError()));
+}
+
+GetConfigurationOutcome OmicsClient::GetConfiguration(const GetConfigurationRequest& request) const {
+  if (!request.NameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetConfiguration", "Required field: Name, is not set");
+    return GetConfigurationOutcome(
+        Aws::Client::AWSError<OmicsErrors>(OmicsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/configuration/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetReadSetOutcome OmicsClient::GetReadSet(const GetReadSetRequest& request) const {
@@ -903,8 +1015,8 @@ GetReadSetOutcome OmicsClient::GetReadSet(const GetReadSetRequest& request) cons
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSequenceStoreId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/readset/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
-        return GetReadSetOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetReadSetOutcome(result.GetResultWithOwnership()) : GetReadSetOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -931,7 +1043,9 @@ GetReadSetActivationJobOutcome OmicsClient::GetReadSetActivationJob(const GetRea
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetReadSetActivationJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetReadSetActivationJobOutcome(result.GetResultWithOwnership())
+                            : GetReadSetActivationJobOutcome(std::move(result.GetError()));
 }
 
 GetReadSetExportJobOutcome OmicsClient::GetReadSetExportJob(const GetReadSetExportJobRequest& request) const {
@@ -954,7 +1068,9 @@ GetReadSetExportJobOutcome OmicsClient::GetReadSetExportJob(const GetReadSetExpo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetReadSetExportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetReadSetExportJobOutcome(result.GetResultWithOwnership())
+                            : GetReadSetExportJobOutcome(std::move(result.GetError()));
 }
 
 GetReadSetImportJobOutcome OmicsClient::GetReadSetImportJob(const GetReadSetImportJobRequest& request) const {
@@ -977,7 +1093,9 @@ GetReadSetImportJobOutcome OmicsClient::GetReadSetImportJob(const GetReadSetImpo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetReadSetImportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetReadSetImportJobOutcome(result.GetResultWithOwnership())
+                            : GetReadSetImportJobOutcome(std::move(result.GetError()));
 }
 
 GetReadSetMetadataOutcome OmicsClient::GetReadSetMetadata(const GetReadSetMetadataRequest& request) const {
@@ -1001,7 +1119,9 @@ GetReadSetMetadataOutcome OmicsClient::GetReadSetMetadata(const GetReadSetMetada
     endpointResolutionOutcome.GetResult().AddPathSegments("/metadata");
   };
 
-  return GetReadSetMetadataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetReadSetMetadataOutcome(result.GetResultWithOwnership())
+                            : GetReadSetMetadataOutcome(std::move(result.GetError()));
 }
 
 GetReferenceOutcome OmicsClient::GetReference(const GetReferenceRequest& request) const {
@@ -1046,8 +1166,9 @@ GetReferenceOutcome OmicsClient::GetReference(const GetReferenceRequest& request
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReferenceStoreId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/reference/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
-        return GetReferenceOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetReferenceOutcome(result.GetResultWithOwnership())
+                                  : GetReferenceOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1074,7 +1195,9 @@ GetReferenceImportJobOutcome OmicsClient::GetReferenceImportJob(const GetReferen
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetReferenceImportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetReferenceImportJobOutcome(result.GetResultWithOwnership())
+                            : GetReferenceImportJobOutcome(std::move(result.GetError()));
 }
 
 GetReferenceMetadataOutcome OmicsClient::GetReferenceMetadata(const GetReferenceMetadataRequest& request) const {
@@ -1098,7 +1221,9 @@ GetReferenceMetadataOutcome OmicsClient::GetReferenceMetadata(const GetReference
     endpointResolutionOutcome.GetResult().AddPathSegments("/metadata");
   };
 
-  return GetReferenceMetadataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetReferenceMetadataOutcome(result.GetResultWithOwnership())
+                            : GetReferenceMetadataOutcome(std::move(result.GetError()));
 }
 
 GetReferenceStoreOutcome OmicsClient::GetReferenceStore(const GetReferenceStoreRequest& request) const {
@@ -1114,7 +1239,9 @@ GetReferenceStoreOutcome OmicsClient::GetReferenceStore(const GetReferenceStoreR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetReferenceStoreOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetReferenceStoreOutcome(result.GetResultWithOwnership())
+                            : GetReferenceStoreOutcome(std::move(result.GetError()));
 }
 
 GetRunOutcome OmicsClient::GetRun(const GetRunRequest& request) const {
@@ -1130,7 +1257,8 @@ GetRunOutcome OmicsClient::GetRun(const GetRunRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetRunOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRunOutcome(result.GetResultWithOwnership()) : GetRunOutcome(std::move(result.GetError()));
 }
 
 GetRunCacheOutcome OmicsClient::GetRunCache(const GetRunCacheRequest& request) const {
@@ -1146,7 +1274,8 @@ GetRunCacheOutcome OmicsClient::GetRunCache(const GetRunCacheRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetRunCacheOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRunCacheOutcome(result.GetResultWithOwnership()) : GetRunCacheOutcome(std::move(result.GetError()));
 }
 
 GetRunGroupOutcome OmicsClient::GetRunGroup(const GetRunGroupRequest& request) const {
@@ -1162,7 +1291,8 @@ GetRunGroupOutcome OmicsClient::GetRunGroup(const GetRunGroupRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetRunGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRunGroupOutcome(result.GetResultWithOwnership()) : GetRunGroupOutcome(std::move(result.GetError()));
 }
 
 GetRunTaskOutcome OmicsClient::GetRunTask(const GetRunTaskRequest& request) const {
@@ -1185,7 +1315,8 @@ GetRunTaskOutcome OmicsClient::GetRunTask(const GetRunTaskRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTaskId());
   };
 
-  return GetRunTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRunTaskOutcome(result.GetResultWithOwnership()) : GetRunTaskOutcome(std::move(result.GetError()));
 }
 
 GetS3AccessPolicyOutcome OmicsClient::GetS3AccessPolicy(const GetS3AccessPolicyRequest& request) const {
@@ -1201,7 +1332,9 @@ GetS3AccessPolicyOutcome OmicsClient::GetS3AccessPolicy(const GetS3AccessPolicyR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetS3AccessPointArn());
   };
 
-  return GetS3AccessPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetS3AccessPolicyOutcome(result.GetResultWithOwnership())
+                            : GetS3AccessPolicyOutcome(std::move(result.GetError()));
 }
 
 GetSequenceStoreOutcome OmicsClient::GetSequenceStore(const GetSequenceStoreRequest& request) const {
@@ -1217,7 +1350,9 @@ GetSequenceStoreOutcome OmicsClient::GetSequenceStore(const GetSequenceStoreRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetSequenceStoreOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSequenceStoreOutcome(result.GetResultWithOwnership())
+                            : GetSequenceStoreOutcome(std::move(result.GetError()));
 }
 
 GetShareOutcome OmicsClient::GetShare(const GetShareRequest& request) const {
@@ -1233,7 +1368,8 @@ GetShareOutcome OmicsClient::GetShare(const GetShareRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetShareId());
   };
 
-  return GetShareOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetShareOutcome(result.GetResultWithOwnership()) : GetShareOutcome(std::move(result.GetError()));
 }
 
 GetVariantImportJobOutcome OmicsClient::GetVariantImportJob(const GetVariantImportJobRequest& request) const {
@@ -1249,7 +1385,9 @@ GetVariantImportJobOutcome OmicsClient::GetVariantImportJob(const GetVariantImpo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return GetVariantImportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetVariantImportJobOutcome(result.GetResultWithOwnership())
+                            : GetVariantImportJobOutcome(std::move(result.GetError()));
 }
 
 GetVariantStoreOutcome OmicsClient::GetVariantStore(const GetVariantStoreRequest& request) const {
@@ -1265,7 +1403,9 @@ GetVariantStoreOutcome OmicsClient::GetVariantStore(const GetVariantStoreRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return GetVariantStoreOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetVariantStoreOutcome(result.GetResultWithOwnership())
+                            : GetVariantStoreOutcome(std::move(result.GetError()));
 }
 
 GetWorkflowOutcome OmicsClient::GetWorkflow(const GetWorkflowRequest& request) const {
@@ -1281,7 +1421,8 @@ GetWorkflowOutcome OmicsClient::GetWorkflow(const GetWorkflowRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetWorkflowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetWorkflowOutcome(result.GetResultWithOwnership()) : GetWorkflowOutcome(std::move(result.GetError()));
 }
 
 GetWorkflowVersionOutcome OmicsClient::GetWorkflowVersion(const GetWorkflowVersionRequest& request) const {
@@ -1304,7 +1445,9 @@ GetWorkflowVersionOutcome OmicsClient::GetWorkflowVersion(const GetWorkflowVersi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionName());
   };
 
-  return GetWorkflowVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetWorkflowVersionOutcome(result.GetResultWithOwnership())
+                            : GetWorkflowVersionOutcome(std::move(result.GetError()));
 }
 
 ListAnnotationImportJobsOutcome OmicsClient::ListAnnotationImportJobs(const ListAnnotationImportJobsRequest& request) const {
@@ -1313,7 +1456,9 @@ ListAnnotationImportJobsOutcome OmicsClient::ListAnnotationImportJobs(const List
     endpointResolutionOutcome.GetResult().AddPathSegments("/import/annotations");
   };
 
-  return ListAnnotationImportJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAnnotationImportJobsOutcome(result.GetResultWithOwnership())
+                            : ListAnnotationImportJobsOutcome(std::move(result.GetError()));
 }
 
 ListAnnotationStoreVersionsOutcome OmicsClient::ListAnnotationStoreVersions(const ListAnnotationStoreVersionsRequest& request) const {
@@ -1330,7 +1475,9 @@ ListAnnotationStoreVersionsOutcome OmicsClient::ListAnnotationStoreVersions(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
   };
 
-  return ListAnnotationStoreVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAnnotationStoreVersionsOutcome(result.GetResultWithOwnership())
+                            : ListAnnotationStoreVersionsOutcome(std::move(result.GetError()));
 }
 
 ListAnnotationStoresOutcome OmicsClient::ListAnnotationStores(const ListAnnotationStoresRequest& request) const {
@@ -1339,7 +1486,9 @@ ListAnnotationStoresOutcome OmicsClient::ListAnnotationStores(const ListAnnotati
     endpointResolutionOutcome.GetResult().AddPathSegments("/annotationStores");
   };
 
-  return ListAnnotationStoresOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAnnotationStoresOutcome(result.GetResultWithOwnership())
+                            : ListAnnotationStoresOutcome(std::move(result.GetError()));
 }
 
 ListBatchOutcome OmicsClient::ListBatch(const ListBatchRequest& request) const {
@@ -1348,7 +1497,19 @@ ListBatchOutcome OmicsClient::ListBatch(const ListBatchRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/runBatch");
   };
 
-  return ListBatchOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListBatchOutcome(result.GetResultWithOwnership()) : ListBatchOutcome(std::move(result.GetError()));
+}
+
+ListConfigurationsOutcome OmicsClient::ListConfigurations(const ListConfigurationsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/configuration");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListMultipartReadSetUploadsOutcome OmicsClient::ListMultipartReadSetUploads(const ListMultipartReadSetUploadsRequest& request) const {
@@ -1365,7 +1526,9 @@ ListMultipartReadSetUploadsOutcome OmicsClient::ListMultipartReadSetUploads(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/uploads");
   };
 
-  return ListMultipartReadSetUploadsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMultipartReadSetUploadsOutcome(result.GetResultWithOwnership())
+                            : ListMultipartReadSetUploadsOutcome(std::move(result.GetError()));
 }
 
 ListReadSetActivationJobsOutcome OmicsClient::ListReadSetActivationJobs(const ListReadSetActivationJobsRequest& request) const {
@@ -1382,7 +1545,9 @@ ListReadSetActivationJobsOutcome OmicsClient::ListReadSetActivationJobs(const Li
     endpointResolutionOutcome.GetResult().AddPathSegments("/activationjobs");
   };
 
-  return ListReadSetActivationJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListReadSetActivationJobsOutcome(result.GetResultWithOwnership())
+                            : ListReadSetActivationJobsOutcome(std::move(result.GetError()));
 }
 
 ListReadSetExportJobsOutcome OmicsClient::ListReadSetExportJobs(const ListReadSetExportJobsRequest& request) const {
@@ -1399,7 +1564,9 @@ ListReadSetExportJobsOutcome OmicsClient::ListReadSetExportJobs(const ListReadSe
     endpointResolutionOutcome.GetResult().AddPathSegments("/exportjobs");
   };
 
-  return ListReadSetExportJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListReadSetExportJobsOutcome(result.GetResultWithOwnership())
+                            : ListReadSetExportJobsOutcome(std::move(result.GetError()));
 }
 
 ListReadSetImportJobsOutcome OmicsClient::ListReadSetImportJobs(const ListReadSetImportJobsRequest& request) const {
@@ -1416,7 +1583,9 @@ ListReadSetImportJobsOutcome OmicsClient::ListReadSetImportJobs(const ListReadSe
     endpointResolutionOutcome.GetResult().AddPathSegments("/importjobs");
   };
 
-  return ListReadSetImportJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListReadSetImportJobsOutcome(result.GetResultWithOwnership())
+                            : ListReadSetImportJobsOutcome(std::move(result.GetError()));
 }
 
 ListReadSetUploadPartsOutcome OmicsClient::ListReadSetUploadParts(const ListReadSetUploadPartsRequest& request) const {
@@ -1440,7 +1609,9 @@ ListReadSetUploadPartsOutcome OmicsClient::ListReadSetUploadParts(const ListRead
     endpointResolutionOutcome.GetResult().AddPathSegments("/parts");
   };
 
-  return ListReadSetUploadPartsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListReadSetUploadPartsOutcome(result.GetResultWithOwnership())
+                            : ListReadSetUploadPartsOutcome(std::move(result.GetError()));
 }
 
 ListReadSetsOutcome OmicsClient::ListReadSets(const ListReadSetsRequest& request) const {
@@ -1457,7 +1628,8 @@ ListReadSetsOutcome OmicsClient::ListReadSets(const ListReadSetsRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/readsets");
   };
 
-  return ListReadSetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListReadSetsOutcome(result.GetResultWithOwnership()) : ListReadSetsOutcome(std::move(result.GetError()));
 }
 
 ListReferenceImportJobsOutcome OmicsClient::ListReferenceImportJobs(const ListReferenceImportJobsRequest& request) const {
@@ -1474,7 +1646,9 @@ ListReferenceImportJobsOutcome OmicsClient::ListReferenceImportJobs(const ListRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/importjobs");
   };
 
-  return ListReferenceImportJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListReferenceImportJobsOutcome(result.GetResultWithOwnership())
+                            : ListReferenceImportJobsOutcome(std::move(result.GetError()));
 }
 
 ListReferenceStoresOutcome OmicsClient::ListReferenceStores(const ListReferenceStoresRequest& request) const {
@@ -1483,7 +1657,9 @@ ListReferenceStoresOutcome OmicsClient::ListReferenceStores(const ListReferenceS
     endpointResolutionOutcome.GetResult().AddPathSegments("/referencestores");
   };
 
-  return ListReferenceStoresOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListReferenceStoresOutcome(result.GetResultWithOwnership())
+                            : ListReferenceStoresOutcome(std::move(result.GetError()));
 }
 
 ListReferencesOutcome OmicsClient::ListReferences(const ListReferencesRequest& request) const {
@@ -1500,7 +1676,8 @@ ListReferencesOutcome OmicsClient::ListReferences(const ListReferencesRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/references");
   };
 
-  return ListReferencesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListReferencesOutcome(result.GetResultWithOwnership()) : ListReferencesOutcome(std::move(result.GetError()));
 }
 
 ListRunCachesOutcome OmicsClient::ListRunCaches(const ListRunCachesRequest& request) const {
@@ -1509,7 +1686,8 @@ ListRunCachesOutcome OmicsClient::ListRunCaches(const ListRunCachesRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/runCache");
   };
 
-  return ListRunCachesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRunCachesOutcome(result.GetResultWithOwnership()) : ListRunCachesOutcome(std::move(result.GetError()));
 }
 
 ListRunGroupsOutcome OmicsClient::ListRunGroups(const ListRunGroupsRequest& request) const {
@@ -1518,7 +1696,8 @@ ListRunGroupsOutcome OmicsClient::ListRunGroups(const ListRunGroupsRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/runGroup");
   };
 
-  return ListRunGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRunGroupsOutcome(result.GetResultWithOwnership()) : ListRunGroupsOutcome(std::move(result.GetError()));
 }
 
 ListRunTasksOutcome OmicsClient::ListRunTasks(const ListRunTasksRequest& request) const {
@@ -1535,7 +1714,8 @@ ListRunTasksOutcome OmicsClient::ListRunTasks(const ListRunTasksRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/task");
   };
 
-  return ListRunTasksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRunTasksOutcome(result.GetResultWithOwnership()) : ListRunTasksOutcome(std::move(result.GetError()));
 }
 
 ListRunsOutcome OmicsClient::ListRuns(const ListRunsRequest& request) const {
@@ -1544,7 +1724,8 @@ ListRunsOutcome OmicsClient::ListRuns(const ListRunsRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/run");
   };
 
-  return ListRunsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRunsOutcome(result.GetResultWithOwnership()) : ListRunsOutcome(std::move(result.GetError()));
 }
 
 ListRunsInBatchOutcome OmicsClient::ListRunsInBatch(const ListRunsInBatchRequest& request) const {
@@ -1561,7 +1742,9 @@ ListRunsInBatchOutcome OmicsClient::ListRunsInBatch(const ListRunsInBatchRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/run");
   };
 
-  return ListRunsInBatchOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRunsInBatchOutcome(result.GetResultWithOwnership())
+                            : ListRunsInBatchOutcome(std::move(result.GetError()));
 }
 
 ListSequenceStoresOutcome OmicsClient::ListSequenceStores(const ListSequenceStoresRequest& request) const {
@@ -1570,7 +1753,9 @@ ListSequenceStoresOutcome OmicsClient::ListSequenceStores(const ListSequenceStor
     endpointResolutionOutcome.GetResult().AddPathSegments("/sequencestores");
   };
 
-  return ListSequenceStoresOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSequenceStoresOutcome(result.GetResultWithOwnership())
+                            : ListSequenceStoresOutcome(std::move(result.GetError()));
 }
 
 ListSharesOutcome OmicsClient::ListShares(const ListSharesRequest& request) const {
@@ -1579,7 +1764,8 @@ ListSharesOutcome OmicsClient::ListShares(const ListSharesRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/shares");
   };
 
-  return ListSharesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSharesOutcome(result.GetResultWithOwnership()) : ListSharesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome OmicsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -1595,7 +1781,9 @@ ListTagsForResourceOutcome OmicsClient::ListTagsForResource(const ListTagsForRes
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListVariantImportJobsOutcome OmicsClient::ListVariantImportJobs(const ListVariantImportJobsRequest& request) const {
@@ -1604,7 +1792,9 @@ ListVariantImportJobsOutcome OmicsClient::ListVariantImportJobs(const ListVarian
     endpointResolutionOutcome.GetResult().AddPathSegments("/import/variants");
   };
 
-  return ListVariantImportJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListVariantImportJobsOutcome(result.GetResultWithOwnership())
+                            : ListVariantImportJobsOutcome(std::move(result.GetError()));
 }
 
 ListVariantStoresOutcome OmicsClient::ListVariantStores(const ListVariantStoresRequest& request) const {
@@ -1613,7 +1803,9 @@ ListVariantStoresOutcome OmicsClient::ListVariantStores(const ListVariantStoresR
     endpointResolutionOutcome.GetResult().AddPathSegments("/variantStores");
   };
 
-  return ListVariantStoresOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListVariantStoresOutcome(result.GetResultWithOwnership())
+                            : ListVariantStoresOutcome(std::move(result.GetError()));
 }
 
 ListWorkflowVersionsOutcome OmicsClient::ListWorkflowVersions(const ListWorkflowVersionsRequest& request) const {
@@ -1630,7 +1822,9 @@ ListWorkflowVersionsOutcome OmicsClient::ListWorkflowVersions(const ListWorkflow
     endpointResolutionOutcome.GetResult().AddPathSegments("/version");
   };
 
-  return ListWorkflowVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListWorkflowVersionsOutcome(result.GetResultWithOwnership())
+                            : ListWorkflowVersionsOutcome(std::move(result.GetError()));
 }
 
 ListWorkflowsOutcome OmicsClient::ListWorkflows(const ListWorkflowsRequest& request) const {
@@ -1639,7 +1833,8 @@ ListWorkflowsOutcome OmicsClient::ListWorkflows(const ListWorkflowsRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/workflow");
   };
 
-  return ListWorkflowsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListWorkflowsOutcome(result.GetResultWithOwnership()) : ListWorkflowsOutcome(std::move(result.GetError()));
 }
 
 PutS3AccessPolicyOutcome OmicsClient::PutS3AccessPolicy(const PutS3AccessPolicyRequest& request) const {
@@ -1655,7 +1850,9 @@ PutS3AccessPolicyOutcome OmicsClient::PutS3AccessPolicy(const PutS3AccessPolicyR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetS3AccessPointArn());
   };
 
-  return PutS3AccessPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutS3AccessPolicyOutcome(result.GetResultWithOwnership())
+                            : PutS3AccessPolicyOutcome(std::move(result.GetError()));
 }
 
 StartAnnotationImportJobOutcome OmicsClient::StartAnnotationImportJob(const StartAnnotationImportJobRequest& request) const {
@@ -1664,7 +1861,9 @@ StartAnnotationImportJobOutcome OmicsClient::StartAnnotationImportJob(const Star
     endpointResolutionOutcome.GetResult().AddPathSegments("/import/annotation");
   };
 
-  return StartAnnotationImportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartAnnotationImportJobOutcome(result.GetResultWithOwnership())
+                            : StartAnnotationImportJobOutcome(std::move(result.GetError()));
 }
 
 StartReadSetActivationJobOutcome OmicsClient::StartReadSetActivationJob(const StartReadSetActivationJobRequest& request) const {
@@ -1681,7 +1880,9 @@ StartReadSetActivationJobOutcome OmicsClient::StartReadSetActivationJob(const St
     endpointResolutionOutcome.GetResult().AddPathSegments("/activationjob");
   };
 
-  return StartReadSetActivationJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartReadSetActivationJobOutcome(result.GetResultWithOwnership())
+                            : StartReadSetActivationJobOutcome(std::move(result.GetError()));
 }
 
 StartReadSetExportJobOutcome OmicsClient::StartReadSetExportJob(const StartReadSetExportJobRequest& request) const {
@@ -1698,7 +1899,9 @@ StartReadSetExportJobOutcome OmicsClient::StartReadSetExportJob(const StartReadS
     endpointResolutionOutcome.GetResult().AddPathSegments("/exportjob");
   };
 
-  return StartReadSetExportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartReadSetExportJobOutcome(result.GetResultWithOwnership())
+                            : StartReadSetExportJobOutcome(std::move(result.GetError()));
 }
 
 StartReadSetImportJobOutcome OmicsClient::StartReadSetImportJob(const StartReadSetImportJobRequest& request) const {
@@ -1715,7 +1918,9 @@ StartReadSetImportJobOutcome OmicsClient::StartReadSetImportJob(const StartReadS
     endpointResolutionOutcome.GetResult().AddPathSegments("/importjob");
   };
 
-  return StartReadSetImportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartReadSetImportJobOutcome(result.GetResultWithOwnership())
+                            : StartReadSetImportJobOutcome(std::move(result.GetError()));
 }
 
 StartReferenceImportJobOutcome OmicsClient::StartReferenceImportJob(const StartReferenceImportJobRequest& request) const {
@@ -1732,7 +1937,9 @@ StartReferenceImportJobOutcome OmicsClient::StartReferenceImportJob(const StartR
     endpointResolutionOutcome.GetResult().AddPathSegments("/importjob");
   };
 
-  return StartReferenceImportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartReferenceImportJobOutcome(result.GetResultWithOwnership())
+                            : StartReferenceImportJobOutcome(std::move(result.GetError()));
 }
 
 StartRunOutcome OmicsClient::StartRun(const StartRunRequest& request) const {
@@ -1741,7 +1948,8 @@ StartRunOutcome OmicsClient::StartRun(const StartRunRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/run");
   };
 
-  return StartRunOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartRunOutcome(result.GetResultWithOwnership()) : StartRunOutcome(std::move(result.GetError()));
 }
 
 StartRunBatchOutcome OmicsClient::StartRunBatch(const StartRunBatchRequest& request) const {
@@ -1750,7 +1958,8 @@ StartRunBatchOutcome OmicsClient::StartRunBatch(const StartRunBatchRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/runBatch");
   };
 
-  return StartRunBatchOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartRunBatchOutcome(result.GetResultWithOwnership()) : StartRunBatchOutcome(std::move(result.GetError()));
 }
 
 StartVariantImportJobOutcome OmicsClient::StartVariantImportJob(const StartVariantImportJobRequest& request) const {
@@ -1759,7 +1968,9 @@ StartVariantImportJobOutcome OmicsClient::StartVariantImportJob(const StartVaria
     endpointResolutionOutcome.GetResult().AddPathSegments("/import/variant");
   };
 
-  return StartVariantImportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartVariantImportJobOutcome(result.GetResultWithOwnership())
+                            : StartVariantImportJobOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome OmicsClient::TagResource(const TagResourceRequest& request) const {
@@ -1775,7 +1986,8 @@ TagResourceOutcome OmicsClient::TagResource(const TagResourceRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome OmicsClient::UntagResource(const UntagResourceRequest& request) const {
@@ -1796,7 +2008,8 @@ UntagResourceOutcome OmicsClient::UntagResource(const UntagResourceRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAnnotationStoreOutcome OmicsClient::UpdateAnnotationStore(const UpdateAnnotationStoreRequest& request) const {
@@ -1812,7 +2025,9 @@ UpdateAnnotationStoreOutcome OmicsClient::UpdateAnnotationStore(const UpdateAnno
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return UpdateAnnotationStoreOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAnnotationStoreOutcome(result.GetResultWithOwnership())
+                            : UpdateAnnotationStoreOutcome(std::move(result.GetError()));
 }
 
 UpdateAnnotationStoreVersionOutcome OmicsClient::UpdateAnnotationStoreVersion(const UpdateAnnotationStoreVersionRequest& request) const {
@@ -1835,7 +2050,9 @@ UpdateAnnotationStoreVersionOutcome OmicsClient::UpdateAnnotationStoreVersion(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionName());
   };
 
-  return UpdateAnnotationStoreVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAnnotationStoreVersionOutcome(result.GetResultWithOwnership())
+                            : UpdateAnnotationStoreVersionOutcome(std::move(result.GetError()));
 }
 
 UpdateRunCacheOutcome OmicsClient::UpdateRunCache(const UpdateRunCacheRequest& request) const {
@@ -1851,7 +2068,8 @@ UpdateRunCacheOutcome OmicsClient::UpdateRunCache(const UpdateRunCacheRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateRunCacheOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRunCacheOutcome(result.GetResultWithOwnership()) : UpdateRunCacheOutcome(std::move(result.GetError()));
 }
 
 UpdateRunGroupOutcome OmicsClient::UpdateRunGroup(const UpdateRunGroupRequest& request) const {
@@ -1867,7 +2085,8 @@ UpdateRunGroupOutcome OmicsClient::UpdateRunGroup(const UpdateRunGroupRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateRunGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRunGroupOutcome(result.GetResultWithOwnership()) : UpdateRunGroupOutcome(std::move(result.GetError()));
 }
 
 UpdateSequenceStoreOutcome OmicsClient::UpdateSequenceStore(const UpdateSequenceStoreRequest& request) const {
@@ -1883,7 +2102,9 @@ UpdateSequenceStoreOutcome OmicsClient::UpdateSequenceStore(const UpdateSequence
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateSequenceStoreOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateSequenceStoreOutcome(result.GetResultWithOwnership())
+                            : UpdateSequenceStoreOutcome(std::move(result.GetError()));
 }
 
 UpdateVariantStoreOutcome OmicsClient::UpdateVariantStore(const UpdateVariantStoreRequest& request) const {
@@ -1899,7 +2120,9 @@ UpdateVariantStoreOutcome OmicsClient::UpdateVariantStore(const UpdateVariantSto
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return UpdateVariantStoreOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateVariantStoreOutcome(result.GetResultWithOwnership())
+                            : UpdateVariantStoreOutcome(std::move(result.GetError()));
 }
 
 UpdateWorkflowOutcome OmicsClient::UpdateWorkflow(const UpdateWorkflowRequest& request) const {
@@ -1915,7 +2138,8 @@ UpdateWorkflowOutcome OmicsClient::UpdateWorkflow(const UpdateWorkflowRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateWorkflowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateWorkflowOutcome(result.GetResultWithOwnership()) : UpdateWorkflowOutcome(std::move(result.GetError()));
 }
 
 UpdateWorkflowVersionOutcome OmicsClient::UpdateWorkflowVersion(const UpdateWorkflowVersionRequest& request) const {
@@ -1938,7 +2162,9 @@ UpdateWorkflowVersionOutcome OmicsClient::UpdateWorkflowVersion(const UpdateWork
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionName());
   };
 
-  return UpdateWorkflowVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateWorkflowVersionOutcome(result.GetResultWithOwnership())
+                            : UpdateWorkflowVersionOutcome(std::move(result.GetError()));
 }
 
 UploadReadSetPartOutcome OmicsClient::UploadReadSetPart(const UploadReadSetPartRequest& request) const {
@@ -1972,5 +2198,7 @@ UploadReadSetPartOutcome OmicsClient::UploadReadSetPart(const UploadReadSetPartR
     endpointResolutionOutcome.GetResult().AddPathSegments("/part");
   };
 
-  return UploadReadSetPartOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UploadReadSetPartOutcome(result.GetResultWithOwnership())
+                            : UploadReadSetPartOutcome(std::move(result.GetError()));
 }

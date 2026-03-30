@@ -192,61 +192,86 @@ TimestreamQueryClient::InvokeOperationOutcome TimestreamQueryClient::InvokeServi
 }
 
 CancelQueryOutcome TimestreamQueryClient::CancelQuery(const CancelQueryRequest& request) const {
-  return CancelQueryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelQueryOutcome(result.GetResultWithOwnership()) : CancelQueryOutcome(std::move(result.GetError()));
 }
 
 CreateScheduledQueryOutcome TimestreamQueryClient::CreateScheduledQuery(const CreateScheduledQueryRequest& request) const {
-  return CreateScheduledQueryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateScheduledQueryOutcome(result.GetResultWithOwnership())
+                            : CreateScheduledQueryOutcome(std::move(result.GetError()));
 }
 
 DeleteScheduledQueryOutcome TimestreamQueryClient::DeleteScheduledQuery(const DeleteScheduledQueryRequest& request) const {
-  return DeleteScheduledQueryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteScheduledQueryOutcome(result.GetResultWithOwnership())
+                            : DeleteScheduledQueryOutcome(std::move(result.GetError()));
 }
 
 DescribeAccountSettingsOutcome TimestreamQueryClient::DescribeAccountSettings(const DescribeAccountSettingsRequest& request) const {
-  return DescribeAccountSettingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAccountSettingsOutcome(result.GetResultWithOwnership())
+                            : DescribeAccountSettingsOutcome(std::move(result.GetError()));
 }
 
 DescribeEndpointsOutcome TimestreamQueryClient::DescribeEndpoints(const DescribeEndpointsRequest& request) const {
-  return DescribeEndpointsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEndpointsOutcome(result.GetResultWithOwnership())
+                            : DescribeEndpointsOutcome(std::move(result.GetError()));
 }
 
 DescribeScheduledQueryOutcome TimestreamQueryClient::DescribeScheduledQuery(const DescribeScheduledQueryRequest& request) const {
-  return DescribeScheduledQueryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeScheduledQueryOutcome(result.GetResultWithOwnership())
+                            : DescribeScheduledQueryOutcome(std::move(result.GetError()));
 }
 
 ExecuteScheduledQueryOutcome TimestreamQueryClient::ExecuteScheduledQuery(const ExecuteScheduledQueryRequest& request) const {
-  return ExecuteScheduledQueryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExecuteScheduledQueryOutcome(result.GetResultWithOwnership())
+                            : ExecuteScheduledQueryOutcome(std::move(result.GetError()));
 }
 
 ListScheduledQueriesOutcome TimestreamQueryClient::ListScheduledQueries(const ListScheduledQueriesRequest& request) const {
-  return ListScheduledQueriesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListScheduledQueriesOutcome(result.GetResultWithOwnership())
+                            : ListScheduledQueriesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome TimestreamQueryClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PrepareQueryOutcome TimestreamQueryClient::PrepareQuery(const PrepareQueryRequest& request) const {
-  return PrepareQueryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PrepareQueryOutcome(result.GetResultWithOwnership()) : PrepareQueryOutcome(std::move(result.GetError()));
 }
 
 QueryOutcome TimestreamQueryClient::Query(const QueryRequest& request) const {
-  return QueryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? QueryOutcome(result.GetResultWithOwnership()) : QueryOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome TimestreamQueryClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome TimestreamQueryClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAccountSettingsOutcome TimestreamQueryClient::UpdateAccountSettings(const UpdateAccountSettingsRequest& request) const {
-  return UpdateAccountSettingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAccountSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdateAccountSettingsOutcome(std::move(result.GetError()));
 }
 
 UpdateScheduledQueryOutcome TimestreamQueryClient::UpdateScheduledQuery(const UpdateScheduledQueryRequest& request) const {
-  return UpdateScheduledQueryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateScheduledQueryOutcome(result.GetResultWithOwnership())
+                            : UpdateScheduledQueryOutcome(std::move(result.GetError()));
 }

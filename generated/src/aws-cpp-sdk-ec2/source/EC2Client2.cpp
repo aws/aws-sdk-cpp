@@ -133,434 +133,628 @@ using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 DeleteNetworkAclOutcome EC2Client::DeleteNetworkAcl(const DeleteNetworkAclRequest& request) const {
-  return DeleteNetworkAclOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteNetworkAclOutcome(result.GetResultWithOwnership())
+                            : DeleteNetworkAclOutcome(std::move(result.GetError()));
 }
 
 DeleteNetworkAclEntryOutcome EC2Client::DeleteNetworkAclEntry(const DeleteNetworkAclEntryRequest& request) const {
-  return DeleteNetworkAclEntryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteNetworkAclEntryOutcome(result.GetResultWithOwnership())
+                            : DeleteNetworkAclEntryOutcome(std::move(result.GetError()));
 }
 
 DeleteNetworkInsightsAccessScopeOutcome EC2Client::DeleteNetworkInsightsAccessScope(
     const DeleteNetworkInsightsAccessScopeRequest& request) const {
-  return DeleteNetworkInsightsAccessScopeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteNetworkInsightsAccessScopeOutcome(result.GetResultWithOwnership())
+                            : DeleteNetworkInsightsAccessScopeOutcome(std::move(result.GetError()));
 }
 
 DeleteNetworkInsightsAccessScopeAnalysisOutcome EC2Client::DeleteNetworkInsightsAccessScopeAnalysis(
     const DeleteNetworkInsightsAccessScopeAnalysisRequest& request) const {
-  return DeleteNetworkInsightsAccessScopeAnalysisOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteNetworkInsightsAccessScopeAnalysisOutcome(result.GetResultWithOwnership())
+                            : DeleteNetworkInsightsAccessScopeAnalysisOutcome(std::move(result.GetError()));
 }
 
 DeleteNetworkInsightsAnalysisOutcome EC2Client::DeleteNetworkInsightsAnalysis(const DeleteNetworkInsightsAnalysisRequest& request) const {
-  return DeleteNetworkInsightsAnalysisOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteNetworkInsightsAnalysisOutcome(result.GetResultWithOwnership())
+                            : DeleteNetworkInsightsAnalysisOutcome(std::move(result.GetError()));
 }
 
 DeleteNetworkInsightsPathOutcome EC2Client::DeleteNetworkInsightsPath(const DeleteNetworkInsightsPathRequest& request) const {
-  return DeleteNetworkInsightsPathOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteNetworkInsightsPathOutcome(result.GetResultWithOwnership())
+                            : DeleteNetworkInsightsPathOutcome(std::move(result.GetError()));
 }
 
 DeleteNetworkInterfaceOutcome EC2Client::DeleteNetworkInterface(const DeleteNetworkInterfaceRequest& request) const {
-  return DeleteNetworkInterfaceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteNetworkInterfaceOutcome(result.GetResultWithOwnership())
+                            : DeleteNetworkInterfaceOutcome(std::move(result.GetError()));
 }
 
 DeleteNetworkInterfacePermissionOutcome EC2Client::DeleteNetworkInterfacePermission(
     const DeleteNetworkInterfacePermissionRequest& request) const {
-  return DeleteNetworkInterfacePermissionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteNetworkInterfacePermissionOutcome(result.GetResultWithOwnership())
+                            : DeleteNetworkInterfacePermissionOutcome(std::move(result.GetError()));
 }
 
 DeletePlacementGroupOutcome EC2Client::DeletePlacementGroup(const DeletePlacementGroupRequest& request) const {
-  return DeletePlacementGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePlacementGroupOutcome(result.GetResultWithOwnership())
+                            : DeletePlacementGroupOutcome(std::move(result.GetError()));
 }
 
 DeletePublicIpv4PoolOutcome EC2Client::DeletePublicIpv4Pool(const DeletePublicIpv4PoolRequest& request) const {
-  return DeletePublicIpv4PoolOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePublicIpv4PoolOutcome(result.GetResultWithOwnership())
+                            : DeletePublicIpv4PoolOutcome(std::move(result.GetError()));
 }
 
 DeleteQueuedReservedInstancesOutcome EC2Client::DeleteQueuedReservedInstances(const DeleteQueuedReservedInstancesRequest& request) const {
-  return DeleteQueuedReservedInstancesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteQueuedReservedInstancesOutcome(result.GetResultWithOwnership())
+                            : DeleteQueuedReservedInstancesOutcome(std::move(result.GetError()));
 }
 
 DeleteRouteOutcome EC2Client::DeleteRoute(const DeleteRouteRequest& request) const {
-  return DeleteRouteOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRouteOutcome(result.GetResultWithOwnership()) : DeleteRouteOutcome(std::move(result.GetError()));
 }
 
 DeleteRouteServerOutcome EC2Client::DeleteRouteServer(const DeleteRouteServerRequest& request) const {
-  return DeleteRouteServerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRouteServerOutcome(result.GetResultWithOwnership())
+                            : DeleteRouteServerOutcome(std::move(result.GetError()));
 }
 
 DeleteRouteServerEndpointOutcome EC2Client::DeleteRouteServerEndpoint(const DeleteRouteServerEndpointRequest& request) const {
-  return DeleteRouteServerEndpointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRouteServerEndpointOutcome(result.GetResultWithOwnership())
+                            : DeleteRouteServerEndpointOutcome(std::move(result.GetError()));
 }
 
 DeleteRouteServerPeerOutcome EC2Client::DeleteRouteServerPeer(const DeleteRouteServerPeerRequest& request) const {
-  return DeleteRouteServerPeerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRouteServerPeerOutcome(result.GetResultWithOwnership())
+                            : DeleteRouteServerPeerOutcome(std::move(result.GetError()));
 }
 
 DeleteRouteTableOutcome EC2Client::DeleteRouteTable(const DeleteRouteTableRequest& request) const {
-  return DeleteRouteTableOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRouteTableOutcome(result.GetResultWithOwnership())
+                            : DeleteRouteTableOutcome(std::move(result.GetError()));
 }
 
 DeleteSecondaryNetworkOutcome EC2Client::DeleteSecondaryNetwork(const DeleteSecondaryNetworkRequest& request) const {
-  return DeleteSecondaryNetworkOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSecondaryNetworkOutcome(result.GetResultWithOwnership())
+                            : DeleteSecondaryNetworkOutcome(std::move(result.GetError()));
 }
 
 DeleteSecondarySubnetOutcome EC2Client::DeleteSecondarySubnet(const DeleteSecondarySubnetRequest& request) const {
-  return DeleteSecondarySubnetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSecondarySubnetOutcome(result.GetResultWithOwnership())
+                            : DeleteSecondarySubnetOutcome(std::move(result.GetError()));
 }
 
 DeleteSecurityGroupOutcome EC2Client::DeleteSecurityGroup(const DeleteSecurityGroupRequest& request) const {
-  return DeleteSecurityGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSecurityGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteSecurityGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteSnapshotOutcome EC2Client::DeleteSnapshot(const DeleteSnapshotRequest& request) const {
-  return DeleteSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSnapshotOutcome(result.GetResultWithOwnership()) : DeleteSnapshotOutcome(std::move(result.GetError()));
 }
 
 DeleteSpotDatafeedSubscriptionOutcome EC2Client::DeleteSpotDatafeedSubscription(
     const DeleteSpotDatafeedSubscriptionRequest& request) const {
-  return DeleteSpotDatafeedSubscriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSpotDatafeedSubscriptionOutcome(result.GetResultWithOwnership())
+                            : DeleteSpotDatafeedSubscriptionOutcome(std::move(result.GetError()));
 }
 
 DeleteSubnetOutcome EC2Client::DeleteSubnet(const DeleteSubnetRequest& request) const {
-  return DeleteSubnetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSubnetOutcome(result.GetResultWithOwnership()) : DeleteSubnetOutcome(std::move(result.GetError()));
 }
 
 DeleteSubnetCidrReservationOutcome EC2Client::DeleteSubnetCidrReservation(const DeleteSubnetCidrReservationRequest& request) const {
-  return DeleteSubnetCidrReservationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSubnetCidrReservationOutcome(result.GetResultWithOwnership())
+                            : DeleteSubnetCidrReservationOutcome(std::move(result.GetError()));
 }
 
 DeleteTagsOutcome EC2Client::DeleteTags(const DeleteTagsRequest& request) const {
-  return DeleteTagsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTagsOutcome(result.GetResultWithOwnership()) : DeleteTagsOutcome(std::move(result.GetError()));
 }
 
 DeleteTrafficMirrorFilterOutcome EC2Client::DeleteTrafficMirrorFilter(const DeleteTrafficMirrorFilterRequest& request) const {
-  return DeleteTrafficMirrorFilterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTrafficMirrorFilterOutcome(result.GetResultWithOwnership())
+                            : DeleteTrafficMirrorFilterOutcome(std::move(result.GetError()));
 }
 
 DeleteTrafficMirrorFilterRuleOutcome EC2Client::DeleteTrafficMirrorFilterRule(const DeleteTrafficMirrorFilterRuleRequest& request) const {
-  return DeleteTrafficMirrorFilterRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTrafficMirrorFilterRuleOutcome(result.GetResultWithOwnership())
+                            : DeleteTrafficMirrorFilterRuleOutcome(std::move(result.GetError()));
 }
 
 DeleteTrafficMirrorSessionOutcome EC2Client::DeleteTrafficMirrorSession(const DeleteTrafficMirrorSessionRequest& request) const {
-  return DeleteTrafficMirrorSessionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTrafficMirrorSessionOutcome(result.GetResultWithOwnership())
+                            : DeleteTrafficMirrorSessionOutcome(std::move(result.GetError()));
 }
 
 DeleteTrafficMirrorTargetOutcome EC2Client::DeleteTrafficMirrorTarget(const DeleteTrafficMirrorTargetRequest& request) const {
-  return DeleteTrafficMirrorTargetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTrafficMirrorTargetOutcome(result.GetResultWithOwnership())
+                            : DeleteTrafficMirrorTargetOutcome(std::move(result.GetError()));
 }
 
 DeleteTransitGatewayOutcome EC2Client::DeleteTransitGateway(const DeleteTransitGatewayRequest& request) const {
-  return DeleteTransitGatewayOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTransitGatewayOutcome(result.GetResultWithOwnership())
+                            : DeleteTransitGatewayOutcome(std::move(result.GetError()));
 }
 
 DeleteTransitGatewayConnectOutcome EC2Client::DeleteTransitGatewayConnect(const DeleteTransitGatewayConnectRequest& request) const {
-  return DeleteTransitGatewayConnectOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTransitGatewayConnectOutcome(result.GetResultWithOwnership())
+                            : DeleteTransitGatewayConnectOutcome(std::move(result.GetError()));
 }
 
 DeleteTransitGatewayConnectPeerOutcome EC2Client::DeleteTransitGatewayConnectPeer(
     const DeleteTransitGatewayConnectPeerRequest& request) const {
-  return DeleteTransitGatewayConnectPeerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTransitGatewayConnectPeerOutcome(result.GetResultWithOwnership())
+                            : DeleteTransitGatewayConnectPeerOutcome(std::move(result.GetError()));
 }
 
 DeleteTransitGatewayMeteringPolicyOutcome EC2Client::DeleteTransitGatewayMeteringPolicy(
     const DeleteTransitGatewayMeteringPolicyRequest& request) const {
-  return DeleteTransitGatewayMeteringPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTransitGatewayMeteringPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteTransitGatewayMeteringPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteTransitGatewayMeteringPolicyEntryOutcome EC2Client::DeleteTransitGatewayMeteringPolicyEntry(
     const DeleteTransitGatewayMeteringPolicyEntryRequest& request) const {
-  return DeleteTransitGatewayMeteringPolicyEntryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTransitGatewayMeteringPolicyEntryOutcome(result.GetResultWithOwnership())
+                            : DeleteTransitGatewayMeteringPolicyEntryOutcome(std::move(result.GetError()));
 }
 
 DeleteTransitGatewayMulticastDomainOutcome EC2Client::DeleteTransitGatewayMulticastDomain(
     const DeleteTransitGatewayMulticastDomainRequest& request) const {
-  return DeleteTransitGatewayMulticastDomainOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTransitGatewayMulticastDomainOutcome(result.GetResultWithOwnership())
+                            : DeleteTransitGatewayMulticastDomainOutcome(std::move(result.GetError()));
 }
 
 DeleteTransitGatewayPeeringAttachmentOutcome EC2Client::DeleteTransitGatewayPeeringAttachment(
     const DeleteTransitGatewayPeeringAttachmentRequest& request) const {
-  return DeleteTransitGatewayPeeringAttachmentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTransitGatewayPeeringAttachmentOutcome(result.GetResultWithOwnership())
+                            : DeleteTransitGatewayPeeringAttachmentOutcome(std::move(result.GetError()));
 }
 
 DeleteTransitGatewayPolicyTableOutcome EC2Client::DeleteTransitGatewayPolicyTable(
     const DeleteTransitGatewayPolicyTableRequest& request) const {
-  return DeleteTransitGatewayPolicyTableOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTransitGatewayPolicyTableOutcome(result.GetResultWithOwnership())
+                            : DeleteTransitGatewayPolicyTableOutcome(std::move(result.GetError()));
 }
 
 DeleteTransitGatewayPrefixListReferenceOutcome EC2Client::DeleteTransitGatewayPrefixListReference(
     const DeleteTransitGatewayPrefixListReferenceRequest& request) const {
-  return DeleteTransitGatewayPrefixListReferenceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTransitGatewayPrefixListReferenceOutcome(result.GetResultWithOwnership())
+                            : DeleteTransitGatewayPrefixListReferenceOutcome(std::move(result.GetError()));
 }
 
 DeleteTransitGatewayRouteOutcome EC2Client::DeleteTransitGatewayRoute(const DeleteTransitGatewayRouteRequest& request) const {
-  return DeleteTransitGatewayRouteOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTransitGatewayRouteOutcome(result.GetResultWithOwnership())
+                            : DeleteTransitGatewayRouteOutcome(std::move(result.GetError()));
 }
 
 DeleteTransitGatewayRouteTableOutcome EC2Client::DeleteTransitGatewayRouteTable(
     const DeleteTransitGatewayRouteTableRequest& request) const {
-  return DeleteTransitGatewayRouteTableOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTransitGatewayRouteTableOutcome(result.GetResultWithOwnership())
+                            : DeleteTransitGatewayRouteTableOutcome(std::move(result.GetError()));
 }
 
 DeleteTransitGatewayRouteTableAnnouncementOutcome EC2Client::DeleteTransitGatewayRouteTableAnnouncement(
     const DeleteTransitGatewayRouteTableAnnouncementRequest& request) const {
-  return DeleteTransitGatewayRouteTableAnnouncementOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTransitGatewayRouteTableAnnouncementOutcome(result.GetResultWithOwnership())
+                            : DeleteTransitGatewayRouteTableAnnouncementOutcome(std::move(result.GetError()));
 }
 
 DeleteTransitGatewayVpcAttachmentOutcome EC2Client::DeleteTransitGatewayVpcAttachment(
     const DeleteTransitGatewayVpcAttachmentRequest& request) const {
-  return DeleteTransitGatewayVpcAttachmentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTransitGatewayVpcAttachmentOutcome(result.GetResultWithOwnership())
+                            : DeleteTransitGatewayVpcAttachmentOutcome(std::move(result.GetError()));
 }
 
 DeleteVerifiedAccessEndpointOutcome EC2Client::DeleteVerifiedAccessEndpoint(const DeleteVerifiedAccessEndpointRequest& request) const {
-  return DeleteVerifiedAccessEndpointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVerifiedAccessEndpointOutcome(result.GetResultWithOwnership())
+                            : DeleteVerifiedAccessEndpointOutcome(std::move(result.GetError()));
 }
 
 DeleteVerifiedAccessGroupOutcome EC2Client::DeleteVerifiedAccessGroup(const DeleteVerifiedAccessGroupRequest& request) const {
-  return DeleteVerifiedAccessGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVerifiedAccessGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteVerifiedAccessGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteVerifiedAccessInstanceOutcome EC2Client::DeleteVerifiedAccessInstance(const DeleteVerifiedAccessInstanceRequest& request) const {
-  return DeleteVerifiedAccessInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVerifiedAccessInstanceOutcome(result.GetResultWithOwnership())
+                            : DeleteVerifiedAccessInstanceOutcome(std::move(result.GetError()));
 }
 
 DeleteVerifiedAccessTrustProviderOutcome EC2Client::DeleteVerifiedAccessTrustProvider(
     const DeleteVerifiedAccessTrustProviderRequest& request) const {
-  return DeleteVerifiedAccessTrustProviderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVerifiedAccessTrustProviderOutcome(result.GetResultWithOwnership())
+                            : DeleteVerifiedAccessTrustProviderOutcome(std::move(result.GetError()));
 }
 
 DeleteVolumeOutcome EC2Client::DeleteVolume(const DeleteVolumeRequest& request) const {
-  return DeleteVolumeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVolumeOutcome(result.GetResultWithOwnership()) : DeleteVolumeOutcome(std::move(result.GetError()));
 }
 
 DeleteVpcOutcome EC2Client::DeleteVpc(const DeleteVpcRequest& request) const {
-  return DeleteVpcOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVpcOutcome(result.GetResultWithOwnership()) : DeleteVpcOutcome(std::move(result.GetError()));
 }
 
 DeleteVpcBlockPublicAccessExclusionOutcome EC2Client::DeleteVpcBlockPublicAccessExclusion(
     const DeleteVpcBlockPublicAccessExclusionRequest& request) const {
-  return DeleteVpcBlockPublicAccessExclusionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVpcBlockPublicAccessExclusionOutcome(result.GetResultWithOwnership())
+                            : DeleteVpcBlockPublicAccessExclusionOutcome(std::move(result.GetError()));
 }
 
 DeleteVpcEncryptionControlOutcome EC2Client::DeleteVpcEncryptionControl(const DeleteVpcEncryptionControlRequest& request) const {
-  return DeleteVpcEncryptionControlOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVpcEncryptionControlOutcome(result.GetResultWithOwnership())
+                            : DeleteVpcEncryptionControlOutcome(std::move(result.GetError()));
 }
 
 DeleteVpcEndpointConnectionNotificationsOutcome EC2Client::DeleteVpcEndpointConnectionNotifications(
     const DeleteVpcEndpointConnectionNotificationsRequest& request) const {
-  return DeleteVpcEndpointConnectionNotificationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVpcEndpointConnectionNotificationsOutcome(result.GetResultWithOwnership())
+                            : DeleteVpcEndpointConnectionNotificationsOutcome(std::move(result.GetError()));
 }
 
 DeleteVpcEndpointServiceConfigurationsOutcome EC2Client::DeleteVpcEndpointServiceConfigurations(
     const DeleteVpcEndpointServiceConfigurationsRequest& request) const {
-  return DeleteVpcEndpointServiceConfigurationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVpcEndpointServiceConfigurationsOutcome(result.GetResultWithOwnership())
+                            : DeleteVpcEndpointServiceConfigurationsOutcome(std::move(result.GetError()));
 }
 
 DeleteVpcEndpointsOutcome EC2Client::DeleteVpcEndpoints(const DeleteVpcEndpointsRequest& request) const {
-  return DeleteVpcEndpointsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVpcEndpointsOutcome(result.GetResultWithOwnership())
+                            : DeleteVpcEndpointsOutcome(std::move(result.GetError()));
 }
 
 DeleteVpcPeeringConnectionOutcome EC2Client::DeleteVpcPeeringConnection(const DeleteVpcPeeringConnectionRequest& request) const {
-  return DeleteVpcPeeringConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVpcPeeringConnectionOutcome(result.GetResultWithOwnership())
+                            : DeleteVpcPeeringConnectionOutcome(std::move(result.GetError()));
 }
 
 DeleteVpnConcentratorOutcome EC2Client::DeleteVpnConcentrator(const DeleteVpnConcentratorRequest& request) const {
-  return DeleteVpnConcentratorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVpnConcentratorOutcome(result.GetResultWithOwnership())
+                            : DeleteVpnConcentratorOutcome(std::move(result.GetError()));
 }
 
 DeleteVpnConnectionOutcome EC2Client::DeleteVpnConnection(const DeleteVpnConnectionRequest& request) const {
-  return DeleteVpnConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVpnConnectionOutcome(result.GetResultWithOwnership())
+                            : DeleteVpnConnectionOutcome(std::move(result.GetError()));
 }
 
 DeleteVpnConnectionRouteOutcome EC2Client::DeleteVpnConnectionRoute(const DeleteVpnConnectionRouteRequest& request) const {
-  return DeleteVpnConnectionRouteOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVpnConnectionRouteOutcome(result.GetResultWithOwnership())
+                            : DeleteVpnConnectionRouteOutcome(std::move(result.GetError()));
 }
 
 DeleteVpnGatewayOutcome EC2Client::DeleteVpnGateway(const DeleteVpnGatewayRequest& request) const {
-  return DeleteVpnGatewayOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVpnGatewayOutcome(result.GetResultWithOwnership())
+                            : DeleteVpnGatewayOutcome(std::move(result.GetError()));
 }
 
 DeprovisionByoipCidrOutcome EC2Client::DeprovisionByoipCidr(const DeprovisionByoipCidrRequest& request) const {
-  return DeprovisionByoipCidrOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeprovisionByoipCidrOutcome(result.GetResultWithOwnership())
+                            : DeprovisionByoipCidrOutcome(std::move(result.GetError()));
 }
 
 DeprovisionIpamByoasnOutcome EC2Client::DeprovisionIpamByoasn(const DeprovisionIpamByoasnRequest& request) const {
-  return DeprovisionIpamByoasnOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeprovisionIpamByoasnOutcome(result.GetResultWithOwnership())
+                            : DeprovisionIpamByoasnOutcome(std::move(result.GetError()));
 }
 
 DeprovisionIpamPoolCidrOutcome EC2Client::DeprovisionIpamPoolCidr(const DeprovisionIpamPoolCidrRequest& request) const {
-  return DeprovisionIpamPoolCidrOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeprovisionIpamPoolCidrOutcome(result.GetResultWithOwnership())
+                            : DeprovisionIpamPoolCidrOutcome(std::move(result.GetError()));
 }
 
 DeprovisionPublicIpv4PoolCidrOutcome EC2Client::DeprovisionPublicIpv4PoolCidr(const DeprovisionPublicIpv4PoolCidrRequest& request) const {
-  return DeprovisionPublicIpv4PoolCidrOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeprovisionPublicIpv4PoolCidrOutcome(result.GetResultWithOwnership())
+                            : DeprovisionPublicIpv4PoolCidrOutcome(std::move(result.GetError()));
 }
 
 DeregisterImageOutcome EC2Client::DeregisterImage(const DeregisterImageRequest& request) const {
-  return DeregisterImageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterImageOutcome(result.GetResultWithOwnership())
+                            : DeregisterImageOutcome(std::move(result.GetError()));
 }
 
 DeregisterInstanceEventNotificationAttributesOutcome EC2Client::DeregisterInstanceEventNotificationAttributes(
     const DeregisterInstanceEventNotificationAttributesRequest& request) const {
-  return DeregisterInstanceEventNotificationAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterInstanceEventNotificationAttributesOutcome(result.GetResultWithOwnership())
+                            : DeregisterInstanceEventNotificationAttributesOutcome(std::move(result.GetError()));
 }
 
 DeregisterTransitGatewayMulticastGroupMembersOutcome EC2Client::DeregisterTransitGatewayMulticastGroupMembers(
     const DeregisterTransitGatewayMulticastGroupMembersRequest& request) const {
-  return DeregisterTransitGatewayMulticastGroupMembersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterTransitGatewayMulticastGroupMembersOutcome(result.GetResultWithOwnership())
+                            : DeregisterTransitGatewayMulticastGroupMembersOutcome(std::move(result.GetError()));
 }
 
 DeregisterTransitGatewayMulticastGroupSourcesOutcome EC2Client::DeregisterTransitGatewayMulticastGroupSources(
     const DeregisterTransitGatewayMulticastGroupSourcesRequest& request) const {
-  return DeregisterTransitGatewayMulticastGroupSourcesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterTransitGatewayMulticastGroupSourcesOutcome(result.GetResultWithOwnership())
+                            : DeregisterTransitGatewayMulticastGroupSourcesOutcome(std::move(result.GetError()));
 }
 
 DescribeAccountAttributesOutcome EC2Client::DescribeAccountAttributes(const DescribeAccountAttributesRequest& request) const {
-  return DescribeAccountAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAccountAttributesOutcome(result.GetResultWithOwnership())
+                            : DescribeAccountAttributesOutcome(std::move(result.GetError()));
 }
 
 DescribeAddressTransfersOutcome EC2Client::DescribeAddressTransfers(const DescribeAddressTransfersRequest& request) const {
-  return DescribeAddressTransfersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAddressTransfersOutcome(result.GetResultWithOwnership())
+                            : DescribeAddressTransfersOutcome(std::move(result.GetError()));
 }
 
 DescribeAddressesOutcome EC2Client::DescribeAddresses(const DescribeAddressesRequest& request) const {
-  return DescribeAddressesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAddressesOutcome(result.GetResultWithOwnership())
+                            : DescribeAddressesOutcome(std::move(result.GetError()));
 }
 
 DescribeAddressesAttributeOutcome EC2Client::DescribeAddressesAttribute(const DescribeAddressesAttributeRequest& request) const {
-  return DescribeAddressesAttributeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAddressesAttributeOutcome(result.GetResultWithOwnership())
+                            : DescribeAddressesAttributeOutcome(std::move(result.GetError()));
 }
 
 DescribeAggregateIdFormatOutcome EC2Client::DescribeAggregateIdFormat(const DescribeAggregateIdFormatRequest& request) const {
-  return DescribeAggregateIdFormatOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAggregateIdFormatOutcome(result.GetResultWithOwnership())
+                            : DescribeAggregateIdFormatOutcome(std::move(result.GetError()));
 }
 
 DescribeAvailabilityZonesOutcome EC2Client::DescribeAvailabilityZones(const DescribeAvailabilityZonesRequest& request) const {
-  return DescribeAvailabilityZonesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAvailabilityZonesOutcome(result.GetResultWithOwnership())
+                            : DescribeAvailabilityZonesOutcome(std::move(result.GetError()));
 }
 
 DescribeAwsNetworkPerformanceMetricSubscriptionsOutcome EC2Client::DescribeAwsNetworkPerformanceMetricSubscriptions(
     const DescribeAwsNetworkPerformanceMetricSubscriptionsRequest& request) const {
-  return DescribeAwsNetworkPerformanceMetricSubscriptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAwsNetworkPerformanceMetricSubscriptionsOutcome(result.GetResultWithOwnership())
+                            : DescribeAwsNetworkPerformanceMetricSubscriptionsOutcome(std::move(result.GetError()));
 }
 
 DescribeBundleTasksOutcome EC2Client::DescribeBundleTasks(const DescribeBundleTasksRequest& request) const {
-  return DescribeBundleTasksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeBundleTasksOutcome(result.GetResultWithOwnership())
+                            : DescribeBundleTasksOutcome(std::move(result.GetError()));
 }
 
 DescribeByoipCidrsOutcome EC2Client::DescribeByoipCidrs(const DescribeByoipCidrsRequest& request) const {
-  return DescribeByoipCidrsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeByoipCidrsOutcome(result.GetResultWithOwnership())
+                            : DescribeByoipCidrsOutcome(std::move(result.GetError()));
 }
 
 DescribeCapacityBlockExtensionHistoryOutcome EC2Client::DescribeCapacityBlockExtensionHistory(
     const DescribeCapacityBlockExtensionHistoryRequest& request) const {
-  return DescribeCapacityBlockExtensionHistoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCapacityBlockExtensionHistoryOutcome(result.GetResultWithOwnership())
+                            : DescribeCapacityBlockExtensionHistoryOutcome(std::move(result.GetError()));
 }
 
 DescribeCapacityBlockExtensionOfferingsOutcome EC2Client::DescribeCapacityBlockExtensionOfferings(
     const DescribeCapacityBlockExtensionOfferingsRequest& request) const {
-  return DescribeCapacityBlockExtensionOfferingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCapacityBlockExtensionOfferingsOutcome(result.GetResultWithOwnership())
+                            : DescribeCapacityBlockExtensionOfferingsOutcome(std::move(result.GetError()));
 }
 
 DescribeCapacityBlockOfferingsOutcome EC2Client::DescribeCapacityBlockOfferings(
     const DescribeCapacityBlockOfferingsRequest& request) const {
-  return DescribeCapacityBlockOfferingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCapacityBlockOfferingsOutcome(result.GetResultWithOwnership())
+                            : DescribeCapacityBlockOfferingsOutcome(std::move(result.GetError()));
 }
 
 DescribeCapacityBlockStatusOutcome EC2Client::DescribeCapacityBlockStatus(const DescribeCapacityBlockStatusRequest& request) const {
-  return DescribeCapacityBlockStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCapacityBlockStatusOutcome(result.GetResultWithOwnership())
+                            : DescribeCapacityBlockStatusOutcome(std::move(result.GetError()));
 }
 
 DescribeCapacityBlocksOutcome EC2Client::DescribeCapacityBlocks(const DescribeCapacityBlocksRequest& request) const {
-  return DescribeCapacityBlocksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCapacityBlocksOutcome(result.GetResultWithOwnership())
+                            : DescribeCapacityBlocksOutcome(std::move(result.GetError()));
 }
 
 DescribeCapacityManagerDataExportsOutcome EC2Client::DescribeCapacityManagerDataExports(
     const DescribeCapacityManagerDataExportsRequest& request) const {
-  return DescribeCapacityManagerDataExportsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCapacityManagerDataExportsOutcome(result.GetResultWithOwnership())
+                            : DescribeCapacityManagerDataExportsOutcome(std::move(result.GetError()));
 }
 
 DescribeCapacityReservationBillingRequestsOutcome EC2Client::DescribeCapacityReservationBillingRequests(
     const DescribeCapacityReservationBillingRequestsRequest& request) const {
-  return DescribeCapacityReservationBillingRequestsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCapacityReservationBillingRequestsOutcome(result.GetResultWithOwnership())
+                            : DescribeCapacityReservationBillingRequestsOutcome(std::move(result.GetError()));
 }
 
 DescribeCapacityReservationFleetsOutcome EC2Client::DescribeCapacityReservationFleets(
     const DescribeCapacityReservationFleetsRequest& request) const {
-  return DescribeCapacityReservationFleetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCapacityReservationFleetsOutcome(result.GetResultWithOwnership())
+                            : DescribeCapacityReservationFleetsOutcome(std::move(result.GetError()));
 }
 
 DescribeCapacityReservationTopologyOutcome EC2Client::DescribeCapacityReservationTopology(
     const DescribeCapacityReservationTopologyRequest& request) const {
-  return DescribeCapacityReservationTopologyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCapacityReservationTopologyOutcome(result.GetResultWithOwnership())
+                            : DescribeCapacityReservationTopologyOutcome(std::move(result.GetError()));
 }
 
 DescribeCapacityReservationsOutcome EC2Client::DescribeCapacityReservations(const DescribeCapacityReservationsRequest& request) const {
-  return DescribeCapacityReservationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCapacityReservationsOutcome(result.GetResultWithOwnership())
+                            : DescribeCapacityReservationsOutcome(std::move(result.GetError()));
 }
 
 DescribeCarrierGatewaysOutcome EC2Client::DescribeCarrierGateways(const DescribeCarrierGatewaysRequest& request) const {
-  return DescribeCarrierGatewaysOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCarrierGatewaysOutcome(result.GetResultWithOwnership())
+                            : DescribeCarrierGatewaysOutcome(std::move(result.GetError()));
 }
 
 DescribeClassicLinkInstancesOutcome EC2Client::DescribeClassicLinkInstances(const DescribeClassicLinkInstancesRequest& request) const {
-  return DescribeClassicLinkInstancesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeClassicLinkInstancesOutcome(result.GetResultWithOwnership())
+                            : DescribeClassicLinkInstancesOutcome(std::move(result.GetError()));
 }
 
 DescribeClientVpnAuthorizationRulesOutcome EC2Client::DescribeClientVpnAuthorizationRules(
     const DescribeClientVpnAuthorizationRulesRequest& request) const {
-  return DescribeClientVpnAuthorizationRulesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeClientVpnAuthorizationRulesOutcome(result.GetResultWithOwnership())
+                            : DescribeClientVpnAuthorizationRulesOutcome(std::move(result.GetError()));
 }
 
 DescribeClientVpnConnectionsOutcome EC2Client::DescribeClientVpnConnections(const DescribeClientVpnConnectionsRequest& request) const {
-  return DescribeClientVpnConnectionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeClientVpnConnectionsOutcome(result.GetResultWithOwnership())
+                            : DescribeClientVpnConnectionsOutcome(std::move(result.GetError()));
 }
 
 DescribeClientVpnEndpointsOutcome EC2Client::DescribeClientVpnEndpoints(const DescribeClientVpnEndpointsRequest& request) const {
-  return DescribeClientVpnEndpointsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeClientVpnEndpointsOutcome(result.GetResultWithOwnership())
+                            : DescribeClientVpnEndpointsOutcome(std::move(result.GetError()));
 }
 
 DescribeClientVpnRoutesOutcome EC2Client::DescribeClientVpnRoutes(const DescribeClientVpnRoutesRequest& request) const {
-  return DescribeClientVpnRoutesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeClientVpnRoutesOutcome(result.GetResultWithOwnership())
+                            : DescribeClientVpnRoutesOutcome(std::move(result.GetError()));
 }
 
 DescribeClientVpnTargetNetworksOutcome EC2Client::DescribeClientVpnTargetNetworks(
     const DescribeClientVpnTargetNetworksRequest& request) const {
-  return DescribeClientVpnTargetNetworksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeClientVpnTargetNetworksOutcome(result.GetResultWithOwnership())
+                            : DescribeClientVpnTargetNetworksOutcome(std::move(result.GetError()));
 }
 
 DescribeCoipPoolsOutcome EC2Client::DescribeCoipPools(const DescribeCoipPoolsRequest& request) const {
-  return DescribeCoipPoolsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCoipPoolsOutcome(result.GetResultWithOwnership())
+                            : DescribeCoipPoolsOutcome(std::move(result.GetError()));
 }
 
 DescribeConversionTasksOutcome EC2Client::DescribeConversionTasks(const DescribeConversionTasksRequest& request) const {
-  return DescribeConversionTasksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeConversionTasksOutcome(result.GetResultWithOwnership())
+                            : DescribeConversionTasksOutcome(std::move(result.GetError()));
 }
 
 DescribeCustomerGatewaysOutcome EC2Client::DescribeCustomerGateways(const DescribeCustomerGatewaysRequest& request) const {
-  return DescribeCustomerGatewaysOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCustomerGatewaysOutcome(result.GetResultWithOwnership())
+                            : DescribeCustomerGatewaysOutcome(std::move(result.GetError()));
 }
 
 DescribeDeclarativePoliciesReportsOutcome EC2Client::DescribeDeclarativePoliciesReports(
     const DescribeDeclarativePoliciesReportsRequest& request) const {
-  return DescribeDeclarativePoliciesReportsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDeclarativePoliciesReportsOutcome(result.GetResultWithOwnership())
+                            : DescribeDeclarativePoliciesReportsOutcome(std::move(result.GetError()));
 }
 
 DescribeDhcpOptionsOutcome EC2Client::DescribeDhcpOptions(const DescribeDhcpOptionsRequest& request) const {
-  return DescribeDhcpOptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDhcpOptionsOutcome(result.GetResultWithOwnership())
+                            : DescribeDhcpOptionsOutcome(std::move(result.GetError()));
 }
 
 DescribeEgressOnlyInternetGatewaysOutcome EC2Client::DescribeEgressOnlyInternetGateways(
     const DescribeEgressOnlyInternetGatewaysRequest& request) const {
-  return DescribeEgressOnlyInternetGatewaysOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEgressOnlyInternetGatewaysOutcome(result.GetResultWithOwnership())
+                            : DescribeEgressOnlyInternetGatewaysOutcome(std::move(result.GetError()));
 }
 
 DescribeElasticGpusOutcome EC2Client::DescribeElasticGpus(const DescribeElasticGpusRequest& request) const {
-  return DescribeElasticGpusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeElasticGpusOutcome(result.GetResultWithOwnership())
+                            : DescribeElasticGpusOutcome(std::move(result.GetError()));
 }
 
 DescribeExportImageTasksOutcome EC2Client::DescribeExportImageTasks(const DescribeExportImageTasksRequest& request) const {
-  return DescribeExportImageTasksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeExportImageTasksOutcome(result.GetResultWithOwnership())
+                            : DescribeExportImageTasksOutcome(std::move(result.GetError()));
 }
 
 DescribeExportTasksOutcome EC2Client::DescribeExportTasks(const DescribeExportTasksRequest& request) const {
-  return DescribeExportTasksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeExportTasksOutcome(result.GetResultWithOwnership())
+                            : DescribeExportTasksOutcome(std::move(result.GetError()));
 }

@@ -227,7 +227,8 @@ CloneBackendOutcome AmplifyBackendClient::CloneBackend(const CloneBackendRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/clone");
   };
 
-  return CloneBackendOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CloneBackendOutcome(result.GetResultWithOwnership()) : CloneBackendOutcome(std::move(result.GetError()));
 }
 
 CreateBackendOutcome AmplifyBackendClient::CreateBackend(const CreateBackendRequest& request) const {
@@ -236,7 +237,8 @@ CreateBackendOutcome AmplifyBackendClient::CreateBackend(const CreateBackendRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/backend");
   };
 
-  return CreateBackendOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBackendOutcome(result.GetResultWithOwnership()) : CreateBackendOutcome(std::move(result.GetError()));
 }
 
 CreateBackendAPIOutcome AmplifyBackendClient::CreateBackendAPI(const CreateBackendAPIRequest& request) const {
@@ -253,7 +255,9 @@ CreateBackendAPIOutcome AmplifyBackendClient::CreateBackendAPI(const CreateBacke
     endpointResolutionOutcome.GetResult().AddPathSegments("/api");
   };
 
-  return CreateBackendAPIOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBackendAPIOutcome(result.GetResultWithOwnership())
+                            : CreateBackendAPIOutcome(std::move(result.GetError()));
 }
 
 CreateBackendAuthOutcome AmplifyBackendClient::CreateBackendAuth(const CreateBackendAuthRequest& request) const {
@@ -270,7 +274,9 @@ CreateBackendAuthOutcome AmplifyBackendClient::CreateBackendAuth(const CreateBac
     endpointResolutionOutcome.GetResult().AddPathSegments("/auth");
   };
 
-  return CreateBackendAuthOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBackendAuthOutcome(result.GetResultWithOwnership())
+                            : CreateBackendAuthOutcome(std::move(result.GetError()));
 }
 
 CreateBackendConfigOutcome AmplifyBackendClient::CreateBackendConfig(const CreateBackendConfigRequest& request) const {
@@ -287,7 +293,9 @@ CreateBackendConfigOutcome AmplifyBackendClient::CreateBackendConfig(const Creat
     endpointResolutionOutcome.GetResult().AddPathSegments("/config");
   };
 
-  return CreateBackendConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBackendConfigOutcome(result.GetResultWithOwnership())
+                            : CreateBackendConfigOutcome(std::move(result.GetError()));
 }
 
 CreateBackendStorageOutcome AmplifyBackendClient::CreateBackendStorage(const CreateBackendStorageRequest& request) const {
@@ -304,7 +312,9 @@ CreateBackendStorageOutcome AmplifyBackendClient::CreateBackendStorage(const Cre
     endpointResolutionOutcome.GetResult().AddPathSegments("/storage");
   };
 
-  return CreateBackendStorageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBackendStorageOutcome(result.GetResultWithOwnership())
+                            : CreateBackendStorageOutcome(std::move(result.GetError()));
 }
 
 CreateTokenOutcome AmplifyBackendClient::CreateToken(const CreateTokenRequest& request) const {
@@ -321,7 +331,8 @@ CreateTokenOutcome AmplifyBackendClient::CreateToken(const CreateTokenRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/challenge");
   };
 
-  return CreateTokenOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTokenOutcome(result.GetResultWithOwnership()) : CreateTokenOutcome(std::move(result.GetError()));
 }
 
 DeleteBackendOutcome AmplifyBackendClient::DeleteBackend(const DeleteBackendRequest& request) const {
@@ -345,7 +356,8 @@ DeleteBackendOutcome AmplifyBackendClient::DeleteBackend(const DeleteBackendRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/remove");
   };
 
-  return DeleteBackendOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteBackendOutcome(result.GetResultWithOwnership()) : DeleteBackendOutcome(std::move(result.GetError()));
 }
 
 DeleteBackendAPIOutcome AmplifyBackendClient::DeleteBackendAPI(const DeleteBackendAPIRequest& request) const {
@@ -369,7 +381,9 @@ DeleteBackendAPIOutcome AmplifyBackendClient::DeleteBackendAPI(const DeleteBacke
     endpointResolutionOutcome.GetResult().AddPathSegments("/remove");
   };
 
-  return DeleteBackendAPIOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteBackendAPIOutcome(result.GetResultWithOwnership())
+                            : DeleteBackendAPIOutcome(std::move(result.GetError()));
 }
 
 DeleteBackendAuthOutcome AmplifyBackendClient::DeleteBackendAuth(const DeleteBackendAuthRequest& request) const {
@@ -393,7 +407,9 @@ DeleteBackendAuthOutcome AmplifyBackendClient::DeleteBackendAuth(const DeleteBac
     endpointResolutionOutcome.GetResult().AddPathSegments("/remove");
   };
 
-  return DeleteBackendAuthOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteBackendAuthOutcome(result.GetResultWithOwnership())
+                            : DeleteBackendAuthOutcome(std::move(result.GetError()));
 }
 
 DeleteBackendStorageOutcome AmplifyBackendClient::DeleteBackendStorage(const DeleteBackendStorageRequest& request) const {
@@ -417,7 +433,9 @@ DeleteBackendStorageOutcome AmplifyBackendClient::DeleteBackendStorage(const Del
     endpointResolutionOutcome.GetResult().AddPathSegments("/remove");
   };
 
-  return DeleteBackendStorageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteBackendStorageOutcome(result.GetResultWithOwnership())
+                            : DeleteBackendStorageOutcome(std::move(result.GetError()));
 }
 
 DeleteTokenOutcome AmplifyBackendClient::DeleteToken(const DeleteTokenRequest& request) const {
@@ -441,7 +459,8 @@ DeleteTokenOutcome AmplifyBackendClient::DeleteToken(const DeleteTokenRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/remove");
   };
 
-  return DeleteTokenOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTokenOutcome(result.GetResultWithOwnership()) : DeleteTokenOutcome(std::move(result.GetError()));
 }
 
 GenerateBackendAPIModelsOutcome AmplifyBackendClient::GenerateBackendAPIModels(const GenerateBackendAPIModelsRequest& request) const {
@@ -465,7 +484,9 @@ GenerateBackendAPIModelsOutcome AmplifyBackendClient::GenerateBackendAPIModels(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/generateModels");
   };
 
-  return GenerateBackendAPIModelsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GenerateBackendAPIModelsOutcome(result.GetResultWithOwnership())
+                            : GenerateBackendAPIModelsOutcome(std::move(result.GetError()));
 }
 
 GetBackendOutcome AmplifyBackendClient::GetBackend(const GetBackendRequest& request) const {
@@ -482,7 +503,8 @@ GetBackendOutcome AmplifyBackendClient::GetBackend(const GetBackendRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/details");
   };
 
-  return GetBackendOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetBackendOutcome(result.GetResultWithOwnership()) : GetBackendOutcome(std::move(result.GetError()));
 }
 
 GetBackendAPIOutcome AmplifyBackendClient::GetBackendAPI(const GetBackendAPIRequest& request) const {
@@ -506,7 +528,8 @@ GetBackendAPIOutcome AmplifyBackendClient::GetBackendAPI(const GetBackendAPIRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/details");
   };
 
-  return GetBackendAPIOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetBackendAPIOutcome(result.GetResultWithOwnership()) : GetBackendAPIOutcome(std::move(result.GetError()));
 }
 
 GetBackendAPIModelsOutcome AmplifyBackendClient::GetBackendAPIModels(const GetBackendAPIModelsRequest& request) const {
@@ -530,7 +553,9 @@ GetBackendAPIModelsOutcome AmplifyBackendClient::GetBackendAPIModels(const GetBa
     endpointResolutionOutcome.GetResult().AddPathSegments("/getModels");
   };
 
-  return GetBackendAPIModelsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetBackendAPIModelsOutcome(result.GetResultWithOwnership())
+                            : GetBackendAPIModelsOutcome(std::move(result.GetError()));
 }
 
 GetBackendAuthOutcome AmplifyBackendClient::GetBackendAuth(const GetBackendAuthRequest& request) const {
@@ -554,7 +579,8 @@ GetBackendAuthOutcome AmplifyBackendClient::GetBackendAuth(const GetBackendAuthR
     endpointResolutionOutcome.GetResult().AddPathSegments("/details");
   };
 
-  return GetBackendAuthOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetBackendAuthOutcome(result.GetResultWithOwnership()) : GetBackendAuthOutcome(std::move(result.GetError()));
 }
 
 GetBackendJobOutcome AmplifyBackendClient::GetBackendJob(const GetBackendJobRequest& request) const {
@@ -583,7 +609,8 @@ GetBackendJobOutcome AmplifyBackendClient::GetBackendJob(const GetBackendJobRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return GetBackendJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBackendJobOutcome(result.GetResultWithOwnership()) : GetBackendJobOutcome(std::move(result.GetError()));
 }
 
 GetBackendStorageOutcome AmplifyBackendClient::GetBackendStorage(const GetBackendStorageRequest& request) const {
@@ -607,7 +634,9 @@ GetBackendStorageOutcome AmplifyBackendClient::GetBackendStorage(const GetBacken
     endpointResolutionOutcome.GetResult().AddPathSegments("/details");
   };
 
-  return GetBackendStorageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetBackendStorageOutcome(result.GetResultWithOwnership())
+                            : GetBackendStorageOutcome(std::move(result.GetError()));
 }
 
 GetTokenOutcome AmplifyBackendClient::GetToken(const GetTokenRequest& request) const {
@@ -630,7 +659,8 @@ GetTokenOutcome AmplifyBackendClient::GetToken(const GetTokenRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
   };
 
-  return GetTokenOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTokenOutcome(result.GetResultWithOwnership()) : GetTokenOutcome(std::move(result.GetError()));
 }
 
 ImportBackendAuthOutcome AmplifyBackendClient::ImportBackendAuth(const ImportBackendAuthRequest& request) const {
@@ -654,7 +684,9 @@ ImportBackendAuthOutcome AmplifyBackendClient::ImportBackendAuth(const ImportBac
     endpointResolutionOutcome.GetResult().AddPathSegments("/import");
   };
 
-  return ImportBackendAuthOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportBackendAuthOutcome(result.GetResultWithOwnership())
+                            : ImportBackendAuthOutcome(std::move(result.GetError()));
 }
 
 ImportBackendStorageOutcome AmplifyBackendClient::ImportBackendStorage(const ImportBackendStorageRequest& request) const {
@@ -678,7 +710,9 @@ ImportBackendStorageOutcome AmplifyBackendClient::ImportBackendStorage(const Imp
     endpointResolutionOutcome.GetResult().AddPathSegments("/import");
   };
 
-  return ImportBackendStorageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportBackendStorageOutcome(result.GetResultWithOwnership())
+                            : ImportBackendStorageOutcome(std::move(result.GetError()));
 }
 
 ListBackendJobsOutcome AmplifyBackendClient::ListBackendJobs(const ListBackendJobsRequest& request) const {
@@ -701,7 +735,9 @@ ListBackendJobsOutcome AmplifyBackendClient::ListBackendJobs(const ListBackendJo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackendEnvironmentName());
   };
 
-  return ListBackendJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBackendJobsOutcome(result.GetResultWithOwnership())
+                            : ListBackendJobsOutcome(std::move(result.GetError()));
 }
 
 ListS3BucketsOutcome AmplifyBackendClient::ListS3Buckets(const ListS3BucketsRequest& request) const {
@@ -710,7 +746,8 @@ ListS3BucketsOutcome AmplifyBackendClient::ListS3Buckets(const ListS3BucketsRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/s3Buckets");
   };
 
-  return ListS3BucketsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListS3BucketsOutcome(result.GetResultWithOwnership()) : ListS3BucketsOutcome(std::move(result.GetError()));
 }
 
 RemoveAllBackendsOutcome AmplifyBackendClient::RemoveAllBackends(const RemoveAllBackendsRequest& request) const {
@@ -727,7 +764,9 @@ RemoveAllBackendsOutcome AmplifyBackendClient::RemoveAllBackends(const RemoveAll
     endpointResolutionOutcome.GetResult().AddPathSegments("/remove");
   };
 
-  return RemoveAllBackendsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveAllBackendsOutcome(result.GetResultWithOwnership())
+                            : RemoveAllBackendsOutcome(std::move(result.GetError()));
 }
 
 RemoveBackendConfigOutcome AmplifyBackendClient::RemoveBackendConfig(const RemoveBackendConfigRequest& request) const {
@@ -744,7 +783,9 @@ RemoveBackendConfigOutcome AmplifyBackendClient::RemoveBackendConfig(const Remov
     endpointResolutionOutcome.GetResult().AddPathSegments("/config/remove");
   };
 
-  return RemoveBackendConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveBackendConfigOutcome(result.GetResultWithOwnership())
+                            : RemoveBackendConfigOutcome(std::move(result.GetError()));
 }
 
 UpdateBackendAPIOutcome AmplifyBackendClient::UpdateBackendAPI(const UpdateBackendAPIRequest& request) const {
@@ -767,7 +808,9 @@ UpdateBackendAPIOutcome AmplifyBackendClient::UpdateBackendAPI(const UpdateBacke
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackendEnvironmentName());
   };
 
-  return UpdateBackendAPIOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateBackendAPIOutcome(result.GetResultWithOwnership())
+                            : UpdateBackendAPIOutcome(std::move(result.GetError()));
 }
 
 UpdateBackendAuthOutcome AmplifyBackendClient::UpdateBackendAuth(const UpdateBackendAuthRequest& request) const {
@@ -790,7 +833,9 @@ UpdateBackendAuthOutcome AmplifyBackendClient::UpdateBackendAuth(const UpdateBac
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackendEnvironmentName());
   };
 
-  return UpdateBackendAuthOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateBackendAuthOutcome(result.GetResultWithOwnership())
+                            : UpdateBackendAuthOutcome(std::move(result.GetError()));
 }
 
 UpdateBackendConfigOutcome AmplifyBackendClient::UpdateBackendConfig(const UpdateBackendConfigRequest& request) const {
@@ -807,7 +852,9 @@ UpdateBackendConfigOutcome AmplifyBackendClient::UpdateBackendConfig(const Updat
     endpointResolutionOutcome.GetResult().AddPathSegments("/config/update");
   };
 
-  return UpdateBackendConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateBackendConfigOutcome(result.GetResultWithOwnership())
+                            : UpdateBackendConfigOutcome(std::move(result.GetError()));
 }
 
 UpdateBackendJobOutcome AmplifyBackendClient::UpdateBackendJob(const UpdateBackendJobRequest& request) const {
@@ -836,7 +883,9 @@ UpdateBackendJobOutcome AmplifyBackendClient::UpdateBackendJob(const UpdateBacke
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return UpdateBackendJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateBackendJobOutcome(result.GetResultWithOwnership())
+                            : UpdateBackendJobOutcome(std::move(result.GetError()));
 }
 
 UpdateBackendStorageOutcome AmplifyBackendClient::UpdateBackendStorage(const UpdateBackendStorageRequest& request) const {
@@ -859,5 +908,7 @@ UpdateBackendStorageOutcome AmplifyBackendClient::UpdateBackendStorage(const Upd
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackendEnvironmentName());
   };
 
-  return UpdateBackendStorageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateBackendStorageOutcome(result.GetResultWithOwnership())
+                            : UpdateBackendStorageOutcome(std::move(result.GetError()));
 }

@@ -286,7 +286,9 @@ ActivateMessageTemplateOutcome QConnectClient::ActivateMessageTemplate(const Act
     endpointResolutionOutcome.GetResult().AddPathSegments("/activate");
   };
 
-  return ActivateMessageTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ActivateMessageTemplateOutcome(result.GetResultWithOwnership())
+                            : ActivateMessageTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateAIAgentOutcome QConnectClient::CreateAIAgent(const CreateAIAgentRequest& request) const {
@@ -303,7 +305,8 @@ CreateAIAgentOutcome QConnectClient::CreateAIAgent(const CreateAIAgentRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/aiagents");
   };
 
-  return CreateAIAgentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAIAgentOutcome(result.GetResultWithOwnership()) : CreateAIAgentOutcome(std::move(result.GetError()));
 }
 
 CreateAIAgentVersionOutcome QConnectClient::CreateAIAgentVersion(const CreateAIAgentVersionRequest& request) const {
@@ -327,7 +330,9 @@ CreateAIAgentVersionOutcome QConnectClient::CreateAIAgentVersion(const CreateAIA
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
   };
 
-  return CreateAIAgentVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAIAgentVersionOutcome(result.GetResultWithOwnership())
+                            : CreateAIAgentVersionOutcome(std::move(result.GetError()));
 }
 
 CreateAIGuardrailOutcome QConnectClient::CreateAIGuardrail(const CreateAIGuardrailRequest& request) const {
@@ -344,7 +349,9 @@ CreateAIGuardrailOutcome QConnectClient::CreateAIGuardrail(const CreateAIGuardra
     endpointResolutionOutcome.GetResult().AddPathSegments("/aiguardrails");
   };
 
-  return CreateAIGuardrailOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAIGuardrailOutcome(result.GetResultWithOwnership())
+                            : CreateAIGuardrailOutcome(std::move(result.GetError()));
 }
 
 CreateAIGuardrailVersionOutcome QConnectClient::CreateAIGuardrailVersion(const CreateAIGuardrailVersionRequest& request) const {
@@ -368,7 +375,9 @@ CreateAIGuardrailVersionOutcome QConnectClient::CreateAIGuardrailVersion(const C
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
   };
 
-  return CreateAIGuardrailVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAIGuardrailVersionOutcome(result.GetResultWithOwnership())
+                            : CreateAIGuardrailVersionOutcome(std::move(result.GetError()));
 }
 
 CreateAIPromptOutcome QConnectClient::CreateAIPrompt(const CreateAIPromptRequest& request) const {
@@ -385,7 +394,8 @@ CreateAIPromptOutcome QConnectClient::CreateAIPrompt(const CreateAIPromptRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/aiprompts");
   };
 
-  return CreateAIPromptOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAIPromptOutcome(result.GetResultWithOwnership()) : CreateAIPromptOutcome(std::move(result.GetError()));
 }
 
 CreateAIPromptVersionOutcome QConnectClient::CreateAIPromptVersion(const CreateAIPromptVersionRequest& request) const {
@@ -409,7 +419,9 @@ CreateAIPromptVersionOutcome QConnectClient::CreateAIPromptVersion(const CreateA
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
   };
 
-  return CreateAIPromptVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAIPromptVersionOutcome(result.GetResultWithOwnership())
+                            : CreateAIPromptVersionOutcome(std::move(result.GetError()));
 }
 
 CreateAssistantOutcome QConnectClient::CreateAssistant(const CreateAssistantRequest& request) const {
@@ -418,7 +430,9 @@ CreateAssistantOutcome QConnectClient::CreateAssistant(const CreateAssistantRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/assistants");
   };
 
-  return CreateAssistantOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAssistantOutcome(result.GetResultWithOwnership())
+                            : CreateAssistantOutcome(std::move(result.GetError()));
 }
 
 CreateAssistantAssociationOutcome QConnectClient::CreateAssistantAssociation(const CreateAssistantAssociationRequest& request) const {
@@ -435,7 +449,9 @@ CreateAssistantAssociationOutcome QConnectClient::CreateAssistantAssociation(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/associations");
   };
 
-  return CreateAssistantAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAssistantAssociationOutcome(result.GetResultWithOwnership())
+                            : CreateAssistantAssociationOutcome(std::move(result.GetError()));
 }
 
 CreateContentOutcome QConnectClient::CreateContent(const CreateContentRequest& request) const {
@@ -452,7 +468,8 @@ CreateContentOutcome QConnectClient::CreateContent(const CreateContentRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/contents");
   };
 
-  return CreateContentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateContentOutcome(result.GetResultWithOwnership()) : CreateContentOutcome(std::move(result.GetError()));
 }
 
 CreateContentAssociationOutcome QConnectClient::CreateContentAssociation(const CreateContentAssociationRequest& request) const {
@@ -476,7 +493,9 @@ CreateContentAssociationOutcome QConnectClient::CreateContentAssociation(const C
     endpointResolutionOutcome.GetResult().AddPathSegments("/associations");
   };
 
-  return CreateContentAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateContentAssociationOutcome(result.GetResultWithOwnership())
+                            : CreateContentAssociationOutcome(std::move(result.GetError()));
 }
 
 CreateKnowledgeBaseOutcome QConnectClient::CreateKnowledgeBase(const CreateKnowledgeBaseRequest& request) const {
@@ -485,7 +504,9 @@ CreateKnowledgeBaseOutcome QConnectClient::CreateKnowledgeBase(const CreateKnowl
     endpointResolutionOutcome.GetResult().AddPathSegments("/knowledgeBases");
   };
 
-  return CreateKnowledgeBaseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateKnowledgeBaseOutcome(result.GetResultWithOwnership())
+                            : CreateKnowledgeBaseOutcome(std::move(result.GetError()));
 }
 
 CreateMessageTemplateOutcome QConnectClient::CreateMessageTemplate(const CreateMessageTemplateRequest& request) const {
@@ -502,7 +523,9 @@ CreateMessageTemplateOutcome QConnectClient::CreateMessageTemplate(const CreateM
     endpointResolutionOutcome.GetResult().AddPathSegments("/messageTemplates");
   };
 
-  return CreateMessageTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMessageTemplateOutcome(result.GetResultWithOwnership())
+                            : CreateMessageTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateMessageTemplateAttachmentOutcome QConnectClient::CreateMessageTemplateAttachment(
@@ -527,7 +550,9 @@ CreateMessageTemplateAttachmentOutcome QConnectClient::CreateMessageTemplateAtta
     endpointResolutionOutcome.GetResult().AddPathSegments("/attachments");
   };
 
-  return CreateMessageTemplateAttachmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMessageTemplateAttachmentOutcome(result.GetResultWithOwnership())
+                            : CreateMessageTemplateAttachmentOutcome(std::move(result.GetError()));
 }
 
 CreateMessageTemplateVersionOutcome QConnectClient::CreateMessageTemplateVersion(const CreateMessageTemplateVersionRequest& request) const {
@@ -551,7 +576,9 @@ CreateMessageTemplateVersionOutcome QConnectClient::CreateMessageTemplateVersion
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
   };
 
-  return CreateMessageTemplateVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMessageTemplateVersionOutcome(result.GetResultWithOwnership())
+                            : CreateMessageTemplateVersionOutcome(std::move(result.GetError()));
 }
 
 CreateQuickResponseOutcome QConnectClient::CreateQuickResponse(const CreateQuickResponseRequest& request) const {
@@ -568,7 +595,9 @@ CreateQuickResponseOutcome QConnectClient::CreateQuickResponse(const CreateQuick
     endpointResolutionOutcome.GetResult().AddPathSegments("/quickResponses");
   };
 
-  return CreateQuickResponseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateQuickResponseOutcome(result.GetResultWithOwnership())
+                            : CreateQuickResponseOutcome(std::move(result.GetError()));
 }
 
 CreateSessionOutcome QConnectClient::CreateSession(const CreateSessionRequest& request) const {
@@ -585,7 +614,8 @@ CreateSessionOutcome QConnectClient::CreateSession(const CreateSessionRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/sessions");
   };
 
-  return CreateSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSessionOutcome(result.GetResultWithOwnership()) : CreateSessionOutcome(std::move(result.GetError()));
 }
 
 DeactivateMessageTemplateOutcome QConnectClient::DeactivateMessageTemplate(const DeactivateMessageTemplateRequest& request) const {
@@ -609,7 +639,9 @@ DeactivateMessageTemplateOutcome QConnectClient::DeactivateMessageTemplate(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/deactivate");
   };
 
-  return DeactivateMessageTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeactivateMessageTemplateOutcome(result.GetResultWithOwnership())
+                            : DeactivateMessageTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteAIAgentOutcome QConnectClient::DeleteAIAgent(const DeleteAIAgentRequest& request) const {
@@ -632,7 +664,8 @@ DeleteAIAgentOutcome QConnectClient::DeleteAIAgent(const DeleteAIAgentRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAiAgentId());
   };
 
-  return DeleteAIAgentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAIAgentOutcome(result.GetResultWithOwnership()) : DeleteAIAgentOutcome(std::move(result.GetError()));
 }
 
 DeleteAIAgentVersionOutcome QConnectClient::DeleteAIAgentVersion(const DeleteAIAgentVersionRequest& request) const {
@@ -662,7 +695,9 @@ DeleteAIAgentVersionOutcome QConnectClient::DeleteAIAgentVersion(const DeleteAIA
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionNumber());
   };
 
-  return DeleteAIAgentVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAIAgentVersionOutcome(result.GetResultWithOwnership())
+                            : DeleteAIAgentVersionOutcome(std::move(result.GetError()));
 }
 
 DeleteAIGuardrailOutcome QConnectClient::DeleteAIGuardrail(const DeleteAIGuardrailRequest& request) const {
@@ -685,7 +720,9 @@ DeleteAIGuardrailOutcome QConnectClient::DeleteAIGuardrail(const DeleteAIGuardra
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAiGuardrailId());
   };
 
-  return DeleteAIGuardrailOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAIGuardrailOutcome(result.GetResultWithOwnership())
+                            : DeleteAIGuardrailOutcome(std::move(result.GetError()));
 }
 
 DeleteAIGuardrailVersionOutcome QConnectClient::DeleteAIGuardrailVersion(const DeleteAIGuardrailVersionRequest& request) const {
@@ -715,7 +752,9 @@ DeleteAIGuardrailVersionOutcome QConnectClient::DeleteAIGuardrailVersion(const D
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionNumber());
   };
 
-  return DeleteAIGuardrailVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAIGuardrailVersionOutcome(result.GetResultWithOwnership())
+                            : DeleteAIGuardrailVersionOutcome(std::move(result.GetError()));
 }
 
 DeleteAIPromptOutcome QConnectClient::DeleteAIPrompt(const DeleteAIPromptRequest& request) const {
@@ -738,7 +777,8 @@ DeleteAIPromptOutcome QConnectClient::DeleteAIPrompt(const DeleteAIPromptRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAiPromptId());
   };
 
-  return DeleteAIPromptOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAIPromptOutcome(result.GetResultWithOwnership()) : DeleteAIPromptOutcome(std::move(result.GetError()));
 }
 
 DeleteAIPromptVersionOutcome QConnectClient::DeleteAIPromptVersion(const DeleteAIPromptVersionRequest& request) const {
@@ -768,7 +808,9 @@ DeleteAIPromptVersionOutcome QConnectClient::DeleteAIPromptVersion(const DeleteA
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionNumber());
   };
 
-  return DeleteAIPromptVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAIPromptVersionOutcome(result.GetResultWithOwnership())
+                            : DeleteAIPromptVersionOutcome(std::move(result.GetError()));
 }
 
 DeleteAssistantOutcome QConnectClient::DeleteAssistant(const DeleteAssistantRequest& request) const {
@@ -784,7 +826,9 @@ DeleteAssistantOutcome QConnectClient::DeleteAssistant(const DeleteAssistantRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssistantId());
   };
 
-  return DeleteAssistantOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAssistantOutcome(result.GetResultWithOwnership())
+                            : DeleteAssistantOutcome(std::move(result.GetError()));
 }
 
 DeleteAssistantAssociationOutcome QConnectClient::DeleteAssistantAssociation(const DeleteAssistantAssociationRequest& request) const {
@@ -807,7 +851,9 @@ DeleteAssistantAssociationOutcome QConnectClient::DeleteAssistantAssociation(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssistantAssociationId());
   };
 
-  return DeleteAssistantAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAssistantAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteAssistantAssociationOutcome(std::move(result.GetError()));
 }
 
 DeleteContentOutcome QConnectClient::DeleteContent(const DeleteContentRequest& request) const {
@@ -830,7 +876,8 @@ DeleteContentOutcome QConnectClient::DeleteContent(const DeleteContentRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContentId());
   };
 
-  return DeleteContentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteContentOutcome(result.GetResultWithOwnership()) : DeleteContentOutcome(std::move(result.GetError()));
 }
 
 DeleteContentAssociationOutcome QConnectClient::DeleteContentAssociation(const DeleteContentAssociationRequest& request) const {
@@ -860,7 +907,9 @@ DeleteContentAssociationOutcome QConnectClient::DeleteContentAssociation(const D
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContentAssociationId());
   };
 
-  return DeleteContentAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteContentAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteContentAssociationOutcome(std::move(result.GetError()));
 }
 
 DeleteImportJobOutcome QConnectClient::DeleteImportJob(const DeleteImportJobRequest& request) const {
@@ -883,7 +932,9 @@ DeleteImportJobOutcome QConnectClient::DeleteImportJob(const DeleteImportJobRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetImportJobId());
   };
 
-  return DeleteImportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteImportJobOutcome(result.GetResultWithOwnership())
+                            : DeleteImportJobOutcome(std::move(result.GetError()));
 }
 
 DeleteKnowledgeBaseOutcome QConnectClient::DeleteKnowledgeBase(const DeleteKnowledgeBaseRequest& request) const {
@@ -899,7 +950,9 @@ DeleteKnowledgeBaseOutcome QConnectClient::DeleteKnowledgeBase(const DeleteKnowl
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKnowledgeBaseId());
   };
 
-  return DeleteKnowledgeBaseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteKnowledgeBaseOutcome(result.GetResultWithOwnership())
+                            : DeleteKnowledgeBaseOutcome(std::move(result.GetError()));
 }
 
 DeleteMessageTemplateOutcome QConnectClient::DeleteMessageTemplate(const DeleteMessageTemplateRequest& request) const {
@@ -922,7 +975,9 @@ DeleteMessageTemplateOutcome QConnectClient::DeleteMessageTemplate(const DeleteM
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMessageTemplateId());
   };
 
-  return DeleteMessageTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMessageTemplateOutcome(result.GetResultWithOwnership())
+                            : DeleteMessageTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteMessageTemplateAttachmentOutcome QConnectClient::DeleteMessageTemplateAttachment(
@@ -953,7 +1008,9 @@ DeleteMessageTemplateAttachmentOutcome QConnectClient::DeleteMessageTemplateAtta
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAttachmentId());
   };
 
-  return DeleteMessageTemplateAttachmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMessageTemplateAttachmentOutcome(result.GetResultWithOwnership())
+                            : DeleteMessageTemplateAttachmentOutcome(std::move(result.GetError()));
 }
 
 DeleteQuickResponseOutcome QConnectClient::DeleteQuickResponse(const DeleteQuickResponseRequest& request) const {
@@ -976,7 +1033,9 @@ DeleteQuickResponseOutcome QConnectClient::DeleteQuickResponse(const DeleteQuick
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQuickResponseId());
   };
 
-  return DeleteQuickResponseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteQuickResponseOutcome(result.GetResultWithOwnership())
+                            : DeleteQuickResponseOutcome(std::move(result.GetError()));
 }
 
 GetAIAgentOutcome QConnectClient::GetAIAgent(const GetAIAgentRequest& request) const {
@@ -999,7 +1058,8 @@ GetAIAgentOutcome QConnectClient::GetAIAgent(const GetAIAgentRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAiAgentId());
   };
 
-  return GetAIAgentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAIAgentOutcome(result.GetResultWithOwnership()) : GetAIAgentOutcome(std::move(result.GetError()));
 }
 
 GetAIGuardrailOutcome QConnectClient::GetAIGuardrail(const GetAIGuardrailRequest& request) const {
@@ -1022,7 +1082,8 @@ GetAIGuardrailOutcome QConnectClient::GetAIGuardrail(const GetAIGuardrailRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAiGuardrailId());
   };
 
-  return GetAIGuardrailOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAIGuardrailOutcome(result.GetResultWithOwnership()) : GetAIGuardrailOutcome(std::move(result.GetError()));
 }
 
 GetAIPromptOutcome QConnectClient::GetAIPrompt(const GetAIPromptRequest& request) const {
@@ -1045,7 +1106,8 @@ GetAIPromptOutcome QConnectClient::GetAIPrompt(const GetAIPromptRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAiPromptId());
   };
 
-  return GetAIPromptOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAIPromptOutcome(result.GetResultWithOwnership()) : GetAIPromptOutcome(std::move(result.GetError()));
 }
 
 GetAssistantOutcome QConnectClient::GetAssistant(const GetAssistantRequest& request) const {
@@ -1061,7 +1123,8 @@ GetAssistantOutcome QConnectClient::GetAssistant(const GetAssistantRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssistantId());
   };
 
-  return GetAssistantOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAssistantOutcome(result.GetResultWithOwnership()) : GetAssistantOutcome(std::move(result.GetError()));
 }
 
 GetAssistantAssociationOutcome QConnectClient::GetAssistantAssociation(const GetAssistantAssociationRequest& request) const {
@@ -1084,7 +1147,9 @@ GetAssistantAssociationOutcome QConnectClient::GetAssistantAssociation(const Get
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssistantAssociationId());
   };
 
-  return GetAssistantAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAssistantAssociationOutcome(result.GetResultWithOwnership())
+                            : GetAssistantAssociationOutcome(std::move(result.GetError()));
 }
 
 GetContentOutcome QConnectClient::GetContent(const GetContentRequest& request) const {
@@ -1107,7 +1172,8 @@ GetContentOutcome QConnectClient::GetContent(const GetContentRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContentId());
   };
 
-  return GetContentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetContentOutcome(result.GetResultWithOwnership()) : GetContentOutcome(std::move(result.GetError()));
 }
 
 GetContentAssociationOutcome QConnectClient::GetContentAssociation(const GetContentAssociationRequest& request) const {
@@ -1137,7 +1203,9 @@ GetContentAssociationOutcome QConnectClient::GetContentAssociation(const GetCont
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContentAssociationId());
   };
 
-  return GetContentAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetContentAssociationOutcome(result.GetResultWithOwnership())
+                            : GetContentAssociationOutcome(std::move(result.GetError()));
 }
 
 GetContentSummaryOutcome QConnectClient::GetContentSummary(const GetContentSummaryRequest& request) const {
@@ -1161,7 +1229,9 @@ GetContentSummaryOutcome QConnectClient::GetContentSummary(const GetContentSumma
     endpointResolutionOutcome.GetResult().AddPathSegments("/summary");
   };
 
-  return GetContentSummaryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetContentSummaryOutcome(result.GetResultWithOwnership())
+                            : GetContentSummaryOutcome(std::move(result.GetError()));
 }
 
 GetImportJobOutcome QConnectClient::GetImportJob(const GetImportJobRequest& request) const {
@@ -1184,7 +1254,8 @@ GetImportJobOutcome QConnectClient::GetImportJob(const GetImportJobRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetImportJobId());
   };
 
-  return GetImportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetImportJobOutcome(result.GetResultWithOwnership()) : GetImportJobOutcome(std::move(result.GetError()));
 }
 
 GetKnowledgeBaseOutcome QConnectClient::GetKnowledgeBase(const GetKnowledgeBaseRequest& request) const {
@@ -1200,7 +1271,9 @@ GetKnowledgeBaseOutcome QConnectClient::GetKnowledgeBase(const GetKnowledgeBaseR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKnowledgeBaseId());
   };
 
-  return GetKnowledgeBaseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetKnowledgeBaseOutcome(result.GetResultWithOwnership())
+                            : GetKnowledgeBaseOutcome(std::move(result.GetError()));
 }
 
 GetMessageTemplateOutcome QConnectClient::GetMessageTemplate(const GetMessageTemplateRequest& request) const {
@@ -1223,7 +1296,9 @@ GetMessageTemplateOutcome QConnectClient::GetMessageTemplate(const GetMessageTem
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMessageTemplateId());
   };
 
-  return GetMessageTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMessageTemplateOutcome(result.GetResultWithOwnership())
+                            : GetMessageTemplateOutcome(std::move(result.GetError()));
 }
 
 GetNextMessageOutcome QConnectClient::GetNextMessage(const GetNextMessageRequest& request) const {
@@ -1252,7 +1327,8 @@ GetNextMessageOutcome QConnectClient::GetNextMessage(const GetNextMessageRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/messages/next");
   };
 
-  return GetNextMessageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetNextMessageOutcome(result.GetResultWithOwnership()) : GetNextMessageOutcome(std::move(result.GetError()));
 }
 
 GetQuickResponseOutcome QConnectClient::GetQuickResponse(const GetQuickResponseRequest& request) const {
@@ -1275,7 +1351,9 @@ GetQuickResponseOutcome QConnectClient::GetQuickResponse(const GetQuickResponseR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQuickResponseId());
   };
 
-  return GetQuickResponseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetQuickResponseOutcome(result.GetResultWithOwnership())
+                            : GetQuickResponseOutcome(std::move(result.GetError()));
 }
 
 GetSessionOutcome QConnectClient::GetSession(const GetSessionRequest& request) const {
@@ -1298,7 +1376,8 @@ GetSessionOutcome QConnectClient::GetSession(const GetSessionRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
   };
 
-  return GetSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSessionOutcome(result.GetResultWithOwnership()) : GetSessionOutcome(std::move(result.GetError()));
 }
 
 ListAIAgentVersionsOutcome QConnectClient::ListAIAgentVersions(const ListAIAgentVersionsRequest& request) const {
@@ -1322,7 +1401,9 @@ ListAIAgentVersionsOutcome QConnectClient::ListAIAgentVersions(const ListAIAgent
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
   };
 
-  return ListAIAgentVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAIAgentVersionsOutcome(result.GetResultWithOwnership())
+                            : ListAIAgentVersionsOutcome(std::move(result.GetError()));
 }
 
 ListAIAgentsOutcome QConnectClient::ListAIAgents(const ListAIAgentsRequest& request) const {
@@ -1339,7 +1420,8 @@ ListAIAgentsOutcome QConnectClient::ListAIAgents(const ListAIAgentsRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/aiagents");
   };
 
-  return ListAIAgentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAIAgentsOutcome(result.GetResultWithOwnership()) : ListAIAgentsOutcome(std::move(result.GetError()));
 }
 
 ListAIGuardrailVersionsOutcome QConnectClient::ListAIGuardrailVersions(const ListAIGuardrailVersionsRequest& request) const {
@@ -1363,7 +1445,9 @@ ListAIGuardrailVersionsOutcome QConnectClient::ListAIGuardrailVersions(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
   };
 
-  return ListAIGuardrailVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAIGuardrailVersionsOutcome(result.GetResultWithOwnership())
+                            : ListAIGuardrailVersionsOutcome(std::move(result.GetError()));
 }
 
 ListAIGuardrailsOutcome QConnectClient::ListAIGuardrails(const ListAIGuardrailsRequest& request) const {
@@ -1380,7 +1464,9 @@ ListAIGuardrailsOutcome QConnectClient::ListAIGuardrails(const ListAIGuardrailsR
     endpointResolutionOutcome.GetResult().AddPathSegments("/aiguardrails");
   };
 
-  return ListAIGuardrailsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAIGuardrailsOutcome(result.GetResultWithOwnership())
+                            : ListAIGuardrailsOutcome(std::move(result.GetError()));
 }
 
 ListAIPromptVersionsOutcome QConnectClient::ListAIPromptVersions(const ListAIPromptVersionsRequest& request) const {
@@ -1404,7 +1490,9 @@ ListAIPromptVersionsOutcome QConnectClient::ListAIPromptVersions(const ListAIPro
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
   };
 
-  return ListAIPromptVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAIPromptVersionsOutcome(result.GetResultWithOwnership())
+                            : ListAIPromptVersionsOutcome(std::move(result.GetError()));
 }
 
 ListAIPromptsOutcome QConnectClient::ListAIPrompts(const ListAIPromptsRequest& request) const {
@@ -1421,7 +1509,8 @@ ListAIPromptsOutcome QConnectClient::ListAIPrompts(const ListAIPromptsRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/aiprompts");
   };
 
-  return ListAIPromptsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAIPromptsOutcome(result.GetResultWithOwnership()) : ListAIPromptsOutcome(std::move(result.GetError()));
 }
 
 ListAssistantAssociationsOutcome QConnectClient::ListAssistantAssociations(const ListAssistantAssociationsRequest& request) const {
@@ -1438,7 +1527,9 @@ ListAssistantAssociationsOutcome QConnectClient::ListAssistantAssociations(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/associations");
   };
 
-  return ListAssistantAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAssistantAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListAssistantAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListAssistantsOutcome QConnectClient::ListAssistants(const ListAssistantsRequest& request) const {
@@ -1447,7 +1538,8 @@ ListAssistantsOutcome QConnectClient::ListAssistants(const ListAssistantsRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/assistants");
   };
 
-  return ListAssistantsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAssistantsOutcome(result.GetResultWithOwnership()) : ListAssistantsOutcome(std::move(result.GetError()));
 }
 
 ListContentAssociationsOutcome QConnectClient::ListContentAssociations(const ListContentAssociationsRequest& request) const {
@@ -1471,7 +1563,9 @@ ListContentAssociationsOutcome QConnectClient::ListContentAssociations(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/associations");
   };
 
-  return ListContentAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListContentAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListContentAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListContentsOutcome QConnectClient::ListContents(const ListContentsRequest& request) const {
@@ -1488,7 +1582,8 @@ ListContentsOutcome QConnectClient::ListContents(const ListContentsRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/contents");
   };
 
-  return ListContentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListContentsOutcome(result.GetResultWithOwnership()) : ListContentsOutcome(std::move(result.GetError()));
 }
 
 ListImportJobsOutcome QConnectClient::ListImportJobs(const ListImportJobsRequest& request) const {
@@ -1505,7 +1600,8 @@ ListImportJobsOutcome QConnectClient::ListImportJobs(const ListImportJobsRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/importJobs");
   };
 
-  return ListImportJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListImportJobsOutcome(result.GetResultWithOwnership()) : ListImportJobsOutcome(std::move(result.GetError()));
 }
 
 ListKnowledgeBasesOutcome QConnectClient::ListKnowledgeBases(const ListKnowledgeBasesRequest& request) const {
@@ -1514,7 +1610,9 @@ ListKnowledgeBasesOutcome QConnectClient::ListKnowledgeBases(const ListKnowledge
     endpointResolutionOutcome.GetResult().AddPathSegments("/knowledgeBases");
   };
 
-  return ListKnowledgeBasesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListKnowledgeBasesOutcome(result.GetResultWithOwnership())
+                            : ListKnowledgeBasesOutcome(std::move(result.GetError()));
 }
 
 ListMessageTemplateVersionsOutcome QConnectClient::ListMessageTemplateVersions(const ListMessageTemplateVersionsRequest& request) const {
@@ -1538,7 +1636,9 @@ ListMessageTemplateVersionsOutcome QConnectClient::ListMessageTemplateVersions(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
   };
 
-  return ListMessageTemplateVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMessageTemplateVersionsOutcome(result.GetResultWithOwnership())
+                            : ListMessageTemplateVersionsOutcome(std::move(result.GetError()));
 }
 
 ListMessageTemplatesOutcome QConnectClient::ListMessageTemplates(const ListMessageTemplatesRequest& request) const {
@@ -1555,7 +1655,9 @@ ListMessageTemplatesOutcome QConnectClient::ListMessageTemplates(const ListMessa
     endpointResolutionOutcome.GetResult().AddPathSegments("/messageTemplates");
   };
 
-  return ListMessageTemplatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMessageTemplatesOutcome(result.GetResultWithOwnership())
+                            : ListMessageTemplatesOutcome(std::move(result.GetError()));
 }
 
 ListMessagesOutcome QConnectClient::ListMessages(const ListMessagesRequest& request) const {
@@ -1579,7 +1681,8 @@ ListMessagesOutcome QConnectClient::ListMessages(const ListMessagesRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/messages");
   };
 
-  return ListMessagesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMessagesOutcome(result.GetResultWithOwnership()) : ListMessagesOutcome(std::move(result.GetError()));
 }
 
 ListQuickResponsesOutcome QConnectClient::ListQuickResponses(const ListQuickResponsesRequest& request) const {
@@ -1596,7 +1699,9 @@ ListQuickResponsesOutcome QConnectClient::ListQuickResponses(const ListQuickResp
     endpointResolutionOutcome.GetResult().AddPathSegments("/quickResponses");
   };
 
-  return ListQuickResponsesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListQuickResponsesOutcome(result.GetResultWithOwnership())
+                            : ListQuickResponsesOutcome(std::move(result.GetError()));
 }
 
 ListSpansOutcome QConnectClient::ListSpans(const ListSpansRequest& request) const {
@@ -1620,7 +1725,8 @@ ListSpansOutcome QConnectClient::ListSpans(const ListSpansRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/spans");
   };
 
-  return ListSpansOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSpansOutcome(result.GetResultWithOwnership()) : ListSpansOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome QConnectClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -1636,7 +1742,9 @@ ListTagsForResourceOutcome QConnectClient::ListTagsForResource(const ListTagsFor
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 NotifyRecommendationsReceivedOutcome QConnectClient::NotifyRecommendationsReceived(
@@ -1661,7 +1769,9 @@ NotifyRecommendationsReceivedOutcome QConnectClient::NotifyRecommendationsReceiv
     endpointResolutionOutcome.GetResult().AddPathSegments("/recommendations/notify");
   };
 
-  return NotifyRecommendationsReceivedOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? NotifyRecommendationsReceivedOutcome(result.GetResultWithOwnership())
+                            : NotifyRecommendationsReceivedOutcome(std::move(result.GetError()));
 }
 
 PutFeedbackOutcome QConnectClient::PutFeedback(const PutFeedbackRequest& request) const {
@@ -1678,7 +1788,8 @@ PutFeedbackOutcome QConnectClient::PutFeedback(const PutFeedbackRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/feedback");
   };
 
-  return PutFeedbackOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutFeedbackOutcome(result.GetResultWithOwnership()) : PutFeedbackOutcome(std::move(result.GetError()));
 }
 
 RemoveAssistantAIAgentOutcome QConnectClient::RemoveAssistantAIAgent(const RemoveAssistantAIAgentRequest& request) const {
@@ -1700,7 +1811,9 @@ RemoveAssistantAIAgentOutcome QConnectClient::RemoveAssistantAIAgent(const Remov
     endpointResolutionOutcome.GetResult().AddPathSegments("/aiagentConfiguration");
   };
 
-  return RemoveAssistantAIAgentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? RemoveAssistantAIAgentOutcome(result.GetResultWithOwnership())
+                            : RemoveAssistantAIAgentOutcome(std::move(result.GetError()));
 }
 
 RemoveKnowledgeBaseTemplateUriOutcome QConnectClient::RemoveKnowledgeBaseTemplateUri(
@@ -1718,7 +1831,9 @@ RemoveKnowledgeBaseTemplateUriOutcome QConnectClient::RemoveKnowledgeBaseTemplat
     endpointResolutionOutcome.GetResult().AddPathSegments("/templateUri");
   };
 
-  return RemoveKnowledgeBaseTemplateUriOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? RemoveKnowledgeBaseTemplateUriOutcome(result.GetResultWithOwnership())
+                            : RemoveKnowledgeBaseTemplateUriOutcome(std::move(result.GetError()));
 }
 
 RenderMessageTemplateOutcome QConnectClient::RenderMessageTemplate(const RenderMessageTemplateRequest& request) const {
@@ -1742,7 +1857,9 @@ RenderMessageTemplateOutcome QConnectClient::RenderMessageTemplate(const RenderM
     endpointResolutionOutcome.GetResult().AddPathSegments("/render");
   };
 
-  return RenderMessageTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RenderMessageTemplateOutcome(result.GetResultWithOwnership())
+                            : RenderMessageTemplateOutcome(std::move(result.GetError()));
 }
 
 RetrieveOutcome QConnectClient::Retrieve(const RetrieveRequest& request) const {
@@ -1759,7 +1876,8 @@ RetrieveOutcome QConnectClient::Retrieve(const RetrieveRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/retrieve");
   };
 
-  return RetrieveOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RetrieveOutcome(result.GetResultWithOwnership()) : RetrieveOutcome(std::move(result.GetError()));
 }
 
 SearchContentOutcome QConnectClient::SearchContent(const SearchContentRequest& request) const {
@@ -1776,7 +1894,8 @@ SearchContentOutcome QConnectClient::SearchContent(const SearchContentRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/search");
   };
 
-  return SearchContentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchContentOutcome(result.GetResultWithOwnership()) : SearchContentOutcome(std::move(result.GetError()));
 }
 
 SearchMessageTemplatesOutcome QConnectClient::SearchMessageTemplates(const SearchMessageTemplatesRequest& request) const {
@@ -1793,7 +1912,9 @@ SearchMessageTemplatesOutcome QConnectClient::SearchMessageTemplates(const Searc
     endpointResolutionOutcome.GetResult().AddPathSegments("/search/messageTemplates");
   };
 
-  return SearchMessageTemplatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchMessageTemplatesOutcome(result.GetResultWithOwnership())
+                            : SearchMessageTemplatesOutcome(std::move(result.GetError()));
 }
 
 SearchQuickResponsesOutcome QConnectClient::SearchQuickResponses(const SearchQuickResponsesRequest& request) const {
@@ -1810,7 +1931,9 @@ SearchQuickResponsesOutcome QConnectClient::SearchQuickResponses(const SearchQui
     endpointResolutionOutcome.GetResult().AddPathSegments("/search/quickResponses");
   };
 
-  return SearchQuickResponsesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchQuickResponsesOutcome(result.GetResultWithOwnership())
+                            : SearchQuickResponsesOutcome(std::move(result.GetError()));
 }
 
 SearchSessionsOutcome QConnectClient::SearchSessions(const SearchSessionsRequest& request) const {
@@ -1827,7 +1950,8 @@ SearchSessionsOutcome QConnectClient::SearchSessions(const SearchSessionsRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/searchSessions");
   };
 
-  return SearchSessionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchSessionsOutcome(result.GetResultWithOwnership()) : SearchSessionsOutcome(std::move(result.GetError()));
 }
 
 SendMessageOutcome QConnectClient::SendMessage(const SendMessageRequest& request) const {
@@ -1851,7 +1975,8 @@ SendMessageOutcome QConnectClient::SendMessage(const SendMessageRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/message");
   };
 
-  return SendMessageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendMessageOutcome(result.GetResultWithOwnership()) : SendMessageOutcome(std::move(result.GetError()));
 }
 
 StartContentUploadOutcome QConnectClient::StartContentUpload(const StartContentUploadRequest& request) const {
@@ -1868,7 +1993,9 @@ StartContentUploadOutcome QConnectClient::StartContentUpload(const StartContentU
     endpointResolutionOutcome.GetResult().AddPathSegments("/upload");
   };
 
-  return StartContentUploadOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartContentUploadOutcome(result.GetResultWithOwnership())
+                            : StartContentUploadOutcome(std::move(result.GetError()));
 }
 
 StartImportJobOutcome QConnectClient::StartImportJob(const StartImportJobRequest& request) const {
@@ -1885,7 +2012,8 @@ StartImportJobOutcome QConnectClient::StartImportJob(const StartImportJobRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/importJobs");
   };
 
-  return StartImportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartImportJobOutcome(result.GetResultWithOwnership()) : StartImportJobOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome QConnectClient::TagResource(const TagResourceRequest& request) const {
@@ -1901,7 +2029,8 @@ TagResourceOutcome QConnectClient::TagResource(const TagResourceRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome QConnectClient::UntagResource(const UntagResourceRequest& request) const {
@@ -1922,7 +2051,8 @@ UntagResourceOutcome QConnectClient::UntagResource(const UntagResourceRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAIAgentOutcome QConnectClient::UpdateAIAgent(const UpdateAIAgentRequest& request) const {
@@ -1945,7 +2075,8 @@ UpdateAIAgentOutcome QConnectClient::UpdateAIAgent(const UpdateAIAgentRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAiAgentId());
   };
 
-  return UpdateAIAgentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAIAgentOutcome(result.GetResultWithOwnership()) : UpdateAIAgentOutcome(std::move(result.GetError()));
 }
 
 UpdateAIGuardrailOutcome QConnectClient::UpdateAIGuardrail(const UpdateAIGuardrailRequest& request) const {
@@ -1968,7 +2099,9 @@ UpdateAIGuardrailOutcome QConnectClient::UpdateAIGuardrail(const UpdateAIGuardra
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAiGuardrailId());
   };
 
-  return UpdateAIGuardrailOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAIGuardrailOutcome(result.GetResultWithOwnership())
+                            : UpdateAIGuardrailOutcome(std::move(result.GetError()));
 }
 
 UpdateAIPromptOutcome QConnectClient::UpdateAIPrompt(const UpdateAIPromptRequest& request) const {
@@ -1991,7 +2124,8 @@ UpdateAIPromptOutcome QConnectClient::UpdateAIPrompt(const UpdateAIPromptRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAiPromptId());
   };
 
-  return UpdateAIPromptOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAIPromptOutcome(result.GetResultWithOwnership()) : UpdateAIPromptOutcome(std::move(result.GetError()));
 }
 
 UpdateAssistantAIAgentOutcome QConnectClient::UpdateAssistantAIAgent(const UpdateAssistantAIAgentRequest& request) const {
@@ -2008,7 +2142,9 @@ UpdateAssistantAIAgentOutcome QConnectClient::UpdateAssistantAIAgent(const Updat
     endpointResolutionOutcome.GetResult().AddPathSegments("/aiagentConfiguration");
   };
 
-  return UpdateAssistantAIAgentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAssistantAIAgentOutcome(result.GetResultWithOwnership())
+                            : UpdateAssistantAIAgentOutcome(std::move(result.GetError()));
 }
 
 UpdateContentOutcome QConnectClient::UpdateContent(const UpdateContentRequest& request) const {
@@ -2031,7 +2167,8 @@ UpdateContentOutcome QConnectClient::UpdateContent(const UpdateContentRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContentId());
   };
 
-  return UpdateContentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateContentOutcome(result.GetResultWithOwnership()) : UpdateContentOutcome(std::move(result.GetError()));
 }
 
 UpdateKnowledgeBaseTemplateUriOutcome QConnectClient::UpdateKnowledgeBaseTemplateUri(
@@ -2049,7 +2186,9 @@ UpdateKnowledgeBaseTemplateUriOutcome QConnectClient::UpdateKnowledgeBaseTemplat
     endpointResolutionOutcome.GetResult().AddPathSegments("/templateUri");
   };
 
-  return UpdateKnowledgeBaseTemplateUriOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateKnowledgeBaseTemplateUriOutcome(result.GetResultWithOwnership())
+                            : UpdateKnowledgeBaseTemplateUriOutcome(std::move(result.GetError()));
 }
 
 UpdateMessageTemplateOutcome QConnectClient::UpdateMessageTemplate(const UpdateMessageTemplateRequest& request) const {
@@ -2072,7 +2211,9 @@ UpdateMessageTemplateOutcome QConnectClient::UpdateMessageTemplate(const UpdateM
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMessageTemplateId());
   };
 
-  return UpdateMessageTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateMessageTemplateOutcome(result.GetResultWithOwnership())
+                            : UpdateMessageTemplateOutcome(std::move(result.GetError()));
 }
 
 UpdateMessageTemplateMetadataOutcome QConnectClient::UpdateMessageTemplateMetadata(
@@ -2097,7 +2238,9 @@ UpdateMessageTemplateMetadataOutcome QConnectClient::UpdateMessageTemplateMetada
     endpointResolutionOutcome.GetResult().AddPathSegments("/metadata");
   };
 
-  return UpdateMessageTemplateMetadataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateMessageTemplateMetadataOutcome(result.GetResultWithOwnership())
+                            : UpdateMessageTemplateMetadataOutcome(std::move(result.GetError()));
 }
 
 UpdateQuickResponseOutcome QConnectClient::UpdateQuickResponse(const UpdateQuickResponseRequest& request) const {
@@ -2120,7 +2263,9 @@ UpdateQuickResponseOutcome QConnectClient::UpdateQuickResponse(const UpdateQuick
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQuickResponseId());
   };
 
-  return UpdateQuickResponseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateQuickResponseOutcome(result.GetResultWithOwnership())
+                            : UpdateQuickResponseOutcome(std::move(result.GetError()));
 }
 
 UpdateSessionOutcome QConnectClient::UpdateSession(const UpdateSessionRequest& request) const {
@@ -2143,7 +2288,8 @@ UpdateSessionOutcome QConnectClient::UpdateSession(const UpdateSessionRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
   };
 
-  return UpdateSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSessionOutcome(result.GetResultWithOwnership()) : UpdateSessionOutcome(std::move(result.GetError()));
 }
 
 UpdateSessionDataOutcome QConnectClient::UpdateSessionData(const UpdateSessionDataRequest& request) const {
@@ -2167,5 +2313,7 @@ UpdateSessionDataOutcome QConnectClient::UpdateSessionData(const UpdateSessionDa
     endpointResolutionOutcome.GetResult().AddPathSegments("/data");
   };
 
-  return UpdateSessionDataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateSessionDataOutcome(result.GetResultWithOwnership())
+                            : UpdateSessionDataOutcome(std::move(result.GetError()));
 }

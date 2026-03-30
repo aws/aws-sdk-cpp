@@ -206,7 +206,9 @@ AssociateWhatsAppBusinessAccountOutcome SocialMessagingClient::AssociateWhatsApp
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/whatsapp/signup");
   };
 
-  return AssociateWhatsAppBusinessAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateWhatsAppBusinessAccountOutcome(result.GetResultWithOwnership())
+                            : AssociateWhatsAppBusinessAccountOutcome(std::move(result.GetError()));
 }
 
 CreateWhatsAppMessageTemplateOutcome SocialMessagingClient::CreateWhatsAppMessageTemplate(
@@ -216,7 +218,9 @@ CreateWhatsAppMessageTemplateOutcome SocialMessagingClient::CreateWhatsAppMessag
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/whatsapp/template/put");
   };
 
-  return CreateWhatsAppMessageTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWhatsAppMessageTemplateOutcome(result.GetResultWithOwnership())
+                            : CreateWhatsAppMessageTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateWhatsAppMessageTemplateFromLibraryOutcome SocialMessagingClient::CreateWhatsAppMessageTemplateFromLibrary(
@@ -226,7 +230,9 @@ CreateWhatsAppMessageTemplateFromLibraryOutcome SocialMessagingClient::CreateWha
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/whatsapp/template/create");
   };
 
-  return CreateWhatsAppMessageTemplateFromLibraryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWhatsAppMessageTemplateFromLibraryOutcome(result.GetResultWithOwnership())
+                            : CreateWhatsAppMessageTemplateFromLibraryOutcome(std::move(result.GetError()));
 }
 
 CreateWhatsAppMessageTemplateMediaOutcome SocialMessagingClient::CreateWhatsAppMessageTemplateMedia(
@@ -236,7 +242,9 @@ CreateWhatsAppMessageTemplateMediaOutcome SocialMessagingClient::CreateWhatsAppM
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/whatsapp/template/media");
   };
 
-  return CreateWhatsAppMessageTemplateMediaOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWhatsAppMessageTemplateMediaOutcome(result.GetResultWithOwnership())
+                            : CreateWhatsAppMessageTemplateMediaOutcome(std::move(result.GetError()));
 }
 
 DeleteWhatsAppMessageMediaOutcome SocialMessagingClient::DeleteWhatsAppMessageMedia(
@@ -257,7 +265,9 @@ DeleteWhatsAppMessageMediaOutcome SocialMessagingClient::DeleteWhatsAppMessageMe
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/whatsapp/media");
   };
 
-  return DeleteWhatsAppMessageMediaOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteWhatsAppMessageMediaOutcome(result.GetResultWithOwnership())
+                            : DeleteWhatsAppMessageMediaOutcome(std::move(result.GetError()));
 }
 
 DeleteWhatsAppMessageTemplateOutcome SocialMessagingClient::DeleteWhatsAppMessageTemplate(
@@ -278,7 +288,9 @@ DeleteWhatsAppMessageTemplateOutcome SocialMessagingClient::DeleteWhatsAppMessag
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/whatsapp/template");
   };
 
-  return DeleteWhatsAppMessageTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteWhatsAppMessageTemplateOutcome(result.GetResultWithOwnership())
+                            : DeleteWhatsAppMessageTemplateOutcome(std::move(result.GetError()));
 }
 
 DisassociateWhatsAppBusinessAccountOutcome SocialMessagingClient::DisassociateWhatsAppBusinessAccount(
@@ -294,7 +306,9 @@ DisassociateWhatsAppBusinessAccountOutcome SocialMessagingClient::DisassociateWh
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/whatsapp/waba/disassociate");
   };
 
-  return DisassociateWhatsAppBusinessAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateWhatsAppBusinessAccountOutcome(result.GetResultWithOwnership())
+                            : DisassociateWhatsAppBusinessAccountOutcome(std::move(result.GetError()));
 }
 
 GetLinkedWhatsAppBusinessAccountOutcome SocialMessagingClient::GetLinkedWhatsAppBusinessAccount(
@@ -310,7 +324,9 @@ GetLinkedWhatsAppBusinessAccountOutcome SocialMessagingClient::GetLinkedWhatsApp
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/whatsapp/waba/details");
   };
 
-  return GetLinkedWhatsAppBusinessAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetLinkedWhatsAppBusinessAccountOutcome(result.GetResultWithOwnership())
+                            : GetLinkedWhatsAppBusinessAccountOutcome(std::move(result.GetError()));
 }
 
 GetLinkedWhatsAppBusinessAccountPhoneNumberOutcome SocialMessagingClient::GetLinkedWhatsAppBusinessAccountPhoneNumber(
@@ -326,7 +342,9 @@ GetLinkedWhatsAppBusinessAccountPhoneNumberOutcome SocialMessagingClient::GetLin
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/whatsapp/waba/phone/details");
   };
 
-  return GetLinkedWhatsAppBusinessAccountPhoneNumberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetLinkedWhatsAppBusinessAccountPhoneNumberOutcome(result.GetResultWithOwnership())
+                            : GetLinkedWhatsAppBusinessAccountPhoneNumberOutcome(std::move(result.GetError()));
 }
 
 GetWhatsAppMessageMediaOutcome SocialMessagingClient::GetWhatsAppMessageMedia(const GetWhatsAppMessageMediaRequest& request) const {
@@ -335,7 +353,9 @@ GetWhatsAppMessageMediaOutcome SocialMessagingClient::GetWhatsAppMessageMedia(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/whatsapp/media/get");
   };
 
-  return GetWhatsAppMessageMediaOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetWhatsAppMessageMediaOutcome(result.GetResultWithOwnership())
+                            : GetWhatsAppMessageMediaOutcome(std::move(result.GetError()));
 }
 
 GetWhatsAppMessageTemplateOutcome SocialMessagingClient::GetWhatsAppMessageTemplate(
@@ -356,7 +376,9 @@ GetWhatsAppMessageTemplateOutcome SocialMessagingClient::GetWhatsAppMessageTempl
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/whatsapp/template");
   };
 
-  return GetWhatsAppMessageTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetWhatsAppMessageTemplateOutcome(result.GetResultWithOwnership())
+                            : GetWhatsAppMessageTemplateOutcome(std::move(result.GetError()));
 }
 
 ListLinkedWhatsAppBusinessAccountsOutcome SocialMessagingClient::ListLinkedWhatsAppBusinessAccounts(
@@ -366,7 +388,9 @@ ListLinkedWhatsAppBusinessAccountsOutcome SocialMessagingClient::ListLinkedWhats
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/whatsapp/waba/list");
   };
 
-  return ListLinkedWhatsAppBusinessAccountsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListLinkedWhatsAppBusinessAccountsOutcome(result.GetResultWithOwnership())
+                            : ListLinkedWhatsAppBusinessAccountsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome SocialMessagingClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -381,7 +405,9 @@ ListTagsForResourceOutcome SocialMessagingClient::ListTagsForResource(const List
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/tags/list");
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListWhatsAppMessageTemplatesOutcome SocialMessagingClient::ListWhatsAppMessageTemplates(
@@ -397,7 +423,9 @@ ListWhatsAppMessageTemplatesOutcome SocialMessagingClient::ListWhatsAppMessageTe
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/whatsapp/template/list");
   };
 
-  return ListWhatsAppMessageTemplatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListWhatsAppMessageTemplatesOutcome(result.GetResultWithOwnership())
+                            : ListWhatsAppMessageTemplatesOutcome(std::move(result.GetError()));
 }
 
 ListWhatsAppTemplateLibraryOutcome SocialMessagingClient::ListWhatsAppTemplateLibrary(
@@ -413,7 +441,9 @@ ListWhatsAppTemplateLibraryOutcome SocialMessagingClient::ListWhatsAppTemplateLi
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/whatsapp/template/library");
   };
 
-  return ListWhatsAppTemplateLibraryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListWhatsAppTemplateLibraryOutcome(result.GetResultWithOwnership())
+                            : ListWhatsAppTemplateLibraryOutcome(std::move(result.GetError()));
 }
 
 PostWhatsAppMessageMediaOutcome SocialMessagingClient::PostWhatsAppMessageMedia(const PostWhatsAppMessageMediaRequest& request) const {
@@ -422,7 +452,9 @@ PostWhatsAppMessageMediaOutcome SocialMessagingClient::PostWhatsAppMessageMedia(
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/whatsapp/media");
   };
 
-  return PostWhatsAppMessageMediaOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PostWhatsAppMessageMediaOutcome(result.GetResultWithOwnership())
+                            : PostWhatsAppMessageMediaOutcome(std::move(result.GetError()));
 }
 
 PutWhatsAppBusinessAccountEventDestinationsOutcome SocialMessagingClient::PutWhatsAppBusinessAccountEventDestinations(
@@ -432,7 +464,9 @@ PutWhatsAppBusinessAccountEventDestinationsOutcome SocialMessagingClient::PutWha
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/whatsapp/waba/eventdestinations");
   };
 
-  return PutWhatsAppBusinessAccountEventDestinationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutWhatsAppBusinessAccountEventDestinationsOutcome(result.GetResultWithOwnership())
+                            : PutWhatsAppBusinessAccountEventDestinationsOutcome(std::move(result.GetError()));
 }
 
 SendWhatsAppMessageOutcome SocialMessagingClient::SendWhatsAppMessage(const SendWhatsAppMessageRequest& request) const {
@@ -441,7 +475,9 @@ SendWhatsAppMessageOutcome SocialMessagingClient::SendWhatsAppMessage(const Send
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/whatsapp/send");
   };
 
-  return SendWhatsAppMessageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendWhatsAppMessageOutcome(result.GetResultWithOwnership())
+                            : SendWhatsAppMessageOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome SocialMessagingClient::TagResource(const TagResourceRequest& request) const {
@@ -450,7 +486,8 @@ TagResourceOutcome SocialMessagingClient::TagResource(const TagResourceRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/tags/tag-resource");
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome SocialMessagingClient::UntagResource(const UntagResourceRequest& request) const {
@@ -459,7 +496,8 @@ UntagResourceOutcome SocialMessagingClient::UntagResource(const UntagResourceReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/tags/untag-resource");
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateWhatsAppMessageTemplateOutcome SocialMessagingClient::UpdateWhatsAppMessageTemplate(
@@ -469,5 +507,7 @@ UpdateWhatsAppMessageTemplateOutcome SocialMessagingClient::UpdateWhatsAppMessag
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/whatsapp/template");
   };
 
-  return UpdateWhatsAppMessageTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateWhatsAppMessageTemplateOutcome(result.GetResultWithOwnership())
+                            : UpdateWhatsAppMessageTemplateOutcome(std::move(result.GetError()));
 }

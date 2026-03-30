@@ -311,7 +311,9 @@ AcceptInputDeviceTransferOutcome MediaLiveClient::AcceptInputDeviceTransfer(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/accept");
   };
 
-  return AcceptInputDeviceTransferOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptInputDeviceTransferOutcome(result.GetResultWithOwnership())
+                            : AcceptInputDeviceTransferOutcome(std::move(result.GetError()));
 }
 
 BatchDeleteOutcome MediaLiveClient::BatchDelete(const BatchDeleteRequest& request) const {
@@ -320,7 +322,8 @@ BatchDeleteOutcome MediaLiveClient::BatchDelete(const BatchDeleteRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/batch/delete");
   };
 
-  return BatchDeleteOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeleteOutcome(result.GetResultWithOwnership()) : BatchDeleteOutcome(std::move(result.GetError()));
 }
 
 BatchStartOutcome MediaLiveClient::BatchStart(const BatchStartRequest& request) const {
@@ -329,7 +332,8 @@ BatchStartOutcome MediaLiveClient::BatchStart(const BatchStartRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/batch/start");
   };
 
-  return BatchStartOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchStartOutcome(result.GetResultWithOwnership()) : BatchStartOutcome(std::move(result.GetError()));
 }
 
 BatchStopOutcome MediaLiveClient::BatchStop(const BatchStopRequest& request) const {
@@ -338,7 +342,8 @@ BatchStopOutcome MediaLiveClient::BatchStop(const BatchStopRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/batch/stop");
   };
 
-  return BatchStopOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchStopOutcome(result.GetResultWithOwnership()) : BatchStopOutcome(std::move(result.GetError()));
 }
 
 BatchUpdateScheduleOutcome MediaLiveClient::BatchUpdateSchedule(const BatchUpdateScheduleRequest& request) const {
@@ -355,7 +360,9 @@ BatchUpdateScheduleOutcome MediaLiveClient::BatchUpdateSchedule(const BatchUpdat
     endpointResolutionOutcome.GetResult().AddPathSegments("/schedule");
   };
 
-  return BatchUpdateScheduleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? BatchUpdateScheduleOutcome(result.GetResultWithOwnership())
+                            : BatchUpdateScheduleOutcome(std::move(result.GetError()));
 }
 
 CancelInputDeviceTransferOutcome MediaLiveClient::CancelInputDeviceTransfer(const CancelInputDeviceTransferRequest& request) const {
@@ -372,7 +379,9 @@ CancelInputDeviceTransferOutcome MediaLiveClient::CancelInputDeviceTransfer(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/cancel");
   };
 
-  return CancelInputDeviceTransferOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelInputDeviceTransferOutcome(result.GetResultWithOwnership())
+                            : CancelInputDeviceTransferOutcome(std::move(result.GetError()));
 }
 
 ClaimDeviceOutcome MediaLiveClient::ClaimDevice(const ClaimDeviceRequest& request) const {
@@ -381,7 +390,8 @@ ClaimDeviceOutcome MediaLiveClient::ClaimDevice(const ClaimDeviceRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/claimDevice");
   };
 
-  return ClaimDeviceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ClaimDeviceOutcome(result.GetResultWithOwnership()) : ClaimDeviceOutcome(std::move(result.GetError()));
 }
 
 CreateChannelOutcome MediaLiveClient::CreateChannel(const CreateChannelRequest& request) const {
@@ -390,7 +400,8 @@ CreateChannelOutcome MediaLiveClient::CreateChannel(const CreateChannelRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/channels");
   };
 
-  return CreateChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateChannelOutcome(result.GetResultWithOwnership()) : CreateChannelOutcome(std::move(result.GetError()));
 }
 
 CreateChannelPlacementGroupOutcome MediaLiveClient::CreateChannelPlacementGroup(const CreateChannelPlacementGroupRequest& request) const {
@@ -407,7 +418,9 @@ CreateChannelPlacementGroupOutcome MediaLiveClient::CreateChannelPlacementGroup(
     endpointResolutionOutcome.GetResult().AddPathSegments("/channelplacementgroups");
   };
 
-  return CreateChannelPlacementGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateChannelPlacementGroupOutcome(result.GetResultWithOwnership())
+                            : CreateChannelPlacementGroupOutcome(std::move(result.GetError()));
 }
 
 CreateCloudWatchAlarmTemplateOutcome MediaLiveClient::CreateCloudWatchAlarmTemplate(
@@ -417,7 +430,9 @@ CreateCloudWatchAlarmTemplateOutcome MediaLiveClient::CreateCloudWatchAlarmTempl
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/cloudwatch-alarm-templates");
   };
 
-  return CreateCloudWatchAlarmTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCloudWatchAlarmTemplateOutcome(result.GetResultWithOwnership())
+                            : CreateCloudWatchAlarmTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateCloudWatchAlarmTemplateGroupOutcome MediaLiveClient::CreateCloudWatchAlarmTemplateGroup(
@@ -427,7 +442,9 @@ CreateCloudWatchAlarmTemplateGroupOutcome MediaLiveClient::CreateCloudWatchAlarm
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/cloudwatch-alarm-template-groups");
   };
 
-  return CreateCloudWatchAlarmTemplateGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCloudWatchAlarmTemplateGroupOutcome(result.GetResultWithOwnership())
+                            : CreateCloudWatchAlarmTemplateGroupOutcome(std::move(result.GetError()));
 }
 
 CreateClusterOutcome MediaLiveClient::CreateCluster(const CreateClusterRequest& request) const {
@@ -436,7 +453,8 @@ CreateClusterOutcome MediaLiveClient::CreateCluster(const CreateClusterRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/clusters");
   };
 
-  return CreateClusterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateClusterOutcome(result.GetResultWithOwnership()) : CreateClusterOutcome(std::move(result.GetError()));
 }
 
 CreateEventBridgeRuleTemplateOutcome MediaLiveClient::CreateEventBridgeRuleTemplate(
@@ -446,7 +464,9 @@ CreateEventBridgeRuleTemplateOutcome MediaLiveClient::CreateEventBridgeRuleTempl
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/eventbridge-rule-templates");
   };
 
-  return CreateEventBridgeRuleTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEventBridgeRuleTemplateOutcome(result.GetResultWithOwnership())
+                            : CreateEventBridgeRuleTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateEventBridgeRuleTemplateGroupOutcome MediaLiveClient::CreateEventBridgeRuleTemplateGroup(
@@ -456,7 +476,9 @@ CreateEventBridgeRuleTemplateGroupOutcome MediaLiveClient::CreateEventBridgeRule
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/eventbridge-rule-template-groups");
   };
 
-  return CreateEventBridgeRuleTemplateGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEventBridgeRuleTemplateGroupOutcome(result.GetResultWithOwnership())
+                            : CreateEventBridgeRuleTemplateGroupOutcome(std::move(result.GetError()));
 }
 
 CreateInputOutcome MediaLiveClient::CreateInput(const CreateInputRequest& request) const {
@@ -465,7 +487,8 @@ CreateInputOutcome MediaLiveClient::CreateInput(const CreateInputRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/inputs");
   };
 
-  return CreateInputOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateInputOutcome(result.GetResultWithOwnership()) : CreateInputOutcome(std::move(result.GetError()));
 }
 
 CreateInputSecurityGroupOutcome MediaLiveClient::CreateInputSecurityGroup(const CreateInputSecurityGroupRequest& request) const {
@@ -474,7 +497,9 @@ CreateInputSecurityGroupOutcome MediaLiveClient::CreateInputSecurityGroup(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/inputSecurityGroups");
   };
 
-  return CreateInputSecurityGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateInputSecurityGroupOutcome(result.GetResultWithOwnership())
+                            : CreateInputSecurityGroupOutcome(std::move(result.GetError()));
 }
 
 CreateMultiplexOutcome MediaLiveClient::CreateMultiplex(const CreateMultiplexRequest& request) const {
@@ -483,7 +508,9 @@ CreateMultiplexOutcome MediaLiveClient::CreateMultiplex(const CreateMultiplexReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/multiplexes");
   };
 
-  return CreateMultiplexOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMultiplexOutcome(result.GetResultWithOwnership())
+                            : CreateMultiplexOutcome(std::move(result.GetError()));
 }
 
 CreateMultiplexProgramOutcome MediaLiveClient::CreateMultiplexProgram(const CreateMultiplexProgramRequest& request) const {
@@ -500,7 +527,9 @@ CreateMultiplexProgramOutcome MediaLiveClient::CreateMultiplexProgram(const Crea
     endpointResolutionOutcome.GetResult().AddPathSegments("/programs");
   };
 
-  return CreateMultiplexProgramOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMultiplexProgramOutcome(result.GetResultWithOwnership())
+                            : CreateMultiplexProgramOutcome(std::move(result.GetError()));
 }
 
 CreateNetworkOutcome MediaLiveClient::CreateNetwork(const CreateNetworkRequest& request) const {
@@ -509,7 +538,8 @@ CreateNetworkOutcome MediaLiveClient::CreateNetwork(const CreateNetworkRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/networks");
   };
 
-  return CreateNetworkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateNetworkOutcome(result.GetResultWithOwnership()) : CreateNetworkOutcome(std::move(result.GetError()));
 }
 
 CreateNodeOutcome MediaLiveClient::CreateNode(const CreateNodeRequest& request) const {
@@ -526,7 +556,8 @@ CreateNodeOutcome MediaLiveClient::CreateNode(const CreateNodeRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/nodes");
   };
 
-  return CreateNodeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateNodeOutcome(result.GetResultWithOwnership()) : CreateNodeOutcome(std::move(result.GetError()));
 }
 
 CreateNodeRegistrationScriptOutcome MediaLiveClient::CreateNodeRegistrationScript(
@@ -544,7 +575,9 @@ CreateNodeRegistrationScriptOutcome MediaLiveClient::CreateNodeRegistrationScrip
     endpointResolutionOutcome.GetResult().AddPathSegments("/nodeRegistrationScript");
   };
 
-  return CreateNodeRegistrationScriptOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateNodeRegistrationScriptOutcome(result.GetResultWithOwnership())
+                            : CreateNodeRegistrationScriptOutcome(std::move(result.GetError()));
 }
 
 CreatePartnerInputOutcome MediaLiveClient::CreatePartnerInput(const CreatePartnerInputRequest& request) const {
@@ -561,7 +594,9 @@ CreatePartnerInputOutcome MediaLiveClient::CreatePartnerInput(const CreatePartne
     endpointResolutionOutcome.GetResult().AddPathSegments("/partners");
   };
 
-  return CreatePartnerInputOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePartnerInputOutcome(result.GetResultWithOwnership())
+                            : CreatePartnerInputOutcome(std::move(result.GetError()));
 }
 
 CreateSdiSourceOutcome MediaLiveClient::CreateSdiSource(const CreateSdiSourceRequest& request) const {
@@ -570,7 +605,9 @@ CreateSdiSourceOutcome MediaLiveClient::CreateSdiSource(const CreateSdiSourceReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/sdiSources");
   };
 
-  return CreateSdiSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSdiSourceOutcome(result.GetResultWithOwnership())
+                            : CreateSdiSourceOutcome(std::move(result.GetError()));
 }
 
 CreateSignalMapOutcome MediaLiveClient::CreateSignalMap(const CreateSignalMapRequest& request) const {
@@ -579,7 +616,9 @@ CreateSignalMapOutcome MediaLiveClient::CreateSignalMap(const CreateSignalMapReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/signal-maps");
   };
 
-  return CreateSignalMapOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSignalMapOutcome(result.GetResultWithOwnership())
+                            : CreateSignalMapOutcome(std::move(result.GetError()));
 }
 
 CreateTagsOutcome MediaLiveClient::CreateTags(const CreateTagsRequest& request) const {
@@ -595,7 +634,8 @@ CreateTagsOutcome MediaLiveClient::CreateTags(const CreateTagsRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return CreateTagsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTagsOutcome(result.GetResultWithOwnership()) : CreateTagsOutcome(std::move(result.GetError()));
 }
 
 DeleteChannelOutcome MediaLiveClient::DeleteChannel(const DeleteChannelRequest& request) const {
@@ -611,7 +651,8 @@ DeleteChannelOutcome MediaLiveClient::DeleteChannel(const DeleteChannelRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelId());
   };
 
-  return DeleteChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteChannelOutcome(result.GetResultWithOwnership()) : DeleteChannelOutcome(std::move(result.GetError()));
 }
 
 DeleteChannelPlacementGroupOutcome MediaLiveClient::DeleteChannelPlacementGroup(const DeleteChannelPlacementGroupRequest& request) const {
@@ -634,7 +675,9 @@ DeleteChannelPlacementGroupOutcome MediaLiveClient::DeleteChannelPlacementGroup(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelPlacementGroupId());
   };
 
-  return DeleteChannelPlacementGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteChannelPlacementGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteChannelPlacementGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteCloudWatchAlarmTemplateOutcome MediaLiveClient::DeleteCloudWatchAlarmTemplate(
@@ -651,7 +694,9 @@ DeleteCloudWatchAlarmTemplateOutcome MediaLiveClient::DeleteCloudWatchAlarmTempl
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteCloudWatchAlarmTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCloudWatchAlarmTemplateOutcome(result.GetResultWithOwnership())
+                            : DeleteCloudWatchAlarmTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteCloudWatchAlarmTemplateGroupOutcome MediaLiveClient::DeleteCloudWatchAlarmTemplateGroup(
@@ -668,7 +713,9 @@ DeleteCloudWatchAlarmTemplateGroupOutcome MediaLiveClient::DeleteCloudWatchAlarm
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteCloudWatchAlarmTemplateGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCloudWatchAlarmTemplateGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteCloudWatchAlarmTemplateGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteClusterOutcome MediaLiveClient::DeleteCluster(const DeleteClusterRequest& request) const {
@@ -684,7 +731,8 @@ DeleteClusterOutcome MediaLiveClient::DeleteCluster(const DeleteClusterRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterId());
   };
 
-  return DeleteClusterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteClusterOutcome(result.GetResultWithOwnership()) : DeleteClusterOutcome(std::move(result.GetError()));
 }
 
 DeleteEventBridgeRuleTemplateOutcome MediaLiveClient::DeleteEventBridgeRuleTemplate(
@@ -701,7 +749,9 @@ DeleteEventBridgeRuleTemplateOutcome MediaLiveClient::DeleteEventBridgeRuleTempl
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteEventBridgeRuleTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteEventBridgeRuleTemplateOutcome(result.GetResultWithOwnership())
+                            : DeleteEventBridgeRuleTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteEventBridgeRuleTemplateGroupOutcome MediaLiveClient::DeleteEventBridgeRuleTemplateGroup(
@@ -718,7 +768,9 @@ DeleteEventBridgeRuleTemplateGroupOutcome MediaLiveClient::DeleteEventBridgeRule
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteEventBridgeRuleTemplateGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteEventBridgeRuleTemplateGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteEventBridgeRuleTemplateGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteInputOutcome MediaLiveClient::DeleteInput(const DeleteInputRequest& request) const {
@@ -734,7 +786,8 @@ DeleteInputOutcome MediaLiveClient::DeleteInput(const DeleteInputRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInputId());
   };
 
-  return DeleteInputOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteInputOutcome(result.GetResultWithOwnership()) : DeleteInputOutcome(std::move(result.GetError()));
 }
 
 DeleteInputSecurityGroupOutcome MediaLiveClient::DeleteInputSecurityGroup(const DeleteInputSecurityGroupRequest& request) const {
@@ -750,7 +803,9 @@ DeleteInputSecurityGroupOutcome MediaLiveClient::DeleteInputSecurityGroup(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInputSecurityGroupId());
   };
 
-  return DeleteInputSecurityGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteInputSecurityGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteInputSecurityGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteMultiplexOutcome MediaLiveClient::DeleteMultiplex(const DeleteMultiplexRequest& request) const {
@@ -766,7 +821,9 @@ DeleteMultiplexOutcome MediaLiveClient::DeleteMultiplex(const DeleteMultiplexReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMultiplexId());
   };
 
-  return DeleteMultiplexOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMultiplexOutcome(result.GetResultWithOwnership())
+                            : DeleteMultiplexOutcome(std::move(result.GetError()));
 }
 
 DeleteMultiplexProgramOutcome MediaLiveClient::DeleteMultiplexProgram(const DeleteMultiplexProgramRequest& request) const {
@@ -789,7 +846,9 @@ DeleteMultiplexProgramOutcome MediaLiveClient::DeleteMultiplexProgram(const Dele
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProgramName());
   };
 
-  return DeleteMultiplexProgramOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMultiplexProgramOutcome(result.GetResultWithOwnership())
+                            : DeleteMultiplexProgramOutcome(std::move(result.GetError()));
 }
 
 DeleteNetworkOutcome MediaLiveClient::DeleteNetwork(const DeleteNetworkRequest& request) const {
@@ -805,7 +864,8 @@ DeleteNetworkOutcome MediaLiveClient::DeleteNetwork(const DeleteNetworkRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
   };
 
-  return DeleteNetworkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteNetworkOutcome(result.GetResultWithOwnership()) : DeleteNetworkOutcome(std::move(result.GetError()));
 }
 
 DeleteNodeOutcome MediaLiveClient::DeleteNode(const DeleteNodeRequest& request) const {
@@ -828,7 +888,8 @@ DeleteNodeOutcome MediaLiveClient::DeleteNode(const DeleteNodeRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNodeId());
   };
 
-  return DeleteNodeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteNodeOutcome(result.GetResultWithOwnership()) : DeleteNodeOutcome(std::move(result.GetError()));
 }
 
 DeleteReservationOutcome MediaLiveClient::DeleteReservation(const DeleteReservationRequest& request) const {
@@ -844,7 +905,9 @@ DeleteReservationOutcome MediaLiveClient::DeleteReservation(const DeleteReservat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReservationId());
   };
 
-  return DeleteReservationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteReservationOutcome(result.GetResultWithOwnership())
+                            : DeleteReservationOutcome(std::move(result.GetError()));
 }
 
 DeleteScheduleOutcome MediaLiveClient::DeleteSchedule(const DeleteScheduleRequest& request) const {
@@ -861,7 +924,8 @@ DeleteScheduleOutcome MediaLiveClient::DeleteSchedule(const DeleteScheduleReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/schedule");
   };
 
-  return DeleteScheduleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteScheduleOutcome(result.GetResultWithOwnership()) : DeleteScheduleOutcome(std::move(result.GetError()));
 }
 
 DeleteSdiSourceOutcome MediaLiveClient::DeleteSdiSource(const DeleteSdiSourceRequest& request) const {
@@ -877,7 +941,9 @@ DeleteSdiSourceOutcome MediaLiveClient::DeleteSdiSource(const DeleteSdiSourceReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSdiSourceId());
   };
 
-  return DeleteSdiSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSdiSourceOutcome(result.GetResultWithOwnership())
+                            : DeleteSdiSourceOutcome(std::move(result.GetError()));
 }
 
 DeleteSignalMapOutcome MediaLiveClient::DeleteSignalMap(const DeleteSignalMapRequest& request) const {
@@ -893,7 +959,9 @@ DeleteSignalMapOutcome MediaLiveClient::DeleteSignalMap(const DeleteSignalMapReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteSignalMapOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSignalMapOutcome(result.GetResultWithOwnership())
+                            : DeleteSignalMapOutcome(std::move(result.GetError()));
 }
 
 DeleteTagsOutcome MediaLiveClient::DeleteTags(const DeleteTagsRequest& request) const {
@@ -914,7 +982,8 @@ DeleteTagsOutcome MediaLiveClient::DeleteTags(const DeleteTagsRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return DeleteTagsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTagsOutcome(result.GetResultWithOwnership()) : DeleteTagsOutcome(std::move(result.GetError()));
 }
 
 DescribeAccountConfigurationOutcome MediaLiveClient::DescribeAccountConfiguration(
@@ -924,7 +993,9 @@ DescribeAccountConfigurationOutcome MediaLiveClient::DescribeAccountConfiguratio
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/accountConfiguration");
   };
 
-  return DescribeAccountConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAccountConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeAccountConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeChannelOutcome MediaLiveClient::DescribeChannel(const DescribeChannelRequest& request) const {
@@ -940,7 +1011,9 @@ DescribeChannelOutcome MediaLiveClient::DescribeChannel(const DescribeChannelReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelId());
   };
 
-  return DescribeChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeChannelOutcome(result.GetResultWithOwnership())
+                            : DescribeChannelOutcome(std::move(result.GetError()));
 }
 
 DescribeChannelPlacementGroupOutcome MediaLiveClient::DescribeChannelPlacementGroup(
@@ -964,7 +1037,9 @@ DescribeChannelPlacementGroupOutcome MediaLiveClient::DescribeChannelPlacementGr
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelPlacementGroupId());
   };
 
-  return DescribeChannelPlacementGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeChannelPlacementGroupOutcome(result.GetResultWithOwnership())
+                            : DescribeChannelPlacementGroupOutcome(std::move(result.GetError()));
 }
 
 DescribeClusterOutcome MediaLiveClient::DescribeCluster(const DescribeClusterRequest& request) const {
@@ -980,7 +1055,9 @@ DescribeClusterOutcome MediaLiveClient::DescribeCluster(const DescribeClusterReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterId());
   };
 
-  return DescribeClusterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeClusterOutcome(result.GetResultWithOwnership())
+                            : DescribeClusterOutcome(std::move(result.GetError()));
 }
 
 DescribeInputOutcome MediaLiveClient::DescribeInput(const DescribeInputRequest& request) const {
@@ -996,7 +1073,8 @@ DescribeInputOutcome MediaLiveClient::DescribeInput(const DescribeInputRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInputId());
   };
 
-  return DescribeInputOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeInputOutcome(result.GetResultWithOwnership()) : DescribeInputOutcome(std::move(result.GetError()));
 }
 
 DescribeInputDeviceOutcome MediaLiveClient::DescribeInputDevice(const DescribeInputDeviceRequest& request) const {
@@ -1012,7 +1090,9 @@ DescribeInputDeviceOutcome MediaLiveClient::DescribeInputDevice(const DescribeIn
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInputDeviceId());
   };
 
-  return DescribeInputDeviceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeInputDeviceOutcome(result.GetResultWithOwnership())
+                            : DescribeInputDeviceOutcome(std::move(result.GetError()));
 }
 
 DescribeInputDeviceThumbnailOutcome MediaLiveClient::DescribeInputDeviceThumbnail(
@@ -1050,8 +1130,9 @@ DescribeInputDeviceThumbnailOutcome MediaLiveClient::DescribeInputDeviceThumbnai
         endpointResolutionOutcome.GetResult().AddPathSegments("/prod/inputDevices/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInputDeviceId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/thumbnailData");
-        return DescribeInputDeviceThumbnailOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? DescribeInputDeviceThumbnailOutcome(result.GetResultWithOwnership())
+                                  : DescribeInputDeviceThumbnailOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1071,7 +1152,9 @@ DescribeInputSecurityGroupOutcome MediaLiveClient::DescribeInputSecurityGroup(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInputSecurityGroupId());
   };
 
-  return DescribeInputSecurityGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeInputSecurityGroupOutcome(result.GetResultWithOwnership())
+                            : DescribeInputSecurityGroupOutcome(std::move(result.GetError()));
 }
 
 DescribeMultiplexOutcome MediaLiveClient::DescribeMultiplex(const DescribeMultiplexRequest& request) const {
@@ -1087,7 +1170,9 @@ DescribeMultiplexOutcome MediaLiveClient::DescribeMultiplex(const DescribeMultip
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMultiplexId());
   };
 
-  return DescribeMultiplexOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeMultiplexOutcome(result.GetResultWithOwnership())
+                            : DescribeMultiplexOutcome(std::move(result.GetError()));
 }
 
 DescribeMultiplexProgramOutcome MediaLiveClient::DescribeMultiplexProgram(const DescribeMultiplexProgramRequest& request) const {
@@ -1110,7 +1195,9 @@ DescribeMultiplexProgramOutcome MediaLiveClient::DescribeMultiplexProgram(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProgramName());
   };
 
-  return DescribeMultiplexProgramOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeMultiplexProgramOutcome(result.GetResultWithOwnership())
+                            : DescribeMultiplexProgramOutcome(std::move(result.GetError()));
 }
 
 DescribeNetworkOutcome MediaLiveClient::DescribeNetwork(const DescribeNetworkRequest& request) const {
@@ -1126,7 +1213,9 @@ DescribeNetworkOutcome MediaLiveClient::DescribeNetwork(const DescribeNetworkReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
   };
 
-  return DescribeNetworkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeNetworkOutcome(result.GetResultWithOwnership())
+                            : DescribeNetworkOutcome(std::move(result.GetError()));
 }
 
 DescribeNodeOutcome MediaLiveClient::DescribeNode(const DescribeNodeRequest& request) const {
@@ -1149,7 +1238,8 @@ DescribeNodeOutcome MediaLiveClient::DescribeNode(const DescribeNodeRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNodeId());
   };
 
-  return DescribeNodeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeNodeOutcome(result.GetResultWithOwnership()) : DescribeNodeOutcome(std::move(result.GetError()));
 }
 
 DescribeOfferingOutcome MediaLiveClient::DescribeOffering(const DescribeOfferingRequest& request) const {
@@ -1165,7 +1255,9 @@ DescribeOfferingOutcome MediaLiveClient::DescribeOffering(const DescribeOffering
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOfferingId());
   };
 
-  return DescribeOfferingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeOfferingOutcome(result.GetResultWithOwnership())
+                            : DescribeOfferingOutcome(std::move(result.GetError()));
 }
 
 DescribeReservationOutcome MediaLiveClient::DescribeReservation(const DescribeReservationRequest& request) const {
@@ -1181,7 +1273,9 @@ DescribeReservationOutcome MediaLiveClient::DescribeReservation(const DescribeRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReservationId());
   };
 
-  return DescribeReservationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeReservationOutcome(result.GetResultWithOwnership())
+                            : DescribeReservationOutcome(std::move(result.GetError()));
 }
 
 DescribeScheduleOutcome MediaLiveClient::DescribeSchedule(const DescribeScheduleRequest& request) const {
@@ -1198,7 +1292,9 @@ DescribeScheduleOutcome MediaLiveClient::DescribeSchedule(const DescribeSchedule
     endpointResolutionOutcome.GetResult().AddPathSegments("/schedule");
   };
 
-  return DescribeScheduleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeScheduleOutcome(result.GetResultWithOwnership())
+                            : DescribeScheduleOutcome(std::move(result.GetError()));
 }
 
 DescribeSdiSourceOutcome MediaLiveClient::DescribeSdiSource(const DescribeSdiSourceRequest& request) const {
@@ -1214,7 +1310,9 @@ DescribeSdiSourceOutcome MediaLiveClient::DescribeSdiSource(const DescribeSdiSou
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSdiSourceId());
   };
 
-  return DescribeSdiSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeSdiSourceOutcome(result.GetResultWithOwnership())
+                            : DescribeSdiSourceOutcome(std::move(result.GetError()));
 }
 
 DescribeThumbnailsOutcome MediaLiveClient::DescribeThumbnails(const DescribeThumbnailsRequest& request) const {
@@ -1241,7 +1339,9 @@ DescribeThumbnailsOutcome MediaLiveClient::DescribeThumbnails(const DescribeThum
     endpointResolutionOutcome.GetResult().AddPathSegments("/thumbnails");
   };
 
-  return DescribeThumbnailsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeThumbnailsOutcome(result.GetResultWithOwnership())
+                            : DescribeThumbnailsOutcome(std::move(result.GetError()));
 }
 
 GetCloudWatchAlarmTemplateOutcome MediaLiveClient::GetCloudWatchAlarmTemplate(const GetCloudWatchAlarmTemplateRequest& request) const {
@@ -1257,7 +1357,9 @@ GetCloudWatchAlarmTemplateOutcome MediaLiveClient::GetCloudWatchAlarmTemplate(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetCloudWatchAlarmTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCloudWatchAlarmTemplateOutcome(result.GetResultWithOwnership())
+                            : GetCloudWatchAlarmTemplateOutcome(std::move(result.GetError()));
 }
 
 GetCloudWatchAlarmTemplateGroupOutcome MediaLiveClient::GetCloudWatchAlarmTemplateGroup(
@@ -1274,7 +1376,9 @@ GetCloudWatchAlarmTemplateGroupOutcome MediaLiveClient::GetCloudWatchAlarmTempla
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetCloudWatchAlarmTemplateGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCloudWatchAlarmTemplateGroupOutcome(result.GetResultWithOwnership())
+                            : GetCloudWatchAlarmTemplateGroupOutcome(std::move(result.GetError()));
 }
 
 GetEventBridgeRuleTemplateOutcome MediaLiveClient::GetEventBridgeRuleTemplate(const GetEventBridgeRuleTemplateRequest& request) const {
@@ -1290,7 +1394,9 @@ GetEventBridgeRuleTemplateOutcome MediaLiveClient::GetEventBridgeRuleTemplate(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetEventBridgeRuleTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEventBridgeRuleTemplateOutcome(result.GetResultWithOwnership())
+                            : GetEventBridgeRuleTemplateOutcome(std::move(result.GetError()));
 }
 
 GetEventBridgeRuleTemplateGroupOutcome MediaLiveClient::GetEventBridgeRuleTemplateGroup(
@@ -1307,7 +1413,9 @@ GetEventBridgeRuleTemplateGroupOutcome MediaLiveClient::GetEventBridgeRuleTempla
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetEventBridgeRuleTemplateGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEventBridgeRuleTemplateGroupOutcome(result.GetResultWithOwnership())
+                            : GetEventBridgeRuleTemplateGroupOutcome(std::move(result.GetError()));
 }
 
 GetSignalMapOutcome MediaLiveClient::GetSignalMap(const GetSignalMapRequest& request) const {
@@ -1323,7 +1431,8 @@ GetSignalMapOutcome MediaLiveClient::GetSignalMap(const GetSignalMapRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetSignalMapOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSignalMapOutcome(result.GetResultWithOwnership()) : GetSignalMapOutcome(std::move(result.GetError()));
 }
 
 ListAlertsOutcome MediaLiveClient::ListAlerts(const ListAlertsRequest& request) const {
@@ -1340,7 +1449,8 @@ ListAlertsOutcome MediaLiveClient::ListAlerts(const ListAlertsRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/alerts");
   };
 
-  return ListAlertsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAlertsOutcome(result.GetResultWithOwnership()) : ListAlertsOutcome(std::move(result.GetError()));
 }
 
 ListChannelPlacementGroupsOutcome MediaLiveClient::ListChannelPlacementGroups(const ListChannelPlacementGroupsRequest& request) const {
@@ -1357,7 +1467,9 @@ ListChannelPlacementGroupsOutcome MediaLiveClient::ListChannelPlacementGroups(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/channelplacementgroups");
   };
 
-  return ListChannelPlacementGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListChannelPlacementGroupsOutcome(result.GetResultWithOwnership())
+                            : ListChannelPlacementGroupsOutcome(std::move(result.GetError()));
 }
 
 ListChannelsOutcome MediaLiveClient::ListChannels(const ListChannelsRequest& request) const {
@@ -1366,7 +1478,8 @@ ListChannelsOutcome MediaLiveClient::ListChannels(const ListChannelsRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/channels");
   };
 
-  return ListChannelsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListChannelsOutcome(result.GetResultWithOwnership()) : ListChannelsOutcome(std::move(result.GetError()));
 }
 
 ListCloudWatchAlarmTemplateGroupsOutcome MediaLiveClient::ListCloudWatchAlarmTemplateGroups(
@@ -1376,7 +1489,9 @@ ListCloudWatchAlarmTemplateGroupsOutcome MediaLiveClient::ListCloudWatchAlarmTem
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/cloudwatch-alarm-template-groups");
   };
 
-  return ListCloudWatchAlarmTemplateGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCloudWatchAlarmTemplateGroupsOutcome(result.GetResultWithOwnership())
+                            : ListCloudWatchAlarmTemplateGroupsOutcome(std::move(result.GetError()));
 }
 
 ListCloudWatchAlarmTemplatesOutcome MediaLiveClient::ListCloudWatchAlarmTemplates(
@@ -1386,7 +1501,9 @@ ListCloudWatchAlarmTemplatesOutcome MediaLiveClient::ListCloudWatchAlarmTemplate
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/cloudwatch-alarm-templates");
   };
 
-  return ListCloudWatchAlarmTemplatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCloudWatchAlarmTemplatesOutcome(result.GetResultWithOwnership())
+                            : ListCloudWatchAlarmTemplatesOutcome(std::move(result.GetError()));
 }
 
 ListClusterAlertsOutcome MediaLiveClient::ListClusterAlerts(const ListClusterAlertsRequest& request) const {
@@ -1403,7 +1520,9 @@ ListClusterAlertsOutcome MediaLiveClient::ListClusterAlerts(const ListClusterAle
     endpointResolutionOutcome.GetResult().AddPathSegments("/alerts");
   };
 
-  return ListClusterAlertsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListClusterAlertsOutcome(result.GetResultWithOwnership())
+                            : ListClusterAlertsOutcome(std::move(result.GetError()));
 }
 
 ListClustersOutcome MediaLiveClient::ListClusters(const ListClustersRequest& request) const {
@@ -1412,7 +1531,8 @@ ListClustersOutcome MediaLiveClient::ListClusters(const ListClustersRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/clusters");
   };
 
-  return ListClustersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListClustersOutcome(result.GetResultWithOwnership()) : ListClustersOutcome(std::move(result.GetError()));
 }
 
 ListEventBridgeRuleTemplateGroupsOutcome MediaLiveClient::ListEventBridgeRuleTemplateGroups(
@@ -1422,7 +1542,9 @@ ListEventBridgeRuleTemplateGroupsOutcome MediaLiveClient::ListEventBridgeRuleTem
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/eventbridge-rule-template-groups");
   };
 
-  return ListEventBridgeRuleTemplateGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListEventBridgeRuleTemplateGroupsOutcome(result.GetResultWithOwnership())
+                            : ListEventBridgeRuleTemplateGroupsOutcome(std::move(result.GetError()));
 }
 
 ListEventBridgeRuleTemplatesOutcome MediaLiveClient::ListEventBridgeRuleTemplates(
@@ -1432,7 +1554,9 @@ ListEventBridgeRuleTemplatesOutcome MediaLiveClient::ListEventBridgeRuleTemplate
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/eventbridge-rule-templates");
   };
 
-  return ListEventBridgeRuleTemplatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListEventBridgeRuleTemplatesOutcome(result.GetResultWithOwnership())
+                            : ListEventBridgeRuleTemplatesOutcome(std::move(result.GetError()));
 }
 
 ListInputDeviceTransfersOutcome MediaLiveClient::ListInputDeviceTransfers(const ListInputDeviceTransfersRequest& request) const {
@@ -1447,7 +1571,9 @@ ListInputDeviceTransfersOutcome MediaLiveClient::ListInputDeviceTransfers(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/inputDeviceTransfers");
   };
 
-  return ListInputDeviceTransfersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListInputDeviceTransfersOutcome(result.GetResultWithOwnership())
+                            : ListInputDeviceTransfersOutcome(std::move(result.GetError()));
 }
 
 ListInputDevicesOutcome MediaLiveClient::ListInputDevices(const ListInputDevicesRequest& request) const {
@@ -1456,7 +1582,9 @@ ListInputDevicesOutcome MediaLiveClient::ListInputDevices(const ListInputDevices
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/inputDevices");
   };
 
-  return ListInputDevicesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListInputDevicesOutcome(result.GetResultWithOwnership())
+                            : ListInputDevicesOutcome(std::move(result.GetError()));
 }
 
 ListInputSecurityGroupsOutcome MediaLiveClient::ListInputSecurityGroups(const ListInputSecurityGroupsRequest& request) const {
@@ -1465,7 +1593,9 @@ ListInputSecurityGroupsOutcome MediaLiveClient::ListInputSecurityGroups(const Li
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/inputSecurityGroups");
   };
 
-  return ListInputSecurityGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListInputSecurityGroupsOutcome(result.GetResultWithOwnership())
+                            : ListInputSecurityGroupsOutcome(std::move(result.GetError()));
 }
 
 ListInputsOutcome MediaLiveClient::ListInputs(const ListInputsRequest& request) const {
@@ -1474,7 +1604,8 @@ ListInputsOutcome MediaLiveClient::ListInputs(const ListInputsRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/inputs");
   };
 
-  return ListInputsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListInputsOutcome(result.GetResultWithOwnership()) : ListInputsOutcome(std::move(result.GetError()));
 }
 
 ListMultiplexAlertsOutcome MediaLiveClient::ListMultiplexAlerts(const ListMultiplexAlertsRequest& request) const {
@@ -1491,7 +1622,9 @@ ListMultiplexAlertsOutcome MediaLiveClient::ListMultiplexAlerts(const ListMultip
     endpointResolutionOutcome.GetResult().AddPathSegments("/alerts");
   };
 
-  return ListMultiplexAlertsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMultiplexAlertsOutcome(result.GetResultWithOwnership())
+                            : ListMultiplexAlertsOutcome(std::move(result.GetError()));
 }
 
 ListMultiplexProgramsOutcome MediaLiveClient::ListMultiplexPrograms(const ListMultiplexProgramsRequest& request) const {
@@ -1508,7 +1641,9 @@ ListMultiplexProgramsOutcome MediaLiveClient::ListMultiplexPrograms(const ListMu
     endpointResolutionOutcome.GetResult().AddPathSegments("/programs");
   };
 
-  return ListMultiplexProgramsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMultiplexProgramsOutcome(result.GetResultWithOwnership())
+                            : ListMultiplexProgramsOutcome(std::move(result.GetError()));
 }
 
 ListMultiplexesOutcome MediaLiveClient::ListMultiplexes(const ListMultiplexesRequest& request) const {
@@ -1517,7 +1652,9 @@ ListMultiplexesOutcome MediaLiveClient::ListMultiplexes(const ListMultiplexesReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/multiplexes");
   };
 
-  return ListMultiplexesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMultiplexesOutcome(result.GetResultWithOwnership())
+                            : ListMultiplexesOutcome(std::move(result.GetError()));
 }
 
 ListNetworksOutcome MediaLiveClient::ListNetworks(const ListNetworksRequest& request) const {
@@ -1526,7 +1663,8 @@ ListNetworksOutcome MediaLiveClient::ListNetworks(const ListNetworksRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/networks");
   };
 
-  return ListNetworksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListNetworksOutcome(result.GetResultWithOwnership()) : ListNetworksOutcome(std::move(result.GetError()));
 }
 
 ListNodesOutcome MediaLiveClient::ListNodes(const ListNodesRequest& request) const {
@@ -1543,7 +1681,8 @@ ListNodesOutcome MediaLiveClient::ListNodes(const ListNodesRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegments("/nodes");
   };
 
-  return ListNodesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListNodesOutcome(result.GetResultWithOwnership()) : ListNodesOutcome(std::move(result.GetError()));
 }
 
 ListOfferingsOutcome MediaLiveClient::ListOfferings(const ListOfferingsRequest& request) const {
@@ -1552,7 +1691,8 @@ ListOfferingsOutcome MediaLiveClient::ListOfferings(const ListOfferingsRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/offerings");
   };
 
-  return ListOfferingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListOfferingsOutcome(result.GetResultWithOwnership()) : ListOfferingsOutcome(std::move(result.GetError()));
 }
 
 ListReservationsOutcome MediaLiveClient::ListReservations(const ListReservationsRequest& request) const {
@@ -1561,7 +1701,9 @@ ListReservationsOutcome MediaLiveClient::ListReservations(const ListReservations
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/reservations");
   };
 
-  return ListReservationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListReservationsOutcome(result.GetResultWithOwnership())
+                            : ListReservationsOutcome(std::move(result.GetError()));
 }
 
 ListSdiSourcesOutcome MediaLiveClient::ListSdiSources(const ListSdiSourcesRequest& request) const {
@@ -1570,7 +1712,8 @@ ListSdiSourcesOutcome MediaLiveClient::ListSdiSources(const ListSdiSourcesReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/sdiSources");
   };
 
-  return ListSdiSourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSdiSourcesOutcome(result.GetResultWithOwnership()) : ListSdiSourcesOutcome(std::move(result.GetError()));
 }
 
 ListSignalMapsOutcome MediaLiveClient::ListSignalMaps(const ListSignalMapsRequest& request) const {
@@ -1579,7 +1722,8 @@ ListSignalMapsOutcome MediaLiveClient::ListSignalMaps(const ListSignalMapsReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/signal-maps");
   };
 
-  return ListSignalMapsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSignalMapsOutcome(result.GetResultWithOwnership()) : ListSignalMapsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome MediaLiveClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -1595,7 +1739,9 @@ ListTagsForResourceOutcome MediaLiveClient::ListTagsForResource(const ListTagsFo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListVersionsOutcome MediaLiveClient::ListVersions(const ListVersionsRequest& request) const {
@@ -1604,7 +1750,8 @@ ListVersionsOutcome MediaLiveClient::ListVersions(const ListVersionsRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/versions");
   };
 
-  return ListVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListVersionsOutcome(result.GetResultWithOwnership()) : ListVersionsOutcome(std::move(result.GetError()));
 }
 
 PurchaseOfferingOutcome MediaLiveClient::PurchaseOffering(const PurchaseOfferingRequest& request) const {
@@ -1621,7 +1768,9 @@ PurchaseOfferingOutcome MediaLiveClient::PurchaseOffering(const PurchaseOffering
     endpointResolutionOutcome.GetResult().AddPathSegments("/purchase");
   };
 
-  return PurchaseOfferingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PurchaseOfferingOutcome(result.GetResultWithOwnership())
+                            : PurchaseOfferingOutcome(std::move(result.GetError()));
 }
 
 RebootInputDeviceOutcome MediaLiveClient::RebootInputDevice(const RebootInputDeviceRequest& request) const {
@@ -1638,7 +1787,9 @@ RebootInputDeviceOutcome MediaLiveClient::RebootInputDevice(const RebootInputDev
     endpointResolutionOutcome.GetResult().AddPathSegments("/reboot");
   };
 
-  return RebootInputDeviceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RebootInputDeviceOutcome(result.GetResultWithOwnership())
+                            : RebootInputDeviceOutcome(std::move(result.GetError()));
 }
 
 RejectInputDeviceTransferOutcome MediaLiveClient::RejectInputDeviceTransfer(const RejectInputDeviceTransferRequest& request) const {
@@ -1655,7 +1806,9 @@ RejectInputDeviceTransferOutcome MediaLiveClient::RejectInputDeviceTransfer(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/reject");
   };
 
-  return RejectInputDeviceTransferOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RejectInputDeviceTransferOutcome(result.GetResultWithOwnership())
+                            : RejectInputDeviceTransferOutcome(std::move(result.GetError()));
 }
 
 RestartChannelPipelinesOutcome MediaLiveClient::RestartChannelPipelines(const RestartChannelPipelinesRequest& request) const {
@@ -1672,7 +1825,9 @@ RestartChannelPipelinesOutcome MediaLiveClient::RestartChannelPipelines(const Re
     endpointResolutionOutcome.GetResult().AddPathSegments("/restartChannelPipelines");
   };
 
-  return RestartChannelPipelinesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RestartChannelPipelinesOutcome(result.GetResultWithOwnership())
+                            : RestartChannelPipelinesOutcome(std::move(result.GetError()));
 }
 
 StartChannelOutcome MediaLiveClient::StartChannel(const StartChannelRequest& request) const {
@@ -1689,7 +1844,8 @@ StartChannelOutcome MediaLiveClient::StartChannel(const StartChannelRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/start");
   };
 
-  return StartChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartChannelOutcome(result.GetResultWithOwnership()) : StartChannelOutcome(std::move(result.GetError()));
 }
 
 StartDeleteMonitorDeploymentOutcome MediaLiveClient::StartDeleteMonitorDeployment(
@@ -1707,7 +1863,9 @@ StartDeleteMonitorDeploymentOutcome MediaLiveClient::StartDeleteMonitorDeploymen
     endpointResolutionOutcome.GetResult().AddPathSegments("/monitor-deployment");
   };
 
-  return StartDeleteMonitorDeploymentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? StartDeleteMonitorDeploymentOutcome(result.GetResultWithOwnership())
+                            : StartDeleteMonitorDeploymentOutcome(std::move(result.GetError()));
 }
 
 StartInputDeviceOutcome MediaLiveClient::StartInputDevice(const StartInputDeviceRequest& request) const {
@@ -1724,7 +1882,9 @@ StartInputDeviceOutcome MediaLiveClient::StartInputDevice(const StartInputDevice
     endpointResolutionOutcome.GetResult().AddPathSegments("/start");
   };
 
-  return StartInputDeviceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartInputDeviceOutcome(result.GetResultWithOwnership())
+                            : StartInputDeviceOutcome(std::move(result.GetError()));
 }
 
 StartInputDeviceMaintenanceWindowOutcome MediaLiveClient::StartInputDeviceMaintenanceWindow(
@@ -1742,7 +1902,9 @@ StartInputDeviceMaintenanceWindowOutcome MediaLiveClient::StartInputDeviceMainte
     endpointResolutionOutcome.GetResult().AddPathSegments("/startInputDeviceMaintenanceWindow");
   };
 
-  return StartInputDeviceMaintenanceWindowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartInputDeviceMaintenanceWindowOutcome(result.GetResultWithOwnership())
+                            : StartInputDeviceMaintenanceWindowOutcome(std::move(result.GetError()));
 }
 
 StartMonitorDeploymentOutcome MediaLiveClient::StartMonitorDeployment(const StartMonitorDeploymentRequest& request) const {
@@ -1759,7 +1921,9 @@ StartMonitorDeploymentOutcome MediaLiveClient::StartMonitorDeployment(const Star
     endpointResolutionOutcome.GetResult().AddPathSegments("/monitor-deployment");
   };
 
-  return StartMonitorDeploymentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartMonitorDeploymentOutcome(result.GetResultWithOwnership())
+                            : StartMonitorDeploymentOutcome(std::move(result.GetError()));
 }
 
 StartMultiplexOutcome MediaLiveClient::StartMultiplex(const StartMultiplexRequest& request) const {
@@ -1776,7 +1940,8 @@ StartMultiplexOutcome MediaLiveClient::StartMultiplex(const StartMultiplexReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/start");
   };
 
-  return StartMultiplexOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartMultiplexOutcome(result.GetResultWithOwnership()) : StartMultiplexOutcome(std::move(result.GetError()));
 }
 
 StartUpdateSignalMapOutcome MediaLiveClient::StartUpdateSignalMap(const StartUpdateSignalMapRequest& request) const {
@@ -1792,7 +1957,9 @@ StartUpdateSignalMapOutcome MediaLiveClient::StartUpdateSignalMap(const StartUpd
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return StartUpdateSignalMapOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? StartUpdateSignalMapOutcome(result.GetResultWithOwnership())
+                            : StartUpdateSignalMapOutcome(std::move(result.GetError()));
 }
 
 StopChannelOutcome MediaLiveClient::StopChannel(const StopChannelRequest& request) const {
@@ -1809,7 +1976,8 @@ StopChannelOutcome MediaLiveClient::StopChannel(const StopChannelRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/stop");
   };
 
-  return StopChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopChannelOutcome(result.GetResultWithOwnership()) : StopChannelOutcome(std::move(result.GetError()));
 }
 
 StopInputDeviceOutcome MediaLiveClient::StopInputDevice(const StopInputDeviceRequest& request) const {
@@ -1826,7 +1994,9 @@ StopInputDeviceOutcome MediaLiveClient::StopInputDevice(const StopInputDeviceReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/stop");
   };
 
-  return StopInputDeviceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopInputDeviceOutcome(result.GetResultWithOwnership())
+                            : StopInputDeviceOutcome(std::move(result.GetError()));
 }
 
 StopMultiplexOutcome MediaLiveClient::StopMultiplex(const StopMultiplexRequest& request) const {
@@ -1843,7 +2013,8 @@ StopMultiplexOutcome MediaLiveClient::StopMultiplex(const StopMultiplexRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/stop");
   };
 
-  return StopMultiplexOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopMultiplexOutcome(result.GetResultWithOwnership()) : StopMultiplexOutcome(std::move(result.GetError()));
 }
 
 TransferInputDeviceOutcome MediaLiveClient::TransferInputDevice(const TransferInputDeviceRequest& request) const {
@@ -1860,7 +2031,9 @@ TransferInputDeviceOutcome MediaLiveClient::TransferInputDevice(const TransferIn
     endpointResolutionOutcome.GetResult().AddPathSegments("/transfer");
   };
 
-  return TransferInputDeviceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TransferInputDeviceOutcome(result.GetResultWithOwnership())
+                            : TransferInputDeviceOutcome(std::move(result.GetError()));
 }
 
 UpdateAccountConfigurationOutcome MediaLiveClient::UpdateAccountConfiguration(const UpdateAccountConfigurationRequest& request) const {
@@ -1869,7 +2042,9 @@ UpdateAccountConfigurationOutcome MediaLiveClient::UpdateAccountConfiguration(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/prod/accountConfiguration");
   };
 
-  return UpdateAccountConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateAccountConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateAccountConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateChannelOutcome MediaLiveClient::UpdateChannel(const UpdateChannelRequest& request) const {
@@ -1885,7 +2060,8 @@ UpdateChannelOutcome MediaLiveClient::UpdateChannel(const UpdateChannelRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelId());
   };
 
-  return UpdateChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateChannelOutcome(result.GetResultWithOwnership()) : UpdateChannelOutcome(std::move(result.GetError()));
 }
 
 UpdateChannelClassOutcome MediaLiveClient::UpdateChannelClass(const UpdateChannelClassRequest& request) const {
@@ -1902,7 +2078,9 @@ UpdateChannelClassOutcome MediaLiveClient::UpdateChannelClass(const UpdateChanne
     endpointResolutionOutcome.GetResult().AddPathSegments("/channelClass");
   };
 
-  return UpdateChannelClassOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateChannelClassOutcome(result.GetResultWithOwnership())
+                            : UpdateChannelClassOutcome(std::move(result.GetError()));
 }
 
 UpdateChannelPlacementGroupOutcome MediaLiveClient::UpdateChannelPlacementGroup(const UpdateChannelPlacementGroupRequest& request) const {
@@ -1925,7 +2103,9 @@ UpdateChannelPlacementGroupOutcome MediaLiveClient::UpdateChannelPlacementGroup(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelPlacementGroupId());
   };
 
-  return UpdateChannelPlacementGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateChannelPlacementGroupOutcome(result.GetResultWithOwnership())
+                            : UpdateChannelPlacementGroupOutcome(std::move(result.GetError()));
 }
 
 UpdateCloudWatchAlarmTemplateOutcome MediaLiveClient::UpdateCloudWatchAlarmTemplate(
@@ -1942,7 +2122,9 @@ UpdateCloudWatchAlarmTemplateOutcome MediaLiveClient::UpdateCloudWatchAlarmTempl
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateCloudWatchAlarmTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateCloudWatchAlarmTemplateOutcome(result.GetResultWithOwnership())
+                            : UpdateCloudWatchAlarmTemplateOutcome(std::move(result.GetError()));
 }
 
 UpdateCloudWatchAlarmTemplateGroupOutcome MediaLiveClient::UpdateCloudWatchAlarmTemplateGroup(
@@ -1959,7 +2141,9 @@ UpdateCloudWatchAlarmTemplateGroupOutcome MediaLiveClient::UpdateCloudWatchAlarm
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateCloudWatchAlarmTemplateGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateCloudWatchAlarmTemplateGroupOutcome(result.GetResultWithOwnership())
+                            : UpdateCloudWatchAlarmTemplateGroupOutcome(std::move(result.GetError()));
 }
 
 UpdateClusterOutcome MediaLiveClient::UpdateCluster(const UpdateClusterRequest& request) const {
@@ -1975,7 +2159,8 @@ UpdateClusterOutcome MediaLiveClient::UpdateCluster(const UpdateClusterRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterId());
   };
 
-  return UpdateClusterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateClusterOutcome(result.GetResultWithOwnership()) : UpdateClusterOutcome(std::move(result.GetError()));
 }
 
 UpdateEventBridgeRuleTemplateOutcome MediaLiveClient::UpdateEventBridgeRuleTemplate(
@@ -1992,7 +2177,9 @@ UpdateEventBridgeRuleTemplateOutcome MediaLiveClient::UpdateEventBridgeRuleTempl
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateEventBridgeRuleTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateEventBridgeRuleTemplateOutcome(result.GetResultWithOwnership())
+                            : UpdateEventBridgeRuleTemplateOutcome(std::move(result.GetError()));
 }
 
 UpdateEventBridgeRuleTemplateGroupOutcome MediaLiveClient::UpdateEventBridgeRuleTemplateGroup(
@@ -2009,7 +2196,9 @@ UpdateEventBridgeRuleTemplateGroupOutcome MediaLiveClient::UpdateEventBridgeRule
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateEventBridgeRuleTemplateGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateEventBridgeRuleTemplateGroupOutcome(result.GetResultWithOwnership())
+                            : UpdateEventBridgeRuleTemplateGroupOutcome(std::move(result.GetError()));
 }
 
 UpdateInputOutcome MediaLiveClient::UpdateInput(const UpdateInputRequest& request) const {
@@ -2025,7 +2214,8 @@ UpdateInputOutcome MediaLiveClient::UpdateInput(const UpdateInputRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInputId());
   };
 
-  return UpdateInputOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateInputOutcome(result.GetResultWithOwnership()) : UpdateInputOutcome(std::move(result.GetError()));
 }
 
 UpdateInputDeviceOutcome MediaLiveClient::UpdateInputDevice(const UpdateInputDeviceRequest& request) const {
@@ -2041,7 +2231,9 @@ UpdateInputDeviceOutcome MediaLiveClient::UpdateInputDevice(const UpdateInputDev
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInputDeviceId());
   };
 
-  return UpdateInputDeviceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateInputDeviceOutcome(result.GetResultWithOwnership())
+                            : UpdateInputDeviceOutcome(std::move(result.GetError()));
 }
 
 UpdateInputSecurityGroupOutcome MediaLiveClient::UpdateInputSecurityGroup(const UpdateInputSecurityGroupRequest& request) const {
@@ -2057,7 +2249,9 @@ UpdateInputSecurityGroupOutcome MediaLiveClient::UpdateInputSecurityGroup(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInputSecurityGroupId());
   };
 
-  return UpdateInputSecurityGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateInputSecurityGroupOutcome(result.GetResultWithOwnership())
+                            : UpdateInputSecurityGroupOutcome(std::move(result.GetError()));
 }
 
 UpdateMultiplexOutcome MediaLiveClient::UpdateMultiplex(const UpdateMultiplexRequest& request) const {
@@ -2073,7 +2267,9 @@ UpdateMultiplexOutcome MediaLiveClient::UpdateMultiplex(const UpdateMultiplexReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMultiplexId());
   };
 
-  return UpdateMultiplexOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateMultiplexOutcome(result.GetResultWithOwnership())
+                            : UpdateMultiplexOutcome(std::move(result.GetError()));
 }
 
 UpdateMultiplexProgramOutcome MediaLiveClient::UpdateMultiplexProgram(const UpdateMultiplexProgramRequest& request) const {
@@ -2096,7 +2292,9 @@ UpdateMultiplexProgramOutcome MediaLiveClient::UpdateMultiplexProgram(const Upda
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProgramName());
   };
 
-  return UpdateMultiplexProgramOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateMultiplexProgramOutcome(result.GetResultWithOwnership())
+                            : UpdateMultiplexProgramOutcome(std::move(result.GetError()));
 }
 
 UpdateNetworkOutcome MediaLiveClient::UpdateNetwork(const UpdateNetworkRequest& request) const {
@@ -2112,7 +2310,8 @@ UpdateNetworkOutcome MediaLiveClient::UpdateNetwork(const UpdateNetworkRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
   };
 
-  return UpdateNetworkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateNetworkOutcome(result.GetResultWithOwnership()) : UpdateNetworkOutcome(std::move(result.GetError()));
 }
 
 UpdateNodeOutcome MediaLiveClient::UpdateNode(const UpdateNodeRequest& request) const {
@@ -2135,7 +2334,8 @@ UpdateNodeOutcome MediaLiveClient::UpdateNode(const UpdateNodeRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNodeId());
   };
 
-  return UpdateNodeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateNodeOutcome(result.GetResultWithOwnership()) : UpdateNodeOutcome(std::move(result.GetError()));
 }
 
 UpdateNodeStateOutcome MediaLiveClient::UpdateNodeState(const UpdateNodeStateRequest& request) const {
@@ -2159,7 +2359,9 @@ UpdateNodeStateOutcome MediaLiveClient::UpdateNodeState(const UpdateNodeStateReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/state");
   };
 
-  return UpdateNodeStateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateNodeStateOutcome(result.GetResultWithOwnership())
+                            : UpdateNodeStateOutcome(std::move(result.GetError()));
 }
 
 UpdateReservationOutcome MediaLiveClient::UpdateReservation(const UpdateReservationRequest& request) const {
@@ -2175,7 +2377,9 @@ UpdateReservationOutcome MediaLiveClient::UpdateReservation(const UpdateReservat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReservationId());
   };
 
-  return UpdateReservationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateReservationOutcome(result.GetResultWithOwnership())
+                            : UpdateReservationOutcome(std::move(result.GetError()));
 }
 
 UpdateSdiSourceOutcome MediaLiveClient::UpdateSdiSource(const UpdateSdiSourceRequest& request) const {
@@ -2191,5 +2395,7 @@ UpdateSdiSourceOutcome MediaLiveClient::UpdateSdiSource(const UpdateSdiSourceReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSdiSourceId());
   };
 
-  return UpdateSdiSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateSdiSourceOutcome(result.GetResultWithOwnership())
+                            : UpdateSdiSourceOutcome(std::move(result.GetError()));
 }

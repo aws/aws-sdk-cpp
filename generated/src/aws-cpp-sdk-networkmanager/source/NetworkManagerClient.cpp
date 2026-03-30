@@ -284,7 +284,9 @@ AcceptAttachmentOutcome NetworkManagerClient::AcceptAttachment(const AcceptAttac
     endpointResolutionOutcome.GetResult().AddPathSegments("/accept");
   };
 
-  return AcceptAttachmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptAttachmentOutcome(result.GetResultWithOwnership())
+                            : AcceptAttachmentOutcome(std::move(result.GetError()));
 }
 
 AssociateConnectPeerOutcome NetworkManagerClient::AssociateConnectPeer(const AssociateConnectPeerRequest& request) const {
@@ -301,7 +303,9 @@ AssociateConnectPeerOutcome NetworkManagerClient::AssociateConnectPeer(const Ass
     endpointResolutionOutcome.GetResult().AddPathSegments("/connect-peer-associations");
   };
 
-  return AssociateConnectPeerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateConnectPeerOutcome(result.GetResultWithOwnership())
+                            : AssociateConnectPeerOutcome(std::move(result.GetError()));
 }
 
 AssociateCustomerGatewayOutcome NetworkManagerClient::AssociateCustomerGateway(const AssociateCustomerGatewayRequest& request) const {
@@ -318,7 +322,9 @@ AssociateCustomerGatewayOutcome NetworkManagerClient::AssociateCustomerGateway(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/customer-gateway-associations");
   };
 
-  return AssociateCustomerGatewayOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateCustomerGatewayOutcome(result.GetResultWithOwnership())
+                            : AssociateCustomerGatewayOutcome(std::move(result.GetError()));
 }
 
 AssociateLinkOutcome NetworkManagerClient::AssociateLink(const AssociateLinkRequest& request) const {
@@ -335,7 +341,8 @@ AssociateLinkOutcome NetworkManagerClient::AssociateLink(const AssociateLinkRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/link-associations");
   };
 
-  return AssociateLinkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateLinkOutcome(result.GetResultWithOwnership()) : AssociateLinkOutcome(std::move(result.GetError()));
 }
 
 AssociateTransitGatewayConnectPeerOutcome NetworkManagerClient::AssociateTransitGatewayConnectPeer(
@@ -353,7 +360,9 @@ AssociateTransitGatewayConnectPeerOutcome NetworkManagerClient::AssociateTransit
     endpointResolutionOutcome.GetResult().AddPathSegments("/transit-gateway-connect-peer-associations");
   };
 
-  return AssociateTransitGatewayConnectPeerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateTransitGatewayConnectPeerOutcome(result.GetResultWithOwnership())
+                            : AssociateTransitGatewayConnectPeerOutcome(std::move(result.GetError()));
 }
 
 CreateConnectAttachmentOutcome NetworkManagerClient::CreateConnectAttachment(const CreateConnectAttachmentRequest& request) const {
@@ -362,7 +371,9 @@ CreateConnectAttachmentOutcome NetworkManagerClient::CreateConnectAttachment(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/connect-attachments");
   };
 
-  return CreateConnectAttachmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConnectAttachmentOutcome(result.GetResultWithOwnership())
+                            : CreateConnectAttachmentOutcome(std::move(result.GetError()));
 }
 
 CreateConnectPeerOutcome NetworkManagerClient::CreateConnectPeer(const CreateConnectPeerRequest& request) const {
@@ -371,7 +382,9 @@ CreateConnectPeerOutcome NetworkManagerClient::CreateConnectPeer(const CreateCon
     endpointResolutionOutcome.GetResult().AddPathSegments("/connect-peers");
   };
 
-  return CreateConnectPeerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConnectPeerOutcome(result.GetResultWithOwnership())
+                            : CreateConnectPeerOutcome(std::move(result.GetError()));
 }
 
 CreateConnectionOutcome NetworkManagerClient::CreateConnection(const CreateConnectionRequest& request) const {
@@ -388,7 +401,9 @@ CreateConnectionOutcome NetworkManagerClient::CreateConnection(const CreateConne
     endpointResolutionOutcome.GetResult().AddPathSegments("/connections");
   };
 
-  return CreateConnectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConnectionOutcome(result.GetResultWithOwnership())
+                            : CreateConnectionOutcome(std::move(result.GetError()));
 }
 
 CreateCoreNetworkOutcome NetworkManagerClient::CreateCoreNetwork(const CreateCoreNetworkRequest& request) const {
@@ -397,7 +412,9 @@ CreateCoreNetworkOutcome NetworkManagerClient::CreateCoreNetwork(const CreateCor
     endpointResolutionOutcome.GetResult().AddPathSegments("/core-networks");
   };
 
-  return CreateCoreNetworkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCoreNetworkOutcome(result.GetResultWithOwnership())
+                            : CreateCoreNetworkOutcome(std::move(result.GetError()));
 }
 
 CreateCoreNetworkPrefixListAssociationOutcome NetworkManagerClient::CreateCoreNetworkPrefixListAssociation(
@@ -407,7 +424,9 @@ CreateCoreNetworkPrefixListAssociationOutcome NetworkManagerClient::CreateCoreNe
     endpointResolutionOutcome.GetResult().AddPathSegments("/prefix-list");
   };
 
-  return CreateCoreNetworkPrefixListAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCoreNetworkPrefixListAssociationOutcome(result.GetResultWithOwnership())
+                            : CreateCoreNetworkPrefixListAssociationOutcome(std::move(result.GetError()));
 }
 
 CreateDeviceOutcome NetworkManagerClient::CreateDevice(const CreateDeviceRequest& request) const {
@@ -424,7 +443,8 @@ CreateDeviceOutcome NetworkManagerClient::CreateDevice(const CreateDeviceRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/devices");
   };
 
-  return CreateDeviceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDeviceOutcome(result.GetResultWithOwnership()) : CreateDeviceOutcome(std::move(result.GetError()));
 }
 
 CreateDirectConnectGatewayAttachmentOutcome NetworkManagerClient::CreateDirectConnectGatewayAttachment(
@@ -434,7 +454,9 @@ CreateDirectConnectGatewayAttachmentOutcome NetworkManagerClient::CreateDirectCo
     endpointResolutionOutcome.GetResult().AddPathSegments("/direct-connect-gateway-attachments");
   };
 
-  return CreateDirectConnectGatewayAttachmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDirectConnectGatewayAttachmentOutcome(result.GetResultWithOwnership())
+                            : CreateDirectConnectGatewayAttachmentOutcome(std::move(result.GetError()));
 }
 
 CreateGlobalNetworkOutcome NetworkManagerClient::CreateGlobalNetwork(const CreateGlobalNetworkRequest& request) const {
@@ -443,7 +465,9 @@ CreateGlobalNetworkOutcome NetworkManagerClient::CreateGlobalNetwork(const Creat
     endpointResolutionOutcome.GetResult().AddPathSegments("/global-networks");
   };
 
-  return CreateGlobalNetworkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGlobalNetworkOutcome(result.GetResultWithOwnership())
+                            : CreateGlobalNetworkOutcome(std::move(result.GetError()));
 }
 
 CreateLinkOutcome NetworkManagerClient::CreateLink(const CreateLinkRequest& request) const {
@@ -460,7 +484,8 @@ CreateLinkOutcome NetworkManagerClient::CreateLink(const CreateLinkRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/links");
   };
 
-  return CreateLinkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLinkOutcome(result.GetResultWithOwnership()) : CreateLinkOutcome(std::move(result.GetError()));
 }
 
 CreateSiteOutcome NetworkManagerClient::CreateSite(const CreateSiteRequest& request) const {
@@ -477,7 +502,8 @@ CreateSiteOutcome NetworkManagerClient::CreateSite(const CreateSiteRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/sites");
   };
 
-  return CreateSiteOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSiteOutcome(result.GetResultWithOwnership()) : CreateSiteOutcome(std::move(result.GetError()));
 }
 
 CreateSiteToSiteVpnAttachmentOutcome NetworkManagerClient::CreateSiteToSiteVpnAttachment(
@@ -487,7 +513,9 @@ CreateSiteToSiteVpnAttachmentOutcome NetworkManagerClient::CreateSiteToSiteVpnAt
     endpointResolutionOutcome.GetResult().AddPathSegments("/site-to-site-vpn-attachments");
   };
 
-  return CreateSiteToSiteVpnAttachmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSiteToSiteVpnAttachmentOutcome(result.GetResultWithOwnership())
+                            : CreateSiteToSiteVpnAttachmentOutcome(std::move(result.GetError()));
 }
 
 CreateTransitGatewayPeeringOutcome NetworkManagerClient::CreateTransitGatewayPeering(
@@ -497,7 +525,9 @@ CreateTransitGatewayPeeringOutcome NetworkManagerClient::CreateTransitGatewayPee
     endpointResolutionOutcome.GetResult().AddPathSegments("/transit-gateway-peerings");
   };
 
-  return CreateTransitGatewayPeeringOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTransitGatewayPeeringOutcome(result.GetResultWithOwnership())
+                            : CreateTransitGatewayPeeringOutcome(std::move(result.GetError()));
 }
 
 CreateTransitGatewayRouteTableAttachmentOutcome NetworkManagerClient::CreateTransitGatewayRouteTableAttachment(
@@ -507,7 +537,9 @@ CreateTransitGatewayRouteTableAttachmentOutcome NetworkManagerClient::CreateTran
     endpointResolutionOutcome.GetResult().AddPathSegments("/transit-gateway-route-table-attachments");
   };
 
-  return CreateTransitGatewayRouteTableAttachmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTransitGatewayRouteTableAttachmentOutcome(result.GetResultWithOwnership())
+                            : CreateTransitGatewayRouteTableAttachmentOutcome(std::move(result.GetError()));
 }
 
 CreateVpcAttachmentOutcome NetworkManagerClient::CreateVpcAttachment(const CreateVpcAttachmentRequest& request) const {
@@ -516,7 +548,9 @@ CreateVpcAttachmentOutcome NetworkManagerClient::CreateVpcAttachment(const Creat
     endpointResolutionOutcome.GetResult().AddPathSegments("/vpc-attachments");
   };
 
-  return CreateVpcAttachmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateVpcAttachmentOutcome(result.GetResultWithOwnership())
+                            : CreateVpcAttachmentOutcome(std::move(result.GetError()));
 }
 
 DeleteAttachmentOutcome NetworkManagerClient::DeleteAttachment(const DeleteAttachmentRequest& request) const {
@@ -532,7 +566,9 @@ DeleteAttachmentOutcome NetworkManagerClient::DeleteAttachment(const DeleteAttac
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAttachmentId());
   };
 
-  return DeleteAttachmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAttachmentOutcome(result.GetResultWithOwnership())
+                            : DeleteAttachmentOutcome(std::move(result.GetError()));
 }
 
 DeleteConnectPeerOutcome NetworkManagerClient::DeleteConnectPeer(const DeleteConnectPeerRequest& request) const {
@@ -548,7 +584,9 @@ DeleteConnectPeerOutcome NetworkManagerClient::DeleteConnectPeer(const DeleteCon
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectPeerId());
   };
 
-  return DeleteConnectPeerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConnectPeerOutcome(result.GetResultWithOwnership())
+                            : DeleteConnectPeerOutcome(std::move(result.GetError()));
 }
 
 DeleteConnectionOutcome NetworkManagerClient::DeleteConnection(const DeleteConnectionRequest& request) const {
@@ -571,7 +609,9 @@ DeleteConnectionOutcome NetworkManagerClient::DeleteConnection(const DeleteConne
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectionId());
   };
 
-  return DeleteConnectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConnectionOutcome(result.GetResultWithOwnership())
+                            : DeleteConnectionOutcome(std::move(result.GetError()));
 }
 
 DeleteCoreNetworkOutcome NetworkManagerClient::DeleteCoreNetwork(const DeleteCoreNetworkRequest& request) const {
@@ -587,7 +627,9 @@ DeleteCoreNetworkOutcome NetworkManagerClient::DeleteCoreNetwork(const DeleteCor
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCoreNetworkId());
   };
 
-  return DeleteCoreNetworkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCoreNetworkOutcome(result.GetResultWithOwnership())
+                            : DeleteCoreNetworkOutcome(std::move(result.GetError()));
 }
 
 DeleteCoreNetworkPolicyVersionOutcome NetworkManagerClient::DeleteCoreNetworkPolicyVersion(
@@ -611,7 +653,9 @@ DeleteCoreNetworkPolicyVersionOutcome NetworkManagerClient::DeleteCoreNetworkPol
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPolicyVersionId());
   };
 
-  return DeleteCoreNetworkPolicyVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCoreNetworkPolicyVersionOutcome(result.GetResultWithOwnership())
+                            : DeleteCoreNetworkPolicyVersionOutcome(std::move(result.GetError()));
 }
 
 DeleteCoreNetworkPrefixListAssociationOutcome NetworkManagerClient::DeleteCoreNetworkPrefixListAssociation(
@@ -635,7 +679,9 @@ DeleteCoreNetworkPrefixListAssociationOutcome NetworkManagerClient::DeleteCoreNe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCoreNetworkId());
   };
 
-  return DeleteCoreNetworkPrefixListAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCoreNetworkPrefixListAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteCoreNetworkPrefixListAssociationOutcome(std::move(result.GetError()));
 }
 
 DeleteDeviceOutcome NetworkManagerClient::DeleteDevice(const DeleteDeviceRequest& request) const {
@@ -658,7 +704,8 @@ DeleteDeviceOutcome NetworkManagerClient::DeleteDevice(const DeleteDeviceRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDeviceId());
   };
 
-  return DeleteDeviceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDeviceOutcome(result.GetResultWithOwnership()) : DeleteDeviceOutcome(std::move(result.GetError()));
 }
 
 DeleteGlobalNetworkOutcome NetworkManagerClient::DeleteGlobalNetwork(const DeleteGlobalNetworkRequest& request) const {
@@ -674,7 +721,9 @@ DeleteGlobalNetworkOutcome NetworkManagerClient::DeleteGlobalNetwork(const Delet
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGlobalNetworkId());
   };
 
-  return DeleteGlobalNetworkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteGlobalNetworkOutcome(result.GetResultWithOwnership())
+                            : DeleteGlobalNetworkOutcome(std::move(result.GetError()));
 }
 
 DeleteLinkOutcome NetworkManagerClient::DeleteLink(const DeleteLinkRequest& request) const {
@@ -697,7 +746,8 @@ DeleteLinkOutcome NetworkManagerClient::DeleteLink(const DeleteLinkRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLinkId());
   };
 
-  return DeleteLinkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteLinkOutcome(result.GetResultWithOwnership()) : DeleteLinkOutcome(std::move(result.GetError()));
 }
 
 DeletePeeringOutcome NetworkManagerClient::DeletePeering(const DeletePeeringRequest& request) const {
@@ -713,7 +763,8 @@ DeletePeeringOutcome NetworkManagerClient::DeletePeering(const DeletePeeringRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPeeringId());
   };
 
-  return DeletePeeringOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePeeringOutcome(result.GetResultWithOwnership()) : DeletePeeringOutcome(std::move(result.GetError()));
 }
 
 DeleteResourcePolicyOutcome NetworkManagerClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const {
@@ -729,7 +780,9 @@ DeleteResourcePolicyOutcome NetworkManagerClient::DeleteResourcePolicy(const Del
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return DeleteResourcePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteSiteOutcome NetworkManagerClient::DeleteSite(const DeleteSiteRequest& request) const {
@@ -752,7 +805,8 @@ DeleteSiteOutcome NetworkManagerClient::DeleteSite(const DeleteSiteRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSiteId());
   };
 
-  return DeleteSiteOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSiteOutcome(result.GetResultWithOwnership()) : DeleteSiteOutcome(std::move(result.GetError()));
 }
 
 DeregisterTransitGatewayOutcome NetworkManagerClient::DeregisterTransitGateway(const DeregisterTransitGatewayRequest& request) const {
@@ -775,7 +829,9 @@ DeregisterTransitGatewayOutcome NetworkManagerClient::DeregisterTransitGateway(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTransitGatewayArn());
   };
 
-  return DeregisterTransitGatewayOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeregisterTransitGatewayOutcome(result.GetResultWithOwnership())
+                            : DeregisterTransitGatewayOutcome(std::move(result.GetError()));
 }
 
 DescribeGlobalNetworksOutcome NetworkManagerClient::DescribeGlobalNetworks(const DescribeGlobalNetworksRequest& request) const {
@@ -784,7 +840,9 @@ DescribeGlobalNetworksOutcome NetworkManagerClient::DescribeGlobalNetworks(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/global-networks");
   };
 
-  return DescribeGlobalNetworksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeGlobalNetworksOutcome(result.GetResultWithOwnership())
+                            : DescribeGlobalNetworksOutcome(std::move(result.GetError()));
 }
 
 DisassociateConnectPeerOutcome NetworkManagerClient::DisassociateConnectPeer(const DisassociateConnectPeerRequest& request) const {
@@ -807,7 +865,9 @@ DisassociateConnectPeerOutcome NetworkManagerClient::DisassociateConnectPeer(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectPeerId());
   };
 
-  return DisassociateConnectPeerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateConnectPeerOutcome(result.GetResultWithOwnership())
+                            : DisassociateConnectPeerOutcome(std::move(result.GetError()));
 }
 
 DisassociateCustomerGatewayOutcome NetworkManagerClient::DisassociateCustomerGateway(
@@ -831,7 +891,9 @@ DisassociateCustomerGatewayOutcome NetworkManagerClient::DisassociateCustomerGat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCustomerGatewayArn());
   };
 
-  return DisassociateCustomerGatewayOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateCustomerGatewayOutcome(result.GetResultWithOwnership())
+                            : DisassociateCustomerGatewayOutcome(std::move(result.GetError()));
 }
 
 DisassociateLinkOutcome NetworkManagerClient::DisassociateLink(const DisassociateLinkRequest& request) const {
@@ -858,7 +920,9 @@ DisassociateLinkOutcome NetworkManagerClient::DisassociateLink(const Disassociat
     endpointResolutionOutcome.GetResult().AddPathSegments("/link-associations");
   };
 
-  return DisassociateLinkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateLinkOutcome(result.GetResultWithOwnership())
+                            : DisassociateLinkOutcome(std::move(result.GetError()));
 }
 
 DisassociateTransitGatewayConnectPeerOutcome NetworkManagerClient::DisassociateTransitGatewayConnectPeer(
@@ -882,7 +946,9 @@ DisassociateTransitGatewayConnectPeerOutcome NetworkManagerClient::DisassociateT
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTransitGatewayConnectPeerArn());
   };
 
-  return DisassociateTransitGatewayConnectPeerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateTransitGatewayConnectPeerOutcome(result.GetResultWithOwnership())
+                            : DisassociateTransitGatewayConnectPeerOutcome(std::move(result.GetError()));
 }
 
 ExecuteCoreNetworkChangeSetOutcome NetworkManagerClient::ExecuteCoreNetworkChangeSet(
@@ -907,7 +973,9 @@ ExecuteCoreNetworkChangeSetOutcome NetworkManagerClient::ExecuteCoreNetworkChang
     endpointResolutionOutcome.GetResult().AddPathSegments("/execute");
   };
 
-  return ExecuteCoreNetworkChangeSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExecuteCoreNetworkChangeSetOutcome(result.GetResultWithOwnership())
+                            : ExecuteCoreNetworkChangeSetOutcome(std::move(result.GetError()));
 }
 
 GetConnectAttachmentOutcome NetworkManagerClient::GetConnectAttachment(const GetConnectAttachmentRequest& request) const {
@@ -923,7 +991,9 @@ GetConnectAttachmentOutcome NetworkManagerClient::GetConnectAttachment(const Get
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAttachmentId());
   };
 
-  return GetConnectAttachmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConnectAttachmentOutcome(result.GetResultWithOwnership())
+                            : GetConnectAttachmentOutcome(std::move(result.GetError()));
 }
 
 GetConnectPeerOutcome NetworkManagerClient::GetConnectPeer(const GetConnectPeerRequest& request) const {
@@ -939,7 +1009,8 @@ GetConnectPeerOutcome NetworkManagerClient::GetConnectPeer(const GetConnectPeerR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectPeerId());
   };
 
-  return GetConnectPeerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConnectPeerOutcome(result.GetResultWithOwnership()) : GetConnectPeerOutcome(std::move(result.GetError()));
 }
 
 GetConnectPeerAssociationsOutcome NetworkManagerClient::GetConnectPeerAssociations(const GetConnectPeerAssociationsRequest& request) const {
@@ -956,7 +1027,9 @@ GetConnectPeerAssociationsOutcome NetworkManagerClient::GetConnectPeerAssociatio
     endpointResolutionOutcome.GetResult().AddPathSegments("/connect-peer-associations");
   };
 
-  return GetConnectPeerAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConnectPeerAssociationsOutcome(result.GetResultWithOwnership())
+                            : GetConnectPeerAssociationsOutcome(std::move(result.GetError()));
 }
 
 GetConnectionsOutcome NetworkManagerClient::GetConnections(const GetConnectionsRequest& request) const {
@@ -973,7 +1046,8 @@ GetConnectionsOutcome NetworkManagerClient::GetConnections(const GetConnectionsR
     endpointResolutionOutcome.GetResult().AddPathSegments("/connections");
   };
 
-  return GetConnectionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConnectionsOutcome(result.GetResultWithOwnership()) : GetConnectionsOutcome(std::move(result.GetError()));
 }
 
 GetCoreNetworkOutcome NetworkManagerClient::GetCoreNetwork(const GetCoreNetworkRequest& request) const {
@@ -989,7 +1063,8 @@ GetCoreNetworkOutcome NetworkManagerClient::GetCoreNetwork(const GetCoreNetworkR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCoreNetworkId());
   };
 
-  return GetCoreNetworkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCoreNetworkOutcome(result.GetResultWithOwnership()) : GetCoreNetworkOutcome(std::move(result.GetError()));
 }
 
 GetCoreNetworkChangeEventsOutcome NetworkManagerClient::GetCoreNetworkChangeEvents(const GetCoreNetworkChangeEventsRequest& request) const {
@@ -1012,7 +1087,9 @@ GetCoreNetworkChangeEventsOutcome NetworkManagerClient::GetCoreNetworkChangeEven
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPolicyVersionId());
   };
 
-  return GetCoreNetworkChangeEventsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCoreNetworkChangeEventsOutcome(result.GetResultWithOwnership())
+                            : GetCoreNetworkChangeEventsOutcome(std::move(result.GetError()));
 }
 
 GetCoreNetworkChangeSetOutcome NetworkManagerClient::GetCoreNetworkChangeSet(const GetCoreNetworkChangeSetRequest& request) const {
@@ -1035,7 +1112,9 @@ GetCoreNetworkChangeSetOutcome NetworkManagerClient::GetCoreNetworkChangeSet(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPolicyVersionId());
   };
 
-  return GetCoreNetworkChangeSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCoreNetworkChangeSetOutcome(result.GetResultWithOwnership())
+                            : GetCoreNetworkChangeSetOutcome(std::move(result.GetError()));
 }
 
 GetCoreNetworkPolicyOutcome NetworkManagerClient::GetCoreNetworkPolicy(const GetCoreNetworkPolicyRequest& request) const {
@@ -1052,7 +1131,9 @@ GetCoreNetworkPolicyOutcome NetworkManagerClient::GetCoreNetworkPolicy(const Get
     endpointResolutionOutcome.GetResult().AddPathSegments("/core-network-policy");
   };
 
-  return GetCoreNetworkPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCoreNetworkPolicyOutcome(result.GetResultWithOwnership())
+                            : GetCoreNetworkPolicyOutcome(std::move(result.GetError()));
 }
 
 GetCustomerGatewayAssociationsOutcome NetworkManagerClient::GetCustomerGatewayAssociations(
@@ -1070,7 +1151,9 @@ GetCustomerGatewayAssociationsOutcome NetworkManagerClient::GetCustomerGatewayAs
     endpointResolutionOutcome.GetResult().AddPathSegments("/customer-gateway-associations");
   };
 
-  return GetCustomerGatewayAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCustomerGatewayAssociationsOutcome(result.GetResultWithOwnership())
+                            : GetCustomerGatewayAssociationsOutcome(std::move(result.GetError()));
 }
 
 GetDevicesOutcome NetworkManagerClient::GetDevices(const GetDevicesRequest& request) const {
@@ -1087,7 +1170,8 @@ GetDevicesOutcome NetworkManagerClient::GetDevices(const GetDevicesRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/devices");
   };
 
-  return GetDevicesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDevicesOutcome(result.GetResultWithOwnership()) : GetDevicesOutcome(std::move(result.GetError()));
 }
 
 GetDirectConnectGatewayAttachmentOutcome NetworkManagerClient::GetDirectConnectGatewayAttachment(
@@ -1104,7 +1188,9 @@ GetDirectConnectGatewayAttachmentOutcome NetworkManagerClient::GetDirectConnectG
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAttachmentId());
   };
 
-  return GetDirectConnectGatewayAttachmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDirectConnectGatewayAttachmentOutcome(result.GetResultWithOwnership())
+                            : GetDirectConnectGatewayAttachmentOutcome(std::move(result.GetError()));
 }
 
 GetLinkAssociationsOutcome NetworkManagerClient::GetLinkAssociations(const GetLinkAssociationsRequest& request) const {
@@ -1121,7 +1207,9 @@ GetLinkAssociationsOutcome NetworkManagerClient::GetLinkAssociations(const GetLi
     endpointResolutionOutcome.GetResult().AddPathSegments("/link-associations");
   };
 
-  return GetLinkAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetLinkAssociationsOutcome(result.GetResultWithOwnership())
+                            : GetLinkAssociationsOutcome(std::move(result.GetError()));
 }
 
 GetLinksOutcome NetworkManagerClient::GetLinks(const GetLinksRequest& request) const {
@@ -1138,7 +1226,8 @@ GetLinksOutcome NetworkManagerClient::GetLinks(const GetLinksRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegments("/links");
   };
 
-  return GetLinksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetLinksOutcome(result.GetResultWithOwnership()) : GetLinksOutcome(std::move(result.GetError()));
 }
 
 GetNetworkResourceCountsOutcome NetworkManagerClient::GetNetworkResourceCounts(const GetNetworkResourceCountsRequest& request) const {
@@ -1155,7 +1244,9 @@ GetNetworkResourceCountsOutcome NetworkManagerClient::GetNetworkResourceCounts(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/network-resource-count");
   };
 
-  return GetNetworkResourceCountsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetNetworkResourceCountsOutcome(result.GetResultWithOwnership())
+                            : GetNetworkResourceCountsOutcome(std::move(result.GetError()));
 }
 
 GetNetworkResourceRelationshipsOutcome NetworkManagerClient::GetNetworkResourceRelationships(
@@ -1173,7 +1264,9 @@ GetNetworkResourceRelationshipsOutcome NetworkManagerClient::GetNetworkResourceR
     endpointResolutionOutcome.GetResult().AddPathSegments("/network-resource-relationships");
   };
 
-  return GetNetworkResourceRelationshipsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetNetworkResourceRelationshipsOutcome(result.GetResultWithOwnership())
+                            : GetNetworkResourceRelationshipsOutcome(std::move(result.GetError()));
 }
 
 GetNetworkResourcesOutcome NetworkManagerClient::GetNetworkResources(const GetNetworkResourcesRequest& request) const {
@@ -1190,7 +1283,9 @@ GetNetworkResourcesOutcome NetworkManagerClient::GetNetworkResources(const GetNe
     endpointResolutionOutcome.GetResult().AddPathSegments("/network-resources");
   };
 
-  return GetNetworkResourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetNetworkResourcesOutcome(result.GetResultWithOwnership())
+                            : GetNetworkResourcesOutcome(std::move(result.GetError()));
 }
 
 GetNetworkRoutesOutcome NetworkManagerClient::GetNetworkRoutes(const GetNetworkRoutesRequest& request) const {
@@ -1207,7 +1302,9 @@ GetNetworkRoutesOutcome NetworkManagerClient::GetNetworkRoutes(const GetNetworkR
     endpointResolutionOutcome.GetResult().AddPathSegments("/network-routes");
   };
 
-  return GetNetworkRoutesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetNetworkRoutesOutcome(result.GetResultWithOwnership())
+                            : GetNetworkRoutesOutcome(std::move(result.GetError()));
 }
 
 GetNetworkTelemetryOutcome NetworkManagerClient::GetNetworkTelemetry(const GetNetworkTelemetryRequest& request) const {
@@ -1224,7 +1321,9 @@ GetNetworkTelemetryOutcome NetworkManagerClient::GetNetworkTelemetry(const GetNe
     endpointResolutionOutcome.GetResult().AddPathSegments("/network-telemetry");
   };
 
-  return GetNetworkTelemetryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetNetworkTelemetryOutcome(result.GetResultWithOwnership())
+                            : GetNetworkTelemetryOutcome(std::move(result.GetError()));
 }
 
 GetResourcePolicyOutcome NetworkManagerClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const {
@@ -1240,7 +1339,9 @@ GetResourcePolicyOutcome NetworkManagerClient::GetResourcePolicy(const GetResour
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return GetResourcePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : GetResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 GetRouteAnalysisOutcome NetworkManagerClient::GetRouteAnalysis(const GetRouteAnalysisRequest& request) const {
@@ -1263,7 +1364,9 @@ GetRouteAnalysisOutcome NetworkManagerClient::GetRouteAnalysis(const GetRouteAna
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRouteAnalysisId());
   };
 
-  return GetRouteAnalysisOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRouteAnalysisOutcome(result.GetResultWithOwnership())
+                            : GetRouteAnalysisOutcome(std::move(result.GetError()));
 }
 
 GetSiteToSiteVpnAttachmentOutcome NetworkManagerClient::GetSiteToSiteVpnAttachment(const GetSiteToSiteVpnAttachmentRequest& request) const {
@@ -1279,7 +1382,9 @@ GetSiteToSiteVpnAttachmentOutcome NetworkManagerClient::GetSiteToSiteVpnAttachme
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAttachmentId());
   };
 
-  return GetSiteToSiteVpnAttachmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSiteToSiteVpnAttachmentOutcome(result.GetResultWithOwnership())
+                            : GetSiteToSiteVpnAttachmentOutcome(std::move(result.GetError()));
 }
 
 GetSitesOutcome NetworkManagerClient::GetSites(const GetSitesRequest& request) const {
@@ -1296,7 +1401,8 @@ GetSitesOutcome NetworkManagerClient::GetSites(const GetSitesRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegments("/sites");
   };
 
-  return GetSitesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSitesOutcome(result.GetResultWithOwnership()) : GetSitesOutcome(std::move(result.GetError()));
 }
 
 GetTransitGatewayConnectPeerAssociationsOutcome NetworkManagerClient::GetTransitGatewayConnectPeerAssociations(
@@ -1314,7 +1420,9 @@ GetTransitGatewayConnectPeerAssociationsOutcome NetworkManagerClient::GetTransit
     endpointResolutionOutcome.GetResult().AddPathSegments("/transit-gateway-connect-peer-associations");
   };
 
-  return GetTransitGatewayConnectPeerAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTransitGatewayConnectPeerAssociationsOutcome(result.GetResultWithOwnership())
+                            : GetTransitGatewayConnectPeerAssociationsOutcome(std::move(result.GetError()));
 }
 
 GetTransitGatewayPeeringOutcome NetworkManagerClient::GetTransitGatewayPeering(const GetTransitGatewayPeeringRequest& request) const {
@@ -1330,7 +1438,9 @@ GetTransitGatewayPeeringOutcome NetworkManagerClient::GetTransitGatewayPeering(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPeeringId());
   };
 
-  return GetTransitGatewayPeeringOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTransitGatewayPeeringOutcome(result.GetResultWithOwnership())
+                            : GetTransitGatewayPeeringOutcome(std::move(result.GetError()));
 }
 
 GetTransitGatewayRegistrationsOutcome NetworkManagerClient::GetTransitGatewayRegistrations(
@@ -1348,7 +1458,9 @@ GetTransitGatewayRegistrationsOutcome NetworkManagerClient::GetTransitGatewayReg
     endpointResolutionOutcome.GetResult().AddPathSegments("/transit-gateway-registrations");
   };
 
-  return GetTransitGatewayRegistrationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTransitGatewayRegistrationsOutcome(result.GetResultWithOwnership())
+                            : GetTransitGatewayRegistrationsOutcome(std::move(result.GetError()));
 }
 
 GetTransitGatewayRouteTableAttachmentOutcome NetworkManagerClient::GetTransitGatewayRouteTableAttachment(
@@ -1365,7 +1477,9 @@ GetTransitGatewayRouteTableAttachmentOutcome NetworkManagerClient::GetTransitGat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAttachmentId());
   };
 
-  return GetTransitGatewayRouteTableAttachmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTransitGatewayRouteTableAttachmentOutcome(result.GetResultWithOwnership())
+                            : GetTransitGatewayRouteTableAttachmentOutcome(std::move(result.GetError()));
 }
 
 GetVpcAttachmentOutcome NetworkManagerClient::GetVpcAttachment(const GetVpcAttachmentRequest& request) const {
@@ -1381,7 +1495,9 @@ GetVpcAttachmentOutcome NetworkManagerClient::GetVpcAttachment(const GetVpcAttac
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAttachmentId());
   };
 
-  return GetVpcAttachmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetVpcAttachmentOutcome(result.GetResultWithOwnership())
+                            : GetVpcAttachmentOutcome(std::move(result.GetError()));
 }
 
 ListAttachmentRoutingPolicyAssociationsOutcome NetworkManagerClient::ListAttachmentRoutingPolicyAssociations(
@@ -1398,7 +1514,9 @@ ListAttachmentRoutingPolicyAssociationsOutcome NetworkManagerClient::ListAttachm
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCoreNetworkId());
   };
 
-  return ListAttachmentRoutingPolicyAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAttachmentRoutingPolicyAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListAttachmentRoutingPolicyAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListAttachmentsOutcome NetworkManagerClient::ListAttachments(const ListAttachmentsRequest& request) const {
@@ -1407,7 +1525,9 @@ ListAttachmentsOutcome NetworkManagerClient::ListAttachments(const ListAttachmen
     endpointResolutionOutcome.GetResult().AddPathSegments("/attachments");
   };
 
-  return ListAttachmentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAttachmentsOutcome(result.GetResultWithOwnership())
+                            : ListAttachmentsOutcome(std::move(result.GetError()));
 }
 
 ListConnectPeersOutcome NetworkManagerClient::ListConnectPeers(const ListConnectPeersRequest& request) const {
@@ -1416,7 +1536,9 @@ ListConnectPeersOutcome NetworkManagerClient::ListConnectPeers(const ListConnect
     endpointResolutionOutcome.GetResult().AddPathSegments("/connect-peers");
   };
 
-  return ListConnectPeersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListConnectPeersOutcome(result.GetResultWithOwnership())
+                            : ListConnectPeersOutcome(std::move(result.GetError()));
 }
 
 ListCoreNetworkPolicyVersionsOutcome NetworkManagerClient::ListCoreNetworkPolicyVersions(
@@ -1434,7 +1556,9 @@ ListCoreNetworkPolicyVersionsOutcome NetworkManagerClient::ListCoreNetworkPolicy
     endpointResolutionOutcome.GetResult().AddPathSegments("/core-network-policy-versions");
   };
 
-  return ListCoreNetworkPolicyVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCoreNetworkPolicyVersionsOutcome(result.GetResultWithOwnership())
+                            : ListCoreNetworkPolicyVersionsOutcome(std::move(result.GetError()));
 }
 
 ListCoreNetworkPrefixListAssociationsOutcome NetworkManagerClient::ListCoreNetworkPrefixListAssociations(
@@ -1451,7 +1575,9 @@ ListCoreNetworkPrefixListAssociationsOutcome NetworkManagerClient::ListCoreNetwo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCoreNetworkId());
   };
 
-  return ListCoreNetworkPrefixListAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCoreNetworkPrefixListAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListCoreNetworkPrefixListAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListCoreNetworkRoutingInformationOutcome NetworkManagerClient::ListCoreNetworkRoutingInformation(
@@ -1469,7 +1595,9 @@ ListCoreNetworkRoutingInformationOutcome NetworkManagerClient::ListCoreNetworkRo
     endpointResolutionOutcome.GetResult().AddPathSegments("/core-network-routing-information");
   };
 
-  return ListCoreNetworkRoutingInformationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCoreNetworkRoutingInformationOutcome(result.GetResultWithOwnership())
+                            : ListCoreNetworkRoutingInformationOutcome(std::move(result.GetError()));
 }
 
 ListCoreNetworksOutcome NetworkManagerClient::ListCoreNetworks(const ListCoreNetworksRequest& request) const {
@@ -1478,7 +1606,9 @@ ListCoreNetworksOutcome NetworkManagerClient::ListCoreNetworks(const ListCoreNet
     endpointResolutionOutcome.GetResult().AddPathSegments("/core-networks");
   };
 
-  return ListCoreNetworksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCoreNetworksOutcome(result.GetResultWithOwnership())
+                            : ListCoreNetworksOutcome(std::move(result.GetError()));
 }
 
 ListOrganizationServiceAccessStatusOutcome NetworkManagerClient::ListOrganizationServiceAccessStatus(
@@ -1488,7 +1618,9 @@ ListOrganizationServiceAccessStatusOutcome NetworkManagerClient::ListOrganizatio
     endpointResolutionOutcome.GetResult().AddPathSegments("/organizations/service-access");
   };
 
-  return ListOrganizationServiceAccessStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListOrganizationServiceAccessStatusOutcome(result.GetResultWithOwnership())
+                            : ListOrganizationServiceAccessStatusOutcome(std::move(result.GetError()));
 }
 
 ListPeeringsOutcome NetworkManagerClient::ListPeerings(const ListPeeringsRequest& request) const {
@@ -1497,7 +1629,8 @@ ListPeeringsOutcome NetworkManagerClient::ListPeerings(const ListPeeringsRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/peerings");
   };
 
-  return ListPeeringsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPeeringsOutcome(result.GetResultWithOwnership()) : ListPeeringsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome NetworkManagerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -1513,7 +1646,9 @@ ListTagsForResourceOutcome NetworkManagerClient::ListTagsForResource(const ListT
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutAttachmentRoutingPolicyLabelOutcome NetworkManagerClient::PutAttachmentRoutingPolicyLabel(
@@ -1523,7 +1658,9 @@ PutAttachmentRoutingPolicyLabelOutcome NetworkManagerClient::PutAttachmentRoutin
     endpointResolutionOutcome.GetResult().AddPathSegments("/routing-policy-label");
   };
 
-  return PutAttachmentRoutingPolicyLabelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutAttachmentRoutingPolicyLabelOutcome(result.GetResultWithOwnership())
+                            : PutAttachmentRoutingPolicyLabelOutcome(std::move(result.GetError()));
 }
 
 PutCoreNetworkPolicyOutcome NetworkManagerClient::PutCoreNetworkPolicy(const PutCoreNetworkPolicyRequest& request) const {
@@ -1540,7 +1677,9 @@ PutCoreNetworkPolicyOutcome NetworkManagerClient::PutCoreNetworkPolicy(const Put
     endpointResolutionOutcome.GetResult().AddPathSegments("/core-network-policy");
   };
 
-  return PutCoreNetworkPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutCoreNetworkPolicyOutcome(result.GetResultWithOwnership())
+                            : PutCoreNetworkPolicyOutcome(std::move(result.GetError()));
 }
 
 PutResourcePolicyOutcome NetworkManagerClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const {
@@ -1556,7 +1695,9 @@ PutResourcePolicyOutcome NetworkManagerClient::PutResourcePolicy(const PutResour
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return PutResourcePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : PutResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 RegisterTransitGatewayOutcome NetworkManagerClient::RegisterTransitGateway(const RegisterTransitGatewayRequest& request) const {
@@ -1573,7 +1714,9 @@ RegisterTransitGatewayOutcome NetworkManagerClient::RegisterTransitGateway(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/transit-gateway-registrations");
   };
 
-  return RegisterTransitGatewayOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterTransitGatewayOutcome(result.GetResultWithOwnership())
+                            : RegisterTransitGatewayOutcome(std::move(result.GetError()));
 }
 
 RejectAttachmentOutcome NetworkManagerClient::RejectAttachment(const RejectAttachmentRequest& request) const {
@@ -1590,7 +1733,9 @@ RejectAttachmentOutcome NetworkManagerClient::RejectAttachment(const RejectAttac
     endpointResolutionOutcome.GetResult().AddPathSegments("/reject");
   };
 
-  return RejectAttachmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RejectAttachmentOutcome(result.GetResultWithOwnership())
+                            : RejectAttachmentOutcome(std::move(result.GetError()));
 }
 
 RemoveAttachmentRoutingPolicyLabelOutcome NetworkManagerClient::RemoveAttachmentRoutingPolicyLabel(
@@ -1614,7 +1759,9 @@ RemoveAttachmentRoutingPolicyLabelOutcome NetworkManagerClient::RemoveAttachment
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAttachmentId());
   };
 
-  return RemoveAttachmentRoutingPolicyLabelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? RemoveAttachmentRoutingPolicyLabelOutcome(result.GetResultWithOwnership())
+                            : RemoveAttachmentRoutingPolicyLabelOutcome(std::move(result.GetError()));
 }
 
 RestoreCoreNetworkPolicyVersionOutcome NetworkManagerClient::RestoreCoreNetworkPolicyVersion(
@@ -1639,7 +1786,9 @@ RestoreCoreNetworkPolicyVersionOutcome NetworkManagerClient::RestoreCoreNetworkP
     endpointResolutionOutcome.GetResult().AddPathSegments("/restore");
   };
 
-  return RestoreCoreNetworkPolicyVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RestoreCoreNetworkPolicyVersionOutcome(result.GetResultWithOwnership())
+                            : RestoreCoreNetworkPolicyVersionOutcome(std::move(result.GetError()));
 }
 
 StartOrganizationServiceAccessUpdateOutcome NetworkManagerClient::StartOrganizationServiceAccessUpdate(
@@ -1649,7 +1798,9 @@ StartOrganizationServiceAccessUpdateOutcome NetworkManagerClient::StartOrganizat
     endpointResolutionOutcome.GetResult().AddPathSegments("/organizations/service-access");
   };
 
-  return StartOrganizationServiceAccessUpdateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartOrganizationServiceAccessUpdateOutcome(result.GetResultWithOwnership())
+                            : StartOrganizationServiceAccessUpdateOutcome(std::move(result.GetError()));
 }
 
 StartRouteAnalysisOutcome NetworkManagerClient::StartRouteAnalysis(const StartRouteAnalysisRequest& request) const {
@@ -1666,7 +1817,9 @@ StartRouteAnalysisOutcome NetworkManagerClient::StartRouteAnalysis(const StartRo
     endpointResolutionOutcome.GetResult().AddPathSegments("/route-analyses");
   };
 
-  return StartRouteAnalysisOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartRouteAnalysisOutcome(result.GetResultWithOwnership())
+                            : StartRouteAnalysisOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome NetworkManagerClient::TagResource(const TagResourceRequest& request) const {
@@ -1682,7 +1835,8 @@ TagResourceOutcome NetworkManagerClient::TagResource(const TagResourceRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome NetworkManagerClient::UntagResource(const UntagResourceRequest& request) const {
@@ -1703,7 +1857,8 @@ UntagResourceOutcome NetworkManagerClient::UntagResource(const UntagResourceRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateConnectionOutcome NetworkManagerClient::UpdateConnection(const UpdateConnectionRequest& request) const {
@@ -1726,7 +1881,9 @@ UpdateConnectionOutcome NetworkManagerClient::UpdateConnection(const UpdateConne
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectionId());
   };
 
-  return UpdateConnectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateConnectionOutcome(result.GetResultWithOwnership())
+                            : UpdateConnectionOutcome(std::move(result.GetError()));
 }
 
 UpdateCoreNetworkOutcome NetworkManagerClient::UpdateCoreNetwork(const UpdateCoreNetworkRequest& request) const {
@@ -1742,7 +1899,9 @@ UpdateCoreNetworkOutcome NetworkManagerClient::UpdateCoreNetwork(const UpdateCor
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCoreNetworkId());
   };
 
-  return UpdateCoreNetworkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateCoreNetworkOutcome(result.GetResultWithOwnership())
+                            : UpdateCoreNetworkOutcome(std::move(result.GetError()));
 }
 
 UpdateDeviceOutcome NetworkManagerClient::UpdateDevice(const UpdateDeviceRequest& request) const {
@@ -1765,7 +1924,8 @@ UpdateDeviceOutcome NetworkManagerClient::UpdateDevice(const UpdateDeviceRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDeviceId());
   };
 
-  return UpdateDeviceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateDeviceOutcome(result.GetResultWithOwnership()) : UpdateDeviceOutcome(std::move(result.GetError()));
 }
 
 UpdateDirectConnectGatewayAttachmentOutcome NetworkManagerClient::UpdateDirectConnectGatewayAttachment(
@@ -1782,7 +1942,9 @@ UpdateDirectConnectGatewayAttachmentOutcome NetworkManagerClient::UpdateDirectCo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAttachmentId());
   };
 
-  return UpdateDirectConnectGatewayAttachmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateDirectConnectGatewayAttachmentOutcome(result.GetResultWithOwnership())
+                            : UpdateDirectConnectGatewayAttachmentOutcome(std::move(result.GetError()));
 }
 
 UpdateGlobalNetworkOutcome NetworkManagerClient::UpdateGlobalNetwork(const UpdateGlobalNetworkRequest& request) const {
@@ -1798,7 +1960,9 @@ UpdateGlobalNetworkOutcome NetworkManagerClient::UpdateGlobalNetwork(const Updat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGlobalNetworkId());
   };
 
-  return UpdateGlobalNetworkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateGlobalNetworkOutcome(result.GetResultWithOwnership())
+                            : UpdateGlobalNetworkOutcome(std::move(result.GetError()));
 }
 
 UpdateLinkOutcome NetworkManagerClient::UpdateLink(const UpdateLinkRequest& request) const {
@@ -1821,7 +1985,8 @@ UpdateLinkOutcome NetworkManagerClient::UpdateLink(const UpdateLinkRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLinkId());
   };
 
-  return UpdateLinkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateLinkOutcome(result.GetResultWithOwnership()) : UpdateLinkOutcome(std::move(result.GetError()));
 }
 
 UpdateNetworkResourceMetadataOutcome NetworkManagerClient::UpdateNetworkResourceMetadata(
@@ -1846,7 +2011,9 @@ UpdateNetworkResourceMetadataOutcome NetworkManagerClient::UpdateNetworkResource
     endpointResolutionOutcome.GetResult().AddPathSegments("/metadata");
   };
 
-  return UpdateNetworkResourceMetadataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateNetworkResourceMetadataOutcome(result.GetResultWithOwnership())
+                            : UpdateNetworkResourceMetadataOutcome(std::move(result.GetError()));
 }
 
 UpdateSiteOutcome NetworkManagerClient::UpdateSite(const UpdateSiteRequest& request) const {
@@ -1869,7 +2036,8 @@ UpdateSiteOutcome NetworkManagerClient::UpdateSite(const UpdateSiteRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSiteId());
   };
 
-  return UpdateSiteOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateSiteOutcome(result.GetResultWithOwnership()) : UpdateSiteOutcome(std::move(result.GetError()));
 }
 
 UpdateVpcAttachmentOutcome NetworkManagerClient::UpdateVpcAttachment(const UpdateVpcAttachmentRequest& request) const {
@@ -1885,5 +2053,7 @@ UpdateVpcAttachmentOutcome NetworkManagerClient::UpdateVpcAttachment(const Updat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAttachmentId());
   };
 
-  return UpdateVpcAttachmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateVpcAttachmentOutcome(result.GetResultWithOwnership())
+                            : UpdateVpcAttachmentOutcome(std::move(result.GetError()));
 }

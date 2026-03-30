@@ -206,7 +206,9 @@ CreateConnectorOutcome PcaConnectorAdClient::CreateConnector(const CreateConnect
     endpointResolutionOutcome.GetResult().AddPathSegments("/connectors");
   };
 
-  return CreateConnectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConnectorOutcome(result.GetResultWithOwnership())
+                            : CreateConnectorOutcome(std::move(result.GetError()));
 }
 
 CreateDirectoryRegistrationOutcome PcaConnectorAdClient::CreateDirectoryRegistration(
@@ -216,7 +218,9 @@ CreateDirectoryRegistrationOutcome PcaConnectorAdClient::CreateDirectoryRegistra
     endpointResolutionOutcome.GetResult().AddPathSegments("/directoryRegistrations");
   };
 
-  return CreateDirectoryRegistrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDirectoryRegistrationOutcome(result.GetResultWithOwnership())
+                            : CreateDirectoryRegistrationOutcome(std::move(result.GetError()));
 }
 
 CreateServicePrincipalNameOutcome PcaConnectorAdClient::CreateServicePrincipalName(const CreateServicePrincipalNameRequest& request) const {
@@ -239,7 +243,9 @@ CreateServicePrincipalNameOutcome PcaConnectorAdClient::CreateServicePrincipalNa
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectorArn());
   };
 
-  return CreateServicePrincipalNameOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateServicePrincipalNameOutcome(result.GetResultWithOwnership())
+                            : CreateServicePrincipalNameOutcome(std::move(result.GetError()));
 }
 
 CreateTemplateOutcome PcaConnectorAdClient::CreateTemplate(const CreateTemplateRequest& request) const {
@@ -248,7 +254,8 @@ CreateTemplateOutcome PcaConnectorAdClient::CreateTemplate(const CreateTemplateR
     endpointResolutionOutcome.GetResult().AddPathSegments("/templates");
   };
 
-  return CreateTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTemplateOutcome(result.GetResultWithOwnership()) : CreateTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateTemplateGroupAccessControlEntryOutcome PcaConnectorAdClient::CreateTemplateGroupAccessControlEntry(
@@ -266,7 +273,9 @@ CreateTemplateGroupAccessControlEntryOutcome PcaConnectorAdClient::CreateTemplat
     endpointResolutionOutcome.GetResult().AddPathSegments("/accessControlEntries");
   };
 
-  return CreateTemplateGroupAccessControlEntryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTemplateGroupAccessControlEntryOutcome(result.GetResultWithOwnership())
+                            : CreateTemplateGroupAccessControlEntryOutcome(std::move(result.GetError()));
 }
 
 DeleteConnectorOutcome PcaConnectorAdClient::DeleteConnector(const DeleteConnectorRequest& request) const {
@@ -282,7 +291,9 @@ DeleteConnectorOutcome PcaConnectorAdClient::DeleteConnector(const DeleteConnect
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectorArn());
   };
 
-  return DeleteConnectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConnectorOutcome(result.GetResultWithOwnership())
+                            : DeleteConnectorOutcome(std::move(result.GetError()));
 }
 
 DeleteDirectoryRegistrationOutcome PcaConnectorAdClient::DeleteDirectoryRegistration(
@@ -299,7 +310,9 @@ DeleteDirectoryRegistrationOutcome PcaConnectorAdClient::DeleteDirectoryRegistra
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDirectoryRegistrationArn());
   };
 
-  return DeleteDirectoryRegistrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDirectoryRegistrationOutcome(result.GetResultWithOwnership())
+                            : DeleteDirectoryRegistrationOutcome(std::move(result.GetError()));
 }
 
 DeleteServicePrincipalNameOutcome PcaConnectorAdClient::DeleteServicePrincipalName(const DeleteServicePrincipalNameRequest& request) const {
@@ -322,7 +335,9 @@ DeleteServicePrincipalNameOutcome PcaConnectorAdClient::DeleteServicePrincipalNa
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectorArn());
   };
 
-  return DeleteServicePrincipalNameOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteServicePrincipalNameOutcome(result.GetResultWithOwnership())
+                            : DeleteServicePrincipalNameOutcome(std::move(result.GetError()));
 }
 
 DeleteTemplateOutcome PcaConnectorAdClient::DeleteTemplate(const DeleteTemplateRequest& request) const {
@@ -338,7 +353,8 @@ DeleteTemplateOutcome PcaConnectorAdClient::DeleteTemplate(const DeleteTemplateR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTemplateArn());
   };
 
-  return DeleteTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTemplateOutcome(result.GetResultWithOwnership()) : DeleteTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteTemplateGroupAccessControlEntryOutcome PcaConnectorAdClient::DeleteTemplateGroupAccessControlEntry(
@@ -362,7 +378,9 @@ DeleteTemplateGroupAccessControlEntryOutcome PcaConnectorAdClient::DeleteTemplat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGroupSecurityIdentifier());
   };
 
-  return DeleteTemplateGroupAccessControlEntryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTemplateGroupAccessControlEntryOutcome(result.GetResultWithOwnership())
+                            : DeleteTemplateGroupAccessControlEntryOutcome(std::move(result.GetError()));
 }
 
 GetConnectorOutcome PcaConnectorAdClient::GetConnector(const GetConnectorRequest& request) const {
@@ -378,7 +396,8 @@ GetConnectorOutcome PcaConnectorAdClient::GetConnector(const GetConnectorRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectorArn());
   };
 
-  return GetConnectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConnectorOutcome(result.GetResultWithOwnership()) : GetConnectorOutcome(std::move(result.GetError()));
 }
 
 GetDirectoryRegistrationOutcome PcaConnectorAdClient::GetDirectoryRegistration(const GetDirectoryRegistrationRequest& request) const {
@@ -394,7 +413,9 @@ GetDirectoryRegistrationOutcome PcaConnectorAdClient::GetDirectoryRegistration(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDirectoryRegistrationArn());
   };
 
-  return GetDirectoryRegistrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDirectoryRegistrationOutcome(result.GetResultWithOwnership())
+                            : GetDirectoryRegistrationOutcome(std::move(result.GetError()));
 }
 
 GetServicePrincipalNameOutcome PcaConnectorAdClient::GetServicePrincipalName(const GetServicePrincipalNameRequest& request) const {
@@ -417,7 +438,9 @@ GetServicePrincipalNameOutcome PcaConnectorAdClient::GetServicePrincipalName(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectorArn());
   };
 
-  return GetServicePrincipalNameOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetServicePrincipalNameOutcome(result.GetResultWithOwnership())
+                            : GetServicePrincipalNameOutcome(std::move(result.GetError()));
 }
 
 GetTemplateOutcome PcaConnectorAdClient::GetTemplate(const GetTemplateRequest& request) const {
@@ -433,7 +456,8 @@ GetTemplateOutcome PcaConnectorAdClient::GetTemplate(const GetTemplateRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTemplateArn());
   };
 
-  return GetTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTemplateOutcome(result.GetResultWithOwnership()) : GetTemplateOutcome(std::move(result.GetError()));
 }
 
 GetTemplateGroupAccessControlEntryOutcome PcaConnectorAdClient::GetTemplateGroupAccessControlEntry(
@@ -457,7 +481,9 @@ GetTemplateGroupAccessControlEntryOutcome PcaConnectorAdClient::GetTemplateGroup
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGroupSecurityIdentifier());
   };
 
-  return GetTemplateGroupAccessControlEntryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTemplateGroupAccessControlEntryOutcome(result.GetResultWithOwnership())
+                            : GetTemplateGroupAccessControlEntryOutcome(std::move(result.GetError()));
 }
 
 ListConnectorsOutcome PcaConnectorAdClient::ListConnectors(const ListConnectorsRequest& request) const {
@@ -466,7 +492,8 @@ ListConnectorsOutcome PcaConnectorAdClient::ListConnectors(const ListConnectorsR
     endpointResolutionOutcome.GetResult().AddPathSegments("/connectors");
   };
 
-  return ListConnectorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListConnectorsOutcome(result.GetResultWithOwnership()) : ListConnectorsOutcome(std::move(result.GetError()));
 }
 
 ListDirectoryRegistrationsOutcome PcaConnectorAdClient::ListDirectoryRegistrations(const ListDirectoryRegistrationsRequest& request) const {
@@ -475,7 +502,9 @@ ListDirectoryRegistrationsOutcome PcaConnectorAdClient::ListDirectoryRegistratio
     endpointResolutionOutcome.GetResult().AddPathSegments("/directoryRegistrations");
   };
 
-  return ListDirectoryRegistrationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDirectoryRegistrationsOutcome(result.GetResultWithOwnership())
+                            : ListDirectoryRegistrationsOutcome(std::move(result.GetError()));
 }
 
 ListServicePrincipalNamesOutcome PcaConnectorAdClient::ListServicePrincipalNames(const ListServicePrincipalNamesRequest& request) const {
@@ -492,7 +521,9 @@ ListServicePrincipalNamesOutcome PcaConnectorAdClient::ListServicePrincipalNames
     endpointResolutionOutcome.GetResult().AddPathSegments("/servicePrincipalNames");
   };
 
-  return ListServicePrincipalNamesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListServicePrincipalNamesOutcome(result.GetResultWithOwnership())
+                            : ListServicePrincipalNamesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome PcaConnectorAdClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -508,7 +539,9 @@ ListTagsForResourceOutcome PcaConnectorAdClient::ListTagsForResource(const ListT
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTemplateGroupAccessControlEntriesOutcome PcaConnectorAdClient::ListTemplateGroupAccessControlEntries(
@@ -526,7 +559,9 @@ ListTemplateGroupAccessControlEntriesOutcome PcaConnectorAdClient::ListTemplateG
     endpointResolutionOutcome.GetResult().AddPathSegments("/accessControlEntries");
   };
 
-  return ListTemplateGroupAccessControlEntriesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTemplateGroupAccessControlEntriesOutcome(result.GetResultWithOwnership())
+                            : ListTemplateGroupAccessControlEntriesOutcome(std::move(result.GetError()));
 }
 
 ListTemplatesOutcome PcaConnectorAdClient::ListTemplates(const ListTemplatesRequest& request) const {
@@ -541,7 +576,8 @@ ListTemplatesOutcome PcaConnectorAdClient::ListTemplates(const ListTemplatesRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/templates");
   };
 
-  return ListTemplatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTemplatesOutcome(result.GetResultWithOwnership()) : ListTemplatesOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome PcaConnectorAdClient::TagResource(const TagResourceRequest& request) const {
@@ -557,7 +593,8 @@ TagResourceOutcome PcaConnectorAdClient::TagResource(const TagResourceRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome PcaConnectorAdClient::UntagResource(const UntagResourceRequest& request) const {
@@ -578,7 +615,8 @@ UntagResourceOutcome PcaConnectorAdClient::UntagResource(const UntagResourceRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateTemplateOutcome PcaConnectorAdClient::UpdateTemplate(const UpdateTemplateRequest& request) const {
@@ -594,7 +632,8 @@ UpdateTemplateOutcome PcaConnectorAdClient::UpdateTemplate(const UpdateTemplateR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTemplateArn());
   };
 
-  return UpdateTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateTemplateOutcome(result.GetResultWithOwnership()) : UpdateTemplateOutcome(std::move(result.GetError()));
 }
 
 UpdateTemplateGroupAccessControlEntryOutcome PcaConnectorAdClient::UpdateTemplateGroupAccessControlEntry(
@@ -618,5 +657,7 @@ UpdateTemplateGroupAccessControlEntryOutcome PcaConnectorAdClient::UpdateTemplat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGroupSecurityIdentifier());
   };
 
-  return UpdateTemplateGroupAccessControlEntryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateTemplateGroupAccessControlEntryOutcome(result.GetResultWithOwnership())
+                            : UpdateTemplateGroupAccessControlEntryOutcome(std::move(result.GetError()));
 }

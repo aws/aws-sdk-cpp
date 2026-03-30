@@ -277,7 +277,9 @@ BatchGetCollaborationAnalysisTemplateOutcome CleanRoomsClient::BatchGetCollabora
     endpointResolutionOutcome.GetResult().AddPathSegments("/batch-analysistemplates");
   };
 
-  return BatchGetCollaborationAnalysisTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetCollaborationAnalysisTemplateOutcome(result.GetResultWithOwnership())
+                            : BatchGetCollaborationAnalysisTemplateOutcome(std::move(result.GetError()));
 }
 
 BatchGetSchemaOutcome CleanRoomsClient::BatchGetSchema(const BatchGetSchemaRequest& request) const {
@@ -294,7 +296,8 @@ BatchGetSchemaOutcome CleanRoomsClient::BatchGetSchema(const BatchGetSchemaReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/batch-schema");
   };
 
-  return BatchGetSchemaOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetSchemaOutcome(result.GetResultWithOwnership()) : BatchGetSchemaOutcome(std::move(result.GetError()));
 }
 
 BatchGetSchemaAnalysisRuleOutcome CleanRoomsClient::BatchGetSchemaAnalysisRule(const BatchGetSchemaAnalysisRuleRequest& request) const {
@@ -311,7 +314,9 @@ BatchGetSchemaAnalysisRuleOutcome CleanRoomsClient::BatchGetSchemaAnalysisRule(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/batch-schema-analysis-rule");
   };
 
-  return BatchGetSchemaAnalysisRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetSchemaAnalysisRuleOutcome(result.GetResultWithOwnership())
+                            : BatchGetSchemaAnalysisRuleOutcome(std::move(result.GetError()));
 }
 
 CreateAnalysisTemplateOutcome CleanRoomsClient::CreateAnalysisTemplate(const CreateAnalysisTemplateRequest& request) const {
@@ -328,7 +333,9 @@ CreateAnalysisTemplateOutcome CleanRoomsClient::CreateAnalysisTemplate(const Cre
     endpointResolutionOutcome.GetResult().AddPathSegments("/analysistemplates");
   };
 
-  return CreateAnalysisTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAnalysisTemplateOutcome(result.GetResultWithOwnership())
+                            : CreateAnalysisTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateCollaborationOutcome CleanRoomsClient::CreateCollaboration(const CreateCollaborationRequest& request) const {
@@ -337,7 +344,9 @@ CreateCollaborationOutcome CleanRoomsClient::CreateCollaboration(const CreateCol
     endpointResolutionOutcome.GetResult().AddPathSegments("/collaborations");
   };
 
-  return CreateCollaborationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCollaborationOutcome(result.GetResultWithOwnership())
+                            : CreateCollaborationOutcome(std::move(result.GetError()));
 }
 
 CreateCollaborationChangeRequestOutcome CleanRoomsClient::CreateCollaborationChangeRequest(
@@ -355,7 +364,9 @@ CreateCollaborationChangeRequestOutcome CleanRoomsClient::CreateCollaborationCha
     endpointResolutionOutcome.GetResult().AddPathSegments("/changeRequests");
   };
 
-  return CreateCollaborationChangeRequestOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCollaborationChangeRequestOutcome(result.GetResultWithOwnership())
+                            : CreateCollaborationChangeRequestOutcome(std::move(result.GetError()));
 }
 
 CreateConfiguredAudienceModelAssociationOutcome CleanRoomsClient::CreateConfiguredAudienceModelAssociation(
@@ -373,7 +384,9 @@ CreateConfiguredAudienceModelAssociationOutcome CleanRoomsClient::CreateConfigur
     endpointResolutionOutcome.GetResult().AddPathSegments("/configuredaudiencemodelassociations");
   };
 
-  return CreateConfiguredAudienceModelAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConfiguredAudienceModelAssociationOutcome(result.GetResultWithOwnership())
+                            : CreateConfiguredAudienceModelAssociationOutcome(std::move(result.GetError()));
 }
 
 CreateConfiguredTableOutcome CleanRoomsClient::CreateConfiguredTable(const CreateConfiguredTableRequest& request) const {
@@ -382,7 +395,9 @@ CreateConfiguredTableOutcome CleanRoomsClient::CreateConfiguredTable(const Creat
     endpointResolutionOutcome.GetResult().AddPathSegments("/configuredTables");
   };
 
-  return CreateConfiguredTableOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConfiguredTableOutcome(result.GetResultWithOwnership())
+                            : CreateConfiguredTableOutcome(std::move(result.GetError()));
 }
 
 CreateConfiguredTableAnalysisRuleOutcome CleanRoomsClient::CreateConfiguredTableAnalysisRule(
@@ -400,7 +415,9 @@ CreateConfiguredTableAnalysisRuleOutcome CleanRoomsClient::CreateConfiguredTable
     endpointResolutionOutcome.GetResult().AddPathSegments("/analysisRule");
   };
 
-  return CreateConfiguredTableAnalysisRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConfiguredTableAnalysisRuleOutcome(result.GetResultWithOwnership())
+                            : CreateConfiguredTableAnalysisRuleOutcome(std::move(result.GetError()));
 }
 
 CreateConfiguredTableAssociationOutcome CleanRoomsClient::CreateConfiguredTableAssociation(
@@ -418,7 +435,9 @@ CreateConfiguredTableAssociationOutcome CleanRoomsClient::CreateConfiguredTableA
     endpointResolutionOutcome.GetResult().AddPathSegments("/configuredTableAssociations");
   };
 
-  return CreateConfiguredTableAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConfiguredTableAssociationOutcome(result.GetResultWithOwnership())
+                            : CreateConfiguredTableAssociationOutcome(std::move(result.GetError()));
 }
 
 CreateConfiguredTableAssociationAnalysisRuleOutcome CleanRoomsClient::CreateConfiguredTableAssociationAnalysisRule(
@@ -443,8 +462,9 @@ CreateConfiguredTableAssociationAnalysisRuleOutcome CleanRoomsClient::CreateConf
     endpointResolutionOutcome.GetResult().AddPathSegments("/analysisRule");
   };
 
-  return CreateConfiguredTableAssociationAnalysisRuleOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConfiguredTableAssociationAnalysisRuleOutcome(result.GetResultWithOwnership())
+                            : CreateConfiguredTableAssociationAnalysisRuleOutcome(std::move(result.GetError()));
 }
 
 CreateIdMappingTableOutcome CleanRoomsClient::CreateIdMappingTable(const CreateIdMappingTableRequest& request) const {
@@ -461,7 +481,9 @@ CreateIdMappingTableOutcome CleanRoomsClient::CreateIdMappingTable(const CreateI
     endpointResolutionOutcome.GetResult().AddPathSegments("/idmappingtables");
   };
 
-  return CreateIdMappingTableOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIdMappingTableOutcome(result.GetResultWithOwnership())
+                            : CreateIdMappingTableOutcome(std::move(result.GetError()));
 }
 
 CreateIdNamespaceAssociationOutcome CleanRoomsClient::CreateIdNamespaceAssociation(
@@ -479,7 +501,9 @@ CreateIdNamespaceAssociationOutcome CleanRoomsClient::CreateIdNamespaceAssociati
     endpointResolutionOutcome.GetResult().AddPathSegments("/idnamespaceassociations");
   };
 
-  return CreateIdNamespaceAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIdNamespaceAssociationOutcome(result.GetResultWithOwnership())
+                            : CreateIdNamespaceAssociationOutcome(std::move(result.GetError()));
 }
 
 CreateMembershipOutcome CleanRoomsClient::CreateMembership(const CreateMembershipRequest& request) const {
@@ -488,7 +512,9 @@ CreateMembershipOutcome CleanRoomsClient::CreateMembership(const CreateMembershi
     endpointResolutionOutcome.GetResult().AddPathSegments("/memberships");
   };
 
-  return CreateMembershipOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMembershipOutcome(result.GetResultWithOwnership())
+                            : CreateMembershipOutcome(std::move(result.GetError()));
 }
 
 CreatePrivacyBudgetTemplateOutcome CleanRoomsClient::CreatePrivacyBudgetTemplate(const CreatePrivacyBudgetTemplateRequest& request) const {
@@ -505,7 +531,9 @@ CreatePrivacyBudgetTemplateOutcome CleanRoomsClient::CreatePrivacyBudgetTemplate
     endpointResolutionOutcome.GetResult().AddPathSegments("/privacybudgettemplates");
   };
 
-  return CreatePrivacyBudgetTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePrivacyBudgetTemplateOutcome(result.GetResultWithOwnership())
+                            : CreatePrivacyBudgetTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteAnalysisTemplateOutcome CleanRoomsClient::DeleteAnalysisTemplate(const DeleteAnalysisTemplateRequest& request) const {
@@ -528,7 +556,9 @@ DeleteAnalysisTemplateOutcome CleanRoomsClient::DeleteAnalysisTemplate(const Del
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAnalysisTemplateIdentifier());
   };
 
-  return DeleteAnalysisTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAnalysisTemplateOutcome(result.GetResultWithOwnership())
+                            : DeleteAnalysisTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteCollaborationOutcome CleanRoomsClient::DeleteCollaboration(const DeleteCollaborationRequest& request) const {
@@ -544,7 +574,9 @@ DeleteCollaborationOutcome CleanRoomsClient::DeleteCollaboration(const DeleteCol
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCollaborationIdentifier());
   };
 
-  return DeleteCollaborationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCollaborationOutcome(result.GetResultWithOwnership())
+                            : DeleteCollaborationOutcome(std::move(result.GetError()));
 }
 
 DeleteConfiguredAudienceModelAssociationOutcome CleanRoomsClient::DeleteConfiguredAudienceModelAssociation(
@@ -570,7 +602,9 @@ DeleteConfiguredAudienceModelAssociationOutcome CleanRoomsClient::DeleteConfigur
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfiguredAudienceModelAssociationIdentifier());
   };
 
-  return DeleteConfiguredAudienceModelAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConfiguredAudienceModelAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteConfiguredAudienceModelAssociationOutcome(std::move(result.GetError()));
 }
 
 DeleteConfiguredTableOutcome CleanRoomsClient::DeleteConfiguredTable(const DeleteConfiguredTableRequest& request) const {
@@ -586,7 +620,9 @@ DeleteConfiguredTableOutcome CleanRoomsClient::DeleteConfiguredTable(const Delet
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfiguredTableIdentifier());
   };
 
-  return DeleteConfiguredTableOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConfiguredTableOutcome(result.GetResultWithOwnership())
+                            : DeleteConfiguredTableOutcome(std::move(result.GetError()));
 }
 
 DeleteConfiguredTableAnalysisRuleOutcome CleanRoomsClient::DeleteConfiguredTableAnalysisRule(
@@ -611,7 +647,9 @@ DeleteConfiguredTableAnalysisRuleOutcome CleanRoomsClient::DeleteConfiguredTable
         ConfiguredTableAnalysisRuleTypeMapper::GetNameForConfiguredTableAnalysisRuleType(request.GetAnalysisRuleType()));
   };
 
-  return DeleteConfiguredTableAnalysisRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConfiguredTableAnalysisRuleOutcome(result.GetResultWithOwnership())
+                            : DeleteConfiguredTableAnalysisRuleOutcome(std::move(result.GetError()));
 }
 
 DeleteConfiguredTableAssociationOutcome CleanRoomsClient::DeleteConfiguredTableAssociation(
@@ -635,7 +673,9 @@ DeleteConfiguredTableAssociationOutcome CleanRoomsClient::DeleteConfiguredTableA
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfiguredTableAssociationIdentifier());
   };
 
-  return DeleteConfiguredTableAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConfiguredTableAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteConfiguredTableAssociationOutcome(std::move(result.GetError()));
 }
 
 DeleteConfiguredTableAssociationAnalysisRuleOutcome CleanRoomsClient::DeleteConfiguredTableAssociationAnalysisRule(
@@ -668,8 +708,9 @@ DeleteConfiguredTableAssociationAnalysisRuleOutcome CleanRoomsClient::DeleteConf
             request.GetAnalysisRuleType()));
   };
 
-  return DeleteConfiguredTableAssociationAnalysisRuleOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConfiguredTableAssociationAnalysisRuleOutcome(result.GetResultWithOwnership())
+                            : DeleteConfiguredTableAssociationAnalysisRuleOutcome(std::move(result.GetError()));
 }
 
 DeleteIdMappingTableOutcome CleanRoomsClient::DeleteIdMappingTable(const DeleteIdMappingTableRequest& request) const {
@@ -692,7 +733,9 @@ DeleteIdMappingTableOutcome CleanRoomsClient::DeleteIdMappingTable(const DeleteI
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdMappingTableIdentifier());
   };
 
-  return DeleteIdMappingTableOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteIdMappingTableOutcome(result.GetResultWithOwnership())
+                            : DeleteIdMappingTableOutcome(std::move(result.GetError()));
 }
 
 DeleteIdNamespaceAssociationOutcome CleanRoomsClient::DeleteIdNamespaceAssociation(
@@ -716,7 +759,9 @@ DeleteIdNamespaceAssociationOutcome CleanRoomsClient::DeleteIdNamespaceAssociati
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdNamespaceAssociationIdentifier());
   };
 
-  return DeleteIdNamespaceAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteIdNamespaceAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteIdNamespaceAssociationOutcome(std::move(result.GetError()));
 }
 
 DeleteMemberOutcome CleanRoomsClient::DeleteMember(const DeleteMemberRequest& request) const {
@@ -739,7 +784,8 @@ DeleteMemberOutcome CleanRoomsClient::DeleteMember(const DeleteMemberRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccountId());
   };
 
-  return DeleteMemberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMemberOutcome(result.GetResultWithOwnership()) : DeleteMemberOutcome(std::move(result.GetError()));
 }
 
 DeleteMembershipOutcome CleanRoomsClient::DeleteMembership(const DeleteMembershipRequest& request) const {
@@ -755,7 +801,9 @@ DeleteMembershipOutcome CleanRoomsClient::DeleteMembership(const DeleteMembershi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
   };
 
-  return DeleteMembershipOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMembershipOutcome(result.GetResultWithOwnership())
+                            : DeleteMembershipOutcome(std::move(result.GetError()));
 }
 
 DeletePrivacyBudgetTemplateOutcome CleanRoomsClient::DeletePrivacyBudgetTemplate(const DeletePrivacyBudgetTemplateRequest& request) const {
@@ -778,7 +826,9 @@ DeletePrivacyBudgetTemplateOutcome CleanRoomsClient::DeletePrivacyBudgetTemplate
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrivacyBudgetTemplateIdentifier());
   };
 
-  return DeletePrivacyBudgetTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePrivacyBudgetTemplateOutcome(result.GetResultWithOwnership())
+                            : DeletePrivacyBudgetTemplateOutcome(std::move(result.GetError()));
 }
 
 GetAnalysisTemplateOutcome CleanRoomsClient::GetAnalysisTemplate(const GetAnalysisTemplateRequest& request) const {
@@ -801,7 +851,9 @@ GetAnalysisTemplateOutcome CleanRoomsClient::GetAnalysisTemplate(const GetAnalys
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAnalysisTemplateIdentifier());
   };
 
-  return GetAnalysisTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAnalysisTemplateOutcome(result.GetResultWithOwnership())
+                            : GetAnalysisTemplateOutcome(std::move(result.GetError()));
 }
 
 GetCollaborationOutcome CleanRoomsClient::GetCollaboration(const GetCollaborationRequest& request) const {
@@ -817,7 +869,9 @@ GetCollaborationOutcome CleanRoomsClient::GetCollaboration(const GetCollaboratio
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCollaborationIdentifier());
   };
 
-  return GetCollaborationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCollaborationOutcome(result.GetResultWithOwnership())
+                            : GetCollaborationOutcome(std::move(result.GetError()));
 }
 
 GetCollaborationAnalysisTemplateOutcome CleanRoomsClient::GetCollaborationAnalysisTemplate(
@@ -841,7 +895,9 @@ GetCollaborationAnalysisTemplateOutcome CleanRoomsClient::GetCollaborationAnalys
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAnalysisTemplateArn());
   };
 
-  return GetCollaborationAnalysisTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCollaborationAnalysisTemplateOutcome(result.GetResultWithOwnership())
+                            : GetCollaborationAnalysisTemplateOutcome(std::move(result.GetError()));
 }
 
 GetCollaborationChangeRequestOutcome CleanRoomsClient::GetCollaborationChangeRequest(
@@ -865,7 +921,9 @@ GetCollaborationChangeRequestOutcome CleanRoomsClient::GetCollaborationChangeReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChangeRequestIdentifier());
   };
 
-  return GetCollaborationChangeRequestOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCollaborationChangeRequestOutcome(result.GetResultWithOwnership())
+                            : GetCollaborationChangeRequestOutcome(std::move(result.GetError()));
 }
 
 GetCollaborationConfiguredAudienceModelAssociationOutcome CleanRoomsClient::GetCollaborationConfiguredAudienceModelAssociation(
@@ -891,8 +949,9 @@ GetCollaborationConfiguredAudienceModelAssociationOutcome CleanRoomsClient::GetC
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfiguredAudienceModelAssociationIdentifier());
   };
 
-  return GetCollaborationConfiguredAudienceModelAssociationOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCollaborationConfiguredAudienceModelAssociationOutcome(result.GetResultWithOwnership())
+                            : GetCollaborationConfiguredAudienceModelAssociationOutcome(std::move(result.GetError()));
 }
 
 GetCollaborationIdNamespaceAssociationOutcome CleanRoomsClient::GetCollaborationIdNamespaceAssociation(
@@ -916,7 +975,9 @@ GetCollaborationIdNamespaceAssociationOutcome CleanRoomsClient::GetCollaboration
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdNamespaceAssociationIdentifier());
   };
 
-  return GetCollaborationIdNamespaceAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCollaborationIdNamespaceAssociationOutcome(result.GetResultWithOwnership())
+                            : GetCollaborationIdNamespaceAssociationOutcome(std::move(result.GetError()));
 }
 
 GetCollaborationPrivacyBudgetTemplateOutcome CleanRoomsClient::GetCollaborationPrivacyBudgetTemplate(
@@ -940,7 +1001,9 @@ GetCollaborationPrivacyBudgetTemplateOutcome CleanRoomsClient::GetCollaborationP
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrivacyBudgetTemplateIdentifier());
   };
 
-  return GetCollaborationPrivacyBudgetTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCollaborationPrivacyBudgetTemplateOutcome(result.GetResultWithOwnership())
+                            : GetCollaborationPrivacyBudgetTemplateOutcome(std::move(result.GetError()));
 }
 
 GetConfiguredAudienceModelAssociationOutcome CleanRoomsClient::GetConfiguredAudienceModelAssociation(
@@ -966,7 +1029,9 @@ GetConfiguredAudienceModelAssociationOutcome CleanRoomsClient::GetConfiguredAudi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfiguredAudienceModelAssociationIdentifier());
   };
 
-  return GetConfiguredAudienceModelAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConfiguredAudienceModelAssociationOutcome(result.GetResultWithOwnership())
+                            : GetConfiguredAudienceModelAssociationOutcome(std::move(result.GetError()));
 }
 
 GetConfiguredTableOutcome CleanRoomsClient::GetConfiguredTable(const GetConfiguredTableRequest& request) const {
@@ -982,7 +1047,9 @@ GetConfiguredTableOutcome CleanRoomsClient::GetConfiguredTable(const GetConfigur
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfiguredTableIdentifier());
   };
 
-  return GetConfiguredTableOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConfiguredTableOutcome(result.GetResultWithOwnership())
+                            : GetConfiguredTableOutcome(std::move(result.GetError()));
 }
 
 GetConfiguredTableAnalysisRuleOutcome CleanRoomsClient::GetConfiguredTableAnalysisRule(
@@ -1007,7 +1074,9 @@ GetConfiguredTableAnalysisRuleOutcome CleanRoomsClient::GetConfiguredTableAnalys
         ConfiguredTableAnalysisRuleTypeMapper::GetNameForConfiguredTableAnalysisRuleType(request.GetAnalysisRuleType()));
   };
 
-  return GetConfiguredTableAnalysisRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConfiguredTableAnalysisRuleOutcome(result.GetResultWithOwnership())
+                            : GetConfiguredTableAnalysisRuleOutcome(std::move(result.GetError()));
 }
 
 GetConfiguredTableAssociationOutcome CleanRoomsClient::GetConfiguredTableAssociation(
@@ -1031,7 +1100,9 @@ GetConfiguredTableAssociationOutcome CleanRoomsClient::GetConfiguredTableAssocia
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfiguredTableAssociationIdentifier());
   };
 
-  return GetConfiguredTableAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConfiguredTableAssociationOutcome(result.GetResultWithOwnership())
+                            : GetConfiguredTableAssociationOutcome(std::move(result.GetError()));
 }
 
 GetConfiguredTableAssociationAnalysisRuleOutcome CleanRoomsClient::GetConfiguredTableAssociationAnalysisRule(
@@ -1064,7 +1135,9 @@ GetConfiguredTableAssociationAnalysisRuleOutcome CleanRoomsClient::GetConfigured
             request.GetAnalysisRuleType()));
   };
 
-  return GetConfiguredTableAssociationAnalysisRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConfiguredTableAssociationAnalysisRuleOutcome(result.GetResultWithOwnership())
+                            : GetConfiguredTableAssociationAnalysisRuleOutcome(std::move(result.GetError()));
 }
 
 GetIdMappingTableOutcome CleanRoomsClient::GetIdMappingTable(const GetIdMappingTableRequest& request) const {
@@ -1087,7 +1160,9 @@ GetIdMappingTableOutcome CleanRoomsClient::GetIdMappingTable(const GetIdMappingT
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdMappingTableIdentifier());
   };
 
-  return GetIdMappingTableOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetIdMappingTableOutcome(result.GetResultWithOwnership())
+                            : GetIdMappingTableOutcome(std::move(result.GetError()));
 }
 
 GetIdNamespaceAssociationOutcome CleanRoomsClient::GetIdNamespaceAssociation(const GetIdNamespaceAssociationRequest& request) const {
@@ -1110,7 +1185,9 @@ GetIdNamespaceAssociationOutcome CleanRoomsClient::GetIdNamespaceAssociation(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdNamespaceAssociationIdentifier());
   };
 
-  return GetIdNamespaceAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetIdNamespaceAssociationOutcome(result.GetResultWithOwnership())
+                            : GetIdNamespaceAssociationOutcome(std::move(result.GetError()));
 }
 
 GetMembershipOutcome CleanRoomsClient::GetMembership(const GetMembershipRequest& request) const {
@@ -1126,7 +1203,8 @@ GetMembershipOutcome CleanRoomsClient::GetMembership(const GetMembershipRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
   };
 
-  return GetMembershipOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMembershipOutcome(result.GetResultWithOwnership()) : GetMembershipOutcome(std::move(result.GetError()));
 }
 
 GetPrivacyBudgetTemplateOutcome CleanRoomsClient::GetPrivacyBudgetTemplate(const GetPrivacyBudgetTemplateRequest& request) const {
@@ -1149,7 +1227,9 @@ GetPrivacyBudgetTemplateOutcome CleanRoomsClient::GetPrivacyBudgetTemplate(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrivacyBudgetTemplateIdentifier());
   };
 
-  return GetPrivacyBudgetTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPrivacyBudgetTemplateOutcome(result.GetResultWithOwnership())
+                            : GetPrivacyBudgetTemplateOutcome(std::move(result.GetError()));
 }
 
 GetProtectedJobOutcome CleanRoomsClient::GetProtectedJob(const GetProtectedJobRequest& request) const {
@@ -1172,7 +1252,9 @@ GetProtectedJobOutcome CleanRoomsClient::GetProtectedJob(const GetProtectedJobRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProtectedJobIdentifier());
   };
 
-  return GetProtectedJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetProtectedJobOutcome(result.GetResultWithOwnership())
+                            : GetProtectedJobOutcome(std::move(result.GetError()));
 }
 
 GetProtectedQueryOutcome CleanRoomsClient::GetProtectedQuery(const GetProtectedQueryRequest& request) const {
@@ -1195,7 +1277,9 @@ GetProtectedQueryOutcome CleanRoomsClient::GetProtectedQuery(const GetProtectedQ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProtectedQueryIdentifier());
   };
 
-  return GetProtectedQueryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetProtectedQueryOutcome(result.GetResultWithOwnership())
+                            : GetProtectedQueryOutcome(std::move(result.GetError()));
 }
 
 GetSchemaOutcome CleanRoomsClient::GetSchema(const GetSchemaRequest& request) const {
@@ -1218,7 +1302,8 @@ GetSchemaOutcome CleanRoomsClient::GetSchema(const GetSchemaRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return GetSchemaOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSchemaOutcome(result.GetResultWithOwnership()) : GetSchemaOutcome(std::move(result.GetError()));
 }
 
 GetSchemaAnalysisRuleOutcome CleanRoomsClient::GetSchemaAnalysisRule(const GetSchemaAnalysisRuleRequest& request) const {
@@ -1248,7 +1333,9 @@ GetSchemaAnalysisRuleOutcome CleanRoomsClient::GetSchemaAnalysisRule(const GetSc
     endpointResolutionOutcome.GetResult().AddPathSegment(AnalysisRuleTypeMapper::GetNameForAnalysisRuleType(request.GetType()));
   };
 
-  return GetSchemaAnalysisRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSchemaAnalysisRuleOutcome(result.GetResultWithOwnership())
+                            : GetSchemaAnalysisRuleOutcome(std::move(result.GetError()));
 }
 
 ListAnalysisTemplatesOutcome CleanRoomsClient::ListAnalysisTemplates(const ListAnalysisTemplatesRequest& request) const {
@@ -1265,7 +1352,9 @@ ListAnalysisTemplatesOutcome CleanRoomsClient::ListAnalysisTemplates(const ListA
     endpointResolutionOutcome.GetResult().AddPathSegments("/analysistemplates");
   };
 
-  return ListAnalysisTemplatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAnalysisTemplatesOutcome(result.GetResultWithOwnership())
+                            : ListAnalysisTemplatesOutcome(std::move(result.GetError()));
 }
 
 ListCollaborationAnalysisTemplatesOutcome CleanRoomsClient::ListCollaborationAnalysisTemplates(
@@ -1283,7 +1372,9 @@ ListCollaborationAnalysisTemplatesOutcome CleanRoomsClient::ListCollaborationAna
     endpointResolutionOutcome.GetResult().AddPathSegments("/analysistemplates");
   };
 
-  return ListCollaborationAnalysisTemplatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCollaborationAnalysisTemplatesOutcome(result.GetResultWithOwnership())
+                            : ListCollaborationAnalysisTemplatesOutcome(std::move(result.GetError()));
 }
 
 ListCollaborationChangeRequestsOutcome CleanRoomsClient::ListCollaborationChangeRequests(
@@ -1301,7 +1392,9 @@ ListCollaborationChangeRequestsOutcome CleanRoomsClient::ListCollaborationChange
     endpointResolutionOutcome.GetResult().AddPathSegments("/changeRequests");
   };
 
-  return ListCollaborationChangeRequestsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCollaborationChangeRequestsOutcome(result.GetResultWithOwnership())
+                            : ListCollaborationChangeRequestsOutcome(std::move(result.GetError()));
 }
 
 ListCollaborationConfiguredAudienceModelAssociationsOutcome CleanRoomsClient::ListCollaborationConfiguredAudienceModelAssociations(
@@ -1319,8 +1412,9 @@ ListCollaborationConfiguredAudienceModelAssociationsOutcome CleanRoomsClient::Li
     endpointResolutionOutcome.GetResult().AddPathSegments("/configuredaudiencemodelassociations");
   };
 
-  return ListCollaborationConfiguredAudienceModelAssociationsOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCollaborationConfiguredAudienceModelAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListCollaborationConfiguredAudienceModelAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListCollaborationIdNamespaceAssociationsOutcome CleanRoomsClient::ListCollaborationIdNamespaceAssociations(
@@ -1338,7 +1432,9 @@ ListCollaborationIdNamespaceAssociationsOutcome CleanRoomsClient::ListCollaborat
     endpointResolutionOutcome.GetResult().AddPathSegments("/idnamespaceassociations");
   };
 
-  return ListCollaborationIdNamespaceAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCollaborationIdNamespaceAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListCollaborationIdNamespaceAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListCollaborationPrivacyBudgetTemplatesOutcome CleanRoomsClient::ListCollaborationPrivacyBudgetTemplates(
@@ -1356,7 +1452,9 @@ ListCollaborationPrivacyBudgetTemplatesOutcome CleanRoomsClient::ListCollaborati
     endpointResolutionOutcome.GetResult().AddPathSegments("/privacybudgettemplates");
   };
 
-  return ListCollaborationPrivacyBudgetTemplatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCollaborationPrivacyBudgetTemplatesOutcome(result.GetResultWithOwnership())
+                            : ListCollaborationPrivacyBudgetTemplatesOutcome(std::move(result.GetError()));
 }
 
 ListCollaborationPrivacyBudgetsOutcome CleanRoomsClient::ListCollaborationPrivacyBudgets(
@@ -1379,7 +1477,9 @@ ListCollaborationPrivacyBudgetsOutcome CleanRoomsClient::ListCollaborationPrivac
     endpointResolutionOutcome.GetResult().AddPathSegments("/privacybudgets");
   };
 
-  return ListCollaborationPrivacyBudgetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCollaborationPrivacyBudgetsOutcome(result.GetResultWithOwnership())
+                            : ListCollaborationPrivacyBudgetsOutcome(std::move(result.GetError()));
 }
 
 ListCollaborationsOutcome CleanRoomsClient::ListCollaborations(const ListCollaborationsRequest& request) const {
@@ -1388,7 +1488,9 @@ ListCollaborationsOutcome CleanRoomsClient::ListCollaborations(const ListCollabo
     endpointResolutionOutcome.GetResult().AddPathSegments("/collaborations");
   };
 
-  return ListCollaborationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCollaborationsOutcome(result.GetResultWithOwnership())
+                            : ListCollaborationsOutcome(std::move(result.GetError()));
 }
 
 ListConfiguredAudienceModelAssociationsOutcome CleanRoomsClient::ListConfiguredAudienceModelAssociations(
@@ -1406,7 +1508,9 @@ ListConfiguredAudienceModelAssociationsOutcome CleanRoomsClient::ListConfiguredA
     endpointResolutionOutcome.GetResult().AddPathSegments("/configuredaudiencemodelassociations");
   };
 
-  return ListConfiguredAudienceModelAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListConfiguredAudienceModelAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListConfiguredAudienceModelAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListConfiguredTableAssociationsOutcome CleanRoomsClient::ListConfiguredTableAssociations(
@@ -1424,7 +1528,9 @@ ListConfiguredTableAssociationsOutcome CleanRoomsClient::ListConfiguredTableAsso
     endpointResolutionOutcome.GetResult().AddPathSegments("/configuredTableAssociations");
   };
 
-  return ListConfiguredTableAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListConfiguredTableAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListConfiguredTableAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListConfiguredTablesOutcome CleanRoomsClient::ListConfiguredTables(const ListConfiguredTablesRequest& request) const {
@@ -1433,7 +1539,9 @@ ListConfiguredTablesOutcome CleanRoomsClient::ListConfiguredTables(const ListCon
     endpointResolutionOutcome.GetResult().AddPathSegments("/configuredTables");
   };
 
-  return ListConfiguredTablesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListConfiguredTablesOutcome(result.GetResultWithOwnership())
+                            : ListConfiguredTablesOutcome(std::move(result.GetError()));
 }
 
 ListIdMappingTablesOutcome CleanRoomsClient::ListIdMappingTables(const ListIdMappingTablesRequest& request) const {
@@ -1450,7 +1558,9 @@ ListIdMappingTablesOutcome CleanRoomsClient::ListIdMappingTables(const ListIdMap
     endpointResolutionOutcome.GetResult().AddPathSegments("/idmappingtables");
   };
 
-  return ListIdMappingTablesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListIdMappingTablesOutcome(result.GetResultWithOwnership())
+                            : ListIdMappingTablesOutcome(std::move(result.GetError()));
 }
 
 ListIdNamespaceAssociationsOutcome CleanRoomsClient::ListIdNamespaceAssociations(const ListIdNamespaceAssociationsRequest& request) const {
@@ -1467,7 +1577,9 @@ ListIdNamespaceAssociationsOutcome CleanRoomsClient::ListIdNamespaceAssociations
     endpointResolutionOutcome.GetResult().AddPathSegments("/idnamespaceassociations");
   };
 
-  return ListIdNamespaceAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListIdNamespaceAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListIdNamespaceAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListMembersOutcome CleanRoomsClient::ListMembers(const ListMembersRequest& request) const {
@@ -1484,7 +1596,8 @@ ListMembersOutcome CleanRoomsClient::ListMembers(const ListMembersRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/members");
   };
 
-  return ListMembersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMembersOutcome(result.GetResultWithOwnership()) : ListMembersOutcome(std::move(result.GetError()));
 }
 
 ListMembershipsOutcome CleanRoomsClient::ListMemberships(const ListMembershipsRequest& request) const {
@@ -1493,7 +1606,9 @@ ListMembershipsOutcome CleanRoomsClient::ListMemberships(const ListMembershipsRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/memberships");
   };
 
-  return ListMembershipsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMembershipsOutcome(result.GetResultWithOwnership())
+                            : ListMembershipsOutcome(std::move(result.GetError()));
 }
 
 ListPrivacyBudgetTemplatesOutcome CleanRoomsClient::ListPrivacyBudgetTemplates(const ListPrivacyBudgetTemplatesRequest& request) const {
@@ -1510,7 +1625,9 @@ ListPrivacyBudgetTemplatesOutcome CleanRoomsClient::ListPrivacyBudgetTemplates(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/privacybudgettemplates");
   };
 
-  return ListPrivacyBudgetTemplatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPrivacyBudgetTemplatesOutcome(result.GetResultWithOwnership())
+                            : ListPrivacyBudgetTemplatesOutcome(std::move(result.GetError()));
 }
 
 ListPrivacyBudgetsOutcome CleanRoomsClient::ListPrivacyBudgets(const ListPrivacyBudgetsRequest& request) const {
@@ -1532,7 +1649,9 @@ ListPrivacyBudgetsOutcome CleanRoomsClient::ListPrivacyBudgets(const ListPrivacy
     endpointResolutionOutcome.GetResult().AddPathSegments("/privacybudgets");
   };
 
-  return ListPrivacyBudgetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPrivacyBudgetsOutcome(result.GetResultWithOwnership())
+                            : ListPrivacyBudgetsOutcome(std::move(result.GetError()));
 }
 
 ListProtectedJobsOutcome CleanRoomsClient::ListProtectedJobs(const ListProtectedJobsRequest& request) const {
@@ -1549,7 +1668,9 @@ ListProtectedJobsOutcome CleanRoomsClient::ListProtectedJobs(const ListProtected
     endpointResolutionOutcome.GetResult().AddPathSegments("/protectedJobs");
   };
 
-  return ListProtectedJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListProtectedJobsOutcome(result.GetResultWithOwnership())
+                            : ListProtectedJobsOutcome(std::move(result.GetError()));
 }
 
 ListProtectedQueriesOutcome CleanRoomsClient::ListProtectedQueries(const ListProtectedQueriesRequest& request) const {
@@ -1566,7 +1687,9 @@ ListProtectedQueriesOutcome CleanRoomsClient::ListProtectedQueries(const ListPro
     endpointResolutionOutcome.GetResult().AddPathSegments("/protectedQueries");
   };
 
-  return ListProtectedQueriesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListProtectedQueriesOutcome(result.GetResultWithOwnership())
+                            : ListProtectedQueriesOutcome(std::move(result.GetError()));
 }
 
 ListSchemasOutcome CleanRoomsClient::ListSchemas(const ListSchemasRequest& request) const {
@@ -1583,7 +1706,8 @@ ListSchemasOutcome CleanRoomsClient::ListSchemas(const ListSchemasRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/schemas");
   };
 
-  return ListSchemasOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSchemasOutcome(result.GetResultWithOwnership()) : ListSchemasOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome CleanRoomsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -1599,7 +1723,9 @@ ListTagsForResourceOutcome CleanRoomsClient::ListTagsForResource(const ListTagsF
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PopulateIdMappingTableOutcome CleanRoomsClient::PopulateIdMappingTable(const PopulateIdMappingTableRequest& request) const {
@@ -1623,7 +1749,9 @@ PopulateIdMappingTableOutcome CleanRoomsClient::PopulateIdMappingTable(const Pop
     endpointResolutionOutcome.GetResult().AddPathSegments("/populate");
   };
 
-  return PopulateIdMappingTableOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PopulateIdMappingTableOutcome(result.GetResultWithOwnership())
+                            : PopulateIdMappingTableOutcome(std::move(result.GetError()));
 }
 
 PreviewPrivacyImpactOutcome CleanRoomsClient::PreviewPrivacyImpact(const PreviewPrivacyImpactRequest& request) const {
@@ -1640,7 +1768,9 @@ PreviewPrivacyImpactOutcome CleanRoomsClient::PreviewPrivacyImpact(const Preview
     endpointResolutionOutcome.GetResult().AddPathSegments("/previewprivacyimpact");
   };
 
-  return PreviewPrivacyImpactOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PreviewPrivacyImpactOutcome(result.GetResultWithOwnership())
+                            : PreviewPrivacyImpactOutcome(std::move(result.GetError()));
 }
 
 StartProtectedJobOutcome CleanRoomsClient::StartProtectedJob(const StartProtectedJobRequest& request) const {
@@ -1657,7 +1787,9 @@ StartProtectedJobOutcome CleanRoomsClient::StartProtectedJob(const StartProtecte
     endpointResolutionOutcome.GetResult().AddPathSegments("/protectedJobs");
   };
 
-  return StartProtectedJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartProtectedJobOutcome(result.GetResultWithOwnership())
+                            : StartProtectedJobOutcome(std::move(result.GetError()));
 }
 
 StartProtectedQueryOutcome CleanRoomsClient::StartProtectedQuery(const StartProtectedQueryRequest& request) const {
@@ -1674,7 +1806,9 @@ StartProtectedQueryOutcome CleanRoomsClient::StartProtectedQuery(const StartProt
     endpointResolutionOutcome.GetResult().AddPathSegments("/protectedQueries");
   };
 
-  return StartProtectedQueryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartProtectedQueryOutcome(result.GetResultWithOwnership())
+                            : StartProtectedQueryOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome CleanRoomsClient::TagResource(const TagResourceRequest& request) const {
@@ -1690,7 +1824,8 @@ TagResourceOutcome CleanRoomsClient::TagResource(const TagResourceRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome CleanRoomsClient::UntagResource(const UntagResourceRequest& request) const {
@@ -1711,7 +1846,8 @@ UntagResourceOutcome CleanRoomsClient::UntagResource(const UntagResourceRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAnalysisTemplateOutcome CleanRoomsClient::UpdateAnalysisTemplate(const UpdateAnalysisTemplateRequest& request) const {
@@ -1734,7 +1870,9 @@ UpdateAnalysisTemplateOutcome CleanRoomsClient::UpdateAnalysisTemplate(const Upd
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAnalysisTemplateIdentifier());
   };
 
-  return UpdateAnalysisTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateAnalysisTemplateOutcome(result.GetResultWithOwnership())
+                            : UpdateAnalysisTemplateOutcome(std::move(result.GetError()));
 }
 
 UpdateCollaborationOutcome CleanRoomsClient::UpdateCollaboration(const UpdateCollaborationRequest& request) const {
@@ -1750,7 +1888,9 @@ UpdateCollaborationOutcome CleanRoomsClient::UpdateCollaboration(const UpdateCol
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCollaborationIdentifier());
   };
 
-  return UpdateCollaborationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateCollaborationOutcome(result.GetResultWithOwnership())
+                            : UpdateCollaborationOutcome(std::move(result.GetError()));
 }
 
 UpdateCollaborationChangeRequestOutcome CleanRoomsClient::UpdateCollaborationChangeRequest(
@@ -1774,7 +1914,9 @@ UpdateCollaborationChangeRequestOutcome CleanRoomsClient::UpdateCollaborationCha
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChangeRequestIdentifier());
   };
 
-  return UpdateCollaborationChangeRequestOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateCollaborationChangeRequestOutcome(result.GetResultWithOwnership())
+                            : UpdateCollaborationChangeRequestOutcome(std::move(result.GetError()));
 }
 
 UpdateConfiguredAudienceModelAssociationOutcome CleanRoomsClient::UpdateConfiguredAudienceModelAssociation(
@@ -1800,7 +1942,9 @@ UpdateConfiguredAudienceModelAssociationOutcome CleanRoomsClient::UpdateConfigur
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfiguredAudienceModelAssociationIdentifier());
   };
 
-  return UpdateConfiguredAudienceModelAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateConfiguredAudienceModelAssociationOutcome(result.GetResultWithOwnership())
+                            : UpdateConfiguredAudienceModelAssociationOutcome(std::move(result.GetError()));
 }
 
 UpdateConfiguredTableOutcome CleanRoomsClient::UpdateConfiguredTable(const UpdateConfiguredTableRequest& request) const {
@@ -1816,7 +1960,9 @@ UpdateConfiguredTableOutcome CleanRoomsClient::UpdateConfiguredTable(const Updat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfiguredTableIdentifier());
   };
 
-  return UpdateConfiguredTableOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateConfiguredTableOutcome(result.GetResultWithOwnership())
+                            : UpdateConfiguredTableOutcome(std::move(result.GetError()));
 }
 
 UpdateConfiguredTableAnalysisRuleOutcome CleanRoomsClient::UpdateConfiguredTableAnalysisRule(
@@ -1841,7 +1987,9 @@ UpdateConfiguredTableAnalysisRuleOutcome CleanRoomsClient::UpdateConfiguredTable
         ConfiguredTableAnalysisRuleTypeMapper::GetNameForConfiguredTableAnalysisRuleType(request.GetAnalysisRuleType()));
   };
 
-  return UpdateConfiguredTableAnalysisRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateConfiguredTableAnalysisRuleOutcome(result.GetResultWithOwnership())
+                            : UpdateConfiguredTableAnalysisRuleOutcome(std::move(result.GetError()));
 }
 
 UpdateConfiguredTableAssociationOutcome CleanRoomsClient::UpdateConfiguredTableAssociation(
@@ -1865,7 +2013,9 @@ UpdateConfiguredTableAssociationOutcome CleanRoomsClient::UpdateConfiguredTableA
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfiguredTableAssociationIdentifier());
   };
 
-  return UpdateConfiguredTableAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateConfiguredTableAssociationOutcome(result.GetResultWithOwnership())
+                            : UpdateConfiguredTableAssociationOutcome(std::move(result.GetError()));
 }
 
 UpdateConfiguredTableAssociationAnalysisRuleOutcome CleanRoomsClient::UpdateConfiguredTableAssociationAnalysisRule(
@@ -1898,8 +2048,9 @@ UpdateConfiguredTableAssociationAnalysisRuleOutcome CleanRoomsClient::UpdateConf
             request.GetAnalysisRuleType()));
   };
 
-  return UpdateConfiguredTableAssociationAnalysisRuleOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateConfiguredTableAssociationAnalysisRuleOutcome(result.GetResultWithOwnership())
+                            : UpdateConfiguredTableAssociationAnalysisRuleOutcome(std::move(result.GetError()));
 }
 
 UpdateIdMappingTableOutcome CleanRoomsClient::UpdateIdMappingTable(const UpdateIdMappingTableRequest& request) const {
@@ -1922,7 +2073,9 @@ UpdateIdMappingTableOutcome CleanRoomsClient::UpdateIdMappingTable(const UpdateI
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdMappingTableIdentifier());
   };
 
-  return UpdateIdMappingTableOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateIdMappingTableOutcome(result.GetResultWithOwnership())
+                            : UpdateIdMappingTableOutcome(std::move(result.GetError()));
 }
 
 UpdateIdNamespaceAssociationOutcome CleanRoomsClient::UpdateIdNamespaceAssociation(
@@ -1946,7 +2099,9 @@ UpdateIdNamespaceAssociationOutcome CleanRoomsClient::UpdateIdNamespaceAssociati
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdNamespaceAssociationIdentifier());
   };
 
-  return UpdateIdNamespaceAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateIdNamespaceAssociationOutcome(result.GetResultWithOwnership())
+                            : UpdateIdNamespaceAssociationOutcome(std::move(result.GetError()));
 }
 
 UpdateMembershipOutcome CleanRoomsClient::UpdateMembership(const UpdateMembershipRequest& request) const {
@@ -1962,7 +2117,9 @@ UpdateMembershipOutcome CleanRoomsClient::UpdateMembership(const UpdateMembershi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
   };
 
-  return UpdateMembershipOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateMembershipOutcome(result.GetResultWithOwnership())
+                            : UpdateMembershipOutcome(std::move(result.GetError()));
 }
 
 UpdatePrivacyBudgetTemplateOutcome CleanRoomsClient::UpdatePrivacyBudgetTemplate(const UpdatePrivacyBudgetTemplateRequest& request) const {
@@ -1985,7 +2142,9 @@ UpdatePrivacyBudgetTemplateOutcome CleanRoomsClient::UpdatePrivacyBudgetTemplate
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrivacyBudgetTemplateIdentifier());
   };
 
-  return UpdatePrivacyBudgetTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdatePrivacyBudgetTemplateOutcome(result.GetResultWithOwnership())
+                            : UpdatePrivacyBudgetTemplateOutcome(std::move(result.GetError()));
 }
 
 UpdateProtectedJobOutcome CleanRoomsClient::UpdateProtectedJob(const UpdateProtectedJobRequest& request) const {
@@ -2008,7 +2167,9 @@ UpdateProtectedJobOutcome CleanRoomsClient::UpdateProtectedJob(const UpdateProte
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProtectedJobIdentifier());
   };
 
-  return UpdateProtectedJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateProtectedJobOutcome(result.GetResultWithOwnership())
+                            : UpdateProtectedJobOutcome(std::move(result.GetError()));
 }
 
 UpdateProtectedQueryOutcome CleanRoomsClient::UpdateProtectedQuery(const UpdateProtectedQueryRequest& request) const {
@@ -2031,5 +2192,7 @@ UpdateProtectedQueryOutcome CleanRoomsClient::UpdateProtectedQuery(const UpdateP
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProtectedQueryIdentifier());
   };
 
-  return UpdateProtectedQueryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateProtectedQueryOutcome(result.GetResultWithOwnership())
+                            : UpdateProtectedQueryOutcome(std::move(result.GetError()));
 }

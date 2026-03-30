@@ -176,6 +176,18 @@ GetRunResult& GetRunResult::operator=(const Aws::AmazonWebServiceResult<JsonValu
     m_workflowUuid = jsonValue.GetString("workflowUuid");
     m_workflowUuidHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("networkingMode")) {
+    m_networkingMode = NetworkingModeMapper::GetNetworkingModeForName(jsonValue.GetString("networkingMode"));
+    m_networkingModeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("configuration")) {
+    m_configuration = jsonValue.GetObject("configuration");
+    m_configurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("vpcConfig")) {
+    m_vpcConfig = jsonValue.GetObject("vpcConfig");
+    m_vpcConfigHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

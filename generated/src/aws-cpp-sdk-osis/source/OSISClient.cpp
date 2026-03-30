@@ -200,7 +200,8 @@ CreatePipelineOutcome OSISClient::CreatePipeline(const CreatePipelineRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/2022-01-01/osis/createPipeline");
   };
 
-  return CreatePipelineOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePipelineOutcome(result.GetResultWithOwnership()) : CreatePipelineOutcome(std::move(result.GetError()));
 }
 
 CreatePipelineEndpointOutcome OSISClient::CreatePipelineEndpoint(const CreatePipelineEndpointRequest& request) const {
@@ -209,7 +210,9 @@ CreatePipelineEndpointOutcome OSISClient::CreatePipelineEndpoint(const CreatePip
     endpointResolutionOutcome.GetResult().AddPathSegments("/2022-01-01/osis/createPipelineEndpoint");
   };
 
-  return CreatePipelineEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePipelineEndpointOutcome(result.GetResultWithOwnership())
+                            : CreatePipelineEndpointOutcome(std::move(result.GetError()));
 }
 
 DeletePipelineOutcome OSISClient::DeletePipeline(const DeletePipelineRequest& request) const {
@@ -225,7 +228,8 @@ DeletePipelineOutcome OSISClient::DeletePipeline(const DeletePipelineRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPipelineName());
   };
 
-  return DeletePipelineOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePipelineOutcome(result.GetResultWithOwnership()) : DeletePipelineOutcome(std::move(result.GetError()));
 }
 
 DeletePipelineEndpointOutcome OSISClient::DeletePipelineEndpoint(const DeletePipelineEndpointRequest& request) const {
@@ -241,7 +245,9 @@ DeletePipelineEndpointOutcome OSISClient::DeletePipelineEndpoint(const DeletePip
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEndpointId());
   };
 
-  return DeletePipelineEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePipelineEndpointOutcome(result.GetResultWithOwnership())
+                            : DeletePipelineEndpointOutcome(std::move(result.GetError()));
 }
 
 DeleteResourcePolicyOutcome OSISClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const {
@@ -257,7 +263,9 @@ DeleteResourcePolicyOutcome OSISClient::DeleteResourcePolicy(const DeleteResourc
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return DeleteResourcePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 GetPipelineOutcome OSISClient::GetPipeline(const GetPipelineRequest& request) const {
@@ -273,7 +281,8 @@ GetPipelineOutcome OSISClient::GetPipeline(const GetPipelineRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPipelineName());
   };
 
-  return GetPipelineOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPipelineOutcome(result.GetResultWithOwnership()) : GetPipelineOutcome(std::move(result.GetError()));
 }
 
 GetPipelineBlueprintOutcome OSISClient::GetPipelineBlueprint(const GetPipelineBlueprintRequest& request) const {
@@ -289,7 +298,9 @@ GetPipelineBlueprintOutcome OSISClient::GetPipelineBlueprint(const GetPipelineBl
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBlueprintName());
   };
 
-  return GetPipelineBlueprintOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPipelineBlueprintOutcome(result.GetResultWithOwnership())
+                            : GetPipelineBlueprintOutcome(std::move(result.GetError()));
 }
 
 GetPipelineChangeProgressOutcome OSISClient::GetPipelineChangeProgress(const GetPipelineChangeProgressRequest& request) const {
@@ -305,7 +316,9 @@ GetPipelineChangeProgressOutcome OSISClient::GetPipelineChangeProgress(const Get
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPipelineName());
   };
 
-  return GetPipelineChangeProgressOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPipelineChangeProgressOutcome(result.GetResultWithOwnership())
+                            : GetPipelineChangeProgressOutcome(std::move(result.GetError()));
 }
 
 GetResourcePolicyOutcome OSISClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const {
@@ -321,7 +334,9 @@ GetResourcePolicyOutcome OSISClient::GetResourcePolicy(const GetResourcePolicyRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return GetResourcePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : GetResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 ListPipelineBlueprintsOutcome OSISClient::ListPipelineBlueprints(const ListPipelineBlueprintsRequest& request) const {
@@ -330,7 +345,9 @@ ListPipelineBlueprintsOutcome OSISClient::ListPipelineBlueprints(const ListPipel
     endpointResolutionOutcome.GetResult().AddPathSegments("/2022-01-01/osis/listPipelineBlueprints");
   };
 
-  return ListPipelineBlueprintsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPipelineBlueprintsOutcome(result.GetResultWithOwnership())
+                            : ListPipelineBlueprintsOutcome(std::move(result.GetError()));
 }
 
 ListPipelineEndpointConnectionsOutcome OSISClient::ListPipelineEndpointConnections(
@@ -340,7 +357,9 @@ ListPipelineEndpointConnectionsOutcome OSISClient::ListPipelineEndpointConnectio
     endpointResolutionOutcome.GetResult().AddPathSegments("/2022-01-01/osis/listPipelineEndpointConnections");
   };
 
-  return ListPipelineEndpointConnectionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPipelineEndpointConnectionsOutcome(result.GetResultWithOwnership())
+                            : ListPipelineEndpointConnectionsOutcome(std::move(result.GetError()));
 }
 
 ListPipelineEndpointsOutcome OSISClient::ListPipelineEndpoints(const ListPipelineEndpointsRequest& request) const {
@@ -349,7 +368,9 @@ ListPipelineEndpointsOutcome OSISClient::ListPipelineEndpoints(const ListPipelin
     endpointResolutionOutcome.GetResult().AddPathSegments("/2022-01-01/osis/listPipelineEndpoints");
   };
 
-  return ListPipelineEndpointsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPipelineEndpointsOutcome(result.GetResultWithOwnership())
+                            : ListPipelineEndpointsOutcome(std::move(result.GetError()));
 }
 
 ListPipelinesOutcome OSISClient::ListPipelines(const ListPipelinesRequest& request) const {
@@ -358,7 +379,8 @@ ListPipelinesOutcome OSISClient::ListPipelines(const ListPipelinesRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/2022-01-01/osis/listPipelines");
   };
 
-  return ListPipelinesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPipelinesOutcome(result.GetResultWithOwnership()) : ListPipelinesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome OSISClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -373,7 +395,9 @@ ListTagsForResourceOutcome OSISClient::ListTagsForResource(const ListTagsForReso
     endpointResolutionOutcome.GetResult().AddPathSegments("/2022-01-01/osis/listTagsForResource/");
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutResourcePolicyOutcome OSISClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const {
@@ -389,7 +413,9 @@ PutResourcePolicyOutcome OSISClient::PutResourcePolicy(const PutResourcePolicyRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return PutResourcePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : PutResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 RevokePipelineEndpointConnectionsOutcome OSISClient::RevokePipelineEndpointConnections(
@@ -399,7 +425,9 @@ RevokePipelineEndpointConnectionsOutcome OSISClient::RevokePipelineEndpointConne
     endpointResolutionOutcome.GetResult().AddPathSegments("/2022-01-01/osis/revokePipelineEndpointConnections");
   };
 
-  return RevokePipelineEndpointConnectionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RevokePipelineEndpointConnectionsOutcome(result.GetResultWithOwnership())
+                            : RevokePipelineEndpointConnectionsOutcome(std::move(result.GetError()));
 }
 
 StartPipelineOutcome OSISClient::StartPipeline(const StartPipelineRequest& request) const {
@@ -415,7 +443,8 @@ StartPipelineOutcome OSISClient::StartPipeline(const StartPipelineRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPipelineName());
   };
 
-  return StartPipelineOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StartPipelineOutcome(result.GetResultWithOwnership()) : StartPipelineOutcome(std::move(result.GetError()));
 }
 
 StopPipelineOutcome OSISClient::StopPipeline(const StopPipelineRequest& request) const {
@@ -431,7 +460,8 @@ StopPipelineOutcome OSISClient::StopPipeline(const StopPipelineRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPipelineName());
   };
 
-  return StopPipelineOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StopPipelineOutcome(result.GetResultWithOwnership()) : StopPipelineOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome OSISClient::TagResource(const TagResourceRequest& request) const {
@@ -446,7 +476,8 @@ TagResourceOutcome OSISClient::TagResource(const TagResourceRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegments("/2022-01-01/osis/tagResource/");
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome OSISClient::UntagResource(const UntagResourceRequest& request) const {
@@ -461,7 +492,8 @@ UntagResourceOutcome OSISClient::UntagResource(const UntagResourceRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/2022-01-01/osis/untagResource/");
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdatePipelineOutcome OSISClient::UpdatePipeline(const UpdatePipelineRequest& request) const {
@@ -477,7 +509,8 @@ UpdatePipelineOutcome OSISClient::UpdatePipeline(const UpdatePipelineRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPipelineName());
   };
 
-  return UpdatePipelineOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdatePipelineOutcome(result.GetResultWithOwnership()) : UpdatePipelineOutcome(std::move(result.GetError()));
 }
 
 ValidatePipelineOutcome OSISClient::ValidatePipeline(const ValidatePipelineRequest& request) const {
@@ -486,5 +519,7 @@ ValidatePipelineOutcome OSISClient::ValidatePipeline(const ValidatePipelineReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/2022-01-01/osis/validatePipeline");
   };
 
-  return ValidatePipelineOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ValidatePipelineOutcome(result.GetResultWithOwnership())
+                            : ValidatePipelineOutcome(std::move(result.GetError()));
 }

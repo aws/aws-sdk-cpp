@@ -270,444 +270,632 @@ ConfigServiceClient::InvokeOperationOutcome ConfigServiceClient::InvokeServiceOp
 }
 
 AssociateResourceTypesOutcome ConfigServiceClient::AssociateResourceTypes(const AssociateResourceTypesRequest& request) const {
-  return AssociateResourceTypesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateResourceTypesOutcome(result.GetResultWithOwnership())
+                            : AssociateResourceTypesOutcome(std::move(result.GetError()));
 }
 
 BatchGetAggregateResourceConfigOutcome ConfigServiceClient::BatchGetAggregateResourceConfig(
     const BatchGetAggregateResourceConfigRequest& request) const {
-  return BatchGetAggregateResourceConfigOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetAggregateResourceConfigOutcome(result.GetResultWithOwnership())
+                            : BatchGetAggregateResourceConfigOutcome(std::move(result.GetError()));
 }
 
 BatchGetResourceConfigOutcome ConfigServiceClient::BatchGetResourceConfig(const BatchGetResourceConfigRequest& request) const {
-  return BatchGetResourceConfigOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetResourceConfigOutcome(result.GetResultWithOwnership())
+                            : BatchGetResourceConfigOutcome(std::move(result.GetError()));
 }
 
 DeleteAggregationAuthorizationOutcome ConfigServiceClient::DeleteAggregationAuthorization(
     const DeleteAggregationAuthorizationRequest& request) const {
-  return DeleteAggregationAuthorizationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAggregationAuthorizationOutcome(result.GetResultWithOwnership())
+                            : DeleteAggregationAuthorizationOutcome(std::move(result.GetError()));
 }
 
 DeleteConfigRuleOutcome ConfigServiceClient::DeleteConfigRule(const DeleteConfigRuleRequest& request) const {
-  return DeleteConfigRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteConfigRuleOutcome(result.GetResultWithOwnership())
+                            : DeleteConfigRuleOutcome(std::move(result.GetError()));
 }
 
 DeleteConfigurationAggregatorOutcome ConfigServiceClient::DeleteConfigurationAggregator(
     const DeleteConfigurationAggregatorRequest& request) const {
-  return DeleteConfigurationAggregatorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteConfigurationAggregatorOutcome(result.GetResultWithOwnership())
+                            : DeleteConfigurationAggregatorOutcome(std::move(result.GetError()));
 }
 
 DeleteConfigurationRecorderOutcome ConfigServiceClient::DeleteConfigurationRecorder(
     const DeleteConfigurationRecorderRequest& request) const {
-  return DeleteConfigurationRecorderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteConfigurationRecorderOutcome(result.GetResultWithOwnership())
+                            : DeleteConfigurationRecorderOutcome(std::move(result.GetError()));
 }
 
 DeleteConformancePackOutcome ConfigServiceClient::DeleteConformancePack(const DeleteConformancePackRequest& request) const {
-  return DeleteConformancePackOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteConformancePackOutcome(result.GetResultWithOwnership())
+                            : DeleteConformancePackOutcome(std::move(result.GetError()));
 }
 
 DeleteDeliveryChannelOutcome ConfigServiceClient::DeleteDeliveryChannel(const DeleteDeliveryChannelRequest& request) const {
-  return DeleteDeliveryChannelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDeliveryChannelOutcome(result.GetResultWithOwnership())
+                            : DeleteDeliveryChannelOutcome(std::move(result.GetError()));
 }
 
 DeleteEvaluationResultsOutcome ConfigServiceClient::DeleteEvaluationResults(const DeleteEvaluationResultsRequest& request) const {
-  return DeleteEvaluationResultsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteEvaluationResultsOutcome(result.GetResultWithOwnership())
+                            : DeleteEvaluationResultsOutcome(std::move(result.GetError()));
 }
 
 DeleteOrganizationConfigRuleOutcome ConfigServiceClient::DeleteOrganizationConfigRule(
     const DeleteOrganizationConfigRuleRequest& request) const {
-  return DeleteOrganizationConfigRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteOrganizationConfigRuleOutcome(result.GetResultWithOwnership())
+                            : DeleteOrganizationConfigRuleOutcome(std::move(result.GetError()));
 }
 
 DeleteOrganizationConformancePackOutcome ConfigServiceClient::DeleteOrganizationConformancePack(
     const DeleteOrganizationConformancePackRequest& request) const {
-  return DeleteOrganizationConformancePackOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteOrganizationConformancePackOutcome(result.GetResultWithOwnership())
+                            : DeleteOrganizationConformancePackOutcome(std::move(result.GetError()));
 }
 
 DeletePendingAggregationRequestOutcome ConfigServiceClient::DeletePendingAggregationRequest(
     const DeletePendingAggregationRequestRequest& request) const {
-  return DeletePendingAggregationRequestOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePendingAggregationRequestOutcome(result.GetResultWithOwnership())
+                            : DeletePendingAggregationRequestOutcome(std::move(result.GetError()));
 }
 
 DeleteRemediationConfigurationOutcome ConfigServiceClient::DeleteRemediationConfiguration(
     const DeleteRemediationConfigurationRequest& request) const {
-  return DeleteRemediationConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRemediationConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteRemediationConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteRemediationExceptionsOutcome ConfigServiceClient::DeleteRemediationExceptions(
     const DeleteRemediationExceptionsRequest& request) const {
-  return DeleteRemediationExceptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRemediationExceptionsOutcome(result.GetResultWithOwnership())
+                            : DeleteRemediationExceptionsOutcome(std::move(result.GetError()));
 }
 
 DeleteResourceConfigOutcome ConfigServiceClient::DeleteResourceConfig(const DeleteResourceConfigRequest& request) const {
-  return DeleteResourceConfigOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteResourceConfigOutcome(result.GetResultWithOwnership())
+                            : DeleteResourceConfigOutcome(std::move(result.GetError()));
 }
 
 DeleteRetentionConfigurationOutcome ConfigServiceClient::DeleteRetentionConfiguration(
     const DeleteRetentionConfigurationRequest& request) const {
-  return DeleteRetentionConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRetentionConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteRetentionConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteServiceLinkedConfigurationRecorderOutcome ConfigServiceClient::DeleteServiceLinkedConfigurationRecorder(
     const DeleteServiceLinkedConfigurationRecorderRequest& request) const {
-  return DeleteServiceLinkedConfigurationRecorderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteServiceLinkedConfigurationRecorderOutcome(result.GetResultWithOwnership())
+                            : DeleteServiceLinkedConfigurationRecorderOutcome(std::move(result.GetError()));
 }
 
 DeleteStoredQueryOutcome ConfigServiceClient::DeleteStoredQuery(const DeleteStoredQueryRequest& request) const {
-  return DeleteStoredQueryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteStoredQueryOutcome(result.GetResultWithOwnership())
+                            : DeleteStoredQueryOutcome(std::move(result.GetError()));
 }
 
 DeliverConfigSnapshotOutcome ConfigServiceClient::DeliverConfigSnapshot(const DeliverConfigSnapshotRequest& request) const {
-  return DeliverConfigSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeliverConfigSnapshotOutcome(result.GetResultWithOwnership())
+                            : DeliverConfigSnapshotOutcome(std::move(result.GetError()));
 }
 
 DescribeAggregateComplianceByConfigRulesOutcome ConfigServiceClient::DescribeAggregateComplianceByConfigRules(
     const DescribeAggregateComplianceByConfigRulesRequest& request) const {
-  return DescribeAggregateComplianceByConfigRulesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAggregateComplianceByConfigRulesOutcome(result.GetResultWithOwnership())
+                            : DescribeAggregateComplianceByConfigRulesOutcome(std::move(result.GetError()));
 }
 
 DescribeAggregateComplianceByConformancePacksOutcome ConfigServiceClient::DescribeAggregateComplianceByConformancePacks(
     const DescribeAggregateComplianceByConformancePacksRequest& request) const {
-  return DescribeAggregateComplianceByConformancePacksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAggregateComplianceByConformancePacksOutcome(result.GetResultWithOwnership())
+                            : DescribeAggregateComplianceByConformancePacksOutcome(std::move(result.GetError()));
 }
 
 DescribeAggregationAuthorizationsOutcome ConfigServiceClient::DescribeAggregationAuthorizations(
     const DescribeAggregationAuthorizationsRequest& request) const {
-  return DescribeAggregationAuthorizationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAggregationAuthorizationsOutcome(result.GetResultWithOwnership())
+                            : DescribeAggregationAuthorizationsOutcome(std::move(result.GetError()));
 }
 
 DescribeComplianceByConfigRuleOutcome ConfigServiceClient::DescribeComplianceByConfigRule(
     const DescribeComplianceByConfigRuleRequest& request) const {
-  return DescribeComplianceByConfigRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeComplianceByConfigRuleOutcome(result.GetResultWithOwnership())
+                            : DescribeComplianceByConfigRuleOutcome(std::move(result.GetError()));
 }
 
 DescribeComplianceByResourceOutcome ConfigServiceClient::DescribeComplianceByResource(
     const DescribeComplianceByResourceRequest& request) const {
-  return DescribeComplianceByResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeComplianceByResourceOutcome(result.GetResultWithOwnership())
+                            : DescribeComplianceByResourceOutcome(std::move(result.GetError()));
 }
 
 DescribeConfigRuleEvaluationStatusOutcome ConfigServiceClient::DescribeConfigRuleEvaluationStatus(
     const DescribeConfigRuleEvaluationStatusRequest& request) const {
-  return DescribeConfigRuleEvaluationStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeConfigRuleEvaluationStatusOutcome(result.GetResultWithOwnership())
+                            : DescribeConfigRuleEvaluationStatusOutcome(std::move(result.GetError()));
 }
 
 DescribeConfigRulesOutcome ConfigServiceClient::DescribeConfigRules(const DescribeConfigRulesRequest& request) const {
-  return DescribeConfigRulesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeConfigRulesOutcome(result.GetResultWithOwnership())
+                            : DescribeConfigRulesOutcome(std::move(result.GetError()));
 }
 
 DescribeConfigurationAggregatorSourcesStatusOutcome ConfigServiceClient::DescribeConfigurationAggregatorSourcesStatus(
     const DescribeConfigurationAggregatorSourcesStatusRequest& request) const {
-  return DescribeConfigurationAggregatorSourcesStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeConfigurationAggregatorSourcesStatusOutcome(result.GetResultWithOwnership())
+                            : DescribeConfigurationAggregatorSourcesStatusOutcome(std::move(result.GetError()));
 }
 
 DescribeConfigurationAggregatorsOutcome ConfigServiceClient::DescribeConfigurationAggregators(
     const DescribeConfigurationAggregatorsRequest& request) const {
-  return DescribeConfigurationAggregatorsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeConfigurationAggregatorsOutcome(result.GetResultWithOwnership())
+                            : DescribeConfigurationAggregatorsOutcome(std::move(result.GetError()));
 }
 
 DescribeConfigurationRecorderStatusOutcome ConfigServiceClient::DescribeConfigurationRecorderStatus(
     const DescribeConfigurationRecorderStatusRequest& request) const {
-  return DescribeConfigurationRecorderStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeConfigurationRecorderStatusOutcome(result.GetResultWithOwnership())
+                            : DescribeConfigurationRecorderStatusOutcome(std::move(result.GetError()));
 }
 
 DescribeConfigurationRecordersOutcome ConfigServiceClient::DescribeConfigurationRecorders(
     const DescribeConfigurationRecordersRequest& request) const {
-  return DescribeConfigurationRecordersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeConfigurationRecordersOutcome(result.GetResultWithOwnership())
+                            : DescribeConfigurationRecordersOutcome(std::move(result.GetError()));
 }
 
 DescribeConformancePackComplianceOutcome ConfigServiceClient::DescribeConformancePackCompliance(
     const DescribeConformancePackComplianceRequest& request) const {
-  return DescribeConformancePackComplianceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeConformancePackComplianceOutcome(result.GetResultWithOwnership())
+                            : DescribeConformancePackComplianceOutcome(std::move(result.GetError()));
 }
 
 DescribeConformancePackStatusOutcome ConfigServiceClient::DescribeConformancePackStatus(
     const DescribeConformancePackStatusRequest& request) const {
-  return DescribeConformancePackStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeConformancePackStatusOutcome(result.GetResultWithOwnership())
+                            : DescribeConformancePackStatusOutcome(std::move(result.GetError()));
 }
 
 DescribeConformancePacksOutcome ConfigServiceClient::DescribeConformancePacks(const DescribeConformancePacksRequest& request) const {
-  return DescribeConformancePacksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeConformancePacksOutcome(result.GetResultWithOwnership())
+                            : DescribeConformancePacksOutcome(std::move(result.GetError()));
 }
 
 DescribeDeliveryChannelStatusOutcome ConfigServiceClient::DescribeDeliveryChannelStatus(
     const DescribeDeliveryChannelStatusRequest& request) const {
-  return DescribeDeliveryChannelStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDeliveryChannelStatusOutcome(result.GetResultWithOwnership())
+                            : DescribeDeliveryChannelStatusOutcome(std::move(result.GetError()));
 }
 
 DescribeDeliveryChannelsOutcome ConfigServiceClient::DescribeDeliveryChannels(const DescribeDeliveryChannelsRequest& request) const {
-  return DescribeDeliveryChannelsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDeliveryChannelsOutcome(result.GetResultWithOwnership())
+                            : DescribeDeliveryChannelsOutcome(std::move(result.GetError()));
 }
 
 DescribeOrganizationConfigRuleStatusesOutcome ConfigServiceClient::DescribeOrganizationConfigRuleStatuses(
     const DescribeOrganizationConfigRuleStatusesRequest& request) const {
-  return DescribeOrganizationConfigRuleStatusesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeOrganizationConfigRuleStatusesOutcome(result.GetResultWithOwnership())
+                            : DescribeOrganizationConfigRuleStatusesOutcome(std::move(result.GetError()));
 }
 
 DescribeOrganizationConfigRulesOutcome ConfigServiceClient::DescribeOrganizationConfigRules(
     const DescribeOrganizationConfigRulesRequest& request) const {
-  return DescribeOrganizationConfigRulesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeOrganizationConfigRulesOutcome(result.GetResultWithOwnership())
+                            : DescribeOrganizationConfigRulesOutcome(std::move(result.GetError()));
 }
 
 DescribeOrganizationConformancePackStatusesOutcome ConfigServiceClient::DescribeOrganizationConformancePackStatuses(
     const DescribeOrganizationConformancePackStatusesRequest& request) const {
-  return DescribeOrganizationConformancePackStatusesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeOrganizationConformancePackStatusesOutcome(result.GetResultWithOwnership())
+                            : DescribeOrganizationConformancePackStatusesOutcome(std::move(result.GetError()));
 }
 
 DescribeOrganizationConformancePacksOutcome ConfigServiceClient::DescribeOrganizationConformancePacks(
     const DescribeOrganizationConformancePacksRequest& request) const {
-  return DescribeOrganizationConformancePacksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeOrganizationConformancePacksOutcome(result.GetResultWithOwnership())
+                            : DescribeOrganizationConformancePacksOutcome(std::move(result.GetError()));
 }
 
 DescribePendingAggregationRequestsOutcome ConfigServiceClient::DescribePendingAggregationRequests(
     const DescribePendingAggregationRequestsRequest& request) const {
-  return DescribePendingAggregationRequestsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePendingAggregationRequestsOutcome(result.GetResultWithOwnership())
+                            : DescribePendingAggregationRequestsOutcome(std::move(result.GetError()));
 }
 
 DescribeRemediationConfigurationsOutcome ConfigServiceClient::DescribeRemediationConfigurations(
     const DescribeRemediationConfigurationsRequest& request) const {
-  return DescribeRemediationConfigurationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRemediationConfigurationsOutcome(result.GetResultWithOwnership())
+                            : DescribeRemediationConfigurationsOutcome(std::move(result.GetError()));
 }
 
 DescribeRemediationExceptionsOutcome ConfigServiceClient::DescribeRemediationExceptions(
     const DescribeRemediationExceptionsRequest& request) const {
-  return DescribeRemediationExceptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRemediationExceptionsOutcome(result.GetResultWithOwnership())
+                            : DescribeRemediationExceptionsOutcome(std::move(result.GetError()));
 }
 
 DescribeRemediationExecutionStatusOutcome ConfigServiceClient::DescribeRemediationExecutionStatus(
     const DescribeRemediationExecutionStatusRequest& request) const {
-  return DescribeRemediationExecutionStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRemediationExecutionStatusOutcome(result.GetResultWithOwnership())
+                            : DescribeRemediationExecutionStatusOutcome(std::move(result.GetError()));
 }
 
 DescribeRetentionConfigurationsOutcome ConfigServiceClient::DescribeRetentionConfigurations(
     const DescribeRetentionConfigurationsRequest& request) const {
-  return DescribeRetentionConfigurationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRetentionConfigurationsOutcome(result.GetResultWithOwnership())
+                            : DescribeRetentionConfigurationsOutcome(std::move(result.GetError()));
 }
 
 DisassociateResourceTypesOutcome ConfigServiceClient::DisassociateResourceTypes(const DisassociateResourceTypesRequest& request) const {
-  return DisassociateResourceTypesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateResourceTypesOutcome(result.GetResultWithOwnership())
+                            : DisassociateResourceTypesOutcome(std::move(result.GetError()));
 }
 
 GetAggregateComplianceDetailsByConfigRuleOutcome ConfigServiceClient::GetAggregateComplianceDetailsByConfigRule(
     const GetAggregateComplianceDetailsByConfigRuleRequest& request) const {
-  return GetAggregateComplianceDetailsByConfigRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAggregateComplianceDetailsByConfigRuleOutcome(result.GetResultWithOwnership())
+                            : GetAggregateComplianceDetailsByConfigRuleOutcome(std::move(result.GetError()));
 }
 
 GetAggregateConfigRuleComplianceSummaryOutcome ConfigServiceClient::GetAggregateConfigRuleComplianceSummary(
     const GetAggregateConfigRuleComplianceSummaryRequest& request) const {
-  return GetAggregateConfigRuleComplianceSummaryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAggregateConfigRuleComplianceSummaryOutcome(result.GetResultWithOwnership())
+                            : GetAggregateConfigRuleComplianceSummaryOutcome(std::move(result.GetError()));
 }
 
 GetAggregateConformancePackComplianceSummaryOutcome ConfigServiceClient::GetAggregateConformancePackComplianceSummary(
     const GetAggregateConformancePackComplianceSummaryRequest& request) const {
-  return GetAggregateConformancePackComplianceSummaryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAggregateConformancePackComplianceSummaryOutcome(result.GetResultWithOwnership())
+                            : GetAggregateConformancePackComplianceSummaryOutcome(std::move(result.GetError()));
 }
 
 GetAggregateDiscoveredResourceCountsOutcome ConfigServiceClient::GetAggregateDiscoveredResourceCounts(
     const GetAggregateDiscoveredResourceCountsRequest& request) const {
-  return GetAggregateDiscoveredResourceCountsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAggregateDiscoveredResourceCountsOutcome(result.GetResultWithOwnership())
+                            : GetAggregateDiscoveredResourceCountsOutcome(std::move(result.GetError()));
 }
 
 GetAggregateResourceConfigOutcome ConfigServiceClient::GetAggregateResourceConfig(const GetAggregateResourceConfigRequest& request) const {
-  return GetAggregateResourceConfigOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAggregateResourceConfigOutcome(result.GetResultWithOwnership())
+                            : GetAggregateResourceConfigOutcome(std::move(result.GetError()));
 }
 
 GetComplianceDetailsByConfigRuleOutcome ConfigServiceClient::GetComplianceDetailsByConfigRule(
     const GetComplianceDetailsByConfigRuleRequest& request) const {
-  return GetComplianceDetailsByConfigRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetComplianceDetailsByConfigRuleOutcome(result.GetResultWithOwnership())
+                            : GetComplianceDetailsByConfigRuleOutcome(std::move(result.GetError()));
 }
 
 GetComplianceDetailsByResourceOutcome ConfigServiceClient::GetComplianceDetailsByResource(
     const GetComplianceDetailsByResourceRequest& request) const {
-  return GetComplianceDetailsByResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetComplianceDetailsByResourceOutcome(result.GetResultWithOwnership())
+                            : GetComplianceDetailsByResourceOutcome(std::move(result.GetError()));
 }
 
 GetComplianceSummaryByConfigRuleOutcome ConfigServiceClient::GetComplianceSummaryByConfigRule(
     const GetComplianceSummaryByConfigRuleRequest& request) const {
-  return GetComplianceSummaryByConfigRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetComplianceSummaryByConfigRuleOutcome(result.GetResultWithOwnership())
+                            : GetComplianceSummaryByConfigRuleOutcome(std::move(result.GetError()));
 }
 
 GetComplianceSummaryByResourceTypeOutcome ConfigServiceClient::GetComplianceSummaryByResourceType(
     const GetComplianceSummaryByResourceTypeRequest& request) const {
-  return GetComplianceSummaryByResourceTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetComplianceSummaryByResourceTypeOutcome(result.GetResultWithOwnership())
+                            : GetComplianceSummaryByResourceTypeOutcome(std::move(result.GetError()));
 }
 
 GetConformancePackComplianceDetailsOutcome ConfigServiceClient::GetConformancePackComplianceDetails(
     const GetConformancePackComplianceDetailsRequest& request) const {
-  return GetConformancePackComplianceDetailsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetConformancePackComplianceDetailsOutcome(result.GetResultWithOwnership())
+                            : GetConformancePackComplianceDetailsOutcome(std::move(result.GetError()));
 }
 
 GetConformancePackComplianceSummaryOutcome ConfigServiceClient::GetConformancePackComplianceSummary(
     const GetConformancePackComplianceSummaryRequest& request) const {
-  return GetConformancePackComplianceSummaryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetConformancePackComplianceSummaryOutcome(result.GetResultWithOwnership())
+                            : GetConformancePackComplianceSummaryOutcome(std::move(result.GetError()));
 }
 
 GetCustomRulePolicyOutcome ConfigServiceClient::GetCustomRulePolicy(const GetCustomRulePolicyRequest& request) const {
-  return GetCustomRulePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCustomRulePolicyOutcome(result.GetResultWithOwnership())
+                            : GetCustomRulePolicyOutcome(std::move(result.GetError()));
 }
 
 GetDiscoveredResourceCountsOutcome ConfigServiceClient::GetDiscoveredResourceCounts(
     const GetDiscoveredResourceCountsRequest& request) const {
-  return GetDiscoveredResourceCountsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDiscoveredResourceCountsOutcome(result.GetResultWithOwnership())
+                            : GetDiscoveredResourceCountsOutcome(std::move(result.GetError()));
 }
 
 GetOrganizationConfigRuleDetailedStatusOutcome ConfigServiceClient::GetOrganizationConfigRuleDetailedStatus(
     const GetOrganizationConfigRuleDetailedStatusRequest& request) const {
-  return GetOrganizationConfigRuleDetailedStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetOrganizationConfigRuleDetailedStatusOutcome(result.GetResultWithOwnership())
+                            : GetOrganizationConfigRuleDetailedStatusOutcome(std::move(result.GetError()));
 }
 
 GetOrganizationConformancePackDetailedStatusOutcome ConfigServiceClient::GetOrganizationConformancePackDetailedStatus(
     const GetOrganizationConformancePackDetailedStatusRequest& request) const {
-  return GetOrganizationConformancePackDetailedStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetOrganizationConformancePackDetailedStatusOutcome(result.GetResultWithOwnership())
+                            : GetOrganizationConformancePackDetailedStatusOutcome(std::move(result.GetError()));
 }
 
 GetOrganizationCustomRulePolicyOutcome ConfigServiceClient::GetOrganizationCustomRulePolicy(
     const GetOrganizationCustomRulePolicyRequest& request) const {
-  return GetOrganizationCustomRulePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetOrganizationCustomRulePolicyOutcome(result.GetResultWithOwnership())
+                            : GetOrganizationCustomRulePolicyOutcome(std::move(result.GetError()));
 }
 
 GetResourceConfigHistoryOutcome ConfigServiceClient::GetResourceConfigHistory(const GetResourceConfigHistoryRequest& request) const {
-  return GetResourceConfigHistoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourceConfigHistoryOutcome(result.GetResultWithOwnership())
+                            : GetResourceConfigHistoryOutcome(std::move(result.GetError()));
 }
 
 GetResourceEvaluationSummaryOutcome ConfigServiceClient::GetResourceEvaluationSummary(
     const GetResourceEvaluationSummaryRequest& request) const {
-  return GetResourceEvaluationSummaryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourceEvaluationSummaryOutcome(result.GetResultWithOwnership())
+                            : GetResourceEvaluationSummaryOutcome(std::move(result.GetError()));
 }
 
 GetStoredQueryOutcome ConfigServiceClient::GetStoredQuery(const GetStoredQueryRequest& request) const {
-  return GetStoredQueryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetStoredQueryOutcome(result.GetResultWithOwnership()) : GetStoredQueryOutcome(std::move(result.GetError()));
 }
 
 ListAggregateDiscoveredResourcesOutcome ConfigServiceClient::ListAggregateDiscoveredResources(
     const ListAggregateDiscoveredResourcesRequest& request) const {
-  return ListAggregateDiscoveredResourcesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAggregateDiscoveredResourcesOutcome(result.GetResultWithOwnership())
+                            : ListAggregateDiscoveredResourcesOutcome(std::move(result.GetError()));
 }
 
 ListConfigurationRecordersOutcome ConfigServiceClient::ListConfigurationRecorders(const ListConfigurationRecordersRequest& request) const {
-  return ListConfigurationRecordersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListConfigurationRecordersOutcome(result.GetResultWithOwnership())
+                            : ListConfigurationRecordersOutcome(std::move(result.GetError()));
 }
 
 ListConformancePackComplianceScoresOutcome ConfigServiceClient::ListConformancePackComplianceScores(
     const ListConformancePackComplianceScoresRequest& request) const {
-  return ListConformancePackComplianceScoresOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListConformancePackComplianceScoresOutcome(result.GetResultWithOwnership())
+                            : ListConformancePackComplianceScoresOutcome(std::move(result.GetError()));
 }
 
 ListDiscoveredResourcesOutcome ConfigServiceClient::ListDiscoveredResources(const ListDiscoveredResourcesRequest& request) const {
-  return ListDiscoveredResourcesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDiscoveredResourcesOutcome(result.GetResultWithOwnership())
+                            : ListDiscoveredResourcesOutcome(std::move(result.GetError()));
 }
 
 ListResourceEvaluationsOutcome ConfigServiceClient::ListResourceEvaluations(const ListResourceEvaluationsRequest& request) const {
-  return ListResourceEvaluationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResourceEvaluationsOutcome(result.GetResultWithOwnership())
+                            : ListResourceEvaluationsOutcome(std::move(result.GetError()));
 }
 
 ListStoredQueriesOutcome ConfigServiceClient::ListStoredQueries(const ListStoredQueriesRequest& request) const {
-  return ListStoredQueriesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListStoredQueriesOutcome(result.GetResultWithOwnership())
+                            : ListStoredQueriesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome ConfigServiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutAggregationAuthorizationOutcome ConfigServiceClient::PutAggregationAuthorization(
     const PutAggregationAuthorizationRequest& request) const {
-  return PutAggregationAuthorizationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutAggregationAuthorizationOutcome(result.GetResultWithOwnership())
+                            : PutAggregationAuthorizationOutcome(std::move(result.GetError()));
 }
 
 PutConfigRuleOutcome ConfigServiceClient::PutConfigRule(const PutConfigRuleRequest& request) const {
-  return PutConfigRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutConfigRuleOutcome(result.GetResultWithOwnership()) : PutConfigRuleOutcome(std::move(result.GetError()));
 }
 
 PutConfigurationAggregatorOutcome ConfigServiceClient::PutConfigurationAggregator(const PutConfigurationAggregatorRequest& request) const {
-  return PutConfigurationAggregatorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutConfigurationAggregatorOutcome(result.GetResultWithOwnership())
+                            : PutConfigurationAggregatorOutcome(std::move(result.GetError()));
 }
 
 PutConfigurationRecorderOutcome ConfigServiceClient::PutConfigurationRecorder(const PutConfigurationRecorderRequest& request) const {
-  return PutConfigurationRecorderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutConfigurationRecorderOutcome(result.GetResultWithOwnership())
+                            : PutConfigurationRecorderOutcome(std::move(result.GetError()));
 }
 
 PutConformancePackOutcome ConfigServiceClient::PutConformancePack(const PutConformancePackRequest& request) const {
-  return PutConformancePackOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutConformancePackOutcome(result.GetResultWithOwnership())
+                            : PutConformancePackOutcome(std::move(result.GetError()));
 }
 
 PutDeliveryChannelOutcome ConfigServiceClient::PutDeliveryChannel(const PutDeliveryChannelRequest& request) const {
-  return PutDeliveryChannelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutDeliveryChannelOutcome(result.GetResultWithOwnership())
+                            : PutDeliveryChannelOutcome(std::move(result.GetError()));
 }
 
 PutEvaluationsOutcome ConfigServiceClient::PutEvaluations(const PutEvaluationsRequest& request) const {
-  return PutEvaluationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutEvaluationsOutcome(result.GetResultWithOwnership()) : PutEvaluationsOutcome(std::move(result.GetError()));
 }
 
 PutExternalEvaluationOutcome ConfigServiceClient::PutExternalEvaluation(const PutExternalEvaluationRequest& request) const {
-  return PutExternalEvaluationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutExternalEvaluationOutcome(result.GetResultWithOwnership())
+                            : PutExternalEvaluationOutcome(std::move(result.GetError()));
 }
 
 PutOrganizationConfigRuleOutcome ConfigServiceClient::PutOrganizationConfigRule(const PutOrganizationConfigRuleRequest& request) const {
-  return PutOrganizationConfigRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutOrganizationConfigRuleOutcome(result.GetResultWithOwnership())
+                            : PutOrganizationConfigRuleOutcome(std::move(result.GetError()));
 }
 
 PutOrganizationConformancePackOutcome ConfigServiceClient::PutOrganizationConformancePack(
     const PutOrganizationConformancePackRequest& request) const {
-  return PutOrganizationConformancePackOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutOrganizationConformancePackOutcome(result.GetResultWithOwnership())
+                            : PutOrganizationConformancePackOutcome(std::move(result.GetError()));
 }
 
 PutRemediationConfigurationsOutcome ConfigServiceClient::PutRemediationConfigurations(
     const PutRemediationConfigurationsRequest& request) const {
-  return PutRemediationConfigurationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutRemediationConfigurationsOutcome(result.GetResultWithOwnership())
+                            : PutRemediationConfigurationsOutcome(std::move(result.GetError()));
 }
 
 PutRemediationExceptionsOutcome ConfigServiceClient::PutRemediationExceptions(const PutRemediationExceptionsRequest& request) const {
-  return PutRemediationExceptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutRemediationExceptionsOutcome(result.GetResultWithOwnership())
+                            : PutRemediationExceptionsOutcome(std::move(result.GetError()));
 }
 
 PutResourceConfigOutcome ConfigServiceClient::PutResourceConfig(const PutResourceConfigRequest& request) const {
-  return PutResourceConfigOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutResourceConfigOutcome(result.GetResultWithOwnership())
+                            : PutResourceConfigOutcome(std::move(result.GetError()));
 }
 
 PutRetentionConfigurationOutcome ConfigServiceClient::PutRetentionConfiguration(const PutRetentionConfigurationRequest& request) const {
-  return PutRetentionConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutRetentionConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutRetentionConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutServiceLinkedConfigurationRecorderOutcome ConfigServiceClient::PutServiceLinkedConfigurationRecorder(
     const PutServiceLinkedConfigurationRecorderRequest& request) const {
-  return PutServiceLinkedConfigurationRecorderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutServiceLinkedConfigurationRecorderOutcome(result.GetResultWithOwnership())
+                            : PutServiceLinkedConfigurationRecorderOutcome(std::move(result.GetError()));
 }
 
 PutStoredQueryOutcome ConfigServiceClient::PutStoredQuery(const PutStoredQueryRequest& request) const {
-  return PutStoredQueryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutStoredQueryOutcome(result.GetResultWithOwnership()) : PutStoredQueryOutcome(std::move(result.GetError()));
 }
 
 SelectAggregateResourceConfigOutcome ConfigServiceClient::SelectAggregateResourceConfig(
     const SelectAggregateResourceConfigRequest& request) const {
-  return SelectAggregateResourceConfigOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SelectAggregateResourceConfigOutcome(result.GetResultWithOwnership())
+                            : SelectAggregateResourceConfigOutcome(std::move(result.GetError()));
 }
 
 SelectResourceConfigOutcome ConfigServiceClient::SelectResourceConfig(const SelectResourceConfigRequest& request) const {
-  return SelectResourceConfigOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SelectResourceConfigOutcome(result.GetResultWithOwnership())
+                            : SelectResourceConfigOutcome(std::move(result.GetError()));
 }
 
 StartConfigRulesEvaluationOutcome ConfigServiceClient::StartConfigRulesEvaluation(const StartConfigRulesEvaluationRequest& request) const {
-  return StartConfigRulesEvaluationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartConfigRulesEvaluationOutcome(result.GetResultWithOwnership())
+                            : StartConfigRulesEvaluationOutcome(std::move(result.GetError()));
 }
 
 StartConfigurationRecorderOutcome ConfigServiceClient::StartConfigurationRecorder(const StartConfigurationRecorderRequest& request) const {
-  return StartConfigurationRecorderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartConfigurationRecorderOutcome(result.GetResultWithOwnership())
+                            : StartConfigurationRecorderOutcome(std::move(result.GetError()));
 }
 
 StartRemediationExecutionOutcome ConfigServiceClient::StartRemediationExecution(const StartRemediationExecutionRequest& request) const {
-  return StartRemediationExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartRemediationExecutionOutcome(result.GetResultWithOwnership())
+                            : StartRemediationExecutionOutcome(std::move(result.GetError()));
 }
 
 StartResourceEvaluationOutcome ConfigServiceClient::StartResourceEvaluation(const StartResourceEvaluationRequest& request) const {
-  return StartResourceEvaluationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartResourceEvaluationOutcome(result.GetResultWithOwnership())
+                            : StartResourceEvaluationOutcome(std::move(result.GetError()));
 }
 
 StopConfigurationRecorderOutcome ConfigServiceClient::StopConfigurationRecorder(const StopConfigurationRecorderRequest& request) const {
-  return StopConfigurationRecorderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopConfigurationRecorderOutcome(result.GetResultWithOwnership())
+                            : StopConfigurationRecorderOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ConfigServiceClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome ConfigServiceClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }

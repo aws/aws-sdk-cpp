@@ -206,7 +206,9 @@ CreateAlarmModelOutcome IoTEventsClient::CreateAlarmModel(const CreateAlarmModel
     endpointResolutionOutcome.GetResult().AddPathSegments("/alarm-models");
   };
 
-  return CreateAlarmModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAlarmModelOutcome(result.GetResultWithOwnership())
+                            : CreateAlarmModelOutcome(std::move(result.GetError()));
 }
 
 CreateDetectorModelOutcome IoTEventsClient::CreateDetectorModel(const CreateDetectorModelRequest& request) const {
@@ -215,7 +217,9 @@ CreateDetectorModelOutcome IoTEventsClient::CreateDetectorModel(const CreateDete
     endpointResolutionOutcome.GetResult().AddPathSegments("/detector-models");
   };
 
-  return CreateDetectorModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDetectorModelOutcome(result.GetResultWithOwnership())
+                            : CreateDetectorModelOutcome(std::move(result.GetError()));
 }
 
 CreateInputOutcome IoTEventsClient::CreateInput(const CreateInputRequest& request) const {
@@ -224,7 +228,8 @@ CreateInputOutcome IoTEventsClient::CreateInput(const CreateInputRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/inputs");
   };
 
-  return CreateInputOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateInputOutcome(result.GetResultWithOwnership()) : CreateInputOutcome(std::move(result.GetError()));
 }
 
 DeleteAlarmModelOutcome IoTEventsClient::DeleteAlarmModel(const DeleteAlarmModelRequest& request) const {
@@ -240,7 +245,9 @@ DeleteAlarmModelOutcome IoTEventsClient::DeleteAlarmModel(const DeleteAlarmModel
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAlarmModelName());
   };
 
-  return DeleteAlarmModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAlarmModelOutcome(result.GetResultWithOwnership())
+                            : DeleteAlarmModelOutcome(std::move(result.GetError()));
 }
 
 DeleteDetectorModelOutcome IoTEventsClient::DeleteDetectorModel(const DeleteDetectorModelRequest& request) const {
@@ -256,7 +263,9 @@ DeleteDetectorModelOutcome IoTEventsClient::DeleteDetectorModel(const DeleteDete
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDetectorModelName());
   };
 
-  return DeleteDetectorModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDetectorModelOutcome(result.GetResultWithOwnership())
+                            : DeleteDetectorModelOutcome(std::move(result.GetError()));
 }
 
 DeleteInputOutcome IoTEventsClient::DeleteInput(const DeleteInputRequest& request) const {
@@ -272,7 +281,8 @@ DeleteInputOutcome IoTEventsClient::DeleteInput(const DeleteInputRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInputName());
   };
 
-  return DeleteInputOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteInputOutcome(result.GetResultWithOwnership()) : DeleteInputOutcome(std::move(result.GetError()));
 }
 
 DescribeAlarmModelOutcome IoTEventsClient::DescribeAlarmModel(const DescribeAlarmModelRequest& request) const {
@@ -288,7 +298,9 @@ DescribeAlarmModelOutcome IoTEventsClient::DescribeAlarmModel(const DescribeAlar
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAlarmModelName());
   };
 
-  return DescribeAlarmModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAlarmModelOutcome(result.GetResultWithOwnership())
+                            : DescribeAlarmModelOutcome(std::move(result.GetError()));
 }
 
 DescribeDetectorModelOutcome IoTEventsClient::DescribeDetectorModel(const DescribeDetectorModelRequest& request) const {
@@ -304,7 +316,9 @@ DescribeDetectorModelOutcome IoTEventsClient::DescribeDetectorModel(const Descri
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDetectorModelName());
   };
 
-  return DescribeDetectorModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDetectorModelOutcome(result.GetResultWithOwnership())
+                            : DescribeDetectorModelOutcome(std::move(result.GetError()));
 }
 
 DescribeDetectorModelAnalysisOutcome IoTEventsClient::DescribeDetectorModelAnalysis(
@@ -321,7 +335,9 @@ DescribeDetectorModelAnalysisOutcome IoTEventsClient::DescribeDetectorModelAnaly
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAnalysisId());
   };
 
-  return DescribeDetectorModelAnalysisOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDetectorModelAnalysisOutcome(result.GetResultWithOwnership())
+                            : DescribeDetectorModelAnalysisOutcome(std::move(result.GetError()));
 }
 
 DescribeInputOutcome IoTEventsClient::DescribeInput(const DescribeInputRequest& request) const {
@@ -337,7 +353,8 @@ DescribeInputOutcome IoTEventsClient::DescribeInput(const DescribeInputRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInputName());
   };
 
-  return DescribeInputOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeInputOutcome(result.GetResultWithOwnership()) : DescribeInputOutcome(std::move(result.GetError()));
 }
 
 DescribeLoggingOptionsOutcome IoTEventsClient::DescribeLoggingOptions(const DescribeLoggingOptionsRequest& request) const {
@@ -346,7 +363,9 @@ DescribeLoggingOptionsOutcome IoTEventsClient::DescribeLoggingOptions(const Desc
     endpointResolutionOutcome.GetResult().AddPathSegments("/logging");
   };
 
-  return DescribeLoggingOptionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeLoggingOptionsOutcome(result.GetResultWithOwnership())
+                            : DescribeLoggingOptionsOutcome(std::move(result.GetError()));
 }
 
 GetDetectorModelAnalysisResultsOutcome IoTEventsClient::GetDetectorModelAnalysisResults(
@@ -364,7 +383,9 @@ GetDetectorModelAnalysisResultsOutcome IoTEventsClient::GetDetectorModelAnalysis
     endpointResolutionOutcome.GetResult().AddPathSegments("/results");
   };
 
-  return GetDetectorModelAnalysisResultsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDetectorModelAnalysisResultsOutcome(result.GetResultWithOwnership())
+                            : GetDetectorModelAnalysisResultsOutcome(std::move(result.GetError()));
 }
 
 ListAlarmModelVersionsOutcome IoTEventsClient::ListAlarmModelVersions(const ListAlarmModelVersionsRequest& request) const {
@@ -381,7 +402,9 @@ ListAlarmModelVersionsOutcome IoTEventsClient::ListAlarmModelVersions(const List
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
   };
 
-  return ListAlarmModelVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAlarmModelVersionsOutcome(result.GetResultWithOwnership())
+                            : ListAlarmModelVersionsOutcome(std::move(result.GetError()));
 }
 
 ListAlarmModelsOutcome IoTEventsClient::ListAlarmModels(const ListAlarmModelsRequest& request) const {
@@ -390,7 +413,9 @@ ListAlarmModelsOutcome IoTEventsClient::ListAlarmModels(const ListAlarmModelsReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/alarm-models");
   };
 
-  return ListAlarmModelsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAlarmModelsOutcome(result.GetResultWithOwnership())
+                            : ListAlarmModelsOutcome(std::move(result.GetError()));
 }
 
 ListDetectorModelVersionsOutcome IoTEventsClient::ListDetectorModelVersions(const ListDetectorModelVersionsRequest& request) const {
@@ -407,7 +432,9 @@ ListDetectorModelVersionsOutcome IoTEventsClient::ListDetectorModelVersions(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
   };
 
-  return ListDetectorModelVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDetectorModelVersionsOutcome(result.GetResultWithOwnership())
+                            : ListDetectorModelVersionsOutcome(std::move(result.GetError()));
 }
 
 ListDetectorModelsOutcome IoTEventsClient::ListDetectorModels(const ListDetectorModelsRequest& request) const {
@@ -416,7 +443,9 @@ ListDetectorModelsOutcome IoTEventsClient::ListDetectorModels(const ListDetector
     endpointResolutionOutcome.GetResult().AddPathSegments("/detector-models");
   };
 
-  return ListDetectorModelsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDetectorModelsOutcome(result.GetResultWithOwnership())
+                            : ListDetectorModelsOutcome(std::move(result.GetError()));
 }
 
 ListInputRoutingsOutcome IoTEventsClient::ListInputRoutings(const ListInputRoutingsRequest& request) const {
@@ -425,7 +454,9 @@ ListInputRoutingsOutcome IoTEventsClient::ListInputRoutings(const ListInputRouti
     endpointResolutionOutcome.GetResult().AddPathSegments("/input-routings");
   };
 
-  return ListInputRoutingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListInputRoutingsOutcome(result.GetResultWithOwnership())
+                            : ListInputRoutingsOutcome(std::move(result.GetError()));
 }
 
 ListInputsOutcome IoTEventsClient::ListInputs(const ListInputsRequest& request) const {
@@ -434,7 +465,8 @@ ListInputsOutcome IoTEventsClient::ListInputs(const ListInputsRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/inputs");
   };
 
-  return ListInputsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListInputsOutcome(result.GetResultWithOwnership()) : ListInputsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome IoTEventsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -449,7 +481,9 @@ ListTagsForResourceOutcome IoTEventsClient::ListTagsForResource(const ListTagsFo
     endpointResolutionOutcome.GetResult().AddPathSegments("/tags");
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutLoggingOptionsOutcome IoTEventsClient::PutLoggingOptions(const PutLoggingOptionsRequest& request) const {
@@ -458,7 +492,9 @@ PutLoggingOptionsOutcome IoTEventsClient::PutLoggingOptions(const PutLoggingOpti
     endpointResolutionOutcome.GetResult().AddPathSegments("/logging");
   };
 
-  return PutLoggingOptionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutLoggingOptionsOutcome(result.GetResultWithOwnership())
+                            : PutLoggingOptionsOutcome(std::move(result.GetError()));
 }
 
 StartDetectorModelAnalysisOutcome IoTEventsClient::StartDetectorModelAnalysis(const StartDetectorModelAnalysisRequest& request) const {
@@ -467,7 +503,9 @@ StartDetectorModelAnalysisOutcome IoTEventsClient::StartDetectorModelAnalysis(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/analysis/detector-models/");
   };
 
-  return StartDetectorModelAnalysisOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDetectorModelAnalysisOutcome(result.GetResultWithOwnership())
+                            : StartDetectorModelAnalysisOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome IoTEventsClient::TagResource(const TagResourceRequest& request) const {
@@ -482,7 +520,8 @@ TagResourceOutcome IoTEventsClient::TagResource(const TagResourceRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/tags");
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome IoTEventsClient::UntagResource(const UntagResourceRequest& request) const {
@@ -502,7 +541,8 @@ UntagResourceOutcome IoTEventsClient::UntagResource(const UntagResourceRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/tags");
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAlarmModelOutcome IoTEventsClient::UpdateAlarmModel(const UpdateAlarmModelRequest& request) const {
@@ -518,7 +558,9 @@ UpdateAlarmModelOutcome IoTEventsClient::UpdateAlarmModel(const UpdateAlarmModel
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAlarmModelName());
   };
 
-  return UpdateAlarmModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAlarmModelOutcome(result.GetResultWithOwnership())
+                            : UpdateAlarmModelOutcome(std::move(result.GetError()));
 }
 
 UpdateDetectorModelOutcome IoTEventsClient::UpdateDetectorModel(const UpdateDetectorModelRequest& request) const {
@@ -534,7 +576,9 @@ UpdateDetectorModelOutcome IoTEventsClient::UpdateDetectorModel(const UpdateDete
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDetectorModelName());
   };
 
-  return UpdateDetectorModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDetectorModelOutcome(result.GetResultWithOwnership())
+                            : UpdateDetectorModelOutcome(std::move(result.GetError()));
 }
 
 UpdateInputOutcome IoTEventsClient::UpdateInput(const UpdateInputRequest& request) const {
@@ -550,5 +594,6 @@ UpdateInputOutcome IoTEventsClient::UpdateInput(const UpdateInputRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInputName());
   };
 
-  return UpdateInputOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateInputOutcome(result.GetResultWithOwnership()) : UpdateInputOutcome(std::move(result.GetError()));
 }

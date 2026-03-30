@@ -180,17 +180,22 @@ DynamoDBStreamsClient::InvokeOperationOutcome DynamoDBStreamsClient::InvokeServi
 }
 
 DescribeStreamOutcome DynamoDBStreamsClient::DescribeStream(const DescribeStreamRequest& request) const {
-  return DescribeStreamOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeStreamOutcome(result.GetResultWithOwnership()) : DescribeStreamOutcome(std::move(result.GetError()));
 }
 
 GetRecordsOutcome DynamoDBStreamsClient::GetRecords(const GetRecordsRequest& request) const {
-  return GetRecordsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRecordsOutcome(result.GetResultWithOwnership()) : GetRecordsOutcome(std::move(result.GetError()));
 }
 
 GetShardIteratorOutcome DynamoDBStreamsClient::GetShardIterator(const GetShardIteratorRequest& request) const {
-  return GetShardIteratorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetShardIteratorOutcome(result.GetResultWithOwnership())
+                            : GetShardIteratorOutcome(std::move(result.GetError()));
 }
 
 ListStreamsOutcome DynamoDBStreamsClient::ListStreams(const ListStreamsRequest& request) const {
-  return ListStreamsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListStreamsOutcome(result.GetResultWithOwnership()) : ListStreamsOutcome(std::move(result.GetError()));
 }

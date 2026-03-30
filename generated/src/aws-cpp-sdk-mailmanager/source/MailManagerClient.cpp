@@ -232,242 +232,344 @@ MailManagerClient::InvokeOperationOutcome MailManagerClient::InvokeServiceOperat
 }
 
 CreateAddonInstanceOutcome MailManagerClient::CreateAddonInstance(const CreateAddonInstanceRequest& request) const {
-  return CreateAddonInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAddonInstanceOutcome(result.GetResultWithOwnership())
+                            : CreateAddonInstanceOutcome(std::move(result.GetError()));
 }
 
 CreateAddonSubscriptionOutcome MailManagerClient::CreateAddonSubscription(const CreateAddonSubscriptionRequest& request) const {
-  return CreateAddonSubscriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAddonSubscriptionOutcome(result.GetResultWithOwnership())
+                            : CreateAddonSubscriptionOutcome(std::move(result.GetError()));
 }
 
 CreateAddressListOutcome MailManagerClient::CreateAddressList(const CreateAddressListRequest& request) const {
-  return CreateAddressListOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAddressListOutcome(result.GetResultWithOwnership())
+                            : CreateAddressListOutcome(std::move(result.GetError()));
 }
 
 CreateAddressListImportJobOutcome MailManagerClient::CreateAddressListImportJob(const CreateAddressListImportJobRequest& request) const {
-  return CreateAddressListImportJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAddressListImportJobOutcome(result.GetResultWithOwnership())
+                            : CreateAddressListImportJobOutcome(std::move(result.GetError()));
 }
 
 CreateArchiveOutcome MailManagerClient::CreateArchive(const CreateArchiveRequest& request) const {
-  return CreateArchiveOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateArchiveOutcome(result.GetResultWithOwnership()) : CreateArchiveOutcome(std::move(result.GetError()));
 }
 
 CreateIngressPointOutcome MailManagerClient::CreateIngressPoint(const CreateIngressPointRequest& request) const {
-  return CreateIngressPointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIngressPointOutcome(result.GetResultWithOwnership())
+                            : CreateIngressPointOutcome(std::move(result.GetError()));
 }
 
 CreateRelayOutcome MailManagerClient::CreateRelay(const CreateRelayRequest& request) const {
-  return CreateRelayOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRelayOutcome(result.GetResultWithOwnership()) : CreateRelayOutcome(std::move(result.GetError()));
 }
 
 CreateRuleSetOutcome MailManagerClient::CreateRuleSet(const CreateRuleSetRequest& request) const {
-  return CreateRuleSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRuleSetOutcome(result.GetResultWithOwnership()) : CreateRuleSetOutcome(std::move(result.GetError()));
 }
 
 CreateTrafficPolicyOutcome MailManagerClient::CreateTrafficPolicy(const CreateTrafficPolicyRequest& request) const {
-  return CreateTrafficPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTrafficPolicyOutcome(result.GetResultWithOwnership())
+                            : CreateTrafficPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteAddonInstanceOutcome MailManagerClient::DeleteAddonInstance(const DeleteAddonInstanceRequest& request) const {
-  return DeleteAddonInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAddonInstanceOutcome(result.GetResultWithOwnership())
+                            : DeleteAddonInstanceOutcome(std::move(result.GetError()));
 }
 
 DeleteAddonSubscriptionOutcome MailManagerClient::DeleteAddonSubscription(const DeleteAddonSubscriptionRequest& request) const {
-  return DeleteAddonSubscriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAddonSubscriptionOutcome(result.GetResultWithOwnership())
+                            : DeleteAddonSubscriptionOutcome(std::move(result.GetError()));
 }
 
 DeleteAddressListOutcome MailManagerClient::DeleteAddressList(const DeleteAddressListRequest& request) const {
-  return DeleteAddressListOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAddressListOutcome(result.GetResultWithOwnership())
+                            : DeleteAddressListOutcome(std::move(result.GetError()));
 }
 
 DeleteArchiveOutcome MailManagerClient::DeleteArchive(const DeleteArchiveRequest& request) const {
-  return DeleteArchiveOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteArchiveOutcome(result.GetResultWithOwnership()) : DeleteArchiveOutcome(std::move(result.GetError()));
 }
 
 DeleteIngressPointOutcome MailManagerClient::DeleteIngressPoint(const DeleteIngressPointRequest& request) const {
-  return DeleteIngressPointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteIngressPointOutcome(result.GetResultWithOwnership())
+                            : DeleteIngressPointOutcome(std::move(result.GetError()));
 }
 
 DeleteRelayOutcome MailManagerClient::DeleteRelay(const DeleteRelayRequest& request) const {
-  return DeleteRelayOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRelayOutcome(result.GetResultWithOwnership()) : DeleteRelayOutcome(std::move(result.GetError()));
 }
 
 DeleteRuleSetOutcome MailManagerClient::DeleteRuleSet(const DeleteRuleSetRequest& request) const {
-  return DeleteRuleSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRuleSetOutcome(result.GetResultWithOwnership()) : DeleteRuleSetOutcome(std::move(result.GetError()));
 }
 
 DeleteTrafficPolicyOutcome MailManagerClient::DeleteTrafficPolicy(const DeleteTrafficPolicyRequest& request) const {
-  return DeleteTrafficPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTrafficPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteTrafficPolicyOutcome(std::move(result.GetError()));
 }
 
 DeregisterMemberFromAddressListOutcome MailManagerClient::DeregisterMemberFromAddressList(
     const DeregisterMemberFromAddressListRequest& request) const {
-  return DeregisterMemberFromAddressListOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterMemberFromAddressListOutcome(result.GetResultWithOwnership())
+                            : DeregisterMemberFromAddressListOutcome(std::move(result.GetError()));
 }
 
 GetAddonInstanceOutcome MailManagerClient::GetAddonInstance(const GetAddonInstanceRequest& request) const {
-  return GetAddonInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAddonInstanceOutcome(result.GetResultWithOwnership())
+                            : GetAddonInstanceOutcome(std::move(result.GetError()));
 }
 
 GetAddonSubscriptionOutcome MailManagerClient::GetAddonSubscription(const GetAddonSubscriptionRequest& request) const {
-  return GetAddonSubscriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAddonSubscriptionOutcome(result.GetResultWithOwnership())
+                            : GetAddonSubscriptionOutcome(std::move(result.GetError()));
 }
 
 GetAddressListOutcome MailManagerClient::GetAddressList(const GetAddressListRequest& request) const {
-  return GetAddressListOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAddressListOutcome(result.GetResultWithOwnership()) : GetAddressListOutcome(std::move(result.GetError()));
 }
 
 GetAddressListImportJobOutcome MailManagerClient::GetAddressListImportJob(const GetAddressListImportJobRequest& request) const {
-  return GetAddressListImportJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAddressListImportJobOutcome(result.GetResultWithOwnership())
+                            : GetAddressListImportJobOutcome(std::move(result.GetError()));
 }
 
 GetArchiveOutcome MailManagerClient::GetArchive(const GetArchiveRequest& request) const {
-  return GetArchiveOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetArchiveOutcome(result.GetResultWithOwnership()) : GetArchiveOutcome(std::move(result.GetError()));
 }
 
 GetArchiveExportOutcome MailManagerClient::GetArchiveExport(const GetArchiveExportRequest& request) const {
-  return GetArchiveExportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetArchiveExportOutcome(result.GetResultWithOwnership())
+                            : GetArchiveExportOutcome(std::move(result.GetError()));
 }
 
 GetArchiveMessageOutcome MailManagerClient::GetArchiveMessage(const GetArchiveMessageRequest& request) const {
-  return GetArchiveMessageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetArchiveMessageOutcome(result.GetResultWithOwnership())
+                            : GetArchiveMessageOutcome(std::move(result.GetError()));
 }
 
 GetArchiveMessageContentOutcome MailManagerClient::GetArchiveMessageContent(const GetArchiveMessageContentRequest& request) const {
-  return GetArchiveMessageContentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetArchiveMessageContentOutcome(result.GetResultWithOwnership())
+                            : GetArchiveMessageContentOutcome(std::move(result.GetError()));
 }
 
 GetArchiveSearchOutcome MailManagerClient::GetArchiveSearch(const GetArchiveSearchRequest& request) const {
-  return GetArchiveSearchOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetArchiveSearchOutcome(result.GetResultWithOwnership())
+                            : GetArchiveSearchOutcome(std::move(result.GetError()));
 }
 
 GetArchiveSearchResultsOutcome MailManagerClient::GetArchiveSearchResults(const GetArchiveSearchResultsRequest& request) const {
-  return GetArchiveSearchResultsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetArchiveSearchResultsOutcome(result.GetResultWithOwnership())
+                            : GetArchiveSearchResultsOutcome(std::move(result.GetError()));
 }
 
 GetIngressPointOutcome MailManagerClient::GetIngressPoint(const GetIngressPointRequest& request) const {
-  return GetIngressPointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIngressPointOutcome(result.GetResultWithOwnership())
+                            : GetIngressPointOutcome(std::move(result.GetError()));
 }
 
 GetMemberOfAddressListOutcome MailManagerClient::GetMemberOfAddressList(const GetMemberOfAddressListRequest& request) const {
-  return GetMemberOfAddressListOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetMemberOfAddressListOutcome(result.GetResultWithOwnership())
+                            : GetMemberOfAddressListOutcome(std::move(result.GetError()));
 }
 
 GetRelayOutcome MailManagerClient::GetRelay(const GetRelayRequest& request) const {
-  return GetRelayOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRelayOutcome(result.GetResultWithOwnership()) : GetRelayOutcome(std::move(result.GetError()));
 }
 
 GetRuleSetOutcome MailManagerClient::GetRuleSet(const GetRuleSetRequest& request) const {
-  return GetRuleSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRuleSetOutcome(result.GetResultWithOwnership()) : GetRuleSetOutcome(std::move(result.GetError()));
 }
 
 GetTrafficPolicyOutcome MailManagerClient::GetTrafficPolicy(const GetTrafficPolicyRequest& request) const {
-  return GetTrafficPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTrafficPolicyOutcome(result.GetResultWithOwnership())
+                            : GetTrafficPolicyOutcome(std::move(result.GetError()));
 }
 
 ListAddonInstancesOutcome MailManagerClient::ListAddonInstances(const ListAddonInstancesRequest& request) const {
-  return ListAddonInstancesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAddonInstancesOutcome(result.GetResultWithOwnership())
+                            : ListAddonInstancesOutcome(std::move(result.GetError()));
 }
 
 ListAddonSubscriptionsOutcome MailManagerClient::ListAddonSubscriptions(const ListAddonSubscriptionsRequest& request) const {
-  return ListAddonSubscriptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAddonSubscriptionsOutcome(result.GetResultWithOwnership())
+                            : ListAddonSubscriptionsOutcome(std::move(result.GetError()));
 }
 
 ListAddressListImportJobsOutcome MailManagerClient::ListAddressListImportJobs(const ListAddressListImportJobsRequest& request) const {
-  return ListAddressListImportJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAddressListImportJobsOutcome(result.GetResultWithOwnership())
+                            : ListAddressListImportJobsOutcome(std::move(result.GetError()));
 }
 
 ListAddressListsOutcome MailManagerClient::ListAddressLists(const ListAddressListsRequest& request) const {
-  return ListAddressListsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAddressListsOutcome(result.GetResultWithOwnership())
+                            : ListAddressListsOutcome(std::move(result.GetError()));
 }
 
 ListArchiveExportsOutcome MailManagerClient::ListArchiveExports(const ListArchiveExportsRequest& request) const {
-  return ListArchiveExportsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListArchiveExportsOutcome(result.GetResultWithOwnership())
+                            : ListArchiveExportsOutcome(std::move(result.GetError()));
 }
 
 ListArchiveSearchesOutcome MailManagerClient::ListArchiveSearches(const ListArchiveSearchesRequest& request) const {
-  return ListArchiveSearchesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListArchiveSearchesOutcome(result.GetResultWithOwnership())
+                            : ListArchiveSearchesOutcome(std::move(result.GetError()));
 }
 
 ListArchivesOutcome MailManagerClient::ListArchives(const ListArchivesRequest& request) const {
-  return ListArchivesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListArchivesOutcome(result.GetResultWithOwnership()) : ListArchivesOutcome(std::move(result.GetError()));
 }
 
 ListIngressPointsOutcome MailManagerClient::ListIngressPoints(const ListIngressPointsRequest& request) const {
-  return ListIngressPointsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListIngressPointsOutcome(result.GetResultWithOwnership())
+                            : ListIngressPointsOutcome(std::move(result.GetError()));
 }
 
 ListMembersOfAddressListOutcome MailManagerClient::ListMembersOfAddressList(const ListMembersOfAddressListRequest& request) const {
-  return ListMembersOfAddressListOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMembersOfAddressListOutcome(result.GetResultWithOwnership())
+                            : ListMembersOfAddressListOutcome(std::move(result.GetError()));
 }
 
 ListRelaysOutcome MailManagerClient::ListRelays(const ListRelaysRequest& request) const {
-  return ListRelaysOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRelaysOutcome(result.GetResultWithOwnership()) : ListRelaysOutcome(std::move(result.GetError()));
 }
 
 ListRuleSetsOutcome MailManagerClient::ListRuleSets(const ListRuleSetsRequest& request) const {
-  return ListRuleSetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRuleSetsOutcome(result.GetResultWithOwnership()) : ListRuleSetsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome MailManagerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTrafficPoliciesOutcome MailManagerClient::ListTrafficPolicies(const ListTrafficPoliciesRequest& request) const {
-  return ListTrafficPoliciesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTrafficPoliciesOutcome(result.GetResultWithOwnership())
+                            : ListTrafficPoliciesOutcome(std::move(result.GetError()));
 }
 
 RegisterMemberToAddressListOutcome MailManagerClient::RegisterMemberToAddressList(const RegisterMemberToAddressListRequest& request) const {
-  return RegisterMemberToAddressListOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterMemberToAddressListOutcome(result.GetResultWithOwnership())
+                            : RegisterMemberToAddressListOutcome(std::move(result.GetError()));
 }
 
 StartAddressListImportJobOutcome MailManagerClient::StartAddressListImportJob(const StartAddressListImportJobRequest& request) const {
-  return StartAddressListImportJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartAddressListImportJobOutcome(result.GetResultWithOwnership())
+                            : StartAddressListImportJobOutcome(std::move(result.GetError()));
 }
 
 StartArchiveExportOutcome MailManagerClient::StartArchiveExport(const StartArchiveExportRequest& request) const {
-  return StartArchiveExportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartArchiveExportOutcome(result.GetResultWithOwnership())
+                            : StartArchiveExportOutcome(std::move(result.GetError()));
 }
 
 StartArchiveSearchOutcome MailManagerClient::StartArchiveSearch(const StartArchiveSearchRequest& request) const {
-  return StartArchiveSearchOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartArchiveSearchOutcome(result.GetResultWithOwnership())
+                            : StartArchiveSearchOutcome(std::move(result.GetError()));
 }
 
 StopAddressListImportJobOutcome MailManagerClient::StopAddressListImportJob(const StopAddressListImportJobRequest& request) const {
-  return StopAddressListImportJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopAddressListImportJobOutcome(result.GetResultWithOwnership())
+                            : StopAddressListImportJobOutcome(std::move(result.GetError()));
 }
 
 StopArchiveExportOutcome MailManagerClient::StopArchiveExport(const StopArchiveExportRequest& request) const {
-  return StopArchiveExportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopArchiveExportOutcome(result.GetResultWithOwnership())
+                            : StopArchiveExportOutcome(std::move(result.GetError()));
 }
 
 StopArchiveSearchOutcome MailManagerClient::StopArchiveSearch(const StopArchiveSearchRequest& request) const {
-  return StopArchiveSearchOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopArchiveSearchOutcome(result.GetResultWithOwnership())
+                            : StopArchiveSearchOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome MailManagerClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome MailManagerClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateArchiveOutcome MailManagerClient::UpdateArchive(const UpdateArchiveRequest& request) const {
-  return UpdateArchiveOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateArchiveOutcome(result.GetResultWithOwnership()) : UpdateArchiveOutcome(std::move(result.GetError()));
 }
 
 UpdateIngressPointOutcome MailManagerClient::UpdateIngressPoint(const UpdateIngressPointRequest& request) const {
-  return UpdateIngressPointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateIngressPointOutcome(result.GetResultWithOwnership())
+                            : UpdateIngressPointOutcome(std::move(result.GetError()));
 }
 
 UpdateRelayOutcome MailManagerClient::UpdateRelay(const UpdateRelayRequest& request) const {
-  return UpdateRelayOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRelayOutcome(result.GetResultWithOwnership()) : UpdateRelayOutcome(std::move(result.GetError()));
 }
 
 UpdateRuleSetOutcome MailManagerClient::UpdateRuleSet(const UpdateRuleSetRequest& request) const {
-  return UpdateRuleSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRuleSetOutcome(result.GetResultWithOwnership()) : UpdateRuleSetOutcome(std::move(result.GetError()));
 }
 
 UpdateTrafficPolicyOutcome MailManagerClient::UpdateTrafficPolicy(const UpdateTrafficPolicyRequest& request) const {
-  return UpdateTrafficPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTrafficPolicyOutcome(result.GetResultWithOwnership())
+                            : UpdateTrafficPolicyOutcome(std::move(result.GetError()));
 }

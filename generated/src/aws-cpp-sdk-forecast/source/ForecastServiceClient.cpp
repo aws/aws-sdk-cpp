@@ -239,263 +239,375 @@ ForecastServiceClient::InvokeOperationOutcome ForecastServiceClient::InvokeServi
 }
 
 CreateAutoPredictorOutcome ForecastServiceClient::CreateAutoPredictor(const CreateAutoPredictorRequest& request) const {
-  return CreateAutoPredictorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAutoPredictorOutcome(result.GetResultWithOwnership())
+                            : CreateAutoPredictorOutcome(std::move(result.GetError()));
 }
 
 CreateDatasetOutcome ForecastServiceClient::CreateDataset(const CreateDatasetRequest& request) const {
-  return CreateDatasetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDatasetOutcome(result.GetResultWithOwnership()) : CreateDatasetOutcome(std::move(result.GetError()));
 }
 
 CreateDatasetGroupOutcome ForecastServiceClient::CreateDatasetGroup(const CreateDatasetGroupRequest& request) const {
-  return CreateDatasetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDatasetGroupOutcome(result.GetResultWithOwnership())
+                            : CreateDatasetGroupOutcome(std::move(result.GetError()));
 }
 
 CreateDatasetImportJobOutcome ForecastServiceClient::CreateDatasetImportJob(const CreateDatasetImportJobRequest& request) const {
-  return CreateDatasetImportJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDatasetImportJobOutcome(result.GetResultWithOwnership())
+                            : CreateDatasetImportJobOutcome(std::move(result.GetError()));
 }
 
 CreateExplainabilityOutcome ForecastServiceClient::CreateExplainability(const CreateExplainabilityRequest& request) const {
-  return CreateExplainabilityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateExplainabilityOutcome(result.GetResultWithOwnership())
+                            : CreateExplainabilityOutcome(std::move(result.GetError()));
 }
 
 CreateExplainabilityExportOutcome ForecastServiceClient::CreateExplainabilityExport(
     const CreateExplainabilityExportRequest& request) const {
-  return CreateExplainabilityExportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateExplainabilityExportOutcome(result.GetResultWithOwnership())
+                            : CreateExplainabilityExportOutcome(std::move(result.GetError()));
 }
 
 CreateForecastOutcome ForecastServiceClient::CreateForecast(const CreateForecastRequest& request) const {
-  return CreateForecastOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateForecastOutcome(result.GetResultWithOwnership()) : CreateForecastOutcome(std::move(result.GetError()));
 }
 
 CreateForecastExportJobOutcome ForecastServiceClient::CreateForecastExportJob(const CreateForecastExportJobRequest& request) const {
-  return CreateForecastExportJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateForecastExportJobOutcome(result.GetResultWithOwnership())
+                            : CreateForecastExportJobOutcome(std::move(result.GetError()));
 }
 
 CreateMonitorOutcome ForecastServiceClient::CreateMonitor(const CreateMonitorRequest& request) const {
-  return CreateMonitorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMonitorOutcome(result.GetResultWithOwnership()) : CreateMonitorOutcome(std::move(result.GetError()));
 }
 
 CreatePredictorOutcome ForecastServiceClient::CreatePredictor(const CreatePredictorRequest& request) const {
-  return CreatePredictorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePredictorOutcome(result.GetResultWithOwnership())
+                            : CreatePredictorOutcome(std::move(result.GetError()));
 }
 
 CreatePredictorBacktestExportJobOutcome ForecastServiceClient::CreatePredictorBacktestExportJob(
     const CreatePredictorBacktestExportJobRequest& request) const {
-  return CreatePredictorBacktestExportJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePredictorBacktestExportJobOutcome(result.GetResultWithOwnership())
+                            : CreatePredictorBacktestExportJobOutcome(std::move(result.GetError()));
 }
 
 CreateWhatIfAnalysisOutcome ForecastServiceClient::CreateWhatIfAnalysis(const CreateWhatIfAnalysisRequest& request) const {
-  return CreateWhatIfAnalysisOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWhatIfAnalysisOutcome(result.GetResultWithOwnership())
+                            : CreateWhatIfAnalysisOutcome(std::move(result.GetError()));
 }
 
 CreateWhatIfForecastOutcome ForecastServiceClient::CreateWhatIfForecast(const CreateWhatIfForecastRequest& request) const {
-  return CreateWhatIfForecastOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWhatIfForecastOutcome(result.GetResultWithOwnership())
+                            : CreateWhatIfForecastOutcome(std::move(result.GetError()));
 }
 
 CreateWhatIfForecastExportOutcome ForecastServiceClient::CreateWhatIfForecastExport(
     const CreateWhatIfForecastExportRequest& request) const {
-  return CreateWhatIfForecastExportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWhatIfForecastExportOutcome(result.GetResultWithOwnership())
+                            : CreateWhatIfForecastExportOutcome(std::move(result.GetError()));
 }
 
 DeleteDatasetOutcome ForecastServiceClient::DeleteDataset(const DeleteDatasetRequest& request) const {
-  return DeleteDatasetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDatasetOutcome(result.GetResultWithOwnership()) : DeleteDatasetOutcome(std::move(result.GetError()));
 }
 
 DeleteDatasetGroupOutcome ForecastServiceClient::DeleteDatasetGroup(const DeleteDatasetGroupRequest& request) const {
-  return DeleteDatasetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDatasetGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteDatasetGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteDatasetImportJobOutcome ForecastServiceClient::DeleteDatasetImportJob(const DeleteDatasetImportJobRequest& request) const {
-  return DeleteDatasetImportJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDatasetImportJobOutcome(result.GetResultWithOwnership())
+                            : DeleteDatasetImportJobOutcome(std::move(result.GetError()));
 }
 
 DeleteExplainabilityOutcome ForecastServiceClient::DeleteExplainability(const DeleteExplainabilityRequest& request) const {
-  return DeleteExplainabilityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteExplainabilityOutcome(result.GetResultWithOwnership())
+                            : DeleteExplainabilityOutcome(std::move(result.GetError()));
 }
 
 DeleteExplainabilityExportOutcome ForecastServiceClient::DeleteExplainabilityExport(
     const DeleteExplainabilityExportRequest& request) const {
-  return DeleteExplainabilityExportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteExplainabilityExportOutcome(result.GetResultWithOwnership())
+                            : DeleteExplainabilityExportOutcome(std::move(result.GetError()));
 }
 
 DeleteForecastOutcome ForecastServiceClient::DeleteForecast(const DeleteForecastRequest& request) const {
-  return DeleteForecastOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteForecastOutcome(result.GetResultWithOwnership()) : DeleteForecastOutcome(std::move(result.GetError()));
 }
 
 DeleteForecastExportJobOutcome ForecastServiceClient::DeleteForecastExportJob(const DeleteForecastExportJobRequest& request) const {
-  return DeleteForecastExportJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteForecastExportJobOutcome(result.GetResultWithOwnership())
+                            : DeleteForecastExportJobOutcome(std::move(result.GetError()));
 }
 
 DeleteMonitorOutcome ForecastServiceClient::DeleteMonitor(const DeleteMonitorRequest& request) const {
-  return DeleteMonitorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteMonitorOutcome(result.GetResultWithOwnership()) : DeleteMonitorOutcome(std::move(result.GetError()));
 }
 
 DeletePredictorOutcome ForecastServiceClient::DeletePredictor(const DeletePredictorRequest& request) const {
-  return DeletePredictorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePredictorOutcome(result.GetResultWithOwnership())
+                            : DeletePredictorOutcome(std::move(result.GetError()));
 }
 
 DeletePredictorBacktestExportJobOutcome ForecastServiceClient::DeletePredictorBacktestExportJob(
     const DeletePredictorBacktestExportJobRequest& request) const {
-  return DeletePredictorBacktestExportJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePredictorBacktestExportJobOutcome(result.GetResultWithOwnership())
+                            : DeletePredictorBacktestExportJobOutcome(std::move(result.GetError()));
 }
 
 DeleteResourceTreeOutcome ForecastServiceClient::DeleteResourceTree(const DeleteResourceTreeRequest& request) const {
-  return DeleteResourceTreeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteResourceTreeOutcome(result.GetResultWithOwnership())
+                            : DeleteResourceTreeOutcome(std::move(result.GetError()));
 }
 
 DeleteWhatIfAnalysisOutcome ForecastServiceClient::DeleteWhatIfAnalysis(const DeleteWhatIfAnalysisRequest& request) const {
-  return DeleteWhatIfAnalysisOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteWhatIfAnalysisOutcome(result.GetResultWithOwnership())
+                            : DeleteWhatIfAnalysisOutcome(std::move(result.GetError()));
 }
 
 DeleteWhatIfForecastOutcome ForecastServiceClient::DeleteWhatIfForecast(const DeleteWhatIfForecastRequest& request) const {
-  return DeleteWhatIfForecastOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteWhatIfForecastOutcome(result.GetResultWithOwnership())
+                            : DeleteWhatIfForecastOutcome(std::move(result.GetError()));
 }
 
 DeleteWhatIfForecastExportOutcome ForecastServiceClient::DeleteWhatIfForecastExport(
     const DeleteWhatIfForecastExportRequest& request) const {
-  return DeleteWhatIfForecastExportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteWhatIfForecastExportOutcome(result.GetResultWithOwnership())
+                            : DeleteWhatIfForecastExportOutcome(std::move(result.GetError()));
 }
 
 DescribeAutoPredictorOutcome ForecastServiceClient::DescribeAutoPredictor(const DescribeAutoPredictorRequest& request) const {
-  return DescribeAutoPredictorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAutoPredictorOutcome(result.GetResultWithOwnership())
+                            : DescribeAutoPredictorOutcome(std::move(result.GetError()));
 }
 
 DescribeDatasetOutcome ForecastServiceClient::DescribeDataset(const DescribeDatasetRequest& request) const {
-  return DescribeDatasetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDatasetOutcome(result.GetResultWithOwnership())
+                            : DescribeDatasetOutcome(std::move(result.GetError()));
 }
 
 DescribeDatasetGroupOutcome ForecastServiceClient::DescribeDatasetGroup(const DescribeDatasetGroupRequest& request) const {
-  return DescribeDatasetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDatasetGroupOutcome(result.GetResultWithOwnership())
+                            : DescribeDatasetGroupOutcome(std::move(result.GetError()));
 }
 
 DescribeDatasetImportJobOutcome ForecastServiceClient::DescribeDatasetImportJob(const DescribeDatasetImportJobRequest& request) const {
-  return DescribeDatasetImportJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDatasetImportJobOutcome(result.GetResultWithOwnership())
+                            : DescribeDatasetImportJobOutcome(std::move(result.GetError()));
 }
 
 DescribeExplainabilityOutcome ForecastServiceClient::DescribeExplainability(const DescribeExplainabilityRequest& request) const {
-  return DescribeExplainabilityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeExplainabilityOutcome(result.GetResultWithOwnership())
+                            : DescribeExplainabilityOutcome(std::move(result.GetError()));
 }
 
 DescribeExplainabilityExportOutcome ForecastServiceClient::DescribeExplainabilityExport(
     const DescribeExplainabilityExportRequest& request) const {
-  return DescribeExplainabilityExportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeExplainabilityExportOutcome(result.GetResultWithOwnership())
+                            : DescribeExplainabilityExportOutcome(std::move(result.GetError()));
 }
 
 DescribeForecastOutcome ForecastServiceClient::DescribeForecast(const DescribeForecastRequest& request) const {
-  return DescribeForecastOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeForecastOutcome(result.GetResultWithOwnership())
+                            : DescribeForecastOutcome(std::move(result.GetError()));
 }
 
 DescribeForecastExportJobOutcome ForecastServiceClient::DescribeForecastExportJob(const DescribeForecastExportJobRequest& request) const {
-  return DescribeForecastExportJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeForecastExportJobOutcome(result.GetResultWithOwnership())
+                            : DescribeForecastExportJobOutcome(std::move(result.GetError()));
 }
 
 DescribeMonitorOutcome ForecastServiceClient::DescribeMonitor(const DescribeMonitorRequest& request) const {
-  return DescribeMonitorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeMonitorOutcome(result.GetResultWithOwnership())
+                            : DescribeMonitorOutcome(std::move(result.GetError()));
 }
 
 DescribePredictorOutcome ForecastServiceClient::DescribePredictor(const DescribePredictorRequest& request) const {
-  return DescribePredictorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePredictorOutcome(result.GetResultWithOwnership())
+                            : DescribePredictorOutcome(std::move(result.GetError()));
 }
 
 DescribePredictorBacktestExportJobOutcome ForecastServiceClient::DescribePredictorBacktestExportJob(
     const DescribePredictorBacktestExportJobRequest& request) const {
-  return DescribePredictorBacktestExportJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePredictorBacktestExportJobOutcome(result.GetResultWithOwnership())
+                            : DescribePredictorBacktestExportJobOutcome(std::move(result.GetError()));
 }
 
 DescribeWhatIfAnalysisOutcome ForecastServiceClient::DescribeWhatIfAnalysis(const DescribeWhatIfAnalysisRequest& request) const {
-  return DescribeWhatIfAnalysisOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeWhatIfAnalysisOutcome(result.GetResultWithOwnership())
+                            : DescribeWhatIfAnalysisOutcome(std::move(result.GetError()));
 }
 
 DescribeWhatIfForecastOutcome ForecastServiceClient::DescribeWhatIfForecast(const DescribeWhatIfForecastRequest& request) const {
-  return DescribeWhatIfForecastOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeWhatIfForecastOutcome(result.GetResultWithOwnership())
+                            : DescribeWhatIfForecastOutcome(std::move(result.GetError()));
 }
 
 DescribeWhatIfForecastExportOutcome ForecastServiceClient::DescribeWhatIfForecastExport(
     const DescribeWhatIfForecastExportRequest& request) const {
-  return DescribeWhatIfForecastExportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeWhatIfForecastExportOutcome(result.GetResultWithOwnership())
+                            : DescribeWhatIfForecastExportOutcome(std::move(result.GetError()));
 }
 
 GetAccuracyMetricsOutcome ForecastServiceClient::GetAccuracyMetrics(const GetAccuracyMetricsRequest& request) const {
-  return GetAccuracyMetricsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAccuracyMetricsOutcome(result.GetResultWithOwnership())
+                            : GetAccuracyMetricsOutcome(std::move(result.GetError()));
 }
 
 ListDatasetGroupsOutcome ForecastServiceClient::ListDatasetGroups(const ListDatasetGroupsRequest& request) const {
-  return ListDatasetGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDatasetGroupsOutcome(result.GetResultWithOwnership())
+                            : ListDatasetGroupsOutcome(std::move(result.GetError()));
 }
 
 ListDatasetImportJobsOutcome ForecastServiceClient::ListDatasetImportJobs(const ListDatasetImportJobsRequest& request) const {
-  return ListDatasetImportJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDatasetImportJobsOutcome(result.GetResultWithOwnership())
+                            : ListDatasetImportJobsOutcome(std::move(result.GetError()));
 }
 
 ListDatasetsOutcome ForecastServiceClient::ListDatasets(const ListDatasetsRequest& request) const {
-  return ListDatasetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDatasetsOutcome(result.GetResultWithOwnership()) : ListDatasetsOutcome(std::move(result.GetError()));
 }
 
 ListExplainabilitiesOutcome ForecastServiceClient::ListExplainabilities(const ListExplainabilitiesRequest& request) const {
-  return ListExplainabilitiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListExplainabilitiesOutcome(result.GetResultWithOwnership())
+                            : ListExplainabilitiesOutcome(std::move(result.GetError()));
 }
 
 ListExplainabilityExportsOutcome ForecastServiceClient::ListExplainabilityExports(const ListExplainabilityExportsRequest& request) const {
-  return ListExplainabilityExportsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListExplainabilityExportsOutcome(result.GetResultWithOwnership())
+                            : ListExplainabilityExportsOutcome(std::move(result.GetError()));
 }
 
 ListForecastExportJobsOutcome ForecastServiceClient::ListForecastExportJobs(const ListForecastExportJobsRequest& request) const {
-  return ListForecastExportJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListForecastExportJobsOutcome(result.GetResultWithOwnership())
+                            : ListForecastExportJobsOutcome(std::move(result.GetError()));
 }
 
 ListForecastsOutcome ForecastServiceClient::ListForecasts(const ListForecastsRequest& request) const {
-  return ListForecastsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListForecastsOutcome(result.GetResultWithOwnership()) : ListForecastsOutcome(std::move(result.GetError()));
 }
 
 ListMonitorEvaluationsOutcome ForecastServiceClient::ListMonitorEvaluations(const ListMonitorEvaluationsRequest& request) const {
-  return ListMonitorEvaluationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMonitorEvaluationsOutcome(result.GetResultWithOwnership())
+                            : ListMonitorEvaluationsOutcome(std::move(result.GetError()));
 }
 
 ListMonitorsOutcome ForecastServiceClient::ListMonitors(const ListMonitorsRequest& request) const {
-  return ListMonitorsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMonitorsOutcome(result.GetResultWithOwnership()) : ListMonitorsOutcome(std::move(result.GetError()));
 }
 
 ListPredictorBacktestExportJobsOutcome ForecastServiceClient::ListPredictorBacktestExportJobs(
     const ListPredictorBacktestExportJobsRequest& request) const {
-  return ListPredictorBacktestExportJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPredictorBacktestExportJobsOutcome(result.GetResultWithOwnership())
+                            : ListPredictorBacktestExportJobsOutcome(std::move(result.GetError()));
 }
 
 ListPredictorsOutcome ForecastServiceClient::ListPredictors(const ListPredictorsRequest& request) const {
-  return ListPredictorsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPredictorsOutcome(result.GetResultWithOwnership()) : ListPredictorsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome ForecastServiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListWhatIfAnalysesOutcome ForecastServiceClient::ListWhatIfAnalyses(const ListWhatIfAnalysesRequest& request) const {
-  return ListWhatIfAnalysesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListWhatIfAnalysesOutcome(result.GetResultWithOwnership())
+                            : ListWhatIfAnalysesOutcome(std::move(result.GetError()));
 }
 
 ListWhatIfForecastExportsOutcome ForecastServiceClient::ListWhatIfForecastExports(const ListWhatIfForecastExportsRequest& request) const {
-  return ListWhatIfForecastExportsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListWhatIfForecastExportsOutcome(result.GetResultWithOwnership())
+                            : ListWhatIfForecastExportsOutcome(std::move(result.GetError()));
 }
 
 ListWhatIfForecastsOutcome ForecastServiceClient::ListWhatIfForecasts(const ListWhatIfForecastsRequest& request) const {
-  return ListWhatIfForecastsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListWhatIfForecastsOutcome(result.GetResultWithOwnership())
+                            : ListWhatIfForecastsOutcome(std::move(result.GetError()));
 }
 
 ResumeResourceOutcome ForecastServiceClient::ResumeResource(const ResumeResourceRequest& request) const {
-  return ResumeResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResumeResourceOutcome(result.GetResultWithOwnership()) : ResumeResourceOutcome(std::move(result.GetError()));
 }
 
 StopResourceOutcome ForecastServiceClient::StopResource(const StopResourceRequest& request) const {
-  return StopResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopResourceOutcome(result.GetResultWithOwnership()) : StopResourceOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ForecastServiceClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome ForecastServiceClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateDatasetGroupOutcome ForecastServiceClient::UpdateDatasetGroup(const UpdateDatasetGroupRequest& request) const {
-  return UpdateDatasetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDatasetGroupOutcome(result.GetResultWithOwnership())
+                            : UpdateDatasetGroupOutcome(std::move(result.GetError()));
 }

@@ -205,14 +205,16 @@ ApplyGuardrailOutcome BedrockRuntimeClient::ApplyGuardrail(const ApplyGuardrailR
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ApplyGuardrailOutcome>(
       [&]() -> ApplyGuardrailOutcome {
-        return ApplyGuardrailOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                              resolvedEndpoint.AddPathSegments("/guardrail/");
-                                                              resolvedEndpoint.AddPathSegment(request.GetGuardrailIdentifier());
-                                                              resolvedEndpoint.AddPathSegments("/version/");
-                                                              resolvedEndpoint.AddPathSegment(request.GetGuardrailVersion());
-                                                              resolvedEndpoint.AddPathSegments("/apply");
-                                                            }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/guardrail/");
+                                               resolvedEndpoint.AddPathSegment(request.GetGuardrailIdentifier());
+                                               resolvedEndpoint.AddPathSegments("/version/");
+                                               resolvedEndpoint.AddPathSegment(request.GetGuardrailVersion());
+                                               resolvedEndpoint.AddPathSegments("/apply");
+                                             });
+        return result.IsSuccess() ? ApplyGuardrailOutcome(result.GetResultWithOwnership())
+                                  : ApplyGuardrailOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -238,12 +240,13 @@ ConverseOutcome BedrockRuntimeClient::Converse(const ConverseRequest& request) c
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ConverseOutcome>(
       [&]() -> ConverseOutcome {
-        return ConverseOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                        resolvedEndpoint.AddPathSegments("/model/");
-                                                        resolvedEndpoint.AddPathSegment(request.GetModelId());
-                                                        resolvedEndpoint.AddPathSegments("/converse");
-                                                      }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/model/");
+                                               resolvedEndpoint.AddPathSegment(request.GetModelId());
+                                               resolvedEndpoint.AddPathSegments("/converse");
+                                             });
+        return result.IsSuccess() ? ConverseOutcome(result.GetResultWithOwnership()) : ConverseOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -281,12 +284,14 @@ ConverseStreamOutcome BedrockRuntimeClient::ConverseStream(ConverseStreamRequest
             }
           });
         }
-        return ConverseStreamOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                              resolvedEndpoint.AddPathSegments("/model/");
-                                                              resolvedEndpoint.AddPathSegment(request.GetModelId());
-                                                              resolvedEndpoint.AddPathSegments("/converse-stream");
-                                                            }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/model/");
+                                               resolvedEndpoint.AddPathSegment(request.GetModelId());
+                                               resolvedEndpoint.AddPathSegments("/converse-stream");
+                                             });
+        return result.IsSuccess() ? ConverseStreamOutcome(result.GetResultWithOwnership())
+                                  : ConverseStreamOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -312,12 +317,13 @@ CountTokensOutcome BedrockRuntimeClient::CountTokens(const CountTokensRequest& r
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CountTokensOutcome>(
       [&]() -> CountTokensOutcome {
-        return CountTokensOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                         [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                           resolvedEndpoint.AddPathSegments("/model/");
-                                                           resolvedEndpoint.AddPathSegment(request.GetModelId());
-                                                           resolvedEndpoint.AddPathSegments("/count-tokens");
-                                                         }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/model/");
+                                               resolvedEndpoint.AddPathSegment(request.GetModelId());
+                                               resolvedEndpoint.AddPathSegments("/count-tokens");
+                                             });
+        return result.IsSuccess() ? CountTokensOutcome(result.GetResultWithOwnership()) : CountTokensOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -343,11 +349,13 @@ GetAsyncInvokeOutcome BedrockRuntimeClient::GetAsyncInvoke(const GetAsyncInvokeR
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetAsyncInvokeOutcome>(
       [&]() -> GetAsyncInvokeOutcome {
-        return GetAsyncInvokeOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                                            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                              resolvedEndpoint.AddPathSegments("/async-invoke/");
-                                                              resolvedEndpoint.AddPathSegment(request.GetInvocationArn());
-                                                            }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/async-invoke/");
+                                               resolvedEndpoint.AddPathSegment(request.GetInvocationArn());
+                                             });
+        return result.IsSuccess() ? GetAsyncInvokeOutcome(result.GetResultWithOwnership())
+                                  : GetAsyncInvokeOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -373,13 +381,13 @@ InvokeModelOutcome BedrockRuntimeClient::InvokeModel(const InvokeModelRequest& r
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<InvokeModelOutcome>(
       [&]() -> InvokeModelOutcome {
-        return InvokeModelOutcome(MakeRequestWithUnparsedResponse(&request, request.GetServiceRequestName(),
-                                                                  Aws::Http::HttpMethod::HTTP_POST,
-                                                                  [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                    resolvedEndpoint.AddPathSegments("/model/");
-                                                                    resolvedEndpoint.AddPathSegment(request.GetModelId());
-                                                                    resolvedEndpoint.AddPathSegments("/invoke");
-                                                                  }));
+        auto result = MakeRequestWithUnparsedResponse(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                                      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                                        resolvedEndpoint.AddPathSegments("/model/");
+                                                        resolvedEndpoint.AddPathSegment(request.GetModelId());
+                                                        resolvedEndpoint.AddPathSegments("/invoke");
+                                                      });
+        return result.IsSuccess() ? InvokeModelOutcome(result.GetResultWithOwnership()) : InvokeModelOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -463,13 +471,14 @@ InvokeModelWithResponseStreamOutcome BedrockRuntimeClient::InvokeModelWithRespon
             }
           });
         }
-        return InvokeModelWithResponseStreamOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/model/");
-                                     resolvedEndpoint.AddPathSegment(request.GetModelId());
-                                     resolvedEndpoint.AddPathSegments("/invoke-with-response-stream");
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/model/");
+                                               resolvedEndpoint.AddPathSegment(request.GetModelId());
+                                               resolvedEndpoint.AddPathSegments("/invoke-with-response-stream");
+                                             });
+        return result.IsSuccess() ? InvokeModelWithResponseStreamOutcome(result.GetResultWithOwnership())
+                                  : InvokeModelWithResponseStreamOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -490,9 +499,11 @@ ListAsyncInvokesOutcome BedrockRuntimeClient::ListAsyncInvokes(const ListAsyncIn
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListAsyncInvokesOutcome>(
       [&]() -> ListAsyncInvokesOutcome {
-        return ListAsyncInvokesOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/async-invoke"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/async-invoke"); });
+        return result.IsSuccess() ? ListAsyncInvokesOutcome(result.GetResultWithOwnership())
+                                  : ListAsyncInvokesOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -513,9 +524,11 @@ StartAsyncInvokeOutcome BedrockRuntimeClient::StartAsyncInvoke(const StartAsyncI
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<StartAsyncInvokeOutcome>(
       [&]() -> StartAsyncInvokeOutcome {
-        return StartAsyncInvokeOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/async-invoke"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/async-invoke"); });
+        return result.IsSuccess() ? StartAsyncInvokeOutcome(result.GetResultWithOwnership())
+                                  : StartAsyncInvokeOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

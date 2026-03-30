@@ -218,201 +218,286 @@ FSxClient::InvokeOperationOutcome FSxClient::InvokeServiceOperation(const Amazon
 }
 
 AssociateFileSystemAliasesOutcome FSxClient::AssociateFileSystemAliases(const AssociateFileSystemAliasesRequest& request) const {
-  return AssociateFileSystemAliasesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateFileSystemAliasesOutcome(result.GetResultWithOwnership())
+                            : AssociateFileSystemAliasesOutcome(std::move(result.GetError()));
 }
 
 CancelDataRepositoryTaskOutcome FSxClient::CancelDataRepositoryTask(const CancelDataRepositoryTaskRequest& request) const {
-  return CancelDataRepositoryTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelDataRepositoryTaskOutcome(result.GetResultWithOwnership())
+                            : CancelDataRepositoryTaskOutcome(std::move(result.GetError()));
 }
 
 CopyBackupOutcome FSxClient::CopyBackup(const CopyBackupRequest& request) const {
-  return CopyBackupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CopyBackupOutcome(result.GetResultWithOwnership()) : CopyBackupOutcome(std::move(result.GetError()));
 }
 
 CopySnapshotAndUpdateVolumeOutcome FSxClient::CopySnapshotAndUpdateVolume(const CopySnapshotAndUpdateVolumeRequest& request) const {
-  return CopySnapshotAndUpdateVolumeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CopySnapshotAndUpdateVolumeOutcome(result.GetResultWithOwnership())
+                            : CopySnapshotAndUpdateVolumeOutcome(std::move(result.GetError()));
 }
 
 CreateAndAttachS3AccessPointOutcome FSxClient::CreateAndAttachS3AccessPoint(const CreateAndAttachS3AccessPointRequest& request) const {
-  return CreateAndAttachS3AccessPointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAndAttachS3AccessPointOutcome(result.GetResultWithOwnership())
+                            : CreateAndAttachS3AccessPointOutcome(std::move(result.GetError()));
 }
 
 CreateBackupOutcome FSxClient::CreateBackup(const CreateBackupRequest& request) const {
-  return CreateBackupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBackupOutcome(result.GetResultWithOwnership()) : CreateBackupOutcome(std::move(result.GetError()));
 }
 
 CreateDataRepositoryAssociationOutcome FSxClient::CreateDataRepositoryAssociation(
     const CreateDataRepositoryAssociationRequest& request) const {
-  return CreateDataRepositoryAssociationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDataRepositoryAssociationOutcome(result.GetResultWithOwnership())
+                            : CreateDataRepositoryAssociationOutcome(std::move(result.GetError()));
 }
 
 CreateDataRepositoryTaskOutcome FSxClient::CreateDataRepositoryTask(const CreateDataRepositoryTaskRequest& request) const {
-  return CreateDataRepositoryTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDataRepositoryTaskOutcome(result.GetResultWithOwnership())
+                            : CreateDataRepositoryTaskOutcome(std::move(result.GetError()));
 }
 
 CreateFileCacheOutcome FSxClient::CreateFileCache(const CreateFileCacheRequest& request) const {
-  return CreateFileCacheOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFileCacheOutcome(result.GetResultWithOwnership())
+                            : CreateFileCacheOutcome(std::move(result.GetError()));
 }
 
 CreateFileSystemOutcome FSxClient::CreateFileSystem(const CreateFileSystemRequest& request) const {
-  return CreateFileSystemOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFileSystemOutcome(result.GetResultWithOwnership())
+                            : CreateFileSystemOutcome(std::move(result.GetError()));
 }
 
 CreateFileSystemFromBackupOutcome FSxClient::CreateFileSystemFromBackup(const CreateFileSystemFromBackupRequest& request) const {
-  return CreateFileSystemFromBackupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFileSystemFromBackupOutcome(result.GetResultWithOwnership())
+                            : CreateFileSystemFromBackupOutcome(std::move(result.GetError()));
 }
 
 CreateSnapshotOutcome FSxClient::CreateSnapshot(const CreateSnapshotRequest& request) const {
-  return CreateSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSnapshotOutcome(result.GetResultWithOwnership()) : CreateSnapshotOutcome(std::move(result.GetError()));
 }
 
 CreateStorageVirtualMachineOutcome FSxClient::CreateStorageVirtualMachine(const CreateStorageVirtualMachineRequest& request) const {
-  return CreateStorageVirtualMachineOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateStorageVirtualMachineOutcome(result.GetResultWithOwnership())
+                            : CreateStorageVirtualMachineOutcome(std::move(result.GetError()));
 }
 
 CreateVolumeOutcome FSxClient::CreateVolume(const CreateVolumeRequest& request) const {
-  return CreateVolumeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateVolumeOutcome(result.GetResultWithOwnership()) : CreateVolumeOutcome(std::move(result.GetError()));
 }
 
 CreateVolumeFromBackupOutcome FSxClient::CreateVolumeFromBackup(const CreateVolumeFromBackupRequest& request) const {
-  return CreateVolumeFromBackupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateVolumeFromBackupOutcome(result.GetResultWithOwnership())
+                            : CreateVolumeFromBackupOutcome(std::move(result.GetError()));
 }
 
 DeleteBackupOutcome FSxClient::DeleteBackup(const DeleteBackupRequest& request) const {
-  return DeleteBackupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteBackupOutcome(result.GetResultWithOwnership()) : DeleteBackupOutcome(std::move(result.GetError()));
 }
 
 DeleteDataRepositoryAssociationOutcome FSxClient::DeleteDataRepositoryAssociation(
     const DeleteDataRepositoryAssociationRequest& request) const {
-  return DeleteDataRepositoryAssociationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDataRepositoryAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteDataRepositoryAssociationOutcome(std::move(result.GetError()));
 }
 
 DeleteFileCacheOutcome FSxClient::DeleteFileCache(const DeleteFileCacheRequest& request) const {
-  return DeleteFileCacheOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteFileCacheOutcome(result.GetResultWithOwnership())
+                            : DeleteFileCacheOutcome(std::move(result.GetError()));
 }
 
 DeleteFileSystemOutcome FSxClient::DeleteFileSystem(const DeleteFileSystemRequest& request) const {
-  return DeleteFileSystemOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteFileSystemOutcome(result.GetResultWithOwnership())
+                            : DeleteFileSystemOutcome(std::move(result.GetError()));
 }
 
 DeleteSnapshotOutcome FSxClient::DeleteSnapshot(const DeleteSnapshotRequest& request) const {
-  return DeleteSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSnapshotOutcome(result.GetResultWithOwnership()) : DeleteSnapshotOutcome(std::move(result.GetError()));
 }
 
 DeleteStorageVirtualMachineOutcome FSxClient::DeleteStorageVirtualMachine(const DeleteStorageVirtualMachineRequest& request) const {
-  return DeleteStorageVirtualMachineOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteStorageVirtualMachineOutcome(result.GetResultWithOwnership())
+                            : DeleteStorageVirtualMachineOutcome(std::move(result.GetError()));
 }
 
 DeleteVolumeOutcome FSxClient::DeleteVolume(const DeleteVolumeRequest& request) const {
-  return DeleteVolumeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVolumeOutcome(result.GetResultWithOwnership()) : DeleteVolumeOutcome(std::move(result.GetError()));
 }
 
 DescribeBackupsOutcome FSxClient::DescribeBackups(const DescribeBackupsRequest& request) const {
-  return DescribeBackupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeBackupsOutcome(result.GetResultWithOwnership())
+                            : DescribeBackupsOutcome(std::move(result.GetError()));
 }
 
 DescribeDataRepositoryAssociationsOutcome FSxClient::DescribeDataRepositoryAssociations(
     const DescribeDataRepositoryAssociationsRequest& request) const {
-  return DescribeDataRepositoryAssociationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDataRepositoryAssociationsOutcome(result.GetResultWithOwnership())
+                            : DescribeDataRepositoryAssociationsOutcome(std::move(result.GetError()));
 }
 
 DescribeDataRepositoryTasksOutcome FSxClient::DescribeDataRepositoryTasks(const DescribeDataRepositoryTasksRequest& request) const {
-  return DescribeDataRepositoryTasksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDataRepositoryTasksOutcome(result.GetResultWithOwnership())
+                            : DescribeDataRepositoryTasksOutcome(std::move(result.GetError()));
 }
 
 DescribeFileCachesOutcome FSxClient::DescribeFileCaches(const DescribeFileCachesRequest& request) const {
-  return DescribeFileCachesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeFileCachesOutcome(result.GetResultWithOwnership())
+                            : DescribeFileCachesOutcome(std::move(result.GetError()));
 }
 
 DescribeFileSystemAliasesOutcome FSxClient::DescribeFileSystemAliases(const DescribeFileSystemAliasesRequest& request) const {
-  return DescribeFileSystemAliasesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeFileSystemAliasesOutcome(result.GetResultWithOwnership())
+                            : DescribeFileSystemAliasesOutcome(std::move(result.GetError()));
 }
 
 DescribeFileSystemsOutcome FSxClient::DescribeFileSystems(const DescribeFileSystemsRequest& request) const {
-  return DescribeFileSystemsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeFileSystemsOutcome(result.GetResultWithOwnership())
+                            : DescribeFileSystemsOutcome(std::move(result.GetError()));
 }
 
 DescribeS3AccessPointAttachmentsOutcome FSxClient::DescribeS3AccessPointAttachments(
     const DescribeS3AccessPointAttachmentsRequest& request) const {
-  return DescribeS3AccessPointAttachmentsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeS3AccessPointAttachmentsOutcome(result.GetResultWithOwnership())
+                            : DescribeS3AccessPointAttachmentsOutcome(std::move(result.GetError()));
 }
 
 DescribeSharedVpcConfigurationOutcome FSxClient::DescribeSharedVpcConfiguration(
     const DescribeSharedVpcConfigurationRequest& request) const {
-  return DescribeSharedVpcConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSharedVpcConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeSharedVpcConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeSnapshotsOutcome FSxClient::DescribeSnapshots(const DescribeSnapshotsRequest& request) const {
-  return DescribeSnapshotsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSnapshotsOutcome(result.GetResultWithOwnership())
+                            : DescribeSnapshotsOutcome(std::move(result.GetError()));
 }
 
 DescribeStorageVirtualMachinesOutcome FSxClient::DescribeStorageVirtualMachines(
     const DescribeStorageVirtualMachinesRequest& request) const {
-  return DescribeStorageVirtualMachinesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeStorageVirtualMachinesOutcome(result.GetResultWithOwnership())
+                            : DescribeStorageVirtualMachinesOutcome(std::move(result.GetError()));
 }
 
 DescribeVolumesOutcome FSxClient::DescribeVolumes(const DescribeVolumesRequest& request) const {
-  return DescribeVolumesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeVolumesOutcome(result.GetResultWithOwnership())
+                            : DescribeVolumesOutcome(std::move(result.GetError()));
 }
 
 DetachAndDeleteS3AccessPointOutcome FSxClient::DetachAndDeleteS3AccessPoint(const DetachAndDeleteS3AccessPointRequest& request) const {
-  return DetachAndDeleteS3AccessPointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DetachAndDeleteS3AccessPointOutcome(result.GetResultWithOwnership())
+                            : DetachAndDeleteS3AccessPointOutcome(std::move(result.GetError()));
 }
 
 DisassociateFileSystemAliasesOutcome FSxClient::DisassociateFileSystemAliases(const DisassociateFileSystemAliasesRequest& request) const {
-  return DisassociateFileSystemAliasesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateFileSystemAliasesOutcome(result.GetResultWithOwnership())
+                            : DisassociateFileSystemAliasesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome FSxClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ReleaseFileSystemNfsV3LocksOutcome FSxClient::ReleaseFileSystemNfsV3Locks(const ReleaseFileSystemNfsV3LocksRequest& request) const {
-  return ReleaseFileSystemNfsV3LocksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ReleaseFileSystemNfsV3LocksOutcome(result.GetResultWithOwnership())
+                            : ReleaseFileSystemNfsV3LocksOutcome(std::move(result.GetError()));
 }
 
 RestoreVolumeFromSnapshotOutcome FSxClient::RestoreVolumeFromSnapshot(const RestoreVolumeFromSnapshotRequest& request) const {
-  return RestoreVolumeFromSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RestoreVolumeFromSnapshotOutcome(result.GetResultWithOwnership())
+                            : RestoreVolumeFromSnapshotOutcome(std::move(result.GetError()));
 }
 
 StartMisconfiguredStateRecoveryOutcome FSxClient::StartMisconfiguredStateRecovery(
     const StartMisconfiguredStateRecoveryRequest& request) const {
-  return StartMisconfiguredStateRecoveryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartMisconfiguredStateRecoveryOutcome(result.GetResultWithOwnership())
+                            : StartMisconfiguredStateRecoveryOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome FSxClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome FSxClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateDataRepositoryAssociationOutcome FSxClient::UpdateDataRepositoryAssociation(
     const UpdateDataRepositoryAssociationRequest& request) const {
-  return UpdateDataRepositoryAssociationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDataRepositoryAssociationOutcome(result.GetResultWithOwnership())
+                            : UpdateDataRepositoryAssociationOutcome(std::move(result.GetError()));
 }
 
 UpdateFileCacheOutcome FSxClient::UpdateFileCache(const UpdateFileCacheRequest& request) const {
-  return UpdateFileCacheOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateFileCacheOutcome(result.GetResultWithOwnership())
+                            : UpdateFileCacheOutcome(std::move(result.GetError()));
 }
 
 UpdateFileSystemOutcome FSxClient::UpdateFileSystem(const UpdateFileSystemRequest& request) const {
-  return UpdateFileSystemOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateFileSystemOutcome(result.GetResultWithOwnership())
+                            : UpdateFileSystemOutcome(std::move(result.GetError()));
 }
 
 UpdateSharedVpcConfigurationOutcome FSxClient::UpdateSharedVpcConfiguration(const UpdateSharedVpcConfigurationRequest& request) const {
-  return UpdateSharedVpcConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSharedVpcConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateSharedVpcConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateSnapshotOutcome FSxClient::UpdateSnapshot(const UpdateSnapshotRequest& request) const {
-  return UpdateSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSnapshotOutcome(result.GetResultWithOwnership()) : UpdateSnapshotOutcome(std::move(result.GetError()));
 }
 
 UpdateStorageVirtualMachineOutcome FSxClient::UpdateStorageVirtualMachine(const UpdateStorageVirtualMachineRequest& request) const {
-  return UpdateStorageVirtualMachineOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateStorageVirtualMachineOutcome(result.GetResultWithOwnership())
+                            : UpdateStorageVirtualMachineOutcome(std::move(result.GetError()));
 }
 
 UpdateVolumeOutcome FSxClient::UpdateVolume(const UpdateVolumeRequest& request) const {
-  return UpdateVolumeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateVolumeOutcome(result.GetResultWithOwnership()) : UpdateVolumeOutcome(std::move(result.GetError()));
 }

@@ -212,173 +212,244 @@ FMSClient::InvokeOperationOutcome FMSClient::InvokeServiceOperation(const Amazon
 }
 
 AssociateAdminAccountOutcome FMSClient::AssociateAdminAccount(const AssociateAdminAccountRequest& request) const {
-  return AssociateAdminAccountOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateAdminAccountOutcome(result.GetResultWithOwnership())
+                            : AssociateAdminAccountOutcome(std::move(result.GetError()));
 }
 
 AssociateThirdPartyFirewallOutcome FMSClient::AssociateThirdPartyFirewall(const AssociateThirdPartyFirewallRequest& request) const {
-  return AssociateThirdPartyFirewallOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateThirdPartyFirewallOutcome(result.GetResultWithOwnership())
+                            : AssociateThirdPartyFirewallOutcome(std::move(result.GetError()));
 }
 
 BatchAssociateResourceOutcome FMSClient::BatchAssociateResource(const BatchAssociateResourceRequest& request) const {
-  return BatchAssociateResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchAssociateResourceOutcome(result.GetResultWithOwnership())
+                            : BatchAssociateResourceOutcome(std::move(result.GetError()));
 }
 
 BatchDisassociateResourceOutcome FMSClient::BatchDisassociateResource(const BatchDisassociateResourceRequest& request) const {
-  return BatchDisassociateResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDisassociateResourceOutcome(result.GetResultWithOwnership())
+                            : BatchDisassociateResourceOutcome(std::move(result.GetError()));
 }
 
 DeleteAppsListOutcome FMSClient::DeleteAppsList(const DeleteAppsListRequest& request) const {
-  return DeleteAppsListOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAppsListOutcome(result.GetResultWithOwnership()) : DeleteAppsListOutcome(std::move(result.GetError()));
 }
 
 DeleteNotificationChannelOutcome FMSClient::DeleteNotificationChannel(const DeleteNotificationChannelRequest& request) const {
-  return DeleteNotificationChannelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteNotificationChannelOutcome(result.GetResultWithOwnership())
+                            : DeleteNotificationChannelOutcome(std::move(result.GetError()));
 }
 
 DeletePolicyOutcome FMSClient::DeletePolicy(const DeletePolicyRequest& request) const {
-  return DeletePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePolicyOutcome(result.GetResultWithOwnership()) : DeletePolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteProtocolsListOutcome FMSClient::DeleteProtocolsList(const DeleteProtocolsListRequest& request) const {
-  return DeleteProtocolsListOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteProtocolsListOutcome(result.GetResultWithOwnership())
+                            : DeleteProtocolsListOutcome(std::move(result.GetError()));
 }
 
 DeleteResourceSetOutcome FMSClient::DeleteResourceSet(const DeleteResourceSetRequest& request) const {
-  return DeleteResourceSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteResourceSetOutcome(result.GetResultWithOwnership())
+                            : DeleteResourceSetOutcome(std::move(result.GetError()));
 }
 
 DisassociateAdminAccountOutcome FMSClient::DisassociateAdminAccount(const DisassociateAdminAccountRequest& request) const {
-  return DisassociateAdminAccountOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateAdminAccountOutcome(result.GetResultWithOwnership())
+                            : DisassociateAdminAccountOutcome(std::move(result.GetError()));
 }
 
 DisassociateThirdPartyFirewallOutcome FMSClient::DisassociateThirdPartyFirewall(
     const DisassociateThirdPartyFirewallRequest& request) const {
-  return DisassociateThirdPartyFirewallOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateThirdPartyFirewallOutcome(result.GetResultWithOwnership())
+                            : DisassociateThirdPartyFirewallOutcome(std::move(result.GetError()));
 }
 
 GetAdminAccountOutcome FMSClient::GetAdminAccount(const GetAdminAccountRequest& request) const {
-  return GetAdminAccountOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAdminAccountOutcome(result.GetResultWithOwnership())
+                            : GetAdminAccountOutcome(std::move(result.GetError()));
 }
 
 GetAdminScopeOutcome FMSClient::GetAdminScope(const GetAdminScopeRequest& request) const {
-  return GetAdminScopeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAdminScopeOutcome(result.GetResultWithOwnership()) : GetAdminScopeOutcome(std::move(result.GetError()));
 }
 
 GetAppsListOutcome FMSClient::GetAppsList(const GetAppsListRequest& request) const {
-  return GetAppsListOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAppsListOutcome(result.GetResultWithOwnership()) : GetAppsListOutcome(std::move(result.GetError()));
 }
 
 GetComplianceDetailOutcome FMSClient::GetComplianceDetail(const GetComplianceDetailRequest& request) const {
-  return GetComplianceDetailOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetComplianceDetailOutcome(result.GetResultWithOwnership())
+                            : GetComplianceDetailOutcome(std::move(result.GetError()));
 }
 
 GetNotificationChannelOutcome FMSClient::GetNotificationChannel(const GetNotificationChannelRequest& request) const {
-  return GetNotificationChannelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetNotificationChannelOutcome(result.GetResultWithOwnership())
+                            : GetNotificationChannelOutcome(std::move(result.GetError()));
 }
 
 GetPolicyOutcome FMSClient::GetPolicy(const GetPolicyRequest& request) const {
-  return GetPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPolicyOutcome(result.GetResultWithOwnership()) : GetPolicyOutcome(std::move(result.GetError()));
 }
 
 GetProtectionStatusOutcome FMSClient::GetProtectionStatus(const GetProtectionStatusRequest& request) const {
-  return GetProtectionStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetProtectionStatusOutcome(result.GetResultWithOwnership())
+                            : GetProtectionStatusOutcome(std::move(result.GetError()));
 }
 
 GetProtocolsListOutcome FMSClient::GetProtocolsList(const GetProtocolsListRequest& request) const {
-  return GetProtocolsListOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetProtocolsListOutcome(result.GetResultWithOwnership())
+                            : GetProtocolsListOutcome(std::move(result.GetError()));
 }
 
 GetResourceSetOutcome FMSClient::GetResourceSet(const GetResourceSetRequest& request) const {
-  return GetResourceSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourceSetOutcome(result.GetResultWithOwnership()) : GetResourceSetOutcome(std::move(result.GetError()));
 }
 
 GetThirdPartyFirewallAssociationStatusOutcome FMSClient::GetThirdPartyFirewallAssociationStatus(
     const GetThirdPartyFirewallAssociationStatusRequest& request) const {
-  return GetThirdPartyFirewallAssociationStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetThirdPartyFirewallAssociationStatusOutcome(result.GetResultWithOwnership())
+                            : GetThirdPartyFirewallAssociationStatusOutcome(std::move(result.GetError()));
 }
 
 GetViolationDetailsOutcome FMSClient::GetViolationDetails(const GetViolationDetailsRequest& request) const {
-  return GetViolationDetailsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetViolationDetailsOutcome(result.GetResultWithOwnership())
+                            : GetViolationDetailsOutcome(std::move(result.GetError()));
 }
 
 ListAdminAccountsForOrganizationOutcome FMSClient::ListAdminAccountsForOrganization(
     const ListAdminAccountsForOrganizationRequest& request) const {
-  return ListAdminAccountsForOrganizationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAdminAccountsForOrganizationOutcome(result.GetResultWithOwnership())
+                            : ListAdminAccountsForOrganizationOutcome(std::move(result.GetError()));
 }
 
 ListAdminsManagingAccountOutcome FMSClient::ListAdminsManagingAccount(const ListAdminsManagingAccountRequest& request) const {
-  return ListAdminsManagingAccountOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAdminsManagingAccountOutcome(result.GetResultWithOwnership())
+                            : ListAdminsManagingAccountOutcome(std::move(result.GetError()));
 }
 
 ListAppsListsOutcome FMSClient::ListAppsLists(const ListAppsListsRequest& request) const {
-  return ListAppsListsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAppsListsOutcome(result.GetResultWithOwnership()) : ListAppsListsOutcome(std::move(result.GetError()));
 }
 
 ListComplianceStatusOutcome FMSClient::ListComplianceStatus(const ListComplianceStatusRequest& request) const {
-  return ListComplianceStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListComplianceStatusOutcome(result.GetResultWithOwnership())
+                            : ListComplianceStatusOutcome(std::move(result.GetError()));
 }
 
 ListDiscoveredResourcesOutcome FMSClient::ListDiscoveredResources(const ListDiscoveredResourcesRequest& request) const {
-  return ListDiscoveredResourcesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDiscoveredResourcesOutcome(result.GetResultWithOwnership())
+                            : ListDiscoveredResourcesOutcome(std::move(result.GetError()));
 }
 
 ListMemberAccountsOutcome FMSClient::ListMemberAccounts(const ListMemberAccountsRequest& request) const {
-  return ListMemberAccountsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMemberAccountsOutcome(result.GetResultWithOwnership())
+                            : ListMemberAccountsOutcome(std::move(result.GetError()));
 }
 
 ListPoliciesOutcome FMSClient::ListPolicies(const ListPoliciesRequest& request) const {
-  return ListPoliciesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPoliciesOutcome(result.GetResultWithOwnership()) : ListPoliciesOutcome(std::move(result.GetError()));
 }
 
 ListProtocolsListsOutcome FMSClient::ListProtocolsLists(const ListProtocolsListsRequest& request) const {
-  return ListProtocolsListsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListProtocolsListsOutcome(result.GetResultWithOwnership())
+                            : ListProtocolsListsOutcome(std::move(result.GetError()));
 }
 
 ListResourceSetResourcesOutcome FMSClient::ListResourceSetResources(const ListResourceSetResourcesRequest& request) const {
-  return ListResourceSetResourcesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResourceSetResourcesOutcome(result.GetResultWithOwnership())
+                            : ListResourceSetResourcesOutcome(std::move(result.GetError()));
 }
 
 ListResourceSetsOutcome FMSClient::ListResourceSets(const ListResourceSetsRequest& request) const {
-  return ListResourceSetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResourceSetsOutcome(result.GetResultWithOwnership())
+                            : ListResourceSetsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome FMSClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListThirdPartyFirewallFirewallPoliciesOutcome FMSClient::ListThirdPartyFirewallFirewallPolicies(
     const ListThirdPartyFirewallFirewallPoliciesRequest& request) const {
-  return ListThirdPartyFirewallFirewallPoliciesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListThirdPartyFirewallFirewallPoliciesOutcome(result.GetResultWithOwnership())
+                            : ListThirdPartyFirewallFirewallPoliciesOutcome(std::move(result.GetError()));
 }
 
 PutAdminAccountOutcome FMSClient::PutAdminAccount(const PutAdminAccountRequest& request) const {
-  return PutAdminAccountOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutAdminAccountOutcome(result.GetResultWithOwnership())
+                            : PutAdminAccountOutcome(std::move(result.GetError()));
 }
 
 PutAppsListOutcome FMSClient::PutAppsList(const PutAppsListRequest& request) const {
-  return PutAppsListOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutAppsListOutcome(result.GetResultWithOwnership()) : PutAppsListOutcome(std::move(result.GetError()));
 }
 
 PutNotificationChannelOutcome FMSClient::PutNotificationChannel(const PutNotificationChannelRequest& request) const {
-  return PutNotificationChannelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutNotificationChannelOutcome(result.GetResultWithOwnership())
+                            : PutNotificationChannelOutcome(std::move(result.GetError()));
 }
 
 PutPolicyOutcome FMSClient::PutPolicy(const PutPolicyRequest& request) const {
-  return PutPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutPolicyOutcome(result.GetResultWithOwnership()) : PutPolicyOutcome(std::move(result.GetError()));
 }
 
 PutProtocolsListOutcome FMSClient::PutProtocolsList(const PutProtocolsListRequest& request) const {
-  return PutProtocolsListOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutProtocolsListOutcome(result.GetResultWithOwnership())
+                            : PutProtocolsListOutcome(std::move(result.GetError()));
 }
 
 PutResourceSetOutcome FMSClient::PutResourceSet(const PutResourceSetRequest& request) const {
-  return PutResourceSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutResourceSetOutcome(result.GetResultWithOwnership()) : PutResourceSetOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome FMSClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome FMSClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }

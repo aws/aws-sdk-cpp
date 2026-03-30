@@ -210,7 +210,9 @@ BatchCreateRumMetricDefinitionsOutcome CloudWatchRUMClient::BatchCreateRumMetric
     endpointResolutionOutcome.GetResult().AddPathSegments("/metrics");
   };
 
-  return BatchCreateRumMetricDefinitionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchCreateRumMetricDefinitionsOutcome(result.GetResultWithOwnership())
+                            : BatchCreateRumMetricDefinitionsOutcome(std::move(result.GetError()));
 }
 
 BatchDeleteRumMetricDefinitionsOutcome CloudWatchRUMClient::BatchDeleteRumMetricDefinitions(
@@ -238,7 +240,9 @@ BatchDeleteRumMetricDefinitionsOutcome CloudWatchRUMClient::BatchDeleteRumMetric
     endpointResolutionOutcome.GetResult().AddPathSegments("/metrics");
   };
 
-  return BatchDeleteRumMetricDefinitionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? BatchDeleteRumMetricDefinitionsOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteRumMetricDefinitionsOutcome(std::move(result.GetError()));
 }
 
 BatchGetRumMetricDefinitionsOutcome CloudWatchRUMClient::BatchGetRumMetricDefinitions(
@@ -261,7 +265,9 @@ BatchGetRumMetricDefinitionsOutcome CloudWatchRUMClient::BatchGetRumMetricDefini
     endpointResolutionOutcome.GetResult().AddPathSegments("/metrics");
   };
 
-  return BatchGetRumMetricDefinitionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? BatchGetRumMetricDefinitionsOutcome(result.GetResultWithOwnership())
+                            : BatchGetRumMetricDefinitionsOutcome(std::move(result.GetError()));
 }
 
 CreateAppMonitorOutcome CloudWatchRUMClient::CreateAppMonitor(const CreateAppMonitorRequest& request) const {
@@ -270,7 +276,9 @@ CreateAppMonitorOutcome CloudWatchRUMClient::CreateAppMonitor(const CreateAppMon
     endpointResolutionOutcome.GetResult().AddPathSegments("/appmonitor");
   };
 
-  return CreateAppMonitorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAppMonitorOutcome(result.GetResultWithOwnership())
+                            : CreateAppMonitorOutcome(std::move(result.GetError()));
 }
 
 DeleteAppMonitorOutcome CloudWatchRUMClient::DeleteAppMonitor(const DeleteAppMonitorRequest& request) const {
@@ -286,7 +294,9 @@ DeleteAppMonitorOutcome CloudWatchRUMClient::DeleteAppMonitor(const DeleteAppMon
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteAppMonitorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAppMonitorOutcome(result.GetResultWithOwnership())
+                            : DeleteAppMonitorOutcome(std::move(result.GetError()));
 }
 
 DeleteResourcePolicyOutcome CloudWatchRUMClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const {
@@ -303,7 +313,9 @@ DeleteResourcePolicyOutcome CloudWatchRUMClient::DeleteResourcePolicy(const Dele
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return DeleteResourcePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteRumMetricsDestinationOutcome CloudWatchRUMClient::DeleteRumMetricsDestination(
@@ -326,7 +338,9 @@ DeleteRumMetricsDestinationOutcome CloudWatchRUMClient::DeleteRumMetricsDestinat
     endpointResolutionOutcome.GetResult().AddPathSegments("/metricsdestination");
   };
 
-  return DeleteRumMetricsDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRumMetricsDestinationOutcome(result.GetResultWithOwnership())
+                            : DeleteRumMetricsDestinationOutcome(std::move(result.GetError()));
 }
 
 GetAppMonitorOutcome CloudWatchRUMClient::GetAppMonitor(const GetAppMonitorRequest& request) const {
@@ -342,7 +356,8 @@ GetAppMonitorOutcome CloudWatchRUMClient::GetAppMonitor(const GetAppMonitorReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return GetAppMonitorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAppMonitorOutcome(result.GetResultWithOwnership()) : GetAppMonitorOutcome(std::move(result.GetError()));
 }
 
 GetAppMonitorDataOutcome CloudWatchRUMClient::GetAppMonitorData(const GetAppMonitorDataRequest& request) const {
@@ -359,7 +374,9 @@ GetAppMonitorDataOutcome CloudWatchRUMClient::GetAppMonitorData(const GetAppMoni
     endpointResolutionOutcome.GetResult().AddPathSegments("/data");
   };
 
-  return GetAppMonitorDataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAppMonitorDataOutcome(result.GetResultWithOwnership())
+                            : GetAppMonitorDataOutcome(std::move(result.GetError()));
 }
 
 GetResourcePolicyOutcome CloudWatchRUMClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const {
@@ -376,7 +393,9 @@ GetResourcePolicyOutcome CloudWatchRUMClient::GetResourcePolicy(const GetResourc
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return GetResourcePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : GetResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 ListAppMonitorsOutcome CloudWatchRUMClient::ListAppMonitors(const ListAppMonitorsRequest& request) const {
@@ -385,7 +404,9 @@ ListAppMonitorsOutcome CloudWatchRUMClient::ListAppMonitors(const ListAppMonitor
     endpointResolutionOutcome.GetResult().AddPathSegments("/appmonitors");
   };
 
-  return ListAppMonitorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAppMonitorsOutcome(result.GetResultWithOwnership())
+                            : ListAppMonitorsOutcome(std::move(result.GetError()));
 }
 
 ListRumMetricsDestinationsOutcome CloudWatchRUMClient::ListRumMetricsDestinations(const ListRumMetricsDestinationsRequest& request) const {
@@ -402,7 +423,9 @@ ListRumMetricsDestinationsOutcome CloudWatchRUMClient::ListRumMetricsDestination
     endpointResolutionOutcome.GetResult().AddPathSegments("/metricsdestination");
   };
 
-  return ListRumMetricsDestinationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRumMetricsDestinationsOutcome(result.GetResultWithOwnership())
+                            : ListRumMetricsDestinationsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome CloudWatchRUMClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -418,7 +441,9 @@ ListTagsForResourceOutcome CloudWatchRUMClient::ListTagsForResource(const ListTa
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutResourcePolicyOutcome CloudWatchRUMClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const {
@@ -435,7 +460,9 @@ PutResourcePolicyOutcome CloudWatchRUMClient::PutResourcePolicy(const PutResourc
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return PutResourcePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : PutResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 PutRumEventsOutcome CloudWatchRUMClient::PutRumEvents(const PutRumEventsRequest& request) const {
@@ -451,7 +478,8 @@ PutRumEventsOutcome CloudWatchRUMClient::PutRumEvents(const PutRumEventsRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return PutRumEventsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutRumEventsOutcome(result.GetResultWithOwnership()) : PutRumEventsOutcome(std::move(result.GetError()));
 }
 
 PutRumMetricsDestinationOutcome CloudWatchRUMClient::PutRumMetricsDestination(const PutRumMetricsDestinationRequest& request) const {
@@ -468,7 +496,9 @@ PutRumMetricsDestinationOutcome CloudWatchRUMClient::PutRumMetricsDestination(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/metricsdestination");
   };
 
-  return PutRumMetricsDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutRumMetricsDestinationOutcome(result.GetResultWithOwnership())
+                            : PutRumMetricsDestinationOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome CloudWatchRUMClient::TagResource(const TagResourceRequest& request) const {
@@ -484,7 +514,8 @@ TagResourceOutcome CloudWatchRUMClient::TagResource(const TagResourceRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome CloudWatchRUMClient::UntagResource(const UntagResourceRequest& request) const {
@@ -505,7 +536,8 @@ UntagResourceOutcome CloudWatchRUMClient::UntagResource(const UntagResourceReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAppMonitorOutcome CloudWatchRUMClient::UpdateAppMonitor(const UpdateAppMonitorRequest& request) const {
@@ -521,7 +553,9 @@ UpdateAppMonitorOutcome CloudWatchRUMClient::UpdateAppMonitor(const UpdateAppMon
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return UpdateAppMonitorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateAppMonitorOutcome(result.GetResultWithOwnership())
+                            : UpdateAppMonitorOutcome(std::move(result.GetError()));
 }
 
 UpdateRumMetricDefinitionOutcome CloudWatchRUMClient::UpdateRumMetricDefinition(const UpdateRumMetricDefinitionRequest& request) const {
@@ -538,5 +572,7 @@ UpdateRumMetricDefinitionOutcome CloudWatchRUMClient::UpdateRumMetricDefinition(
     endpointResolutionOutcome.GetResult().AddPathSegments("/metrics");
   };
 
-  return UpdateRumMetricDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateRumMetricDefinitionOutcome(result.GetResultWithOwnership())
+                            : UpdateRumMetricDefinitionOutcome(std::move(result.GetError()));
 }

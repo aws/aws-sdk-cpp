@@ -233,7 +233,9 @@ CreateGatewayRouteOutcome AppMeshClient::CreateGatewayRoute(const CreateGatewayR
     endpointResolutionOutcome.GetResult().AddPathSegments("/gatewayRoutes");
   };
 
-  return CreateGatewayRouteOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateGatewayRouteOutcome(result.GetResultWithOwnership())
+                            : CreateGatewayRouteOutcome(std::move(result.GetError()));
 }
 
 CreateMeshOutcome AppMeshClient::CreateMesh(const CreateMeshRequest& request) const {
@@ -242,7 +244,8 @@ CreateMeshOutcome AppMeshClient::CreateMesh(const CreateMeshRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20190125/meshes");
   };
 
-  return CreateMeshOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateMeshOutcome(result.GetResultWithOwnership()) : CreateMeshOutcome(std::move(result.GetError()));
 }
 
 CreateRouteOutcome AppMeshClient::CreateRoute(const CreateRouteRequest& request) const {
@@ -266,7 +269,8 @@ CreateRouteOutcome AppMeshClient::CreateRoute(const CreateRouteRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegments("/routes");
   };
 
-  return CreateRouteOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateRouteOutcome(result.GetResultWithOwnership()) : CreateRouteOutcome(std::move(result.GetError()));
 }
 
 CreateVirtualGatewayOutcome AppMeshClient::CreateVirtualGateway(const CreateVirtualGatewayRequest& request) const {
@@ -283,7 +287,9 @@ CreateVirtualGatewayOutcome AppMeshClient::CreateVirtualGateway(const CreateVirt
     endpointResolutionOutcome.GetResult().AddPathSegments("/virtualGateways");
   };
 
-  return CreateVirtualGatewayOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateVirtualGatewayOutcome(result.GetResultWithOwnership())
+                            : CreateVirtualGatewayOutcome(std::move(result.GetError()));
 }
 
 CreateVirtualNodeOutcome AppMeshClient::CreateVirtualNode(const CreateVirtualNodeRequest& request) const {
@@ -300,7 +306,9 @@ CreateVirtualNodeOutcome AppMeshClient::CreateVirtualNode(const CreateVirtualNod
     endpointResolutionOutcome.GetResult().AddPathSegments("/virtualNodes");
   };
 
-  return CreateVirtualNodeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateVirtualNodeOutcome(result.GetResultWithOwnership())
+                            : CreateVirtualNodeOutcome(std::move(result.GetError()));
 }
 
 CreateVirtualRouterOutcome AppMeshClient::CreateVirtualRouter(const CreateVirtualRouterRequest& request) const {
@@ -317,7 +325,9 @@ CreateVirtualRouterOutcome AppMeshClient::CreateVirtualRouter(const CreateVirtua
     endpointResolutionOutcome.GetResult().AddPathSegments("/virtualRouters");
   };
 
-  return CreateVirtualRouterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateVirtualRouterOutcome(result.GetResultWithOwnership())
+                            : CreateVirtualRouterOutcome(std::move(result.GetError()));
 }
 
 CreateVirtualServiceOutcome AppMeshClient::CreateVirtualService(const CreateVirtualServiceRequest& request) const {
@@ -334,7 +344,9 @@ CreateVirtualServiceOutcome AppMeshClient::CreateVirtualService(const CreateVirt
     endpointResolutionOutcome.GetResult().AddPathSegments("/virtualServices");
   };
 
-  return CreateVirtualServiceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateVirtualServiceOutcome(result.GetResultWithOwnership())
+                            : CreateVirtualServiceOutcome(std::move(result.GetError()));
 }
 
 DeleteGatewayRouteOutcome AppMeshClient::DeleteGatewayRoute(const DeleteGatewayRouteRequest& request) const {
@@ -364,7 +376,9 @@ DeleteGatewayRouteOutcome AppMeshClient::DeleteGatewayRoute(const DeleteGatewayR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGatewayRouteName());
   };
 
-  return DeleteGatewayRouteOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteGatewayRouteOutcome(result.GetResultWithOwnership())
+                            : DeleteGatewayRouteOutcome(std::move(result.GetError()));
 }
 
 DeleteMeshOutcome AppMeshClient::DeleteMesh(const DeleteMeshRequest& request) const {
@@ -380,7 +394,8 @@ DeleteMeshOutcome AppMeshClient::DeleteMesh(const DeleteMeshRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMeshName());
   };
 
-  return DeleteMeshOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMeshOutcome(result.GetResultWithOwnership()) : DeleteMeshOutcome(std::move(result.GetError()));
 }
 
 DeleteRouteOutcome AppMeshClient::DeleteRoute(const DeleteRouteRequest& request) const {
@@ -410,7 +425,8 @@ DeleteRouteOutcome AppMeshClient::DeleteRoute(const DeleteRouteRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRouteName());
   };
 
-  return DeleteRouteOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRouteOutcome(result.GetResultWithOwnership()) : DeleteRouteOutcome(std::move(result.GetError()));
 }
 
 DeleteVirtualGatewayOutcome AppMeshClient::DeleteVirtualGateway(const DeleteVirtualGatewayRequest& request) const {
@@ -433,7 +449,9 @@ DeleteVirtualGatewayOutcome AppMeshClient::DeleteVirtualGateway(const DeleteVirt
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVirtualGatewayName());
   };
 
-  return DeleteVirtualGatewayOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteVirtualGatewayOutcome(result.GetResultWithOwnership())
+                            : DeleteVirtualGatewayOutcome(std::move(result.GetError()));
 }
 
 DeleteVirtualNodeOutcome AppMeshClient::DeleteVirtualNode(const DeleteVirtualNodeRequest& request) const {
@@ -456,7 +474,9 @@ DeleteVirtualNodeOutcome AppMeshClient::DeleteVirtualNode(const DeleteVirtualNod
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVirtualNodeName());
   };
 
-  return DeleteVirtualNodeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteVirtualNodeOutcome(result.GetResultWithOwnership())
+                            : DeleteVirtualNodeOutcome(std::move(result.GetError()));
 }
 
 DeleteVirtualRouterOutcome AppMeshClient::DeleteVirtualRouter(const DeleteVirtualRouterRequest& request) const {
@@ -479,7 +499,9 @@ DeleteVirtualRouterOutcome AppMeshClient::DeleteVirtualRouter(const DeleteVirtua
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVirtualRouterName());
   };
 
-  return DeleteVirtualRouterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteVirtualRouterOutcome(result.GetResultWithOwnership())
+                            : DeleteVirtualRouterOutcome(std::move(result.GetError()));
 }
 
 DeleteVirtualServiceOutcome AppMeshClient::DeleteVirtualService(const DeleteVirtualServiceRequest& request) const {
@@ -502,7 +524,9 @@ DeleteVirtualServiceOutcome AppMeshClient::DeleteVirtualService(const DeleteVirt
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVirtualServiceName());
   };
 
-  return DeleteVirtualServiceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteVirtualServiceOutcome(result.GetResultWithOwnership())
+                            : DeleteVirtualServiceOutcome(std::move(result.GetError()));
 }
 
 DescribeGatewayRouteOutcome AppMeshClient::DescribeGatewayRoute(const DescribeGatewayRouteRequest& request) const {
@@ -532,7 +556,9 @@ DescribeGatewayRouteOutcome AppMeshClient::DescribeGatewayRoute(const DescribeGa
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGatewayRouteName());
   };
 
-  return DescribeGatewayRouteOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeGatewayRouteOutcome(result.GetResultWithOwnership())
+                            : DescribeGatewayRouteOutcome(std::move(result.GetError()));
 }
 
 DescribeMeshOutcome AppMeshClient::DescribeMesh(const DescribeMeshRequest& request) const {
@@ -548,7 +574,8 @@ DescribeMeshOutcome AppMeshClient::DescribeMesh(const DescribeMeshRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMeshName());
   };
 
-  return DescribeMeshOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeMeshOutcome(result.GetResultWithOwnership()) : DescribeMeshOutcome(std::move(result.GetError()));
 }
 
 DescribeRouteOutcome AppMeshClient::DescribeRoute(const DescribeRouteRequest& request) const {
@@ -578,7 +605,8 @@ DescribeRouteOutcome AppMeshClient::DescribeRoute(const DescribeRouteRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRouteName());
   };
 
-  return DescribeRouteOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeRouteOutcome(result.GetResultWithOwnership()) : DescribeRouteOutcome(std::move(result.GetError()));
 }
 
 DescribeVirtualGatewayOutcome AppMeshClient::DescribeVirtualGateway(const DescribeVirtualGatewayRequest& request) const {
@@ -601,7 +629,9 @@ DescribeVirtualGatewayOutcome AppMeshClient::DescribeVirtualGateway(const Descri
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVirtualGatewayName());
   };
 
-  return DescribeVirtualGatewayOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeVirtualGatewayOutcome(result.GetResultWithOwnership())
+                            : DescribeVirtualGatewayOutcome(std::move(result.GetError()));
 }
 
 DescribeVirtualNodeOutcome AppMeshClient::DescribeVirtualNode(const DescribeVirtualNodeRequest& request) const {
@@ -624,7 +654,9 @@ DescribeVirtualNodeOutcome AppMeshClient::DescribeVirtualNode(const DescribeVirt
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVirtualNodeName());
   };
 
-  return DescribeVirtualNodeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeVirtualNodeOutcome(result.GetResultWithOwnership())
+                            : DescribeVirtualNodeOutcome(std::move(result.GetError()));
 }
 
 DescribeVirtualRouterOutcome AppMeshClient::DescribeVirtualRouter(const DescribeVirtualRouterRequest& request) const {
@@ -647,7 +679,9 @@ DescribeVirtualRouterOutcome AppMeshClient::DescribeVirtualRouter(const Describe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVirtualRouterName());
   };
 
-  return DescribeVirtualRouterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeVirtualRouterOutcome(result.GetResultWithOwnership())
+                            : DescribeVirtualRouterOutcome(std::move(result.GetError()));
 }
 
 DescribeVirtualServiceOutcome AppMeshClient::DescribeVirtualService(const DescribeVirtualServiceRequest& request) const {
@@ -670,7 +704,9 @@ DescribeVirtualServiceOutcome AppMeshClient::DescribeVirtualService(const Descri
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVirtualServiceName());
   };
 
-  return DescribeVirtualServiceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeVirtualServiceOutcome(result.GetResultWithOwnership())
+                            : DescribeVirtualServiceOutcome(std::move(result.GetError()));
 }
 
 ListGatewayRoutesOutcome AppMeshClient::ListGatewayRoutes(const ListGatewayRoutesRequest& request) const {
@@ -694,7 +730,9 @@ ListGatewayRoutesOutcome AppMeshClient::ListGatewayRoutes(const ListGatewayRoute
     endpointResolutionOutcome.GetResult().AddPathSegments("/gatewayRoutes");
   };
 
-  return ListGatewayRoutesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListGatewayRoutesOutcome(result.GetResultWithOwnership())
+                            : ListGatewayRoutesOutcome(std::move(result.GetError()));
 }
 
 ListMeshesOutcome AppMeshClient::ListMeshes(const ListMeshesRequest& request) const {
@@ -703,7 +741,8 @@ ListMeshesOutcome AppMeshClient::ListMeshes(const ListMeshesRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20190125/meshes");
   };
 
-  return ListMeshesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMeshesOutcome(result.GetResultWithOwnership()) : ListMeshesOutcome(std::move(result.GetError()));
 }
 
 ListRoutesOutcome AppMeshClient::ListRoutes(const ListRoutesRequest& request) const {
@@ -727,7 +766,8 @@ ListRoutesOutcome AppMeshClient::ListRoutes(const ListRoutesRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegments("/routes");
   };
 
-  return ListRoutesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRoutesOutcome(result.GetResultWithOwnership()) : ListRoutesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome AppMeshClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -742,7 +782,9 @@ ListTagsForResourceOutcome AppMeshClient::ListTagsForResource(const ListTagsForR
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20190125/tags");
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListVirtualGatewaysOutcome AppMeshClient::ListVirtualGateways(const ListVirtualGatewaysRequest& request) const {
@@ -759,7 +801,9 @@ ListVirtualGatewaysOutcome AppMeshClient::ListVirtualGateways(const ListVirtualG
     endpointResolutionOutcome.GetResult().AddPathSegments("/virtualGateways");
   };
 
-  return ListVirtualGatewaysOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListVirtualGatewaysOutcome(result.GetResultWithOwnership())
+                            : ListVirtualGatewaysOutcome(std::move(result.GetError()));
 }
 
 ListVirtualNodesOutcome AppMeshClient::ListVirtualNodes(const ListVirtualNodesRequest& request) const {
@@ -776,7 +820,9 @@ ListVirtualNodesOutcome AppMeshClient::ListVirtualNodes(const ListVirtualNodesRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/virtualNodes");
   };
 
-  return ListVirtualNodesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListVirtualNodesOutcome(result.GetResultWithOwnership())
+                            : ListVirtualNodesOutcome(std::move(result.GetError()));
 }
 
 ListVirtualRoutersOutcome AppMeshClient::ListVirtualRouters(const ListVirtualRoutersRequest& request) const {
@@ -793,7 +839,9 @@ ListVirtualRoutersOutcome AppMeshClient::ListVirtualRouters(const ListVirtualRou
     endpointResolutionOutcome.GetResult().AddPathSegments("/virtualRouters");
   };
 
-  return ListVirtualRoutersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListVirtualRoutersOutcome(result.GetResultWithOwnership())
+                            : ListVirtualRoutersOutcome(std::move(result.GetError()));
 }
 
 ListVirtualServicesOutcome AppMeshClient::ListVirtualServices(const ListVirtualServicesRequest& request) const {
@@ -810,7 +858,9 @@ ListVirtualServicesOutcome AppMeshClient::ListVirtualServices(const ListVirtualS
     endpointResolutionOutcome.GetResult().AddPathSegments("/virtualServices");
   };
 
-  return ListVirtualServicesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListVirtualServicesOutcome(result.GetResultWithOwnership())
+                            : ListVirtualServicesOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome AppMeshClient::TagResource(const TagResourceRequest& request) const {
@@ -825,7 +875,8 @@ TagResourceOutcome AppMeshClient::TagResource(const TagResourceRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20190125/tag");
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome AppMeshClient::UntagResource(const UntagResourceRequest& request) const {
@@ -840,7 +891,8 @@ UntagResourceOutcome AppMeshClient::UntagResource(const UntagResourceRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20190125/untag");
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateGatewayRouteOutcome AppMeshClient::UpdateGatewayRoute(const UpdateGatewayRouteRequest& request) const {
@@ -870,7 +922,9 @@ UpdateGatewayRouteOutcome AppMeshClient::UpdateGatewayRoute(const UpdateGatewayR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGatewayRouteName());
   };
 
-  return UpdateGatewayRouteOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateGatewayRouteOutcome(result.GetResultWithOwnership())
+                            : UpdateGatewayRouteOutcome(std::move(result.GetError()));
 }
 
 UpdateMeshOutcome AppMeshClient::UpdateMesh(const UpdateMeshRequest& request) const {
@@ -886,7 +940,8 @@ UpdateMeshOutcome AppMeshClient::UpdateMesh(const UpdateMeshRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMeshName());
   };
 
-  return UpdateMeshOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateMeshOutcome(result.GetResultWithOwnership()) : UpdateMeshOutcome(std::move(result.GetError()));
 }
 
 UpdateRouteOutcome AppMeshClient::UpdateRoute(const UpdateRouteRequest& request) const {
@@ -916,7 +971,8 @@ UpdateRouteOutcome AppMeshClient::UpdateRoute(const UpdateRouteRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRouteName());
   };
 
-  return UpdateRouteOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateRouteOutcome(result.GetResultWithOwnership()) : UpdateRouteOutcome(std::move(result.GetError()));
 }
 
 UpdateVirtualGatewayOutcome AppMeshClient::UpdateVirtualGateway(const UpdateVirtualGatewayRequest& request) const {
@@ -939,7 +995,9 @@ UpdateVirtualGatewayOutcome AppMeshClient::UpdateVirtualGateway(const UpdateVirt
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVirtualGatewayName());
   };
 
-  return UpdateVirtualGatewayOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateVirtualGatewayOutcome(result.GetResultWithOwnership())
+                            : UpdateVirtualGatewayOutcome(std::move(result.GetError()));
 }
 
 UpdateVirtualNodeOutcome AppMeshClient::UpdateVirtualNode(const UpdateVirtualNodeRequest& request) const {
@@ -962,7 +1020,9 @@ UpdateVirtualNodeOutcome AppMeshClient::UpdateVirtualNode(const UpdateVirtualNod
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVirtualNodeName());
   };
 
-  return UpdateVirtualNodeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateVirtualNodeOutcome(result.GetResultWithOwnership())
+                            : UpdateVirtualNodeOutcome(std::move(result.GetError()));
 }
 
 UpdateVirtualRouterOutcome AppMeshClient::UpdateVirtualRouter(const UpdateVirtualRouterRequest& request) const {
@@ -985,7 +1045,9 @@ UpdateVirtualRouterOutcome AppMeshClient::UpdateVirtualRouter(const UpdateVirtua
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVirtualRouterName());
   };
 
-  return UpdateVirtualRouterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateVirtualRouterOutcome(result.GetResultWithOwnership())
+                            : UpdateVirtualRouterOutcome(std::move(result.GetError()));
 }
 
 UpdateVirtualServiceOutcome AppMeshClient::UpdateVirtualService(const UpdateVirtualServiceRequest& request) const {
@@ -1008,5 +1070,7 @@ UpdateVirtualServiceOutcome AppMeshClient::UpdateVirtualService(const UpdateVirt
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVirtualServiceName());
   };
 
-  return UpdateVirtualServiceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateVirtualServiceOutcome(result.GetResultWithOwnership())
+                            : UpdateVirtualServiceOutcome(std::move(result.GetError()));
 }

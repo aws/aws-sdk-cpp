@@ -194,88 +194,130 @@ MigrationHubClient::InvokeOperationOutcome MigrationHubClient::InvokeServiceOper
 }
 
 AssociateCreatedArtifactOutcome MigrationHubClient::AssociateCreatedArtifact(const AssociateCreatedArtifactRequest& request) const {
-  return AssociateCreatedArtifactOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateCreatedArtifactOutcome(result.GetResultWithOwnership())
+                            : AssociateCreatedArtifactOutcome(std::move(result.GetError()));
 }
 
 AssociateDiscoveredResourceOutcome MigrationHubClient::AssociateDiscoveredResource(
     const AssociateDiscoveredResourceRequest& request) const {
-  return AssociateDiscoveredResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateDiscoveredResourceOutcome(result.GetResultWithOwnership())
+                            : AssociateDiscoveredResourceOutcome(std::move(result.GetError()));
 }
 
 AssociateSourceResourceOutcome MigrationHubClient::AssociateSourceResource(const AssociateSourceResourceRequest& request) const {
-  return AssociateSourceResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateSourceResourceOutcome(result.GetResultWithOwnership())
+                            : AssociateSourceResourceOutcome(std::move(result.GetError()));
 }
 
 CreateProgressUpdateStreamOutcome MigrationHubClient::CreateProgressUpdateStream(const CreateProgressUpdateStreamRequest& request) const {
-  return CreateProgressUpdateStreamOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProgressUpdateStreamOutcome(result.GetResultWithOwnership())
+                            : CreateProgressUpdateStreamOutcome(std::move(result.GetError()));
 }
 
 DeleteProgressUpdateStreamOutcome MigrationHubClient::DeleteProgressUpdateStream(const DeleteProgressUpdateStreamRequest& request) const {
-  return DeleteProgressUpdateStreamOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteProgressUpdateStreamOutcome(result.GetResultWithOwnership())
+                            : DeleteProgressUpdateStreamOutcome(std::move(result.GetError()));
 }
 
 DescribeApplicationStateOutcome MigrationHubClient::DescribeApplicationState(const DescribeApplicationStateRequest& request) const {
-  return DescribeApplicationStateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeApplicationStateOutcome(result.GetResultWithOwnership())
+                            : DescribeApplicationStateOutcome(std::move(result.GetError()));
 }
 
 DescribeMigrationTaskOutcome MigrationHubClient::DescribeMigrationTask(const DescribeMigrationTaskRequest& request) const {
-  return DescribeMigrationTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeMigrationTaskOutcome(result.GetResultWithOwnership())
+                            : DescribeMigrationTaskOutcome(std::move(result.GetError()));
 }
 
 DisassociateCreatedArtifactOutcome MigrationHubClient::DisassociateCreatedArtifact(
     const DisassociateCreatedArtifactRequest& request) const {
-  return DisassociateCreatedArtifactOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateCreatedArtifactOutcome(result.GetResultWithOwnership())
+                            : DisassociateCreatedArtifactOutcome(std::move(result.GetError()));
 }
 
 DisassociateDiscoveredResourceOutcome MigrationHubClient::DisassociateDiscoveredResource(
     const DisassociateDiscoveredResourceRequest& request) const {
-  return DisassociateDiscoveredResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateDiscoveredResourceOutcome(result.GetResultWithOwnership())
+                            : DisassociateDiscoveredResourceOutcome(std::move(result.GetError()));
 }
 
 DisassociateSourceResourceOutcome MigrationHubClient::DisassociateSourceResource(const DisassociateSourceResourceRequest& request) const {
-  return DisassociateSourceResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateSourceResourceOutcome(result.GetResultWithOwnership())
+                            : DisassociateSourceResourceOutcome(std::move(result.GetError()));
 }
 
 ImportMigrationTaskOutcome MigrationHubClient::ImportMigrationTask(const ImportMigrationTaskRequest& request) const {
-  return ImportMigrationTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportMigrationTaskOutcome(result.GetResultWithOwnership())
+                            : ImportMigrationTaskOutcome(std::move(result.GetError()));
 }
 
 ListApplicationStatesOutcome MigrationHubClient::ListApplicationStates(const ListApplicationStatesRequest& request) const {
-  return ListApplicationStatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListApplicationStatesOutcome(result.GetResultWithOwnership())
+                            : ListApplicationStatesOutcome(std::move(result.GetError()));
 }
 
 ListCreatedArtifactsOutcome MigrationHubClient::ListCreatedArtifacts(const ListCreatedArtifactsRequest& request) const {
-  return ListCreatedArtifactsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCreatedArtifactsOutcome(result.GetResultWithOwnership())
+                            : ListCreatedArtifactsOutcome(std::move(result.GetError()));
 }
 
 ListDiscoveredResourcesOutcome MigrationHubClient::ListDiscoveredResources(const ListDiscoveredResourcesRequest& request) const {
-  return ListDiscoveredResourcesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDiscoveredResourcesOutcome(result.GetResultWithOwnership())
+                            : ListDiscoveredResourcesOutcome(std::move(result.GetError()));
 }
 
 ListMigrationTaskUpdatesOutcome MigrationHubClient::ListMigrationTaskUpdates(const ListMigrationTaskUpdatesRequest& request) const {
-  return ListMigrationTaskUpdatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMigrationTaskUpdatesOutcome(result.GetResultWithOwnership())
+                            : ListMigrationTaskUpdatesOutcome(std::move(result.GetError()));
 }
 
 ListMigrationTasksOutcome MigrationHubClient::ListMigrationTasks(const ListMigrationTasksRequest& request) const {
-  return ListMigrationTasksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMigrationTasksOutcome(result.GetResultWithOwnership())
+                            : ListMigrationTasksOutcome(std::move(result.GetError()));
 }
 
 ListProgressUpdateStreamsOutcome MigrationHubClient::ListProgressUpdateStreams(const ListProgressUpdateStreamsRequest& request) const {
-  return ListProgressUpdateStreamsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListProgressUpdateStreamsOutcome(result.GetResultWithOwnership())
+                            : ListProgressUpdateStreamsOutcome(std::move(result.GetError()));
 }
 
 ListSourceResourcesOutcome MigrationHubClient::ListSourceResources(const ListSourceResourcesRequest& request) const {
-  return ListSourceResourcesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSourceResourcesOutcome(result.GetResultWithOwnership())
+                            : ListSourceResourcesOutcome(std::move(result.GetError()));
 }
 
 NotifyApplicationStateOutcome MigrationHubClient::NotifyApplicationState(const NotifyApplicationStateRequest& request) const {
-  return NotifyApplicationStateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? NotifyApplicationStateOutcome(result.GetResultWithOwnership())
+                            : NotifyApplicationStateOutcome(std::move(result.GetError()));
 }
 
 NotifyMigrationTaskStateOutcome MigrationHubClient::NotifyMigrationTaskState(const NotifyMigrationTaskStateRequest& request) const {
-  return NotifyMigrationTaskStateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? NotifyMigrationTaskStateOutcome(result.GetResultWithOwnership())
+                            : NotifyMigrationTaskStateOutcome(std::move(result.GetError()));
 }
 
 PutResourceAttributesOutcome MigrationHubClient::PutResourceAttributes(const PutResourceAttributesRequest& request) const {
-  return PutResourceAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutResourceAttributesOutcome(result.GetResultWithOwnership())
+                            : PutResourceAttributesOutcome(std::move(result.GetError()));
 }

@@ -265,7 +265,9 @@ ActivateKeySigningKeyOutcome Route53Client::ActivateKeySigningKey(const Activate
     endpointResolutionOutcome.GetResult().AddPathSegments("/activate");
   };
 
-  return ActivateKeySigningKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ActivateKeySigningKeyOutcome(result.GetResultWithOwnership())
+                            : ActivateKeySigningKeyOutcome(std::move(result.GetError()));
 }
 
 AssociateVPCWithHostedZoneOutcome Route53Client::AssociateVPCWithHostedZone(const AssociateVPCWithHostedZoneRequest& request) const {
@@ -282,7 +284,9 @@ AssociateVPCWithHostedZoneOutcome Route53Client::AssociateVPCWithHostedZone(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/associatevpc");
   };
 
-  return AssociateVPCWithHostedZoneOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateVPCWithHostedZoneOutcome(result.GetResultWithOwnership())
+                            : AssociateVPCWithHostedZoneOutcome(std::move(result.GetError()));
 }
 
 ChangeCidrCollectionOutcome Route53Client::ChangeCidrCollection(const ChangeCidrCollectionRequest& request) const {
@@ -298,7 +302,9 @@ ChangeCidrCollectionOutcome Route53Client::ChangeCidrCollection(const ChangeCidr
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return ChangeCidrCollectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ChangeCidrCollectionOutcome(result.GetResultWithOwnership())
+                            : ChangeCidrCollectionOutcome(std::move(result.GetError()));
 }
 
 ChangeResourceRecordSetsOutcome Route53Client::ChangeResourceRecordSets(const ChangeResourceRecordSetsRequest& request) const {
@@ -315,7 +321,9 @@ ChangeResourceRecordSetsOutcome Route53Client::ChangeResourceRecordSets(const Ch
     endpointResolutionOutcome.GetResult().AddPathSegments("/rrset/");
   };
 
-  return ChangeResourceRecordSetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ChangeResourceRecordSetsOutcome(result.GetResultWithOwnership())
+                            : ChangeResourceRecordSetsOutcome(std::move(result.GetError()));
 }
 
 ChangeTagsForResourceOutcome Route53Client::ChangeTagsForResource(const ChangeTagsForResourceRequest& request) const {
@@ -337,7 +345,9 @@ ChangeTagsForResourceOutcome Route53Client::ChangeTagsForResource(const ChangeTa
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceId());
   };
 
-  return ChangeTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ChangeTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ChangeTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 CreateCidrCollectionOutcome Route53Client::CreateCidrCollection(const CreateCidrCollectionRequest& request) const {
@@ -346,7 +356,9 @@ CreateCidrCollectionOutcome Route53Client::CreateCidrCollection(const CreateCidr
     endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/cidrcollection");
   };
 
-  return CreateCidrCollectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCidrCollectionOutcome(result.GetResultWithOwnership())
+                            : CreateCidrCollectionOutcome(std::move(result.GetError()));
 }
 
 CreateHealthCheckOutcome Route53Client::CreateHealthCheck(const CreateHealthCheckRequest& request) const {
@@ -355,7 +367,9 @@ CreateHealthCheckOutcome Route53Client::CreateHealthCheck(const CreateHealthChec
     endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/healthcheck");
   };
 
-  return CreateHealthCheckOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateHealthCheckOutcome(result.GetResultWithOwnership())
+                            : CreateHealthCheckOutcome(std::move(result.GetError()));
 }
 
 CreateHostedZoneOutcome Route53Client::CreateHostedZone(const CreateHostedZoneRequest& request) const {
@@ -364,7 +378,9 @@ CreateHostedZoneOutcome Route53Client::CreateHostedZone(const CreateHostedZoneRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/hostedzone");
   };
 
-  return CreateHostedZoneOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateHostedZoneOutcome(result.GetResultWithOwnership())
+                            : CreateHostedZoneOutcome(std::move(result.GetError()));
 }
 
 CreateKeySigningKeyOutcome Route53Client::CreateKeySigningKey(const CreateKeySigningKeyRequest& request) const {
@@ -373,7 +389,9 @@ CreateKeySigningKeyOutcome Route53Client::CreateKeySigningKey(const CreateKeySig
     endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/keysigningkey");
   };
 
-  return CreateKeySigningKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateKeySigningKeyOutcome(result.GetResultWithOwnership())
+                            : CreateKeySigningKeyOutcome(std::move(result.GetError()));
 }
 
 CreateQueryLoggingConfigOutcome Route53Client::CreateQueryLoggingConfig(const CreateQueryLoggingConfigRequest& request) const {
@@ -382,7 +400,9 @@ CreateQueryLoggingConfigOutcome Route53Client::CreateQueryLoggingConfig(const Cr
     endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/queryloggingconfig");
   };
 
-  return CreateQueryLoggingConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateQueryLoggingConfigOutcome(result.GetResultWithOwnership())
+                            : CreateQueryLoggingConfigOutcome(std::move(result.GetError()));
 }
 
 CreateReusableDelegationSetOutcome Route53Client::CreateReusableDelegationSet(const CreateReusableDelegationSetRequest& request) const {
@@ -391,7 +411,9 @@ CreateReusableDelegationSetOutcome Route53Client::CreateReusableDelegationSet(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/delegationset");
   };
 
-  return CreateReusableDelegationSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateReusableDelegationSetOutcome(result.GetResultWithOwnership())
+                            : CreateReusableDelegationSetOutcome(std::move(result.GetError()));
 }
 
 CreateTrafficPolicyOutcome Route53Client::CreateTrafficPolicy(const CreateTrafficPolicyRequest& request) const {
@@ -400,7 +422,9 @@ CreateTrafficPolicyOutcome Route53Client::CreateTrafficPolicy(const CreateTraffi
     endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/trafficpolicy");
   };
 
-  return CreateTrafficPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTrafficPolicyOutcome(result.GetResultWithOwnership())
+                            : CreateTrafficPolicyOutcome(std::move(result.GetError()));
 }
 
 CreateTrafficPolicyInstanceOutcome Route53Client::CreateTrafficPolicyInstance(const CreateTrafficPolicyInstanceRequest& request) const {
@@ -409,7 +433,9 @@ CreateTrafficPolicyInstanceOutcome Route53Client::CreateTrafficPolicyInstance(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/trafficpolicyinstance");
   };
 
-  return CreateTrafficPolicyInstanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTrafficPolicyInstanceOutcome(result.GetResultWithOwnership())
+                            : CreateTrafficPolicyInstanceOutcome(std::move(result.GetError()));
 }
 
 CreateTrafficPolicyVersionOutcome Route53Client::CreateTrafficPolicyVersion(const CreateTrafficPolicyVersionRequest& request) const {
@@ -425,7 +451,9 @@ CreateTrafficPolicyVersionOutcome Route53Client::CreateTrafficPolicyVersion(cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return CreateTrafficPolicyVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTrafficPolicyVersionOutcome(result.GetResultWithOwnership())
+                            : CreateTrafficPolicyVersionOutcome(std::move(result.GetError()));
 }
 
 CreateVPCAssociationAuthorizationOutcome Route53Client::CreateVPCAssociationAuthorization(
@@ -443,7 +471,9 @@ CreateVPCAssociationAuthorizationOutcome Route53Client::CreateVPCAssociationAuth
     endpointResolutionOutcome.GetResult().AddPathSegments("/authorizevpcassociation");
   };
 
-  return CreateVPCAssociationAuthorizationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateVPCAssociationAuthorizationOutcome(result.GetResultWithOwnership())
+                            : CreateVPCAssociationAuthorizationOutcome(std::move(result.GetError()));
 }
 
 DeactivateKeySigningKeyOutcome Route53Client::DeactivateKeySigningKey(const DeactivateKeySigningKeyRequest& request) const {
@@ -466,7 +496,9 @@ DeactivateKeySigningKeyOutcome Route53Client::DeactivateKeySigningKey(const Deac
     endpointResolutionOutcome.GetResult().AddPathSegments("/deactivate");
   };
 
-  return DeactivateKeySigningKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeactivateKeySigningKeyOutcome(result.GetResultWithOwnership())
+                            : DeactivateKeySigningKeyOutcome(std::move(result.GetError()));
 }
 
 DeleteCidrCollectionOutcome Route53Client::DeleteCidrCollection(const DeleteCidrCollectionRequest& request) const {
@@ -482,7 +514,9 @@ DeleteCidrCollectionOutcome Route53Client::DeleteCidrCollection(const DeleteCidr
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteCidrCollectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCidrCollectionOutcome(result.GetResultWithOwnership())
+                            : DeleteCidrCollectionOutcome(std::move(result.GetError()));
 }
 
 DeleteHealthCheckOutcome Route53Client::DeleteHealthCheck(const DeleteHealthCheckRequest& request) const {
@@ -498,7 +532,9 @@ DeleteHealthCheckOutcome Route53Client::DeleteHealthCheck(const DeleteHealthChec
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHealthCheckId());
   };
 
-  return DeleteHealthCheckOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteHealthCheckOutcome(result.GetResultWithOwnership())
+                            : DeleteHealthCheckOutcome(std::move(result.GetError()));
 }
 
 DeleteHostedZoneOutcome Route53Client::DeleteHostedZone(const DeleteHostedZoneRequest& request) const {
@@ -514,7 +550,9 @@ DeleteHostedZoneOutcome Route53Client::DeleteHostedZone(const DeleteHostedZoneRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteHostedZoneOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteHostedZoneOutcome(result.GetResultWithOwnership())
+                            : DeleteHostedZoneOutcome(std::move(result.GetError()));
 }
 
 DeleteKeySigningKeyOutcome Route53Client::DeleteKeySigningKey(const DeleteKeySigningKeyRequest& request) const {
@@ -536,7 +574,9 @@ DeleteKeySigningKeyOutcome Route53Client::DeleteKeySigningKey(const DeleteKeySig
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteKeySigningKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteKeySigningKeyOutcome(result.GetResultWithOwnership())
+                            : DeleteKeySigningKeyOutcome(std::move(result.GetError()));
 }
 
 DeleteQueryLoggingConfigOutcome Route53Client::DeleteQueryLoggingConfig(const DeleteQueryLoggingConfigRequest& request) const {
@@ -552,7 +592,9 @@ DeleteQueryLoggingConfigOutcome Route53Client::DeleteQueryLoggingConfig(const De
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteQueryLoggingConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteQueryLoggingConfigOutcome(result.GetResultWithOwnership())
+                            : DeleteQueryLoggingConfigOutcome(std::move(result.GetError()));
 }
 
 DeleteReusableDelegationSetOutcome Route53Client::DeleteReusableDelegationSet(const DeleteReusableDelegationSetRequest& request) const {
@@ -568,7 +610,9 @@ DeleteReusableDelegationSetOutcome Route53Client::DeleteReusableDelegationSet(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteReusableDelegationSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteReusableDelegationSetOutcome(result.GetResultWithOwnership())
+                            : DeleteReusableDelegationSetOutcome(std::move(result.GetError()));
 }
 
 DeleteTrafficPolicyOutcome Route53Client::DeleteTrafficPolicy(const DeleteTrafficPolicyRequest& request) const {
@@ -590,7 +634,9 @@ DeleteTrafficPolicyOutcome Route53Client::DeleteTrafficPolicy(const DeleteTraffi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersion());
   };
 
-  return DeleteTrafficPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTrafficPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteTrafficPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteTrafficPolicyInstanceOutcome Route53Client::DeleteTrafficPolicyInstance(const DeleteTrafficPolicyInstanceRequest& request) const {
@@ -606,7 +652,9 @@ DeleteTrafficPolicyInstanceOutcome Route53Client::DeleteTrafficPolicyInstance(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteTrafficPolicyInstanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTrafficPolicyInstanceOutcome(result.GetResultWithOwnership())
+                            : DeleteTrafficPolicyInstanceOutcome(std::move(result.GetError()));
 }
 
 DeleteVPCAssociationAuthorizationOutcome Route53Client::DeleteVPCAssociationAuthorization(
@@ -624,7 +672,9 @@ DeleteVPCAssociationAuthorizationOutcome Route53Client::DeleteVPCAssociationAuth
     endpointResolutionOutcome.GetResult().AddPathSegments("/deauthorizevpcassociation");
   };
 
-  return DeleteVPCAssociationAuthorizationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVPCAssociationAuthorizationOutcome(result.GetResultWithOwnership())
+                            : DeleteVPCAssociationAuthorizationOutcome(std::move(result.GetError()));
 }
 
 DisableHostedZoneDNSSECOutcome Route53Client::DisableHostedZoneDNSSEC(const DisableHostedZoneDNSSECRequest& request) const {
@@ -641,7 +691,9 @@ DisableHostedZoneDNSSECOutcome Route53Client::DisableHostedZoneDNSSEC(const Disa
     endpointResolutionOutcome.GetResult().AddPathSegments("/disable-dnssec");
   };
 
-  return DisableHostedZoneDNSSECOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableHostedZoneDNSSECOutcome(result.GetResultWithOwnership())
+                            : DisableHostedZoneDNSSECOutcome(std::move(result.GetError()));
 }
 
 DisassociateVPCFromHostedZoneOutcome Route53Client::DisassociateVPCFromHostedZone(
@@ -659,7 +711,9 @@ DisassociateVPCFromHostedZoneOutcome Route53Client::DisassociateVPCFromHostedZon
     endpointResolutionOutcome.GetResult().AddPathSegments("/disassociatevpc");
   };
 
-  return DisassociateVPCFromHostedZoneOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateVPCFromHostedZoneOutcome(result.GetResultWithOwnership())
+                            : DisassociateVPCFromHostedZoneOutcome(std::move(result.GetError()));
 }
 
 EnableHostedZoneDNSSECOutcome Route53Client::EnableHostedZoneDNSSEC(const EnableHostedZoneDNSSECRequest& request) const {
@@ -676,7 +730,9 @@ EnableHostedZoneDNSSECOutcome Route53Client::EnableHostedZoneDNSSEC(const Enable
     endpointResolutionOutcome.GetResult().AddPathSegments("/enable-dnssec");
   };
 
-  return EnableHostedZoneDNSSECOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableHostedZoneDNSSECOutcome(result.GetResultWithOwnership())
+                            : EnableHostedZoneDNSSECOutcome(std::move(result.GetError()));
 }
 
 GetAccountLimitOutcome Route53Client::GetAccountLimit(const GetAccountLimitRequest& request) const {
@@ -692,7 +748,9 @@ GetAccountLimitOutcome Route53Client::GetAccountLimit(const GetAccountLimitReque
     endpointResolutionOutcome.GetResult().AddPathSegment(AccountLimitTypeMapper::GetNameForAccountLimitType(request.GetType()));
   };
 
-  return GetAccountLimitOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAccountLimitOutcome(result.GetResultWithOwnership())
+                            : GetAccountLimitOutcome(std::move(result.GetError()));
 }
 
 GetChangeOutcome Route53Client::GetChange(const GetChangeRequest& request) const {
@@ -708,7 +766,8 @@ GetChangeOutcome Route53Client::GetChange(const GetChangeRequest& request) const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetChangeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetChangeOutcome(result.GetResultWithOwnership()) : GetChangeOutcome(std::move(result.GetError()));
 }
 
 GetCheckerIpRangesOutcome Route53Client::GetCheckerIpRanges(const GetCheckerIpRangesRequest& request) const {
@@ -717,7 +776,9 @@ GetCheckerIpRangesOutcome Route53Client::GetCheckerIpRanges(const GetCheckerIpRa
     endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/checkeripranges");
   };
 
-  return GetCheckerIpRangesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCheckerIpRangesOutcome(result.GetResultWithOwnership())
+                            : GetCheckerIpRangesOutcome(std::move(result.GetError()));
 }
 
 GetDNSSECOutcome Route53Client::GetDNSSEC(const GetDNSSECRequest& request) const {
@@ -734,7 +795,8 @@ GetDNSSECOutcome Route53Client::GetDNSSEC(const GetDNSSECRequest& request) const
     endpointResolutionOutcome.GetResult().AddPathSegments("/dnssec");
   };
 
-  return GetDNSSECOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDNSSECOutcome(result.GetResultWithOwnership()) : GetDNSSECOutcome(std::move(result.GetError()));
 }
 
 GetGeoLocationOutcome Route53Client::GetGeoLocation(const GetGeoLocationRequest& request) const {
@@ -743,7 +805,8 @@ GetGeoLocationOutcome Route53Client::GetGeoLocation(const GetGeoLocationRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/geolocation");
   };
 
-  return GetGeoLocationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetGeoLocationOutcome(result.GetResultWithOwnership()) : GetGeoLocationOutcome(std::move(result.GetError()));
 }
 
 GetHealthCheckOutcome Route53Client::GetHealthCheck(const GetHealthCheckRequest& request) const {
@@ -759,7 +822,8 @@ GetHealthCheckOutcome Route53Client::GetHealthCheck(const GetHealthCheckRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHealthCheckId());
   };
 
-  return GetHealthCheckOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetHealthCheckOutcome(result.GetResultWithOwnership()) : GetHealthCheckOutcome(std::move(result.GetError()));
 }
 
 GetHealthCheckCountOutcome Route53Client::GetHealthCheckCount(const GetHealthCheckCountRequest& request) const {
@@ -768,7 +832,9 @@ GetHealthCheckCountOutcome Route53Client::GetHealthCheckCount(const GetHealthChe
     endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/healthcheckcount");
   };
 
-  return GetHealthCheckCountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetHealthCheckCountOutcome(result.GetResultWithOwnership())
+                            : GetHealthCheckCountOutcome(std::move(result.GetError()));
 }
 
 GetHealthCheckLastFailureReasonOutcome Route53Client::GetHealthCheckLastFailureReason(
@@ -786,7 +852,9 @@ GetHealthCheckLastFailureReasonOutcome Route53Client::GetHealthCheckLastFailureR
     endpointResolutionOutcome.GetResult().AddPathSegments("/lastfailurereason");
   };
 
-  return GetHealthCheckLastFailureReasonOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetHealthCheckLastFailureReasonOutcome(result.GetResultWithOwnership())
+                            : GetHealthCheckLastFailureReasonOutcome(std::move(result.GetError()));
 }
 
 GetHealthCheckStatusOutcome Route53Client::GetHealthCheckStatus(const GetHealthCheckStatusRequest& request) const {
@@ -803,7 +871,9 @@ GetHealthCheckStatusOutcome Route53Client::GetHealthCheckStatus(const GetHealthC
     endpointResolutionOutcome.GetResult().AddPathSegments("/status");
   };
 
-  return GetHealthCheckStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetHealthCheckStatusOutcome(result.GetResultWithOwnership())
+                            : GetHealthCheckStatusOutcome(std::move(result.GetError()));
 }
 
 GetHostedZoneOutcome Route53Client::GetHostedZone(const GetHostedZoneRequest& request) const {
@@ -819,7 +889,8 @@ GetHostedZoneOutcome Route53Client::GetHostedZone(const GetHostedZoneRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetHostedZoneOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetHostedZoneOutcome(result.GetResultWithOwnership()) : GetHostedZoneOutcome(std::move(result.GetError()));
 }
 
 GetHostedZoneCountOutcome Route53Client::GetHostedZoneCount(const GetHostedZoneCountRequest& request) const {
@@ -828,7 +899,9 @@ GetHostedZoneCountOutcome Route53Client::GetHostedZoneCount(const GetHostedZoneC
     endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/hostedzonecount");
   };
 
-  return GetHostedZoneCountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetHostedZoneCountOutcome(result.GetResultWithOwnership())
+                            : GetHostedZoneCountOutcome(std::move(result.GetError()));
 }
 
 GetHostedZoneLimitOutcome Route53Client::GetHostedZoneLimit(const GetHostedZoneLimitRequest& request) const {
@@ -850,7 +923,9 @@ GetHostedZoneLimitOutcome Route53Client::GetHostedZoneLimit(const GetHostedZoneL
     endpointResolutionOutcome.GetResult().AddPathSegment(HostedZoneLimitTypeMapper::GetNameForHostedZoneLimitType(request.GetType()));
   };
 
-  return GetHostedZoneLimitOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetHostedZoneLimitOutcome(result.GetResultWithOwnership())
+                            : GetHostedZoneLimitOutcome(std::move(result.GetError()));
 }
 
 GetQueryLoggingConfigOutcome Route53Client::GetQueryLoggingConfig(const GetQueryLoggingConfigRequest& request) const {
@@ -866,7 +941,9 @@ GetQueryLoggingConfigOutcome Route53Client::GetQueryLoggingConfig(const GetQuery
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetQueryLoggingConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetQueryLoggingConfigOutcome(result.GetResultWithOwnership())
+                            : GetQueryLoggingConfigOutcome(std::move(result.GetError()));
 }
 
 GetReusableDelegationSetOutcome Route53Client::GetReusableDelegationSet(const GetReusableDelegationSetRequest& request) const {
@@ -882,7 +959,9 @@ GetReusableDelegationSetOutcome Route53Client::GetReusableDelegationSet(const Ge
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetReusableDelegationSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetReusableDelegationSetOutcome(result.GetResultWithOwnership())
+                            : GetReusableDelegationSetOutcome(std::move(result.GetError()));
 }
 
 GetReusableDelegationSetLimitOutcome Route53Client::GetReusableDelegationSetLimit(
@@ -906,7 +985,9 @@ GetReusableDelegationSetLimitOutcome Route53Client::GetReusableDelegationSetLimi
         ReusableDelegationSetLimitTypeMapper::GetNameForReusableDelegationSetLimitType(request.GetType()));
   };
 
-  return GetReusableDelegationSetLimitOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetReusableDelegationSetLimitOutcome(result.GetResultWithOwnership())
+                            : GetReusableDelegationSetLimitOutcome(std::move(result.GetError()));
 }
 
 GetTrafficPolicyOutcome Route53Client::GetTrafficPolicy(const GetTrafficPolicyRequest& request) const {
@@ -928,7 +1009,9 @@ GetTrafficPolicyOutcome Route53Client::GetTrafficPolicy(const GetTrafficPolicyRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersion());
   };
 
-  return GetTrafficPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTrafficPolicyOutcome(result.GetResultWithOwnership())
+                            : GetTrafficPolicyOutcome(std::move(result.GetError()));
 }
 
 GetTrafficPolicyInstanceOutcome Route53Client::GetTrafficPolicyInstance(const GetTrafficPolicyInstanceRequest& request) const {
@@ -944,7 +1027,9 @@ GetTrafficPolicyInstanceOutcome Route53Client::GetTrafficPolicyInstance(const Ge
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetTrafficPolicyInstanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTrafficPolicyInstanceOutcome(result.GetResultWithOwnership())
+                            : GetTrafficPolicyInstanceOutcome(std::move(result.GetError()));
 }
 
 GetTrafficPolicyInstanceCountOutcome Route53Client::GetTrafficPolicyInstanceCount(
@@ -954,7 +1039,9 @@ GetTrafficPolicyInstanceCountOutcome Route53Client::GetTrafficPolicyInstanceCoun
     endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/trafficpolicyinstancecount");
   };
 
-  return GetTrafficPolicyInstanceCountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTrafficPolicyInstanceCountOutcome(result.GetResultWithOwnership())
+                            : GetTrafficPolicyInstanceCountOutcome(std::move(result.GetError()));
 }
 
 ListCidrBlocksOutcome Route53Client::ListCidrBlocks(const ListCidrBlocksRequest& request) const {
@@ -971,7 +1058,8 @@ ListCidrBlocksOutcome Route53Client::ListCidrBlocks(const ListCidrBlocksRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/cidrblocks");
   };
 
-  return ListCidrBlocksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCidrBlocksOutcome(result.GetResultWithOwnership()) : ListCidrBlocksOutcome(std::move(result.GetError()));
 }
 
 ListCidrCollectionsOutcome Route53Client::ListCidrCollections(const ListCidrCollectionsRequest& request) const {
@@ -980,7 +1068,9 @@ ListCidrCollectionsOutcome Route53Client::ListCidrCollections(const ListCidrColl
     endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/cidrcollection");
   };
 
-  return ListCidrCollectionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCidrCollectionsOutcome(result.GetResultWithOwnership())
+                            : ListCidrCollectionsOutcome(std::move(result.GetError()));
 }
 
 ListCidrLocationsOutcome Route53Client::ListCidrLocations(const ListCidrLocationsRequest& request) const {
@@ -996,7 +1086,9 @@ ListCidrLocationsOutcome Route53Client::ListCidrLocations(const ListCidrLocation
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCollectionId());
   };
 
-  return ListCidrLocationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCidrLocationsOutcome(result.GetResultWithOwnership())
+                            : ListCidrLocationsOutcome(std::move(result.GetError()));
 }
 
 ListGeoLocationsOutcome Route53Client::ListGeoLocations(const ListGeoLocationsRequest& request) const {
@@ -1005,7 +1097,9 @@ ListGeoLocationsOutcome Route53Client::ListGeoLocations(const ListGeoLocationsRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/geolocations");
   };
 
-  return ListGeoLocationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListGeoLocationsOutcome(result.GetResultWithOwnership())
+                            : ListGeoLocationsOutcome(std::move(result.GetError()));
 }
 
 ListHealthChecksOutcome Route53Client::ListHealthChecks(const ListHealthChecksRequest& request) const {
@@ -1014,7 +1108,9 @@ ListHealthChecksOutcome Route53Client::ListHealthChecks(const ListHealthChecksRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/healthcheck");
   };
 
-  return ListHealthChecksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListHealthChecksOutcome(result.GetResultWithOwnership())
+                            : ListHealthChecksOutcome(std::move(result.GetError()));
 }
 
 ListHostedZonesOutcome Route53Client::ListHostedZones(const ListHostedZonesRequest& request) const {
@@ -1023,7 +1119,9 @@ ListHostedZonesOutcome Route53Client::ListHostedZones(const ListHostedZonesReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/hostedzone");
   };
 
-  return ListHostedZonesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListHostedZonesOutcome(result.GetResultWithOwnership())
+                            : ListHostedZonesOutcome(std::move(result.GetError()));
 }
 
 ListHostedZonesByNameOutcome Route53Client::ListHostedZonesByName(const ListHostedZonesByNameRequest& request) const {
@@ -1032,7 +1130,9 @@ ListHostedZonesByNameOutcome Route53Client::ListHostedZonesByName(const ListHost
     endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/hostedzonesbyname");
   };
 
-  return ListHostedZonesByNameOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListHostedZonesByNameOutcome(result.GetResultWithOwnership())
+                            : ListHostedZonesByNameOutcome(std::move(result.GetError()));
 }
 
 ListHostedZonesByVPCOutcome Route53Client::ListHostedZonesByVPC(const ListHostedZonesByVPCRequest& request) const {
@@ -1052,7 +1152,9 @@ ListHostedZonesByVPCOutcome Route53Client::ListHostedZonesByVPC(const ListHosted
     endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/hostedzonesbyvpc");
   };
 
-  return ListHostedZonesByVPCOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListHostedZonesByVPCOutcome(result.GetResultWithOwnership())
+                            : ListHostedZonesByVPCOutcome(std::move(result.GetError()));
 }
 
 ListQueryLoggingConfigsOutcome Route53Client::ListQueryLoggingConfigs(const ListQueryLoggingConfigsRequest& request) const {
@@ -1061,7 +1163,9 @@ ListQueryLoggingConfigsOutcome Route53Client::ListQueryLoggingConfigs(const List
     endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/queryloggingconfig");
   };
 
-  return ListQueryLoggingConfigsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListQueryLoggingConfigsOutcome(result.GetResultWithOwnership())
+                            : ListQueryLoggingConfigsOutcome(std::move(result.GetError()));
 }
 
 ListResourceRecordSetsOutcome Route53Client::ListResourceRecordSets(const ListResourceRecordSetsRequest& request) const {
@@ -1078,7 +1182,9 @@ ListResourceRecordSetsOutcome Route53Client::ListResourceRecordSets(const ListRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/rrset");
   };
 
-  return ListResourceRecordSetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListResourceRecordSetsOutcome(result.GetResultWithOwnership())
+                            : ListResourceRecordSetsOutcome(std::move(result.GetError()));
 }
 
 ListReusableDelegationSetsOutcome Route53Client::ListReusableDelegationSets(const ListReusableDelegationSetsRequest& request) const {
@@ -1087,7 +1193,9 @@ ListReusableDelegationSetsOutcome Route53Client::ListReusableDelegationSets(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/delegationset");
   };
 
-  return ListReusableDelegationSetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListReusableDelegationSetsOutcome(result.GetResultWithOwnership())
+                            : ListReusableDelegationSetsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome Route53Client::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -1109,7 +1217,9 @@ ListTagsForResourceOutcome Route53Client::ListTagsForResource(const ListTagsForR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceId());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourcesOutcome Route53Client::ListTagsForResources(const ListTagsForResourcesRequest& request) const {
@@ -1125,7 +1235,9 @@ ListTagsForResourcesOutcome Route53Client::ListTagsForResources(const ListTagsFo
     endpointResolutionOutcome.GetResult().AddPathSegment(TagResourceTypeMapper::GetNameForTagResourceType(request.GetResourceType()));
   };
 
-  return ListTagsForResourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourcesOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourcesOutcome(std::move(result.GetError()));
 }
 
 ListTrafficPoliciesOutcome Route53Client::ListTrafficPolicies(const ListTrafficPoliciesRequest& request) const {
@@ -1134,7 +1246,9 @@ ListTrafficPoliciesOutcome Route53Client::ListTrafficPolicies(const ListTrafficP
     endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/trafficpolicies");
   };
 
-  return ListTrafficPoliciesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTrafficPoliciesOutcome(result.GetResultWithOwnership())
+                            : ListTrafficPoliciesOutcome(std::move(result.GetError()));
 }
 
 ListTrafficPolicyInstancesOutcome Route53Client::ListTrafficPolicyInstances(const ListTrafficPolicyInstancesRequest& request) const {
@@ -1143,7 +1257,9 @@ ListTrafficPolicyInstancesOutcome Route53Client::ListTrafficPolicyInstances(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/trafficpolicyinstances");
   };
 
-  return ListTrafficPolicyInstancesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTrafficPolicyInstancesOutcome(result.GetResultWithOwnership())
+                            : ListTrafficPolicyInstancesOutcome(std::move(result.GetError()));
 }
 
 ListTrafficPolicyInstancesByHostedZoneOutcome Route53Client::ListTrafficPolicyInstancesByHostedZone(
@@ -1159,7 +1275,9 @@ ListTrafficPolicyInstancesByHostedZoneOutcome Route53Client::ListTrafficPolicyIn
     endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/trafficpolicyinstances/hostedzone");
   };
 
-  return ListTrafficPolicyInstancesByHostedZoneOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTrafficPolicyInstancesByHostedZoneOutcome(result.GetResultWithOwnership())
+                            : ListTrafficPolicyInstancesByHostedZoneOutcome(std::move(result.GetError()));
 }
 
 ListTrafficPolicyInstancesByPolicyOutcome Route53Client::ListTrafficPolicyInstancesByPolicy(
@@ -1180,7 +1298,9 @@ ListTrafficPolicyInstancesByPolicyOutcome Route53Client::ListTrafficPolicyInstan
     endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/trafficpolicyinstances/trafficpolicy");
   };
 
-  return ListTrafficPolicyInstancesByPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTrafficPolicyInstancesByPolicyOutcome(result.GetResultWithOwnership())
+                            : ListTrafficPolicyInstancesByPolicyOutcome(std::move(result.GetError()));
 }
 
 ListTrafficPolicyVersionsOutcome Route53Client::ListTrafficPolicyVersions(const ListTrafficPolicyVersionsRequest& request) const {
@@ -1197,7 +1317,9 @@ ListTrafficPolicyVersionsOutcome Route53Client::ListTrafficPolicyVersions(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
   };
 
-  return ListTrafficPolicyVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTrafficPolicyVersionsOutcome(result.GetResultWithOwnership())
+                            : ListTrafficPolicyVersionsOutcome(std::move(result.GetError()));
 }
 
 ListVPCAssociationAuthorizationsOutcome Route53Client::ListVPCAssociationAuthorizations(
@@ -1215,7 +1337,9 @@ ListVPCAssociationAuthorizationsOutcome Route53Client::ListVPCAssociationAuthori
     endpointResolutionOutcome.GetResult().AddPathSegments("/authorizevpcassociation");
   };
 
-  return ListVPCAssociationAuthorizationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListVPCAssociationAuthorizationsOutcome(result.GetResultWithOwnership())
+                            : ListVPCAssociationAuthorizationsOutcome(std::move(result.GetError()));
 }
 
 TestDNSAnswerOutcome Route53Client::TestDNSAnswer(const TestDNSAnswerRequest& request) const {
@@ -1240,7 +1364,8 @@ TestDNSAnswerOutcome Route53Client::TestDNSAnswer(const TestDNSAnswerRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/testdnsanswer");
   };
 
-  return TestDNSAnswerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? TestDNSAnswerOutcome(result.GetResultWithOwnership()) : TestDNSAnswerOutcome(std::move(result.GetError()));
 }
 
 UpdateHealthCheckOutcome Route53Client::UpdateHealthCheck(const UpdateHealthCheckRequest& request) const {
@@ -1256,7 +1381,9 @@ UpdateHealthCheckOutcome Route53Client::UpdateHealthCheck(const UpdateHealthChec
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHealthCheckId());
   };
 
-  return UpdateHealthCheckOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateHealthCheckOutcome(result.GetResultWithOwnership())
+                            : UpdateHealthCheckOutcome(std::move(result.GetError()));
 }
 
 UpdateHostedZoneCommentOutcome Route53Client::UpdateHostedZoneComment(const UpdateHostedZoneCommentRequest& request) const {
@@ -1272,7 +1399,9 @@ UpdateHostedZoneCommentOutcome Route53Client::UpdateHostedZoneComment(const Upda
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateHostedZoneCommentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateHostedZoneCommentOutcome(result.GetResultWithOwnership())
+                            : UpdateHostedZoneCommentOutcome(std::move(result.GetError()));
 }
 
 UpdateHostedZoneFeaturesOutcome Route53Client::UpdateHostedZoneFeatures(const UpdateHostedZoneFeaturesRequest& request) const {
@@ -1289,7 +1418,9 @@ UpdateHostedZoneFeaturesOutcome Route53Client::UpdateHostedZoneFeatures(const Up
     endpointResolutionOutcome.GetResult().AddPathSegments("/features");
   };
 
-  return UpdateHostedZoneFeaturesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateHostedZoneFeaturesOutcome(result.GetResultWithOwnership())
+                            : UpdateHostedZoneFeaturesOutcome(std::move(result.GetError()));
 }
 
 UpdateTrafficPolicyCommentOutcome Route53Client::UpdateTrafficPolicyComment(const UpdateTrafficPolicyCommentRequest& request) const {
@@ -1311,7 +1442,9 @@ UpdateTrafficPolicyCommentOutcome Route53Client::UpdateTrafficPolicyComment(cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersion());
   };
 
-  return UpdateTrafficPolicyCommentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTrafficPolicyCommentOutcome(result.GetResultWithOwnership())
+                            : UpdateTrafficPolicyCommentOutcome(std::move(result.GetError()));
 }
 
 UpdateTrafficPolicyInstanceOutcome Route53Client::UpdateTrafficPolicyInstance(const UpdateTrafficPolicyInstanceRequest& request) const {
@@ -1327,5 +1460,7 @@ UpdateTrafficPolicyInstanceOutcome Route53Client::UpdateTrafficPolicyInstance(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateTrafficPolicyInstanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTrafficPolicyInstanceOutcome(result.GetResultWithOwnership())
+                            : UpdateTrafficPolicyInstanceOutcome(std::move(result.GetError()));
 }

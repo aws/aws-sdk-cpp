@@ -306,7 +306,8 @@ CreateApiKeyOutcome APIGatewayClient::CreateApiKey(const CreateApiKeyRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/apikeys");
   };
 
-  return CreateApiKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateApiKeyOutcome(result.GetResultWithOwnership()) : CreateApiKeyOutcome(std::move(result.GetError()));
 }
 
 CreateAuthorizerOutcome APIGatewayClient::CreateAuthorizer(const CreateAuthorizerRequest& request) const {
@@ -323,7 +324,9 @@ CreateAuthorizerOutcome APIGatewayClient::CreateAuthorizer(const CreateAuthorize
     endpointResolutionOutcome.GetResult().AddPathSegments("/authorizers");
   };
 
-  return CreateAuthorizerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAuthorizerOutcome(result.GetResultWithOwnership())
+                            : CreateAuthorizerOutcome(std::move(result.GetError()));
 }
 
 CreateBasePathMappingOutcome APIGatewayClient::CreateBasePathMapping(const CreateBasePathMappingRequest& request) const {
@@ -340,7 +343,9 @@ CreateBasePathMappingOutcome APIGatewayClient::CreateBasePathMapping(const Creat
     endpointResolutionOutcome.GetResult().AddPathSegments("/basepathmappings");
   };
 
-  return CreateBasePathMappingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBasePathMappingOutcome(result.GetResultWithOwnership())
+                            : CreateBasePathMappingOutcome(std::move(result.GetError()));
 }
 
 CreateDeploymentOutcome APIGatewayClient::CreateDeployment(const CreateDeploymentRequest& request) const {
@@ -357,7 +362,9 @@ CreateDeploymentOutcome APIGatewayClient::CreateDeployment(const CreateDeploymen
     endpointResolutionOutcome.GetResult().AddPathSegments("/deployments");
   };
 
-  return CreateDeploymentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDeploymentOutcome(result.GetResultWithOwnership())
+                            : CreateDeploymentOutcome(std::move(result.GetError()));
 }
 
 CreateDocumentationPartOutcome APIGatewayClient::CreateDocumentationPart(const CreateDocumentationPartRequest& request) const {
@@ -374,7 +381,9 @@ CreateDocumentationPartOutcome APIGatewayClient::CreateDocumentationPart(const C
     endpointResolutionOutcome.GetResult().AddPathSegments("/documentation/parts");
   };
 
-  return CreateDocumentationPartOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDocumentationPartOutcome(result.GetResultWithOwnership())
+                            : CreateDocumentationPartOutcome(std::move(result.GetError()));
 }
 
 CreateDocumentationVersionOutcome APIGatewayClient::CreateDocumentationVersion(const CreateDocumentationVersionRequest& request) const {
@@ -391,7 +400,9 @@ CreateDocumentationVersionOutcome APIGatewayClient::CreateDocumentationVersion(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/documentation/versions");
   };
 
-  return CreateDocumentationVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDocumentationVersionOutcome(result.GetResultWithOwnership())
+                            : CreateDocumentationVersionOutcome(std::move(result.GetError()));
 }
 
 CreateDomainNameOutcome APIGatewayClient::CreateDomainName(const CreateDomainNameRequest& request) const {
@@ -400,7 +411,9 @@ CreateDomainNameOutcome APIGatewayClient::CreateDomainName(const CreateDomainNam
     endpointResolutionOutcome.GetResult().AddPathSegments("/domainnames");
   };
 
-  return CreateDomainNameOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDomainNameOutcome(result.GetResultWithOwnership())
+                            : CreateDomainNameOutcome(std::move(result.GetError()));
 }
 
 CreateDomainNameAccessAssociationOutcome APIGatewayClient::CreateDomainNameAccessAssociation(
@@ -410,7 +423,9 @@ CreateDomainNameAccessAssociationOutcome APIGatewayClient::CreateDomainNameAcces
     endpointResolutionOutcome.GetResult().AddPathSegments("/domainnameaccessassociations");
   };
 
-  return CreateDomainNameAccessAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDomainNameAccessAssociationOutcome(result.GetResultWithOwnership())
+                            : CreateDomainNameAccessAssociationOutcome(std::move(result.GetError()));
 }
 
 CreateModelOutcome APIGatewayClient::CreateModel(const CreateModelRequest& request) const {
@@ -427,7 +442,8 @@ CreateModelOutcome APIGatewayClient::CreateModel(const CreateModelRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/models");
   };
 
-  return CreateModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateModelOutcome(result.GetResultWithOwnership()) : CreateModelOutcome(std::move(result.GetError()));
 }
 
 CreateRequestValidatorOutcome APIGatewayClient::CreateRequestValidator(const CreateRequestValidatorRequest& request) const {
@@ -444,7 +460,9 @@ CreateRequestValidatorOutcome APIGatewayClient::CreateRequestValidator(const Cre
     endpointResolutionOutcome.GetResult().AddPathSegments("/requestvalidators");
   };
 
-  return CreateRequestValidatorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRequestValidatorOutcome(result.GetResultWithOwnership())
+                            : CreateRequestValidatorOutcome(std::move(result.GetError()));
 }
 
 CreateResourceOutcome APIGatewayClient::CreateResource(const CreateResourceRequest& request) const {
@@ -467,7 +485,8 @@ CreateResourceOutcome APIGatewayClient::CreateResource(const CreateResourceReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetParentId());
   };
 
-  return CreateResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateResourceOutcome(result.GetResultWithOwnership()) : CreateResourceOutcome(std::move(result.GetError()));
 }
 
 CreateRestApiOutcome APIGatewayClient::CreateRestApi(const CreateRestApiRequest& request) const {
@@ -476,7 +495,8 @@ CreateRestApiOutcome APIGatewayClient::CreateRestApi(const CreateRestApiRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/restapis");
   };
 
-  return CreateRestApiOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRestApiOutcome(result.GetResultWithOwnership()) : CreateRestApiOutcome(std::move(result.GetError()));
 }
 
 CreateStageOutcome APIGatewayClient::CreateStage(const CreateStageRequest& request) const {
@@ -493,7 +513,8 @@ CreateStageOutcome APIGatewayClient::CreateStage(const CreateStageRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/stages");
   };
 
-  return CreateStageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateStageOutcome(result.GetResultWithOwnership()) : CreateStageOutcome(std::move(result.GetError()));
 }
 
 CreateUsagePlanOutcome APIGatewayClient::CreateUsagePlan(const CreateUsagePlanRequest& request) const {
@@ -502,7 +523,9 @@ CreateUsagePlanOutcome APIGatewayClient::CreateUsagePlan(const CreateUsagePlanRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/usageplans");
   };
 
-  return CreateUsagePlanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateUsagePlanOutcome(result.GetResultWithOwnership())
+                            : CreateUsagePlanOutcome(std::move(result.GetError()));
 }
 
 CreateUsagePlanKeyOutcome APIGatewayClient::CreateUsagePlanKey(const CreateUsagePlanKeyRequest& request) const {
@@ -519,7 +542,9 @@ CreateUsagePlanKeyOutcome APIGatewayClient::CreateUsagePlanKey(const CreateUsage
     endpointResolutionOutcome.GetResult().AddPathSegments("/keys");
   };
 
-  return CreateUsagePlanKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateUsagePlanKeyOutcome(result.GetResultWithOwnership())
+                            : CreateUsagePlanKeyOutcome(std::move(result.GetError()));
 }
 
 CreateVpcLinkOutcome APIGatewayClient::CreateVpcLink(const CreateVpcLinkRequest& request) const {
@@ -528,7 +553,8 @@ CreateVpcLinkOutcome APIGatewayClient::CreateVpcLink(const CreateVpcLinkRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/vpclinks");
   };
 
-  return CreateVpcLinkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateVpcLinkOutcome(result.GetResultWithOwnership()) : CreateVpcLinkOutcome(std::move(result.GetError()));
 }
 
 DeleteApiKeyOutcome APIGatewayClient::DeleteApiKey(const DeleteApiKeyRequest& request) const {
@@ -544,7 +570,8 @@ DeleteApiKeyOutcome APIGatewayClient::DeleteApiKey(const DeleteApiKeyRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApiKey());
   };
 
-  return DeleteApiKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteApiKeyOutcome(result.GetResultWithOwnership()) : DeleteApiKeyOutcome(std::move(result.GetError()));
 }
 
 DeleteAuthorizerOutcome APIGatewayClient::DeleteAuthorizer(const DeleteAuthorizerRequest& request) const {
@@ -567,7 +594,9 @@ DeleteAuthorizerOutcome APIGatewayClient::DeleteAuthorizer(const DeleteAuthorize
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAuthorizerId());
   };
 
-  return DeleteAuthorizerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAuthorizerOutcome(result.GetResultWithOwnership())
+                            : DeleteAuthorizerOutcome(std::move(result.GetError()));
 }
 
 DeleteBasePathMappingOutcome APIGatewayClient::DeleteBasePathMapping(const DeleteBasePathMappingRequest& request) const {
@@ -590,7 +619,9 @@ DeleteBasePathMappingOutcome APIGatewayClient::DeleteBasePathMapping(const Delet
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBasePath());
   };
 
-  return DeleteBasePathMappingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBasePathMappingOutcome(result.GetResultWithOwnership())
+                            : DeleteBasePathMappingOutcome(std::move(result.GetError()));
 }
 
 DeleteClientCertificateOutcome APIGatewayClient::DeleteClientCertificate(const DeleteClientCertificateRequest& request) const {
@@ -606,7 +637,9 @@ DeleteClientCertificateOutcome APIGatewayClient::DeleteClientCertificate(const D
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClientCertificateId());
   };
 
-  return DeleteClientCertificateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteClientCertificateOutcome(result.GetResultWithOwnership())
+                            : DeleteClientCertificateOutcome(std::move(result.GetError()));
 }
 
 DeleteDeploymentOutcome APIGatewayClient::DeleteDeployment(const DeleteDeploymentRequest& request) const {
@@ -629,7 +662,9 @@ DeleteDeploymentOutcome APIGatewayClient::DeleteDeployment(const DeleteDeploymen
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDeploymentId());
   };
 
-  return DeleteDeploymentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDeploymentOutcome(result.GetResultWithOwnership())
+                            : DeleteDeploymentOutcome(std::move(result.GetError()));
 }
 
 DeleteDocumentationPartOutcome APIGatewayClient::DeleteDocumentationPart(const DeleteDocumentationPartRequest& request) const {
@@ -652,7 +687,9 @@ DeleteDocumentationPartOutcome APIGatewayClient::DeleteDocumentationPart(const D
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDocumentationPartId());
   };
 
-  return DeleteDocumentationPartOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDocumentationPartOutcome(result.GetResultWithOwnership())
+                            : DeleteDocumentationPartOutcome(std::move(result.GetError()));
 }
 
 DeleteDocumentationVersionOutcome APIGatewayClient::DeleteDocumentationVersion(const DeleteDocumentationVersionRequest& request) const {
@@ -675,7 +712,9 @@ DeleteDocumentationVersionOutcome APIGatewayClient::DeleteDocumentationVersion(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDocumentationVersion());
   };
 
-  return DeleteDocumentationVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDocumentationVersionOutcome(result.GetResultWithOwnership())
+                            : DeleteDocumentationVersionOutcome(std::move(result.GetError()));
 }
 
 DeleteDomainNameOutcome APIGatewayClient::DeleteDomainName(const DeleteDomainNameRequest& request) const {
@@ -691,7 +730,9 @@ DeleteDomainNameOutcome APIGatewayClient::DeleteDomainName(const DeleteDomainNam
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
   };
 
-  return DeleteDomainNameOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDomainNameOutcome(result.GetResultWithOwnership())
+                            : DeleteDomainNameOutcome(std::move(result.GetError()));
 }
 
 DeleteDomainNameAccessAssociationOutcome APIGatewayClient::DeleteDomainNameAccessAssociation(
@@ -708,7 +749,9 @@ DeleteDomainNameAccessAssociationOutcome APIGatewayClient::DeleteDomainNameAcces
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainNameAccessAssociationArn());
   };
 
-  return DeleteDomainNameAccessAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDomainNameAccessAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteDomainNameAccessAssociationOutcome(std::move(result.GetError()));
 }
 
 DeleteGatewayResponseOutcome APIGatewayClient::DeleteGatewayResponse(const DeleteGatewayResponseRequest& request) const {
@@ -732,7 +775,9 @@ DeleteGatewayResponseOutcome APIGatewayClient::DeleteGatewayResponse(const Delet
         GatewayResponseTypeMapper::GetNameForGatewayResponseType(request.GetResponseType()));
   };
 
-  return DeleteGatewayResponseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteGatewayResponseOutcome(result.GetResultWithOwnership())
+                            : DeleteGatewayResponseOutcome(std::move(result.GetError()));
 }
 
 DeleteIntegrationOutcome APIGatewayClient::DeleteIntegration(const DeleteIntegrationRequest& request) const {
@@ -763,7 +808,9 @@ DeleteIntegrationOutcome APIGatewayClient::DeleteIntegration(const DeleteIntegra
     endpointResolutionOutcome.GetResult().AddPathSegments("/integration");
   };
 
-  return DeleteIntegrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteIntegrationOutcome(result.GetResultWithOwnership())
+                            : DeleteIntegrationOutcome(std::move(result.GetError()));
 }
 
 DeleteIntegrationResponseOutcome APIGatewayClient::DeleteIntegrationResponse(const DeleteIntegrationResponseRequest& request) const {
@@ -800,7 +847,9 @@ DeleteIntegrationResponseOutcome APIGatewayClient::DeleteIntegrationResponse(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStatusCode());
   };
 
-  return DeleteIntegrationResponseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteIntegrationResponseOutcome(result.GetResultWithOwnership())
+                            : DeleteIntegrationResponseOutcome(std::move(result.GetError()));
 }
 
 DeleteMethodOutcome APIGatewayClient::DeleteMethod(const DeleteMethodRequest& request) const {
@@ -830,7 +879,8 @@ DeleteMethodOutcome APIGatewayClient::DeleteMethod(const DeleteMethodRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHttpMethod());
   };
 
-  return DeleteMethodOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMethodOutcome(result.GetResultWithOwnership()) : DeleteMethodOutcome(std::move(result.GetError()));
 }
 
 DeleteMethodResponseOutcome APIGatewayClient::DeleteMethodResponse(const DeleteMethodResponseRequest& request) const {
@@ -867,7 +917,9 @@ DeleteMethodResponseOutcome APIGatewayClient::DeleteMethodResponse(const DeleteM
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStatusCode());
   };
 
-  return DeleteMethodResponseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMethodResponseOutcome(result.GetResultWithOwnership())
+                            : DeleteMethodResponseOutcome(std::move(result.GetError()));
 }
 
 DeleteModelOutcome APIGatewayClient::DeleteModel(const DeleteModelRequest& request) const {
@@ -890,7 +942,8 @@ DeleteModelOutcome APIGatewayClient::DeleteModel(const DeleteModelRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetModelName());
   };
 
-  return DeleteModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteModelOutcome(result.GetResultWithOwnership()) : DeleteModelOutcome(std::move(result.GetError()));
 }
 
 DeleteRequestValidatorOutcome APIGatewayClient::DeleteRequestValidator(const DeleteRequestValidatorRequest& request) const {
@@ -913,7 +966,9 @@ DeleteRequestValidatorOutcome APIGatewayClient::DeleteRequestValidator(const Del
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRequestValidatorId());
   };
 
-  return DeleteRequestValidatorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRequestValidatorOutcome(result.GetResultWithOwnership())
+                            : DeleteRequestValidatorOutcome(std::move(result.GetError()));
 }
 
 DeleteResourceOutcome APIGatewayClient::DeleteResource(const DeleteResourceRequest& request) const {
@@ -936,7 +991,8 @@ DeleteResourceOutcome APIGatewayClient::DeleteResource(const DeleteResourceReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceId());
   };
 
-  return DeleteResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteResourceOutcome(result.GetResultWithOwnership()) : DeleteResourceOutcome(std::move(result.GetError()));
 }
 
 DeleteRestApiOutcome APIGatewayClient::DeleteRestApi(const DeleteRestApiRequest& request) const {
@@ -952,7 +1008,8 @@ DeleteRestApiOutcome APIGatewayClient::DeleteRestApi(const DeleteRestApiRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestApiId());
   };
 
-  return DeleteRestApiOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRestApiOutcome(result.GetResultWithOwnership()) : DeleteRestApiOutcome(std::move(result.GetError()));
 }
 
 DeleteStageOutcome APIGatewayClient::DeleteStage(const DeleteStageRequest& request) const {
@@ -975,7 +1032,8 @@ DeleteStageOutcome APIGatewayClient::DeleteStage(const DeleteStageRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStageName());
   };
 
-  return DeleteStageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteStageOutcome(result.GetResultWithOwnership()) : DeleteStageOutcome(std::move(result.GetError()));
 }
 
 DeleteUsagePlanOutcome APIGatewayClient::DeleteUsagePlan(const DeleteUsagePlanRequest& request) const {
@@ -991,7 +1049,9 @@ DeleteUsagePlanOutcome APIGatewayClient::DeleteUsagePlan(const DeleteUsagePlanRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUsagePlanId());
   };
 
-  return DeleteUsagePlanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteUsagePlanOutcome(result.GetResultWithOwnership())
+                            : DeleteUsagePlanOutcome(std::move(result.GetError()));
 }
 
 DeleteUsagePlanKeyOutcome APIGatewayClient::DeleteUsagePlanKey(const DeleteUsagePlanKeyRequest& request) const {
@@ -1014,7 +1074,9 @@ DeleteUsagePlanKeyOutcome APIGatewayClient::DeleteUsagePlanKey(const DeleteUsage
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKeyId());
   };
 
-  return DeleteUsagePlanKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteUsagePlanKeyOutcome(result.GetResultWithOwnership())
+                            : DeleteUsagePlanKeyOutcome(std::move(result.GetError()));
 }
 
 DeleteVpcLinkOutcome APIGatewayClient::DeleteVpcLink(const DeleteVpcLinkRequest& request) const {
@@ -1030,7 +1092,8 @@ DeleteVpcLinkOutcome APIGatewayClient::DeleteVpcLink(const DeleteVpcLinkRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVpcLinkId());
   };
 
-  return DeleteVpcLinkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteVpcLinkOutcome(result.GetResultWithOwnership()) : DeleteVpcLinkOutcome(std::move(result.GetError()));
 }
 
 FlushStageAuthorizersCacheOutcome APIGatewayClient::FlushStageAuthorizersCache(const FlushStageAuthorizersCacheRequest& request) const {
@@ -1054,7 +1117,9 @@ FlushStageAuthorizersCacheOutcome APIGatewayClient::FlushStageAuthorizersCache(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/cache/authorizers");
   };
 
-  return FlushStageAuthorizersCacheOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? FlushStageAuthorizersCacheOutcome(result.GetResultWithOwnership())
+                            : FlushStageAuthorizersCacheOutcome(std::move(result.GetError()));
 }
 
 FlushStageCacheOutcome APIGatewayClient::FlushStageCache(const FlushStageCacheRequest& request) const {
@@ -1078,7 +1143,9 @@ FlushStageCacheOutcome APIGatewayClient::FlushStageCache(const FlushStageCacheRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/cache/data");
   };
 
-  return FlushStageCacheOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? FlushStageCacheOutcome(result.GetResultWithOwnership())
+                            : FlushStageCacheOutcome(std::move(result.GetError()));
 }
 
 GenerateClientCertificateOutcome APIGatewayClient::GenerateClientCertificate(const GenerateClientCertificateRequest& request) const {
@@ -1087,7 +1154,9 @@ GenerateClientCertificateOutcome APIGatewayClient::GenerateClientCertificate(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/clientcertificates");
   };
 
-  return GenerateClientCertificateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GenerateClientCertificateOutcome(result.GetResultWithOwnership())
+                            : GenerateClientCertificateOutcome(std::move(result.GetError()));
 }
 
 GetAccountOutcome APIGatewayClient::GetAccount(const GetAccountRequest& request) const {
@@ -1096,7 +1165,8 @@ GetAccountOutcome APIGatewayClient::GetAccount(const GetAccountRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegments("/account");
   };
 
-  return GetAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAccountOutcome(result.GetResultWithOwnership()) : GetAccountOutcome(std::move(result.GetError()));
 }
 
 GetApiKeyOutcome APIGatewayClient::GetApiKey(const GetApiKeyRequest& request) const {
@@ -1112,7 +1182,8 @@ GetApiKeyOutcome APIGatewayClient::GetApiKey(const GetApiKeyRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApiKey());
   };
 
-  return GetApiKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetApiKeyOutcome(result.GetResultWithOwnership()) : GetApiKeyOutcome(std::move(result.GetError()));
 }
 
 GetApiKeysOutcome APIGatewayClient::GetApiKeys(const GetApiKeysRequest& request) const {
@@ -1121,7 +1192,8 @@ GetApiKeysOutcome APIGatewayClient::GetApiKeys(const GetApiKeysRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegments("/apikeys");
   };
 
-  return GetApiKeysOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetApiKeysOutcome(result.GetResultWithOwnership()) : GetApiKeysOutcome(std::move(result.GetError()));
 }
 
 GetAuthorizerOutcome APIGatewayClient::GetAuthorizer(const GetAuthorizerRequest& request) const {
@@ -1144,7 +1216,8 @@ GetAuthorizerOutcome APIGatewayClient::GetAuthorizer(const GetAuthorizerRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAuthorizerId());
   };
 
-  return GetAuthorizerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAuthorizerOutcome(result.GetResultWithOwnership()) : GetAuthorizerOutcome(std::move(result.GetError()));
 }
 
 GetAuthorizersOutcome APIGatewayClient::GetAuthorizers(const GetAuthorizersRequest& request) const {
@@ -1161,7 +1234,8 @@ GetAuthorizersOutcome APIGatewayClient::GetAuthorizers(const GetAuthorizersReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/authorizers");
   };
 
-  return GetAuthorizersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAuthorizersOutcome(result.GetResultWithOwnership()) : GetAuthorizersOutcome(std::move(result.GetError()));
 }
 
 GetBasePathMappingOutcome APIGatewayClient::GetBasePathMapping(const GetBasePathMappingRequest& request) const {
@@ -1184,7 +1258,9 @@ GetBasePathMappingOutcome APIGatewayClient::GetBasePathMapping(const GetBasePath
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBasePath());
   };
 
-  return GetBasePathMappingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBasePathMappingOutcome(result.GetResultWithOwnership())
+                            : GetBasePathMappingOutcome(std::move(result.GetError()));
 }
 
 GetBasePathMappingsOutcome APIGatewayClient::GetBasePathMappings(const GetBasePathMappingsRequest& request) const {
@@ -1201,7 +1277,9 @@ GetBasePathMappingsOutcome APIGatewayClient::GetBasePathMappings(const GetBasePa
     endpointResolutionOutcome.GetResult().AddPathSegments("/basepathmappings");
   };
 
-  return GetBasePathMappingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBasePathMappingsOutcome(result.GetResultWithOwnership())
+                            : GetBasePathMappingsOutcome(std::move(result.GetError()));
 }
 
 GetClientCertificateOutcome APIGatewayClient::GetClientCertificate(const GetClientCertificateRequest& request) const {
@@ -1217,7 +1295,9 @@ GetClientCertificateOutcome APIGatewayClient::GetClientCertificate(const GetClie
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClientCertificateId());
   };
 
-  return GetClientCertificateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetClientCertificateOutcome(result.GetResultWithOwnership())
+                            : GetClientCertificateOutcome(std::move(result.GetError()));
 }
 
 GetClientCertificatesOutcome APIGatewayClient::GetClientCertificates(const GetClientCertificatesRequest& request) const {
@@ -1226,7 +1306,9 @@ GetClientCertificatesOutcome APIGatewayClient::GetClientCertificates(const GetCl
     endpointResolutionOutcome.GetResult().AddPathSegments("/clientcertificates");
   };
 
-  return GetClientCertificatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetClientCertificatesOutcome(result.GetResultWithOwnership())
+                            : GetClientCertificatesOutcome(std::move(result.GetError()));
 }
 
 GetDeploymentOutcome APIGatewayClient::GetDeployment(const GetDeploymentRequest& request) const {
@@ -1249,7 +1331,8 @@ GetDeploymentOutcome APIGatewayClient::GetDeployment(const GetDeploymentRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDeploymentId());
   };
 
-  return GetDeploymentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDeploymentOutcome(result.GetResultWithOwnership()) : GetDeploymentOutcome(std::move(result.GetError()));
 }
 
 GetDeploymentsOutcome APIGatewayClient::GetDeployments(const GetDeploymentsRequest& request) const {
@@ -1266,7 +1349,8 @@ GetDeploymentsOutcome APIGatewayClient::GetDeployments(const GetDeploymentsReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/deployments");
   };
 
-  return GetDeploymentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDeploymentsOutcome(result.GetResultWithOwnership()) : GetDeploymentsOutcome(std::move(result.GetError()));
 }
 
 GetDocumentationPartOutcome APIGatewayClient::GetDocumentationPart(const GetDocumentationPartRequest& request) const {
@@ -1289,7 +1373,9 @@ GetDocumentationPartOutcome APIGatewayClient::GetDocumentationPart(const GetDocu
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDocumentationPartId());
   };
 
-  return GetDocumentationPartOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDocumentationPartOutcome(result.GetResultWithOwnership())
+                            : GetDocumentationPartOutcome(std::move(result.GetError()));
 }
 
 GetDocumentationPartsOutcome APIGatewayClient::GetDocumentationParts(const GetDocumentationPartsRequest& request) const {
@@ -1306,7 +1392,9 @@ GetDocumentationPartsOutcome APIGatewayClient::GetDocumentationParts(const GetDo
     endpointResolutionOutcome.GetResult().AddPathSegments("/documentation/parts");
   };
 
-  return GetDocumentationPartsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDocumentationPartsOutcome(result.GetResultWithOwnership())
+                            : GetDocumentationPartsOutcome(std::move(result.GetError()));
 }
 
 GetDocumentationVersionOutcome APIGatewayClient::GetDocumentationVersion(const GetDocumentationVersionRequest& request) const {
@@ -1329,7 +1417,9 @@ GetDocumentationVersionOutcome APIGatewayClient::GetDocumentationVersion(const G
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDocumentationVersion());
   };
 
-  return GetDocumentationVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDocumentationVersionOutcome(result.GetResultWithOwnership())
+                            : GetDocumentationVersionOutcome(std::move(result.GetError()));
 }
 
 GetDocumentationVersionsOutcome APIGatewayClient::GetDocumentationVersions(const GetDocumentationVersionsRequest& request) const {
@@ -1346,7 +1436,9 @@ GetDocumentationVersionsOutcome APIGatewayClient::GetDocumentationVersions(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/documentation/versions");
   };
 
-  return GetDocumentationVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDocumentationVersionsOutcome(result.GetResultWithOwnership())
+                            : GetDocumentationVersionsOutcome(std::move(result.GetError()));
 }
 
 GetDomainNameOutcome APIGatewayClient::GetDomainName(const GetDomainNameRequest& request) const {
@@ -1362,7 +1454,8 @@ GetDomainNameOutcome APIGatewayClient::GetDomainName(const GetDomainNameRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
   };
 
-  return GetDomainNameOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDomainNameOutcome(result.GetResultWithOwnership()) : GetDomainNameOutcome(std::move(result.GetError()));
 }
 
 GetDomainNameAccessAssociationsOutcome APIGatewayClient::GetDomainNameAccessAssociations(
@@ -1372,7 +1465,9 @@ GetDomainNameAccessAssociationsOutcome APIGatewayClient::GetDomainNameAccessAsso
     endpointResolutionOutcome.GetResult().AddPathSegments("/domainnameaccessassociations");
   };
 
-  return GetDomainNameAccessAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDomainNameAccessAssociationsOutcome(result.GetResultWithOwnership())
+                            : GetDomainNameAccessAssociationsOutcome(std::move(result.GetError()));
 }
 
 GetDomainNamesOutcome APIGatewayClient::GetDomainNames(const GetDomainNamesRequest& request) const {
@@ -1381,7 +1476,8 @@ GetDomainNamesOutcome APIGatewayClient::GetDomainNames(const GetDomainNamesReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/domainnames");
   };
 
-  return GetDomainNamesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDomainNamesOutcome(result.GetResultWithOwnership()) : GetDomainNamesOutcome(std::move(result.GetError()));
 }
 
 GetExportOutcome APIGatewayClient::GetExport(const GetExportRequest& request) const {
@@ -1426,8 +1522,8 @@ GetExportOutcome APIGatewayClient::GetExport(const GetExportRequest& request) co
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStageName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/exports/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExportType());
-        return GetExportOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetExportOutcome(result.GetResultWithOwnership()) : GetExportOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1455,7 +1551,9 @@ GetGatewayResponseOutcome APIGatewayClient::GetGatewayResponse(const GetGatewayR
         GatewayResponseTypeMapper::GetNameForGatewayResponseType(request.GetResponseType()));
   };
 
-  return GetGatewayResponseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetGatewayResponseOutcome(result.GetResultWithOwnership())
+                            : GetGatewayResponseOutcome(std::move(result.GetError()));
 }
 
 GetGatewayResponsesOutcome APIGatewayClient::GetGatewayResponses(const GetGatewayResponsesRequest& request) const {
@@ -1472,7 +1570,9 @@ GetGatewayResponsesOutcome APIGatewayClient::GetGatewayResponses(const GetGatewa
     endpointResolutionOutcome.GetResult().AddPathSegments("/gatewayresponses");
   };
 
-  return GetGatewayResponsesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetGatewayResponsesOutcome(result.GetResultWithOwnership())
+                            : GetGatewayResponsesOutcome(std::move(result.GetError()));
 }
 
 GetIntegrationOutcome APIGatewayClient::GetIntegration(const GetIntegrationRequest& request) const {
@@ -1503,7 +1603,8 @@ GetIntegrationOutcome APIGatewayClient::GetIntegration(const GetIntegrationReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/integration");
   };
 
-  return GetIntegrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetIntegrationOutcome(result.GetResultWithOwnership()) : GetIntegrationOutcome(std::move(result.GetError()));
 }
 
 GetIntegrationResponseOutcome APIGatewayClient::GetIntegrationResponse(const GetIntegrationResponseRequest& request) const {
@@ -1540,7 +1641,9 @@ GetIntegrationResponseOutcome APIGatewayClient::GetIntegrationResponse(const Get
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStatusCode());
   };
 
-  return GetIntegrationResponseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetIntegrationResponseOutcome(result.GetResultWithOwnership())
+                            : GetIntegrationResponseOutcome(std::move(result.GetError()));
 }
 
 GetMethodOutcome APIGatewayClient::GetMethod(const GetMethodRequest& request) const {
@@ -1570,7 +1673,8 @@ GetMethodOutcome APIGatewayClient::GetMethod(const GetMethodRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHttpMethod());
   };
 
-  return GetMethodOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMethodOutcome(result.GetResultWithOwnership()) : GetMethodOutcome(std::move(result.GetError()));
 }
 
 GetMethodResponseOutcome APIGatewayClient::GetMethodResponse(const GetMethodResponseRequest& request) const {
@@ -1607,7 +1711,9 @@ GetMethodResponseOutcome APIGatewayClient::GetMethodResponse(const GetMethodResp
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStatusCode());
   };
 
-  return GetMethodResponseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMethodResponseOutcome(result.GetResultWithOwnership())
+                            : GetMethodResponseOutcome(std::move(result.GetError()));
 }
 
 GetModelOutcome APIGatewayClient::GetModel(const GetModelRequest& request) const {
@@ -1630,7 +1736,8 @@ GetModelOutcome APIGatewayClient::GetModel(const GetModelRequest& request) const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetModelName());
   };
 
-  return GetModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetModelOutcome(result.GetResultWithOwnership()) : GetModelOutcome(std::move(result.GetError()));
 }
 
 GetModelTemplateOutcome APIGatewayClient::GetModelTemplate(const GetModelTemplateRequest& request) const {
@@ -1654,7 +1761,9 @@ GetModelTemplateOutcome APIGatewayClient::GetModelTemplate(const GetModelTemplat
     endpointResolutionOutcome.GetResult().AddPathSegments("/default_template");
   };
 
-  return GetModelTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetModelTemplateOutcome(result.GetResultWithOwnership())
+                            : GetModelTemplateOutcome(std::move(result.GetError()));
 }
 
 GetModelsOutcome APIGatewayClient::GetModels(const GetModelsRequest& request) const {
@@ -1671,7 +1780,8 @@ GetModelsOutcome APIGatewayClient::GetModels(const GetModelsRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegments("/models");
   };
 
-  return GetModelsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetModelsOutcome(result.GetResultWithOwnership()) : GetModelsOutcome(std::move(result.GetError()));
 }
 
 GetRequestValidatorOutcome APIGatewayClient::GetRequestValidator(const GetRequestValidatorRequest& request) const {
@@ -1694,7 +1804,9 @@ GetRequestValidatorOutcome APIGatewayClient::GetRequestValidator(const GetReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRequestValidatorId());
   };
 
-  return GetRequestValidatorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRequestValidatorOutcome(result.GetResultWithOwnership())
+                            : GetRequestValidatorOutcome(std::move(result.GetError()));
 }
 
 GetRequestValidatorsOutcome APIGatewayClient::GetRequestValidators(const GetRequestValidatorsRequest& request) const {
@@ -1711,7 +1823,9 @@ GetRequestValidatorsOutcome APIGatewayClient::GetRequestValidators(const GetRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/requestvalidators");
   };
 
-  return GetRequestValidatorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRequestValidatorsOutcome(result.GetResultWithOwnership())
+                            : GetRequestValidatorsOutcome(std::move(result.GetError()));
 }
 
 GetResourceOutcome APIGatewayClient::GetResource(const GetResourceRequest& request) const {
@@ -1734,7 +1848,8 @@ GetResourceOutcome APIGatewayClient::GetResource(const GetResourceRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceId());
   };
 
-  return GetResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetResourceOutcome(result.GetResultWithOwnership()) : GetResourceOutcome(std::move(result.GetError()));
 }
 
 GetResourcesOutcome APIGatewayClient::GetResources(const GetResourcesRequest& request) const {
@@ -1751,7 +1866,8 @@ GetResourcesOutcome APIGatewayClient::GetResources(const GetResourcesRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/resources");
   };
 
-  return GetResourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetResourcesOutcome(result.GetResultWithOwnership()) : GetResourcesOutcome(std::move(result.GetError()));
 }
 
 GetRestApiOutcome APIGatewayClient::GetRestApi(const GetRestApiRequest& request) const {
@@ -1767,7 +1883,8 @@ GetRestApiOutcome APIGatewayClient::GetRestApi(const GetRestApiRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestApiId());
   };
 
-  return GetRestApiOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRestApiOutcome(result.GetResultWithOwnership()) : GetRestApiOutcome(std::move(result.GetError()));
 }
 
 GetRestApisOutcome APIGatewayClient::GetRestApis(const GetRestApisRequest& request) const {
@@ -1776,7 +1893,8 @@ GetRestApisOutcome APIGatewayClient::GetRestApis(const GetRestApisRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/restapis");
   };
 
-  return GetRestApisOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRestApisOutcome(result.GetResultWithOwnership()) : GetRestApisOutcome(std::move(result.GetError()));
 }
 
 GetSdkOutcome APIGatewayClient::GetSdk(const GetSdkRequest& request) const {
@@ -1821,8 +1939,8 @@ GetSdkOutcome APIGatewayClient::GetSdk(const GetSdkRequest& request) const {
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStageName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/sdks/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSdkType());
-        return GetSdkOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetSdkOutcome(result.GetResultWithOwnership()) : GetSdkOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1842,7 +1960,8 @@ GetSdkTypeOutcome APIGatewayClient::GetSdkType(const GetSdkTypeRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetSdkTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSdkTypeOutcome(result.GetResultWithOwnership()) : GetSdkTypeOutcome(std::move(result.GetError()));
 }
 
 GetSdkTypesOutcome APIGatewayClient::GetSdkTypes(const GetSdkTypesRequest& request) const {
@@ -1851,7 +1970,8 @@ GetSdkTypesOutcome APIGatewayClient::GetSdkTypes(const GetSdkTypesRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/sdktypes");
   };
 
-  return GetSdkTypesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSdkTypesOutcome(result.GetResultWithOwnership()) : GetSdkTypesOutcome(std::move(result.GetError()));
 }
 
 GetStageOutcome APIGatewayClient::GetStage(const GetStageRequest& request) const {
@@ -1874,7 +1994,8 @@ GetStageOutcome APIGatewayClient::GetStage(const GetStageRequest& request) const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStageName());
   };
 
-  return GetStageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetStageOutcome(result.GetResultWithOwnership()) : GetStageOutcome(std::move(result.GetError()));
 }
 
 GetStagesOutcome APIGatewayClient::GetStages(const GetStagesRequest& request) const {
@@ -1891,7 +2012,8 @@ GetStagesOutcome APIGatewayClient::GetStages(const GetStagesRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegments("/stages");
   };
 
-  return GetStagesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetStagesOutcome(result.GetResultWithOwnership()) : GetStagesOutcome(std::move(result.GetError()));
 }
 
 GetTagsOutcome APIGatewayClient::GetTags(const GetTagsRequest& request) const {
@@ -1907,7 +2029,8 @@ GetTagsOutcome APIGatewayClient::GetTags(const GetTagsRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return GetTagsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTagsOutcome(result.GetResultWithOwnership()) : GetTagsOutcome(std::move(result.GetError()));
 }
 
 GetUsageOutcome APIGatewayClient::GetUsage(const GetUsageRequest& request) const {
@@ -1934,7 +2057,8 @@ GetUsageOutcome APIGatewayClient::GetUsage(const GetUsageRequest& request) const
     endpointResolutionOutcome.GetResult().AddPathSegments("/usage");
   };
 
-  return GetUsageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetUsageOutcome(result.GetResultWithOwnership()) : GetUsageOutcome(std::move(result.GetError()));
 }
 
 GetUsagePlanOutcome APIGatewayClient::GetUsagePlan(const GetUsagePlanRequest& request) const {
@@ -1950,7 +2074,8 @@ GetUsagePlanOutcome APIGatewayClient::GetUsagePlan(const GetUsagePlanRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUsagePlanId());
   };
 
-  return GetUsagePlanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetUsagePlanOutcome(result.GetResultWithOwnership()) : GetUsagePlanOutcome(std::move(result.GetError()));
 }
 
 GetUsagePlanKeyOutcome APIGatewayClient::GetUsagePlanKey(const GetUsagePlanKeyRequest& request) const {
@@ -1973,7 +2098,9 @@ GetUsagePlanKeyOutcome APIGatewayClient::GetUsagePlanKey(const GetUsagePlanKeyRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKeyId());
   };
 
-  return GetUsagePlanKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetUsagePlanKeyOutcome(result.GetResultWithOwnership())
+                            : GetUsagePlanKeyOutcome(std::move(result.GetError()));
 }
 
 GetUsagePlanKeysOutcome APIGatewayClient::GetUsagePlanKeys(const GetUsagePlanKeysRequest& request) const {
@@ -1990,7 +2117,9 @@ GetUsagePlanKeysOutcome APIGatewayClient::GetUsagePlanKeys(const GetUsagePlanKey
     endpointResolutionOutcome.GetResult().AddPathSegments("/keys");
   };
 
-  return GetUsagePlanKeysOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetUsagePlanKeysOutcome(result.GetResultWithOwnership())
+                            : GetUsagePlanKeysOutcome(std::move(result.GetError()));
 }
 
 GetUsagePlansOutcome APIGatewayClient::GetUsagePlans(const GetUsagePlansRequest& request) const {
@@ -1999,7 +2128,8 @@ GetUsagePlansOutcome APIGatewayClient::GetUsagePlans(const GetUsagePlansRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/usageplans");
   };
 
-  return GetUsagePlansOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetUsagePlansOutcome(result.GetResultWithOwnership()) : GetUsagePlansOutcome(std::move(result.GetError()));
 }
 
 GetVpcLinkOutcome APIGatewayClient::GetVpcLink(const GetVpcLinkRequest& request) const {
@@ -2015,7 +2145,8 @@ GetVpcLinkOutcome APIGatewayClient::GetVpcLink(const GetVpcLinkRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVpcLinkId());
   };
 
-  return GetVpcLinkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetVpcLinkOutcome(result.GetResultWithOwnership()) : GetVpcLinkOutcome(std::move(result.GetError()));
 }
 
 GetVpcLinksOutcome APIGatewayClient::GetVpcLinks(const GetVpcLinksRequest& request) const {
@@ -2024,7 +2155,8 @@ GetVpcLinksOutcome APIGatewayClient::GetVpcLinks(const GetVpcLinksRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/vpclinks");
   };
 
-  return GetVpcLinksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetVpcLinksOutcome(result.GetResultWithOwnership()) : GetVpcLinksOutcome(std::move(result.GetError()));
 }
 
 ImportApiKeysOutcome APIGatewayClient::ImportApiKeys(const ImportApiKeysRequest& request) const {
@@ -2042,7 +2174,8 @@ ImportApiKeysOutcome APIGatewayClient::ImportApiKeys(const ImportApiKeysRequest&
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return ImportApiKeysOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportApiKeysOutcome(result.GetResultWithOwnership()) : ImportApiKeysOutcome(std::move(result.GetError()));
 }
 
 ImportDocumentationPartsOutcome APIGatewayClient::ImportDocumentationParts(const ImportDocumentationPartsRequest& request) const {
@@ -2059,7 +2192,9 @@ ImportDocumentationPartsOutcome APIGatewayClient::ImportDocumentationParts(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/documentation/parts");
   };
 
-  return ImportDocumentationPartsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? ImportDocumentationPartsOutcome(result.GetResultWithOwnership())
+                            : ImportDocumentationPartsOutcome(std::move(result.GetError()));
 }
 
 ImportRestApiOutcome APIGatewayClient::ImportRestApi(const ImportRestApiRequest& request) const {
@@ -2071,7 +2206,8 @@ ImportRestApiOutcome APIGatewayClient::ImportRestApi(const ImportRestApiRequest&
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return ImportRestApiOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportRestApiOutcome(result.GetResultWithOwnership()) : ImportRestApiOutcome(std::move(result.GetError()));
 }
 
 PutGatewayResponseOutcome APIGatewayClient::PutGatewayResponse(const PutGatewayResponseRequest& request) const {
@@ -2095,7 +2231,9 @@ PutGatewayResponseOutcome APIGatewayClient::PutGatewayResponse(const PutGatewayR
         GatewayResponseTypeMapper::GetNameForGatewayResponseType(request.GetResponseType()));
   };
 
-  return PutGatewayResponseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutGatewayResponseOutcome(result.GetResultWithOwnership())
+                            : PutGatewayResponseOutcome(std::move(result.GetError()));
 }
 
 PutIntegrationOutcome APIGatewayClient::PutIntegration(const PutIntegrationRequest& request) const {
@@ -2126,7 +2264,8 @@ PutIntegrationOutcome APIGatewayClient::PutIntegration(const PutIntegrationReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/integration");
   };
 
-  return PutIntegrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutIntegrationOutcome(result.GetResultWithOwnership()) : PutIntegrationOutcome(std::move(result.GetError()));
 }
 
 PutIntegrationResponseOutcome APIGatewayClient::PutIntegrationResponse(const PutIntegrationResponseRequest& request) const {
@@ -2163,7 +2302,9 @@ PutIntegrationResponseOutcome APIGatewayClient::PutIntegrationResponse(const Put
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStatusCode());
   };
 
-  return PutIntegrationResponseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutIntegrationResponseOutcome(result.GetResultWithOwnership())
+                            : PutIntegrationResponseOutcome(std::move(result.GetError()));
 }
 
 PutMethodOutcome APIGatewayClient::PutMethod(const PutMethodRequest& request) const {
@@ -2193,7 +2334,8 @@ PutMethodOutcome APIGatewayClient::PutMethod(const PutMethodRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHttpMethod());
   };
 
-  return PutMethodOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutMethodOutcome(result.GetResultWithOwnership()) : PutMethodOutcome(std::move(result.GetError()));
 }
 
 PutMethodResponseOutcome APIGatewayClient::PutMethodResponse(const PutMethodResponseRequest& request) const {
@@ -2230,7 +2372,9 @@ PutMethodResponseOutcome APIGatewayClient::PutMethodResponse(const PutMethodResp
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStatusCode());
   };
 
-  return PutMethodResponseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutMethodResponseOutcome(result.GetResultWithOwnership())
+                            : PutMethodResponseOutcome(std::move(result.GetError()));
 }
 
 PutRestApiOutcome APIGatewayClient::PutRestApi(const PutRestApiRequest& request) const {
@@ -2246,7 +2390,8 @@ PutRestApiOutcome APIGatewayClient::PutRestApi(const PutRestApiRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestApiId());
   };
 
-  return PutRestApiOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutRestApiOutcome(result.GetResultWithOwnership()) : PutRestApiOutcome(std::move(result.GetError()));
 }
 
 RejectDomainNameAccessAssociationOutcome APIGatewayClient::RejectDomainNameAccessAssociation(
@@ -2267,7 +2412,9 @@ RejectDomainNameAccessAssociationOutcome APIGatewayClient::RejectDomainNameAcces
     endpointResolutionOutcome.GetResult().AddPathSegments("/rejectdomainnameaccessassociations");
   };
 
-  return RejectDomainNameAccessAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RejectDomainNameAccessAssociationOutcome(result.GetResultWithOwnership())
+                            : RejectDomainNameAccessAssociationOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome APIGatewayClient::TagResource(const TagResourceRequest& request) const {
@@ -2283,7 +2430,8 @@ TagResourceOutcome APIGatewayClient::TagResource(const TagResourceRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 TestInvokeAuthorizerOutcome APIGatewayClient::TestInvokeAuthorizer(const TestInvokeAuthorizerRequest& request) const {
@@ -2306,7 +2454,9 @@ TestInvokeAuthorizerOutcome APIGatewayClient::TestInvokeAuthorizer(const TestInv
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAuthorizerId());
   };
 
-  return TestInvokeAuthorizerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TestInvokeAuthorizerOutcome(result.GetResultWithOwnership())
+                            : TestInvokeAuthorizerOutcome(std::move(result.GetError()));
 }
 
 TestInvokeMethodOutcome APIGatewayClient::TestInvokeMethod(const TestInvokeMethodRequest& request) const {
@@ -2336,7 +2486,9 @@ TestInvokeMethodOutcome APIGatewayClient::TestInvokeMethod(const TestInvokeMetho
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHttpMethod());
   };
 
-  return TestInvokeMethodOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TestInvokeMethodOutcome(result.GetResultWithOwnership())
+                            : TestInvokeMethodOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome APIGatewayClient::UntagResource(const UntagResourceRequest& request) const {
@@ -2357,7 +2509,8 @@ UntagResourceOutcome APIGatewayClient::UntagResource(const UntagResourceRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAccountOutcome APIGatewayClient::UpdateAccount(const UpdateAccountRequest& request) const {
@@ -2366,7 +2519,8 @@ UpdateAccountOutcome APIGatewayClient::UpdateAccount(const UpdateAccountRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/account");
   };
 
-  return UpdateAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateAccountOutcome(result.GetResultWithOwnership()) : UpdateAccountOutcome(std::move(result.GetError()));
 }
 
 UpdateApiKeyOutcome APIGatewayClient::UpdateApiKey(const UpdateApiKeyRequest& request) const {
@@ -2382,7 +2536,8 @@ UpdateApiKeyOutcome APIGatewayClient::UpdateApiKey(const UpdateApiKeyRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApiKey());
   };
 
-  return UpdateApiKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateApiKeyOutcome(result.GetResultWithOwnership()) : UpdateApiKeyOutcome(std::move(result.GetError()));
 }
 
 UpdateAuthorizerOutcome APIGatewayClient::UpdateAuthorizer(const UpdateAuthorizerRequest& request) const {
@@ -2405,7 +2560,9 @@ UpdateAuthorizerOutcome APIGatewayClient::UpdateAuthorizer(const UpdateAuthorize
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAuthorizerId());
   };
 
-  return UpdateAuthorizerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateAuthorizerOutcome(result.GetResultWithOwnership())
+                            : UpdateAuthorizerOutcome(std::move(result.GetError()));
 }
 
 UpdateBasePathMappingOutcome APIGatewayClient::UpdateBasePathMapping(const UpdateBasePathMappingRequest& request) const {
@@ -2428,7 +2585,9 @@ UpdateBasePathMappingOutcome APIGatewayClient::UpdateBasePathMapping(const Updat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBasePath());
   };
 
-  return UpdateBasePathMappingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateBasePathMappingOutcome(result.GetResultWithOwnership())
+                            : UpdateBasePathMappingOutcome(std::move(result.GetError()));
 }
 
 UpdateClientCertificateOutcome APIGatewayClient::UpdateClientCertificate(const UpdateClientCertificateRequest& request) const {
@@ -2444,7 +2603,9 @@ UpdateClientCertificateOutcome APIGatewayClient::UpdateClientCertificate(const U
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClientCertificateId());
   };
 
-  return UpdateClientCertificateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateClientCertificateOutcome(result.GetResultWithOwnership())
+                            : UpdateClientCertificateOutcome(std::move(result.GetError()));
 }
 
 UpdateDeploymentOutcome APIGatewayClient::UpdateDeployment(const UpdateDeploymentRequest& request) const {
@@ -2467,7 +2628,9 @@ UpdateDeploymentOutcome APIGatewayClient::UpdateDeployment(const UpdateDeploymen
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDeploymentId());
   };
 
-  return UpdateDeploymentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateDeploymentOutcome(result.GetResultWithOwnership())
+                            : UpdateDeploymentOutcome(std::move(result.GetError()));
 }
 
 UpdateDocumentationPartOutcome APIGatewayClient::UpdateDocumentationPart(const UpdateDocumentationPartRequest& request) const {
@@ -2490,7 +2653,9 @@ UpdateDocumentationPartOutcome APIGatewayClient::UpdateDocumentationPart(const U
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDocumentationPartId());
   };
 
-  return UpdateDocumentationPartOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateDocumentationPartOutcome(result.GetResultWithOwnership())
+                            : UpdateDocumentationPartOutcome(std::move(result.GetError()));
 }
 
 UpdateDocumentationVersionOutcome APIGatewayClient::UpdateDocumentationVersion(const UpdateDocumentationVersionRequest& request) const {
@@ -2513,7 +2678,9 @@ UpdateDocumentationVersionOutcome APIGatewayClient::UpdateDocumentationVersion(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDocumentationVersion());
   };
 
-  return UpdateDocumentationVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateDocumentationVersionOutcome(result.GetResultWithOwnership())
+                            : UpdateDocumentationVersionOutcome(std::move(result.GetError()));
 }
 
 UpdateDomainNameOutcome APIGatewayClient::UpdateDomainName(const UpdateDomainNameRequest& request) const {
@@ -2529,7 +2696,9 @@ UpdateDomainNameOutcome APIGatewayClient::UpdateDomainName(const UpdateDomainNam
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
   };
 
-  return UpdateDomainNameOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateDomainNameOutcome(result.GetResultWithOwnership())
+                            : UpdateDomainNameOutcome(std::move(result.GetError()));
 }
 
 UpdateGatewayResponseOutcome APIGatewayClient::UpdateGatewayResponse(const UpdateGatewayResponseRequest& request) const {
@@ -2553,7 +2722,9 @@ UpdateGatewayResponseOutcome APIGatewayClient::UpdateGatewayResponse(const Updat
         GatewayResponseTypeMapper::GetNameForGatewayResponseType(request.GetResponseType()));
   };
 
-  return UpdateGatewayResponseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateGatewayResponseOutcome(result.GetResultWithOwnership())
+                            : UpdateGatewayResponseOutcome(std::move(result.GetError()));
 }
 
 UpdateIntegrationOutcome APIGatewayClient::UpdateIntegration(const UpdateIntegrationRequest& request) const {
@@ -2584,7 +2755,9 @@ UpdateIntegrationOutcome APIGatewayClient::UpdateIntegration(const UpdateIntegra
     endpointResolutionOutcome.GetResult().AddPathSegments("/integration");
   };
 
-  return UpdateIntegrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateIntegrationOutcome(result.GetResultWithOwnership())
+                            : UpdateIntegrationOutcome(std::move(result.GetError()));
 }
 
 UpdateIntegrationResponseOutcome APIGatewayClient::UpdateIntegrationResponse(const UpdateIntegrationResponseRequest& request) const {
@@ -2621,7 +2794,9 @@ UpdateIntegrationResponseOutcome APIGatewayClient::UpdateIntegrationResponse(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStatusCode());
   };
 
-  return UpdateIntegrationResponseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateIntegrationResponseOutcome(result.GetResultWithOwnership())
+                            : UpdateIntegrationResponseOutcome(std::move(result.GetError()));
 }
 
 UpdateMethodOutcome APIGatewayClient::UpdateMethod(const UpdateMethodRequest& request) const {
@@ -2651,7 +2826,8 @@ UpdateMethodOutcome APIGatewayClient::UpdateMethod(const UpdateMethodRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHttpMethod());
   };
 
-  return UpdateMethodOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateMethodOutcome(result.GetResultWithOwnership()) : UpdateMethodOutcome(std::move(result.GetError()));
 }
 
 UpdateMethodResponseOutcome APIGatewayClient::UpdateMethodResponse(const UpdateMethodResponseRequest& request) const {
@@ -2688,7 +2864,9 @@ UpdateMethodResponseOutcome APIGatewayClient::UpdateMethodResponse(const UpdateM
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStatusCode());
   };
 
-  return UpdateMethodResponseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateMethodResponseOutcome(result.GetResultWithOwnership())
+                            : UpdateMethodResponseOutcome(std::move(result.GetError()));
 }
 
 UpdateModelOutcome APIGatewayClient::UpdateModel(const UpdateModelRequest& request) const {
@@ -2711,7 +2889,8 @@ UpdateModelOutcome APIGatewayClient::UpdateModel(const UpdateModelRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetModelName());
   };
 
-  return UpdateModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateModelOutcome(result.GetResultWithOwnership()) : UpdateModelOutcome(std::move(result.GetError()));
 }
 
 UpdateRequestValidatorOutcome APIGatewayClient::UpdateRequestValidator(const UpdateRequestValidatorRequest& request) const {
@@ -2734,7 +2913,9 @@ UpdateRequestValidatorOutcome APIGatewayClient::UpdateRequestValidator(const Upd
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRequestValidatorId());
   };
 
-  return UpdateRequestValidatorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateRequestValidatorOutcome(result.GetResultWithOwnership())
+                            : UpdateRequestValidatorOutcome(std::move(result.GetError()));
 }
 
 UpdateResourceOutcome APIGatewayClient::UpdateResource(const UpdateResourceRequest& request) const {
@@ -2757,7 +2938,8 @@ UpdateResourceOutcome APIGatewayClient::UpdateResource(const UpdateResourceReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceId());
   };
 
-  return UpdateResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateResourceOutcome(result.GetResultWithOwnership()) : UpdateResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateRestApiOutcome APIGatewayClient::UpdateRestApi(const UpdateRestApiRequest& request) const {
@@ -2773,7 +2955,8 @@ UpdateRestApiOutcome APIGatewayClient::UpdateRestApi(const UpdateRestApiRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestApiId());
   };
 
-  return UpdateRestApiOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateRestApiOutcome(result.GetResultWithOwnership()) : UpdateRestApiOutcome(std::move(result.GetError()));
 }
 
 UpdateStageOutcome APIGatewayClient::UpdateStage(const UpdateStageRequest& request) const {
@@ -2796,7 +2979,8 @@ UpdateStageOutcome APIGatewayClient::UpdateStage(const UpdateStageRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStageName());
   };
 
-  return UpdateStageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateStageOutcome(result.GetResultWithOwnership()) : UpdateStageOutcome(std::move(result.GetError()));
 }
 
 UpdateUsageOutcome APIGatewayClient::UpdateUsage(const UpdateUsageRequest& request) const {
@@ -2820,7 +3004,8 @@ UpdateUsageOutcome APIGatewayClient::UpdateUsage(const UpdateUsageRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/usage");
   };
 
-  return UpdateUsageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateUsageOutcome(result.GetResultWithOwnership()) : UpdateUsageOutcome(std::move(result.GetError()));
 }
 
 UpdateUsagePlanOutcome APIGatewayClient::UpdateUsagePlan(const UpdateUsagePlanRequest& request) const {
@@ -2836,7 +3021,9 @@ UpdateUsagePlanOutcome APIGatewayClient::UpdateUsagePlan(const UpdateUsagePlanRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUsagePlanId());
   };
 
-  return UpdateUsagePlanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateUsagePlanOutcome(result.GetResultWithOwnership())
+                            : UpdateUsagePlanOutcome(std::move(result.GetError()));
 }
 
 UpdateVpcLinkOutcome APIGatewayClient::UpdateVpcLink(const UpdateVpcLinkRequest& request) const {
@@ -2852,5 +3039,6 @@ UpdateVpcLinkOutcome APIGatewayClient::UpdateVpcLink(const UpdateVpcLinkRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVpcLinkId());
   };
 
-  return UpdateVpcLinkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateVpcLinkOutcome(result.GetResultWithOwnership()) : UpdateVpcLinkOutcome(std::move(result.GetError()));
 }

@@ -333,590 +333,855 @@ RedshiftClient::InvokeOperationOutcome RedshiftClient::InvokeServiceOperation(co
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 AcceptReservedNodeExchangeOutcome RedshiftClient::AcceptReservedNodeExchange(const AcceptReservedNodeExchangeRequest& request) const {
-  return AcceptReservedNodeExchangeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptReservedNodeExchangeOutcome(result.GetResultWithOwnership())
+                            : AcceptReservedNodeExchangeOutcome(std::move(result.GetError()));
 }
 
 AddPartnerOutcome RedshiftClient::AddPartner(const AddPartnerRequest& request) const {
-  return AddPartnerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddPartnerOutcome(result.GetResultWithOwnership()) : AddPartnerOutcome(std::move(result.GetError()));
 }
 
 AssociateDataShareConsumerOutcome RedshiftClient::AssociateDataShareConsumer(const AssociateDataShareConsumerRequest& request) const {
-  return AssociateDataShareConsumerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateDataShareConsumerOutcome(result.GetResultWithOwnership())
+                            : AssociateDataShareConsumerOutcome(std::move(result.GetError()));
 }
 
 AuthorizeClusterSecurityGroupIngressOutcome RedshiftClient::AuthorizeClusterSecurityGroupIngress(
     const AuthorizeClusterSecurityGroupIngressRequest& request) const {
-  return AuthorizeClusterSecurityGroupIngressOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AuthorizeClusterSecurityGroupIngressOutcome(result.GetResultWithOwnership())
+                            : AuthorizeClusterSecurityGroupIngressOutcome(std::move(result.GetError()));
 }
 
 AuthorizeDataShareOutcome RedshiftClient::AuthorizeDataShare(const AuthorizeDataShareRequest& request) const {
-  return AuthorizeDataShareOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AuthorizeDataShareOutcome(result.GetResultWithOwnership())
+                            : AuthorizeDataShareOutcome(std::move(result.GetError()));
 }
 
 AuthorizeEndpointAccessOutcome RedshiftClient::AuthorizeEndpointAccess(const AuthorizeEndpointAccessRequest& request) const {
-  return AuthorizeEndpointAccessOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AuthorizeEndpointAccessOutcome(result.GetResultWithOwnership())
+                            : AuthorizeEndpointAccessOutcome(std::move(result.GetError()));
 }
 
 AuthorizeSnapshotAccessOutcome RedshiftClient::AuthorizeSnapshotAccess(const AuthorizeSnapshotAccessRequest& request) const {
-  return AuthorizeSnapshotAccessOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AuthorizeSnapshotAccessOutcome(result.GetResultWithOwnership())
+                            : AuthorizeSnapshotAccessOutcome(std::move(result.GetError()));
 }
 
 BatchDeleteClusterSnapshotsOutcome RedshiftClient::BatchDeleteClusterSnapshots(const BatchDeleteClusterSnapshotsRequest& request) const {
-  return BatchDeleteClusterSnapshotsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeleteClusterSnapshotsOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteClusterSnapshotsOutcome(std::move(result.GetError()));
 }
 
 BatchModifyClusterSnapshotsOutcome RedshiftClient::BatchModifyClusterSnapshots(const BatchModifyClusterSnapshotsRequest& request) const {
-  return BatchModifyClusterSnapshotsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchModifyClusterSnapshotsOutcome(result.GetResultWithOwnership())
+                            : BatchModifyClusterSnapshotsOutcome(std::move(result.GetError()));
 }
 
 CancelResizeOutcome RedshiftClient::CancelResize(const CancelResizeRequest& request) const {
-  return CancelResizeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelResizeOutcome(result.GetResultWithOwnership()) : CancelResizeOutcome(std::move(result.GetError()));
 }
 
 CopyClusterSnapshotOutcome RedshiftClient::CopyClusterSnapshot(const CopyClusterSnapshotRequest& request) const {
-  return CopyClusterSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CopyClusterSnapshotOutcome(result.GetResultWithOwnership())
+                            : CopyClusterSnapshotOutcome(std::move(result.GetError()));
 }
 
 CreateAuthenticationProfileOutcome RedshiftClient::CreateAuthenticationProfile(const CreateAuthenticationProfileRequest& request) const {
-  return CreateAuthenticationProfileOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAuthenticationProfileOutcome(result.GetResultWithOwnership())
+                            : CreateAuthenticationProfileOutcome(std::move(result.GetError()));
 }
 
 CreateClusterOutcome RedshiftClient::CreateCluster(const CreateClusterRequest& request) const {
-  return CreateClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateClusterOutcome(result.GetResultWithOwnership()) : CreateClusterOutcome(std::move(result.GetError()));
 }
 
 CreateClusterParameterGroupOutcome RedshiftClient::CreateClusterParameterGroup(const CreateClusterParameterGroupRequest& request) const {
-  return CreateClusterParameterGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateClusterParameterGroupOutcome(result.GetResultWithOwnership())
+                            : CreateClusterParameterGroupOutcome(std::move(result.GetError()));
 }
 
 CreateClusterSecurityGroupOutcome RedshiftClient::CreateClusterSecurityGroup(const CreateClusterSecurityGroupRequest& request) const {
-  return CreateClusterSecurityGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateClusterSecurityGroupOutcome(result.GetResultWithOwnership())
+                            : CreateClusterSecurityGroupOutcome(std::move(result.GetError()));
 }
 
 CreateClusterSnapshotOutcome RedshiftClient::CreateClusterSnapshot(const CreateClusterSnapshotRequest& request) const {
-  return CreateClusterSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateClusterSnapshotOutcome(result.GetResultWithOwnership())
+                            : CreateClusterSnapshotOutcome(std::move(result.GetError()));
 }
 
 CreateClusterSubnetGroupOutcome RedshiftClient::CreateClusterSubnetGroup(const CreateClusterSubnetGroupRequest& request) const {
-  return CreateClusterSubnetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateClusterSubnetGroupOutcome(result.GetResultWithOwnership())
+                            : CreateClusterSubnetGroupOutcome(std::move(result.GetError()));
 }
 
 CreateCustomDomainAssociationOutcome RedshiftClient::CreateCustomDomainAssociation(
     const CreateCustomDomainAssociationRequest& request) const {
-  return CreateCustomDomainAssociationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCustomDomainAssociationOutcome(result.GetResultWithOwnership())
+                            : CreateCustomDomainAssociationOutcome(std::move(result.GetError()));
 }
 
 CreateEndpointAccessOutcome RedshiftClient::CreateEndpointAccess(const CreateEndpointAccessRequest& request) const {
-  return CreateEndpointAccessOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEndpointAccessOutcome(result.GetResultWithOwnership())
+                            : CreateEndpointAccessOutcome(std::move(result.GetError()));
 }
 
 CreateEventSubscriptionOutcome RedshiftClient::CreateEventSubscription(const CreateEventSubscriptionRequest& request) const {
-  return CreateEventSubscriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEventSubscriptionOutcome(result.GetResultWithOwnership())
+                            : CreateEventSubscriptionOutcome(std::move(result.GetError()));
 }
 
 CreateHsmClientCertificateOutcome RedshiftClient::CreateHsmClientCertificate(const CreateHsmClientCertificateRequest& request) const {
-  return CreateHsmClientCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateHsmClientCertificateOutcome(result.GetResultWithOwnership())
+                            : CreateHsmClientCertificateOutcome(std::move(result.GetError()));
 }
 
 CreateHsmConfigurationOutcome RedshiftClient::CreateHsmConfiguration(const CreateHsmConfigurationRequest& request) const {
-  return CreateHsmConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateHsmConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateHsmConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateIntegrationOutcome RedshiftClient::CreateIntegration(const CreateIntegrationRequest& request) const {
-  return CreateIntegrationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIntegrationOutcome(result.GetResultWithOwnership())
+                            : CreateIntegrationOutcome(std::move(result.GetError()));
 }
 
 CreateRedshiftIdcApplicationOutcome RedshiftClient::CreateRedshiftIdcApplication(const CreateRedshiftIdcApplicationRequest& request) const {
-  return CreateRedshiftIdcApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRedshiftIdcApplicationOutcome(result.GetResultWithOwnership())
+                            : CreateRedshiftIdcApplicationOutcome(std::move(result.GetError()));
 }
 
 CreateScheduledActionOutcome RedshiftClient::CreateScheduledAction(const CreateScheduledActionRequest& request) const {
-  return CreateScheduledActionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateScheduledActionOutcome(result.GetResultWithOwnership())
+                            : CreateScheduledActionOutcome(std::move(result.GetError()));
 }
 
 CreateSnapshotCopyGrantOutcome RedshiftClient::CreateSnapshotCopyGrant(const CreateSnapshotCopyGrantRequest& request) const {
-  return CreateSnapshotCopyGrantOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSnapshotCopyGrantOutcome(result.GetResultWithOwnership())
+                            : CreateSnapshotCopyGrantOutcome(std::move(result.GetError()));
 }
 
 CreateSnapshotScheduleOutcome RedshiftClient::CreateSnapshotSchedule(const CreateSnapshotScheduleRequest& request) const {
-  return CreateSnapshotScheduleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSnapshotScheduleOutcome(result.GetResultWithOwnership())
+                            : CreateSnapshotScheduleOutcome(std::move(result.GetError()));
 }
 
 CreateTagsOutcome RedshiftClient::CreateTags(const CreateTagsRequest& request) const {
-  return CreateTagsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTagsOutcome(result.GetResultWithOwnership()) : CreateTagsOutcome(std::move(result.GetError()));
 }
 
 CreateUsageLimitOutcome RedshiftClient::CreateUsageLimit(const CreateUsageLimitRequest& request) const {
-  return CreateUsageLimitOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateUsageLimitOutcome(result.GetResultWithOwnership())
+                            : CreateUsageLimitOutcome(std::move(result.GetError()));
 }
 
 DeauthorizeDataShareOutcome RedshiftClient::DeauthorizeDataShare(const DeauthorizeDataShareRequest& request) const {
-  return DeauthorizeDataShareOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeauthorizeDataShareOutcome(result.GetResultWithOwnership())
+                            : DeauthorizeDataShareOutcome(std::move(result.GetError()));
 }
 
 DeleteAuthenticationProfileOutcome RedshiftClient::DeleteAuthenticationProfile(const DeleteAuthenticationProfileRequest& request) const {
-  return DeleteAuthenticationProfileOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAuthenticationProfileOutcome(result.GetResultWithOwnership())
+                            : DeleteAuthenticationProfileOutcome(std::move(result.GetError()));
 }
 
 DeleteClusterOutcome RedshiftClient::DeleteCluster(const DeleteClusterRequest& request) const {
-  return DeleteClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteClusterOutcome(result.GetResultWithOwnership()) : DeleteClusterOutcome(std::move(result.GetError()));
 }
 
 DeleteClusterParameterGroupOutcome RedshiftClient::DeleteClusterParameterGroup(const DeleteClusterParameterGroupRequest& request) const {
-  return DeleteClusterParameterGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteClusterParameterGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteClusterParameterGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteClusterSecurityGroupOutcome RedshiftClient::DeleteClusterSecurityGroup(const DeleteClusterSecurityGroupRequest& request) const {
-  return DeleteClusterSecurityGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteClusterSecurityGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteClusterSecurityGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteClusterSnapshotOutcome RedshiftClient::DeleteClusterSnapshot(const DeleteClusterSnapshotRequest& request) const {
-  return DeleteClusterSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteClusterSnapshotOutcome(result.GetResultWithOwnership())
+                            : DeleteClusterSnapshotOutcome(std::move(result.GetError()));
 }
 
 DeleteClusterSubnetGroupOutcome RedshiftClient::DeleteClusterSubnetGroup(const DeleteClusterSubnetGroupRequest& request) const {
-  return DeleteClusterSubnetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteClusterSubnetGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteClusterSubnetGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteCustomDomainAssociationOutcome RedshiftClient::DeleteCustomDomainAssociation(
     const DeleteCustomDomainAssociationRequest& request) const {
-  return DeleteCustomDomainAssociationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCustomDomainAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteCustomDomainAssociationOutcome(std::move(result.GetError()));
 }
 
 DeleteEndpointAccessOutcome RedshiftClient::DeleteEndpointAccess(const DeleteEndpointAccessRequest& request) const {
-  return DeleteEndpointAccessOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteEndpointAccessOutcome(result.GetResultWithOwnership())
+                            : DeleteEndpointAccessOutcome(std::move(result.GetError()));
 }
 
 DeleteEventSubscriptionOutcome RedshiftClient::DeleteEventSubscription(const DeleteEventSubscriptionRequest& request) const {
-  return DeleteEventSubscriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteEventSubscriptionOutcome(result.GetResultWithOwnership())
+                            : DeleteEventSubscriptionOutcome(std::move(result.GetError()));
 }
 
 DeleteHsmClientCertificateOutcome RedshiftClient::DeleteHsmClientCertificate(const DeleteHsmClientCertificateRequest& request) const {
-  return DeleteHsmClientCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteHsmClientCertificateOutcome(result.GetResultWithOwnership())
+                            : DeleteHsmClientCertificateOutcome(std::move(result.GetError()));
 }
 
 DeleteHsmConfigurationOutcome RedshiftClient::DeleteHsmConfiguration(const DeleteHsmConfigurationRequest& request) const {
-  return DeleteHsmConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteHsmConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteHsmConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteIntegrationOutcome RedshiftClient::DeleteIntegration(const DeleteIntegrationRequest& request) const {
-  return DeleteIntegrationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteIntegrationOutcome(result.GetResultWithOwnership())
+                            : DeleteIntegrationOutcome(std::move(result.GetError()));
 }
 
 DeletePartnerOutcome RedshiftClient::DeletePartner(const DeletePartnerRequest& request) const {
-  return DeletePartnerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePartnerOutcome(result.GetResultWithOwnership()) : DeletePartnerOutcome(std::move(result.GetError()));
 }
 
 DeleteRedshiftIdcApplicationOutcome RedshiftClient::DeleteRedshiftIdcApplication(const DeleteRedshiftIdcApplicationRequest& request) const {
-  return DeleteRedshiftIdcApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRedshiftIdcApplicationOutcome(result.GetResultWithOwnership())
+                            : DeleteRedshiftIdcApplicationOutcome(std::move(result.GetError()));
 }
 
 DeleteResourcePolicyOutcome RedshiftClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const {
-  return DeleteResourcePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteScheduledActionOutcome RedshiftClient::DeleteScheduledAction(const DeleteScheduledActionRequest& request) const {
-  return DeleteScheduledActionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteScheduledActionOutcome(result.GetResultWithOwnership())
+                            : DeleteScheduledActionOutcome(std::move(result.GetError()));
 }
 
 DeleteSnapshotCopyGrantOutcome RedshiftClient::DeleteSnapshotCopyGrant(const DeleteSnapshotCopyGrantRequest& request) const {
-  return DeleteSnapshotCopyGrantOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSnapshotCopyGrantOutcome(result.GetResultWithOwnership())
+                            : DeleteSnapshotCopyGrantOutcome(std::move(result.GetError()));
 }
 
 DeleteSnapshotScheduleOutcome RedshiftClient::DeleteSnapshotSchedule(const DeleteSnapshotScheduleRequest& request) const {
-  return DeleteSnapshotScheduleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSnapshotScheduleOutcome(result.GetResultWithOwnership())
+                            : DeleteSnapshotScheduleOutcome(std::move(result.GetError()));
 }
 
 DeleteTagsOutcome RedshiftClient::DeleteTags(const DeleteTagsRequest& request) const {
-  return DeleteTagsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTagsOutcome(result.GetResultWithOwnership()) : DeleteTagsOutcome(std::move(result.GetError()));
 }
 
 DeleteUsageLimitOutcome RedshiftClient::DeleteUsageLimit(const DeleteUsageLimitRequest& request) const {
-  return DeleteUsageLimitOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteUsageLimitOutcome(result.GetResultWithOwnership())
+                            : DeleteUsageLimitOutcome(std::move(result.GetError()));
 }
 
 DeregisterNamespaceOutcome RedshiftClient::DeregisterNamespace(const DeregisterNamespaceRequest& request) const {
-  return DeregisterNamespaceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterNamespaceOutcome(result.GetResultWithOwnership())
+                            : DeregisterNamespaceOutcome(std::move(result.GetError()));
 }
 
 DescribeAccountAttributesOutcome RedshiftClient::DescribeAccountAttributes(const DescribeAccountAttributesRequest& request) const {
-  return DescribeAccountAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAccountAttributesOutcome(result.GetResultWithOwnership())
+                            : DescribeAccountAttributesOutcome(std::move(result.GetError()));
 }
 
 DescribeAuthenticationProfilesOutcome RedshiftClient::DescribeAuthenticationProfiles(
     const DescribeAuthenticationProfilesRequest& request) const {
-  return DescribeAuthenticationProfilesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAuthenticationProfilesOutcome(result.GetResultWithOwnership())
+                            : DescribeAuthenticationProfilesOutcome(std::move(result.GetError()));
 }
 
 DescribeClusterDbRevisionsOutcome RedshiftClient::DescribeClusterDbRevisions(const DescribeClusterDbRevisionsRequest& request) const {
-  return DescribeClusterDbRevisionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeClusterDbRevisionsOutcome(result.GetResultWithOwnership())
+                            : DescribeClusterDbRevisionsOutcome(std::move(result.GetError()));
 }
 
 DescribeClusterParameterGroupsOutcome RedshiftClient::DescribeClusterParameterGroups(
     const DescribeClusterParameterGroupsRequest& request) const {
-  return DescribeClusterParameterGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeClusterParameterGroupsOutcome(result.GetResultWithOwnership())
+                            : DescribeClusterParameterGroupsOutcome(std::move(result.GetError()));
 }
 
 DescribeClusterParametersOutcome RedshiftClient::DescribeClusterParameters(const DescribeClusterParametersRequest& request) const {
-  return DescribeClusterParametersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeClusterParametersOutcome(result.GetResultWithOwnership())
+                            : DescribeClusterParametersOutcome(std::move(result.GetError()));
 }
 
 DescribeClusterSecurityGroupsOutcome RedshiftClient::DescribeClusterSecurityGroups(
     const DescribeClusterSecurityGroupsRequest& request) const {
-  return DescribeClusterSecurityGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeClusterSecurityGroupsOutcome(result.GetResultWithOwnership())
+                            : DescribeClusterSecurityGroupsOutcome(std::move(result.GetError()));
 }
 
 DescribeClusterSnapshotsOutcome RedshiftClient::DescribeClusterSnapshots(const DescribeClusterSnapshotsRequest& request) const {
-  return DescribeClusterSnapshotsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeClusterSnapshotsOutcome(result.GetResultWithOwnership())
+                            : DescribeClusterSnapshotsOutcome(std::move(result.GetError()));
 }
 
 DescribeClusterSubnetGroupsOutcome RedshiftClient::DescribeClusterSubnetGroups(const DescribeClusterSubnetGroupsRequest& request) const {
-  return DescribeClusterSubnetGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeClusterSubnetGroupsOutcome(result.GetResultWithOwnership())
+                            : DescribeClusterSubnetGroupsOutcome(std::move(result.GetError()));
 }
 
 DescribeClusterTracksOutcome RedshiftClient::DescribeClusterTracks(const DescribeClusterTracksRequest& request) const {
-  return DescribeClusterTracksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeClusterTracksOutcome(result.GetResultWithOwnership())
+                            : DescribeClusterTracksOutcome(std::move(result.GetError()));
 }
 
 DescribeClusterVersionsOutcome RedshiftClient::DescribeClusterVersions(const DescribeClusterVersionsRequest& request) const {
-  return DescribeClusterVersionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeClusterVersionsOutcome(result.GetResultWithOwnership())
+                            : DescribeClusterVersionsOutcome(std::move(result.GetError()));
 }
 
 DescribeClustersOutcome RedshiftClient::DescribeClusters(const DescribeClustersRequest& request) const {
-  return DescribeClustersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeClustersOutcome(result.GetResultWithOwnership())
+                            : DescribeClustersOutcome(std::move(result.GetError()));
 }
 
 DescribeCustomDomainAssociationsOutcome RedshiftClient::DescribeCustomDomainAssociations(
     const DescribeCustomDomainAssociationsRequest& request) const {
-  return DescribeCustomDomainAssociationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCustomDomainAssociationsOutcome(result.GetResultWithOwnership())
+                            : DescribeCustomDomainAssociationsOutcome(std::move(result.GetError()));
 }
 
 DescribeDataSharesOutcome RedshiftClient::DescribeDataShares(const DescribeDataSharesRequest& request) const {
-  return DescribeDataSharesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDataSharesOutcome(result.GetResultWithOwnership())
+                            : DescribeDataSharesOutcome(std::move(result.GetError()));
 }
 
 DescribeDataSharesForConsumerOutcome RedshiftClient::DescribeDataSharesForConsumer(
     const DescribeDataSharesForConsumerRequest& request) const {
-  return DescribeDataSharesForConsumerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDataSharesForConsumerOutcome(result.GetResultWithOwnership())
+                            : DescribeDataSharesForConsumerOutcome(std::move(result.GetError()));
 }
 
 DescribeDataSharesForProducerOutcome RedshiftClient::DescribeDataSharesForProducer(
     const DescribeDataSharesForProducerRequest& request) const {
-  return DescribeDataSharesForProducerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDataSharesForProducerOutcome(result.GetResultWithOwnership())
+                            : DescribeDataSharesForProducerOutcome(std::move(result.GetError()));
 }
 
 DescribeDefaultClusterParametersOutcome RedshiftClient::DescribeDefaultClusterParameters(
     const DescribeDefaultClusterParametersRequest& request) const {
-  return DescribeDefaultClusterParametersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDefaultClusterParametersOutcome(result.GetResultWithOwnership())
+                            : DescribeDefaultClusterParametersOutcome(std::move(result.GetError()));
 }
 
 DescribeEndpointAccessOutcome RedshiftClient::DescribeEndpointAccess(const DescribeEndpointAccessRequest& request) const {
-  return DescribeEndpointAccessOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEndpointAccessOutcome(result.GetResultWithOwnership())
+                            : DescribeEndpointAccessOutcome(std::move(result.GetError()));
 }
 
 DescribeEndpointAuthorizationOutcome RedshiftClient::DescribeEndpointAuthorization(
     const DescribeEndpointAuthorizationRequest& request) const {
-  return DescribeEndpointAuthorizationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEndpointAuthorizationOutcome(result.GetResultWithOwnership())
+                            : DescribeEndpointAuthorizationOutcome(std::move(result.GetError()));
 }
 
 DescribeEventCategoriesOutcome RedshiftClient::DescribeEventCategories(const DescribeEventCategoriesRequest& request) const {
-  return DescribeEventCategoriesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEventCategoriesOutcome(result.GetResultWithOwnership())
+                            : DescribeEventCategoriesOutcome(std::move(result.GetError()));
 }
 
 DescribeEventSubscriptionsOutcome RedshiftClient::DescribeEventSubscriptions(const DescribeEventSubscriptionsRequest& request) const {
-  return DescribeEventSubscriptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEventSubscriptionsOutcome(result.GetResultWithOwnership())
+                            : DescribeEventSubscriptionsOutcome(std::move(result.GetError()));
 }
 
 DescribeEventsOutcome RedshiftClient::DescribeEvents(const DescribeEventsRequest& request) const {
-  return DescribeEventsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEventsOutcome(result.GetResultWithOwnership()) : DescribeEventsOutcome(std::move(result.GetError()));
 }
 
 DescribeHsmClientCertificatesOutcome RedshiftClient::DescribeHsmClientCertificates(
     const DescribeHsmClientCertificatesRequest& request) const {
-  return DescribeHsmClientCertificatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeHsmClientCertificatesOutcome(result.GetResultWithOwnership())
+                            : DescribeHsmClientCertificatesOutcome(std::move(result.GetError()));
 }
 
 DescribeHsmConfigurationsOutcome RedshiftClient::DescribeHsmConfigurations(const DescribeHsmConfigurationsRequest& request) const {
-  return DescribeHsmConfigurationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeHsmConfigurationsOutcome(result.GetResultWithOwnership())
+                            : DescribeHsmConfigurationsOutcome(std::move(result.GetError()));
 }
 
 DescribeInboundIntegrationsOutcome RedshiftClient::DescribeInboundIntegrations(const DescribeInboundIntegrationsRequest& request) const {
-  return DescribeInboundIntegrationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeInboundIntegrationsOutcome(result.GetResultWithOwnership())
+                            : DescribeInboundIntegrationsOutcome(std::move(result.GetError()));
 }
 
 DescribeIntegrationsOutcome RedshiftClient::DescribeIntegrations(const DescribeIntegrationsRequest& request) const {
-  return DescribeIntegrationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeIntegrationsOutcome(result.GetResultWithOwnership())
+                            : DescribeIntegrationsOutcome(std::move(result.GetError()));
 }
 
 DescribeLoggingStatusOutcome RedshiftClient::DescribeLoggingStatus(const DescribeLoggingStatusRequest& request) const {
-  return DescribeLoggingStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeLoggingStatusOutcome(result.GetResultWithOwnership())
+                            : DescribeLoggingStatusOutcome(std::move(result.GetError()));
 }
 
 DescribeNodeConfigurationOptionsOutcome RedshiftClient::DescribeNodeConfigurationOptions(
     const DescribeNodeConfigurationOptionsRequest& request) const {
-  return DescribeNodeConfigurationOptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeNodeConfigurationOptionsOutcome(result.GetResultWithOwnership())
+                            : DescribeNodeConfigurationOptionsOutcome(std::move(result.GetError()));
 }
 
 DescribeOrderableClusterOptionsOutcome RedshiftClient::DescribeOrderableClusterOptions(
     const DescribeOrderableClusterOptionsRequest& request) const {
-  return DescribeOrderableClusterOptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeOrderableClusterOptionsOutcome(result.GetResultWithOwnership())
+                            : DescribeOrderableClusterOptionsOutcome(std::move(result.GetError()));
 }
 
 DescribePartnersOutcome RedshiftClient::DescribePartners(const DescribePartnersRequest& request) const {
-  return DescribePartnersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePartnersOutcome(result.GetResultWithOwnership())
+                            : DescribePartnersOutcome(std::move(result.GetError()));
 }
 
 DescribeRedshiftIdcApplicationsOutcome RedshiftClient::DescribeRedshiftIdcApplications(
     const DescribeRedshiftIdcApplicationsRequest& request) const {
-  return DescribeRedshiftIdcApplicationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRedshiftIdcApplicationsOutcome(result.GetResultWithOwnership())
+                            : DescribeRedshiftIdcApplicationsOutcome(std::move(result.GetError()));
 }
 
 DescribeReservedNodeExchangeStatusOutcome RedshiftClient::DescribeReservedNodeExchangeStatus(
     const DescribeReservedNodeExchangeStatusRequest& request) const {
-  return DescribeReservedNodeExchangeStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeReservedNodeExchangeStatusOutcome(result.GetResultWithOwnership())
+                            : DescribeReservedNodeExchangeStatusOutcome(std::move(result.GetError()));
 }
 
 DescribeReservedNodeOfferingsOutcome RedshiftClient::DescribeReservedNodeOfferings(
     const DescribeReservedNodeOfferingsRequest& request) const {
-  return DescribeReservedNodeOfferingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeReservedNodeOfferingsOutcome(result.GetResultWithOwnership())
+                            : DescribeReservedNodeOfferingsOutcome(std::move(result.GetError()));
 }
 
 DescribeReservedNodesOutcome RedshiftClient::DescribeReservedNodes(const DescribeReservedNodesRequest& request) const {
-  return DescribeReservedNodesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeReservedNodesOutcome(result.GetResultWithOwnership())
+                            : DescribeReservedNodesOutcome(std::move(result.GetError()));
 }
 
 DescribeResizeOutcome RedshiftClient::DescribeResize(const DescribeResizeRequest& request) const {
-  return DescribeResizeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeResizeOutcome(result.GetResultWithOwnership()) : DescribeResizeOutcome(std::move(result.GetError()));
 }
 
 DescribeScheduledActionsOutcome RedshiftClient::DescribeScheduledActions(const DescribeScheduledActionsRequest& request) const {
-  return DescribeScheduledActionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeScheduledActionsOutcome(result.GetResultWithOwnership())
+                            : DescribeScheduledActionsOutcome(std::move(result.GetError()));
 }
 
 DescribeSnapshotCopyGrantsOutcome RedshiftClient::DescribeSnapshotCopyGrants(const DescribeSnapshotCopyGrantsRequest& request) const {
-  return DescribeSnapshotCopyGrantsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSnapshotCopyGrantsOutcome(result.GetResultWithOwnership())
+                            : DescribeSnapshotCopyGrantsOutcome(std::move(result.GetError()));
 }
 
 DescribeSnapshotSchedulesOutcome RedshiftClient::DescribeSnapshotSchedules(const DescribeSnapshotSchedulesRequest& request) const {
-  return DescribeSnapshotSchedulesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSnapshotSchedulesOutcome(result.GetResultWithOwnership())
+                            : DescribeSnapshotSchedulesOutcome(std::move(result.GetError()));
 }
 
 DescribeStorageOutcome RedshiftClient::DescribeStorage(const DescribeStorageRequest& request) const {
-  return DescribeStorageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeStorageOutcome(result.GetResultWithOwnership())
+                            : DescribeStorageOutcome(std::move(result.GetError()));
 }
 
 DescribeTableRestoreStatusOutcome RedshiftClient::DescribeTableRestoreStatus(const DescribeTableRestoreStatusRequest& request) const {
-  return DescribeTableRestoreStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTableRestoreStatusOutcome(result.GetResultWithOwnership())
+                            : DescribeTableRestoreStatusOutcome(std::move(result.GetError()));
 }
 
 DescribeTagsOutcome RedshiftClient::DescribeTags(const DescribeTagsRequest& request) const {
-  return DescribeTagsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTagsOutcome(result.GetResultWithOwnership()) : DescribeTagsOutcome(std::move(result.GetError()));
 }
 
 DescribeUsageLimitsOutcome RedshiftClient::DescribeUsageLimits(const DescribeUsageLimitsRequest& request) const {
-  return DescribeUsageLimitsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeUsageLimitsOutcome(result.GetResultWithOwnership())
+                            : DescribeUsageLimitsOutcome(std::move(result.GetError()));
 }
 
 DisableLoggingOutcome RedshiftClient::DisableLogging(const DisableLoggingRequest& request) const {
-  return DisableLoggingOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableLoggingOutcome(result.GetResultWithOwnership()) : DisableLoggingOutcome(std::move(result.GetError()));
 }
 
 DisableSnapshotCopyOutcome RedshiftClient::DisableSnapshotCopy(const DisableSnapshotCopyRequest& request) const {
-  return DisableSnapshotCopyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableSnapshotCopyOutcome(result.GetResultWithOwnership())
+                            : DisableSnapshotCopyOutcome(std::move(result.GetError()));
 }
 
 DisassociateDataShareConsumerOutcome RedshiftClient::DisassociateDataShareConsumer(
     const DisassociateDataShareConsumerRequest& request) const {
-  return DisassociateDataShareConsumerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateDataShareConsumerOutcome(result.GetResultWithOwnership())
+                            : DisassociateDataShareConsumerOutcome(std::move(result.GetError()));
 }
 
 EnableLoggingOutcome RedshiftClient::EnableLogging(const EnableLoggingRequest& request) const {
-  return EnableLoggingOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableLoggingOutcome(result.GetResultWithOwnership()) : EnableLoggingOutcome(std::move(result.GetError()));
 }
 
 EnableSnapshotCopyOutcome RedshiftClient::EnableSnapshotCopy(const EnableSnapshotCopyRequest& request) const {
-  return EnableSnapshotCopyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableSnapshotCopyOutcome(result.GetResultWithOwnership())
+                            : EnableSnapshotCopyOutcome(std::move(result.GetError()));
 }
 
 FailoverPrimaryComputeOutcome RedshiftClient::FailoverPrimaryCompute(const FailoverPrimaryComputeRequest& request) const {
-  return FailoverPrimaryComputeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? FailoverPrimaryComputeOutcome(result.GetResultWithOwnership())
+                            : FailoverPrimaryComputeOutcome(std::move(result.GetError()));
 }
 
 GetClusterCredentialsOutcome RedshiftClient::GetClusterCredentials(const GetClusterCredentialsRequest& request) const {
-  return GetClusterCredentialsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetClusterCredentialsOutcome(result.GetResultWithOwnership())
+                            : GetClusterCredentialsOutcome(std::move(result.GetError()));
 }
 
 GetClusterCredentialsWithIAMOutcome RedshiftClient::GetClusterCredentialsWithIAM(const GetClusterCredentialsWithIAMRequest& request) const {
-  return GetClusterCredentialsWithIAMOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetClusterCredentialsWithIAMOutcome(result.GetResultWithOwnership())
+                            : GetClusterCredentialsWithIAMOutcome(std::move(result.GetError()));
 }
 
 GetIdentityCenterAuthTokenOutcome RedshiftClient::GetIdentityCenterAuthToken(const GetIdentityCenterAuthTokenRequest& request) const {
-  return GetIdentityCenterAuthTokenOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIdentityCenterAuthTokenOutcome(result.GetResultWithOwnership())
+                            : GetIdentityCenterAuthTokenOutcome(std::move(result.GetError()));
 }
 
 GetReservedNodeExchangeConfigurationOptionsOutcome RedshiftClient::GetReservedNodeExchangeConfigurationOptions(
     const GetReservedNodeExchangeConfigurationOptionsRequest& request) const {
-  return GetReservedNodeExchangeConfigurationOptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetReservedNodeExchangeConfigurationOptionsOutcome(result.GetResultWithOwnership())
+                            : GetReservedNodeExchangeConfigurationOptionsOutcome(std::move(result.GetError()));
 }
 
 GetReservedNodeExchangeOfferingsOutcome RedshiftClient::GetReservedNodeExchangeOfferings(
     const GetReservedNodeExchangeOfferingsRequest& request) const {
-  return GetReservedNodeExchangeOfferingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetReservedNodeExchangeOfferingsOutcome(result.GetResultWithOwnership())
+                            : GetReservedNodeExchangeOfferingsOutcome(std::move(result.GetError()));
 }
 
 GetResourcePolicyOutcome RedshiftClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const {
-  return GetResourcePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : GetResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 ListRecommendationsOutcome RedshiftClient::ListRecommendations(const ListRecommendationsRequest& request) const {
-  return ListRecommendationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRecommendationsOutcome(result.GetResultWithOwnership())
+                            : ListRecommendationsOutcome(std::move(result.GetError()));
 }
 
 ModifyAquaConfigurationOutcome RedshiftClient::ModifyAquaConfiguration(const ModifyAquaConfigurationRequest& request) const {
-  return ModifyAquaConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyAquaConfigurationOutcome(result.GetResultWithOwnership())
+                            : ModifyAquaConfigurationOutcome(std::move(result.GetError()));
 }
 
 ModifyAuthenticationProfileOutcome RedshiftClient::ModifyAuthenticationProfile(const ModifyAuthenticationProfileRequest& request) const {
-  return ModifyAuthenticationProfileOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyAuthenticationProfileOutcome(result.GetResultWithOwnership())
+                            : ModifyAuthenticationProfileOutcome(std::move(result.GetError()));
 }
 
 ModifyClusterOutcome RedshiftClient::ModifyCluster(const ModifyClusterRequest& request) const {
-  return ModifyClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyClusterOutcome(result.GetResultWithOwnership()) : ModifyClusterOutcome(std::move(result.GetError()));
 }
 
 ModifyClusterDbRevisionOutcome RedshiftClient::ModifyClusterDbRevision(const ModifyClusterDbRevisionRequest& request) const {
-  return ModifyClusterDbRevisionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyClusterDbRevisionOutcome(result.GetResultWithOwnership())
+                            : ModifyClusterDbRevisionOutcome(std::move(result.GetError()));
 }
 
 ModifyClusterIamRolesOutcome RedshiftClient::ModifyClusterIamRoles(const ModifyClusterIamRolesRequest& request) const {
-  return ModifyClusterIamRolesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyClusterIamRolesOutcome(result.GetResultWithOwnership())
+                            : ModifyClusterIamRolesOutcome(std::move(result.GetError()));
 }
 
 ModifyClusterMaintenanceOutcome RedshiftClient::ModifyClusterMaintenance(const ModifyClusterMaintenanceRequest& request) const {
-  return ModifyClusterMaintenanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyClusterMaintenanceOutcome(result.GetResultWithOwnership())
+                            : ModifyClusterMaintenanceOutcome(std::move(result.GetError()));
 }
 
 ModifyClusterParameterGroupOutcome RedshiftClient::ModifyClusterParameterGroup(const ModifyClusterParameterGroupRequest& request) const {
-  return ModifyClusterParameterGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyClusterParameterGroupOutcome(result.GetResultWithOwnership())
+                            : ModifyClusterParameterGroupOutcome(std::move(result.GetError()));
 }
 
 ModifyClusterSnapshotOutcome RedshiftClient::ModifyClusterSnapshot(const ModifyClusterSnapshotRequest& request) const {
-  return ModifyClusterSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyClusterSnapshotOutcome(result.GetResultWithOwnership())
+                            : ModifyClusterSnapshotOutcome(std::move(result.GetError()));
 }
 
 ModifyClusterSnapshotScheduleOutcome RedshiftClient::ModifyClusterSnapshotSchedule(
     const ModifyClusterSnapshotScheduleRequest& request) const {
-  return ModifyClusterSnapshotScheduleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyClusterSnapshotScheduleOutcome(result.GetResultWithOwnership())
+                            : ModifyClusterSnapshotScheduleOutcome(std::move(result.GetError()));
 }
 
 ModifyClusterSubnetGroupOutcome RedshiftClient::ModifyClusterSubnetGroup(const ModifyClusterSubnetGroupRequest& request) const {
-  return ModifyClusterSubnetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyClusterSubnetGroupOutcome(result.GetResultWithOwnership())
+                            : ModifyClusterSubnetGroupOutcome(std::move(result.GetError()));
 }
 
 ModifyCustomDomainAssociationOutcome RedshiftClient::ModifyCustomDomainAssociation(
     const ModifyCustomDomainAssociationRequest& request) const {
-  return ModifyCustomDomainAssociationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyCustomDomainAssociationOutcome(result.GetResultWithOwnership())
+                            : ModifyCustomDomainAssociationOutcome(std::move(result.GetError()));
 }
 
 ModifyEndpointAccessOutcome RedshiftClient::ModifyEndpointAccess(const ModifyEndpointAccessRequest& request) const {
-  return ModifyEndpointAccessOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyEndpointAccessOutcome(result.GetResultWithOwnership())
+                            : ModifyEndpointAccessOutcome(std::move(result.GetError()));
 }
 
 ModifyEventSubscriptionOutcome RedshiftClient::ModifyEventSubscription(const ModifyEventSubscriptionRequest& request) const {
-  return ModifyEventSubscriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyEventSubscriptionOutcome(result.GetResultWithOwnership())
+                            : ModifyEventSubscriptionOutcome(std::move(result.GetError()));
 }
 
 ModifyIntegrationOutcome RedshiftClient::ModifyIntegration(const ModifyIntegrationRequest& request) const {
-  return ModifyIntegrationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyIntegrationOutcome(result.GetResultWithOwnership())
+                            : ModifyIntegrationOutcome(std::move(result.GetError()));
 }
 
 ModifyLakehouseConfigurationOutcome RedshiftClient::ModifyLakehouseConfiguration(const ModifyLakehouseConfigurationRequest& request) const {
-  return ModifyLakehouseConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyLakehouseConfigurationOutcome(result.GetResultWithOwnership())
+                            : ModifyLakehouseConfigurationOutcome(std::move(result.GetError()));
 }
 
 ModifyRedshiftIdcApplicationOutcome RedshiftClient::ModifyRedshiftIdcApplication(const ModifyRedshiftIdcApplicationRequest& request) const {
-  return ModifyRedshiftIdcApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyRedshiftIdcApplicationOutcome(result.GetResultWithOwnership())
+                            : ModifyRedshiftIdcApplicationOutcome(std::move(result.GetError()));
 }
 
 ModifyScheduledActionOutcome RedshiftClient::ModifyScheduledAction(const ModifyScheduledActionRequest& request) const {
-  return ModifyScheduledActionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyScheduledActionOutcome(result.GetResultWithOwnership())
+                            : ModifyScheduledActionOutcome(std::move(result.GetError()));
 }
 
 ModifySnapshotCopyRetentionPeriodOutcome RedshiftClient::ModifySnapshotCopyRetentionPeriod(
     const ModifySnapshotCopyRetentionPeriodRequest& request) const {
-  return ModifySnapshotCopyRetentionPeriodOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifySnapshotCopyRetentionPeriodOutcome(result.GetResultWithOwnership())
+                            : ModifySnapshotCopyRetentionPeriodOutcome(std::move(result.GetError()));
 }
 
 ModifySnapshotScheduleOutcome RedshiftClient::ModifySnapshotSchedule(const ModifySnapshotScheduleRequest& request) const {
-  return ModifySnapshotScheduleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifySnapshotScheduleOutcome(result.GetResultWithOwnership())
+                            : ModifySnapshotScheduleOutcome(std::move(result.GetError()));
 }
 
 ModifyUsageLimitOutcome RedshiftClient::ModifyUsageLimit(const ModifyUsageLimitRequest& request) const {
-  return ModifyUsageLimitOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyUsageLimitOutcome(result.GetResultWithOwnership())
+                            : ModifyUsageLimitOutcome(std::move(result.GetError()));
 }
 
 PauseClusterOutcome RedshiftClient::PauseCluster(const PauseClusterRequest& request) const {
-  return PauseClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PauseClusterOutcome(result.GetResultWithOwnership()) : PauseClusterOutcome(std::move(result.GetError()));
 }
 
 PurchaseReservedNodeOfferingOutcome RedshiftClient::PurchaseReservedNodeOffering(const PurchaseReservedNodeOfferingRequest& request) const {
-  return PurchaseReservedNodeOfferingOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PurchaseReservedNodeOfferingOutcome(result.GetResultWithOwnership())
+                            : PurchaseReservedNodeOfferingOutcome(std::move(result.GetError()));
 }
 
 PutResourcePolicyOutcome RedshiftClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const {
-  return PutResourcePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : PutResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 RebootClusterOutcome RedshiftClient::RebootCluster(const RebootClusterRequest& request) const {
-  return RebootClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RebootClusterOutcome(result.GetResultWithOwnership()) : RebootClusterOutcome(std::move(result.GetError()));
 }
 
 RegisterNamespaceOutcome RedshiftClient::RegisterNamespace(const RegisterNamespaceRequest& request) const {
-  return RegisterNamespaceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterNamespaceOutcome(result.GetResultWithOwnership())
+                            : RegisterNamespaceOutcome(std::move(result.GetError()));
 }
 
 RejectDataShareOutcome RedshiftClient::RejectDataShare(const RejectDataShareRequest& request) const {
-  return RejectDataShareOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RejectDataShareOutcome(result.GetResultWithOwnership())
+                            : RejectDataShareOutcome(std::move(result.GetError()));
 }
 
 ResetClusterParameterGroupOutcome RedshiftClient::ResetClusterParameterGroup(const ResetClusterParameterGroupRequest& request) const {
-  return ResetClusterParameterGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResetClusterParameterGroupOutcome(result.GetResultWithOwnership())
+                            : ResetClusterParameterGroupOutcome(std::move(result.GetError()));
 }
 
 ResizeClusterOutcome RedshiftClient::ResizeCluster(const ResizeClusterRequest& request) const {
-  return ResizeClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResizeClusterOutcome(result.GetResultWithOwnership()) : ResizeClusterOutcome(std::move(result.GetError()));
 }
 
 RestoreFromClusterSnapshotOutcome RedshiftClient::RestoreFromClusterSnapshot(const RestoreFromClusterSnapshotRequest& request) const {
-  return RestoreFromClusterSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RestoreFromClusterSnapshotOutcome(result.GetResultWithOwnership())
+                            : RestoreFromClusterSnapshotOutcome(std::move(result.GetError()));
 }
 
 RestoreTableFromClusterSnapshotOutcome RedshiftClient::RestoreTableFromClusterSnapshot(
     const RestoreTableFromClusterSnapshotRequest& request) const {
-  return RestoreTableFromClusterSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RestoreTableFromClusterSnapshotOutcome(result.GetResultWithOwnership())
+                            : RestoreTableFromClusterSnapshotOutcome(std::move(result.GetError()));
 }
 
 ResumeClusterOutcome RedshiftClient::ResumeCluster(const ResumeClusterRequest& request) const {
-  return ResumeClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResumeClusterOutcome(result.GetResultWithOwnership()) : ResumeClusterOutcome(std::move(result.GetError()));
 }
 
 RevokeClusterSecurityGroupIngressOutcome RedshiftClient::RevokeClusterSecurityGroupIngress(
     const RevokeClusterSecurityGroupIngressRequest& request) const {
-  return RevokeClusterSecurityGroupIngressOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RevokeClusterSecurityGroupIngressOutcome(result.GetResultWithOwnership())
+                            : RevokeClusterSecurityGroupIngressOutcome(std::move(result.GetError()));
 }
 
 RevokeEndpointAccessOutcome RedshiftClient::RevokeEndpointAccess(const RevokeEndpointAccessRequest& request) const {
-  return RevokeEndpointAccessOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RevokeEndpointAccessOutcome(result.GetResultWithOwnership())
+                            : RevokeEndpointAccessOutcome(std::move(result.GetError()));
 }
 
 RevokeSnapshotAccessOutcome RedshiftClient::RevokeSnapshotAccess(const RevokeSnapshotAccessRequest& request) const {
-  return RevokeSnapshotAccessOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RevokeSnapshotAccessOutcome(result.GetResultWithOwnership())
+                            : RevokeSnapshotAccessOutcome(std::move(result.GetError()));
 }
 
 RotateEncryptionKeyOutcome RedshiftClient::RotateEncryptionKey(const RotateEncryptionKeyRequest& request) const {
-  return RotateEncryptionKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RotateEncryptionKeyOutcome(result.GetResultWithOwnership())
+                            : RotateEncryptionKeyOutcome(std::move(result.GetError()));
 }
 
 UpdatePartnerStatusOutcome RedshiftClient::UpdatePartnerStatus(const UpdatePartnerStatusRequest& request) const {
-  return UpdatePartnerStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePartnerStatusOutcome(result.GetResultWithOwnership())
+                            : UpdatePartnerStatusOutcome(std::move(result.GetError()));
 }

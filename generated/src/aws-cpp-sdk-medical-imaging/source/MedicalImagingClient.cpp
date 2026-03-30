@@ -214,7 +214,8 @@ CopyImageSetOutcome MedicalImagingClient::CopyImageSet(const CopyImageSetRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/copyImageSet");
   };
 
-  return CopyImageSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CopyImageSetOutcome(result.GetResultWithOwnership()) : CopyImageSetOutcome(std::move(result.GetError()));
 }
 
 CreateDatastoreOutcome MedicalImagingClient::CreateDatastore(const CreateDatastoreRequest& request) const {
@@ -223,7 +224,9 @@ CreateDatastoreOutcome MedicalImagingClient::CreateDatastore(const CreateDatasto
     endpointResolutionOutcome.GetResult().AddPathSegments("/datastore");
   };
 
-  return CreateDatastoreOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDatastoreOutcome(result.GetResultWithOwnership())
+                            : CreateDatastoreOutcome(std::move(result.GetError()));
 }
 
 DeleteDatastoreOutcome MedicalImagingClient::DeleteDatastore(const DeleteDatastoreRequest& request) const {
@@ -239,7 +242,9 @@ DeleteDatastoreOutcome MedicalImagingClient::DeleteDatastore(const DeleteDatasto
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatastoreId());
   };
 
-  return DeleteDatastoreOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDatastoreOutcome(result.GetResultWithOwnership())
+                            : DeleteDatastoreOutcome(std::move(result.GetError()));
 }
 
 DeleteImageSetOutcome MedicalImagingClient::DeleteImageSet(const DeleteImageSetRequest& request) const {
@@ -263,7 +268,8 @@ DeleteImageSetOutcome MedicalImagingClient::DeleteImageSet(const DeleteImageSetR
     endpointResolutionOutcome.GetResult().AddPathSegments("/deleteImageSet");
   };
 
-  return DeleteImageSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteImageSetOutcome(result.GetResultWithOwnership()) : DeleteImageSetOutcome(std::move(result.GetError()));
 }
 
 GetDICOMImportJobOutcome MedicalImagingClient::GetDICOMImportJob(const GetDICOMImportJobRequest& request) const {
@@ -286,7 +292,9 @@ GetDICOMImportJobOutcome MedicalImagingClient::GetDICOMImportJob(const GetDICOMI
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return GetDICOMImportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDICOMImportJobOutcome(result.GetResultWithOwnership())
+                            : GetDICOMImportJobOutcome(std::move(result.GetError()));
 }
 
 GetDatastoreOutcome MedicalImagingClient::GetDatastore(const GetDatastoreRequest& request) const {
@@ -302,7 +310,8 @@ GetDatastoreOutcome MedicalImagingClient::GetDatastore(const GetDatastoreRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatastoreId());
   };
 
-  return GetDatastoreOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDatastoreOutcome(result.GetResultWithOwnership()) : GetDatastoreOutcome(std::move(result.GetError()));
 }
 
 GetImageFrameOutcome MedicalImagingClient::GetImageFrame(const GetImageFrameRequest& request) const {
@@ -343,8 +352,9 @@ GetImageFrameOutcome MedicalImagingClient::GetImageFrame(const GetImageFrameRequ
         endpointResolutionOutcome.GetResult().AddPathSegments("/imageSet/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetImageSetId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/getImageFrame");
-        return GetImageFrameOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? GetImageFrameOutcome(result.GetResultWithOwnership())
+                                  : GetImageFrameOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -372,7 +382,8 @@ GetImageSetOutcome MedicalImagingClient::GetImageSet(const GetImageSetRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/getImageSet");
   };
 
-  return GetImageSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetImageSetOutcome(result.GetResultWithOwnership()) : GetImageSetOutcome(std::move(result.GetError()));
 }
 
 GetImageSetMetadataOutcome MedicalImagingClient::GetImageSetMetadata(const GetImageSetMetadataRequest& request) const {
@@ -413,8 +424,9 @@ GetImageSetMetadataOutcome MedicalImagingClient::GetImageSetMetadata(const GetIm
         endpointResolutionOutcome.GetResult().AddPathSegments("/imageSet/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetImageSetId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/getImageSetMetadata");
-        return GetImageSetMetadataOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? GetImageSetMetadataOutcome(result.GetResultWithOwnership())
+                                  : GetImageSetMetadataOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -434,7 +446,9 @@ ListDICOMImportJobsOutcome MedicalImagingClient::ListDICOMImportJobs(const ListD
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatastoreId());
   };
 
-  return ListDICOMImportJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDICOMImportJobsOutcome(result.GetResultWithOwnership())
+                            : ListDICOMImportJobsOutcome(std::move(result.GetError()));
 }
 
 ListDatastoresOutcome MedicalImagingClient::ListDatastores(const ListDatastoresRequest& request) const {
@@ -443,7 +457,8 @@ ListDatastoresOutcome MedicalImagingClient::ListDatastores(const ListDatastoresR
     endpointResolutionOutcome.GetResult().AddPathSegments("/datastore");
   };
 
-  return ListDatastoresOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDatastoresOutcome(result.GetResultWithOwnership()) : ListDatastoresOutcome(std::move(result.GetError()));
 }
 
 ListImageSetVersionsOutcome MedicalImagingClient::ListImageSetVersions(const ListImageSetVersionsRequest& request) const {
@@ -467,7 +482,9 @@ ListImageSetVersionsOutcome MedicalImagingClient::ListImageSetVersions(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/listImageSetVersions");
   };
 
-  return ListImageSetVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListImageSetVersionsOutcome(result.GetResultWithOwnership())
+                            : ListImageSetVersionsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome MedicalImagingClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -483,7 +500,9 @@ ListTagsForResourceOutcome MedicalImagingClient::ListTagsForResource(const ListT
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 SearchImageSetsOutcome MedicalImagingClient::SearchImageSets(const SearchImageSetsRequest& request) const {
@@ -500,7 +519,9 @@ SearchImageSetsOutcome MedicalImagingClient::SearchImageSets(const SearchImageSe
     endpointResolutionOutcome.GetResult().AddPathSegments("/searchImageSets");
   };
 
-  return SearchImageSetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchImageSetsOutcome(result.GetResultWithOwnership())
+                            : SearchImageSetsOutcome(std::move(result.GetError()));
 }
 
 StartDICOMImportJobOutcome MedicalImagingClient::StartDICOMImportJob(const StartDICOMImportJobRequest& request) const {
@@ -516,7 +537,9 @@ StartDICOMImportJobOutcome MedicalImagingClient::StartDICOMImportJob(const Start
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatastoreId());
   };
 
-  return StartDICOMImportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDICOMImportJobOutcome(result.GetResultWithOwnership())
+                            : StartDICOMImportJobOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome MedicalImagingClient::TagResource(const TagResourceRequest& request) const {
@@ -532,7 +555,8 @@ TagResourceOutcome MedicalImagingClient::TagResource(const TagResourceRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome MedicalImagingClient::UntagResource(const UntagResourceRequest& request) const {
@@ -553,7 +577,8 @@ UntagResourceOutcome MedicalImagingClient::UntagResource(const UntagResourceRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateImageSetMetadataOutcome MedicalImagingClient::UpdateImageSetMetadata(const UpdateImageSetMetadataRequest& request) const {
@@ -582,5 +607,7 @@ UpdateImageSetMetadataOutcome MedicalImagingClient::UpdateImageSetMetadata(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/updateImageSetMetadata");
   };
 
-  return UpdateImageSetMetadataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateImageSetMetadataOutcome(result.GetResultWithOwnership())
+                            : UpdateImageSetMetadataOutcome(std::move(result.GetError()));
 }

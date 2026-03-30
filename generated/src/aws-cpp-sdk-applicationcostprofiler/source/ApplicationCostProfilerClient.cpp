@@ -202,7 +202,9 @@ DeleteReportDefinitionOutcome ApplicationCostProfilerClient::DeleteReportDefinit
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReportId());
   };
 
-  return DeleteReportDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteReportDefinitionOutcome(result.GetResultWithOwnership())
+                            : DeleteReportDefinitionOutcome(std::move(result.GetError()));
 }
 
 GetReportDefinitionOutcome ApplicationCostProfilerClient::GetReportDefinition(const GetReportDefinitionRequest& request) const {
@@ -218,7 +220,9 @@ GetReportDefinitionOutcome ApplicationCostProfilerClient::GetReportDefinition(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReportId());
   };
 
-  return GetReportDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetReportDefinitionOutcome(result.GetResultWithOwnership())
+                            : GetReportDefinitionOutcome(std::move(result.GetError()));
 }
 
 ImportApplicationUsageOutcome ApplicationCostProfilerClient::ImportApplicationUsage(const ImportApplicationUsageRequest& request) const {
@@ -227,7 +231,9 @@ ImportApplicationUsageOutcome ApplicationCostProfilerClient::ImportApplicationUs
     endpointResolutionOutcome.GetResult().AddPathSegments("/importApplicationUsage");
   };
 
-  return ImportApplicationUsageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportApplicationUsageOutcome(result.GetResultWithOwnership())
+                            : ImportApplicationUsageOutcome(std::move(result.GetError()));
 }
 
 ListReportDefinitionsOutcome ApplicationCostProfilerClient::ListReportDefinitions(const ListReportDefinitionsRequest& request) const {
@@ -236,7 +242,9 @@ ListReportDefinitionsOutcome ApplicationCostProfilerClient::ListReportDefinition
     endpointResolutionOutcome.GetResult().AddPathSegments("/reportDefinition");
   };
 
-  return ListReportDefinitionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListReportDefinitionsOutcome(result.GetResultWithOwnership())
+                            : ListReportDefinitionsOutcome(std::move(result.GetError()));
 }
 
 PutReportDefinitionOutcome ApplicationCostProfilerClient::PutReportDefinition(const PutReportDefinitionRequest& request) const {
@@ -245,7 +253,9 @@ PutReportDefinitionOutcome ApplicationCostProfilerClient::PutReportDefinition(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/reportDefinition");
   };
 
-  return PutReportDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutReportDefinitionOutcome(result.GetResultWithOwnership())
+                            : PutReportDefinitionOutcome(std::move(result.GetError()));
 }
 
 UpdateReportDefinitionOutcome ApplicationCostProfilerClient::UpdateReportDefinition(const UpdateReportDefinitionRequest& request) const {
@@ -261,5 +271,7 @@ UpdateReportDefinitionOutcome ApplicationCostProfilerClient::UpdateReportDefinit
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReportId());
   };
 
-  return UpdateReportDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateReportDefinitionOutcome(result.GetResultWithOwnership())
+                            : UpdateReportDefinitionOutcome(std::move(result.GetError()));
 }

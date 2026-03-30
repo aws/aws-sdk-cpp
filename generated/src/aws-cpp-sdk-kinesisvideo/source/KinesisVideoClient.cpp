@@ -213,7 +213,9 @@ CreateSignalingChannelOutcome KinesisVideoClient::CreateSignalingChannel(const C
     endpointResolutionOutcome.GetResult().AddPathSegments("/createSignalingChannel");
   };
 
-  return CreateSignalingChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSignalingChannelOutcome(result.GetResultWithOwnership())
+                            : CreateSignalingChannelOutcome(std::move(result.GetError()));
 }
 
 CreateStreamOutcome KinesisVideoClient::CreateStream(const CreateStreamRequest& request) const {
@@ -222,7 +224,8 @@ CreateStreamOutcome KinesisVideoClient::CreateStream(const CreateStreamRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/createStream");
   };
 
-  return CreateStreamOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateStreamOutcome(result.GetResultWithOwnership()) : CreateStreamOutcome(std::move(result.GetError()));
 }
 
 DeleteEdgeConfigurationOutcome KinesisVideoClient::DeleteEdgeConfiguration(const DeleteEdgeConfigurationRequest& request) const {
@@ -231,7 +234,9 @@ DeleteEdgeConfigurationOutcome KinesisVideoClient::DeleteEdgeConfiguration(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/deleteEdgeConfiguration");
   };
 
-  return DeleteEdgeConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteEdgeConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteEdgeConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteSignalingChannelOutcome KinesisVideoClient::DeleteSignalingChannel(const DeleteSignalingChannelRequest& request) const {
@@ -240,7 +245,9 @@ DeleteSignalingChannelOutcome KinesisVideoClient::DeleteSignalingChannel(const D
     endpointResolutionOutcome.GetResult().AddPathSegments("/deleteSignalingChannel");
   };
 
-  return DeleteSignalingChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSignalingChannelOutcome(result.GetResultWithOwnership())
+                            : DeleteSignalingChannelOutcome(std::move(result.GetError()));
 }
 
 DeleteStreamOutcome KinesisVideoClient::DeleteStream(const DeleteStreamRequest& request) const {
@@ -249,7 +256,8 @@ DeleteStreamOutcome KinesisVideoClient::DeleteStream(const DeleteStreamRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/deleteStream");
   };
 
-  return DeleteStreamOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteStreamOutcome(result.GetResultWithOwnership()) : DeleteStreamOutcome(std::move(result.GetError()));
 }
 
 DescribeEdgeConfigurationOutcome KinesisVideoClient::DescribeEdgeConfiguration(const DescribeEdgeConfigurationRequest& request) const {
@@ -258,7 +266,9 @@ DescribeEdgeConfigurationOutcome KinesisVideoClient::DescribeEdgeConfiguration(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/describeEdgeConfiguration");
   };
 
-  return DescribeEdgeConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEdgeConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeEdgeConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeImageGenerationConfigurationOutcome KinesisVideoClient::DescribeImageGenerationConfiguration(
@@ -268,7 +278,9 @@ DescribeImageGenerationConfigurationOutcome KinesisVideoClient::DescribeImageGen
     endpointResolutionOutcome.GetResult().AddPathSegments("/describeImageGenerationConfiguration");
   };
 
-  return DescribeImageGenerationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeImageGenerationConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeImageGenerationConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeMappedResourceConfigurationOutcome KinesisVideoClient::DescribeMappedResourceConfiguration(
@@ -278,7 +290,9 @@ DescribeMappedResourceConfigurationOutcome KinesisVideoClient::DescribeMappedRes
     endpointResolutionOutcome.GetResult().AddPathSegments("/describeMappedResourceConfiguration");
   };
 
-  return DescribeMappedResourceConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeMappedResourceConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeMappedResourceConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeMediaStorageConfigurationOutcome KinesisVideoClient::DescribeMediaStorageConfiguration(
@@ -288,7 +302,9 @@ DescribeMediaStorageConfigurationOutcome KinesisVideoClient::DescribeMediaStorag
     endpointResolutionOutcome.GetResult().AddPathSegments("/describeMediaStorageConfiguration");
   };
 
-  return DescribeMediaStorageConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeMediaStorageConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeMediaStorageConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeNotificationConfigurationOutcome KinesisVideoClient::DescribeNotificationConfiguration(
@@ -298,7 +314,9 @@ DescribeNotificationConfigurationOutcome KinesisVideoClient::DescribeNotificatio
     endpointResolutionOutcome.GetResult().AddPathSegments("/describeNotificationConfiguration");
   };
 
-  return DescribeNotificationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeNotificationConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeNotificationConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeSignalingChannelOutcome KinesisVideoClient::DescribeSignalingChannel(const DescribeSignalingChannelRequest& request) const {
@@ -307,7 +325,9 @@ DescribeSignalingChannelOutcome KinesisVideoClient::DescribeSignalingChannel(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/describeSignalingChannel");
   };
 
-  return DescribeSignalingChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSignalingChannelOutcome(result.GetResultWithOwnership())
+                            : DescribeSignalingChannelOutcome(std::move(result.GetError()));
 }
 
 DescribeStreamOutcome KinesisVideoClient::DescribeStream(const DescribeStreamRequest& request) const {
@@ -316,7 +336,8 @@ DescribeStreamOutcome KinesisVideoClient::DescribeStream(const DescribeStreamReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/describeStream");
   };
 
-  return DescribeStreamOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeStreamOutcome(result.GetResultWithOwnership()) : DescribeStreamOutcome(std::move(result.GetError()));
 }
 
 DescribeStreamStorageConfigurationOutcome KinesisVideoClient::DescribeStreamStorageConfiguration(
@@ -326,7 +347,9 @@ DescribeStreamStorageConfigurationOutcome KinesisVideoClient::DescribeStreamStor
     endpointResolutionOutcome.GetResult().AddPathSegments("/describeStreamStorageConfiguration");
   };
 
-  return DescribeStreamStorageConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeStreamStorageConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeStreamStorageConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetDataEndpointOutcome KinesisVideoClient::GetDataEndpoint(const GetDataEndpointRequest& request) const {
@@ -335,7 +358,9 @@ GetDataEndpointOutcome KinesisVideoClient::GetDataEndpoint(const GetDataEndpoint
     endpointResolutionOutcome.GetResult().AddPathSegments("/getDataEndpoint");
   };
 
-  return GetDataEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDataEndpointOutcome(result.GetResultWithOwnership())
+                            : GetDataEndpointOutcome(std::move(result.GetError()));
 }
 
 GetSignalingChannelEndpointOutcome KinesisVideoClient::GetSignalingChannelEndpoint(
@@ -345,7 +370,9 @@ GetSignalingChannelEndpointOutcome KinesisVideoClient::GetSignalingChannelEndpoi
     endpointResolutionOutcome.GetResult().AddPathSegments("/getSignalingChannelEndpoint");
   };
 
-  return GetSignalingChannelEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSignalingChannelEndpointOutcome(result.GetResultWithOwnership())
+                            : GetSignalingChannelEndpointOutcome(std::move(result.GetError()));
 }
 
 ListEdgeAgentConfigurationsOutcome KinesisVideoClient::ListEdgeAgentConfigurations(
@@ -355,7 +382,9 @@ ListEdgeAgentConfigurationsOutcome KinesisVideoClient::ListEdgeAgentConfiguratio
     endpointResolutionOutcome.GetResult().AddPathSegments("/listEdgeAgentConfigurations");
   };
 
-  return ListEdgeAgentConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEdgeAgentConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListEdgeAgentConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListSignalingChannelsOutcome KinesisVideoClient::ListSignalingChannels(const ListSignalingChannelsRequest& request) const {
@@ -364,7 +393,9 @@ ListSignalingChannelsOutcome KinesisVideoClient::ListSignalingChannels(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/listSignalingChannels");
   };
 
-  return ListSignalingChannelsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSignalingChannelsOutcome(result.GetResultWithOwnership())
+                            : ListSignalingChannelsOutcome(std::move(result.GetError()));
 }
 
 ListStreamsOutcome KinesisVideoClient::ListStreams(const ListStreamsRequest& request) const {
@@ -373,7 +404,8 @@ ListStreamsOutcome KinesisVideoClient::ListStreams(const ListStreamsRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/listStreams");
   };
 
-  return ListStreamsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListStreamsOutcome(result.GetResultWithOwnership()) : ListStreamsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome KinesisVideoClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -382,7 +414,9 @@ ListTagsForResourceOutcome KinesisVideoClient::ListTagsForResource(const ListTag
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListTagsForResource");
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTagsForStreamOutcome KinesisVideoClient::ListTagsForStream(const ListTagsForStreamRequest& request) const {
@@ -391,7 +425,9 @@ ListTagsForStreamOutcome KinesisVideoClient::ListTagsForStream(const ListTagsFor
     endpointResolutionOutcome.GetResult().AddPathSegments("/listTagsForStream");
   };
 
-  return ListTagsForStreamOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForStreamOutcome(result.GetResultWithOwnership())
+                            : ListTagsForStreamOutcome(std::move(result.GetError()));
 }
 
 StartEdgeConfigurationUpdateOutcome KinesisVideoClient::StartEdgeConfigurationUpdate(
@@ -401,7 +437,9 @@ StartEdgeConfigurationUpdateOutcome KinesisVideoClient::StartEdgeConfigurationUp
     endpointResolutionOutcome.GetResult().AddPathSegments("/startEdgeConfigurationUpdate");
   };
 
-  return StartEdgeConfigurationUpdateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartEdgeConfigurationUpdateOutcome(result.GetResultWithOwnership())
+                            : StartEdgeConfigurationUpdateOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome KinesisVideoClient::TagResource(const TagResourceRequest& request) const {
@@ -410,7 +448,8 @@ TagResourceOutcome KinesisVideoClient::TagResource(const TagResourceRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/TagResource");
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 TagStreamOutcome KinesisVideoClient::TagStream(const TagStreamRequest& request) const {
@@ -419,7 +458,8 @@ TagStreamOutcome KinesisVideoClient::TagStream(const TagStreamRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/tagStream");
   };
 
-  return TagStreamOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagStreamOutcome(result.GetResultWithOwnership()) : TagStreamOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome KinesisVideoClient::UntagResource(const UntagResourceRequest& request) const {
@@ -428,7 +468,8 @@ UntagResourceOutcome KinesisVideoClient::UntagResource(const UntagResourceReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/UntagResource");
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagStreamOutcome KinesisVideoClient::UntagStream(const UntagStreamRequest& request) const {
@@ -437,7 +478,8 @@ UntagStreamOutcome KinesisVideoClient::UntagStream(const UntagStreamRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/untagStream");
   };
 
-  return UntagStreamOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagStreamOutcome(result.GetResultWithOwnership()) : UntagStreamOutcome(std::move(result.GetError()));
 }
 
 UpdateDataRetentionOutcome KinesisVideoClient::UpdateDataRetention(const UpdateDataRetentionRequest& request) const {
@@ -446,7 +488,9 @@ UpdateDataRetentionOutcome KinesisVideoClient::UpdateDataRetention(const UpdateD
     endpointResolutionOutcome.GetResult().AddPathSegments("/updateDataRetention");
   };
 
-  return UpdateDataRetentionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDataRetentionOutcome(result.GetResultWithOwnership())
+                            : UpdateDataRetentionOutcome(std::move(result.GetError()));
 }
 
 UpdateImageGenerationConfigurationOutcome KinesisVideoClient::UpdateImageGenerationConfiguration(
@@ -456,7 +500,9 @@ UpdateImageGenerationConfigurationOutcome KinesisVideoClient::UpdateImageGenerat
     endpointResolutionOutcome.GetResult().AddPathSegments("/updateImageGenerationConfiguration");
   };
 
-  return UpdateImageGenerationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateImageGenerationConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateImageGenerationConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateMediaStorageConfigurationOutcome KinesisVideoClient::UpdateMediaStorageConfiguration(
@@ -466,7 +512,9 @@ UpdateMediaStorageConfigurationOutcome KinesisVideoClient::UpdateMediaStorageCon
     endpointResolutionOutcome.GetResult().AddPathSegments("/updateMediaStorageConfiguration");
   };
 
-  return UpdateMediaStorageConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateMediaStorageConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateMediaStorageConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateNotificationConfigurationOutcome KinesisVideoClient::UpdateNotificationConfiguration(
@@ -476,7 +524,9 @@ UpdateNotificationConfigurationOutcome KinesisVideoClient::UpdateNotificationCon
     endpointResolutionOutcome.GetResult().AddPathSegments("/updateNotificationConfiguration");
   };
 
-  return UpdateNotificationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateNotificationConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateNotificationConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateSignalingChannelOutcome KinesisVideoClient::UpdateSignalingChannel(const UpdateSignalingChannelRequest& request) const {
@@ -485,7 +535,9 @@ UpdateSignalingChannelOutcome KinesisVideoClient::UpdateSignalingChannel(const U
     endpointResolutionOutcome.GetResult().AddPathSegments("/updateSignalingChannel");
   };
 
-  return UpdateSignalingChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSignalingChannelOutcome(result.GetResultWithOwnership())
+                            : UpdateSignalingChannelOutcome(std::move(result.GetError()));
 }
 
 UpdateStreamOutcome KinesisVideoClient::UpdateStream(const UpdateStreamRequest& request) const {
@@ -494,7 +546,8 @@ UpdateStreamOutcome KinesisVideoClient::UpdateStream(const UpdateStreamRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/updateStream");
   };
 
-  return UpdateStreamOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateStreamOutcome(result.GetResultWithOwnership()) : UpdateStreamOutcome(std::move(result.GetError()));
 }
 
 UpdateStreamStorageConfigurationOutcome KinesisVideoClient::UpdateStreamStorageConfiguration(
@@ -504,5 +557,7 @@ UpdateStreamStorageConfigurationOutcome KinesisVideoClient::UpdateStreamStorageC
     endpointResolutionOutcome.GetResult().AddPathSegments("/updateStreamStorageConfiguration");
   };
 
-  return UpdateStreamStorageConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateStreamStorageConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateStreamStorageConfigurationOutcome(std::move(result.GetError()));
 }

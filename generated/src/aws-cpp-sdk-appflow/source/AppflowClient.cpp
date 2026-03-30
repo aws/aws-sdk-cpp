@@ -205,7 +205,9 @@ CancelFlowExecutionsOutcome AppflowClient::CancelFlowExecutions(const CancelFlow
     endpointResolutionOutcome.GetResult().AddPathSegments("/cancel-flow-executions");
   };
 
-  return CancelFlowExecutionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelFlowExecutionsOutcome(result.GetResultWithOwnership())
+                            : CancelFlowExecutionsOutcome(std::move(result.GetError()));
 }
 
 CreateConnectorProfileOutcome AppflowClient::CreateConnectorProfile(const CreateConnectorProfileRequest& request) const {
@@ -214,7 +216,9 @@ CreateConnectorProfileOutcome AppflowClient::CreateConnectorProfile(const Create
     endpointResolutionOutcome.GetResult().AddPathSegments("/create-connector-profile");
   };
 
-  return CreateConnectorProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConnectorProfileOutcome(result.GetResultWithOwnership())
+                            : CreateConnectorProfileOutcome(std::move(result.GetError()));
 }
 
 CreateFlowOutcome AppflowClient::CreateFlow(const CreateFlowRequest& request) const {
@@ -223,7 +227,8 @@ CreateFlowOutcome AppflowClient::CreateFlow(const CreateFlowRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegments("/create-flow");
   };
 
-  return CreateFlowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFlowOutcome(result.GetResultWithOwnership()) : CreateFlowOutcome(std::move(result.GetError()));
 }
 
 DeleteConnectorProfileOutcome AppflowClient::DeleteConnectorProfile(const DeleteConnectorProfileRequest& request) const {
@@ -232,7 +237,9 @@ DeleteConnectorProfileOutcome AppflowClient::DeleteConnectorProfile(const Delete
     endpointResolutionOutcome.GetResult().AddPathSegments("/delete-connector-profile");
   };
 
-  return DeleteConnectorProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteConnectorProfileOutcome(result.GetResultWithOwnership())
+                            : DeleteConnectorProfileOutcome(std::move(result.GetError()));
 }
 
 DeleteFlowOutcome AppflowClient::DeleteFlow(const DeleteFlowRequest& request) const {
@@ -241,7 +248,8 @@ DeleteFlowOutcome AppflowClient::DeleteFlow(const DeleteFlowRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegments("/delete-flow");
   };
 
-  return DeleteFlowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteFlowOutcome(result.GetResultWithOwnership()) : DeleteFlowOutcome(std::move(result.GetError()));
 }
 
 DescribeConnectorOutcome AppflowClient::DescribeConnector(const DescribeConnectorRequest& request) const {
@@ -250,7 +258,9 @@ DescribeConnectorOutcome AppflowClient::DescribeConnector(const DescribeConnecto
     endpointResolutionOutcome.GetResult().AddPathSegments("/describe-connector");
   };
 
-  return DescribeConnectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeConnectorOutcome(result.GetResultWithOwnership())
+                            : DescribeConnectorOutcome(std::move(result.GetError()));
 }
 
 DescribeConnectorEntityOutcome AppflowClient::DescribeConnectorEntity(const DescribeConnectorEntityRequest& request) const {
@@ -259,7 +269,9 @@ DescribeConnectorEntityOutcome AppflowClient::DescribeConnectorEntity(const Desc
     endpointResolutionOutcome.GetResult().AddPathSegments("/describe-connector-entity");
   };
 
-  return DescribeConnectorEntityOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeConnectorEntityOutcome(result.GetResultWithOwnership())
+                            : DescribeConnectorEntityOutcome(std::move(result.GetError()));
 }
 
 DescribeConnectorProfilesOutcome AppflowClient::DescribeConnectorProfiles(const DescribeConnectorProfilesRequest& request) const {
@@ -268,7 +280,9 @@ DescribeConnectorProfilesOutcome AppflowClient::DescribeConnectorProfiles(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/describe-connector-profiles");
   };
 
-  return DescribeConnectorProfilesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeConnectorProfilesOutcome(result.GetResultWithOwnership())
+                            : DescribeConnectorProfilesOutcome(std::move(result.GetError()));
 }
 
 DescribeConnectorsOutcome AppflowClient::DescribeConnectors(const DescribeConnectorsRequest& request) const {
@@ -277,7 +291,9 @@ DescribeConnectorsOutcome AppflowClient::DescribeConnectors(const DescribeConnec
     endpointResolutionOutcome.GetResult().AddPathSegments("/describe-connectors");
   };
 
-  return DescribeConnectorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeConnectorsOutcome(result.GetResultWithOwnership())
+                            : DescribeConnectorsOutcome(std::move(result.GetError()));
 }
 
 DescribeFlowOutcome AppflowClient::DescribeFlow(const DescribeFlowRequest& request) const {
@@ -286,7 +302,8 @@ DescribeFlowOutcome AppflowClient::DescribeFlow(const DescribeFlowRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/describe-flow");
   };
 
-  return DescribeFlowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeFlowOutcome(result.GetResultWithOwnership()) : DescribeFlowOutcome(std::move(result.GetError()));
 }
 
 DescribeFlowExecutionRecordsOutcome AppflowClient::DescribeFlowExecutionRecords(const DescribeFlowExecutionRecordsRequest& request) const {
@@ -295,7 +312,9 @@ DescribeFlowExecutionRecordsOutcome AppflowClient::DescribeFlowExecutionRecords(
     endpointResolutionOutcome.GetResult().AddPathSegments("/describe-flow-execution-records");
   };
 
-  return DescribeFlowExecutionRecordsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeFlowExecutionRecordsOutcome(result.GetResultWithOwnership())
+                            : DescribeFlowExecutionRecordsOutcome(std::move(result.GetError()));
 }
 
 ListConnectorEntitiesOutcome AppflowClient::ListConnectorEntities(const ListConnectorEntitiesRequest& request) const {
@@ -304,7 +323,9 @@ ListConnectorEntitiesOutcome AppflowClient::ListConnectorEntities(const ListConn
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-connector-entities");
   };
 
-  return ListConnectorEntitiesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListConnectorEntitiesOutcome(result.GetResultWithOwnership())
+                            : ListConnectorEntitiesOutcome(std::move(result.GetError()));
 }
 
 ListConnectorsOutcome AppflowClient::ListConnectors(const ListConnectorsRequest& request) const {
@@ -313,7 +334,8 @@ ListConnectorsOutcome AppflowClient::ListConnectors(const ListConnectorsRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-connectors");
   };
 
-  return ListConnectorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListConnectorsOutcome(result.GetResultWithOwnership()) : ListConnectorsOutcome(std::move(result.GetError()));
 }
 
 ListFlowsOutcome AppflowClient::ListFlows(const ListFlowsRequest& request) const {
@@ -322,7 +344,8 @@ ListFlowsOutcome AppflowClient::ListFlows(const ListFlowsRequest& request) const
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-flows");
   };
 
-  return ListFlowsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFlowsOutcome(result.GetResultWithOwnership()) : ListFlowsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome AppflowClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -338,7 +361,9 @@ ListTagsForResourceOutcome AppflowClient::ListTagsForResource(const ListTagsForR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 RegisterConnectorOutcome AppflowClient::RegisterConnector(const RegisterConnectorRequest& request) const {
@@ -347,7 +372,9 @@ RegisterConnectorOutcome AppflowClient::RegisterConnector(const RegisterConnecto
     endpointResolutionOutcome.GetResult().AddPathSegments("/register-connector");
   };
 
-  return RegisterConnectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterConnectorOutcome(result.GetResultWithOwnership())
+                            : RegisterConnectorOutcome(std::move(result.GetError()));
 }
 
 ResetConnectorMetadataCacheOutcome AppflowClient::ResetConnectorMetadataCache(const ResetConnectorMetadataCacheRequest& request) const {
@@ -356,7 +383,9 @@ ResetConnectorMetadataCacheOutcome AppflowClient::ResetConnectorMetadataCache(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/reset-connector-metadata-cache");
   };
 
-  return ResetConnectorMetadataCacheOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResetConnectorMetadataCacheOutcome(result.GetResultWithOwnership())
+                            : ResetConnectorMetadataCacheOutcome(std::move(result.GetError()));
 }
 
 StartFlowOutcome AppflowClient::StartFlow(const StartFlowRequest& request) const {
@@ -365,7 +394,8 @@ StartFlowOutcome AppflowClient::StartFlow(const StartFlowRequest& request) const
     endpointResolutionOutcome.GetResult().AddPathSegments("/start-flow");
   };
 
-  return StartFlowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartFlowOutcome(result.GetResultWithOwnership()) : StartFlowOutcome(std::move(result.GetError()));
 }
 
 StopFlowOutcome AppflowClient::StopFlow(const StopFlowRequest& request) const {
@@ -374,7 +404,8 @@ StopFlowOutcome AppflowClient::StopFlow(const StopFlowRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/stop-flow");
   };
 
-  return StopFlowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopFlowOutcome(result.GetResultWithOwnership()) : StopFlowOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome AppflowClient::TagResource(const TagResourceRequest& request) const {
@@ -390,7 +421,8 @@ TagResourceOutcome AppflowClient::TagResource(const TagResourceRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UnregisterConnectorOutcome AppflowClient::UnregisterConnector(const UnregisterConnectorRequest& request) const {
@@ -399,7 +431,9 @@ UnregisterConnectorOutcome AppflowClient::UnregisterConnector(const UnregisterCo
     endpointResolutionOutcome.GetResult().AddPathSegments("/unregister-connector");
   };
 
-  return UnregisterConnectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UnregisterConnectorOutcome(result.GetResultWithOwnership())
+                            : UnregisterConnectorOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome AppflowClient::UntagResource(const UntagResourceRequest& request) const {
@@ -420,7 +454,8 @@ UntagResourceOutcome AppflowClient::UntagResource(const UntagResourceRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateConnectorProfileOutcome AppflowClient::UpdateConnectorProfile(const UpdateConnectorProfileRequest& request) const {
@@ -429,7 +464,9 @@ UpdateConnectorProfileOutcome AppflowClient::UpdateConnectorProfile(const Update
     endpointResolutionOutcome.GetResult().AddPathSegments("/update-connector-profile");
   };
 
-  return UpdateConnectorProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateConnectorProfileOutcome(result.GetResultWithOwnership())
+                            : UpdateConnectorProfileOutcome(std::move(result.GetError()));
 }
 
 UpdateConnectorRegistrationOutcome AppflowClient::UpdateConnectorRegistration(const UpdateConnectorRegistrationRequest& request) const {
@@ -438,7 +475,9 @@ UpdateConnectorRegistrationOutcome AppflowClient::UpdateConnectorRegistration(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/update-connector-registration");
   };
 
-  return UpdateConnectorRegistrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateConnectorRegistrationOutcome(result.GetResultWithOwnership())
+                            : UpdateConnectorRegistrationOutcome(std::move(result.GetError()));
 }
 
 UpdateFlowOutcome AppflowClient::UpdateFlow(const UpdateFlowRequest& request) const {
@@ -447,5 +486,6 @@ UpdateFlowOutcome AppflowClient::UpdateFlow(const UpdateFlowRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegments("/update-flow");
   };
 
-  return UpdateFlowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateFlowOutcome(result.GetResultWithOwnership()) : UpdateFlowOutcome(std::move(result.GetError()));
 }

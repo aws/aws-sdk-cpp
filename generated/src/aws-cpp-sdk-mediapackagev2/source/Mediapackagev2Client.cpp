@@ -239,7 +239,9 @@ CancelHarvestJobOutcome Mediapackagev2Client::CancelHarvestJob(const CancelHarve
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHarvestJobName());
   };
 
-  return CancelHarvestJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CancelHarvestJobOutcome(result.GetResultWithOwnership())
+                            : CancelHarvestJobOutcome(std::move(result.GetError()));
 }
 
 CreateChannelOutcome Mediapackagev2Client::CreateChannel(const CreateChannelRequest& request) const {
@@ -256,7 +258,8 @@ CreateChannelOutcome Mediapackagev2Client::CreateChannel(const CreateChannelRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/channel");
   };
 
-  return CreateChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateChannelOutcome(result.GetResultWithOwnership()) : CreateChannelOutcome(std::move(result.GetError()));
 }
 
 CreateChannelGroupOutcome Mediapackagev2Client::CreateChannelGroup(const CreateChannelGroupRequest& request) const {
@@ -265,7 +268,9 @@ CreateChannelGroupOutcome Mediapackagev2Client::CreateChannelGroup(const CreateC
     endpointResolutionOutcome.GetResult().AddPathSegments("/channelGroup");
   };
 
-  return CreateChannelGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateChannelGroupOutcome(result.GetResultWithOwnership())
+                            : CreateChannelGroupOutcome(std::move(result.GetError()));
 }
 
 CreateHarvestJobOutcome Mediapackagev2Client::CreateHarvestJob(const CreateHarvestJobRequest& request) const {
@@ -296,7 +301,9 @@ CreateHarvestJobOutcome Mediapackagev2Client::CreateHarvestJob(const CreateHarve
     endpointResolutionOutcome.GetResult().AddPathSegments("/harvestJob");
   };
 
-  return CreateHarvestJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateHarvestJobOutcome(result.GetResultWithOwnership())
+                            : CreateHarvestJobOutcome(std::move(result.GetError()));
 }
 
 CreateOriginEndpointOutcome Mediapackagev2Client::CreateOriginEndpoint(const CreateOriginEndpointRequest& request) const {
@@ -320,7 +327,9 @@ CreateOriginEndpointOutcome Mediapackagev2Client::CreateOriginEndpoint(const Cre
     endpointResolutionOutcome.GetResult().AddPathSegments("/originEndpoint");
   };
 
-  return CreateOriginEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateOriginEndpointOutcome(result.GetResultWithOwnership())
+                            : CreateOriginEndpointOutcome(std::move(result.GetError()));
 }
 
 DeleteChannelOutcome Mediapackagev2Client::DeleteChannel(const DeleteChannelRequest& request) const {
@@ -343,7 +352,8 @@ DeleteChannelOutcome Mediapackagev2Client::DeleteChannel(const DeleteChannelRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelName());
   };
 
-  return DeleteChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteChannelOutcome(result.GetResultWithOwnership()) : DeleteChannelOutcome(std::move(result.GetError()));
 }
 
 DeleteChannelGroupOutcome Mediapackagev2Client::DeleteChannelGroup(const DeleteChannelGroupRequest& request) const {
@@ -359,7 +369,9 @@ DeleteChannelGroupOutcome Mediapackagev2Client::DeleteChannelGroup(const DeleteC
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelGroupName());
   };
 
-  return DeleteChannelGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteChannelGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteChannelGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteChannelPolicyOutcome Mediapackagev2Client::DeleteChannelPolicy(const DeleteChannelPolicyRequest& request) const {
@@ -383,7 +395,9 @@ DeleteChannelPolicyOutcome Mediapackagev2Client::DeleteChannelPolicy(const Delet
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return DeleteChannelPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteChannelPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteChannelPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteOriginEndpointOutcome Mediapackagev2Client::DeleteOriginEndpoint(const DeleteOriginEndpointRequest& request) const {
@@ -413,7 +427,9 @@ DeleteOriginEndpointOutcome Mediapackagev2Client::DeleteOriginEndpoint(const Del
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOriginEndpointName());
   };
 
-  return DeleteOriginEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteOriginEndpointOutcome(result.GetResultWithOwnership())
+                            : DeleteOriginEndpointOutcome(std::move(result.GetError()));
 }
 
 DeleteOriginEndpointPolicyOutcome Mediapackagev2Client::DeleteOriginEndpointPolicy(const DeleteOriginEndpointPolicyRequest& request) const {
@@ -444,7 +460,9 @@ DeleteOriginEndpointPolicyOutcome Mediapackagev2Client::DeleteOriginEndpointPoli
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return DeleteOriginEndpointPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteOriginEndpointPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteOriginEndpointPolicyOutcome(std::move(result.GetError()));
 }
 
 GetChannelOutcome Mediapackagev2Client::GetChannel(const GetChannelRequest& request) const {
@@ -467,7 +485,8 @@ GetChannelOutcome Mediapackagev2Client::GetChannel(const GetChannelRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelName());
   };
 
-  return GetChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetChannelOutcome(result.GetResultWithOwnership()) : GetChannelOutcome(std::move(result.GetError()));
 }
 
 GetChannelGroupOutcome Mediapackagev2Client::GetChannelGroup(const GetChannelGroupRequest& request) const {
@@ -483,7 +502,9 @@ GetChannelGroupOutcome Mediapackagev2Client::GetChannelGroup(const GetChannelGro
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelGroupName());
   };
 
-  return GetChannelGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetChannelGroupOutcome(result.GetResultWithOwnership())
+                            : GetChannelGroupOutcome(std::move(result.GetError()));
 }
 
 GetChannelPolicyOutcome Mediapackagev2Client::GetChannelPolicy(const GetChannelPolicyRequest& request) const {
@@ -507,7 +528,9 @@ GetChannelPolicyOutcome Mediapackagev2Client::GetChannelPolicy(const GetChannelP
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return GetChannelPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetChannelPolicyOutcome(result.GetResultWithOwnership())
+                            : GetChannelPolicyOutcome(std::move(result.GetError()));
 }
 
 GetHarvestJobOutcome Mediapackagev2Client::GetHarvestJob(const GetHarvestJobRequest& request) const {
@@ -544,7 +567,8 @@ GetHarvestJobOutcome Mediapackagev2Client::GetHarvestJob(const GetHarvestJobRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHarvestJobName());
   };
 
-  return GetHarvestJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetHarvestJobOutcome(result.GetResultWithOwnership()) : GetHarvestJobOutcome(std::move(result.GetError()));
 }
 
 GetOriginEndpointOutcome Mediapackagev2Client::GetOriginEndpoint(const GetOriginEndpointRequest& request) const {
@@ -574,7 +598,9 @@ GetOriginEndpointOutcome Mediapackagev2Client::GetOriginEndpoint(const GetOrigin
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOriginEndpointName());
   };
 
-  return GetOriginEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetOriginEndpointOutcome(result.GetResultWithOwnership())
+                            : GetOriginEndpointOutcome(std::move(result.GetError()));
 }
 
 GetOriginEndpointPolicyOutcome Mediapackagev2Client::GetOriginEndpointPolicy(const GetOriginEndpointPolicyRequest& request) const {
@@ -605,7 +631,9 @@ GetOriginEndpointPolicyOutcome Mediapackagev2Client::GetOriginEndpointPolicy(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return GetOriginEndpointPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetOriginEndpointPolicyOutcome(result.GetResultWithOwnership())
+                            : GetOriginEndpointPolicyOutcome(std::move(result.GetError()));
 }
 
 ListChannelGroupsOutcome Mediapackagev2Client::ListChannelGroups(const ListChannelGroupsRequest& request) const {
@@ -614,7 +642,9 @@ ListChannelGroupsOutcome Mediapackagev2Client::ListChannelGroups(const ListChann
     endpointResolutionOutcome.GetResult().AddPathSegments("/channelGroup");
   };
 
-  return ListChannelGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListChannelGroupsOutcome(result.GetResultWithOwnership())
+                            : ListChannelGroupsOutcome(std::move(result.GetError()));
 }
 
 ListChannelsOutcome Mediapackagev2Client::ListChannels(const ListChannelsRequest& request) const {
@@ -631,7 +661,8 @@ ListChannelsOutcome Mediapackagev2Client::ListChannels(const ListChannelsRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/channel");
   };
 
-  return ListChannelsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListChannelsOutcome(result.GetResultWithOwnership()) : ListChannelsOutcome(std::move(result.GetError()));
 }
 
 ListHarvestJobsOutcome Mediapackagev2Client::ListHarvestJobs(const ListHarvestJobsRequest& request) const {
@@ -648,7 +679,9 @@ ListHarvestJobsOutcome Mediapackagev2Client::ListHarvestJobs(const ListHarvestJo
     endpointResolutionOutcome.GetResult().AddPathSegments("/harvestJob");
   };
 
-  return ListHarvestJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListHarvestJobsOutcome(result.GetResultWithOwnership())
+                            : ListHarvestJobsOutcome(std::move(result.GetError()));
 }
 
 ListOriginEndpointsOutcome Mediapackagev2Client::ListOriginEndpoints(const ListOriginEndpointsRequest& request) const {
@@ -672,7 +705,9 @@ ListOriginEndpointsOutcome Mediapackagev2Client::ListOriginEndpoints(const ListO
     endpointResolutionOutcome.GetResult().AddPathSegments("/originEndpoint");
   };
 
-  return ListOriginEndpointsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListOriginEndpointsOutcome(result.GetResultWithOwnership())
+                            : ListOriginEndpointsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome Mediapackagev2Client::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -688,7 +723,9 @@ ListTagsForResourceOutcome Mediapackagev2Client::ListTagsForResource(const ListT
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutChannelPolicyOutcome Mediapackagev2Client::PutChannelPolicy(const PutChannelPolicyRequest& request) const {
@@ -712,7 +749,9 @@ PutChannelPolicyOutcome Mediapackagev2Client::PutChannelPolicy(const PutChannelP
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return PutChannelPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutChannelPolicyOutcome(result.GetResultWithOwnership())
+                            : PutChannelPolicyOutcome(std::move(result.GetError()));
 }
 
 PutOriginEndpointPolicyOutcome Mediapackagev2Client::PutOriginEndpointPolicy(const PutOriginEndpointPolicyRequest& request) const {
@@ -743,7 +782,9 @@ PutOriginEndpointPolicyOutcome Mediapackagev2Client::PutOriginEndpointPolicy(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return PutOriginEndpointPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutOriginEndpointPolicyOutcome(result.GetResultWithOwnership())
+                            : PutOriginEndpointPolicyOutcome(std::move(result.GetError()));
 }
 
 ResetChannelStateOutcome Mediapackagev2Client::ResetChannelState(const ResetChannelStateRequest& request) const {
@@ -767,7 +808,9 @@ ResetChannelStateOutcome Mediapackagev2Client::ResetChannelState(const ResetChan
     endpointResolutionOutcome.GetResult().AddPathSegments("/reset");
   };
 
-  return ResetChannelStateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResetChannelStateOutcome(result.GetResultWithOwnership())
+                            : ResetChannelStateOutcome(std::move(result.GetError()));
 }
 
 ResetOriginEndpointStateOutcome Mediapackagev2Client::ResetOriginEndpointState(const ResetOriginEndpointStateRequest& request) const {
@@ -798,7 +841,9 @@ ResetOriginEndpointStateOutcome Mediapackagev2Client::ResetOriginEndpointState(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/reset");
   };
 
-  return ResetOriginEndpointStateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResetOriginEndpointStateOutcome(result.GetResultWithOwnership())
+                            : ResetOriginEndpointStateOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome Mediapackagev2Client::TagResource(const TagResourceRequest& request) const {
@@ -814,7 +859,8 @@ TagResourceOutcome Mediapackagev2Client::TagResource(const TagResourceRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome Mediapackagev2Client::UntagResource(const UntagResourceRequest& request) const {
@@ -835,7 +881,8 @@ UntagResourceOutcome Mediapackagev2Client::UntagResource(const UntagResourceRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateChannelOutcome Mediapackagev2Client::UpdateChannel(const UpdateChannelRequest& request) const {
@@ -858,7 +905,8 @@ UpdateChannelOutcome Mediapackagev2Client::UpdateChannel(const UpdateChannelRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelName());
   };
 
-  return UpdateChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateChannelOutcome(result.GetResultWithOwnership()) : UpdateChannelOutcome(std::move(result.GetError()));
 }
 
 UpdateChannelGroupOutcome Mediapackagev2Client::UpdateChannelGroup(const UpdateChannelGroupRequest& request) const {
@@ -874,7 +922,9 @@ UpdateChannelGroupOutcome Mediapackagev2Client::UpdateChannelGroup(const UpdateC
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelGroupName());
   };
 
-  return UpdateChannelGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateChannelGroupOutcome(result.GetResultWithOwnership())
+                            : UpdateChannelGroupOutcome(std::move(result.GetError()));
 }
 
 UpdateOriginEndpointOutcome Mediapackagev2Client::UpdateOriginEndpoint(const UpdateOriginEndpointRequest& request) const {
@@ -904,5 +954,7 @@ UpdateOriginEndpointOutcome Mediapackagev2Client::UpdateOriginEndpoint(const Upd
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOriginEndpointName());
   };
 
-  return UpdateOriginEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateOriginEndpointOutcome(result.GetResultWithOwnership())
+                            : UpdateOriginEndpointOutcome(std::move(result.GetError()));
 }

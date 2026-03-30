@@ -197,101 +197,142 @@ TextractClient::InvokeOperationOutcome TextractClient::InvokeServiceOperation(co
 }
 
 AnalyzeDocumentOutcome TextractClient::AnalyzeDocument(const AnalyzeDocumentRequest& request) const {
-  return AnalyzeDocumentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AnalyzeDocumentOutcome(result.GetResultWithOwnership())
+                            : AnalyzeDocumentOutcome(std::move(result.GetError()));
 }
 
 AnalyzeExpenseOutcome TextractClient::AnalyzeExpense(const AnalyzeExpenseRequest& request) const {
-  return AnalyzeExpenseOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AnalyzeExpenseOutcome(result.GetResultWithOwnership()) : AnalyzeExpenseOutcome(std::move(result.GetError()));
 }
 
 AnalyzeIDOutcome TextractClient::AnalyzeID(const AnalyzeIDRequest& request) const {
-  return AnalyzeIDOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AnalyzeIDOutcome(result.GetResultWithOwnership()) : AnalyzeIDOutcome(std::move(result.GetError()));
 }
 
 CreateAdapterOutcome TextractClient::CreateAdapter(const CreateAdapterRequest& request) const {
-  return CreateAdapterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAdapterOutcome(result.GetResultWithOwnership()) : CreateAdapterOutcome(std::move(result.GetError()));
 }
 
 CreateAdapterVersionOutcome TextractClient::CreateAdapterVersion(const CreateAdapterVersionRequest& request) const {
-  return CreateAdapterVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAdapterVersionOutcome(result.GetResultWithOwnership())
+                            : CreateAdapterVersionOutcome(std::move(result.GetError()));
 }
 
 DeleteAdapterOutcome TextractClient::DeleteAdapter(const DeleteAdapterRequest& request) const {
-  return DeleteAdapterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAdapterOutcome(result.GetResultWithOwnership()) : DeleteAdapterOutcome(std::move(result.GetError()));
 }
 
 DeleteAdapterVersionOutcome TextractClient::DeleteAdapterVersion(const DeleteAdapterVersionRequest& request) const {
-  return DeleteAdapterVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAdapterVersionOutcome(result.GetResultWithOwnership())
+                            : DeleteAdapterVersionOutcome(std::move(result.GetError()));
 }
 
 DetectDocumentTextOutcome TextractClient::DetectDocumentText(const DetectDocumentTextRequest& request) const {
-  return DetectDocumentTextOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DetectDocumentTextOutcome(result.GetResultWithOwnership())
+                            : DetectDocumentTextOutcome(std::move(result.GetError()));
 }
 
 GetAdapterOutcome TextractClient::GetAdapter(const GetAdapterRequest& request) const {
-  return GetAdapterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAdapterOutcome(result.GetResultWithOwnership()) : GetAdapterOutcome(std::move(result.GetError()));
 }
 
 GetAdapterVersionOutcome TextractClient::GetAdapterVersion(const GetAdapterVersionRequest& request) const {
-  return GetAdapterVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAdapterVersionOutcome(result.GetResultWithOwnership())
+                            : GetAdapterVersionOutcome(std::move(result.GetError()));
 }
 
 GetDocumentAnalysisOutcome TextractClient::GetDocumentAnalysis(const GetDocumentAnalysisRequest& request) const {
-  return GetDocumentAnalysisOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDocumentAnalysisOutcome(result.GetResultWithOwnership())
+                            : GetDocumentAnalysisOutcome(std::move(result.GetError()));
 }
 
 GetDocumentTextDetectionOutcome TextractClient::GetDocumentTextDetection(const GetDocumentTextDetectionRequest& request) const {
-  return GetDocumentTextDetectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDocumentTextDetectionOutcome(result.GetResultWithOwnership())
+                            : GetDocumentTextDetectionOutcome(std::move(result.GetError()));
 }
 
 GetExpenseAnalysisOutcome TextractClient::GetExpenseAnalysis(const GetExpenseAnalysisRequest& request) const {
-  return GetExpenseAnalysisOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetExpenseAnalysisOutcome(result.GetResultWithOwnership())
+                            : GetExpenseAnalysisOutcome(std::move(result.GetError()));
 }
 
 GetLendingAnalysisOutcome TextractClient::GetLendingAnalysis(const GetLendingAnalysisRequest& request) const {
-  return GetLendingAnalysisOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLendingAnalysisOutcome(result.GetResultWithOwnership())
+                            : GetLendingAnalysisOutcome(std::move(result.GetError()));
 }
 
 GetLendingAnalysisSummaryOutcome TextractClient::GetLendingAnalysisSummary(const GetLendingAnalysisSummaryRequest& request) const {
-  return GetLendingAnalysisSummaryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLendingAnalysisSummaryOutcome(result.GetResultWithOwnership())
+                            : GetLendingAnalysisSummaryOutcome(std::move(result.GetError()));
 }
 
 ListAdapterVersionsOutcome TextractClient::ListAdapterVersions(const ListAdapterVersionsRequest& request) const {
-  return ListAdapterVersionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAdapterVersionsOutcome(result.GetResultWithOwnership())
+                            : ListAdapterVersionsOutcome(std::move(result.GetError()));
 }
 
 ListAdaptersOutcome TextractClient::ListAdapters(const ListAdaptersRequest& request) const {
-  return ListAdaptersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAdaptersOutcome(result.GetResultWithOwnership()) : ListAdaptersOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome TextractClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 StartDocumentAnalysisOutcome TextractClient::StartDocumentAnalysis(const StartDocumentAnalysisRequest& request) const {
-  return StartDocumentAnalysisOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDocumentAnalysisOutcome(result.GetResultWithOwnership())
+                            : StartDocumentAnalysisOutcome(std::move(result.GetError()));
 }
 
 StartDocumentTextDetectionOutcome TextractClient::StartDocumentTextDetection(const StartDocumentTextDetectionRequest& request) const {
-  return StartDocumentTextDetectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDocumentTextDetectionOutcome(result.GetResultWithOwnership())
+                            : StartDocumentTextDetectionOutcome(std::move(result.GetError()));
 }
 
 StartExpenseAnalysisOutcome TextractClient::StartExpenseAnalysis(const StartExpenseAnalysisRequest& request) const {
-  return StartExpenseAnalysisOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartExpenseAnalysisOutcome(result.GetResultWithOwnership())
+                            : StartExpenseAnalysisOutcome(std::move(result.GetError()));
 }
 
 StartLendingAnalysisOutcome TextractClient::StartLendingAnalysis(const StartLendingAnalysisRequest& request) const {
-  return StartLendingAnalysisOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartLendingAnalysisOutcome(result.GetResultWithOwnership())
+                            : StartLendingAnalysisOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome TextractClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome TextractClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAdapterOutcome TextractClient::UpdateAdapter(const UpdateAdapterRequest& request) const {
-  return UpdateAdapterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAdapterOutcome(result.GetResultWithOwnership()) : UpdateAdapterOutcome(std::move(result.GetError()));
 }

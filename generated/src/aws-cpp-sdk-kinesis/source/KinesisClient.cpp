@@ -212,129 +212,180 @@ KinesisClient::InvokeOperationOutcome KinesisClient::InvokeServiceOperation(cons
 }
 
 AddTagsToStreamOutcome KinesisClient::AddTagsToStream(const AddTagsToStreamRequest& request) const {
-  return AddTagsToStreamOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddTagsToStreamOutcome(result.GetResultWithOwnership())
+                            : AddTagsToStreamOutcome(std::move(result.GetError()));
 }
 
 CreateStreamOutcome KinesisClient::CreateStream(const CreateStreamRequest& request) const {
-  return CreateStreamOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateStreamOutcome(result.GetResultWithOwnership()) : CreateStreamOutcome(std::move(result.GetError()));
 }
 
 DecreaseStreamRetentionPeriodOutcome KinesisClient::DecreaseStreamRetentionPeriod(
     const DecreaseStreamRetentionPeriodRequest& request) const {
-  return DecreaseStreamRetentionPeriodOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DecreaseStreamRetentionPeriodOutcome(result.GetResultWithOwnership())
+                            : DecreaseStreamRetentionPeriodOutcome(std::move(result.GetError()));
 }
 
 DeleteResourcePolicyOutcome KinesisClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const {
-  return DeleteResourcePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteStreamOutcome KinesisClient::DeleteStream(const DeleteStreamRequest& request) const {
-  return DeleteStreamOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteStreamOutcome(result.GetResultWithOwnership()) : DeleteStreamOutcome(std::move(result.GetError()));
 }
 
 DeregisterStreamConsumerOutcome KinesisClient::DeregisterStreamConsumer(const DeregisterStreamConsumerRequest& request) const {
-  return DeregisterStreamConsumerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterStreamConsumerOutcome(result.GetResultWithOwnership())
+                            : DeregisterStreamConsumerOutcome(std::move(result.GetError()));
 }
 
 DescribeAccountSettingsOutcome KinesisClient::DescribeAccountSettings(const DescribeAccountSettingsRequest& request) const {
-  return DescribeAccountSettingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAccountSettingsOutcome(result.GetResultWithOwnership())
+                            : DescribeAccountSettingsOutcome(std::move(result.GetError()));
 }
 
 DescribeLimitsOutcome KinesisClient::DescribeLimits(const DescribeLimitsRequest& request) const {
-  return DescribeLimitsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeLimitsOutcome(result.GetResultWithOwnership()) : DescribeLimitsOutcome(std::move(result.GetError()));
 }
 
 DescribeStreamOutcome KinesisClient::DescribeStream(const DescribeStreamRequest& request) const {
-  return DescribeStreamOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeStreamOutcome(result.GetResultWithOwnership()) : DescribeStreamOutcome(std::move(result.GetError()));
 }
 
 DescribeStreamConsumerOutcome KinesisClient::DescribeStreamConsumer(const DescribeStreamConsumerRequest& request) const {
-  return DescribeStreamConsumerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeStreamConsumerOutcome(result.GetResultWithOwnership())
+                            : DescribeStreamConsumerOutcome(std::move(result.GetError()));
 }
 
 DescribeStreamSummaryOutcome KinesisClient::DescribeStreamSummary(const DescribeStreamSummaryRequest& request) const {
-  return DescribeStreamSummaryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeStreamSummaryOutcome(result.GetResultWithOwnership())
+                            : DescribeStreamSummaryOutcome(std::move(result.GetError()));
 }
 
 DisableEnhancedMonitoringOutcome KinesisClient::DisableEnhancedMonitoring(const DisableEnhancedMonitoringRequest& request) const {
-  return DisableEnhancedMonitoringOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableEnhancedMonitoringOutcome(result.GetResultWithOwnership())
+                            : DisableEnhancedMonitoringOutcome(std::move(result.GetError()));
 }
 
 EnableEnhancedMonitoringOutcome KinesisClient::EnableEnhancedMonitoring(const EnableEnhancedMonitoringRequest& request) const {
-  return EnableEnhancedMonitoringOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableEnhancedMonitoringOutcome(result.GetResultWithOwnership())
+                            : EnableEnhancedMonitoringOutcome(std::move(result.GetError()));
 }
 
 GetRecordsOutcome KinesisClient::GetRecords(const GetRecordsRequest& request) const {
-  return GetRecordsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRecordsOutcome(result.GetResultWithOwnership()) : GetRecordsOutcome(std::move(result.GetError()));
 }
 
 GetResourcePolicyOutcome KinesisClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const {
-  return GetResourcePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : GetResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 GetShardIteratorOutcome KinesisClient::GetShardIterator(const GetShardIteratorRequest& request) const {
-  return GetShardIteratorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetShardIteratorOutcome(result.GetResultWithOwnership())
+                            : GetShardIteratorOutcome(std::move(result.GetError()));
 }
 
 IncreaseStreamRetentionPeriodOutcome KinesisClient::IncreaseStreamRetentionPeriod(
     const IncreaseStreamRetentionPeriodRequest& request) const {
-  return IncreaseStreamRetentionPeriodOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? IncreaseStreamRetentionPeriodOutcome(result.GetResultWithOwnership())
+                            : IncreaseStreamRetentionPeriodOutcome(std::move(result.GetError()));
 }
 
 ListShardsOutcome KinesisClient::ListShards(const ListShardsRequest& request) const {
-  return ListShardsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListShardsOutcome(result.GetResultWithOwnership()) : ListShardsOutcome(std::move(result.GetError()));
 }
 
 ListStreamConsumersOutcome KinesisClient::ListStreamConsumers(const ListStreamConsumersRequest& request) const {
-  return ListStreamConsumersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListStreamConsumersOutcome(result.GetResultWithOwnership())
+                            : ListStreamConsumersOutcome(std::move(result.GetError()));
 }
 
 ListStreamsOutcome KinesisClient::ListStreams(const ListStreamsRequest& request) const {
-  return ListStreamsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListStreamsOutcome(result.GetResultWithOwnership()) : ListStreamsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome KinesisClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTagsForStreamOutcome KinesisClient::ListTagsForStream(const ListTagsForStreamRequest& request) const {
-  return ListTagsForStreamOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForStreamOutcome(result.GetResultWithOwnership())
+                            : ListTagsForStreamOutcome(std::move(result.GetError()));
 }
 
 MergeShardsOutcome KinesisClient::MergeShards(const MergeShardsRequest& request) const {
-  return MergeShardsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? MergeShardsOutcome(result.GetResultWithOwnership()) : MergeShardsOutcome(std::move(result.GetError()));
 }
 
 PutRecordOutcome KinesisClient::PutRecord(const PutRecordRequest& request) const {
-  return PutRecordOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutRecordOutcome(result.GetResultWithOwnership()) : PutRecordOutcome(std::move(result.GetError()));
 }
 
 PutRecordsOutcome KinesisClient::PutRecords(const PutRecordsRequest& request) const {
-  return PutRecordsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutRecordsOutcome(result.GetResultWithOwnership()) : PutRecordsOutcome(std::move(result.GetError()));
 }
 
 PutResourcePolicyOutcome KinesisClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const {
-  return PutResourcePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : PutResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 RegisterStreamConsumerOutcome KinesisClient::RegisterStreamConsumer(const RegisterStreamConsumerRequest& request) const {
-  return RegisterStreamConsumerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterStreamConsumerOutcome(result.GetResultWithOwnership())
+                            : RegisterStreamConsumerOutcome(std::move(result.GetError()));
 }
 
 RemoveTagsFromStreamOutcome KinesisClient::RemoveTagsFromStream(const RemoveTagsFromStreamRequest& request) const {
-  return RemoveTagsFromStreamOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveTagsFromStreamOutcome(result.GetResultWithOwnership())
+                            : RemoveTagsFromStreamOutcome(std::move(result.GetError()));
 }
 
 SplitShardOutcome KinesisClient::SplitShard(const SplitShardRequest& request) const {
-  return SplitShardOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SplitShardOutcome(result.GetResultWithOwnership()) : SplitShardOutcome(std::move(result.GetError()));
 }
 
 StartStreamEncryptionOutcome KinesisClient::StartStreamEncryption(const StartStreamEncryptionRequest& request) const {
-  return StartStreamEncryptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartStreamEncryptionOutcome(result.GetResultWithOwnership())
+                            : StartStreamEncryptionOutcome(std::move(result.GetError()));
 }
 
 StopStreamEncryptionOutcome KinesisClient::StopStreamEncryption(const StopStreamEncryptionRequest& request) const {
-  return StopStreamEncryptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopStreamEncryptionOutcome(result.GetResultWithOwnership())
+                            : StopStreamEncryptionOutcome(std::move(result.GetError()));
 }
 
 SubscribeToShardOutcome KinesisClient::SubscribeToShard(SubscribeToShardRequest& request) const {
@@ -370,7 +421,9 @@ SubscribeToShardOutcome KinesisClient::SubscribeToShard(SubscribeToShardRequest&
             }
           });
         }
-        return SubscribeToShardOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? SubscribeToShardOutcome(result.GetResultWithOwnership())
+                                  : SubscribeToShardOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -378,29 +431,41 @@ SubscribeToShardOutcome KinesisClient::SubscribeToShard(SubscribeToShardRequest&
 }
 
 TagResourceOutcome KinesisClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome KinesisClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAccountSettingsOutcome KinesisClient::UpdateAccountSettings(const UpdateAccountSettingsRequest& request) const {
-  return UpdateAccountSettingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAccountSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdateAccountSettingsOutcome(std::move(result.GetError()));
 }
 
 UpdateMaxRecordSizeOutcome KinesisClient::UpdateMaxRecordSize(const UpdateMaxRecordSizeRequest& request) const {
-  return UpdateMaxRecordSizeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateMaxRecordSizeOutcome(result.GetResultWithOwnership())
+                            : UpdateMaxRecordSizeOutcome(std::move(result.GetError()));
 }
 
 UpdateShardCountOutcome KinesisClient::UpdateShardCount(const UpdateShardCountRequest& request) const {
-  return UpdateShardCountOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateShardCountOutcome(result.GetResultWithOwnership())
+                            : UpdateShardCountOutcome(std::move(result.GetError()));
 }
 
 UpdateStreamModeOutcome KinesisClient::UpdateStreamMode(const UpdateStreamModeRequest& request) const {
-  return UpdateStreamModeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateStreamModeOutcome(result.GetResultWithOwnership())
+                            : UpdateStreamModeOutcome(std::move(result.GetError()));
 }
 
 UpdateStreamWarmThroughputOutcome KinesisClient::UpdateStreamWarmThroughput(const UpdateStreamWarmThroughputRequest& request) const {
-  return UpdateStreamWarmThroughputOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateStreamWarmThroughputOutcome(result.GetResultWithOwnership())
+                            : UpdateStreamWarmThroughputOutcome(std::move(result.GetError()));
 }

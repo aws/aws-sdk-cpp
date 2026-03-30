@@ -233,7 +233,9 @@ BatchDeleteRecipeVersionOutcome GlueDataBrewClient::BatchDeleteRecipeVersion(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/batchDeleteRecipeVersion");
   };
 
-  return BatchDeleteRecipeVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeleteRecipeVersionOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteRecipeVersionOutcome(std::move(result.GetError()));
 }
 
 CreateDatasetOutcome GlueDataBrewClient::CreateDataset(const CreateDatasetRequest& request) const {
@@ -242,7 +244,8 @@ CreateDatasetOutcome GlueDataBrewClient::CreateDataset(const CreateDatasetReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/datasets");
   };
 
-  return CreateDatasetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDatasetOutcome(result.GetResultWithOwnership()) : CreateDatasetOutcome(std::move(result.GetError()));
 }
 
 CreateProfileJobOutcome GlueDataBrewClient::CreateProfileJob(const CreateProfileJobRequest& request) const {
@@ -251,7 +254,9 @@ CreateProfileJobOutcome GlueDataBrewClient::CreateProfileJob(const CreateProfile
     endpointResolutionOutcome.GetResult().AddPathSegments("/profileJobs");
   };
 
-  return CreateProfileJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProfileJobOutcome(result.GetResultWithOwnership())
+                            : CreateProfileJobOutcome(std::move(result.GetError()));
 }
 
 CreateProjectOutcome GlueDataBrewClient::CreateProject(const CreateProjectRequest& request) const {
@@ -260,7 +265,8 @@ CreateProjectOutcome GlueDataBrewClient::CreateProject(const CreateProjectReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/projects");
   };
 
-  return CreateProjectOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProjectOutcome(result.GetResultWithOwnership()) : CreateProjectOutcome(std::move(result.GetError()));
 }
 
 CreateRecipeOutcome GlueDataBrewClient::CreateRecipe(const CreateRecipeRequest& request) const {
@@ -269,7 +275,8 @@ CreateRecipeOutcome GlueDataBrewClient::CreateRecipe(const CreateRecipeRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/recipes");
   };
 
-  return CreateRecipeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRecipeOutcome(result.GetResultWithOwnership()) : CreateRecipeOutcome(std::move(result.GetError()));
 }
 
 CreateRecipeJobOutcome GlueDataBrewClient::CreateRecipeJob(const CreateRecipeJobRequest& request) const {
@@ -278,7 +285,9 @@ CreateRecipeJobOutcome GlueDataBrewClient::CreateRecipeJob(const CreateRecipeJob
     endpointResolutionOutcome.GetResult().AddPathSegments("/recipeJobs");
   };
 
-  return CreateRecipeJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRecipeJobOutcome(result.GetResultWithOwnership())
+                            : CreateRecipeJobOutcome(std::move(result.GetError()));
 }
 
 CreateRulesetOutcome GlueDataBrewClient::CreateRuleset(const CreateRulesetRequest& request) const {
@@ -287,7 +296,8 @@ CreateRulesetOutcome GlueDataBrewClient::CreateRuleset(const CreateRulesetReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/rulesets");
   };
 
-  return CreateRulesetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRulesetOutcome(result.GetResultWithOwnership()) : CreateRulesetOutcome(std::move(result.GetError()));
 }
 
 CreateScheduleOutcome GlueDataBrewClient::CreateSchedule(const CreateScheduleRequest& request) const {
@@ -296,7 +306,8 @@ CreateScheduleOutcome GlueDataBrewClient::CreateSchedule(const CreateScheduleReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/schedules");
   };
 
-  return CreateScheduleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateScheduleOutcome(result.GetResultWithOwnership()) : CreateScheduleOutcome(std::move(result.GetError()));
 }
 
 DeleteDatasetOutcome GlueDataBrewClient::DeleteDataset(const DeleteDatasetRequest& request) const {
@@ -312,7 +323,8 @@ DeleteDatasetOutcome GlueDataBrewClient::DeleteDataset(const DeleteDatasetReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteDatasetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDatasetOutcome(result.GetResultWithOwnership()) : DeleteDatasetOutcome(std::move(result.GetError()));
 }
 
 DeleteJobOutcome GlueDataBrewClient::DeleteJob(const DeleteJobRequest& request) const {
@@ -328,7 +340,8 @@ DeleteJobOutcome GlueDataBrewClient::DeleteJob(const DeleteJobRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteJobOutcome(result.GetResultWithOwnership()) : DeleteJobOutcome(std::move(result.GetError()));
 }
 
 DeleteProjectOutcome GlueDataBrewClient::DeleteProject(const DeleteProjectRequest& request) const {
@@ -344,7 +357,8 @@ DeleteProjectOutcome GlueDataBrewClient::DeleteProject(const DeleteProjectReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteProjectOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteProjectOutcome(result.GetResultWithOwnership()) : DeleteProjectOutcome(std::move(result.GetError()));
 }
 
 DeleteRecipeVersionOutcome GlueDataBrewClient::DeleteRecipeVersion(const DeleteRecipeVersionRequest& request) const {
@@ -367,7 +381,9 @@ DeleteRecipeVersionOutcome GlueDataBrewClient::DeleteRecipeVersion(const DeleteR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecipeVersion());
   };
 
-  return DeleteRecipeVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRecipeVersionOutcome(result.GetResultWithOwnership())
+                            : DeleteRecipeVersionOutcome(std::move(result.GetError()));
 }
 
 DeleteRulesetOutcome GlueDataBrewClient::DeleteRuleset(const DeleteRulesetRequest& request) const {
@@ -383,7 +399,8 @@ DeleteRulesetOutcome GlueDataBrewClient::DeleteRuleset(const DeleteRulesetReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteRulesetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRulesetOutcome(result.GetResultWithOwnership()) : DeleteRulesetOutcome(std::move(result.GetError()));
 }
 
 DeleteScheduleOutcome GlueDataBrewClient::DeleteSchedule(const DeleteScheduleRequest& request) const {
@@ -399,7 +416,8 @@ DeleteScheduleOutcome GlueDataBrewClient::DeleteSchedule(const DeleteScheduleReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteScheduleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteScheduleOutcome(result.GetResultWithOwnership()) : DeleteScheduleOutcome(std::move(result.GetError()));
 }
 
 DescribeDatasetOutcome GlueDataBrewClient::DescribeDataset(const DescribeDatasetRequest& request) const {
@@ -415,7 +433,9 @@ DescribeDatasetOutcome GlueDataBrewClient::DescribeDataset(const DescribeDataset
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DescribeDatasetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDatasetOutcome(result.GetResultWithOwnership())
+                            : DescribeDatasetOutcome(std::move(result.GetError()));
 }
 
 DescribeJobOutcome GlueDataBrewClient::DescribeJob(const DescribeJobRequest& request) const {
@@ -431,7 +451,8 @@ DescribeJobOutcome GlueDataBrewClient::DescribeJob(const DescribeJobRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DescribeJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeJobOutcome(result.GetResultWithOwnership()) : DescribeJobOutcome(std::move(result.GetError()));
 }
 
 DescribeJobRunOutcome GlueDataBrewClient::DescribeJobRun(const DescribeJobRunRequest& request) const {
@@ -454,7 +475,8 @@ DescribeJobRunOutcome GlueDataBrewClient::DescribeJobRun(const DescribeJobRunReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRunId());
   };
 
-  return DescribeJobRunOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeJobRunOutcome(result.GetResultWithOwnership()) : DescribeJobRunOutcome(std::move(result.GetError()));
 }
 
 DescribeProjectOutcome GlueDataBrewClient::DescribeProject(const DescribeProjectRequest& request) const {
@@ -470,7 +492,9 @@ DescribeProjectOutcome GlueDataBrewClient::DescribeProject(const DescribeProject
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DescribeProjectOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeProjectOutcome(result.GetResultWithOwnership())
+                            : DescribeProjectOutcome(std::move(result.GetError()));
 }
 
 DescribeRecipeOutcome GlueDataBrewClient::DescribeRecipe(const DescribeRecipeRequest& request) const {
@@ -486,7 +510,8 @@ DescribeRecipeOutcome GlueDataBrewClient::DescribeRecipe(const DescribeRecipeReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DescribeRecipeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeRecipeOutcome(result.GetResultWithOwnership()) : DescribeRecipeOutcome(std::move(result.GetError()));
 }
 
 DescribeRulesetOutcome GlueDataBrewClient::DescribeRuleset(const DescribeRulesetRequest& request) const {
@@ -502,7 +527,9 @@ DescribeRulesetOutcome GlueDataBrewClient::DescribeRuleset(const DescribeRuleset
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DescribeRulesetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeRulesetOutcome(result.GetResultWithOwnership())
+                            : DescribeRulesetOutcome(std::move(result.GetError()));
 }
 
 DescribeScheduleOutcome GlueDataBrewClient::DescribeSchedule(const DescribeScheduleRequest& request) const {
@@ -518,7 +545,9 @@ DescribeScheduleOutcome GlueDataBrewClient::DescribeSchedule(const DescribeSched
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DescribeScheduleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeScheduleOutcome(result.GetResultWithOwnership())
+                            : DescribeScheduleOutcome(std::move(result.GetError()));
 }
 
 ListDatasetsOutcome GlueDataBrewClient::ListDatasets(const ListDatasetsRequest& request) const {
@@ -527,7 +556,8 @@ ListDatasetsOutcome GlueDataBrewClient::ListDatasets(const ListDatasetsRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/datasets");
   };
 
-  return ListDatasetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDatasetsOutcome(result.GetResultWithOwnership()) : ListDatasetsOutcome(std::move(result.GetError()));
 }
 
 ListJobRunsOutcome GlueDataBrewClient::ListJobRuns(const ListJobRunsRequest& request) const {
@@ -544,7 +574,8 @@ ListJobRunsOutcome GlueDataBrewClient::ListJobRuns(const ListJobRunsRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobRuns");
   };
 
-  return ListJobRunsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListJobRunsOutcome(result.GetResultWithOwnership()) : ListJobRunsOutcome(std::move(result.GetError()));
 }
 
 ListJobsOutcome GlueDataBrewClient::ListJobs(const ListJobsRequest& request) const {
@@ -553,7 +584,8 @@ ListJobsOutcome GlueDataBrewClient::ListJobs(const ListJobsRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobs");
   };
 
-  return ListJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListJobsOutcome(result.GetResultWithOwnership()) : ListJobsOutcome(std::move(result.GetError()));
 }
 
 ListProjectsOutcome GlueDataBrewClient::ListProjects(const ListProjectsRequest& request) const {
@@ -562,7 +594,8 @@ ListProjectsOutcome GlueDataBrewClient::ListProjects(const ListProjectsRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/projects");
   };
 
-  return ListProjectsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListProjectsOutcome(result.GetResultWithOwnership()) : ListProjectsOutcome(std::move(result.GetError()));
 }
 
 ListRecipeVersionsOutcome GlueDataBrewClient::ListRecipeVersions(const ListRecipeVersionsRequest& request) const {
@@ -577,7 +610,9 @@ ListRecipeVersionsOutcome GlueDataBrewClient::ListRecipeVersions(const ListRecip
     endpointResolutionOutcome.GetResult().AddPathSegments("/recipeVersions");
   };
 
-  return ListRecipeVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRecipeVersionsOutcome(result.GetResultWithOwnership())
+                            : ListRecipeVersionsOutcome(std::move(result.GetError()));
 }
 
 ListRecipesOutcome GlueDataBrewClient::ListRecipes(const ListRecipesRequest& request) const {
@@ -586,7 +621,8 @@ ListRecipesOutcome GlueDataBrewClient::ListRecipes(const ListRecipesRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/recipes");
   };
 
-  return ListRecipesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRecipesOutcome(result.GetResultWithOwnership()) : ListRecipesOutcome(std::move(result.GetError()));
 }
 
 ListRulesetsOutcome GlueDataBrewClient::ListRulesets(const ListRulesetsRequest& request) const {
@@ -595,7 +631,8 @@ ListRulesetsOutcome GlueDataBrewClient::ListRulesets(const ListRulesetsRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/rulesets");
   };
 
-  return ListRulesetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRulesetsOutcome(result.GetResultWithOwnership()) : ListRulesetsOutcome(std::move(result.GetError()));
 }
 
 ListSchedulesOutcome GlueDataBrewClient::ListSchedules(const ListSchedulesRequest& request) const {
@@ -604,7 +641,8 @@ ListSchedulesOutcome GlueDataBrewClient::ListSchedules(const ListSchedulesReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/schedules");
   };
 
-  return ListSchedulesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSchedulesOutcome(result.GetResultWithOwnership()) : ListSchedulesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome GlueDataBrewClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -620,7 +658,9 @@ ListTagsForResourceOutcome GlueDataBrewClient::ListTagsForResource(const ListTag
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PublishRecipeOutcome GlueDataBrewClient::PublishRecipe(const PublishRecipeRequest& request) const {
@@ -637,7 +677,8 @@ PublishRecipeOutcome GlueDataBrewClient::PublishRecipe(const PublishRecipeReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/publishRecipe");
   };
 
-  return PublishRecipeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PublishRecipeOutcome(result.GetResultWithOwnership()) : PublishRecipeOutcome(std::move(result.GetError()));
 }
 
 SendProjectSessionActionOutcome GlueDataBrewClient::SendProjectSessionAction(const SendProjectSessionActionRequest& request) const {
@@ -654,7 +695,9 @@ SendProjectSessionActionOutcome GlueDataBrewClient::SendProjectSessionAction(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/sendProjectSessionAction");
   };
 
-  return SendProjectSessionActionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? SendProjectSessionActionOutcome(result.GetResultWithOwnership())
+                            : SendProjectSessionActionOutcome(std::move(result.GetError()));
 }
 
 StartJobRunOutcome GlueDataBrewClient::StartJobRun(const StartJobRunRequest& request) const {
@@ -671,7 +714,8 @@ StartJobRunOutcome GlueDataBrewClient::StartJobRun(const StartJobRunRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/startJobRun");
   };
 
-  return StartJobRunOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartJobRunOutcome(result.GetResultWithOwnership()) : StartJobRunOutcome(std::move(result.GetError()));
 }
 
 StartProjectSessionOutcome GlueDataBrewClient::StartProjectSession(const StartProjectSessionRequest& request) const {
@@ -688,7 +732,9 @@ StartProjectSessionOutcome GlueDataBrewClient::StartProjectSession(const StartPr
     endpointResolutionOutcome.GetResult().AddPathSegments("/startProjectSession");
   };
 
-  return StartProjectSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StartProjectSessionOutcome(result.GetResultWithOwnership())
+                            : StartProjectSessionOutcome(std::move(result.GetError()));
 }
 
 StopJobRunOutcome GlueDataBrewClient::StopJobRun(const StopJobRunRequest& request) const {
@@ -712,7 +758,8 @@ StopJobRunOutcome GlueDataBrewClient::StopJobRun(const StopJobRunRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/stopJobRun");
   };
 
-  return StopJobRunOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopJobRunOutcome(result.GetResultWithOwnership()) : StopJobRunOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome GlueDataBrewClient::TagResource(const TagResourceRequest& request) const {
@@ -728,7 +775,8 @@ TagResourceOutcome GlueDataBrewClient::TagResource(const TagResourceRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome GlueDataBrewClient::UntagResource(const UntagResourceRequest& request) const {
@@ -749,7 +797,8 @@ UntagResourceOutcome GlueDataBrewClient::UntagResource(const UntagResourceReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateDatasetOutcome GlueDataBrewClient::UpdateDataset(const UpdateDatasetRequest& request) const {
@@ -765,7 +814,8 @@ UpdateDatasetOutcome GlueDataBrewClient::UpdateDataset(const UpdateDatasetReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return UpdateDatasetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateDatasetOutcome(result.GetResultWithOwnership()) : UpdateDatasetOutcome(std::move(result.GetError()));
 }
 
 UpdateProfileJobOutcome GlueDataBrewClient::UpdateProfileJob(const UpdateProfileJobRequest& request) const {
@@ -781,7 +831,9 @@ UpdateProfileJobOutcome GlueDataBrewClient::UpdateProfileJob(const UpdateProfile
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return UpdateProfileJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateProfileJobOutcome(result.GetResultWithOwnership())
+                            : UpdateProfileJobOutcome(std::move(result.GetError()));
 }
 
 UpdateProjectOutcome GlueDataBrewClient::UpdateProject(const UpdateProjectRequest& request) const {
@@ -797,7 +849,8 @@ UpdateProjectOutcome GlueDataBrewClient::UpdateProject(const UpdateProjectReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return UpdateProjectOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateProjectOutcome(result.GetResultWithOwnership()) : UpdateProjectOutcome(std::move(result.GetError()));
 }
 
 UpdateRecipeOutcome GlueDataBrewClient::UpdateRecipe(const UpdateRecipeRequest& request) const {
@@ -813,7 +866,8 @@ UpdateRecipeOutcome GlueDataBrewClient::UpdateRecipe(const UpdateRecipeRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return UpdateRecipeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateRecipeOutcome(result.GetResultWithOwnership()) : UpdateRecipeOutcome(std::move(result.GetError()));
 }
 
 UpdateRecipeJobOutcome GlueDataBrewClient::UpdateRecipeJob(const UpdateRecipeJobRequest& request) const {
@@ -829,7 +883,9 @@ UpdateRecipeJobOutcome GlueDataBrewClient::UpdateRecipeJob(const UpdateRecipeJob
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return UpdateRecipeJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateRecipeJobOutcome(result.GetResultWithOwnership())
+                            : UpdateRecipeJobOutcome(std::move(result.GetError()));
 }
 
 UpdateRulesetOutcome GlueDataBrewClient::UpdateRuleset(const UpdateRulesetRequest& request) const {
@@ -845,7 +901,8 @@ UpdateRulesetOutcome GlueDataBrewClient::UpdateRuleset(const UpdateRulesetReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return UpdateRulesetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateRulesetOutcome(result.GetResultWithOwnership()) : UpdateRulesetOutcome(std::move(result.GetError()));
 }
 
 UpdateScheduleOutcome GlueDataBrewClient::UpdateSchedule(const UpdateScheduleRequest& request) const {
@@ -861,5 +918,6 @@ UpdateScheduleOutcome GlueDataBrewClient::UpdateSchedule(const UpdateScheduleReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return UpdateScheduleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateScheduleOutcome(result.GetResultWithOwnership()) : UpdateScheduleOutcome(std::move(result.GetError()));
 }

@@ -227,227 +227,319 @@ WAFV2Client::InvokeOperationOutcome WAFV2Client::InvokeServiceOperation(const Am
 }
 
 AssociateWebACLOutcome WAFV2Client::AssociateWebACL(const AssociateWebACLRequest& request) const {
-  return AssociateWebACLOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateWebACLOutcome(result.GetResultWithOwnership())
+                            : AssociateWebACLOutcome(std::move(result.GetError()));
 }
 
 CheckCapacityOutcome WAFV2Client::CheckCapacity(const CheckCapacityRequest& request) const {
-  return CheckCapacityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CheckCapacityOutcome(result.GetResultWithOwnership()) : CheckCapacityOutcome(std::move(result.GetError()));
 }
 
 CreateAPIKeyOutcome WAFV2Client::CreateAPIKey(const CreateAPIKeyRequest& request) const {
-  return CreateAPIKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAPIKeyOutcome(result.GetResultWithOwnership()) : CreateAPIKeyOutcome(std::move(result.GetError()));
 }
 
 CreateIPSetOutcome WAFV2Client::CreateIPSet(const CreateIPSetRequest& request) const {
-  return CreateIPSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIPSetOutcome(result.GetResultWithOwnership()) : CreateIPSetOutcome(std::move(result.GetError()));
 }
 
 CreateRegexPatternSetOutcome WAFV2Client::CreateRegexPatternSet(const CreateRegexPatternSetRequest& request) const {
-  return CreateRegexPatternSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRegexPatternSetOutcome(result.GetResultWithOwnership())
+                            : CreateRegexPatternSetOutcome(std::move(result.GetError()));
 }
 
 CreateRuleGroupOutcome WAFV2Client::CreateRuleGroup(const CreateRuleGroupRequest& request) const {
-  return CreateRuleGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRuleGroupOutcome(result.GetResultWithOwnership())
+                            : CreateRuleGroupOutcome(std::move(result.GetError()));
 }
 
 CreateWebACLOutcome WAFV2Client::CreateWebACL(const CreateWebACLRequest& request) const {
-  return CreateWebACLOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWebACLOutcome(result.GetResultWithOwnership()) : CreateWebACLOutcome(std::move(result.GetError()));
 }
 
 DeleteAPIKeyOutcome WAFV2Client::DeleteAPIKey(const DeleteAPIKeyRequest& request) const {
-  return DeleteAPIKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAPIKeyOutcome(result.GetResultWithOwnership()) : DeleteAPIKeyOutcome(std::move(result.GetError()));
 }
 
 DeleteFirewallManagerRuleGroupsOutcome WAFV2Client::DeleteFirewallManagerRuleGroups(
     const DeleteFirewallManagerRuleGroupsRequest& request) const {
-  return DeleteFirewallManagerRuleGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteFirewallManagerRuleGroupsOutcome(result.GetResultWithOwnership())
+                            : DeleteFirewallManagerRuleGroupsOutcome(std::move(result.GetError()));
 }
 
 DeleteIPSetOutcome WAFV2Client::DeleteIPSet(const DeleteIPSetRequest& request) const {
-  return DeleteIPSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteIPSetOutcome(result.GetResultWithOwnership()) : DeleteIPSetOutcome(std::move(result.GetError()));
 }
 
 DeleteLoggingConfigurationOutcome WAFV2Client::DeleteLoggingConfiguration(const DeleteLoggingConfigurationRequest& request) const {
-  return DeleteLoggingConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLoggingConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteLoggingConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeletePermissionPolicyOutcome WAFV2Client::DeletePermissionPolicy(const DeletePermissionPolicyRequest& request) const {
-  return DeletePermissionPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePermissionPolicyOutcome(result.GetResultWithOwnership())
+                            : DeletePermissionPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteRegexPatternSetOutcome WAFV2Client::DeleteRegexPatternSet(const DeleteRegexPatternSetRequest& request) const {
-  return DeleteRegexPatternSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRegexPatternSetOutcome(result.GetResultWithOwnership())
+                            : DeleteRegexPatternSetOutcome(std::move(result.GetError()));
 }
 
 DeleteRuleGroupOutcome WAFV2Client::DeleteRuleGroup(const DeleteRuleGroupRequest& request) const {
-  return DeleteRuleGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRuleGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteRuleGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteWebACLOutcome WAFV2Client::DeleteWebACL(const DeleteWebACLRequest& request) const {
-  return DeleteWebACLOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteWebACLOutcome(result.GetResultWithOwnership()) : DeleteWebACLOutcome(std::move(result.GetError()));
 }
 
 DescribeAllManagedProductsOutcome WAFV2Client::DescribeAllManagedProducts(const DescribeAllManagedProductsRequest& request) const {
-  return DescribeAllManagedProductsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAllManagedProductsOutcome(result.GetResultWithOwnership())
+                            : DescribeAllManagedProductsOutcome(std::move(result.GetError()));
 }
 
 DescribeManagedProductsByVendorOutcome WAFV2Client::DescribeManagedProductsByVendor(
     const DescribeManagedProductsByVendorRequest& request) const {
-  return DescribeManagedProductsByVendorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeManagedProductsByVendorOutcome(result.GetResultWithOwnership())
+                            : DescribeManagedProductsByVendorOutcome(std::move(result.GetError()));
 }
 
 DescribeManagedRuleGroupOutcome WAFV2Client::DescribeManagedRuleGroup(const DescribeManagedRuleGroupRequest& request) const {
-  return DescribeManagedRuleGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeManagedRuleGroupOutcome(result.GetResultWithOwnership())
+                            : DescribeManagedRuleGroupOutcome(std::move(result.GetError()));
 }
 
 DisassociateWebACLOutcome WAFV2Client::DisassociateWebACL(const DisassociateWebACLRequest& request) const {
-  return DisassociateWebACLOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateWebACLOutcome(result.GetResultWithOwnership())
+                            : DisassociateWebACLOutcome(std::move(result.GetError()));
 }
 
 GenerateMobileSdkReleaseUrlOutcome WAFV2Client::GenerateMobileSdkReleaseUrl(const GenerateMobileSdkReleaseUrlRequest& request) const {
-  return GenerateMobileSdkReleaseUrlOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GenerateMobileSdkReleaseUrlOutcome(result.GetResultWithOwnership())
+                            : GenerateMobileSdkReleaseUrlOutcome(std::move(result.GetError()));
 }
 
 GetDecryptedAPIKeyOutcome WAFV2Client::GetDecryptedAPIKey(const GetDecryptedAPIKeyRequest& request) const {
-  return GetDecryptedAPIKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDecryptedAPIKeyOutcome(result.GetResultWithOwnership())
+                            : GetDecryptedAPIKeyOutcome(std::move(result.GetError()));
 }
 
 GetIPSetOutcome WAFV2Client::GetIPSet(const GetIPSetRequest& request) const {
-  return GetIPSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIPSetOutcome(result.GetResultWithOwnership()) : GetIPSetOutcome(std::move(result.GetError()));
 }
 
 GetLoggingConfigurationOutcome WAFV2Client::GetLoggingConfiguration(const GetLoggingConfigurationRequest& request) const {
-  return GetLoggingConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLoggingConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetLoggingConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetManagedRuleSetOutcome WAFV2Client::GetManagedRuleSet(const GetManagedRuleSetRequest& request) const {
-  return GetManagedRuleSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetManagedRuleSetOutcome(result.GetResultWithOwnership())
+                            : GetManagedRuleSetOutcome(std::move(result.GetError()));
 }
 
 GetMobileSdkReleaseOutcome WAFV2Client::GetMobileSdkRelease(const GetMobileSdkReleaseRequest& request) const {
-  return GetMobileSdkReleaseOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetMobileSdkReleaseOutcome(result.GetResultWithOwnership())
+                            : GetMobileSdkReleaseOutcome(std::move(result.GetError()));
 }
 
 GetPermissionPolicyOutcome WAFV2Client::GetPermissionPolicy(const GetPermissionPolicyRequest& request) const {
-  return GetPermissionPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPermissionPolicyOutcome(result.GetResultWithOwnership())
+                            : GetPermissionPolicyOutcome(std::move(result.GetError()));
 }
 
 GetRateBasedStatementManagedKeysOutcome WAFV2Client::GetRateBasedStatementManagedKeys(
     const GetRateBasedStatementManagedKeysRequest& request) const {
-  return GetRateBasedStatementManagedKeysOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRateBasedStatementManagedKeysOutcome(result.GetResultWithOwnership())
+                            : GetRateBasedStatementManagedKeysOutcome(std::move(result.GetError()));
 }
 
 GetRegexPatternSetOutcome WAFV2Client::GetRegexPatternSet(const GetRegexPatternSetRequest& request) const {
-  return GetRegexPatternSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRegexPatternSetOutcome(result.GetResultWithOwnership())
+                            : GetRegexPatternSetOutcome(std::move(result.GetError()));
 }
 
 GetRuleGroupOutcome WAFV2Client::GetRuleGroup(const GetRuleGroupRequest& request) const {
-  return GetRuleGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRuleGroupOutcome(result.GetResultWithOwnership()) : GetRuleGroupOutcome(std::move(result.GetError()));
 }
 
 GetSampledRequestsOutcome WAFV2Client::GetSampledRequests(const GetSampledRequestsRequest& request) const {
-  return GetSampledRequestsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSampledRequestsOutcome(result.GetResultWithOwnership())
+                            : GetSampledRequestsOutcome(std::move(result.GetError()));
 }
 
 GetTopPathStatisticsByTrafficOutcome WAFV2Client::GetTopPathStatisticsByTraffic(const GetTopPathStatisticsByTrafficRequest& request) const {
-  return GetTopPathStatisticsByTrafficOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTopPathStatisticsByTrafficOutcome(result.GetResultWithOwnership())
+                            : GetTopPathStatisticsByTrafficOutcome(std::move(result.GetError()));
 }
 
 GetWebACLOutcome WAFV2Client::GetWebACL(const GetWebACLRequest& request) const {
-  return GetWebACLOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetWebACLOutcome(result.GetResultWithOwnership()) : GetWebACLOutcome(std::move(result.GetError()));
 }
 
 GetWebACLForResourceOutcome WAFV2Client::GetWebACLForResource(const GetWebACLForResourceRequest& request) const {
-  return GetWebACLForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetWebACLForResourceOutcome(result.GetResultWithOwnership())
+                            : GetWebACLForResourceOutcome(std::move(result.GetError()));
 }
 
 ListAPIKeysOutcome WAFV2Client::ListAPIKeys(const ListAPIKeysRequest& request) const {
-  return ListAPIKeysOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAPIKeysOutcome(result.GetResultWithOwnership()) : ListAPIKeysOutcome(std::move(result.GetError()));
 }
 
 ListAvailableManagedRuleGroupVersionsOutcome WAFV2Client::ListAvailableManagedRuleGroupVersions(
     const ListAvailableManagedRuleGroupVersionsRequest& request) const {
-  return ListAvailableManagedRuleGroupVersionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAvailableManagedRuleGroupVersionsOutcome(result.GetResultWithOwnership())
+                            : ListAvailableManagedRuleGroupVersionsOutcome(std::move(result.GetError()));
 }
 
 ListAvailableManagedRuleGroupsOutcome WAFV2Client::ListAvailableManagedRuleGroups(
     const ListAvailableManagedRuleGroupsRequest& request) const {
-  return ListAvailableManagedRuleGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAvailableManagedRuleGroupsOutcome(result.GetResultWithOwnership())
+                            : ListAvailableManagedRuleGroupsOutcome(std::move(result.GetError()));
 }
 
 ListIPSetsOutcome WAFV2Client::ListIPSets(const ListIPSetsRequest& request) const {
-  return ListIPSetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListIPSetsOutcome(result.GetResultWithOwnership()) : ListIPSetsOutcome(std::move(result.GetError()));
 }
 
 ListLoggingConfigurationsOutcome WAFV2Client::ListLoggingConfigurations(const ListLoggingConfigurationsRequest& request) const {
-  return ListLoggingConfigurationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLoggingConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListLoggingConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListManagedRuleSetsOutcome WAFV2Client::ListManagedRuleSets(const ListManagedRuleSetsRequest& request) const {
-  return ListManagedRuleSetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListManagedRuleSetsOutcome(result.GetResultWithOwnership())
+                            : ListManagedRuleSetsOutcome(std::move(result.GetError()));
 }
 
 ListMobileSdkReleasesOutcome WAFV2Client::ListMobileSdkReleases(const ListMobileSdkReleasesRequest& request) const {
-  return ListMobileSdkReleasesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMobileSdkReleasesOutcome(result.GetResultWithOwnership())
+                            : ListMobileSdkReleasesOutcome(std::move(result.GetError()));
 }
 
 ListRegexPatternSetsOutcome WAFV2Client::ListRegexPatternSets(const ListRegexPatternSetsRequest& request) const {
-  return ListRegexPatternSetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRegexPatternSetsOutcome(result.GetResultWithOwnership())
+                            : ListRegexPatternSetsOutcome(std::move(result.GetError()));
 }
 
 ListResourcesForWebACLOutcome WAFV2Client::ListResourcesForWebACL(const ListResourcesForWebACLRequest& request) const {
-  return ListResourcesForWebACLOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResourcesForWebACLOutcome(result.GetResultWithOwnership())
+                            : ListResourcesForWebACLOutcome(std::move(result.GetError()));
 }
 
 ListRuleGroupsOutcome WAFV2Client::ListRuleGroups(const ListRuleGroupsRequest& request) const {
-  return ListRuleGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRuleGroupsOutcome(result.GetResultWithOwnership()) : ListRuleGroupsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome WAFV2Client::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListWebACLsOutcome WAFV2Client::ListWebACLs(const ListWebACLsRequest& request) const {
-  return ListWebACLsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListWebACLsOutcome(result.GetResultWithOwnership()) : ListWebACLsOutcome(std::move(result.GetError()));
 }
 
 PutLoggingConfigurationOutcome WAFV2Client::PutLoggingConfiguration(const PutLoggingConfigurationRequest& request) const {
-  return PutLoggingConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutLoggingConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutLoggingConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutManagedRuleSetVersionsOutcome WAFV2Client::PutManagedRuleSetVersions(const PutManagedRuleSetVersionsRequest& request) const {
-  return PutManagedRuleSetVersionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutManagedRuleSetVersionsOutcome(result.GetResultWithOwnership())
+                            : PutManagedRuleSetVersionsOutcome(std::move(result.GetError()));
 }
 
 PutPermissionPolicyOutcome WAFV2Client::PutPermissionPolicy(const PutPermissionPolicyRequest& request) const {
-  return PutPermissionPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutPermissionPolicyOutcome(result.GetResultWithOwnership())
+                            : PutPermissionPolicyOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome WAFV2Client::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome WAFV2Client::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateIPSetOutcome WAFV2Client::UpdateIPSet(const UpdateIPSetRequest& request) const {
-  return UpdateIPSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateIPSetOutcome(result.GetResultWithOwnership()) : UpdateIPSetOutcome(std::move(result.GetError()));
 }
 
 UpdateManagedRuleSetVersionExpiryDateOutcome WAFV2Client::UpdateManagedRuleSetVersionExpiryDate(
     const UpdateManagedRuleSetVersionExpiryDateRequest& request) const {
-  return UpdateManagedRuleSetVersionExpiryDateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateManagedRuleSetVersionExpiryDateOutcome(result.GetResultWithOwnership())
+                            : UpdateManagedRuleSetVersionExpiryDateOutcome(std::move(result.GetError()));
 }
 
 UpdateRegexPatternSetOutcome WAFV2Client::UpdateRegexPatternSet(const UpdateRegexPatternSetRequest& request) const {
-  return UpdateRegexPatternSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRegexPatternSetOutcome(result.GetResultWithOwnership())
+                            : UpdateRegexPatternSetOutcome(std::move(result.GetError()));
 }
 
 UpdateRuleGroupOutcome WAFV2Client::UpdateRuleGroup(const UpdateRuleGroupRequest& request) const {
-  return UpdateRuleGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRuleGroupOutcome(result.GetResultWithOwnership())
+                            : UpdateRuleGroupOutcome(std::move(result.GetError()));
 }
 
 UpdateWebACLOutcome WAFV2Client::UpdateWebACL(const UpdateWebACLRequest& request) const {
-  return UpdateWebACLOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateWebACLOutcome(result.GetResultWithOwnership()) : UpdateWebACLOutcome(std::move(result.GetError()));
 }

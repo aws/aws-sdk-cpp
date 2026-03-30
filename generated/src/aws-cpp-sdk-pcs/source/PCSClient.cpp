@@ -189,78 +189,104 @@ PCSClient::InvokeOperationOutcome PCSClient::InvokeServiceOperation(const Amazon
 }
 
 CreateClusterOutcome PCSClient::CreateCluster(const CreateClusterRequest& request) const {
-  return CreateClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateClusterOutcome(result.GetResultWithOwnership()) : CreateClusterOutcome(std::move(result.GetError()));
 }
 
 CreateComputeNodeGroupOutcome PCSClient::CreateComputeNodeGroup(const CreateComputeNodeGroupRequest& request) const {
-  return CreateComputeNodeGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateComputeNodeGroupOutcome(result.GetResultWithOwnership())
+                            : CreateComputeNodeGroupOutcome(std::move(result.GetError()));
 }
 
 CreateQueueOutcome PCSClient::CreateQueue(const CreateQueueRequest& request) const {
-  return CreateQueueOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateQueueOutcome(result.GetResultWithOwnership()) : CreateQueueOutcome(std::move(result.GetError()));
 }
 
 DeleteClusterOutcome PCSClient::DeleteCluster(const DeleteClusterRequest& request) const {
-  return DeleteClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteClusterOutcome(result.GetResultWithOwnership()) : DeleteClusterOutcome(std::move(result.GetError()));
 }
 
 DeleteComputeNodeGroupOutcome PCSClient::DeleteComputeNodeGroup(const DeleteComputeNodeGroupRequest& request) const {
-  return DeleteComputeNodeGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteComputeNodeGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteComputeNodeGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteQueueOutcome PCSClient::DeleteQueue(const DeleteQueueRequest& request) const {
-  return DeleteQueueOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteQueueOutcome(result.GetResultWithOwnership()) : DeleteQueueOutcome(std::move(result.GetError()));
 }
 
 GetClusterOutcome PCSClient::GetCluster(const GetClusterRequest& request) const {
-  return GetClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetClusterOutcome(result.GetResultWithOwnership()) : GetClusterOutcome(std::move(result.GetError()));
 }
 
 GetComputeNodeGroupOutcome PCSClient::GetComputeNodeGroup(const GetComputeNodeGroupRequest& request) const {
-  return GetComputeNodeGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetComputeNodeGroupOutcome(result.GetResultWithOwnership())
+                            : GetComputeNodeGroupOutcome(std::move(result.GetError()));
 }
 
 GetQueueOutcome PCSClient::GetQueue(const GetQueueRequest& request) const {
-  return GetQueueOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetQueueOutcome(result.GetResultWithOwnership()) : GetQueueOutcome(std::move(result.GetError()));
 }
 
 ListClustersOutcome PCSClient::ListClusters(const ListClustersRequest& request) const {
-  return ListClustersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListClustersOutcome(result.GetResultWithOwnership()) : ListClustersOutcome(std::move(result.GetError()));
 }
 
 ListComputeNodeGroupsOutcome PCSClient::ListComputeNodeGroups(const ListComputeNodeGroupsRequest& request) const {
-  return ListComputeNodeGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListComputeNodeGroupsOutcome(result.GetResultWithOwnership())
+                            : ListComputeNodeGroupsOutcome(std::move(result.GetError()));
 }
 
 ListQueuesOutcome PCSClient::ListQueues(const ListQueuesRequest& request) const {
-  return ListQueuesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListQueuesOutcome(result.GetResultWithOwnership()) : ListQueuesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome PCSClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 RegisterComputeNodeGroupInstanceOutcome PCSClient::RegisterComputeNodeGroupInstance(
     const RegisterComputeNodeGroupInstanceRequest& request) const {
-  return RegisterComputeNodeGroupInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterComputeNodeGroupInstanceOutcome(result.GetResultWithOwnership())
+                            : RegisterComputeNodeGroupInstanceOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome PCSClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome PCSClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateClusterOutcome PCSClient::UpdateCluster(const UpdateClusterRequest& request) const {
-  return UpdateClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateClusterOutcome(result.GetResultWithOwnership()) : UpdateClusterOutcome(std::move(result.GetError()));
 }
 
 UpdateComputeNodeGroupOutcome PCSClient::UpdateComputeNodeGroup(const UpdateComputeNodeGroupRequest& request) const {
-  return UpdateComputeNodeGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateComputeNodeGroupOutcome(result.GetResultWithOwnership())
+                            : UpdateComputeNodeGroupOutcome(std::move(result.GetError()));
 }
 
 UpdateQueueOutcome PCSClient::UpdateQueue(const UpdateQueueRequest& request) const {
-  return UpdateQueueOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateQueueOutcome(result.GetResultWithOwnership()) : UpdateQueueOutcome(std::move(result.GetError()));
 }

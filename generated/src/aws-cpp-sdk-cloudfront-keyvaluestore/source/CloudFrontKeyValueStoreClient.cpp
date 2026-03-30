@@ -216,7 +216,8 @@ DeleteKeyOutcome CloudFrontKeyValueStoreClient::DeleteKey(const DeleteKeyRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKey());
   };
 
-  return DeleteKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteKeyOutcome(result.GetResultWithOwnership()) : DeleteKeyOutcome(std::move(result.GetError()));
 }
 
 DescribeKeyValueStoreOutcome CloudFrontKeyValueStoreClient::DescribeKeyValueStore(const DescribeKeyValueStoreRequest& request) const {
@@ -232,7 +233,9 @@ DescribeKeyValueStoreOutcome CloudFrontKeyValueStoreClient::DescribeKeyValueStor
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKvsARN());
   };
 
-  return DescribeKeyValueStoreOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeKeyValueStoreOutcome(result.GetResultWithOwnership())
+                            : DescribeKeyValueStoreOutcome(std::move(result.GetError()));
 }
 
 GetKeyOutcome CloudFrontKeyValueStoreClient::GetKey(const GetKeyRequest& request) const {
@@ -255,7 +258,8 @@ GetKeyOutcome CloudFrontKeyValueStoreClient::GetKey(const GetKeyRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKey());
   };
 
-  return GetKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetKeyOutcome(result.GetResultWithOwnership()) : GetKeyOutcome(std::move(result.GetError()));
 }
 
 ListKeysOutcome CloudFrontKeyValueStoreClient::ListKeys(const ListKeysRequest& request) const {
@@ -272,7 +276,8 @@ ListKeysOutcome CloudFrontKeyValueStoreClient::ListKeys(const ListKeysRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/keys");
   };
 
-  return ListKeysOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListKeysOutcome(result.GetResultWithOwnership()) : ListKeysOutcome(std::move(result.GetError()));
 }
 
 PutKeyOutcome CloudFrontKeyValueStoreClient::PutKey(const PutKeyRequest& request) const {
@@ -300,7 +305,8 @@ PutKeyOutcome CloudFrontKeyValueStoreClient::PutKey(const PutKeyRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKey());
   };
 
-  return PutKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutKeyOutcome(result.GetResultWithOwnership()) : PutKeyOutcome(std::move(result.GetError()));
 }
 
 UpdateKeysOutcome CloudFrontKeyValueStoreClient::UpdateKeys(const UpdateKeysRequest& request) const {
@@ -322,5 +328,6 @@ UpdateKeysOutcome CloudFrontKeyValueStoreClient::UpdateKeys(const UpdateKeysRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/keys");
   };
 
-  return UpdateKeysOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateKeysOutcome(result.GetResultWithOwnership()) : UpdateKeysOutcome(std::move(result.GetError()));
 }

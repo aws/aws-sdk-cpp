@@ -177,21 +177,29 @@ PricingClient::InvokeOperationOutcome PricingClient::InvokeServiceOperation(cons
 }
 
 DescribeServicesOutcome PricingClient::DescribeServices(const DescribeServicesRequest& request) const {
-  return DescribeServicesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeServicesOutcome(result.GetResultWithOwnership())
+                            : DescribeServicesOutcome(std::move(result.GetError()));
 }
 
 GetAttributeValuesOutcome PricingClient::GetAttributeValues(const GetAttributeValuesRequest& request) const {
-  return GetAttributeValuesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAttributeValuesOutcome(result.GetResultWithOwnership())
+                            : GetAttributeValuesOutcome(std::move(result.GetError()));
 }
 
 GetPriceListFileUrlOutcome PricingClient::GetPriceListFileUrl(const GetPriceListFileUrlRequest& request) const {
-  return GetPriceListFileUrlOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPriceListFileUrlOutcome(result.GetResultWithOwnership())
+                            : GetPriceListFileUrlOutcome(std::move(result.GetError()));
 }
 
 GetProductsOutcome PricingClient::GetProducts(const GetProductsRequest& request) const {
-  return GetProductsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetProductsOutcome(result.GetResultWithOwnership()) : GetProductsOutcome(std::move(result.GetError()));
 }
 
 ListPriceListsOutcome PricingClient::ListPriceLists(const ListPriceListsRequest& request) const {
-  return ListPriceListsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPriceListsOutcome(result.GetResultWithOwnership()) : ListPriceListsOutcome(std::move(result.GetError()));
 }

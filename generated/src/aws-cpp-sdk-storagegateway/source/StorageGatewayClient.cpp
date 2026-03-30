@@ -269,397 +269,564 @@ StorageGatewayClient::InvokeOperationOutcome StorageGatewayClient::InvokeService
 }
 
 ActivateGatewayOutcome StorageGatewayClient::ActivateGateway(const ActivateGatewayRequest& request) const {
-  return ActivateGatewayOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ActivateGatewayOutcome(result.GetResultWithOwnership())
+                            : ActivateGatewayOutcome(std::move(result.GetError()));
 }
 
 AddCacheOutcome StorageGatewayClient::AddCache(const AddCacheRequest& request) const {
-  return AddCacheOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddCacheOutcome(result.GetResultWithOwnership()) : AddCacheOutcome(std::move(result.GetError()));
 }
 
 AddTagsToResourceOutcome StorageGatewayClient::AddTagsToResource(const AddTagsToResourceRequest& request) const {
-  return AddTagsToResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddTagsToResourceOutcome(result.GetResultWithOwnership())
+                            : AddTagsToResourceOutcome(std::move(result.GetError()));
 }
 
 AddUploadBufferOutcome StorageGatewayClient::AddUploadBuffer(const AddUploadBufferRequest& request) const {
-  return AddUploadBufferOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddUploadBufferOutcome(result.GetResultWithOwnership())
+                            : AddUploadBufferOutcome(std::move(result.GetError()));
 }
 
 AddWorkingStorageOutcome StorageGatewayClient::AddWorkingStorage(const AddWorkingStorageRequest& request) const {
-  return AddWorkingStorageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddWorkingStorageOutcome(result.GetResultWithOwnership())
+                            : AddWorkingStorageOutcome(std::move(result.GetError()));
 }
 
 AssignTapePoolOutcome StorageGatewayClient::AssignTapePool(const AssignTapePoolRequest& request) const {
-  return AssignTapePoolOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssignTapePoolOutcome(result.GetResultWithOwnership()) : AssignTapePoolOutcome(std::move(result.GetError()));
 }
 
 AssociateFileSystemOutcome StorageGatewayClient::AssociateFileSystem(const AssociateFileSystemRequest& request) const {
-  return AssociateFileSystemOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateFileSystemOutcome(result.GetResultWithOwnership())
+                            : AssociateFileSystemOutcome(std::move(result.GetError()));
 }
 
 AttachVolumeOutcome StorageGatewayClient::AttachVolume(const AttachVolumeRequest& request) const {
-  return AttachVolumeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AttachVolumeOutcome(result.GetResultWithOwnership()) : AttachVolumeOutcome(std::move(result.GetError()));
 }
 
 CancelArchivalOutcome StorageGatewayClient::CancelArchival(const CancelArchivalRequest& request) const {
-  return CancelArchivalOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelArchivalOutcome(result.GetResultWithOwnership()) : CancelArchivalOutcome(std::move(result.GetError()));
 }
 
 CancelCacheReportOutcome StorageGatewayClient::CancelCacheReport(const CancelCacheReportRequest& request) const {
-  return CancelCacheReportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelCacheReportOutcome(result.GetResultWithOwnership())
+                            : CancelCacheReportOutcome(std::move(result.GetError()));
 }
 
 CancelRetrievalOutcome StorageGatewayClient::CancelRetrieval(const CancelRetrievalRequest& request) const {
-  return CancelRetrievalOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelRetrievalOutcome(result.GetResultWithOwnership())
+                            : CancelRetrievalOutcome(std::move(result.GetError()));
 }
 
 CreateCachediSCSIVolumeOutcome StorageGatewayClient::CreateCachediSCSIVolume(const CreateCachediSCSIVolumeRequest& request) const {
-  return CreateCachediSCSIVolumeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCachediSCSIVolumeOutcome(result.GetResultWithOwnership())
+                            : CreateCachediSCSIVolumeOutcome(std::move(result.GetError()));
 }
 
 CreateNFSFileShareOutcome StorageGatewayClient::CreateNFSFileShare(const CreateNFSFileShareRequest& request) const {
-  return CreateNFSFileShareOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateNFSFileShareOutcome(result.GetResultWithOwnership())
+                            : CreateNFSFileShareOutcome(std::move(result.GetError()));
 }
 
 CreateSMBFileShareOutcome StorageGatewayClient::CreateSMBFileShare(const CreateSMBFileShareRequest& request) const {
-  return CreateSMBFileShareOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSMBFileShareOutcome(result.GetResultWithOwnership())
+                            : CreateSMBFileShareOutcome(std::move(result.GetError()));
 }
 
 CreateSnapshotOutcome StorageGatewayClient::CreateSnapshot(const CreateSnapshotRequest& request) const {
-  return CreateSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSnapshotOutcome(result.GetResultWithOwnership()) : CreateSnapshotOutcome(std::move(result.GetError()));
 }
 
 CreateSnapshotFromVolumeRecoveryPointOutcome StorageGatewayClient::CreateSnapshotFromVolumeRecoveryPoint(
     const CreateSnapshotFromVolumeRecoveryPointRequest& request) const {
-  return CreateSnapshotFromVolumeRecoveryPointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSnapshotFromVolumeRecoveryPointOutcome(result.GetResultWithOwnership())
+                            : CreateSnapshotFromVolumeRecoveryPointOutcome(std::move(result.GetError()));
 }
 
 CreateStorediSCSIVolumeOutcome StorageGatewayClient::CreateStorediSCSIVolume(const CreateStorediSCSIVolumeRequest& request) const {
-  return CreateStorediSCSIVolumeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateStorediSCSIVolumeOutcome(result.GetResultWithOwnership())
+                            : CreateStorediSCSIVolumeOutcome(std::move(result.GetError()));
 }
 
 CreateTapePoolOutcome StorageGatewayClient::CreateTapePool(const CreateTapePoolRequest& request) const {
-  return CreateTapePoolOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTapePoolOutcome(result.GetResultWithOwnership()) : CreateTapePoolOutcome(std::move(result.GetError()));
 }
 
 CreateTapeWithBarcodeOutcome StorageGatewayClient::CreateTapeWithBarcode(const CreateTapeWithBarcodeRequest& request) const {
-  return CreateTapeWithBarcodeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTapeWithBarcodeOutcome(result.GetResultWithOwnership())
+                            : CreateTapeWithBarcodeOutcome(std::move(result.GetError()));
 }
 
 CreateTapesOutcome StorageGatewayClient::CreateTapes(const CreateTapesRequest& request) const {
-  return CreateTapesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTapesOutcome(result.GetResultWithOwnership()) : CreateTapesOutcome(std::move(result.GetError()));
 }
 
 DeleteAutomaticTapeCreationPolicyOutcome StorageGatewayClient::DeleteAutomaticTapeCreationPolicy(
     const DeleteAutomaticTapeCreationPolicyRequest& request) const {
-  return DeleteAutomaticTapeCreationPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAutomaticTapeCreationPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteAutomaticTapeCreationPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteBandwidthRateLimitOutcome StorageGatewayClient::DeleteBandwidthRateLimit(const DeleteBandwidthRateLimitRequest& request) const {
-  return DeleteBandwidthRateLimitOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteBandwidthRateLimitOutcome(result.GetResultWithOwnership())
+                            : DeleteBandwidthRateLimitOutcome(std::move(result.GetError()));
 }
 
 DeleteCacheReportOutcome StorageGatewayClient::DeleteCacheReport(const DeleteCacheReportRequest& request) const {
-  return DeleteCacheReportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCacheReportOutcome(result.GetResultWithOwnership())
+                            : DeleteCacheReportOutcome(std::move(result.GetError()));
 }
 
 DeleteChapCredentialsOutcome StorageGatewayClient::DeleteChapCredentials(const DeleteChapCredentialsRequest& request) const {
-  return DeleteChapCredentialsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteChapCredentialsOutcome(result.GetResultWithOwnership())
+                            : DeleteChapCredentialsOutcome(std::move(result.GetError()));
 }
 
 DeleteFileShareOutcome StorageGatewayClient::DeleteFileShare(const DeleteFileShareRequest& request) const {
-  return DeleteFileShareOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteFileShareOutcome(result.GetResultWithOwnership())
+                            : DeleteFileShareOutcome(std::move(result.GetError()));
 }
 
 DeleteGatewayOutcome StorageGatewayClient::DeleteGateway(const DeleteGatewayRequest& request) const {
-  return DeleteGatewayOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteGatewayOutcome(result.GetResultWithOwnership()) : DeleteGatewayOutcome(std::move(result.GetError()));
 }
 
 DeleteSnapshotScheduleOutcome StorageGatewayClient::DeleteSnapshotSchedule(const DeleteSnapshotScheduleRequest& request) const {
-  return DeleteSnapshotScheduleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSnapshotScheduleOutcome(result.GetResultWithOwnership())
+                            : DeleteSnapshotScheduleOutcome(std::move(result.GetError()));
 }
 
 DeleteTapeOutcome StorageGatewayClient::DeleteTape(const DeleteTapeRequest& request) const {
-  return DeleteTapeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTapeOutcome(result.GetResultWithOwnership()) : DeleteTapeOutcome(std::move(result.GetError()));
 }
 
 DeleteTapeArchiveOutcome StorageGatewayClient::DeleteTapeArchive(const DeleteTapeArchiveRequest& request) const {
-  return DeleteTapeArchiveOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTapeArchiveOutcome(result.GetResultWithOwnership())
+                            : DeleteTapeArchiveOutcome(std::move(result.GetError()));
 }
 
 DeleteTapePoolOutcome StorageGatewayClient::DeleteTapePool(const DeleteTapePoolRequest& request) const {
-  return DeleteTapePoolOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTapePoolOutcome(result.GetResultWithOwnership()) : DeleteTapePoolOutcome(std::move(result.GetError()));
 }
 
 DeleteVolumeOutcome StorageGatewayClient::DeleteVolume(const DeleteVolumeRequest& request) const {
-  return DeleteVolumeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVolumeOutcome(result.GetResultWithOwnership()) : DeleteVolumeOutcome(std::move(result.GetError()));
 }
 
 DescribeAvailabilityMonitorTestOutcome StorageGatewayClient::DescribeAvailabilityMonitorTest(
     const DescribeAvailabilityMonitorTestRequest& request) const {
-  return DescribeAvailabilityMonitorTestOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAvailabilityMonitorTestOutcome(result.GetResultWithOwnership())
+                            : DescribeAvailabilityMonitorTestOutcome(std::move(result.GetError()));
 }
 
 DescribeBandwidthRateLimitOutcome StorageGatewayClient::DescribeBandwidthRateLimit(const DescribeBandwidthRateLimitRequest& request) const {
-  return DescribeBandwidthRateLimitOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeBandwidthRateLimitOutcome(result.GetResultWithOwnership())
+                            : DescribeBandwidthRateLimitOutcome(std::move(result.GetError()));
 }
 
 DescribeBandwidthRateLimitScheduleOutcome StorageGatewayClient::DescribeBandwidthRateLimitSchedule(
     const DescribeBandwidthRateLimitScheduleRequest& request) const {
-  return DescribeBandwidthRateLimitScheduleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeBandwidthRateLimitScheduleOutcome(result.GetResultWithOwnership())
+                            : DescribeBandwidthRateLimitScheduleOutcome(std::move(result.GetError()));
 }
 
 DescribeCacheOutcome StorageGatewayClient::DescribeCache(const DescribeCacheRequest& request) const {
-  return DescribeCacheOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCacheOutcome(result.GetResultWithOwnership()) : DescribeCacheOutcome(std::move(result.GetError()));
 }
 
 DescribeCacheReportOutcome StorageGatewayClient::DescribeCacheReport(const DescribeCacheReportRequest& request) const {
-  return DescribeCacheReportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCacheReportOutcome(result.GetResultWithOwnership())
+                            : DescribeCacheReportOutcome(std::move(result.GetError()));
 }
 
 DescribeCachediSCSIVolumesOutcome StorageGatewayClient::DescribeCachediSCSIVolumes(const DescribeCachediSCSIVolumesRequest& request) const {
-  return DescribeCachediSCSIVolumesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCachediSCSIVolumesOutcome(result.GetResultWithOwnership())
+                            : DescribeCachediSCSIVolumesOutcome(std::move(result.GetError()));
 }
 
 DescribeChapCredentialsOutcome StorageGatewayClient::DescribeChapCredentials(const DescribeChapCredentialsRequest& request) const {
-  return DescribeChapCredentialsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeChapCredentialsOutcome(result.GetResultWithOwnership())
+                            : DescribeChapCredentialsOutcome(std::move(result.GetError()));
 }
 
 DescribeFileSystemAssociationsOutcome StorageGatewayClient::DescribeFileSystemAssociations(
     const DescribeFileSystemAssociationsRequest& request) const {
-  return DescribeFileSystemAssociationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeFileSystemAssociationsOutcome(result.GetResultWithOwnership())
+                            : DescribeFileSystemAssociationsOutcome(std::move(result.GetError()));
 }
 
 DescribeGatewayInformationOutcome StorageGatewayClient::DescribeGatewayInformation(const DescribeGatewayInformationRequest& request) const {
-  return DescribeGatewayInformationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeGatewayInformationOutcome(result.GetResultWithOwnership())
+                            : DescribeGatewayInformationOutcome(std::move(result.GetError()));
 }
 
 DescribeMaintenanceStartTimeOutcome StorageGatewayClient::DescribeMaintenanceStartTime(
     const DescribeMaintenanceStartTimeRequest& request) const {
-  return DescribeMaintenanceStartTimeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeMaintenanceStartTimeOutcome(result.GetResultWithOwnership())
+                            : DescribeMaintenanceStartTimeOutcome(std::move(result.GetError()));
 }
 
 DescribeNFSFileSharesOutcome StorageGatewayClient::DescribeNFSFileShares(const DescribeNFSFileSharesRequest& request) const {
-  return DescribeNFSFileSharesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeNFSFileSharesOutcome(result.GetResultWithOwnership())
+                            : DescribeNFSFileSharesOutcome(std::move(result.GetError()));
 }
 
 DescribeSMBFileSharesOutcome StorageGatewayClient::DescribeSMBFileShares(const DescribeSMBFileSharesRequest& request) const {
-  return DescribeSMBFileSharesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSMBFileSharesOutcome(result.GetResultWithOwnership())
+                            : DescribeSMBFileSharesOutcome(std::move(result.GetError()));
 }
 
 DescribeSMBSettingsOutcome StorageGatewayClient::DescribeSMBSettings(const DescribeSMBSettingsRequest& request) const {
-  return DescribeSMBSettingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSMBSettingsOutcome(result.GetResultWithOwnership())
+                            : DescribeSMBSettingsOutcome(std::move(result.GetError()));
 }
 
 DescribeSnapshotScheduleOutcome StorageGatewayClient::DescribeSnapshotSchedule(const DescribeSnapshotScheduleRequest& request) const {
-  return DescribeSnapshotScheduleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSnapshotScheduleOutcome(result.GetResultWithOwnership())
+                            : DescribeSnapshotScheduleOutcome(std::move(result.GetError()));
 }
 
 DescribeStorediSCSIVolumesOutcome StorageGatewayClient::DescribeStorediSCSIVolumes(const DescribeStorediSCSIVolumesRequest& request) const {
-  return DescribeStorediSCSIVolumesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeStorediSCSIVolumesOutcome(result.GetResultWithOwnership())
+                            : DescribeStorediSCSIVolumesOutcome(std::move(result.GetError()));
 }
 
 DescribeTapeArchivesOutcome StorageGatewayClient::DescribeTapeArchives(const DescribeTapeArchivesRequest& request) const {
-  return DescribeTapeArchivesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTapeArchivesOutcome(result.GetResultWithOwnership())
+                            : DescribeTapeArchivesOutcome(std::move(result.GetError()));
 }
 
 DescribeTapeRecoveryPointsOutcome StorageGatewayClient::DescribeTapeRecoveryPoints(const DescribeTapeRecoveryPointsRequest& request) const {
-  return DescribeTapeRecoveryPointsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTapeRecoveryPointsOutcome(result.GetResultWithOwnership())
+                            : DescribeTapeRecoveryPointsOutcome(std::move(result.GetError()));
 }
 
 DescribeTapesOutcome StorageGatewayClient::DescribeTapes(const DescribeTapesRequest& request) const {
-  return DescribeTapesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTapesOutcome(result.GetResultWithOwnership()) : DescribeTapesOutcome(std::move(result.GetError()));
 }
 
 DescribeUploadBufferOutcome StorageGatewayClient::DescribeUploadBuffer(const DescribeUploadBufferRequest& request) const {
-  return DescribeUploadBufferOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeUploadBufferOutcome(result.GetResultWithOwnership())
+                            : DescribeUploadBufferOutcome(std::move(result.GetError()));
 }
 
 DescribeVTLDevicesOutcome StorageGatewayClient::DescribeVTLDevices(const DescribeVTLDevicesRequest& request) const {
-  return DescribeVTLDevicesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeVTLDevicesOutcome(result.GetResultWithOwnership())
+                            : DescribeVTLDevicesOutcome(std::move(result.GetError()));
 }
 
 DescribeWorkingStorageOutcome StorageGatewayClient::DescribeWorkingStorage(const DescribeWorkingStorageRequest& request) const {
-  return DescribeWorkingStorageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeWorkingStorageOutcome(result.GetResultWithOwnership())
+                            : DescribeWorkingStorageOutcome(std::move(result.GetError()));
 }
 
 DetachVolumeOutcome StorageGatewayClient::DetachVolume(const DetachVolumeRequest& request) const {
-  return DetachVolumeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DetachVolumeOutcome(result.GetResultWithOwnership()) : DetachVolumeOutcome(std::move(result.GetError()));
 }
 
 DisableGatewayOutcome StorageGatewayClient::DisableGateway(const DisableGatewayRequest& request) const {
-  return DisableGatewayOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableGatewayOutcome(result.GetResultWithOwnership()) : DisableGatewayOutcome(std::move(result.GetError()));
 }
 
 DisassociateFileSystemOutcome StorageGatewayClient::DisassociateFileSystem(const DisassociateFileSystemRequest& request) const {
-  return DisassociateFileSystemOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateFileSystemOutcome(result.GetResultWithOwnership())
+                            : DisassociateFileSystemOutcome(std::move(result.GetError()));
 }
 
 EvictFilesFailingUploadOutcome StorageGatewayClient::EvictFilesFailingUpload(const EvictFilesFailingUploadRequest& request) const {
-  return EvictFilesFailingUploadOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EvictFilesFailingUploadOutcome(result.GetResultWithOwnership())
+                            : EvictFilesFailingUploadOutcome(std::move(result.GetError()));
 }
 
 JoinDomainOutcome StorageGatewayClient::JoinDomain(const JoinDomainRequest& request) const {
-  return JoinDomainOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? JoinDomainOutcome(result.GetResultWithOwnership()) : JoinDomainOutcome(std::move(result.GetError()));
 }
 
 ListAutomaticTapeCreationPoliciesOutcome StorageGatewayClient::ListAutomaticTapeCreationPolicies(
     const ListAutomaticTapeCreationPoliciesRequest& request) const {
-  return ListAutomaticTapeCreationPoliciesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAutomaticTapeCreationPoliciesOutcome(result.GetResultWithOwnership())
+                            : ListAutomaticTapeCreationPoliciesOutcome(std::move(result.GetError()));
 }
 
 ListCacheReportsOutcome StorageGatewayClient::ListCacheReports(const ListCacheReportsRequest& request) const {
-  return ListCacheReportsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCacheReportsOutcome(result.GetResultWithOwnership())
+                            : ListCacheReportsOutcome(std::move(result.GetError()));
 }
 
 ListFileSharesOutcome StorageGatewayClient::ListFileShares(const ListFileSharesRequest& request) const {
-  return ListFileSharesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFileSharesOutcome(result.GetResultWithOwnership()) : ListFileSharesOutcome(std::move(result.GetError()));
 }
 
 ListFileSystemAssociationsOutcome StorageGatewayClient::ListFileSystemAssociations(const ListFileSystemAssociationsRequest& request) const {
-  return ListFileSystemAssociationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFileSystemAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListFileSystemAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListGatewaysOutcome StorageGatewayClient::ListGateways(const ListGatewaysRequest& request) const {
-  return ListGatewaysOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListGatewaysOutcome(result.GetResultWithOwnership()) : ListGatewaysOutcome(std::move(result.GetError()));
 }
 
 ListLocalDisksOutcome StorageGatewayClient::ListLocalDisks(const ListLocalDisksRequest& request) const {
-  return ListLocalDisksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLocalDisksOutcome(result.GetResultWithOwnership()) : ListLocalDisksOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome StorageGatewayClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTapePoolsOutcome StorageGatewayClient::ListTapePools(const ListTapePoolsRequest& request) const {
-  return ListTapePoolsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTapePoolsOutcome(result.GetResultWithOwnership()) : ListTapePoolsOutcome(std::move(result.GetError()));
 }
 
 ListTapesOutcome StorageGatewayClient::ListTapes(const ListTapesRequest& request) const {
-  return ListTapesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTapesOutcome(result.GetResultWithOwnership()) : ListTapesOutcome(std::move(result.GetError()));
 }
 
 ListVolumeInitiatorsOutcome StorageGatewayClient::ListVolumeInitiators(const ListVolumeInitiatorsRequest& request) const {
-  return ListVolumeInitiatorsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListVolumeInitiatorsOutcome(result.GetResultWithOwnership())
+                            : ListVolumeInitiatorsOutcome(std::move(result.GetError()));
 }
 
 ListVolumeRecoveryPointsOutcome StorageGatewayClient::ListVolumeRecoveryPoints(const ListVolumeRecoveryPointsRequest& request) const {
-  return ListVolumeRecoveryPointsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListVolumeRecoveryPointsOutcome(result.GetResultWithOwnership())
+                            : ListVolumeRecoveryPointsOutcome(std::move(result.GetError()));
 }
 
 ListVolumesOutcome StorageGatewayClient::ListVolumes(const ListVolumesRequest& request) const {
-  return ListVolumesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListVolumesOutcome(result.GetResultWithOwnership()) : ListVolumesOutcome(std::move(result.GetError()));
 }
 
 NotifyWhenUploadedOutcome StorageGatewayClient::NotifyWhenUploaded(const NotifyWhenUploadedRequest& request) const {
-  return NotifyWhenUploadedOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? NotifyWhenUploadedOutcome(result.GetResultWithOwnership())
+                            : NotifyWhenUploadedOutcome(std::move(result.GetError()));
 }
 
 RefreshCacheOutcome StorageGatewayClient::RefreshCache(const RefreshCacheRequest& request) const {
-  return RefreshCacheOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RefreshCacheOutcome(result.GetResultWithOwnership()) : RefreshCacheOutcome(std::move(result.GetError()));
 }
 
 RemoveTagsFromResourceOutcome StorageGatewayClient::RemoveTagsFromResource(const RemoveTagsFromResourceRequest& request) const {
-  return RemoveTagsFromResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveTagsFromResourceOutcome(result.GetResultWithOwnership())
+                            : RemoveTagsFromResourceOutcome(std::move(result.GetError()));
 }
 
 ResetCacheOutcome StorageGatewayClient::ResetCache(const ResetCacheRequest& request) const {
-  return ResetCacheOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResetCacheOutcome(result.GetResultWithOwnership()) : ResetCacheOutcome(std::move(result.GetError()));
 }
 
 RetrieveTapeArchiveOutcome StorageGatewayClient::RetrieveTapeArchive(const RetrieveTapeArchiveRequest& request) const {
-  return RetrieveTapeArchiveOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RetrieveTapeArchiveOutcome(result.GetResultWithOwnership())
+                            : RetrieveTapeArchiveOutcome(std::move(result.GetError()));
 }
 
 RetrieveTapeRecoveryPointOutcome StorageGatewayClient::RetrieveTapeRecoveryPoint(const RetrieveTapeRecoveryPointRequest& request) const {
-  return RetrieveTapeRecoveryPointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RetrieveTapeRecoveryPointOutcome(result.GetResultWithOwnership())
+                            : RetrieveTapeRecoveryPointOutcome(std::move(result.GetError()));
 }
 
 SetLocalConsolePasswordOutcome StorageGatewayClient::SetLocalConsolePassword(const SetLocalConsolePasswordRequest& request) const {
-  return SetLocalConsolePasswordOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetLocalConsolePasswordOutcome(result.GetResultWithOwnership())
+                            : SetLocalConsolePasswordOutcome(std::move(result.GetError()));
 }
 
 SetSMBGuestPasswordOutcome StorageGatewayClient::SetSMBGuestPassword(const SetSMBGuestPasswordRequest& request) const {
-  return SetSMBGuestPasswordOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetSMBGuestPasswordOutcome(result.GetResultWithOwnership())
+                            : SetSMBGuestPasswordOutcome(std::move(result.GetError()));
 }
 
 ShutdownGatewayOutcome StorageGatewayClient::ShutdownGateway(const ShutdownGatewayRequest& request) const {
-  return ShutdownGatewayOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ShutdownGatewayOutcome(result.GetResultWithOwnership())
+                            : ShutdownGatewayOutcome(std::move(result.GetError()));
 }
 
 StartAvailabilityMonitorTestOutcome StorageGatewayClient::StartAvailabilityMonitorTest(
     const StartAvailabilityMonitorTestRequest& request) const {
-  return StartAvailabilityMonitorTestOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartAvailabilityMonitorTestOutcome(result.GetResultWithOwnership())
+                            : StartAvailabilityMonitorTestOutcome(std::move(result.GetError()));
 }
 
 StartCacheReportOutcome StorageGatewayClient::StartCacheReport(const StartCacheReportRequest& request) const {
-  return StartCacheReportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartCacheReportOutcome(result.GetResultWithOwnership())
+                            : StartCacheReportOutcome(std::move(result.GetError()));
 }
 
 StartGatewayOutcome StorageGatewayClient::StartGateway(const StartGatewayRequest& request) const {
-  return StartGatewayOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartGatewayOutcome(result.GetResultWithOwnership()) : StartGatewayOutcome(std::move(result.GetError()));
 }
 
 UpdateAutomaticTapeCreationPolicyOutcome StorageGatewayClient::UpdateAutomaticTapeCreationPolicy(
     const UpdateAutomaticTapeCreationPolicyRequest& request) const {
-  return UpdateAutomaticTapeCreationPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAutomaticTapeCreationPolicyOutcome(result.GetResultWithOwnership())
+                            : UpdateAutomaticTapeCreationPolicyOutcome(std::move(result.GetError()));
 }
 
 UpdateBandwidthRateLimitOutcome StorageGatewayClient::UpdateBandwidthRateLimit(const UpdateBandwidthRateLimitRequest& request) const {
-  return UpdateBandwidthRateLimitOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateBandwidthRateLimitOutcome(result.GetResultWithOwnership())
+                            : UpdateBandwidthRateLimitOutcome(std::move(result.GetError()));
 }
 
 UpdateBandwidthRateLimitScheduleOutcome StorageGatewayClient::UpdateBandwidthRateLimitSchedule(
     const UpdateBandwidthRateLimitScheduleRequest& request) const {
-  return UpdateBandwidthRateLimitScheduleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateBandwidthRateLimitScheduleOutcome(result.GetResultWithOwnership())
+                            : UpdateBandwidthRateLimitScheduleOutcome(std::move(result.GetError()));
 }
 
 UpdateChapCredentialsOutcome StorageGatewayClient::UpdateChapCredentials(const UpdateChapCredentialsRequest& request) const {
-  return UpdateChapCredentialsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateChapCredentialsOutcome(result.GetResultWithOwnership())
+                            : UpdateChapCredentialsOutcome(std::move(result.GetError()));
 }
 
 UpdateFileSystemAssociationOutcome StorageGatewayClient::UpdateFileSystemAssociation(
     const UpdateFileSystemAssociationRequest& request) const {
-  return UpdateFileSystemAssociationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateFileSystemAssociationOutcome(result.GetResultWithOwnership())
+                            : UpdateFileSystemAssociationOutcome(std::move(result.GetError()));
 }
 
 UpdateGatewayInformationOutcome StorageGatewayClient::UpdateGatewayInformation(const UpdateGatewayInformationRequest& request) const {
-  return UpdateGatewayInformationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateGatewayInformationOutcome(result.GetResultWithOwnership())
+                            : UpdateGatewayInformationOutcome(std::move(result.GetError()));
 }
 
 UpdateGatewaySoftwareNowOutcome StorageGatewayClient::UpdateGatewaySoftwareNow(const UpdateGatewaySoftwareNowRequest& request) const {
-  return UpdateGatewaySoftwareNowOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateGatewaySoftwareNowOutcome(result.GetResultWithOwnership())
+                            : UpdateGatewaySoftwareNowOutcome(std::move(result.GetError()));
 }
 
 UpdateMaintenanceStartTimeOutcome StorageGatewayClient::UpdateMaintenanceStartTime(const UpdateMaintenanceStartTimeRequest& request) const {
-  return UpdateMaintenanceStartTimeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateMaintenanceStartTimeOutcome(result.GetResultWithOwnership())
+                            : UpdateMaintenanceStartTimeOutcome(std::move(result.GetError()));
 }
 
 UpdateNFSFileShareOutcome StorageGatewayClient::UpdateNFSFileShare(const UpdateNFSFileShareRequest& request) const {
-  return UpdateNFSFileShareOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateNFSFileShareOutcome(result.GetResultWithOwnership())
+                            : UpdateNFSFileShareOutcome(std::move(result.GetError()));
 }
 
 UpdateSMBFileShareOutcome StorageGatewayClient::UpdateSMBFileShare(const UpdateSMBFileShareRequest& request) const {
-  return UpdateSMBFileShareOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSMBFileShareOutcome(result.GetResultWithOwnership())
+                            : UpdateSMBFileShareOutcome(std::move(result.GetError()));
 }
 
 UpdateSMBFileShareVisibilityOutcome StorageGatewayClient::UpdateSMBFileShareVisibility(
     const UpdateSMBFileShareVisibilityRequest& request) const {
-  return UpdateSMBFileShareVisibilityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSMBFileShareVisibilityOutcome(result.GetResultWithOwnership())
+                            : UpdateSMBFileShareVisibilityOutcome(std::move(result.GetError()));
 }
 
 UpdateSMBLocalGroupsOutcome StorageGatewayClient::UpdateSMBLocalGroups(const UpdateSMBLocalGroupsRequest& request) const {
-  return UpdateSMBLocalGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSMBLocalGroupsOutcome(result.GetResultWithOwnership())
+                            : UpdateSMBLocalGroupsOutcome(std::move(result.GetError()));
 }
 
 UpdateSMBSecurityStrategyOutcome StorageGatewayClient::UpdateSMBSecurityStrategy(const UpdateSMBSecurityStrategyRequest& request) const {
-  return UpdateSMBSecurityStrategyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSMBSecurityStrategyOutcome(result.GetResultWithOwnership())
+                            : UpdateSMBSecurityStrategyOutcome(std::move(result.GetError()));
 }
 
 UpdateSnapshotScheduleOutcome StorageGatewayClient::UpdateSnapshotSchedule(const UpdateSnapshotScheduleRequest& request) const {
-  return UpdateSnapshotScheduleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSnapshotScheduleOutcome(result.GetResultWithOwnership())
+                            : UpdateSnapshotScheduleOutcome(std::move(result.GetError()));
 }
 
 UpdateVTLDeviceTypeOutcome StorageGatewayClient::UpdateVTLDeviceType(const UpdateVTLDeviceTypeRequest& request) const {
-  return UpdateVTLDeviceTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateVTLDeviceTypeOutcome(result.GetResultWithOwnership())
+                            : UpdateVTLDeviceTypeOutcome(std::move(result.GetError()));
 }

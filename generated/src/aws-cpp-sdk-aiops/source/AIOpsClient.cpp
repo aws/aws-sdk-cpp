@@ -191,7 +191,9 @@ CreateInvestigationGroupOutcome AIOpsClient::CreateInvestigationGroup(const Crea
     endpointResolutionOutcome.GetResult().AddPathSegments("/investigationGroups");
   };
 
-  return CreateInvestigationGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateInvestigationGroupOutcome(result.GetResultWithOwnership())
+                            : CreateInvestigationGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteInvestigationGroupOutcome AIOpsClient::DeleteInvestigationGroup(const DeleteInvestigationGroupRequest& request) const {
@@ -207,7 +209,9 @@ DeleteInvestigationGroupOutcome AIOpsClient::DeleteInvestigationGroup(const Dele
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteInvestigationGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteInvestigationGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteInvestigationGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteInvestigationGroupPolicyOutcome AIOpsClient::DeleteInvestigationGroupPolicy(
@@ -225,7 +229,9 @@ DeleteInvestigationGroupPolicyOutcome AIOpsClient::DeleteInvestigationGroupPolic
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return DeleteInvestigationGroupPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteInvestigationGroupPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteInvestigationGroupPolicyOutcome(std::move(result.GetError()));
 }
 
 GetInvestigationGroupOutcome AIOpsClient::GetInvestigationGroup(const GetInvestigationGroupRequest& request) const {
@@ -241,7 +247,9 @@ GetInvestigationGroupOutcome AIOpsClient::GetInvestigationGroup(const GetInvesti
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetInvestigationGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetInvestigationGroupOutcome(result.GetResultWithOwnership())
+                            : GetInvestigationGroupOutcome(std::move(result.GetError()));
 }
 
 GetInvestigationGroupPolicyOutcome AIOpsClient::GetInvestigationGroupPolicy(const GetInvestigationGroupPolicyRequest& request) const {
@@ -258,7 +266,9 @@ GetInvestigationGroupPolicyOutcome AIOpsClient::GetInvestigationGroupPolicy(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return GetInvestigationGroupPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetInvestigationGroupPolicyOutcome(result.GetResultWithOwnership())
+                            : GetInvestigationGroupPolicyOutcome(std::move(result.GetError()));
 }
 
 ListInvestigationGroupsOutcome AIOpsClient::ListInvestigationGroups(const ListInvestigationGroupsRequest& request) const {
@@ -267,7 +277,9 @@ ListInvestigationGroupsOutcome AIOpsClient::ListInvestigationGroups(const ListIn
     endpointResolutionOutcome.GetResult().AddPathSegments("/investigationGroups");
   };
 
-  return ListInvestigationGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListInvestigationGroupsOutcome(result.GetResultWithOwnership())
+                            : ListInvestigationGroupsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome AIOpsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -283,7 +295,9 @@ ListTagsForResourceOutcome AIOpsClient::ListTagsForResource(const ListTagsForRes
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutInvestigationGroupPolicyOutcome AIOpsClient::PutInvestigationGroupPolicy(const PutInvestigationGroupPolicyRequest& request) const {
@@ -300,7 +314,9 @@ PutInvestigationGroupPolicyOutcome AIOpsClient::PutInvestigationGroupPolicy(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return PutInvestigationGroupPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutInvestigationGroupPolicyOutcome(result.GetResultWithOwnership())
+                            : PutInvestigationGroupPolicyOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome AIOpsClient::TagResource(const TagResourceRequest& request) const {
@@ -316,7 +332,8 @@ TagResourceOutcome AIOpsClient::TagResource(const TagResourceRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome AIOpsClient::UntagResource(const UntagResourceRequest& request) const {
@@ -337,7 +354,8 @@ UntagResourceOutcome AIOpsClient::UntagResource(const UntagResourceRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateInvestigationGroupOutcome AIOpsClient::UpdateInvestigationGroup(const UpdateInvestigationGroupRequest& request) const {
@@ -353,5 +371,7 @@ UpdateInvestigationGroupOutcome AIOpsClient::UpdateInvestigationGroup(const Upda
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateInvestigationGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateInvestigationGroupOutcome(result.GetResultWithOwnership())
+                            : UpdateInvestigationGroupOutcome(std::move(result.GetError()));
 }

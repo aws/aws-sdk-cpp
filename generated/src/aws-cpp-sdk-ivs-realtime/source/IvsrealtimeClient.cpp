@@ -219,7 +219,9 @@ CreateEncoderConfigurationOutcome IvsrealtimeClient::CreateEncoderConfiguration(
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateEncoderConfiguration");
   };
 
-  return CreateEncoderConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEncoderConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateEncoderConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateIngestConfigurationOutcome IvsrealtimeClient::CreateIngestConfiguration(const CreateIngestConfigurationRequest& request) const {
@@ -228,7 +230,9 @@ CreateIngestConfigurationOutcome IvsrealtimeClient::CreateIngestConfiguration(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateIngestConfiguration");
   };
 
-  return CreateIngestConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIngestConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateIngestConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateParticipantTokenOutcome IvsrealtimeClient::CreateParticipantToken(const CreateParticipantTokenRequest& request) const {
@@ -237,7 +241,9 @@ CreateParticipantTokenOutcome IvsrealtimeClient::CreateParticipantToken(const Cr
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateParticipantToken");
   };
 
-  return CreateParticipantTokenOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateParticipantTokenOutcome(result.GetResultWithOwnership())
+                            : CreateParticipantTokenOutcome(std::move(result.GetError()));
 }
 
 CreateStageOutcome IvsrealtimeClient::CreateStage(const CreateStageRequest& request) const {
@@ -246,7 +252,8 @@ CreateStageOutcome IvsrealtimeClient::CreateStage(const CreateStageRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateStage");
   };
 
-  return CreateStageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateStageOutcome(result.GetResultWithOwnership()) : CreateStageOutcome(std::move(result.GetError()));
 }
 
 CreateStorageConfigurationOutcome IvsrealtimeClient::CreateStorageConfiguration(const CreateStorageConfigurationRequest& request) const {
@@ -255,7 +262,9 @@ CreateStorageConfigurationOutcome IvsrealtimeClient::CreateStorageConfiguration(
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateStorageConfiguration");
   };
 
-  return CreateStorageConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateStorageConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateStorageConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteEncoderConfigurationOutcome IvsrealtimeClient::DeleteEncoderConfiguration(const DeleteEncoderConfigurationRequest& request) const {
@@ -264,7 +273,9 @@ DeleteEncoderConfigurationOutcome IvsrealtimeClient::DeleteEncoderConfiguration(
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteEncoderConfiguration");
   };
 
-  return DeleteEncoderConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteEncoderConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteEncoderConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteIngestConfigurationOutcome IvsrealtimeClient::DeleteIngestConfiguration(const DeleteIngestConfigurationRequest& request) const {
@@ -273,7 +284,9 @@ DeleteIngestConfigurationOutcome IvsrealtimeClient::DeleteIngestConfiguration(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteIngestConfiguration");
   };
 
-  return DeleteIngestConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteIngestConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteIngestConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeletePublicKeyOutcome IvsrealtimeClient::DeletePublicKey(const DeletePublicKeyRequest& request) const {
@@ -282,7 +295,9 @@ DeletePublicKeyOutcome IvsrealtimeClient::DeletePublicKey(const DeletePublicKeyR
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeletePublicKey");
   };
 
-  return DeletePublicKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePublicKeyOutcome(result.GetResultWithOwnership())
+                            : DeletePublicKeyOutcome(std::move(result.GetError()));
 }
 
 DeleteStageOutcome IvsrealtimeClient::DeleteStage(const DeleteStageRequest& request) const {
@@ -291,7 +306,8 @@ DeleteStageOutcome IvsrealtimeClient::DeleteStage(const DeleteStageRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteStage");
   };
 
-  return DeleteStageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteStageOutcome(result.GetResultWithOwnership()) : DeleteStageOutcome(std::move(result.GetError()));
 }
 
 DeleteStorageConfigurationOutcome IvsrealtimeClient::DeleteStorageConfiguration(const DeleteStorageConfigurationRequest& request) const {
@@ -300,7 +316,9 @@ DeleteStorageConfigurationOutcome IvsrealtimeClient::DeleteStorageConfiguration(
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteStorageConfiguration");
   };
 
-  return DeleteStorageConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteStorageConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteStorageConfigurationOutcome(std::move(result.GetError()));
 }
 
 DisconnectParticipantOutcome IvsrealtimeClient::DisconnectParticipant(const DisconnectParticipantRequest& request) const {
@@ -309,7 +327,9 @@ DisconnectParticipantOutcome IvsrealtimeClient::DisconnectParticipant(const Disc
     endpointResolutionOutcome.GetResult().AddPathSegments("/DisconnectParticipant");
   };
 
-  return DisconnectParticipantOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisconnectParticipantOutcome(result.GetResultWithOwnership())
+                            : DisconnectParticipantOutcome(std::move(result.GetError()));
 }
 
 GetCompositionOutcome IvsrealtimeClient::GetComposition(const GetCompositionRequest& request) const {
@@ -318,7 +338,8 @@ GetCompositionOutcome IvsrealtimeClient::GetComposition(const GetCompositionRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetComposition");
   };
 
-  return GetCompositionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCompositionOutcome(result.GetResultWithOwnership()) : GetCompositionOutcome(std::move(result.GetError()));
 }
 
 GetEncoderConfigurationOutcome IvsrealtimeClient::GetEncoderConfiguration(const GetEncoderConfigurationRequest& request) const {
@@ -327,7 +348,9 @@ GetEncoderConfigurationOutcome IvsrealtimeClient::GetEncoderConfiguration(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetEncoderConfiguration");
   };
 
-  return GetEncoderConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEncoderConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetEncoderConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetIngestConfigurationOutcome IvsrealtimeClient::GetIngestConfiguration(const GetIngestConfigurationRequest& request) const {
@@ -336,7 +359,9 @@ GetIngestConfigurationOutcome IvsrealtimeClient::GetIngestConfiguration(const Ge
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetIngestConfiguration");
   };
 
-  return GetIngestConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIngestConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetIngestConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetParticipantOutcome IvsrealtimeClient::GetParticipant(const GetParticipantRequest& request) const {
@@ -345,7 +370,8 @@ GetParticipantOutcome IvsrealtimeClient::GetParticipant(const GetParticipantRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetParticipant");
   };
 
-  return GetParticipantOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetParticipantOutcome(result.GetResultWithOwnership()) : GetParticipantOutcome(std::move(result.GetError()));
 }
 
 GetPublicKeyOutcome IvsrealtimeClient::GetPublicKey(const GetPublicKeyRequest& request) const {
@@ -354,7 +380,8 @@ GetPublicKeyOutcome IvsrealtimeClient::GetPublicKey(const GetPublicKeyRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetPublicKey");
   };
 
-  return GetPublicKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPublicKeyOutcome(result.GetResultWithOwnership()) : GetPublicKeyOutcome(std::move(result.GetError()));
 }
 
 GetStageOutcome IvsrealtimeClient::GetStage(const GetStageRequest& request) const {
@@ -363,7 +390,8 @@ GetStageOutcome IvsrealtimeClient::GetStage(const GetStageRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetStage");
   };
 
-  return GetStageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetStageOutcome(result.GetResultWithOwnership()) : GetStageOutcome(std::move(result.GetError()));
 }
 
 GetStageSessionOutcome IvsrealtimeClient::GetStageSession(const GetStageSessionRequest& request) const {
@@ -372,7 +400,9 @@ GetStageSessionOutcome IvsrealtimeClient::GetStageSession(const GetStageSessionR
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetStageSession");
   };
 
-  return GetStageSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetStageSessionOutcome(result.GetResultWithOwnership())
+                            : GetStageSessionOutcome(std::move(result.GetError()));
 }
 
 GetStorageConfigurationOutcome IvsrealtimeClient::GetStorageConfiguration(const GetStorageConfigurationRequest& request) const {
@@ -381,7 +411,9 @@ GetStorageConfigurationOutcome IvsrealtimeClient::GetStorageConfiguration(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetStorageConfiguration");
   };
 
-  return GetStorageConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetStorageConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetStorageConfigurationOutcome(std::move(result.GetError()));
 }
 
 ImportPublicKeyOutcome IvsrealtimeClient::ImportPublicKey(const ImportPublicKeyRequest& request) const {
@@ -390,7 +422,9 @@ ImportPublicKeyOutcome IvsrealtimeClient::ImportPublicKey(const ImportPublicKeyR
     endpointResolutionOutcome.GetResult().AddPathSegments("/ImportPublicKey");
   };
 
-  return ImportPublicKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportPublicKeyOutcome(result.GetResultWithOwnership())
+                            : ImportPublicKeyOutcome(std::move(result.GetError()));
 }
 
 ListCompositionsOutcome IvsrealtimeClient::ListCompositions(const ListCompositionsRequest& request) const {
@@ -399,7 +433,9 @@ ListCompositionsOutcome IvsrealtimeClient::ListCompositions(const ListCompositio
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListCompositions");
   };
 
-  return ListCompositionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCompositionsOutcome(result.GetResultWithOwnership())
+                            : ListCompositionsOutcome(std::move(result.GetError()));
 }
 
 ListEncoderConfigurationsOutcome IvsrealtimeClient::ListEncoderConfigurations(const ListEncoderConfigurationsRequest& request) const {
@@ -408,7 +444,9 @@ ListEncoderConfigurationsOutcome IvsrealtimeClient::ListEncoderConfigurations(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListEncoderConfigurations");
   };
 
-  return ListEncoderConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEncoderConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListEncoderConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListIngestConfigurationsOutcome IvsrealtimeClient::ListIngestConfigurations(const ListIngestConfigurationsRequest& request) const {
@@ -417,7 +455,9 @@ ListIngestConfigurationsOutcome IvsrealtimeClient::ListIngestConfigurations(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListIngestConfigurations");
   };
 
-  return ListIngestConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListIngestConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListIngestConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListParticipantEventsOutcome IvsrealtimeClient::ListParticipantEvents(const ListParticipantEventsRequest& request) const {
@@ -426,7 +466,9 @@ ListParticipantEventsOutcome IvsrealtimeClient::ListParticipantEvents(const List
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListParticipantEvents");
   };
 
-  return ListParticipantEventsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListParticipantEventsOutcome(result.GetResultWithOwnership())
+                            : ListParticipantEventsOutcome(std::move(result.GetError()));
 }
 
 ListParticipantReplicasOutcome IvsrealtimeClient::ListParticipantReplicas(const ListParticipantReplicasRequest& request) const {
@@ -435,7 +477,9 @@ ListParticipantReplicasOutcome IvsrealtimeClient::ListParticipantReplicas(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListParticipantReplicas");
   };
 
-  return ListParticipantReplicasOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListParticipantReplicasOutcome(result.GetResultWithOwnership())
+                            : ListParticipantReplicasOutcome(std::move(result.GetError()));
 }
 
 ListParticipantsOutcome IvsrealtimeClient::ListParticipants(const ListParticipantsRequest& request) const {
@@ -444,7 +488,9 @@ ListParticipantsOutcome IvsrealtimeClient::ListParticipants(const ListParticipan
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListParticipants");
   };
 
-  return ListParticipantsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListParticipantsOutcome(result.GetResultWithOwnership())
+                            : ListParticipantsOutcome(std::move(result.GetError()));
 }
 
 ListPublicKeysOutcome IvsrealtimeClient::ListPublicKeys(const ListPublicKeysRequest& request) const {
@@ -453,7 +499,8 @@ ListPublicKeysOutcome IvsrealtimeClient::ListPublicKeys(const ListPublicKeysRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListPublicKeys");
   };
 
-  return ListPublicKeysOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPublicKeysOutcome(result.GetResultWithOwnership()) : ListPublicKeysOutcome(std::move(result.GetError()));
 }
 
 ListStageSessionsOutcome IvsrealtimeClient::ListStageSessions(const ListStageSessionsRequest& request) const {
@@ -462,7 +509,9 @@ ListStageSessionsOutcome IvsrealtimeClient::ListStageSessions(const ListStageSes
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListStageSessions");
   };
 
-  return ListStageSessionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListStageSessionsOutcome(result.GetResultWithOwnership())
+                            : ListStageSessionsOutcome(std::move(result.GetError()));
 }
 
 ListStagesOutcome IvsrealtimeClient::ListStages(const ListStagesRequest& request) const {
@@ -471,7 +520,8 @@ ListStagesOutcome IvsrealtimeClient::ListStages(const ListStagesRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListStages");
   };
 
-  return ListStagesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListStagesOutcome(result.GetResultWithOwnership()) : ListStagesOutcome(std::move(result.GetError()));
 }
 
 ListStorageConfigurationsOutcome IvsrealtimeClient::ListStorageConfigurations(const ListStorageConfigurationsRequest& request) const {
@@ -480,7 +530,9 @@ ListStorageConfigurationsOutcome IvsrealtimeClient::ListStorageConfigurations(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListStorageConfigurations");
   };
 
-  return ListStorageConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListStorageConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListStorageConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome IvsrealtimeClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -496,7 +548,9 @@ ListTagsForResourceOutcome IvsrealtimeClient::ListTagsForResource(const ListTags
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 StartCompositionOutcome IvsrealtimeClient::StartComposition(const StartCompositionRequest& request) const {
@@ -505,7 +559,9 @@ StartCompositionOutcome IvsrealtimeClient::StartComposition(const StartCompositi
     endpointResolutionOutcome.GetResult().AddPathSegments("/StartComposition");
   };
 
-  return StartCompositionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartCompositionOutcome(result.GetResultWithOwnership())
+                            : StartCompositionOutcome(std::move(result.GetError()));
 }
 
 StartParticipantReplicationOutcome IvsrealtimeClient::StartParticipantReplication(const StartParticipantReplicationRequest& request) const {
@@ -514,7 +570,9 @@ StartParticipantReplicationOutcome IvsrealtimeClient::StartParticipantReplicatio
     endpointResolutionOutcome.GetResult().AddPathSegments("/StartParticipantReplication");
   };
 
-  return StartParticipantReplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartParticipantReplicationOutcome(result.GetResultWithOwnership())
+                            : StartParticipantReplicationOutcome(std::move(result.GetError()));
 }
 
 StopCompositionOutcome IvsrealtimeClient::StopComposition(const StopCompositionRequest& request) const {
@@ -523,7 +581,9 @@ StopCompositionOutcome IvsrealtimeClient::StopComposition(const StopCompositionR
     endpointResolutionOutcome.GetResult().AddPathSegments("/StopComposition");
   };
 
-  return StopCompositionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopCompositionOutcome(result.GetResultWithOwnership())
+                            : StopCompositionOutcome(std::move(result.GetError()));
 }
 
 StopParticipantReplicationOutcome IvsrealtimeClient::StopParticipantReplication(const StopParticipantReplicationRequest& request) const {
@@ -532,7 +592,9 @@ StopParticipantReplicationOutcome IvsrealtimeClient::StopParticipantReplication(
     endpointResolutionOutcome.GetResult().AddPathSegments("/StopParticipantReplication");
   };
 
-  return StopParticipantReplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopParticipantReplicationOutcome(result.GetResultWithOwnership())
+                            : StopParticipantReplicationOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome IvsrealtimeClient::TagResource(const TagResourceRequest& request) const {
@@ -548,7 +610,8 @@ TagResourceOutcome IvsrealtimeClient::TagResource(const TagResourceRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome IvsrealtimeClient::UntagResource(const UntagResourceRequest& request) const {
@@ -569,7 +632,8 @@ UntagResourceOutcome IvsrealtimeClient::UntagResource(const UntagResourceRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateIngestConfigurationOutcome IvsrealtimeClient::UpdateIngestConfiguration(const UpdateIngestConfigurationRequest& request) const {
@@ -578,7 +642,9 @@ UpdateIngestConfigurationOutcome IvsrealtimeClient::UpdateIngestConfiguration(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateIngestConfiguration");
   };
 
-  return UpdateIngestConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateIngestConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateIngestConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateStageOutcome IvsrealtimeClient::UpdateStage(const UpdateStageRequest& request) const {
@@ -587,5 +653,6 @@ UpdateStageOutcome IvsrealtimeClient::UpdateStage(const UpdateStageRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateStage");
   };
 
-  return UpdateStageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateStageOutcome(result.GetResultWithOwnership()) : UpdateStageOutcome(std::move(result.GetError()));
 }

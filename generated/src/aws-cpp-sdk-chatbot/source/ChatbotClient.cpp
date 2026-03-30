@@ -214,7 +214,9 @@ AssociateToConfigurationOutcome ChatbotClient::AssociateToConfiguration(const As
     endpointResolutionOutcome.GetResult().AddPathSegments("/associate-to-configuration");
   };
 
-  return AssociateToConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateToConfigurationOutcome(result.GetResultWithOwnership())
+                            : AssociateToConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateChimeWebhookConfigurationOutcome ChatbotClient::CreateChimeWebhookConfiguration(
@@ -224,7 +226,9 @@ CreateChimeWebhookConfigurationOutcome ChatbotClient::CreateChimeWebhookConfigur
     endpointResolutionOutcome.GetResult().AddPathSegments("/create-chime-webhook-configuration");
   };
 
-  return CreateChimeWebhookConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateChimeWebhookConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateChimeWebhookConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateCustomActionOutcome ChatbotClient::CreateCustomAction(const CreateCustomActionRequest& request) const {
@@ -233,7 +237,9 @@ CreateCustomActionOutcome ChatbotClient::CreateCustomAction(const CreateCustomAc
     endpointResolutionOutcome.GetResult().AddPathSegments("/create-custom-action");
   };
 
-  return CreateCustomActionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCustomActionOutcome(result.GetResultWithOwnership())
+                            : CreateCustomActionOutcome(std::move(result.GetError()));
 }
 
 CreateMicrosoftTeamsChannelConfigurationOutcome ChatbotClient::CreateMicrosoftTeamsChannelConfiguration(
@@ -243,7 +249,9 @@ CreateMicrosoftTeamsChannelConfigurationOutcome ChatbotClient::CreateMicrosoftTe
     endpointResolutionOutcome.GetResult().AddPathSegments("/create-ms-teams-channel-configuration");
   };
 
-  return CreateMicrosoftTeamsChannelConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMicrosoftTeamsChannelConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateMicrosoftTeamsChannelConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateSlackChannelConfigurationOutcome ChatbotClient::CreateSlackChannelConfiguration(
@@ -253,7 +261,9 @@ CreateSlackChannelConfigurationOutcome ChatbotClient::CreateSlackChannelConfigur
     endpointResolutionOutcome.GetResult().AddPathSegments("/create-slack-channel-configuration");
   };
 
-  return CreateSlackChannelConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSlackChannelConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateSlackChannelConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteChimeWebhookConfigurationOutcome ChatbotClient::DeleteChimeWebhookConfiguration(
@@ -263,7 +273,9 @@ DeleteChimeWebhookConfigurationOutcome ChatbotClient::DeleteChimeWebhookConfigur
     endpointResolutionOutcome.GetResult().AddPathSegments("/delete-chime-webhook-configuration");
   };
 
-  return DeleteChimeWebhookConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteChimeWebhookConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteChimeWebhookConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteCustomActionOutcome ChatbotClient::DeleteCustomAction(const DeleteCustomActionRequest& request) const {
@@ -272,7 +284,9 @@ DeleteCustomActionOutcome ChatbotClient::DeleteCustomAction(const DeleteCustomAc
     endpointResolutionOutcome.GetResult().AddPathSegments("/delete-custom-action");
   };
 
-  return DeleteCustomActionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCustomActionOutcome(result.GetResultWithOwnership())
+                            : DeleteCustomActionOutcome(std::move(result.GetError()));
 }
 
 DeleteMicrosoftTeamsChannelConfigurationOutcome ChatbotClient::DeleteMicrosoftTeamsChannelConfiguration(
@@ -282,7 +296,9 @@ DeleteMicrosoftTeamsChannelConfigurationOutcome ChatbotClient::DeleteMicrosoftTe
     endpointResolutionOutcome.GetResult().AddPathSegments("/delete-ms-teams-channel-configuration");
   };
 
-  return DeleteMicrosoftTeamsChannelConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteMicrosoftTeamsChannelConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteMicrosoftTeamsChannelConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteMicrosoftTeamsConfiguredTeamOutcome ChatbotClient::DeleteMicrosoftTeamsConfiguredTeam(
@@ -292,7 +308,9 @@ DeleteMicrosoftTeamsConfiguredTeamOutcome ChatbotClient::DeleteMicrosoftTeamsCon
     endpointResolutionOutcome.GetResult().AddPathSegments("/delete-ms-teams-configured-teams");
   };
 
-  return DeleteMicrosoftTeamsConfiguredTeamOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteMicrosoftTeamsConfiguredTeamOutcome(result.GetResultWithOwnership())
+                            : DeleteMicrosoftTeamsConfiguredTeamOutcome(std::move(result.GetError()));
 }
 
 DeleteMicrosoftTeamsUserIdentityOutcome ChatbotClient::DeleteMicrosoftTeamsUserIdentity(
@@ -302,7 +320,9 @@ DeleteMicrosoftTeamsUserIdentityOutcome ChatbotClient::DeleteMicrosoftTeamsUserI
     endpointResolutionOutcome.GetResult().AddPathSegments("/delete-ms-teams-user-identity");
   };
 
-  return DeleteMicrosoftTeamsUserIdentityOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteMicrosoftTeamsUserIdentityOutcome(result.GetResultWithOwnership())
+                            : DeleteMicrosoftTeamsUserIdentityOutcome(std::move(result.GetError()));
 }
 
 DeleteSlackChannelConfigurationOutcome ChatbotClient::DeleteSlackChannelConfiguration(
@@ -312,7 +332,9 @@ DeleteSlackChannelConfigurationOutcome ChatbotClient::DeleteSlackChannelConfigur
     endpointResolutionOutcome.GetResult().AddPathSegments("/delete-slack-channel-configuration");
   };
 
-  return DeleteSlackChannelConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSlackChannelConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteSlackChannelConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteSlackUserIdentityOutcome ChatbotClient::DeleteSlackUserIdentity(const DeleteSlackUserIdentityRequest& request) const {
@@ -321,7 +343,9 @@ DeleteSlackUserIdentityOutcome ChatbotClient::DeleteSlackUserIdentity(const Dele
     endpointResolutionOutcome.GetResult().AddPathSegments("/delete-slack-user-identity");
   };
 
-  return DeleteSlackUserIdentityOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSlackUserIdentityOutcome(result.GetResultWithOwnership())
+                            : DeleteSlackUserIdentityOutcome(std::move(result.GetError()));
 }
 
 DeleteSlackWorkspaceAuthorizationOutcome ChatbotClient::DeleteSlackWorkspaceAuthorization(
@@ -331,7 +355,9 @@ DeleteSlackWorkspaceAuthorizationOutcome ChatbotClient::DeleteSlackWorkspaceAuth
     endpointResolutionOutcome.GetResult().AddPathSegments("/delete-slack-workspace-authorization");
   };
 
-  return DeleteSlackWorkspaceAuthorizationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSlackWorkspaceAuthorizationOutcome(result.GetResultWithOwnership())
+                            : DeleteSlackWorkspaceAuthorizationOutcome(std::move(result.GetError()));
 }
 
 DescribeChimeWebhookConfigurationsOutcome ChatbotClient::DescribeChimeWebhookConfigurations(
@@ -341,7 +367,9 @@ DescribeChimeWebhookConfigurationsOutcome ChatbotClient::DescribeChimeWebhookCon
     endpointResolutionOutcome.GetResult().AddPathSegments("/describe-chime-webhook-configurations");
   };
 
-  return DescribeChimeWebhookConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeChimeWebhookConfigurationsOutcome(result.GetResultWithOwnership())
+                            : DescribeChimeWebhookConfigurationsOutcome(std::move(result.GetError()));
 }
 
 DescribeSlackChannelConfigurationsOutcome ChatbotClient::DescribeSlackChannelConfigurations(
@@ -351,7 +379,9 @@ DescribeSlackChannelConfigurationsOutcome ChatbotClient::DescribeSlackChannelCon
     endpointResolutionOutcome.GetResult().AddPathSegments("/describe-slack-channel-configurations");
   };
 
-  return DescribeSlackChannelConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSlackChannelConfigurationsOutcome(result.GetResultWithOwnership())
+                            : DescribeSlackChannelConfigurationsOutcome(std::move(result.GetError()));
 }
 
 DescribeSlackUserIdentitiesOutcome ChatbotClient::DescribeSlackUserIdentities(const DescribeSlackUserIdentitiesRequest& request) const {
@@ -360,7 +390,9 @@ DescribeSlackUserIdentitiesOutcome ChatbotClient::DescribeSlackUserIdentities(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/describe-slack-user-identities");
   };
 
-  return DescribeSlackUserIdentitiesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSlackUserIdentitiesOutcome(result.GetResultWithOwnership())
+                            : DescribeSlackUserIdentitiesOutcome(std::move(result.GetError()));
 }
 
 DescribeSlackWorkspacesOutcome ChatbotClient::DescribeSlackWorkspaces(const DescribeSlackWorkspacesRequest& request) const {
@@ -369,7 +401,9 @@ DescribeSlackWorkspacesOutcome ChatbotClient::DescribeSlackWorkspaces(const Desc
     endpointResolutionOutcome.GetResult().AddPathSegments("/describe-slack-workspaces");
   };
 
-  return DescribeSlackWorkspacesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSlackWorkspacesOutcome(result.GetResultWithOwnership())
+                            : DescribeSlackWorkspacesOutcome(std::move(result.GetError()));
 }
 
 DisassociateFromConfigurationOutcome ChatbotClient::DisassociateFromConfiguration(
@@ -379,7 +413,9 @@ DisassociateFromConfigurationOutcome ChatbotClient::DisassociateFromConfiguratio
     endpointResolutionOutcome.GetResult().AddPathSegments("/disassociate-from-configuration");
   };
 
-  return DisassociateFromConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateFromConfigurationOutcome(result.GetResultWithOwnership())
+                            : DisassociateFromConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetAccountPreferencesOutcome ChatbotClient::GetAccountPreferences(const GetAccountPreferencesRequest& request) const {
@@ -388,7 +424,9 @@ GetAccountPreferencesOutcome ChatbotClient::GetAccountPreferences(const GetAccou
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-account-preferences");
   };
 
-  return GetAccountPreferencesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAccountPreferencesOutcome(result.GetResultWithOwnership())
+                            : GetAccountPreferencesOutcome(std::move(result.GetError()));
 }
 
 GetCustomActionOutcome ChatbotClient::GetCustomAction(const GetCustomActionRequest& request) const {
@@ -397,7 +435,9 @@ GetCustomActionOutcome ChatbotClient::GetCustomAction(const GetCustomActionReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-custom-action");
   };
 
-  return GetCustomActionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCustomActionOutcome(result.GetResultWithOwnership())
+                            : GetCustomActionOutcome(std::move(result.GetError()));
 }
 
 GetMicrosoftTeamsChannelConfigurationOutcome ChatbotClient::GetMicrosoftTeamsChannelConfiguration(
@@ -407,7 +447,9 @@ GetMicrosoftTeamsChannelConfigurationOutcome ChatbotClient::GetMicrosoftTeamsCha
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-ms-teams-channel-configuration");
   };
 
-  return GetMicrosoftTeamsChannelConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetMicrosoftTeamsChannelConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetMicrosoftTeamsChannelConfigurationOutcome(std::move(result.GetError()));
 }
 
 ListAssociationsOutcome ChatbotClient::ListAssociations(const ListAssociationsRequest& request) const {
@@ -416,7 +458,9 @@ ListAssociationsOutcome ChatbotClient::ListAssociations(const ListAssociationsRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-associations");
   };
 
-  return ListAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListCustomActionsOutcome ChatbotClient::ListCustomActions(const ListCustomActionsRequest& request) const {
@@ -425,7 +469,9 @@ ListCustomActionsOutcome ChatbotClient::ListCustomActions(const ListCustomAction
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-custom-actions");
   };
 
-  return ListCustomActionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCustomActionsOutcome(result.GetResultWithOwnership())
+                            : ListCustomActionsOutcome(std::move(result.GetError()));
 }
 
 ListMicrosoftTeamsChannelConfigurationsOutcome ChatbotClient::ListMicrosoftTeamsChannelConfigurations(
@@ -435,7 +481,9 @@ ListMicrosoftTeamsChannelConfigurationsOutcome ChatbotClient::ListMicrosoftTeams
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-ms-teams-channel-configurations");
   };
 
-  return ListMicrosoftTeamsChannelConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMicrosoftTeamsChannelConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListMicrosoftTeamsChannelConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListMicrosoftTeamsConfiguredTeamsOutcome ChatbotClient::ListMicrosoftTeamsConfiguredTeams(
@@ -445,7 +493,9 @@ ListMicrosoftTeamsConfiguredTeamsOutcome ChatbotClient::ListMicrosoftTeamsConfig
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-ms-teams-configured-teams");
   };
 
-  return ListMicrosoftTeamsConfiguredTeamsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMicrosoftTeamsConfiguredTeamsOutcome(result.GetResultWithOwnership())
+                            : ListMicrosoftTeamsConfiguredTeamsOutcome(std::move(result.GetError()));
 }
 
 ListMicrosoftTeamsUserIdentitiesOutcome ChatbotClient::ListMicrosoftTeamsUserIdentities(
@@ -455,7 +505,9 @@ ListMicrosoftTeamsUserIdentitiesOutcome ChatbotClient::ListMicrosoftTeamsUserIde
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-ms-teams-user-identities");
   };
 
-  return ListMicrosoftTeamsUserIdentitiesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMicrosoftTeamsUserIdentitiesOutcome(result.GetResultWithOwnership())
+                            : ListMicrosoftTeamsUserIdentitiesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome ChatbotClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -464,7 +516,9 @@ ListTagsForResourceOutcome ChatbotClient::ListTagsForResource(const ListTagsForR
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-tags-for-resource");
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ChatbotClient::TagResource(const TagResourceRequest& request) const {
@@ -473,7 +527,8 @@ TagResourceOutcome ChatbotClient::TagResource(const TagResourceRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegments("/tag-resource");
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome ChatbotClient::UntagResource(const UntagResourceRequest& request) const {
@@ -482,7 +537,8 @@ UntagResourceOutcome ChatbotClient::UntagResource(const UntagResourceRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/untag-resource");
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAccountPreferencesOutcome ChatbotClient::UpdateAccountPreferences(const UpdateAccountPreferencesRequest& request) const {
@@ -491,7 +547,9 @@ UpdateAccountPreferencesOutcome ChatbotClient::UpdateAccountPreferences(const Up
     endpointResolutionOutcome.GetResult().AddPathSegments("/update-account-preferences");
   };
 
-  return UpdateAccountPreferencesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAccountPreferencesOutcome(result.GetResultWithOwnership())
+                            : UpdateAccountPreferencesOutcome(std::move(result.GetError()));
 }
 
 UpdateChimeWebhookConfigurationOutcome ChatbotClient::UpdateChimeWebhookConfiguration(
@@ -501,7 +559,9 @@ UpdateChimeWebhookConfigurationOutcome ChatbotClient::UpdateChimeWebhookConfigur
     endpointResolutionOutcome.GetResult().AddPathSegments("/update-chime-webhook-configuration");
   };
 
-  return UpdateChimeWebhookConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateChimeWebhookConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateChimeWebhookConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateCustomActionOutcome ChatbotClient::UpdateCustomAction(const UpdateCustomActionRequest& request) const {
@@ -510,7 +570,9 @@ UpdateCustomActionOutcome ChatbotClient::UpdateCustomAction(const UpdateCustomAc
     endpointResolutionOutcome.GetResult().AddPathSegments("/update-custom-action");
   };
 
-  return UpdateCustomActionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCustomActionOutcome(result.GetResultWithOwnership())
+                            : UpdateCustomActionOutcome(std::move(result.GetError()));
 }
 
 UpdateMicrosoftTeamsChannelConfigurationOutcome ChatbotClient::UpdateMicrosoftTeamsChannelConfiguration(
@@ -520,7 +582,9 @@ UpdateMicrosoftTeamsChannelConfigurationOutcome ChatbotClient::UpdateMicrosoftTe
     endpointResolutionOutcome.GetResult().AddPathSegments("/update-ms-teams-channel-configuration");
   };
 
-  return UpdateMicrosoftTeamsChannelConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateMicrosoftTeamsChannelConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateMicrosoftTeamsChannelConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateSlackChannelConfigurationOutcome ChatbotClient::UpdateSlackChannelConfiguration(
@@ -530,5 +594,7 @@ UpdateSlackChannelConfigurationOutcome ChatbotClient::UpdateSlackChannelConfigur
     endpointResolutionOutcome.GetResult().AddPathSegments("/update-slack-channel-configuration");
   };
 
-  return UpdateSlackChannelConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSlackChannelConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateSlackChannelConfigurationOutcome(std::move(result.GetError()));
 }

@@ -195,61 +195,87 @@ ApplicationAutoScalingClient::InvokeOperationOutcome ApplicationAutoScalingClien
 }
 
 DeleteScalingPolicyOutcome ApplicationAutoScalingClient::DeleteScalingPolicy(const DeleteScalingPolicyRequest& request) const {
-  return DeleteScalingPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteScalingPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteScalingPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteScheduledActionOutcome ApplicationAutoScalingClient::DeleteScheduledAction(const DeleteScheduledActionRequest& request) const {
-  return DeleteScheduledActionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteScheduledActionOutcome(result.GetResultWithOwnership())
+                            : DeleteScheduledActionOutcome(std::move(result.GetError()));
 }
 
 DeregisterScalableTargetOutcome ApplicationAutoScalingClient::DeregisterScalableTarget(
     const DeregisterScalableTargetRequest& request) const {
-  return DeregisterScalableTargetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterScalableTargetOutcome(result.GetResultWithOwnership())
+                            : DeregisterScalableTargetOutcome(std::move(result.GetError()));
 }
 
 DescribeScalableTargetsOutcome ApplicationAutoScalingClient::DescribeScalableTargets(const DescribeScalableTargetsRequest& request) const {
-  return DescribeScalableTargetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeScalableTargetsOutcome(result.GetResultWithOwnership())
+                            : DescribeScalableTargetsOutcome(std::move(result.GetError()));
 }
 
 DescribeScalingActivitiesOutcome ApplicationAutoScalingClient::DescribeScalingActivities(
     const DescribeScalingActivitiesRequest& request) const {
-  return DescribeScalingActivitiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeScalingActivitiesOutcome(result.GetResultWithOwnership())
+                            : DescribeScalingActivitiesOutcome(std::move(result.GetError()));
 }
 
 DescribeScalingPoliciesOutcome ApplicationAutoScalingClient::DescribeScalingPolicies(const DescribeScalingPoliciesRequest& request) const {
-  return DescribeScalingPoliciesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeScalingPoliciesOutcome(result.GetResultWithOwnership())
+                            : DescribeScalingPoliciesOutcome(std::move(result.GetError()));
 }
 
 DescribeScheduledActionsOutcome ApplicationAutoScalingClient::DescribeScheduledActions(
     const DescribeScheduledActionsRequest& request) const {
-  return DescribeScheduledActionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeScheduledActionsOutcome(result.GetResultWithOwnership())
+                            : DescribeScheduledActionsOutcome(std::move(result.GetError()));
 }
 
 GetPredictiveScalingForecastOutcome ApplicationAutoScalingClient::GetPredictiveScalingForecast(
     const GetPredictiveScalingForecastRequest& request) const {
-  return GetPredictiveScalingForecastOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPredictiveScalingForecastOutcome(result.GetResultWithOwnership())
+                            : GetPredictiveScalingForecastOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome ApplicationAutoScalingClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutScalingPolicyOutcome ApplicationAutoScalingClient::PutScalingPolicy(const PutScalingPolicyRequest& request) const {
-  return PutScalingPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutScalingPolicyOutcome(result.GetResultWithOwnership())
+                            : PutScalingPolicyOutcome(std::move(result.GetError()));
 }
 
 PutScheduledActionOutcome ApplicationAutoScalingClient::PutScheduledAction(const PutScheduledActionRequest& request) const {
-  return PutScheduledActionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutScheduledActionOutcome(result.GetResultWithOwnership())
+                            : PutScheduledActionOutcome(std::move(result.GetError()));
 }
 
 RegisterScalableTargetOutcome ApplicationAutoScalingClient::RegisterScalableTarget(const RegisterScalableTargetRequest& request) const {
-  return RegisterScalableTargetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterScalableTargetOutcome(result.GetResultWithOwnership())
+                            : RegisterScalableTargetOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ApplicationAutoScalingClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome ApplicationAutoScalingClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }

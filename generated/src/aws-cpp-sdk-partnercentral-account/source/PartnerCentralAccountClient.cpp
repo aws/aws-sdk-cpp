@@ -211,126 +211,178 @@ PartnerCentralAccountClient::InvokeOperationOutcome PartnerCentralAccountClient:
 
 AcceptConnectionInvitationOutcome PartnerCentralAccountClient::AcceptConnectionInvitation(
     const AcceptConnectionInvitationRequest& request) const {
-  return AcceptConnectionInvitationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptConnectionInvitationOutcome(result.GetResultWithOwnership())
+                            : AcceptConnectionInvitationOutcome(std::move(result.GetError()));
 }
 
 AssociateAwsTrainingCertificationEmailDomainOutcome PartnerCentralAccountClient::AssociateAwsTrainingCertificationEmailDomain(
     const AssociateAwsTrainingCertificationEmailDomainRequest& request) const {
-  return AssociateAwsTrainingCertificationEmailDomainOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateAwsTrainingCertificationEmailDomainOutcome(result.GetResultWithOwnership())
+                            : AssociateAwsTrainingCertificationEmailDomainOutcome(std::move(result.GetError()));
 }
 
 CancelConnectionOutcome PartnerCentralAccountClient::CancelConnection(const CancelConnectionRequest& request) const {
-  return CancelConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelConnectionOutcome(result.GetResultWithOwnership())
+                            : CancelConnectionOutcome(std::move(result.GetError()));
 }
 
 CancelConnectionInvitationOutcome PartnerCentralAccountClient::CancelConnectionInvitation(
     const CancelConnectionInvitationRequest& request) const {
-  return CancelConnectionInvitationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelConnectionInvitationOutcome(result.GetResultWithOwnership())
+                            : CancelConnectionInvitationOutcome(std::move(result.GetError()));
 }
 
 CancelProfileUpdateTaskOutcome PartnerCentralAccountClient::CancelProfileUpdateTask(const CancelProfileUpdateTaskRequest& request) const {
-  return CancelProfileUpdateTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelProfileUpdateTaskOutcome(result.GetResultWithOwnership())
+                            : CancelProfileUpdateTaskOutcome(std::move(result.GetError()));
 }
 
 CreateConnectionInvitationOutcome PartnerCentralAccountClient::CreateConnectionInvitation(
     const CreateConnectionInvitationRequest& request) const {
-  return CreateConnectionInvitationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConnectionInvitationOutcome(result.GetResultWithOwnership())
+                            : CreateConnectionInvitationOutcome(std::move(result.GetError()));
 }
 
 CreatePartnerOutcome PartnerCentralAccountClient::CreatePartner(const CreatePartnerRequest& request) const {
-  return CreatePartnerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePartnerOutcome(result.GetResultWithOwnership()) : CreatePartnerOutcome(std::move(result.GetError()));
 }
 
 DisassociateAwsTrainingCertificationEmailDomainOutcome PartnerCentralAccountClient::DisassociateAwsTrainingCertificationEmailDomain(
     const DisassociateAwsTrainingCertificationEmailDomainRequest& request) const {
-  return DisassociateAwsTrainingCertificationEmailDomainOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateAwsTrainingCertificationEmailDomainOutcome(result.GetResultWithOwnership())
+                            : DisassociateAwsTrainingCertificationEmailDomainOutcome(std::move(result.GetError()));
 }
 
 GetAllianceLeadContactOutcome PartnerCentralAccountClient::GetAllianceLeadContact(const GetAllianceLeadContactRequest& request) const {
-  return GetAllianceLeadContactOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAllianceLeadContactOutcome(result.GetResultWithOwnership())
+                            : GetAllianceLeadContactOutcome(std::move(result.GetError()));
 }
 
 GetConnectionOutcome PartnerCentralAccountClient::GetConnection(const GetConnectionRequest& request) const {
-  return GetConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetConnectionOutcome(result.GetResultWithOwnership()) : GetConnectionOutcome(std::move(result.GetError()));
 }
 
 GetConnectionInvitationOutcome PartnerCentralAccountClient::GetConnectionInvitation(const GetConnectionInvitationRequest& request) const {
-  return GetConnectionInvitationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetConnectionInvitationOutcome(result.GetResultWithOwnership())
+                            : GetConnectionInvitationOutcome(std::move(result.GetError()));
 }
 
 GetConnectionPreferencesOutcome PartnerCentralAccountClient::GetConnectionPreferences(
     const GetConnectionPreferencesRequest& request) const {
-  return GetConnectionPreferencesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetConnectionPreferencesOutcome(result.GetResultWithOwnership())
+                            : GetConnectionPreferencesOutcome(std::move(result.GetError()));
 }
 
 GetPartnerOutcome PartnerCentralAccountClient::GetPartner(const GetPartnerRequest& request) const {
-  return GetPartnerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPartnerOutcome(result.GetResultWithOwnership()) : GetPartnerOutcome(std::move(result.GetError()));
 }
 
 GetProfileUpdateTaskOutcome PartnerCentralAccountClient::GetProfileUpdateTask(const GetProfileUpdateTaskRequest& request) const {
-  return GetProfileUpdateTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetProfileUpdateTaskOutcome(result.GetResultWithOwnership())
+                            : GetProfileUpdateTaskOutcome(std::move(result.GetError()));
 }
 
 GetProfileVisibilityOutcome PartnerCentralAccountClient::GetProfileVisibility(const GetProfileVisibilityRequest& request) const {
-  return GetProfileVisibilityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetProfileVisibilityOutcome(result.GetResultWithOwnership())
+                            : GetProfileVisibilityOutcome(std::move(result.GetError()));
 }
 
 GetVerificationOutcome PartnerCentralAccountClient::GetVerification(const GetVerificationRequest& request) const {
-  return GetVerificationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetVerificationOutcome(result.GetResultWithOwnership())
+                            : GetVerificationOutcome(std::move(result.GetError()));
 }
 
 ListConnectionInvitationsOutcome PartnerCentralAccountClient::ListConnectionInvitations(
     const ListConnectionInvitationsRequest& request) const {
-  return ListConnectionInvitationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListConnectionInvitationsOutcome(result.GetResultWithOwnership())
+                            : ListConnectionInvitationsOutcome(std::move(result.GetError()));
 }
 
 ListConnectionsOutcome PartnerCentralAccountClient::ListConnections(const ListConnectionsRequest& request) const {
-  return ListConnectionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListConnectionsOutcome(result.GetResultWithOwnership())
+                            : ListConnectionsOutcome(std::move(result.GetError()));
 }
 
 ListPartnersOutcome PartnerCentralAccountClient::ListPartners(const ListPartnersRequest& request) const {
-  return ListPartnersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPartnersOutcome(result.GetResultWithOwnership()) : ListPartnersOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome PartnerCentralAccountClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutAllianceLeadContactOutcome PartnerCentralAccountClient::PutAllianceLeadContact(const PutAllianceLeadContactRequest& request) const {
-  return PutAllianceLeadContactOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutAllianceLeadContactOutcome(result.GetResultWithOwnership())
+                            : PutAllianceLeadContactOutcome(std::move(result.GetError()));
 }
 
 PutProfileVisibilityOutcome PartnerCentralAccountClient::PutProfileVisibility(const PutProfileVisibilityRequest& request) const {
-  return PutProfileVisibilityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutProfileVisibilityOutcome(result.GetResultWithOwnership())
+                            : PutProfileVisibilityOutcome(std::move(result.GetError()));
 }
 
 RejectConnectionInvitationOutcome PartnerCentralAccountClient::RejectConnectionInvitation(
     const RejectConnectionInvitationRequest& request) const {
-  return RejectConnectionInvitationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RejectConnectionInvitationOutcome(result.GetResultWithOwnership())
+                            : RejectConnectionInvitationOutcome(std::move(result.GetError()));
 }
 
 SendEmailVerificationCodeOutcome PartnerCentralAccountClient::SendEmailVerificationCode(
     const SendEmailVerificationCodeRequest& request) const {
-  return SendEmailVerificationCodeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendEmailVerificationCodeOutcome(result.GetResultWithOwnership())
+                            : SendEmailVerificationCodeOutcome(std::move(result.GetError()));
 }
 
 StartProfileUpdateTaskOutcome PartnerCentralAccountClient::StartProfileUpdateTask(const StartProfileUpdateTaskRequest& request) const {
-  return StartProfileUpdateTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartProfileUpdateTaskOutcome(result.GetResultWithOwnership())
+                            : StartProfileUpdateTaskOutcome(std::move(result.GetError()));
 }
 
 StartVerificationOutcome PartnerCentralAccountClient::StartVerification(const StartVerificationRequest& request) const {
-  return StartVerificationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartVerificationOutcome(result.GetResultWithOwnership())
+                            : StartVerificationOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome PartnerCentralAccountClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome PartnerCentralAccountClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateConnectionPreferencesOutcome PartnerCentralAccountClient::UpdateConnectionPreferences(
     const UpdateConnectionPreferencesRequest& request) const {
-  return UpdateConnectionPreferencesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateConnectionPreferencesOutcome(result.GetResultWithOwnership())
+                            : UpdateConnectionPreferencesOutcome(std::move(result.GetError()));
 }

@@ -231,230 +231,316 @@ EventBridgeClient::InvokeOperationOutcome EventBridgeClient::InvokeServiceOperat
 }
 
 ActivateEventSourceOutcome EventBridgeClient::ActivateEventSource(const ActivateEventSourceRequest& request) const {
-  return ActivateEventSourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ActivateEventSourceOutcome(result.GetResultWithOwnership())
+                            : ActivateEventSourceOutcome(std::move(result.GetError()));
 }
 
 CancelReplayOutcome EventBridgeClient::CancelReplay(const CancelReplayRequest& request) const {
-  return CancelReplayOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelReplayOutcome(result.GetResultWithOwnership()) : CancelReplayOutcome(std::move(result.GetError()));
 }
 
 CreateApiDestinationOutcome EventBridgeClient::CreateApiDestination(const CreateApiDestinationRequest& request) const {
-  return CreateApiDestinationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateApiDestinationOutcome(result.GetResultWithOwnership())
+                            : CreateApiDestinationOutcome(std::move(result.GetError()));
 }
 
 CreateArchiveOutcome EventBridgeClient::CreateArchive(const CreateArchiveRequest& request) const {
-  return CreateArchiveOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateArchiveOutcome(result.GetResultWithOwnership()) : CreateArchiveOutcome(std::move(result.GetError()));
 }
 
 CreateConnectionOutcome EventBridgeClient::CreateConnection(const CreateConnectionRequest& request) const {
-  return CreateConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConnectionOutcome(result.GetResultWithOwnership())
+                            : CreateConnectionOutcome(std::move(result.GetError()));
 }
 
 CreateEndpointOutcome EventBridgeClient::CreateEndpoint(const CreateEndpointRequest& request) const {
-  return CreateEndpointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEndpointOutcome(result.GetResultWithOwnership()) : CreateEndpointOutcome(std::move(result.GetError()));
 }
 
 CreateEventBusOutcome EventBridgeClient::CreateEventBus(const CreateEventBusRequest& request) const {
-  return CreateEventBusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEventBusOutcome(result.GetResultWithOwnership()) : CreateEventBusOutcome(std::move(result.GetError()));
 }
 
 CreatePartnerEventSourceOutcome EventBridgeClient::CreatePartnerEventSource(const CreatePartnerEventSourceRequest& request) const {
-  return CreatePartnerEventSourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePartnerEventSourceOutcome(result.GetResultWithOwnership())
+                            : CreatePartnerEventSourceOutcome(std::move(result.GetError()));
 }
 
 DeactivateEventSourceOutcome EventBridgeClient::DeactivateEventSource(const DeactivateEventSourceRequest& request) const {
-  return DeactivateEventSourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeactivateEventSourceOutcome(result.GetResultWithOwnership())
+                            : DeactivateEventSourceOutcome(std::move(result.GetError()));
 }
 
 DeauthorizeConnectionOutcome EventBridgeClient::DeauthorizeConnection(const DeauthorizeConnectionRequest& request) const {
-  return DeauthorizeConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeauthorizeConnectionOutcome(result.GetResultWithOwnership())
+                            : DeauthorizeConnectionOutcome(std::move(result.GetError()));
 }
 
 DeleteApiDestinationOutcome EventBridgeClient::DeleteApiDestination(const DeleteApiDestinationRequest& request) const {
-  return DeleteApiDestinationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteApiDestinationOutcome(result.GetResultWithOwnership())
+                            : DeleteApiDestinationOutcome(std::move(result.GetError()));
 }
 
 DeleteArchiveOutcome EventBridgeClient::DeleteArchive(const DeleteArchiveRequest& request) const {
-  return DeleteArchiveOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteArchiveOutcome(result.GetResultWithOwnership()) : DeleteArchiveOutcome(std::move(result.GetError()));
 }
 
 DeleteConnectionOutcome EventBridgeClient::DeleteConnection(const DeleteConnectionRequest& request) const {
-  return DeleteConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteConnectionOutcome(result.GetResultWithOwnership())
+                            : DeleteConnectionOutcome(std::move(result.GetError()));
 }
 
 DeleteEndpointOutcome EventBridgeClient::DeleteEndpoint(const DeleteEndpointRequest& request) const {
-  return DeleteEndpointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteEndpointOutcome(result.GetResultWithOwnership()) : DeleteEndpointOutcome(std::move(result.GetError()));
 }
 
 DeleteEventBusOutcome EventBridgeClient::DeleteEventBus(const DeleteEventBusRequest& request) const {
-  return DeleteEventBusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteEventBusOutcome(result.GetResultWithOwnership()) : DeleteEventBusOutcome(std::move(result.GetError()));
 }
 
 DeletePartnerEventSourceOutcome EventBridgeClient::DeletePartnerEventSource(const DeletePartnerEventSourceRequest& request) const {
-  return DeletePartnerEventSourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePartnerEventSourceOutcome(result.GetResultWithOwnership())
+                            : DeletePartnerEventSourceOutcome(std::move(result.GetError()));
 }
 
 DeleteRuleOutcome EventBridgeClient::DeleteRule(const DeleteRuleRequest& request) const {
-  return DeleteRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRuleOutcome(result.GetResultWithOwnership()) : DeleteRuleOutcome(std::move(result.GetError()));
 }
 
 DescribeApiDestinationOutcome EventBridgeClient::DescribeApiDestination(const DescribeApiDestinationRequest& request) const {
-  return DescribeApiDestinationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeApiDestinationOutcome(result.GetResultWithOwnership())
+                            : DescribeApiDestinationOutcome(std::move(result.GetError()));
 }
 
 DescribeArchiveOutcome EventBridgeClient::DescribeArchive(const DescribeArchiveRequest& request) const {
-  return DescribeArchiveOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeArchiveOutcome(result.GetResultWithOwnership())
+                            : DescribeArchiveOutcome(std::move(result.GetError()));
 }
 
 DescribeConnectionOutcome EventBridgeClient::DescribeConnection(const DescribeConnectionRequest& request) const {
-  return DescribeConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeConnectionOutcome(result.GetResultWithOwnership())
+                            : DescribeConnectionOutcome(std::move(result.GetError()));
 }
 
 DescribeEndpointOutcome EventBridgeClient::DescribeEndpoint(const DescribeEndpointRequest& request) const {
-  return DescribeEndpointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEndpointOutcome(result.GetResultWithOwnership())
+                            : DescribeEndpointOutcome(std::move(result.GetError()));
 }
 
 DescribeEventBusOutcome EventBridgeClient::DescribeEventBus(const DescribeEventBusRequest& request) const {
-  return DescribeEventBusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEventBusOutcome(result.GetResultWithOwnership())
+                            : DescribeEventBusOutcome(std::move(result.GetError()));
 }
 
 DescribeEventSourceOutcome EventBridgeClient::DescribeEventSource(const DescribeEventSourceRequest& request) const {
-  return DescribeEventSourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEventSourceOutcome(result.GetResultWithOwnership())
+                            : DescribeEventSourceOutcome(std::move(result.GetError()));
 }
 
 DescribePartnerEventSourceOutcome EventBridgeClient::DescribePartnerEventSource(const DescribePartnerEventSourceRequest& request) const {
-  return DescribePartnerEventSourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePartnerEventSourceOutcome(result.GetResultWithOwnership())
+                            : DescribePartnerEventSourceOutcome(std::move(result.GetError()));
 }
 
 DescribeReplayOutcome EventBridgeClient::DescribeReplay(const DescribeReplayRequest& request) const {
-  return DescribeReplayOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeReplayOutcome(result.GetResultWithOwnership()) : DescribeReplayOutcome(std::move(result.GetError()));
 }
 
 DescribeRuleOutcome EventBridgeClient::DescribeRule(const DescribeRuleRequest& request) const {
-  return DescribeRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRuleOutcome(result.GetResultWithOwnership()) : DescribeRuleOutcome(std::move(result.GetError()));
 }
 
 DisableRuleOutcome EventBridgeClient::DisableRule(const DisableRuleRequest& request) const {
-  return DisableRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableRuleOutcome(result.GetResultWithOwnership()) : DisableRuleOutcome(std::move(result.GetError()));
 }
 
 EnableRuleOutcome EventBridgeClient::EnableRule(const EnableRuleRequest& request) const {
-  return EnableRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableRuleOutcome(result.GetResultWithOwnership()) : EnableRuleOutcome(std::move(result.GetError()));
 }
 
 ListApiDestinationsOutcome EventBridgeClient::ListApiDestinations(const ListApiDestinationsRequest& request) const {
-  return ListApiDestinationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListApiDestinationsOutcome(result.GetResultWithOwnership())
+                            : ListApiDestinationsOutcome(std::move(result.GetError()));
 }
 
 ListArchivesOutcome EventBridgeClient::ListArchives(const ListArchivesRequest& request) const {
-  return ListArchivesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListArchivesOutcome(result.GetResultWithOwnership()) : ListArchivesOutcome(std::move(result.GetError()));
 }
 
 ListConnectionsOutcome EventBridgeClient::ListConnections(const ListConnectionsRequest& request) const {
-  return ListConnectionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListConnectionsOutcome(result.GetResultWithOwnership())
+                            : ListConnectionsOutcome(std::move(result.GetError()));
 }
 
 ListEndpointsOutcome EventBridgeClient::ListEndpoints(const ListEndpointsRequest& request) const {
-  return ListEndpointsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEndpointsOutcome(result.GetResultWithOwnership()) : ListEndpointsOutcome(std::move(result.GetError()));
 }
 
 ListEventBusesOutcome EventBridgeClient::ListEventBuses(const ListEventBusesRequest& request) const {
-  return ListEventBusesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEventBusesOutcome(result.GetResultWithOwnership()) : ListEventBusesOutcome(std::move(result.GetError()));
 }
 
 ListEventSourcesOutcome EventBridgeClient::ListEventSources(const ListEventSourcesRequest& request) const {
-  return ListEventSourcesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEventSourcesOutcome(result.GetResultWithOwnership())
+                            : ListEventSourcesOutcome(std::move(result.GetError()));
 }
 
 ListPartnerEventSourceAccountsOutcome EventBridgeClient::ListPartnerEventSourceAccounts(
     const ListPartnerEventSourceAccountsRequest& request) const {
-  return ListPartnerEventSourceAccountsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPartnerEventSourceAccountsOutcome(result.GetResultWithOwnership())
+                            : ListPartnerEventSourceAccountsOutcome(std::move(result.GetError()));
 }
 
 ListPartnerEventSourcesOutcome EventBridgeClient::ListPartnerEventSources(const ListPartnerEventSourcesRequest& request) const {
-  return ListPartnerEventSourcesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPartnerEventSourcesOutcome(result.GetResultWithOwnership())
+                            : ListPartnerEventSourcesOutcome(std::move(result.GetError()));
 }
 
 ListReplaysOutcome EventBridgeClient::ListReplays(const ListReplaysRequest& request) const {
-  return ListReplaysOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListReplaysOutcome(result.GetResultWithOwnership()) : ListReplaysOutcome(std::move(result.GetError()));
 }
 
 ListRuleNamesByTargetOutcome EventBridgeClient::ListRuleNamesByTarget(const ListRuleNamesByTargetRequest& request) const {
-  return ListRuleNamesByTargetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRuleNamesByTargetOutcome(result.GetResultWithOwnership())
+                            : ListRuleNamesByTargetOutcome(std::move(result.GetError()));
 }
 
 ListRulesOutcome EventBridgeClient::ListRules(const ListRulesRequest& request) const {
-  return ListRulesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRulesOutcome(result.GetResultWithOwnership()) : ListRulesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome EventBridgeClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTargetsByRuleOutcome EventBridgeClient::ListTargetsByRule(const ListTargetsByRuleRequest& request) const {
-  return ListTargetsByRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTargetsByRuleOutcome(result.GetResultWithOwnership())
+                            : ListTargetsByRuleOutcome(std::move(result.GetError()));
 }
 
 PutEventsOutcome EventBridgeClient::PutEvents(const PutEventsRequest& request) const {
-  return PutEventsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutEventsOutcome(result.GetResultWithOwnership()) : PutEventsOutcome(std::move(result.GetError()));
 }
 
 PutPartnerEventsOutcome EventBridgeClient::PutPartnerEvents(const PutPartnerEventsRequest& request) const {
-  return PutPartnerEventsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutPartnerEventsOutcome(result.GetResultWithOwnership())
+                            : PutPartnerEventsOutcome(std::move(result.GetError()));
 }
 
 PutPermissionOutcome EventBridgeClient::PutPermission(const PutPermissionRequest& request) const {
-  return PutPermissionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutPermissionOutcome(result.GetResultWithOwnership()) : PutPermissionOutcome(std::move(result.GetError()));
 }
 
 PutRuleOutcome EventBridgeClient::PutRule(const PutRuleRequest& request) const {
-  return PutRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutRuleOutcome(result.GetResultWithOwnership()) : PutRuleOutcome(std::move(result.GetError()));
 }
 
 PutTargetsOutcome EventBridgeClient::PutTargets(const PutTargetsRequest& request) const {
-  return PutTargetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutTargetsOutcome(result.GetResultWithOwnership()) : PutTargetsOutcome(std::move(result.GetError()));
 }
 
 RemovePermissionOutcome EventBridgeClient::RemovePermission(const RemovePermissionRequest& request) const {
-  return RemovePermissionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemovePermissionOutcome(result.GetResultWithOwnership())
+                            : RemovePermissionOutcome(std::move(result.GetError()));
 }
 
 RemoveTargetsOutcome EventBridgeClient::RemoveTargets(const RemoveTargetsRequest& request) const {
-  return RemoveTargetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveTargetsOutcome(result.GetResultWithOwnership()) : RemoveTargetsOutcome(std::move(result.GetError()));
 }
 
 StartReplayOutcome EventBridgeClient::StartReplay(const StartReplayRequest& request) const {
-  return StartReplayOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartReplayOutcome(result.GetResultWithOwnership()) : StartReplayOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome EventBridgeClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 TestEventPatternOutcome EventBridgeClient::TestEventPattern(const TestEventPatternRequest& request) const {
-  return TestEventPatternOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TestEventPatternOutcome(result.GetResultWithOwnership())
+                            : TestEventPatternOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome EventBridgeClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateApiDestinationOutcome EventBridgeClient::UpdateApiDestination(const UpdateApiDestinationRequest& request) const {
-  return UpdateApiDestinationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateApiDestinationOutcome(result.GetResultWithOwnership())
+                            : UpdateApiDestinationOutcome(std::move(result.GetError()));
 }
 
 UpdateArchiveOutcome EventBridgeClient::UpdateArchive(const UpdateArchiveRequest& request) const {
-  return UpdateArchiveOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateArchiveOutcome(result.GetResultWithOwnership()) : UpdateArchiveOutcome(std::move(result.GetError()));
 }
 
 UpdateConnectionOutcome EventBridgeClient::UpdateConnection(const UpdateConnectionRequest& request) const {
-  return UpdateConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateConnectionOutcome(result.GetResultWithOwnership())
+                            : UpdateConnectionOutcome(std::move(result.GetError()));
 }
 
 UpdateEndpointOutcome EventBridgeClient::UpdateEndpoint(const UpdateEndpointRequest& request) const {
-  return UpdateEndpointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateEndpointOutcome(result.GetResultWithOwnership()) : UpdateEndpointOutcome(std::move(result.GetError()));
 }
 
 UpdateEventBusOutcome EventBridgeClient::UpdateEventBus(const UpdateEventBusRequest& request) const {
-  return UpdateEventBusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateEventBusOutcome(result.GetResultWithOwnership()) : UpdateEventBusOutcome(std::move(result.GetError()));
 }

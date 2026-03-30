@@ -310,7 +310,9 @@ BatchCreateCustomVocabularyItemOutcome LexModelsV2Client::BatchCreateCustomVocab
     endpointResolutionOutcome.GetResult().AddPathSegments("/customvocabulary/DEFAULT/batchcreate");
   };
 
-  return BatchCreateCustomVocabularyItemOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? BatchCreateCustomVocabularyItemOutcome(result.GetResultWithOwnership())
+                            : BatchCreateCustomVocabularyItemOutcome(std::move(result.GetError()));
 }
 
 BatchDeleteCustomVocabularyItemOutcome LexModelsV2Client::BatchDeleteCustomVocabularyItem(
@@ -342,7 +344,9 @@ BatchDeleteCustomVocabularyItemOutcome LexModelsV2Client::BatchDeleteCustomVocab
     endpointResolutionOutcome.GetResult().AddPathSegments("/customvocabulary/DEFAULT/batchdelete");
   };
 
-  return BatchDeleteCustomVocabularyItemOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeleteCustomVocabularyItemOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteCustomVocabularyItemOutcome(std::move(result.GetError()));
 }
 
 BatchUpdateCustomVocabularyItemOutcome LexModelsV2Client::BatchUpdateCustomVocabularyItem(
@@ -374,7 +378,9 @@ BatchUpdateCustomVocabularyItemOutcome LexModelsV2Client::BatchUpdateCustomVocab
     endpointResolutionOutcome.GetResult().AddPathSegments("/customvocabulary/DEFAULT/batchupdate");
   };
 
-  return BatchUpdateCustomVocabularyItemOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? BatchUpdateCustomVocabularyItemOutcome(result.GetResultWithOwnership())
+                            : BatchUpdateCustomVocabularyItemOutcome(std::move(result.GetError()));
 }
 
 BuildBotLocaleOutcome LexModelsV2Client::BuildBotLocale(const BuildBotLocaleRequest& request) const {
@@ -404,7 +410,8 @@ BuildBotLocaleOutcome LexModelsV2Client::BuildBotLocale(const BuildBotLocaleRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLocaleId());
   };
 
-  return BuildBotLocaleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BuildBotLocaleOutcome(result.GetResultWithOwnership()) : BuildBotLocaleOutcome(std::move(result.GetError()));
 }
 
 CreateBotOutcome LexModelsV2Client::CreateBot(const CreateBotRequest& request) const {
@@ -413,7 +420,8 @@ CreateBotOutcome LexModelsV2Client::CreateBot(const CreateBotRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
   };
 
-  return CreateBotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateBotOutcome(result.GetResultWithOwnership()) : CreateBotOutcome(std::move(result.GetError()));
 }
 
 CreateBotAliasOutcome LexModelsV2Client::CreateBotAlias(const CreateBotAliasRequest& request) const {
@@ -430,7 +438,8 @@ CreateBotAliasOutcome LexModelsV2Client::CreateBotAlias(const CreateBotAliasRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/botaliases/");
   };
 
-  return CreateBotAliasOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateBotAliasOutcome(result.GetResultWithOwnership()) : CreateBotAliasOutcome(std::move(result.GetError()));
 }
 
 CreateBotLocaleOutcome LexModelsV2Client::CreateBotLocale(const CreateBotLocaleRequest& request) const {
@@ -454,7 +463,9 @@ CreateBotLocaleOutcome LexModelsV2Client::CreateBotLocale(const CreateBotLocaleR
     endpointResolutionOutcome.GetResult().AddPathSegments("/botlocales/");
   };
 
-  return CreateBotLocaleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateBotLocaleOutcome(result.GetResultWithOwnership())
+                            : CreateBotLocaleOutcome(std::move(result.GetError()));
 }
 
 CreateBotReplicaOutcome LexModelsV2Client::CreateBotReplica(const CreateBotReplicaRequest& request) const {
@@ -471,7 +482,9 @@ CreateBotReplicaOutcome LexModelsV2Client::CreateBotReplica(const CreateBotRepli
     endpointResolutionOutcome.GetResult().AddPathSegments("/replicas/");
   };
 
-  return CreateBotReplicaOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateBotReplicaOutcome(result.GetResultWithOwnership())
+                            : CreateBotReplicaOutcome(std::move(result.GetError()));
 }
 
 CreateBotVersionOutcome LexModelsV2Client::CreateBotVersion(const CreateBotVersionRequest& request) const {
@@ -488,7 +501,9 @@ CreateBotVersionOutcome LexModelsV2Client::CreateBotVersion(const CreateBotVersi
     endpointResolutionOutcome.GetResult().AddPathSegments("/botversions/");
   };
 
-  return CreateBotVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateBotVersionOutcome(result.GetResultWithOwnership())
+                            : CreateBotVersionOutcome(std::move(result.GetError()));
 }
 
 CreateExportOutcome LexModelsV2Client::CreateExport(const CreateExportRequest& request) const {
@@ -497,7 +512,8 @@ CreateExportOutcome LexModelsV2Client::CreateExport(const CreateExportRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/exports/");
   };
 
-  return CreateExportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateExportOutcome(result.GetResultWithOwnership()) : CreateExportOutcome(std::move(result.GetError()));
 }
 
 CreateIntentOutcome LexModelsV2Client::CreateIntent(const CreateIntentRequest& request) const {
@@ -528,7 +544,8 @@ CreateIntentOutcome LexModelsV2Client::CreateIntent(const CreateIntentRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/intents/");
   };
 
-  return CreateIntentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateIntentOutcome(result.GetResultWithOwnership()) : CreateIntentOutcome(std::move(result.GetError()));
 }
 
 CreateResourcePolicyOutcome LexModelsV2Client::CreateResourcePolicy(const CreateResourcePolicyRequest& request) const {
@@ -544,7 +561,9 @@ CreateResourcePolicyOutcome LexModelsV2Client::CreateResourcePolicy(const Create
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return CreateResourcePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : CreateResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 CreateResourcePolicyStatementOutcome LexModelsV2Client::CreateResourcePolicyStatement(
@@ -562,7 +581,9 @@ CreateResourcePolicyStatementOutcome LexModelsV2Client::CreateResourcePolicyStat
     endpointResolutionOutcome.GetResult().AddPathSegments("/statements/");
   };
 
-  return CreateResourcePolicyStatementOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateResourcePolicyStatementOutcome(result.GetResultWithOwnership())
+                            : CreateResourcePolicyStatementOutcome(std::move(result.GetError()));
 }
 
 CreateSlotOutcome LexModelsV2Client::CreateSlot(const CreateSlotRequest& request) const {
@@ -600,7 +621,8 @@ CreateSlotOutcome LexModelsV2Client::CreateSlot(const CreateSlotRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/slots/");
   };
 
-  return CreateSlotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateSlotOutcome(result.GetResultWithOwnership()) : CreateSlotOutcome(std::move(result.GetError()));
 }
 
 CreateSlotTypeOutcome LexModelsV2Client::CreateSlotType(const CreateSlotTypeRequest& request) const {
@@ -631,7 +653,8 @@ CreateSlotTypeOutcome LexModelsV2Client::CreateSlotType(const CreateSlotTypeRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/slottypes/");
   };
 
-  return CreateSlotTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateSlotTypeOutcome(result.GetResultWithOwnership()) : CreateSlotTypeOutcome(std::move(result.GetError()));
 }
 
 CreateTestSetDiscrepancyReportOutcome LexModelsV2Client::CreateTestSetDiscrepancyReport(
@@ -649,7 +672,9 @@ CreateTestSetDiscrepancyReportOutcome LexModelsV2Client::CreateTestSetDiscrepanc
     endpointResolutionOutcome.GetResult().AddPathSegments("/testsetdiscrepancy");
   };
 
-  return CreateTestSetDiscrepancyReportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTestSetDiscrepancyReportOutcome(result.GetResultWithOwnership())
+                            : CreateTestSetDiscrepancyReportOutcome(std::move(result.GetError()));
 }
 
 CreateUploadUrlOutcome LexModelsV2Client::CreateUploadUrl(const CreateUploadUrlRequest& request) const {
@@ -658,7 +683,9 @@ CreateUploadUrlOutcome LexModelsV2Client::CreateUploadUrl(const CreateUploadUrlR
     endpointResolutionOutcome.GetResult().AddPathSegments("/createuploadurl/");
   };
 
-  return CreateUploadUrlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateUploadUrlOutcome(result.GetResultWithOwnership())
+                            : CreateUploadUrlOutcome(std::move(result.GetError()));
 }
 
 DeleteBotOutcome LexModelsV2Client::DeleteBot(const DeleteBotRequest& request) const {
@@ -674,7 +701,8 @@ DeleteBotOutcome LexModelsV2Client::DeleteBot(const DeleteBotRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
   };
 
-  return DeleteBotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBotOutcome(result.GetResultWithOwnership()) : DeleteBotOutcome(std::move(result.GetError()));
 }
 
 DeleteBotAliasOutcome LexModelsV2Client::DeleteBotAlias(const DeleteBotAliasRequest& request) const {
@@ -697,7 +725,8 @@ DeleteBotAliasOutcome LexModelsV2Client::DeleteBotAlias(const DeleteBotAliasRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotAliasId());
   };
 
-  return DeleteBotAliasOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBotAliasOutcome(result.GetResultWithOwnership()) : DeleteBotAliasOutcome(std::move(result.GetError()));
 }
 
 DeleteBotAnalyzerRecommendationOutcome LexModelsV2Client::DeleteBotAnalyzerRecommendation(
@@ -721,7 +750,9 @@ DeleteBotAnalyzerRecommendationOutcome LexModelsV2Client::DeleteBotAnalyzerRecom
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotAnalyzerRequestId());
   };
 
-  return DeleteBotAnalyzerRecommendationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBotAnalyzerRecommendationOutcome(result.GetResultWithOwnership())
+                            : DeleteBotAnalyzerRecommendationOutcome(std::move(result.GetError()));
 }
 
 DeleteBotLocaleOutcome LexModelsV2Client::DeleteBotLocale(const DeleteBotLocaleRequest& request) const {
@@ -751,7 +782,9 @@ DeleteBotLocaleOutcome LexModelsV2Client::DeleteBotLocale(const DeleteBotLocaleR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLocaleId());
   };
 
-  return DeleteBotLocaleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBotLocaleOutcome(result.GetResultWithOwnership())
+                            : DeleteBotLocaleOutcome(std::move(result.GetError()));
 }
 
 DeleteBotReplicaOutcome LexModelsV2Client::DeleteBotReplica(const DeleteBotReplicaRequest& request) const {
@@ -774,7 +807,9 @@ DeleteBotReplicaOutcome LexModelsV2Client::DeleteBotReplica(const DeleteBotRepli
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReplicaRegion());
   };
 
-  return DeleteBotReplicaOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBotReplicaOutcome(result.GetResultWithOwnership())
+                            : DeleteBotReplicaOutcome(std::move(result.GetError()));
 }
 
 DeleteBotVersionOutcome LexModelsV2Client::DeleteBotVersion(const DeleteBotVersionRequest& request) const {
@@ -797,7 +832,9 @@ DeleteBotVersionOutcome LexModelsV2Client::DeleteBotVersion(const DeleteBotVersi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotVersion());
   };
 
-  return DeleteBotVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBotVersionOutcome(result.GetResultWithOwnership())
+                            : DeleteBotVersionOutcome(std::move(result.GetError()));
 }
 
 DeleteCustomVocabularyOutcome LexModelsV2Client::DeleteCustomVocabulary(const DeleteCustomVocabularyRequest& request) const {
@@ -828,7 +865,9 @@ DeleteCustomVocabularyOutcome LexModelsV2Client::DeleteCustomVocabulary(const De
     endpointResolutionOutcome.GetResult().AddPathSegments("/customvocabulary");
   };
 
-  return DeleteCustomVocabularyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCustomVocabularyOutcome(result.GetResultWithOwnership())
+                            : DeleteCustomVocabularyOutcome(std::move(result.GetError()));
 }
 
 DeleteExportOutcome LexModelsV2Client::DeleteExport(const DeleteExportRequest& request) const {
@@ -844,7 +883,8 @@ DeleteExportOutcome LexModelsV2Client::DeleteExport(const DeleteExportRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExportId());
   };
 
-  return DeleteExportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteExportOutcome(result.GetResultWithOwnership()) : DeleteExportOutcome(std::move(result.GetError()));
 }
 
 DeleteImportOutcome LexModelsV2Client::DeleteImport(const DeleteImportRequest& request) const {
@@ -860,7 +900,8 @@ DeleteImportOutcome LexModelsV2Client::DeleteImport(const DeleteImportRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetImportId());
   };
 
-  return DeleteImportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteImportOutcome(result.GetResultWithOwnership()) : DeleteImportOutcome(std::move(result.GetError()));
 }
 
 DeleteIntentOutcome LexModelsV2Client::DeleteIntent(const DeleteIntentRequest& request) const {
@@ -897,7 +938,8 @@ DeleteIntentOutcome LexModelsV2Client::DeleteIntent(const DeleteIntentRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIntentId());
   };
 
-  return DeleteIntentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteIntentOutcome(result.GetResultWithOwnership()) : DeleteIntentOutcome(std::move(result.GetError()));
 }
 
 DeleteResourcePolicyOutcome LexModelsV2Client::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const {
@@ -913,7 +955,9 @@ DeleteResourcePolicyOutcome LexModelsV2Client::DeleteResourcePolicy(const Delete
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return DeleteResourcePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteResourcePolicyStatementOutcome LexModelsV2Client::DeleteResourcePolicyStatement(
@@ -937,7 +981,9 @@ DeleteResourcePolicyStatementOutcome LexModelsV2Client::DeleteResourcePolicyStat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStatementId());
   };
 
-  return DeleteResourcePolicyStatementOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteResourcePolicyStatementOutcome(result.GetResultWithOwnership())
+                            : DeleteResourcePolicyStatementOutcome(std::move(result.GetError()));
 }
 
 DeleteSlotOutcome LexModelsV2Client::DeleteSlot(const DeleteSlotRequest& request) const {
@@ -981,7 +1027,8 @@ DeleteSlotOutcome LexModelsV2Client::DeleteSlot(const DeleteSlotRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSlotId());
   };
 
-  return DeleteSlotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSlotOutcome(result.GetResultWithOwnership()) : DeleteSlotOutcome(std::move(result.GetError()));
 }
 
 DeleteSlotTypeOutcome LexModelsV2Client::DeleteSlotType(const DeleteSlotTypeRequest& request) const {
@@ -1018,7 +1065,8 @@ DeleteSlotTypeOutcome LexModelsV2Client::DeleteSlotType(const DeleteSlotTypeRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSlotTypeId());
   };
 
-  return DeleteSlotTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSlotTypeOutcome(result.GetResultWithOwnership()) : DeleteSlotTypeOutcome(std::move(result.GetError()));
 }
 
 DeleteTestSetOutcome LexModelsV2Client::DeleteTestSet(const DeleteTestSetRequest& request) const {
@@ -1034,7 +1082,8 @@ DeleteTestSetOutcome LexModelsV2Client::DeleteTestSet(const DeleteTestSetRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTestSetId());
   };
 
-  return DeleteTestSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTestSetOutcome(result.GetResultWithOwnership()) : DeleteTestSetOutcome(std::move(result.GetError()));
 }
 
 DeleteUtterancesOutcome LexModelsV2Client::DeleteUtterances(const DeleteUtterancesRequest& request) const {
@@ -1051,7 +1100,9 @@ DeleteUtterancesOutcome LexModelsV2Client::DeleteUtterances(const DeleteUtteranc
     endpointResolutionOutcome.GetResult().AddPathSegments("/utterances/");
   };
 
-  return DeleteUtterancesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteUtterancesOutcome(result.GetResultWithOwnership())
+                            : DeleteUtterancesOutcome(std::move(result.GetError()));
 }
 
 DescribeBotOutcome LexModelsV2Client::DescribeBot(const DescribeBotRequest& request) const {
@@ -1067,7 +1118,8 @@ DescribeBotOutcome LexModelsV2Client::DescribeBot(const DescribeBotRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
   };
 
-  return DescribeBotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeBotOutcome(result.GetResultWithOwnership()) : DescribeBotOutcome(std::move(result.GetError()));
 }
 
 DescribeBotAliasOutcome LexModelsV2Client::DescribeBotAlias(const DescribeBotAliasRequest& request) const {
@@ -1090,7 +1142,9 @@ DescribeBotAliasOutcome LexModelsV2Client::DescribeBotAlias(const DescribeBotAli
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotAliasId());
   };
 
-  return DescribeBotAliasOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeBotAliasOutcome(result.GetResultWithOwnership())
+                            : DescribeBotAliasOutcome(std::move(result.GetError()));
 }
 
 DescribeBotAnalyzerRecommendationOutcome LexModelsV2Client::DescribeBotAnalyzerRecommendation(
@@ -1114,7 +1168,9 @@ DescribeBotAnalyzerRecommendationOutcome LexModelsV2Client::DescribeBotAnalyzerR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotAnalyzerRequestId());
   };
 
-  return DescribeBotAnalyzerRecommendationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeBotAnalyzerRecommendationOutcome(result.GetResultWithOwnership())
+                            : DescribeBotAnalyzerRecommendationOutcome(std::move(result.GetError()));
 }
 
 DescribeBotLocaleOutcome LexModelsV2Client::DescribeBotLocale(const DescribeBotLocaleRequest& request) const {
@@ -1144,7 +1200,9 @@ DescribeBotLocaleOutcome LexModelsV2Client::DescribeBotLocale(const DescribeBotL
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLocaleId());
   };
 
-  return DescribeBotLocaleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeBotLocaleOutcome(result.GetResultWithOwnership())
+                            : DescribeBotLocaleOutcome(std::move(result.GetError()));
 }
 
 DescribeBotRecommendationOutcome LexModelsV2Client::DescribeBotRecommendation(const DescribeBotRecommendationRequest& request) const {
@@ -1181,7 +1239,9 @@ DescribeBotRecommendationOutcome LexModelsV2Client::DescribeBotRecommendation(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotRecommendationId());
   };
 
-  return DescribeBotRecommendationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeBotRecommendationOutcome(result.GetResultWithOwnership())
+                            : DescribeBotRecommendationOutcome(std::move(result.GetError()));
 }
 
 DescribeBotReplicaOutcome LexModelsV2Client::DescribeBotReplica(const DescribeBotReplicaRequest& request) const {
@@ -1204,7 +1264,9 @@ DescribeBotReplicaOutcome LexModelsV2Client::DescribeBotReplica(const DescribeBo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReplicaRegion());
   };
 
-  return DescribeBotReplicaOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeBotReplicaOutcome(result.GetResultWithOwnership())
+                            : DescribeBotReplicaOutcome(std::move(result.GetError()));
 }
 
 DescribeBotResourceGenerationOutcome LexModelsV2Client::DescribeBotResourceGeneration(
@@ -1242,7 +1304,9 @@ DescribeBotResourceGenerationOutcome LexModelsV2Client::DescribeBotResourceGener
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGenerationId());
   };
 
-  return DescribeBotResourceGenerationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeBotResourceGenerationOutcome(result.GetResultWithOwnership())
+                            : DescribeBotResourceGenerationOutcome(std::move(result.GetError()));
 }
 
 DescribeBotVersionOutcome LexModelsV2Client::DescribeBotVersion(const DescribeBotVersionRequest& request) const {
@@ -1265,7 +1329,9 @@ DescribeBotVersionOutcome LexModelsV2Client::DescribeBotVersion(const DescribeBo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotVersion());
   };
 
-  return DescribeBotVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeBotVersionOutcome(result.GetResultWithOwnership())
+                            : DescribeBotVersionOutcome(std::move(result.GetError()));
 }
 
 DescribeCustomVocabularyMetadataOutcome LexModelsV2Client::DescribeCustomVocabularyMetadata(
@@ -1297,7 +1363,9 @@ DescribeCustomVocabularyMetadataOutcome LexModelsV2Client::DescribeCustomVocabul
     endpointResolutionOutcome.GetResult().AddPathSegments("/customvocabulary/DEFAULT/metadata");
   };
 
-  return DescribeCustomVocabularyMetadataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeCustomVocabularyMetadataOutcome(result.GetResultWithOwnership())
+                            : DescribeCustomVocabularyMetadataOutcome(std::move(result.GetError()));
 }
 
 DescribeExportOutcome LexModelsV2Client::DescribeExport(const DescribeExportRequest& request) const {
@@ -1313,7 +1381,8 @@ DescribeExportOutcome LexModelsV2Client::DescribeExport(const DescribeExportRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExportId());
   };
 
-  return DescribeExportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeExportOutcome(result.GetResultWithOwnership()) : DescribeExportOutcome(std::move(result.GetError()));
 }
 
 DescribeImportOutcome LexModelsV2Client::DescribeImport(const DescribeImportRequest& request) const {
@@ -1329,7 +1398,8 @@ DescribeImportOutcome LexModelsV2Client::DescribeImport(const DescribeImportRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetImportId());
   };
 
-  return DescribeImportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeImportOutcome(result.GetResultWithOwnership()) : DescribeImportOutcome(std::move(result.GetError()));
 }
 
 DescribeIntentOutcome LexModelsV2Client::DescribeIntent(const DescribeIntentRequest& request) const {
@@ -1366,7 +1436,8 @@ DescribeIntentOutcome LexModelsV2Client::DescribeIntent(const DescribeIntentRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIntentId());
   };
 
-  return DescribeIntentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeIntentOutcome(result.GetResultWithOwnership()) : DescribeIntentOutcome(std::move(result.GetError()));
 }
 
 DescribeResourcePolicyOutcome LexModelsV2Client::DescribeResourcePolicy(const DescribeResourcePolicyRequest& request) const {
@@ -1382,7 +1453,9 @@ DescribeResourcePolicyOutcome LexModelsV2Client::DescribeResourcePolicy(const De
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return DescribeResourcePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : DescribeResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 DescribeSlotOutcome LexModelsV2Client::DescribeSlot(const DescribeSlotRequest& request) const {
@@ -1426,7 +1499,8 @@ DescribeSlotOutcome LexModelsV2Client::DescribeSlot(const DescribeSlotRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSlotId());
   };
 
-  return DescribeSlotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeSlotOutcome(result.GetResultWithOwnership()) : DescribeSlotOutcome(std::move(result.GetError()));
 }
 
 DescribeSlotTypeOutcome LexModelsV2Client::DescribeSlotType(const DescribeSlotTypeRequest& request) const {
@@ -1463,7 +1537,9 @@ DescribeSlotTypeOutcome LexModelsV2Client::DescribeSlotType(const DescribeSlotTy
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSlotTypeId());
   };
 
-  return DescribeSlotTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeSlotTypeOutcome(result.GetResultWithOwnership())
+                            : DescribeSlotTypeOutcome(std::move(result.GetError()));
 }
 
 DescribeTestExecutionOutcome LexModelsV2Client::DescribeTestExecution(const DescribeTestExecutionRequest& request) const {
@@ -1479,7 +1555,9 @@ DescribeTestExecutionOutcome LexModelsV2Client::DescribeTestExecution(const Desc
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTestExecutionId());
   };
 
-  return DescribeTestExecutionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeTestExecutionOutcome(result.GetResultWithOwnership())
+                            : DescribeTestExecutionOutcome(std::move(result.GetError()));
 }
 
 DescribeTestSetOutcome LexModelsV2Client::DescribeTestSet(const DescribeTestSetRequest& request) const {
@@ -1495,7 +1573,9 @@ DescribeTestSetOutcome LexModelsV2Client::DescribeTestSet(const DescribeTestSetR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTestSetId());
   };
 
-  return DescribeTestSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeTestSetOutcome(result.GetResultWithOwnership())
+                            : DescribeTestSetOutcome(std::move(result.GetError()));
 }
 
 DescribeTestSetDiscrepancyReportOutcome LexModelsV2Client::DescribeTestSetDiscrepancyReport(
@@ -1512,7 +1592,9 @@ DescribeTestSetDiscrepancyReportOutcome LexModelsV2Client::DescribeTestSetDiscre
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTestSetDiscrepancyReportId());
   };
 
-  return DescribeTestSetDiscrepancyReportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeTestSetDiscrepancyReportOutcome(result.GetResultWithOwnership())
+                            : DescribeTestSetDiscrepancyReportOutcome(std::move(result.GetError()));
 }
 
 DescribeTestSetGenerationOutcome LexModelsV2Client::DescribeTestSetGeneration(const DescribeTestSetGenerationRequest& request) const {
@@ -1528,7 +1610,9 @@ DescribeTestSetGenerationOutcome LexModelsV2Client::DescribeTestSetGeneration(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTestSetGenerationId());
   };
 
-  return DescribeTestSetGenerationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeTestSetGenerationOutcome(result.GetResultWithOwnership())
+                            : DescribeTestSetGenerationOutcome(std::move(result.GetError()));
 }
 
 GenerateBotElementOutcome LexModelsV2Client::GenerateBotElement(const GenerateBotElementRequest& request) const {
@@ -1559,7 +1643,9 @@ GenerateBotElementOutcome LexModelsV2Client::GenerateBotElement(const GenerateBo
     endpointResolutionOutcome.GetResult().AddPathSegments("/generate");
   };
 
-  return GenerateBotElementOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GenerateBotElementOutcome(result.GetResultWithOwnership())
+                            : GenerateBotElementOutcome(std::move(result.GetError()));
 }
 
 GetTestExecutionArtifactsUrlOutcome LexModelsV2Client::GetTestExecutionArtifactsUrl(
@@ -1577,7 +1663,9 @@ GetTestExecutionArtifactsUrlOutcome LexModelsV2Client::GetTestExecutionArtifacts
     endpointResolutionOutcome.GetResult().AddPathSegments("/artifacturl");
   };
 
-  return GetTestExecutionArtifactsUrlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTestExecutionArtifactsUrlOutcome(result.GetResultWithOwnership())
+                            : GetTestExecutionArtifactsUrlOutcome(std::move(result.GetError()));
 }
 
 ListAggregatedUtterancesOutcome LexModelsV2Client::ListAggregatedUtterances(const ListAggregatedUtterancesRequest& request) const {
@@ -1594,7 +1682,9 @@ ListAggregatedUtterancesOutcome LexModelsV2Client::ListAggregatedUtterances(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/aggregatedutterances/");
   };
 
-  return ListAggregatedUtterancesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAggregatedUtterancesOutcome(result.GetResultWithOwnership())
+                            : ListAggregatedUtterancesOutcome(std::move(result.GetError()));
 }
 
 ListBotAliasReplicasOutcome LexModelsV2Client::ListBotAliasReplicas(const ListBotAliasReplicasRequest& request) const {
@@ -1618,7 +1708,9 @@ ListBotAliasReplicasOutcome LexModelsV2Client::ListBotAliasReplicas(const ListBo
     endpointResolutionOutcome.GetResult().AddPathSegments("/botaliases/");
   };
 
-  return ListBotAliasReplicasOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBotAliasReplicasOutcome(result.GetResultWithOwnership())
+                            : ListBotAliasReplicasOutcome(std::move(result.GetError()));
 }
 
 ListBotAliasesOutcome LexModelsV2Client::ListBotAliases(const ListBotAliasesRequest& request) const {
@@ -1635,7 +1727,8 @@ ListBotAliasesOutcome LexModelsV2Client::ListBotAliases(const ListBotAliasesRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/botaliases/");
   };
 
-  return ListBotAliasesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBotAliasesOutcome(result.GetResultWithOwnership()) : ListBotAliasesOutcome(std::move(result.GetError()));
 }
 
 ListBotAnalyzerHistoryOutcome LexModelsV2Client::ListBotAnalyzerHistory(const ListBotAnalyzerHistoryRequest& request) const {
@@ -1652,7 +1745,9 @@ ListBotAnalyzerHistoryOutcome LexModelsV2Client::ListBotAnalyzerHistory(const Li
     endpointResolutionOutcome.GetResult().AddPathSegments("/botanalyzer/history/");
   };
 
-  return ListBotAnalyzerHistoryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBotAnalyzerHistoryOutcome(result.GetResultWithOwnership())
+                            : ListBotAnalyzerHistoryOutcome(std::move(result.GetError()));
 }
 
 ListBotLocalesOutcome LexModelsV2Client::ListBotLocales(const ListBotLocalesRequest& request) const {
@@ -1676,7 +1771,8 @@ ListBotLocalesOutcome LexModelsV2Client::ListBotLocales(const ListBotLocalesRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/botlocales/");
   };
 
-  return ListBotLocalesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBotLocalesOutcome(result.GetResultWithOwnership()) : ListBotLocalesOutcome(std::move(result.GetError()));
 }
 
 ListBotRecommendationsOutcome LexModelsV2Client::ListBotRecommendations(const ListBotRecommendationsRequest& request) const {
@@ -1707,7 +1803,9 @@ ListBotRecommendationsOutcome LexModelsV2Client::ListBotRecommendations(const Li
     endpointResolutionOutcome.GetResult().AddPathSegments("/botrecommendations/");
   };
 
-  return ListBotRecommendationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBotRecommendationsOutcome(result.GetResultWithOwnership())
+                            : ListBotRecommendationsOutcome(std::move(result.GetError()));
 }
 
 ListBotReplicasOutcome LexModelsV2Client::ListBotReplicas(const ListBotReplicasRequest& request) const {
@@ -1724,7 +1822,9 @@ ListBotReplicasOutcome LexModelsV2Client::ListBotReplicas(const ListBotReplicasR
     endpointResolutionOutcome.GetResult().AddPathSegments("/replicas/");
   };
 
-  return ListBotReplicasOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBotReplicasOutcome(result.GetResultWithOwnership())
+                            : ListBotReplicasOutcome(std::move(result.GetError()));
 }
 
 ListBotResourceGenerationsOutcome LexModelsV2Client::ListBotResourceGenerations(const ListBotResourceGenerationsRequest& request) const {
@@ -1755,7 +1855,9 @@ ListBotResourceGenerationsOutcome LexModelsV2Client::ListBotResourceGenerations(
     endpointResolutionOutcome.GetResult().AddPathSegments("/generations");
   };
 
-  return ListBotResourceGenerationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBotResourceGenerationsOutcome(result.GetResultWithOwnership())
+                            : ListBotResourceGenerationsOutcome(std::move(result.GetError()));
 }
 
 ListBotVersionReplicasOutcome LexModelsV2Client::ListBotVersionReplicas(const ListBotVersionReplicasRequest& request) const {
@@ -1779,7 +1881,9 @@ ListBotVersionReplicasOutcome LexModelsV2Client::ListBotVersionReplicas(const Li
     endpointResolutionOutcome.GetResult().AddPathSegments("/botversions/");
   };
 
-  return ListBotVersionReplicasOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBotVersionReplicasOutcome(result.GetResultWithOwnership())
+                            : ListBotVersionReplicasOutcome(std::move(result.GetError()));
 }
 
 ListBotVersionsOutcome LexModelsV2Client::ListBotVersions(const ListBotVersionsRequest& request) const {
@@ -1796,7 +1900,9 @@ ListBotVersionsOutcome LexModelsV2Client::ListBotVersions(const ListBotVersionsR
     endpointResolutionOutcome.GetResult().AddPathSegments("/botversions/");
   };
 
-  return ListBotVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBotVersionsOutcome(result.GetResultWithOwnership())
+                            : ListBotVersionsOutcome(std::move(result.GetError()));
 }
 
 ListBotsOutcome LexModelsV2Client::ListBots(const ListBotsRequest& request) const {
@@ -1805,7 +1911,8 @@ ListBotsOutcome LexModelsV2Client::ListBots(const ListBotsRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
   };
 
-  return ListBotsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBotsOutcome(result.GetResultWithOwnership()) : ListBotsOutcome(std::move(result.GetError()));
 }
 
 ListBuiltInIntentsOutcome LexModelsV2Client::ListBuiltInIntents(const ListBuiltInIntentsRequest& request) const {
@@ -1822,7 +1929,9 @@ ListBuiltInIntentsOutcome LexModelsV2Client::ListBuiltInIntents(const ListBuiltI
     endpointResolutionOutcome.GetResult().AddPathSegments("/intents/");
   };
 
-  return ListBuiltInIntentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBuiltInIntentsOutcome(result.GetResultWithOwnership())
+                            : ListBuiltInIntentsOutcome(std::move(result.GetError()));
 }
 
 ListBuiltInSlotTypesOutcome LexModelsV2Client::ListBuiltInSlotTypes(const ListBuiltInSlotTypesRequest& request) const {
@@ -1839,7 +1948,9 @@ ListBuiltInSlotTypesOutcome LexModelsV2Client::ListBuiltInSlotTypes(const ListBu
     endpointResolutionOutcome.GetResult().AddPathSegments("/slottypes/");
   };
 
-  return ListBuiltInSlotTypesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBuiltInSlotTypesOutcome(result.GetResultWithOwnership())
+                            : ListBuiltInSlotTypesOutcome(std::move(result.GetError()));
 }
 
 ListCustomVocabularyItemsOutcome LexModelsV2Client::ListCustomVocabularyItems(const ListCustomVocabularyItemsRequest& request) const {
@@ -1870,7 +1981,9 @@ ListCustomVocabularyItemsOutcome LexModelsV2Client::ListCustomVocabularyItems(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/customvocabulary/DEFAULT/list");
   };
 
-  return ListCustomVocabularyItemsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCustomVocabularyItemsOutcome(result.GetResultWithOwnership())
+                            : ListCustomVocabularyItemsOutcome(std::move(result.GetError()));
 }
 
 ListExportsOutcome LexModelsV2Client::ListExports(const ListExportsRequest& request) const {
@@ -1879,7 +1992,8 @@ ListExportsOutcome LexModelsV2Client::ListExports(const ListExportsRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/exports/");
   };
 
-  return ListExportsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListExportsOutcome(result.GetResultWithOwnership()) : ListExportsOutcome(std::move(result.GetError()));
 }
 
 ListImportsOutcome LexModelsV2Client::ListImports(const ListImportsRequest& request) const {
@@ -1888,7 +2002,8 @@ ListImportsOutcome LexModelsV2Client::ListImports(const ListImportsRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/imports/");
   };
 
-  return ListImportsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListImportsOutcome(result.GetResultWithOwnership()) : ListImportsOutcome(std::move(result.GetError()));
 }
 
 ListIntentMetricsOutcome LexModelsV2Client::ListIntentMetrics(const ListIntentMetricsRequest& request) const {
@@ -1905,7 +2020,9 @@ ListIntentMetricsOutcome LexModelsV2Client::ListIntentMetrics(const ListIntentMe
     endpointResolutionOutcome.GetResult().AddPathSegments("/analytics/intentmetrics");
   };
 
-  return ListIntentMetricsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListIntentMetricsOutcome(result.GetResultWithOwnership())
+                            : ListIntentMetricsOutcome(std::move(result.GetError()));
 }
 
 ListIntentPathsOutcome LexModelsV2Client::ListIntentPaths(const ListIntentPathsRequest& request) const {
@@ -1922,7 +2039,9 @@ ListIntentPathsOutcome LexModelsV2Client::ListIntentPaths(const ListIntentPathsR
     endpointResolutionOutcome.GetResult().AddPathSegments("/analytics/intentpaths");
   };
 
-  return ListIntentPathsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListIntentPathsOutcome(result.GetResultWithOwnership())
+                            : ListIntentPathsOutcome(std::move(result.GetError()));
 }
 
 ListIntentStageMetricsOutcome LexModelsV2Client::ListIntentStageMetrics(const ListIntentStageMetricsRequest& request) const {
@@ -1939,7 +2058,9 @@ ListIntentStageMetricsOutcome LexModelsV2Client::ListIntentStageMetrics(const Li
     endpointResolutionOutcome.GetResult().AddPathSegments("/analytics/intentstagemetrics");
   };
 
-  return ListIntentStageMetricsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListIntentStageMetricsOutcome(result.GetResultWithOwnership())
+                            : ListIntentStageMetricsOutcome(std::move(result.GetError()));
 }
 
 ListIntentsOutcome LexModelsV2Client::ListIntents(const ListIntentsRequest& request) const {
@@ -1970,7 +2091,8 @@ ListIntentsOutcome LexModelsV2Client::ListIntents(const ListIntentsRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/intents/");
   };
 
-  return ListIntentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListIntentsOutcome(result.GetResultWithOwnership()) : ListIntentsOutcome(std::move(result.GetError()));
 }
 
 ListRecommendedIntentsOutcome LexModelsV2Client::ListRecommendedIntents(const ListRecommendedIntentsRequest& request) const {
@@ -2008,7 +2130,9 @@ ListRecommendedIntentsOutcome LexModelsV2Client::ListRecommendedIntents(const Li
     endpointResolutionOutcome.GetResult().AddPathSegments("/intents");
   };
 
-  return ListRecommendedIntentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRecommendedIntentsOutcome(result.GetResultWithOwnership())
+                            : ListRecommendedIntentsOutcome(std::move(result.GetError()));
 }
 
 ListSessionAnalyticsDataOutcome LexModelsV2Client::ListSessionAnalyticsData(const ListSessionAnalyticsDataRequest& request) const {
@@ -2025,7 +2149,9 @@ ListSessionAnalyticsDataOutcome LexModelsV2Client::ListSessionAnalyticsData(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/analytics/sessions");
   };
 
-  return ListSessionAnalyticsDataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSessionAnalyticsDataOutcome(result.GetResultWithOwnership())
+                            : ListSessionAnalyticsDataOutcome(std::move(result.GetError()));
 }
 
 ListSessionMetricsOutcome LexModelsV2Client::ListSessionMetrics(const ListSessionMetricsRequest& request) const {
@@ -2042,7 +2168,9 @@ ListSessionMetricsOutcome LexModelsV2Client::ListSessionMetrics(const ListSessio
     endpointResolutionOutcome.GetResult().AddPathSegments("/analytics/sessionmetrics");
   };
 
-  return ListSessionMetricsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSessionMetricsOutcome(result.GetResultWithOwnership())
+                            : ListSessionMetricsOutcome(std::move(result.GetError()));
 }
 
 ListSlotTypesOutcome LexModelsV2Client::ListSlotTypes(const ListSlotTypesRequest& request) const {
@@ -2073,7 +2201,8 @@ ListSlotTypesOutcome LexModelsV2Client::ListSlotTypes(const ListSlotTypesRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/slottypes/");
   };
 
-  return ListSlotTypesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSlotTypesOutcome(result.GetResultWithOwnership()) : ListSlotTypesOutcome(std::move(result.GetError()));
 }
 
 ListSlotsOutcome LexModelsV2Client::ListSlots(const ListSlotsRequest& request) const {
@@ -2111,7 +2240,8 @@ ListSlotsOutcome LexModelsV2Client::ListSlots(const ListSlotsRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegments("/slots/");
   };
 
-  return ListSlotsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSlotsOutcome(result.GetResultWithOwnership()) : ListSlotsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome LexModelsV2Client::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -2127,7 +2257,9 @@ ListTagsForResourceOutcome LexModelsV2Client::ListTagsForResource(const ListTags
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceARN());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTestExecutionResultItemsOutcome LexModelsV2Client::ListTestExecutionResultItems(
@@ -2145,7 +2277,9 @@ ListTestExecutionResultItemsOutcome LexModelsV2Client::ListTestExecutionResultIt
     endpointResolutionOutcome.GetResult().AddPathSegments("/results");
   };
 
-  return ListTestExecutionResultItemsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTestExecutionResultItemsOutcome(result.GetResultWithOwnership())
+                            : ListTestExecutionResultItemsOutcome(std::move(result.GetError()));
 }
 
 ListTestExecutionsOutcome LexModelsV2Client::ListTestExecutions(const ListTestExecutionsRequest& request) const {
@@ -2154,7 +2288,9 @@ ListTestExecutionsOutcome LexModelsV2Client::ListTestExecutions(const ListTestEx
     endpointResolutionOutcome.GetResult().AddPathSegments("/testexecutions");
   };
 
-  return ListTestExecutionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTestExecutionsOutcome(result.GetResultWithOwnership())
+                            : ListTestExecutionsOutcome(std::move(result.GetError()));
 }
 
 ListTestSetRecordsOutcome LexModelsV2Client::ListTestSetRecords(const ListTestSetRecordsRequest& request) const {
@@ -2171,7 +2307,9 @@ ListTestSetRecordsOutcome LexModelsV2Client::ListTestSetRecords(const ListTestSe
     endpointResolutionOutcome.GetResult().AddPathSegments("/records");
   };
 
-  return ListTestSetRecordsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTestSetRecordsOutcome(result.GetResultWithOwnership())
+                            : ListTestSetRecordsOutcome(std::move(result.GetError()));
 }
 
 ListTestSetsOutcome LexModelsV2Client::ListTestSets(const ListTestSetsRequest& request) const {
@@ -2180,7 +2318,8 @@ ListTestSetsOutcome LexModelsV2Client::ListTestSets(const ListTestSetsRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/testsets");
   };
 
-  return ListTestSetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTestSetsOutcome(result.GetResultWithOwnership()) : ListTestSetsOutcome(std::move(result.GetError()));
 }
 
 ListUtteranceAnalyticsDataOutcome LexModelsV2Client::ListUtteranceAnalyticsData(const ListUtteranceAnalyticsDataRequest& request) const {
@@ -2197,7 +2336,9 @@ ListUtteranceAnalyticsDataOutcome LexModelsV2Client::ListUtteranceAnalyticsData(
     endpointResolutionOutcome.GetResult().AddPathSegments("/analytics/utterances");
   };
 
-  return ListUtteranceAnalyticsDataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListUtteranceAnalyticsDataOutcome(result.GetResultWithOwnership())
+                            : ListUtteranceAnalyticsDataOutcome(std::move(result.GetError()));
 }
 
 ListUtteranceMetricsOutcome LexModelsV2Client::ListUtteranceMetrics(const ListUtteranceMetricsRequest& request) const {
@@ -2214,7 +2355,9 @@ ListUtteranceMetricsOutcome LexModelsV2Client::ListUtteranceMetrics(const ListUt
     endpointResolutionOutcome.GetResult().AddPathSegments("/analytics/utterancemetrics");
   };
 
-  return ListUtteranceMetricsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListUtteranceMetricsOutcome(result.GetResultWithOwnership())
+                            : ListUtteranceMetricsOutcome(std::move(result.GetError()));
 }
 
 SearchAssociatedTranscriptsOutcome LexModelsV2Client::SearchAssociatedTranscripts(const SearchAssociatedTranscriptsRequest& request) const {
@@ -2252,7 +2395,9 @@ SearchAssociatedTranscriptsOutcome LexModelsV2Client::SearchAssociatedTranscript
     endpointResolutionOutcome.GetResult().AddPathSegments("/associatedtranscripts");
   };
 
-  return SearchAssociatedTranscriptsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchAssociatedTranscriptsOutcome(result.GetResultWithOwnership())
+                            : SearchAssociatedTranscriptsOutcome(std::move(result.GetError()));
 }
 
 StartBotAnalyzerOutcome LexModelsV2Client::StartBotAnalyzer(const StartBotAnalyzerRequest& request) const {
@@ -2269,7 +2414,9 @@ StartBotAnalyzerOutcome LexModelsV2Client::StartBotAnalyzer(const StartBotAnalyz
     endpointResolutionOutcome.GetResult().AddPathSegments("/botanalyzer/");
   };
 
-  return StartBotAnalyzerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartBotAnalyzerOutcome(result.GetResultWithOwnership())
+                            : StartBotAnalyzerOutcome(std::move(result.GetError()));
 }
 
 StartBotRecommendationOutcome LexModelsV2Client::StartBotRecommendation(const StartBotRecommendationRequest& request) const {
@@ -2300,7 +2447,9 @@ StartBotRecommendationOutcome LexModelsV2Client::StartBotRecommendation(const St
     endpointResolutionOutcome.GetResult().AddPathSegments("/botrecommendations/");
   };
 
-  return StartBotRecommendationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StartBotRecommendationOutcome(result.GetResultWithOwnership())
+                            : StartBotRecommendationOutcome(std::move(result.GetError()));
 }
 
 StartBotResourceGenerationOutcome LexModelsV2Client::StartBotResourceGeneration(const StartBotResourceGenerationRequest& request) const {
@@ -2331,7 +2480,9 @@ StartBotResourceGenerationOutcome LexModelsV2Client::StartBotResourceGeneration(
     endpointResolutionOutcome.GetResult().AddPathSegments("/startgeneration");
   };
 
-  return StartBotResourceGenerationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StartBotResourceGenerationOutcome(result.GetResultWithOwnership())
+                            : StartBotResourceGenerationOutcome(std::move(result.GetError()));
 }
 
 StartImportOutcome LexModelsV2Client::StartImport(const StartImportRequest& request) const {
@@ -2340,7 +2491,8 @@ StartImportOutcome LexModelsV2Client::StartImport(const StartImportRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/imports/");
   };
 
-  return StartImportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StartImportOutcome(result.GetResultWithOwnership()) : StartImportOutcome(std::move(result.GetError()));
 }
 
 StartTestExecutionOutcome LexModelsV2Client::StartTestExecution(const StartTestExecutionRequest& request) const {
@@ -2357,7 +2509,9 @@ StartTestExecutionOutcome LexModelsV2Client::StartTestExecution(const StartTestE
     endpointResolutionOutcome.GetResult().AddPathSegments("/testexecutions");
   };
 
-  return StartTestExecutionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartTestExecutionOutcome(result.GetResultWithOwnership())
+                            : StartTestExecutionOutcome(std::move(result.GetError()));
 }
 
 StartTestSetGenerationOutcome LexModelsV2Client::StartTestSetGeneration(const StartTestSetGenerationRequest& request) const {
@@ -2366,7 +2520,9 @@ StartTestSetGenerationOutcome LexModelsV2Client::StartTestSetGeneration(const St
     endpointResolutionOutcome.GetResult().AddPathSegments("/testsetgenerations");
   };
 
-  return StartTestSetGenerationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StartTestSetGenerationOutcome(result.GetResultWithOwnership())
+                            : StartTestSetGenerationOutcome(std::move(result.GetError()));
 }
 
 StopBotAnalyzerOutcome LexModelsV2Client::StopBotAnalyzer(const StopBotAnalyzerRequest& request) const {
@@ -2390,7 +2546,9 @@ StopBotAnalyzerOutcome LexModelsV2Client::StopBotAnalyzer(const StopBotAnalyzerR
     endpointResolutionOutcome.GetResult().AddPathSegments("/stop/");
   };
 
-  return StopBotAnalyzerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StopBotAnalyzerOutcome(result.GetResultWithOwnership())
+                            : StopBotAnalyzerOutcome(std::move(result.GetError()));
 }
 
 StopBotRecommendationOutcome LexModelsV2Client::StopBotRecommendation(const StopBotRecommendationRequest& request) const {
@@ -2428,7 +2586,9 @@ StopBotRecommendationOutcome LexModelsV2Client::StopBotRecommendation(const Stop
     endpointResolutionOutcome.GetResult().AddPathSegments("/stopbotrecommendation");
   };
 
-  return StopBotRecommendationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StopBotRecommendationOutcome(result.GetResultWithOwnership())
+                            : StopBotRecommendationOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome LexModelsV2Client::TagResource(const TagResourceRequest& request) const {
@@ -2444,7 +2604,8 @@ TagResourceOutcome LexModelsV2Client::TagResource(const TagResourceRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceARN());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome LexModelsV2Client::UntagResource(const UntagResourceRequest& request) const {
@@ -2465,7 +2626,8 @@ UntagResourceOutcome LexModelsV2Client::UntagResource(const UntagResourceRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceARN());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateBotOutcome LexModelsV2Client::UpdateBot(const UpdateBotRequest& request) const {
@@ -2481,7 +2643,8 @@ UpdateBotOutcome LexModelsV2Client::UpdateBot(const UpdateBotRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
   };
 
-  return UpdateBotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateBotOutcome(result.GetResultWithOwnership()) : UpdateBotOutcome(std::move(result.GetError()));
 }
 
 UpdateBotAliasOutcome LexModelsV2Client::UpdateBotAlias(const UpdateBotAliasRequest& request) const {
@@ -2504,7 +2667,8 @@ UpdateBotAliasOutcome LexModelsV2Client::UpdateBotAlias(const UpdateBotAliasRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotAliasId());
   };
 
-  return UpdateBotAliasOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateBotAliasOutcome(result.GetResultWithOwnership()) : UpdateBotAliasOutcome(std::move(result.GetError()));
 }
 
 UpdateBotLocaleOutcome LexModelsV2Client::UpdateBotLocale(const UpdateBotLocaleRequest& request) const {
@@ -2534,7 +2698,9 @@ UpdateBotLocaleOutcome LexModelsV2Client::UpdateBotLocale(const UpdateBotLocaleR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLocaleId());
   };
 
-  return UpdateBotLocaleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateBotLocaleOutcome(result.GetResultWithOwnership())
+                            : UpdateBotLocaleOutcome(std::move(result.GetError()));
 }
 
 UpdateBotRecommendationOutcome LexModelsV2Client::UpdateBotRecommendation(const UpdateBotRecommendationRequest& request) const {
@@ -2571,7 +2737,9 @@ UpdateBotRecommendationOutcome LexModelsV2Client::UpdateBotRecommendation(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotRecommendationId());
   };
 
-  return UpdateBotRecommendationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateBotRecommendationOutcome(result.GetResultWithOwnership())
+                            : UpdateBotRecommendationOutcome(std::move(result.GetError()));
 }
 
 UpdateExportOutcome LexModelsV2Client::UpdateExport(const UpdateExportRequest& request) const {
@@ -2587,7 +2755,8 @@ UpdateExportOutcome LexModelsV2Client::UpdateExport(const UpdateExportRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExportId());
   };
 
-  return UpdateExportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateExportOutcome(result.GetResultWithOwnership()) : UpdateExportOutcome(std::move(result.GetError()));
 }
 
 UpdateIntentOutcome LexModelsV2Client::UpdateIntent(const UpdateIntentRequest& request) const {
@@ -2624,7 +2793,8 @@ UpdateIntentOutcome LexModelsV2Client::UpdateIntent(const UpdateIntentRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIntentId());
   };
 
-  return UpdateIntentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateIntentOutcome(result.GetResultWithOwnership()) : UpdateIntentOutcome(std::move(result.GetError()));
 }
 
 UpdateResourcePolicyOutcome LexModelsV2Client::UpdateResourcePolicy(const UpdateResourcePolicyRequest& request) const {
@@ -2640,7 +2810,9 @@ UpdateResourcePolicyOutcome LexModelsV2Client::UpdateResourcePolicy(const Update
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UpdateResourcePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : UpdateResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 UpdateSlotOutcome LexModelsV2Client::UpdateSlot(const UpdateSlotRequest& request) const {
@@ -2684,7 +2856,8 @@ UpdateSlotOutcome LexModelsV2Client::UpdateSlot(const UpdateSlotRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSlotId());
   };
 
-  return UpdateSlotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateSlotOutcome(result.GetResultWithOwnership()) : UpdateSlotOutcome(std::move(result.GetError()));
 }
 
 UpdateSlotTypeOutcome LexModelsV2Client::UpdateSlotType(const UpdateSlotTypeRequest& request) const {
@@ -2721,7 +2894,8 @@ UpdateSlotTypeOutcome LexModelsV2Client::UpdateSlotType(const UpdateSlotTypeRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSlotTypeId());
   };
 
-  return UpdateSlotTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateSlotTypeOutcome(result.GetResultWithOwnership()) : UpdateSlotTypeOutcome(std::move(result.GetError()));
 }
 
 UpdateTestSetOutcome LexModelsV2Client::UpdateTestSet(const UpdateTestSetRequest& request) const {
@@ -2737,5 +2911,6 @@ UpdateTestSetOutcome LexModelsV2Client::UpdateTestSet(const UpdateTestSetRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTestSetId());
   };
 
-  return UpdateTestSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateTestSetOutcome(result.GetResultWithOwnership()) : UpdateTestSetOutcome(std::move(result.GetError()));
 }

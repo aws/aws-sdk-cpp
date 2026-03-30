@@ -228,7 +228,9 @@ CreateComponentOutcome AmplifyUIBuilderClient::CreateComponent(const CreateCompo
     endpointResolutionOutcome.GetResult().AddPathSegments("/components");
   };
 
-  return CreateComponentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateComponentOutcome(result.GetResultWithOwnership())
+                            : CreateComponentOutcome(std::move(result.GetError()));
 }
 
 CreateFormOutcome AmplifyUIBuilderClient::CreateForm(const CreateFormRequest& request) const {
@@ -252,7 +254,8 @@ CreateFormOutcome AmplifyUIBuilderClient::CreateForm(const CreateFormRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/forms");
   };
 
-  return CreateFormOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFormOutcome(result.GetResultWithOwnership()) : CreateFormOutcome(std::move(result.GetError()));
 }
 
 CreateThemeOutcome AmplifyUIBuilderClient::CreateTheme(const CreateThemeRequest& request) const {
@@ -276,7 +279,8 @@ CreateThemeOutcome AmplifyUIBuilderClient::CreateTheme(const CreateThemeRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/themes");
   };
 
-  return CreateThemeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateThemeOutcome(result.GetResultWithOwnership()) : CreateThemeOutcome(std::move(result.GetError()));
 }
 
 DeleteComponentOutcome AmplifyUIBuilderClient::DeleteComponent(const DeleteComponentRequest& request) const {
@@ -306,7 +310,9 @@ DeleteComponentOutcome AmplifyUIBuilderClient::DeleteComponent(const DeleteCompo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteComponentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteComponentOutcome(result.GetResultWithOwnership())
+                            : DeleteComponentOutcome(std::move(result.GetError()));
 }
 
 DeleteFormOutcome AmplifyUIBuilderClient::DeleteForm(const DeleteFormRequest& request) const {
@@ -336,7 +342,8 @@ DeleteFormOutcome AmplifyUIBuilderClient::DeleteForm(const DeleteFormRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteFormOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteFormOutcome(result.GetResultWithOwnership()) : DeleteFormOutcome(std::move(result.GetError()));
 }
 
 DeleteThemeOutcome AmplifyUIBuilderClient::DeleteTheme(const DeleteThemeRequest& request) const {
@@ -366,7 +373,8 @@ DeleteThemeOutcome AmplifyUIBuilderClient::DeleteTheme(const DeleteThemeRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteThemeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteThemeOutcome(result.GetResultWithOwnership()) : DeleteThemeOutcome(std::move(result.GetError()));
 }
 
 ExchangeCodeForTokenOutcome AmplifyUIBuilderClient::ExchangeCodeForToken(const ExchangeCodeForTokenRequest& request) const {
@@ -382,7 +390,9 @@ ExchangeCodeForTokenOutcome AmplifyUIBuilderClient::ExchangeCodeForToken(const E
     endpointResolutionOutcome.GetResult().AddPathSegment(TokenProvidersMapper::GetNameForTokenProviders(request.GetProvider()));
   };
 
-  return ExchangeCodeForTokenOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExchangeCodeForTokenOutcome(result.GetResultWithOwnership())
+                            : ExchangeCodeForTokenOutcome(std::move(result.GetError()));
 }
 
 ExportComponentsOutcome AmplifyUIBuilderClient::ExportComponents(const ExportComponentsRequest& request) const {
@@ -406,7 +416,9 @@ ExportComponentsOutcome AmplifyUIBuilderClient::ExportComponents(const ExportCom
     endpointResolutionOutcome.GetResult().AddPathSegments("/components");
   };
 
-  return ExportComponentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ExportComponentsOutcome(result.GetResultWithOwnership())
+                            : ExportComponentsOutcome(std::move(result.GetError()));
 }
 
 ExportFormsOutcome AmplifyUIBuilderClient::ExportForms(const ExportFormsRequest& request) const {
@@ -430,7 +442,8 @@ ExportFormsOutcome AmplifyUIBuilderClient::ExportForms(const ExportFormsRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/forms");
   };
 
-  return ExportFormsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ExportFormsOutcome(result.GetResultWithOwnership()) : ExportFormsOutcome(std::move(result.GetError()));
 }
 
 ExportThemesOutcome AmplifyUIBuilderClient::ExportThemes(const ExportThemesRequest& request) const {
@@ -454,7 +467,8 @@ ExportThemesOutcome AmplifyUIBuilderClient::ExportThemes(const ExportThemesReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/themes");
   };
 
-  return ExportThemesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ExportThemesOutcome(result.GetResultWithOwnership()) : ExportThemesOutcome(std::move(result.GetError()));
 }
 
 GetCodegenJobOutcome AmplifyUIBuilderClient::GetCodegenJob(const GetCodegenJobRequest& request) const {
@@ -484,7 +498,8 @@ GetCodegenJobOutcome AmplifyUIBuilderClient::GetCodegenJob(const GetCodegenJobRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetCodegenJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCodegenJobOutcome(result.GetResultWithOwnership()) : GetCodegenJobOutcome(std::move(result.GetError()));
 }
 
 GetComponentOutcome AmplifyUIBuilderClient::GetComponent(const GetComponentRequest& request) const {
@@ -514,7 +529,8 @@ GetComponentOutcome AmplifyUIBuilderClient::GetComponent(const GetComponentReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetComponentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetComponentOutcome(result.GetResultWithOwnership()) : GetComponentOutcome(std::move(result.GetError()));
 }
 
 GetFormOutcome AmplifyUIBuilderClient::GetForm(const GetFormRequest& request) const {
@@ -544,7 +560,8 @@ GetFormOutcome AmplifyUIBuilderClient::GetForm(const GetFormRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetFormOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFormOutcome(result.GetResultWithOwnership()) : GetFormOutcome(std::move(result.GetError()));
 }
 
 GetMetadataOutcome AmplifyUIBuilderClient::GetMetadata(const GetMetadataRequest& request) const {
@@ -568,7 +585,8 @@ GetMetadataOutcome AmplifyUIBuilderClient::GetMetadata(const GetMetadataRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/metadata");
   };
 
-  return GetMetadataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMetadataOutcome(result.GetResultWithOwnership()) : GetMetadataOutcome(std::move(result.GetError()));
 }
 
 GetThemeOutcome AmplifyUIBuilderClient::GetTheme(const GetThemeRequest& request) const {
@@ -598,7 +616,8 @@ GetThemeOutcome AmplifyUIBuilderClient::GetTheme(const GetThemeRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetThemeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetThemeOutcome(result.GetResultWithOwnership()) : GetThemeOutcome(std::move(result.GetError()));
 }
 
 ListCodegenJobsOutcome AmplifyUIBuilderClient::ListCodegenJobs(const ListCodegenJobsRequest& request) const {
@@ -622,7 +641,9 @@ ListCodegenJobsOutcome AmplifyUIBuilderClient::ListCodegenJobs(const ListCodegen
     endpointResolutionOutcome.GetResult().AddPathSegments("/codegen-jobs");
   };
 
-  return ListCodegenJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCodegenJobsOutcome(result.GetResultWithOwnership())
+                            : ListCodegenJobsOutcome(std::move(result.GetError()));
 }
 
 ListComponentsOutcome AmplifyUIBuilderClient::ListComponents(const ListComponentsRequest& request) const {
@@ -646,7 +667,8 @@ ListComponentsOutcome AmplifyUIBuilderClient::ListComponents(const ListComponent
     endpointResolutionOutcome.GetResult().AddPathSegments("/components");
   };
 
-  return ListComponentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListComponentsOutcome(result.GetResultWithOwnership()) : ListComponentsOutcome(std::move(result.GetError()));
 }
 
 ListFormsOutcome AmplifyUIBuilderClient::ListForms(const ListFormsRequest& request) const {
@@ -670,7 +692,8 @@ ListFormsOutcome AmplifyUIBuilderClient::ListForms(const ListFormsRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/forms");
   };
 
-  return ListFormsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListFormsOutcome(result.GetResultWithOwnership()) : ListFormsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome AmplifyUIBuilderClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -686,7 +709,9 @@ ListTagsForResourceOutcome AmplifyUIBuilderClient::ListTagsForResource(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListThemesOutcome AmplifyUIBuilderClient::ListThemes(const ListThemesRequest& request) const {
@@ -710,7 +735,8 @@ ListThemesOutcome AmplifyUIBuilderClient::ListThemes(const ListThemesRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/themes");
   };
 
-  return ListThemesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListThemesOutcome(result.GetResultWithOwnership()) : ListThemesOutcome(std::move(result.GetError()));
 }
 
 PutMetadataFlagOutcome AmplifyUIBuilderClient::PutMetadataFlag(const PutMetadataFlagRequest& request) const {
@@ -740,7 +766,9 @@ PutMetadataFlagOutcome AmplifyUIBuilderClient::PutMetadataFlag(const PutMetadata
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFeatureName());
   };
 
-  return PutMetadataFlagOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutMetadataFlagOutcome(result.GetResultWithOwnership())
+                            : PutMetadataFlagOutcome(std::move(result.GetError()));
 }
 
 RefreshTokenOutcome AmplifyUIBuilderClient::RefreshToken(const RefreshTokenRequest& request) const {
@@ -757,7 +785,8 @@ RefreshTokenOutcome AmplifyUIBuilderClient::RefreshToken(const RefreshTokenReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/refresh");
   };
 
-  return RefreshTokenOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RefreshTokenOutcome(result.GetResultWithOwnership()) : RefreshTokenOutcome(std::move(result.GetError()));
 }
 
 StartCodegenJobOutcome AmplifyUIBuilderClient::StartCodegenJob(const StartCodegenJobRequest& request) const {
@@ -781,7 +810,9 @@ StartCodegenJobOutcome AmplifyUIBuilderClient::StartCodegenJob(const StartCodege
     endpointResolutionOutcome.GetResult().AddPathSegments("/codegen-jobs");
   };
 
-  return StartCodegenJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartCodegenJobOutcome(result.GetResultWithOwnership())
+                            : StartCodegenJobOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome AmplifyUIBuilderClient::TagResource(const TagResourceRequest& request) const {
@@ -797,7 +828,8 @@ TagResourceOutcome AmplifyUIBuilderClient::TagResource(const TagResourceRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome AmplifyUIBuilderClient::UntagResource(const UntagResourceRequest& request) const {
@@ -818,7 +850,8 @@ UntagResourceOutcome AmplifyUIBuilderClient::UntagResource(const UntagResourceRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateComponentOutcome AmplifyUIBuilderClient::UpdateComponent(const UpdateComponentRequest& request) const {
@@ -848,7 +881,9 @@ UpdateComponentOutcome AmplifyUIBuilderClient::UpdateComponent(const UpdateCompo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateComponentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateComponentOutcome(result.GetResultWithOwnership())
+                            : UpdateComponentOutcome(std::move(result.GetError()));
 }
 
 UpdateFormOutcome AmplifyUIBuilderClient::UpdateForm(const UpdateFormRequest& request) const {
@@ -878,7 +913,8 @@ UpdateFormOutcome AmplifyUIBuilderClient::UpdateForm(const UpdateFormRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateFormOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateFormOutcome(result.GetResultWithOwnership()) : UpdateFormOutcome(std::move(result.GetError()));
 }
 
 UpdateThemeOutcome AmplifyUIBuilderClient::UpdateTheme(const UpdateThemeRequest& request) const {
@@ -908,5 +944,6 @@ UpdateThemeOutcome AmplifyUIBuilderClient::UpdateTheme(const UpdateThemeRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateThemeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateThemeOutcome(result.GetResultWithOwnership()) : UpdateThemeOutcome(std::move(result.GetError()));
 }

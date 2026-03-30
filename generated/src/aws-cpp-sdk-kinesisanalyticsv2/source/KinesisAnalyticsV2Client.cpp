@@ -211,148 +211,212 @@ KinesisAnalyticsV2Client::InvokeOperationOutcome KinesisAnalyticsV2Client::Invok
 
 AddApplicationCloudWatchLoggingOptionOutcome KinesisAnalyticsV2Client::AddApplicationCloudWatchLoggingOption(
     const AddApplicationCloudWatchLoggingOptionRequest& request) const {
-  return AddApplicationCloudWatchLoggingOptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddApplicationCloudWatchLoggingOptionOutcome(result.GetResultWithOwnership())
+                            : AddApplicationCloudWatchLoggingOptionOutcome(std::move(result.GetError()));
 }
 
 AddApplicationInputOutcome KinesisAnalyticsV2Client::AddApplicationInput(const AddApplicationInputRequest& request) const {
-  return AddApplicationInputOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddApplicationInputOutcome(result.GetResultWithOwnership())
+                            : AddApplicationInputOutcome(std::move(result.GetError()));
 }
 
 AddApplicationInputProcessingConfigurationOutcome KinesisAnalyticsV2Client::AddApplicationInputProcessingConfiguration(
     const AddApplicationInputProcessingConfigurationRequest& request) const {
-  return AddApplicationInputProcessingConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddApplicationInputProcessingConfigurationOutcome(result.GetResultWithOwnership())
+                            : AddApplicationInputProcessingConfigurationOutcome(std::move(result.GetError()));
 }
 
 AddApplicationOutputOutcome KinesisAnalyticsV2Client::AddApplicationOutput(const AddApplicationOutputRequest& request) const {
-  return AddApplicationOutputOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddApplicationOutputOutcome(result.GetResultWithOwnership())
+                            : AddApplicationOutputOutcome(std::move(result.GetError()));
 }
 
 AddApplicationReferenceDataSourceOutcome KinesisAnalyticsV2Client::AddApplicationReferenceDataSource(
     const AddApplicationReferenceDataSourceRequest& request) const {
-  return AddApplicationReferenceDataSourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddApplicationReferenceDataSourceOutcome(result.GetResultWithOwnership())
+                            : AddApplicationReferenceDataSourceOutcome(std::move(result.GetError()));
 }
 
 AddApplicationVpcConfigurationOutcome KinesisAnalyticsV2Client::AddApplicationVpcConfiguration(
     const AddApplicationVpcConfigurationRequest& request) const {
-  return AddApplicationVpcConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddApplicationVpcConfigurationOutcome(result.GetResultWithOwnership())
+                            : AddApplicationVpcConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateApplicationOutcome KinesisAnalyticsV2Client::CreateApplication(const CreateApplicationRequest& request) const {
-  return CreateApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateApplicationOutcome(result.GetResultWithOwnership())
+                            : CreateApplicationOutcome(std::move(result.GetError()));
 }
 
 CreateApplicationPresignedUrlOutcome KinesisAnalyticsV2Client::CreateApplicationPresignedUrl(
     const CreateApplicationPresignedUrlRequest& request) const {
-  return CreateApplicationPresignedUrlOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateApplicationPresignedUrlOutcome(result.GetResultWithOwnership())
+                            : CreateApplicationPresignedUrlOutcome(std::move(result.GetError()));
 }
 
 CreateApplicationSnapshotOutcome KinesisAnalyticsV2Client::CreateApplicationSnapshot(
     const CreateApplicationSnapshotRequest& request) const {
-  return CreateApplicationSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateApplicationSnapshotOutcome(result.GetResultWithOwnership())
+                            : CreateApplicationSnapshotOutcome(std::move(result.GetError()));
 }
 
 DeleteApplicationOutcome KinesisAnalyticsV2Client::DeleteApplication(const DeleteApplicationRequest& request) const {
-  return DeleteApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteApplicationOutcome(result.GetResultWithOwnership())
+                            : DeleteApplicationOutcome(std::move(result.GetError()));
 }
 
 DeleteApplicationCloudWatchLoggingOptionOutcome KinesisAnalyticsV2Client::DeleteApplicationCloudWatchLoggingOption(
     const DeleteApplicationCloudWatchLoggingOptionRequest& request) const {
-  return DeleteApplicationCloudWatchLoggingOptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteApplicationCloudWatchLoggingOptionOutcome(result.GetResultWithOwnership())
+                            : DeleteApplicationCloudWatchLoggingOptionOutcome(std::move(result.GetError()));
 }
 
 DeleteApplicationInputProcessingConfigurationOutcome KinesisAnalyticsV2Client::DeleteApplicationInputProcessingConfiguration(
     const DeleteApplicationInputProcessingConfigurationRequest& request) const {
-  return DeleteApplicationInputProcessingConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteApplicationInputProcessingConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteApplicationInputProcessingConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteApplicationOutputOutcome KinesisAnalyticsV2Client::DeleteApplicationOutput(const DeleteApplicationOutputRequest& request) const {
-  return DeleteApplicationOutputOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteApplicationOutputOutcome(result.GetResultWithOwnership())
+                            : DeleteApplicationOutputOutcome(std::move(result.GetError()));
 }
 
 DeleteApplicationReferenceDataSourceOutcome KinesisAnalyticsV2Client::DeleteApplicationReferenceDataSource(
     const DeleteApplicationReferenceDataSourceRequest& request) const {
-  return DeleteApplicationReferenceDataSourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteApplicationReferenceDataSourceOutcome(result.GetResultWithOwnership())
+                            : DeleteApplicationReferenceDataSourceOutcome(std::move(result.GetError()));
 }
 
 DeleteApplicationSnapshotOutcome KinesisAnalyticsV2Client::DeleteApplicationSnapshot(
     const DeleteApplicationSnapshotRequest& request) const {
-  return DeleteApplicationSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteApplicationSnapshotOutcome(result.GetResultWithOwnership())
+                            : DeleteApplicationSnapshotOutcome(std::move(result.GetError()));
 }
 
 DeleteApplicationVpcConfigurationOutcome KinesisAnalyticsV2Client::DeleteApplicationVpcConfiguration(
     const DeleteApplicationVpcConfigurationRequest& request) const {
-  return DeleteApplicationVpcConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteApplicationVpcConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteApplicationVpcConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeApplicationOutcome KinesisAnalyticsV2Client::DescribeApplication(const DescribeApplicationRequest& request) const {
-  return DescribeApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeApplicationOutcome(result.GetResultWithOwnership())
+                            : DescribeApplicationOutcome(std::move(result.GetError()));
 }
 
 DescribeApplicationOperationOutcome KinesisAnalyticsV2Client::DescribeApplicationOperation(
     const DescribeApplicationOperationRequest& request) const {
-  return DescribeApplicationOperationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeApplicationOperationOutcome(result.GetResultWithOwnership())
+                            : DescribeApplicationOperationOutcome(std::move(result.GetError()));
 }
 
 DescribeApplicationSnapshotOutcome KinesisAnalyticsV2Client::DescribeApplicationSnapshot(
     const DescribeApplicationSnapshotRequest& request) const {
-  return DescribeApplicationSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeApplicationSnapshotOutcome(result.GetResultWithOwnership())
+                            : DescribeApplicationSnapshotOutcome(std::move(result.GetError()));
 }
 
 DescribeApplicationVersionOutcome KinesisAnalyticsV2Client::DescribeApplicationVersion(
     const DescribeApplicationVersionRequest& request) const {
-  return DescribeApplicationVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeApplicationVersionOutcome(result.GetResultWithOwnership())
+                            : DescribeApplicationVersionOutcome(std::move(result.GetError()));
 }
 
 DiscoverInputSchemaOutcome KinesisAnalyticsV2Client::DiscoverInputSchema(const DiscoverInputSchemaRequest& request) const {
-  return DiscoverInputSchemaOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DiscoverInputSchemaOutcome(result.GetResultWithOwnership())
+                            : DiscoverInputSchemaOutcome(std::move(result.GetError()));
 }
 
 ListApplicationOperationsOutcome KinesisAnalyticsV2Client::ListApplicationOperations(
     const ListApplicationOperationsRequest& request) const {
-  return ListApplicationOperationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListApplicationOperationsOutcome(result.GetResultWithOwnership())
+                            : ListApplicationOperationsOutcome(std::move(result.GetError()));
 }
 
 ListApplicationSnapshotsOutcome KinesisAnalyticsV2Client::ListApplicationSnapshots(const ListApplicationSnapshotsRequest& request) const {
-  return ListApplicationSnapshotsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListApplicationSnapshotsOutcome(result.GetResultWithOwnership())
+                            : ListApplicationSnapshotsOutcome(std::move(result.GetError()));
 }
 
 ListApplicationVersionsOutcome KinesisAnalyticsV2Client::ListApplicationVersions(const ListApplicationVersionsRequest& request) const {
-  return ListApplicationVersionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListApplicationVersionsOutcome(result.GetResultWithOwnership())
+                            : ListApplicationVersionsOutcome(std::move(result.GetError()));
 }
 
 ListApplicationsOutcome KinesisAnalyticsV2Client::ListApplications(const ListApplicationsRequest& request) const {
-  return ListApplicationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListApplicationsOutcome(result.GetResultWithOwnership())
+                            : ListApplicationsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome KinesisAnalyticsV2Client::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 RollbackApplicationOutcome KinesisAnalyticsV2Client::RollbackApplication(const RollbackApplicationRequest& request) const {
-  return RollbackApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RollbackApplicationOutcome(result.GetResultWithOwnership())
+                            : RollbackApplicationOutcome(std::move(result.GetError()));
 }
 
 StartApplicationOutcome KinesisAnalyticsV2Client::StartApplication(const StartApplicationRequest& request) const {
-  return StartApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartApplicationOutcome(result.GetResultWithOwnership())
+                            : StartApplicationOutcome(std::move(result.GetError()));
 }
 
 StopApplicationOutcome KinesisAnalyticsV2Client::StopApplication(const StopApplicationRequest& request) const {
-  return StopApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopApplicationOutcome(result.GetResultWithOwnership())
+                            : StopApplicationOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome KinesisAnalyticsV2Client::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome KinesisAnalyticsV2Client::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateApplicationOutcome KinesisAnalyticsV2Client::UpdateApplication(const UpdateApplicationRequest& request) const {
-  return UpdateApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateApplicationOutcome(result.GetResultWithOwnership())
+                            : UpdateApplicationOutcome(std::move(result.GetError()));
 }
 
 UpdateApplicationMaintenanceConfigurationOutcome KinesisAnalyticsV2Client::UpdateApplicationMaintenanceConfiguration(
     const UpdateApplicationMaintenanceConfigurationRequest& request) const {
-  return UpdateApplicationMaintenanceConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateApplicationMaintenanceConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateApplicationMaintenanceConfigurationOutcome(std::move(result.GetError()));
 }

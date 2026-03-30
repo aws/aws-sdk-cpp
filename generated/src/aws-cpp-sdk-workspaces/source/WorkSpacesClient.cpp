@@ -263,386 +263,559 @@ WorkSpacesClient::InvokeOperationOutcome WorkSpacesClient::InvokeServiceOperatio
 }
 
 AcceptAccountLinkInvitationOutcome WorkSpacesClient::AcceptAccountLinkInvitation(const AcceptAccountLinkInvitationRequest& request) const {
-  return AcceptAccountLinkInvitationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptAccountLinkInvitationOutcome(result.GetResultWithOwnership())
+                            : AcceptAccountLinkInvitationOutcome(std::move(result.GetError()));
 }
 
 AssociateConnectionAliasOutcome WorkSpacesClient::AssociateConnectionAlias(const AssociateConnectionAliasRequest& request) const {
-  return AssociateConnectionAliasOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateConnectionAliasOutcome(result.GetResultWithOwnership())
+                            : AssociateConnectionAliasOutcome(std::move(result.GetError()));
 }
 
 AssociateIpGroupsOutcome WorkSpacesClient::AssociateIpGroups(const AssociateIpGroupsRequest& request) const {
-  return AssociateIpGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateIpGroupsOutcome(result.GetResultWithOwnership())
+                            : AssociateIpGroupsOutcome(std::move(result.GetError()));
 }
 
 AssociateWorkspaceApplicationOutcome WorkSpacesClient::AssociateWorkspaceApplication(
     const AssociateWorkspaceApplicationRequest& request) const {
-  return AssociateWorkspaceApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateWorkspaceApplicationOutcome(result.GetResultWithOwnership())
+                            : AssociateWorkspaceApplicationOutcome(std::move(result.GetError()));
 }
 
 AuthorizeIpRulesOutcome WorkSpacesClient::AuthorizeIpRules(const AuthorizeIpRulesRequest& request) const {
-  return AuthorizeIpRulesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AuthorizeIpRulesOutcome(result.GetResultWithOwnership())
+                            : AuthorizeIpRulesOutcome(std::move(result.GetError()));
 }
 
 CopyWorkspaceImageOutcome WorkSpacesClient::CopyWorkspaceImage(const CopyWorkspaceImageRequest& request) const {
-  return CopyWorkspaceImageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CopyWorkspaceImageOutcome(result.GetResultWithOwnership())
+                            : CopyWorkspaceImageOutcome(std::move(result.GetError()));
 }
 
 CreateAccountLinkInvitationOutcome WorkSpacesClient::CreateAccountLinkInvitation(const CreateAccountLinkInvitationRequest& request) const {
-  return CreateAccountLinkInvitationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAccountLinkInvitationOutcome(result.GetResultWithOwnership())
+                            : CreateAccountLinkInvitationOutcome(std::move(result.GetError()));
 }
 
 CreateConnectClientAddInOutcome WorkSpacesClient::CreateConnectClientAddIn(const CreateConnectClientAddInRequest& request) const {
-  return CreateConnectClientAddInOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConnectClientAddInOutcome(result.GetResultWithOwnership())
+                            : CreateConnectClientAddInOutcome(std::move(result.GetError()));
 }
 
 CreateConnectionAliasOutcome WorkSpacesClient::CreateConnectionAlias(const CreateConnectionAliasRequest& request) const {
-  return CreateConnectionAliasOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConnectionAliasOutcome(result.GetResultWithOwnership())
+                            : CreateConnectionAliasOutcome(std::move(result.GetError()));
 }
 
 CreateIpGroupOutcome WorkSpacesClient::CreateIpGroup(const CreateIpGroupRequest& request) const {
-  return CreateIpGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIpGroupOutcome(result.GetResultWithOwnership()) : CreateIpGroupOutcome(std::move(result.GetError()));
 }
 
 CreateStandbyWorkspacesOutcome WorkSpacesClient::CreateStandbyWorkspaces(const CreateStandbyWorkspacesRequest& request) const {
-  return CreateStandbyWorkspacesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateStandbyWorkspacesOutcome(result.GetResultWithOwnership())
+                            : CreateStandbyWorkspacesOutcome(std::move(result.GetError()));
 }
 
 CreateTagsOutcome WorkSpacesClient::CreateTags(const CreateTagsRequest& request) const {
-  return CreateTagsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTagsOutcome(result.GetResultWithOwnership()) : CreateTagsOutcome(std::move(result.GetError()));
 }
 
 CreateUpdatedWorkspaceImageOutcome WorkSpacesClient::CreateUpdatedWorkspaceImage(const CreateUpdatedWorkspaceImageRequest& request) const {
-  return CreateUpdatedWorkspaceImageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateUpdatedWorkspaceImageOutcome(result.GetResultWithOwnership())
+                            : CreateUpdatedWorkspaceImageOutcome(std::move(result.GetError()));
 }
 
 CreateWorkspaceBundleOutcome WorkSpacesClient::CreateWorkspaceBundle(const CreateWorkspaceBundleRequest& request) const {
-  return CreateWorkspaceBundleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWorkspaceBundleOutcome(result.GetResultWithOwnership())
+                            : CreateWorkspaceBundleOutcome(std::move(result.GetError()));
 }
 
 CreateWorkspaceImageOutcome WorkSpacesClient::CreateWorkspaceImage(const CreateWorkspaceImageRequest& request) const {
-  return CreateWorkspaceImageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWorkspaceImageOutcome(result.GetResultWithOwnership())
+                            : CreateWorkspaceImageOutcome(std::move(result.GetError()));
 }
 
 CreateWorkspacesOutcome WorkSpacesClient::CreateWorkspaces(const CreateWorkspacesRequest& request) const {
-  return CreateWorkspacesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWorkspacesOutcome(result.GetResultWithOwnership())
+                            : CreateWorkspacesOutcome(std::move(result.GetError()));
 }
 
 CreateWorkspacesPoolOutcome WorkSpacesClient::CreateWorkspacesPool(const CreateWorkspacesPoolRequest& request) const {
-  return CreateWorkspacesPoolOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWorkspacesPoolOutcome(result.GetResultWithOwnership())
+                            : CreateWorkspacesPoolOutcome(std::move(result.GetError()));
 }
 
 DeleteAccountLinkInvitationOutcome WorkSpacesClient::DeleteAccountLinkInvitation(const DeleteAccountLinkInvitationRequest& request) const {
-  return DeleteAccountLinkInvitationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAccountLinkInvitationOutcome(result.GetResultWithOwnership())
+                            : DeleteAccountLinkInvitationOutcome(std::move(result.GetError()));
 }
 
 DeleteClientBrandingOutcome WorkSpacesClient::DeleteClientBranding(const DeleteClientBrandingRequest& request) const {
-  return DeleteClientBrandingOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteClientBrandingOutcome(result.GetResultWithOwnership())
+                            : DeleteClientBrandingOutcome(std::move(result.GetError()));
 }
 
 DeleteConnectClientAddInOutcome WorkSpacesClient::DeleteConnectClientAddIn(const DeleteConnectClientAddInRequest& request) const {
-  return DeleteConnectClientAddInOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteConnectClientAddInOutcome(result.GetResultWithOwnership())
+                            : DeleteConnectClientAddInOutcome(std::move(result.GetError()));
 }
 
 DeleteConnectionAliasOutcome WorkSpacesClient::DeleteConnectionAlias(const DeleteConnectionAliasRequest& request) const {
-  return DeleteConnectionAliasOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteConnectionAliasOutcome(result.GetResultWithOwnership())
+                            : DeleteConnectionAliasOutcome(std::move(result.GetError()));
 }
 
 DeleteIpGroupOutcome WorkSpacesClient::DeleteIpGroup(const DeleteIpGroupRequest& request) const {
-  return DeleteIpGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteIpGroupOutcome(result.GetResultWithOwnership()) : DeleteIpGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteTagsOutcome WorkSpacesClient::DeleteTags(const DeleteTagsRequest& request) const {
-  return DeleteTagsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTagsOutcome(result.GetResultWithOwnership()) : DeleteTagsOutcome(std::move(result.GetError()));
 }
 
 DeleteWorkspaceBundleOutcome WorkSpacesClient::DeleteWorkspaceBundle(const DeleteWorkspaceBundleRequest& request) const {
-  return DeleteWorkspaceBundleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteWorkspaceBundleOutcome(result.GetResultWithOwnership())
+                            : DeleteWorkspaceBundleOutcome(std::move(result.GetError()));
 }
 
 DeleteWorkspaceImageOutcome WorkSpacesClient::DeleteWorkspaceImage(const DeleteWorkspaceImageRequest& request) const {
-  return DeleteWorkspaceImageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteWorkspaceImageOutcome(result.GetResultWithOwnership())
+                            : DeleteWorkspaceImageOutcome(std::move(result.GetError()));
 }
 
 DeployWorkspaceApplicationsOutcome WorkSpacesClient::DeployWorkspaceApplications(const DeployWorkspaceApplicationsRequest& request) const {
-  return DeployWorkspaceApplicationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeployWorkspaceApplicationsOutcome(result.GetResultWithOwnership())
+                            : DeployWorkspaceApplicationsOutcome(std::move(result.GetError()));
 }
 
 DeregisterWorkspaceDirectoryOutcome WorkSpacesClient::DeregisterWorkspaceDirectory(
     const DeregisterWorkspaceDirectoryRequest& request) const {
-  return DeregisterWorkspaceDirectoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterWorkspaceDirectoryOutcome(result.GetResultWithOwnership())
+                            : DeregisterWorkspaceDirectoryOutcome(std::move(result.GetError()));
 }
 
 DescribeAccountOutcome WorkSpacesClient::DescribeAccount(const DescribeAccountRequest& request) const {
-  return DescribeAccountOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAccountOutcome(result.GetResultWithOwnership())
+                            : DescribeAccountOutcome(std::move(result.GetError()));
 }
 
 DescribeAccountModificationsOutcome WorkSpacesClient::DescribeAccountModifications(
     const DescribeAccountModificationsRequest& request) const {
-  return DescribeAccountModificationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAccountModificationsOutcome(result.GetResultWithOwnership())
+                            : DescribeAccountModificationsOutcome(std::move(result.GetError()));
 }
 
 DescribeApplicationAssociationsOutcome WorkSpacesClient::DescribeApplicationAssociations(
     const DescribeApplicationAssociationsRequest& request) const {
-  return DescribeApplicationAssociationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeApplicationAssociationsOutcome(result.GetResultWithOwnership())
+                            : DescribeApplicationAssociationsOutcome(std::move(result.GetError()));
 }
 
 DescribeApplicationsOutcome WorkSpacesClient::DescribeApplications(const DescribeApplicationsRequest& request) const {
-  return DescribeApplicationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeApplicationsOutcome(result.GetResultWithOwnership())
+                            : DescribeApplicationsOutcome(std::move(result.GetError()));
 }
 
 DescribeBundleAssociationsOutcome WorkSpacesClient::DescribeBundleAssociations(const DescribeBundleAssociationsRequest& request) const {
-  return DescribeBundleAssociationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeBundleAssociationsOutcome(result.GetResultWithOwnership())
+                            : DescribeBundleAssociationsOutcome(std::move(result.GetError()));
 }
 
 DescribeClientBrandingOutcome WorkSpacesClient::DescribeClientBranding(const DescribeClientBrandingRequest& request) const {
-  return DescribeClientBrandingOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeClientBrandingOutcome(result.GetResultWithOwnership())
+                            : DescribeClientBrandingOutcome(std::move(result.GetError()));
 }
 
 DescribeClientPropertiesOutcome WorkSpacesClient::DescribeClientProperties(const DescribeClientPropertiesRequest& request) const {
-  return DescribeClientPropertiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeClientPropertiesOutcome(result.GetResultWithOwnership())
+                            : DescribeClientPropertiesOutcome(std::move(result.GetError()));
 }
 
 DescribeConnectClientAddInsOutcome WorkSpacesClient::DescribeConnectClientAddIns(const DescribeConnectClientAddInsRequest& request) const {
-  return DescribeConnectClientAddInsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeConnectClientAddInsOutcome(result.GetResultWithOwnership())
+                            : DescribeConnectClientAddInsOutcome(std::move(result.GetError()));
 }
 
 DescribeConnectionAliasPermissionsOutcome WorkSpacesClient::DescribeConnectionAliasPermissions(
     const DescribeConnectionAliasPermissionsRequest& request) const {
-  return DescribeConnectionAliasPermissionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeConnectionAliasPermissionsOutcome(result.GetResultWithOwnership())
+                            : DescribeConnectionAliasPermissionsOutcome(std::move(result.GetError()));
 }
 
 DescribeConnectionAliasesOutcome WorkSpacesClient::DescribeConnectionAliases(const DescribeConnectionAliasesRequest& request) const {
-  return DescribeConnectionAliasesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeConnectionAliasesOutcome(result.GetResultWithOwnership())
+                            : DescribeConnectionAliasesOutcome(std::move(result.GetError()));
 }
 
 DescribeCustomWorkspaceImageImportOutcome WorkSpacesClient::DescribeCustomWorkspaceImageImport(
     const DescribeCustomWorkspaceImageImportRequest& request) const {
-  return DescribeCustomWorkspaceImageImportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCustomWorkspaceImageImportOutcome(result.GetResultWithOwnership())
+                            : DescribeCustomWorkspaceImageImportOutcome(std::move(result.GetError()));
 }
 
 DescribeImageAssociationsOutcome WorkSpacesClient::DescribeImageAssociations(const DescribeImageAssociationsRequest& request) const {
-  return DescribeImageAssociationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeImageAssociationsOutcome(result.GetResultWithOwnership())
+                            : DescribeImageAssociationsOutcome(std::move(result.GetError()));
 }
 
 DescribeIpGroupsOutcome WorkSpacesClient::DescribeIpGroups(const DescribeIpGroupsRequest& request) const {
-  return DescribeIpGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeIpGroupsOutcome(result.GetResultWithOwnership())
+                            : DescribeIpGroupsOutcome(std::move(result.GetError()));
 }
 
 DescribeTagsOutcome WorkSpacesClient::DescribeTags(const DescribeTagsRequest& request) const {
-  return DescribeTagsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTagsOutcome(result.GetResultWithOwnership()) : DescribeTagsOutcome(std::move(result.GetError()));
 }
 
 DescribeWorkspaceAssociationsOutcome WorkSpacesClient::DescribeWorkspaceAssociations(
     const DescribeWorkspaceAssociationsRequest& request) const {
-  return DescribeWorkspaceAssociationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeWorkspaceAssociationsOutcome(result.GetResultWithOwnership())
+                            : DescribeWorkspaceAssociationsOutcome(std::move(result.GetError()));
 }
 
 DescribeWorkspaceBundlesOutcome WorkSpacesClient::DescribeWorkspaceBundles(const DescribeWorkspaceBundlesRequest& request) const {
-  return DescribeWorkspaceBundlesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeWorkspaceBundlesOutcome(result.GetResultWithOwnership())
+                            : DescribeWorkspaceBundlesOutcome(std::move(result.GetError()));
 }
 
 DescribeWorkspaceDirectoriesOutcome WorkSpacesClient::DescribeWorkspaceDirectories(
     const DescribeWorkspaceDirectoriesRequest& request) const {
-  return DescribeWorkspaceDirectoriesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeWorkspaceDirectoriesOutcome(result.GetResultWithOwnership())
+                            : DescribeWorkspaceDirectoriesOutcome(std::move(result.GetError()));
 }
 
 DescribeWorkspaceImagePermissionsOutcome WorkSpacesClient::DescribeWorkspaceImagePermissions(
     const DescribeWorkspaceImagePermissionsRequest& request) const {
-  return DescribeWorkspaceImagePermissionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeWorkspaceImagePermissionsOutcome(result.GetResultWithOwnership())
+                            : DescribeWorkspaceImagePermissionsOutcome(std::move(result.GetError()));
 }
 
 DescribeWorkspaceImagesOutcome WorkSpacesClient::DescribeWorkspaceImages(const DescribeWorkspaceImagesRequest& request) const {
-  return DescribeWorkspaceImagesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeWorkspaceImagesOutcome(result.GetResultWithOwnership())
+                            : DescribeWorkspaceImagesOutcome(std::move(result.GetError()));
 }
 
 DescribeWorkspaceSnapshotsOutcome WorkSpacesClient::DescribeWorkspaceSnapshots(const DescribeWorkspaceSnapshotsRequest& request) const {
-  return DescribeWorkspaceSnapshotsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeWorkspaceSnapshotsOutcome(result.GetResultWithOwnership())
+                            : DescribeWorkspaceSnapshotsOutcome(std::move(result.GetError()));
 }
 
 DescribeWorkspacesOutcome WorkSpacesClient::DescribeWorkspaces(const DescribeWorkspacesRequest& request) const {
-  return DescribeWorkspacesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeWorkspacesOutcome(result.GetResultWithOwnership())
+                            : DescribeWorkspacesOutcome(std::move(result.GetError()));
 }
 
 DescribeWorkspacesConnectionStatusOutcome WorkSpacesClient::DescribeWorkspacesConnectionStatus(
     const DescribeWorkspacesConnectionStatusRequest& request) const {
-  return DescribeWorkspacesConnectionStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeWorkspacesConnectionStatusOutcome(result.GetResultWithOwnership())
+                            : DescribeWorkspacesConnectionStatusOutcome(std::move(result.GetError()));
 }
 
 DescribeWorkspacesPoolSessionsOutcome WorkSpacesClient::DescribeWorkspacesPoolSessions(
     const DescribeWorkspacesPoolSessionsRequest& request) const {
-  return DescribeWorkspacesPoolSessionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeWorkspacesPoolSessionsOutcome(result.GetResultWithOwnership())
+                            : DescribeWorkspacesPoolSessionsOutcome(std::move(result.GetError()));
 }
 
 DescribeWorkspacesPoolsOutcome WorkSpacesClient::DescribeWorkspacesPools(const DescribeWorkspacesPoolsRequest& request) const {
-  return DescribeWorkspacesPoolsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeWorkspacesPoolsOutcome(result.GetResultWithOwnership())
+                            : DescribeWorkspacesPoolsOutcome(std::move(result.GetError()));
 }
 
 DisassociateConnectionAliasOutcome WorkSpacesClient::DisassociateConnectionAlias(const DisassociateConnectionAliasRequest& request) const {
-  return DisassociateConnectionAliasOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateConnectionAliasOutcome(result.GetResultWithOwnership())
+                            : DisassociateConnectionAliasOutcome(std::move(result.GetError()));
 }
 
 DisassociateIpGroupsOutcome WorkSpacesClient::DisassociateIpGroups(const DisassociateIpGroupsRequest& request) const {
-  return DisassociateIpGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateIpGroupsOutcome(result.GetResultWithOwnership())
+                            : DisassociateIpGroupsOutcome(std::move(result.GetError()));
 }
 
 DisassociateWorkspaceApplicationOutcome WorkSpacesClient::DisassociateWorkspaceApplication(
     const DisassociateWorkspaceApplicationRequest& request) const {
-  return DisassociateWorkspaceApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateWorkspaceApplicationOutcome(result.GetResultWithOwnership())
+                            : DisassociateWorkspaceApplicationOutcome(std::move(result.GetError()));
 }
 
 GetAccountLinkOutcome WorkSpacesClient::GetAccountLink(const GetAccountLinkRequest& request) const {
-  return GetAccountLinkOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAccountLinkOutcome(result.GetResultWithOwnership()) : GetAccountLinkOutcome(std::move(result.GetError()));
 }
 
 ImportClientBrandingOutcome WorkSpacesClient::ImportClientBranding(const ImportClientBrandingRequest& request) const {
-  return ImportClientBrandingOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportClientBrandingOutcome(result.GetResultWithOwnership())
+                            : ImportClientBrandingOutcome(std::move(result.GetError()));
 }
 
 ImportCustomWorkspaceImageOutcome WorkSpacesClient::ImportCustomWorkspaceImage(const ImportCustomWorkspaceImageRequest& request) const {
-  return ImportCustomWorkspaceImageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportCustomWorkspaceImageOutcome(result.GetResultWithOwnership())
+                            : ImportCustomWorkspaceImageOutcome(std::move(result.GetError()));
 }
 
 ImportWorkspaceImageOutcome WorkSpacesClient::ImportWorkspaceImage(const ImportWorkspaceImageRequest& request) const {
-  return ImportWorkspaceImageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportWorkspaceImageOutcome(result.GetResultWithOwnership())
+                            : ImportWorkspaceImageOutcome(std::move(result.GetError()));
 }
 
 ListAccountLinksOutcome WorkSpacesClient::ListAccountLinks(const ListAccountLinksRequest& request) const {
-  return ListAccountLinksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAccountLinksOutcome(result.GetResultWithOwnership())
+                            : ListAccountLinksOutcome(std::move(result.GetError()));
 }
 
 ListAvailableManagementCidrRangesOutcome WorkSpacesClient::ListAvailableManagementCidrRanges(
     const ListAvailableManagementCidrRangesRequest& request) const {
-  return ListAvailableManagementCidrRangesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAvailableManagementCidrRangesOutcome(result.GetResultWithOwnership())
+                            : ListAvailableManagementCidrRangesOutcome(std::move(result.GetError()));
 }
 
 MigrateWorkspaceOutcome WorkSpacesClient::MigrateWorkspace(const MigrateWorkspaceRequest& request) const {
-  return MigrateWorkspaceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? MigrateWorkspaceOutcome(result.GetResultWithOwnership())
+                            : MigrateWorkspaceOutcome(std::move(result.GetError()));
 }
 
 ModifyAccountOutcome WorkSpacesClient::ModifyAccount(const ModifyAccountRequest& request) const {
-  return ModifyAccountOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyAccountOutcome(result.GetResultWithOwnership()) : ModifyAccountOutcome(std::move(result.GetError()));
 }
 
 ModifyCertificateBasedAuthPropertiesOutcome WorkSpacesClient::ModifyCertificateBasedAuthProperties(
     const ModifyCertificateBasedAuthPropertiesRequest& request) const {
-  return ModifyCertificateBasedAuthPropertiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyCertificateBasedAuthPropertiesOutcome(result.GetResultWithOwnership())
+                            : ModifyCertificateBasedAuthPropertiesOutcome(std::move(result.GetError()));
 }
 
 ModifyClientPropertiesOutcome WorkSpacesClient::ModifyClientProperties(const ModifyClientPropertiesRequest& request) const {
-  return ModifyClientPropertiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyClientPropertiesOutcome(result.GetResultWithOwnership())
+                            : ModifyClientPropertiesOutcome(std::move(result.GetError()));
 }
 
 ModifyEndpointEncryptionModeOutcome WorkSpacesClient::ModifyEndpointEncryptionMode(
     const ModifyEndpointEncryptionModeRequest& request) const {
-  return ModifyEndpointEncryptionModeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyEndpointEncryptionModeOutcome(result.GetResultWithOwnership())
+                            : ModifyEndpointEncryptionModeOutcome(std::move(result.GetError()));
 }
 
 ModifySamlPropertiesOutcome WorkSpacesClient::ModifySamlProperties(const ModifySamlPropertiesRequest& request) const {
-  return ModifySamlPropertiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifySamlPropertiesOutcome(result.GetResultWithOwnership())
+                            : ModifySamlPropertiesOutcome(std::move(result.GetError()));
 }
 
 ModifySelfservicePermissionsOutcome WorkSpacesClient::ModifySelfservicePermissions(
     const ModifySelfservicePermissionsRequest& request) const {
-  return ModifySelfservicePermissionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifySelfservicePermissionsOutcome(result.GetResultWithOwnership())
+                            : ModifySelfservicePermissionsOutcome(std::move(result.GetError()));
 }
 
 ModifyStreamingPropertiesOutcome WorkSpacesClient::ModifyStreamingProperties(const ModifyStreamingPropertiesRequest& request) const {
-  return ModifyStreamingPropertiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyStreamingPropertiesOutcome(result.GetResultWithOwnership())
+                            : ModifyStreamingPropertiesOutcome(std::move(result.GetError()));
 }
 
 ModifyWorkspaceAccessPropertiesOutcome WorkSpacesClient::ModifyWorkspaceAccessProperties(
     const ModifyWorkspaceAccessPropertiesRequest& request) const {
-  return ModifyWorkspaceAccessPropertiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyWorkspaceAccessPropertiesOutcome(result.GetResultWithOwnership())
+                            : ModifyWorkspaceAccessPropertiesOutcome(std::move(result.GetError()));
 }
 
 ModifyWorkspaceCreationPropertiesOutcome WorkSpacesClient::ModifyWorkspaceCreationProperties(
     const ModifyWorkspaceCreationPropertiesRequest& request) const {
-  return ModifyWorkspaceCreationPropertiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyWorkspaceCreationPropertiesOutcome(result.GetResultWithOwnership())
+                            : ModifyWorkspaceCreationPropertiesOutcome(std::move(result.GetError()));
 }
 
 ModifyWorkspacePropertiesOutcome WorkSpacesClient::ModifyWorkspaceProperties(const ModifyWorkspacePropertiesRequest& request) const {
-  return ModifyWorkspacePropertiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyWorkspacePropertiesOutcome(result.GetResultWithOwnership())
+                            : ModifyWorkspacePropertiesOutcome(std::move(result.GetError()));
 }
 
 ModifyWorkspaceStateOutcome WorkSpacesClient::ModifyWorkspaceState(const ModifyWorkspaceStateRequest& request) const {
-  return ModifyWorkspaceStateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyWorkspaceStateOutcome(result.GetResultWithOwnership())
+                            : ModifyWorkspaceStateOutcome(std::move(result.GetError()));
 }
 
 RebootWorkspacesOutcome WorkSpacesClient::RebootWorkspaces(const RebootWorkspacesRequest& request) const {
-  return RebootWorkspacesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RebootWorkspacesOutcome(result.GetResultWithOwnership())
+                            : RebootWorkspacesOutcome(std::move(result.GetError()));
 }
 
 RebuildWorkspacesOutcome WorkSpacesClient::RebuildWorkspaces(const RebuildWorkspacesRequest& request) const {
-  return RebuildWorkspacesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RebuildWorkspacesOutcome(result.GetResultWithOwnership())
+                            : RebuildWorkspacesOutcome(std::move(result.GetError()));
 }
 
 RegisterWorkspaceDirectoryOutcome WorkSpacesClient::RegisterWorkspaceDirectory(const RegisterWorkspaceDirectoryRequest& request) const {
-  return RegisterWorkspaceDirectoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterWorkspaceDirectoryOutcome(result.GetResultWithOwnership())
+                            : RegisterWorkspaceDirectoryOutcome(std::move(result.GetError()));
 }
 
 RejectAccountLinkInvitationOutcome WorkSpacesClient::RejectAccountLinkInvitation(const RejectAccountLinkInvitationRequest& request) const {
-  return RejectAccountLinkInvitationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RejectAccountLinkInvitationOutcome(result.GetResultWithOwnership())
+                            : RejectAccountLinkInvitationOutcome(std::move(result.GetError()));
 }
 
 RestoreWorkspaceOutcome WorkSpacesClient::RestoreWorkspace(const RestoreWorkspaceRequest& request) const {
-  return RestoreWorkspaceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RestoreWorkspaceOutcome(result.GetResultWithOwnership())
+                            : RestoreWorkspaceOutcome(std::move(result.GetError()));
 }
 
 RevokeIpRulesOutcome WorkSpacesClient::RevokeIpRules(const RevokeIpRulesRequest& request) const {
-  return RevokeIpRulesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RevokeIpRulesOutcome(result.GetResultWithOwnership()) : RevokeIpRulesOutcome(std::move(result.GetError()));
 }
 
 StartWorkspacesOutcome WorkSpacesClient::StartWorkspaces(const StartWorkspacesRequest& request) const {
-  return StartWorkspacesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartWorkspacesOutcome(result.GetResultWithOwnership())
+                            : StartWorkspacesOutcome(std::move(result.GetError()));
 }
 
 StartWorkspacesPoolOutcome WorkSpacesClient::StartWorkspacesPool(const StartWorkspacesPoolRequest& request) const {
-  return StartWorkspacesPoolOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartWorkspacesPoolOutcome(result.GetResultWithOwnership())
+                            : StartWorkspacesPoolOutcome(std::move(result.GetError()));
 }
 
 StopWorkspacesOutcome WorkSpacesClient::StopWorkspaces(const StopWorkspacesRequest& request) const {
-  return StopWorkspacesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopWorkspacesOutcome(result.GetResultWithOwnership()) : StopWorkspacesOutcome(std::move(result.GetError()));
 }
 
 StopWorkspacesPoolOutcome WorkSpacesClient::StopWorkspacesPool(const StopWorkspacesPoolRequest& request) const {
-  return StopWorkspacesPoolOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopWorkspacesPoolOutcome(result.GetResultWithOwnership())
+                            : StopWorkspacesPoolOutcome(std::move(result.GetError()));
 }
 
 TerminateWorkspacesOutcome WorkSpacesClient::TerminateWorkspaces(const TerminateWorkspacesRequest& request) const {
-  return TerminateWorkspacesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TerminateWorkspacesOutcome(result.GetResultWithOwnership())
+                            : TerminateWorkspacesOutcome(std::move(result.GetError()));
 }
 
 TerminateWorkspacesPoolOutcome WorkSpacesClient::TerminateWorkspacesPool(const TerminateWorkspacesPoolRequest& request) const {
-  return TerminateWorkspacesPoolOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TerminateWorkspacesPoolOutcome(result.GetResultWithOwnership())
+                            : TerminateWorkspacesPoolOutcome(std::move(result.GetError()));
 }
 
 TerminateWorkspacesPoolSessionOutcome WorkSpacesClient::TerminateWorkspacesPoolSession(
     const TerminateWorkspacesPoolSessionRequest& request) const {
-  return TerminateWorkspacesPoolSessionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TerminateWorkspacesPoolSessionOutcome(result.GetResultWithOwnership())
+                            : TerminateWorkspacesPoolSessionOutcome(std::move(result.GetError()));
 }
 
 UpdateConnectClientAddInOutcome WorkSpacesClient::UpdateConnectClientAddIn(const UpdateConnectClientAddInRequest& request) const {
-  return UpdateConnectClientAddInOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateConnectClientAddInOutcome(result.GetResultWithOwnership())
+                            : UpdateConnectClientAddInOutcome(std::move(result.GetError()));
 }
 
 UpdateConnectionAliasPermissionOutcome WorkSpacesClient::UpdateConnectionAliasPermission(
     const UpdateConnectionAliasPermissionRequest& request) const {
-  return UpdateConnectionAliasPermissionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateConnectionAliasPermissionOutcome(result.GetResultWithOwnership())
+                            : UpdateConnectionAliasPermissionOutcome(std::move(result.GetError()));
 }
 
 UpdateRulesOfIpGroupOutcome WorkSpacesClient::UpdateRulesOfIpGroup(const UpdateRulesOfIpGroupRequest& request) const {
-  return UpdateRulesOfIpGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRulesOfIpGroupOutcome(result.GetResultWithOwnership())
+                            : UpdateRulesOfIpGroupOutcome(std::move(result.GetError()));
 }
 
 UpdateWorkspaceBundleOutcome WorkSpacesClient::UpdateWorkspaceBundle(const UpdateWorkspaceBundleRequest& request) const {
-  return UpdateWorkspaceBundleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateWorkspaceBundleOutcome(result.GetResultWithOwnership())
+                            : UpdateWorkspaceBundleOutcome(std::move(result.GetError()));
 }
 
 UpdateWorkspaceImagePermissionOutcome WorkSpacesClient::UpdateWorkspaceImagePermission(
     const UpdateWorkspaceImagePermissionRequest& request) const {
-  return UpdateWorkspaceImagePermissionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateWorkspaceImagePermissionOutcome(result.GetResultWithOwnership())
+                            : UpdateWorkspaceImagePermissionOutcome(std::move(result.GetError()));
 }
 
 UpdateWorkspacesPoolOutcome WorkSpacesClient::UpdateWorkspacesPool(const UpdateWorkspacesPoolRequest& request) const {
-  return UpdateWorkspacesPoolOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateWorkspacesPoolOutcome(result.GetResultWithOwnership())
+                            : UpdateWorkspacesPoolOutcome(std::move(result.GetError()));
 }

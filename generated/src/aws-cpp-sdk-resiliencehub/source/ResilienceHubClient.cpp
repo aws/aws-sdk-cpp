@@ -245,7 +245,9 @@ AcceptResourceGroupingRecommendationsOutcome ResilienceHubClient::AcceptResource
     endpointResolutionOutcome.GetResult().AddPathSegments("/accept-resource-grouping-recommendations");
   };
 
-  return AcceptResourceGroupingRecommendationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptResourceGroupingRecommendationsOutcome(result.GetResultWithOwnership())
+                            : AcceptResourceGroupingRecommendationsOutcome(std::move(result.GetError()));
 }
 
 AddDraftAppVersionResourceMappingsOutcome ResilienceHubClient::AddDraftAppVersionResourceMappings(
@@ -255,7 +257,9 @@ AddDraftAppVersionResourceMappingsOutcome ResilienceHubClient::AddDraftAppVersio
     endpointResolutionOutcome.GetResult().AddPathSegments("/add-draft-app-version-resource-mappings");
   };
 
-  return AddDraftAppVersionResourceMappingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddDraftAppVersionResourceMappingsOutcome(result.GetResultWithOwnership())
+                            : AddDraftAppVersionResourceMappingsOutcome(std::move(result.GetError()));
 }
 
 BatchUpdateRecommendationStatusOutcome ResilienceHubClient::BatchUpdateRecommendationStatus(
@@ -265,7 +269,9 @@ BatchUpdateRecommendationStatusOutcome ResilienceHubClient::BatchUpdateRecommend
     endpointResolutionOutcome.GetResult().AddPathSegments("/batch-update-recommendation-status");
   };
 
-  return BatchUpdateRecommendationStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchUpdateRecommendationStatusOutcome(result.GetResultWithOwnership())
+                            : BatchUpdateRecommendationStatusOutcome(std::move(result.GetError()));
 }
 
 CreateAppOutcome ResilienceHubClient::CreateApp(const CreateAppRequest& request) const {
@@ -274,7 +280,8 @@ CreateAppOutcome ResilienceHubClient::CreateApp(const CreateAppRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegments("/create-app");
   };
 
-  return CreateAppOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAppOutcome(result.GetResultWithOwnership()) : CreateAppOutcome(std::move(result.GetError()));
 }
 
 CreateAppVersionAppComponentOutcome ResilienceHubClient::CreateAppVersionAppComponent(
@@ -284,7 +291,9 @@ CreateAppVersionAppComponentOutcome ResilienceHubClient::CreateAppVersionAppComp
     endpointResolutionOutcome.GetResult().AddPathSegments("/create-app-version-app-component");
   };
 
-  return CreateAppVersionAppComponentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAppVersionAppComponentOutcome(result.GetResultWithOwnership())
+                            : CreateAppVersionAppComponentOutcome(std::move(result.GetError()));
 }
 
 CreateAppVersionResourceOutcome ResilienceHubClient::CreateAppVersionResource(const CreateAppVersionResourceRequest& request) const {
@@ -293,7 +302,9 @@ CreateAppVersionResourceOutcome ResilienceHubClient::CreateAppVersionResource(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/create-app-version-resource");
   };
 
-  return CreateAppVersionResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAppVersionResourceOutcome(result.GetResultWithOwnership())
+                            : CreateAppVersionResourceOutcome(std::move(result.GetError()));
 }
 
 CreateRecommendationTemplateOutcome ResilienceHubClient::CreateRecommendationTemplate(
@@ -303,7 +314,9 @@ CreateRecommendationTemplateOutcome ResilienceHubClient::CreateRecommendationTem
     endpointResolutionOutcome.GetResult().AddPathSegments("/create-recommendation-template");
   };
 
-  return CreateRecommendationTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRecommendationTemplateOutcome(result.GetResultWithOwnership())
+                            : CreateRecommendationTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateResiliencyPolicyOutcome ResilienceHubClient::CreateResiliencyPolicy(const CreateResiliencyPolicyRequest& request) const {
@@ -312,7 +325,9 @@ CreateResiliencyPolicyOutcome ResilienceHubClient::CreateResiliencyPolicy(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/create-resiliency-policy");
   };
 
-  return CreateResiliencyPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateResiliencyPolicyOutcome(result.GetResultWithOwnership())
+                            : CreateResiliencyPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteAppOutcome ResilienceHubClient::DeleteApp(const DeleteAppRequest& request) const {
@@ -321,7 +336,8 @@ DeleteAppOutcome ResilienceHubClient::DeleteApp(const DeleteAppRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegments("/delete-app");
   };
 
-  return DeleteAppOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAppOutcome(result.GetResultWithOwnership()) : DeleteAppOutcome(std::move(result.GetError()));
 }
 
 DeleteAppAssessmentOutcome ResilienceHubClient::DeleteAppAssessment(const DeleteAppAssessmentRequest& request) const {
@@ -330,7 +346,9 @@ DeleteAppAssessmentOutcome ResilienceHubClient::DeleteAppAssessment(const Delete
     endpointResolutionOutcome.GetResult().AddPathSegments("/delete-app-assessment");
   };
 
-  return DeleteAppAssessmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAppAssessmentOutcome(result.GetResultWithOwnership())
+                            : DeleteAppAssessmentOutcome(std::move(result.GetError()));
 }
 
 DeleteAppInputSourceOutcome ResilienceHubClient::DeleteAppInputSource(const DeleteAppInputSourceRequest& request) const {
@@ -339,7 +357,9 @@ DeleteAppInputSourceOutcome ResilienceHubClient::DeleteAppInputSource(const Dele
     endpointResolutionOutcome.GetResult().AddPathSegments("/delete-app-input-source");
   };
 
-  return DeleteAppInputSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAppInputSourceOutcome(result.GetResultWithOwnership())
+                            : DeleteAppInputSourceOutcome(std::move(result.GetError()));
 }
 
 DeleteAppVersionAppComponentOutcome ResilienceHubClient::DeleteAppVersionAppComponent(
@@ -349,7 +369,9 @@ DeleteAppVersionAppComponentOutcome ResilienceHubClient::DeleteAppVersionAppComp
     endpointResolutionOutcome.GetResult().AddPathSegments("/delete-app-version-app-component");
   };
 
-  return DeleteAppVersionAppComponentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAppVersionAppComponentOutcome(result.GetResultWithOwnership())
+                            : DeleteAppVersionAppComponentOutcome(std::move(result.GetError()));
 }
 
 DeleteAppVersionResourceOutcome ResilienceHubClient::DeleteAppVersionResource(const DeleteAppVersionResourceRequest& request) const {
@@ -358,7 +380,9 @@ DeleteAppVersionResourceOutcome ResilienceHubClient::DeleteAppVersionResource(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/delete-app-version-resource");
   };
 
-  return DeleteAppVersionResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAppVersionResourceOutcome(result.GetResultWithOwnership())
+                            : DeleteAppVersionResourceOutcome(std::move(result.GetError()));
 }
 
 DeleteRecommendationTemplateOutcome ResilienceHubClient::DeleteRecommendationTemplate(
@@ -368,7 +392,9 @@ DeleteRecommendationTemplateOutcome ResilienceHubClient::DeleteRecommendationTem
     endpointResolutionOutcome.GetResult().AddPathSegments("/delete-recommendation-template");
   };
 
-  return DeleteRecommendationTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRecommendationTemplateOutcome(result.GetResultWithOwnership())
+                            : DeleteRecommendationTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteResiliencyPolicyOutcome ResilienceHubClient::DeleteResiliencyPolicy(const DeleteResiliencyPolicyRequest& request) const {
@@ -377,7 +403,9 @@ DeleteResiliencyPolicyOutcome ResilienceHubClient::DeleteResiliencyPolicy(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/delete-resiliency-policy");
   };
 
-  return DeleteResiliencyPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteResiliencyPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteResiliencyPolicyOutcome(std::move(result.GetError()));
 }
 
 DescribeAppOutcome ResilienceHubClient::DescribeApp(const DescribeAppRequest& request) const {
@@ -386,7 +414,8 @@ DescribeAppOutcome ResilienceHubClient::DescribeApp(const DescribeAppRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/describe-app");
   };
 
-  return DescribeAppOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAppOutcome(result.GetResultWithOwnership()) : DescribeAppOutcome(std::move(result.GetError()));
 }
 
 DescribeAppAssessmentOutcome ResilienceHubClient::DescribeAppAssessment(const DescribeAppAssessmentRequest& request) const {
@@ -395,7 +424,9 @@ DescribeAppAssessmentOutcome ResilienceHubClient::DescribeAppAssessment(const De
     endpointResolutionOutcome.GetResult().AddPathSegments("/describe-app-assessment");
   };
 
-  return DescribeAppAssessmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAppAssessmentOutcome(result.GetResultWithOwnership())
+                            : DescribeAppAssessmentOutcome(std::move(result.GetError()));
 }
 
 DescribeAppVersionOutcome ResilienceHubClient::DescribeAppVersion(const DescribeAppVersionRequest& request) const {
@@ -404,7 +435,9 @@ DescribeAppVersionOutcome ResilienceHubClient::DescribeAppVersion(const Describe
     endpointResolutionOutcome.GetResult().AddPathSegments("/describe-app-version");
   };
 
-  return DescribeAppVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAppVersionOutcome(result.GetResultWithOwnership())
+                            : DescribeAppVersionOutcome(std::move(result.GetError()));
 }
 
 DescribeAppVersionAppComponentOutcome ResilienceHubClient::DescribeAppVersionAppComponent(
@@ -414,7 +447,9 @@ DescribeAppVersionAppComponentOutcome ResilienceHubClient::DescribeAppVersionApp
     endpointResolutionOutcome.GetResult().AddPathSegments("/describe-app-version-app-component");
   };
 
-  return DescribeAppVersionAppComponentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAppVersionAppComponentOutcome(result.GetResultWithOwnership())
+                            : DescribeAppVersionAppComponentOutcome(std::move(result.GetError()));
 }
 
 DescribeAppVersionResourceOutcome ResilienceHubClient::DescribeAppVersionResource(const DescribeAppVersionResourceRequest& request) const {
@@ -423,7 +458,9 @@ DescribeAppVersionResourceOutcome ResilienceHubClient::DescribeAppVersionResourc
     endpointResolutionOutcome.GetResult().AddPathSegments("/describe-app-version-resource");
   };
 
-  return DescribeAppVersionResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAppVersionResourceOutcome(result.GetResultWithOwnership())
+                            : DescribeAppVersionResourceOutcome(std::move(result.GetError()));
 }
 
 DescribeAppVersionResourcesResolutionStatusOutcome ResilienceHubClient::DescribeAppVersionResourcesResolutionStatus(
@@ -433,7 +470,9 @@ DescribeAppVersionResourcesResolutionStatusOutcome ResilienceHubClient::Describe
     endpointResolutionOutcome.GetResult().AddPathSegments("/describe-app-version-resources-resolution-status");
   };
 
-  return DescribeAppVersionResourcesResolutionStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAppVersionResourcesResolutionStatusOutcome(result.GetResultWithOwnership())
+                            : DescribeAppVersionResourcesResolutionStatusOutcome(std::move(result.GetError()));
 }
 
 DescribeAppVersionTemplateOutcome ResilienceHubClient::DescribeAppVersionTemplate(const DescribeAppVersionTemplateRequest& request) const {
@@ -442,7 +481,9 @@ DescribeAppVersionTemplateOutcome ResilienceHubClient::DescribeAppVersionTemplat
     endpointResolutionOutcome.GetResult().AddPathSegments("/describe-app-version-template");
   };
 
-  return DescribeAppVersionTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAppVersionTemplateOutcome(result.GetResultWithOwnership())
+                            : DescribeAppVersionTemplateOutcome(std::move(result.GetError()));
 }
 
 DescribeDraftAppVersionResourcesImportStatusOutcome ResilienceHubClient::DescribeDraftAppVersionResourcesImportStatus(
@@ -452,8 +493,9 @@ DescribeDraftAppVersionResourcesImportStatusOutcome ResilienceHubClient::Describ
     endpointResolutionOutcome.GetResult().AddPathSegments("/describe-draft-app-version-resources-import-status");
   };
 
-  return DescribeDraftAppVersionResourcesImportStatusOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDraftAppVersionResourcesImportStatusOutcome(result.GetResultWithOwnership())
+                            : DescribeDraftAppVersionResourcesImportStatusOutcome(std::move(result.GetError()));
 }
 
 DescribeMetricsExportOutcome ResilienceHubClient::DescribeMetricsExport(const DescribeMetricsExportRequest& request) const {
@@ -462,7 +504,9 @@ DescribeMetricsExportOutcome ResilienceHubClient::DescribeMetricsExport(const De
     endpointResolutionOutcome.GetResult().AddPathSegments("/describe-metrics-export");
   };
 
-  return DescribeMetricsExportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeMetricsExportOutcome(result.GetResultWithOwnership())
+                            : DescribeMetricsExportOutcome(std::move(result.GetError()));
 }
 
 DescribeResiliencyPolicyOutcome ResilienceHubClient::DescribeResiliencyPolicy(const DescribeResiliencyPolicyRequest& request) const {
@@ -471,7 +515,9 @@ DescribeResiliencyPolicyOutcome ResilienceHubClient::DescribeResiliencyPolicy(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/describe-resiliency-policy");
   };
 
-  return DescribeResiliencyPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeResiliencyPolicyOutcome(result.GetResultWithOwnership())
+                            : DescribeResiliencyPolicyOutcome(std::move(result.GetError()));
 }
 
 DescribeResourceGroupingRecommendationTaskOutcome ResilienceHubClient::DescribeResourceGroupingRecommendationTask(
@@ -481,7 +527,9 @@ DescribeResourceGroupingRecommendationTaskOutcome ResilienceHubClient::DescribeR
     endpointResolutionOutcome.GetResult().AddPathSegments("/describe-resource-grouping-recommendation-task");
   };
 
-  return DescribeResourceGroupingRecommendationTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeResourceGroupingRecommendationTaskOutcome(result.GetResultWithOwnership())
+                            : DescribeResourceGroupingRecommendationTaskOutcome(std::move(result.GetError()));
 }
 
 ImportResourcesToDraftAppVersionOutcome ResilienceHubClient::ImportResourcesToDraftAppVersion(
@@ -491,7 +539,9 @@ ImportResourcesToDraftAppVersionOutcome ResilienceHubClient::ImportResourcesToDr
     endpointResolutionOutcome.GetResult().AddPathSegments("/import-resources-to-draft-app-version");
   };
 
-  return ImportResourcesToDraftAppVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportResourcesToDraftAppVersionOutcome(result.GetResultWithOwnership())
+                            : ImportResourcesToDraftAppVersionOutcome(std::move(result.GetError()));
 }
 
 ListAlarmRecommendationsOutcome ResilienceHubClient::ListAlarmRecommendations(const ListAlarmRecommendationsRequest& request) const {
@@ -500,7 +550,9 @@ ListAlarmRecommendationsOutcome ResilienceHubClient::ListAlarmRecommendations(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-alarm-recommendations");
   };
 
-  return ListAlarmRecommendationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAlarmRecommendationsOutcome(result.GetResultWithOwnership())
+                            : ListAlarmRecommendationsOutcome(std::move(result.GetError()));
 }
 
 ListAppAssessmentComplianceDriftsOutcome ResilienceHubClient::ListAppAssessmentComplianceDrifts(
@@ -510,7 +562,9 @@ ListAppAssessmentComplianceDriftsOutcome ResilienceHubClient::ListAppAssessmentC
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-app-assessment-compliance-drifts");
   };
 
-  return ListAppAssessmentComplianceDriftsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAppAssessmentComplianceDriftsOutcome(result.GetResultWithOwnership())
+                            : ListAppAssessmentComplianceDriftsOutcome(std::move(result.GetError()));
 }
 
 ListAppAssessmentResourceDriftsOutcome ResilienceHubClient::ListAppAssessmentResourceDrifts(
@@ -520,7 +574,9 @@ ListAppAssessmentResourceDriftsOutcome ResilienceHubClient::ListAppAssessmentRes
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-app-assessment-resource-drifts");
   };
 
-  return ListAppAssessmentResourceDriftsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAppAssessmentResourceDriftsOutcome(result.GetResultWithOwnership())
+                            : ListAppAssessmentResourceDriftsOutcome(std::move(result.GetError()));
 }
 
 ListAppAssessmentsOutcome ResilienceHubClient::ListAppAssessments(const ListAppAssessmentsRequest& request) const {
@@ -529,7 +585,9 @@ ListAppAssessmentsOutcome ResilienceHubClient::ListAppAssessments(const ListAppA
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-app-assessments");
   };
 
-  return ListAppAssessmentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAppAssessmentsOutcome(result.GetResultWithOwnership())
+                            : ListAppAssessmentsOutcome(std::move(result.GetError()));
 }
 
 ListAppComponentCompliancesOutcome ResilienceHubClient::ListAppComponentCompliances(
@@ -539,7 +597,9 @@ ListAppComponentCompliancesOutcome ResilienceHubClient::ListAppComponentComplian
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-app-component-compliances");
   };
 
-  return ListAppComponentCompliancesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAppComponentCompliancesOutcome(result.GetResultWithOwnership())
+                            : ListAppComponentCompliancesOutcome(std::move(result.GetError()));
 }
 
 ListAppComponentRecommendationsOutcome ResilienceHubClient::ListAppComponentRecommendations(
@@ -549,7 +609,9 @@ ListAppComponentRecommendationsOutcome ResilienceHubClient::ListAppComponentReco
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-app-component-recommendations");
   };
 
-  return ListAppComponentRecommendationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAppComponentRecommendationsOutcome(result.GetResultWithOwnership())
+                            : ListAppComponentRecommendationsOutcome(std::move(result.GetError()));
 }
 
 ListAppInputSourcesOutcome ResilienceHubClient::ListAppInputSources(const ListAppInputSourcesRequest& request) const {
@@ -558,7 +620,9 @@ ListAppInputSourcesOutcome ResilienceHubClient::ListAppInputSources(const ListAp
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-app-input-sources");
   };
 
-  return ListAppInputSourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAppInputSourcesOutcome(result.GetResultWithOwnership())
+                            : ListAppInputSourcesOutcome(std::move(result.GetError()));
 }
 
 ListAppVersionAppComponentsOutcome ResilienceHubClient::ListAppVersionAppComponents(
@@ -568,7 +632,9 @@ ListAppVersionAppComponentsOutcome ResilienceHubClient::ListAppVersionAppCompone
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-app-version-app-components");
   };
 
-  return ListAppVersionAppComponentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAppVersionAppComponentsOutcome(result.GetResultWithOwnership())
+                            : ListAppVersionAppComponentsOutcome(std::move(result.GetError()));
 }
 
 ListAppVersionResourceMappingsOutcome ResilienceHubClient::ListAppVersionResourceMappings(
@@ -578,7 +644,9 @@ ListAppVersionResourceMappingsOutcome ResilienceHubClient::ListAppVersionResourc
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-app-version-resource-mappings");
   };
 
-  return ListAppVersionResourceMappingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAppVersionResourceMappingsOutcome(result.GetResultWithOwnership())
+                            : ListAppVersionResourceMappingsOutcome(std::move(result.GetError()));
 }
 
 ListAppVersionResourcesOutcome ResilienceHubClient::ListAppVersionResources(const ListAppVersionResourcesRequest& request) const {
@@ -587,7 +655,9 @@ ListAppVersionResourcesOutcome ResilienceHubClient::ListAppVersionResources(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-app-version-resources");
   };
 
-  return ListAppVersionResourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAppVersionResourcesOutcome(result.GetResultWithOwnership())
+                            : ListAppVersionResourcesOutcome(std::move(result.GetError()));
 }
 
 ListAppVersionsOutcome ResilienceHubClient::ListAppVersions(const ListAppVersionsRequest& request) const {
@@ -596,7 +666,9 @@ ListAppVersionsOutcome ResilienceHubClient::ListAppVersions(const ListAppVersion
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-app-versions");
   };
 
-  return ListAppVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAppVersionsOutcome(result.GetResultWithOwnership())
+                            : ListAppVersionsOutcome(std::move(result.GetError()));
 }
 
 ListAppsOutcome ResilienceHubClient::ListApps(const ListAppsRequest& request) const {
@@ -605,7 +677,8 @@ ListAppsOutcome ResilienceHubClient::ListApps(const ListAppsRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-apps");
   };
 
-  return ListAppsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAppsOutcome(result.GetResultWithOwnership()) : ListAppsOutcome(std::move(result.GetError()));
 }
 
 ListMetricsOutcome ResilienceHubClient::ListMetrics(const ListMetricsRequest& request) const {
@@ -614,7 +687,8 @@ ListMetricsOutcome ResilienceHubClient::ListMetrics(const ListMetricsRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-metrics");
   };
 
-  return ListMetricsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMetricsOutcome(result.GetResultWithOwnership()) : ListMetricsOutcome(std::move(result.GetError()));
 }
 
 ListRecommendationTemplatesOutcome ResilienceHubClient::ListRecommendationTemplates(
@@ -624,7 +698,9 @@ ListRecommendationTemplatesOutcome ResilienceHubClient::ListRecommendationTempla
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-recommendation-templates");
   };
 
-  return ListRecommendationTemplatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRecommendationTemplatesOutcome(result.GetResultWithOwnership())
+                            : ListRecommendationTemplatesOutcome(std::move(result.GetError()));
 }
 
 ListResiliencyPoliciesOutcome ResilienceHubClient::ListResiliencyPolicies(const ListResiliencyPoliciesRequest& request) const {
@@ -633,7 +709,9 @@ ListResiliencyPoliciesOutcome ResilienceHubClient::ListResiliencyPolicies(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-resiliency-policies");
   };
 
-  return ListResiliencyPoliciesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListResiliencyPoliciesOutcome(result.GetResultWithOwnership())
+                            : ListResiliencyPoliciesOutcome(std::move(result.GetError()));
 }
 
 ListResourceGroupingRecommendationsOutcome ResilienceHubClient::ListResourceGroupingRecommendations(
@@ -643,7 +721,9 @@ ListResourceGroupingRecommendationsOutcome ResilienceHubClient::ListResourceGrou
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-resource-grouping-recommendations");
   };
 
-  return ListResourceGroupingRecommendationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListResourceGroupingRecommendationsOutcome(result.GetResultWithOwnership())
+                            : ListResourceGroupingRecommendationsOutcome(std::move(result.GetError()));
 }
 
 ListSopRecommendationsOutcome ResilienceHubClient::ListSopRecommendations(const ListSopRecommendationsRequest& request) const {
@@ -652,7 +732,9 @@ ListSopRecommendationsOutcome ResilienceHubClient::ListSopRecommendations(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-sop-recommendations");
   };
 
-  return ListSopRecommendationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSopRecommendationsOutcome(result.GetResultWithOwnership())
+                            : ListSopRecommendationsOutcome(std::move(result.GetError()));
 }
 
 ListSuggestedResiliencyPoliciesOutcome ResilienceHubClient::ListSuggestedResiliencyPolicies(
@@ -662,7 +744,9 @@ ListSuggestedResiliencyPoliciesOutcome ResilienceHubClient::ListSuggestedResilie
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-suggested-resiliency-policies");
   };
 
-  return ListSuggestedResiliencyPoliciesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSuggestedResiliencyPoliciesOutcome(result.GetResultWithOwnership())
+                            : ListSuggestedResiliencyPoliciesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome ResilienceHubClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -678,7 +762,9 @@ ListTagsForResourceOutcome ResilienceHubClient::ListTagsForResource(const ListTa
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTestRecommendationsOutcome ResilienceHubClient::ListTestRecommendations(const ListTestRecommendationsRequest& request) const {
@@ -687,7 +773,9 @@ ListTestRecommendationsOutcome ResilienceHubClient::ListTestRecommendations(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-test-recommendations");
   };
 
-  return ListTestRecommendationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTestRecommendationsOutcome(result.GetResultWithOwnership())
+                            : ListTestRecommendationsOutcome(std::move(result.GetError()));
 }
 
 ListUnsupportedAppVersionResourcesOutcome ResilienceHubClient::ListUnsupportedAppVersionResources(
@@ -697,7 +785,9 @@ ListUnsupportedAppVersionResourcesOutcome ResilienceHubClient::ListUnsupportedAp
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-unsupported-app-version-resources");
   };
 
-  return ListUnsupportedAppVersionResourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListUnsupportedAppVersionResourcesOutcome(result.GetResultWithOwnership())
+                            : ListUnsupportedAppVersionResourcesOutcome(std::move(result.GetError()));
 }
 
 PublishAppVersionOutcome ResilienceHubClient::PublishAppVersion(const PublishAppVersionRequest& request) const {
@@ -706,7 +796,9 @@ PublishAppVersionOutcome ResilienceHubClient::PublishAppVersion(const PublishApp
     endpointResolutionOutcome.GetResult().AddPathSegments("/publish-app-version");
   };
 
-  return PublishAppVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PublishAppVersionOutcome(result.GetResultWithOwnership())
+                            : PublishAppVersionOutcome(std::move(result.GetError()));
 }
 
 PutDraftAppVersionTemplateOutcome ResilienceHubClient::PutDraftAppVersionTemplate(const PutDraftAppVersionTemplateRequest& request) const {
@@ -715,7 +807,9 @@ PutDraftAppVersionTemplateOutcome ResilienceHubClient::PutDraftAppVersionTemplat
     endpointResolutionOutcome.GetResult().AddPathSegments("/put-draft-app-version-template");
   };
 
-  return PutDraftAppVersionTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutDraftAppVersionTemplateOutcome(result.GetResultWithOwnership())
+                            : PutDraftAppVersionTemplateOutcome(std::move(result.GetError()));
 }
 
 RejectResourceGroupingRecommendationsOutcome ResilienceHubClient::RejectResourceGroupingRecommendations(
@@ -725,7 +819,9 @@ RejectResourceGroupingRecommendationsOutcome ResilienceHubClient::RejectResource
     endpointResolutionOutcome.GetResult().AddPathSegments("/reject-resource-grouping-recommendations");
   };
 
-  return RejectResourceGroupingRecommendationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RejectResourceGroupingRecommendationsOutcome(result.GetResultWithOwnership())
+                            : RejectResourceGroupingRecommendationsOutcome(std::move(result.GetError()));
 }
 
 RemoveDraftAppVersionResourceMappingsOutcome ResilienceHubClient::RemoveDraftAppVersionResourceMappings(
@@ -735,7 +831,9 @@ RemoveDraftAppVersionResourceMappingsOutcome ResilienceHubClient::RemoveDraftApp
     endpointResolutionOutcome.GetResult().AddPathSegments("/remove-draft-app-version-resource-mappings");
   };
 
-  return RemoveDraftAppVersionResourceMappingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveDraftAppVersionResourceMappingsOutcome(result.GetResultWithOwnership())
+                            : RemoveDraftAppVersionResourceMappingsOutcome(std::move(result.GetError()));
 }
 
 ResolveAppVersionResourcesOutcome ResilienceHubClient::ResolveAppVersionResources(const ResolveAppVersionResourcesRequest& request) const {
@@ -744,7 +842,9 @@ ResolveAppVersionResourcesOutcome ResilienceHubClient::ResolveAppVersionResource
     endpointResolutionOutcome.GetResult().AddPathSegments("/resolve-app-version-resources");
   };
 
-  return ResolveAppVersionResourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResolveAppVersionResourcesOutcome(result.GetResultWithOwnership())
+                            : ResolveAppVersionResourcesOutcome(std::move(result.GetError()));
 }
 
 StartAppAssessmentOutcome ResilienceHubClient::StartAppAssessment(const StartAppAssessmentRequest& request) const {
@@ -753,7 +853,9 @@ StartAppAssessmentOutcome ResilienceHubClient::StartAppAssessment(const StartApp
     endpointResolutionOutcome.GetResult().AddPathSegments("/start-app-assessment");
   };
 
-  return StartAppAssessmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartAppAssessmentOutcome(result.GetResultWithOwnership())
+                            : StartAppAssessmentOutcome(std::move(result.GetError()));
 }
 
 StartMetricsExportOutcome ResilienceHubClient::StartMetricsExport(const StartMetricsExportRequest& request) const {
@@ -762,7 +864,9 @@ StartMetricsExportOutcome ResilienceHubClient::StartMetricsExport(const StartMet
     endpointResolutionOutcome.GetResult().AddPathSegments("/start-metrics-export");
   };
 
-  return StartMetricsExportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartMetricsExportOutcome(result.GetResultWithOwnership())
+                            : StartMetricsExportOutcome(std::move(result.GetError()));
 }
 
 StartResourceGroupingRecommendationTaskOutcome ResilienceHubClient::StartResourceGroupingRecommendationTask(
@@ -772,7 +876,9 @@ StartResourceGroupingRecommendationTaskOutcome ResilienceHubClient::StartResourc
     endpointResolutionOutcome.GetResult().AddPathSegments("/start-resource-grouping-recommendation-task");
   };
 
-  return StartResourceGroupingRecommendationTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartResourceGroupingRecommendationTaskOutcome(result.GetResultWithOwnership())
+                            : StartResourceGroupingRecommendationTaskOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ResilienceHubClient::TagResource(const TagResourceRequest& request) const {
@@ -788,7 +894,8 @@ TagResourceOutcome ResilienceHubClient::TagResource(const TagResourceRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome ResilienceHubClient::UntagResource(const UntagResourceRequest& request) const {
@@ -809,7 +916,8 @@ UntagResourceOutcome ResilienceHubClient::UntagResource(const UntagResourceReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAppOutcome ResilienceHubClient::UpdateApp(const UpdateAppRequest& request) const {
@@ -818,7 +926,8 @@ UpdateAppOutcome ResilienceHubClient::UpdateApp(const UpdateAppRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegments("/update-app");
   };
 
-  return UpdateAppOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAppOutcome(result.GetResultWithOwnership()) : UpdateAppOutcome(std::move(result.GetError()));
 }
 
 UpdateAppVersionOutcome ResilienceHubClient::UpdateAppVersion(const UpdateAppVersionRequest& request) const {
@@ -827,7 +936,9 @@ UpdateAppVersionOutcome ResilienceHubClient::UpdateAppVersion(const UpdateAppVer
     endpointResolutionOutcome.GetResult().AddPathSegments("/update-app-version");
   };
 
-  return UpdateAppVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAppVersionOutcome(result.GetResultWithOwnership())
+                            : UpdateAppVersionOutcome(std::move(result.GetError()));
 }
 
 UpdateAppVersionAppComponentOutcome ResilienceHubClient::UpdateAppVersionAppComponent(
@@ -837,7 +948,9 @@ UpdateAppVersionAppComponentOutcome ResilienceHubClient::UpdateAppVersionAppComp
     endpointResolutionOutcome.GetResult().AddPathSegments("/update-app-version-app-component");
   };
 
-  return UpdateAppVersionAppComponentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAppVersionAppComponentOutcome(result.GetResultWithOwnership())
+                            : UpdateAppVersionAppComponentOutcome(std::move(result.GetError()));
 }
 
 UpdateAppVersionResourceOutcome ResilienceHubClient::UpdateAppVersionResource(const UpdateAppVersionResourceRequest& request) const {
@@ -846,7 +959,9 @@ UpdateAppVersionResourceOutcome ResilienceHubClient::UpdateAppVersionResource(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/update-app-version-resource");
   };
 
-  return UpdateAppVersionResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAppVersionResourceOutcome(result.GetResultWithOwnership())
+                            : UpdateAppVersionResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateResiliencyPolicyOutcome ResilienceHubClient::UpdateResiliencyPolicy(const UpdateResiliencyPolicyRequest& request) const {
@@ -855,5 +970,7 @@ UpdateResiliencyPolicyOutcome ResilienceHubClient::UpdateResiliencyPolicy(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/update-resiliency-policy");
   };
 
-  return UpdateResiliencyPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateResiliencyPolicyOutcome(result.GetResultWithOwnership())
+                            : UpdateResiliencyPolicyOutcome(std::move(result.GetError()));
 }

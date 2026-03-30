@@ -223,7 +223,9 @@ GetApplicationComponentDetailsOutcome MigrationHubStrategyRecommendationsClient:
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationComponentId());
   };
 
-  return GetApplicationComponentDetailsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetApplicationComponentDetailsOutcome(result.GetResultWithOwnership())
+                            : GetApplicationComponentDetailsOutcome(std::move(result.GetError()));
 }
 
 GetApplicationComponentStrategiesOutcome MigrationHubStrategyRecommendationsClient::GetApplicationComponentStrategies(
@@ -241,7 +243,9 @@ GetApplicationComponentStrategiesOutcome MigrationHubStrategyRecommendationsClie
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationComponentId());
   };
 
-  return GetApplicationComponentStrategiesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetApplicationComponentStrategiesOutcome(result.GetResultWithOwnership())
+                            : GetApplicationComponentStrategiesOutcome(std::move(result.GetError()));
 }
 
 GetAssessmentOutcome MigrationHubStrategyRecommendationsClient::GetAssessment(const GetAssessmentRequest& request) const {
@@ -257,7 +261,8 @@ GetAssessmentOutcome MigrationHubStrategyRecommendationsClient::GetAssessment(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetAssessmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAssessmentOutcome(result.GetResultWithOwnership()) : GetAssessmentOutcome(std::move(result.GetError()));
 }
 
 GetImportFileTaskOutcome MigrationHubStrategyRecommendationsClient::GetImportFileTask(const GetImportFileTaskRequest& request) const {
@@ -273,7 +278,9 @@ GetImportFileTaskOutcome MigrationHubStrategyRecommendationsClient::GetImportFil
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetImportFileTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetImportFileTaskOutcome(result.GetResultWithOwnership())
+                            : GetImportFileTaskOutcome(std::move(result.GetError()));
 }
 
 GetLatestAssessmentIdOutcome MigrationHubStrategyRecommendationsClient::GetLatestAssessmentId(
@@ -283,7 +290,9 @@ GetLatestAssessmentIdOutcome MigrationHubStrategyRecommendationsClient::GetLates
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-latest-assessment-id");
   };
 
-  return GetLatestAssessmentIdOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetLatestAssessmentIdOutcome(result.GetResultWithOwnership())
+                            : GetLatestAssessmentIdOutcome(std::move(result.GetError()));
 }
 
 GetPortfolioPreferencesOutcome MigrationHubStrategyRecommendationsClient::GetPortfolioPreferences(
@@ -293,7 +302,9 @@ GetPortfolioPreferencesOutcome MigrationHubStrategyRecommendationsClient::GetPor
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-portfolio-preferences");
   };
 
-  return GetPortfolioPreferencesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPortfolioPreferencesOutcome(result.GetResultWithOwnership())
+                            : GetPortfolioPreferencesOutcome(std::move(result.GetError()));
 }
 
 GetPortfolioSummaryOutcome MigrationHubStrategyRecommendationsClient::GetPortfolioSummary(const GetPortfolioSummaryRequest& request) const {
@@ -302,7 +313,9 @@ GetPortfolioSummaryOutcome MigrationHubStrategyRecommendationsClient::GetPortfol
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-portfolio-summary");
   };
 
-  return GetPortfolioSummaryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPortfolioSummaryOutcome(result.GetResultWithOwnership())
+                            : GetPortfolioSummaryOutcome(std::move(result.GetError()));
 }
 
 GetRecommendationReportDetailsOutcome MigrationHubStrategyRecommendationsClient::GetRecommendationReportDetails(
@@ -319,7 +332,9 @@ GetRecommendationReportDetailsOutcome MigrationHubStrategyRecommendationsClient:
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetRecommendationReportDetailsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRecommendationReportDetailsOutcome(result.GetResultWithOwnership())
+                            : GetRecommendationReportDetailsOutcome(std::move(result.GetError()));
 }
 
 GetServerDetailsOutcome MigrationHubStrategyRecommendationsClient::GetServerDetails(const GetServerDetailsRequest& request) const {
@@ -335,7 +350,9 @@ GetServerDetailsOutcome MigrationHubStrategyRecommendationsClient::GetServerDeta
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetServerId());
   };
 
-  return GetServerDetailsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetServerDetailsOutcome(result.GetResultWithOwnership())
+                            : GetServerDetailsOutcome(std::move(result.GetError()));
 }
 
 GetServerStrategiesOutcome MigrationHubStrategyRecommendationsClient::GetServerStrategies(const GetServerStrategiesRequest& request) const {
@@ -351,7 +368,9 @@ GetServerStrategiesOutcome MigrationHubStrategyRecommendationsClient::GetServerS
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetServerId());
   };
 
-  return GetServerStrategiesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetServerStrategiesOutcome(result.GetResultWithOwnership())
+                            : GetServerStrategiesOutcome(std::move(result.GetError()));
 }
 
 ListAnalyzableServersOutcome MigrationHubStrategyRecommendationsClient::ListAnalyzableServers(
@@ -361,7 +380,9 @@ ListAnalyzableServersOutcome MigrationHubStrategyRecommendationsClient::ListAnal
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-analyzable-servers");
   };
 
-  return ListAnalyzableServersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAnalyzableServersOutcome(result.GetResultWithOwnership())
+                            : ListAnalyzableServersOutcome(std::move(result.GetError()));
 }
 
 ListApplicationComponentsOutcome MigrationHubStrategyRecommendationsClient::ListApplicationComponents(
@@ -371,7 +392,9 @@ ListApplicationComponentsOutcome MigrationHubStrategyRecommendationsClient::List
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-applicationcomponents");
   };
 
-  return ListApplicationComponentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListApplicationComponentsOutcome(result.GetResultWithOwnership())
+                            : ListApplicationComponentsOutcome(std::move(result.GetError()));
 }
 
 ListCollectorsOutcome MigrationHubStrategyRecommendationsClient::ListCollectors(const ListCollectorsRequest& request) const {
@@ -380,7 +403,8 @@ ListCollectorsOutcome MigrationHubStrategyRecommendationsClient::ListCollectors(
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-collectors");
   };
 
-  return ListCollectorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCollectorsOutcome(result.GetResultWithOwnership()) : ListCollectorsOutcome(std::move(result.GetError()));
 }
 
 ListImportFileTaskOutcome MigrationHubStrategyRecommendationsClient::ListImportFileTask(const ListImportFileTaskRequest& request) const {
@@ -389,7 +413,9 @@ ListImportFileTaskOutcome MigrationHubStrategyRecommendationsClient::ListImportF
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-import-file-task");
   };
 
-  return ListImportFileTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListImportFileTaskOutcome(result.GetResultWithOwnership())
+                            : ListImportFileTaskOutcome(std::move(result.GetError()));
 }
 
 ListServersOutcome MigrationHubStrategyRecommendationsClient::ListServers(const ListServersRequest& request) const {
@@ -398,7 +424,8 @@ ListServersOutcome MigrationHubStrategyRecommendationsClient::ListServers(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-servers");
   };
 
-  return ListServersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListServersOutcome(result.GetResultWithOwnership()) : ListServersOutcome(std::move(result.GetError()));
 }
 
 PutPortfolioPreferencesOutcome MigrationHubStrategyRecommendationsClient::PutPortfolioPreferences(
@@ -408,7 +435,9 @@ PutPortfolioPreferencesOutcome MigrationHubStrategyRecommendationsClient::PutPor
     endpointResolutionOutcome.GetResult().AddPathSegments("/put-portfolio-preferences");
   };
 
-  return PutPortfolioPreferencesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutPortfolioPreferencesOutcome(result.GetResultWithOwnership())
+                            : PutPortfolioPreferencesOutcome(std::move(result.GetError()));
 }
 
 StartAssessmentOutcome MigrationHubStrategyRecommendationsClient::StartAssessment(const StartAssessmentRequest& request) const {
@@ -417,7 +446,9 @@ StartAssessmentOutcome MigrationHubStrategyRecommendationsClient::StartAssessmen
     endpointResolutionOutcome.GetResult().AddPathSegments("/start-assessment");
   };
 
-  return StartAssessmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartAssessmentOutcome(result.GetResultWithOwnership())
+                            : StartAssessmentOutcome(std::move(result.GetError()));
 }
 
 StartImportFileTaskOutcome MigrationHubStrategyRecommendationsClient::StartImportFileTask(const StartImportFileTaskRequest& request) const {
@@ -426,7 +457,9 @@ StartImportFileTaskOutcome MigrationHubStrategyRecommendationsClient::StartImpor
     endpointResolutionOutcome.GetResult().AddPathSegments("/start-import-file-task");
   };
 
-  return StartImportFileTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartImportFileTaskOutcome(result.GetResultWithOwnership())
+                            : StartImportFileTaskOutcome(std::move(result.GetError()));
 }
 
 StartRecommendationReportGenerationOutcome MigrationHubStrategyRecommendationsClient::StartRecommendationReportGeneration(
@@ -436,7 +469,9 @@ StartRecommendationReportGenerationOutcome MigrationHubStrategyRecommendationsCl
     endpointResolutionOutcome.GetResult().AddPathSegments("/start-recommendation-report-generation");
   };
 
-  return StartRecommendationReportGenerationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartRecommendationReportGenerationOutcome(result.GetResultWithOwnership())
+                            : StartRecommendationReportGenerationOutcome(std::move(result.GetError()));
 }
 
 StopAssessmentOutcome MigrationHubStrategyRecommendationsClient::StopAssessment(const StopAssessmentRequest& request) const {
@@ -445,7 +480,8 @@ StopAssessmentOutcome MigrationHubStrategyRecommendationsClient::StopAssessment(
     endpointResolutionOutcome.GetResult().AddPathSegments("/stop-assessment");
   };
 
-  return StopAssessmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopAssessmentOutcome(result.GetResultWithOwnership()) : StopAssessmentOutcome(std::move(result.GetError()));
 }
 
 UpdateApplicationComponentConfigOutcome MigrationHubStrategyRecommendationsClient::UpdateApplicationComponentConfig(
@@ -455,7 +491,9 @@ UpdateApplicationComponentConfigOutcome MigrationHubStrategyRecommendationsClien
     endpointResolutionOutcome.GetResult().AddPathSegments("/update-applicationcomponent-config/");
   };
 
-  return UpdateApplicationComponentConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateApplicationComponentConfigOutcome(result.GetResultWithOwnership())
+                            : UpdateApplicationComponentConfigOutcome(std::move(result.GetError()));
 }
 
 UpdateServerConfigOutcome MigrationHubStrategyRecommendationsClient::UpdateServerConfig(const UpdateServerConfigRequest& request) const {
@@ -464,5 +502,7 @@ UpdateServerConfigOutcome MigrationHubStrategyRecommendationsClient::UpdateServe
     endpointResolutionOutcome.GetResult().AddPathSegments("/update-server-config/");
   };
 
-  return UpdateServerConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateServerConfigOutcome(result.GetResultWithOwnership())
+                            : UpdateServerConfigOutcome(std::move(result.GetError()));
 }

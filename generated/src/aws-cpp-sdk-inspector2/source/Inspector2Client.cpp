@@ -255,7 +255,9 @@ AssociateMemberOutcome Inspector2Client::AssociateMember(const AssociateMemberRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/members/associate");
   };
 
-  return AssociateMemberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateMemberOutcome(result.GetResultWithOwnership())
+                            : AssociateMemberOutcome(std::move(result.GetError()));
 }
 
 BatchAssociateCodeSecurityScanConfigurationOutcome Inspector2Client::BatchAssociateCodeSecurityScanConfiguration(
@@ -265,7 +267,9 @@ BatchAssociateCodeSecurityScanConfigurationOutcome Inspector2Client::BatchAssoci
     endpointResolutionOutcome.GetResult().AddPathSegments("/codesecurity/scan-configuration/batch/associate");
   };
 
-  return BatchAssociateCodeSecurityScanConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchAssociateCodeSecurityScanConfigurationOutcome(result.GetResultWithOwnership())
+                            : BatchAssociateCodeSecurityScanConfigurationOutcome(std::move(result.GetError()));
 }
 
 BatchDisassociateCodeSecurityScanConfigurationOutcome Inspector2Client::BatchDisassociateCodeSecurityScanConfiguration(
@@ -275,8 +279,9 @@ BatchDisassociateCodeSecurityScanConfigurationOutcome Inspector2Client::BatchDis
     endpointResolutionOutcome.GetResult().AddPathSegments("/codesecurity/scan-configuration/batch/disassociate");
   };
 
-  return BatchDisassociateCodeSecurityScanConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDisassociateCodeSecurityScanConfigurationOutcome(result.GetResultWithOwnership())
+                            : BatchDisassociateCodeSecurityScanConfigurationOutcome(std::move(result.GetError()));
 }
 
 BatchGetAccountStatusOutcome Inspector2Client::BatchGetAccountStatus(const BatchGetAccountStatusRequest& request) const {
@@ -285,7 +290,9 @@ BatchGetAccountStatusOutcome Inspector2Client::BatchGetAccountStatus(const Batch
     endpointResolutionOutcome.GetResult().AddPathSegments("/status/batch/get");
   };
 
-  return BatchGetAccountStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetAccountStatusOutcome(result.GetResultWithOwnership())
+                            : BatchGetAccountStatusOutcome(std::move(result.GetError()));
 }
 
 BatchGetCodeSnippetOutcome Inspector2Client::BatchGetCodeSnippet(const BatchGetCodeSnippetRequest& request) const {
@@ -294,7 +301,9 @@ BatchGetCodeSnippetOutcome Inspector2Client::BatchGetCodeSnippet(const BatchGetC
     endpointResolutionOutcome.GetResult().AddPathSegments("/codesnippet/batchget");
   };
 
-  return BatchGetCodeSnippetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetCodeSnippetOutcome(result.GetResultWithOwnership())
+                            : BatchGetCodeSnippetOutcome(std::move(result.GetError()));
 }
 
 BatchGetFindingDetailsOutcome Inspector2Client::BatchGetFindingDetails(const BatchGetFindingDetailsRequest& request) const {
@@ -303,7 +312,9 @@ BatchGetFindingDetailsOutcome Inspector2Client::BatchGetFindingDetails(const Bat
     endpointResolutionOutcome.GetResult().AddPathSegments("/findings/details/batch/get");
   };
 
-  return BatchGetFindingDetailsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetFindingDetailsOutcome(result.GetResultWithOwnership())
+                            : BatchGetFindingDetailsOutcome(std::move(result.GetError()));
 }
 
 BatchGetFreeTrialInfoOutcome Inspector2Client::BatchGetFreeTrialInfo(const BatchGetFreeTrialInfoRequest& request) const {
@@ -312,7 +323,9 @@ BatchGetFreeTrialInfoOutcome Inspector2Client::BatchGetFreeTrialInfo(const Batch
     endpointResolutionOutcome.GetResult().AddPathSegments("/freetrialinfo/batchget");
   };
 
-  return BatchGetFreeTrialInfoOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetFreeTrialInfoOutcome(result.GetResultWithOwnership())
+                            : BatchGetFreeTrialInfoOutcome(std::move(result.GetError()));
 }
 
 BatchGetMemberEc2DeepInspectionStatusOutcome Inspector2Client::BatchGetMemberEc2DeepInspectionStatus(
@@ -322,7 +335,9 @@ BatchGetMemberEc2DeepInspectionStatusOutcome Inspector2Client::BatchGetMemberEc2
     endpointResolutionOutcome.GetResult().AddPathSegments("/ec2deepinspectionstatus/member/batch/get");
   };
 
-  return BatchGetMemberEc2DeepInspectionStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetMemberEc2DeepInspectionStatusOutcome(result.GetResultWithOwnership())
+                            : BatchGetMemberEc2DeepInspectionStatusOutcome(std::move(result.GetError()));
 }
 
 BatchUpdateMemberEc2DeepInspectionStatusOutcome Inspector2Client::BatchUpdateMemberEc2DeepInspectionStatus(
@@ -332,7 +347,9 @@ BatchUpdateMemberEc2DeepInspectionStatusOutcome Inspector2Client::BatchUpdateMem
     endpointResolutionOutcome.GetResult().AddPathSegments("/ec2deepinspectionstatus/member/batch/update");
   };
 
-  return BatchUpdateMemberEc2DeepInspectionStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchUpdateMemberEc2DeepInspectionStatusOutcome(result.GetResultWithOwnership())
+                            : BatchUpdateMemberEc2DeepInspectionStatusOutcome(std::move(result.GetError()));
 }
 
 CancelFindingsReportOutcome Inspector2Client::CancelFindingsReport(const CancelFindingsReportRequest& request) const {
@@ -341,7 +358,9 @@ CancelFindingsReportOutcome Inspector2Client::CancelFindingsReport(const CancelF
     endpointResolutionOutcome.GetResult().AddPathSegments("/reporting/cancel");
   };
 
-  return CancelFindingsReportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelFindingsReportOutcome(result.GetResultWithOwnership())
+                            : CancelFindingsReportOutcome(std::move(result.GetError()));
 }
 
 CancelSbomExportOutcome Inspector2Client::CancelSbomExport(const CancelSbomExportRequest& request) const {
@@ -350,7 +369,9 @@ CancelSbomExportOutcome Inspector2Client::CancelSbomExport(const CancelSbomExpor
     endpointResolutionOutcome.GetResult().AddPathSegments("/sbomexport/cancel");
   };
 
-  return CancelSbomExportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelSbomExportOutcome(result.GetResultWithOwnership())
+                            : CancelSbomExportOutcome(std::move(result.GetError()));
 }
 
 CreateCisScanConfigurationOutcome Inspector2Client::CreateCisScanConfiguration(const CreateCisScanConfigurationRequest& request) const {
@@ -359,7 +380,9 @@ CreateCisScanConfigurationOutcome Inspector2Client::CreateCisScanConfiguration(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/cis/scan-configuration/create");
   };
 
-  return CreateCisScanConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCisScanConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateCisScanConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateCodeSecurityIntegrationOutcome Inspector2Client::CreateCodeSecurityIntegration(
@@ -369,7 +392,9 @@ CreateCodeSecurityIntegrationOutcome Inspector2Client::CreateCodeSecurityIntegra
     endpointResolutionOutcome.GetResult().AddPathSegments("/codesecurity/integration/create");
   };
 
-  return CreateCodeSecurityIntegrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCodeSecurityIntegrationOutcome(result.GetResultWithOwnership())
+                            : CreateCodeSecurityIntegrationOutcome(std::move(result.GetError()));
 }
 
 CreateCodeSecurityScanConfigurationOutcome Inspector2Client::CreateCodeSecurityScanConfiguration(
@@ -379,7 +404,9 @@ CreateCodeSecurityScanConfigurationOutcome Inspector2Client::CreateCodeSecurityS
     endpointResolutionOutcome.GetResult().AddPathSegments("/codesecurity/scan-configuration/create");
   };
 
-  return CreateCodeSecurityScanConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCodeSecurityScanConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateCodeSecurityScanConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateFilterOutcome Inspector2Client::CreateFilter(const CreateFilterRequest& request) const {
@@ -388,7 +415,8 @@ CreateFilterOutcome Inspector2Client::CreateFilter(const CreateFilterRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/filters/create");
   };
 
-  return CreateFilterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFilterOutcome(result.GetResultWithOwnership()) : CreateFilterOutcome(std::move(result.GetError()));
 }
 
 CreateFindingsReportOutcome Inspector2Client::CreateFindingsReport(const CreateFindingsReportRequest& request) const {
@@ -397,7 +425,9 @@ CreateFindingsReportOutcome Inspector2Client::CreateFindingsReport(const CreateF
     endpointResolutionOutcome.GetResult().AddPathSegments("/reporting/create");
   };
 
-  return CreateFindingsReportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFindingsReportOutcome(result.GetResultWithOwnership())
+                            : CreateFindingsReportOutcome(std::move(result.GetError()));
 }
 
 CreateSbomExportOutcome Inspector2Client::CreateSbomExport(const CreateSbomExportRequest& request) const {
@@ -406,7 +436,9 @@ CreateSbomExportOutcome Inspector2Client::CreateSbomExport(const CreateSbomExpor
     endpointResolutionOutcome.GetResult().AddPathSegments("/sbomexport/create");
   };
 
-  return CreateSbomExportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSbomExportOutcome(result.GetResultWithOwnership())
+                            : CreateSbomExportOutcome(std::move(result.GetError()));
 }
 
 DeleteCisScanConfigurationOutcome Inspector2Client::DeleteCisScanConfiguration(const DeleteCisScanConfigurationRequest& request) const {
@@ -415,7 +447,9 @@ DeleteCisScanConfigurationOutcome Inspector2Client::DeleteCisScanConfiguration(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/cis/scan-configuration/delete");
   };
 
-  return DeleteCisScanConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCisScanConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteCisScanConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteCodeSecurityIntegrationOutcome Inspector2Client::DeleteCodeSecurityIntegration(
@@ -425,7 +459,9 @@ DeleteCodeSecurityIntegrationOutcome Inspector2Client::DeleteCodeSecurityIntegra
     endpointResolutionOutcome.GetResult().AddPathSegments("/codesecurity/integration/delete");
   };
 
-  return DeleteCodeSecurityIntegrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCodeSecurityIntegrationOutcome(result.GetResultWithOwnership())
+                            : DeleteCodeSecurityIntegrationOutcome(std::move(result.GetError()));
 }
 
 DeleteCodeSecurityScanConfigurationOutcome Inspector2Client::DeleteCodeSecurityScanConfiguration(
@@ -435,7 +471,9 @@ DeleteCodeSecurityScanConfigurationOutcome Inspector2Client::DeleteCodeSecurityS
     endpointResolutionOutcome.GetResult().AddPathSegments("/codesecurity/scan-configuration/delete");
   };
 
-  return DeleteCodeSecurityScanConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCodeSecurityScanConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteCodeSecurityScanConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteFilterOutcome Inspector2Client::DeleteFilter(const DeleteFilterRequest& request) const {
@@ -444,7 +482,8 @@ DeleteFilterOutcome Inspector2Client::DeleteFilter(const DeleteFilterRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/filters/delete");
   };
 
-  return DeleteFilterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteFilterOutcome(result.GetResultWithOwnership()) : DeleteFilterOutcome(std::move(result.GetError()));
 }
 
 DescribeOrganizationConfigurationOutcome Inspector2Client::DescribeOrganizationConfiguration(
@@ -454,7 +493,9 @@ DescribeOrganizationConfigurationOutcome Inspector2Client::DescribeOrganizationC
     endpointResolutionOutcome.GetResult().AddPathSegments("/organizationconfiguration/describe");
   };
 
-  return DescribeOrganizationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeOrganizationConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeOrganizationConfigurationOutcome(std::move(result.GetError()));
 }
 
 DisableOutcome Inspector2Client::Disable(const DisableRequest& request) const {
@@ -463,7 +504,8 @@ DisableOutcome Inspector2Client::Disable(const DisableRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/disable");
   };
 
-  return DisableOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableOutcome(result.GetResultWithOwnership()) : DisableOutcome(std::move(result.GetError()));
 }
 
 DisableDelegatedAdminAccountOutcome Inspector2Client::DisableDelegatedAdminAccount(
@@ -473,7 +515,9 @@ DisableDelegatedAdminAccountOutcome Inspector2Client::DisableDelegatedAdminAccou
     endpointResolutionOutcome.GetResult().AddPathSegments("/delegatedadminaccounts/disable");
   };
 
-  return DisableDelegatedAdminAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableDelegatedAdminAccountOutcome(result.GetResultWithOwnership())
+                            : DisableDelegatedAdminAccountOutcome(std::move(result.GetError()));
 }
 
 DisassociateMemberOutcome Inspector2Client::DisassociateMember(const DisassociateMemberRequest& request) const {
@@ -482,7 +526,9 @@ DisassociateMemberOutcome Inspector2Client::DisassociateMember(const Disassociat
     endpointResolutionOutcome.GetResult().AddPathSegments("/members/disassociate");
   };
 
-  return DisassociateMemberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateMemberOutcome(result.GetResultWithOwnership())
+                            : DisassociateMemberOutcome(std::move(result.GetError()));
 }
 
 EnableOutcome Inspector2Client::Enable(const EnableRequest& request) const {
@@ -491,7 +537,8 @@ EnableOutcome Inspector2Client::Enable(const EnableRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/enable");
   };
 
-  return EnableOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableOutcome(result.GetResultWithOwnership()) : EnableOutcome(std::move(result.GetError()));
 }
 
 EnableDelegatedAdminAccountOutcome Inspector2Client::EnableDelegatedAdminAccount(const EnableDelegatedAdminAccountRequest& request) const {
@@ -500,7 +547,9 @@ EnableDelegatedAdminAccountOutcome Inspector2Client::EnableDelegatedAdminAccount
     endpointResolutionOutcome.GetResult().AddPathSegments("/delegatedadminaccounts/enable");
   };
 
-  return EnableDelegatedAdminAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableDelegatedAdminAccountOutcome(result.GetResultWithOwnership())
+                            : EnableDelegatedAdminAccountOutcome(std::move(result.GetError()));
 }
 
 GetCisScanReportOutcome Inspector2Client::GetCisScanReport(const GetCisScanReportRequest& request) const {
@@ -509,7 +558,9 @@ GetCisScanReportOutcome Inspector2Client::GetCisScanReport(const GetCisScanRepor
     endpointResolutionOutcome.GetResult().AddPathSegments("/cis/scan/report/get");
   };
 
-  return GetCisScanReportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCisScanReportOutcome(result.GetResultWithOwnership())
+                            : GetCisScanReportOutcome(std::move(result.GetError()));
 }
 
 GetCisScanResultDetailsOutcome Inspector2Client::GetCisScanResultDetails(const GetCisScanResultDetailsRequest& request) const {
@@ -518,7 +569,9 @@ GetCisScanResultDetailsOutcome Inspector2Client::GetCisScanResultDetails(const G
     endpointResolutionOutcome.GetResult().AddPathSegments("/cis/scan-result/details/get");
   };
 
-  return GetCisScanResultDetailsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCisScanResultDetailsOutcome(result.GetResultWithOwnership())
+                            : GetCisScanResultDetailsOutcome(std::move(result.GetError()));
 }
 
 GetClustersForImageOutcome Inspector2Client::GetClustersForImage(const GetClustersForImageRequest& request) const {
@@ -527,7 +580,9 @@ GetClustersForImageOutcome Inspector2Client::GetClustersForImage(const GetCluste
     endpointResolutionOutcome.GetResult().AddPathSegments("/cluster/get");
   };
 
-  return GetClustersForImageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetClustersForImageOutcome(result.GetResultWithOwnership())
+                            : GetClustersForImageOutcome(std::move(result.GetError()));
 }
 
 GetCodeSecurityIntegrationOutcome Inspector2Client::GetCodeSecurityIntegration(const GetCodeSecurityIntegrationRequest& request) const {
@@ -536,7 +591,9 @@ GetCodeSecurityIntegrationOutcome Inspector2Client::GetCodeSecurityIntegration(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/codesecurity/integration/get");
   };
 
-  return GetCodeSecurityIntegrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCodeSecurityIntegrationOutcome(result.GetResultWithOwnership())
+                            : GetCodeSecurityIntegrationOutcome(std::move(result.GetError()));
 }
 
 GetCodeSecurityScanOutcome Inspector2Client::GetCodeSecurityScan(const GetCodeSecurityScanRequest& request) const {
@@ -545,7 +602,9 @@ GetCodeSecurityScanOutcome Inspector2Client::GetCodeSecurityScan(const GetCodeSe
     endpointResolutionOutcome.GetResult().AddPathSegments("/codesecurity/scan/get");
   };
 
-  return GetCodeSecurityScanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCodeSecurityScanOutcome(result.GetResultWithOwnership())
+                            : GetCodeSecurityScanOutcome(std::move(result.GetError()));
 }
 
 GetCodeSecurityScanConfigurationOutcome Inspector2Client::GetCodeSecurityScanConfiguration(
@@ -555,7 +614,9 @@ GetCodeSecurityScanConfigurationOutcome Inspector2Client::GetCodeSecurityScanCon
     endpointResolutionOutcome.GetResult().AddPathSegments("/codesecurity/scan-configuration/get");
   };
 
-  return GetCodeSecurityScanConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCodeSecurityScanConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetCodeSecurityScanConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetConfigurationOutcome Inspector2Client::GetConfiguration(const GetConfigurationRequest& request) const {
@@ -564,7 +625,9 @@ GetConfigurationOutcome Inspector2Client::GetConfiguration(const GetConfiguratio
     endpointResolutionOutcome.GetResult().AddPathSegments("/configuration/get");
   };
 
-  return GetConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetDelegatedAdminAccountOutcome Inspector2Client::GetDelegatedAdminAccount(const GetDelegatedAdminAccountRequest& request) const {
@@ -573,7 +636,9 @@ GetDelegatedAdminAccountOutcome Inspector2Client::GetDelegatedAdminAccount(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/delegatedadminaccounts/get");
   };
 
-  return GetDelegatedAdminAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDelegatedAdminAccountOutcome(result.GetResultWithOwnership())
+                            : GetDelegatedAdminAccountOutcome(std::move(result.GetError()));
 }
 
 GetEc2DeepInspectionConfigurationOutcome Inspector2Client::GetEc2DeepInspectionConfiguration(
@@ -583,7 +648,9 @@ GetEc2DeepInspectionConfigurationOutcome Inspector2Client::GetEc2DeepInspectionC
     endpointResolutionOutcome.GetResult().AddPathSegments("/ec2deepinspectionconfiguration/get");
   };
 
-  return GetEc2DeepInspectionConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEc2DeepInspectionConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetEc2DeepInspectionConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetEncryptionKeyOutcome Inspector2Client::GetEncryptionKey(const GetEncryptionKeyRequest& request) const {
@@ -603,7 +670,9 @@ GetEncryptionKeyOutcome Inspector2Client::GetEncryptionKey(const GetEncryptionKe
     endpointResolutionOutcome.GetResult().AddPathSegments("/encryptionkey/get");
   };
 
-  return GetEncryptionKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEncryptionKeyOutcome(result.GetResultWithOwnership())
+                            : GetEncryptionKeyOutcome(std::move(result.GetError()));
 }
 
 GetFindingsReportStatusOutcome Inspector2Client::GetFindingsReportStatus(const GetFindingsReportStatusRequest& request) const {
@@ -612,7 +681,9 @@ GetFindingsReportStatusOutcome Inspector2Client::GetFindingsReportStatus(const G
     endpointResolutionOutcome.GetResult().AddPathSegments("/reporting/status/get");
   };
 
-  return GetFindingsReportStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetFindingsReportStatusOutcome(result.GetResultWithOwnership())
+                            : GetFindingsReportStatusOutcome(std::move(result.GetError()));
 }
 
 GetMemberOutcome Inspector2Client::GetMember(const GetMemberRequest& request) const {
@@ -621,7 +692,8 @@ GetMemberOutcome Inspector2Client::GetMember(const GetMemberRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegments("/members/get");
   };
 
-  return GetMemberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetMemberOutcome(result.GetResultWithOwnership()) : GetMemberOutcome(std::move(result.GetError()));
 }
 
 GetSbomExportOutcome Inspector2Client::GetSbomExport(const GetSbomExportRequest& request) const {
@@ -630,7 +702,8 @@ GetSbomExportOutcome Inspector2Client::GetSbomExport(const GetSbomExportRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/sbomexport/get");
   };
 
-  return GetSbomExportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSbomExportOutcome(result.GetResultWithOwnership()) : GetSbomExportOutcome(std::move(result.GetError()));
 }
 
 ListAccountPermissionsOutcome Inspector2Client::ListAccountPermissions(const ListAccountPermissionsRequest& request) const {
@@ -639,7 +712,9 @@ ListAccountPermissionsOutcome Inspector2Client::ListAccountPermissions(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/accountpermissions/list");
   };
 
-  return ListAccountPermissionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAccountPermissionsOutcome(result.GetResultWithOwnership())
+                            : ListAccountPermissionsOutcome(std::move(result.GetError()));
 }
 
 ListCisScanConfigurationsOutcome Inspector2Client::ListCisScanConfigurations(const ListCisScanConfigurationsRequest& request) const {
@@ -648,7 +723,9 @@ ListCisScanConfigurationsOutcome Inspector2Client::ListCisScanConfigurations(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/cis/scan-configuration/list");
   };
 
-  return ListCisScanConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCisScanConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListCisScanConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListCisScanResultsAggregatedByChecksOutcome Inspector2Client::ListCisScanResultsAggregatedByChecks(
@@ -658,7 +735,9 @@ ListCisScanResultsAggregatedByChecksOutcome Inspector2Client::ListCisScanResults
     endpointResolutionOutcome.GetResult().AddPathSegments("/cis/scan-result/check/list");
   };
 
-  return ListCisScanResultsAggregatedByChecksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCisScanResultsAggregatedByChecksOutcome(result.GetResultWithOwnership())
+                            : ListCisScanResultsAggregatedByChecksOutcome(std::move(result.GetError()));
 }
 
 ListCisScanResultsAggregatedByTargetResourceOutcome Inspector2Client::ListCisScanResultsAggregatedByTargetResource(
@@ -668,8 +747,9 @@ ListCisScanResultsAggregatedByTargetResourceOutcome Inspector2Client::ListCisSca
     endpointResolutionOutcome.GetResult().AddPathSegments("/cis/scan-result/resource/list");
   };
 
-  return ListCisScanResultsAggregatedByTargetResourceOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCisScanResultsAggregatedByTargetResourceOutcome(result.GetResultWithOwnership())
+                            : ListCisScanResultsAggregatedByTargetResourceOutcome(std::move(result.GetError()));
 }
 
 ListCisScansOutcome Inspector2Client::ListCisScans(const ListCisScansRequest& request) const {
@@ -678,7 +758,8 @@ ListCisScansOutcome Inspector2Client::ListCisScans(const ListCisScansRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/cis/scan/list");
   };
 
-  return ListCisScansOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCisScansOutcome(result.GetResultWithOwnership()) : ListCisScansOutcome(std::move(result.GetError()));
 }
 
 ListCodeSecurityIntegrationsOutcome Inspector2Client::ListCodeSecurityIntegrations(
@@ -688,7 +769,9 @@ ListCodeSecurityIntegrationsOutcome Inspector2Client::ListCodeSecurityIntegratio
     endpointResolutionOutcome.GetResult().AddPathSegments("/codesecurity/integration/list");
   };
 
-  return ListCodeSecurityIntegrationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCodeSecurityIntegrationsOutcome(result.GetResultWithOwnership())
+                            : ListCodeSecurityIntegrationsOutcome(std::move(result.GetError()));
 }
 
 ListCodeSecurityScanConfigurationAssociationsOutcome Inspector2Client::ListCodeSecurityScanConfigurationAssociations(
@@ -698,8 +781,9 @@ ListCodeSecurityScanConfigurationAssociationsOutcome Inspector2Client::ListCodeS
     endpointResolutionOutcome.GetResult().AddPathSegments("/codesecurity/scan-configuration/associations/list");
   };
 
-  return ListCodeSecurityScanConfigurationAssociationsOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCodeSecurityScanConfigurationAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListCodeSecurityScanConfigurationAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListCodeSecurityScanConfigurationsOutcome Inspector2Client::ListCodeSecurityScanConfigurations(
@@ -709,7 +793,9 @@ ListCodeSecurityScanConfigurationsOutcome Inspector2Client::ListCodeSecurityScan
     endpointResolutionOutcome.GetResult().AddPathSegments("/codesecurity/scan-configuration/list");
   };
 
-  return ListCodeSecurityScanConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCodeSecurityScanConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListCodeSecurityScanConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListCoverageOutcome Inspector2Client::ListCoverage(const ListCoverageRequest& request) const {
@@ -718,7 +804,8 @@ ListCoverageOutcome Inspector2Client::ListCoverage(const ListCoverageRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/coverage/list");
   };
 
-  return ListCoverageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCoverageOutcome(result.GetResultWithOwnership()) : ListCoverageOutcome(std::move(result.GetError()));
 }
 
 ListCoverageStatisticsOutcome Inspector2Client::ListCoverageStatistics(const ListCoverageStatisticsRequest& request) const {
@@ -727,7 +814,9 @@ ListCoverageStatisticsOutcome Inspector2Client::ListCoverageStatistics(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/coverage/statistics/list");
   };
 
-  return ListCoverageStatisticsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCoverageStatisticsOutcome(result.GetResultWithOwnership())
+                            : ListCoverageStatisticsOutcome(std::move(result.GetError()));
 }
 
 ListDelegatedAdminAccountsOutcome Inspector2Client::ListDelegatedAdminAccounts(const ListDelegatedAdminAccountsRequest& request) const {
@@ -736,7 +825,9 @@ ListDelegatedAdminAccountsOutcome Inspector2Client::ListDelegatedAdminAccounts(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/delegatedadminaccounts/list");
   };
 
-  return ListDelegatedAdminAccountsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDelegatedAdminAccountsOutcome(result.GetResultWithOwnership())
+                            : ListDelegatedAdminAccountsOutcome(std::move(result.GetError()));
 }
 
 ListFiltersOutcome Inspector2Client::ListFilters(const ListFiltersRequest& request) const {
@@ -745,7 +836,8 @@ ListFiltersOutcome Inspector2Client::ListFilters(const ListFiltersRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/filters/list");
   };
 
-  return ListFiltersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFiltersOutcome(result.GetResultWithOwnership()) : ListFiltersOutcome(std::move(result.GetError()));
 }
 
 ListFindingAggregationsOutcome Inspector2Client::ListFindingAggregations(const ListFindingAggregationsRequest& request) const {
@@ -754,7 +846,9 @@ ListFindingAggregationsOutcome Inspector2Client::ListFindingAggregations(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/findings/aggregation/list");
   };
 
-  return ListFindingAggregationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFindingAggregationsOutcome(result.GetResultWithOwnership())
+                            : ListFindingAggregationsOutcome(std::move(result.GetError()));
 }
 
 ListFindingsOutcome Inspector2Client::ListFindings(const ListFindingsRequest& request) const {
@@ -763,7 +857,8 @@ ListFindingsOutcome Inspector2Client::ListFindings(const ListFindingsRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/findings/list");
   };
 
-  return ListFindingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFindingsOutcome(result.GetResultWithOwnership()) : ListFindingsOutcome(std::move(result.GetError()));
 }
 
 ListMembersOutcome Inspector2Client::ListMembers(const ListMembersRequest& request) const {
@@ -772,7 +867,8 @@ ListMembersOutcome Inspector2Client::ListMembers(const ListMembersRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/members/list");
   };
 
-  return ListMembersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMembersOutcome(result.GetResultWithOwnership()) : ListMembersOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome Inspector2Client::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -788,7 +884,9 @@ ListTagsForResourceOutcome Inspector2Client::ListTagsForResource(const ListTagsF
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListUsageTotalsOutcome Inspector2Client::ListUsageTotals(const ListUsageTotalsRequest& request) const {
@@ -797,7 +895,9 @@ ListUsageTotalsOutcome Inspector2Client::ListUsageTotals(const ListUsageTotalsRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/usage/list");
   };
 
-  return ListUsageTotalsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListUsageTotalsOutcome(result.GetResultWithOwnership())
+                            : ListUsageTotalsOutcome(std::move(result.GetError()));
 }
 
 ResetEncryptionKeyOutcome Inspector2Client::ResetEncryptionKey(const ResetEncryptionKeyRequest& request) const {
@@ -806,7 +906,9 @@ ResetEncryptionKeyOutcome Inspector2Client::ResetEncryptionKey(const ResetEncryp
     endpointResolutionOutcome.GetResult().AddPathSegments("/encryptionkey/reset");
   };
 
-  return ResetEncryptionKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? ResetEncryptionKeyOutcome(result.GetResultWithOwnership())
+                            : ResetEncryptionKeyOutcome(std::move(result.GetError()));
 }
 
 SearchVulnerabilitiesOutcome Inspector2Client::SearchVulnerabilities(const SearchVulnerabilitiesRequest& request) const {
@@ -815,7 +917,9 @@ SearchVulnerabilitiesOutcome Inspector2Client::SearchVulnerabilities(const Searc
     endpointResolutionOutcome.GetResult().AddPathSegments("/vulnerabilities/search");
   };
 
-  return SearchVulnerabilitiesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchVulnerabilitiesOutcome(result.GetResultWithOwnership())
+                            : SearchVulnerabilitiesOutcome(std::move(result.GetError()));
 }
 
 SendCisSessionHealthOutcome Inspector2Client::SendCisSessionHealth(const SendCisSessionHealthRequest& request) const {
@@ -824,7 +928,9 @@ SendCisSessionHealthOutcome Inspector2Client::SendCisSessionHealth(const SendCis
     endpointResolutionOutcome.GetResult().AddPathSegments("/cissession/health/send");
   };
 
-  return SendCisSessionHealthOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? SendCisSessionHealthOutcome(result.GetResultWithOwnership())
+                            : SendCisSessionHealthOutcome(std::move(result.GetError()));
 }
 
 SendCisSessionTelemetryOutcome Inspector2Client::SendCisSessionTelemetry(const SendCisSessionTelemetryRequest& request) const {
@@ -833,7 +939,9 @@ SendCisSessionTelemetryOutcome Inspector2Client::SendCisSessionTelemetry(const S
     endpointResolutionOutcome.GetResult().AddPathSegments("/cissession/telemetry/send");
   };
 
-  return SendCisSessionTelemetryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? SendCisSessionTelemetryOutcome(result.GetResultWithOwnership())
+                            : SendCisSessionTelemetryOutcome(std::move(result.GetError()));
 }
 
 StartCisSessionOutcome Inspector2Client::StartCisSession(const StartCisSessionRequest& request) const {
@@ -842,7 +950,9 @@ StartCisSessionOutcome Inspector2Client::StartCisSession(const StartCisSessionRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/cissession/start");
   };
 
-  return StartCisSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StartCisSessionOutcome(result.GetResultWithOwnership())
+                            : StartCisSessionOutcome(std::move(result.GetError()));
 }
 
 StartCodeSecurityScanOutcome Inspector2Client::StartCodeSecurityScan(const StartCodeSecurityScanRequest& request) const {
@@ -851,7 +961,9 @@ StartCodeSecurityScanOutcome Inspector2Client::StartCodeSecurityScan(const Start
     endpointResolutionOutcome.GetResult().AddPathSegments("/codesecurity/scan/start");
   };
 
-  return StartCodeSecurityScanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartCodeSecurityScanOutcome(result.GetResultWithOwnership())
+                            : StartCodeSecurityScanOutcome(std::move(result.GetError()));
 }
 
 StopCisSessionOutcome Inspector2Client::StopCisSession(const StopCisSessionRequest& request) const {
@@ -860,7 +972,8 @@ StopCisSessionOutcome Inspector2Client::StopCisSession(const StopCisSessionReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/cissession/stop");
   };
 
-  return StopCisSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StopCisSessionOutcome(result.GetResultWithOwnership()) : StopCisSessionOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome Inspector2Client::TagResource(const TagResourceRequest& request) const {
@@ -876,7 +989,8 @@ TagResourceOutcome Inspector2Client::TagResource(const TagResourceRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome Inspector2Client::UntagResource(const UntagResourceRequest& request) const {
@@ -897,7 +1011,8 @@ UntagResourceOutcome Inspector2Client::UntagResource(const UntagResourceRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateCisScanConfigurationOutcome Inspector2Client::UpdateCisScanConfiguration(const UpdateCisScanConfigurationRequest& request) const {
@@ -906,7 +1021,9 @@ UpdateCisScanConfigurationOutcome Inspector2Client::UpdateCisScanConfiguration(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/cis/scan-configuration/update");
   };
 
-  return UpdateCisScanConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCisScanConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateCisScanConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateCodeSecurityIntegrationOutcome Inspector2Client::UpdateCodeSecurityIntegration(
@@ -916,7 +1033,9 @@ UpdateCodeSecurityIntegrationOutcome Inspector2Client::UpdateCodeSecurityIntegra
     endpointResolutionOutcome.GetResult().AddPathSegments("/codesecurity/integration/update");
   };
 
-  return UpdateCodeSecurityIntegrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCodeSecurityIntegrationOutcome(result.GetResultWithOwnership())
+                            : UpdateCodeSecurityIntegrationOutcome(std::move(result.GetError()));
 }
 
 UpdateCodeSecurityScanConfigurationOutcome Inspector2Client::UpdateCodeSecurityScanConfiguration(
@@ -926,7 +1045,9 @@ UpdateCodeSecurityScanConfigurationOutcome Inspector2Client::UpdateCodeSecurityS
     endpointResolutionOutcome.GetResult().AddPathSegments("/codesecurity/scan-configuration/update");
   };
 
-  return UpdateCodeSecurityScanConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCodeSecurityScanConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateCodeSecurityScanConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateConfigurationOutcome Inspector2Client::UpdateConfiguration(const UpdateConfigurationRequest& request) const {
@@ -935,7 +1056,9 @@ UpdateConfigurationOutcome Inspector2Client::UpdateConfiguration(const UpdateCon
     endpointResolutionOutcome.GetResult().AddPathSegments("/configuration/update");
   };
 
-  return UpdateConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateEc2DeepInspectionConfigurationOutcome Inspector2Client::UpdateEc2DeepInspectionConfiguration(
@@ -945,7 +1068,9 @@ UpdateEc2DeepInspectionConfigurationOutcome Inspector2Client::UpdateEc2DeepInspe
     endpointResolutionOutcome.GetResult().AddPathSegments("/ec2deepinspectionconfiguration/update");
   };
 
-  return UpdateEc2DeepInspectionConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateEc2DeepInspectionConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateEc2DeepInspectionConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateEncryptionKeyOutcome Inspector2Client::UpdateEncryptionKey(const UpdateEncryptionKeyRequest& request) const {
@@ -954,7 +1079,9 @@ UpdateEncryptionKeyOutcome Inspector2Client::UpdateEncryptionKey(const UpdateEnc
     endpointResolutionOutcome.GetResult().AddPathSegments("/encryptionkey/update");
   };
 
-  return UpdateEncryptionKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateEncryptionKeyOutcome(result.GetResultWithOwnership())
+                            : UpdateEncryptionKeyOutcome(std::move(result.GetError()));
 }
 
 UpdateFilterOutcome Inspector2Client::UpdateFilter(const UpdateFilterRequest& request) const {
@@ -963,7 +1090,8 @@ UpdateFilterOutcome Inspector2Client::UpdateFilter(const UpdateFilterRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/filters/update");
   };
 
-  return UpdateFilterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateFilterOutcome(result.GetResultWithOwnership()) : UpdateFilterOutcome(std::move(result.GetError()));
 }
 
 UpdateOrgEc2DeepInspectionConfigurationOutcome Inspector2Client::UpdateOrgEc2DeepInspectionConfiguration(
@@ -973,7 +1101,9 @@ UpdateOrgEc2DeepInspectionConfigurationOutcome Inspector2Client::UpdateOrgEc2Dee
     endpointResolutionOutcome.GetResult().AddPathSegments("/ec2deepinspectionconfiguration/org/update");
   };
 
-  return UpdateOrgEc2DeepInspectionConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateOrgEc2DeepInspectionConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateOrgEc2DeepInspectionConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateOrganizationConfigurationOutcome Inspector2Client::UpdateOrganizationConfiguration(
@@ -983,5 +1113,7 @@ UpdateOrganizationConfigurationOutcome Inspector2Client::UpdateOrganizationConfi
     endpointResolutionOutcome.GetResult().AddPathSegments("/organizationconfiguration/update");
   };
 
-  return UpdateOrganizationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateOrganizationConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateOrganizationConfigurationOutcome(std::move(result.GetError()));
 }

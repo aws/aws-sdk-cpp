@@ -290,7 +290,9 @@ AssociateAwsAccountWithPartnerAccountOutcome IoTWirelessClient::AssociateAwsAcco
     endpointResolutionOutcome.GetResult().AddPathSegments("/partner-accounts");
   };
 
-  return AssociateAwsAccountWithPartnerAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateAwsAccountWithPartnerAccountOutcome(result.GetResultWithOwnership())
+                            : AssociateAwsAccountWithPartnerAccountOutcome(std::move(result.GetError()));
 }
 
 AssociateMulticastGroupWithFuotaTaskOutcome IoTWirelessClient::AssociateMulticastGroupWithFuotaTask(
@@ -308,7 +310,9 @@ AssociateMulticastGroupWithFuotaTaskOutcome IoTWirelessClient::AssociateMulticas
     endpointResolutionOutcome.GetResult().AddPathSegments("/multicast-group");
   };
 
-  return AssociateMulticastGroupWithFuotaTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateMulticastGroupWithFuotaTaskOutcome(result.GetResultWithOwnership())
+                            : AssociateMulticastGroupWithFuotaTaskOutcome(std::move(result.GetError()));
 }
 
 AssociateWirelessDeviceWithFuotaTaskOutcome IoTWirelessClient::AssociateWirelessDeviceWithFuotaTask(
@@ -326,7 +330,9 @@ AssociateWirelessDeviceWithFuotaTaskOutcome IoTWirelessClient::AssociateWireless
     endpointResolutionOutcome.GetResult().AddPathSegments("/wireless-device");
   };
 
-  return AssociateWirelessDeviceWithFuotaTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateWirelessDeviceWithFuotaTaskOutcome(result.GetResultWithOwnership())
+                            : AssociateWirelessDeviceWithFuotaTaskOutcome(std::move(result.GetError()));
 }
 
 AssociateWirelessDeviceWithMulticastGroupOutcome IoTWirelessClient::AssociateWirelessDeviceWithMulticastGroup(
@@ -344,7 +350,9 @@ AssociateWirelessDeviceWithMulticastGroupOutcome IoTWirelessClient::AssociateWir
     endpointResolutionOutcome.GetResult().AddPathSegments("/wireless-device");
   };
 
-  return AssociateWirelessDeviceWithMulticastGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateWirelessDeviceWithMulticastGroupOutcome(result.GetResultWithOwnership())
+                            : AssociateWirelessDeviceWithMulticastGroupOutcome(std::move(result.GetError()));
 }
 
 AssociateWirelessDeviceWithThingOutcome IoTWirelessClient::AssociateWirelessDeviceWithThing(
@@ -362,7 +370,9 @@ AssociateWirelessDeviceWithThingOutcome IoTWirelessClient::AssociateWirelessDevi
     endpointResolutionOutcome.GetResult().AddPathSegments("/thing");
   };
 
-  return AssociateWirelessDeviceWithThingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateWirelessDeviceWithThingOutcome(result.GetResultWithOwnership())
+                            : AssociateWirelessDeviceWithThingOutcome(std::move(result.GetError()));
 }
 
 AssociateWirelessGatewayWithCertificateOutcome IoTWirelessClient::AssociateWirelessGatewayWithCertificate(
@@ -380,7 +390,9 @@ AssociateWirelessGatewayWithCertificateOutcome IoTWirelessClient::AssociateWirel
     endpointResolutionOutcome.GetResult().AddPathSegments("/certificate");
   };
 
-  return AssociateWirelessGatewayWithCertificateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateWirelessGatewayWithCertificateOutcome(result.GetResultWithOwnership())
+                            : AssociateWirelessGatewayWithCertificateOutcome(std::move(result.GetError()));
 }
 
 AssociateWirelessGatewayWithThingOutcome IoTWirelessClient::AssociateWirelessGatewayWithThing(
@@ -398,7 +410,9 @@ AssociateWirelessGatewayWithThingOutcome IoTWirelessClient::AssociateWirelessGat
     endpointResolutionOutcome.GetResult().AddPathSegments("/thing");
   };
 
-  return AssociateWirelessGatewayWithThingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateWirelessGatewayWithThingOutcome(result.GetResultWithOwnership())
+                            : AssociateWirelessGatewayWithThingOutcome(std::move(result.GetError()));
 }
 
 CancelMulticastGroupSessionOutcome IoTWirelessClient::CancelMulticastGroupSession(const CancelMulticastGroupSessionRequest& request) const {
@@ -415,7 +429,9 @@ CancelMulticastGroupSessionOutcome IoTWirelessClient::CancelMulticastGroupSessio
     endpointResolutionOutcome.GetResult().AddPathSegments("/session");
   };
 
-  return CancelMulticastGroupSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? CancelMulticastGroupSessionOutcome(result.GetResultWithOwnership())
+                            : CancelMulticastGroupSessionOutcome(std::move(result.GetError()));
 }
 
 CreateDestinationOutcome IoTWirelessClient::CreateDestination(const CreateDestinationRequest& request) const {
@@ -424,7 +440,9 @@ CreateDestinationOutcome IoTWirelessClient::CreateDestination(const CreateDestin
     endpointResolutionOutcome.GetResult().AddPathSegments("/destinations");
   };
 
-  return CreateDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDestinationOutcome(result.GetResultWithOwnership())
+                            : CreateDestinationOutcome(std::move(result.GetError()));
 }
 
 CreateDeviceProfileOutcome IoTWirelessClient::CreateDeviceProfile(const CreateDeviceProfileRequest& request) const {
@@ -433,7 +451,9 @@ CreateDeviceProfileOutcome IoTWirelessClient::CreateDeviceProfile(const CreateDe
     endpointResolutionOutcome.GetResult().AddPathSegments("/device-profiles");
   };
 
-  return CreateDeviceProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDeviceProfileOutcome(result.GetResultWithOwnership())
+                            : CreateDeviceProfileOutcome(std::move(result.GetError()));
 }
 
 CreateFuotaTaskOutcome IoTWirelessClient::CreateFuotaTask(const CreateFuotaTaskRequest& request) const {
@@ -442,7 +462,9 @@ CreateFuotaTaskOutcome IoTWirelessClient::CreateFuotaTask(const CreateFuotaTaskR
     endpointResolutionOutcome.GetResult().AddPathSegments("/fuota-tasks");
   };
 
-  return CreateFuotaTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFuotaTaskOutcome(result.GetResultWithOwnership())
+                            : CreateFuotaTaskOutcome(std::move(result.GetError()));
 }
 
 CreateMulticastGroupOutcome IoTWirelessClient::CreateMulticastGroup(const CreateMulticastGroupRequest& request) const {
@@ -451,7 +473,9 @@ CreateMulticastGroupOutcome IoTWirelessClient::CreateMulticastGroup(const Create
     endpointResolutionOutcome.GetResult().AddPathSegments("/multicast-groups");
   };
 
-  return CreateMulticastGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMulticastGroupOutcome(result.GetResultWithOwnership())
+                            : CreateMulticastGroupOutcome(std::move(result.GetError()));
 }
 
 CreateNetworkAnalyzerConfigurationOutcome IoTWirelessClient::CreateNetworkAnalyzerConfiguration(
@@ -461,7 +485,9 @@ CreateNetworkAnalyzerConfigurationOutcome IoTWirelessClient::CreateNetworkAnalyz
     endpointResolutionOutcome.GetResult().AddPathSegments("/network-analyzer-configurations");
   };
 
-  return CreateNetworkAnalyzerConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateNetworkAnalyzerConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateNetworkAnalyzerConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateServiceProfileOutcome IoTWirelessClient::CreateServiceProfile(const CreateServiceProfileRequest& request) const {
@@ -470,7 +496,9 @@ CreateServiceProfileOutcome IoTWirelessClient::CreateServiceProfile(const Create
     endpointResolutionOutcome.GetResult().AddPathSegments("/service-profiles");
   };
 
-  return CreateServiceProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateServiceProfileOutcome(result.GetResultWithOwnership())
+                            : CreateServiceProfileOutcome(std::move(result.GetError()));
 }
 
 CreateWirelessDeviceOutcome IoTWirelessClient::CreateWirelessDevice(const CreateWirelessDeviceRequest& request) const {
@@ -479,7 +507,9 @@ CreateWirelessDeviceOutcome IoTWirelessClient::CreateWirelessDevice(const Create
     endpointResolutionOutcome.GetResult().AddPathSegments("/wireless-devices");
   };
 
-  return CreateWirelessDeviceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWirelessDeviceOutcome(result.GetResultWithOwnership())
+                            : CreateWirelessDeviceOutcome(std::move(result.GetError()));
 }
 
 CreateWirelessGatewayOutcome IoTWirelessClient::CreateWirelessGateway(const CreateWirelessGatewayRequest& request) const {
@@ -488,7 +518,9 @@ CreateWirelessGatewayOutcome IoTWirelessClient::CreateWirelessGateway(const Crea
     endpointResolutionOutcome.GetResult().AddPathSegments("/wireless-gateways");
   };
 
-  return CreateWirelessGatewayOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWirelessGatewayOutcome(result.GetResultWithOwnership())
+                            : CreateWirelessGatewayOutcome(std::move(result.GetError()));
 }
 
 CreateWirelessGatewayTaskOutcome IoTWirelessClient::CreateWirelessGatewayTask(const CreateWirelessGatewayTaskRequest& request) const {
@@ -505,7 +537,9 @@ CreateWirelessGatewayTaskOutcome IoTWirelessClient::CreateWirelessGatewayTask(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/tasks");
   };
 
-  return CreateWirelessGatewayTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWirelessGatewayTaskOutcome(result.GetResultWithOwnership())
+                            : CreateWirelessGatewayTaskOutcome(std::move(result.GetError()));
 }
 
 CreateWirelessGatewayTaskDefinitionOutcome IoTWirelessClient::CreateWirelessGatewayTaskDefinition(
@@ -515,7 +549,9 @@ CreateWirelessGatewayTaskDefinitionOutcome IoTWirelessClient::CreateWirelessGate
     endpointResolutionOutcome.GetResult().AddPathSegments("/wireless-gateway-task-definitions");
   };
 
-  return CreateWirelessGatewayTaskDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWirelessGatewayTaskDefinitionOutcome(result.GetResultWithOwnership())
+                            : CreateWirelessGatewayTaskDefinitionOutcome(std::move(result.GetError()));
 }
 
 DeleteDestinationOutcome IoTWirelessClient::DeleteDestination(const DeleteDestinationRequest& request) const {
@@ -531,7 +567,9 @@ DeleteDestinationOutcome IoTWirelessClient::DeleteDestination(const DeleteDestin
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDestinationOutcome(result.GetResultWithOwnership())
+                            : DeleteDestinationOutcome(std::move(result.GetError()));
 }
 
 DeleteDeviceProfileOutcome IoTWirelessClient::DeleteDeviceProfile(const DeleteDeviceProfileRequest& request) const {
@@ -547,7 +585,9 @@ DeleteDeviceProfileOutcome IoTWirelessClient::DeleteDeviceProfile(const DeleteDe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteDeviceProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDeviceProfileOutcome(result.GetResultWithOwnership())
+                            : DeleteDeviceProfileOutcome(std::move(result.GetError()));
 }
 
 DeleteFuotaTaskOutcome IoTWirelessClient::DeleteFuotaTask(const DeleteFuotaTaskRequest& request) const {
@@ -563,7 +603,9 @@ DeleteFuotaTaskOutcome IoTWirelessClient::DeleteFuotaTask(const DeleteFuotaTaskR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteFuotaTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteFuotaTaskOutcome(result.GetResultWithOwnership())
+                            : DeleteFuotaTaskOutcome(std::move(result.GetError()));
 }
 
 DeleteMulticastGroupOutcome IoTWirelessClient::DeleteMulticastGroup(const DeleteMulticastGroupRequest& request) const {
@@ -579,7 +621,9 @@ DeleteMulticastGroupOutcome IoTWirelessClient::DeleteMulticastGroup(const Delete
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteMulticastGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMulticastGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteMulticastGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteNetworkAnalyzerConfigurationOutcome IoTWirelessClient::DeleteNetworkAnalyzerConfiguration(
@@ -596,7 +640,9 @@ DeleteNetworkAnalyzerConfigurationOutcome IoTWirelessClient::DeleteNetworkAnalyz
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfigurationName());
   };
 
-  return DeleteNetworkAnalyzerConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteNetworkAnalyzerConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteNetworkAnalyzerConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteQueuedMessagesOutcome IoTWirelessClient::DeleteQueuedMessages(const DeleteQueuedMessagesRequest& request) const {
@@ -618,7 +664,9 @@ DeleteQueuedMessagesOutcome IoTWirelessClient::DeleteQueuedMessages(const Delete
     endpointResolutionOutcome.GetResult().AddPathSegments("/data");
   };
 
-  return DeleteQueuedMessagesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteQueuedMessagesOutcome(result.GetResultWithOwnership())
+                            : DeleteQueuedMessagesOutcome(std::move(result.GetError()));
 }
 
 DeleteServiceProfileOutcome IoTWirelessClient::DeleteServiceProfile(const DeleteServiceProfileRequest& request) const {
@@ -634,7 +682,9 @@ DeleteServiceProfileOutcome IoTWirelessClient::DeleteServiceProfile(const Delete
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteServiceProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteServiceProfileOutcome(result.GetResultWithOwnership())
+                            : DeleteServiceProfileOutcome(std::move(result.GetError()));
 }
 
 DeleteWirelessDeviceOutcome IoTWirelessClient::DeleteWirelessDevice(const DeleteWirelessDeviceRequest& request) const {
@@ -650,7 +700,9 @@ DeleteWirelessDeviceOutcome IoTWirelessClient::DeleteWirelessDevice(const Delete
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteWirelessDeviceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteWirelessDeviceOutcome(result.GetResultWithOwnership())
+                            : DeleteWirelessDeviceOutcome(std::move(result.GetError()));
 }
 
 DeleteWirelessDeviceImportTaskOutcome IoTWirelessClient::DeleteWirelessDeviceImportTask(
@@ -667,7 +719,9 @@ DeleteWirelessDeviceImportTaskOutcome IoTWirelessClient::DeleteWirelessDeviceImp
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteWirelessDeviceImportTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteWirelessDeviceImportTaskOutcome(result.GetResultWithOwnership())
+                            : DeleteWirelessDeviceImportTaskOutcome(std::move(result.GetError()));
 }
 
 DeleteWirelessGatewayOutcome IoTWirelessClient::DeleteWirelessGateway(const DeleteWirelessGatewayRequest& request) const {
@@ -683,7 +737,9 @@ DeleteWirelessGatewayOutcome IoTWirelessClient::DeleteWirelessGateway(const Dele
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteWirelessGatewayOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteWirelessGatewayOutcome(result.GetResultWithOwnership())
+                            : DeleteWirelessGatewayOutcome(std::move(result.GetError()));
 }
 
 DeleteWirelessGatewayTaskOutcome IoTWirelessClient::DeleteWirelessGatewayTask(const DeleteWirelessGatewayTaskRequest& request) const {
@@ -700,7 +756,9 @@ DeleteWirelessGatewayTaskOutcome IoTWirelessClient::DeleteWirelessGatewayTask(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/tasks");
   };
 
-  return DeleteWirelessGatewayTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteWirelessGatewayTaskOutcome(result.GetResultWithOwnership())
+                            : DeleteWirelessGatewayTaskOutcome(std::move(result.GetError()));
 }
 
 DeleteWirelessGatewayTaskDefinitionOutcome IoTWirelessClient::DeleteWirelessGatewayTaskDefinition(
@@ -717,7 +775,9 @@ DeleteWirelessGatewayTaskDefinitionOutcome IoTWirelessClient::DeleteWirelessGate
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteWirelessGatewayTaskDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteWirelessGatewayTaskDefinitionOutcome(result.GetResultWithOwnership())
+                            : DeleteWirelessGatewayTaskDefinitionOutcome(std::move(result.GetError()));
 }
 
 DeregisterWirelessDeviceOutcome IoTWirelessClient::DeregisterWirelessDevice(const DeregisterWirelessDeviceRequest& request) const {
@@ -734,7 +794,9 @@ DeregisterWirelessDeviceOutcome IoTWirelessClient::DeregisterWirelessDevice(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/deregister");
   };
 
-  return DeregisterWirelessDeviceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? DeregisterWirelessDeviceOutcome(result.GetResultWithOwnership())
+                            : DeregisterWirelessDeviceOutcome(std::move(result.GetError()));
 }
 
 DisassociateAwsAccountFromPartnerAccountOutcome IoTWirelessClient::DisassociateAwsAccountFromPartnerAccount(
@@ -756,7 +818,9 @@ DisassociateAwsAccountFromPartnerAccountOutcome IoTWirelessClient::DisassociateA
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPartnerAccountId());
   };
 
-  return DisassociateAwsAccountFromPartnerAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateAwsAccountFromPartnerAccountOutcome(result.GetResultWithOwnership())
+                            : DisassociateAwsAccountFromPartnerAccountOutcome(std::move(result.GetError()));
 }
 
 DisassociateMulticastGroupFromFuotaTaskOutcome IoTWirelessClient::DisassociateMulticastGroupFromFuotaTask(
@@ -780,7 +844,9 @@ DisassociateMulticastGroupFromFuotaTaskOutcome IoTWirelessClient::DisassociateMu
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMulticastGroupId());
   };
 
-  return DisassociateMulticastGroupFromFuotaTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateMulticastGroupFromFuotaTaskOutcome(result.GetResultWithOwnership())
+                            : DisassociateMulticastGroupFromFuotaTaskOutcome(std::move(result.GetError()));
 }
 
 DisassociateWirelessDeviceFromFuotaTaskOutcome IoTWirelessClient::DisassociateWirelessDeviceFromFuotaTask(
@@ -804,7 +870,9 @@ DisassociateWirelessDeviceFromFuotaTaskOutcome IoTWirelessClient::DisassociateWi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWirelessDeviceId());
   };
 
-  return DisassociateWirelessDeviceFromFuotaTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateWirelessDeviceFromFuotaTaskOutcome(result.GetResultWithOwnership())
+                            : DisassociateWirelessDeviceFromFuotaTaskOutcome(std::move(result.GetError()));
 }
 
 DisassociateWirelessDeviceFromMulticastGroupOutcome IoTWirelessClient::DisassociateWirelessDeviceFromMulticastGroup(
@@ -828,8 +896,9 @@ DisassociateWirelessDeviceFromMulticastGroupOutcome IoTWirelessClient::Disassoci
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWirelessDeviceId());
   };
 
-  return DisassociateWirelessDeviceFromMulticastGroupOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateWirelessDeviceFromMulticastGroupOutcome(result.GetResultWithOwnership())
+                            : DisassociateWirelessDeviceFromMulticastGroupOutcome(std::move(result.GetError()));
 }
 
 DisassociateWirelessDeviceFromThingOutcome IoTWirelessClient::DisassociateWirelessDeviceFromThing(
@@ -847,7 +916,9 @@ DisassociateWirelessDeviceFromThingOutcome IoTWirelessClient::DisassociateWirele
     endpointResolutionOutcome.GetResult().AddPathSegments("/thing");
   };
 
-  return DisassociateWirelessDeviceFromThingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateWirelessDeviceFromThingOutcome(result.GetResultWithOwnership())
+                            : DisassociateWirelessDeviceFromThingOutcome(std::move(result.GetError()));
 }
 
 DisassociateWirelessGatewayFromCertificateOutcome IoTWirelessClient::DisassociateWirelessGatewayFromCertificate(
@@ -865,8 +936,9 @@ DisassociateWirelessGatewayFromCertificateOutcome IoTWirelessClient::Disassociat
     endpointResolutionOutcome.GetResult().AddPathSegments("/certificate");
   };
 
-  return DisassociateWirelessGatewayFromCertificateOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateWirelessGatewayFromCertificateOutcome(result.GetResultWithOwnership())
+                            : DisassociateWirelessGatewayFromCertificateOutcome(std::move(result.GetError()));
 }
 
 DisassociateWirelessGatewayFromThingOutcome IoTWirelessClient::DisassociateWirelessGatewayFromThing(
@@ -884,7 +956,9 @@ DisassociateWirelessGatewayFromThingOutcome IoTWirelessClient::DisassociateWirel
     endpointResolutionOutcome.GetResult().AddPathSegments("/thing");
   };
 
-  return DisassociateWirelessGatewayFromThingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateWirelessGatewayFromThingOutcome(result.GetResultWithOwnership())
+                            : DisassociateWirelessGatewayFromThingOutcome(std::move(result.GetError()));
 }
 
 GetDestinationOutcome IoTWirelessClient::GetDestination(const GetDestinationRequest& request) const {
@@ -900,7 +974,8 @@ GetDestinationOutcome IoTWirelessClient::GetDestination(const GetDestinationRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return GetDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDestinationOutcome(result.GetResultWithOwnership()) : GetDestinationOutcome(std::move(result.GetError()));
 }
 
 GetDeviceProfileOutcome IoTWirelessClient::GetDeviceProfile(const GetDeviceProfileRequest& request) const {
@@ -916,7 +991,9 @@ GetDeviceProfileOutcome IoTWirelessClient::GetDeviceProfile(const GetDeviceProfi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetDeviceProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDeviceProfileOutcome(result.GetResultWithOwnership())
+                            : GetDeviceProfileOutcome(std::move(result.GetError()));
 }
 
 GetEventConfigurationByResourceTypesOutcome IoTWirelessClient::GetEventConfigurationByResourceTypes(
@@ -926,7 +1003,9 @@ GetEventConfigurationByResourceTypesOutcome IoTWirelessClient::GetEventConfigura
     endpointResolutionOutcome.GetResult().AddPathSegments("/event-configurations-resource-types");
   };
 
-  return GetEventConfigurationByResourceTypesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEventConfigurationByResourceTypesOutcome(result.GetResultWithOwnership())
+                            : GetEventConfigurationByResourceTypesOutcome(std::move(result.GetError()));
 }
 
 GetFuotaTaskOutcome IoTWirelessClient::GetFuotaTask(const GetFuotaTaskRequest& request) const {
@@ -942,7 +1021,8 @@ GetFuotaTaskOutcome IoTWirelessClient::GetFuotaTask(const GetFuotaTaskRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetFuotaTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFuotaTaskOutcome(result.GetResultWithOwnership()) : GetFuotaTaskOutcome(std::move(result.GetError()));
 }
 
 GetLogLevelsByResourceTypesOutcome IoTWirelessClient::GetLogLevelsByResourceTypes(const GetLogLevelsByResourceTypesRequest& request) const {
@@ -951,7 +1031,9 @@ GetLogLevelsByResourceTypesOutcome IoTWirelessClient::GetLogLevelsByResourceType
     endpointResolutionOutcome.GetResult().AddPathSegments("/log-levels");
   };
 
-  return GetLogLevelsByResourceTypesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetLogLevelsByResourceTypesOutcome(result.GetResultWithOwnership())
+                            : GetLogLevelsByResourceTypesOutcome(std::move(result.GetError()));
 }
 
 GetMetricConfigurationOutcome IoTWirelessClient::GetMetricConfiguration(const GetMetricConfigurationRequest& request) const {
@@ -960,7 +1042,9 @@ GetMetricConfigurationOutcome IoTWirelessClient::GetMetricConfiguration(const Ge
     endpointResolutionOutcome.GetResult().AddPathSegments("/metric-configuration");
   };
 
-  return GetMetricConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMetricConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetMetricConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetMetricsOutcome IoTWirelessClient::GetMetrics(const GetMetricsRequest& request) const {
@@ -969,7 +1053,8 @@ GetMetricsOutcome IoTWirelessClient::GetMetrics(const GetMetricsRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/metrics");
   };
 
-  return GetMetricsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetMetricsOutcome(result.GetResultWithOwnership()) : GetMetricsOutcome(std::move(result.GetError()));
 }
 
 GetMulticastGroupOutcome IoTWirelessClient::GetMulticastGroup(const GetMulticastGroupRequest& request) const {
@@ -985,7 +1070,9 @@ GetMulticastGroupOutcome IoTWirelessClient::GetMulticastGroup(const GetMulticast
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetMulticastGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMulticastGroupOutcome(result.GetResultWithOwnership())
+                            : GetMulticastGroupOutcome(std::move(result.GetError()));
 }
 
 GetMulticastGroupSessionOutcome IoTWirelessClient::GetMulticastGroupSession(const GetMulticastGroupSessionRequest& request) const {
@@ -1002,7 +1089,9 @@ GetMulticastGroupSessionOutcome IoTWirelessClient::GetMulticastGroupSession(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/session");
   };
 
-  return GetMulticastGroupSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMulticastGroupSessionOutcome(result.GetResultWithOwnership())
+                            : GetMulticastGroupSessionOutcome(std::move(result.GetError()));
 }
 
 GetNetworkAnalyzerConfigurationOutcome IoTWirelessClient::GetNetworkAnalyzerConfiguration(
@@ -1019,7 +1108,9 @@ GetNetworkAnalyzerConfigurationOutcome IoTWirelessClient::GetNetworkAnalyzerConf
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfigurationName());
   };
 
-  return GetNetworkAnalyzerConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetNetworkAnalyzerConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetNetworkAnalyzerConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetPartnerAccountOutcome IoTWirelessClient::GetPartnerAccount(const GetPartnerAccountRequest& request) const {
@@ -1040,7 +1131,9 @@ GetPartnerAccountOutcome IoTWirelessClient::GetPartnerAccount(const GetPartnerAc
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPartnerAccountId());
   };
 
-  return GetPartnerAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPartnerAccountOutcome(result.GetResultWithOwnership())
+                            : GetPartnerAccountOutcome(std::move(result.GetError()));
 }
 
 GetPositionEstimateOutcome IoTWirelessClient::GetPositionEstimate(const GetPositionEstimateRequest& request) const {
@@ -1065,8 +1158,9 @@ GetPositionEstimateOutcome IoTWirelessClient::GetPositionEstimate(const GetPosit
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPositionEstimate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/position-estimate");
-        return GetPositionEstimateOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? GetPositionEstimateOutcome(result.GetResultWithOwnership())
+                                  : GetPositionEstimateOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1092,7 +1186,9 @@ GetResourceEventConfigurationOutcome IoTWirelessClient::GetResourceEventConfigur
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetResourceEventConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetResourceEventConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetResourceEventConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetResourceLogLevelOutcome IoTWirelessClient::GetResourceLogLevel(const GetResourceLogLevelRequest& request) const {
@@ -1113,7 +1209,9 @@ GetResourceLogLevelOutcome IoTWirelessClient::GetResourceLogLevel(const GetResou
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceIdentifier());
   };
 
-  return GetResourceLogLevelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetResourceLogLevelOutcome(result.GetResultWithOwnership())
+                            : GetResourceLogLevelOutcome(std::move(result.GetError()));
 }
 
 GetResourcePositionOutcome IoTWirelessClient::GetResourcePosition(const GetResourcePositionRequest& request) const {
@@ -1149,8 +1247,9 @@ GetResourcePositionOutcome IoTWirelessClient::GetResourcePosition(const GetResou
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/resource-positions/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceIdentifier());
-        return GetResourcePositionOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetResourcePositionOutcome(result.GetResultWithOwnership())
+                                  : GetResourcePositionOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1163,7 +1262,9 @@ GetServiceEndpointOutcome IoTWirelessClient::GetServiceEndpoint(const GetService
     endpointResolutionOutcome.GetResult().AddPathSegments("/service-endpoint");
   };
 
-  return GetServiceEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetServiceEndpointOutcome(result.GetResultWithOwnership())
+                            : GetServiceEndpointOutcome(std::move(result.GetError()));
 }
 
 GetServiceProfileOutcome IoTWirelessClient::GetServiceProfile(const GetServiceProfileRequest& request) const {
@@ -1179,7 +1280,9 @@ GetServiceProfileOutcome IoTWirelessClient::GetServiceProfile(const GetServicePr
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetServiceProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetServiceProfileOutcome(result.GetResultWithOwnership())
+                            : GetServiceProfileOutcome(std::move(result.GetError()));
 }
 
 GetWirelessDeviceOutcome IoTWirelessClient::GetWirelessDevice(const GetWirelessDeviceRequest& request) const {
@@ -1200,7 +1303,9 @@ GetWirelessDeviceOutcome IoTWirelessClient::GetWirelessDevice(const GetWirelessD
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetWirelessDeviceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetWirelessDeviceOutcome(result.GetResultWithOwnership())
+                            : GetWirelessDeviceOutcome(std::move(result.GetError()));
 }
 
 GetWirelessDeviceImportTaskOutcome IoTWirelessClient::GetWirelessDeviceImportTask(const GetWirelessDeviceImportTaskRequest& request) const {
@@ -1216,7 +1321,9 @@ GetWirelessDeviceImportTaskOutcome IoTWirelessClient::GetWirelessDeviceImportTas
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetWirelessDeviceImportTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetWirelessDeviceImportTaskOutcome(result.GetResultWithOwnership())
+                            : GetWirelessDeviceImportTaskOutcome(std::move(result.GetError()));
 }
 
 GetWirelessDeviceStatisticsOutcome IoTWirelessClient::GetWirelessDeviceStatistics(const GetWirelessDeviceStatisticsRequest& request) const {
@@ -1233,7 +1340,9 @@ GetWirelessDeviceStatisticsOutcome IoTWirelessClient::GetWirelessDeviceStatistic
     endpointResolutionOutcome.GetResult().AddPathSegments("/statistics");
   };
 
-  return GetWirelessDeviceStatisticsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetWirelessDeviceStatisticsOutcome(result.GetResultWithOwnership())
+                            : GetWirelessDeviceStatisticsOutcome(std::move(result.GetError()));
 }
 
 GetWirelessGatewayOutcome IoTWirelessClient::GetWirelessGateway(const GetWirelessGatewayRequest& request) const {
@@ -1254,7 +1363,9 @@ GetWirelessGatewayOutcome IoTWirelessClient::GetWirelessGateway(const GetWireles
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetWirelessGatewayOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetWirelessGatewayOutcome(result.GetResultWithOwnership())
+                            : GetWirelessGatewayOutcome(std::move(result.GetError()));
 }
 
 GetWirelessGatewayCertificateOutcome IoTWirelessClient::GetWirelessGatewayCertificate(
@@ -1272,7 +1383,9 @@ GetWirelessGatewayCertificateOutcome IoTWirelessClient::GetWirelessGatewayCertif
     endpointResolutionOutcome.GetResult().AddPathSegments("/certificate");
   };
 
-  return GetWirelessGatewayCertificateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetWirelessGatewayCertificateOutcome(result.GetResultWithOwnership())
+                            : GetWirelessGatewayCertificateOutcome(std::move(result.GetError()));
 }
 
 GetWirelessGatewayFirmwareInformationOutcome IoTWirelessClient::GetWirelessGatewayFirmwareInformation(
@@ -1290,7 +1403,9 @@ GetWirelessGatewayFirmwareInformationOutcome IoTWirelessClient::GetWirelessGatew
     endpointResolutionOutcome.GetResult().AddPathSegments("/firmware-information");
   };
 
-  return GetWirelessGatewayFirmwareInformationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetWirelessGatewayFirmwareInformationOutcome(result.GetResultWithOwnership())
+                            : GetWirelessGatewayFirmwareInformationOutcome(std::move(result.GetError()));
 }
 
 GetWirelessGatewayStatisticsOutcome IoTWirelessClient::GetWirelessGatewayStatistics(
@@ -1308,7 +1423,9 @@ GetWirelessGatewayStatisticsOutcome IoTWirelessClient::GetWirelessGatewayStatist
     endpointResolutionOutcome.GetResult().AddPathSegments("/statistics");
   };
 
-  return GetWirelessGatewayStatisticsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetWirelessGatewayStatisticsOutcome(result.GetResultWithOwnership())
+                            : GetWirelessGatewayStatisticsOutcome(std::move(result.GetError()));
 }
 
 GetWirelessGatewayTaskOutcome IoTWirelessClient::GetWirelessGatewayTask(const GetWirelessGatewayTaskRequest& request) const {
@@ -1325,7 +1442,9 @@ GetWirelessGatewayTaskOutcome IoTWirelessClient::GetWirelessGatewayTask(const Ge
     endpointResolutionOutcome.GetResult().AddPathSegments("/tasks");
   };
 
-  return GetWirelessGatewayTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetWirelessGatewayTaskOutcome(result.GetResultWithOwnership())
+                            : GetWirelessGatewayTaskOutcome(std::move(result.GetError()));
 }
 
 GetWirelessGatewayTaskDefinitionOutcome IoTWirelessClient::GetWirelessGatewayTaskDefinition(
@@ -1342,7 +1461,9 @@ GetWirelessGatewayTaskDefinitionOutcome IoTWirelessClient::GetWirelessGatewayTas
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetWirelessGatewayTaskDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetWirelessGatewayTaskDefinitionOutcome(result.GetResultWithOwnership())
+                            : GetWirelessGatewayTaskDefinitionOutcome(std::move(result.GetError()));
 }
 
 ListDestinationsOutcome IoTWirelessClient::ListDestinations(const ListDestinationsRequest& request) const {
@@ -1351,7 +1472,9 @@ ListDestinationsOutcome IoTWirelessClient::ListDestinations(const ListDestinatio
     endpointResolutionOutcome.GetResult().AddPathSegments("/destinations");
   };
 
-  return ListDestinationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDestinationsOutcome(result.GetResultWithOwnership())
+                            : ListDestinationsOutcome(std::move(result.GetError()));
 }
 
 ListDeviceProfilesOutcome IoTWirelessClient::ListDeviceProfiles(const ListDeviceProfilesRequest& request) const {
@@ -1360,7 +1483,9 @@ ListDeviceProfilesOutcome IoTWirelessClient::ListDeviceProfiles(const ListDevice
     endpointResolutionOutcome.GetResult().AddPathSegments("/device-profiles");
   };
 
-  return ListDeviceProfilesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDeviceProfilesOutcome(result.GetResultWithOwnership())
+                            : ListDeviceProfilesOutcome(std::move(result.GetError()));
 }
 
 ListDevicesForWirelessDeviceImportTaskOutcome IoTWirelessClient::ListDevicesForWirelessDeviceImportTask(
@@ -1376,7 +1501,9 @@ ListDevicesForWirelessDeviceImportTaskOutcome IoTWirelessClient::ListDevicesForW
     endpointResolutionOutcome.GetResult().AddPathSegments("/wireless_device_import_task");
   };
 
-  return ListDevicesForWirelessDeviceImportTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDevicesForWirelessDeviceImportTaskOutcome(result.GetResultWithOwnership())
+                            : ListDevicesForWirelessDeviceImportTaskOutcome(std::move(result.GetError()));
 }
 
 ListEventConfigurationsOutcome IoTWirelessClient::ListEventConfigurations(const ListEventConfigurationsRequest& request) const {
@@ -1391,7 +1518,9 @@ ListEventConfigurationsOutcome IoTWirelessClient::ListEventConfigurations(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/event-configurations");
   };
 
-  return ListEventConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListEventConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListEventConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListFuotaTasksOutcome IoTWirelessClient::ListFuotaTasks(const ListFuotaTasksRequest& request) const {
@@ -1400,7 +1529,8 @@ ListFuotaTasksOutcome IoTWirelessClient::ListFuotaTasks(const ListFuotaTasksRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/fuota-tasks");
   };
 
-  return ListFuotaTasksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListFuotaTasksOutcome(result.GetResultWithOwnership()) : ListFuotaTasksOutcome(std::move(result.GetError()));
 }
 
 ListMulticastGroupsOutcome IoTWirelessClient::ListMulticastGroups(const ListMulticastGroupsRequest& request) const {
@@ -1409,7 +1539,9 @@ ListMulticastGroupsOutcome IoTWirelessClient::ListMulticastGroups(const ListMult
     endpointResolutionOutcome.GetResult().AddPathSegments("/multicast-groups");
   };
 
-  return ListMulticastGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMulticastGroupsOutcome(result.GetResultWithOwnership())
+                            : ListMulticastGroupsOutcome(std::move(result.GetError()));
 }
 
 ListMulticastGroupsByFuotaTaskOutcome IoTWirelessClient::ListMulticastGroupsByFuotaTask(
@@ -1427,7 +1559,9 @@ ListMulticastGroupsByFuotaTaskOutcome IoTWirelessClient::ListMulticastGroupsByFu
     endpointResolutionOutcome.GetResult().AddPathSegments("/multicast-groups");
   };
 
-  return ListMulticastGroupsByFuotaTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMulticastGroupsByFuotaTaskOutcome(result.GetResultWithOwnership())
+                            : ListMulticastGroupsByFuotaTaskOutcome(std::move(result.GetError()));
 }
 
 ListNetworkAnalyzerConfigurationsOutcome IoTWirelessClient::ListNetworkAnalyzerConfigurations(
@@ -1437,7 +1571,9 @@ ListNetworkAnalyzerConfigurationsOutcome IoTWirelessClient::ListNetworkAnalyzerC
     endpointResolutionOutcome.GetResult().AddPathSegments("/network-analyzer-configurations");
   };
 
-  return ListNetworkAnalyzerConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListNetworkAnalyzerConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListNetworkAnalyzerConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListPartnerAccountsOutcome IoTWirelessClient::ListPartnerAccounts(const ListPartnerAccountsRequest& request) const {
@@ -1446,7 +1582,9 @@ ListPartnerAccountsOutcome IoTWirelessClient::ListPartnerAccounts(const ListPart
     endpointResolutionOutcome.GetResult().AddPathSegments("/partner-accounts");
   };
 
-  return ListPartnerAccountsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPartnerAccountsOutcome(result.GetResultWithOwnership())
+                            : ListPartnerAccountsOutcome(std::move(result.GetError()));
 }
 
 ListQueuedMessagesOutcome IoTWirelessClient::ListQueuedMessages(const ListQueuedMessagesRequest& request) const {
@@ -1463,7 +1601,9 @@ ListQueuedMessagesOutcome IoTWirelessClient::ListQueuedMessages(const ListQueued
     endpointResolutionOutcome.GetResult().AddPathSegments("/data");
   };
 
-  return ListQueuedMessagesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListQueuedMessagesOutcome(result.GetResultWithOwnership())
+                            : ListQueuedMessagesOutcome(std::move(result.GetError()));
 }
 
 ListServiceProfilesOutcome IoTWirelessClient::ListServiceProfiles(const ListServiceProfilesRequest& request) const {
@@ -1472,7 +1612,9 @@ ListServiceProfilesOutcome IoTWirelessClient::ListServiceProfiles(const ListServ
     endpointResolutionOutcome.GetResult().AddPathSegments("/service-profiles");
   };
 
-  return ListServiceProfilesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListServiceProfilesOutcome(result.GetResultWithOwnership())
+                            : ListServiceProfilesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome IoTWirelessClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -1487,7 +1629,9 @@ ListTagsForResourceOutcome IoTWirelessClient::ListTagsForResource(const ListTags
     endpointResolutionOutcome.GetResult().AddPathSegments("/tags");
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListWirelessDeviceImportTasksOutcome IoTWirelessClient::ListWirelessDeviceImportTasks(
@@ -1497,7 +1641,9 @@ ListWirelessDeviceImportTasksOutcome IoTWirelessClient::ListWirelessDeviceImport
     endpointResolutionOutcome.GetResult().AddPathSegments("/wireless_device_import_tasks");
   };
 
-  return ListWirelessDeviceImportTasksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListWirelessDeviceImportTasksOutcome(result.GetResultWithOwnership())
+                            : ListWirelessDeviceImportTasksOutcome(std::move(result.GetError()));
 }
 
 ListWirelessDevicesOutcome IoTWirelessClient::ListWirelessDevices(const ListWirelessDevicesRequest& request) const {
@@ -1506,7 +1652,9 @@ ListWirelessDevicesOutcome IoTWirelessClient::ListWirelessDevices(const ListWire
     endpointResolutionOutcome.GetResult().AddPathSegments("/wireless-devices");
   };
 
-  return ListWirelessDevicesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListWirelessDevicesOutcome(result.GetResultWithOwnership())
+                            : ListWirelessDevicesOutcome(std::move(result.GetError()));
 }
 
 ListWirelessGatewayTaskDefinitionsOutcome IoTWirelessClient::ListWirelessGatewayTaskDefinitions(
@@ -1516,7 +1664,9 @@ ListWirelessGatewayTaskDefinitionsOutcome IoTWirelessClient::ListWirelessGateway
     endpointResolutionOutcome.GetResult().AddPathSegments("/wireless-gateway-task-definitions");
   };
 
-  return ListWirelessGatewayTaskDefinitionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListWirelessGatewayTaskDefinitionsOutcome(result.GetResultWithOwnership())
+                            : ListWirelessGatewayTaskDefinitionsOutcome(std::move(result.GetError()));
 }
 
 ListWirelessGatewaysOutcome IoTWirelessClient::ListWirelessGateways(const ListWirelessGatewaysRequest& request) const {
@@ -1525,7 +1675,9 @@ ListWirelessGatewaysOutcome IoTWirelessClient::ListWirelessGateways(const ListWi
     endpointResolutionOutcome.GetResult().AddPathSegments("/wireless-gateways");
   };
 
-  return ListWirelessGatewaysOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListWirelessGatewaysOutcome(result.GetResultWithOwnership())
+                            : ListWirelessGatewaysOutcome(std::move(result.GetError()));
 }
 
 PutResourceLogLevelOutcome IoTWirelessClient::PutResourceLogLevel(const PutResourceLogLevelRequest& request) const {
@@ -1546,7 +1698,9 @@ PutResourceLogLevelOutcome IoTWirelessClient::PutResourceLogLevel(const PutResou
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceIdentifier());
   };
 
-  return PutResourceLogLevelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutResourceLogLevelOutcome(result.GetResultWithOwnership())
+                            : PutResourceLogLevelOutcome(std::move(result.GetError()));
 }
 
 ResetAllResourceLogLevelsOutcome IoTWirelessClient::ResetAllResourceLogLevels(const ResetAllResourceLogLevelsRequest& request) const {
@@ -1555,7 +1709,9 @@ ResetAllResourceLogLevelsOutcome IoTWirelessClient::ResetAllResourceLogLevels(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/log-levels");
   };
 
-  return ResetAllResourceLogLevelsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? ResetAllResourceLogLevelsOutcome(result.GetResultWithOwnership())
+                            : ResetAllResourceLogLevelsOutcome(std::move(result.GetError()));
 }
 
 ResetResourceLogLevelOutcome IoTWirelessClient::ResetResourceLogLevel(const ResetResourceLogLevelRequest& request) const {
@@ -1576,7 +1732,9 @@ ResetResourceLogLevelOutcome IoTWirelessClient::ResetResourceLogLevel(const Rese
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceIdentifier());
   };
 
-  return ResetResourceLogLevelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? ResetResourceLogLevelOutcome(result.GetResultWithOwnership())
+                            : ResetResourceLogLevelOutcome(std::move(result.GetError()));
 }
 
 SendDataToMulticastGroupOutcome IoTWirelessClient::SendDataToMulticastGroup(const SendDataToMulticastGroupRequest& request) const {
@@ -1593,7 +1751,9 @@ SendDataToMulticastGroupOutcome IoTWirelessClient::SendDataToMulticastGroup(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/data");
   };
 
-  return SendDataToMulticastGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendDataToMulticastGroupOutcome(result.GetResultWithOwnership())
+                            : SendDataToMulticastGroupOutcome(std::move(result.GetError()));
 }
 
 SendDataToWirelessDeviceOutcome IoTWirelessClient::SendDataToWirelessDevice(const SendDataToWirelessDeviceRequest& request) const {
@@ -1610,7 +1770,9 @@ SendDataToWirelessDeviceOutcome IoTWirelessClient::SendDataToWirelessDevice(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/data");
   };
 
-  return SendDataToWirelessDeviceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendDataToWirelessDeviceOutcome(result.GetResultWithOwnership())
+                            : SendDataToWirelessDeviceOutcome(std::move(result.GetError()));
 }
 
 StartBulkAssociateWirelessDeviceWithMulticastGroupOutcome IoTWirelessClient::StartBulkAssociateWirelessDeviceWithMulticastGroup(
@@ -1628,8 +1790,9 @@ StartBulkAssociateWirelessDeviceWithMulticastGroupOutcome IoTWirelessClient::Sta
     endpointResolutionOutcome.GetResult().AddPathSegments("/bulk");
   };
 
-  return StartBulkAssociateWirelessDeviceWithMulticastGroupOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? StartBulkAssociateWirelessDeviceWithMulticastGroupOutcome(result.GetResultWithOwnership())
+                            : StartBulkAssociateWirelessDeviceWithMulticastGroupOutcome(std::move(result.GetError()));
 }
 
 StartBulkDisassociateWirelessDeviceFromMulticastGroupOutcome IoTWirelessClient::StartBulkDisassociateWirelessDeviceFromMulticastGroup(
@@ -1647,8 +1810,9 @@ StartBulkDisassociateWirelessDeviceFromMulticastGroupOutcome IoTWirelessClient::
     endpointResolutionOutcome.GetResult().AddPathSegments("/bulk");
   };
 
-  return StartBulkDisassociateWirelessDeviceFromMulticastGroupOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartBulkDisassociateWirelessDeviceFromMulticastGroupOutcome(result.GetResultWithOwnership())
+                            : StartBulkDisassociateWirelessDeviceFromMulticastGroupOutcome(std::move(result.GetError()));
 }
 
 StartFuotaTaskOutcome IoTWirelessClient::StartFuotaTask(const StartFuotaTaskRequest& request) const {
@@ -1664,7 +1828,8 @@ StartFuotaTaskOutcome IoTWirelessClient::StartFuotaTask(const StartFuotaTaskRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return StartFuotaTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StartFuotaTaskOutcome(result.GetResultWithOwnership()) : StartFuotaTaskOutcome(std::move(result.GetError()));
 }
 
 StartMulticastGroupSessionOutcome IoTWirelessClient::StartMulticastGroupSession(const StartMulticastGroupSessionRequest& request) const {
@@ -1681,7 +1846,9 @@ StartMulticastGroupSessionOutcome IoTWirelessClient::StartMulticastGroupSession(
     endpointResolutionOutcome.GetResult().AddPathSegments("/session");
   };
 
-  return StartMulticastGroupSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StartMulticastGroupSessionOutcome(result.GetResultWithOwnership())
+                            : StartMulticastGroupSessionOutcome(std::move(result.GetError()));
 }
 
 StartSingleWirelessDeviceImportTaskOutcome IoTWirelessClient::StartSingleWirelessDeviceImportTask(
@@ -1691,7 +1858,9 @@ StartSingleWirelessDeviceImportTaskOutcome IoTWirelessClient::StartSingleWireles
     endpointResolutionOutcome.GetResult().AddPathSegments("/wireless_single_device_import_task");
   };
 
-  return StartSingleWirelessDeviceImportTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartSingleWirelessDeviceImportTaskOutcome(result.GetResultWithOwnership())
+                            : StartSingleWirelessDeviceImportTaskOutcome(std::move(result.GetError()));
 }
 
 StartWirelessDeviceImportTaskOutcome IoTWirelessClient::StartWirelessDeviceImportTask(
@@ -1701,7 +1870,9 @@ StartWirelessDeviceImportTaskOutcome IoTWirelessClient::StartWirelessDeviceImpor
     endpointResolutionOutcome.GetResult().AddPathSegments("/wireless_device_import_task");
   };
 
-  return StartWirelessDeviceImportTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartWirelessDeviceImportTaskOutcome(result.GetResultWithOwnership())
+                            : StartWirelessDeviceImportTaskOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome IoTWirelessClient::TagResource(const TagResourceRequest& request) const {
@@ -1716,7 +1887,8 @@ TagResourceOutcome IoTWirelessClient::TagResource(const TagResourceRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/tags");
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 TestWirelessDeviceOutcome IoTWirelessClient::TestWirelessDevice(const TestWirelessDeviceRequest& request) const {
@@ -1733,7 +1905,9 @@ TestWirelessDeviceOutcome IoTWirelessClient::TestWirelessDevice(const TestWirele
     endpointResolutionOutcome.GetResult().AddPathSegments("/test");
   };
 
-  return TestWirelessDeviceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TestWirelessDeviceOutcome(result.GetResultWithOwnership())
+                            : TestWirelessDeviceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome IoTWirelessClient::UntagResource(const UntagResourceRequest& request) const {
@@ -1753,7 +1927,8 @@ UntagResourceOutcome IoTWirelessClient::UntagResource(const UntagResourceRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/tags");
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateDestinationOutcome IoTWirelessClient::UpdateDestination(const UpdateDestinationRequest& request) const {
@@ -1769,7 +1944,9 @@ UpdateDestinationOutcome IoTWirelessClient::UpdateDestination(const UpdateDestin
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return UpdateDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateDestinationOutcome(result.GetResultWithOwnership())
+                            : UpdateDestinationOutcome(std::move(result.GetError()));
 }
 
 UpdateEventConfigurationByResourceTypesOutcome IoTWirelessClient::UpdateEventConfigurationByResourceTypes(
@@ -1779,7 +1956,9 @@ UpdateEventConfigurationByResourceTypesOutcome IoTWirelessClient::UpdateEventCon
     endpointResolutionOutcome.GetResult().AddPathSegments("/event-configurations-resource-types");
   };
 
-  return UpdateEventConfigurationByResourceTypesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateEventConfigurationByResourceTypesOutcome(result.GetResultWithOwnership())
+                            : UpdateEventConfigurationByResourceTypesOutcome(std::move(result.GetError()));
 }
 
 UpdateFuotaTaskOutcome IoTWirelessClient::UpdateFuotaTask(const UpdateFuotaTaskRequest& request) const {
@@ -1795,7 +1974,9 @@ UpdateFuotaTaskOutcome IoTWirelessClient::UpdateFuotaTask(const UpdateFuotaTaskR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateFuotaTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateFuotaTaskOutcome(result.GetResultWithOwnership())
+                            : UpdateFuotaTaskOutcome(std::move(result.GetError()));
 }
 
 UpdateLogLevelsByResourceTypesOutcome IoTWirelessClient::UpdateLogLevelsByResourceTypes(
@@ -1805,7 +1986,9 @@ UpdateLogLevelsByResourceTypesOutcome IoTWirelessClient::UpdateLogLevelsByResour
     endpointResolutionOutcome.GetResult().AddPathSegments("/log-levels");
   };
 
-  return UpdateLogLevelsByResourceTypesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLogLevelsByResourceTypesOutcome(result.GetResultWithOwnership())
+                            : UpdateLogLevelsByResourceTypesOutcome(std::move(result.GetError()));
 }
 
 UpdateMetricConfigurationOutcome IoTWirelessClient::UpdateMetricConfiguration(const UpdateMetricConfigurationRequest& request) const {
@@ -1814,7 +1997,9 @@ UpdateMetricConfigurationOutcome IoTWirelessClient::UpdateMetricConfiguration(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/metric-configuration");
   };
 
-  return UpdateMetricConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateMetricConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateMetricConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateMulticastGroupOutcome IoTWirelessClient::UpdateMulticastGroup(const UpdateMulticastGroupRequest& request) const {
@@ -1830,7 +2015,9 @@ UpdateMulticastGroupOutcome IoTWirelessClient::UpdateMulticastGroup(const Update
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateMulticastGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateMulticastGroupOutcome(result.GetResultWithOwnership())
+                            : UpdateMulticastGroupOutcome(std::move(result.GetError()));
 }
 
 UpdateNetworkAnalyzerConfigurationOutcome IoTWirelessClient::UpdateNetworkAnalyzerConfiguration(
@@ -1847,7 +2034,9 @@ UpdateNetworkAnalyzerConfigurationOutcome IoTWirelessClient::UpdateNetworkAnalyz
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfigurationName());
   };
 
-  return UpdateNetworkAnalyzerConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateNetworkAnalyzerConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateNetworkAnalyzerConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdatePartnerAccountOutcome IoTWirelessClient::UpdatePartnerAccount(const UpdatePartnerAccountRequest& request) const {
@@ -1868,7 +2057,9 @@ UpdatePartnerAccountOutcome IoTWirelessClient::UpdatePartnerAccount(const Update
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPartnerAccountId());
   };
 
-  return UpdatePartnerAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdatePartnerAccountOutcome(result.GetResultWithOwnership())
+                            : UpdatePartnerAccountOutcome(std::move(result.GetError()));
 }
 
 UpdateResourceEventConfigurationOutcome IoTWirelessClient::UpdateResourceEventConfiguration(
@@ -1890,7 +2081,9 @@ UpdateResourceEventConfigurationOutcome IoTWirelessClient::UpdateResourceEventCo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateResourceEventConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateResourceEventConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateResourceEventConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateResourcePositionOutcome IoTWirelessClient::UpdateResourcePosition(const UpdateResourcePositionRequest& request) const {
@@ -1911,7 +2104,9 @@ UpdateResourcePositionOutcome IoTWirelessClient::UpdateResourcePosition(const Up
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceIdentifier());
   };
 
-  return UpdateResourcePositionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateResourcePositionOutcome(result.GetResultWithOwnership())
+                            : UpdateResourcePositionOutcome(std::move(result.GetError()));
 }
 
 UpdateWirelessDeviceOutcome IoTWirelessClient::UpdateWirelessDevice(const UpdateWirelessDeviceRequest& request) const {
@@ -1927,7 +2122,9 @@ UpdateWirelessDeviceOutcome IoTWirelessClient::UpdateWirelessDevice(const Update
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateWirelessDeviceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateWirelessDeviceOutcome(result.GetResultWithOwnership())
+                            : UpdateWirelessDeviceOutcome(std::move(result.GetError()));
 }
 
 UpdateWirelessDeviceImportTaskOutcome IoTWirelessClient::UpdateWirelessDeviceImportTask(
@@ -1944,7 +2141,9 @@ UpdateWirelessDeviceImportTaskOutcome IoTWirelessClient::UpdateWirelessDeviceImp
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateWirelessDeviceImportTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateWirelessDeviceImportTaskOutcome(result.GetResultWithOwnership())
+                            : UpdateWirelessDeviceImportTaskOutcome(std::move(result.GetError()));
 }
 
 UpdateWirelessGatewayOutcome IoTWirelessClient::UpdateWirelessGateway(const UpdateWirelessGatewayRequest& request) const {
@@ -1960,5 +2159,7 @@ UpdateWirelessGatewayOutcome IoTWirelessClient::UpdateWirelessGateway(const Upda
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateWirelessGatewayOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateWirelessGatewayOutcome(result.GetResultWithOwnership())
+                            : UpdateWirelessGatewayOutcome(std::move(result.GetError()));
 }

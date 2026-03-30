@@ -218,7 +218,9 @@ AssociateAttributeGroupOutcome AppRegistryClient::AssociateAttributeGroup(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAttributeGroup());
   };
 
-  return AssociateAttributeGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateAttributeGroupOutcome(result.GetResultWithOwnership())
+                            : AssociateAttributeGroupOutcome(std::move(result.GetError()));
 }
 
 AssociateResourceOutcome AppRegistryClient::AssociateResource(const AssociateResourceRequest& request) const {
@@ -247,7 +249,9 @@ AssociateResourceOutcome AppRegistryClient::AssociateResource(const AssociateRes
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResource());
   };
 
-  return AssociateResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateResourceOutcome(result.GetResultWithOwnership())
+                            : AssociateResourceOutcome(std::move(result.GetError()));
 }
 
 CreateApplicationOutcome AppRegistryClient::CreateApplication(const CreateApplicationRequest& request) const {
@@ -256,7 +260,9 @@ CreateApplicationOutcome AppRegistryClient::CreateApplication(const CreateApplic
     endpointResolutionOutcome.GetResult().AddPathSegments("/applications");
   };
 
-  return CreateApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateApplicationOutcome(result.GetResultWithOwnership())
+                            : CreateApplicationOutcome(std::move(result.GetError()));
 }
 
 CreateAttributeGroupOutcome AppRegistryClient::CreateAttributeGroup(const CreateAttributeGroupRequest& request) const {
@@ -265,7 +271,9 @@ CreateAttributeGroupOutcome AppRegistryClient::CreateAttributeGroup(const Create
     endpointResolutionOutcome.GetResult().AddPathSegments("/attribute-groups");
   };
 
-  return CreateAttributeGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAttributeGroupOutcome(result.GetResultWithOwnership())
+                            : CreateAttributeGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteApplicationOutcome AppRegistryClient::DeleteApplication(const DeleteApplicationRequest& request) const {
@@ -281,7 +289,9 @@ DeleteApplicationOutcome AppRegistryClient::DeleteApplication(const DeleteApplic
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplication());
   };
 
-  return DeleteApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteApplicationOutcome(result.GetResultWithOwnership())
+                            : DeleteApplicationOutcome(std::move(result.GetError()));
 }
 
 DeleteAttributeGroupOutcome AppRegistryClient::DeleteAttributeGroup(const DeleteAttributeGroupRequest& request) const {
@@ -297,7 +307,9 @@ DeleteAttributeGroupOutcome AppRegistryClient::DeleteAttributeGroup(const Delete
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAttributeGroup());
   };
 
-  return DeleteAttributeGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAttributeGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteAttributeGroupOutcome(std::move(result.GetError()));
 }
 
 DisassociateAttributeGroupOutcome AppRegistryClient::DisassociateAttributeGroup(const DisassociateAttributeGroupRequest& request) const {
@@ -320,7 +332,9 @@ DisassociateAttributeGroupOutcome AppRegistryClient::DisassociateAttributeGroup(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAttributeGroup());
   };
 
-  return DisassociateAttributeGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateAttributeGroupOutcome(result.GetResultWithOwnership())
+                            : DisassociateAttributeGroupOutcome(std::move(result.GetError()));
 }
 
 DisassociateResourceOutcome AppRegistryClient::DisassociateResource(const DisassociateResourceRequest& request) const {
@@ -349,7 +363,9 @@ DisassociateResourceOutcome AppRegistryClient::DisassociateResource(const Disass
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResource());
   };
 
-  return DisassociateResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateResourceOutcome(result.GetResultWithOwnership())
+                            : DisassociateResourceOutcome(std::move(result.GetError()));
 }
 
 GetApplicationOutcome AppRegistryClient::GetApplication(const GetApplicationRequest& request) const {
@@ -365,7 +381,8 @@ GetApplicationOutcome AppRegistryClient::GetApplication(const GetApplicationRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplication());
   };
 
-  return GetApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetApplicationOutcome(result.GetResultWithOwnership()) : GetApplicationOutcome(std::move(result.GetError()));
 }
 
 GetAssociatedResourceOutcome AppRegistryClient::GetAssociatedResource(const GetAssociatedResourceRequest& request) const {
@@ -394,7 +411,9 @@ GetAssociatedResourceOutcome AppRegistryClient::GetAssociatedResource(const GetA
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResource());
   };
 
-  return GetAssociatedResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAssociatedResourceOutcome(result.GetResultWithOwnership())
+                            : GetAssociatedResourceOutcome(std::move(result.GetError()));
 }
 
 GetAttributeGroupOutcome AppRegistryClient::GetAttributeGroup(const GetAttributeGroupRequest& request) const {
@@ -410,7 +429,9 @@ GetAttributeGroupOutcome AppRegistryClient::GetAttributeGroup(const GetAttribute
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAttributeGroup());
   };
 
-  return GetAttributeGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAttributeGroupOutcome(result.GetResultWithOwnership())
+                            : GetAttributeGroupOutcome(std::move(result.GetError()));
 }
 
 GetConfigurationOutcome AppRegistryClient::GetConfiguration(const GetConfigurationRequest& request) const {
@@ -419,7 +440,9 @@ GetConfigurationOutcome AppRegistryClient::GetConfiguration(const GetConfigurati
     endpointResolutionOutcome.GetResult().AddPathSegments("/configuration");
   };
 
-  return GetConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetConfigurationOutcome(std::move(result.GetError()));
 }
 
 ListApplicationsOutcome AppRegistryClient::ListApplications(const ListApplicationsRequest& request) const {
@@ -428,7 +451,9 @@ ListApplicationsOutcome AppRegistryClient::ListApplications(const ListApplicatio
     endpointResolutionOutcome.GetResult().AddPathSegments("/applications");
   };
 
-  return ListApplicationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListApplicationsOutcome(result.GetResultWithOwnership())
+                            : ListApplicationsOutcome(std::move(result.GetError()));
 }
 
 ListAssociatedAttributeGroupsOutcome AppRegistryClient::ListAssociatedAttributeGroups(
@@ -446,7 +471,9 @@ ListAssociatedAttributeGroupsOutcome AppRegistryClient::ListAssociatedAttributeG
     endpointResolutionOutcome.GetResult().AddPathSegments("/attribute-groups");
   };
 
-  return ListAssociatedAttributeGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAssociatedAttributeGroupsOutcome(result.GetResultWithOwnership())
+                            : ListAssociatedAttributeGroupsOutcome(std::move(result.GetError()));
 }
 
 ListAssociatedResourcesOutcome AppRegistryClient::ListAssociatedResources(const ListAssociatedResourcesRequest& request) const {
@@ -463,7 +490,9 @@ ListAssociatedResourcesOutcome AppRegistryClient::ListAssociatedResources(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/resources");
   };
 
-  return ListAssociatedResourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAssociatedResourcesOutcome(result.GetResultWithOwnership())
+                            : ListAssociatedResourcesOutcome(std::move(result.GetError()));
 }
 
 ListAttributeGroupsOutcome AppRegistryClient::ListAttributeGroups(const ListAttributeGroupsRequest& request) const {
@@ -472,7 +501,9 @@ ListAttributeGroupsOutcome AppRegistryClient::ListAttributeGroups(const ListAttr
     endpointResolutionOutcome.GetResult().AddPathSegments("/attribute-groups");
   };
 
-  return ListAttributeGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAttributeGroupsOutcome(result.GetResultWithOwnership())
+                            : ListAttributeGroupsOutcome(std::move(result.GetError()));
 }
 
 ListAttributeGroupsForApplicationOutcome AppRegistryClient::ListAttributeGroupsForApplication(
@@ -490,7 +521,9 @@ ListAttributeGroupsForApplicationOutcome AppRegistryClient::ListAttributeGroupsF
     endpointResolutionOutcome.GetResult().AddPathSegments("/attribute-group-details");
   };
 
-  return ListAttributeGroupsForApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAttributeGroupsForApplicationOutcome(result.GetResultWithOwnership())
+                            : ListAttributeGroupsForApplicationOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome AppRegistryClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -506,7 +539,9 @@ ListTagsForResourceOutcome AppRegistryClient::ListTagsForResource(const ListTags
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutConfigurationOutcome AppRegistryClient::PutConfiguration(const PutConfigurationRequest& request) const {
@@ -515,7 +550,9 @@ PutConfigurationOutcome AppRegistryClient::PutConfiguration(const PutConfigurati
     endpointResolutionOutcome.GetResult().AddPathSegments("/configuration");
   };
 
-  return PutConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutConfigurationOutcome(std::move(result.GetError()));
 }
 
 SyncResourceOutcome AppRegistryClient::SyncResource(const SyncResourceRequest& request) const {
@@ -537,7 +574,8 @@ SyncResourceOutcome AppRegistryClient::SyncResource(const SyncResourceRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResource());
   };
 
-  return SyncResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SyncResourceOutcome(result.GetResultWithOwnership()) : SyncResourceOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome AppRegistryClient::TagResource(const TagResourceRequest& request) const {
@@ -553,7 +591,8 @@ TagResourceOutcome AppRegistryClient::TagResource(const TagResourceRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome AppRegistryClient::UntagResource(const UntagResourceRequest& request) const {
@@ -574,7 +613,8 @@ UntagResourceOutcome AppRegistryClient::UntagResource(const UntagResourceRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateApplicationOutcome AppRegistryClient::UpdateApplication(const UpdateApplicationRequest& request) const {
@@ -590,7 +630,9 @@ UpdateApplicationOutcome AppRegistryClient::UpdateApplication(const UpdateApplic
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplication());
   };
 
-  return UpdateApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateApplicationOutcome(result.GetResultWithOwnership())
+                            : UpdateApplicationOutcome(std::move(result.GetError()));
 }
 
 UpdateAttributeGroupOutcome AppRegistryClient::UpdateAttributeGroup(const UpdateAttributeGroupRequest& request) const {
@@ -606,5 +648,7 @@ UpdateAttributeGroupOutcome AppRegistryClient::UpdateAttributeGroup(const Update
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAttributeGroup());
   };
 
-  return UpdateAttributeGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateAttributeGroupOutcome(result.GetResultWithOwnership())
+                            : UpdateAttributeGroupOutcome(std::move(result.GetError()));
 }

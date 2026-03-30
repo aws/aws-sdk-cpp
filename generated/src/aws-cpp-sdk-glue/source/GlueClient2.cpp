@@ -98,274 +98,384 @@ using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 PutResourcePolicyOutcome GlueClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const {
-  return PutResourcePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : PutResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 PutSchemaVersionMetadataOutcome GlueClient::PutSchemaVersionMetadata(const PutSchemaVersionMetadataRequest& request) const {
-  return PutSchemaVersionMetadataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutSchemaVersionMetadataOutcome(result.GetResultWithOwnership())
+                            : PutSchemaVersionMetadataOutcome(std::move(result.GetError()));
 }
 
 PutWorkflowRunPropertiesOutcome GlueClient::PutWorkflowRunProperties(const PutWorkflowRunPropertiesRequest& request) const {
-  return PutWorkflowRunPropertiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutWorkflowRunPropertiesOutcome(result.GetResultWithOwnership())
+                            : PutWorkflowRunPropertiesOutcome(std::move(result.GetError()));
 }
 
 QuerySchemaVersionMetadataOutcome GlueClient::QuerySchemaVersionMetadata(const QuerySchemaVersionMetadataRequest& request) const {
-  return QuerySchemaVersionMetadataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? QuerySchemaVersionMetadataOutcome(result.GetResultWithOwnership())
+                            : QuerySchemaVersionMetadataOutcome(std::move(result.GetError()));
 }
 
 RegisterConnectionTypeOutcome GlueClient::RegisterConnectionType(const RegisterConnectionTypeRequest& request) const {
-  return RegisterConnectionTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterConnectionTypeOutcome(result.GetResultWithOwnership())
+                            : RegisterConnectionTypeOutcome(std::move(result.GetError()));
 }
 
 RegisterSchemaVersionOutcome GlueClient::RegisterSchemaVersion(const RegisterSchemaVersionRequest& request) const {
-  return RegisterSchemaVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterSchemaVersionOutcome(result.GetResultWithOwnership())
+                            : RegisterSchemaVersionOutcome(std::move(result.GetError()));
 }
 
 RemoveSchemaVersionMetadataOutcome GlueClient::RemoveSchemaVersionMetadata(const RemoveSchemaVersionMetadataRequest& request) const {
-  return RemoveSchemaVersionMetadataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveSchemaVersionMetadataOutcome(result.GetResultWithOwnership())
+                            : RemoveSchemaVersionMetadataOutcome(std::move(result.GetError()));
 }
 
 ResetJobBookmarkOutcome GlueClient::ResetJobBookmark(const ResetJobBookmarkRequest& request) const {
-  return ResetJobBookmarkOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResetJobBookmarkOutcome(result.GetResultWithOwnership())
+                            : ResetJobBookmarkOutcome(std::move(result.GetError()));
 }
 
 ResumeWorkflowRunOutcome GlueClient::ResumeWorkflowRun(const ResumeWorkflowRunRequest& request) const {
-  return ResumeWorkflowRunOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResumeWorkflowRunOutcome(result.GetResultWithOwnership())
+                            : ResumeWorkflowRunOutcome(std::move(result.GetError()));
 }
 
 RunStatementOutcome GlueClient::RunStatement(const RunStatementRequest& request) const {
-  return RunStatementOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RunStatementOutcome(result.GetResultWithOwnership()) : RunStatementOutcome(std::move(result.GetError()));
 }
 
 SearchTablesOutcome GlueClient::SearchTables(const SearchTablesRequest& request) const {
-  return SearchTablesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchTablesOutcome(result.GetResultWithOwnership()) : SearchTablesOutcome(std::move(result.GetError()));
 }
 
 StartBlueprintRunOutcome GlueClient::StartBlueprintRun(const StartBlueprintRunRequest& request) const {
-  return StartBlueprintRunOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartBlueprintRunOutcome(result.GetResultWithOwnership())
+                            : StartBlueprintRunOutcome(std::move(result.GetError()));
 }
 
 StartColumnStatisticsTaskRunOutcome GlueClient::StartColumnStatisticsTaskRun(const StartColumnStatisticsTaskRunRequest& request) const {
-  return StartColumnStatisticsTaskRunOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartColumnStatisticsTaskRunOutcome(result.GetResultWithOwnership())
+                            : StartColumnStatisticsTaskRunOutcome(std::move(result.GetError()));
 }
 
 StartColumnStatisticsTaskRunScheduleOutcome GlueClient::StartColumnStatisticsTaskRunSchedule(
     const StartColumnStatisticsTaskRunScheduleRequest& request) const {
-  return StartColumnStatisticsTaskRunScheduleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartColumnStatisticsTaskRunScheduleOutcome(result.GetResultWithOwnership())
+                            : StartColumnStatisticsTaskRunScheduleOutcome(std::move(result.GetError()));
 }
 
 StartCrawlerOutcome GlueClient::StartCrawler(const StartCrawlerRequest& request) const {
-  return StartCrawlerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartCrawlerOutcome(result.GetResultWithOwnership()) : StartCrawlerOutcome(std::move(result.GetError()));
 }
 
 StartCrawlerScheduleOutcome GlueClient::StartCrawlerSchedule(const StartCrawlerScheduleRequest& request) const {
-  return StartCrawlerScheduleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartCrawlerScheduleOutcome(result.GetResultWithOwnership())
+                            : StartCrawlerScheduleOutcome(std::move(result.GetError()));
 }
 
 StartDataQualityRuleRecommendationRunOutcome GlueClient::StartDataQualityRuleRecommendationRun(
     const StartDataQualityRuleRecommendationRunRequest& request) const {
-  return StartDataQualityRuleRecommendationRunOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDataQualityRuleRecommendationRunOutcome(result.GetResultWithOwnership())
+                            : StartDataQualityRuleRecommendationRunOutcome(std::move(result.GetError()));
 }
 
 StartDataQualityRulesetEvaluationRunOutcome GlueClient::StartDataQualityRulesetEvaluationRun(
     const StartDataQualityRulesetEvaluationRunRequest& request) const {
-  return StartDataQualityRulesetEvaluationRunOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDataQualityRulesetEvaluationRunOutcome(result.GetResultWithOwnership())
+                            : StartDataQualityRulesetEvaluationRunOutcome(std::move(result.GetError()));
 }
 
 StartExportLabelsTaskRunOutcome GlueClient::StartExportLabelsTaskRun(const StartExportLabelsTaskRunRequest& request) const {
-  return StartExportLabelsTaskRunOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartExportLabelsTaskRunOutcome(result.GetResultWithOwnership())
+                            : StartExportLabelsTaskRunOutcome(std::move(result.GetError()));
 }
 
 StartImportLabelsTaskRunOutcome GlueClient::StartImportLabelsTaskRun(const StartImportLabelsTaskRunRequest& request) const {
-  return StartImportLabelsTaskRunOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartImportLabelsTaskRunOutcome(result.GetResultWithOwnership())
+                            : StartImportLabelsTaskRunOutcome(std::move(result.GetError()));
 }
 
 StartJobRunOutcome GlueClient::StartJobRun(const StartJobRunRequest& request) const {
-  return StartJobRunOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartJobRunOutcome(result.GetResultWithOwnership()) : StartJobRunOutcome(std::move(result.GetError()));
 }
 
 StartMLEvaluationTaskRunOutcome GlueClient::StartMLEvaluationTaskRun(const StartMLEvaluationTaskRunRequest& request) const {
-  return StartMLEvaluationTaskRunOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartMLEvaluationTaskRunOutcome(result.GetResultWithOwnership())
+                            : StartMLEvaluationTaskRunOutcome(std::move(result.GetError()));
 }
 
 StartMLLabelingSetGenerationTaskRunOutcome GlueClient::StartMLLabelingSetGenerationTaskRun(
     const StartMLLabelingSetGenerationTaskRunRequest& request) const {
-  return StartMLLabelingSetGenerationTaskRunOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartMLLabelingSetGenerationTaskRunOutcome(result.GetResultWithOwnership())
+                            : StartMLLabelingSetGenerationTaskRunOutcome(std::move(result.GetError()));
 }
 
 StartMaterializedViewRefreshTaskRunOutcome GlueClient::StartMaterializedViewRefreshTaskRun(
     const StartMaterializedViewRefreshTaskRunRequest& request) const {
-  return StartMaterializedViewRefreshTaskRunOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartMaterializedViewRefreshTaskRunOutcome(result.GetResultWithOwnership())
+                            : StartMaterializedViewRefreshTaskRunOutcome(std::move(result.GetError()));
 }
 
 StartTriggerOutcome GlueClient::StartTrigger(const StartTriggerRequest& request) const {
-  return StartTriggerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartTriggerOutcome(result.GetResultWithOwnership()) : StartTriggerOutcome(std::move(result.GetError()));
 }
 
 StartWorkflowRunOutcome GlueClient::StartWorkflowRun(const StartWorkflowRunRequest& request) const {
-  return StartWorkflowRunOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartWorkflowRunOutcome(result.GetResultWithOwnership())
+                            : StartWorkflowRunOutcome(std::move(result.GetError()));
 }
 
 StopColumnStatisticsTaskRunOutcome GlueClient::StopColumnStatisticsTaskRun(const StopColumnStatisticsTaskRunRequest& request) const {
-  return StopColumnStatisticsTaskRunOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopColumnStatisticsTaskRunOutcome(result.GetResultWithOwnership())
+                            : StopColumnStatisticsTaskRunOutcome(std::move(result.GetError()));
 }
 
 StopColumnStatisticsTaskRunScheduleOutcome GlueClient::StopColumnStatisticsTaskRunSchedule(
     const StopColumnStatisticsTaskRunScheduleRequest& request) const {
-  return StopColumnStatisticsTaskRunScheduleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopColumnStatisticsTaskRunScheduleOutcome(result.GetResultWithOwnership())
+                            : StopColumnStatisticsTaskRunScheduleOutcome(std::move(result.GetError()));
 }
 
 StopCrawlerOutcome GlueClient::StopCrawler(const StopCrawlerRequest& request) const {
-  return StopCrawlerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopCrawlerOutcome(result.GetResultWithOwnership()) : StopCrawlerOutcome(std::move(result.GetError()));
 }
 
 StopCrawlerScheduleOutcome GlueClient::StopCrawlerSchedule(const StopCrawlerScheduleRequest& request) const {
-  return StopCrawlerScheduleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopCrawlerScheduleOutcome(result.GetResultWithOwnership())
+                            : StopCrawlerScheduleOutcome(std::move(result.GetError()));
 }
 
 StopMaterializedViewRefreshTaskRunOutcome GlueClient::StopMaterializedViewRefreshTaskRun(
     const StopMaterializedViewRefreshTaskRunRequest& request) const {
-  return StopMaterializedViewRefreshTaskRunOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopMaterializedViewRefreshTaskRunOutcome(result.GetResultWithOwnership())
+                            : StopMaterializedViewRefreshTaskRunOutcome(std::move(result.GetError()));
 }
 
 StopSessionOutcome GlueClient::StopSession(const StopSessionRequest& request) const {
-  return StopSessionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopSessionOutcome(result.GetResultWithOwnership()) : StopSessionOutcome(std::move(result.GetError()));
 }
 
 StopTriggerOutcome GlueClient::StopTrigger(const StopTriggerRequest& request) const {
-  return StopTriggerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopTriggerOutcome(result.GetResultWithOwnership()) : StopTriggerOutcome(std::move(result.GetError()));
 }
 
 StopWorkflowRunOutcome GlueClient::StopWorkflowRun(const StopWorkflowRunRequest& request) const {
-  return StopWorkflowRunOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopWorkflowRunOutcome(result.GetResultWithOwnership())
+                            : StopWorkflowRunOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome GlueClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 TestConnectionOutcome GlueClient::TestConnection(const TestConnectionRequest& request) const {
-  return TestConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TestConnectionOutcome(result.GetResultWithOwnership()) : TestConnectionOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome GlueClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateBlueprintOutcome GlueClient::UpdateBlueprint(const UpdateBlueprintRequest& request) const {
-  return UpdateBlueprintOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateBlueprintOutcome(result.GetResultWithOwnership())
+                            : UpdateBlueprintOutcome(std::move(result.GetError()));
 }
 
 UpdateCatalogOutcome GlueClient::UpdateCatalog(const UpdateCatalogRequest& request) const {
-  return UpdateCatalogOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCatalogOutcome(result.GetResultWithOwnership()) : UpdateCatalogOutcome(std::move(result.GetError()));
 }
 
 UpdateClassifierOutcome GlueClient::UpdateClassifier(const UpdateClassifierRequest& request) const {
-  return UpdateClassifierOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateClassifierOutcome(result.GetResultWithOwnership())
+                            : UpdateClassifierOutcome(std::move(result.GetError()));
 }
 
 UpdateColumnStatisticsForPartitionOutcome GlueClient::UpdateColumnStatisticsForPartition(
     const UpdateColumnStatisticsForPartitionRequest& request) const {
-  return UpdateColumnStatisticsForPartitionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateColumnStatisticsForPartitionOutcome(result.GetResultWithOwnership())
+                            : UpdateColumnStatisticsForPartitionOutcome(std::move(result.GetError()));
 }
 
 UpdateColumnStatisticsForTableOutcome GlueClient::UpdateColumnStatisticsForTable(
     const UpdateColumnStatisticsForTableRequest& request) const {
-  return UpdateColumnStatisticsForTableOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateColumnStatisticsForTableOutcome(result.GetResultWithOwnership())
+                            : UpdateColumnStatisticsForTableOutcome(std::move(result.GetError()));
 }
 
 UpdateColumnStatisticsTaskSettingsOutcome GlueClient::UpdateColumnStatisticsTaskSettings(
     const UpdateColumnStatisticsTaskSettingsRequest& request) const {
-  return UpdateColumnStatisticsTaskSettingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateColumnStatisticsTaskSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdateColumnStatisticsTaskSettingsOutcome(std::move(result.GetError()));
 }
 
 UpdateConnectionOutcome GlueClient::UpdateConnection(const UpdateConnectionRequest& request) const {
-  return UpdateConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateConnectionOutcome(result.GetResultWithOwnership())
+                            : UpdateConnectionOutcome(std::move(result.GetError()));
 }
 
 UpdateCrawlerOutcome GlueClient::UpdateCrawler(const UpdateCrawlerRequest& request) const {
-  return UpdateCrawlerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCrawlerOutcome(result.GetResultWithOwnership()) : UpdateCrawlerOutcome(std::move(result.GetError()));
 }
 
 UpdateCrawlerScheduleOutcome GlueClient::UpdateCrawlerSchedule(const UpdateCrawlerScheduleRequest& request) const {
-  return UpdateCrawlerScheduleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCrawlerScheduleOutcome(result.GetResultWithOwnership())
+                            : UpdateCrawlerScheduleOutcome(std::move(result.GetError()));
 }
 
 UpdateDataQualityRulesetOutcome GlueClient::UpdateDataQualityRuleset(const UpdateDataQualityRulesetRequest& request) const {
-  return UpdateDataQualityRulesetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDataQualityRulesetOutcome(result.GetResultWithOwnership())
+                            : UpdateDataQualityRulesetOutcome(std::move(result.GetError()));
 }
 
 UpdateDatabaseOutcome GlueClient::UpdateDatabase(const UpdateDatabaseRequest& request) const {
-  return UpdateDatabaseOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDatabaseOutcome(result.GetResultWithOwnership()) : UpdateDatabaseOutcome(std::move(result.GetError()));
 }
 
 UpdateDevEndpointOutcome GlueClient::UpdateDevEndpoint(const UpdateDevEndpointRequest& request) const {
-  return UpdateDevEndpointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDevEndpointOutcome(result.GetResultWithOwnership())
+                            : UpdateDevEndpointOutcome(std::move(result.GetError()));
 }
 
 UpdateGlueIdentityCenterConfigurationOutcome GlueClient::UpdateGlueIdentityCenterConfiguration(
     const UpdateGlueIdentityCenterConfigurationRequest& request) const {
-  return UpdateGlueIdentityCenterConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateGlueIdentityCenterConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateGlueIdentityCenterConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateIntegrationResourcePropertyOutcome GlueClient::UpdateIntegrationResourceProperty(
     const UpdateIntegrationResourcePropertyRequest& request) const {
-  return UpdateIntegrationResourcePropertyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateIntegrationResourcePropertyOutcome(result.GetResultWithOwnership())
+                            : UpdateIntegrationResourcePropertyOutcome(std::move(result.GetError()));
 }
 
 UpdateIntegrationTablePropertiesOutcome GlueClient::UpdateIntegrationTableProperties(
     const UpdateIntegrationTablePropertiesRequest& request) const {
-  return UpdateIntegrationTablePropertiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateIntegrationTablePropertiesOutcome(result.GetResultWithOwnership())
+                            : UpdateIntegrationTablePropertiesOutcome(std::move(result.GetError()));
 }
 
 UpdateJobOutcome GlueClient::UpdateJob(const UpdateJobRequest& request) const {
-  return UpdateJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateJobOutcome(result.GetResultWithOwnership()) : UpdateJobOutcome(std::move(result.GetError()));
 }
 
 UpdateJobFromSourceControlOutcome GlueClient::UpdateJobFromSourceControl(const UpdateJobFromSourceControlRequest& request) const {
-  return UpdateJobFromSourceControlOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateJobFromSourceControlOutcome(result.GetResultWithOwnership())
+                            : UpdateJobFromSourceControlOutcome(std::move(result.GetError()));
 }
 
 UpdateMLTransformOutcome GlueClient::UpdateMLTransform(const UpdateMLTransformRequest& request) const {
-  return UpdateMLTransformOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateMLTransformOutcome(result.GetResultWithOwnership())
+                            : UpdateMLTransformOutcome(std::move(result.GetError()));
 }
 
 UpdatePartitionOutcome GlueClient::UpdatePartition(const UpdatePartitionRequest& request) const {
-  return UpdatePartitionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePartitionOutcome(result.GetResultWithOwnership())
+                            : UpdatePartitionOutcome(std::move(result.GetError()));
 }
 
 UpdateRegistryOutcome GlueClient::UpdateRegistry(const UpdateRegistryRequest& request) const {
-  return UpdateRegistryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRegistryOutcome(result.GetResultWithOwnership()) : UpdateRegistryOutcome(std::move(result.GetError()));
 }
 
 UpdateSchemaOutcome GlueClient::UpdateSchema(const UpdateSchemaRequest& request) const {
-  return UpdateSchemaOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSchemaOutcome(result.GetResultWithOwnership()) : UpdateSchemaOutcome(std::move(result.GetError()));
 }
 
 UpdateSourceControlFromJobOutcome GlueClient::UpdateSourceControlFromJob(const UpdateSourceControlFromJobRequest& request) const {
-  return UpdateSourceControlFromJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSourceControlFromJobOutcome(result.GetResultWithOwnership())
+                            : UpdateSourceControlFromJobOutcome(std::move(result.GetError()));
 }
 
 UpdateTableOutcome GlueClient::UpdateTable(const UpdateTableRequest& request) const {
-  return UpdateTableOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTableOutcome(result.GetResultWithOwnership()) : UpdateTableOutcome(std::move(result.GetError()));
 }
 
 UpdateTableOptimizerOutcome GlueClient::UpdateTableOptimizer(const UpdateTableOptimizerRequest& request) const {
-  return UpdateTableOptimizerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTableOptimizerOutcome(result.GetResultWithOwnership())
+                            : UpdateTableOptimizerOutcome(std::move(result.GetError()));
 }
 
 UpdateTriggerOutcome GlueClient::UpdateTrigger(const UpdateTriggerRequest& request) const {
-  return UpdateTriggerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTriggerOutcome(result.GetResultWithOwnership()) : UpdateTriggerOutcome(std::move(result.GetError()));
 }
 
 UpdateUsageProfileOutcome GlueClient::UpdateUsageProfile(const UpdateUsageProfileRequest& request) const {
-  return UpdateUsageProfileOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateUsageProfileOutcome(result.GetResultWithOwnership())
+                            : UpdateUsageProfileOutcome(std::move(result.GetError()));
 }
 
 UpdateUserDefinedFunctionOutcome GlueClient::UpdateUserDefinedFunction(const UpdateUserDefinedFunctionRequest& request) const {
-  return UpdateUserDefinedFunctionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateUserDefinedFunctionOutcome(result.GetResultWithOwnership())
+                            : UpdateUserDefinedFunctionOutcome(std::move(result.GetError()));
 }
 
 UpdateWorkflowOutcome GlueClient::UpdateWorkflow(const UpdateWorkflowRequest& request) const {
-  return UpdateWorkflowOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateWorkflowOutcome(result.GetResultWithOwnership()) : UpdateWorkflowOutcome(std::move(result.GetError()));
 }

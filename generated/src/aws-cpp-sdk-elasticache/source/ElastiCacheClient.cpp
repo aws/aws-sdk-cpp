@@ -267,322 +267,461 @@ ElastiCacheClient::InvokeOperationOutcome ElastiCacheClient::InvokeServiceOperat
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 AddTagsToResourceOutcome ElastiCacheClient::AddTagsToResource(const AddTagsToResourceRequest& request) const {
-  return AddTagsToResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddTagsToResourceOutcome(result.GetResultWithOwnership())
+                            : AddTagsToResourceOutcome(std::move(result.GetError()));
 }
 
 AuthorizeCacheSecurityGroupIngressOutcome ElastiCacheClient::AuthorizeCacheSecurityGroupIngress(
     const AuthorizeCacheSecurityGroupIngressRequest& request) const {
-  return AuthorizeCacheSecurityGroupIngressOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AuthorizeCacheSecurityGroupIngressOutcome(result.GetResultWithOwnership())
+                            : AuthorizeCacheSecurityGroupIngressOutcome(std::move(result.GetError()));
 }
 
 BatchApplyUpdateActionOutcome ElastiCacheClient::BatchApplyUpdateAction(const BatchApplyUpdateActionRequest& request) const {
-  return BatchApplyUpdateActionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchApplyUpdateActionOutcome(result.GetResultWithOwnership())
+                            : BatchApplyUpdateActionOutcome(std::move(result.GetError()));
 }
 
 BatchStopUpdateActionOutcome ElastiCacheClient::BatchStopUpdateAction(const BatchStopUpdateActionRequest& request) const {
-  return BatchStopUpdateActionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchStopUpdateActionOutcome(result.GetResultWithOwnership())
+                            : BatchStopUpdateActionOutcome(std::move(result.GetError()));
 }
 
 CompleteMigrationOutcome ElastiCacheClient::CompleteMigration(const CompleteMigrationRequest& request) const {
-  return CompleteMigrationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CompleteMigrationOutcome(result.GetResultWithOwnership())
+                            : CompleteMigrationOutcome(std::move(result.GetError()));
 }
 
 CopyServerlessCacheSnapshotOutcome ElastiCacheClient::CopyServerlessCacheSnapshot(const CopyServerlessCacheSnapshotRequest& request) const {
-  return CopyServerlessCacheSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CopyServerlessCacheSnapshotOutcome(result.GetResultWithOwnership())
+                            : CopyServerlessCacheSnapshotOutcome(std::move(result.GetError()));
 }
 
 CopySnapshotOutcome ElastiCacheClient::CopySnapshot(const CopySnapshotRequest& request) const {
-  return CopySnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CopySnapshotOutcome(result.GetResultWithOwnership()) : CopySnapshotOutcome(std::move(result.GetError()));
 }
 
 CreateCacheClusterOutcome ElastiCacheClient::CreateCacheCluster(const CreateCacheClusterRequest& request) const {
-  return CreateCacheClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCacheClusterOutcome(result.GetResultWithOwnership())
+                            : CreateCacheClusterOutcome(std::move(result.GetError()));
 }
 
 CreateCacheParameterGroupOutcome ElastiCacheClient::CreateCacheParameterGroup(const CreateCacheParameterGroupRequest& request) const {
-  return CreateCacheParameterGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCacheParameterGroupOutcome(result.GetResultWithOwnership())
+                            : CreateCacheParameterGroupOutcome(std::move(result.GetError()));
 }
 
 CreateCacheSecurityGroupOutcome ElastiCacheClient::CreateCacheSecurityGroup(const CreateCacheSecurityGroupRequest& request) const {
-  return CreateCacheSecurityGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCacheSecurityGroupOutcome(result.GetResultWithOwnership())
+                            : CreateCacheSecurityGroupOutcome(std::move(result.GetError()));
 }
 
 CreateCacheSubnetGroupOutcome ElastiCacheClient::CreateCacheSubnetGroup(const CreateCacheSubnetGroupRequest& request) const {
-  return CreateCacheSubnetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCacheSubnetGroupOutcome(result.GetResultWithOwnership())
+                            : CreateCacheSubnetGroupOutcome(std::move(result.GetError()));
 }
 
 CreateGlobalReplicationGroupOutcome ElastiCacheClient::CreateGlobalReplicationGroup(
     const CreateGlobalReplicationGroupRequest& request) const {
-  return CreateGlobalReplicationGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGlobalReplicationGroupOutcome(result.GetResultWithOwnership())
+                            : CreateGlobalReplicationGroupOutcome(std::move(result.GetError()));
 }
 
 CreateReplicationGroupOutcome ElastiCacheClient::CreateReplicationGroup(const CreateReplicationGroupRequest& request) const {
-  return CreateReplicationGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateReplicationGroupOutcome(result.GetResultWithOwnership())
+                            : CreateReplicationGroupOutcome(std::move(result.GetError()));
 }
 
 CreateServerlessCacheOutcome ElastiCacheClient::CreateServerlessCache(const CreateServerlessCacheRequest& request) const {
-  return CreateServerlessCacheOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateServerlessCacheOutcome(result.GetResultWithOwnership())
+                            : CreateServerlessCacheOutcome(std::move(result.GetError()));
 }
 
 CreateServerlessCacheSnapshotOutcome ElastiCacheClient::CreateServerlessCacheSnapshot(
     const CreateServerlessCacheSnapshotRequest& request) const {
-  return CreateServerlessCacheSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateServerlessCacheSnapshotOutcome(result.GetResultWithOwnership())
+                            : CreateServerlessCacheSnapshotOutcome(std::move(result.GetError()));
 }
 
 CreateSnapshotOutcome ElastiCacheClient::CreateSnapshot(const CreateSnapshotRequest& request) const {
-  return CreateSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSnapshotOutcome(result.GetResultWithOwnership()) : CreateSnapshotOutcome(std::move(result.GetError()));
 }
 
 CreateUserOutcome ElastiCacheClient::CreateUser(const CreateUserRequest& request) const {
-  return CreateUserOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateUserOutcome(result.GetResultWithOwnership()) : CreateUserOutcome(std::move(result.GetError()));
 }
 
 CreateUserGroupOutcome ElastiCacheClient::CreateUserGroup(const CreateUserGroupRequest& request) const {
-  return CreateUserGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateUserGroupOutcome(result.GetResultWithOwnership())
+                            : CreateUserGroupOutcome(std::move(result.GetError()));
 }
 
 DecreaseNodeGroupsInGlobalReplicationGroupOutcome ElastiCacheClient::DecreaseNodeGroupsInGlobalReplicationGroup(
     const DecreaseNodeGroupsInGlobalReplicationGroupRequest& request) const {
-  return DecreaseNodeGroupsInGlobalReplicationGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DecreaseNodeGroupsInGlobalReplicationGroupOutcome(result.GetResultWithOwnership())
+                            : DecreaseNodeGroupsInGlobalReplicationGroupOutcome(std::move(result.GetError()));
 }
 
 DecreaseReplicaCountOutcome ElastiCacheClient::DecreaseReplicaCount(const DecreaseReplicaCountRequest& request) const {
-  return DecreaseReplicaCountOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DecreaseReplicaCountOutcome(result.GetResultWithOwnership())
+                            : DecreaseReplicaCountOutcome(std::move(result.GetError()));
 }
 
 DeleteCacheClusterOutcome ElastiCacheClient::DeleteCacheCluster(const DeleteCacheClusterRequest& request) const {
-  return DeleteCacheClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCacheClusterOutcome(result.GetResultWithOwnership())
+                            : DeleteCacheClusterOutcome(std::move(result.GetError()));
 }
 
 DeleteCacheParameterGroupOutcome ElastiCacheClient::DeleteCacheParameterGroup(const DeleteCacheParameterGroupRequest& request) const {
-  return DeleteCacheParameterGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCacheParameterGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteCacheParameterGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteCacheSecurityGroupOutcome ElastiCacheClient::DeleteCacheSecurityGroup(const DeleteCacheSecurityGroupRequest& request) const {
-  return DeleteCacheSecurityGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCacheSecurityGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteCacheSecurityGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteCacheSubnetGroupOutcome ElastiCacheClient::DeleteCacheSubnetGroup(const DeleteCacheSubnetGroupRequest& request) const {
-  return DeleteCacheSubnetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCacheSubnetGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteCacheSubnetGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteGlobalReplicationGroupOutcome ElastiCacheClient::DeleteGlobalReplicationGroup(
     const DeleteGlobalReplicationGroupRequest& request) const {
-  return DeleteGlobalReplicationGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteGlobalReplicationGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteGlobalReplicationGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteReplicationGroupOutcome ElastiCacheClient::DeleteReplicationGroup(const DeleteReplicationGroupRequest& request) const {
-  return DeleteReplicationGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteReplicationGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteReplicationGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteServerlessCacheOutcome ElastiCacheClient::DeleteServerlessCache(const DeleteServerlessCacheRequest& request) const {
-  return DeleteServerlessCacheOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteServerlessCacheOutcome(result.GetResultWithOwnership())
+                            : DeleteServerlessCacheOutcome(std::move(result.GetError()));
 }
 
 DeleteServerlessCacheSnapshotOutcome ElastiCacheClient::DeleteServerlessCacheSnapshot(
     const DeleteServerlessCacheSnapshotRequest& request) const {
-  return DeleteServerlessCacheSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteServerlessCacheSnapshotOutcome(result.GetResultWithOwnership())
+                            : DeleteServerlessCacheSnapshotOutcome(std::move(result.GetError()));
 }
 
 DeleteSnapshotOutcome ElastiCacheClient::DeleteSnapshot(const DeleteSnapshotRequest& request) const {
-  return DeleteSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSnapshotOutcome(result.GetResultWithOwnership()) : DeleteSnapshotOutcome(std::move(result.GetError()));
 }
 
 DeleteUserOutcome ElastiCacheClient::DeleteUser(const DeleteUserRequest& request) const {
-  return DeleteUserOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteUserOutcome(result.GetResultWithOwnership()) : DeleteUserOutcome(std::move(result.GetError()));
 }
 
 DeleteUserGroupOutcome ElastiCacheClient::DeleteUserGroup(const DeleteUserGroupRequest& request) const {
-  return DeleteUserGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteUserGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteUserGroupOutcome(std::move(result.GetError()));
 }
 
 DescribeCacheClustersOutcome ElastiCacheClient::DescribeCacheClusters(const DescribeCacheClustersRequest& request) const {
-  return DescribeCacheClustersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCacheClustersOutcome(result.GetResultWithOwnership())
+                            : DescribeCacheClustersOutcome(std::move(result.GetError()));
 }
 
 DescribeCacheEngineVersionsOutcome ElastiCacheClient::DescribeCacheEngineVersions(const DescribeCacheEngineVersionsRequest& request) const {
-  return DescribeCacheEngineVersionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCacheEngineVersionsOutcome(result.GetResultWithOwnership())
+                            : DescribeCacheEngineVersionsOutcome(std::move(result.GetError()));
 }
 
 DescribeCacheParameterGroupsOutcome ElastiCacheClient::DescribeCacheParameterGroups(
     const DescribeCacheParameterGroupsRequest& request) const {
-  return DescribeCacheParameterGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCacheParameterGroupsOutcome(result.GetResultWithOwnership())
+                            : DescribeCacheParameterGroupsOutcome(std::move(result.GetError()));
 }
 
 DescribeCacheParametersOutcome ElastiCacheClient::DescribeCacheParameters(const DescribeCacheParametersRequest& request) const {
-  return DescribeCacheParametersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCacheParametersOutcome(result.GetResultWithOwnership())
+                            : DescribeCacheParametersOutcome(std::move(result.GetError()));
 }
 
 DescribeCacheSecurityGroupsOutcome ElastiCacheClient::DescribeCacheSecurityGroups(const DescribeCacheSecurityGroupsRequest& request) const {
-  return DescribeCacheSecurityGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCacheSecurityGroupsOutcome(result.GetResultWithOwnership())
+                            : DescribeCacheSecurityGroupsOutcome(std::move(result.GetError()));
 }
 
 DescribeCacheSubnetGroupsOutcome ElastiCacheClient::DescribeCacheSubnetGroups(const DescribeCacheSubnetGroupsRequest& request) const {
-  return DescribeCacheSubnetGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCacheSubnetGroupsOutcome(result.GetResultWithOwnership())
+                            : DescribeCacheSubnetGroupsOutcome(std::move(result.GetError()));
 }
 
 DescribeEngineDefaultParametersOutcome ElastiCacheClient::DescribeEngineDefaultParameters(
     const DescribeEngineDefaultParametersRequest& request) const {
-  return DescribeEngineDefaultParametersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEngineDefaultParametersOutcome(result.GetResultWithOwnership())
+                            : DescribeEngineDefaultParametersOutcome(std::move(result.GetError()));
 }
 
 DescribeEventsOutcome ElastiCacheClient::DescribeEvents(const DescribeEventsRequest& request) const {
-  return DescribeEventsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEventsOutcome(result.GetResultWithOwnership()) : DescribeEventsOutcome(std::move(result.GetError()));
 }
 
 DescribeGlobalReplicationGroupsOutcome ElastiCacheClient::DescribeGlobalReplicationGroups(
     const DescribeGlobalReplicationGroupsRequest& request) const {
-  return DescribeGlobalReplicationGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeGlobalReplicationGroupsOutcome(result.GetResultWithOwnership())
+                            : DescribeGlobalReplicationGroupsOutcome(std::move(result.GetError()));
 }
 
 DescribeReplicationGroupsOutcome ElastiCacheClient::DescribeReplicationGroups(const DescribeReplicationGroupsRequest& request) const {
-  return DescribeReplicationGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeReplicationGroupsOutcome(result.GetResultWithOwnership())
+                            : DescribeReplicationGroupsOutcome(std::move(result.GetError()));
 }
 
 DescribeReservedCacheNodesOutcome ElastiCacheClient::DescribeReservedCacheNodes(const DescribeReservedCacheNodesRequest& request) const {
-  return DescribeReservedCacheNodesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeReservedCacheNodesOutcome(result.GetResultWithOwnership())
+                            : DescribeReservedCacheNodesOutcome(std::move(result.GetError()));
 }
 
 DescribeReservedCacheNodesOfferingsOutcome ElastiCacheClient::DescribeReservedCacheNodesOfferings(
     const DescribeReservedCacheNodesOfferingsRequest& request) const {
-  return DescribeReservedCacheNodesOfferingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeReservedCacheNodesOfferingsOutcome(result.GetResultWithOwnership())
+                            : DescribeReservedCacheNodesOfferingsOutcome(std::move(result.GetError()));
 }
 
 DescribeServerlessCacheSnapshotsOutcome ElastiCacheClient::DescribeServerlessCacheSnapshots(
     const DescribeServerlessCacheSnapshotsRequest& request) const {
-  return DescribeServerlessCacheSnapshotsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeServerlessCacheSnapshotsOutcome(result.GetResultWithOwnership())
+                            : DescribeServerlessCacheSnapshotsOutcome(std::move(result.GetError()));
 }
 
 DescribeServerlessCachesOutcome ElastiCacheClient::DescribeServerlessCaches(const DescribeServerlessCachesRequest& request) const {
-  return DescribeServerlessCachesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeServerlessCachesOutcome(result.GetResultWithOwnership())
+                            : DescribeServerlessCachesOutcome(std::move(result.GetError()));
 }
 
 DescribeServiceUpdatesOutcome ElastiCacheClient::DescribeServiceUpdates(const DescribeServiceUpdatesRequest& request) const {
-  return DescribeServiceUpdatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeServiceUpdatesOutcome(result.GetResultWithOwnership())
+                            : DescribeServiceUpdatesOutcome(std::move(result.GetError()));
 }
 
 DescribeSnapshotsOutcome ElastiCacheClient::DescribeSnapshots(const DescribeSnapshotsRequest& request) const {
-  return DescribeSnapshotsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSnapshotsOutcome(result.GetResultWithOwnership())
+                            : DescribeSnapshotsOutcome(std::move(result.GetError()));
 }
 
 DescribeUpdateActionsOutcome ElastiCacheClient::DescribeUpdateActions(const DescribeUpdateActionsRequest& request) const {
-  return DescribeUpdateActionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeUpdateActionsOutcome(result.GetResultWithOwnership())
+                            : DescribeUpdateActionsOutcome(std::move(result.GetError()));
 }
 
 DescribeUserGroupsOutcome ElastiCacheClient::DescribeUserGroups(const DescribeUserGroupsRequest& request) const {
-  return DescribeUserGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeUserGroupsOutcome(result.GetResultWithOwnership())
+                            : DescribeUserGroupsOutcome(std::move(result.GetError()));
 }
 
 DescribeUsersOutcome ElastiCacheClient::DescribeUsers(const DescribeUsersRequest& request) const {
-  return DescribeUsersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeUsersOutcome(result.GetResultWithOwnership()) : DescribeUsersOutcome(std::move(result.GetError()));
 }
 
 DisassociateGlobalReplicationGroupOutcome ElastiCacheClient::DisassociateGlobalReplicationGroup(
     const DisassociateGlobalReplicationGroupRequest& request) const {
-  return DisassociateGlobalReplicationGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateGlobalReplicationGroupOutcome(result.GetResultWithOwnership())
+                            : DisassociateGlobalReplicationGroupOutcome(std::move(result.GetError()));
 }
 
 ExportServerlessCacheSnapshotOutcome ElastiCacheClient::ExportServerlessCacheSnapshot(
     const ExportServerlessCacheSnapshotRequest& request) const {
-  return ExportServerlessCacheSnapshotOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExportServerlessCacheSnapshotOutcome(result.GetResultWithOwnership())
+                            : ExportServerlessCacheSnapshotOutcome(std::move(result.GetError()));
 }
 
 FailoverGlobalReplicationGroupOutcome ElastiCacheClient::FailoverGlobalReplicationGroup(
     const FailoverGlobalReplicationGroupRequest& request) const {
-  return FailoverGlobalReplicationGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? FailoverGlobalReplicationGroupOutcome(result.GetResultWithOwnership())
+                            : FailoverGlobalReplicationGroupOutcome(std::move(result.GetError()));
 }
 
 IncreaseNodeGroupsInGlobalReplicationGroupOutcome ElastiCacheClient::IncreaseNodeGroupsInGlobalReplicationGroup(
     const IncreaseNodeGroupsInGlobalReplicationGroupRequest& request) const {
-  return IncreaseNodeGroupsInGlobalReplicationGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? IncreaseNodeGroupsInGlobalReplicationGroupOutcome(result.GetResultWithOwnership())
+                            : IncreaseNodeGroupsInGlobalReplicationGroupOutcome(std::move(result.GetError()));
 }
 
 IncreaseReplicaCountOutcome ElastiCacheClient::IncreaseReplicaCount(const IncreaseReplicaCountRequest& request) const {
-  return IncreaseReplicaCountOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? IncreaseReplicaCountOutcome(result.GetResultWithOwnership())
+                            : IncreaseReplicaCountOutcome(std::move(result.GetError()));
 }
 
 ListAllowedNodeTypeModificationsOutcome ElastiCacheClient::ListAllowedNodeTypeModifications(
     const ListAllowedNodeTypeModificationsRequest& request) const {
-  return ListAllowedNodeTypeModificationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAllowedNodeTypeModificationsOutcome(result.GetResultWithOwnership())
+                            : ListAllowedNodeTypeModificationsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome ElastiCacheClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ModifyCacheClusterOutcome ElastiCacheClient::ModifyCacheCluster(const ModifyCacheClusterRequest& request) const {
-  return ModifyCacheClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyCacheClusterOutcome(result.GetResultWithOwnership())
+                            : ModifyCacheClusterOutcome(std::move(result.GetError()));
 }
 
 ModifyCacheParameterGroupOutcome ElastiCacheClient::ModifyCacheParameterGroup(const ModifyCacheParameterGroupRequest& request) const {
-  return ModifyCacheParameterGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyCacheParameterGroupOutcome(result.GetResultWithOwnership())
+                            : ModifyCacheParameterGroupOutcome(std::move(result.GetError()));
 }
 
 ModifyCacheSubnetGroupOutcome ElastiCacheClient::ModifyCacheSubnetGroup(const ModifyCacheSubnetGroupRequest& request) const {
-  return ModifyCacheSubnetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyCacheSubnetGroupOutcome(result.GetResultWithOwnership())
+                            : ModifyCacheSubnetGroupOutcome(std::move(result.GetError()));
 }
 
 ModifyGlobalReplicationGroupOutcome ElastiCacheClient::ModifyGlobalReplicationGroup(
     const ModifyGlobalReplicationGroupRequest& request) const {
-  return ModifyGlobalReplicationGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyGlobalReplicationGroupOutcome(result.GetResultWithOwnership())
+                            : ModifyGlobalReplicationGroupOutcome(std::move(result.GetError()));
 }
 
 ModifyReplicationGroupOutcome ElastiCacheClient::ModifyReplicationGroup(const ModifyReplicationGroupRequest& request) const {
-  return ModifyReplicationGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyReplicationGroupOutcome(result.GetResultWithOwnership())
+                            : ModifyReplicationGroupOutcome(std::move(result.GetError()));
 }
 
 ModifyReplicationGroupShardConfigurationOutcome ElastiCacheClient::ModifyReplicationGroupShardConfiguration(
     const ModifyReplicationGroupShardConfigurationRequest& request) const {
-  return ModifyReplicationGroupShardConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyReplicationGroupShardConfigurationOutcome(result.GetResultWithOwnership())
+                            : ModifyReplicationGroupShardConfigurationOutcome(std::move(result.GetError()));
 }
 
 ModifyServerlessCacheOutcome ElastiCacheClient::ModifyServerlessCache(const ModifyServerlessCacheRequest& request) const {
-  return ModifyServerlessCacheOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyServerlessCacheOutcome(result.GetResultWithOwnership())
+                            : ModifyServerlessCacheOutcome(std::move(result.GetError()));
 }
 
 ModifyUserOutcome ElastiCacheClient::ModifyUser(const ModifyUserRequest& request) const {
-  return ModifyUserOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyUserOutcome(result.GetResultWithOwnership()) : ModifyUserOutcome(std::move(result.GetError()));
 }
 
 ModifyUserGroupOutcome ElastiCacheClient::ModifyUserGroup(const ModifyUserGroupRequest& request) const {
-  return ModifyUserGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyUserGroupOutcome(result.GetResultWithOwnership())
+                            : ModifyUserGroupOutcome(std::move(result.GetError()));
 }
 
 PurchaseReservedCacheNodesOfferingOutcome ElastiCacheClient::PurchaseReservedCacheNodesOffering(
     const PurchaseReservedCacheNodesOfferingRequest& request) const {
-  return PurchaseReservedCacheNodesOfferingOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PurchaseReservedCacheNodesOfferingOutcome(result.GetResultWithOwnership())
+                            : PurchaseReservedCacheNodesOfferingOutcome(std::move(result.GetError()));
 }
 
 RebalanceSlotsInGlobalReplicationGroupOutcome ElastiCacheClient::RebalanceSlotsInGlobalReplicationGroup(
     const RebalanceSlotsInGlobalReplicationGroupRequest& request) const {
-  return RebalanceSlotsInGlobalReplicationGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RebalanceSlotsInGlobalReplicationGroupOutcome(result.GetResultWithOwnership())
+                            : RebalanceSlotsInGlobalReplicationGroupOutcome(std::move(result.GetError()));
 }
 
 RebootCacheClusterOutcome ElastiCacheClient::RebootCacheCluster(const RebootCacheClusterRequest& request) const {
-  return RebootCacheClusterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RebootCacheClusterOutcome(result.GetResultWithOwnership())
+                            : RebootCacheClusterOutcome(std::move(result.GetError()));
 }
 
 RemoveTagsFromResourceOutcome ElastiCacheClient::RemoveTagsFromResource(const RemoveTagsFromResourceRequest& request) const {
-  return RemoveTagsFromResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveTagsFromResourceOutcome(result.GetResultWithOwnership())
+                            : RemoveTagsFromResourceOutcome(std::move(result.GetError()));
 }
 
 ResetCacheParameterGroupOutcome ElastiCacheClient::ResetCacheParameterGroup(const ResetCacheParameterGroupRequest& request) const {
-  return ResetCacheParameterGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResetCacheParameterGroupOutcome(result.GetResultWithOwnership())
+                            : ResetCacheParameterGroupOutcome(std::move(result.GetError()));
 }
 
 RevokeCacheSecurityGroupIngressOutcome ElastiCacheClient::RevokeCacheSecurityGroupIngress(
     const RevokeCacheSecurityGroupIngressRequest& request) const {
-  return RevokeCacheSecurityGroupIngressOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RevokeCacheSecurityGroupIngressOutcome(result.GetResultWithOwnership())
+                            : RevokeCacheSecurityGroupIngressOutcome(std::move(result.GetError()));
 }
 
 StartMigrationOutcome ElastiCacheClient::StartMigration(const StartMigrationRequest& request) const {
-  return StartMigrationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartMigrationOutcome(result.GetResultWithOwnership()) : StartMigrationOutcome(std::move(result.GetError()));
 }
 
 TestFailoverOutcome ElastiCacheClient::TestFailover(const TestFailoverRequest& request) const {
-  return TestFailoverOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TestFailoverOutcome(result.GetResultWithOwnership()) : TestFailoverOutcome(std::move(result.GetError()));
 }
 
 TestMigrationOutcome ElastiCacheClient::TestMigration(const TestMigrationRequest& request) const {
-  return TestMigrationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TestMigrationOutcome(result.GetResultWithOwnership()) : TestMigrationOutcome(std::move(result.GetError()));
 }

@@ -190,5 +190,7 @@ GetBuyerDashboardOutcome MarketplaceReportingClient::GetBuyerDashboard(const Get
     endpointResolutionOutcome.GetResult().AddPathSegments("/getBuyerDashboard");
   };
 
-  return GetBuyerDashboardOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetBuyerDashboardOutcome(result.GetResultWithOwnership())
+                            : GetBuyerDashboardOutcome(std::move(result.GetError()));
 }

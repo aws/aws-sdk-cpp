@@ -183,27 +183,39 @@ AutoScalingPlansClient::InvokeOperationOutcome AutoScalingPlansClient::InvokeSer
 }
 
 CreateScalingPlanOutcome AutoScalingPlansClient::CreateScalingPlan(const CreateScalingPlanRequest& request) const {
-  return CreateScalingPlanOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateScalingPlanOutcome(result.GetResultWithOwnership())
+                            : CreateScalingPlanOutcome(std::move(result.GetError()));
 }
 
 DeleteScalingPlanOutcome AutoScalingPlansClient::DeleteScalingPlan(const DeleteScalingPlanRequest& request) const {
-  return DeleteScalingPlanOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteScalingPlanOutcome(result.GetResultWithOwnership())
+                            : DeleteScalingPlanOutcome(std::move(result.GetError()));
 }
 
 DescribeScalingPlanResourcesOutcome AutoScalingPlansClient::DescribeScalingPlanResources(
     const DescribeScalingPlanResourcesRequest& request) const {
-  return DescribeScalingPlanResourcesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeScalingPlanResourcesOutcome(result.GetResultWithOwnership())
+                            : DescribeScalingPlanResourcesOutcome(std::move(result.GetError()));
 }
 
 DescribeScalingPlansOutcome AutoScalingPlansClient::DescribeScalingPlans(const DescribeScalingPlansRequest& request) const {
-  return DescribeScalingPlansOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeScalingPlansOutcome(result.GetResultWithOwnership())
+                            : DescribeScalingPlansOutcome(std::move(result.GetError()));
 }
 
 GetScalingPlanResourceForecastDataOutcome AutoScalingPlansClient::GetScalingPlanResourceForecastData(
     const GetScalingPlanResourceForecastDataRequest& request) const {
-  return GetScalingPlanResourceForecastDataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetScalingPlanResourceForecastDataOutcome(result.GetResultWithOwnership())
+                            : GetScalingPlanResourceForecastDataOutcome(std::move(result.GetError()));
 }
 
 UpdateScalingPlanOutcome AutoScalingPlansClient::UpdateScalingPlan(const UpdateScalingPlanRequest& request) const {
-  return UpdateScalingPlanOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateScalingPlanOutcome(result.GetResultWithOwnership())
+                            : UpdateScalingPlanOutcome(std::move(result.GetError()));
 }

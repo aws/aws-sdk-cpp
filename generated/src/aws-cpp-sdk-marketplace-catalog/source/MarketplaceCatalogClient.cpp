@@ -198,7 +198,9 @@ BatchDescribeEntitiesOutcome MarketplaceCatalogClient::BatchDescribeEntities(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/BatchDescribeEntities");
   };
 
-  return BatchDescribeEntitiesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDescribeEntitiesOutcome(result.GetResultWithOwnership())
+                            : BatchDescribeEntitiesOutcome(std::move(result.GetError()));
 }
 
 CancelChangeSetOutcome MarketplaceCatalogClient::CancelChangeSet(const CancelChangeSetRequest& request) const {
@@ -218,7 +220,9 @@ CancelChangeSetOutcome MarketplaceCatalogClient::CancelChangeSet(const CancelCha
     endpointResolutionOutcome.GetResult().AddPathSegments("/CancelChangeSet");
   };
 
-  return CancelChangeSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? CancelChangeSetOutcome(result.GetResultWithOwnership())
+                            : CancelChangeSetOutcome(std::move(result.GetError()));
 }
 
 DeleteResourcePolicyOutcome MarketplaceCatalogClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const {
@@ -233,7 +237,9 @@ DeleteResourcePolicyOutcome MarketplaceCatalogClient::DeleteResourcePolicy(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteResourcePolicy");
   };
 
-  return DeleteResourcePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 DescribeChangeSetOutcome MarketplaceCatalogClient::DescribeChangeSet(const DescribeChangeSetRequest& request) const {
@@ -253,7 +259,9 @@ DescribeChangeSetOutcome MarketplaceCatalogClient::DescribeChangeSet(const Descr
     endpointResolutionOutcome.GetResult().AddPathSegments("/DescribeChangeSet");
   };
 
-  return DescribeChangeSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeChangeSetOutcome(result.GetResultWithOwnership())
+                            : DescribeChangeSetOutcome(std::move(result.GetError()));
 }
 
 DescribeEntityOutcome MarketplaceCatalogClient::DescribeEntity(const DescribeEntityRequest& request) const {
@@ -273,7 +281,8 @@ DescribeEntityOutcome MarketplaceCatalogClient::DescribeEntity(const DescribeEnt
     endpointResolutionOutcome.GetResult().AddPathSegments("/DescribeEntity");
   };
 
-  return DescribeEntityOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeEntityOutcome(result.GetResultWithOwnership()) : DescribeEntityOutcome(std::move(result.GetError()));
 }
 
 GetResourcePolicyOutcome MarketplaceCatalogClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const {
@@ -288,7 +297,9 @@ GetResourcePolicyOutcome MarketplaceCatalogClient::GetResourcePolicy(const GetRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetResourcePolicy");
   };
 
-  return GetResourcePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : GetResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 ListChangeSetsOutcome MarketplaceCatalogClient::ListChangeSets(const ListChangeSetsRequest& request) const {
@@ -297,7 +308,8 @@ ListChangeSetsOutcome MarketplaceCatalogClient::ListChangeSets(const ListChangeS
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListChangeSets");
   };
 
-  return ListChangeSetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListChangeSetsOutcome(result.GetResultWithOwnership()) : ListChangeSetsOutcome(std::move(result.GetError()));
 }
 
 ListEntitiesOutcome MarketplaceCatalogClient::ListEntities(const ListEntitiesRequest& request) const {
@@ -306,7 +318,8 @@ ListEntitiesOutcome MarketplaceCatalogClient::ListEntities(const ListEntitiesReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListEntities");
   };
 
-  return ListEntitiesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEntitiesOutcome(result.GetResultWithOwnership()) : ListEntitiesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome MarketplaceCatalogClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -315,7 +328,9 @@ ListTagsForResourceOutcome MarketplaceCatalogClient::ListTagsForResource(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListTagsForResource");
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutResourcePolicyOutcome MarketplaceCatalogClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const {
@@ -324,7 +339,9 @@ PutResourcePolicyOutcome MarketplaceCatalogClient::PutResourcePolicy(const PutRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/PutResourcePolicy");
   };
 
-  return PutResourcePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : PutResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 StartChangeSetOutcome MarketplaceCatalogClient::StartChangeSet(const StartChangeSetRequest& request) const {
@@ -333,7 +350,8 @@ StartChangeSetOutcome MarketplaceCatalogClient::StartChangeSet(const StartChange
     endpointResolutionOutcome.GetResult().AddPathSegments("/StartChangeSet");
   };
 
-  return StartChangeSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartChangeSetOutcome(result.GetResultWithOwnership()) : StartChangeSetOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome MarketplaceCatalogClient::TagResource(const TagResourceRequest& request) const {
@@ -342,7 +360,8 @@ TagResourceOutcome MarketplaceCatalogClient::TagResource(const TagResourceReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/TagResource");
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome MarketplaceCatalogClient::UntagResource(const UntagResourceRequest& request) const {
@@ -351,5 +370,6 @@ UntagResourceOutcome MarketplaceCatalogClient::UntagResource(const UntagResource
     endpointResolutionOutcome.GetResult().AddPathSegments("/UntagResource");
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }

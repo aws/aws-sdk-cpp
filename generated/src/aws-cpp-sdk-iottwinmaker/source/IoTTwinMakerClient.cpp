@@ -229,7 +229,9 @@ BatchPutPropertyValuesOutcome IoTTwinMakerClient::BatchPutPropertyValues(const B
     endpointResolutionOutcome.GetResult().AddPathSegments("/entity-properties");
   };
 
-  return BatchPutPropertyValuesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchPutPropertyValuesOutcome(result.GetResultWithOwnership())
+                            : BatchPutPropertyValuesOutcome(std::move(result.GetError()));
 }
 
 CancelMetadataTransferJobOutcome IoTTwinMakerClient::CancelMetadataTransferJob(const CancelMetadataTransferJobRequest& request) const {
@@ -246,7 +248,9 @@ CancelMetadataTransferJobOutcome IoTTwinMakerClient::CancelMetadataTransferJob(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/cancel");
   };
 
-  return CancelMetadataTransferJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CancelMetadataTransferJobOutcome(result.GetResultWithOwnership())
+                            : CancelMetadataTransferJobOutcome(std::move(result.GetError()));
 }
 
 CreateComponentTypeOutcome IoTTwinMakerClient::CreateComponentType(const CreateComponentTypeRequest& request) const {
@@ -269,7 +273,9 @@ CreateComponentTypeOutcome IoTTwinMakerClient::CreateComponentType(const CreateC
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetComponentTypeId());
   };
 
-  return CreateComponentTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateComponentTypeOutcome(result.GetResultWithOwnership())
+                            : CreateComponentTypeOutcome(std::move(result.GetError()));
 }
 
 CreateEntityOutcome IoTTwinMakerClient::CreateEntity(const CreateEntityRequest& request) const {
@@ -286,7 +292,8 @@ CreateEntityOutcome IoTTwinMakerClient::CreateEntity(const CreateEntityRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/entities");
   };
 
-  return CreateEntityOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEntityOutcome(result.GetResultWithOwnership()) : CreateEntityOutcome(std::move(result.GetError()));
 }
 
 CreateMetadataTransferJobOutcome IoTTwinMakerClient::CreateMetadataTransferJob(const CreateMetadataTransferJobRequest& request) const {
@@ -295,7 +302,9 @@ CreateMetadataTransferJobOutcome IoTTwinMakerClient::CreateMetadataTransferJob(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/metadata-transfer-jobs");
   };
 
-  return CreateMetadataTransferJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMetadataTransferJobOutcome(result.GetResultWithOwnership())
+                            : CreateMetadataTransferJobOutcome(std::move(result.GetError()));
 }
 
 CreateSceneOutcome IoTTwinMakerClient::CreateScene(const CreateSceneRequest& request) const {
@@ -312,7 +321,8 @@ CreateSceneOutcome IoTTwinMakerClient::CreateScene(const CreateSceneRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/scenes");
   };
 
-  return CreateSceneOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSceneOutcome(result.GetResultWithOwnership()) : CreateSceneOutcome(std::move(result.GetError()));
 }
 
 CreateSyncJobOutcome IoTTwinMakerClient::CreateSyncJob(const CreateSyncJobRequest& request) const {
@@ -335,7 +345,8 @@ CreateSyncJobOutcome IoTTwinMakerClient::CreateSyncJob(const CreateSyncJobReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSyncSource());
   };
 
-  return CreateSyncJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSyncJobOutcome(result.GetResultWithOwnership()) : CreateSyncJobOutcome(std::move(result.GetError()));
 }
 
 CreateWorkspaceOutcome IoTTwinMakerClient::CreateWorkspace(const CreateWorkspaceRequest& request) const {
@@ -351,7 +362,9 @@ CreateWorkspaceOutcome IoTTwinMakerClient::CreateWorkspace(const CreateWorkspace
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
   };
 
-  return CreateWorkspaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWorkspaceOutcome(result.GetResultWithOwnership())
+                            : CreateWorkspaceOutcome(std::move(result.GetError()));
 }
 
 DeleteComponentTypeOutcome IoTTwinMakerClient::DeleteComponentType(const DeleteComponentTypeRequest& request) const {
@@ -374,7 +387,9 @@ DeleteComponentTypeOutcome IoTTwinMakerClient::DeleteComponentType(const DeleteC
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetComponentTypeId());
   };
 
-  return DeleteComponentTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteComponentTypeOutcome(result.GetResultWithOwnership())
+                            : DeleteComponentTypeOutcome(std::move(result.GetError()));
 }
 
 DeleteEntityOutcome IoTTwinMakerClient::DeleteEntity(const DeleteEntityRequest& request) const {
@@ -397,7 +412,8 @@ DeleteEntityOutcome IoTTwinMakerClient::DeleteEntity(const DeleteEntityRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEntityId());
   };
 
-  return DeleteEntityOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteEntityOutcome(result.GetResultWithOwnership()) : DeleteEntityOutcome(std::move(result.GetError()));
 }
 
 DeleteSceneOutcome IoTTwinMakerClient::DeleteScene(const DeleteSceneRequest& request) const {
@@ -420,7 +436,8 @@ DeleteSceneOutcome IoTTwinMakerClient::DeleteScene(const DeleteSceneRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSceneId());
   };
 
-  return DeleteSceneOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSceneOutcome(result.GetResultWithOwnership()) : DeleteSceneOutcome(std::move(result.GetError()));
 }
 
 DeleteSyncJobOutcome IoTTwinMakerClient::DeleteSyncJob(const DeleteSyncJobRequest& request) const {
@@ -443,7 +460,8 @@ DeleteSyncJobOutcome IoTTwinMakerClient::DeleteSyncJob(const DeleteSyncJobReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSyncSource());
   };
 
-  return DeleteSyncJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSyncJobOutcome(result.GetResultWithOwnership()) : DeleteSyncJobOutcome(std::move(result.GetError()));
 }
 
 DeleteWorkspaceOutcome IoTTwinMakerClient::DeleteWorkspace(const DeleteWorkspaceRequest& request) const {
@@ -459,7 +477,9 @@ DeleteWorkspaceOutcome IoTTwinMakerClient::DeleteWorkspace(const DeleteWorkspace
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
   };
 
-  return DeleteWorkspaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteWorkspaceOutcome(result.GetResultWithOwnership())
+                            : DeleteWorkspaceOutcome(std::move(result.GetError()));
 }
 
 ExecuteQueryOutcome IoTTwinMakerClient::ExecuteQuery(const ExecuteQueryRequest& request) const {
@@ -468,7 +488,8 @@ ExecuteQueryOutcome IoTTwinMakerClient::ExecuteQuery(const ExecuteQueryRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/queries/execution");
   };
 
-  return ExecuteQueryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExecuteQueryOutcome(result.GetResultWithOwnership()) : ExecuteQueryOutcome(std::move(result.GetError()));
 }
 
 GetComponentTypeOutcome IoTTwinMakerClient::GetComponentType(const GetComponentTypeRequest& request) const {
@@ -491,7 +512,9 @@ GetComponentTypeOutcome IoTTwinMakerClient::GetComponentType(const GetComponentT
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetComponentTypeId());
   };
 
-  return GetComponentTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetComponentTypeOutcome(result.GetResultWithOwnership())
+                            : GetComponentTypeOutcome(std::move(result.GetError()));
 }
 
 GetEntityOutcome IoTTwinMakerClient::GetEntity(const GetEntityRequest& request) const {
@@ -514,7 +537,8 @@ GetEntityOutcome IoTTwinMakerClient::GetEntity(const GetEntityRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEntityId());
   };
 
-  return GetEntityOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEntityOutcome(result.GetResultWithOwnership()) : GetEntityOutcome(std::move(result.GetError()));
 }
 
 GetMetadataTransferJobOutcome IoTTwinMakerClient::GetMetadataTransferJob(const GetMetadataTransferJobRequest& request) const {
@@ -530,7 +554,9 @@ GetMetadataTransferJobOutcome IoTTwinMakerClient::GetMetadataTransferJob(const G
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMetadataTransferJobId());
   };
 
-  return GetMetadataTransferJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMetadataTransferJobOutcome(result.GetResultWithOwnership())
+                            : GetMetadataTransferJobOutcome(std::move(result.GetError()));
 }
 
 GetPricingPlanOutcome IoTTwinMakerClient::GetPricingPlan(const GetPricingPlanRequest& request) const {
@@ -539,7 +565,8 @@ GetPricingPlanOutcome IoTTwinMakerClient::GetPricingPlan(const GetPricingPlanReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/pricingplan");
   };
 
-  return GetPricingPlanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPricingPlanOutcome(result.GetResultWithOwnership()) : GetPricingPlanOutcome(std::move(result.GetError()));
 }
 
 GetPropertyValueOutcome IoTTwinMakerClient::GetPropertyValue(const GetPropertyValueRequest& request) const {
@@ -556,7 +583,9 @@ GetPropertyValueOutcome IoTTwinMakerClient::GetPropertyValue(const GetPropertyVa
     endpointResolutionOutcome.GetResult().AddPathSegments("/entity-properties/value");
   };
 
-  return GetPropertyValueOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPropertyValueOutcome(result.GetResultWithOwnership())
+                            : GetPropertyValueOutcome(std::move(result.GetError()));
 }
 
 GetPropertyValueHistoryOutcome IoTTwinMakerClient::GetPropertyValueHistory(const GetPropertyValueHistoryRequest& request) const {
@@ -573,7 +602,9 @@ GetPropertyValueHistoryOutcome IoTTwinMakerClient::GetPropertyValueHistory(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/entity-properties/history");
   };
 
-  return GetPropertyValueHistoryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPropertyValueHistoryOutcome(result.GetResultWithOwnership())
+                            : GetPropertyValueHistoryOutcome(std::move(result.GetError()));
 }
 
 GetSceneOutcome IoTTwinMakerClient::GetScene(const GetSceneRequest& request) const {
@@ -596,7 +627,8 @@ GetSceneOutcome IoTTwinMakerClient::GetScene(const GetSceneRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSceneId());
   };
 
-  return GetSceneOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSceneOutcome(result.GetResultWithOwnership()) : GetSceneOutcome(std::move(result.GetError()));
 }
 
 GetSyncJobOutcome IoTTwinMakerClient::GetSyncJob(const GetSyncJobRequest& request) const {
@@ -612,7 +644,8 @@ GetSyncJobOutcome IoTTwinMakerClient::GetSyncJob(const GetSyncJobRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSyncSource());
   };
 
-  return GetSyncJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSyncJobOutcome(result.GetResultWithOwnership()) : GetSyncJobOutcome(std::move(result.GetError()));
 }
 
 GetWorkspaceOutcome IoTTwinMakerClient::GetWorkspace(const GetWorkspaceRequest& request) const {
@@ -628,7 +661,8 @@ GetWorkspaceOutcome IoTTwinMakerClient::GetWorkspace(const GetWorkspaceRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
   };
 
-  return GetWorkspaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetWorkspaceOutcome(result.GetResultWithOwnership()) : GetWorkspaceOutcome(std::move(result.GetError()));
 }
 
 ListComponentTypesOutcome IoTTwinMakerClient::ListComponentTypes(const ListComponentTypesRequest& request) const {
@@ -645,7 +679,9 @@ ListComponentTypesOutcome IoTTwinMakerClient::ListComponentTypes(const ListCompo
     endpointResolutionOutcome.GetResult().AddPathSegments("/component-types-list");
   };
 
-  return ListComponentTypesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListComponentTypesOutcome(result.GetResultWithOwnership())
+                            : ListComponentTypesOutcome(std::move(result.GetError()));
 }
 
 ListComponentsOutcome IoTTwinMakerClient::ListComponents(const ListComponentsRequest& request) const {
@@ -669,7 +705,8 @@ ListComponentsOutcome IoTTwinMakerClient::ListComponents(const ListComponentsReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/components-list");
   };
 
-  return ListComponentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListComponentsOutcome(result.GetResultWithOwnership()) : ListComponentsOutcome(std::move(result.GetError()));
 }
 
 ListEntitiesOutcome IoTTwinMakerClient::ListEntities(const ListEntitiesRequest& request) const {
@@ -686,7 +723,8 @@ ListEntitiesOutcome IoTTwinMakerClient::ListEntities(const ListEntitiesRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/entities-list");
   };
 
-  return ListEntitiesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEntitiesOutcome(result.GetResultWithOwnership()) : ListEntitiesOutcome(std::move(result.GetError()));
 }
 
 ListMetadataTransferJobsOutcome IoTTwinMakerClient::ListMetadataTransferJobs(const ListMetadataTransferJobsRequest& request) const {
@@ -695,7 +733,9 @@ ListMetadataTransferJobsOutcome IoTTwinMakerClient::ListMetadataTransferJobs(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/metadata-transfer-jobs-list");
   };
 
-  return ListMetadataTransferJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMetadataTransferJobsOutcome(result.GetResultWithOwnership())
+                            : ListMetadataTransferJobsOutcome(std::move(result.GetError()));
 }
 
 ListPropertiesOutcome IoTTwinMakerClient::ListProperties(const ListPropertiesRequest& request) const {
@@ -712,7 +752,8 @@ ListPropertiesOutcome IoTTwinMakerClient::ListProperties(const ListPropertiesReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/properties-list");
   };
 
-  return ListPropertiesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPropertiesOutcome(result.GetResultWithOwnership()) : ListPropertiesOutcome(std::move(result.GetError()));
 }
 
 ListScenesOutcome IoTTwinMakerClient::ListScenes(const ListScenesRequest& request) const {
@@ -729,7 +770,8 @@ ListScenesOutcome IoTTwinMakerClient::ListScenes(const ListScenesRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/scenes-list");
   };
 
-  return ListScenesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListScenesOutcome(result.GetResultWithOwnership()) : ListScenesOutcome(std::move(result.GetError()));
 }
 
 ListSyncJobsOutcome IoTTwinMakerClient::ListSyncJobs(const ListSyncJobsRequest& request) const {
@@ -746,7 +788,8 @@ ListSyncJobsOutcome IoTTwinMakerClient::ListSyncJobs(const ListSyncJobsRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/sync-jobs-list");
   };
 
-  return ListSyncJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSyncJobsOutcome(result.GetResultWithOwnership()) : ListSyncJobsOutcome(std::move(result.GetError()));
 }
 
 ListSyncResourcesOutcome IoTTwinMakerClient::ListSyncResources(const ListSyncResourcesRequest& request) const {
@@ -770,7 +813,9 @@ ListSyncResourcesOutcome IoTTwinMakerClient::ListSyncResources(const ListSyncRes
     endpointResolutionOutcome.GetResult().AddPathSegments("/resources-list");
   };
 
-  return ListSyncResourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSyncResourcesOutcome(result.GetResultWithOwnership())
+                            : ListSyncResourcesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome IoTTwinMakerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -779,7 +824,9 @@ ListTagsForResourceOutcome IoTTwinMakerClient::ListTagsForResource(const ListTag
     endpointResolutionOutcome.GetResult().AddPathSegments("/tags-list");
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListWorkspacesOutcome IoTTwinMakerClient::ListWorkspaces(const ListWorkspacesRequest& request) const {
@@ -788,7 +835,8 @@ ListWorkspacesOutcome IoTTwinMakerClient::ListWorkspaces(const ListWorkspacesReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces-list");
   };
 
-  return ListWorkspacesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListWorkspacesOutcome(result.GetResultWithOwnership()) : ListWorkspacesOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome IoTTwinMakerClient::TagResource(const TagResourceRequest& request) const {
@@ -797,7 +845,8 @@ TagResourceOutcome IoTTwinMakerClient::TagResource(const TagResourceRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/tags");
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome IoTTwinMakerClient::UntagResource(const UntagResourceRequest& request) const {
@@ -817,7 +866,8 @@ UntagResourceOutcome IoTTwinMakerClient::UntagResource(const UntagResourceReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/tags");
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateComponentTypeOutcome IoTTwinMakerClient::UpdateComponentType(const UpdateComponentTypeRequest& request) const {
@@ -840,7 +890,9 @@ UpdateComponentTypeOutcome IoTTwinMakerClient::UpdateComponentType(const UpdateC
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetComponentTypeId());
   };
 
-  return UpdateComponentTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateComponentTypeOutcome(result.GetResultWithOwnership())
+                            : UpdateComponentTypeOutcome(std::move(result.GetError()));
 }
 
 UpdateEntityOutcome IoTTwinMakerClient::UpdateEntity(const UpdateEntityRequest& request) const {
@@ -863,7 +915,8 @@ UpdateEntityOutcome IoTTwinMakerClient::UpdateEntity(const UpdateEntityRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEntityId());
   };
 
-  return UpdateEntityOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateEntityOutcome(result.GetResultWithOwnership()) : UpdateEntityOutcome(std::move(result.GetError()));
 }
 
 UpdatePricingPlanOutcome IoTTwinMakerClient::UpdatePricingPlan(const UpdatePricingPlanRequest& request) const {
@@ -872,7 +925,9 @@ UpdatePricingPlanOutcome IoTTwinMakerClient::UpdatePricingPlan(const UpdatePrici
     endpointResolutionOutcome.GetResult().AddPathSegments("/pricingplan");
   };
 
-  return UpdatePricingPlanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePricingPlanOutcome(result.GetResultWithOwnership())
+                            : UpdatePricingPlanOutcome(std::move(result.GetError()));
 }
 
 UpdateSceneOutcome IoTTwinMakerClient::UpdateScene(const UpdateSceneRequest& request) const {
@@ -895,7 +950,8 @@ UpdateSceneOutcome IoTTwinMakerClient::UpdateScene(const UpdateSceneRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSceneId());
   };
 
-  return UpdateSceneOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateSceneOutcome(result.GetResultWithOwnership()) : UpdateSceneOutcome(std::move(result.GetError()));
 }
 
 UpdateWorkspaceOutcome IoTTwinMakerClient::UpdateWorkspace(const UpdateWorkspaceRequest& request) const {
@@ -911,5 +967,7 @@ UpdateWorkspaceOutcome IoTTwinMakerClient::UpdateWorkspace(const UpdateWorkspace
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
   };
 
-  return UpdateWorkspaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateWorkspaceOutcome(result.GetResultWithOwnership())
+                            : UpdateWorkspaceOutcome(std::move(result.GetError()));
 }

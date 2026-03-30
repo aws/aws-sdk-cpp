@@ -226,199 +226,282 @@ LookoutEquipmentClient::InvokeOperationOutcome LookoutEquipmentClient::InvokeSer
 }
 
 CreateDatasetOutcome LookoutEquipmentClient::CreateDataset(const CreateDatasetRequest& request) const {
-  return CreateDatasetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDatasetOutcome(result.GetResultWithOwnership()) : CreateDatasetOutcome(std::move(result.GetError()));
 }
 
 CreateInferenceSchedulerOutcome LookoutEquipmentClient::CreateInferenceScheduler(const CreateInferenceSchedulerRequest& request) const {
-  return CreateInferenceSchedulerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateInferenceSchedulerOutcome(result.GetResultWithOwnership())
+                            : CreateInferenceSchedulerOutcome(std::move(result.GetError()));
 }
 
 CreateLabelOutcome LookoutEquipmentClient::CreateLabel(const CreateLabelRequest& request) const {
-  return CreateLabelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLabelOutcome(result.GetResultWithOwnership()) : CreateLabelOutcome(std::move(result.GetError()));
 }
 
 CreateLabelGroupOutcome LookoutEquipmentClient::CreateLabelGroup(const CreateLabelGroupRequest& request) const {
-  return CreateLabelGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLabelGroupOutcome(result.GetResultWithOwnership())
+                            : CreateLabelGroupOutcome(std::move(result.GetError()));
 }
 
 CreateModelOutcome LookoutEquipmentClient::CreateModel(const CreateModelRequest& request) const {
-  return CreateModelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateModelOutcome(result.GetResultWithOwnership()) : CreateModelOutcome(std::move(result.GetError()));
 }
 
 CreateRetrainingSchedulerOutcome LookoutEquipmentClient::CreateRetrainingScheduler(const CreateRetrainingSchedulerRequest& request) const {
-  return CreateRetrainingSchedulerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRetrainingSchedulerOutcome(result.GetResultWithOwnership())
+                            : CreateRetrainingSchedulerOutcome(std::move(result.GetError()));
 }
 
 DeleteDatasetOutcome LookoutEquipmentClient::DeleteDataset(const DeleteDatasetRequest& request) const {
-  return DeleteDatasetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDatasetOutcome(result.GetResultWithOwnership()) : DeleteDatasetOutcome(std::move(result.GetError()));
 }
 
 DeleteInferenceSchedulerOutcome LookoutEquipmentClient::DeleteInferenceScheduler(const DeleteInferenceSchedulerRequest& request) const {
-  return DeleteInferenceSchedulerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteInferenceSchedulerOutcome(result.GetResultWithOwnership())
+                            : DeleteInferenceSchedulerOutcome(std::move(result.GetError()));
 }
 
 DeleteLabelOutcome LookoutEquipmentClient::DeleteLabel(const DeleteLabelRequest& request) const {
-  return DeleteLabelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLabelOutcome(result.GetResultWithOwnership()) : DeleteLabelOutcome(std::move(result.GetError()));
 }
 
 DeleteLabelGroupOutcome LookoutEquipmentClient::DeleteLabelGroup(const DeleteLabelGroupRequest& request) const {
-  return DeleteLabelGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLabelGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteLabelGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteModelOutcome LookoutEquipmentClient::DeleteModel(const DeleteModelRequest& request) const {
-  return DeleteModelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteModelOutcome(result.GetResultWithOwnership()) : DeleteModelOutcome(std::move(result.GetError()));
 }
 
 DeleteResourcePolicyOutcome LookoutEquipmentClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const {
-  return DeleteResourcePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteRetrainingSchedulerOutcome LookoutEquipmentClient::DeleteRetrainingScheduler(const DeleteRetrainingSchedulerRequest& request) const {
-  return DeleteRetrainingSchedulerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRetrainingSchedulerOutcome(result.GetResultWithOwnership())
+                            : DeleteRetrainingSchedulerOutcome(std::move(result.GetError()));
 }
 
 DescribeDataIngestionJobOutcome LookoutEquipmentClient::DescribeDataIngestionJob(const DescribeDataIngestionJobRequest& request) const {
-  return DescribeDataIngestionJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDataIngestionJobOutcome(result.GetResultWithOwnership())
+                            : DescribeDataIngestionJobOutcome(std::move(result.GetError()));
 }
 
 DescribeDatasetOutcome LookoutEquipmentClient::DescribeDataset(const DescribeDatasetRequest& request) const {
-  return DescribeDatasetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDatasetOutcome(result.GetResultWithOwnership())
+                            : DescribeDatasetOutcome(std::move(result.GetError()));
 }
 
 DescribeInferenceSchedulerOutcome LookoutEquipmentClient::DescribeInferenceScheduler(
     const DescribeInferenceSchedulerRequest& request) const {
-  return DescribeInferenceSchedulerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeInferenceSchedulerOutcome(result.GetResultWithOwnership())
+                            : DescribeInferenceSchedulerOutcome(std::move(result.GetError()));
 }
 
 DescribeLabelOutcome LookoutEquipmentClient::DescribeLabel(const DescribeLabelRequest& request) const {
-  return DescribeLabelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeLabelOutcome(result.GetResultWithOwnership()) : DescribeLabelOutcome(std::move(result.GetError()));
 }
 
 DescribeLabelGroupOutcome LookoutEquipmentClient::DescribeLabelGroup(const DescribeLabelGroupRequest& request) const {
-  return DescribeLabelGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeLabelGroupOutcome(result.GetResultWithOwnership())
+                            : DescribeLabelGroupOutcome(std::move(result.GetError()));
 }
 
 DescribeModelOutcome LookoutEquipmentClient::DescribeModel(const DescribeModelRequest& request) const {
-  return DescribeModelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeModelOutcome(result.GetResultWithOwnership()) : DescribeModelOutcome(std::move(result.GetError()));
 }
 
 DescribeModelVersionOutcome LookoutEquipmentClient::DescribeModelVersion(const DescribeModelVersionRequest& request) const {
-  return DescribeModelVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeModelVersionOutcome(result.GetResultWithOwnership())
+                            : DescribeModelVersionOutcome(std::move(result.GetError()));
 }
 
 DescribeResourcePolicyOutcome LookoutEquipmentClient::DescribeResourcePolicy(const DescribeResourcePolicyRequest& request) const {
-  return DescribeResourcePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : DescribeResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 DescribeRetrainingSchedulerOutcome LookoutEquipmentClient::DescribeRetrainingScheduler(
     const DescribeRetrainingSchedulerRequest& request) const {
-  return DescribeRetrainingSchedulerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRetrainingSchedulerOutcome(result.GetResultWithOwnership())
+                            : DescribeRetrainingSchedulerOutcome(std::move(result.GetError()));
 }
 
 ImportDatasetOutcome LookoutEquipmentClient::ImportDataset(const ImportDatasetRequest& request) const {
-  return ImportDatasetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportDatasetOutcome(result.GetResultWithOwnership()) : ImportDatasetOutcome(std::move(result.GetError()));
 }
 
 ImportModelVersionOutcome LookoutEquipmentClient::ImportModelVersion(const ImportModelVersionRequest& request) const {
-  return ImportModelVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportModelVersionOutcome(result.GetResultWithOwnership())
+                            : ImportModelVersionOutcome(std::move(result.GetError()));
 }
 
 ListDataIngestionJobsOutcome LookoutEquipmentClient::ListDataIngestionJobs(const ListDataIngestionJobsRequest& request) const {
-  return ListDataIngestionJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDataIngestionJobsOutcome(result.GetResultWithOwnership())
+                            : ListDataIngestionJobsOutcome(std::move(result.GetError()));
 }
 
 ListDatasetsOutcome LookoutEquipmentClient::ListDatasets(const ListDatasetsRequest& request) const {
-  return ListDatasetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDatasetsOutcome(result.GetResultWithOwnership()) : ListDatasetsOutcome(std::move(result.GetError()));
 }
 
 ListInferenceEventsOutcome LookoutEquipmentClient::ListInferenceEvents(const ListInferenceEventsRequest& request) const {
-  return ListInferenceEventsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListInferenceEventsOutcome(result.GetResultWithOwnership())
+                            : ListInferenceEventsOutcome(std::move(result.GetError()));
 }
 
 ListInferenceExecutionsOutcome LookoutEquipmentClient::ListInferenceExecutions(const ListInferenceExecutionsRequest& request) const {
-  return ListInferenceExecutionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListInferenceExecutionsOutcome(result.GetResultWithOwnership())
+                            : ListInferenceExecutionsOutcome(std::move(result.GetError()));
 }
 
 ListInferenceSchedulersOutcome LookoutEquipmentClient::ListInferenceSchedulers(const ListInferenceSchedulersRequest& request) const {
-  return ListInferenceSchedulersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListInferenceSchedulersOutcome(result.GetResultWithOwnership())
+                            : ListInferenceSchedulersOutcome(std::move(result.GetError()));
 }
 
 ListLabelGroupsOutcome LookoutEquipmentClient::ListLabelGroups(const ListLabelGroupsRequest& request) const {
-  return ListLabelGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLabelGroupsOutcome(result.GetResultWithOwnership())
+                            : ListLabelGroupsOutcome(std::move(result.GetError()));
 }
 
 ListLabelsOutcome LookoutEquipmentClient::ListLabels(const ListLabelsRequest& request) const {
-  return ListLabelsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLabelsOutcome(result.GetResultWithOwnership()) : ListLabelsOutcome(std::move(result.GetError()));
 }
 
 ListModelVersionsOutcome LookoutEquipmentClient::ListModelVersions(const ListModelVersionsRequest& request) const {
-  return ListModelVersionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListModelVersionsOutcome(result.GetResultWithOwnership())
+                            : ListModelVersionsOutcome(std::move(result.GetError()));
 }
 
 ListModelsOutcome LookoutEquipmentClient::ListModels(const ListModelsRequest& request) const {
-  return ListModelsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListModelsOutcome(result.GetResultWithOwnership()) : ListModelsOutcome(std::move(result.GetError()));
 }
 
 ListRetrainingSchedulersOutcome LookoutEquipmentClient::ListRetrainingSchedulers(const ListRetrainingSchedulersRequest& request) const {
-  return ListRetrainingSchedulersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRetrainingSchedulersOutcome(result.GetResultWithOwnership())
+                            : ListRetrainingSchedulersOutcome(std::move(result.GetError()));
 }
 
 ListSensorStatisticsOutcome LookoutEquipmentClient::ListSensorStatistics(const ListSensorStatisticsRequest& request) const {
-  return ListSensorStatisticsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSensorStatisticsOutcome(result.GetResultWithOwnership())
+                            : ListSensorStatisticsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome LookoutEquipmentClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutResourcePolicyOutcome LookoutEquipmentClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const {
-  return PutResourcePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : PutResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 StartDataIngestionJobOutcome LookoutEquipmentClient::StartDataIngestionJob(const StartDataIngestionJobRequest& request) const {
-  return StartDataIngestionJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDataIngestionJobOutcome(result.GetResultWithOwnership())
+                            : StartDataIngestionJobOutcome(std::move(result.GetError()));
 }
 
 StartInferenceSchedulerOutcome LookoutEquipmentClient::StartInferenceScheduler(const StartInferenceSchedulerRequest& request) const {
-  return StartInferenceSchedulerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartInferenceSchedulerOutcome(result.GetResultWithOwnership())
+                            : StartInferenceSchedulerOutcome(std::move(result.GetError()));
 }
 
 StartRetrainingSchedulerOutcome LookoutEquipmentClient::StartRetrainingScheduler(const StartRetrainingSchedulerRequest& request) const {
-  return StartRetrainingSchedulerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartRetrainingSchedulerOutcome(result.GetResultWithOwnership())
+                            : StartRetrainingSchedulerOutcome(std::move(result.GetError()));
 }
 
 StopInferenceSchedulerOutcome LookoutEquipmentClient::StopInferenceScheduler(const StopInferenceSchedulerRequest& request) const {
-  return StopInferenceSchedulerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopInferenceSchedulerOutcome(result.GetResultWithOwnership())
+                            : StopInferenceSchedulerOutcome(std::move(result.GetError()));
 }
 
 StopRetrainingSchedulerOutcome LookoutEquipmentClient::StopRetrainingScheduler(const StopRetrainingSchedulerRequest& request) const {
-  return StopRetrainingSchedulerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopRetrainingSchedulerOutcome(result.GetResultWithOwnership())
+                            : StopRetrainingSchedulerOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome LookoutEquipmentClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome LookoutEquipmentClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateActiveModelVersionOutcome LookoutEquipmentClient::UpdateActiveModelVersion(const UpdateActiveModelVersionRequest& request) const {
-  return UpdateActiveModelVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateActiveModelVersionOutcome(result.GetResultWithOwnership())
+                            : UpdateActiveModelVersionOutcome(std::move(result.GetError()));
 }
 
 UpdateInferenceSchedulerOutcome LookoutEquipmentClient::UpdateInferenceScheduler(const UpdateInferenceSchedulerRequest& request) const {
-  return UpdateInferenceSchedulerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateInferenceSchedulerOutcome(result.GetResultWithOwnership())
+                            : UpdateInferenceSchedulerOutcome(std::move(result.GetError()));
 }
 
 UpdateLabelGroupOutcome LookoutEquipmentClient::UpdateLabelGroup(const UpdateLabelGroupRequest& request) const {
-  return UpdateLabelGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLabelGroupOutcome(result.GetResultWithOwnership())
+                            : UpdateLabelGroupOutcome(std::move(result.GetError()));
 }
 
 UpdateModelOutcome LookoutEquipmentClient::UpdateModel(const UpdateModelRequest& request) const {
-  return UpdateModelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateModelOutcome(result.GetResultWithOwnership()) : UpdateModelOutcome(std::move(result.GetError()));
 }
 
 UpdateRetrainingSchedulerOutcome LookoutEquipmentClient::UpdateRetrainingScheduler(const UpdateRetrainingSchedulerRequest& request) const {
-  return UpdateRetrainingSchedulerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRetrainingSchedulerOutcome(result.GetResultWithOwnership())
+                            : UpdateRetrainingSchedulerOutcome(std::move(result.GetError()));
 }

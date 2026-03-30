@@ -215,7 +215,9 @@ CreateAppInstanceOutcome ChimeSDKIdentityClient::CreateAppInstance(const CreateA
     endpointResolutionOutcome.GetResult().AddPathSegments("/app-instances");
   };
 
-  return CreateAppInstanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAppInstanceOutcome(result.GetResultWithOwnership())
+                            : CreateAppInstanceOutcome(std::move(result.GetError()));
 }
 
 CreateAppInstanceAdminOutcome ChimeSDKIdentityClient::CreateAppInstanceAdmin(const CreateAppInstanceAdminRequest& request) const {
@@ -232,7 +234,9 @@ CreateAppInstanceAdminOutcome ChimeSDKIdentityClient::CreateAppInstanceAdmin(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/admins");
   };
 
-  return CreateAppInstanceAdminOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAppInstanceAdminOutcome(result.GetResultWithOwnership())
+                            : CreateAppInstanceAdminOutcome(std::move(result.GetError()));
 }
 
 CreateAppInstanceBotOutcome ChimeSDKIdentityClient::CreateAppInstanceBot(const CreateAppInstanceBotRequest& request) const {
@@ -241,7 +245,9 @@ CreateAppInstanceBotOutcome ChimeSDKIdentityClient::CreateAppInstanceBot(const C
     endpointResolutionOutcome.GetResult().AddPathSegments("/app-instance-bots");
   };
 
-  return CreateAppInstanceBotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAppInstanceBotOutcome(result.GetResultWithOwnership())
+                            : CreateAppInstanceBotOutcome(std::move(result.GetError()));
 }
 
 CreateAppInstanceUserOutcome ChimeSDKIdentityClient::CreateAppInstanceUser(const CreateAppInstanceUserRequest& request) const {
@@ -250,7 +256,9 @@ CreateAppInstanceUserOutcome ChimeSDKIdentityClient::CreateAppInstanceUser(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/app-instance-users");
   };
 
-  return CreateAppInstanceUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAppInstanceUserOutcome(result.GetResultWithOwnership())
+                            : CreateAppInstanceUserOutcome(std::move(result.GetError()));
 }
 
 DeleteAppInstanceOutcome ChimeSDKIdentityClient::DeleteAppInstance(const DeleteAppInstanceRequest& request) const {
@@ -266,7 +274,9 @@ DeleteAppInstanceOutcome ChimeSDKIdentityClient::DeleteAppInstance(const DeleteA
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceArn());
   };
 
-  return DeleteAppInstanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAppInstanceOutcome(result.GetResultWithOwnership())
+                            : DeleteAppInstanceOutcome(std::move(result.GetError()));
 }
 
 DeleteAppInstanceAdminOutcome ChimeSDKIdentityClient::DeleteAppInstanceAdmin(const DeleteAppInstanceAdminRequest& request) const {
@@ -289,7 +299,9 @@ DeleteAppInstanceAdminOutcome ChimeSDKIdentityClient::DeleteAppInstanceAdmin(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceAdminArn());
   };
 
-  return DeleteAppInstanceAdminOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAppInstanceAdminOutcome(result.GetResultWithOwnership())
+                            : DeleteAppInstanceAdminOutcome(std::move(result.GetError()));
 }
 
 DeleteAppInstanceBotOutcome ChimeSDKIdentityClient::DeleteAppInstanceBot(const DeleteAppInstanceBotRequest& request) const {
@@ -305,7 +317,9 @@ DeleteAppInstanceBotOutcome ChimeSDKIdentityClient::DeleteAppInstanceBot(const D
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceBotArn());
   };
 
-  return DeleteAppInstanceBotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAppInstanceBotOutcome(result.GetResultWithOwnership())
+                            : DeleteAppInstanceBotOutcome(std::move(result.GetError()));
 }
 
 DeleteAppInstanceUserOutcome ChimeSDKIdentityClient::DeleteAppInstanceUser(const DeleteAppInstanceUserRequest& request) const {
@@ -321,7 +335,9 @@ DeleteAppInstanceUserOutcome ChimeSDKIdentityClient::DeleteAppInstanceUser(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceUserArn());
   };
 
-  return DeleteAppInstanceUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAppInstanceUserOutcome(result.GetResultWithOwnership())
+                            : DeleteAppInstanceUserOutcome(std::move(result.GetError()));
 }
 
 DeregisterAppInstanceUserEndpointOutcome ChimeSDKIdentityClient::DeregisterAppInstanceUserEndpoint(
@@ -345,7 +361,9 @@ DeregisterAppInstanceUserEndpointOutcome ChimeSDKIdentityClient::DeregisterAppIn
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEndpointId());
   };
 
-  return DeregisterAppInstanceUserEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeregisterAppInstanceUserEndpointOutcome(result.GetResultWithOwnership())
+                            : DeregisterAppInstanceUserEndpointOutcome(std::move(result.GetError()));
 }
 
 DescribeAppInstanceOutcome ChimeSDKIdentityClient::DescribeAppInstance(const DescribeAppInstanceRequest& request) const {
@@ -361,7 +379,9 @@ DescribeAppInstanceOutcome ChimeSDKIdentityClient::DescribeAppInstance(const Des
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceArn());
   };
 
-  return DescribeAppInstanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAppInstanceOutcome(result.GetResultWithOwnership())
+                            : DescribeAppInstanceOutcome(std::move(result.GetError()));
 }
 
 DescribeAppInstanceAdminOutcome ChimeSDKIdentityClient::DescribeAppInstanceAdmin(const DescribeAppInstanceAdminRequest& request) const {
@@ -384,7 +404,9 @@ DescribeAppInstanceAdminOutcome ChimeSDKIdentityClient::DescribeAppInstanceAdmin
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceAdminArn());
   };
 
-  return DescribeAppInstanceAdminOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAppInstanceAdminOutcome(result.GetResultWithOwnership())
+                            : DescribeAppInstanceAdminOutcome(std::move(result.GetError()));
 }
 
 DescribeAppInstanceBotOutcome ChimeSDKIdentityClient::DescribeAppInstanceBot(const DescribeAppInstanceBotRequest& request) const {
@@ -400,7 +422,9 @@ DescribeAppInstanceBotOutcome ChimeSDKIdentityClient::DescribeAppInstanceBot(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceBotArn());
   };
 
-  return DescribeAppInstanceBotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAppInstanceBotOutcome(result.GetResultWithOwnership())
+                            : DescribeAppInstanceBotOutcome(std::move(result.GetError()));
 }
 
 DescribeAppInstanceUserOutcome ChimeSDKIdentityClient::DescribeAppInstanceUser(const DescribeAppInstanceUserRequest& request) const {
@@ -416,7 +440,9 @@ DescribeAppInstanceUserOutcome ChimeSDKIdentityClient::DescribeAppInstanceUser(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceUserArn());
   };
 
-  return DescribeAppInstanceUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAppInstanceUserOutcome(result.GetResultWithOwnership())
+                            : DescribeAppInstanceUserOutcome(std::move(result.GetError()));
 }
 
 DescribeAppInstanceUserEndpointOutcome ChimeSDKIdentityClient::DescribeAppInstanceUserEndpoint(
@@ -440,7 +466,9 @@ DescribeAppInstanceUserEndpointOutcome ChimeSDKIdentityClient::DescribeAppInstan
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEndpointId());
   };
 
-  return DescribeAppInstanceUserEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAppInstanceUserEndpointOutcome(result.GetResultWithOwnership())
+                            : DescribeAppInstanceUserEndpointOutcome(std::move(result.GetError()));
 }
 
 GetAppInstanceRetentionSettingsOutcome ChimeSDKIdentityClient::GetAppInstanceRetentionSettings(
@@ -458,7 +486,9 @@ GetAppInstanceRetentionSettingsOutcome ChimeSDKIdentityClient::GetAppInstanceRet
     endpointResolutionOutcome.GetResult().AddPathSegments("/retention-settings");
   };
 
-  return GetAppInstanceRetentionSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAppInstanceRetentionSettingsOutcome(result.GetResultWithOwnership())
+                            : GetAppInstanceRetentionSettingsOutcome(std::move(result.GetError()));
 }
 
 ListAppInstanceAdminsOutcome ChimeSDKIdentityClient::ListAppInstanceAdmins(const ListAppInstanceAdminsRequest& request) const {
@@ -475,7 +505,9 @@ ListAppInstanceAdminsOutcome ChimeSDKIdentityClient::ListAppInstanceAdmins(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/admins");
   };
 
-  return ListAppInstanceAdminsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAppInstanceAdminsOutcome(result.GetResultWithOwnership())
+                            : ListAppInstanceAdminsOutcome(std::move(result.GetError()));
 }
 
 ListAppInstanceBotsOutcome ChimeSDKIdentityClient::ListAppInstanceBots(const ListAppInstanceBotsRequest& request) const {
@@ -490,7 +522,9 @@ ListAppInstanceBotsOutcome ChimeSDKIdentityClient::ListAppInstanceBots(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/app-instance-bots");
   };
 
-  return ListAppInstanceBotsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAppInstanceBotsOutcome(result.GetResultWithOwnership())
+                            : ListAppInstanceBotsOutcome(std::move(result.GetError()));
 }
 
 ListAppInstanceUserEndpointsOutcome ChimeSDKIdentityClient::ListAppInstanceUserEndpoints(
@@ -508,7 +542,9 @@ ListAppInstanceUserEndpointsOutcome ChimeSDKIdentityClient::ListAppInstanceUserE
     endpointResolutionOutcome.GetResult().AddPathSegments("/endpoints");
   };
 
-  return ListAppInstanceUserEndpointsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAppInstanceUserEndpointsOutcome(result.GetResultWithOwnership())
+                            : ListAppInstanceUserEndpointsOutcome(std::move(result.GetError()));
 }
 
 ListAppInstanceUsersOutcome ChimeSDKIdentityClient::ListAppInstanceUsers(const ListAppInstanceUsersRequest& request) const {
@@ -523,7 +559,9 @@ ListAppInstanceUsersOutcome ChimeSDKIdentityClient::ListAppInstanceUsers(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/app-instance-users");
   };
 
-  return ListAppInstanceUsersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAppInstanceUsersOutcome(result.GetResultWithOwnership())
+                            : ListAppInstanceUsersOutcome(std::move(result.GetError()));
 }
 
 ListAppInstancesOutcome ChimeSDKIdentityClient::ListAppInstances(const ListAppInstancesRequest& request) const {
@@ -532,7 +570,9 @@ ListAppInstancesOutcome ChimeSDKIdentityClient::ListAppInstances(const ListAppIn
     endpointResolutionOutcome.GetResult().AddPathSegments("/app-instances");
   };
 
-  return ListAppInstancesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAppInstancesOutcome(result.GetResultWithOwnership())
+                            : ListAppInstancesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome ChimeSDKIdentityClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -547,7 +587,9 @@ ListTagsForResourceOutcome ChimeSDKIdentityClient::ListTagsForResource(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/tags");
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutAppInstanceRetentionSettingsOutcome ChimeSDKIdentityClient::PutAppInstanceRetentionSettings(
@@ -565,7 +607,9 @@ PutAppInstanceRetentionSettingsOutcome ChimeSDKIdentityClient::PutAppInstanceRet
     endpointResolutionOutcome.GetResult().AddPathSegments("/retention-settings");
   };
 
-  return PutAppInstanceRetentionSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutAppInstanceRetentionSettingsOutcome(result.GetResultWithOwnership())
+                            : PutAppInstanceRetentionSettingsOutcome(std::move(result.GetError()));
 }
 
 PutAppInstanceUserExpirationSettingsOutcome ChimeSDKIdentityClient::PutAppInstanceUserExpirationSettings(
@@ -583,7 +627,9 @@ PutAppInstanceUserExpirationSettingsOutcome ChimeSDKIdentityClient::PutAppInstan
     endpointResolutionOutcome.GetResult().AddPathSegments("/expiration-settings");
   };
 
-  return PutAppInstanceUserExpirationSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutAppInstanceUserExpirationSettingsOutcome(result.GetResultWithOwnership())
+                            : PutAppInstanceUserExpirationSettingsOutcome(std::move(result.GetError()));
 }
 
 RegisterAppInstanceUserEndpointOutcome ChimeSDKIdentityClient::RegisterAppInstanceUserEndpoint(
@@ -601,7 +647,9 @@ RegisterAppInstanceUserEndpointOutcome ChimeSDKIdentityClient::RegisterAppInstan
     endpointResolutionOutcome.GetResult().AddPathSegments("/endpoints");
   };
 
-  return RegisterAppInstanceUserEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterAppInstanceUserEndpointOutcome(result.GetResultWithOwnership())
+                            : RegisterAppInstanceUserEndpointOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ChimeSDKIdentityClient::TagResource(const TagResourceRequest& request) const {
@@ -613,7 +661,8 @@ TagResourceOutcome ChimeSDKIdentityClient::TagResource(const TagResourceRequest&
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome ChimeSDKIdentityClient::UntagResource(const UntagResourceRequest& request) const {
@@ -625,7 +674,8 @@ UntagResourceOutcome ChimeSDKIdentityClient::UntagResource(const UntagResourceRe
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAppInstanceOutcome ChimeSDKIdentityClient::UpdateAppInstance(const UpdateAppInstanceRequest& request) const {
@@ -641,7 +691,9 @@ UpdateAppInstanceOutcome ChimeSDKIdentityClient::UpdateAppInstance(const UpdateA
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceArn());
   };
 
-  return UpdateAppInstanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateAppInstanceOutcome(result.GetResultWithOwnership())
+                            : UpdateAppInstanceOutcome(std::move(result.GetError()));
 }
 
 UpdateAppInstanceBotOutcome ChimeSDKIdentityClient::UpdateAppInstanceBot(const UpdateAppInstanceBotRequest& request) const {
@@ -657,7 +709,9 @@ UpdateAppInstanceBotOutcome ChimeSDKIdentityClient::UpdateAppInstanceBot(const U
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceBotArn());
   };
 
-  return UpdateAppInstanceBotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateAppInstanceBotOutcome(result.GetResultWithOwnership())
+                            : UpdateAppInstanceBotOutcome(std::move(result.GetError()));
 }
 
 UpdateAppInstanceUserOutcome ChimeSDKIdentityClient::UpdateAppInstanceUser(const UpdateAppInstanceUserRequest& request) const {
@@ -673,7 +727,9 @@ UpdateAppInstanceUserOutcome ChimeSDKIdentityClient::UpdateAppInstanceUser(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceUserArn());
   };
 
-  return UpdateAppInstanceUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateAppInstanceUserOutcome(result.GetResultWithOwnership())
+                            : UpdateAppInstanceUserOutcome(std::move(result.GetError()));
 }
 
 UpdateAppInstanceUserEndpointOutcome ChimeSDKIdentityClient::UpdateAppInstanceUserEndpoint(
@@ -697,5 +753,7 @@ UpdateAppInstanceUserEndpointOutcome ChimeSDKIdentityClient::UpdateAppInstanceUs
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEndpointId());
   };
 
-  return UpdateAppInstanceUserEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateAppInstanceUserEndpointOutcome(result.GetResultWithOwnership())
+                            : UpdateAppInstanceUserEndpointOutcome(std::move(result.GetError()));
 }

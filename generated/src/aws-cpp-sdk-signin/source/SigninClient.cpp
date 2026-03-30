@@ -181,5 +181,7 @@ CreateOAuth2TokenOutcome SigninClient::CreateOAuth2Token(const CreateOAuth2Token
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/token");
   };
 
-  return CreateOAuth2TokenOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateOAuth2TokenOutcome(result.GetResultWithOwnership())
+                            : CreateOAuth2TokenOutcome(std::move(result.GetError()));
 }

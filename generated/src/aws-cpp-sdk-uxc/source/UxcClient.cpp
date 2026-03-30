@@ -181,7 +181,9 @@ GetAccountCustomizationsOutcome UxcClient::GetAccountCustomizations(const GetAcc
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/account-customizations");
   };
 
-  return GetAccountCustomizationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAccountCustomizationsOutcome(result.GetResultWithOwnership())
+                            : GetAccountCustomizationsOutcome(std::move(result.GetError()));
 }
 
 ListServicesOutcome UxcClient::ListServices(const ListServicesRequest& request) const {
@@ -190,7 +192,8 @@ ListServicesOutcome UxcClient::ListServices(const ListServicesRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/services");
   };
 
-  return ListServicesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListServicesOutcome(result.GetResultWithOwnership()) : ListServicesOutcome(std::move(result.GetError()));
 }
 
 UpdateAccountCustomizationsOutcome UxcClient::UpdateAccountCustomizations(const UpdateAccountCustomizationsRequest& request) const {
@@ -199,5 +202,7 @@ UpdateAccountCustomizationsOutcome UxcClient::UpdateAccountCustomizations(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/account-customizations");
   };
 
-  return UpdateAccountCustomizationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateAccountCustomizationsOutcome(result.GetResultWithOwnership())
+                            : UpdateAccountCustomizationsOutcome(std::move(result.GetError()));
 }

@@ -191,77 +191,110 @@ TranslateClient::InvokeOperationOutcome TranslateClient::InvokeServiceOperation(
 }
 
 CreateParallelDataOutcome TranslateClient::CreateParallelData(const CreateParallelDataRequest& request) const {
-  return CreateParallelDataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateParallelDataOutcome(result.GetResultWithOwnership())
+                            : CreateParallelDataOutcome(std::move(result.GetError()));
 }
 
 DeleteParallelDataOutcome TranslateClient::DeleteParallelData(const DeleteParallelDataRequest& request) const {
-  return DeleteParallelDataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteParallelDataOutcome(result.GetResultWithOwnership())
+                            : DeleteParallelDataOutcome(std::move(result.GetError()));
 }
 
 DeleteTerminologyOutcome TranslateClient::DeleteTerminology(const DeleteTerminologyRequest& request) const {
-  return DeleteTerminologyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTerminologyOutcome(result.GetResultWithOwnership())
+                            : DeleteTerminologyOutcome(std::move(result.GetError()));
 }
 
 DescribeTextTranslationJobOutcome TranslateClient::DescribeTextTranslationJob(const DescribeTextTranslationJobRequest& request) const {
-  return DescribeTextTranslationJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTextTranslationJobOutcome(result.GetResultWithOwnership())
+                            : DescribeTextTranslationJobOutcome(std::move(result.GetError()));
 }
 
 GetParallelDataOutcome TranslateClient::GetParallelData(const GetParallelDataRequest& request) const {
-  return GetParallelDataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetParallelDataOutcome(result.GetResultWithOwnership())
+                            : GetParallelDataOutcome(std::move(result.GetError()));
 }
 
 GetTerminologyOutcome TranslateClient::GetTerminology(const GetTerminologyRequest& request) const {
-  return GetTerminologyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTerminologyOutcome(result.GetResultWithOwnership()) : GetTerminologyOutcome(std::move(result.GetError()));
 }
 
 ImportTerminologyOutcome TranslateClient::ImportTerminology(const ImportTerminologyRequest& request) const {
-  return ImportTerminologyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportTerminologyOutcome(result.GetResultWithOwnership())
+                            : ImportTerminologyOutcome(std::move(result.GetError()));
 }
 
 ListLanguagesOutcome TranslateClient::ListLanguages(const ListLanguagesRequest& request) const {
-  return ListLanguagesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLanguagesOutcome(result.GetResultWithOwnership()) : ListLanguagesOutcome(std::move(result.GetError()));
 }
 
 ListParallelDataOutcome TranslateClient::ListParallelData(const ListParallelDataRequest& request) const {
-  return ListParallelDataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListParallelDataOutcome(result.GetResultWithOwnership())
+                            : ListParallelDataOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome TranslateClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTerminologiesOutcome TranslateClient::ListTerminologies(const ListTerminologiesRequest& request) const {
-  return ListTerminologiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTerminologiesOutcome(result.GetResultWithOwnership())
+                            : ListTerminologiesOutcome(std::move(result.GetError()));
 }
 
 ListTextTranslationJobsOutcome TranslateClient::ListTextTranslationJobs(const ListTextTranslationJobsRequest& request) const {
-  return ListTextTranslationJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTextTranslationJobsOutcome(result.GetResultWithOwnership())
+                            : ListTextTranslationJobsOutcome(std::move(result.GetError()));
 }
 
 StartTextTranslationJobOutcome TranslateClient::StartTextTranslationJob(const StartTextTranslationJobRequest& request) const {
-  return StartTextTranslationJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartTextTranslationJobOutcome(result.GetResultWithOwnership())
+                            : StartTextTranslationJobOutcome(std::move(result.GetError()));
 }
 
 StopTextTranslationJobOutcome TranslateClient::StopTextTranslationJob(const StopTextTranslationJobRequest& request) const {
-  return StopTextTranslationJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopTextTranslationJobOutcome(result.GetResultWithOwnership())
+                            : StopTextTranslationJobOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome TranslateClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 TranslateDocumentOutcome TranslateClient::TranslateDocument(const TranslateDocumentRequest& request) const {
-  return TranslateDocumentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TranslateDocumentOutcome(result.GetResultWithOwnership())
+                            : TranslateDocumentOutcome(std::move(result.GetError()));
 }
 
 TranslateTextOutcome TranslateClient::TranslateText(const TranslateTextRequest& request) const {
-  return TranslateTextOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TranslateTextOutcome(result.GetResultWithOwnership()) : TranslateTextOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome TranslateClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateParallelDataOutcome TranslateClient::UpdateParallelData(const UpdateParallelDataRequest& request) const {
-  return UpdateParallelDataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateParallelDataOutcome(result.GetResultWithOwnership())
+                            : UpdateParallelDataOutcome(std::move(result.GetError()));
 }

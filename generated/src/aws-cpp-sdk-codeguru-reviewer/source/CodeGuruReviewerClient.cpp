@@ -199,7 +199,9 @@ AssociateRepositoryOutcome CodeGuruReviewerClient::AssociateRepository(const Ass
     endpointResolutionOutcome.GetResult().AddPathSegments("/associations");
   };
 
-  return AssociateRepositoryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateRepositoryOutcome(result.GetResultWithOwnership())
+                            : AssociateRepositoryOutcome(std::move(result.GetError()));
 }
 
 CreateCodeReviewOutcome CodeGuruReviewerClient::CreateCodeReview(const CreateCodeReviewRequest& request) const {
@@ -208,7 +210,9 @@ CreateCodeReviewOutcome CodeGuruReviewerClient::CreateCodeReview(const CreateCod
     endpointResolutionOutcome.GetResult().AddPathSegments("/codereviews");
   };
 
-  return CreateCodeReviewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCodeReviewOutcome(result.GetResultWithOwnership())
+                            : CreateCodeReviewOutcome(std::move(result.GetError()));
 }
 
 DescribeCodeReviewOutcome CodeGuruReviewerClient::DescribeCodeReview(const DescribeCodeReviewRequest& request) const {
@@ -224,7 +228,9 @@ DescribeCodeReviewOutcome CodeGuruReviewerClient::DescribeCodeReview(const Descr
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCodeReviewArn());
   };
 
-  return DescribeCodeReviewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeCodeReviewOutcome(result.GetResultWithOwnership())
+                            : DescribeCodeReviewOutcome(std::move(result.GetError()));
 }
 
 DescribeRecommendationFeedbackOutcome CodeGuruReviewerClient::DescribeRecommendationFeedback(
@@ -246,7 +252,9 @@ DescribeRecommendationFeedbackOutcome CodeGuruReviewerClient::DescribeRecommenda
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCodeReviewArn());
   };
 
-  return DescribeRecommendationFeedbackOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeRecommendationFeedbackOutcome(result.GetResultWithOwnership())
+                            : DescribeRecommendationFeedbackOutcome(std::move(result.GetError()));
 }
 
 DescribeRepositoryAssociationOutcome CodeGuruReviewerClient::DescribeRepositoryAssociation(
@@ -263,7 +271,9 @@ DescribeRepositoryAssociationOutcome CodeGuruReviewerClient::DescribeRepositoryA
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssociationArn());
   };
 
-  return DescribeRepositoryAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeRepositoryAssociationOutcome(result.GetResultWithOwnership())
+                            : DescribeRepositoryAssociationOutcome(std::move(result.GetError()));
 }
 
 DisassociateRepositoryOutcome CodeGuruReviewerClient::DisassociateRepository(const DisassociateRepositoryRequest& request) const {
@@ -279,7 +289,9 @@ DisassociateRepositoryOutcome CodeGuruReviewerClient::DisassociateRepository(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssociationArn());
   };
 
-  return DisassociateRepositoryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateRepositoryOutcome(result.GetResultWithOwnership())
+                            : DisassociateRepositoryOutcome(std::move(result.GetError()));
 }
 
 ListCodeReviewsOutcome CodeGuruReviewerClient::ListCodeReviews(const ListCodeReviewsRequest& request) const {
@@ -294,7 +306,9 @@ ListCodeReviewsOutcome CodeGuruReviewerClient::ListCodeReviews(const ListCodeRev
     endpointResolutionOutcome.GetResult().AddPathSegments("/codereviews");
   };
 
-  return ListCodeReviewsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCodeReviewsOutcome(result.GetResultWithOwnership())
+                            : ListCodeReviewsOutcome(std::move(result.GetError()));
 }
 
 ListRecommendationFeedbackOutcome CodeGuruReviewerClient::ListRecommendationFeedback(
@@ -312,7 +326,9 @@ ListRecommendationFeedbackOutcome CodeGuruReviewerClient::ListRecommendationFeed
     endpointResolutionOutcome.GetResult().AddPathSegments("/RecommendationFeedback");
   };
 
-  return ListRecommendationFeedbackOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRecommendationFeedbackOutcome(result.GetResultWithOwnership())
+                            : ListRecommendationFeedbackOutcome(std::move(result.GetError()));
 }
 
 ListRecommendationsOutcome CodeGuruReviewerClient::ListRecommendations(const ListRecommendationsRequest& request) const {
@@ -329,7 +345,9 @@ ListRecommendationsOutcome CodeGuruReviewerClient::ListRecommendations(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/Recommendations");
   };
 
-  return ListRecommendationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRecommendationsOutcome(result.GetResultWithOwnership())
+                            : ListRecommendationsOutcome(std::move(result.GetError()));
 }
 
 ListRepositoryAssociationsOutcome CodeGuruReviewerClient::ListRepositoryAssociations(
@@ -339,7 +357,9 @@ ListRepositoryAssociationsOutcome CodeGuruReviewerClient::ListRepositoryAssociat
     endpointResolutionOutcome.GetResult().AddPathSegments("/associations");
   };
 
-  return ListRepositoryAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRepositoryAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListRepositoryAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome CodeGuruReviewerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -355,7 +375,9 @@ ListTagsForResourceOutcome CodeGuruReviewerClient::ListTagsForResource(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutRecommendationFeedbackOutcome CodeGuruReviewerClient::PutRecommendationFeedback(const PutRecommendationFeedbackRequest& request) const {
@@ -364,7 +386,9 @@ PutRecommendationFeedbackOutcome CodeGuruReviewerClient::PutRecommendationFeedba
     endpointResolutionOutcome.GetResult().AddPathSegments("/feedback");
   };
 
-  return PutRecommendationFeedbackOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutRecommendationFeedbackOutcome(result.GetResultWithOwnership())
+                            : PutRecommendationFeedbackOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome CodeGuruReviewerClient::TagResource(const TagResourceRequest& request) const {
@@ -380,7 +404,8 @@ TagResourceOutcome CodeGuruReviewerClient::TagResource(const TagResourceRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome CodeGuruReviewerClient::UntagResource(const UntagResourceRequest& request) const {
@@ -401,5 +426,6 @@ UntagResourceOutcome CodeGuruReviewerClient::UntagResource(const UntagResourceRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }

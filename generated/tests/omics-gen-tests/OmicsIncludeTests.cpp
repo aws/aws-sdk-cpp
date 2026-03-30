@@ -44,11 +44,16 @@
 #include <aws/omics/model/CompleteMultipartReadSetUploadRequest.h>
 #include <aws/omics/model/CompleteMultipartReadSetUploadResult.h>
 #include <aws/omics/model/CompleteReadSetUploadPartListItem.h>
+#include <aws/omics/model/ConfigurationDetails.h>
+#include <aws/omics/model/ConfigurationListItem.h>
+#include <aws/omics/model/ConfigurationStatus.h>
 #include <aws/omics/model/ContainerRegistryMap.h>
 #include <aws/omics/model/CreateAnnotationStoreRequest.h>
 #include <aws/omics/model/CreateAnnotationStoreResult.h>
 #include <aws/omics/model/CreateAnnotationStoreVersionRequest.h>
 #include <aws/omics/model/CreateAnnotationStoreVersionResult.h>
+#include <aws/omics/model/CreateConfigurationRequest.h>
+#include <aws/omics/model/CreateConfigurationResult.h>
 #include <aws/omics/model/CreateMultipartReadSetUploadRequest.h>
 #include <aws/omics/model/CreateMultipartReadSetUploadResult.h>
 #include <aws/omics/model/CreateReferenceStoreRequest.h>
@@ -76,6 +81,7 @@
 #include <aws/omics/model/DeleteAnnotationStoreVersionsRequest.h>
 #include <aws/omics/model/DeleteAnnotationStoreVersionsResult.h>
 #include <aws/omics/model/DeleteBatchRequest.h>
+#include <aws/omics/model/DeleteConfigurationRequest.h>
 #include <aws/omics/model/DeleteReferenceRequest.h>
 #include <aws/omics/model/DeleteReferenceResult.h>
 #include <aws/omics/model/DeleteReferenceStoreRequest.h>
@@ -116,6 +122,8 @@
 #include <aws/omics/model/GetAnnotationStoreVersionResult.h>
 #include <aws/omics/model/GetBatchRequest.h>
 #include <aws/omics/model/GetBatchResult.h>
+#include <aws/omics/model/GetConfigurationRequest.h>
+#include <aws/omics/model/GetConfigurationResult.h>
 #include <aws/omics/model/GetReadSetActivationJobRequest.h>
 #include <aws/omics/model/GetReadSetActivationJobResult.h>
 #include <aws/omics/model/GetReadSetExportJobRequest.h>
@@ -177,6 +185,8 @@
 #include <aws/omics/model/ListAnnotationStoresResult.h>
 #include <aws/omics/model/ListBatchRequest.h>
 #include <aws/omics/model/ListBatchResult.h>
+#include <aws/omics/model/ListConfigurationsRequest.h>
+#include <aws/omics/model/ListConfigurationsResult.h>
 #include <aws/omics/model/ListMultipartReadSetUploadsRequest.h>
 #include <aws/omics/model/ListMultipartReadSetUploadsResult.h>
 #include <aws/omics/model/ListReadSetActivationJobsRequest.h>
@@ -222,6 +232,7 @@
 #include <aws/omics/model/ListWorkflowsRequest.h>
 #include <aws/omics/model/ListWorkflowsResult.h>
 #include <aws/omics/model/MultipartReadSetUploadListItem.h>
+#include <aws/omics/model/NetworkingMode.h>
 #include <aws/omics/model/PutS3AccessPolicyRequest.h>
 #include <aws/omics/model/PutS3AccessPolicyResult.h>
 #include <aws/omics/model/ReadOptions.h>
@@ -257,6 +268,8 @@
 #include <aws/omics/model/RunBatchListItem.h>
 #include <aws/omics/model/RunCacheListItem.h>
 #include <aws/omics/model/RunCacheStatus.h>
+#include <aws/omics/model/RunConfigurations.h>
+#include <aws/omics/model/RunConfigurationsResponse.h>
 #include <aws/omics/model/RunExport.h>
 #include <aws/omics/model/RunGroupListItem.h>
 #include <aws/omics/model/RunListItem.h>
@@ -336,6 +349,8 @@
 #include <aws/omics/model/VersionDeleteError.h>
 #include <aws/omics/model/VersionOptions.h>
 #include <aws/omics/model/VersionStatus.h>
+#include <aws/omics/model/VpcConfig.h>
+#include <aws/omics/model/VpcConfigResponse.h>
 #include <aws/omics/model/WorkflowEngine.h>
 #include <aws/omics/model/WorkflowExport.h>
 #include <aws/omics/model/WorkflowListItem.h>

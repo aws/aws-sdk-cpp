@@ -187,7 +187,9 @@ BatchGetMetricsOutcome SageMakerMetricsClient::BatchGetMetrics(const BatchGetMet
     endpointResolutionOutcome.GetResult().AddPathSegments("/BatchGetMetrics");
   };
 
-  return BatchGetMetricsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetMetricsOutcome(result.GetResultWithOwnership())
+                            : BatchGetMetricsOutcome(std::move(result.GetError()));
 }
 
 BatchPutMetricsOutcome SageMakerMetricsClient::BatchPutMetrics(const BatchPutMetricsRequest& request) const {
@@ -196,5 +198,7 @@ BatchPutMetricsOutcome SageMakerMetricsClient::BatchPutMetrics(const BatchPutMet
     endpointResolutionOutcome.GetResult().AddPathSegments("/BatchPutMetrics");
   };
 
-  return BatchPutMetricsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? BatchPutMetricsOutcome(result.GetResultWithOwnership())
+                            : BatchPutMetricsOutcome(std::move(result.GetError()));
 }

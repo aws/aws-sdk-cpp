@@ -187,7 +187,8 @@ GetControlOutcome ControlCatalogClient::GetControl(const GetControlRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-control");
   };
 
-  return GetControlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetControlOutcome(result.GetResultWithOwnership()) : GetControlOutcome(std::move(result.GetError()));
 }
 
 ListCommonControlsOutcome ControlCatalogClient::ListCommonControls(const ListCommonControlsRequest& request) const {
@@ -196,7 +197,9 @@ ListCommonControlsOutcome ControlCatalogClient::ListCommonControls(const ListCom
     endpointResolutionOutcome.GetResult().AddPathSegments("/common-controls");
   };
 
-  return ListCommonControlsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCommonControlsOutcome(result.GetResultWithOwnership())
+                            : ListCommonControlsOutcome(std::move(result.GetError()));
 }
 
 ListControlMappingsOutcome ControlCatalogClient::ListControlMappings(const ListControlMappingsRequest& request) const {
@@ -205,7 +208,9 @@ ListControlMappingsOutcome ControlCatalogClient::ListControlMappings(const ListC
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-control-mappings");
   };
 
-  return ListControlMappingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListControlMappingsOutcome(result.GetResultWithOwnership())
+                            : ListControlMappingsOutcome(std::move(result.GetError()));
 }
 
 ListControlsOutcome ControlCatalogClient::ListControls(const ListControlsRequest& request) const {
@@ -214,7 +219,8 @@ ListControlsOutcome ControlCatalogClient::ListControls(const ListControlsRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-controls");
   };
 
-  return ListControlsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListControlsOutcome(result.GetResultWithOwnership()) : ListControlsOutcome(std::move(result.GetError()));
 }
 
 ListDomainsOutcome ControlCatalogClient::ListDomains(const ListDomainsRequest& request) const {
@@ -223,7 +229,8 @@ ListDomainsOutcome ControlCatalogClient::ListDomains(const ListDomainsRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/domains");
   };
 
-  return ListDomainsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDomainsOutcome(result.GetResultWithOwnership()) : ListDomainsOutcome(std::move(result.GetError()));
 }
 
 ListObjectivesOutcome ControlCatalogClient::ListObjectives(const ListObjectivesRequest& request) const {
@@ -232,5 +239,6 @@ ListObjectivesOutcome ControlCatalogClient::ListObjectives(const ListObjectivesR
     endpointResolutionOutcome.GetResult().AddPathSegments("/objectives");
   };
 
-  return ListObjectivesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListObjectivesOutcome(result.GetResultWithOwnership()) : ListObjectivesOutcome(std::move(result.GetError()));
 }
