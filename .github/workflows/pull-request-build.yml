@@ -1,4 +1,5 @@
 name: Build SDK
+# Test comment for merge queue PR
 on:
   pull_request:
     types: [ opened, synchronize, ready_for_review ]
