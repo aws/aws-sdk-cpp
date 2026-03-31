@@ -101,16 +101,16 @@ const char* DynamoDBClient::GetAllocationTag() { return ALLOCATION_TAG; }
 
 DynamoDBClient::DynamoDBClient(const DynamoDB::DynamoDBClientConfiguration& clientConfiguration,
                                std::shared_ptr<DynamoDBEndpointProviderBase> endpointProvider)
-    : AwsSmithyClientT(
-          clientConfiguration, GetServiceName(), "DynamoDB", Aws::Http::CreateHttpClient(clientConfiguration),
-          Aws::MakeShared<DynamoDBErrorMarshaller>(ALLOCATION_TAG),
-          endpointProvider ? endpointProvider : Aws::MakeShared<DynamoDBEndpointProvider>(ALLOCATION_TAG),
-          Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
-              ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
-          {
-              {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
-               smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}},
-          }) {}
+    : AwsSmithyClientT(clientConfiguration, GetServiceName(), "DynamoDB", Aws::Http::CreateHttpClient(clientConfiguration),
+                       Aws::MakeShared<DynamoDBErrorMarshaller>(ALLOCATION_TAG),
+                       endpointProvider ? endpointProvider : Aws::MakeShared<DynamoDBEndpointProvider>(ALLOCATION_TAG),
+                       Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
+                           ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
+                       {
+                           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
+                            smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region,
+                                                    clientConfiguration.ResolveCredentialProviderConfig()}},
+                       }) {}
 
 DynamoDBClient::DynamoDBClient(const AWSCredentials& credentials, std::shared_ptr<DynamoDBEndpointProviderBase> endpointProvider,
                                const DynamoDB::DynamoDBClientConfiguration& clientConfiguration)
@@ -143,15 +143,15 @@ DynamoDBClient::DynamoDBClient(const std::shared_ptr<AWSCredentialsProvider>& cr
 
 /* Legacy constructors due deprecation */
 DynamoDBClient::DynamoDBClient(const Aws::Client::ClientConfiguration& clientConfiguration)
-    : AwsSmithyClientT(
-          clientConfiguration, GetServiceName(), "DynamoDB", Aws::Http::CreateHttpClient(clientConfiguration),
-          Aws::MakeShared<DynamoDBErrorMarshaller>(ALLOCATION_TAG), Aws::MakeShared<DynamoDBEndpointProvider>(ALLOCATION_TAG),
-          Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
-              ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
-          {
-              {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
-               smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}},
-          }) {}
+    : AwsSmithyClientT(clientConfiguration, GetServiceName(), "DynamoDB", Aws::Http::CreateHttpClient(clientConfiguration),
+                       Aws::MakeShared<DynamoDBErrorMarshaller>(ALLOCATION_TAG), Aws::MakeShared<DynamoDBEndpointProvider>(ALLOCATION_TAG),
+                       Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
+                           ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
+                       {
+                           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
+                            smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region,
+                                                    clientConfiguration.ResolveCredentialProviderConfig()}},
+                       }) {}
 
 DynamoDBClient::DynamoDBClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : AwsSmithyClientT(

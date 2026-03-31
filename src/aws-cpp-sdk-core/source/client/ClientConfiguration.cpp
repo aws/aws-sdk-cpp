@@ -649,5 +649,15 @@ Aws::String ClientConfiguration::LoadConfigFromEnvOrProfileCaseSensitive(const A
   return option;
 }
 
+ClientConfiguration::CredentialProviderConfiguration ClientConfiguration::ResolveCredentialProviderConfig() const
+{
+    auto resolved = credentialProviderConfig;
+    resolved.region = region;
+    resolved.profile = profileName;
+    resolved.imdsConfig.disableImds = disableIMDS;
+    resolved.allowSystemProxy = allowSystemProxy;
+    return resolved;
+}
+
 } // namespace Client
 } // namespace Aws

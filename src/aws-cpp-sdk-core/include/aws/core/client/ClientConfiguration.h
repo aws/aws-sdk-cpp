@@ -538,6 +538,13 @@ namespace Aws
             Aws::String region;
 
             /**
+             * Allow CRT-based credential providers to honor HTTP_PROXY / HTTPS_PROXY / NO_PROXY environment
+             * variables when fetching credentials. Off by default to mirror ClientConfiguration::allowSystemProxy
+             * and avoid silently routing credential traffic through an unintended proxy.
+             */
+            bool allowSystemProxy = false;
+
+            /**
              * IMDS configuration settings
              */
             struct {
@@ -607,6 +614,14 @@ namespace Aws
               std::chrono::milliseconds retrieveCredentialsFutureTimeout = std::chrono::seconds(10);
             } loginCredentialProviderConfig;
           } credentialProviderConfig;
+
+          /**
+           * Returns a copy of credentialProviderConfig with parent fields (such as allowSystemProxy) re-synced
+           * from their current values on this ClientConfiguration. Use this at the point of constructing a
+           * credentials provider so post-construction assignments to parent fields are picked up; reading
+           * credentialProviderConfig directly captures values from ClientConfiguration construction time only.
+           */
+          CredentialProviderConfiguration ResolveCredentialProviderConfig() const;
 
           /**
            * Authentication scheme preferences in order of preference.

@@ -205,14 +205,15 @@ S3Client& S3Client::operator=(S3Client&& rhs) noexcept {
 }
 
 S3Client::S3Client(const S3::S3ClientConfiguration& clientConfiguration, std::shared_ptr<S3EndpointProviderBase> endpointProvider)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    clientConfiguration.identityProviderSupplier(*this), SERVICE_NAME,
-                    Aws::Region::ComputeSignerRegion(clientConfiguration.region), clientConfiguration.payloadSigningPolicy,
-                    /*doubleEncodeValue*/ false),
-                Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
+    : BASECLASS(
+          clientConfiguration,
+          Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(
+              ALLOCATION_TAG,
+              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+              clientConfiguration.identityProviderSupplier(*this), SERVICE_NAME,
+              Aws::Region::ComputeSignerRegion(clientConfiguration.region), clientConfiguration.payloadSigningPolicy,
+              /*doubleEncodeValue*/ false),
+          Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG)) {
   init(m_clientConfiguration);
@@ -249,14 +250,15 @@ S3Client::S3Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsPro
 S3Client::S3Client(const Aws::Client::ClientConfiguration& clientConfiguration,
                    Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads /*= Never*/, bool useVirtualAddressing /*= true*/,
                    Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(
-                    ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                    Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this), SERVICE_NAME,
-                    Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads,
-                    /*doubleEncodeValue*/ false),
-                Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
+    : BASECLASS(
+          clientConfiguration,
+          Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(
+              ALLOCATION_TAG,
+              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
+              Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this), SERVICE_NAME,
+              Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads,
+              /*doubleEncodeValue*/ false),
+          Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration, signPayloads, useVirtualAddressing, USEast1RegionalEndPointOption),
       m_endpointProvider(Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG)) {
   init(m_clientConfiguration);

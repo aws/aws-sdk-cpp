@@ -65,11 +65,13 @@ STSClient::STSClient(const STS::STSClientConfiguration& clientConfiguration, std
                                                                      smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption})),
           {
               {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
-               smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}},
+               smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region,
+                                       clientConfiguration.ResolveCredentialProviderConfig()}},
               {smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption.schemeId,
-               smithy::SigV4aAuthScheme{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}},
+               smithy::SigV4aAuthScheme{GetServiceName(), clientConfiguration.region,
+                                        clientConfiguration.ResolveCredentialProviderConfig()}},
               {smithy::NoAuthSchemeOption::noAuthSchemeOption.schemeId,
-               smithy::NoAuthScheme{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}},
+               smithy::NoAuthScheme{GetServiceName(), clientConfiguration.region, clientConfiguration.ResolveCredentialProviderConfig()}},
           }) {}
 
 STSClient::STSClient(const AWSCredentials& credentials, std::shared_ptr<STSEndpointProviderBase> endpointProvider,
@@ -125,11 +127,13 @@ STSClient::STSClient(const Aws::Client::ClientConfiguration& clientConfiguration
                                                                      smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption})),
           {
               {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
-               smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}},
+               smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region,
+                                       clientConfiguration.ResolveCredentialProviderConfig()}},
               {smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption.schemeId,
-               smithy::SigV4aAuthScheme{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}},
+               smithy::SigV4aAuthScheme{GetServiceName(), clientConfiguration.region,
+                                        clientConfiguration.ResolveCredentialProviderConfig()}},
               {smithy::NoAuthSchemeOption::noAuthSchemeOption.schemeId,
-               smithy::NoAuthScheme{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}},
+               smithy::NoAuthScheme{GetServiceName(), clientConfiguration.region, clientConfiguration.ResolveCredentialProviderConfig()}},
           }) {}
 
 STSClient::STSClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
