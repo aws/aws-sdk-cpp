@@ -66,12 +66,32 @@ class EventParameters {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The weight of the event type. A higher weight means higher importance of the
+   * event type for the created solution.</p>
+   */
+  inline double GetEventWeight() const { return m_eventWeight; }
+  inline bool EventWeightHasBeenSet() const { return m_eventWeightHasBeenSet; }
+  inline void SetEventWeight(double value) {
+    m_eventWeightHasBeenSet = true;
+    m_eventWeight = value;
+  }
+  inline EventParameters& WithEventWeight(double value) {
+    SetEventWeight(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_eventType;
 
   double m_eventValueThreshold{0.0};
+
+  double m_eventWeight{0.0};
   bool m_eventTypeHasBeenSet = false;
   bool m_eventValueThresholdHasBeenSet = false;
+  bool m_eventWeightHasBeenSet = false;
 };
 
 }  // namespace Model

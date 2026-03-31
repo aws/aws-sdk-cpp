@@ -88,9 +88,7 @@ MetricStreamStatisticsMetric& MetricStreamStatisticsMetric::operator=(const std:
                   }
                 }
                 m_metricNameHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -175,9 +173,7 @@ MetricStreamStatisticsMetric& MetricStreamStatisticsMetric::operator=(const std:
                 }
               }
               m_metricNameHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

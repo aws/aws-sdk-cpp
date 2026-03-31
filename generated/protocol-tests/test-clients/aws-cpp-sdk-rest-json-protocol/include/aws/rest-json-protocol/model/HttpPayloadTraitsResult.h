@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/stream/ResponseStream.h>
@@ -66,14 +67,17 @@ class HttpPayloadTraitsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_foo;
-  bool m_fooHasBeenSet = false;
 
   Aws::Utils::Stream::ResponseStream m_blob{};
-  bool m_blobHasBeenSet = false;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_fooHasBeenSet = false;
+  bool m_blobHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

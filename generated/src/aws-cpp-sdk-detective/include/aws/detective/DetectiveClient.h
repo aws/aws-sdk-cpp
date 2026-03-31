@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/detective/DetectivePaginationBase.h>
 #include <aws/detective/DetectiveServiceClientModel.h>
+#include <aws/detective/DetectiveWaiter.h>
 #include <aws/detective/Detective_EXPORTS.h>
 
 namespace Aws {
@@ -63,7 +64,8 @@ namespace Detective {
  */
 class AWS_DETECTIVE_API DetectiveClient : public Aws::Client::AWSJsonClient,
                                           public Aws::Client::ClientWithAsyncTemplateMethods<DetectiveClient>,
-                                          public DetectivePaginationBase<DetectiveClient> {
+                                          public DetectivePaginationBase<DetectiveClient>,
+                                          public DetectiveWaiter<DetectiveClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1024,6 +1026,12 @@ class AWS_DETECTIVE_API DetectiveClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DetectiveClient>;
   void init(const DetectiveClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, DetectiveError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   DetectiveClientConfiguration m_clientConfiguration;
   std::shared_ptr<DetectiveEndpointProviderBase> m_endpointProvider;

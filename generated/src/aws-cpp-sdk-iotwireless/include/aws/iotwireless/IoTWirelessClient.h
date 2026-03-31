@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotwireless/IoTWirelessPaginationBase.h>
 #include <aws/iotwireless/IoTWirelessServiceClientModel.h>
+#include <aws/iotwireless/IoTWirelessWaiter.h>
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
 
 namespace Aws {
@@ -41,7 +42,8 @@ namespace IoTWireless {
  */
 class AWS_IOTWIRELESS_API IoTWirelessClient : public Aws::Client::AWSJsonClient,
                                               public Aws::Client::ClientWithAsyncTemplateMethods<IoTWirelessClient>,
-                                              public IoTWirelessPaginationBase<IoTWirelessClient> {
+                                              public IoTWirelessPaginationBase<IoTWirelessClient>,
+                                              public IoTWirelessWaiter<IoTWirelessClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -3136,6 +3138,12 @@ class AWS_IOTWIRELESS_API IoTWirelessClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTWirelessClient>;
   void init(const IoTWirelessClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, IoTWirelessError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   IoTWirelessClientConfiguration m_clientConfiguration;
   std::shared_ptr<IoTWirelessEndpointProviderBase> m_endpointProvider;

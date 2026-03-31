@@ -87,15 +87,36 @@ class UpdateFarmRequest : public DeadlineRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A multiplier applied to the farm's calculated costs for usage data and budget
+   * tracking. A value less than 1 represents a discount, a value greater than 1
+   * represents a premium, and a value of 1 represents no adjustment.</p>
+   */
+  inline double GetCostScaleFactor() const { return m_costScaleFactor; }
+  inline bool CostScaleFactorHasBeenSet() const { return m_costScaleFactorHasBeenSet; }
+  inline void SetCostScaleFactor(double value) {
+    m_costScaleFactorHasBeenSet = true;
+    m_costScaleFactor = value;
+  }
+  inline UpdateFarmRequest& WithCostScaleFactor(double value) {
+    SetCostScaleFactor(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_farmId;
 
   Aws::String m_displayName;
 
   Aws::String m_description;
+
+  double m_costScaleFactor{0.0};
   bool m_farmIdHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
+  bool m_costScaleFactorHasBeenSet = false;
 };
 
 }  // namespace Model

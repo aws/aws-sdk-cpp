@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kinesisvideo/KinesisVideoPaginationBase.h>
 #include <aws/kinesisvideo/KinesisVideoServiceClientModel.h>
+#include <aws/kinesisvideo/KinesisVideoWaiter.h>
 #include <aws/kinesisvideo/KinesisVideo_EXPORTS.h>
 
 namespace Aws {
@@ -19,7 +20,8 @@ namespace KinesisVideo {
  */
 class AWS_KINESISVIDEO_API KinesisVideoClient : public Aws::Client::AWSJsonClient,
                                                 public Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoClient>,
-                                                public KinesisVideoPaginationBase<KinesisVideoClient> {
+                                                public KinesisVideoPaginationBase<KinesisVideoClient>,
+                                                public KinesisVideoWaiter<KinesisVideoClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1111,6 +1113,12 @@ class AWS_KINESISVIDEO_API KinesisVideoClient : public Aws::Client::AWSJsonClien
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoClient>;
   void init(const KinesisVideoClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, KinesisVideoError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   KinesisVideoClientConfiguration m_clientConfiguration;
   std::shared_ptr<KinesisVideoEndpointProviderBase> m_endpointProvider;

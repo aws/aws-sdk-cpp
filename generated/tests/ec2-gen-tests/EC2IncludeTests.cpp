@@ -234,6 +234,7 @@
 #include <aws/ec2/model/CancelSpotInstanceRequestsResponse.h>
 #include <aws/ec2/model/CancelledSpotInstanceRequest.h>
 #include <aws/ec2/model/CapacityAllocation.h>
+#include <aws/ec2/model/CapacityAllocationMetadataEntry.h>
 #include <aws/ec2/model/CapacityBlock.h>
 #include <aws/ec2/model/CapacityBlockExtension.h>
 #include <aws/ec2/model/CapacityBlockExtensionOffering.h>
@@ -572,6 +573,7 @@
 #include <aws/ec2/model/DataResponse.h>
 #include <aws/ec2/model/DatafeedSubscriptionState.h>
 #include <aws/ec2/model/DeclarativePoliciesReport.h>
+#include <aws/ec2/model/DefaultConnectionTrackingConfiguration.h>
 #include <aws/ec2/model/DefaultHttpTokensEnforcedState.h>
 #include <aws/ec2/model/DefaultInstanceMetadataEndpointState.h>
 #include <aws/ec2/model/DefaultInstanceMetadataTagsState.h>
@@ -1408,6 +1410,7 @@
 #include <aws/ec2/model/FleetLaunchTemplateSpecificationRequest.h>
 #include <aws/ec2/model/FleetOnDemandAllocationStrategy.h>
 #include <aws/ec2/model/FleetReplacementStrategy.h>
+#include <aws/ec2/model/FleetReservationType.h>
 #include <aws/ec2/model/FleetSpotCapacityRebalance.h>
 #include <aws/ec2/model/FleetSpotCapacityRebalanceRequest.h>
 #include <aws/ec2/model/FleetSpotMaintenanceStrategies.h>
@@ -2337,6 +2340,8 @@
 #include <aws/ec2/model/ReservationState.h>
 #include <aws/ec2/model/ReservationType.h>
 #include <aws/ec2/model/ReservationValue.h>
+#include <aws/ec2/model/ReservedCapacityOptions.h>
+#include <aws/ec2/model/ReservedCapacityOptionsRequest.h>
 #include <aws/ec2/model/ReservedInstanceLimitPrice.h>
 #include <aws/ec2/model/ReservedInstanceReservationValue.h>
 #include <aws/ec2/model/ReservedInstanceState.h>

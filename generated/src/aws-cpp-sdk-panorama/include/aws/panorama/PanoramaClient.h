@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/panorama/PanoramaPaginationBase.h>
 #include <aws/panorama/PanoramaServiceClientModel.h>
+#include <aws/panorama/PanoramaWaiter.h>
 #include <aws/panorama/Panorama_EXPORTS.h>
 
 namespace Aws {
@@ -22,7 +23,8 @@ namespace Panorama {
  */
 class AWS_PANORAMA_API PanoramaClient : public Aws::Client::AWSJsonClient,
                                         public Aws::Client::ClientWithAsyncTemplateMethods<PanoramaClient>,
-                                        public PanoramaPaginationBase<PanoramaClient> {
+                                        public PanoramaPaginationBase<PanoramaClient>,
+                                        public PanoramaWaiter<PanoramaClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1005,6 +1007,12 @@ class AWS_PANORAMA_API PanoramaClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PanoramaClient>;
   void init(const PanoramaClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, PanoramaError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   PanoramaClientConfiguration m_clientConfiguration;
   std::shared_ptr<PanoramaEndpointProviderBase> m_endpointProvider;

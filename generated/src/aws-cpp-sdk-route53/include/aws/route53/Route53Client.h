@@ -11,6 +11,7 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/route53/Route53PaginationBase.h>
 #include <aws/route53/Route53ServiceClientModel.h>
+#include <aws/route53/Route53Waiter.h>
 #include <aws/route53/Route53_EXPORTS.h>
 
 namespace Aws {
@@ -30,7 +31,8 @@ namespace Route53 {
  */
 class AWS_ROUTE53_API Route53Client : public Aws::Client::AWSXMLClient,
                                       public Aws::Client::ClientWithAsyncTemplateMethods<Route53Client>,
-                                      public Route53PaginationBase<Route53Client> {
+                                      public Route53PaginationBase<Route53Client>,
+                                      public Route53Waiter<Route53Client> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();
@@ -2734,6 +2736,12 @@ class AWS_ROUTE53_API Route53Client : public Aws::Client::AWSXMLClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<Route53Client>;
   void init(const Route53ClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, Route53Error> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   Route53ClientConfiguration m_clientConfiguration;
   std::shared_ptr<Route53EndpointProviderBase> m_endpointProvider;

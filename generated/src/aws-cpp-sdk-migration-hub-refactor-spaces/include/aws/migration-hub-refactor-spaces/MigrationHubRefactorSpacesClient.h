@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesPaginationBase.h>
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesServiceClientModel.h>
+#include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesWaiter.h>
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpaces_EXPORTS.h>
 
 namespace Aws {
@@ -32,7 +33,8 @@ namespace MigrationHubRefactorSpaces {
 class AWS_MIGRATIONHUBREFACTORSPACES_API MigrationHubRefactorSpacesClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubRefactorSpacesClient>,
-      public MigrationHubRefactorSpacesPaginationBase<MigrationHubRefactorSpacesClient> {
+      public MigrationHubRefactorSpacesPaginationBase<MigrationHubRefactorSpacesClient>,
+      public MigrationHubRefactorSpacesWaiter<MigrationHubRefactorSpacesClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -846,6 +848,12 @@ class AWS_MIGRATIONHUBREFACTORSPACES_API MigrationHubRefactorSpacesClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubRefactorSpacesClient>;
   void init(const MigrationHubRefactorSpacesClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MigrationHubRefactorSpacesError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   MigrationHubRefactorSpacesClientConfiguration m_clientConfiguration;
   std::shared_ptr<MigrationHubRefactorSpacesEndpointProviderBase> m_endpointProvider;

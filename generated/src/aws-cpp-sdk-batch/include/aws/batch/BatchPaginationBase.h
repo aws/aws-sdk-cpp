@@ -12,6 +12,7 @@
 #include <aws/batch/model/ListConsumableResourcesPaginationTraits.h>
 #include <aws/batch/model/ListJobsByConsumableResourcePaginationTraits.h>
 #include <aws/batch/model/ListJobsPaginationTraits.h>
+#include <aws/batch/model/ListQuotaSharesPaginationTraits.h>
 #include <aws/batch/model/ListSchedulingPoliciesPaginationTraits.h>
 #include <aws/batch/model/ListServiceJobsPaginationTraits.h>
 #include <aws/core/client/UserAgent.h>
@@ -107,6 +108,18 @@ class BatchPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobsByConsumableResourceRequest,
                                              Pagination::ListJobsByConsumableResourcePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListQuotaShares operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQuotaSharesRequest,
+                                    Pagination::ListQuotaSharesPaginationTraits<DerivedClient>>
+  ListQuotaSharesPaginator(const Model::ListQuotaSharesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQuotaSharesRequest,
+                                             Pagination::ListQuotaSharesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                         request};
   }
 
   /**

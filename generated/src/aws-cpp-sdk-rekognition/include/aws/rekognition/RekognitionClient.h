@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/rekognition/RekognitionPaginationBase.h>
 #include <aws/rekognition/RekognitionServiceClientModel.h>
+#include <aws/rekognition/RekognitionWaiter.h>
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 
 namespace Aws {
@@ -172,7 +173,8 @@ namespace Rekognition {
  */
 class AWS_REKOGNITION_API RekognitionClient : public Aws::Client::AWSJsonClient,
                                               public Aws::Client::ClientWithAsyncTemplateMethods<RekognitionClient>,
-                                              public RekognitionPaginationBase<RekognitionClient> {
+                                              public RekognitionPaginationBase<RekognitionClient>,
+                                              public RekognitionWaiter<RekognitionClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -3318,6 +3320,10 @@ class AWS_REKOGNITION_API RekognitionClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<RekognitionClient>;
   void init(const RekognitionClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, RekognitionError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   RekognitionClientConfiguration m_clientConfiguration;
   std::shared_ptr<RekognitionEndpointProviderBase> m_endpointProvider;

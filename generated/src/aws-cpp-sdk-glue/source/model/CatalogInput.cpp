@@ -64,6 +64,12 @@ CatalogInput& CatalogInput::operator=(JsonView jsonValue) {
         jsonValue.GetString("AllowFullTableExternalDataAccess"));
     m_allowFullTableExternalDataAccessHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("OverwriteChildResourcePermissionsWithDefault")) {
+    m_overwriteChildResourcePermissionsWithDefault =
+        OverwriteChildResourcePermissionsWithDefaultEnumMapper::GetOverwriteChildResourcePermissionsWithDefaultEnumForName(
+            jsonValue.GetString("OverwriteChildResourcePermissionsWithDefault"));
+    m_overwriteChildResourcePermissionsWithDefaultHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -119,6 +125,12 @@ JsonValue CatalogInput::Jsonize() const {
     payload.WithString(
         "AllowFullTableExternalDataAccess",
         AllowFullTableExternalDataAccessEnumMapper::GetNameForAllowFullTableExternalDataAccessEnum(m_allowFullTableExternalDataAccess));
+  }
+
+  if (m_overwriteChildResourcePermissionsWithDefaultHasBeenSet) {
+    payload.WithString("OverwriteChildResourcePermissionsWithDefault",
+                       OverwriteChildResourcePermissionsWithDefaultEnumMapper::GetNameForOverwriteChildResourcePermissionsWithDefaultEnum(
+                           m_overwriteChildResourcePermissionsWithDefault));
   }
 
   return payload;

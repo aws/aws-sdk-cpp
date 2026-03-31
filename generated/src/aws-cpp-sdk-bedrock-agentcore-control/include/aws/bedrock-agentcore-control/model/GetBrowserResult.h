@@ -5,13 +5,16 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/BrowserEnterprisePolicy.h>
 #include <aws/bedrock-agentcore-control/model/BrowserNetworkConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/BrowserSigningConfigOutput.h>
 #include <aws/bedrock-agentcore-control/model/BrowserStatus.h>
+#include <aws/bedrock-agentcore-control/model/Certificate.h>
 #include <aws/bedrock-agentcore-control/model/RecordingConfig.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -167,6 +170,52 @@ class GetBrowserResult {
 
   ///@{
   /**
+   * <p>The list of enterprise policy files configured for the browser.</p>
+   */
+  inline const Aws::Vector<BrowserEnterprisePolicy>& GetEnterprisePolicies() const { return m_enterprisePolicies; }
+  template <typename EnterprisePoliciesT = Aws::Vector<BrowserEnterprisePolicy>>
+  void SetEnterprisePolicies(EnterprisePoliciesT&& value) {
+    m_enterprisePoliciesHasBeenSet = true;
+    m_enterprisePolicies = std::forward<EnterprisePoliciesT>(value);
+  }
+  template <typename EnterprisePoliciesT = Aws::Vector<BrowserEnterprisePolicy>>
+  GetBrowserResult& WithEnterprisePolicies(EnterprisePoliciesT&& value) {
+    SetEnterprisePolicies(std::forward<EnterprisePoliciesT>(value));
+    return *this;
+  }
+  template <typename EnterprisePoliciesT = BrowserEnterprisePolicy>
+  GetBrowserResult& AddEnterprisePolicies(EnterprisePoliciesT&& value) {
+    m_enterprisePoliciesHasBeenSet = true;
+    m_enterprisePolicies.emplace_back(std::forward<EnterprisePoliciesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The list of certificates configured for the browser.</p>
+   */
+  inline const Aws::Vector<Certificate>& GetCertificates() const { return m_certificates; }
+  template <typename CertificatesT = Aws::Vector<Certificate>>
+  void SetCertificates(CertificatesT&& value) {
+    m_certificatesHasBeenSet = true;
+    m_certificates = std::forward<CertificatesT>(value);
+  }
+  template <typename CertificatesT = Aws::Vector<Certificate>>
+  GetBrowserResult& WithCertificates(CertificatesT&& value) {
+    SetCertificates(std::forward<CertificatesT>(value));
+    return *this;
+  }
+  template <typename CertificatesT = Certificate>
+  GetBrowserResult& AddCertificates(CertificatesT&& value) {
+    m_certificatesHasBeenSet = true;
+    m_certificates.emplace_back(std::forward<CertificatesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The current status of the browser.</p>
    */
   inline BrowserStatus GetStatus() const { return m_status; }
@@ -264,6 +313,10 @@ class GetBrowserResult {
 
   BrowserSigningConfigOutput m_browserSigning;
 
+  Aws::Vector<BrowserEnterprisePolicy> m_enterprisePolicies;
+
+  Aws::Vector<Certificate> m_certificates;
+
   BrowserStatus m_status{BrowserStatus::NOT_SET};
 
   Aws::String m_failureReason;
@@ -282,6 +335,8 @@ class GetBrowserResult {
   bool m_networkConfigurationHasBeenSet = false;
   bool m_recordingHasBeenSet = false;
   bool m_browserSigningHasBeenSet = false;
+  bool m_enterprisePoliciesHasBeenSet = false;
+  bool m_certificatesHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;

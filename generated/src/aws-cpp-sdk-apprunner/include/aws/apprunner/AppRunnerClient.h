@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/apprunner/AppRunnerPaginationBase.h>
 #include <aws/apprunner/AppRunnerServiceClientModel.h>
+#include <aws/apprunner/AppRunnerWaiter.h>
 #include <aws/apprunner/AppRunner_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -38,7 +39,8 @@ namespace AppRunner {
  */
 class AWS_APPRUNNER_API AppRunnerClient : public Aws::Client::AWSJsonClient,
                                           public Aws::Client::ClientWithAsyncTemplateMethods<AppRunnerClient>,
-                                          public AppRunnerPaginationBase<AppRunnerClient> {
+                                          public AppRunnerPaginationBase<AppRunnerClient>,
+                                          public AppRunnerWaiter<AppRunnerClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1228,6 +1230,10 @@ class AWS_APPRUNNER_API AppRunnerClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AppRunnerClient>;
   void init(const AppRunnerClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, AppRunnerError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   AppRunnerClientConfiguration m_clientConfiguration;
   std::shared_ptr<AppRunnerEndpointProviderBase> m_endpointProvider;

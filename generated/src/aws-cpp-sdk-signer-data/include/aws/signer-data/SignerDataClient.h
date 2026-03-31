@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/signer-data/SignerDataPaginationBase.h>
 #include <aws/signer-data/SignerDataServiceClientModel.h>
+#include <aws/signer-data/SignerDataWaiter.h>
 #include <aws/signer-data/SignerData_EXPORTS.h>
 
 namespace Aws {
@@ -20,7 +21,8 @@ namespace SignerData {
  */
 class AWS_SIGNERDATA_API SignerDataClient : public Aws::Client::AWSJsonClient,
                                             public Aws::Client::ClientWithAsyncTemplateMethods<SignerDataClient>,
-                                            public SignerDataPaginationBase<SignerDataClient> {
+                                            public SignerDataPaginationBase<SignerDataClient>,
+                                            public SignerDataWaiter<SignerDataClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -111,6 +113,12 @@ class AWS_SIGNERDATA_API SignerDataClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SignerDataClient>;
   void init(const SignerDataClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SignerDataError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   SignerDataClientConfiguration m_clientConfiguration;
   std::shared_ptr<SignerDataEndpointProviderBase> m_endpointProvider;

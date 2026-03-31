@@ -22,6 +22,14 @@ class JsonValue;
 }  // namespace Utils
 namespace deadline {
 namespace Model {
+/**
+ * <p>Shared response body for AssumeRole operations where credentials are
+ * required. AssumeQueueRoleForWorkerResponse is excluded because credentials is
+ * optional there because Queue.roleArn is optional, so the mixin's @required trait
+ * would be incorrect.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AssumeFleetRoleForReadResponse">AWS
+ * API Reference</a></p>
+ */
 class AssumeFleetRoleForReadResult {
  public:
   AWS_DEADLINE_API AssumeFleetRoleForReadResult() = default;

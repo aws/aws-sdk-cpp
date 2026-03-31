@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/entityresolution/EntityResolutionPaginationBase.h>
 #include <aws/entityresolution/EntityResolutionServiceClientModel.h>
+#include <aws/entityresolution/EntityResolutionWaiter.h>
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
 
 namespace Aws {
@@ -31,7 +32,8 @@ namespace EntityResolution {
  */
 class AWS_ENTITYRESOLUTION_API EntityResolutionClient : public Aws::Client::AWSJsonClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<EntityResolutionClient>,
-                                                        public EntityResolutionPaginationBase<EntityResolutionClient> {
+                                                        public EntityResolutionPaginationBase<EntityResolutionClient>,
+                                                        public EntityResolutionWaiter<EntityResolutionClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1164,6 +1166,12 @@ class AWS_ENTITYRESOLUTION_API EntityResolutionClient : public Aws::Client::AWSJ
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<EntityResolutionClient>;
   void init(const EntityResolutionClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, EntityResolutionError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   EntityResolutionClientConfiguration m_clientConfiguration;
   std::shared_ptr<EntityResolutionEndpointProviderBase> m_endpointProvider;

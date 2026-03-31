@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/chatbot/ChatbotPaginationBase.h>
 #include <aws/chatbot/ChatbotServiceClientModel.h>
+#include <aws/chatbot/ChatbotWaiter.h>
 #include <aws/chatbot/Chatbot_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -29,7 +30,8 @@ namespace chatbot {
  */
 class AWS_CHATBOT_API ChatbotClient : public Aws::Client::AWSJsonClient,
                                       public Aws::Client::ClientWithAsyncTemplateMethods<ChatbotClient>,
-                                      public ChatbotPaginationBase<ChatbotClient> {
+                                      public ChatbotPaginationBase<ChatbotClient>,
+                                      public ChatbotWaiter<ChatbotClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1070,6 +1072,12 @@ class AWS_CHATBOT_API ChatbotClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ChatbotClient>;
   void init(const ChatbotClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ChatbotError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   ChatbotClientConfiguration m_clientConfiguration;
   std::shared_ptr<ChatbotEndpointProviderBase> m_endpointProvider;

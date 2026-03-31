@@ -18,13 +18,6 @@ namespace Model {
 ValidationException::ValidationException(JsonView jsonValue) { *this = jsonValue; }
 
 ValidationException& ValidationException::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("Fields")) {
-    Aws::Utils::Array<JsonView> fieldsJsonList = jsonValue.GetArray("Fields");
-    for (unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex) {
-      m_fields.push_back(fieldsJsonList[fieldsIndex].AsObject());
-    }
-    m_fieldsHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
@@ -33,19 +26,18 @@ ValidationException& ValidationException::operator=(JsonView jsonValue) {
     m_reason = ValidationExceptionReasonMapper::GetValidationExceptionReasonForName(jsonValue.GetString("Reason"));
     m_reasonHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Fields")) {
+    Aws::Utils::Array<JsonView> fieldsJsonList = jsonValue.GetArray("Fields");
+    for (unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex) {
+      m_fields.push_back(fieldsJsonList[fieldsIndex].AsObject());
+    }
+    m_fieldsHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue ValidationException::Jsonize() const {
   JsonValue payload;
-
-  if (m_fieldsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> fieldsJsonList(m_fields.size());
-    for (unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex) {
-      fieldsJsonList[fieldsIndex].AsObject(m_fields[fieldsIndex].Jsonize());
-    }
-    payload.WithArray("Fields", std::move(fieldsJsonList));
-  }
 
   if (m_messageHasBeenSet) {
     payload.WithString("Message", m_message);
@@ -53,6 +45,14 @@ JsonValue ValidationException::Jsonize() const {
 
   if (m_reasonHasBeenSet) {
     payload.WithString("Reason", ValidationExceptionReasonMapper::GetNameForValidationExceptionReason(m_reason));
+  }
+
+  if (m_fieldsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> fieldsJsonList(m_fields.size());
+    for (unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex) {
+      fieldsJsonList[fieldsIndex].AsObject(m_fields[fieldsIndex].Jsonize());
+    }
+    payload.WithArray("Fields", std::move(fieldsJsonList));
   }
 
   return payload;

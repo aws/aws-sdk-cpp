@@ -14,6 +14,7 @@
 #include <aws/timestream-influxdb/TimestreamInfluxDBRequest.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDBServiceClientModel.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDB_EXPORTS.h>
+#include <aws/timestream-influxdb/model/ClusterConfiguration.h>
 #include <aws/timestream-influxdb/model/ClusterDeploymentType.h>
 #include <aws/timestream-influxdb/model/ClusterStatus.h>
 #include <aws/timestream-influxdb/model/ConflictException.h>
@@ -62,6 +63,7 @@
 #include <aws/timestream-influxdb/model/LogDeliveryConfiguration.h>
 #include <aws/timestream-influxdb/model/LogFormats.h>
 #include <aws/timestream-influxdb/model/LogLevel.h>
+#include <aws/timestream-influxdb/model/MaintenanceSchedule.h>
 #include <aws/timestream-influxdb/model/NetworkType.h>
 #include <aws/timestream-influxdb/model/Parameters.h>
 #include <aws/timestream-influxdb/model/PercentOrAbsoluteLong.h>

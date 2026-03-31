@@ -11,6 +11,7 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalkPaginationBase.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalkServiceClientModel.h>
+#include <aws/elasticbeanstalk/ElasticBeanstalkWaiter.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 
 namespace Aws {
@@ -33,7 +34,8 @@ namespace ElasticBeanstalk {
  */
 class AWS_ELASTICBEANSTALK_API ElasticBeanstalkClient : public Aws::Client::AWSXMLClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<ElasticBeanstalkClient>,
-                                                        public ElasticBeanstalkPaginationBase<ElasticBeanstalkClient> {
+                                                        public ElasticBeanstalkPaginationBase<ElasticBeanstalkClient>,
+                                                        public ElasticBeanstalkWaiter<ElasticBeanstalkClient> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();
@@ -1563,6 +1565,10 @@ class AWS_ELASTICBEANSTALK_API ElasticBeanstalkClient : public Aws::Client::AWSX
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ElasticBeanstalkClient>;
   void init(const ElasticBeanstalkClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ElasticBeanstalkError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   ElasticBeanstalkClientConfiguration m_clientConfiguration;
   std::shared_ptr<ElasticBeanstalkEndpointProviderBase> m_endpointProvider;

@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/resiliencehub/ResilienceHubPaginationBase.h>
 #include <aws/resiliencehub/ResilienceHubServiceClientModel.h>
+#include <aws/resiliencehub/ResilienceHubWaiter.h>
 #include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
 
 namespace Aws {
@@ -25,7 +26,8 @@ namespace ResilienceHub {
  */
 class AWS_RESILIENCEHUB_API ResilienceHubClient : public Aws::Client::AWSJsonClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<ResilienceHubClient>,
-                                                  public ResilienceHubPaginationBase<ResilienceHubClient> {
+                                                  public ResilienceHubPaginationBase<ResilienceHubClient>,
+                                                  public ResilienceHubWaiter<ResilienceHubClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1975,6 +1977,12 @@ class AWS_RESILIENCEHUB_API ResilienceHubClient : public Aws::Client::AWSJsonCli
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ResilienceHubClient>;
   void init(const ResilienceHubClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ResilienceHubError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   ResilienceHubClientConfiguration m_clientConfiguration;
   std::shared_ptr<ResilienceHubEndpointProviderBase> m_endpointProvider;

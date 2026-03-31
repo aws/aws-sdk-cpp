@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/datazone/DataZonePaginationBase.h>
 #include <aws/datazone/DataZoneServiceClientModel.h>
+#include <aws/datazone/DataZoneWaiter.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
 
 namespace Aws {
@@ -24,7 +25,8 @@ namespace DataZone {
  */
 class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
                                         public Aws::Client::ClientWithAsyncTemplateMethods<DataZoneClient>,
-                                        public DataZonePaginationBase<DataZoneClient> {
+                                        public DataZonePaginationBase<DataZoneClient>,
+                                        public DataZoneWaiter<DataZoneClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -5170,6 +5172,12 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DataZoneClient>;
   void init(const DataZoneClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, DataZoneError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   DataZoneClientConfiguration m_clientConfiguration;
   std::shared_ptr<DataZoneEndpointProviderBase> m_endpointProvider;

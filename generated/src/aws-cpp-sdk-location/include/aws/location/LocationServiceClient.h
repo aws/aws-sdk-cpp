@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/location/LocationServicePaginationBase.h>
 #include <aws/location/LocationServiceServiceClientModel.h>
+#include <aws/location/LocationServiceWaiter.h>
 #include <aws/location/LocationService_EXPORTS.h>
 
 namespace Aws {
@@ -20,7 +21,8 @@ namespace LocationService {
  */
 class AWS_LOCATIONSERVICE_API LocationServiceClient : public Aws::Client::AWSJsonClient,
                                                       public Aws::Client::ClientWithAsyncTemplateMethods<LocationServiceClient>,
-                                                      public LocationServicePaginationBase<LocationServiceClient> {
+                                                      public LocationServicePaginationBase<LocationServiceClient>,
+                                                      public LocationServiceWaiter<LocationServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2326,6 +2328,12 @@ class AWS_LOCATIONSERVICE_API LocationServiceClient : public Aws::Client::AWSJso
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<LocationServiceClient>;
   void init(const LocationServiceClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, LocationServiceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   LocationServiceClientConfiguration m_clientConfiguration;
   std::shared_ptr<LocationServiceEndpointProviderBase> m_endpointProvider;

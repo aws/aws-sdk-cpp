@@ -43,7 +43,7 @@
 
     Aws::String ${typeInfo.className}::SerializePayload() const
     {
-    #if($shape.hasMembers())
+    #if($operation.hasRequest())
         Aws::Crt::Cbor::CborEncoder encoder;
         
         // Calculate map size
@@ -77,6 +77,9 @@
     Aws::Http::HeaderValueCollection ${typeInfo.className}::GetRequestSpecificHeaders() const
     {
         Aws::Http::HeaderValueCollection headers;
+        #if($operation.hasRequest())
+            headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+        #end
         #foreach($headerEntry in $requestSpecificHeaders.entrySet())
             headers.emplace(${headerEntry.key}, ${headerEntry.value});
         #end

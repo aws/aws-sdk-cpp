@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connectcases/ConnectCasesPaginationBase.h>
 #include <aws/connectcases/ConnectCasesServiceClientModel.h>
+#include <aws/connectcases/ConnectCasesWaiter.h>
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -29,7 +30,8 @@ namespace ConnectCases {
  */
 class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClient,
                                                 public Aws::Client::ClientWithAsyncTemplateMethods<ConnectCasesClient>,
-                                                public ConnectCasesPaginationBase<ConnectCasesClient> {
+                                                public ConnectCasesPaginationBase<ConnectCasesClient>,
+                                                public ConnectCasesWaiter<ConnectCasesClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1341,6 +1343,50 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
   }
 
   /**
+   * <p>Updates the content of a related item associated with a case. The following
+   * related item types are supported:</p> <ul> <li> <p> <b>Comment</b> - Update the
+   * text content of an existing comment</p> </li> <li> <p> <b>Custom</b> - Update
+   * the fields of a custom related item. You can add, modify, and remove fields from
+   * a custom related item. There's a quota for the number of fields allowed in a
+   * Custom type related item. See <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Amazon
+   * Connect Cases quotas</a>.</p> </li> </ul> <p> <b>Important things to know</b>
+   * </p> <ul> <li> <p>When updating a Custom related item, all existing and new
+   * fields, and their associated values should be included in the request. Fields
+   * not included as part of this request will be removed.</p> </li> <li> <p>If you
+   * provide a value for <code>performedBy.userArn</code> you must also have <a
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
+   * permission on the ARN of the user that you provide.</p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/case-fields.html#system-case-fields">System
+   * case fields</a> cannot be used in a custom related item.</p> </li> </ul> <p>
+   * <b>Endpoints</b>: See <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+   * Connect endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/UpdateRelatedItem">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateRelatedItemOutcome UpdateRelatedItem(const Model::UpdateRelatedItemRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateRelatedItem that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateRelatedItemRequestT = Model::UpdateRelatedItemRequest>
+  Model::UpdateRelatedItemOutcomeCallable UpdateRelatedItemCallable(const UpdateRelatedItemRequestT& request) const {
+    return SubmitCallable(&ConnectCasesClient::UpdateRelatedItem, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateRelatedItem that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateRelatedItemRequestT = Model::UpdateRelatedItemRequest>
+  void UpdateRelatedItemAsync(const UpdateRelatedItemRequestT& request, const UpdateRelatedItemResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectCasesClient::UpdateRelatedItem, request, handler, context);
+  }
+
+  /**
    * <p>Updates the attributes of an existing template. The template attributes that
    * can be modified include <code>name</code>, <code>description</code>,
    * <code>layoutConfiguration</code>, <code>requiredFields</code>, and
@@ -1384,6 +1430,12 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ConnectCasesClient>;
   void init(const ConnectCasesClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ConnectCasesError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   ConnectCasesClientConfiguration m_clientConfiguration;
   std::shared_ptr<ConnectCasesEndpointProviderBase> m_endpointProvider;

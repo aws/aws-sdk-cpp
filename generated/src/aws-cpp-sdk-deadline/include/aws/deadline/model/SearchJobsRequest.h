@@ -18,6 +18,10 @@ namespace deadline {
 namespace Model {
 
 /**
+ * <p>Shared input fields for all Search operations (filterExpressions,
+ * sortExpressions, itemOffset, pageSize).</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/SearchJobsRequest">AWS
+ * API Reference</a></p>
  */
 class SearchJobsRequest : public DeadlineRequest {
  public:
@@ -45,30 +49,6 @@ class SearchJobsRequest : public DeadlineRequest {
   template <typename FarmIdT = Aws::String>
   SearchJobsRequest& WithFarmId(FarmIdT&& value) {
     SetFarmId(std::forward<FarmIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The queue ID to use in the job search.</p>
-   */
-  inline const Aws::Vector<Aws::String>& GetQueueIds() const { return m_queueIds; }
-  inline bool QueueIdsHasBeenSet() const { return m_queueIdsHasBeenSet; }
-  template <typename QueueIdsT = Aws::Vector<Aws::String>>
-  void SetQueueIds(QueueIdsT&& value) {
-    m_queueIdsHasBeenSet = true;
-    m_queueIds = std::forward<QueueIdsT>(value);
-  }
-  template <typename QueueIdsT = Aws::Vector<Aws::String>>
-  SearchJobsRequest& WithQueueIds(QueueIdsT&& value) {
-    SetQueueIds(std::forward<QueueIdsT>(value));
-    return *this;
-  }
-  template <typename QueueIdsT = Aws::String>
-  SearchJobsRequest& AddQueueIds(QueueIdsT&& value) {
-    m_queueIdsHasBeenSet = true;
-    m_queueIds.emplace_back(std::forward<QueueIdsT>(value));
     return *this;
   }
   ///@}
@@ -146,10 +126,32 @@ class SearchJobsRequest : public DeadlineRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The queue ID to use in the job search.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetQueueIds() const { return m_queueIds; }
+  inline bool QueueIdsHasBeenSet() const { return m_queueIdsHasBeenSet; }
+  template <typename QueueIdsT = Aws::Vector<Aws::String>>
+  void SetQueueIds(QueueIdsT&& value) {
+    m_queueIdsHasBeenSet = true;
+    m_queueIds = std::forward<QueueIdsT>(value);
+  }
+  template <typename QueueIdsT = Aws::Vector<Aws::String>>
+  SearchJobsRequest& WithQueueIds(QueueIdsT&& value) {
+    SetQueueIds(std::forward<QueueIdsT>(value));
+    return *this;
+  }
+  template <typename QueueIdsT = Aws::String>
+  SearchJobsRequest& AddQueueIds(QueueIdsT&& value) {
+    m_queueIdsHasBeenSet = true;
+    m_queueIds.emplace_back(std::forward<QueueIdsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_farmId;
-
-  Aws::Vector<Aws::String> m_queueIds;
 
   SearchGroupedFilterExpressions m_filterExpressions;
 
@@ -158,12 +160,14 @@ class SearchJobsRequest : public DeadlineRequest {
   int m_itemOffset{0};
 
   int m_pageSize{0};
+
+  Aws::Vector<Aws::String> m_queueIds;
   bool m_farmIdHasBeenSet = false;
-  bool m_queueIdsHasBeenSet = false;
   bool m_filterExpressionsHasBeenSet = false;
   bool m_sortExpressionsHasBeenSet = false;
   bool m_itemOffsetHasBeenSet = false;
   bool m_pageSizeHasBeenSet = false;
+  bool m_queueIdsHasBeenSet = false;
 };
 
 }  // namespace Model

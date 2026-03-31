@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ivs-realtime/IvsrealtimePaginationBase.h>
 #include <aws/ivs-realtime/IvsrealtimeServiceClientModel.h>
+#include <aws/ivs-realtime/IvsrealtimeWaiter.h>
 #include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
 
 namespace Aws {
@@ -60,7 +61,8 @@ namespace ivsrealtime {
  */
 class AWS_IVSREALTIME_API IvsrealtimeClient : public Aws::Client::AWSJsonClient,
                                               public Aws::Client::ClientWithAsyncTemplateMethods<IvsrealtimeClient>,
-                                              public IvsrealtimePaginationBase<IvsrealtimeClient> {
+                                              public IvsrealtimePaginationBase<IvsrealtimeClient>,
+                                              public IvsrealtimeWaiter<IvsrealtimeClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1220,6 +1222,12 @@ class AWS_IVSREALTIME_API IvsrealtimeClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IvsrealtimeClient>;
   void init(const IvsrealtimeClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, IvsrealtimeError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   IvsrealtimeClientConfiguration m_clientConfiguration;
   std::shared_ptr<IvsrealtimeEndpointProviderBase> m_endpointProvider;

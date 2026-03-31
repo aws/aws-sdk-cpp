@@ -147,394 +147,227 @@ void TrustedAdvisorClient::OverrideEndpoint(const Aws::String& endpoint) {
   m_clientConfiguration.endpointOverride = endpoint;
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
+TrustedAdvisorClient::InvokeOperationOutcome TrustedAdvisorClient::InvokeServiceOperation(
+    const AmazonWebServiceRequest& request, const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+    Aws::Http::HttpMethod httpMethod) const {
+  auto operationName = request.GetServiceRequestName();
+  auto serviceName = GetServiceClientName();
 
-BatchUpdateRecommendationResourceExclusionOutcome TrustedAdvisorClient::BatchUpdateRecommendationResourceExclusion(
-    const BatchUpdateRecommendationResourceExclusionRequest& request) const {
-  AWS_OPERATION_GUARD(BatchUpdateRecommendationResourceExclusion);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchUpdateRecommendationResourceExclusion, CoreErrors,
-                          CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, BatchUpdateRecommendationResourceExclusion, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, BatchUpdateRecommendationResourceExclusion, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".BatchUpdateRecommendationResourceExclusion",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+  AWS_OPERATION_GUARD_DYNAMIC(operationName);
+
+  AWS_OPERATION_CHECK_PTR_DYNAMIC(m_endpointProvider, operationName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR_DYNAMIC(m_telemetryProvider, operationName, CoreErrors, CoreErrors::NOT_INITIALIZED);
+
+  auto tracer = m_telemetryProvider->getTracer(serviceName, {});
+  auto meter = m_telemetryProvider->getMeter(serviceName, {});
+  AWS_OPERATION_CHECK_PTR_DYNAMIC(meter, operationName, CoreErrors, CoreErrors::NOT_INITIALIZED);
+
+  auto span = tracer->CreateSpan(Aws::String(serviceName) + "." + operationName,
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<BatchUpdateRecommendationResourceExclusionOutcome>(
-      [&]() -> BatchUpdateRecommendationResourceExclusionOutcome {
+
+  return TracingUtils::MakeCallWithTiming<InvokeOperationOutcome>(
+      [&]() -> InvokeOperationOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
             TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchUpdateRecommendationResourceExclusion, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/v1/batch-update-recommendation-resource-exclusion");
-        return BatchUpdateRecommendationResourceExclusionOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
+
+        AWS_OPERATION_CHECK_SUCCESS_DYNAMIC(endpointResolutionOutcome, operationName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                            endpointResolutionOutcome.GetError().GetMessage());
+
+        resolveUri(endpointResolutionOutcome);
+
+        return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, Aws::Auth::SIGV4_SIGNER)};
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
+}
+
+BatchUpdateRecommendationResourceExclusionOutcome TrustedAdvisorClient::BatchUpdateRecommendationResourceExclusion(
+    const BatchUpdateRecommendationResourceExclusionRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/batch-update-recommendation-resource-exclusion");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? BatchUpdateRecommendationResourceExclusionOutcome(result.GetResultWithOwnership())
+                            : BatchUpdateRecommendationResourceExclusionOutcome(std::move(result.GetError()));
 }
 
 GetOrganizationRecommendationOutcome TrustedAdvisorClient::GetOrganizationRecommendation(
     const GetOrganizationRecommendationRequest& request) const {
-  AWS_OPERATION_GUARD(GetOrganizationRecommendation);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetOrganizationRecommendation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.OrganizationRecommendationIdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetOrganizationRecommendation", "Required field: OrganizationRecommendationIdentifier, is not set");
     return GetOrganizationRecommendationOutcome(
         Aws::Client::AWSError<TrustedAdvisorErrors>(TrustedAdvisorErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                     "Missing required field [OrganizationRecommendationIdentifier]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetOrganizationRecommendation, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetOrganizationRecommendation, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetOrganizationRecommendation",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetOrganizationRecommendationOutcome>(
-      [&]() -> GetOrganizationRecommendationOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetOrganizationRecommendation, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/v1/organization-recommendations/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOrganizationRecommendationIdentifier());
-        return GetOrganizationRecommendationOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/organization-recommendations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOrganizationRecommendationIdentifier());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetOrganizationRecommendationOutcome(result.GetResultWithOwnership())
+                            : GetOrganizationRecommendationOutcome(std::move(result.GetError()));
 }
 
 GetRecommendationOutcome TrustedAdvisorClient::GetRecommendation(const GetRecommendationRequest& request) const {
-  AWS_OPERATION_GUARD(GetRecommendation);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRecommendation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RecommendationIdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetRecommendation", "Required field: RecommendationIdentifier, is not set");
     return GetRecommendationOutcome(Aws::Client::AWSError<TrustedAdvisorErrors>(
         TrustedAdvisorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecommendationIdentifier]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetRecommendation, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetRecommendation, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetRecommendation",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetRecommendationOutcome>(
-      [&]() -> GetRecommendationOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRecommendation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/v1/recommendations/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommendationIdentifier());
-        return GetRecommendationOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/recommendations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommendationIdentifier());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRecommendationOutcome(result.GetResultWithOwnership())
+                            : GetRecommendationOutcome(std::move(result.GetError()));
 }
 
 ListChecksOutcome TrustedAdvisorClient::ListChecks(const ListChecksRequest& request) const {
-  AWS_OPERATION_GUARD(ListChecks);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChecks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListChecks, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListChecks, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListChecks",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListChecksOutcome>(
-      [&]() -> ListChecksOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListChecks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/v1/checks");
-        return ListChecksOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/checks");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListChecksOutcome(result.GetResultWithOwnership()) : ListChecksOutcome(std::move(result.GetError()));
 }
 
 ListOrganizationRecommendationAccountsOutcome TrustedAdvisorClient::ListOrganizationRecommendationAccounts(
     const ListOrganizationRecommendationAccountsRequest& request) const {
-  AWS_OPERATION_GUARD(ListOrganizationRecommendationAccounts);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOrganizationRecommendationAccounts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.OrganizationRecommendationIdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListOrganizationRecommendationAccounts", "Required field: OrganizationRecommendationIdentifier, is not set");
     return ListOrganizationRecommendationAccountsOutcome(
         Aws::Client::AWSError<TrustedAdvisorErrors>(TrustedAdvisorErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                     "Missing required field [OrganizationRecommendationIdentifier]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListOrganizationRecommendationAccounts, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListOrganizationRecommendationAccounts, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListOrganizationRecommendationAccounts",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListOrganizationRecommendationAccountsOutcome>(
-      [&]() -> ListOrganizationRecommendationAccountsOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOrganizationRecommendationAccounts, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/v1/organization-recommendations/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOrganizationRecommendationIdentifier());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/accounts");
-        return ListOrganizationRecommendationAccountsOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/organization-recommendations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOrganizationRecommendationIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/accounts");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListOrganizationRecommendationAccountsOutcome(result.GetResultWithOwnership())
+                            : ListOrganizationRecommendationAccountsOutcome(std::move(result.GetError()));
 }
 
 ListOrganizationRecommendationResourcesOutcome TrustedAdvisorClient::ListOrganizationRecommendationResources(
     const ListOrganizationRecommendationResourcesRequest& request) const {
-  AWS_OPERATION_GUARD(ListOrganizationRecommendationResources);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOrganizationRecommendationResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.OrganizationRecommendationIdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListOrganizationRecommendationResources", "Required field: OrganizationRecommendationIdentifier, is not set");
     return ListOrganizationRecommendationResourcesOutcome(
         Aws::Client::AWSError<TrustedAdvisorErrors>(TrustedAdvisorErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                     "Missing required field [OrganizationRecommendationIdentifier]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListOrganizationRecommendationResources, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListOrganizationRecommendationResources, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListOrganizationRecommendationResources",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListOrganizationRecommendationResourcesOutcome>(
-      [&]() -> ListOrganizationRecommendationResourcesOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOrganizationRecommendationResources, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/v1/organization-recommendations/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOrganizationRecommendationIdentifier());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/resources");
-        return ListOrganizationRecommendationResourcesOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/organization-recommendations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOrganizationRecommendationIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/resources");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListOrganizationRecommendationResourcesOutcome(result.GetResultWithOwnership())
+                            : ListOrganizationRecommendationResourcesOutcome(std::move(result.GetError()));
 }
 
 ListOrganizationRecommendationsOutcome TrustedAdvisorClient::ListOrganizationRecommendations(
     const ListOrganizationRecommendationsRequest& request) const {
-  AWS_OPERATION_GUARD(ListOrganizationRecommendations);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOrganizationRecommendations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListOrganizationRecommendations, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListOrganizationRecommendations, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListOrganizationRecommendations",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListOrganizationRecommendationsOutcome>(
-      [&]() -> ListOrganizationRecommendationsOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOrganizationRecommendations, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/v1/organization-recommendations");
-        return ListOrganizationRecommendationsOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/organization-recommendations");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListOrganizationRecommendationsOutcome(result.GetResultWithOwnership())
+                            : ListOrganizationRecommendationsOutcome(std::move(result.GetError()));
 }
 
 ListRecommendationResourcesOutcome TrustedAdvisorClient::ListRecommendationResources(
     const ListRecommendationResourcesRequest& request) const {
-  AWS_OPERATION_GUARD(ListRecommendationResources);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRecommendationResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RecommendationIdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListRecommendationResources", "Required field: RecommendationIdentifier, is not set");
     return ListRecommendationResourcesOutcome(Aws::Client::AWSError<TrustedAdvisorErrors>(
         TrustedAdvisorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecommendationIdentifier]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListRecommendationResources, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListRecommendationResources, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListRecommendationResources",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListRecommendationResourcesOutcome>(
-      [&]() -> ListRecommendationResourcesOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRecommendationResources, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/v1/recommendations/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommendationIdentifier());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/resources");
-        return ListRecommendationResourcesOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/recommendations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommendationIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/resources");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRecommendationResourcesOutcome(result.GetResultWithOwnership())
+                            : ListRecommendationResourcesOutcome(std::move(result.GetError()));
 }
 
 ListRecommendationsOutcome TrustedAdvisorClient::ListRecommendations(const ListRecommendationsRequest& request) const {
-  AWS_OPERATION_GUARD(ListRecommendations);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRecommendations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListRecommendations, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListRecommendations, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListRecommendations",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListRecommendationsOutcome>(
-      [&]() -> ListRecommendationsOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRecommendations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/v1/recommendations");
-        return ListRecommendationsOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/recommendations");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRecommendationsOutcome(result.GetResultWithOwnership())
+                            : ListRecommendationsOutcome(std::move(result.GetError()));
 }
 
 UpdateOrganizationRecommendationLifecycleOutcome TrustedAdvisorClient::UpdateOrganizationRecommendationLifecycle(
     const UpdateOrganizationRecommendationLifecycleRequest& request) const {
-  AWS_OPERATION_GUARD(UpdateOrganizationRecommendationLifecycle);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateOrganizationRecommendationLifecycle, CoreErrors,
-                          CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.OrganizationRecommendationIdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("UpdateOrganizationRecommendationLifecycle", "Required field: OrganizationRecommendationIdentifier, is not set");
     return UpdateOrganizationRecommendationLifecycleOutcome(
         Aws::Client::AWSError<TrustedAdvisorErrors>(TrustedAdvisorErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                     "Missing required field [OrganizationRecommendationIdentifier]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateOrganizationRecommendationLifecycle, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, UpdateOrganizationRecommendationLifecycle, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateOrganizationRecommendationLifecycle",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<UpdateOrganizationRecommendationLifecycleOutcome>(
-      [&]() -> UpdateOrganizationRecommendationLifecycleOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateOrganizationRecommendationLifecycle, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/v1/organization-recommendations/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOrganizationRecommendationIdentifier());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/lifecycle");
-        return UpdateOrganizationRecommendationLifecycleOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/organization-recommendations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOrganizationRecommendationIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/lifecycle");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateOrganizationRecommendationLifecycleOutcome(result.GetResultWithOwnership())
+                            : UpdateOrganizationRecommendationLifecycleOutcome(std::move(result.GetError()));
 }
 
 UpdateRecommendationLifecycleOutcome TrustedAdvisorClient::UpdateRecommendationLifecycle(
     const UpdateRecommendationLifecycleRequest& request) const {
-  AWS_OPERATION_GUARD(UpdateRecommendationLifecycle);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRecommendationLifecycle, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RecommendationIdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("UpdateRecommendationLifecycle", "Required field: RecommendationIdentifier, is not set");
     return UpdateRecommendationLifecycleOutcome(Aws::Client::AWSError<TrustedAdvisorErrors>(
         TrustedAdvisorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecommendationIdentifier]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateRecommendationLifecycle, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, UpdateRecommendationLifecycle, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateRecommendationLifecycle",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<UpdateRecommendationLifecycleOutcome>(
-      [&]() -> UpdateRecommendationLifecycleOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateRecommendationLifecycle, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/v1/recommendations/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommendationIdentifier());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/lifecycle");
-        return UpdateRecommendationLifecycleOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/recommendations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommendationIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/lifecycle");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateRecommendationLifecycleOutcome(result.GetResultWithOwnership())
+                            : UpdateRecommendationLifecycleOutcome(std::move(result.GetError()));
 }

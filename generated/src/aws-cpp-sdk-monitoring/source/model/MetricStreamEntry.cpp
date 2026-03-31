@@ -203,9 +203,7 @@ MetricStreamEntry& MetricStreamEntry::operator=(const std::shared_ptr<Aws::Crt::
                       Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
                 }
                 m_outputFormatHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -405,9 +403,7 @@ MetricStreamEntry& MetricStreamEntry::operator=(const std::shared_ptr<Aws::Crt::
                     Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
               }
               m_outputFormatHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

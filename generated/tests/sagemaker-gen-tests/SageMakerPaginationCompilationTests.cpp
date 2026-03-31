@@ -52,6 +52,7 @@
 #include <aws/sagemaker/model/ListMlflowAppsPaginationTraits.h>
 #include <aws/sagemaker/model/ListResourceCatalogsPaginationTraits.h>
 #include <aws/sagemaker/model/ListDomainsPaginationTraits.h>
+#include <aws/sagemaker/model/DescribeTrainingPlanExtensionHistoryPaginationTraits.h>
 #include <aws/sagemaker/model/ListContextsPaginationTraits.h>
 #include <aws/sagemaker/model/ListTrainingJobsPaginationTraits.h>
 #include <aws/sagemaker/model/CreateHubContentPresignedUrlsPaginationTraits.h>

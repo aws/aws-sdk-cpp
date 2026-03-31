@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/comprehend/ComprehendPaginationBase.h>
 #include <aws/comprehend/ComprehendServiceClientModel.h>
+#include <aws/comprehend/ComprehendWaiter.h>
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -22,7 +23,8 @@ namespace Comprehend {
  */
 class AWS_COMPREHEND_API ComprehendClient : public Aws::Client::AWSJsonClient,
                                             public Aws::Client::ClientWithAsyncTemplateMethods<ComprehendClient>,
-                                            public ComprehendPaginationBase<ComprehendClient> {
+                                            public ComprehendPaginationBase<ComprehendClient>,
+                                            public ComprehendWaiter<ComprehendClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2692,6 +2694,10 @@ class AWS_COMPREHEND_API ComprehendClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ComprehendClient>;
   void init(const ComprehendClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ComprehendError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   ComprehendClientConfiguration m_clientConfiguration;
   std::shared_ptr<ComprehendEndpointProviderBase> m_endpointProvider;

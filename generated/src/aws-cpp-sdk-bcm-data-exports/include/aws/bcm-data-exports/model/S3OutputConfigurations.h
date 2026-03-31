@@ -37,16 +37,16 @@ class S3OutputConfigurations {
 
   ///@{
   /**
-   * <p>The compression type for the data export.</p>
+   * <p>The output type for the data export.</p>
    */
-  inline CompressionOption GetCompression() const { return m_compression; }
-  inline bool CompressionHasBeenSet() const { return m_compressionHasBeenSet; }
-  inline void SetCompression(CompressionOption value) {
-    m_compressionHasBeenSet = true;
-    m_compression = value;
+  inline S3OutputType GetOutputType() const { return m_outputType; }
+  inline bool OutputTypeHasBeenSet() const { return m_outputTypeHasBeenSet; }
+  inline void SetOutputType(S3OutputType value) {
+    m_outputTypeHasBeenSet = true;
+    m_outputType = value;
   }
-  inline S3OutputConfigurations& WithCompression(CompressionOption value) {
-    SetCompression(value);
+  inline S3OutputConfigurations& WithOutputType(S3OutputType value) {
+    SetOutputType(value);
     return *this;
   }
   ///@}
@@ -69,16 +69,16 @@ class S3OutputConfigurations {
 
   ///@{
   /**
-   * <p>The output type for the data export.</p>
+   * <p>The compression type for the data export.</p>
    */
-  inline S3OutputType GetOutputType() const { return m_outputType; }
-  inline bool OutputTypeHasBeenSet() const { return m_outputTypeHasBeenSet; }
-  inline void SetOutputType(S3OutputType value) {
-    m_outputTypeHasBeenSet = true;
-    m_outputType = value;
+  inline CompressionOption GetCompression() const { return m_compression; }
+  inline bool CompressionHasBeenSet() const { return m_compressionHasBeenSet; }
+  inline void SetCompression(CompressionOption value) {
+    m_compressionHasBeenSet = true;
+    m_compression = value;
   }
-  inline S3OutputConfigurations& WithOutputType(S3OutputType value) {
-    SetOutputType(value);
+  inline S3OutputConfigurations& WithCompression(CompressionOption value) {
+    SetCompression(value);
     return *this;
   }
   ///@}
@@ -103,16 +103,16 @@ class S3OutputConfigurations {
   }
   ///@}
  private:
-  CompressionOption m_compression{CompressionOption::NOT_SET};
+  S3OutputType m_outputType{S3OutputType::NOT_SET};
 
   FormatOption m_format{FormatOption::NOT_SET};
 
-  S3OutputType m_outputType{S3OutputType::NOT_SET};
+  CompressionOption m_compression{CompressionOption::NOT_SET};
 
   OverwriteOption m_overwrite{OverwriteOption::NOT_SET};
-  bool m_compressionHasBeenSet = false;
-  bool m_formatHasBeenSet = false;
   bool m_outputTypeHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_compressionHasBeenSet = false;
   bool m_overwriteHasBeenSet = false;
 };
 

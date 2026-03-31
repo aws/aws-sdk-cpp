@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codeartifact/CodeArtifactPaginationBase.h>
 #include <aws/codeartifact/CodeArtifactServiceClientModel.h>
+#include <aws/codeartifact/CodeArtifactWaiter.h>
 #include <aws/codeartifact/CodeArtifact_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -173,7 +174,8 @@ namespace CodeArtifact {
  */
 class AWS_CODEARTIFACT_API CodeArtifactClient : public Aws::Client::AWSJsonClient,
                                                 public Aws::Client::ClientWithAsyncTemplateMethods<CodeArtifactClient>,
-                                                public CodeArtifactPaginationBase<CodeArtifactClient> {
+                                                public CodeArtifactPaginationBase<CodeArtifactClient>,
+                                                public CodeArtifactWaiter<CodeArtifactClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1739,6 +1741,12 @@ class AWS_CODEARTIFACT_API CodeArtifactClient : public Aws::Client::AWSJsonClien
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeArtifactClient>;
   void init(const CodeArtifactClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CodeArtifactError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   CodeArtifactClientConfiguration m_clientConfiguration;
   std::shared_ptr<CodeArtifactEndpointProviderBase> m_endpointProvider;

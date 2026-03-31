@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/route53profiles/Route53ProfilesPaginationBase.h>
 #include <aws/route53profiles/Route53ProfilesServiceClientModel.h>
+#include <aws/route53profiles/Route53ProfilesWaiter.h>
 #include <aws/route53profiles/Route53Profiles_EXPORTS.h>
 
 namespace Aws {
@@ -20,7 +21,8 @@ namespace Route53Profiles {
  */
 class AWS_ROUTE53PROFILES_API Route53ProfilesClient : public Aws::Client::AWSJsonClient,
                                                       public Aws::Client::ClientWithAsyncTemplateMethods<Route53ProfilesClient>,
-                                                      public Route53ProfilesPaginationBase<Route53ProfilesClient> {
+                                                      public Route53ProfilesPaginationBase<Route53ProfilesClient>,
+                                                      public Route53ProfilesWaiter<Route53ProfilesClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -531,6 +533,12 @@ class AWS_ROUTE53PROFILES_API Route53ProfilesClient : public Aws::Client::AWSJso
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<Route53ProfilesClient>;
   void init(const Route53ProfilesClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, Route53ProfilesError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   Route53ProfilesClientConfiguration m_clientConfiguration;
   std::shared_ptr<Route53ProfilesEndpointProviderBase> m_endpointProvider;

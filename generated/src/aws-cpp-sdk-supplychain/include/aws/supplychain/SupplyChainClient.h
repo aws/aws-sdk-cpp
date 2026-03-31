@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/supplychain/SupplyChainPaginationBase.h>
 #include <aws/supplychain/SupplyChainServiceClientModel.h>
+#include <aws/supplychain/SupplyChainWaiter.h>
 #include <aws/supplychain/SupplyChain_EXPORTS.h>
 
 namespace Aws {
@@ -27,7 +28,8 @@ namespace SupplyChain {
  */
 class AWS_SUPPLYCHAIN_API SupplyChainClient : public Aws::Client::AWSJsonClient,
                                               public Aws::Client::ClientWithAsyncTemplateMethods<SupplyChainClient>,
-                                              public SupplyChainPaginationBase<SupplyChainClient> {
+                                              public SupplyChainPaginationBase<SupplyChainClient>,
+                                              public SupplyChainWaiter<SupplyChainClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -985,6 +987,12 @@ class AWS_SUPPLYCHAIN_API SupplyChainClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SupplyChainClient>;
   void init(const SupplyChainClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SupplyChainError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   SupplyChainClientConfiguration m_clientConfiguration;
   std::shared_ptr<SupplyChainEndpointProviderBase> m_endpointProvider;

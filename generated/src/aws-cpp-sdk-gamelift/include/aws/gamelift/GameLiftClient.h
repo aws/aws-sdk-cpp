@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/gamelift/GameLiftPaginationBase.h>
 #include <aws/gamelift/GameLiftServiceClientModel.h>
+#include <aws/gamelift/GameLiftWaiter.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
 
 namespace Aws {
@@ -57,7 +58,8 @@ namespace GameLift {
  */
 class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSJsonClient,
                                         public Aws::Client::ClientWithAsyncTemplateMethods<GameLiftClient>,
-                                        public GameLiftPaginationBase<GameLiftClient> {
+                                        public GameLiftPaginationBase<GameLiftClient>,
+                                        public GameLiftWaiter<GameLiftClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -3704,15 +3706,12 @@ class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> <b>This API works with the following fleet types:</b> Anywhere</p> <p>Lists
-   * all custom and Amazon Web Services locations where Amazon GameLift Servers can
-   * host game servers. </p> <p>Note that if you call this API using a location that
-   * doesn't have a service endpoint, such as one that can only be a remote location
-   * in a multi-location fleet, the API returns an error.</p> <p>Consult the table of
-   * supported locations in <a
-   * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">Amazon
-   * GameLift Servers service locations</a> to identify home Regions that support
-   * single and multi-location fleets.</p> <p> <b>Learn more</b> </p> <p> <a
+   * <p> <b>This API works with the following fleet types:</b> EC2, Anywhere,
+   * Container</p> <p>Lists all custom and Amazon Web Services locations where Amazon
+   * GameLift Servers can host game servers. This operation also returns UDP ping
+   * beacon information for locations, which you can use to measure network latency
+   * between player devices and potential hosting locations.</p> <p> <b>Learn
+   * more</b> </p> <p> <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">Service
    * locations</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListLocations">AWS
@@ -5371,6 +5370,10 @@ class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<GameLiftClient>;
   void init(const GameLiftClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, GameLiftError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   GameLiftClientConfiguration m_clientConfiguration;
   std::shared_ptr<GameLiftEndpointProviderBase> m_endpointProvider;

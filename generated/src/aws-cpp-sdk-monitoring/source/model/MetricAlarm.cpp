@@ -845,9 +845,7 @@ MetricAlarm& MetricAlarm::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDe
                   }
                 }
                 m_stateTransitionedTimestampHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -1688,9 +1686,7 @@ MetricAlarm& MetricAlarm::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDe
                 }
               }
               m_stateTransitionedTimestampHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

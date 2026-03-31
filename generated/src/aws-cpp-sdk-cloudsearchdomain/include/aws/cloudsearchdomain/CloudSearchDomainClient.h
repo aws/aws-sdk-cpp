@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cloudsearchdomain/CloudSearchDomainPaginationBase.h>
 #include <aws/cloudsearchdomain/CloudSearchDomainServiceClientModel.h>
+#include <aws/cloudsearchdomain/CloudSearchDomainWaiter.h>
 #include <aws/cloudsearchdomain/CloudSearchDomain_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -28,7 +29,8 @@ namespace CloudSearchDomain {
  */
 class AWS_CLOUDSEARCHDOMAIN_API CloudSearchDomainClient : public Aws::Client::AWSJsonClient,
                                                           public Aws::Client::ClientWithAsyncTemplateMethods<CloudSearchDomainClient>,
-                                                          public CloudSearchDomainPaginationBase<CloudSearchDomainClient> {
+                                                          public CloudSearchDomainPaginationBase<CloudSearchDomainClient>,
+                                                          public CloudSearchDomainWaiter<CloudSearchDomainClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -222,6 +224,12 @@ class AWS_CLOUDSEARCHDOMAIN_API CloudSearchDomainClient : public Aws::Client::AW
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudSearchDomainClient>;
   void init(const CloudSearchDomainClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CloudSearchDomainError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   CloudSearchDomainClientConfiguration m_clientConfiguration;
   std::shared_ptr<CloudSearchDomainEndpointProviderBase> m_endpointProvider;

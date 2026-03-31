@@ -26,6 +26,12 @@ class JsonValue;
 }  // namespace Utils
 namespace deadline {
 namespace Model {
+/**
+ * <p>Session lifecycle/status fields, ordered after IDs in session
+ * shapes.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetSessionResponse">AWS
+ * API Reference</a></p>
+ */
 class GetSessionResult {
  public:
   AWS_DEADLINE_API GetSessionResult() = default;
@@ -102,23 +108,6 @@ class GetSessionResult {
 
   ///@{
   /**
-   * <p>The session log.</p>
-   */
-  inline const LogConfiguration& GetLog() const { return m_log; }
-  template <typename LogT = LogConfiguration>
-  void SetLog(LogT&& value) {
-    m_logHasBeenSet = true;
-    m_log = std::forward<LogT>(value);
-  }
-  template <typename LogT = LogConfiguration>
-  GetSessionResult& WithLog(LogT&& value) {
-    SetLog(std::forward<LogT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The life cycle status of the session.</p>
    */
   inline SessionLifecycleStatus GetLifecycleStatus() const { return m_lifecycleStatus; }
@@ -145,6 +134,21 @@ class GetSessionResult {
   template <typename EndedAtT = Aws::Utils::DateTime>
   GetSessionResult& WithEndedAt(EndedAtT&& value) {
     SetEndedAt(std::forward<EndedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The life cycle status with which the session started.</p>
+   */
+  inline SessionLifecycleTargetStatus GetTargetLifecycleStatus() const { return m_targetLifecycleStatus; }
+  inline void SetTargetLifecycleStatus(SessionLifecycleTargetStatus value) {
+    m_targetLifecycleStatusHasBeenSet = true;
+    m_targetLifecycleStatus = value;
+  }
+  inline GetSessionResult& WithTargetLifecycleStatus(SessionLifecycleTargetStatus value) {
+    SetTargetLifecycleStatus(value);
     return *this;
   }
   ///@}
@@ -185,15 +189,17 @@ class GetSessionResult {
 
   ///@{
   /**
-   * <p>The life cycle status with which the session started.</p>
+   * <p>The session log.</p>
    */
-  inline SessionLifecycleTargetStatus GetTargetLifecycleStatus() const { return m_targetLifecycleStatus; }
-  inline void SetTargetLifecycleStatus(SessionLifecycleTargetStatus value) {
-    m_targetLifecycleStatusHasBeenSet = true;
-    m_targetLifecycleStatus = value;
+  inline const LogConfiguration& GetLog() const { return m_log; }
+  template <typename LogT = LogConfiguration>
+  void SetLog(LogT&& value) {
+    m_logHasBeenSet = true;
+    m_log = std::forward<LogT>(value);
   }
-  inline GetSessionResult& WithTargetLifecycleStatus(SessionLifecycleTargetStatus value) {
-    SetTargetLifecycleStatus(value);
+  template <typename LogT = LogConfiguration>
+  GetSessionResult& WithLog(LogT&& value) {
+    SetLog(std::forward<LogT>(value));
     return *this;
   }
   ///@}
@@ -257,17 +263,17 @@ class GetSessionResult {
 
   Aws::Utils::DateTime m_startedAt{};
 
-  LogConfiguration m_log;
-
   SessionLifecycleStatus m_lifecycleStatus{SessionLifecycleStatus::NOT_SET};
 
   Aws::Utils::DateTime m_endedAt{};
+
+  SessionLifecycleTargetStatus m_targetLifecycleStatus{SessionLifecycleTargetStatus::NOT_SET};
 
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::String m_updatedBy;
 
-  SessionLifecycleTargetStatus m_targetLifecycleStatus{SessionLifecycleTargetStatus::NOT_SET};
+  LogConfiguration m_log;
 
   HostPropertiesResponse m_hostProperties;
 
@@ -279,12 +285,12 @@ class GetSessionResult {
   bool m_fleetIdHasBeenSet = false;
   bool m_workerIdHasBeenSet = false;
   bool m_startedAtHasBeenSet = false;
-  bool m_logHasBeenSet = false;
   bool m_lifecycleStatusHasBeenSet = false;
   bool m_endedAtHasBeenSet = false;
+  bool m_targetLifecycleStatusHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_updatedByHasBeenSet = false;
-  bool m_targetLifecycleStatusHasBeenSet = false;
+  bool m_logHasBeenSet = false;
   bool m_hostPropertiesHasBeenSet = false;
   bool m_workerLogHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

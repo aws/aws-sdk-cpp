@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ssm/SSMPaginationBase.h>
 #include <aws/ssm/SSMServiceClientModel.h>
+#include <aws/ssm/SSMWaiter.h>
 #include <aws/ssm/SSM_EXPORTS.h>
 
 namespace Aws {
@@ -44,7 +45,8 @@ namespace SSM {
  */
 class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<SSMClient>,
-                              public SSMPaginationBase<SSMClient> {
+                              public SSMPaginationBase<SSMClient>,
+                              public SSMWaiter<SSMClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -4771,6 +4773,10 @@ class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SSMClient>;
   void init(const SSMClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SSMError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   SSMClientConfiguration m_clientConfiguration;
   std::shared_ptr<SSMEndpointProviderBase> m_endpointProvider;

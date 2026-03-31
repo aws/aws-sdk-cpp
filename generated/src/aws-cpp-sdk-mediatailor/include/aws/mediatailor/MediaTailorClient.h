@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mediatailor/MediaTailorPaginationBase.h>
 #include <aws/mediatailor/MediaTailorServiceClientModel.h>
+#include <aws/mediatailor/MediaTailorWaiter.h>
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
 
 namespace Aws {
@@ -29,7 +30,8 @@ namespace MediaTailor {
  */
 class AWS_MEDIATAILOR_API MediaTailorClient : public Aws::Client::AWSJsonClient,
                                               public Aws::Client::ClientWithAsyncTemplateMethods<MediaTailorClient>,
-                                              public MediaTailorPaginationBase<MediaTailorClient> {
+                                              public MediaTailorPaginationBase<MediaTailorClient>,
+                                              public MediaTailorWaiter<MediaTailorClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1329,6 +1331,12 @@ class AWS_MEDIATAILOR_API MediaTailorClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MediaTailorClient>;
   void init(const MediaTailorClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MediaTailorError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   MediaTailorClientConfiguration m_clientConfiguration;
   std::shared_ptr<MediaTailorEndpointProviderBase> m_endpointProvider;

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cloudtrail/CloudTrailPaginationBase.h>
 #include <aws/cloudtrail/CloudTrailServiceClientModel.h>
+#include <aws/cloudtrail/CloudTrailWaiter.h>
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -37,7 +38,8 @@ namespace CloudTrail {
  */
 class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
                                             public Aws::Client::ClientWithAsyncTemplateMethods<CloudTrailClient>,
-                                            public CloudTrailPaginationBase<CloudTrailClient> {
+                                            public CloudTrailPaginationBase<CloudTrailClient>,
+                                            public CloudTrailWaiter<CloudTrailClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2074,6 +2076,10 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudTrailClient>;
   void init(const CloudTrailClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CloudTrailError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   CloudTrailClientConfiguration m_clientConfiguration;
   std::shared_ptr<CloudTrailEndpointProviderBase> m_endpointProvider;

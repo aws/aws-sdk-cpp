@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/Optional.h>
 
 #include <utility>
 
@@ -99,22 +100,27 @@ class SearchCasesResponseItem {
    * <p>A map of of key-value pairs that represent tags on a resource. Tags are used
    * to organize, track, or control access for this resource.</p>
    */
-  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+  inline const Aws::Map<Aws::String, Aws::Crt::Optional<Aws::String>>& GetTags() const { return m_tags; }
   inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  template <typename TagsT = Aws::Map<Aws::String, Aws::Crt::Optional<Aws::String>>>
   void SetTags(TagsT&& value) {
     m_tagsHasBeenSet = true;
     m_tags = std::forward<TagsT>(value);
   }
-  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  template <typename TagsT = Aws::Map<Aws::String, Aws::Crt::Optional<Aws::String>>>
   SearchCasesResponseItem& WithTags(TagsT&& value) {
     SetTags(std::forward<TagsT>(value));
     return *this;
   }
-  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::Crt::Optional<Aws::String>>
   SearchCasesResponseItem& AddTags(TagsKeyT&& key, TagsValueT&& value) {
     m_tagsHasBeenSet = true;
     m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
+    return *this;
+  }
+  inline SearchCasesResponseItem& AddTags(Aws::String key, Aws::Crt::Optional<Aws::String> value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace(key, value);
     return *this;
   }
   ///@}
@@ -125,7 +131,7 @@ class SearchCasesResponseItem {
 
   Aws::Vector<FieldValue> m_fields;
 
-  Aws::Map<Aws::String, Aws::String> m_tags;
+  Aws::Map<Aws::String, Aws::Crt::Optional<Aws::String>> m_tags;
   bool m_caseIdHasBeenSet = false;
   bool m_templateIdHasBeenSet = false;
   bool m_fieldsHasBeenSet = false;

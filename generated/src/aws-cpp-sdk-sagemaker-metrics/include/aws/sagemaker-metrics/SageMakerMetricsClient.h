@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sagemaker-metrics/SageMakerMetricsPaginationBase.h>
 #include <aws/sagemaker-metrics/SageMakerMetricsServiceClientModel.h>
+#include <aws/sagemaker-metrics/SageMakerMetricsWaiter.h>
 #include <aws/sagemaker-metrics/SageMakerMetrics_EXPORTS.h>
 
 namespace Aws {
@@ -23,7 +24,8 @@ namespace SageMakerMetrics {
  */
 class AWS_SAGEMAKERMETRICS_API SageMakerMetricsClient : public Aws::Client::AWSJsonClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<SageMakerMetricsClient>,
-                                                        public SageMakerMetricsPaginationBase<SageMakerMetricsClient> {
+                                                        public SageMakerMetricsPaginationBase<SageMakerMetricsClient>,
+                                                        public SageMakerMetricsWaiter<SageMakerMetricsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -139,6 +141,12 @@ class AWS_SAGEMAKERMETRICS_API SageMakerMetricsClient : public Aws::Client::AWSJ
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SageMakerMetricsClient>;
   void init(const SageMakerMetricsClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SageMakerMetricsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   SageMakerMetricsClientConfiguration m_clientConfiguration;
   std::shared_ptr<SageMakerMetricsEndpointProviderBase> m_endpointProvider;

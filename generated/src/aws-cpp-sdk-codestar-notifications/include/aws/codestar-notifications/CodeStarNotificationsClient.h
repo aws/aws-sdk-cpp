@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codestar-notifications/CodeStarNotificationsPaginationBase.h>
 #include <aws/codestar-notifications/CodeStarNotificationsServiceClientModel.h>
+#include <aws/codestar-notifications/CodeStarNotificationsWaiter.h>
 #include <aws/codestar-notifications/CodeStarNotifications_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -47,7 +48,8 @@ namespace CodeStarNotifications {
 class AWS_CODESTARNOTIFICATIONS_API CodeStarNotificationsClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<CodeStarNotificationsClient>,
-      public CodeStarNotificationsPaginationBase<CodeStarNotificationsClient> {
+      public CodeStarNotificationsPaginationBase<CodeStarNotificationsClient>,
+      public CodeStarNotificationsWaiter<CodeStarNotificationsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -470,6 +472,12 @@ class AWS_CODESTARNOTIFICATIONS_API CodeStarNotificationsClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeStarNotificationsClient>;
   void init(const CodeStarNotificationsClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CodeStarNotificationsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   CodeStarNotificationsClientConfiguration m_clientConfiguration;
   std::shared_ptr<CodeStarNotificationsEndpointProviderBase> m_endpointProvider;

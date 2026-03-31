@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2PaginationBase.h>
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2ServiceClientModel.h>
+#include <aws/kinesisanalyticsv2/KinesisAnalyticsV2Waiter.h>
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
 
 namespace Aws {
@@ -25,7 +26,8 @@ namespace KinesisAnalyticsV2 {
  */
 class AWS_KINESISANALYTICSV2_API KinesisAnalyticsV2Client : public Aws::Client::AWSJsonClient,
                                                             public Aws::Client::ClientWithAsyncTemplateMethods<KinesisAnalyticsV2Client>,
-                                                            public KinesisAnalyticsV2PaginationBase<KinesisAnalyticsV2Client> {
+                                                            public KinesisAnalyticsV2PaginationBase<KinesisAnalyticsV2Client>,
+                                                            public KinesisAnalyticsV2Waiter<KinesisAnalyticsV2Client> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1140,6 +1142,10 @@ class AWS_KINESISANALYTICSV2_API KinesisAnalyticsV2Client : public Aws::Client::
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<KinesisAnalyticsV2Client>;
   void init(const KinesisAnalyticsV2ClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, KinesisAnalyticsV2Error> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   KinesisAnalyticsV2ClientConfiguration m_clientConfiguration;
   std::shared_ptr<KinesisAnalyticsV2EndpointProviderBase> m_endpointProvider;

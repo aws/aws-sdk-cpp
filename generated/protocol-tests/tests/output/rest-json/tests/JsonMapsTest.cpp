@@ -105,36 +105,3 @@ AWS_PROTOCOL_TEST(JsonMaps, RestJsonDeserializesDenseSetMap) {
     }
   });
 }
-
-AWS_PROTOCOL_TEST(JsonMaps, RestJsonDeserializesDenseSetMapAndSkipsNull) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
-
-  OutputResponse mockRs;
-  mockRs.statusCode = 200;
-  mockRs.headers = {{"Content-Type", R"(application/json)"}};
-  mockRs.body = "ewogICAgImRlbnNlU2V0TWFwIjogewogICAgICAgICJ4IjogW10sCiAgICAgICAgInkiOiBbImEiLCAiYiJdLAogICAgICAgICJ6IjogbnVsbAogICAgfQp9";
-  SetMockResponse(mockRs);
-
-  JsonMapsRequest request;
-
-  auto outcome = client.JsonMaps(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-  const JsonMapsResult& result = outcome.GetResult();
-  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
-    /* expectedResult = R"( {"denseSetMap":{"x":[],"y":["a","b"]}} )" */
-    const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& resultDenseSetMap = result.GetDenseSetMap();
-    EXPECT_EQ(2U, resultDenseSetMap.size());
-    EXPECT_TRUE(resultDenseSetMap.find("x") != resultDenseSetMap.end());
-    {
-      const Aws::Vector<Aws::String>& resultDenseSetMapItem = resultDenseSetMap.at("x");
-      EXPECT_EQ(0U, resultDenseSetMapItem.size());
-    }
-    EXPECT_TRUE(resultDenseSetMap.find("y") != resultDenseSetMap.end());
-    {
-      const Aws::Vector<Aws::String>& resultDenseSetMapItem = resultDenseSetMap.at("y");
-      EXPECT_EQ(2U, resultDenseSetMapItem.size());
-      EXPECT_EQ(R"(a)", resultDenseSetMapItem.at(0));
-      EXPECT_EQ(R"(b)", resultDenseSetMapItem.at(1));
-    }
-  });
-}

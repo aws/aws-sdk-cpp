@@ -179,9 +179,7 @@ MetricDataQuery& MetricDataQuery::operator=(const std::shared_ptr<Aws::Crt::Cbor
                   }
                 }
                 m_accountIdHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -357,9 +355,7 @@ MetricDataQuery& MetricDataQuery::operator=(const std::shared_ptr<Aws::Crt::Cbor
                 }
               }
               m_accountIdHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

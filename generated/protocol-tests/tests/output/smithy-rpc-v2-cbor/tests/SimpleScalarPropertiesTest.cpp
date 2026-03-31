@@ -16,7 +16,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborSimpleScalarProperties) {
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  mockRs.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Content-Type", R"(application/cbor)"}};
   mockRs.body =
       "v3B0cnVlQm9vbGVhblZhbHVl9XFmYWxzZUJvb2xlYW5WYWx1ZfRpYnl0ZVZhbHVlBWtkb3VibGVWYWx1Zfs//"
       "jlYEGJN02pmbG9hdFZhbHVl+kD0AABsaW50ZWdlclZhbHVlGQEAanNob3J0VmFsdWUZJqprc3RyaW5nVmFsdWVmc2ltcGxlaWJsb2JWYWx1ZUNmb2//";
@@ -48,7 +48,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborSimpleScalarPropertiesUsingDe
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  mockRs.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Content-Type", R"(application/cbor)"}};
   mockRs.body =
       "qXB0cnVlQm9vbGVhblZhbHVl9XFmYWxzZUJvb2xlYW5WYWx1ZfRpYnl0ZVZhbHVlBWtkb3VibGVWYWx1Zfs//"
       "jlYEGJN02pmbG9hdFZhbHVl+kD0AABsaW50ZWdlclZhbHVlGQEAanNob3J0VmFsdWUZJqprc3RyaW5nVmFsdWVmc2ltcGxlaWJsb2JWYWx1ZUNmb28=";
@@ -80,7 +80,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborClientDoesntDeserializeNullSt
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  mockRs.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Content-Type", R"(application/cbor)"}};
   mockRs.body = "v2tzdHJpbmdWYWx1Zfb/";
   SetMockResponse(mockRs);
 
@@ -98,7 +98,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborSupportsNaNFloatOutputs) {
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  mockRs.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Content-Type", R"(application/cbor)"}};
   mockRs.body = "v2tkb3VibGVWYWx1Zft/+AAAAAAAAGpmbG9hdFZhbHVl+n/AAAD/";
   SetMockResponse(mockRs);
 
@@ -119,7 +119,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborSupportsInfinityFloatOutputs)
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  mockRs.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Content-Type", R"(application/cbor)"}};
   mockRs.body = "v2tkb3VibGVWYWx1Zft/8AAAAAAAAGpmbG9hdFZhbHVl+n+AAAD/";
   SetMockResponse(mockRs);
 
@@ -140,7 +140,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborSupportsNegativeInfinityFloat
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  mockRs.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Content-Type", R"(application/cbor)"}};
   mockRs.body = "v2tkb3VibGVWYWx1Zfv/8AAAAAAAAGpmbG9hdFZhbHVl+v+AAAD/";
   SetMockResponse(mockRs);
 
@@ -161,7 +161,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborSupportsUpcastingDataOnDeseri
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  mockRs.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Content-Type", R"(application/cbor)"}};
   mockRs.body = "v2tkb3VibGVWYWx1Zfk+AGpmbG9hdFZhbHVl+UegbGludGVnZXJWYWx1ZRg4aWxvbmdWYWx1ZRkBAGpzaG9ydFZhbHVlCv8=";
   SetMockResponse(mockRs);
 
@@ -185,7 +185,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborExtraFieldsInTheBodyShouldBeS
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  mockRs.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Content-Type", R"(application/cbor)"}};
   mockRs.body =
       "v2lieXRlVmFsdWUFa2RvdWJsZVZhbHVl+z/+OVgQYk3TcWZhbHNlQm9vbGVhblZhbHVl9GpmbG9hdFZhbHVl+kD0AABrZXh0cmFPYmplY3S/"
       "c2luZGVmaW5pdGVMZW5ndGhNYXC/a3dpdGhBbkFycmF5nwECA///"

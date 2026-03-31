@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bcm-dashboards/BCMDashboardsPaginationBase.h>
 #include <aws/bcm-dashboards/BCMDashboardsServiceClientModel.h>
+#include <aws/bcm-dashboards/BCMDashboardsWaiter.h>
 #include <aws/bcm-dashboards/BCMDashboards_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -28,7 +29,8 @@ namespace BCMDashboards {
  */
 class AWS_BCMDASHBOARDS_API BCMDashboardsClient : public Aws::Client::AWSJsonClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<BCMDashboardsClient>,
-                                                  public BCMDashboardsPaginationBase<BCMDashboardsClient> {
+                                                  public BCMDashboardsPaginationBase<BCMDashboardsClient>,
+                                                  public BCMDashboardsWaiter<BCMDashboardsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -330,6 +332,10 @@ class AWS_BCMDASHBOARDS_API BCMDashboardsClient : public Aws::Client::AWSJsonCli
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BCMDashboardsClient>;
   void init(const BCMDashboardsClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, BCMDashboardsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   BCMDashboardsClientConfiguration m_clientConfiguration;
   std::shared_ptr<BCMDashboardsEndpointProviderBase> m_endpointProvider;

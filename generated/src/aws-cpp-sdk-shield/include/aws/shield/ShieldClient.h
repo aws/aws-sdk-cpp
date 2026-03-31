@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/shield/ShieldPaginationBase.h>
 #include <aws/shield/ShieldServiceClientModel.h>
+#include <aws/shield/ShieldWaiter.h>
 #include <aws/shield/Shield_EXPORTS.h>
 
 namespace Aws {
@@ -25,7 +26,8 @@ namespace Shield {
  */
 class AWS_SHIELD_API ShieldClient : public Aws::Client::AWSJsonClient,
                                     public Aws::Client::ClientWithAsyncTemplateMethods<ShieldClient>,
-                                    public ShieldPaginationBase<ShieldClient> {
+                                    public ShieldPaginationBase<ShieldClient>,
+                                    public ShieldWaiter<ShieldClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1192,6 +1194,10 @@ class AWS_SHIELD_API ShieldClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ShieldClient>;
   void init(const ShieldClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ShieldError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   ShieldClientConfiguration m_clientConfiguration;
   std::shared_ptr<ShieldEndpointProviderBase> m_endpointProvider;

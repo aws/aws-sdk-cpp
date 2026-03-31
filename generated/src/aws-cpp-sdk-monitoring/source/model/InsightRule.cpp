@@ -164,9 +164,7 @@ InsightRule& InsightRule::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDe
                   m_applyOnTransformedLogs = val.value();
                 }
                 m_applyOnTransformedLogsHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -327,9 +325,7 @@ InsightRule& InsightRule::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDe
                 m_applyOnTransformedLogs = val.value();
               }
               m_applyOnTransformedLogsHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

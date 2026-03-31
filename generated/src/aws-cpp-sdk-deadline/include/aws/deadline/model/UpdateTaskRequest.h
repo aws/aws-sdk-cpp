@@ -34,41 +34,6 @@ class UpdateTaskRequest : public DeadlineRequest {
 
   ///@{
   /**
-   * <p>The unique token which the server uses to recognize retries of the same
-   * request.</p>
-   */
-  inline const Aws::String& GetClientToken() const { return m_clientToken; }
-  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-  template <typename ClientTokenT = Aws::String>
-  void SetClientToken(ClientTokenT&& value) {
-    m_clientTokenHasBeenSet = true;
-    m_clientToken = std::forward<ClientTokenT>(value);
-  }
-  template <typename ClientTokenT = Aws::String>
-  UpdateTaskRequest& WithClientToken(ClientTokenT&& value) {
-    SetClientToken(std::forward<ClientTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The run status with which to start the task.</p>
-   */
-  inline TaskTargetRunStatus GetTargetRunStatus() const { return m_targetRunStatus; }
-  inline bool TargetRunStatusHasBeenSet() const { return m_targetRunStatusHasBeenSet; }
-  inline void SetTargetRunStatus(TaskTargetRunStatus value) {
-    m_targetRunStatusHasBeenSet = true;
-    m_targetRunStatus = value;
-  }
-  inline UpdateTaskRequest& WithTargetRunStatus(TaskTargetRunStatus value) {
-    SetTargetRunStatus(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The farm ID to update.</p>
    */
   inline const Aws::String& GetFarmId() const { return m_farmId; }
@@ -156,11 +121,42 @@ class UpdateTaskRequest : public DeadlineRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The unique token which the server uses to recognize retries of the same
+   * request.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  UpdateTaskRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The run status with which to start the task.</p>
+   */
+  inline TaskTargetRunStatus GetTargetRunStatus() const { return m_targetRunStatus; }
+  inline bool TargetRunStatusHasBeenSet() const { return m_targetRunStatusHasBeenSet; }
+  inline void SetTargetRunStatus(TaskTargetRunStatus value) {
+    m_targetRunStatusHasBeenSet = true;
+    m_targetRunStatus = value;
+  }
+  inline UpdateTaskRequest& WithTargetRunStatus(TaskTargetRunStatus value) {
+    SetTargetRunStatus(value);
+    return *this;
+  }
+  ///@}
  private:
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-
-  TaskTargetRunStatus m_targetRunStatus{TaskTargetRunStatus::NOT_SET};
-
   Aws::String m_farmId;
 
   Aws::String m_queueId;
@@ -170,13 +166,17 @@ class UpdateTaskRequest : public DeadlineRequest {
   Aws::String m_stepId;
 
   Aws::String m_taskId;
-  bool m_clientTokenHasBeenSet = true;
-  bool m_targetRunStatusHasBeenSet = false;
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+
+  TaskTargetRunStatus m_targetRunStatus{TaskTargetRunStatus::NOT_SET};
   bool m_farmIdHasBeenSet = false;
   bool m_queueIdHasBeenSet = false;
   bool m_jobIdHasBeenSet = false;
   bool m_stepIdHasBeenSet = false;
   bool m_taskIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_targetRunStatusHasBeenSet = false;
 };
 
 }  // namespace Model

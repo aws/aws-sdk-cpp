@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codebuild/CodeBuildPaginationBase.h>
 #include <aws/codebuild/CodeBuildServiceClientModel.h>
+#include <aws/codebuild/CodeBuildWaiter.h>
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -29,7 +30,8 @@ namespace CodeBuild {
  */
 class AWS_CODEBUILD_API CodeBuildClient : public Aws::Client::AWSJsonClient,
                                           public Aws::Client::ClientWithAsyncTemplateMethods<CodeBuildClient>,
-                                          public CodeBuildPaginationBase<CodeBuildClient> {
+                                          public CodeBuildPaginationBase<CodeBuildClient>,
+                                          public CodeBuildWaiter<CodeBuildClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1705,6 +1707,10 @@ class AWS_CODEBUILD_API CodeBuildClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeBuildClient>;
   void init(const CodeBuildClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CodeBuildError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   CodeBuildClientConfiguration m_clientConfiguration;
   std::shared_ptr<CodeBuildEndpointProviderBase> m_endpointProvider;

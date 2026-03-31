@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lightsail/LightsailPaginationBase.h>
 #include <aws/lightsail/LightsailServiceClientModel.h>
+#include <aws/lightsail/LightsailWaiter.h>
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 
 namespace Aws {
@@ -36,7 +37,8 @@ namespace Lightsail {
  */
 class AWS_LIGHTSAIL_API LightsailClient : public Aws::Client::AWSJsonClient,
                                           public Aws::Client::ClientWithAsyncTemplateMethods<LightsailClient>,
-                                          public LightsailPaginationBase<LightsailClient> {
+                                          public LightsailPaginationBase<LightsailClient>,
+                                          public LightsailWaiter<LightsailClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -5174,6 +5176,10 @@ class AWS_LIGHTSAIL_API LightsailClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<LightsailClient>;
   void init(const LightsailClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, LightsailError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   LightsailClientConfiguration m_clientConfiguration;
   std::shared_ptr<LightsailEndpointProviderBase> m_endpointProvider;

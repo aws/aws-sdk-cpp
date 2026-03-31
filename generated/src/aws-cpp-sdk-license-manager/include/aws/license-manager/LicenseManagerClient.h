@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/license-manager/LicenseManagerPaginationBase.h>
 #include <aws/license-manager/LicenseManagerServiceClientModel.h>
+#include <aws/license-manager/LicenseManagerWaiter.h>
 #include <aws/license-manager/LicenseManager_EXPORTS.h>
 
 namespace Aws {
@@ -20,7 +21,8 @@ namespace LicenseManager {
  */
 class AWS_LICENSEMANAGER_API LicenseManagerClient : public Aws::Client::AWSJsonClient,
                                                     public Aws::Client::ClientWithAsyncTemplateMethods<LicenseManagerClient>,
-                                                    public LicenseManagerPaginationBase<LicenseManagerClient> {
+                                                    public LicenseManagerPaginationBase<LicenseManagerClient>,
+                                                    public LicenseManagerWaiter<LicenseManagerClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1831,6 +1833,10 @@ class AWS_LICENSEMANAGER_API LicenseManagerClient : public Aws::Client::AWSJsonC
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<LicenseManagerClient>;
   void init(const LicenseManagerClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, LicenseManagerError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   LicenseManagerClientConfiguration m_clientConfiguration;
   std::shared_ptr<LicenseManagerEndpointProviderBase> m_endpointProvider;

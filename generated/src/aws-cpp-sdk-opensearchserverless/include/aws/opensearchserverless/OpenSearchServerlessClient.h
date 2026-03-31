@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/opensearchserverless/OpenSearchServerlessPaginationBase.h>
 #include <aws/opensearchserverless/OpenSearchServerlessServiceClientModel.h>
+#include <aws/opensearchserverless/OpenSearchServerlessWaiter.h>
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 
 namespace Aws {
@@ -29,7 +30,8 @@ namespace OpenSearchServerless {
 class AWS_OPENSEARCHSERVERLESS_API OpenSearchServerlessClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<OpenSearchServerlessClient>,
-      public OpenSearchServerlessPaginationBase<OpenSearchServerlessClient> {
+      public OpenSearchServerlessPaginationBase<OpenSearchServerlessClient>,
+      public OpenSearchServerlessWaiter<OpenSearchServerlessClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1454,6 +1456,10 @@ class AWS_OPENSEARCHSERVERLESS_API OpenSearchServerlessClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<OpenSearchServerlessClient>;
   void init(const OpenSearchServerlessClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, OpenSearchServerlessError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   OpenSearchServerlessClientConfiguration m_clientConfiguration;
   std::shared_ptr<OpenSearchServerlessEndpointProviderBase> m_endpointProvider;

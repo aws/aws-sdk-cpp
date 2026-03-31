@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/forecastquery/ForecastQueryServicePaginationBase.h>
 #include <aws/forecastquery/ForecastQueryServiceServiceClientModel.h>
+#include <aws/forecastquery/ForecastQueryServiceWaiter.h>
 #include <aws/forecastquery/ForecastQueryService_EXPORTS.h>
 
 namespace Aws {
@@ -20,7 +21,8 @@ namespace ForecastQueryService {
 class AWS_FORECASTQUERYSERVICE_API ForecastQueryServiceClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<ForecastQueryServiceClient>,
-      public ForecastQueryServicePaginationBase<ForecastQueryServiceClient> {
+      public ForecastQueryServicePaginationBase<ForecastQueryServiceClient>,
+      public ForecastQueryServiceWaiter<ForecastQueryServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -146,6 +148,10 @@ class AWS_FORECASTQUERYSERVICE_API ForecastQueryServiceClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ForecastQueryServiceClient>;
   void init(const ForecastQueryServiceClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ForecastQueryServiceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   ForecastQueryServiceClientConfiguration m_clientConfiguration;
   std::shared_ptr<ForecastQueryServiceEndpointProviderBase> m_endpointProvider;

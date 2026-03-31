@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/route53resolver/Route53ResolverPaginationBase.h>
 #include <aws/route53resolver/Route53ResolverServiceClientModel.h>
+#include <aws/route53resolver/Route53ResolverWaiter.h>
 #include <aws/route53resolver/Route53Resolver_EXPORTS.h>
 
 namespace Aws {
@@ -47,7 +48,8 @@ namespace Route53Resolver {
  */
 class AWS_ROUTE53RESOLVER_API Route53ResolverClient : public Aws::Client::AWSJsonClient,
                                                       public Aws::Client::ClientWithAsyncTemplateMethods<Route53ResolverClient>,
-                                                      public Route53ResolverPaginationBase<Route53ResolverClient> {
+                                                      public Route53ResolverPaginationBase<Route53ResolverClient>,
+                                                      public Route53ResolverWaiter<Route53ResolverClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2136,6 +2138,10 @@ class AWS_ROUTE53RESOLVER_API Route53ResolverClient : public Aws::Client::AWSJso
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<Route53ResolverClient>;
   void init(const Route53ResolverClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, Route53ResolverError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   Route53ResolverClientConfiguration m_clientConfiguration;
   std::shared_ptr<Route53ResolverEndpointProviderBase> m_endpointProvider;

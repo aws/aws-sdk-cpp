@@ -16,13 +16,13 @@ AWS_PROTOCOL_TEST(TimestampFormatHeaders, RestJsonTimestampFormatHeaders) {
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"X-defaultFormat", R"(Mon, 16 Dec 2019 23:48:18 GMT)"},
-                    {"X-memberDateTime", R"(2019-12-16T23:48:18Z)"},
-                    {"X-memberEpochSeconds", R"(1576540098)"},
+  mockRs.headers = {{"X-memberDateTime", R"(2019-12-16T23:48:18Z)"},
+                    {"X-targetHttpDate", R"(Mon, 16 Dec 2019 23:48:18 GMT)"},
                     {"X-memberHttpDate", R"(Mon, 16 Dec 2019 23:48:18 GMT)"},
                     {"X-targetDateTime", R"(2019-12-16T23:48:18Z)"},
                     {"X-targetEpochSeconds", R"(1576540098)"},
-                    {"X-targetHttpDate", R"(Mon, 16 Dec 2019 23:48:18 GMT)"}};
+                    {"X-memberEpochSeconds", R"(1576540098)"},
+                    {"X-defaultFormat", R"(Mon, 16 Dec 2019 23:48:18 GMT)"}};
   SetMockResponse(mockRs);
 
   TimestampFormatHeadersRequest request;

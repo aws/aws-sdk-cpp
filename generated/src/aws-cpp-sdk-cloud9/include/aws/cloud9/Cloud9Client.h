@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cloud9/Cloud9PaginationBase.h>
 #include <aws/cloud9/Cloud9ServiceClientModel.h>
+#include <aws/cloud9/Cloud9Waiter.h>
 #include <aws/cloud9/Cloud9_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -47,7 +48,8 @@ namespace Cloud9 {
  */
 class AWS_CLOUD9_API Cloud9Client : public Aws::Client::AWSJsonClient,
                                     public Aws::Client::ClientWithAsyncTemplateMethods<Cloud9Client>,
-                                    public Cloud9PaginationBase<Cloud9Client> {
+                                    public Cloud9PaginationBase<Cloud9Client>,
+                                    public Cloud9Waiter<Cloud9Client> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -519,6 +521,10 @@ class AWS_CLOUD9_API Cloud9Client : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<Cloud9Client>;
   void init(const Cloud9ClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, Cloud9Error> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   Cloud9ClientConfiguration m_clientConfiguration;
   std::shared_ptr<Cloud9EndpointProviderBase> m_endpointProvider;

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codecommit/CodeCommitPaginationBase.h>
 #include <aws/codecommit/CodeCommitServiceClientModel.h>
+#include <aws/codecommit/CodeCommitWaiter.h>
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -180,7 +181,8 @@ namespace CodeCommit {
  */
 class AWS_CODECOMMIT_API CodeCommitClient : public Aws::Client::AWSJsonClient,
                                             public Aws::Client::ClientWithAsyncTemplateMethods<CodeCommitClient>,
-                                            public CodeCommitPaginationBase<CodeCommitClient> {
+                                            public CodeCommitPaginationBase<CodeCommitClient>,
+                                            public CodeCommitWaiter<CodeCommitClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2560,6 +2562,10 @@ class AWS_CODECOMMIT_API CodeCommitClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeCommitClient>;
   void init(const CodeCommitClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CodeCommitError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   CodeCommitClientConfiguration m_clientConfiguration;
   std::shared_ptr<CodeCommitEndpointProviderBase> m_endpointProvider;

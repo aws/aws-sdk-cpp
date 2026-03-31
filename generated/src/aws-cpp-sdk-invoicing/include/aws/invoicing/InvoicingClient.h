@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/invoicing/InvoicingPaginationBase.h>
 #include <aws/invoicing/InvoicingServiceClientModel.h>
+#include <aws/invoicing/InvoicingWaiter.h>
 #include <aws/invoicing/Invoicing_EXPORTS.h>
 
 namespace Aws {
@@ -64,7 +65,8 @@ namespace Invoicing {
  */
 class AWS_INVOICING_API InvoicingClient : public Aws::Client::AWSJsonClient,
                                           public Aws::Client::ClientWithAsyncTemplateMethods<InvoicingClient>,
-                                          public InvoicingPaginationBase<InvoicingClient> {
+                                          public InvoicingPaginationBase<InvoicingClient>,
+                                          public InvoicingWaiter<InvoicingClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -608,6 +610,10 @@ class AWS_INVOICING_API InvoicingClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<InvoicingClient>;
   void init(const InvoicingClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, InvoicingError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   InvoicingClientConfiguration m_clientConfiguration;
   std::shared_ptr<InvoicingEndpointProviderBase> m_endpointProvider;

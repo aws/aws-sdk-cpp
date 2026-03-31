@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/inspector/InspectorPaginationBase.h>
 #include <aws/inspector/InspectorServiceClientModel.h>
+#include <aws/inspector/InspectorWaiter.h>
 #include <aws/inspector/Inspector_EXPORTS.h>
 
 namespace Aws {
@@ -23,7 +24,8 @@ namespace Inspector {
  */
 class AWS_INSPECTOR_API InspectorClient : public Aws::Client::AWSJsonClient,
                                           public Aws::Client::ClientWithAsyncTemplateMethods<InspectorClient>,
-                                          public InspectorPaginationBase<InspectorClient> {
+                                          public InspectorPaginationBase<InspectorClient>,
+                                          public InspectorWaiter<InspectorClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1141,6 +1143,10 @@ class AWS_INSPECTOR_API InspectorClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<InspectorClient>;
   void init(const InspectorClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, InspectorError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   InspectorClientConfiguration m_clientConfiguration;
   std::shared_ptr<InspectorEndpointProviderBase> m_endpointProvider;

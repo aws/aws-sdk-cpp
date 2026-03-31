@@ -80,6 +80,10 @@ Aws::String CreateDbInstanceRequest::SerializePayload() const {
     payload.WithObject("logDeliveryConfiguration", m_logDeliveryConfiguration.Jsonize());
   }
 
+  if (m_maintenanceScheduleHasBeenSet) {
+    payload.WithObject("maintenanceSchedule", m_maintenanceSchedule.Jsonize());
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {

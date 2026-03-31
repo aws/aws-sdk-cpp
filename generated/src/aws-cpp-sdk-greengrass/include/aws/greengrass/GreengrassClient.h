@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/greengrass/GreengrassPaginationBase.h>
 #include <aws/greengrass/GreengrassServiceClientModel.h>
+#include <aws/greengrass/GreengrassWaiter.h>
 #include <aws/greengrass/Greengrass_EXPORTS.h>
 
 namespace Aws {
@@ -24,7 +25,8 @@ namespace Greengrass {
  */
 class AWS_GREENGRASS_API GreengrassClient : public Aws::Client::AWSJsonClient,
                                             public Aws::Client::ClientWithAsyncTemplateMethods<GreengrassClient>,
-                                            public GreengrassPaginationBase<GreengrassClient> {
+                                            public GreengrassPaginationBase<GreengrassClient>,
+                                            public GreengrassWaiter<GreengrassClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2690,6 +2692,12 @@ class AWS_GREENGRASS_API GreengrassClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<GreengrassClient>;
   void init(const GreengrassClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, GreengrassError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   GreengrassClientConfiguration m_clientConfiguration;
   std::shared_ptr<GreengrassEndpointProviderBase> m_endpointProvider;

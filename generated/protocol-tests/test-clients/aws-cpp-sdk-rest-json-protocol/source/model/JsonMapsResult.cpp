@@ -20,6 +20,7 @@ using namespace Aws;
 JsonMapsResult::JsonMapsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 JsonMapsResult& JsonMapsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("denseStructMap")) {
     Aws::Map<Aws::String, JsonView> denseStructMapJsonMap = jsonValue.GetObject("denseStructMap").GetAllObjects();
@@ -52,13 +53,13 @@ JsonMapsResult& JsonMapsResult::operator=(const Aws::AmazonWebServiceResult<Json
   if (jsonValue.ValueExists("denseSetMap")) {
     Aws::Map<Aws::String, JsonView> denseSetMapJsonMap = jsonValue.GetObject("denseSetMap").GetAllObjects();
     for (auto& denseSetMapItem : denseSetMapJsonMap) {
-      Aws::Utils::Array<JsonView> stringSetJsonList = denseSetMapItem.second.AsArray();
-      Aws::Vector<Aws::String> stringSetList;
-      stringSetList.reserve((size_t)stringSetJsonList.GetLength());
-      for (unsigned stringSetIndex = 0; stringSetIndex < stringSetJsonList.GetLength(); ++stringSetIndex) {
-        stringSetList.push_back(stringSetJsonList[stringSetIndex].AsString());
+      Aws::Utils::Array<JsonView> stringSet2JsonList = denseSetMapItem.second.AsArray();
+      Aws::Vector<Aws::String> stringSet2List;
+      stringSet2List.reserve((size_t)stringSet2JsonList.GetLength());
+      for (unsigned stringSet2Index = 0; stringSet2Index < stringSet2JsonList.GetLength(); ++stringSet2Index) {
+        stringSet2List.push_back(stringSet2JsonList[stringSet2Index].AsString());
       }
-      m_denseSetMap[denseSetMapItem.first] = std::move(stringSetList);
+      m_denseSetMap[denseSetMapItem.first] = std::move(stringSet2List);
     }
     m_denseSetMapHasBeenSet = true;
   }

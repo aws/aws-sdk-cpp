@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/synthetics/SyntheticsPaginationBase.h>
 #include <aws/synthetics/SyntheticsServiceClientModel.h>
+#include <aws/synthetics/SyntheticsWaiter.h>
 #include <aws/synthetics/Synthetics_EXPORTS.h>
 
 namespace Aws {
@@ -33,7 +34,8 @@ namespace Synthetics {
  */
 class AWS_SYNTHETICS_API SyntheticsClient : public Aws::Client::AWSJsonClient,
                                             public Aws::Client::ClientWithAsyncTemplateMethods<SyntheticsClient>,
-                                            public SyntheticsPaginationBase<SyntheticsClient> {
+                                            public SyntheticsPaginationBase<SyntheticsClient>,
+                                            public SyntheticsWaiter<SyntheticsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -788,6 +790,12 @@ class AWS_SYNTHETICS_API SyntheticsClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SyntheticsClient>;
   void init(const SyntheticsClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SyntheticsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   SyntheticsClientConfiguration m_clientConfiguration;
   std::shared_ptr<SyntheticsEndpointProviderBase> m_endpointProvider;

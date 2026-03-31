@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ecr/ECRPaginationBase.h>
 #include <aws/ecr/ECRServiceClientModel.h>
+#include <aws/ecr/ECRWaiter.h>
 #include <aws/ecr/ECR_EXPORTS.h>
 
 namespace Aws {
@@ -29,7 +30,8 @@ namespace ECR {
  */
 class AWS_ECR_API ECRClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<ECRClient>,
-                              public ECRPaginationBase<ECRClient> {
+                              public ECRPaginationBase<ECRClient>,
+                              public ECRWaiter<ECRClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1865,6 +1867,10 @@ class AWS_ECR_API ECRClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ECRClient>;
   void init(const ECRClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ECRError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   ECRClientConfiguration m_clientConfiguration;
   std::shared_ptr<ECREndpointProviderBase> m_endpointProvider;

@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/medialive/MediaLivePaginationBase.h>
 #include <aws/medialive/MediaLiveServiceClientModel.h>
+#include <aws/medialive/MediaLiveWaiter.h>
 #include <aws/medialive/MediaLive_EXPORTS.h>
 
 namespace Aws {
@@ -19,7 +20,8 @@ namespace MediaLive {
  */
 class AWS_MEDIALIVE_API MediaLiveClient : public Aws::Client::AWSJsonClient,
                                           public Aws::Client::ClientWithAsyncTemplateMethods<MediaLiveClient>,
-                                          public MediaLivePaginationBase<MediaLiveClient> {
+                                          public MediaLivePaginationBase<MediaLiveClient>,
+                                          public MediaLiveWaiter<MediaLiveClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -3431,6 +3433,12 @@ class AWS_MEDIALIVE_API MediaLiveClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MediaLiveClient>;
   void init(const MediaLiveClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MediaLiveError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   MediaLiveClientConfiguration m_clientConfiguration;
   std::shared_ptr<MediaLiveEndpointProviderBase> m_endpointProvider;

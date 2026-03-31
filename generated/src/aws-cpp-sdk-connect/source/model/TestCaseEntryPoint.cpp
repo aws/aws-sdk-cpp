@@ -26,6 +26,10 @@ TestCaseEntryPoint& TestCaseEntryPoint::operator=(JsonView jsonValue) {
     m_voiceCallEntryPointParameters = jsonValue.GetObject("VoiceCallEntryPointParameters");
     m_voiceCallEntryPointParametersHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ChatEntryPointParameters")) {
+    m_chatEntryPointParameters = jsonValue.GetObject("ChatEntryPointParameters");
+    m_chatEntryPointParametersHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue TestCaseEntryPoint::Jsonize() const {
 
   if (m_voiceCallEntryPointParametersHasBeenSet) {
     payload.WithObject("VoiceCallEntryPointParameters", m_voiceCallEntryPointParameters.Jsonize());
+  }
+
+  if (m_chatEntryPointParametersHasBeenSet) {
+    payload.WithObject("ChatEntryPointParameters", m_chatEntryPointParameters.Jsonize());
   }
 
   return payload;

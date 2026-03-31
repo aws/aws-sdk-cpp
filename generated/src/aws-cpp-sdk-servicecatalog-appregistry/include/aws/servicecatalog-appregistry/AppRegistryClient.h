@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/servicecatalog-appregistry/AppRegistryPaginationBase.h>
 #include <aws/servicecatalog-appregistry/AppRegistryServiceClientModel.h>
+#include <aws/servicecatalog-appregistry/AppRegistryWaiter.h>
 #include <aws/servicecatalog-appregistry/AppRegistry_EXPORTS.h>
 
 namespace Aws {
@@ -22,7 +23,8 @@ namespace AppRegistry {
  */
 class AWS_APPREGISTRY_API AppRegistryClient : public Aws::Client::AWSJsonClient,
                                               public Aws::Client::ClientWithAsyncTemplateMethods<AppRegistryClient>,
-                                              public AppRegistryPaginationBase<AppRegistryClient> {
+                                              public AppRegistryPaginationBase<AppRegistryClient>,
+                                              public AppRegistryWaiter<AppRegistryClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -800,6 +802,12 @@ class AWS_APPREGISTRY_API AppRegistryClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AppRegistryClient>;
   void init(const AppRegistryClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, AppRegistryError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   AppRegistryClientConfiguration m_clientConfiguration;
   std::shared_ptr<AppRegistryEndpointProviderBase> m_endpointProvider;

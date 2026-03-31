@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53globalresolver/Route53GlobalResolver_EXPORTS.h>
 #include <aws/route53globalresolver/model/CRResourceStatus.h>
+#include <aws/route53globalresolver/model/GlobalResolverIpAddressType.h>
 
 #include <utility>
 
@@ -108,8 +109,8 @@ class GlobalResolversItem {
 
   ///@{
   /**
-   * <p>The AWS Region where observability data is collected for the global
-   * resolver.</p>
+   * <p>The Amazon Web Services Region where observability data is collected for the
+   * global resolver.</p>
    */
   inline const Aws::String& GetObservabilityRegion() const { return m_observabilityRegion; }
   inline bool ObservabilityRegionHasBeenSet() const { return m_observabilityRegionHasBeenSet; }
@@ -163,7 +164,7 @@ class GlobalResolversItem {
 
   ///@{
   /**
-   * <p>The AWS Regions where the global resolver is deployed.</p>
+   * <p>The Amazon Web Services Regions where the global resolver is deployed.</p>
    */
   inline const Aws::Vector<Aws::String>& GetRegions() const { return m_regions; }
   inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
@@ -260,6 +261,47 @@ class GlobalResolversItem {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The IPv6 addresses assigned to the global resolver. This field is only
+   * populated when ipAddressType is DUAL_STACK.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetIpv6Addresses() const { return m_ipv6Addresses; }
+  inline bool Ipv6AddressesHasBeenSet() const { return m_ipv6AddressesHasBeenSet; }
+  template <typename Ipv6AddressesT = Aws::Vector<Aws::String>>
+  void SetIpv6Addresses(Ipv6AddressesT&& value) {
+    m_ipv6AddressesHasBeenSet = true;
+    m_ipv6Addresses = std::forward<Ipv6AddressesT>(value);
+  }
+  template <typename Ipv6AddressesT = Aws::Vector<Aws::String>>
+  GlobalResolversItem& WithIpv6Addresses(Ipv6AddressesT&& value) {
+    SetIpv6Addresses(std::forward<Ipv6AddressesT>(value));
+    return *this;
+  }
+  template <typename Ipv6AddressesT = Aws::String>
+  GlobalResolversItem& AddIpv6Addresses(Ipv6AddressesT&& value) {
+    m_ipv6AddressesHasBeenSet = true;
+    m_ipv6Addresses.emplace_back(std::forward<Ipv6AddressesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The IP address type configured for the global resolver.</p>
+   */
+  inline GlobalResolverIpAddressType GetIpAddressType() const { return m_ipAddressType; }
+  inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+  inline void SetIpAddressType(GlobalResolverIpAddressType value) {
+    m_ipAddressTypeHasBeenSet = true;
+    m_ipAddressType = value;
+  }
+  inline GlobalResolversItem& WithIpAddressType(GlobalResolverIpAddressType value) {
+    SetIpAddressType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -284,6 +326,10 @@ class GlobalResolversItem {
   CRResourceStatus m_status{CRResourceStatus::NOT_SET};
 
   Aws::Vector<Aws::String> m_ipv4Addresses;
+
+  Aws::Vector<Aws::String> m_ipv6Addresses;
+
+  GlobalResolverIpAddressType m_ipAddressType{GlobalResolverIpAddressType::NOT_SET};
   bool m_idHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
@@ -296,6 +342,8 @@ class GlobalResolversItem {
   bool m_updatedAtHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_ipv4AddressesHasBeenSet = false;
+  bool m_ipv6AddressesHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
 };
 
 }  // namespace Model

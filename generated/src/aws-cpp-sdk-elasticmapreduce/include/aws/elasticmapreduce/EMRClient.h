@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/elasticmapreduce/EMRPaginationBase.h>
 #include <aws/elasticmapreduce/EMRServiceClientModel.h>
+#include <aws/elasticmapreduce/EMRWaiter.h>
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 
 namespace Aws {
@@ -23,7 +24,8 @@ namespace EMR {
  */
 class AWS_EMR_API EMRClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<EMRClient>,
-                              public EMRPaginationBase<EMRClient> {
+                              public EMRPaginationBase<EMRClient>,
+                              public EMRWaiter<EMRClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1887,6 +1889,10 @@ class AWS_EMR_API EMRClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<EMRClient>;
   void init(const EMRClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, EMRError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   EMRClientConfiguration m_clientConfiguration;
   std::shared_ptr<EMREndpointProviderBase> m_endpointProvider;

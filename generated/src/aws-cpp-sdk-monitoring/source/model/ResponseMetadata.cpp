@@ -32,40 +32,6 @@ ResponseMetadata& ResponseMetadata::operator=(const std::shared_ptr<Aws::Crt::Cb
             if (initialKey.has_value()) {
               Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
 
-              if (initialKeyStr == "x-amzn-requestid") {
-                auto peekType = decoder->PeekType();
-                if (peekType.has_value()) {
-                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
-                    auto val = decoder->PopNextTextVal();
-                    if (val.has_value()) {
-                      m_requestId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
-                    }
-                  } else {
-                    decoder->ConsumeNextSingleElement();
-                    Aws::StringStream ss;
-                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-                      auto nextType = decoder->PeekType();
-                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
-                        if (nextType.has_value()) {
-                          decoder->ConsumeNextSingleElement();  // consume the Break
-                        }
-                        break;
-                      }
-                      auto val = decoder->PopNextTextVal();
-                      if (val.has_value()) {
-                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
-                      }
-                    }
-                    m_requestId = ss.str();
-                  }
-                }
-                m_requestIdHasBeenSet = true;
-              }
-
-              else {
-                // Unknown key, skip the value
-                decoder->ConsumeNextWholeDataItem();
-              }
               if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
                 AWS_LOG_ERROR("ResponseMetadata", "Invalid data received for %s", initialKeyStr.c_str());
                 break;
@@ -88,41 +54,6 @@ ResponseMetadata& ResponseMetadata::operator=(const std::shared_ptr<Aws::Crt::Cb
           auto initialKey = decoder->PopNextTextVal();
           if (initialKey.has_value()) {
             Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
-
-            if (initialKeyStr == "x-amzn-requestid") {
-              auto peekType = decoder->PeekType();
-              if (peekType.has_value()) {
-                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
-                  auto val = decoder->PopNextTextVal();
-                  if (val.has_value()) {
-                    m_requestId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
-                  }
-                } else {
-                  decoder->ConsumeNextSingleElement();
-                  Aws::StringStream ss;
-                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-                    auto nextType = decoder->PeekType();
-                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
-                      if (nextType.has_value()) {
-                        decoder->ConsumeNextSingleElement();  // consume the Break
-                      }
-                      break;
-                    }
-                    auto val = decoder->PopNextTextVal();
-                    if (val.has_value()) {
-                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
-                    }
-                  }
-                  m_requestId = ss.str();
-                }
-              }
-              m_requestIdHasBeenSet = true;
-            }
-
-            else {
-              // Unknown key, skip the value
-              decoder->ConsumeNextWholeDataItem();
-            }
           }
         }
       }

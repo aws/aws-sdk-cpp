@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/es/ElasticsearchServicePaginationBase.h>
 #include <aws/es/ElasticsearchServiceServiceClientModel.h>
+#include <aws/es/ElasticsearchServiceWaiter.h>
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 
 namespace Aws {
@@ -32,7 +33,8 @@ namespace ElasticsearchService {
 class AWS_ELASTICSEARCHSERVICE_API ElasticsearchServiceClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<ElasticsearchServiceClient>,
-      public ElasticsearchServicePaginationBase<ElasticsearchServiceClient> {
+      public ElasticsearchServicePaginationBase<ElasticsearchServiceClient>,
+      public ElasticsearchServiceWaiter<ElasticsearchServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1578,6 +1580,12 @@ class AWS_ELASTICSEARCHSERVICE_API ElasticsearchServiceClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ElasticsearchServiceClient>;
   void init(const ElasticsearchServiceClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ElasticsearchServiceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   ElasticsearchServiceClientConfiguration m_clientConfiguration;
   std::shared_ptr<ElasticsearchServiceEndpointProviderBase> m_endpointProvider;

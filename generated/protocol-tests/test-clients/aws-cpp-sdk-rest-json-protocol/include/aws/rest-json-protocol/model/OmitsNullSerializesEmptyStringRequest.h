@@ -66,9 +66,9 @@ class OmitsNullSerializesEmptyStringRequest : public RestJsonProtocolRequest {
   ///@}
  private:
   Aws::String m_nullValue;
-  bool m_nullValueHasBeenSet = false;
 
   Aws::String m_emptyString;
+  bool m_nullValueHasBeenSet = false;
   bool m_emptyStringHasBeenSet = false;
 };
 

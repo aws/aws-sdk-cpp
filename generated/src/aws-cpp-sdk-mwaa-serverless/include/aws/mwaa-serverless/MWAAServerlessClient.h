@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mwaa-serverless/MWAAServerlessPaginationBase.h>
 #include <aws/mwaa-serverless/MWAAServerlessServiceClientModel.h>
+#include <aws/mwaa-serverless/MWAAServerlessWaiter.h>
 #include <aws/mwaa-serverless/MWAAServerless_EXPORTS.h>
 
 namespace Aws {
@@ -26,7 +27,8 @@ namespace MWAAServerless {
  */
 class AWS_MWAASERVERLESS_API MWAAServerlessClient : public Aws::Client::AWSJsonClient,
                                                     public Aws::Client::ClientWithAsyncTemplateMethods<MWAAServerlessClient>,
-                                                    public MWAAServerlessPaginationBase<MWAAServerlessClient> {
+                                                    public MWAAServerlessPaginationBase<MWAAServerlessClient>,
+                                                    public MWAAServerlessWaiter<MWAAServerlessClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -528,6 +530,10 @@ class AWS_MWAASERVERLESS_API MWAAServerlessClient : public Aws::Client::AWSJsonC
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MWAAServerlessClient>;
   void init(const MWAAServerlessClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MWAAServerlessError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   MWAAServerlessClientConfiguration m_clientConfiguration;
   std::shared_ptr<MWAAServerlessEndpointProviderBase> m_endpointProvider;

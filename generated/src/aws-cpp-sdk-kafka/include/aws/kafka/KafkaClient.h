@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kafka/KafkaPaginationBase.h>
 #include <aws/kafka/KafkaServiceClientModel.h>
+#include <aws/kafka/KafkaWaiter.h>
 #include <aws/kafka/Kafka_EXPORTS.h>
 
 namespace Aws {
@@ -22,7 +23,8 @@ namespace Kafka {
  */
 class AWS_KAFKA_API KafkaClient : public Aws::Client::AWSJsonClient,
                                   public Aws::Client::ClientWithAsyncTemplateMethods<KafkaClient>,
-                                  public KafkaPaginationBase<KafkaClient> {
+                                  public KafkaPaginationBase<KafkaClient>,
+                                  public KafkaWaiter<KafkaClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1797,6 +1799,12 @@ class AWS_KAFKA_API KafkaClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<KafkaClient>;
   void init(const KafkaClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, KafkaError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   KafkaClientConfiguration m_clientConfiguration;
   std::shared_ptr<KafkaEndpointProviderBase> m_endpointProvider;

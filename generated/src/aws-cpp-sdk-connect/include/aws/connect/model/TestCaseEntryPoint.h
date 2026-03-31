@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/ChatEntryPointParameters.h>
 #include <aws/connect/model/TestCaseEntryPointType.h>
 #include <aws/connect/model/VoiceCallEntryPointParameters.h>
 
@@ -65,12 +66,33 @@ class TestCaseEntryPoint {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Parameters for chat entry point.</p>
+   */
+  inline const ChatEntryPointParameters& GetChatEntryPointParameters() const { return m_chatEntryPointParameters; }
+  inline bool ChatEntryPointParametersHasBeenSet() const { return m_chatEntryPointParametersHasBeenSet; }
+  template <typename ChatEntryPointParametersT = ChatEntryPointParameters>
+  void SetChatEntryPointParameters(ChatEntryPointParametersT&& value) {
+    m_chatEntryPointParametersHasBeenSet = true;
+    m_chatEntryPointParameters = std::forward<ChatEntryPointParametersT>(value);
+  }
+  template <typename ChatEntryPointParametersT = ChatEntryPointParameters>
+  TestCaseEntryPoint& WithChatEntryPointParameters(ChatEntryPointParametersT&& value) {
+    SetChatEntryPointParameters(std::forward<ChatEntryPointParametersT>(value));
+    return *this;
+  }
+  ///@}
  private:
   TestCaseEntryPointType m_type{TestCaseEntryPointType::NOT_SET};
 
   VoiceCallEntryPointParameters m_voiceCallEntryPointParameters;
+
+  ChatEntryPointParameters m_chatEntryPointParameters;
   bool m_typeHasBeenSet = false;
   bool m_voiceCallEntryPointParametersHasBeenSet = false;
+  bool m_chatEntryPointParametersHasBeenSet = false;
 };
 
 }  // namespace Model

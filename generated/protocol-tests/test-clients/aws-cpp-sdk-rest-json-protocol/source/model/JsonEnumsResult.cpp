@@ -20,6 +20,7 @@ using namespace Aws;
 JsonEnumsResult::JsonEnumsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 JsonEnumsResult& JsonEnumsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("fooEnum1")) {
     m_fooEnum1 = FooEnumMapper::GetFooEnumForName(jsonValue.GetString("fooEnum1"));

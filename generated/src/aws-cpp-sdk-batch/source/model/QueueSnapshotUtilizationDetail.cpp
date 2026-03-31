@@ -30,6 +30,10 @@ QueueSnapshotUtilizationDetail& QueueSnapshotUtilizationDetail::operator=(JsonVi
     m_fairshareUtilization = jsonValue.GetObject("fairshareUtilization");
     m_fairshareUtilizationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("quotaShareUtilization")) {
+    m_quotaShareUtilization = jsonValue.GetObject("quotaShareUtilization");
+    m_quotaShareUtilizationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("lastUpdatedAt")) {
     m_lastUpdatedAt = jsonValue.GetInt64("lastUpdatedAt");
     m_lastUpdatedAtHasBeenSet = true;
@@ -51,6 +55,10 @@ JsonValue QueueSnapshotUtilizationDetail::Jsonize() const {
 
   if (m_fairshareUtilizationHasBeenSet) {
     payload.WithObject("fairshareUtilization", m_fairshareUtilization.Jsonize());
+  }
+
+  if (m_quotaShareUtilizationHasBeenSet) {
+    payload.WithObject("quotaShareUtilization", m_quotaShareUtilization.Jsonize());
   }
 
   if (m_lastUpdatedAtHasBeenSet) {

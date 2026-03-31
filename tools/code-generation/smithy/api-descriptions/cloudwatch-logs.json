@@ -1569,6 +1569,98 @@
                 "smithy.api#input": {}
             }
         },
+        "com.amazonaws.cloudwatchlogs#CreateLookupTable": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.cloudwatchlogs#CreateLookupTableRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.cloudwatchlogs#CreateLookupTableResponse"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.cloudwatchlogs#AccessDeniedException"
+                },
+                {
+                    "target": "com.amazonaws.cloudwatchlogs#InvalidParameterException"
+                },
+                {
+                    "target": "com.amazonaws.cloudwatchlogs#LimitExceededException"
+                },
+                {
+                    "target": "com.amazonaws.cloudwatchlogs#ResourceAlreadyExistsException"
+                },
+                {
+                    "target": "com.amazonaws.cloudwatchlogs#ServiceUnavailableException"
+                },
+                {
+                    "target": "com.amazonaws.cloudwatchlogs#ValidationException"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Creates a lookup table by uploading CSV data. You can use lookup tables to enrich log\n      data in CloudWatch Logs Insights queries with reference data such as user details, application\n      names, or error descriptions.</p>\n         <p>The table name must be unique within your account and Region. The CSV content must include\n      a header row with column names, use UTF-8 encoding, and not exceed 10 MB.</p>"
+            }
+        },
+        "com.amazonaws.cloudwatchlogs#CreateLookupTableRequest": {
+            "type": "structure",
+            "members": {
+                "lookupTableName": {
+                    "target": "com.amazonaws.cloudwatchlogs#LookupTableName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the lookup table. The name must be unique within your account and Region.\n      The name can contain only alphanumeric characters and underscores, and can be up to\n      256 characters long.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "description": {
+                    "target": "com.amazonaws.cloudwatchlogs#LookupTableDescription",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A description of the lookup table. The description can be up to 1024 characters\n      long.</p>"
+                    }
+                },
+                "tableBody": {
+                    "target": "com.amazonaws.cloudwatchlogs#TableBody",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The CSV content of the lookup table. The first row must be a header row with column\n      names. The content must use UTF-8 encoding and not exceed 10 MB.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "kmsKeyId": {
+                    "target": "com.amazonaws.cloudwatchlogs#KmsKeyId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ARN of the KMS key to use to encrypt the lookup table data. If you\n      don't specify a key, the data is encrypted with an Amazon Web Services-owned key.</p>"
+                    }
+                },
+                "tags": {
+                    "target": "com.amazonaws.cloudwatchlogs#Tags",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A list of key-value pairs to associate with the lookup table. You can associate as many\n      as 50 tags with a lookup table. Tags can help you organize and categorize your\n      resources.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.cloudwatchlogs#CreateLookupTableResponse": {
+            "type": "structure",
+            "members": {
+                "lookupTableArn": {
+                    "target": "com.amazonaws.cloudwatchlogs#Arn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ARN of the lookup table that was created.</p>"
+                    }
+                },
+                "createdAt": {
+                    "target": "com.amazonaws.cloudwatchlogs#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The time when the lookup table was created, expressed as the number of milliseconds\n      after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
         "com.amazonaws.cloudwatchlogs#CreateScheduledQuery": {
             "type": "operation",
             "input": {
@@ -1623,7 +1715,7 @@
                 "queryLanguage": {
                     "target": "com.amazonaws.cloudwatchlogs#QueryLanguage",
                     "traits": {
-                        "smithy.api#documentation": "<p>The query language to use for the scheduled query. Valid values are <code>LogsQL</code>,\n        <code>PPL</code>, and <code>SQL</code>.</p>",
+                        "smithy.api#documentation": "<p>The query language to use for the scheduled query. Valid values are <code>CWLI</code>,\n        <code>PPL</code>, and <code>SQL</code>.</p>",
                         "smithy.api#required": {}
                     }
                 },
@@ -2463,6 +2555,47 @@
                     "target": "com.amazonaws.cloudwatchlogs#LogStreamName",
                     "traits": {
                         "smithy.api#documentation": "<p>The name of the log stream.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.cloudwatchlogs#DeleteLookupTable": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.cloudwatchlogs#DeleteLookupTableRequest"
+            },
+            "output": {
+                "target": "smithy.api#Unit"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.cloudwatchlogs#AccessDeniedException"
+                },
+                {
+                    "target": "com.amazonaws.cloudwatchlogs#InvalidParameterException"
+                },
+                {
+                    "target": "com.amazonaws.cloudwatchlogs#ResourceNotFoundException"
+                },
+                {
+                    "target": "com.amazonaws.cloudwatchlogs#ServiceUnavailableException"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Deletes a lookup table permanently. This operation cannot be undone.</p>\n         <p>Queries that reference a deleted table will return an error. Before deleting a lookup\n      table, review any saved queries or dashboards that may reference it.</p>"
+            }
+        },
+        "com.amazonaws.cloudwatchlogs#DeleteLookupTableRequest": {
+            "type": "structure",
+            "members": {
+                "lookupTableArn": {
+                    "target": "com.amazonaws.cloudwatchlogs#Arn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ARN of the lookup table to delete.</p>",
                         "smithy.api#required": {}
                     }
                 }
@@ -4168,6 +4301,88 @@
                 },
                 "nextToken": {
                     "target": "com.amazonaws.cloudwatchlogs#NextToken"
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
+        "com.amazonaws.cloudwatchlogs#DescribeLookupTables": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.cloudwatchlogs#DescribeLookupTablesRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.cloudwatchlogs#DescribeLookupTablesResponse"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.cloudwatchlogs#AccessDeniedException"
+                },
+                {
+                    "target": "com.amazonaws.cloudwatchlogs#InvalidParameterException"
+                },
+                {
+                    "target": "com.amazonaws.cloudwatchlogs#ResourceNotFoundException"
+                },
+                {
+                    "target": "com.amazonaws.cloudwatchlogs#ServiceUnavailableException"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Retrieves metadata about lookup tables in your account. You can optionally filter the\n      results by table name prefix. Results are sorted by table name in ascending order.</p>"
+            }
+        },
+        "com.amazonaws.cloudwatchlogs#DescribeLookupTablesMaxResults": {
+            "type": "integer",
+            "traits": {
+                "smithy.api#default": 0,
+                "smithy.api#range": {
+                    "max": 100
+                }
+            }
+        },
+        "com.amazonaws.cloudwatchlogs#DescribeLookupTablesRequest": {
+            "type": "structure",
+            "members": {
+                "lookupTableNamePrefix": {
+                    "target": "com.amazonaws.cloudwatchlogs#LookupTableName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A prefix to filter lookup tables by name. Only tables whose names start with this\n      prefix are returned. If you don't specify a prefix, all tables in the account and Region are\n      returned.</p>"
+                    }
+                },
+                "maxResults": {
+                    "target": "com.amazonaws.cloudwatchlogs#DescribeLookupTablesMaxResults",
+                    "traits": {
+                        "smithy.api#default": 0,
+                        "smithy.api#documentation": "<p>The maximum number of lookup tables to return in the response. The default value is 50\n      and the maximum value is 100.</p>"
+                    }
+                },
+                "nextToken": {
+                    "target": "com.amazonaws.cloudwatchlogs#NextToken",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The token for the next set of items to return. (You received this token from a previous\n      call.)</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.cloudwatchlogs#DescribeLookupTablesResponse": {
+            "type": "structure",
+            "members": {
+                "lookupTables": {
+                    "target": "com.amazonaws.cloudwatchlogs#LookupTables",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An array of structures, where each structure contains metadata about one lookup\n      table.</p>"
+                    }
+                },
+                "nextToken": {
+                    "target": "com.amazonaws.cloudwatchlogs#NextToken",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The token to use when requesting the next set of items.</p>"
+                    }
                 }
             },
             "traits": {
@@ -6572,6 +6787,97 @@
                     "target": "com.amazonaws.cloudwatchlogs#LogRecord",
                     "traits": {
                         "smithy.api#documentation": "<p>The requested log event, as a JSON string.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
+        "com.amazonaws.cloudwatchlogs#GetLookupTable": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.cloudwatchlogs#GetLookupTableRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.cloudwatchlogs#GetLookupTableResponse"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.cloudwatchlogs#AccessDeniedException"
+                },
+                {
+                    "target": "com.amazonaws.cloudwatchlogs#InvalidParameterException"
+                },
+                {
+                    "target": "com.amazonaws.cloudwatchlogs#ResourceNotFoundException"
+                },
+                {
+                    "target": "com.amazonaws.cloudwatchlogs#ServiceUnavailableException"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Retrieves the full content of a lookup table, including the CSV data.</p>"
+            }
+        },
+        "com.amazonaws.cloudwatchlogs#GetLookupTableRequest": {
+            "type": "structure",
+            "members": {
+                "lookupTableArn": {
+                    "target": "com.amazonaws.cloudwatchlogs#Arn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ARN of the lookup table to retrieve.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.cloudwatchlogs#GetLookupTableResponse": {
+            "type": "structure",
+            "members": {
+                "lookupTableArn": {
+                    "target": "com.amazonaws.cloudwatchlogs#Arn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ARN of the lookup table.</p>"
+                    }
+                },
+                "lookupTableName": {
+                    "target": "com.amazonaws.cloudwatchlogs#LookupTableName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the lookup table.</p>"
+                    }
+                },
+                "description": {
+                    "target": "com.amazonaws.cloudwatchlogs#LookupTableDescription",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The description of the lookup table.</p>"
+                    }
+                },
+                "tableBody": {
+                    "target": "com.amazonaws.cloudwatchlogs#TableBody",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The full CSV content of the lookup table.</p>"
+                    }
+                },
+                "sizeBytes": {
+                    "target": "com.amazonaws.cloudwatchlogs#StoredBytes",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The size of the lookup table in bytes.</p>"
+                    }
+                },
+                "lastUpdatedTime": {
+                    "target": "com.amazonaws.cloudwatchlogs#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The time when the lookup table was last updated, expressed as the number of\n      milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>"
+                    }
+                },
+                "kmsKeyId": {
+                    "target": "com.amazonaws.cloudwatchlogs#KmsKeyId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ARN of the KMS key used to encrypt the lookup table data, if\n      applicable.</p>"
                     }
                 }
             },
@@ -9121,6 +9427,9 @@
                     "target": "com.amazonaws.cloudwatchlogs#CreateLogStream"
                 },
                 {
+                    "target": "com.amazonaws.cloudwatchlogs#CreateLookupTable"
+                },
+                {
                     "target": "com.amazonaws.cloudwatchlogs#CreateScheduledQuery"
                 },
                 {
@@ -9158,6 +9467,9 @@
                 },
                 {
                     "target": "com.amazonaws.cloudwatchlogs#DeleteLogStream"
+                },
+                {
+                    "target": "com.amazonaws.cloudwatchlogs#DeleteLookupTable"
                 },
                 {
                     "target": "com.amazonaws.cloudwatchlogs#DeleteMetricFilter"
@@ -9220,6 +9532,9 @@
                     "target": "com.amazonaws.cloudwatchlogs#DescribeLogStreams"
                 },
                 {
+                    "target": "com.amazonaws.cloudwatchlogs#DescribeLookupTables"
+                },
+                {
                     "target": "com.amazonaws.cloudwatchlogs#DescribeMetricFilters"
                 },
                 {
@@ -9278,6 +9593,9 @@
                 },
                 {
                     "target": "com.amazonaws.cloudwatchlogs#GetLogRecord"
+                },
+                {
+                    "target": "com.amazonaws.cloudwatchlogs#GetLookupTable"
                 },
                 {
                     "target": "com.amazonaws.cloudwatchlogs#GetQueryResults"
@@ -9410,6 +9728,9 @@
                 },
                 {
                     "target": "com.amazonaws.cloudwatchlogs#UpdateLogAnomalyDetector"
+                },
+                {
+                    "target": "com.amazonaws.cloudwatchlogs#UpdateLookupTable"
                 },
                 {
                     "target": "com.amazonaws.cloudwatchlogs#UpdateScheduledQuery"
@@ -10419,6 +10740,87 @@
                     ],
                     "version": "1.0"
                 }
+            }
+        },
+        "com.amazonaws.cloudwatchlogs#LookupTable": {
+            "type": "structure",
+            "members": {
+                "lookupTableArn": {
+                    "target": "com.amazonaws.cloudwatchlogs#Arn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ARN of the lookup table.</p>"
+                    }
+                },
+                "lookupTableName": {
+                    "target": "com.amazonaws.cloudwatchlogs#LookupTableName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the lookup table.</p>"
+                    }
+                },
+                "description": {
+                    "target": "com.amazonaws.cloudwatchlogs#LookupTableDescription",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The description of the lookup table.</p>"
+                    }
+                },
+                "tableFields": {
+                    "target": "com.amazonaws.cloudwatchlogs#TableFields",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The column headers from the first row of the CSV file.</p>"
+                    }
+                },
+                "recordsCount": {
+                    "target": "com.amazonaws.cloudwatchlogs#RecordsCount",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The number of data rows in the lookup table, excluding the header row.</p>"
+                    }
+                },
+                "sizeBytes": {
+                    "target": "com.amazonaws.cloudwatchlogs#StoredBytes",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The size of the lookup table in bytes.</p>"
+                    }
+                },
+                "lastUpdatedTime": {
+                    "target": "com.amazonaws.cloudwatchlogs#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The time when the lookup table was last updated, expressed as the number of\n      milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>"
+                    }
+                },
+                "kmsKeyId": {
+                    "target": "com.amazonaws.cloudwatchlogs#KmsKeyId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ARN of the KMS key used to encrypt the lookup table data, if\n      applicable.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Contains metadata about a lookup table returned by <code>DescribeLookupTables</code>.</p>"
+            }
+        },
+        "com.amazonaws.cloudwatchlogs#LookupTableDescription": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 1024
+                }
+            }
+        },
+        "com.amazonaws.cloudwatchlogs#LookupTableName": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 256
+                },
+                "smithy.api#pattern": "^[a-zA-Z0-9_]+$"
+            }
+        },
+        "com.amazonaws.cloudwatchlogs#LookupTables": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.cloudwatchlogs#LookupTable"
             }
         },
         "com.amazonaws.cloudwatchlogs#LowerCaseString": {
@@ -12175,7 +12577,7 @@
                 "logType": {
                     "target": "com.amazonaws.cloudwatchlogs#LogType",
                     "traits": {
-                        "smithy.api#documentation": "<p>Defines the type of log that the source is sending.</p>\n         <ul>\n            <li>\n               <p>For Amazon Bedrock Agents, the valid values are <code>APPLICATION_LOGS</code> and\n            <code>EVENT_LOGS</code>.</p>\n            </li>\n            <li>\n               <p>For Amazon Bedrock Knowledge Bases, the valid value is\n            <code>APPLICATION_LOGS</code>.</p>\n            </li>\n            <li>\n               <p>For Amazon Bedrock AgentCore Runtime, the valid values are\n            <code>APPLICATION_LOGS</code>, <code>USAGE_LOGS</code> and <code>TRACES</code>.</p>\n            </li>\n            <li>\n               <p>For Amazon Bedrock AgentCore Tools, the valid values are\n            <code>APPLICATION_LOGS</code>, <code>USAGE_LOGS</code> and <code>TRACES</code>.</p>\n            </li>\n            <li>\n               <p>For Amazon Bedrock AgentCore Identity, the valid values are\n            <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p>\n            </li>\n            <li>\n               <p>For Amazon Bedrock AgentCore Gateway, the valid values are\n            <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p>\n            </li>\n            <li>\n               <p>For CloudFront, the valid value is <code>ACCESS_LOGS</code>.</p>\n            </li>\n            <li>\n               <p>For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p>\n            </li>\n            <li>\n               <p>For Elemental MediaPackage, the valid values are <code>EGRESS_ACCESS_LOGS</code> and\n            <code>INGRESS_ACCESS_LOGS</code>.</p>\n            </li>\n            <li>\n               <p>For Elemental MediaTailor, the valid values are <code>AD_DECISION_SERVER_LOGS</code>,\n            <code>MANIFEST_SERVICE_LOGS</code>, and <code>TRANSCODE_LOGS</code>.</p>\n            </li>\n            <li>\n               <p>For Entity Resolution, the valid value is <code>WORKFLOW_LOGS</code>.</p>\n            </li>\n            <li>\n               <p>For IAM Identity Center, the valid value is\n          <code>ERROR_LOGS</code>.</p>\n            </li>\n            <li>\n               <p>For Network Firewall Proxy, the valid values are <code>ALERT_LOGS</code>,\n            <code>ALLOW_LOGS</code>, and <code>DENY_LOGS</code>.</p>\n            </li>\n            <li>\n               <p>For Network Load Balancer, the valid value is <code>NLB_ACCESS_LOGS</code>.</p>\n            </li>\n            <li>\n               <p>For PCS, the valid values are <code>PCS_SCHEDULER_LOGS</code> and\n            <code>PCS_JOBCOMP_LOGS</code>.</p>\n            </li>\n            <li>\n               <p>For Quick Suite, the valid values are <code>CHAT_LOGS</code> and\n            <code>FEEDBACK_LOGS</code>.</p>\n            </li>\n            <li>\n               <p>For Amazon Web Services RTB Fabric, the valid values is\n          <code>APPLICATION_LOGS</code>.</p>\n            </li>\n            <li>\n               <p>For Amazon Q, the valid values are <code>EVENT_LOGS</code> and\n            <code>SYNC_JOB_LOGS</code>.</p>\n            </li>\n            <li>\n               <p>For Amazon SES mail manager, the valid values are\n            <code>APPLICATION_LOGS</code> and <code>TRAFFIC_POLICY_DEBUG_LOGS</code>.</p>\n            </li>\n            <li>\n               <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>,\n            <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>,\n            <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>, and\n            <code>WORKMAIL_PERSONAL_ACCESS_TOKEN_LOGS</code>.</p>\n            </li>\n            <li>\n               <p>For Amazon VPC Route Server, the valid value is\n          <code>EVENT_LOGS</code>.</p>\n            </li>\n         </ul>",
+                        "smithy.api#documentation": "<p>Defines the type of log that the source is sending.</p>\n         <ul>\n            <li>\n               <p>For Amazon Bedrock Agents, the valid values are <code>APPLICATION_LOGS</code> and\n            <code>EVENT_LOGS</code>.</p>\n            </li>\n            <li>\n               <p>For Amazon Bedrock Knowledge Bases, the valid value is\n            <code>APPLICATION_LOGS</code>.</p>\n            </li>\n            <li>\n               <p>For Amazon Bedrock AgentCore Runtime, the valid values are\n            <code>APPLICATION_LOGS</code>, <code>USAGE_LOGS</code> and <code>TRACES</code>.</p>\n            </li>\n            <li>\n               <p>For Amazon Bedrock AgentCore Tools, the valid values are\n            <code>APPLICATION_LOGS</code>, <code>USAGE_LOGS</code> and <code>TRACES</code>.</p>\n            </li>\n            <li>\n               <p>For Amazon Bedrock AgentCore Identity, the valid values are\n            <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p>\n            </li>\n            <li>\n               <p>For Amazon Bedrock AgentCore Memory, the valid values are\n            <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p>\n            </li>\n            <li>\n               <p>For Amazon Bedrock AgentCore Gateway, the valid values are\n            <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p>\n            </li>\n            <li>\n               <p>For CloudFront, the valid value is <code>ACCESS_LOGS</code>.</p>\n            </li>\n            <li>\n               <p>For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p>\n            </li>\n            <li>\n               <p>For Elemental MediaPackage, the valid values are <code>EGRESS_ACCESS_LOGS</code> and\n            <code>INGRESS_ACCESS_LOGS</code>.</p>\n            </li>\n            <li>\n               <p>For Elemental MediaTailor, the valid values are <code>AD_DECISION_SERVER_LOGS</code>,\n            <code>MANIFEST_SERVICE_LOGS</code>, and <code>TRANSCODE_LOGS</code>.</p>\n            </li>\n            <li>\n               <p>For Amazon EKS Auto Mode, the valid values are <code>AUTO_MODE_BLOCK_STORAGE_LOGS</code>,\n            <code>AUTO_MODE_COMPUTE_LOGS</code>, <code>AUTO_MODE_IPAM_LOGS</code>, and\n            <code>AUTO_MODE_LOAD_BALANCING_LOGS</code>.</p>\n            </li>\n            <li>\n               <p>For Entity Resolution, the valid value is <code>WORKFLOW_LOGS</code>.</p>\n            </li>\n            <li>\n               <p>For IAM Identity Center, the valid value is\n          <code>ERROR_LOGS</code>.</p>\n            </li>\n            <li>\n               <p>For Network Firewall Proxy, the valid values are <code>ALERT_LOGS</code>,\n            <code>ALLOW_LOGS</code>, and <code>DENY_LOGS</code>.</p>\n            </li>\n            <li>\n               <p>For Network Load Balancer, the valid value is <code>NLB_ACCESS_LOGS</code>.</p>\n            </li>\n            <li>\n               <p>For PCS, the valid values are <code>PCS_SCHEDULER_LOGS</code> and\n            <code>PCS_JOBCOMP_LOGS</code>.</p>\n            </li>\n            <li>\n               <p>For Quick, the valid values are <code>CHAT_LOGS</code> and\n            <code>FEEDBACK_LOGS</code>.</p>\n            </li>\n            <li>\n               <p>For Amazon Web Services RTB Fabric, the valid values is\n          <code>APPLICATION_LOGS</code>.</p>\n            </li>\n            <li>\n               <p>For Amazon Q, the valid values are <code>EVENT_LOGS</code> and\n            <code>SYNC_JOB_LOGS</code>.</p>\n            </li>\n            <li>\n               <p>For Amazon SES mail manager, the valid values are\n            <code>APPLICATION_LOGS</code> and <code>TRAFFIC_POLICY_DEBUG_LOGS</code>.</p>\n            </li>\n            <li>\n               <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>,\n            <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>,\n            <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>, and\n            <code>WORKMAIL_PERSONAL_ACCESS_TOKEN_LOGS</code>.</p>\n            </li>\n            <li>\n               <p>For Amazon VPC Route Server, the valid value is\n          <code>EVENT_LOGS</code>.</p>\n            </li>\n         </ul>",
                         "smithy.api#required": {}
                     }
                 },
@@ -12774,6 +13176,12 @@
                         "smithy.api#documentation": "<p>Used as an idempotency token, to avoid returning an exception if the service receives the\n      same request twice because of a network error.</p>",
                         "smithy.api#idempotencyToken": {}
                     }
+                },
+                "parameters": {
+                    "target": "com.amazonaws.cloudwatchlogs#QueryParameterList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Use this parameter to include specific query parameters as part of your query definition.\n      Query parameters are supported only for Logs Insights QL queries. Query parameters allow you\n      to use placeholder variables in your query string that are substituted with values at execution\n      time. Use the <code>{{parameterName}}</code> syntax in your query string to reference a\n      parameter.</p>"
+                    }
                 }
             },
             "traits": {
@@ -13156,6 +13564,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>If this query definition contains a list of log groups that it is limited to, that list\n      appears here.</p>"
                     }
+                },
+                "parameters": {
+                    "target": "com.amazonaws.cloudwatchlogs#QueryParameterList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>If this query definition contains a list of query parameters that define placeholder\n      variables for the query string, that list appears here.</p>"
+                    }
                 }
             },
             "traits": {
@@ -13275,6 +13689,73 @@
                     "min": 1,
                     "max": 1000
                 }
+            }
+        },
+        "com.amazonaws.cloudwatchlogs#QueryParameter": {
+            "type": "structure",
+            "members": {
+                "name": {
+                    "target": "com.amazonaws.cloudwatchlogs#QueryParameterName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the query parameter. A query parameter name must start with a letter or\n      underscore, and contain only letters, digits, and underscores.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "defaultValue": {
+                    "target": "com.amazonaws.cloudwatchlogs#QueryParameterDefaultValue",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The default value to use for this query parameter if no value is supplied at execution\n      time.</p>"
+                    }
+                },
+                "description": {
+                    "target": "com.amazonaws.cloudwatchlogs#QueryParameterDescription",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A description of the query parameter that explains its purpose or expected values.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>This structure defines a query parameter for a saved CloudWatch Logs Insights query\n      definition. Query parameters are supported only for Logs Insights QL queries. They are\n      placeholder variables that you can reference in a query string using the\n      <code>{{parameterName}}</code> syntax. Each parameter can include a default value and a\n      description.</p>"
+            }
+        },
+        "com.amazonaws.cloudwatchlogs#QueryParameterDefaultValue": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 1024
+                }
+            }
+        },
+        "com.amazonaws.cloudwatchlogs#QueryParameterDescription": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 512
+                }
+            }
+        },
+        "com.amazonaws.cloudwatchlogs#QueryParameterList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.cloudwatchlogs#QueryParameter"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 20
+                }
+            }
+        },
+        "com.amazonaws.cloudwatchlogs#QueryParameterName": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 128
+                },
+                "smithy.api#pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$"
             }
         },
         "com.amazonaws.cloudwatchlogs#QueryResults": {
@@ -13427,6 +13908,14 @@
                 "smithy.api#length": {
                     "min": 0,
                     "max": 128
+                }
+            }
+        },
+        "com.amazonaws.cloudwatchlogs#RecordsCount": {
+            "type": "long",
+            "traits": {
+                "smithy.api#range": {
+                    "min": 0
                 }
             }
         },
@@ -13720,6 +14209,18 @@
                     "traits": {
                         "smithy.api#documentation": "<p>The ARN of the IAM role that grants permissions to write query results to the specified\n      Amazon S3 destination.</p>",
                         "smithy.api#required": {}
+                    }
+                },
+                "ownerAccountId": {
+                    "target": "com.amazonaws.cloudwatchlogs#AccountId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The AWS accountId for the bucket owning account.</p>"
+                    }
+                },
+                "kmsKeyId": {
+                    "target": "com.amazonaws.cloudwatchlogs#KmsKeyId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the KMS encryption key. Must belong to the same AWS Region\n      as the destination Amazon S3 bucket.</p>"
                     }
                 }
             },
@@ -14557,7 +15058,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Starts a query of one or more log groups or data sources using CloudWatch Logs\n      Insights. You specify the log groups or data sources and time range to query and the query\n      string to use. You can query up to 10 data sources in a single query.</p>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html\">CloudWatch Logs Insights Query\n        Syntax</a>.</p>\n         <p>After you run a query using <code>StartQuery</code>, the query results are stored by\n        CloudWatch Logs. You can use <a href=\"https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetQueryResults.html\">GetQueryResults</a> to retrieve the results of a query, using the <code>queryId</code>\n      that <code>StartQuery</code> returns. </p>\n         <p>Interactive queries started with <code>StartQuery</code> share concurrency limits with\n      automated scheduled query executions. Both types of queries count toward the same regional\n      concurrent query quota, so high scheduled query activity may affect the availability of\n      concurrent slots for interactive queries.</p>\n         <note>\n            <p>To specify the log groups to query, a <code>StartQuery</code> operation must include one\n        of the following:</p>\n            <ul>\n               <li>\n                  <p>Either exactly one of the following parameters: <code>logGroupName</code>,\n              <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>\n                  </p>\n               </li>\n               <li>\n                  <p>Or the <code>queryString</code> must include a <code>SOURCE</code> command to select\n            log groups for the query. The <code>SOURCE</code> command can select log groups based on\n            log group name prefix, account ID, and log class, or select data sources using\n            dataSource syntax in LogsQL, PPL, and SQL.\n            </p>\n                  <p>For more information about the <code>SOURCE</code> command, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax-Source.html\">SOURCE</a>.</p>\n               </li>\n            </ul>\n         </note>\n         <p>If you have associated a KMS key with the query results in this\n      account, then <a href=\"https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html\">StartQuery</a> uses\n      that key to encrypt the results when it stores them. If no key is associated with query\n      results, the query results are encrypted with the default CloudWatch Logs encryption\n      method.</p>\n         <p>Queries time out after 60 minutes of runtime. If your queries are timing out, reduce the\n      time range being searched or partition your query into a number of queries.</p>\n         <p>If you are using CloudWatch cross-account observability, you can use this operation\n      in a monitoring account to start a query in a linked source account. For more information, see\n        <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html\">CloudWatch cross-account observability</a>. For a cross-account <code>StartQuery</code>\n      operation, the query definition must be defined in the monitoring account.</p>\n         <p>You can have up to 30 concurrent CloudWatch Logs insights queries, including queries\n      that have been added to dashboards. </p>"
+                "smithy.api#documentation": "<p>Starts a query of one or more log groups or data sources using CloudWatch Logs\n      Insights. You specify the log groups or data sources and time range to query and the query\n      string to use. You can query up to 10 data sources in a single query.</p>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html\">CloudWatch Logs Insights Query\n        Syntax</a>.</p>\n         <p>After you run a query using <code>StartQuery</code>, the query results are stored by\n        CloudWatch Logs. You can use <a href=\"https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetQueryResults.html\">GetQueryResults</a> to retrieve the results of a query, using the <code>queryId</code>\n      that <code>StartQuery</code> returns. </p>\n         <p>Interactive queries started with <code>StartQuery</code> share concurrency limits with\n      automated scheduled query executions. Both types of queries count toward the same regional\n      concurrent query quota, so high scheduled query activity may affect the availability of\n      concurrent slots for interactive queries.</p>\n         <note>\n            <p>To specify the log groups to query, a <code>StartQuery</code> operation must include one\n        of the following:</p>\n            <ul>\n               <li>\n                  <p>Either exactly one of the following parameters: <code>logGroupName</code>,\n              <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>\n                  </p>\n               </li>\n               <li>\n                  <p>Or the <code>queryString</code> must include a <code>SOURCE</code> command to select\n            log groups for the query. The <code>SOURCE</code> command can select log groups based on\n            log group name prefix, account ID, and log class, or select data sources using\n            dataSource syntax in LogsQL, PPL, and SQL.\n            </p>\n                  <p>For more information about the <code>SOURCE</code> command, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax-Source.html\">SOURCE</a>.</p>\n               </li>\n            </ul>\n         </note>\n         <p>If you have associated a KMS key with the query results in this\n      account, then <a href=\"https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html\">StartQuery</a> uses\n      that key to encrypt the results when it stores them. If no key is associated with query\n      results, the query results are encrypted with the default CloudWatch Logs encryption\n      method.</p>\n         <p>Queries time out after 60 minutes of runtime. If your queries are timing out, reduce the\n      time range being searched or partition your query into a number of queries.</p>\n         <p>If you are using CloudWatch cross-account observability, you can use this operation\n      in a monitoring account to start a query in a linked source account. For more information, see\n        <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html\">CloudWatch cross-account observability</a>. For a cross-account <code>StartQuery</code>\n      operation, the query definition must be defined in the monitoring account.</p>\n         <p>You can have up to 100 concurrent CloudWatch Logs insights queries, including queries\n      that have been added to dashboards. </p>"
             }
         },
         "com.amazonaws.cloudwatchlogs#StartQueryRequest": {
@@ -14940,6 +15441,21 @@
         },
         "com.amazonaws.cloudwatchlogs#SystemField": {
             "type": "string"
+        },
+        "com.amazonaws.cloudwatchlogs#TableBody": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 10485760
+                }
+            }
+        },
+        "com.amazonaws.cloudwatchlogs#TableFields": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.cloudwatchlogs#String"
+            }
         },
         "com.amazonaws.cloudwatchlogs#TagKey": {
             "type": "string",
@@ -15830,6 +16346,89 @@
             },
             "traits": {
                 "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.cloudwatchlogs#UpdateLookupTable": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.cloudwatchlogs#UpdateLookupTableRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.cloudwatchlogs#UpdateLookupTableResponse"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.cloudwatchlogs#AccessDeniedException"
+                },
+                {
+                    "target": "com.amazonaws.cloudwatchlogs#InvalidParameterException"
+                },
+                {
+                    "target": "com.amazonaws.cloudwatchlogs#ResourceNotFoundException"
+                },
+                {
+                    "target": "com.amazonaws.cloudwatchlogs#ServiceUnavailableException"
+                },
+                {
+                    "target": "com.amazonaws.cloudwatchlogs#ValidationException"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Updates an existing lookup table by replacing all of its CSV content. After the update\n      completes, queries that use this table will use the new data.</p>\n         <p>This is a full replacement operation. All existing content is replaced with the new CSV\n      data.</p>"
+            }
+        },
+        "com.amazonaws.cloudwatchlogs#UpdateLookupTableRequest": {
+            "type": "structure",
+            "members": {
+                "lookupTableArn": {
+                    "target": "com.amazonaws.cloudwatchlogs#Arn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ARN of the lookup table to update.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "description": {
+                    "target": "com.amazonaws.cloudwatchlogs#LookupTableDescription",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An updated description of the lookup table.</p>"
+                    }
+                },
+                "tableBody": {
+                    "target": "com.amazonaws.cloudwatchlogs#TableBody",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The new CSV content to replace the existing data. The first row must be a header row\n      with column names. The content must use UTF-8 encoding and not exceed 10 MB.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "kmsKeyId": {
+                    "target": "com.amazonaws.cloudwatchlogs#KmsKeyId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ARN of the KMS key to use to encrypt the lookup table data. You can\n      use this parameter to add, update, or remove the KMS key. To remove the KMS key and use an\n      Amazon Web Services-owned key instead, specify an empty string.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.cloudwatchlogs#UpdateLookupTableResponse": {
+            "type": "structure",
+            "members": {
+                "lookupTableArn": {
+                    "target": "com.amazonaws.cloudwatchlogs#Arn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ARN of the lookup table that was updated.</p>"
+                    }
+                },
+                "lastUpdatedTime": {
+                    "target": "com.amazonaws.cloudwatchlogs#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The time when the lookup table was last updated, expressed as the number of\n      milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudwatchlogs#UpdateScheduledQuery": {

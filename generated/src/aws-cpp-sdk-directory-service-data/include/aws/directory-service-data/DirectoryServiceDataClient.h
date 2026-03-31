@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/directory-service-data/DirectoryServiceDataPaginationBase.h>
 #include <aws/directory-service-data/DirectoryServiceDataServiceClientModel.h>
+#include <aws/directory-service-data/DirectoryServiceDataWaiter.h>
 #include <aws/directory-service-data/DirectoryServiceData_EXPORTS.h>
 
 namespace Aws {
@@ -68,7 +69,8 @@ namespace DirectoryServiceData {
 class AWS_DIRECTORYSERVICEDATA_API DirectoryServiceDataClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<DirectoryServiceDataClient>,
-      public DirectoryServiceDataPaginationBase<DirectoryServiceDataClient> {
+      public DirectoryServiceDataPaginationBase<DirectoryServiceDataClient>,
+      public DirectoryServiceDataWaiter<DirectoryServiceDataClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -604,6 +606,12 @@ class AWS_DIRECTORYSERVICEDATA_API DirectoryServiceDataClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DirectoryServiceDataClient>;
   void init(const DirectoryServiceDataClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, DirectoryServiceDataError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   DirectoryServiceDataClientConfiguration m_clientConfiguration;
   std::shared_ptr<DirectoryServiceDataEndpointProviderBase> m_endpointProvider;

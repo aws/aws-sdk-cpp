@@ -33,25 +33,6 @@ class DeleteFleetRequest : public DeadlineRequest {
 
   ///@{
   /**
-   * <p>The unique token which the server uses to recognize retries of the same
-   * request.</p>
-   */
-  inline const Aws::String& GetClientToken() const { return m_clientToken; }
-  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-  template <typename ClientTokenT = Aws::String>
-  void SetClientToken(ClientTokenT&& value) {
-    m_clientTokenHasBeenSet = true;
-    m_clientToken = std::forward<ClientTokenT>(value);
-  }
-  template <typename ClientTokenT = Aws::String>
-  DeleteFleetRequest& WithClientToken(ClientTokenT&& value) {
-    SetClientToken(std::forward<ClientTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The farm ID of the farm to remove from the fleet.</p>
    */
   inline const Aws::String& GetFarmId() const { return m_farmId; }
@@ -85,15 +66,34 @@ class DeleteFleetRequest : public DeadlineRequest {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
+  ///@{
+  /**
+   * <p>The unique token which the server uses to recognize retries of the same
+   * request.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  DeleteFleetRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_farmId;
 
   Aws::String m_fleetId;
-  bool m_clientTokenHasBeenSet = true;
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_farmIdHasBeenSet = false;
   bool m_fleetIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
 };
 
 }  // namespace Model

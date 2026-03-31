@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/backupsearch/BackupSearchPaginationBase.h>
 #include <aws/backupsearch/BackupSearchServiceClientModel.h>
+#include <aws/backupsearch/BackupSearchWaiter.h>
 #include <aws/backupsearch/BackupSearch_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -25,7 +26,8 @@ namespace BackupSearch {
  */
 class AWS_BACKUPSEARCH_API BackupSearchClient : public Aws::Client::AWSJsonClient,
                                                 public Aws::Client::ClientWithAsyncTemplateMethods<BackupSearchClient>,
-                                                public BackupSearchPaginationBase<BackupSearchClient> {
+                                                public BackupSearchPaginationBase<BackupSearchClient>,
+                                                public BackupSearchWaiter<BackupSearchClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -425,6 +427,12 @@ class AWS_BACKUPSEARCH_API BackupSearchClient : public Aws::Client::AWSJsonClien
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BackupSearchClient>;
   void init(const BackupSearchClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, BackupSearchError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   BackupSearchClientConfiguration m_clientConfiguration;
   std::shared_ptr<BackupSearchEndpointProviderBase> m_endpointProvider;

@@ -11,6 +11,7 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/docdb/DocDBPaginationBase.h>
 #include <aws/docdb/DocDBServiceClientModel.h>
+#include <aws/docdb/DocDBWaiter.h>
 #include <aws/docdb/DocDB_EXPORTS.h>
 
 namespace Aws {
@@ -23,7 +24,8 @@ namespace DocDB {
  */
 class AWS_DOCDB_API DocDBClient : public Aws::Client::AWSXMLClient,
                                   public Aws::Client::ClientWithAsyncTemplateMethods<DocDBClient>,
-                                  public DocDBPaginationBase<DocDBClient> {
+                                  public DocDBPaginationBase<DocDBClient>,
+                                  public DocDBWaiter<DocDBClient> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();
@@ -1787,6 +1789,10 @@ class AWS_DOCDB_API DocDBClient : public Aws::Client::AWSXMLClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DocDBClient>;
   void init(const DocDBClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, DocDBError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   DocDBClientConfiguration m_clientConfiguration;
   std::shared_ptr<DocDBEndpointProviderBase> m_endpointProvider;

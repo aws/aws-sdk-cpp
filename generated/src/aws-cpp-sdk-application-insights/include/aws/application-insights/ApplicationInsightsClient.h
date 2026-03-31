@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/application-insights/ApplicationInsightsPaginationBase.h>
 #include <aws/application-insights/ApplicationInsightsServiceClientModel.h>
+#include <aws/application-insights/ApplicationInsightsWaiter.h>
 #include <aws/application-insights/ApplicationInsights_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -31,7 +32,8 @@ namespace ApplicationInsights {
  */
 class AWS_APPLICATIONINSIGHTS_API ApplicationInsightsClient : public Aws::Client::AWSJsonClient,
                                                               public Aws::Client::ClientWithAsyncTemplateMethods<ApplicationInsightsClient>,
-                                                              public ApplicationInsightsPaginationBase<ApplicationInsightsClient> {
+                                                              public ApplicationInsightsPaginationBase<ApplicationInsightsClient>,
+                                                              public ApplicationInsightsWaiter<ApplicationInsightsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1002,6 +1004,10 @@ class AWS_APPLICATIONINSIGHTS_API ApplicationInsightsClient : public Aws::Client
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ApplicationInsightsClient>;
   void init(const ApplicationInsightsClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ApplicationInsightsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   ApplicationInsightsClientConfiguration m_clientConfiguration;
   std::shared_ptr<ApplicationInsightsEndpointProviderBase> m_endpointProvider;

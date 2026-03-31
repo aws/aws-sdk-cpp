@@ -32,6 +32,10 @@ AccountEnforcedGuardrailInferenceInputConfiguration& AccountEnforcedGuardrailInf
     m_inputTags = InputTagsMapper::GetInputTagsForName(jsonValue.GetString("inputTags"));
     m_inputTagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("modelEnforcement")) {
+    m_modelEnforcement = jsonValue.GetObject("modelEnforcement");
+    m_modelEnforcementHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -48,6 +52,10 @@ JsonValue AccountEnforcedGuardrailInferenceInputConfiguration::Jsonize() const {
 
   if (m_inputTagsHasBeenSet) {
     payload.WithString("inputTags", InputTagsMapper::GetNameForInputTags(m_inputTags));
+  }
+
+  if (m_modelEnforcementHasBeenSet) {
+    payload.WithObject("modelEnforcement", m_modelEnforcement.Jsonize());
   }
 
   return payload;

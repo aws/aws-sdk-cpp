@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/support/SupportPaginationBase.h>
 #include <aws/support/SupportServiceClientModel.h>
+#include <aws/support/SupportWaiter.h>
 #include <aws/support/Support_EXPORTS.h>
 
 namespace Aws {
@@ -57,7 +58,8 @@ namespace Support {
  */
 class AWS_SUPPORT_API SupportClient : public Aws::Client::AWSJsonClient,
                                       public Aws::Client::ClientWithAsyncTemplateMethods<SupportClient>,
-                                      public SupportPaginationBase<SupportClient> {
+                                      public SupportPaginationBase<SupportClient>,
+                                      public SupportWaiter<SupportClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -811,6 +813,10 @@ class AWS_SUPPORT_API SupportClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SupportClient>;
   void init(const SupportClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SupportError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   SupportClientConfiguration m_clientConfiguration;
   std::shared_ptr<SupportEndpointProviderBase> m_endpointProvider;

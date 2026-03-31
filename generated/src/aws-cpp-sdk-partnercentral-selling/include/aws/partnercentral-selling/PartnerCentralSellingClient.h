@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/partnercentral-selling/PartnerCentralSellingPaginationBase.h>
 #include <aws/partnercentral-selling/PartnerCentralSellingServiceClientModel.h>
+#include <aws/partnercentral-selling/PartnerCentralSellingWaiter.h>
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 
 namespace Aws {
@@ -53,7 +54,8 @@ namespace PartnerCentralSelling {
 class AWS_PARTNERCENTRALSELLING_API PartnerCentralSellingClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<PartnerCentralSellingClient>,
-      public PartnerCentralSellingPaginationBase<PartnerCentralSellingClient> {
+      public PartnerCentralSellingPaginationBase<PartnerCentralSellingClient>,
+      public PartnerCentralSellingWaiter<PartnerCentralSellingClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1433,6 +1435,10 @@ class AWS_PARTNERCENTRALSELLING_API PartnerCentralSellingClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PartnerCentralSellingClient>;
   void init(const PartnerCentralSellingClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, PartnerCentralSellingError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   PartnerCentralSellingClientConfiguration m_clientConfiguration;
   std::shared_ptr<PartnerCentralSellingEndpointProviderBase> m_endpointProvider;

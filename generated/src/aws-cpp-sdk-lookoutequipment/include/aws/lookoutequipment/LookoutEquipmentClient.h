@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lookoutequipment/LookoutEquipmentPaginationBase.h>
 #include <aws/lookoutequipment/LookoutEquipmentServiceClientModel.h>
+#include <aws/lookoutequipment/LookoutEquipmentWaiter.h>
 #include <aws/lookoutequipment/LookoutEquipment_EXPORTS.h>
 
 namespace Aws {
@@ -21,7 +22,8 @@ namespace LookoutEquipment {
  */
 class AWS_LOOKOUTEQUIPMENT_API LookoutEquipmentClient : public Aws::Client::AWSJsonClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<LookoutEquipmentClient>,
-                                                        public LookoutEquipmentPaginationBase<LookoutEquipmentClient> {
+                                                        public LookoutEquipmentPaginationBase<LookoutEquipmentClient>,
+                                                        public LookoutEquipmentWaiter<LookoutEquipmentClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1433,6 +1435,10 @@ class AWS_LOOKOUTEQUIPMENT_API LookoutEquipmentClient : public Aws::Client::AWSJ
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<LookoutEquipmentClient>;
   void init(const LookoutEquipmentClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, LookoutEquipmentError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   LookoutEquipmentClientConfiguration m_clientConfiguration;
   std::shared_ptr<LookoutEquipmentEndpointProviderBase> m_endpointProvider;

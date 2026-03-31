@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/states/SFNPaginationBase.h>
 #include <aws/states/SFNServiceClientModel.h>
+#include <aws/states/SFNWaiter.h>
 #include <aws/states/SFN_EXPORTS.h>
 
 namespace Aws {
@@ -34,7 +35,8 @@ namespace SFN {
  */
 class AWS_SFN_API SFNClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<SFNClient>,
-                              public SFNPaginationBase<SFNClient> {
+                              public SFNPaginationBase<SFNClient>,
+                              public SFNWaiter<SFNClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1583,6 +1585,10 @@ class AWS_SFN_API SFNClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SFNClient>;
   void init(const SFNClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SFNError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   SFNClientConfiguration m_clientConfiguration;
   std::shared_ptr<SFNEndpointProviderBase> m_endpointProvider;

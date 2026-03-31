@@ -8,6 +8,8 @@
 #include <aws/batch/model/LatestServiceJobAttempt.h>
 #include <aws/batch/model/ServiceJobAttemptDetail.h>
 #include <aws/batch/model/ServiceJobCapacityUsageDetail.h>
+#include <aws/batch/model/ServiceJobPreemptionConfiguration.h>
+#include <aws/batch/model/ServiceJobPreemptionSummary.h>
 #include <aws/batch/model/ServiceJobRetryStrategy.h>
 #include <aws/batch/model/ServiceJobStatus.h>
 #include <aws/batch/model/ServiceJobTimeout.h>
@@ -304,6 +306,58 @@ class DescribeServiceJobResult {
 
   ///@{
   /**
+   * <p>The name of the quota share that the service job is associated with.</p>
+   */
+  inline const Aws::String& GetQuotaShareName() const { return m_quotaShareName; }
+  template <typename QuotaShareNameT = Aws::String>
+  void SetQuotaShareName(QuotaShareNameT&& value) {
+    m_quotaShareNameHasBeenSet = true;
+    m_quotaShareName = std::forward<QuotaShareNameT>(value);
+  }
+  template <typename QuotaShareNameT = Aws::String>
+  DescribeServiceJobResult& WithQuotaShareName(QuotaShareNameT&& value) {
+    SetQuotaShareName(std::forward<QuotaShareNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the service job behavior when preempted.</p>
+   */
+  inline const ServiceJobPreemptionConfiguration& GetPreemptionConfiguration() const { return m_preemptionConfiguration; }
+  template <typename PreemptionConfigurationT = ServiceJobPreemptionConfiguration>
+  void SetPreemptionConfiguration(PreemptionConfigurationT&& value) {
+    m_preemptionConfigurationHasBeenSet = true;
+    m_preemptionConfiguration = std::forward<PreemptionConfigurationT>(value);
+  }
+  template <typename PreemptionConfigurationT = ServiceJobPreemptionConfiguration>
+  DescribeServiceJobResult& WithPreemptionConfiguration(PreemptionConfigurationT&& value) {
+    SetPreemptionConfiguration(std::forward<PreemptionConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Summarizes the preemptions of the service job. This field appears on a
+   * service job when it has been preempted.</p>
+   */
+  inline const ServiceJobPreemptionSummary& GetPreemptionSummary() const { return m_preemptionSummary; }
+  template <typename PreemptionSummaryT = ServiceJobPreemptionSummary>
+  void SetPreemptionSummary(PreemptionSummaryT&& value) {
+    m_preemptionSummaryHasBeenSet = true;
+    m_preemptionSummary = std::forward<PreemptionSummaryT>(value);
+  }
+  template <typename PreemptionSummaryT = ServiceJobPreemptionSummary>
+  DescribeServiceJobResult& WithPreemptionSummary(PreemptionSummaryT&& value) {
+    SetPreemptionSummary(std::forward<PreemptionSummaryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Unix timestamp (in milliseconds) for when the service job was
    * started.</p>
    */
@@ -457,6 +511,12 @@ class DescribeServiceJobResult {
 
   Aws::String m_shareIdentifier;
 
+  Aws::String m_quotaShareName;
+
+  ServiceJobPreemptionConfiguration m_preemptionConfiguration;
+
+  ServiceJobPreemptionSummary m_preemptionSummary;
+
   long long m_startedAt{0};
 
   ServiceJobStatus m_status{ServiceJobStatus::NOT_SET};
@@ -486,6 +546,9 @@ class DescribeServiceJobResult {
   bool m_serviceRequestPayloadHasBeenSet = false;
   bool m_serviceJobTypeHasBeenSet = false;
   bool m_shareIdentifierHasBeenSet = false;
+  bool m_quotaShareNameHasBeenSet = false;
+  bool m_preemptionConfigurationHasBeenSet = false;
+  bool m_preemptionSummaryHasBeenSet = false;
   bool m_startedAtHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;

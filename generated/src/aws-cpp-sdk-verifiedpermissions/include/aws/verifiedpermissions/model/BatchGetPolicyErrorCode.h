@@ -10,7 +10,7 @@
 namespace Aws {
 namespace VerifiedPermissions {
 namespace Model {
-enum class BatchGetPolicyErrorCode { NOT_SET, POLICY_STORE_NOT_FOUND, POLICY_NOT_FOUND };
+enum class BatchGetPolicyErrorCode { NOT_SET, POLICY_STORE_NOT_FOUND, POLICY_NOT_FOUND, POLICY_STORE_ALIAS_NOT_FOUND };
 
 namespace BatchGetPolicyErrorCodeMapper {
 AWS_VERIFIEDPERMISSIONS_API BatchGetPolicyErrorCode GetBatchGetPolicyErrorCodeForName(const Aws::String& name);

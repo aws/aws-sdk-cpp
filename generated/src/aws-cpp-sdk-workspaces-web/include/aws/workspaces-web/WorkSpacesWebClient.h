@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/workspaces-web/WorkSpacesWebPaginationBase.h>
 #include <aws/workspaces-web/WorkSpacesWebServiceClientModel.h>
+#include <aws/workspaces-web/WorkSpacesWebWaiter.h>
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
 
 namespace Aws {
@@ -26,7 +27,8 @@ namespace WorkSpacesWeb {
  */
 class AWS_WORKSPACESWEB_API WorkSpacesWebClient : public Aws::Client::AWSJsonClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<WorkSpacesWebClient>,
-                                                  public WorkSpacesWebPaginationBase<WorkSpacesWebClient> {
+                                                  public WorkSpacesWebPaginationBase<WorkSpacesWebClient>,
+                                                  public WorkSpacesWebWaiter<WorkSpacesWebClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2142,6 +2144,12 @@ class AWS_WORKSPACESWEB_API WorkSpacesWebClient : public Aws::Client::AWSJsonCli
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<WorkSpacesWebClient>;
   void init(const WorkSpacesWebClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, WorkSpacesWebError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   WorkSpacesWebClientConfiguration m_clientConfiguration;
   std::shared_ptr<WorkSpacesWebEndpointProviderBase> m_endpointProvider;

@@ -60,9 +60,7 @@ StatisticSet& StatisticSet::operator=(const std::shared_ptr<Aws::Crt::Cbor::Cbor
                   m_maximum = val.value();
                 }
                 m_maximumHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -119,9 +117,7 @@ StatisticSet& StatisticSet::operator=(const std::shared_ptr<Aws::Crt::Cbor::Cbor
                 m_maximum = val.value();
               }
               m_maximumHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

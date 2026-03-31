@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iot-data/IoTDataPlanePaginationBase.h>
 #include <aws/iot-data/IoTDataPlaneServiceClientModel.h>
+#include <aws/iot-data/IoTDataPlaneWaiter.h>
 #include <aws/iot-data/IoTDataPlane_EXPORTS.h>
 
 namespace Aws {
@@ -30,7 +31,8 @@ namespace IoTDataPlane {
  */
 class AWS_IOTDATAPLANE_API IoTDataPlaneClient : public Aws::Client::AWSJsonClient,
                                                 public Aws::Client::ClientWithAsyncTemplateMethods<IoTDataPlaneClient>,
-                                                public IoTDataPlanePaginationBase<IoTDataPlaneClient> {
+                                                public IoTDataPlanePaginationBase<IoTDataPlaneClient>,
+                                                public IoTDataPlaneWaiter<IoTDataPlaneClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -349,6 +351,12 @@ class AWS_IOTDATAPLANE_API IoTDataPlaneClient : public Aws::Client::AWSJsonClien
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTDataPlaneClient>;
   void init(const IoTDataPlaneClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, IoTDataPlaneError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   IoTDataPlaneClientConfiguration m_clientConfiguration;
   std::shared_ptr<IoTDataPlaneEndpointProviderBase> m_endpointProvider;

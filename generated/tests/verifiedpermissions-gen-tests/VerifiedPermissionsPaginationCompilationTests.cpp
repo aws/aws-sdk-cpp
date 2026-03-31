@@ -8,6 +8,7 @@
 
 #include <aws/verifiedpermissions/VerifiedPermissionsClientPagination.h>
 #include <aws/verifiedpermissions/VerifiedPermissionsPaginationBase.h>
+#include <aws/verifiedpermissions/model/ListPolicyStoreAliasesPaginationTraits.h>
 #include <aws/verifiedpermissions/model/ListPolicyTemplatesPaginationTraits.h>
 #include <aws/verifiedpermissions/model/ListIdentitySourcesPaginationTraits.h>
 #include <aws/verifiedpermissions/model/ListPoliciesPaginationTraits.h>

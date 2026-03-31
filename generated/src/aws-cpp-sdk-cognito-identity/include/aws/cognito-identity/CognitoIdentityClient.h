@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cognito-identity/CognitoIdentityPaginationBase.h>
 #include <aws/cognito-identity/CognitoIdentityServiceClientModel.h>
+#include <aws/cognito-identity/CognitoIdentityWaiter.h>
 #include <aws/cognito-identity/CognitoIdentity_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -34,7 +35,8 @@ namespace CognitoIdentity {
  */
 class AWS_COGNITOIDENTITY_API CognitoIdentityClient : public Aws::Client::AWSJsonClient,
                                                       public Aws::Client::ClientWithAsyncTemplateMethods<CognitoIdentityClient>,
-                                                      public CognitoIdentityPaginationBase<CognitoIdentityClient> {
+                                                      public CognitoIdentityPaginationBase<CognitoIdentityClient>,
+                                                      public CognitoIdentityWaiter<CognitoIdentityClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -819,6 +821,10 @@ class AWS_COGNITOIDENTITY_API CognitoIdentityClient : public Aws::Client::AWSJso
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CognitoIdentityClient>;
   void init(const CognitoIdentityClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CognitoIdentityError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   CognitoIdentityClientConfiguration m_clientConfiguration;
   std::shared_ptr<CognitoIdentityEndpointProviderBase> m_endpointProvider;

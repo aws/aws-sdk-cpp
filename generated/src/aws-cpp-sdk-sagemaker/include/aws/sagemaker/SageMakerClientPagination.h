@@ -7,6 +7,7 @@
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/sagemaker/SageMakerClient.h>
 #include <aws/sagemaker/model/CreateHubContentPresignedUrlsPaginationTraits.h>
+#include <aws/sagemaker/model/DescribeTrainingPlanExtensionHistoryPaginationTraits.h>
 #include <aws/sagemaker/model/ListActionsPaginationTraits.h>
 #include <aws/sagemaker/model/ListAlgorithmsPaginationTraits.h>
 #include <aws/sagemaker/model/ListAliasesPaginationTraits.h>
@@ -98,6 +99,9 @@ namespace SageMaker {
 using CreateHubContentPresignedUrlsPaginator =
     Aws::Utils::Pagination::Paginator<SageMakerClient, Model::CreateHubContentPresignedUrlsRequest,
                                       Pagination::CreateHubContentPresignedUrlsPaginationTraits<SageMakerClient>>;
+using DescribeTrainingPlanExtensionHistoryPaginator =
+    Aws::Utils::Pagination::Paginator<SageMakerClient, Model::DescribeTrainingPlanExtensionHistoryRequest,
+                                      Pagination::DescribeTrainingPlanExtensionHistoryPaginationTraits<SageMakerClient>>;
 using ListActionsPaginator =
     Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListActionsRequest, Pagination::ListActionsPaginationTraits<SageMakerClient>>;
 using ListAlgorithmsPaginator = Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListAlgorithmsRequest,

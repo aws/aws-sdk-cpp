@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/b2bi/B2BIPaginationBase.h>
 #include <aws/b2bi/B2BIServiceClientModel.h>
+#include <aws/b2bi/B2BIWaiter.h>
 #include <aws/b2bi/B2BI_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -31,7 +32,8 @@ namespace B2BI {
  */
 class AWS_B2BI_API B2BIClient : public Aws::Client::AWSJsonClient,
                                 public Aws::Client::ClientWithAsyncTemplateMethods<B2BIClient>,
-                                public B2BIPaginationBase<B2BIClient> {
+                                public B2BIPaginationBase<B2BIClient>,
+                                public B2BIWaiter<B2BIClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -979,6 +981,10 @@ class AWS_B2BI_API B2BIClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<B2BIClient>;
   void init(const B2BIClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, B2BIError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   B2BIClientConfiguration m_clientConfiguration;
   std::shared_ptr<B2BIEndpointProviderBase> m_endpointProvider;

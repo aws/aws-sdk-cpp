@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cloudtrail-data/CloudTrailDataPaginationBase.h>
 #include <aws/cloudtrail-data/CloudTrailDataServiceClientModel.h>
+#include <aws/cloudtrail-data/CloudTrailDataWaiter.h>
 #include <aws/cloudtrail-data/CloudTrailData_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -26,7 +27,8 @@ namespace CloudTrailData {
  */
 class AWS_CLOUDTRAILDATA_API CloudTrailDataClient : public Aws::Client::AWSJsonClient,
                                                     public Aws::Client::ClientWithAsyncTemplateMethods<CloudTrailDataClient>,
-                                                    public CloudTrailDataPaginationBase<CloudTrailDataClient> {
+                                                    public CloudTrailDataPaginationBase<CloudTrailDataClient>,
+                                                    public CloudTrailDataWaiter<CloudTrailDataClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -119,6 +121,12 @@ class AWS_CLOUDTRAILDATA_API CloudTrailDataClient : public Aws::Client::AWSJsonC
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudTrailDataClient>;
   void init(const CloudTrailDataClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CloudTrailDataError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   CloudTrailDataClientConfiguration m_clientConfiguration;
   std::shared_ptr<CloudTrailDataEndpointProviderBase> m_endpointProvider;

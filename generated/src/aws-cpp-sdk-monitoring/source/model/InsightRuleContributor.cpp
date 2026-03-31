@@ -146,9 +146,7 @@ InsightRuleContributor& InsightRuleContributor::operator=(const std::shared_ptr<
                   }
                 }
                 m_datapointsHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -291,9 +289,7 @@ InsightRuleContributor& InsightRuleContributor::operator=(const std::shared_ptr<
                 }
               }
               m_datapointsHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

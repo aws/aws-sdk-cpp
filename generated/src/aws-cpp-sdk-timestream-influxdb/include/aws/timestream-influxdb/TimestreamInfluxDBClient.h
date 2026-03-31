@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDBPaginationBase.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDBServiceClientModel.h>
+#include <aws/timestream-influxdb/TimestreamInfluxDBWaiter.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDB_EXPORTS.h>
 
 namespace Aws {
@@ -24,7 +25,8 @@ namespace TimestreamInfluxDB {
  */
 class AWS_TIMESTREAMINFLUXDB_API TimestreamInfluxDBClient : public Aws::Client::AWSJsonClient,
                                                             public Aws::Client::ClientWithAsyncTemplateMethods<TimestreamInfluxDBClient>,
-                                                            public TimestreamInfluxDBPaginationBase<TimestreamInfluxDBClient> {
+                                                            public TimestreamInfluxDBPaginationBase<TimestreamInfluxDBClient>,
+                                                            public TimestreamInfluxDBWaiter<TimestreamInfluxDBClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -587,6 +589,10 @@ class AWS_TIMESTREAMINFLUXDB_API TimestreamInfluxDBClient : public Aws::Client::
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<TimestreamInfluxDBClient>;
   void init(const TimestreamInfluxDBClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, TimestreamInfluxDBError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   TimestreamInfluxDBClientConfiguration m_clientConfiguration;
   std::shared_ptr<TimestreamInfluxDBEndpointProviderBase> m_endpointProvider;

@@ -18,6 +18,10 @@ namespace deadline {
 namespace Model {
 
 /**
+ * <p>Shared pagination fields for List operation inputs (nextToken +
+ * maxResults).</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetSessionsStatisticsAggregationRequest">AWS
+ * API Reference</a></p>
  */
 class GetSessionsStatisticsAggregationRequest : public DeadlineRequest {
  public:
@@ -55,20 +59,19 @@ class GetSessionsStatisticsAggregationRequest : public DeadlineRequest {
 
   ///@{
   /**
-   * <p>The identifier returned by the
-   * <code>StartSessionsStatisticsAggregation</code> operation that identifies the
-   * aggregated statistics.</p>
+   * <p>The token for the next set of results, or <code>null</code> to start from the
+   * beginning.</p>
    */
-  inline const Aws::String& GetAggregationId() const { return m_aggregationId; }
-  inline bool AggregationIdHasBeenSet() const { return m_aggregationIdHasBeenSet; }
-  template <typename AggregationIdT = Aws::String>
-  void SetAggregationId(AggregationIdT&& value) {
-    m_aggregationIdHasBeenSet = true;
-    m_aggregationId = std::forward<AggregationIdT>(value);
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
   }
-  template <typename AggregationIdT = Aws::String>
-  GetSessionsStatisticsAggregationRequest& WithAggregationId(AggregationIdT&& value) {
-    SetAggregationId(std::forward<AggregationIdT>(value));
+  template <typename NextTokenT = Aws::String>
+  GetSessionsStatisticsAggregationRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
     return *this;
   }
   ///@}
@@ -92,34 +95,35 @@ class GetSessionsStatisticsAggregationRequest : public DeadlineRequest {
 
   ///@{
   /**
-   * <p>The token for the next set of results, or <code>null</code> to start from the
-   * beginning.</p>
+   * <p>The identifier returned by the
+   * <code>StartSessionsStatisticsAggregation</code> operation that identifies the
+   * aggregated statistics.</p>
    */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
+  inline const Aws::String& GetAggregationId() const { return m_aggregationId; }
+  inline bool AggregationIdHasBeenSet() const { return m_aggregationIdHasBeenSet; }
+  template <typename AggregationIdT = Aws::String>
+  void SetAggregationId(AggregationIdT&& value) {
+    m_aggregationIdHasBeenSet = true;
+    m_aggregationId = std::forward<AggregationIdT>(value);
   }
-  template <typename NextTokenT = Aws::String>
-  GetSessionsStatisticsAggregationRequest& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
+  template <typename AggregationIdT = Aws::String>
+  GetSessionsStatisticsAggregationRequest& WithAggregationId(AggregationIdT&& value) {
+    SetAggregationId(std::forward<AggregationIdT>(value));
     return *this;
   }
   ///@}
  private:
   Aws::String m_farmId;
 
-  Aws::String m_aggregationId;
+  Aws::String m_nextToken;
 
   int m_maxResults{0};
 
-  Aws::String m_nextToken;
+  Aws::String m_aggregationId;
   bool m_farmIdHasBeenSet = false;
-  bool m_aggregationIdHasBeenSet = false;
-  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_aggregationIdHasBeenSet = false;
 };
 
 }  // namespace Model

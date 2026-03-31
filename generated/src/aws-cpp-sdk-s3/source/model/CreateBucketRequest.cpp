@@ -111,6 +111,10 @@ Aws::Http::HeaderValueCollection CreateBucketRequest::GetRequestSpecificHeaders(
     headers.emplace("x-amz-object-ownership", ObjectOwnershipMapper::GetNameForObjectOwnership(m_objectOwnership));
   }
 
+  if (m_bucketNamespaceHasBeenSet && m_bucketNamespace != BucketNamespace::NOT_SET) {
+    headers.emplace("x-amz-bucket-namespace", BucketNamespaceMapper::GetNameForBucketNamespace(m_bucketNamespace));
+  }
+
   return headers;
 }
 

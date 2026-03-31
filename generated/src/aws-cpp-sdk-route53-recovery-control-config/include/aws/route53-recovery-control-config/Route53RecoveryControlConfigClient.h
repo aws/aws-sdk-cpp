@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/route53-recovery-control-config/Route53RecoveryControlConfigPaginationBase.h>
 #include <aws/route53-recovery-control-config/Route53RecoveryControlConfigServiceClientModel.h>
+#include <aws/route53-recovery-control-config/Route53RecoveryControlConfigWaiter.h>
 #include <aws/route53-recovery-control-config/Route53RecoveryControlConfig_EXPORTS.h>
 
 namespace Aws {
@@ -21,7 +22,8 @@ namespace Route53RecoveryControlConfig {
 class AWS_ROUTE53RECOVERYCONTROLCONFIG_API Route53RecoveryControlConfigClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<Route53RecoveryControlConfigClient>,
-      public Route53RecoveryControlConfigPaginationBase<Route53RecoveryControlConfigClient> {
+      public Route53RecoveryControlConfigPaginationBase<Route53RecoveryControlConfigClient>,
+      public Route53RecoveryControlConfigWaiter<Route53RecoveryControlConfigClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -792,6 +794,12 @@ class AWS_ROUTE53RECOVERYCONTROLCONFIG_API Route53RecoveryControlConfigClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<Route53RecoveryControlConfigClient>;
   void init(const Route53RecoveryControlConfigClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, Route53RecoveryControlConfigError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   Route53RecoveryControlConfigClientConfiguration m_clientConfiguration;
   std::shared_ptr<Route53RecoveryControlConfigEndpointProviderBase> m_endpointProvider;

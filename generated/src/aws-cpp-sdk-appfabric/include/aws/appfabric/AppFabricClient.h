@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appfabric/AppFabricPaginationBase.h>
 #include <aws/appfabric/AppFabricServiceClientModel.h>
+#include <aws/appfabric/AppFabricWaiter.h>
 #include <aws/appfabric/AppFabric_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -30,7 +31,8 @@ namespace AppFabric {
  */
 class AWS_APPFABRIC_API AppFabricClient : public Aws::Client::AWSJsonClient,
                                           public Aws::Client::ClientWithAsyncTemplateMethods<AppFabricClient>,
-                                          public AppFabricPaginationBase<AppFabricClient> {
+                                          public AppFabricPaginationBase<AppFabricClient>,
+                                          public AppFabricWaiter<AppFabricClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -804,6 +806,12 @@ class AWS_APPFABRIC_API AppFabricClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AppFabricClient>;
   void init(const AppFabricClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, AppFabricError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   AppFabricClientConfiguration m_clientConfiguration;
   std::shared_ptr<AppFabricEndpointProviderBase> m_endpointProvider;

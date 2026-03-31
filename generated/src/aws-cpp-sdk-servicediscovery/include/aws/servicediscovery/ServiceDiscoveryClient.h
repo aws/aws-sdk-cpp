@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/servicediscovery/ServiceDiscoveryPaginationBase.h>
 #include <aws/servicediscovery/ServiceDiscoveryServiceClientModel.h>
+#include <aws/servicediscovery/ServiceDiscoveryWaiter.h>
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
 
 namespace Aws {
@@ -25,7 +26,8 @@ namespace ServiceDiscovery {
  */
 class AWS_SERVICEDISCOVERY_API ServiceDiscoveryClient : public Aws::Client::AWSJsonClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<ServiceDiscoveryClient>,
-                                                        public ServiceDiscoveryPaginationBase<ServiceDiscoveryClient> {
+                                                        public ServiceDiscoveryPaginationBase<ServiceDiscoveryClient>,
+                                                        public ServiceDiscoveryWaiter<ServiceDiscoveryClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -994,6 +996,10 @@ class AWS_SERVICEDISCOVERY_API ServiceDiscoveryClient : public Aws::Client::AWSJ
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ServiceDiscoveryClient>;
   void init(const ServiceDiscoveryClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ServiceDiscoveryError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   ServiceDiscoveryClientConfiguration m_clientConfiguration;
   std::shared_ptr<ServiceDiscoveryEndpointProviderBase> m_endpointProvider;

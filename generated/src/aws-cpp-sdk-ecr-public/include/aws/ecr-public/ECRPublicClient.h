@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ecr-public/ECRPublicPaginationBase.h>
 #include <aws/ecr-public/ECRPublicServiceClientModel.h>
+#include <aws/ecr-public/ECRPublicWaiter.h>
 #include <aws/ecr-public/ECRPublic_EXPORTS.h>
 
 namespace Aws {
@@ -28,7 +29,8 @@ namespace ECRPublic {
  */
 class AWS_ECRPUBLIC_API ECRPublicClient : public Aws::Client::AWSJsonClient,
                                           public Aws::Client::ClientWithAsyncTemplateMethods<ECRPublicClient>,
-                                          public ECRPublicPaginationBase<ECRPublicClient> {
+                                          public ECRPublicPaginationBase<ECRPublicClient>,
+                                          public ECRPublicWaiter<ECRPublicClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -763,6 +765,10 @@ class AWS_ECRPUBLIC_API ECRPublicClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ECRPublicClient>;
   void init(const ECRPublicClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ECRPublicError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   ECRPublicClientConfiguration m_clientConfiguration;
   std::shared_ptr<ECRPublicEndpointProviderBase> m_endpointProvider;

@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/tnb/TnbPaginationBase.h>
 #include <aws/tnb/TnbServiceClientModel.h>
+#include <aws/tnb/TnbWaiter.h>
 #include <aws/tnb/Tnb_EXPORTS.h>
 
 namespace Aws {
@@ -22,7 +23,8 @@ namespace tnb {
  */
 class AWS_TNB_API TnbClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<TnbClient>,
-                              public TnbPaginationBase<TnbClient> {
+                              public TnbPaginationBase<TnbClient>,
+                              public TnbWaiter<TnbClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1143,6 +1145,12 @@ class AWS_TNB_API TnbClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<TnbClient>;
   void init(const TnbClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, TnbError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   TnbClientConfiguration m_clientConfiguration;
   std::shared_ptr<TnbEndpointProviderBase> m_endpointProvider;

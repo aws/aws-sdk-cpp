@@ -11,6 +11,7 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/redshift/RedshiftPaginationBase.h>
 #include <aws/redshift/RedshiftServiceClientModel.h>
+#include <aws/redshift/RedshiftWaiter.h>
 #include <aws/redshift/Redshift_EXPORTS.h>
 
 namespace Aws {
@@ -41,7 +42,8 @@ namespace Redshift {
  */
 class AWS_REDSHIFT_API RedshiftClient : public Aws::Client::AWSXMLClient,
                                         public Aws::Client::ClientWithAsyncTemplateMethods<RedshiftClient>,
-                                        public RedshiftPaginationBase<RedshiftClient> {
+                                        public RedshiftPaginationBase<RedshiftClient>,
+                                        public RedshiftWaiter<RedshiftClient> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();
@@ -4562,6 +4564,10 @@ class AWS_REDSHIFT_API RedshiftClient : public Aws::Client::AWSXMLClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<RedshiftClient>;
   void init(const RedshiftClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, RedshiftError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   RedshiftClientConfiguration m_clientConfiguration;
   std::shared_ptr<RedshiftEndpointProviderBase> m_endpointProvider;

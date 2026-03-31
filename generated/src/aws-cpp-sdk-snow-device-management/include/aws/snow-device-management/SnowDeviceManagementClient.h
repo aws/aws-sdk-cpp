@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/snow-device-management/SnowDeviceManagementPaginationBase.h>
 #include <aws/snow-device-management/SnowDeviceManagementServiceClientModel.h>
+#include <aws/snow-device-management/SnowDeviceManagementWaiter.h>
 #include <aws/snow-device-management/SnowDeviceManagement_EXPORTS.h>
 
 namespace Aws {
@@ -20,7 +21,8 @@ namespace SnowDeviceManagement {
 class AWS_SNOWDEVICEMANAGEMENT_API SnowDeviceManagementClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<SnowDeviceManagementClient>,
-      public SnowDeviceManagementPaginationBase<SnowDeviceManagementClient> {
+      public SnowDeviceManagementPaginationBase<SnowDeviceManagementClient>,
+      public SnowDeviceManagementWaiter<SnowDeviceManagementClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -436,6 +438,12 @@ class AWS_SNOWDEVICEMANAGEMENT_API SnowDeviceManagementClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SnowDeviceManagementClient>;
   void init(const SnowDeviceManagementClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SnowDeviceManagementError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   SnowDeviceManagementClientConfiguration m_clientConfiguration;
   std::shared_ptr<SnowDeviceManagementEndpointProviderBase> m_endpointProvider;

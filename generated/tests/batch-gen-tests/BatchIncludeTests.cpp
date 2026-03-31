@@ -50,6 +50,8 @@
 #include <aws/batch/model/CreateConsumableResourceResult.h>
 #include <aws/batch/model/CreateJobQueueRequest.h>
 #include <aws/batch/model/CreateJobQueueResult.h>
+#include <aws/batch/model/CreateQuotaShareRequest.h>
+#include <aws/batch/model/CreateQuotaShareResult.h>
 #include <aws/batch/model/CreateSchedulingPolicyRequest.h>
 #include <aws/batch/model/CreateSchedulingPolicyResult.h>
 #include <aws/batch/model/CreateServiceEnvironmentRequest.h>
@@ -60,6 +62,8 @@
 #include <aws/batch/model/DeleteConsumableResourceResult.h>
 #include <aws/batch/model/DeleteJobQueueRequest.h>
 #include <aws/batch/model/DeleteJobQueueResult.h>
+#include <aws/batch/model/DeleteQuotaShareRequest.h>
+#include <aws/batch/model/DeleteQuotaShareResult.h>
 #include <aws/batch/model/DeleteSchedulingPolicyRequest.h>
 #include <aws/batch/model/DeleteSchedulingPolicyResult.h>
 #include <aws/batch/model/DeleteServiceEnvironmentRequest.h>
@@ -76,6 +80,8 @@
 #include <aws/batch/model/DescribeJobQueuesResult.h>
 #include <aws/batch/model/DescribeJobsRequest.h>
 #include <aws/batch/model/DescribeJobsResult.h>
+#include <aws/batch/model/DescribeQuotaShareRequest.h>
+#include <aws/batch/model/DescribeQuotaShareResult.h>
 #include <aws/batch/model/DescribeSchedulingPoliciesRequest.h>
 #include <aws/batch/model/DescribeSchedulingPoliciesResult.h>
 #include <aws/batch/model/DescribeServiceEnvironmentsRequest.h>
@@ -127,6 +133,8 @@
 #include <aws/batch/model/FirelensConfigurationType.h>
 #include <aws/batch/model/FrontOfQueueDetail.h>
 #include <aws/batch/model/FrontOfQueueJobSummary.h>
+#include <aws/batch/model/FrontOfQuotaShareJobSummary.h>
+#include <aws/batch/model/FrontOfQuotaSharesDetail.h>
 #include <aws/batch/model/GetJobQueueSnapshotRequest.h>
 #include <aws/batch/model/GetJobQueueSnapshotResult.h>
 #include <aws/batch/model/Host.h>
@@ -159,6 +167,8 @@
 #include <aws/batch/model/ListJobsByConsumableResourceSummary.h>
 #include <aws/batch/model/ListJobsRequest.h>
 #include <aws/batch/model/ListJobsResult.h>
+#include <aws/batch/model/ListQuotaSharesRequest.h>
+#include <aws/batch/model/ListQuotaSharesResult.h>
 #include <aws/batch/model/ListSchedulingPoliciesRequest.h>
 #include <aws/batch/model/ListSchedulingPoliciesResult.h>
 #include <aws/batch/model/ListServiceJobsRequest.h>
@@ -180,6 +190,19 @@
 #include <aws/batch/model/PlatformCapability.h>
 #include <aws/batch/model/QueueSnapshotCapacityUsage.h>
 #include <aws/batch/model/QueueSnapshotUtilizationDetail.h>
+#include <aws/batch/model/QuotaShareCapacityLimit.h>
+#include <aws/batch/model/QuotaShareCapacityUsage.h>
+#include <aws/batch/model/QuotaShareCapacityUtilization.h>
+#include <aws/batch/model/QuotaShareDetail.h>
+#include <aws/batch/model/QuotaShareIdleResourceAssignmentStrategy.h>
+#include <aws/batch/model/QuotaShareInSharePreemptionState.h>
+#include <aws/batch/model/QuotaSharePolicy.h>
+#include <aws/batch/model/QuotaSharePreemptionConfiguration.h>
+#include <aws/batch/model/QuotaShareResourceSharingConfiguration.h>
+#include <aws/batch/model/QuotaShareResourceSharingStrategy.h>
+#include <aws/batch/model/QuotaShareState.h>
+#include <aws/batch/model/QuotaShareStatus.h>
+#include <aws/batch/model/QuotaShareUtilizationDetail.h>
 #include <aws/batch/model/RegisterJobDefinitionRequest.h>
 #include <aws/batch/model/RegisterJobDefinitionResult.h>
 #include <aws/batch/model/RepositoryCredentials.h>
@@ -200,6 +223,9 @@
 #include <aws/batch/model/ServiceJobCapacityUsageDetail.h>
 #include <aws/batch/model/ServiceJobCapacityUsageSummary.h>
 #include <aws/batch/model/ServiceJobEvaluateOnExit.h>
+#include <aws/batch/model/ServiceJobPreemptedAttempt.h>
+#include <aws/batch/model/ServiceJobPreemptionConfiguration.h>
+#include <aws/batch/model/ServiceJobPreemptionSummary.h>
 #include <aws/batch/model/ServiceJobRetryAction.h>
 #include <aws/batch/model/ServiceJobRetryStrategy.h>
 #include <aws/batch/model/ServiceJobStatus.h>
@@ -235,10 +261,14 @@
 #include <aws/batch/model/UpdateJobQueueRequest.h>
 #include <aws/batch/model/UpdateJobQueueResult.h>
 #include <aws/batch/model/UpdatePolicy.h>
+#include <aws/batch/model/UpdateQuotaShareRequest.h>
+#include <aws/batch/model/UpdateQuotaShareResult.h>
 #include <aws/batch/model/UpdateSchedulingPolicyRequest.h>
 #include <aws/batch/model/UpdateSchedulingPolicyResult.h>
 #include <aws/batch/model/UpdateServiceEnvironmentRequest.h>
 #include <aws/batch/model/UpdateServiceEnvironmentResult.h>
+#include <aws/batch/model/UpdateServiceJobRequest.h>
+#include <aws/batch/model/UpdateServiceJobResult.h>
 #include <aws/batch/model/UserdataType.h>
 #include <aws/batch/model/Volume.h>
 

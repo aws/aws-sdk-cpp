@@ -58,9 +58,7 @@ GreetingStruct& GreetingStruct::operator=(const std::shared_ptr<Aws::Crt::Cbor::
                   }
                 }
                 m_hiHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -115,9 +113,7 @@ GreetingStruct& GreetingStruct::operator=(const std::shared_ptr<Aws::Crt::Cbor::
                 }
               }
               m_hiHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

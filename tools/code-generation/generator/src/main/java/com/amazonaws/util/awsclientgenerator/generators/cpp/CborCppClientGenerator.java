@@ -10,7 +10,6 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Operati
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ServiceModel;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Shape;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ShapeMember;
-import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppCborViewHelper;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppShapeInformation;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
 import org.apache.velocity.Template;
@@ -35,7 +34,7 @@ public class CborCppClientGenerator extends CppClientGenerator {
         Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/CborErrorMarshallerHeader.vm", StandardCharsets.UTF_8.name());
 
         VelocityContext context = createContext(serviceModel);
-        context.put("CppViewHelper", CppCborViewHelper.class);
+        context.put("CppViewHelper", CppViewHelper.class);
 
         String fileName = String.format("include/aws/%s/%sErrorMarshaller.h",
                 serviceModel.getMetadata().getProjectName(), serviceModel.getMetadata().getClassNamePrefix());
@@ -79,7 +78,7 @@ public class CborCppClientGenerator extends CppClientGenerator {
 
             context.put("shape", shape);
             context.put("typeInfo", new CppShapeInformation(shape, serviceModel));
-            context.put("CppViewHelper", CppCborViewHelper.class);
+            context.put("CppViewHelper", CppViewHelper.class);
 
             String fileName = String.format("include/aws/%s/model/%s.h", serviceModel.getMetadata().getProjectName(),
                     shapeEntry.getKey());
@@ -133,9 +132,6 @@ public class CborCppClientGenerator extends CppClientGenerator {
                 Map<String, String> cborSpecificHeaders = new HashMap<>();
                 cborSpecificHeaders.put("Aws::Http::ACCEPT_HEADER", "Aws::CBOR_CONTENT_TYPE");
                 cborSpecificHeaders.put("Aws::Http::SMITHY_PROTOCOL_HEADER", "Aws::RPC_V2_CBOR");
-                if(shape.hasMembers()){
-                    cborSpecificHeaders.put("Aws::Http::CONTENT_TYPE_HEADER", "Aws::CBOR_CONTENT_TYPE");
-                }
                 context.put("requestSpecificHeaders", cborSpecificHeaders);
                 template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/CborRequestSource.vm", StandardCharsets.UTF_8.name());
             }
@@ -150,7 +146,7 @@ public class CborCppClientGenerator extends CppClientGenerator {
 
             context.put("shape", shape);
             context.put("typeInfo", new CppShapeInformation(shape, serviceModel));
-            context.put("CppViewHelper", CppCborViewHelper.class);
+            context.put("CppViewHelper", CppViewHelper.class);
 
             String fileName = String.format("source/model/%s.cpp", shapeEntry.getKey());
 
@@ -169,7 +165,7 @@ public class CborCppClientGenerator extends CppClientGenerator {
         Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/CborServiceClientHeader.vm", StandardCharsets.UTF_8.name());
 
         VelocityContext context = createContext(serviceModel);
-        context.put("CppViewHelper", CppCborViewHelper.class);
+        context.put("CppViewHelper", CppViewHelper.class);
         context.put("RequestlessOperations", requestlessOperations);
 
         String fileName = String.format("include/aws/%s/%sClient.h", serviceModel.getMetadata().getProjectName(),

@@ -32,22 +32,6 @@ class ListTablesRequest : public BCMDataExportsRequest {
 
   ///@{
   /**
-   * <p>The maximum number of objects that are returned for the request.</p>
-   */
-  inline int GetMaxResults() const { return m_maxResults; }
-  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-  inline void SetMaxResults(int value) {
-    m_maxResultsHasBeenSet = true;
-    m_maxResults = value;
-  }
-  inline ListTablesRequest& WithMaxResults(int value) {
-    SetMaxResults(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The token to retrieve the next set of results.</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
@@ -63,12 +47,28 @@ class ListTablesRequest : public BCMDataExportsRequest {
     return *this;
   }
   ///@}
- private:
-  int m_maxResults{0};
 
+  ///@{
+  /**
+   * <p>The maximum number of objects that are returned for the request.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListTablesRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_nextToken;
-  bool m_maxResultsHasBeenSet = false;
+
+  int m_maxResults{0};
   bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kinesis-video-webrtc-storage/KinesisVideoWebRTCStoragePaginationBase.h>
 #include <aws/kinesis-video-webrtc-storage/KinesisVideoWebRTCStorageServiceClientModel.h>
+#include <aws/kinesis-video-webrtc-storage/KinesisVideoWebRTCStorageWaiter.h>
 #include <aws/kinesis-video-webrtc-storage/KinesisVideoWebRTCStorage_EXPORTS.h>
 
 namespace Aws {
@@ -20,7 +21,8 @@ namespace KinesisVideoWebRTCStorage {
 class AWS_KINESISVIDEOWEBRTCSTORAGE_API KinesisVideoWebRTCStorageClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoWebRTCStorageClient>,
-      public KinesisVideoWebRTCStoragePaginationBase<KinesisVideoWebRTCStorageClient> {
+      public KinesisVideoWebRTCStoragePaginationBase<KinesisVideoWebRTCStorageClient>,
+      public KinesisVideoWebRTCStorageWaiter<KinesisVideoWebRTCStorageClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -184,6 +186,12 @@ class AWS_KINESISVIDEOWEBRTCSTORAGE_API KinesisVideoWebRTCStorageClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoWebRTCStorageClient>;
   void init(const KinesisVideoWebRTCStorageClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, KinesisVideoWebRTCStorageError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   KinesisVideoWebRTCStorageClientConfiguration m_clientConfiguration;
   std::shared_ptr<KinesisVideoWebRTCStorageEndpointProviderBase> m_endpointProvider;

@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/qbusiness/QBusinessPaginationBase.h>
 #include <aws/qbusiness/QBusinessServiceClientModel.h>
+#include <aws/qbusiness/QBusinessWaiter.h>
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 
 namespace Aws {
@@ -42,7 +43,8 @@ namespace QBusiness {
  */
 class AWS_QBUSINESS_API QBusinessClient : public Aws::Client::AWSJsonClient,
                                           public Aws::Client::ClientWithAsyncTemplateMethods<QBusinessClient>,
-                                          public QBusinessPaginationBase<QBusinessClient> {
+                                          public QBusinessPaginationBase<QBusinessClient>,
+                                          public QBusinessWaiter<QBusinessClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2442,6 +2444,12 @@ class AWS_QBUSINESS_API QBusinessClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<QBusinessClient>;
   void init(const QBusinessClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, QBusinessError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   QBusinessClientConfiguration m_clientConfiguration;
   std::shared_ptr<QBusinessEndpointProviderBase> m_endpointProvider;

@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mgn/MgnPaginationBase.h>
 #include <aws/mgn/MgnServiceClientModel.h>
+#include <aws/mgn/MgnWaiter.h>
 #include <aws/mgn/Mgn_EXPORTS.h>
 
 namespace Aws {
@@ -19,7 +20,8 @@ namespace mgn {
  */
 class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<MgnClient>,
-                              public MgnPaginationBase<MgnClient> {
+                              public MgnPaginationBase<MgnClient>,
+                              public MgnWaiter<MgnClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -290,6 +292,36 @@ class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates a new network migration definition that specifies the source and
+   * target network configuration for a migration.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateNetworkMigrationDefinition">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateNetworkMigrationDefinitionOutcome CreateNetworkMigrationDefinition(
+      const Model::CreateNetworkMigrationDefinitionRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateNetworkMigrationDefinition that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename CreateNetworkMigrationDefinitionRequestT = Model::CreateNetworkMigrationDefinitionRequest>
+  Model::CreateNetworkMigrationDefinitionOutcomeCallable CreateNetworkMigrationDefinitionCallable(
+      const CreateNetworkMigrationDefinitionRequestT& request) const {
+    return SubmitCallable(&MgnClient::CreateNetworkMigrationDefinition, request);
+  }
+
+  /**
+   * An Async wrapper for CreateNetworkMigrationDefinition that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename CreateNetworkMigrationDefinitionRequestT = Model::CreateNetworkMigrationDefinitionRequest>
+  void CreateNetworkMigrationDefinitionAsync(const CreateNetworkMigrationDefinitionRequestT& request,
+                                             const CreateNetworkMigrationDefinitionResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MgnClient::CreateNetworkMigrationDefinition, request, handler, context);
+  }
+
+  /**
    * <p>Creates a new ReplicationConfigurationTemplate.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateReplicationConfigurationTemplate">AWS
    * API Reference</a></p>
@@ -447,6 +479,36 @@ class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient,
                                               const DeleteLaunchConfigurationTemplateResponseReceivedHandler& handler,
                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&MgnClient::DeleteLaunchConfigurationTemplate, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a network migration definition. This operation removes the migration
+   * definition and all associated metadata.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteNetworkMigrationDefinition">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteNetworkMigrationDefinitionOutcome DeleteNetworkMigrationDefinition(
+      const Model::DeleteNetworkMigrationDefinitionRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteNetworkMigrationDefinition that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename DeleteNetworkMigrationDefinitionRequestT = Model::DeleteNetworkMigrationDefinitionRequest>
+  Model::DeleteNetworkMigrationDefinitionOutcomeCallable DeleteNetworkMigrationDefinitionCallable(
+      const DeleteNetworkMigrationDefinitionRequestT& request) const {
+    return SubmitCallable(&MgnClient::DeleteNetworkMigrationDefinition, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteNetworkMigrationDefinition that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DeleteNetworkMigrationDefinitionRequestT = Model::DeleteNetworkMigrationDefinitionRequest>
+  void DeleteNetworkMigrationDefinitionAsync(const DeleteNetworkMigrationDefinitionRequestT& request,
+                                             const DeleteNetworkMigrationDefinitionResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MgnClient::DeleteNetworkMigrationDefinition, request, handler, context);
   }
 
   /**
@@ -885,6 +947,68 @@ class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Retrieves the details of a network migration definition including source and
+   * target configurations.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/GetNetworkMigrationDefinition">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetNetworkMigrationDefinitionOutcome GetNetworkMigrationDefinition(
+      const Model::GetNetworkMigrationDefinitionRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetNetworkMigrationDefinition that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetNetworkMigrationDefinitionRequestT = Model::GetNetworkMigrationDefinitionRequest>
+  Model::GetNetworkMigrationDefinitionOutcomeCallable GetNetworkMigrationDefinitionCallable(
+      const GetNetworkMigrationDefinitionRequestT& request) const {
+    return SubmitCallable(&MgnClient::GetNetworkMigrationDefinition, request);
+  }
+
+  /**
+   * An Async wrapper for GetNetworkMigrationDefinition that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetNetworkMigrationDefinitionRequestT = Model::GetNetworkMigrationDefinitionRequest>
+  void GetNetworkMigrationDefinitionAsync(const GetNetworkMigrationDefinitionRequestT& request,
+                                          const GetNetworkMigrationDefinitionResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MgnClient::GetNetworkMigrationDefinition, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves detailed information about a specific construct within a mapper
+   * segment, including its properties and configuration data.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/GetNetworkMigrationMapperSegmentConstruct">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetNetworkMigrationMapperSegmentConstructOutcome GetNetworkMigrationMapperSegmentConstruct(
+      const Model::GetNetworkMigrationMapperSegmentConstructRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetNetworkMigrationMapperSegmentConstruct that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename GetNetworkMigrationMapperSegmentConstructRequestT = Model::GetNetworkMigrationMapperSegmentConstructRequest>
+  Model::GetNetworkMigrationMapperSegmentConstructOutcomeCallable GetNetworkMigrationMapperSegmentConstructCallable(
+      const GetNetworkMigrationMapperSegmentConstructRequestT& request) const {
+    return SubmitCallable(&MgnClient::GetNetworkMigrationMapperSegmentConstruct, request);
+  }
+
+  /**
+   * An Async wrapper for GetNetworkMigrationMapperSegmentConstruct that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename GetNetworkMigrationMapperSegmentConstructRequestT = Model::GetNetworkMigrationMapperSegmentConstructRequest>
+  void GetNetworkMigrationMapperSegmentConstructAsync(
+      const GetNetworkMigrationMapperSegmentConstructRequestT& request,
+      const GetNetworkMigrationMapperSegmentConstructResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MgnClient::GetNetworkMigrationMapperSegmentConstruct, request, handler, context);
+  }
+
+  /**
    * <p>Lists all ReplicationConfigurations, filtered by Source Server
    * ID.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/GetReplicationConfiguration">AWS
@@ -1074,6 +1198,36 @@ class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Lists import file enrichment jobs with optional filtering by job
+   * IDs.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImportFileEnrichments">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListImportFileEnrichmentsOutcome ListImportFileEnrichments(
+      const Model::ListImportFileEnrichmentsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListImportFileEnrichments that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListImportFileEnrichmentsRequestT = Model::ListImportFileEnrichmentsRequest>
+  Model::ListImportFileEnrichmentsOutcomeCallable ListImportFileEnrichmentsCallable(
+      const ListImportFileEnrichmentsRequestT& request = {}) const {
+    return SubmitCallable(&MgnClient::ListImportFileEnrichments, request);
+  }
+
+  /**
+   * An Async wrapper for ListImportFileEnrichments that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListImportFileEnrichmentsRequestT = Model::ListImportFileEnrichmentsRequest>
+  void ListImportFileEnrichmentsAsync(const ListImportFileEnrichmentsResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                      const ListImportFileEnrichmentsRequestT& request = {}) const {
+    return SubmitAsync(&MgnClient::ListImportFileEnrichments, request, handler, context);
+  }
+
+  /**
    * <p>List imports.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImports">AWS API
    * Reference</a></p>
@@ -1124,6 +1278,369 @@ class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                 const ListManagedAccountsRequestT& request = {}) const {
     return SubmitAsync(&MgnClient::ListManagedAccounts, request, handler, context);
+  }
+
+  /**
+   * <p>Lists network migration analysis jobs for a specified execution. Returns
+   * information about analysis job status and results.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationAnalyses">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListNetworkMigrationAnalysesOutcome ListNetworkMigrationAnalyses(
+      const Model::ListNetworkMigrationAnalysesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListNetworkMigrationAnalyses that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListNetworkMigrationAnalysesRequestT = Model::ListNetworkMigrationAnalysesRequest>
+  Model::ListNetworkMigrationAnalysesOutcomeCallable ListNetworkMigrationAnalysesCallable(
+      const ListNetworkMigrationAnalysesRequestT& request) const {
+    return SubmitCallable(&MgnClient::ListNetworkMigrationAnalyses, request);
+  }
+
+  /**
+   * An Async wrapper for ListNetworkMigrationAnalyses that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListNetworkMigrationAnalysesRequestT = Model::ListNetworkMigrationAnalysesRequest>
+  void ListNetworkMigrationAnalysesAsync(const ListNetworkMigrationAnalysesRequestT& request,
+                                         const ListNetworkMigrationAnalysesResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MgnClient::ListNetworkMigrationAnalyses, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the results of network migration analyses, showing connectivity and
+   * compatibility findings for migrated resources.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationAnalysisResults">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListNetworkMigrationAnalysisResultsOutcome ListNetworkMigrationAnalysisResults(
+      const Model::ListNetworkMigrationAnalysisResultsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListNetworkMigrationAnalysisResults that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ListNetworkMigrationAnalysisResultsRequestT = Model::ListNetworkMigrationAnalysisResultsRequest>
+  Model::ListNetworkMigrationAnalysisResultsOutcomeCallable ListNetworkMigrationAnalysisResultsCallable(
+      const ListNetworkMigrationAnalysisResultsRequestT& request) const {
+    return SubmitCallable(&MgnClient::ListNetworkMigrationAnalysisResults, request);
+  }
+
+  /**
+   * An Async wrapper for ListNetworkMigrationAnalysisResults that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ListNetworkMigrationAnalysisResultsRequestT = Model::ListNetworkMigrationAnalysisResultsRequest>
+  void ListNetworkMigrationAnalysisResultsAsync(const ListNetworkMigrationAnalysisResultsRequestT& request,
+                                                const ListNetworkMigrationAnalysisResultsResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MgnClient::ListNetworkMigrationAnalysisResults, request, handler, context);
+  }
+
+  /**
+   * <p>Lists code generation segments, which represent individual infrastructure
+   * components generated as code templates.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationCodeGenerationSegments">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListNetworkMigrationCodeGenerationSegmentsOutcome ListNetworkMigrationCodeGenerationSegments(
+      const Model::ListNetworkMigrationCodeGenerationSegmentsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListNetworkMigrationCodeGenerationSegments that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ListNetworkMigrationCodeGenerationSegmentsRequestT = Model::ListNetworkMigrationCodeGenerationSegmentsRequest>
+  Model::ListNetworkMigrationCodeGenerationSegmentsOutcomeCallable ListNetworkMigrationCodeGenerationSegmentsCallable(
+      const ListNetworkMigrationCodeGenerationSegmentsRequestT& request) const {
+    return SubmitCallable(&MgnClient::ListNetworkMigrationCodeGenerationSegments, request);
+  }
+
+  /**
+   * An Async wrapper for ListNetworkMigrationCodeGenerationSegments that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ListNetworkMigrationCodeGenerationSegmentsRequestT = Model::ListNetworkMigrationCodeGenerationSegmentsRequest>
+  void ListNetworkMigrationCodeGenerationSegmentsAsync(
+      const ListNetworkMigrationCodeGenerationSegmentsRequestT& request,
+      const ListNetworkMigrationCodeGenerationSegmentsResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MgnClient::ListNetworkMigrationCodeGenerationSegments, request, handler, context);
+  }
+
+  /**
+   * <p>Lists network migration code generation jobs, which convert network mappings
+   * into infrastructure-as-code templates.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationCodeGenerations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListNetworkMigrationCodeGenerationsOutcome ListNetworkMigrationCodeGenerations(
+      const Model::ListNetworkMigrationCodeGenerationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListNetworkMigrationCodeGenerations that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ListNetworkMigrationCodeGenerationsRequestT = Model::ListNetworkMigrationCodeGenerationsRequest>
+  Model::ListNetworkMigrationCodeGenerationsOutcomeCallable ListNetworkMigrationCodeGenerationsCallable(
+      const ListNetworkMigrationCodeGenerationsRequestT& request) const {
+    return SubmitCallable(&MgnClient::ListNetworkMigrationCodeGenerations, request);
+  }
+
+  /**
+   * An Async wrapper for ListNetworkMigrationCodeGenerations that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ListNetworkMigrationCodeGenerationsRequestT = Model::ListNetworkMigrationCodeGenerationsRequest>
+  void ListNetworkMigrationCodeGenerationsAsync(const ListNetworkMigrationCodeGenerationsRequestT& request,
+                                                const ListNetworkMigrationCodeGenerationsResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MgnClient::ListNetworkMigrationCodeGenerations, request, handler, context);
+  }
+
+  /**
+   * <p>Lists all network migration definitions in the account, with optional
+   * filtering.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationDefinitions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListNetworkMigrationDefinitionsOutcome ListNetworkMigrationDefinitions(
+      const Model::ListNetworkMigrationDefinitionsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListNetworkMigrationDefinitions that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListNetworkMigrationDefinitionsRequestT = Model::ListNetworkMigrationDefinitionsRequest>
+  Model::ListNetworkMigrationDefinitionsOutcomeCallable ListNetworkMigrationDefinitionsCallable(
+      const ListNetworkMigrationDefinitionsRequestT& request = {}) const {
+    return SubmitCallable(&MgnClient::ListNetworkMigrationDefinitions, request);
+  }
+
+  /**
+   * An Async wrapper for ListNetworkMigrationDefinitions that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListNetworkMigrationDefinitionsRequestT = Model::ListNetworkMigrationDefinitionsRequest>
+  void ListNetworkMigrationDefinitionsAsync(const ListNetworkMigrationDefinitionsResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                            const ListNetworkMigrationDefinitionsRequestT& request = {}) const {
+    return SubmitAsync(&MgnClient::ListNetworkMigrationDefinitions, request, handler, context);
+  }
+
+  /**
+   * <p>Lists CloudFormation stacks that have been deployed as part of the network
+   * migration.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationDeployedStacks">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListNetworkMigrationDeployedStacksOutcome ListNetworkMigrationDeployedStacks(
+      const Model::ListNetworkMigrationDeployedStacksRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListNetworkMigrationDeployedStacks that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename ListNetworkMigrationDeployedStacksRequestT = Model::ListNetworkMigrationDeployedStacksRequest>
+  Model::ListNetworkMigrationDeployedStacksOutcomeCallable ListNetworkMigrationDeployedStacksCallable(
+      const ListNetworkMigrationDeployedStacksRequestT& request) const {
+    return SubmitCallable(&MgnClient::ListNetworkMigrationDeployedStacks, request);
+  }
+
+  /**
+   * An Async wrapper for ListNetworkMigrationDeployedStacks that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListNetworkMigrationDeployedStacksRequestT = Model::ListNetworkMigrationDeployedStacksRequest>
+  void ListNetworkMigrationDeployedStacksAsync(const ListNetworkMigrationDeployedStacksRequestT& request,
+                                               const ListNetworkMigrationDeployedStacksResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MgnClient::ListNetworkMigrationDeployedStacks, request, handler, context);
+  }
+
+  /**
+   * <p>Lists network migration deployment jobs and their current
+   * status.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationDeployments">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListNetworkMigrationDeploymentsOutcome ListNetworkMigrationDeployments(
+      const Model::ListNetworkMigrationDeploymentsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListNetworkMigrationDeployments that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListNetworkMigrationDeploymentsRequestT = Model::ListNetworkMigrationDeploymentsRequest>
+  Model::ListNetworkMigrationDeploymentsOutcomeCallable ListNetworkMigrationDeploymentsCallable(
+      const ListNetworkMigrationDeploymentsRequestT& request) const {
+    return SubmitCallable(&MgnClient::ListNetworkMigrationDeployments, request);
+  }
+
+  /**
+   * An Async wrapper for ListNetworkMigrationDeployments that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListNetworkMigrationDeploymentsRequestT = Model::ListNetworkMigrationDeploymentsRequest>
+  void ListNetworkMigrationDeploymentsAsync(const ListNetworkMigrationDeploymentsRequestT& request,
+                                            const ListNetworkMigrationDeploymentsResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MgnClient::ListNetworkMigrationDeployments, request, handler, context);
+  }
+
+  /**
+   * <p>Lists network migration execution instances for a given definition, showing
+   * the status and progress of each execution.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationExecutions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListNetworkMigrationExecutionsOutcome ListNetworkMigrationExecutions(
+      const Model::ListNetworkMigrationExecutionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListNetworkMigrationExecutions that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListNetworkMigrationExecutionsRequestT = Model::ListNetworkMigrationExecutionsRequest>
+  Model::ListNetworkMigrationExecutionsOutcomeCallable ListNetworkMigrationExecutionsCallable(
+      const ListNetworkMigrationExecutionsRequestT& request) const {
+    return SubmitCallable(&MgnClient::ListNetworkMigrationExecutions, request);
+  }
+
+  /**
+   * An Async wrapper for ListNetworkMigrationExecutions that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListNetworkMigrationExecutionsRequestT = Model::ListNetworkMigrationExecutionsRequest>
+  void ListNetworkMigrationExecutionsAsync(const ListNetworkMigrationExecutionsRequestT& request,
+                                           const ListNetworkMigrationExecutionsResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MgnClient::ListNetworkMigrationExecutions, request, handler, context);
+  }
+
+  /**
+   * <p>Lists constructs within a mapper segment, representing individual
+   * infrastructure components like VPCs, subnets, or security groups.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationMapperSegmentConstructs">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListNetworkMigrationMapperSegmentConstructsOutcome ListNetworkMigrationMapperSegmentConstructs(
+      const Model::ListNetworkMigrationMapperSegmentConstructsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListNetworkMigrationMapperSegmentConstructs that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ListNetworkMigrationMapperSegmentConstructsRequestT = Model::ListNetworkMigrationMapperSegmentConstructsRequest>
+  Model::ListNetworkMigrationMapperSegmentConstructsOutcomeCallable ListNetworkMigrationMapperSegmentConstructsCallable(
+      const ListNetworkMigrationMapperSegmentConstructsRequestT& request) const {
+    return SubmitCallable(&MgnClient::ListNetworkMigrationMapperSegmentConstructs, request);
+  }
+
+  /**
+   * An Async wrapper for ListNetworkMigrationMapperSegmentConstructs that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ListNetworkMigrationMapperSegmentConstructsRequestT = Model::ListNetworkMigrationMapperSegmentConstructsRequest>
+  void ListNetworkMigrationMapperSegmentConstructsAsync(
+      const ListNetworkMigrationMapperSegmentConstructsRequestT& request,
+      const ListNetworkMigrationMapperSegmentConstructsResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MgnClient::ListNetworkMigrationMapperSegmentConstructs, request, handler, context);
+  }
+
+  /**
+   * <p>Lists mapper segments, which represent logical groupings of network resources
+   * to be migrated together.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationMapperSegments">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListNetworkMigrationMapperSegmentsOutcome ListNetworkMigrationMapperSegments(
+      const Model::ListNetworkMigrationMapperSegmentsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListNetworkMigrationMapperSegments that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename ListNetworkMigrationMapperSegmentsRequestT = Model::ListNetworkMigrationMapperSegmentsRequest>
+  Model::ListNetworkMigrationMapperSegmentsOutcomeCallable ListNetworkMigrationMapperSegmentsCallable(
+      const ListNetworkMigrationMapperSegmentsRequestT& request) const {
+    return SubmitCallable(&MgnClient::ListNetworkMigrationMapperSegments, request);
+  }
+
+  /**
+   * An Async wrapper for ListNetworkMigrationMapperSegments that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListNetworkMigrationMapperSegmentsRequestT = Model::ListNetworkMigrationMapperSegmentsRequest>
+  void ListNetworkMigrationMapperSegmentsAsync(const ListNetworkMigrationMapperSegmentsRequestT& request,
+                                               const ListNetworkMigrationMapperSegmentsResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MgnClient::ListNetworkMigrationMapperSegments, request, handler, context);
+  }
+
+  /**
+   * <p>Lists mapping update jobs, which apply customer modifications to the
+   * generated network mappings.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationMappingUpdates">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListNetworkMigrationMappingUpdatesOutcome ListNetworkMigrationMappingUpdates(
+      const Model::ListNetworkMigrationMappingUpdatesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListNetworkMigrationMappingUpdates that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename ListNetworkMigrationMappingUpdatesRequestT = Model::ListNetworkMigrationMappingUpdatesRequest>
+  Model::ListNetworkMigrationMappingUpdatesOutcomeCallable ListNetworkMigrationMappingUpdatesCallable(
+      const ListNetworkMigrationMappingUpdatesRequestT& request) const {
+    return SubmitCallable(&MgnClient::ListNetworkMigrationMappingUpdates, request);
+  }
+
+  /**
+   * An Async wrapper for ListNetworkMigrationMappingUpdates that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListNetworkMigrationMappingUpdatesRequestT = Model::ListNetworkMigrationMappingUpdatesRequest>
+  void ListNetworkMigrationMappingUpdatesAsync(const ListNetworkMigrationMappingUpdatesRequestT& request,
+                                               const ListNetworkMigrationMappingUpdatesResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MgnClient::ListNetworkMigrationMappingUpdates, request, handler, context);
+  }
+
+  /**
+   * <p>Lists network migration mapping jobs, which analyze and create relationships
+   * between source and target network resources.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationMappings">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListNetworkMigrationMappingsOutcome ListNetworkMigrationMappings(
+      const Model::ListNetworkMigrationMappingsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListNetworkMigrationMappings that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListNetworkMigrationMappingsRequestT = Model::ListNetworkMigrationMappingsRequest>
+  Model::ListNetworkMigrationMappingsOutcomeCallable ListNetworkMigrationMappingsCallable(
+      const ListNetworkMigrationMappingsRequestT& request) const {
+    return SubmitCallable(&MgnClient::ListNetworkMigrationMappings, request);
+  }
+
+  /**
+   * An Async wrapper for ListNetworkMigrationMappings that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListNetworkMigrationMappingsRequestT = Model::ListNetworkMigrationMappingsRequest>
+  void ListNetworkMigrationMappingsAsync(const ListNetworkMigrationMappingsRequestT& request,
+                                         const ListNetworkMigrationMappingsResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MgnClient::ListNetworkMigrationMappings, request, handler, context);
   }
 
   /**
@@ -1526,6 +2043,186 @@ class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Starts an import file enrichment job to process and enrich network migration
+   * import files with additional metadata and IP assignment
+   * strategies.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartImportFileEnrichment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartImportFileEnrichmentOutcome StartImportFileEnrichment(const Model::StartImportFileEnrichmentRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartImportFileEnrichment that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartImportFileEnrichmentRequestT = Model::StartImportFileEnrichmentRequest>
+  Model::StartImportFileEnrichmentOutcomeCallable StartImportFileEnrichmentCallable(
+      const StartImportFileEnrichmentRequestT& request) const {
+    return SubmitCallable(&MgnClient::StartImportFileEnrichment, request);
+  }
+
+  /**
+   * An Async wrapper for StartImportFileEnrichment that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StartImportFileEnrichmentRequestT = Model::StartImportFileEnrichmentRequest>
+  void StartImportFileEnrichmentAsync(const StartImportFileEnrichmentRequestT& request,
+                                      const StartImportFileEnrichmentResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MgnClient::StartImportFileEnrichment, request, handler, context);
+  }
+
+  /**
+   * <p>Starts a network migration analysis job to evaluate connectivity and
+   * compatibility of the migration mappings.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartNetworkMigrationAnalysis">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartNetworkMigrationAnalysisOutcome StartNetworkMigrationAnalysis(
+      const Model::StartNetworkMigrationAnalysisRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartNetworkMigrationAnalysis that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename StartNetworkMigrationAnalysisRequestT = Model::StartNetworkMigrationAnalysisRequest>
+  Model::StartNetworkMigrationAnalysisOutcomeCallable StartNetworkMigrationAnalysisCallable(
+      const StartNetworkMigrationAnalysisRequestT& request) const {
+    return SubmitCallable(&MgnClient::StartNetworkMigrationAnalysis, request);
+  }
+
+  /**
+   * An Async wrapper for StartNetworkMigrationAnalysis that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StartNetworkMigrationAnalysisRequestT = Model::StartNetworkMigrationAnalysisRequest>
+  void StartNetworkMigrationAnalysisAsync(const StartNetworkMigrationAnalysisRequestT& request,
+                                          const StartNetworkMigrationAnalysisResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MgnClient::StartNetworkMigrationAnalysis, request, handler, context);
+  }
+
+  /**
+   * <p>Starts a code generation job to convert network migration mappings into
+   * infrastructure-as-code templates.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartNetworkMigrationCodeGeneration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartNetworkMigrationCodeGenerationOutcome StartNetworkMigrationCodeGeneration(
+      const Model::StartNetworkMigrationCodeGenerationRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartNetworkMigrationCodeGeneration that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename StartNetworkMigrationCodeGenerationRequestT = Model::StartNetworkMigrationCodeGenerationRequest>
+  Model::StartNetworkMigrationCodeGenerationOutcomeCallable StartNetworkMigrationCodeGenerationCallable(
+      const StartNetworkMigrationCodeGenerationRequestT& request) const {
+    return SubmitCallable(&MgnClient::StartNetworkMigrationCodeGeneration, request);
+  }
+
+  /**
+   * An Async wrapper for StartNetworkMigrationCodeGeneration that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename StartNetworkMigrationCodeGenerationRequestT = Model::StartNetworkMigrationCodeGenerationRequest>
+  void StartNetworkMigrationCodeGenerationAsync(const StartNetworkMigrationCodeGenerationRequestT& request,
+                                                const StartNetworkMigrationCodeGenerationResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MgnClient::StartNetworkMigrationCodeGeneration, request, handler, context);
+  }
+
+  /**
+   * <p>Starts a deployment job to create the target network infrastructure based on
+   * the generated code templates.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartNetworkMigrationDeployment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartNetworkMigrationDeploymentOutcome StartNetworkMigrationDeployment(
+      const Model::StartNetworkMigrationDeploymentRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartNetworkMigrationDeployment that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename StartNetworkMigrationDeploymentRequestT = Model::StartNetworkMigrationDeploymentRequest>
+  Model::StartNetworkMigrationDeploymentOutcomeCallable StartNetworkMigrationDeploymentCallable(
+      const StartNetworkMigrationDeploymentRequestT& request) const {
+    return SubmitCallable(&MgnClient::StartNetworkMigrationDeployment, request);
+  }
+
+  /**
+   * An Async wrapper for StartNetworkMigrationDeployment that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename StartNetworkMigrationDeploymentRequestT = Model::StartNetworkMigrationDeploymentRequest>
+  void StartNetworkMigrationDeploymentAsync(const StartNetworkMigrationDeploymentRequestT& request,
+                                            const StartNetworkMigrationDeploymentResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MgnClient::StartNetworkMigrationDeployment, request, handler, context);
+  }
+
+  /**
+   * <p>Starts the network migration mapping process for a given network migration
+   * execution.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartNetworkMigrationMapping">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartNetworkMigrationMappingOutcome StartNetworkMigrationMapping(
+      const Model::StartNetworkMigrationMappingRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartNetworkMigrationMapping that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename StartNetworkMigrationMappingRequestT = Model::StartNetworkMigrationMappingRequest>
+  Model::StartNetworkMigrationMappingOutcomeCallable StartNetworkMigrationMappingCallable(
+      const StartNetworkMigrationMappingRequestT& request) const {
+    return SubmitCallable(&MgnClient::StartNetworkMigrationMapping, request);
+  }
+
+  /**
+   * An Async wrapper for StartNetworkMigrationMapping that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StartNetworkMigrationMappingRequestT = Model::StartNetworkMigrationMappingRequest>
+  void StartNetworkMigrationMappingAsync(const StartNetworkMigrationMappingRequestT& request,
+                                         const StartNetworkMigrationMappingResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MgnClient::StartNetworkMigrationMapping, request, handler, context);
+  }
+
+  /**
+   * <p>Starts a job to apply customer modifications to network migration mappings,
+   * such as changing properties.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartNetworkMigrationMappingUpdate">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartNetworkMigrationMappingUpdateOutcome StartNetworkMigrationMappingUpdate(
+      const Model::StartNetworkMigrationMappingUpdateRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartNetworkMigrationMappingUpdate that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename StartNetworkMigrationMappingUpdateRequestT = Model::StartNetworkMigrationMappingUpdateRequest>
+  Model::StartNetworkMigrationMappingUpdateOutcomeCallable StartNetworkMigrationMappingUpdateCallable(
+      const StartNetworkMigrationMappingUpdateRequestT& request) const {
+    return SubmitCallable(&MgnClient::StartNetworkMigrationMappingUpdate, request);
+  }
+
+  /**
+   * An Async wrapper for StartNetworkMigrationMappingUpdate that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename StartNetworkMigrationMappingUpdateRequestT = Model::StartNetworkMigrationMappingUpdateRequest>
+  void StartNetworkMigrationMappingUpdateAsync(const StartNetworkMigrationMappingUpdateRequestT& request,
+                                               const StartNetworkMigrationMappingUpdateResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MgnClient::StartNetworkMigrationMappingUpdate, request, handler, context);
+  }
+
+  /**
    * <p>Start replication for source server irrespective of its replication
    * type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartReplication">AWS
@@ -1851,6 +2548,66 @@ class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Updates an existing network migration definition with new source or target
+   * configurations.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateNetworkMigrationDefinition">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateNetworkMigrationDefinitionOutcome UpdateNetworkMigrationDefinition(
+      const Model::UpdateNetworkMigrationDefinitionRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateNetworkMigrationDefinition that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename UpdateNetworkMigrationDefinitionRequestT = Model::UpdateNetworkMigrationDefinitionRequest>
+  Model::UpdateNetworkMigrationDefinitionOutcomeCallable UpdateNetworkMigrationDefinitionCallable(
+      const UpdateNetworkMigrationDefinitionRequestT& request) const {
+    return SubmitCallable(&MgnClient::UpdateNetworkMigrationDefinition, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateNetworkMigrationDefinition that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename UpdateNetworkMigrationDefinitionRequestT = Model::UpdateNetworkMigrationDefinitionRequest>
+  void UpdateNetworkMigrationDefinitionAsync(const UpdateNetworkMigrationDefinitionRequestT& request,
+                                             const UpdateNetworkMigrationDefinitionResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MgnClient::UpdateNetworkMigrationDefinition, request, handler, context);
+  }
+
+  /**
+   * <p>Updates a mapper segment's configuration, such as changing its scope
+   * tags.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateNetworkMigrationMapperSegment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateNetworkMigrationMapperSegmentOutcome UpdateNetworkMigrationMapperSegment(
+      const Model::UpdateNetworkMigrationMapperSegmentRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateNetworkMigrationMapperSegment that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename UpdateNetworkMigrationMapperSegmentRequestT = Model::UpdateNetworkMigrationMapperSegmentRequest>
+  Model::UpdateNetworkMigrationMapperSegmentOutcomeCallable UpdateNetworkMigrationMapperSegmentCallable(
+      const UpdateNetworkMigrationMapperSegmentRequestT& request) const {
+    return SubmitCallable(&MgnClient::UpdateNetworkMigrationMapperSegment, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateNetworkMigrationMapperSegment that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename UpdateNetworkMigrationMapperSegmentRequestT = Model::UpdateNetworkMigrationMapperSegmentRequest>
+  void UpdateNetworkMigrationMapperSegmentAsync(const UpdateNetworkMigrationMapperSegmentRequestT& request,
+                                                const UpdateNetworkMigrationMapperSegmentResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MgnClient::UpdateNetworkMigrationMapperSegment, request, handler, context);
+  }
+
+  /**
    * <p>Allows you to update multiple ReplicationConfigurations by Source Server
    * ID.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateReplicationConfiguration">AWS
@@ -1998,6 +2755,12 @@ class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MgnClient>;
   void init(const MgnClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MgnError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   MgnClientConfiguration m_clientConfiguration;
   std::shared_ptr<MgnEndpointProviderBase> m_endpointProvider;

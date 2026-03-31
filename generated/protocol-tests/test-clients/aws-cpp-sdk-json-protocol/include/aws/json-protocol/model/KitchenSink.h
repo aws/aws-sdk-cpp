@@ -516,84 +516,84 @@ class KitchenSink {
   ///@}
  private:
   Aws::Utils::ByteBuffer m_blob{};
-  bool m_blobHasBeenSet = false;
 
   bool m_boolean{false};
-  bool m_booleanHasBeenSet = false;
 
   double m_double{0.0};
-  bool m_doubleHasBeenSet = false;
 
   EmptyStruct m_emptyStruct;
-  bool m_emptyStructHasBeenSet = false;
 
   double m_float{0.0};
-  bool m_floatHasBeenSet = false;
 
   Aws::Utils::DateTime m_httpdateTimestamp{};
-  bool m_httpdateTimestampHasBeenSet = false;
 
   int m_integer{0};
-  bool m_integerHasBeenSet = false;
 
   Aws::Utils::DateTime m_iso8601Timestamp{};
-  bool m_iso8601TimestampHasBeenSet = false;
 
   Aws::String m_jsonValue;
-  bool m_jsonValueHasBeenSet = false;
 
   Aws::Vector<Aws::Vector<Aws::String>> m_listOfLists;
-  bool m_listOfListsHasBeenSet = false;
 
   Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_listOfMapsOfStrings;
-  bool m_listOfMapsOfStringsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_listOfStrings;
-  bool m_listOfStringsHasBeenSet = false;
 
   Aws::Vector<SimpleStruct> m_listOfStructs;
-  bool m_listOfStructsHasBeenSet = false;
 
   long long m_long{0};
-  bool m_longHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_mapOfListsOfStrings;
-  bool m_mapOfListsOfStringsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_mapOfMaps;
-  bool m_mapOfMapsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_mapOfStrings;
-  bool m_mapOfStringsHasBeenSet = false;
 
   Aws::Map<Aws::String, SimpleStruct> m_mapOfStructs;
-  bool m_mapOfStructsHasBeenSet = false;
 
   Aws::Vector<KitchenSink> m_recursiveList;
-  bool m_recursiveListHasBeenSet = false;
 
   Aws::Map<Aws::String, KitchenSink> m_recursiveMap;
-  bool m_recursiveMapHasBeenSet = false;
 
   std::shared_ptr<KitchenSink> m_recursiveStruct;
-  bool m_recursiveStructHasBeenSet = false;
 
   SimpleStruct m_simpleStruct;
-  bool m_simpleStructHasBeenSet = false;
 
   Aws::String m_string;
-  bool m_stringHasBeenSet = false;
 
   StructWithJsonName m_structWithJsonName;
-  bool m_structWithJsonNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_unixTimestamp{};
-  bool m_unixTimestampHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_blobHasBeenSet = false;
+  bool m_booleanHasBeenSet = false;
+  bool m_doubleHasBeenSet = false;
+  bool m_emptyStructHasBeenSet = false;
+  bool m_floatHasBeenSet = false;
+  bool m_httpdateTimestampHasBeenSet = false;
+  bool m_integerHasBeenSet = false;
+  bool m_iso8601TimestampHasBeenSet = false;
+  bool m_jsonValueHasBeenSet = false;
+  bool m_listOfListsHasBeenSet = false;
+  bool m_listOfMapsOfStringsHasBeenSet = false;
+  bool m_listOfStringsHasBeenSet = false;
+  bool m_listOfStructsHasBeenSet = false;
+  bool m_longHasBeenSet = false;
+  bool m_mapOfListsOfStringsHasBeenSet = false;
+  bool m_mapOfMapsHasBeenSet = false;
+  bool m_mapOfStringsHasBeenSet = false;
+  bool m_mapOfStructsHasBeenSet = false;
+  bool m_recursiveListHasBeenSet = false;
+  bool m_recursiveMapHasBeenSet = false;
+  bool m_recursiveStructHasBeenSet = false;
+  bool m_simpleStructHasBeenSet = false;
+  bool m_stringHasBeenSet = false;
+  bool m_structWithJsonNameHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
+  bool m_unixTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

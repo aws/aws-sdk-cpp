@@ -29,7 +29,9 @@
 #include <aws/rpcv2protocol/model/RecursiveShapesRequest.h>
 #include <aws/rpcv2protocol/model/RpcV2CborDenseMapsRequest.h>
 #include <aws/rpcv2protocol/model/RpcV2CborListsRequest.h>
+#include <aws/rpcv2protocol/model/RpcV2CborSparseMapsRequest.h>
 #include <aws/rpcv2protocol/model/SimpleScalarPropertiesRequest.h>
+#include <aws/rpcv2protocol/model/SparseNullsOperationRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -89,7 +91,7 @@ RpcV2ProtocolClient::RpcV2ProtocolClient(const std::shared_ptr<AWSCredentialsPro
 }
 
 /* Legacy constructors due deprecation */
-RpcV2ProtocolClient::RpcV2ProtocolClient(const Client::ClientConfiguration& clientConfiguration)
+RpcV2ProtocolClient::RpcV2ProtocolClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -101,7 +103,7 @@ RpcV2ProtocolClient::RpcV2ProtocolClient(const Client::ClientConfiguration& clie
   init(m_clientConfiguration);
 }
 
-RpcV2ProtocolClient::RpcV2ProtocolClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+RpcV2ProtocolClient::RpcV2ProtocolClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -112,7 +114,7 @@ RpcV2ProtocolClient::RpcV2ProtocolClient(const AWSCredentials& credentials, cons
 }
 
 RpcV2ProtocolClient::RpcV2ProtocolClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                         const Client::ClientConfiguration& clientConfiguration)
+                                         const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -138,7 +140,7 @@ void RpcV2ProtocolClient::init(const RpcV2Protocol::RpcV2ProtocolClientConfigura
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "rpcv2protocol");
 }
 
 void RpcV2ProtocolClient::OverrideEndpoint(const Aws::String& endpoint) {
@@ -417,6 +419,36 @@ RpcV2CborListsOutcome RpcV2ProtocolClient::RpcV2CborLists(const RpcV2CborListsRe
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+RpcV2CborSparseMapsOutcome RpcV2ProtocolClient::RpcV2CborSparseMaps(const RpcV2CborSparseMapsRequest& request) const {
+  AWS_OPERATION_GUARD(RpcV2CborSparseMaps);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, RpcV2CborSparseMaps, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, RpcV2CborSparseMaps, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, RpcV2CborSparseMaps, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".RpcV2CborSparseMaps",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<RpcV2CborSparseMapsOutcome>(
+      [&]() -> RpcV2CborSparseMapsOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RpcV2CborSparseMaps, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/service/RpcV2Protocol/operation/RpcV2CborSparseMaps");
+        return RpcV2CborSparseMapsOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 SimpleScalarPropertiesOutcome RpcV2ProtocolClient::SimpleScalarProperties(const SimpleScalarPropertiesRequest& request) const {
   AWS_OPERATION_GUARD(SimpleScalarProperties);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SimpleScalarProperties, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -440,6 +472,36 @@ SimpleScalarPropertiesOutcome RpcV2ProtocolClient::SimpleScalarProperties(const 
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/service/RpcV2Protocol/operation/SimpleScalarProperties");
         return SimpleScalarPropertiesOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+SparseNullsOperationOutcome RpcV2ProtocolClient::SparseNullsOperation(const SparseNullsOperationRequest& request) const {
+  AWS_OPERATION_GUARD(SparseNullsOperation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SparseNullsOperation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, SparseNullsOperation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, SparseNullsOperation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".SparseNullsOperation",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<SparseNullsOperationOutcome>(
+      [&]() -> SparseNullsOperationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SparseNullsOperation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/service/RpcV2Protocol/operation/SparseNullsOperation");
+        return SparseNullsOperationOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

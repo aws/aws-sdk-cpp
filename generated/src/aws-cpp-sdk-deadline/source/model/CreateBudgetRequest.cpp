@@ -16,16 +16,16 @@ using namespace Aws::Utils;
 Aws::String CreateBudgetRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_usageTrackingResourceHasBeenSet) {
-    payload.WithObject("usageTrackingResource", m_usageTrackingResource.Jsonize());
-  }
-
   if (m_displayNameHasBeenSet) {
     payload.WithString("displayName", m_displayName);
   }
 
   if (m_descriptionHasBeenSet) {
     payload.WithString("description", m_description);
+  }
+
+  if (m_usageTrackingResourceHasBeenSet) {
+    payload.WithObject("usageTrackingResource", m_usageTrackingResource.Jsonize());
   }
 
   if (m_approximateDollarLimitHasBeenSet) {

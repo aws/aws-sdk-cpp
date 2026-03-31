@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/application-autoscaling/ApplicationAutoScalingPaginationBase.h>
 #include <aws/application-autoscaling/ApplicationAutoScalingServiceClientModel.h>
+#include <aws/application-autoscaling/ApplicationAutoScalingWaiter.h>
 #include <aws/application-autoscaling/ApplicationAutoScaling_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -52,7 +53,8 @@ namespace ApplicationAutoScaling {
 class AWS_APPLICATIONAUTOSCALING_API ApplicationAutoScalingClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<ApplicationAutoScalingClient>,
-      public ApplicationAutoScalingPaginationBase<ApplicationAutoScalingClient> {
+      public ApplicationAutoScalingPaginationBase<ApplicationAutoScalingClient>,
+      public ApplicationAutoScalingWaiter<ApplicationAutoScalingClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -637,6 +639,10 @@ class AWS_APPLICATIONAUTOSCALING_API ApplicationAutoScalingClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ApplicationAutoScalingClient>;
   void init(const ApplicationAutoScalingClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ApplicationAutoScalingError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   ApplicationAutoScalingClientConfiguration m_clientConfiguration;
   std::shared_ptr<ApplicationAutoScalingEndpointProviderBase> m_endpointProvider;

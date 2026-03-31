@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/discovery/ApplicationDiscoveryServicePaginationBase.h>
 #include <aws/discovery/ApplicationDiscoveryServiceServiceClientModel.h>
+#include <aws/discovery/ApplicationDiscoveryServiceWaiter.h>
 #include <aws/discovery/ApplicationDiscoveryService_EXPORTS.h>
 
 namespace Aws {
@@ -79,7 +80,8 @@ namespace ApplicationDiscoveryService {
 class AWS_APPLICATIONDISCOVERYSERVICE_API ApplicationDiscoveryServiceClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<ApplicationDiscoveryServiceClient>,
-      public ApplicationDiscoveryServicePaginationBase<ApplicationDiscoveryServiceClient> {
+      public ApplicationDiscoveryServicePaginationBase<ApplicationDiscoveryServiceClient>,
+      public ApplicationDiscoveryServiceWaiter<ApplicationDiscoveryServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -950,6 +952,10 @@ class AWS_APPLICATIONDISCOVERYSERVICE_API ApplicationDiscoveryServiceClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ApplicationDiscoveryServiceClient>;
   void init(const ApplicationDiscoveryServiceClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ApplicationDiscoveryServiceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   ApplicationDiscoveryServiceClientConfiguration m_clientConfiguration;
   std::shared_ptr<ApplicationDiscoveryServiceEndpointProviderBase> m_endpointProvider;

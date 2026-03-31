@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/billingconductor/BillingConductorPaginationBase.h>
 #include <aws/billingconductor/BillingConductorServiceClientModel.h>
+#include <aws/billingconductor/BillingConductorWaiter.h>
 #include <aws/billingconductor/BillingConductor_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -37,7 +38,8 @@ namespace BillingConductor {
  */
 class AWS_BILLINGCONDUCTOR_API BillingConductorClient : public Aws::Client::AWSJsonClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<BillingConductorClient>,
-                                                        public BillingConductorPaginationBase<BillingConductorClient> {
+                                                        public BillingConductorPaginationBase<BillingConductorClient>,
+                                                        public BillingConductorWaiter<BillingConductorClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1003,6 +1005,12 @@ class AWS_BILLINGCONDUCTOR_API BillingConductorClient : public Aws::Client::AWSJ
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BillingConductorClient>;
   void init(const BillingConductorClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, BillingConductorError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   BillingConductorClientConfiguration m_clientConfiguration;
   std::shared_ptr<BillingConductorEndpointProviderBase> m_endpointProvider;

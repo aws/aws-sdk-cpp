@@ -88,9 +88,7 @@ ManagedRuleState& ManagedRuleState::operator=(const std::shared_ptr<Aws::Crt::Cb
                   }
                 }
                 m_stateHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -175,9 +173,7 @@ ManagedRuleState& ManagedRuleState::operator=(const std::shared_ptr<Aws::Crt::Cb
                 }
               }
               m_stateHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

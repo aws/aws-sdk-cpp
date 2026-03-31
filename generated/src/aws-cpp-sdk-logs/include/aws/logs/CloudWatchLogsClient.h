@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/logs/CloudWatchLogsPaginationBase.h>
 #include <aws/logs/CloudWatchLogsServiceClientModel.h>
+#include <aws/logs/CloudWatchLogsWaiter.h>
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 
 namespace Aws {
@@ -43,7 +44,8 @@ namespace CloudWatchLogs {
  */
 class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonClient,
                                                     public Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchLogsClient>,
-                                                    public CloudWatchLogsPaginationBase<CloudWatchLogsClient> {
+                                                    public CloudWatchLogsPaginationBase<CloudWatchLogsClient>,
+                                                    public CloudWatchLogsWaiter<CloudWatchLogsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -549,6 +551,37 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   }
 
   /**
+   * <p>Creates a lookup table by uploading CSV data. You can use lookup tables to
+   * enrich log data in CloudWatch Logs Insights queries with reference data such as
+   * user details, application names, or error descriptions.</p> <p>The table name
+   * must be unique within your account and Region. The CSV content must include a
+   * header row with column names, use UTF-8 encoding, and not exceed 10
+   * MB.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLookupTable">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateLookupTableOutcome CreateLookupTable(const Model::CreateLookupTableRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateLookupTable that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateLookupTableRequestT = Model::CreateLookupTableRequest>
+  Model::CreateLookupTableOutcomeCallable CreateLookupTableCallable(const CreateLookupTableRequestT& request) const {
+    return SubmitCallable(&CloudWatchLogsClient::CreateLookupTable, request);
+  }
+
+  /**
+   * An Async wrapper for CreateLookupTable that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateLookupTableRequestT = Model::CreateLookupTableRequest>
+  void CreateLookupTableAsync(const CreateLookupTableRequestT& request, const CreateLookupTableResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchLogsClient::CreateLookupTable, request, handler, context);
+  }
+
+  /**
    * <p>Creates a scheduled query that runs CloudWatch Logs Insights queries at
    * regular intervals. Scheduled queries enable proactive monitoring by
    * automatically executing queries to detect patterns and anomalies in your log
@@ -965,6 +998,35 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   void DeleteLogStreamAsync(const DeleteLogStreamRequestT& request, const DeleteLogStreamResponseReceivedHandler& handler,
                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CloudWatchLogsClient::DeleteLogStream, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a lookup table permanently. This operation cannot be undone.</p>
+   * <p>Queries that reference a deleted table will return an error. Before deleting
+   * a lookup table, review any saved queries or dashboards that may reference
+   * it.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLookupTable">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteLookupTableOutcome DeleteLookupTable(const Model::DeleteLookupTableRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteLookupTable that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteLookupTableRequestT = Model::DeleteLookupTableRequest>
+  Model::DeleteLookupTableOutcomeCallable DeleteLookupTableCallable(const DeleteLookupTableRequestT& request) const {
+    return SubmitCallable(&CloudWatchLogsClient::DeleteLookupTable, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteLookupTable that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteLookupTableRequestT = Model::DeleteLookupTableRequest>
+  void DeleteLookupTableAsync(const DeleteLookupTableRequestT& request, const DeleteLookupTableResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchLogsClient::DeleteLookupTable, request, handler, context);
   }
 
   /**
@@ -1593,6 +1655,35 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                const DescribeLogStreamsRequestT& request = {}) const {
     return SubmitAsync(&CloudWatchLogsClient::DescribeLogStreams, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves metadata about lookup tables in your account. You can optionally
+   * filter the results by table name prefix. Results are sorted by table name in
+   * ascending order.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLookupTables">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeLookupTablesOutcome DescribeLookupTables(const Model::DescribeLookupTablesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeLookupTables that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeLookupTablesRequestT = Model::DescribeLookupTablesRequest>
+  Model::DescribeLookupTablesOutcomeCallable DescribeLookupTablesCallable(const DescribeLookupTablesRequestT& request = {}) const {
+    return SubmitCallable(&CloudWatchLogsClient::DescribeLookupTables, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeLookupTables that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeLookupTablesRequestT = Model::DescribeLookupTablesRequest>
+  void DescribeLookupTablesAsync(const DescribeLookupTablesResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                 const DescribeLookupTablesRequestT& request = {}) const {
+    return SubmitAsync(&CloudWatchLogsClient::DescribeLookupTables, request, handler, context);
   }
 
   /**
@@ -2295,6 +2386,32 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   void GetLogRecordAsync(const GetLogRecordRequestT& request, const GetLogRecordResponseReceivedHandler& handler,
                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CloudWatchLogsClient::GetLogRecord, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the full content of a lookup table, including the CSV
+   * data.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLookupTable">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetLookupTableOutcome GetLookupTable(const Model::GetLookupTableRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetLookupTable that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetLookupTableRequestT = Model::GetLookupTableRequest>
+  Model::GetLookupTableOutcomeCallable GetLookupTableCallable(const GetLookupTableRequestT& request) const {
+    return SubmitCallable(&CloudWatchLogsClient::GetLookupTable, request);
+  }
+
+  /**
+   * An Async wrapper for GetLookupTable that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetLookupTableRequestT = Model::GetLookupTableRequest>
+  void GetLookupTableAsync(const GetLookupTableRequestT& request, const GetLookupTableResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchLogsClient::GetLookupTable, request, handler, context);
   }
 
   /**
@@ -3887,7 +4004,7 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
    * cross-account observability</a>. For a cross-account <code>StartQuery</code>
    * operation, the query definition must be defined in the monitoring account.</p>
-   * <p>You can have up to 30 concurrent CloudWatch Logs insights queries, including
+   * <p>You can have up to 100 concurrent CloudWatch Logs insights queries, including
    * queries that have been added to dashboards. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/StartQuery">AWS API
    * Reference</a></p>
@@ -4158,6 +4275,35 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   }
 
   /**
+   * <p>Updates an existing lookup table by replacing all of its CSV content. After
+   * the update completes, queries that use this table will use the new data.</p>
+   * <p>This is a full replacement operation. All existing content is replaced with
+   * the new CSV data.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateLookupTable">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateLookupTableOutcome UpdateLookupTable(const Model::UpdateLookupTableRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateLookupTable that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateLookupTableRequestT = Model::UpdateLookupTableRequest>
+  Model::UpdateLookupTableOutcomeCallable UpdateLookupTableCallable(const UpdateLookupTableRequestT& request) const {
+    return SubmitCallable(&CloudWatchLogsClient::UpdateLookupTable, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateLookupTable that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateLookupTableRequestT = Model::UpdateLookupTableRequest>
+  void UpdateLookupTableAsync(const UpdateLookupTableRequestT& request, const UpdateLookupTableResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchLogsClient::UpdateLookupTable, request, handler, context);
+  }
+
+  /**
    * <p>Updates an existing scheduled query with new configuration. This operation
    * uses PUT semantics, allowing modification of query parameters, schedule, and
    * destinations.</p><p><h3>See Also:</h3>   <a
@@ -4191,6 +4337,10 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchLogsClient>;
   void init(const CloudWatchLogsClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CloudWatchLogsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   CloudWatchLogsClientConfiguration m_clientConfiguration;
   std::shared_ptr<CloudWatchLogsEndpointProviderBase> m_endpointProvider;

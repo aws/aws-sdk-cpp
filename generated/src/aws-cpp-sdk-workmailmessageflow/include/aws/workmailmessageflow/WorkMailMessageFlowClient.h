@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/workmailmessageflow/WorkMailMessageFlowPaginationBase.h>
 #include <aws/workmailmessageflow/WorkMailMessageFlowServiceClientModel.h>
+#include <aws/workmailmessageflow/WorkMailMessageFlowWaiter.h>
 #include <aws/workmailmessageflow/WorkMailMessageFlow_EXPORTS.h>
 
 namespace Aws {
@@ -20,7 +21,8 @@ namespace WorkMailMessageFlow {
  */
 class AWS_WORKMAILMESSAGEFLOW_API WorkMailMessageFlowClient : public Aws::Client::AWSJsonClient,
                                                               public Aws::Client::ClientWithAsyncTemplateMethods<WorkMailMessageFlowClient>,
-                                                              public WorkMailMessageFlowPaginationBase<WorkMailMessageFlowClient> {
+                                                              public WorkMailMessageFlowPaginationBase<WorkMailMessageFlowClient>,
+                                                              public WorkMailMessageFlowWaiter<WorkMailMessageFlowClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -148,6 +150,12 @@ class AWS_WORKMAILMESSAGEFLOW_API WorkMailMessageFlowClient : public Aws::Client
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<WorkMailMessageFlowClient>;
   void init(const WorkMailMessageFlowClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, WorkMailMessageFlowError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   WorkMailMessageFlowClientConfiguration m_clientConfiguration;
   std::shared_ptr<WorkMailMessageFlowEndpointProviderBase> m_endpointProvider;

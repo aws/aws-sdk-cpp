@@ -7,10 +7,12 @@ package com.amazonaws.util.awsclientsmithygenerator.generators;
 import software.amazon.smithy.build.PluginContext;
 import software.amazon.smithy.model.node.Node;
 import software.amazon.smithy.model.node.ObjectNode;
-import software.amazon.smithy.model.shapes.*;
+import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.aws.traits.ServiceTrait;
+
 import java.util.*;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 public class FeatureParser<T> {
     private final PluginContext context;
@@ -18,6 +20,7 @@ public class FeatureParser<T> {
     private final List<T> operations;
     private final CppWriterDelegator writerDelegator;
     private final Map<String, String> serviceMap;
+    private final Map<String, String> namespaceMap;
     private final String featureName;
 
     public FeatureParser(PluginContext context, ServiceShape service, List<T> operations, String featureName) {
@@ -40,6 +43,15 @@ public class FeatureParser<T> {
                 });
             }
         }
+
+        this.namespaceMap = settings.getMember("namespaceMappings")
+            .map(node -> node.expectStringNode().getValue())
+            .map(jsonStr -> Node.parseJsonWithComments(jsonStr).expectObjectNode())
+            .map(node -> node.getMembers().entrySet().stream()
+                    .collect(Collectors.toMap(
+                            entry -> entry.getKey().getValue(),
+                            entry -> sanitizeServiceAbbreviation(entry.getValue().expectStringNode().getValue()))))
+            .orElse(Map.of());
     }
 
     public void run(Consumer<FeatureParser<T>> generationLogic) {
@@ -64,4 +76,10 @@ public class FeatureParser<T> {
     public Map<String, String> getServiceMap() { return serviceMap; }
     public String getServiceName() { return ServiceNameUtil.getServiceName(service); }
     public String getSmithyServiceName() { return ServiceNameUtil.getSmithyServiceName(service, serviceMap); }
+    public Map<String, String> getNamespaceMap() { return namespaceMap; }
+
+    // In reference to ServiceNameUtil.sanitizeServiceAbbreviation such that we get the same namepsace name as C2J
+    private static String sanitizeServiceAbbreviation(final String serviceAbbreviation) {
+        return serviceAbbreviation.replace(" ", "").replace("-", "").replace("_", "").replace("Amazon", "").replace("AWS", "").replace("/", "");
+    }
 }

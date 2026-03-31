@@ -50,24 +50,6 @@ class ServiceQuotaExceededException {
 
   ///@{
   /**
-   * <p>The quota code that was exceeded.</p>
-   */
-  inline const Aws::String& GetQuotaCode() const { return m_quotaCode; }
-  inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
-  template <typename QuotaCodeT = Aws::String>
-  void SetQuotaCode(QuotaCodeT&& value) {
-    m_quotaCodeHasBeenSet = true;
-    m_quotaCode = std::forward<QuotaCodeT>(value);
-  }
-  template <typename QuotaCodeT = Aws::String>
-  ServiceQuotaExceededException& WithQuotaCode(QuotaCodeT&& value) {
-    SetQuotaCode(std::forward<QuotaCodeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The identifier of the resource that exceeded quota.</p>
    */
   inline const Aws::String& GetResourceId() const { return m_resourceId; }
@@ -104,6 +86,24 @@ class ServiceQuotaExceededException {
 
   ///@{
   /**
+   * <p>The quota code that was exceeded.</p>
+   */
+  inline const Aws::String& GetQuotaCode() const { return m_quotaCode; }
+  inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
+  template <typename QuotaCodeT = Aws::String>
+  void SetQuotaCode(QuotaCodeT&& value) {
+    m_quotaCodeHasBeenSet = true;
+    m_quotaCode = std::forward<QuotaCodeT>(value);
+  }
+  template <typename QuotaCodeT = Aws::String>
+  ServiceQuotaExceededException& WithQuotaCode(QuotaCodeT&& value) {
+    SetQuotaCode(std::forward<QuotaCodeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The service code that exceeded quota. It will always be
    * “AWSBillingAndCostManagementDataExports”.</p>
    */
@@ -123,17 +123,17 @@ class ServiceQuotaExceededException {
  private:
   Aws::String m_message;
 
-  Aws::String m_quotaCode;
-
   Aws::String m_resourceId;
 
   Aws::String m_resourceType;
 
+  Aws::String m_quotaCode;
+
   Aws::String m_serviceCode;
   bool m_messageHasBeenSet = false;
-  bool m_quotaCodeHasBeenSet = false;
   bool m_resourceIdHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
+  bool m_quotaCodeHasBeenSet = false;
   bool m_serviceCodeHasBeenSet = false;
 };
 

@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/keyspaces/KeyspacesPaginationBase.h>
 #include <aws/keyspaces/KeyspacesServiceClientModel.h>
+#include <aws/keyspaces/KeyspacesWaiter.h>
 #include <aws/keyspaces/Keyspaces_EXPORTS.h>
 
 namespace Aws {
@@ -41,7 +42,8 @@ namespace Keyspaces {
  */
 class AWS_KEYSPACES_API KeyspacesClient : public Aws::Client::AWSJsonClient,
                                           public Aws::Client::ClientWithAsyncTemplateMethods<KeyspacesClient>,
-                                          public KeyspacesPaginationBase<KeyspacesClient> {
+                                          public KeyspacesPaginationBase<KeyspacesClient>,
+                                          public KeyspacesWaiter<KeyspacesClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -741,6 +743,10 @@ class AWS_KEYSPACES_API KeyspacesClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<KeyspacesClient>;
   void init(const KeyspacesClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, KeyspacesError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   KeyspacesClientConfiguration m_clientConfiguration;
   std::shared_ptr<KeyspacesEndpointProviderBase> m_endpointProvider;

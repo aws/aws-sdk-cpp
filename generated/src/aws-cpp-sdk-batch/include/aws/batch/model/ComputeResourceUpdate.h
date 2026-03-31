@@ -495,9 +495,10 @@ class ComputeResourceUpdate {
   /**
    * <p>Provides information used to select Amazon Machine Images (AMIs) for Amazon
    * EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't
-   * specified, the default is <code>ECS_AL2</code>.</p> <p>When updating a compute
-   * environment, changing this setting requires an infrastructure update of the
-   * compute environment. For more information, see <a
+   * specified, the default is <code>ECS_AL2</code> for EC2 (ECS) compute
+   * environments and <code>EKS_AL2023</code> for EKS compute environments.</p>
+   * <p>When updating a compute environment, changing this setting requires an
+   * infrastructure update of the compute environment. For more information, see <a
    * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
    * compute environments</a> in the <i>Batch User Guide</i>. To remove the Amazon
    * EC2 configuration and any custom AMI ID specified in

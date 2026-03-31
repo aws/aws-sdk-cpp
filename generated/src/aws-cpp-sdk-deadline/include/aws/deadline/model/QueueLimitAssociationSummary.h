@@ -36,6 +36,64 @@ class QueueLimitAssociationSummary {
 
   ///@{
   /**
+   * <p>The unique identifier of the queue in the association.</p>
+   */
+  inline const Aws::String& GetQueueId() const { return m_queueId; }
+  inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
+  template <typename QueueIdT = Aws::String>
+  void SetQueueId(QueueIdT&& value) {
+    m_queueIdHasBeenSet = true;
+    m_queueId = std::forward<QueueIdT>(value);
+  }
+  template <typename QueueIdT = Aws::String>
+  QueueLimitAssociationSummary& WithQueueId(QueueIdT&& value) {
+    SetQueueId(std::forward<QueueIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the limit in the association.</p>
+   */
+  inline const Aws::String& GetLimitId() const { return m_limitId; }
+  inline bool LimitIdHasBeenSet() const { return m_limitIdHasBeenSet; }
+  template <typename LimitIdT = Aws::String>
+  void SetLimitId(LimitIdT&& value) {
+    m_limitIdHasBeenSet = true;
+    m_limitId = std::forward<LimitIdT>(value);
+  }
+  template <typename LimitIdT = Aws::String>
+  QueueLimitAssociationSummary& WithLimitId(LimitIdT&& value) {
+    SetLimitId(std::forward<LimitIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status of task scheduling in the queue-limit association.</p> <ul> <li>
+   * <p> <code>ACTIVE</code> - Association is active.</p> </li> <li> <p>
+   * <code>STOP_LIMIT_USAGE_AND_COMPLETE_TASKS</code> - Association has stopped
+   * scheduling new tasks and is completing current tasks.</p> </li> <li> <p>
+   * <code>STOP_LIMIT_USAGE_AND_CANCEL_TASKS</code> - Association has stopped
+   * scheduling new tasks and is canceling current tasks.</p> </li> <li> <p>
+   * <code>STOPPED</code> - Association has been stopped.</p> </li> </ul>
+   */
+  inline QueueLimitAssociationStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(QueueLimitAssociationStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline QueueLimitAssociationSummary& WithStatus(QueueLimitAssociationStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Unix timestamp of the date and time that the association was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -106,65 +164,13 @@ class QueueLimitAssociationSummary {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The unique identifier of the queue in the association.</p>
-   */
-  inline const Aws::String& GetQueueId() const { return m_queueId; }
-  inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
-  template <typename QueueIdT = Aws::String>
-  void SetQueueId(QueueIdT&& value) {
-    m_queueIdHasBeenSet = true;
-    m_queueId = std::forward<QueueIdT>(value);
-  }
-  template <typename QueueIdT = Aws::String>
-  QueueLimitAssociationSummary& WithQueueId(QueueIdT&& value) {
-    SetQueueId(std::forward<QueueIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The unique identifier of the limit in the association.</p>
-   */
-  inline const Aws::String& GetLimitId() const { return m_limitId; }
-  inline bool LimitIdHasBeenSet() const { return m_limitIdHasBeenSet; }
-  template <typename LimitIdT = Aws::String>
-  void SetLimitId(LimitIdT&& value) {
-    m_limitIdHasBeenSet = true;
-    m_limitId = std::forward<LimitIdT>(value);
-  }
-  template <typename LimitIdT = Aws::String>
-  QueueLimitAssociationSummary& WithLimitId(LimitIdT&& value) {
-    SetLimitId(std::forward<LimitIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The status of task scheduling in the queue-limit association.</p> <ul> <li>
-   * <p> <code>ACTIVE</code> - Association is active.</p> </li> <li> <p>
-   * <code>STOP_LIMIT_USAGE_AND_COMPLETE_TASKS</code> - Association has stopped
-   * scheduling new tasks and is completing current tasks.</p> </li> <li> <p>
-   * <code>STOP_LIMIT_USAGE_AND_CANCEL_TASKS</code> - Association has stopped
-   * scheduling new tasks and is canceling current tasks.</p> </li> <li> <p>
-   * <code>STOPPED</code> - Association has been stopped.</p> </li> </ul>
-   */
-  inline QueueLimitAssociationStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(QueueLimitAssociationStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
-  }
-  inline QueueLimitAssociationSummary& WithStatus(QueueLimitAssociationStatus value) {
-    SetStatus(value);
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_queueId;
+
+  Aws::String m_limitId;
+
+  QueueLimitAssociationStatus m_status{QueueLimitAssociationStatus::NOT_SET};
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::String m_createdBy;
@@ -172,19 +178,13 @@ class QueueLimitAssociationSummary {
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::String m_updatedBy;
-
-  Aws::String m_queueId;
-
-  Aws::String m_limitId;
-
-  QueueLimitAssociationStatus m_status{QueueLimitAssociationStatus::NOT_SET};
+  bool m_queueIdHasBeenSet = false;
+  bool m_limitIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_updatedByHasBeenSet = false;
-  bool m_queueIdHasBeenSet = false;
-  bool m_limitIdHasBeenSet = false;
-  bool m_statusHasBeenSet = false;
 };
 
 }  // namespace Model

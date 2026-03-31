@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/network-firewall/NetworkFirewallPaginationBase.h>
 #include <aws/network-firewall/NetworkFirewallServiceClientModel.h>
+#include <aws/network-firewall/NetworkFirewallWaiter.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 
 namespace Aws {
@@ -81,7 +82,8 @@ namespace NetworkFirewall {
  */
 class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSJsonClient,
                                                       public Aws::Client::ClientWithAsyncTemplateMethods<NetworkFirewallClient>,
-                                                      public NetworkFirewallPaginationBase<NetworkFirewallClient> {
+                                                      public NetworkFirewallPaginationBase<NetworkFirewallClient>,
+                                                      public NetworkFirewallWaiter<NetworkFirewallClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2619,6 +2621,10 @@ class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSJso
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<NetworkFirewallClient>;
   void init(const NetworkFirewallClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, NetworkFirewallError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   NetworkFirewallClientConfiguration m_clientConfiguration;
   std::shared_ptr<NetworkFirewallEndpointProviderBase> m_endpointProvider;

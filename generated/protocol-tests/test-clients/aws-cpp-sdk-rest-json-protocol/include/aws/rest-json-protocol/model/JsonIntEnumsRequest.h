@@ -154,24 +154,24 @@ class JsonIntEnumsRequest : public RestJsonProtocolRequest {
   ///@}
  private:
   int m_integerEnum1{0};
-  bool m_integerEnum1HasBeenSet = false;
 
   int m_integerEnum2{0};
-  bool m_integerEnum2HasBeenSet = false;
 
   int m_integerEnum3{0};
-  bool m_integerEnum3HasBeenSet = false;
 
   Aws::Vector<int> m_integerEnumList;
-  bool m_integerEnumListHasBeenSet = false;
 
   Aws::Vector<int> m_integerEnumSet;
-  bool m_integerEnumSetHasBeenSet = false;
 
   Aws::Map<Aws::String, int> m_integerEnumMap;
-  bool m_integerEnumMapHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_integerEnum1HasBeenSet = false;
+  bool m_integerEnum2HasBeenSet = false;
+  bool m_integerEnum3HasBeenSet = false;
+  bool m_integerEnumListHasBeenSet = false;
+  bool m_integerEnumSetHasBeenSet = false;
+  bool m_integerEnumMapHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

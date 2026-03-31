@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/geo-places/GeoPlacesPaginationBase.h>
 #include <aws/geo-places/GeoPlacesServiceClientModel.h>
+#include <aws/geo-places/GeoPlacesWaiter.h>
 #include <aws/geo-places/GeoPlaces_EXPORTS.h>
 
 namespace Aws {
@@ -29,7 +30,8 @@ namespace GeoPlaces {
  */
 class AWS_GEOPLACES_API GeoPlacesClient : public Aws::Client::AWSJsonClient,
                                           public Aws::Client::ClientWithAsyncTemplateMethods<GeoPlacesClient>,
-                                          public GeoPlacesPaginationBase<GeoPlacesClient> {
+                                          public GeoPlacesPaginationBase<GeoPlacesClient>,
+                                          public GeoPlacesWaiter<GeoPlacesClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -323,6 +325,12 @@ class AWS_GEOPLACES_API GeoPlacesClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<GeoPlacesClient>;
   void init(const GeoPlacesClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, GeoPlacesError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   GeoPlacesClientConfiguration m_clientConfiguration;
   std::shared_ptr<GeoPlacesEndpointProviderBase> m_endpointProvider;

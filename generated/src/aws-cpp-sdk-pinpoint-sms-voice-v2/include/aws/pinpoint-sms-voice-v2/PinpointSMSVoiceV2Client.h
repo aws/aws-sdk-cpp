@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2PaginationBase.h>
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2ServiceClientModel.h>
+#include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2Waiter.h>
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 
 namespace Aws {
@@ -55,7 +56,8 @@ namespace PinpointSMSVoiceV2 {
  */
 class AWS_PINPOINTSMSVOICEV2_API PinpointSMSVoiceV2Client : public Aws::Client::AWSJsonClient,
                                                             public Aws::Client::ClientWithAsyncTemplateMethods<PinpointSMSVoiceV2Client>,
-                                                            public PinpointSMSVoiceV2PaginationBase<PinpointSMSVoiceV2Client> {
+                                                            public PinpointSMSVoiceV2PaginationBase<PinpointSMSVoiceV2Client>,
+                                                            public PinpointSMSVoiceV2Waiter<PinpointSMSVoiceV2Client> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2939,6 +2941,10 @@ class AWS_PINPOINTSMSVOICEV2_API PinpointSMSVoiceV2Client : public Aws::Client::
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PinpointSMSVoiceV2Client>;
   void init(const PinpointSMSVoiceV2ClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, PinpointSMSVoiceV2Error> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   PinpointSMSVoiceV2ClientConfiguration m_clientConfiguration;
   std::shared_ptr<PinpointSMSVoiceV2EndpointProviderBase> m_endpointProvider;

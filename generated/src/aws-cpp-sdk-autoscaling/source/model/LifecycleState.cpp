@@ -23,17 +23,24 @@ static const int InService_HASH = HashingUtils::HashString("InService");
 static const int Terminating_HASH = HashingUtils::HashString("Terminating");
 static const int Terminating_Wait_HASH = HashingUtils::HashString("Terminating:Wait");
 static const int Terminating_Proceed_HASH = HashingUtils::HashString("Terminating:Proceed");
+static const int Terminating_Retained_HASH = HashingUtils::HashString("Terminating:Retained");
 static const int Terminated_HASH = HashingUtils::HashString("Terminated");
 static const int Detaching_HASH = HashingUtils::HashString("Detaching");
 static const int Detached_HASH = HashingUtils::HashString("Detached");
 static const int EnteringStandby_HASH = HashingUtils::HashString("EnteringStandby");
 static const int Standby_HASH = HashingUtils::HashString("Standby");
+static const int ReplacingRootVolume_HASH = HashingUtils::HashString("ReplacingRootVolume");
+static const int ReplacingRootVolume_Wait_HASH = HashingUtils::HashString("ReplacingRootVolume:Wait");
+static const int ReplacingRootVolume_Proceed_HASH = HashingUtils::HashString("ReplacingRootVolume:Proceed");
+static const int RootVolumeReplaced_HASH = HashingUtils::HashString("RootVolumeReplaced");
 static const int Warmed_Pending_HASH = HashingUtils::HashString("Warmed:Pending");
 static const int Warmed_Pending_Wait_HASH = HashingUtils::HashString("Warmed:Pending:Wait");
 static const int Warmed_Pending_Proceed_HASH = HashingUtils::HashString("Warmed:Pending:Proceed");
+static const int Warmed_Pending_Retained_HASH = HashingUtils::HashString("Warmed:Pending:Retained");
 static const int Warmed_Terminating_HASH = HashingUtils::HashString("Warmed:Terminating");
 static const int Warmed_Terminating_Wait_HASH = HashingUtils::HashString("Warmed:Terminating:Wait");
 static const int Warmed_Terminating_Proceed_HASH = HashingUtils::HashString("Warmed:Terminating:Proceed");
+static const int Warmed_Terminating_Retained_HASH = HashingUtils::HashString("Warmed:Terminating:Retained");
 static const int Warmed_Terminated_HASH = HashingUtils::HashString("Warmed:Terminated");
 static const int Warmed_Stopped_HASH = HashingUtils::HashString("Warmed:Stopped");
 static const int Warmed_Running_HASH = HashingUtils::HashString("Warmed:Running");
@@ -57,6 +64,8 @@ LifecycleState GetLifecycleStateForName(const Aws::String& name) {
     return LifecycleState::Terminating_Wait;
   } else if (hashCode == Terminating_Proceed_HASH) {
     return LifecycleState::Terminating_Proceed;
+  } else if (hashCode == Terminating_Retained_HASH) {
+    return LifecycleState::Terminating_Retained;
   } else if (hashCode == Terminated_HASH) {
     return LifecycleState::Terminated;
   } else if (hashCode == Detaching_HASH) {
@@ -67,18 +76,30 @@ LifecycleState GetLifecycleStateForName(const Aws::String& name) {
     return LifecycleState::EnteringStandby;
   } else if (hashCode == Standby_HASH) {
     return LifecycleState::Standby;
+  } else if (hashCode == ReplacingRootVolume_HASH) {
+    return LifecycleState::ReplacingRootVolume;
+  } else if (hashCode == ReplacingRootVolume_Wait_HASH) {
+    return LifecycleState::ReplacingRootVolume_Wait;
+  } else if (hashCode == ReplacingRootVolume_Proceed_HASH) {
+    return LifecycleState::ReplacingRootVolume_Proceed;
+  } else if (hashCode == RootVolumeReplaced_HASH) {
+    return LifecycleState::RootVolumeReplaced;
   } else if (hashCode == Warmed_Pending_HASH) {
     return LifecycleState::Warmed_Pending;
   } else if (hashCode == Warmed_Pending_Wait_HASH) {
     return LifecycleState::Warmed_Pending_Wait;
   } else if (hashCode == Warmed_Pending_Proceed_HASH) {
     return LifecycleState::Warmed_Pending_Proceed;
+  } else if (hashCode == Warmed_Pending_Retained_HASH) {
+    return LifecycleState::Warmed_Pending_Retained;
   } else if (hashCode == Warmed_Terminating_HASH) {
     return LifecycleState::Warmed_Terminating;
   } else if (hashCode == Warmed_Terminating_Wait_HASH) {
     return LifecycleState::Warmed_Terminating_Wait;
   } else if (hashCode == Warmed_Terminating_Proceed_HASH) {
     return LifecycleState::Warmed_Terminating_Proceed;
+  } else if (hashCode == Warmed_Terminating_Retained_HASH) {
+    return LifecycleState::Warmed_Terminating_Retained;
   } else if (hashCode == Warmed_Terminated_HASH) {
     return LifecycleState::Warmed_Terminated;
   } else if (hashCode == Warmed_Stopped_HASH) {
@@ -117,6 +138,8 @@ Aws::String GetNameForLifecycleState(LifecycleState enumValue) {
       return "Terminating:Wait";
     case LifecycleState::Terminating_Proceed:
       return "Terminating:Proceed";
+    case LifecycleState::Terminating_Retained:
+      return "Terminating:Retained";
     case LifecycleState::Terminated:
       return "Terminated";
     case LifecycleState::Detaching:
@@ -127,18 +150,30 @@ Aws::String GetNameForLifecycleState(LifecycleState enumValue) {
       return "EnteringStandby";
     case LifecycleState::Standby:
       return "Standby";
+    case LifecycleState::ReplacingRootVolume:
+      return "ReplacingRootVolume";
+    case LifecycleState::ReplacingRootVolume_Wait:
+      return "ReplacingRootVolume:Wait";
+    case LifecycleState::ReplacingRootVolume_Proceed:
+      return "ReplacingRootVolume:Proceed";
+    case LifecycleState::RootVolumeReplaced:
+      return "RootVolumeReplaced";
     case LifecycleState::Warmed_Pending:
       return "Warmed:Pending";
     case LifecycleState::Warmed_Pending_Wait:
       return "Warmed:Pending:Wait";
     case LifecycleState::Warmed_Pending_Proceed:
       return "Warmed:Pending:Proceed";
+    case LifecycleState::Warmed_Pending_Retained:
+      return "Warmed:Pending:Retained";
     case LifecycleState::Warmed_Terminating:
       return "Warmed:Terminating";
     case LifecycleState::Warmed_Terminating_Wait:
       return "Warmed:Terminating:Wait";
     case LifecycleState::Warmed_Terminating_Proceed:
       return "Warmed:Terminating:Proceed";
+    case LifecycleState::Warmed_Terminating_Retained:
+      return "Warmed:Terminating:Retained";
     case LifecycleState::Warmed_Terminated:
       return "Warmed:Terminated";
     case LifecycleState::Warmed_Stopped:

@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotfleetwise/IoTFleetWisePaginationBase.h>
 #include <aws/iotfleetwise/IoTFleetWiseServiceClientModel.h>
+#include <aws/iotfleetwise/IoTFleetWiseWaiter.h>
 #include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
 
 namespace Aws {
@@ -31,7 +32,8 @@ namespace IoTFleetWise {
  */
 class AWS_IOTFLEETWISE_API IoTFleetWiseClient : public Aws::Client::AWSJsonClient,
                                                 public Aws::Client::ClientWithAsyncTemplateMethods<IoTFleetWiseClient>,
-                                                public IoTFleetWisePaginationBase<IoTFleetWiseClient> {
+                                                public IoTFleetWisePaginationBase<IoTFleetWiseClient>,
+                                                public IoTFleetWiseWaiter<IoTFleetWiseClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1756,6 +1758,10 @@ class AWS_IOTFLEETWISE_API IoTFleetWiseClient : public Aws::Client::AWSJsonClien
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTFleetWiseClient>;
   void init(const IoTFleetWiseClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, IoTFleetWiseError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   IoTFleetWiseClientConfiguration m_clientConfiguration;
   std::shared_ptr<IoTFleetWiseEndpointProviderBase> m_endpointProvider;

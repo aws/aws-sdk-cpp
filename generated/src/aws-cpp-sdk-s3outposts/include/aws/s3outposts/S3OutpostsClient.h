@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/s3outposts/S3OutpostsPaginationBase.h>
 #include <aws/s3outposts/S3OutpostsServiceClientModel.h>
+#include <aws/s3outposts/S3OutpostsWaiter.h>
 #include <aws/s3outposts/S3Outposts_EXPORTS.h>
 
 namespace Aws {
@@ -19,7 +20,8 @@ namespace S3Outposts {
  */
 class AWS_S3OUTPOSTS_API S3OutpostsClient : public Aws::Client::AWSJsonClient,
                                             public Aws::Client::ClientWithAsyncTemplateMethods<S3OutpostsClient>,
-                                            public S3OutpostsPaginationBase<S3OutpostsClient> {
+                                            public S3OutpostsPaginationBase<S3OutpostsClient>,
+                                            public S3OutpostsWaiter<S3OutpostsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -237,6 +239,12 @@ class AWS_S3OUTPOSTS_API S3OutpostsClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<S3OutpostsClient>;
   void init(const S3OutpostsClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, S3OutpostsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   S3OutpostsClientConfiguration m_clientConfiguration;
   std::shared_ptr<S3OutpostsEndpointProviderBase> m_endpointProvider;

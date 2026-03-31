@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mediaconvert/MediaConvertPaginationBase.h>
 #include <aws/mediaconvert/MediaConvertServiceClientModel.h>
+#include <aws/mediaconvert/MediaConvertWaiter.h>
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
 namespace Aws {
@@ -19,7 +20,8 @@ namespace MediaConvert {
  */
 class AWS_MEDIACONVERT_API MediaConvertClient : public Aws::Client::AWSJsonClient,
                                                 public Aws::Client::ClientWithAsyncTemplateMethods<MediaConvertClient>,
-                                                public MediaConvertPaginationBase<MediaConvertClient> {
+                                                public MediaConvertPaginationBase<MediaConvertClient>,
+                                                public MediaConvertWaiter<MediaConvertClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -974,6 +976,12 @@ class AWS_MEDIACONVERT_API MediaConvertClient : public Aws::Client::AWSJsonClien
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MediaConvertClient>;
   void init(const MediaConvertClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MediaConvertError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   MediaConvertClientConfiguration m_clientConfiguration;
   std::shared_ptr<MediaConvertEndpointProviderBase> m_endpointProvider;

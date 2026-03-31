@@ -14,6 +14,7 @@
 #include <aws/ec2/model/FleetLaunchTemplateConfigRequest.h>
 #include <aws/ec2/model/FleetType.h>
 #include <aws/ec2/model/OnDemandOptionsRequest.h>
+#include <aws/ec2/model/ReservedCapacityOptionsRequest.h>
 #include <aws/ec2/model/SpotOptionsRequest.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <aws/ec2/model/TargetCapacitySpecificationRequest.h>
@@ -116,6 +117,26 @@ class CreateFleetRequest : public EC2Request {
   template <typename OnDemandOptionsT = OnDemandOptionsRequest>
   CreateFleetRequest& WithOnDemandOptions(OnDemandOptionsT&& value) {
     SetOnDemandOptions(std::forward<OnDemandOptionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Defines EC2 Fleet preferences for utilizing reserved capacity when
+   * DefaultTargetCapacityType is set to <code>reserved-capacity</code>.</p>
+   * <p>Supported only for fleets of type <code>instant</code>.</p>
+   */
+  inline const ReservedCapacityOptionsRequest& GetReservedCapacityOptions() const { return m_reservedCapacityOptions; }
+  inline bool ReservedCapacityOptionsHasBeenSet() const { return m_reservedCapacityOptionsHasBeenSet; }
+  template <typename ReservedCapacityOptionsT = ReservedCapacityOptionsRequest>
+  void SetReservedCapacityOptions(ReservedCapacityOptionsT&& value) {
+    m_reservedCapacityOptionsHasBeenSet = true;
+    m_reservedCapacityOptions = std::forward<ReservedCapacityOptionsT>(value);
+  }
+  template <typename ReservedCapacityOptionsT = ReservedCapacityOptionsRequest>
+  CreateFleetRequest& WithReservedCapacityOptions(ReservedCapacityOptionsT&& value) {
+    SetReservedCapacityOptions(std::forward<ReservedCapacityOptionsT>(value));
     return *this;
   }
   ///@}
@@ -346,6 +367,8 @@ class CreateFleetRequest : public EC2Request {
 
   OnDemandOptionsRequest m_onDemandOptions;
 
+  ReservedCapacityOptionsRequest m_reservedCapacityOptions;
+
   FleetExcessCapacityTerminationPolicy m_excessCapacityTerminationPolicy{FleetExcessCapacityTerminationPolicy::NOT_SET};
 
   Aws::Vector<FleetLaunchTemplateConfigRequest> m_launchTemplateConfigs;
@@ -369,6 +392,7 @@ class CreateFleetRequest : public EC2Request {
   bool m_clientTokenHasBeenSet = true;
   bool m_spotOptionsHasBeenSet = false;
   bool m_onDemandOptionsHasBeenSet = false;
+  bool m_reservedCapacityOptionsHasBeenSet = false;
   bool m_excessCapacityTerminationPolicyHasBeenSet = false;
   bool m_launchTemplateConfigsHasBeenSet = false;
   bool m_targetCapacitySpecificationHasBeenSet = false;

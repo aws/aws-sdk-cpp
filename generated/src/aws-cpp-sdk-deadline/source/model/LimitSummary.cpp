@@ -18,17 +18,17 @@ namespace Model {
 LimitSummary::LimitSummary(JsonView jsonValue) { *this = jsonValue; }
 
 LimitSummary& LimitSummary::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("displayName")) {
-    m_displayName = jsonValue.GetString("displayName");
-    m_displayNameHasBeenSet = true;
+  if (jsonValue.ValueExists("farmId")) {
+    m_farmId = jsonValue.GetString("farmId");
+    m_farmIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("amountRequirementName")) {
-    m_amountRequirementName = jsonValue.GetString("amountRequirementName");
-    m_amountRequirementNameHasBeenSet = true;
+  if (jsonValue.ValueExists("limitId")) {
+    m_limitId = jsonValue.GetString("limitId");
+    m_limitIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("maxCount")) {
-    m_maxCount = jsonValue.GetInteger("maxCount");
-    m_maxCountHasBeenSet = true;
+  if (jsonValue.ValueExists("currentCount")) {
+    m_currentCount = jsonValue.GetInteger("currentCount");
+    m_currentCountHasBeenSet = true;
   }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
@@ -46,17 +46,17 @@ LimitSummary& LimitSummary::operator=(JsonView jsonValue) {
     m_updatedBy = jsonValue.GetString("updatedBy");
     m_updatedByHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("farmId")) {
-    m_farmId = jsonValue.GetString("farmId");
-    m_farmIdHasBeenSet = true;
+  if (jsonValue.ValueExists("displayName")) {
+    m_displayName = jsonValue.GetString("displayName");
+    m_displayNameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("limitId")) {
-    m_limitId = jsonValue.GetString("limitId");
-    m_limitIdHasBeenSet = true;
+  if (jsonValue.ValueExists("amountRequirementName")) {
+    m_amountRequirementName = jsonValue.GetString("amountRequirementName");
+    m_amountRequirementNameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("currentCount")) {
-    m_currentCount = jsonValue.GetInteger("currentCount");
-    m_currentCountHasBeenSet = true;
+  if (jsonValue.ValueExists("maxCount")) {
+    m_maxCount = jsonValue.GetInteger("maxCount");
+    m_maxCountHasBeenSet = true;
   }
   return *this;
 }
@@ -64,16 +64,16 @@ LimitSummary& LimitSummary::operator=(JsonView jsonValue) {
 JsonValue LimitSummary::Jsonize() const {
   JsonValue payload;
 
-  if (m_displayNameHasBeenSet) {
-    payload.WithString("displayName", m_displayName);
+  if (m_farmIdHasBeenSet) {
+    payload.WithString("farmId", m_farmId);
   }
 
-  if (m_amountRequirementNameHasBeenSet) {
-    payload.WithString("amountRequirementName", m_amountRequirementName);
+  if (m_limitIdHasBeenSet) {
+    payload.WithString("limitId", m_limitId);
   }
 
-  if (m_maxCountHasBeenSet) {
-    payload.WithInteger("maxCount", m_maxCount);
+  if (m_currentCountHasBeenSet) {
+    payload.WithInteger("currentCount", m_currentCount);
   }
 
   if (m_createdAtHasBeenSet) {
@@ -92,16 +92,16 @@ JsonValue LimitSummary::Jsonize() const {
     payload.WithString("updatedBy", m_updatedBy);
   }
 
-  if (m_farmIdHasBeenSet) {
-    payload.WithString("farmId", m_farmId);
+  if (m_displayNameHasBeenSet) {
+    payload.WithString("displayName", m_displayName);
   }
 
-  if (m_limitIdHasBeenSet) {
-    payload.WithString("limitId", m_limitId);
+  if (m_amountRequirementNameHasBeenSet) {
+    payload.WithString("amountRequirementName", m_amountRequirementName);
   }
 
-  if (m_currentCountHasBeenSet) {
-    payload.WithInteger("currentCount", m_currentCount);
+  if (m_maxCountHasBeenSet) {
+    payload.WithInteger("maxCount", m_maxCount);
   }
 
   return payload;

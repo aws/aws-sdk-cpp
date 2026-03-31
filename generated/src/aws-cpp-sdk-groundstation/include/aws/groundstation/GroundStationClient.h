@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/groundstation/GroundStationPaginationBase.h>
 #include <aws/groundstation/GroundStationServiceClientModel.h>
+#include <aws/groundstation/GroundStationWaiter.h>
 #include <aws/groundstation/GroundStation_EXPORTS.h>
 
 namespace Aws {
@@ -23,7 +24,8 @@ namespace GroundStation {
  */
 class AWS_GROUNDSTATION_API GroundStationClient : public Aws::Client::AWSJsonClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<GroundStationClient>,
-                                                  public GroundStationPaginationBase<GroundStationClient> {
+                                                  public GroundStationPaginationBase<GroundStationClient>,
+                                                  public GroundStationWaiter<GroundStationClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1039,6 +1041,12 @@ class AWS_GROUNDSTATION_API GroundStationClient : public Aws::Client::AWSJsonCli
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<GroundStationClient>;
   void init(const GroundStationClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, GroundStationError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   GroundStationClientConfiguration m_clientConfiguration;
   std::shared_ptr<GroundStationEndpointProviderBase> m_endpointProvider;

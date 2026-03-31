@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kms/KMSPaginationBase.h>
 #include <aws/kms/KMSServiceClientModel.h>
+#include <aws/kms/KMSWaiter.h>
 #include <aws/kms/KMS_EXPORTS.h>
 
 namespace Aws {
@@ -84,7 +85,8 @@ namespace KMS {
  */
 class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<KMSClient>,
-                              public KMSPaginationBase<KMSClient> {
+                              public KMSPaginationBase<KMSClient>,
+                              public KMSWaiter<KMSClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -3849,6 +3851,10 @@ class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<KMSClient>;
   void init(const KMSClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, KMSError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   KMSClientConfiguration m_clientConfiguration;
   std::shared_ptr<KMSEndpointProviderBase> m_endpointProvider;

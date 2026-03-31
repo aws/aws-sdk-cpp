@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/autoscaling/AutoScalingPaginationBase.h>
 #include <aws/autoscaling/AutoScalingServiceClientModel.h>
+#include <aws/autoscaling/AutoScalingWaiter.h>
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
@@ -33,7 +34,8 @@ namespace AutoScaling {
  */
 class AWS_AUTOSCALING_API AutoScalingClient : public Aws::Client::AWSXMLClient,
                                               public Aws::Client::ClientWithAsyncTemplateMethods<AutoScalingClient>,
-                                              public AutoScalingPaginationBase<AutoScalingClient> {
+                                              public AutoScalingPaginationBase<AutoScalingClient>,
+                                              public AutoScalingWaiter<AutoScalingClient> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();
@@ -2533,6 +2535,10 @@ class AWS_AUTOSCALING_API AutoScalingClient : public Aws::Client::AWSXMLClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AutoScalingClient>;
   void init(const AutoScalingClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, AutoScalingError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   AutoScalingClientConfiguration m_clientConfiguration;
   std::shared_ptr<AutoScalingEndpointProviderBase> m_endpointProvider;

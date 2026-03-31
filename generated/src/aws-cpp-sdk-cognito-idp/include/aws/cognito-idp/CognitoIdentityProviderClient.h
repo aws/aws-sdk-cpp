@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProviderPaginationBase.h>
 #include <aws/cognito-idp/CognitoIdentityProviderServiceClientModel.h>
+#include <aws/cognito-idp/CognitoIdentityProviderWaiter.h>
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -55,7 +56,8 @@ namespace CognitoIdentityProvider {
 class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<CognitoIdentityProviderClient>,
-      public CognitoIdentityProviderPaginationBase<CognitoIdentityProviderClient> {
+      public CognitoIdentityProviderPaginationBase<CognitoIdentityProviderClient>,
+      public CognitoIdentityProviderWaiter<CognitoIdentityProviderClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -5099,6 +5101,10 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CognitoIdentityProviderClient>;
   void init(const CognitoIdentityProviderClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CognitoIdentityProviderError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   CognitoIdentityProviderClientConfiguration m_clientConfiguration;
   std::shared_ptr<CognitoIdentityProviderEndpointProviderBase> m_endpointProvider;

@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kafkaconnect/KafkaConnectPaginationBase.h>
 #include <aws/kafkaconnect/KafkaConnectServiceClientModel.h>
+#include <aws/kafkaconnect/KafkaConnectWaiter.h>
 #include <aws/kafkaconnect/KafkaConnect_EXPORTS.h>
 
 namespace Aws {
@@ -19,7 +20,8 @@ namespace KafkaConnect {
  */
 class AWS_KAFKACONNECT_API KafkaConnectClient : public Aws::Client::AWSJsonClient,
                                                 public Aws::Client::ClientWithAsyncTemplateMethods<KafkaConnectClient>,
-                                                public KafkaConnectPaginationBase<KafkaConnectClient> {
+                                                public KafkaConnectPaginationBase<KafkaConnectClient>,
+                                                public KafkaConnectWaiter<KafkaConnectClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -574,6 +576,12 @@ class AWS_KAFKACONNECT_API KafkaConnectClient : public Aws::Client::AWSJsonClien
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<KafkaConnectClient>;
   void init(const KafkaConnectClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, KafkaConnectError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   KafkaConnectClientConfiguration m_clientConfiguration;
   std::shared_ptr<KafkaConnectEndpointProviderBase> m_endpointProvider;

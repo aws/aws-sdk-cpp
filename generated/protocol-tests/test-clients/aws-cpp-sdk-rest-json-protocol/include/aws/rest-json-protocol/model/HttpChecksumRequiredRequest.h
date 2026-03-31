@@ -65,9 +65,9 @@ class HttpChecksumRequiredRequest : public RestJsonProtocolRequest {
   ///@}
  private:
   Aws::String m_foo;
-  bool m_fooHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fooHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

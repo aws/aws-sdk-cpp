@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/waf/WAFPaginationBase.h>
 #include <aws/waf/WAFServiceClientModel.h>
+#include <aws/waf/WAFWaiter.h>
 #include <aws/waf/WAF_EXPORTS.h>
 
 namespace Aws {
@@ -35,7 +36,8 @@ namespace WAF {
  */
 class AWS_WAF_API WAFClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<WAFClient>,
-                              public WAFPaginationBase<WAFClient> {
+                              public WAFPaginationBase<WAFClient>,
+                              public WAFWaiter<WAFClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -3511,6 +3513,10 @@ class AWS_WAF_API WAFClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<WAFClient>;
   void init(const WAFClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, WAFError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   WAFClientConfiguration m_clientConfiguration;
   std::shared_ptr<WAFEndpointProviderBase> m_endpointProvider;

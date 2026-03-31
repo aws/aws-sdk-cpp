@@ -7,6 +7,7 @@
 #include <aws/application-signals/ApplicationSignals_EXPORTS.h>
 #include <aws/application-signals/model/DependencyConfig.h>
 #include <aws/application-signals/model/MetricDataQuery.h>
+#include <aws/application-signals/model/MetricSource.h>
 #include <aws/application-signals/model/MonitoredRequestCountMetricDataQueries.h>
 #include <aws/application-signals/model/ServiceLevelIndicatorMetricType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -182,6 +183,44 @@ class RequestBasedServiceLevelIndicatorMetricConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Identifies the metric source for SLOs on resources other than Application
+   * Signals services.</p>
+   */
+  inline const MetricSource& GetMetricSource() const { return m_metricSource; }
+  inline bool MetricSourceHasBeenSet() const { return m_metricSourceHasBeenSet; }
+  template <typename MetricSourceT = MetricSource>
+  void SetMetricSource(MetricSourceT&& value) {
+    m_metricSourceHasBeenSet = true;
+    m_metricSource = std::forward<MetricSourceT>(value);
+  }
+  template <typename MetricSourceT = MetricSource>
+  RequestBasedServiceLevelIndicatorMetricConfig& WithMetricSource(MetricSourceT&& value) {
+    SetMetricSource(std::forward<MetricSourceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the metric for SLOs on resources other than Application Signals
+   * services.</p>
+   */
+  inline const Aws::String& GetMetricName() const { return m_metricName; }
+  inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
+  template <typename MetricNameT = Aws::String>
+  void SetMetricName(MetricNameT&& value) {
+    m_metricNameHasBeenSet = true;
+    m_metricName = std::forward<MetricNameT>(value);
+  }
+  template <typename MetricNameT = Aws::String>
+  RequestBasedServiceLevelIndicatorMetricConfig& WithMetricName(MetricNameT&& value) {
+    SetMetricName(std::forward<MetricNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_keyAttributes;
 
@@ -194,12 +233,18 @@ class RequestBasedServiceLevelIndicatorMetricConfig {
   MonitoredRequestCountMetricDataQueries m_monitoredRequestCountMetric;
 
   DependencyConfig m_dependencyConfig;
+
+  MetricSource m_metricSource;
+
+  Aws::String m_metricName;
   bool m_keyAttributesHasBeenSet = false;
   bool m_operationNameHasBeenSet = false;
   bool m_metricTypeHasBeenSet = false;
   bool m_totalRequestCountMetricHasBeenSet = false;
   bool m_monitoredRequestCountMetricHasBeenSet = false;
   bool m_dependencyConfigHasBeenSet = false;
+  bool m_metricSourceHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/securityhub/SecurityHubPaginationBase.h>
 #include <aws/securityhub/SecurityHubServiceClientModel.h>
+#include <aws/securityhub/SecurityHubWaiter.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 
 namespace Aws {
@@ -87,7 +88,8 @@ namespace SecurityHub {
  */
 class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
                                               public Aws::Client::ClientWithAsyncTemplateMethods<SecurityHubClient>,
-                                              public SecurityHubPaginationBase<SecurityHubClient> {
+                                              public SecurityHubPaginationBase<SecurityHubClient>,
+                                              public SecurityHubWaiter<SecurityHubClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -3326,6 +3328,12 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SecurityHubClient>;
   void init(const SecurityHubClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SecurityHubError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   SecurityHubClientConfiguration m_clientConfiguration;
   std::shared_ptr<SecurityHubEndpointProviderBase> m_endpointProvider;

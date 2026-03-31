@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/workspaces/WorkSpacesPaginationBase.h>
 #include <aws/workspaces/WorkSpacesServiceClientModel.h>
+#include <aws/workspaces/WorkSpacesWaiter.h>
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 
 namespace Aws {
@@ -41,7 +42,8 @@ namespace WorkSpaces {
  */
 class AWS_WORKSPACES_API WorkSpacesClient : public Aws::Client::AWSJsonClient,
                                             public Aws::Client::ClientWithAsyncTemplateMethods<WorkSpacesClient>,
-                                            public WorkSpacesPaginationBase<WorkSpacesClient> {
+                                            public WorkSpacesPaginationBase<WorkSpacesClient>,
+                                            public WorkSpacesWaiter<WorkSpacesClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2921,6 +2923,10 @@ class AWS_WORKSPACES_API WorkSpacesClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<WorkSpacesClient>;
   void init(const WorkSpacesClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, WorkSpacesError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   WorkSpacesClientConfiguration m_clientConfiguration;
   std::shared_ptr<WorkSpacesEndpointProviderBase> m_endpointProvider;

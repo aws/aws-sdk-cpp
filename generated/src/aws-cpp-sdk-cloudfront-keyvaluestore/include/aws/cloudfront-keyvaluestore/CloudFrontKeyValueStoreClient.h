@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStorePaginationBase.h>
 #include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStoreServiceClientModel.h>
+#include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStoreWaiter.h>
 #include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStore_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -21,7 +22,8 @@ namespace CloudFrontKeyValueStore {
 class AWS_CLOUDFRONTKEYVALUESTORE_API CloudFrontKeyValueStoreClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<CloudFrontKeyValueStoreClient>,
-      public CloudFrontKeyValueStorePaginationBase<CloudFrontKeyValueStoreClient> {
+      public CloudFrontKeyValueStorePaginationBase<CloudFrontKeyValueStoreClient>,
+      public CloudFrontKeyValueStoreWaiter<CloudFrontKeyValueStoreClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -240,6 +242,12 @@ class AWS_CLOUDFRONTKEYVALUESTORE_API CloudFrontKeyValueStoreClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudFrontKeyValueStoreClient>;
   void init(const CloudFrontKeyValueStoreClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CloudFrontKeyValueStoreError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   CloudFrontKeyValueStoreClientConfiguration m_clientConfiguration;
   std::shared_ptr<CloudFrontKeyValueStoreEndpointProviderBase> m_endpointProvider;

@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/license-manager-linux-subscriptions/LicenseManagerLinuxSubscriptionsPaginationBase.h>
 #include <aws/license-manager-linux-subscriptions/LicenseManagerLinuxSubscriptionsServiceClientModel.h>
+#include <aws/license-manager-linux-subscriptions/LicenseManagerLinuxSubscriptionsWaiter.h>
 #include <aws/license-manager-linux-subscriptions/LicenseManagerLinuxSubscriptions_EXPORTS.h>
 
 namespace Aws {
@@ -21,7 +22,8 @@ namespace LicenseManagerLinuxSubscriptions {
 class AWS_LICENSEMANAGERLINUXSUBSCRIPTIONS_API LicenseManagerLinuxSubscriptionsClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<LicenseManagerLinuxSubscriptionsClient>,
-      public LicenseManagerLinuxSubscriptionsPaginationBase<LicenseManagerLinuxSubscriptionsClient> {
+      public LicenseManagerLinuxSubscriptionsPaginationBase<LicenseManagerLinuxSubscriptionsClient>,
+      public LicenseManagerLinuxSubscriptionsWaiter<LicenseManagerLinuxSubscriptionsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -402,6 +404,12 @@ class AWS_LICENSEMANAGERLINUXSUBSCRIPTIONS_API LicenseManagerLinuxSubscriptionsC
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<LicenseManagerLinuxSubscriptionsClient>;
   void init(const LicenseManagerLinuxSubscriptionsClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, LicenseManagerLinuxSubscriptionsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   LicenseManagerLinuxSubscriptionsClientConfiguration m_clientConfiguration;
   std::shared_ptr<LicenseManagerLinuxSubscriptionsEndpointProviderBase> m_endpointProvider;

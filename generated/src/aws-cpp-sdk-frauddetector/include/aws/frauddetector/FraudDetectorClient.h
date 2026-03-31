@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/frauddetector/FraudDetectorPaginationBase.h>
 #include <aws/frauddetector/FraudDetectorServiceClientModel.h>
+#include <aws/frauddetector/FraudDetectorWaiter.h>
 #include <aws/frauddetector/FraudDetector_EXPORTS.h>
 
 namespace Aws {
@@ -36,7 +37,8 @@ namespace FraudDetector {
  */
 class AWS_FRAUDDETECTOR_API FraudDetectorClient : public Aws::Client::AWSJsonClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<FraudDetectorClient>,
-                                                  public FraudDetectorPaginationBase<FraudDetectorClient> {
+                                                  public FraudDetectorPaginationBase<FraudDetectorClient>,
+                                                  public FraudDetectorWaiter<FraudDetectorClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2182,6 +2184,10 @@ class AWS_FRAUDDETECTOR_API FraudDetectorClient : public Aws::Client::AWSJsonCli
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<FraudDetectorClient>;
   void init(const FraudDetectorClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, FraudDetectorError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   FraudDetectorClientConfiguration m_clientConfiguration;
   std::shared_ptr<FraudDetectorEndpointProviderBase> m_endpointProvider;

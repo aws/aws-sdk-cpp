@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datasync/DataSync_EXPORTS.h>
+#include <aws/datasync/model/CmkSecretConfig.h>
+#include <aws/datasync/model/CustomSecretConfig.h>
 #include <aws/datasync/model/SmbMountOptions.h>
 
 #include <utility>
@@ -112,6 +114,47 @@ class FsxUpdateProtocolSmb {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies configuration information for a DataSync-managed secret, such as a
+   * <code>Password</code> or set of credentials that DataSync uses to access a
+   * specific transfer location, and a customer-managed KMS key.</p>
+   */
+  inline const CmkSecretConfig& GetCmkSecretConfig() const { return m_cmkSecretConfig; }
+  inline bool CmkSecretConfigHasBeenSet() const { return m_cmkSecretConfigHasBeenSet; }
+  template <typename CmkSecretConfigT = CmkSecretConfig>
+  void SetCmkSecretConfig(CmkSecretConfigT&& value) {
+    m_cmkSecretConfigHasBeenSet = true;
+    m_cmkSecretConfig = std::forward<CmkSecretConfigT>(value);
+  }
+  template <typename CmkSecretConfigT = CmkSecretConfig>
+  FsxUpdateProtocolSmb& WithCmkSecretConfig(CmkSecretConfigT&& value) {
+    SetCmkSecretConfig(std::forward<CmkSecretConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies configuration information for a customer-managed secret, such as a
+   * <code>Password</code> or set of credentials that DataSync uses to access a
+   * specific transfer location. This configuration includes the secret ARN, and the
+   * ARN for an IAM role that provides access to the secret.</p>
+   */
+  inline const CustomSecretConfig& GetCustomSecretConfig() const { return m_customSecretConfig; }
+  inline bool CustomSecretConfigHasBeenSet() const { return m_customSecretConfigHasBeenSet; }
+  template <typename CustomSecretConfigT = CustomSecretConfig>
+  void SetCustomSecretConfig(CustomSecretConfigT&& value) {
+    m_customSecretConfigHasBeenSet = true;
+    m_customSecretConfig = std::forward<CustomSecretConfigT>(value);
+  }
+  template <typename CustomSecretConfigT = CustomSecretConfig>
+  FsxUpdateProtocolSmb& WithCustomSecretConfig(CustomSecretConfigT&& value) {
+    SetCustomSecretConfig(std::forward<CustomSecretConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domain;
 
@@ -120,10 +163,16 @@ class FsxUpdateProtocolSmb {
   Aws::String m_password;
 
   Aws::String m_user;
+
+  CmkSecretConfig m_cmkSecretConfig;
+
+  CustomSecretConfig m_customSecretConfig;
   bool m_domainHasBeenSet = false;
   bool m_mountOptionsHasBeenSet = false;
   bool m_passwordHasBeenSet = false;
   bool m_userHasBeenSet = false;
+  bool m_cmkSecretConfigHasBeenSet = false;
+  bool m_customSecretConfigHasBeenSet = false;
 };
 
 }  // namespace Model

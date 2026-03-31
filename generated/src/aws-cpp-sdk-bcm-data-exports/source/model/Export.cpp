@@ -18,18 +18,6 @@ namespace Model {
 Export::Export(JsonView jsonValue) { *this = jsonValue; }
 
 Export& Export::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("DataQuery")) {
-    m_dataQuery = jsonValue.GetObject("DataQuery");
-    m_dataQueryHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Description")) {
-    m_description = jsonValue.GetString("Description");
-    m_descriptionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("DestinationConfigurations")) {
-    m_destinationConfigurations = jsonValue.GetObject("DestinationConfigurations");
-    m_destinationConfigurationsHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("ExportArn")) {
     m_exportArn = jsonValue.GetString("ExportArn");
     m_exportArnHasBeenSet = true;
@@ -37,6 +25,18 @@ Export& Export::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Description")) {
+    m_description = jsonValue.GetString("Description");
+    m_descriptionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DataQuery")) {
+    m_dataQuery = jsonValue.GetObject("DataQuery");
+    m_dataQueryHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DestinationConfigurations")) {
+    m_destinationConfigurations = jsonValue.GetObject("DestinationConfigurations");
+    m_destinationConfigurationsHasBeenSet = true;
   }
   if (jsonValue.ValueExists("RefreshCadence")) {
     m_refreshCadence = jsonValue.GetObject("RefreshCadence");
@@ -48,24 +48,24 @@ Export& Export::operator=(JsonView jsonValue) {
 JsonValue Export::Jsonize() const {
   JsonValue payload;
 
-  if (m_dataQueryHasBeenSet) {
-    payload.WithObject("DataQuery", m_dataQuery.Jsonize());
-  }
-
-  if (m_descriptionHasBeenSet) {
-    payload.WithString("Description", m_description);
-  }
-
-  if (m_destinationConfigurationsHasBeenSet) {
-    payload.WithObject("DestinationConfigurations", m_destinationConfigurations.Jsonize());
-  }
-
   if (m_exportArnHasBeenSet) {
     payload.WithString("ExportArn", m_exportArn);
   }
 
   if (m_nameHasBeenSet) {
     payload.WithString("Name", m_name);
+  }
+
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
+  }
+
+  if (m_dataQueryHasBeenSet) {
+    payload.WithObject("DataQuery", m_dataQuery.Jsonize());
+  }
+
+  if (m_destinationConfigurationsHasBeenSet) {
+    payload.WithObject("DestinationConfigurations", m_destinationConfigurations.Jsonize());
   }
 
   if (m_refreshCadenceHasBeenSet) {

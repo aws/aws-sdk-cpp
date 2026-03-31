@@ -645,8 +645,12 @@ class AWS_RDS_API RDSClient : public Aws::Client::AWSXMLClient, public Aws::Clie
    * Multi-AZ DB cluster read replica with an RDS for MySQL or PostgreSQL DB instance
    * as the source. For more information about Multi-AZ DB clusters, see <a
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">Multi-AZ
-   * DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.</p><p><h3>See
-   * Also:</h3>   <a
+   * DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.</p> <p>You can
+   * use the <code>WithExpressConfiguration</code> parameter to create an Aurora DB
+   * Cluster with express configuration and create cluster in seconds. Express
+   * configuration provides a cluster with a writer instance and feature specific
+   * values set to all other input parameters of this API. </p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBCluster">AWS
    * API Reference</a></p>
    */
@@ -4951,14 +4955,24 @@ class AWS_RDS_API RDSClient : public Aws::Client::AWSXMLClient, public Aws::Clie
    * <p>Creates a new DB cluster from a DB snapshot or DB cluster snapshot.</p>
    * <p>The target DB cluster is created from the source snapshot with a default
    * configuration. If you don't specify a security group, the new DB cluster is
-   * associated with the default security group.</p>  <p>This operation only
-   * restores the DB cluster, not the DB instances for that DB cluster. You must
-   * invoke the <code>CreateDBInstance</code> operation to create DB instances for
-   * the restored DB cluster, specifying the identifier of the restored DB cluster in
-   * <code>DBClusterIdentifier</code>. You can create DB instances only after the
-   * <code>RestoreDBClusterFromSnapshot</code> operation has completed and the DB
-   * cluster is available.</p>  <p>For more information on Amazon Aurora DB
-   * clusters, see <a
+   * associated with the default security group.</p> <p>You can use the
+   * <code>EnableVPCNetworking</code> and <code>EnableInternetAccessGateway</code>
+   * parameters together to restore an Aurora PostgreSQL cluster without VPC
+   * networking and with internet-based connectivity. These two parameters must
+   * always be specified together. Set <code>EnableVPCNetworking</code> to
+   * <code>false</code> to disable the VPC network interface (ENI) for the cluster.
+   * <code>EnableInternetAccessGateway</code> enables internet-based connectivity
+   * through an internet access gateway. IAM database authentication is required and
+   * must be enabled using <code>EnableIAMDatabaseAuthentication</code>. Once the
+   * cluster is restored, you need to modify the DB cluster to update
+   * <code>MasterUserAuthenticationType</code> to <code>iam-db-auth</code>. </p>
+   *  <p>This operation only restores the DB cluster, not the DB instances for
+   * that DB cluster. You must invoke the <code>CreateDBInstance</code> operation to
+   * create DB instances for the restored DB cluster, specifying the identifier of
+   * the restored DB cluster in <code>DBClusterIdentifier</code>. You can create DB
+   * instances only after the <code>RestoreDBClusterFromSnapshot</code> operation has
+   * completed and the DB cluster is available.</p>  <p>For more information
+   * on Amazon Aurora DB clusters, see <a
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
    * What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>For
    * more information on Multi-AZ DB clusters, see <a
@@ -5001,11 +5015,22 @@ class AWS_RDS_API RDSClient : public Aws::Client::AWSXMLClient, public Aws::Clie
    * Unless the <code>RestoreType</code> is set to <code>copy-on-write</code>, the
    * restore may occur in a different Availability Zone (AZ) from the original DB
    * cluster. The AZ where RDS restores the DB cluster depends on the AZs in the
-   * specified subnet group.</p>  <p>For Aurora, this operation only restores
-   * the DB cluster, not the DB instances for that DB cluster. You must invoke the
-   * <code>CreateDBInstance</code> operation to create DB instances for the restored
-   * DB cluster, specifying the identifier of the restored DB cluster in
-   * <code>DBClusterIdentifier</code>. You can create DB instances only after the
+   * specified subnet group.</p> <p>You can use the <code>EnableVPCNetworking</code>
+   * and <code>EnableInternetAccessGateway</code> parameters together to restore an
+   * Aurora PostgreSQL cluster without VPC networking and with internet-based
+   * connectivity. These two parameters must always be specified together. Set
+   * <code>EnableVPCNetworking</code> to <code>false</code> to disable the VPC
+   * network interface (ENI) for the cluster.
+   * <code>EnableInternetAccessGateway</code> enables internet-based connectivity
+   * through an internet access gateway. IAM database authentication is required and
+   * must be enabled using <code>EnableIAMDatabaseAuthentication</code>. Once the
+   * cluster is restored, you need to modify the DB cluster to update
+   * <code>MasterUserAuthenticationType</code> to <code>iam-db-auth</code>. </p>
+   *  <p>For Aurora, this operation only restores the DB cluster, not the DB
+   * instances for that DB cluster. You must invoke the <code>CreateDBInstance</code>
+   * operation to create DB instances for the restored DB cluster, specifying the
+   * identifier of the restored DB cluster in <code>DBClusterIdentifier</code>. You
+   * can create DB instances only after the
    * <code>RestoreDBClusterToPointInTime</code> operation has completed and the DB
    * cluster is available.</p>  <p>For more information on Amazon Aurora DB
    * clusters, see <a
@@ -5633,6 +5658,10 @@ class AWS_RDS_API RDSClient : public Aws::Client::AWSXMLClient, public Aws::Clie
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<RDSClient>;
   void init(const RDSClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, RDSError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   RDSClientConfiguration m_clientConfiguration;
   std::shared_ptr<RDSEndpointProviderBase> m_endpointProvider;

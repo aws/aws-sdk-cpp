@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/application-signals/ApplicationSignalsPaginationBase.h>
 #include <aws/application-signals/ApplicationSignalsServiceClientModel.h>
+#include <aws/application-signals/ApplicationSignalsWaiter.h>
 #include <aws/application-signals/ApplicationSignals_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -35,7 +36,8 @@ namespace ApplicationSignals {
  */
 class AWS_APPLICATIONSIGNALS_API ApplicationSignalsClient : public Aws::Client::AWSJsonClient,
                                                             public Aws::Client::ClientWithAsyncTemplateMethods<ApplicationSignalsClient>,
-                                                            public ApplicationSignalsPaginationBase<ApplicationSignalsClient> {
+                                                            public ApplicationSignalsPaginationBase<ApplicationSignalsClient>,
+                                                            public ApplicationSignalsWaiter<ApplicationSignalsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -859,6 +861,12 @@ class AWS_APPLICATIONSIGNALS_API ApplicationSignalsClient : public Aws::Client::
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ApplicationSignalsClient>;
   void init(const ApplicationSignalsClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ApplicationSignalsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   ApplicationSignalsClientConfiguration m_clientConfiguration;
   std::shared_ptr<ApplicationSignalsEndpointProviderBase> m_endpointProvider;

@@ -12,6 +12,7 @@
 #include <aws/batch/model/ListConsumableResourcesPaginationTraits.h>
 #include <aws/batch/model/ListJobsByConsumableResourcePaginationTraits.h>
 #include <aws/batch/model/ListJobsPaginationTraits.h>
+#include <aws/batch/model/ListQuotaSharesPaginationTraits.h>
 #include <aws/batch/model/ListSchedulingPoliciesPaginationTraits.h>
 #include <aws/batch/model/ListServiceJobsPaginationTraits.h>
 #include <aws/core/utils/pagination/Paginator.h>
@@ -37,6 +38,8 @@ using ListJobsPaginator =
 using ListJobsByConsumableResourcePaginator =
     Aws::Utils::Pagination::Paginator<BatchClient, Model::ListJobsByConsumableResourceRequest,
                                       Pagination::ListJobsByConsumableResourcePaginationTraits<BatchClient>>;
+using ListQuotaSharesPaginator =
+    Aws::Utils::Pagination::Paginator<BatchClient, Model::ListQuotaSharesRequest, Pagination::ListQuotaSharesPaginationTraits<BatchClient>>;
 using ListSchedulingPoliciesPaginator = Aws::Utils::Pagination::Paginator<BatchClient, Model::ListSchedulingPoliciesRequest,
                                                                           Pagination::ListSchedulingPoliciesPaginationTraits<BatchClient>>;
 using ListServiceJobsPaginator =

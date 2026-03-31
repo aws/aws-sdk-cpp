@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/resource-explorer-2/ResourceExplorer2PaginationBase.h>
 #include <aws/resource-explorer-2/ResourceExplorer2ServiceClientModel.h>
+#include <aws/resource-explorer-2/ResourceExplorer2Waiter.h>
 #include <aws/resource-explorer-2/ResourceExplorer2_EXPORTS.h>
 
 namespace Aws {
@@ -47,7 +48,8 @@ namespace ResourceExplorer2 {
  */
 class AWS_RESOURCEEXPLORER2_API ResourceExplorer2Client : public Aws::Client::AWSJsonClient,
                                                           public Aws::Client::ClientWithAsyncTemplateMethods<ResourceExplorer2Client>,
-                                                          public ResourceExplorer2PaginationBase<ResourceExplorer2Client> {
+                                                          public ResourceExplorer2PaginationBase<ResourceExplorer2Client>,
+                                                          public ResourceExplorer2Waiter<ResourceExplorer2Client> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1139,6 +1141,12 @@ class AWS_RESOURCEEXPLORER2_API ResourceExplorer2Client : public Aws::Client::AW
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ResourceExplorer2Client>;
   void init(const ResourceExplorer2ClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ResourceExplorer2Error> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   ResourceExplorer2ClientConfiguration m_clientConfiguration;
   std::shared_ptr<ResourceExplorer2EndpointProviderBase> m_endpointProvider;

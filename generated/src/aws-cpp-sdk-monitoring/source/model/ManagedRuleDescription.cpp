@@ -93,9 +93,7 @@ ManagedRuleDescription& ManagedRuleDescription::operator=(const std::shared_ptr<
               else if (initialKeyStr == "RuleState") {
                 m_ruleState = ManagedRuleState(decoder);
                 m_ruleStateHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -185,9 +183,7 @@ ManagedRuleDescription& ManagedRuleDescription::operator=(const std::shared_ptr<
             else if (initialKeyStr == "RuleState") {
               m_ruleState = ManagedRuleState(decoder);
               m_ruleStateHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

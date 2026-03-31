@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/pipes/PipesPaginationBase.h>
 #include <aws/pipes/PipesServiceClientModel.h>
+#include <aws/pipes/PipesWaiter.h>
 #include <aws/pipes/Pipes_EXPORTS.h>
 
 namespace Aws {
@@ -24,7 +25,8 @@ namespace Pipes {
  */
 class AWS_PIPES_API PipesClient : public Aws::Client::AWSJsonClient,
                                   public Aws::Client::ClientWithAsyncTemplateMethods<PipesClient>,
-                                  public PipesPaginationBase<PipesClient> {
+                                  public PipesPaginationBase<PipesClient>,
+                                  public PipesWaiter<PipesClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -374,6 +376,12 @@ class AWS_PIPES_API PipesClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PipesClient>;
   void init(const PipesClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, PipesError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   PipesClientConfiguration m_clientConfiguration;
   std::shared_ptr<PipesEndpointProviderBase> m_endpointProvider;

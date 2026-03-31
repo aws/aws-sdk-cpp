@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/docdb-elastic/DocDBElasticPaginationBase.h>
 #include <aws/docdb-elastic/DocDBElasticServiceClientModel.h>
+#include <aws/docdb-elastic/DocDBElasticWaiter.h>
 #include <aws/docdb-elastic/DocDBElastic_EXPORTS.h>
 
 namespace Aws {
@@ -29,7 +30,8 @@ namespace DocDBElastic {
  */
 class AWS_DOCDBELASTIC_API DocDBElasticClient : public Aws::Client::AWSJsonClient,
                                                 public Aws::Client::ClientWithAsyncTemplateMethods<DocDBElasticClient>,
-                                                public DocDBElasticPaginationBase<DocDBElasticClient> {
+                                                public DocDBElasticPaginationBase<DocDBElasticClient>,
+                                                public DocDBElasticWaiter<DocDBElasticClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -606,6 +608,12 @@ class AWS_DOCDBELASTIC_API DocDBElasticClient : public Aws::Client::AWSJsonClien
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DocDBElasticClient>;
   void init(const DocDBElasticClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, DocDBElasticError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   DocDBElasticClientConfiguration m_clientConfiguration;
   std::shared_ptr<DocDBElasticEndpointProviderBase> m_endpointProvider;

@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/geo-routes/GeoRoutesPaginationBase.h>
 #include <aws/geo-routes/GeoRoutesServiceClientModel.h>
+#include <aws/geo-routes/GeoRoutesWaiter.h>
 #include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 
 namespace Aws {
@@ -28,7 +29,8 @@ namespace GeoRoutes {
  */
 class AWS_GEOROUTES_API GeoRoutesClient : public Aws::Client::AWSJsonClient,
                                           public Aws::Client::ClientWithAsyncTemplateMethods<GeoRoutesClient>,
-                                          public GeoRoutesPaginationBase<GeoRoutesClient> {
+                                          public GeoRoutesPaginationBase<GeoRoutesClient>,
+                                          public GeoRoutesWaiter<GeoRoutesClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -226,6 +228,12 @@ class AWS_GEOROUTES_API GeoRoutesClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<GeoRoutesClient>;
   void init(const GeoRoutesClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, GeoRoutesError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   GeoRoutesClientConfiguration m_clientConfiguration;
   std::shared_ptr<GeoRoutesEndpointProviderBase> m_endpointProvider;

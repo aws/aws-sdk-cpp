@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/compute-optimizer/ComputeOptimizerPaginationBase.h>
 #include <aws/compute-optimizer/ComputeOptimizerServiceClientModel.h>
+#include <aws/compute-optimizer/ComputeOptimizerWaiter.h>
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -33,7 +34,8 @@ namespace ComputeOptimizer {
  */
 class AWS_COMPUTEOPTIMIZER_API ComputeOptimizerClient : public Aws::Client::AWSJsonClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<ComputeOptimizerClient>,
-                                                        public ComputeOptimizerPaginationBase<ComputeOptimizerClient> {
+                                                        public ComputeOptimizerPaginationBase<ComputeOptimizerClient>,
+                                                        public ComputeOptimizerWaiter<ComputeOptimizerClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1082,6 +1084,10 @@ class AWS_COMPUTEOPTIMIZER_API ComputeOptimizerClient : public Aws::Client::AWSJ
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ComputeOptimizerClient>;
   void init(const ComputeOptimizerClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ComputeOptimizerError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   ComputeOptimizerClientConfiguration m_clientConfiguration;
   std::shared_ptr<ComputeOptimizerEndpointProviderBase> m_endpointProvider;

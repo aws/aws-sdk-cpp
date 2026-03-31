@@ -16,7 +16,7 @@ AWS_PROTOCOL_TEST(GreetingWithErrors, RpcV2CborInvalidGreetingError) {
 
   OutputResponse mockRs;
   mockRs.statusCode = 400;
-  mockRs.headers = {{"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  mockRs.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Content-Type", R"(application/cbor)"}};
   mockRs.body = "v2ZfX3R5cGV4LnNtaXRoeS5wcm90b2NvbHRlc3RzLnJwY3YyQ2JvciNJbnZhbGlkR3JlZXRpbmdnTWVzc2FnZWJIaf8=";
   SetMockResponse(mockRs);
 

@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/swf/SWFPaginationBase.h>
 #include <aws/swf/SWFServiceClientModel.h>
+#include <aws/swf/SWFWaiter.h>
 #include <aws/swf/SWF_EXPORTS.h>
 
 namespace Aws {
@@ -31,7 +32,8 @@ namespace SWF {
  */
 class AWS_SWF_API SWFClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<SWFClient>,
-                              public SWFPaginationBase<SWFClient> {
+                              public SWFPaginationBase<SWFClient>,
+                              public SWFWaiter<SWFClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1923,6 +1925,10 @@ class AWS_SWF_API SWFClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SWFClient>;
   void init(const SWFClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SWFError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   SWFClientConfiguration m_clientConfiguration;
   std::shared_ptr<SWFEndpointProviderBase> m_endpointProvider;

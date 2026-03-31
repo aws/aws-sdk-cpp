@@ -117,9 +117,7 @@ Metric& Metric::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& de
                   }
                 }
                 m_dimensionsHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -233,9 +231,7 @@ Metric& Metric::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& de
                 }
               }
               m_dimensionsHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

@@ -167,22 +167,6 @@ class CreateNotificationRequest : public ConnectRequest {
   ///@}
 
   ///@{
-
-  inline const Aws::String& GetPredefinedNotificationId() const { return m_predefinedNotificationId; }
-  inline bool PredefinedNotificationIdHasBeenSet() const { return m_predefinedNotificationIdHasBeenSet; }
-  template <typename PredefinedNotificationIdT = Aws::String>
-  void SetPredefinedNotificationId(PredefinedNotificationIdT&& value) {
-    m_predefinedNotificationIdHasBeenSet = true;
-    m_predefinedNotificationId = std::forward<PredefinedNotificationIdT>(value);
-  }
-  template <typename PredefinedNotificationIdT = Aws::String>
-  CreateNotificationRequest& WithPredefinedNotificationId(PredefinedNotificationIdT&& value) {
-    SetPredefinedNotificationId(std::forward<PredefinedNotificationIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
   /**
    * <p>A unique, case-sensitive identifier that you provide to ensure the
    * idempotency of the request. If not provided, the Amazon Web Services SDK
@@ -216,8 +200,6 @@ class CreateNotificationRequest : public ConnectRequest {
 
   Aws::Map<Aws::String, Aws::String> m_tags;
 
-  Aws::String m_predefinedNotificationId;
-
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_instanceIdHasBeenSet = false;
   bool m_expiresAtHasBeenSet = false;
@@ -225,7 +207,6 @@ class CreateNotificationRequest : public ConnectRequest {
   bool m_priorityHasBeenSet = false;
   bool m_contentHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
-  bool m_predefinedNotificationIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

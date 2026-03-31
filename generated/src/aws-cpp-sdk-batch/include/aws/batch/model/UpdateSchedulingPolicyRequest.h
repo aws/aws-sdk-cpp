@@ -7,6 +7,7 @@
 #include <aws/batch/BatchRequest.h>
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/batch/model/FairsharePolicy.h>
+#include <aws/batch/model/QuotaSharePolicy.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -16,8 +17,8 @@ namespace Batch {
 namespace Model {
 
 /**
- * <p>Contains the parameters for
- * <code>UpdateSchedulingPolicy</code>.</p><p><h3>See Also:</h3>   <a
+ * <p>Contains the parameters for <code>UpdateSchedulingPolicy</code>.
+ * </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateSchedulingPolicyRequest">AWS
  * API Reference</a></p>
  */
@@ -53,7 +54,27 @@ class UpdateSchedulingPolicyRequest : public BatchRequest {
 
   ///@{
   /**
-   * <p>The fair-share policy scheduling details.</p>
+   * <p>The quota share scheduling policy details. Once set during creation, a
+   * quotaSharePolicy cannot be removed or changed to a fairsharePolicy.</p>
+   */
+  inline const QuotaSharePolicy& GetQuotaSharePolicy() const { return m_quotaSharePolicy; }
+  inline bool QuotaSharePolicyHasBeenSet() const { return m_quotaSharePolicyHasBeenSet; }
+  template <typename QuotaSharePolicyT = QuotaSharePolicy>
+  void SetQuotaSharePolicy(QuotaSharePolicyT&& value) {
+    m_quotaSharePolicyHasBeenSet = true;
+    m_quotaSharePolicy = std::forward<QuotaSharePolicyT>(value);
+  }
+  template <typename QuotaSharePolicyT = QuotaSharePolicy>
+  UpdateSchedulingPolicyRequest& WithQuotaSharePolicy(QuotaSharePolicyT&& value) {
+    SetQuotaSharePolicy(std::forward<QuotaSharePolicyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The fair-share policy scheduling details. Once set during creation, a
+   * fairsharePolicy cannot be removed or changed to a quotaSharePolicy.</p>
    */
   inline const FairsharePolicy& GetFairsharePolicy() const { return m_fairsharePolicy; }
   inline bool FairsharePolicyHasBeenSet() const { return m_fairsharePolicyHasBeenSet; }
@@ -71,8 +92,11 @@ class UpdateSchedulingPolicyRequest : public BatchRequest {
  private:
   Aws::String m_arn;
 
+  QuotaSharePolicy m_quotaSharePolicy;
+
   FairsharePolicy m_fairsharePolicy;
   bool m_arnHasBeenSet = false;
+  bool m_quotaSharePolicyHasBeenSet = false;
   bool m_fairsharePolicyHasBeenSet = false;
 };
 

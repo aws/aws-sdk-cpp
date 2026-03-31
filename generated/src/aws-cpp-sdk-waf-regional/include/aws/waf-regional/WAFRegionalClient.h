@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/waf-regional/WAFRegionalPaginationBase.h>
 #include <aws/waf-regional/WAFRegionalServiceClientModel.h>
+#include <aws/waf-regional/WAFRegionalWaiter.h>
 #include <aws/waf-regional/WAFRegional_EXPORTS.h>
 
 namespace Aws {
@@ -39,7 +40,8 @@ namespace WAFRegional {
  */
 class AWS_WAFREGIONAL_API WAFRegionalClient : public Aws::Client::AWSJsonClient,
                                               public Aws::Client::ClientWithAsyncTemplateMethods<WAFRegionalClient>,
-                                              public WAFRegionalPaginationBase<WAFRegionalClient> {
+                                              public WAFRegionalPaginationBase<WAFRegionalClient>,
+                                              public WAFRegionalWaiter<WAFRegionalClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -3658,6 +3660,10 @@ class AWS_WAFREGIONAL_API WAFRegionalClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<WAFRegionalClient>;
   void init(const WAFRegionalClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, WAFRegionalError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   WAFRegionalClientConfiguration m_clientConfiguration;
   std::shared_ptr<WAFRegionalEndpointProviderBase> m_endpointProvider;

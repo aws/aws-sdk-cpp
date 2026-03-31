@@ -90,8 +90,9 @@ class AddDirectQueryDataSourceRequest : public OpenSearchServiceRequest {
 
   ///@{
   /**
-   * <p> A list of Amazon Resource Names (ARNs) for the OpenSearch collections that
-   * are associated with the direct query data source. </p>
+   * <p> An optional list of Amazon Resource Names (ARNs) for the OpenSearch
+   * collections that are associated with the direct query data source. This field is
+   * required for CloudWatchLogs and SecurityLake datasource types. </p>
    */
   inline const Aws::Vector<Aws::String>& GetOpenSearchArns() const { return m_openSearchArns; }
   inline bool OpenSearchArnsHasBeenSet() const { return m_openSearchArnsHasBeenSet; }
@@ -109,6 +110,26 @@ class AddDirectQueryDataSourceRequest : public OpenSearchServiceRequest {
   AddDirectQueryDataSourceRequest& AddOpenSearchArns(OpenSearchArnsT&& value) {
     m_openSearchArnsHasBeenSet = true;
     m_openSearchArns.emplace_back(std::forward<OpenSearchArnsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> An optional IAM access policy document that defines the permissions for
+   * accessing the data source. The policy document must be in valid JSON format and
+   * follow IAM policy syntax.</p>
+   */
+  inline const Aws::String& GetDataSourceAccessPolicy() const { return m_dataSourceAccessPolicy; }
+  inline bool DataSourceAccessPolicyHasBeenSet() const { return m_dataSourceAccessPolicyHasBeenSet; }
+  template <typename DataSourceAccessPolicyT = Aws::String>
+  void SetDataSourceAccessPolicy(DataSourceAccessPolicyT&& value) {
+    m_dataSourceAccessPolicyHasBeenSet = true;
+    m_dataSourceAccessPolicy = std::forward<DataSourceAccessPolicyT>(value);
+  }
+  template <typename DataSourceAccessPolicyT = Aws::String>
+  AddDirectQueryDataSourceRequest& WithDataSourceAccessPolicy(DataSourceAccessPolicyT&& value) {
+    SetDataSourceAccessPolicy(std::forward<DataSourceAccessPolicyT>(value));
     return *this;
   }
   ///@}
@@ -143,11 +164,14 @@ class AddDirectQueryDataSourceRequest : public OpenSearchServiceRequest {
 
   Aws::Vector<Aws::String> m_openSearchArns;
 
+  Aws::String m_dataSourceAccessPolicy;
+
   Aws::Vector<Tag> m_tagList;
   bool m_dataSourceNameHasBeenSet = false;
   bool m_dataSourceTypeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_openSearchArnsHasBeenSet = false;
+  bool m_dataSourceAccessPolicyHasBeenSet = false;
   bool m_tagListHasBeenSet = false;
 };
 

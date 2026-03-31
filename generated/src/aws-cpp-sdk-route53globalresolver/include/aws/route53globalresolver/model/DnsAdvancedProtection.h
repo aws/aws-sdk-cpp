@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Route53GlobalResolver {
 namespace Model {
-enum class DnsAdvancedProtection { NOT_SET, DGA, DNS_TUNNELING };
+enum class DnsAdvancedProtection { NOT_SET, DGA, DNS_TUNNELING, DICTIONARY_DGA };
 
 namespace DnsAdvancedProtectionMapper {
 AWS_ROUTE53GLOBALRESOLVER_API DnsAdvancedProtection GetDnsAdvancedProtectionForName(const Aws::String& name);

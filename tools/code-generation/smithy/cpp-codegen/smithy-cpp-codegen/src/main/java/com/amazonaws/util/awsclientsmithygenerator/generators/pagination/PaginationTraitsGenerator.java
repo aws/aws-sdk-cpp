@@ -13,13 +13,15 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
 import com.amazonaws.util.awsclientsmithygenerator.generators.ServiceNameUtil;
 import com.amazonaws.util.awsclientsmithygenerator.generators.ShapeUtil;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 public class PaginationTraitsGenerator extends BaseTraitsGenerator<OperationData<PaginatedTrait>> {
 
     private final List<TokenResolver> resolvers;
+    private final Map<String, String> namespaceMap;
 
-    public PaginationTraitsGenerator(PluginContext context, ServiceShape service, List<OperationData<PaginatedTrait>> paginatedOps, String smithyServiceName) {
+    public PaginationTraitsGenerator(PluginContext context, ServiceShape service, List<OperationData<PaginatedTrait>> paginatedOps, String smithyServiceName, Map<String, String> namespaceMap) {
         super(context, service, paginatedOps, smithyServiceName);
         this.resolvers = List.of(
             // Pattern A: Nested token
@@ -57,6 +59,7 @@ public class PaginationTraitsGenerator extends BaseTraitsGenerator<OperationData
                 }
             }
         );
+        this.namespaceMap = namespaceMap;
     }
 
     @Override
@@ -85,7 +88,7 @@ public class PaginationTraitsGenerator extends BaseTraitsGenerator<OperationData
         
         // Namespaces
         writer.writeNamespaceOpen("Aws")
-              .writeNamespaceOpen(serviceName)
+              .writeNamespaceOpen(Optional.ofNullable(namespaceMap.get(smithyServiceName)).orElse(serviceName))
               .writeNamespaceOpen("Pagination")
               .write("");
         
@@ -120,7 +123,7 @@ public class PaginationTraitsGenerator extends BaseTraitsGenerator<OperationData
         
         writer.write("");
         writer.writeNamespaceClose("Pagination");
-        writer.writeNamespaceClose(serviceName);
+        writer.writeNamespaceClose(Optional.ofNullable(namespaceMap.get(smithyServiceName)).orElse(serviceName));
         writer.writeNamespaceClose("Aws");
     }
 

@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/m2/MainframeModernizationPaginationBase.h>
 #include <aws/m2/MainframeModernizationServiceClientModel.h>
+#include <aws/m2/MainframeModernizationWaiter.h>
 #include <aws/m2/MainframeModernization_EXPORTS.h>
 
 namespace Aws {
@@ -25,7 +26,8 @@ namespace MainframeModernization {
 class AWS_MAINFRAMEMODERNIZATION_API MainframeModernizationClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<MainframeModernizationClient>,
-      public MainframeModernizationPaginationBase<MainframeModernizationClient> {
+      public MainframeModernizationPaginationBase<MainframeModernizationClient>,
+      public MainframeModernizationWaiter<MainframeModernizationClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1105,6 +1107,12 @@ class AWS_MAINFRAMEMODERNIZATION_API MainframeModernizationClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MainframeModernizationClient>;
   void init(const MainframeModernizationClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MainframeModernizationError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   MainframeModernizationClientConfiguration m_clientConfiguration;
   std::shared_ptr<MainframeModernizationEndpointProviderBase> m_endpointProvider;

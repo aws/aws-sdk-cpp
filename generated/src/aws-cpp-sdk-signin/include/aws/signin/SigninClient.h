@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/signin/SigninPaginationBase.h>
 #include <aws/signin/SigninServiceClientModel.h>
+#include <aws/signin/SigninWaiter.h>
 #include <aws/signin/Signin_EXPORTS.h>
 
 namespace Aws {
@@ -21,7 +22,8 @@ namespace Signin {
  */
 class AWS_SIGNIN_API SigninClient : public Aws::Client::AWSJsonClient,
                                     public Aws::Client::ClientWithAsyncTemplateMethods<SigninClient>,
-                                    public SigninPaginationBase<SigninClient> {
+                                    public SigninPaginationBase<SigninClient>,
+                                    public SigninWaiter<SigninClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -128,6 +130,12 @@ class AWS_SIGNIN_API SigninClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SigninClient>;
   void init(const SigninClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SigninError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   SigninClientConfiguration m_clientConfiguration;
   std::shared_ptr<SigninEndpointProviderBase> m_endpointProvider;

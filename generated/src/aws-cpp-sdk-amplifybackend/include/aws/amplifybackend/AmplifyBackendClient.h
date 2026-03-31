@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/amplifybackend/AmplifyBackendPaginationBase.h>
 #include <aws/amplifybackend/AmplifyBackendServiceClientModel.h>
+#include <aws/amplifybackend/AmplifyBackendWaiter.h>
 #include <aws/amplifybackend/AmplifyBackend_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -19,7 +20,8 @@ namespace AmplifyBackend {
  */
 class AWS_AMPLIFYBACKEND_API AmplifyBackendClient : public Aws::Client::AWSJsonClient,
                                                     public Aws::Client::ClientWithAsyncTemplateMethods<AmplifyBackendClient>,
-                                                    public AmplifyBackendPaginationBase<AmplifyBackendClient> {
+                                                    public AmplifyBackendPaginationBase<AmplifyBackendClient>,
+                                                    public AmplifyBackendWaiter<AmplifyBackendClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -894,6 +896,12 @@ class AWS_AMPLIFYBACKEND_API AmplifyBackendClient : public Aws::Client::AWSJsonC
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AmplifyBackendClient>;
   void init(const AmplifyBackendClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, AmplifyBackendError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   AmplifyBackendClientConfiguration m_clientConfiguration;
   std::shared_ptr<AmplifyBackendEndpointProviderBase> m_endpointProvider;

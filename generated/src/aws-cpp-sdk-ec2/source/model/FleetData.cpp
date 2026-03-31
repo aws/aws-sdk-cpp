@@ -124,6 +124,11 @@ FleetData& FleetData::operator=(const XmlNode& xmlNode) {
       m_onDemandOptions = onDemandOptionsNode;
       m_onDemandOptionsHasBeenSet = true;
     }
+    XmlNode reservedCapacityOptionsNode = resultNode.FirstChild("reservedCapacityOptions");
+    if (!reservedCapacityOptionsNode.IsNull()) {
+      m_reservedCapacityOptions = reservedCapacityOptionsNode;
+      m_reservedCapacityOptionsHasBeenSet = true;
+    }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if (!tagsNode.IsNull()) {
       XmlNode tagsMember = tagsNode.FirstChild("item");
@@ -259,6 +264,12 @@ void FleetData::OutputToStream(Aws::OStream& oStream, const char* location, unsi
     m_onDemandOptions.OutputToStream(oStream, onDemandOptionsLocationAndMemberSs.str().c_str());
   }
 
+  if (m_reservedCapacityOptionsHasBeenSet) {
+    Aws::StringStream reservedCapacityOptionsLocationAndMemberSs;
+    reservedCapacityOptionsLocationAndMemberSs << location << index << locationValue << ".ReservedCapacityOptions";
+    m_reservedCapacityOptions.OutputToStream(oStream, reservedCapacityOptionsLocationAndMemberSs.str().c_str());
+  }
+
   if (m_tagsHasBeenSet) {
     unsigned tagsIdx = 1;
     for (auto& item : m_tags) {
@@ -361,6 +372,11 @@ void FleetData::OutputToStream(Aws::OStream& oStream, const char* location) cons
     Aws::String onDemandOptionsLocationAndMember(location);
     onDemandOptionsLocationAndMember += ".OnDemandOptions";
     m_onDemandOptions.OutputToStream(oStream, onDemandOptionsLocationAndMember.c_str());
+  }
+  if (m_reservedCapacityOptionsHasBeenSet) {
+    Aws::String reservedCapacityOptionsLocationAndMember(location);
+    reservedCapacityOptionsLocationAndMember += ".ReservedCapacityOptions";
+    m_reservedCapacityOptions.OutputToStream(oStream, reservedCapacityOptionsLocationAndMember.c_str());
   }
   if (m_tagsHasBeenSet) {
     unsigned tagsIdx = 1;

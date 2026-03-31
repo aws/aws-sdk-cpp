@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaConvert {
 namespace Model {
-enum class DashIsoIntervalCadence { NOT_SET, FOLLOW_IFRAME, FOLLOW_CUSTOM };
+enum class DashIsoIntervalCadence { NOT_SET, FOLLOW_IFRAME, FOLLOW_CUSTOM, FOLLOW_SEGMENTATION };
 
 namespace DashIsoIntervalCadenceMapper {
 AWS_MEDIACONVERT_API DashIsoIntervalCadence GetDashIsoIntervalCadenceForName(const Aws::String& name);

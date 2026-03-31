@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsPaginationBase.h>
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsServiceClientModel.h>
+#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsWaiter.h>
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 
 namespace Aws {
@@ -27,7 +28,8 @@ namespace MigrationHubStrategyRecommendations {
 class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API MigrationHubStrategyRecommendationsClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubStrategyRecommendationsClient>,
-      public MigrationHubStrategyRecommendationsPaginationBase<MigrationHubStrategyRecommendationsClient> {
+      public MigrationHubStrategyRecommendationsPaginationBase<MigrationHubStrategyRecommendationsClient>,
+      public MigrationHubStrategyRecommendationsWaiter<MigrationHubStrategyRecommendationsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -708,6 +710,12 @@ class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API MigrationHubStrategyRecommenda
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubStrategyRecommendationsClient>;
   void init(const MigrationHubStrategyRecommendationsClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MigrationHubStrategyRecommendationsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   MigrationHubStrategyRecommendationsClientConfiguration m_clientConfiguration;
   std::shared_ptr<MigrationHubStrategyRecommendationsEndpointProviderBase> m_endpointProvider;

@@ -43,6 +43,14 @@ Aws::String SubmitServiceJobRequest::SerializePayload() const {
     payload.WithString("shareIdentifier", m_shareIdentifier);
   }
 
+  if (m_quotaShareNameHasBeenSet) {
+    payload.WithString("quotaShareName", m_quotaShareName);
+  }
+
+  if (m_preemptionConfigurationHasBeenSet) {
+    payload.WithObject("preemptionConfiguration", m_preemptionConfiguration.Jsonize());
+  }
+
   if (m_timeoutConfigHasBeenSet) {
     payload.WithObject("timeoutConfig", m_timeoutConfig.Jsonize());
   }

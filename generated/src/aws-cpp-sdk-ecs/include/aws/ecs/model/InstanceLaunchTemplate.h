@@ -9,6 +9,7 @@
 #include <aws/ecs/model/CapacityOptionType.h>
 #include <aws/ecs/model/CapacityReservationRequest.h>
 #include <aws/ecs/model/InstanceRequirementsRequest.h>
+#include <aws/ecs/model/ManagedInstancesLocalStorageConfiguration.h>
 #include <aws/ecs/model/ManagedInstancesMonitoringOptions.h>
 #include <aws/ecs/model/ManagedInstancesNetworkConfiguration.h>
 #include <aws/ecs/model/ManagedInstancesStorageConfiguration.h>
@@ -87,7 +88,7 @@ class InstanceLaunchTemplate {
   ///@{
   /**
    * <p>The storage configuration for Amazon ECS Managed Instances. This defines the
-   * root volume size and type for the instances.</p>
+   * data volume properties for the instances.</p>
    */
   inline const ManagedInstancesStorageConfiguration& GetStorageConfiguration() const { return m_storageConfiguration; }
   inline bool StorageConfigurationHasBeenSet() const { return m_storageConfigurationHasBeenSet; }
@@ -99,6 +100,26 @@ class InstanceLaunchTemplate {
   template <typename StorageConfigurationT = ManagedInstancesStorageConfiguration>
   InstanceLaunchTemplate& WithStorageConfiguration(StorageConfigurationT&& value) {
     SetStorageConfiguration(std::forward<StorageConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The local storage configuration for Amazon ECS Managed Instances. This
+   * defines how ECS uses instance store volumes available on the container
+   * instance.</p>
+   */
+  inline const ManagedInstancesLocalStorageConfiguration& GetLocalStorageConfiguration() const { return m_localStorageConfiguration; }
+  inline bool LocalStorageConfigurationHasBeenSet() const { return m_localStorageConfigurationHasBeenSet; }
+  template <typename LocalStorageConfigurationT = ManagedInstancesLocalStorageConfiguration>
+  void SetLocalStorageConfiguration(LocalStorageConfigurationT&& value) {
+    m_localStorageConfigurationHasBeenSet = true;
+    m_localStorageConfiguration = std::forward<LocalStorageConfigurationT>(value);
+  }
+  template <typename LocalStorageConfigurationT = ManagedInstancesLocalStorageConfiguration>
+  InstanceLaunchTemplate& WithLocalStorageConfiguration(LocalStorageConfigurationT&& value) {
+    SetLocalStorageConfiguration(std::forward<LocalStorageConfigurationT>(value));
     return *this;
   }
   ///@}
@@ -153,6 +174,32 @@ class InstanceLaunchTemplate {
   }
   inline InstanceLaunchTemplate& WithCapacityOptionType(CapacityOptionType value) {
     SetCapacityOptionType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Determines whether tags are propagated to the instance metadata service
+   * (IMDS) for Amazon EC2 instances launched by the Managed Instances capacity
+   * provider. When enabled, all tags associated with the instance are available
+   * through the instance metadata service. When disabled, tags are not propagated to
+   * IMDS.</p> <p>Disable this setting if your tags contain characters that are not
+   * compatible with IMDS, such as <code>/</code>. IMDS requires tag keys to match
+   * the pattern <code>[0-9a-zA-Z\-_+=,.@:]{1,255}</code>.</p> <p>The default value
+   * is <code>true</code>.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
+   * with instance tags in instance metadata</a> in the <i>Amazon EC2 User
+   * Guide</i>.</p>
+   */
+  inline bool GetInstanceMetadataTagsPropagation() const { return m_instanceMetadataTagsPropagation; }
+  inline bool InstanceMetadataTagsPropagationHasBeenSet() const { return m_instanceMetadataTagsPropagationHasBeenSet; }
+  inline void SetInstanceMetadataTagsPropagation(bool value) {
+    m_instanceMetadataTagsPropagationHasBeenSet = true;
+    m_instanceMetadataTagsPropagation = value;
+  }
+  inline InstanceLaunchTemplate& WithInstanceMetadataTagsPropagation(bool value) {
+    SetInstanceMetadataTagsPropagation(value);
     return *this;
   }
   ///@}
@@ -226,9 +273,13 @@ class InstanceLaunchTemplate {
 
   ManagedInstancesStorageConfiguration m_storageConfiguration;
 
+  ManagedInstancesLocalStorageConfiguration m_localStorageConfiguration;
+
   ManagedInstancesMonitoringOptions m_monitoring{ManagedInstancesMonitoringOptions::NOT_SET};
 
   CapacityOptionType m_capacityOptionType{CapacityOptionType::NOT_SET};
+
+  bool m_instanceMetadataTagsPropagation{false};
 
   InstanceRequirementsRequest m_instanceRequirements;
 
@@ -238,8 +289,10 @@ class InstanceLaunchTemplate {
   bool m_ec2InstanceProfileArnHasBeenSet = false;
   bool m_networkConfigurationHasBeenSet = false;
   bool m_storageConfigurationHasBeenSet = false;
+  bool m_localStorageConfigurationHasBeenSet = false;
   bool m_monitoringHasBeenSet = false;
   bool m_capacityOptionTypeHasBeenSet = false;
+  bool m_instanceMetadataTagsPropagationHasBeenSet = false;
   bool m_instanceRequirementsHasBeenSet = false;
   bool m_fipsEnabledHasBeenSet = false;
   bool m_capacityReservationsHasBeenSet = false;

@@ -54,18 +54,19 @@ class S3Destination {
 
   ///@{
   /**
-   * <p>The output configuration for the data export.</p>
+   * <p>The AWS Account ID that owns the S3 bucket used as the destination for the
+   * data export.</p>
    */
-  inline const S3OutputConfigurations& GetS3OutputConfigurations() const { return m_s3OutputConfigurations; }
-  inline bool S3OutputConfigurationsHasBeenSet() const { return m_s3OutputConfigurationsHasBeenSet; }
-  template <typename S3OutputConfigurationsT = S3OutputConfigurations>
-  void SetS3OutputConfigurations(S3OutputConfigurationsT&& value) {
-    m_s3OutputConfigurationsHasBeenSet = true;
-    m_s3OutputConfigurations = std::forward<S3OutputConfigurationsT>(value);
+  inline const Aws::String& GetS3BucketOwner() const { return m_s3BucketOwner; }
+  inline bool S3BucketOwnerHasBeenSet() const { return m_s3BucketOwnerHasBeenSet; }
+  template <typename S3BucketOwnerT = Aws::String>
+  void SetS3BucketOwner(S3BucketOwnerT&& value) {
+    m_s3BucketOwnerHasBeenSet = true;
+    m_s3BucketOwner = std::forward<S3BucketOwnerT>(value);
   }
-  template <typename S3OutputConfigurationsT = S3OutputConfigurations>
-  S3Destination& WithS3OutputConfigurations(S3OutputConfigurationsT&& value) {
-    SetS3OutputConfigurations(std::forward<S3OutputConfigurationsT>(value));
+  template <typename S3BucketOwnerT = Aws::String>
+  S3Destination& WithS3BucketOwner(S3BucketOwnerT&& value) {
+    SetS3BucketOwner(std::forward<S3BucketOwnerT>(value));
     return *this;
   }
   ///@}
@@ -105,18 +106,39 @@ class S3Destination {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The output configuration for the data export.</p>
+   */
+  inline const S3OutputConfigurations& GetS3OutputConfigurations() const { return m_s3OutputConfigurations; }
+  inline bool S3OutputConfigurationsHasBeenSet() const { return m_s3OutputConfigurationsHasBeenSet; }
+  template <typename S3OutputConfigurationsT = S3OutputConfigurations>
+  void SetS3OutputConfigurations(S3OutputConfigurationsT&& value) {
+    m_s3OutputConfigurationsHasBeenSet = true;
+    m_s3OutputConfigurations = std::forward<S3OutputConfigurationsT>(value);
+  }
+  template <typename S3OutputConfigurationsT = S3OutputConfigurations>
+  S3Destination& WithS3OutputConfigurations(S3OutputConfigurationsT&& value) {
+    SetS3OutputConfigurations(std::forward<S3OutputConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_s3Bucket;
 
-  S3OutputConfigurations m_s3OutputConfigurations;
+  Aws::String m_s3BucketOwner;
 
   Aws::String m_s3Prefix;
 
   Aws::String m_s3Region;
+
+  S3OutputConfigurations m_s3OutputConfigurations;
   bool m_s3BucketHasBeenSet = false;
-  bool m_s3OutputConfigurationsHasBeenSet = false;
+  bool m_s3BucketOwnerHasBeenSet = false;
   bool m_s3PrefixHasBeenSet = false;
   bool m_s3RegionHasBeenSet = false;
+  bool m_s3OutputConfigurationsHasBeenSet = false;
 };
 
 }  // namespace Model

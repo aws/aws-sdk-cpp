@@ -61,9 +61,7 @@ InsightRuleContributorDatapoint& InsightRuleContributorDatapoint::operator=(cons
                   m_approximateValue = val.value();
                 }
                 m_approximateValueHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -119,9 +117,7 @@ InsightRuleContributorDatapoint& InsightRuleContributorDatapoint::operator=(cons
                 m_approximateValue = val.value();
               }
               m_approximateValueHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

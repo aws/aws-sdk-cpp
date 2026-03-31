@@ -78,6 +78,7 @@
 #include <aws/application-signals/model/MetricDataQuery.h>
 #include <aws/application-signals/model/MetricGraph.h>
 #include <aws/application-signals/model/MetricReference.h>
+#include <aws/application-signals/model/MetricSource.h>
 #include <aws/application-signals/model/MetricSourceType.h>
 #include <aws/application-signals/model/MetricStat.h>
 #include <aws/application-signals/model/MonitoredRequestCountMetricDataQueries.h>

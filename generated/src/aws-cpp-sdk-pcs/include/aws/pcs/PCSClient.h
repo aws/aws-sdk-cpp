@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/pcs/PCSPaginationBase.h>
 #include <aws/pcs/PCSServiceClientModel.h>
+#include <aws/pcs/PCSWaiter.h>
 #include <aws/pcs/PCS_EXPORTS.h>
 
 namespace Aws {
@@ -39,7 +40,8 @@ namespace PCS {
  */
 class AWS_PCS_API PCSClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<PCSClient>,
-                              public PCSPaginationBase<PCSClient> {
+                              public PCSPaginationBase<PCSClient>,
+                              public PCSWaiter<PCSClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -641,6 +643,10 @@ class AWS_PCS_API PCSClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PCSClient>;
   void init(const PCSClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, PCSError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   PCSClientConfiguration m_clientConfiguration;
   std::shared_ptr<PCSEndpointProviderBase> m_endpointProvider;

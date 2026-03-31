@@ -88,9 +88,7 @@ MessageData& MessageData::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDe
                   }
                 }
                 m_valueHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -175,9 +173,7 @@ MessageData& MessageData::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDe
                 }
               }
               m_valueHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

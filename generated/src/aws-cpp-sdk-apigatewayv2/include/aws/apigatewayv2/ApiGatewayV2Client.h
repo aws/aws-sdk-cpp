@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/apigatewayv2/ApiGatewayV2PaginationBase.h>
 #include <aws/apigatewayv2/ApiGatewayV2ServiceClientModel.h>
+#include <aws/apigatewayv2/ApiGatewayV2Waiter.h>
 #include <aws/apigatewayv2/ApiGatewayV2_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -19,7 +20,8 @@ namespace ApiGatewayV2 {
  */
 class AWS_APIGATEWAYV2_API ApiGatewayV2Client : public Aws::Client::AWSJsonClient,
                                                 public Aws::Client::ClientWithAsyncTemplateMethods<ApiGatewayV2Client>,
-                                                public ApiGatewayV2PaginationBase<ApiGatewayV2Client> {
+                                                public ApiGatewayV2PaginationBase<ApiGatewayV2Client>,
+                                                public ApiGatewayV2Waiter<ApiGatewayV2Client> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2757,6 +2759,12 @@ class AWS_APIGATEWAYV2_API ApiGatewayV2Client : public Aws::Client::AWSJsonClien
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ApiGatewayV2Client>;
   void init(const ApiGatewayV2ClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ApiGatewayV2Error> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   ApiGatewayV2ClientConfiguration m_clientConfiguration;
   std::shared_ptr<ApiGatewayV2EndpointProviderBase> m_endpointProvider;

@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/personalize/PersonalizePaginationBase.h>
 #include <aws/personalize/PersonalizeServiceClientModel.h>
+#include <aws/personalize/PersonalizeWaiter.h>
 #include <aws/personalize/Personalize_EXPORTS.h>
 
 namespace Aws {
@@ -20,7 +21,8 @@ namespace Personalize {
  */
 class AWS_PERSONALIZE_API PersonalizeClient : public Aws::Client::AWSJsonClient,
                                               public Aws::Client::ClientWithAsyncTemplateMethods<PersonalizeClient>,
-                                              public PersonalizePaginationBase<PersonalizeClient> {
+                                              public PersonalizePaginationBase<PersonalizeClient>,
+                                              public PersonalizeWaiter<PersonalizeClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2522,6 +2524,10 @@ class AWS_PERSONALIZE_API PersonalizeClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PersonalizeClient>;
   void init(const PersonalizeClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, PersonalizeError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   PersonalizeClientConfiguration m_clientConfiguration;
   std::shared_ptr<PersonalizeEndpointProviderBase> m_endpointProvider;

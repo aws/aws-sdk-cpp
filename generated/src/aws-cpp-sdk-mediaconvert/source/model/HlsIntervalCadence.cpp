@@ -17,6 +17,7 @@ namespace HlsIntervalCadenceMapper {
 
 static const int FOLLOW_IFRAME_HASH = HashingUtils::HashString("FOLLOW_IFRAME");
 static const int FOLLOW_CUSTOM_HASH = HashingUtils::HashString("FOLLOW_CUSTOM");
+static const int FOLLOW_SEGMENTATION_HASH = HashingUtils::HashString("FOLLOW_SEGMENTATION");
 
 HlsIntervalCadence GetHlsIntervalCadenceForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ HlsIntervalCadence GetHlsIntervalCadenceForName(const Aws::String& name) {
     return HlsIntervalCadence::FOLLOW_IFRAME;
   } else if (hashCode == FOLLOW_CUSTOM_HASH) {
     return HlsIntervalCadence::FOLLOW_CUSTOM;
+  } else if (hashCode == FOLLOW_SEGMENTATION_HASH) {
+    return HlsIntervalCadence::FOLLOW_SEGMENTATION;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForHlsIntervalCadence(HlsIntervalCadence enumValue) {
       return "FOLLOW_IFRAME";
     case HlsIntervalCadence::FOLLOW_CUSTOM:
       return "FOLLOW_CUSTOM";
+    case HlsIntervalCadence::FOLLOW_SEGMENTATION:
+      return "FOLLOW_SEGMENTATION";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

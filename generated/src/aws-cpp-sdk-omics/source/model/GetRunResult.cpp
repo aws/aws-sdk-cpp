@@ -70,6 +70,10 @@ GetRunResult& GetRunResult::operator=(const Aws::AmazonWebServiceResult<JsonValu
     m_runGroupId = jsonValue.GetString("runGroupId");
     m_runGroupIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("batchId")) {
+    m_batchId = jsonValue.GetString("batchId");
+    m_batchIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("priority")) {
     m_priority = jsonValue.GetInteger("priority");
     m_priorityHasBeenSet = true;
@@ -171,6 +175,18 @@ GetRunResult& GetRunResult::operator=(const Aws::AmazonWebServiceResult<JsonValu
   if (jsonValue.ValueExists("workflowUuid")) {
     m_workflowUuid = jsonValue.GetString("workflowUuid");
     m_workflowUuidHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("networkingMode")) {
+    m_networkingMode = NetworkingModeMapper::GetNetworkingModeForName(jsonValue.GetString("networkingMode"));
+    m_networkingModeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("configuration")) {
+    m_configuration = jsonValue.GetObject("configuration");
+    m_configurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("vpcConfig")) {
+    m_vpcConfig = jsonValue.GetObject("vpcConfig");
+    m_vpcConfigHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

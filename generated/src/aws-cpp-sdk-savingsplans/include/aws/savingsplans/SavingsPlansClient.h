@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/savingsplans/SavingsPlansPaginationBase.h>
 #include <aws/savingsplans/SavingsPlansServiceClientModel.h>
+#include <aws/savingsplans/SavingsPlansWaiter.h>
 #include <aws/savingsplans/SavingsPlans_EXPORTS.h>
 
 namespace Aws {
@@ -25,7 +26,8 @@ namespace SavingsPlans {
  */
 class AWS_SAVINGSPLANS_API SavingsPlansClient : public Aws::Client::AWSJsonClient,
                                                 public Aws::Client::ClientWithAsyncTemplateMethods<SavingsPlansClient>,
-                                                public SavingsPlansPaginationBase<SavingsPlansClient> {
+                                                public SavingsPlansPaginationBase<SavingsPlansClient>,
+                                                public SavingsPlansWaiter<SavingsPlansClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -361,6 +363,12 @@ class AWS_SAVINGSPLANS_API SavingsPlansClient : public Aws::Client::AWSJsonClien
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SavingsPlansClient>;
   void init(const SavingsPlansClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SavingsPlansError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   SavingsPlansClientConfiguration m_clientConfiguration;
   std::shared_ptr<SavingsPlansEndpointProviderBase> m_endpointProvider;

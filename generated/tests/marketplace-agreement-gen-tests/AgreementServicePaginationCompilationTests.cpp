@@ -9,6 +9,7 @@
 #include <aws/marketplace-agreement/AgreementServiceClientPagination.h>
 #include <aws/marketplace-agreement/AgreementServicePaginationBase.h>
 #include <aws/marketplace-agreement/model/SearchAgreementsPaginationTraits.h>
+#include <aws/marketplace-agreement/model/ListAgreementPaymentRequestsPaginationTraits.h>
 #include <aws/marketplace-agreement/model/GetAgreementTermsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>

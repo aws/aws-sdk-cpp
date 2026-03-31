@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/elasticfilesystem/EFSPaginationBase.h>
 #include <aws/elasticfilesystem/EFSServiceClientModel.h>
+#include <aws/elasticfilesystem/EFSWaiter.h>
 #include <aws/elasticfilesystem/EFS_EXPORTS.h>
 
 namespace Aws {
@@ -28,7 +29,8 @@ namespace EFS {
  */
 class AWS_EFS_API EFSClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<EFSClient>,
-                              public EFSPaginationBase<EFSClient> {
+                              public EFSPaginationBase<EFSClient>,
+                              public EFSWaiter<EFSClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1209,6 +1211,12 @@ class AWS_EFS_API EFSClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<EFSClient>;
   void init(const EFSClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, EFSError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   EFSClientConfiguration m_clientConfiguration;
   std::shared_ptr<EFSEndpointProviderBase> m_endpointProvider;

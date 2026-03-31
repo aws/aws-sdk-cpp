@@ -69,12 +69,55 @@ class S3Configuration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The AWS accountId for the bucket owning account.</p>
+   */
+  inline const Aws::String& GetOwnerAccountId() const { return m_ownerAccountId; }
+  inline bool OwnerAccountIdHasBeenSet() const { return m_ownerAccountIdHasBeenSet; }
+  template <typename OwnerAccountIdT = Aws::String>
+  void SetOwnerAccountId(OwnerAccountIdT&& value) {
+    m_ownerAccountIdHasBeenSet = true;
+    m_ownerAccountId = std::forward<OwnerAccountIdT>(value);
+  }
+  template <typename OwnerAccountIdT = Aws::String>
+  S3Configuration& WithOwnerAccountId(OwnerAccountIdT&& value) {
+    SetOwnerAccountId(std::forward<OwnerAccountIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the KMS encryption key. Must belong to the
+   * same AWS Region as the destination Amazon S3 bucket.</p>
+   */
+  inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
+  inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
+  template <typename KmsKeyIdT = Aws::String>
+  void SetKmsKeyId(KmsKeyIdT&& value) {
+    m_kmsKeyIdHasBeenSet = true;
+    m_kmsKeyId = std::forward<KmsKeyIdT>(value);
+  }
+  template <typename KmsKeyIdT = Aws::String>
+  S3Configuration& WithKmsKeyId(KmsKeyIdT&& value) {
+    SetKmsKeyId(std::forward<KmsKeyIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_destinationIdentifier;
 
   Aws::String m_roleArn;
+
+  Aws::String m_ownerAccountId;
+
+  Aws::String m_kmsKeyId;
   bool m_destinationIdentifierHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
+  bool m_ownerAccountIdHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
 };
 
 }  // namespace Model

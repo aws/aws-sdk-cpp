@@ -8,7 +8,9 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/crt/cbor/Cbor.h>
+#include <aws/monitoring/CloudWatchPaginationBase.h>
 #include <aws/monitoring/CloudWatchServiceClientModel.h>
+#include <aws/monitoring/CloudWatchWaiter.h>
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
 
 namespace Aws {
@@ -29,7 +31,9 @@ namespace CloudWatch {
  * operational health.</p>
  */
 class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClient,
-                                            public Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchClient> {
+                                            public Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchClient>,
+                                            public CloudWatchPaginationBase<CloudWatchClient>,
+                                            public CloudWatchWaiter<CloudWatchClient> {
  public:
   typedef Aws::Client::AWSRpcV2CborClient BASECLASS;
   static const char* GetServiceName();
@@ -1700,6 +1704,10 @@ class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClie
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchClient>;
   void init(const CloudWatchClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CloudWatchError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   CloudWatchClientConfiguration m_clientConfiguration;
   std::shared_ptr<CloudWatchEndpointProviderBase> m_endpointProvider;

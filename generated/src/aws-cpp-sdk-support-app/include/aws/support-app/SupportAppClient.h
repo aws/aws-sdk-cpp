@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/support-app/SupportAppPaginationBase.h>
 #include <aws/support-app/SupportAppServiceClientModel.h>
+#include <aws/support-app/SupportAppWaiter.h>
 #include <aws/support-app/SupportApp_EXPORTS.h>
 
 namespace Aws {
@@ -48,7 +49,8 @@ namespace SupportApp {
  */
 class AWS_SUPPORTAPP_API SupportAppClient : public Aws::Client::AWSJsonClient,
                                             public Aws::Client::ClientWithAsyncTemplateMethods<SupportAppClient>,
-                                            public SupportAppPaginationBase<SupportAppClient> {
+                                            public SupportAppPaginationBase<SupportAppClient>,
+                                            public SupportAppWaiter<SupportAppClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -444,6 +446,12 @@ class AWS_SUPPORTAPP_API SupportAppClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SupportAppClient>;
   void init(const SupportAppClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SupportAppError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   SupportAppClientConfiguration m_clientConfiguration;
   std::shared_ptr<SupportAppEndpointProviderBase> m_endpointProvider;

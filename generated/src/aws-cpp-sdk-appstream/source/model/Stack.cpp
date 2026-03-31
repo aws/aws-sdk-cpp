@@ -89,6 +89,10 @@ Stack& Stack::operator=(JsonView jsonValue) {
     m_streamingExperienceSettings = jsonValue.GetObject("StreamingExperienceSettings");
     m_streamingExperienceSettingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ContentRedirection")) {
+    m_contentRedirection = jsonValue.GetObject("ContentRedirection");
+    m_contentRedirectionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -169,6 +173,10 @@ JsonValue Stack::Jsonize() const {
 
   if (m_streamingExperienceSettingsHasBeenSet) {
     payload.WithObject("StreamingExperienceSettings", m_streamingExperienceSettings.Jsonize());
+  }
+
+  if (m_contentRedirectionHasBeenSet) {
+    payload.WithObject("ContentRedirection", m_contentRedirection.Jsonize());
   }
 
   return payload;

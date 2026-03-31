@@ -20,6 +20,7 @@ using namespace Aws;
 JsonIntEnumsResult::JsonIntEnumsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 JsonIntEnumsResult& JsonIntEnumsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("integerEnum1")) {
     m_integerEnum1 = jsonValue.GetInteger("integerEnum1");

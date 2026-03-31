@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/marketplace-agreement/AgreementServicePaginationBase.h>
 #include <aws/marketplace-agreement/AgreementServiceServiceClientModel.h>
+#include <aws/marketplace-agreement/AgreementServiceWaiter.h>
 #include <aws/marketplace-agreement/AgreementService_EXPORTS.h>
 
 namespace Aws {
@@ -32,7 +33,8 @@ namespace AgreementService {
  */
 class AWS_AGREEMENTSERVICE_API AgreementServiceClient : public Aws::Client::AWSJsonClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<AgreementServiceClient>,
-                                                        public AgreementServicePaginationBase<AgreementServiceClient> {
+                                                        public AgreementServicePaginationBase<AgreementServiceClient>,
+                                                        public AgreementServiceWaiter<AgreementServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -91,6 +93,41 @@ class AWS_AGREEMENTSERVICE_API AgreementServiceClient : public Aws::Client::AWSJ
   virtual ~AgreementServiceClient();
 
   /**
+   * <p>Allows sellers (proposers) to cancel a payment request that is in
+   * <code>PENDING_APPROVAL</code> status. Once cancelled, the payment request
+   * transitions to <code>CANCELLED</code> status and can no longer be accepted or
+   * rejected by the buyer.</p>  <p>Only payment requests in
+   * <code>PENDING_APPROVAL</code> status can be cancelled. A
+   * <code>ConflictException</code> is thrown if the payment request is in any other
+   * status.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/CancelAgreementPaymentRequest">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CancelAgreementPaymentRequestOutcome CancelAgreementPaymentRequest(
+      const Model::CancelAgreementPaymentRequestRequest& request) const;
+
+  /**
+   * A Callable wrapper for CancelAgreementPaymentRequest that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CancelAgreementPaymentRequestRequestT = Model::CancelAgreementPaymentRequestRequest>
+  Model::CancelAgreementPaymentRequestOutcomeCallable CancelAgreementPaymentRequestCallable(
+      const CancelAgreementPaymentRequestRequestT& request) const {
+    return SubmitCallable(&AgreementServiceClient::CancelAgreementPaymentRequest, request);
+  }
+
+  /**
+   * An Async wrapper for CancelAgreementPaymentRequest that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CancelAgreementPaymentRequestRequestT = Model::CancelAgreementPaymentRequestRequest>
+  void CancelAgreementPaymentRequestAsync(const CancelAgreementPaymentRequestRequestT& request,
+                                          const CancelAgreementPaymentRequestResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AgreementServiceClient::CancelAgreementPaymentRequest, request, handler, context);
+  }
+
+  /**
    * <p>Provides details about an agreement, such as the proposer, acceptor, start
    * date, and end date.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/DescribeAgreement">AWS
@@ -115,6 +152,42 @@ class AWS_AGREEMENTSERVICE_API AgreementServiceClient : public Aws::Client::AWSJ
   void DescribeAgreementAsync(const DescribeAgreementRequestT& request, const DescribeAgreementResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&AgreementServiceClient::DescribeAgreement, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves detailed information about a specific payment request. Both sellers
+   * (proposers) and buyers (acceptors) can use this operation to view payment
+   * requests associated with their agreements. The response includes the current
+   * status, charge details, timestamps, and the charge ID if the request has been
+   * approved.</p>  <p>The calling identity must be either the acceptor or
+   * proposer of the payment request. A <code>ResourceNotFoundException</code> is
+   * returned if the payment request does not exist.</p> <p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/GetAgreementPaymentRequest">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetAgreementPaymentRequestOutcome GetAgreementPaymentRequest(
+      const Model::GetAgreementPaymentRequestRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetAgreementPaymentRequest that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetAgreementPaymentRequestRequestT = Model::GetAgreementPaymentRequestRequest>
+  Model::GetAgreementPaymentRequestOutcomeCallable GetAgreementPaymentRequestCallable(
+      const GetAgreementPaymentRequestRequestT& request) const {
+    return SubmitCallable(&AgreementServiceClient::GetAgreementPaymentRequest, request);
+  }
+
+  /**
+   * An Async wrapper for GetAgreementPaymentRequest that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetAgreementPaymentRequestRequestT = Model::GetAgreementPaymentRequestRequest>
+  void GetAgreementPaymentRequestAsync(const GetAgreementPaymentRequestRequestT& request,
+                                       const GetAgreementPaymentRequestResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AgreementServiceClient::GetAgreementPaymentRequest, request, handler, context);
   }
 
   /**
@@ -154,6 +227,41 @@ class AWS_AGREEMENTSERVICE_API AgreementServiceClient : public Aws::Client::AWSJ
   void GetAgreementTermsAsync(const GetAgreementTermsRequestT& request, const GetAgreementTermsResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&AgreementServiceClient::GetAgreementTerms, request, handler, context);
+  }
+
+  /**
+   * <p>Lists payment requests available to you as a seller or buyer. Both sellers
+   * (proposers) and buyers (acceptors) can use this operation to find payment
+   * requests by specifying their party type and applying optional parameters.</p>
+   *  <p> <code>PartyType</code> is a required parameter. A
+   * <code>ValidationException</code> is returned if <code>PartyType</code> is not
+   * provided. Pagination is supported through <code>maxResults</code> (1-50, default
+   * 50) and <code>nextToken</code> parameters.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/ListAgreementPaymentRequests">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAgreementPaymentRequestsOutcome ListAgreementPaymentRequests(
+      const Model::ListAgreementPaymentRequestsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListAgreementPaymentRequests that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListAgreementPaymentRequestsRequestT = Model::ListAgreementPaymentRequestsRequest>
+  Model::ListAgreementPaymentRequestsOutcomeCallable ListAgreementPaymentRequestsCallable(
+      const ListAgreementPaymentRequestsRequestT& request) const {
+    return SubmitCallable(&AgreementServiceClient::ListAgreementPaymentRequests, request);
+  }
+
+  /**
+   * An Async wrapper for ListAgreementPaymentRequests that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListAgreementPaymentRequestsRequestT = Model::ListAgreementPaymentRequestsRequest>
+  void ListAgreementPaymentRequestsAsync(const ListAgreementPaymentRequestsRequestT& request,
+                                         const ListAgreementPaymentRequestsResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AgreementServiceClient::ListAgreementPaymentRequests, request, handler, context);
   }
 
   /**
@@ -240,12 +348,53 @@ class AWS_AGREEMENTSERVICE_API AgreementServiceClient : public Aws::Client::AWSJ
     return SubmitAsync(&AgreementServiceClient::SearchAgreements, request, handler, context);
   }
 
+  /**
+   * <p>Allows sellers (proposers) to submit a payment request to buyers (acceptors)
+   * for a specific charge amount for an agreement that includes a
+   * <code>VariablePaymentTerm</code>. The payment request is created in
+   * <code>PENDING_APPROVAL</code> status, at which point the buyer can accept or
+   * reject it.</p>  <p>The agreement must be active and have a
+   * <code>VariablePaymentTerm</code> to support payment requests. The
+   * <code>chargeAmount</code> must not exceed the remaining available balance under
+   * the <code>VariablePaymentTerm</code> <code>maxTotalChargeAmount</code>.</p>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/SendAgreementPaymentRequest">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SendAgreementPaymentRequestOutcome SendAgreementPaymentRequest(
+      const Model::SendAgreementPaymentRequestRequest& request) const;
+
+  /**
+   * A Callable wrapper for SendAgreementPaymentRequest that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename SendAgreementPaymentRequestRequestT = Model::SendAgreementPaymentRequestRequest>
+  Model::SendAgreementPaymentRequestOutcomeCallable SendAgreementPaymentRequestCallable(
+      const SendAgreementPaymentRequestRequestT& request) const {
+    return SubmitCallable(&AgreementServiceClient::SendAgreementPaymentRequest, request);
+  }
+
+  /**
+   * An Async wrapper for SendAgreementPaymentRequest that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename SendAgreementPaymentRequestRequestT = Model::SendAgreementPaymentRequestRequest>
+  void SendAgreementPaymentRequestAsync(const SendAgreementPaymentRequestRequestT& request,
+                                        const SendAgreementPaymentRequestResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AgreementServiceClient::SendAgreementPaymentRequest, request, handler, context);
+  }
+
   virtual void OverrideEndpoint(const Aws::String& endpoint);
   virtual std::shared_ptr<AgreementServiceEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AgreementServiceClient>;
   void init(const AgreementServiceClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, AgreementServiceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   AgreementServiceClientConfiguration m_clientConfiguration;
   std::shared_ptr<AgreementServiceEndpointProviderBase> m_endpointProvider;

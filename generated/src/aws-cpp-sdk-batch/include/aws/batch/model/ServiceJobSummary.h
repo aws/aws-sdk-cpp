@@ -204,6 +204,24 @@ class ServiceJobSummary {
 
   ///@{
   /**
+   * <p>The quota share for the service job.</p>
+   */
+  inline const Aws::String& GetQuotaShareName() const { return m_quotaShareName; }
+  inline bool QuotaShareNameHasBeenSet() const { return m_quotaShareNameHasBeenSet; }
+  template <typename QuotaShareNameT = Aws::String>
+  void SetQuotaShareName(QuotaShareNameT&& value) {
+    m_quotaShareNameHasBeenSet = true;
+    m_quotaShareName = std::forward<QuotaShareNameT>(value);
+  }
+  template <typename QuotaShareNameT = Aws::String>
+  ServiceJobSummary& WithQuotaShareName(QuotaShareNameT&& value) {
+    SetQuotaShareName(std::forward<QuotaShareNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The current status of the service job. </p>
    */
   inline ServiceJobStatus GetStatus() const { return m_status; }
@@ -289,6 +307,8 @@ class ServiceJobSummary {
 
   Aws::String m_shareIdentifier;
 
+  Aws::String m_quotaShareName;
+
   ServiceJobStatus m_status{ServiceJobStatus::NOT_SET};
 
   Aws::String m_statusReason;
@@ -305,6 +325,7 @@ class ServiceJobSummary {
   bool m_scheduledAtHasBeenSet = false;
   bool m_serviceJobTypeHasBeenSet = false;
   bool m_shareIdentifierHasBeenSet = false;
+  bool m_quotaShareNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
   bool m_startedAtHasBeenSet = false;

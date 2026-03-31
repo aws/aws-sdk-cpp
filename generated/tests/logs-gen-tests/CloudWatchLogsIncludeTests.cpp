@@ -43,6 +43,8 @@
 #include <aws/logs/model/CreateLogAnomalyDetectorResult.h>
 #include <aws/logs/model/CreateLogGroupRequest.h>
 #include <aws/logs/model/CreateLogStreamRequest.h>
+#include <aws/logs/model/CreateLookupTableRequest.h>
+#include <aws/logs/model/CreateLookupTableResult.h>
 #include <aws/logs/model/CreateScheduledQueryRequest.h>
 #include <aws/logs/model/CreateScheduledQueryResult.h>
 #include <aws/logs/model/DataAlreadyAcceptedException.h>
@@ -65,6 +67,7 @@
 #include <aws/logs/model/DeleteLogAnomalyDetectorRequest.h>
 #include <aws/logs/model/DeleteLogGroupRequest.h>
 #include <aws/logs/model/DeleteLogStreamRequest.h>
+#include <aws/logs/model/DeleteLookupTableRequest.h>
 #include <aws/logs/model/DeleteMetricFilterRequest.h>
 #include <aws/logs/model/DeleteQueryDefinitionRequest.h>
 #include <aws/logs/model/DeleteQueryDefinitionResult.h>
@@ -105,6 +108,8 @@
 #include <aws/logs/model/DescribeLogGroupsResult.h>
 #include <aws/logs/model/DescribeLogStreamsRequest.h>
 #include <aws/logs/model/DescribeLogStreamsResult.h>
+#include <aws/logs/model/DescribeLookupTablesRequest.h>
+#include <aws/logs/model/DescribeLookupTablesResult.h>
 #include <aws/logs/model/DescribeMetricFiltersRequest.h>
 #include <aws/logs/model/DescribeMetricFiltersResult.h>
 #include <aws/logs/model/DescribeQueriesRequest.h>
@@ -162,6 +167,8 @@
 #include <aws/logs/model/GetLogObjectResponseStream.h>
 #include <aws/logs/model/GetLogRecordRequest.h>
 #include <aws/logs/model/GetLogRecordResult.h>
+#include <aws/logs/model/GetLookupTableRequest.h>
+#include <aws/logs/model/GetLookupTableResult.h>
 #include <aws/logs/model/GetQueryResultsRequest.h>
 #include <aws/logs/model/GetQueryResultsResult.h>
 #include <aws/logs/model/GetScheduledQueryHistoryRequest.h>
@@ -219,6 +226,7 @@
 #include <aws/logs/model/LogGroupField.h>
 #include <aws/logs/model/LogGroupSummary.h>
 #include <aws/logs/model/LogStream.h>
+#include <aws/logs/model/LookupTable.h>
 #include <aws/logs/model/LowerCaseString.h>
 #include <aws/logs/model/MalformedQueryException.h>
 #include <aws/logs/model/MetricFilter.h>
@@ -289,6 +297,7 @@
 #include <aws/logs/model/QueryDefinition.h>
 #include <aws/logs/model/QueryInfo.h>
 #include <aws/logs/model/QueryLanguage.h>
+#include <aws/logs/model/QueryParameter.h>
 #include <aws/logs/model/QueryStatistics.h>
 #include <aws/logs/model/QueryStatus.h>
 #include <aws/logs/model/RecordField.h>
@@ -345,6 +354,8 @@
 #include <aws/logs/model/UpdateDeliveryConfigurationRequest.h>
 #include <aws/logs/model/UpdateDeliveryConfigurationResult.h>
 #include <aws/logs/model/UpdateLogAnomalyDetectorRequest.h>
+#include <aws/logs/model/UpdateLookupTableRequest.h>
+#include <aws/logs/model/UpdateLookupTableResult.h>
 #include <aws/logs/model/UpdateScheduledQueryRequest.h>
 #include <aws/logs/model/UpdateScheduledQueryResult.h>
 #include <aws/logs/model/UpperCaseString.h>

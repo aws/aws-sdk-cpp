@@ -16,7 +16,7 @@ AWS_PROTOCOL_TEST(Float16, RpcV2CborFloat16Inf) {
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  mockRs.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Content-Type", R"(application/cbor)"}};
   mockRs.body = "oWV2YWx1Zfl8AA==";
   SetMockResponse(mockRs);
 
@@ -36,7 +36,7 @@ AWS_PROTOCOL_TEST(Float16, RpcV2CborFloat16NegInf) {
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  mockRs.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Content-Type", R"(application/cbor)"}};
   mockRs.body = "oWV2YWx1Zfn8AA==";
   SetMockResponse(mockRs);
 
@@ -56,7 +56,7 @@ AWS_PROTOCOL_TEST(Float16, RpcV2CborFloat16LSBNaN) {
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  mockRs.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Content-Type", R"(application/cbor)"}};
   mockRs.body = "oWV2YWx1Zfl8AQ==";
   SetMockResponse(mockRs);
 
@@ -76,7 +76,7 @@ AWS_PROTOCOL_TEST(Float16, RpcV2CborFloat16MSBNaN) {
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  mockRs.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Content-Type", R"(application/cbor)"}};
   mockRs.body = "oWV2YWx1Zfl+AA==";
   SetMockResponse(mockRs);
 
@@ -96,7 +96,7 @@ AWS_PROTOCOL_TEST(Float16, RpcV2CborFloat16Subnormal) {
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  mockRs.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Content-Type", R"(application/cbor)"}};
   mockRs.body = "oWV2YWx1ZfkAUA==";
   SetMockResponse(mockRs);
 

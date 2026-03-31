@@ -27,5 +27,9 @@ Aws::String UpdateGlobalResolverRequest::SerializePayload() const {
     payload.WithString("description", m_description);
   }
 
+  if (m_ipAddressTypeHasBeenSet) {
+    payload.WithString("ipAddressType", GlobalResolverIpAddressTypeMapper::GetNameForGlobalResolverIpAddressType(m_ipAddressType));
+  }
+
   return payload.View().WriteReadable();
 }

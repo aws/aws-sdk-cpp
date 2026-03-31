@@ -15,18 +15,6 @@ using namespace Aws::Utils;
 Aws::String SearchTasksRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_queueIdsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> queueIdsJsonList(m_queueIds.size());
-    for (unsigned queueIdsIndex = 0; queueIdsIndex < queueIdsJsonList.GetLength(); ++queueIdsIndex) {
-      queueIdsJsonList[queueIdsIndex].AsString(m_queueIds[queueIdsIndex]);
-    }
-    payload.WithArray("queueIds", std::move(queueIdsJsonList));
-  }
-
-  if (m_jobIdHasBeenSet) {
-    payload.WithString("jobId", m_jobId);
-  }
-
   if (m_filterExpressionsHasBeenSet) {
     payload.WithObject("filterExpressions", m_filterExpressions.Jsonize());
   }
@@ -45,6 +33,18 @@ Aws::String SearchTasksRequest::SerializePayload() const {
 
   if (m_pageSizeHasBeenSet) {
     payload.WithInteger("pageSize", m_pageSize);
+  }
+
+  if (m_queueIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> queueIdsJsonList(m_queueIds.size());
+    for (unsigned queueIdsIndex = 0; queueIdsIndex < queueIdsJsonList.GetLength(); ++queueIdsIndex) {
+      queueIdsJsonList[queueIdsIndex].AsString(m_queueIds[queueIdsIndex]);
+    }
+    payload.WithArray("queueIds", std::move(queueIdsJsonList));
+  }
+
+  if (m_jobIdHasBeenSet) {
+    payload.WithString("jobId", m_jobId);
   }
 
   return payload.View().WriteReadable();

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MPA {
 namespace Model {
-enum class SessionStatusCode { NOT_SET, REJECTED, EXPIRED, CONFIGURATION_CHANGED };
+enum class SessionStatusCode { NOT_SET, REJECTED, EXPIRED, CONFIGURATION_CHANGED, ALL_APPROVERS_IN_SESSION };
 
 namespace SessionStatusCodeMapper {
 AWS_MPA_API SessionStatusCode GetSessionStatusCodeForName(const Aws::String& name);

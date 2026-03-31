@@ -29,6 +29,7 @@ static const int AmazonNeptune_HASH = HashingUtils::HashString("AmazonNeptune");
 static const int AmazonTimestream_HASH = HashingUtils::HashString("AmazonTimestream");
 static const int AmazonMCS_HASH = HashingUtils::HashString("AmazonMCS");
 static const int AWSDatabaseMigrationSvc_HASH = HashingUtils::HashString("AWSDatabaseMigrationSvc");
+static const int AmazonES_HASH = HashingUtils::HashString("AmazonES");
 
 SavingsPlanRateServiceCode GetSavingsPlanRateServiceCodeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -60,6 +61,8 @@ SavingsPlanRateServiceCode GetSavingsPlanRateServiceCodeForName(const Aws::Strin
     return SavingsPlanRateServiceCode::AmazonMCS;
   } else if (hashCode == AWSDatabaseMigrationSvc_HASH) {
     return SavingsPlanRateServiceCode::AWSDatabaseMigrationSvc;
+  } else if (hashCode == AmazonES_HASH) {
+    return SavingsPlanRateServiceCode::AmazonES;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -102,6 +105,8 @@ Aws::String GetNameForSavingsPlanRateServiceCode(SavingsPlanRateServiceCode enum
       return "AmazonMCS";
     case SavingsPlanRateServiceCode::AWSDatabaseMigrationSvc:
       return "AWSDatabaseMigrationSvc";
+    case SavingsPlanRateServiceCode::AmazonES:
+      return "AmazonES";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

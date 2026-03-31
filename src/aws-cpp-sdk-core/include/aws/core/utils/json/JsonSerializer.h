@@ -95,6 +95,17 @@ namespace Aws
                 JsonValue& WithString(const char* key, const Aws::String& value);
 
                 /**
+                 * Adds a null value to the top level of this node with key.
+                 */
+                JsonValue& WithNull(const Aws::String& key);
+                JsonValue& WithNull(const char* key);
+
+                /**
+                 * Converts the current JSON node to null.
+                 */
+                JsonValue& AsNull();
+
+                /**
                  * Converts the current JSON node to a string.
                  */
                 JsonValue& AsString(const Aws::String& value);

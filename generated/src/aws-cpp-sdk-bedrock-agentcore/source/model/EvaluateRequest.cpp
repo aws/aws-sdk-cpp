@@ -23,5 +23,15 @@ Aws::String EvaluateRequest::SerializePayload() const {
     payload.WithObject("evaluationTarget", m_evaluationTarget.Jsonize());
   }
 
+  if (m_evaluationReferenceInputsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> evaluationReferenceInputsJsonList(m_evaluationReferenceInputs.size());
+    for (unsigned evaluationReferenceInputsIndex = 0; evaluationReferenceInputsIndex < evaluationReferenceInputsJsonList.GetLength();
+         ++evaluationReferenceInputsIndex) {
+      evaluationReferenceInputsJsonList[evaluationReferenceInputsIndex].AsObject(
+          m_evaluationReferenceInputs[evaluationReferenceInputsIndex].Jsonize());
+    }
+    payload.WithArray("evaluationReferenceInputs", std::move(evaluationReferenceInputsJsonList));
+  }
+
   return payload.View().WriteReadable();
 }

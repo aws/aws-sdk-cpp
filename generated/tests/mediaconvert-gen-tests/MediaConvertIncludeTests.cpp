@@ -31,6 +31,11 @@
 #include <aws/mediaconvert/model/Ac3LfeFilter.h>
 #include <aws/mediaconvert/model/Ac3MetadataControl.h>
 #include <aws/mediaconvert/model/Ac3Settings.h>
+#include <aws/mediaconvert/model/Ac4BitstreamMode.h>
+#include <aws/mediaconvert/model/Ac4CodingMode.h>
+#include <aws/mediaconvert/model/Ac4DynamicRangeCompressionDrcProfile.h>
+#include <aws/mediaconvert/model/Ac4Settings.h>
+#include <aws/mediaconvert/model/Ac4StereoDownmix.h>
 #include <aws/mediaconvert/model/AccelerationMode.h>
 #include <aws/mediaconvert/model/AccelerationSettings.h>
 #include <aws/mediaconvert/model/AccelerationStatus.h>
@@ -379,6 +384,7 @@
 #include <aws/mediaconvert/model/HlsCaptionLanguageMapping.h>
 #include <aws/mediaconvert/model/HlsCaptionLanguageSetting.h>
 #include <aws/mediaconvert/model/HlsCaptionSegmentLengthControl.h>
+#include <aws/mediaconvert/model/HlsClearLead.h>
 #include <aws/mediaconvert/model/HlsClientCache.h>
 #include <aws/mediaconvert/model/HlsCodecSpecification.h>
 #include <aws/mediaconvert/model/HlsDescriptiveVideoServiceFlag.h>

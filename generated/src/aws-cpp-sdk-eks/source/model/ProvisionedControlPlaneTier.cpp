@@ -19,6 +19,7 @@ static const int standard_HASH = HashingUtils::HashString("standard");
 static const int tier_xl_HASH = HashingUtils::HashString("tier-xl");
 static const int tier_2xl_HASH = HashingUtils::HashString("tier-2xl");
 static const int tier_4xl_HASH = HashingUtils::HashString("tier-4xl");
+static const int tier_8xl_HASH = HashingUtils::HashString("tier-8xl");
 
 ProvisionedControlPlaneTier GetProvisionedControlPlaneTierForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ ProvisionedControlPlaneTier GetProvisionedControlPlaneTierForName(const Aws::Str
     return ProvisionedControlPlaneTier::tier_2xl;
   } else if (hashCode == tier_4xl_HASH) {
     return ProvisionedControlPlaneTier::tier_4xl;
+  } else if (hashCode == tier_8xl_HASH) {
+    return ProvisionedControlPlaneTier::tier_8xl;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForProvisionedControlPlaneTier(ProvisionedControlPlaneTier en
       return "tier-2xl";
     case ProvisionedControlPlaneTier::tier_4xl:
       return "tier-4xl";
+    case ProvisionedControlPlaneTier::tier_8xl:
+      return "tier-8xl";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

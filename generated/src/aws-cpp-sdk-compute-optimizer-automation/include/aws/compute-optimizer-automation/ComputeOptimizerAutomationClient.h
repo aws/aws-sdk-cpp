@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/compute-optimizer-automation/ComputeOptimizerAutomationPaginationBase.h>
 #include <aws/compute-optimizer-automation/ComputeOptimizerAutomationServiceClientModel.h>
+#include <aws/compute-optimizer-automation/ComputeOptimizerAutomationWaiter.h>
 #include <aws/compute-optimizer-automation/ComputeOptimizerAutomation_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -30,7 +31,8 @@ namespace ComputeOptimizerAutomation {
 class AWS_COMPUTEOPTIMIZERAUTOMATION_API ComputeOptimizerAutomationClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<ComputeOptimizerAutomationClient>,
-      public ComputeOptimizerAutomationPaginationBase<ComputeOptimizerAutomationClient> {
+      public ComputeOptimizerAutomationPaginationBase<ComputeOptimizerAutomationClient>,
+      public ComputeOptimizerAutomationWaiter<ComputeOptimizerAutomationClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -761,6 +763,10 @@ class AWS_COMPUTEOPTIMIZERAUTOMATION_API ComputeOptimizerAutomationClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ComputeOptimizerAutomationClient>;
   void init(const ComputeOptimizerAutomationClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ComputeOptimizerAutomationError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   ComputeOptimizerAutomationClientConfiguration m_clientConfiguration;
   std::shared_ptr<ComputeOptimizerAutomationEndpointProviderBase> m_endpointProvider;

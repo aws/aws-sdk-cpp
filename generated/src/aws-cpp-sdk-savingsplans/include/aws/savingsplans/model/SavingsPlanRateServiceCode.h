@@ -25,7 +25,8 @@ enum class SavingsPlanRateServiceCode {
   AmazonNeptune,
   AmazonTimestream,
   AmazonMCS,
-  AWSDatabaseMigrationSvc
+  AWSDatabaseMigrationSvc,
+  AmazonES
 };
 
 namespace SavingsPlanRateServiceCodeMapper {

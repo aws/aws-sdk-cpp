@@ -83,9 +83,9 @@ class VerificationInfo {
    * reachable at the time of the request. Ensure that you have published the
    * required DNS record(s). </p> </li> <li> <p> <code>SERVICE_ERROR</code> – A
    * temporary issue is preventing Amazon SES from determining the verification
-   * status of the domain.</p> </li> <li> <p> <code>DNS_SERVER_ERROR</code> – The DNS
-   * server encountered an issue and was unable to complete the request.</p> </li>
-   * <li> <p> <code>REPLICATION_ACCESS_DENIED</code> – The verification failed
+   * status of the domain.</p> </li> <li> <p> <code>DNS_SERVER_ERROR</code> ��� The
+   * DNS server encountered an issue and was unable to complete the request.</p>
+   * </li> <li> <p> <code>REPLICATION_ACCESS_DENIED</code> – The verification failed
    * because the user does not have the required permissions to replicate the DKIM
    * key from the primary region. Ensure you have the necessary permissions in both
    * primary and replica regions. </p> </li> <li> <p>

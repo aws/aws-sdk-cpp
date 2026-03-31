@@ -59,9 +59,9 @@ class NestedPayload {
   ///@}
  private:
   Aws::String m_greeting;
-  bool m_greetingHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_greetingHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

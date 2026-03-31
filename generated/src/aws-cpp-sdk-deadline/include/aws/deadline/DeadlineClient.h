@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/deadline/DeadlinePaginationBase.h>
 #include <aws/deadline/DeadlineServiceClientModel.h>
+#include <aws/deadline/DeadlineWaiter.h>
 #include <aws/deadline/Deadline_EXPORTS.h>
 
 namespace Aws {
@@ -26,7 +27,8 @@ namespace deadline {
  */
 class AWS_DEADLINE_API DeadlineClient : public Aws::Client::AWSJsonClient,
                                         public Aws::Client::ClientWithAsyncTemplateMethods<DeadlineClient>,
-                                        public DeadlinePaginationBase<DeadlineClient> {
+                                        public DeadlinePaginationBase<DeadlineClient>,
+                                        public DeadlineWaiter<DeadlineClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -3114,6 +3116,12 @@ class AWS_DEADLINE_API DeadlineClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DeadlineClient>;
   void init(const DeadlineClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, DeadlineError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   DeadlineClientConfiguration m_clientConfiguration;
   std::shared_ptr<DeadlineEndpointProviderBase> m_endpointProvider;

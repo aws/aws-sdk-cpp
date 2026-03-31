@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53globalresolver/Route53GlobalResolver_EXPORTS.h>
 #include <aws/route53globalresolver/model/CRResourceStatus.h>
+#include <aws/route53globalresolver/model/GlobalResolverIpAddressType.h>
 
 #include <utility>
 
@@ -137,6 +138,22 @@ class CreateGlobalResolverResult {
 
   ///@{
   /**
+   * <p>The IP address type configured for the Route 53 Global Resolver (IPV4 or
+   * DUAL_STACK).</p>
+   */
+  inline GlobalResolverIpAddressType GetIpAddressType() const { return m_ipAddressType; }
+  inline void SetIpAddressType(GlobalResolverIpAddressType value) {
+    m_ipAddressTypeHasBeenSet = true;
+    m_ipAddressType = value;
+  }
+  inline CreateGlobalResolverResult& WithIpAddressType(GlobalResolverIpAddressType value) {
+    SetIpAddressType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The global anycast IPv4 addresses associated with the Route 53 Global
    * Resolver. DNS clients can send queries to these addresses from anywhere on the
    * internet.</p>
@@ -162,6 +179,31 @@ class CreateGlobalResolverResult {
 
   ///@{
   /**
+   * <p>The global anycast IPv6 addresses associated with the Route 53 Global
+   * Resolver. This field is only populated when ipAddressType is DUAL_STACK. DNS
+   * clients can send queries to these addresses from anywhere on the internet.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetIpv6Addresses() const { return m_ipv6Addresses; }
+  template <typename Ipv6AddressesT = Aws::Vector<Aws::String>>
+  void SetIpv6Addresses(Ipv6AddressesT&& value) {
+    m_ipv6AddressesHasBeenSet = true;
+    m_ipv6Addresses = std::forward<Ipv6AddressesT>(value);
+  }
+  template <typename Ipv6AddressesT = Aws::Vector<Aws::String>>
+  CreateGlobalResolverResult& WithIpv6Addresses(Ipv6AddressesT&& value) {
+    SetIpv6Addresses(std::forward<Ipv6AddressesT>(value));
+    return *this;
+  }
+  template <typename Ipv6AddressesT = Aws::String>
+  CreateGlobalResolverResult& AddIpv6Addresses(Ipv6AddressesT&& value) {
+    m_ipv6AddressesHasBeenSet = true;
+    m_ipv6Addresses.emplace_back(std::forward<Ipv6AddressesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The name of the Route 53 Global Resolver.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -179,8 +221,8 @@ class CreateGlobalResolverResult {
 
   ///@{
   /**
-   * <p>The AWS Region where observability data for the Route 53 Global Resolver is
-   * stored.</p>
+   * <p>The Amazon Web Services Region where observability data for the Route 53
+   * Global Resolver is stored.</p>
    */
   inline const Aws::String& GetObservabilityRegion() const { return m_observabilityRegion; }
   template <typename ObservabilityRegionT = Aws::String>
@@ -197,8 +239,8 @@ class CreateGlobalResolverResult {
 
   ///@{
   /**
-   * <p>The AWS Regions where the Route 53 Global Resolver is deployed and
-   * operational.</p>
+   * <p>The Amazon Web Services Regions where the Route 53 Global Resolver is
+   * deployed and operational.</p>
    */
   inline const Aws::Vector<Aws::String>& GetRegions() const { return m_regions; }
   template <typename RegionsT = Aws::Vector<Aws::String>>
@@ -282,7 +324,11 @@ class CreateGlobalResolverResult {
 
   Aws::String m_dnsName;
 
+  GlobalResolverIpAddressType m_ipAddressType{GlobalResolverIpAddressType::NOT_SET};
+
   Aws::Vector<Aws::String> m_ipv4Addresses;
+
+  Aws::Vector<Aws::String> m_ipv6Addresses;
 
   Aws::String m_name;
 
@@ -302,7 +348,9 @@ class CreateGlobalResolverResult {
   bool m_createdAtHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_dnsNameHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
   bool m_ipv4AddressesHasBeenSet = false;
+  bool m_ipv6AddressesHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_observabilityRegionHasBeenSet = false;
   bool m_regionsHasBeenSet = false;

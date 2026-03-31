@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/timestream-write/TimestreamWritePaginationBase.h>
 #include <aws/timestream-write/TimestreamWriteServiceClientModel.h>
+#include <aws/timestream-write/TimestreamWriteWaiter.h>
 #include <aws/timestream-write/TimestreamWrite_EXPORTS.h>
 
 namespace Aws {
@@ -32,7 +33,8 @@ namespace TimestreamWrite {
  */
 class AWS_TIMESTREAMWRITE_API TimestreamWriteClient : public Aws::Client::AWSJsonClient,
                                                       public Aws::Client::ClientWithAsyncTemplateMethods<TimestreamWriteClient>,
-                                                      public TimestreamWritePaginationBase<TimestreamWriteClient> {
+                                                      public TimestreamWritePaginationBase<TimestreamWriteClient>,
+                                                      public TimestreamWriteWaiter<TimestreamWriteClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -719,6 +721,10 @@ class AWS_TIMESTREAMWRITE_API TimestreamWriteClient : public Aws::Client::AWSJso
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<TimestreamWriteClient>;
   void init(const TimestreamWriteClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, TimestreamWriteError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;
   TimestreamWriteClientConfiguration m_clientConfiguration;

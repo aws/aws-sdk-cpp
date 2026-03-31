@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesPaginationBase.h>
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesServiceClientModel.h>
+#include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesWaiter.h>
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelines_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -25,7 +26,8 @@ namespace ChimeSDKMediaPipelines {
 class AWS_CHIMESDKMEDIAPIPELINES_API ChimeSDKMediaPipelinesClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMediaPipelinesClient>,
-      public ChimeSDKMediaPipelinesPaginationBase<ChimeSDKMediaPipelinesClient> {
+      public ChimeSDKMediaPipelinesPaginationBase<ChimeSDKMediaPipelinesClient>,
+      public ChimeSDKMediaPipelinesWaiter<ChimeSDKMediaPipelinesClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1005,6 +1007,12 @@ class AWS_CHIMESDKMEDIAPIPELINES_API ChimeSDKMediaPipelinesClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMediaPipelinesClient>;
   void init(const ChimeSDKMediaPipelinesClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ChimeSDKMediaPipelinesError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   ChimeSDKMediaPipelinesClientConfiguration m_clientConfiguration;
   std::shared_ptr<ChimeSDKMediaPipelinesEndpointProviderBase> m_endpointProvider;

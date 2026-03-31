@@ -31,23 +31,6 @@ class ListTagsForResourceResult {
 
   ///@{
   /**
-   * <p>The token to retrieve the next set of results.</p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  ListTagsForResourceResult& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>An optional list of tags to associate with the specified export. Each tag
    * consists of a key and a value, and each key must be unique for the resource.</p>
    */
@@ -71,6 +54,23 @@ class ListTagsForResourceResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The token to retrieve the next set of results.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListTagsForResourceResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -87,14 +87,14 @@ class ListTagsForResourceResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
-  Aws::String m_nextToken;
-
   Aws::Vector<ResourceTag> m_resourceTags;
+
+  Aws::String m_nextToken;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
-  bool m_nextTokenHasBeenSet = false;
   bool m_resourceTagsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

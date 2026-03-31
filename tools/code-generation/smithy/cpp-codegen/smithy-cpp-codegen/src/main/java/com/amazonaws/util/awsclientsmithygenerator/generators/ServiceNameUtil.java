@@ -4,11 +4,13 @@
  */
 package com.amazonaws.util.awsclientsmithygenerator.generators;
 
+import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.aws.traits.ServiceTrait;
-import software.amazon.smithy.model.traits.TitleTrait;
+import software.amazon.smithy.model.shapes.Shape;
+import software.amazon.smithy.model.transform.ModelTransformer;
+
 import java.util.Map;
-import java.util.Set;
 
 public final class ServiceNameUtil {
     

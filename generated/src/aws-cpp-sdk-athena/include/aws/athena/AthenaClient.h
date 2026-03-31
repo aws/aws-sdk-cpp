@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/athena/AthenaPaginationBase.h>
 #include <aws/athena/AthenaServiceClientModel.h>
+#include <aws/athena/AthenaWaiter.h>
 #include <aws/athena/Athena_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -32,7 +33,8 @@ namespace Athena {
  */
 class AWS_ATHENA_API AthenaClient : public Aws::Client::AWSJsonClient,
                                     public Aws::Client::ClientWithAsyncTemplateMethods<AthenaClient>,
-                                    public AthenaPaginationBase<AthenaClient> {
+                                    public AthenaPaginationBase<AthenaClient>,
+                                    public AthenaWaiter<AthenaClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2115,6 +2117,10 @@ class AWS_ATHENA_API AthenaClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AthenaClient>;
   void init(const AthenaClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, AthenaError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   AthenaClientConfiguration m_clientConfiguration;
   std::shared_ptr<AthenaEndpointProviderBase> m_endpointProvider;

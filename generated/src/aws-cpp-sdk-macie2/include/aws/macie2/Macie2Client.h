@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/macie2/Macie2PaginationBase.h>
 #include <aws/macie2/Macie2ServiceClientModel.h>
+#include <aws/macie2/Macie2Waiter.h>
 #include <aws/macie2/Macie2_EXPORTS.h>
 
 namespace Aws {
@@ -19,7 +20,8 @@ namespace Macie2 {
  */
 class AWS_MACIE2_API Macie2Client : public Aws::Client::AWSJsonClient,
                                     public Aws::Client::ClientWithAsyncTemplateMethods<Macie2Client>,
-                                    public Macie2PaginationBase<Macie2Client> {
+                                    public Macie2PaginationBase<Macie2Client>,
+                                    public Macie2Waiter<Macie2Client> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2362,6 +2364,12 @@ class AWS_MACIE2_API Macie2Client : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<Macie2Client>;
   void init(const Macie2ClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, Macie2Error> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   Macie2ClientConfiguration m_clientConfiguration;
   std::shared_ptr<Macie2EndpointProviderBase> m_endpointProvider;

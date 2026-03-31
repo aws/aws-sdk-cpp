@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mq/MQPaginationBase.h>
 #include <aws/mq/MQServiceClientModel.h>
+#include <aws/mq/MQWaiter.h>
 #include <aws/mq/MQ_EXPORTS.h>
 
 namespace Aws {
@@ -23,7 +24,8 @@ namespace MQ {
  */
 class AWS_MQ_API MQClient : public Aws::Client::AWSJsonClient,
                             public Aws::Client::ClientWithAsyncTemplateMethods<MQClient>,
-                            public MQPaginationBase<MQClient> {
+                            public MQPaginationBase<MQClient>,
+                            public MQWaiter<MQClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -736,6 +738,12 @@ class AWS_MQ_API MQClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MQClient>;
   void init(const MQClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MQError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   MQClientConfiguration m_clientConfiguration;
   std::shared_ptr<MQEndpointProviderBase> m_endpointProvider;

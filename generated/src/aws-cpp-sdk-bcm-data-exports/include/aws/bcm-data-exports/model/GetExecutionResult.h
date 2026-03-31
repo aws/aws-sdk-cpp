@@ -48,23 +48,6 @@ class GetExecutionResult {
 
   ///@{
   /**
-   * <p>The status of this specific execution.</p>
-   */
-  inline const ExecutionStatus& GetExecutionStatus() const { return m_executionStatus; }
-  template <typename ExecutionStatusT = ExecutionStatus>
-  void SetExecutionStatus(ExecutionStatusT&& value) {
-    m_executionStatusHasBeenSet = true;
-    m_executionStatus = std::forward<ExecutionStatusT>(value);
-  }
-  template <typename ExecutionStatusT = ExecutionStatus>
-  GetExecutionResult& WithExecutionStatus(ExecutionStatusT&& value) {
-    SetExecutionStatus(std::forward<ExecutionStatusT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The export data for this specific execution. This export data is a snapshot
    * from when the execution was generated. The data could be different from the
    * current export data if the export was updated since the execution was
@@ -79,6 +62,23 @@ class GetExecutionResult {
   template <typename ExportT = Export>
   GetExecutionResult& WithExport(ExportT&& value) {
     SetExport(std::forward<ExportT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status of this specific execution.</p>
+   */
+  inline const ExecutionStatus& GetExecutionStatus() const { return m_executionStatus; }
+  template <typename ExecutionStatusT = ExecutionStatus>
+  void SetExecutionStatus(ExecutionStatusT&& value) {
+    m_executionStatusHasBeenSet = true;
+    m_executionStatus = std::forward<ExecutionStatusT>(value);
+  }
+  template <typename ExecutionStatusT = ExecutionStatus>
+  GetExecutionResult& WithExecutionStatus(ExecutionStatusT&& value) {
+    SetExecutionStatus(std::forward<ExecutionStatusT>(value));
     return *this;
   }
   ///@}
@@ -102,15 +102,15 @@ class GetExecutionResult {
  private:
   Aws::String m_executionId;
 
-  ExecutionStatus m_executionStatus;
-
   Export m_export;
+
+  ExecutionStatus m_executionStatus;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_executionIdHasBeenSet = false;
-  bool m_executionStatusHasBeenSet = false;
   bool m_exportHasBeenSet = false;
+  bool m_executionStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

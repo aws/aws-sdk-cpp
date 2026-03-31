@@ -19,6 +19,7 @@ using namespace Aws;
 TestPayloadBlobResult::TestPayloadBlobResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) { *this = std::move(result); }
 
 TestPayloadBlobResult& TestPayloadBlobResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   m_data = result.TakeOwnershipOfPayload();
   m_dataHasBeenSet = true;
 

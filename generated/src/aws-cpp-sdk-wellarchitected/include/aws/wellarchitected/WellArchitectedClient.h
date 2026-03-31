@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/wellarchitected/WellArchitectedPaginationBase.h>
 #include <aws/wellarchitected/WellArchitectedServiceClientModel.h>
+#include <aws/wellarchitected/WellArchitectedWaiter.h>
 #include <aws/wellarchitected/WellArchitected_EXPORTS.h>
 
 namespace Aws {
@@ -26,7 +27,8 @@ namespace WellArchitected {
  */
 class AWS_WELLARCHITECTED_API WellArchitectedClient : public Aws::Client::AWSJsonClient,
                                                       public Aws::Client::ClientWithAsyncTemplateMethods<WellArchitectedClient>,
-                                                      public WellArchitectedPaginationBase<WellArchitectedClient> {
+                                                      public WellArchitectedPaginationBase<WellArchitectedClient>,
+                                                      public WellArchitectedWaiter<WellArchitectedClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2116,6 +2118,12 @@ class AWS_WELLARCHITECTED_API WellArchitectedClient : public Aws::Client::AWSJso
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<WellArchitectedClient>;
   void init(const WellArchitectedClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, WellArchitectedError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   WellArchitectedClientConfiguration m_clientConfiguration;
   std::shared_ptr<WellArchitectedEndpointProviderBase> m_endpointProvider;

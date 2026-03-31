@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/fsx/FSxPaginationBase.h>
 #include <aws/fsx/FSxServiceClientModel.h>
+#include <aws/fsx/FSxWaiter.h>
 #include <aws/fsx/FSx_EXPORTS.h>
 
 namespace Aws {
@@ -20,7 +21,8 @@ namespace FSx {
  */
 class AWS_FSX_API FSxClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<FSxClient>,
-                              public FSxPaginationBase<FSxClient> {
+                              public FSxPaginationBase<FSxClient>,
+                              public FSxWaiter<FSxClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1910,6 +1912,10 @@ class AWS_FSX_API FSxClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<FSxClient>;
   void init(const FSxClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, FSxError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   FSxClientConfiguration m_clientConfiguration;
   std::shared_ptr<FSxEndpointProviderBase> m_endpointProvider;

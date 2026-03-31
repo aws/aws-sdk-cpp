@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/customer-profiles/CustomerProfilesPaginationBase.h>
 #include <aws/customer-profiles/CustomerProfilesServiceClientModel.h>
+#include <aws/customer-profiles/CustomerProfilesWaiter.h>
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 
 namespace Aws {
@@ -31,7 +32,8 @@ namespace CustomerProfiles {
  */
 class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJsonClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<CustomerProfilesClient>,
-                                                        public CustomerProfilesPaginationBase<CustomerProfilesClient> {
+                                                        public CustomerProfilesPaginationBase<CustomerProfilesClient>,
+                                                        public CustomerProfilesWaiter<CustomerProfilesClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -421,6 +423,34 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
   void CreateRecommenderAsync(const CreateRecommenderRequestT& request, const CreateRecommenderResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CustomerProfilesClient::CreateRecommender, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a recommender filter. A recommender filter specifies which items to
+   * include or exclude from recommendations.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateRecommenderFilter">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateRecommenderFilterOutcome CreateRecommenderFilter(const Model::CreateRecommenderFilterRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateRecommenderFilter that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateRecommenderFilterRequestT = Model::CreateRecommenderFilterRequest>
+  Model::CreateRecommenderFilterOutcomeCallable CreateRecommenderFilterCallable(const CreateRecommenderFilterRequestT& request) const {
+    return SubmitCallable(&CustomerProfilesClient::CreateRecommenderFilter, request);
+  }
+
+  /**
+   * An Async wrapper for CreateRecommenderFilter that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateRecommenderFilterRequestT = Model::CreateRecommenderFilterRequest>
+  void CreateRecommenderFilterAsync(const CreateRecommenderFilterRequestT& request,
+                                    const CreateRecommenderFilterResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CustomerProfilesClient::CreateRecommenderFilter, request, handler, context);
   }
 
   /**
@@ -861,6 +891,33 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
   void DeleteRecommenderAsync(const DeleteRecommenderRequestT& request, const DeleteRecommenderResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CustomerProfilesClient::DeleteRecommender, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a recommender filter from a domain.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteRecommenderFilter">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteRecommenderFilterOutcome DeleteRecommenderFilter(const Model::DeleteRecommenderFilterRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteRecommenderFilter that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteRecommenderFilterRequestT = Model::DeleteRecommenderFilterRequest>
+  Model::DeleteRecommenderFilterOutcomeCallable DeleteRecommenderFilterCallable(const DeleteRecommenderFilterRequestT& request) const {
+    return SubmitCallable(&CustomerProfilesClient::DeleteRecommenderFilter, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteRecommenderFilter that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteRecommenderFilterRequestT = Model::DeleteRecommenderFilterRequest>
+  void DeleteRecommenderFilterAsync(const DeleteRecommenderFilterRequestT& request,
+                                    const DeleteRecommenderFilterResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CustomerProfilesClient::DeleteRecommenderFilter, request, handler, context);
   }
 
   /**
@@ -1458,6 +1515,33 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
   void GetRecommenderAsync(const GetRecommenderRequestT& request, const GetRecommenderResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CustomerProfilesClient::GetRecommender, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about a specific recommender filter in a
+   * domain.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetRecommenderFilter">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetRecommenderFilterOutcome GetRecommenderFilter(const Model::GetRecommenderFilterRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetRecommenderFilter that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetRecommenderFilterRequestT = Model::GetRecommenderFilterRequest>
+  Model::GetRecommenderFilterOutcomeCallable GetRecommenderFilterCallable(const GetRecommenderFilterRequestT& request) const {
+    return SubmitCallable(&CustomerProfilesClient::GetRecommenderFilter, request);
+  }
+
+  /**
+   * An Async wrapper for GetRecommenderFilter that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetRecommenderFilterRequestT = Model::GetRecommenderFilterRequest>
+  void GetRecommenderFilterAsync(const GetRecommenderFilterRequestT& request, const GetRecommenderFilterResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CustomerProfilesClient::GetRecommenderFilter, request, handler, context);
   }
 
   /**
@@ -2184,6 +2268,34 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
   void ListProfileObjectsAsync(const ListProfileObjectsRequestT& request, const ListProfileObjectsResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CustomerProfilesClient::ListProfileObjects, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a list of recommender filters in the specified domain.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRecommenderFilters">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListRecommenderFiltersOutcome ListRecommenderFilters(const Model::ListRecommenderFiltersRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListRecommenderFilters that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListRecommenderFiltersRequestT = Model::ListRecommenderFiltersRequest>
+  Model::ListRecommenderFiltersOutcomeCallable ListRecommenderFiltersCallable(const ListRecommenderFiltersRequestT& request) const {
+    return SubmitCallable(&CustomerProfilesClient::ListRecommenderFilters, request);
+  }
+
+  /**
+   * An Async wrapper for ListRecommenderFilters that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListRecommenderFiltersRequestT = Model::ListRecommenderFiltersRequest>
+  void ListRecommenderFiltersAsync(const ListRecommenderFiltersRequestT& request,
+                                   const ListRecommenderFiltersResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CustomerProfilesClient::ListRecommenderFilters, request, handler, context);
   }
 
   /**
@@ -2926,6 +3038,12 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CustomerProfilesClient>;
   void init(const CustomerProfilesClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CustomerProfilesError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   CustomerProfilesClientConfiguration m_clientConfiguration;
   std::shared_ptr<CustomerProfilesEndpointProviderBase> m_endpointProvider;

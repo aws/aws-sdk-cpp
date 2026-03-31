@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/chime/ChimePaginationBase.h>
 #include <aws/chime/ChimeServiceClientModel.h>
+#include <aws/chime/ChimeWaiter.h>
 #include <aws/chime/Chime_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -60,7 +61,8 @@ namespace Chime {
  */
 class AWS_CHIME_API ChimeClient : public Aws::Client::AWSJsonClient,
                                   public Aws::Client::ClientWithAsyncTemplateMethods<ChimeClient>,
-                                  public ChimePaginationBase<ChimeClient> {
+                                  public ChimePaginationBase<ChimeClient>,
+                                  public ChimeWaiter<ChimeClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1919,6 +1921,12 @@ class AWS_CHIME_API ChimeClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ChimeClient>;
   void init(const ChimeClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ChimeError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   ChimeClientConfiguration m_clientConfiguration;
   std::shared_ptr<ChimeEndpointProviderBase> m_endpointProvider;

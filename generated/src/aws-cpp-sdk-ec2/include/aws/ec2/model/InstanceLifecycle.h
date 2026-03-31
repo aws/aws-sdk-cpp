@@ -10,7 +10,7 @@
 namespace Aws {
 namespace EC2 {
 namespace Model {
-enum class InstanceLifecycle { NOT_SET, spot, on_demand };
+enum class InstanceLifecycle { NOT_SET, spot, on_demand, interruptible_capacity_reservation };
 
 namespace InstanceLifecycleMapper {
 AWS_EC2_API InstanceLifecycle GetInstanceLifecycleForName(const Aws::String& name);

@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/glacier/GlacierPaginationBase.h>
 #include <aws/glacier/GlacierServiceClientModel.h>
+#include <aws/glacier/GlacierWaiter.h>
 #include <aws/glacier/Glacier_EXPORTS.h>
 
 namespace Aws {
@@ -43,7 +44,8 @@ namespace Glacier {
  */
 class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient,
                                       public Aws::Client::ClientWithAsyncTemplateMethods<GlacierClient>,
-                                      public GlacierPaginationBase<GlacierClient> {
+                                      public GlacierPaginationBase<GlacierClient>,
+                                      public GlacierWaiter<GlacierClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1544,6 +1546,12 @@ class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<GlacierClient>;
   void init(const GlacierClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, GlacierError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   GlacierClientConfiguration m_clientConfiguration;
   std::shared_ptr<GlacierEndpointProviderBase> m_endpointProvider;

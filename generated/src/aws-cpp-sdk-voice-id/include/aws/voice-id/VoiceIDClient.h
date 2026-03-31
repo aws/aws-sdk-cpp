@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/voice-id/VoiceIDPaginationBase.h>
 #include <aws/voice-id/VoiceIDServiceClientModel.h>
+#include <aws/voice-id/VoiceIDWaiter.h>
 #include <aws/voice-id/VoiceID_EXPORTS.h>
 
 namespace Aws {
@@ -21,7 +22,8 @@ namespace VoiceID {
  */
 class AWS_VOICEID_API VoiceIDClient : public Aws::Client::AWSJsonClient,
                                       public Aws::Client::ClientWithAsyncTemplateMethods<VoiceIDClient>,
-                                      public VoiceIDPaginationBase<VoiceIDClient> {
+                                      public VoiceIDPaginationBase<VoiceIDClient>,
+                                      public VoiceIDWaiter<VoiceIDClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -870,6 +872,10 @@ class AWS_VOICEID_API VoiceIDClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<VoiceIDClient>;
   void init(const VoiceIDClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, VoiceIDError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   VoiceIDClientConfiguration m_clientConfiguration;
   std::shared_ptr<VoiceIDEndpointProviderBase> m_endpointProvider;

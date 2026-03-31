@@ -34,10 +34,6 @@ GetFleetResult& GetFleetResult::operator=(const Aws::AmazonWebServiceResult<Json
     m_displayName = jsonValue.GetString("displayName");
     m_displayNameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("description")) {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("status")) {
     m_status = FleetStatusMapper::GetFleetStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
@@ -70,18 +66,6 @@ GetFleetResult& GetFleetResult::operator=(const Aws::AmazonWebServiceResult<Json
     m_configuration = jsonValue.GetObject("configuration");
     m_configurationHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("hostConfiguration")) {
-    m_hostConfiguration = jsonValue.GetObject("hostConfiguration");
-    m_hostConfigurationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("capabilities")) {
-    m_capabilities = jsonValue.GetObject("capabilities");
-    m_capabilitiesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("roleArn")) {
-    m_roleArn = jsonValue.GetString("roleArn");
-    m_roleArnHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
@@ -97,6 +81,22 @@ GetFleetResult& GetFleetResult::operator=(const Aws::AmazonWebServiceResult<Json
   if (jsonValue.ValueExists("updatedBy")) {
     m_updatedBy = jsonValue.GetString("updatedBy");
     m_updatedByHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("hostConfiguration")) {
+    m_hostConfiguration = jsonValue.GetObject("hostConfiguration");
+    m_hostConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("capabilities")) {
+    m_capabilities = jsonValue.GetObject("capabilities");
+    m_capabilitiesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("roleArn")) {
+    m_roleArn = jsonValue.GetString("roleArn");
+    m_roleArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

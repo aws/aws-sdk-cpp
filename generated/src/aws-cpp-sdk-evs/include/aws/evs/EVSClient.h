@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/evs/EVSPaginationBase.h>
 #include <aws/evs/EVSServiceClientModel.h>
+#include <aws/evs/EVSWaiter.h>
 #include <aws/evs/EVS_EXPORTS.h>
 
 namespace Aws {
@@ -24,7 +25,8 @@ namespace EVS {
  */
 class AWS_EVS_API EVSClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<EVSClient>,
-                              public EVSPaginationBase<EVSClient> {
+                              public EVSPaginationBase<EVSClient>,
+                              public EVSWaiter<EVSClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -498,6 +500,10 @@ class AWS_EVS_API EVSClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<EVSClient>;
   void init(const EVSClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, EVSError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   EVSClientConfiguration m_clientConfiguration;
   std::shared_ptr<EVSEndpointProviderBase> m_endpointProvider;

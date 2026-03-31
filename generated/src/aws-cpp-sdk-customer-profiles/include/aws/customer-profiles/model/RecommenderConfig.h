@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 #include <aws/customer-profiles/model/EventsConfig.h>
+#include <aws/customer-profiles/model/InferenceConfig.h>
 
 #include <utility>
 
@@ -65,12 +66,34 @@ class RecommenderConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration settings for how the recommender handles inference
+   * requests.</p>
+   */
+  inline const InferenceConfig& GetInferenceConfig() const { return m_inferenceConfig; }
+  inline bool InferenceConfigHasBeenSet() const { return m_inferenceConfigHasBeenSet; }
+  template <typename InferenceConfigT = InferenceConfig>
+  void SetInferenceConfig(InferenceConfigT&& value) {
+    m_inferenceConfigHasBeenSet = true;
+    m_inferenceConfig = std::forward<InferenceConfigT>(value);
+  }
+  template <typename InferenceConfigT = InferenceConfig>
+  RecommenderConfig& WithInferenceConfig(InferenceConfigT&& value) {
+    SetInferenceConfig(std::forward<InferenceConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   EventsConfig m_eventsConfig;
 
   int m_trainingFrequency{0};
+
+  InferenceConfig m_inferenceConfig;
   bool m_eventsConfigHasBeenSet = false;
   bool m_trainingFrequencyHasBeenSet = false;
+  bool m_inferenceConfigHasBeenSet = false;
 };
 
 }  // namespace Model

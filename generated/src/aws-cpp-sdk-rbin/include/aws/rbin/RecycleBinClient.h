@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/rbin/RecycleBinPaginationBase.h>
 #include <aws/rbin/RecycleBinServiceClientModel.h>
+#include <aws/rbin/RecycleBinWaiter.h>
 #include <aws/rbin/RecycleBin_EXPORTS.h>
 
 namespace Aws {
@@ -33,7 +34,8 @@ namespace RecycleBin {
  */
 class AWS_RECYCLEBIN_API RecycleBinClient : public Aws::Client::AWSJsonClient,
                                             public Aws::Client::ClientWithAsyncTemplateMethods<RecycleBinClient>,
-                                            public RecycleBinPaginationBase<RecycleBinClient> {
+                                            public RecycleBinPaginationBase<RecycleBinClient>,
+                                            public RecycleBinWaiter<RecycleBinClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -376,6 +378,12 @@ class AWS_RECYCLEBIN_API RecycleBinClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<RecycleBinClient>;
   void init(const RecycleBinClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, RecycleBinError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   RecycleBinClientConfiguration m_clientConfiguration;
   std::shared_ptr<RecycleBinEndpointProviderBase> m_endpointProvider;

@@ -290,6 +290,10 @@ Aws::String CreateDBClusterRequest::SerializePayload() const {
        << "&";
   }
 
+  if (m_withExpressConfigurationHasBeenSet) {
+    ss << "WithExpressConfiguration=" << std::boolalpha << m_withExpressConfiguration << "&";
+  }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

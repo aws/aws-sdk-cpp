@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/arc-zonal-shift/ARCZonalShiftPaginationBase.h>
 #include <aws/arc-zonal-shift/ARCZonalShiftServiceClientModel.h>
+#include <aws/arc-zonal-shift/ARCZonalShiftWaiter.h>
 #include <aws/arc-zonal-shift/ARCZonalShift_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -34,7 +35,8 @@ namespace ARCZonalShift {
  */
 class AWS_ARCZONALSHIFT_API ARCZonalShiftClient : public Aws::Client::AWSJsonClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<ARCZonalShiftClient>,
-                                                  public ARCZonalShiftPaginationBase<ARCZonalShiftClient> {
+                                                  public ARCZonalShiftPaginationBase<ARCZonalShiftClient>,
+                                                  public ARCZonalShiftWaiter<ARCZonalShiftClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -605,6 +607,12 @@ class AWS_ARCZONALSHIFT_API ARCZonalShiftClient : public Aws::Client::AWSJsonCli
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ARCZonalShiftClient>;
   void init(const ARCZonalShiftClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ARCZonalShiftError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   ARCZonalShiftClientConfiguration m_clientConfiguration;
   std::shared_ptr<ARCZonalShiftEndpointProviderBase> m_endpointProvider;

@@ -36,60 +36,6 @@ class Export {
 
   ///@{
   /**
-   * <p>The data query for this specific data export.</p>
-   */
-  inline const DataQuery& GetDataQuery() const { return m_dataQuery; }
-  inline bool DataQueryHasBeenSet() const { return m_dataQueryHasBeenSet; }
-  template <typename DataQueryT = DataQuery>
-  void SetDataQuery(DataQueryT&& value) {
-    m_dataQueryHasBeenSet = true;
-    m_dataQuery = std::forward<DataQueryT>(value);
-  }
-  template <typename DataQueryT = DataQuery>
-  Export& WithDataQuery(DataQueryT&& value) {
-    SetDataQuery(std::forward<DataQueryT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The description for this specific data export.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  Export& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The destination configuration for this specific data export.</p>
-   */
-  inline const DestinationConfigurations& GetDestinationConfigurations() const { return m_destinationConfigurations; }
-  inline bool DestinationConfigurationsHasBeenSet() const { return m_destinationConfigurationsHasBeenSet; }
-  template <typename DestinationConfigurationsT = DestinationConfigurations>
-  void SetDestinationConfigurations(DestinationConfigurationsT&& value) {
-    m_destinationConfigurationsHasBeenSet = true;
-    m_destinationConfigurations = std::forward<DestinationConfigurationsT>(value);
-  }
-  template <typename DestinationConfigurationsT = DestinationConfigurations>
-  Export& WithDestinationConfigurations(DestinationConfigurationsT&& value) {
-    SetDestinationConfigurations(std::forward<DestinationConfigurationsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The Amazon Resource Name (ARN) for this export.</p>
    */
   inline const Aws::String& GetExportArn() const { return m_exportArn; }
@@ -126,6 +72,60 @@ class Export {
 
   ///@{
   /**
+   * <p>The description for this specific data export.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  Export& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The data query for this specific data export.</p>
+   */
+  inline const DataQuery& GetDataQuery() const { return m_dataQuery; }
+  inline bool DataQueryHasBeenSet() const { return m_dataQueryHasBeenSet; }
+  template <typename DataQueryT = DataQuery>
+  void SetDataQuery(DataQueryT&& value) {
+    m_dataQueryHasBeenSet = true;
+    m_dataQuery = std::forward<DataQueryT>(value);
+  }
+  template <typename DataQueryT = DataQuery>
+  Export& WithDataQuery(DataQueryT&& value) {
+    SetDataQuery(std::forward<DataQueryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The destination configuration for this specific data export.</p>
+   */
+  inline const DestinationConfigurations& GetDestinationConfigurations() const { return m_destinationConfigurations; }
+  inline bool DestinationConfigurationsHasBeenSet() const { return m_destinationConfigurationsHasBeenSet; }
+  template <typename DestinationConfigurationsT = DestinationConfigurations>
+  void SetDestinationConfigurations(DestinationConfigurationsT&& value) {
+    m_destinationConfigurationsHasBeenSet = true;
+    m_destinationConfigurations = std::forward<DestinationConfigurationsT>(value);
+  }
+  template <typename DestinationConfigurationsT = DestinationConfigurations>
+  Export& WithDestinationConfigurations(DestinationConfigurationsT&& value) {
+    SetDestinationConfigurations(std::forward<DestinationConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The cadence for Amazon Web Services to update the export in your S3
    * bucket.</p>
    */
@@ -143,22 +143,22 @@ class Export {
   }
   ///@}
  private:
-  DataQuery m_dataQuery;
-
-  Aws::String m_description;
-
-  DestinationConfigurations m_destinationConfigurations;
-
   Aws::String m_exportArn;
 
   Aws::String m_name;
 
+  Aws::String m_description;
+
+  DataQuery m_dataQuery;
+
+  DestinationConfigurations m_destinationConfigurations;
+
   RefreshCadence m_refreshCadence;
-  bool m_dataQueryHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
-  bool m_destinationConfigurationsHasBeenSet = false;
   bool m_exportArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_dataQueryHasBeenSet = false;
+  bool m_destinationConfigurationsHasBeenSet = false;
   bool m_refreshCadenceHasBeenSet = false;
 };
 

@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iot-managed-integrations/IoTManagedIntegrationsPaginationBase.h>
 #include <aws/iot-managed-integrations/IoTManagedIntegrationsServiceClientModel.h>
+#include <aws/iot-managed-integrations/IoTManagedIntegrationsWaiter.h>
 #include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
 
 namespace Aws {
@@ -25,7 +26,8 @@ namespace IoTManagedIntegrations {
 class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<IoTManagedIntegrationsClient>,
-      public IoTManagedIntegrationsPaginationBase<IoTManagedIntegrationsClient> {
+      public IoTManagedIntegrationsPaginationBase<IoTManagedIntegrationsClient>,
+      public IoTManagedIntegrationsWaiter<IoTManagedIntegrationsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2438,6 +2440,12 @@ class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTManagedIntegrationsClient>;
   void init(const IoTManagedIntegrationsClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, IoTManagedIntegrationsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   IoTManagedIntegrationsClientConfiguration m_clientConfiguration;
   std::shared_ptr<IoTManagedIntegrationsEndpointProviderBase> m_endpointProvider;

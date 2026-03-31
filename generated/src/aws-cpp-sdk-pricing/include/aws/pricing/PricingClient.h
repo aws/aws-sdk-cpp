@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/pricing/PricingPaginationBase.h>
 #include <aws/pricing/PricingServiceClientModel.h>
+#include <aws/pricing/PricingWaiter.h>
 #include <aws/pricing/Pricing_EXPORTS.h>
 
 namespace Aws {
@@ -38,7 +39,8 @@ namespace Pricing {
  */
 class AWS_PRICING_API PricingClient : public Aws::Client::AWSJsonClient,
                                       public Aws::Client::ClientWithAsyncTemplateMethods<PricingClient>,
-                                      public PricingPaginationBase<PricingClient> {
+                                      public PricingPaginationBase<PricingClient>,
+                                      public PricingWaiter<PricingClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -263,6 +265,10 @@ class AWS_PRICING_API PricingClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PricingClient>;
   void init(const PricingClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, PricingError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   PricingClientConfiguration m_clientConfiguration;
   std::shared_ptr<PricingEndpointProviderBase> m_endpointProvider;

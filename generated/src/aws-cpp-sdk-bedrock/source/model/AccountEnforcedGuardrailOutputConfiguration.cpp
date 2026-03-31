@@ -58,6 +58,10 @@ AccountEnforcedGuardrailOutputConfiguration& AccountEnforcedGuardrailOutputConfi
     m_owner = ConfigurationOwnerMapper::GetConfigurationOwnerForName(jsonValue.GetString("owner"));
     m_ownerHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("modelEnforcement")) {
+    m_modelEnforcement = jsonValue.GetObject("modelEnforcement");
+    m_modelEnforcementHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -102,6 +106,10 @@ JsonValue AccountEnforcedGuardrailOutputConfiguration::Jsonize() const {
 
   if (m_ownerHasBeenSet) {
     payload.WithString("owner", ConfigurationOwnerMapper::GetNameForConfigurationOwner(m_owner));
+  }
+
+  if (m_modelEnforcementHasBeenSet) {
+    payload.WithObject("modelEnforcement", m_modelEnforcement.Jsonize());
   }
 
   return payload;

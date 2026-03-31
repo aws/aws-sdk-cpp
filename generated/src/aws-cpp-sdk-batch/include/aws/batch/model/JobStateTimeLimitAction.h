@@ -91,8 +91,12 @@ class JobStateTimeLimitAction {
   ///@{
   /**
    * <p>The action to take when a job is at the head of the job queue in the
-   * specified state for the specified period of time. The only supported value is
-   * <code>CANCEL</code>, which will cancel the job.</p>
+   * specified state for the specified period of time. For job queues connected to a
+   * <code>ECS</code>, <code>FARGATE</code> or <code>EKS</code> compute environment,
+   * the only supported value is <code>CANCEL</code>, which will cancel the job. For
+   * job queues connected to a <code>SAGEMAKER_TRAINING</code> service environment,
+   * the only supported value is <code>TERMINATE</code>, which will terminate the
+   * job.</p>
    */
   inline JobStateTimeLimitActionsAction GetAction() const { return m_action; }
   inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }

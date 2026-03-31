@@ -22,16 +22,16 @@ ListWorkersResult::ListWorkersResult(const Aws::AmazonWebServiceResult<JsonValue
 ListWorkersResult& ListWorkersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("nextToken")) {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("workers")) {
     Aws::Utils::Array<JsonView> workersJsonList = jsonValue.GetArray("workers");
     for (unsigned workersIndex = 0; workersIndex < workersJsonList.GetLength(); ++workersIndex) {
       m_workers.push_back(workersJsonList[workersIndex].AsObject());
     }
     m_workersHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("nextToken")) {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaPaginationBase.h>
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaServiceClientModel.h>
+#include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaWaiter.h>
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMedia_EXPORTS.h>
 
 namespace Aws {
@@ -20,7 +21,8 @@ namespace KinesisVideoArchivedMedia {
 class AWS_KINESISVIDEOARCHIVEDMEDIA_API KinesisVideoArchivedMediaClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoArchivedMediaClient>,
-      public KinesisVideoArchivedMediaPaginationBase<KinesisVideoArchivedMediaClient> {
+      public KinesisVideoArchivedMediaPaginationBase<KinesisVideoArchivedMediaClient>,
+      public KinesisVideoArchivedMediaWaiter<KinesisVideoArchivedMediaClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -550,6 +552,12 @@ class AWS_KINESISVIDEOARCHIVEDMEDIA_API KinesisVideoArchivedMediaClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoArchivedMediaClient>;
   void init(const KinesisVideoArchivedMediaClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, KinesisVideoArchivedMediaError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   KinesisVideoArchivedMediaClientConfiguration m_clientConfiguration;
   std::shared_ptr<KinesisVideoArchivedMediaEndpointProviderBase> m_endpointProvider;

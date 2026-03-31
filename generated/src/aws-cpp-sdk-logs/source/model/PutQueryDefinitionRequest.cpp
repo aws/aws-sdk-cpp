@@ -43,6 +43,14 @@ Aws::String PutQueryDefinitionRequest::SerializePayload() const {
     payload.WithString("clientToken", m_clientToken);
   }
 
+  if (m_parametersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> parametersJsonList(m_parameters.size());
+    for (unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex) {
+      parametersJsonList[parametersIndex].AsObject(m_parameters[parametersIndex].Jsonize());
+    }
+    payload.WithArray("parameters", std::move(parametersJsonList));
+  }
+
   return payload.View().WriteReadable();
 }
 

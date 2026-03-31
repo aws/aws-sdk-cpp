@@ -12,11 +12,14 @@
 #include <aws/omics/Omics_EXPORTS.h>
 #include <aws/omics/model/Accelerators.h>
 #include <aws/omics/model/CacheBehavior.h>
+#include <aws/omics/model/ConfigurationDetails.h>
+#include <aws/omics/model/NetworkingMode.h>
 #include <aws/omics/model/RunLogLevel.h>
 #include <aws/omics/model/RunLogLocation.h>
 #include <aws/omics/model/RunRetentionMode.h>
 #include <aws/omics/model/RunStatus.h>
 #include <aws/omics/model/StorageType.h>
+#include <aws/omics/model/VpcConfigResponse.h>
 #include <aws/omics/model/WorkflowType.h>
 
 #include <utility>
@@ -234,6 +237,23 @@ class GetRunResult {
   template <typename RunGroupIdT = Aws::String>
   GetRunResult& WithRunGroupId(RunGroupIdT&& value) {
     SetRunGroupId(std::forward<RunGroupIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The run's batch ID.</p>
+   */
+  inline const Aws::String& GetBatchId() const { return m_batchId; }
+  template <typename BatchIdT = Aws::String>
+  void SetBatchId(BatchIdT&& value) {
+    m_batchIdHasBeenSet = true;
+    m_batchId = std::forward<BatchIdT>(value);
+  }
+  template <typename BatchIdT = Aws::String>
+  GetRunResult& WithBatchId(BatchIdT&& value) {
+    SetBatchId(std::forward<BatchIdT>(value));
     return *this;
   }
   ///@}
@@ -649,6 +669,56 @@ class GetRunResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Configuration for run networking behavior. If absent, this will default to
+   * RESTRICTED.</p>
+   */
+  inline NetworkingMode GetNetworkingMode() const { return m_networkingMode; }
+  inline void SetNetworkingMode(NetworkingMode value) {
+    m_networkingModeHasBeenSet = true;
+    m_networkingMode = value;
+  }
+  inline GetRunResult& WithNetworkingMode(NetworkingMode value) {
+    SetNetworkingMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Configuration details for the workflow run.</p>
+   */
+  inline const ConfigurationDetails& GetConfiguration() const { return m_configuration; }
+  template <typename ConfigurationT = ConfigurationDetails>
+  void SetConfiguration(ConfigurationT&& value) {
+    m_configurationHasBeenSet = true;
+    m_configuration = std::forward<ConfigurationT>(value);
+  }
+  template <typename ConfigurationT = ConfigurationDetails>
+  GetRunResult& WithConfiguration(ConfigurationT&& value) {
+    SetConfiguration(std::forward<ConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>VPC configuration for the workflow run.</p>
+   */
+  inline const VpcConfigResponse& GetVpcConfig() const { return m_vpcConfig; }
+  template <typename VpcConfigT = VpcConfigResponse>
+  void SetVpcConfig(VpcConfigT&& value) {
+    m_vpcConfigHasBeenSet = true;
+    m_vpcConfig = std::forward<VpcConfigT>(value);
+  }
+  template <typename VpcConfigT = VpcConfigResponse>
+  GetRunResult& WithVpcConfig(VpcConfigT&& value) {
+    SetVpcConfig(std::forward<VpcConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -688,6 +758,8 @@ class GetRunResult {
   Aws::String m_name;
 
   Aws::String m_runGroupId;
+
+  Aws::String m_batchId;
 
   int m_priority{0};
 
@@ -737,6 +809,12 @@ class GetRunResult {
 
   Aws::String m_workflowUuid;
 
+  NetworkingMode m_networkingMode{NetworkingMode::NOT_SET};
+
+  ConfigurationDetails m_configuration;
+
+  VpcConfigResponse m_vpcConfig;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
@@ -751,6 +829,7 @@ class GetRunResult {
   bool m_roleArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_runGroupIdHasBeenSet = false;
+  bool m_batchIdHasBeenSet = false;
   bool m_priorityHasBeenSet = false;
   bool m_definitionHasBeenSet = false;
   bool m_digestHasBeenSet = false;
@@ -775,6 +854,9 @@ class GetRunResult {
   bool m_workflowOwnerIdHasBeenSet = false;
   bool m_workflowVersionNameHasBeenSet = false;
   bool m_workflowUuidHasBeenSet = false;
+  bool m_networkingModeHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

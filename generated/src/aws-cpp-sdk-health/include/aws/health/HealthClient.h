@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/health/HealthPaginationBase.h>
 #include <aws/health/HealthServiceClientModel.h>
+#include <aws/health/HealthWaiter.h>
 #include <aws/health/Health_EXPORTS.h>
 
 namespace Aws {
@@ -63,7 +64,8 @@ namespace Health {
  */
 class AWS_HEALTH_API HealthClient : public Aws::Client::AWSJsonClient,
                                     public Aws::Client::ClientWithAsyncTemplateMethods<HealthClient>,
-                                    public HealthPaginationBase<HealthClient> {
+                                    public HealthPaginationBase<HealthClient>,
+                                    public HealthWaiter<HealthClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -688,6 +690,10 @@ class AWS_HEALTH_API HealthClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<HealthClient>;
   void init(const HealthClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, HealthError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   HealthClientConfiguration m_clientConfiguration;
   std::shared_ptr<HealthEndpointProviderBase> m_endpointProvider;

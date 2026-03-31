@@ -18,6 +18,7 @@ namespace DefaultTargetCapacityTypeMapper {
 static const int spot_HASH = HashingUtils::HashString("spot");
 static const int on_demand_HASH = HashingUtils::HashString("on-demand");
 static const int capacity_block_HASH = HashingUtils::HashString("capacity-block");
+static const int reserved_capacity_HASH = HashingUtils::HashString("reserved-capacity");
 
 DefaultTargetCapacityType GetDefaultTargetCapacityTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ DefaultTargetCapacityType GetDefaultTargetCapacityTypeForName(const Aws::String&
     return DefaultTargetCapacityType::on_demand;
   } else if (hashCode == capacity_block_HASH) {
     return DefaultTargetCapacityType::capacity_block;
+  } else if (hashCode == reserved_capacity_HASH) {
+    return DefaultTargetCapacityType::reserved_capacity;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForDefaultTargetCapacityType(DefaultTargetCapacityType enumVa
       return "on-demand";
     case DefaultTargetCapacityType::capacity_block:
       return "capacity-block";
+    case DefaultTargetCapacityType::reserved_capacity:
+      return "reserved-capacity";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

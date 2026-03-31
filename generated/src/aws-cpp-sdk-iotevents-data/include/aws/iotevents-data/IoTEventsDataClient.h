@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotevents-data/IoTEventsDataPaginationBase.h>
 #include <aws/iotevents-data/IoTEventsDataServiceClientModel.h>
+#include <aws/iotevents-data/IoTEventsDataWaiter.h>
 #include <aws/iotevents-data/IoTEventsData_EXPORTS.h>
 
 namespace Aws {
@@ -24,7 +25,8 @@ namespace IoTEventsData {
  */
 class AWS_IOTEVENTSDATA_API IoTEventsDataClient : public Aws::Client::AWSJsonClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<IoTEventsDataClient>,
-                                                  public IoTEventsDataPaginationBase<IoTEventsDataClient> {
+                                                  public IoTEventsDataPaginationBase<IoTEventsDataClient>,
+                                                  public IoTEventsDataWaiter<IoTEventsDataClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -416,6 +418,12 @@ class AWS_IOTEVENTSDATA_API IoTEventsDataClient : public Aws::Client::AWSJsonCli
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTEventsDataClient>;
   void init(const IoTEventsDataClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, IoTEventsDataError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   IoTEventsDataClientConfiguration m_clientConfiguration;
   std::shared_ptr<IoTEventsDataEndpointProviderBase> m_endpointProvider;

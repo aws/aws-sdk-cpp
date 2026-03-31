@@ -12,6 +12,7 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/S3PaginationBase.h>
 #include <aws/s3/S3ServiceClientModel.h>
+#include <aws/s3/S3Waiter.h>
 #include <aws/s3/S3_EXPORTS.h>
 
 // TODO: temporary fix for naming conflicts on Windows.
@@ -39,7 +40,8 @@ static const unsigned MAX_EXPIRATION_SECONDS = 7 * 24 * 60 * 60;
  */
 class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient,
                             public Aws::Client::ClientWithAsyncTemplateMethods<S3Client>,
-                            public S3PaginationBase<S3Client> {
+                            public S3PaginationBase<S3Client>,
+                            public S3Waiter<S3Client> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();
@@ -437,11 +439,13 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient,
    * <code>CopyObject</code> operation.</p> <ul> <li> <p>If the source object that
    * you want to copy is in a directory bucket, you must have the <b>
    * <code>s3express:CreateSession</code> </b> permission in the <code>Action</code>
-   * element of a policy to read the object. By default, the session is in the
-   * <code>ReadWrite</code> mode. If you want to restrict the access, you can
-   * explicitly set the <code>s3express:SessionMode</code> condition key to
-   * <code>ReadOnly</code> on the copy source bucket.</p> </li> <li> <p>If the copy
-   * destination is a directory bucket, you must have the <b>
+   * element of a policy to read the object. If no session mode is specified, the
+   * session will be created with the maximum allowable privilege, attempting
+   * <code>ReadWrite</code> first, then <code>ReadOnly</code> if
+   * <code>ReadWrite</code> is not permitted. If you want to explicitly restrict the
+   * access to be read-only, you can set the <code>s3express:SessionMode</code>
+   * condition key to <code>ReadOnly</code> on the copy source bucket.</p> </li> <li>
+   * <p>If the copy destination is a directory bucket, you must have the <b>
    * <code>s3express:CreateSession</code> </b> permission in the <code>Action</code>
    * element of a policy to write the object to the destination. The
    * <code>s3express:SessionMode</code> condition key can't be set to
@@ -535,14 +539,28 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient,
    * buckets. For more information about these bucket types, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html">Creating,
    * configuring, and working with Amazon S3 buckets</a> in the <i>Amazon S3 User
-   * Guide</i>.</p>  <ul> <li> <p> <b>General purpose buckets</b> - If you send
-   * your <code>CreateBucket</code> request to the <code>s3.amazonaws.com</code>
-   * global endpoint, the request goes to the <code>us-east-1</code> Region. So the
-   * signature calculations in Signature Version 4 must use <code>us-east-1</code> as
-   * the Region, even if the location constraint in the request specifies another
-   * Region where the bucket is to be created. If you create a bucket in a Region
-   * other than US East (N. Virginia), your application must be able to handle 307
-   * redirect. For more information, see <a
+   * Guide</i>.</p> <p>General purpose buckets exist in a global namespace, which
+   * means that each bucket name must be unique across all Amazon Web Services
+   * accounts in all the Amazon Web Services Regions within a partition. A partition
+   * is a grouping of Regions. Amazon Web Services currently has four partitions:
+   * <code>aws</code> (Standard Regions), <code>aws-cn</code> (China Regions),
+   * <code>aws-us-gov</code> (Amazon Web Services GovCloud (US)), and
+   * <code>aws-eusc</code> (European Sovereign Cloud). When you create a general
+   * purpose bucket, you can choose to create a bucket in the shared global namespace
+   * or you can choose to create a bucket in your account regional namespace. Your
+   * account regional namespace is a subdivision of the global namespace that only
+   * your account can create buckets in. For more information on account regional
+   * namespaces, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/gpbucketnamespaces.html">Namespaces
+   * for general purpose buckets</a>.</p>  <ul> <li> <p> <b>General purpose
+   * buckets</b> - If you send your <code>CreateBucket</code> request to the
+   * <code>s3.amazonaws.com</code> global endpoint, the request goes to the
+   * <code>us-east-1</code> Region. So the signature calculations in Signature
+   * Version 4 must use <code>us-east-1</code> as the Region, even if the location
+   * constraint in the request specifies another Region where the bucket is to be
+   * created. If you create a bucket in a Region other than US East (N. Virginia),
+   * your application must be able to handle 307 redirect. For more information, see
+   * <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html">Virtual
    * hosting of buckets</a> in the <i>Amazon S3 User Guide</i>.</p> </li> <li> <p>
    * <b>Directory buckets </b> - For directory buckets, you must make requests for
@@ -1977,11 +1995,6 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient,
    *  <p>This operation is not supported for directory buckets.</p>
    * <p>Deletes tags from the general purpose bucket if attribute based access
    * control (ABAC) is not enabled for the bucket. When you <a
-   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
-   * ABAC for a general purpose bucket</a>, you can no longer use this operation for
-   * that bucket and must use <a
-   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
-   * instead.</p> <p>if ABAC is not enabled for the bucket. When you <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
    * ABAC for a general purpose bucket</a>, you can no longer use this operation for
    * that bucket and must use <a
@@ -3519,13 +3532,8 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient,
 
   /**
    *  <p>This operation is not supported for directory buckets.</p>
-   * <p>Returns the tag set associated with the general purpose bucket.</p> <p>if
-   * ABAC is not enabled for the bucket. When you <a
-   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
-   * ABAC for a general purpose bucket</a>, you can no longer use this operation for
-   * that bucket and must use <a
-   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListTagsForResource.html">ListTagsForResource</a>
-   * instead.</p> <p>To use this operation, you must have permission to perform the
+   * <p>Returns the tag set associated with the general purpose bucket.</p> <p>To use
+   * this operation, you must have permission to perform the
    * <code>s3:GetBucketTagging</code> action. By default, the bucket owner has this
    * permission and can grant this permission to others.</p> <p>
    * <code>GetBucketTagging</code> has the following special error:</p> <ul> <li>
@@ -4310,11 +4318,13 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient,
    * access permissions to your Amazon S3 resources</a> in the <i>Amazon S3 User
    * Guide</i>.</p> </li> <li> <p> <b>Directory bucket permissions</b> - You must
    * have the <b> <code>s3express:CreateSession</code> </b> permission in the
-   * <code>Action</code> element of a policy. By default, the session is in the
-   * <code>ReadWrite</code> mode. If you want to restrict the access, you can
-   * explicitly set the <code>s3express:SessionMode</code> condition key to
-   * <code>ReadOnly</code> on the bucket.</p> <p>For more information about example
-   * bucket policies, see <a
+   * <code>Action</code> element of a policy. If no session mode is specified, the
+   * session will be created with the maximum allowable privilege, attempting
+   * <code>ReadWrite</code> first, then <code>ReadOnly</code> if
+   * <code>ReadWrite</code> is not permitted. If you want to explicitly restrict the
+   * access to be read-only, you can set the <code>s3express:SessionMode</code>
+   * condition key to <code>ReadOnly</code> on the bucket.</p> <p>For more
+   * information about example bucket policies, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam-example-bucket-policies.html">Example
    * bucket policies for S3 Express One Zone</a> and <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam-identity-policies.html">Amazon
@@ -8039,8 +8049,10 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient,
    * operation.</p> <ul> <li> <p>If the source object that you want to copy is in a
    * directory bucket, you must have the <b> <code>s3express:CreateSession</code>
    * </b> permission in the <code>Action</code> element of a policy to read the
-   * object. By default, the session is in the <code>ReadWrite</code> mode. If you
-   * want to restrict the access, you can explicitly set the
+   * object. If no session mode is specified, the session will be created with the
+   * maximum allowable privilege, attempting <code>ReadWrite</code> first, then
+   * <code>ReadOnly</code> if <code>ReadWrite</code> is not permitted. If you want to
+   * explicitly restrict the access to be read-only, you can set the
    * <code>s3express:SessionMode</code> condition key to <code>ReadOnly</code> on the
    * copy source bucket.</p> </li> <li> <p>If the copy destination is a directory
    * bucket, you must have the <b> <code>s3express:CreateSession</code> </b>
@@ -8282,6 +8294,13 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<S3Client>;
   void init(const S3ClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, S3Error> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::String bucketName, Aws::Http::HttpMethod httpMethod) const;
+
   S3ClientConfiguration m_clientConfiguration;
   std::shared_ptr<S3EndpointProviderBase> m_endpointProvider;
 };

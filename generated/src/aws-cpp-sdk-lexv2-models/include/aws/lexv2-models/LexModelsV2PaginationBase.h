@@ -7,9 +7,11 @@
 
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
+#include <aws/lexv2-models/model/DescribeBotAnalyzerRecommendationPaginationTraits.h>
 #include <aws/lexv2-models/model/ListAggregatedUtterancesPaginationTraits.h>
 #include <aws/lexv2-models/model/ListBotAliasReplicasPaginationTraits.h>
 #include <aws/lexv2-models/model/ListBotAliasesPaginationTraits.h>
+#include <aws/lexv2-models/model/ListBotAnalyzerHistoryPaginationTraits.h>
 #include <aws/lexv2-models/model/ListBotLocalesPaginationTraits.h>
 #include <aws/lexv2-models/model/ListBotRecommendationsPaginationTraits.h>
 #include <aws/lexv2-models/model/ListBotResourceGenerationsPaginationTraits.h>
@@ -47,6 +49,18 @@ template <typename DerivedClient>
 class LexModelsV2PaginationBase {
  public:
   /**
+   * Create a paginator for DescribeBotAnalyzerRecommendation operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeBotAnalyzerRecommendationRequest,
+                                    Pagination::DescribeBotAnalyzerRecommendationPaginationTraits<DerivedClient>>
+  DescribeBotAnalyzerRecommendationPaginator(const Model::DescribeBotAnalyzerRecommendationRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeBotAnalyzerRecommendationRequest,
+                                             Pagination::DescribeBotAnalyzerRecommendationPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
    * Create a paginator for ListAggregatedUtterances operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAggregatedUtterancesRequest,
@@ -78,6 +92,18 @@ class LexModelsV2PaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBotAliasReplicasRequest,
                                              Pagination::ListBotAliasReplicasPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListBotAnalyzerHistory operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBotAnalyzerHistoryRequest,
+                                    Pagination::ListBotAnalyzerHistoryPaginationTraits<DerivedClient>>
+  ListBotAnalyzerHistoryPaginator(const Model::ListBotAnalyzerHistoryRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBotAnalyzerHistoryRequest,
+                                             Pagination::ListBotAnalyzerHistoryPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

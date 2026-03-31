@@ -19,18 +19,6 @@ Aws::String ListSessionActionsRequest::SerializePayload() const { return {}; }
 
 void ListSessionActionsRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
-  if (m_sessionIdHasBeenSet) {
-    ss << m_sessionId;
-    uri.AddQueryStringParameter("sessionId", ss.str());
-    ss.str("");
-  }
-
-  if (m_taskIdHasBeenSet) {
-    ss << m_taskId;
-    uri.AddQueryStringParameter("taskId", ss.str());
-    ss.str("");
-  }
-
   if (m_nextTokenHasBeenSet) {
     ss << m_nextToken;
     uri.AddQueryStringParameter("nextToken", ss.str());
@@ -40,6 +28,18 @@ void ListSessionActionsRequest::AddQueryStringParameters(URI& uri) const {
   if (m_maxResultsHasBeenSet) {
     ss << m_maxResults;
     uri.AddQueryStringParameter("maxResults", ss.str());
+    ss.str("");
+  }
+
+  if (m_sessionIdHasBeenSet) {
+    ss << m_sessionId;
+    uri.AddQueryStringParameter("sessionId", ss.str());
+    ss.str("");
+  }
+
+  if (m_taskIdHasBeenSet) {
+    ss << m_taskId;
+    uri.AddQueryStringParameter("taskId", ss.str());
     ss.str("");
   }
 }

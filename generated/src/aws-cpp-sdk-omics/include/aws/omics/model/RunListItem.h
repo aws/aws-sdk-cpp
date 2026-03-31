@@ -106,6 +106,24 @@ class RunListItem {
 
   ///@{
   /**
+   * <p>The run's batch ID.</p>
+   */
+  inline const Aws::String& GetBatchId() const { return m_batchId; }
+  inline bool BatchIdHasBeenSet() const { return m_batchIdHasBeenSet; }
+  template <typename BatchIdT = Aws::String>
+  void SetBatchId(BatchIdT&& value) {
+    m_batchIdHasBeenSet = true;
+    m_batchId = std::forward<BatchIdT>(value);
+  }
+  template <typename BatchIdT = Aws::String>
+  RunListItem& WithBatchId(BatchIdT&& value) {
+    SetBatchId(std::forward<BatchIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The run's name.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -252,6 +270,8 @@ class RunListItem {
 
   Aws::String m_workflowId;
 
+  Aws::String m_batchId;
+
   Aws::String m_name;
 
   int m_priority{0};
@@ -271,6 +291,7 @@ class RunListItem {
   bool m_idHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_workflowIdHasBeenSet = false;
+  bool m_batchIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_priorityHasBeenSet = false;
   bool m_storageCapacityHasBeenSet = false;

@@ -3395,7 +3395,7 @@
                 "NodeJsVersion": {
                     "target": "com.amazonaws.gamelift#NodeJsVersion",
                     "traits": {
-                        "smithy.api#documentation": "<p>The Node.js version used for execution of your Realtime script. The valid values are\n            <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is <code>10.x</code>.\n            This value cannot be updated later.\n        </p>"
+                        "smithy.api#documentation": "<p>The Node.js version used for execution of your Realtime script. The valid values are\n            <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is <code>10.x</code>.\n            This value cannot be updated later.\n        </p>\n         <note>\n            <p>Node.js 10 will reach end of support on September 30, 2026. See more details \n            in the <a href=\"http://aws.amazon.com/gamelift/faq/nodejs10/\">Node.js 10 FAQs</a>. For migration guidance, \n            see <a href=\"https://docs.aws.amazon.com/gamelift/latest/realtimeguide/realtime-script.html#realtime-script-nodejs-migration\">\n                Migrating from Node.js 10 to 24</a>.</p>\n         </note>"
                     }
                 }
             },
@@ -16032,7 +16032,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>\n            <b>This API works with the following fleet types:</b> Anywhere</p>\n         <p>Lists all custom and Amazon Web Services locations where Amazon GameLift Servers can host game servers. </p>\n         <p>Note that if you call this API using a location that doesn't have a service endpoint,\n            such as one that can only be a remote location in a multi-location fleet, the API\n            returns an error.</p>\n         <p>Consult the table of supported locations in <a href=\"https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html\">Amazon GameLift Servers service\n                locations</a> to identify home Regions that support single and multi-location\n            fleets.</p>\n         <p>\n            <b>Learn more</b>\n         </p>\n         <p>\n            <a href=\"https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html\">Service locations</a>\n         </p>",
+                "smithy.api#documentation": "<p>\n            <b>This API works with the following fleet types:</b> EC2, Anywhere, Container</p>\n         <p>Lists all custom and Amazon Web Services locations where Amazon GameLift Servers can host game servers.\n            This operation also returns UDP ping beacon information for\n            locations, which you can use to measure network latency between player devices\n            and potential hosting locations.</p>\n         <p>\n            <b>Learn more</b>\n         </p>\n         <p>\n            <a href=\"https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html\">Service locations</a>\n         </p>",
                 "smithy.api#paginated": {
                     "inputToken": "NextToken",
                     "outputToken": "NextToken",
@@ -16353,7 +16353,7 @@
                 "PingBeacon": {
                     "target": "com.amazonaws.gamelift#PingBeacon",
                     "traits": {
-                        "smithy.api#documentation": "<p>Information about the UDP ping beacon for this location. </p>"
+                        "smithy.api#documentation": "<p>Information about the UDP ping beacon for this location. Ping beacons are fixed endpoints that you can use to measure network\n                latency between a player device and an Amazon GameLift Servers hosting location.</p>"
                     }
                 }
             },
@@ -16546,7 +16546,7 @@
                 "PlayerSessionId": {
                     "target": "com.amazonaws.gamelift#PlayerSessionId",
                     "traits": {
-                        "smithy.api#documentation": "<p>A unique identifier for a player session</p>"
+                        "smithy.api#documentation": "<p>A unique identifier for a player session. PlayerSessionId will only be populated for player sessions that are in ACTIVE or RESERVED status when the ticket is completed.</p>"
                     }
                 }
             },
@@ -17235,7 +17235,7 @@
                 "UDPEndpoint": {
                     "target": "com.amazonaws.gamelift#UDPEndpoint",
                     "traits": {
-                        "smithy.api#documentation": "<p>The domain name and port of the UDP ping beacon. </p>"
+                        "smithy.api#documentation": "<p>The domain name and port of the UDP ping beacon. Your\n                game client can send UDP messages to this endpoint and receive responses to measure\n                network latency.</p>"
                     }
                 }
             },
@@ -18740,7 +18740,7 @@
                 "NodeJsVersion": {
                     "target": "com.amazonaws.gamelift#NodeJsVersion",
                     "traits": {
-                        "smithy.api#documentation": "<p>The Node.js version used for execution of your Realtime script. The valid values are\n            <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is <code>10.x</code>.\n            This value cannot be updated later.\n        </p>"
+                        "smithy.api#documentation": "<p>The Node.js version used for execution of your Realtime script. The valid values are\n            <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is <code>10.x</code>.\n            This value cannot be updated later.\n        </p>\n         <note>\n            <p>Node.js 10 will reach end of support on September 30, 2026. See more details \n            in the <a href=\"http://aws.amazon.com/gamelift/faq/nodejs10/\">Node.js 10 FAQs</a>. For migration guidance, \n            see <a href=\"https://docs.aws.amazon.com/gamelift/latest/realtimeguide/realtime-script.html#realtime-script-nodejs-migration\">\n                Migrating from Node.js 10 to 24</a>.</p>\n         </note>"
                     }
                 }
             },
@@ -20013,13 +20013,13 @@
                 "Domain": {
                     "target": "com.amazonaws.gamelift#NonZeroAndMaxString",
                     "traits": {
-                        "smithy.api#documentation": "<p>The domain name of the UDP endpoint. </p>"
+                        "smithy.api#documentation": "<p>The domain name of the UDP endpoint.</p>"
                     }
                 },
                 "Port": {
                     "target": "com.amazonaws.gamelift#PositiveInteger",
                     "traits": {
-                        "smithy.api#documentation": "<p>The port number of the UDP endpoint. </p>"
+                        "smithy.api#documentation": "<p>The port number of the UDP endpoint. For Amazon GameLift Servers ping\n                beacons, this is typically port 7770.</p>"
                     }
                 }
             },

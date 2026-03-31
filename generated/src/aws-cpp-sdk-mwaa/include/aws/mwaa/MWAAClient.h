@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mwaa/MWAAPaginationBase.h>
 #include <aws/mwaa/MWAAServiceClientModel.h>
+#include <aws/mwaa/MWAAWaiter.h>
 #include <aws/mwaa/MWAA_EXPORTS.h>
 
 namespace Aws {
@@ -52,7 +53,8 @@ namespace MWAA {
  */
 class AWS_MWAA_API MWAAClient : public Aws::Client::AWSJsonClient,
                                 public Aws::Client::ClientWithAsyncTemplateMethods<MWAAClient>,
-                                public MWAAPaginationBase<MWAAClient> {
+                                public MWAAPaginationBase<MWAAClient>,
+                                public MWAAWaiter<MWAAClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -411,6 +413,12 @@ class AWS_MWAA_API MWAAClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MWAAClient>;
   void init(const MWAAClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MWAAError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   MWAAClientConfiguration m_clientConfiguration;
   std::shared_ptr<MWAAEndpointProviderBase> m_endpointProvider;

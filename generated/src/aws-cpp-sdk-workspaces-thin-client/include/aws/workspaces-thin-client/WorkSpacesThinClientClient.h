@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/workspaces-thin-client/WorkSpacesThinClientPaginationBase.h>
 #include <aws/workspaces-thin-client/WorkSpacesThinClientServiceClientModel.h>
+#include <aws/workspaces-thin-client/WorkSpacesThinClientWaiter.h>
 #include <aws/workspaces-thin-client/WorkSpacesThinClient_EXPORTS.h>
 
 namespace Aws {
@@ -36,7 +37,8 @@ namespace WorkSpacesThinClient {
 class AWS_WORKSPACESTHINCLIENT_API WorkSpacesThinClientClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<WorkSpacesThinClientClient>,
-      public WorkSpacesThinClientPaginationBase<WorkSpacesThinClientClient> {
+      public WorkSpacesThinClientPaginationBase<WorkSpacesThinClientClient>,
+      public WorkSpacesThinClientWaiter<WorkSpacesThinClientClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -513,6 +515,12 @@ class AWS_WORKSPACESTHINCLIENT_API WorkSpacesThinClientClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<WorkSpacesThinClientClient>;
   void init(const WorkSpacesThinClientClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, WorkSpacesThinClientError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   WorkSpacesThinClientClientConfiguration m_clientConfiguration;
   std::shared_ptr<WorkSpacesThinClientEndpointProviderBase> m_endpointProvider;

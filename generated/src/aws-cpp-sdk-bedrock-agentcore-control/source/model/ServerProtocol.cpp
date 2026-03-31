@@ -18,6 +18,7 @@ namespace ServerProtocolMapper {
 static const int MCP_HASH = HashingUtils::HashString("MCP");
 static const int HTTP_HASH = HashingUtils::HashString("HTTP");
 static const int A2A_HASH = HashingUtils::HashString("A2A");
+static const int AGUI_HASH = HashingUtils::HashString("AGUI");
 
 ServerProtocol GetServerProtocolForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ ServerProtocol GetServerProtocolForName(const Aws::String& name) {
     return ServerProtocol::HTTP;
   } else if (hashCode == A2A_HASH) {
     return ServerProtocol::A2A;
+  } else if (hashCode == AGUI_HASH) {
+    return ServerProtocol::AGUI;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForServerProtocol(ServerProtocol enumValue) {
       return "HTTP";
     case ServerProtocol::A2A:
       return "A2A";
+    case ServerProtocol::AGUI:
+      return "AGUI";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

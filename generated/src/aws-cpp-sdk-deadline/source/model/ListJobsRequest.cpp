@@ -19,12 +19,6 @@ Aws::String ListJobsRequest::SerializePayload() const { return {}; }
 
 void ListJobsRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
-  if (m_principalIdHasBeenSet) {
-    ss << m_principalId;
-    uri.AddQueryStringParameter("principalId", ss.str());
-    ss.str("");
-  }
-
   if (m_nextTokenHasBeenSet) {
     ss << m_nextToken;
     uri.AddQueryStringParameter("nextToken", ss.str());
@@ -34,6 +28,12 @@ void ListJobsRequest::AddQueryStringParameters(URI& uri) const {
   if (m_maxResultsHasBeenSet) {
     ss << m_maxResults;
     uri.AddQueryStringParameter("maxResults", ss.str());
+    ss.str("");
+  }
+
+  if (m_principalIdHasBeenSet) {
+    ss << m_principalId;
+    uri.AddQueryStringParameter("principalId", ss.str());
     ss.str("");
   }
 }

@@ -275,6 +275,12 @@
                     "traits": {
                         "smithy.api#enumValue": "accessDenied"
                     }
+                },
+                "SOURCE_MODIFIED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "sourceModified"
+                    }
                 }
             }
         },
@@ -2513,6 +2519,25 @@
                 "smithy.api#retryable": {}
             }
         },
+        "com.amazonaws.gameliftstreams#Ipv4CidrBlock": {
+            "type": "string",
+            "traits": {
+                "smithy.api#pattern": "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])/([0-9]|[1-2][0-9]|3[0-2])$"
+            }
+        },
+        "com.amazonaws.gameliftstreams#Ipv4CidrBlockList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.gameliftstreams#Ipv4CidrBlock"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 5
+                },
+                "smithy.api#uniqueItems": {}
+            }
+        },
         "com.amazonaws.gameliftstreams#ListApplications": {
             "type": "operation",
             "input": {
@@ -3071,6 +3096,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>This indicates the maximum capacity that the service can allocate for you. Newly created streams may take a few minutes to start. Capacity is released back to the service when idle. You pay for capacity that is allocated to you until it is released.</p>"
                     }
+                },
+                "VpcTransitConfiguration": {
+                    "target": "com.amazonaws.gameliftstreams#VpcTransitConfiguration",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Configuration for connecting the stream group to resources in your Amazon VPC using AWS Transit Gateway. This setting is optional. If specified, Amazon GameLift Streams creates a Transit Gateway to enable private network connectivity between the service VPC and your VPC. The VPC ID cannot be changed after the stream group is created, but you can update the CIDR blocks by calling <a href=\"https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UpdateStreamGroup.html\">UpdateStreamGroup</a>.</p>"
+                    }
                 }
             },
             "traits": {
@@ -3175,6 +3206,20 @@
                     "traits": {
                         "aws.cloudformation#cfnExcludeProperty": {},
                         "smithy.api#documentation": "<p>This value is the amount of allocated capacity that is not currently streaming. It represents the stream group's ability to respond immediately to new stream requests with near-instant startup time.</p>"
+                    }
+                },
+                "InternalVpcIpv4CidrBlock": {
+                    "target": "com.amazonaws.gameliftstreams#Ipv4CidrBlock",
+                    "traits": {
+                        "aws.cloudformation#cfnExcludeProperty": {},
+                        "smithy.api#documentation": "<p>The CIDR block of the service VPC for this location. Add this CIDR block to your VPC route table to enable traffic routing through the Transit Gateway.</p>"
+                    }
+                },
+                "VpcTransitConfiguration": {
+                    "target": "com.amazonaws.gameliftstreams#VpcTransitConfigurationResponse",
+                    "traits": {
+                        "aws.cloudformation#cfnExcludeProperty": {},
+                        "smithy.api#documentation": "<p>The VPC transit configuration for this location, including the Transit Gateway details needed to complete the VPC attachment setup.</p>"
                     }
                 }
             },
@@ -3838,6 +3883,30 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "gen6n_pro_win2022"
+                    }
+                },
+                "gen6n_small_win2022": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "gen6n_small_win2022"
+                    }
+                },
+                "gen6n_medium_win2022": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "gen6n_medium_win2022"
+                    }
+                },
+                "gen6e_pro": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "gen6e_pro"
+                    }
+                },
+                "gen6e_pro_win2022": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "gen6e_pro_win2022"
                     }
                 }
             }
@@ -4935,6 +5004,69 @@
                 "smithy.api#documentation": "<p>One or more parameter values in the request fail to satisfy the specified constraints. Correct the invalid parameter values before retrying the request.</p>",
                 "smithy.api#error": "client",
                 "smithy.api#httpError": 400
+            }
+        },
+        "com.amazonaws.gameliftstreams#VpcId": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 32
+                }
+            }
+        },
+        "com.amazonaws.gameliftstreams#VpcTransitConfiguration": {
+            "type": "structure",
+            "members": {
+                "VpcId": {
+                    "target": "com.amazonaws.gameliftstreams#VpcId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ID of the Amazon VPC that you want to connect to the stream group. The VPC must be in the same Amazon Web Services account as the stream group. This value cannot be changed after the stream group is created.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "Ipv4CidrBlocks": {
+                    "target": "com.amazonaws.gameliftstreams#Ipv4CidrBlockList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A list of IPv4 CIDR blocks in your VPC that you want the stream group to be able to access. You can specify up to 5 CIDR blocks. The CIDR blocks must be valid subsets of the VPC's CIDR blocks and cannot overlap with the service VPC CIDR block.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Configuration for connecting a stream group location to resources in your Amazon VPC using AWS Transit Gateway. When you specify a VPC transit configuration, Amazon GameLift Streams creates a Transit Gateway and shares it with your account using AWS Resource Access Manager. After the stream group is active, you must complete the setup by accepting the resource share, creating a VPC attachment, and configuring routing.</p>"
+            }
+        },
+        "com.amazonaws.gameliftstreams#VpcTransitConfigurationResponse": {
+            "type": "structure",
+            "members": {
+                "VpcId": {
+                    "target": "com.amazonaws.gameliftstreams#VpcId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ID of the Amazon VPC that is connected to the stream group.</p>"
+                    }
+                },
+                "Ipv4CidrBlocks": {
+                    "target": "com.amazonaws.gameliftstreams#Ipv4CidrBlockList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The IPv4 CIDR blocks in your VPC that the stream group can access.</p>"
+                    }
+                },
+                "TransitGatewayId": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ID of the Transit Gateway that Amazon GameLift Streams created for this VPC connection. Use this ID when creating your VPC attachment.</p>"
+                    }
+                },
+                "TransitGatewayResourceShareArn": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ARN of the AWS Resource Access Manager resource share for the Transit Gateway. You must accept this resource share before you can create a VPC attachment.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The VPC transit configuration details for a stream group location, including the Transit Gateway information needed to complete the VPC attachment setup.</p>"
             }
         },
         "com.amazonaws.gameliftstreams#WebSdkProtocolUrl": {

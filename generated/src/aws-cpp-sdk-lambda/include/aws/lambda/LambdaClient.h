@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lambda/LambdaPaginationBase.h>
 #include <aws/lambda/LambdaServiceClientModel.h>
+#include <aws/lambda/LambdaWaiter.h>
 #include <aws/lambda/Lambda_EXPORTS.h>
 
 namespace Aws {
@@ -70,7 +71,8 @@ namespace Lambda {
  */
 class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient,
                                     public Aws::Client::ClientWithAsyncTemplateMethods<LambdaClient>,
-                                    public LambdaPaginationBase<LambdaClient> {
+                                    public LambdaPaginationBase<LambdaClient>,
+                                    public LambdaWaiter<LambdaClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2921,6 +2923,12 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<LambdaClient>;
   void init(const LambdaClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, LambdaError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   LambdaClientConfiguration m_clientConfiguration;
   std::shared_ptr<LambdaEndpointProviderBase> m_endpointProvider;

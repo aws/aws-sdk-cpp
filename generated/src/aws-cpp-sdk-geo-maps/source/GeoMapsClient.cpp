@@ -140,6 +140,44 @@ void GeoMapsClient::OverrideEndpoint(const Aws::String& endpoint) {
   m_clientConfiguration.endpointOverride = endpoint;
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
+GeoMapsClient::InvokeOperationOutcome GeoMapsClient::InvokeServiceOperation(
+    const AmazonWebServiceRequest& request, const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+    Aws::Http::HttpMethod httpMethod) const {
+  auto operationName = request.GetServiceRequestName();
+  auto serviceName = GetServiceClientName();
+
+  AWS_OPERATION_GUARD_DYNAMIC(operationName);
+
+  AWS_OPERATION_CHECK_PTR_DYNAMIC(m_endpointProvider, operationName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR_DYNAMIC(m_telemetryProvider, operationName, CoreErrors, CoreErrors::NOT_INITIALIZED);
+
+  auto tracer = m_telemetryProvider->getTracer(serviceName, {});
+  auto meter = m_telemetryProvider->getMeter(serviceName, {});
+  AWS_OPERATION_CHECK_PTR_DYNAMIC(meter, operationName, CoreErrors, CoreErrors::NOT_INITIALIZED);
+
+  auto span = tracer->CreateSpan(Aws::String(serviceName) + "." + operationName,
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+
+  return TracingUtils::MakeCallWithTiming<InvokeOperationOutcome>(
+      [&]() -> InvokeOperationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
+
+        AWS_OPERATION_CHECK_SUCCESS_DYNAMIC(endpointResolutionOutcome, operationName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                            endpointResolutionOutcome.GetError().GetMessage());
+
+        resolveUri(endpointResolutionOutcome);
+
+        return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, Aws::Auth::SIGV4_SIGNER)};
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
+}
 
 GetGlyphsOutcome GeoMapsClient::GetGlyphs(const GetGlyphsRequest& request) const {
   AWS_OPERATION_GUARD(GetGlyphs);
@@ -175,8 +213,8 @@ GetGlyphsOutcome GeoMapsClient::GetGlyphs(const GetGlyphsRequest& request) const
         endpointResolutionOutcome.GetResult().AddPathSegments("/glyphs/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFontStack());
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFontUnicodeRange());
-        return GetGlyphsOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetGlyphsOutcome(result.GetResultWithOwnership()) : GetGlyphsOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -230,8 +268,8 @@ GetSpritesOutcome GeoMapsClient::GetSprites(const GetSpritesRequest& request) co
         endpointResolutionOutcome.GetResult().AddPathSegment(VariantMapper::GetNameForVariant(request.GetVariant()));
         endpointResolutionOutcome.GetResult().AddPathSegments("/sprites/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFileName());
-        return GetSpritesOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetSpritesOutcome(result.GetResultWithOwnership()) : GetSpritesOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -276,8 +314,9 @@ GetStaticMapOutcome GeoMapsClient::GetStaticMap(const GetStaticMapRequest& reque
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/static/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFileName());
-        return GetStaticMapOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetStaticMapOutcome(result.GetResultWithOwnership())
+                                  : GetStaticMapOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -313,8 +352,9 @@ GetStyleDescriptorOutcome GeoMapsClient::GetStyleDescriptor(const GetStyleDescri
         endpointResolutionOutcome.GetResult().AddPathSegments("/styles/");
         endpointResolutionOutcome.GetResult().AddPathSegment(MapStyleMapper::GetNameForMapStyle(request.GetStyle()));
         endpointResolutionOutcome.GetResult().AddPathSegments("/descriptor");
-        return GetStyleDescriptorOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetStyleDescriptorOutcome(result.GetResultWithOwnership())
+                                  : GetStyleDescriptorOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -367,8 +407,8 @@ GetTileOutcome GeoMapsClient::GetTile(const GetTileRequest& request) const {
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetZ());
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetX());
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetY());
-        return GetTileOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetTileOutcome(result.GetResultWithOwnership()) : GetTileOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

@@ -19,6 +19,7 @@ using namespace Aws;
 HttpPayloadTraitsResult::HttpPayloadTraitsResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) { *this = std::move(result); }
 
 HttpPayloadTraitsResult& HttpPayloadTraitsResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   m_blob = result.TakeOwnershipOfPayload();
   m_blobHasBeenSet = true;
 

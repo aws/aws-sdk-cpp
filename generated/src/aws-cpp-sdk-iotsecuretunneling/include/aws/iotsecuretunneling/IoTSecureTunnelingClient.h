@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotsecuretunneling/IoTSecureTunnelingPaginationBase.h>
 #include <aws/iotsecuretunneling/IoTSecureTunnelingServiceClientModel.h>
+#include <aws/iotsecuretunneling/IoTSecureTunnelingWaiter.h>
 #include <aws/iotsecuretunneling/IoTSecureTunneling_EXPORTS.h>
 
 namespace Aws {
@@ -23,7 +24,8 @@ namespace IoTSecureTunneling {
  */
 class AWS_IOTSECURETUNNELING_API IoTSecureTunnelingClient : public Aws::Client::AWSJsonClient,
                                                             public Aws::Client::ClientWithAsyncTemplateMethods<IoTSecureTunnelingClient>,
-                                                            public IoTSecureTunnelingPaginationBase<IoTSecureTunnelingClient> {
+                                                            public IoTSecureTunnelingPaginationBase<IoTSecureTunnelingClient>,
+                                                            public IoTSecureTunnelingWaiter<IoTSecureTunnelingClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -316,6 +318,10 @@ class AWS_IOTSECURETUNNELING_API IoTSecureTunnelingClient : public Aws::Client::
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTSecureTunnelingClient>;
   void init(const IoTSecureTunnelingClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, IoTSecureTunnelingError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   IoTSecureTunnelingClientConfiguration m_clientConfiguration;
   std::shared_ptr<IoTSecureTunnelingEndpointProviderBase> m_endpointProvider;

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cleanrooms/CleanRoomsPaginationBase.h>
 #include <aws/cleanrooms/CleanRoomsServiceClientModel.h>
+#include <aws/cleanrooms/CleanRoomsWaiter.h>
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -30,7 +31,8 @@ namespace CleanRooms {
  */
 class AWS_CLEANROOMS_API CleanRoomsClient : public Aws::Client::AWSJsonClient,
                                             public Aws::Client::ClientWithAsyncTemplateMethods<CleanRoomsClient>,
-                                            public CleanRoomsPaginationBase<CleanRoomsClient> {
+                                            public CleanRoomsPaginationBase<CleanRoomsClient>,
+                                            public CleanRoomsWaiter<CleanRoomsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2583,6 +2585,12 @@ class AWS_CLEANROOMS_API CleanRoomsClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CleanRoomsClient>;
   void init(const CleanRoomsClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CleanRoomsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   CleanRoomsClientConfiguration m_clientConfiguration;
   std::shared_ptr<CleanRoomsEndpointProviderBase> m_endpointProvider;

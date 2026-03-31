@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/transcribe/TranscribeServicePaginationBase.h>
 #include <aws/transcribe/TranscribeServiceServiceClientModel.h>
+#include <aws/transcribe/TranscribeServiceWaiter.h>
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
 
 namespace Aws {
@@ -28,7 +29,8 @@ namespace TranscribeService {
  */
 class AWS_TRANSCRIBESERVICE_API TranscribeServiceClient : public Aws::Client::AWSJsonClient,
                                                           public Aws::Client::ClientWithAsyncTemplateMethods<TranscribeServiceClient>,
-                                                          public TranscribeServicePaginationBase<TranscribeServiceClient> {
+                                                          public TranscribeServicePaginationBase<TranscribeServiceClient>,
+                                                          public TranscribeServiceWaiter<TranscribeServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1546,6 +1548,10 @@ class AWS_TRANSCRIBESERVICE_API TranscribeServiceClient : public Aws::Client::AW
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<TranscribeServiceClient>;
   void init(const TranscribeServiceClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, TranscribeServiceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   TranscribeServiceClientConfiguration m_clientConfiguration;
   std::shared_ptr<TranscribeServiceEndpointProviderBase> m_endpointProvider;

@@ -5,9 +5,11 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lightsail/LightsailRequest.h>
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/lightsail/model/ContactProtocol.h>
+#include <aws/lightsail/model/Tag.h>
 
 #include <utility>
 
@@ -86,12 +88,41 @@ class CreateContactMethodRequest : public LightsailRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The tag keys and optional values to add to the contact method during
+   * create.</p> <p>Use the <code>TagResource</code> action to tag a resource after
+   * it's created.</p>
+   */
+  inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Vector<Tag>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Vector<Tag>>
+  CreateContactMethodRequest& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsT = Tag>
+  CreateContactMethodRequest& AddTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace_back(std::forward<TagsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ContactProtocol m_protocol{ContactProtocol::NOT_SET};
 
   Aws::String m_contactEndpoint;
+
+  Aws::Vector<Tag> m_tags;
   bool m_protocolHasBeenSet = false;
   bool m_contactEndpointHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/forecast/ForecastServicePaginationBase.h>
 #include <aws/forecast/ForecastServiceServiceClientModel.h>
+#include <aws/forecast/ForecastServiceWaiter.h>
 #include <aws/forecast/ForecastService_EXPORTS.h>
 
 namespace Aws {
@@ -19,7 +20,8 @@ namespace ForecastService {
  */
 class AWS_FORECASTSERVICE_API ForecastServiceClient : public Aws::Client::AWSJsonClient,
                                                       public Aws::Client::ClientWithAsyncTemplateMethods<ForecastServiceClient>,
-                                                      public ForecastServicePaginationBase<ForecastServiceClient> {
+                                                      public ForecastServicePaginationBase<ForecastServiceClient>,
+                                                      public ForecastServiceWaiter<ForecastServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2271,6 +2273,10 @@ class AWS_FORECASTSERVICE_API ForecastServiceClient : public Aws::Client::AWSJso
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ForecastServiceClient>;
   void init(const ForecastServiceClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ForecastServiceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   ForecastServiceClientConfiguration m_clientConfiguration;
   std::shared_ptr<ForecastServiceEndpointProviderBase> m_endpointProvider;

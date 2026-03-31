@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/amplifyuibuilder/AmplifyUIBuilderPaginationBase.h>
 #include <aws/amplifyuibuilder/AmplifyUIBuilderServiceClientModel.h>
+#include <aws/amplifyuibuilder/AmplifyUIBuilderWaiter.h>
 #include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -32,7 +33,8 @@ namespace AmplifyUIBuilder {
  */
 class AWS_AMPLIFYUIBUILDER_API AmplifyUIBuilderClient : public Aws::Client::AWSJsonClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<AmplifyUIBuilderClient>,
-                                                        public AmplifyUIBuilderPaginationBase<AmplifyUIBuilderClient> {
+                                                        public AmplifyUIBuilderPaginationBase<AmplifyUIBuilderClient>,
+                                                        public AmplifyUIBuilderWaiter<AmplifyUIBuilderClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -815,6 +817,12 @@ class AWS_AMPLIFYUIBUILDER_API AmplifyUIBuilderClient : public Aws::Client::AWSJ
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AmplifyUIBuilderClient>;
   void init(const AmplifyUIBuilderClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, AmplifyUIBuilderError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   AmplifyUIBuilderClientConfiguration m_clientConfiguration;
   std::shared_ptr<AmplifyUIBuilderEndpointProviderBase> m_endpointProvider;

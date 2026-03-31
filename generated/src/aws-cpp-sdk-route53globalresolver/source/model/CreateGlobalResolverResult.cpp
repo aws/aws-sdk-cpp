@@ -46,12 +46,23 @@ CreateGlobalResolverResult& CreateGlobalResolverResult::operator=(const Aws::Ama
     m_dnsName = jsonValue.GetString("dnsName");
     m_dnsNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ipAddressType")) {
+    m_ipAddressType = GlobalResolverIpAddressTypeMapper::GetGlobalResolverIpAddressTypeForName(jsonValue.GetString("ipAddressType"));
+    m_ipAddressTypeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ipv4Addresses")) {
     Aws::Utils::Array<JsonView> ipv4AddressesJsonList = jsonValue.GetArray("ipv4Addresses");
     for (unsigned ipv4AddressesIndex = 0; ipv4AddressesIndex < ipv4AddressesJsonList.GetLength(); ++ipv4AddressesIndex) {
       m_ipv4Addresses.push_back(ipv4AddressesJsonList[ipv4AddressesIndex].AsString());
     }
     m_ipv4AddressesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ipv6Addresses")) {
+    Aws::Utils::Array<JsonView> ipv6AddressesJsonList = jsonValue.GetArray("ipv6Addresses");
+    for (unsigned ipv6AddressesIndex = 0; ipv6AddressesIndex < ipv6AddressesJsonList.GetLength(); ++ipv6AddressesIndex) {
+      m_ipv6Addresses.push_back(ipv6AddressesJsonList[ipv6AddressesIndex].AsString());
+    }
+    m_ipv6AddressesHasBeenSet = true;
   }
   if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");

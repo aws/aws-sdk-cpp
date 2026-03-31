@@ -14,6 +14,7 @@ from typing import List
 
 SMITHY_GENERATOR_LOCATION = "tools/code-generation/smithy/cpp-codegen"
 SMITHY_TO_C2J_MAP_FILE = "tools/code-generation/smithy/cpp-codegen/smithy2c2j_service_map.json"
+SMITHY_NAMPESPACE_MAPPING_FILE = "tools/code-generation/smithy/mapping/smithy-namespace-mapping.json"
 
 
 class SmithyCppGen(object):
@@ -24,6 +25,8 @@ class SmithyCppGen(object):
         with open(os.path.abspath(SMITHY_TO_C2J_MAP_FILE), 'r') as file:
             self.smithy_c2j_data = json.load(file)
             self.c2j_smithy_data = {value: key for key, value in self.smithy_c2j_data.items()}
+        with open(os.path.abspath(SMITHY_NAMPESPACE_MAPPING_FILE), 'r') as file:
+            self.smithy_namespace_mappings = json.load(file)
 
     def generate(self, clients_to_build: set):
         """Generate Smithy-based code for SDK clients"""
@@ -35,7 +38,7 @@ class SmithyCppGen(object):
             target_dir = os.path.abspath("generated/src")
             self._copy_cpp_codegen_contents(
                 os.path.abspath("tools/code-generation/smithy/cpp-codegen"),
-                "smithy-cpp-codegen",
+                ["smithy-cpp-codegen-paginators", "smithy-cpp-codegen-waiters"],
                 target_dir
             )
             return 0
@@ -46,7 +49,8 @@ class SmithyCppGen(object):
             "./gradlew",
             "build",
             "-PservicesFilter=" + ",".join(smithy_services),
-            "-Pc2jMap=" + smithy_c2j_data
+            "-Pc2jMap=" + smithy_c2j_data,
+            "-PnamespaceMappings=" + json.dumps(self.smithy_namespace_mappings)
         ]
         
         try:
@@ -71,7 +75,7 @@ class SmithyCppGen(object):
             print(f"Command failed: {e.returncode}\nError: {e.stderr}")
             return False
 
-    def _copy_cpp_codegen_contents(self, top_level_dir: str, plugin_name: str, target_dir: str):
+    def _copy_cpp_codegen_contents(self, top_level_dir: str, plugin_names: List[str], target_dir: str):
         # Walk output directory to find generated code
         output_dir = os.path.join(top_level_dir, "output")
         # TODO: Verify if this check is still needed after Smithy generator always creates output
@@ -81,7 +85,9 @@ class SmithyCppGen(object):
             return
             
         for root, dirs, files in os.walk(output_dir):
-            if plugin_name in dirs:
+            for plugin_name in plugin_names:
+                if plugin_name not in dirs:
+                    continue
                 source_dir = os.path.join(root, plugin_name)
                 
                 # Extract service name from the projection directory

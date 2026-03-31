@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codedeploy/CodeDeployPaginationBase.h>
 #include <aws/codedeploy/CodeDeployServiceClientModel.h>
+#include <aws/codedeploy/CodeDeployWaiter.h>
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -73,7 +74,8 @@ namespace CodeDeploy {
  */
 class AWS_CODEDEPLOY_API CodeDeployClient : public Aws::Client::AWSJsonClient,
                                             public Aws::Client::ClientWithAsyncTemplateMethods<CodeDeployClient>,
-                                            public CodeDeployPaginationBase<CodeDeployClient> {
+                                            public CodeDeployPaginationBase<CodeDeployClient>,
+                                            public CodeDeployWaiter<CodeDeployClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1364,6 +1366,10 @@ class AWS_CODEDEPLOY_API CodeDeployClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeDeployClient>;
   void init(const CodeDeployClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CodeDeployError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   CodeDeployClientConfiguration m_clientConfiguration;
   std::shared_ptr<CodeDeployEndpointProviderBase> m_endpointProvider;

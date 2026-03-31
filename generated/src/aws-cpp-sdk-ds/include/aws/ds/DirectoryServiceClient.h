@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ds/DirectoryServicePaginationBase.h>
 #include <aws/ds/DirectoryServiceServiceClientModel.h>
+#include <aws/ds/DirectoryServiceWaiter.h>
 #include <aws/ds/DirectoryService_EXPORTS.h>
 
 namespace Aws {
@@ -34,7 +35,8 @@ namespace DirectoryService {
  */
 class AWS_DIRECTORYSERVICE_API DirectoryServiceClient : public Aws::Client::AWSJsonClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<DirectoryServiceClient>,
-                                                        public DirectoryServicePaginationBase<DirectoryServiceClient> {
+                                                        public DirectoryServicePaginationBase<DirectoryServiceClient>,
+                                                        public DirectoryServiceWaiter<DirectoryServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2455,6 +2457,10 @@ class AWS_DIRECTORYSERVICE_API DirectoryServiceClient : public Aws::Client::AWSJ
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DirectoryServiceClient>;
   void init(const DirectoryServiceClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, DirectoryServiceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   DirectoryServiceClientConfiguration m_clientConfiguration;
   std::shared_ptr<DirectoryServiceEndpointProviderBase> m_endpointProvider;

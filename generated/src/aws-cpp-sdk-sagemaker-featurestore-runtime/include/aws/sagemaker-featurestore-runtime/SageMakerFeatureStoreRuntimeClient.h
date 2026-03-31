@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimePaginationBase.h>
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeServiceClientModel.h>
+#include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeWaiter.h>
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntime_EXPORTS.h>
 
 namespace Aws {
@@ -32,7 +33,8 @@ namespace SageMakerFeatureStoreRuntime {
 class AWS_SAGEMAKERFEATURESTORERUNTIME_API SageMakerFeatureStoreRuntimeClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<SageMakerFeatureStoreRuntimeClient>,
-      public SageMakerFeatureStoreRuntimePaginationBase<SageMakerFeatureStoreRuntimeClient> {
+      public SageMakerFeatureStoreRuntimePaginationBase<SageMakerFeatureStoreRuntimeClient>,
+      public SageMakerFeatureStoreRuntimeWaiter<SageMakerFeatureStoreRuntimeClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -248,6 +250,12 @@ class AWS_SAGEMAKERFEATURESTORERUNTIME_API SageMakerFeatureStoreRuntimeClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SageMakerFeatureStoreRuntimeClient>;
   void init(const SageMakerFeatureStoreRuntimeClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SageMakerFeatureStoreRuntimeError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   SageMakerFeatureStoreRuntimeClientConfiguration m_clientConfiguration;
   std::shared_ptr<SageMakerFeatureStoreRuntimeEndpointProviderBase> m_endpointProvider;

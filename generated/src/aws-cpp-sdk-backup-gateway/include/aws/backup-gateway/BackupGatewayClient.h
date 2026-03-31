@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/backup-gateway/BackupGatewayPaginationBase.h>
 #include <aws/backup-gateway/BackupGatewayServiceClientModel.h>
+#include <aws/backup-gateway/BackupGatewayWaiter.h>
 #include <aws/backup-gateway/BackupGateway_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -29,7 +30,8 @@ namespace BackupGateway {
  */
 class AWS_BACKUPGATEWAY_API BackupGatewayClient : public Aws::Client::AWSJsonClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<BackupGatewayClient>,
-                                                  public BackupGatewayPaginationBase<BackupGatewayClient> {
+                                                  public BackupGatewayPaginationBase<BackupGatewayClient>,
+                                                  public BackupGatewayWaiter<BackupGatewayClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -802,6 +804,10 @@ class AWS_BACKUPGATEWAY_API BackupGatewayClient : public Aws::Client::AWSJsonCli
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BackupGatewayClient>;
   void init(const BackupGatewayClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, BackupGatewayError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   BackupGatewayClientConfiguration m_clientConfiguration;
   std::shared_ptr<BackupGatewayEndpointProviderBase> m_endpointProvider;

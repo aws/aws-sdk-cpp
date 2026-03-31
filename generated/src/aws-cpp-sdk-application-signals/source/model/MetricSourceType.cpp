@@ -18,6 +18,9 @@ namespace MetricSourceTypeMapper {
 static const int ServiceOperation_HASH = HashingUtils::HashString("ServiceOperation");
 static const int CloudWatchMetric_HASH = HashingUtils::HashString("CloudWatchMetric");
 static const int ServiceDependency_HASH = HashingUtils::HashString("ServiceDependency");
+static const int AppMonitor_HASH = HashingUtils::HashString("AppMonitor");
+static const int Canary_HASH = HashingUtils::HashString("Canary");
+static const int Service_HASH = HashingUtils::HashString("Service");
 
 MetricSourceType GetMetricSourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +30,12 @@ MetricSourceType GetMetricSourceTypeForName(const Aws::String& name) {
     return MetricSourceType::CloudWatchMetric;
   } else if (hashCode == ServiceDependency_HASH) {
     return MetricSourceType::ServiceDependency;
+  } else if (hashCode == AppMonitor_HASH) {
+    return MetricSourceType::AppMonitor;
+  } else if (hashCode == Canary_HASH) {
+    return MetricSourceType::Canary;
+  } else if (hashCode == Service_HASH) {
+    return MetricSourceType::Service;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +56,12 @@ Aws::String GetNameForMetricSourceType(MetricSourceType enumValue) {
       return "CloudWatchMetric";
     case MetricSourceType::ServiceDependency:
       return "ServiceDependency";
+    case MetricSourceType::AppMonitor:
+      return "AppMonitor";
+    case MetricSourceType::Canary:
+      return "Canary";
+    case MetricSourceType::Service:
+      return "Service";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -101,6 +101,14 @@ GetAgentRuntimeResult& GetAgentRuntimeResult::operator=(const Aws::AmazonWebServ
     m_metadataConfiguration = jsonValue.GetObject("metadataConfiguration");
     m_metadataConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("filesystemConfigurations")) {
+    Aws::Utils::Array<JsonView> filesystemConfigurationsJsonList = jsonValue.GetArray("filesystemConfigurations");
+    for (unsigned filesystemConfigurationsIndex = 0; filesystemConfigurationsIndex < filesystemConfigurationsJsonList.GetLength();
+         ++filesystemConfigurationsIndex) {
+      m_filesystemConfigurations.push_back(filesystemConfigurationsJsonList[filesystemConfigurationsIndex].AsObject());
+    }
+    m_filesystemConfigurationsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

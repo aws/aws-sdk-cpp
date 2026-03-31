@@ -202,9 +202,11 @@ BatchExecuteStatementOutcome DynamoDBClient::BatchExecuteStatement(const BatchEx
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<BatchExecuteStatementOutcome>(
       [&]() -> BatchExecuteStatementOutcome {
-        return BatchExecuteStatementOutcome(MakeRequestDeserialize(
-            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); }));
+        auto result =
+            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
+        return result.IsSuccess() ? BatchExecuteStatementOutcome(result.GetResultWithOwnership())
+                                  : BatchExecuteStatementOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -225,14 +227,15 @@ BatchGetItemOutcome DynamoDBClient::BatchGetItem(const BatchGetItemRequest& requ
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<BatchGetItemOutcome>(
       [&]() -> BatchGetItemOutcome {
-        return BatchGetItemOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                          [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                            Aws::String endpointKey{"Shared"};
-                                                            DescribeEndpointsRequest endpointRequest{};
-                                                            this->OptionallyUpdateDescribeEndpointsCache(
-                                                                resolvedEndpoint, request.GetServiceRequestName(), endpointKey,
-                                                                endpointRequest, false);
-                                                          }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? BatchGetItemOutcome(result.GetResultWithOwnership())
+                                  : BatchGetItemOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -253,14 +256,15 @@ BatchWriteItemOutcome DynamoDBClient::BatchWriteItem(const BatchWriteItemRequest
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<BatchWriteItemOutcome>(
       [&]() -> BatchWriteItemOutcome {
-        return BatchWriteItemOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                              Aws::String endpointKey{"Shared"};
-                                                              DescribeEndpointsRequest endpointRequest{};
-                                                              this->OptionallyUpdateDescribeEndpointsCache(
-                                                                  resolvedEndpoint, request.GetServiceRequestName(), endpointKey,
-                                                                  endpointRequest, false);
-                                                            }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? BatchWriteItemOutcome(result.GetResultWithOwnership())
+                                  : BatchWriteItemOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -281,14 +285,15 @@ CreateBackupOutcome DynamoDBClient::CreateBackup(const CreateBackupRequest& requ
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateBackupOutcome>(
       [&]() -> CreateBackupOutcome {
-        return CreateBackupOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                          [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                            Aws::String endpointKey{"Shared"};
-                                                            DescribeEndpointsRequest endpointRequest{};
-                                                            this->OptionallyUpdateDescribeEndpointsCache(
-                                                                resolvedEndpoint, request.GetServiceRequestName(), endpointKey,
-                                                                endpointRequest, false);
-                                                          }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? CreateBackupOutcome(result.GetResultWithOwnership())
+                                  : CreateBackupOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -309,14 +314,15 @@ CreateGlobalTableOutcome DynamoDBClient::CreateGlobalTable(const CreateGlobalTab
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateGlobalTableOutcome>(
       [&]() -> CreateGlobalTableOutcome {
-        return CreateGlobalTableOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                               [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                 Aws::String endpointKey{"Shared"};
-                                                                 DescribeEndpointsRequest endpointRequest{};
-                                                                 this->OptionallyUpdateDescribeEndpointsCache(
-                                                                     resolvedEndpoint, request.GetServiceRequestName(), endpointKey,
-                                                                     endpointRequest, false);
-                                                               }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? CreateGlobalTableOutcome(result.GetResultWithOwnership())
+                                  : CreateGlobalTableOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -337,14 +343,14 @@ CreateTableOutcome DynamoDBClient::CreateTable(const CreateTableRequest& request
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateTableOutcome>(
       [&]() -> CreateTableOutcome {
-        return CreateTableOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                         [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                           Aws::String endpointKey{"Shared"};
-                                                           DescribeEndpointsRequest endpointRequest{};
-                                                           this->OptionallyUpdateDescribeEndpointsCache(
-                                                               resolvedEndpoint, request.GetServiceRequestName(), endpointKey,
-                                                               endpointRequest, false);
-                                                         }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? CreateTableOutcome(result.GetResultWithOwnership()) : CreateTableOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -365,14 +371,15 @@ DeleteBackupOutcome DynamoDBClient::DeleteBackup(const DeleteBackupRequest& requ
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteBackupOutcome>(
       [&]() -> DeleteBackupOutcome {
-        return DeleteBackupOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                          [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                            Aws::String endpointKey{"Shared"};
-                                                            DescribeEndpointsRequest endpointRequest{};
-                                                            this->OptionallyUpdateDescribeEndpointsCache(
-                                                                resolvedEndpoint, request.GetServiceRequestName(), endpointKey,
-                                                                endpointRequest, false);
-                                                          }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? DeleteBackupOutcome(result.GetResultWithOwnership())
+                                  : DeleteBackupOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -393,14 +400,14 @@ DeleteItemOutcome DynamoDBClient::DeleteItem(const DeleteItemRequest& request) c
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteItemOutcome>(
       [&]() -> DeleteItemOutcome {
-        return DeleteItemOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                        [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                          Aws::String endpointKey{"Shared"};
-                                                          DescribeEndpointsRequest endpointRequest{};
-                                                          this->OptionallyUpdateDescribeEndpointsCache(resolvedEndpoint,
-                                                                                                       request.GetServiceRequestName(),
-                                                                                                       endpointKey, endpointRequest, false);
-                                                        }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? DeleteItemOutcome(result.GetResultWithOwnership()) : DeleteItemOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -421,14 +428,15 @@ DeleteResourcePolicyOutcome DynamoDBClient::DeleteResourcePolicy(const DeleteRes
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteResourcePolicyOutcome>(
       [&]() -> DeleteResourcePolicyOutcome {
-        return DeleteResourcePolicyOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     Aws::String endpointKey{"Shared"};
-                                     DescribeEndpointsRequest endpointRequest{};
-                                     this->OptionallyUpdateDescribeEndpointsCache(resolvedEndpoint, request.GetServiceRequestName(),
-                                                                                  endpointKey, endpointRequest, false);
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? DeleteResourcePolicyOutcome(result.GetResultWithOwnership())
+                                  : DeleteResourcePolicyOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -449,14 +457,14 @@ DeleteTableOutcome DynamoDBClient::DeleteTable(const DeleteTableRequest& request
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteTableOutcome>(
       [&]() -> DeleteTableOutcome {
-        return DeleteTableOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                         [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                           Aws::String endpointKey{"Shared"};
-                                                           DescribeEndpointsRequest endpointRequest{};
-                                                           this->OptionallyUpdateDescribeEndpointsCache(
-                                                               resolvedEndpoint, request.GetServiceRequestName(), endpointKey,
-                                                               endpointRequest, false);
-                                                         }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? DeleteTableOutcome(result.GetResultWithOwnership()) : DeleteTableOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -477,14 +485,15 @@ DescribeBackupOutcome DynamoDBClient::DescribeBackup(const DescribeBackupRequest
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeBackupOutcome>(
       [&]() -> DescribeBackupOutcome {
-        return DescribeBackupOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                              Aws::String endpointKey{"Shared"};
-                                                              DescribeEndpointsRequest endpointRequest{};
-                                                              this->OptionallyUpdateDescribeEndpointsCache(
-                                                                  resolvedEndpoint, request.GetServiceRequestName(), endpointKey,
-                                                                  endpointRequest, false);
-                                                            }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? DescribeBackupOutcome(result.GetResultWithOwnership())
+                                  : DescribeBackupOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -505,14 +514,15 @@ DescribeContinuousBackupsOutcome DynamoDBClient::DescribeContinuousBackups(const
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeContinuousBackupsOutcome>(
       [&]() -> DescribeContinuousBackupsOutcome {
-        return DescribeContinuousBackupsOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     Aws::String endpointKey{"Shared"};
-                                     DescribeEndpointsRequest endpointRequest{};
-                                     this->OptionallyUpdateDescribeEndpointsCache(resolvedEndpoint, request.GetServiceRequestName(),
-                                                                                  endpointKey, endpointRequest, false);
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? DescribeContinuousBackupsOutcome(result.GetResultWithOwnership())
+                                  : DescribeContinuousBackupsOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -533,9 +543,11 @@ DescribeContributorInsightsOutcome DynamoDBClient::DescribeContributorInsights(c
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeContributorInsightsOutcome>(
       [&]() -> DescribeContributorInsightsOutcome {
-        return DescribeContributorInsightsOutcome(MakeRequestDeserialize(
-            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); }));
+        auto result =
+            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
+        return result.IsSuccess() ? DescribeContributorInsightsOutcome(result.GetResultWithOwnership())
+                                  : DescribeContributorInsightsOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -556,9 +568,11 @@ DescribeEndpointsOutcome DynamoDBClient::DescribeEndpoints(const DescribeEndpoin
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeEndpointsOutcome>(
       [&]() -> DescribeEndpointsOutcome {
-        return DescribeEndpointsOutcome(MakeRequestDeserialize(
-            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); }));
+        auto result =
+            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
+        return result.IsSuccess() ? DescribeEndpointsOutcome(result.GetResultWithOwnership())
+                                  : DescribeEndpointsOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -579,9 +593,11 @@ DescribeExportOutcome DynamoDBClient::DescribeExport(const DescribeExportRequest
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeExportOutcome>(
       [&]() -> DescribeExportOutcome {
-        return DescribeExportOutcome(MakeRequestDeserialize(
-            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); }));
+        auto result =
+            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
+        return result.IsSuccess() ? DescribeExportOutcome(result.GetResultWithOwnership())
+                                  : DescribeExportOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -602,14 +618,15 @@ DescribeGlobalTableOutcome DynamoDBClient::DescribeGlobalTable(const DescribeGlo
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeGlobalTableOutcome>(
       [&]() -> DescribeGlobalTableOutcome {
-        return DescribeGlobalTableOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     Aws::String endpointKey{"Shared"};
-                                     DescribeEndpointsRequest endpointRequest{};
-                                     this->OptionallyUpdateDescribeEndpointsCache(resolvedEndpoint, request.GetServiceRequestName(),
-                                                                                  endpointKey, endpointRequest, false);
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? DescribeGlobalTableOutcome(result.GetResultWithOwnership())
+                                  : DescribeGlobalTableOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -630,14 +647,15 @@ DescribeGlobalTableSettingsOutcome DynamoDBClient::DescribeGlobalTableSettings(c
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeGlobalTableSettingsOutcome>(
       [&]() -> DescribeGlobalTableSettingsOutcome {
-        return DescribeGlobalTableSettingsOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     Aws::String endpointKey{"Shared"};
-                                     DescribeEndpointsRequest endpointRequest{};
-                                     this->OptionallyUpdateDescribeEndpointsCache(resolvedEndpoint, request.GetServiceRequestName(),
-                                                                                  endpointKey, endpointRequest, false);
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? DescribeGlobalTableSettingsOutcome(result.GetResultWithOwnership())
+                                  : DescribeGlobalTableSettingsOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -658,9 +676,11 @@ DescribeImportOutcome DynamoDBClient::DescribeImport(const DescribeImportRequest
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeImportOutcome>(
       [&]() -> DescribeImportOutcome {
-        return DescribeImportOutcome(MakeRequestDeserialize(
-            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); }));
+        auto result =
+            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
+        return result.IsSuccess() ? DescribeImportOutcome(result.GetResultWithOwnership())
+                                  : DescribeImportOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -683,14 +703,15 @@ DescribeKinesisStreamingDestinationOutcome DynamoDBClient::DescribeKinesisStream
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeKinesisStreamingDestinationOutcome>(
       [&]() -> DescribeKinesisStreamingDestinationOutcome {
-        return DescribeKinesisStreamingDestinationOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     Aws::String endpointKey{"Shared"};
-                                     DescribeEndpointsRequest endpointRequest{};
-                                     this->OptionallyUpdateDescribeEndpointsCache(resolvedEndpoint, request.GetServiceRequestName(),
-                                                                                  endpointKey, endpointRequest, false);
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? DescribeKinesisStreamingDestinationOutcome(result.GetResultWithOwnership())
+                                  : DescribeKinesisStreamingDestinationOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -711,14 +732,15 @@ DescribeLimitsOutcome DynamoDBClient::DescribeLimits(const DescribeLimitsRequest
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeLimitsOutcome>(
       [&]() -> DescribeLimitsOutcome {
-        return DescribeLimitsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                              Aws::String endpointKey{"Shared"};
-                                                              DescribeEndpointsRequest endpointRequest{};
-                                                              this->OptionallyUpdateDescribeEndpointsCache(
-                                                                  resolvedEndpoint, request.GetServiceRequestName(), endpointKey,
-                                                                  endpointRequest, false);
-                                                            }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? DescribeLimitsOutcome(result.GetResultWithOwnership())
+                                  : DescribeLimitsOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -739,14 +761,15 @@ DescribeTableOutcome DynamoDBClient::DescribeTable(const DescribeTableRequest& r
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeTableOutcome>(
       [&]() -> DescribeTableOutcome {
-        return DescribeTableOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                           [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                             Aws::String endpointKey{"Shared"};
-                                                             DescribeEndpointsRequest endpointRequest{};
-                                                             this->OptionallyUpdateDescribeEndpointsCache(
-                                                                 resolvedEndpoint, request.GetServiceRequestName(), endpointKey,
-                                                                 endpointRequest, false);
-                                                           }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? DescribeTableOutcome(result.GetResultWithOwnership())
+                                  : DescribeTableOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -769,9 +792,11 @@ DescribeTableReplicaAutoScalingOutcome DynamoDBClient::DescribeTableReplicaAutoS
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeTableReplicaAutoScalingOutcome>(
       [&]() -> DescribeTableReplicaAutoScalingOutcome {
-        return DescribeTableReplicaAutoScalingOutcome(MakeRequestDeserialize(
-            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); }));
+        auto result =
+            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
+        return result.IsSuccess() ? DescribeTableReplicaAutoScalingOutcome(result.GetResultWithOwnership())
+                                  : DescribeTableReplicaAutoScalingOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -792,14 +817,15 @@ DescribeTimeToLiveOutcome DynamoDBClient::DescribeTimeToLive(const DescribeTimeT
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeTimeToLiveOutcome>(
       [&]() -> DescribeTimeToLiveOutcome {
-        return DescribeTimeToLiveOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                                [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                  Aws::String endpointKey{"Shared"};
-                                                                  DescribeEndpointsRequest endpointRequest{};
-                                                                  this->OptionallyUpdateDescribeEndpointsCache(
-                                                                      resolvedEndpoint, request.GetServiceRequestName(), endpointKey,
-                                                                      endpointRequest, false);
-                                                                }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? DescribeTimeToLiveOutcome(result.GetResultWithOwnership())
+                                  : DescribeTimeToLiveOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -822,14 +848,15 @@ DisableKinesisStreamingDestinationOutcome DynamoDBClient::DisableKinesisStreamin
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DisableKinesisStreamingDestinationOutcome>(
       [&]() -> DisableKinesisStreamingDestinationOutcome {
-        return DisableKinesisStreamingDestinationOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     Aws::String endpointKey{"Shared"};
-                                     DescribeEndpointsRequest endpointRequest{};
-                                     this->OptionallyUpdateDescribeEndpointsCache(resolvedEndpoint, request.GetServiceRequestName(),
-                                                                                  endpointKey, endpointRequest, false);
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? DisableKinesisStreamingDestinationOutcome(result.GetResultWithOwnership())
+                                  : DisableKinesisStreamingDestinationOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -852,14 +879,15 @@ EnableKinesisStreamingDestinationOutcome DynamoDBClient::EnableKinesisStreamingD
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<EnableKinesisStreamingDestinationOutcome>(
       [&]() -> EnableKinesisStreamingDestinationOutcome {
-        return EnableKinesisStreamingDestinationOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     Aws::String endpointKey{"Shared"};
-                                     DescribeEndpointsRequest endpointRequest{};
-                                     this->OptionallyUpdateDescribeEndpointsCache(resolvedEndpoint, request.GetServiceRequestName(),
-                                                                                  endpointKey, endpointRequest, false);
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? EnableKinesisStreamingDestinationOutcome(result.GetResultWithOwnership())
+                                  : EnableKinesisStreamingDestinationOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -880,9 +908,11 @@ ExecuteStatementOutcome DynamoDBClient::ExecuteStatement(const ExecuteStatementR
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ExecuteStatementOutcome>(
       [&]() -> ExecuteStatementOutcome {
-        return ExecuteStatementOutcome(MakeRequestDeserialize(
-            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); }));
+        auto result =
+            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
+        return result.IsSuccess() ? ExecuteStatementOutcome(result.GetResultWithOwnership())
+                                  : ExecuteStatementOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -903,9 +933,11 @@ ExecuteTransactionOutcome DynamoDBClient::ExecuteTransaction(const ExecuteTransa
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ExecuteTransactionOutcome>(
       [&]() -> ExecuteTransactionOutcome {
-        return ExecuteTransactionOutcome(MakeRequestDeserialize(
-            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); }));
+        auto result =
+            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
+        return result.IsSuccess() ? ExecuteTransactionOutcome(result.GetResultWithOwnership())
+                                  : ExecuteTransactionOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -926,9 +958,11 @@ ExportTableToPointInTimeOutcome DynamoDBClient::ExportTableToPointInTime(const E
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ExportTableToPointInTimeOutcome>(
       [&]() -> ExportTableToPointInTimeOutcome {
-        return ExportTableToPointInTimeOutcome(MakeRequestDeserialize(
-            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); }));
+        auto result =
+            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
+        return result.IsSuccess() ? ExportTableToPointInTimeOutcome(result.GetResultWithOwnership())
+                                  : ExportTableToPointInTimeOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -949,14 +983,14 @@ GetItemOutcome DynamoDBClient::GetItem(const GetItemRequest& request) const {
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetItemOutcome>(
       [&]() -> GetItemOutcome {
-        return GetItemOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                     [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                       Aws::String endpointKey{"Shared"};
-                                                       DescribeEndpointsRequest endpointRequest{};
-                                                       this->OptionallyUpdateDescribeEndpointsCache(resolvedEndpoint,
-                                                                                                    request.GetServiceRequestName(),
-                                                                                                    endpointKey, endpointRequest, false);
-                                                     }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? GetItemOutcome(result.GetResultWithOwnership()) : GetItemOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -977,14 +1011,15 @@ GetResourcePolicyOutcome DynamoDBClient::GetResourcePolicy(const GetResourcePoli
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetResourcePolicyOutcome>(
       [&]() -> GetResourcePolicyOutcome {
-        return GetResourcePolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                               [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                 Aws::String endpointKey{"Shared"};
-                                                                 DescribeEndpointsRequest endpointRequest{};
-                                                                 this->OptionallyUpdateDescribeEndpointsCache(
-                                                                     resolvedEndpoint, request.GetServiceRequestName(), endpointKey,
-                                                                     endpointRequest, false);
-                                                               }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? GetResourcePolicyOutcome(result.GetResultWithOwnership())
+                                  : GetResourcePolicyOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1005,9 +1040,10 @@ ImportTableOutcome DynamoDBClient::ImportTable(const ImportTableRequest& request
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ImportTableOutcome>(
       [&]() -> ImportTableOutcome {
-        return ImportTableOutcome(MakeRequestDeserialize(
-            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); }));
+        auto result =
+            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
+        return result.IsSuccess() ? ImportTableOutcome(result.GetResultWithOwnership()) : ImportTableOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1028,14 +1064,14 @@ ListBackupsOutcome DynamoDBClient::ListBackups(const ListBackupsRequest& request
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListBackupsOutcome>(
       [&]() -> ListBackupsOutcome {
-        return ListBackupsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                         [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                           Aws::String endpointKey{"Shared"};
-                                                           DescribeEndpointsRequest endpointRequest{};
-                                                           this->OptionallyUpdateDescribeEndpointsCache(
-                                                               resolvedEndpoint, request.GetServiceRequestName(), endpointKey,
-                                                               endpointRequest, false);
-                                                         }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? ListBackupsOutcome(result.GetResultWithOwnership()) : ListBackupsOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1056,9 +1092,11 @@ ListContributorInsightsOutcome DynamoDBClient::ListContributorInsights(const Lis
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListContributorInsightsOutcome>(
       [&]() -> ListContributorInsightsOutcome {
-        return ListContributorInsightsOutcome(MakeRequestDeserialize(
-            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); }));
+        auto result =
+            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
+        return result.IsSuccess() ? ListContributorInsightsOutcome(result.GetResultWithOwnership())
+                                  : ListContributorInsightsOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1079,9 +1117,10 @@ ListExportsOutcome DynamoDBClient::ListExports(const ListExportsRequest& request
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListExportsOutcome>(
       [&]() -> ListExportsOutcome {
-        return ListExportsOutcome(MakeRequestDeserialize(
-            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); }));
+        auto result =
+            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
+        return result.IsSuccess() ? ListExportsOutcome(result.GetResultWithOwnership()) : ListExportsOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1102,14 +1141,15 @@ ListGlobalTablesOutcome DynamoDBClient::ListGlobalTables(const ListGlobalTablesR
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListGlobalTablesOutcome>(
       [&]() -> ListGlobalTablesOutcome {
-        return ListGlobalTablesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                              [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                Aws::String endpointKey{"Shared"};
-                                                                DescribeEndpointsRequest endpointRequest{};
-                                                                this->OptionallyUpdateDescribeEndpointsCache(
-                                                                    resolvedEndpoint, request.GetServiceRequestName(), endpointKey,
-                                                                    endpointRequest, false);
-                                                              }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? ListGlobalTablesOutcome(result.GetResultWithOwnership())
+                                  : ListGlobalTablesOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1130,9 +1170,10 @@ ListImportsOutcome DynamoDBClient::ListImports(const ListImportsRequest& request
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListImportsOutcome>(
       [&]() -> ListImportsOutcome {
-        return ListImportsOutcome(MakeRequestDeserialize(
-            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); }));
+        auto result =
+            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
+        return result.IsSuccess() ? ListImportsOutcome(result.GetResultWithOwnership()) : ListImportsOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1153,14 +1194,14 @@ ListTablesOutcome DynamoDBClient::ListTables(const ListTablesRequest& request) c
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListTablesOutcome>(
       [&]() -> ListTablesOutcome {
-        return ListTablesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                        [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                          Aws::String endpointKey{"Shared"};
-                                                          DescribeEndpointsRequest endpointRequest{};
-                                                          this->OptionallyUpdateDescribeEndpointsCache(resolvedEndpoint,
-                                                                                                       request.GetServiceRequestName(),
-                                                                                                       endpointKey, endpointRequest, false);
-                                                        }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? ListTablesOutcome(result.GetResultWithOwnership()) : ListTablesOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1181,14 +1222,15 @@ ListTagsOfResourceOutcome DynamoDBClient::ListTagsOfResource(const ListTagsOfRes
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListTagsOfResourceOutcome>(
       [&]() -> ListTagsOfResourceOutcome {
-        return ListTagsOfResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                                [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                  Aws::String endpointKey{"Shared"};
-                                                                  DescribeEndpointsRequest endpointRequest{};
-                                                                  this->OptionallyUpdateDescribeEndpointsCache(
-                                                                      resolvedEndpoint, request.GetServiceRequestName(), endpointKey,
-                                                                      endpointRequest, false);
-                                                                }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? ListTagsOfResourceOutcome(result.GetResultWithOwnership())
+                                  : ListTagsOfResourceOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1209,14 +1251,14 @@ PutItemOutcome DynamoDBClient::PutItem(const PutItemRequest& request) const {
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<PutItemOutcome>(
       [&]() -> PutItemOutcome {
-        return PutItemOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                     [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                       Aws::String endpointKey{"Shared"};
-                                                       DescribeEndpointsRequest endpointRequest{};
-                                                       this->OptionallyUpdateDescribeEndpointsCache(resolvedEndpoint,
-                                                                                                    request.GetServiceRequestName(),
-                                                                                                    endpointKey, endpointRequest, false);
-                                                     }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? PutItemOutcome(result.GetResultWithOwnership()) : PutItemOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1237,14 +1279,15 @@ PutResourcePolicyOutcome DynamoDBClient::PutResourcePolicy(const PutResourcePoli
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<PutResourcePolicyOutcome>(
       [&]() -> PutResourcePolicyOutcome {
-        return PutResourcePolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                               [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                 Aws::String endpointKey{"Shared"};
-                                                                 DescribeEndpointsRequest endpointRequest{};
-                                                                 this->OptionallyUpdateDescribeEndpointsCache(
-                                                                     resolvedEndpoint, request.GetServiceRequestName(), endpointKey,
-                                                                     endpointRequest, false);
-                                                               }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? PutResourcePolicyOutcome(result.GetResultWithOwnership())
+                                  : PutResourcePolicyOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1265,14 +1308,14 @@ QueryOutcome DynamoDBClient::Query(const QueryRequest& request) const {
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<QueryOutcome>(
       [&]() -> QueryOutcome {
-        return QueryOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                     Aws::String endpointKey{"Shared"};
-                                                     DescribeEndpointsRequest endpointRequest{};
-                                                     this->OptionallyUpdateDescribeEndpointsCache(resolvedEndpoint,
-                                                                                                  request.GetServiceRequestName(),
-                                                                                                  endpointKey, endpointRequest, false);
-                                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? QueryOutcome(result.GetResultWithOwnership()) : QueryOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1293,14 +1336,15 @@ RestoreTableFromBackupOutcome DynamoDBClient::RestoreTableFromBackup(const Resto
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<RestoreTableFromBackupOutcome>(
       [&]() -> RestoreTableFromBackupOutcome {
-        return RestoreTableFromBackupOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     Aws::String endpointKey{"Shared"};
-                                     DescribeEndpointsRequest endpointRequest{};
-                                     this->OptionallyUpdateDescribeEndpointsCache(resolvedEndpoint, request.GetServiceRequestName(),
-                                                                                  endpointKey, endpointRequest, false);
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? RestoreTableFromBackupOutcome(result.GetResultWithOwnership())
+                                  : RestoreTableFromBackupOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1321,14 +1365,15 @@ RestoreTableToPointInTimeOutcome DynamoDBClient::RestoreTableToPointInTime(const
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<RestoreTableToPointInTimeOutcome>(
       [&]() -> RestoreTableToPointInTimeOutcome {
-        return RestoreTableToPointInTimeOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     Aws::String endpointKey{"Shared"};
-                                     DescribeEndpointsRequest endpointRequest{};
-                                     this->OptionallyUpdateDescribeEndpointsCache(resolvedEndpoint, request.GetServiceRequestName(),
-                                                                                  endpointKey, endpointRequest, false);
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? RestoreTableToPointInTimeOutcome(result.GetResultWithOwnership())
+                                  : RestoreTableToPointInTimeOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1349,14 +1394,14 @@ ScanOutcome DynamoDBClient::Scan(const ScanRequest& request) const {
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ScanOutcome>(
       [&]() -> ScanOutcome {
-        return ScanOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                  [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                    Aws::String endpointKey{"Shared"};
-                                                    DescribeEndpointsRequest endpointRequest{};
-                                                    this->OptionallyUpdateDescribeEndpointsCache(resolvedEndpoint,
-                                                                                                 request.GetServiceRequestName(),
-                                                                                                 endpointKey, endpointRequest, false);
-                                                  }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? ScanOutcome(result.GetResultWithOwnership()) : ScanOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1377,14 +1422,14 @@ TagResourceOutcome DynamoDBClient::TagResource(const TagResourceRequest& request
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<TagResourceOutcome>(
       [&]() -> TagResourceOutcome {
-        return TagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                         [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                           Aws::String endpointKey{"Shared"};
-                                                           DescribeEndpointsRequest endpointRequest{};
-                                                           this->OptionallyUpdateDescribeEndpointsCache(
-                                                               resolvedEndpoint, request.GetServiceRequestName(), endpointKey,
-                                                               endpointRequest, false);
-                                                         }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1405,14 +1450,15 @@ TransactGetItemsOutcome DynamoDBClient::TransactGetItems(const TransactGetItemsR
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<TransactGetItemsOutcome>(
       [&]() -> TransactGetItemsOutcome {
-        return TransactGetItemsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                              [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                Aws::String endpointKey{"Shared"};
-                                                                DescribeEndpointsRequest endpointRequest{};
-                                                                this->OptionallyUpdateDescribeEndpointsCache(
-                                                                    resolvedEndpoint, request.GetServiceRequestName(), endpointKey,
-                                                                    endpointRequest, false);
-                                                              }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? TransactGetItemsOutcome(result.GetResultWithOwnership())
+                                  : TransactGetItemsOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1433,14 +1479,15 @@ TransactWriteItemsOutcome DynamoDBClient::TransactWriteItems(const TransactWrite
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<TransactWriteItemsOutcome>(
       [&]() -> TransactWriteItemsOutcome {
-        return TransactWriteItemsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                                [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                  Aws::String endpointKey{"Shared"};
-                                                                  DescribeEndpointsRequest endpointRequest{};
-                                                                  this->OptionallyUpdateDescribeEndpointsCache(
-                                                                      resolvedEndpoint, request.GetServiceRequestName(), endpointKey,
-                                                                      endpointRequest, false);
-                                                                }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? TransactWriteItemsOutcome(result.GetResultWithOwnership())
+                                  : TransactWriteItemsOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1461,14 +1508,15 @@ UntagResourceOutcome DynamoDBClient::UntagResource(const UntagResourceRequest& r
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UntagResourceOutcome>(
       [&]() -> UntagResourceOutcome {
-        return UntagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                           [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                             Aws::String endpointKey{"Shared"};
-                                                             DescribeEndpointsRequest endpointRequest{};
-                                                             this->OptionallyUpdateDescribeEndpointsCache(
-                                                                 resolvedEndpoint, request.GetServiceRequestName(), endpointKey,
-                                                                 endpointRequest, false);
-                                                           }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership())
+                                  : UntagResourceOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1489,14 +1537,15 @@ UpdateContinuousBackupsOutcome DynamoDBClient::UpdateContinuousBackups(const Upd
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateContinuousBackupsOutcome>(
       [&]() -> UpdateContinuousBackupsOutcome {
-        return UpdateContinuousBackupsOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     Aws::String endpointKey{"Shared"};
-                                     DescribeEndpointsRequest endpointRequest{};
-                                     this->OptionallyUpdateDescribeEndpointsCache(resolvedEndpoint, request.GetServiceRequestName(),
-                                                                                  endpointKey, endpointRequest, false);
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? UpdateContinuousBackupsOutcome(result.GetResultWithOwnership())
+                                  : UpdateContinuousBackupsOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1517,9 +1566,11 @@ UpdateContributorInsightsOutcome DynamoDBClient::UpdateContributorInsights(const
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateContributorInsightsOutcome>(
       [&]() -> UpdateContributorInsightsOutcome {
-        return UpdateContributorInsightsOutcome(MakeRequestDeserialize(
-            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); }));
+        auto result =
+            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
+        return result.IsSuccess() ? UpdateContributorInsightsOutcome(result.GetResultWithOwnership())
+                                  : UpdateContributorInsightsOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1540,14 +1591,15 @@ UpdateGlobalTableOutcome DynamoDBClient::UpdateGlobalTable(const UpdateGlobalTab
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateGlobalTableOutcome>(
       [&]() -> UpdateGlobalTableOutcome {
-        return UpdateGlobalTableOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                               [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                 Aws::String endpointKey{"Shared"};
-                                                                 DescribeEndpointsRequest endpointRequest{};
-                                                                 this->OptionallyUpdateDescribeEndpointsCache(
-                                                                     resolvedEndpoint, request.GetServiceRequestName(), endpointKey,
-                                                                     endpointRequest, false);
-                                                               }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? UpdateGlobalTableOutcome(result.GetResultWithOwnership())
+                                  : UpdateGlobalTableOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1568,14 +1620,15 @@ UpdateGlobalTableSettingsOutcome DynamoDBClient::UpdateGlobalTableSettings(const
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateGlobalTableSettingsOutcome>(
       [&]() -> UpdateGlobalTableSettingsOutcome {
-        return UpdateGlobalTableSettingsOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     Aws::String endpointKey{"Shared"};
-                                     DescribeEndpointsRequest endpointRequest{};
-                                     this->OptionallyUpdateDescribeEndpointsCache(resolvedEndpoint, request.GetServiceRequestName(),
-                                                                                  endpointKey, endpointRequest, false);
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? UpdateGlobalTableSettingsOutcome(result.GetResultWithOwnership())
+                                  : UpdateGlobalTableSettingsOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1596,14 +1649,14 @@ UpdateItemOutcome DynamoDBClient::UpdateItem(const UpdateItemRequest& request) c
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateItemOutcome>(
       [&]() -> UpdateItemOutcome {
-        return UpdateItemOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                        [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                          Aws::String endpointKey{"Shared"};
-                                                          DescribeEndpointsRequest endpointRequest{};
-                                                          this->OptionallyUpdateDescribeEndpointsCache(resolvedEndpoint,
-                                                                                                       request.GetServiceRequestName(),
-                                                                                                       endpointKey, endpointRequest, false);
-                                                        }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? UpdateItemOutcome(result.GetResultWithOwnership()) : UpdateItemOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1626,14 +1679,15 @@ UpdateKinesisStreamingDestinationOutcome DynamoDBClient::UpdateKinesisStreamingD
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateKinesisStreamingDestinationOutcome>(
       [&]() -> UpdateKinesisStreamingDestinationOutcome {
-        return UpdateKinesisStreamingDestinationOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     Aws::String endpointKey{"Shared"};
-                                     DescribeEndpointsRequest endpointRequest{};
-                                     this->OptionallyUpdateDescribeEndpointsCache(resolvedEndpoint, request.GetServiceRequestName(),
-                                                                                  endpointKey, endpointRequest, false);
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? UpdateKinesisStreamingDestinationOutcome(result.GetResultWithOwnership())
+                                  : UpdateKinesisStreamingDestinationOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1654,14 +1708,14 @@ UpdateTableOutcome DynamoDBClient::UpdateTable(const UpdateTableRequest& request
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateTableOutcome>(
       [&]() -> UpdateTableOutcome {
-        return UpdateTableOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                         [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                           Aws::String endpointKey{"Shared"};
-                                                           DescribeEndpointsRequest endpointRequest{};
-                                                           this->OptionallyUpdateDescribeEndpointsCache(
-                                                               resolvedEndpoint, request.GetServiceRequestName(), endpointKey,
-                                                               endpointRequest, false);
-                                                         }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? UpdateTableOutcome(result.GetResultWithOwnership()) : UpdateTableOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1683,9 +1737,11 @@ UpdateTableReplicaAutoScalingOutcome DynamoDBClient::UpdateTableReplicaAutoScali
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateTableReplicaAutoScalingOutcome>(
       [&]() -> UpdateTableReplicaAutoScalingOutcome {
-        return UpdateTableReplicaAutoScalingOutcome(MakeRequestDeserialize(
-            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); }));
+        auto result =
+            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
+        return result.IsSuccess() ? UpdateTableReplicaAutoScalingOutcome(result.GetResultWithOwnership())
+                                  : UpdateTableReplicaAutoScalingOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1706,14 +1762,15 @@ UpdateTimeToLiveOutcome DynamoDBClient::UpdateTimeToLive(const UpdateTimeToLiveR
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateTimeToLiveOutcome>(
       [&]() -> UpdateTimeToLiveOutcome {
-        return UpdateTimeToLiveOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                              [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                Aws::String endpointKey{"Shared"};
-                                                                DescribeEndpointsRequest endpointRequest{};
-                                                                this->OptionallyUpdateDescribeEndpointsCache(
-                                                                    resolvedEndpoint, request.GetServiceRequestName(), endpointKey,
-                                                                    endpointRequest, false);
-                                                              }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               Aws::String endpointKey{"Shared"};
+                                               DescribeEndpointsRequest endpointRequest{};
+                                               this->OptionallyUpdateDescribeEndpointsCache(
+                                                   resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, false);
+                                             });
+        return result.IsSuccess() ? UpdateTimeToLiveOutcome(result.GetResultWithOwnership())
+                                  : UpdateTimeToLiveOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

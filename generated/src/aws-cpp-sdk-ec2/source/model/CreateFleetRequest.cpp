@@ -29,6 +29,10 @@ Aws::String CreateFleetRequest::SerializePayload() const {
     m_onDemandOptions.OutputToStream(ss, "OnDemandOptions");
   }
 
+  if (m_reservedCapacityOptionsHasBeenSet) {
+    m_reservedCapacityOptions.OutputToStream(ss, "ReservedCapacityOptions");
+  }
+
   if (m_excessCapacityTerminationPolicyHasBeenSet) {
     ss << "ExcessCapacityTerminationPolicy="
        << StringUtils::URLEncode(

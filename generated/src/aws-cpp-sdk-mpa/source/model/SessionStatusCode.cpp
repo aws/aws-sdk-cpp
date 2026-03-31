@@ -18,6 +18,7 @@ namespace SessionStatusCodeMapper {
 static const int REJECTED_HASH = HashingUtils::HashString("REJECTED");
 static const int EXPIRED_HASH = HashingUtils::HashString("EXPIRED");
 static const int CONFIGURATION_CHANGED_HASH = HashingUtils::HashString("CONFIGURATION_CHANGED");
+static const int ALL_APPROVERS_IN_SESSION_HASH = HashingUtils::HashString("ALL_APPROVERS_IN_SESSION");
 
 SessionStatusCode GetSessionStatusCodeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ SessionStatusCode GetSessionStatusCodeForName(const Aws::String& name) {
     return SessionStatusCode::EXPIRED;
   } else if (hashCode == CONFIGURATION_CHANGED_HASH) {
     return SessionStatusCode::CONFIGURATION_CHANGED;
+  } else if (hashCode == ALL_APPROVERS_IN_SESSION_HASH) {
+    return SessionStatusCode::ALL_APPROVERS_IN_SESSION;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForSessionStatusCode(SessionStatusCode enumValue) {
       return "EXPIRED";
     case SessionStatusCode::CONFIGURATION_CHANGED:
       return "CONFIGURATION_CHANGED";
+    case SessionStatusCode::ALL_APPROVERS_IN_SESSION:
+      return "ALL_APPROVERS_IN_SESSION";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

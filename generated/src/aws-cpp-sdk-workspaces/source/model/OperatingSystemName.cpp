@@ -26,6 +26,7 @@ static const int WINDOWS_7_HASH = HashingUtils::HashString("WINDOWS_7");
 static const int WINDOWS_SERVER_2016_HASH = HashingUtils::HashString("WINDOWS_SERVER_2016");
 static const int WINDOWS_SERVER_2019_HASH = HashingUtils::HashString("WINDOWS_SERVER_2019");
 static const int WINDOWS_SERVER_2022_HASH = HashingUtils::HashString("WINDOWS_SERVER_2022");
+static const int WINDOWS_SERVER_2025_HASH = HashingUtils::HashString("WINDOWS_SERVER_2025");
 static const int RHEL_8_HASH = HashingUtils::HashString("RHEL_8");
 static const int ROCKY_8_HASH = HashingUtils::HashString("ROCKY_8");
 
@@ -53,6 +54,8 @@ OperatingSystemName GetOperatingSystemNameForName(const Aws::String& name) {
     return OperatingSystemName::WINDOWS_SERVER_2019;
   } else if (hashCode == WINDOWS_SERVER_2022_HASH) {
     return OperatingSystemName::WINDOWS_SERVER_2022;
+  } else if (hashCode == WINDOWS_SERVER_2025_HASH) {
+    return OperatingSystemName::WINDOWS_SERVER_2025;
   } else if (hashCode == RHEL_8_HASH) {
     return OperatingSystemName::RHEL_8;
   } else if (hashCode == ROCKY_8_HASH) {
@@ -93,6 +96,8 @@ Aws::String GetNameForOperatingSystemName(OperatingSystemName enumValue) {
       return "WINDOWS_SERVER_2019";
     case OperatingSystemName::WINDOWS_SERVER_2022:
       return "WINDOWS_SERVER_2022";
+    case OperatingSystemName::WINDOWS_SERVER_2025:
+      return "WINDOWS_SERVER_2025";
     case OperatingSystemName::RHEL_8:
       return "RHEL_8";
     case OperatingSystemName::ROCKY_8:

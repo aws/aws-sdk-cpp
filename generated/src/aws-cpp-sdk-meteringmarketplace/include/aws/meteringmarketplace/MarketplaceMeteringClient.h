@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/meteringmarketplace/MarketplaceMeteringPaginationBase.h>
 #include <aws/meteringmarketplace/MarketplaceMeteringServiceClientModel.h>
+#include <aws/meteringmarketplace/MarketplaceMeteringWaiter.h>
 #include <aws/meteringmarketplace/MarketplaceMetering_EXPORTS.h>
 
 namespace Aws {
@@ -83,7 +84,8 @@ namespace MarketplaceMetering {
  */
 class AWS_MARKETPLACEMETERING_API MarketplaceMeteringClient : public Aws::Client::AWSJsonClient,
                                                               public Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceMeteringClient>,
-                                                              public MarketplaceMeteringPaginationBase<MarketplaceMeteringClient> {
+                                                              public MarketplaceMeteringPaginationBase<MarketplaceMeteringClient>,
+                                                              public MarketplaceMeteringWaiter<MarketplaceMeteringClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -389,6 +391,10 @@ class AWS_MARKETPLACEMETERING_API MarketplaceMeteringClient : public Aws::Client
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceMeteringClient>;
   void init(const MarketplaceMeteringClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MarketplaceMeteringError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   MarketplaceMeteringClientConfiguration m_clientConfiguration;
   std::shared_ptr<MarketplaceMeteringEndpointProviderBase> m_endpointProvider;

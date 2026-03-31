@@ -13,6 +13,7 @@
 #include <aws/customer-profiles/model/ListEventStreamsPaginationTraits.h>
 #include <aws/customer-profiles/model/ListEventTriggersPaginationTraits.h>
 #include <aws/customer-profiles/model/ListObjectTypeAttributesPaginationTraits.h>
+#include <aws/customer-profiles/model/ListRecommenderFiltersPaginationTraits.h>
 #include <aws/customer-profiles/model/ListRecommenderRecipesPaginationTraits.h>
 #include <aws/customer-profiles/model/ListRecommendersPaginationTraits.h>
 #include <aws/customer-profiles/model/ListRuleBasedMatchesPaginationTraits.h>
@@ -98,6 +99,18 @@ class CustomerProfilesPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListObjectTypeAttributesRequest,
                                              Pagination::ListObjectTypeAttributesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListRecommenderFilters operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecommenderFiltersRequest,
+                                    Pagination::ListRecommenderFiltersPaginationTraits<DerivedClient>>
+  ListRecommenderFiltersPaginator(const Model::ListRecommenderFiltersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecommenderFiltersRequest,
+                                             Pagination::ListRecommenderFiltersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

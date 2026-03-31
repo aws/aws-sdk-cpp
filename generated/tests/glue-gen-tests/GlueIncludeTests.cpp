@@ -769,6 +769,7 @@
 #include <aws/glue/model/OrphanFileDeletionConfiguration.h>
 #include <aws/glue/model/OrphanFileDeletionMetrics.h>
 #include <aws/glue/model/OtherMetadataValueListItem.h>
+#include <aws/glue/model/OverwriteChildResourcePermissionsWithDefaultEnum.h>
 #include <aws/glue/model/PIIDetection.h>
 #include <aws/glue/model/PaginationConfiguration.h>
 #include <aws/glue/model/ParamType.h>

@@ -1,0 +1,74 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mgn/Mgn_EXPORTS.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace mgn {
+namespace Model {
+class StartNetworkMigrationDeploymentResult {
+ public:
+  AWS_MGN_API StartNetworkMigrationDeploymentResult() = default;
+  AWS_MGN_API StartNetworkMigrationDeploymentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_MGN_API StartNetworkMigrationDeploymentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The unique identifier of the deployer job that was started.</p>
+   */
+  inline const Aws::String& GetJobID() const { return m_jobID; }
+  template <typename JobIDT = Aws::String>
+  void SetJobID(JobIDT&& value) {
+    m_jobIDHasBeenSet = true;
+    m_jobID = std::forward<JobIDT>(value);
+  }
+  template <typename JobIDT = Aws::String>
+  StartNetworkMigrationDeploymentResult& WithJobID(JobIDT&& value) {
+    SetJobID(std::forward<JobIDT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  StartNetworkMigrationDeploymentResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_jobID;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_jobIDHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace mgn
+}  // namespace Aws

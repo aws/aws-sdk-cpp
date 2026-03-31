@@ -36,30 +36,6 @@ class ValidationException {
   AWS_BCMDATAEXPORTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-  /**
-   * <p>The list of fields that are invalid.</p>
-   */
-  inline const Aws::Vector<ValidationExceptionField>& GetFields() const { return m_fields; }
-  inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
-  template <typename FieldsT = Aws::Vector<ValidationExceptionField>>
-  void SetFields(FieldsT&& value) {
-    m_fieldsHasBeenSet = true;
-    m_fields = std::forward<FieldsT>(value);
-  }
-  template <typename FieldsT = Aws::Vector<ValidationExceptionField>>
-  ValidationException& WithFields(FieldsT&& value) {
-    SetFields(std::forward<FieldsT>(value));
-    return *this;
-  }
-  template <typename FieldsT = ValidationExceptionField>
-  ValidationException& AddFields(FieldsT&& value) {
-    m_fieldsHasBeenSet = true;
-    m_fields.emplace_back(std::forward<FieldsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
 
   inline const Aws::String& GetMessage() const { return m_message; }
   inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
@@ -90,15 +66,39 @@ class ValidationException {
     return *this;
   }
   ///@}
- private:
-  Aws::Vector<ValidationExceptionField> m_fields;
 
+  ///@{
+  /**
+   * <p>The list of fields that are invalid.</p>
+   */
+  inline const Aws::Vector<ValidationExceptionField>& GetFields() const { return m_fields; }
+  inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
+  template <typename FieldsT = Aws::Vector<ValidationExceptionField>>
+  void SetFields(FieldsT&& value) {
+    m_fieldsHasBeenSet = true;
+    m_fields = std::forward<FieldsT>(value);
+  }
+  template <typename FieldsT = Aws::Vector<ValidationExceptionField>>
+  ValidationException& WithFields(FieldsT&& value) {
+    SetFields(std::forward<FieldsT>(value));
+    return *this;
+  }
+  template <typename FieldsT = ValidationExceptionField>
+  ValidationException& AddFields(FieldsT&& value) {
+    m_fieldsHasBeenSet = true;
+    m_fields.emplace_back(std::forward<FieldsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_message;
 
   ValidationExceptionReason m_reason{ValidationExceptionReason::NOT_SET};
-  bool m_fieldsHasBeenSet = false;
+
+  Aws::Vector<ValidationExceptionField> m_fields;
   bool m_messageHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
+  bool m_fieldsHasBeenSet = false;
 };
 
 }  // namespace Model

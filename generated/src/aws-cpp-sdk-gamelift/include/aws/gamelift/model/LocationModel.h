@@ -75,7 +75,9 @@ class LocationModel {
 
   ///@{
   /**
-   * <p>Information about the UDP ping beacon for this location. </p>
+   * <p>Information about the UDP ping beacon for this location. Ping beacons are
+   * fixed endpoints that you can use to measure network latency between a player
+   * device and an Amazon GameLift Servers hosting location.</p>
    */
   inline const PingBeacon& GetPingBeacon() const { return m_pingBeacon; }
   inline bool PingBeaconHasBeenSet() const { return m_pingBeaconHasBeenSet; }

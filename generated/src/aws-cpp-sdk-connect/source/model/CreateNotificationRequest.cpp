@@ -47,10 +47,6 @@ Aws::String CreateNotificationRequest::SerializePayload() const {
     payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
-  if (m_predefinedNotificationIdHasBeenSet) {
-    payload.WithString("PredefinedNotificationId", m_predefinedNotificationId);
-  }
-
   if (m_clientTokenHasBeenSet) {
     payload.WithString("ClientToken", m_clientToken);
   }

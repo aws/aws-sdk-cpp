@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/translate/TranslatePaginationBase.h>
 #include <aws/translate/TranslateServiceClientModel.h>
+#include <aws/translate/TranslateWaiter.h>
 #include <aws/translate/Translate_EXPORTS.h>
 
 namespace Aws {
@@ -20,7 +21,8 @@ namespace Translate {
  */
 class AWS_TRANSLATE_API TranslateClient : public Aws::Client::AWSJsonClient,
                                           public Aws::Client::ClientWithAsyncTemplateMethods<TranslateClient>,
-                                          public TranslatePaginationBase<TranslateClient> {
+                                          public TranslatePaginationBase<TranslateClient>,
+                                          public TranslateWaiter<TranslateClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -638,6 +640,10 @@ class AWS_TRANSLATE_API TranslateClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<TranslateClient>;
   void init(const TranslateClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, TranslateError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   TranslateClientConfiguration m_clientConfiguration;
   std::shared_ptr<TranslateEndpointProviderBase> m_endpointProvider;

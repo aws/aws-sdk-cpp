@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/notifications/NotificationsPaginationBase.h>
 #include <aws/notifications/NotificationsServiceClientModel.h>
+#include <aws/notifications/NotificationsWaiter.h>
 #include <aws/notifications/Notifications_EXPORTS.h>
 
 namespace Aws {
@@ -36,7 +37,8 @@ namespace Notifications {
  */
 class AWS_NOTIFICATIONS_API NotificationsClient : public Aws::Client::AWSJsonClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<NotificationsClient>,
-                                                  public NotificationsPaginationBase<NotificationsClient> {
+                                                  public NotificationsPaginationBase<NotificationsClient>,
+                                                  public NotificationsWaiter<NotificationsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1270,6 +1272,12 @@ class AWS_NOTIFICATIONS_API NotificationsClient : public Aws::Client::AWSJsonCli
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<NotificationsClient>;
   void init(const NotificationsClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, NotificationsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   NotificationsClientConfiguration m_clientConfiguration;
   std::shared_ptr<NotificationsEndpointProviderBase> m_endpointProvider;

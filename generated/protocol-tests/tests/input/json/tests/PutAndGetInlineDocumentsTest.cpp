@@ -27,7 +27,7 @@ AWS_PROTOCOL_TEST(PutAndGetInlineDocuments, PutAndGetInlineDocumentsInput) {
   expectedRq.method = "POST";
   expectedRq.body = "ewogICAgImlubGluZURvY3VtZW50IjogeyJmb28iOiAiYmFyIn0KfQ==";
   expectedRq.uri = "/";
-  expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.PutAndGetInlineDocuments)"}};
+  expectedRq.headers = {{"X-Amz-Target", R"(JsonProtocol.PutAndGetInlineDocuments)"}, {"Content-Type", R"(application/x-amz-json-1.1)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();

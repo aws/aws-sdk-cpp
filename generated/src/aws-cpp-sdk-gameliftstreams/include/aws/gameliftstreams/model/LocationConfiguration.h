@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gameliftstreams/GameLiftStreams_EXPORTS.h>
+#include <aws/gameliftstreams/model/VpcTransitConfiguration.h>
 
 #include <utility>
 
@@ -115,6 +116,30 @@ class LocationConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration for connecting the stream group to resources in your Amazon VPC
+   * using AWS Transit Gateway. This setting is optional. If specified, Amazon
+   * GameLift Streams creates a Transit Gateway to enable private network
+   * connectivity between the service VPC and your VPC. The VPC ID cannot be changed
+   * after the stream group is created, but you can update the CIDR blocks by calling
+   * <a
+   * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UpdateStreamGroup.html">UpdateStreamGroup</a>.</p>
+   */
+  inline const VpcTransitConfiguration& GetVpcTransitConfiguration() const { return m_vpcTransitConfiguration; }
+  inline bool VpcTransitConfigurationHasBeenSet() const { return m_vpcTransitConfigurationHasBeenSet; }
+  template <typename VpcTransitConfigurationT = VpcTransitConfiguration>
+  void SetVpcTransitConfiguration(VpcTransitConfigurationT&& value) {
+    m_vpcTransitConfigurationHasBeenSet = true;
+    m_vpcTransitConfiguration = std::forward<VpcTransitConfigurationT>(value);
+  }
+  template <typename VpcTransitConfigurationT = VpcTransitConfiguration>
+  LocationConfiguration& WithVpcTransitConfiguration(VpcTransitConfigurationT&& value) {
+    SetVpcTransitConfiguration(std::forward<VpcTransitConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_locationName;
 
@@ -123,10 +148,13 @@ class LocationConfiguration {
   int m_targetIdleCapacity{0};
 
   int m_maximumCapacity{0};
+
+  VpcTransitConfiguration m_vpcTransitConfiguration;
   bool m_locationNameHasBeenSet = false;
   bool m_alwaysOnCapacityHasBeenSet = false;
   bool m_targetIdleCapacityHasBeenSet = false;
   bool m_maximumCapacityHasBeenSet = false;
+  bool m_vpcTransitConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

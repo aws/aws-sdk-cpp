@@ -7,6 +7,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlRequest.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/ModifyMemoryStrategies.h>
+#include <aws/bedrock-agentcore-control/model/StreamDeliveryResources.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -139,6 +140,24 @@ class UpdateMemoryRequest : public BedrockAgentCoreControlRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration for streaming memory record data to external resources.</p>
+   */
+  inline const StreamDeliveryResources& GetStreamDeliveryResources() const { return m_streamDeliveryResources; }
+  inline bool StreamDeliveryResourcesHasBeenSet() const { return m_streamDeliveryResourcesHasBeenSet; }
+  template <typename StreamDeliveryResourcesT = StreamDeliveryResources>
+  void SetStreamDeliveryResources(StreamDeliveryResourcesT&& value) {
+    m_streamDeliveryResourcesHasBeenSet = true;
+    m_streamDeliveryResources = std::forward<StreamDeliveryResourcesT>(value);
+  }
+  template <typename StreamDeliveryResourcesT = StreamDeliveryResources>
+  UpdateMemoryRequest& WithStreamDeliveryResources(StreamDeliveryResourcesT&& value) {
+    SetStreamDeliveryResources(std::forward<StreamDeliveryResourcesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
@@ -151,12 +170,15 @@ class UpdateMemoryRequest : public BedrockAgentCoreControlRequest {
   Aws::String m_memoryExecutionRoleArn;
 
   ModifyMemoryStrategies m_memoryStrategies;
+
+  StreamDeliveryResources m_streamDeliveryResources;
   bool m_clientTokenHasBeenSet = true;
   bool m_memoryIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_eventExpiryDurationHasBeenSet = false;
   bool m_memoryExecutionRoleArnHasBeenSet = false;
   bool m_memoryStrategiesHasBeenSet = false;
+  bool m_streamDeliveryResourcesHasBeenSet = false;
 };
 
 }  // namespace Model

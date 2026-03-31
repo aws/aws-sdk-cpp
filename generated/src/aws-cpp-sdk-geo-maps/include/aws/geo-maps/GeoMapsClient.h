@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/geo-maps/GeoMapsPaginationBase.h>
 #include <aws/geo-maps/GeoMapsServiceClientModel.h>
+#include <aws/geo-maps/GeoMapsWaiter.h>
 #include <aws/geo-maps/GeoMaps_EXPORTS.h>
 
 namespace Aws {
@@ -29,7 +30,8 @@ namespace GeoMaps {
  */
 class AWS_GEOMAPS_API GeoMapsClient : public Aws::Client::AWSJsonClient,
                                       public Aws::Client::ClientWithAsyncTemplateMethods<GeoMapsClient>,
-                                      public GeoMapsPaginationBase<GeoMapsClient> {
+                                      public GeoMapsPaginationBase<GeoMapsClient>,
+                                      public GeoMapsWaiter<GeoMapsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -241,6 +243,12 @@ class AWS_GEOMAPS_API GeoMapsClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<GeoMapsClient>;
   void init(const GeoMapsClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, GeoMapsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   GeoMapsClientConfiguration m_clientConfiguration;
   std::shared_ptr<GeoMapsEndpointProviderBase> m_endpointProvider;

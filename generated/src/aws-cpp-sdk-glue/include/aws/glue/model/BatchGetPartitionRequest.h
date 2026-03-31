@@ -8,7 +8,9 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/GlueRequest.h>
 #include <aws/glue/Glue_EXPORTS.h>
+#include <aws/glue/model/AuditContext.h>
 #include <aws/glue/model/PartitionValueList.h>
+#include <aws/glue/model/QuerySessionContext.h>
 
 #include <utility>
 
@@ -110,6 +112,38 @@ class BatchGetPartitionRequest : public GlueRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const AuditContext& GetAuditContext() const { return m_auditContext; }
+  inline bool AuditContextHasBeenSet() const { return m_auditContextHasBeenSet; }
+  template <typename AuditContextT = AuditContext>
+  void SetAuditContext(AuditContextT&& value) {
+    m_auditContextHasBeenSet = true;
+    m_auditContext = std::forward<AuditContextT>(value);
+  }
+  template <typename AuditContextT = AuditContext>
+  BatchGetPartitionRequest& WithAuditContext(AuditContextT&& value) {
+    SetAuditContext(std::forward<AuditContextT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const QuerySessionContext& GetQuerySessionContext() const { return m_querySessionContext; }
+  inline bool QuerySessionContextHasBeenSet() const { return m_querySessionContextHasBeenSet; }
+  template <typename QuerySessionContextT = QuerySessionContext>
+  void SetQuerySessionContext(QuerySessionContextT&& value) {
+    m_querySessionContextHasBeenSet = true;
+    m_querySessionContext = std::forward<QuerySessionContextT>(value);
+  }
+  template <typename QuerySessionContextT = QuerySessionContext>
+  BatchGetPartitionRequest& WithQuerySessionContext(QuerySessionContextT&& value) {
+    SetQuerySessionContext(std::forward<QuerySessionContextT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_catalogId;
 
@@ -118,10 +152,16 @@ class BatchGetPartitionRequest : public GlueRequest {
   Aws::String m_tableName;
 
   Aws::Vector<PartitionValueList> m_partitionsToGet;
+
+  AuditContext m_auditContext;
+
+  QuerySessionContext m_querySessionContext;
   bool m_catalogIdHasBeenSet = false;
   bool m_databaseNameHasBeenSet = false;
   bool m_tableNameHasBeenSet = false;
   bool m_partitionsToGetHasBeenSet = false;
+  bool m_auditContextHasBeenSet = false;
+  bool m_querySessionContextHasBeenSet = false;
 };
 
 }  // namespace Model

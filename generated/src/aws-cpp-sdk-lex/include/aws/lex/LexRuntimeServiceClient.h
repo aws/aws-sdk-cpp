@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lex/LexRuntimeServicePaginationBase.h>
 #include <aws/lex/LexRuntimeServiceServiceClientModel.h>
+#include <aws/lex/LexRuntimeServiceWaiter.h>
 #include <aws/lex/LexRuntimeService_EXPORTS.h>
 
 namespace Aws {
@@ -29,7 +30,8 @@ namespace LexRuntimeService {
  */
 class AWS_LEXRUNTIMESERVICE_API LexRuntimeServiceClient : public Aws::Client::AWSJsonClient,
                                                           public Aws::Client::ClientWithAsyncTemplateMethods<LexRuntimeServiceClient>,
-                                                          public LexRuntimeServicePaginationBase<LexRuntimeServiceClient> {
+                                                          public LexRuntimeServicePaginationBase<LexRuntimeServiceClient>,
+                                                          public LexRuntimeServiceWaiter<LexRuntimeServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -297,6 +299,12 @@ class AWS_LEXRUNTIMESERVICE_API LexRuntimeServiceClient : public Aws::Client::AW
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<LexRuntimeServiceClient>;
   void init(const LexRuntimeServiceClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, LexRuntimeServiceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   LexRuntimeServiceClientConfiguration m_clientConfiguration;
   std::shared_ptr<LexRuntimeServiceEndpointProviderBase> m_endpointProvider;

@@ -1,5 +1,8 @@
 ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation.request.shape.name}& request) const
 {
+#if(!$operation.result.shape.hasEventStreamMembers() && !$operation.result.shape.hasStreamMembers())
+      #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceInvokeOperationMethod.vm")
+#else
   AWS_OPERATION_GUARD(${operation.name});
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationRequestRequiredMemberValidate.vm")
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ${operation.name}, CoreErrors, CoreErrors::NOT_INITIALIZED);
@@ -15,9 +18,11 @@ ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/UriRequestQueryParams.vm")
 #if($operation.result && $operation.result.shape.hasStreamMembers())
 #if($serviceModel.endpointRules)
-      return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}));
+      auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method});
+      return result.IsSuccess() ? ${operation.name}Outcome(result.GetResultWithOwnership()) : ${operation.name}Outcome(std::move(result.GetError()));
 #else
-      return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}));
+      auto result = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method});
+      return result.IsSuccess() ? ${operation.name}Outcome(result.GetResultWithOwnership()) : ${operation.name}Outcome(std::move(result.GetError()));
 #end
 #elseif($operation.result && $operation.result.shape.hasEventStreamMembers())
       request.SetResponseStreamFactory(
@@ -32,19 +37,24 @@ ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation
         });
       }
 #if($serviceModel.endpointRules)
-      return ${operation.name}Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}));
+      auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method});
+      return result.IsSuccess() ? ${operation.name}Outcome(result.GetResultWithOwnership()) : ${operation.name}Outcome(std::move(result.GetError()));
 #else
-      return ${operation.name}Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}));
+      auto result = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method});
+      return result.IsSuccess() ? ${operation.name}Outcome(result.GetResultWithOwnership()) : ${operation.name}Outcome(std::move(result.GetError()));
 #end
 #else
 #if($serviceModel.endpointRules)
-      return ${operation.name}Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.signerName}));
+      auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.signerName});
+      return result.IsSuccess() ? ${operation.name}Outcome(result.GetResultWithOwnership()) : ${operation.name}Outcome(std::move(result.GetError()));
 #else
-      return ${operation.name}Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.signerName}));
+      auto result = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.signerName});
+      return result.IsSuccess() ? ${operation.name}Outcome(result.GetResultWithOwnership()) : ${operation.name}Outcome(std::move(result.GetError()));
 #end
 #end
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+#end
 }

@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/s3vectors/S3VectorsPaginationBase.h>
 #include <aws/s3vectors/S3VectorsServiceClientModel.h>
+#include <aws/s3vectors/S3VectorsWaiter.h>
 #include <aws/s3vectors/S3Vectors_EXPORTS.h>
 
 namespace Aws {
@@ -26,7 +27,8 @@ namespace S3Vectors {
  */
 class AWS_S3VECTORS_API S3VectorsClient : public Aws::Client::AWSJsonClient,
                                           public Aws::Client::ClientWithAsyncTemplateMethods<S3VectorsClient>,
-                                          public S3VectorsPaginationBase<S3VectorsClient> {
+                                          public S3VectorsPaginationBase<S3VectorsClient>,
+                                          public S3VectorsWaiter<S3VectorsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -711,6 +713,12 @@ class AWS_S3VECTORS_API S3VectorsClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<S3VectorsClient>;
   void init(const S3VectorsClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, S3VectorsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   S3VectorsClientConfiguration m_clientConfiguration;
   std::shared_ptr<S3VectorsEndpointProviderBase> m_endpointProvider;

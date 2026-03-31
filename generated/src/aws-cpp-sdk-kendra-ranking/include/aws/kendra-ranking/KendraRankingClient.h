@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kendra-ranking/KendraRankingPaginationBase.h>
 #include <aws/kendra-ranking/KendraRankingServiceClientModel.h>
+#include <aws/kendra-ranking/KendraRankingWaiter.h>
 #include <aws/kendra-ranking/KendraRanking_EXPORTS.h>
 
 namespace Aws {
@@ -20,7 +21,8 @@ namespace KendraRanking {
  */
 class AWS_KENDRARANKING_API KendraRankingClient : public Aws::Client::AWSJsonClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<KendraRankingClient>,
-                                                  public KendraRankingPaginationBase<KendraRankingClient> {
+                                                  public KendraRankingPaginationBase<KendraRankingClient>,
+                                                  public KendraRankingWaiter<KendraRankingClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -358,6 +360,10 @@ class AWS_KENDRARANKING_API KendraRankingClient : public Aws::Client::AWSJsonCli
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<KendraRankingClient>;
   void init(const KendraRankingClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, KendraRankingError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   KendraRankingClientConfiguration m_clientConfiguration;
   std::shared_ptr<KendraRankingEndpointProviderBase> m_endpointProvider;

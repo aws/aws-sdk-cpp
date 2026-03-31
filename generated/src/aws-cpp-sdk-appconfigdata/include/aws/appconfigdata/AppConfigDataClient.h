@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appconfigdata/AppConfigDataPaginationBase.h>
 #include <aws/appconfigdata/AppConfigDataServiceClientModel.h>
+#include <aws/appconfigdata/AppConfigDataWaiter.h>
 #include <aws/appconfigdata/AppConfigData_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -58,7 +59,8 @@ namespace AppConfigData {
  */
 class AWS_APPCONFIGDATA_API AppConfigDataClient : public Aws::Client::AWSJsonClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<AppConfigDataClient>,
-                                                  public AppConfigDataPaginationBase<AppConfigDataClient> {
+                                                  public AppConfigDataPaginationBase<AppConfigDataClient>,
+                                                  public AppConfigDataWaiter<AppConfigDataClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -196,6 +198,12 @@ class AWS_APPCONFIGDATA_API AppConfigDataClient : public Aws::Client::AWSJsonCli
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AppConfigDataClient>;
   void init(const AppConfigDataClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, AppConfigDataError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   AppConfigDataClientConfiguration m_clientConfiguration;
   std::shared_ptr<AppConfigDataEndpointProviderBase> m_endpointProvider;

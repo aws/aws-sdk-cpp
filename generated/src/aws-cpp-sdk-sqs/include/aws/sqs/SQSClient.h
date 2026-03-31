@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sqs/SQSPaginationBase.h>
 #include <aws/sqs/SQSServiceClientModel.h>
+#include <aws/sqs/SQSWaiter.h>
 #include <aws/sqs/SQS_EXPORTS.h>
 
 namespace Aws {
@@ -43,7 +44,8 @@ namespace SQS {
  */
 class AWS_SQS_API SQSClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<SQSClient>,
-                              public SQSPaginationBase<SQSClient> {
+                              public SQSPaginationBase<SQSClient>,
+                              public SQSWaiter<SQSClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1043,6 +1045,10 @@ class AWS_SQS_API SQSClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SQSClient>;
   void init(const SQSClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SQSError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   SQSClientConfiguration m_clientConfiguration;
   std::shared_ptr<SQSEndpointProviderBase> m_endpointProvider;

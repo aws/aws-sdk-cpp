@@ -80,12 +80,12 @@ class DocumentTypeRequest : public RestJsonProtocolRequest {
   ///@}
  private:
   Aws::String m_stringValue;
-  bool m_stringValueHasBeenSet = false;
 
   Aws::Utils::Document m_documentValue;
-  bool m_documentValueHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_stringValueHasBeenSet = false;
+  bool m_documentValueHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/socialmessaging/SocialMessagingPaginationBase.h>
 #include <aws/socialmessaging/SocialMessagingServiceClientModel.h>
+#include <aws/socialmessaging/SocialMessagingWaiter.h>
 #include <aws/socialmessaging/SocialMessaging_EXPORTS.h>
 
 namespace Aws {
@@ -57,7 +58,8 @@ namespace SocialMessaging {
  */
 class AWS_SOCIALMESSAGING_API SocialMessagingClient : public Aws::Client::AWSJsonClient,
                                                       public Aws::Client::ClientWithAsyncTemplateMethods<SocialMessagingClient>,
-                                                      public SocialMessagingPaginationBase<SocialMessagingClient> {
+                                                      public SocialMessagingPaginationBase<SocialMessagingClient>,
+                                                      public SocialMessagingWaiter<SocialMessagingClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -751,6 +753,12 @@ class AWS_SOCIALMESSAGING_API SocialMessagingClient : public Aws::Client::AWSJso
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SocialMessagingClient>;
   void init(const SocialMessagingClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SocialMessagingError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   SocialMessagingClientConfiguration m_clientConfiguration;
   std::shared_ptr<SocialMessagingEndpointProviderBase> m_endpointProvider;

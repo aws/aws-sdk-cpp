@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/timestream-query/TimestreamQueryPaginationBase.h>
 #include <aws/timestream-query/TimestreamQueryServiceClientModel.h>
+#include <aws/timestream-query/TimestreamQueryWaiter.h>
 #include <aws/timestream-query/TimestreamQuery_EXPORTS.h>
 
 namespace Aws {
@@ -19,7 +20,8 @@ namespace TimestreamQuery {
  */
 class AWS_TIMESTREAMQUERY_API TimestreamQueryClient : public Aws::Client::AWSJsonClient,
                                                       public Aws::Client::ClientWithAsyncTemplateMethods<TimestreamQueryClient>,
-                                                      public TimestreamQueryPaginationBase<TimestreamQueryClient> {
+                                                      public TimestreamQueryPaginationBase<TimestreamQueryClient>,
+                                                      public TimestreamQueryWaiter<TimestreamQueryClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -546,6 +548,10 @@ class AWS_TIMESTREAMQUERY_API TimestreamQueryClient : public Aws::Client::AWSJso
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<TimestreamQueryClient>;
   void init(const TimestreamQueryClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, TimestreamQueryError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;
   TimestreamQueryClientConfiguration m_clientConfiguration;

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/opensearch/model/CloudWatchDirectQueryDataSource.h>
+#include <aws/opensearch/model/PrometheusDirectQueryDataSource.h>
 #include <aws/opensearch/model/SecurityLakeDirectQueryDataSource.h>
 
 #include <utility>
@@ -69,12 +70,33 @@ class DirectQueryDataSourceType {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> Specifies Prometheus as a type of data source for direct queries. </p>
+   */
+  inline const PrometheusDirectQueryDataSource& GetPrometheus() const { return m_prometheus; }
+  inline bool PrometheusHasBeenSet() const { return m_prometheusHasBeenSet; }
+  template <typename PrometheusT = PrometheusDirectQueryDataSource>
+  void SetPrometheus(PrometheusT&& value) {
+    m_prometheusHasBeenSet = true;
+    m_prometheus = std::forward<PrometheusT>(value);
+  }
+  template <typename PrometheusT = PrometheusDirectQueryDataSource>
+  DirectQueryDataSourceType& WithPrometheus(PrometheusT&& value) {
+    SetPrometheus(std::forward<PrometheusT>(value));
+    return *this;
+  }
+  ///@}
  private:
   CloudWatchDirectQueryDataSource m_cloudWatchLog;
 
   SecurityLakeDirectQueryDataSource m_securityLake;
+
+  PrometheusDirectQueryDataSource m_prometheus;
   bool m_cloudWatchLogHasBeenSet = false;
   bool m_securityLakeHasBeenSet = false;
+  bool m_prometheusHasBeenSet = false;
 };
 
 }  // namespace Model

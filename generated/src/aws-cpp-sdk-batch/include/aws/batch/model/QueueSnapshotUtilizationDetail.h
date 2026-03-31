@@ -7,6 +7,7 @@
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/batch/model/FairshareUtilizationDetail.h>
 #include <aws/batch/model/QueueSnapshotCapacityUsage.h>
+#include <aws/batch/model/QuotaShareUtilizationDetail.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
@@ -23,8 +24,8 @@ namespace Model {
 
 /**
  * <p>The job queue utilization at a specific point in time, including total
- * capacity usage and fairshare utilization breakdown.</p><p><h3>See Also:</h3>
- * <a
+ * capacity usage, and quota share or fairshare utilization breakdown depending on
+ * the job queue scheduling policy.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/QueueSnapshotUtilizationDetail">AWS
  * API Reference</a></p>
  */
@@ -37,8 +38,7 @@ class QueueSnapshotUtilizationDetail {
 
   ///@{
   /**
-   * <p>The total capacity usage for the entire job queue, for both first-in,
-   * first-out (FIFO) and fairshare scheduling job queue.</p>
+   * <p>The total capacity usage for the entire job queue.</p>
    */
   inline const Aws::Vector<QueueSnapshotCapacityUsage>& GetTotalCapacityUsage() const { return m_totalCapacityUsage; }
   inline bool TotalCapacityUsageHasBeenSet() const { return m_totalCapacityUsageHasBeenSet; }
@@ -81,6 +81,25 @@ class QueueSnapshotUtilizationDetail {
 
   ///@{
   /**
+   * <p>The utilization information for a job queue with a quota share scheduling
+   * policy.</p>
+   */
+  inline const QuotaShareUtilizationDetail& GetQuotaShareUtilization() const { return m_quotaShareUtilization; }
+  inline bool QuotaShareUtilizationHasBeenSet() const { return m_quotaShareUtilizationHasBeenSet; }
+  template <typename QuotaShareUtilizationT = QuotaShareUtilizationDetail>
+  void SetQuotaShareUtilization(QuotaShareUtilizationT&& value) {
+    m_quotaShareUtilizationHasBeenSet = true;
+    m_quotaShareUtilization = std::forward<QuotaShareUtilizationT>(value);
+  }
+  template <typename QuotaShareUtilizationT = QuotaShareUtilizationDetail>
+  QueueSnapshotUtilizationDetail& WithQuotaShareUtilization(QuotaShareUtilizationT&& value) {
+    SetQuotaShareUtilization(std::forward<QuotaShareUtilizationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Unix timestamp (in milliseconds) for when the queue utilization
    * information was last updated.</p>
    */
@@ -100,9 +119,12 @@ class QueueSnapshotUtilizationDetail {
 
   FairshareUtilizationDetail m_fairshareUtilization;
 
+  QuotaShareUtilizationDetail m_quotaShareUtilization;
+
   long long m_lastUpdatedAt{0};
   bool m_totalCapacityUsageHasBeenSet = false;
   bool m_fairshareUtilizationHasBeenSet = false;
+  bool m_quotaShareUtilizationHasBeenSet = false;
   bool m_lastUpdatedAtHasBeenSet = false;
 };
 

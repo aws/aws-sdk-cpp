@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotsitewise/IoTSiteWisePaginationBase.h>
 #include <aws/iotsitewise/IoTSiteWiseServiceClientModel.h>
+#include <aws/iotsitewise/IoTSiteWiseWaiter.h>
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 
 namespace Aws {
@@ -27,7 +28,8 @@ namespace IoTSiteWise {
  */
 class AWS_IOTSITEWISE_API IoTSiteWiseClient : public Aws::Client::AWSJsonClient,
                                               public Aws::Client::ClientWithAsyncTemplateMethods<IoTSiteWiseClient>,
-                                              public IoTSiteWisePaginationBase<IoTSiteWiseClient> {
+                                              public IoTSiteWisePaginationBase<IoTSiteWiseClient>,
+                                              public IoTSiteWiseWaiter<IoTSiteWiseClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -3210,6 +3212,12 @@ class AWS_IOTSITEWISE_API IoTSiteWiseClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTSiteWiseClient>;
   void init(const IoTSiteWiseClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, IoTSiteWiseError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   IoTSiteWiseClientConfiguration m_clientConfiguration;
   std::shared_ptr<IoTSiteWiseEndpointProviderBase> m_endpointProvider;

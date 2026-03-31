@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mediastore-data/MediaStoreDataPaginationBase.h>
 #include <aws/mediastore-data/MediaStoreDataServiceClientModel.h>
+#include <aws/mediastore-data/MediaStoreDataWaiter.h>
 #include <aws/mediastore-data/MediaStoreData_EXPORTS.h>
 
 namespace Aws {
@@ -21,7 +22,8 @@ namespace MediaStoreData {
  */
 class AWS_MEDIASTOREDATA_API MediaStoreDataClient : public Aws::Client::AWSJsonClient,
                                                     public Aws::Client::ClientWithAsyncTemplateMethods<MediaStoreDataClient>,
-                                                    public MediaStoreDataPaginationBase<MediaStoreDataClient> {
+                                                    public MediaStoreDataPaginationBase<MediaStoreDataClient>,
+                                                    public MediaStoreDataWaiter<MediaStoreDataClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -218,6 +220,12 @@ class AWS_MEDIASTOREDATA_API MediaStoreDataClient : public Aws::Client::AWSJsonC
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MediaStoreDataClient>;
   void init(const MediaStoreDataClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MediaStoreDataError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   MediaStoreDataClientConfiguration m_clientConfiguration;
   std::shared_ptr<MediaStoreDataEndpointProviderBase> m_endpointProvider;

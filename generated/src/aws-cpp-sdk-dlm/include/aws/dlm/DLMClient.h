@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/dlm/DLMPaginationBase.h>
 #include <aws/dlm/DLMServiceClientModel.h>
+#include <aws/dlm/DLMWaiter.h>
 #include <aws/dlm/DLM_EXPORTS.h>
 
 namespace Aws {
@@ -26,7 +27,8 @@ namespace DLM {
  */
 class AWS_DLM_API DLMClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<DLMClient>,
-                              public DLMPaginationBase<DLMClient> {
+                              public DLMPaginationBase<DLMClient>,
+                              public DLMWaiter<DLMClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -315,6 +317,12 @@ class AWS_DLM_API DLMClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DLMClient>;
   void init(const DLMClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, DLMError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   DLMClientConfiguration m_clientConfiguration;
   std::shared_ptr<DLMEndpointProviderBase> m_endpointProvider;

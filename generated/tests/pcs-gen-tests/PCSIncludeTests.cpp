@@ -17,6 +17,7 @@
 #include <aws/pcs/model/Accounting.h>
 #include <aws/pcs/model/AccountingMode.h>
 #include <aws/pcs/model/AccountingRequest.h>
+#include <aws/pcs/model/CgroupCustomSetting.h>
 #include <aws/pcs/model/Cluster.h>
 #include <aws/pcs/model/ClusterSlurmConfiguration.h>
 #include <aws/pcs/model/ClusterSlurmConfigurationRequest.h>
@@ -86,6 +87,7 @@
 #include <aws/pcs/model/SlurmRest.h>
 #include <aws/pcs/model/SlurmRestMode.h>
 #include <aws/pcs/model/SlurmRestRequest.h>
+#include <aws/pcs/model/SlurmdbdCustomSetting.h>
 #include <aws/pcs/model/SpotAllocationStrategy.h>
 #include <aws/pcs/model/SpotOptions.h>
 #include <aws/pcs/model/TagResourceRequest.h>

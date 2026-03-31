@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/chime-sdk-identity/ChimeSDKIdentityPaginationBase.h>
 #include <aws/chime-sdk-identity/ChimeSDKIdentityServiceClientModel.h>
+#include <aws/chime-sdk-identity/ChimeSDKIdentityWaiter.h>
 #include <aws/chime-sdk-identity/ChimeSDKIdentity_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -24,7 +25,8 @@ namespace ChimeSDKIdentity {
  */
 class AWS_CHIMESDKIDENTITY_API ChimeSDKIdentityClient : public Aws::Client::AWSJsonClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKIdentityClient>,
-                                                        public ChimeSDKIdentityPaginationBase<ChimeSDKIdentityClient> {
+                                                        public ChimeSDKIdentityPaginationBase<ChimeSDKIdentityClient>,
+                                                        public ChimeSDKIdentityWaiter<ChimeSDKIdentityClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -939,6 +941,12 @@ class AWS_CHIMESDKIDENTITY_API ChimeSDKIdentityClient : public Aws::Client::AWSJ
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKIdentityClient>;
   void init(const ChimeSDKIdentityClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ChimeSDKIdentityError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   ChimeSDKIdentityClientConfiguration m_clientConfiguration;
   std::shared_ptr<ChimeSDKIdentityEndpointProviderBase> m_endpointProvider;

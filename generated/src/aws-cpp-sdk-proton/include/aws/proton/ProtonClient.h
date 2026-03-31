@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/proton/ProtonPaginationBase.h>
 #include <aws/proton/ProtonServiceClientModel.h>
+#include <aws/proton/ProtonWaiter.h>
 #include <aws/proton/Proton_EXPORTS.h>
 
 namespace Aws {
@@ -104,7 +105,8 @@ namespace Proton {
  */
 class AWS_PROTON_API ProtonClient : public Aws::Client::AWSJsonClient,
                                     public Aws::Client::ClientWithAsyncTemplateMethods<ProtonClient>,
-                                    public ProtonPaginationBase<ProtonClient> {
+                                    public ProtonPaginationBase<ProtonClient>,
+                                    public ProtonWaiter<ProtonClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -164,6 +166,10 @@ class AWS_PROTON_API ProtonClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ProtonClient>;
   void init(const ProtonClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ProtonError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   ProtonClientConfiguration m_clientConfiguration;
   std::shared_ptr<ProtonEndpointProviderBase> m_endpointProvider;

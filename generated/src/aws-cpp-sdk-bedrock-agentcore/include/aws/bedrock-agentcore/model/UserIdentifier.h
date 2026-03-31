@@ -35,7 +35,8 @@ class UserIdentifier {
 
   ///@{
   /**
-   * <p>The OAuth2.0 token issued by the user’s identity provider</p>
+   * <p>The OAuth2.0 token issued by the user’s identity provider that was used to
+   * generate the workload access token</p>
    */
   inline const Aws::String& GetUserToken() const { return m_userToken; }
   inline bool UserTokenHasBeenSet() const { return m_userTokenHasBeenSet; }

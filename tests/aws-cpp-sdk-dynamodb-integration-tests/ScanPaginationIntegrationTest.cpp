@@ -79,14 +79,12 @@ protected:
     DescribeTableResult WaitUntilActive(const Aws::String& tableNameParam) {
         DescribeTableRequest describeTableRequest;
         describeTableRequest.SetTableName(tableNameParam);
-        
-        DescribeTableOutcome outcome = dynamoClient.DescribeTable(describeTableRequest);
-        while (outcome.IsSuccess() && outcome.GetResult().GetTable().GetTableStatus() != TableStatus::ACTIVE) {
-            std::this_thread::sleep_for(std::chrono::seconds(1));
-            outcome = dynamoClient.DescribeTable(describeTableRequest);
-        }
-        
-        return outcome.GetResult();
+
+        auto waiterOutcome = dynamoClient.WaitUntilTableExists(describeTableRequest);
+        EXPECT_TRUE(waiterOutcome.IsSuccess()) << "WaitUntilTableExists failed for table: " << tableNameParam;
+        EXPECT_TRUE(waiterOutcome.GetResult().IsSuccess());
+
+        return waiterOutcome.GetResult().GetResult();
     }
 
     void PutTestData() {

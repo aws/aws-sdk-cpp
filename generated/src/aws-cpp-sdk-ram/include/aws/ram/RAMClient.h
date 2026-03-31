@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ram/RAMPaginationBase.h>
 #include <aws/ram/RAMServiceClientModel.h>
+#include <aws/ram/RAMWaiter.h>
 #include <aws/ram/RAM_EXPORTS.h>
 
 namespace Aws {
@@ -30,7 +31,8 @@ namespace RAM {
  */
 class AWS_RAM_API RAMClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<RAMClient>,
-                              public RAMPaginationBase<RAMClient> {
+                              public RAMPaginationBase<RAMClient>,
+                              public RAMWaiter<RAMClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1249,6 +1251,12 @@ class AWS_RAM_API RAMClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<RAMClient>;
   void init(const RAMClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, RAMError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   RAMClientConfiguration m_clientConfiguration;
   std::shared_ptr<RAMEndpointProviderBase> m_endpointProvider;

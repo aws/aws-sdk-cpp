@@ -147,3 +147,20 @@ AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson11FooErrorWithDunderTypeUriAndName
   auto outcome = client.GreetingWithErrors(request);
   ASSERT_FALSE(outcome.IsSuccess());
 }
+
+AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson11FooErrorWithNestedTypeProperty) {
+  JsonProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 500;
+  mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}};
+  mockRs.body =
+      "ewogICAgIl9fdHlwZSI6ICJhd3MucHJvdG9jb2x0ZXN0cy5yZXN0anNvbiNGb29FcnJvciIsCiAgICAiRXJyb3JEZXRhaWxzIjogWwogICAgICB7CiAgICAgICAgICAiX190"
+      "eXBlIjogImNvbS5hbWF6b24uaW50ZXJuYWwjRXJyb3JEZXRhaWxzIiwKICAgICAgICAgICJyZWFzb24iOiAiU29tZSByZWFzb24iCiAgICAgIH0KICAgIF0KfQ==";
+  SetMockResponse(mockRs);
+
+  GreetingWithErrorsRequest request;
+
+  auto outcome = client.GreetingWithErrors(request);
+  ASSERT_FALSE(outcome.IsSuccess());
+}

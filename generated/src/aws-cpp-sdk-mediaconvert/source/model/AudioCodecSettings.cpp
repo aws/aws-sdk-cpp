@@ -26,6 +26,10 @@ AudioCodecSettings& AudioCodecSettings::operator=(JsonView jsonValue) {
     m_ac3Settings = jsonValue.GetObject("ac3Settings");
     m_ac3SettingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ac4Settings")) {
+    m_ac4Settings = jsonValue.GetObject("ac4Settings");
+    m_ac4SettingsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("aiffSettings")) {
     m_aiffSettings = jsonValue.GetObject("aiffSettings");
     m_aiffSettingsHasBeenSet = true;
@@ -78,6 +82,10 @@ JsonValue AudioCodecSettings::Jsonize() const {
 
   if (m_ac3SettingsHasBeenSet) {
     payload.WithObject("ac3Settings", m_ac3Settings.Jsonize());
+  }
+
+  if (m_ac4SettingsHasBeenSet) {
+    payload.WithObject("ac4Settings", m_ac4Settings.Jsonize());
   }
 
   if (m_aiffSettingsHasBeenSet) {

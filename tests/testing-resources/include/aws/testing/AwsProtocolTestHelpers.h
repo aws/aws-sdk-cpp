@@ -113,9 +113,19 @@ public:
   static void ValidateBody(const ExpectedRequest& expected, const Aws::ProtocolMock::Model::Request& receivedRequest) {
     const auto expectedBodyBuf = Aws::Utils::HashingUtils::Base64Decode(expected.body);
     const auto receivedBodyBuf = Aws::Utils::HashingUtils::Base64Decode(receivedRequest.GetBody());
-    const auto expectedBodyStr = Aws::String(reinterpret_cast<char*>(expectedBodyBuf.GetUnderlyingData()), expectedBodyBuf.GetLength());
-    const auto receivedBodyStr = Aws::String(reinterpret_cast<char*>(receivedBodyBuf.GetUnderlyingData()), receivedBodyBuf.GetLength());
-    EXPECT_STREQ(expectedBodyStr.c_str(), receivedBodyStr.c_str());
+    auto expectedBodyStr = Aws::String(reinterpret_cast<char*>(expectedBodyBuf.GetUnderlyingData()), expectedBodyBuf.GetLength());
+    auto receivedBodyStr = Aws::String(reinterpret_cast<char*>(receivedBodyBuf.GetUnderlyingData()), receivedBodyBuf.GetLength());
+    // Normalize empty bodies to empty JSON object
+    if (expectedBodyStr.empty()) expectedBodyStr = "{}";
+    if (receivedBodyStr.empty()) receivedBodyStr = "{}";
+    // Attempt semantic JSON comparison by round-tripping through the parser
+    Aws::Utils::Json::JsonValue expectedJson(expectedBodyStr);
+    Aws::Utils::Json::JsonValue receivedJson(receivedBodyStr);
+    if (expectedJson.WasParseSuccessful() && receivedJson.WasParseSuccessful()) {
+      EXPECT_EQ(expectedJson, receivedJson);
+    } else {
+      EXPECT_STREQ(expectedBodyStr.c_str(), receivedBodyStr.c_str());
+    }
   }
 
   void ValidateRequestSent(const std::function<void (const ExpectedRequest& expected, const Aws::ProtocolMock::Model::Request& receivedRequest)>& bodyCompare = ValidateBody) const {

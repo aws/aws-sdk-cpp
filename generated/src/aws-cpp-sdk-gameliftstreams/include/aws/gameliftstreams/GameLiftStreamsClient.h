@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/gameliftstreams/GameLiftStreamsPaginationBase.h>
 #include <aws/gameliftstreams/GameLiftStreamsServiceClientModel.h>
+#include <aws/gameliftstreams/GameLiftStreamsWaiter.h>
 #include <aws/gameliftstreams/GameLiftStreams_EXPORTS.h>
 
 namespace Aws {
@@ -28,7 +29,8 @@ namespace GameLiftStreams {
  */
 class AWS_GAMELIFTSTREAMS_API GameLiftStreamsClient : public Aws::Client::AWSJsonClient,
                                                       public Aws::Client::ClientWithAsyncTemplateMethods<GameLiftStreamsClient>,
-                                                      public GameLiftStreamsPaginationBase<GameLiftStreamsClient> {
+                                                      public GameLiftStreamsPaginationBase<GameLiftStreamsClient>,
+                                                      public GameLiftStreamsWaiter<GameLiftStreamsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1033,6 +1035,12 @@ class AWS_GAMELIFTSTREAMS_API GameLiftStreamsClient : public Aws::Client::AWSJso
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<GameLiftStreamsClient>;
   void init(const GameLiftStreamsClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, GameLiftStreamsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   GameLiftStreamsClientConfiguration m_clientConfiguration;
   std::shared_ptr<GameLiftStreamsEndpointProviderBase> m_endpointProvider;

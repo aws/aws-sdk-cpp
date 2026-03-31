@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lex-models/LexModelBuildingServicePaginationBase.h>
 #include <aws/lex-models/LexModelBuildingServiceServiceClientModel.h>
+#include <aws/lex-models/LexModelBuildingServiceWaiter.h>
 #include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
 
 namespace Aws {
@@ -23,7 +24,8 @@ namespace LexModelBuildingService {
 class AWS_LEXMODELBUILDINGSERVICE_API LexModelBuildingServiceClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<LexModelBuildingServiceClient>,
-      public LexModelBuildingServicePaginationBase<LexModelBuildingServiceClient> {
+      public LexModelBuildingServicePaginationBase<LexModelBuildingServiceClient>,
+      public LexModelBuildingServiceWaiter<LexModelBuildingServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1424,6 +1426,12 @@ class AWS_LEXMODELBUILDINGSERVICE_API LexModelBuildingServiceClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<LexModelBuildingServiceClient>;
   void init(const LexModelBuildingServiceClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, LexModelBuildingServiceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   LexModelBuildingServiceClientConfiguration m_clientConfiguration;
   std::shared_ptr<LexModelBuildingServiceEndpointProviderBase> m_endpointProvider;

@@ -20,6 +20,7 @@ using namespace Aws;
 HttpPayloadWithUnionResult::HttpPayloadWithUnionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 HttpPayloadWithUnionResult& HttpPayloadWithUnionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_nested = jsonValue;
   m_nestedHasBeenSet = true;

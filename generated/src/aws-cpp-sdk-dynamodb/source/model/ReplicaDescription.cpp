@@ -26,6 +26,10 @@ ReplicaDescription& ReplicaDescription::operator=(JsonView jsonValue) {
     m_replicaStatus = ReplicaStatusMapper::GetReplicaStatusForName(jsonValue.GetString("ReplicaStatus"));
     m_replicaStatusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ReplicaArn")) {
+    m_replicaArn = jsonValue.GetString("ReplicaArn");
+    m_replicaArnHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ReplicaStatusDescription")) {
     m_replicaStatusDescription = jsonValue.GetString("ReplicaStatusDescription");
     m_replicaStatusDescriptionHasBeenSet = true;
@@ -83,6 +87,10 @@ JsonValue ReplicaDescription::Jsonize() const {
 
   if (m_replicaStatusHasBeenSet) {
     payload.WithString("ReplicaStatus", ReplicaStatusMapper::GetNameForReplicaStatus(m_replicaStatus));
+  }
+
+  if (m_replicaArnHasBeenSet) {
+    payload.WithString("ReplicaArn", m_replicaArn);
   }
 
   if (m_replicaStatusDescriptionHasBeenSet) {

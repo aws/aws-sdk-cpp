@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/finspace-data/FinSpaceDataPaginationBase.h>
 #include <aws/finspace-data/FinSpaceDataServiceClientModel.h>
+#include <aws/finspace-data/FinSpaceDataWaiter.h>
 #include <aws/finspace-data/FinSpaceData_EXPORTS.h>
 
 namespace Aws {
@@ -19,7 +20,8 @@ namespace FinSpaceData {
  */
 class AWS_FINSPACEDATA_API FinSpaceDataClient : public Aws::Client::AWSJsonClient,
                                                 public Aws::Client::ClientWithAsyncTemplateMethods<FinSpaceDataClient>,
-                                                public FinSpaceDataPaginationBase<FinSpaceDataClient> {
+                                                public FinSpaceDataPaginationBase<FinSpaceDataClient>,
+                                                public FinSpaceDataWaiter<FinSpaceDataClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -82,6 +84,12 @@ class AWS_FINSPACEDATA_API FinSpaceDataClient : public Aws::Client::AWSJsonClien
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<FinSpaceDataClient>;
   void init(const FinSpaceDataClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, FinSpaceDataError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   FinSpaceDataClientConfiguration m_clientConfiguration;
   std::shared_ptr<FinSpaceDataEndpointProviderBase> m_endpointProvider;

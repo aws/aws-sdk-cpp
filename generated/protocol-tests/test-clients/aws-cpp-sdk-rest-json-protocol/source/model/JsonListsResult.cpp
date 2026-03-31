@@ -20,6 +20,7 @@ using namespace Aws;
 JsonListsResult::JsonListsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 JsonListsResult& JsonListsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("stringList")) {
     Aws::Utils::Array<JsonView> stringListJsonList = jsonValue.GetArray("stringList");
@@ -73,13 +74,13 @@ JsonListsResult& JsonListsResult::operator=(const Aws::AmazonWebServiceResult<Js
   if (jsonValue.ValueExists("nestedStringList")) {
     Aws::Utils::Array<JsonView> nestedStringListJsonList = jsonValue.GetArray("nestedStringList");
     for (unsigned nestedStringListIndex = 0; nestedStringListIndex < nestedStringListJsonList.GetLength(); ++nestedStringListIndex) {
-      Aws::Utils::Array<JsonView> stringListJsonList = nestedStringListJsonList[nestedStringListIndex].AsArray();
-      Aws::Vector<Aws::String> stringListList;
-      stringListList.reserve((size_t)stringListJsonList.GetLength());
-      for (unsigned stringListIndex = 0; stringListIndex < stringListJsonList.GetLength(); ++stringListIndex) {
-        stringListList.push_back(stringListJsonList[stringListIndex].AsString());
+      Aws::Utils::Array<JsonView> stringList2JsonList = nestedStringListJsonList[nestedStringListIndex].AsArray();
+      Aws::Vector<Aws::String> stringList2List;
+      stringList2List.reserve((size_t)stringList2JsonList.GetLength());
+      for (unsigned stringList2Index = 0; stringList2Index < stringList2JsonList.GetLength(); ++stringList2Index) {
+        stringList2List.push_back(stringList2JsonList[stringList2Index].AsString());
       }
-      m_nestedStringList.push_back(std::move(stringListList));
+      m_nestedStringList.push_back(std::move(stringList2List));
     }
     m_nestedStringListHasBeenSet = true;
   }

@@ -9,8 +9,11 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datasync/DataSync_EXPORTS.h>
+#include <aws/datasync/model/CmkSecretConfig.h>
+#include <aws/datasync/model/CustomSecretConfig.h>
 #include <aws/datasync/model/HdfsAuthenticationType.h>
 #include <aws/datasync/model/HdfsNameNode.h>
+#include <aws/datasync/model/ManagedSecretConfig.h>
 #include <aws/datasync/model/QopConfiguration.h>
 
 #include <utility>
@@ -250,6 +253,65 @@ class DescribeLocationHdfsResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Describes configuration information for a DataSync-managed secret, such as a
+   * <code>KerberosKeytab</code> that DataSync uses to access a specific storage
+   * location. DataSync uses the default Amazon Web Services-managed KMS key to
+   * encrypt this secret in Secrets Manager.</p>
+   */
+  inline const ManagedSecretConfig& GetManagedSecretConfig() const { return m_managedSecretConfig; }
+  template <typename ManagedSecretConfigT = ManagedSecretConfig>
+  void SetManagedSecretConfig(ManagedSecretConfigT&& value) {
+    m_managedSecretConfigHasBeenSet = true;
+    m_managedSecretConfig = std::forward<ManagedSecretConfigT>(value);
+  }
+  template <typename ManagedSecretConfigT = ManagedSecretConfig>
+  DescribeLocationHdfsResult& WithManagedSecretConfig(ManagedSecretConfigT&& value) {
+    SetManagedSecretConfig(std::forward<ManagedSecretConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Describes configuration information for a DataSync-managed secret, such as a
+   * <code>KerberosKeytab</code> that DataSync uses to access a specific storage
+   * location, with a customer-managed KMS key.</p>
+   */
+  inline const CmkSecretConfig& GetCmkSecretConfig() const { return m_cmkSecretConfig; }
+  template <typename CmkSecretConfigT = CmkSecretConfig>
+  void SetCmkSecretConfig(CmkSecretConfigT&& value) {
+    m_cmkSecretConfigHasBeenSet = true;
+    m_cmkSecretConfig = std::forward<CmkSecretConfigT>(value);
+  }
+  template <typename CmkSecretConfigT = CmkSecretConfig>
+  DescribeLocationHdfsResult& WithCmkSecretConfig(CmkSecretConfigT&& value) {
+    SetCmkSecretConfig(std::forward<CmkSecretConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Describes configuration information for a customer-managed secret, such as a
+   * <code>KerberosKeytab</code> that DataSync uses to access a specific storage
+   * location, with a customer-managed Identity and Access Management (IAM) role that
+   * provides access to the secret.</p>
+   */
+  inline const CustomSecretConfig& GetCustomSecretConfig() const { return m_customSecretConfig; }
+  template <typename CustomSecretConfigT = CustomSecretConfig>
+  void SetCustomSecretConfig(CustomSecretConfigT&& value) {
+    m_customSecretConfigHasBeenSet = true;
+    m_customSecretConfig = std::forward<CustomSecretConfigT>(value);
+  }
+  template <typename CustomSecretConfigT = CustomSecretConfig>
+  DescribeLocationHdfsResult& WithCustomSecretConfig(CustomSecretConfigT&& value) {
+    SetCustomSecretConfig(std::forward<CustomSecretConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -290,6 +352,12 @@ class DescribeLocationHdfsResult {
 
   Aws::Utils::DateTime m_creationTime{};
 
+  ManagedSecretConfig m_managedSecretConfig;
+
+  CmkSecretConfig m_cmkSecretConfig;
+
+  CustomSecretConfig m_customSecretConfig;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_locationArnHasBeenSet = false;
@@ -304,6 +372,9 @@ class DescribeLocationHdfsResult {
   bool m_kerberosPrincipalHasBeenSet = false;
   bool m_agentArnsHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
+  bool m_managedSecretConfigHasBeenSet = false;
+  bool m_cmkSecretConfigHasBeenSet = false;
+  bool m_customSecretConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

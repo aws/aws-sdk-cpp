@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/billing/BillingPaginationBase.h>
 #include <aws/billing/BillingServiceClientModel.h>
+#include <aws/billing/BillingWaiter.h>
 #include <aws/billing/Billing_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -22,7 +23,8 @@ namespace Billing {
  */
 class AWS_BILLING_API BillingClient : public Aws::Client::AWSJsonClient,
                                       public Aws::Client::ClientWithAsyncTemplateMethods<BillingClient>,
-                                      public BillingPaginationBase<BillingClient> {
+                                      public BillingPaginationBase<BillingClient>,
+                                      public BillingWaiter<BillingClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -413,6 +415,10 @@ class AWS_BILLING_API BillingClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BillingClient>;
   void init(const BillingClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, BillingError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   BillingClientConfiguration m_clientConfiguration;
   std::shared_ptr<BillingEndpointProviderBase> m_endpointProvider;

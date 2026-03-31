@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/dsql/DSQLPaginationBase.h>
 #include <aws/dsql/DSQLServiceClientModel.h>
+#include <aws/dsql/DSQLWaiter.h>
 #include <aws/dsql/DSQL_EXPORTS.h>
 
 namespace Aws {
@@ -26,7 +27,8 @@ namespace DSQL {
  */
 class AWS_DSQL_API DSQLClient : public Aws::Client::AWSJsonClient,
                                 public Aws::Client::ClientWithAsyncTemplateMethods<DSQLClient>,
-                                public DSQLPaginationBase<DSQLClient> {
+                                public DSQLPaginationBase<DSQLClient>,
+                                public DSQLWaiter<DSQLClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -467,6 +469,12 @@ class AWS_DSQL_API DSQLClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DSQLClient>;
   void init(const DSQLClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, DSQLError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   DSQLClientConfiguration m_clientConfiguration;
   std::shared_ptr<DSQLEndpointProviderBase> m_endpointProvider;

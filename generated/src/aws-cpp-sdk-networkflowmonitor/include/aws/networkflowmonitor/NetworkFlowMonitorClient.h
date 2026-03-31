@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/networkflowmonitor/NetworkFlowMonitorPaginationBase.h>
 #include <aws/networkflowmonitor/NetworkFlowMonitorServiceClientModel.h>
+#include <aws/networkflowmonitor/NetworkFlowMonitorWaiter.h>
 #include <aws/networkflowmonitor/NetworkFlowMonitor_EXPORTS.h>
 
 namespace Aws {
@@ -34,7 +35,8 @@ namespace NetworkFlowMonitor {
  */
 class AWS_NETWORKFLOWMONITOR_API NetworkFlowMonitorClient : public Aws::Client::AWSJsonClient,
                                                             public Aws::Client::ClientWithAsyncTemplateMethods<NetworkFlowMonitorClient>,
-                                                            public NetworkFlowMonitorPaginationBase<NetworkFlowMonitorClient> {
+                                                            public NetworkFlowMonitorPaginationBase<NetworkFlowMonitorClient>,
+                                                            public NetworkFlowMonitorWaiter<NetworkFlowMonitorClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -937,6 +939,12 @@ class AWS_NETWORKFLOWMONITOR_API NetworkFlowMonitorClient : public Aws::Client::
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<NetworkFlowMonitorClient>;
   void init(const NetworkFlowMonitorClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, NetworkFlowMonitorError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   NetworkFlowMonitorClientConfiguration m_clientConfiguration;
   std::shared_ptr<NetworkFlowMonitorEndpointProviderBase> m_endpointProvider;

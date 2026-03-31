@@ -66,6 +66,8 @@
 #include <aws/customer-profiles/model/CreateIntegrationWorkflowResult.h>
 #include <aws/customer-profiles/model/CreateProfileRequest.h>
 #include <aws/customer-profiles/model/CreateProfileResult.h>
+#include <aws/customer-profiles/model/CreateRecommenderFilterRequest.h>
+#include <aws/customer-profiles/model/CreateRecommenderFilterResult.h>
 #include <aws/customer-profiles/model/CreateRecommenderRequest.h>
 #include <aws/customer-profiles/model/CreateRecommenderResult.h>
 #include <aws/customer-profiles/model/CreateSegmentDefinitionRequest.h>
@@ -104,6 +106,8 @@
 #include <aws/customer-profiles/model/DeleteProfileObjectTypeResult.h>
 #include <aws/customer-profiles/model/DeleteProfileRequest.h>
 #include <aws/customer-profiles/model/DeleteProfileResult.h>
+#include <aws/customer-profiles/model/DeleteRecommenderFilterRequest.h>
+#include <aws/customer-profiles/model/DeleteRecommenderFilterResult.h>
 #include <aws/customer-profiles/model/DeleteRecommenderRequest.h>
 #include <aws/customer-profiles/model/DeleteRecommenderResult.h>
 #include <aws/customer-profiles/model/DeleteSegmentDefinitionRequest.h>
@@ -179,6 +183,8 @@
 #include <aws/customer-profiles/model/GetProfileObjectTypeTemplateResult.h>
 #include <aws/customer-profiles/model/GetProfileRecommendationsRequest.h>
 #include <aws/customer-profiles/model/GetProfileRecommendationsResult.h>
+#include <aws/customer-profiles/model/GetRecommenderFilterRequest.h>
+#include <aws/customer-profiles/model/GetRecommenderFilterResult.h>
 #include <aws/customer-profiles/model/GetRecommenderRequest.h>
 #include <aws/customer-profiles/model/GetRecommenderResult.h>
 #include <aws/customer-profiles/model/GetSegmentDefinitionRequest.h>
@@ -205,6 +211,7 @@
 #include <aws/customer-profiles/model/Include.h>
 #include <aws/customer-profiles/model/IncludeOptions.h>
 #include <aws/customer-profiles/model/IncrementalPullConfig.h>
+#include <aws/customer-profiles/model/InferenceConfig.h>
 #include <aws/customer-profiles/model/IntegrationConfig.h>
 #include <aws/customer-profiles/model/JobSchedule.h>
 #include <aws/customer-profiles/model/JobScheduleDayOfTheWeek.h>
@@ -254,6 +261,8 @@
 #include <aws/customer-profiles/model/ListProfileObjectsItem.h>
 #include <aws/customer-profiles/model/ListProfileObjectsRequest.h>
 #include <aws/customer-profiles/model/ListProfileObjectsResult.h>
+#include <aws/customer-profiles/model/ListRecommenderFiltersRequest.h>
+#include <aws/customer-profiles/model/ListRecommenderFiltersResult.h>
 #include <aws/customer-profiles/model/ListRecommenderRecipesRequest.h>
 #include <aws/customer-profiles/model/ListRecommenderRecipesResult.h>
 #include <aws/customer-profiles/model/ListRecommendersRequest.h>
@@ -279,6 +288,7 @@
 #include <aws/customer-profiles/model/MatchingRule.h>
 #include <aws/customer-profiles/model/MergeProfilesRequest.h>
 #include <aws/customer-profiles/model/MergeProfilesResult.h>
+#include <aws/customer-profiles/model/MetadataConfig.h>
 #include <aws/customer-profiles/model/ObjectAttribute.h>
 #include <aws/customer-profiles/model/ObjectFilter.h>
 #include <aws/customer-profiles/model/ObjectTypeField.h>
@@ -313,6 +323,10 @@
 #include <aws/customer-profiles/model/ReadinessStatus.h>
 #include <aws/customer-profiles/model/Recommendation.h>
 #include <aws/customer-profiles/model/RecommenderConfig.h>
+#include <aws/customer-profiles/model/RecommenderFilter.h>
+#include <aws/customer-profiles/model/RecommenderFilterStatus.h>
+#include <aws/customer-profiles/model/RecommenderFilterSummary.h>
+#include <aws/customer-profiles/model/RecommenderPromotionalFilter.h>
 #include <aws/customer-profiles/model/RecommenderRecipe.h>
 #include <aws/customer-profiles/model/RecommenderRecipeName.h>
 #include <aws/customer-profiles/model/RecommenderStatus.h>

@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mailmanager/MailManagerPaginationBase.h>
 #include <aws/mailmanager/MailManagerServiceClientModel.h>
+#include <aws/mailmanager/MailManagerWaiter.h>
 #include <aws/mailmanager/MailManager_EXPORTS.h>
 
 namespace Aws {
@@ -27,7 +28,8 @@ namespace MailManager {
  */
 class AWS_MAILMANAGER_API MailManagerClient : public Aws::Client::AWSJsonClient,
                                               public Aws::Client::ClientWithAsyncTemplateMethods<MailManagerClient>,
-                                              public MailManagerPaginationBase<MailManagerClient> {
+                                              public MailManagerPaginationBase<MailManagerClient>,
+                                              public MailManagerWaiter<MailManagerClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1693,6 +1695,10 @@ class AWS_MAILMANAGER_API MailManagerClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MailManagerClient>;
   void init(const MailManagerClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MailManagerError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   MailManagerClientConfiguration m_clientConfiguration;
   std::shared_ptr<MailManagerEndpointProviderBase> m_endpointProvider;

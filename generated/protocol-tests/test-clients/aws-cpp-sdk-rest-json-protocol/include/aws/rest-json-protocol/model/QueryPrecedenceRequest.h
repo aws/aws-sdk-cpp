@@ -73,9 +73,9 @@ class QueryPrecedenceRequest : public RestJsonProtocolRequest {
   ///@}
  private:
   Aws::String m_foo;
-  bool m_fooHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_baz;
+  bool m_fooHasBeenSet = false;
   bool m_bazHasBeenSet = false;
 };
 

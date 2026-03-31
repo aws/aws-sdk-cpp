@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/transcribestreaming/TranscribeStreamingServicePaginationBase.h>
 #include <aws/transcribestreaming/TranscribeStreamingServiceServiceClientModel.h>
+#include <aws/transcribestreaming/TranscribeStreamingServiceWaiter.h>
 #include <aws/transcribestreaming/TranscribeStreamingService_EXPORTS.h>
 
 namespace Aws {
@@ -33,7 +34,8 @@ namespace TranscribeStreamingService {
 class AWS_TRANSCRIBESTREAMINGSERVICE_API TranscribeStreamingServiceClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<TranscribeStreamingServiceClient>,
-      public TranscribeStreamingServicePaginationBase<TranscribeStreamingServiceClient> {
+      public TranscribeStreamingServicePaginationBase<TranscribeStreamingServiceClient>,
+      public TranscribeStreamingServiceWaiter<TranscribeStreamingServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -241,6 +243,12 @@ class AWS_TRANSCRIBESTREAMINGSERVICE_API TranscribeStreamingServiceClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<TranscribeStreamingServiceClient>;
   void init(const TranscribeStreamingServiceClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, TranscribeStreamingServiceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   TranscribeStreamingServiceClientConfiguration m_clientConfiguration;
   std::shared_ptr<TranscribeStreamingServiceEndpointProviderBase> m_endpointProvider;

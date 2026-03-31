@@ -51,6 +51,14 @@ Aws::String CreateMlflowTrackingServerRequest::SerializePayload() const {
     payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
+  if (m_s3BucketOwnerAccountIdHasBeenSet) {
+    payload.WithString("S3BucketOwnerAccountId", m_s3BucketOwnerAccountId);
+  }
+
+  if (m_s3BucketOwnerVerificationHasBeenSet) {
+    payload.WithBool("S3BucketOwnerVerification", m_s3BucketOwnerVerification);
+  }
+
   return payload.View().WriteReadable();
 }
 

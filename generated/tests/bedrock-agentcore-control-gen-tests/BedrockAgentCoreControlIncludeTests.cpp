@@ -34,6 +34,8 @@
 #include <aws/bedrock-agentcore-control/model/AuthorizerType.h>
 #include <aws/bedrock-agentcore-control/model/AuthorizingClaimMatchValueType.h>
 #include <aws/bedrock-agentcore-control/model/BedrockEvaluatorModelConfig.h>
+#include <aws/bedrock-agentcore-control/model/BrowserEnterprisePolicy.h>
+#include <aws/bedrock-agentcore-control/model/BrowserEnterprisePolicyType.h>
 #include <aws/bedrock-agentcore-control/model/BrowserNetworkConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/BrowserNetworkMode.h>
 #include <aws/bedrock-agentcore-control/model/BrowserProfileStatus.h>
@@ -44,11 +46,14 @@
 #include <aws/bedrock-agentcore-control/model/BrowserSummary.h>
 #include <aws/bedrock-agentcore-control/model/CategoricalScaleDefinition.h>
 #include <aws/bedrock-agentcore-control/model/CedarPolicy.h>
+#include <aws/bedrock-agentcore-control/model/Certificate.h>
+#include <aws/bedrock-agentcore-control/model/CertificateLocation.h>
 #include <aws/bedrock-agentcore-control/model/ClaimMatchOperatorType.h>
 #include <aws/bedrock-agentcore-control/model/ClaimMatchValueType.h>
 #include <aws/bedrock-agentcore-control/model/CloudWatchLogsInputConfig.h>
 #include <aws/bedrock-agentcore-control/model/CloudWatchOutputConfig.h>
 #include <aws/bedrock-agentcore-control/model/Code.h>
+#include <aws/bedrock-agentcore-control/model/CodeBasedEvaluatorConfig.h>
 #include <aws/bedrock-agentcore-control/model/CodeConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/CodeInterpreterNetworkConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/CodeInterpreterNetworkMode.h>
@@ -57,6 +62,9 @@
 #include <aws/bedrock-agentcore-control/model/ConsolidationConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ContainerConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/Content.h>
+#include <aws/bedrock-agentcore-control/model/ContentConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/ContentLevel.h>
+#include <aws/bedrock-agentcore-control/model/ContentType.h>
 #include <aws/bedrock-agentcore-control/model/CreateAgentRuntimeEndpointRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateAgentRuntimeEndpointResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateAgentRuntimeRequest.h>
@@ -156,6 +164,7 @@
 #include <aws/bedrock-agentcore-control/model/EvaluatorType.h>
 #include <aws/bedrock-agentcore-control/model/ExceptionLevel.h>
 #include <aws/bedrock-agentcore-control/model/ExtractionConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/FilesystemConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/Filter.h>
 #include <aws/bedrock-agentcore-control/model/FilterOperator.h>
 #include <aws/bedrock-agentcore-control/model/FilterValue.h>
@@ -219,7 +228,9 @@
 #include <aws/bedrock-agentcore-control/model/InvocationConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/InvocationConfigurationInput.h>
 #include <aws/bedrock-agentcore-control/model/KeyType.h>
+#include <aws/bedrock-agentcore-control/model/KinesisResource.h>
 #include <aws/bedrock-agentcore-control/model/KmsConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/LambdaEvaluatorConfig.h>
 #include <aws/bedrock-agentcore-control/model/LambdaInterceptorConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/LifecycleConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/LinkedinOauth2ProviderConfigInput.h>
@@ -321,6 +332,7 @@
 #include <aws/bedrock-agentcore-control/model/ReflectionConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/RequestHeaderConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/Resource.h>
+#include <aws/bedrock-agentcore-control/model/ResourceLocation.h>
 #include <aws/bedrock-agentcore-control/model/ResourceType.h>
 #include <aws/bedrock-agentcore-control/model/RestApiMethod.h>
 #include <aws/bedrock-agentcore-control/model/Rule.h>
@@ -334,6 +346,7 @@
 #include <aws/bedrock-agentcore-control/model/SchemaType.h>
 #include <aws/bedrock-agentcore-control/model/SearchType.h>
 #include <aws/bedrock-agentcore-control/model/Secret.h>
+#include <aws/bedrock-agentcore-control/model/SecretsManagerLocation.h>
 #include <aws/bedrock-agentcore-control/model/SelfManagedConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/SelfManagedConfigurationInput.h>
 #include <aws/bedrock-agentcore-control/model/SemanticConsolidationOverride.h>
@@ -344,6 +357,7 @@
 #include <aws/bedrock-agentcore-control/model/SemanticOverrideExtractionConfigurationInput.h>
 #include <aws/bedrock-agentcore-control/model/ServerProtocol.h>
 #include <aws/bedrock-agentcore-control/model/SessionConfig.h>
+#include <aws/bedrock-agentcore-control/model/SessionStorageConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/SetTokenVaultCMKRequest.h>
 #include <aws/bedrock-agentcore-control/model/SetTokenVaultCMKResult.h>
 #include <aws/bedrock-agentcore-control/model/SlackOauth2ProviderConfigInput.h>
@@ -351,6 +365,8 @@
 #include <aws/bedrock-agentcore-control/model/StartPolicyGenerationRequest.h>
 #include <aws/bedrock-agentcore-control/model/StartPolicyGenerationResult.h>
 #include <aws/bedrock-agentcore-control/model/StrategyConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/StreamDeliveryResource.h>
+#include <aws/bedrock-agentcore-control/model/StreamDeliveryResources.h>
 #include <aws/bedrock-agentcore-control/model/SummaryConsolidationOverride.h>
 #include <aws/bedrock-agentcore-control/model/SummaryMemoryStrategyInput.h>
 #include <aws/bedrock-agentcore-control/model/SummaryOverrideConfigurationInput.h>

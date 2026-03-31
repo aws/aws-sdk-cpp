@@ -46,6 +46,13 @@ GetSessionActionResult& GetSessionActionResult::operator=(const Aws::AmazonWebSe
     m_progressPercent = jsonValue.GetDouble("progressPercent");
     m_progressPercentHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("manifests")) {
+    Aws::Utils::Array<JsonView> manifestsJsonList = jsonValue.GetArray("manifests");
+    for (unsigned manifestsIndex = 0; manifestsIndex < manifestsJsonList.GetLength(); ++manifestsIndex) {
+      m_manifests.push_back(manifestsJsonList[manifestsIndex].AsObject());
+    }
+    m_manifestsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("sessionId")) {
     m_sessionId = jsonValue.GetString("sessionId");
     m_sessionIdHasBeenSet = true;
@@ -58,10 +65,6 @@ GetSessionActionResult& GetSessionActionResult::operator=(const Aws::AmazonWebSe
     m_progressMessage = jsonValue.GetString("progressMessage");
     m_progressMessageHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("definition")) {
-    m_definition = jsonValue.GetObject("definition");
-    m_definitionHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("acquiredLimits")) {
     Aws::Utils::Array<JsonView> acquiredLimitsJsonList = jsonValue.GetArray("acquiredLimits");
     for (unsigned acquiredLimitsIndex = 0; acquiredLimitsIndex < acquiredLimitsJsonList.GetLength(); ++acquiredLimitsIndex) {
@@ -69,12 +72,9 @@ GetSessionActionResult& GetSessionActionResult::operator=(const Aws::AmazonWebSe
     }
     m_acquiredLimitsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("manifests")) {
-    Aws::Utils::Array<JsonView> manifestsJsonList = jsonValue.GetArray("manifests");
-    for (unsigned manifestsIndex = 0; manifestsIndex < manifestsJsonList.GetLength(); ++manifestsIndex) {
-      m_manifests.push_back(manifestsJsonList[manifestsIndex].AsObject());
-    }
-    m_manifestsHasBeenSet = true;
+  if (jsonValue.ValueExists("definition")) {
+    m_definition = jsonValue.GetObject("definition");
+    m_definitionHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

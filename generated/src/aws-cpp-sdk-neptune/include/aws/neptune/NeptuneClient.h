@@ -11,6 +11,7 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/neptune/NeptunePaginationBase.h>
 #include <aws/neptune/NeptuneServiceClientModel.h>
+#include <aws/neptune/NeptuneWaiter.h>
 #include <aws/neptune/Neptune_EXPORTS.h>
 
 namespace Aws {
@@ -37,7 +38,8 @@ namespace Neptune {
  */
 class AWS_NEPTUNE_API NeptuneClient : public Aws::Client::AWSXMLClient,
                                       public Aws::Client::ClientWithAsyncTemplateMethods<NeptuneClient>,
-                                      public NeptunePaginationBase<NeptuneClient> {
+                                      public NeptunePaginationBase<NeptuneClient>,
+                                      public NeptuneWaiter<NeptuneClient> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();
@@ -2310,6 +2312,10 @@ class AWS_NEPTUNE_API NeptuneClient : public Aws::Client::AWSXMLClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<NeptuneClient>;
   void init(const NeptuneClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, NeptuneError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   NeptuneClientConfiguration m_clientConfiguration;
   std::shared_ptr<NeptuneEndpointProviderBase> m_endpointProvider;

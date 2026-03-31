@@ -80,6 +80,8 @@
 #include <aws/gameliftstreams/model/UpdateApplicationResult.h>
 #include <aws/gameliftstreams/model/UpdateStreamGroupRequest.h>
 #include <aws/gameliftstreams/model/UpdateStreamGroupResult.h>
+#include <aws/gameliftstreams/model/VpcTransitConfiguration.h>
+#include <aws/gameliftstreams/model/VpcTransitConfigurationResponse.h>
 
 using GameLiftStreamsIncludeTest = ::testing::Test;
 

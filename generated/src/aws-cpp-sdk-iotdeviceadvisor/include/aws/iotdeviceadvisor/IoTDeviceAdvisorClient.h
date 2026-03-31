@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisorPaginationBase.h>
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisorServiceClientModel.h>
+#include <aws/iotdeviceadvisor/IoTDeviceAdvisorWaiter.h>
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisor_EXPORTS.h>
 
 namespace Aws {
@@ -29,7 +30,8 @@ namespace IoTDeviceAdvisor {
  */
 class AWS_IOTDEVICEADVISOR_API IoTDeviceAdvisorClient : public Aws::Client::AWSJsonClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<IoTDeviceAdvisorClient>,
-                                                        public IoTDeviceAdvisorPaginationBase<IoTDeviceAdvisorClient> {
+                                                        public IoTDeviceAdvisorPaginationBase<IoTDeviceAdvisorClient>,
+                                                        public IoTDeviceAdvisorWaiter<IoTDeviceAdvisorClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -494,6 +496,12 @@ class AWS_IOTDEVICEADVISOR_API IoTDeviceAdvisorClient : public Aws::Client::AWSJ
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTDeviceAdvisorClient>;
   void init(const IoTDeviceAdvisorClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, IoTDeviceAdvisorError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   IoTDeviceAdvisorClientConfiguration m_clientConfiguration;
   std::shared_ptr<IoTDeviceAdvisorEndpointProviderBase> m_endpointProvider;

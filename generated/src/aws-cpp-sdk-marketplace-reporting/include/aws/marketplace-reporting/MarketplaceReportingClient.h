@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/marketplace-reporting/MarketplaceReportingPaginationBase.h>
 #include <aws/marketplace-reporting/MarketplaceReportingServiceClientModel.h>
+#include <aws/marketplace-reporting/MarketplaceReportingWaiter.h>
 #include <aws/marketplace-reporting/MarketplaceReporting_EXPORTS.h>
 
 namespace Aws {
@@ -70,7 +71,8 @@ namespace MarketplaceReporting {
 class AWS_MARKETPLACEREPORTING_API MarketplaceReportingClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceReportingClient>,
-      public MarketplaceReportingPaginationBase<MarketplaceReportingClient> {
+      public MarketplaceReportingPaginationBase<MarketplaceReportingClient>,
+      public MarketplaceReportingWaiter<MarketplaceReportingClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -169,6 +171,12 @@ class AWS_MARKETPLACEREPORTING_API MarketplaceReportingClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceReportingClient>;
   void init(const MarketplaceReportingClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MarketplaceReportingError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   MarketplaceReportingClientConfiguration m_clientConfiguration;
   std::shared_ptr<MarketplaceReportingEndpointProviderBase> m_endpointProvider;

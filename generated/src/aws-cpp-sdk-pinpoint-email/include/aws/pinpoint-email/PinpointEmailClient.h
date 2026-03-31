@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/pinpoint-email/PinpointEmailPaginationBase.h>
 #include <aws/pinpoint-email/PinpointEmailServiceClientModel.h>
+#include <aws/pinpoint-email/PinpointEmailWaiter.h>
 #include <aws/pinpoint-email/PinpointEmail_EXPORTS.h>
 
 namespace Aws {
@@ -52,7 +53,8 @@ namespace PinpointEmail {
  */
 class AWS_PINPOINTEMAIL_API PinpointEmailClient : public Aws::Client::AWSJsonClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<PinpointEmailClient>,
-                                                  public PinpointEmailPaginationBase<PinpointEmailClient> {
+                                                  public PinpointEmailPaginationBase<PinpointEmailClient>,
+                                                  public PinpointEmailWaiter<PinpointEmailClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1436,6 +1438,12 @@ class AWS_PINPOINTEMAIL_API PinpointEmailClient : public Aws::Client::AWSJsonCli
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PinpointEmailClient>;
   void init(const PinpointEmailClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, PinpointEmailError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   PinpointEmailClientConfiguration m_clientConfiguration;
   std::shared_ptr<PinpointEmailEndpointProviderBase> m_endpointProvider;

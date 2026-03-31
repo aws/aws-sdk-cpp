@@ -7,8 +7,10 @@
 #include <aws/bedrock-agentcore/BedrockAgentCoreRequest.h>
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
 #include <aws/bedrock-agentcore/model/EvaluationInput.h>
+#include <aws/bedrock-agentcore/model/EvaluationReferenceInput.h>
 #include <aws/bedrock-agentcore/model/EvaluationTarget.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -34,7 +36,7 @@ class EvaluateRequest : public BedrockAgentCoreRequest {
   /**
    * <p> The unique identifier of the evaluator to use for scoring. Can be a built-in
    * evaluator (e.g., <code>Builtin.Helpfulness</code>,
-   * <code>Builtin.Correctness</code>) or a custom evaluator ARN created through the
+   * <code>Builtin.Correctness</code>) or a custom evaluator Id created through the
    * control plane API. </p>
    */
   inline const Aws::String& GetEvaluatorId() const { return m_evaluatorId; }
@@ -90,15 +92,46 @@ class EvaluateRequest : public BedrockAgentCoreRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> Ground truth data to compare against agent responses during evaluation.
+   * Allows to provide expected responses, assertions, and expected tool trajectories
+   * at different evaluation levels. Session-level reference inputs apply to the
+   * entire conversation, while trace-level reference inputs target specific
+   * request-response interactions identified by trace ID. </p>
+   */
+  inline const Aws::Vector<EvaluationReferenceInput>& GetEvaluationReferenceInputs() const { return m_evaluationReferenceInputs; }
+  inline bool EvaluationReferenceInputsHasBeenSet() const { return m_evaluationReferenceInputsHasBeenSet; }
+  template <typename EvaluationReferenceInputsT = Aws::Vector<EvaluationReferenceInput>>
+  void SetEvaluationReferenceInputs(EvaluationReferenceInputsT&& value) {
+    m_evaluationReferenceInputsHasBeenSet = true;
+    m_evaluationReferenceInputs = std::forward<EvaluationReferenceInputsT>(value);
+  }
+  template <typename EvaluationReferenceInputsT = Aws::Vector<EvaluationReferenceInput>>
+  EvaluateRequest& WithEvaluationReferenceInputs(EvaluationReferenceInputsT&& value) {
+    SetEvaluationReferenceInputs(std::forward<EvaluationReferenceInputsT>(value));
+    return *this;
+  }
+  template <typename EvaluationReferenceInputsT = EvaluationReferenceInput>
+  EvaluateRequest& AddEvaluationReferenceInputs(EvaluationReferenceInputsT&& value) {
+    m_evaluationReferenceInputsHasBeenSet = true;
+    m_evaluationReferenceInputs.emplace_back(std::forward<EvaluationReferenceInputsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_evaluatorId;
 
   EvaluationInput m_evaluationInput;
 
   EvaluationTarget m_evaluationTarget;
+
+  Aws::Vector<EvaluationReferenceInput> m_evaluationReferenceInputs;
   bool m_evaluatorIdHasBeenSet = false;
   bool m_evaluationInputHasBeenSet = false;
   bool m_evaluationTargetHasBeenSet = false;
+  bool m_evaluationReferenceInputsHasBeenSet = false;
 };
 
 }  // namespace Model

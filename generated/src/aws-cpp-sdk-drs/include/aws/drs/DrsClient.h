@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/drs/DrsPaginationBase.h>
 #include <aws/drs/DrsServiceClientModel.h>
+#include <aws/drs/DrsWaiter.h>
 #include <aws/drs/Drs_EXPORTS.h>
 
 namespace Aws {
@@ -19,7 +20,8 @@ namespace drs {
  */
 class AWS_DRS_API DrsClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<DrsClient>,
-                              public DrsPaginationBase<DrsClient> {
+                              public DrsPaginationBase<DrsClient>,
+                              public DrsWaiter<DrsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1505,6 +1507,12 @@ class AWS_DRS_API DrsClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DrsClient>;
   void init(const DrsClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, DrsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   DrsClientConfiguration m_clientConfiguration;
   std::shared_ptr<DrsEndpointProviderBase> m_endpointProvider;

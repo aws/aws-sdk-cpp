@@ -111,7 +111,13 @@ enum class VoiceId {
   Jitka,
   Sabrina,
   Jasmine,
-  Jihye
+  Jihye,
+  Ambre,
+  Beatrice,
+  Florian,
+  Lennart,
+  Lorenzo,
+  Tiffany
 };
 
 namespace VoiceIdMapper {

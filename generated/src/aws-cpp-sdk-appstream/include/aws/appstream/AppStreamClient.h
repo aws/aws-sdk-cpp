@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appstream/AppStreamPaginationBase.h>
 #include <aws/appstream/AppStreamServiceClientModel.h>
+#include <aws/appstream/AppStreamWaiter.h>
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -37,7 +38,8 @@ namespace AppStream {
  */
 class AWS_APPSTREAM_API AppStreamClient : public Aws::Client::AWSJsonClient,
                                           public Aws::Client::ClientWithAsyncTemplateMethods<AppStreamClient>,
-                                          public AppStreamPaginationBase<AppStreamClient> {
+                                          public AppStreamPaginationBase<AppStreamClient>,
+                                          public AppStreamWaiter<AppStreamClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2600,6 +2602,10 @@ class AWS_APPSTREAM_API AppStreamClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AppStreamClient>;
   void init(const AppStreamClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, AppStreamError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   AppStreamClientConfiguration m_clientConfiguration;
   std::shared_ptr<AppStreamEndpointProviderBase> m_endpointProvider;

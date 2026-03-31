@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/security-ir/SecurityIRPaginationBase.h>
 #include <aws/security-ir/SecurityIRServiceClientModel.h>
+#include <aws/security-ir/SecurityIRWaiter.h>
 #include <aws/security-ir/SecurityIR_EXPORTS.h>
 
 namespace Aws {
@@ -20,7 +21,8 @@ namespace SecurityIR {
  */
 class AWS_SECURITYIR_API SecurityIRClient : public Aws::Client::AWSJsonClient,
                                             public Aws::Client::ClientWithAsyncTemplateMethods<SecurityIRClient>,
-                                            public SecurityIRPaginationBase<SecurityIRClient> {
+                                            public SecurityIRPaginationBase<SecurityIRClient>,
+                                            public SecurityIRWaiter<SecurityIRClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -728,6 +730,12 @@ class AWS_SECURITYIR_API SecurityIRClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SecurityIRClient>;
   void init(const SecurityIRClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SecurityIRError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   SecurityIRClientConfiguration m_clientConfiguration;
   std::shared_ptr<SecurityIREndpointProviderBase> m_endpointProvider;

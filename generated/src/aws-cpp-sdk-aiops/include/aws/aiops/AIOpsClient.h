@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/aiops/AIOpsPaginationBase.h>
 #include <aws/aiops/AIOpsServiceClientModel.h>
+#include <aws/aiops/AIOpsWaiter.h>
 #include <aws/aiops/AIOps_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -25,7 +26,8 @@ namespace AIOps {
  */
 class AWS_AIOPS_API AIOpsClient : public Aws::Client::AWSJsonClient,
                                   public Aws::Client::ClientWithAsyncTemplateMethods<AIOpsClient>,
-                                  public AIOpsPaginationBase<AIOpsClient> {
+                                  public AIOpsPaginationBase<AIOpsClient>,
+                                  public AIOpsWaiter<AIOpsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -431,6 +433,12 @@ class AWS_AIOPS_API AIOpsClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AIOpsClient>;
   void init(const AIOpsClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, AIOpsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   AIOpsClientConfiguration m_clientConfiguration;
   std::shared_ptr<AIOpsEndpointProviderBase> m_endpointProvider;

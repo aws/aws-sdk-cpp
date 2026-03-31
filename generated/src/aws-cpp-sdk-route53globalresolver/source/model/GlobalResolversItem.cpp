@@ -72,6 +72,17 @@ GlobalResolversItem& GlobalResolversItem::operator=(JsonView jsonValue) {
     }
     m_ipv4AddressesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ipv6Addresses")) {
+    Aws::Utils::Array<JsonView> ipv6AddressesJsonList = jsonValue.GetArray("ipv6Addresses");
+    for (unsigned ipv6AddressesIndex = 0; ipv6AddressesIndex < ipv6AddressesJsonList.GetLength(); ++ipv6AddressesIndex) {
+      m_ipv6Addresses.push_back(ipv6AddressesJsonList[ipv6AddressesIndex].AsString());
+    }
+    m_ipv6AddressesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ipAddressType")) {
+    m_ipAddressType = GlobalResolverIpAddressTypeMapper::GetGlobalResolverIpAddressTypeForName(jsonValue.GetString("ipAddressType"));
+    m_ipAddressTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -132,6 +143,18 @@ JsonValue GlobalResolversItem::Jsonize() const {
       ipv4AddressesJsonList[ipv4AddressesIndex].AsString(m_ipv4Addresses[ipv4AddressesIndex]);
     }
     payload.WithArray("ipv4Addresses", std::move(ipv4AddressesJsonList));
+  }
+
+  if (m_ipv6AddressesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> ipv6AddressesJsonList(m_ipv6Addresses.size());
+    for (unsigned ipv6AddressesIndex = 0; ipv6AddressesIndex < ipv6AddressesJsonList.GetLength(); ++ipv6AddressesIndex) {
+      ipv6AddressesJsonList[ipv6AddressesIndex].AsString(m_ipv6Addresses[ipv6AddressesIndex]);
+    }
+    payload.WithArray("ipv6Addresses", std::move(ipv6AddressesJsonList));
+  }
+
+  if (m_ipAddressTypeHasBeenSet) {
+    payload.WithString("ipAddressType", GlobalResolverIpAddressTypeMapper::GetNameForGlobalResolverIpAddressType(m_ipAddressType));
   }
 
   return payload;

@@ -179,158 +179,122 @@ void WickrClient::OverrideEndpoint(const Aws::String& endpoint) {
   m_clientConfiguration.endpointOverride = endpoint;
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
+WickrClient::InvokeOperationOutcome WickrClient::InvokeServiceOperation(
+    const AmazonWebServiceRequest& request, const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+    Aws::Http::HttpMethod httpMethod) const {
+  auto operationName = request.GetServiceRequestName();
+  auto serviceName = GetServiceClientName();
+
+  AWS_OPERATION_GUARD_DYNAMIC(operationName);
+
+  AWS_OPERATION_CHECK_PTR_DYNAMIC(m_endpointProvider, operationName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR_DYNAMIC(m_telemetryProvider, operationName, CoreErrors, CoreErrors::NOT_INITIALIZED);
+
+  auto tracer = m_telemetryProvider->getTracer(serviceName, {});
+  auto meter = m_telemetryProvider->getMeter(serviceName, {});
+  AWS_OPERATION_CHECK_PTR_DYNAMIC(meter, operationName, CoreErrors, CoreErrors::NOT_INITIALIZED);
+
+  auto span = tracer->CreateSpan(Aws::String(serviceName) + "." + operationName,
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+
+  return TracingUtils::MakeCallWithTiming<InvokeOperationOutcome>(
+      [&]() -> InvokeOperationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
+
+        AWS_OPERATION_CHECK_SUCCESS_DYNAMIC(endpointResolutionOutcome, operationName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                            endpointResolutionOutcome.GetError().GetMessage());
+
+        resolveUri(endpointResolutionOutcome);
+
+        return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, Aws::Auth::SIGV4_SIGNER)};
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
+}
 
 BatchCreateUserOutcome WickrClient::BatchCreateUser(const BatchCreateUserRequest& request) const {
-  AWS_OPERATION_GUARD(BatchCreateUser);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchCreateUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("BatchCreateUser", "Required field: NetworkId, is not set");
     return BatchCreateUserOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                      "Missing required field [NetworkId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, BatchCreateUser, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, BatchCreateUser, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".BatchCreateUser",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<BatchCreateUserOutcome>(
-      [&]() -> BatchCreateUserOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchCreateUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/users");
-        return BatchCreateUserOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/users");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchCreateUserOutcome(result.GetResultWithOwnership())
+                            : BatchCreateUserOutcome(std::move(result.GetError()));
 }
 
 BatchDeleteUserOutcome WickrClient::BatchDeleteUser(const BatchDeleteUserRequest& request) const {
-  AWS_OPERATION_GUARD(BatchDeleteUser);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDeleteUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("BatchDeleteUser", "Required field: NetworkId, is not set");
     return BatchDeleteUserOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                      "Missing required field [NetworkId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, BatchDeleteUser, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, BatchDeleteUser, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".BatchDeleteUser",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<BatchDeleteUserOutcome>(
-      [&]() -> BatchDeleteUserOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchDeleteUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/users/batch-delete");
-        return BatchDeleteUserOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/users/batch-delete");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeleteUserOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteUserOutcome(std::move(result.GetError()));
 }
 
 BatchLookupUserUnameOutcome WickrClient::BatchLookupUserUname(const BatchLookupUserUnameRequest& request) const {
-  AWS_OPERATION_GUARD(BatchLookupUserUname);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchLookupUserUname, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("BatchLookupUserUname", "Required field: NetworkId, is not set");
     return BatchLookupUserUnameOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                           "Missing required field [NetworkId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, BatchLookupUserUname, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, BatchLookupUserUname, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".BatchLookupUserUname",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<BatchLookupUserUnameOutcome>(
-      [&]() -> BatchLookupUserUnameOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchLookupUserUname, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/users/uname-lookup");
-        return BatchLookupUserUnameOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/users/uname-lookup");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchLookupUserUnameOutcome(result.GetResultWithOwnership())
+                            : BatchLookupUserUnameOutcome(std::move(result.GetError()));
 }
 
 BatchReinviteUserOutcome WickrClient::BatchReinviteUser(const BatchReinviteUserRequest& request) const {
-  AWS_OPERATION_GUARD(BatchReinviteUser);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchReinviteUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("BatchReinviteUser", "Required field: NetworkId, is not set");
     return BatchReinviteUserOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                        "Missing required field [NetworkId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, BatchReinviteUser, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, BatchReinviteUser, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".BatchReinviteUser",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<BatchReinviteUserOutcome>(
-      [&]() -> BatchReinviteUserOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchReinviteUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/users/re-invite");
-        return BatchReinviteUserOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/users/re-invite");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? BatchReinviteUserOutcome(result.GetResultWithOwnership())
+                            : BatchReinviteUserOutcome(std::move(result.GetError()));
 }
 
 BatchResetDevicesForUserOutcome WickrClient::BatchResetDevicesForUser(const BatchResetDevicesForUserRequest& request) const {
-  AWS_OPERATION_GUARD(BatchResetDevicesForUser);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchResetDevicesForUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("BatchResetDevicesForUser", "Required field: NetworkId, is not set");
     return BatchResetDevicesForUserOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -341,40 +305,22 @@ BatchResetDevicesForUserOutcome WickrClient::BatchResetDevicesForUser(const Batc
     return BatchResetDevicesForUserOutcome(
         Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, BatchResetDevicesForUser, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, BatchResetDevicesForUser, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".BatchResetDevicesForUser",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<BatchResetDevicesForUserOutcome>(
-      [&]() -> BatchResetDevicesForUserOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchResetDevicesForUser, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/users/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/devices");
-        return BatchResetDevicesForUserOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/users/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/devices");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? BatchResetDevicesForUserOutcome(result.GetResultWithOwnership())
+                            : BatchResetDevicesForUserOutcome(std::move(result.GetError()));
 }
 
 BatchToggleUserSuspendStatusOutcome WickrClient::BatchToggleUserSuspendStatus(const BatchToggleUserSuspendStatusRequest& request) const {
-  AWS_OPERATION_GUARD(BatchToggleUserSuspendStatus);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchToggleUserSuspendStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("BatchToggleUserSuspendStatus", "Required field: NetworkId, is not set");
     return BatchToggleUserSuspendStatusOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -385,217 +331,106 @@ BatchToggleUserSuspendStatusOutcome WickrClient::BatchToggleUserSuspendStatus(co
     return BatchToggleUserSuspendStatusOutcome(
         Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Suspend]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, BatchToggleUserSuspendStatus, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, BatchToggleUserSuspendStatus, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".BatchToggleUserSuspendStatus",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<BatchToggleUserSuspendStatusOutcome>(
-      [&]() -> BatchToggleUserSuspendStatusOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchToggleUserSuspendStatus, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/users/toggleSuspend");
-        return BatchToggleUserSuspendStatusOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/users/toggleSuspend");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? BatchToggleUserSuspendStatusOutcome(result.GetResultWithOwnership())
+                            : BatchToggleUserSuspendStatusOutcome(std::move(result.GetError()));
 }
 
 CreateBotOutcome WickrClient::CreateBot(const CreateBotRequest& request) const {
-  AWS_OPERATION_GUARD(CreateBot);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("CreateBot", "Required field: NetworkId, is not set");
     return CreateBotOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                "Missing required field [NetworkId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateBot, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, CreateBot, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateBot",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<CreateBotOutcome>(
-      [&]() -> CreateBotOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/bots");
-        return CreateBotOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/bots");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBotOutcome(result.GetResultWithOwnership()) : CreateBotOutcome(std::move(result.GetError()));
 }
 
 CreateDataRetentionBotOutcome WickrClient::CreateDataRetentionBot(const CreateDataRetentionBotRequest& request) const {
-  AWS_OPERATION_GUARD(CreateDataRetentionBot);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDataRetentionBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("CreateDataRetentionBot", "Required field: NetworkId, is not set");
     return CreateDataRetentionBotOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                             "Missing required field [NetworkId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateDataRetentionBot, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, CreateDataRetentionBot, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateDataRetentionBot",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<CreateDataRetentionBotOutcome>(
-      [&]() -> CreateDataRetentionBotOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDataRetentionBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/data-retention-bots");
-        return CreateDataRetentionBotOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/data-retention-bots");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDataRetentionBotOutcome(result.GetResultWithOwnership())
+                            : CreateDataRetentionBotOutcome(std::move(result.GetError()));
 }
 
 CreateDataRetentionBotChallengeOutcome WickrClient::CreateDataRetentionBotChallenge(
     const CreateDataRetentionBotChallengeRequest& request) const {
-  AWS_OPERATION_GUARD(CreateDataRetentionBotChallenge);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDataRetentionBotChallenge, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("CreateDataRetentionBotChallenge", "Required field: NetworkId, is not set");
     return CreateDataRetentionBotChallengeOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                      "Missing required field [NetworkId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateDataRetentionBotChallenge, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, CreateDataRetentionBotChallenge, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateDataRetentionBotChallenge",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<CreateDataRetentionBotChallengeOutcome>(
-      [&]() -> CreateDataRetentionBotChallengeOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDataRetentionBotChallenge, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/data-retention-bots/challenge");
-        return CreateDataRetentionBotChallengeOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/data-retention-bots/challenge");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDataRetentionBotChallengeOutcome(result.GetResultWithOwnership())
+                            : CreateDataRetentionBotChallengeOutcome(std::move(result.GetError()));
 }
 
 CreateNetworkOutcome WickrClient::CreateNetwork(const CreateNetworkRequest& request) const {
-  AWS_OPERATION_GUARD(CreateNetwork);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateNetwork, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, CreateNetwork, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateNetwork",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<CreateNetworkOutcome>(
-      [&]() -> CreateNetworkOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks");
-        return CreateNetworkOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateNetworkOutcome(result.GetResultWithOwnership()) : CreateNetworkOutcome(std::move(result.GetError()));
 }
 
 CreateSecurityGroupOutcome WickrClient::CreateSecurityGroup(const CreateSecurityGroupRequest& request) const {
-  AWS_OPERATION_GUARD(CreateSecurityGroup);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSecurityGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("CreateSecurityGroup", "Required field: NetworkId, is not set");
     return CreateSecurityGroupOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                          "Missing required field [NetworkId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateSecurityGroup, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, CreateSecurityGroup, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateSecurityGroup",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<CreateSecurityGroupOutcome>(
-      [&]() -> CreateSecurityGroupOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSecurityGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/security-groups");
-        return CreateSecurityGroupOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/security-groups");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSecurityGroupOutcome(result.GetResultWithOwnership())
+                            : CreateSecurityGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteBotOutcome WickrClient::DeleteBot(const DeleteBotRequest& request) const {
-  AWS_OPERATION_GUARD(DeleteBot);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteBot", "Required field: NetworkId, is not set");
     return DeleteBotOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -606,112 +441,56 @@ DeleteBotOutcome WickrClient::DeleteBot(const DeleteBotRequest& request) const {
     return DeleteBotOutcome(
         Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteBot, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DeleteBot, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteBot",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DeleteBotOutcome>(
-      [&]() -> DeleteBotOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
-        return DeleteBotOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBotOutcome(result.GetResultWithOwnership()) : DeleteBotOutcome(std::move(result.GetError()));
 }
 
 DeleteDataRetentionBotOutcome WickrClient::DeleteDataRetentionBot(const DeleteDataRetentionBotRequest& request) const {
-  AWS_OPERATION_GUARD(DeleteDataRetentionBot);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDataRetentionBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteDataRetentionBot", "Required field: NetworkId, is not set");
     return DeleteDataRetentionBotOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                             "Missing required field [NetworkId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteDataRetentionBot, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DeleteDataRetentionBot, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteDataRetentionBot",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DeleteDataRetentionBotOutcome>(
-      [&]() -> DeleteDataRetentionBotOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteDataRetentionBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/data-retention-bots");
-        return DeleteDataRetentionBotOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/data-retention-bots");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDataRetentionBotOutcome(result.GetResultWithOwnership())
+                            : DeleteDataRetentionBotOutcome(std::move(result.GetError()));
 }
 
 DeleteNetworkOutcome WickrClient::DeleteNetwork(const DeleteNetworkRequest& request) const {
-  AWS_OPERATION_GUARD(DeleteNetwork);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteNetwork", "Required field: NetworkId, is not set");
     return DeleteNetworkOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                    "Missing required field [NetworkId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteNetwork, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DeleteNetwork, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteNetwork",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DeleteNetworkOutcome>(
-      [&]() -> DeleteNetworkOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        return DeleteNetworkOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteNetworkOutcome(result.GetResultWithOwnership()) : DeleteNetworkOutcome(std::move(result.GetError()));
 }
 
 DeleteSecurityGroupOutcome WickrClient::DeleteSecurityGroup(const DeleteSecurityGroupRequest& request) const {
-  AWS_OPERATION_GUARD(DeleteSecurityGroup);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSecurityGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteSecurityGroup", "Required field: NetworkId, is not set");
     return DeleteSecurityGroupOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -722,39 +501,21 @@ DeleteSecurityGroupOutcome WickrClient::DeleteSecurityGroup(const DeleteSecurity
     return DeleteSecurityGroupOutcome(
         Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteSecurityGroup, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DeleteSecurityGroup, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteSecurityGroup",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DeleteSecurityGroupOutcome>(
-      [&]() -> DeleteSecurityGroupOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteSecurityGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/security-groups/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGroupId());
-        return DeleteSecurityGroupOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/security-groups/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGroupId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSecurityGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteSecurityGroupOutcome(std::move(result.GetError()));
 }
 
 GetBotOutcome WickrClient::GetBot(const GetBotRequest& request) const {
-  AWS_OPERATION_GUARD(GetBot);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetBot", "Required field: NetworkId, is not set");
     return GetBotOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -765,297 +526,149 @@ GetBotOutcome WickrClient::GetBot(const GetBotRequest& request) const {
     return GetBotOutcome(
         Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetBot, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetBot, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetBot",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetBotOutcome>(
-      [&]() -> GetBotOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
-        return GetBotOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBotOutcome(result.GetResultWithOwnership()) : GetBotOutcome(std::move(result.GetError()));
 }
 
 GetBotsCountOutcome WickrClient::GetBotsCount(const GetBotsCountRequest& request) const {
-  AWS_OPERATION_GUARD(GetBotsCount);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBotsCount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetBotsCount", "Required field: NetworkId, is not set");
     return GetBotsCountOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                   "Missing required field [NetworkId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetBotsCount, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetBotsCount, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetBotsCount",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetBotsCountOutcome>(
-      [&]() -> GetBotsCountOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBotsCount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/bots/count");
-        return GetBotsCountOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/bots/count");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBotsCountOutcome(result.GetResultWithOwnership()) : GetBotsCountOutcome(std::move(result.GetError()));
 }
 
 GetDataRetentionBotOutcome WickrClient::GetDataRetentionBot(const GetDataRetentionBotRequest& request) const {
-  AWS_OPERATION_GUARD(GetDataRetentionBot);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDataRetentionBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetDataRetentionBot", "Required field: NetworkId, is not set");
     return GetDataRetentionBotOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                          "Missing required field [NetworkId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetDataRetentionBot, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetDataRetentionBot, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetDataRetentionBot",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetDataRetentionBotOutcome>(
-      [&]() -> GetDataRetentionBotOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDataRetentionBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/data-retention-bots");
-        return GetDataRetentionBotOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/data-retention-bots");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDataRetentionBotOutcome(result.GetResultWithOwnership())
+                            : GetDataRetentionBotOutcome(std::move(result.GetError()));
 }
 
 GetGuestUserHistoryCountOutcome WickrClient::GetGuestUserHistoryCount(const GetGuestUserHistoryCountRequest& request) const {
-  AWS_OPERATION_GUARD(GetGuestUserHistoryCount);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetGuestUserHistoryCount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetGuestUserHistoryCount", "Required field: NetworkId, is not set");
     return GetGuestUserHistoryCountOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                               "Missing required field [NetworkId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetGuestUserHistoryCount, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetGuestUserHistoryCount, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetGuestUserHistoryCount",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetGuestUserHistoryCountOutcome>(
-      [&]() -> GetGuestUserHistoryCountOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetGuestUserHistoryCount, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/guest-users/count");
-        return GetGuestUserHistoryCountOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/guest-users/count");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetGuestUserHistoryCountOutcome(result.GetResultWithOwnership())
+                            : GetGuestUserHistoryCountOutcome(std::move(result.GetError()));
 }
 
 GetNetworkOutcome WickrClient::GetNetwork(const GetNetworkRequest& request) const {
-  AWS_OPERATION_GUARD(GetNetwork);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetNetwork", "Required field: NetworkId, is not set");
     return GetNetworkOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                 "Missing required field [NetworkId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetNetwork, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetNetwork, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetNetwork",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetNetworkOutcome>(
-      [&]() -> GetNetworkOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        return GetNetworkOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetNetworkOutcome(result.GetResultWithOwnership()) : GetNetworkOutcome(std::move(result.GetError()));
 }
 
 GetNetworkSettingsOutcome WickrClient::GetNetworkSettings(const GetNetworkSettingsRequest& request) const {
-  AWS_OPERATION_GUARD(GetNetworkSettings);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetNetworkSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetNetworkSettings", "Required field: NetworkId, is not set");
     return GetNetworkSettingsOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                         "Missing required field [NetworkId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetNetworkSettings, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetNetworkSettings, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetNetworkSettings",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetNetworkSettingsOutcome>(
-      [&]() -> GetNetworkSettingsOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetNetworkSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/settings");
-        return GetNetworkSettingsOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/settings");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetNetworkSettingsOutcome(result.GetResultWithOwnership())
+                            : GetNetworkSettingsOutcome(std::move(result.GetError()));
 }
 
 GetOidcInfoOutcome WickrClient::GetOidcInfo(const GetOidcInfoRequest& request) const {
-  AWS_OPERATION_GUARD(GetOidcInfo);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetOidcInfo, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetOidcInfo", "Required field: NetworkId, is not set");
     return GetOidcInfoOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                  "Missing required field [NetworkId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetOidcInfo, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetOidcInfo, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetOidcInfo",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetOidcInfoOutcome>(
-      [&]() -> GetOidcInfoOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetOidcInfo, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/oidc");
-        return GetOidcInfoOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/oidc");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetOidcInfoOutcome(result.GetResultWithOwnership()) : GetOidcInfoOutcome(std::move(result.GetError()));
 }
 
 GetOpentdfConfigOutcome WickrClient::GetOpentdfConfig(const GetOpentdfConfigRequest& request) const {
-  AWS_OPERATION_GUARD(GetOpentdfConfig);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetOpentdfConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetOpentdfConfig", "Required field: NetworkId, is not set");
     return GetOpentdfConfigOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                       "Missing required field [NetworkId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetOpentdfConfig, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetOpentdfConfig, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetOpentdfConfig",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetOpentdfConfigOutcome>(
-      [&]() -> GetOpentdfConfigOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetOpentdfConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/tdf");
-        return GetOpentdfConfigOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/tdf");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetOpentdfConfigOutcome(result.GetResultWithOwnership())
+                            : GetOpentdfConfigOutcome(std::move(result.GetError()));
 }
 
 GetSecurityGroupOutcome WickrClient::GetSecurityGroup(const GetSecurityGroupRequest& request) const {
-  AWS_OPERATION_GUARD(GetSecurityGroup);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSecurityGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetSecurityGroup", "Required field: NetworkId, is not set");
     return GetSecurityGroupOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -1066,39 +679,21 @@ GetSecurityGroupOutcome WickrClient::GetSecurityGroup(const GetSecurityGroupRequ
     return GetSecurityGroupOutcome(
         Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetSecurityGroup, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetSecurityGroup, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetSecurityGroup",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetSecurityGroupOutcome>(
-      [&]() -> GetSecurityGroupOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSecurityGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/security-groups/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGroupId());
-        return GetSecurityGroupOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/security-groups/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGroupId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSecurityGroupOutcome(result.GetResultWithOwnership())
+                            : GetSecurityGroupOutcome(std::move(result.GetError()));
 }
 
 GetUserOutcome WickrClient::GetUser(const GetUserRequest& request) const {
-  AWS_OPERATION_GUARD(GetUser);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetUser", "Required field: NetworkId, is not set");
     return GetUserOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -1109,150 +704,75 @@ GetUserOutcome WickrClient::GetUser(const GetUserRequest& request) const {
     return GetUserOutcome(
         Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetUser, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetUser, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetUser",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetUserOutcome>(
-      [&]() -> GetUserOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/users/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserId());
-        return GetUserOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/users/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetUserOutcome(result.GetResultWithOwnership()) : GetUserOutcome(std::move(result.GetError()));
 }
 
 GetUsersCountOutcome WickrClient::GetUsersCount(const GetUsersCountRequest& request) const {
-  AWS_OPERATION_GUARD(GetUsersCount);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetUsersCount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetUsersCount", "Required field: NetworkId, is not set");
     return GetUsersCountOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                    "Missing required field [NetworkId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetUsersCount, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetUsersCount, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetUsersCount",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetUsersCountOutcome>(
-      [&]() -> GetUsersCountOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetUsersCount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/users/count");
-        return GetUsersCountOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/users/count");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetUsersCountOutcome(result.GetResultWithOwnership()) : GetUsersCountOutcome(std::move(result.GetError()));
 }
 
 ListBlockedGuestUsersOutcome WickrClient::ListBlockedGuestUsers(const ListBlockedGuestUsersRequest& request) const {
-  AWS_OPERATION_GUARD(ListBlockedGuestUsers);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBlockedGuestUsers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListBlockedGuestUsers", "Required field: NetworkId, is not set");
     return ListBlockedGuestUsersOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                            "Missing required field [NetworkId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListBlockedGuestUsers, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListBlockedGuestUsers, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListBlockedGuestUsers",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListBlockedGuestUsersOutcome>(
-      [&]() -> ListBlockedGuestUsersOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListBlockedGuestUsers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/guest-users/blocklist");
-        return ListBlockedGuestUsersOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/guest-users/blocklist");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListBlockedGuestUsersOutcome(result.GetResultWithOwnership())
+                            : ListBlockedGuestUsersOutcome(std::move(result.GetError()));
 }
 
 ListBotsOutcome WickrClient::ListBots(const ListBotsRequest& request) const {
-  AWS_OPERATION_GUARD(ListBots);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBots, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListBots", "Required field: NetworkId, is not set");
     return ListBotsOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                               "Missing required field [NetworkId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListBots, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListBots, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListBots",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListBotsOutcome>(
-      [&]() -> ListBotsOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListBots, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/bots");
-        return ListBotsOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/bots");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListBotsOutcome(result.GetResultWithOwnership()) : ListBotsOutcome(std::move(result.GetError()));
 }
 
 ListDevicesForUserOutcome WickrClient::ListDevicesForUser(const ListDevicesForUserRequest& request) const {
-  AWS_OPERATION_GUARD(ListDevicesForUser);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDevicesForUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListDevicesForUser", "Required field: NetworkId, is not set");
     return ListDevicesForUserOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -1263,107 +783,50 @@ ListDevicesForUserOutcome WickrClient::ListDevicesForUser(const ListDevicesForUs
     return ListDevicesForUserOutcome(
         Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListDevicesForUser, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListDevicesForUser, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListDevicesForUser",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListDevicesForUserOutcome>(
-      [&]() -> ListDevicesForUserOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDevicesForUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/users/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/devices");
-        return ListDevicesForUserOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/users/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/devices");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDevicesForUserOutcome(result.GetResultWithOwnership())
+                            : ListDevicesForUserOutcome(std::move(result.GetError()));
 }
 
 ListGuestUsersOutcome WickrClient::ListGuestUsers(const ListGuestUsersRequest& request) const {
-  AWS_OPERATION_GUARD(ListGuestUsers);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListGuestUsers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListGuestUsers", "Required field: NetworkId, is not set");
     return ListGuestUsersOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                     "Missing required field [NetworkId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListGuestUsers, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListGuestUsers, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListGuestUsers",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListGuestUsersOutcome>(
-      [&]() -> ListGuestUsersOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListGuestUsers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/guest-users");
-        return ListGuestUsersOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/guest-users");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListGuestUsersOutcome(result.GetResultWithOwnership()) : ListGuestUsersOutcome(std::move(result.GetError()));
 }
 
 ListNetworksOutcome WickrClient::ListNetworks(const ListNetworksRequest& request) const {
-  AWS_OPERATION_GUARD(ListNetworks);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListNetworks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListNetworks, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListNetworks, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListNetworks",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListNetworksOutcome>(
-      [&]() -> ListNetworksOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListNetworks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks");
-        return ListNetworksOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListNetworksOutcome(result.GetResultWithOwnership()) : ListNetworksOutcome(std::move(result.GetError()));
 }
 
 ListSecurityGroupUsersOutcome WickrClient::ListSecurityGroupUsers(const ListSecurityGroupUsersRequest& request) const {
-  AWS_OPERATION_GUARD(ListSecurityGroupUsers);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSecurityGroupUsers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListSecurityGroupUsers", "Required field: NetworkId, is not set");
     return ListSecurityGroupUsersOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -1374,225 +837,116 @@ ListSecurityGroupUsersOutcome WickrClient::ListSecurityGroupUsers(const ListSecu
     return ListSecurityGroupUsersOutcome(
         Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListSecurityGroupUsers, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListSecurityGroupUsers, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListSecurityGroupUsers",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListSecurityGroupUsersOutcome>(
-      [&]() -> ListSecurityGroupUsersOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSecurityGroupUsers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/security-groups/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGroupId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/users");
-        return ListSecurityGroupUsersOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/security-groups/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGroupId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/users");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSecurityGroupUsersOutcome(result.GetResultWithOwnership())
+                            : ListSecurityGroupUsersOutcome(std::move(result.GetError()));
 }
 
 ListSecurityGroupsOutcome WickrClient::ListSecurityGroups(const ListSecurityGroupsRequest& request) const {
-  AWS_OPERATION_GUARD(ListSecurityGroups);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSecurityGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListSecurityGroups", "Required field: NetworkId, is not set");
     return ListSecurityGroupsOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                         "Missing required field [NetworkId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListSecurityGroups, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListSecurityGroups, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListSecurityGroups",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListSecurityGroupsOutcome>(
-      [&]() -> ListSecurityGroupsOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSecurityGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/security-groups");
-        return ListSecurityGroupsOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/security-groups");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSecurityGroupsOutcome(result.GetResultWithOwnership())
+                            : ListSecurityGroupsOutcome(std::move(result.GetError()));
 }
 
 ListUsersOutcome WickrClient::ListUsers(const ListUsersRequest& request) const {
-  AWS_OPERATION_GUARD(ListUsers);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListUsers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListUsers", "Required field: NetworkId, is not set");
     return ListUsersOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                "Missing required field [NetworkId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListUsers, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListUsers, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListUsers",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListUsersOutcome>(
-      [&]() -> ListUsersOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListUsers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/users");
-        return ListUsersOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/users");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListUsersOutcome(result.GetResultWithOwnership()) : ListUsersOutcome(std::move(result.GetError()));
 }
 
 RegisterOidcConfigOutcome WickrClient::RegisterOidcConfig(const RegisterOidcConfigRequest& request) const {
-  AWS_OPERATION_GUARD(RegisterOidcConfig);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterOidcConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("RegisterOidcConfig", "Required field: NetworkId, is not set");
     return RegisterOidcConfigOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                         "Missing required field [NetworkId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, RegisterOidcConfig, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, RegisterOidcConfig, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".RegisterOidcConfig",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<RegisterOidcConfigOutcome>(
-      [&]() -> RegisterOidcConfigOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RegisterOidcConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/oidc/save");
-        return RegisterOidcConfigOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/oidc/save");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterOidcConfigOutcome(result.GetResultWithOwnership())
+                            : RegisterOidcConfigOutcome(std::move(result.GetError()));
 }
 
 RegisterOidcConfigTestOutcome WickrClient::RegisterOidcConfigTest(const RegisterOidcConfigTestRequest& request) const {
-  AWS_OPERATION_GUARD(RegisterOidcConfigTest);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterOidcConfigTest, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("RegisterOidcConfigTest", "Required field: NetworkId, is not set");
     return RegisterOidcConfigTestOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                             "Missing required field [NetworkId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, RegisterOidcConfigTest, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, RegisterOidcConfigTest, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".RegisterOidcConfigTest",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<RegisterOidcConfigTestOutcome>(
-      [&]() -> RegisterOidcConfigTestOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RegisterOidcConfigTest, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/oidc/test");
-        return RegisterOidcConfigTestOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/oidc/test");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterOidcConfigTestOutcome(result.GetResultWithOwnership())
+                            : RegisterOidcConfigTestOutcome(std::move(result.GetError()));
 }
 
 RegisterOpentdfConfigOutcome WickrClient::RegisterOpentdfConfig(const RegisterOpentdfConfigRequest& request) const {
-  AWS_OPERATION_GUARD(RegisterOpentdfConfig);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterOpentdfConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("RegisterOpentdfConfig", "Required field: NetworkId, is not set");
     return RegisterOpentdfConfigOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                            "Missing required field [NetworkId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, RegisterOpentdfConfig, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, RegisterOpentdfConfig, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".RegisterOpentdfConfig",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<RegisterOpentdfConfigOutcome>(
-      [&]() -> RegisterOpentdfConfigOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RegisterOpentdfConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/tdf");
-        return RegisterOpentdfConfigOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/tdf");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterOpentdfConfigOutcome(result.GetResultWithOwnership())
+                            : RegisterOpentdfConfigOutcome(std::move(result.GetError()));
 }
 
 UpdateBotOutcome WickrClient::UpdateBot(const UpdateBotRequest& request) const {
-  AWS_OPERATION_GUARD(UpdateBot);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("UpdateBot", "Required field: NetworkId, is not set");
     return UpdateBotOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -1603,76 +957,39 @@ UpdateBotOutcome WickrClient::UpdateBot(const UpdateBotRequest& request) const {
     return UpdateBotOutcome(
         Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateBot, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, UpdateBot, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateBot",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<UpdateBotOutcome>(
-      [&]() -> UpdateBotOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
-        return UpdateBotOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateBotOutcome(result.GetResultWithOwnership()) : UpdateBotOutcome(std::move(result.GetError()));
 }
 
 UpdateDataRetentionOutcome WickrClient::UpdateDataRetention(const UpdateDataRetentionRequest& request) const {
-  AWS_OPERATION_GUARD(UpdateDataRetention);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDataRetention, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("UpdateDataRetention", "Required field: NetworkId, is not set");
     return UpdateDataRetentionOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                          "Missing required field [NetworkId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateDataRetention, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, UpdateDataRetention, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateDataRetention",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<UpdateDataRetentionOutcome>(
-      [&]() -> UpdateDataRetentionOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateDataRetention, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/data-retention-bots");
-        return UpdateDataRetentionOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/data-retention-bots");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateDataRetentionOutcome(result.GetResultWithOwnership())
+                            : UpdateDataRetentionOutcome(std::move(result.GetError()));
 }
 
 UpdateGuestUserOutcome WickrClient::UpdateGuestUser(const UpdateGuestUserRequest& request) const {
-  AWS_OPERATION_GUARD(UpdateGuestUser);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateGuestUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("UpdateGuestUser", "Required field: NetworkId, is not set");
     return UpdateGuestUserOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -1683,112 +1000,57 @@ UpdateGuestUserOutcome WickrClient::UpdateGuestUser(const UpdateGuestUserRequest
     return UpdateGuestUserOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                      "Missing required field [UsernameHash]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateGuestUser, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, UpdateGuestUser, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateGuestUser",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<UpdateGuestUserOutcome>(
-      [&]() -> UpdateGuestUserOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateGuestUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/guest-users/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUsernameHash());
-        return UpdateGuestUserOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/guest-users/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUsernameHash());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateGuestUserOutcome(result.GetResultWithOwnership())
+                            : UpdateGuestUserOutcome(std::move(result.GetError()));
 }
 
 UpdateNetworkOutcome WickrClient::UpdateNetwork(const UpdateNetworkRequest& request) const {
-  AWS_OPERATION_GUARD(UpdateNetwork);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("UpdateNetwork", "Required field: NetworkId, is not set");
     return UpdateNetworkOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                    "Missing required field [NetworkId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateNetwork, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, UpdateNetwork, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateNetwork",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<UpdateNetworkOutcome>(
-      [&]() -> UpdateNetworkOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        return UpdateNetworkOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateNetworkOutcome(result.GetResultWithOwnership()) : UpdateNetworkOutcome(std::move(result.GetError()));
 }
 
 UpdateNetworkSettingsOutcome WickrClient::UpdateNetworkSettings(const UpdateNetworkSettingsRequest& request) const {
-  AWS_OPERATION_GUARD(UpdateNetworkSettings);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateNetworkSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("UpdateNetworkSettings", "Required field: NetworkId, is not set");
     return UpdateNetworkSettingsOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                            "Missing required field [NetworkId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateNetworkSettings, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, UpdateNetworkSettings, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateNetworkSettings",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<UpdateNetworkSettingsOutcome>(
-      [&]() -> UpdateNetworkSettingsOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateNetworkSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/settings");
-        return UpdateNetworkSettingsOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/settings");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateNetworkSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdateNetworkSettingsOutcome(std::move(result.GetError()));
 }
 
 UpdateSecurityGroupOutcome WickrClient::UpdateSecurityGroup(const UpdateSecurityGroupRequest& request) const {
-  AWS_OPERATION_GUARD(UpdateSecurityGroup);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSecurityGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("UpdateSecurityGroup", "Required field: NetworkId, is not set");
     return UpdateSecurityGroupOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -1799,69 +1061,34 @@ UpdateSecurityGroupOutcome WickrClient::UpdateSecurityGroup(const UpdateSecurity
     return UpdateSecurityGroupOutcome(
         Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateSecurityGroup, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, UpdateSecurityGroup, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateSecurityGroup",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<UpdateSecurityGroupOutcome>(
-      [&]() -> UpdateSecurityGroupOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateSecurityGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/security-groups/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGroupId());
-        return UpdateSecurityGroupOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/security-groups/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGroupId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateSecurityGroupOutcome(result.GetResultWithOwnership())
+                            : UpdateSecurityGroupOutcome(std::move(result.GetError()));
 }
 
 UpdateUserOutcome WickrClient::UpdateUser(const UpdateUserRequest& request) const {
-  AWS_OPERATION_GUARD(UpdateUser);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("UpdateUser", "Required field: NetworkId, is not set");
     return UpdateUserOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                 "Missing required field [NetworkId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateUser, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, UpdateUser, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateUser",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<UpdateUserOutcome>(
-      [&]() -> UpdateUserOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/users");
-        return UpdateUserOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/users");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateUserOutcome(result.GetResultWithOwnership()) : UpdateUserOutcome(std::move(result.GetError()));
 }

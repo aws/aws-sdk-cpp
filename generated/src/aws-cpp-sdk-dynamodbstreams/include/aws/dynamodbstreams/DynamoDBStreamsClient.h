@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/dynamodbstreams/DynamoDBStreamsPaginationBase.h>
 #include <aws/dynamodbstreams/DynamoDBStreamsServiceClientModel.h>
+#include <aws/dynamodbstreams/DynamoDBStreamsWaiter.h>
 #include <aws/dynamodbstreams/DynamoDBStreams_EXPORTS.h>
 
 namespace Aws {
@@ -24,7 +25,8 @@ namespace DynamoDBStreams {
  */
 class AWS_DYNAMODBSTREAMS_API DynamoDBStreamsClient : public Aws::Client::AWSJsonClient,
                                                       public Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBStreamsClient>,
-                                                      public DynamoDBStreamsPaginationBase<DynamoDBStreamsClient> {
+                                                      public DynamoDBStreamsPaginationBase<DynamoDBStreamsClient>,
+                                                      public DynamoDBStreamsWaiter<DynamoDBStreamsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -216,6 +218,10 @@ class AWS_DYNAMODBSTREAMS_API DynamoDBStreamsClient : public Aws::Client::AWSJso
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBStreamsClient>;
   void init(const DynamoDBStreamsClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, DynamoDBStreamsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   DynamoDBStreamsClientConfiguration m_clientConfiguration;
   std::shared_ptr<DynamoDBStreamsEndpointProviderBase> m_endpointProvider;

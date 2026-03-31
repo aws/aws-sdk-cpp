@@ -26,6 +26,10 @@ Ec2Configuration& Ec2Configuration::operator=(JsonView jsonValue) {
     m_imageIdOverride = jsonValue.GetString("imageIdOverride");
     m_imageIdOverrideHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("batchImageStatus")) {
+    m_batchImageStatus = jsonValue.GetString("batchImageStatus");
+    m_batchImageStatusHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("imageKubernetesVersion")) {
     m_imageKubernetesVersion = jsonValue.GetString("imageKubernetesVersion");
     m_imageKubernetesVersionHasBeenSet = true;
@@ -42,6 +46,10 @@ JsonValue Ec2Configuration::Jsonize() const {
 
   if (m_imageIdOverrideHasBeenSet) {
     payload.WithString("imageIdOverride", m_imageIdOverride);
+  }
+
+  if (m_batchImageStatusHasBeenSet) {
+    payload.WithString("batchImageStatus", m_batchImageStatus);
   }
 
   if (m_imageKubernetesVersionHasBeenSet) {

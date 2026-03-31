@@ -11,6 +11,7 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/elasticloadbalancing/ElasticLoadBalancingPaginationBase.h>
 #include <aws/elasticloadbalancing/ElasticLoadBalancingServiceClientModel.h>
+#include <aws/elasticloadbalancing/ElasticLoadBalancingWaiter.h>
 #include <aws/elasticloadbalancing/ElasticLoadBalancing_EXPORTS.h>
 
 namespace Aws {
@@ -40,7 +41,8 @@ namespace ElasticLoadBalancing {
 class AWS_ELASTICLOADBALANCING_API ElasticLoadBalancingClient
     : public Aws::Client::AWSXMLClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<ElasticLoadBalancingClient>,
-      public ElasticLoadBalancingPaginationBase<ElasticLoadBalancingClient> {
+      public ElasticLoadBalancingPaginationBase<ElasticLoadBalancingClient>,
+      public ElasticLoadBalancingWaiter<ElasticLoadBalancingClient> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();
@@ -1114,6 +1116,10 @@ class AWS_ELASTICLOADBALANCING_API ElasticLoadBalancingClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ElasticLoadBalancingClient>;
   void init(const ElasticLoadBalancingClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ElasticLoadBalancingError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   ElasticLoadBalancingClientConfiguration m_clientConfiguration;
   std::shared_ptr<ElasticLoadBalancingEndpointProviderBase> m_endpointProvider;

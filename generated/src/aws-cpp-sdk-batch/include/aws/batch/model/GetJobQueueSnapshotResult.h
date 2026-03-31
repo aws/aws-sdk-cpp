@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/batch/model/FrontOfQueueDetail.h>
+#include <aws/batch/model/FrontOfQuotaSharesDetail.h>
 #include <aws/batch/model/QueueSnapshotUtilizationDetail.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -33,8 +34,8 @@ class GetJobQueueSnapshotResult {
   /**
    * <p>The list of the first 100 <code>RUNNABLE</code> jobs in each job queue. For
    * first-in-first-out (FIFO) job queues, jobs are ordered based on their submission
-   * time. For fair-share scheduling (FSS) job queues, jobs are ordered based on
-   * their job priority and share usage.</p>
+   * time. For job queues with an attached fair-share scheduling (FSS) or quota-share
+   * policy, jobs are ordered based on their job priority and share usage.</p>
    */
   inline const FrontOfQueueDetail& GetFrontOfQueue() const { return m_frontOfQueue; }
   template <typename FrontOfQueueT = FrontOfQueueDetail>
@@ -51,8 +52,26 @@ class GetJobQueueSnapshotResult {
 
   ///@{
   /**
-   * <p>The job queue's capacity utilization, including total usage and breakdown by
-   * fairshare scheduling queue.</p>
+   * <p>The first <code>RUNNABLE</code> job in each quota share. Jobs are ordered
+   * based on their job priority and share usage.</p>
+   */
+  inline const FrontOfQuotaSharesDetail& GetFrontOfQuotaShares() const { return m_frontOfQuotaShares; }
+  template <typename FrontOfQuotaSharesT = FrontOfQuotaSharesDetail>
+  void SetFrontOfQuotaShares(FrontOfQuotaSharesT&& value) {
+    m_frontOfQuotaSharesHasBeenSet = true;
+    m_frontOfQuotaShares = std::forward<FrontOfQuotaSharesT>(value);
+  }
+  template <typename FrontOfQuotaSharesT = FrontOfQuotaSharesDetail>
+  GetJobQueueSnapshotResult& WithFrontOfQuotaShares(FrontOfQuotaSharesT&& value) {
+    SetFrontOfQuotaShares(std::forward<FrontOfQuotaSharesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The job queue's capacity utilization, including total usage and breakdown per
+   * given share.</p>
    */
   inline const QueueSnapshotUtilizationDetail& GetQueueUtilization() const { return m_queueUtilization; }
   template <typename QueueUtilizationT = QueueSnapshotUtilizationDetail>
@@ -86,11 +105,14 @@ class GetJobQueueSnapshotResult {
  private:
   FrontOfQueueDetail m_frontOfQueue;
 
+  FrontOfQuotaSharesDetail m_frontOfQuotaShares;
+
   QueueSnapshotUtilizationDetail m_queueUtilization;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_frontOfQueueHasBeenSet = false;
+  bool m_frontOfQuotaSharesHasBeenSet = false;
   bool m_queueUtilizationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

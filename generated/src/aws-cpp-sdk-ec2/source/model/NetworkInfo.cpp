@@ -122,6 +122,11 @@ NetworkInfo& NetworkInfo::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(flexibleEnaQueuesSupportNode.GetText()).c_str()));
       m_flexibleEnaQueuesSupportHasBeenSet = true;
     }
+    XmlNode connectionTrackingConfigurationNode = resultNode.FirstChild("connectionTrackingConfiguration");
+    if (!connectionTrackingConfigurationNode.IsNull()) {
+      m_connectionTrackingConfiguration = connectionTrackingConfigurationNode;
+      m_connectionTrackingConfigurationHasBeenSet = true;
+    }
     XmlNode secondaryNetworkSupportedNode = resultNode.FirstChild("secondaryNetworkSupported");
     if (!secondaryNetworkSupportedNode.IsNull()) {
       m_secondaryNetworkSupported = StringUtils::ConvertToBool(
@@ -221,6 +226,12 @@ void NetworkInfo::OutputToStream(Aws::OStream& oStream, const char* location, un
             << "&";
   }
 
+  if (m_connectionTrackingConfigurationHasBeenSet) {
+    Aws::StringStream connectionTrackingConfigurationLocationAndMemberSs;
+    connectionTrackingConfigurationLocationAndMemberSs << location << index << locationValue << ".ConnectionTrackingConfiguration";
+    m_connectionTrackingConfiguration.OutputToStream(oStream, connectionTrackingConfigurationLocationAndMemberSs.str().c_str());
+  }
+
   if (m_secondaryNetworkSupportedHasBeenSet) {
     oStream << location << index << locationValue << ".SecondaryNetworkSupported=" << std::boolalpha << m_secondaryNetworkSupported << "&";
   }
@@ -292,6 +303,11 @@ void NetworkInfo::OutputToStream(Aws::OStream& oStream, const char* location) co
     oStream << location << ".FlexibleEnaQueuesSupport="
             << StringUtils::URLEncode(FlexibleEnaQueuesSupportMapper::GetNameForFlexibleEnaQueuesSupport(m_flexibleEnaQueuesSupport))
             << "&";
+  }
+  if (m_connectionTrackingConfigurationHasBeenSet) {
+    Aws::String connectionTrackingConfigurationLocationAndMember(location);
+    connectionTrackingConfigurationLocationAndMember += ".ConnectionTrackingConfiguration";
+    m_connectionTrackingConfiguration.OutputToStream(oStream, connectionTrackingConfigurationLocationAndMember.c_str());
   }
   if (m_secondaryNetworkSupportedHasBeenSet) {
     oStream << location << ".SecondaryNetworkSupported=" << std::boolalpha << m_secondaryNetworkSupported << "&";

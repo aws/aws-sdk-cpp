@@ -6,10 +6,12 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlRequest.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/Certificate.h>
 #include <aws/bedrock-agentcore-control/model/CodeInterpreterNetworkConfiguration.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -108,6 +110,30 @@ class CreateCodeInterpreterRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
+   * <p>A list of certificates to install in the code interpreter.</p>
+   */
+  inline const Aws::Vector<Certificate>& GetCertificates() const { return m_certificates; }
+  inline bool CertificatesHasBeenSet() const { return m_certificatesHasBeenSet; }
+  template <typename CertificatesT = Aws::Vector<Certificate>>
+  void SetCertificates(CertificatesT&& value) {
+    m_certificatesHasBeenSet = true;
+    m_certificates = std::forward<CertificatesT>(value);
+  }
+  template <typename CertificatesT = Aws::Vector<Certificate>>
+  CreateCodeInterpreterRequest& WithCertificates(CertificatesT&& value) {
+    SetCertificates(std::forward<CertificatesT>(value));
+    return *this;
+  }
+  template <typename CertificatesT = Certificate>
+  CreateCodeInterpreterRequest& AddCertificates(CertificatesT&& value) {
+    m_certificatesHasBeenSet = true;
+    m_certificates.emplace_back(std::forward<CertificatesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A unique, case-sensitive identifier to ensure that the operation completes no
    * more than one time. If this token matches a previous request, Amazon Bedrock
    * AgentCore ignores the request but does not return an error.</p>
@@ -160,6 +186,8 @@ class CreateCodeInterpreterRequest : public BedrockAgentCoreControlRequest {
 
   CodeInterpreterNetworkConfiguration m_networkConfiguration;
 
+  Aws::Vector<Certificate> m_certificates;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
   Aws::Map<Aws::String, Aws::String> m_tags;
@@ -167,6 +195,7 @@ class CreateCodeInterpreterRequest : public BedrockAgentCoreControlRequest {
   bool m_descriptionHasBeenSet = false;
   bool m_executionRoleArnHasBeenSet = false;
   bool m_networkConfigurationHasBeenSet = false;
+  bool m_certificatesHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };

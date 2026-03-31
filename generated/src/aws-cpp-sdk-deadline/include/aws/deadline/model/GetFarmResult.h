@@ -22,6 +22,13 @@ class JsonValue;
 }  // namespace Utils
 namespace deadline {
 namespace Model {
+/**
+ * <p>Mixin that adds an optional ARN field to response structures. Apply to
+ * SummaryMixins (flows into Get, Summary, and BatchGet) and Create
+ * outputs.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetFarmResponse">AWS
+ * API Reference</a></p>
+ */
 class GetFarmResult {
  public:
   AWS_DEADLINE_API GetFarmResult() = default;
@@ -60,25 +67,6 @@ class GetFarmResult {
   template <typename DisplayNameT = Aws::String>
   GetFarmResult& WithDisplayName(DisplayNameT&& value) {
     SetDisplayName(std::forward<DisplayNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The description of the farm.</p>  <p>This field can store any
-   * content. Escape or encode this content before displaying it on a webpage or any
-   * other system that might interpret the content of this field.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  GetFarmResult& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
     return *this;
   }
   ///@}
@@ -169,6 +157,42 @@ class GetFarmResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The description of the farm.</p>  <p>This field can store any
+   * content. Escape or encode this content before displaying it on a webpage or any
+   * other system that might interpret the content of this field.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  GetFarmResult& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A multiplier applied to the farm's calculated costs for usage data and budget
+   * tracking. A value less than 1 represents a discount, a value greater than 1
+   * represents a premium, and a value of 1 represents no adjustment.</p>
+   */
+  inline double GetCostScaleFactor() const { return m_costScaleFactor; }
+  inline void SetCostScaleFactor(double value) {
+    m_costScaleFactorHasBeenSet = true;
+    m_costScaleFactor = value;
+  }
+  inline GetFarmResult& WithCostScaleFactor(double value) {
+    SetCostScaleFactor(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -189,8 +213,6 @@ class GetFarmResult {
 
   Aws::String m_displayName;
 
-  Aws::String m_description;
-
   Aws::String m_kmsKeyArn;
 
   Aws::Utils::DateTime m_createdAt{};
@@ -201,16 +223,21 @@ class GetFarmResult {
 
   Aws::String m_updatedBy;
 
+  Aws::String m_description;
+
+  double m_costScaleFactor{0.0};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_farmIdHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_updatedByHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_costScaleFactorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

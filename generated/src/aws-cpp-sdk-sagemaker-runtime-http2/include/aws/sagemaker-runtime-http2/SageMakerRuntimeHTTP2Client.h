@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sagemaker-runtime-http2/SageMakerRuntimeHTTP2PaginationBase.h>
 #include <aws/sagemaker-runtime-http2/SageMakerRuntimeHTTP2ServiceClientModel.h>
+#include <aws/sagemaker-runtime-http2/SageMakerRuntimeHTTP2Waiter.h>
 #include <aws/sagemaker-runtime-http2/SageMakerRuntimeHTTP2_EXPORTS.h>
 
 namespace Aws {
@@ -20,7 +21,8 @@ namespace SageMakerRuntimeHTTP2 {
 class AWS_SAGEMAKERRUNTIMEHTTP2_API SageMakerRuntimeHTTP2Client
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<SageMakerRuntimeHTTP2Client>,
-      public SageMakerRuntimeHTTP2PaginationBase<SageMakerRuntimeHTTP2Client> {
+      public SageMakerRuntimeHTTP2PaginationBase<SageMakerRuntimeHTTP2Client>,
+      public SageMakerRuntimeHTTP2Waiter<SageMakerRuntimeHTTP2Client> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -123,6 +125,12 @@ class AWS_SAGEMAKERRUNTIMEHTTP2_API SageMakerRuntimeHTTP2Client
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SageMakerRuntimeHTTP2Client>;
   void init(const SageMakerRuntimeHTTP2ClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SageMakerRuntimeHTTP2Error> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   SageMakerRuntimeHTTP2ClientConfiguration m_clientConfiguration;
   std::shared_ptr<SageMakerRuntimeHTTP2EndpointProviderBase> m_endpointProvider;

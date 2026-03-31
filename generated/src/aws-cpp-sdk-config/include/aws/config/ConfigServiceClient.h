@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/config/ConfigServicePaginationBase.h>
 #include <aws/config/ConfigServiceServiceClientModel.h>
+#include <aws/config/ConfigServiceWaiter.h>
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -41,7 +42,8 @@ namespace ConfigService {
  */
 class AWS_CONFIGSERVICE_API ConfigServiceClient : public Aws::Client::AWSJsonClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<ConfigServiceClient>,
-                                                  public ConfigServicePaginationBase<ConfigServiceClient> {
+                                                  public ConfigServicePaginationBase<ConfigServiceClient>,
+                                                  public ConfigServiceWaiter<ConfigServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -3674,6 +3676,10 @@ class AWS_CONFIGSERVICE_API ConfigServiceClient : public Aws::Client::AWSJsonCli
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ConfigServiceClient>;
   void init(const ConfigServiceClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ConfigServiceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   ConfigServiceClientConfiguration m_clientConfiguration;
   std::shared_ptr<ConfigServiceEndpointProviderBase> m_endpointProvider;

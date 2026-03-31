@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codepipeline/CodePipelinePaginationBase.h>
 #include <aws/codepipeline/CodePipelineServiceClientModel.h>
+#include <aws/codepipeline/CodePipelineWaiter.h>
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -97,7 +98,8 @@ namespace CodePipeline {
  */
 class AWS_CODEPIPELINE_API CodePipelineClient : public Aws::Client::AWSJsonClient,
                                                 public Aws::Client::ClientWithAsyncTemplateMethods<CodePipelineClient>,
-                                                public CodePipelinePaginationBase<CodePipelineClient> {
+                                                public CodePipelinePaginationBase<CodePipelineClient>,
+                                                public CodePipelineWaiter<CodePipelineClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1441,6 +1443,10 @@ class AWS_CODEPIPELINE_API CodePipelineClient : public Aws::Client::AWSJsonClien
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CodePipelineClient>;
   void init(const CodePipelineClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CodePipelineError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   CodePipelineClientConfiguration m_clientConfiguration;
   std::shared_ptr<CodePipelineEndpointProviderBase> m_endpointProvider;

@@ -8,6 +8,7 @@
 
 
   #set($member = $entry.value)
+  #if($member.usedForPayload)
   #set($memberVarName = $CppViewHelper.computeMemberVariableName($entry.key))
   #set($varNameHasBeenSet = $CppViewHelper.computeVariableHasBeenSetName($entry.key))
   #set($shapeMember = $member.shape)
@@ -22,7 +23,7 @@
     ${varNameHasBeenSet} = true;
   }
   #set($first = false)
-
+  #end ###if($shapeMember.isUsedForPayload())
 #end
 #if($first == false)
 else

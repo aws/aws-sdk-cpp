@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mediapackage-vod/MediaPackageVodPaginationBase.h>
 #include <aws/mediapackage-vod/MediaPackageVodServiceClientModel.h>
+#include <aws/mediapackage-vod/MediaPackageVodWaiter.h>
 #include <aws/mediapackage-vod/MediaPackageVod_EXPORTS.h>
 
 namespace Aws {
@@ -19,7 +20,8 @@ namespace MediaPackageVod {
  */
 class AWS_MEDIAPACKAGEVOD_API MediaPackageVodClient : public Aws::Client::AWSJsonClient,
                                                       public Aws::Client::ClientWithAsyncTemplateMethods<MediaPackageVodClient>,
-                                                      public MediaPackageVodPaginationBase<MediaPackageVodClient> {
+                                                      public MediaPackageVodPaginationBase<MediaPackageVodClient>,
+                                                      public MediaPackageVodWaiter<MediaPackageVodClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -547,6 +549,12 @@ class AWS_MEDIAPACKAGEVOD_API MediaPackageVodClient : public Aws::Client::AWSJso
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MediaPackageVodClient>;
   void init(const MediaPackageVodClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MediaPackageVodError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   MediaPackageVodClientConfiguration m_clientConfiguration;
   std::shared_ptr<MediaPackageVodEndpointProviderBase> m_endpointProvider;

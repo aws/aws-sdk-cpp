@@ -92,8 +92,9 @@ class UpdateEvaluatorRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
-   * <p> The updated configuration for the evaluator, including LLM-as-a-Judge
-   * settings with instructions, rating scale, and model configuration. </p>
+   * <p> The updated configuration for the evaluator. Specify either LLM-as-a-Judge
+   * settings with instructions, rating scale, and model configuration, or code-based
+   * settings with a customer-managed Lambda function. </p>
    */
   inline const EvaluatorConfig& GetEvaluatorConfig() const { return m_evaluatorConfig; }
   inline bool EvaluatorConfigHasBeenSet() const { return m_evaluatorConfigHasBeenSet; }

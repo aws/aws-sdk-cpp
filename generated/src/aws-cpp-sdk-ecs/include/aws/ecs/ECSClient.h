@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ecs/ECSPaginationBase.h>
 #include <aws/ecs/ECSServiceClientModel.h>
+#include <aws/ecs/ECSWaiter.h>
 #include <aws/ecs/ECS_EXPORTS.h>
 
 namespace Aws {
@@ -33,7 +34,8 @@ namespace ECS {
  */
 class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<ECSClient>,
-                              public ECSPaginationBase<ECSClient> {
+                              public ECSPaginationBase<ECSClient>,
+                              public ECSWaiter<ECSClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2532,6 +2534,10 @@ class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ECSClient>;
   void init(const ECSClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ECSError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   ECSClientConfiguration m_clientConfiguration;
   std::shared_ptr<ECSEndpointProviderBase> m_endpointProvider;

@@ -42,6 +42,10 @@ BatchGetPolicyOutputItem& BatchGetPolicyOutputItem::operator=(JsonView jsonValue
     m_lastUpdatedDate = jsonValue.GetString("lastUpdatedDate");
     m_lastUpdatedDateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("name")) {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +74,10 @@ JsonValue BatchGetPolicyOutputItem::Jsonize() const {
 
   if (m_lastUpdatedDateHasBeenSet) {
     payload.WithString("lastUpdatedDate", m_lastUpdatedDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
   return payload;

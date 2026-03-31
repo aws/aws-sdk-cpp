@@ -62,9 +62,7 @@ EntityMetricData& EntityMetricData::operator=(const std::shared_ptr<Aws::Crt::Cb
                   }
                 }
                 m_metricDataHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -123,9 +121,7 @@ EntityMetricData& EntityMetricData::operator=(const std::shared_ptr<Aws::Crt::Cb
                 }
               }
               m_metricDataHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

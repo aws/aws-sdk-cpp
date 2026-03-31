@@ -28,6 +28,7 @@ static const int Neptune_HASH = HashingUtils::HashString("Neptune");
 static const int Timestream_HASH = HashingUtils::HashString("Timestream");
 static const int Keyspaces_HASH = HashingUtils::HashString("Keyspaces");
 static const int DMS_HASH = HashingUtils::HashString("DMS");
+static const int OpenSearch_HASH = HashingUtils::HashString("OpenSearch");
 
 SavingsPlanProductType GetSavingsPlanProductTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -57,6 +58,8 @@ SavingsPlanProductType GetSavingsPlanProductTypeForName(const Aws::String& name)
     return SavingsPlanProductType::Keyspaces;
   } else if (hashCode == DMS_HASH) {
     return SavingsPlanProductType::DMS;
+  } else if (hashCode == OpenSearch_HASH) {
+    return SavingsPlanProductType::OpenSearch;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -97,6 +100,8 @@ Aws::String GetNameForSavingsPlanProductType(SavingsPlanProductType enumValue) {
       return "Keyspaces";
     case SavingsPlanProductType::DMS:
       return "DMS";
+    case SavingsPlanProductType::OpenSearch:
+      return "OpenSearch";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

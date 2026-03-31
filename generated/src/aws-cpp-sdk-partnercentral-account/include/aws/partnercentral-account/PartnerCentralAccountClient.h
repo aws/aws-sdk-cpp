@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/partnercentral-account/PartnerCentralAccountPaginationBase.h>
 #include <aws/partnercentral-account/PartnerCentralAccountServiceClientModel.h>
+#include <aws/partnercentral-account/PartnerCentralAccountWaiter.h>
 #include <aws/partnercentral-account/PartnerCentralAccount_EXPORTS.h>
 
 namespace Aws {
@@ -23,7 +24,8 @@ namespace PartnerCentralAccount {
 class AWS_PARTNERCENTRALACCOUNT_API PartnerCentralAccountClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<PartnerCentralAccountClient>,
-      public PartnerCentralAccountPaginationBase<PartnerCentralAccountClient> {
+      public PartnerCentralAccountPaginationBase<PartnerCentralAccountClient>,
+      public PartnerCentralAccountWaiter<PartnerCentralAccountClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -903,6 +905,10 @@ class AWS_PARTNERCENTRALACCOUNT_API PartnerCentralAccountClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PartnerCentralAccountClient>;
   void init(const PartnerCentralAccountClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, PartnerCentralAccountError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   PartnerCentralAccountClientConfiguration m_clientConfiguration;
   std::shared_ptr<PartnerCentralAccountEndpointProviderBase> m_endpointProvider;

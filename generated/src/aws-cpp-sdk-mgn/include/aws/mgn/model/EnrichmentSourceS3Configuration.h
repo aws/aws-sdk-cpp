@@ -1,0 +1,101 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mgn/Mgn_EXPORTS.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace mgn {
+namespace Model {
+
+/**
+ * <p>S3 configuration for the source import file to be enriched.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/EnrichmentSourceS3Configuration">AWS
+ * API Reference</a></p>
+ */
+class EnrichmentSourceS3Configuration {
+ public:
+  AWS_MGN_API EnrichmentSourceS3Configuration() = default;
+  AWS_MGN_API EnrichmentSourceS3Configuration(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MGN_API EnrichmentSourceS3Configuration& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>The name of the S3 bucket containing the source import file.</p>
+   */
+  inline const Aws::String& GetS3Bucket() const { return m_s3Bucket; }
+  inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
+  template <typename S3BucketT = Aws::String>
+  void SetS3Bucket(S3BucketT&& value) {
+    m_s3BucketHasBeenSet = true;
+    m_s3Bucket = std::forward<S3BucketT>(value);
+  }
+  template <typename S3BucketT = Aws::String>
+  EnrichmentSourceS3Configuration& WithS3Bucket(S3BucketT&& value) {
+    SetS3Bucket(std::forward<S3BucketT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The AWS account ID of the S3 bucket owner.</p>
+   */
+  inline const Aws::String& GetS3BucketOwner() const { return m_s3BucketOwner; }
+  inline bool S3BucketOwnerHasBeenSet() const { return m_s3BucketOwnerHasBeenSet; }
+  template <typename S3BucketOwnerT = Aws::String>
+  void SetS3BucketOwner(S3BucketOwnerT&& value) {
+    m_s3BucketOwnerHasBeenSet = true;
+    m_s3BucketOwner = std::forward<S3BucketOwnerT>(value);
+  }
+  template <typename S3BucketOwnerT = Aws::String>
+  EnrichmentSourceS3Configuration& WithS3BucketOwner(S3BucketOwnerT&& value) {
+    SetS3BucketOwner(std::forward<S3BucketOwnerT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The S3 key (path) for the source import file.</p>
+   */
+  inline const Aws::String& GetS3Key() const { return m_s3Key; }
+  inline bool S3KeyHasBeenSet() const { return m_s3KeyHasBeenSet; }
+  template <typename S3KeyT = Aws::String>
+  void SetS3Key(S3KeyT&& value) {
+    m_s3KeyHasBeenSet = true;
+    m_s3Key = std::forward<S3KeyT>(value);
+  }
+  template <typename S3KeyT = Aws::String>
+  EnrichmentSourceS3Configuration& WithS3Key(S3KeyT&& value) {
+    SetS3Key(std::forward<S3KeyT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_s3Bucket;
+
+  Aws::String m_s3BucketOwner;
+
+  Aws::String m_s3Key;
+  bool m_s3BucketHasBeenSet = false;
+  bool m_s3BucketOwnerHasBeenSet = false;
+  bool m_s3KeyHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace mgn
+}  // namespace Aws

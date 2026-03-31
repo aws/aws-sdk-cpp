@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
 #include <aws/connectcases/model/BooleanOperands.h>
+#include <aws/core/utils/memory/stl/AWSAllocator.h>
 
 #include <utility>
 
@@ -18,6 +19,7 @@ class JsonView;
 }  // namespace Utils
 namespace ConnectCases {
 namespace Model {
+class CompoundCondition;
 
 /**
  * <p>Boolean condition for a rule. In the Amazon Connect admin website, case rules
@@ -70,12 +72,56 @@ class BooleanCondition {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Combines multiple conditions with AND operator. All conditions must be true
+   * for the compound condition to be true.</p>
+   */
+  inline const CompoundCondition& GetAndAll() const { return *m_andAll; }
+  inline bool AndAllHasBeenSet() const { return m_andAllHasBeenSet; }
+  template <typename AndAllT = CompoundCondition>
+  void SetAndAll(AndAllT&& value) {
+    m_andAllHasBeenSet = true;
+    m_andAll = Aws::MakeShared<CompoundCondition>("BooleanCondition", std::forward<AndAllT>(value));
+  }
+  template <typename AndAllT = CompoundCondition>
+  BooleanCondition& WithAndAll(AndAllT&& value) {
+    SetAndAll(std::forward<AndAllT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Combines multiple conditions with OR operator. At least one condition must be
+   * true for the compound condition to be true.</p>
+   */
+  inline const CompoundCondition& GetOrAll() const { return *m_orAll; }
+  inline bool OrAllHasBeenSet() const { return m_orAllHasBeenSet; }
+  template <typename OrAllT = CompoundCondition>
+  void SetOrAll(OrAllT&& value) {
+    m_orAllHasBeenSet = true;
+    m_orAll = Aws::MakeShared<CompoundCondition>("BooleanCondition", std::forward<OrAllT>(value));
+  }
+  template <typename OrAllT = CompoundCondition>
+  BooleanCondition& WithOrAll(OrAllT&& value) {
+    SetOrAll(std::forward<OrAllT>(value));
+    return *this;
+  }
+  ///@}
  private:
   BooleanOperands m_equalTo;
 
   BooleanOperands m_notEqualTo;
+
+  std::shared_ptr<CompoundCondition> m_andAll;
+
+  std::shared_ptr<CompoundCondition> m_orAll;
   bool m_equalToHasBeenSet = false;
   bool m_notEqualToHasBeenSet = false;
+  bool m_andAllHasBeenSet = false;
+  bool m_orAllHasBeenSet = false;
 };
 
 }  // namespace Model

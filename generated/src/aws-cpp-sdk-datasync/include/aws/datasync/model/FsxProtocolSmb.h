@@ -6,6 +6,9 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datasync/DataSync_EXPORTS.h>
+#include <aws/datasync/model/CmkSecretConfig.h>
+#include <aws/datasync/model/CustomSecretConfig.h>
+#include <aws/datasync/model/ManagedSecretConfig.h>
 #include <aws/datasync/model/SmbMountOptions.h>
 
 #include <utility>
@@ -114,6 +117,89 @@ class FsxProtocolSmb {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Describes configuration information for a DataSync-managed secret, such as a
+   * <code>Password</code> that DataSync uses to access a specific storage location.
+   * DataSync uses the default Amazon Web Services-managed KMS key to encrypt this
+   * secret in Secrets Manager.</p>  <p>Do not provide this for a
+   * <code>CreateLocation</code> request. <code>ManagedSecretConfig</code> is a
+   * ReadOnly property and is only be populated in the <code>DescribeLocation</code>
+   * response.</p>
+   */
+  inline const ManagedSecretConfig& GetManagedSecretConfig() const { return m_managedSecretConfig; }
+  inline bool ManagedSecretConfigHasBeenSet() const { return m_managedSecretConfigHasBeenSet; }
+  template <typename ManagedSecretConfigT = ManagedSecretConfig>
+  void SetManagedSecretConfig(ManagedSecretConfigT&& value) {
+    m_managedSecretConfigHasBeenSet = true;
+    m_managedSecretConfig = std::forward<ManagedSecretConfigT>(value);
+  }
+  template <typename ManagedSecretConfigT = ManagedSecretConfig>
+  FsxProtocolSmb& WithManagedSecretConfig(ManagedSecretConfigT&& value) {
+    SetManagedSecretConfig(std::forward<ManagedSecretConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies configuration information for a DataSync-managed secret, which
+   * includes the password that DataSync uses to access a specific FSx for ONTAP
+   * storage location (using SMB), with a customer-managed KMS key.</p> <p>When you
+   * include this parameter as part of a <code>CreateLocationFsxOntap</code> request,
+   * you provide only the KMS key ARN. DataSync uses this KMS key together with the
+   * <code>Password</code> you specify for to create a DataSync-managed secret to
+   * store the location access credentials.</p> <p>Make sure that DataSync has
+   * permission to access the KMS key that you specify. For more information, see <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/location-credentials.html#service-secret-custom-key">
+   * Using a service-managed secret encrypted with a custom KMS key</a>.</p>
+   * <p>You can use either <code>CmkSecretConfig</code> (with <code>Password</code>)
+   * or <code>CustomSecretConfig</code> (without <code>Password</code>) to provide
+   * credentials for a <code>CreateLocationFsxOntap</code> request. Do not provide
+   * both parameters for the same request.</p>
+   */
+  inline const CmkSecretConfig& GetCmkSecretConfig() const { return m_cmkSecretConfig; }
+  inline bool CmkSecretConfigHasBeenSet() const { return m_cmkSecretConfigHasBeenSet; }
+  template <typename CmkSecretConfigT = CmkSecretConfig>
+  void SetCmkSecretConfig(CmkSecretConfigT&& value) {
+    m_cmkSecretConfigHasBeenSet = true;
+    m_cmkSecretConfig = std::forward<CmkSecretConfigT>(value);
+  }
+  template <typename CmkSecretConfigT = CmkSecretConfig>
+  FsxProtocolSmb& WithCmkSecretConfig(CmkSecretConfigT&& value) {
+    SetCmkSecretConfig(std::forward<CmkSecretConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies configuration information for a customer-managed Secrets Manager
+   * secret where the password for an FSx for ONTAP storage location (using SMB) is
+   * stored in plain text, in Secrets Manager. This configuration includes the secret
+   * ARN, and the ARN for an IAM role that provides access to the secret. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/location-credentials.html#custom-secret-custom-key">
+   * Using a secret that you manage</a>.</p>  <p>You can use either
+   * <code>CmkSecretConfig</code> (with <code>Password</code>) or
+   * <code>CustomSecretConfig</code> (without <code>Password</code>) to provide
+   * credentials for a <code>CreateLocationFsxOntap</code> request. Do not provide
+   * both parameters for the same request.</p>
+   */
+  inline const CustomSecretConfig& GetCustomSecretConfig() const { return m_customSecretConfig; }
+  inline bool CustomSecretConfigHasBeenSet() const { return m_customSecretConfigHasBeenSet; }
+  template <typename CustomSecretConfigT = CustomSecretConfig>
+  void SetCustomSecretConfig(CustomSecretConfigT&& value) {
+    m_customSecretConfigHasBeenSet = true;
+    m_customSecretConfig = std::forward<CustomSecretConfigT>(value);
+  }
+  template <typename CustomSecretConfigT = CustomSecretConfig>
+  FsxProtocolSmb& WithCustomSecretConfig(CustomSecretConfigT&& value) {
+    SetCustomSecretConfig(std::forward<CustomSecretConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domain;
 
@@ -122,10 +208,19 @@ class FsxProtocolSmb {
   Aws::String m_password;
 
   Aws::String m_user;
+
+  ManagedSecretConfig m_managedSecretConfig;
+
+  CmkSecretConfig m_cmkSecretConfig;
+
+  CustomSecretConfig m_customSecretConfig;
   bool m_domainHasBeenSet = false;
   bool m_mountOptionsHasBeenSet = false;
   bool m_passwordHasBeenSet = false;
   bool m_userHasBeenSet = false;
+  bool m_managedSecretConfigHasBeenSet = false;
+  bool m_cmkSecretConfigHasBeenSet = false;
+  bool m_customSecretConfigHasBeenSet = false;
 };
 
 }  // namespace Model

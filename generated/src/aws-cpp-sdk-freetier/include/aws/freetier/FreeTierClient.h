@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/freetier/FreeTierPaginationBase.h>
 #include <aws/freetier/FreeTierServiceClientModel.h>
+#include <aws/freetier/FreeTierWaiter.h>
 #include <aws/freetier/FreeTier_EXPORTS.h>
 
 namespace Aws {
@@ -26,7 +27,8 @@ namespace FreeTier {
  */
 class AWS_FREETIER_API FreeTierClient : public Aws::Client::AWSJsonClient,
                                         public Aws::Client::ClientWithAsyncTemplateMethods<FreeTierClient>,
-                                        public FreeTierPaginationBase<FreeTierClient> {
+                                        public FreeTierPaginationBase<FreeTierClient>,
+                                        public FreeTierWaiter<FreeTierClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -224,6 +226,10 @@ class AWS_FREETIER_API FreeTierClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<FreeTierClient>;
   void init(const FreeTierClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, FreeTierError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   FreeTierClientConfiguration m_clientConfiguration;
   std::shared_ptr<FreeTierEndpointProviderBase> m_endpointProvider;

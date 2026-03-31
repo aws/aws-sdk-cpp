@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/identitystore/IdentityStorePaginationBase.h>
 #include <aws/identitystore/IdentityStoreServiceClientModel.h>
+#include <aws/identitystore/IdentityStoreWaiter.h>
 #include <aws/identitystore/IdentityStore_EXPORTS.h>
 
 namespace Aws {
@@ -30,7 +31,8 @@ namespace IdentityStore {
  */
 class AWS_IDENTITYSTORE_API IdentityStoreClient : public Aws::Client::AWSJsonClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<IdentityStoreClient>,
-                                                  public IdentityStorePaginationBase<IdentityStoreClient> {
+                                                  public IdentityStorePaginationBase<IdentityStoreClient>,
+                                                  public IdentityStoreWaiter<IdentityStoreClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -654,6 +656,10 @@ class AWS_IDENTITYSTORE_API IdentityStoreClient : public Aws::Client::AWSJsonCli
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IdentityStoreClient>;
   void init(const IdentityStoreClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, IdentityStoreError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   IdentityStoreClientConfiguration m_clientConfiguration;
   std::shared_ptr<IdentityStoreEndpointProviderBase> m_endpointProvider;

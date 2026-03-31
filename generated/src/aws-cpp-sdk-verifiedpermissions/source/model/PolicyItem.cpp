@@ -61,6 +61,10 @@ PolicyItem& PolicyItem::operator=(JsonView jsonValue) {
     m_effect = PolicyEffectMapper::GetPolicyEffectForName(jsonValue.GetString("effect"));
     m_effectHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("name")) {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -109,6 +113,10 @@ JsonValue PolicyItem::Jsonize() const {
 
   if (m_effectHasBeenSet) {
     payload.WithString("effect", PolicyEffectMapper::GetNameForPolicyEffect(m_effect));
+  }
+
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
   return payload;

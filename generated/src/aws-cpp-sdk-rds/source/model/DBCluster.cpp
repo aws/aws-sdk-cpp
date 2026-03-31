@@ -558,6 +558,18 @@ DBCluster& DBCluster::operator=(const XmlNode& xmlNode) {
       m_engineLifecycleSupport = Aws::Utils::Xml::DecodeEscapedXmlText(engineLifecycleSupportNode.GetText());
       m_engineLifecycleSupportHasBeenSet = true;
     }
+    XmlNode vPCNetworkingEnabledNode = resultNode.FirstChild("VPCNetworkingEnabled");
+    if (!vPCNetworkingEnabledNode.IsNull()) {
+      m_vPCNetworkingEnabled = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(vPCNetworkingEnabledNode.GetText()).c_str()).c_str());
+      m_vPCNetworkingEnabledHasBeenSet = true;
+    }
+    XmlNode internetAccessGatewayEnabledNode = resultNode.FirstChild("InternetAccessGatewayEnabled");
+    if (!internetAccessGatewayEnabledNode.IsNull()) {
+      m_internetAccessGatewayEnabled = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(internetAccessGatewayEnabledNode.GetText()).c_str()).c_str());
+      m_internetAccessGatewayEnabledHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -1008,6 +1020,15 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
     oStream << location << index << locationValue << ".EngineLifecycleSupport=" << StringUtils::URLEncode(m_engineLifecycleSupport.c_str())
             << "&";
   }
+
+  if (m_vPCNetworkingEnabledHasBeenSet) {
+    oStream << location << index << locationValue << ".VPCNetworkingEnabled=" << std::boolalpha << m_vPCNetworkingEnabled << "&";
+  }
+
+  if (m_internetAccessGatewayEnabledHasBeenSet) {
+    oStream << location << index << locationValue << ".InternetAccessGatewayEnabled=" << std::boolalpha << m_internetAccessGatewayEnabled
+            << "&";
+  }
 }
 
 void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -1350,6 +1371,12 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if (m_engineLifecycleSupportHasBeenSet) {
     oStream << location << ".EngineLifecycleSupport=" << StringUtils::URLEncode(m_engineLifecycleSupport.c_str()) << "&";
+  }
+  if (m_vPCNetworkingEnabledHasBeenSet) {
+    oStream << location << ".VPCNetworkingEnabled=" << std::boolalpha << m_vPCNetworkingEnabled << "&";
+  }
+  if (m_internetAccessGatewayEnabledHasBeenSet) {
+    oStream << location << ".InternetAccessGatewayEnabled=" << std::boolalpha << m_internetAccessGatewayEnabled << "&";
   }
 }
 

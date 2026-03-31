@@ -23,6 +23,7 @@ static const int docker_hub_HASH = HashingUtils::HashString("docker-hub");
 static const int github_container_registry_HASH = HashingUtils::HashString("github-container-registry");
 static const int azure_container_registry_HASH = HashingUtils::HashString("azure-container-registry");
 static const int gitlab_container_registry_HASH = HashingUtils::HashString("gitlab-container-registry");
+static const int chainguard_HASH = HashingUtils::HashString("chainguard");
 
 UpstreamRegistry GetUpstreamRegistryForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -42,6 +43,8 @@ UpstreamRegistry GetUpstreamRegistryForName(const Aws::String& name) {
     return UpstreamRegistry::azure_container_registry;
   } else if (hashCode == gitlab_container_registry_HASH) {
     return UpstreamRegistry::gitlab_container_registry;
+  } else if (hashCode == chainguard_HASH) {
+    return UpstreamRegistry::chainguard;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -72,6 +75,8 @@ Aws::String GetNameForUpstreamRegistry(UpstreamRegistry enumValue) {
       return "azure-container-registry";
     case UpstreamRegistry::gitlab_container_registry:
       return "gitlab-container-registry";
+    case UpstreamRegistry::chainguard:
+      return "chainguard";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

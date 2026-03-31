@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codestar-connections/CodeStarconnectionsPaginationBase.h>
 #include <aws/codestar-connections/CodeStarconnectionsServiceClientModel.h>
+#include <aws/codestar-connections/CodeStarconnectionsWaiter.h>
 #include <aws/codestar-connections/CodeStarconnections_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -59,7 +60,8 @@ namespace CodeStarconnections {
  */
 class AWS_CODESTARCONNECTIONS_API CodeStarconnectionsClient : public Aws::Client::AWSJsonClient,
                                                               public Aws::Client::ClientWithAsyncTemplateMethods<CodeStarconnectionsClient>,
-                                                              public CodeStarconnectionsPaginationBase<CodeStarconnectionsClient> {
+                                                              public CodeStarconnectionsPaginationBase<CodeStarconnectionsClient>,
+                                                              public CodeStarconnectionsWaiter<CodeStarconnectionsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -869,6 +871,10 @@ class AWS_CODESTARCONNECTIONS_API CodeStarconnectionsClient : public Aws::Client
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeStarconnectionsClient>;
   void init(const CodeStarconnectionsClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CodeStarconnectionsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   CodeStarconnectionsClientConfiguration m_clientConfiguration;
   std::shared_ptr<CodeStarconnectionsEndpointProviderBase> m_endpointProvider;

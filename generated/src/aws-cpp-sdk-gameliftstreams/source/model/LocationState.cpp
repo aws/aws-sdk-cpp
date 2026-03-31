@@ -54,6 +54,14 @@ LocationState& LocationState::operator=(JsonView jsonValue) {
     m_idleCapacity = jsonValue.GetInteger("IdleCapacity");
     m_idleCapacityHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("InternalVpcIpv4CidrBlock")) {
+    m_internalVpcIpv4CidrBlock = jsonValue.GetString("InternalVpcIpv4CidrBlock");
+    m_internalVpcIpv4CidrBlockHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("VpcTransitConfiguration")) {
+    m_vpcTransitConfiguration = jsonValue.GetObject("VpcTransitConfiguration");
+    m_vpcTransitConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -94,6 +102,14 @@ JsonValue LocationState::Jsonize() const {
 
   if (m_idleCapacityHasBeenSet) {
     payload.WithInteger("IdleCapacity", m_idleCapacity);
+  }
+
+  if (m_internalVpcIpv4CidrBlockHasBeenSet) {
+    payload.WithString("InternalVpcIpv4CidrBlock", m_internalVpcIpv4CidrBlock);
+  }
+
+  if (m_vpcTransitConfigurationHasBeenSet) {
+    payload.WithObject("VpcTransitConfiguration", m_vpcTransitConfiguration.Jsonize());
   }
 
   return payload;

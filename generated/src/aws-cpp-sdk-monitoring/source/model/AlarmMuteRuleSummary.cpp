@@ -143,9 +143,7 @@ AlarmMuteRuleSummary& AlarmMuteRuleSummary::operator=(const std::shared_ptr<Aws:
                   }
                 }
                 m_lastUpdatedTimestampHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -285,9 +283,7 @@ AlarmMuteRuleSummary& AlarmMuteRuleSummary::operator=(const std::shared_ptr<Aws:
                 }
               }
               m_lastUpdatedTimestampHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

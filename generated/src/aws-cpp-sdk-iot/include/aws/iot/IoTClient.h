@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iot/IoTPaginationBase.h>
 #include <aws/iot/IoTServiceClientModel.h>
+#include <aws/iot/IoTWaiter.h>
 #include <aws/iot/IoT_EXPORTS.h>
 
 namespace Aws {
@@ -38,7 +39,8 @@ namespace IoT {
  */
 class AWS_IOT_API IoTClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<IoTClient>,
-                              public IoTPaginationBase<IoTClient> {
+                              public IoTPaginationBase<IoTClient>,
+                              public IoTWaiter<IoTClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -8249,6 +8251,12 @@ class AWS_IOT_API IoTClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTClient>;
   void init(const IoTClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, IoTError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   IoTClientConfiguration m_clientConfiguration;
   std::shared_ptr<IoTEndpointProviderBase> m_endpointProvider;

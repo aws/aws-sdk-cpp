@@ -22,6 +22,10 @@ MonitoringConfiguration& MonitoringConfiguration::operator=(JsonView jsonValue) 
     m_cloudWatchLogConfiguration = jsonValue.GetObject("CloudWatchLogConfiguration");
     m_cloudWatchLogConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("S3LoggingConfiguration")) {
+    m_s3LoggingConfiguration = jsonValue.GetObject("S3LoggingConfiguration");
+    m_s3LoggingConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue MonitoringConfiguration::Jsonize() const {
 
   if (m_cloudWatchLogConfigurationHasBeenSet) {
     payload.WithObject("CloudWatchLogConfiguration", m_cloudWatchLogConfiguration.Jsonize());
+  }
+
+  if (m_s3LoggingConfigurationHasBeenSet) {
+    payload.WithObject("S3LoggingConfiguration", m_s3LoggingConfiguration.Jsonize());
   }
 
   return payload;

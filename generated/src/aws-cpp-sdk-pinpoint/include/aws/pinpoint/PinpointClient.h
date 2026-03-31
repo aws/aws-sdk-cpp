@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/pinpoint/PinpointPaginationBase.h>
 #include <aws/pinpoint/PinpointServiceClientModel.h>
+#include <aws/pinpoint/PinpointWaiter.h>
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
 
 namespace Aws {
@@ -19,7 +20,8 @@ namespace Pinpoint {
  */
 class AWS_PINPOINT_API PinpointClient : public Aws::Client::AWSJsonClient,
                                         public Aws::Client::ClientWithAsyncTemplateMethods<PinpointClient>,
-                                        public PinpointPaginationBase<PinpointClient> {
+                                        public PinpointPaginationBase<PinpointClient>,
+                                        public PinpointWaiter<PinpointClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -3379,6 +3381,12 @@ class AWS_PINPOINT_API PinpointClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PinpointClient>;
   void init(const PinpointClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, PinpointError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   PinpointClientConfiguration m_clientConfiguration;
   std::shared_ptr<PinpointEndpointProviderBase> m_endpointProvider;

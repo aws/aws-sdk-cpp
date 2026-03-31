@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/machinelearning/MachineLearningPaginationBase.h>
 #include <aws/machinelearning/MachineLearningServiceClientModel.h>
+#include <aws/machinelearning/MachineLearningWaiter.h>
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
 
 namespace Aws {
@@ -19,7 +20,8 @@ namespace MachineLearning {
  */
 class AWS_MACHINELEARNING_API MachineLearningClient : public Aws::Client::AWSJsonClient,
                                                       public Aws::Client::ClientWithAsyncTemplateMethods<MachineLearningClient>,
-                                                      public MachineLearningPaginationBase<MachineLearningClient> {
+                                                      public MachineLearningPaginationBase<MachineLearningClient>,
+                                                      public MachineLearningWaiter<MachineLearningClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -993,6 +995,10 @@ class AWS_MACHINELEARNING_API MachineLearningClient : public Aws::Client::AWSJso
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MachineLearningClient>;
   void init(const MachineLearningClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MachineLearningError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   MachineLearningClientConfiguration m_clientConfiguration;
   std::shared_ptr<MachineLearningEndpointProviderBase> m_endpointProvider;

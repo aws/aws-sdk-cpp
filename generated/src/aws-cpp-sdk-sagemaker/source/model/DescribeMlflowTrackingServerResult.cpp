@@ -89,6 +89,14 @@ DescribeMlflowTrackingServerResult& DescribeMlflowTrackingServerResult::operator
     m_lastModifiedBy = jsonValue.GetObject("LastModifiedBy");
     m_lastModifiedByHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("S3BucketOwnerAccountId")) {
+    m_s3BucketOwnerAccountId = jsonValue.GetString("S3BucketOwnerAccountId");
+    m_s3BucketOwnerAccountIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("S3BucketOwnerVerification")) {
+    m_s3BucketOwnerVerification = jsonValue.GetBool("S3BucketOwnerVerification");
+    m_s3BucketOwnerVerificationHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

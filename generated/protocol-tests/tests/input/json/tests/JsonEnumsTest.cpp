@@ -32,7 +32,7 @@ AWS_PROTOCOL_TEST(JsonEnums, AwsJson11Enums) {
       "byIsCiAgICAgICAgIjAiCiAgICBdLAogICAgImZvb0VudW1TZXQiOiBbCiAgICAgICAgIkZvbyIsCiAgICAgICAgIjAiCiAgICBdLAogICAgImZvb0VudW1NYXAiOiB7CiAg"
       "ICAgICAgImhpIjogIkZvbyIsCiAgICAgICAgInplcm8iOiAiMCIKICAgIH0KfQ==";
   expectedRq.uri = "/";
-  expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.JsonEnums)"}};
+  expectedRq.headers = {{"X-Amz-Target", R"(JsonProtocol.JsonEnums)"}, {"Content-Type", R"(application/x-amz-json-1.1)"}};
   ValidateRequestSent(expectedRq);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

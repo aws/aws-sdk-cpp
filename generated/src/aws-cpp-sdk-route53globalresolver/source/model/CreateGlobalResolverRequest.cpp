@@ -23,6 +23,10 @@ Aws::String CreateGlobalResolverRequest::SerializePayload() const {
     payload.WithString("description", m_description);
   }
 
+  if (m_ipAddressTypeHasBeenSet) {
+    payload.WithString("ipAddressType", GlobalResolverIpAddressTypeMapper::GetNameForGlobalResolverIpAddressType(m_ipAddressType));
+  }
+
   if (m_nameHasBeenSet) {
     payload.WithString("name", m_name);
   }

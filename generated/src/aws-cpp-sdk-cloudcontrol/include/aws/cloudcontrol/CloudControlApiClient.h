@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cloudcontrol/CloudControlApiPaginationBase.h>
 #include <aws/cloudcontrol/CloudControlApiServiceClientModel.h>
+#include <aws/cloudcontrol/CloudControlApiWaiter.h>
 #include <aws/cloudcontrol/CloudControlApi_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -21,7 +22,8 @@ namespace CloudControlApi {
  */
 class AWS_CLOUDCONTROLAPI_API CloudControlApiClient : public Aws::Client::AWSJsonClient,
                                                       public Aws::Client::ClientWithAsyncTemplateMethods<CloudControlApiClient>,
-                                                      public CloudControlApiPaginationBase<CloudControlApiClient> {
+                                                      public CloudControlApiPaginationBase<CloudControlApiClient>,
+                                                      public CloudControlApiWaiter<CloudControlApiClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -348,6 +350,10 @@ class AWS_CLOUDCONTROLAPI_API CloudControlApiClient : public Aws::Client::AWSJso
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudControlApiClient>;
   void init(const CloudControlApiClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CloudControlApiError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   CloudControlApiClientConfiguration m_clientConfiguration;
   std::shared_ptr<CloudControlApiEndpointProviderBase> m_endpointProvider;

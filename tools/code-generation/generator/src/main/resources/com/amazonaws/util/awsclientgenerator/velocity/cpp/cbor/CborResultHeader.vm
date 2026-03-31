@@ -46,6 +46,7 @@ template<typename RESULT_TYPE>
     ${exportMacro} ${classNameRef} operator=(const Aws::AmazonWebServiceResult<${CborRef}>& result);
 
     #set($useRequiredField = false)
+    #set($protocol = "smithy-rpc-v2-cbor")
     #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersAndInlines.vm")
     };
 

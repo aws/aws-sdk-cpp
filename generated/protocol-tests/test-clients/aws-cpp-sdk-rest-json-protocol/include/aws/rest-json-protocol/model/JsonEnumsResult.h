@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -142,26 +143,29 @@ class JsonEnumsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   FooEnum m_fooEnum1{FooEnum::NOT_SET};
-  bool m_fooEnum1HasBeenSet = false;
 
   FooEnum m_fooEnum2{FooEnum::NOT_SET};
-  bool m_fooEnum2HasBeenSet = false;
 
   FooEnum m_fooEnum3{FooEnum::NOT_SET};
-  bool m_fooEnum3HasBeenSet = false;
 
   Aws::Vector<FooEnum> m_fooEnumList;
-  bool m_fooEnumListHasBeenSet = false;
 
   Aws::Vector<FooEnum> m_fooEnumSet;
-  bool m_fooEnumSetHasBeenSet = false;
 
   Aws::Map<Aws::String, FooEnum> m_fooEnumMap;
-  bool m_fooEnumMapHasBeenSet = false;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_fooEnum1HasBeenSet = false;
+  bool m_fooEnum2HasBeenSet = false;
+  bool m_fooEnum3HasBeenSet = false;
+  bool m_fooEnumListHasBeenSet = false;
+  bool m_fooEnumSetHasBeenSet = false;
+  bool m_fooEnumMapHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

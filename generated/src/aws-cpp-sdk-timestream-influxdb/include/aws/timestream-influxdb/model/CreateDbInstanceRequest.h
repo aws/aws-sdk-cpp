@@ -13,6 +13,7 @@
 #include <aws/timestream-influxdb/model/DbStorageType.h>
 #include <aws/timestream-influxdb/model/DeploymentType.h>
 #include <aws/timestream-influxdb/model/LogDeliveryConfiguration.h>
+#include <aws/timestream-influxdb/model/MaintenanceSchedule.h>
 #include <aws/timestream-influxdb/model/NetworkType.h>
 
 #include <utility>
@@ -318,6 +319,25 @@ class CreateDbInstanceRequest : public TimestreamInfluxDBRequest {
 
   ///@{
   /**
+   * <p>Specifies the maintenance schedule for the DB instance, including the
+   * preferred maintenance window and timezone.</p>
+   */
+  inline const MaintenanceSchedule& GetMaintenanceSchedule() const { return m_maintenanceSchedule; }
+  inline bool MaintenanceScheduleHasBeenSet() const { return m_maintenanceScheduleHasBeenSet; }
+  template <typename MaintenanceScheduleT = MaintenanceSchedule>
+  void SetMaintenanceSchedule(MaintenanceScheduleT&& value) {
+    m_maintenanceScheduleHasBeenSet = true;
+    m_maintenanceSchedule = std::forward<MaintenanceScheduleT>(value);
+  }
+  template <typename MaintenanceScheduleT = MaintenanceSchedule>
+  CreateDbInstanceRequest& WithMaintenanceSchedule(MaintenanceScheduleT&& value) {
+    SetMaintenanceSchedule(std::forward<MaintenanceScheduleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A list of key-value pairs to associate with the DB instance.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
@@ -404,6 +424,8 @@ class CreateDbInstanceRequest : public TimestreamInfluxDBRequest {
 
   LogDeliveryConfiguration m_logDeliveryConfiguration;
 
+  MaintenanceSchedule m_maintenanceSchedule;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   int m_port{0};
@@ -423,6 +445,7 @@ class CreateDbInstanceRequest : public TimestreamInfluxDBRequest {
   bool m_dbParameterGroupIdentifierHasBeenSet = false;
   bool m_deploymentTypeHasBeenSet = false;
   bool m_logDeliveryConfigurationHasBeenSet = false;
+  bool m_maintenanceScheduleHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_portHasBeenSet = false;
   bool m_networkTypeHasBeenSet = false;

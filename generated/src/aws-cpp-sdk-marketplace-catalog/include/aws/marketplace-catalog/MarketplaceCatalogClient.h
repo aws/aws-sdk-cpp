@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/marketplace-catalog/MarketplaceCatalogPaginationBase.h>
 #include <aws/marketplace-catalog/MarketplaceCatalogServiceClientModel.h>
+#include <aws/marketplace-catalog/MarketplaceCatalogWaiter.h>
 #include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
 
 namespace Aws {
@@ -24,7 +25,8 @@ namespace MarketplaceCatalog {
  */
 class AWS_MARKETPLACECATALOG_API MarketplaceCatalogClient : public Aws::Client::AWSJsonClient,
                                                             public Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceCatalogClient>,
-                                                            public MarketplaceCatalogPaginationBase<MarketplaceCatalogClient> {
+                                                            public MarketplaceCatalogPaginationBase<MarketplaceCatalogClient>,
+                                                            public MarketplaceCatalogWaiter<MarketplaceCatalogClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -469,6 +471,12 @@ class AWS_MARKETPLACECATALOG_API MarketplaceCatalogClient : public Aws::Client::
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceCatalogClient>;
   void init(const MarketplaceCatalogClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MarketplaceCatalogError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   MarketplaceCatalogClientConfiguration m_clientConfiguration;
   std::shared_ptr<MarketplaceCatalogEndpointProviderBase> m_endpointProvider;

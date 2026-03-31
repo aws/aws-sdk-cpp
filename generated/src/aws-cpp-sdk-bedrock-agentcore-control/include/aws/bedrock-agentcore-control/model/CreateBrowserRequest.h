@@ -6,12 +6,15 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlRequest.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/BrowserEnterprisePolicy.h>
 #include <aws/bedrock-agentcore-control/model/BrowserNetworkConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/BrowserSigningConfigInput.h>
+#include <aws/bedrock-agentcore-control/model/Certificate.h>
 #include <aws/bedrock-agentcore-control/model/RecordingConfig.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -147,6 +150,54 @@ class CreateBrowserRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
+   * <p>A list of enterprise policy files for the browser.</p>
+   */
+  inline const Aws::Vector<BrowserEnterprisePolicy>& GetEnterprisePolicies() const { return m_enterprisePolicies; }
+  inline bool EnterprisePoliciesHasBeenSet() const { return m_enterprisePoliciesHasBeenSet; }
+  template <typename EnterprisePoliciesT = Aws::Vector<BrowserEnterprisePolicy>>
+  void SetEnterprisePolicies(EnterprisePoliciesT&& value) {
+    m_enterprisePoliciesHasBeenSet = true;
+    m_enterprisePolicies = std::forward<EnterprisePoliciesT>(value);
+  }
+  template <typename EnterprisePoliciesT = Aws::Vector<BrowserEnterprisePolicy>>
+  CreateBrowserRequest& WithEnterprisePolicies(EnterprisePoliciesT&& value) {
+    SetEnterprisePolicies(std::forward<EnterprisePoliciesT>(value));
+    return *this;
+  }
+  template <typename EnterprisePoliciesT = BrowserEnterprisePolicy>
+  CreateBrowserRequest& AddEnterprisePolicies(EnterprisePoliciesT&& value) {
+    m_enterprisePoliciesHasBeenSet = true;
+    m_enterprisePolicies.emplace_back(std::forward<EnterprisePoliciesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A list of certificates to install in the browser.</p>
+   */
+  inline const Aws::Vector<Certificate>& GetCertificates() const { return m_certificates; }
+  inline bool CertificatesHasBeenSet() const { return m_certificatesHasBeenSet; }
+  template <typename CertificatesT = Aws::Vector<Certificate>>
+  void SetCertificates(CertificatesT&& value) {
+    m_certificatesHasBeenSet = true;
+    m_certificates = std::forward<CertificatesT>(value);
+  }
+  template <typename CertificatesT = Aws::Vector<Certificate>>
+  CreateBrowserRequest& WithCertificates(CertificatesT&& value) {
+    SetCertificates(std::forward<CertificatesT>(value));
+    return *this;
+  }
+  template <typename CertificatesT = Certificate>
+  CreateBrowserRequest& AddCertificates(CertificatesT&& value) {
+    m_certificatesHasBeenSet = true;
+    m_certificates.emplace_back(std::forward<CertificatesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A unique, case-sensitive identifier to ensure that the operation completes no
    * more than one time. If this token matches a previous request, Amazon Bedrock
    * AgentCore ignores the request but does not return an error.</p>
@@ -203,6 +254,10 @@ class CreateBrowserRequest : public BedrockAgentCoreControlRequest {
 
   BrowserSigningConfigInput m_browserSigning;
 
+  Aws::Vector<BrowserEnterprisePolicy> m_enterprisePolicies;
+
+  Aws::Vector<Certificate> m_certificates;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
   Aws::Map<Aws::String, Aws::String> m_tags;
@@ -212,6 +267,8 @@ class CreateBrowserRequest : public BedrockAgentCoreControlRequest {
   bool m_networkConfigurationHasBeenSet = false;
   bool m_recordingHasBeenSet = false;
   bool m_browserSigningHasBeenSet = false;
+  bool m_enterprisePoliciesHasBeenSet = false;
+  bool m_certificatesHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };

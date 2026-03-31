@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sesv2/SESV2PaginationBase.h>
 #include <aws/sesv2/SESV2ServiceClientModel.h>
+#include <aws/sesv2/SESV2Waiter.h>
 #include <aws/sesv2/SESV2_EXPORTS.h>
 
 namespace Aws {
@@ -26,7 +27,8 @@ namespace SESV2 {
  */
 class AWS_SESV2_API SESV2Client : public Aws::Client::AWSJsonClient,
                                   public Aws::Client::ClientWithAsyncTemplateMethods<SESV2Client>,
-                                  public SESV2PaginationBase<SESV2Client> {
+                                  public SESV2PaginationBase<SESV2Client>,
+                                  public SESV2Waiter<SESV2Client> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -3450,6 +3452,12 @@ class AWS_SESV2_API SESV2Client : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SESV2Client>;
   void init(const SESV2ClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SESV2Error> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   SESV2ClientConfiguration m_clientConfiguration;
   std::shared_ptr<SESV2EndpointProviderBase> m_endpointProvider;

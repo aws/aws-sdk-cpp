@@ -142,9 +142,7 @@ Datapoint& Datapoint::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecode
                   }
                 }
                 m_extendedStatisticsHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -283,9 +281,7 @@ Datapoint& Datapoint::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecode
                 }
               }
               m_extendedStatisticsHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

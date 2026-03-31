@@ -6,8 +6,10 @@
 #pragma once
 #include <aws/bedrock-agentcore/BedrockAgentCoreRequest.h>
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
+#include <aws/bedrock-agentcore/model/Certificate.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -108,9 +110,9 @@ class StartCodeInterpreterSessionRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
-   * <p>The time in seconds after which the session automatically terminates if there
-   * is no activity. The default value is 900 seconds (15 minutes). The minimum
-   * allowed value is 60 seconds, and the maximum allowed value is 28800 seconds (8
+   * <p>The duration in seconds (time-to-live) after which the session automatically
+   * terminates, regardless of ongoing activity. Defaults to 900 seconds (15
+   * minutes). Recommended minimum: 60 seconds. Maximum allowed: 28,800 seconds (8
    * hours).</p>
    */
   inline int GetSessionTimeoutSeconds() const { return m_sessionTimeoutSeconds; }
@@ -121,6 +123,30 @@ class StartCodeInterpreterSessionRequest : public BedrockAgentCoreRequest {
   }
   inline StartCodeInterpreterSessionRequest& WithSessionTimeoutSeconds(int value) {
     SetSessionTimeoutSeconds(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A list of certificates to install in the code interpreter session.</p>
+   */
+  inline const Aws::Vector<Certificate>& GetCertificates() const { return m_certificates; }
+  inline bool CertificatesHasBeenSet() const { return m_certificatesHasBeenSet; }
+  template <typename CertificatesT = Aws::Vector<Certificate>>
+  void SetCertificates(CertificatesT&& value) {
+    m_certificatesHasBeenSet = true;
+    m_certificates = std::forward<CertificatesT>(value);
+  }
+  template <typename CertificatesT = Aws::Vector<Certificate>>
+  StartCodeInterpreterSessionRequest& WithCertificates(CertificatesT&& value) {
+    SetCertificates(std::forward<CertificatesT>(value));
+    return *this;
+  }
+  template <typename CertificatesT = Certificate>
+  StartCodeInterpreterSessionRequest& AddCertificates(CertificatesT&& value) {
+    m_certificatesHasBeenSet = true;
+    m_certificates.emplace_back(std::forward<CertificatesT>(value));
     return *this;
   }
   ///@}
@@ -157,12 +183,15 @@ class StartCodeInterpreterSessionRequest : public BedrockAgentCoreRequest {
 
   int m_sessionTimeoutSeconds{0};
 
+  Aws::Vector<Certificate> m_certificates;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_traceIdHasBeenSet = false;
   bool m_traceParentHasBeenSet = false;
   bool m_codeInterpreterIdentifierHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_sessionTimeoutSecondsHasBeenSet = false;
+  bool m_certificatesHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

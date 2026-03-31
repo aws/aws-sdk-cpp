@@ -16,11 +16,14 @@ namespace Model {
 namespace TestCaseEntryPointTypeMapper {
 
 static const int VOICE_CALL_HASH = HashingUtils::HashString("VOICE_CALL");
+static const int CHAT_HASH = HashingUtils::HashString("CHAT");
 
 TestCaseEntryPointType GetTestCaseEntryPointTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == VOICE_CALL_HASH) {
     return TestCaseEntryPointType::VOICE_CALL;
+  } else if (hashCode == CHAT_HASH) {
+    return TestCaseEntryPointType::CHAT;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForTestCaseEntryPointType(TestCaseEntryPointType enumValue) {
       return {};
     case TestCaseEntryPointType::VOICE_CALL:
       return "VOICE_CALL";
+    case TestCaseEntryPointType::CHAT:
+      return "CHAT";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

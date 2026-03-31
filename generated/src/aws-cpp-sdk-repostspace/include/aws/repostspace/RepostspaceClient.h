@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/repostspace/RepostspacePaginationBase.h>
 #include <aws/repostspace/RepostspaceServiceClientModel.h>
+#include <aws/repostspace/RepostspaceWaiter.h>
 #include <aws/repostspace/Repostspace_EXPORTS.h>
 
 namespace Aws {
@@ -28,7 +29,8 @@ namespace repostspace {
  */
 class AWS_REPOSTSPACE_API RepostspaceClient : public Aws::Client::AWSJsonClient,
                                               public Aws::Client::ClientWithAsyncTemplateMethods<RepostspaceClient>,
-                                              public RepostspacePaginationBase<RepostspaceClient> {
+                                              public RepostspacePaginationBase<RepostspaceClient>,
+                                              public RepostspaceWaiter<RepostspaceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -597,6 +599,12 @@ class AWS_REPOSTSPACE_API RepostspaceClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<RepostspaceClient>;
   void init(const RepostspaceClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, RepostspaceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   RepostspaceClientConfiguration m_clientConfiguration;
   std::shared_ptr<RepostspaceEndpointProviderBase> m_endpointProvider;

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/amp/PrometheusServicePaginationBase.h>
 #include <aws/amp/PrometheusServiceServiceClientModel.h>
+#include <aws/amp/PrometheusServiceWaiter.h>
 #include <aws/amp/PrometheusService_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -34,7 +35,8 @@ namespace PrometheusService {
  */
 class AWS_PROMETHEUSSERVICE_API PrometheusServiceClient : public Aws::Client::AWSJsonClient,
                                                           public Aws::Client::ClientWithAsyncTemplateMethods<PrometheusServiceClient>,
-                                                          public PrometheusServicePaginationBase<PrometheusServiceClient> {
+                                                          public PrometheusServicePaginationBase<PrometheusServiceClient>,
+                                                          public PrometheusServiceWaiter<PrometheusServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1430,6 +1432,12 @@ class AWS_PROMETHEUSSERVICE_API PrometheusServiceClient : public Aws::Client::AW
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PrometheusServiceClient>;
   void init(const PrometheusServiceClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, PrometheusServiceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   PrometheusServiceClientConfiguration m_clientConfiguration;
   std::shared_ptr<PrometheusServiceEndpointProviderBase> m_endpointProvider;

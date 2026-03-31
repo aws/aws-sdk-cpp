@@ -161,9 +161,11 @@ GetDataAutomationStatusOutcome BedrockDataAutomationRuntimeClient::GetDataAutoma
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetDataAutomationStatusOutcome>(
       [&]() -> GetDataAutomationStatusOutcome {
-        return GetDataAutomationStatusOutcome(MakeRequestDeserialize(
-            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); }));
+        auto result =
+            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
+        return result.IsSuccess() ? GetDataAutomationStatusOutcome(result.GetResultWithOwnership())
+                                  : GetDataAutomationStatusOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -184,9 +186,11 @@ InvokeDataAutomationOutcome BedrockDataAutomationRuntimeClient::InvokeDataAutoma
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<InvokeDataAutomationOutcome>(
       [&]() -> InvokeDataAutomationOutcome {
-        return InvokeDataAutomationOutcome(MakeRequestDeserialize(
-            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); }));
+        auto result =
+            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
+        return result.IsSuccess() ? InvokeDataAutomationOutcome(result.GetResultWithOwnership())
+                                  : InvokeDataAutomationOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -208,9 +212,11 @@ InvokeDataAutomationAsyncOutcome BedrockDataAutomationRuntimeClient::InvokeDataA
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<InvokeDataAutomationAsyncOutcome>(
       [&]() -> InvokeDataAutomationAsyncOutcome {
-        return InvokeDataAutomationAsyncOutcome(MakeRequestDeserialize(
-            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); }));
+        auto result =
+            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
+        return result.IsSuccess() ? InvokeDataAutomationAsyncOutcome(result.GetResultWithOwnership())
+                                  : InvokeDataAutomationAsyncOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -231,9 +237,11 @@ ListTagsForResourceOutcome BedrockDataAutomationRuntimeClient::ListTagsForResour
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListTagsForResourceOutcome>(
       [&]() -> ListTagsForResourceOutcome {
-        return ListTagsForResourceOutcome(MakeRequestDeserialize(
-            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); }));
+        auto result =
+            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
+        return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                                  : ListTagsForResourceOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -254,9 +262,10 @@ TagResourceOutcome BedrockDataAutomationRuntimeClient::TagResource(const TagReso
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<TagResourceOutcome>(
       [&]() -> TagResourceOutcome {
-        return TagResourceOutcome(MakeRequestDeserialize(
-            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); }));
+        auto result =
+            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
+        return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -277,9 +286,11 @@ UntagResourceOutcome BedrockDataAutomationRuntimeClient::UntagResource(const Unt
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UntagResourceOutcome>(
       [&]() -> UntagResourceOutcome {
-        return UntagResourceOutcome(MakeRequestDeserialize(
-            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); }));
+        auto result =
+            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
+        return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership())
+                                  : UntagResourceOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

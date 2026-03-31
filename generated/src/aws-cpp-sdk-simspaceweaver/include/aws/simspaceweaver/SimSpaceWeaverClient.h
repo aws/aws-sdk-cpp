@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/simspaceweaver/SimSpaceWeaverPaginationBase.h>
 #include <aws/simspaceweaver/SimSpaceWeaverServiceClientModel.h>
+#include <aws/simspaceweaver/SimSpaceWeaverWaiter.h>
 #include <aws/simspaceweaver/SimSpaceWeaver_EXPORTS.h>
 
 namespace Aws {
@@ -30,7 +31,8 @@ namespace SimSpaceWeaver {
  */
 class AWS_SIMSPACEWEAVER_API SimSpaceWeaverClient : public Aws::Client::AWSJsonClient,
                                                     public Aws::Client::ClientWithAsyncTemplateMethods<SimSpaceWeaverClient>,
-                                                    public SimSpaceWeaverPaginationBase<SimSpaceWeaverClient> {
+                                                    public SimSpaceWeaverPaginationBase<SimSpaceWeaverClient>,
+                                                    public SimSpaceWeaverWaiter<SimSpaceWeaverClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -544,6 +546,12 @@ class AWS_SIMSPACEWEAVER_API SimSpaceWeaverClient : public Aws::Client::AWSJsonC
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SimSpaceWeaverClient>;
   void init(const SimSpaceWeaverClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SimSpaceWeaverError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   SimSpaceWeaverClientConfiguration m_clientConfiguration;
   std::shared_ptr<SimSpaceWeaverEndpointProviderBase> m_endpointProvider;

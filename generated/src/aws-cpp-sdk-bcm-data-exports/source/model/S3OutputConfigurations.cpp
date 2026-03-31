@@ -18,17 +18,17 @@ namespace Model {
 S3OutputConfigurations::S3OutputConfigurations(JsonView jsonValue) { *this = jsonValue; }
 
 S3OutputConfigurations& S3OutputConfigurations::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("Compression")) {
-    m_compression = CompressionOptionMapper::GetCompressionOptionForName(jsonValue.GetString("Compression"));
-    m_compressionHasBeenSet = true;
+  if (jsonValue.ValueExists("OutputType")) {
+    m_outputType = S3OutputTypeMapper::GetS3OutputTypeForName(jsonValue.GetString("OutputType"));
+    m_outputTypeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("Format")) {
     m_format = FormatOptionMapper::GetFormatOptionForName(jsonValue.GetString("Format"));
     m_formatHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("OutputType")) {
-    m_outputType = S3OutputTypeMapper::GetS3OutputTypeForName(jsonValue.GetString("OutputType"));
-    m_outputTypeHasBeenSet = true;
+  if (jsonValue.ValueExists("Compression")) {
+    m_compression = CompressionOptionMapper::GetCompressionOptionForName(jsonValue.GetString("Compression"));
+    m_compressionHasBeenSet = true;
   }
   if (jsonValue.ValueExists("Overwrite")) {
     m_overwrite = OverwriteOptionMapper::GetOverwriteOptionForName(jsonValue.GetString("Overwrite"));
@@ -40,16 +40,16 @@ S3OutputConfigurations& S3OutputConfigurations::operator=(JsonView jsonValue) {
 JsonValue S3OutputConfigurations::Jsonize() const {
   JsonValue payload;
 
-  if (m_compressionHasBeenSet) {
-    payload.WithString("Compression", CompressionOptionMapper::GetNameForCompressionOption(m_compression));
+  if (m_outputTypeHasBeenSet) {
+    payload.WithString("OutputType", S3OutputTypeMapper::GetNameForS3OutputType(m_outputType));
   }
 
   if (m_formatHasBeenSet) {
     payload.WithString("Format", FormatOptionMapper::GetNameForFormatOption(m_format));
   }
 
-  if (m_outputTypeHasBeenSet) {
-    payload.WithString("OutputType", S3OutputTypeMapper::GetNameForS3OutputType(m_outputType));
+  if (m_compressionHasBeenSet) {
+    payload.WithString("Compression", CompressionOptionMapper::GetNameForCompressionOption(m_compression));
   }
 
   if (m_overwriteHasBeenSet) {

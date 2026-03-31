@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/datapipeline/DataPipelinePaginationBase.h>
 #include <aws/datapipeline/DataPipelineServiceClientModel.h>
+#include <aws/datapipeline/DataPipelineWaiter.h>
 #include <aws/datapipeline/DataPipeline_EXPORTS.h>
 
 namespace Aws {
@@ -36,7 +37,8 @@ namespace DataPipeline {
  */
 class AWS_DATAPIPELINE_API DataPipelineClient : public Aws::Client::AWSJsonClient,
                                                 public Aws::Client::ClientWithAsyncTemplateMethods<DataPipelineClient>,
-                                                public DataPipelinePaginationBase<DataPipelineClient> {
+                                                public DataPipelinePaginationBase<DataPipelineClient>,
+                                                public DataPipelineWaiter<DataPipelineClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -670,6 +672,10 @@ class AWS_DATAPIPELINE_API DataPipelineClient : public Aws::Client::AWSJsonClien
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DataPipelineClient>;
   void init(const DataPipelineClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, DataPipelineError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   DataPipelineClientConfiguration m_clientConfiguration;
   std::shared_ptr<DataPipelineEndpointProviderBase> m_endpointProvider;

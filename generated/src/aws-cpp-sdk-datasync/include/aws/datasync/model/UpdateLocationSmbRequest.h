@@ -191,8 +191,9 @@ class UpdateLocationSmbRequest : public DataSyncRequest {
   /**
    * <p>Specifies configuration information for a customer-managed secret, such as a
    * <code>Password</code> or <code>KerberosKeytab</code> or set of credentials that
-   * DataSync uses to access a specific transfer location, and a customer-managed KMS
-   * key.</p>
+   * DataSync uses to access a specific transfer location, and a customer-managed
+   * Identity and Access Management (IAM) role that provides access to the
+   * secret.</p>
    */
   inline const CustomSecretConfig& GetCustomSecretConfig() const { return m_customSecretConfig; }
   inline bool CustomSecretConfigHasBeenSet() const { return m_customSecretConfigHasBeenSet; }

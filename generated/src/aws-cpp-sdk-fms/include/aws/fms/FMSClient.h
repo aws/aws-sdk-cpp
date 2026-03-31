@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/fms/FMSPaginationBase.h>
 #include <aws/fms/FMSServiceClientModel.h>
+#include <aws/fms/FMSWaiter.h>
 #include <aws/fms/FMS_EXPORTS.h>
 
 namespace Aws {
@@ -27,7 +28,8 @@ namespace FMS {
  */
 class AWS_FMS_API FMSClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<FMSClient>,
-                              public FMSPaginationBase<FMSClient> {
+                              public FMSPaginationBase<FMSClient>,
+                              public FMSWaiter<FMSClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1319,6 +1321,10 @@ class AWS_FMS_API FMSClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<FMSClient>;
   void init(const FMSClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, FMSError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   FMSClientConfiguration m_clientConfiguration;
   std::shared_ptr<FMSEndpointProviderBase> m_endpointProvider;

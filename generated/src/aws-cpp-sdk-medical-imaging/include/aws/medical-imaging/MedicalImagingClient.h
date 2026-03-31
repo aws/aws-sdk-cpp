@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/medical-imaging/MedicalImagingPaginationBase.h>
 #include <aws/medical-imaging/MedicalImagingServiceClientModel.h>
+#include <aws/medical-imaging/MedicalImagingWaiter.h>
 #include <aws/medical-imaging/MedicalImaging_EXPORTS.h>
 
 namespace Aws {
@@ -22,7 +23,8 @@ namespace MedicalImaging {
  */
 class AWS_MEDICALIMAGING_API MedicalImagingClient : public Aws::Client::AWSJsonClient,
                                                     public Aws::Client::ClientWithAsyncTemplateMethods<MedicalImagingClient>,
-                                                    public MedicalImagingPaginationBase<MedicalImagingClient> {
+                                                    public MedicalImagingPaginationBase<MedicalImagingClient>,
+                                                    public MedicalImagingWaiter<MedicalImagingClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -568,6 +570,12 @@ class AWS_MEDICALIMAGING_API MedicalImagingClient : public Aws::Client::AWSJsonC
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MedicalImagingClient>;
   void init(const MedicalImagingClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MedicalImagingError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   MedicalImagingClientConfiguration m_clientConfiguration;
   std::shared_ptr<MedicalImagingEndpointProviderBase> m_endpointProvider;

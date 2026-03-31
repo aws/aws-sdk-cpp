@@ -87,9 +87,7 @@ ValidationException& ValidationException::operator=(const std::shared_ptr<Aws::C
                   }
                 }
                 m_fieldListHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -173,9 +171,7 @@ ValidationException& ValidationException::operator=(const std::shared_ptr<Aws::C
                 }
               }
               m_fieldListHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

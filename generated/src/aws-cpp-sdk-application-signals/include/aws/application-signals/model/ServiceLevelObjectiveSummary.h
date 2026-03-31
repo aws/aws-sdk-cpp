@@ -7,6 +7,7 @@
 #include <aws/application-signals/ApplicationSignals_EXPORTS.h>
 #include <aws/application-signals/model/DependencyConfig.h>
 #include <aws/application-signals/model/EvaluationType.h>
+#include <aws/application-signals/model/MetricSource.h>
 #include <aws/application-signals/model/MetricSourceType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -187,7 +188,8 @@ class ServiceLevelObjectiveSummary {
   /**
    * <p>Displays the SLI metric source type for this SLO. Supported types are:</p>
    * <ul> <li> <p>Service operation</p> </li> <li> <p>Service dependency</p> </li>
-   * <li> <p>CloudWatch metric</p> </li> </ul>
+   * <li> <p>Service</p> </li> <li> <p>CloudWatch metric</p> </li> <li>
+   * <p>AppMonitor</p> </li> <li> <p>Canary</p> </li> </ul>
    */
   inline MetricSourceType GetMetricSourceType() const { return m_metricSourceType; }
   inline bool MetricSourceTypeHasBeenSet() const { return m_metricSourceTypeHasBeenSet; }
@@ -197,6 +199,25 @@ class ServiceLevelObjectiveSummary {
   }
   inline ServiceLevelObjectiveSummary& WithMetricSourceType(MetricSourceType value) {
     SetMetricSourceType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Identifies the metric source for SLOs on resources other than Application
+   * Signals services.</p>
+   */
+  inline const MetricSource& GetMetricSource() const { return m_metricSource; }
+  inline bool MetricSourceHasBeenSet() const { return m_metricSourceHasBeenSet; }
+  template <typename MetricSourceT = MetricSource>
+  void SetMetricSource(MetricSourceT&& value) {
+    m_metricSourceHasBeenSet = true;
+    m_metricSource = std::forward<MetricSourceT>(value);
+  }
+  template <typename MetricSourceT = MetricSource>
+  ServiceLevelObjectiveSummary& WithMetricSource(MetricSourceT&& value) {
+    SetMetricSource(std::forward<MetricSourceT>(value));
     return *this;
   }
   ///@}
@@ -216,6 +237,8 @@ class ServiceLevelObjectiveSummary {
   EvaluationType m_evaluationType{EvaluationType::NOT_SET};
 
   MetricSourceType m_metricSourceType{MetricSourceType::NOT_SET};
+
+  MetricSource m_metricSource;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_keyAttributesHasBeenSet = false;
@@ -224,6 +247,7 @@ class ServiceLevelObjectiveSummary {
   bool m_createdTimeHasBeenSet = false;
   bool m_evaluationTypeHasBeenSet = false;
   bool m_metricSourceTypeHasBeenSet = false;
+  bool m_metricSourceHasBeenSet = false;
 };
 
 }  // namespace Model

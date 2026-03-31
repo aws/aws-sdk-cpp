@@ -22,6 +22,10 @@ EvaluatorConfig& EvaluatorConfig::operator=(JsonView jsonValue) {
     m_llmAsAJudge = jsonValue.GetObject("llmAsAJudge");
     m_llmAsAJudgeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("codeBased")) {
+    m_codeBased = jsonValue.GetObject("codeBased");
+    m_codeBasedHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue EvaluatorConfig::Jsonize() const {
 
   if (m_llmAsAJudgeHasBeenSet) {
     payload.WithObject("llmAsAJudge", m_llmAsAJudge.Jsonize());
+  }
+
+  if (m_codeBasedHasBeenSet) {
+    payload.WithObject("codeBased", m_codeBased.Jsonize());
   }
 
   return payload;

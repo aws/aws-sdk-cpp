@@ -47,6 +47,10 @@ Aws::String CreateMemoryRequest::SerializePayload() const {
     payload.WithArray("memoryStrategies", std::move(memoryStrategiesJsonList));
   }
 
+  if (m_streamDeliveryResourcesHasBeenSet) {
+    payload.WithObject("streamDeliveryResources", m_streamDeliveryResources.Jsonize());
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {

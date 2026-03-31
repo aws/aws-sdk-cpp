@@ -88,9 +88,7 @@ ValidationExceptionField& ValidationExceptionField::operator=(const std::shared_
                   }
                 }
                 m_messageHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -175,9 +173,7 @@ ValidationExceptionField& ValidationExceptionField::operator=(const std::shared_
                 }
               }
               m_messageHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

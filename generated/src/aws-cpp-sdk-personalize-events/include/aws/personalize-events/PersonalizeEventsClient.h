@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/personalize-events/PersonalizeEventsPaginationBase.h>
 #include <aws/personalize-events/PersonalizeEventsServiceClientModel.h>
+#include <aws/personalize-events/PersonalizeEventsWaiter.h>
 #include <aws/personalize-events/PersonalizeEvents_EXPORTS.h>
 
 namespace Aws {
@@ -23,7 +24,8 @@ namespace PersonalizeEvents {
  */
 class AWS_PERSONALIZEEVENTS_API PersonalizeEventsClient : public Aws::Client::AWSJsonClient,
                                                           public Aws::Client::ClientWithAsyncTemplateMethods<PersonalizeEventsClient>,
-                                                          public PersonalizeEventsPaginationBase<PersonalizeEventsClient> {
+                                                          public PersonalizeEventsPaginationBase<PersonalizeEventsClient>,
+                                                          public PersonalizeEventsWaiter<PersonalizeEventsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -229,6 +231,12 @@ class AWS_PERSONALIZEEVENTS_API PersonalizeEventsClient : public Aws::Client::AW
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PersonalizeEventsClient>;
   void init(const PersonalizeEventsClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, PersonalizeEventsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   PersonalizeEventsClientConfiguration m_clientConfiguration;
   std::shared_ptr<PersonalizeEventsEndpointProviderBase> m_endpointProvider;

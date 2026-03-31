@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/osis/OSISPaginationBase.h>
 #include <aws/osis/OSISServiceClientModel.h>
+#include <aws/osis/OSISWaiter.h>
 #include <aws/osis/OSIS_EXPORTS.h>
 
 namespace Aws {
@@ -24,7 +25,8 @@ namespace OSIS {
  */
 class AWS_OSIS_API OSISClient : public Aws::Client::AWSJsonClient,
                                 public Aws::Client::ClientWithAsyncTemplateMethods<OSISClient>,
-                                public OSISPaginationBase<OSISClient> {
+                                public OSISPaginationBase<OSISClient>,
+                                public OSISWaiter<OSISClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -706,6 +708,12 @@ class AWS_OSIS_API OSISClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<OSISClient>;
   void init(const OSISClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, OSISError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   OSISClientConfiguration m_clientConfiguration;
   std::shared_ptr<OSISEndpointProviderBase> m_endpointProvider;

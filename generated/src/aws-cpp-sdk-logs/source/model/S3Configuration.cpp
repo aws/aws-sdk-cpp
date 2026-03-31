@@ -26,6 +26,14 @@ S3Configuration& S3Configuration::operator=(JsonView jsonValue) {
     m_roleArn = jsonValue.GetString("roleArn");
     m_roleArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ownerAccountId")) {
+    m_ownerAccountId = jsonValue.GetString("ownerAccountId");
+    m_ownerAccountIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("kmsKeyId")) {
+    m_kmsKeyId = jsonValue.GetString("kmsKeyId");
+    m_kmsKeyIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +46,14 @@ JsonValue S3Configuration::Jsonize() const {
 
   if (m_roleArnHasBeenSet) {
     payload.WithString("roleArn", m_roleArn);
+  }
+
+  if (m_ownerAccountIdHasBeenSet) {
+    payload.WithString("ownerAccountId", m_ownerAccountId);
+  }
+
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("kmsKeyId", m_kmsKeyId);
   }
 
   return payload;

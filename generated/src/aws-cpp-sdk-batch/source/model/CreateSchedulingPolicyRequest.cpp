@@ -19,6 +19,10 @@ Aws::String CreateSchedulingPolicyRequest::SerializePayload() const {
     payload.WithString("name", m_name);
   }
 
+  if (m_quotaSharePolicyHasBeenSet) {
+    payload.WithObject("quotaSharePolicy", m_quotaSharePolicy.Jsonize());
+  }
+
   if (m_fairsharePolicyHasBeenSet) {
     payload.WithObject("fairsharePolicy", m_fairsharePolicy.Jsonize());
   }

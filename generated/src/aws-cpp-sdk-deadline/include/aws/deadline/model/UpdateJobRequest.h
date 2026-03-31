@@ -35,6 +35,60 @@ class UpdateJobRequest : public DeadlineRequest {
 
   ///@{
   /**
+   * <p>The farm ID of the job to update.</p>
+   */
+  inline const Aws::String& GetFarmId() const { return m_farmId; }
+  inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
+  template <typename FarmIdT = Aws::String>
+  void SetFarmId(FarmIdT&& value) {
+    m_farmIdHasBeenSet = true;
+    m_farmId = std::forward<FarmIdT>(value);
+  }
+  template <typename FarmIdT = Aws::String>
+  UpdateJobRequest& WithFarmId(FarmIdT&& value) {
+    SetFarmId(std::forward<FarmIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The queue ID of the job to update.</p>
+   */
+  inline const Aws::String& GetQueueId() const { return m_queueId; }
+  inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
+  template <typename QueueIdT = Aws::String>
+  void SetQueueId(QueueIdT&& value) {
+    m_queueIdHasBeenSet = true;
+    m_queueId = std::forward<QueueIdT>(value);
+  }
+  template <typename QueueIdT = Aws::String>
+  UpdateJobRequest& WithQueueId(QueueIdT&& value) {
+    SetQueueId(std::forward<QueueIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The job ID to update.</p>
+   */
+  inline const Aws::String& GetJobId() const { return m_jobId; }
+  inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+  template <typename JobIdT = Aws::String>
+  void SetJobId(JobIdT&& value) {
+    m_jobIdHasBeenSet = true;
+    m_jobId = std::forward<JobIdT>(value);
+  }
+  template <typename JobIdT = Aws::String>
+  UpdateJobRequest& WithJobId(JobIdT&& value) {
+    SetJobId(std::forward<JobIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The unique token which the server uses to recognize retries of the same
    * request.</p>
    */
@@ -193,61 +247,13 @@ class UpdateJobRequest : public DeadlineRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The farm ID of the job to update.</p>
-   */
-  inline const Aws::String& GetFarmId() const { return m_farmId; }
-  inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
-  template <typename FarmIdT = Aws::String>
-  void SetFarmId(FarmIdT&& value) {
-    m_farmIdHasBeenSet = true;
-    m_farmId = std::forward<FarmIdT>(value);
-  }
-  template <typename FarmIdT = Aws::String>
-  UpdateJobRequest& WithFarmId(FarmIdT&& value) {
-    SetFarmId(std::forward<FarmIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The queue ID of the job to update.</p>
-   */
-  inline const Aws::String& GetQueueId() const { return m_queueId; }
-  inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
-  template <typename QueueIdT = Aws::String>
-  void SetQueueId(QueueIdT&& value) {
-    m_queueIdHasBeenSet = true;
-    m_queueId = std::forward<QueueIdT>(value);
-  }
-  template <typename QueueIdT = Aws::String>
-  UpdateJobRequest& WithQueueId(QueueIdT&& value) {
-    SetQueueId(std::forward<QueueIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The job ID to update.</p>
-   */
-  inline const Aws::String& GetJobId() const { return m_jobId; }
-  inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-  template <typename JobIdT = Aws::String>
-  void SetJobId(JobIdT&& value) {
-    m_jobIdHasBeenSet = true;
-    m_jobId = std::forward<JobIdT>(value);
-  }
-  template <typename JobIdT = Aws::String>
-  UpdateJobRequest& WithJobId(JobIdT&& value) {
-    SetJobId(std::forward<JobIdT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_farmId;
+
+  Aws::String m_queueId;
+
+  Aws::String m_jobId;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
   JobTargetTaskRunStatus m_targetTaskRunStatus{JobTargetTaskRunStatus::NOT_SET};
@@ -265,12 +271,9 @@ class UpdateJobRequest : public DeadlineRequest {
   Aws::String m_name;
 
   Aws::String m_description;
-
-  Aws::String m_farmId;
-
-  Aws::String m_queueId;
-
-  Aws::String m_jobId;
+  bool m_farmIdHasBeenSet = false;
+  bool m_queueIdHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_targetTaskRunStatusHasBeenSet = false;
   bool m_priorityHasBeenSet = false;
@@ -280,9 +283,6 @@ class UpdateJobRequest : public DeadlineRequest {
   bool m_maxWorkerCountHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
-  bool m_farmIdHasBeenSet = false;
-  bool m_queueIdHasBeenSet = false;
-  bool m_jobIdHasBeenSet = false;
 };
 
 }  // namespace Model

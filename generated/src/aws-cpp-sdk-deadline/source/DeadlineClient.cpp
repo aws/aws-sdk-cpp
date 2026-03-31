@@ -248,10 +248,46 @@ void DeadlineClient::OverrideEndpoint(const Aws::String& endpoint) {
   m_clientConfiguration.endpointOverride = endpoint;
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
+DeadlineClient::InvokeOperationOutcome DeadlineClient::InvokeServiceOperation(
+    const AmazonWebServiceRequest& request, const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+    Aws::Http::HttpMethod httpMethod) const {
+  auto operationName = request.GetServiceRequestName();
+  auto serviceName = GetServiceClientName();
+
+  AWS_OPERATION_GUARD_DYNAMIC(operationName);
+
+  AWS_OPERATION_CHECK_PTR_DYNAMIC(m_endpointProvider, operationName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR_DYNAMIC(m_telemetryProvider, operationName, CoreErrors, CoreErrors::NOT_INITIALIZED);
+
+  auto tracer = m_telemetryProvider->getTracer(serviceName, {});
+  auto meter = m_telemetryProvider->getMeter(serviceName, {});
+  AWS_OPERATION_CHECK_PTR_DYNAMIC(meter, operationName, CoreErrors, CoreErrors::NOT_INITIALIZED);
+
+  auto span = tracer->CreateSpan(Aws::String(serviceName) + "." + operationName,
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+
+  return TracingUtils::MakeCallWithTiming<InvokeOperationOutcome>(
+      [&]() -> InvokeOperationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
+
+        AWS_OPERATION_CHECK_SUCCESS_DYNAMIC(endpointResolutionOutcome, operationName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                            endpointResolutionOutcome.GetError().GetMessage());
+
+        resolveUri(endpointResolutionOutcome);
+
+        return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, Aws::Auth::SIGV4_SIGNER)};
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
+}
 
 AssociateMemberToFarmOutcome DeadlineClient::AssociateMemberToFarm(const AssociateMemberToFarmRequest& request) const {
-  AWS_OPERATION_GUARD(AssociateMemberToFarm);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateMemberToFarm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("AssociateMemberToFarm", "Required field: FarmId, is not set");
     return AssociateMemberToFarmOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -262,41 +298,21 @@ AssociateMemberToFarmOutcome DeadlineClient::AssociateMemberToFarm(const Associa
     return AssociateMemberToFarmOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                               "Missing required field [PrincipalId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, AssociateMemberToFarm, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, AssociateMemberToFarm, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".AssociateMemberToFarm",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<AssociateMemberToFarmOutcome>(
-      [&]() -> AssociateMemberToFarmOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateMemberToFarm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), AssociateMemberToFarmOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/members/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalId());
-        return AssociateMemberToFarmOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/members/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateMemberToFarmOutcome(result.GetResultWithOwnership())
+                            : AssociateMemberToFarmOutcome(std::move(result.GetError()));
 }
 
 AssociateMemberToFleetOutcome DeadlineClient::AssociateMemberToFleet(const AssociateMemberToFleetRequest& request) const {
-  AWS_OPERATION_GUARD(AssociateMemberToFleet);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateMemberToFleet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("AssociateMemberToFleet", "Required field: FarmId, is not set");
     return AssociateMemberToFleetOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -312,43 +328,23 @@ AssociateMemberToFleetOutcome DeadlineClient::AssociateMemberToFleet(const Assoc
     return AssociateMemberToFleetOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                "Missing required field [PrincipalId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, AssociateMemberToFleet, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, AssociateMemberToFleet, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".AssociateMemberToFleet",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<AssociateMemberToFleetOutcome>(
-      [&]() -> AssociateMemberToFleetOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateMemberToFleet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), AssociateMemberToFleetOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/members/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalId());
-        return AssociateMemberToFleetOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/members/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateMemberToFleetOutcome(result.GetResultWithOwnership())
+                            : AssociateMemberToFleetOutcome(std::move(result.GetError()));
 }
 
 AssociateMemberToJobOutcome DeadlineClient::AssociateMemberToJob(const AssociateMemberToJobRequest& request) const {
-  AWS_OPERATION_GUARD(AssociateMemberToJob);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateMemberToJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("AssociateMemberToJob", "Required field: FarmId, is not set");
     return AssociateMemberToJobOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -369,45 +365,25 @@ AssociateMemberToJobOutcome DeadlineClient::AssociateMemberToJob(const Associate
     return AssociateMemberToJobOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                              "Missing required field [PrincipalId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, AssociateMemberToJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, AssociateMemberToJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".AssociateMemberToJob",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<AssociateMemberToJobOutcome>(
-      [&]() -> AssociateMemberToJobOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateMemberToJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), AssociateMemberToJobOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/members/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalId());
-        return AssociateMemberToJobOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/members/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateMemberToJobOutcome(result.GetResultWithOwnership())
+                            : AssociateMemberToJobOutcome(std::move(result.GetError()));
 }
 
 AssociateMemberToQueueOutcome DeadlineClient::AssociateMemberToQueue(const AssociateMemberToQueueRequest& request) const {
-  AWS_OPERATION_GUARD(AssociateMemberToQueue);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateMemberToQueue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("AssociateMemberToQueue", "Required field: FarmId, is not set");
     return AssociateMemberToQueueOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -423,43 +399,23 @@ AssociateMemberToQueueOutcome DeadlineClient::AssociateMemberToQueue(const Assoc
     return AssociateMemberToQueueOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                "Missing required field [PrincipalId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, AssociateMemberToQueue, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, AssociateMemberToQueue, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".AssociateMemberToQueue",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<AssociateMemberToQueueOutcome>(
-      [&]() -> AssociateMemberToQueueOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateMemberToQueue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), AssociateMemberToQueueOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/members/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalId());
-        return AssociateMemberToQueueOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/members/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateMemberToQueueOutcome(result.GetResultWithOwnership())
+                            : AssociateMemberToQueueOutcome(std::move(result.GetError()));
 }
 
 AssumeFleetRoleForReadOutcome DeadlineClient::AssumeFleetRoleForRead(const AssumeFleetRoleForReadRequest& request) const {
-  AWS_OPERATION_GUARD(AssumeFleetRoleForRead);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssumeFleetRoleForRead, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("AssumeFleetRoleForRead", "Required field: FarmId, is not set");
     return AssumeFleetRoleForReadOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -470,42 +426,22 @@ AssumeFleetRoleForReadOutcome DeadlineClient::AssumeFleetRoleForRead(const Assum
     return AssumeFleetRoleForReadOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                "Missing required field [FleetId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, AssumeFleetRoleForRead, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, AssumeFleetRoleForRead, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".AssumeFleetRoleForRead",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<AssumeFleetRoleForReadOutcome>(
-      [&]() -> AssumeFleetRoleForReadOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssumeFleetRoleForRead, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), AssumeFleetRoleForReadOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/read-roles");
-        return AssumeFleetRoleForReadOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/read-roles");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? AssumeFleetRoleForReadOutcome(result.GetResultWithOwnership())
+                            : AssumeFleetRoleForReadOutcome(std::move(result.GetError()));
 }
 
 AssumeFleetRoleForWorkerOutcome DeadlineClient::AssumeFleetRoleForWorker(const AssumeFleetRoleForWorkerRequest& request) const {
-  AWS_OPERATION_GUARD(AssumeFleetRoleForWorker);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssumeFleetRoleForWorker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("AssumeFleetRoleForWorker", "Required field: FarmId, is not set");
     return AssumeFleetRoleForWorkerOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -521,44 +457,24 @@ AssumeFleetRoleForWorkerOutcome DeadlineClient::AssumeFleetRoleForWorker(const A
     return AssumeFleetRoleForWorkerOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                  "Missing required field [WorkerId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, AssumeFleetRoleForWorker, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, AssumeFleetRoleForWorker, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".AssumeFleetRoleForWorker",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<AssumeFleetRoleForWorkerOutcome>(
-      [&]() -> AssumeFleetRoleForWorkerOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssumeFleetRoleForWorker, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("scheduling.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), AssumeFleetRoleForWorkerOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/workers/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkerId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/fleet-roles");
-        return AssumeFleetRoleForWorkerOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workers/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkerId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/fleet-roles");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? AssumeFleetRoleForWorkerOutcome(result.GetResultWithOwnership())
+                            : AssumeFleetRoleForWorkerOutcome(std::move(result.GetError()));
 }
 
 AssumeQueueRoleForReadOutcome DeadlineClient::AssumeQueueRoleForRead(const AssumeQueueRoleForReadRequest& request) const {
-  AWS_OPERATION_GUARD(AssumeQueueRoleForRead);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssumeQueueRoleForRead, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("AssumeQueueRoleForRead", "Required field: FarmId, is not set");
     return AssumeQueueRoleForReadOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -569,42 +485,22 @@ AssumeQueueRoleForReadOutcome DeadlineClient::AssumeQueueRoleForRead(const Assum
     return AssumeQueueRoleForReadOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                "Missing required field [QueueId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, AssumeQueueRoleForRead, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, AssumeQueueRoleForRead, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".AssumeQueueRoleForRead",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<AssumeQueueRoleForReadOutcome>(
-      [&]() -> AssumeQueueRoleForReadOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssumeQueueRoleForRead, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), AssumeQueueRoleForReadOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/read-roles");
-        return AssumeQueueRoleForReadOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/read-roles");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? AssumeQueueRoleForReadOutcome(result.GetResultWithOwnership())
+                            : AssumeQueueRoleForReadOutcome(std::move(result.GetError()));
 }
 
 AssumeQueueRoleForUserOutcome DeadlineClient::AssumeQueueRoleForUser(const AssumeQueueRoleForUserRequest& request) const {
-  AWS_OPERATION_GUARD(AssumeQueueRoleForUser);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssumeQueueRoleForUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("AssumeQueueRoleForUser", "Required field: FarmId, is not set");
     return AssumeQueueRoleForUserOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -615,42 +511,22 @@ AssumeQueueRoleForUserOutcome DeadlineClient::AssumeQueueRoleForUser(const Assum
     return AssumeQueueRoleForUserOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                "Missing required field [QueueId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, AssumeQueueRoleForUser, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, AssumeQueueRoleForUser, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".AssumeQueueRoleForUser",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<AssumeQueueRoleForUserOutcome>(
-      [&]() -> AssumeQueueRoleForUserOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssumeQueueRoleForUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), AssumeQueueRoleForUserOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/user-roles");
-        return AssumeQueueRoleForUserOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/user-roles");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? AssumeQueueRoleForUserOutcome(result.GetResultWithOwnership())
+                            : AssumeQueueRoleForUserOutcome(std::move(result.GetError()));
 }
 
 AssumeQueueRoleForWorkerOutcome DeadlineClient::AssumeQueueRoleForWorker(const AssumeQueueRoleForWorkerRequest& request) const {
-  AWS_OPERATION_GUARD(AssumeQueueRoleForWorker);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssumeQueueRoleForWorker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("AssumeQueueRoleForWorker", "Required field: FarmId, is not set");
     return AssumeQueueRoleForWorkerOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -671,44 +547,24 @@ AssumeQueueRoleForWorkerOutcome DeadlineClient::AssumeQueueRoleForWorker(const A
     return AssumeQueueRoleForWorkerOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                  "Missing required field [QueueId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, AssumeQueueRoleForWorker, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, AssumeQueueRoleForWorker, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".AssumeQueueRoleForWorker",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<AssumeQueueRoleForWorkerOutcome>(
-      [&]() -> AssumeQueueRoleForWorkerOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssumeQueueRoleForWorker, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("scheduling.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), AssumeQueueRoleForWorkerOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/workers/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkerId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queue-roles");
-        return AssumeQueueRoleForWorkerOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workers/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkerId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queue-roles");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? AssumeQueueRoleForWorkerOutcome(result.GetResultWithOwnership())
+                            : AssumeQueueRoleForWorkerOutcome(std::move(result.GetError()));
 }
 
 BatchGetJobEntityOutcome DeadlineClient::BatchGetJobEntity(const BatchGetJobEntityRequest& request) const {
-  AWS_OPERATION_GUARD(BatchGetJobEntity);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetJobEntity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("BatchGetJobEntity", "Required field: FarmId, is not set");
     return BatchGetJobEntityOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -724,207 +580,103 @@ BatchGetJobEntityOutcome DeadlineClient::BatchGetJobEntity(const BatchGetJobEnti
     return BatchGetJobEntityOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                           "Missing required field [WorkerId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, BatchGetJobEntity, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, BatchGetJobEntity, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".BatchGetJobEntity",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<BatchGetJobEntityOutcome>(
-      [&]() -> BatchGetJobEntityOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetJobEntity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("scheduling.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), BatchGetJobEntityOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/workers/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkerId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/batchGetJobEntity");
-        return BatchGetJobEntityOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workers/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkerId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/batchGetJobEntity");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetJobEntityOutcome(result.GetResultWithOwnership())
+                            : BatchGetJobEntityOutcome(std::move(result.GetError()));
 }
 
 CopyJobTemplateOutcome DeadlineClient::CopyJobTemplate(const CopyJobTemplateRequest& request) const {
-  AWS_OPERATION_GUARD(CopyJobTemplate);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CopyJobTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("CopyJobTemplate", "Required field: FarmId, is not set");
     return CopyJobTemplateOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                         "Missing required field [FarmId]", false));
-  }
-  if (!request.JobIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("CopyJobTemplate", "Required field: JobId, is not set");
-    return CopyJobTemplateOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                        "Missing required field [JobId]", false));
   }
   if (!request.QueueIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("CopyJobTemplate", "Required field: QueueId, is not set");
     return CopyJobTemplateOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                         "Missing required field [QueueId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CopyJobTemplate, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, CopyJobTemplate, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CopyJobTemplate",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<CopyJobTemplateOutcome>(
-      [&]() -> CopyJobTemplateOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CopyJobTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CopyJobTemplateOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/template");
-        return CopyJobTemplateOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+  if (!request.JobIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CopyJobTemplate", "Required field: JobId, is not set");
+    return CopyJobTemplateOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                        "Missing required field [JobId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/template");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CopyJobTemplateOutcome(result.GetResultWithOwnership())
+                            : CopyJobTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateBudgetOutcome DeadlineClient::CreateBudget(const CreateBudgetRequest& request) const {
-  AWS_OPERATION_GUARD(CreateBudget);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBudget, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("CreateBudget", "Required field: FarmId, is not set");
     return CreateBudgetOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                      "Missing required field [FarmId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateBudget, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, CreateBudget, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateBudget",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<CreateBudgetOutcome>(
-      [&]() -> CreateBudgetOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateBudget, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateBudgetOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/budgets");
-        return CreateBudgetOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/budgets");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBudgetOutcome(result.GetResultWithOwnership()) : CreateBudgetOutcome(std::move(result.GetError()));
 }
 
 CreateFarmOutcome DeadlineClient::CreateFarm(const CreateFarmRequest& request) const {
-  AWS_OPERATION_GUARD(CreateFarm);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateFarm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateFarm, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, CreateFarm, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateFarm",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<CreateFarmOutcome>(
-      [&]() -> CreateFarmOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateFarm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateFarmOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms");
-        return CreateFarmOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFarmOutcome(result.GetResultWithOwnership()) : CreateFarmOutcome(std::move(result.GetError()));
 }
 
 CreateFleetOutcome DeadlineClient::CreateFleet(const CreateFleetRequest& request) const {
-  AWS_OPERATION_GUARD(CreateFleet);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateFleet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("CreateFleet", "Required field: FarmId, is not set");
     return CreateFleetOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                     "Missing required field [FarmId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateFleet, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, CreateFleet, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateFleet",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<CreateFleetOutcome>(
-      [&]() -> CreateFleetOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateFleet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateFleetOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/fleets");
-        return CreateFleetOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/fleets");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFleetOutcome(result.GetResultWithOwnership()) : CreateFleetOutcome(std::move(result.GetError()));
 }
 
 CreateJobOutcome DeadlineClient::CreateJob(const CreateJobRequest& request) const {
-  AWS_OPERATION_GUARD(CreateJob);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("CreateJob", "Required field: FarmId, is not set");
     return CreateJobOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -935,184 +687,78 @@ CreateJobOutcome DeadlineClient::CreateJob(const CreateJobRequest& request) cons
     return CreateJobOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                   "Missing required field [QueueId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, CreateJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateJob",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<CreateJobOutcome>(
-      [&]() -> CreateJobOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateJobOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/jobs");
-        return CreateJobOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/jobs");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateJobOutcome(result.GetResultWithOwnership()) : CreateJobOutcome(std::move(result.GetError()));
 }
 
 CreateLicenseEndpointOutcome DeadlineClient::CreateLicenseEndpoint(const CreateLicenseEndpointRequest& request) const {
-  AWS_OPERATION_GUARD(CreateLicenseEndpoint);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLicenseEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateLicenseEndpoint, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, CreateLicenseEndpoint, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateLicenseEndpoint",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<CreateLicenseEndpointOutcome>(
-      [&]() -> CreateLicenseEndpointOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateLicenseEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateLicenseEndpointOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/license-endpoints");
-        return CreateLicenseEndpointOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/license-endpoints");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLicenseEndpointOutcome(result.GetResultWithOwnership())
+                            : CreateLicenseEndpointOutcome(std::move(result.GetError()));
 }
 
 CreateLimitOutcome DeadlineClient::CreateLimit(const CreateLimitRequest& request) const {
-  AWS_OPERATION_GUARD(CreateLimit);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLimit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("CreateLimit", "Required field: FarmId, is not set");
     return CreateLimitOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                     "Missing required field [FarmId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateLimit, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, CreateLimit, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateLimit",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<CreateLimitOutcome>(
-      [&]() -> CreateLimitOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateLimit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateLimitOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/limits");
-        return CreateLimitOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/limits");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLimitOutcome(result.GetResultWithOwnership()) : CreateLimitOutcome(std::move(result.GetError()));
 }
 
 CreateMonitorOutcome DeadlineClient::CreateMonitor(const CreateMonitorRequest& request) const {
-  AWS_OPERATION_GUARD(CreateMonitor);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMonitor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateMonitor, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, CreateMonitor, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateMonitor",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<CreateMonitorOutcome>(
-      [&]() -> CreateMonitorOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMonitor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateMonitorOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/monitors");
-        return CreateMonitorOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/monitors");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMonitorOutcome(result.GetResultWithOwnership()) : CreateMonitorOutcome(std::move(result.GetError()));
 }
 
 CreateQueueOutcome DeadlineClient::CreateQueue(const CreateQueueRequest& request) const {
-  AWS_OPERATION_GUARD(CreateQueue);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateQueue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("CreateQueue", "Required field: FarmId, is not set");
     return CreateQueueOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                     "Missing required field [FarmId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateQueue, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, CreateQueue, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateQueue",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<CreateQueueOutcome>(
-      [&]() -> CreateQueueOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateQueue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateQueueOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues");
-        return CreateQueueOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateQueueOutcome(result.GetResultWithOwnership()) : CreateQueueOutcome(std::move(result.GetError()));
 }
 
 CreateQueueEnvironmentOutcome DeadlineClient::CreateQueueEnvironment(const CreateQueueEnvironmentRequest& request) const {
-  AWS_OPERATION_GUARD(CreateQueueEnvironment);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateQueueEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("CreateQueueEnvironment", "Required field: FarmId, is not set");
     return CreateQueueEnvironmentOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -1123,159 +769,79 @@ CreateQueueEnvironmentOutcome DeadlineClient::CreateQueueEnvironment(const Creat
     return CreateQueueEnvironmentOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                "Missing required field [QueueId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateQueueEnvironment, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, CreateQueueEnvironment, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateQueueEnvironment",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<CreateQueueEnvironmentOutcome>(
-      [&]() -> CreateQueueEnvironmentOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateQueueEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateQueueEnvironmentOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/environments");
-        return CreateQueueEnvironmentOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/environments");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateQueueEnvironmentOutcome(result.GetResultWithOwnership())
+                            : CreateQueueEnvironmentOutcome(std::move(result.GetError()));
 }
 
 CreateQueueFleetAssociationOutcome DeadlineClient::CreateQueueFleetAssociation(const CreateQueueFleetAssociationRequest& request) const {
-  AWS_OPERATION_GUARD(CreateQueueFleetAssociation);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateQueueFleetAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("CreateQueueFleetAssociation", "Required field: FarmId, is not set");
     return CreateQueueFleetAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                     "Missing required field [FarmId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateQueueFleetAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, CreateQueueFleetAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateQueueFleetAssociation",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<CreateQueueFleetAssociationOutcome>(
-      [&]() -> CreateQueueFleetAssociationOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateQueueFleetAssociation, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateQueueFleetAssociationOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queue-fleet-associations");
-        return CreateQueueFleetAssociationOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queue-fleet-associations");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateQueueFleetAssociationOutcome(result.GetResultWithOwnership())
+                            : CreateQueueFleetAssociationOutcome(std::move(result.GetError()));
 }
 
 CreateQueueLimitAssociationOutcome DeadlineClient::CreateQueueLimitAssociation(const CreateQueueLimitAssociationRequest& request) const {
-  AWS_OPERATION_GUARD(CreateQueueLimitAssociation);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateQueueLimitAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("CreateQueueLimitAssociation", "Required field: FarmId, is not set");
     return CreateQueueLimitAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                     "Missing required field [FarmId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateQueueLimitAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, CreateQueueLimitAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateQueueLimitAssociation",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<CreateQueueLimitAssociationOutcome>(
-      [&]() -> CreateQueueLimitAssociationOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateQueueLimitAssociation, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateQueueLimitAssociationOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queue-limit-associations");
-        return CreateQueueLimitAssociationOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queue-limit-associations");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateQueueLimitAssociationOutcome(result.GetResultWithOwnership())
+                            : CreateQueueLimitAssociationOutcome(std::move(result.GetError()));
 }
 
 CreateStorageProfileOutcome DeadlineClient::CreateStorageProfile(const CreateStorageProfileRequest& request) const {
-  AWS_OPERATION_GUARD(CreateStorageProfile);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateStorageProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("CreateStorageProfile", "Required field: FarmId, is not set");
     return CreateStorageProfileOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                              "Missing required field [FarmId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateStorageProfile, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, CreateStorageProfile, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateStorageProfile",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<CreateStorageProfileOutcome>(
-      [&]() -> CreateStorageProfileOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateStorageProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateStorageProfileOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/storage-profiles");
-        return CreateStorageProfileOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/storage-profiles");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateStorageProfileOutcome(result.GetResultWithOwnership())
+                            : CreateStorageProfileOutcome(std::move(result.GetError()));
 }
 
 CreateWorkerOutcome DeadlineClient::CreateWorker(const CreateWorkerRequest& request) const {
-  AWS_OPERATION_GUARD(CreateWorker);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateWorker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("CreateWorker", "Required field: FarmId, is not set");
     return CreateWorkerOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -1286,42 +852,21 @@ CreateWorkerOutcome DeadlineClient::CreateWorker(const CreateWorkerRequest& requ
     return CreateWorkerOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                      "Missing required field [FleetId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateWorker, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, CreateWorker, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateWorker",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<CreateWorkerOutcome>(
-      [&]() -> CreateWorkerOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateWorker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("scheduling.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateWorkerOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/workers");
-        return CreateWorkerOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workers");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWorkerOutcome(result.GetResultWithOwnership()) : CreateWorkerOutcome(std::move(result.GetError()));
 }
 
 DeleteBudgetOutcome DeadlineClient::DeleteBudget(const DeleteBudgetRequest& request) const {
-  AWS_OPERATION_GUARD(DeleteBudget);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBudget, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteBudget", "Required field: FarmId, is not set");
     return DeleteBudgetOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -1332,79 +877,37 @@ DeleteBudgetOutcome DeadlineClient::DeleteBudget(const DeleteBudgetRequest& requ
     return DeleteBudgetOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                      "Missing required field [BudgetId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteBudget, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DeleteBudget, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteBudget",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DeleteBudgetOutcome>(
-      [&]() -> DeleteBudgetOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteBudget, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteBudgetOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/budgets/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBudgetId());
-        return DeleteBudgetOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/budgets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBudgetId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBudgetOutcome(result.GetResultWithOwnership()) : DeleteBudgetOutcome(std::move(result.GetError()));
 }
 
 DeleteFarmOutcome DeadlineClient::DeleteFarm(const DeleteFarmRequest& request) const {
-  AWS_OPERATION_GUARD(DeleteFarm);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFarm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteFarm", "Required field: FarmId, is not set");
     return DeleteFarmOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                    "Missing required field [FarmId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteFarm, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DeleteFarm, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteFarm",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DeleteFarmOutcome>(
-      [&]() -> DeleteFarmOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteFarm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteFarmOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        return DeleteFarmOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteFarmOutcome(result.GetResultWithOwnership()) : DeleteFarmOutcome(std::move(result.GetError()));
 }
 
 DeleteFleetOutcome DeadlineClient::DeleteFleet(const DeleteFleetRequest& request) const {
-  AWS_OPERATION_GUARD(DeleteFleet);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFleet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteFleet", "Required field: FarmId, is not set");
     return DeleteFleetOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -1415,79 +918,38 @@ DeleteFleetOutcome DeadlineClient::DeleteFleet(const DeleteFleetRequest& request
     return DeleteFleetOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                     "Missing required field [FleetId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteFleet, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DeleteFleet, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteFleet",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DeleteFleetOutcome>(
-      [&]() -> DeleteFleetOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteFleet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteFleetOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
-        return DeleteFleetOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteFleetOutcome(result.GetResultWithOwnership()) : DeleteFleetOutcome(std::move(result.GetError()));
 }
 
 DeleteLicenseEndpointOutcome DeadlineClient::DeleteLicenseEndpoint(const DeleteLicenseEndpointRequest& request) const {
-  AWS_OPERATION_GUARD(DeleteLicenseEndpoint);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteLicenseEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LicenseEndpointIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteLicenseEndpoint", "Required field: LicenseEndpointId, is not set");
     return DeleteLicenseEndpointOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                               "Missing required field [LicenseEndpointId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteLicenseEndpoint, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DeleteLicenseEndpoint, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteLicenseEndpoint",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DeleteLicenseEndpointOutcome>(
-      [&]() -> DeleteLicenseEndpointOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteLicenseEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteLicenseEndpointOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/license-endpoints/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLicenseEndpointId());
-        return DeleteLicenseEndpointOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/license-endpoints/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLicenseEndpointId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteLicenseEndpointOutcome(result.GetResultWithOwnership())
+                            : DeleteLicenseEndpointOutcome(std::move(result.GetError()));
 }
 
 DeleteLimitOutcome DeadlineClient::DeleteLimit(const DeleteLimitRequest& request) const {
-  AWS_OPERATION_GUARD(DeleteLimit);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteLimit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteLimit", "Required field: FarmId, is not set");
     return DeleteLimitOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -1498,41 +960,20 @@ DeleteLimitOutcome DeadlineClient::DeleteLimit(const DeleteLimitRequest& request
     return DeleteLimitOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                     "Missing required field [LimitId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteLimit, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DeleteLimit, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteLimit",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DeleteLimitOutcome>(
-      [&]() -> DeleteLimitOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteLimit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteLimitOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/limits/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLimitId());
-        return DeleteLimitOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/limits/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLimitId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteLimitOutcome(result.GetResultWithOwnership()) : DeleteLimitOutcome(std::move(result.GetError()));
 }
 
 DeleteMeteredProductOutcome DeadlineClient::DeleteMeteredProduct(const DeleteMeteredProductRequest& request) const {
-  AWS_OPERATION_GUARD(DeleteMeteredProduct);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMeteredProduct, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LicenseEndpointIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteMeteredProduct", "Required field: LicenseEndpointId, is not set");
     return DeleteMeteredProductOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -1543,79 +984,38 @@ DeleteMeteredProductOutcome DeadlineClient::DeleteMeteredProduct(const DeleteMet
     return DeleteMeteredProductOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                              "Missing required field [ProductId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteMeteredProduct, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DeleteMeteredProduct, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteMeteredProduct",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DeleteMeteredProductOutcome>(
-      [&]() -> DeleteMeteredProductOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteMeteredProduct, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteMeteredProductOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/license-endpoints/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLicenseEndpointId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/metered-products/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProductId());
-        return DeleteMeteredProductOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/license-endpoints/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLicenseEndpointId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/metered-products/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProductId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMeteredProductOutcome(result.GetResultWithOwnership())
+                            : DeleteMeteredProductOutcome(std::move(result.GetError()));
 }
 
 DeleteMonitorOutcome DeadlineClient::DeleteMonitor(const DeleteMonitorRequest& request) const {
-  AWS_OPERATION_GUARD(DeleteMonitor);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMonitor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MonitorIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteMonitor", "Required field: MonitorId, is not set");
     return DeleteMonitorOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                       "Missing required field [MonitorId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteMonitor, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DeleteMonitor, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteMonitor",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DeleteMonitorOutcome>(
-      [&]() -> DeleteMonitorOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteMonitor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteMonitorOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/monitors/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMonitorId());
-        return DeleteMonitorOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/monitors/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMonitorId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMonitorOutcome(result.GetResultWithOwnership()) : DeleteMonitorOutcome(std::move(result.GetError()));
 }
 
 DeleteQueueOutcome DeadlineClient::DeleteQueue(const DeleteQueueRequest& request) const {
-  AWS_OPERATION_GUARD(DeleteQueue);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteQueue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteQueue", "Required field: FarmId, is not set");
     return DeleteQueueOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -1626,41 +1026,20 @@ DeleteQueueOutcome DeadlineClient::DeleteQueue(const DeleteQueueRequest& request
     return DeleteQueueOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                     "Missing required field [QueueId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteQueue, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DeleteQueue, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteQueue",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DeleteQueueOutcome>(
-      [&]() -> DeleteQueueOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteQueue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteQueueOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        return DeleteQueueOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteQueueOutcome(result.GetResultWithOwnership()) : DeleteQueueOutcome(std::move(result.GetError()));
 }
 
 DeleteQueueEnvironmentOutcome DeadlineClient::DeleteQueueEnvironment(const DeleteQueueEnvironmentRequest& request) const {
-  AWS_OPERATION_GUARD(DeleteQueueEnvironment);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteQueueEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteQueueEnvironment", "Required field: FarmId, is not set");
     return DeleteQueueEnvironmentOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -1676,43 +1055,23 @@ DeleteQueueEnvironmentOutcome DeadlineClient::DeleteQueueEnvironment(const Delet
     return DeleteQueueEnvironmentOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                "Missing required field [QueueEnvironmentId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteQueueEnvironment, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DeleteQueueEnvironment, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteQueueEnvironment",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DeleteQueueEnvironmentOutcome>(
-      [&]() -> DeleteQueueEnvironmentOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteQueueEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteQueueEnvironmentOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueEnvironmentId());
-        return DeleteQueueEnvironmentOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueEnvironmentId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteQueueEnvironmentOutcome(result.GetResultWithOwnership())
+                            : DeleteQueueEnvironmentOutcome(std::move(result.GetError()));
 }
 
 DeleteQueueFleetAssociationOutcome DeadlineClient::DeleteQueueFleetAssociation(const DeleteQueueFleetAssociationRequest& request) const {
-  AWS_OPERATION_GUARD(DeleteQueueFleetAssociation);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteQueueFleetAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteQueueFleetAssociation", "Required field: FarmId, is not set");
     return DeleteQueueFleetAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -1728,42 +1087,22 @@ DeleteQueueFleetAssociationOutcome DeadlineClient::DeleteQueueFleetAssociation(c
     return DeleteQueueFleetAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                     "Missing required field [FleetId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteQueueFleetAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DeleteQueueFleetAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteQueueFleetAssociation",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DeleteQueueFleetAssociationOutcome>(
-      [&]() -> DeleteQueueFleetAssociationOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteQueueFleetAssociation, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteQueueFleetAssociationOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queue-fleet-associations/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
-        return DeleteQueueFleetAssociationOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queue-fleet-associations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteQueueFleetAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteQueueFleetAssociationOutcome(std::move(result.GetError()));
 }
 
 DeleteQueueLimitAssociationOutcome DeadlineClient::DeleteQueueLimitAssociation(const DeleteQueueLimitAssociationRequest& request) const {
-  AWS_OPERATION_GUARD(DeleteQueueLimitAssociation);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteQueueLimitAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteQueueLimitAssociation", "Required field: FarmId, is not set");
     return DeleteQueueLimitAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -1779,42 +1118,22 @@ DeleteQueueLimitAssociationOutcome DeadlineClient::DeleteQueueLimitAssociation(c
     return DeleteQueueLimitAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                     "Missing required field [LimitId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteQueueLimitAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DeleteQueueLimitAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteQueueLimitAssociation",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DeleteQueueLimitAssociationOutcome>(
-      [&]() -> DeleteQueueLimitAssociationOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteQueueLimitAssociation, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteQueueLimitAssociationOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queue-limit-associations/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLimitId());
-        return DeleteQueueLimitAssociationOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queue-limit-associations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLimitId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteQueueLimitAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteQueueLimitAssociationOutcome(std::move(result.GetError()));
 }
 
 DeleteStorageProfileOutcome DeadlineClient::DeleteStorageProfile(const DeleteStorageProfileRequest& request) const {
-  AWS_OPERATION_GUARD(DeleteStorageProfile);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteStorageProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteStorageProfile", "Required field: FarmId, is not set");
     return DeleteStorageProfileOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -1825,41 +1144,21 @@ DeleteStorageProfileOutcome DeadlineClient::DeleteStorageProfile(const DeleteSto
     return DeleteStorageProfileOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                              "Missing required field [StorageProfileId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteStorageProfile, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DeleteStorageProfile, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteStorageProfile",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DeleteStorageProfileOutcome>(
-      [&]() -> DeleteStorageProfileOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteStorageProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteStorageProfileOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/storage-profiles/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStorageProfileId());
-        return DeleteStorageProfileOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/storage-profiles/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStorageProfileId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteStorageProfileOutcome(result.GetResultWithOwnership())
+                            : DeleteStorageProfileOutcome(std::move(result.GetError()));
 }
 
 DeleteWorkerOutcome DeadlineClient::DeleteWorker(const DeleteWorkerRequest& request) const {
-  AWS_OPERATION_GUARD(DeleteWorker);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteWorker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteWorker", "Required field: FarmId, is not set");
     return DeleteWorkerOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -1875,43 +1174,22 @@ DeleteWorkerOutcome DeadlineClient::DeleteWorker(const DeleteWorkerRequest& requ
     return DeleteWorkerOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                      "Missing required field [WorkerId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteWorker, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DeleteWorker, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteWorker",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DeleteWorkerOutcome>(
-      [&]() -> DeleteWorkerOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteWorker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteWorkerOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/workers/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkerId());
-        return DeleteWorkerOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workers/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkerId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteWorkerOutcome(result.GetResultWithOwnership()) : DeleteWorkerOutcome(std::move(result.GetError()));
 }
 
 DisassociateMemberFromFarmOutcome DeadlineClient::DisassociateMemberFromFarm(const DisassociateMemberFromFarmRequest& request) const {
-  AWS_OPERATION_GUARD(DisassociateMemberFromFarm);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateMemberFromFarm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DisassociateMemberFromFarm", "Required field: FarmId, is not set");
     return DisassociateMemberFromFarmOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -1922,41 +1200,21 @@ DisassociateMemberFromFarmOutcome DeadlineClient::DisassociateMemberFromFarm(con
     return DisassociateMemberFromFarmOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                    "Missing required field [PrincipalId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DisassociateMemberFromFarm, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DisassociateMemberFromFarm, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DisassociateMemberFromFarm",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DisassociateMemberFromFarmOutcome>(
-      [&]() -> DisassociateMemberFromFarmOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateMemberFromFarm, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DisassociateMemberFromFarmOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/members/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalId());
-        return DisassociateMemberFromFarmOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/members/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateMemberFromFarmOutcome(result.GetResultWithOwnership())
+                            : DisassociateMemberFromFarmOutcome(std::move(result.GetError()));
 }
 
 DisassociateMemberFromFleetOutcome DeadlineClient::DisassociateMemberFromFleet(const DisassociateMemberFromFleetRequest& request) const {
-  AWS_OPERATION_GUARD(DisassociateMemberFromFleet);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateMemberFromFleet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DisassociateMemberFromFleet", "Required field: FarmId, is not set");
     return DisassociateMemberFromFleetOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -1972,43 +1230,23 @@ DisassociateMemberFromFleetOutcome DeadlineClient::DisassociateMemberFromFleet(c
     return DisassociateMemberFromFleetOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                     "Missing required field [PrincipalId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DisassociateMemberFromFleet, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DisassociateMemberFromFleet, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DisassociateMemberFromFleet",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DisassociateMemberFromFleetOutcome>(
-      [&]() -> DisassociateMemberFromFleetOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateMemberFromFleet, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DisassociateMemberFromFleetOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/members/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalId());
-        return DisassociateMemberFromFleetOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/members/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateMemberFromFleetOutcome(result.GetResultWithOwnership())
+                            : DisassociateMemberFromFleetOutcome(std::move(result.GetError()));
 }
 
 DisassociateMemberFromJobOutcome DeadlineClient::DisassociateMemberFromJob(const DisassociateMemberFromJobRequest& request) const {
-  AWS_OPERATION_GUARD(DisassociateMemberFromJob);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateMemberFromJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DisassociateMemberFromJob", "Required field: FarmId, is not set");
     return DisassociateMemberFromJobOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -2029,45 +1267,25 @@ DisassociateMemberFromJobOutcome DeadlineClient::DisassociateMemberFromJob(const
     return DisassociateMemberFromJobOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                   "Missing required field [PrincipalId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DisassociateMemberFromJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DisassociateMemberFromJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DisassociateMemberFromJob",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DisassociateMemberFromJobOutcome>(
-      [&]() -> DisassociateMemberFromJobOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateMemberFromJob, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DisassociateMemberFromJobOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/members/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalId());
-        return DisassociateMemberFromJobOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/members/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateMemberFromJobOutcome(result.GetResultWithOwnership())
+                            : DisassociateMemberFromJobOutcome(std::move(result.GetError()));
 }
 
 DisassociateMemberFromQueueOutcome DeadlineClient::DisassociateMemberFromQueue(const DisassociateMemberFromQueueRequest& request) const {
-  AWS_OPERATION_GUARD(DisassociateMemberFromQueue);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateMemberFromQueue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DisassociateMemberFromQueue", "Required field: FarmId, is not set");
     return DisassociateMemberFromQueueOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -2083,43 +1301,23 @@ DisassociateMemberFromQueueOutcome DeadlineClient::DisassociateMemberFromQueue(c
     return DisassociateMemberFromQueueOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                     "Missing required field [PrincipalId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DisassociateMemberFromQueue, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DisassociateMemberFromQueue, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DisassociateMemberFromQueue",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DisassociateMemberFromQueueOutcome>(
-      [&]() -> DisassociateMemberFromQueueOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateMemberFromQueue, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DisassociateMemberFromQueueOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/members/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalId());
-        return DisassociateMemberFromQueueOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/members/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateMemberFromQueueOutcome(result.GetResultWithOwnership())
+                            : DisassociateMemberFromQueueOutcome(std::move(result.GetError()));
 }
 
 GetBudgetOutcome DeadlineClient::GetBudget(const GetBudgetRequest& request) const {
-  AWS_OPERATION_GUARD(GetBudget);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBudget, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetBudget", "Required field: FarmId, is not set");
     return GetBudgetOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -2130,79 +1328,37 @@ GetBudgetOutcome DeadlineClient::GetBudget(const GetBudgetRequest& request) cons
     return GetBudgetOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                   "Missing required field [BudgetId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetBudget, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetBudget, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetBudget",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetBudgetOutcome>(
-      [&]() -> GetBudgetOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBudget, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetBudgetOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/budgets/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBudgetId());
-        return GetBudgetOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/budgets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBudgetId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBudgetOutcome(result.GetResultWithOwnership()) : GetBudgetOutcome(std::move(result.GetError()));
 }
 
 GetFarmOutcome DeadlineClient::GetFarm(const GetFarmRequest& request) const {
-  AWS_OPERATION_GUARD(GetFarm);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFarm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetFarm", "Required field: FarmId, is not set");
     return GetFarmOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                 "Missing required field [FarmId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetFarm, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetFarm, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetFarm",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetFarmOutcome>(
-      [&]() -> GetFarmOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetFarm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetFarmOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        return GetFarmOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFarmOutcome(result.GetResultWithOwnership()) : GetFarmOutcome(std::move(result.GetError()));
 }
 
 GetFleetOutcome DeadlineClient::GetFleet(const GetFleetRequest& request) const {
-  AWS_OPERATION_GUARD(GetFleet);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFleet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetFleet", "Required field: FarmId, is not set");
     return GetFleetOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -2213,41 +1369,20 @@ GetFleetOutcome DeadlineClient::GetFleet(const GetFleetRequest& request) const {
     return GetFleetOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                  "Missing required field [FleetId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetFleet, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetFleet, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetFleet",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetFleetOutcome>(
-      [&]() -> GetFleetOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetFleet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetFleetOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
-        return GetFleetOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFleetOutcome(result.GetResultWithOwnership()) : GetFleetOutcome(std::move(result.GetError()));
 }
 
 GetJobOutcome DeadlineClient::GetJob(const GetJobRequest& request) const {
-  AWS_OPERATION_GUARD(GetJob);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetJob", "Required field: FarmId, is not set");
     return GetJobOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -2263,81 +1398,40 @@ GetJobOutcome DeadlineClient::GetJob(const GetJobRequest& request) const {
     return GetJobOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                "Missing required field [JobId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetJob",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetJobOutcome>(
-      [&]() -> GetJobOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetJobOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
-        return GetJobOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetJobOutcome(result.GetResultWithOwnership()) : GetJobOutcome(std::move(result.GetError()));
 }
 
 GetLicenseEndpointOutcome DeadlineClient::GetLicenseEndpoint(const GetLicenseEndpointRequest& request) const {
-  AWS_OPERATION_GUARD(GetLicenseEndpoint);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLicenseEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LicenseEndpointIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetLicenseEndpoint", "Required field: LicenseEndpointId, is not set");
     return GetLicenseEndpointOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                            "Missing required field [LicenseEndpointId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetLicenseEndpoint, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetLicenseEndpoint, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetLicenseEndpoint",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetLicenseEndpointOutcome>(
-      [&]() -> GetLicenseEndpointOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetLicenseEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetLicenseEndpointOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/license-endpoints/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLicenseEndpointId());
-        return GetLicenseEndpointOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/license-endpoints/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLicenseEndpointId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetLicenseEndpointOutcome(result.GetResultWithOwnership())
+                            : GetLicenseEndpointOutcome(std::move(result.GetError()));
 }
 
 GetLimitOutcome DeadlineClient::GetLimit(const GetLimitRequest& request) const {
-  AWS_OPERATION_GUARD(GetLimit);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLimit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetLimit", "Required field: FarmId, is not set");
     return GetLimitOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -2348,79 +1442,37 @@ GetLimitOutcome DeadlineClient::GetLimit(const GetLimitRequest& request) const {
     return GetLimitOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                  "Missing required field [LimitId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetLimit, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetLimit, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetLimit",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetLimitOutcome>(
-      [&]() -> GetLimitOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetLimit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetLimitOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/limits/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLimitId());
-        return GetLimitOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/limits/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLimitId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetLimitOutcome(result.GetResultWithOwnership()) : GetLimitOutcome(std::move(result.GetError()));
 }
 
 GetMonitorOutcome DeadlineClient::GetMonitor(const GetMonitorRequest& request) const {
-  AWS_OPERATION_GUARD(GetMonitor);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMonitor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MonitorIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetMonitor", "Required field: MonitorId, is not set");
     return GetMonitorOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                    "Missing required field [MonitorId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetMonitor, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetMonitor, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetMonitor",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetMonitorOutcome>(
-      [&]() -> GetMonitorOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMonitor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetMonitorOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/monitors/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMonitorId());
-        return GetMonitorOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/monitors/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMonitorId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMonitorOutcome(result.GetResultWithOwnership()) : GetMonitorOutcome(std::move(result.GetError()));
 }
 
 GetQueueOutcome DeadlineClient::GetQueue(const GetQueueRequest& request) const {
-  AWS_OPERATION_GUARD(GetQueue);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetQueue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetQueue", "Required field: FarmId, is not set");
     return GetQueueOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -2431,41 +1483,20 @@ GetQueueOutcome DeadlineClient::GetQueue(const GetQueueRequest& request) const {
     return GetQueueOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                  "Missing required field [QueueId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetQueue, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetQueue, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetQueue",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetQueueOutcome>(
-      [&]() -> GetQueueOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetQueue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetQueueOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        return GetQueueOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetQueueOutcome(result.GetResultWithOwnership()) : GetQueueOutcome(std::move(result.GetError()));
 }
 
 GetQueueEnvironmentOutcome DeadlineClient::GetQueueEnvironment(const GetQueueEnvironmentRequest& request) const {
-  AWS_OPERATION_GUARD(GetQueueEnvironment);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetQueueEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetQueueEnvironment", "Required field: FarmId, is not set");
     return GetQueueEnvironmentOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -2481,43 +1512,23 @@ GetQueueEnvironmentOutcome DeadlineClient::GetQueueEnvironment(const GetQueueEnv
     return GetQueueEnvironmentOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                             "Missing required field [QueueEnvironmentId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetQueueEnvironment, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetQueueEnvironment, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetQueueEnvironment",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetQueueEnvironmentOutcome>(
-      [&]() -> GetQueueEnvironmentOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetQueueEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetQueueEnvironmentOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueEnvironmentId());
-        return GetQueueEnvironmentOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueEnvironmentId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetQueueEnvironmentOutcome(result.GetResultWithOwnership())
+                            : GetQueueEnvironmentOutcome(std::move(result.GetError()));
 }
 
 GetQueueFleetAssociationOutcome DeadlineClient::GetQueueFleetAssociation(const GetQueueFleetAssociationRequest& request) const {
-  AWS_OPERATION_GUARD(GetQueueFleetAssociation);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetQueueFleetAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetQueueFleetAssociation", "Required field: FarmId, is not set");
     return GetQueueFleetAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -2533,42 +1544,22 @@ GetQueueFleetAssociationOutcome DeadlineClient::GetQueueFleetAssociation(const G
     return GetQueueFleetAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                  "Missing required field [FleetId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetQueueFleetAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetQueueFleetAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetQueueFleetAssociation",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetQueueFleetAssociationOutcome>(
-      [&]() -> GetQueueFleetAssociationOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetQueueFleetAssociation, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetQueueFleetAssociationOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queue-fleet-associations/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
-        return GetQueueFleetAssociationOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queue-fleet-associations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetQueueFleetAssociationOutcome(result.GetResultWithOwnership())
+                            : GetQueueFleetAssociationOutcome(std::move(result.GetError()));
 }
 
 GetQueueLimitAssociationOutcome DeadlineClient::GetQueueLimitAssociation(const GetQueueLimitAssociationRequest& request) const {
-  AWS_OPERATION_GUARD(GetQueueLimitAssociation);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetQueueLimitAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetQueueLimitAssociation", "Required field: FarmId, is not set");
     return GetQueueLimitAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -2584,42 +1575,22 @@ GetQueueLimitAssociationOutcome DeadlineClient::GetQueueLimitAssociation(const G
     return GetQueueLimitAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                  "Missing required field [LimitId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetQueueLimitAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetQueueLimitAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetQueueLimitAssociation",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetQueueLimitAssociationOutcome>(
-      [&]() -> GetQueueLimitAssociationOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetQueueLimitAssociation, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetQueueLimitAssociationOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queue-limit-associations/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLimitId());
-        return GetQueueLimitAssociationOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queue-limit-associations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLimitId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetQueueLimitAssociationOutcome(result.GetResultWithOwnership())
+                            : GetQueueLimitAssociationOutcome(std::move(result.GetError()));
 }
 
 GetSessionOutcome DeadlineClient::GetSession(const GetSessionRequest& request) const {
-  AWS_OPERATION_GUARD(GetSession);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetSession", "Required field: FarmId, is not set");
     return GetSessionOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -2640,45 +1611,24 @@ GetSessionOutcome DeadlineClient::GetSession(const GetSessionRequest& request) c
     return GetSessionOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                    "Missing required field [SessionId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetSession, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetSession, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetSession",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetSessionOutcome>(
-      [&]() -> GetSessionOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetSessionOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/sessions/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
-        return GetSessionOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/sessions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSessionOutcome(result.GetResultWithOwnership()) : GetSessionOutcome(std::move(result.GetError()));
 }
 
 GetSessionActionOutcome DeadlineClient::GetSessionAction(const GetSessionActionRequest& request) const {
-  AWS_OPERATION_GUARD(GetSessionAction);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSessionAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetSessionAction", "Required field: FarmId, is not set");
     return GetSessionActionOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -2699,46 +1649,26 @@ GetSessionActionOutcome DeadlineClient::GetSessionAction(const GetSessionActionR
     return GetSessionActionOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                          "Missing required field [SessionActionId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetSessionAction, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetSessionAction, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetSessionAction",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetSessionActionOutcome>(
-      [&]() -> GetSessionActionOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSessionAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetSessionActionOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/session-actions/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionActionId());
-        return GetSessionActionOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/session-actions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionActionId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSessionActionOutcome(result.GetResultWithOwnership())
+                            : GetSessionActionOutcome(std::move(result.GetError()));
 }
 
 GetSessionsStatisticsAggregationOutcome DeadlineClient::GetSessionsStatisticsAggregation(
     const GetSessionsStatisticsAggregationRequest& request) const {
-  AWS_OPERATION_GUARD(GetSessionsStatisticsAggregation);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSessionsStatisticsAggregation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetSessionsStatisticsAggregation", "Required field: FarmId, is not set");
     return GetSessionsStatisticsAggregationOutcome(Aws::Client::AWSError<DeadlineErrors>(
@@ -2749,40 +1679,20 @@ GetSessionsStatisticsAggregationOutcome DeadlineClient::GetSessionsStatisticsAgg
     return GetSessionsStatisticsAggregationOutcome(Aws::Client::AWSError<DeadlineErrors>(
         DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AggregationId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetSessionsStatisticsAggregation, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetSessionsStatisticsAggregation, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetSessionsStatisticsAggregation",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetSessionsStatisticsAggregationOutcome>(
-      [&]() -> GetSessionsStatisticsAggregationOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSessionsStatisticsAggregation, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetSessionsStatisticsAggregationOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/sessions-statistics-aggregation");
-        return GetSessionsStatisticsAggregationOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/sessions-statistics-aggregation");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSessionsStatisticsAggregationOutcome(result.GetResultWithOwnership())
+                            : GetSessionsStatisticsAggregationOutcome(std::move(result.GetError()));
 }
 
 GetStepOutcome DeadlineClient::GetStep(const GetStepRequest& request) const {
-  AWS_OPERATION_GUARD(GetStep);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStep, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetStep", "Required field: FarmId, is not set");
     return GetStepOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -2803,45 +1713,24 @@ GetStepOutcome DeadlineClient::GetStep(const GetStepRequest& request) const {
     return GetStepOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                 "Missing required field [StepId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetStep, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetStep, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetStep",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetStepOutcome>(
-      [&]() -> GetStepOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetStep, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetStepOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/steps/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStepId());
-        return GetStepOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/steps/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStepId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetStepOutcome(result.GetResultWithOwnership()) : GetStepOutcome(std::move(result.GetError()));
 }
 
 GetStorageProfileOutcome DeadlineClient::GetStorageProfile(const GetStorageProfileRequest& request) const {
-  AWS_OPERATION_GUARD(GetStorageProfile);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStorageProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetStorageProfile", "Required field: FarmId, is not set");
     return GetStorageProfileOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -2852,41 +1741,21 @@ GetStorageProfileOutcome DeadlineClient::GetStorageProfile(const GetStorageProfi
     return GetStorageProfileOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                           "Missing required field [StorageProfileId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetStorageProfile, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetStorageProfile, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetStorageProfile",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetStorageProfileOutcome>(
-      [&]() -> GetStorageProfileOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetStorageProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetStorageProfileOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/storage-profiles/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStorageProfileId());
-        return GetStorageProfileOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/storage-profiles/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStorageProfileId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetStorageProfileOutcome(result.GetResultWithOwnership())
+                            : GetStorageProfileOutcome(std::move(result.GetError()));
 }
 
 GetStorageProfileForQueueOutcome DeadlineClient::GetStorageProfileForQueue(const GetStorageProfileForQueueRequest& request) const {
-  AWS_OPERATION_GUARD(GetStorageProfileForQueue);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStorageProfileForQueue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetStorageProfileForQueue", "Required field: FarmId, is not set");
     return GetStorageProfileForQueueOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -2902,43 +1771,23 @@ GetStorageProfileForQueueOutcome DeadlineClient::GetStorageProfileForQueue(const
     return GetStorageProfileForQueueOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                   "Missing required field [StorageProfileId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetStorageProfileForQueue, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetStorageProfileForQueue, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetStorageProfileForQueue",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetStorageProfileForQueueOutcome>(
-      [&]() -> GetStorageProfileForQueueOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetStorageProfileForQueue, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetStorageProfileForQueueOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/storage-profiles/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStorageProfileId());
-        return GetStorageProfileForQueueOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/storage-profiles/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStorageProfileId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetStorageProfileForQueueOutcome(result.GetResultWithOwnership())
+                            : GetStorageProfileForQueueOutcome(std::move(result.GetError()));
 }
 
 GetTaskOutcome DeadlineClient::GetTask(const GetTaskRequest& request) const {
-  AWS_OPERATION_GUARD(GetTask);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetTask", "Required field: FarmId, is not set");
     return GetTaskOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -2964,47 +1813,26 @@ GetTaskOutcome DeadlineClient::GetTask(const GetTaskRequest& request) const {
     return GetTaskOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                 "Missing required field [TaskId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetTask, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetTask, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetTask",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetTaskOutcome>(
-      [&]() -> GetTaskOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetTaskOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/steps/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStepId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/tasks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTaskId());
-        return GetTaskOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/steps/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStepId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/tasks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTaskId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTaskOutcome(result.GetResultWithOwnership()) : GetTaskOutcome(std::move(result.GetError()));
 }
 
 GetWorkerOutcome DeadlineClient::GetWorker(const GetWorkerRequest& request) const {
-  AWS_OPERATION_GUARD(GetWorker);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetWorker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetWorker", "Required field: FarmId, is not set");
     return GetWorkerOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -3020,185 +1848,80 @@ GetWorkerOutcome DeadlineClient::GetWorker(const GetWorkerRequest& request) cons
     return GetWorkerOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                   "Missing required field [WorkerId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetWorker, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetWorker, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetWorker",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetWorkerOutcome>(
-      [&]() -> GetWorkerOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetWorker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetWorkerOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/workers/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkerId());
-        return GetWorkerOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workers/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkerId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetWorkerOutcome(result.GetResultWithOwnership()) : GetWorkerOutcome(std::move(result.GetError()));
 }
 
 ListAvailableMeteredProductsOutcome DeadlineClient::ListAvailableMeteredProducts(const ListAvailableMeteredProductsRequest& request) const {
-  AWS_OPERATION_GUARD(ListAvailableMeteredProducts);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAvailableMeteredProducts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListAvailableMeteredProducts, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListAvailableMeteredProducts, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListAvailableMeteredProducts",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListAvailableMeteredProductsOutcome>(
-      [&]() -> ListAvailableMeteredProductsOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAvailableMeteredProducts, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListAvailableMeteredProductsOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/metered-products");
-        return ListAvailableMeteredProductsOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/metered-products");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAvailableMeteredProductsOutcome(result.GetResultWithOwnership())
+                            : ListAvailableMeteredProductsOutcome(std::move(result.GetError()));
 }
 
 ListBudgetsOutcome DeadlineClient::ListBudgets(const ListBudgetsRequest& request) const {
-  AWS_OPERATION_GUARD(ListBudgets);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBudgets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListBudgets", "Required field: FarmId, is not set");
     return ListBudgetsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                     "Missing required field [FarmId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListBudgets, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListBudgets, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListBudgets",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListBudgetsOutcome>(
-      [&]() -> ListBudgetsOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListBudgets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListBudgetsOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/budgets");
-        return ListBudgetsOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/budgets");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListBudgetsOutcome(result.GetResultWithOwnership()) : ListBudgetsOutcome(std::move(result.GetError()));
 }
 
 ListFarmMembersOutcome DeadlineClient::ListFarmMembers(const ListFarmMembersRequest& request) const {
-  AWS_OPERATION_GUARD(ListFarmMembers);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFarmMembers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListFarmMembers", "Required field: FarmId, is not set");
     return ListFarmMembersOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                         "Missing required field [FarmId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListFarmMembers, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListFarmMembers, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListFarmMembers",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListFarmMembersOutcome>(
-      [&]() -> ListFarmMembersOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListFarmMembers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListFarmMembersOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/members");
-        return ListFarmMembersOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/members");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListFarmMembersOutcome(result.GetResultWithOwnership())
+                            : ListFarmMembersOutcome(std::move(result.GetError()));
 }
 
 ListFarmsOutcome DeadlineClient::ListFarms(const ListFarmsRequest& request) const {
-  AWS_OPERATION_GUARD(ListFarms);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFarms, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListFarms, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListFarms, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListFarms",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListFarmsOutcome>(
-      [&]() -> ListFarmsOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListFarms, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListFarmsOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms");
-        return ListFarmsOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListFarmsOutcome(result.GetResultWithOwnership()) : ListFarmsOutcome(std::move(result.GetError()));
 }
 
 ListFleetMembersOutcome DeadlineClient::ListFleetMembers(const ListFleetMembersRequest& request) const {
-  AWS_OPERATION_GUARD(ListFleetMembers);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFleetMembers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListFleetMembers", "Required field: FarmId, is not set");
     return ListFleetMembersOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -3209,81 +1932,40 @@ ListFleetMembersOutcome DeadlineClient::ListFleetMembers(const ListFleetMembersR
     return ListFleetMembersOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                          "Missing required field [FleetId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListFleetMembers, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListFleetMembers, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListFleetMembers",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListFleetMembersOutcome>(
-      [&]() -> ListFleetMembersOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListFleetMembers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListFleetMembersOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/members");
-        return ListFleetMembersOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/members");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListFleetMembersOutcome(result.GetResultWithOwnership())
+                            : ListFleetMembersOutcome(std::move(result.GetError()));
 }
 
 ListFleetsOutcome DeadlineClient::ListFleets(const ListFleetsRequest& request) const {
-  AWS_OPERATION_GUARD(ListFleets);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFleets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListFleets", "Required field: FarmId, is not set");
     return ListFleetsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                    "Missing required field [FarmId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListFleets, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListFleets, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListFleets",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListFleetsOutcome>(
-      [&]() -> ListFleetsOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListFleets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListFleetsOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/fleets");
-        return ListFleetsOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/fleets");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListFleetsOutcome(result.GetResultWithOwnership()) : ListFleetsOutcome(std::move(result.GetError()));
 }
 
 ListJobMembersOutcome DeadlineClient::ListJobMembers(const ListJobMembersRequest& request) const {
-  AWS_OPERATION_GUARD(ListJobMembers);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListJobMembers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListJobMembers", "Required field: FarmId, is not set");
     return ListJobMembersOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -3299,97 +1981,56 @@ ListJobMembersOutcome DeadlineClient::ListJobMembers(const ListJobMembersRequest
     return ListJobMembersOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                        "Missing required field [JobId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListJobMembers, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListJobMembers, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListJobMembers",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListJobMembersOutcome>(
-      [&]() -> ListJobMembersOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListJobMembers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListJobMembersOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/members");
-        return ListJobMembersOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/members");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListJobMembersOutcome(result.GetResultWithOwnership()) : ListJobMembersOutcome(std::move(result.GetError()));
 }
 
 ListJobParameterDefinitionsOutcome DeadlineClient::ListJobParameterDefinitions(const ListJobParameterDefinitionsRequest& request) const {
-  AWS_OPERATION_GUARD(ListJobParameterDefinitions);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListJobParameterDefinitions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListJobParameterDefinitions", "Required field: FarmId, is not set");
     return ListJobParameterDefinitionsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                     "Missing required field [FarmId]", false));
-  }
-  if (!request.JobIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListJobParameterDefinitions", "Required field: JobId, is not set");
-    return ListJobParameterDefinitionsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                                    "Missing required field [JobId]", false));
   }
   if (!request.QueueIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListJobParameterDefinitions", "Required field: QueueId, is not set");
     return ListJobParameterDefinitionsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                     "Missing required field [QueueId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListJobParameterDefinitions, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListJobParameterDefinitions, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListJobParameterDefinitions",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListJobParameterDefinitionsOutcome>(
-      [&]() -> ListJobParameterDefinitionsOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListJobParameterDefinitions, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListJobParameterDefinitionsOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/parameter-definitions");
-        return ListJobParameterDefinitionsOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+  if (!request.JobIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListJobParameterDefinitions", "Required field: JobId, is not set");
+    return ListJobParameterDefinitionsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                    "Missing required field [JobId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/parameter-definitions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListJobParameterDefinitionsOutcome(result.GetResultWithOwnership())
+                            : ListJobParameterDefinitionsOutcome(std::move(result.GetError()));
 }
 
 ListJobsOutcome DeadlineClient::ListJobs(const ListJobsRequest& request) const {
-  AWS_OPERATION_GUARD(ListJobs);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListJobs", "Required field: FarmId, is not set");
     return ListJobsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -3400,184 +2041,79 @@ ListJobsOutcome DeadlineClient::ListJobs(const ListJobsRequest& request) const {
     return ListJobsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                  "Missing required field [QueueId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListJobs, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListJobs, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListJobs",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListJobsOutcome>(
-      [&]() -> ListJobsOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListJobsOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/jobs");
-        return ListJobsOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/jobs");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListJobsOutcome(result.GetResultWithOwnership()) : ListJobsOutcome(std::move(result.GetError()));
 }
 
 ListLicenseEndpointsOutcome DeadlineClient::ListLicenseEndpoints(const ListLicenseEndpointsRequest& request) const {
-  AWS_OPERATION_GUARD(ListLicenseEndpoints);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLicenseEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListLicenseEndpoints, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListLicenseEndpoints, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListLicenseEndpoints",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListLicenseEndpointsOutcome>(
-      [&]() -> ListLicenseEndpointsOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListLicenseEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListLicenseEndpointsOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/license-endpoints");
-        return ListLicenseEndpointsOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/license-endpoints");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListLicenseEndpointsOutcome(result.GetResultWithOwnership())
+                            : ListLicenseEndpointsOutcome(std::move(result.GetError()));
 }
 
 ListLimitsOutcome DeadlineClient::ListLimits(const ListLimitsRequest& request) const {
-  AWS_OPERATION_GUARD(ListLimits);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLimits, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListLimits", "Required field: FarmId, is not set");
     return ListLimitsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                    "Missing required field [FarmId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListLimits, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListLimits, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListLimits",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListLimitsOutcome>(
-      [&]() -> ListLimitsOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListLimits, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListLimitsOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/limits");
-        return ListLimitsOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/limits");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListLimitsOutcome(result.GetResultWithOwnership()) : ListLimitsOutcome(std::move(result.GetError()));
 }
 
 ListMeteredProductsOutcome DeadlineClient::ListMeteredProducts(const ListMeteredProductsRequest& request) const {
-  AWS_OPERATION_GUARD(ListMeteredProducts);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMeteredProducts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LicenseEndpointIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListMeteredProducts", "Required field: LicenseEndpointId, is not set");
     return ListMeteredProductsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                             "Missing required field [LicenseEndpointId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListMeteredProducts, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListMeteredProducts, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListMeteredProducts",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListMeteredProductsOutcome>(
-      [&]() -> ListMeteredProductsOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMeteredProducts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListMeteredProductsOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/license-endpoints/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLicenseEndpointId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/metered-products");
-        return ListMeteredProductsOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/license-endpoints/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLicenseEndpointId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/metered-products");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMeteredProductsOutcome(result.GetResultWithOwnership())
+                            : ListMeteredProductsOutcome(std::move(result.GetError()));
 }
 
 ListMonitorsOutcome DeadlineClient::ListMonitors(const ListMonitorsRequest& request) const {
-  AWS_OPERATION_GUARD(ListMonitors);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMonitors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListMonitors, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListMonitors, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListMonitors",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListMonitorsOutcome>(
-      [&]() -> ListMonitorsOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMonitors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListMonitorsOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/monitors");
-        return ListMonitorsOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/monitors");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMonitorsOutcome(result.GetResultWithOwnership()) : ListMonitorsOutcome(std::move(result.GetError()));
 }
 
 ListQueueEnvironmentsOutcome DeadlineClient::ListQueueEnvironments(const ListQueueEnvironmentsRequest& request) const {
-  AWS_OPERATION_GUARD(ListQueueEnvironments);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListQueueEnvironments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListQueueEnvironments", "Required field: FarmId, is not set");
     return ListQueueEnvironmentsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -3588,120 +2124,60 @@ ListQueueEnvironmentsOutcome DeadlineClient::ListQueueEnvironments(const ListQue
     return ListQueueEnvironmentsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                               "Missing required field [QueueId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListQueueEnvironments, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListQueueEnvironments, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListQueueEnvironments",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListQueueEnvironmentsOutcome>(
-      [&]() -> ListQueueEnvironmentsOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListQueueEnvironments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListQueueEnvironmentsOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/environments");
-        return ListQueueEnvironmentsOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/environments");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListQueueEnvironmentsOutcome(result.GetResultWithOwnership())
+                            : ListQueueEnvironmentsOutcome(std::move(result.GetError()));
 }
 
 ListQueueFleetAssociationsOutcome DeadlineClient::ListQueueFleetAssociations(const ListQueueFleetAssociationsRequest& request) const {
-  AWS_OPERATION_GUARD(ListQueueFleetAssociations);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListQueueFleetAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListQueueFleetAssociations", "Required field: FarmId, is not set");
     return ListQueueFleetAssociationsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                    "Missing required field [FarmId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListQueueFleetAssociations, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListQueueFleetAssociations, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListQueueFleetAssociations",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListQueueFleetAssociationsOutcome>(
-      [&]() -> ListQueueFleetAssociationsOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListQueueFleetAssociations, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListQueueFleetAssociationsOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queue-fleet-associations");
-        return ListQueueFleetAssociationsOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queue-fleet-associations");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListQueueFleetAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListQueueFleetAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListQueueLimitAssociationsOutcome DeadlineClient::ListQueueLimitAssociations(const ListQueueLimitAssociationsRequest& request) const {
-  AWS_OPERATION_GUARD(ListQueueLimitAssociations);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListQueueLimitAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListQueueLimitAssociations", "Required field: FarmId, is not set");
     return ListQueueLimitAssociationsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                    "Missing required field [FarmId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListQueueLimitAssociations, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListQueueLimitAssociations, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListQueueLimitAssociations",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListQueueLimitAssociationsOutcome>(
-      [&]() -> ListQueueLimitAssociationsOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListQueueLimitAssociations, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListQueueLimitAssociationsOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queue-limit-associations");
-        return ListQueueLimitAssociationsOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queue-limit-associations");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListQueueLimitAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListQueueLimitAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListQueueMembersOutcome DeadlineClient::ListQueueMembers(const ListQueueMembersRequest& request) const {
-  AWS_OPERATION_GUARD(ListQueueMembers);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListQueueMembers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListQueueMembers", "Required field: FarmId, is not set");
     return ListQueueMembersOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -3712,81 +2188,40 @@ ListQueueMembersOutcome DeadlineClient::ListQueueMembers(const ListQueueMembersR
     return ListQueueMembersOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                          "Missing required field [QueueId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListQueueMembers, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListQueueMembers, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListQueueMembers",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListQueueMembersOutcome>(
-      [&]() -> ListQueueMembersOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListQueueMembers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListQueueMembersOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/members");
-        return ListQueueMembersOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/members");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListQueueMembersOutcome(result.GetResultWithOwnership())
+                            : ListQueueMembersOutcome(std::move(result.GetError()));
 }
 
 ListQueuesOutcome DeadlineClient::ListQueues(const ListQueuesRequest& request) const {
-  AWS_OPERATION_GUARD(ListQueues);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListQueues, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListQueues", "Required field: FarmId, is not set");
     return ListQueuesOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                    "Missing required field [FarmId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListQueues, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListQueues, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListQueues",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListQueuesOutcome>(
-      [&]() -> ListQueuesOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListQueues, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListQueuesOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues");
-        return ListQueuesOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListQueuesOutcome(result.GetResultWithOwnership()) : ListQueuesOutcome(std::move(result.GetError()));
 }
 
 ListSessionActionsOutcome DeadlineClient::ListSessionActions(const ListSessionActionsRequest& request) const {
-  AWS_OPERATION_GUARD(ListSessionActions);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSessionActions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListSessionActions", "Required field: FarmId, is not set");
     return ListSessionActionsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -3802,44 +2237,24 @@ ListSessionActionsOutcome DeadlineClient::ListSessionActions(const ListSessionAc
     return ListSessionActionsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                            "Missing required field [JobId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListSessionActions, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListSessionActions, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListSessionActions",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListSessionActionsOutcome>(
-      [&]() -> ListSessionActionsOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSessionActions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListSessionActionsOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/session-actions");
-        return ListSessionActionsOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/session-actions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSessionActionsOutcome(result.GetResultWithOwnership())
+                            : ListSessionActionsOutcome(std::move(result.GetError()));
 }
 
 ListSessionsOutcome DeadlineClient::ListSessions(const ListSessionsRequest& request) const {
-  AWS_OPERATION_GUARD(ListSessions);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSessions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListSessions", "Required field: FarmId, is not set");
     return ListSessionsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -3855,44 +2270,23 @@ ListSessionsOutcome DeadlineClient::ListSessions(const ListSessionsRequest& requ
     return ListSessionsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                      "Missing required field [JobId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListSessions, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListSessions, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListSessions",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListSessionsOutcome>(
-      [&]() -> ListSessionsOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSessions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListSessionsOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/sessions");
-        return ListSessionsOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/sessions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSessionsOutcome(result.GetResultWithOwnership()) : ListSessionsOutcome(std::move(result.GetError()));
 }
 
 ListSessionsForWorkerOutcome DeadlineClient::ListSessionsForWorker(const ListSessionsForWorkerRequest& request) const {
-  AWS_OPERATION_GUARD(ListSessionsForWorker);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSessionsForWorker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListSessionsForWorker", "Required field: FarmId, is not set");
     return ListSessionsForWorkerOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -3908,44 +2302,24 @@ ListSessionsForWorkerOutcome DeadlineClient::ListSessionsForWorker(const ListSes
     return ListSessionsForWorkerOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                               "Missing required field [WorkerId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListSessionsForWorker, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListSessionsForWorker, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListSessionsForWorker",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListSessionsForWorkerOutcome>(
-      [&]() -> ListSessionsForWorkerOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSessionsForWorker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListSessionsForWorkerOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/workers/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkerId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/sessions");
-        return ListSessionsForWorkerOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workers/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkerId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/sessions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSessionsForWorkerOutcome(result.GetResultWithOwnership())
+                            : ListSessionsForWorkerOutcome(std::move(result.GetError()));
 }
 
 ListStepConsumersOutcome DeadlineClient::ListStepConsumers(const ListStepConsumersRequest& request) const {
-  AWS_OPERATION_GUARD(ListStepConsumers);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStepConsumers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListStepConsumers", "Required field: FarmId, is not set");
     return ListStepConsumersOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -3966,46 +2340,26 @@ ListStepConsumersOutcome DeadlineClient::ListStepConsumers(const ListStepConsume
     return ListStepConsumersOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                           "Missing required field [StepId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListStepConsumers, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListStepConsumers, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListStepConsumers",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListStepConsumersOutcome>(
-      [&]() -> ListStepConsumersOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListStepConsumers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListStepConsumersOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/steps/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStepId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/consumers");
-        return ListStepConsumersOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/steps/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStepId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/consumers");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListStepConsumersOutcome(result.GetResultWithOwnership())
+                            : ListStepConsumersOutcome(std::move(result.GetError()));
 }
 
 ListStepDependenciesOutcome DeadlineClient::ListStepDependencies(const ListStepDependenciesRequest& request) const {
-  AWS_OPERATION_GUARD(ListStepDependencies);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStepDependencies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListStepDependencies", "Required field: FarmId, is not set");
     return ListStepDependenciesOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -4026,46 +2380,26 @@ ListStepDependenciesOutcome DeadlineClient::ListStepDependencies(const ListStepD
     return ListStepDependenciesOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                              "Missing required field [StepId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListStepDependencies, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListStepDependencies, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListStepDependencies",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListStepDependenciesOutcome>(
-      [&]() -> ListStepDependenciesOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListStepDependencies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListStepDependenciesOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/steps/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStepId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/dependencies");
-        return ListStepDependenciesOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/steps/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStepId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/dependencies");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListStepDependenciesOutcome(result.GetResultWithOwnership())
+                            : ListStepDependenciesOutcome(std::move(result.GetError()));
 }
 
 ListStepsOutcome DeadlineClient::ListSteps(const ListStepsRequest& request) const {
-  AWS_OPERATION_GUARD(ListSteps);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSteps, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListSteps", "Required field: FarmId, is not set");
     return ListStepsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -4081,83 +2415,42 @@ ListStepsOutcome DeadlineClient::ListSteps(const ListStepsRequest& request) cons
     return ListStepsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                   "Missing required field [JobId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListSteps, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListSteps, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListSteps",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListStepsOutcome>(
-      [&]() -> ListStepsOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSteps, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListStepsOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/steps");
-        return ListStepsOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/steps");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListStepsOutcome(result.GetResultWithOwnership()) : ListStepsOutcome(std::move(result.GetError()));
 }
 
 ListStorageProfilesOutcome DeadlineClient::ListStorageProfiles(const ListStorageProfilesRequest& request) const {
-  AWS_OPERATION_GUARD(ListStorageProfiles);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStorageProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListStorageProfiles", "Required field: FarmId, is not set");
     return ListStorageProfilesOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                             "Missing required field [FarmId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListStorageProfiles, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListStorageProfiles, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListStorageProfiles",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListStorageProfilesOutcome>(
-      [&]() -> ListStorageProfilesOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListStorageProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListStorageProfilesOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/storage-profiles");
-        return ListStorageProfilesOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/storage-profiles");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListStorageProfilesOutcome(result.GetResultWithOwnership())
+                            : ListStorageProfilesOutcome(std::move(result.GetError()));
 }
 
 ListStorageProfilesForQueueOutcome DeadlineClient::ListStorageProfilesForQueue(const ListStorageProfilesForQueueRequest& request) const {
-  AWS_OPERATION_GUARD(ListStorageProfilesForQueue);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStorageProfilesForQueue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListStorageProfilesForQueue", "Required field: FarmId, is not set");
     return ListStorageProfilesForQueueOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -4168,80 +2461,40 @@ ListStorageProfilesForQueueOutcome DeadlineClient::ListStorageProfilesForQueue(c
     return ListStorageProfilesForQueueOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                     "Missing required field [QueueId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListStorageProfilesForQueue, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListStorageProfilesForQueue, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListStorageProfilesForQueue",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListStorageProfilesForQueueOutcome>(
-      [&]() -> ListStorageProfilesForQueueOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListStorageProfilesForQueue, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListStorageProfilesForQueueOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/storage-profiles");
-        return ListStorageProfilesForQueueOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/storage-profiles");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListStorageProfilesForQueueOutcome(result.GetResultWithOwnership())
+                            : ListStorageProfilesForQueueOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome DeadlineClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  AWS_OPERATION_GUARD(ListTagsForResource);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
     return ListTagsForResourceOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                             "Missing required field [ResourceArn]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListTagsForResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListTagsForResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListTagsForResource",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListTagsForResourceOutcome>(
-      [&]() -> ListTagsForResourceOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListTagsForResourceOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/tags/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
-        return ListTagsForResourceOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/tags/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTasksOutcome DeadlineClient::ListTasks(const ListTasksRequest& request) const {
-  AWS_OPERATION_GUARD(ListTasks);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListTasks", "Required field: FarmId, is not set");
     return ListTasksOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -4262,46 +2515,25 @@ ListTasksOutcome DeadlineClient::ListTasks(const ListTasksRequest& request) cons
     return ListTasksOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                   "Missing required field [StepId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListTasks, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListTasks, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListTasks",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListTasksOutcome>(
-      [&]() -> ListTasksOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListTasksOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/steps/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStepId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/tasks");
-        return ListTasksOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/steps/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStepId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/tasks");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTasksOutcome(result.GetResultWithOwnership()) : ListTasksOutcome(std::move(result.GetError()));
 }
 
 ListWorkersOutcome DeadlineClient::ListWorkers(const ListWorkersRequest& request) const {
-  AWS_OPERATION_GUARD(ListWorkers);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListWorkers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListWorkers", "Required field: FarmId, is not set");
     return ListWorkersOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -4312,42 +2544,21 @@ ListWorkersOutcome DeadlineClient::ListWorkers(const ListWorkersRequest& request
     return ListWorkersOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                     "Missing required field [FleetId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListWorkers, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListWorkers, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListWorkers",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListWorkersOutcome>(
-      [&]() -> ListWorkersOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListWorkers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListWorkersOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/workers");
-        return ListWorkersOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workers");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListWorkersOutcome(result.GetResultWithOwnership()) : ListWorkersOutcome(std::move(result.GetError()));
 }
 
 PutMeteredProductOutcome DeadlineClient::PutMeteredProduct(const PutMeteredProductRequest& request) const {
-  AWS_OPERATION_GUARD(PutMeteredProduct);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutMeteredProduct, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LicenseEndpointIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("PutMeteredProduct", "Required field: LicenseEndpointId, is not set");
     return PutMeteredProductOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -4358,275 +2569,130 @@ PutMeteredProductOutcome DeadlineClient::PutMeteredProduct(const PutMeteredProdu
     return PutMeteredProductOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                           "Missing required field [ProductId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutMeteredProduct, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, PutMeteredProduct, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PutMeteredProduct",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<PutMeteredProductOutcome>(
-      [&]() -> PutMeteredProductOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutMeteredProduct, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), PutMeteredProductOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/license-endpoints/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLicenseEndpointId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/metered-products/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProductId());
-        return PutMeteredProductOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/license-endpoints/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLicenseEndpointId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/metered-products/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProductId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutMeteredProductOutcome(result.GetResultWithOwnership())
+                            : PutMeteredProductOutcome(std::move(result.GetError()));
 }
 
 SearchJobsOutcome DeadlineClient::SearchJobs(const SearchJobsRequest& request) const {
-  AWS_OPERATION_GUARD(SearchJobs);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("SearchJobs", "Required field: FarmId, is not set");
     return SearchJobsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                    "Missing required field [FarmId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, SearchJobs, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, SearchJobs, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".SearchJobs",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<SearchJobsOutcome>(
-      [&]() -> SearchJobsOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SearchJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), SearchJobsOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/search/jobs");
-        return SearchJobsOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/search/jobs");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchJobsOutcome(result.GetResultWithOwnership()) : SearchJobsOutcome(std::move(result.GetError()));
 }
 
 SearchStepsOutcome DeadlineClient::SearchSteps(const SearchStepsRequest& request) const {
-  AWS_OPERATION_GUARD(SearchSteps);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchSteps, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("SearchSteps", "Required field: FarmId, is not set");
     return SearchStepsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                     "Missing required field [FarmId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, SearchSteps, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, SearchSteps, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".SearchSteps",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<SearchStepsOutcome>(
-      [&]() -> SearchStepsOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SearchSteps, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), SearchStepsOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/search/steps");
-        return SearchStepsOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/search/steps");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchStepsOutcome(result.GetResultWithOwnership()) : SearchStepsOutcome(std::move(result.GetError()));
 }
 
 SearchTasksOutcome DeadlineClient::SearchTasks(const SearchTasksRequest& request) const {
-  AWS_OPERATION_GUARD(SearchTasks);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("SearchTasks", "Required field: FarmId, is not set");
     return SearchTasksOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                     "Missing required field [FarmId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, SearchTasks, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, SearchTasks, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".SearchTasks",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<SearchTasksOutcome>(
-      [&]() -> SearchTasksOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SearchTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), SearchTasksOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/search/tasks");
-        return SearchTasksOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/search/tasks");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchTasksOutcome(result.GetResultWithOwnership()) : SearchTasksOutcome(std::move(result.GetError()));
 }
 
 SearchWorkersOutcome DeadlineClient::SearchWorkers(const SearchWorkersRequest& request) const {
-  AWS_OPERATION_GUARD(SearchWorkers);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchWorkers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("SearchWorkers", "Required field: FarmId, is not set");
     return SearchWorkersOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                       "Missing required field [FarmId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, SearchWorkers, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, SearchWorkers, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".SearchWorkers",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<SearchWorkersOutcome>(
-      [&]() -> SearchWorkersOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SearchWorkers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), SearchWorkersOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/search/workers");
-        return SearchWorkersOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/search/workers");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchWorkersOutcome(result.GetResultWithOwnership()) : SearchWorkersOutcome(std::move(result.GetError()));
 }
 
 StartSessionsStatisticsAggregationOutcome DeadlineClient::StartSessionsStatisticsAggregation(
     const StartSessionsStatisticsAggregationRequest& request) const {
-  AWS_OPERATION_GUARD(StartSessionsStatisticsAggregation);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartSessionsStatisticsAggregation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("StartSessionsStatisticsAggregation", "Required field: FarmId, is not set");
     return StartSessionsStatisticsAggregationOutcome(Aws::Client::AWSError<DeadlineErrors>(
         DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartSessionsStatisticsAggregation, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, StartSessionsStatisticsAggregation, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StartSessionsStatisticsAggregation",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<StartSessionsStatisticsAggregationOutcome>(
-      [&]() -> StartSessionsStatisticsAggregationOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartSessionsStatisticsAggregation, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), StartSessionsStatisticsAggregationOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/sessions-statistics-aggregation");
-        return StartSessionsStatisticsAggregationOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/sessions-statistics-aggregation");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartSessionsStatisticsAggregationOutcome(result.GetResultWithOwnership())
+                            : StartSessionsStatisticsAggregationOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome DeadlineClient::TagResource(const TagResourceRequest& request) const {
-  AWS_OPERATION_GUARD(TagResource);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("TagResource", "Required field: ResourceArn, is not set");
     return TagResourceOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                     "Missing required field [ResourceArn]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, TagResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, TagResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".TagResource",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<TagResourceOutcome>(
-      [&]() -> TagResourceOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), TagResourceOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/tags/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
-        return TagResourceOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/tags/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome DeadlineClient::UntagResource(const UntagResourceRequest& request) const {
-  AWS_OPERATION_GUARD(UntagResource);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("UntagResource", "Required field: ResourceArn, is not set");
     return UntagResourceOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -4637,39 +2703,18 @@ UntagResourceOutcome DeadlineClient::UntagResource(const UntagResourceRequest& r
     return UntagResourceOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                       "Missing required field [TagKeys]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UntagResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, UntagResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UntagResource",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<UntagResourceOutcome>(
-      [&]() -> UntagResourceOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UntagResourceOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/tags/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
-        return UntagResourceOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/tags/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateBudgetOutcome DeadlineClient::UpdateBudget(const UpdateBudgetRequest& request) const {
-  AWS_OPERATION_GUARD(UpdateBudget);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateBudget, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("UpdateBudget", "Required field: FarmId, is not set");
     return UpdateBudgetOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -4680,79 +2725,37 @@ UpdateBudgetOutcome DeadlineClient::UpdateBudget(const UpdateBudgetRequest& requ
     return UpdateBudgetOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                      "Missing required field [BudgetId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateBudget, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, UpdateBudget, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateBudget",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<UpdateBudgetOutcome>(
-      [&]() -> UpdateBudgetOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateBudget, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateBudgetOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/budgets/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBudgetId());
-        return UpdateBudgetOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/budgets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBudgetId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateBudgetOutcome(result.GetResultWithOwnership()) : UpdateBudgetOutcome(std::move(result.GetError()));
 }
 
 UpdateFarmOutcome DeadlineClient::UpdateFarm(const UpdateFarmRequest& request) const {
-  AWS_OPERATION_GUARD(UpdateFarm);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFarm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("UpdateFarm", "Required field: FarmId, is not set");
     return UpdateFarmOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                    "Missing required field [FarmId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateFarm, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, UpdateFarm, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateFarm",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<UpdateFarmOutcome>(
-      [&]() -> UpdateFarmOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateFarm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateFarmOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        return UpdateFarmOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateFarmOutcome(result.GetResultWithOwnership()) : UpdateFarmOutcome(std::move(result.GetError()));
 }
 
 UpdateFleetOutcome DeadlineClient::UpdateFleet(const UpdateFleetRequest& request) const {
-  AWS_OPERATION_GUARD(UpdateFleet);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFleet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("UpdateFleet", "Required field: FarmId, is not set");
     return UpdateFleetOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -4763,41 +2766,20 @@ UpdateFleetOutcome DeadlineClient::UpdateFleet(const UpdateFleetRequest& request
     return UpdateFleetOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                     "Missing required field [FleetId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateFleet, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, UpdateFleet, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateFleet",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<UpdateFleetOutcome>(
-      [&]() -> UpdateFleetOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateFleet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateFleetOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
-        return UpdateFleetOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateFleetOutcome(result.GetResultWithOwnership()) : UpdateFleetOutcome(std::move(result.GetError()));
 }
 
 UpdateJobOutcome DeadlineClient::UpdateJob(const UpdateJobRequest& request) const {
-  AWS_OPERATION_GUARD(UpdateJob);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("UpdateJob", "Required field: FarmId, is not set");
     return UpdateJobOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -4813,43 +2795,22 @@ UpdateJobOutcome DeadlineClient::UpdateJob(const UpdateJobRequest& request) cons
     return UpdateJobOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                   "Missing required field [JobId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, UpdateJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateJob",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<UpdateJobOutcome>(
-      [&]() -> UpdateJobOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateJobOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
-        return UpdateJobOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateJobOutcome(result.GetResultWithOwnership()) : UpdateJobOutcome(std::move(result.GetError()));
 }
 
 UpdateLimitOutcome DeadlineClient::UpdateLimit(const UpdateLimitRequest& request) const {
-  AWS_OPERATION_GUARD(UpdateLimit);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateLimit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("UpdateLimit", "Required field: FarmId, is not set");
     return UpdateLimitOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -4860,79 +2821,37 @@ UpdateLimitOutcome DeadlineClient::UpdateLimit(const UpdateLimitRequest& request
     return UpdateLimitOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                     "Missing required field [LimitId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateLimit, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, UpdateLimit, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateLimit",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<UpdateLimitOutcome>(
-      [&]() -> UpdateLimitOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateLimit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateLimitOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/limits/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLimitId());
-        return UpdateLimitOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/limits/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLimitId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateLimitOutcome(result.GetResultWithOwnership()) : UpdateLimitOutcome(std::move(result.GetError()));
 }
 
 UpdateMonitorOutcome DeadlineClient::UpdateMonitor(const UpdateMonitorRequest& request) const {
-  AWS_OPERATION_GUARD(UpdateMonitor);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateMonitor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MonitorIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("UpdateMonitor", "Required field: MonitorId, is not set");
     return UpdateMonitorOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                       "Missing required field [MonitorId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateMonitor, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, UpdateMonitor, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateMonitor",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<UpdateMonitorOutcome>(
-      [&]() -> UpdateMonitorOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateMonitor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateMonitorOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/monitors/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMonitorId());
-        return UpdateMonitorOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/monitors/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMonitorId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateMonitorOutcome(result.GetResultWithOwnership()) : UpdateMonitorOutcome(std::move(result.GetError()));
 }
 
 UpdateQueueOutcome DeadlineClient::UpdateQueue(const UpdateQueueRequest& request) const {
-  AWS_OPERATION_GUARD(UpdateQueue);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateQueue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("UpdateQueue", "Required field: FarmId, is not set");
     return UpdateQueueOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -4943,41 +2862,20 @@ UpdateQueueOutcome DeadlineClient::UpdateQueue(const UpdateQueueRequest& request
     return UpdateQueueOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                     "Missing required field [QueueId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateQueue, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, UpdateQueue, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateQueue",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<UpdateQueueOutcome>(
-      [&]() -> UpdateQueueOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateQueue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateQueueOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        return UpdateQueueOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateQueueOutcome(result.GetResultWithOwnership()) : UpdateQueueOutcome(std::move(result.GetError()));
 }
 
 UpdateQueueEnvironmentOutcome DeadlineClient::UpdateQueueEnvironment(const UpdateQueueEnvironmentRequest& request) const {
-  AWS_OPERATION_GUARD(UpdateQueueEnvironment);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateQueueEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("UpdateQueueEnvironment", "Required field: FarmId, is not set");
     return UpdateQueueEnvironmentOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -4993,43 +2891,23 @@ UpdateQueueEnvironmentOutcome DeadlineClient::UpdateQueueEnvironment(const Updat
     return UpdateQueueEnvironmentOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                "Missing required field [QueueEnvironmentId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateQueueEnvironment, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, UpdateQueueEnvironment, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateQueueEnvironment",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<UpdateQueueEnvironmentOutcome>(
-      [&]() -> UpdateQueueEnvironmentOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateQueueEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateQueueEnvironmentOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueEnvironmentId());
-        return UpdateQueueEnvironmentOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueEnvironmentId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateQueueEnvironmentOutcome(result.GetResultWithOwnership())
+                            : UpdateQueueEnvironmentOutcome(std::move(result.GetError()));
 }
 
 UpdateQueueFleetAssociationOutcome DeadlineClient::UpdateQueueFleetAssociation(const UpdateQueueFleetAssociationRequest& request) const {
-  AWS_OPERATION_GUARD(UpdateQueueFleetAssociation);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateQueueFleetAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("UpdateQueueFleetAssociation", "Required field: FarmId, is not set");
     return UpdateQueueFleetAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -5045,42 +2923,22 @@ UpdateQueueFleetAssociationOutcome DeadlineClient::UpdateQueueFleetAssociation(c
     return UpdateQueueFleetAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                     "Missing required field [FleetId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateQueueFleetAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, UpdateQueueFleetAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateQueueFleetAssociation",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<UpdateQueueFleetAssociationOutcome>(
-      [&]() -> UpdateQueueFleetAssociationOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateQueueFleetAssociation, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateQueueFleetAssociationOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queue-fleet-associations/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
-        return UpdateQueueFleetAssociationOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queue-fleet-associations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateQueueFleetAssociationOutcome(result.GetResultWithOwnership())
+                            : UpdateQueueFleetAssociationOutcome(std::move(result.GetError()));
 }
 
 UpdateQueueLimitAssociationOutcome DeadlineClient::UpdateQueueLimitAssociation(const UpdateQueueLimitAssociationRequest& request) const {
-  AWS_OPERATION_GUARD(UpdateQueueLimitAssociation);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateQueueLimitAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("UpdateQueueLimitAssociation", "Required field: FarmId, is not set");
     return UpdateQueueLimitAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -5096,42 +2954,22 @@ UpdateQueueLimitAssociationOutcome DeadlineClient::UpdateQueueLimitAssociation(c
     return UpdateQueueLimitAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                     "Missing required field [LimitId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateQueueLimitAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, UpdateQueueLimitAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateQueueLimitAssociation",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<UpdateQueueLimitAssociationOutcome>(
-      [&]() -> UpdateQueueLimitAssociationOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateQueueLimitAssociation, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateQueueLimitAssociationOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queue-limit-associations/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLimitId());
-        return UpdateQueueLimitAssociationOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queue-limit-associations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLimitId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateQueueLimitAssociationOutcome(result.GetResultWithOwnership())
+                            : UpdateQueueLimitAssociationOutcome(std::move(result.GetError()));
 }
 
 UpdateSessionOutcome DeadlineClient::UpdateSession(const UpdateSessionRequest& request) const {
-  AWS_OPERATION_GUARD(UpdateSession);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("UpdateSession", "Required field: FarmId, is not set");
     return UpdateSessionOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -5152,45 +2990,24 @@ UpdateSessionOutcome DeadlineClient::UpdateSession(const UpdateSessionRequest& r
     return UpdateSessionOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                       "Missing required field [SessionId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateSession, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, UpdateSession, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateSession",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<UpdateSessionOutcome>(
-      [&]() -> UpdateSessionOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateSessionOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/sessions/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
-        return UpdateSessionOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/sessions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateSessionOutcome(result.GetResultWithOwnership()) : UpdateSessionOutcome(std::move(result.GetError()));
 }
 
 UpdateStepOutcome DeadlineClient::UpdateStep(const UpdateStepRequest& request) const {
-  AWS_OPERATION_GUARD(UpdateStep);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateStep, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("UpdateStep", "Required field: FarmId, is not set");
     return UpdateStepOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -5211,45 +3028,24 @@ UpdateStepOutcome DeadlineClient::UpdateStep(const UpdateStepRequest& request) c
     return UpdateStepOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                    "Missing required field [StepId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateStep, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, UpdateStep, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateStep",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<UpdateStepOutcome>(
-      [&]() -> UpdateStepOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateStep, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateStepOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/steps/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStepId());
-        return UpdateStepOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/steps/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStepId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateStepOutcome(result.GetResultWithOwnership()) : UpdateStepOutcome(std::move(result.GetError()));
 }
 
 UpdateStorageProfileOutcome DeadlineClient::UpdateStorageProfile(const UpdateStorageProfileRequest& request) const {
-  AWS_OPERATION_GUARD(UpdateStorageProfile);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateStorageProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("UpdateStorageProfile", "Required field: FarmId, is not set");
     return UpdateStorageProfileOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -5260,41 +3056,21 @@ UpdateStorageProfileOutcome DeadlineClient::UpdateStorageProfile(const UpdateSto
     return UpdateStorageProfileOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                              "Missing required field [StorageProfileId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateStorageProfile, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, UpdateStorageProfile, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateStorageProfile",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<UpdateStorageProfileOutcome>(
-      [&]() -> UpdateStorageProfileOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateStorageProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateStorageProfileOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/storage-profiles/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStorageProfileId());
-        return UpdateStorageProfileOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/storage-profiles/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStorageProfileId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateStorageProfileOutcome(result.GetResultWithOwnership())
+                            : UpdateStorageProfileOutcome(std::move(result.GetError()));
 }
 
 UpdateTaskOutcome DeadlineClient::UpdateTask(const UpdateTaskRequest& request) const {
-  AWS_OPERATION_GUARD(UpdateTask);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("UpdateTask", "Required field: FarmId, is not set");
     return UpdateTaskOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -5320,47 +3096,26 @@ UpdateTaskOutcome DeadlineClient::UpdateTask(const UpdateTaskRequest& request) c
     return UpdateTaskOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                    "Missing required field [TaskId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateTask, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, UpdateTask, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateTask",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<UpdateTaskOutcome>(
-      [&]() -> UpdateTaskOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("management.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateTaskOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/steps/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStepId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/tasks/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTaskId());
-        return UpdateTaskOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/steps/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStepId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/tasks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTaskId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateTaskOutcome(result.GetResultWithOwnership()) : UpdateTaskOutcome(std::move(result.GetError()));
 }
 
 UpdateWorkerOutcome DeadlineClient::UpdateWorker(const UpdateWorkerRequest& request) const {
-  AWS_OPERATION_GUARD(UpdateWorker);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateWorker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("UpdateWorker", "Required field: FarmId, is not set");
     return UpdateWorkerOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -5376,43 +3131,22 @@ UpdateWorkerOutcome DeadlineClient::UpdateWorker(const UpdateWorkerRequest& requ
     return UpdateWorkerOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                      "Missing required field [WorkerId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateWorker, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, UpdateWorker, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateWorker",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<UpdateWorkerOutcome>(
-      [&]() -> UpdateWorkerOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateWorker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("scheduling.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateWorkerOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/workers/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkerId());
-        return UpdateWorkerOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workers/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkerId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateWorkerOutcome(result.GetResultWithOwnership()) : UpdateWorkerOutcome(std::move(result.GetError()));
 }
 
 UpdateWorkerScheduleOutcome DeadlineClient::UpdateWorkerSchedule(const UpdateWorkerScheduleRequest& request) const {
-  AWS_OPERATION_GUARD(UpdateWorkerSchedule);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateWorkerSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("UpdateWorkerSchedule", "Required field: FarmId, is not set");
     return UpdateWorkerScheduleOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -5428,37 +3162,19 @@ UpdateWorkerScheduleOutcome DeadlineClient::UpdateWorkerSchedule(const UpdateWor
     return UpdateWorkerScheduleOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                              "Missing required field [WorkerId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateWorkerSchedule, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, UpdateWorkerSchedule, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateWorkerSchedule",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<UpdateWorkerScheduleOutcome>(
-      [&]() -> UpdateWorkerScheduleOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateWorkerSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("scheduling.");
-        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateWorkerScheduleOutcome(addPrefixErr.value()));
-        endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/workers/");
-        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkerId());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/schedule");
-        return UpdateWorkerScheduleOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/fleets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workers/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkerId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/schedule");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateWorkerScheduleOutcome(result.GetResultWithOwnership())
+                            : UpdateWorkerScheduleOutcome(std::move(result.GetError()));
 }

@@ -89,6 +89,24 @@ class ReplicaDescription {
 
   ///@{
   /**
+   * <p>The Amazon Resource Name (ARN) of the global table replica.</p>
+   */
+  inline const Aws::String& GetReplicaArn() const { return m_replicaArn; }
+  inline bool ReplicaArnHasBeenSet() const { return m_replicaArnHasBeenSet; }
+  template <typename ReplicaArnT = Aws::String>
+  void SetReplicaArn(ReplicaArnT&& value) {
+    m_replicaArnHasBeenSet = true;
+    m_replicaArn = std::forward<ReplicaArnT>(value);
+  }
+  template <typename ReplicaArnT = Aws::String>
+  ReplicaDescription& WithReplicaArn(ReplicaArnT&& value) {
+    SetReplicaArn(std::forward<ReplicaArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Detailed information about the replica status.</p>
    */
   inline const Aws::String& GetReplicaStatusDescription() const { return m_replicaStatusDescription; }
@@ -285,6 +303,8 @@ class ReplicaDescription {
 
   ReplicaStatus m_replicaStatus{ReplicaStatus::NOT_SET};
 
+  Aws::String m_replicaArn;
+
   Aws::String m_replicaStatusDescription;
 
   Aws::String m_replicaStatusPercentProgress;
@@ -306,6 +326,7 @@ class ReplicaDescription {
   GlobalTableSettingsReplicationMode m_globalTableSettingsReplicationMode{GlobalTableSettingsReplicationMode::NOT_SET};
   bool m_regionNameHasBeenSet = false;
   bool m_replicaStatusHasBeenSet = false;
+  bool m_replicaArnHasBeenSet = false;
   bool m_replicaStatusDescriptionHasBeenSet = false;
   bool m_replicaStatusPercentProgressHasBeenSet = false;
   bool m_kMSMasterKeyIdHasBeenSet = false;

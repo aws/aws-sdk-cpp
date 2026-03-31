@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore/BedrockAgentCorePaginationBase.h>
 #include <aws/bedrock-agentcore/BedrockAgentCoreServiceClientModel.h>
+#include <aws/bedrock-agentcore/BedrockAgentCoreWaiter.h>
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -21,7 +22,8 @@ namespace BedrockAgentCore {
  */
 class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJsonClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<BedrockAgentCoreClient>,
-                                                        public BedrockAgentCorePaginationBase<BedrockAgentCoreClient> {
+                                                        public BedrockAgentCorePaginationBase<BedrockAgentCoreClient>,
+                                                        public BedrockAgentCoreWaiter<BedrockAgentCoreClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -611,13 +613,15 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
 
   /**
    * <p>Sends a request to an agent or tool hosted in an Amazon Bedrock AgentCore
-   * Runtime and receives responses in real-time. </p> <p>To invoke an agent you must
-   * specify the AgentCore Runtime ARN and provide a payload containing your request.
-   * You can optionally specify a qualifier to target a specific version or endpoint
-   * of the agent.</p> <p>This operation supports streaming responses, allowing you
-   * to receive partial responses as they become available. We recommend using
-   * pagination to ensure that the operation returns quickly and successfully when
-   * processing large responses.</p> <p>For example code, see <a
+   * Runtime and receives responses in real-time. </p> <p>To invoke an agent, you can
+   * specify either the AgentCore Runtime ARN or the agent ID with an account ID, and
+   * provide a payload containing your request. When you use the agent ID instead of
+   * the full ARN, you don't need to URL-encode the identifier. You can optionally
+   * specify a qualifier to target a specific endpoint of the agent.</p> <p>This
+   * operation supports streaming responses, allowing you to receive partial
+   * responses as they become available. We recommend using pagination to ensure that
+   * the operation returns quickly and successfully when processing large
+   * responses.</p> <p>For example code, see <a
    * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-invoke-agent.html">Invoke
    * an AgentCore Runtime agent</a>. </p> <p>If you're integrating your agent with
    * OAuth, you can't use the Amazon Web Services SDK to call
@@ -654,6 +658,42 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   void InvokeAgentRuntimeAsync(const InvokeAgentRuntimeRequestT& request, const InvokeAgentRuntimeResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreClient::InvokeAgentRuntime, request, handler, context);
+  }
+
+  /**
+   * <p>Executes a command in a runtime session container and streams the output back
+   * to the caller. This operation allows you to run shell commands within the agent
+   * runtime environment and receive real-time streaming responses including standard
+   * output and standard error.</p> <p>To invoke a command, you must specify the
+   * agent runtime ARN and a runtime session ID. The command execution supports
+   * streaming responses, allowing you to receive output as it becomes available
+   * through <code>contentStart</code>, <code>contentDelta</code>, and
+   * <code>contentStop</code> events.</p> <p>To use this operation, you must have the
+   * <code>bedrock-agentcore:InvokeAgentRuntimeCommand</code>
+   * permission.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/InvokeAgentRuntimeCommand">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::InvokeAgentRuntimeCommandOutcome InvokeAgentRuntimeCommand(Model::InvokeAgentRuntimeCommandRequest& request) const;
+
+  /**
+   * A Callable wrapper for InvokeAgentRuntimeCommand that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename InvokeAgentRuntimeCommandRequestT = Model::InvokeAgentRuntimeCommandRequest>
+  Model::InvokeAgentRuntimeCommandOutcomeCallable InvokeAgentRuntimeCommandCallable(InvokeAgentRuntimeCommandRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::InvokeAgentRuntimeCommand, request);
+  }
+
+  /**
+   * An Async wrapper for InvokeAgentRuntimeCommand that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename InvokeAgentRuntimeCommandRequestT = Model::InvokeAgentRuntimeCommandRequest>
+  void InvokeAgentRuntimeCommandAsync(InvokeAgentRuntimeCommandRequestT& request,
+                                      const InvokeAgentRuntimeCommandResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::InvokeAgentRuntimeCommand, request, handler, context);
   }
 
   /**
@@ -1245,6 +1285,12 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BedrockAgentCoreClient>;
   void init(const BedrockAgentCoreClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, BedrockAgentCoreError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   BedrockAgentCoreClientConfiguration m_clientConfiguration;
   std::shared_ptr<BedrockAgentCoreEndpointProviderBase> m_endpointProvider;

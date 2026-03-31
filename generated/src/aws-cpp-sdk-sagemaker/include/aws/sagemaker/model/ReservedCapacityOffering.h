@@ -208,6 +208,42 @@ class ReservedCapacityOffering {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The start time of the extension for the reserved capacity offering.</p>
+   */
+  inline const Aws::Utils::DateTime& GetExtensionStartTime() const { return m_extensionStartTime; }
+  inline bool ExtensionStartTimeHasBeenSet() const { return m_extensionStartTimeHasBeenSet; }
+  template <typename ExtensionStartTimeT = Aws::Utils::DateTime>
+  void SetExtensionStartTime(ExtensionStartTimeT&& value) {
+    m_extensionStartTimeHasBeenSet = true;
+    m_extensionStartTime = std::forward<ExtensionStartTimeT>(value);
+  }
+  template <typename ExtensionStartTimeT = Aws::Utils::DateTime>
+  ReservedCapacityOffering& WithExtensionStartTime(ExtensionStartTimeT&& value) {
+    SetExtensionStartTime(std::forward<ExtensionStartTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The end time of the extension for the reserved capacity offering.</p>
+   */
+  inline const Aws::Utils::DateTime& GetExtensionEndTime() const { return m_extensionEndTime; }
+  inline bool ExtensionEndTimeHasBeenSet() const { return m_extensionEndTimeHasBeenSet; }
+  template <typename ExtensionEndTimeT = Aws::Utils::DateTime>
+  void SetExtensionEndTime(ExtensionEndTimeT&& value) {
+    m_extensionEndTimeHasBeenSet = true;
+    m_extensionEndTime = std::forward<ExtensionEndTimeT>(value);
+  }
+  template <typename ExtensionEndTimeT = Aws::Utils::DateTime>
+  ReservedCapacityOffering& WithExtensionEndTime(ExtensionEndTimeT&& value) {
+    SetExtensionEndTime(std::forward<ExtensionEndTimeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ReservedCapacityType m_reservedCapacityType{ReservedCapacityType::NOT_SET};
 
@@ -228,6 +264,10 @@ class ReservedCapacityOffering {
   Aws::Utils::DateTime m_startTime{};
 
   Aws::Utils::DateTime m_endTime{};
+
+  Aws::Utils::DateTime m_extensionStartTime{};
+
+  Aws::Utils::DateTime m_extensionEndTime{};
   bool m_reservedCapacityTypeHasBeenSet = false;
   bool m_ultraServerTypeHasBeenSet = false;
   bool m_ultraServerCountHasBeenSet = false;
@@ -238,6 +278,8 @@ class ReservedCapacityOffering {
   bool m_durationMinutesHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
+  bool m_extensionStartTimeHasBeenSet = false;
+  bool m_extensionEndTimeHasBeenSet = false;
 };
 
 }  // namespace Model

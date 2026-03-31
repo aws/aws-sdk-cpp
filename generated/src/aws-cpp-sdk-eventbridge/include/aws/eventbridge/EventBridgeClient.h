@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/eventbridge/EventBridgePaginationBase.h>
 #include <aws/eventbridge/EventBridgeServiceClientModel.h>
+#include <aws/eventbridge/EventBridgeWaiter.h>
 #include <aws/eventbridge/EventBridge_EXPORTS.h>
 
 namespace Aws {
@@ -32,7 +33,8 @@ namespace EventBridge {
  */
 class AWS_EVENTBRIDGE_API EventBridgeClient : public Aws::Client::AWSJsonClient,
                                               public Aws::Client::ClientWithAsyncTemplateMethods<EventBridgeClient>,
-                                              public EventBridgePaginationBase<EventBridgeClient> {
+                                              public EventBridgePaginationBase<EventBridgeClient>,
+                                              public EventBridgeWaiter<EventBridgeClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1933,6 +1935,10 @@ class AWS_EVENTBRIDGE_API EventBridgeClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<EventBridgeClient>;
   void init(const EventBridgeClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, EventBridgeError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   EventBridgeClientConfiguration m_clientConfiguration;
   std::shared_ptr<EventBridgeEndpointProviderBase> m_endpointProvider;

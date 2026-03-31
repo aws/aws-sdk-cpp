@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/secretsmanager/SecretsManagerPaginationBase.h>
 #include <aws/secretsmanager/SecretsManagerServiceClientModel.h>
+#include <aws/secretsmanager/SecretsManagerWaiter.h>
 #include <aws/secretsmanager/SecretsManager_EXPORTS.h>
 
 namespace Aws {
@@ -50,7 +51,8 @@ namespace SecretsManager {
  */
 class AWS_SECRETSMANAGER_API SecretsManagerClient : public Aws::Client::AWSJsonClient,
                                                     public Aws::Client::ClientWithAsyncTemplateMethods<SecretsManagerClient>,
-                                                    public SecretsManagerPaginationBase<SecretsManagerClient> {
+                                                    public SecretsManagerPaginationBase<SecretsManagerClient>,
+                                                    public SecretsManagerWaiter<SecretsManagerClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1205,6 +1207,10 @@ class AWS_SECRETSMANAGER_API SecretsManagerClient : public Aws::Client::AWSJsonC
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SecretsManagerClient>;
   void init(const SecretsManagerClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SecretsManagerError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   SecretsManagerClientConfiguration m_clientConfiguration;
   std::shared_ptr<SecretsManagerEndpointProviderBase> m_endpointProvider;

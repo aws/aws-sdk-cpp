@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlPaginationBase.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlServiceClientModel.h>
+#include <aws/bedrock-agentcore-control/BedrockAgentCoreControlWaiter.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -22,7 +23,8 @@ namespace BedrockAgentCoreControl {
 class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<BedrockAgentCoreControlClient>,
-      public BedrockAgentCoreControlPaginationBase<BedrockAgentCoreControlClient> {
+      public BedrockAgentCoreControlPaginationBase<BedrockAgentCoreControlClient>,
+      public BedrockAgentCoreControlWaiter<BedrockAgentCoreControlClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -246,8 +248,9 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
 
   /**
    * <p> Creates a custom evaluator for agent quality assessment. Custom evaluators
-   * use LLM-as-a-Judge configurations with user-defined prompts, rating scales, and
-   * model settings to evaluate agent performance at tool call, trace, or session
+   * can use either LLM-as-a-Judge configurations with user-defined prompts, rating
+   * scales, and model settings, or code-based configurations with customer-managed
+   * Lambda functions to evaluate agent performance at tool call, trace, or session
    * levels. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateEvaluator">AWS
    * API Reference</a></p>
@@ -2503,6 +2506,12 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BedrockAgentCoreControlClient>;
   void init(const BedrockAgentCoreControlClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, BedrockAgentCoreControlError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   BedrockAgentCoreControlClientConfiguration m_clientConfiguration;
   std::shared_ptr<BedrockAgentCoreControlEndpointProviderBase> m_endpointProvider;

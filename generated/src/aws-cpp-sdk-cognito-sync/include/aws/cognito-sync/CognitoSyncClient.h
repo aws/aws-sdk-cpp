@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cognito-sync/CognitoSyncPaginationBase.h>
 #include <aws/cognito-sync/CognitoSyncServiceClientModel.h>
+#include <aws/cognito-sync/CognitoSyncWaiter.h>
 #include <aws/cognito-sync/CognitoSync_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -38,7 +39,8 @@ namespace CognitoSync {
  */
 class AWS_COGNITOSYNC_API CognitoSyncClient : public Aws::Client::AWSJsonClient,
                                               public Aws::Client::ClientWithAsyncTemplateMethods<CognitoSyncClient>,
-                                              public CognitoSyncPaginationBase<CognitoSyncClient> {
+                                              public CognitoSyncPaginationBase<CognitoSyncClient>,
+                                              public CognitoSyncWaiter<CognitoSyncClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -616,6 +618,12 @@ class AWS_COGNITOSYNC_API CognitoSyncClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CognitoSyncClient>;
   void init(const CognitoSyncClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CognitoSyncError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   CognitoSyncClientConfiguration m_clientConfiguration;
   std::shared_ptr<CognitoSyncEndpointProviderBase> m_endpointProvider;

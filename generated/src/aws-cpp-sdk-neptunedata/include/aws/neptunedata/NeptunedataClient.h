@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/neptunedata/NeptunedataPaginationBase.h>
 #include <aws/neptunedata/NeptunedataServiceClientModel.h>
+#include <aws/neptunedata/NeptunedataWaiter.h>
 #include <aws/neptunedata/Neptunedata_EXPORTS.h>
 
 namespace Aws {
@@ -24,7 +25,8 @@ namespace neptunedata {
  */
 class AWS_NEPTUNEDATA_API NeptunedataClient : public Aws::Client::AWSJsonClient,
                                               public Aws::Client::ClientWithAsyncTemplateMethods<NeptunedataClient>,
-                                              public NeptunedataPaginationBase<NeptunedataClient> {
+                                              public NeptunedataPaginationBase<NeptunedataClient>,
+                                              public NeptunedataWaiter<NeptunedataClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1613,6 +1615,12 @@ class AWS_NEPTUNEDATA_API NeptunedataClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<NeptunedataClient>;
   void init(const NeptunedataClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, NeptunedataError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   NeptunedataClientConfiguration m_clientConfiguration;
   std::shared_ptr<NeptunedataEndpointProviderBase> m_endpointProvider;

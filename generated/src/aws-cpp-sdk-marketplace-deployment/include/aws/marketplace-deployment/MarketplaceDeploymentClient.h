@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/marketplace-deployment/MarketplaceDeploymentPaginationBase.h>
 #include <aws/marketplace-deployment/MarketplaceDeploymentServiceClientModel.h>
+#include <aws/marketplace-deployment/MarketplaceDeploymentWaiter.h>
 #include <aws/marketplace-deployment/MarketplaceDeployment_EXPORTS.h>
 
 namespace Aws {
@@ -25,7 +26,8 @@ namespace MarketplaceDeployment {
 class AWS_MARKETPLACEDEPLOYMENT_API MarketplaceDeploymentClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceDeploymentClient>,
-      public MarketplaceDeploymentPaginationBase<MarketplaceDeploymentClient> {
+      public MarketplaceDeploymentPaginationBase<MarketplaceDeploymentClient>,
+      public MarketplaceDeploymentWaiter<MarketplaceDeploymentClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -194,6 +196,12 @@ class AWS_MARKETPLACEDEPLOYMENT_API MarketplaceDeploymentClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceDeploymentClient>;
   void init(const MarketplaceDeploymentClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MarketplaceDeploymentError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   MarketplaceDeploymentClientConfiguration m_clientConfiguration;
   std::shared_ptr<MarketplaceDeploymentEndpointProviderBase> m_endpointProvider;

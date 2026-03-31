@@ -57,9 +57,7 @@ MetricMathAnomalyDetector& MetricMathAnomalyDetector::operator=(const std::share
                   }
                 }
                 m_metricDataQueriesHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -113,9 +111,7 @@ MetricMathAnomalyDetector& MetricMathAnomalyDetector::operator=(const std::share
                 }
               }
               m_metricDataQueriesHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

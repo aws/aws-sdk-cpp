@@ -35,12 +35,14 @@
 #include <aws/rest-json-protocol/model/GreetingWithErrorsRequest.h>
 #include <aws/rest-json-protocol/model/HostWithPathOperationRequest.h>
 #include <aws/rest-json-protocol/model/HttpChecksumRequiredRequest.h>
+#include <aws/rest-json-protocol/model/HttpEmptyPrefixHeadersRequest.h>
 #include <aws/rest-json-protocol/model/HttpEnumPayloadRequest.h>
 #include <aws/rest-json-protocol/model/HttpPayloadTraitsRequest.h>
 #include <aws/rest-json-protocol/model/HttpPayloadWithStructureRequest.h>
 #include <aws/rest-json-protocol/model/HttpPayloadWithUnionRequest.h>
 #include <aws/rest-json-protocol/model/HttpPrefixHeadersInResponseRequest.h>
 #include <aws/rest-json-protocol/model/HttpPrefixHeadersRequest.h>
+#include <aws/rest-json-protocol/model/HttpQueryParamsOnlyOperationRequest.h>
 #include <aws/rest-json-protocol/model/HttpRequestWithFloatLabelsRequest.h>
 #include <aws/rest-json-protocol/model/HttpRequestWithGreedyLabelInPathRequest.h>
 #include <aws/rest-json-protocol/model/HttpRequestWithLabelsAndTimestampFormatRequest.h>
@@ -73,6 +75,8 @@
 #include <aws/rest-json-protocol/model/ResponseCodeHttpFallbackRequest.h>
 #include <aws/rest-json-protocol/model/ResponseCodeRequiredRequest.h>
 #include <aws/rest-json-protocol/model/SimpleScalarPropertiesRequest.h>
+#include <aws/rest-json-protocol/model/SparseJsonListsRequest.h>
+#include <aws/rest-json-protocol/model/SparseJsonMapsRequest.h>
 #include <aws/rest-json-protocol/model/TestBodyStructureRequest.h>
 #include <aws/rest-json-protocol/model/TestGetNoInputNoPayloadRequest.h>
 #include <aws/rest-json-protocol/model/TestGetNoPayloadRequest.h>
@@ -145,7 +149,7 @@ RestJsonProtocolClient::RestJsonProtocolClient(const std::shared_ptr<AWSCredenti
 }
 
 /* Legacy constructors due deprecation */
-RestJsonProtocolClient::RestJsonProtocolClient(const Client::ClientConfiguration& clientConfiguration)
+RestJsonProtocolClient::RestJsonProtocolClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG,
@@ -157,7 +161,8 @@ RestJsonProtocolClient::RestJsonProtocolClient(const Client::ClientConfiguration
   init(m_clientConfiguration);
 }
 
-RestJsonProtocolClient::RestJsonProtocolClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+RestJsonProtocolClient::RestJsonProtocolClient(const AWSCredentials& credentials,
+                                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials), SERVICE_NAME,
@@ -169,7 +174,7 @@ RestJsonProtocolClient::RestJsonProtocolClient(const AWSCredentials& credentials
 }
 
 RestJsonProtocolClient::RestJsonProtocolClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                               const Client::ClientConfiguration& clientConfiguration)
+                                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                                       Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -195,7 +200,7 @@ void RestJsonProtocolClient::init(const RestJsonProtocol::RestJsonProtocolClient
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "restjson");
 }
 
 void RestJsonProtocolClient::OverrideEndpoint(const Aws::String& endpoint) {
@@ -672,6 +677,36 @@ HttpChecksumRequiredOutcome RestJsonProtocolClient::HttpChecksumRequired(const H
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+HttpEmptyPrefixHeadersOutcome RestJsonProtocolClient::HttpEmptyPrefixHeaders(const HttpEmptyPrefixHeadersRequest& request) const {
+  AWS_OPERATION_GUARD(HttpEmptyPrefixHeaders);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, HttpEmptyPrefixHeaders, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, HttpEmptyPrefixHeaders, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, HttpEmptyPrefixHeaders, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".HttpEmptyPrefixHeaders",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<HttpEmptyPrefixHeadersOutcome>(
+      [&]() -> HttpEmptyPrefixHeadersOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, HttpEmptyPrefixHeaders, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/HttpEmptyPrefixHeaders");
+        return HttpEmptyPrefixHeadersOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 HttpEnumPayloadOutcome RestJsonProtocolClient::HttpEnumPayload(const HttpEnumPayloadRequest& request) const {
   AWS_OPERATION_GUARD(HttpEnumPayload);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, HttpEnumPayload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -846,6 +881,37 @@ HttpPrefixHeadersInResponseOutcome RestJsonProtocolClient::HttpPrefixHeadersInRe
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/HttpPrefixHeadersResponse");
         return HttpPrefixHeadersInResponseOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+HttpQueryParamsOnlyOperationOutcome RestJsonProtocolClient::HttpQueryParamsOnlyOperation(
+    const HttpQueryParamsOnlyOperationRequest& request) const {
+  AWS_OPERATION_GUARD(HttpQueryParamsOnlyOperation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, HttpQueryParamsOnlyOperation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, HttpQueryParamsOnlyOperation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, HttpQueryParamsOnlyOperation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".HttpQueryParamsOnlyOperation",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<HttpQueryParamsOnlyOperationOutcome>(
+      [&]() -> HttpQueryParamsOnlyOperationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, HttpQueryParamsOnlyOperation, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/http-query-params-only");
+        return HttpQueryParamsOnlyOperationOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -1938,6 +2004,66 @@ SimpleScalarPropertiesOutcome RestJsonProtocolClient::SimpleScalarProperties(con
         endpointResolutionOutcome.GetResult().AddPathSegments("/SimpleScalarProperties");
         return SimpleScalarPropertiesOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+SparseJsonListsOutcome RestJsonProtocolClient::SparseJsonLists(const SparseJsonListsRequest& request) const {
+  AWS_OPERATION_GUARD(SparseJsonLists);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SparseJsonLists, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, SparseJsonLists, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, SparseJsonLists, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".SparseJsonLists",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<SparseJsonListsOutcome>(
+      [&]() -> SparseJsonListsOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SparseJsonLists, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/SparseJsonLists");
+        return SparseJsonListsOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+SparseJsonMapsOutcome RestJsonProtocolClient::SparseJsonMaps(const SparseJsonMapsRequest& request) const {
+  AWS_OPERATION_GUARD(SparseJsonMaps);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SparseJsonMaps, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, SparseJsonMaps, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, SparseJsonMaps, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".SparseJsonMaps",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<SparseJsonMapsOutcome>(
+      [&]() -> SparseJsonMapsOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SparseJsonMaps, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/SparseJsonMaps");
+        return SparseJsonMapsOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

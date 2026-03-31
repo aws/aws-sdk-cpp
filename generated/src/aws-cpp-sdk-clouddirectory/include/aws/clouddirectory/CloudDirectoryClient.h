@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/clouddirectory/CloudDirectoryPaginationBase.h>
 #include <aws/clouddirectory/CloudDirectoryServiceClientModel.h>
+#include <aws/clouddirectory/CloudDirectoryWaiter.h>
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -28,7 +29,8 @@ namespace CloudDirectory {
  */
 class AWS_CLOUDDIRECTORY_API CloudDirectoryClient : public Aws::Client::AWSJsonClient,
                                                     public Aws::Client::ClientWithAsyncTemplateMethods<CloudDirectoryClient>,
-                                                    public CloudDirectoryPaginationBase<CloudDirectoryClient> {
+                                                    public CloudDirectoryPaginationBase<CloudDirectoryClient>,
+                                                    public CloudDirectoryWaiter<CloudDirectoryClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1929,6 +1931,12 @@ class AWS_CLOUDDIRECTORY_API CloudDirectoryClient : public Aws::Client::AWSJsonC
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudDirectoryClient>;
   void init(const CloudDirectoryClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CloudDirectoryError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   CloudDirectoryClientConfiguration m_clientConfiguration;
   std::shared_ptr<CloudDirectoryEndpointProviderBase> m_endpointProvider;

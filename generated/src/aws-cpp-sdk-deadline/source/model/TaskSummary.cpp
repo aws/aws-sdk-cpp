@@ -42,13 +42,6 @@ TaskSummary& TaskSummary::operator=(JsonView jsonValue) {
     m_failureRetryCount = jsonValue.GetInteger("failureRetryCount");
     m_failureRetryCountHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("parameters")) {
-    Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
-    for (auto& parametersItem : parametersJsonMap) {
-      m_parameters[parametersItem.first] = parametersItem.second.AsObject();
-    }
-    m_parametersHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("startedAt")) {
     m_startedAt = jsonValue.GetString("startedAt");
     m_startedAtHasBeenSet = true;
@@ -68,6 +61,13 @@ TaskSummary& TaskSummary::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("latestSessionActionId")) {
     m_latestSessionActionId = jsonValue.GetString("latestSessionActionId");
     m_latestSessionActionIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("parameters")) {
+    Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
+    for (auto& parametersItem : parametersJsonMap) {
+      m_parameters[parametersItem.first] = parametersItem.second.AsObject();
+    }
+    m_parametersHasBeenSet = true;
   }
   return *this;
 }
@@ -99,14 +99,6 @@ JsonValue TaskSummary::Jsonize() const {
     payload.WithInteger("failureRetryCount", m_failureRetryCount);
   }
 
-  if (m_parametersHasBeenSet) {
-    JsonValue parametersJsonMap;
-    for (auto& parametersItem : m_parameters) {
-      parametersJsonMap.WithObject(parametersItem.first, parametersItem.second.Jsonize());
-    }
-    payload.WithObject("parameters", std::move(parametersJsonMap));
-  }
-
   if (m_startedAtHasBeenSet) {
     payload.WithString("startedAt", m_startedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
@@ -125,6 +117,14 @@ JsonValue TaskSummary::Jsonize() const {
 
   if (m_latestSessionActionIdHasBeenSet) {
     payload.WithString("latestSessionActionId", m_latestSessionActionId);
+  }
+
+  if (m_parametersHasBeenSet) {
+    JsonValue parametersJsonMap;
+    for (auto& parametersItem : m_parameters) {
+      parametersJsonMap.WithObject(parametersItem.first, parametersItem.second.Jsonize());
+    }
+    payload.WithObject("parameters", std::move(parametersJsonMap));
   }
 
   return payload;

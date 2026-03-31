@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sso-oidc/SSOOIDCPaginationBase.h>
 #include <aws/sso-oidc/SSOOIDCServiceClientModel.h>
+#include <aws/sso-oidc/SSOOIDCWaiter.h>
 #include <aws/sso-oidc/SSOOIDC_EXPORTS.h>
 
 namespace Aws {
@@ -51,7 +52,8 @@ namespace SSOOIDC {
  */
 class AWS_SSOOIDC_API SSOOIDCClient : public Aws::Client::AWSJsonClient,
                                       public Aws::Client::ClientWithAsyncTemplateMethods<SSOOIDCClient>,
-                                      public SSOOIDCPaginationBase<SSOOIDCClient> {
+                                      public SSOOIDCPaginationBase<SSOOIDCClient>,
+                                      public SSOOIDCWaiter<SSOOIDCClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -232,6 +234,12 @@ class AWS_SSOOIDC_API SSOOIDCClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SSOOIDCClient>;
   void init(const SSOOIDCClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SSOOIDCError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   SSOOIDCClientConfiguration m_clientConfiguration;
   std::shared_ptr<SSOOIDCEndpointProviderBase> m_endpointProvider;

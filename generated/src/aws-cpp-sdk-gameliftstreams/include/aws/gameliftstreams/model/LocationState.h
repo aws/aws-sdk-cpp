@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gameliftstreams/GameLiftStreams_EXPORTS.h>
 #include <aws/gameliftstreams/model/StreamGroupLocationStatus.h>
+#include <aws/gameliftstreams/model/VpcTransitConfigurationResponse.h>
 
 #include <utility>
 
@@ -223,6 +224,44 @@ class LocationState {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The CIDR block of the service VPC for this location. Add this CIDR block to
+   * your VPC route table to enable traffic routing through the Transit Gateway.</p>
+   */
+  inline const Aws::String& GetInternalVpcIpv4CidrBlock() const { return m_internalVpcIpv4CidrBlock; }
+  inline bool InternalVpcIpv4CidrBlockHasBeenSet() const { return m_internalVpcIpv4CidrBlockHasBeenSet; }
+  template <typename InternalVpcIpv4CidrBlockT = Aws::String>
+  void SetInternalVpcIpv4CidrBlock(InternalVpcIpv4CidrBlockT&& value) {
+    m_internalVpcIpv4CidrBlockHasBeenSet = true;
+    m_internalVpcIpv4CidrBlock = std::forward<InternalVpcIpv4CidrBlockT>(value);
+  }
+  template <typename InternalVpcIpv4CidrBlockT = Aws::String>
+  LocationState& WithInternalVpcIpv4CidrBlock(InternalVpcIpv4CidrBlockT&& value) {
+    SetInternalVpcIpv4CidrBlock(std::forward<InternalVpcIpv4CidrBlockT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The VPC transit configuration for this location, including the Transit
+   * Gateway details needed to complete the VPC attachment setup.</p>
+   */
+  inline const VpcTransitConfigurationResponse& GetVpcTransitConfiguration() const { return m_vpcTransitConfiguration; }
+  inline bool VpcTransitConfigurationHasBeenSet() const { return m_vpcTransitConfigurationHasBeenSet; }
+  template <typename VpcTransitConfigurationT = VpcTransitConfigurationResponse>
+  void SetVpcTransitConfiguration(VpcTransitConfigurationT&& value) {
+    m_vpcTransitConfigurationHasBeenSet = true;
+    m_vpcTransitConfiguration = std::forward<VpcTransitConfigurationT>(value);
+  }
+  template <typename VpcTransitConfigurationT = VpcTransitConfigurationResponse>
+  LocationState& WithVpcTransitConfiguration(VpcTransitConfigurationT&& value) {
+    SetVpcTransitConfiguration(std::forward<VpcTransitConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_locationName;
 
@@ -241,6 +280,10 @@ class LocationState {
   int m_allocatedCapacity{0};
 
   int m_idleCapacity{0};
+
+  Aws::String m_internalVpcIpv4CidrBlock;
+
+  VpcTransitConfigurationResponse m_vpcTransitConfiguration;
   bool m_locationNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_alwaysOnCapacityHasBeenSet = false;
@@ -250,6 +293,8 @@ class LocationState {
   bool m_requestedCapacityHasBeenSet = false;
   bool m_allocatedCapacityHasBeenSet = false;
   bool m_idleCapacityHasBeenSet = false;
+  bool m_internalVpcIpv4CidrBlockHasBeenSet = false;
+  bool m_vpcTransitConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

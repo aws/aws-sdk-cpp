@@ -21,6 +21,8 @@ static const int SecurityPolicy_TLS13_1_3_2025_09_HASH = HashingUtils::HashStrin
 static const int SecurityPolicy_TLS13_1_3_FIPS_2025_09_HASH = HashingUtils::HashString("SecurityPolicy_TLS13_1_3_FIPS_2025_09");
 static const int SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09_HASH = HashingUtils::HashString("SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09");
 static const int SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09_HASH = HashingUtils::HashString("SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09");
+static const int SecurityPolicy_TLS13_1_2_FIPS_PFS_PQ_2025_09_HASH =
+    HashingUtils::HashString("SecurityPolicy_TLS13_1_2_FIPS_PFS_PQ_2025_09");
 static const int SecurityPolicy_TLS13_1_2_PQ_2025_09_HASH = HashingUtils::HashString("SecurityPolicy_TLS13_1_2_PQ_2025_09");
 static const int SecurityPolicy_TLS13_1_2_2021_06_HASH = HashingUtils::HashString("SecurityPolicy_TLS13_1_2_2021_06");
 static const int SecurityPolicy_TLS13_2025_EDGE_HASH = HashingUtils::HashString("SecurityPolicy_TLS13_2025_EDGE");
@@ -41,6 +43,8 @@ SecurityPolicy GetSecurityPolicyForName(const Aws::String& name) {
     return SecurityPolicy::SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09;
   } else if (hashCode == SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09_HASH) {
     return SecurityPolicy::SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09;
+  } else if (hashCode == SecurityPolicy_TLS13_1_2_FIPS_PFS_PQ_2025_09_HASH) {
+    return SecurityPolicy::SecurityPolicy_TLS13_1_2_FIPS_PFS_PQ_2025_09;
   } else if (hashCode == SecurityPolicy_TLS13_1_2_PQ_2025_09_HASH) {
     return SecurityPolicy::SecurityPolicy_TLS13_1_2_PQ_2025_09;
   } else if (hashCode == SecurityPolicy_TLS13_1_2_2021_06_HASH) {
@@ -77,6 +81,8 @@ Aws::String GetNameForSecurityPolicy(SecurityPolicy enumValue) {
       return "SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09";
     case SecurityPolicy::SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09:
       return "SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09";
+    case SecurityPolicy::SecurityPolicy_TLS13_1_2_FIPS_PFS_PQ_2025_09:
+      return "SecurityPolicy_TLS13_1_2_FIPS_PFS_PQ_2025_09";
     case SecurityPolicy::SecurityPolicy_TLS13_1_2_PQ_2025_09:
       return "SecurityPolicy_TLS13_1_2_PQ_2025_09";
     case SecurityPolicy::SecurityPolicy_TLS13_1_2_2021_06:

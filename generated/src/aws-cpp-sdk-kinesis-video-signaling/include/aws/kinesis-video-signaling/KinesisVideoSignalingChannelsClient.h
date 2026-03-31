@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kinesis-video-signaling/KinesisVideoSignalingChannelsPaginationBase.h>
 #include <aws/kinesis-video-signaling/KinesisVideoSignalingChannelsServiceClientModel.h>
+#include <aws/kinesis-video-signaling/KinesisVideoSignalingChannelsWaiter.h>
 #include <aws/kinesis-video-signaling/KinesisVideoSignalingChannels_EXPORTS.h>
 
 namespace Aws {
@@ -23,7 +24,8 @@ namespace KinesisVideoSignalingChannels {
 class AWS_KINESISVIDEOSIGNALINGCHANNELS_API KinesisVideoSignalingChannelsClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoSignalingChannelsClient>,
-      public KinesisVideoSignalingChannelsPaginationBase<KinesisVideoSignalingChannelsClient> {
+      public KinesisVideoSignalingChannelsPaginationBase<KinesisVideoSignalingChannelsClient>,
+      public KinesisVideoSignalingChannelsWaiter<KinesisVideoSignalingChannelsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -164,6 +166,12 @@ class AWS_KINESISVIDEOSIGNALINGCHANNELS_API KinesisVideoSignalingChannelsClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoSignalingChannelsClient>;
   void init(const KinesisVideoSignalingChannelsClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, KinesisVideoSignalingChannelsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   KinesisVideoSignalingChannelsClientConfiguration m_clientConfiguration;
   std::shared_ptr<KinesisVideoSignalingChannelsEndpointProviderBase> m_endpointProvider;

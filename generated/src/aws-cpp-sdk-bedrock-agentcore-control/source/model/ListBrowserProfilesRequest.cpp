@@ -15,7 +15,15 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String ListBrowserProfilesRequest::SerializePayload() const { return {}; }
+Aws::String ListBrowserProfilesRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
+  }
+
+  return payload.View().WriteReadable();
+}
 
 void ListBrowserProfilesRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;

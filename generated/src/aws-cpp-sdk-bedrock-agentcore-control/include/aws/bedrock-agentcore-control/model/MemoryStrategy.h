@@ -126,24 +126,24 @@ class MemoryStrategy {
 
   ///@{
   /**
-   * <p>The namespaces associated with the memory strategy.</p>
+   * <p>The namespaceTemplates associated with the memory strategy.</p>
    */
-  inline const Aws::Vector<Aws::String>& GetNamespaces() const { return m_namespaces; }
-  inline bool NamespacesHasBeenSet() const { return m_namespacesHasBeenSet; }
-  template <typename NamespacesT = Aws::Vector<Aws::String>>
-  void SetNamespaces(NamespacesT&& value) {
-    m_namespacesHasBeenSet = true;
-    m_namespaces = std::forward<NamespacesT>(value);
+  inline const Aws::Vector<Aws::String>& GetNamespaceTemplates() const { return m_namespaceTemplates; }
+  inline bool NamespaceTemplatesHasBeenSet() const { return m_namespaceTemplatesHasBeenSet; }
+  template <typename NamespaceTemplatesT = Aws::Vector<Aws::String>>
+  void SetNamespaceTemplates(NamespaceTemplatesT&& value) {
+    m_namespaceTemplatesHasBeenSet = true;
+    m_namespaceTemplates = std::forward<NamespaceTemplatesT>(value);
   }
-  template <typename NamespacesT = Aws::Vector<Aws::String>>
-  MemoryStrategy& WithNamespaces(NamespacesT&& value) {
-    SetNamespaces(std::forward<NamespacesT>(value));
+  template <typename NamespaceTemplatesT = Aws::Vector<Aws::String>>
+  MemoryStrategy& WithNamespaceTemplates(NamespaceTemplatesT&& value) {
+    SetNamespaceTemplates(std::forward<NamespaceTemplatesT>(value));
     return *this;
   }
-  template <typename NamespacesT = Aws::String>
-  MemoryStrategy& AddNamespaces(NamespacesT&& value) {
-    m_namespacesHasBeenSet = true;
-    m_namespaces.emplace_back(std::forward<NamespacesT>(value));
+  template <typename NamespaceTemplatesT = Aws::String>
+  MemoryStrategy& AddNamespaceTemplates(NamespaceTemplatesT&& value) {
+    m_namespaceTemplatesHasBeenSet = true;
+    m_namespaceTemplates.emplace_back(std::forward<NamespaceTemplatesT>(value));
     return *this;
   }
   ///@}
@@ -210,7 +210,7 @@ class MemoryStrategy {
 
   MemoryStrategyType m_type{MemoryStrategyType::NOT_SET};
 
-  Aws::Vector<Aws::String> m_namespaces;
+  Aws::Vector<Aws::String> m_namespaceTemplates;
 
   Aws::Utils::DateTime m_createdAt{};
 
@@ -222,7 +222,7 @@ class MemoryStrategy {
   bool m_descriptionHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
   bool m_typeHasBeenSet = false;
-  bool m_namespacesHasBeenSet = false;
+  bool m_namespaceTemplatesHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_statusHasBeenSet = false;

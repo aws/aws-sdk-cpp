@@ -201,9 +201,9 @@ class InvokeAgentRuntimeRequest : public StreamingBedrockAgentCoreRequest {
 
   ///@{
   /**
-   * <p>The Amazon Web Services Resource Name (ARN) of the agent runtime to invoke.
-   * The ARN uniquely identifies the agent runtime resource in Amazon Bedrock
-   * AgentCore.</p>
+   * <p>The identifier of the agent runtime to invoke. You can specify either the
+   * full Amazon Web Services Resource Name (ARN) or the agent ID. If you use the
+   * agent ID, you must also provide the <code>accountId</code> query parameter.</p>
    */
   inline const Aws::String& GetAgentRuntimeArn() const { return m_agentRuntimeArn; }
   inline bool AgentRuntimeArnHasBeenSet() const { return m_agentRuntimeArnHasBeenSet; }
@@ -221,9 +221,9 @@ class InvokeAgentRuntimeRequest : public StreamingBedrockAgentCoreRequest {
 
   ///@{
   /**
-   * <p>The qualifier to use for the agent runtime. This can be a version number or
-   * an endpoint name that points to a specific version. If not specified, Amazon
-   * Bedrock AgentCore uses the default version of the agent runtime.</p>
+   * <p>The qualifier to use for the agent runtime. This is an endpoint name that
+   * points to a specific version. If not specified, Amazon Bedrock AgentCore uses
+   * the default endpoint of the agent runtime.</p>
    */
   inline const Aws::String& GetQualifier() const { return m_qualifier; }
   inline bool QualifierHasBeenSet() const { return m_qualifierHasBeenSet; }
@@ -242,7 +242,8 @@ class InvokeAgentRuntimeRequest : public StreamingBedrockAgentCoreRequest {
   ///@{
   /**
    * <p>The identifier of the Amazon Web Services account for the agent runtime
-   * resource.</p>
+   * resource. This parameter is required when you specify an agent ID instead of the
+   * full ARN for <code>agentRuntimeArn</code>.</p>
    */
   inline const Aws::String& GetAccountId() const { return m_accountId; }
   inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }

@@ -18,6 +18,8 @@ namespace AuditEventTypeMapper {
 static const int Case_Created_HASH = HashingUtils::HashString("Case.Created");
 static const int Case_Updated_HASH = HashingUtils::HashString("Case.Updated");
 static const int RelatedItem_Created_HASH = HashingUtils::HashString("RelatedItem.Created");
+static const int RelatedItem_Deleted_HASH = HashingUtils::HashString("RelatedItem.Deleted");
+static const int RelatedItem_Updated_HASH = HashingUtils::HashString("RelatedItem.Updated");
 
 AuditEventType GetAuditEventTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +29,10 @@ AuditEventType GetAuditEventTypeForName(const Aws::String& name) {
     return AuditEventType::Case_Updated;
   } else if (hashCode == RelatedItem_Created_HASH) {
     return AuditEventType::RelatedItem_Created;
+  } else if (hashCode == RelatedItem_Deleted_HASH) {
+    return AuditEventType::RelatedItem_Deleted;
+  } else if (hashCode == RelatedItem_Updated_HASH) {
+    return AuditEventType::RelatedItem_Updated;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +53,10 @@ Aws::String GetNameForAuditEventType(AuditEventType enumValue) {
       return "Case.Updated";
     case AuditEventType::RelatedItem_Created:
       return "RelatedItem.Created";
+    case AuditEventType::RelatedItem_Deleted:
+      return "RelatedItem.Deleted";
+    case AuditEventType::RelatedItem_Updated:
+      return "RelatedItem.Updated";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -16,11 +16,17 @@ namespace Model {
 namespace ResourceTypeMapper {
 
 static const int Agreement_HASH = HashingUtils::HashString("Agreement");
+static const int Charge_HASH = HashingUtils::HashString("Charge");
+static const int PaymentRequest_HASH = HashingUtils::HashString("PaymentRequest");
 
 ResourceType GetResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == Agreement_HASH) {
     return ResourceType::Agreement;
+  } else if (hashCode == Charge_HASH) {
+    return ResourceType::Charge;
+  } else if (hashCode == PaymentRequest_HASH) {
+    return ResourceType::PaymentRequest;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +43,10 @@ Aws::String GetNameForResourceType(ResourceType enumValue) {
       return {};
     case ResourceType::Agreement:
       return "Agreement";
+    case ResourceType::Charge:
+      return "Charge";
+    case ResourceType::PaymentRequest:
+      return "PaymentRequest";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -18,6 +18,10 @@ namespace deadline {
 namespace Model {
 
 /**
+ * <p>Shared pagination fields for List operation inputs (nextToken +
+ * maxResults).</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListQueueFleetAssociationsRequest">AWS
+ * API Reference</a></p>
  */
 class ListQueueFleetAssociationsRequest : public DeadlineRequest {
  public:
@@ -47,42 +51,6 @@ class ListQueueFleetAssociationsRequest : public DeadlineRequest {
   template <typename FarmIdT = Aws::String>
   ListQueueFleetAssociationsRequest& WithFarmId(FarmIdT&& value) {
     SetFarmId(std::forward<FarmIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The queue ID for the queue-fleet association list.</p>
-   */
-  inline const Aws::String& GetQueueId() const { return m_queueId; }
-  inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
-  template <typename QueueIdT = Aws::String>
-  void SetQueueId(QueueIdT&& value) {
-    m_queueIdHasBeenSet = true;
-    m_queueId = std::forward<QueueIdT>(value);
-  }
-  template <typename QueueIdT = Aws::String>
-  ListQueueFleetAssociationsRequest& WithQueueId(QueueIdT&& value) {
-    SetQueueId(std::forward<QueueIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The fleet ID for the queue-fleet association list.</p>
-   */
-  inline const Aws::String& GetFleetId() const { return m_fleetId; }
-  inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
-  template <typename FleetIdT = Aws::String>
-  void SetFleetId(FleetIdT&& value) {
-    m_fleetIdHasBeenSet = true;
-    m_fleetId = std::forward<FleetIdT>(value);
-  }
-  template <typename FleetIdT = Aws::String>
-  ListQueueFleetAssociationsRequest& WithFleetId(FleetIdT&& value) {
-    SetFleetId(std::forward<FleetIdT>(value));
     return *this;
   }
   ///@}
@@ -122,21 +90,57 @@ class ListQueueFleetAssociationsRequest : public DeadlineRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The queue ID for the queue-fleet association list.</p>
+   */
+  inline const Aws::String& GetQueueId() const { return m_queueId; }
+  inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
+  template <typename QueueIdT = Aws::String>
+  void SetQueueId(QueueIdT&& value) {
+    m_queueIdHasBeenSet = true;
+    m_queueId = std::forward<QueueIdT>(value);
+  }
+  template <typename QueueIdT = Aws::String>
+  ListQueueFleetAssociationsRequest& WithQueueId(QueueIdT&& value) {
+    SetQueueId(std::forward<QueueIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The fleet ID for the queue-fleet association list.</p>
+   */
+  inline const Aws::String& GetFleetId() const { return m_fleetId; }
+  inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
+  template <typename FleetIdT = Aws::String>
+  void SetFleetId(FleetIdT&& value) {
+    m_fleetIdHasBeenSet = true;
+    m_fleetId = std::forward<FleetIdT>(value);
+  }
+  template <typename FleetIdT = Aws::String>
+  ListQueueFleetAssociationsRequest& WithFleetId(FleetIdT&& value) {
+    SetFleetId(std::forward<FleetIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_farmId;
-
-  Aws::String m_queueId;
-
-  Aws::String m_fleetId;
 
   Aws::String m_nextToken;
 
   int m_maxResults{0};
+
+  Aws::String m_queueId;
+
+  Aws::String m_fleetId;
   bool m_farmIdHasBeenSet = false;
-  bool m_queueIdHasBeenSet = false;
-  bool m_fleetIdHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
+  bool m_queueIdHasBeenSet = false;
+  bool m_fleetIdHasBeenSet = false;
 };
 
 }  // namespace Model

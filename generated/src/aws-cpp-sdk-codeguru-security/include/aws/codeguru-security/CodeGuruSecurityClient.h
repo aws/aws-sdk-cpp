@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codeguru-security/CodeGuruSecurityPaginationBase.h>
 #include <aws/codeguru-security/CodeGuruSecurityServiceClientModel.h>
+#include <aws/codeguru-security/CodeGuruSecurityWaiter.h>
 #include <aws/codeguru-security/CodeGuruSecurity_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -32,7 +33,8 @@ namespace CodeGuruSecurity {
  */
 class AWS_CODEGURUSECURITY_API CodeGuruSecurityClient : public Aws::Client::AWSJsonClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<CodeGuruSecurityClient>,
-                                                        public CodeGuruSecurityPaginationBase<CodeGuruSecurityClient> {
+                                                        public CodeGuruSecurityPaginationBase<CodeGuruSecurityClient>,
+                                                        public CodeGuruSecurityWaiter<CodeGuruSecurityClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -449,6 +451,12 @@ class AWS_CODEGURUSECURITY_API CodeGuruSecurityClient : public Aws::Client::AWSJ
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeGuruSecurityClient>;
   void init(const CodeGuruSecurityClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CodeGuruSecurityError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   CodeGuruSecurityClientConfiguration m_clientConfiguration;
   std::shared_ptr<CodeGuruSecurityEndpointProviderBase> m_endpointProvider;

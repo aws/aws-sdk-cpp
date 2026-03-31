@@ -103,6 +103,10 @@ ReplicationConfigurationTemplate& ReplicationConfigurationTemplate::operator=(Js
     m_internetProtocol = InternetProtocolMapper::GetInternetProtocolForName(jsonValue.GetString("internetProtocol"));
     m_internetProtocolHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("storeSnapshotOnLocalZone")) {
+    m_storeSnapshotOnLocalZone = jsonValue.GetBool("storeSnapshotOnLocalZone");
+    m_storeSnapshotOnLocalZoneHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -196,6 +200,10 @@ JsonValue ReplicationConfigurationTemplate::Jsonize() const {
 
   if (m_internetProtocolHasBeenSet) {
     payload.WithString("internetProtocol", InternetProtocolMapper::GetNameForInternetProtocol(m_internetProtocol));
+  }
+
+  if (m_storeSnapshotOnLocalZoneHasBeenSet) {
+    payload.WithBool("storeSnapshotOnLocalZone", m_storeSnapshotOnLocalZone);
   }
 
   return payload;

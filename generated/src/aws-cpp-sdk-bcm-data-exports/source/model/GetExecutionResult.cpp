@@ -26,13 +26,13 @@ GetExecutionResult& GetExecutionResult::operator=(const Aws::AmazonWebServiceRes
     m_executionId = jsonValue.GetString("ExecutionId");
     m_executionIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("ExecutionStatus")) {
-    m_executionStatus = jsonValue.GetObject("ExecutionStatus");
-    m_executionStatusHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("Export")) {
     m_export = jsonValue.GetObject("Export");
     m_exportHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ExecutionStatus")) {
+    m_executionStatus = jsonValue.GetObject("ExecutionStatus");
+    m_executionStatusHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

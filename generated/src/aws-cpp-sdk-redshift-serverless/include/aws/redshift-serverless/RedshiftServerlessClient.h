@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/redshift-serverless/RedshiftServerlessPaginationBase.h>
 #include <aws/redshift-serverless/RedshiftServerlessServiceClientModel.h>
+#include <aws/redshift-serverless/RedshiftServerlessWaiter.h>
 #include <aws/redshift-serverless/RedshiftServerless_EXPORTS.h>
 
 namespace Aws {
@@ -30,7 +31,8 @@ namespace RedshiftServerless {
  */
 class AWS_REDSHIFTSERVERLESS_API RedshiftServerlessClient : public Aws::Client::AWSJsonClient,
                                                             public Aws::Client::ClientWithAsyncTemplateMethods<RedshiftServerlessClient>,
-                                                            public RedshiftServerlessPaginationBase<RedshiftServerlessClient> {
+                                                            public RedshiftServerlessPaginationBase<RedshiftServerlessClient>,
+                                                            public RedshiftServerlessWaiter<RedshiftServerlessClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1915,6 +1917,10 @@ class AWS_REDSHIFTSERVERLESS_API RedshiftServerlessClient : public Aws::Client::
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<RedshiftServerlessClient>;
   void init(const RedshiftServerlessClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, RedshiftServerlessError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   RedshiftServerlessClientConfiguration m_clientConfiguration;
   std::shared_ptr<RedshiftServerlessEndpointProviderBase> m_endpointProvider;

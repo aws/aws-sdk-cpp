@@ -24,7 +24,8 @@ enum class SavingsPlanProductType {
   Neptune,
   Timestream,
   Keyspaces,
-  DMS
+  DMS,
+  OpenSearch
 };
 
 namespace SavingsPlanProductTypeMapper {

@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iot-jobs-data/IoTJobsDataPlanePaginationBase.h>
 #include <aws/iot-jobs-data/IoTJobsDataPlaneServiceClientModel.h>
+#include <aws/iot-jobs-data/IoTJobsDataPlaneWaiter.h>
 #include <aws/iot-jobs-data/IoTJobsDataPlane_EXPORTS.h>
 
 namespace Aws {
@@ -37,7 +38,8 @@ namespace IoTJobsDataPlane {
  */
 class AWS_IOTJOBSDATAPLANE_API IoTJobsDataPlaneClient : public Aws::Client::AWSJsonClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<IoTJobsDataPlaneClient>,
-                                                        public IoTJobsDataPlanePaginationBase<IoTJobsDataPlaneClient> {
+                                                        public IoTJobsDataPlanePaginationBase<IoTJobsDataPlaneClient>,
+                                                        public IoTJobsDataPlaneWaiter<IoTJobsDataPlaneClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -247,6 +249,12 @@ class AWS_IOTJOBSDATAPLANE_API IoTJobsDataPlaneClient : public Aws::Client::AWSJ
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTJobsDataPlaneClient>;
   void init(const IoTJobsDataPlaneClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, IoTJobsDataPlaneError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   IoTJobsDataPlaneClientConfiguration m_clientConfiguration;
   std::shared_ptr<IoTJobsDataPlaneEndpointProviderBase> m_endpointProvider;

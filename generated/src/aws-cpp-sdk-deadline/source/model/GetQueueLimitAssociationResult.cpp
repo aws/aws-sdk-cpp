@@ -22,6 +22,18 @@ GetQueueLimitAssociationResult::GetQueueLimitAssociationResult(const Aws::Amazon
 GetQueueLimitAssociationResult& GetQueueLimitAssociationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("queueId")) {
+    m_queueId = jsonValue.GetString("queueId");
+    m_queueIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("limitId")) {
+    m_limitId = jsonValue.GetString("limitId");
+    m_limitIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("status")) {
+    m_status = QueueLimitAssociationStatusMapper::GetQueueLimitAssociationStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
@@ -37,18 +49,6 @@ GetQueueLimitAssociationResult& GetQueueLimitAssociationResult::operator=(const 
   if (jsonValue.ValueExists("updatedBy")) {
     m_updatedBy = jsonValue.GetString("updatedBy");
     m_updatedByHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("queueId")) {
-    m_queueId = jsonValue.GetString("queueId");
-    m_queueIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("limitId")) {
-    m_limitId = jsonValue.GetString("limitId");
-    m_limitIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("status")) {
-    m_status = QueueLimitAssociationStatusMapper::GetQueueLimitAssociationStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

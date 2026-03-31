@@ -34,7 +34,7 @@ class UDPEndpoint {
 
   ///@{
   /**
-   * <p>The domain name of the UDP endpoint. </p>
+   * <p>The domain name of the UDP endpoint.</p>
    */
   inline const Aws::String& GetDomain() const { return m_domain; }
   inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
@@ -52,7 +52,8 @@ class UDPEndpoint {
 
   ///@{
   /**
-   * <p>The port number of the UDP endpoint. </p>
+   * <p>The port number of the UDP endpoint. For Amazon GameLift Servers ping
+   * beacons, this is typically port 7770.</p>
    */
   inline int GetPort() const { return m_port; }
   inline bool PortHasBeenSet() const { return m_portHasBeenSet; }

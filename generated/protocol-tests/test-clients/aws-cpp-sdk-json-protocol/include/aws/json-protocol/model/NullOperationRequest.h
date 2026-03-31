@@ -63,9 +63,9 @@ class NullOperationRequest : public JsonProtocolRequest {
   ///@}
  private:
   Aws::String m_string;
-  bool m_stringHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_stringHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

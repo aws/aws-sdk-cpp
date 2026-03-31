@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/inspector-scan/InspectorscanPaginationBase.h>
 #include <aws/inspector-scan/InspectorscanServiceClientModel.h>
+#include <aws/inspector-scan/InspectorscanWaiter.h>
 #include <aws/inspector-scan/Inspectorscan_EXPORTS.h>
 
 namespace Aws {
@@ -20,7 +21,8 @@ namespace inspectorscan {
  */
 class AWS_INSPECTORSCAN_API InspectorscanClient : public Aws::Client::AWSJsonClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<InspectorscanClient>,
-                                                  public InspectorscanPaginationBase<InspectorscanClient> {
+                                                  public InspectorscanPaginationBase<InspectorscanClient>,
+                                                  public InspectorscanWaiter<InspectorscanClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -117,6 +119,12 @@ class AWS_INSPECTORSCAN_API InspectorscanClient : public Aws::Client::AWSJsonCli
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<InspectorscanClient>;
   void init(const InspectorscanClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, InspectorscanError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   InspectorscanClientConfiguration m_clientConfiguration;
   std::shared_ptr<InspectorscanEndpointProviderBase> m_endpointProvider;

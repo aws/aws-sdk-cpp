@@ -35,7 +35,9 @@ class PingBeacon {
 
   ///@{
   /**
-   * <p>The domain name and port of the UDP ping beacon. </p>
+   * <p>The domain name and port of the UDP ping beacon. Your game client can send
+   * UDP messages to this endpoint and receive responses to measure network
+   * latency.</p>
    */
   inline const UDPEndpoint& GetUDPEndpoint() const { return m_uDPEndpoint; }
   inline bool UDPEndpointHasBeenSet() const { return m_uDPEndpointHasBeenSet; }

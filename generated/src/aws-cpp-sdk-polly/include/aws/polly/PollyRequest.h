@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
+#include <aws/core/AmazonStreamingWebServiceRequest.h>
 #include <aws/core/endpoint/AWSEndpoint.h>
 #include <aws/core/http/HttpRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
@@ -34,6 +35,8 @@ class AWS_POLLY_API PollyRequest : public Aws::AmazonSerializableWebServiceReque
  protected:
   virtual Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const { return Aws::Http::HeaderValueCollection(); }
 };
+
+typedef Aws::AmazonStreamingWebServiceRequest StreamingPollyRequest;
 
 }  // namespace Polly
 }  // namespace Aws

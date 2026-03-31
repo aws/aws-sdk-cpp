@@ -7,6 +7,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlRequest.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/MemoryStrategyInput.h>
+#include <aws/bedrock-agentcore-control/model/StreamDeliveryResources.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -170,6 +171,24 @@ class CreateMemoryRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
+   * <p>Configuration for streaming memory record data to external resources.</p>
+   */
+  inline const StreamDeliveryResources& GetStreamDeliveryResources() const { return m_streamDeliveryResources; }
+  inline bool StreamDeliveryResourcesHasBeenSet() const { return m_streamDeliveryResourcesHasBeenSet; }
+  template <typename StreamDeliveryResourcesT = StreamDeliveryResources>
+  void SetStreamDeliveryResources(StreamDeliveryResourcesT&& value) {
+    m_streamDeliveryResourcesHasBeenSet = true;
+    m_streamDeliveryResources = std::forward<StreamDeliveryResourcesT>(value);
+  }
+  template <typename StreamDeliveryResourcesT = StreamDeliveryResources>
+  CreateMemoryRequest& WithStreamDeliveryResources(StreamDeliveryResourcesT&& value) {
+    SetStreamDeliveryResources(std::forward<StreamDeliveryResourcesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A map of tag keys and values to assign to an AgentCore Memory. Tags enable
    * you to categorize your resources in different ways, for example, by purpose,
    * owner, or environment.</p>
@@ -208,6 +227,8 @@ class CreateMemoryRequest : public BedrockAgentCoreControlRequest {
 
   Aws::Vector<MemoryStrategyInput> m_memoryStrategies;
 
+  StreamDeliveryResources m_streamDeliveryResources;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_clientTokenHasBeenSet = true;
   bool m_nameHasBeenSet = false;
@@ -216,6 +237,7 @@ class CreateMemoryRequest : public BedrockAgentCoreControlRequest {
   bool m_memoryExecutionRoleArnHasBeenSet = false;
   bool m_eventExpiryDurationHasBeenSet = false;
   bool m_memoryStrategiesHasBeenSet = false;
+  bool m_streamDeliveryResourcesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

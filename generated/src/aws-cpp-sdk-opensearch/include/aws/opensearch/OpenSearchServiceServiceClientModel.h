@@ -52,6 +52,7 @@
 #include <aws/opensearch/model/DescribeDryRunProgressResult.h>
 #include <aws/opensearch/model/DescribeInboundConnectionsRequest.h>
 #include <aws/opensearch/model/DescribeInboundConnectionsResult.h>
+#include <aws/opensearch/model/DescribeInsightDetailsResult.h>
 #include <aws/opensearch/model/DescribeInstanceTypeLimitsResult.h>
 #include <aws/opensearch/model/DescribeOutboundConnectionsRequest.h>
 #include <aws/opensearch/model/DescribeOutboundConnectionsResult.h>
@@ -85,6 +86,7 @@
 #include <aws/opensearch/model/ListDomainNamesRequest.h>
 #include <aws/opensearch/model/ListDomainNamesResult.h>
 #include <aws/opensearch/model/ListDomainsForPackageResult.h>
+#include <aws/opensearch/model/ListInsightsResult.h>
 #include <aws/opensearch/model/ListInstanceTypeDetailsResult.h>
 #include <aws/opensearch/model/ListPackagesForDomainResult.h>
 #include <aws/opensearch/model/ListScheduledActionsResult.h>
@@ -177,6 +179,7 @@ class DescribeDomainNodesRequest;
 class DescribeDomainsRequest;
 class DescribeDryRunProgressRequest;
 class DescribeInboundConnectionsRequest;
+class DescribeInsightDetailsRequest;
 class DescribeInstanceTypeLimitsRequest;
 class DescribeOutboundConnectionsRequest;
 class DescribePackagesRequest;
@@ -201,6 +204,7 @@ class ListDirectQueryDataSourcesRequest;
 class ListDomainMaintenancesRequest;
 class ListDomainNamesRequest;
 class ListDomainsForPackageRequest;
+class ListInsightsRequest;
 class ListInstanceTypeDetailsRequest;
 class ListPackagesForDomainRequest;
 class ListScheduledActionsRequest;
@@ -262,6 +266,7 @@ typedef Aws::Utils::Outcome<DescribeDomainNodesResult, OpenSearchServiceError> D
 typedef Aws::Utils::Outcome<DescribeDomainsResult, OpenSearchServiceError> DescribeDomainsOutcome;
 typedef Aws::Utils::Outcome<DescribeDryRunProgressResult, OpenSearchServiceError> DescribeDryRunProgressOutcome;
 typedef Aws::Utils::Outcome<DescribeInboundConnectionsResult, OpenSearchServiceError> DescribeInboundConnectionsOutcome;
+typedef Aws::Utils::Outcome<DescribeInsightDetailsResult, OpenSearchServiceError> DescribeInsightDetailsOutcome;
 typedef Aws::Utils::Outcome<DescribeInstanceTypeLimitsResult, OpenSearchServiceError> DescribeInstanceTypeLimitsOutcome;
 typedef Aws::Utils::Outcome<DescribeOutboundConnectionsResult, OpenSearchServiceError> DescribeOutboundConnectionsOutcome;
 typedef Aws::Utils::Outcome<DescribePackagesResult, OpenSearchServiceError> DescribePackagesOutcome;
@@ -286,6 +291,7 @@ typedef Aws::Utils::Outcome<ListDirectQueryDataSourcesResult, OpenSearchServiceE
 typedef Aws::Utils::Outcome<ListDomainMaintenancesResult, OpenSearchServiceError> ListDomainMaintenancesOutcome;
 typedef Aws::Utils::Outcome<ListDomainNamesResult, OpenSearchServiceError> ListDomainNamesOutcome;
 typedef Aws::Utils::Outcome<ListDomainsForPackageResult, OpenSearchServiceError> ListDomainsForPackageOutcome;
+typedef Aws::Utils::Outcome<ListInsightsResult, OpenSearchServiceError> ListInsightsOutcome;
 typedef Aws::Utils::Outcome<ListInstanceTypeDetailsResult, OpenSearchServiceError> ListInstanceTypeDetailsOutcome;
 typedef Aws::Utils::Outcome<ListPackagesForDomainResult, OpenSearchServiceError> ListPackagesForDomainOutcome;
 typedef Aws::Utils::Outcome<ListScheduledActionsResult, OpenSearchServiceError> ListScheduledActionsOutcome;
@@ -347,6 +353,7 @@ typedef std::future<DescribeDomainNodesOutcome> DescribeDomainNodesOutcomeCallab
 typedef std::future<DescribeDomainsOutcome> DescribeDomainsOutcomeCallable;
 typedef std::future<DescribeDryRunProgressOutcome> DescribeDryRunProgressOutcomeCallable;
 typedef std::future<DescribeInboundConnectionsOutcome> DescribeInboundConnectionsOutcomeCallable;
+typedef std::future<DescribeInsightDetailsOutcome> DescribeInsightDetailsOutcomeCallable;
 typedef std::future<DescribeInstanceTypeLimitsOutcome> DescribeInstanceTypeLimitsOutcomeCallable;
 typedef std::future<DescribeOutboundConnectionsOutcome> DescribeOutboundConnectionsOutcomeCallable;
 typedef std::future<DescribePackagesOutcome> DescribePackagesOutcomeCallable;
@@ -371,6 +378,7 @@ typedef std::future<ListDirectQueryDataSourcesOutcome> ListDirectQueryDataSource
 typedef std::future<ListDomainMaintenancesOutcome> ListDomainMaintenancesOutcomeCallable;
 typedef std::future<ListDomainNamesOutcome> ListDomainNamesOutcomeCallable;
 typedef std::future<ListDomainsForPackageOutcome> ListDomainsForPackageOutcomeCallable;
+typedef std::future<ListInsightsOutcome> ListInsightsOutcomeCallable;
 typedef std::future<ListInstanceTypeDetailsOutcome> ListInstanceTypeDetailsOutcomeCallable;
 typedef std::future<ListPackagesForDomainOutcome> ListPackagesForDomainOutcomeCallable;
 typedef std::future<ListScheduledActionsOutcome> ListScheduledActionsOutcomeCallable;
@@ -502,6 +510,9 @@ typedef std::function<void(const OpenSearchServiceClient*, const Model::Describe
 typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeInboundConnectionsRequest&,
                            const Model::DescribeInboundConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeInboundConnectionsResponseReceivedHandler;
+typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeInsightDetailsRequest&,
+                           const Model::DescribeInsightDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeInsightDetailsResponseReceivedHandler;
 typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeInstanceTypeLimitsRequest&,
                            const Model::DescribeInstanceTypeLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeInstanceTypeLimitsResponseReceivedHandler;
@@ -576,6 +587,9 @@ typedef std::function<void(const OpenSearchServiceClient*, const Model::ListDoma
 typedef std::function<void(const OpenSearchServiceClient*, const Model::ListDomainsForPackageRequest&,
                            const Model::ListDomainsForPackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListDomainsForPackageResponseReceivedHandler;
+typedef std::function<void(const OpenSearchServiceClient*, const Model::ListInsightsRequest&, const Model::ListInsightsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListInsightsResponseReceivedHandler;
 typedef std::function<void(const OpenSearchServiceClient*, const Model::ListInstanceTypeDetailsRequest&,
                            const Model::ListInstanceTypeDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListInstanceTypeDetailsResponseReceivedHandler;

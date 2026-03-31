@@ -10,7 +10,7 @@
 namespace Aws {
 namespace BedrockAgentCoreControl {
 namespace Model {
-enum class ServerProtocol { NOT_SET, MCP, HTTP, A2A };
+enum class ServerProtocol { NOT_SET, MCP, HTTP, A2A, AGUI };
 
 namespace ServerProtocolMapper {
 AWS_BEDROCKAGENTCORECONTROL_API ServerProtocol GetServerProtocolForName(const Aws::String& name);

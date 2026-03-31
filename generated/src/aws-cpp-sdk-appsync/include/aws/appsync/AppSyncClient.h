@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appsync/AppSyncPaginationBase.h>
 #include <aws/appsync/AppSyncServiceClientModel.h>
+#include <aws/appsync/AppSyncWaiter.h>
 #include <aws/appsync/AppSync_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -20,7 +21,8 @@ namespace AppSync {
  */
 class AWS_APPSYNC_API AppSyncClient : public Aws::Client::AWSJsonClient,
                                       public Aws::Client::ClientWithAsyncTemplateMethods<AppSyncClient>,
-                                      public AppSyncPaginationBase<AppSyncClient> {
+                                      public AppSyncPaginationBase<AppSyncClient>,
+                                      public AppSyncWaiter<AppSyncClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2081,6 +2083,12 @@ class AWS_APPSYNC_API AppSyncClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AppSyncClient>;
   void init(const AppSyncClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, AppSyncError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   AppSyncClientConfiguration m_clientConfiguration;
   std::shared_ptr<AppSyncEndpointProviderBase> m_endpointProvider;

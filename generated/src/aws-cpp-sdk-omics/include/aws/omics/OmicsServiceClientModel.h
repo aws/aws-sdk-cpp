@@ -24,10 +24,12 @@
 #include <aws/omics/model/AcceptShareResult.h>
 #include <aws/omics/model/BatchDeleteReadSetResult.h>
 #include <aws/omics/model/CancelAnnotationImportJobResult.h>
+#include <aws/omics/model/CancelRunBatchResult.h>
 #include <aws/omics/model/CancelVariantImportJobResult.h>
 #include <aws/omics/model/CompleteMultipartReadSetUploadResult.h>
 #include <aws/omics/model/CreateAnnotationStoreResult.h>
 #include <aws/omics/model/CreateAnnotationStoreVersionResult.h>
+#include <aws/omics/model/CreateConfigurationResult.h>
 #include <aws/omics/model/CreateMultipartReadSetUploadResult.h>
 #include <aws/omics/model/CreateReferenceStoreResult.h>
 #include <aws/omics/model/CreateRunCacheResult.h>
@@ -41,6 +43,7 @@
 #include <aws/omics/model/DeleteAnnotationStoreVersionsResult.h>
 #include <aws/omics/model/DeleteReferenceResult.h>
 #include <aws/omics/model/DeleteReferenceStoreResult.h>
+#include <aws/omics/model/DeleteRunBatchResult.h>
 #include <aws/omics/model/DeleteS3AccessPolicyResult.h>
 #include <aws/omics/model/DeleteSequenceStoreResult.h>
 #include <aws/omics/model/DeleteShareResult.h>
@@ -48,6 +51,8 @@
 #include <aws/omics/model/GetAnnotationImportJobResult.h>
 #include <aws/omics/model/GetAnnotationStoreResult.h>
 #include <aws/omics/model/GetAnnotationStoreVersionResult.h>
+#include <aws/omics/model/GetBatchResult.h>
+#include <aws/omics/model/GetConfigurationResult.h>
 #include <aws/omics/model/GetReadSetActivationJobResult.h>
 #include <aws/omics/model/GetReadSetExportJobResult.h>
 #include <aws/omics/model/GetReadSetImportJobResult.h>
@@ -73,6 +78,10 @@
 #include <aws/omics/model/ListAnnotationStoreVersionsResult.h>
 #include <aws/omics/model/ListAnnotationStoresRequest.h>
 #include <aws/omics/model/ListAnnotationStoresResult.h>
+#include <aws/omics/model/ListBatchRequest.h>
+#include <aws/omics/model/ListBatchResult.h>
+#include <aws/omics/model/ListConfigurationsRequest.h>
+#include <aws/omics/model/ListConfigurationsResult.h>
 #include <aws/omics/model/ListMultipartReadSetUploadsResult.h>
 #include <aws/omics/model/ListReadSetActivationJobsResult.h>
 #include <aws/omics/model/ListReadSetExportJobsResult.h>
@@ -88,6 +97,7 @@
 #include <aws/omics/model/ListRunGroupsRequest.h>
 #include <aws/omics/model/ListRunGroupsResult.h>
 #include <aws/omics/model/ListRunTasksResult.h>
+#include <aws/omics/model/ListRunsInBatchResult.h>
 #include <aws/omics/model/ListRunsRequest.h>
 #include <aws/omics/model/ListRunsResult.h>
 #include <aws/omics/model/ListSequenceStoresRequest.h>
@@ -107,6 +117,7 @@
 #include <aws/omics/model/StartReadSetExportJobResult.h>
 #include <aws/omics/model/StartReadSetImportJobResult.h>
 #include <aws/omics/model/StartReferenceImportJobResult.h>
+#include <aws/omics/model/StartRunBatchResult.h>
 #include <aws/omics/model/StartRunResult.h>
 #include <aws/omics/model/StartVariantImportJobResult.h>
 #include <aws/omics/model/TagResourceResult.h>
@@ -154,10 +165,12 @@ class AcceptShareRequest;
 class BatchDeleteReadSetRequest;
 class CancelAnnotationImportJobRequest;
 class CancelRunRequest;
+class CancelRunBatchRequest;
 class CancelVariantImportJobRequest;
 class CompleteMultipartReadSetUploadRequest;
 class CreateAnnotationStoreRequest;
 class CreateAnnotationStoreVersionRequest;
+class CreateConfigurationRequest;
 class CreateMultipartReadSetUploadRequest;
 class CreateReferenceStoreRequest;
 class CreateRunCacheRequest;
@@ -169,9 +182,12 @@ class CreateWorkflowRequest;
 class CreateWorkflowVersionRequest;
 class DeleteAnnotationStoreRequest;
 class DeleteAnnotationStoreVersionsRequest;
+class DeleteBatchRequest;
+class DeleteConfigurationRequest;
 class DeleteReferenceRequest;
 class DeleteReferenceStoreRequest;
 class DeleteRunRequest;
+class DeleteRunBatchRequest;
 class DeleteRunCacheRequest;
 class DeleteRunGroupRequest;
 class DeleteS3AccessPolicyRequest;
@@ -183,6 +199,8 @@ class DeleteWorkflowVersionRequest;
 class GetAnnotationImportJobRequest;
 class GetAnnotationStoreRequest;
 class GetAnnotationStoreVersionRequest;
+class GetBatchRequest;
+class GetConfigurationRequest;
 class GetReadSetRequest;
 class GetReadSetActivationJobRequest;
 class GetReadSetExportJobRequest;
@@ -206,6 +224,8 @@ class GetWorkflowVersionRequest;
 class ListAnnotationImportJobsRequest;
 class ListAnnotationStoreVersionsRequest;
 class ListAnnotationStoresRequest;
+class ListBatchRequest;
+class ListConfigurationsRequest;
 class ListMultipartReadSetUploadsRequest;
 class ListReadSetActivationJobsRequest;
 class ListReadSetExportJobsRequest;
@@ -219,6 +239,7 @@ class ListRunCachesRequest;
 class ListRunGroupsRequest;
 class ListRunTasksRequest;
 class ListRunsRequest;
+class ListRunsInBatchRequest;
 class ListSequenceStoresRequest;
 class ListSharesRequest;
 class ListTagsForResourceRequest;
@@ -233,6 +254,7 @@ class StartReadSetExportJobRequest;
 class StartReadSetImportJobRequest;
 class StartReferenceImportJobRequest;
 class StartRunRequest;
+class StartRunBatchRequest;
 class StartVariantImportJobRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
@@ -253,10 +275,12 @@ typedef Aws::Utils::Outcome<AcceptShareResult, OmicsError> AcceptShareOutcome;
 typedef Aws::Utils::Outcome<BatchDeleteReadSetResult, OmicsError> BatchDeleteReadSetOutcome;
 typedef Aws::Utils::Outcome<CancelAnnotationImportJobResult, OmicsError> CancelAnnotationImportJobOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, OmicsError> CancelRunOutcome;
+typedef Aws::Utils::Outcome<CancelRunBatchResult, OmicsError> CancelRunBatchOutcome;
 typedef Aws::Utils::Outcome<CancelVariantImportJobResult, OmicsError> CancelVariantImportJobOutcome;
 typedef Aws::Utils::Outcome<CompleteMultipartReadSetUploadResult, OmicsError> CompleteMultipartReadSetUploadOutcome;
 typedef Aws::Utils::Outcome<CreateAnnotationStoreResult, OmicsError> CreateAnnotationStoreOutcome;
 typedef Aws::Utils::Outcome<CreateAnnotationStoreVersionResult, OmicsError> CreateAnnotationStoreVersionOutcome;
+typedef Aws::Utils::Outcome<CreateConfigurationResult, OmicsError> CreateConfigurationOutcome;
 typedef Aws::Utils::Outcome<CreateMultipartReadSetUploadResult, OmicsError> CreateMultipartReadSetUploadOutcome;
 typedef Aws::Utils::Outcome<CreateReferenceStoreResult, OmicsError> CreateReferenceStoreOutcome;
 typedef Aws::Utils::Outcome<CreateRunCacheResult, OmicsError> CreateRunCacheOutcome;
@@ -268,9 +292,12 @@ typedef Aws::Utils::Outcome<CreateWorkflowResult, OmicsError> CreateWorkflowOutc
 typedef Aws::Utils::Outcome<CreateWorkflowVersionResult, OmicsError> CreateWorkflowVersionOutcome;
 typedef Aws::Utils::Outcome<DeleteAnnotationStoreResult, OmicsError> DeleteAnnotationStoreOutcome;
 typedef Aws::Utils::Outcome<DeleteAnnotationStoreVersionsResult, OmicsError> DeleteAnnotationStoreVersionsOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, OmicsError> DeleteBatchOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, OmicsError> DeleteConfigurationOutcome;
 typedef Aws::Utils::Outcome<DeleteReferenceResult, OmicsError> DeleteReferenceOutcome;
 typedef Aws::Utils::Outcome<DeleteReferenceStoreResult, OmicsError> DeleteReferenceStoreOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, OmicsError> DeleteRunOutcome;
+typedef Aws::Utils::Outcome<DeleteRunBatchResult, OmicsError> DeleteRunBatchOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, OmicsError> DeleteRunCacheOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, OmicsError> DeleteRunGroupOutcome;
 typedef Aws::Utils::Outcome<DeleteS3AccessPolicyResult, OmicsError> DeleteS3AccessPolicyOutcome;
@@ -282,6 +309,8 @@ typedef Aws::Utils::Outcome<Aws::NoResult, OmicsError> DeleteWorkflowVersionOutc
 typedef Aws::Utils::Outcome<GetAnnotationImportJobResult, OmicsError> GetAnnotationImportJobOutcome;
 typedef Aws::Utils::Outcome<GetAnnotationStoreResult, OmicsError> GetAnnotationStoreOutcome;
 typedef Aws::Utils::Outcome<GetAnnotationStoreVersionResult, OmicsError> GetAnnotationStoreVersionOutcome;
+typedef Aws::Utils::Outcome<GetBatchResult, OmicsError> GetBatchOutcome;
+typedef Aws::Utils::Outcome<GetConfigurationResult, OmicsError> GetConfigurationOutcome;
 typedef Aws::Utils::Outcome<GetReadSetResult, OmicsError> GetReadSetOutcome;
 typedef Aws::Utils::Outcome<GetReadSetActivationJobResult, OmicsError> GetReadSetActivationJobOutcome;
 typedef Aws::Utils::Outcome<GetReadSetExportJobResult, OmicsError> GetReadSetExportJobOutcome;
@@ -305,6 +334,8 @@ typedef Aws::Utils::Outcome<GetWorkflowVersionResult, OmicsError> GetWorkflowVer
 typedef Aws::Utils::Outcome<ListAnnotationImportJobsResult, OmicsError> ListAnnotationImportJobsOutcome;
 typedef Aws::Utils::Outcome<ListAnnotationStoreVersionsResult, OmicsError> ListAnnotationStoreVersionsOutcome;
 typedef Aws::Utils::Outcome<ListAnnotationStoresResult, OmicsError> ListAnnotationStoresOutcome;
+typedef Aws::Utils::Outcome<ListBatchResult, OmicsError> ListBatchOutcome;
+typedef Aws::Utils::Outcome<ListConfigurationsResult, OmicsError> ListConfigurationsOutcome;
 typedef Aws::Utils::Outcome<ListMultipartReadSetUploadsResult, OmicsError> ListMultipartReadSetUploadsOutcome;
 typedef Aws::Utils::Outcome<ListReadSetActivationJobsResult, OmicsError> ListReadSetActivationJobsOutcome;
 typedef Aws::Utils::Outcome<ListReadSetExportJobsResult, OmicsError> ListReadSetExportJobsOutcome;
@@ -318,6 +349,7 @@ typedef Aws::Utils::Outcome<ListRunCachesResult, OmicsError> ListRunCachesOutcom
 typedef Aws::Utils::Outcome<ListRunGroupsResult, OmicsError> ListRunGroupsOutcome;
 typedef Aws::Utils::Outcome<ListRunTasksResult, OmicsError> ListRunTasksOutcome;
 typedef Aws::Utils::Outcome<ListRunsResult, OmicsError> ListRunsOutcome;
+typedef Aws::Utils::Outcome<ListRunsInBatchResult, OmicsError> ListRunsInBatchOutcome;
 typedef Aws::Utils::Outcome<ListSequenceStoresResult, OmicsError> ListSequenceStoresOutcome;
 typedef Aws::Utils::Outcome<ListSharesResult, OmicsError> ListSharesOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, OmicsError> ListTagsForResourceOutcome;
@@ -332,6 +364,7 @@ typedef Aws::Utils::Outcome<StartReadSetExportJobResult, OmicsError> StartReadSe
 typedef Aws::Utils::Outcome<StartReadSetImportJobResult, OmicsError> StartReadSetImportJobOutcome;
 typedef Aws::Utils::Outcome<StartReferenceImportJobResult, OmicsError> StartReferenceImportJobOutcome;
 typedef Aws::Utils::Outcome<StartRunResult, OmicsError> StartRunOutcome;
+typedef Aws::Utils::Outcome<StartRunBatchResult, OmicsError> StartRunBatchOutcome;
 typedef Aws::Utils::Outcome<StartVariantImportJobResult, OmicsError> StartVariantImportJobOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, OmicsError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, OmicsError> UntagResourceOutcome;
@@ -352,10 +385,12 @@ typedef std::future<AcceptShareOutcome> AcceptShareOutcomeCallable;
 typedef std::future<BatchDeleteReadSetOutcome> BatchDeleteReadSetOutcomeCallable;
 typedef std::future<CancelAnnotationImportJobOutcome> CancelAnnotationImportJobOutcomeCallable;
 typedef std::future<CancelRunOutcome> CancelRunOutcomeCallable;
+typedef std::future<CancelRunBatchOutcome> CancelRunBatchOutcomeCallable;
 typedef std::future<CancelVariantImportJobOutcome> CancelVariantImportJobOutcomeCallable;
 typedef std::future<CompleteMultipartReadSetUploadOutcome> CompleteMultipartReadSetUploadOutcomeCallable;
 typedef std::future<CreateAnnotationStoreOutcome> CreateAnnotationStoreOutcomeCallable;
 typedef std::future<CreateAnnotationStoreVersionOutcome> CreateAnnotationStoreVersionOutcomeCallable;
+typedef std::future<CreateConfigurationOutcome> CreateConfigurationOutcomeCallable;
 typedef std::future<CreateMultipartReadSetUploadOutcome> CreateMultipartReadSetUploadOutcomeCallable;
 typedef std::future<CreateReferenceStoreOutcome> CreateReferenceStoreOutcomeCallable;
 typedef std::future<CreateRunCacheOutcome> CreateRunCacheOutcomeCallable;
@@ -367,9 +402,12 @@ typedef std::future<CreateWorkflowOutcome> CreateWorkflowOutcomeCallable;
 typedef std::future<CreateWorkflowVersionOutcome> CreateWorkflowVersionOutcomeCallable;
 typedef std::future<DeleteAnnotationStoreOutcome> DeleteAnnotationStoreOutcomeCallable;
 typedef std::future<DeleteAnnotationStoreVersionsOutcome> DeleteAnnotationStoreVersionsOutcomeCallable;
+typedef std::future<DeleteBatchOutcome> DeleteBatchOutcomeCallable;
+typedef std::future<DeleteConfigurationOutcome> DeleteConfigurationOutcomeCallable;
 typedef std::future<DeleteReferenceOutcome> DeleteReferenceOutcomeCallable;
 typedef std::future<DeleteReferenceStoreOutcome> DeleteReferenceStoreOutcomeCallable;
 typedef std::future<DeleteRunOutcome> DeleteRunOutcomeCallable;
+typedef std::future<DeleteRunBatchOutcome> DeleteRunBatchOutcomeCallable;
 typedef std::future<DeleteRunCacheOutcome> DeleteRunCacheOutcomeCallable;
 typedef std::future<DeleteRunGroupOutcome> DeleteRunGroupOutcomeCallable;
 typedef std::future<DeleteS3AccessPolicyOutcome> DeleteS3AccessPolicyOutcomeCallable;
@@ -381,6 +419,8 @@ typedef std::future<DeleteWorkflowVersionOutcome> DeleteWorkflowVersionOutcomeCa
 typedef std::future<GetAnnotationImportJobOutcome> GetAnnotationImportJobOutcomeCallable;
 typedef std::future<GetAnnotationStoreOutcome> GetAnnotationStoreOutcomeCallable;
 typedef std::future<GetAnnotationStoreVersionOutcome> GetAnnotationStoreVersionOutcomeCallable;
+typedef std::future<GetBatchOutcome> GetBatchOutcomeCallable;
+typedef std::future<GetConfigurationOutcome> GetConfigurationOutcomeCallable;
 typedef std::future<GetReadSetOutcome> GetReadSetOutcomeCallable;
 typedef std::future<GetReadSetActivationJobOutcome> GetReadSetActivationJobOutcomeCallable;
 typedef std::future<GetReadSetExportJobOutcome> GetReadSetExportJobOutcomeCallable;
@@ -404,6 +444,8 @@ typedef std::future<GetWorkflowVersionOutcome> GetWorkflowVersionOutcomeCallable
 typedef std::future<ListAnnotationImportJobsOutcome> ListAnnotationImportJobsOutcomeCallable;
 typedef std::future<ListAnnotationStoreVersionsOutcome> ListAnnotationStoreVersionsOutcomeCallable;
 typedef std::future<ListAnnotationStoresOutcome> ListAnnotationStoresOutcomeCallable;
+typedef std::future<ListBatchOutcome> ListBatchOutcomeCallable;
+typedef std::future<ListConfigurationsOutcome> ListConfigurationsOutcomeCallable;
 typedef std::future<ListMultipartReadSetUploadsOutcome> ListMultipartReadSetUploadsOutcomeCallable;
 typedef std::future<ListReadSetActivationJobsOutcome> ListReadSetActivationJobsOutcomeCallable;
 typedef std::future<ListReadSetExportJobsOutcome> ListReadSetExportJobsOutcomeCallable;
@@ -417,6 +459,7 @@ typedef std::future<ListRunCachesOutcome> ListRunCachesOutcomeCallable;
 typedef std::future<ListRunGroupsOutcome> ListRunGroupsOutcomeCallable;
 typedef std::future<ListRunTasksOutcome> ListRunTasksOutcomeCallable;
 typedef std::future<ListRunsOutcome> ListRunsOutcomeCallable;
+typedef std::future<ListRunsInBatchOutcome> ListRunsInBatchOutcomeCallable;
 typedef std::future<ListSequenceStoresOutcome> ListSequenceStoresOutcomeCallable;
 typedef std::future<ListSharesOutcome> ListSharesOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -431,6 +474,7 @@ typedef std::future<StartReadSetExportJobOutcome> StartReadSetExportJobOutcomeCa
 typedef std::future<StartReadSetImportJobOutcome> StartReadSetImportJobOutcomeCallable;
 typedef std::future<StartReferenceImportJobOutcome> StartReferenceImportJobOutcomeCallable;
 typedef std::future<StartRunOutcome> StartRunOutcomeCallable;
+typedef std::future<StartRunBatchOutcome> StartRunBatchOutcomeCallable;
 typedef std::future<StartVariantImportJobOutcome> StartVariantImportJobOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -464,6 +508,9 @@ typedef std::function<void(const OmicsClient*, const Model::CancelAnnotationImpo
 typedef std::function<void(const OmicsClient*, const Model::CancelRunRequest&, const Model::CancelRunOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CancelRunResponseReceivedHandler;
+typedef std::function<void(const OmicsClient*, const Model::CancelRunBatchRequest&, const Model::CancelRunBatchOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CancelRunBatchResponseReceivedHandler;
 typedef std::function<void(const OmicsClient*, const Model::CancelVariantImportJobRequest&, const Model::CancelVariantImportJobOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CancelVariantImportJobResponseReceivedHandler;
@@ -478,6 +525,9 @@ typedef std::function<void(const OmicsClient*, const Model::CreateAnnotationStor
                            const Model::CreateAnnotationStoreVersionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateAnnotationStoreVersionResponseReceivedHandler;
+typedef std::function<void(const OmicsClient*, const Model::CreateConfigurationRequest&, const Model::CreateConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateConfigurationResponseReceivedHandler;
 typedef std::function<void(const OmicsClient*, const Model::CreateMultipartReadSetUploadRequest&,
                            const Model::CreateMultipartReadSetUploadOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -513,6 +563,12 @@ typedef std::function<void(const OmicsClient*, const Model::DeleteAnnotationStor
                            const Model::DeleteAnnotationStoreVersionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteAnnotationStoreVersionsResponseReceivedHandler;
+typedef std::function<void(const OmicsClient*, const Model::DeleteBatchRequest&, const Model::DeleteBatchOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteBatchResponseReceivedHandler;
+typedef std::function<void(const OmicsClient*, const Model::DeleteConfigurationRequest&, const Model::DeleteConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteConfigurationResponseReceivedHandler;
 typedef std::function<void(const OmicsClient*, const Model::DeleteReferenceRequest&, const Model::DeleteReferenceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteReferenceResponseReceivedHandler;
@@ -522,6 +578,9 @@ typedef std::function<void(const OmicsClient*, const Model::DeleteReferenceStore
 typedef std::function<void(const OmicsClient*, const Model::DeleteRunRequest&, const Model::DeleteRunOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteRunResponseReceivedHandler;
+typedef std::function<void(const OmicsClient*, const Model::DeleteRunBatchRequest&, const Model::DeleteRunBatchOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteRunBatchResponseReceivedHandler;
 typedef std::function<void(const OmicsClient*, const Model::DeleteRunCacheRequest&, const Model::DeleteRunCacheOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteRunCacheResponseReceivedHandler;
@@ -555,6 +614,12 @@ typedef std::function<void(const OmicsClient*, const Model::GetAnnotationStoreRe
 typedef std::function<void(const OmicsClient*, const Model::GetAnnotationStoreVersionRequest&,
                            const Model::GetAnnotationStoreVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetAnnotationStoreVersionResponseReceivedHandler;
+typedef std::function<void(const OmicsClient*, const Model::GetBatchRequest&, const Model::GetBatchOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetBatchResponseReceivedHandler;
+typedef std::function<void(const OmicsClient*, const Model::GetConfigurationRequest&, const Model::GetConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetConfigurationResponseReceivedHandler;
 typedef std::function<void(const OmicsClient*, const Model::GetReadSetRequest&, Model::GetReadSetOutcome,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetReadSetResponseReceivedHandler;
@@ -624,6 +689,12 @@ typedef std::function<void(const OmicsClient*, const Model::ListAnnotationStoreV
 typedef std::function<void(const OmicsClient*, const Model::ListAnnotationStoresRequest&, const Model::ListAnnotationStoresOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAnnotationStoresResponseReceivedHandler;
+typedef std::function<void(const OmicsClient*, const Model::ListBatchRequest&, const Model::ListBatchOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListBatchResponseReceivedHandler;
+typedef std::function<void(const OmicsClient*, const Model::ListConfigurationsRequest&, const Model::ListConfigurationsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListConfigurationsResponseReceivedHandler;
 typedef std::function<void(const OmicsClient*, const Model::ListMultipartReadSetUploadsRequest&,
                            const Model::ListMultipartReadSetUploadsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListMultipartReadSetUploadsResponseReceivedHandler;
@@ -663,6 +734,9 @@ typedef std::function<void(const OmicsClient*, const Model::ListRunTasksRequest&
 typedef std::function<void(const OmicsClient*, const Model::ListRunsRequest&, const Model::ListRunsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListRunsResponseReceivedHandler;
+typedef std::function<void(const OmicsClient*, const Model::ListRunsInBatchRequest&, const Model::ListRunsInBatchOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListRunsInBatchResponseReceivedHandler;
 typedef std::function<void(const OmicsClient*, const Model::ListSequenceStoresRequest&, const Model::ListSequenceStoresOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListSequenceStoresResponseReceivedHandler;
@@ -705,6 +779,9 @@ typedef std::function<void(const OmicsClient*, const Model::StartReferenceImport
 typedef std::function<void(const OmicsClient*, const Model::StartRunRequest&, const Model::StartRunOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartRunResponseReceivedHandler;
+typedef std::function<void(const OmicsClient*, const Model::StartRunBatchRequest&, const Model::StartRunBatchOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartRunBatchResponseReceivedHandler;
 typedef std::function<void(const OmicsClient*, const Model::StartVariantImportJobRequest&, const Model::StartVariantImportJobOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartVariantImportJobResponseReceivedHandler;

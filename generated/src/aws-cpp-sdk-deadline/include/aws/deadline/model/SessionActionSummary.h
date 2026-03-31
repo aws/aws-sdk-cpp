@@ -143,24 +143,6 @@ class SessionActionSummary {
 
   ///@{
   /**
-   * <p>The session action definition.</p>
-   */
-  inline const SessionActionDefinitionSummary& GetDefinition() const { return m_definition; }
-  inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
-  template <typename DefinitionT = SessionActionDefinitionSummary>
-  void SetDefinition(DefinitionT&& value) {
-    m_definitionHasBeenSet = true;
-    m_definition = std::forward<DefinitionT>(value);
-  }
-  template <typename DefinitionT = SessionActionDefinitionSummary>
-  SessionActionSummary& WithDefinition(DefinitionT&& value) {
-    SetDefinition(std::forward<DefinitionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The list of manifest properties that describe file attachments for the task
    * run.</p>
    */
@@ -183,6 +165,24 @@ class SessionActionSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The session action definition.</p>
+   */
+  inline const SessionActionDefinitionSummary& GetDefinition() const { return m_definition; }
+  inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
+  template <typename DefinitionT = SessionActionDefinitionSummary>
+  void SetDefinition(DefinitionT&& value) {
+    m_definitionHasBeenSet = true;
+    m_definition = std::forward<DefinitionT>(value);
+  }
+  template <typename DefinitionT = SessionActionDefinitionSummary>
+  SessionActionSummary& WithDefinition(DefinitionT&& value) {
+    SetDefinition(std::forward<DefinitionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_sessionActionId;
 
@@ -196,17 +196,17 @@ class SessionActionSummary {
 
   double m_progressPercent{0.0};
 
-  SessionActionDefinitionSummary m_definition;
-
   Aws::Vector<TaskRunManifestPropertiesResponse> m_manifests;
+
+  SessionActionDefinitionSummary m_definition;
   bool m_sessionActionIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_startedAtHasBeenSet = false;
   bool m_endedAtHasBeenSet = false;
   bool m_workerUpdatedAtHasBeenSet = false;
   bool m_progressPercentHasBeenSet = false;
-  bool m_definitionHasBeenSet = false;
   bool m_manifestsHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
 };
 
 }  // namespace Model

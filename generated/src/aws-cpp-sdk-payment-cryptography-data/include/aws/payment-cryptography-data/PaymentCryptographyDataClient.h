@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/payment-cryptography-data/PaymentCryptographyDataPaginationBase.h>
 #include <aws/payment-cryptography-data/PaymentCryptographyDataServiceClientModel.h>
+#include <aws/payment-cryptography-data/PaymentCryptographyDataWaiter.h>
 #include <aws/payment-cryptography-data/PaymentCryptographyData_EXPORTS.h>
 
 namespace Aws {
@@ -31,7 +32,8 @@ namespace PaymentCryptographyData {
 class AWS_PAYMENTCRYPTOGRAPHYDATA_API PaymentCryptographyDataClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<PaymentCryptographyDataClient>,
-      public PaymentCryptographyDataPaginationBase<PaymentCryptographyDataClient> {
+      public PaymentCryptographyDataPaginationBase<PaymentCryptographyDataClient>,
+      public PaymentCryptographyDataWaiter<PaymentCryptographyDataClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -874,6 +876,12 @@ class AWS_PAYMENTCRYPTOGRAPHYDATA_API PaymentCryptographyDataClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PaymentCryptographyDataClient>;
   void init(const PaymentCryptographyDataClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, PaymentCryptographyDataError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   PaymentCryptographyDataClientConfiguration m_clientConfiguration;
   std::shared_ptr<PaymentCryptographyDataEndpointProviderBase> m_endpointProvider;

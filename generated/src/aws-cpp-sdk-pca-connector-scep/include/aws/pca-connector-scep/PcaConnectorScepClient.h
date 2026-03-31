@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/pca-connector-scep/PcaConnectorScepPaginationBase.h>
 #include <aws/pca-connector-scep/PcaConnectorScepServiceClientModel.h>
+#include <aws/pca-connector-scep/PcaConnectorScepWaiter.h>
 #include <aws/pca-connector-scep/PcaConnectorScep_EXPORTS.h>
 
 namespace Aws {
@@ -22,7 +23,8 @@ namespace PcaConnectorScep {
  */
 class AWS_PCACONNECTORSCEP_API PcaConnectorScepClient : public Aws::Client::AWSJsonClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<PcaConnectorScepClient>,
-                                                        public PcaConnectorScepPaginationBase<PcaConnectorScepClient> {
+                                                        public PcaConnectorScepPaginationBase<PcaConnectorScepClient>,
+                                                        public PcaConnectorScepWaiter<PcaConnectorScepClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -426,6 +428,12 @@ class AWS_PCACONNECTORSCEP_API PcaConnectorScepClient : public Aws::Client::AWSJ
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PcaConnectorScepClient>;
   void init(const PcaConnectorScepClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, PcaConnectorScepError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   PcaConnectorScepClientConfiguration m_clientConfiguration;
   std::shared_ptr<PcaConnectorScepEndpointProviderBase> m_endpointProvider;

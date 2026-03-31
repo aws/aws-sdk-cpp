@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/managedblockchain/ManagedBlockchainPaginationBase.h>
 #include <aws/managedblockchain/ManagedBlockchainServiceClientModel.h>
+#include <aws/managedblockchain/ManagedBlockchainWaiter.h>
 #include <aws/managedblockchain/ManagedBlockchain_EXPORTS.h>
 
 namespace Aws {
@@ -30,7 +31,8 @@ namespace ManagedBlockchain {
  */
 class AWS_MANAGEDBLOCKCHAIN_API ManagedBlockchainClient : public Aws::Client::AWSJsonClient,
                                                           public Aws::Client::ClientWithAsyncTemplateMethods<ManagedBlockchainClient>,
-                                                          public ManagedBlockchainPaginationBase<ManagedBlockchainClient> {
+                                                          public ManagedBlockchainPaginationBase<ManagedBlockchainClient>,
+                                                          public ManagedBlockchainWaiter<ManagedBlockchainClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -853,6 +855,12 @@ class AWS_MANAGEDBLOCKCHAIN_API ManagedBlockchainClient : public Aws::Client::AW
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ManagedBlockchainClient>;
   void init(const ManagedBlockchainClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ManagedBlockchainError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   ManagedBlockchainClientConfiguration m_clientConfiguration;
   std::shared_ptr<ManagedBlockchainEndpointProviderBase> m_endpointProvider;

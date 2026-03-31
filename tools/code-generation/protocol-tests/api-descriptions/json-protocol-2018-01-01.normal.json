@@ -180,6 +180,15 @@
       },
       "input":{"shape":"SimpleScalarPropertiesInputOutput"},
       "output":{"shape":"SimpleScalarPropertiesInputOutput"}
+    },
+    "SparseNullsOperation":{
+      "name":"SparseNullsOperation",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"SparseNullsOperationInputOutput"},
+      "output":{"shape":"SparseNullsOperationInputOutput"}
     }
   },
   "shapes":{
@@ -211,8 +220,7 @@
     },
     "ContentTypeParametersOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DateTime":{
       "type":"timestamp",
@@ -226,8 +234,7 @@
     },
     "Document":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "document":true
     },
     "Double":{
@@ -236,8 +243,7 @@
     },
     "EmptyStruct":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "ErrorWithMembers":{
       "type":"structure",
@@ -257,8 +263,7 @@
     },
     "ErrorWithoutMembers":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "exception":true,
       "fault":true
     },
@@ -291,8 +296,7 @@
     },
     "FooError":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "documentation":"<p>This error has test cases that test some of the dark corners of Amazon service framework history. It should only be implemented by clients.</p>",
       "exception":true,
       "fault":true
@@ -519,6 +523,24 @@
       "members":{
         "Value":{"shape":"String"}
       }
+    },
+    "SparseNullsOperationInputOutput":{
+      "type":"structure",
+      "members":{
+        "sparseStringList":{"shape":"SparseStringList"},
+        "sparseStringMap":{"shape":"SparseStringMap"}
+      }
+    },
+    "SparseStringList":{
+      "type":"list",
+      "member":{"shape":"String"},
+      "sparse":true
+    },
+    "SparseStringMap":{
+      "type":"map",
+      "key":{"shape":"String"},
+      "value":{"shape":"String"},
+      "sparse":true
     },
     "String":{"type":"string"},
     "StringList":{

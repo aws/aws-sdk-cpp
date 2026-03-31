@@ -127,6 +127,7 @@ enum class ClusterInstanceType {
   ml_r7i_16xlarge,
   ml_r7i_24xlarge,
   ml_r7i_48xlarge,
+  ml_r5d_16xlarge,
   ml_p6_b300_48xlarge
 };
 

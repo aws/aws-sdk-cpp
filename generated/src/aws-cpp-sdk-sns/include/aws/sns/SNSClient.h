@@ -11,6 +11,7 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/sns/SNSPaginationBase.h>
 #include <aws/sns/SNSServiceClientModel.h>
+#include <aws/sns/SNSWaiter.h>
 #include <aws/sns/SNS_EXPORTS.h>
 
 namespace Aws {
@@ -37,7 +38,8 @@ namespace SNS {
  */
 class AWS_SNS_API SNSClient : public Aws::Client::AWSXMLClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<SNSClient>,
-                              public SNSPaginationBase<SNSClient> {
+                              public SNSPaginationBase<SNSClient>,
+                              public SNSWaiter<SNSClient> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();
@@ -1532,6 +1534,10 @@ class AWS_SNS_API SNSClient : public Aws::Client::AWSXMLClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SNSClient>;
   void init(const SNSClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SNSError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   SNSClientConfiguration m_clientConfiguration;
   std::shared_ptr<SNSEndpointProviderBase> m_endpointProvider;

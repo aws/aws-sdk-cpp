@@ -11,6 +11,7 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/email/SESPaginationBase.h>
 #include <aws/email/SESServiceClientModel.h>
+#include <aws/email/SESWaiter.h>
 #include <aws/email/SES_EXPORTS.h>
 
 namespace Aws {
@@ -39,7 +40,8 @@ namespace SES {
  */
 class AWS_SES_API SESClient : public Aws::Client::AWSXMLClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<SESClient>,
-                              public SESPaginationBase<SESClient> {
+                              public SESPaginationBase<SESClient>,
+                              public SESWaiter<SESClient> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();
@@ -2584,6 +2586,10 @@ class AWS_SES_API SESClient : public Aws::Client::AWSXMLClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SESClient>;
   void init(const SESClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SESError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 
   SESClientConfiguration m_clientConfiguration;
   std::shared_ptr<SESEndpointProviderBase> m_endpointProvider;

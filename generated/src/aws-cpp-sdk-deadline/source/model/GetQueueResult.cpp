@@ -22,6 +22,10 @@ GetQueueResult::GetQueueResult(const Aws::AmazonWebServiceResult<JsonValue>& res
 GetQueueResult& GetQueueResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("farmId")) {
+    m_farmId = jsonValue.GetString("farmId");
+    m_farmIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("queueId")) {
     m_queueId = jsonValue.GetString("queueId");
     m_queueIdHasBeenSet = true;
@@ -29,14 +33,6 @@ GetQueueResult& GetQueueResult::operator=(const Aws::AmazonWebServiceResult<Json
   if (jsonValue.ValueExists("displayName")) {
     m_displayName = jsonValue.GetString("displayName");
     m_displayNameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("description")) {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("farmId")) {
-    m_farmId = jsonValue.GetString("farmId");
-    m_farmIdHasBeenSet = true;
   }
   if (jsonValue.ValueExists("status")) {
     m_status = QueueStatusMapper::GetQueueStatusForName(jsonValue.GetString("status"));
@@ -49,6 +45,26 @@ GetQueueResult& GetQueueResult::operator=(const Aws::AmazonWebServiceResult<Json
   if (jsonValue.ValueExists("blockedReason")) {
     m_blockedReason = QueueBlockedReasonMapper::GetQueueBlockedReasonForName(jsonValue.GetString("blockedReason"));
     m_blockedReasonHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("createdAt")) {
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("createdBy")) {
+    m_createdBy = jsonValue.GetString("createdBy");
+    m_createdByHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("updatedAt")) {
+    m_updatedAt = jsonValue.GetString("updatedAt");
+    m_updatedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("updatedBy")) {
+    m_updatedBy = jsonValue.GetString("updatedBy");
+    m_updatedByHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
   }
   if (jsonValue.ValueExists("jobAttachmentSettings")) {
     m_jobAttachmentSettings = jsonValue.GetObject("jobAttachmentSettings");
@@ -78,22 +94,6 @@ GetQueueResult& GetQueueResult::operator=(const Aws::AmazonWebServiceResult<Json
   if (jsonValue.ValueExists("jobRunAsUser")) {
     m_jobRunAsUser = jsonValue.GetObject("jobRunAsUser");
     m_jobRunAsUserHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("createdAt")) {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("createdBy")) {
-    m_createdBy = jsonValue.GetString("createdBy");
-    m_createdByHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("updatedAt")) {
-    m_updatedAt = jsonValue.GetString("updatedAt");
-    m_updatedAtHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("updatedBy")) {
-    m_updatedBy = jsonValue.GetString("updatedBy");
-    m_updatedByHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

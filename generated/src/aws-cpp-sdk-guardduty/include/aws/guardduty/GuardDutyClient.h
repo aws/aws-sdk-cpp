@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/guardduty/GuardDutyPaginationBase.h>
 #include <aws/guardduty/GuardDutyServiceClientModel.h>
+#include <aws/guardduty/GuardDutyWaiter.h>
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 
 namespace Aws {
@@ -40,7 +41,8 @@ namespace GuardDuty {
  */
 class AWS_GUARDDUTY_API GuardDutyClient : public Aws::Client::AWSJsonClient,
                                           public Aws::Client::ClientWithAsyncTemplateMethods<GuardDutyClient>,
-                                          public GuardDutyPaginationBase<GuardDutyClient> {
+                                          public GuardDutyPaginationBase<GuardDutyClient>,
+                                          public GuardDutyWaiter<GuardDutyClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2681,6 +2683,12 @@ class AWS_GUARDDUTY_API GuardDutyClient : public Aws::Client::AWSJsonClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<GuardDutyClient>;
   void init(const GuardDutyClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, GuardDutyError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 
   GuardDutyClientConfiguration m_clientConfiguration;
   std::shared_ptr<GuardDutyEndpointProviderBase> m_endpointProvider;

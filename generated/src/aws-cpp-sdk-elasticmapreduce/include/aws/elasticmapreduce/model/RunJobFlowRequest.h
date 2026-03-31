@@ -212,6 +212,32 @@ class RunJobFlowRequest : public EMRRequest {
 
   ///@{
   /**
+   * <p>The Amazon Resource Name (ARN) of the runtime role for steps specified in the
+   * RunJobFlow request. The runtime role can be a cross-account IAM role. The
+   * runtime role ARN is a combination of account ID, role name, and role type using
+   * the following format:
+   * <code>arn:partition:iam::account-id:role/role-name</code>.</p> <p>For example,
+   * <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted
+   * runtime role ARN.</p> <p>This parameter applies only to steps included in the
+   * <code>Steps</code> parameter of this RunJobFlow request. It does not apply to
+   * steps added later to the cluster.</p>
+   */
+  inline const Aws::String& GetStepExecutionRoleArn() const { return m_stepExecutionRoleArn; }
+  inline bool StepExecutionRoleArnHasBeenSet() const { return m_stepExecutionRoleArnHasBeenSet; }
+  template <typename StepExecutionRoleArnT = Aws::String>
+  void SetStepExecutionRoleArn(StepExecutionRoleArnT&& value) {
+    m_stepExecutionRoleArnHasBeenSet = true;
+    m_stepExecutionRoleArn = std::forward<StepExecutionRoleArnT>(value);
+  }
+  template <typename StepExecutionRoleArnT = Aws::String>
+  RunJobFlowRequest& WithStepExecutionRoleArn(StepExecutionRoleArnT&& value) {
+    SetStepExecutionRoleArn(std::forward<StepExecutionRoleArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A list of bootstrap actions to run before Hadoop starts on the cluster
    * nodes.</p>
    */
@@ -792,6 +818,8 @@ class RunJobFlowRequest : public EMRRequest {
 
   Aws::Vector<StepConfig> m_steps;
 
+  Aws::String m_stepExecutionRoleArn;
+
   Aws::Vector<BootstrapActionConfig> m_bootstrapActions;
 
   Aws::Vector<Aws::String> m_supportedProducts;
@@ -849,6 +877,7 @@ class RunJobFlowRequest : public EMRRequest {
   bool m_releaseLabelHasBeenSet = false;
   bool m_instancesHasBeenSet = false;
   bool m_stepsHasBeenSet = false;
+  bool m_stepExecutionRoleArnHasBeenSet = false;
   bool m_bootstrapActionsHasBeenSet = false;
   bool m_supportedProductsHasBeenSet = false;
   bool m_newSupportedProductsHasBeenSet = false;

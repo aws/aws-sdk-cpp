@@ -16,7 +16,7 @@ AWS_PROTOCOL_TEST(EmptyInputOutput, empty_output) {
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  mockRs.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Content-Type", R"(application/cbor)"}};
   mockRs.body = "v/8=";
   SetMockResponse(mockRs);
 
@@ -34,7 +34,7 @@ AWS_PROTOCOL_TEST(EmptyInputOutput, empty_output_no_body) {
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  mockRs.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Content-Type", R"(application/cbor)"}};
   SetMockResponse(mockRs);
 
   EmptyInputOutputRequest request;

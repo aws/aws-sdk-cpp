@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/TrainingPlanExtensionOffering.h>
 #include <aws/sagemaker/model/TrainingPlanOffering.h>
 
 #include <utility>
@@ -53,6 +54,34 @@ class SearchTrainingPlanOfferingsResult {
   ///@}
 
   ///@{
+  /**
+   * <p>A list of extension offerings available for the specified training plan.
+   * These offerings can be used with the <code> <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ExtendTrainingPlan.html">ExtendTrainingPlan</a>
+   * </code> API to extend an existing training plan.</p>
+   */
+  inline const Aws::Vector<TrainingPlanExtensionOffering>& GetTrainingPlanExtensionOfferings() const {
+    return m_trainingPlanExtensionOfferings;
+  }
+  template <typename TrainingPlanExtensionOfferingsT = Aws::Vector<TrainingPlanExtensionOffering>>
+  void SetTrainingPlanExtensionOfferings(TrainingPlanExtensionOfferingsT&& value) {
+    m_trainingPlanExtensionOfferingsHasBeenSet = true;
+    m_trainingPlanExtensionOfferings = std::forward<TrainingPlanExtensionOfferingsT>(value);
+  }
+  template <typename TrainingPlanExtensionOfferingsT = Aws::Vector<TrainingPlanExtensionOffering>>
+  SearchTrainingPlanOfferingsResult& WithTrainingPlanExtensionOfferings(TrainingPlanExtensionOfferingsT&& value) {
+    SetTrainingPlanExtensionOfferings(std::forward<TrainingPlanExtensionOfferingsT>(value));
+    return *this;
+  }
+  template <typename TrainingPlanExtensionOfferingsT = TrainingPlanExtensionOffering>
+  SearchTrainingPlanOfferingsResult& AddTrainingPlanExtensionOfferings(TrainingPlanExtensionOfferingsT&& value) {
+    m_trainingPlanExtensionOfferingsHasBeenSet = true;
+    m_trainingPlanExtensionOfferings.emplace_back(std::forward<TrainingPlanExtensionOfferingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -71,9 +100,12 @@ class SearchTrainingPlanOfferingsResult {
  private:
   Aws::Vector<TrainingPlanOffering> m_trainingPlanOfferings;
 
+  Aws::Vector<TrainingPlanExtensionOffering> m_trainingPlanExtensionOfferings;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_trainingPlanOfferingsHasBeenSet = false;
+  bool m_trainingPlanExtensionOfferingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 
