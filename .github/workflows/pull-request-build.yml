@@ -24,24 +24,29 @@ jobs:
       pull-requests: write
       contents: read
     steps:
+      - name: Checkout merge group (shallow)
+        if: github.event_name == 'merge_group'
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
       - name: Check if merge queue build is needed
         if: github.event_name == 'merge_group'
         id: queue-check
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          MERGE_GROUP_BASE_SHA="${{ github.event.merge_group.base_sha }}"
           HEAD_REF="${{ github.event.merge_group.head_ref }}"
           PR_NUM=$(echo "$HEAD_REF" | grep -oP 'pr-\K[0-9]+')
           PR_BASE_SHA=$(gh api repos/${{ github.repository }}/pulls/$PR_NUM --jq '.base.sha')
-          echo "Merge group base SHA: $MERGE_GROUP_BASE_SHA"
+          PARENT_SHA=$(git rev-parse HEAD~1)
           echo "PR #$PR_NUM base SHA: $PR_BASE_SHA"
-          if [ "$MERGE_GROUP_BASE_SHA" == "$PR_BASE_SHA" ]; then
+          echo "Merge group HEAD~1:   $PARENT_SHA"
+          if [ "$PARENT_SHA" == "$PR_BASE_SHA" ]; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
-            echo "Merge group base matches PR base — PR build already validated this, skipping."
+            echo "First in queue, same base — PR build already validated this, skipping."
           else
             echo "skip=false" >> "$GITHUB_OUTPUT"
-            echo "Merge group base differs from PR base — other PRs ahead or base moved, build needed."
+            echo "Other PRs ahead or base moved — build needed."
           fi
       - name: Configure AWS Credentials
         if: steps.queue-check.outputs.skip != 'true'
@@ -66,6 +71,7 @@ jobs:
           PR_NUMBER: ${{ github.event.pull_request.number || '0' }}
           RUN_ID: ${{ github.run_id }}
         run: |
+          HEAD_REF="${HEAD_REF#refs/heads/}"
           ./$DOWNLOAD_FOLDER/$SCRIPT_LOCATION \
             --repo "$REPO" \
             --branch "$HEAD_REF" \
