@@ -42,6 +42,10 @@ PivotTableConfiguration& PivotTableConfiguration::operator=(JsonView jsonValue) 
     m_paginatedReportOptions = jsonValue.GetObject("PaginatedReportOptions");
     m_paginatedReportOptionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Tooltip")) {
+    m_tooltip = jsonValue.GetObject("Tooltip");
+    m_tooltipHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("DashboardCustomizationVisualOptions")) {
     m_dashboardCustomizationVisualOptions = jsonValue.GetObject("DashboardCustomizationVisualOptions");
     m_dashboardCustomizationVisualOptionsHasBeenSet = true;
@@ -78,6 +82,10 @@ JsonValue PivotTableConfiguration::Jsonize() const {
 
   if (m_paginatedReportOptionsHasBeenSet) {
     payload.WithObject("PaginatedReportOptions", m_paginatedReportOptions.Jsonize());
+  }
+
+  if (m_tooltipHasBeenSet) {
+    payload.WithObject("Tooltip", m_tooltip.Jsonize());
   }
 
   if (m_dashboardCustomizationVisualOptionsHasBeenSet) {

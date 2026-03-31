@@ -28,7 +28,6 @@
 #include <aws/devops-agent/model/AzureConfiguration.h>
 #include <aws/devops-agent/model/AzureDevOpsConfiguration.h>
 #include <aws/devops-agent/model/ChatExecution.h>
-#include <aws/devops-agent/model/ChatParticipantConnection.h>
 #include <aws/devops-agent/model/CreateAgentSpaceRequest.h>
 #include <aws/devops-agent/model/CreateAgentSpaceResult.h>
 #include <aws/devops-agent/model/CreateBacklogTaskRequest.h>
@@ -47,8 +46,6 @@
 #include <aws/devops-agent/model/DeregisterServiceResult.h>
 #include <aws/devops-agent/model/DescribePrivateConnectionRequest.h>
 #include <aws/devops-agent/model/DescribePrivateConnectionResult.h>
-#include <aws/devops-agent/model/DescribeSupportLevelRequest.h>
-#include <aws/devops-agent/model/DescribeSupportLevelResult.h>
 #include <aws/devops-agent/model/DisableOperatorAppRequest.h>
 #include <aws/devops-agent/model/DisassociateServiceRequest.h>
 #include <aws/devops-agent/model/DisassociateServiceResult.h>
@@ -58,8 +55,6 @@
 #include <aws/devops-agent/model/DynatraceServiceDetails.h>
 #include <aws/devops-agent/model/EnableOperatorAppRequest.h>
 #include <aws/devops-agent/model/EnableOperatorAppResult.h>
-#include <aws/devops-agent/model/EndChatForCaseRequest.h>
-#include <aws/devops-agent/model/EndChatForCaseResult.h>
 #include <aws/devops-agent/model/EventChannelConfiguration.h>
 #include <aws/devops-agent/model/EventChannelDetails.h>
 #include <aws/devops-agent/model/EventChannelType.h>
@@ -96,8 +91,6 @@
 #include <aws/devops-agent/model/IdcAuthConfiguration.h>
 #include <aws/devops-agent/model/IdentityCenterServiceException.h>
 #include <aws/devops-agent/model/IdpAuthConfiguration.h>
-#include <aws/devops-agent/model/InitiateChatForCaseRequest.h>
-#include <aws/devops-agent/model/InitiateChatForCaseResult.h>
 #include <aws/devops-agent/model/IpAddressType.h>
 #include <aws/devops-agent/model/JournalRecord.h>
 #include <aws/devops-agent/model/ListAgentSpacesRequest.h>
@@ -136,11 +129,6 @@
 #include <aws/devops-agent/model/MCPServerNewRelicConfiguration.h>
 #include <aws/devops-agent/model/MCPServerOAuth3LOConfig.h>
 #include <aws/devops-agent/model/MCPServerOAuthClientCredentialsConfig.h>
-#include <aws/devops-agent/model/MCPServerSigV4AuthorizationConfig.h>
-#include <aws/devops-agent/model/MCPServerSigV4ServiceDetails.h>
-#include <aws/devops-agent/model/MSTeamsChannel.h>
-#include <aws/devops-agent/model/MSTeamsConfiguration.h>
-#include <aws/devops-agent/model/MSTeamsTransmissionTarget.h>
 #include <aws/devops-agent/model/Message.h>
 #include <aws/devops-agent/model/MonitorAccountType.h>
 #include <aws/devops-agent/model/NewRelicApiKeyConfig.h>
@@ -174,7 +162,6 @@
 #include <aws/devops-agent/model/RegisteredGithubServiceDetails.h>
 #include <aws/devops-agent/model/RegisteredGrafanaServerDetails.h>
 #include <aws/devops-agent/model/RegisteredMCPServerDetails.h>
-#include <aws/devops-agent/model/RegisteredMCPServerSigV4Details.h>
 #include <aws/devops-agent/model/RegisteredNewRelicDetails.h>
 #include <aws/devops-agent/model/RegisteredPagerDutyDetails.h>
 #include <aws/devops-agent/model/RegisteredService.h>
@@ -213,7 +200,6 @@
 #include <aws/devops-agent/model/SlackTransmissionTarget.h>
 #include <aws/devops-agent/model/SourceAccountType.h>
 #include <aws/devops-agent/model/SourceAwsConfiguration.h>
-#include <aws/devops-agent/model/SupportLevel.h>
 #include <aws/devops-agent/model/TagResourceRequest.h>
 #include <aws/devops-agent/model/TagResourceResult.h>
 #include <aws/devops-agent/model/Task.h>

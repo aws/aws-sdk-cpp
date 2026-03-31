@@ -21,6 +21,7 @@
 #include <aws/acm/model/RequestCertificateRequest.h>
 #include <aws/acm/model/ResendValidationEmailRequest.h>
 #include <aws/acm/model/RevokeCertificateRequest.h>
+#include <aws/acm/model/SearchCertificatesRequest.h>
 #include <aws/acm/model/UpdateCertificateOptionsRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
@@ -272,6 +273,12 @@ RevokeCertificateOutcome ACMClient::RevokeCertificate(const RevokeCertificateReq
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? RevokeCertificateOutcome(result.GetResultWithOwnership())
                             : RevokeCertificateOutcome(std::move(result.GetError()));
+}
+
+SearchCertificatesOutcome ACMClient::SearchCertificates(const SearchCertificatesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchCertificatesOutcome(result.GetResultWithOwnership())
+                            : SearchCertificatesOutcome(std::move(result.GetError()));
 }
 
 UpdateCertificateOptionsOutcome ACMClient::UpdateCertificateOptions(const UpdateCertificateOptionsRequest& request) const {

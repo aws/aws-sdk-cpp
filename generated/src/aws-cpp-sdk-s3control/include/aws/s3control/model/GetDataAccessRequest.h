@@ -163,6 +163,26 @@ class GetDataAccessRequest : public S3ControlRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The context to identify the job or query associated with the credential
+   * request. This information will be displayed in CloudTrail log in your
+   * account.</p>
+   */
+  inline const Aws::String& GetAuditContext() const { return m_auditContext; }
+  inline bool AuditContextHasBeenSet() const { return m_auditContextHasBeenSet; }
+  template <typename AuditContextT = Aws::String>
+  void SetAuditContext(AuditContextT&& value) {
+    m_auditContextHasBeenSet = true;
+    m_auditContext = std::forward<AuditContextT>(value);
+  }
+  template <typename AuditContextT = Aws::String>
+  GetDataAccessRequest& WithAuditContext(AuditContextT&& value) {
+    SetAuditContext(std::forward<AuditContextT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_accountId;
 
@@ -175,12 +195,15 @@ class GetDataAccessRequest : public S3ControlRequest {
   Privilege m_privilege{Privilege::NOT_SET};
 
   S3PrefixType m_targetType{S3PrefixType::NOT_SET};
+
+  Aws::String m_auditContext;
   bool m_accountIdHasBeenSet = false;
   bool m_targetHasBeenSet = false;
   bool m_permissionHasBeenSet = false;
   bool m_durationSecondsHasBeenSet = false;
   bool m_privilegeHasBeenSet = false;
   bool m_targetTypeHasBeenSet = false;
+  bool m_auditContextHasBeenSet = false;
 };
 
 }  // namespace Model

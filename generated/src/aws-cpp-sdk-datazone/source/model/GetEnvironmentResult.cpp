@@ -124,6 +124,10 @@ GetEnvironmentResult& GetEnvironmentResult::operator=(const Aws::AmazonWebServic
     m_environmentConfigurationId = jsonValue.GetString("environmentConfigurationId");
     m_environmentConfigurationIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("environmentConfigurationName")) {
+    m_environmentConfigurationName = jsonValue.GetString("environmentConfigurationName");
+    m_environmentConfigurationNameHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

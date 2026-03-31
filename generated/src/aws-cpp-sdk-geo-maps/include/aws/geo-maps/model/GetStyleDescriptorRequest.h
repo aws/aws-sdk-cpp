@@ -59,10 +59,9 @@ class GetStyleDescriptorRequest : public GeoMapsRequest {
 
   ///@{
   /**
-   * <p>Sets color tone for map such as dark and light for specific map styles. It
-   * applies to only vector map styles such as Standard and Monochrome.</p>
-   * <p>Example: <code>Light</code> </p> <p>Default value: <code>Light</code> </p>
-   *  <p>Valid values for ColorScheme are case sensitive.</p>
+   * <p>Sets the color tone for the map, such as dark and light.</p> <p>Example:
+   * <code>Light</code> </p> <p>Default value: <code>Light</code> </p>
+   * <p>Valid values for ColorScheme are case sensitive.</p>
    */
   inline ColorScheme GetColorScheme() const { return m_colorScheme; }
   inline bool ColorSchemeHasBeenSet() const { return m_colorSchemeHasBeenSet; }
@@ -137,9 +136,8 @@ class GetStyleDescriptorRequest : public GeoMapsRequest {
   /**
    * <p>Displays the shape and steepness of terrain features using elevation lines.
    * The density value controls how densely the available contour line information is
-   * rendered on the map.</p> <p>This parameter is valid only for the
-   * <code>Standard</code>, <code>Monochrome</code>, and <code>Hybrid</code> map
-   * styles.</p>
+   * rendered on the map.</p> <p>This parameter is valid for all map styles except
+   * <code>Satellite</code>.</p>
    */
   inline ContourDensity GetContourDensity() const { return m_contourDensity; }
   inline bool ContourDensityHasBeenSet() const { return m_contourDensityHasBeenSet; }
@@ -156,8 +154,8 @@ class GetStyleDescriptorRequest : public GeoMapsRequest {
   ///@{
   /**
    * <p>Displays real-time traffic information overlay on map, such as incident
-   * events and flow events.</p> <p>This parameter is valid only for the
-   * <code>Standard</code> map style.</p>
+   * events and flow events.</p> <p>This parameter is valid for all map styles except
+   * <code>Satellite</code>.</p>
    */
   inline Traffic GetTraffic() const { return m_traffic; }
   inline bool TrafficHasBeenSet() const { return m_trafficHasBeenSet; }
@@ -176,7 +174,7 @@ class GetStyleDescriptorRequest : public GeoMapsRequest {
    * <p>Renders additional map information relevant to selected travel modes.
    * Information for multiple travel modes can be displayed simultaneously, although
    * this increases the overall information density rendered on the map.</p> <p>This
-   * parameter is valid only for the <code>Standard</code> map style.</p>
+   * parameter is valid for all map styles except <code>Satellite</code>.</p>
    */
   inline const Aws::Vector<TravelMode>& GetTravelModes() const { return m_travelModes; }
   inline bool TravelModesHasBeenSet() const { return m_travelModesHasBeenSet; }

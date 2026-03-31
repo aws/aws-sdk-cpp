@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dataexchange/DataExchange_EXPORTS.h>
+#include <aws/dataexchange/model/AssetConfiguration.h>
 #include <aws/dataexchange/model/JobError.h>
 #include <aws/dataexchange/model/ResponseDetails.h>
 #include <aws/dataexchange/model/State.h>
@@ -54,6 +55,25 @@ class JobEntry {
   template <typename ArnT = Aws::String>
   JobEntry& WithArn(ArnT&& value) {
     SetArn(std::forward<ArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for the asset, including tags applied to assets created by
+   * the job.</p>
+   */
+  inline const AssetConfiguration& GetAssetConfiguration() const { return m_assetConfiguration; }
+  inline bool AssetConfigurationHasBeenSet() const { return m_assetConfigurationHasBeenSet; }
+  template <typename AssetConfigurationT = AssetConfiguration>
+  void SetAssetConfiguration(AssetConfigurationT&& value) {
+    m_assetConfigurationHasBeenSet = true;
+    m_assetConfiguration = std::forward<AssetConfigurationT>(value);
+  }
+  template <typename AssetConfigurationT = AssetConfiguration>
+  JobEntry& WithAssetConfiguration(AssetConfigurationT&& value) {
+    SetAssetConfiguration(std::forward<AssetConfigurationT>(value));
     return *this;
   }
   ///@}
@@ -189,6 +209,8 @@ class JobEntry {
  private:
   Aws::String m_arn;
 
+  AssetConfiguration m_assetConfiguration;
+
   Aws::Utils::DateTime m_createdAt{};
 
   ResponseDetails m_details;
@@ -203,6 +225,7 @@ class JobEntry {
 
   Aws::Utils::DateTime m_updatedAt{};
   bool m_arnHasBeenSet = false;
+  bool m_assetConfigurationHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_detailsHasBeenSet = false;
   bool m_errorsHasBeenSet = false;

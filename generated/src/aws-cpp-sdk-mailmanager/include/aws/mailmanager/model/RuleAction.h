@@ -7,9 +7,11 @@
 #include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/mailmanager/model/AddHeaderAction.h>
 #include <aws/mailmanager/model/ArchiveAction.h>
+#include <aws/mailmanager/model/BounceAction.h>
 #include <aws/mailmanager/model/DeliverToMailboxAction.h>
 #include <aws/mailmanager/model/DeliverToQBusinessAction.h>
 #include <aws/mailmanager/model/DropAction.h>
+#include <aws/mailmanager/model/InvokeLambdaAction.h>
 #include <aws/mailmanager/model/RelayAction.h>
 #include <aws/mailmanager/model/ReplaceRecipientAction.h>
 #include <aws/mailmanager/model/S3Action.h>
@@ -224,6 +226,43 @@ class RuleAction {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>This action sends a bounce response for the email.</p>
+   */
+  inline const BounceAction& GetBounce() const { return m_bounce; }
+  inline bool BounceHasBeenSet() const { return m_bounceHasBeenSet; }
+  template <typename BounceT = BounceAction>
+  void SetBounce(BounceT&& value) {
+    m_bounceHasBeenSet = true;
+    m_bounce = std::forward<BounceT>(value);
+  }
+  template <typename BounceT = BounceAction>
+  RuleAction& WithBounce(BounceT&& value) {
+    SetBounce(std::forward<BounceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>This action invokes an Amazon Web Services Lambda function to process the
+   * email.</p>
+   */
+  inline const InvokeLambdaAction& GetInvokeLambda() const { return m_invokeLambda; }
+  inline bool InvokeLambdaHasBeenSet() const { return m_invokeLambdaHasBeenSet; }
+  template <typename InvokeLambdaT = InvokeLambdaAction>
+  void SetInvokeLambda(InvokeLambdaT&& value) {
+    m_invokeLambdaHasBeenSet = true;
+    m_invokeLambda = std::forward<InvokeLambdaT>(value);
+  }
+  template <typename InvokeLambdaT = InvokeLambdaAction>
+  RuleAction& WithInvokeLambda(InvokeLambdaT&& value) {
+    SetInvokeLambda(std::forward<InvokeLambdaT>(value));
+    return *this;
+  }
+  ///@}
  private:
   DropAction m_drop;
 
@@ -244,6 +283,10 @@ class RuleAction {
   DeliverToQBusinessAction m_deliverToQBusiness;
 
   SnsAction m_publishToSns;
+
+  BounceAction m_bounce;
+
+  InvokeLambdaAction m_invokeLambda;
   bool m_dropHasBeenSet = false;
   bool m_relayHasBeenSet = false;
   bool m_archiveHasBeenSet = false;
@@ -254,6 +297,8 @@ class RuleAction {
   bool m_deliverToMailboxHasBeenSet = false;
   bool m_deliverToQBusinessHasBeenSet = false;
   bool m_publishToSnsHasBeenSet = false;
+  bool m_bounceHasBeenSet = false;
+  bool m_invokeLambdaHasBeenSet = false;
 };
 
 }  // namespace Model

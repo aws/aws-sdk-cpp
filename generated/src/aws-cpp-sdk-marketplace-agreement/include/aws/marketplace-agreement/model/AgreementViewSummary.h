@@ -112,7 +112,7 @@ class AgreementViewSummary {
 
   ///@{
   /**
-   * <p>The type of agreement. Value is <code>PurchaseAgreement</code>.</p>
+   * <p>The type of agreement.</p>
    */
   inline const Aws::String& GetAgreementType() const { return m_agreementType; }
   inline bool AgreementTypeHasBeenSet() const { return m_agreementTypeHasBeenSet; }

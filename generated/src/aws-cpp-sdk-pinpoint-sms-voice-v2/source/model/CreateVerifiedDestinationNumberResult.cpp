@@ -41,6 +41,10 @@ CreateVerifiedDestinationNumberResult& CreateVerifiedDestinationNumberResult::op
     m_status = VerificationStatusMapper::GetVerificationStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RcsAgentId")) {
+    m_rcsAgentId = jsonValue.GetString("RcsAgentId");
+    m_rcsAgentIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Tags")) {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {

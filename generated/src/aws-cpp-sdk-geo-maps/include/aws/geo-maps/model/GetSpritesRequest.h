@@ -69,8 +69,7 @@ class GetSpritesRequest : public GeoMapsRequest {
 
   ///@{
   /**
-   * <p>Sets color tone for map such as dark and light for specific map styles. It
-   * applies to only vector map styles such as Standard and Monochrome.</p>
+   * <p>Sets the color tone for the map sprites, such as dark and light.</p>
    * <p>Example: <code>Light</code> </p> <p>Default value: <code>Light</code> </p>
    *  <p>Valid values for ColorScheme are case sensitive.</p>
    */

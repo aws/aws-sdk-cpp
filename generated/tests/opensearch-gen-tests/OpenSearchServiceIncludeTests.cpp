@@ -14,6 +14,7 @@
 #include <aws/opensearch/OpenSearchServiceRequest.h>
 #include <aws/opensearch/OpenSearchServiceServiceClientModel.h>
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
+#include <aws/opensearch/model/AIConfig.h>
 #include <aws/opensearch/model/AIMLOptionsInput.h>
 #include <aws/opensearch/model/AIMLOptionsOutput.h>
 #include <aws/opensearch/model/AIMLOptionsStatus.h>
@@ -63,6 +64,12 @@
 #include <aws/opensearch/model/CancelServiceSoftwareUpdateRequest.h>
 #include <aws/opensearch/model/CancelServiceSoftwareUpdateResult.h>
 #include <aws/opensearch/model/CancelledChangeProperty.h>
+#include <aws/opensearch/model/CapabilityBaseRequestConfig.h>
+#include <aws/opensearch/model/CapabilityBaseResponseConfig.h>
+#include <aws/opensearch/model/CapabilityExtendedResponseConfig.h>
+#include <aws/opensearch/model/CapabilityFailure.h>
+#include <aws/opensearch/model/CapabilityFailureReason.h>
+#include <aws/opensearch/model/CapabilityStatus.h>
 #include <aws/opensearch/model/ChangeProgressDetails.h>
 #include <aws/opensearch/model/ChangeProgressStage.h>
 #include <aws/opensearch/model/ChangeProgressStatusDetails.h>
@@ -114,6 +121,8 @@
 #include <aws/opensearch/model/DeploymentStrategy.h>
 #include <aws/opensearch/model/DeploymentStrategyOptions.h>
 #include <aws/opensearch/model/DeploymentStrategyOptionsStatus.h>
+#include <aws/opensearch/model/DeregisterCapabilityRequest.h>
+#include <aws/opensearch/model/DeregisterCapabilityResult.h>
 #include <aws/opensearch/model/DescribeDomainAutoTunesRequest.h>
 #include <aws/opensearch/model/DescribeDomainAutoTunesResult.h>
 #include <aws/opensearch/model/DescribeDomainChangeProgressRequest.h>
@@ -181,6 +190,8 @@
 #include <aws/opensearch/model/Filter.h>
 #include <aws/opensearch/model/GetApplicationRequest.h>
 #include <aws/opensearch/model/GetApplicationResult.h>
+#include <aws/opensearch/model/GetCapabilityRequest.h>
+#include <aws/opensearch/model/GetCapabilityResult.h>
 #include <aws/opensearch/model/GetCompatibleVersionsRequest.h>
 #include <aws/opensearch/model/GetCompatibleVersionsResult.h>
 #include <aws/opensearch/model/GetDataSourceRequest.h>
@@ -310,6 +321,8 @@
 #include <aws/opensearch/model/PutDefaultApplicationSettingRequest.h>
 #include <aws/opensearch/model/PutDefaultApplicationSettingResult.h>
 #include <aws/opensearch/model/RecurringCharge.h>
+#include <aws/opensearch/model/RegisterCapabilityRequest.h>
+#include <aws/opensearch/model/RegisterCapabilityResult.h>
 #include <aws/opensearch/model/RejectInboundConnectionRequest.h>
 #include <aws/opensearch/model/RejectInboundConnectionResult.h>
 #include <aws/opensearch/model/RemoveTagsRequest.h>

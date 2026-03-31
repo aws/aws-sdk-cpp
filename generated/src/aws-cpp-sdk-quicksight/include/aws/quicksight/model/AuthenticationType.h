@@ -10,7 +10,7 @@
 namespace Aws {
 namespace QuickSight {
 namespace Model {
-enum class AuthenticationType { NOT_SET, PASSWORD, TOKEN, X509 };
+enum class AuthenticationType { NOT_SET, PASSWORD, KEYPAIR, TOKEN, X509 };
 
 namespace AuthenticationTypeMapper {
 AWS_QUICKSIGHT_API AuthenticationType GetAuthenticationTypeForName(const Aws::String& name);

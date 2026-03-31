@@ -124,6 +124,44 @@ class IbmDb2LuwDataProviderSettings {
 
   ///@{
   /**
+   * <p> The encryption algorithm used for securing the connection to the IBM DB2 LUW
+   * database server. You can provide an integer value corresponding to a specific
+   * encryption algorithm, or leave this parameter empty to use the default behavior.
+   * </p>
+   */
+  inline int GetEncryptionAlgorithm() const { return m_encryptionAlgorithm; }
+  inline bool EncryptionAlgorithmHasBeenSet() const { return m_encryptionAlgorithmHasBeenSet; }
+  inline void SetEncryptionAlgorithm(int value) {
+    m_encryptionAlgorithmHasBeenSet = true;
+    m_encryptionAlgorithm = value;
+  }
+  inline IbmDb2LuwDataProviderSettings& WithEncryptionAlgorithm(int value) {
+    SetEncryptionAlgorithm(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The security mechanism used for authenticating the connection to the IBM DB2
+   * LUW database server. You can provide an integer value corresponding to a
+   * specific security mechanism, or leave this parameter empty to use the default
+   * behavior. </p>
+   */
+  inline int GetSecurityMechanism() const { return m_securityMechanism; }
+  inline bool SecurityMechanismHasBeenSet() const { return m_securityMechanismHasBeenSet; }
+  inline void SetSecurityMechanism(int value) {
+    m_securityMechanismHasBeenSet = true;
+    m_securityMechanism = value;
+  }
+  inline IbmDb2LuwDataProviderSettings& WithSecurityMechanism(int value) {
+    SetSecurityMechanism(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The path for the Amazon S3 bucket that the application uses for accessing the
    * user-defined schema.</p>
    */
@@ -169,6 +207,10 @@ class IbmDb2LuwDataProviderSettings {
 
   Aws::String m_certificateArn;
 
+  int m_encryptionAlgorithm{0};
+
+  int m_securityMechanism{0};
+
   Aws::String m_s3Path;
 
   Aws::String m_s3AccessRoleArn;
@@ -177,6 +219,8 @@ class IbmDb2LuwDataProviderSettings {
   bool m_databaseNameHasBeenSet = false;
   bool m_sslModeHasBeenSet = false;
   bool m_certificateArnHasBeenSet = false;
+  bool m_encryptionAlgorithmHasBeenSet = false;
+  bool m_securityMechanismHasBeenSet = false;
   bool m_s3PathHasBeenSet = false;
   bool m_s3AccessRoleArnHasBeenSet = false;
 };

@@ -19,7 +19,6 @@ static const int github_HASH = HashingUtils::HashString("github");
 static const int slack_HASH = HashingUtils::HashString("slack");
 static const int azure_HASH = HashingUtils::HashString("azure");
 static const int azuredevops_HASH = HashingUtils::HashString("azuredevops");
-static const int msteams_HASH = HashingUtils::HashString("msteams");
 static const int dynatrace_HASH = HashingUtils::HashString("dynatrace");
 static const int servicenow_HASH = HashingUtils::HashString("servicenow");
 static const int pagerduty_HASH = HashingUtils::HashString("pagerduty");
@@ -31,7 +30,6 @@ static const int mcpserverdatadog_HASH = HashingUtils::HashString("mcpserverdata
 static const int mcpserver_HASH = HashingUtils::HashString("mcpserver");
 static const int mcpserversplunk_HASH = HashingUtils::HashString("mcpserversplunk");
 static const int azureidentity_HASH = HashingUtils::HashString("azureidentity");
-static const int mcpserversigv4_HASH = HashingUtils::HashString("mcpserversigv4");
 
 Service GetServiceForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -43,8 +41,6 @@ Service GetServiceForName(const Aws::String& name) {
     return Service::azure;
   } else if (hashCode == azuredevops_HASH) {
     return Service::azuredevops;
-  } else if (hashCode == msteams_HASH) {
-    return Service::msteams;
   } else if (hashCode == dynatrace_HASH) {
     return Service::dynatrace;
   } else if (hashCode == servicenow_HASH) {
@@ -67,8 +63,6 @@ Service GetServiceForName(const Aws::String& name) {
     return Service::mcpserversplunk;
   } else if (hashCode == azureidentity_HASH) {
     return Service::azureidentity;
-  } else if (hashCode == mcpserversigv4_HASH) {
-    return Service::mcpserversigv4;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -91,8 +85,6 @@ Aws::String GetNameForService(Service enumValue) {
       return "azure";
     case Service::azuredevops:
       return "azuredevops";
-    case Service::msteams:
-      return "msteams";
     case Service::dynatrace:
       return "dynatrace";
     case Service::servicenow:
@@ -115,8 +107,6 @@ Aws::String GetNameForService(Service enumValue) {
       return "mcpserversplunk";
     case Service::azureidentity:
       return "azureidentity";
-    case Service::mcpserversigv4:
-      return "mcpserversigv4";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

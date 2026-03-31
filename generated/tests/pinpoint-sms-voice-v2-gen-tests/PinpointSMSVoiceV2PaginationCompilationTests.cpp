@@ -8,28 +8,33 @@
 
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2ClientPagination.h>
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2PaginationBase.h>
-#include <aws/pinpoint-sms-voice-v2/model/DescribeVerifiedDestinationNumbersPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeRegistrationSectionDefinitionsPaginationTraits.h>
-#include <aws/pinpoint-sms-voice-v2/model/ListProtectConfigurationRuleSetNumberOverridesPaginationTraits.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeNotifyConfigurationsPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeRegistrationVersionsPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeKeywordsPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeRegistrationFieldDefinitionsPaginationTraits.h>
-#include <aws/pinpoint-sms-voice-v2/model/DescribeOptOutListsPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/ListRegistrationAssociationsPaginationTraits.h>
-#include <aws/pinpoint-sms-voice-v2/model/DescribeRegistrationTypeDefinitionsPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/ListPoolOriginationIdentitiesPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeRegistrationFieldValuesPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeAccountAttributesPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribePhoneNumbersPaginationTraits.h>
+#include <aws/pinpoint-sms-voice-v2/model/ListNotifyCountriesPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeRegistrationsPaginationTraits.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeOptedOutNumbersPaginationTraits.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeSenderIdsPaginationTraits.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeVerifiedDestinationNumbersPaginationTraits.h>
+#include <aws/pinpoint-sms-voice-v2/model/ListProtectConfigurationRuleSetNumberOverridesPaginationTraits.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeOptOutListsPaginationTraits.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeRegistrationTypeDefinitionsPaginationTraits.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeRcsAgentsPaginationTraits.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeRcsAgentCountryLaunchStatusPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeSpendLimitsPaginationTraits.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeNotifyTemplatesPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeConfigurationSetsPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeAccountLimitsPaginationTraits.h>
-#include <aws/pinpoint-sms-voice-v2/model/DescribeOptedOutNumbersPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeRegistrationAttachmentsPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribePoolsPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeProtectConfigurationsPaginationTraits.h>
-#include <aws/pinpoint-sms-voice-v2/model/DescribeSenderIdsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

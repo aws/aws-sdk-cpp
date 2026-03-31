@@ -39,6 +39,10 @@ RegistrationAttachmentsInformation& RegistrationAttachmentsInformation::operator
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
     m_createdTimestampHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AttachmentUrl")) {
+    m_attachmentUrl = jsonValue.GetString("AttachmentUrl");
+    m_attachmentUrlHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -64,6 +68,10 @@ JsonValue RegistrationAttachmentsInformation::Jsonize() const {
 
   if (m_createdTimestampHasBeenSet) {
     payload.WithDouble("CreatedTimestamp", m_createdTimestamp.SecondsWithMSPrecision());
+  }
+
+  if (m_attachmentUrlHasBeenSet) {
+    payload.WithString("AttachmentUrl", m_attachmentUrl);
   }
 
   return payload;

@@ -3419,6 +3419,38 @@ class Capabilities {
 
   ///@{
   /**
+   * <p>The ability to create spaces.</p>
+   */
+  inline CapabilityState GetCreateSpaces() const { return m_createSpaces; }
+  inline bool CreateSpacesHasBeenSet() const { return m_createSpacesHasBeenSet; }
+  inline void SetCreateSpaces(CapabilityState value) {
+    m_createSpacesHasBeenSet = true;
+    m_createSpaces = value;
+  }
+  inline Capabilities& WithCreateSpaces(CapabilityState value) {
+    SetCreateSpaces(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share spaces with other users and groups.</p>
+   */
+  inline CapabilityState GetShareSpaces() const { return m_shareSpaces; }
+  inline bool ShareSpacesHasBeenSet() const { return m_shareSpacesHasBeenSet; }
+  inline void SetShareSpaces(CapabilityState value) {
+    m_shareSpacesHasBeenSet = true;
+    m_shareSpaces = value;
+  }
+  inline Capabilities& WithShareSpaces(CapabilityState value) {
+    SetShareSpaces(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ability to perform chat-related actions.</p>
    */
   inline CapabilityState GetChatAgent() const { return m_chatAgent; }
@@ -3445,6 +3477,22 @@ class Capabilities {
   }
   inline Capabilities& WithCreateChatAgents(CapabilityState value) {
     SetCreateChatAgents(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share chat agents with other users and groups.</p>
+   */
+  inline CapabilityState GetShareChatAgents() const { return m_shareChatAgents; }
+  inline bool ShareChatAgentsHasBeenSet() const { return m_shareChatAgentsHasBeenSet; }
+  inline void SetShareChatAgents(CapabilityState value) {
+    m_shareChatAgentsHasBeenSet = true;
+    m_shareChatAgents = value;
+  }
+  inline Capabilities& WithShareChatAgents(CapabilityState value) {
+    SetShareChatAgents(value);
     return *this;
   }
   ///@}
@@ -3939,9 +3987,15 @@ class Capabilities {
 
   CapabilityState m_space{CapabilityState::NOT_SET};
 
+  CapabilityState m_createSpaces{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareSpaces{CapabilityState::NOT_SET};
+
   CapabilityState m_chatAgent{CapabilityState::NOT_SET};
 
   CapabilityState m_createChatAgents{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareChatAgents{CapabilityState::NOT_SET};
 
   CapabilityState m_research{CapabilityState::NOT_SET};
 
@@ -4161,8 +4215,11 @@ class Capabilities {
   bool m_buildCalculatedFieldWithQHasBeenSet = false;
   bool m_createDashboardExecutiveSummaryWithQHasBeenSet = false;
   bool m_spaceHasBeenSet = false;
+  bool m_createSpacesHasBeenSet = false;
+  bool m_shareSpacesHasBeenSet = false;
   bool m_chatAgentHasBeenSet = false;
   bool m_createChatAgentsHasBeenSet = false;
+  bool m_shareChatAgentsHasBeenSet = false;
   bool m_researchHasBeenSet = false;
   bool m_selfUpgradeUserRoleHasBeenSet = false;
   bool m_extensionHasBeenSet = false;

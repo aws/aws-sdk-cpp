@@ -906,6 +906,14 @@ Capabilities& Capabilities::operator=(JsonView jsonValue) {
     m_space = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("Space"));
     m_spaceHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CreateSpaces")) {
+    m_createSpaces = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateSpaces"));
+    m_createSpacesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareSpaces")) {
+    m_shareSpaces = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareSpaces"));
+    m_shareSpacesHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ChatAgent")) {
     m_chatAgent = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ChatAgent"));
     m_chatAgentHasBeenSet = true;
@@ -913,6 +921,10 @@ Capabilities& Capabilities::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("CreateChatAgents")) {
     m_createChatAgents = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateChatAgents"));
     m_createChatAgentsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareChatAgents")) {
+    m_shareChatAgents = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareChatAgents"));
+    m_shareChatAgentsHasBeenSet = true;
   }
   if (jsonValue.ValueExists("Research")) {
     m_research = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("Research"));
@@ -1812,12 +1824,24 @@ JsonValue Capabilities::Jsonize() const {
     payload.WithString("Space", CapabilityStateMapper::GetNameForCapabilityState(m_space));
   }
 
+  if (m_createSpacesHasBeenSet) {
+    payload.WithString("CreateSpaces", CapabilityStateMapper::GetNameForCapabilityState(m_createSpaces));
+  }
+
+  if (m_shareSpacesHasBeenSet) {
+    payload.WithString("ShareSpaces", CapabilityStateMapper::GetNameForCapabilityState(m_shareSpaces));
+  }
+
   if (m_chatAgentHasBeenSet) {
     payload.WithString("ChatAgent", CapabilityStateMapper::GetNameForCapabilityState(m_chatAgent));
   }
 
   if (m_createChatAgentsHasBeenSet) {
     payload.WithString("CreateChatAgents", CapabilityStateMapper::GetNameForCapabilityState(m_createChatAgents));
+  }
+
+  if (m_shareChatAgentsHasBeenSet) {
+    payload.WithString("ShareChatAgents", CapabilityStateMapper::GetNameForCapabilityState(m_shareChatAgents));
   }
 
   if (m_researchHasBeenSet) {

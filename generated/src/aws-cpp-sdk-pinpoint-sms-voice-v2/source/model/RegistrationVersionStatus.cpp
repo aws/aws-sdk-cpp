@@ -25,6 +25,7 @@ static const int DISCARDED_HASH = HashingUtils::HashString("DISCARDED");
 static const int DENIED_HASH = HashingUtils::HashString("DENIED");
 static const int REVOKED_HASH = HashingUtils::HashString("REVOKED");
 static const int ARCHIVED_HASH = HashingUtils::HashString("ARCHIVED");
+static const int REQUIRES_OFFLINE_REVIEW_HASH = HashingUtils::HashString("REQUIRES_OFFLINE_REVIEW");
 
 RegistrationVersionStatus GetRegistrationVersionStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -48,6 +49,8 @@ RegistrationVersionStatus GetRegistrationVersionStatusForName(const Aws::String&
     return RegistrationVersionStatus::REVOKED;
   } else if (hashCode == ARCHIVED_HASH) {
     return RegistrationVersionStatus::ARCHIVED;
+  } else if (hashCode == REQUIRES_OFFLINE_REVIEW_HASH) {
+    return RegistrationVersionStatus::REQUIRES_OFFLINE_REVIEW;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -82,6 +85,8 @@ Aws::String GetNameForRegistrationVersionStatus(RegistrationVersionStatus enumVa
       return "REVOKED";
     case RegistrationVersionStatus::ARCHIVED:
       return "ARCHIVED";
+    case RegistrationVersionStatus::REQUIRES_OFFLINE_REVIEW:
+      return "REQUIRES_OFFLINE_REVIEW";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

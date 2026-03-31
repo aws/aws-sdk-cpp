@@ -21,7 +21,8 @@ enum class RegistrationVersionStatus {
   DISCARDED,
   DENIED,
   REVOKED,
-  ARCHIVED
+  ARCHIVED,
+  REQUIRES_OFFLINE_REVIEW
 };
 
 namespace RegistrationVersionStatusMapper {

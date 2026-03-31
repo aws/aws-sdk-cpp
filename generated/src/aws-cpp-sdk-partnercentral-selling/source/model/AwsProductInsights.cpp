@@ -19,8 +19,7 @@ AwsProductInsights::AwsProductInsights(JsonView jsonValue) { *this = jsonValue; 
 
 AwsProductInsights& AwsProductInsights::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("CurrencyCode")) {
-    m_currencyCode =
-        AwsProductInsightsCurrencyCodeEnumMapper::GetAwsProductInsightsCurrencyCodeEnumForName(jsonValue.GetString("CurrencyCode"));
+    m_currencyCode = CurrencyCodeMapper::GetCurrencyCodeForName(jsonValue.GetString("CurrencyCode"));
     m_currencyCodeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("Frequency")) {
@@ -60,8 +59,7 @@ JsonValue AwsProductInsights::Jsonize() const {
   JsonValue payload;
 
   if (m_currencyCodeHasBeenSet) {
-    payload.WithString("CurrencyCode",
-                       AwsProductInsightsCurrencyCodeEnumMapper::GetNameForAwsProductInsightsCurrencyCodeEnum(m_currencyCode));
+    payload.WithString("CurrencyCode", CurrencyCodeMapper::GetNameForCurrencyCode(m_currencyCode));
   }
 
   if (m_frequencyHasBeenSet) {

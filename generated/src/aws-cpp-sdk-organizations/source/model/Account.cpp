@@ -42,6 +42,13 @@ Account& Account::operator=(JsonView jsonValue) {
     m_state = AccountStateMapper::GetAccountStateForName(jsonValue.GetString("State"));
     m_stateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Paths")) {
+    Aws::Utils::Array<JsonView> pathsJsonList = jsonValue.GetArray("Paths");
+    for (unsigned pathsIndex = 0; pathsIndex < pathsJsonList.GetLength(); ++pathsIndex) {
+      m_paths.push_back(pathsJsonList[pathsIndex].AsString());
+    }
+    m_pathsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("JoinedMethod")) {
     m_joinedMethod = AccountJoinedMethodMapper::GetAccountJoinedMethodForName(jsonValue.GetString("JoinedMethod"));
     m_joinedMethodHasBeenSet = true;
@@ -78,6 +85,14 @@ JsonValue Account::Jsonize() const {
 
   if (m_stateHasBeenSet) {
     payload.WithString("State", AccountStateMapper::GetNameForAccountState(m_state));
+  }
+
+  if (m_pathsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> pathsJsonList(m_paths.size());
+    for (unsigned pathsIndex = 0; pathsIndex < pathsJsonList.GetLength(); ++pathsIndex) {
+      pathsJsonList[pathsIndex].AsString(m_paths[pathsIndex]);
+    }
+    payload.WithArray("Paths", std::move(pathsJsonList));
   }
 
   if (m_joinedMethodHasBeenSet) {

@@ -31,11 +31,9 @@
 #include <aws/devops-agent/model/DeletePrivateConnectionRequest.h>
 #include <aws/devops-agent/model/DeregisterServiceRequest.h>
 #include <aws/devops-agent/model/DescribePrivateConnectionRequest.h>
-#include <aws/devops-agent/model/DescribeSupportLevelRequest.h>
 #include <aws/devops-agent/model/DisableOperatorAppRequest.h>
 #include <aws/devops-agent/model/DisassociateServiceRequest.h>
 #include <aws/devops-agent/model/EnableOperatorAppRequest.h>
-#include <aws/devops-agent/model/EndChatForCaseRequest.h>
 #include <aws/devops-agent/model/GetAccountUsageRequest.h>
 #include <aws/devops-agent/model/GetAgentSpaceRequest.h>
 #include <aws/devops-agent/model/GetAssociationRequest.h>
@@ -43,7 +41,6 @@
 #include <aws/devops-agent/model/GetOperatorAppRequest.h>
 #include <aws/devops-agent/model/GetRecommendationRequest.h>
 #include <aws/devops-agent/model/GetServiceRequest.h>
-#include <aws/devops-agent/model/InitiateChatForCaseRequest.h>
 #include <aws/devops-agent/model/ListAgentSpacesRequest.h>
 #include <aws/devops-agent/model/ListAssociationsRequest.h>
 #include <aws/devops-agent/model/ListBacklogTasksRequest.h>
@@ -390,32 +387,6 @@ DescribePrivateConnectionOutcome DevOpsAgentClient::DescribePrivateConnection(co
                             : DescribePrivateConnectionOutcome(std::move(result.GetError()));
 }
 
-DescribeSupportLevelOutcome DevOpsAgentClient::DescribeSupportLevel(const DescribeSupportLevelRequest& request) const {
-  if (!request.AgentSpaceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("DescribeSupportLevel", "Required field: AgentSpaceId, is not set");
-    return DescribeSupportLevelOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                                "Missing required field [AgentSpaceId]", false));
-  }
-  if (!request.TaskIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("DescribeSupportLevel", "Required field: TaskId, is not set");
-    return DescribeSupportLevelOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                                "Missing required field [TaskId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/support/agent-space/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentSpaceId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/tasks/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTaskId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/supportLevel");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeSupportLevelOutcome(result.GetResultWithOwnership())
-                            : DescribeSupportLevelOutcome(std::move(result.GetError()));
-}
-
 DisableOperatorAppOutcome DevOpsAgentClient::DisableOperatorApp(const DisableOperatorAppRequest& request) const {
   if (!request.AgentSpaceIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DisableOperatorApp", "Required field: AgentSpaceId, is not set");
@@ -477,31 +448,6 @@ EnableOperatorAppOutcome DevOpsAgentClient::EnableOperatorApp(const EnableOperat
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? EnableOperatorAppOutcome(result.GetResultWithOwnership())
                             : EnableOperatorAppOutcome(std::move(result.GetError()));
-}
-
-EndChatForCaseOutcome DevOpsAgentClient::EndChatForCase(const EndChatForCaseRequest& request) const {
-  if (!request.AgentSpaceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("EndChatForCase", "Required field: AgentSpaceId, is not set");
-    return EndChatForCaseOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                          "Missing required field [AgentSpaceId]", false));
-  }
-  if (!request.TaskIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("EndChatForCase", "Required field: TaskId, is not set");
-    return EndChatForCaseOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                          "Missing required field [TaskId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/support/agent-space/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentSpaceId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/tasks/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTaskId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/end-chat-for-case");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? EndChatForCaseOutcome(result.GetResultWithOwnership()) : EndChatForCaseOutcome(std::move(result.GetError()));
 }
 
 GetAccountUsageOutcome DevOpsAgentClient::GetAccountUsage(const GetAccountUsageRequest& request) const {
@@ -638,32 +584,6 @@ GetServiceOutcome DevOpsAgentClient::GetService(const GetServiceRequest& request
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetServiceOutcome(result.GetResultWithOwnership()) : GetServiceOutcome(std::move(result.GetError()));
-}
-
-InitiateChatForCaseOutcome DevOpsAgentClient::InitiateChatForCase(const InitiateChatForCaseRequest& request) const {
-  if (!request.AgentSpaceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("InitiateChatForCase", "Required field: AgentSpaceId, is not set");
-    return InitiateChatForCaseOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                               "Missing required field [AgentSpaceId]", false));
-  }
-  if (!request.TaskIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("InitiateChatForCase", "Required field: TaskId, is not set");
-    return InitiateChatForCaseOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                               "Missing required field [TaskId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/support/agent-space/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentSpaceId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/tasks/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTaskId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/chats");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? InitiateChatForCaseOutcome(result.GetResultWithOwnership())
-                            : InitiateChatForCaseOutcome(std::move(result.GetError()));
 }
 
 ListAgentSpacesOutcome DevOpsAgentClient::ListAgentSpaces(const ListAgentSpacesRequest& request) const {

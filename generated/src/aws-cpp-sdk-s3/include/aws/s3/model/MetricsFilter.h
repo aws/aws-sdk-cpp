@@ -58,7 +58,8 @@ class MetricsFilter {
 
   ///@{
   /**
-   * <p>The tag used when evaluating a metrics filter.</p>
+   * <p>The tag used when evaluating a metrics filter.</p>  <p>
+   * <code>Tag</code> filters are not supported for directory buckets.</p>
    */
   inline const Tag& GetTag() const { return m_tag; }
   inline bool TagHasBeenSet() const { return m_tagHasBeenSet; }

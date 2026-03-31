@@ -62,10 +62,6 @@ ServiceDetails& ServiceDetails::operator=(JsonView jsonValue) {
     m_azureidentity = jsonValue.GetObject("azureidentity");
     m_azureidentityHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("mcpserversigv4")) {
-    m_mcpserversigv4 = jsonValue.GetObject("mcpserversigv4");
-    m_mcpserversigv4HasBeenSet = true;
-  }
   return *this;
 }
 
@@ -114,10 +110,6 @@ JsonValue ServiceDetails::Jsonize() const {
 
   if (m_azureidentityHasBeenSet) {
     payload.WithObject("azureidentity", m_azureidentity.Jsonize());
-  }
-
-  if (m_mcpserversigv4HasBeenSet) {
-    payload.WithObject("mcpserversigv4", m_mcpserversigv4.Jsonize());
   }
 
   return payload;

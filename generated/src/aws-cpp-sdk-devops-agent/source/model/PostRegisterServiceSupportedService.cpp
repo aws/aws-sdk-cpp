@@ -26,7 +26,6 @@ static const int mcpserverdatadog_HASH = HashingUtils::HashString("mcpserverdata
 static const int mcpserver_HASH = HashingUtils::HashString("mcpserver");
 static const int mcpserversplunk_HASH = HashingUtils::HashString("mcpserversplunk");
 static const int azureidentity_HASH = HashingUtils::HashString("azureidentity");
-static const int mcpserversigv4_HASH = HashingUtils::HashString("mcpserversigv4");
 
 PostRegisterServiceSupportedService GetPostRegisterServiceSupportedServiceForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -52,8 +51,6 @@ PostRegisterServiceSupportedService GetPostRegisterServiceSupportedServiceForNam
     return PostRegisterServiceSupportedService::mcpserversplunk;
   } else if (hashCode == azureidentity_HASH) {
     return PostRegisterServiceSupportedService::azureidentity;
-  } else if (hashCode == mcpserversigv4_HASH) {
-    return PostRegisterServiceSupportedService::mcpserversigv4;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -90,8 +87,6 @@ Aws::String GetNameForPostRegisterServiceSupportedService(PostRegisterServiceSup
       return "mcpserversplunk";
     case PostRegisterServiceSupportedService::azureidentity:
       return "azureidentity";
-    case PostRegisterServiceSupportedService::mcpserversigv4:
-      return "mcpserversigv4";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

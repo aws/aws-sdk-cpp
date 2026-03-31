@@ -13,6 +13,7 @@
 #include <aws/mailmanager/model/IngressPointType.h>
 #include <aws/mailmanager/model/NetworkConfiguration.h>
 #include <aws/mailmanager/model/Tag.h>
+#include <aws/mailmanager/model/TlsPolicy.h>
 
 #include <utility>
 
@@ -168,6 +169,23 @@ class CreateIngressPointRequest : public MailManagerRequest {
 
   ///@{
   /**
+   * <p>The Transport Layer Security (TLS) policy for the ingress point. The FIPS
+   * value is only valid in US and Canada regions.</p>
+   */
+  inline TlsPolicy GetTlsPolicy() const { return m_tlsPolicy; }
+  inline bool TlsPolicyHasBeenSet() const { return m_tlsPolicyHasBeenSet; }
+  inline void SetTlsPolicy(TlsPolicy value) {
+    m_tlsPolicyHasBeenSet = true;
+    m_tlsPolicy = value;
+  }
+  inline CreateIngressPointRequest& WithTlsPolicy(TlsPolicy value) {
+    SetTlsPolicy(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The tags used to organize, track, or control access for the resource. For
    * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
    */
@@ -205,6 +223,8 @@ class CreateIngressPointRequest : public MailManagerRequest {
 
   NetworkConfiguration m_networkConfiguration;
 
+  TlsPolicy m_tlsPolicy{TlsPolicy::NOT_SET};
+
   Aws::Vector<Tag> m_tags;
   bool m_clientTokenHasBeenSet = true;
   bool m_ingressPointNameHasBeenSet = false;
@@ -213,6 +233,7 @@ class CreateIngressPointRequest : public MailManagerRequest {
   bool m_trafficPolicyIdHasBeenSet = false;
   bool m_ingressPointConfigurationHasBeenSet = false;
   bool m_networkConfigurationHasBeenSet = false;
+  bool m_tlsPolicyHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

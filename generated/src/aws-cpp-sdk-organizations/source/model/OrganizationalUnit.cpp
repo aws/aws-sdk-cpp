@@ -30,6 +30,10 @@ OrganizationalUnit& OrganizationalUnit::operator=(JsonView jsonValue) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Path")) {
+    m_path = jsonValue.GetString("Path");
+    m_pathHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue OrganizationalUnit::Jsonize() const {
 
   if (m_nameHasBeenSet) {
     payload.WithString("Name", m_name);
+  }
+
+  if (m_pathHasBeenSet) {
+    payload.WithString("Path", m_path);
   }
 
   return payload;

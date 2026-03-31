@@ -87,8 +87,7 @@ class AWS_DEVOPSAGENT_API DevOpsAgentClient : public Aws::Client::AWSJsonClient,
   virtual ~DevOpsAgentClient();
 
   /**
-   * <p>Authorize Ingestion Hub subscription operation. Looks to see if the derived
-   * accountId from FAS has an AgentSpace.</p><p><h3>See Also:</h3>   <a
+   * <p>Authorize Ingestion Hub subscription operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/AllowVendedLogDeliveryForResource">AWS
    * API Reference</a></p>
    */
@@ -363,33 +362,6 @@ class AWS_DEVOPSAGENT_API DevOpsAgentClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Describe the support level of a CloudSmith customer account.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/DescribeSupportLevel">AWS
-   * API Reference</a></p>
-   */
-  virtual Model::DescribeSupportLevelOutcome DescribeSupportLevel(const Model::DescribeSupportLevelRequest& request) const;
-
-  /**
-   * A Callable wrapper for DescribeSupportLevel that returns a future to the operation so that it can be executed in parallel to other
-   * requests.
-   */
-  template <typename DescribeSupportLevelRequestT = Model::DescribeSupportLevelRequest>
-  Model::DescribeSupportLevelOutcomeCallable DescribeSupportLevelCallable(const DescribeSupportLevelRequestT& request) const {
-    return SubmitCallable(&DevOpsAgentClient::DescribeSupportLevel, request);
-  }
-
-  /**
-   * An Async wrapper for DescribeSupportLevel that queues the request into a thread executor and triggers associated callback when
-   * operation has finished.
-   */
-  template <typename DescribeSupportLevelRequestT = Model::DescribeSupportLevelRequest>
-  void DescribeSupportLevelAsync(const DescribeSupportLevelRequestT& request, const DescribeSupportLevelResponseReceivedHandler& handler,
-                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
-    return SubmitAsync(&DevOpsAgentClient::DescribeSupportLevel, request, handler, context);
-  }
-
-  /**
    * <p>Disable the Operator App for the specified AgentSpace</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/DisableOperatorApp">AWS
@@ -469,32 +441,6 @@ class AWS_DEVOPSAGENT_API DevOpsAgentClient : public Aws::Client::AWSJsonClient,
   void EnableOperatorAppAsync(const EnableOperatorAppRequestT& request, const EnableOperatorAppResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&DevOpsAgentClient::EnableOperatorApp, request, handler, context);
-  }
-
-  /**
-   * <p>End a chat session for a support case in the specified agent
-   * space</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/EndChatForCase">AWS
-   * API Reference</a></p>
-   */
-  virtual Model::EndChatForCaseOutcome EndChatForCase(const Model::EndChatForCaseRequest& request) const;
-
-  /**
-   * A Callable wrapper for EndChatForCase that returns a future to the operation so that it can be executed in parallel to other requests.
-   */
-  template <typename EndChatForCaseRequestT = Model::EndChatForCaseRequest>
-  Model::EndChatForCaseOutcomeCallable EndChatForCaseCallable(const EndChatForCaseRequestT& request) const {
-    return SubmitCallable(&DevOpsAgentClient::EndChatForCase, request);
-  }
-
-  /**
-   * An Async wrapper for EndChatForCase that queues the request into a thread executor and triggers associated callback when operation has
-   * finished.
-   */
-  template <typename EndChatForCaseRequestT = Model::EndChatForCaseRequest>
-  void EndChatForCaseAsync(const EndChatForCaseRequestT& request, const EndChatForCaseResponseReceivedHandler& handler,
-                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
-    return SubmitAsync(&DevOpsAgentClient::EndChatForCase, request, handler, context);
   }
 
   /**
@@ -678,33 +624,6 @@ class AWS_DEVOPSAGENT_API DevOpsAgentClient : public Aws::Client::AWSJsonClient,
   void GetServiceAsync(const GetServiceRequestT& request, const GetServiceResponseReceivedHandler& handler,
                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&DevOpsAgentClient::GetService, request, handler, context);
-  }
-
-  /**
-   * <p>Initiate a chat for support case in the specified agent space</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/InitiateChatForCase">AWS
-   * API Reference</a></p>
-   */
-  virtual Model::InitiateChatForCaseOutcome InitiateChatForCase(const Model::InitiateChatForCaseRequest& request) const;
-
-  /**
-   * A Callable wrapper for InitiateChatForCase that returns a future to the operation so that it can be executed in parallel to other
-   * requests.
-   */
-  template <typename InitiateChatForCaseRequestT = Model::InitiateChatForCaseRequest>
-  Model::InitiateChatForCaseOutcomeCallable InitiateChatForCaseCallable(const InitiateChatForCaseRequestT& request) const {
-    return SubmitCallable(&DevOpsAgentClient::InitiateChatForCase, request);
-  }
-
-  /**
-   * An Async wrapper for InitiateChatForCase that queues the request into a thread executor and triggers associated callback when operation
-   * has finished.
-   */
-  template <typename InitiateChatForCaseRequestT = Model::InitiateChatForCaseRequest>
-  void InitiateChatForCaseAsync(const InitiateChatForCaseRequestT& request, const InitiateChatForCaseResponseReceivedHandler& handler,
-                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
-    return SubmitAsync(&DevOpsAgentClient::InitiateChatForCase, request, handler, context);
   }
 
   /**

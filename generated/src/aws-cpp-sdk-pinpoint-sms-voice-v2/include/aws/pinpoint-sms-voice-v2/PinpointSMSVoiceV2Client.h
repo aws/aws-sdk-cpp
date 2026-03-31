@@ -279,6 +279,37 @@ class AWS_PINPOINTSMSVOICEV2_API PinpointSMSVoiceV2Client : public Aws::Client::
   }
 
   /**
+   * <p>Creates a new notify configuration for managed messaging. A notify
+   * configuration defines the settings for sending templated messages, including the
+   * display name, use case, enabled channels, and enabled countries.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateNotifyConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateNotifyConfigurationOutcome CreateNotifyConfiguration(const Model::CreateNotifyConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateNotifyConfiguration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateNotifyConfigurationRequestT = Model::CreateNotifyConfigurationRequest>
+  Model::CreateNotifyConfigurationOutcomeCallable CreateNotifyConfigurationCallable(
+      const CreateNotifyConfigurationRequestT& request) const {
+    return SubmitCallable(&PinpointSMSVoiceV2Client::CreateNotifyConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for CreateNotifyConfiguration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateNotifyConfigurationRequestT = Model::CreateNotifyConfigurationRequest>
+  void CreateNotifyConfigurationAsync(const CreateNotifyConfigurationRequestT& request,
+                                      const CreateNotifyConfigurationResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PinpointSMSVoiceV2Client::CreateNotifyConfiguration, request, handler, context);
+  }
+
+  /**
    * <p>Creates a new opt-out list.</p> <p>If the opt-out list name already exists,
    * an error is returned.</p> <p>An opt-out list is a list of phone numbers that are
    * opted out, meaning you can't send SMS or voice messages to them. If end user
@@ -377,6 +408,34 @@ class AWS_PINPOINTSMSVOICEV2_API PinpointSMSVoiceV2Client : public Aws::Client::
                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                        const CreateProtectConfigurationRequestT& request = {}) const {
     return SubmitAsync(&PinpointSMSVoiceV2Client::CreateProtectConfiguration, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a new RCS agent for sending rich messages through the RCS channel.
+   * The RCS agent serves as an origination identity for sending RCS messages to your
+   * recipients.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateRcsAgent">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateRcsAgentOutcome CreateRcsAgent(const Model::CreateRcsAgentRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for CreateRcsAgent that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateRcsAgentRequestT = Model::CreateRcsAgentRequest>
+  Model::CreateRcsAgentOutcomeCallable CreateRcsAgentCallable(const CreateRcsAgentRequestT& request = {}) const {
+    return SubmitCallable(&PinpointSMSVoiceV2Client::CreateRcsAgent, request);
+  }
+
+  /**
+   * An Async wrapper for CreateRcsAgent that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateRcsAgentRequestT = Model::CreateRcsAgentRequest>
+  void CreateRcsAgentAsync(const CreateRcsAgentResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                           const CreateRcsAgentRequestT& request = {}) const {
+    return SubmitAsync(&PinpointSMSVoiceV2Client::CreateRcsAgent, request, handler, context);
   }
 
   /**
@@ -754,6 +813,71 @@ class AWS_PINPOINTSMSVOICEV2_API PinpointSMSVoiceV2Client : public Aws::Client::
   }
 
   /**
+   * <p>Deletes an existing notify configuration.</p> <p>If deletion protection is
+   * enabled, an error is returned.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteNotifyConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteNotifyConfigurationOutcome DeleteNotifyConfiguration(const Model::DeleteNotifyConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteNotifyConfiguration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteNotifyConfigurationRequestT = Model::DeleteNotifyConfigurationRequest>
+  Model::DeleteNotifyConfigurationOutcomeCallable DeleteNotifyConfigurationCallable(
+      const DeleteNotifyConfigurationRequestT& request) const {
+    return SubmitCallable(&PinpointSMSVoiceV2Client::DeleteNotifyConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteNotifyConfiguration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteNotifyConfigurationRequestT = Model::DeleteNotifyConfigurationRequest>
+  void DeleteNotifyConfigurationAsync(const DeleteNotifyConfigurationRequestT& request,
+                                      const DeleteNotifyConfigurationResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PinpointSMSVoiceV2Client::DeleteNotifyConfiguration, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes an account-level monthly spending limit override for sending notify
+   * messages. Deleting a spend limit override will set the
+   * <code>EnforcedLimit</code> to equal the <code>MaxLimit</code>, which is
+   * controlled by Amazon Web Services. For more information on spend limits (quotas)
+   * see <a
+   * href="https://docs.aws.amazon.com/sms-voice/latest/userguide/quotas.html">Quotas
+   * </a> in the <i>End User Messaging SMS User Guide</i>.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteNotifyMessageSpendLimitOverride">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteNotifyMessageSpendLimitOverrideOutcome DeleteNotifyMessageSpendLimitOverride(
+      const Model::DeleteNotifyMessageSpendLimitOverrideRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DeleteNotifyMessageSpendLimitOverride that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DeleteNotifyMessageSpendLimitOverrideRequestT = Model::DeleteNotifyMessageSpendLimitOverrideRequest>
+  Model::DeleteNotifyMessageSpendLimitOverrideOutcomeCallable DeleteNotifyMessageSpendLimitOverrideCallable(
+      const DeleteNotifyMessageSpendLimitOverrideRequestT& request = {}) const {
+    return SubmitCallable(&PinpointSMSVoiceV2Client::DeleteNotifyMessageSpendLimitOverride, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteNotifyMessageSpendLimitOverride that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DeleteNotifyMessageSpendLimitOverrideRequestT = Model::DeleteNotifyMessageSpendLimitOverrideRequest>
+  void DeleteNotifyMessageSpendLimitOverrideAsync(const DeleteNotifyMessageSpendLimitOverrideResponseReceivedHandler& handler,
+                                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                                  const DeleteNotifyMessageSpendLimitOverrideRequestT& request = {}) const {
+    return SubmitAsync(&PinpointSMSVoiceV2Client::DeleteNotifyMessageSpendLimitOverride, request, handler, context);
+  }
+
+  /**
    * <p>Deletes an existing opt-out list. All opted out phone numbers in the opt-out
    * list are deleted.</p> <p>If the specified opt-out list name doesn't exist or is
    * in-use by an origination phone number or pool, an error is
@@ -905,6 +1029,32 @@ class AWS_PINPOINTSMSVOICEV2_API PinpointSMSVoiceV2Client : public Aws::Client::
       const DeleteProtectConfigurationRuleSetNumberOverrideResponseReceivedHandler& handler,
       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&PinpointSMSVoiceV2Client::DeleteProtectConfigurationRuleSetNumberOverride, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes an existing RCS agent. If deletion protection is enabled, an error is
+   * returned.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteRcsAgent">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteRcsAgentOutcome DeleteRcsAgent(const Model::DeleteRcsAgentRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteRcsAgent that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteRcsAgentRequestT = Model::DeleteRcsAgentRequest>
+  Model::DeleteRcsAgentOutcomeCallable DeleteRcsAgentCallable(const DeleteRcsAgentRequestT& request) const {
+    return SubmitCallable(&PinpointSMSVoiceV2Client::DeleteRcsAgent, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteRcsAgent that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteRcsAgentRequestT = Model::DeleteRcsAgentRequest>
+  void DeleteRcsAgentAsync(const DeleteRcsAgentRequestT& request, const DeleteRcsAgentResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PinpointSMSVoiceV2Client::DeleteRcsAgent, request, handler, context);
   }
 
   /**
@@ -1260,6 +1410,75 @@ class AWS_PINPOINTSMSVOICEV2_API PinpointSMSVoiceV2Client : public Aws::Client::
   }
 
   /**
+   * <p>Describes the specified notify configurations or all notify configurations in
+   * your account.</p> <p>If you specify notify configuration IDs, the output
+   * includes information for only the specified notify configurations. If you
+   * specify filters, the output includes information for only those notify
+   * configurations that meet the filter criteria. If you don't specify notify
+   * configuration IDs or filters, the output includes information for all notify
+   * configurations.</p> <p>If you specify a notify configuration ID that isn't
+   * valid, an error is returned.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeNotifyConfigurations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeNotifyConfigurationsOutcome DescribeNotifyConfigurations(
+      const Model::DescribeNotifyConfigurationsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeNotifyConfigurations that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeNotifyConfigurationsRequestT = Model::DescribeNotifyConfigurationsRequest>
+  Model::DescribeNotifyConfigurationsOutcomeCallable DescribeNotifyConfigurationsCallable(
+      const DescribeNotifyConfigurationsRequestT& request = {}) const {
+    return SubmitCallable(&PinpointSMSVoiceV2Client::DescribeNotifyConfigurations, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeNotifyConfigurations that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeNotifyConfigurationsRequestT = Model::DescribeNotifyConfigurationsRequest>
+  void DescribeNotifyConfigurationsAsync(const DescribeNotifyConfigurationsResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                         const DescribeNotifyConfigurationsRequestT& request = {}) const {
+    return SubmitAsync(&PinpointSMSVoiceV2Client::DescribeNotifyConfigurations, request, handler, context);
+  }
+
+  /**
+   * <p>Describes the specified notify templates or all notify templates in your
+   * account.</p> <p>If you specify template IDs, the output includes information for
+   * only the specified notify templates. If you specify filters, the output includes
+   * information for only those notify templates that meet the filter criteria. If
+   * you don't specify template IDs or filters, the output includes information for
+   * all notify templates.</p> <p>If you specify a template ID that isn't valid, an
+   * error is returned.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeNotifyTemplates">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeNotifyTemplatesOutcome DescribeNotifyTemplates(const Model::DescribeNotifyTemplatesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeNotifyTemplates that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeNotifyTemplatesRequestT = Model::DescribeNotifyTemplatesRequest>
+  Model::DescribeNotifyTemplatesOutcomeCallable DescribeNotifyTemplatesCallable(const DescribeNotifyTemplatesRequestT& request = {}) const {
+    return SubmitCallable(&PinpointSMSVoiceV2Client::DescribeNotifyTemplates, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeNotifyTemplates that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeNotifyTemplatesRequestT = Model::DescribeNotifyTemplatesRequest>
+  void DescribeNotifyTemplatesAsync(const DescribeNotifyTemplatesResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                    const DescribeNotifyTemplatesRequestT& request = {}) const {
+    return SubmitAsync(&PinpointSMSVoiceV2Client::DescribeNotifyTemplates, request, handler, context);
+  }
+
+  /**
    * <p>Describes the specified opt-out list or all opt-out lists in your
    * account.</p> <p>If you specify opt-out list names, the output includes
    * information for only the specified opt-out lists. Opt-out lists include only
@@ -1422,6 +1641,68 @@ class AWS_PINPOINTSMSVOICEV2_API PinpointSMSVoiceV2Client : public Aws::Client::
                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                           const DescribeProtectConfigurationsRequestT& request = {}) const {
     return SubmitAsync(&PinpointSMSVoiceV2Client::DescribeProtectConfigurations, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the per-country launch status of an RCS agent, including
+   * carrier-level details for each country.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRcsAgentCountryLaunchStatus">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeRcsAgentCountryLaunchStatusOutcome DescribeRcsAgentCountryLaunchStatus(
+      const Model::DescribeRcsAgentCountryLaunchStatusRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeRcsAgentCountryLaunchStatus that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DescribeRcsAgentCountryLaunchStatusRequestT = Model::DescribeRcsAgentCountryLaunchStatusRequest>
+  Model::DescribeRcsAgentCountryLaunchStatusOutcomeCallable DescribeRcsAgentCountryLaunchStatusCallable(
+      const DescribeRcsAgentCountryLaunchStatusRequestT& request) const {
+    return SubmitCallable(&PinpointSMSVoiceV2Client::DescribeRcsAgentCountryLaunchStatus, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeRcsAgentCountryLaunchStatus that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DescribeRcsAgentCountryLaunchStatusRequestT = Model::DescribeRcsAgentCountryLaunchStatusRequest>
+  void DescribeRcsAgentCountryLaunchStatusAsync(const DescribeRcsAgentCountryLaunchStatusRequestT& request,
+                                                const DescribeRcsAgentCountryLaunchStatusResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PinpointSMSVoiceV2Client::DescribeRcsAgentCountryLaunchStatus, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the specified RCS agents or all RCS agents associated with your
+   * Amazon Web Services account.</p> <p>If you specify RCS agent IDs, the output
+   * includes information for only the specified RCS agents. If you specify filters,
+   * the output includes information for only those RCS agents that meet the filter
+   * criteria. If you don't specify RCS agent IDs or filters, the output includes
+   * information for all RCS agents.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRcsAgents">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeRcsAgentsOutcome DescribeRcsAgents(const Model::DescribeRcsAgentsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeRcsAgents that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeRcsAgentsRequestT = Model::DescribeRcsAgentsRequest>
+  Model::DescribeRcsAgentsOutcomeCallable DescribeRcsAgentsCallable(const DescribeRcsAgentsRequestT& request = {}) const {
+    return SubmitCallable(&PinpointSMSVoiceV2Client::DescribeRcsAgents, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeRcsAgents that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DescribeRcsAgentsRequestT = Model::DescribeRcsAgentsRequest>
+  void DescribeRcsAgentsAsync(const DescribeRcsAgentsResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                              const DescribeRcsAgentsRequestT& request = {}) const {
+    return SubmitAsync(&PinpointSMSVoiceV2Client::DescribeRcsAgents, request, handler, context);
   }
 
   /**
@@ -1880,6 +2161,34 @@ class AWS_PINPOINTSMSVOICEV2_API PinpointSMSVoiceV2Client : public Aws::Client::
   void GetResourcePolicyAsync(const GetResourcePolicyRequestT& request, const GetResourcePolicyResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&PinpointSMSVoiceV2Client::GetResourcePolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Lists countries that support notify messaging. You can optionally filter by
+   * channel, use case, or tier.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/ListNotifyCountries">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListNotifyCountriesOutcome ListNotifyCountries(const Model::ListNotifyCountriesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListNotifyCountries that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListNotifyCountriesRequestT = Model::ListNotifyCountriesRequest>
+  Model::ListNotifyCountriesOutcomeCallable ListNotifyCountriesCallable(const ListNotifyCountriesRequestT& request = {}) const {
+    return SubmitCallable(&PinpointSMSVoiceV2Client::ListNotifyCountries, request);
+  }
+
+  /**
+   * An Async wrapper for ListNotifyCountries that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListNotifyCountriesRequestT = Model::ListNotifyCountriesRequest>
+  void ListNotifyCountriesAsync(const ListNotifyCountriesResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                const ListNotifyCountriesRequestT& request = {}) const {
+    return SubmitAsync(&PinpointSMSVoiceV2Client::ListNotifyCountries, request, handler, context);
   }
 
   /**
@@ -2356,6 +2665,61 @@ class AWS_PINPOINTSMSVOICEV2_API PinpointSMSVoiceV2Client : public Aws::Client::
   }
 
   /**
+   * <p>Sends a templated text message through a notify configuration to a
+   * recipient's phone number.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SendNotifyTextMessage">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SendNotifyTextMessageOutcome SendNotifyTextMessage(const Model::SendNotifyTextMessageRequest& request) const;
+
+  /**
+   * A Callable wrapper for SendNotifyTextMessage that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename SendNotifyTextMessageRequestT = Model::SendNotifyTextMessageRequest>
+  Model::SendNotifyTextMessageOutcomeCallable SendNotifyTextMessageCallable(const SendNotifyTextMessageRequestT& request) const {
+    return SubmitCallable(&PinpointSMSVoiceV2Client::SendNotifyTextMessage, request);
+  }
+
+  /**
+   * An Async wrapper for SendNotifyTextMessage that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename SendNotifyTextMessageRequestT = Model::SendNotifyTextMessageRequest>
+  void SendNotifyTextMessageAsync(const SendNotifyTextMessageRequestT& request, const SendNotifyTextMessageResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PinpointSMSVoiceV2Client::SendNotifyTextMessage, request, handler, context);
+  }
+
+  /**
+   * <p>Sends a templated voice message through a notify configuration to a
+   * recipient's phone number.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SendNotifyVoiceMessage">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SendNotifyVoiceMessageOutcome SendNotifyVoiceMessage(const Model::SendNotifyVoiceMessageRequest& request) const;
+
+  /**
+   * A Callable wrapper for SendNotifyVoiceMessage that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename SendNotifyVoiceMessageRequestT = Model::SendNotifyVoiceMessageRequest>
+  Model::SendNotifyVoiceMessageOutcomeCallable SendNotifyVoiceMessageCallable(const SendNotifyVoiceMessageRequestT& request) const {
+    return SubmitCallable(&PinpointSMSVoiceV2Client::SendNotifyVoiceMessage, request);
+  }
+
+  /**
+   * An Async wrapper for SendNotifyVoiceMessage that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename SendNotifyVoiceMessageRequestT = Model::SendNotifyVoiceMessageRequest>
+  void SendNotifyVoiceMessageAsync(const SendNotifyVoiceMessageRequestT& request,
+                                   const SendNotifyVoiceMessageResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PinpointSMSVoiceV2Client::SendNotifyVoiceMessage, request, handler, context);
+  }
+
+  /**
    * <p>Creates a new text message and sends it to a recipient's phone number.
    * SendTextMessage only sends an SMS message to one recipient each time it is
    * invoked.</p> <p>SMS throughput limits are measured in Message Parts per Second
@@ -2573,6 +2937,38 @@ class AWS_PINPOINTSMSVOICEV2_API PinpointSMSVoiceV2Client : public Aws::Client::
   }
 
   /**
+   * <p>Sets an account level monthly spend limit override for sending notify
+   * messages. The requested spend limit must be less than or equal to the
+   * <code>MaxLimit</code>, which is set by Amazon Web Services. </p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SetNotifyMessageSpendLimitOverride">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SetNotifyMessageSpendLimitOverrideOutcome SetNotifyMessageSpendLimitOverride(
+      const Model::SetNotifyMessageSpendLimitOverrideRequest& request) const;
+
+  /**
+   * A Callable wrapper for SetNotifyMessageSpendLimitOverride that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename SetNotifyMessageSpendLimitOverrideRequestT = Model::SetNotifyMessageSpendLimitOverrideRequest>
+  Model::SetNotifyMessageSpendLimitOverrideOutcomeCallable SetNotifyMessageSpendLimitOverrideCallable(
+      const SetNotifyMessageSpendLimitOverrideRequestT& request) const {
+    return SubmitCallable(&PinpointSMSVoiceV2Client::SetNotifyMessageSpendLimitOverride, request);
+  }
+
+  /**
+   * An Async wrapper for SetNotifyMessageSpendLimitOverride that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename SetNotifyMessageSpendLimitOverrideRequestT = Model::SetNotifyMessageSpendLimitOverrideRequest>
+  void SetNotifyMessageSpendLimitOverrideAsync(const SetNotifyMessageSpendLimitOverrideRequestT& request,
+                                               const SetNotifyMessageSpendLimitOverrideResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PinpointSMSVoiceV2Client::SetNotifyMessageSpendLimitOverride, request, handler, context);
+  }
+
+  /**
    * <p>Sets an account level monthly spend limit override for sending text messages.
    * The requested spend limit must be less than or equal to the
    * <code>MaxLimit</code>, which is set by Amazon Web Services. </p><p><h3>See
@@ -2758,6 +3154,36 @@ class AWS_PINPOINTSMSVOICEV2_API PinpointSMSVoiceV2Client : public Aws::Client::
   }
 
   /**
+   * <p>Updates an existing notify configuration. You can update the default
+   * template, pool association, enabled channels, enabled countries, and deletion
+   * protection settings.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/UpdateNotifyConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateNotifyConfigurationOutcome UpdateNotifyConfiguration(const Model::UpdateNotifyConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateNotifyConfiguration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateNotifyConfigurationRequestT = Model::UpdateNotifyConfigurationRequest>
+  Model::UpdateNotifyConfigurationOutcomeCallable UpdateNotifyConfigurationCallable(
+      const UpdateNotifyConfigurationRequestT& request) const {
+    return SubmitCallable(&PinpointSMSVoiceV2Client::UpdateNotifyConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateNotifyConfiguration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateNotifyConfigurationRequestT = Model::UpdateNotifyConfigurationRequest>
+  void UpdateNotifyConfigurationAsync(const UpdateNotifyConfigurationRequestT& request,
+                                      const UpdateNotifyConfigurationResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PinpointSMSVoiceV2Client::UpdateNotifyConfiguration, request, handler, context);
+  }
+
+  /**
    * <p>Updates the configuration of an existing origination phone number. You can
    * update the opt-out list, enable or disable two-way messaging, change the
    * TwoWayChannelArn, enable or disable self-managed opt-outs, and enable or disable
@@ -2878,6 +3304,33 @@ class AWS_PINPOINTSMSVOICEV2_API PinpointSMSVoiceV2Client : public Aws::Client::
       const UpdateProtectConfigurationCountryRuleSetResponseReceivedHandler& handler,
       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&PinpointSMSVoiceV2Client::UpdateProtectConfigurationCountryRuleSet, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the configuration of an existing RCS agent. You can update the
+   * opt-out list, deletion protection, two-way messaging settings, and self-managed
+   * opt-outs configuration.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/UpdateRcsAgent">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateRcsAgentOutcome UpdateRcsAgent(const Model::UpdateRcsAgentRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateRcsAgent that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UpdateRcsAgentRequestT = Model::UpdateRcsAgentRequest>
+  Model::UpdateRcsAgentOutcomeCallable UpdateRcsAgentCallable(const UpdateRcsAgentRequestT& request) const {
+    return SubmitCallable(&PinpointSMSVoiceV2Client::UpdateRcsAgent, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateRcsAgent that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UpdateRcsAgentRequestT = Model::UpdateRcsAgentRequest>
+  void UpdateRcsAgentAsync(const UpdateRcsAgentRequestT& request, const UpdateRcsAgentResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PinpointSMSVoiceV2Client::UpdateRcsAgent, request, handler, context);
   }
 
   /**

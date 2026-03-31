@@ -70,10 +70,6 @@ ServiceConfiguration& ServiceConfiguration::operator=(JsonView jsonValue) {
     m_pagerduty = jsonValue.GetObject("pagerduty");
     m_pagerdutyHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("msteams")) {
-    m_msteams = jsonValue.GetObject("msteams");
-    m_msteamsHasBeenSet = true;
-  }
   return *this;
 }
 
@@ -130,10 +126,6 @@ JsonValue ServiceConfiguration::Jsonize() const {
 
   if (m_pagerdutyHasBeenSet) {
     payload.WithObject("pagerduty", m_pagerduty.Jsonize());
-  }
-
-  if (m_msteamsHasBeenSet) {
-    payload.WithObject("msteams", m_msteams.Jsonize());
   }
 
   return payload;

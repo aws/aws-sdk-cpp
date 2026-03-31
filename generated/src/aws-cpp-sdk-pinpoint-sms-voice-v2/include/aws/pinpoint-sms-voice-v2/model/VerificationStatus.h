@@ -10,7 +10,7 @@
 namespace Aws {
 namespace PinpointSMSVoiceV2 {
 namespace Model {
-enum class VerificationStatus { NOT_SET, PENDING, VERIFIED };
+enum class VerificationStatus { NOT_SET, PENDING, VERIFIED, UNSUPPORTED };
 
 namespace VerificationStatusMapper {
 AWS_PINPOINTSMSVOICEV2_API VerificationStatus GetVerificationStatusForName(const Aws::String& name);

@@ -6,7 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
-#include <aws/partnercentral-selling/model/ExpectedCustomerSpendCurrencyCodeEnum.h>
+#include <aws/partnercentral-selling/model/CurrencyCode.h>
 #include <aws/partnercentral-selling/model/PaymentFrequency.h>
 
 #include <utility>
@@ -56,16 +56,16 @@ class ExpectedCustomerSpend {
 
   ///@{
   /**
-   * <p>Indicates the currency in which the revenue estimate is provided. This helps
-   * in understanding the financial impact across different markets.</p>
+   * <p>Currency code for the expected customer spend. Supported currencies: USD,
+   * EUR</p>
    */
-  inline ExpectedCustomerSpendCurrencyCodeEnum GetCurrencyCode() const { return m_currencyCode; }
+  inline CurrencyCode GetCurrencyCode() const { return m_currencyCode; }
   inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
-  inline void SetCurrencyCode(ExpectedCustomerSpendCurrencyCodeEnum value) {
+  inline void SetCurrencyCode(CurrencyCode value) {
     m_currencyCodeHasBeenSet = true;
     m_currencyCode = value;
   }
-  inline ExpectedCustomerSpend& WithCurrencyCode(ExpectedCustomerSpendCurrencyCodeEnum value) {
+  inline ExpectedCustomerSpend& WithCurrencyCode(CurrencyCode value) {
     SetCurrencyCode(value);
     return *this;
   }
@@ -132,7 +132,7 @@ class ExpectedCustomerSpend {
  private:
   Aws::String m_amount;
 
-  ExpectedCustomerSpendCurrencyCodeEnum m_currencyCode{ExpectedCustomerSpendCurrencyCodeEnum::NOT_SET};
+  CurrencyCode m_currencyCode{CurrencyCode::NOT_SET};
 
   PaymentFrequency m_frequency{PaymentFrequency::NOT_SET};
 

@@ -16,6 +16,7 @@ namespace Model {
 namespace AuthenticationTypeMapper {
 
 static const int PASSWORD_HASH = HashingUtils::HashString("PASSWORD");
+static const int KEYPAIR_HASH = HashingUtils::HashString("KEYPAIR");
 static const int TOKEN_HASH = HashingUtils::HashString("TOKEN");
 static const int X509_HASH = HashingUtils::HashString("X509");
 
@@ -23,6 +24,8 @@ AuthenticationType GetAuthenticationTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == PASSWORD_HASH) {
     return AuthenticationType::PASSWORD;
+  } else if (hashCode == KEYPAIR_HASH) {
+    return AuthenticationType::KEYPAIR;
   } else if (hashCode == TOKEN_HASH) {
     return AuthenticationType::TOKEN;
   } else if (hashCode == X509_HASH) {
@@ -43,6 +46,8 @@ Aws::String GetNameForAuthenticationType(AuthenticationType enumValue) {
       return {};
     case AuthenticationType::PASSWORD:
       return "PASSWORD";
+    case AuthenticationType::KEYPAIR:
+      return "KEYPAIR";
     case AuthenticationType::TOKEN:
       return "TOKEN";
     case AuthenticationType::X509:

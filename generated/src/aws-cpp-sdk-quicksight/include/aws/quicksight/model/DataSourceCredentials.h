@@ -8,6 +8,7 @@
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/CredentialPair.h>
 #include <aws/quicksight/model/KeyPairCredentials.h>
+#include <aws/quicksight/model/OAuthClientCredentials.h>
 #include <aws/quicksight/model/WebProxyCredentials.h>
 
 #include <utility>
@@ -131,6 +132,27 @@ class DataSourceCredentials {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The OAuth client credentials for connecting to a data source using OAuth 2.0
+   * client credentials (2LO) authentication. For more information, see <code> <a
+   * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_OAuthClientCredentials.html">OAuthClientCredentials</a>
+   * </code>.</p>
+   */
+  inline const OAuthClientCredentials& GetOAuthClientCredentials() const { return m_oAuthClientCredentials; }
+  inline bool OAuthClientCredentialsHasBeenSet() const { return m_oAuthClientCredentialsHasBeenSet; }
+  template <typename OAuthClientCredentialsT = OAuthClientCredentials>
+  void SetOAuthClientCredentials(OAuthClientCredentialsT&& value) {
+    m_oAuthClientCredentialsHasBeenSet = true;
+    m_oAuthClientCredentials = std::forward<OAuthClientCredentialsT>(value);
+  }
+  template <typename OAuthClientCredentialsT = OAuthClientCredentials>
+  DataSourceCredentials& WithOAuthClientCredentials(OAuthClientCredentialsT&& value) {
+    SetOAuthClientCredentials(std::forward<OAuthClientCredentialsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   CredentialPair m_credentialPair;
 
@@ -141,11 +163,14 @@ class DataSourceCredentials {
   KeyPairCredentials m_keyPairCredentials;
 
   WebProxyCredentials m_webProxyCredentials;
+
+  OAuthClientCredentials m_oAuthClientCredentials;
   bool m_credentialPairHasBeenSet = false;
   bool m_copySourceArnHasBeenSet = false;
   bool m_secretArnHasBeenSet = false;
   bool m_keyPairCredentialsHasBeenSet = false;
   bool m_webProxyCredentialsHasBeenSet = false;
+  bool m_oAuthClientCredentialsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -38,6 +38,10 @@ DataSourceCredentials& DataSourceCredentials::operator=(JsonView jsonValue) {
     m_webProxyCredentials = jsonValue.GetObject("WebProxyCredentials");
     m_webProxyCredentialsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("OAuthClientCredentials")) {
+    m_oAuthClientCredentials = jsonValue.GetObject("OAuthClientCredentials");
+    m_oAuthClientCredentialsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +66,10 @@ JsonValue DataSourceCredentials::Jsonize() const {
 
   if (m_webProxyCredentialsHasBeenSet) {
     payload.WithObject("WebProxyCredentials", m_webProxyCredentials.Jsonize());
+  }
+
+  if (m_oAuthClientCredentialsHasBeenSet) {
+    payload.WithObject("OAuthClientCredentials", m_oAuthClientCredentials.Jsonize());
   }
 
   return payload;

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/DataBarsOptions.h>
+#include <aws/quicksight/model/SparklinesOptions.h>
 
 #include <utility>
 
@@ -50,9 +51,31 @@ class TableInlineVisualization {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration of the inline visualization of the sparklines within a
+   * chart.</p>
+   */
+  inline const SparklinesOptions& GetSparklines() const { return m_sparklines; }
+  inline bool SparklinesHasBeenSet() const { return m_sparklinesHasBeenSet; }
+  template <typename SparklinesT = SparklinesOptions>
+  void SetSparklines(SparklinesT&& value) {
+    m_sparklinesHasBeenSet = true;
+    m_sparklines = std::forward<SparklinesT>(value);
+  }
+  template <typename SparklinesT = SparklinesOptions>
+  TableInlineVisualization& WithSparklines(SparklinesT&& value) {
+    SetSparklines(std::forward<SparklinesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   DataBarsOptions m_dataBars;
+
+  SparklinesOptions m_sparklines;
   bool m_dataBarsHasBeenSet = false;
+  bool m_sparklinesHasBeenSet = false;
 };
 
 }  // namespace Model

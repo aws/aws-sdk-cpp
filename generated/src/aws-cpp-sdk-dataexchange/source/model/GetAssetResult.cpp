@@ -58,6 +58,13 @@ GetAssetResult& GetAssetResult::operator=(const Aws::AmazonWebServiceResult<Json
     m_sourceId = jsonValue.GetString("SourceId");
     m_sourceIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Tags")) {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
+    for (auto& tagsItem : tagsJsonMap) {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("UpdatedAt")) {
     m_updatedAt = jsonValue.GetString("UpdatedAt");
     m_updatedAtHasBeenSet = true;

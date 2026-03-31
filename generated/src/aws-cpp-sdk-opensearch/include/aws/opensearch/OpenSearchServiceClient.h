@@ -777,6 +777,34 @@ class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AW
   }
 
   /**
+   * <p>Deregisters a capability from an OpenSearch UI application. This operation
+   * removes the capability and its associated configuration.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeregisterCapability">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeregisterCapabilityOutcome DeregisterCapability(const Model::DeregisterCapabilityRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeregisterCapability that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeregisterCapabilityRequestT = Model::DeregisterCapabilityRequest>
+  Model::DeregisterCapabilityOutcomeCallable DeregisterCapabilityCallable(const DeregisterCapabilityRequestT& request) const {
+    return SubmitCallable(&OpenSearchServiceClient::DeregisterCapability, request);
+  }
+
+  /**
+   * An Async wrapper for DeregisterCapability that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeregisterCapabilityRequestT = Model::DeregisterCapabilityRequest>
+  void DeregisterCapabilityAsync(const DeregisterCapabilityRequestT& request, const DeregisterCapabilityResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServiceClient::DeregisterCapability, request, handler, context);
+  }
+
+  /**
    * <p>Describes the domain configuration for the specified Amazon OpenSearch
    * Service domain, including the domain ID, domain service endpoint, and domain
    * ARN.</p><p><h3>See Also:</h3>   <a
@@ -1333,6 +1361,33 @@ class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AW
   void GetApplicationAsync(const GetApplicationRequestT& request, const GetApplicationResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OpenSearchServiceClient::GetApplication, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about a registered capability for an OpenSearch UI
+   * application, including its configuration and current status.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetCapability">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetCapabilityOutcome GetCapability(const Model::GetCapabilityRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetCapability that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetCapabilityRequestT = Model::GetCapabilityRequest>
+  Model::GetCapabilityOutcomeCallable GetCapabilityCallable(const GetCapabilityRequestT& request) const {
+    return SubmitCallable(&OpenSearchServiceClient::GetCapability, request);
+  }
+
+  /**
+   * An Async wrapper for GetCapability that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetCapabilityRequestT = Model::GetCapabilityRequest>
+  void GetCapabilityAsync(const GetCapabilityRequestT& request, const GetCapabilityResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServiceClient::GetCapability, request, handler, context);
   }
 
   /**
@@ -2077,6 +2132,37 @@ class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AW
                                          const PutDefaultApplicationSettingResponseReceivedHandler& handler,
                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OpenSearchServiceClient::PutDefaultApplicationSetting, request, handler, context);
+  }
+
+  /**
+   * <p>Registers a capability for an OpenSearch UI application. Use this operation
+   * to enable specific capabilities, such as AI features, for a given application.
+   * The capability configuration defines the type and settings of the capability to
+   * register. For more information about the AI features, see <a
+   * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/application-ai-assistant.html">Agentic
+   * AI for OpenSearch UI</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/RegisterCapability">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RegisterCapabilityOutcome RegisterCapability(const Model::RegisterCapabilityRequest& request) const;
+
+  /**
+   * A Callable wrapper for RegisterCapability that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename RegisterCapabilityRequestT = Model::RegisterCapabilityRequest>
+  Model::RegisterCapabilityOutcomeCallable RegisterCapabilityCallable(const RegisterCapabilityRequestT& request) const {
+    return SubmitCallable(&OpenSearchServiceClient::RegisterCapability, request);
+  }
+
+  /**
+   * An Async wrapper for RegisterCapability that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename RegisterCapabilityRequestT = Model::RegisterCapabilityRequest>
+  void RegisterCapabilityAsync(const RegisterCapabilityRequestT& request, const RegisterCapabilityResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServiceClient::RegisterCapability, request, handler, context);
   }
 
   /**

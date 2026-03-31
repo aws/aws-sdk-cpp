@@ -7,6 +7,7 @@
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/FieldBasedTooltip.h>
 #include <aws/quicksight/model/SelectedTooltipType.h>
+#include <aws/quicksight/model/SheetTooltip.h>
 #include <aws/quicksight/model/Visibility.h>
 
 #include <utility>
@@ -85,15 +86,34 @@ class TooltipOptions {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const SheetTooltip& GetSheetTooltip() const { return m_sheetTooltip; }
+  inline bool SheetTooltipHasBeenSet() const { return m_sheetTooltipHasBeenSet; }
+  template <typename SheetTooltipT = SheetTooltip>
+  void SetSheetTooltip(SheetTooltipT&& value) {
+    m_sheetTooltipHasBeenSet = true;
+    m_sheetTooltip = std::forward<SheetTooltipT>(value);
+  }
+  template <typename SheetTooltipT = SheetTooltip>
+  TooltipOptions& WithSheetTooltip(SheetTooltipT&& value) {
+    SetSheetTooltip(std::forward<SheetTooltipT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Visibility m_tooltipVisibility{Visibility::NOT_SET};
 
   SelectedTooltipType m_selectedTooltipType{SelectedTooltipType::NOT_SET};
 
   FieldBasedTooltip m_fieldBasedTooltip;
+
+  SheetTooltip m_sheetTooltip;
   bool m_tooltipVisibilityHasBeenSet = false;
   bool m_selectedTooltipTypeHasBeenSet = false;
   bool m_fieldBasedTooltipHasBeenSet = false;
+  bool m_sheetTooltipHasBeenSet = false;
 };
 
 }  // namespace Model

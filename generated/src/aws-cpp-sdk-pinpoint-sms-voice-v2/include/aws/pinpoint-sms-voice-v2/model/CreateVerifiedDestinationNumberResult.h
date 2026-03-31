@@ -103,6 +103,24 @@ class CreateVerifiedDestinationNumberResult {
 
   ///@{
   /**
+   * <p>The unique identifier of the RCS agent associated with the verified
+   * destination number.</p>
+   */
+  inline const Aws::String& GetRcsAgentId() const { return m_rcsAgentId; }
+  template <typename RcsAgentIdT = Aws::String>
+  void SetRcsAgentId(RcsAgentIdT&& value) {
+    m_rcsAgentIdHasBeenSet = true;
+    m_rcsAgentId = std::forward<RcsAgentIdT>(value);
+  }
+  template <typename RcsAgentIdT = Aws::String>
+  CreateVerifiedDestinationNumberResult& WithRcsAgentId(RcsAgentIdT&& value) {
+    SetRcsAgentId(std::forward<RcsAgentIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>An array of tags (key and value pairs) to associate with the destination
    * number.</p>
    */
@@ -168,6 +186,8 @@ class CreateVerifiedDestinationNumberResult {
 
   VerificationStatus m_status{VerificationStatus::NOT_SET};
 
+  Aws::String m_rcsAgentId;
+
   Aws::Vector<Tag> m_tags;
 
   Aws::Utils::DateTime m_createdTimestamp{};
@@ -178,6 +198,7 @@ class CreateVerifiedDestinationNumberResult {
   bool m_verifiedDestinationNumberIdHasBeenSet = false;
   bool m_destinationPhoneNumberHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_rcsAgentIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_createdTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

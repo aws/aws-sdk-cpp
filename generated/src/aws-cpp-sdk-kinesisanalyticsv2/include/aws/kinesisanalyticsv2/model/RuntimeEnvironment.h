@@ -23,7 +23,8 @@ enum class RuntimeEnvironment {
   ZEPPELIN_FLINK_3_0,
   FLINK_1_18,
   FLINK_1_19,
-  FLINK_1_20
+  FLINK_1_20,
+  FLINK_2_2
 };
 
 namespace RuntimeEnvironmentMapper {

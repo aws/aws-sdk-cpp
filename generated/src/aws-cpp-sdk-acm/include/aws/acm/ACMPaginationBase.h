@@ -6,6 +6,7 @@
 #pragma once
 
 #include <aws/acm/model/ListCertificatesPaginationTraits.h>
+#include <aws/acm/model/SearchCertificatesPaginationTraits.h>
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
@@ -29,6 +30,18 @@ class ACMPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCertificatesRequest,
                                              Pagination::ListCertificatesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
+  }
+
+  /**
+   * Create a paginator for SearchCertificates operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchCertificatesRequest,
+                                    Pagination::SearchCertificatesPaginationTraits<DerivedClient>>
+  SearchCertificatesPaginator(const Model::SearchCertificatesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchCertificatesRequest,
+                                             Pagination::SearchCertificatesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 };
 }  // namespace ACM

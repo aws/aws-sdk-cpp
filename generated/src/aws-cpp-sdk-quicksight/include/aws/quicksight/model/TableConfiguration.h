@@ -13,6 +13,7 @@
 #include <aws/quicksight/model/TableOptions.h>
 #include <aws/quicksight/model/TablePaginatedReportOptions.h>
 #include <aws/quicksight/model/TableSortConfiguration.h>
+#include <aws/quicksight/model/TooltipOptions.h>
 #include <aws/quicksight/model/TotalOptions.h>
 #include <aws/quicksight/model/VisualInteractionOptions.h>
 
@@ -174,6 +175,22 @@ class TableConfiguration {
   ///@}
 
   ///@{
+
+  inline const TooltipOptions& GetTooltip() const { return m_tooltip; }
+  inline bool TooltipHasBeenSet() const { return m_tooltipHasBeenSet; }
+  template <typename TooltipT = TooltipOptions>
+  void SetTooltip(TooltipT&& value) {
+    m_tooltipHasBeenSet = true;
+    m_tooltip = std::forward<TooltipT>(value);
+  }
+  template <typename TooltipT = TooltipOptions>
+  TableConfiguration& WithTooltip(TooltipT&& value) {
+    SetTooltip(std::forward<TooltipT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
    * <p>The options that define customizations available to dashboard readers for a
    * specific visual</p>
@@ -226,6 +243,8 @@ class TableConfiguration {
 
   Aws::Vector<TableInlineVisualization> m_tableInlineVisualizations;
 
+  TooltipOptions m_tooltip;
+
   DashboardCustomizationVisualOptions m_dashboardCustomizationVisualOptions;
 
   VisualInteractionOptions m_interactions;
@@ -236,6 +255,7 @@ class TableConfiguration {
   bool m_fieldOptionsHasBeenSet = false;
   bool m_paginatedReportOptionsHasBeenSet = false;
   bool m_tableInlineVisualizationsHasBeenSet = false;
+  bool m_tooltipHasBeenSet = false;
   bool m_dashboardCustomizationVisualOptionsHasBeenSet = false;
   bool m_interactionsHasBeenSet = false;
 };

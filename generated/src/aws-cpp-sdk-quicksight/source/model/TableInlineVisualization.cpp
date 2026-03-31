@@ -22,6 +22,10 @@ TableInlineVisualization& TableInlineVisualization::operator=(JsonView jsonValue
     m_dataBars = jsonValue.GetObject("DataBars");
     m_dataBarsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Sparklines")) {
+    m_sparklines = jsonValue.GetObject("Sparklines");
+    m_sparklinesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue TableInlineVisualization::Jsonize() const {
 
   if (m_dataBarsHasBeenSet) {
     payload.WithObject("DataBars", m_dataBars.Jsonize());
+  }
+
+  if (m_sparklinesHasBeenSet) {
+    payload.WithObject("Sparklines", m_sparklines.Jsonize());
   }
 
   return payload;

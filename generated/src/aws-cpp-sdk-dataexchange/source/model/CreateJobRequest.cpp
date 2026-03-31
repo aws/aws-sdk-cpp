@@ -15,6 +15,10 @@ using namespace Aws::Utils;
 Aws::String CreateJobRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_assetConfigurationHasBeenSet) {
+    payload.WithObject("AssetConfiguration", m_assetConfiguration.Jsonize());
+  }
+
   if (m_detailsHasBeenSet) {
     payload.WithObject("Details", m_details.Jsonize());
   }

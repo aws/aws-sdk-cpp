@@ -38,7 +38,7 @@ class DocumentItem {
    * <p>Category of the document. Document types include:</p> <ul> <li> <p>
    * <code>CustomEula</code> – A custom EULA provided by you as seller. A URL for a
    * EULA stored in an accessible Amazon S3 bucket is required for this document
-   * type.</p> </li> <li> <p> <code>CustomDsa</code> �� A custom Data Subscription
+   * type.</p> </li> <li> <p> <code>CustomDsa</code> – A custom Data Subscription
    * Agreement (DSA) provided by you as seller. A URL for a DSA stored in an
    * accessible Amazon S3 bucket is required for this document type.</p> </li> <li>
    * <p> <code>StandardEula</code> – The Standard Contract for AWS Marketplace

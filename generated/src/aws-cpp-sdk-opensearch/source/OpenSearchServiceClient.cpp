@@ -44,6 +44,7 @@
 #include <aws/opensearch/model/DeleteOutboundConnectionRequest.h>
 #include <aws/opensearch/model/DeletePackageRequest.h>
 #include <aws/opensearch/model/DeleteVpcEndpointRequest.h>
+#include <aws/opensearch/model/DeregisterCapabilityRequest.h>
 #include <aws/opensearch/model/DescribeDomainAutoTunesRequest.h>
 #include <aws/opensearch/model/DescribeDomainChangeProgressRequest.h>
 #include <aws/opensearch/model/DescribeDomainConfigRequest.h>
@@ -63,6 +64,7 @@
 #include <aws/opensearch/model/DissociatePackageRequest.h>
 #include <aws/opensearch/model/DissociatePackagesRequest.h>
 #include <aws/opensearch/model/GetApplicationRequest.h>
+#include <aws/opensearch/model/GetCapabilityRequest.h>
 #include <aws/opensearch/model/GetCompatibleVersionsRequest.h>
 #include <aws/opensearch/model/GetDataSourceRequest.h>
 #include <aws/opensearch/model/GetDefaultApplicationSettingRequest.h>
@@ -89,6 +91,7 @@
 #include <aws/opensearch/model/ListVpcEndpointsRequest.h>
 #include <aws/opensearch/model/PurchaseReservedInstanceOfferingRequest.h>
 #include <aws/opensearch/model/PutDefaultApplicationSettingRequest.h>
+#include <aws/opensearch/model/RegisterCapabilityRequest.h>
 #include <aws/opensearch/model/RejectInboundConnectionRequest.h>
 #include <aws/opensearch/model/RemoveTagsRequest.h>
 #include <aws/opensearch/model/RevokeVpcEndpointAccessRequest.h>
@@ -652,6 +655,31 @@ DeleteVpcEndpointOutcome OpenSearchServiceClient::DeleteVpcEndpoint(const Delete
                             : DeleteVpcEndpointOutcome(std::move(result.GetError()));
 }
 
+DeregisterCapabilityOutcome OpenSearchServiceClient::DeregisterCapability(const DeregisterCapabilityRequest& request) const {
+  if (!request.ApplicationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeregisterCapability", "Required field: ApplicationId, is not set");
+    return DeregisterCapabilityOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(
+        OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.CapabilityNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeregisterCapability", "Required field: CapabilityName, is not set");
+    return DeregisterCapabilityOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(
+        OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CapabilityName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/application/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/capability/deregister/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCapabilityName());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeregisterCapabilityOutcome(result.GetResultWithOwnership())
+                            : DeregisterCapabilityOutcome(std::move(result.GetError()));
+}
+
 DescribeDomainOutcome OpenSearchServiceClient::DescribeDomain(const DescribeDomainRequest& request) const {
   if (!request.DomainNameHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DescribeDomain", "Required field: DomainName, is not set");
@@ -951,6 +979,30 @@ GetApplicationOutcome OpenSearchServiceClient::GetApplication(const GetApplicati
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetApplicationOutcome(result.GetResultWithOwnership()) : GetApplicationOutcome(std::move(result.GetError()));
+}
+
+GetCapabilityOutcome OpenSearchServiceClient::GetCapability(const GetCapabilityRequest& request) const {
+  if (!request.ApplicationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetCapability", "Required field: ApplicationId, is not set");
+    return GetCapabilityOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(
+        OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.CapabilityNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetCapability", "Required field: CapabilityName, is not set");
+    return GetCapabilityOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(
+        OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CapabilityName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/application/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/capability/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCapabilityName());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCapabilityOutcome(result.GetResultWithOwnership()) : GetCapabilityOutcome(std::move(result.GetError()));
 }
 
 GetCompatibleVersionsOutcome OpenSearchServiceClient::GetCompatibleVersions(const GetCompatibleVersionsRequest& request) const {
@@ -1378,6 +1430,25 @@ PutDefaultApplicationSettingOutcome OpenSearchServiceClient::PutDefaultApplicati
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? PutDefaultApplicationSettingOutcome(result.GetResultWithOwnership())
                             : PutDefaultApplicationSettingOutcome(std::move(result.GetError()));
+}
+
+RegisterCapabilityOutcome OpenSearchServiceClient::RegisterCapability(const RegisterCapabilityRequest& request) const {
+  if (!request.ApplicationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("RegisterCapability", "Required field: ApplicationId, is not set");
+    return RegisterCapabilityOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(
+        OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/application/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/capability/register");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterCapabilityOutcome(result.GetResultWithOwnership())
+                            : RegisterCapabilityOutcome(std::move(result.GetError()));
 }
 
 RejectInboundConnectionOutcome OpenSearchServiceClient::RejectInboundConnection(const RejectInboundConnectionRequest& request) const {

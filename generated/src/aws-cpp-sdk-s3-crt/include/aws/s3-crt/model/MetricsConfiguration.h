@@ -63,6 +63,8 @@ class MetricsConfiguration {
    * <p>Specifies a metrics configuration filter. The metrics configuration will only
    * include objects that meet the filter's criteria. A filter must be a prefix, an
    * object tag, an access point ARN, or a conjunction (MetricsAndOperator).</p>
+   *  <p>Metrics configurations for directory buckets do not support tag
+   * filters.</p>
    */
   inline const MetricsFilter& GetFilter() const { return m_filter; }
   inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }

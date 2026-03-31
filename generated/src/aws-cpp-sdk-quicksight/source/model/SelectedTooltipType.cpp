@@ -17,6 +17,7 @@ namespace SelectedTooltipTypeMapper {
 
 static const int BASIC_HASH = HashingUtils::HashString("BASIC");
 static const int DETAILED_HASH = HashingUtils::HashString("DETAILED");
+static const int SHEET_HASH = HashingUtils::HashString("SHEET");
 
 SelectedTooltipType GetSelectedTooltipTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ SelectedTooltipType GetSelectedTooltipTypeForName(const Aws::String& name) {
     return SelectedTooltipType::BASIC;
   } else if (hashCode == DETAILED_HASH) {
     return SelectedTooltipType::DETAILED;
+  } else if (hashCode == SHEET_HASH) {
+    return SelectedTooltipType::SHEET;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForSelectedTooltipType(SelectedTooltipType enumValue) {
       return "BASIC";
     case SelectedTooltipType::DETAILED:
       return "DETAILED";
+    case SelectedTooltipType::SHEET:
+      return "SHEET";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

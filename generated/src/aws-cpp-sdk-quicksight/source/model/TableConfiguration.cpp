@@ -50,6 +50,10 @@ TableConfiguration& TableConfiguration::operator=(JsonView jsonValue) {
     }
     m_tableInlineVisualizationsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Tooltip")) {
+    m_tooltip = jsonValue.GetObject("Tooltip");
+    m_tooltipHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("DashboardCustomizationVisualOptions")) {
     m_dashboardCustomizationVisualOptions = jsonValue.GetObject("DashboardCustomizationVisualOptions");
     m_dashboardCustomizationVisualOptionsHasBeenSet = true;
@@ -96,6 +100,10 @@ JsonValue TableConfiguration::Jsonize() const {
           m_tableInlineVisualizations[tableInlineVisualizationsIndex].Jsonize());
     }
     payload.WithArray("TableInlineVisualizations", std::move(tableInlineVisualizationsJsonList));
+  }
+
+  if (m_tooltipHasBeenSet) {
+    payload.WithObject("Tooltip", m_tooltip.Jsonize());
   }
 
   if (m_dashboardCustomizationVisualOptionsHasBeenSet) {

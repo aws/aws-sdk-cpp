@@ -19,6 +19,11 @@ Aws::String GetIngressPointRequest::SerializePayload() const {
     payload.WithString("IngressPointId", m_ingressPointId);
   }
 
+  if (m_includeTrustStoreContentsHasBeenSet) {
+    payload.WithString("IncludeTrustStoreContents",
+                       TrustStoreResponseOptionMapper::GetNameForTrustStoreResponseOption(m_includeTrustStoreContents));
+  }
+
   return payload.View().WriteReadable();
 }
 

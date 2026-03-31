@@ -99,15 +99,36 @@ class OrganizationalUnit {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The path in the organization where this OU exists.</p>
+   */
+  inline const Aws::String& GetPath() const { return m_path; }
+  inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
+  template <typename PathT = Aws::String>
+  void SetPath(PathT&& value) {
+    m_pathHasBeenSet = true;
+    m_path = std::forward<PathT>(value);
+  }
+  template <typename PathT = Aws::String>
+  OrganizationalUnit& WithPath(PathT&& value) {
+    SetPath(std::forward<PathT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
   Aws::String m_arn;
 
   Aws::String m_name;
+
+  Aws::String m_path;
   bool m_idHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
 };
 
 }  // namespace Model

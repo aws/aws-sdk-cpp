@@ -125,6 +125,25 @@ class RegistrationAttachmentsInformation {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The URL to the document that's associated with the registration
+   * attachment.</p>
+   */
+  inline const Aws::String& GetAttachmentUrl() const { return m_attachmentUrl; }
+  inline bool AttachmentUrlHasBeenSet() const { return m_attachmentUrlHasBeenSet; }
+  template <typename AttachmentUrlT = Aws::String>
+  void SetAttachmentUrl(AttachmentUrlT&& value) {
+    m_attachmentUrlHasBeenSet = true;
+    m_attachmentUrl = std::forward<AttachmentUrlT>(value);
+  }
+  template <typename AttachmentUrlT = Aws::String>
+  RegistrationAttachmentsInformation& WithAttachmentUrl(AttachmentUrlT&& value) {
+    SetAttachmentUrl(std::forward<AttachmentUrlT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_registrationAttachmentArn;
 
@@ -135,11 +154,14 @@ class RegistrationAttachmentsInformation {
   AttachmentUploadErrorReason m_attachmentUploadErrorReason{AttachmentUploadErrorReason::NOT_SET};
 
   Aws::Utils::DateTime m_createdTimestamp{};
+
+  Aws::String m_attachmentUrl;
   bool m_registrationAttachmentArnHasBeenSet = false;
   bool m_registrationAttachmentIdHasBeenSet = false;
   bool m_attachmentStatusHasBeenSet = false;
   bool m_attachmentUploadErrorReasonHasBeenSet = false;
   bool m_createdTimestampHasBeenSet = false;
+  bool m_attachmentUrlHasBeenSet = false;
 };
 
 }  // namespace Model

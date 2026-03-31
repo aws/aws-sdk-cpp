@@ -439,6 +439,23 @@ class CreateEnvironmentResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The configuration name of the environment.</p>
+   */
+  inline const Aws::String& GetEnvironmentConfigurationName() const { return m_environmentConfigurationName; }
+  template <typename EnvironmentConfigurationNameT = Aws::String>
+  void SetEnvironmentConfigurationName(EnvironmentConfigurationNameT&& value) {
+    m_environmentConfigurationNameHasBeenSet = true;
+    m_environmentConfigurationName = std::forward<EnvironmentConfigurationNameT>(value);
+  }
+  template <typename EnvironmentConfigurationNameT = Aws::String>
+  CreateEnvironmentResult& WithEnvironmentConfigurationName(EnvironmentConfigurationNameT&& value) {
+    SetEnvironmentConfigurationName(std::forward<EnvironmentConfigurationNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -499,6 +516,8 @@ class CreateEnvironmentResult {
 
   Aws::String m_environmentConfigurationId;
 
+  Aws::String m_environmentConfigurationName;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_projectIdHasBeenSet = false;
@@ -523,6 +542,7 @@ class CreateEnvironmentResult {
   bool m_deploymentPropertiesHasBeenSet = false;
   bool m_environmentBlueprintIdHasBeenSet = false;
   bool m_environmentConfigurationIdHasBeenSet = false;
+  bool m_environmentConfigurationNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

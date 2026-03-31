@@ -9,6 +9,7 @@
 #include <aws/acm/ACMClientPagination.h>
 #include <aws/acm/ACMPaginationBase.h>
 #include <aws/acm/model/ListCertificatesPaginationTraits.h>
+#include <aws/acm/model/SearchCertificatesPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

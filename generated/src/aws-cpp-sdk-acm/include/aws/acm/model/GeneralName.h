@@ -1,0 +1,196 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/acm/ACM_EXPORTS.h>
+#include <aws/acm/model/DistinguishedName.h>
+#include <aws/acm/model/OtherName.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace ACM {
+namespace Model {
+
+/**
+ * <p>Describes an ASN.1 X.400 <code>GeneralName</code> as defined in <a
+ * href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>. Only one of
+ * the following naming options should be provided.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GeneralName">AWS API
+ * Reference</a></p>
+ */
+class GeneralName {
+ public:
+  AWS_ACM_API GeneralName() = default;
+  AWS_ACM_API GeneralName(Aws::Utils::Json::JsonView jsonValue);
+  AWS_ACM_API GeneralName& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_ACM_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>Contains information about the certificate subject. The <code>Subject</code>
+   * field in the certificate identifies the entity that owns or controls the public
+   * key in the certificate. The entity can be a user, computer, device, or service.
+   * The <code>Subject</code> must contain an X.500 distinguished name (DN). A DN is
+   * a sequence of relative distinguished names (RDNs). The RDNs are separated by
+   * commas in the certificate.</p>
+   */
+  inline const DistinguishedName& GetDirectoryName() const { return m_directoryName; }
+  inline bool DirectoryNameHasBeenSet() const { return m_directoryNameHasBeenSet; }
+  template <typename DirectoryNameT = DistinguishedName>
+  void SetDirectoryName(DirectoryNameT&& value) {
+    m_directoryNameHasBeenSet = true;
+    m_directoryName = std::forward<DirectoryNameT>(value);
+  }
+  template <typename DirectoryNameT = DistinguishedName>
+  GeneralName& WithDirectoryName(DirectoryNameT&& value) {
+    SetDirectoryName(std::forward<DirectoryNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Represents <code>GeneralName</code> as a DNS name.</p>
+   */
+  inline const Aws::String& GetDnsName() const { return m_dnsName; }
+  inline bool DnsNameHasBeenSet() const { return m_dnsNameHasBeenSet; }
+  template <typename DnsNameT = Aws::String>
+  void SetDnsName(DnsNameT&& value) {
+    m_dnsNameHasBeenSet = true;
+    m_dnsName = std::forward<DnsNameT>(value);
+  }
+  template <typename DnsNameT = Aws::String>
+  GeneralName& WithDnsName(DnsNameT&& value) {
+    SetDnsName(std::forward<DnsNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Represents <code>GeneralName</code> as an IPv4 or IPv6 address.</p>
+   */
+  inline const Aws::String& GetIpAddress() const { return m_ipAddress; }
+  inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
+  template <typename IpAddressT = Aws::String>
+  void SetIpAddress(IpAddressT&& value) {
+    m_ipAddressHasBeenSet = true;
+    m_ipAddress = std::forward<IpAddressT>(value);
+  }
+  template <typename IpAddressT = Aws::String>
+  GeneralName& WithIpAddress(IpAddressT&& value) {
+    SetIpAddress(std::forward<IpAddressT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Represents <code>GeneralName</code> using an <code>OtherName</code>
+   * object.</p>
+   */
+  inline const OtherName& GetOtherName() const { return m_otherName; }
+  inline bool OtherNameHasBeenSet() const { return m_otherNameHasBeenSet; }
+  template <typename OtherNameT = OtherName>
+  void SetOtherName(OtherNameT&& value) {
+    m_otherNameHasBeenSet = true;
+    m_otherName = std::forward<OtherNameT>(value);
+  }
+  template <typename OtherNameT = OtherName>
+  GeneralName& WithOtherName(OtherNameT&& value) {
+    SetOtherName(std::forward<OtherNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Represents <code>GeneralName</code> as an object identifier (OID).</p>
+   */
+  inline const Aws::String& GetRegisteredId() const { return m_registeredId; }
+  inline bool RegisteredIdHasBeenSet() const { return m_registeredIdHasBeenSet; }
+  template <typename RegisteredIdT = Aws::String>
+  void SetRegisteredId(RegisteredIdT&& value) {
+    m_registeredIdHasBeenSet = true;
+    m_registeredId = std::forward<RegisteredIdT>(value);
+  }
+  template <typename RegisteredIdT = Aws::String>
+  GeneralName& WithRegisteredId(RegisteredIdT&& value) {
+    SetRegisteredId(std::forward<RegisteredIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Represents <code>GeneralName</code> as an <a
+   * href="https://datatracker.ietf.org/doc/html/rfc822">RFC 822</a> email
+   * address.</p>
+   */
+  inline const Aws::String& GetRfc822Name() const { return m_rfc822Name; }
+  inline bool Rfc822NameHasBeenSet() const { return m_rfc822NameHasBeenSet; }
+  template <typename Rfc822NameT = Aws::String>
+  void SetRfc822Name(Rfc822NameT&& value) {
+    m_rfc822NameHasBeenSet = true;
+    m_rfc822Name = std::forward<Rfc822NameT>(value);
+  }
+  template <typename Rfc822NameT = Aws::String>
+  GeneralName& WithRfc822Name(Rfc822NameT&& value) {
+    SetRfc822Name(std::forward<Rfc822NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Represents <code>GeneralName</code> as a URI.</p>
+   */
+  inline const Aws::String& GetUniformResourceIdentifier() const { return m_uniformResourceIdentifier; }
+  inline bool UniformResourceIdentifierHasBeenSet() const { return m_uniformResourceIdentifierHasBeenSet; }
+  template <typename UniformResourceIdentifierT = Aws::String>
+  void SetUniformResourceIdentifier(UniformResourceIdentifierT&& value) {
+    m_uniformResourceIdentifierHasBeenSet = true;
+    m_uniformResourceIdentifier = std::forward<UniformResourceIdentifierT>(value);
+  }
+  template <typename UniformResourceIdentifierT = Aws::String>
+  GeneralName& WithUniformResourceIdentifier(UniformResourceIdentifierT&& value) {
+    SetUniformResourceIdentifier(std::forward<UniformResourceIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  DistinguishedName m_directoryName;
+
+  Aws::String m_dnsName;
+
+  Aws::String m_ipAddress;
+
+  OtherName m_otherName;
+
+  Aws::String m_registeredId;
+
+  Aws::String m_rfc822Name;
+
+  Aws::String m_uniformResourceIdentifier;
+  bool m_directoryNameHasBeenSet = false;
+  bool m_dnsNameHasBeenSet = false;
+  bool m_ipAddressHasBeenSet = false;
+  bool m_otherNameHasBeenSet = false;
+  bool m_registeredIdHasBeenSet = false;
+  bool m_rfc822NameHasBeenSet = false;
+  bool m_uniformResourceIdentifierHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace ACM
+}  // namespace Aws

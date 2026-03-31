@@ -18,17 +18,21 @@ namespace ServiceQuotaExceededExceptionReasonMapper {
 static const int ASSOCIATIONS_PER_REGISTRATION_HASH = HashingUtils::HashString("ASSOCIATIONS_PER_REGISTRATION");
 static const int CONFIGURATION_SETS_PER_ACCOUNT_HASH = HashingUtils::HashString("CONFIGURATION_SETS_PER_ACCOUNT");
 static const int DAILY_DESTINATION_CALL_LIMIT_HASH = HashingUtils::HashString("DAILY_DESTINATION_CALL_LIMIT");
+static const int DAILY_NOTIFY_TIER_MESSAGE_LIMIT_HASH = HashingUtils::HashString("DAILY_NOTIFY_TIER_MESSAGE_LIMIT");
 static const int EVENT_DESTINATIONS_PER_CONFIGURATION_SET_HASH = HashingUtils::HashString("EVENT_DESTINATIONS_PER_CONFIGURATION_SET");
 static const int KEYWORDS_PER_PHONE_NUMBER_HASH = HashingUtils::HashString("KEYWORDS_PER_PHONE_NUMBER");
 static const int KEYWORDS_PER_POOL_HASH = HashingUtils::HashString("KEYWORDS_PER_POOL");
 static const int MONTHLY_SPEND_LIMIT_REACHED_FOR_MEDIA_HASH = HashingUtils::HashString("MONTHLY_SPEND_LIMIT_REACHED_FOR_MEDIA");
+static const int MONTHLY_SPEND_LIMIT_REACHED_FOR_NOTIFY_HASH = HashingUtils::HashString("MONTHLY_SPEND_LIMIT_REACHED_FOR_NOTIFY");
 static const int MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT_HASH = HashingUtils::HashString("MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT");
 static const int MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE_HASH = HashingUtils::HashString("MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE");
+static const int NOTIFY_CONFIGURATIONS_PER_ACCOUNT_HASH = HashingUtils::HashString("NOTIFY_CONFIGURATIONS_PER_ACCOUNT");
 static const int OPT_OUT_LISTS_PER_ACCOUNT_HASH = HashingUtils::HashString("OPT_OUT_LISTS_PER_ACCOUNT");
 static const int ORIGINATION_IDENTITIES_PER_POOL_HASH = HashingUtils::HashString("ORIGINATION_IDENTITIES_PER_POOL");
 static const int PHONE_NUMBERS_PER_ACCOUNT_HASH = HashingUtils::HashString("PHONE_NUMBERS_PER_ACCOUNT");
 static const int PHONE_NUMBERS_PER_REGISTRATION_HASH = HashingUtils::HashString("PHONE_NUMBERS_PER_REGISTRATION");
 static const int POOLS_PER_ACCOUNT_HASH = HashingUtils::HashString("POOLS_PER_ACCOUNT");
+static const int RCS_AGENTS_PER_ACCOUNT_HASH = HashingUtils::HashString("RCS_AGENTS_PER_ACCOUNT");
 static const int REGISTRATION_ATTACHMENTS_CREATED_PER_DAY_HASH = HashingUtils::HashString("REGISTRATION_ATTACHMENTS_CREATED_PER_DAY");
 static const int REGISTRATION_ATTACHMENTS_PER_ACCOUNT_HASH = HashingUtils::HashString("REGISTRATION_ATTACHMENTS_PER_ACCOUNT");
 static const int REGISTRATION_VERSIONS_CREATED_PER_DAY_HASH = HashingUtils::HashString("REGISTRATION_VERSIONS_CREATED_PER_DAY");
@@ -47,6 +51,8 @@ ServiceQuotaExceededExceptionReason GetServiceQuotaExceededExceptionReasonForNam
     return ServiceQuotaExceededExceptionReason::CONFIGURATION_SETS_PER_ACCOUNT;
   } else if (hashCode == DAILY_DESTINATION_CALL_LIMIT_HASH) {
     return ServiceQuotaExceededExceptionReason::DAILY_DESTINATION_CALL_LIMIT;
+  } else if (hashCode == DAILY_NOTIFY_TIER_MESSAGE_LIMIT_HASH) {
+    return ServiceQuotaExceededExceptionReason::DAILY_NOTIFY_TIER_MESSAGE_LIMIT;
   } else if (hashCode == EVENT_DESTINATIONS_PER_CONFIGURATION_SET_HASH) {
     return ServiceQuotaExceededExceptionReason::EVENT_DESTINATIONS_PER_CONFIGURATION_SET;
   } else if (hashCode == KEYWORDS_PER_PHONE_NUMBER_HASH) {
@@ -55,10 +61,14 @@ ServiceQuotaExceededExceptionReason GetServiceQuotaExceededExceptionReasonForNam
     return ServiceQuotaExceededExceptionReason::KEYWORDS_PER_POOL;
   } else if (hashCode == MONTHLY_SPEND_LIMIT_REACHED_FOR_MEDIA_HASH) {
     return ServiceQuotaExceededExceptionReason::MONTHLY_SPEND_LIMIT_REACHED_FOR_MEDIA;
+  } else if (hashCode == MONTHLY_SPEND_LIMIT_REACHED_FOR_NOTIFY_HASH) {
+    return ServiceQuotaExceededExceptionReason::MONTHLY_SPEND_LIMIT_REACHED_FOR_NOTIFY;
   } else if (hashCode == MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT_HASH) {
     return ServiceQuotaExceededExceptionReason::MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT;
   } else if (hashCode == MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE_HASH) {
     return ServiceQuotaExceededExceptionReason::MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE;
+  } else if (hashCode == NOTIFY_CONFIGURATIONS_PER_ACCOUNT_HASH) {
+    return ServiceQuotaExceededExceptionReason::NOTIFY_CONFIGURATIONS_PER_ACCOUNT;
   } else if (hashCode == OPT_OUT_LISTS_PER_ACCOUNT_HASH) {
     return ServiceQuotaExceededExceptionReason::OPT_OUT_LISTS_PER_ACCOUNT;
   } else if (hashCode == ORIGINATION_IDENTITIES_PER_POOL_HASH) {
@@ -69,6 +79,8 @@ ServiceQuotaExceededExceptionReason GetServiceQuotaExceededExceptionReasonForNam
     return ServiceQuotaExceededExceptionReason::PHONE_NUMBERS_PER_REGISTRATION;
   } else if (hashCode == POOLS_PER_ACCOUNT_HASH) {
     return ServiceQuotaExceededExceptionReason::POOLS_PER_ACCOUNT;
+  } else if (hashCode == RCS_AGENTS_PER_ACCOUNT_HASH) {
+    return ServiceQuotaExceededExceptionReason::RCS_AGENTS_PER_ACCOUNT;
   } else if (hashCode == REGISTRATION_ATTACHMENTS_CREATED_PER_DAY_HASH) {
     return ServiceQuotaExceededExceptionReason::REGISTRATION_ATTACHMENTS_CREATED_PER_DAY;
   } else if (hashCode == REGISTRATION_ATTACHMENTS_PER_ACCOUNT_HASH) {
@@ -107,6 +119,8 @@ Aws::String GetNameForServiceQuotaExceededExceptionReason(ServiceQuotaExceededEx
       return "CONFIGURATION_SETS_PER_ACCOUNT";
     case ServiceQuotaExceededExceptionReason::DAILY_DESTINATION_CALL_LIMIT:
       return "DAILY_DESTINATION_CALL_LIMIT";
+    case ServiceQuotaExceededExceptionReason::DAILY_NOTIFY_TIER_MESSAGE_LIMIT:
+      return "DAILY_NOTIFY_TIER_MESSAGE_LIMIT";
     case ServiceQuotaExceededExceptionReason::EVENT_DESTINATIONS_PER_CONFIGURATION_SET:
       return "EVENT_DESTINATIONS_PER_CONFIGURATION_SET";
     case ServiceQuotaExceededExceptionReason::KEYWORDS_PER_PHONE_NUMBER:
@@ -115,10 +129,14 @@ Aws::String GetNameForServiceQuotaExceededExceptionReason(ServiceQuotaExceededEx
       return "KEYWORDS_PER_POOL";
     case ServiceQuotaExceededExceptionReason::MONTHLY_SPEND_LIMIT_REACHED_FOR_MEDIA:
       return "MONTHLY_SPEND_LIMIT_REACHED_FOR_MEDIA";
+    case ServiceQuotaExceededExceptionReason::MONTHLY_SPEND_LIMIT_REACHED_FOR_NOTIFY:
+      return "MONTHLY_SPEND_LIMIT_REACHED_FOR_NOTIFY";
     case ServiceQuotaExceededExceptionReason::MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT:
       return "MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT";
     case ServiceQuotaExceededExceptionReason::MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE:
       return "MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE";
+    case ServiceQuotaExceededExceptionReason::NOTIFY_CONFIGURATIONS_PER_ACCOUNT:
+      return "NOTIFY_CONFIGURATIONS_PER_ACCOUNT";
     case ServiceQuotaExceededExceptionReason::OPT_OUT_LISTS_PER_ACCOUNT:
       return "OPT_OUT_LISTS_PER_ACCOUNT";
     case ServiceQuotaExceededExceptionReason::ORIGINATION_IDENTITIES_PER_POOL:
@@ -129,6 +147,8 @@ Aws::String GetNameForServiceQuotaExceededExceptionReason(ServiceQuotaExceededEx
       return "PHONE_NUMBERS_PER_REGISTRATION";
     case ServiceQuotaExceededExceptionReason::POOLS_PER_ACCOUNT:
       return "POOLS_PER_ACCOUNT";
+    case ServiceQuotaExceededExceptionReason::RCS_AGENTS_PER_ACCOUNT:
+      return "RCS_AGENTS_PER_ACCOUNT";
     case ServiceQuotaExceededExceptionReason::REGISTRATION_ATTACHMENTS_CREATED_PER_DAY:
       return "REGISTRATION_ATTACHMENTS_CREATED_PER_DAY";
     case ServiceQuotaExceededExceptionReason::REGISTRATION_ATTACHMENTS_PER_ACCOUNT:

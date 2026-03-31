@@ -258,6 +258,24 @@ class CreateEnvironmentRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration name of the environment.</p>
+   */
+  inline const Aws::String& GetEnvironmentConfigurationName() const { return m_environmentConfigurationName; }
+  inline bool EnvironmentConfigurationNameHasBeenSet() const { return m_environmentConfigurationNameHasBeenSet; }
+  template <typename EnvironmentConfigurationNameT = Aws::String>
+  void SetEnvironmentConfigurationName(EnvironmentConfigurationNameT&& value) {
+    m_environmentConfigurationNameHasBeenSet = true;
+    m_environmentConfigurationName = std::forward<EnvironmentConfigurationNameT>(value);
+  }
+  template <typename EnvironmentConfigurationNameT = Aws::String>
+  CreateEnvironmentRequest& WithEnvironmentConfigurationName(EnvironmentConfigurationNameT&& value) {
+    SetEnvironmentConfigurationName(std::forward<EnvironmentConfigurationNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_projectIdentifier;
 
@@ -282,6 +300,8 @@ class CreateEnvironmentRequest : public DataZoneRequest {
   int m_deploymentOrder{0};
 
   Aws::String m_environmentConfigurationId;
+
+  Aws::String m_environmentConfigurationName;
   bool m_projectIdentifierHasBeenSet = false;
   bool m_domainIdentifierHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
@@ -294,6 +314,7 @@ class CreateEnvironmentRequest : public DataZoneRequest {
   bool m_environmentBlueprintIdentifierHasBeenSet = false;
   bool m_deploymentOrderHasBeenSet = false;
   bool m_environmentConfigurationIdHasBeenSet = false;
+  bool m_environmentConfigurationNameHasBeenSet = false;
 };
 
 }  // namespace Model

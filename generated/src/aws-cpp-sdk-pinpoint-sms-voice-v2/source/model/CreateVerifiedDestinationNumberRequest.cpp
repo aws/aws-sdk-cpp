@@ -19,6 +19,10 @@ Aws::String CreateVerifiedDestinationNumberRequest::SerializePayload() const {
     payload.WithString("DestinationPhoneNumber", m_destinationPhoneNumber);
   }
 
+  if (m_rcsAgentIdHasBeenSet) {
+    payload.WithString("RcsAgentId", m_rcsAgentId);
+  }
+
   if (m_tagsHasBeenSet) {
     Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
     for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {

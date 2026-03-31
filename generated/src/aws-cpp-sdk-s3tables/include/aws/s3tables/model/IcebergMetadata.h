@@ -9,6 +9,7 @@
 #include <aws/s3tables/S3Tables_EXPORTS.h>
 #include <aws/s3tables/model/IcebergPartitionSpec.h>
 #include <aws/s3tables/model/IcebergSchema.h>
+#include <aws/s3tables/model/IcebergSchemaV2.h>
 #include <aws/s3tables/model/IcebergSortOrder.h>
 
 #include <utility>
@@ -38,7 +39,10 @@ class IcebergMetadata {
 
   ///@{
   /**
-   * <p>The schema for an Iceberg table.</p>
+   * <p>The schema for an Iceberg table. Use this property to define table schemas
+   * with primitive types only. For schemas that include nested or complex types such
+   * as <code>struct</code>, <code>list</code>, or <code>map</code>, use
+   * <code>schemaV2</code> instead.</p>
    */
   inline const IcebergSchema& GetSchema() const { return m_schema; }
   inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
@@ -50,6 +54,28 @@ class IcebergMetadata {
   template <typename SchemaT = IcebergSchema>
   IcebergMetadata& WithSchema(SchemaT&& value) {
     SetSchema(std::forward<SchemaT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The schema for an Iceberg table using the V2 format. Use this property to
+   * define table schemas that include nested or complex data types such as
+   * <code>struct</code>, <code>list</code>, or <code>map</code>, in addition to
+   * primitive types. For schemas with only primitive types, you can use either
+   * <code>schema</code> or <code>schemaV2</code>.</p>
+   */
+  inline const IcebergSchemaV2& GetSchemaV2() const { return m_schemaV2; }
+  inline bool SchemaV2HasBeenSet() const { return m_schemaV2HasBeenSet; }
+  template <typename SchemaV2T = IcebergSchemaV2>
+  void SetSchemaV2(SchemaV2T&& value) {
+    m_schemaV2HasBeenSet = true;
+    m_schemaV2 = std::forward<SchemaV2T>(value);
+  }
+  template <typename SchemaV2T = IcebergSchemaV2>
+  IcebergMetadata& WithSchemaV2(SchemaV2T&& value) {
+    SetSchemaV2(std::forward<SchemaV2T>(value));
     return *this;
   }
   ///@}
@@ -122,12 +148,15 @@ class IcebergMetadata {
  private:
   IcebergSchema m_schema;
 
+  IcebergSchemaV2 m_schemaV2;
+
   IcebergPartitionSpec m_partitionSpec;
 
   IcebergSortOrder m_writeOrder;
 
   Aws::Map<Aws::String, Aws::String> m_properties;
   bool m_schemaHasBeenSet = false;
+  bool m_schemaV2HasBeenSet = false;
   bool m_partitionSpecHasBeenSet = false;
   bool m_writeOrderHasBeenSet = false;
   bool m_propertiesHasBeenSet = false;

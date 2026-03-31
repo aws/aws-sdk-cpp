@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/mailmanager/model/IngressPointPasswordConfiguration.h>
+#include <aws/mailmanager/model/TlsAuthConfiguration.h>
 
 #include <utility>
 
@@ -72,12 +73,34 @@ class IngressPointAuthConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The mutual TLS authentication configuration for the ingress endpoint
+   * resource.</p>
+   */
+  inline const TlsAuthConfiguration& GetTlsAuthConfiguration() const { return m_tlsAuthConfiguration; }
+  inline bool TlsAuthConfigurationHasBeenSet() const { return m_tlsAuthConfigurationHasBeenSet; }
+  template <typename TlsAuthConfigurationT = TlsAuthConfiguration>
+  void SetTlsAuthConfiguration(TlsAuthConfigurationT&& value) {
+    m_tlsAuthConfigurationHasBeenSet = true;
+    m_tlsAuthConfiguration = std::forward<TlsAuthConfigurationT>(value);
+  }
+  template <typename TlsAuthConfigurationT = TlsAuthConfiguration>
+  IngressPointAuthConfiguration& WithTlsAuthConfiguration(TlsAuthConfigurationT&& value) {
+    SetTlsAuthConfiguration(std::forward<TlsAuthConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   IngressPointPasswordConfiguration m_ingressPointPasswordConfiguration;
 
   Aws::String m_secretArn;
+
+  TlsAuthConfiguration m_tlsAuthConfiguration;
   bool m_ingressPointPasswordConfigurationHasBeenSet = false;
   bool m_secretArnHasBeenSet = false;
+  bool m_tlsAuthConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

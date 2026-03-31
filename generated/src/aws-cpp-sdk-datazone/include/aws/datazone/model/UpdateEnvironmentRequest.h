@@ -171,6 +171,24 @@ class UpdateEnvironmentRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration name of the environment.</p>
+   */
+  inline const Aws::String& GetEnvironmentConfigurationName() const { return m_environmentConfigurationName; }
+  inline bool EnvironmentConfigurationNameHasBeenSet() const { return m_environmentConfigurationNameHasBeenSet; }
+  template <typename EnvironmentConfigurationNameT = Aws::String>
+  void SetEnvironmentConfigurationName(EnvironmentConfigurationNameT&& value) {
+    m_environmentConfigurationNameHasBeenSet = true;
+    m_environmentConfigurationName = std::forward<EnvironmentConfigurationNameT>(value);
+  }
+  template <typename EnvironmentConfigurationNameT = Aws::String>
+  UpdateEnvironmentRequest& WithEnvironmentConfigurationName(EnvironmentConfigurationNameT&& value) {
+    SetEnvironmentConfigurationName(std::forward<EnvironmentConfigurationNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainIdentifier;
 
@@ -185,6 +203,8 @@ class UpdateEnvironmentRequest : public DataZoneRequest {
   Aws::String m_blueprintVersion;
 
   Aws::Vector<EnvironmentParameter> m_userParameters;
+
+  Aws::String m_environmentConfigurationName;
   bool m_domainIdentifierHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -192,6 +212,7 @@ class UpdateEnvironmentRequest : public DataZoneRequest {
   bool m_glossaryTermsHasBeenSet = false;
   bool m_blueprintVersionHasBeenSet = false;
   bool m_userParametersHasBeenSet = false;
+  bool m_environmentConfigurationNameHasBeenSet = false;
 };
 
 }  // namespace Model

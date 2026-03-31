@@ -39,6 +39,10 @@ Aws::String UpdateIngressPointRequest::SerializePayload() const {
     payload.WithObject("IngressPointConfiguration", m_ingressPointConfiguration.Jsonize());
   }
 
+  if (m_tlsPolicyHasBeenSet) {
+    payload.WithString("TlsPolicy", TlsPolicyMapper::GetNameForTlsPolicy(m_tlsPolicy));
+  }
+
   return payload.View().WriteReadable();
 }
 

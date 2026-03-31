@@ -109,6 +109,14 @@ OdbNetwork& OdbNetwork::operator=(JsonView jsonValue) {
     m_managedServices = jsonValue.GetObject("managedServices");
     m_managedServicesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ec2PlacementGroupIds")) {
+    Aws::Utils::Array<JsonView> ec2PlacementGroupIdsJsonList = jsonValue.GetArray("ec2PlacementGroupIds");
+    for (unsigned ec2PlacementGroupIdsIndex = 0; ec2PlacementGroupIdsIndex < ec2PlacementGroupIdsJsonList.GetLength();
+         ++ec2PlacementGroupIdsIndex) {
+      m_ec2PlacementGroupIds.push_back(ec2PlacementGroupIdsJsonList[ec2PlacementGroupIdsIndex].AsString());
+    }
+    m_ec2PlacementGroupIdsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -207,6 +215,15 @@ JsonValue OdbNetwork::Jsonize() const {
 
   if (m_managedServicesHasBeenSet) {
     payload.WithObject("managedServices", m_managedServices.Jsonize());
+  }
+
+  if (m_ec2PlacementGroupIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> ec2PlacementGroupIdsJsonList(m_ec2PlacementGroupIds.size());
+    for (unsigned ec2PlacementGroupIdsIndex = 0; ec2PlacementGroupIdsIndex < ec2PlacementGroupIdsJsonList.GetLength();
+         ++ec2PlacementGroupIdsIndex) {
+      ec2PlacementGroupIdsJsonList[ec2PlacementGroupIdsIndex].AsString(m_ec2PlacementGroupIds[ec2PlacementGroupIdsIndex]);
+    }
+    payload.WithArray("ec2PlacementGroupIds", std::move(ec2PlacementGroupIdsJsonList));
   }
 
   return payload;

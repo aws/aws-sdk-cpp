@@ -74,6 +74,10 @@ EnvironmentSummary& EnvironmentSummary::operator=(JsonView jsonValue) {
     m_environmentConfigurationId = jsonValue.GetString("environmentConfigurationId");
     m_environmentConfigurationIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("environmentConfigurationName")) {
+    m_environmentConfigurationName = jsonValue.GetString("environmentConfigurationName");
+    m_environmentConfigurationNameHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -134,6 +138,10 @@ JsonValue EnvironmentSummary::Jsonize() const {
 
   if (m_environmentConfigurationIdHasBeenSet) {
     payload.WithString("environmentConfigurationId", m_environmentConfigurationId);
+  }
+
+  if (m_environmentConfigurationNameHasBeenSet) {
+    payload.WithString("environmentConfigurationName", m_environmentConfigurationName);
   }
 
   return payload;

@@ -17,6 +17,9 @@ namespace LogTypeMapper {
 
 static const int APPLICATION_LOGS_HASH = HashingUtils::HashString("APPLICATION_LOGS");
 static const int USAGE_LOGS_HASH = HashingUtils::HashString("USAGE_LOGS");
+static const int SECURITY_FINDING_LOGS_HASH = HashingUtils::HashString("SECURITY_FINDING_LOGS");
+static const int ACCESS_LOGS_HASH = HashingUtils::HashString("ACCESS_LOGS");
+static const int CONNECTION_LOGS_HASH = HashingUtils::HashString("CONNECTION_LOGS");
 
 LogType GetLogTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +27,12 @@ LogType GetLogTypeForName(const Aws::String& name) {
     return LogType::APPLICATION_LOGS;
   } else if (hashCode == USAGE_LOGS_HASH) {
     return LogType::USAGE_LOGS;
+  } else if (hashCode == SECURITY_FINDING_LOGS_HASH) {
+    return LogType::SECURITY_FINDING_LOGS;
+  } else if (hashCode == ACCESS_LOGS_HASH) {
+    return LogType::ACCESS_LOGS;
+  } else if (hashCode == CONNECTION_LOGS_HASH) {
+    return LogType::CONNECTION_LOGS;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +51,12 @@ Aws::String GetNameForLogType(LogType enumValue) {
       return "APPLICATION_LOGS";
     case LogType::USAGE_LOGS:
       return "USAGE_LOGS";
+    case LogType::SECURITY_FINDING_LOGS:
+      return "SECURITY_FINDING_LOGS";
+    case LogType::ACCESS_LOGS:
+      return "ACCESS_LOGS";
+    case LogType::CONNECTION_LOGS:
+      return "CONNECTION_LOGS";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

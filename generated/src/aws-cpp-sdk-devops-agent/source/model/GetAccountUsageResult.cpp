@@ -34,6 +34,10 @@ GetAccountUsageResult& GetAccountUsageResult::operator=(const Aws::AmazonWebServ
     m_monthlyAccountSystemLearningHours = jsonValue.GetObject("monthlyAccountSystemLearningHours");
     m_monthlyAccountSystemLearningHoursHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("monthlyAccountOnDemandHours")) {
+    m_monthlyAccountOnDemandHours = jsonValue.GetObject("monthlyAccountOnDemandHours");
+    m_monthlyAccountOnDemandHoursHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("usagePeriodStartTime")) {
     m_usagePeriodStartTime = jsonValue.GetString("usagePeriodStartTime");
     m_usagePeriodStartTimeHasBeenSet = true;

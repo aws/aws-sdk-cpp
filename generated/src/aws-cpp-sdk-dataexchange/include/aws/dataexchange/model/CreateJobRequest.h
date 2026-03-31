@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/dataexchange/DataExchangeRequest.h>
 #include <aws/dataexchange/DataExchange_EXPORTS.h>
+#include <aws/dataexchange/model/AssetConfiguration.h>
 #include <aws/dataexchange/model/RequestDetails.h>
 #include <aws/dataexchange/model/Type.h>
 
@@ -28,6 +29,25 @@ class CreateJobRequest : public DataExchangeRequest {
   inline virtual const char* GetServiceRequestName() const override { return "CreateJob"; }
 
   AWS_DATAEXCHANGE_API Aws::String SerializePayload() const override;
+
+  ///@{
+  /**
+   * <p>The configuration for the asset, including tags to be applied to assets
+   * created by the job.</p>
+   */
+  inline const AssetConfiguration& GetAssetConfiguration() const { return m_assetConfiguration; }
+  inline bool AssetConfigurationHasBeenSet() const { return m_assetConfigurationHasBeenSet; }
+  template <typename AssetConfigurationT = AssetConfiguration>
+  void SetAssetConfiguration(AssetConfigurationT&& value) {
+    m_assetConfigurationHasBeenSet = true;
+    m_assetConfiguration = std::forward<AssetConfigurationT>(value);
+  }
+  template <typename AssetConfigurationT = AssetConfiguration>
+  CreateJobRequest& WithAssetConfiguration(AssetConfigurationT&& value) {
+    SetAssetConfiguration(std::forward<AssetConfigurationT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -63,9 +83,12 @@ class CreateJobRequest : public DataExchangeRequest {
   }
   ///@}
  private:
+  AssetConfiguration m_assetConfiguration;
+
   RequestDetails m_details;
 
   Type m_type{Type::NOT_SET};
+  bool m_assetConfigurationHasBeenSet = false;
   bool m_detailsHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };

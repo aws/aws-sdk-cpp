@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dataexchange/DataExchange_EXPORTS.h>
 #include <aws/dataexchange/model/AssetDetails.h>
@@ -191,6 +192,29 @@ class GetAssetResult {
 
   ///@{
   /**
+   * <p>The tags for the asset.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  GetAssetResult& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+  GetAssetResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
    */
   inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
@@ -241,6 +265,8 @@ class GetAssetResult {
 
   Aws::String m_sourceId;
 
+  Aws::Map<Aws::String, Aws::String> m_tags;
+
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::String m_requestId;
@@ -254,6 +280,7 @@ class GetAssetResult {
   bool m_nameHasBeenSet = false;
   bool m_revisionIdHasBeenSet = false;
   bool m_sourceIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

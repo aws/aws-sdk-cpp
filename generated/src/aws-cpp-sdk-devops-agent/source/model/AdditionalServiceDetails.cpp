@@ -66,10 +66,6 @@ AdditionalServiceDetails& AdditionalServiceDetails::operator=(JsonView jsonValue
     m_pagerduty = jsonValue.GetObject("pagerduty");
     m_pagerdutyHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("mcpserversigv4")) {
-    m_mcpserversigv4 = jsonValue.GetObject("mcpserversigv4");
-    m_mcpserversigv4HasBeenSet = true;
-  }
   return *this;
 }
 
@@ -122,10 +118,6 @@ JsonValue AdditionalServiceDetails::Jsonize() const {
 
   if (m_pagerdutyHasBeenSet) {
     payload.WithObject("pagerduty", m_pagerduty.Jsonize());
-  }
-
-  if (m_mcpserversigv4HasBeenSet) {
-    payload.WithObject("mcpserversigv4", m_mcpserversigv4.Jsonize());
   }
 
   return payload;

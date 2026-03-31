@@ -30,10 +30,8 @@
 #include <aws/devops-agent/model/DeletePrivateConnectionResult.h>
 #include <aws/devops-agent/model/DeregisterServiceResult.h>
 #include <aws/devops-agent/model/DescribePrivateConnectionResult.h>
-#include <aws/devops-agent/model/DescribeSupportLevelResult.h>
 #include <aws/devops-agent/model/DisassociateServiceResult.h>
 #include <aws/devops-agent/model/EnableOperatorAppResult.h>
-#include <aws/devops-agent/model/EndChatForCaseResult.h>
 #include <aws/devops-agent/model/GetAccountUsageRequest.h>
 #include <aws/devops-agent/model/GetAccountUsageResult.h>
 #include <aws/devops-agent/model/GetAgentSpaceResult.h>
@@ -42,7 +40,6 @@
 #include <aws/devops-agent/model/GetOperatorAppResult.h>
 #include <aws/devops-agent/model/GetRecommendationResult.h>
 #include <aws/devops-agent/model/GetServiceResult.h>
-#include <aws/devops-agent/model/InitiateChatForCaseResult.h>
 #include <aws/devops-agent/model/ListAgentSpacesRequest.h>
 #include <aws/devops-agent/model/ListAgentSpacesResult.h>
 #include <aws/devops-agent/model/ListAssociationsResult.h>
@@ -113,11 +110,9 @@ class DeleteAgentSpaceRequest;
 class DeletePrivateConnectionRequest;
 class DeregisterServiceRequest;
 class DescribePrivateConnectionRequest;
-class DescribeSupportLevelRequest;
 class DisableOperatorAppRequest;
 class DisassociateServiceRequest;
 class EnableOperatorAppRequest;
-class EndChatForCaseRequest;
 class GetAccountUsageRequest;
 class GetAgentSpaceRequest;
 class GetAssociationRequest;
@@ -125,7 +120,6 @@ class GetBacklogTaskRequest;
 class GetOperatorAppRequest;
 class GetRecommendationRequest;
 class GetServiceRequest;
-class InitiateChatForCaseRequest;
 class ListAgentSpacesRequest;
 class ListAssociationsRequest;
 class ListBacklogTasksRequest;
@@ -164,11 +158,9 @@ typedef Aws::Utils::Outcome<DeleteAgentSpaceResult, DevOpsAgentError> DeleteAgen
 typedef Aws::Utils::Outcome<DeletePrivateConnectionResult, DevOpsAgentError> DeletePrivateConnectionOutcome;
 typedef Aws::Utils::Outcome<DeregisterServiceResult, DevOpsAgentError> DeregisterServiceOutcome;
 typedef Aws::Utils::Outcome<DescribePrivateConnectionResult, DevOpsAgentError> DescribePrivateConnectionOutcome;
-typedef Aws::Utils::Outcome<DescribeSupportLevelResult, DevOpsAgentError> DescribeSupportLevelOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, DevOpsAgentError> DisableOperatorAppOutcome;
 typedef Aws::Utils::Outcome<DisassociateServiceResult, DevOpsAgentError> DisassociateServiceOutcome;
 typedef Aws::Utils::Outcome<EnableOperatorAppResult, DevOpsAgentError> EnableOperatorAppOutcome;
-typedef Aws::Utils::Outcome<EndChatForCaseResult, DevOpsAgentError> EndChatForCaseOutcome;
 typedef Aws::Utils::Outcome<GetAccountUsageResult, DevOpsAgentError> GetAccountUsageOutcome;
 typedef Aws::Utils::Outcome<GetAgentSpaceResult, DevOpsAgentError> GetAgentSpaceOutcome;
 typedef Aws::Utils::Outcome<GetAssociationResult, DevOpsAgentError> GetAssociationOutcome;
@@ -176,7 +168,6 @@ typedef Aws::Utils::Outcome<GetBacklogTaskResult, DevOpsAgentError> GetBacklogTa
 typedef Aws::Utils::Outcome<GetOperatorAppResult, DevOpsAgentError> GetOperatorAppOutcome;
 typedef Aws::Utils::Outcome<GetRecommendationResult, DevOpsAgentError> GetRecommendationOutcome;
 typedef Aws::Utils::Outcome<GetServiceResult, DevOpsAgentError> GetServiceOutcome;
-typedef Aws::Utils::Outcome<InitiateChatForCaseResult, DevOpsAgentError> InitiateChatForCaseOutcome;
 typedef Aws::Utils::Outcome<ListAgentSpacesResult, DevOpsAgentError> ListAgentSpacesOutcome;
 typedef Aws::Utils::Outcome<ListAssociationsResult, DevOpsAgentError> ListAssociationsOutcome;
 typedef Aws::Utils::Outcome<ListBacklogTasksResult, DevOpsAgentError> ListBacklogTasksOutcome;
@@ -215,11 +206,9 @@ typedef std::future<DeleteAgentSpaceOutcome> DeleteAgentSpaceOutcomeCallable;
 typedef std::future<DeletePrivateConnectionOutcome> DeletePrivateConnectionOutcomeCallable;
 typedef std::future<DeregisterServiceOutcome> DeregisterServiceOutcomeCallable;
 typedef std::future<DescribePrivateConnectionOutcome> DescribePrivateConnectionOutcomeCallable;
-typedef std::future<DescribeSupportLevelOutcome> DescribeSupportLevelOutcomeCallable;
 typedef std::future<DisableOperatorAppOutcome> DisableOperatorAppOutcomeCallable;
 typedef std::future<DisassociateServiceOutcome> DisassociateServiceOutcomeCallable;
 typedef std::future<EnableOperatorAppOutcome> EnableOperatorAppOutcomeCallable;
-typedef std::future<EndChatForCaseOutcome> EndChatForCaseOutcomeCallable;
 typedef std::future<GetAccountUsageOutcome> GetAccountUsageOutcomeCallable;
 typedef std::future<GetAgentSpaceOutcome> GetAgentSpaceOutcomeCallable;
 typedef std::future<GetAssociationOutcome> GetAssociationOutcomeCallable;
@@ -227,7 +216,6 @@ typedef std::future<GetBacklogTaskOutcome> GetBacklogTaskOutcomeCallable;
 typedef std::future<GetOperatorAppOutcome> GetOperatorAppOutcomeCallable;
 typedef std::future<GetRecommendationOutcome> GetRecommendationOutcomeCallable;
 typedef std::future<GetServiceOutcome> GetServiceOutcomeCallable;
-typedef std::future<InitiateChatForCaseOutcome> InitiateChatForCaseOutcomeCallable;
 typedef std::future<ListAgentSpacesOutcome> ListAgentSpacesOutcomeCallable;
 typedef std::future<ListAssociationsOutcome> ListAssociationsOutcomeCallable;
 typedef std::future<ListBacklogTasksOutcome> ListBacklogTasksOutcomeCallable;
@@ -290,9 +278,6 @@ typedef std::function<void(const DevOpsAgentClient*, const Model::DeregisterServ
 typedef std::function<void(const DevOpsAgentClient*, const Model::DescribePrivateConnectionRequest&,
                            const Model::DescribePrivateConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribePrivateConnectionResponseReceivedHandler;
-typedef std::function<void(const DevOpsAgentClient*, const Model::DescribeSupportLevelRequest&, const Model::DescribeSupportLevelOutcome&,
-                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
-    DescribeSupportLevelResponseReceivedHandler;
 typedef std::function<void(const DevOpsAgentClient*, const Model::DisableOperatorAppRequest&, const Model::DisableOperatorAppOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DisableOperatorAppResponseReceivedHandler;
@@ -302,9 +287,6 @@ typedef std::function<void(const DevOpsAgentClient*, const Model::DisassociateSe
 typedef std::function<void(const DevOpsAgentClient*, const Model::EnableOperatorAppRequest&, const Model::EnableOperatorAppOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     EnableOperatorAppResponseReceivedHandler;
-typedef std::function<void(const DevOpsAgentClient*, const Model::EndChatForCaseRequest&, const Model::EndChatForCaseOutcome&,
-                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
-    EndChatForCaseResponseReceivedHandler;
 typedef std::function<void(const DevOpsAgentClient*, const Model::GetAccountUsageRequest&, const Model::GetAccountUsageOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetAccountUsageResponseReceivedHandler;
@@ -326,9 +308,6 @@ typedef std::function<void(const DevOpsAgentClient*, const Model::GetRecommendat
 typedef std::function<void(const DevOpsAgentClient*, const Model::GetServiceRequest&, const Model::GetServiceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetServiceResponseReceivedHandler;
-typedef std::function<void(const DevOpsAgentClient*, const Model::InitiateChatForCaseRequest&, const Model::InitiateChatForCaseOutcome&,
-                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
-    InitiateChatForCaseResponseReceivedHandler;
 typedef std::function<void(const DevOpsAgentClient*, const Model::ListAgentSpacesRequest&, const Model::ListAgentSpacesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAgentSpacesResponseReceivedHandler;

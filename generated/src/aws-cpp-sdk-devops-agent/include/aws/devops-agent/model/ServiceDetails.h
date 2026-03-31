@@ -11,7 +11,6 @@
 #include <aws/devops-agent/model/GitLabDetails.h>
 #include <aws/devops-agent/model/GrafanaServiceDetails.h>
 #include <aws/devops-agent/model/MCPServerDetails.h>
-#include <aws/devops-agent/model/MCPServerSigV4ServiceDetails.h>
 #include <aws/devops-agent/model/NewRelicServiceDetails.h>
 #include <aws/devops-agent/model/PagerDutyDetails.h>
 #include <aws/devops-agent/model/RegisteredAzureIdentityDetails.h>
@@ -240,24 +239,6 @@ class ServiceDetails {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>SigV4-authenticated MCP server-specific service details.</p>
-   */
-  inline const MCPServerSigV4ServiceDetails& GetMcpserversigv4() const { return m_mcpserversigv4; }
-  inline bool Mcpserversigv4HasBeenSet() const { return m_mcpserversigv4HasBeenSet; }
-  template <typename Mcpserversigv4T = MCPServerSigV4ServiceDetails>
-  void SetMcpserversigv4(Mcpserversigv4T&& value) {
-    m_mcpserversigv4HasBeenSet = true;
-    m_mcpserversigv4 = std::forward<Mcpserversigv4T>(value);
-  }
-  template <typename Mcpserversigv4T = MCPServerSigV4ServiceDetails>
-  ServiceDetails& WithMcpserversigv4(Mcpserversigv4T&& value) {
-    SetMcpserversigv4(std::forward<Mcpserversigv4T>(value));
-    return *this;
-  }
-  ///@}
  private:
   DynatraceServiceDetails m_dynatrace;
 
@@ -280,8 +261,6 @@ class ServiceDetails {
   PagerDutyDetails m_pagerduty;
 
   RegisteredAzureIdentityDetails m_azureidentity;
-
-  MCPServerSigV4ServiceDetails m_mcpserversigv4;
   bool m_dynatraceHasBeenSet = false;
   bool m_servicenowHasBeenSet = false;
   bool m_mcpserverdatadogHasBeenSet = false;
@@ -293,7 +272,6 @@ class ServiceDetails {
   bool m_mcpservergrafanaHasBeenSet = false;
   bool m_pagerdutyHasBeenSet = false;
   bool m_azureidentityHasBeenSet = false;
-  bool m_mcpserversigv4HasBeenSet = false;
 };
 
 }  // namespace Model

@@ -20,6 +20,7 @@
 #include <aws/quicksight/QuickSightClient.h>
 #include <aws/quicksight/QuickSightEndpointProvider.h>
 #include <aws/quicksight/QuickSightErrorMarshaller.h>
+#include <aws/quicksight/model/DescribeQuickSightQSearchConfigurationRequest.h>
 #include <aws/quicksight/model/DescribeRefreshScheduleRequest.h>
 #include <aws/quicksight/model/DescribeRoleCustomPermissionRequest.h>
 #include <aws/quicksight/model/DescribeSelfUpgradeConfigurationRequest.h>
@@ -96,6 +97,7 @@
 #include <aws/quicksight/model/SearchTopicsRequest.h>
 #include <aws/quicksight/model/StartAssetBundleExportJobRequest.h>
 #include <aws/quicksight/model/StartAssetBundleImportJobRequest.h>
+#include <aws/quicksight/model/StartAutomationJobRequest.h>
 #include <aws/quicksight/model/StartDashboardSnapshotJobRequest.h>
 #include <aws/quicksight/model/StartDashboardSnapshotJobScheduleRequest.h>
 #include <aws/quicksight/model/TagResourceRequest.h>
@@ -117,9 +119,7 @@
 #include <aws/quicksight/model/UpdateDashboardPublishedVersionRequest.h>
 #include <aws/quicksight/model/UpdateDashboardRequest.h>
 #include <aws/quicksight/model/UpdateDashboardsQAConfigurationRequest.h>
-#include <aws/quicksight/model/UpdateDataSetPermissionsRequest.h>
 #include <aws/quicksight/model/UpdateDataSetRequest.h>
-#include <aws/quicksight/model/UpdateDataSourceRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,26 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DescribeQuickSightQSearchConfigurationOutcome QuickSightClient::DescribeQuickSightQSearchConfiguration(
+    const DescribeQuickSightQSearchConfigurationRequest& request) const {
+  if (!request.AwsAccountIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeQuickSightQSearchConfiguration", "Required field: AwsAccountId, is not set");
+    return DescribeQuickSightQSearchConfigurationOutcome(Aws::Client::AWSError<QuickSightErrors>(
+        QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/quicksight-q-search-configuration");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeQuickSightQSearchConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeQuickSightQSearchConfigurationOutcome(std::move(result.GetError()));
+}
 
 DescribeRefreshScheduleOutcome QuickSightClient::DescribeRefreshSchedule(const DescribeRefreshScheduleRequest& request) const {
   if (!request.AwsAccountIdHasBeenSet()) {
@@ -1925,6 +1945,39 @@ StartAssetBundleImportJobOutcome QuickSightClient::StartAssetBundleImportJob(con
                             : StartAssetBundleImportJobOutcome(std::move(result.GetError()));
 }
 
+StartAutomationJobOutcome QuickSightClient::StartAutomationJob(const StartAutomationJobRequest& request) const {
+  if (!request.AwsAccountIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartAutomationJob", "Required field: AwsAccountId, is not set");
+    return StartAutomationJobOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                             "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.AutomationGroupIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartAutomationJob", "Required field: AutomationGroupId, is not set");
+    return StartAutomationJobOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                             "Missing required field [AutomationGroupId]", false));
+  }
+  if (!request.AutomationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartAutomationJob", "Required field: AutomationId, is not set");
+    return StartAutomationJobOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                             "Missing required field [AutomationId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/automation-groups/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAutomationGroupId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/automations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAutomationId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/jobs");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartAutomationJobOutcome(result.GetResultWithOwnership())
+                            : StartAutomationJobOutcome(std::move(result.GetError()));
+}
+
 StartDashboardSnapshotJobOutcome QuickSightClient::StartDashboardSnapshotJob(const StartDashboardSnapshotJobRequest& request) const {
   if (!request.AwsAccountIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("StartDashboardSnapshotJob", "Required field: AwsAccountId, is not set");
@@ -2456,55 +2509,4 @@ UpdateDataSetOutcome QuickSightClient::UpdateDataSet(const UpdateDataSetRequest&
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? UpdateDataSetOutcome(result.GetResultWithOwnership()) : UpdateDataSetOutcome(std::move(result.GetError()));
-}
-
-UpdateDataSetPermissionsOutcome QuickSightClient::UpdateDataSetPermissions(const UpdateDataSetPermissionsRequest& request) const {
-  if (!request.AwsAccountIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("UpdateDataSetPermissions", "Required field: AwsAccountId, is not set");
-    return UpdateDataSetPermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                                   "Missing required field [AwsAccountId]", false));
-  }
-  if (!request.DataSetIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("UpdateDataSetPermissions", "Required field: DataSetId, is not set");
-    return UpdateDataSetPermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                                   "Missing required field [DataSetId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/data-sets/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataSetId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/permissions");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateDataSetPermissionsOutcome(result.GetResultWithOwnership())
-                            : UpdateDataSetPermissionsOutcome(std::move(result.GetError()));
-}
-
-UpdateDataSourceOutcome QuickSightClient::UpdateDataSource(const UpdateDataSourceRequest& request) const {
-  if (!request.AwsAccountIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("UpdateDataSource", "Required field: AwsAccountId, is not set");
-    return UpdateDataSourceOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                           "Missing required field [AwsAccountId]", false));
-  }
-  if (!request.DataSourceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("UpdateDataSource", "Required field: DataSourceId, is not set");
-    return UpdateDataSourceOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                           "Missing required field [DataSourceId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/data-sources/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataSourceId());
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? UpdateDataSourceOutcome(result.GetResultWithOwnership())
-                            : UpdateDataSourceOutcome(std::move(result.GetError()));
 }

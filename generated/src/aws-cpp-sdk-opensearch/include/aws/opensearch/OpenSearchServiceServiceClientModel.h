@@ -42,6 +42,7 @@
 #include <aws/opensearch/model/DeleteOutboundConnectionResult.h>
 #include <aws/opensearch/model/DeletePackageResult.h>
 #include <aws/opensearch/model/DeleteVpcEndpointResult.h>
+#include <aws/opensearch/model/DeregisterCapabilityResult.h>
 #include <aws/opensearch/model/DescribeDomainAutoTunesResult.h>
 #include <aws/opensearch/model/DescribeDomainChangeProgressResult.h>
 #include <aws/opensearch/model/DescribeDomainConfigResult.h>
@@ -66,6 +67,7 @@
 #include <aws/opensearch/model/DissociatePackageResult.h>
 #include <aws/opensearch/model/DissociatePackagesResult.h>
 #include <aws/opensearch/model/GetApplicationResult.h>
+#include <aws/opensearch/model/GetCapabilityResult.h>
 #include <aws/opensearch/model/GetCompatibleVersionsRequest.h>
 #include <aws/opensearch/model/GetCompatibleVersionsResult.h>
 #include <aws/opensearch/model/GetDataSourceResult.h>
@@ -99,6 +101,7 @@
 #include <aws/opensearch/model/ListVpcEndpointsResult.h>
 #include <aws/opensearch/model/PurchaseReservedInstanceOfferingResult.h>
 #include <aws/opensearch/model/PutDefaultApplicationSettingResult.h>
+#include <aws/opensearch/model/RegisterCapabilityResult.h>
 #include <aws/opensearch/model/RejectInboundConnectionResult.h>
 #include <aws/opensearch/model/RevokeVpcEndpointAccessResult.h>
 #include <aws/opensearch/model/StartDomainMaintenanceResult.h>
@@ -170,6 +173,7 @@ class DeleteIndexRequest;
 class DeleteOutboundConnectionRequest;
 class DeletePackageRequest;
 class DeleteVpcEndpointRequest;
+class DeregisterCapabilityRequest;
 class DescribeDomainRequest;
 class DescribeDomainAutoTunesRequest;
 class DescribeDomainChangeProgressRequest;
@@ -189,6 +193,7 @@ class DescribeVpcEndpointsRequest;
 class DissociatePackageRequest;
 class DissociatePackagesRequest;
 class GetApplicationRequest;
+class GetCapabilityRequest;
 class GetCompatibleVersionsRequest;
 class GetDataSourceRequest;
 class GetDefaultApplicationSettingRequest;
@@ -215,6 +220,7 @@ class ListVpcEndpointsRequest;
 class ListVpcEndpointsForDomainRequest;
 class PurchaseReservedInstanceOfferingRequest;
 class PutDefaultApplicationSettingRequest;
+class RegisterCapabilityRequest;
 class RejectInboundConnectionRequest;
 class RemoveTagsRequest;
 class RevokeVpcEndpointAccessRequest;
@@ -257,6 +263,7 @@ typedef Aws::Utils::Outcome<DeleteIndexResult, OpenSearchServiceError> DeleteInd
 typedef Aws::Utils::Outcome<DeleteOutboundConnectionResult, OpenSearchServiceError> DeleteOutboundConnectionOutcome;
 typedef Aws::Utils::Outcome<DeletePackageResult, OpenSearchServiceError> DeletePackageOutcome;
 typedef Aws::Utils::Outcome<DeleteVpcEndpointResult, OpenSearchServiceError> DeleteVpcEndpointOutcome;
+typedef Aws::Utils::Outcome<DeregisterCapabilityResult, OpenSearchServiceError> DeregisterCapabilityOutcome;
 typedef Aws::Utils::Outcome<DescribeDomainResult, OpenSearchServiceError> DescribeDomainOutcome;
 typedef Aws::Utils::Outcome<DescribeDomainAutoTunesResult, OpenSearchServiceError> DescribeDomainAutoTunesOutcome;
 typedef Aws::Utils::Outcome<DescribeDomainChangeProgressResult, OpenSearchServiceError> DescribeDomainChangeProgressOutcome;
@@ -276,6 +283,7 @@ typedef Aws::Utils::Outcome<DescribeVpcEndpointsResult, OpenSearchServiceError> 
 typedef Aws::Utils::Outcome<DissociatePackageResult, OpenSearchServiceError> DissociatePackageOutcome;
 typedef Aws::Utils::Outcome<DissociatePackagesResult, OpenSearchServiceError> DissociatePackagesOutcome;
 typedef Aws::Utils::Outcome<GetApplicationResult, OpenSearchServiceError> GetApplicationOutcome;
+typedef Aws::Utils::Outcome<GetCapabilityResult, OpenSearchServiceError> GetCapabilityOutcome;
 typedef Aws::Utils::Outcome<GetCompatibleVersionsResult, OpenSearchServiceError> GetCompatibleVersionsOutcome;
 typedef Aws::Utils::Outcome<GetDataSourceResult, OpenSearchServiceError> GetDataSourceOutcome;
 typedef Aws::Utils::Outcome<GetDefaultApplicationSettingResult, OpenSearchServiceError> GetDefaultApplicationSettingOutcome;
@@ -302,6 +310,7 @@ typedef Aws::Utils::Outcome<ListVpcEndpointsResult, OpenSearchServiceError> List
 typedef Aws::Utils::Outcome<ListVpcEndpointsForDomainResult, OpenSearchServiceError> ListVpcEndpointsForDomainOutcome;
 typedef Aws::Utils::Outcome<PurchaseReservedInstanceOfferingResult, OpenSearchServiceError> PurchaseReservedInstanceOfferingOutcome;
 typedef Aws::Utils::Outcome<PutDefaultApplicationSettingResult, OpenSearchServiceError> PutDefaultApplicationSettingOutcome;
+typedef Aws::Utils::Outcome<RegisterCapabilityResult, OpenSearchServiceError> RegisterCapabilityOutcome;
 typedef Aws::Utils::Outcome<RejectInboundConnectionResult, OpenSearchServiceError> RejectInboundConnectionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, OpenSearchServiceError> RemoveTagsOutcome;
 typedef Aws::Utils::Outcome<RevokeVpcEndpointAccessResult, OpenSearchServiceError> RevokeVpcEndpointAccessOutcome;
@@ -344,6 +353,7 @@ typedef std::future<DeleteIndexOutcome> DeleteIndexOutcomeCallable;
 typedef std::future<DeleteOutboundConnectionOutcome> DeleteOutboundConnectionOutcomeCallable;
 typedef std::future<DeletePackageOutcome> DeletePackageOutcomeCallable;
 typedef std::future<DeleteVpcEndpointOutcome> DeleteVpcEndpointOutcomeCallable;
+typedef std::future<DeregisterCapabilityOutcome> DeregisterCapabilityOutcomeCallable;
 typedef std::future<DescribeDomainOutcome> DescribeDomainOutcomeCallable;
 typedef std::future<DescribeDomainAutoTunesOutcome> DescribeDomainAutoTunesOutcomeCallable;
 typedef std::future<DescribeDomainChangeProgressOutcome> DescribeDomainChangeProgressOutcomeCallable;
@@ -363,6 +373,7 @@ typedef std::future<DescribeVpcEndpointsOutcome> DescribeVpcEndpointsOutcomeCall
 typedef std::future<DissociatePackageOutcome> DissociatePackageOutcomeCallable;
 typedef std::future<DissociatePackagesOutcome> DissociatePackagesOutcomeCallable;
 typedef std::future<GetApplicationOutcome> GetApplicationOutcomeCallable;
+typedef std::future<GetCapabilityOutcome> GetCapabilityOutcomeCallable;
 typedef std::future<GetCompatibleVersionsOutcome> GetCompatibleVersionsOutcomeCallable;
 typedef std::future<GetDataSourceOutcome> GetDataSourceOutcomeCallable;
 typedef std::future<GetDefaultApplicationSettingOutcome> GetDefaultApplicationSettingOutcomeCallable;
@@ -389,6 +400,7 @@ typedef std::future<ListVpcEndpointsOutcome> ListVpcEndpointsOutcomeCallable;
 typedef std::future<ListVpcEndpointsForDomainOutcome> ListVpcEndpointsForDomainOutcomeCallable;
 typedef std::future<PurchaseReservedInstanceOfferingOutcome> PurchaseReservedInstanceOfferingOutcomeCallable;
 typedef std::future<PutDefaultApplicationSettingOutcome> PutDefaultApplicationSettingOutcomeCallable;
+typedef std::future<RegisterCapabilityOutcome> RegisterCapabilityOutcomeCallable;
 typedef std::future<RejectInboundConnectionOutcome> RejectInboundConnectionOutcomeCallable;
 typedef std::future<RemoveTagsOutcome> RemoveTagsOutcomeCallable;
 typedef std::future<RevokeVpcEndpointAccessOutcome> RevokeVpcEndpointAccessOutcomeCallable;
@@ -482,6 +494,9 @@ typedef std::function<void(const OpenSearchServiceClient*, const Model::DeletePa
 typedef std::function<void(const OpenSearchServiceClient*, const Model::DeleteVpcEndpointRequest&, const Model::DeleteVpcEndpointOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteVpcEndpointResponseReceivedHandler;
+typedef std::function<void(const OpenSearchServiceClient*, const Model::DeregisterCapabilityRequest&,
+                           const Model::DeregisterCapabilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeregisterCapabilityResponseReceivedHandler;
 typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeDomainRequest&, const Model::DescribeDomainOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeDomainResponseReceivedHandler;
@@ -541,6 +556,9 @@ typedef std::function<void(const OpenSearchServiceClient*, const Model::Dissocia
 typedef std::function<void(const OpenSearchServiceClient*, const Model::GetApplicationRequest&, const Model::GetApplicationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetApplicationResponseReceivedHandler;
+typedef std::function<void(const OpenSearchServiceClient*, const Model::GetCapabilityRequest&, const Model::GetCapabilityOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetCapabilityResponseReceivedHandler;
 typedef std::function<void(const OpenSearchServiceClient*, const Model::GetCompatibleVersionsRequest&,
                            const Model::GetCompatibleVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetCompatibleVersionsResponseReceivedHandler;
@@ -622,6 +640,9 @@ typedef std::function<void(const OpenSearchServiceClient*, const Model::PutDefau
                            const Model::PutDefaultApplicationSettingOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutDefaultApplicationSettingResponseReceivedHandler;
+typedef std::function<void(const OpenSearchServiceClient*, const Model::RegisterCapabilityRequest&, const Model::RegisterCapabilityOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    RegisterCapabilityResponseReceivedHandler;
 typedef std::function<void(const OpenSearchServiceClient*, const Model::RejectInboundConnectionRequest&,
                            const Model::RejectInboundConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     RejectInboundConnectionResponseReceivedHandler;

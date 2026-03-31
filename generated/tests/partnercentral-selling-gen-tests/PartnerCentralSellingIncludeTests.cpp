@@ -38,7 +38,6 @@
 #include <aws/partnercentral-selling/model/AwsPartition.h>
 #include <aws/partnercentral-selling/model/AwsProductDetails.h>
 #include <aws/partnercentral-selling/model/AwsProductInsights.h>
-#include <aws/partnercentral-selling/model/AwsProductInsightsCurrencyCodeEnum.h>
 #include <aws/partnercentral-selling/model/AwsProductOptimization.h>
 #include <aws/partnercentral-selling/model/AwsProductsSpendInsightsBySource.h>
 #include <aws/partnercentral-selling/model/AwsSubmission.h>
@@ -83,7 +82,6 @@
 #include <aws/partnercentral-selling/model/EngagementSortName.h>
 #include <aws/partnercentral-selling/model/EngagementSummary.h>
 #include <aws/partnercentral-selling/model/ExpectedCustomerSpend.h>
-#include <aws/partnercentral-selling/model/ExpectedCustomerSpendCurrencyCodeEnum.h>
 #include <aws/partnercentral-selling/model/GetAwsOpportunitySummaryRequest.h>
 #include <aws/partnercentral-selling/model/GetAwsOpportunitySummaryResult.h>
 #include <aws/partnercentral-selling/model/GetEngagementInvitationRequest.h>

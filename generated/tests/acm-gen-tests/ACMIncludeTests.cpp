@@ -14,18 +14,29 @@
 #include <aws/acm/ACMRequest.h>
 #include <aws/acm/ACMServiceClientModel.h>
 #include <aws/acm/ACM_EXPORTS.h>
+#include <aws/acm/model/AcmCertificateMetadata.h>
+#include <aws/acm/model/AcmCertificateMetadataFilter.h>
 #include <aws/acm/model/AddTagsToCertificateRequest.h>
 #include <aws/acm/model/CertificateDetail.h>
 #include <aws/acm/model/CertificateExport.h>
+#include <aws/acm/model/CertificateFilter.h>
+#include <aws/acm/model/CertificateFilterStatement.h>
 #include <aws/acm/model/CertificateManagedBy.h>
+#include <aws/acm/model/CertificateMetadata.h>
 #include <aws/acm/model/CertificateOptions.h>
+#include <aws/acm/model/CertificateSearchResult.h>
 #include <aws/acm/model/CertificateStatus.h>
 #include <aws/acm/model/CertificateSummary.h>
 #include <aws/acm/model/CertificateTransparencyLoggingPreference.h>
 #include <aws/acm/model/CertificateType.h>
+#include <aws/acm/model/CommonNameFilter.h>
+#include <aws/acm/model/ComparisonOperator.h>
+#include <aws/acm/model/CustomAttribute.h>
 #include <aws/acm/model/DeleteCertificateRequest.h>
 #include <aws/acm/model/DescribeCertificateRequest.h>
 #include <aws/acm/model/DescribeCertificateResult.h>
+#include <aws/acm/model/DistinguishedName.h>
+#include <aws/acm/model/DnsNameFilter.h>
 #include <aws/acm/model/DomainStatus.h>
 #include <aws/acm/model/DomainValidation.h>
 #include <aws/acm/model/DomainValidationOption.h>
@@ -36,6 +47,7 @@
 #include <aws/acm/model/ExtendedKeyUsageName.h>
 #include <aws/acm/model/FailureReason.h>
 #include <aws/acm/model/Filters.h>
+#include <aws/acm/model/GeneralName.h>
 #include <aws/acm/model/GetAccountConfigurationRequest.h>
 #include <aws/acm/model/GetAccountConfigurationResult.h>
 #include <aws/acm/model/GetCertificateRequest.h>
@@ -50,6 +62,7 @@
 #include <aws/acm/model/ListCertificatesResult.h>
 #include <aws/acm/model/ListTagsForCertificateRequest.h>
 #include <aws/acm/model/ListTagsForCertificateResult.h>
+#include <aws/acm/model/OtherName.h>
 #include <aws/acm/model/PutAccountConfigurationRequest.h>
 #include <aws/acm/model/RecordType.h>
 #include <aws/acm/model/RemoveTagsFromCertificateRequest.h>
@@ -64,11 +77,22 @@
 #include <aws/acm/model/RevocationReason.h>
 #include <aws/acm/model/RevokeCertificateRequest.h>
 #include <aws/acm/model/RevokeCertificateResult.h>
+#include <aws/acm/model/SearchCertificatesRequest.h>
+#include <aws/acm/model/SearchCertificatesResult.h>
+#include <aws/acm/model/SearchCertificatesSortBy.h>
+#include <aws/acm/model/SearchCertificatesSortOrder.h>
 #include <aws/acm/model/SortBy.h>
 #include <aws/acm/model/SortOrder.h>
+#include <aws/acm/model/SubjectAlternativeNameFilter.h>
+#include <aws/acm/model/SubjectFilter.h>
 #include <aws/acm/model/Tag.h>
+#include <aws/acm/model/ThrottlingException.h>
+#include <aws/acm/model/ThrottlingReason.h>
+#include <aws/acm/model/TimestampRange.h>
 #include <aws/acm/model/UpdateCertificateOptionsRequest.h>
 #include <aws/acm/model/ValidationMethod.h>
+#include <aws/acm/model/X509AttributeFilter.h>
+#include <aws/acm/model/X509Attributes.h>
 
 using ACMIncludeTest = ::testing::Test;
 

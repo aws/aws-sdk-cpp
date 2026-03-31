@@ -16,11 +16,14 @@ namespace Model {
 namespace VerifiedDestinationNumberFilterNameMapper {
 
 static const int status_HASH = HashingUtils::HashString("status");
+static const int rcs_agent_id_HASH = HashingUtils::HashString("rcs-agent-id");
 
 VerifiedDestinationNumberFilterName GetVerifiedDestinationNumberFilterNameForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == status_HASH) {
     return VerifiedDestinationNumberFilterName::status;
+  } else if (hashCode == rcs_agent_id_HASH) {
+    return VerifiedDestinationNumberFilterName::rcs_agent_id;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForVerifiedDestinationNumberFilterName(VerifiedDestinationNum
       return {};
     case VerifiedDestinationNumberFilterName::status:
       return "status";
+    case VerifiedDestinationNumberFilterName::rcs_agent_id:
+      return "rcs-agent-id";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

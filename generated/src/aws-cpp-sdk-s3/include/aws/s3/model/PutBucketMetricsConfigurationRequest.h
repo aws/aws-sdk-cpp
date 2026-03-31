@@ -45,7 +45,18 @@ class PutBucketMetricsConfigurationRequest : public S3Request {
 
   ///@{
   /**
-   * <p>The name of the bucket for which the metrics configuration is set.</p>
+   * <p>The name of the bucket for which the metrics configuration is set.</p> <p>
+   * <b>Directory buckets </b> - When you use this operation with a directory bucket,
+   * you must use path-style requests in the format
+   * <code>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+   * </code>. Virtual-hosted-style requests aren't supported. Directory bucket names
+   * must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket
+   * names must also follow the format <code>
+   * <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</code> (for example, <code>
+   * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about
+   * bucket naming restrictions, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
+   * bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </p>
    */
   inline const Aws::String& GetBucket() const { return m_bucket; }
   inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
@@ -104,6 +115,9 @@ class PutBucketMetricsConfigurationRequest : public S3Request {
    * <p>The account ID of the expected bucket owner. If the account ID that you
    * provide does not match the actual owner of the bucket, the request fails with
    * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+   * <p>For directory buckets, this header is not supported in this API operation. If
+   * you specify this header, the request fails with the HTTP status code <code>501
+   * Not Implemented</code>.</p>
    */
   inline const Aws::String& GetExpectedBucketOwner() const { return m_expectedBucketOwner; }
   inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }

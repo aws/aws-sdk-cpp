@@ -23,9 +23,9 @@ namespace Model {
  * <p>Describes an application's checkpointing configuration. Checkpointing is the
  * process of persisting application state for fault tolerance. For more
  * information, see <a
- * href="https://nightlies.apache.org/flink/flink-docs-release-1.20/docs/dev/datastream/fault-tolerance/checkpointing/#enabling-and-configuring-checkpointing">
+ * href="https://nightlies.apache.org/flink/flink-docs-release-2.2/docs/dev/datastream/fault-tolerance/checkpointing/#enabling-and-configuring-checkpointing">
  * Checkpoints for Fault Tolerance</a> in the <a
- * href="https://nightlies.apache.org/flink/flink-docs-release-1.20/">Apache Flink
+ * href="https://nightlies.apache.org/flink/flink-docs-release-2.2/">Apache Flink
  * Documentation</a>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CheckpointConfiguration">AWS
  * API Reference</a></p>
@@ -108,9 +108,9 @@ class CheckpointConfiguration {
    * completes that a new checkpoint operation can start. If a checkpoint operation
    * takes longer than the <code>CheckpointInterval</code>, the application otherwise
    * performs continual checkpoint operations. For more information, see <a
-   * href="https://nightlies.apache.org/flink/flink-docs-release-1.20/docs/ops/state/large_state_tuning/#tuning-checkpointing">
+   * href="https://nightlies.apache.org/flink/flink-docs-release-2.2/docs/ops/state/large_state_tuning/#tuning-checkpointing">
    * Tuning Checkpointing</a> in the <a
-   * href="https://nightlies.apache.org/flink/flink-docs-release-1.20/">Apache Flink
+   * href="https://nightlies.apache.org/flink/flink-docs-release-2.2/">Apache Flink
    * Documentation</a>.</p>  <p>If
    * <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
    * the application will use a <code>MinPauseBetweenCheckpoints</code> value of

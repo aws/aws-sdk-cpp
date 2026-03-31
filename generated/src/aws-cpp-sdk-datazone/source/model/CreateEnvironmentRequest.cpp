@@ -67,5 +67,9 @@ Aws::String CreateEnvironmentRequest::SerializePayload() const {
     payload.WithString("environmentConfigurationId", m_environmentConfigurationId);
   }
 
+  if (m_environmentConfigurationNameHasBeenSet) {
+    payload.WithString("environmentConfigurationName", m_environmentConfigurationName);
+  }
+
   return payload.View().WriteReadable();
 }

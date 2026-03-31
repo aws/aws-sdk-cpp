@@ -11,7 +11,6 @@
 #include <aws/devops-agent/model/RegisteredGithubServiceDetails.h>
 #include <aws/devops-agent/model/RegisteredGrafanaServerDetails.h>
 #include <aws/devops-agent/model/RegisteredMCPServerDetails.h>
-#include <aws/devops-agent/model/RegisteredMCPServerSigV4Details.h>
 #include <aws/devops-agent/model/RegisteredNewRelicDetails.h>
 #include <aws/devops-agent/model/RegisteredPagerDutyDetails.h>
 #include <aws/devops-agent/model/RegisteredServiceNowDetails.h>
@@ -257,24 +256,6 @@ class AdditionalServiceDetails {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>SigV4-authenticated MCP server-specific service details.</p>
-   */
-  inline const RegisteredMCPServerSigV4Details& GetMcpserversigv4() const { return m_mcpserversigv4; }
-  inline bool Mcpserversigv4HasBeenSet() const { return m_mcpserversigv4HasBeenSet; }
-  template <typename Mcpserversigv4T = RegisteredMCPServerSigV4Details>
-  void SetMcpserversigv4(Mcpserversigv4T&& value) {
-    m_mcpserversigv4HasBeenSet = true;
-    m_mcpserversigv4 = std::forward<Mcpserversigv4T>(value);
-  }
-  template <typename Mcpserversigv4T = RegisteredMCPServerSigV4Details>
-  AdditionalServiceDetails& WithMcpserversigv4(Mcpserversigv4T&& value) {
-    SetMcpserversigv4(std::forward<Mcpserversigv4T>(value));
-    return *this;
-  }
-  ///@}
  private:
   RegisteredGithubServiceDetails m_github;
 
@@ -299,8 +280,6 @@ class AdditionalServiceDetails {
   RegisteredGrafanaServerDetails m_mcpservergrafana;
 
   RegisteredPagerDutyDetails m_pagerduty;
-
-  RegisteredMCPServerSigV4Details m_mcpserversigv4;
   bool m_githubHasBeenSet = false;
   bool m_slackHasBeenSet = false;
   bool m_mcpserverdatadogHasBeenSet = false;
@@ -313,7 +292,6 @@ class AdditionalServiceDetails {
   bool m_azureidentityHasBeenSet = false;
   bool m_mcpservergrafanaHasBeenSet = false;
   bool m_pagerdutyHasBeenSet = false;
-  bool m_mcpserversigv4HasBeenSet = false;
 };
 
 }  // namespace Model

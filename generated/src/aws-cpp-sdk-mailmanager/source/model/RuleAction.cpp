@@ -58,6 +58,14 @@ RuleAction& RuleAction::operator=(JsonView jsonValue) {
     m_publishToSns = jsonValue.GetObject("PublishToSns");
     m_publishToSnsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Bounce")) {
+    m_bounce = jsonValue.GetObject("Bounce");
+    m_bounceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("InvokeLambda")) {
+    m_invokeLambda = jsonValue.GetObject("InvokeLambda");
+    m_invokeLambdaHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -102,6 +110,14 @@ JsonValue RuleAction::Jsonize() const {
 
   if (m_publishToSnsHasBeenSet) {
     payload.WithObject("PublishToSns", m_publishToSns.Jsonize());
+  }
+
+  if (m_bounceHasBeenSet) {
+    payload.WithObject("Bounce", m_bounce.Jsonize());
+  }
+
+  if (m_invokeLambdaHasBeenSet) {
+    payload.WithObject("InvokeLambda", m_invokeLambda.Jsonize());
   }
 
   return payload;

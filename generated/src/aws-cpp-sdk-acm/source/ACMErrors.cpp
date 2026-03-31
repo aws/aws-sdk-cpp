@@ -4,15 +4,23 @@
  */
 
 #include <aws/acm/ACMErrors.h>
+#include <aws/acm/model/ThrottlingException.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::ACM;
+using namespace Aws::ACM::Model;
 
 namespace Aws {
 namespace ACM {
+template <>
+AWS_ACM_API ThrottlingException ACMError::GetModeledError() {
+  assert(this->GetErrorType() == ACMErrors::THROTTLING);
+  return ThrottlingException(this->GetJsonPayload().View());
+}
+
 namespace ACMErrorMapper {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");

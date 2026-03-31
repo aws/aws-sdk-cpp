@@ -125,8 +125,8 @@ class RegistrationVersionInformation {
 
   ///@{
   /**
-   * <p>Feedback information provided during the registration review process. This
-   * includes comments, suggestions, or additional requirements.</p>
+   * <p>Generative AI feedback information provided during the registration review
+   * process. This includes comments, suggestions, or additional requirements.</p>
    */
   inline const Aws::String& GetFeedback() const { return m_feedback; }
   inline bool FeedbackHasBeenSet() const { return m_feedbackHasBeenSet; }

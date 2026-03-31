@@ -14,7 +14,6 @@
 #include <aws/devops-agent/model/GitLabConfiguration.h>
 #include <aws/devops-agent/model/MCPServerGrafanaConfiguration.h>
 #include <aws/devops-agent/model/MCPServerNewRelicConfiguration.h>
-#include <aws/devops-agent/model/MSTeamsConfiguration.h>
 #include <aws/devops-agent/model/PagerDutyConfiguration.h>
 #include <aws/devops-agent/model/ServiceNowConfiguration.h>
 #include <aws/devops-agent/model/SlackConfiguration.h>
@@ -278,24 +277,6 @@ class ServiceConfiguration {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>MS Teams integration configuration</p>
-   */
-  inline const MSTeamsConfiguration& GetMsteams() const { return m_msteams; }
-  inline bool MsteamsHasBeenSet() const { return m_msteamsHasBeenSet; }
-  template <typename MsteamsT = MSTeamsConfiguration>
-  void SetMsteams(MsteamsT&& value) {
-    m_msteamsHasBeenSet = true;
-    m_msteams = std::forward<MsteamsT>(value);
-  }
-  template <typename MsteamsT = MSTeamsConfiguration>
-  ServiceConfiguration& WithMsteams(MsteamsT&& value) {
-    SetMsteams(std::forward<MsteamsT>(value));
-    return *this;
-  }
-  ///@}
  private:
   SourceAwsConfiguration m_sourceAws;
 
@@ -322,8 +303,6 @@ class ServiceConfiguration {
   MCPServerGrafanaConfiguration m_mcpservergrafana;
 
   PagerDutyConfiguration m_pagerduty;
-
-  MSTeamsConfiguration m_msteams;
   bool m_sourceAwsHasBeenSet = false;
   bool m_awsHasBeenSet = false;
   bool m_githubHasBeenSet = false;
@@ -337,7 +316,6 @@ class ServiceConfiguration {
   bool m_azuredevopsHasBeenSet = false;
   bool m_mcpservergrafanaHasBeenSet = false;
   bool m_pagerdutyHasBeenSet = false;
-  bool m_msteamsHasBeenSet = false;
 };
 
 }  // namespace Model

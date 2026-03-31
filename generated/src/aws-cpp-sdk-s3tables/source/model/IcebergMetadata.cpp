@@ -22,6 +22,10 @@ IcebergMetadata& IcebergMetadata::operator=(JsonView jsonValue) {
     m_schema = jsonValue.GetObject("schema");
     m_schemaHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("schemaV2")) {
+    m_schemaV2 = jsonValue.GetObject("schemaV2");
+    m_schemaV2HasBeenSet = true;
+  }
   if (jsonValue.ValueExists("partitionSpec")) {
     m_partitionSpec = jsonValue.GetObject("partitionSpec");
     m_partitionSpecHasBeenSet = true;
@@ -45,6 +49,10 @@ JsonValue IcebergMetadata::Jsonize() const {
 
   if (m_schemaHasBeenSet) {
     payload.WithObject("schema", m_schema.Jsonize());
+  }
+
+  if (m_schemaV2HasBeenSet) {
+    payload.WithObject("schemaV2", m_schemaV2.Jsonize());
   }
 
   if (m_partitionSpecHasBeenSet) {

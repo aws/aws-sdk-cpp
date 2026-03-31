@@ -16,7 +16,6 @@ enum class Service {
   slack,
   azure,
   azuredevops,
-  msteams,
   dynatrace,
   servicenow,
   pagerduty,
@@ -27,8 +26,7 @@ enum class Service {
   mcpserverdatadog,
   mcpserver,
   mcpserversplunk,
-  azureidentity,
-  mcpserversigv4
+  azureidentity
 };
 
 namespace ServiceMapper {
