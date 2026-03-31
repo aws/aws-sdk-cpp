@@ -66,6 +66,7 @@ jobs:
           PR_NUMBER: ${{ github.event.pull_request.number || '0' }}
           RUN_ID: ${{ github.run_id }}
         run: |
+          HEAD_REF="${HEAD_REF#refs/heads/}"
           ./$DOWNLOAD_FOLDER/$SCRIPT_LOCATION \
             --repo "$REPO" \
             --branch "$HEAD_REF" \
