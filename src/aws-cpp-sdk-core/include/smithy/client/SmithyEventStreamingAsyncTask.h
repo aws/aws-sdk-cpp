@@ -12,6 +12,7 @@
 #include <aws/core/utils/event/EventEncoderStream.h>
 #include <aws/core/utils/event/EventStreamHandler.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <smithy/client/AwsSmithyClientAsyncRequestContext.h>
 
 
 namespace Aws {
