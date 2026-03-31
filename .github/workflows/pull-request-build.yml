@@ -30,17 +30,18 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          BASE_SHA="${{ github.event.merge_group.base_sha }}"
-          BASE_REF="${{ github.event.merge_group.base_ref }}"
-          # base_ref is in refs/heads/<branch> format, strip prefix for API call
-          BRANCH_NAME="${BASE_REF#refs/heads/}"
-          TARGET_SHA=$(gh api repos/${{ github.repository }}/git/ref/heads/${BRANCH_NAME} --jq '.object.sha')
-          if [ "$BASE_SHA" == "$TARGET_SHA" ]; then
+          MERGE_GROUP_BASE_SHA="${{ github.event.merge_group.base_sha }}"
+          HEAD_REF="${{ github.event.merge_group.head_ref }}"
+          PR_NUM=$(echo "$HEAD_REF" | grep -oP 'pr-\K[0-9]+')
+          PR_BASE_SHA=$(gh api repos/${{ github.repository }}/pulls/$PR_NUM --jq '.base.sha')
+          echo "Merge group base SHA: $MERGE_GROUP_BASE_SHA"
+          echo "PR #$PR_NUM base SHA: $PR_BASE_SHA"
+          if [ "$MERGE_GROUP_BASE_SHA" == "$PR_BASE_SHA" ]; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
-            echo "First in queue — PR build already validated this combination, skipping."
+            echo "Merge group base matches PR base — PR build already validated this, skipping."
           else
             echo "skip=false" >> "$GITHUB_OUTPUT"
-            echo "Not first in queue — merge group includes changes from other PRs, build needed."
+            echo "Merge group base differs from PR base — other PRs ahead or base moved, build needed."
           fi
       - name: Configure AWS Credentials
         if: steps.queue-check.outputs.skip != 'true'
