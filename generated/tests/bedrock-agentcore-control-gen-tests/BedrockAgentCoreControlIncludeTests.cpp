@@ -145,6 +145,7 @@
 #include <aws/bedrock-agentcore-control/model/DeleteResourcePolicyResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteWorkloadIdentityRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteWorkloadIdentityResult.h>
+#include <aws/bedrock-agentcore-control/model/EndpointIpAddressType.h>
 #include <aws/bedrock-agentcore-control/model/EpisodicConsolidationOverride.h>
 #include <aws/bedrock-agentcore-control/model/EpisodicExtractionOverride.h>
 #include <aws/bedrock-agentcore-control/model/EpisodicMemoryStrategyInput.h>
@@ -219,6 +220,7 @@
 #include <aws/bedrock-agentcore-control/model/GithubOauth2ProviderConfigOutput.h>
 #include <aws/bedrock-agentcore-control/model/GoogleOauth2ProviderConfigInput.h>
 #include <aws/bedrock-agentcore-control/model/GoogleOauth2ProviderConfigOutput.h>
+#include <aws/bedrock-agentcore-control/model/IamCredentialProvider.h>
 #include <aws/bedrock-agentcore-control/model/InboundTokenClaimValueType.h>
 #include <aws/bedrock-agentcore-control/model/IncludedOauth2ProviderConfigInput.h>
 #include <aws/bedrock-agentcore-control/model/IncludedOauth2ProviderConfigOutput.h>
@@ -275,6 +277,8 @@
 #include <aws/bedrock-agentcore-control/model/ListWorkloadIdentitiesResult.h>
 #include <aws/bedrock-agentcore-control/model/LlmAsAJudgeEvaluatorConfig.h>
 #include <aws/bedrock-agentcore-control/model/MCPGatewayConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/ManagedLatticeResource.h>
+#include <aws/bedrock-agentcore-control/model/ManagedResourceDetails.h>
 #include <aws/bedrock-agentcore-control/model/McpLambdaTargetConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/McpServerTargetConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/McpTargetConfiguration.h>
@@ -324,6 +328,7 @@
 #include <aws/bedrock-agentcore-control/model/PolicyGenerationStatus.h>
 #include <aws/bedrock-agentcore-control/model/PolicyStatus.h>
 #include <aws/bedrock-agentcore-control/model/PolicyValidationMode.h>
+#include <aws/bedrock-agentcore-control/model/PrivateEndpoint.h>
 #include <aws/bedrock-agentcore-control/model/ProtocolConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/PutResourcePolicyRequest.h>
 #include <aws/bedrock-agentcore-control/model/PutResourcePolicyResult.h>
@@ -349,6 +354,7 @@
 #include <aws/bedrock-agentcore-control/model/SecretsManagerLocation.h>
 #include <aws/bedrock-agentcore-control/model/SelfManagedConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/SelfManagedConfigurationInput.h>
+#include <aws/bedrock-agentcore-control/model/SelfManagedLatticeResource.h>
 #include <aws/bedrock-agentcore-control/model/SemanticConsolidationOverride.h>
 #include <aws/bedrock-agentcore-control/model/SemanticExtractionOverride.h>
 #include <aws/bedrock-agentcore-control/model/SemanticMemoryStrategyInput.h>

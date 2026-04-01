@@ -204,7 +204,7 @@ class OptimizeWaypointsRequest : public GeoRoutesRequest {
   ///@{
   /**
    * <p>Specifies the optimization criteria for the calculated sequence.</p>
-   * <p>Default Value: <code>FastestRoute</code>.</p>
+   * <p>Default value: <code>FastestRoute</code>.</p>
    */
   inline WaypointOptimizationSequencingObjective GetOptimizeSequencingFor() const { return m_optimizeSequencingFor; }
   inline bool OptimizeSequencingForHasBeenSet() const { return m_optimizeSequencingForHasBeenSet; }
@@ -220,7 +220,8 @@ class OptimizeWaypointsRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>The start position for the route.</p>
+   * <p>The start position for the route in World Geodetic System (WGS 84) format:
+   * [longitude, latitude].</p>
    */
   inline const Aws::Vector<double>& GetOrigin() const { return m_origin; }
   inline bool OriginHasBeenSet() const { return m_originHasBeenSet; }
@@ -280,7 +281,7 @@ class OptimizeWaypointsRequest : public GeoRoutesRequest {
   ///@{
   /**
    * <p>Specifies the mode of transport when calculating a route. Used in estimating
-   * the speed of travel and road compatibility.</p> <p>Default Value:
+   * the speed of travel and road compatibility.</p> <p>Default value:
    * <code>Car</code> </p>
    */
   inline WaypointOptimizationTravelMode GetTravelMode() const { return m_travelMode; }

@@ -23,8 +23,9 @@ namespace GeoRoutes {
 namespace Model {
 
 /**
- * <p>The avoidance geometry, to be included while calculating an
- * isoline.</p><p><h3>See Also:</h3>   <a
+ * <p>Defines an area to avoid during calculations using one of several supported
+ * geometry types. The service will prefer routes that avoid these areas when
+ * possible.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/IsolineAvoidanceAreaGeometry">AWS
  * API Reference</a></p>
  */
@@ -37,10 +38,8 @@ class IsolineAvoidanceAreaGeometry {
 
   ///@{
   /**
-   * <p>Geometry defined as a bounding box. The first pair represents the X and Y
-   * coordinates (longitude and latitude,) of the southwest corner of the bounding
-   * box; the second pair represents the X and Y coordinates (longitude and latitude)
-   * of the northeast corner.</p>
+   * <p>A rectangular area defined by its southwest and northeast corners: <code>[min
+   * longitude, min latitude, max longitude, max latitude]</code>.</p>
    */
   inline const Aws::Vector<double>& GetBoundingBox() const { return m_boundingBox; }
   inline bool BoundingBoxHasBeenSet() const { return m_boundingBoxHasBeenSet; }
@@ -63,8 +62,8 @@ class IsolineAvoidanceAreaGeometry {
 
   ///@{
   /**
-   * <p>Geometry defined as a corridor - a LineString with a radius that defines the
-   * width of the corridor.</p>
+   * <p>A buffer zone around a line, defined by a series of coordinates and a radius
+   * in meters.</p>
    */
   inline const Corridor& GetCorridor() const { return m_corridor; }
   inline bool CorridorHasBeenSet() const { return m_corridorHasBeenSet; }
@@ -82,8 +81,8 @@ class IsolineAvoidanceAreaGeometry {
 
   ///@{
   /**
-   * <p>A list of Polygon will be excluded for calculating isolines, the list can
-   * only contain 1 polygon.</p>
+   * <p>A polygon defined by a list of coordinate rings. The first ring defines the
+   * outer boundary; subsequent rings will be ignored.</p>
    */
   inline const Aws::Vector<Aws::Vector<Aws::Vector<double>>>& GetPolygon() const { return m_polygon; }
   inline bool PolygonHasBeenSet() const { return m_polygonHasBeenSet; }
@@ -107,10 +106,9 @@ class IsolineAvoidanceAreaGeometry {
 
   ///@{
   /**
-   * <p>Geometry defined as an encoded corridor – a polyline with a radius that
-   * defines the width of the corridor. For more information on polyline encoding,
-   * see <a
-   * href="https://github.com/heremaps/flexiblepolyline/blob/master/README.md">https://github.com/heremaps/flexiblepolyline/blob/master/README.md</a>.</p>
+   * <p>A buffer zone around a compressed polyline, defined by an encoded polyline
+   * string and a radius in meters. For more information on polyline encoding, see <a
+   * href="https://github.com/aws-geospatial/polyline">https://github.com/aws-geospatial/polyline</a>.</p>
    */
   inline const PolylineCorridor& GetPolylineCorridor() const { return m_polylineCorridor; }
   inline bool PolylineCorridorHasBeenSet() const { return m_polylineCorridorHasBeenSet; }
@@ -128,11 +126,10 @@ class IsolineAvoidanceAreaGeometry {
 
   ///@{
   /**
-   * <p>A list of PolylinePolygon's that are excluded for calculating isolines, the
-   * list can only contain 1 polygon. For more information on polyline encoding, see
-   * <a
-   * href="https://github.com/heremaps/flexiblepolyline/blob/master/README.md">https://github.com/heremaps/flexiblepolyline/blob/master/README.md</a>.
-   * </p>
+   * <p>A polygon defined by encoded polyline strings. The first string defines the
+   * outer boundary; subsequent strings will be ignored. For more information on
+   * polyline encoding, see <a
+   * href="https://github.com/aws-geospatial/polyline">https://github.com/aws-geospatial/polyline</a>.</p>
    */
   inline const Aws::Vector<Aws::String>& GetPolylinePolygon() const { return m_polylinePolygon; }
   inline bool PolylinePolygonHasBeenSet() const { return m_polylinePolygonHasBeenSet; }

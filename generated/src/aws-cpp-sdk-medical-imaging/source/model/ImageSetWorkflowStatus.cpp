@@ -21,6 +21,7 @@ static const int COPYING_HASH = HashingUtils::HashString("COPYING");
 static const int COPYING_WITH_READ_ONLY_ACCESS_HASH = HashingUtils::HashString("COPYING_WITH_READ_ONLY_ACCESS");
 static const int COPY_FAILED_HASH = HashingUtils::HashString("COPY_FAILED");
 static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
+static const int UPDATING_FOR_STUDY_CONSISTENCY_HASH = HashingUtils::HashString("UPDATING_FOR_STUDY_CONSISTENCY");
 static const int UPDATED_HASH = HashingUtils::HashString("UPDATED");
 static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
 static const int DELETING_HASH = HashingUtils::HashString("DELETING");
@@ -43,6 +44,8 @@ ImageSetWorkflowStatus GetImageSetWorkflowStatusForName(const Aws::String& name)
     return ImageSetWorkflowStatus::COPY_FAILED;
   } else if (hashCode == UPDATING_HASH) {
     return ImageSetWorkflowStatus::UPDATING;
+  } else if (hashCode == UPDATING_FOR_STUDY_CONSISTENCY_HASH) {
+    return ImageSetWorkflowStatus::UPDATING_FOR_STUDY_CONSISTENCY;
   } else if (hashCode == UPDATED_HASH) {
     return ImageSetWorkflowStatus::UPDATED;
   } else if (hashCode == UPDATE_FAILED_HASH) {
@@ -83,6 +86,8 @@ Aws::String GetNameForImageSetWorkflowStatus(ImageSetWorkflowStatus enumValue) {
       return "COPY_FAILED";
     case ImageSetWorkflowStatus::UPDATING:
       return "UPDATING";
+    case ImageSetWorkflowStatus::UPDATING_FOR_STUDY_CONSISTENCY:
+      return "UPDATING_FOR_STUDY_CONSISTENCY";
     case ImageSetWorkflowStatus::UPDATED:
       return "UPDATED";
     case ImageSetWorkflowStatus::UPDATE_FAILED:

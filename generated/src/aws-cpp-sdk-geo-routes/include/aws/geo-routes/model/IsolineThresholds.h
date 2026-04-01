@@ -20,8 +20,11 @@ namespace GeoRoutes {
 namespace Model {
 
 /**
- * <p>Threshold to be used for the isoline calculation. Up to 5 thresholds per
- * provided type can be requested.</p><p><h3>See Also:</h3>   <a
+ * <p>Specifies the time or distance limits used to calculate reachable areas. You
+ * can provide up to five thresholds for a single type to generate multiple
+ * isolines in a single request. For example, you might request areas reachable
+ * within 5, 10, and 15 minutes, or within 1, 2, and 5 kilometers.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/IsolineThresholds">AWS
  * API Reference</a></p>
  */
@@ -34,7 +37,8 @@ class IsolineThresholds {
 
   ///@{
   /**
-   * <p>Distance to be used for the isoline calculation.</p>
+   * <p>List of travel distances in meters. For example, [1000, 2000, 5000] would
+   * calculate areas reachable within 1, 2, and 5 kilometers.</p>
    */
   inline const Aws::Vector<long long>& GetDistance() const { return m_distance; }
   inline bool DistanceHasBeenSet() const { return m_distanceHasBeenSet; }
@@ -57,7 +61,8 @@ class IsolineThresholds {
 
   ///@{
   /**
-   * <p>Time to be used for the isoline calculation.</p>
+   * <p>List of travel times in seconds. For example, [300, 600, 900] would calculate
+   * areas reachable within 5, 10, and 15 minutes.</p>
    */
   inline const Aws::Vector<long long>& GetTime() const { return m_time; }
   inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }

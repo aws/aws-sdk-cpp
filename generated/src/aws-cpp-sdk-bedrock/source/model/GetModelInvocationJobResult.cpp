@@ -86,6 +86,22 @@ GetModelInvocationJobResult& GetModelInvocationJobResult::operator=(const Aws::A
     m_modelInvocationType = ModelInvocationTypeMapper::GetModelInvocationTypeForName(jsonValue.GetString("modelInvocationType"));
     m_modelInvocationTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("totalRecordCount")) {
+    m_totalRecordCount = jsonValue.GetInt64("totalRecordCount");
+    m_totalRecordCountHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("processedRecordCount")) {
+    m_processedRecordCount = jsonValue.GetInt64("processedRecordCount");
+    m_processedRecordCountHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("successRecordCount")) {
+    m_successRecordCount = jsonValue.GetInt64("successRecordCount");
+    m_successRecordCountHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("errorRecordCount")) {
+    m_errorRecordCount = jsonValue.GetInt64("errorRecordCount");
+    m_errorRecordCountHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

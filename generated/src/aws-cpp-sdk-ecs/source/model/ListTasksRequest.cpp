@@ -51,6 +51,10 @@ Aws::String ListTasksRequest::SerializePayload() const {
     payload.WithString("launchType", LaunchTypeMapper::GetNameForLaunchType(m_launchType));
   }
 
+  if (m_daemonNameHasBeenSet) {
+    payload.WithString("daemonName", m_daemonName);
+  }
+
   return payload.View().WriteReadable();
 }
 

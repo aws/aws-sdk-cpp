@@ -20,7 +20,10 @@ namespace GeoRoutes {
 namespace Model {
 
 /**
- * <p>Zone categories to be avoided.</p><p><h3>See Also:</h3>   <a
+ * <p> Zone categories to be avoided. Not supported in <code>ap-southeast-1</code>
+ * and <code>ap-southeast-5</code> regions for <a
+ * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+ * customers. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/RouteAvoidanceZoneCategory">AWS
  * API Reference</a></p>
  */

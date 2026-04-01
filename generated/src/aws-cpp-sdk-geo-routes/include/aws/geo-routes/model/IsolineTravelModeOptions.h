@@ -22,8 +22,9 @@ namespace GeoRoutes {
 namespace Model {
 
 /**
- * <p>Travel mode related options for the provided travel mode.</p><p><h3>See
- * Also:</h3>   <a
+ * <p>Mode-specific routing options that further refine how reachable areas are
+ * calculated. Options are only considered when they match the selected travel
+ * mode.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/IsolineTravelModeOptions">AWS
  * API Reference</a></p>
  */
@@ -36,7 +37,8 @@ class IsolineTravelModeOptions {
 
   ///@{
   /**
-   * <p>Travel mode options when the provided travel mode is "Car"</p>
+   * <p>Options specific to passenger vehicle routing (<code>Car</code>, such as
+   * vehicle characteristics and license plate restrictions.</p>
    */
   inline const IsolineCarOptions& GetCar() const { return m_car; }
   inline bool CarHasBeenSet() const { return m_carHasBeenSet; }
@@ -54,10 +56,10 @@ class IsolineTravelModeOptions {
 
   ///@{
   /**
-   * <p>Travel mode options when the provided travel mode is <code>Scooter</code>
-   * </p>  <p>When travel mode is set to <code>Scooter</code>, then the
-   * avoidance option <code>ControlledAccessHighways</code> defaults to
-   * <code>true</code>.</p>
+   * <p>Options specific to scooter routing (<code>Scooter</code>, such as vehicle
+   * characteristics and license plate restrictions.</p>  <p>When using the
+   * <code>Scooter</code> travel mode, controlled-access highways are automatically
+   * avoided unless explicitly allowed.</p>
    */
   inline const IsolineScooterOptions& GetScooter() const { return m_scooter; }
   inline bool ScooterHasBeenSet() const { return m_scooterHasBeenSet; }
@@ -75,7 +77,8 @@ class IsolineTravelModeOptions {
 
   ///@{
   /**
-   * <p>Travel mode options when the provided travel mode is "Truck"</p>
+   * <p>Options specific to commercial truck routing (<code>Truck</code>, including
+   * vehicle dimensions, weight limits, and hazardous cargo specifications.</p>
    */
   inline const IsolineTruckOptions& GetTruck() const { return m_truck; }
   inline bool TruckHasBeenSet() const { return m_truckHasBeenSet; }

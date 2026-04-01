@@ -30,7 +30,7 @@ class RoadSnapTrailerOptions {
 
   ///@{
   /**
-   * <p>Number of trailers attached to the vehicle.</p> <p>Default Value:
+   * <p>Number of trailers attached to the vehicle.</p> <p>Default value:
    * <code>0</code> </p>
    */
   inline int GetTrailerCount() const { return m_trailerCount; }

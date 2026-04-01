@@ -27,8 +27,11 @@ namespace GeoRoutes {
 namespace Model {
 
 /**
- * <p>Travel mode options when the provided travel mode is "Truck"</p><p><h3>See
- * Also:</h3>   <a
+ * <p> Travel mode options when the provided travel mode is <code>Truck</code>. Not
+ * supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+ * for <a
+ * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+ * customers. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/RouteTruckOptions">AWS
  * API Reference</a></p>
  */
@@ -74,7 +77,7 @@ class RouteTruckOptions {
   ///@{
   /**
    * <p>Gross weight of the vehicle including trailers, and goods at capacity.</p>
-   * <p> <b>Unit</b>: <code>Kilograms</code> </p>
+   * <p> <b>Unit</b>: <code>kilograms</code> </p>
    */
   inline long long GetGrossWeight() const { return m_grossWeight; }
   inline bool GrossWeightHasBeenSet() const { return m_grossWeightHasBeenSet; }
@@ -197,7 +200,7 @@ class RouteTruckOptions {
 
   ///@{
   /**
-   * <p>Maximum speed</p> <p> <b>Unit</b>: <code>KilometersPerHour</code> </p>
+   * <p>Maximum speed</p> <p> <b>Unit</b>: <code>kilometers per hour</code> </p>
    */
   inline double GetMaxSpeed() const { return m_maxSpeed; }
   inline bool MaxSpeedHasBeenSet() const { return m_maxSpeedHasBeenSet; }
@@ -213,7 +216,7 @@ class RouteTruckOptions {
 
   ///@{
   /**
-   * <p>The number of occupants in the vehicle.</p> <p>Default Value: <code>1</code>
+   * <p>The number of occupants in the vehicle.</p> <p>Default value: <code>1</code>
    * </p>
    */
   inline int GetOccupancy() const { return m_occupancy; }
@@ -281,7 +284,9 @@ class RouteTruckOptions {
 
   ///@{
   /**
-   * <p>Type of the truck.</p>
+   * <p>The type of truck: <code>LightTruck</code> for smaller delivery vehicles,
+   * <code> StraightTruck</code> for rigid body trucks, or <code>Tractor</code> for
+   * tractor-trailer combinations.</p>
    */
   inline RouteTruckType GetTruckType() const { return m_truckType; }
   inline bool TruckTypeHasBeenSet() const { return m_truckTypeHasBeenSet; }
@@ -328,7 +333,7 @@ class RouteTruckOptions {
   /**
    * <p>Heaviest weight per axle irrespective of the axle type or the axle group.
    * Meant for usage in countries where the differences in axle types or axle groups
-   * are not distinguished.</p> <p> <b>Unit</b>: <code>Kilograms</code> </p>
+   * are not distinguished.</p> <p> <b>Unit</b>: <code>kilograms</code> </p>
    */
   inline long long GetWeightPerAxle() const { return m_weightPerAxle; }
   inline bool WeightPerAxleHasBeenSet() const { return m_weightPerAxleHasBeenSet; }
@@ -346,7 +351,7 @@ class RouteTruckOptions {
   /**
    * <p>Specifies the total weight for the specified axle group. Meant for usage in
    * countries that have different regulations based on the axle group type.</p> <p>
-   * <b>Unit</b>: <code>Kilograms</code> </p>
+   * <b>Unit</b>: <code>kilograms</code> </p>
    */
   inline const WeightPerAxleGroup& GetWeightPerAxleGroup() const { return m_weightPerAxleGroup; }
   inline bool WeightPerAxleGroupHasBeenSet() const { return m_weightPerAxleGroupHasBeenSet; }

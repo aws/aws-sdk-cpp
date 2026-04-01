@@ -35,7 +35,8 @@ class WaypointOptimizationTravelModeOptions {
 
   ///@{
   /**
-   * <p>Travel mode options when the provided travel mode is "Pedestrian"</p>
+   * <p>Travel mode options when the provided travel mode is
+   * <code>Pedestrian</code>.</p>
    */
   inline const WaypointOptimizationPedestrianOptions& GetPedestrian() const { return m_pedestrian; }
   inline bool PedestrianHasBeenSet() const { return m_pedestrianHasBeenSet; }
@@ -53,7 +54,7 @@ class WaypointOptimizationTravelModeOptions {
 
   ///@{
   /**
-   * <p>Travel mode options when the provided travel mode is "Truck"</p>
+   * <p>Travel mode options when the provided travel mode is <code>Truck</code>.</p>
    */
   inline const WaypointOptimizationTruckOptions& GetTruck() const { return m_truck; }
   inline bool TruckHasBeenSet() const { return m_truckHasBeenSet; }

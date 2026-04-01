@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/ApiKeyCredentialProvider.h>
+#include <aws/bedrock-agentcore-control/model/IamCredentialProvider.h>
 #include <aws/bedrock-agentcore-control/model/OAuthCredentialProvider.h>
 
 #include <utility>
@@ -71,12 +72,34 @@ class CredentialProvider {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The IAM credential provider. This provider uses IAM authentication with SigV4
+   * signing to access the target endpoint.</p>
+   */
+  inline const IamCredentialProvider& GetIamCredentialProvider() const { return m_iamCredentialProvider; }
+  inline bool IamCredentialProviderHasBeenSet() const { return m_iamCredentialProviderHasBeenSet; }
+  template <typename IamCredentialProviderT = IamCredentialProvider>
+  void SetIamCredentialProvider(IamCredentialProviderT&& value) {
+    m_iamCredentialProviderHasBeenSet = true;
+    m_iamCredentialProvider = std::forward<IamCredentialProviderT>(value);
+  }
+  template <typename IamCredentialProviderT = IamCredentialProvider>
+  CredentialProvider& WithIamCredentialProvider(IamCredentialProviderT&& value) {
+    SetIamCredentialProvider(std::forward<IamCredentialProviderT>(value));
+    return *this;
+  }
+  ///@}
  private:
   OAuthCredentialProvider m_oauthCredentialProvider;
 
   ApiKeyCredentialProvider m_apiKeyCredentialProvider;
+
+  IamCredentialProvider m_iamCredentialProvider;
   bool m_oauthCredentialProviderHasBeenSet = false;
   bool m_apiKeyCredentialProviderHasBeenSet = false;
+  bool m_iamCredentialProviderHasBeenSet = false;
 };
 
 }  // namespace Model

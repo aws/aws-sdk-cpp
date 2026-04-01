@@ -37,7 +37,7 @@ class CreateUserRequest : public ElastiCacheRequest {
  public:
   ///@{
   /**
-   * <p>The ID of the user.</p>
+   * <p>The ID of the user. This value is stored as a lowercase string.</p>
    */
   inline const Aws::String& GetUserId() const { return m_userId; }
   inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }

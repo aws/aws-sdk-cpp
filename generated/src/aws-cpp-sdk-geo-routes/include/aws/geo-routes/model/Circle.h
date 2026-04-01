@@ -36,9 +36,10 @@ class Circle {
 
   ///@{
   /**
-   * <p>Center of the Circle defined in longitude and latitude coordinates.</p>
-   * <p>Example: <code>[-123.1174, 49.2847]</code> represents the position with
-   * longitude <code>-123.1174</code> and latitude <code>49.2847</code>. </p>
+   * <p>Center of the Circle in World Geodetic System (WGS 84) format: [longitude,
+   * latitude].</p> <p>Example: <code>[-123.1174, 49.2847]</code> represents the
+   * position with longitude <code>-123.1174</code> and latitude
+   * <code>49.2847</code>. </p>
    */
   inline const Aws::Vector<double>& GetCenter() const { return m_center; }
   inline bool CenterHasBeenSet() const { return m_centerHasBeenSet; }

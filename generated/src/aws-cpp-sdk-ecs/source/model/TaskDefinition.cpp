@@ -133,6 +133,10 @@ TaskDefinition& TaskDefinition::operator=(JsonView jsonValue) {
     m_deregisteredAt = jsonValue.GetDouble("deregisteredAt");
     m_deregisteredAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("deleteRequestedAt")) {
+    m_deleteRequestedAt = jsonValue.GetDouble("deleteRequestedAt");
+    m_deleteRequestedAtHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("registeredBy")) {
     m_registeredBy = jsonValue.GetString("registeredBy");
     m_registeredByHasBeenSet = true;
@@ -272,6 +276,10 @@ JsonValue TaskDefinition::Jsonize() const {
 
   if (m_deregisteredAtHasBeenSet) {
     payload.WithDouble("deregisteredAt", m_deregisteredAt.SecondsWithMSPrecision());
+  }
+
+  if (m_deleteRequestedAtHasBeenSet) {
+    payload.WithDouble("deleteRequestedAt", m_deleteRequestedAt.SecondsWithMSPrecision());
   }
 
   if (m_registeredByHasBeenSet) {

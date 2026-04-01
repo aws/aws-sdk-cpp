@@ -639,6 +639,25 @@ class TaskDefinition {
 
   ///@{
   /**
+   * <p>The Unix timestamp for the time when the task definition delete was
+   * requested.</p>
+   */
+  inline const Aws::Utils::DateTime& GetDeleteRequestedAt() const { return m_deleteRequestedAt; }
+  inline bool DeleteRequestedAtHasBeenSet() const { return m_deleteRequestedAtHasBeenSet; }
+  template <typename DeleteRequestedAtT = Aws::Utils::DateTime>
+  void SetDeleteRequestedAt(DeleteRequestedAtT&& value) {
+    m_deleteRequestedAtHasBeenSet = true;
+    m_deleteRequestedAt = std::forward<DeleteRequestedAtT>(value);
+  }
+  template <typename DeleteRequestedAtT = Aws::Utils::DateTime>
+  TaskDefinition& WithDeleteRequestedAt(DeleteRequestedAtT&& value) {
+    SetDeleteRequestedAt(std::forward<DeleteRequestedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The principal that registered the task definition.</p>
    */
   inline const Aws::String& GetRegisteredBy() const { return m_registeredBy; }
@@ -736,6 +755,8 @@ class TaskDefinition {
 
   Aws::Utils::DateTime m_deregisteredAt{};
 
+  Aws::Utils::DateTime m_deleteRequestedAt{};
+
   Aws::String m_registeredBy;
 
   EphemeralStorage m_ephemeralStorage;
@@ -763,6 +784,7 @@ class TaskDefinition {
   bool m_proxyConfigurationHasBeenSet = false;
   bool m_registeredAtHasBeenSet = false;
   bool m_deregisteredAtHasBeenSet = false;
+  bool m_deleteRequestedAtHasBeenSet = false;
   bool m_registeredByHasBeenSet = false;
   bool m_ephemeralStorageHasBeenSet = false;
   bool m_enableFaultInjectionHasBeenSet = false;

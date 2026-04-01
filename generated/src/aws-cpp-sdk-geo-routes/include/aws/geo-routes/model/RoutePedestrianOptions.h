@@ -17,7 +17,10 @@ namespace GeoRoutes {
 namespace Model {
 
 /**
- * <p>Options related to the pedestrian.</p><p><h3>See Also:</h3>   <a
+ * <p> Options related to the pedestrian. Not supported in
+ * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+ * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+ * customers. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/RoutePedestrianOptions">AWS
  * API Reference</a></p>
  */

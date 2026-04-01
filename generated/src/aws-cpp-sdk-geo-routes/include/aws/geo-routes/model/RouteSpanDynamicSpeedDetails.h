@@ -17,8 +17,8 @@ namespace GeoRoutes {
 namespace Model {
 
 /**
- * <p>Details about the dynamic speed.</p> <p> <b>Unit</b>:
- * <code>KilometersPerHour</code> </p><p><h3>See Also:</h3>   <a
+ * <p>Details about the dynamic speed.</p> <p> <b>Unit</b>: <code>kilometers per
+ * hour</code> </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/RouteSpanDynamicSpeedDetails">AWS
  * API Reference</a></p>
  */
@@ -32,7 +32,7 @@ class RouteSpanDynamicSpeedDetails {
   ///@{
   /**
    * <p>Estimated speed while traversing the span without traffic congestion.</p> <p>
-   * <b>Unit</b>: <code>KilometersPerHour</code> </p>
+   * <b>Unit</b>: <code>kilometers per hour</code> </p>
    */
   inline double GetBestCaseSpeed() const { return m_bestCaseSpeed; }
   inline bool BestCaseSpeedHasBeenSet() const { return m_bestCaseSpeedHasBeenSet; }
@@ -66,7 +66,7 @@ class RouteSpanDynamicSpeedDetails {
   ///@{
   /**
    * <p>Estimated speed while traversing the span under typical traffic
-   * congestion.</p> <p> <b>Unit</b>: <code>KilometersPerHour</code> </p>
+   * congestion.</p> <p> <b>Unit</b>: <code>kilometers per hour</code> </p>
    */
   inline double GetTypicalSpeed() const { return m_typicalSpeed; }
   inline bool TypicalSpeedHasBeenSet() const { return m_typicalSpeedHasBeenSet; }

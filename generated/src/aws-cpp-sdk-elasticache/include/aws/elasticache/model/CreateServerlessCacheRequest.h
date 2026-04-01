@@ -9,6 +9,7 @@
 #include <aws/elasticache/ElastiCacheRequest.h>
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/model/CacheUsageLimits.h>
+#include <aws/elasticache/model/NetworkType.h>
 #include <aws/elasticache/model/Tag.h>
 
 #include <utility>
@@ -275,10 +276,9 @@ class CreateServerlessCacheRequest : public ElastiCacheRequest {
 
   ///@{
   /**
-   * <p>The number of snapshots that will be retained for the serverless cache that
-   * is being created. As new snapshots beyond this limit are added, the oldest
-   * snapshots will be deleted on a rolling basis. Available for Valkey, Redis OSS
-   * and Serverless Memcached only.</p>
+   * <p>The number of days for which ElastiCache retains automatic snapshots before
+   * deleting them. Available for Valkey, Redis OSS and Serverless Memcached only.
+   * The maximum value allowed is 35 days.</p>
    */
   inline int GetSnapshotRetentionLimit() const { return m_snapshotRetentionLimit; }
   inline bool SnapshotRetentionLimitHasBeenSet() const { return m_snapshotRetentionLimitHasBeenSet; }
@@ -312,6 +312,26 @@ class CreateServerlessCacheRequest : public ElastiCacheRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The IP protocol version used by the serverless cache. Must be either
+   * <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>.
+   * <code>ipv6</code> is only supported with ipv6-only subnets. If not specified,
+   * defaults to <code>ipv4</code>, unless all provided subnets are IPv6-only, in
+   * which case it defaults to <code>ipv6</code>. </p>
+   */
+  inline NetworkType GetNetworkType() const { return m_networkType; }
+  inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+  inline void SetNetworkType(NetworkType value) {
+    m_networkTypeHasBeenSet = true;
+    m_networkType = value;
+  }
+  inline CreateServerlessCacheRequest& WithNetworkType(NetworkType value) {
+    SetNetworkType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_serverlessCacheName;
 
@@ -338,6 +358,8 @@ class CreateServerlessCacheRequest : public ElastiCacheRequest {
   int m_snapshotRetentionLimit{0};
 
   Aws::String m_dailySnapshotTime;
+
+  NetworkType m_networkType{NetworkType::NOT_SET};
   bool m_serverlessCacheNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_engineHasBeenSet = false;
@@ -351,6 +373,7 @@ class CreateServerlessCacheRequest : public ElastiCacheRequest {
   bool m_subnetIdsHasBeenSet = false;
   bool m_snapshotRetentionLimitHasBeenSet = false;
   bool m_dailySnapshotTimeHasBeenSet = false;
+  bool m_networkTypeHasBeenSet = false;
 };
 
 }  // namespace Model

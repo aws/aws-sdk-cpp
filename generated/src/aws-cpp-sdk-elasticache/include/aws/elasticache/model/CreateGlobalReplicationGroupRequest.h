@@ -79,7 +79,8 @@ class CreateGlobalReplicationGroupRequest : public ElastiCacheRequest {
   ///@{
   /**
    * <p>The name of the primary cluster that accepts writes and will replicate
-   * updates to the secondary cluster.</p>
+   * updates to the secondary cluster. This value is stored as a lowercase
+   * string.</p>
    */
   inline const Aws::String& GetPrimaryReplicationGroupId() const { return m_primaryReplicationGroupId; }
   inline bool PrimaryReplicationGroupIdHasBeenSet() const { return m_primaryReplicationGroupIdHasBeenSet; }

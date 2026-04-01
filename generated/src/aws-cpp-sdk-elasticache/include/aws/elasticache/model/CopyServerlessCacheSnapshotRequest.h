@@ -56,7 +56,8 @@ class CopyServerlessCacheSnapshotRequest : public ElastiCacheRequest {
   ///@{
   /**
    * <p>The identifier for the snapshot to be created. Available for Valkey, Redis
-   * OSS and Serverless Memcached only.</p>
+   * OSS and Serverless Memcached only. This value is stored as a lowercase
+   * string.</p>
    */
   inline const Aws::String& GetTargetServerlessCacheSnapshotName() const { return m_targetServerlessCacheSnapshotName; }
   inline bool TargetServerlessCacheSnapshotNameHasBeenSet() const { return m_targetServerlessCacheSnapshotNameHasBeenSet; }

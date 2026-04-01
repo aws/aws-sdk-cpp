@@ -23,10 +23,14 @@ namespace GeoRoutes {
 namespace Model {
 
 /**
- * <p>Features that are avoided while calculating isolines. Avoidance is on a
- * best-case basis. If an avoidance can't be satisfied for a particular case, it
- * violates the avoidance and the returned response produces a notice for the
- * violation.</p><p><h3>See Also:</h3>   <a
+ * <p>Specifies features of the road network to avoid when calculating reachable
+ * areas. These preferences guide route calculations but may be overridden when no
+ * reasonable alternative exists. For example, if avoiding toll roads would make an
+ * area unreachable, toll roads may still be used.</p> <p>Avoidance options include
+ * physical features (like ferries and tunnels), road characteristics (like dirt
+ * roads and highways), and regulated areas (like congestion zones). They can be
+ * combined to match specific routing needs, such as avoiding both toll roads and
+ * ferries.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/IsolineAvoidanceOptions">AWS
  * API Reference</a></p>
  */
@@ -39,7 +43,8 @@ class IsolineAvoidanceOptions {
 
   ///@{
   /**
-   * <p>Areas to be avoided.</p>
+   * <p>Specifies geographic areas to avoid where possible. Routes may still pass
+   * through these areas if no reasonable alternative exists.</p>
    */
   inline const Aws::Vector<IsolineAvoidanceArea>& GetAreas() const { return m_areas; }
   inline bool AreasHasBeenSet() const { return m_areasHasBeenSet; }
@@ -63,7 +68,9 @@ class IsolineAvoidanceOptions {
 
   ///@{
   /**
-   * <p>Avoid car-shuttle-trains while calculating an isoline.</p>
+   * <p>Indicates a preference to avoid car shuttle trains (auto trains) where
+   * possible. These may still be included if no reasonable alternative route
+   * exists.</p>
    */
   inline bool GetCarShuttleTrains() const { return m_carShuttleTrains; }
   inline bool CarShuttleTrainsHasBeenSet() const { return m_carShuttleTrainsHasBeenSet; }
@@ -79,7 +86,10 @@ class IsolineAvoidanceOptions {
 
   ///@{
   /**
-   * <p>Avoid controlled access highways while calculating an isoline.</p>
+   * <p>Indicates a preference to avoid controlled-access highways (such as
+   * interstate highways or motorways) where possible. If a viable route cannot be
+   * calculated using only local roads, controlled-access highways may still be
+   * included.</p>
    */
   inline bool GetControlledAccessHighways() const { return m_controlledAccessHighways; }
   inline bool ControlledAccessHighwaysHasBeenSet() const { return m_controlledAccessHighwaysHasBeenSet; }
@@ -95,7 +105,8 @@ class IsolineAvoidanceOptions {
 
   ///@{
   /**
-   * <p>Avoid dirt roads while calculating an isoline.</p>
+   * <p>Indicates a preference to avoid unpaved or dirt roads where possible. Routes
+   * may still include dirt roads if no reasonable paved alternative exists.</p>
    */
   inline bool GetDirtRoads() const { return m_dirtRoads; }
   inline bool DirtRoadsHasBeenSet() const { return m_dirtRoadsHasBeenSet; }
@@ -111,7 +122,8 @@ class IsolineAvoidanceOptions {
 
   ///@{
   /**
-   * <p>Avoid ferries while calculating an isoline.</p>
+   * <p>Indicates a preference to avoid ferries where possible. If a viable route
+   * cannot be calculated without using ferries, they may still be included.</p>
    */
   inline bool GetFerries() const { return m_ferries; }
   inline bool FerriesHasBeenSet() const { return m_ferriesHasBeenSet; }
@@ -127,7 +139,9 @@ class IsolineAvoidanceOptions {
 
   ///@{
   /**
-   * <p>Avoid roads that have seasonal closure while calculating an isoline.</p>
+   * <p>Indicates a preference to avoid roads that may be subject to seasonal
+   * closures where possible. These roads may still be included if no reasonable
+   * year-round alternative exists.</p>
    */
   inline bool GetSeasonalClosure() const { return m_seasonalClosure; }
   inline bool SeasonalClosureHasBeenSet() const { return m_seasonalClosureHasBeenSet; }
@@ -143,8 +157,8 @@ class IsolineAvoidanceOptions {
 
   ///@{
   /**
-   * <p>Avoids roads where the specified toll transponders are the only mode of
-   * payment.</p>
+   * <p>Indicates a preference to avoid toll roads where possible. If a viable route
+   * cannot be calculated without using toll roads, they may still be included.</p>
    */
   inline bool GetTollRoads() const { return m_tollRoads; }
   inline bool TollRoadsHasBeenSet() const { return m_tollRoadsHasBeenSet; }
@@ -160,8 +174,9 @@ class IsolineAvoidanceOptions {
 
   ///@{
   /**
-   * <p>Avoids roads where the specified toll transponders are the only mode of
-   * payment.</p>
+   * <p>Indicates a preference to avoid roads that require electronic toll collection
+   * transponders where possible. These roads may still be included if no viable
+   * alternative route exists.</p>
    */
   inline bool GetTollTransponders() const { return m_tollTransponders; }
   inline bool TollTranspondersHasBeenSet() const { return m_tollTranspondersHasBeenSet; }
@@ -177,10 +192,11 @@ class IsolineAvoidanceOptions {
 
   ///@{
   /**
-   * <p>Truck road type identifiers. <code>BK1</code> through <code>BK4</code> apply
-   * only to Sweden. <code>A2,A4,B2,B4,C,D,ET2,ET4</code> apply only to Mexico.</p>
-   *  <p>There are currently no other supported values as of 26th April
-   * 2024.</p>
+   * <p>For truck travel modes, indicates specific road classification types in
+   * Sweden (<code> BK1</code> through <code>BK4</code>) and Mexico (<code>A2, A4,
+   * B2, B4, C, D, ET2, ET4</code>) to avoid where possible. These road types may
+   * still be used if no reasonable alternative exists.</p>  <p>There are
+   * currently no other supported values as of 26th April 2024.</p>
    */
   inline const Aws::Vector<Aws::String>& GetTruckRoadTypes() const { return m_truckRoadTypes; }
   inline bool TruckRoadTypesHasBeenSet() const { return m_truckRoadTypesHasBeenSet; }
@@ -204,7 +220,8 @@ class IsolineAvoidanceOptions {
 
   ///@{
   /**
-   * <p>Avoid tunnels while calculating an isoline.</p>
+   * <p>Indicates a preference to avoid tunnels where possible. If a viable route
+   * cannot be calculated without using tunnels, they may still be included.</p>
    */
   inline bool GetTunnels() const { return m_tunnels; }
   inline bool TunnelsHasBeenSet() const { return m_tunnelsHasBeenSet; }
@@ -220,7 +237,9 @@ class IsolineAvoidanceOptions {
 
   ///@{
   /**
-   * <p>Avoid U-turns for calculation on highways and motorways.</p>
+   * <p>Indicates a preference to avoid U-turns where possible. U-turns may still be
+   * included if necessary to reach certain areas or when no reasonable alternative
+   * exists.</p>
    */
   inline bool GetUTurns() const { return m_uTurns; }
   inline bool UTurnsHasBeenSet() const { return m_uTurnsHasBeenSet; }
@@ -236,7 +255,9 @@ class IsolineAvoidanceOptions {
 
   ///@{
   /**
-   * <p>Zone categories to be avoided.</p>
+   * <p>Indicates types of regulated zones (such as congestion pricing or
+   * environmental zones) to avoid where possible. Routes may still pass through
+   * these zones if no reasonable alternative exists.</p>
    */
   inline const Aws::Vector<IsolineAvoidanceZoneCategory>& GetZoneCategories() const { return m_zoneCategories; }
   inline bool ZoneCategoriesHasBeenSet() const { return m_zoneCategoriesHasBeenSet; }

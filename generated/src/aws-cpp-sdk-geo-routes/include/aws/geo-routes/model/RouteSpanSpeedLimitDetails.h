@@ -18,7 +18,7 @@ namespace Model {
 
 /**
  * <p>Details about the speed limit corresponding to the span.</p> <p> <b>Unit</b>:
- * <code>KilometersPerHour</code> </p><p><h3>See Also:</h3>   <a
+ * <code>kilometers per hour</code> </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/RouteSpanSpeedLimitDetails">AWS
  * API Reference</a></p>
  */
@@ -31,7 +31,7 @@ class RouteSpanSpeedLimitDetails {
 
   ///@{
   /**
-   * <p>Maximum speed.</p> <p> <b>Unit</b>: <code>KilometersPerHour</code> </p>
+   * <p>Maximum speed.</p> <p> <b>Unit</b>: <code>kilometers per hour</code> </p>
    */
   inline double GetMaxSpeed() const { return m_maxSpeed; }
   inline bool MaxSpeedHasBeenSet() const { return m_maxSpeedHasBeenSet; }

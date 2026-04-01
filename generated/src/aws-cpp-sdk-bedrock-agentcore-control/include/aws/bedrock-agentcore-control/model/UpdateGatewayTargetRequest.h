@@ -8,6 +8,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/CredentialProviderConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/MetadataConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/PrivateEndpoint.h>
 #include <aws/bedrock-agentcore-control/model/TargetConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -164,6 +165,25 @@ class UpdateGatewayTargetRequest : public BedrockAgentCoreControlRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The private endpoint configuration for the gateway target. Use this to
+   * connect the gateway to private resources in your VPC.</p>
+   */
+  inline const PrivateEndpoint& GetPrivateEndpoint() const { return m_privateEndpoint; }
+  inline bool PrivateEndpointHasBeenSet() const { return m_privateEndpointHasBeenSet; }
+  template <typename PrivateEndpointT = PrivateEndpoint>
+  void SetPrivateEndpoint(PrivateEndpointT&& value) {
+    m_privateEndpointHasBeenSet = true;
+    m_privateEndpoint = std::forward<PrivateEndpointT>(value);
+  }
+  template <typename PrivateEndpointT = PrivateEndpoint>
+  UpdateGatewayTargetRequest& WithPrivateEndpoint(PrivateEndpointT&& value) {
+    SetPrivateEndpoint(std::forward<PrivateEndpointT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_gatewayIdentifier;
 
@@ -178,6 +198,8 @@ class UpdateGatewayTargetRequest : public BedrockAgentCoreControlRequest {
   Aws::Vector<CredentialProviderConfiguration> m_credentialProviderConfigurations;
 
   MetadataConfiguration m_metadataConfiguration;
+
+  PrivateEndpoint m_privateEndpoint;
   bool m_gatewayIdentifierHasBeenSet = false;
   bool m_targetIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -185,6 +207,7 @@ class UpdateGatewayTargetRequest : public BedrockAgentCoreControlRequest {
   bool m_targetConfigurationHasBeenSet = false;
   bool m_credentialProviderConfigurationsHasBeenSet = false;
   bool m_metadataConfigurationHasBeenSet = false;
+  bool m_privateEndpointHasBeenSet = false;
 };
 
 }  // namespace Model

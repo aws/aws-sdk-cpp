@@ -199,7 +199,7 @@ class ModifyServerlessCacheRequest : public ElastiCacheRequest {
   ///@{
   /**
    * <p>Modifies the engine listed in a serverless cache request. The options are
-   * redis, memcached or valkey.</p>
+   * valkey, memcached or redis.</p>
    */
   inline const Aws::String& GetEngine() const { return m_engine; }
   inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }

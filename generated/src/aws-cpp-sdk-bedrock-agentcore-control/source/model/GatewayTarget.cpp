@@ -75,6 +75,19 @@ GatewayTarget& GatewayTarget::operator=(JsonView jsonValue) {
     m_metadataConfiguration = jsonValue.GetObject("metadataConfiguration");
     m_metadataConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("privateEndpoint")) {
+    m_privateEndpoint = jsonValue.GetObject("privateEndpoint");
+    m_privateEndpointHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("privateEndpointManagedResources")) {
+    Aws::Utils::Array<JsonView> privateEndpointManagedResourcesJsonList = jsonValue.GetArray("privateEndpointManagedResources");
+    for (unsigned privateEndpointManagedResourcesIndex = 0;
+         privateEndpointManagedResourcesIndex < privateEndpointManagedResourcesJsonList.GetLength();
+         ++privateEndpointManagedResourcesIndex) {
+      m_privateEndpointManagedResources.push_back(privateEndpointManagedResourcesJsonList[privateEndpointManagedResourcesIndex].AsObject());
+    }
+    m_privateEndpointManagedResourcesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -138,6 +151,21 @@ JsonValue GatewayTarget::Jsonize() const {
 
   if (m_metadataConfigurationHasBeenSet) {
     payload.WithObject("metadataConfiguration", m_metadataConfiguration.Jsonize());
+  }
+
+  if (m_privateEndpointHasBeenSet) {
+    payload.WithObject("privateEndpoint", m_privateEndpoint.Jsonize());
+  }
+
+  if (m_privateEndpointManagedResourcesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> privateEndpointManagedResourcesJsonList(m_privateEndpointManagedResources.size());
+    for (unsigned privateEndpointManagedResourcesIndex = 0;
+         privateEndpointManagedResourcesIndex < privateEndpointManagedResourcesJsonList.GetLength();
+         ++privateEndpointManagedResourcesIndex) {
+      privateEndpointManagedResourcesJsonList[privateEndpointManagedResourcesIndex].AsObject(
+          m_privateEndpointManagedResources[privateEndpointManagedResourcesIndex].Jsonize());
+    }
+    payload.WithArray("privateEndpointManagedResources", std::move(privateEndpointManagedResourcesJsonList));
   }
 
   return payload;

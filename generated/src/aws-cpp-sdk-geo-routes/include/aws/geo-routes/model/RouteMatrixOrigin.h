@@ -21,7 +21,8 @@ namespace GeoRoutes {
 namespace Model {
 
 /**
- * <p>The start position for the route.</p><p><h3>See Also:</h3>   <a
+ * <p>The start position for the route in World Geodetic System (WGS 84) format:
+ * [longitude, latitude].</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/RouteMatrixOrigin">AWS
  * API Reference</a></p>
  */
@@ -34,7 +35,10 @@ class RouteMatrixOrigin {
 
   ///@{
   /**
-   * <p>Origin related options.</p>
+   * <p> Origin related options. Not supported in <code>ap-southeast-1</code> and
+   * <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const RouteMatrixOriginOptions& GetOptions() const { return m_options; }
   inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
@@ -52,7 +56,7 @@ class RouteMatrixOrigin {
 
   ///@{
   /**
-   * <p>Position defined as <code>[longitude, latitude]</code>.</p>
+   * <p>Position in World Geodetic System (WGS 84) format: [longitude, latitude].</p>
    */
   inline const Aws::Vector<double>& GetPosition() const { return m_position; }
   inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }

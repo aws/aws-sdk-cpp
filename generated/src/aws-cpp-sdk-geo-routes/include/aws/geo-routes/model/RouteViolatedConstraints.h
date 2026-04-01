@@ -164,7 +164,7 @@ class RouteViolatedConstraints {
 
   ///@{
   /**
-   * <p>The maximum weight of the route.</p> <p> <b>Unit</b>: <code>Kilograms</code>
+   * <p>The maximum weight of the route.</p> <p> <b>Unit</b>: <code>kilograms</code>
    * </p>
    */
   inline const RouteWeightConstraint& GetMaxWeight() const { return m_maxWeight; }
@@ -184,7 +184,7 @@ class RouteViolatedConstraints {
   ///@{
   /**
    * <p>The maximum weight per axle of the vehicle.</p> <p> <b>Unit</b>:
-   * <code>Kilograms</code> </p>
+   * <code>kilograms</code> </p>
    */
   inline long long GetMaxWeightPerAxle() const { return m_maxWeightPerAxle; }
   inline bool MaxWeightPerAxleHasBeenSet() const { return m_maxWeightPerAxleHasBeenSet; }
@@ -201,7 +201,7 @@ class RouteViolatedConstraints {
   ///@{
   /**
    * <p>The maximum weight per axle group of the vehicle.</p> <p> <b>Unit</b>:
-   * <code>Kilograms</code> </p>
+   * <code>kilograms</code> </p>
    */
   inline const WeightPerAxleGroup& GetMaxWeightPerAxleGroup() const { return m_maxWeightPerAxleGroup; }
   inline bool MaxWeightPerAxleGroupHasBeenSet() const { return m_maxWeightPerAxleGroupHasBeenSet; }
@@ -235,7 +235,7 @@ class RouteViolatedConstraints {
 
   ///@{
   /**
-   * <p>The number of occupants in the vehicle.</p> <p>Default Value: <code>1</code>
+   * <p>The number of occupants in the vehicle.</p> <p>Default value: <code>1</code>
    * </p>
    */
   inline const RouteNoticeDetailRange& GetOccupancy() const { return m_occupancy; }
@@ -288,7 +288,7 @@ class RouteViolatedConstraints {
 
   ///@{
   /**
-   * <p>Number of trailers attached to the vehicle.</p> <p>Default Value:
+   * <p>Number of trailers attached to the vehicle.</p> <p>Default value:
    * <code>0</code> </p>
    */
   inline const RouteNoticeDetailRange& GetTrailerCount() const { return m_trailerCount; }
@@ -344,7 +344,9 @@ class RouteViolatedConstraints {
 
   ///@{
   /**
-   * <p>Type of the truck.</p>
+   * <p>The type of truck: <code>LightTruck</code> for smaller delivery vehicles,
+   * <code> StraightTruck</code> for rigid body trucks, or <code>Tractor</code> for
+   * tractor-trailer combinations.</p>
    */
   inline RouteTruckType GetTruckType() const { return m_truckType; }
   inline bool TruckTypeHasBeenSet() const { return m_truckTypeHasBeenSet; }

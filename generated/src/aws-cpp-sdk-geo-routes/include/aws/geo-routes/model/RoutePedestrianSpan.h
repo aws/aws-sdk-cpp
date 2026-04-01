@@ -112,7 +112,7 @@ class RoutePedestrianSpan {
   ///@{
   /**
    * <p>Dynamic speed details corresponding to the span.</p> <p> <b>Unit</b>:
-   * <code>KilometersPerHour</code> </p>
+   * <code>kilometers per hour</code> </p>
    */
   inline const RouteSpanDynamicSpeedDetails& GetDynamicSpeed() const { return m_dynamicSpeed; }
   inline bool DynamicSpeedHasBeenSet() const { return m_dynamicSpeedHasBeenSet; }
@@ -130,7 +130,19 @@ class RoutePedestrianSpan {
 
   ///@{
   /**
-   * <p>Functional classification of the road segment corresponding to the span.</p>
+   * <p>A numerical value indicating the functional classification of the road
+   * segment corresponding to the span.</p> <p>Classification values are part of the
+   * hierarchical network that helps determine a logical and efficient route, and
+   * have the following definitions:</p> <ol> <li> <p>Roads that allow for high
+   * volume, maximum speed traffic movement between and through major metropolitan
+   * areas.</p> </li> <li> <p>Roads that are used to channel traffic to functional
+   * class 1 roads for travel between and through cities in the shortest amount of
+   * time.</p> </li> <li> <p>Roads that intersect functional class 2 roads and
+   * provide a high volume of traffic movement at a lower level of mobility than
+   * functional class 2 roads.</p> </li> <li> <p>Roads that provide for a high volume
+   * of traffic movement at moderate speeds between neighborhoods.</p> </li> <li>
+   * <p>Roads with volume and traffic movement below the level of any other
+   * functional class.</p> </li> </ol>
    */
   inline int GetFunctionalClassification() const { return m_functionalClassification; }
   inline bool FunctionalClassificationHasBeenSet() const { return m_functionalClassificationHasBeenSet; }
@@ -300,7 +312,7 @@ class RoutePedestrianSpan {
   ///@{
   /**
    * <p>Speed limit details corresponding to the span.</p> <p> <b>Unit</b>:
-   * <code>KilometersPerHour</code> </p>
+   * <code>kilometers per hour</code> </p>
    */
   inline const RouteSpanSpeedLimitDetails& GetSpeedLimit() const { return m_speedLimit; }
   inline bool SpeedLimitHasBeenSet() const { return m_speedLimitHasBeenSet; }

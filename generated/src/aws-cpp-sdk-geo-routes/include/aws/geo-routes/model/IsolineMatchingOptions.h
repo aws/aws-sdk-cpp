@@ -21,7 +21,9 @@ namespace GeoRoutes {
 namespace Model {
 
 /**
- * <p>Isoline matching related options.</p><p><h3>See Also:</h3>   <a
+ * <p>Controls how origin and destination points are matched to the road network
+ * when they don't fall exactly on a road. Matching options help ensure realistic
+ * routing by connecting points to appropriate roads.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/IsolineMatchingOptions">AWS
  * API Reference</a></p>
  */
@@ -34,8 +36,8 @@ class IsolineMatchingOptions {
 
   ///@{
   /**
-   * <p>Attempts to match the provided position to a road similar to the provided
-   * name.</p>
+   * <p>The expected street name near the point. Helps disambiguate matching when
+   * multiple roads are within range.</p>
    */
   inline const Aws::String& GetNameHint() const { return m_nameHint; }
   inline bool NameHintHasBeenSet() const { return m_nameHintHasBeenSet; }
@@ -53,9 +55,9 @@ class IsolineMatchingOptions {
 
   ///@{
   /**
-   * <p>If the distance to a highway/bridge/tunnel/sliproad is within threshold, the
-   * waypoint will be snapped to the highway/bridge/tunnel/sliproad.</p> <p>
-   * <b>Unit</b>: <code>meters</code> </p>
+   * <p>The maximum distance in meters that a point can be from a road while still
+   * being considered "on" that road. Points further than this distance require
+   * explicit matching.</p> <p> <b>Unit</b>: <code>meters</code> </p>
    */
   inline long long GetOnRoadThreshold() const { return m_onRoadThreshold; }
   inline bool OnRoadThresholdHasBeenSet() const { return m_onRoadThresholdHasBeenSet; }
@@ -71,9 +73,10 @@ class IsolineMatchingOptions {
 
   ///@{
   /**
-   * <p>Considers all roads within the provided radius to match the provided
-   * destination to. The roads that are considered are determined by the provided
-   * Strategy.</p> <p> <b>Unit</b>: <code>Meters</code> </p>
+   * <p>The maximum distance in meters to search for roads to match to. Points with
+   * no roads within this radius will fail to match. The roads that are considered
+   * within this radius are determined by the specified <code>Strategy</code> </p>
+   * <p> <b>Unit</b>: <code>meters</code> </p>
    */
   inline long long GetRadius() const { return m_radius; }
   inline bool RadiusHasBeenSet() const { return m_radiusHasBeenSet; }
@@ -89,9 +92,9 @@ class IsolineMatchingOptions {
 
   ///@{
   /**
-   * <p>Strategy that defines matching of the position onto the road network.
-   * MatchAny considers all roads possible, whereas MatchMostSignificantRoad matches
-   * to the most significant road.</p>
+   * <p>Determines how points are matched to the road network. <code>MatchAny</code>
+   * finds the nearest viable road segment, while
+   * <code>MatchMostSignificantRoad</code> prioritizes major roads.</p>
    */
   inline MatchingStrategy GetStrategy() const { return m_strategy; }
   inline bool StrategyHasBeenSet() const { return m_strategyHasBeenSet; }

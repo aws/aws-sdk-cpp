@@ -22,6 +22,7 @@
 #include <aws/ecs/ECSErrorMarshaller.h>
 #include <aws/ecs/model/CreateCapacityProviderRequest.h>
 #include <aws/ecs/model/CreateClusterRequest.h>
+#include <aws/ecs/model/CreateDaemonRequest.h>
 #include <aws/ecs/model/CreateExpressGatewayServiceRequest.h>
 #include <aws/ecs/model/CreateServiceRequest.h>
 #include <aws/ecs/model/CreateTaskSetRequest.h>
@@ -29,6 +30,8 @@
 #include <aws/ecs/model/DeleteAttributesRequest.h>
 #include <aws/ecs/model/DeleteCapacityProviderRequest.h>
 #include <aws/ecs/model/DeleteClusterRequest.h>
+#include <aws/ecs/model/DeleteDaemonRequest.h>
+#include <aws/ecs/model/DeleteDaemonTaskDefinitionRequest.h>
 #include <aws/ecs/model/DeleteExpressGatewayServiceRequest.h>
 #include <aws/ecs/model/DeleteServiceRequest.h>
 #include <aws/ecs/model/DeleteTaskDefinitionsRequest.h>
@@ -38,6 +41,10 @@
 #include <aws/ecs/model/DescribeCapacityProvidersRequest.h>
 #include <aws/ecs/model/DescribeClustersRequest.h>
 #include <aws/ecs/model/DescribeContainerInstancesRequest.h>
+#include <aws/ecs/model/DescribeDaemonDeploymentsRequest.h>
+#include <aws/ecs/model/DescribeDaemonRequest.h>
+#include <aws/ecs/model/DescribeDaemonRevisionsRequest.h>
+#include <aws/ecs/model/DescribeDaemonTaskDefinitionRequest.h>
 #include <aws/ecs/model/DescribeExpressGatewayServiceRequest.h>
 #include <aws/ecs/model/DescribeServiceDeploymentsRequest.h>
 #include <aws/ecs/model/DescribeServiceRevisionsRequest.h>
@@ -52,6 +59,9 @@
 #include <aws/ecs/model/ListAttributesRequest.h>
 #include <aws/ecs/model/ListClustersRequest.h>
 #include <aws/ecs/model/ListContainerInstancesRequest.h>
+#include <aws/ecs/model/ListDaemonDeploymentsRequest.h>
+#include <aws/ecs/model/ListDaemonTaskDefinitionsRequest.h>
+#include <aws/ecs/model/ListDaemonsRequest.h>
 #include <aws/ecs/model/ListServiceDeploymentsRequest.h>
 #include <aws/ecs/model/ListServicesByNamespaceRequest.h>
 #include <aws/ecs/model/ListServicesRequest.h>
@@ -64,6 +74,7 @@
 #include <aws/ecs/model/PutAttributesRequest.h>
 #include <aws/ecs/model/PutClusterCapacityProvidersRequest.h>
 #include <aws/ecs/model/RegisterContainerInstanceRequest.h>
+#include <aws/ecs/model/RegisterDaemonTaskDefinitionRequest.h>
 #include <aws/ecs/model/RegisterTaskDefinitionRequest.h>
 #include <aws/ecs/model/RunTaskRequest.h>
 #include <aws/ecs/model/StartTaskRequest.h>
@@ -79,6 +90,7 @@
 #include <aws/ecs/model/UpdateClusterSettingsRequest.h>
 #include <aws/ecs/model/UpdateContainerAgentRequest.h>
 #include <aws/ecs/model/UpdateContainerInstancesStateRequest.h>
+#include <aws/ecs/model/UpdateDaemonRequest.h>
 #include <aws/ecs/model/UpdateExpressGatewayServiceRequest.h>
 #include <aws/ecs/model/UpdateServicePrimaryTaskSetRequest.h>
 #include <aws/ecs/model/UpdateServiceRequest.h>
@@ -244,6 +256,11 @@ CreateClusterOutcome ECSClient::CreateCluster(const CreateClusterRequest& reques
   return result.IsSuccess() ? CreateClusterOutcome(result.GetResultWithOwnership()) : CreateClusterOutcome(std::move(result.GetError()));
 }
 
+CreateDaemonOutcome ECSClient::CreateDaemon(const CreateDaemonRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDaemonOutcome(result.GetResultWithOwnership()) : CreateDaemonOutcome(std::move(result.GetError()));
+}
+
 CreateExpressGatewayServiceOutcome ECSClient::CreateExpressGatewayService(const CreateExpressGatewayServiceRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateExpressGatewayServiceOutcome(result.GetResultWithOwnership())
@@ -281,6 +298,17 @@ DeleteCapacityProviderOutcome ECSClient::DeleteCapacityProvider(const DeleteCapa
 DeleteClusterOutcome ECSClient::DeleteCluster(const DeleteClusterRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteClusterOutcome(result.GetResultWithOwnership()) : DeleteClusterOutcome(std::move(result.GetError()));
+}
+
+DeleteDaemonOutcome ECSClient::DeleteDaemon(const DeleteDaemonRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDaemonOutcome(result.GetResultWithOwnership()) : DeleteDaemonOutcome(std::move(result.GetError()));
+}
+
+DeleteDaemonTaskDefinitionOutcome ECSClient::DeleteDaemonTaskDefinition(const DeleteDaemonTaskDefinitionRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDaemonTaskDefinitionOutcome(result.GetResultWithOwnership())
+                            : DeleteDaemonTaskDefinitionOutcome(std::move(result.GetError()));
 }
 
 DeleteExpressGatewayServiceOutcome ECSClient::DeleteExpressGatewayService(const DeleteExpressGatewayServiceRequest& request) const {
@@ -333,6 +361,29 @@ DescribeContainerInstancesOutcome ECSClient::DescribeContainerInstances(const De
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeContainerInstancesOutcome(result.GetResultWithOwnership())
                             : DescribeContainerInstancesOutcome(std::move(result.GetError()));
+}
+
+DescribeDaemonOutcome ECSClient::DescribeDaemon(const DescribeDaemonRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDaemonOutcome(result.GetResultWithOwnership()) : DescribeDaemonOutcome(std::move(result.GetError()));
+}
+
+DescribeDaemonDeploymentsOutcome ECSClient::DescribeDaemonDeployments(const DescribeDaemonDeploymentsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDaemonDeploymentsOutcome(result.GetResultWithOwnership())
+                            : DescribeDaemonDeploymentsOutcome(std::move(result.GetError()));
+}
+
+DescribeDaemonRevisionsOutcome ECSClient::DescribeDaemonRevisions(const DescribeDaemonRevisionsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDaemonRevisionsOutcome(result.GetResultWithOwnership())
+                            : DescribeDaemonRevisionsOutcome(std::move(result.GetError()));
+}
+
+DescribeDaemonTaskDefinitionOutcome ECSClient::DescribeDaemonTaskDefinition(const DescribeDaemonTaskDefinitionRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDaemonTaskDefinitionOutcome(result.GetResultWithOwnership())
+                            : DescribeDaemonTaskDefinitionOutcome(std::move(result.GetError()));
 }
 
 DescribeExpressGatewayServiceOutcome ECSClient::DescribeExpressGatewayService(const DescribeExpressGatewayServiceRequest& request) const {
@@ -415,6 +466,23 @@ ListContainerInstancesOutcome ECSClient::ListContainerInstances(const ListContai
                             : ListContainerInstancesOutcome(std::move(result.GetError()));
 }
 
+ListDaemonDeploymentsOutcome ECSClient::ListDaemonDeployments(const ListDaemonDeploymentsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDaemonDeploymentsOutcome(result.GetResultWithOwnership())
+                            : ListDaemonDeploymentsOutcome(std::move(result.GetError()));
+}
+
+ListDaemonTaskDefinitionsOutcome ECSClient::ListDaemonTaskDefinitions(const ListDaemonTaskDefinitionsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDaemonTaskDefinitionsOutcome(result.GetResultWithOwnership())
+                            : ListDaemonTaskDefinitionsOutcome(std::move(result.GetError()));
+}
+
+ListDaemonsOutcome ECSClient::ListDaemons(const ListDaemonsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDaemonsOutcome(result.GetResultWithOwnership()) : ListDaemonsOutcome(std::move(result.GetError()));
+}
+
 ListServiceDeploymentsOutcome ECSClient::ListServiceDeployments(const ListServiceDeploymentsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListServiceDeploymentsOutcome(result.GetResultWithOwnership())
@@ -482,6 +550,12 @@ RegisterContainerInstanceOutcome ECSClient::RegisterContainerInstance(const Regi
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? RegisterContainerInstanceOutcome(result.GetResultWithOwnership())
                             : RegisterContainerInstanceOutcome(std::move(result.GetError()));
+}
+
+RegisterDaemonTaskDefinitionOutcome ECSClient::RegisterDaemonTaskDefinition(const RegisterDaemonTaskDefinitionRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterDaemonTaskDefinitionOutcome(result.GetResultWithOwnership())
+                            : RegisterDaemonTaskDefinitionOutcome(std::move(result.GetError()));
 }
 
 RegisterTaskDefinitionOutcome ECSClient::RegisterTaskDefinition(const RegisterTaskDefinitionRequest& request) const {
@@ -566,6 +640,11 @@ UpdateContainerInstancesStateOutcome ECSClient::UpdateContainerInstancesState(co
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateContainerInstancesStateOutcome(result.GetResultWithOwnership())
                             : UpdateContainerInstancesStateOutcome(std::move(result.GetError()));
+}
+
+UpdateDaemonOutcome ECSClient::UpdateDaemon(const UpdateDaemonRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDaemonOutcome(result.GetResultWithOwnership()) : UpdateDaemonOutcome(std::move(result.GetError()));
 }
 
 UpdateExpressGatewayServiceOutcome ECSClient::UpdateExpressGatewayService(const UpdateExpressGatewayServiceRequest& request) const {

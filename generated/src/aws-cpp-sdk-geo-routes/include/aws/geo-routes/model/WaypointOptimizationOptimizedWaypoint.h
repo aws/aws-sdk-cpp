@@ -73,7 +73,7 @@ class WaypointOptimizationOptimizedWaypoint {
 
   ///@{
   /**
-   * <p>Estimated time of departure from thr origin.</p> <p>Time
+   * <p>Estimated time of departure from the origin.</p> <p>Time
    * format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code>
    * </p> <p>Examples:</p> <p> <code>2020-04-22T17:57:24Z</code> </p> <p>
    * <code>2020-04-22T17:57:24+02:00</code> </p>
@@ -112,7 +112,7 @@ class WaypointOptimizationOptimizedWaypoint {
 
   ///@{
   /**
-   * <p>Position defined as <code>[longitude, latitude]</code>.</p>
+   * <p>Position in World Geodetic System (WGS 84) format: [longitude, latitude].</p>
    */
   inline const Aws::Vector<double>& GetPosition() const { return m_position; }
   inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }

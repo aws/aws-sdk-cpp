@@ -36,7 +36,7 @@ class RouteMatrixTravelModeOptions {
 
   ///@{
   /**
-   * <p>Travel mode options when the provided travel mode is "Car"</p>
+   * <p>Travel mode options when the provided travel mode is <code>Car</code>.</p>
    */
   inline const RouteMatrixCarOptions& GetCar() const { return m_car; }
   inline bool CarHasBeenSet() const { return m_carHasBeenSet; }
@@ -54,7 +54,7 @@ class RouteMatrixTravelModeOptions {
 
   ///@{
   /**
-   * <p>Travel mode options when the provided travel mode is <code>Scooter</code>
+   * <p>Travel mode options when the provided travel mode is <code>Scooter</code>.
    * </p>  <p>When travel mode is set to <code>Scooter</code>, then the
    * avoidance option <code>ControlledAccessHighways</code> defaults to
    * <code>true</code>.</p>
@@ -75,7 +75,7 @@ class RouteMatrixTravelModeOptions {
 
   ///@{
   /**
-   * <p>Travel mode options when the provided travel mode is "Truck"</p>
+   * <p>Travel mode options when the provided travel mode is <code>Truck</code>.</p>
    */
   inline const RouteMatrixTruckOptions& GetTruck() const { return m_truck; }
   inline bool TruckHasBeenSet() const { return m_truckHasBeenSet; }

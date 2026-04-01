@@ -38,4 +38,10 @@ void UpdateImageSetMetadataRequest::AddQueryStringParameters(URI& uri) const {
     uri.AddQueryStringParameter("force", ss.str());
     ss.str("");
   }
+
+  if (m_includeStudyImageSetsHasBeenSet) {
+    ss << m_includeStudyImageSets;
+    uri.AddQueryStringParameter("includeStudyImageSets", ss.str());
+    ss.str("");
+  }
 }
