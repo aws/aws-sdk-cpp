@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore/BedrockAgentCoreRequest.h>
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
+#include <aws/bedrock-agentcore/model/SessionFilter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -100,6 +101,24 @@ class ListSessionsRequest : public BedrockAgentCoreRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Filter criteria to apply when listing sessions.</p>
+   */
+  inline const SessionFilter& GetFilter() const { return m_filter; }
+  inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+  template <typename FilterT = SessionFilter>
+  void SetFilter(FilterT&& value) {
+    m_filterHasBeenSet = true;
+    m_filter = std::forward<FilterT>(value);
+  }
+  template <typename FilterT = SessionFilter>
+  ListSessionsRequest& WithFilter(FilterT&& value) {
+    SetFilter(std::forward<FilterT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_memoryId;
 
@@ -108,10 +127,13 @@ class ListSessionsRequest : public BedrockAgentCoreRequest {
   int m_maxResults{0};
 
   Aws::String m_nextToken;
+
+  SessionFilter m_filter;
   bool m_memoryIdHasBeenSet = false;
   bool m_actorIdHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
 };
 
 }  // namespace Model

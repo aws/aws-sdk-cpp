@@ -82,7 +82,10 @@ class RouteVehicleLegDetails {
 
   ///@{
   /**
-   * <p>Incidents corresponding to this leg of the route.</p>
+   * <p> Incidents corresponding to this leg of the route. Not supported in
+   * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const Aws::Vector<RouteVehicleIncident>& GetIncidents() const { return m_incidents; }
   inline bool IncidentsHasBeenSet() const { return m_incidentsHasBeenSet; }
@@ -106,8 +109,11 @@ class RouteVehicleLegDetails {
 
   ///@{
   /**
-   * <p>Notices are additional information returned that indicate issues that
-   * occurred during route calculation.</p>
+   * <p> Notices are additional information returned that indicate issues that
+   * occurred during route calculation. Not supported in <code>ap-southeast-1</code>
+   * and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const Aws::Vector<RouteVehicleNotice>& GetNotices() const { return m_notices; }
   inline bool NoticesHasBeenSet() const { return m_noticesHasBeenSet; }
@@ -156,7 +162,11 @@ class RouteVehicleLegDetails {
 
   ///@{
   /**
-   * <p>Spans that were computed for the requested SpanAdditionalFeatures.</p>
+   * <p> Spans that were computed for the requested SpanAdditionalFeatures. Not
+   * supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const Aws::Vector<RouteVehicleSpan>& GetSpans() const { return m_spans; }
   inline bool SpansHasBeenSet() const { return m_spansHasBeenSet; }
@@ -198,7 +208,10 @@ class RouteVehicleLegDetails {
 
   ///@{
   /**
-   * <p>Toll related options.</p>
+   * <p> Toll related options. Not supported in <code>ap-southeast-1</code> and
+   * <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const Aws::Vector<RouteToll>& GetTolls() const { return m_tolls; }
   inline bool TollsHasBeenSet() const { return m_tollsHasBeenSet; }
@@ -222,7 +235,11 @@ class RouteVehicleLegDetails {
 
   ///@{
   /**
-   * <p>Toll systems are authorities that collect payments for the toll.</p>
+   * <p> Toll systems are authorities that collect payments for the toll. Not
+   * supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const Aws::Vector<RouteTollSystem>& GetTollSystems() const { return m_tollSystems; }
   inline bool TollSystemsHasBeenSet() const { return m_tollSystemsHasBeenSet; }
@@ -271,10 +288,13 @@ class RouteVehicleLegDetails {
 
   ///@{
   /**
-   * <p>Truck road type identifiers. <code>BK1</code> through <code>BK4</code> apply
-   * only to Sweden. <code>A2,A4,B2,B4,C,D,ET2,ET4</code> apply only to Mexico.</p>
-   *  <p>There are currently no other supported values as of 26th April
-   * 2024.</p>
+   * <p> Truck road type identifiers. <code>BK1</code> through <code>BK4</code> apply
+   * only to Sweden. <code>A2,A4,B2,B4,C,D,ET2,ET4</code> apply only to Mexico. Not
+   * supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>  <p>There are currently no other supported values as of
+   * 26th April 2024.</p>
    */
   inline const Aws::Vector<Aws::String>& GetTruckRoadTypes() const { return m_truckRoadTypes; }
   inline bool TruckRoadTypesHasBeenSet() const { return m_truckRoadTypesHasBeenSet; }
@@ -298,7 +318,10 @@ class RouteVehicleLegDetails {
 
   ///@{
   /**
-   * <p>Zones corresponding to this leg of the route.</p>
+   * <p> Zones corresponding to this leg of the route. Not supported in
+   * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const Aws::Vector<RouteZone>& GetZones() const { return m_zones; }
   inline bool ZonesHasBeenSet() const { return m_zonesHasBeenSet; }

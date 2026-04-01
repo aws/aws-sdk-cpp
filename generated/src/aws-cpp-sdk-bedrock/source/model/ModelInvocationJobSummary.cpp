@@ -82,6 +82,22 @@ ModelInvocationJobSummary& ModelInvocationJobSummary::operator=(JsonView jsonVal
     m_modelInvocationType = ModelInvocationTypeMapper::GetModelInvocationTypeForName(jsonValue.GetString("modelInvocationType"));
     m_modelInvocationTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("totalRecordCount")) {
+    m_totalRecordCount = jsonValue.GetInt64("totalRecordCount");
+    m_totalRecordCountHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("processedRecordCount")) {
+    m_processedRecordCount = jsonValue.GetInt64("processedRecordCount");
+    m_processedRecordCountHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("successRecordCount")) {
+    m_successRecordCount = jsonValue.GetInt64("successRecordCount");
+    m_successRecordCountHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("errorRecordCount")) {
+    m_errorRecordCount = jsonValue.GetInt64("errorRecordCount");
+    m_errorRecordCountHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -150,6 +166,22 @@ JsonValue ModelInvocationJobSummary::Jsonize() const {
 
   if (m_modelInvocationTypeHasBeenSet) {
     payload.WithString("modelInvocationType", ModelInvocationTypeMapper::GetNameForModelInvocationType(m_modelInvocationType));
+  }
+
+  if (m_totalRecordCountHasBeenSet) {
+    payload.WithInt64("totalRecordCount", m_totalRecordCount);
+  }
+
+  if (m_processedRecordCountHasBeenSet) {
+    payload.WithInt64("processedRecordCount", m_processedRecordCount);
+  }
+
+  if (m_successRecordCountHasBeenSet) {
+    payload.WithInt64("successRecordCount", m_successRecordCount);
+  }
+
+  if (m_errorRecordCountHasBeenSet) {
+    payload.WithInt64("errorRecordCount", m_errorRecordCount);
   }
 
   return payload;

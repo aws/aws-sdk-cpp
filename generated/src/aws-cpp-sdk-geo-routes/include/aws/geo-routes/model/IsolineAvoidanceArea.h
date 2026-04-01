@@ -21,7 +21,9 @@ namespace GeoRoutes {
 namespace Model {
 
 /**
- * <p>The area to be avoided.</p><p><h3>See Also:</h3>   <a
+ * <p>Defines an area to avoid when calculating routes. Consists of a primary
+ * geometry to avoid, with the ability to specify exception areas within that
+ * geometry where travel is permitted.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/IsolineAvoidanceArea">AWS
  * API Reference</a></p>
  */
@@ -34,8 +36,9 @@ class IsolineAvoidanceArea {
 
   ///@{
   /**
-   * <p>Exceptions to the provided avoidance geometry, to be included while
-   * calculating an isoline.</p>
+   * <p>Areas within the primary avoidance geometry where travel is allowed. For
+   * example, you might want to avoid a neighborhood but allow travel on a major road
+   * that passes through it.</p>
    */
   inline const Aws::Vector<IsolineAvoidanceAreaGeometry>& GetExcept() const { return m_except; }
   inline bool ExceptHasBeenSet() const { return m_exceptHasBeenSet; }
@@ -59,7 +62,8 @@ class IsolineAvoidanceArea {
 
   ///@{
   /**
-   * <p>Geometry of the area to be avoided.</p>
+   * <p>The primary area to avoid, specified using a bounding box, corridor, polygon,
+   * or polyline corridor.</p>
    */
   inline const IsolineAvoidanceAreaGeometry& GetGeometry() const { return m_geometry; }
   inline bool GeometryHasBeenSet() const { return m_geometryHasBeenSet; }

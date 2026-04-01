@@ -20,7 +20,8 @@ namespace GeoRoutes {
 namespace Model {
 
 /**
- * <p>The vehicle license plate.</p><p><h3>See Also:</h3>   <a
+ * <p>License plate information used in regions where road access or routing
+ * restrictions are based on license plate numbers.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/IsolineVehicleLicensePlate">AWS
  * API Reference</a></p>
  */
@@ -33,7 +34,9 @@ class IsolineVehicleLicensePlate {
 
   ///@{
   /**
-   * <p>The last character of the License Plate.</p>
+   * <p>The last character of the vehicle's license plate. Used to determine road
+   * access restrictions in regions with license plate-based traffic management
+   * systems.</p>
    */
   inline const Aws::String& GetLastCharacter() const { return m_lastCharacter; }
   inline bool LastCharacterHasBeenSet() const { return m_lastCharacterHasBeenSet; }

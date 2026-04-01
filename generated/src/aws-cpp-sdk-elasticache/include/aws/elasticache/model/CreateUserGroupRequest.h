@@ -36,7 +36,7 @@ class CreateUserGroupRequest : public ElastiCacheRequest {
  public:
   ///@{
   /**
-   * <p>The ID of the user group.</p>
+   * <p>The ID of the user group. This value is stored as a lowercase string.</p>
    */
   inline const Aws::String& GetUserGroupId() const { return m_userGroupId; }
   inline bool UserGroupIdHasBeenSet() const { return m_userGroupIdHasBeenSet; }

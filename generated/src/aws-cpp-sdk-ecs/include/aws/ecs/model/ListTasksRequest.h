@@ -225,6 +225,26 @@ class ListTasksRequest : public ECSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The name of the daemon to use when filtering the <code>ListTasks</code>
+   * results. Specifying a <code>daemonName</code> limits the results to tasks that
+   * belong to that daemon.</p>
+   */
+  inline const Aws::String& GetDaemonName() const { return m_daemonName; }
+  inline bool DaemonNameHasBeenSet() const { return m_daemonNameHasBeenSet; }
+  template <typename DaemonNameT = Aws::String>
+  void SetDaemonName(DaemonNameT&& value) {
+    m_daemonNameHasBeenSet = true;
+    m_daemonName = std::forward<DaemonNameT>(value);
+  }
+  template <typename DaemonNameT = Aws::String>
+  ListTasksRequest& WithDaemonName(DaemonNameT&& value) {
+    SetDaemonName(std::forward<DaemonNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_cluster;
 
@@ -243,6 +263,8 @@ class ListTasksRequest : public ECSRequest {
   DesiredStatus m_desiredStatus{DesiredStatus::NOT_SET};
 
   LaunchType m_launchType{LaunchType::NOT_SET};
+
+  Aws::String m_daemonName;
   bool m_clusterHasBeenSet = false;
   bool m_containerInstanceHasBeenSet = false;
   bool m_familyHasBeenSet = false;
@@ -252,6 +274,7 @@ class ListTasksRequest : public ECSRequest {
   bool m_serviceNameHasBeenSet = false;
   bool m_desiredStatusHasBeenSet = false;
   bool m_launchTypeHasBeenSet = false;
+  bool m_daemonNameHasBeenSet = false;
 };
 
 }  // namespace Model

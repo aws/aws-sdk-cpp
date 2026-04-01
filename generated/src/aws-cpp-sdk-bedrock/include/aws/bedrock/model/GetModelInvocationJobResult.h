@@ -339,6 +339,68 @@ class GetModelInvocationJobResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The total number of records in the batch inference job.</p>
+   */
+  inline long long GetTotalRecordCount() const { return m_totalRecordCount; }
+  inline void SetTotalRecordCount(long long value) {
+    m_totalRecordCountHasBeenSet = true;
+    m_totalRecordCount = value;
+  }
+  inline GetModelInvocationJobResult& WithTotalRecordCount(long long value) {
+    SetTotalRecordCount(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The number of records that have been processed in the batch inference
+   * job.</p>
+   */
+  inline long long GetProcessedRecordCount() const { return m_processedRecordCount; }
+  inline void SetProcessedRecordCount(long long value) {
+    m_processedRecordCountHasBeenSet = true;
+    m_processedRecordCount = value;
+  }
+  inline GetModelInvocationJobResult& WithProcessedRecordCount(long long value) {
+    SetProcessedRecordCount(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The number of records that were successfully processed in the batch inference
+   * job.</p>
+   */
+  inline long long GetSuccessRecordCount() const { return m_successRecordCount; }
+  inline void SetSuccessRecordCount(long long value) {
+    m_successRecordCountHasBeenSet = true;
+    m_successRecordCount = value;
+  }
+  inline GetModelInvocationJobResult& WithSuccessRecordCount(long long value) {
+    SetSuccessRecordCount(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The number of records that failed to process in the batch inference job.</p>
+   */
+  inline long long GetErrorRecordCount() const { return m_errorRecordCount; }
+  inline void SetErrorRecordCount(long long value) {
+    m_errorRecordCountHasBeenSet = true;
+    m_errorRecordCount = value;
+  }
+  inline GetModelInvocationJobResult& WithErrorRecordCount(long long value) {
+    SetErrorRecordCount(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -387,6 +449,14 @@ class GetModelInvocationJobResult {
 
   ModelInvocationType m_modelInvocationType{ModelInvocationType::NOT_SET};
 
+  long long m_totalRecordCount{0};
+
+  long long m_processedRecordCount{0};
+
+  long long m_successRecordCount{0};
+
+  long long m_errorRecordCount{0};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_jobArnHasBeenSet = false;
@@ -405,6 +475,10 @@ class GetModelInvocationJobResult {
   bool m_timeoutDurationInHoursHasBeenSet = false;
   bool m_jobExpirationTimeHasBeenSet = false;
   bool m_modelInvocationTypeHasBeenSet = false;
+  bool m_totalRecordCountHasBeenSet = false;
+  bool m_processedRecordCountHasBeenSet = false;
+  bool m_successRecordCountHasBeenSet = false;
+  bool m_errorRecordCountHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -64,10 +64,14 @@ class CalculateRouteMatrixRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Features that are avoided while calculating a route. Avoidance is on a
+   * <p> Features that are avoided while calculating a route. Avoidance is on a
    * best-case basis. If an avoidance can't be satisfied for a particular case, it
    * violates the avoidance and the returned response produces a notice for the
-   * violation.</p>
+   * violation. For <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * support only <code>TollRoads</code>, <code>Ferries</code>, and
+   * <code>ControlledAccessHighways</code>. </p>
    */
   inline const RouteMatrixAvoidanceOptions& GetAvoid() const { return m_avoid; }
   inline bool AvoidHasBeenSet() const { return m_avoidHasBeenSet; }
@@ -101,7 +105,7 @@ class CalculateRouteMatrixRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Time of departure from thr origin.</p> <p>Time
+   * <p>Time of departure from the origin.</p> <p>Time
    * format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code>
    * </p> <p>Examples:</p> <p> <code>2020-04-22T17:57:24Z</code> </p> <p>
    * <code>2020-04-22T17:57:24+02:00</code> </p>
@@ -124,9 +128,10 @@ class CalculateRouteMatrixRequest : public GeoRoutesRequest {
   /**
    * <p>List of destinations for the route.</p>  <p>Route calculations are
    * billed for each origin and destination pair. If you use a large matrix of
-   * origins and destinations, your costs will increase accordingly. See <a
-   * href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`">
-   * Amazon Location's pricing page</a> for more information.</p>
+   * origins and destinations, your costs will increase accordingly. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html">Routes
+   * pricing</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
    */
   inline const Aws::Vector<RouteMatrixDestination>& GetDestinations() const { return m_destinations; }
   inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
@@ -150,7 +155,10 @@ class CalculateRouteMatrixRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Features to be strictly excluded while calculating the route.</p>
+   * <p> Features to be strictly excluded while calculating the route. Not supported
+   * in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const RouteMatrixExclusionOptions& GetExclude() const { return m_exclude; }
   inline bool ExcludeHasBeenSet() const { return m_excludeHasBeenSet; }
@@ -187,8 +195,10 @@ class CalculateRouteMatrixRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Specifies the optimization criteria for calculating a route.</p> <p>Default
-   * Value: <code>FastestRoute</code> </p>
+   * <p>Controls the trade-off between finding the shortest travel time
+   * (<code>FastestRoute</code>) and the shortest distance
+   * (<code>ShortestRoute</code>) when calculating reachable areas.</p> <p>Default
+   * value: <code>FastestRoute</code> </p>
    */
   inline RoutingObjective GetOptimizeRoutingFor() const { return m_optimizeRoutingFor; }
   inline bool OptimizeRoutingForHasBeenSet() const { return m_optimizeRoutingForHasBeenSet; }
@@ -204,11 +214,12 @@ class CalculateRouteMatrixRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>The position in longitude and latitude for the origin.</p>  <p>Route
-   * calculations are billed for each origin and destination pair. Using a large
-   * amount of Origins in a request can lead you to incur unexpected charges. See <a
-   * href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`">
-   * Amazon Location's pricing page</a> for more information.</p>
+   * <p>The position for the origin in World Geodetic System (WGS 84) format:
+   * [longitude, latitude].</p>  <p>Route calculations are billed for each
+   * origin and destination pair. Using a large amount of Origins in a request can
+   * lead you to incur unexpected charges. For more information, see <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html">Routes
+   * pricing</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
    */
   inline const Aws::Vector<RouteMatrixOrigin>& GetOrigins() const { return m_origins; }
   inline bool OriginsHasBeenSet() const { return m_originsHasBeenSet; }
@@ -232,10 +243,14 @@ class CalculateRouteMatrixRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Boundary within which the matrix is to be calculated. All data, origins and
-   * destinations outside the boundary are considered invalid.</p>  <p>When
-   * request routing boundary was set as AutoCircle, the response routing boundary
-   * will return Circle derived from the AutoCircle settings.</p>
+   * <p> Boundary within which the matrix is to be calculated. All data, origins and
+   * destinations outside the boundary are considered invalid. For <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * support only <code>Unbounded</code> set to <code>true</code>. </p> <p>Default
+   * value: <code>Unbounded set to true</code> </p>  <p>When request routing
+   * boundary was set as AutoCircle, the response routing boundary will return Circle
+   * derived from the AutoCircle settings.</p>
    */
   inline const RouteMatrixBoundary& GetRoutingBoundary() const { return m_routingBoundary; }
   inline bool RoutingBoundaryHasBeenSet() const { return m_routingBoundaryHasBeenSet; }
@@ -253,7 +268,10 @@ class CalculateRouteMatrixRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Traffic related options.</p>
+   * <p> Traffic related options. Not supported in <code>ap-southeast-1</code> and
+   * <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const RouteMatrixTrafficOptions& GetTraffic() const { return m_traffic; }
   inline bool TrafficHasBeenSet() const { return m_trafficHasBeenSet; }
@@ -271,9 +289,12 @@ class CalculateRouteMatrixRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Specifies the mode of transport when calculating a route. Used in estimating
-   * the speed of travel and road compatibility.</p> <p>Default Value:
-   * <code>Car</code> </p>
+   * <p> Specifies the mode of transport when calculating a route. Used in estimating
+   * the speed of travel and road compatibility. For <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * support only <code>Car</code>, <code>Pedestrian</code>, and
+   * <code>Scooter</code>. </p> <p>Default value: <code>Car</code> </p>
    */
   inline RouteMatrixTravelMode GetTravelMode() const { return m_travelMode; }
   inline bool TravelModeHasBeenSet() const { return m_travelModeHasBeenSet; }
@@ -289,7 +310,10 @@ class CalculateRouteMatrixRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Travel mode related options for the provided travel mode.</p>
+   * <p> Travel mode related options for the provided travel mode. Not supported in
+   * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const RouteMatrixTravelModeOptions& GetTravelModeOptions() const { return m_travelModeOptions; }
   inline bool TravelModeOptionsHasBeenSet() const { return m_travelModeOptionsHasBeenSet; }

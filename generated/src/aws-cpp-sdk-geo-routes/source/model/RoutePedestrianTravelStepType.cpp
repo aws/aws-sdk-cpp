@@ -23,9 +23,6 @@ static const int RoundaboutEnter_HASH = HashingUtils::HashString("RoundaboutEnte
 static const int RoundaboutExit_HASH = HashingUtils::HashString("RoundaboutExit");
 static const int RoundaboutPass_HASH = HashingUtils::HashString("RoundaboutPass");
 static const int Turn_HASH = HashingUtils::HashString("Turn");
-static const int Exit_HASH = HashingUtils::HashString("Exit");
-static const int Ramp_HASH = HashingUtils::HashString("Ramp");
-static const int UTurn_HASH = HashingUtils::HashString("UTurn");
 
 RoutePedestrianTravelStepType GetRoutePedestrianTravelStepTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -45,12 +42,6 @@ RoutePedestrianTravelStepType GetRoutePedestrianTravelStepTypeForName(const Aws:
     return RoutePedestrianTravelStepType::RoundaboutPass;
   } else if (hashCode == Turn_HASH) {
     return RoutePedestrianTravelStepType::Turn;
-  } else if (hashCode == Exit_HASH) {
-    return RoutePedestrianTravelStepType::Exit;
-  } else if (hashCode == Ramp_HASH) {
-    return RoutePedestrianTravelStepType::Ramp;
-  } else if (hashCode == UTurn_HASH) {
-    return RoutePedestrianTravelStepType::UTurn;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -81,12 +72,6 @@ Aws::String GetNameForRoutePedestrianTravelStepType(RoutePedestrianTravelStepTyp
       return "RoundaboutPass";
     case RoutePedestrianTravelStepType::Turn:
       return "Turn";
-    case RoutePedestrianTravelStepType::Exit:
-      return "Exit";
-    case RoutePedestrianTravelStepType::Ramp:
-      return "Ramp";
-    case RoutePedestrianTravelStepType::UTurn:
-      return "UTurn";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

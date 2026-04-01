@@ -30,8 +30,9 @@ namespace GeoRoutes {
 namespace Model {
 
 /**
- * <p>FerryLegDetails is populated when the Leg type is Ferry, and provides
- * additional information that is specific</p><p><h3>See Also:</h3>   <a
+ * <p> FerryLegDetails is populated when the Leg type is Ferry, and provides
+ * additional information that is specific to ferry travel. </p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/RouteFerryLegDetails">AWS
  * API Reference</a></p>
  */

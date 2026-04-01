@@ -90,7 +90,7 @@ class ModifyGlobalReplicationGroupRequest : public ElastiCacheRequest {
   ///@{
   /**
    * <p>Modifies the engine listed in a global replication group message. The options
-   * are redis, memcached or valkey.</p>
+   * are valkey, memcached or redis.</p>
    */
   inline const Aws::String& GetEngine() const { return m_engine; }
   inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }

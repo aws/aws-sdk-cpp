@@ -111,6 +111,23 @@ class UpdateImageSetMetadataRequest : public MedicalImagingRequest {
 
   ///@{
   /**
+   * <p>Flag to apply the metadata updates to all image sets in the same Study as the
+   * requested image set ID.</p>
+   */
+  inline bool GetIncludeStudyImageSets() const { return m_includeStudyImageSets; }
+  inline bool IncludeStudyImageSetsHasBeenSet() const { return m_includeStudyImageSetsHasBeenSet; }
+  inline void SetIncludeStudyImageSets(bool value) {
+    m_includeStudyImageSetsHasBeenSet = true;
+    m_includeStudyImageSets = value;
+  }
+  inline UpdateImageSetMetadataRequest& WithIncludeStudyImageSets(bool value) {
+    SetIncludeStudyImageSets(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Update image set metadata updates.</p>
    */
   inline const MetadataUpdates& GetUpdateImageSetMetadataUpdates() const { return m_updateImageSetMetadataUpdates; }
@@ -135,11 +152,14 @@ class UpdateImageSetMetadataRequest : public MedicalImagingRequest {
 
   bool m_force{false};
 
+  bool m_includeStudyImageSets{false};
+
   MetadataUpdates m_updateImageSetMetadataUpdates;
   bool m_datastoreIdHasBeenSet = false;
   bool m_imageSetIdHasBeenSet = false;
   bool m_latestVersionIdHasBeenSet = false;
   bool m_forceHasBeenSet = false;
+  bool m_includeStudyImageSetsHasBeenSet = false;
   bool m_updateImageSetMetadataUpdatesHasBeenSet = false;
 };
 

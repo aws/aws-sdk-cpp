@@ -52,7 +52,7 @@ class RouteMatrixCarOptions {
 
   ///@{
   /**
-   * <p>Maximum speed</p> <p> <b>Unit</b>: <code>KilometersPerHour</code> </p>
+   * <p>Maximum speed</p> <p> <b>Unit</b>: <code>kilometers per hour</code> </p>
    */
   inline double GetMaxSpeed() const { return m_maxSpeed; }
   inline bool MaxSpeedHasBeenSet() const { return m_maxSpeedHasBeenSet; }
@@ -68,7 +68,7 @@ class RouteMatrixCarOptions {
 
   ///@{
   /**
-   * <p>The number of occupants in the vehicle.</p> <p>Default Value: <code>1</code>
+   * <p>The number of occupants in the vehicle.</p> <p>Default value: <code>1</code>
    * </p>
    */
   inline int GetOccupancy() const { return m_occupancy; }

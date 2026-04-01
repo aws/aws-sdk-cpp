@@ -24,8 +24,8 @@ namespace GeoRoutes {
 namespace Model {
 
 /**
- * <p>Travel mode options when the provided travel mode is "Truck"</p><p><h3>See
- * Also:</h3>   <a
+ * <p>Travel mode options when the provided travel mode is
+ * <code>Truck</code>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/WaypointOptimizationTruckOptions">AWS
  * API Reference</a></p>
  */
@@ -39,7 +39,7 @@ class WaypointOptimizationTruckOptions {
   ///@{
   /**
    * <p>Gross weight of the vehicle including trailers, and goods at capacity.</p>
-   * <p> <b>Unit</b>: <code>Kilograms</code> </p>
+   * <p> <b>Unit</b>: <code>kilograms</code> </p>
    */
   inline long long GetGrossWeight() const { return m_grossWeight; }
   inline bool GrossWeightHasBeenSet() const { return m_grossWeightHasBeenSet; }
@@ -128,7 +128,9 @@ class WaypointOptimizationTruckOptions {
 
   ///@{
   /**
-   * <p>Type of the truck.</p>
+   * <p>The type of truck: <code>LightTruck</code> for smaller delivery vehicles,
+   * <code> StraightTruck</code> for rigid body trucks, or <code>Tractor</code> for
+   * tractor-trailer combinations.</p>
    */
   inline WaypointOptimizationTruckType GetTruckType() const { return m_truckType; }
   inline bool TruckTypeHasBeenSet() const { return m_truckTypeHasBeenSet; }
@@ -175,7 +177,7 @@ class WaypointOptimizationTruckOptions {
   /**
    * <p>Heaviest weight per axle irrespective of the axle type or the axle group.
    * Meant for usage in countries where the differences in axle types or axle groups
-   * are not distinguished.</p> <p> <b>Unit</b>: <code>Kilograms</code> </p>
+   * are not distinguished.</p> <p> <b>Unit</b>: <code>kilograms</code> </p>
    */
   inline long long GetWeightPerAxle() const { return m_weightPerAxle; }
   inline bool WeightPerAxleHasBeenSet() const { return m_weightPerAxleHasBeenSet; }

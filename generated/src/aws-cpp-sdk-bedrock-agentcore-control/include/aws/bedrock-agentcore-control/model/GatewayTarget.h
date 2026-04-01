@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/CredentialProviderConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/ManagedResourceDetails.h>
 #include <aws/bedrock-agentcore-control/model/MetadataConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/PrivateEndpoint.h>
 #include <aws/bedrock-agentcore-control/model/TargetConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/TargetStatus.h>
 #include <aws/core/utils/DateTime.h>
@@ -263,6 +265,48 @@ class GatewayTarget {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const PrivateEndpoint& GetPrivateEndpoint() const { return m_privateEndpoint; }
+  inline bool PrivateEndpointHasBeenSet() const { return m_privateEndpointHasBeenSet; }
+  template <typename PrivateEndpointT = PrivateEndpoint>
+  void SetPrivateEndpoint(PrivateEndpointT&& value) {
+    m_privateEndpointHasBeenSet = true;
+    m_privateEndpoint = std::forward<PrivateEndpointT>(value);
+  }
+  template <typename PrivateEndpointT = PrivateEndpoint>
+  GatewayTarget& WithPrivateEndpoint(PrivateEndpointT&& value) {
+    SetPrivateEndpoint(std::forward<PrivateEndpointT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A list of managed resources created by the gateway for private endpoint
+   * connectivity. These resources are created in your account when you use a managed
+   * VPC Lattice resource configuration.</p>
+   */
+  inline const Aws::Vector<ManagedResourceDetails>& GetPrivateEndpointManagedResources() const { return m_privateEndpointManagedResources; }
+  inline bool PrivateEndpointManagedResourcesHasBeenSet() const { return m_privateEndpointManagedResourcesHasBeenSet; }
+  template <typename PrivateEndpointManagedResourcesT = Aws::Vector<ManagedResourceDetails>>
+  void SetPrivateEndpointManagedResources(PrivateEndpointManagedResourcesT&& value) {
+    m_privateEndpointManagedResourcesHasBeenSet = true;
+    m_privateEndpointManagedResources = std::forward<PrivateEndpointManagedResourcesT>(value);
+  }
+  template <typename PrivateEndpointManagedResourcesT = Aws::Vector<ManagedResourceDetails>>
+  GatewayTarget& WithPrivateEndpointManagedResources(PrivateEndpointManagedResourcesT&& value) {
+    SetPrivateEndpointManagedResources(std::forward<PrivateEndpointManagedResourcesT>(value));
+    return *this;
+  }
+  template <typename PrivateEndpointManagedResourcesT = ManagedResourceDetails>
+  GatewayTarget& AddPrivateEndpointManagedResources(PrivateEndpointManagedResourcesT&& value) {
+    m_privateEndpointManagedResourcesHasBeenSet = true;
+    m_privateEndpointManagedResources.emplace_back(std::forward<PrivateEndpointManagedResourcesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_gatewayArn;
 
@@ -287,6 +331,10 @@ class GatewayTarget {
   Aws::Utils::DateTime m_lastSynchronizedAt{};
 
   MetadataConfiguration m_metadataConfiguration;
+
+  PrivateEndpoint m_privateEndpoint;
+
+  Aws::Vector<ManagedResourceDetails> m_privateEndpointManagedResources;
   bool m_gatewayArnHasBeenSet = false;
   bool m_targetIdHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
@@ -299,6 +347,8 @@ class GatewayTarget {
   bool m_credentialProviderConfigurationsHasBeenSet = false;
   bool m_lastSynchronizedAtHasBeenSet = false;
   bool m_metadataConfigurationHasBeenSet = false;
+  bool m_privateEndpointHasBeenSet = false;
+  bool m_privateEndpointManagedResourcesHasBeenSet = false;
 };
 
 }  // namespace Model

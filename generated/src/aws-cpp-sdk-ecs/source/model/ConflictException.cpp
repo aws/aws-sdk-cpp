@@ -25,6 +25,10 @@ ConflictException& ConflictException::operator=(JsonView jsonValue) {
     }
     m_resourceIdsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("message")) {
+    m_message = jsonValue.GetString("message");
+    m_messageHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -37,6 +41,10 @@ JsonValue ConflictException::Jsonize() const {
       resourceIdsJsonList[resourceIdsIndex].AsString(m_resourceIds[resourceIdsIndex]);
     }
     payload.WithArray("resourceIds", std::move(resourceIdsJsonList));
+  }
+
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
   return payload;

@@ -73,7 +73,7 @@ class RouteMatrixMatchingOptions {
   /**
    * <p>Considers all roads within the provided radius to match the provided
    * destination to. The roads that are considered are determined by the provided
-   * Strategy.</p> <p> <b>Unit</b>: <code>Meters</code> </p>
+   * Strategy.</p> <p> <b>Unit</b>: <code>meters</code> </p>
    */
   inline long long GetRadius() const { return m_radius; }
   inline bool RadiusHasBeenSet() const { return m_radiusHasBeenSet; }

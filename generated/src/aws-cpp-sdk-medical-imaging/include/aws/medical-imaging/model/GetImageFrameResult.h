@@ -69,7 +69,9 @@ class GetImageFrameResult {
    * is <i>missing</i>, the returned <code>contentType</code> is
    * <code>image/jph</code>.</p> </li> </ul> <ul> <li> <p>If the stored transfer
    * syntax is <code>1.2.840.10008.1.2.4.203</code>, the returned contentType is
-   * <code>image/jphc</code>.</p> </li> </ul>
+   * <code>image/jphc</code>.</p> </li> <li> <p>If the stored transfer syntax is
+   * <code>1.2.840.10008.1.2.4.112</code> the returned <code>contentType</code> is
+   * <code>image/jxl</code>.</p> </li> </ul>
    */
   inline const Aws::String& GetContentType() const { return m_contentType; }
   template <typename ContentTypeT = Aws::String>

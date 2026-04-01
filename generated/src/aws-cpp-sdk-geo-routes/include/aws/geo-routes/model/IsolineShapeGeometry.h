@@ -21,8 +21,10 @@ namespace GeoRoutes {
 namespace Model {
 
 /**
- * <p>Geometry of the connection between different Isoline
- * components.</p><p><h3>See Also:</h3>   <a
+ * <p>Represents the shape of a reachable area. The geometry can be provided either
+ * as coordinate pairs (<code>Polygon</code>) or in encoded format
+ * (<code>PolylinePolygon</code>), matching the format specified in the
+ * request.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/IsolineShapeGeometry">AWS
  * API Reference</a></p>
  */
@@ -35,9 +37,11 @@ class IsolineShapeGeometry {
 
   ///@{
   /**
-   * <p>A list of Isoline Polygons, for each isoline polygon, it contains polygons of
-   * the first linear ring (the outer ring) and from 2nd item to the last item (the
-   * inner rings).</p>
+   * <p>A series of coordinate rings defining the reachable area when Simple geometry
+   * format is requested. Each ring is a list of <code>[longitude, latitude]</code>
+   * coordinate pairs. The first ring defines the outer boundary; subsequent rings
+   * define holes representing unreachable areas.</p>  <p>Polygon and
+   * PolylinePolygon are mutually exclusive properties.</p>
    */
   inline const Aws::Vector<Aws::Vector<Aws::Vector<double>>>& GetPolygon() const { return m_polygon; }
   inline bool PolygonHasBeenSet() const { return m_polygonHasBeenSet; }
@@ -61,11 +65,14 @@ class IsolineShapeGeometry {
 
   ///@{
   /**
-   * <p>A list of Isoline PolylinePolygon, for each isoline PolylinePolygon, it
-   * contains PolylinePolygon of the first linear ring (the outer ring) and from 2nd
-   * item to the last item (the inner rings). For more information on polyline
-   * encoding, see <a
-   * href="https://github.com/heremaps/flexiblepolyline/blob/master/README.md">https://github.com/heremaps/flexiblepolyline/blob/master/README.md</a>.</p>
+   * <p>An encoded representation of the reachable area when FlexiblePolyline
+   * geometry format is requested. Provides a compact representation suitable for
+   * transmission and storage. The first string defines the outer boundary;
+   * subsequent strings define holes representing unreachable areas. For more
+   * information on polyline encoding, see <a
+   * href="https://github.com/aws-geospatial/polyline">https://github.com/aws-geospatial/polyline</a>.</p>
+   *  <p>Polygon and PolylinePolygon are mutually exclusive properties.</p>
+   *
    */
   inline const Aws::Vector<Aws::String>& GetPolylinePolygon() const { return m_polylinePolygon; }
   inline bool PolylinePolygonHasBeenSet() const { return m_polylinePolygonHasBeenSet; }

@@ -23,8 +23,8 @@ namespace GeoRoutes {
 namespace Model {
 
 /**
- * <p>Travel mode options when the provided travel mode is "Truck".</p><p><h3>See
- * Also:</h3>   <a
+ * <p>Travel mode options when the provided travel mode is
+ * <code>Truck</code>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/RoadSnapTruckOptions">AWS
  * API Reference</a></p>
  */
@@ -38,7 +38,7 @@ class RoadSnapTruckOptions {
   ///@{
   /**
    * <p>Gross weight of the vehicle including trailers, and goods at capacity.</p>
-   * <p> <b>Unit</b>: <code>Kilograms</code> </p>
+   * <p> <b>Unit</b>: <code>kilograms</code> </p>
    */
   inline long long GetGrossWeight() const { return m_grossWeight; }
   inline bool GrossWeightHasBeenSet() const { return m_grossWeightHasBeenSet; }
@@ -156,7 +156,7 @@ class RoadSnapTruckOptions {
 
   ///@{
   /**
-   * <p>Width of the vehicle in centimenters.</p>
+   * <p>Width of the vehicle in centimeters.</p>
    */
   inline long long GetWidth() const { return m_width; }
   inline bool WidthHasBeenSet() const { return m_widthHasBeenSet; }

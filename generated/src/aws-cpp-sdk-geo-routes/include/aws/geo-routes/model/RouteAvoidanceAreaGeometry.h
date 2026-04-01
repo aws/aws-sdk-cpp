@@ -128,7 +128,7 @@ class RouteAvoidanceAreaGeometry {
    * contains PolylinePolygon of the first linear ring (the outer ring) and from 2nd
    * item to the last item (the inner rings). For more information on polyline
    * encoding, see <a
-   * href="https://github.com/heremaps/flexiblepolyline/blob/master/README.md">https://github.com/heremaps/flexiblepolyline/blob/master/README.md</a>.</p>
+   * href="https://github.com/aws-geospatial/polyline">https://github.com/aws-geospatial/polyline</a>.</p>
    */
   inline const Aws::Vector<Aws::String>& GetPolylinePolygon() const { return m_polylinePolygon; }
   inline bool PolylinePolygonHasBeenSet() const { return m_polylinePolygonHasBeenSet; }

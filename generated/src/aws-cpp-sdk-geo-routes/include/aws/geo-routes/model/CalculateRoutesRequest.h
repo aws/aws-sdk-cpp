@@ -53,7 +53,10 @@ class CalculateRoutesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Features that are allowed while calculating a route.</p>
+   * <p> Features that are allowed while calculating a route. Not supported in
+   * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const RouteAllowOptions& GetAllow() const { return m_allow; }
   inline bool AllowHasBeenSet() const { return m_allowHasBeenSet; }
@@ -71,9 +74,12 @@ class CalculateRoutesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Time of arrival at the destination.</p> <p>Time
-   * format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code>
-   * </p> <p>Examples:</p> <p> <code>2020-04-22T17:57:24Z</code> </p> <p>
+   * <p> Time of arrival at the destination. Not supported in
+   * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p> <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ |
+   * YYYY-MM-DDThh:mm:ss.sss+hh:mm</code> </p> <p>Examples:</p> <p>
+   * <code>2020-04-22T17:57:24Z</code> </p> <p>
    * <code>2020-04-22T17:57:24+02:00</code> </p>
    */
   inline const Aws::String& GetArrivalTime() const { return m_arrivalTime; }
@@ -92,10 +98,14 @@ class CalculateRoutesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Features that are avoided while calculating a route. Avoidance is on a
+   * <p> Features that are avoided while calculating a route. Avoidance is on a
    * best-case basis. If an avoidance can't be satisfied for a particular case, it
    * violates the avoidance and the returned response produces a notice for the
-   * violation.</p>
+   * violation. For <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * support only <code>ControlledAccessHighways</code>, <code>Ferries</code>, and
+   * <code>TollRoads</code> </p>
    */
   inline const RouteAvoidanceOptions& GetAvoid() const { return m_avoid; }
   inline bool AvoidHasBeenSet() const { return m_avoidHasBeenSet; }
@@ -129,7 +139,7 @@ class CalculateRoutesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Time of departure from thr origin.</p> <p>Time
+   * <p>Time of departure from the origin.</p> <p>Time
    * format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code>
    * </p> <p>Examples:</p> <p> <code>2020-04-22T17:57:24Z</code> </p> <p>
    * <code>2020-04-22T17:57:24+02:00</code> </p>
@@ -174,7 +184,10 @@ class CalculateRoutesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Destination related options.</p>
+   * <p> Destination related options. Not supported in <code>ap-southeast-1</code>
+   * and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const RouteDestinationOptions& GetDestinationOptions() const { return m_destinationOptions; }
   inline bool DestinationOptionsHasBeenSet() const { return m_destinationOptionsHasBeenSet; }
@@ -192,7 +205,10 @@ class CalculateRoutesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Driver related options.</p>
+   * <p> Driver related options. Not supported in <code>ap-southeast-1</code> and
+   * <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const RouteDriverOptions& GetDriver() const { return m_driver; }
   inline bool DriverHasBeenSet() const { return m_driverHasBeenSet; }
@@ -210,7 +226,10 @@ class CalculateRoutesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Features to be strictly excluded while calculating the route.</p>
+   * <p> Features to be strictly excluded while calculating the route. Not supported
+   * in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const RouteExclusionOptions& GetExclude() const { return m_exclude; }
   inline bool ExcludeHasBeenSet() const { return m_excludeHasBeenSet; }
@@ -264,9 +283,12 @@ class CalculateRoutesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>List of languages for instructions within steps in the response.</p>
-   * <p>Instructions in the requested language are returned only if they are
-   * available.</p>
+   * <p> List of languages for instructions within steps in the response. Not
+   * supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>  <p>Instructions in the requested language are returned
+   * only if they are available.</p>
    */
   inline const Aws::Vector<Aws::String>& GetLanguages() const { return m_languages; }
   inline bool LanguagesHasBeenSet() const { return m_languagesHasBeenSet; }
@@ -290,9 +312,13 @@ class CalculateRoutesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>A list of optional additional parameters such as timezone that can be
-   * requested for each result.</p> <ul> <li> <p> <code>Elevation</code>: Retrieves
-   * the elevation information for each location.</p> </li> <li> <p>
+   * <p> A list of optional additional parameters such as timezone that can be
+   * requested for each result. For <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * support only <code>PassThroughWaypoints</code>, <code>Summary</code>, and
+   * <code>TravelStepInstructions</code> </p> <ul> <li> <p> <code>Elevation</code>:
+   * Retrieves the elevation information for each location.</p> </li> <li> <p>
    * <code>Incidents</code>: Provides information on traffic incidents along the
    * route.</p> </li> <li> <p> <code>PassThroughWaypoints</code>: Indicates waypoints
    * that are passed through without stopping.</p> </li> <li> <p>
@@ -330,10 +356,9 @@ class CalculateRoutesRequest : public GeoRoutesRequest {
    * can choose between two different geometry encoding formats.</p> <p>
    * <code>FlexiblePolyline</code>: A compact and precise encoding format for the leg
    * geometry. For more information on the format, see the GitHub repository for <a
-   * href="https://github.com/heremaps/flexible-polyline">
-   * <code>FlexiblePolyline</code> </a>.</p> <p> <code>Simple</code>: A less compact
-   * encoding, which is easier to decode but may be less precise and result in larger
-   * payloads.</p>
+   * href="https://github.com/aws-geospatial/polyline">https://github.com/aws-geospatial/polyline</a>.</p>
+   * <p> <code>Simple</code>: A less compact encoding, which is easier to decode but
+   * may be less precise and result in larger payloads.</p>
    */
   inline GeometryFormat GetLegGeometryFormat() const { return m_legGeometryFormat; }
   inline bool LegGeometryFormatHasBeenSet() const { return m_legGeometryFormatHasBeenSet; }
@@ -350,7 +375,10 @@ class CalculateRoutesRequest : public GeoRoutesRequest {
   ///@{
   /**
    * <p>Maximum number of alternative routes to be provided in the response, if
-   * available.</p>
+   * available. For <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * support only up to 3 alternative routes. </p>
    */
   inline int GetMaxAlternatives() const { return m_maxAlternatives; }
   inline bool MaxAlternativesHasBeenSet() const { return m_maxAlternativesHasBeenSet; }
@@ -366,8 +394,10 @@ class CalculateRoutesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Specifies the optimization criteria for calculating a route.</p> <p>Default
-   * Value: <code>FastestRoute</code> </p>
+   * <p>Controls the trade-off between achieving the shortest travel time
+   * (<code>FastestRoute</code>) and achieving the shortest physical distance
+   * ((<code>ShortestRoute</code>) when calculating each route in the matrix.</p>
+   * <p>Default value: <code>FastestRoute</code> </p>
    */
   inline RoutingObjective GetOptimizeRoutingFor() const { return m_optimizeRoutingFor; }
   inline bool OptimizeRoutingForHasBeenSet() const { return m_optimizeRoutingForHasBeenSet; }
@@ -383,7 +413,8 @@ class CalculateRoutesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>The start position for the route.</p>
+   * <p>The start position for the route in World Geodetic System (WGS 84) format:
+   * [longitude, latitude].</p>
    */
   inline const Aws::Vector<double>& GetOrigin() const { return m_origin; }
   inline bool OriginHasBeenSet() const { return m_originHasBeenSet; }
@@ -406,7 +437,12 @@ class CalculateRoutesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Origin related options.</p>
+   * <p> Specifies how the origin point should be matched to the road network and any
+   * routing constraints that apply when the traveler is departing the origin. Not
+   * supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const RouteOriginOptions& GetOriginOptions() const { return m_originOptions; }
   inline bool OriginOptionsHasBeenSet() const { return m_originOptionsHasBeenSet; }
@@ -424,9 +460,12 @@ class CalculateRoutesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>A list of optional features such as SpeedLimit that can be requested for a
-   * Span. A span is a section of a Leg for which the requested features have the
-   * same values.</p>
+   * <p> A list of optional features such as <code>SpeedLimit</code> that can be
+   * requested for a Span. A span is a section of a Leg for which the requested
+   * features have the same values. Not supported in <code>ap-southeast-1</code> and
+   * <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const Aws::Vector<RouteSpanAdditionalFeature>& GetSpanAdditionalFeatures() const { return m_spanAdditionalFeatures; }
   inline bool SpanAdditionalFeaturesHasBeenSet() const { return m_spanAdditionalFeaturesHasBeenSet; }
@@ -449,7 +488,10 @@ class CalculateRoutesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Toll related options.</p>
+   * <p> Toll related options. Not supported in <code>ap-southeast-1</code> and
+   * <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const RouteTollOptions& GetTolls() const { return m_tolls; }
   inline bool TollsHasBeenSet() const { return m_tollsHasBeenSet; }
@@ -467,7 +509,10 @@ class CalculateRoutesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Traffic related options.</p>
+   * <p> Traffic related options. Not supported in <code>ap-southeast-1</code> and
+   * <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const RouteTrafficOptions& GetTraffic() const { return m_traffic; }
   inline bool TrafficHasBeenSet() const { return m_trafficHasBeenSet; }
@@ -485,9 +530,12 @@ class CalculateRoutesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Specifies the mode of transport when calculating a route. Used in estimating
-   * the speed of travel and road compatibility.</p> <p>Default Value:
-   * <code>Car</code> </p>
+   * <p> Specifies the mode of transport when calculating a route. Used in estimating
+   * the speed of travel and road compatibility. For <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * support only <code>Car</code>, <code>Pedestrian</code>, and <code>Scooter</code>
+   * values. </p> <p>Default value: <code>Car</code> </p>
    */
   inline RouteTravelMode GetTravelMode() const { return m_travelMode; }
   inline bool TravelModeHasBeenSet() const { return m_travelModeHasBeenSet; }
@@ -503,7 +551,11 @@ class CalculateRoutesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Travel mode related options for the provided travel mode.</p>
+   * <p> Travel mode related options for the provided travel mode. For <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * support only <code>Car</code> and <code>Pedestrian</code> travel mode options.
+   * </p>
    */
   inline const RouteTravelModeOptions& GetTravelModeOptions() const { return m_travelModeOptions; }
   inline bool TravelModeOptionsHasBeenSet() const { return m_travelModeOptionsHasBeenSet; }
@@ -521,9 +573,13 @@ class CalculateRoutesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Type of step returned by the response. Default provides basic steps intended
-   * for web based applications. TurnByTurn provides detailed instructions with more
-   * granularity intended for a turn based navigation system.</p>
+   * <p>Type of step returned by the response. <code>Default</code> provides basic
+   * steps intended for web based applications. <code>TurnByTurn</code> provides
+   * detailed instructions with more granularity intended for a turn based navigation
+   * system. For <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * <code>Default</code> does not return any steps. </p>
    */
   inline RouteTravelStepType GetTravelStepType() const { return m_travelStepType; }
   inline bool TravelStepTypeHasBeenSet() const { return m_travelStepTypeHasBeenSet; }
@@ -539,7 +595,10 @@ class CalculateRoutesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>List of waypoints between the Origin and Destination.</p>
+   * <p> List of waypoints between the Origin and Destination. For <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * max length is <code>100</code>. </p> <p>Max length: <code>23</code> </p>
    */
   inline const Aws::Vector<RouteWaypoint>& GetWaypoints() const { return m_waypoints; }
   inline bool WaypointsHasBeenSet() const { return m_waypointsHasBeenSet; }

@@ -232,7 +232,8 @@ class InstanceLaunchTemplate {
    * use FIPS-compliant cryptographic algorithms and modules for enhanced security
    * compliance. If <code>false</code>, instances use standard cryptographic
    * implementations.</p> <p>If not specified, instances are launched with FIPS
-   * enabled in AWS GovCloud (US) regions and FIPS disabled in other regions.</p>
+   * enabled in Amazon Web Services GovCloud (US) regions and FIPS disabled in other
+   * regions.</p>
    */
   inline bool GetFipsEnabled() const { return m_fipsEnabled; }
   inline bool FipsEnabledHasBeenSet() const { return m_fipsEnabledHasBeenSet; }

@@ -34,7 +34,7 @@ class RoadSnapTravelModeOptions {
 
   ///@{
   /**
-   * <p>Travel mode options when the provided travel mode is "Truck".</p>
+   * <p>Travel mode options when the provided travel mode is <code>Truck</code>.</p>
    */
   inline const RoadSnapTruckOptions& GetTruck() const { return m_truck; }
   inline bool TruckHasBeenSet() const { return m_truckHasBeenSet; }

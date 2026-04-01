@@ -20,9 +20,10 @@ namespace GeoRoutes {
 namespace Model {
 
 /**
- * <p>Isolines may contain multiple components, if these components are connected
- * by ferry links. These components are returned as separate polygons while the
- * ferry links are returned as connections.</p><p><h3>See Also:</h3>   <a
+ * <p>Represents a segment of the transportation network that connects separate
+ * parts of a reachable area. These connections show how discontinuous areas are
+ * linked, such as by ferry routes or bridges crossing unroutable
+ * terrain.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/IsolineConnection">AWS
  * API Reference</a></p>
  */
@@ -35,8 +36,8 @@ class IsolineConnection {
 
   ///@{
   /**
-   * <p>Index of the polygon corresponding to the "from" component of the connection.
-   * The polygon is available from <code>Isoline[].Geometries</code>.</p>
+   * <p>The index of the starting polygon in the isoline's <code>Geometries</code>
+   * list.</p>
    */
   inline int GetFromPolygonIndex() const { return m_fromPolygonIndex; }
   inline bool FromPolygonIndexHasBeenSet() const { return m_fromPolygonIndexHasBeenSet; }
@@ -52,7 +53,8 @@ class IsolineConnection {
 
   ///@{
   /**
-   * <p>The isoline geometry.</p>
+   * <p>The shape of the connection, representing the actual path through the
+   * transportation network that links the polygons.</p>
    */
   inline const IsolineConnectionGeometry& GetGeometry() const { return m_geometry; }
   inline bool GeometryHasBeenSet() const { return m_geometryHasBeenSet; }
@@ -70,8 +72,8 @@ class IsolineConnection {
 
   ///@{
   /**
-   * <p>Index of the polygon corresponding to the "to" component of the connection.
-   * The polygon is available from <code>Isoline[].Geometries</code>.</p>
+   * <p>The index of the ending polygon in the isoline's <code>Geometries</code>
+   * list.</p>
    */
   inline int GetToPolygonIndex() const { return m_toPolygonIndex; }
   inline bool ToPolygonIndexHasBeenSet() const { return m_toPolygonIndexHasBeenSet; }

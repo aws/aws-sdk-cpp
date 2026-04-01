@@ -162,8 +162,8 @@ class ModelInvocationJobSummary {
    * files in the output S3 location.</p> </li> <li> <p>Failed – This job has failed.
    * Check the failure message for any further details. For further assistance, reach
    * out to the <a href="https://console.aws.amazon.com/support/home/">Amazon Web
-   * Services Support Center</a>.</p> </li> <li> <p>Stopped ��� This job was stopped
-   * by a user.</p> </li> <li> <p>Stopping – This job is being stopped by a user.</p>
+   * Services Support Center</a>.</p> </li> <li> <p>Stopped – This job was stopped by
+   * a user.</p> </li> <li> <p>Stopping – This job is being stopped by a user.</p>
    * </li> </ul>
    */
   inline ModelInvocationJobStatus GetStatus() const { return m_status; }
@@ -358,6 +358,72 @@ class ModelInvocationJobSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The total number of records in the batch inference job.</p>
+   */
+  inline long long GetTotalRecordCount() const { return m_totalRecordCount; }
+  inline bool TotalRecordCountHasBeenSet() const { return m_totalRecordCountHasBeenSet; }
+  inline void SetTotalRecordCount(long long value) {
+    m_totalRecordCountHasBeenSet = true;
+    m_totalRecordCount = value;
+  }
+  inline ModelInvocationJobSummary& WithTotalRecordCount(long long value) {
+    SetTotalRecordCount(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The number of records that have been processed in the batch inference
+   * job.</p>
+   */
+  inline long long GetProcessedRecordCount() const { return m_processedRecordCount; }
+  inline bool ProcessedRecordCountHasBeenSet() const { return m_processedRecordCountHasBeenSet; }
+  inline void SetProcessedRecordCount(long long value) {
+    m_processedRecordCountHasBeenSet = true;
+    m_processedRecordCount = value;
+  }
+  inline ModelInvocationJobSummary& WithProcessedRecordCount(long long value) {
+    SetProcessedRecordCount(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The number of records that were successfully processed in the batch inference
+   * job.</p>
+   */
+  inline long long GetSuccessRecordCount() const { return m_successRecordCount; }
+  inline bool SuccessRecordCountHasBeenSet() const { return m_successRecordCountHasBeenSet; }
+  inline void SetSuccessRecordCount(long long value) {
+    m_successRecordCountHasBeenSet = true;
+    m_successRecordCount = value;
+  }
+  inline ModelInvocationJobSummary& WithSuccessRecordCount(long long value) {
+    SetSuccessRecordCount(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The number of records that failed to process in the batch inference job.</p>
+   */
+  inline long long GetErrorRecordCount() const { return m_errorRecordCount; }
+  inline bool ErrorRecordCountHasBeenSet() const { return m_errorRecordCountHasBeenSet; }
+  inline void SetErrorRecordCount(long long value) {
+    m_errorRecordCountHasBeenSet = true;
+    m_errorRecordCount = value;
+  }
+  inline ModelInvocationJobSummary& WithErrorRecordCount(long long value) {
+    SetErrorRecordCount(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_jobArn;
 
@@ -390,6 +456,14 @@ class ModelInvocationJobSummary {
   Aws::Utils::DateTime m_jobExpirationTime{};
 
   ModelInvocationType m_modelInvocationType{ModelInvocationType::NOT_SET};
+
+  long long m_totalRecordCount{0};
+
+  long long m_processedRecordCount{0};
+
+  long long m_successRecordCount{0};
+
+  long long m_errorRecordCount{0};
   bool m_jobArnHasBeenSet = false;
   bool m_jobNameHasBeenSet = false;
   bool m_modelIdHasBeenSet = false;
@@ -406,6 +480,10 @@ class ModelInvocationJobSummary {
   bool m_timeoutDurationInHoursHasBeenSet = false;
   bool m_jobExpirationTimeHasBeenSet = false;
   bool m_modelInvocationTypeHasBeenSet = false;
+  bool m_totalRecordCountHasBeenSet = false;
+  bool m_processedRecordCountHasBeenSet = false;
+  bool m_successRecordCountHasBeenSet = false;
+  bool m_errorRecordCountHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -1,0 +1,57 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ecs/model/DaemonCircuitBreaker.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace ECS {
+namespace Model {
+
+DaemonCircuitBreaker::DaemonCircuitBreaker(JsonView jsonValue) { *this = jsonValue; }
+
+DaemonCircuitBreaker& DaemonCircuitBreaker::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("failureCount")) {
+    m_failureCount = jsonValue.GetInteger("failureCount");
+    m_failureCountHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("status")) {
+    m_status =
+        DaemonDeploymentRollbackMonitorsStatusMapper::GetDaemonDeploymentRollbackMonitorsStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("threshold")) {
+    m_threshold = jsonValue.GetInteger("threshold");
+    m_thresholdHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue DaemonCircuitBreaker::Jsonize() const {
+  JsonValue payload;
+
+  if (m_failureCountHasBeenSet) {
+    payload.WithInteger("failureCount", m_failureCount);
+  }
+
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", DaemonDeploymentRollbackMonitorsStatusMapper::GetNameForDaemonDeploymentRollbackMonitorsStatus(m_status));
+  }
+
+  if (m_thresholdHasBeenSet) {
+    payload.WithInteger("threshold", m_threshold);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

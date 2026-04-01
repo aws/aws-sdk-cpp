@@ -60,7 +60,7 @@ class SnapToRoadsRequest : public GeoRoutesRequest {
   ///@{
   /**
    * <p>Chooses what the returned SnappedGeometry format should be.</p> <p>Default
-   * Value: <code>FlexiblePolyline</code> </p>
+   * value: <code>FlexiblePolyline</code> </p>
    */
   inline GeometryFormat GetSnappedGeometryFormat() const { return m_snappedGeometryFormat; }
   inline bool SnappedGeometryFormatHasBeenSet() const { return m_snappedGeometryFormatHasBeenSet; }
@@ -119,7 +119,7 @@ class SnapToRoadsRequest : public GeoRoutesRequest {
   ///@{
   /**
    * <p>Specifies the mode of transport when calculating a route. Used in estimating
-   * the speed of travel and road compatibility.</p> <p>Default Value:
+   * the speed of travel and road compatibility.</p> <p>Default value:
    * <code>Car</code> </p>
    */
   inline RoadSnapTravelMode GetTravelMode() const { return m_travelMode; }

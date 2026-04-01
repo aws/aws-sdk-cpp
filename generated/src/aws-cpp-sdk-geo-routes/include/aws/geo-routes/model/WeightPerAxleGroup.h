@@ -17,9 +17,10 @@ namespace GeoRoutes {
 namespace Model {
 
 /**
- * <p>Specifies the total weight for the specified axle group. Meant for usage in
- * countries that have different regulations based on the axle group type.</p> <p>
- * <b>Unit</b>: <code>Kilograms</code> </p><p><h3>See Also:</h3>   <a
+ * <p>Specifies the total weight for different axle group configurations. Used in
+ * regions where regulations set different weight limits based on axle group
+ * types.</p> <p> <b>Unit</b>: <code>kilograms</code> </p><p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/WeightPerAxleGroup">AWS
  * API Reference</a></p>
  */
@@ -32,8 +33,8 @@ class WeightPerAxleGroup {
 
   ///@{
   /**
-   * <p>Weight for single axle group.</p> <p> <b>Unit</b>: <code>Kilograms</code>
-   * </p>
+   * <p>Total weight in kilograms for single axle configurations.</p> <p>
+   * <b>Unit</b>: <code>kilograms</code> </p>
    */
   inline long long GetSingle() const { return m_single; }
   inline bool SingleHasBeenSet() const { return m_singleHasBeenSet; }
@@ -49,8 +50,8 @@ class WeightPerAxleGroup {
 
   ///@{
   /**
-   * <p>Weight for tandem axle group.</p> <p> <b>Unit</b>: <code>Kilograms</code>
-   * </p>
+   * <p>Total weight in kilograms for tandem (two adjacent) axle configurations.</p>
+   * <p> <b>Unit</b>: <code>kilograms</code> </p>
    */
   inline long long GetTandem() const { return m_tandem; }
   inline bool TandemHasBeenSet() const { return m_tandemHasBeenSet; }
@@ -66,8 +67,8 @@ class WeightPerAxleGroup {
 
   ///@{
   /**
-   * <p>Weight for triple axle group.</p> <p> <b>Unit</b>: <code>Kilograms</code>
-   * </p>
+   * <p>Total weight in kilograms for triple (three adjacent) axle
+   * configurations.</p> <p> <b>Unit</b>: <code>kilograms</code> </p>
    */
   inline long long GetTriple() const { return m_triple; }
   inline bool TripleHasBeenSet() const { return m_tripleHasBeenSet; }
@@ -83,7 +84,8 @@ class WeightPerAxleGroup {
 
   ///@{
   /**
-   * <p>Weight for quad axle group.</p> <p> <b>Unit</b>: <code>Kilograms</code> </p>
+   * <p>Total weight in kilograms for quad (four adjacent) axle configurations.</p>
+   * <p> <b>Unit</b>: <code>kilograms</code> </p>
    */
   inline long long GetQuad() const { return m_quad; }
   inline bool QuadHasBeenSet() const { return m_quadHasBeenSet; }
@@ -99,7 +101,8 @@ class WeightPerAxleGroup {
 
   ///@{
   /**
-   * <p>Weight for quad quint group.</p> <p> <b>Unit</b>: <code>Kilograms</code> </p>
+   * <p>Total weight in kilograms for quint (five adjacent) axle configurations.</p>
+   * <p> <b>Unit</b>: <code>kilograms</code> </p>
    */
   inline long long GetQuint() const { return m_quint; }
   inline bool QuintHasBeenSet() const { return m_quintHasBeenSet; }

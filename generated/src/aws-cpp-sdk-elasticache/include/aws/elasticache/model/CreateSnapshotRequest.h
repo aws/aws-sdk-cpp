@@ -78,7 +78,8 @@ class CreateSnapshotRequest : public ElastiCacheRequest {
 
   ///@{
   /**
-   * <p>A name for the snapshot being created.</p>
+   * <p>A name for the snapshot being created. This value is stored as a lowercase
+   * string.</p>
    */
   inline const Aws::String& GetSnapshotName() const { return m_snapshotName; }
   inline bool SnapshotNameHasBeenSet() const { return m_snapshotNameHasBeenSet; }

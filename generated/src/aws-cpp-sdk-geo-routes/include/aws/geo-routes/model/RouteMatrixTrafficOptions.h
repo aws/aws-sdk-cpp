@@ -54,7 +54,7 @@ class RouteMatrixTrafficOptions {
   ///@{
   /**
    * <p>Determines if traffic should be used or ignored while calculating the
-   * route.</p> <p>Default Value: <code>UseTrafficData</code> </p>
+   * route.</p> <p>Default value: <code>UseTrafficData</code> </p>
    */
   inline TrafficUsage GetUsage() const { return m_usage; }
   inline bool UsageHasBeenSet() const { return m_usageHasBeenSet; }

@@ -52,7 +52,7 @@ class MessageMetadata {
 
   ///@{
   /**
-   * <p>The position of this message within that event��s ordered list of
+   * <p>The position of this message within that event’s ordered list of
    * messages.</p>
    */
   inline int GetMessageIndex() const { return m_messageIndex; }

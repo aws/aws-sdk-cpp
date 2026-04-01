@@ -21,8 +21,10 @@ namespace GeoRoutes {
 namespace Model {
 
 /**
- * <p>Options to configure matching the provided position to a side of the
- * street.</p><p><h3>See Also:</h3>   <a
+ * <p>Controls how points are matched to specific sides of streets. This is
+ * important when the side of the street matters for accessibility - for example,
+ * when building entrances or parking lot access points can only be reached from
+ * one side of a divided road.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/IsolineSideOfStreetOptions">AWS
  * API Reference</a></p>
  */
@@ -35,7 +37,8 @@ class IsolineSideOfStreetOptions {
 
   ///@{
   /**
-   * <p>Position defined as <code>[longitude, latitude]</code>.</p>
+   * <p>The <code>[longitude, latitude]</code> coordinates of the point that should
+   * be matched to a specific side of the street.</p>
    */
   inline const Aws::Vector<double>& GetPosition() const { return m_position; }
   inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
@@ -58,9 +61,15 @@ class IsolineSideOfStreetOptions {
 
   ///@{
   /**
-   * <p>Strategy that defines when the side of street position should be used.
-   * AnyStreet will always use the provided position.</p> <p>Default Value:
-   * <code>DividedStreetOnly</code> </p>
+   * <p>Controls whether side-of-street matching is applied to any street
+   * (<code>AnyStreet</code>) or only to divided roads
+   * (<code>DividedStreetOnly</code>). This is important when the exact side of the
+   * street matters - for example, if a building entrance is only accessible from one
+   * side of a divided highway, or if a parking lot can only be entered from
+   * northbound lanes. Without correct side-of-street matching, travel time estimates
+   * may be inaccurate because they don't account for necessary U-turns or detours to
+   * reach the correct side.</p> <p>Default value: <code>DividedStreetOnly</code>
+   * </p>
    */
   inline SideOfStreetMatchingStrategy GetUseWith() const { return m_useWith; }
   inline bool UseWithHasBeenSet() const { return m_useWithHasBeenSet; }

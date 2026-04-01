@@ -40,7 +40,8 @@ class CreateCacheParameterGroupRequest : public ElastiCacheRequest {
  public:
   ///@{
   /**
-   * <p>A user-specified name for the cache parameter group.</p>
+   * <p>A user-specified name for the cache parameter group. This value is stored as
+   * a lowercase string.</p>
    */
   inline const Aws::String& GetCacheParameterGroupName() const { return m_cacheParameterGroupName; }
   inline bool CacheParameterGroupNameHasBeenSet() const { return m_cacheParameterGroupNameHasBeenSet; }

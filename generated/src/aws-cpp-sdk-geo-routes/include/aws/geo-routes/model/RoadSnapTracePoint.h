@@ -51,7 +51,7 @@ class RoadSnapTracePoint {
 
   ///@{
   /**
-   * <p>Position defined as <code>[longitude, latitude]</code>.</p>
+   * <p>Position in World Geodetic System (WGS 84) format: [longitude, latitude].</p>
    */
   inline const Aws::Vector<double>& GetPosition() const { return m_position; }
   inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
@@ -74,8 +74,8 @@ class RoadSnapTracePoint {
 
   ///@{
   /**
-   * <p>Speed at the specified trace point .</p> <p> <b>Unit</b>:
-   * <code>KilometersPerHour</code> </p>
+   * <p>Speed at the specified trace point .</p> <p> <b>Unit</b>: <code>kilometers
+   * per hour</code> </p>
    */
   inline double GetSpeed() const { return m_speed; }
   inline bool SpeedHasBeenSet() const { return m_speedHasBeenSet; }
