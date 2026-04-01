@@ -39,12 +39,21 @@ def format_directories(directory_list):
     for filepaths_file in filepaths_files:
         cmd = ['pipx', 'run', f'clang-format=={CLANG_FORMAT_VERSION}',
                f'--files={filepaths_file.name}', '-i', '-style=file:.clang-format']
-        p = subprocess.Popen(cmd)
-        processes.append(p)
+        p = subprocess.Popen(cmd, stderr=subprocess.PIPE)
+        processes.append((p, cmd))
         print(f"Formatting generated files: {list2cmdline(cmd)}")
 
-    for p in processes:
-        p.wait()
+    failed = False
+    for p, cmd in processes:
+        _, stderr = p.communicate()
+        if p.returncode != 0:
+            print(f"ERROR: clang-format failed with exit code {p.returncode}: {list2cmdline(cmd)}")
+            if stderr:
+                print(f"  stderr: {stderr.decode().strip()}")
+            failed = True
+
+    if failed:
+        raise RuntimeError("One or more clang-format processes failed")
 
     # Clean up temp file
     for filepaths_file in filepaths_files:
