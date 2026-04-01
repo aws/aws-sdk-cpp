@@ -97,6 +97,10 @@ Aws::String CreateServerlessCacheRequest::SerializePayload() const {
     ss << "DailySnapshotTime=" << StringUtils::URLEncode(m_dailySnapshotTime.c_str()) << "&";
   }
 
+  if (m_networkTypeHasBeenSet) {
+    ss << "NetworkType=" << StringUtils::URLEncode(NetworkTypeMapper::GetNameForNetworkType(m_networkType)) << "&";
+  }
+
   ss << "Version=2015-02-02";
   return ss.str();
 }

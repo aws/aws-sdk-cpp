@@ -62,6 +62,10 @@ GetIngressPointResult& GetIngressPointResult::operator=(const Aws::AmazonWebServ
     m_networkConfiguration = jsonValue.GetObject("NetworkConfiguration");
     m_networkConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TlsPolicy")) {
+    m_tlsPolicy = TlsPolicyMapper::GetTlsPolicyForName(jsonValue.GetString("TlsPolicy"));
+    m_tlsPolicyHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("CreatedTimestamp")) {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
     m_createdTimestampHasBeenSet = true;

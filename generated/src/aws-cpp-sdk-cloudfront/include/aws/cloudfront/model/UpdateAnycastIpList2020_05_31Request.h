@@ -7,7 +7,9 @@
 #include <aws/cloudfront/CloudFrontRequest.h>
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/model/IpAddressType.h>
+#include <aws/cloudfront/model/IpamCidrConfig.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -70,6 +72,31 @@ class UpdateAnycastIpList2020_05_31Request : public CloudFrontRequest {
 
   ///@{
   /**
+   * <p> A list of IPAM CIDR configurations that specify the IP address ranges and
+   * IPAM pool settings for updating the Anycast static IP list. </p>
+   */
+  inline const Aws::Vector<IpamCidrConfig>& GetIpamCidrConfigs() const { return m_ipamCidrConfigs; }
+  inline bool IpamCidrConfigsHasBeenSet() const { return m_ipamCidrConfigsHasBeenSet; }
+  template <typename IpamCidrConfigsT = Aws::Vector<IpamCidrConfig>>
+  void SetIpamCidrConfigs(IpamCidrConfigsT&& value) {
+    m_ipamCidrConfigsHasBeenSet = true;
+    m_ipamCidrConfigs = std::forward<IpamCidrConfigsT>(value);
+  }
+  template <typename IpamCidrConfigsT = Aws::Vector<IpamCidrConfig>>
+  UpdateAnycastIpList2020_05_31Request& WithIpamCidrConfigs(IpamCidrConfigsT&& value) {
+    SetIpamCidrConfigs(std::forward<IpamCidrConfigsT>(value));
+    return *this;
+  }
+  template <typename IpamCidrConfigsT = IpamCidrConfig>
+  UpdateAnycastIpList2020_05_31Request& AddIpamCidrConfigs(IpamCidrConfigsT&& value) {
+    m_ipamCidrConfigsHasBeenSet = true;
+    m_ipamCidrConfigs.emplace_back(std::forward<IpamCidrConfigsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The current version (ETag value) of the Anycast static IP list that you are
    * updating.</p>
    */
@@ -91,9 +118,12 @@ class UpdateAnycastIpList2020_05_31Request : public CloudFrontRequest {
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
 
+  Aws::Vector<IpamCidrConfig> m_ipamCidrConfigs;
+
   Aws::String m_ifMatch;
   bool m_idHasBeenSet = false;
   bool m_ipAddressTypeHasBeenSet = false;
+  bool m_ipamCidrConfigsHasBeenSet = false;
   bool m_ifMatchHasBeenSet = false;
 };
 

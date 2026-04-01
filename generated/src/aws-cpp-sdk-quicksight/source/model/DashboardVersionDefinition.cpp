@@ -33,6 +33,13 @@ DashboardVersionDefinition& DashboardVersionDefinition::operator=(JsonView jsonV
     }
     m_sheetsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TooltipSheets")) {
+    Aws::Utils::Array<JsonView> tooltipSheetsJsonList = jsonValue.GetArray("TooltipSheets");
+    for (unsigned tooltipSheetsIndex = 0; tooltipSheetsIndex < tooltipSheetsJsonList.GetLength(); ++tooltipSheetsIndex) {
+      m_tooltipSheets.push_back(tooltipSheetsJsonList[tooltipSheetsIndex].AsObject());
+    }
+    m_tooltipSheetsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("CalculatedFields")) {
     Aws::Utils::Array<JsonView> calculatedFieldsJsonList = jsonValue.GetArray("CalculatedFields");
     for (unsigned calculatedFieldsIndex = 0; calculatedFieldsIndex < calculatedFieldsJsonList.GetLength(); ++calculatedFieldsIndex) {
@@ -100,6 +107,14 @@ JsonValue DashboardVersionDefinition::Jsonize() const {
       sheetsJsonList[sheetsIndex].AsObject(m_sheets[sheetsIndex].Jsonize());
     }
     payload.WithArray("Sheets", std::move(sheetsJsonList));
+  }
+
+  if (m_tooltipSheetsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tooltipSheetsJsonList(m_tooltipSheets.size());
+    for (unsigned tooltipSheetsIndex = 0; tooltipSheetsIndex < tooltipSheetsJsonList.GetLength(); ++tooltipSheetsIndex) {
+      tooltipSheetsJsonList[tooltipSheetsIndex].AsObject(m_tooltipSheets[tooltipSheetsIndex].Jsonize());
+    }
+    payload.WithArray("TooltipSheets", std::move(tooltipSheetsJsonList));
   }
 
   if (m_calculatedFieldsHasBeenSet) {

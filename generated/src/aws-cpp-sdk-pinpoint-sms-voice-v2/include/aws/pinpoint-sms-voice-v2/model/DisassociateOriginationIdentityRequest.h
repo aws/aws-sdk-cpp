@@ -78,7 +78,8 @@ class DisassociateOriginationIdentityRequest : public PinpointSMSVoiceV2Request 
   ///@{
   /**
    * <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or
-   * region. </p>
+   * region. This field is optional and is not required for origination identity
+   * types that are not country-specific, such as RCS agents.</p>
    */
   inline const Aws::String& GetIsoCountryCode() const { return m_isoCountryCode; }
   inline bool IsoCountryCodeHasBeenSet() const { return m_isoCountryCodeHasBeenSet; }

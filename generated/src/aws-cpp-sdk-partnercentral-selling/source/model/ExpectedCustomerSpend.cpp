@@ -23,8 +23,7 @@ ExpectedCustomerSpend& ExpectedCustomerSpend::operator=(JsonView jsonValue) {
     m_amountHasBeenSet = true;
   }
   if (jsonValue.ValueExists("CurrencyCode")) {
-    m_currencyCode =
-        ExpectedCustomerSpendCurrencyCodeEnumMapper::GetExpectedCustomerSpendCurrencyCodeEnumForName(jsonValue.GetString("CurrencyCode"));
+    m_currencyCode = CurrencyCodeMapper::GetCurrencyCodeForName(jsonValue.GetString("CurrencyCode"));
     m_currencyCodeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("Frequency")) {
@@ -50,8 +49,7 @@ JsonValue ExpectedCustomerSpend::Jsonize() const {
   }
 
   if (m_currencyCodeHasBeenSet) {
-    payload.WithString("CurrencyCode",
-                       ExpectedCustomerSpendCurrencyCodeEnumMapper::GetNameForExpectedCustomerSpendCurrencyCodeEnum(m_currencyCode));
+    payload.WithString("CurrencyCode", CurrencyCodeMapper::GetNameForCurrencyCode(m_currencyCode));
   }
 
   if (m_frequencyHasBeenSet) {

@@ -22,7 +22,8 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Request for InvokeAgentRuntimeCommand operation</p><p><h3>See Also:</h3>   <a
+ * <p>Request for InvokeAgentRuntimeCommand operation.</p><p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/InvokeAgentRuntimeCommandRequest">AWS
  * API Reference</a></p>
  */
@@ -111,7 +112,9 @@ class InvokeAgentRuntimeCommandRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
-   * <p>Runtime session identifier</p>
+   * <p>The unique identifier of the runtime session in which to execute the command.
+   * This session ID is used to maintain state and context across multiple command
+   * invocations.</p>
    */
   inline const Aws::String& GetRuntimeSessionId() const { return m_runtimeSessionId; }
   inline bool RuntimeSessionIdHasBeenSet() const { return m_runtimeSessionIdHasBeenSet; }
@@ -201,7 +204,9 @@ class InvokeAgentRuntimeCommandRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
-   * <p>ARN of the agent runtime</p>
+   * <p>The Amazon Resource Name (ARN) of the agent runtime on which to execute the
+   * command. This identifies the specific agent runtime environment where the
+   * command will run.</p>
    */
   inline const Aws::String& GetAgentRuntimeArn() const { return m_agentRuntimeArn; }
   inline bool AgentRuntimeArnHasBeenSet() const { return m_agentRuntimeArnHasBeenSet; }
@@ -219,7 +224,9 @@ class InvokeAgentRuntimeCommandRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
-   * <p>Version or alias qualifier</p>
+   * <p>The qualifier to use for the agent runtime. This is an endpoint name that
+   * points to a specific version. If not specified, Amazon Bedrock AgentCore uses
+   * the default endpoint of the agent runtime.</p>
    */
   inline const Aws::String& GetQualifier() const { return m_qualifier; }
   inline bool QualifierHasBeenSet() const { return m_qualifierHasBeenSet; }
@@ -237,7 +244,9 @@ class InvokeAgentRuntimeCommandRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
-   * <p>Account ID (12 digits)</p>
+   * <p>The identifier of the Amazon Web Services account for the agent runtime
+   * resource. This parameter is required when you specify an agent ID instead of the
+   * full ARN for <code>agentRuntimeArn</code>.</p>
    */
   inline const Aws::String& GetAccountId() const { return m_accountId; }
   inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
@@ -255,7 +264,8 @@ class InvokeAgentRuntimeCommandRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
-   * <p>Request body containing command and timeout</p>
+   * <p>The request body containing the command to execute and optional configuration
+   * parameters such as timeout settings.</p>
    */
   inline const InvokeAgentRuntimeCommandRequestBody& GetRequestBody() const { return m_requestBody; }
   inline bool RequestBodyHasBeenSet() const { return m_requestBodyHasBeenSet; }

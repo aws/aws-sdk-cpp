@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/crt/cbor/Cbor.h>
 #include <aws/rpcv2protocol/RpcV2Protocol_EXPORTS.h>
@@ -53,11 +54,14 @@ class Float16Result {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   double m_value{0.0};
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_valueHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

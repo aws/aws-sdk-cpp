@@ -21,6 +21,7 @@ static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
 static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
 static const int CLOSED_HASH = HashingUtils::HashString("CLOSED");
 static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+static const int ASSOCIATED_VPC_ENDPOINT_DOES_NOT_EXIST_HASH = HashingUtils::HashString("ASSOCIATED_VPC_ENDPOINT_DOES_NOT_EXIST");
 
 IngressPointStatus GetIngressPointStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +37,8 @@ IngressPointStatus GetIngressPointStatusForName(const Aws::String& name) {
     return IngressPointStatus::CLOSED;
   } else if (hashCode == FAILED_HASH) {
     return IngressPointStatus::FAILED;
+  } else if (hashCode == ASSOCIATED_VPC_ENDPOINT_DOES_NOT_EXIST_HASH) {
+    return IngressPointStatus::ASSOCIATED_VPC_ENDPOINT_DOES_NOT_EXIST;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +65,8 @@ Aws::String GetNameForIngressPointStatus(IngressPointStatus enumValue) {
       return "CLOSED";
     case IngressPointStatus::FAILED:
       return "FAILED";
+    case IngressPointStatus::ASSOCIATED_VPC_ENDPOINT_DOES_NOT_EXIST:
+      return "ASSOCIATED_VPC_ENDPOINT_DOES_NOT_EXIST";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -30,6 +30,10 @@ ProductionVariantManagedInstanceScaling& ProductionVariantManagedInstanceScaling
     m_maxInstanceCount = jsonValue.GetInteger("MaxInstanceCount");
     m_maxInstanceCountHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ScaleInPolicy")) {
+    m_scaleInPolicy = jsonValue.GetObject("ScaleInPolicy");
+    m_scaleInPolicyHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue ProductionVariantManagedInstanceScaling::Jsonize() const {
 
   if (m_maxInstanceCountHasBeenSet) {
     payload.WithInteger("MaxInstanceCount", m_maxInstanceCount);
+  }
+
+  if (m_scaleInPolicyHasBeenSet) {
+    payload.WithObject("ScaleInPolicy", m_scaleInPolicy.Jsonize());
   }
 
   return payload;

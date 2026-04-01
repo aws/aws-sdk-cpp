@@ -32,10 +32,6 @@ GetSessionsStatisticsAggregationResult& GetSessionsStatisticsAggregationResult::
     }
     m_statisticsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("nextToken")) {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("status")) {
     m_status = SessionsStatisticsAggregationStatusMapper::GetSessionsStatisticsAggregationStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
@@ -43,6 +39,10 @@ GetSessionsStatisticsAggregationResult& GetSessionsStatisticsAggregationResult::
   if (jsonValue.ValueExists("statusMessage")) {
     m_statusMessage = jsonValue.GetString("statusMessage");
     m_statusMessageHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("nextToken")) {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

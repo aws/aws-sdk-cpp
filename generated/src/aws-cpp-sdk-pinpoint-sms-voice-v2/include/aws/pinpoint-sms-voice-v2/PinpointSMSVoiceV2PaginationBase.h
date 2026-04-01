@@ -11,11 +11,15 @@
 #include <aws/pinpoint-sms-voice-v2/model/DescribeAccountLimitsPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeConfigurationSetsPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeKeywordsPaginationTraits.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeNotifyConfigurationsPaginationTraits.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeNotifyTemplatesPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeOptOutListsPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeOptedOutNumbersPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribePhoneNumbersPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribePoolsPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeProtectConfigurationsPaginationTraits.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeRcsAgentCountryLaunchStatusPaginationTraits.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeRcsAgentsPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeRegistrationAttachmentsPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeRegistrationFieldDefinitionsPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeRegistrationFieldValuesPaginationTraits.h>
@@ -26,6 +30,7 @@
 #include <aws/pinpoint-sms-voice-v2/model/DescribeSenderIdsPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeSpendLimitsPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeVerifiedDestinationNumbersPaginationTraits.h>
+#include <aws/pinpoint-sms-voice-v2/model/ListNotifyCountriesPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/ListPoolOriginationIdentitiesPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/ListProtectConfigurationRuleSetNumberOverridesPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/ListRegistrationAssociationsPaginationTraits.h>
@@ -89,6 +94,30 @@ class PinpointSMSVoiceV2PaginationBase {
   }
 
   /**
+   * Create a paginator for DescribeNotifyConfigurations operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeNotifyConfigurationsRequest,
+                                    Pagination::DescribeNotifyConfigurationsPaginationTraits<DerivedClient>>
+  DescribeNotifyConfigurationsPaginator(const Model::DescribeNotifyConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeNotifyConfigurationsRequest,
+                                             Pagination::DescribeNotifyConfigurationsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for DescribeNotifyTemplates operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeNotifyTemplatesRequest,
+                                    Pagination::DescribeNotifyTemplatesPaginationTraits<DerivedClient>>
+  DescribeNotifyTemplatesPaginator(const Model::DescribeNotifyTemplatesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeNotifyTemplatesRequest,
+                                             Pagination::DescribeNotifyTemplatesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
    * Create a paginator for DescribeOptedOutNumbers operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeOptedOutNumbersRequest,
@@ -144,6 +173,30 @@ class PinpointSMSVoiceV2PaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeProtectConfigurationsRequest,
                                              Pagination::DescribeProtectConfigurationsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for DescribeRcsAgentCountryLaunchStatus operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeRcsAgentCountryLaunchStatusRequest,
+                                    Pagination::DescribeRcsAgentCountryLaunchStatusPaginationTraits<DerivedClient>>
+  DescribeRcsAgentCountryLaunchStatusPaginator(const Model::DescribeRcsAgentCountryLaunchStatusRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeRcsAgentCountryLaunchStatusRequest,
+                                             Pagination::DescribeRcsAgentCountryLaunchStatusPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for DescribeRcsAgents operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeRcsAgentsRequest,
+                                    Pagination::DescribeRcsAgentsPaginationTraits<DerivedClient>>
+  DescribeRcsAgentsPaginator(const Model::DescribeRcsAgentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeRcsAgentsRequest,
+                                             Pagination::DescribeRcsAgentsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 
@@ -264,6 +317,18 @@ class PinpointSMSVoiceV2PaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVerifiedDestinationNumbersRequest,
                                              Pagination::DescribeVerifiedDestinationNumbersPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListNotifyCountries operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNotifyCountriesRequest,
+                                    Pagination::ListNotifyCountriesPaginationTraits<DerivedClient>>
+  ListNotifyCountriesPaginator(const Model::ListNotifyCountriesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNotifyCountriesRequest,
+                                             Pagination::ListNotifyCountriesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

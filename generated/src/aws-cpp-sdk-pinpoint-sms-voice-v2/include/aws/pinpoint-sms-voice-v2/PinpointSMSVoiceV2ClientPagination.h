@@ -10,11 +10,15 @@
 #include <aws/pinpoint-sms-voice-v2/model/DescribeAccountLimitsPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeConfigurationSetsPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeKeywordsPaginationTraits.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeNotifyConfigurationsPaginationTraits.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeNotifyTemplatesPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeOptOutListsPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeOptedOutNumbersPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribePhoneNumbersPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribePoolsPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeProtectConfigurationsPaginationTraits.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeRcsAgentCountryLaunchStatusPaginationTraits.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeRcsAgentsPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeRegistrationAttachmentsPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeRegistrationFieldDefinitionsPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeRegistrationFieldValuesPaginationTraits.h>
@@ -25,6 +29,7 @@
 #include <aws/pinpoint-sms-voice-v2/model/DescribeSenderIdsPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeSpendLimitsPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeVerifiedDestinationNumbersPaginationTraits.h>
+#include <aws/pinpoint-sms-voice-v2/model/ListNotifyCountriesPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/ListPoolOriginationIdentitiesPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/ListProtectConfigurationRuleSetNumberOverridesPaginationTraits.h>
 #include <aws/pinpoint-sms-voice-v2/model/ListRegistrationAssociationsPaginationTraits.h>
@@ -43,6 +48,12 @@ using DescribeConfigurationSetsPaginator =
                                       Pagination::DescribeConfigurationSetsPaginationTraits<PinpointSMSVoiceV2Client>>;
 using DescribeKeywordsPaginator = Aws::Utils::Pagination::Paginator<PinpointSMSVoiceV2Client, Model::DescribeKeywordsRequest,
                                                                     Pagination::DescribeKeywordsPaginationTraits<PinpointSMSVoiceV2Client>>;
+using DescribeNotifyConfigurationsPaginator =
+    Aws::Utils::Pagination::Paginator<PinpointSMSVoiceV2Client, Model::DescribeNotifyConfigurationsRequest,
+                                      Pagination::DescribeNotifyConfigurationsPaginationTraits<PinpointSMSVoiceV2Client>>;
+using DescribeNotifyTemplatesPaginator =
+    Aws::Utils::Pagination::Paginator<PinpointSMSVoiceV2Client, Model::DescribeNotifyTemplatesRequest,
+                                      Pagination::DescribeNotifyTemplatesPaginationTraits<PinpointSMSVoiceV2Client>>;
 using DescribeOptedOutNumbersPaginator =
     Aws::Utils::Pagination::Paginator<PinpointSMSVoiceV2Client, Model::DescribeOptedOutNumbersRequest,
                                       Pagination::DescribeOptedOutNumbersPaginationTraits<PinpointSMSVoiceV2Client>>;
@@ -57,6 +68,12 @@ using DescribePoolsPaginator = Aws::Utils::Pagination::Paginator<PinpointSMSVoic
 using DescribeProtectConfigurationsPaginator =
     Aws::Utils::Pagination::Paginator<PinpointSMSVoiceV2Client, Model::DescribeProtectConfigurationsRequest,
                                       Pagination::DescribeProtectConfigurationsPaginationTraits<PinpointSMSVoiceV2Client>>;
+using DescribeRcsAgentCountryLaunchStatusPaginator =
+    Aws::Utils::Pagination::Paginator<PinpointSMSVoiceV2Client, Model::DescribeRcsAgentCountryLaunchStatusRequest,
+                                      Pagination::DescribeRcsAgentCountryLaunchStatusPaginationTraits<PinpointSMSVoiceV2Client>>;
+using DescribeRcsAgentsPaginator =
+    Aws::Utils::Pagination::Paginator<PinpointSMSVoiceV2Client, Model::DescribeRcsAgentsRequest,
+                                      Pagination::DescribeRcsAgentsPaginationTraits<PinpointSMSVoiceV2Client>>;
 using DescribeRegistrationAttachmentsPaginator =
     Aws::Utils::Pagination::Paginator<PinpointSMSVoiceV2Client, Model::DescribeRegistrationAttachmentsRequest,
                                       Pagination::DescribeRegistrationAttachmentsPaginationTraits<PinpointSMSVoiceV2Client>>;
@@ -87,6 +104,9 @@ using DescribeSpendLimitsPaginator =
 using DescribeVerifiedDestinationNumbersPaginator =
     Aws::Utils::Pagination::Paginator<PinpointSMSVoiceV2Client, Model::DescribeVerifiedDestinationNumbersRequest,
                                       Pagination::DescribeVerifiedDestinationNumbersPaginationTraits<PinpointSMSVoiceV2Client>>;
+using ListNotifyCountriesPaginator =
+    Aws::Utils::Pagination::Paginator<PinpointSMSVoiceV2Client, Model::ListNotifyCountriesRequest,
+                                      Pagination::ListNotifyCountriesPaginationTraits<PinpointSMSVoiceV2Client>>;
 using ListPoolOriginationIdentitiesPaginator =
     Aws::Utils::Pagination::Paginator<PinpointSMSVoiceV2Client, Model::ListPoolOriginationIdentitiesRequest,
                                       Pagination::ListPoolOriginationIdentitiesPaginationTraits<PinpointSMSVoiceV2Client>>;

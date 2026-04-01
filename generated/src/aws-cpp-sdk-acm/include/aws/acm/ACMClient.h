@@ -123,13 +123,25 @@ class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Deletes a certificate and its associated private key. If this action
-   * succeeds, the certificate no longer appears in the list that can be displayed by
-   * calling the <a>ListCertificates</a> action or be retrieved by calling the
-   * <a>GetCertificate</a> action. The certificate will not be available for use by
-   * Amazon Web Services services integrated with ACM. </p>  <p>You cannot
+   * succeeds, the certificate is not available for use by Amazon Web Services
+   * services integrated with ACM. Deleting a certificate is eventually consistent.
+   * The may be a short delay before the certificate no longer appears in the list
+   * that can be displayed by calling the <a>ListCertificates</a> action or be
+   * retrieved by calling the <a>GetCertificate</a> action.</p>  <p>You cannot
    * delete an ACM certificate that is being used by another Amazon Web Services
-   * service. To delete a certificate that is in use, the certificate association
-   * must first be removed.</p> <p><h3>See Also:</h3>   <a
+   * service. To delete a certificate that is in use, you must first remove the
+   * certificate association using the console or the CLI for the associated
+   * service.</p> <p>Deleting a certificate issued by a private certificate authority
+   * (CA) has no effect on the CA. You will continue to be charged for the CA until
+   * it is deleted. For more information, see <a
+   * href="https://docs.aws.amazon.com/privateca/latest/userguide/PCADeleteCA.html">
+   * Deleting Your Private CA</a> in the <i>Private Certificate Authority User
+   * Guide</i>.</p>  <p>Deleting a certificate issued by a private certificate
+   * authority (CA) has no effect on the CA. You will continue to be charged for the
+   * CA until it is deleted. For more information, see <a
+   * href="https://docs.aws.amazon.com/privateca/latest/userguide/PCADeleteCA.html">Deleting
+   * your private CA</a> in the <i>Amazon Web Services Private Certificate Authority
+   * User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteCertificate">AWS
    * API Reference</a></p>
    */
@@ -185,7 +197,7 @@ class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Exports a private certificate issued by a private certificate authority (CA)
-   * or public certificate for use anywhere. The exported file contains the
+   * or a public certificate for use anywhere. The exported file contains the
    * certificate, the certificate chain, and the encrypted private key associated
    * with the public key that is embedded in the certificate. For security, you must
    * assign a passphrase for the private key when exporting it. </p> <p>For
@@ -194,7 +206,8 @@ class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient,
    * href="https://docs.aws.amazon.com/acm/latest/userguide/export-private.html">Export
    * a private certificate</a> and <a
    * href="https://docs.aws.amazon.com/acm/latest/userguide/export-public-certificate">Export
-   * a public certificate</a>.</p><p><h3>See Also:</h3>   <a
+   * a public certificate</a>.</p>  <p>ACM public certificates created prior to
+   * June 17, 2025 cannot be exported.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ExportCertificate">AWS
    * API Reference</a></p>
    */
@@ -480,9 +493,9 @@ class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient,
    * href="https://docs.aws.amazon.com/acm/latest/userguide/managed-renewal.html">eligible
    * ACM certificate</a>. In order to renew your Amazon Web Services Private CA
    * certificates with ACM, you must first <a
-   * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaPermissions.html">grant
+   * href="https://docs.aws.amazon.com/privateca/latest/userguide/assign-permissions.html#PcaPermissions">grant
    * the ACM service principal permission to do so</a>. For more information, see <a
-   * href="https://docs.aws.amazon.com/acm/latest/userguide/manual-renewal.html">Testing
+   * href="https://docs.aws.amazon.com/acm/latest/userguide/managed-renewal.html">Testing
    * Managed Renewal</a> in the ACM User Guide.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RenewCertificate">AWS
    * API Reference</a></p>
@@ -591,7 +604,9 @@ class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Revokes a public ACM certificate. You can only revoke certificates that have
-   * been previously exported.</p><p><h3>See Also:</h3>   <a
+   * been previously exported.</p>  <p>Once a certificate is revoked, you
+   * cannot reuse the certificate. Revoking a certificate is permanent.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RevokeCertificate">AWS
    * API Reference</a></p>
    */
@@ -614,6 +629,37 @@ class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient,
   void RevokeCertificateAsync(const RevokeCertificateRequestT& request, const RevokeCertificateResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ACMClient::RevokeCertificate, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves a list of certificates matching search criteria. You can filter
+   * certificates by X.509 attributes and ACM specific properties like certificate
+   * status, type and renewal eligibility. This operation provides more flexible
+   * filtering than <a>ListCertificates</a> by supporting complex filter
+   * statements.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/SearchCertificates">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SearchCertificatesOutcome SearchCertificates(const Model::SearchCertificatesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for SearchCertificates that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename SearchCertificatesRequestT = Model::SearchCertificatesRequest>
+  Model::SearchCertificatesOutcomeCallable SearchCertificatesCallable(const SearchCertificatesRequestT& request = {}) const {
+    return SubmitCallable(&ACMClient::SearchCertificates, request);
+  }
+
+  /**
+   * An Async wrapper for SearchCertificates that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename SearchCertificatesRequestT = Model::SearchCertificatesRequest>
+  void SearchCertificatesAsync(const SearchCertificatesResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                               const SearchCertificatesRequestT& request = {}) const {
+    return SubmitAsync(&ACMClient::SearchCertificates, request, handler, context);
   }
 
   /**

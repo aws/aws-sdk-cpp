@@ -668,8 +668,8 @@ class ReplicationGroup {
 
   ///@{
   /**
-   * <p>The engine used in a replication group. The options are redis, memcached or
-   * valkey.</p>
+   * <p>The engine used in a replication group. The options are valkey, memcached or
+   * redis.</p>
    */
   inline const Aws::String& GetEngine() const { return m_engine; }
   inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }

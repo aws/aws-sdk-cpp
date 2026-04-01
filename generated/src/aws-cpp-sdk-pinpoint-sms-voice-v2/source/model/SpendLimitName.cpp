@@ -18,6 +18,7 @@ namespace SpendLimitNameMapper {
 static const int TEXT_MESSAGE_MONTHLY_SPEND_LIMIT_HASH = HashingUtils::HashString("TEXT_MESSAGE_MONTHLY_SPEND_LIMIT");
 static const int VOICE_MESSAGE_MONTHLY_SPEND_LIMIT_HASH = HashingUtils::HashString("VOICE_MESSAGE_MONTHLY_SPEND_LIMIT");
 static const int MEDIA_MESSAGE_MONTHLY_SPEND_LIMIT_HASH = HashingUtils::HashString("MEDIA_MESSAGE_MONTHLY_SPEND_LIMIT");
+static const int NOTIFY_MESSAGE_MONTHLY_SPEND_LIMIT_HASH = HashingUtils::HashString("NOTIFY_MESSAGE_MONTHLY_SPEND_LIMIT");
 
 SpendLimitName GetSpendLimitNameForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ SpendLimitName GetSpendLimitNameForName(const Aws::String& name) {
     return SpendLimitName::VOICE_MESSAGE_MONTHLY_SPEND_LIMIT;
   } else if (hashCode == MEDIA_MESSAGE_MONTHLY_SPEND_LIMIT_HASH) {
     return SpendLimitName::MEDIA_MESSAGE_MONTHLY_SPEND_LIMIT;
+  } else if (hashCode == NOTIFY_MESSAGE_MONTHLY_SPEND_LIMIT_HASH) {
+    return SpendLimitName::NOTIFY_MESSAGE_MONTHLY_SPEND_LIMIT;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForSpendLimitName(SpendLimitName enumValue) {
       return "VOICE_MESSAGE_MONTHLY_SPEND_LIMIT";
     case SpendLimitName::MEDIA_MESSAGE_MONTHLY_SPEND_LIMIT:
       return "MEDIA_MESSAGE_MONTHLY_SPEND_LIMIT";
+    case SpendLimitName::NOTIFY_MESSAGE_MONTHLY_SPEND_LIMIT:
+      return "NOTIFY_MESSAGE_MONTHLY_SPEND_LIMIT";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

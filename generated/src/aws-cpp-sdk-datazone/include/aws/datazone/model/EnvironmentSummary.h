@@ -285,6 +285,24 @@ class EnvironmentSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration name with which the environment is created.</p>
+   */
+  inline const Aws::String& GetEnvironmentConfigurationName() const { return m_environmentConfigurationName; }
+  inline bool EnvironmentConfigurationNameHasBeenSet() const { return m_environmentConfigurationNameHasBeenSet; }
+  template <typename EnvironmentConfigurationNameT = Aws::String>
+  void SetEnvironmentConfigurationName(EnvironmentConfigurationNameT&& value) {
+    m_environmentConfigurationNameHasBeenSet = true;
+    m_environmentConfigurationName = std::forward<EnvironmentConfigurationNameT>(value);
+  }
+  template <typename EnvironmentConfigurationNameT = Aws::String>
+  EnvironmentSummary& WithEnvironmentConfigurationName(EnvironmentConfigurationNameT&& value) {
+    SetEnvironmentConfigurationName(std::forward<EnvironmentConfigurationNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_projectId;
 
@@ -313,6 +331,8 @@ class EnvironmentSummary {
   EnvironmentStatus m_status{EnvironmentStatus::NOT_SET};
 
   Aws::String m_environmentConfigurationId;
+
+  Aws::String m_environmentConfigurationName;
   bool m_projectIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_domainIdHasBeenSet = false;
@@ -327,6 +347,7 @@ class EnvironmentSummary {
   bool m_providerHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_environmentConfigurationIdHasBeenSet = false;
+  bool m_environmentConfigurationNameHasBeenSet = false;
 };
 
 }  // namespace Model

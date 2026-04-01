@@ -17,7 +17,9 @@ namespace ValidationExceptionReasonMapper {
 
 static const int CANNOT_ADD_OPTED_OUT_NUMBER_HASH = HashingUtils::HashString("CANNOT_ADD_OPTED_OUT_NUMBER");
 static const int CANNOT_PARSE_HASH = HashingUtils::HashString("CANNOT_PARSE");
+static const int CHANNEL_NOT_ENABLED_HASH = HashingUtils::HashString("CHANNEL_NOT_ENABLED");
 static const int COUNTRY_CODE_MISMATCH_HASH = HashingUtils::HashString("COUNTRY_CODE_MISMATCH");
+static const int COUNTRY_NOT_ENABLED_HASH = HashingUtils::HashString("COUNTRY_NOT_ENABLED");
 static const int DESTINATION_COUNTRY_BLOCKED_HASH = HashingUtils::HashString("DESTINATION_COUNTRY_BLOCKED");
 static const int FIELD_VALIDATION_FAILED_HASH = HashingUtils::HashString("FIELD_VALIDATION_FAILED");
 static const int ATTACHMENT_TYPE_NOT_SUPPORTED_HASH = HashingUtils::HashString("ATTACHMENT_TYPE_NOT_SUPPORTED");
@@ -64,8 +66,12 @@ ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String&
     return ValidationExceptionReason::CANNOT_ADD_OPTED_OUT_NUMBER;
   } else if (hashCode == CANNOT_PARSE_HASH) {
     return ValidationExceptionReason::CANNOT_PARSE;
+  } else if (hashCode == CHANNEL_NOT_ENABLED_HASH) {
+    return ValidationExceptionReason::CHANNEL_NOT_ENABLED;
   } else if (hashCode == COUNTRY_CODE_MISMATCH_HASH) {
     return ValidationExceptionReason::COUNTRY_CODE_MISMATCH;
+  } else if (hashCode == COUNTRY_NOT_ENABLED_HASH) {
+    return ValidationExceptionReason::COUNTRY_NOT_ENABLED;
   } else if (hashCode == DESTINATION_COUNTRY_BLOCKED_HASH) {
     return ValidationExceptionReason::DESTINATION_COUNTRY_BLOCKED;
   } else if (hashCode == FIELD_VALIDATION_FAILED_HASH) {
@@ -160,8 +166,12 @@ Aws::String GetNameForValidationExceptionReason(ValidationExceptionReason enumVa
       return "CANNOT_ADD_OPTED_OUT_NUMBER";
     case ValidationExceptionReason::CANNOT_PARSE:
       return "CANNOT_PARSE";
+    case ValidationExceptionReason::CHANNEL_NOT_ENABLED:
+      return "CHANNEL_NOT_ENABLED";
     case ValidationExceptionReason::COUNTRY_CODE_MISMATCH:
       return "COUNTRY_CODE_MISMATCH";
+    case ValidationExceptionReason::COUNTRY_NOT_ENABLED:
+      return "COUNTRY_NOT_ENABLED";
     case ValidationExceptionReason::DESTINATION_COUNTRY_BLOCKED:
       return "DESTINATION_COUNTRY_BLOCKED";
     case ValidationExceptionReason::FIELD_VALIDATION_FAILED:

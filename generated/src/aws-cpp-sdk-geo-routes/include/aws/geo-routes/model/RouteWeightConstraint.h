@@ -21,7 +21,7 @@ namespace Model {
 
 /**
  * <p>The weight constraint for the route.</p> <p> <b>Unit</b>:
- * <code>Kilograms</code> </p><p><h3>See Also:</h3>   <a
+ * <code>kilograms</code> </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/RouteWeightConstraint">AWS
  * API Reference</a></p>
  */
@@ -50,7 +50,7 @@ class RouteWeightConstraint {
 
   ///@{
   /**
-   * <p>The constraint value.</p> <p> <b>Unit</b>: <code>Kilograms</code> </p>
+   * <p>The constraint value.</p> <p> <b>Unit</b>: <code>kilograms</code> </p>
    */
   inline long long GetValue() const { return m_value; }
   inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }

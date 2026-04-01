@@ -25,9 +25,12 @@ enum class ResourceType {
   registration_attachment,
   verified_destination_number,
   protect_configuration,
+  notify_configuration,
+  notify_template,
   message_template,
   policy,
-  message
+  message,
+  rcs_agent
 };
 
 namespace ResourceTypeMapper {

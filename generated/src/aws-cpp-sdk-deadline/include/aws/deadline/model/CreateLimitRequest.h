@@ -33,6 +33,24 @@ class CreateLimitRequest : public DeadlineRequest {
 
   ///@{
   /**
+   * <p>The farm ID of the farm that contains the limit.</p>
+   */
+  inline const Aws::String& GetFarmId() const { return m_farmId; }
+  inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
+  template <typename FarmIdT = Aws::String>
+  void SetFarmId(FarmIdT&& value) {
+    m_farmIdHasBeenSet = true;
+    m_farmId = std::forward<FarmIdT>(value);
+  }
+  template <typename FarmIdT = Aws::String>
+  CreateLimitRequest& WithFarmId(FarmIdT&& value) {
+    SetFarmId(std::forward<FarmIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The unique token which the server uses to recognize retries of the same
    * request.</p>
    */
@@ -112,24 +130,6 @@ class CreateLimitRequest : public DeadlineRequest {
 
   ///@{
   /**
-   * <p>The farm ID of the farm that contains the limit.</p>
-   */
-  inline const Aws::String& GetFarmId() const { return m_farmId; }
-  inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
-  template <typename FarmIdT = Aws::String>
-  void SetFarmId(FarmIdT&& value) {
-    m_farmIdHasBeenSet = true;
-    m_farmId = std::forward<FarmIdT>(value);
-  }
-  template <typename FarmIdT = Aws::String>
-  CreateLimitRequest& WithFarmId(FarmIdT&& value) {
-    SetFarmId(std::forward<FarmIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>A description of the limit. A description helps you identify the purpose of
    * the limit.</p>  <p>This field can store any content. Escape or encode
    * this content before displaying it on a webpage or any other system that might
@@ -149,6 +149,8 @@ class CreateLimitRequest : public DeadlineRequest {
   }
   ///@}
  private:
+  Aws::String m_farmId;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
   Aws::String m_displayName;
@@ -157,14 +159,12 @@ class CreateLimitRequest : public DeadlineRequest {
 
   int m_maxCount{0};
 
-  Aws::String m_farmId;
-
   Aws::String m_description;
+  bool m_farmIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_displayNameHasBeenSet = false;
   bool m_amountRequirementNameHasBeenSet = false;
   bool m_maxCountHasBeenSet = false;
-  bool m_farmIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

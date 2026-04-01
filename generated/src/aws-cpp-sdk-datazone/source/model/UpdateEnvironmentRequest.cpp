@@ -43,5 +43,9 @@ Aws::String UpdateEnvironmentRequest::SerializePayload() const {
     payload.WithArray("userParameters", std::move(userParametersJsonList));
   }
 
+  if (m_environmentConfigurationNameHasBeenSet) {
+    payload.WithString("environmentConfigurationName", m_environmentConfigurationName);
+  }
+
   return payload.View().WriteReadable();
 }

@@ -37,24 +37,6 @@ class UpdateQueueRequest : public DeadlineRequest {
 
   ///@{
   /**
-   * <p>The idempotency token to update in the queue.</p>
-   */
-  inline const Aws::String& GetClientToken() const { return m_clientToken; }
-  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-  template <typename ClientTokenT = Aws::String>
-  void SetClientToken(ClientTokenT&& value) {
-    m_clientTokenHasBeenSet = true;
-    m_clientToken = std::forward<ClientTokenT>(value);
-  }
-  template <typename ClientTokenT = Aws::String>
-  UpdateQueueRequest& WithClientToken(ClientTokenT&& value) {
-    SetClientToken(std::forward<ClientTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The farm ID to update in the queue.</p>
    */
   inline const Aws::String& GetFarmId() const { return m_farmId; }
@@ -85,6 +67,24 @@ class UpdateQueueRequest : public DeadlineRequest {
   template <typename QueueIdT = Aws::String>
   UpdateQueueRequest& WithQueueId(QueueIdT&& value) {
     SetQueueId(std::forward<QueueIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The idempotency token to update in the queue.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  UpdateQueueRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
     return *this;
   }
   ///@}
@@ -300,11 +300,11 @@ class UpdateQueueRequest : public DeadlineRequest {
   }
   ///@}
  private:
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-
   Aws::String m_farmId;
 
   Aws::String m_queueId;
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
   Aws::String m_displayName;
 
@@ -325,9 +325,9 @@ class UpdateQueueRequest : public DeadlineRequest {
   Aws::Vector<Aws::String> m_allowedStorageProfileIdsToAdd;
 
   Aws::Vector<Aws::String> m_allowedStorageProfileIdsToRemove;
-  bool m_clientTokenHasBeenSet = true;
   bool m_farmIdHasBeenSet = false;
   bool m_queueIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_displayNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_defaultBudgetActionHasBeenSet = false;

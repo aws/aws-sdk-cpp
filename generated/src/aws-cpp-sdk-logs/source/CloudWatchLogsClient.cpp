@@ -31,6 +31,7 @@
 #include <aws/logs/model/CreateLogAnomalyDetectorRequest.h>
 #include <aws/logs/model/CreateLogGroupRequest.h>
 #include <aws/logs/model/CreateLogStreamRequest.h>
+#include <aws/logs/model/CreateLookupTableRequest.h>
 #include <aws/logs/model/CreateScheduledQueryRequest.h>
 #include <aws/logs/model/DeleteAccountPolicyRequest.h>
 #include <aws/logs/model/DeleteDataProtectionPolicyRequest.h>
@@ -44,6 +45,7 @@
 #include <aws/logs/model/DeleteLogAnomalyDetectorRequest.h>
 #include <aws/logs/model/DeleteLogGroupRequest.h>
 #include <aws/logs/model/DeleteLogStreamRequest.h>
+#include <aws/logs/model/DeleteLookupTableRequest.h>
 #include <aws/logs/model/DeleteMetricFilterRequest.h>
 #include <aws/logs/model/DeleteQueryDefinitionRequest.h>
 #include <aws/logs/model/DeleteResourcePolicyRequest.h>
@@ -64,6 +66,7 @@
 #include <aws/logs/model/DescribeIndexPoliciesRequest.h>
 #include <aws/logs/model/DescribeLogGroupsRequest.h>
 #include <aws/logs/model/DescribeLogStreamsRequest.h>
+#include <aws/logs/model/DescribeLookupTablesRequest.h>
 #include <aws/logs/model/DescribeMetricFiltersRequest.h>
 #include <aws/logs/model/DescribeQueriesRequest.h>
 #include <aws/logs/model/DescribeQueryDefinitionsRequest.h>
@@ -84,6 +87,7 @@
 #include <aws/logs/model/GetLogGroupFieldsRequest.h>
 #include <aws/logs/model/GetLogObjectRequest.h>
 #include <aws/logs/model/GetLogRecordRequest.h>
+#include <aws/logs/model/GetLookupTableRequest.h>
 #include <aws/logs/model/GetQueryResultsRequest.h>
 #include <aws/logs/model/GetScheduledQueryHistoryRequest.h>
 #include <aws/logs/model/GetScheduledQueryRequest.h>
@@ -125,6 +129,7 @@
 #include <aws/logs/model/UpdateAnomalyRequest.h>
 #include <aws/logs/model/UpdateDeliveryConfigurationRequest.h>
 #include <aws/logs/model/UpdateLogAnomalyDetectorRequest.h>
+#include <aws/logs/model/UpdateLookupTableRequest.h>
 #include <aws/logs/model/UpdateScheduledQueryRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
@@ -337,6 +342,12 @@ CreateLogStreamOutcome CloudWatchLogsClient::CreateLogStream(const CreateLogStre
                             : CreateLogStreamOutcome(std::move(result.GetError()));
 }
 
+CreateLookupTableOutcome CloudWatchLogsClient::CreateLookupTable(const CreateLookupTableRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLookupTableOutcome(result.GetResultWithOwnership())
+                            : CreateLookupTableOutcome(std::move(result.GetError()));
+}
+
 CreateScheduledQueryOutcome CloudWatchLogsClient::CreateScheduledQuery(const CreateScheduledQueryRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateScheduledQueryOutcome(result.GetResultWithOwnership())
@@ -412,6 +423,12 @@ DeleteLogStreamOutcome CloudWatchLogsClient::DeleteLogStream(const DeleteLogStre
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteLogStreamOutcome(result.GetResultWithOwnership())
                             : DeleteLogStreamOutcome(std::move(result.GetError()));
+}
+
+DeleteLookupTableOutcome CloudWatchLogsClient::DeleteLookupTable(const DeleteLookupTableRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLookupTableOutcome(result.GetResultWithOwnership())
+                            : DeleteLookupTableOutcome(std::move(result.GetError()));
 }
 
 DeleteMetricFilterOutcome CloudWatchLogsClient::DeleteMetricFilter(const DeleteMetricFilterRequest& request) const {
@@ -534,6 +551,12 @@ DescribeLogStreamsOutcome CloudWatchLogsClient::DescribeLogStreams(const Describ
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeLogStreamsOutcome(result.GetResultWithOwnership())
                             : DescribeLogStreamsOutcome(std::move(result.GetError()));
+}
+
+DescribeLookupTablesOutcome CloudWatchLogsClient::DescribeLookupTables(const DescribeLookupTablesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeLookupTablesOutcome(result.GetResultWithOwnership())
+                            : DescribeLookupTablesOutcome(std::move(result.GetError()));
 }
 
 DescribeMetricFiltersOutcome CloudWatchLogsClient::DescribeMetricFilters(const DescribeMetricFiltersRequest& request) const {
@@ -690,6 +713,11 @@ GetLogObjectOutcome CloudWatchLogsClient::GetLogObject(GetLogObjectRequest& requ
 GetLogRecordOutcome CloudWatchLogsClient::GetLogRecord(const GetLogRecordRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetLogRecordOutcome(result.GetResultWithOwnership()) : GetLogRecordOutcome(std::move(result.GetError()));
+}
+
+GetLookupTableOutcome CloudWatchLogsClient::GetLookupTable(const GetLookupTableRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLookupTableOutcome(result.GetResultWithOwnership()) : GetLookupTableOutcome(std::move(result.GetError()));
 }
 
 GetQueryResultsOutcome CloudWatchLogsClient::GetQueryResults(const GetQueryResultsRequest& request) const {
@@ -967,6 +995,12 @@ UpdateLogAnomalyDetectorOutcome CloudWatchLogsClient::UpdateLogAnomalyDetector(c
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateLogAnomalyDetectorOutcome(result.GetResultWithOwnership())
                             : UpdateLogAnomalyDetectorOutcome(std::move(result.GetError()));
+}
+
+UpdateLookupTableOutcome CloudWatchLogsClient::UpdateLookupTable(const UpdateLookupTableRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLookupTableOutcome(result.GetResultWithOwnership())
+                            : UpdateLookupTableOutcome(std::move(result.GetError()));
 }
 
 UpdateScheduledQueryOutcome CloudWatchLogsClient::UpdateScheduledQuery(const UpdateScheduledQueryRequest& request) const {

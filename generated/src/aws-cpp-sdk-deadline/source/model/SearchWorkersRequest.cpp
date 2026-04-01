@@ -15,14 +15,6 @@ using namespace Aws::Utils;
 Aws::String SearchWorkersRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_fleetIdsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> fleetIdsJsonList(m_fleetIds.size());
-    for (unsigned fleetIdsIndex = 0; fleetIdsIndex < fleetIdsJsonList.GetLength(); ++fleetIdsIndex) {
-      fleetIdsJsonList[fleetIdsIndex].AsString(m_fleetIds[fleetIdsIndex]);
-    }
-    payload.WithArray("fleetIds", std::move(fleetIdsJsonList));
-  }
-
   if (m_filterExpressionsHasBeenSet) {
     payload.WithObject("filterExpressions", m_filterExpressions.Jsonize());
   }
@@ -41,6 +33,14 @@ Aws::String SearchWorkersRequest::SerializePayload() const {
 
   if (m_pageSizeHasBeenSet) {
     payload.WithInteger("pageSize", m_pageSize);
+  }
+
+  if (m_fleetIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> fleetIdsJsonList(m_fleetIds.size());
+    for (unsigned fleetIdsIndex = 0; fleetIdsIndex < fleetIdsJsonList.GetLength(); ++fleetIdsIndex) {
+      fleetIdsJsonList[fleetIdsIndex].AsString(m_fleetIds[fleetIdsIndex]);
+    }
+    payload.WithArray("fleetIds", std::move(fleetIdsJsonList));
   }
 
   return payload.View().WriteReadable();

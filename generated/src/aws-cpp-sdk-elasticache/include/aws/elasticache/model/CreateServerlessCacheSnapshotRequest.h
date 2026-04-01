@@ -38,7 +38,7 @@ class CreateServerlessCacheSnapshotRequest : public ElastiCacheRequest {
   /**
    * <p>The name for the snapshot being created. Must be unique for the customer
    * account. Available for Valkey, Redis OSS and Serverless Memcached only. Must be
-   * between 1 and 255 characters.</p>
+   * between 1 and 255 characters. This value is stored as a lowercase string.</p>
    */
   inline const Aws::String& GetServerlessCacheSnapshotName() const { return m_serverlessCacheSnapshotName; }
   inline bool ServerlessCacheSnapshotNameHasBeenSet() const { return m_serverlessCacheSnapshotNameHasBeenSet; }

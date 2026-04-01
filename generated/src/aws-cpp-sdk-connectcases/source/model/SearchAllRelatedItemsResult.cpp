@@ -29,7 +29,11 @@ SearchAllRelatedItemsResult& SearchAllRelatedItemsResult::operator=(const Aws::A
   if (jsonValue.ValueExists("relatedItems")) {
     Aws::Utils::Array<JsonView> relatedItemsJsonList = jsonValue.GetArray("relatedItems");
     for (unsigned relatedItemsIndex = 0; relatedItemsIndex < relatedItemsJsonList.GetLength(); ++relatedItemsIndex) {
-      m_relatedItems.push_back(relatedItemsJsonList[relatedItemsIndex].AsObject());
+      if (relatedItemsJsonList[relatedItemsIndex].IsNull()) {
+        m_relatedItems.emplace_back();
+        continue;
+      }
+      m_relatedItems.emplace_back(relatedItemsJsonList[relatedItemsIndex].AsObject());
     }
     m_relatedItemsHasBeenSet = true;
   }

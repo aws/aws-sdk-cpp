@@ -356,60 +356,60 @@ class InputAndOutputWithHeadersRequest : public RestJsonProtocolRequest {
   ///@}
  private:
   Aws::String m_headerString;
-  bool m_headerStringHasBeenSet = false;
 
   int m_headerByte{0};
-  bool m_headerByteHasBeenSet = false;
 
   int m_headerShort{0};
-  bool m_headerShortHasBeenSet = false;
 
   int m_headerInteger{0};
-  bool m_headerIntegerHasBeenSet = false;
 
   long long m_headerLong{0};
-  bool m_headerLongHasBeenSet = false;
 
   double m_headerFloat{0.0};
-  bool m_headerFloatHasBeenSet = false;
 
   double m_headerDouble{0.0};
-  bool m_headerDoubleHasBeenSet = false;
 
   bool m_headerTrueBool{false};
-  bool m_headerTrueBoolHasBeenSet = false;
 
   bool m_headerFalseBool{false};
-  bool m_headerFalseBoolHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_headerStringList;
-  bool m_headerStringListHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_headerStringSet;
-  bool m_headerStringSetHasBeenSet = false;
 
   Aws::Vector<int> m_headerIntegerList;
-  bool m_headerIntegerListHasBeenSet = false;
 
   Aws::Vector<bool> m_headerBooleanList;
-  bool m_headerBooleanListHasBeenSet = false;
 
   Aws::Vector<Aws::Utils::DateTime> m_headerTimestampList;
-  bool m_headerTimestampListHasBeenSet = false;
 
   FooEnum m_headerEnum{FooEnum::NOT_SET};
-  bool m_headerEnumHasBeenSet = false;
 
   Aws::Vector<FooEnum> m_headerEnumList;
-  bool m_headerEnumListHasBeenSet = false;
 
   int m_headerIntegerEnum{0};
-  bool m_headerIntegerEnumHasBeenSet = false;
 
   Aws::Vector<int> m_headerIntegerEnumList;
-  bool m_headerIntegerEnumListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_headerStringHasBeenSet = false;
+  bool m_headerByteHasBeenSet = false;
+  bool m_headerShortHasBeenSet = false;
+  bool m_headerIntegerHasBeenSet = false;
+  bool m_headerLongHasBeenSet = false;
+  bool m_headerFloatHasBeenSet = false;
+  bool m_headerDoubleHasBeenSet = false;
+  bool m_headerTrueBoolHasBeenSet = false;
+  bool m_headerFalseBoolHasBeenSet = false;
+  bool m_headerStringListHasBeenSet = false;
+  bool m_headerStringSetHasBeenSet = false;
+  bool m_headerIntegerListHasBeenSet = false;
+  bool m_headerBooleanListHasBeenSet = false;
+  bool m_headerTimestampListHasBeenSet = false;
+  bool m_headerEnumHasBeenSet = false;
+  bool m_headerEnumListHasBeenSet = false;
+  bool m_headerIntegerEnumHasBeenSet = false;
+  bool m_headerIntegerEnumListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

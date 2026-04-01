@@ -149,6 +149,7 @@
 #include <aws/quicksight/model/AuthorizationCodeGrantDetails.h>
 #include <aws/quicksight/model/AuthorizationCodeGrantMetadata.h>
 #include <aws/quicksight/model/AuthorizedTargetsByService.h>
+#include <aws/quicksight/model/AutomationJobStatus.h>
 #include <aws/quicksight/model/AwsIotAnalyticsParameters.h>
 #include <aws/quicksight/model/AxisBinding.h>
 #include <aws/quicksight/model/AxisDataOptions.h>
@@ -594,6 +595,8 @@
 #include <aws/quicksight/model/DescribeAssetBundleExportJobResult.h>
 #include <aws/quicksight/model/DescribeAssetBundleImportJobRequest.h>
 #include <aws/quicksight/model/DescribeAssetBundleImportJobResult.h>
+#include <aws/quicksight/model/DescribeAutomationJobRequest.h>
+#include <aws/quicksight/model/DescribeAutomationJobResult.h>
 #include <aws/quicksight/model/DescribeBrandAssignmentRequest.h>
 #include <aws/quicksight/model/DescribeBrandAssignmentResult.h>
 #include <aws/quicksight/model/DescribeBrandPublishedVersionRequest.h>
@@ -1136,6 +1139,7 @@
 #include <aws/quicksight/model/NumericalAggregationFunction.h>
 #include <aws/quicksight/model/NumericalDimensionField.h>
 #include <aws/quicksight/model/NumericalMeasureField.h>
+#include <aws/quicksight/model/OAuthClientCredentials.h>
 #include <aws/quicksight/model/OAuthParameters.h>
 #include <aws/quicksight/model/OracleParameters.h>
 #include <aws/quicksight/model/OtherCategories.h>
@@ -1424,6 +1428,7 @@
 #include <aws/quicksight/model/SheetLayoutGroupMemberType.h>
 #include <aws/quicksight/model/SheetStyle.h>
 #include <aws/quicksight/model/SheetTextBox.h>
+#include <aws/quicksight/model/SheetTooltip.h>
 #include <aws/quicksight/model/SheetVisualScopingConfiguration.h>
 #include <aws/quicksight/model/ShortFormatText.h>
 #include <aws/quicksight/model/SignupResponse.h>
@@ -1462,6 +1467,9 @@
 #include <aws/quicksight/model/SourceTable.h>
 #include <aws/quicksight/model/Spacing.h>
 #include <aws/quicksight/model/SparkParameters.h>
+#include <aws/quicksight/model/SparklineAxisBehavior.h>
+#include <aws/quicksight/model/SparklineVisualType.h>
+#include <aws/quicksight/model/SparklinesOptions.h>
 #include <aws/quicksight/model/SpatialStaticFile.h>
 #include <aws/quicksight/model/SpecialValue.h>
 #include <aws/quicksight/model/SqlServerParameters.h>
@@ -1472,6 +1480,8 @@
 #include <aws/quicksight/model/StartAssetBundleExportJobResult.h>
 #include <aws/quicksight/model/StartAssetBundleImportJobRequest.h>
 #include <aws/quicksight/model/StartAssetBundleImportJobResult.h>
+#include <aws/quicksight/model/StartAutomationJobRequest.h>
+#include <aws/quicksight/model/StartAutomationJobResult.h>
 #include <aws/quicksight/model/StartDashboardSnapshotJobRequest.h>
 #include <aws/quicksight/model/StartDashboardSnapshotJobResult.h>
 #include <aws/quicksight/model/StartDashboardSnapshotJobScheduleRequest.h>
@@ -1575,6 +1585,7 @@
 #include <aws/quicksight/model/TimeRangeFilterValue.h>
 #include <aws/quicksight/model/TooltipItem.h>
 #include <aws/quicksight/model/TooltipOptions.h>
+#include <aws/quicksight/model/TooltipSheetDefinition.h>
 #include <aws/quicksight/model/TooltipTarget.h>
 #include <aws/quicksight/model/TooltipTitleType.h>
 #include <aws/quicksight/model/TopBottomComputationType.h>

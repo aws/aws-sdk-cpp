@@ -43,6 +43,10 @@ Aws::String CreateIngressPointRequest::SerializePayload() const {
     payload.WithObject("NetworkConfiguration", m_networkConfiguration.Jsonize());
   }
 
+  if (m_tlsPolicyHasBeenSet) {
+    payload.WithString("TlsPolicy", TlsPolicyMapper::GetNameForTlsPolicy(m_tlsPolicy));
+  }
+
   if (m_tagsHasBeenSet) {
     Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
     for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {

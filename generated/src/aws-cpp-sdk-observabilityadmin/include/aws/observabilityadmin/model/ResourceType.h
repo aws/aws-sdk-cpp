@@ -22,7 +22,11 @@ enum class ResourceType {
   AWS_Route53Resolver_ResolverEndpoint,
   AWS_BedrockAgentCore_Runtime,
   AWS_BedrockAgentCore_Browser,
-  AWS_BedrockAgentCore_CodeInterpreter
+  AWS_BedrockAgentCore_CodeInterpreter,
+  AWS_BedrockAgentCore_Gateway,
+  AWS_BedrockAgentCore_Memory,
+  AWS_SecurityHub_Hub,
+  AWS_CloudFront_Distribution
 };
 
 namespace ResourceTypeMapper {

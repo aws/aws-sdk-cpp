@@ -58,7 +58,8 @@ class DomainEndpointOptions {
    * security policy that supports only TLS version 1.2</p> </li> <li> <p>
    * <b>Policy-Min-TLS-1-2-PFS-2023-10:</b> TLS security policy that supports TLS
    * version 1.2 to TLS version 1.3 with perfect forward secrecy cipher suites</p>
-   * </li> </ul>
+   * </li> <li> <p> <b>Policy-Min-TLS-1-2-RFC9151-FIPS-2024-08:</b> TLS security
+   * policy that supports TLS version 1.3 with FIPS</p> </li> </ul>
    */
   inline TLSSecurityPolicy GetTLSSecurityPolicy() const { return m_tLSSecurityPolicy; }
   inline bool TLSSecurityPolicyHasBeenSet() const { return m_tLSSecurityPolicyHasBeenSet; }

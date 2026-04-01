@@ -57,9 +57,30 @@ class ConflictException {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> Message that describes the cause of the exception.</p>
+   */
+  inline const Aws::String& GetMessage() const { return m_message; }
+  inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+  template <typename MessageT = Aws::String>
+  void SetMessage(MessageT&& value) {
+    m_messageHasBeenSet = true;
+    m_message = std::forward<MessageT>(value);
+  }
+  template <typename MessageT = Aws::String>
+  ConflictException& WithMessage(MessageT&& value) {
+    SetMessage(std::forward<MessageT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_resourceIds;
+
+  Aws::String m_message;
   bool m_resourceIdsHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
 };
 
 }  // namespace Model

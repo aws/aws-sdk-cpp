@@ -46,13 +46,6 @@ GetTaskResult& GetTaskResult::operator=(const Aws::AmazonWebServiceResult<JsonVa
     m_failureRetryCount = jsonValue.GetInteger("failureRetryCount");
     m_failureRetryCountHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("parameters")) {
-    Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
-    for (auto& parametersItem : parametersJsonMap) {
-      m_parameters[parametersItem.first] = parametersItem.second.AsObject();
-    }
-    m_parametersHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("startedAt")) {
     m_startedAt = jsonValue.GetString("startedAt");
     m_startedAtHasBeenSet = true;
@@ -72,6 +65,13 @@ GetTaskResult& GetTaskResult::operator=(const Aws::AmazonWebServiceResult<JsonVa
   if (jsonValue.ValueExists("latestSessionActionId")) {
     m_latestSessionActionId = jsonValue.GetString("latestSessionActionId");
     m_latestSessionActionIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("parameters")) {
+    Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
+    for (auto& parametersItem : parametersJsonMap) {
+      m_parameters[parametersItem.first] = parametersItem.second.AsObject();
+    }
+    m_parametersHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

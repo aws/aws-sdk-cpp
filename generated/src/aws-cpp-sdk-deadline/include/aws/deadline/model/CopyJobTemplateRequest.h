@@ -49,24 +49,6 @@ class CopyJobTemplateRequest : public DeadlineRequest {
 
   ///@{
   /**
-   * <p>The job ID to copy.</p>
-   */
-  inline const Aws::String& GetJobId() const { return m_jobId; }
-  inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-  template <typename JobIdT = Aws::String>
-  void SetJobId(JobIdT&& value) {
-    m_jobIdHasBeenSet = true;
-    m_jobId = std::forward<JobIdT>(value);
-  }
-  template <typename JobIdT = Aws::String>
-  CopyJobTemplateRequest& WithJobId(JobIdT&& value) {
-    SetJobId(std::forward<JobIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The queue ID to copy.</p>
    */
   inline const Aws::String& GetQueueId() const { return m_queueId; }
@@ -79,6 +61,24 @@ class CopyJobTemplateRequest : public DeadlineRequest {
   template <typename QueueIdT = Aws::String>
   CopyJobTemplateRequest& WithQueueId(QueueIdT&& value) {
     SetQueueId(std::forward<QueueIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The job ID to copy.</p>
+   */
+  inline const Aws::String& GetJobId() const { return m_jobId; }
+  inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+  template <typename JobIdT = Aws::String>
+  void SetJobId(JobIdT&& value) {
+    m_jobIdHasBeenSet = true;
+    m_jobId = std::forward<JobIdT>(value);
+  }
+  template <typename JobIdT = Aws::String>
+  CopyJobTemplateRequest& WithJobId(JobIdT&& value) {
+    SetJobId(std::forward<JobIdT>(value));
     return *this;
   }
   ///@}
@@ -104,14 +104,14 @@ class CopyJobTemplateRequest : public DeadlineRequest {
  private:
   Aws::String m_farmId;
 
-  Aws::String m_jobId;
-
   Aws::String m_queueId;
+
+  Aws::String m_jobId;
 
   S3Location m_targetS3Location;
   bool m_farmIdHasBeenSet = false;
-  bool m_jobIdHasBeenSet = false;
   bool m_queueIdHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
   bool m_targetS3LocationHasBeenSet = false;
 };
 

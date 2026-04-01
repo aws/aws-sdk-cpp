@@ -18,7 +18,11 @@ Aws::String TagResourceRequest::SerializePayload() const {
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {
-      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+      if (!tagsItem.second.has_value()) {
+        tagsJsonMap.WithNull(tagsItem.first);
+        continue;
+      }
+      tagsJsonMap.WithString(tagsItem.first, *tagsItem.second);
     }
     payload.WithObject("tags", std::move(tagsJsonMap));
   }

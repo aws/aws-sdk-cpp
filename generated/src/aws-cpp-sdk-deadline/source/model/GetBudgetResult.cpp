@@ -38,10 +38,6 @@ GetBudgetResult& GetBudgetResult::operator=(const Aws::AmazonWebServiceResult<Js
     m_displayName = jsonValue.GetString("displayName");
     m_displayNameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("description")) {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("approximateDollarLimit")) {
     m_approximateDollarLimit = jsonValue.GetDouble("approximateDollarLimit");
     m_approximateDollarLimitHasBeenSet = true;
@@ -49,17 +45,6 @@ GetBudgetResult& GetBudgetResult::operator=(const Aws::AmazonWebServiceResult<Js
   if (jsonValue.ValueExists("usages")) {
     m_usages = jsonValue.GetObject("usages");
     m_usagesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("actions")) {
-    Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("actions");
-    for (unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex) {
-      m_actions.push_back(actionsJsonList[actionsIndex].AsObject());
-    }
-    m_actionsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("schedule")) {
-    m_schedule = jsonValue.GetObject("schedule");
-    m_scheduleHasBeenSet = true;
   }
   if (jsonValue.ValueExists("createdBy")) {
     m_createdBy = jsonValue.GetString("createdBy");
@@ -76,6 +61,21 @@ GetBudgetResult& GetBudgetResult::operator=(const Aws::AmazonWebServiceResult<Js
   if (jsonValue.ValueExists("updatedAt")) {
     m_updatedAt = jsonValue.GetString("updatedAt");
     m_updatedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("actions")) {
+    Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("actions");
+    for (unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex) {
+      m_actions.push_back(actionsJsonList[actionsIndex].AsObject());
+    }
+    m_actionsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("schedule")) {
+    m_schedule = jsonValue.GetObject("schedule");
+    m_scheduleHasBeenSet = true;
   }
   if (jsonValue.ValueExists("queueStoppedAt")) {
     m_queueStoppedAt = jsonValue.GetString("queueStoppedAt");

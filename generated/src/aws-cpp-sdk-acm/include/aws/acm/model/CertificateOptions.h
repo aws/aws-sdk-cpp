@@ -66,7 +66,8 @@ class CertificateOptions {
   ///@{
   /**
    * <p>You can opt in to allow the export of your certificates by specifying
-   * <code>ENABLED</code>.</p>
+   * <code>ENABLED</code>. You cannot update the value of <code>Export</code> after
+   * the the certificate is created.</p>
    */
   inline CertificateExport GetExport() const { return m_export; }
   inline bool ExportHasBeenSet() const { return m_exportHasBeenSet; }

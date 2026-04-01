@@ -10,7 +10,7 @@
 namespace Aws {
 namespace PinpointSMSVoiceV2 {
 namespace Model {
-enum class NumberCapability { NOT_SET, SMS, VOICE, MMS };
+enum class NumberCapability { NOT_SET, SMS, VOICE, MMS, RCS };
 
 namespace NumberCapabilityMapper {
 AWS_PINPOINTSMSVOICEV2_API NumberCapability GetNumberCapabilityForName(const Aws::String& name);

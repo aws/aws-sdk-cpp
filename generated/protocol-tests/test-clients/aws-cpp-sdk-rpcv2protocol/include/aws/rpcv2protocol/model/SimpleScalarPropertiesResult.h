@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/crt/cbor/Cbor.h>
@@ -175,38 +176,41 @@ class SimpleScalarPropertiesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_trueBooleanValue{false};
-  bool m_trueBooleanValueHasBeenSet = false;
 
   bool m_falseBooleanValue{false};
-  bool m_falseBooleanValueHasBeenSet = false;
 
   int64_t m_byteValue{0};
-  bool m_byteValueHasBeenSet = false;
 
   double m_doubleValue{0.0};
-  bool m_doubleValueHasBeenSet = false;
 
   double m_floatValue{0.0};
-  bool m_floatValueHasBeenSet = false;
 
   int64_t m_integerValue{0};
-  bool m_integerValueHasBeenSet = false;
 
   long long m_longValue{0};
-  bool m_longValueHasBeenSet = false;
 
   int64_t m_shortValue{0};
-  bool m_shortValueHasBeenSet = false;
 
   Aws::String m_stringValue;
-  bool m_stringValueHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_blobValue{};
-  bool m_blobValueHasBeenSet = false;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_trueBooleanValueHasBeenSet = false;
+  bool m_falseBooleanValueHasBeenSet = false;
+  bool m_byteValueHasBeenSet = false;
+  bool m_doubleValueHasBeenSet = false;
+  bool m_floatValueHasBeenSet = false;
+  bool m_integerValueHasBeenSet = false;
+  bool m_longValueHasBeenSet = false;
+  bool m_shortValueHasBeenSet = false;
+  bool m_stringValueHasBeenSet = false;
+  bool m_blobValueHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

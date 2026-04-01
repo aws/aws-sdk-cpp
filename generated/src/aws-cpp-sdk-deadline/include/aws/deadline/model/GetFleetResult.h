@@ -27,6 +27,13 @@ class JsonValue;
 }  // namespace Utils
 namespace deadline {
 namespace Model {
+/**
+ * <p>Mixin that adds an optional ARN field to response structures. Apply to
+ * SummaryMixins (flows into Get, Summary, and BatchGet) and Create
+ * outputs.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetFleetResponse">AWS
+ * API Reference</a></p>
+ */
 class GetFleetResult {
  public:
   AWS_DEADLINE_API GetFleetResult() = default;
@@ -82,25 +89,6 @@ class GetFleetResult {
   template <typename DisplayNameT = Aws::String>
   GetFleetResult& WithDisplayName(DisplayNameT&& value) {
     SetDisplayName(std::forward<DisplayNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The description of the fleet.</p>  <p>This field can store any
-   * content. Escape or encode this content before displaying it on a webpage or any
-   * other system that might interpret the content of this field.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  GetFleetResult& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
     return *this;
   }
   ///@}
@@ -232,59 +220,6 @@ class GetFleetResult {
 
   ///@{
   /**
-   * <p>The script that runs as a worker is starting up that you can use to provide
-   * additional configuration for workers in your fleet.</p>
-   */
-  inline const HostConfiguration& GetHostConfiguration() const { return m_hostConfiguration; }
-  template <typename HostConfigurationT = HostConfiguration>
-  void SetHostConfiguration(HostConfigurationT&& value) {
-    m_hostConfigurationHasBeenSet = true;
-    m_hostConfiguration = std::forward<HostConfigurationT>(value);
-  }
-  template <typename HostConfigurationT = HostConfiguration>
-  GetFleetResult& WithHostConfiguration(HostConfigurationT&& value) {
-    SetHostConfiguration(std::forward<HostConfigurationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Outlines what the fleet is capable of for minimums, maximums, and naming, in
-   * addition to attribute names and values.</p>
-   */
-  inline const FleetCapabilities& GetCapabilities() const { return m_capabilities; }
-  template <typename CapabilitiesT = FleetCapabilities>
-  void SetCapabilities(CapabilitiesT&& value) {
-    m_capabilitiesHasBeenSet = true;
-    m_capabilities = std::forward<CapabilitiesT>(value);
-  }
-  template <typename CapabilitiesT = FleetCapabilities>
-  GetFleetResult& WithCapabilities(CapabilitiesT&& value) {
-    SetCapabilities(std::forward<CapabilitiesT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The IAM role ARN.</p>
-   */
-  inline const Aws::String& GetRoleArn() const { return m_roleArn; }
-  template <typename RoleArnT = Aws::String>
-  void SetRoleArn(RoleArnT&& value) {
-    m_roleArnHasBeenSet = true;
-    m_roleArn = std::forward<RoleArnT>(value);
-  }
-  template <typename RoleArnT = Aws::String>
-  GetFleetResult& WithRoleArn(RoleArnT&& value) {
-    SetRoleArn(std::forward<RoleArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The date and time the resource was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -352,6 +287,78 @@ class GetFleetResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The description of the fleet.</p>  <p>This field can store any
+   * content. Escape or encode this content before displaying it on a webpage or any
+   * other system that might interpret the content of this field.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  GetFleetResult& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The script that runs as a worker is starting up that you can use to provide
+   * additional configuration for workers in your fleet.</p>
+   */
+  inline const HostConfiguration& GetHostConfiguration() const { return m_hostConfiguration; }
+  template <typename HostConfigurationT = HostConfiguration>
+  void SetHostConfiguration(HostConfigurationT&& value) {
+    m_hostConfigurationHasBeenSet = true;
+    m_hostConfiguration = std::forward<HostConfigurationT>(value);
+  }
+  template <typename HostConfigurationT = HostConfiguration>
+  GetFleetResult& WithHostConfiguration(HostConfigurationT&& value) {
+    SetHostConfiguration(std::forward<HostConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Outlines what the fleet is capable of for minimums, maximums, and naming, in
+   * addition to attribute names and values.</p>
+   */
+  inline const FleetCapabilities& GetCapabilities() const { return m_capabilities; }
+  template <typename CapabilitiesT = FleetCapabilities>
+  void SetCapabilities(CapabilitiesT&& value) {
+    m_capabilitiesHasBeenSet = true;
+    m_capabilities = std::forward<CapabilitiesT>(value);
+  }
+  template <typename CapabilitiesT = FleetCapabilities>
+  GetFleetResult& WithCapabilities(CapabilitiesT&& value) {
+    SetCapabilities(std::forward<CapabilitiesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The IAM role ARN.</p>
+   */
+  inline const Aws::String& GetRoleArn() const { return m_roleArn; }
+  template <typename RoleArnT = Aws::String>
+  void SetRoleArn(RoleArnT&& value) {
+    m_roleArnHasBeenSet = true;
+    m_roleArn = std::forward<RoleArnT>(value);
+  }
+  template <typename RoleArnT = Aws::String>
+  GetFleetResult& WithRoleArn(RoleArnT&& value) {
+    SetRoleArn(std::forward<RoleArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -374,8 +381,6 @@ class GetFleetResult {
 
   Aws::String m_displayName;
 
-  Aws::String m_description;
-
   FleetStatus m_status{FleetStatus::NOT_SET};
 
   Aws::String m_statusMessage;
@@ -392,12 +397,6 @@ class GetFleetResult {
 
   FleetConfiguration m_configuration;
 
-  HostConfiguration m_hostConfiguration;
-
-  FleetCapabilities m_capabilities;
-
-  Aws::String m_roleArn;
-
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::String m_createdBy;
@@ -406,12 +405,19 @@ class GetFleetResult {
 
   Aws::String m_updatedBy;
 
+  Aws::String m_description;
+
+  HostConfiguration m_hostConfiguration;
+
+  FleetCapabilities m_capabilities;
+
+  Aws::String m_roleArn;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_fleetIdHasBeenSet = false;
   bool m_farmIdHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
   bool m_autoScalingStatusHasBeenSet = false;
@@ -420,13 +426,14 @@ class GetFleetResult {
   bool m_minWorkerCountHasBeenSet = false;
   bool m_maxWorkerCountHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
-  bool m_hostConfigurationHasBeenSet = false;
-  bool m_capabilitiesHasBeenSet = false;
-  bool m_roleArnHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_updatedByHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_hostConfigurationHasBeenSet = false;
+  bool m_capabilitiesHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

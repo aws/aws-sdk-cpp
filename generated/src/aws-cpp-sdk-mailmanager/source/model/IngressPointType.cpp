@@ -17,6 +17,7 @@ namespace IngressPointTypeMapper {
 
 static const int OPEN_HASH = HashingUtils::HashString("OPEN");
 static const int AUTH_HASH = HashingUtils::HashString("AUTH");
+static const int MTLS_HASH = HashingUtils::HashString("MTLS");
 
 IngressPointType GetIngressPointTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ IngressPointType GetIngressPointTypeForName(const Aws::String& name) {
     return IngressPointType::OPEN;
   } else if (hashCode == AUTH_HASH) {
     return IngressPointType::AUTH;
+  } else if (hashCode == MTLS_HASH) {
+    return IngressPointType::MTLS;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForIngressPointType(IngressPointType enumValue) {
       return "OPEN";
     case IngressPointType::AUTH:
       return "AUTH";
+    case IngressPointType::MTLS:
+      return "MTLS";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

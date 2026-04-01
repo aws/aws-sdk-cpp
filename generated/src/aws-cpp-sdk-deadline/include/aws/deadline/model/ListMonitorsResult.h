@@ -23,34 +23,17 @@ class JsonValue;
 }  // namespace Utils
 namespace deadline {
 namespace Model {
+/**
+ * <p>Shared pagination field for List operation outputs (nextToken).</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListMonitorsResponse">AWS
+ * API Reference</a></p>
+ */
 class ListMonitorsResult {
  public:
   AWS_DEADLINE_API ListMonitorsResult() = default;
   AWS_DEADLINE_API ListMonitorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
   AWS_DEADLINE_API ListMonitorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-  ///@{
-  /**
-   * <p>If Deadline Cloud returns <code>nextToken</code>, then there are more results
-   * available. The value of <code>nextToken</code> is a unique pagination token for
-   * each page. To retrieve the next page, call the operation again using the
-   * returned token. Keep all other arguments unchanged. If no results remain, then
-   * <code>nextToken</code> is set to <code>null</code>. Each pagination token
-   * expires after 24 hours. If you provide a token that isn't valid, then you
-   * receive an HTTP 400 <code>ValidationException</code> error.</p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  ListMonitorsResult& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
 
   ///@{
   /**
@@ -77,6 +60,29 @@ class ListMonitorsResult {
   ///@}
 
   ///@{
+  /**
+   * <p>If Deadline Cloud returns <code>nextToken</code>, then there are more results
+   * available. The value of <code>nextToken</code> is a unique pagination token for
+   * each page. To retrieve the next page, call the operation again using the
+   * returned token. Keep all other arguments unchanged. If no results remain, then
+   * <code>nextToken</code> is set to <code>null</code>. Each pagination token
+   * expires after 24 hours. If you provide a token that isn't valid, then you
+   * receive an HTTP 400 <code>ValidationException</code> error.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListMonitorsResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -93,14 +99,14 @@ class ListMonitorsResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
-  Aws::String m_nextToken;
-
   Aws::Vector<MonitorSummary> m_monitors;
+
+  Aws::String m_nextToken;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
-  bool m_nextTokenHasBeenSet = false;
   bool m_monitorsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -16,6 +16,7 @@
 #include <aws/quicksight/model/QueryExecutionOptions.h>
 #include <aws/quicksight/model/SheetDefinition.h>
 #include <aws/quicksight/model/StaticFile.h>
+#include <aws/quicksight/model/TooltipSheetDefinition.h>
 
 #include <utility>
 
@@ -86,6 +87,30 @@ class TemplateVersionDefinition {
   TemplateVersionDefinition& AddSheets(SheetsT&& value) {
     m_sheetsHasBeenSet = true;
     m_sheets.emplace_back(std::forward<SheetsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An array of tooltip sheet definitions for a template.</p>
+   */
+  inline const Aws::Vector<TooltipSheetDefinition>& GetTooltipSheets() const { return m_tooltipSheets; }
+  inline bool TooltipSheetsHasBeenSet() const { return m_tooltipSheetsHasBeenSet; }
+  template <typename TooltipSheetsT = Aws::Vector<TooltipSheetDefinition>>
+  void SetTooltipSheets(TooltipSheetsT&& value) {
+    m_tooltipSheetsHasBeenSet = true;
+    m_tooltipSheets = std::forward<TooltipSheetsT>(value);
+  }
+  template <typename TooltipSheetsT = Aws::Vector<TooltipSheetDefinition>>
+  TemplateVersionDefinition& WithTooltipSheets(TooltipSheetsT&& value) {
+    SetTooltipSheets(std::forward<TooltipSheetsT>(value));
+    return *this;
+  }
+  template <typename TooltipSheetsT = TooltipSheetDefinition>
+  TemplateVersionDefinition& AddTooltipSheets(TooltipSheetsT&& value) {
+    m_tooltipSheetsHasBeenSet = true;
+    m_tooltipSheets.emplace_back(std::forward<TooltipSheetsT>(value));
     return *this;
   }
   ///@}
@@ -272,6 +297,8 @@ class TemplateVersionDefinition {
 
   Aws::Vector<SheetDefinition> m_sheets;
 
+  Aws::Vector<TooltipSheetDefinition> m_tooltipSheets;
+
   Aws::Vector<CalculatedField> m_calculatedFields;
 
   Aws::Vector<ParameterDeclaration> m_parameterDeclarations;
@@ -289,6 +316,7 @@ class TemplateVersionDefinition {
   Aws::Vector<StaticFile> m_staticFiles;
   bool m_dataSetConfigurationsHasBeenSet = false;
   bool m_sheetsHasBeenSet = false;
+  bool m_tooltipSheetsHasBeenSet = false;
   bool m_calculatedFieldsHasBeenSet = false;
   bool m_parameterDeclarationsHasBeenSet = false;
   bool m_filterGroupsHasBeenSet = false;

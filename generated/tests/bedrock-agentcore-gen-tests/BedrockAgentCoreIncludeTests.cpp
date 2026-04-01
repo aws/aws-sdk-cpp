@@ -59,10 +59,14 @@
 #include <aws/bedrock-agentcore/model/DeleteMemoryRecordResult.h>
 #include <aws/bedrock-agentcore/model/EvaluateRequest.h>
 #include <aws/bedrock-agentcore/model/EvaluateResult.h>
+#include <aws/bedrock-agentcore/model/EvaluationContent.h>
+#include <aws/bedrock-agentcore/model/EvaluationExpectedTrajectory.h>
 #include <aws/bedrock-agentcore/model/EvaluationInput.h>
+#include <aws/bedrock-agentcore/model/EvaluationReferenceInput.h>
 #include <aws/bedrock-agentcore/model/EvaluationResultContent.h>
 #include <aws/bedrock-agentcore/model/EvaluationTarget.h>
 #include <aws/bedrock-agentcore/model/Event.h>
+#include <aws/bedrock-agentcore/model/EventFilterCondition.h>
 #include <aws/bedrock-agentcore/model/EventMetadataFilterExpression.h>
 #include <aws/bedrock-agentcore/model/ExternalProxy.h>
 #include <aws/bedrock-agentcore/model/ExtractionJob.h>
@@ -151,6 +155,7 @@
 #include <aws/bedrock-agentcore/model/SaveBrowserSessionProfileResult.h>
 #include <aws/bedrock-agentcore/model/SearchCriteria.h>
 #include <aws/bedrock-agentcore/model/SecretsManagerLocation.h>
+#include <aws/bedrock-agentcore/model/SessionFilter.h>
 #include <aws/bedrock-agentcore/model/SessionStatus.h>
 #include <aws/bedrock-agentcore/model/SessionSummary.h>
 #include <aws/bedrock-agentcore/model/SpanContext.h>

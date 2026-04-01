@@ -19,9 +19,9 @@ Aws::String GetSessionsStatisticsAggregationRequest::SerializePayload() const { 
 
 void GetSessionsStatisticsAggregationRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
-  if (m_aggregationIdHasBeenSet) {
-    ss << m_aggregationId;
-    uri.AddQueryStringParameter("aggregationId", ss.str());
+  if (m_nextTokenHasBeenSet) {
+    ss << m_nextToken;
+    uri.AddQueryStringParameter("nextToken", ss.str());
     ss.str("");
   }
 
@@ -31,9 +31,9 @@ void GetSessionsStatisticsAggregationRequest::AddQueryStringParameters(URI& uri)
     ss.str("");
   }
 
-  if (m_nextTokenHasBeenSet) {
-    ss << m_nextToken;
-    uri.AddQueryStringParameter("nextToken", ss.str());
+  if (m_aggregationIdHasBeenSet) {
+    ss << m_aggregationId;
+    uri.AddQueryStringParameter("aggregationId", ss.str());
     ss.str("");
   }
 }

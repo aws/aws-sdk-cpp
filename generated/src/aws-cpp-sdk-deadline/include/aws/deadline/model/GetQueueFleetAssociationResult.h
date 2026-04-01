@@ -23,6 +23,12 @@ class JsonValue;
 }  // namespace Utils
 namespace deadline {
 namespace Model {
+/**
+ * <p>Domain fields for QueueFleetAssociation summary/response shapes, ordered
+ * before timestamps.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetQueueFleetAssociationResponse">AWS
+ * API Reference</a></p>
+ */
 class GetQueueFleetAssociationResult {
  public:
   AWS_DEADLINE_API GetQueueFleetAssociationResult() = default;

@@ -22,6 +22,10 @@ CustomerManagedFleetConfiguration& CustomerManagedFleetConfiguration::operator=(
     m_mode = AutoScalingModeMapper::GetAutoScalingModeForName(jsonValue.GetString("mode"));
     m_modeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("autoScalingConfiguration")) {
+    m_autoScalingConfiguration = jsonValue.GetObject("autoScalingConfiguration");
+    m_autoScalingConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("workerCapabilities")) {
     m_workerCapabilities = jsonValue.GetObject("workerCapabilities");
     m_workerCapabilitiesHasBeenSet = true;
@@ -42,6 +46,10 @@ JsonValue CustomerManagedFleetConfiguration::Jsonize() const {
 
   if (m_modeHasBeenSet) {
     payload.WithString("mode", AutoScalingModeMapper::GetNameForAutoScalingMode(m_mode));
+  }
+
+  if (m_autoScalingConfigurationHasBeenSet) {
+    payload.WithObject("autoScalingConfiguration", m_autoScalingConfiguration.Jsonize());
   }
 
   if (m_workerCapabilitiesHasBeenSet) {

@@ -19,18 +19,6 @@ Aws::String ListQueuesRequest::SerializePayload() const { return {}; }
 
 void ListQueuesRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
-  if (m_principalIdHasBeenSet) {
-    ss << m_principalId;
-    uri.AddQueryStringParameter("principalId", ss.str());
-    ss.str("");
-  }
-
-  if (m_statusHasBeenSet) {
-    ss << QueueStatusMapper::GetNameForQueueStatus(m_status);
-    uri.AddQueryStringParameter("status", ss.str());
-    ss.str("");
-  }
-
   if (m_nextTokenHasBeenSet) {
     ss << m_nextToken;
     uri.AddQueryStringParameter("nextToken", ss.str());
@@ -40,6 +28,18 @@ void ListQueuesRequest::AddQueryStringParameters(URI& uri) const {
   if (m_maxResultsHasBeenSet) {
     ss << m_maxResults;
     uri.AddQueryStringParameter("maxResults", ss.str());
+    ss.str("");
+  }
+
+  if (m_principalIdHasBeenSet) {
+    ss << m_principalId;
+    uri.AddQueryStringParameter("principalId", ss.str());
+    ss.str("");
+  }
+
+  if (m_statusHasBeenSet) {
+    ss << QueueStatusMapper::GetNameForQueueStatus(m_status);
+    uri.AddQueryStringParameter("status", ss.str());
     ss.str("");
   }
 }

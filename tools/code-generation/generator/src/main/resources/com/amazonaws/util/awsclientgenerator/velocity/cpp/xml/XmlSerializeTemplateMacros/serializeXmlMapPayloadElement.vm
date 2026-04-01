@@ -25,6 +25,15 @@
 #set($macro.mapKeySerializationName = "#if($member.shape.mapKey.locationName)$member.shape.mapKey.locationName#{else}key#end")
 #serializeXmlSinglePayloadElement($macro.mapSpaces, $macro.mapKeySerializationName, "${lowerCaseVarName}Key", $member.shape.mapKey, "${macro.mapItemVarName}.first", "${lowerCaseVarName}MapEntryNode")
 #set($macro.mapValueSerializationName = "#if($member.shape.mapValue.locationName)$member.shape.mapValue.locationName#{else}value#end")
+#if($member.shape.sparse)
+  ${spaces}  if(!${macro.mapItemVarName}.second.has_value()) {
+  ${spaces}    XmlNode ${lowerCaseVarName}NilNode = ${lowerCaseVarName}MapEntryNode.CreateChildElement("${macro.mapValueSerializationName}");
+  ${spaces}    ${lowerCaseVarName}NilNode.SetAttributeValue("xsi:nil", "true");
+  ${spaces}  } else {
+#serializeXmlSinglePayloadElement($macro.mapSpaces, $macro.mapValueSerializationName, "${lowerCaseVarName}Value", $member.shape.mapValue, "(*${macro.mapItemVarName}.second)", "${lowerCaseVarName}MapEntryNode")
+  ${spaces}  }
+#else
 #serializeXmlSinglePayloadElement($macro.mapSpaces, $macro.mapValueSerializationName, "${lowerCaseVarName}Value", $member.shape.mapValue, "${macro.mapItemVarName}.second", "${lowerCaseVarName}MapEntryNode")
+#end
   ${spaces}}
 #end##macro serializeXmlMapPayloadElement

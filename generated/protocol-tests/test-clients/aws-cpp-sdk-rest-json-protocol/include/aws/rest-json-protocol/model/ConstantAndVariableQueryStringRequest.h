@@ -66,9 +66,9 @@ class ConstantAndVariableQueryStringRequest : public RestJsonProtocolRequest {
   ///@}
  private:
   Aws::String m_baz;
-  bool m_bazHasBeenSet = false;
 
   Aws::String m_maybeSet;
+  bool m_bazHasBeenSet = false;
   bool m_maybeSetHasBeenSet = false;
 };
 

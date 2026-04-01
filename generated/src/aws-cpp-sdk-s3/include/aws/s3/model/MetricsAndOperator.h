@@ -56,7 +56,8 @@ class MetricsAndOperator {
 
   ///@{
   /**
-   * <p>The list of tags used when evaluating an AND predicate.</p>
+   * <p>The list of tags used when evaluating an AND predicate.</p>  <p>
+   * <code>Tag</code> filters are not supported for directory buckets.</p>
    */
   inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
   inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

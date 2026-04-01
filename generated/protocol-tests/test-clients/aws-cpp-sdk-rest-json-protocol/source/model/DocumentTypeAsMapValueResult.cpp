@@ -20,6 +20,7 @@ using namespace Aws;
 DocumentTypeAsMapValueResult::DocumentTypeAsMapValueResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DocumentTypeAsMapValueResult& DocumentTypeAsMapValueResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("docValuedMap")) {
     Aws::Map<Aws::String, JsonView> docValuedMapJsonMap = jsonValue.GetObject("docValuedMap").GetAllObjects();

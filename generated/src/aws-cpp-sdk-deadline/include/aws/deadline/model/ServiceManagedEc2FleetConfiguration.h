@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/deadline/Deadline_EXPORTS.h>
+#include <aws/deadline/model/ServiceManagedEc2AutoScalingConfiguration.h>
 #include <aws/deadline/model/ServiceManagedEc2InstanceCapabilities.h>
 #include <aws/deadline/model/ServiceManagedEc2InstanceMarketOptions.h>
 #include <aws/deadline/model/VpcConfiguration.h>
@@ -106,6 +107,24 @@ class ServiceManagedEc2FleetConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The auto scaling configuration options for the service managed EC2 fleet.</p>
+   */
+  inline const ServiceManagedEc2AutoScalingConfiguration& GetAutoScalingConfiguration() const { return m_autoScalingConfiguration; }
+  inline bool AutoScalingConfigurationHasBeenSet() const { return m_autoScalingConfigurationHasBeenSet; }
+  template <typename AutoScalingConfigurationT = ServiceManagedEc2AutoScalingConfiguration>
+  void SetAutoScalingConfiguration(AutoScalingConfigurationT&& value) {
+    m_autoScalingConfigurationHasBeenSet = true;
+    m_autoScalingConfiguration = std::forward<AutoScalingConfigurationT>(value);
+  }
+  template <typename AutoScalingConfigurationT = ServiceManagedEc2AutoScalingConfiguration>
+  ServiceManagedEc2FleetConfiguration& WithAutoScalingConfiguration(AutoScalingConfigurationT&& value) {
+    SetAutoScalingConfiguration(std::forward<AutoScalingConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ServiceManagedEc2InstanceCapabilities m_instanceCapabilities;
 
@@ -114,10 +133,13 @@ class ServiceManagedEc2FleetConfiguration {
   VpcConfiguration m_vpcConfiguration;
 
   Aws::String m_storageProfileId;
+
+  ServiceManagedEc2AutoScalingConfiguration m_autoScalingConfiguration;
   bool m_instanceCapabilitiesHasBeenSet = false;
   bool m_instanceMarketOptionsHasBeenSet = false;
   bool m_vpcConfigurationHasBeenSet = false;
   bool m_storageProfileIdHasBeenSet = false;
+  bool m_autoScalingConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

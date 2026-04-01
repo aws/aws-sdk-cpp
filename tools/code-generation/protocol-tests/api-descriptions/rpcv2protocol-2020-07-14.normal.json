@@ -105,6 +105,18 @@
       "documentation":"<p>This test case serializes JSON lists for the following cases for both input and output:</p> <ol> <li>Normal lists.</li> <li>Normal sets.</li> <li>Lists of lists.</li> <li>Lists of structures.</li> </ol>",
       "idempotent":true
     },
+    "RpcV2CborSparseMaps":{
+      "name":"RpcV2CborSparseMaps",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"RpcV2CborSparseMapsInputOutput"},
+      "output":{"shape":"RpcV2CborSparseMapsInputOutput"},
+      "errors":[
+        {"shape":"ValidationException"}
+      ]
+    },
     "SimpleScalarProperties":{
       "name":"SimpleScalarProperties",
       "http":{
@@ -113,6 +125,15 @@
       },
       "input":{"shape":"SimpleScalarStructure"},
       "output":{"shape":"SimpleScalarStructure"}
+    },
+    "SparseNullsOperation":{
+      "name":"SparseNullsOperation",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"SparseNullsOperationInputOutput"},
+      "output":{"shape":"SparseNullsOperationInputOutput"}
     }
   },
   "shapes":{
@@ -179,8 +200,7 @@
     },
     "EmptyStructure":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "Float":{
       "type":"float",
@@ -302,6 +322,16 @@
         "blobList":{"shape":"BlobList"}
       }
     },
+    "RpcV2CborSparseMapsInputOutput":{
+      "type":"structure",
+      "members":{
+        "sparseStructMap":{"shape":"SparseStructMap"},
+        "sparseNumberMap":{"shape":"SparseNumberMap"},
+        "sparseBooleanMap":{"shape":"SparseBooleanMap"},
+        "sparseStringMap":{"shape":"SparseStringMap"},
+        "sparseSetMap":{"shape":"SparseSetMap"}
+      }
+    },
     "SimpleScalarStructure":{
       "type":"structure",
       "members":{
@@ -322,6 +352,48 @@
       "members":{
         "value":{"shape":"String"}
       }
+    },
+    "SparseBooleanMap":{
+      "type":"map",
+      "key":{"shape":"String"},
+      "value":{"shape":"Boolean"},
+      "sparse":true
+    },
+    "SparseNullsOperationInputOutput":{
+      "type":"structure",
+      "members":{
+        "sparseStringList":{"shape":"SparseStringList"},
+        "sparseStringMap":{"shape":"SparseStringMap"}
+      }
+    },
+    "SparseNumberMap":{
+      "type":"map",
+      "key":{"shape":"String"},
+      "value":{"shape":"Integer"},
+      "sparse":true
+    },
+    "SparseSetMap":{
+      "type":"map",
+      "key":{"shape":"String"},
+      "value":{"shape":"StringSet"},
+      "sparse":true
+    },
+    "SparseStringList":{
+      "type":"list",
+      "member":{"shape":"String"},
+      "sparse":true
+    },
+    "SparseStringMap":{
+      "type":"map",
+      "key":{"shape":"String"},
+      "value":{"shape":"String"},
+      "sparse":true
+    },
+    "SparseStructMap":{
+      "type":"map",
+      "key":{"shape":"String"},
+      "value":{"shape":"GreetingStruct"},
+      "sparse":true
     },
     "String":{"type":"string"},
     "StringList":{

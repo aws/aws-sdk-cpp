@@ -35,9 +35,12 @@ class RouteWaypoint {
 
   ///@{
   /**
-   * <p>Avoids actions for the provided distance. This is typically to consider for
+   * <p> Avoids actions for the provided distance. This is typically to consider for
    * users in moving vehicles who may not have sufficient time to make an action at
-   * an origin or a destination.</p>
+   * an origin or a destination. Not supported in <code>ap-southeast-1</code> and
+   * <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline long long GetAvoidActionsForDistance() const { return m_avoidActionsForDistance; }
   inline bool AvoidActionsForDistanceHasBeenSet() const { return m_avoidActionsForDistanceHasBeenSet; }
@@ -53,7 +56,10 @@ class RouteWaypoint {
 
   ///@{
   /**
-   * <p>Avoid U-turns for calculation on highways and motorways.</p>
+   * <p> Avoid U-turns for calculation on highways and motorways. Not supported in
+   * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline bool GetAvoidUTurns() const { return m_avoidUTurns; }
   inline bool AvoidUTurnsHasBeenSet() const { return m_avoidUTurnsHasBeenSet; }
@@ -69,7 +75,10 @@ class RouteWaypoint {
 
   ///@{
   /**
-   * <p>GPS Heading at the position.</p>
+   * <p> GPS Heading at the position. Not supported in <code>ap-southeast-1</code>
+   * and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline double GetHeading() const { return m_heading; }
   inline bool HeadingHasBeenSet() const { return m_headingHasBeenSet; }
@@ -85,7 +94,11 @@ class RouteWaypoint {
 
   ///@{
   /**
-   * <p>Options to configure matching the provided position to the road network.</p>
+   * <p> Options to configure matching the provided position to the road network. Not
+   * supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const RouteMatchingOptions& GetMatching() const { return m_matching; }
   inline bool MatchingHasBeenSet() const { return m_matchingHasBeenSet; }
@@ -103,8 +116,11 @@ class RouteWaypoint {
 
   ///@{
   /**
-   * <p>If the waypoint should not be treated as a stop. If yes, the waypoint is
-   * passed through and doesn't split the route into different legs.</p>
+   * <p> If the waypoint should not be treated as a stop. If yes, the waypoint is
+   * passed through and doesn't split the route into different legs. Not supported in
+   * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline bool GetPassThrough() const { return m_passThrough; }
   inline bool PassThroughHasBeenSet() const { return m_passThroughHasBeenSet; }
@@ -120,7 +136,7 @@ class RouteWaypoint {
 
   ///@{
   /**
-   * <p>Position defined as <code>[longitude, latitude]</code>.</p>
+   * <p>Position in World Geodetic System (WGS 84) format: [longitude, latitude].</p>
    */
   inline const Aws::Vector<double>& GetPosition() const { return m_position; }
   inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
@@ -143,8 +159,11 @@ class RouteWaypoint {
 
   ///@{
   /**
-   * <p>Options to configure matching the provided position to a side of the
-   * street.</p>
+   * <p> Options to configure matching the provided position to a side of the street.
+   * Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code>
+   * regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const RouteSideOfStreetOptions& GetSideOfStreet() const { return m_sideOfStreet; }
   inline bool SideOfStreetHasBeenSet() const { return m_sideOfStreetHasBeenSet; }
@@ -162,7 +181,10 @@ class RouteWaypoint {
 
   ///@{
   /**
-   * <p>Duration of the stop.</p> <p> <b>Unit</b>: <code>seconds</code> </p>
+   * <p> Duration of the stop. Not supported in <code>ap-southeast-1</code> and
+   * <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p> <p> <b>Unit</b>: <code>seconds</code> </p>
    */
   inline long long GetStopDuration() const { return m_stopDuration; }
   inline bool StopDurationHasBeenSet() const { return m_stopDurationHasBeenSet; }

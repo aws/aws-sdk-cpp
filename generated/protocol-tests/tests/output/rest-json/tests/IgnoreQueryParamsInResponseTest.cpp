@@ -17,30 +17,16 @@ AWS_PROTOCOL_TEST(IgnoreQueryParamsInResponse, RestJsonIgnoreQueryParamsInRespon
   OutputResponse mockRs;
   mockRs.statusCode = 200;
   mockRs.headers = {{"Content-Type", R"(application/json)"}};
-  mockRs.body = "e30=";
+  mockRs.body = "eyJiYXoiOiJiYW0ifQ==";
   SetMockResponse(mockRs);
 
   IgnoreQueryParamsInResponseRequest request;
 
   auto outcome = client.IgnoreQueryParamsInResponse(request);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-  ValidateRequestSent([](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
-    /* expectedResult = R"( {} )" */
-  });
-}
-
-AWS_PROTOCOL_TEST(IgnoreQueryParamsInResponse, RestJsonIgnoreQueryParamsInResponseNoPayload) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
-
-  OutputResponse mockRs;
-  mockRs.statusCode = 200;
-  SetMockResponse(mockRs);
-
-  IgnoreQueryParamsInResponseRequest request;
-
-  auto outcome = client.IgnoreQueryParamsInResponse(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-  ValidateRequestSent([](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
-    /* expectedResult = R"( {} )" */
+  const IgnoreQueryParamsInResponseResult& result = outcome.GetResult();
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"baz":"bam"} )" */
+    EXPECT_EQ(R"(bam)", result.GetBaz());
   });
 }

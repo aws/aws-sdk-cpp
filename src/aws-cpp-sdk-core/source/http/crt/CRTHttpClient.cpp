@@ -109,10 +109,8 @@ public:
 
     void Wakeup()
     {
-        {
-            std::lock_guard<std::mutex> locker(m_lock);
-            m_wakeupIntentional = true;
-        }
+        std::lock_guard<std::mutex> locker(m_lock);
+        m_wakeupIntentional = true;
         m_cvar.notify_one();
     }
 

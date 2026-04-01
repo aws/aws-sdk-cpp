@@ -20,7 +20,8 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Final event indicating command execution has completed</p><p><h3>See
+ * <p>An event that signals the completion of a command execution. This event
+ * contains the final status and exit code of the executed command.</p><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ContentStopEvent">AWS
  * API Reference</a></p>
@@ -34,7 +35,9 @@ class ContentStopEvent {
 
   ///@{
   /**
-   * <p>Exit code: 0 = success, -1 = platform error, &gt;0 = command error</p>
+   * <p>The exit code returned by the executed command. An exit code of 0 indicates
+   * successful execution, -1 indicates a platform error, and values greater than 0
+   * indicate command-specific errors.</p>
    */
   inline int GetExitCode() const { return m_exitCode; }
   inline bool ExitCodeHasBeenSet() const { return m_exitCodeHasBeenSet; }
@@ -50,7 +53,9 @@ class ContentStopEvent {
 
   ///@{
   /**
-   * <p>Execution status</p>
+   * <p>The final status of the command execution. Valid values are
+   * <code>COMPLETED</code> for successful completion or <code>TIMED_OUT</code> if
+   * the command exceeded the specified timeout.</p>
    */
   inline CommandExecutionStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

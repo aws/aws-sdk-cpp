@@ -1528,7 +1528,9 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient,
    * Access Permissions to Your Amazon S3 Resources</a>.</p> <p>For information about
    * the Amazon S3 inventory feature, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-inventory.html">Amazon
-   * S3 Inventory</a>.</p> <p>Operations related to
+   * S3 Inventory</a>.</p>  <p>After deleting a configuration, Amazon S3 might
+   * still deliver one additional inventory report during a brief transition period
+   * while the system processes the deletion.</p>  <p>Operations related to
    * <code>DeleteBucketInventoryConfiguration</code> include: </p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketInventoryConfiguration.html">GetBucketInventoryConfiguration</a>
    * </p> </li> <li> <p> <a
@@ -1765,18 +1767,45 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
-   *  <p>This operation is not supported for directory buckets.</p>
    * <p>Deletes a metrics configuration for the Amazon CloudWatch request metrics
    * (specified by the metrics configuration ID) from the bucket. Note that this
-   * doesn't include the daily storage metrics.</p> <p> To use this operation, you
-   * must have permissions to perform the <code>s3:PutMetricsConfiguration</code>
-   * action. The bucket owner has this permission by default. The bucket owner can
-   * grant this permission to others. For more information about permissions, see <a
+   * doesn't include the daily storage metrics.</p>  <p> <b>Directory buckets
+   * </b> - For directory buckets, you must make requests for this API operation to
+   * the Regional endpoint. These endpoints support path-style requests in the format
+   * <code>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+   * </code>. Virtual-hosted-style requests aren't supported. For more information
+   * about endpoints in Availability Zones, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
+   * and Zonal endpoints for directory buckets in Availability Zones</a> in the
+   * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
+   * Zones, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+   * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
+   *  <dl> <dt>Permissions</dt> <dd> <p> To use this operation, you must have
+   * permissions to perform the <code>s3:PutMetricsConfiguration</code> action. The
+   * bucket owner has this permission by default. The bucket owner can grant this
+   * permission to others. For more information about permissions, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
    * Related to Bucket Subresource Operations</a> and <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
-   * Access Permissions to Your Amazon S3 Resources</a>.</p> <p>For information about
-   * CloudWatch request metrics for Amazon S3, see <a
+   * Access Permissions to Your Amazon S3 Resources</a>.</p> <ul> <li> <p> <b>General
+   * purpose bucket permissions</b> - The <code>s3:PutMetricsConfiguration</code>
+   * permission is required in a policy. For more information about general purpose
+   * buckets permissions, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
+   * Bucket Policies and User Policies</a> in the <i>Amazon S3 User Guide</i>.</p>
+   * </li> <li> <p> <b>Directory bucket permissions</b> - To grant access to this API
+   * operation, you must have the <code>s3express:PutMetricsConfiguration</code>
+   * permission in an IAM identity-based policy instead of a bucket policy.
+   * Cross-account access to this API operation isn't supported. This operation can
+   * only be performed by the Amazon Web Services account that owns the resource. For
+   * more information about directory bucket policies and permissions, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html">Amazon
+   * Web Services Identity and Access Management (IAM) for S3 Express One Zone</a> in
+   * the <i>Amazon S3 User Guide</i>.</p> </li> </ul> </dd> <dt>HTTP Host header
+   * syntax</dt> <dd> <p> <b>Directory buckets </b> - The HTTP Host header syntax is
+   * <code>s3express-control.<i>region-code</i>.amazonaws.com</code>.</p> </dd> </dl>
+   * <p>For information about CloudWatch request metrics for Amazon S3, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cloudwatch-monitoring.html">Monitoring
    * Metrics with Amazon CloudWatch</a>. </p> <p>The following operations are related
    * to <code>DeleteBucketMetricsConfiguration</code>:</p> <ul> <li> <p> <a
@@ -3148,18 +3177,45 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
-   *  <p>This operation is not supported for directory buckets.</p>
    * <p>Gets a metrics configuration (specified by the metrics configuration ID) from
-   * the bucket. Note that this doesn't include the daily storage metrics.</p> <p> To
-   * use this operation, you must have permissions to perform the
-   * <code>s3:GetMetricsConfiguration</code> action. The bucket owner has this
-   * permission by default. The bucket owner can grant this permission to others. For
-   * more information about permissions, see <a
+   * the bucket. Note that this doesn't include the daily storage metrics.</p>
+   * <p> <b>Directory buckets </b> - For directory buckets, you must make requests
+   * for this API operation to the Regional endpoint. These endpoints support
+   * path-style requests in the format
+   * <code>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+   * </code>. Virtual-hosted-style requests aren't supported. For more information
+   * about endpoints in Availability Zones, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
+   * and Zonal endpoints for directory buckets in Availability Zones</a> in the
+   * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
+   * Zones, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+   * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
+   *  <dl> <dt>Permissions</dt> <dd> <p> To use this operation, you must have
+   * permissions to perform the <code>s3:GetMetricsConfiguration</code> action. The
+   * bucket owner has this permission by default. The bucket owner can grant this
+   * permission to others. For more information about permissions, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
    * Related to Bucket Subresource Operations</a> and <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
-   * Access Permissions to Your Amazon S3 Resources</a>.</p> <p> For information
-   * about CloudWatch request metrics for Amazon S3, see <a
+   * Access Permissions to Your Amazon S3 Resources</a>.</p> <ul> <li> <p> <b>General
+   * purpose bucket permissions</b> - The <code>s3:GetMetricsConfiguration</code>
+   * permission is required in a policy. For more information about general purpose
+   * buckets permissions, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
+   * Bucket Policies and User Policies</a> in the <i>Amazon S3 User Guide</i>.</p>
+   * </li> <li> <p> <b>Directory bucket permissions</b> - To grant access to this API
+   * operation, you must have the <code>s3express:GetMetricsConfiguration</code>
+   * permission in an IAM identity-based policy instead of a bucket policy.
+   * Cross-account access to this API operation isn't supported. This operation can
+   * only be performed by the Amazon Web Services account that owns the resource. For
+   * more information about directory bucket policies and permissions, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html">Amazon
+   * Web Services Identity and Access Management (IAM) for S3 Express One Zone</a> in
+   * the <i>Amazon S3 User Guide</i>.</p> </li> </ul> </dd> <dt>HTTP Host header
+   * syntax</dt> <dd> <p> <b>Directory buckets </b> - The HTTP Host header syntax is
+   * <code>s3express-control.<i>region-code</i>.amazonaws.com</code>.</p> </dd> </dl>
+   * <p> For information about CloudWatch request metrics for Amazon S3, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cloudwatch-monitoring.html">Monitoring
    * Metrics with Amazon CloudWatch</a>.</p> <p>The following operations are related
    * to <code>GetBucketMetricsConfiguration</code>:</p> <ul> <li> <p> <a
@@ -4687,27 +4743,56 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
-   *  <p>This operation is not supported for directory buckets.</p>
    * <p>Lists the metrics configurations for the bucket. The metrics configurations
    * are only for the request metrics of the bucket and do not provide information on
    * daily storage metrics. You can have up to 1,000 configurations per bucket.</p>
-   * <p>This action supports list pagination and does not return more than 100
-   * configurations at a time. Always check the <code>IsTruncated</code> element in
-   * the response. If there are no more configurations to list,
+   *  <p> <b>Directory buckets </b> - For directory buckets, you must make
+   * requests for this API operation to the Regional endpoint. These endpoints
+   * support path-style requests in the format
+   * <code>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+   * </code>. Virtual-hosted-style requests aren't supported. For more information
+   * about endpoints in Availability Zones, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
+   * and Zonal endpoints for directory buckets in Availability Zones</a> in the
+   * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
+   * Zones, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+   * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
+   *  <p>This action supports list pagination and does not return more than
+   * 100 configurations at a time. Always check the <code>IsTruncated</code> element
+   * in the response. If there are no more configurations to list,
    * <code>IsTruncated</code> is set to false. If there are more configurations to
    * list, <code>IsTruncated</code> is set to true, and there is a value in
    * <code>NextContinuationToken</code>. You use the
    * <code>NextContinuationToken</code> value to continue the pagination of the list
    * by passing the value in <code>continuation-token</code> in the request to
-   * <code>GET</code> the next page.</p> <p>To use this operation, you must have
-   * permissions to perform the <code>s3:GetMetricsConfiguration</code> action. The
-   * bucket owner has this permission by default. The bucket owner can grant this
-   * permission to others. For more information about permissions, see <a
+   * <code>GET</code> the next page.</p> <dl> <dt>Permissions</dt> <dd> <p>To use
+   * this operation, you must have permissions to perform the
+   * <code>s3:GetMetricsConfiguration</code> action. The bucket owner has this
+   * permission by default. The bucket owner can grant this permission to others. For
+   * more information about permissions, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
    * Related to Bucket Subresource Operations</a> and <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
-   * Access Permissions to Your Amazon S3 Resources</a>.</p> <p>For more information
-   * about metrics configurations and CloudWatch request metrics, see <a
+   * Access Permissions to Your Amazon S3 Resources</a>.</p> <ul> <li> <p> <b>General
+   * purpose bucket permissions</b> - The <code>s3:GetMetricsConfiguration</code>
+   * permission is required in a policy. For more information about general purpose
+   * buckets permissions, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
+   * Bucket Policies and User Policies</a> in the <i>Amazon S3 User Guide</i>.</p>
+   * </li> <li> <p> <b>Directory bucket permissions</b> - To grant access to this API
+   * operation, you must have the <code>s3express:GetMetricsConfiguration</code>
+   * permission in an IAM identity-based policy instead of a bucket policy.
+   * Cross-account access to this API operation isn't supported. This operation can
+   * only be performed by the Amazon Web Services account that owns the resource. For
+   * more information about directory bucket policies and permissions, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html">Amazon
+   * Web Services Identity and Access Management (IAM) for S3 Express One Zone</a> in
+   * the <i>Amazon S3 User Guide</i>.</p> </li> </ul> </dd> <dt>HTTP Host header
+   * syntax</dt> <dd> <p> <b>Directory buckets </b> - The HTTP Host header syntax is
+   * <code>s3express-control.<i>region-code</i>.amazonaws.com</code>.</p> </dd> </dl>
+   * <p>For more information about metrics configurations and CloudWatch request
+   * metrics, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cloudwatch-monitoring.html">Monitoring
    * Metrics with Amazon CloudWatch</a>.</p> <p>The following operations are related
    * to <code>ListBucketMetricsConfigurations</code>:</p> <ul> <li> <p> <a
@@ -5508,8 +5593,8 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient,
    * bucket that you are making the PUT analytics configuration to. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/analytics-storage-class.html">Amazon
-   * S3 Analytics – Storage Class Analysis</a>. </p>  <p>You must create a
-   * bucket policy on the destination bucket where the exported file is written to
+   * S3 Analytics �� Storage Class Analysis</a>. </p>  <p>You must create
+   * a bucket policy on the destination bucket where the exported file is written to
    * grant permissions to Amazon S3 to write objects to the bucket. For an example
    * policy, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html#example-bucket-policies-use-case-9">Granting
@@ -6145,20 +6230,47 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
-   *  <p>This operation is not supported for directory buckets.</p>
    * <p>Sets a metrics configuration (specified by the metrics configuration ID) for
    * the bucket. You can have up to 1,000 metrics configurations per bucket. If
    * you're updating an existing metrics configuration, note that this is a full
    * replacement of the existing metrics configuration. If you don't include the
-   * elements you want to keep, they are erased.</p> <p>To use this operation, you
-   * must have permissions to perform the <code>s3:PutMetricsConfiguration</code>
-   * action. The bucket owner has this permission by default. The bucket owner can
-   * grant this permission to others. For more information about permissions, see <a
+   * elements you want to keep, they are erased.</p>  <p> <b>Directory buckets
+   * </b> - For directory buckets, you must make requests for this API operation to
+   * the Regional endpoint. These endpoints support path-style requests in the format
+   * <code>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+   * </code>. Virtual-hosted-style requests aren't supported. For more information
+   * about endpoints in Availability Zones, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
+   * and Zonal endpoints for directory buckets in Availability Zones</a> in the
+   * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
+   * Zones, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+   * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
+   *  <dl> <dt>Permissions</dt> <dd> <p>To use this operation, you must have
+   * permissions to perform the <code>s3:PutMetricsConfiguration</code> action. The
+   * bucket owner has this permission by default. The bucket owner can grant this
+   * permission to others. For more information about permissions, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
    * Related to Bucket Subresource Operations</a> and <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
-   * Access Permissions to Your Amazon S3 Resources</a>.</p> <p>For information about
-   * CloudWatch request metrics for Amazon S3, see <a
+   * Access Permissions to Your Amazon S3 Resources</a>.</p> <ul> <li> <p> <b>General
+   * purpose bucket permissions</b> - The <code>s3:PutMetricsConfiguration</code>
+   * permission is required in a policy. For more information about general purpose
+   * buckets permissions, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
+   * Bucket Policies and User Policies</a> in the <i>Amazon S3 User Guide</i>.</p>
+   * </li> <li> <p> <b>Directory bucket permissions</b> - To grant access to this API
+   * operation, you must have the <code>s3express:PutMetricsConfiguration</code>
+   * permission in an IAM identity-based policy instead of a bucket policy.
+   * Cross-account access to this API operation isn't supported. This operation can
+   * only be performed by the Amazon Web Services account that owns the resource. For
+   * more information about directory bucket policies and permissions, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html">Amazon
+   * Web Services Identity and Access Management (IAM) for S3 Express One Zone</a> in
+   * the <i>Amazon S3 User Guide</i>.</p> </li> </ul> </dd> <dt>HTTP Host header
+   * syntax</dt> <dd> <p> <b>Directory buckets </b> - The HTTP Host header syntax is
+   * <code>s3express-control.<i>region-code</i>.amazonaws.com</code>.</p> </dd> </dl>
+   * <p>For information about CloudWatch request metrics for Amazon S3, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cloudwatch-monitoring.html">Monitoring
    * Metrics with Amazon CloudWatch</a>.</p> <p>The following operations are related
    * to <code>PutBucketMetricsConfiguration</code>:</p> <ul> <li> <p> <a

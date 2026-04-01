@@ -27,8 +27,10 @@ namespace GeoRoutes {
 namespace Model {
 
 /**
- * <p>Travel mode options when the provided travel mode is "Truck"</p><p><h3>See
- * Also:</h3>   <a
+ * <p>Vehicle characteristics and restrictions that affect which roads can be used
+ * when calculating reachable areas for trucks. These details ensure that routes
+ * respect physical limitations and legal requirements.</p> <p>These apply when the
+ * provided travel mode is <code>Truck</code> </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/IsolineTruckOptions">AWS
  * API Reference</a></p>
  */
@@ -41,7 +43,8 @@ class IsolineTruckOptions {
 
   ///@{
   /**
-   * <p>Total number of axles of the vehicle.</p>
+   * <p>The total number of axles on the vehicle. Required for certain road
+   * restrictions and weight limit calculations.</p>
    */
   inline int GetAxleCount() const { return m_axleCount; }
   inline bool AxleCountHasBeenSet() const { return m_axleCountHasBeenSet; }
@@ -57,7 +60,12 @@ class IsolineTruckOptions {
 
   ///@{
   /**
-   * <p>Engine type of the vehicle.</p>
+   * <p>The type of engine powering the vehicle, which may affect route calculation
+   * due to road restrictions or vehicle characteristics.</p> <ul> <li> <p>
+   * <code>INTERNAL_COMBUSTION</code>—Standard gasoline or diesel engine.</p> </li>
+   * <li> <p> <code>ELECTRIC</code>—Battery electric vehicle.</p> </li> <li> <p>
+   * <code>PLUGIN_HYBRID</code>—Combination of electric and internal combustion
+   * engines with plug-in charging capability.</p> </li> </ul>
    */
   inline IsolineEngineType GetEngineType() const { return m_engineType; }
   inline bool EngineTypeHasBeenSet() const { return m_engineTypeHasBeenSet; }
@@ -73,8 +81,10 @@ class IsolineTruckOptions {
 
   ///@{
   /**
-   * <p>Gross weight of the vehicle including trailers, and goods at capacity.</p>
-   * <p> <b>Unit</b>: <code>Kilograms</code> </p>
+   * <p>The gross vehicle weight (the maximum weight a vehicle can safely operate at,
+   * as specified by the manufacturer) in kilograms. Used to avoid roads with weight
+   * restrictions and ensure compliance with maximum allowed vehicle weight
+   * regulations.</p> <p> <b>Unit</b>: <code>kilograms</code> </p>
    */
   inline long long GetGrossWeight() const { return m_grossWeight; }
   inline bool GrossWeightHasBeenSet() const { return m_grossWeightHasBeenSet; }
@@ -90,7 +100,21 @@ class IsolineTruckOptions {
 
   ///@{
   /**
-   * <p>List of Hazardous cargo contained in the vehicle.</p>
+   * <p>Types of hazardous materials being transported. This affects which roads and
+   * tunnels can be used based on local regulations.</p> <ul> <li> <p>
+   * <code>Combustible</code>—Materials that can burn readily</p> </li> <li> <p>
+   * <code>Corrosive</code>—Materials that can destroy or irreversibly damage other
+   * substances</p> </li> <li> <p> <code>Explosive</code>—Materials that can produce
+   * an explosion by chemical reaction</p> </li> <li> <p>
+   * <code>Flammable</code>—Materials that can easily ignite</p> </li> <li> <p>
+   * <code>Gas</code>—Hazardous materials in gaseous form</p> </li> <li> <p>
+   * <code>HarmfulToWater</code>—Materials that pose a risk to water sources if
+   * released</p> </li> <li> <p> <code>Organic</code>—Hazardous organic compounds</p>
+   * </li> <li> <p> <code>Other</code>—Hazardous materials not covered by other
+   * categories</p> </li> <li> <p> <code>Poison</code>—Toxic materials</p> </li> <li>
+   * <p> <code>PoisonousInhalation</code>—Materials that are toxic when inhaled</p>
+   * </li> <li> <p> <code>Radioactive</code>—Materials that emit ionizing
+   * radiation</p> </li> </ul>
    */
   inline const Aws::Vector<IsolineHazardousCargoType>& GetHazardousCargos() const { return m_hazardousCargos; }
   inline bool HazardousCargosHasBeenSet() const { return m_hazardousCargosHasBeenSet; }
@@ -113,7 +137,8 @@ class IsolineTruckOptions {
 
   ///@{
   /**
-   * <p>Height of the vehicle.</p> <p> <b>Unit</b>: <code>centimeters</code> </p>
+   * <p>The vehicle height in centimeters. Used to avoid routes with low bridges or
+   * other height restrictions.</p> <p> <b>Unit</b>: <code>centimeters</code> </p>
    */
   inline long long GetHeight() const { return m_height; }
   inline bool HeightHasBeenSet() const { return m_heightHasBeenSet; }
@@ -129,8 +154,9 @@ class IsolineTruckOptions {
 
   ///@{
   /**
-   * <p>Height of the vehicle above its first axle.</p> <p> <b>Unit</b>:
-   * <code>centimeters</code> </p>
+   * <p>The height in centimeters measured from the ground to the highest point above
+   * the first axle. Used for specific bridge and tunnel clearance restrictions.</p>
+   * <p> <b>Unit</b>: <code>centimeters</code> </p>
    */
   inline long long GetHeightAboveFirstAxle() const { return m_heightAboveFirstAxle; }
   inline bool HeightAboveFirstAxleHasBeenSet() const { return m_heightAboveFirstAxleHasBeenSet; }
@@ -146,7 +172,8 @@ class IsolineTruckOptions {
 
   ///@{
   /**
-   * <p>Kingpin to rear axle length of the vehicle.</p> <p> <b>Unit</b>:
+   * <p>The kingpin to rear axle (KPRA) length in centimeters. Used to determine if
+   * the vehicle can safely navigate turns and intersections.</p> <p> <b>Unit</b>:
    * <code>centimeters</code> </p>
    */
   inline long long GetKpraLength() const { return m_kpraLength; }
@@ -163,7 +190,9 @@ class IsolineTruckOptions {
 
   ///@{
   /**
-   * <p>Length of the vehicle.</p> <p> <b>Unit</b>: <code>centimeters</code> </p>
+   * <p>The total vehicle length in centimeters. Used to avoid roads with length
+   * restrictions and determine if the vehicle can safely navigate turns.</p> <p>
+   * <b>Unit</b>: <code>centimeters</code> </p>
    */
   inline long long GetLength() const { return m_length; }
   inline bool LengthHasBeenSet() const { return m_lengthHasBeenSet; }
@@ -179,7 +208,8 @@ class IsolineTruckOptions {
 
   ///@{
   /**
-   * <p>The vehicle License Plate.</p>
+   * <p>License plate information used in regions where road access or routing
+   * restrictions are based on license plate numbers.</p>
    */
   inline const IsolineVehicleLicensePlate& GetLicensePlate() const { return m_licensePlate; }
   inline bool LicensePlateHasBeenSet() const { return m_licensePlateHasBeenSet; }
@@ -197,8 +227,11 @@ class IsolineTruckOptions {
 
   ///@{
   /**
-   * <p>Maximum speed specified.</p> <p> <b>Unit</b>: <code>KilometersPerHour</code>
-   * </p>
+   * <p>The maximum speed in kilometers per hour at which the vehicle can or is
+   * permitted to travel. This affects travel time calculations and may result in
+   * different reachable areas compared to using default speed limits. Value must be
+   * between 3.6 and 252 kilometers per hour.</p> <p> <b>Unit</b>: <code>kilometers
+   * per hour</code> </p>
    */
   inline double GetMaxSpeed() const { return m_maxSpeed; }
   inline bool MaxSpeedHasBeenSet() const { return m_maxSpeedHasBeenSet; }
@@ -214,8 +247,9 @@ class IsolineTruckOptions {
 
   ///@{
   /**
-   * <p>The number of occupants in the vehicle.</p> <p>Default Value: <code>1</code>
-   * </p>
+   * <p>The number of occupants in the vehicle. This can affect route calculations by
+   * enabling the use of high-occupancy vehicle (HOV) lanes where minimum occupancy
+   * requirements are met.</p> <p>Default value: <code>1</code> </p>
    */
   inline int GetOccupancy() const { return m_occupancy; }
   inline bool OccupancyHasBeenSet() const { return m_occupancyHasBeenSet; }
@@ -231,8 +265,8 @@ class IsolineTruckOptions {
 
   ///@{
   /**
-   * <p>Payload capacity of the vehicle and trailers attached.</p> <p> <b>Unit</b>:
-   * <code>kilograms</code> </p>
+   * <p>The maximum cargo weight in kilograms that the vehicle (including attached
+   * trailers) is rated to carry.</p> <p> <b>Unit</b>: <code>kilograms</code> </p>
    */
   inline long long GetPayloadCapacity() const { return m_payloadCapacity; }
   inline bool PayloadCapacityHasBeenSet() const { return m_payloadCapacityHasBeenSet; }
@@ -248,7 +282,7 @@ class IsolineTruckOptions {
 
   ///@{
   /**
-   * <p>Number of tires on the vehicle.</p>
+   * <p>The total number of tires on the vehicle.</p>
    */
   inline int GetTireCount() const { return m_tireCount; }
   inline bool TireCountHasBeenSet() const { return m_tireCountHasBeenSet; }
@@ -264,7 +298,10 @@ class IsolineTruckOptions {
 
   ///@{
   /**
-   * <p>Trailer options corresponding to the vehicle.</p>
+   * <p>Optional specifications for attached trailers. When provided, trailer
+   * characteristics affect route calculations to ensure compliance with
+   * trailer-specific restrictions such as length limits, weight distribution
+   * requirements, and access restrictions for multi-trailer configurations.</p>
    */
   inline const IsolineTrailerOptions& GetTrailer() const { return m_trailer; }
   inline bool TrailerHasBeenSet() const { return m_trailerHasBeenSet; }
@@ -282,7 +319,9 @@ class IsolineTruckOptions {
 
   ///@{
   /**
-   * <p>Type of the truck.</p>
+   * <p>The type of truck: <code>LightTruck</code> for smaller delivery vehicles,
+   * <code> StraightTruck </code> for rigid body trucks, or <code>Tractor</code> for
+   * tractor-trailer combinations.</p>
    */
   inline IsolineTruckType GetTruckType() const { return m_truckType; }
   inline bool TruckTypeHasBeenSet() const { return m_truckTypeHasBeenSet; }
@@ -327,9 +366,10 @@ class IsolineTruckOptions {
 
   ///@{
   /**
-   * <p>Heaviest weight per axle irrespective of the axle type or the axle group.
-   * Meant for usage in countries where the differences in axle types or axle groups
-   * are not distinguished.</p> <p> <b>Unit</b>: <code>Kilograms</code> </p>
+   * <p>The heaviest weight per axle in kilograms, regardless of axle type or
+   * grouping. Used for roads with axle-weight restrictions in regions where
+   * regulations don't distinguish between different axle configurations.</p> <p>
+   * <b>Unit</b>: <code>kilograms</code> </p>
    */
   inline long long GetWeightPerAxle() const { return m_weightPerAxle; }
   inline bool WeightPerAxleHasBeenSet() const { return m_weightPerAxleHasBeenSet; }
@@ -345,9 +385,9 @@ class IsolineTruckOptions {
 
   ///@{
   /**
-   * <p>Specifies the total weight for the specified axle group. Meant for usage in
-   * countries that have different regulations based on the axle group type.</p> <p>
-   * <b>Unit</b>: <code>Kilograms</code> </p>
+   * <p>Specifies the total weight for different axle group configurations. Used in
+   * regions where regulations set different weight limits based on axle group
+   * types.</p> <p> <b>Unit</b>: <code>kilograms</code> </p>
    */
   inline const WeightPerAxleGroup& GetWeightPerAxleGroup() const { return m_weightPerAxleGroup; }
   inline bool WeightPerAxleGroupHasBeenSet() const { return m_weightPerAxleGroupHasBeenSet; }
@@ -365,7 +405,8 @@ class IsolineTruckOptions {
 
   ///@{
   /**
-   * <p>Width of the vehicle.</p> <p> <b>Unit</b>: <code>centimeters</code> </p>
+   * <p>The vehicle width in centimeters. Used to avoid routes with width
+   * restrictions.</p> <p> <b>Unit</b>: <code>centimeters</code> </p>
    */
   inline long long GetWidth() const { return m_width; }
   inline bool WidthHasBeenSet() const { return m_widthHasBeenSet; }

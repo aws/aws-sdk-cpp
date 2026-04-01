@@ -41,7 +41,10 @@ class RouteAvoidanceOptions {
 
   ///@{
   /**
-   * <p>Areas to be avoided.</p>
+   * <p> Areas to be avoided. Not supported in <code>ap-southeast-1</code> and
+   * <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const Aws::Vector<RouteAvoidanceArea>& GetAreas() const { return m_areas; }
   inline bool AreasHasBeenSet() const { return m_areasHasBeenSet; }
@@ -65,7 +68,10 @@ class RouteAvoidanceOptions {
 
   ///@{
   /**
-   * <p>Avoid car-shuttle-trains while calculating the route.</p>
+   * <p> Avoid car-shuttle-trains while calculating the route. Not supported in
+   * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline bool GetCarShuttleTrains() const { return m_carShuttleTrains; }
   inline bool CarShuttleTrainsHasBeenSet() const { return m_carShuttleTrainsHasBeenSet; }
@@ -97,7 +103,10 @@ class RouteAvoidanceOptions {
 
   ///@{
   /**
-   * <p>Avoid dirt roads while calculating the route.</p>
+   * <p> Avoid dirt roads while calculating the route. Not supported in
+   * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline bool GetDirtRoads() const { return m_dirtRoads; }
   inline bool DirtRoadsHasBeenSet() const { return m_dirtRoadsHasBeenSet; }
@@ -129,7 +138,11 @@ class RouteAvoidanceOptions {
 
   ///@{
   /**
-   * <p>Avoid roads that have seasonal closure while calculating the route.</p>
+   * <p> Avoid roads that have seasonal closure while calculating the route. Not
+   * supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline bool GetSeasonalClosure() const { return m_seasonalClosure; }
   inline bool SeasonalClosureHasBeenSet() const { return m_seasonalClosureHasBeenSet; }
@@ -162,8 +175,11 @@ class RouteAvoidanceOptions {
 
   ///@{
   /**
-   * <p>Avoids roads where the specified toll transponders are the only mode of
-   * payment.</p>
+   * <p> Avoids roads where the specified toll transponders are the only mode of
+   * payment. Not supported in <code>ap-southeast-1</code> and
+   * <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline bool GetTollTransponders() const { return m_tollTransponders; }
   inline bool TollTranspondersHasBeenSet() const { return m_tollTranspondersHasBeenSet; }
@@ -179,10 +195,13 @@ class RouteAvoidanceOptions {
 
   ///@{
   /**
-   * <p>Truck road type identifiers. <code>BK1</code> through <code>BK4</code> apply
-   * only to Sweden. <code>A2,A4,B2,B4,C,D,ET2,ET4</code> apply only to Mexico.</p>
-   *  <p>There are currently no other supported values as of 26th April
-   * 2024.</p>
+   * <p> Truck road type identifiers. <code>BK1</code> through <code>BK4</code> apply
+   * only to Sweden. <code>A2,A4,B2,B4,C,D,ET2,ET4</code> apply only to Mexico. Not
+   * supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>  <p>There are currently no other supported values as of
+   * 26th April 2024.</p>
    */
   inline const Aws::Vector<Aws::String>& GetTruckRoadTypes() const { return m_truckRoadTypes; }
   inline bool TruckRoadTypesHasBeenSet() const { return m_truckRoadTypesHasBeenSet; }
@@ -206,7 +225,10 @@ class RouteAvoidanceOptions {
 
   ///@{
   /**
-   * <p>Avoid tunnels while calculating the route.</p>
+   * <p> Avoid tunnels while calculating the route. Not supported in
+   * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline bool GetTunnels() const { return m_tunnels; }
   inline bool TunnelsHasBeenSet() const { return m_tunnelsHasBeenSet; }
@@ -222,7 +244,10 @@ class RouteAvoidanceOptions {
 
   ///@{
   /**
-   * <p>Avoid U-turns for calculation on highways and motorways.</p>
+   * <p> Avoid U-turns for calculation on highways and motorways. Not supported in
+   * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline bool GetUTurns() const { return m_uTurns; }
   inline bool UTurnsHasBeenSet() const { return m_uTurnsHasBeenSet; }
@@ -238,7 +263,10 @@ class RouteAvoidanceOptions {
 
   ///@{
   /**
-   * <p>Zone categories to be avoided.</p>
+   * <p> Zone categories to be avoided. Not supported in <code>ap-southeast-1</code>
+   * and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const Aws::Vector<RouteAvoidanceZoneCategory>& GetZoneCategories() const { return m_zoneCategories; }
   inline bool ZoneCategoriesHasBeenSet() const { return m_zoneCategoriesHasBeenSet; }

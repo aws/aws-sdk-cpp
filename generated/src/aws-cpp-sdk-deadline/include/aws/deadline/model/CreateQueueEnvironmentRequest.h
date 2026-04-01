@@ -34,25 +34,6 @@ class CreateQueueEnvironmentRequest : public DeadlineRequest {
 
   ///@{
   /**
-   * <p>The unique token which the server uses to recognize retries of the same
-   * request.</p>
-   */
-  inline const Aws::String& GetClientToken() const { return m_clientToken; }
-  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-  template <typename ClientTokenT = Aws::String>
-  void SetClientToken(ClientTokenT&& value) {
-    m_clientTokenHasBeenSet = true;
-    m_clientToken = std::forward<ClientTokenT>(value);
-  }
-  template <typename ClientTokenT = Aws::String>
-  CreateQueueEnvironmentRequest& WithClientToken(ClientTokenT&& value) {
-    SetClientToken(std::forward<ClientTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The farm ID of the farm to connect to the environment.</p>
    */
   inline const Aws::String& GetFarmId() const { return m_farmId; }
@@ -83,6 +64,25 @@ class CreateQueueEnvironmentRequest : public DeadlineRequest {
   template <typename QueueIdT = Aws::String>
   CreateQueueEnvironmentRequest& WithQueueId(QueueIdT&& value) {
     SetQueueId(std::forward<QueueIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique token which the server uses to recognize retries of the same
+   * request.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  CreateQueueEnvironmentRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
     return *this;
   }
   ///@}
@@ -140,20 +140,20 @@ class CreateQueueEnvironmentRequest : public DeadlineRequest {
   }
   ///@}
  private:
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-
   Aws::String m_farmId;
 
   Aws::String m_queueId;
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
   int m_priority{0};
 
   EnvironmentTemplateType m_templateType{EnvironmentTemplateType::NOT_SET};
 
   Aws::String m_template;
-  bool m_clientTokenHasBeenSet = true;
   bool m_farmIdHasBeenSet = false;
   bool m_queueIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_priorityHasBeenSet = false;
   bool m_templateTypeHasBeenSet = false;
   bool m_templateHasBeenSet = false;

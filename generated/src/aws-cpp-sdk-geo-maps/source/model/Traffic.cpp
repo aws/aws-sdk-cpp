@@ -16,11 +16,14 @@ namespace Model {
 namespace TrafficMapper {
 
 static const int All_HASH = HashingUtils::HashString("All");
+static const int Congestion_HASH = HashingUtils::HashString("Congestion");
 
 Traffic GetTrafficForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == All_HASH) {
     return Traffic::All;
+  } else if (hashCode == Congestion_HASH) {
+    return Traffic::Congestion;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForTraffic(Traffic enumValue) {
       return {};
     case Traffic::All:
       return "All";
+    case Traffic::Congestion:
+      return "Congestion";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

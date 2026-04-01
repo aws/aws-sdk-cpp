@@ -58,6 +58,14 @@ EvaluationResultContent& EvaluationResultContent::operator=(JsonView jsonValue) 
     m_errorCode = jsonValue.GetString("errorCode");
     m_errorCodeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ignoredReferenceInputFields")) {
+    Aws::Utils::Array<JsonView> ignoredReferenceInputFieldsJsonList = jsonValue.GetArray("ignoredReferenceInputFields");
+    for (unsigned ignoredReferenceInputFieldsIndex = 0; ignoredReferenceInputFieldsIndex < ignoredReferenceInputFieldsJsonList.GetLength();
+         ++ignoredReferenceInputFieldsIndex) {
+      m_ignoredReferenceInputFields.push_back(ignoredReferenceInputFieldsJsonList[ignoredReferenceInputFieldsIndex].AsString());
+    }
+    m_ignoredReferenceInputFieldsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -102,6 +110,16 @@ JsonValue EvaluationResultContent::Jsonize() const {
 
   if (m_errorCodeHasBeenSet) {
     payload.WithString("errorCode", m_errorCode);
+  }
+
+  if (m_ignoredReferenceInputFieldsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> ignoredReferenceInputFieldsJsonList(m_ignoredReferenceInputFields.size());
+    for (unsigned ignoredReferenceInputFieldsIndex = 0; ignoredReferenceInputFieldsIndex < ignoredReferenceInputFieldsJsonList.GetLength();
+         ++ignoredReferenceInputFieldsIndex) {
+      ignoredReferenceInputFieldsJsonList[ignoredReferenceInputFieldsIndex].AsString(
+          m_ignoredReferenceInputFields[ignoredReferenceInputFieldsIndex]);
+    }
+    payload.WithArray("ignoredReferenceInputFields", std::move(ignoredReferenceInputFieldsJsonList));
   }
 
   return payload;

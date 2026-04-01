@@ -93,6 +93,77 @@ class AWS_AGREEMENTSERVICE_API AgreementServiceClient : public Aws::Client::AWSJ
   virtual ~AgreementServiceClient();
 
   /**
+   * <p>Allows sellers (proposers) to submit billing adjustment requests for one or
+   * more invoices within an agreement. Each entry in the batch specifies an invoice
+   * and the adjustment amount. The operation returns successfully created adjustment
+   * request IDs and any errors for entries that failed validation.</p>
+   * <p>Each entry requires a unique <code>clientToken</code> for idempotency. A
+   * <code>ValidationException</code> is returned if the adjustment amount exceeds
+   * the maximum refundable amount for the invoice.</p> <p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/BatchCreateBillingAdjustmentRequest">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchCreateBillingAdjustmentRequestOutcome BatchCreateBillingAdjustmentRequest(
+      const Model::BatchCreateBillingAdjustmentRequestRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchCreateBillingAdjustmentRequest that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename BatchCreateBillingAdjustmentRequestRequestT = Model::BatchCreateBillingAdjustmentRequestRequest>
+  Model::BatchCreateBillingAdjustmentRequestOutcomeCallable BatchCreateBillingAdjustmentRequestCallable(
+      const BatchCreateBillingAdjustmentRequestRequestT& request) const {
+    return SubmitCallable(&AgreementServiceClient::BatchCreateBillingAdjustmentRequest, request);
+  }
+
+  /**
+   * An Async wrapper for BatchCreateBillingAdjustmentRequest that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename BatchCreateBillingAdjustmentRequestRequestT = Model::BatchCreateBillingAdjustmentRequestRequest>
+  void BatchCreateBillingAdjustmentRequestAsync(const BatchCreateBillingAdjustmentRequestRequestT& request,
+                                                const BatchCreateBillingAdjustmentRequestResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AgreementServiceClient::BatchCreateBillingAdjustmentRequest, request, handler, context);
+  }
+
+  /**
+   * <p>Allows sellers (proposers) to withdraw an existing agreement cancellation
+   * request that is in a pending state. Once cancelled, the cancellation request
+   * transitions to <code>CANCELLED</code> status and can no longer be approved or
+   * rejected by the buyer.</p>  <p>Only cancellation requests in
+   * <code>PENDING_APPROVAL</code> status can be cancelled. A
+   * <code>ConflictException</code> is thrown if the cancellation request is in any
+   * other status.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/CancelAgreementCancellationRequest">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CancelAgreementCancellationRequestOutcome CancelAgreementCancellationRequest(
+      const Model::CancelAgreementCancellationRequestRequest& request) const;
+
+  /**
+   * A Callable wrapper for CancelAgreementCancellationRequest that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename CancelAgreementCancellationRequestRequestT = Model::CancelAgreementCancellationRequestRequest>
+  Model::CancelAgreementCancellationRequestOutcomeCallable CancelAgreementCancellationRequestCallable(
+      const CancelAgreementCancellationRequestRequestT& request) const {
+    return SubmitCallable(&AgreementServiceClient::CancelAgreementCancellationRequest, request);
+  }
+
+  /**
+   * An Async wrapper for CancelAgreementCancellationRequest that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename CancelAgreementCancellationRequestRequestT = Model::CancelAgreementCancellationRequestRequest>
+  void CancelAgreementCancellationRequestAsync(const CancelAgreementCancellationRequestRequestT& request,
+                                               const CancelAgreementCancellationRequestResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AgreementServiceClient::CancelAgreementCancellationRequest, request, handler, context);
+  }
+
+  /**
    * <p>Allows sellers (proposers) to cancel a payment request that is in
    * <code>PENDING_APPROVAL</code> status. Once cancelled, the payment request
    * transitions to <code>CANCELLED</code> status and can no longer be accepted or
@@ -152,6 +223,40 @@ class AWS_AGREEMENTSERVICE_API AgreementServiceClient : public Aws::Client::AWSJ
   void DescribeAgreementAsync(const DescribeAgreementRequestT& request, const DescribeAgreementResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&AgreementServiceClient::DescribeAgreement, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves detailed information about a specific agreement cancellation
+   * request. Both sellers (proposers) and buyers (acceptors) can use this operation
+   * to view cancellation requests associated with their agreements.</p>
+   * <p>The calling identity must be either the acceptor or proposer of the
+   * agreement. A <code>ResourceNotFoundException</code> is returned if the
+   * cancellation request does not exist.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/GetAgreementCancellationRequest">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetAgreementCancellationRequestOutcome GetAgreementCancellationRequest(
+      const Model::GetAgreementCancellationRequestRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetAgreementCancellationRequest that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetAgreementCancellationRequestRequestT = Model::GetAgreementCancellationRequestRequest>
+  Model::GetAgreementCancellationRequestOutcomeCallable GetAgreementCancellationRequestCallable(
+      const GetAgreementCancellationRequestRequestT& request) const {
+    return SubmitCallable(&AgreementServiceClient::GetAgreementCancellationRequest, request);
+  }
+
+  /**
+   * An Async wrapper for GetAgreementCancellationRequest that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetAgreementCancellationRequestRequestT = Model::GetAgreementCancellationRequestRequest>
+  void GetAgreementCancellationRequestAsync(const GetAgreementCancellationRequestRequestT& request,
+                                            const GetAgreementCancellationRequestResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AgreementServiceClient::GetAgreementCancellationRequest, request, handler, context);
   }
 
   /**
@@ -230,6 +335,109 @@ class AWS_AGREEMENTSERVICE_API AgreementServiceClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Retrieves detailed information about a specific billing adjustment request.
+   * Sellers (proposers) can use this operation to view the status and details of a
+   * billing adjustment request they submitted.</p>  <p>A
+   * <code>ResourceNotFoundException</code> is returned if the billing adjustment
+   * request does not exist or the caller does not have permission to access it.</p>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/GetBillingAdjustmentRequest">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetBillingAdjustmentRequestOutcome GetBillingAdjustmentRequest(
+      const Model::GetBillingAdjustmentRequestRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetBillingAdjustmentRequest that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetBillingAdjustmentRequestRequestT = Model::GetBillingAdjustmentRequestRequest>
+  Model::GetBillingAdjustmentRequestOutcomeCallable GetBillingAdjustmentRequestCallable(
+      const GetBillingAdjustmentRequestRequestT& request) const {
+    return SubmitCallable(&AgreementServiceClient::GetBillingAdjustmentRequest, request);
+  }
+
+  /**
+   * An Async wrapper for GetBillingAdjustmentRequest that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetBillingAdjustmentRequestRequestT = Model::GetBillingAdjustmentRequestRequest>
+  void GetBillingAdjustmentRequestAsync(const GetBillingAdjustmentRequestRequestT& request,
+                                        const GetBillingAdjustmentRequestResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AgreementServiceClient::GetBillingAdjustmentRequest, request, handler, context);
+  }
+
+  /**
+   * <p>Lists agreement cancellation requests available to you as a seller or buyer.
+   * Both sellers (proposers) and buyers (acceptors) can use this operation to find
+   * cancellation requests by specifying their party type and applying optional
+   * filters.</p>  <p> <code>PartyType</code> is a required parameter. A
+   * <code>ValidationException</code> is returned if <code>PartyType</code> is not
+   * provided. Pagination is supported through <code>maxResults</code> (1-50, default
+   * 20) and <code>nextToken</code> parameters.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/ListAgreementCancellationRequests">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAgreementCancellationRequestsOutcome ListAgreementCancellationRequests(
+      const Model::ListAgreementCancellationRequestsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListAgreementCancellationRequests that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename ListAgreementCancellationRequestsRequestT = Model::ListAgreementCancellationRequestsRequest>
+  Model::ListAgreementCancellationRequestsOutcomeCallable ListAgreementCancellationRequestsCallable(
+      const ListAgreementCancellationRequestsRequestT& request) const {
+    return SubmitCallable(&AgreementServiceClient::ListAgreementCancellationRequests, request);
+  }
+
+  /**
+   * An Async wrapper for ListAgreementCancellationRequests that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListAgreementCancellationRequestsRequestT = Model::ListAgreementCancellationRequestsRequest>
+  void ListAgreementCancellationRequestsAsync(const ListAgreementCancellationRequestsRequestT& request,
+                                              const ListAgreementCancellationRequestsResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AgreementServiceClient::ListAgreementCancellationRequests, request, handler, context);
+  }
+
+  /**
+   * <p>Allows sellers (proposers) to retrieve aggregated billing data from AWS
+   * Marketplace agreements using flexible grouping. Supports invoice-level
+   * aggregation with filtering by billing period, invoice type, and issued date.</p>
+   *  <p>The <code>groupBy</code> parameter is required and currently supports
+   * only <code>INVOICE_ID</code> as a value. The <code>agreementId</code> parameter
+   * is required.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/ListAgreementInvoiceLineItems">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAgreementInvoiceLineItemsOutcome ListAgreementInvoiceLineItems(
+      const Model::ListAgreementInvoiceLineItemsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListAgreementInvoiceLineItems that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListAgreementInvoiceLineItemsRequestT = Model::ListAgreementInvoiceLineItemsRequest>
+  Model::ListAgreementInvoiceLineItemsOutcomeCallable ListAgreementInvoiceLineItemsCallable(
+      const ListAgreementInvoiceLineItemsRequestT& request) const {
+    return SubmitCallable(&AgreementServiceClient::ListAgreementInvoiceLineItems, request);
+  }
+
+  /**
+   * An Async wrapper for ListAgreementInvoiceLineItems that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListAgreementInvoiceLineItemsRequestT = Model::ListAgreementInvoiceLineItemsRequest>
+  void ListAgreementInvoiceLineItemsAsync(const ListAgreementInvoiceLineItemsRequestT& request,
+                                          const ListAgreementInvoiceLineItemsResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AgreementServiceClient::ListAgreementInvoiceLineItems, request, handler, context);
+  }
+
+  /**
    * <p>Lists payment requests available to you as a seller or buyer. Both sellers
    * (proposers) and buyers (acceptors) can use this operation to find payment
    * requests by specifying their party type and applying optional parameters.</p>
@@ -262,6 +470,39 @@ class AWS_AGREEMENTSERVICE_API AgreementServiceClient : public Aws::Client::AWSJ
                                          const ListAgreementPaymentRequestsResponseReceivedHandler& handler,
                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&AgreementServiceClient::ListAgreementPaymentRequests, request, handler, context);
+  }
+
+  /**
+   * <p>Lists billing adjustment requests for a specific agreement. Sellers
+   * (proposers) can use this operation to view all billing adjustment requests
+   * associated with an agreement.</p>  <p>Pagination is supported through
+   * <code>maxResults</code> and <code>nextToken</code> parameters.</p>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/ListBillingAdjustmentRequests">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListBillingAdjustmentRequestsOutcome ListBillingAdjustmentRequests(
+      const Model::ListBillingAdjustmentRequestsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListBillingAdjustmentRequests that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListBillingAdjustmentRequestsRequestT = Model::ListBillingAdjustmentRequestsRequest>
+  Model::ListBillingAdjustmentRequestsOutcomeCallable ListBillingAdjustmentRequestsCallable(
+      const ListBillingAdjustmentRequestsRequestT& request = {}) const {
+    return SubmitCallable(&AgreementServiceClient::ListBillingAdjustmentRequests, request);
+  }
+
+  /**
+   * An Async wrapper for ListBillingAdjustmentRequests that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListBillingAdjustmentRequestsRequestT = Model::ListBillingAdjustmentRequestsRequest>
+  void ListBillingAdjustmentRequestsAsync(const ListBillingAdjustmentRequestsResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                          const ListBillingAdjustmentRequestsRequestT& request = {}) const {
+    return SubmitAsync(&AgreementServiceClient::ListBillingAdjustmentRequests, request, handler, context);
   }
 
   /**
@@ -346,6 +587,37 @@ class AWS_AGREEMENTSERVICE_API AgreementServiceClient : public Aws::Client::AWSJ
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                              const SearchAgreementsRequestT& request = {}) const {
     return SubmitAsync(&AgreementServiceClient::SearchAgreements, request, handler, context);
+  }
+
+  /**
+   * <p>Allows sellers (proposers) to submit a cancellation request for an active
+   * agreement. The cancellation request is created in <code>PENDING_APPROVAL</code>
+   * status, at which point the buyer can review it.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/SendAgreementCancellationRequest">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SendAgreementCancellationRequestOutcome SendAgreementCancellationRequest(
+      const Model::SendAgreementCancellationRequestRequest& request) const;
+
+  /**
+   * A Callable wrapper for SendAgreementCancellationRequest that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename SendAgreementCancellationRequestRequestT = Model::SendAgreementCancellationRequestRequest>
+  Model::SendAgreementCancellationRequestOutcomeCallable SendAgreementCancellationRequestCallable(
+      const SendAgreementCancellationRequestRequestT& request) const {
+    return SubmitCallable(&AgreementServiceClient::SendAgreementCancellationRequest, request);
+  }
+
+  /**
+   * An Async wrapper for SendAgreementCancellationRequest that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename SendAgreementCancellationRequestRequestT = Model::SendAgreementCancellationRequestRequest>
+  void SendAgreementCancellationRequestAsync(const SendAgreementCancellationRequestRequestT& request,
+                                             const SendAgreementCancellationRequestResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AgreementServiceClient::SendAgreementCancellationRequest, request, handler, context);
   }
 
   /**

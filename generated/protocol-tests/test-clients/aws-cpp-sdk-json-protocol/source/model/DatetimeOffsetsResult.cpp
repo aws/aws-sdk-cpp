@@ -20,6 +20,7 @@ using namespace Aws;
 DatetimeOffsetsResult::DatetimeOffsetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DatetimeOffsetsResult& DatetimeOffsetsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("datetime")) {
     m_datetime = jsonValue.GetString("datetime");

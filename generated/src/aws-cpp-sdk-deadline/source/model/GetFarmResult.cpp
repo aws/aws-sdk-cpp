@@ -30,17 +30,9 @@ GetFarmResult& GetFarmResult::operator=(const Aws::AmazonWebServiceResult<JsonVa
     m_displayName = jsonValue.GetString("displayName");
     m_displayNameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("description")) {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("kmsKeyArn")) {
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
     m_kmsKeyArnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("costScaleFactor")) {
-    m_costScaleFactor = jsonValue.GetDouble("costScaleFactor");
-    m_costScaleFactorHasBeenSet = true;
   }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
@@ -57,6 +49,14 @@ GetFarmResult& GetFarmResult::operator=(const Aws::AmazonWebServiceResult<JsonVa
   if (jsonValue.ValueExists("updatedBy")) {
     m_updatedBy = jsonValue.GetString("updatedBy");
     m_updatedByHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("costScaleFactor")) {
+    m_costScaleFactor = jsonValue.GetDouble("costScaleFactor");
+    m_costScaleFactorHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

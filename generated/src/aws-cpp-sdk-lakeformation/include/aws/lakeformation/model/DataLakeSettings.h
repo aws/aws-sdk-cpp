@@ -160,8 +160,15 @@ class DataLakeSettings {
   ///@{
   /**
    * <p>A key-value map that provides an additional configuration on your data lake.
-   * CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field.
-   * Accepted values for the CrossAccountVersion key are 1, 2, 3, 4 and 5.</p>
+   * The following key-value pairs are supported:</p> <ul> <li> <p>
+   * <code>CROSS_ACCOUNT_VERSION</code> - Accepted values are 1, 2, 3, 4, and 5.</p>
+   * </li> <li> <p> <code>SET_SOURCE_IDENTITY</code> - Accepted values are
+   * <code>TRUE</code> and <code>FALSE</code>. When set to <code>TRUE</code>, Lake
+   * Formation includes the IAM role identifier that was used to query in the S3 data
+   * event CloudTrail logs for <code>s3:GetObject</code> calls. For more information,
+   * see <a
+   * href="https://docs.aws.amazon.com/lake-formation/latest/dg/cloudtrail-logging.html#source-identity-cloudtrail">Tracking
+   * query engine IAM roles in S3 data events</a>.</p> </li> </ul>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const { return m_parameters; }
   inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace PinpointSMSVoiceV2 {
 namespace Model {
-enum class VerifiedDestinationNumberFilterName { NOT_SET, status };
+enum class VerifiedDestinationNumberFilterName { NOT_SET, status, rcs_agent_id };
 
 namespace VerifiedDestinationNumberFilterNameMapper {
 AWS_PINPOINTSMSVOICEV2_API VerifiedDestinationNumberFilterName GetVerifiedDestinationNumberFilterNameForName(const Aws::String& name);

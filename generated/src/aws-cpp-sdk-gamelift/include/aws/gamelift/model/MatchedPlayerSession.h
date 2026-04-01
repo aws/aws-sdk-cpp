@@ -56,7 +56,9 @@ class MatchedPlayerSession {
 
   ///@{
   /**
-   * <p>A unique identifier for a player session</p>
+   * <p>A unique identifier for a player session. PlayerSessionId will only be
+   * populated for player sessions that are in ACTIVE or RESERVED status when the
+   * ticket is completed.</p>
    */
   inline const Aws::String& GetPlayerSessionId() const { return m_playerSessionId; }
   inline bool PlayerSessionIdHasBeenSet() const { return m_playerSessionIdHasBeenSet; }

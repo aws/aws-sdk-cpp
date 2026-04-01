@@ -661,9 +661,16 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
-   * <p>Executes a command in a runtime session container. Returns streaming output
-   * with contentStart, contentDelta, and contentStop events.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Executes a command in a runtime session container and streams the output back
+   * to the caller. This operation allows you to run shell commands within the agent
+   * runtime environment and receive real-time streaming responses including standard
+   * output and standard error.</p> <p>To invoke a command, you must specify the
+   * agent runtime ARN and a runtime session ID. The command execution supports
+   * streaming responses, allowing you to receive output as it becomes available
+   * through <code>contentStart</code>, <code>contentDelta</code>, and
+   * <code>contentStop</code> events.</p> <p>To use this operation, you must have the
+   * <code>bedrock-agentcore:InvokeAgentRuntimeCommand</code>
+   * permission.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/InvokeAgentRuntimeCommand">AWS
    * API Reference</a></p>
    */

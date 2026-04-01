@@ -28,9 +28,12 @@ static const int registration_HASH = HashingUtils::HashString("registration");
 static const int registration_attachment_HASH = HashingUtils::HashString("registration-attachment");
 static const int verified_destination_number_HASH = HashingUtils::HashString("verified-destination-number");
 static const int protect_configuration_HASH = HashingUtils::HashString("protect-configuration");
+static const int notify_configuration_HASH = HashingUtils::HashString("notify-configuration");
+static const int notify_template_HASH = HashingUtils::HashString("notify-template");
 static const int message_template_HASH = HashingUtils::HashString("message-template");
 static const int policy_HASH = HashingUtils::HashString("policy");
 static const int message_HASH = HashingUtils::HashString("message");
+static const int rcs_agent_HASH = HashingUtils::HashString("rcs-agent");
 
 ResourceType GetResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -60,12 +63,18 @@ ResourceType GetResourceTypeForName(const Aws::String& name) {
     return ResourceType::verified_destination_number;
   } else if (hashCode == protect_configuration_HASH) {
     return ResourceType::protect_configuration;
+  } else if (hashCode == notify_configuration_HASH) {
+    return ResourceType::notify_configuration;
+  } else if (hashCode == notify_template_HASH) {
+    return ResourceType::notify_template;
   } else if (hashCode == message_template_HASH) {
     return ResourceType::message_template;
   } else if (hashCode == policy_HASH) {
     return ResourceType::policy;
   } else if (hashCode == message_HASH) {
     return ResourceType::message;
+  } else if (hashCode == rcs_agent_HASH) {
+    return ResourceType::rcs_agent;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -106,12 +115,18 @@ Aws::String GetNameForResourceType(ResourceType enumValue) {
       return "verified-destination-number";
     case ResourceType::protect_configuration:
       return "protect-configuration";
+    case ResourceType::notify_configuration:
+      return "notify-configuration";
+    case ResourceType::notify_template:
+      return "notify-template";
     case ResourceType::message_template:
       return "message-template";
     case ResourceType::policy:
       return "policy";
     case ResourceType::message:
       return "message";
+    case ResourceType::rcs_agent:
+      return "rcs-agent";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

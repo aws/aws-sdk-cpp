@@ -38,6 +38,14 @@ IbmDb2LuwDataProviderSettings& IbmDb2LuwDataProviderSettings::operator=(JsonView
     m_certificateArn = jsonValue.GetString("CertificateArn");
     m_certificateArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EncryptionAlgorithm")) {
+    m_encryptionAlgorithm = jsonValue.GetInteger("EncryptionAlgorithm");
+    m_encryptionAlgorithmHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SecurityMechanism")) {
+    m_securityMechanism = jsonValue.GetInteger("SecurityMechanism");
+    m_securityMechanismHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("S3Path")) {
     m_s3Path = jsonValue.GetString("S3Path");
     m_s3PathHasBeenSet = true;
@@ -70,6 +78,14 @@ JsonValue IbmDb2LuwDataProviderSettings::Jsonize() const {
 
   if (m_certificateArnHasBeenSet) {
     payload.WithString("CertificateArn", m_certificateArn);
+  }
+
+  if (m_encryptionAlgorithmHasBeenSet) {
+    payload.WithInteger("EncryptionAlgorithm", m_encryptionAlgorithm);
+  }
+
+  if (m_securityMechanismHasBeenSet) {
+    payload.WithInteger("SecurityMechanism", m_securityMechanism);
   }
 
   if (m_s3PathHasBeenSet) {

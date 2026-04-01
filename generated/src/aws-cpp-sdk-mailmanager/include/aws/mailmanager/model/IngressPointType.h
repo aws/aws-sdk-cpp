@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MailManager {
 namespace Model {
-enum class IngressPointType { NOT_SET, OPEN, AUTH };
+enum class IngressPointType { NOT_SET, OPEN, AUTH, MTLS };
 
 namespace IngressPointTypeMapper {
 AWS_MAILMANAGER_API IngressPointType GetIngressPointTypeForName(const Aws::String& name);

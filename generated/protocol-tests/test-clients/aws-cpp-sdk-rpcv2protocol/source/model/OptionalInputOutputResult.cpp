@@ -25,9 +25,10 @@ OptionalInputOutputResult::OptionalInputOutputResult(const Aws::AmazonWebService
 }
 
 OptionalInputOutputResult& OptionalInputOutputResult::operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
+
   const auto& cborValue = result.GetPayload();
   const auto decoder = cborValue.GetDecoder();
-
   if (decoder != nullptr) {
     auto initialMapType = decoder->PeekType();
     if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
@@ -67,36 +68,6 @@ OptionalInputOutputResult& OptionalInputOutputResult::operator=(const Aws::Amazo
                   }
                 }
                 m_valueHasBeenSet = true;
-              }
-
-              else if (initialKeyStr == "x-amzn-requestid") {
-                auto peekType = decoder->PeekType();
-                if (peekType.has_value()) {
-                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
-                    auto val = decoder->PopNextTextVal();
-                    if (val.has_value()) {
-                      m_requestId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
-                    }
-                  } else {
-                    decoder->ConsumeNextSingleElement();
-                    Aws::StringStream ss;
-                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-                      auto nextType = decoder->PeekType();
-                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
-                        if (nextType.has_value()) {
-                          decoder->ConsumeNextSingleElement();  // consume the Break
-                        }
-                        break;
-                      }
-                      auto val = decoder->PopNextTextVal();
-                      if (val.has_value()) {
-                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
-                      }
-                    }
-                    m_requestId = ss.str();
-                  }
-                }
-                m_requestIdHasBeenSet = true;
               }
 
               else {
@@ -154,36 +125,6 @@ OptionalInputOutputResult& OptionalInputOutputResult::operator=(const Aws::Amazo
                 }
               }
               m_valueHasBeenSet = true;
-            }
-
-            else if (initialKeyStr == "x-amzn-requestid") {
-              auto peekType = decoder->PeekType();
-              if (peekType.has_value()) {
-                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
-                  auto val = decoder->PopNextTextVal();
-                  if (val.has_value()) {
-                    m_requestId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
-                  }
-                } else {
-                  decoder->ConsumeNextSingleElement();
-                  Aws::StringStream ss;
-                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-                    auto nextType = decoder->PeekType();
-                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
-                      if (nextType.has_value()) {
-                        decoder->ConsumeNextSingleElement();  // consume the Break
-                      }
-                      break;
-                    }
-                    auto val = decoder->PopNextTextVal();
-                    if (val.has_value()) {
-                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
-                    }
-                  }
-                  m_requestId = ss.str();
-                }
-              }
-              m_requestIdHasBeenSet = true;
             }
 
             else {

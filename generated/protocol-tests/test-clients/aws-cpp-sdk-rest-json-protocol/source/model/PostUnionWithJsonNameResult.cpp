@@ -20,6 +20,7 @@ using namespace Aws;
 PostUnionWithJsonNameResult::PostUnionWithJsonNameResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PostUnionWithJsonNameResult& PostUnionWithJsonNameResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetObject("value");

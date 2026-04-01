@@ -32,9 +32,10 @@ class CalculateIsolinesResult {
 
   ///@{
   /**
-   * <p>Time of arrival at the destination. This parameter is returned only if the
-   * Destination parameters was provided in the request. </p> <p>Time
-   * format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code>
+   * <p>Time of arrival at the destination, used for traffic calculations. This
+   * attribute is returned only if the <code>Destination</code> and
+   * <code>ArrivalTime</code> attributes were provided in the request.</p> <p>Time
+   * format: <code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code>
    * </p> <p>Examples:</p> <p> <code>2020-04-22T17:57:24Z</code> </p> <p>
    * <code>2020-04-22T17:57:24+02:00</code> </p>
    */
@@ -53,9 +54,12 @@ class CalculateIsolinesResult {
 
   ///@{
   /**
-   * <p>Time of departure from thr origin.</p> <p>Time
-   * format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code>
-   * </p> <p>Examples:</p> <p> <code>2020-04-22T17:57:24Z</code> </p> <p>
+   * <p>Time of departure from the origin, used for traffic calculations. This
+   * attribute is returned when <code>Origin</code> was provided in the request and
+   * either a specific departure time was requested (<code>DepartureTime</code>) or
+   * <code>DepartNow</code> was set to true.</p> <p>Time format:
+   * <code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code> </p>
+   * <p>Examples:</p> <p> <code>2020-04-22T17:57:24Z</code> </p> <p>
    * <code>2020-04-22T17:57:24+02:00</code> </p>
    */
   inline const Aws::String& GetDepartureTime() const { return m_departureTime; }
@@ -73,8 +77,10 @@ class CalculateIsolinesResult {
 
   ///@{
   /**
-   * <p>The format of the returned IsolineGeometry. </p> <p>Default
-   * Value:<code>FlexiblePolyline</code> </p>
+   * <p>The format of the returned geometries, matching the format specified in the
+   * request. Either <code> FlexiblePolyline</code> for compact encoding or
+   * <code>Simple</code> for GeoJSON-compatible coordinates.</p> <p>Default
+   * value:<code>FlexiblePolyline</code> </p>
    */
   inline GeometryFormat GetIsolineGeometryFormat() const { return m_isolineGeometryFormat; }
   inline void SetIsolineGeometryFormat(GeometryFormat value) {
@@ -89,7 +95,8 @@ class CalculateIsolinesResult {
 
   ///@{
   /**
-   * <p>Calculated isolines and associated properties.</p>
+   * <p>Reachable areas, or isolines, for each threshold specified in the
+   * request.</p>
    */
   inline const Aws::Vector<Isoline>& GetIsolines() const { return m_isolines; }
   template <typename IsolinesT = Aws::Vector<Isoline>>
@@ -112,7 +119,8 @@ class CalculateIsolinesResult {
 
   ///@{
   /**
-   * <p>The pricing bucket for which the query is charged at.</p>
+   * <p>The pricing bucket applied to this calculation. Different buckets apply based
+   * on the travel mode and thresholds used.</p>
    */
   inline const Aws::String& GetPricingBucket() const { return m_pricingBucket; }
   template <typename PricingBucketT = Aws::String>
@@ -129,7 +137,9 @@ class CalculateIsolinesResult {
 
   ///@{
   /**
-   * <p>Snapped destination that was used for the Isoline calculation.</p>
+   * <p>The actual point on the road network used for calculations, which may differ
+   * from the requested destination if <code>Destination</code> was not directly on a
+   * road.</p>
    */
   inline const Aws::Vector<double>& GetSnappedDestination() const { return m_snappedDestination; }
   template <typename SnappedDestinationT = Aws::Vector<double>>
@@ -151,7 +161,8 @@ class CalculateIsolinesResult {
 
   ///@{
   /**
-   * <p>Snapped origin that was used for the Isoline calculation.</p>
+   * <p>The actual point on the road network used for calculations, which may differ
+   * from the requested origin if <code>Origin</code> was not directly on a road.</p>
    */
   inline const Aws::Vector<double>& GetSnappedOrigin() const { return m_snappedOrigin; }
   template <typename SnappedOriginT = Aws::Vector<double>>

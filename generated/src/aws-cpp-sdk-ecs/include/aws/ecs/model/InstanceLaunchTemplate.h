@@ -9,6 +9,7 @@
 #include <aws/ecs/model/CapacityOptionType.h>
 #include <aws/ecs/model/CapacityReservationRequest.h>
 #include <aws/ecs/model/InstanceRequirementsRequest.h>
+#include <aws/ecs/model/ManagedInstancesLocalStorageConfiguration.h>
 #include <aws/ecs/model/ManagedInstancesMonitoringOptions.h>
 #include <aws/ecs/model/ManagedInstancesNetworkConfiguration.h>
 #include <aws/ecs/model/ManagedInstancesStorageConfiguration.h>
@@ -87,7 +88,7 @@ class InstanceLaunchTemplate {
   ///@{
   /**
    * <p>The storage configuration for Amazon ECS Managed Instances. This defines the
-   * root volume size and type for the instances.</p>
+   * data volume properties for the instances.</p>
    */
   inline const ManagedInstancesStorageConfiguration& GetStorageConfiguration() const { return m_storageConfiguration; }
   inline bool StorageConfigurationHasBeenSet() const { return m_storageConfigurationHasBeenSet; }
@@ -99,6 +100,26 @@ class InstanceLaunchTemplate {
   template <typename StorageConfigurationT = ManagedInstancesStorageConfiguration>
   InstanceLaunchTemplate& WithStorageConfiguration(StorageConfigurationT&& value) {
     SetStorageConfiguration(std::forward<StorageConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The local storage configuration for Amazon ECS Managed Instances. This
+   * defines how ECS uses instance store volumes available on the container
+   * instance.</p>
+   */
+  inline const ManagedInstancesLocalStorageConfiguration& GetLocalStorageConfiguration() const { return m_localStorageConfiguration; }
+  inline bool LocalStorageConfigurationHasBeenSet() const { return m_localStorageConfigurationHasBeenSet; }
+  template <typename LocalStorageConfigurationT = ManagedInstancesLocalStorageConfiguration>
+  void SetLocalStorageConfiguration(LocalStorageConfigurationT&& value) {
+    m_localStorageConfigurationHasBeenSet = true;
+    m_localStorageConfiguration = std::forward<LocalStorageConfigurationT>(value);
+  }
+  template <typename LocalStorageConfigurationT = ManagedInstancesLocalStorageConfiguration>
+  InstanceLaunchTemplate& WithLocalStorageConfiguration(LocalStorageConfigurationT&& value) {
+    SetLocalStorageConfiguration(std::forward<LocalStorageConfigurationT>(value));
     return *this;
   }
   ///@}
@@ -211,7 +232,8 @@ class InstanceLaunchTemplate {
    * use FIPS-compliant cryptographic algorithms and modules for enhanced security
    * compliance. If <code>false</code>, instances use standard cryptographic
    * implementations.</p> <p>If not specified, instances are launched with FIPS
-   * enabled in AWS GovCloud (US) regions and FIPS disabled in other regions.</p>
+   * enabled in Amazon Web Services GovCloud (US) regions and FIPS disabled in other
+   * regions.</p>
    */
   inline bool GetFipsEnabled() const { return m_fipsEnabled; }
   inline bool FipsEnabledHasBeenSet() const { return m_fipsEnabledHasBeenSet; }
@@ -252,6 +274,8 @@ class InstanceLaunchTemplate {
 
   ManagedInstancesStorageConfiguration m_storageConfiguration;
 
+  ManagedInstancesLocalStorageConfiguration m_localStorageConfiguration;
+
   ManagedInstancesMonitoringOptions m_monitoring{ManagedInstancesMonitoringOptions::NOT_SET};
 
   CapacityOptionType m_capacityOptionType{CapacityOptionType::NOT_SET};
@@ -266,6 +290,7 @@ class InstanceLaunchTemplate {
   bool m_ec2InstanceProfileArnHasBeenSet = false;
   bool m_networkConfigurationHasBeenSet = false;
   bool m_storageConfigurationHasBeenSet = false;
+  bool m_localStorageConfigurationHasBeenSet = false;
   bool m_monitoringHasBeenSet = false;
   bool m_capacityOptionTypeHasBeenSet = false;
   bool m_instanceMetadataTagsPropagationHasBeenSet = false;

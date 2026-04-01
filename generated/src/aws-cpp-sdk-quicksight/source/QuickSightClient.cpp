@@ -92,6 +92,7 @@
 #include <aws/quicksight/model/DescribeAnalysisRequest.h>
 #include <aws/quicksight/model/DescribeAssetBundleExportJobRequest.h>
 #include <aws/quicksight/model/DescribeAssetBundleImportJobRequest.h>
+#include <aws/quicksight/model/DescribeAutomationJobRequest.h>
 #include <aws/quicksight/model/DescribeBrandAssignmentRequest.h>
 #include <aws/quicksight/model/DescribeBrandPublishedVersionRequest.h>
 #include <aws/quicksight/model/DescribeBrandRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/quicksight/model/DescribeKeyRegistrationRequest.h>
 #include <aws/quicksight/model/DescribeNamespaceRequest.h>
 #include <aws/quicksight/model/DescribeQPersonalizationConfigurationRequest.h>
-#include <aws/quicksight/model/DescribeQuickSightQSearchConfigurationRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -2148,6 +2148,45 @@ DescribeAssetBundleImportJobOutcome QuickSightClient::DescribeAssetBundleImportJ
                             : DescribeAssetBundleImportJobOutcome(std::move(result.GetError()));
 }
 
+DescribeAutomationJobOutcome QuickSightClient::DescribeAutomationJob(const DescribeAutomationJobRequest& request) const {
+  if (!request.AwsAccountIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeAutomationJob", "Required field: AwsAccountId, is not set");
+    return DescribeAutomationJobOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.AutomationGroupIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeAutomationJob", "Required field: AutomationGroupId, is not set");
+    return DescribeAutomationJobOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                "Missing required field [AutomationGroupId]", false));
+  }
+  if (!request.AutomationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeAutomationJob", "Required field: AutomationId, is not set");
+    return DescribeAutomationJobOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                "Missing required field [AutomationId]", false));
+  }
+  if (!request.JobIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeAutomationJob", "Required field: JobId, is not set");
+    return DescribeAutomationJobOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                "Missing required field [JobId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/automation-groups/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAutomationGroupId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/automations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAutomationId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAutomationJobOutcome(result.GetResultWithOwnership())
+                            : DescribeAutomationJobOutcome(std::move(result.GetError()));
+}
+
 DescribeBrandOutcome QuickSightClient::DescribeBrand(const DescribeBrandRequest& request) const {
   if (!request.AwsAccountIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DescribeBrand", "Required field: AwsAccountId, is not set");
@@ -2850,24 +2889,4 @@ DescribeQPersonalizationConfigurationOutcome QuickSightClient::DescribeQPersonal
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? DescribeQPersonalizationConfigurationOutcome(result.GetResultWithOwnership())
                             : DescribeQPersonalizationConfigurationOutcome(std::move(result.GetError()));
-}
-
-DescribeQuickSightQSearchConfigurationOutcome QuickSightClient::DescribeQuickSightQSearchConfiguration(
-    const DescribeQuickSightQSearchConfigurationRequest& request) const {
-  if (!request.AwsAccountIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("DescribeQuickSightQSearchConfiguration", "Required field: AwsAccountId, is not set");
-    return DescribeQuickSightQSearchConfigurationOutcome(Aws::Client::AWSError<QuickSightErrors>(
-        QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/quicksight-q-search-configuration");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
-  return result.IsSuccess() ? DescribeQuickSightQSearchConfigurationOutcome(result.GetResultWithOwnership())
-                            : DescribeQuickSightQSearchConfigurationOutcome(std::move(result.GetError()));
 }

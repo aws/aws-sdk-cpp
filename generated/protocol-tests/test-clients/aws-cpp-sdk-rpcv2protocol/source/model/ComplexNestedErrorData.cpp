@@ -58,9 +58,7 @@ ComplexNestedErrorData& ComplexNestedErrorData::operator=(const std::shared_ptr<
                   }
                 }
                 m_fooHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -115,9 +113,7 @@ ComplexNestedErrorData& ComplexNestedErrorData::operator=(const std::shared_ptr<
                 }
               }
               m_fooHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

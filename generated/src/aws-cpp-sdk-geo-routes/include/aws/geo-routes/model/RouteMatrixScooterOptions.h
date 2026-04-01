@@ -20,8 +20,8 @@ namespace GeoRoutes {
 namespace Model {
 
 /**
- * <p>Travel mode options when the provided travel mode is <code>Scooter</code>
- * </p><p><h3>See Also:</h3>   <a
+ * <p>Travel mode options when the provided travel mode is
+ * <code>Scooter</code>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/RouteMatrixScooterOptions">AWS
  * API Reference</a></p>
  */
@@ -52,7 +52,7 @@ class RouteMatrixScooterOptions {
 
   ///@{
   /**
-   * <p>Maximum speed.</p> <p> <b>Unit</b>: <code>KilometersPerHour</code> </p>
+   * <p>Maximum speed.</p> <p> <b>Unit</b>: <code>kilometers per hour</code> </p>
    */
   inline double GetMaxSpeed() const { return m_maxSpeed; }
   inline bool MaxSpeedHasBeenSet() const { return m_maxSpeedHasBeenSet; }
@@ -68,7 +68,7 @@ class RouteMatrixScooterOptions {
 
   ///@{
   /**
-   * <p>The number of occupants in the vehicle.</p> <p>Default Value: <code>1</code>
+   * <p>The number of occupants in the vehicle.</p> <p>Default value: <code>1</code>
    * </p>
    */
   inline int GetOccupancy() const { return m_occupancy; }

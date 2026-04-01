@@ -48,8 +48,11 @@ class CalculateRoutesResult {
 
   ///@{
   /**
-   * <p>Notices are additional information returned that indicate issues that
-   * occurred during route calculation.</p>
+   * <p> Notices are additional information returned that indicate issues that
+   * occurred during route calculation. Not supported in <code>ap-southeast-1</code>
+   * and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const Aws::Vector<RouteResponseNotice>& GetNotices() const { return m_notices; }
   template <typename NoticesT = Aws::Vector<RouteResponseNotice>>

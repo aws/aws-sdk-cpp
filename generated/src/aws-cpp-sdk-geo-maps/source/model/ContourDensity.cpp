@@ -15,12 +15,18 @@ namespace GeoMaps {
 namespace Model {
 namespace ContourDensityMapper {
 
+static const int Low_HASH = HashingUtils::HashString("Low");
 static const int Medium_HASH = HashingUtils::HashString("Medium");
+static const int High_HASH = HashingUtils::HashString("High");
 
 ContourDensity GetContourDensityForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Medium_HASH) {
+  if (hashCode == Low_HASH) {
+    return ContourDensity::Low;
+  } else if (hashCode == Medium_HASH) {
     return ContourDensity::Medium;
+  } else if (hashCode == High_HASH) {
+    return ContourDensity::High;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -35,8 +41,12 @@ Aws::String GetNameForContourDensity(ContourDensity enumValue) {
   switch (enumValue) {
     case ContourDensity::NOT_SET:
       return {};
+    case ContourDensity::Low:
+      return "Low";
     case ContourDensity::Medium:
       return "Medium";
+    case ContourDensity::High:
+      return "High";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -19,6 +19,10 @@ namespace deadline {
 namespace Model {
 
 /**
+ * <p>Shared pagination fields for List operation inputs (nextToken +
+ * maxResults).</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListBudgetsRequest">AWS
+ * API Reference</a></p>
  */
 class ListBudgetsRequest : public DeadlineRequest {
  public:
@@ -36,6 +40,24 @@ class ListBudgetsRequest : public DeadlineRequest {
 
   ///@{
   /**
+   * <p>The farm ID associated with the budgets.</p>
+   */
+  inline const Aws::String& GetFarmId() const { return m_farmId; }
+  inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
+  template <typename FarmIdT = Aws::String>
+  void SetFarmId(FarmIdT&& value) {
+    m_farmIdHasBeenSet = true;
+    m_farmId = std::forward<FarmIdT>(value);
+  }
+  template <typename FarmIdT = Aws::String>
+  ListBudgetsRequest& WithFarmId(FarmIdT&& value) {
+    SetFarmId(std::forward<FarmIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The token for the next set of results, or <code>null</code> to start from the
    * beginning.</p>
    */
@@ -49,24 +71,6 @@ class ListBudgetsRequest : public DeadlineRequest {
   template <typename NextTokenT = Aws::String>
   ListBudgetsRequest& WithNextToken(NextTokenT&& value) {
     SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The farm ID associated with the budgets.</p>
-   */
-  inline const Aws::String& GetFarmId() const { return m_farmId; }
-  inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
-  template <typename FarmIdT = Aws::String>
-  void SetFarmId(FarmIdT&& value) {
-    m_farmIdHasBeenSet = true;
-    m_farmId = std::forward<FarmIdT>(value);
-  }
-  template <typename FarmIdT = Aws::String>
-  ListBudgetsRequest& WithFarmId(FarmIdT&& value) {
-    SetFarmId(std::forward<FarmIdT>(value));
     return *this;
   }
   ///@}
@@ -104,15 +108,15 @@ class ListBudgetsRequest : public DeadlineRequest {
   }
   ///@}
  private:
-  Aws::String m_nextToken;
-
   Aws::String m_farmId;
+
+  Aws::String m_nextToken;
 
   int m_maxResults{0};
 
   BudgetStatus m_status{BudgetStatus::NOT_SET};
-  bool m_nextTokenHasBeenSet = false;
   bool m_farmIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };

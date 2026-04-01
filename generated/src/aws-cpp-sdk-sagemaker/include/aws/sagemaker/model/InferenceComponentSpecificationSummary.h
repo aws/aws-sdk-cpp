@@ -9,6 +9,7 @@
 #include <aws/sagemaker/model/InferenceComponentComputeResourceRequirements.h>
 #include <aws/sagemaker/model/InferenceComponentContainerSpecificationSummary.h>
 #include <aws/sagemaker/model/InferenceComponentDataCacheConfigSummary.h>
+#include <aws/sagemaker/model/InferenceComponentSchedulingConfig.h>
 #include <aws/sagemaker/model/InferenceComponentStartupParameters.h>
 
 #include <utility>
@@ -149,6 +150,25 @@ class InferenceComponentSpecificationSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The scheduling configuration that determines how inference component copies
+   * are placed across available instances when copies are added or removed.</p>
+   */
+  inline const InferenceComponentSchedulingConfig& GetSchedulingConfig() const { return m_schedulingConfig; }
+  inline bool SchedulingConfigHasBeenSet() const { return m_schedulingConfigHasBeenSet; }
+  template <typename SchedulingConfigT = InferenceComponentSchedulingConfig>
+  void SetSchedulingConfig(SchedulingConfigT&& value) {
+    m_schedulingConfigHasBeenSet = true;
+    m_schedulingConfig = std::forward<SchedulingConfigT>(value);
+  }
+  template <typename SchedulingConfigT = InferenceComponentSchedulingConfig>
+  InferenceComponentSpecificationSummary& WithSchedulingConfig(SchedulingConfigT&& value) {
+    SetSchedulingConfig(std::forward<SchedulingConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_modelName;
 
@@ -161,12 +181,15 @@ class InferenceComponentSpecificationSummary {
   Aws::String m_baseInferenceComponentName;
 
   InferenceComponentDataCacheConfigSummary m_dataCacheConfig;
+
+  InferenceComponentSchedulingConfig m_schedulingConfig;
   bool m_modelNameHasBeenSet = false;
   bool m_containerHasBeenSet = false;
   bool m_startupParametersHasBeenSet = false;
   bool m_computeResourceRequirementsHasBeenSet = false;
   bool m_baseInferenceComponentNameHasBeenSet = false;
   bool m_dataCacheConfigHasBeenSet = false;
+  bool m_schedulingConfigHasBeenSet = false;
 };
 
 }  // namespace Model

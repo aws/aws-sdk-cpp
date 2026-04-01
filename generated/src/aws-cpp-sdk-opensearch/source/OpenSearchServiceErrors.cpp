@@ -27,6 +27,7 @@ static const int DISABLED_OPERATION_HASH = HashingUtils::HashString("DisabledOpe
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
 static const int DEPENDENCY_FAILURE_HASH = HashingUtils::HashString("DependencyFailureException");
+static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
 static const int BASE_HASH = HashingUtils::HashString("BaseException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
@@ -45,6 +46,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OpenSearchServiceErrors::INTERNAL), RetryableType::RETRYABLE);
   } else if (hashCode == DEPENDENCY_FAILURE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OpenSearchServiceErrors::DEPENDENCY_FAILURE), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OpenSearchServiceErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OpenSearchServiceErrors::RESOURCE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == BASE_HASH) {

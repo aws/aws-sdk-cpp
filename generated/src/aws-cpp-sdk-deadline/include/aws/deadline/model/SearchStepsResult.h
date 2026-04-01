@@ -23,6 +23,12 @@ class JsonValue;
 }  // namespace Utils
 namespace deadline {
 namespace Model {
+/**
+ * <p>Shared output fields for all Search operations (nextItemOffset,
+ * totalResults).</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/SearchStepsResponse">AWS
+ * API Reference</a></p>
+ */
 class SearchStepsResult {
  public:
   AWS_DEADLINE_API SearchStepsResult() = default;

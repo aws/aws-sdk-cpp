@@ -7,6 +7,7 @@
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/appstream/model/AccessEndpoint.h>
 #include <aws/appstream/model/ApplicationSettingsResponse.h>
+#include <aws/appstream/model/ContentRedirection.h>
 #include <aws/appstream/model/StackError.h>
 #include <aws/appstream/model/StorageConnector.h>
 #include <aws/appstream/model/StreamingExperienceSettings.h>
@@ -327,6 +328,26 @@ class Stack {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration for bidirectional URL redirection between the streaming session
+   * and the local client. Use HostToClient to redirect URLs from the remote desktop
+   * to the local browser.</p>
+   */
+  inline const ContentRedirection& GetContentRedirection() const { return m_contentRedirection; }
+  inline bool ContentRedirectionHasBeenSet() const { return m_contentRedirectionHasBeenSet; }
+  template <typename ContentRedirectionT = ContentRedirection>
+  void SetContentRedirection(ContentRedirectionT&& value) {
+    m_contentRedirectionHasBeenSet = true;
+    m_contentRedirection = std::forward<ContentRedirectionT>(value);
+  }
+  template <typename ContentRedirectionT = ContentRedirection>
+  Stack& WithContentRedirection(ContentRedirectionT&& value) {
+    SetContentRedirection(std::forward<ContentRedirectionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -355,6 +376,8 @@ class Stack {
   Aws::Vector<Aws::String> m_embedHostDomains;
 
   StreamingExperienceSettings m_streamingExperienceSettings;
+
+  ContentRedirection m_contentRedirection;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
@@ -369,6 +392,7 @@ class Stack {
   bool m_accessEndpointsHasBeenSet = false;
   bool m_embedHostDomainsHasBeenSet = false;
   bool m_streamingExperienceSettingsHasBeenSet = false;
+  bool m_contentRedirectionHasBeenSet = false;
 };
 
 }  // namespace Model

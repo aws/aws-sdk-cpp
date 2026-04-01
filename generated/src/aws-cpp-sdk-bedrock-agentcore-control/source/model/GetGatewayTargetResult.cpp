@@ -79,6 +79,19 @@ GetGatewayTargetResult& GetGatewayTargetResult::operator=(const Aws::AmazonWebSe
     m_metadataConfiguration = jsonValue.GetObject("metadataConfiguration");
     m_metadataConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("privateEndpoint")) {
+    m_privateEndpoint = jsonValue.GetObject("privateEndpoint");
+    m_privateEndpointHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("privateEndpointManagedResources")) {
+    Aws::Utils::Array<JsonView> privateEndpointManagedResourcesJsonList = jsonValue.GetArray("privateEndpointManagedResources");
+    for (unsigned privateEndpointManagedResourcesIndex = 0;
+         privateEndpointManagedResourcesIndex < privateEndpointManagedResourcesJsonList.GetLength();
+         ++privateEndpointManagedResourcesIndex) {
+      m_privateEndpointManagedResources.push_back(privateEndpointManagedResourcesJsonList[privateEndpointManagedResourcesIndex].AsObject());
+    }
+    m_privateEndpointManagedResourcesHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

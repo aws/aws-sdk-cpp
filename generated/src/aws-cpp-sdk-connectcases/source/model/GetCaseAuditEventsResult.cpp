@@ -29,7 +29,11 @@ GetCaseAuditEventsResult& GetCaseAuditEventsResult::operator=(const Aws::AmazonW
   if (jsonValue.ValueExists("auditEvents")) {
     Aws::Utils::Array<JsonView> auditEventsJsonList = jsonValue.GetArray("auditEvents");
     for (unsigned auditEventsIndex = 0; auditEventsIndex < auditEventsJsonList.GetLength(); ++auditEventsIndex) {
-      m_auditEvents.push_back(auditEventsJsonList[auditEventsIndex].AsObject());
+      if (auditEventsJsonList[auditEventsIndex].IsNull()) {
+        m_auditEvents.emplace_back();
+        continue;
+      }
+      m_auditEvents.emplace_back(auditEventsJsonList[auditEventsIndex].AsObject());
     }
     m_auditEventsHasBeenSet = true;
   }

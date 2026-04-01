@@ -42,6 +42,8 @@
 #include <aws/rest-json-protocol/model/HostWithPathOperationRequest.h>
 #include <aws/rest-json-protocol/model/HttpChecksumRequiredRequest.h>
 #include <aws/rest-json-protocol/model/HttpChecksumRequiredResult.h>
+#include <aws/rest-json-protocol/model/HttpEmptyPrefixHeadersRequest.h>
+#include <aws/rest-json-protocol/model/HttpEmptyPrefixHeadersResult.h>
 #include <aws/rest-json-protocol/model/HttpEnumPayloadRequest.h>
 #include <aws/rest-json-protocol/model/HttpEnumPayloadResult.h>
 #include <aws/rest-json-protocol/model/HttpPayloadTraitsRequest.h>
@@ -54,6 +56,7 @@
 #include <aws/rest-json-protocol/model/HttpPrefixHeadersInResponseResult.h>
 #include <aws/rest-json-protocol/model/HttpPrefixHeadersRequest.h>
 #include <aws/rest-json-protocol/model/HttpPrefixHeadersResult.h>
+#include <aws/rest-json-protocol/model/HttpQueryParamsOnlyOperationRequest.h>
 #include <aws/rest-json-protocol/model/HttpResponseCodeRequest.h>
 #include <aws/rest-json-protocol/model/HttpResponseCodeResult.h>
 #include <aws/rest-json-protocol/model/HttpStringPayloadRequest.h>
@@ -101,6 +104,10 @@
 #include <aws/rest-json-protocol/model/ResponseCodeRequiredResult.h>
 #include <aws/rest-json-protocol/model/SimpleScalarPropertiesRequest.h>
 #include <aws/rest-json-protocol/model/SimpleScalarPropertiesResult.h>
+#include <aws/rest-json-protocol/model/SparseJsonListsRequest.h>
+#include <aws/rest-json-protocol/model/SparseJsonListsResult.h>
+#include <aws/rest-json-protocol/model/SparseJsonMapsRequest.h>
+#include <aws/rest-json-protocol/model/SparseJsonMapsResult.h>
 #include <aws/rest-json-protocol/model/TestBodyStructureRequest.h>
 #include <aws/rest-json-protocol/model/TestBodyStructureResult.h>
 #include <aws/rest-json-protocol/model/TestGetNoInputNoPayloadRequest.h>
@@ -166,12 +173,14 @@ class FractionalSecondsRequest;
 class GreetingWithErrorsRequest;
 class HostWithPathOperationRequest;
 class HttpChecksumRequiredRequest;
+class HttpEmptyPrefixHeadersRequest;
 class HttpEnumPayloadRequest;
 class HttpPayloadTraitsRequest;
 class HttpPayloadWithStructureRequest;
 class HttpPayloadWithUnionRequest;
 class HttpPrefixHeadersRequest;
 class HttpPrefixHeadersInResponseRequest;
+class HttpQueryParamsOnlyOperationRequest;
 class HttpRequestWithFloatLabelsRequest;
 class HttpRequestWithGreedyLabelInPathRequest;
 class HttpRequestWithLabelsRequest;
@@ -204,6 +213,8 @@ class RecursiveShapesRequest;
 class ResponseCodeHttpFallbackRequest;
 class ResponseCodeRequiredRequest;
 class SimpleScalarPropertiesRequest;
+class SparseJsonListsRequest;
+class SparseJsonMapsRequest;
 class TestBodyStructureRequest;
 class TestGetNoInputNoPayloadRequest;
 class TestGetNoPayloadRequest;
@@ -231,12 +242,14 @@ typedef Aws::Utils::Outcome<FractionalSecondsResult, RestJsonProtocolError> Frac
 typedef Aws::Utils::Outcome<GreetingWithErrorsResult, RestJsonProtocolError> GreetingWithErrorsOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, RestJsonProtocolError> HostWithPathOperationOutcome;
 typedef Aws::Utils::Outcome<HttpChecksumRequiredResult, RestJsonProtocolError> HttpChecksumRequiredOutcome;
+typedef Aws::Utils::Outcome<HttpEmptyPrefixHeadersResult, RestJsonProtocolError> HttpEmptyPrefixHeadersOutcome;
 typedef Aws::Utils::Outcome<HttpEnumPayloadResult, RestJsonProtocolError> HttpEnumPayloadOutcome;
 typedef Aws::Utils::Outcome<HttpPayloadTraitsResult, RestJsonProtocolError> HttpPayloadTraitsOutcome;
 typedef Aws::Utils::Outcome<HttpPayloadWithStructureResult, RestJsonProtocolError> HttpPayloadWithStructureOutcome;
 typedef Aws::Utils::Outcome<HttpPayloadWithUnionResult, RestJsonProtocolError> HttpPayloadWithUnionOutcome;
 typedef Aws::Utils::Outcome<HttpPrefixHeadersResult, RestJsonProtocolError> HttpPrefixHeadersOutcome;
 typedef Aws::Utils::Outcome<HttpPrefixHeadersInResponseResult, RestJsonProtocolError> HttpPrefixHeadersInResponseOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, RestJsonProtocolError> HttpQueryParamsOnlyOperationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, RestJsonProtocolError> HttpRequestWithFloatLabelsOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, RestJsonProtocolError> HttpRequestWithGreedyLabelInPathOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, RestJsonProtocolError> HttpRequestWithLabelsOutcome;
@@ -269,6 +282,8 @@ typedef Aws::Utils::Outcome<RecursiveShapesResult, RestJsonProtocolError> Recurs
 typedef Aws::Utils::Outcome<ResponseCodeHttpFallbackResult, RestJsonProtocolError> ResponseCodeHttpFallbackOutcome;
 typedef Aws::Utils::Outcome<ResponseCodeRequiredResult, RestJsonProtocolError> ResponseCodeRequiredOutcome;
 typedef Aws::Utils::Outcome<SimpleScalarPropertiesResult, RestJsonProtocolError> SimpleScalarPropertiesOutcome;
+typedef Aws::Utils::Outcome<SparseJsonListsResult, RestJsonProtocolError> SparseJsonListsOutcome;
+typedef Aws::Utils::Outcome<SparseJsonMapsResult, RestJsonProtocolError> SparseJsonMapsOutcome;
 typedef Aws::Utils::Outcome<TestBodyStructureResult, RestJsonProtocolError> TestBodyStructureOutcome;
 typedef Aws::Utils::Outcome<TestGetNoInputNoPayloadResult, RestJsonProtocolError> TestGetNoInputNoPayloadOutcome;
 typedef Aws::Utils::Outcome<TestGetNoPayloadResult, RestJsonProtocolError> TestGetNoPayloadOutcome;
@@ -296,12 +311,14 @@ typedef std::future<FractionalSecondsOutcome> FractionalSecondsOutcomeCallable;
 typedef std::future<GreetingWithErrorsOutcome> GreetingWithErrorsOutcomeCallable;
 typedef std::future<HostWithPathOperationOutcome> HostWithPathOperationOutcomeCallable;
 typedef std::future<HttpChecksumRequiredOutcome> HttpChecksumRequiredOutcomeCallable;
+typedef std::future<HttpEmptyPrefixHeadersOutcome> HttpEmptyPrefixHeadersOutcomeCallable;
 typedef std::future<HttpEnumPayloadOutcome> HttpEnumPayloadOutcomeCallable;
 typedef std::future<HttpPayloadTraitsOutcome> HttpPayloadTraitsOutcomeCallable;
 typedef std::future<HttpPayloadWithStructureOutcome> HttpPayloadWithStructureOutcomeCallable;
 typedef std::future<HttpPayloadWithUnionOutcome> HttpPayloadWithUnionOutcomeCallable;
 typedef std::future<HttpPrefixHeadersOutcome> HttpPrefixHeadersOutcomeCallable;
 typedef std::future<HttpPrefixHeadersInResponseOutcome> HttpPrefixHeadersInResponseOutcomeCallable;
+typedef std::future<HttpQueryParamsOnlyOperationOutcome> HttpQueryParamsOnlyOperationOutcomeCallable;
 typedef std::future<HttpRequestWithFloatLabelsOutcome> HttpRequestWithFloatLabelsOutcomeCallable;
 typedef std::future<HttpRequestWithGreedyLabelInPathOutcome> HttpRequestWithGreedyLabelInPathOutcomeCallable;
 typedef std::future<HttpRequestWithLabelsOutcome> HttpRequestWithLabelsOutcomeCallable;
@@ -334,6 +351,8 @@ typedef std::future<RecursiveShapesOutcome> RecursiveShapesOutcomeCallable;
 typedef std::future<ResponseCodeHttpFallbackOutcome> ResponseCodeHttpFallbackOutcomeCallable;
 typedef std::future<ResponseCodeRequiredOutcome> ResponseCodeRequiredOutcomeCallable;
 typedef std::future<SimpleScalarPropertiesOutcome> SimpleScalarPropertiesOutcomeCallable;
+typedef std::future<SparseJsonListsOutcome> SparseJsonListsOutcomeCallable;
+typedef std::future<SparseJsonMapsOutcome> SparseJsonMapsOutcomeCallable;
 typedef std::future<TestBodyStructureOutcome> TestBodyStructureOutcomeCallable;
 typedef std::future<TestGetNoInputNoPayloadOutcome> TestGetNoInputNoPayloadOutcomeCallable;
 typedef std::future<TestGetNoPayloadOutcome> TestGetNoPayloadOutcomeCallable;
@@ -396,6 +415,9 @@ typedef std::function<void(const RestJsonProtocolClient*, const Model::HostWithP
 typedef std::function<void(const RestJsonProtocolClient*, const Model::HttpChecksumRequiredRequest&,
                            const Model::HttpChecksumRequiredOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     HttpChecksumRequiredResponseReceivedHandler;
+typedef std::function<void(const RestJsonProtocolClient*, const Model::HttpEmptyPrefixHeadersRequest&,
+                           const Model::HttpEmptyPrefixHeadersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    HttpEmptyPrefixHeadersResponseReceivedHandler;
 typedef std::function<void(const RestJsonProtocolClient*, const Model::HttpEnumPayloadRequest&, const Model::HttpEnumPayloadOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     HttpEnumPayloadResponseReceivedHandler;
@@ -414,6 +436,10 @@ typedef std::function<void(const RestJsonProtocolClient*, const Model::HttpPrefi
 typedef std::function<void(const RestJsonProtocolClient*, const Model::HttpPrefixHeadersInResponseRequest&,
                            const Model::HttpPrefixHeadersInResponseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     HttpPrefixHeadersInResponseResponseReceivedHandler;
+typedef std::function<void(const RestJsonProtocolClient*, const Model::HttpQueryParamsOnlyOperationRequest&,
+                           const Model::HttpQueryParamsOnlyOperationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    HttpQueryParamsOnlyOperationResponseReceivedHandler;
 typedef std::function<void(const RestJsonProtocolClient*, const Model::HttpRequestWithFloatLabelsRequest&,
                            const Model::HttpRequestWithFloatLabelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     HttpRequestWithFloatLabelsResponseReceivedHandler;
@@ -514,6 +540,12 @@ typedef std::function<void(const RestJsonProtocolClient*, const Model::ResponseC
 typedef std::function<void(const RestJsonProtocolClient*, const Model::SimpleScalarPropertiesRequest&,
                            const Model::SimpleScalarPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SimpleScalarPropertiesResponseReceivedHandler;
+typedef std::function<void(const RestJsonProtocolClient*, const Model::SparseJsonListsRequest&, const Model::SparseJsonListsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    SparseJsonListsResponseReceivedHandler;
+typedef std::function<void(const RestJsonProtocolClient*, const Model::SparseJsonMapsRequest&, const Model::SparseJsonMapsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    SparseJsonMapsResponseReceivedHandler;
 typedef std::function<void(const RestJsonProtocolClient*, const Model::TestBodyStructureRequest&, const Model::TestBodyStructureOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     TestBodyStructureResponseReceivedHandler;

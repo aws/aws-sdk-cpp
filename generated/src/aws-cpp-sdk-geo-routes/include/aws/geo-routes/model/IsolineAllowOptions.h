@@ -17,8 +17,10 @@ namespace GeoRoutes {
 namespace Model {
 
 /**
- * <p>Features that are allowed while calculating an isoline.</p><p><h3>See
- * Also:</h3>   <a
+ * <p>Special road types or features that should be considered available for
+ * routing. For example, this attribute can be used to allow the use of HOV
+ * (high-occupancy vehicle) or HOT (high-occupancy toll) lanes, even if they would
+ * otherwise not be.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/IsolineAllowOptions">AWS
  * API Reference</a></p>
  */
@@ -31,8 +33,9 @@ class IsolineAllowOptions {
 
   ///@{
   /**
-   * <p>Allow Hot (High Occupancy Toll) lanes while calculating an isoline.</p>
-   * <p>Default value: <code>false</code> </p>
+   * <p>When true, allows the use of HOT (high-occupancy toll) lanes, which may
+   * affect travel times and reachable areas.</p> <p>Default value:
+   * <code>false</code> </p>
    */
   inline bool GetHot() const { return m_hot; }
   inline bool HotHasBeenSet() const { return m_hotHasBeenSet; }
@@ -48,8 +51,9 @@ class IsolineAllowOptions {
 
   ///@{
   /**
-   * <p>Allow Hov (High Occupancy vehicle) lanes while calculating an isoline.</p>
-   * <p>Default value: <code>false</code> </p>
+   * <p>When true, allows the use of HOV (high-occupancy vehicle) lanes, which may
+   * affect travel times and reachable areas.</p> <p>Default value:
+   * <code>false</code> </p>
    */
   inline bool GetHov() const { return m_hov; }
   inline bool HovHasBeenSet() const { return m_hovHasBeenSet; }

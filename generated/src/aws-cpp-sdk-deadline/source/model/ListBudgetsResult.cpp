@@ -22,16 +22,16 @@ ListBudgetsResult::ListBudgetsResult(const Aws::AmazonWebServiceResult<JsonValue
 ListBudgetsResult& ListBudgetsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("nextToken")) {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("budgets")) {
     Aws::Utils::Array<JsonView> budgetsJsonList = jsonValue.GetArray("budgets");
     for (unsigned budgetsIndex = 0; budgetsIndex < budgetsJsonList.GetLength(); ++budgetsIndex) {
       m_budgets.push_back(budgetsJsonList[budgetsIndex].AsObject());
     }
     m_budgetsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("nextToken")) {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

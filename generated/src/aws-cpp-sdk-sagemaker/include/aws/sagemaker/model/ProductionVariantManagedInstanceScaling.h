@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/ManagedInstanceScalingStatus.h>
+#include <aws/sagemaker/model/ProductionVariantManagedInstanceScalingScaleInPolicy.h>
 
 #include <utility>
 
@@ -82,15 +83,36 @@ class ProductionVariantManagedInstanceScaling {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configures the scale-in behavior for managed instance scaling.</p>
+   */
+  inline const ProductionVariantManagedInstanceScalingScaleInPolicy& GetScaleInPolicy() const { return m_scaleInPolicy; }
+  inline bool ScaleInPolicyHasBeenSet() const { return m_scaleInPolicyHasBeenSet; }
+  template <typename ScaleInPolicyT = ProductionVariantManagedInstanceScalingScaleInPolicy>
+  void SetScaleInPolicy(ScaleInPolicyT&& value) {
+    m_scaleInPolicyHasBeenSet = true;
+    m_scaleInPolicy = std::forward<ScaleInPolicyT>(value);
+  }
+  template <typename ScaleInPolicyT = ProductionVariantManagedInstanceScalingScaleInPolicy>
+  ProductionVariantManagedInstanceScaling& WithScaleInPolicy(ScaleInPolicyT&& value) {
+    SetScaleInPolicy(std::forward<ScaleInPolicyT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ManagedInstanceScalingStatus m_status{ManagedInstanceScalingStatus::NOT_SET};
 
   int m_minInstanceCount{0};
 
   int m_maxInstanceCount{0};
+
+  ProductionVariantManagedInstanceScalingScaleInPolicy m_scaleInPolicy;
   bool m_statusHasBeenSet = false;
   bool m_minInstanceCountHasBeenSet = false;
   bool m_maxInstanceCountHasBeenSet = false;
+  bool m_scaleInPolicyHasBeenSet = false;
 };
 
 }  // namespace Model

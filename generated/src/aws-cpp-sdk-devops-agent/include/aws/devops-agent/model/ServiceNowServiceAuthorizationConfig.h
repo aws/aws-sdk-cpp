@@ -1,0 +1,59 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/devops-agent/DevOpsAgent_EXPORTS.h>
+#include <aws/devops-agent/model/ServiceNowOAuthClientCredentialsConfig.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace DevOpsAgent {
+namespace Model {
+
+/**
+ * <p>Authorization configuration options for ServiceNow service.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ServiceNowServiceAuthorizationConfig">AWS
+ * API Reference</a></p>
+ */
+class ServiceNowServiceAuthorizationConfig {
+ public:
+  AWS_DEVOPSAGENT_API ServiceNowServiceAuthorizationConfig() = default;
+  AWS_DEVOPSAGENT_API ServiceNowServiceAuthorizationConfig(Aws::Utils::Json::JsonView jsonValue);
+  AWS_DEVOPSAGENT_API ServiceNowServiceAuthorizationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_DEVOPSAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>OAuth client credentials configuration.</p>
+   */
+  inline const ServiceNowOAuthClientCredentialsConfig& GetOAuthClientCredentials() const { return m_oAuthClientCredentials; }
+  inline bool OAuthClientCredentialsHasBeenSet() const { return m_oAuthClientCredentialsHasBeenSet; }
+  template <typename OAuthClientCredentialsT = ServiceNowOAuthClientCredentialsConfig>
+  void SetOAuthClientCredentials(OAuthClientCredentialsT&& value) {
+    m_oAuthClientCredentialsHasBeenSet = true;
+    m_oAuthClientCredentials = std::forward<OAuthClientCredentialsT>(value);
+  }
+  template <typename OAuthClientCredentialsT = ServiceNowOAuthClientCredentialsConfig>
+  ServiceNowServiceAuthorizationConfig& WithOAuthClientCredentials(OAuthClientCredentialsT&& value) {
+    SetOAuthClientCredentials(std::forward<OAuthClientCredentialsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  ServiceNowOAuthClientCredentialsConfig m_oAuthClientCredentials;
+  bool m_oAuthClientCredentialsHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace DevOpsAgent
+}  // namespace Aws

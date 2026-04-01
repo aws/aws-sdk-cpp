@@ -52,7 +52,10 @@ class MonetaryValue {
 
   ///@{
   /**
-   * <p>Specifies the payment currency.</p>
+   * <p>Specifies the payment currency. Accepted values are <code>USD</code> (US
+   * Dollars) and <code>EUR</code> (Euros). If the AWS Partition is
+   * <code>aws-eusc</code> (AWS European Sovereign Cloud), the currency code must be
+   * <code>EUR</code>.</p>
    */
   inline CurrencyCode GetCurrencyCode() const { return m_currencyCode; }
   inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }

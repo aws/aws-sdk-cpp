@@ -2248,6 +2248,33 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Retrieves the status and details of a specified automation job, including its
+   * status and outputs.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAutomationJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeAutomationJobOutcome DescribeAutomationJob(const Model::DescribeAutomationJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeAutomationJob that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeAutomationJobRequestT = Model::DescribeAutomationJobRequest>
+  Model::DescribeAutomationJobOutcomeCallable DescribeAutomationJobCallable(const DescribeAutomationJobRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::DescribeAutomationJob, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeAutomationJob that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeAutomationJobRequestT = Model::DescribeAutomationJobRequest>
+  void DescribeAutomationJobAsync(const DescribeAutomationJobRequestT& request, const DescribeAutomationJobResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::DescribeAutomationJob, request, handler, context);
+  }
+
+  /**
    * <p>Describes a brand.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeBrand">AWS
    * API Reference</a></p>
@@ -5310,6 +5337,33 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
                                       const StartAssetBundleImportJobResponseReceivedHandler& handler,
                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&QuickSightClient::StartAssetBundleImportJob, request, handler, context);
+  }
+
+  /**
+   * <p>Starts a new job for a specified automation. The job runs the automation with
+   * the provided input payload.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartAutomationJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartAutomationJobOutcome StartAutomationJob(const Model::StartAutomationJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartAutomationJob that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartAutomationJobRequestT = Model::StartAutomationJobRequest>
+  Model::StartAutomationJobOutcomeCallable StartAutomationJobCallable(const StartAutomationJobRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::StartAutomationJob, request);
+  }
+
+  /**
+   * An Async wrapper for StartAutomationJob that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename StartAutomationJobRequestT = Model::StartAutomationJobRequest>
+  void StartAutomationJobAsync(const StartAutomationJobRequestT& request, const StartAutomationJobResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::StartAutomationJob, request, handler, context);
   }
 
   /**

@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/mailmanager/model/Analysis.h>
+#include <aws/mailmanager/model/RuleClientCertificateAttribute.h>
 #include <aws/mailmanager/model/RuleStringEmailAttribute.h>
 
 #include <utility>
@@ -87,15 +88,35 @@ class RuleStringToEvaluate {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The client certificate attribute to evaluate in a string condition
+   * expression.</p>
+   */
+  inline RuleClientCertificateAttribute GetClientCertificateAttribute() const { return m_clientCertificateAttribute; }
+  inline bool ClientCertificateAttributeHasBeenSet() const { return m_clientCertificateAttributeHasBeenSet; }
+  inline void SetClientCertificateAttribute(RuleClientCertificateAttribute value) {
+    m_clientCertificateAttributeHasBeenSet = true;
+    m_clientCertificateAttribute = value;
+  }
+  inline RuleStringToEvaluate& WithClientCertificateAttribute(RuleClientCertificateAttribute value) {
+    SetClientCertificateAttribute(value);
+    return *this;
+  }
+  ///@}
  private:
   RuleStringEmailAttribute m_attribute{RuleStringEmailAttribute::NOT_SET};
 
   Aws::String m_mimeHeaderAttribute;
 
   Analysis m_analysis;
+
+  RuleClientCertificateAttribute m_clientCertificateAttribute{RuleClientCertificateAttribute::NOT_SET};
   bool m_attributeHasBeenSet = false;
   bool m_mimeHeaderAttributeHasBeenSet = false;
   bool m_analysisHasBeenSet = false;
+  bool m_clientCertificateAttributeHasBeenSet = false;
 };
 
 }  // namespace Model

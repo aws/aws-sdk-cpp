@@ -109,6 +109,25 @@ class VerifiedDestinationNumberInformation {
 
   ///@{
   /**
+   * <p>The unique identifier of the RCS agent associated with the verified
+   * destination number.</p>
+   */
+  inline const Aws::String& GetRcsAgentId() const { return m_rcsAgentId; }
+  inline bool RcsAgentIdHasBeenSet() const { return m_rcsAgentIdHasBeenSet; }
+  template <typename RcsAgentIdT = Aws::String>
+  void SetRcsAgentId(RcsAgentIdT&& value) {
+    m_rcsAgentIdHasBeenSet = true;
+    m_rcsAgentId = std::forward<RcsAgentIdT>(value);
+  }
+  template <typename RcsAgentIdT = Aws::String>
+  VerifiedDestinationNumberInformation& WithRcsAgentId(RcsAgentIdT&& value) {
+    SetRcsAgentId(std::forward<RcsAgentIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The time when the destination phone number was created, in <a
    * href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
    */
@@ -134,11 +153,14 @@ class VerifiedDestinationNumberInformation {
 
   VerificationStatus m_status{VerificationStatus::NOT_SET};
 
+  Aws::String m_rcsAgentId;
+
   Aws::Utils::DateTime m_createdTimestamp{};
   bool m_verifiedDestinationNumberArnHasBeenSet = false;
   bool m_verifiedDestinationNumberIdHasBeenSet = false;
   bool m_destinationPhoneNumberHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_rcsAgentIdHasBeenSet = false;
   bool m_createdTimestampHasBeenSet = false;
 };
 

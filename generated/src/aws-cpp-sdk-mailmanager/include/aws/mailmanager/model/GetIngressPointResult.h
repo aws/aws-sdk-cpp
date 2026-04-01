@@ -12,6 +12,7 @@
 #include <aws/mailmanager/model/IngressPointStatus.h>
 #include <aws/mailmanager/model/IngressPointType.h>
 #include <aws/mailmanager/model/NetworkConfiguration.h>
+#include <aws/mailmanager/model/TlsPolicy.h>
 
 #include <utility>
 
@@ -203,6 +204,21 @@ class GetIngressPointResult {
 
   ///@{
   /**
+   * <p>The selected Transport Layer Security (TLS) policy of the ingress point.</p>
+   */
+  inline TlsPolicy GetTlsPolicy() const { return m_tlsPolicy; }
+  inline void SetTlsPolicy(TlsPolicy value) {
+    m_tlsPolicyHasBeenSet = true;
+    m_tlsPolicy = value;
+  }
+  inline GetIngressPointResult& WithTlsPolicy(TlsPolicy value) {
+    SetTlsPolicy(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The timestamp of when the ingress endpoint was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedTimestamp() const { return m_createdTimestamp; }
@@ -272,6 +288,8 @@ class GetIngressPointResult {
 
   NetworkConfiguration m_networkConfiguration;
 
+  TlsPolicy m_tlsPolicy{TlsPolicy::NOT_SET};
+
   Aws::Utils::DateTime m_createdTimestamp{};
 
   Aws::Utils::DateTime m_lastUpdatedTimestamp{};
@@ -288,6 +306,7 @@ class GetIngressPointResult {
   bool m_trafficPolicyIdHasBeenSet = false;
   bool m_ingressPointAuthConfigurationHasBeenSet = false;
   bool m_networkConfigurationHasBeenSet = false;
+  bool m_tlsPolicyHasBeenSet = false;
   bool m_createdTimestampHasBeenSet = false;
   bool m_lastUpdatedTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

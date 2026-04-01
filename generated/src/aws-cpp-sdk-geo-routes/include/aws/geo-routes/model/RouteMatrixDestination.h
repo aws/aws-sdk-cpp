@@ -34,7 +34,10 @@ class RouteMatrixDestination {
 
   ///@{
   /**
-   * <p>Destination related options.</p>
+   * <p> Destination related options. Not supported in <code>ap-southeast-1</code>
+   * and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const RouteMatrixDestinationOptions& GetOptions() const { return m_options; }
   inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
@@ -52,7 +55,7 @@ class RouteMatrixDestination {
 
   ///@{
   /**
-   * <p>Position defined as <code>[longitude, latitude]</code>.</p>
+   * <p>Position in World Geodetic System (WGS 84) format: [longitude, latitude].</p>
    */
   inline const Aws::Vector<double>& GetPosition() const { return m_position; }
   inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }

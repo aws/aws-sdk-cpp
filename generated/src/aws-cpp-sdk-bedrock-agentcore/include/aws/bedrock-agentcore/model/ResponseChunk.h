@@ -22,8 +22,9 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Response chunk containing exactly one of: contentStart, contentDelta, or
- * contentStop</p><p><h3>See Also:</h3>   <a
+ * <p>A structure representing a response chunk that contains exactly one of the
+ * possible event types: <code>contentStart</code>, <code>contentDelta</code>, or
+ * <code>contentStop</code>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ResponseChunk">AWS
  * API Reference</a></p>
  */
@@ -36,7 +37,8 @@ class ResponseChunk {
 
   ///@{
   /**
-   * <p>First chunk - indicates command execution has started</p>
+   * <p>An event indicating the start of content streaming from the command
+   * execution. This is the first chunk received.</p>
    */
   inline const ContentStartEvent& GetContentStart() const { return m_contentStart; }
   inline bool ContentStartHasBeenSet() const { return m_contentStartHasBeenSet; }
@@ -54,7 +56,8 @@ class ResponseChunk {
 
   ///@{
   /**
-   * <p>Middle chunks - stdout/stderr output</p>
+   * <p>An event containing incremental output (stdout or stderr) from the command
+   * execution. These are the middle chunks.</p>
    */
   inline const ContentDeltaEvent& GetContentDelta() const { return m_contentDelta; }
   inline bool ContentDeltaHasBeenSet() const { return m_contentDeltaHasBeenSet; }
@@ -72,7 +75,8 @@ class ResponseChunk {
 
   ///@{
   /**
-   * <p>Last chunk - indicates command execution has completed</p>
+   * <p>An event indicating the completion of the command execution, including the
+   * exit code and final status. This is the last chunk received.</p>
    */
   inline const ContentStopEvent& GetContentStop() const { return m_contentStop; }
   inline bool ContentStopHasBeenSet() const { return m_contentStopHasBeenSet; }

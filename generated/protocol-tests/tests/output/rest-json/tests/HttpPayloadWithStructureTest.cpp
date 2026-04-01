@@ -34,3 +34,21 @@ AWS_PROTOCOL_TEST(HttpPayloadWithStructure, RestJsonHttpPayloadWithStructure) {
     }
   });
 }
+
+AWS_PROTOCOL_TEST(HttpPayloadWithStructure, RestJsonHttpPayloadWithStructureAndEmptyResponseBody) {
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  SetMockResponse(mockRs);
+
+  HttpPayloadWithStructureRequest request;
+
+  auto outcome = client.HttpPayloadWithStructure(request);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const HttpPayloadWithStructureResult& result = outcome.GetResult();
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"nested":null} )" */
+    { (void)result.GetNested(); }
+  });
+}

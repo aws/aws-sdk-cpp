@@ -20,7 +20,10 @@ namespace GeoRoutes {
 namespace Model {
 
 /**
- * <p>Options related to traffic.</p><p><h3>See Also:</h3>   <a
+ * <p>Controls how real-time and historical traffic data is used when calculating
+ * reachable areas. This affects both the size and shape of isolines by accounting
+ * for expected travel speeds based on congestion patterns.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/IsolineTrafficOptions">AWS
  * API Reference</a></p>
  */
@@ -33,12 +36,10 @@ class IsolineTrafficOptions {
 
   ///@{
   /**
-   * <p>Duration for which flow traffic is considered valid. For this period, the
-   * flow traffic is used over historical traffic data. Flow traffic refers to
-   * congestion, which changes very quickly. Duration in seconds for which flow
-   * traffic event would be considered valid. While flow traffic event is valid it
-   * will be used over the historical traffic data. </p> <p> <b>Unit</b>:
-   * <code>seconds</code> </p>
+   * <p>The duration in seconds that real-time congestion data is considered valid
+   * before reverting to historical traffic patterns. This helps balance between
+   * using current conditions and more predictable historical data when calculating
+   * travel times.</p> <p> <b>Unit</b>: <code>seconds</code> </p>
    */
   inline long long GetFlowEventThresholdOverride() const { return m_flowEventThresholdOverride; }
   inline bool FlowEventThresholdOverrideHasBeenSet() const { return m_flowEventThresholdOverrideHasBeenSet; }
@@ -54,8 +55,12 @@ class IsolineTrafficOptions {
 
   ///@{
   /**
-   * <p>Determines if traffic should be used or ignored while calculating the
-   * route.</p> <p>Default Value: <code>UseTrafficData</code> </p>
+   * <p>Controls whether traffic data is used in calculations.
+   * <code>UseTrafficData</code> considers both real-time congestion and historical
+   * patterns, while <code>IgnoreTrafficData</code> calculates routes based solely on
+   * road types and speed limits. Using traffic data provides more accurate
+   * real-world estimates but may produce different results at different times of
+   * day.</p> <p>Default value: <code>UseTrafficData</code> </p>
    */
   inline TrafficUsage GetUsage() const { return m_usage; }
   inline bool UsageHasBeenSet() const { return m_usageHasBeenSet; }

@@ -74,9 +74,9 @@ class QueryParamsAsStringListMapRequest : public RestJsonProtocolRequest {
   ///@}
  private:
   Aws::String m_qux;
-  bool m_quxHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_foo;
+  bool m_quxHasBeenSet = false;
   bool m_fooHasBeenSet = false;
 };
 

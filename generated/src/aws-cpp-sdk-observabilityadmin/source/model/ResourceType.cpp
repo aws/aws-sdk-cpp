@@ -26,6 +26,10 @@ static const int AWS_Route53Resolver_ResolverEndpoint_HASH = HashingUtils::HashS
 static const int AWS_BedrockAgentCore_Runtime_HASH = HashingUtils::HashString("AWS::BedrockAgentCore::Runtime");
 static const int AWS_BedrockAgentCore_Browser_HASH = HashingUtils::HashString("AWS::BedrockAgentCore::Browser");
 static const int AWS_BedrockAgentCore_CodeInterpreter_HASH = HashingUtils::HashString("AWS::BedrockAgentCore::CodeInterpreter");
+static const int AWS_BedrockAgentCore_Gateway_HASH = HashingUtils::HashString("AWS::BedrockAgentCore::Gateway");
+static const int AWS_BedrockAgentCore_Memory_HASH = HashingUtils::HashString("AWS::BedrockAgentCore::Memory");
+static const int AWS_SecurityHub_Hub_HASH = HashingUtils::HashString("AWS::SecurityHub::Hub");
+static const int AWS_CloudFront_Distribution_HASH = HashingUtils::HashString("AWS::CloudFront::Distribution");
 
 ResourceType GetResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -51,6 +55,14 @@ ResourceType GetResourceTypeForName(const Aws::String& name) {
     return ResourceType::AWS_BedrockAgentCore_Browser;
   } else if (hashCode == AWS_BedrockAgentCore_CodeInterpreter_HASH) {
     return ResourceType::AWS_BedrockAgentCore_CodeInterpreter;
+  } else if (hashCode == AWS_BedrockAgentCore_Gateway_HASH) {
+    return ResourceType::AWS_BedrockAgentCore_Gateway;
+  } else if (hashCode == AWS_BedrockAgentCore_Memory_HASH) {
+    return ResourceType::AWS_BedrockAgentCore_Memory;
+  } else if (hashCode == AWS_SecurityHub_Hub_HASH) {
+    return ResourceType::AWS_SecurityHub_Hub;
+  } else if (hashCode == AWS_CloudFront_Distribution_HASH) {
+    return ResourceType::AWS_CloudFront_Distribution;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -87,6 +99,14 @@ Aws::String GetNameForResourceType(ResourceType enumValue) {
       return "AWS::BedrockAgentCore::Browser";
     case ResourceType::AWS_BedrockAgentCore_CodeInterpreter:
       return "AWS::BedrockAgentCore::CodeInterpreter";
+    case ResourceType::AWS_BedrockAgentCore_Gateway:
+      return "AWS::BedrockAgentCore::Gateway";
+    case ResourceType::AWS_BedrockAgentCore_Memory:
+      return "AWS::BedrockAgentCore::Memory";
+    case ResourceType::AWS_SecurityHub_Hub:
+      return "AWS::SecurityHub::Hub";
+    case ResourceType::AWS_CloudFront_Distribution:
+      return "AWS::CloudFront::Distribution";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

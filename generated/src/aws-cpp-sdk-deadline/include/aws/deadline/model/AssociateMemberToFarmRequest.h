@@ -17,6 +17,11 @@ namespace deadline {
 namespace Model {
 
 /**
+ * <p>Shared member fields for Associate inputs and {Resource}Member response
+ * structures. principalId is excluded because it has @httpLabel on inputs but not
+ * on responses.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AssociateMemberToFarmRequest">AWS
+ * API Reference</a></p>
  */
 class AssociateMemberToFarmRequest : public DeadlineRequest {
  public:
@@ -44,24 +49,6 @@ class AssociateMemberToFarmRequest : public DeadlineRequest {
   template <typename FarmIdT = Aws::String>
   AssociateMemberToFarmRequest& WithFarmId(FarmIdT&& value) {
     SetFarmId(std::forward<FarmIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The member's principal ID to associate with the farm.</p>
-   */
-  inline const Aws::String& GetPrincipalId() const { return m_principalId; }
-  inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
-  template <typename PrincipalIdT = Aws::String>
-  void SetPrincipalId(PrincipalIdT&& value) {
-    m_principalIdHasBeenSet = true;
-    m_principalId = std::forward<PrincipalIdT>(value);
-  }
-  template <typename PrincipalIdT = Aws::String>
-  AssociateMemberToFarmRequest& WithPrincipalId(PrincipalIdT&& value) {
-    SetPrincipalId(std::forward<PrincipalIdT>(value));
     return *this;
   }
   ///@}
@@ -115,21 +102,39 @@ class AssociateMemberToFarmRequest : public DeadlineRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The member's principal ID to associate with the farm.</p>
+   */
+  inline const Aws::String& GetPrincipalId() const { return m_principalId; }
+  inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
+  template <typename PrincipalIdT = Aws::String>
+  void SetPrincipalId(PrincipalIdT&& value) {
+    m_principalIdHasBeenSet = true;
+    m_principalId = std::forward<PrincipalIdT>(value);
+  }
+  template <typename PrincipalIdT = Aws::String>
+  AssociateMemberToFarmRequest& WithPrincipalId(PrincipalIdT&& value) {
+    SetPrincipalId(std::forward<PrincipalIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_farmId;
-
-  Aws::String m_principalId;
 
   PrincipalType m_principalType{PrincipalType::NOT_SET};
 
   Aws::String m_identityStoreId;
 
   MembershipLevel m_membershipLevel{MembershipLevel::NOT_SET};
+
+  Aws::String m_principalId;
   bool m_farmIdHasBeenSet = false;
-  bool m_principalIdHasBeenSet = false;
   bool m_principalTypeHasBeenSet = false;
   bool m_identityStoreIdHasBeenSet = false;
   bool m_membershipLevelHasBeenSet = false;
+  bool m_principalIdHasBeenSet = false;
 };
 
 }  // namespace Model

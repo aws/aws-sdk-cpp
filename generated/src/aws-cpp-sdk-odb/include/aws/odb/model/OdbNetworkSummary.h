@@ -427,6 +427,30 @@ class OdbNetworkSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The list of EC2 Placement Group IDs associated with your ODB network.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetEc2PlacementGroupIds() const { return m_ec2PlacementGroupIds; }
+  inline bool Ec2PlacementGroupIdsHasBeenSet() const { return m_ec2PlacementGroupIdsHasBeenSet; }
+  template <typename Ec2PlacementGroupIdsT = Aws::Vector<Aws::String>>
+  void SetEc2PlacementGroupIds(Ec2PlacementGroupIdsT&& value) {
+    m_ec2PlacementGroupIdsHasBeenSet = true;
+    m_ec2PlacementGroupIds = std::forward<Ec2PlacementGroupIdsT>(value);
+  }
+  template <typename Ec2PlacementGroupIdsT = Aws::Vector<Aws::String>>
+  OdbNetworkSummary& WithEc2PlacementGroupIds(Ec2PlacementGroupIdsT&& value) {
+    SetEc2PlacementGroupIds(std::forward<Ec2PlacementGroupIdsT>(value));
+    return *this;
+  }
+  template <typename Ec2PlacementGroupIdsT = Aws::String>
+  OdbNetworkSummary& AddEc2PlacementGroupIds(Ec2PlacementGroupIdsT&& value) {
+    m_ec2PlacementGroupIdsHasBeenSet = true;
+    m_ec2PlacementGroupIds.emplace_back(std::forward<Ec2PlacementGroupIdsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_odbNetworkId;
 
@@ -469,6 +493,8 @@ class OdbNetworkSummary {
   double m_percentProgress{0.0};
 
   ManagedServices m_managedServices;
+
+  Aws::Vector<Aws::String> m_ec2PlacementGroupIds;
   bool m_odbNetworkIdHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
@@ -490,6 +516,7 @@ class OdbNetworkSummary {
   bool m_createdAtHasBeenSet = false;
   bool m_percentProgressHasBeenSet = false;
   bool m_managedServicesHasBeenSet = false;
+  bool m_ec2PlacementGroupIdsHasBeenSet = false;
 };
 
 }  // namespace Model

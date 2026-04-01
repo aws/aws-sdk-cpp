@@ -10,7 +10,7 @@
 namespace Aws {
 namespace QuickSight {
 namespace Model {
-enum class SelectedTooltipType { NOT_SET, BASIC, DETAILED };
+enum class SelectedTooltipType { NOT_SET, BASIC, DETAILED, SHEET };
 
 namespace SelectedTooltipTypeMapper {
 AWS_QUICKSIGHT_API SelectedTooltipType GetSelectedTooltipTypeForName(const Aws::String& name);

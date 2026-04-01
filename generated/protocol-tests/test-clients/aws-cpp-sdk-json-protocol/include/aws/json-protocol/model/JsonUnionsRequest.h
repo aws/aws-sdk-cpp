@@ -68,9 +68,9 @@ class JsonUnionsRequest : public JsonProtocolRequest {
   ///@}
  private:
   MyUnion m_contents;
-  bool m_contentsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contentsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

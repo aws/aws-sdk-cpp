@@ -42,16 +42,16 @@ SessionActionSummary& SessionActionSummary::operator=(JsonView jsonValue) {
     m_progressPercent = jsonValue.GetDouble("progressPercent");
     m_progressPercentHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("definition")) {
-    m_definition = jsonValue.GetObject("definition");
-    m_definitionHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("manifests")) {
     Aws::Utils::Array<JsonView> manifestsJsonList = jsonValue.GetArray("manifests");
     for (unsigned manifestsIndex = 0; manifestsIndex < manifestsJsonList.GetLength(); ++manifestsIndex) {
       m_manifests.push_back(manifestsJsonList[manifestsIndex].AsObject());
     }
     m_manifestsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("definition")) {
+    m_definition = jsonValue.GetObject("definition");
+    m_definitionHasBeenSet = true;
   }
   return *this;
 }
@@ -83,16 +83,16 @@ JsonValue SessionActionSummary::Jsonize() const {
     payload.WithDouble("progressPercent", m_progressPercent);
   }
 
-  if (m_definitionHasBeenSet) {
-    payload.WithObject("definition", m_definition.Jsonize());
-  }
-
   if (m_manifestsHasBeenSet) {
     Aws::Utils::Array<JsonValue> manifestsJsonList(m_manifests.size());
     for (unsigned manifestsIndex = 0; manifestsIndex < manifestsJsonList.GetLength(); ++manifestsIndex) {
       manifestsJsonList[manifestsIndex].AsObject(m_manifests[manifestsIndex].Jsonize());
     }
     payload.WithArray("manifests", std::move(manifestsJsonList));
+  }
+
+  if (m_definitionHasBeenSet) {
+    payload.WithObject("definition", m_definition.Jsonize());
   }
 
   return payload;

@@ -22,16 +22,16 @@ ListMonitorsResult::ListMonitorsResult(const Aws::AmazonWebServiceResult<JsonVal
 ListMonitorsResult& ListMonitorsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("nextToken")) {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("monitors")) {
     Aws::Utils::Array<JsonView> monitorsJsonList = jsonValue.GetArray("monitors");
     for (unsigned monitorsIndex = 0; monitorsIndex < monitorsJsonList.GetLength(); ++monitorsIndex) {
       m_monitors.push_back(monitorsJsonList[monitorsIndex].AsObject());
     }
     m_monitorsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("nextToken")) {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

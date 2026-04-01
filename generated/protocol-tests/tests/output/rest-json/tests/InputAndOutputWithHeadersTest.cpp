@@ -16,7 +16,7 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestJsonInputAndOutputWithStringHea
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"X-String", R"(Hello)"}, {"X-StringList", R"(a, b, c)"}, {"X-StringSet", R"(a, b, c)"}};
+  mockRs.headers = {{"X-StringList", R"(a, b, c)"}, {"X-String", R"(Hello)"}, {"X-StringSet", R"(a, b, c)"}};
   SetMockResponse(mockRs);
 
   InputAndOutputWithHeadersRequest request;
@@ -68,9 +68,9 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestJsonInputAndOutputWithNumericHe
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"X-Byte", R"(1)"},      {"X-Double", R"(1.1)"},          {"X-Float", R"(1.1)"},
-                    {"X-Integer", R"(123)"}, {"X-IntegerList", R"(1, 2, 3)"}, {"X-Long", R"(123)"},
-                    {"X-Short", R"(123)"}};
+  mockRs.headers = {{"X-Integer", R"(123)"},        {"X-Short", R"(123)"},  {"X-Byte", R"(1)"},
+                    {"X-Long", R"(123)"},           {"X-Double", R"(1.1)"}, {"X-Float", R"(1.1)"},
+                    {"X-IntegerList", R"(1, 2, 3)"}};
   SetMockResponse(mockRs);
 
   InputAndOutputWithHeadersRequest request;
@@ -101,7 +101,7 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestJsonInputAndOutputWithBooleanHe
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"X-Boolean1", R"(true)"}, {"X-Boolean2", R"(false)"}, {"X-BooleanList", R"(true, false, true)"}};
+  mockRs.headers = {{"X-BooleanList", R"(true, false, true)"}, {"X-Boolean1", R"(true)"}, {"X-Boolean2", R"(false)"}};
   SetMockResponse(mockRs);
 
   InputAndOutputWithHeadersRequest request;
@@ -148,7 +148,7 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestJsonInputAndOutputWithEnumHeade
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"X-Enum", R"(Foo)"}, {"X-EnumList", R"(Foo, Bar, Baz)"}};
+  mockRs.headers = {{"X-EnumList", R"(Foo, Bar, Baz)"}, {"X-Enum", R"(Foo)"}};
   SetMockResponse(mockRs);
 
   InputAndOutputWithHeadersRequest request;
@@ -172,7 +172,7 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestJsonInputAndOutputWithIntEnumHe
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"X-IntegerEnum", R"(1)"}, {"X-IntegerEnumList", R"(1, 2, 3)"}};
+  mockRs.headers = {{"X-IntegerEnumList", R"(1, 2, 3)"}, {"X-IntegerEnum", R"(1)"}};
   SetMockResponse(mockRs);
 
   InputAndOutputWithHeadersRequest request;
@@ -196,7 +196,7 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestJsonSupportsNaNFloatHeaderOutpu
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"X-Double", R"(NaN)"}, {"X-Float", R"(NaN)"}};
+  mockRs.headers = {{"X-Float", R"(NaN)"}, {"X-Double", R"(NaN)"}};
   SetMockResponse(mockRs);
 
   InputAndOutputWithHeadersRequest request;
@@ -216,7 +216,7 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestJsonSupportsInfinityFloatHeader
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"X-Double", R"(Infinity)"}, {"X-Float", R"(Infinity)"}};
+  mockRs.headers = {{"X-Float", R"(Infinity)"}, {"X-Double", R"(Infinity)"}};
   SetMockResponse(mockRs);
 
   InputAndOutputWithHeadersRequest request;
@@ -236,7 +236,7 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestJsonSupportsNegativeInfinityFlo
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"X-Double", R"(-Infinity)"}, {"X-Float", R"(-Infinity)"}};
+  mockRs.headers = {{"X-Float", R"(-Infinity)"}, {"X-Double", R"(-Infinity)"}};
   SetMockResponse(mockRs);
 
   InputAndOutputWithHeadersRequest request;

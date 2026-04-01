@@ -43,8 +43,11 @@ class RouteLeg {
 
   ///@{
   /**
-   * <p>FerryLegDetails is populated when the Leg type is Ferry, and provides
-   * additional information that is specific</p>
+   * <p> FerryLegDetails is populated when the Leg type is Ferry, and provides
+   * additional information that is specific to ferry travel. Not supported in
+   * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const RouteFerryLegDetails& GetFerryLegDetails() const { return m_ferryLegDetails; }
   inline bool FerryLegDetailsHasBeenSet() const { return m_ferryLegDetailsHasBeenSet; }
@@ -80,7 +83,11 @@ class RouteLeg {
 
   ///@{
   /**
-   * <p>List of languages for instructions within steps in the response.</p>
+   * <p> List of languages for instructions within steps in the response. Not
+   * supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const Aws::String& GetLanguage() const { return m_language; }
   inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
@@ -117,7 +124,7 @@ class RouteLeg {
   ///@{
   /**
    * <p>Specifies the mode of transport when calculating a route. Used in estimating
-   * the speed of travel and road compatibility.</p> <p>Default Value:
+   * the speed of travel and road compatibility.</p> <p>Default value:
    * <code>Car</code> </p>
    */
   inline RouteLegTravelMode GetTravelMode() const { return m_travelMode; }

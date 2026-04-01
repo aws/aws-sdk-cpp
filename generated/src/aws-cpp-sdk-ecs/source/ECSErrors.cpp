@@ -33,11 +33,13 @@ static const int CLUSTER_NOT_FOUND_HASH = HashingUtils::HashString("ClusterNotFo
 static const int CLUSTER_CONTAINS_SERVICES_HASH = HashingUtils::HashString("ClusterContainsServicesException");
 static const int TARGET_NOT_CONNECTED_HASH = HashingUtils::HashString("TargetNotConnectedException");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
+static const int DAEMON_NOT_ACTIVE_HASH = HashingUtils::HashString("DaemonNotActiveException");
 static const int SERVICE_NOT_ACTIVE_HASH = HashingUtils::HashString("ServiceNotActiveException");
 static const int ATTRIBUTE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AttributeLimitExceededException");
 static const int UNSUPPORTED_FEATURE_HASH = HashingUtils::HashString("UnsupportedFeatureException");
 static const int TARGET_NOT_FOUND_HASH = HashingUtils::HashString("TargetNotFoundException");
 static const int CLUSTER_CONTAINS_CONTAINER_INSTANCES_HASH = HashingUtils::HashString("ClusterContainsContainerInstancesException");
+static const int DAEMON_NOT_FOUND_HASH = HashingUtils::HashString("DaemonNotFoundException");
 static const int PLATFORM_TASK_DEFINITION_INCOMPATIBILITY_HASH = HashingUtils::HashString("PlatformTaskDefinitionIncompatibilityException");
 static const int MISSING_VERSION_HASH = HashingUtils::HashString("MissingVersionException");
 static const int SERVER_HASH = HashingUtils::HashString("ServerException");
@@ -73,6 +75,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::TARGET_NOT_CONNECTED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == RESOURCE_IN_USE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::RESOURCE_IN_USE), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == DAEMON_NOT_ACTIVE_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::DAEMON_NOT_ACTIVE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == SERVICE_NOT_ACTIVE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::SERVICE_NOT_ACTIVE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == ATTRIBUTE_LIMIT_EXCEEDED_HASH) {
@@ -83,6 +87,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::TARGET_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == CLUSTER_CONTAINS_CONTAINER_INSTANCES_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::CLUSTER_CONTAINS_CONTAINER_INSTANCES), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == DAEMON_NOT_FOUND_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::DAEMON_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == PLATFORM_TASK_DEFINITION_INCOMPATIBILITY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::PLATFORM_TASK_DEFINITION_INCOMPATIBILITY), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == MISSING_VERSION_HASH) {

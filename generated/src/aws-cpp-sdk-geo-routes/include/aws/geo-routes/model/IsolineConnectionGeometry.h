@@ -21,8 +21,10 @@ namespace GeoRoutes {
 namespace Model {
 
 /**
- * <p>Geometry of the connection between different isoline
- * components.</p><p><h3>See Also:</h3>   <a
+ * <p>Represents the geometry of connections between non-contiguous parts of an
+ * isoline. These connections can be provided in either coordinate pairs
+ * (LineString) or encoded (Polyline) format, matching the format specified in the
+ * request.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/IsolineConnectionGeometry">AWS
  * API Reference</a></p>
  */
@@ -35,8 +37,11 @@ class IsolineConnectionGeometry {
 
   ///@{
   /**
-   * <p>An ordered list of positions used to plot a route on a map.</p>
-   * <p>LineString and Polyline are mutually exclusive properties.</p>
+   * <p>A series of <code>[longitude, latitude]</code> coordinate pairs defining the
+   * connection path when <code>Simple</code> geometry format is requested. These
+   * coordinates can be directly used as the coordinates array in a GeoJSON
+   * LineString without transformation.</p>  <p>LineString and Polyline are
+   * mutually exclusive properties.</p>
    */
   inline const Aws::Vector<Aws::Vector<double>>& GetLineString() const { return m_lineString; }
   inline bool LineStringHasBeenSet() const { return m_lineStringHasBeenSet; }
@@ -60,9 +65,12 @@ class IsolineConnectionGeometry {
 
   ///@{
   /**
-   * <p>An ordered list of positions used to plot a route on a map in a lossy
-   * compression format.</p>  <p>LineString and Polyline are mutually exclusive
-   * properties.</p>
+   * <p>An encoded representation of the connection path when
+   * <code>FlexiblePolyline</code> geometry format is requested. This provides a more
+   * compact representation suitable for transmission and storage. To convert to
+   * GeoJSON, first decode to obtain coordinate pairs, then use those coordinates as
+   * the coordinates array in a GeoJSON LineString.</p>  <p>LineString and
+   * Polyline are mutually exclusive properties.</p>
    */
   inline const Aws::String& GetPolyline() const { return m_polyline; }
   inline bool PolylineHasBeenSet() const { return m_polylineHasBeenSet; }

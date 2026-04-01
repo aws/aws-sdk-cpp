@@ -18,6 +18,7 @@ namespace NumberCapabilityMapper {
 static const int SMS_HASH = HashingUtils::HashString("SMS");
 static const int VOICE_HASH = HashingUtils::HashString("VOICE");
 static const int MMS_HASH = HashingUtils::HashString("MMS");
+static const int RCS_HASH = HashingUtils::HashString("RCS");
 
 NumberCapability GetNumberCapabilityForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ NumberCapability GetNumberCapabilityForName(const Aws::String& name) {
     return NumberCapability::VOICE;
   } else if (hashCode == MMS_HASH) {
     return NumberCapability::MMS;
+  } else if (hashCode == RCS_HASH) {
+    return NumberCapability::RCS;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForNumberCapability(NumberCapability enumValue) {
       return "VOICE";
     case NumberCapability::MMS:
       return "MMS";
+    case NumberCapability::RCS:
+      return "RCS";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

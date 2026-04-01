@@ -12,6 +12,7 @@
 #include <aws/quicksight/model/PivotTablePaginatedReportOptions.h>
 #include <aws/quicksight/model/PivotTableSortConfiguration.h>
 #include <aws/quicksight/model/PivotTableTotalOptions.h>
+#include <aws/quicksight/model/TooltipOptions.h>
 #include <aws/quicksight/model/VisualInteractionOptions.h>
 
 #include <utility>
@@ -148,6 +149,22 @@ class PivotTableConfiguration {
   ///@}
 
   ///@{
+
+  inline const TooltipOptions& GetTooltip() const { return m_tooltip; }
+  inline bool TooltipHasBeenSet() const { return m_tooltipHasBeenSet; }
+  template <typename TooltipT = TooltipOptions>
+  void SetTooltip(TooltipT&& value) {
+    m_tooltipHasBeenSet = true;
+    m_tooltip = std::forward<TooltipT>(value);
+  }
+  template <typename TooltipT = TooltipOptions>
+  PivotTableConfiguration& WithTooltip(TooltipT&& value) {
+    SetTooltip(std::forward<TooltipT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
    * <p>The options that define customizations available to dashboard readers for a
    * specific visual</p>
@@ -198,6 +215,8 @@ class PivotTableConfiguration {
 
   PivotTablePaginatedReportOptions m_paginatedReportOptions;
 
+  TooltipOptions m_tooltip;
+
   DashboardCustomizationVisualOptions m_dashboardCustomizationVisualOptions;
 
   VisualInteractionOptions m_interactions;
@@ -207,6 +226,7 @@ class PivotTableConfiguration {
   bool m_totalOptionsHasBeenSet = false;
   bool m_fieldOptionsHasBeenSet = false;
   bool m_paginatedReportOptionsHasBeenSet = false;
+  bool m_tooltipHasBeenSet = false;
   bool m_dashboardCustomizationVisualOptionsHasBeenSet = false;
   bool m_interactionsHasBeenSet = false;
 };

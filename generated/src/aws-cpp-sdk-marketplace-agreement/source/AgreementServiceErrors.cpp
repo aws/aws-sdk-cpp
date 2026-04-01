@@ -33,15 +33,15 @@ AWS_AGREEMENTSERVICE_API ThrottlingException AgreementServiceError::GetModeledEr
 }
 
 template <>
-AWS_AGREEMENTSERVICE_API ResourceNotFoundException AgreementServiceError::GetModeledError() {
-  assert(this->GetErrorType() == AgreementServiceErrors::RESOURCE_NOT_FOUND);
-  return ResourceNotFoundException(this->GetJsonPayload().View());
-}
-
-template <>
 AWS_AGREEMENTSERVICE_API InternalServerException AgreementServiceError::GetModeledError() {
   assert(this->GetErrorType() == AgreementServiceErrors::INTERNAL_SERVER);
   return InternalServerException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_AGREEMENTSERVICE_API ResourceNotFoundException AgreementServiceError::GetModeledError() {
+  assert(this->GetErrorType() == AgreementServiceErrors::RESOURCE_NOT_FOUND);
+  return ResourceNotFoundException(this->GetJsonPayload().View());
 }
 
 template <>

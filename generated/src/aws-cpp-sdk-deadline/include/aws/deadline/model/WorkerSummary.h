@@ -37,24 +37,6 @@ class WorkerSummary {
 
   ///@{
   /**
-   * <p>The worker ID.</p>
-   */
-  inline const Aws::String& GetWorkerId() const { return m_workerId; }
-  inline bool WorkerIdHasBeenSet() const { return m_workerIdHasBeenSet; }
-  template <typename WorkerIdT = Aws::String>
-  void SetWorkerId(WorkerIdT&& value) {
-    m_workerIdHasBeenSet = true;
-    m_workerId = std::forward<WorkerIdT>(value);
-  }
-  template <typename WorkerIdT = Aws::String>
-  WorkerSummary& WithWorkerId(WorkerIdT&& value) {
-    SetWorkerId(std::forward<WorkerIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The farm ID.</p>
    */
   inline const Aws::String& GetFarmId() const { return m_farmId; }
@@ -91,16 +73,18 @@ class WorkerSummary {
 
   ///@{
   /**
-   * <p>The status of the worker.</p>
+   * <p>The worker ID.</p>
    */
-  inline WorkerStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(WorkerStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
+  inline const Aws::String& GetWorkerId() const { return m_workerId; }
+  inline bool WorkerIdHasBeenSet() const { return m_workerIdHasBeenSet; }
+  template <typename WorkerIdT = Aws::String>
+  void SetWorkerId(WorkerIdT&& value) {
+    m_workerIdHasBeenSet = true;
+    m_workerId = std::forward<WorkerIdT>(value);
   }
-  inline WorkerSummary& WithStatus(WorkerStatus value) {
-    SetStatus(value);
+  template <typename WorkerIdT = Aws::String>
+  WorkerSummary& WithWorkerId(WorkerIdT&& value) {
+    SetWorkerId(std::forward<WorkerIdT>(value));
     return *this;
   }
   ///@}
@@ -119,6 +103,22 @@ class WorkerSummary {
   template <typename HostPropertiesT = HostPropertiesResponse>
   WorkerSummary& WithHostProperties(HostPropertiesT&& value) {
     SetHostProperties(std::forward<HostPropertiesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status of the worker.</p>
+   */
+  inline WorkerStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(WorkerStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline WorkerSummary& WithStatus(WorkerStatus value) {
+    SetStatus(value);
     return *this;
   }
   ///@}
@@ -213,15 +213,15 @@ class WorkerSummary {
   }
   ///@}
  private:
-  Aws::String m_workerId;
-
   Aws::String m_farmId;
 
   Aws::String m_fleetId;
 
-  WorkerStatus m_status{WorkerStatus::NOT_SET};
+  Aws::String m_workerId;
 
   HostPropertiesResponse m_hostProperties;
+
+  WorkerStatus m_status{WorkerStatus::NOT_SET};
 
   LogConfiguration m_log;
 
@@ -232,11 +232,11 @@ class WorkerSummary {
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::String m_updatedBy;
-  bool m_workerIdHasBeenSet = false;
   bool m_farmIdHasBeenSet = false;
   bool m_fleetIdHasBeenSet = false;
-  bool m_statusHasBeenSet = false;
+  bool m_workerIdHasBeenSet = false;
   bool m_hostPropertiesHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_logHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_createdByHasBeenSet = false;

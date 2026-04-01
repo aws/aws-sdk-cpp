@@ -10,7 +10,7 @@
 namespace Aws {
 namespace GeoMaps {
 namespace Model {
-enum class ContourDensity { NOT_SET, Medium };
+enum class ContourDensity { NOT_SET, Low, Medium, High };
 
 namespace ContourDensityMapper {
 AWS_GEOMAPS_API ContourDensity GetContourDensityForName(const Aws::String& name);

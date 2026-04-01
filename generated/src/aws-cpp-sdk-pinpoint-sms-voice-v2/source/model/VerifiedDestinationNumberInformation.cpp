@@ -34,6 +34,10 @@ VerifiedDestinationNumberInformation& VerifiedDestinationNumberInformation::oper
     m_status = VerificationStatusMapper::GetVerificationStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RcsAgentId")) {
+    m_rcsAgentId = jsonValue.GetString("RcsAgentId");
+    m_rcsAgentIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("CreatedTimestamp")) {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
     m_createdTimestampHasBeenSet = true;
@@ -58,6 +62,10 @@ JsonValue VerifiedDestinationNumberInformation::Jsonize() const {
 
   if (m_statusHasBeenSet) {
     payload.WithString("Status", VerificationStatusMapper::GetNameForVerificationStatus(m_status));
+  }
+
+  if (m_rcsAgentIdHasBeenSet) {
+    payload.WithString("RcsAgentId", m_rcsAgentId);
   }
 
   if (m_createdTimestampHasBeenSet) {

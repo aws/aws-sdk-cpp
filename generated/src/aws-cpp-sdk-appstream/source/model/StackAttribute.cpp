@@ -27,6 +27,7 @@ static const int EMBED_HOST_DOMAINS_HASH = HashingUtils::HashString("EMBED_HOST_
 static const int IAM_ROLE_ARN_HASH = HashingUtils::HashString("IAM_ROLE_ARN");
 static const int ACCESS_ENDPOINTS_HASH = HashingUtils::HashString("ACCESS_ENDPOINTS");
 static const int STREAMING_EXPERIENCE_SETTINGS_HASH = HashingUtils::HashString("STREAMING_EXPERIENCE_SETTINGS");
+static const int CONTENT_REDIRECTION_HASH = HashingUtils::HashString("CONTENT_REDIRECTION");
 
 StackAttribute GetStackAttributeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -54,6 +55,8 @@ StackAttribute GetStackAttributeForName(const Aws::String& name) {
     return StackAttribute::ACCESS_ENDPOINTS;
   } else if (hashCode == STREAMING_EXPERIENCE_SETTINGS_HASH) {
     return StackAttribute::STREAMING_EXPERIENCE_SETTINGS;
+  } else if (hashCode == CONTENT_REDIRECTION_HASH) {
+    return StackAttribute::CONTENT_REDIRECTION;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -92,6 +95,8 @@ Aws::String GetNameForStackAttribute(StackAttribute enumValue) {
       return "ACCESS_ENDPOINTS";
     case StackAttribute::STREAMING_EXPERIENCE_SETTINGS:
       return "STREAMING_EXPERIENCE_SETTINGS";
+    case StackAttribute::CONTENT_REDIRECTION:
+      return "CONTENT_REDIRECTION";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -4,6 +4,8 @@
  */
 
 #pragma once
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/partnercentral-account/PartnerCentralAccount_EXPORTS.h>
 #include <aws/partnercentral-account/model/BusinessVerificationDetails.h>
 
@@ -52,9 +54,54 @@ class BusinessVerificationResponse {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A secure URL where the registrant can complete additional verification steps,
+   * such as document upload or identity confirmation through a third-party
+   * verification service.</p>
+   */
+  inline const Aws::String& GetCompletionUrl() const { return m_completionUrl; }
+  inline bool CompletionUrlHasBeenSet() const { return m_completionUrlHasBeenSet; }
+  template <typename CompletionUrlT = Aws::String>
+  void SetCompletionUrl(CompletionUrlT&& value) {
+    m_completionUrlHasBeenSet = true;
+    m_completionUrl = std::forward<CompletionUrlT>(value);
+  }
+  template <typename CompletionUrlT = Aws::String>
+  BusinessVerificationResponse& WithCompletionUrl(CompletionUrlT&& value) {
+    SetCompletionUrl(std::forward<CompletionUrlT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp when the completion URL expires and is no longer valid for
+   * accessing the verification workflow.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCompletionUrlExpiresAt() const { return m_completionUrlExpiresAt; }
+  inline bool CompletionUrlExpiresAtHasBeenSet() const { return m_completionUrlExpiresAtHasBeenSet; }
+  template <typename CompletionUrlExpiresAtT = Aws::Utils::DateTime>
+  void SetCompletionUrlExpiresAt(CompletionUrlExpiresAtT&& value) {
+    m_completionUrlExpiresAtHasBeenSet = true;
+    m_completionUrlExpiresAt = std::forward<CompletionUrlExpiresAtT>(value);
+  }
+  template <typename CompletionUrlExpiresAtT = Aws::Utils::DateTime>
+  BusinessVerificationResponse& WithCompletionUrlExpiresAt(CompletionUrlExpiresAtT&& value) {
+    SetCompletionUrlExpiresAt(std::forward<CompletionUrlExpiresAtT>(value));
+    return *this;
+  }
+  ///@}
  private:
   BusinessVerificationDetails m_businessVerificationDetails;
+
+  Aws::String m_completionUrl;
+
+  Aws::Utils::DateTime m_completionUrlExpiresAt{};
   bool m_businessVerificationDetailsHasBeenSet = false;
+  bool m_completionUrlHasBeenSet = false;
+  bool m_completionUrlExpiresAtHasBeenSet = false;
 };
 
 }  // namespace Model

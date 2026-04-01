@@ -34,9 +34,10 @@ class RouteDestinationOptions {
 
   ///@{
   /**
-   * <p>Avoids actions for the provided distance. This is typically to consider for
-   * users in moving vehicles who may not have sufficient time to make an action at
-   * an origin or a destination.</p>
+   * <p>The distance in meters from the destination point within which certain
+   * routing actions (such as U-turns or left turns across traffic) are restricted.
+   * This helps generate more practical routes by avoiding potentially dangerous
+   * maneuvers near the endpoint.</p>
    */
   inline long long GetAvoidActionsForDistance() const { return m_avoidActionsForDistance; }
   inline bool AvoidActionsForDistanceHasBeenSet() const { return m_avoidActionsForDistanceHasBeenSet; }

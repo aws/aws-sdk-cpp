@@ -26,6 +26,10 @@ GetJobResult& GetJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValu
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AssetConfiguration")) {
+    m_assetConfiguration = jsonValue.GetObject("AssetConfiguration");
+    m_assetConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("CreatedAt")) {
     m_createdAt = jsonValue.GetString("CreatedAt");
     m_createdAtHasBeenSet = true;

@@ -17,7 +17,8 @@ namespace GeoRoutes {
 namespace Model {
 
 /**
- * <p>Trailer options corresponding to the vehicle.</p><p><h3>See Also:</h3>   <a
+ * <p>Additional specifications when the vehicle includes one or more
+ * trailers.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/IsolineTrailerOptions">AWS
  * API Reference</a></p>
  */
@@ -30,7 +31,8 @@ class IsolineTrailerOptions {
 
   ///@{
   /**
-   * <p>Total number of axles of the vehicle.</p>
+   * <p>The total number of axles across all trailers. Used for weight distribution
+   * calculations and road restrictions.</p>
    */
   inline int GetAxleCount() const { return m_axleCount; }
   inline bool AxleCountHasBeenSet() const { return m_axleCountHasBeenSet; }
@@ -46,8 +48,8 @@ class IsolineTrailerOptions {
 
   ///@{
   /**
-   * <p>Number of trailers attached to the vehicle.</p> <p>Default Value:
-   * <code>0</code> </p>
+   * <p>The number of trailers being pulled. Affects which roads can be used based on
+   * local regulations.</p> <p>Default value: <code>0</code> </p>
    */
   inline int GetTrailerCount() const { return m_trailerCount; }
   inline bool TrailerCountHasBeenSet() const { return m_trailerCountHasBeenSet; }

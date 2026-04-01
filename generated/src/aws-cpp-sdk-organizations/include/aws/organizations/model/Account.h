@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/organizations/model/AccountJoinedMethod.h>
 #include <aws/organizations/model/AccountState.h>
@@ -166,6 +167,30 @@ class Account {
 
   ///@{
   /**
+   * <p>The paths in the organization where the account exists.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetPaths() const { return m_paths; }
+  inline bool PathsHasBeenSet() const { return m_pathsHasBeenSet; }
+  template <typename PathsT = Aws::Vector<Aws::String>>
+  void SetPaths(PathsT&& value) {
+    m_pathsHasBeenSet = true;
+    m_paths = std::forward<PathsT>(value);
+  }
+  template <typename PathsT = Aws::Vector<Aws::String>>
+  Account& WithPaths(PathsT&& value) {
+    SetPaths(std::forward<PathsT>(value));
+    return *this;
+  }
+  template <typename PathsT = Aws::String>
+  Account& AddPaths(PathsT&& value) {
+    m_pathsHasBeenSet = true;
+    m_paths.emplace_back(std::forward<PathsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The method by which the account joined the organization.</p>
    */
   inline AccountJoinedMethod GetJoinedMethod() const { return m_joinedMethod; }
@@ -210,6 +235,8 @@ class Account {
 
   AccountState m_state{AccountState::NOT_SET};
 
+  Aws::Vector<Aws::String> m_paths;
+
   AccountJoinedMethod m_joinedMethod{AccountJoinedMethod::NOT_SET};
 
   Aws::Utils::DateTime m_joinedTimestamp{};
@@ -219,6 +246,7 @@ class Account {
   bool m_nameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_stateHasBeenSet = false;
+  bool m_pathsHasBeenSet = false;
   bool m_joinedMethodHasBeenSet = false;
   bool m_joinedTimestampHasBeenSet = false;
 };

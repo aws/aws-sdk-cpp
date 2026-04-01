@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rest-json-protocol/RestJsonProtocol_EXPORTS.h>
 #include <aws/rest-json-protocol/model/UnionPayload.h>
@@ -56,11 +57,14 @@ class HttpPayloadWithUnionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   UnionPayload m_nested;
-  bool m_nestedHasBeenSet = false;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_nestedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

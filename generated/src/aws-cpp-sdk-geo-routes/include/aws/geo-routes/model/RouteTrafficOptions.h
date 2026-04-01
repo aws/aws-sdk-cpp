@@ -53,8 +53,18 @@ class RouteTrafficOptions {
 
   ///@{
   /**
-   * <p>Determines if traffic should be used or ignored while calculating the
-   * route.</p> <p>Default Value: <code>UseTrafficData</code> </p>
+   * <p>Specifies how traffic data should be used when calculating routes.</p>
+   * <p>Default Value: <code>UseTrafficData</code> </p>  <p>Traffic data usage
+   * depends on the time parameters in your route request:</p> <ul> <li> <p>When
+   * <code>Usage</code> is set to <code>UseTrafficData</code>:</p> <ul> <li> <p>If
+   * <code>DepartNow</code> is set to <code>true</code>, or if you specify
+   * <code>DepartureTime</code> or <code>ArrivalTime</code>, then all traffic data is
+   * considered (including live traffic and closures).</p> </li> <li> <p>If
+   * <code>DepartNow</code>, <code>DepartureTime</code>, and <code>ArrivalTime</code>
+   * are all unspecified, then only long-term closures are considered, regardless of
+   * this setting.</p> </li> </ul> </li> <li> <p>When <code>Usage</code> is set to
+   * <code>IgnoreTrafficData</code>, then all traffic data is ignored regardless of
+   * the time parameters in your route request.</p> </li> </ul>
    */
   inline TrafficUsage GetUsage() const { return m_usage; }
   inline bool UsageHasBeenSet() const { return m_usageHasBeenSet; }

@@ -48,7 +48,9 @@ class CalculateIsolinesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Features that are allowed while calculating an isoline.</p>
+   * <p>Enables special road types or features that should be considered for routing
+   * even if they might be restricted by default for the selected travel mode. These
+   * include high-occupancy vehicle and toll lanes.</p>
    */
   inline const IsolineAllowOptions& GetAllow() const { return m_allow; }
   inline bool AllowHasBeenSet() const { return m_allowHasBeenSet; }
@@ -66,7 +68,11 @@ class CalculateIsolinesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Time of arrival at the destination.</p> <p>Time format:
+   * <p>Determine areas from which <code>Destination</code> can be reached by this
+   * time, taking into account predicted traffic conditions and working backward to
+   * account for congestion patterns. This attribute cannot be used together with
+   * <code>DepartureTime</code> or <code>DepartNow</code>. Specified as an ISO-8601
+   * timestamp with timezone offset.</p> <p>Time format:
    * <code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code> </p>
    * <p>Examples:</p> <p> <code>2020-04-22T17:57:24Z</code> </p> <p>
    * <code>2020-04-22T17:57:24+02:00</code> </p>
@@ -87,10 +93,10 @@ class CalculateIsolinesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Features that are avoided while calculating a route. Avoidance is on a
-   * best-case basis. If an avoidance can't be satisfied for a particular case, it
-   * violates the avoidance and the returned response produces a notice for the
-   * violation.</p>
+   * <p>Specifies road types, features, or areas to avoid (if possible) when
+   * calculating reachable areas. These are treated as preferences rather than strict
+   * constraints—if a route cannot be calculated without using an avoided feature,
+   * that avoidance preference may be ignored.</p>
    */
   inline const IsolineAvoidanceOptions& GetAvoid() const { return m_avoid; }
   inline bool AvoidHasBeenSet() const { return m_avoidHasBeenSet; }
@@ -108,7 +114,9 @@ class CalculateIsolinesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Uses the current time as the time of departure.</p>
+   * <p>When true, uses the current time as the departure time and takes current
+   * traffic conditions into account. This attribute cannot be used together with
+   * <code>DepartureTime</code> or <code>ArrivalTime</code>.</p>
    */
   inline bool GetDepartNow() const { return m_departNow; }
   inline bool DepartNowHasBeenSet() const { return m_departNowHasBeenSet; }
@@ -124,7 +132,10 @@ class CalculateIsolinesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Time of departure from thr origin.</p> <p>Time
+   * <p>Determine areas that can be reached when departing at this time, taking into
+   * account predicted traffic conditions. This attribute cannot be used together
+   * with <code>ArrivalTime</code> or <code>DepartNow</code>. Specified as an
+   * ISO-8601 timestamp with timezone offset.</p> <p>Time
    * format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code>
    * </p> <p>Examples:</p> <p> <code>2020-04-22T17:57:24Z</code> </p> <p>
    * <code>2020-04-22T17:57:24+02:00</code> </p>
@@ -145,8 +156,12 @@ class CalculateIsolinesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>The final position for the route. In the World Geodetic System (WGS 84)
-   * format: <code>[longitude, latitude]</code>.</p>
+   * <p>An optional destination point, specified as <code>[longitude,
+   * latitude]</code> coordinates. When provided, the service calculates areas from
+   * which this destination can be reached within the specified thresholds. This
+   * reverses the usual isoline calculation to show areas that could reach your
+   * location, rather than areas you could reach from your location. Either
+   * <code>Origin</code> or <code>Destination</code> must be provided.</p>
    */
   inline const Aws::Vector<double>& GetDestination() const { return m_destination; }
   inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
@@ -169,7 +184,9 @@ class CalculateIsolinesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Destination related options.</p>
+   * <p>Options that control how the destination point is matched to the road network
+   * and how routes can approach it. These options help improve travel time accuracy
+   * by accounting for real-world access to the destination.</p>
    */
   inline const IsolineDestinationOptions& GetDestinationOptions() const { return m_destinationOptions; }
   inline bool DestinationOptionsHasBeenSet() const { return m_destinationOptionsHasBeenSet; }
@@ -188,7 +205,7 @@ class CalculateIsolinesRequest : public GeoRoutesRequest {
   ///@{
   /**
    * <p>The format of the returned IsolineGeometry. </p> <p>Default
-   * Value:<code>FlexiblePolyline</code> </p>
+   * value:<code>FlexiblePolyline</code> </p>
    */
   inline GeometryFormat GetIsolineGeometryFormat() const { return m_isolineGeometryFormat; }
   inline bool IsolineGeometryFormatHasBeenSet() const { return m_isolineGeometryFormatHasBeenSet; }
@@ -204,7 +221,9 @@ class CalculateIsolinesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Defines the granularity of the returned Isoline.</p>
+   * <p>Controls the detail level of the generated isolines. Higher granularity
+   * produces smoother shapes but requires more processing time and results in larger
+   * responses.</p>
    */
   inline const IsolineGranularityOptions& GetIsolineGranularity() const { return m_isolineGranularity; }
   inline bool IsolineGranularityHasBeenSet() const { return m_isolineGranularityHasBeenSet; }
@@ -222,8 +241,8 @@ class CalculateIsolinesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Optional: The API key to be used for authorization. Either an API key or
-   * valid SigV4 signature must be provided when making a request. </p>
+   * <p>An Amazon Location Service API Key with access to this action. If omitted,
+   * the request must be signed using Signature Version 4.</p>
    */
   inline const Aws::String& GetKey() const { return m_key; }
   inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
@@ -241,12 +260,11 @@ class CalculateIsolinesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Specifies the optimization criteria for when calculating an isoline.
-   * AccurateCalculation generates an isoline of higher granularity that is more
-   * precise. FastCalculation generates an isoline faster by reducing the
-   * granularity, and in turn the quality of the isoline. BalancedCalculation
-   * generates an isoline by balancing between quality and performance. </p>
-   * <p>Default Value: <code>BalancedCalculation</code> </p>
+   * <p>Controls the trade-off between calculation speed and isoline precision.
+   * Choose <code> FastCalculation</code> for quicker results with less detail,
+   * <code>AccurateCalculation</code> for more precise results, or
+   * <code>BalancedCalculation</code> for a middle ground.</p> <p>Default value:
+   * <code>BalancedCalculation</code> </p>
    */
   inline IsolineOptimizationObjective GetOptimizeIsolineFor() const { return m_optimizeIsolineFor; }
   inline bool OptimizeIsolineForHasBeenSet() const { return m_optimizeIsolineForHasBeenSet; }
@@ -262,8 +280,10 @@ class CalculateIsolinesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Specifies the optimization criteria for calculating a route.</p> <p>Default
-   * Value: <code>FastestRoute</code> </p>
+   * <p>Determines whether routes prioritize shortest travel time
+   * (<code>FastestRoute</code>) or shortest physical distance
+   * (<code>ShortestRoute</code>) when calculating reachable areas.</p> <p>Default
+   * value: <code>FastestRoute</code> </p>
    */
   inline RoutingObjective GetOptimizeRoutingFor() const { return m_optimizeRoutingFor; }
   inline bool OptimizeRoutingForHasBeenSet() const { return m_optimizeRoutingForHasBeenSet; }
@@ -279,7 +299,10 @@ class CalculateIsolinesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>The start position for the route.</p>
+   * <p>The starting point for isoline calculations, specified as <code>[longitude,
+   * latitude]</code> coordinates. For example, this could be a store location,
+   * service center, or any point from which you want to calculate reachable areas.
+   * Either <code>Origin</code> or <code>Destination</code> must be provided.</p>
    */
   inline const Aws::Vector<double>& GetOrigin() const { return m_origin; }
   inline bool OriginHasBeenSet() const { return m_originHasBeenSet; }
@@ -302,7 +325,9 @@ class CalculateIsolinesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Origin related options.</p>
+   * <p>Options that control how the origin point is matched to the road network and
+   * how routes can depart from it. These options help improve travel time accuracy
+   * by accounting for real-world access from the origin.</p>
    */
   inline const IsolineOriginOptions& GetOriginOptions() const { return m_originOptions; }
   inline bool OriginOptionsHasBeenSet() const { return m_originOptionsHasBeenSet; }
@@ -320,12 +345,15 @@ class CalculateIsolinesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Threshold to be used for the isoline calculation. Up to 3 thresholds per
-   * provided type can be requested.</p> <p> You incur a calculation charge for each
-   * threshold. Using a large amount of thresholds in a request can lead you to incur
-   * unexpected charges. See <a
-   * href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`">
-   * Amazon Location's pricing page</a> for more information.</p>
+   * <p>The distance or time thresholds used to determine reachable areas. You can
+   * specify up to five thresholds (which all must be the same type) to calculate
+   * multiple isolines in a single request. For example, to determine the areas that
+   * are reachable within 10 and 20 minutes of the origin, specify time thresholds of
+   * 600 and 1200 seconds.</p> <p>You incur a calculation charge for each threshold.
+   * Using a large number of thresholds in a request can lead to unexpected charges.
+   * For more information, see <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html">Routes
+   * pricing</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
    */
   inline const IsolineThresholds& GetThresholds() const { return m_thresholds; }
   inline bool ThresholdsHasBeenSet() const { return m_thresholdsHasBeenSet; }
@@ -343,7 +371,9 @@ class CalculateIsolinesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Traffic related options.</p>
+   * <p>Configures how real-time and historical traffic data affects isoline
+   * calculations. Traffic patterns can significantly impact reachable areas,
+   * especially during peak hours.</p>
    */
   inline const IsolineTrafficOptions& GetTraffic() const { return m_traffic; }
   inline bool TrafficHasBeenSet() const { return m_trafficHasBeenSet; }
@@ -361,11 +391,18 @@ class CalculateIsolinesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Specifies the mode of transport when calculating a route. Used in estimating
-   * the speed of travel and road compatibility.</p>  <p> The mode
-   * <code>Scooter</code> also applies to motorcycles, set to <code>Scooter</code>
-   * when wanted to calculate options for motorcycles.</p>  <p>Default Value:
-   * <code>Car</code> </p>
+   * <p>The mode of transportation to use for calculations. This affects which road
+   * types or features can be used, estimated speed, and the traffic levels that are
+   * applied.</p> <ul> <li> <p> <code>Car</code>—Standard passenger vehicle routing
+   * using roads accessible to cars</p> </li> <li> <p>
+   * <code>Pedestrian</code>—Walking routes using pedestrian paths, sidewalks, and
+   * crossings</p> </li> <li> <p> <code>Scooter</code>—Light two-wheeled vehicle
+   * routing using roads and paths accessible to scooters</p> </li> <li> <p>
+   * <code>Truck</code>—Commercial truck routing considering vehicle dimensions,
+   * weight restrictions, and hazardous material regulations</p> </li> </ul>
+   * <p>The mode <code>Scooter</code> also applies to motorcycles; set this to
+   * <code>Scooter</code> when calculating isolines for motorcycles.</p>
+   * <p>Default value: <code>Car</code> </p>
    */
   inline IsolineTravelMode GetTravelMode() const { return m_travelMode; }
   inline bool TravelModeHasBeenSet() const { return m_travelModeHasBeenSet; }
@@ -381,7 +418,18 @@ class CalculateIsolinesRequest : public GeoRoutesRequest {
 
   ///@{
   /**
-   * <p>Travel mode related options for the provided travel mode.</p>
+   * <p>Additional attributes that refine how reachable areas are calculated based on
+   * specific vehicle characteristics. These options help produce more accurate
+   * results by accounting for real-world constraints and capabilities.</p> <p>For
+   * example:</p> <ul> <li> <p>For trucks (<code>Truck</code>), specify dimensions,
+   * weight limits, and hazardous cargo restrictions to ensure isolines only include
+   * roads that can physically and legally accommodate the vehicle</p> </li> <li>
+   * <p>For cars (<code>Car</code>), set maximum speed capabilities or indicate
+   * high-occupancy vehicle eligibility to better estimate reachable areas</p> </li>
+   * <li> <p>For scooters (<code>Scooter</code>), specify engine type and speed
+   * limitations to more accurately model their travel capabilities</p> </li> </ul>
+   * <p>Without these options, calculations use default assumptions that may not
+   * match your specific use case.</p>
    */
   inline const IsolineTravelModeOptions& GetTravelModeOptions() const { return m_travelModeOptions; }
   inline bool TravelModeOptionsHasBeenSet() const { return m_travelModeOptionsHasBeenSet; }

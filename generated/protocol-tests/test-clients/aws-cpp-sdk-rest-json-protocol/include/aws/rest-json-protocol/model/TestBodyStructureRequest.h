@@ -80,12 +80,12 @@ class TestBodyStructureRequest : public RestJsonProtocolRequest {
   ///@}
  private:
   Aws::String m_testId;
-  bool m_testIdHasBeenSet = false;
 
   TestConfig m_testConfig;
-  bool m_testConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_testIdHasBeenSet = false;
+  bool m_testConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

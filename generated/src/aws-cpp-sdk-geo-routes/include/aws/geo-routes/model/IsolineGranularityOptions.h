@@ -17,7 +17,10 @@ namespace GeoRoutes {
 namespace Model {
 
 /**
- * <p>Isoline granularity related options.</p><p><h3>See Also:</h3>   <a
+ * <p>Controls the detail level and smoothness of generated isolines. More detailed
+ * isolines provide better visual representation of reachable areas but require
+ * more processing time and result in larger responses.</p><p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/IsolineGranularityOptions">AWS
  * API Reference</a></p>
  */
@@ -30,7 +33,8 @@ class IsolineGranularityOptions {
 
   ///@{
   /**
-   * <p>Maximum number of points of returned Isoline.</p>
+   * <p>The maximum number of points used to define each isoline. Higher values
+   * create smoother, more detailed shapes.</p>
    */
   inline int GetMaxPoints() const { return m_maxPoints; }
   inline bool MaxPointsHasBeenSet() const { return m_maxPointsHasBeenSet; }
@@ -46,8 +50,9 @@ class IsolineGranularityOptions {
 
   ///@{
   /**
-   * <p>Maximum resolution of the returned isoline.</p> <p> <b>Unit</b>:
-   * <code>meters</code> </p>
+   * <p>The maximum distance in meters between points along the isoline. Smaller
+   * values create more detailed shapes.</p> <p> <b>Unit</b>: <code>meters</code>
+   * </p>
    */
   inline long long GetMaxResolution() const { return m_maxResolution; }
   inline bool MaxResolutionHasBeenSet() const { return m_maxResolutionHasBeenSet; }

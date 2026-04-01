@@ -23,11 +23,66 @@ class JsonValue;
 }  // namespace Utils
 namespace deadline {
 namespace Model {
+/**
+ * <p>Domain fields for QueueLimitAssociation summary/response shapes, ordered
+ * before timestamps.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetQueueLimitAssociationResponse">AWS
+ * API Reference</a></p>
+ */
 class GetQueueLimitAssociationResult {
  public:
   AWS_DEADLINE_API GetQueueLimitAssociationResult() = default;
   AWS_DEADLINE_API GetQueueLimitAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
   AWS_DEADLINE_API GetQueueLimitAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The unique identifier of the queue associated with the limit.</p>
+   */
+  inline const Aws::String& GetQueueId() const { return m_queueId; }
+  template <typename QueueIdT = Aws::String>
+  void SetQueueId(QueueIdT&& value) {
+    m_queueIdHasBeenSet = true;
+    m_queueId = std::forward<QueueIdT>(value);
+  }
+  template <typename QueueIdT = Aws::String>
+  GetQueueLimitAssociationResult& WithQueueId(QueueIdT&& value) {
+    SetQueueId(std::forward<QueueIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the limit associated with the queue.</p>
+   */
+  inline const Aws::String& GetLimitId() const { return m_limitId; }
+  template <typename LimitIdT = Aws::String>
+  void SetLimitId(LimitIdT&& value) {
+    m_limitIdHasBeenSet = true;
+    m_limitId = std::forward<LimitIdT>(value);
+  }
+  template <typename LimitIdT = Aws::String>
+  GetQueueLimitAssociationResult& WithLimitId(LimitIdT&& value) {
+    SetLimitId(std::forward<LimitIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The current status of the limit.</p>
+   */
+  inline QueueLimitAssociationStatus GetStatus() const { return m_status; }
+  inline void SetStatus(QueueLimitAssociationStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline GetQueueLimitAssociationResult& WithStatus(QueueLimitAssociationStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -99,55 +154,6 @@ class GetQueueLimitAssociationResult {
   ///@}
 
   ///@{
-  /**
-   * <p>The unique identifier of the queue associated with the limit.</p>
-   */
-  inline const Aws::String& GetQueueId() const { return m_queueId; }
-  template <typename QueueIdT = Aws::String>
-  void SetQueueId(QueueIdT&& value) {
-    m_queueIdHasBeenSet = true;
-    m_queueId = std::forward<QueueIdT>(value);
-  }
-  template <typename QueueIdT = Aws::String>
-  GetQueueLimitAssociationResult& WithQueueId(QueueIdT&& value) {
-    SetQueueId(std::forward<QueueIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The unique identifier of the limit associated with the queue.</p>
-   */
-  inline const Aws::String& GetLimitId() const { return m_limitId; }
-  template <typename LimitIdT = Aws::String>
-  void SetLimitId(LimitIdT&& value) {
-    m_limitIdHasBeenSet = true;
-    m_limitId = std::forward<LimitIdT>(value);
-  }
-  template <typename LimitIdT = Aws::String>
-  GetQueueLimitAssociationResult& WithLimitId(LimitIdT&& value) {
-    SetLimitId(std::forward<LimitIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The current status of the limit.</p>
-   */
-  inline QueueLimitAssociationStatus GetStatus() const { return m_status; }
-  inline void SetStatus(QueueLimitAssociationStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
-  }
-  inline GetQueueLimitAssociationResult& WithStatus(QueueLimitAssociationStatus value) {
-    SetStatus(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -164,6 +170,12 @@ class GetQueueLimitAssociationResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
+  Aws::String m_queueId;
+
+  Aws::String m_limitId;
+
+  QueueLimitAssociationStatus m_status{QueueLimitAssociationStatus::NOT_SET};
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::String m_createdBy;
@@ -172,21 +184,15 @@ class GetQueueLimitAssociationResult {
 
   Aws::String m_updatedBy;
 
-  Aws::String m_queueId;
-
-  Aws::String m_limitId;
-
-  QueueLimitAssociationStatus m_status{QueueLimitAssociationStatus::NOT_SET};
-
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_queueIdHasBeenSet = false;
+  bool m_limitIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_updatedByHasBeenSet = false;
-  bool m_queueIdHasBeenSet = false;
-  bool m_limitIdHasBeenSet = false;
-  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

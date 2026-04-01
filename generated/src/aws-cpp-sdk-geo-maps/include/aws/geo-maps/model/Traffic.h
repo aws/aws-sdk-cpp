@@ -10,7 +10,7 @@
 namespace Aws {
 namespace GeoMaps {
 namespace Model {
-enum class Traffic { NOT_SET, All };
+enum class Traffic { NOT_SET, All, Congestion };
 
 namespace TrafficMapper {
 AWS_GEOMAPS_API Traffic GetTrafficForName(const Aws::String& name);

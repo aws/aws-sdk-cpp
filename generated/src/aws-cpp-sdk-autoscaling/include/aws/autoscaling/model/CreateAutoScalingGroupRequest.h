@@ -530,7 +530,10 @@ class CreateAutoScalingGroupRequest : public AutoScalingRequest {
    * the specified protection level until the setting is changed back to a less
    * restrictive level. </p> <p> The valid values are <code>none</code>,
    * <code>prevent-force-deletion</code>, and <code>prevent-all-deletion</code>. </p>
-   * <p> Default: <code>none</code> </p>
+   * <p> Default: <code>none</code> </p> <p> For more information, see <a
+   * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/resource-deletion-protection.html">
+   * Configure deletion protection for your Amazon EC2 Auto Scaling resources</a> in
+   * the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
    */
   inline DeletionProtection GetDeletionProtection() const { return m_deletionProtection; }
   inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }

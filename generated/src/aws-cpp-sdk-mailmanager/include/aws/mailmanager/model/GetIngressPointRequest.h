@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mailmanager/MailManagerRequest.h>
 #include <aws/mailmanager/MailManager_EXPORTS.h>
+#include <aws/mailmanager/model/TrustStoreResponseOption.h>
 
 #include <utility>
 
@@ -47,9 +48,29 @@ class GetIngressPointRequest : public MailManagerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Whether to include the trust store contents in the response. Use INCLUDE to
+   * retrieve trust store certificate and CRL contents.</p>
+   */
+  inline TrustStoreResponseOption GetIncludeTrustStoreContents() const { return m_includeTrustStoreContents; }
+  inline bool IncludeTrustStoreContentsHasBeenSet() const { return m_includeTrustStoreContentsHasBeenSet; }
+  inline void SetIncludeTrustStoreContents(TrustStoreResponseOption value) {
+    m_includeTrustStoreContentsHasBeenSet = true;
+    m_includeTrustStoreContents = value;
+  }
+  inline GetIngressPointRequest& WithIncludeTrustStoreContents(TrustStoreResponseOption value) {
+    SetIncludeTrustStoreContents(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_ingressPointId;
+
+  TrustStoreResponseOption m_includeTrustStoreContents{TrustStoreResponseOption::NOT_SET};
   bool m_ingressPointIdHasBeenSet = false;
+  bool m_includeTrustStoreContentsHasBeenSet = false;
 };
 
 }  // namespace Model

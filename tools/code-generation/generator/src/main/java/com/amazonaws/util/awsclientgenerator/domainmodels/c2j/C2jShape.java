@@ -36,4 +36,5 @@ public class C2jShape {
     private boolean sensitive;
     private boolean document;
     private Map<String, Boolean> retryable;
+    private boolean sparse;
 }

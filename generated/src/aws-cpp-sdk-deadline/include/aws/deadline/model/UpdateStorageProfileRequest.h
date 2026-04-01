@@ -36,25 +36,6 @@ class UpdateStorageProfileRequest : public DeadlineRequest {
 
   ///@{
   /**
-   * <p>The unique token which the server uses to recognize retries of the same
-   * request.</p>
-   */
-  inline const Aws::String& GetClientToken() const { return m_clientToken; }
-  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-  template <typename ClientTokenT = Aws::String>
-  void SetClientToken(ClientTokenT&& value) {
-    m_clientTokenHasBeenSet = true;
-    m_clientToken = std::forward<ClientTokenT>(value);
-  }
-  template <typename ClientTokenT = Aws::String>
-  UpdateStorageProfileRequest& WithClientToken(ClientTokenT&& value) {
-    SetClientToken(std::forward<ClientTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The farm ID to update.</p>
    */
   inline const Aws::String& GetFarmId() const { return m_farmId; }
@@ -85,6 +66,25 @@ class UpdateStorageProfileRequest : public DeadlineRequest {
   template <typename StorageProfileIdT = Aws::String>
   UpdateStorageProfileRequest& WithStorageProfileId(StorageProfileIdT&& value) {
     SetStorageProfileId(std::forward<StorageProfileIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique token which the server uses to recognize retries of the same
+   * request.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  UpdateStorageProfileRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
     return *this;
   }
   ///@}
@@ -174,11 +174,11 @@ class UpdateStorageProfileRequest : public DeadlineRequest {
   }
   ///@}
  private:
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-
   Aws::String m_farmId;
 
   Aws::String m_storageProfileId;
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
   Aws::String m_displayName;
 
@@ -187,9 +187,9 @@ class UpdateStorageProfileRequest : public DeadlineRequest {
   Aws::Vector<FileSystemLocation> m_fileSystemLocationsToAdd;
 
   Aws::Vector<FileSystemLocation> m_fileSystemLocationsToRemove;
-  bool m_clientTokenHasBeenSet = true;
   bool m_farmIdHasBeenSet = false;
   bool m_storageProfileIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_displayNameHasBeenSet = false;
   bool m_osFamilyHasBeenSet = false;
   bool m_fileSystemLocationsToAddHasBeenSet = false;

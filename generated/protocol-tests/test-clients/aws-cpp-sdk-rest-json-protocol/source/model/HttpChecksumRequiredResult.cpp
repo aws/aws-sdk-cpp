@@ -20,6 +20,7 @@ using namespace Aws;
 HttpChecksumRequiredResult::HttpChecksumRequiredResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 HttpChecksumRequiredResult& HttpChecksumRequiredResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("foo")) {
     m_foo = jsonValue.GetString("foo");

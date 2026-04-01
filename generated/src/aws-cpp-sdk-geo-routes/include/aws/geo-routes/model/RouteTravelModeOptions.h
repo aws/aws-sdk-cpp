@@ -37,7 +37,7 @@ class RouteTravelModeOptions {
 
   ///@{
   /**
-   * <p>Travel mode options when the provided travel mode is "Car"</p>
+   * <p>Travel mode options when the provided travel mode is <code>Car</code>.</p>
    */
   inline const RouteCarOptions& GetCar() const { return m_car; }
   inline bool CarHasBeenSet() const { return m_carHasBeenSet; }
@@ -55,7 +55,8 @@ class RouteTravelModeOptions {
 
   ///@{
   /**
-   * <p>Travel mode options when the provided travel mode is "Pedestrian"</p>
+   * <p>Travel mode options when the provided travel mode is
+   * <code>Pedestrian</code>.</p>
    */
   inline const RoutePedestrianOptions& GetPedestrian() const { return m_pedestrian; }
   inline bool PedestrianHasBeenSet() const { return m_pedestrianHasBeenSet; }
@@ -73,7 +74,7 @@ class RouteTravelModeOptions {
 
   ///@{
   /**
-   * <p>Travel mode options when the provided travel mode is <code>Scooter</code>
+   * <p>Travel mode options when the provided travel mode is <code>Scooter</code>.
    * </p>  <p>When travel mode is set to <code>Scooter</code>, then the
    * avoidance option <code>ControlledAccessHighways</code> defaults to
    * <code>true</code>.</p>
@@ -94,7 +95,7 @@ class RouteTravelModeOptions {
 
   ///@{
   /**
-   * <p>Travel mode options when the provided travel mode is "Truck"</p>
+   * <p>Travel mode options when the provided travel mode is <code>Truck</code>.</p>
    */
   inline const RouteTruckOptions& GetTruck() const { return m_truck; }
   inline bool TruckHasBeenSet() const { return m_truckHasBeenSet; }

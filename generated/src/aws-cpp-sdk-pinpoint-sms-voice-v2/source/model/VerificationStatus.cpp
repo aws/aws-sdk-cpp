@@ -17,6 +17,7 @@ namespace VerificationStatusMapper {
 
 static const int PENDING_HASH = HashingUtils::HashString("PENDING");
 static const int VERIFIED_HASH = HashingUtils::HashString("VERIFIED");
+static const int UNSUPPORTED_HASH = HashingUtils::HashString("UNSUPPORTED");
 
 VerificationStatus GetVerificationStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ VerificationStatus GetVerificationStatusForName(const Aws::String& name) {
     return VerificationStatus::PENDING;
   } else if (hashCode == VERIFIED_HASH) {
     return VerificationStatus::VERIFIED;
+  } else if (hashCode == UNSUPPORTED_HASH) {
+    return VerificationStatus::UNSUPPORTED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForVerificationStatus(VerificationStatus enumValue) {
       return "PENDING";
     case VerificationStatus::VERIFIED:
       return "VERIFIED";
+    case VerificationStatus::UNSUPPORTED:
+      return "UNSUPPORTED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -27,7 +27,7 @@ AWS_PROTOCOL_TEST(EmptyInputOutput, empty_input) {
   expectedRq.method = "POST";
   expectedRq.body = "v/8=";
   expectedRq.uri = "/service/RpcV2Protocol/operation/EmptyInputOutput";
-  expectedRq.headers = {{"Accept", R"(application/cbor)"}, {"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  expectedRq.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Accept", R"(application/cbor)"}, {"Content-Type", R"(application/cbor)"}};
   expectedRq.forbidHeaders = {"X-Amz-Target"};
   expectedRq.requireHeaders = {"Content-Length"};
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();

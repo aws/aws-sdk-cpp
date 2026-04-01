@@ -26,6 +26,10 @@ CredentialProvider& CredentialProvider::operator=(JsonView jsonValue) {
     m_apiKeyCredentialProvider = jsonValue.GetObject("apiKeyCredentialProvider");
     m_apiKeyCredentialProviderHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("iamCredentialProvider")) {
+    m_iamCredentialProvider = jsonValue.GetObject("iamCredentialProvider");
+    m_iamCredentialProviderHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue CredentialProvider::Jsonize() const {
 
   if (m_apiKeyCredentialProviderHasBeenSet) {
     payload.WithObject("apiKeyCredentialProvider", m_apiKeyCredentialProvider.Jsonize());
+  }
+
+  if (m_iamCredentialProviderHasBeenSet) {
+    payload.WithObject("iamCredentialProvider", m_iamCredentialProvider.Jsonize());
   }
 
   return payload;

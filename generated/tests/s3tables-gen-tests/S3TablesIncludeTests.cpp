@@ -75,6 +75,7 @@
 #include <aws/s3tables/model/IcebergPartitionField.h>
 #include <aws/s3tables/model/IcebergPartitionSpec.h>
 #include <aws/s3tables/model/IcebergSchema.h>
+#include <aws/s3tables/model/IcebergSchemaV2.h>
 #include <aws/s3tables/model/IcebergSnapshotManagementSettings.h>
 #include <aws/s3tables/model/IcebergSortDirection.h>
 #include <aws/s3tables/model/IcebergSortField.h>
@@ -113,6 +114,8 @@
 #include <aws/s3tables/model/ReplicationStatus.h>
 #include <aws/s3tables/model/SSEAlgorithm.h>
 #include <aws/s3tables/model/SchemaField.h>
+#include <aws/s3tables/model/SchemaV2Field.h>
+#include <aws/s3tables/model/SchemaV2FieldType.h>
 #include <aws/s3tables/model/StorageClass.h>
 #include <aws/s3tables/model/StorageClassConfiguration.h>
 #include <aws/s3tables/model/TableBucketMaintenanceConfigurationValue.h>

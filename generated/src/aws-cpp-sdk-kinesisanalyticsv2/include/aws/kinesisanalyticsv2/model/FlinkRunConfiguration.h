@@ -36,9 +36,9 @@ class FlinkRunConfiguration {
    * program is updated between snapshots to remove stateful parameters, and state
    * data in the snapshot no longer corresponds to valid application data. For more
    * information, see <a
-   * href="https://nightlies.apache.org/flink/flink-docs-release-1.20/docs/ops/state/savepoints/#allowing-non-restored-state">
+   * href="https://nightlies.apache.org/flink/flink-docs-release-2.2/docs/ops/state/savepoints/#allowing-non-restored-state">
    * Allowing Non-Restored State</a> in the <a
-   * href="https://nightlies.apache.org/flink/flink-docs-release-1.20/">Apache Flink
+   * href="https://nightlies.apache.org/flink/flink-docs-release-2.2/">Apache Flink
    * documentation</a>.</p>  <p>This value defaults to <code>false</code>. If
    * you update your application without specifying this parameter,
    * <code>AllowNonRestoredState</code> will be set to <code>false</code>, even if it

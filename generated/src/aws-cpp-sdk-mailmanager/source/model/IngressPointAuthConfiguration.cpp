@@ -26,6 +26,10 @@ IngressPointAuthConfiguration& IngressPointAuthConfiguration::operator=(JsonView
     m_secretArn = jsonValue.GetString("SecretArn");
     m_secretArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TlsAuthConfiguration")) {
+    m_tlsAuthConfiguration = jsonValue.GetObject("TlsAuthConfiguration");
+    m_tlsAuthConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue IngressPointAuthConfiguration::Jsonize() const {
 
   if (m_secretArnHasBeenSet) {
     payload.WithString("SecretArn", m_secretArn);
+  }
+
+  if (m_tlsAuthConfigurationHasBeenSet) {
+    payload.WithObject("TlsAuthConfiguration", m_tlsAuthConfiguration.Jsonize());
   }
 
   return payload;

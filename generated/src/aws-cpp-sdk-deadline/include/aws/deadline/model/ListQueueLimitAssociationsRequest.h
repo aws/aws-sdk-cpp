@@ -18,6 +18,10 @@ namespace deadline {
 namespace Model {
 
 /**
+ * <p>Shared pagination fields for List operation inputs (nextToken +
+ * maxResults).</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListQueueLimitAssociationsRequest">AWS
+ * API Reference</a></p>
  */
 class ListQueueLimitAssociationsRequest : public DeadlineRequest {
  public:
@@ -48,6 +52,41 @@ class ListQueueLimitAssociationsRequest : public DeadlineRequest {
   template <typename FarmIdT = Aws::String>
   ListQueueLimitAssociationsRequest& WithFarmId(FarmIdT&& value) {
     SetFarmId(std::forward<FarmIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The token for the next set of results, or <code>null</code> to start from the
+   * beginning.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListQueueLimitAssociationsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The maximum number of associations to return in each page of results.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListQueueLimitAssociationsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
     return *this;
   }
   ///@}
@@ -91,56 +130,21 @@ class ListQueueLimitAssociationsRequest : public DeadlineRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The token for the next set of results, or <code>null</code> to start from the
-   * beginning.</p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  ListQueueLimitAssociationsRequest& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The maximum number of associations to return in each page of results.</p>
-   */
-  inline int GetMaxResults() const { return m_maxResults; }
-  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-  inline void SetMaxResults(int value) {
-    m_maxResultsHasBeenSet = true;
-    m_maxResults = value;
-  }
-  inline ListQueueLimitAssociationsRequest& WithMaxResults(int value) {
-    SetMaxResults(value);
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_farmId;
-
-  Aws::String m_queueId;
-
-  Aws::String m_limitId;
 
   Aws::String m_nextToken;
 
   int m_maxResults{0};
+
+  Aws::String m_queueId;
+
+  Aws::String m_limitId;
   bool m_farmIdHasBeenSet = false;
-  bool m_queueIdHasBeenSet = false;
-  bool m_limitIdHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
+  bool m_queueIdHasBeenSet = false;
+  bool m_limitIdHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -20,8 +20,9 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>Content event containing stdout or stderr output</p><p><h3>See Also:</h3>
- * <a
+ * <p>An event that contains incremental output from a command execution. This
+ * event streams standard output and standard error content as it becomes available
+ * during command execution.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ContentDeltaEvent">AWS
  * API Reference</a></p>
  */
@@ -34,7 +35,8 @@ class ContentDeltaEvent {
 
   ///@{
   /**
-   * <p>Standard output content</p>
+   * <p>The standard output content from the command execution. This field contains
+   * the incremental output written to stdout by the executing command.</p>
    */
   inline const Aws::String& GetStdout() const { return m_stdout; }
   inline bool StdoutHasBeenSet() const { return m_stdoutHasBeenSet; }
@@ -52,7 +54,8 @@ class ContentDeltaEvent {
 
   ///@{
   /**
-   * <p>Standard error content</p>
+   * <p>The standard error content from the command execution. This field contains
+   * the incremental output written to stderr by the executing command.</p>
    */
   inline const Aws::String& GetStderr() const { return m_stderr; }
   inline bool StderrHasBeenSet() const { return m_stderrHasBeenSet; }

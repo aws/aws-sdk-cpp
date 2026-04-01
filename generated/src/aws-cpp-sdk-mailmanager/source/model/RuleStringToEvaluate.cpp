@@ -30,6 +30,11 @@ RuleStringToEvaluate& RuleStringToEvaluate::operator=(JsonView jsonValue) {
     m_analysis = jsonValue.GetObject("Analysis");
     m_analysisHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ClientCertificateAttribute")) {
+    m_clientCertificateAttribute =
+        RuleClientCertificateAttributeMapper::GetRuleClientCertificateAttributeForName(jsonValue.GetString("ClientCertificateAttribute"));
+    m_clientCertificateAttributeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +51,11 @@ JsonValue RuleStringToEvaluate::Jsonize() const {
 
   if (m_analysisHasBeenSet) {
     payload.WithObject("Analysis", m_analysis.Jsonize());
+  }
+
+  if (m_clientCertificateAttributeHasBeenSet) {
+    payload.WithString("ClientCertificateAttribute",
+                       RuleClientCertificateAttributeMapper::GetNameForRuleClientCertificateAttribute(m_clientCertificateAttribute));
   }
 
   return payload;

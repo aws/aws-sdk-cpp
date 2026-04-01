@@ -131,9 +131,9 @@ class RegistrationFieldValueInformation {
 
   ///@{
   /**
-   * <p>Feedback provided for this specific field during the registration review
-   * process. This may include validation errors, suggestions for improvement, or
-   * additional requirements.</p>
+   * <p>Generative AI feedback information provided for this specific field during
+   * the registration review process. This may include validation errors, suggestions
+   * for improvement, or additional requirements.</p>
    */
   inline const Aws::String& GetFeedback() const { return m_feedback; }
   inline bool FeedbackHasBeenSet() const { return m_feedbackHasBeenSet; }

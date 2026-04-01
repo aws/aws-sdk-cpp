@@ -30,6 +30,10 @@ TooltipOptions& TooltipOptions::operator=(JsonView jsonValue) {
     m_fieldBasedTooltip = jsonValue.GetObject("FieldBasedTooltip");
     m_fieldBasedTooltipHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SheetTooltip")) {
+    m_sheetTooltip = jsonValue.GetObject("SheetTooltip");
+    m_sheetTooltipHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue TooltipOptions::Jsonize() const {
 
   if (m_fieldBasedTooltipHasBeenSet) {
     payload.WithObject("FieldBasedTooltip", m_fieldBasedTooltip.Jsonize());
+  }
+
+  if (m_sheetTooltipHasBeenSet) {
+    payload.WithObject("SheetTooltip", m_sheetTooltip.Jsonize());
   }
 
   return payload;

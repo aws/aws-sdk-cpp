@@ -21,7 +21,10 @@ namespace GeoRoutes {
 namespace Model {
 
 /**
- * <p>Destination related options.</p><p><h3>See Also:</h3>   <a
+ * <p>Options that control how the destination point is interpreted and matched to
+ * the road network when calculating reachable areas. This affects which roads are
+ * considered accessible near the destination and how the final approach is
+ * calculated.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/IsolineDestinationOptions">AWS
  * API Reference</a></p>
  */
@@ -34,9 +37,10 @@ class IsolineDestinationOptions {
 
   ///@{
   /**
-   * <p>Avoids actions for the provided distance. This is typically to consider for
-   * users in moving vehicles who may not have sufficient time to make an action at
-   * an origin or a destination.</p>
+   * <p>The distance in meters from the destination point within which certain
+   * routing actions (such as U-turns or left turns across traffic) are restricted.
+   * This helps generate more practical routes by avoiding potentially dangerous
+   * maneuvers near the endpoint.</p>
    */
   inline long long GetAvoidActionsForDistance() const { return m_avoidActionsForDistance; }
   inline bool AvoidActionsForDistanceHasBeenSet() const { return m_avoidActionsForDistanceHasBeenSet; }
@@ -52,7 +56,9 @@ class IsolineDestinationOptions {
 
   ///@{
   /**
-   * <p>GPS Heading at the position.</p>
+   * <p>The initial direction of travel in degrees (0-360, where 0 is north). This
+   * can affect which road segments are considered accessible from the starting
+   * point.</p>
    */
   inline double GetHeading() const { return m_heading; }
   inline bool HeadingHasBeenSet() const { return m_headingHasBeenSet; }
@@ -68,7 +74,8 @@ class IsolineDestinationOptions {
 
   ///@{
   /**
-   * <p>Options to configure matching the provided position to the road network.</p>
+   * <p>Controls how the destination point is matched to the road network, including
+   * search radius and name-based matching preferences.</p>
    */
   inline const IsolineMatchingOptions& GetMatching() const { return m_matching; }
   inline bool MatchingHasBeenSet() const { return m_matchingHasBeenSet; }
@@ -86,8 +93,9 @@ class IsolineDestinationOptions {
 
   ///@{
   /**
-   * <p>Options to configure matching the provided position to a side of the
-   * street.</p>
+   * <p>Specifies which side of the street should be considered accessible, which is
+   * important when building entrances or parking access points are only reachable
+   * from one side of the road.</p>
    */
   inline const IsolineSideOfStreetOptions& GetSideOfStreet() const { return m_sideOfStreet; }
   inline bool SideOfStreetHasBeenSet() const { return m_sideOfStreetHasBeenSet; }

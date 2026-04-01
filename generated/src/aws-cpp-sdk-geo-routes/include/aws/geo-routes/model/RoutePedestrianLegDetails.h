@@ -76,8 +76,11 @@ class RoutePedestrianLegDetails {
 
   ///@{
   /**
-   * <p>Notices are additional information returned that indicate issues that
-   * occurred during route calculation.</p>
+   * <p> Notices are additional information returned that indicate issues that
+   * occurred during route calculation. Not supported in <code>ap-southeast-1</code>
+   * and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const Aws::Vector<RoutePedestrianNotice>& GetNotices() const { return m_notices; }
   inline bool NoticesHasBeenSet() const { return m_noticesHasBeenSet; }
@@ -126,7 +129,11 @@ class RoutePedestrianLegDetails {
 
   ///@{
   /**
-   * <p>Spans that were computed for the requested SpanAdditionalFeatures.</p>
+   * <p> Spans that were computed for the requested SpanAdditionalFeatures. Not
+   * supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const Aws::Vector<RoutePedestrianSpan>& GetSpans() const { return m_spans; }
   inline bool SpansHasBeenSet() const { return m_spansHasBeenSet; }

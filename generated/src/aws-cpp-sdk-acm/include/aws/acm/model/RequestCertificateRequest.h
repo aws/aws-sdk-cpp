@@ -265,7 +265,7 @@ class RequestCertificateRequest : public ACMRequest {
    * ensure that compatibility is not broken. Check the requirements for the Amazon
    * Web Services service where you plan to deploy your certificate. For more
    * information about selecting an algorithm, see <a
-   * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-certificate.html#algorithms">Key
+   * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-certificate-characteristics.html#algorithms-term">Key
    * algorithms</a>.</p>  <p>Algorithms supported for an ACM certificate
    * request include: </p> <ul> <li> <p> <code>RSA_2048</code> </p> </li> <li> <p>
    * <code>EC_prime256v1</code> </p> </li> <li> <p> <code>EC_secp384r1</code> </p>

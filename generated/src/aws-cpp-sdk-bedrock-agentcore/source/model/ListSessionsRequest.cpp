@@ -23,5 +23,9 @@ Aws::String ListSessionsRequest::SerializePayload() const {
     payload.WithString("nextToken", m_nextToken);
   }
 
+  if (m_filterHasBeenSet) {
+    payload.WithObject("filter", m_filter.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

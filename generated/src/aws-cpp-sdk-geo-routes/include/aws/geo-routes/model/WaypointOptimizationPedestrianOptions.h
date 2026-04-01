@@ -30,7 +30,7 @@ class WaypointOptimizationPedestrianOptions {
 
   ///@{
   /**
-   * <p>Walking speed.</p> <p> <b>Unit</b>: <code>KilometersPerHour</code> </p>
+   * <p>Walking speed.</p> <p> <b>Unit</b>: <code>kilometers per hour</code> </p>
    */
   inline double GetSpeed() const { return m_speed; }
   inline bool SpeedHasBeenSet() const { return m_speedHasBeenSet; }

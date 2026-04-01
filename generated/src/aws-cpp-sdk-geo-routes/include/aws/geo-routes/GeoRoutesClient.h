@@ -85,8 +85,23 @@ class AWS_GEOROUTES_API GeoRoutesClient : public Aws::Client::AWSJsonClient,
   virtual ~GeoRoutesClient();
 
   /**
-   * <p>Use the <code>CalculateIsolines</code> action to find service areas that can
-   * be reached in a given threshold of time, distance.</p><p><h3>See Also:</h3>   <a
+   * <p>Calculates areas that can be reached within specified time or distance
+   * thresholds from a given point. For example, you can use this operation to
+   * determine the area within a 30-minute drive of a store location, find
+   * neighborhoods within walking distance of a school, or identify delivery zones
+   * based on drive time.</p> <p>Isolines (also known as isochrones for time-based
+   * calculations) are useful for various applications including:</p> <ul> <li>
+   * <p>Service area visualization - Show customers the area you can serve within
+   * promised delivery times</p> </li> <li> <p>Site selection - Analyze potential
+   * business locations based on population within travel distance</p> </li> <li>
+   * <p>Site selection - Determine areas that can be reached within specified
+   * response times</p> </li> </ul>  <p>Route preferences such as avoiding toll
+   * roads or ferries are treated as preferences rather than absolute restrictions.
+   * If a viable route cannot be calculated while honoring all preferences, some may
+   * be ignored.</p>  <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-isolines.html">Calculate
+   * isolines</a> in the <i>Amazon Location Service Developer
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/CalculateIsolines">AWS
    * API Reference</a></p>
    */
@@ -115,7 +130,10 @@ class AWS_GEOROUTES_API GeoRoutesClient : public Aws::Client::AWSJsonClient,
    * <p> Use <code>CalculateRouteMatrix</code> to compute results for all pairs of
    * Origins to Destinations. Each row corresponds to one entry in Origins. Each
    * entry in the row corresponds to the route from that entry in Origins to an entry
-   * in Destinations positions.</p><p><h3>See Also:</h3>   <a
+   * in Destinations positions.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html">Calculate
+   * route matrix</a> in the <i>Amazon Location Service Developer
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/CalculateRouteMatrix">AWS
    * API Reference</a></p>
    */
@@ -142,7 +160,10 @@ class AWS_GEOROUTES_API GeoRoutesClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p> <code>CalculateRoutes</code> computes routes given the following required
-   * parameters: <code>Origin</code> and <code>Destination</code>.</p><p><h3>See
+   * parameters: <code>Origin</code> and <code>Destination</code>.</p> <p>For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-routes.html">Calculate
+   * routes</a> in the <i>Amazon Location Service Developer Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/CalculateRoutes">AWS
    * API Reference</a></p>
@@ -171,7 +192,10 @@ class AWS_GEOROUTES_API GeoRoutesClient : public Aws::Client::AWSJsonClient,
    * <p> <code>OptimizeWaypoints</code> calculates the optimal order to travel
    * between a set of waypoints to minimize either the travel time or the distance
    * travelled during the journey, based on road network restrictions and the traffic
-   * pattern data.</p><p><h3>See Also:</h3>   <a
+   * pattern data.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/actions-optimize-waypoints.html">Optimize
+   * waypoints</a> in the <i>Amazon Location Service Developer
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/OptimizeWaypoints">AWS
    * API Reference</a></p>
    */
@@ -198,7 +222,10 @@ class AWS_GEOROUTES_API GeoRoutesClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p> <code>SnapToRoads</code> matches GPS trace to roads most likely traveled
-   * on.</p><p><h3>See Also:</h3>   <a
+   * on.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-roads.html">Snap
+   * to Roads</a> in the <i>Amazon Location Service Developer
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/SnapToRoads">AWS
    * API Reference</a></p>
    */

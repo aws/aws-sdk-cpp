@@ -105,8 +105,7 @@ class GetStaticMapRequest : public GeoMapsRequest {
 
   ///@{
   /**
-   * <p>Sets color tone for map, such as dark and light for specific map styles. It
-   * only applies to vector map styles, such as Standard.</p> <p>Example:
+   * <p>Sets the color tone for the map, such as dark and light.</p> <p>Example:
    * <code>Light</code> </p> <p>Default value: <code>Light</code> </p>
    * <p>Valid values for <code>ColorScheme</code> are case sensitive.</p>
    */

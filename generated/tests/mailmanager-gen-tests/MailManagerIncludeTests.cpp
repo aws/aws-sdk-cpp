@@ -36,6 +36,7 @@
 #include <aws/mailmanager/model/ArchiveStringExpression.h>
 #include <aws/mailmanager/model/ArchiveStringOperator.h>
 #include <aws/mailmanager/model/ArchiveStringToEvaluate.h>
+#include <aws/mailmanager/model/BounceAction.h>
 #include <aws/mailmanager/model/CreateAddonInstanceRequest.h>
 #include <aws/mailmanager/model/CreateAddonInstanceResult.h>
 #include <aws/mailmanager/model/CreateAddonSubscriptionRequest.h>
@@ -143,7 +144,9 @@
 #include <aws/mailmanager/model/IngressTlsProtocolExpression.h>
 #include <aws/mailmanager/model/IngressTlsProtocolOperator.h>
 #include <aws/mailmanager/model/IngressTlsProtocolToEvaluate.h>
+#include <aws/mailmanager/model/InvokeLambdaAction.h>
 #include <aws/mailmanager/model/IpType.h>
+#include <aws/mailmanager/model/LambdaInvocationType.h>
 #include <aws/mailmanager/model/ListAddonInstancesRequest.h>
 #include <aws/mailmanager/model/ListAddonInstancesResult.h>
 #include <aws/mailmanager/model/ListAddonSubscriptionsRequest.h>
@@ -194,6 +197,7 @@
 #include <aws/mailmanager/model/RuleBooleanExpression.h>
 #include <aws/mailmanager/model/RuleBooleanOperator.h>
 #include <aws/mailmanager/model/RuleBooleanToEvaluate.h>
+#include <aws/mailmanager/model/RuleClientCertificateAttribute.h>
 #include <aws/mailmanager/model/RuleCondition.h>
 #include <aws/mailmanager/model/RuleDmarcExpression.h>
 #include <aws/mailmanager/model/RuleDmarcOperator.h>
@@ -242,7 +246,11 @@
 #include <aws/mailmanager/model/Tag.h>
 #include <aws/mailmanager/model/TagResourceRequest.h>
 #include <aws/mailmanager/model/TagResourceResult.h>
+#include <aws/mailmanager/model/TlsAuthConfiguration.h>
+#include <aws/mailmanager/model/TlsPolicy.h>
 #include <aws/mailmanager/model/TrafficPolicy.h>
+#include <aws/mailmanager/model/TrustStore.h>
+#include <aws/mailmanager/model/TrustStoreResponseOption.h>
 #include <aws/mailmanager/model/UntagResourceRequest.h>
 #include <aws/mailmanager/model/UntagResourceResult.h>
 #include <aws/mailmanager/model/UpdateArchiveRequest.h>

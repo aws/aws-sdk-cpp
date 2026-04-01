@@ -122,6 +122,12 @@ ServerlessCache& ServerlessCache::operator=(const XmlNode& xmlNode) {
       m_dailySnapshotTime = Aws::Utils::Xml::DecodeEscapedXmlText(dailySnapshotTimeNode.GetText());
       m_dailySnapshotTimeHasBeenSet = true;
     }
+    XmlNode networkTypeNode = resultNode.FirstChild("NetworkType");
+    if (!networkTypeNode.IsNull()) {
+      m_networkType = NetworkTypeMapper::GetNetworkTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(networkTypeNode.GetText()).c_str()));
+      m_networkTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -211,6 +217,11 @@ void ServerlessCache::OutputToStream(Aws::OStream& oStream, const char* location
   if (m_dailySnapshotTimeHasBeenSet) {
     oStream << location << index << locationValue << ".DailySnapshotTime=" << StringUtils::URLEncode(m_dailySnapshotTime.c_str()) << "&";
   }
+
+  if (m_networkTypeHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".NetworkType=" << StringUtils::URLEncode(NetworkTypeMapper::GetNameForNetworkType(m_networkType)) << "&";
+  }
 }
 
 void ServerlessCache::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -278,6 +289,9 @@ void ServerlessCache::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if (m_dailySnapshotTimeHasBeenSet) {
     oStream << location << ".DailySnapshotTime=" << StringUtils::URLEncode(m_dailySnapshotTime.c_str()) << "&";
+  }
+  if (m_networkTypeHasBeenSet) {
+    oStream << location << ".NetworkType=" << StringUtils::URLEncode(NetworkTypeMapper::GetNameForNetworkType(m_networkType)) << "&";
   }
 }
 

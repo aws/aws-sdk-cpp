@@ -53,6 +53,25 @@ class CreateVerifiedDestinationNumberRequest : public PinpointSMSVoiceV2Request 
 
   ///@{
   /**
+   * <p>The unique identifier of the RCS agent to associate with the verified
+   * destination number. You can use either the RcsAgentId or RcsAgentArn.</p>
+   */
+  inline const Aws::String& GetRcsAgentId() const { return m_rcsAgentId; }
+  inline bool RcsAgentIdHasBeenSet() const { return m_rcsAgentIdHasBeenSet; }
+  template <typename RcsAgentIdT = Aws::String>
+  void SetRcsAgentId(RcsAgentIdT&& value) {
+    m_rcsAgentIdHasBeenSet = true;
+    m_rcsAgentId = std::forward<RcsAgentIdT>(value);
+  }
+  template <typename RcsAgentIdT = Aws::String>
+  CreateVerifiedDestinationNumberRequest& WithRcsAgentId(RcsAgentIdT&& value) {
+    SetRcsAgentId(std::forward<RcsAgentIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>An array of tags (key and value pairs) to associate with the destination
    * number.</p>
    */
@@ -98,10 +117,13 @@ class CreateVerifiedDestinationNumberRequest : public PinpointSMSVoiceV2Request 
  private:
   Aws::String m_destinationPhoneNumber;
 
+  Aws::String m_rcsAgentId;
+
   Aws::Vector<Tag> m_tags;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_destinationPhoneNumberHasBeenSet = false;
+  bool m_rcsAgentIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };

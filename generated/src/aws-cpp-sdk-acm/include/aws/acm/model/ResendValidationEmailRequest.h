@@ -80,8 +80,7 @@ class ResendValidationEmailRequest : public ACMRequest {
    * <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For
    * example, if you requested a certificate for
    * <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of
-   * <code>subdomain.example.com</code>, ACM sends email to the domain registrant,
-   * technical contact, and administrative contact in WHOIS and the following five
+   * <code>subdomain.example.com</code>, ACM sends email to the the following five
    * addresses:</p> <ul> <li> <p>admin@subdomain.example.com</p> </li> <li>
    * <p>administrator@subdomain.example.com</p> </li> <li>
    * <p>hostmaster@subdomain.example.com</p> </li> <li>

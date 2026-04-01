@@ -49,6 +49,12 @@ void GetDataAccessRequest::AddQueryStringParameters(URI& uri) const {
     uri.AddQueryStringParameter("targetType", ss.str());
     ss.str("");
   }
+
+  if (m_auditContextHasBeenSet) {
+    ss << m_auditContext;
+    uri.AddQueryStringParameter("auditContext", ss.str());
+    ss.str("");
+  }
 }
 
 Aws::Http::HeaderValueCollection GetDataAccessRequest::GetRequestSpecificHeaders() const {

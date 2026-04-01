@@ -64,9 +64,9 @@ class PutAndGetInlineDocumentsRequest : public JsonProtocolRequest {
   ///@}
  private:
   Aws::Utils::Document m_inlineDocument;
-  bool m_inlineDocumentHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_inlineDocumentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

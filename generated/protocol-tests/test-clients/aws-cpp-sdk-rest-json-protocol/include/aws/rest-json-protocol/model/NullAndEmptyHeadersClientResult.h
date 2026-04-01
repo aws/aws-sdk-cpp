@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rest-json-protocol/RestJsonProtocol_EXPORTS.h>
@@ -93,17 +94,20 @@ class NullAndEmptyHeadersClientResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_a;
-  bool m_aHasBeenSet = false;
 
   Aws::String m_b;
-  bool m_bHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_c;
-  bool m_cHasBeenSet = false;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_aHasBeenSet = false;
+  bool m_bHasBeenSet = false;
+  bool m_cHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

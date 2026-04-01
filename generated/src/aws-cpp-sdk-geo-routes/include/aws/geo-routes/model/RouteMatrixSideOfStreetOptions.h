@@ -35,7 +35,7 @@ class RouteMatrixSideOfStreetOptions {
 
   ///@{
   /**
-   * <p>Position defined as <code>[longitude, latitude]</code>.</p>
+   * <p>Position in World Geodetic System (WGS 84) format: [longitude, latitude].</p>
    */
   inline const Aws::Vector<double>& GetPosition() const { return m_position; }
   inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
@@ -59,7 +59,7 @@ class RouteMatrixSideOfStreetOptions {
   ///@{
   /**
    * <p>Strategy that defines when the side of street position should be used.
-   * AnyStreet will always use the provided position.</p> <p>Default Value:
+   * AnyStreet will always use the provided position.</p> <p>Default value:
    * <code>DividedStreetOnly</code> </p>
    */
   inline SideOfStreetMatchingStrategy GetUseWith() const { return m_useWith; }

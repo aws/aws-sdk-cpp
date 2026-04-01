@@ -19,6 +19,7 @@
 #include <aws/dataexchange/model/AcceptanceStateFilterValue.h>
 #include <aws/dataexchange/model/Action.h>
 #include <aws/dataexchange/model/ApiGatewayApiAsset.h>
+#include <aws/dataexchange/model/AssetConfiguration.h>
 #include <aws/dataexchange/model/AssetDestinationEntry.h>
 #include <aws/dataexchange/model/AssetDetails.h>
 #include <aws/dataexchange/model/AssetEntry.h>
@@ -160,6 +161,7 @@
 #include <aws/dataexchange/model/TableLFTagPolicy.h>
 #include <aws/dataexchange/model/TableLFTagPolicyAndPermissions.h>
 #include <aws/dataexchange/model/TableTagPolicyLFPermission.h>
+#include <aws/dataexchange/model/Tag.h>
 #include <aws/dataexchange/model/TagResourceRequest.h>
 #include <aws/dataexchange/model/Type.h>
 #include <aws/dataexchange/model/UntagResourceRequest.h>

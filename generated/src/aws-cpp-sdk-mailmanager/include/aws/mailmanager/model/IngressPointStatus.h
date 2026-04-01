@@ -10,7 +10,16 @@
 namespace Aws {
 namespace MailManager {
 namespace Model {
-enum class IngressPointStatus { NOT_SET, PROVISIONING, DEPROVISIONING, UPDATING, ACTIVE, CLOSED, FAILED };
+enum class IngressPointStatus {
+  NOT_SET,
+  PROVISIONING,
+  DEPROVISIONING,
+  UPDATING,
+  ACTIVE,
+  CLOSED,
+  FAILED,
+  ASSOCIATED_VPC_ENDPOINT_DOES_NOT_EXIST
+};
 
 namespace IngressPointStatusMapper {
 AWS_MAILMANAGER_API IngressPointStatus GetIngressPointStatusForName(const Aws::String& name);

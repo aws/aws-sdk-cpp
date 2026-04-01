@@ -63,9 +63,9 @@ class TestPostNoPayloadRequest : public RestJsonProtocolRequest {
   ///@}
  private:
   Aws::String m_testId;
-  bool m_testIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_testIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

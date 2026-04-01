@@ -54,7 +54,19 @@
     ${macro.spaces}while(!${macro.listVarName}.IsNull())
     ${macro.spaces}{
 #set($macro.memberVarName = $CppViewHelper.computeMemberVariableName($memberName))
+#if($member.shape.sparse)
+    ${macro.spaces}  if(${macro.listVarName}.GetText().empty() || ${macro.listVarName}.GetAttributeValue("xsi:nil") == "true") { 
+    ${macro.spaces}    ${macro.memberVarName}.emplace_back(); 
+    ${macro.spaces}  } else { 
+#if($member.shape.listMember.shape.structure)
+    ${macro.spaces}    ${macro.memberVarName}.emplace_back(#deserializeXmlSingleElement($member.shape.listMember, $macro.listVarName)); 
+#else
+    ${macro.spaces}    ${macro.memberVarName}.push_back(#deserializeXmlSingleElement($member.shape.listMember, $macro.listVarName)); 
+#end
+    ${macro.spaces}  }
+#else
     ${macro.spaces}  ${macro.memberVarName}.push_back(#deserializeXmlSingleElement($member.shape.listMember, $macro.listVarName));
+#end
 #if($member.shape.listMember.locationName)
 #set($listMemberName = $member.shape.listMember.locationName)
 #elseif(!($member.shape.flattened || $member.flattened))

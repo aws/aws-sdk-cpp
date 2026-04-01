@@ -20,6 +20,7 @@ using namespace Aws;
 NullAndEmptyHeadersClientResult::NullAndEmptyHeadersClientResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 NullAndEmptyHeadersClientResult& NullAndEmptyHeadersClientResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

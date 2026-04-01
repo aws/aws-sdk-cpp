@@ -91,6 +91,7 @@
 #include <aws/quicksight/model/DescribeAnalysisResult.h>
 #include <aws/quicksight/model/DescribeAssetBundleExportJobResult.h>
 #include <aws/quicksight/model/DescribeAssetBundleImportJobResult.h>
+#include <aws/quicksight/model/DescribeAutomationJobResult.h>
 #include <aws/quicksight/model/DescribeBrandAssignmentResult.h>
 #include <aws/quicksight/model/DescribeBrandPublishedVersionResult.h>
 #include <aws/quicksight/model/DescribeBrandResult.h>
@@ -195,6 +196,7 @@
 #include <aws/quicksight/model/SearchTopicsResult.h>
 #include <aws/quicksight/model/StartAssetBundleExportJobResult.h>
 #include <aws/quicksight/model/StartAssetBundleImportJobResult.h>
+#include <aws/quicksight/model/StartAutomationJobResult.h>
 #include <aws/quicksight/model/StartDashboardSnapshotJobResult.h>
 #include <aws/quicksight/model/StartDashboardSnapshotJobScheduleResult.h>
 #include <aws/quicksight/model/TagResourceResult.h>
@@ -354,6 +356,7 @@ class DescribeAnalysisDefinitionRequest;
 class DescribeAnalysisPermissionsRequest;
 class DescribeAssetBundleExportJobRequest;
 class DescribeAssetBundleImportJobRequest;
+class DescribeAutomationJobRequest;
 class DescribeBrandRequest;
 class DescribeBrandAssignmentRequest;
 class DescribeBrandPublishedVersionRequest;
@@ -458,6 +461,7 @@ class SearchGroupsRequest;
 class SearchTopicsRequest;
 class StartAssetBundleExportJobRequest;
 class StartAssetBundleImportJobRequest;
+class StartAutomationJobRequest;
 class StartDashboardSnapshotJobRequest;
 class StartDashboardSnapshotJobScheduleRequest;
 class TagResourceRequest;
@@ -587,6 +591,7 @@ typedef Aws::Utils::Outcome<DescribeAnalysisDefinitionResult, QuickSightError> D
 typedef Aws::Utils::Outcome<DescribeAnalysisPermissionsResult, QuickSightError> DescribeAnalysisPermissionsOutcome;
 typedef Aws::Utils::Outcome<DescribeAssetBundleExportJobResult, QuickSightError> DescribeAssetBundleExportJobOutcome;
 typedef Aws::Utils::Outcome<DescribeAssetBundleImportJobResult, QuickSightError> DescribeAssetBundleImportJobOutcome;
+typedef Aws::Utils::Outcome<DescribeAutomationJobResult, QuickSightError> DescribeAutomationJobOutcome;
 typedef Aws::Utils::Outcome<DescribeBrandResult, QuickSightError> DescribeBrandOutcome;
 typedef Aws::Utils::Outcome<DescribeBrandAssignmentResult, QuickSightError> DescribeBrandAssignmentOutcome;
 typedef Aws::Utils::Outcome<DescribeBrandPublishedVersionResult, QuickSightError> DescribeBrandPublishedVersionOutcome;
@@ -692,6 +697,7 @@ typedef Aws::Utils::Outcome<SearchGroupsResult, QuickSightError> SearchGroupsOut
 typedef Aws::Utils::Outcome<SearchTopicsResult, QuickSightError> SearchTopicsOutcome;
 typedef Aws::Utils::Outcome<StartAssetBundleExportJobResult, QuickSightError> StartAssetBundleExportJobOutcome;
 typedef Aws::Utils::Outcome<StartAssetBundleImportJobResult, QuickSightError> StartAssetBundleImportJobOutcome;
+typedef Aws::Utils::Outcome<StartAutomationJobResult, QuickSightError> StartAutomationJobOutcome;
 typedef Aws::Utils::Outcome<StartDashboardSnapshotJobResult, QuickSightError> StartDashboardSnapshotJobOutcome;
 typedef Aws::Utils::Outcome<StartDashboardSnapshotJobScheduleResult, QuickSightError> StartDashboardSnapshotJobScheduleOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, QuickSightError> TagResourceOutcome;
@@ -821,6 +827,7 @@ typedef std::future<DescribeAnalysisDefinitionOutcome> DescribeAnalysisDefinitio
 typedef std::future<DescribeAnalysisPermissionsOutcome> DescribeAnalysisPermissionsOutcomeCallable;
 typedef std::future<DescribeAssetBundleExportJobOutcome> DescribeAssetBundleExportJobOutcomeCallable;
 typedef std::future<DescribeAssetBundleImportJobOutcome> DescribeAssetBundleImportJobOutcomeCallable;
+typedef std::future<DescribeAutomationJobOutcome> DescribeAutomationJobOutcomeCallable;
 typedef std::future<DescribeBrandOutcome> DescribeBrandOutcomeCallable;
 typedef std::future<DescribeBrandAssignmentOutcome> DescribeBrandAssignmentOutcomeCallable;
 typedef std::future<DescribeBrandPublishedVersionOutcome> DescribeBrandPublishedVersionOutcomeCallable;
@@ -925,6 +932,7 @@ typedef std::future<SearchGroupsOutcome> SearchGroupsOutcomeCallable;
 typedef std::future<SearchTopicsOutcome> SearchTopicsOutcomeCallable;
 typedef std::future<StartAssetBundleExportJobOutcome> StartAssetBundleExportJobOutcomeCallable;
 typedef std::future<StartAssetBundleImportJobOutcome> StartAssetBundleImportJobOutcomeCallable;
+typedef std::future<StartAutomationJobOutcome> StartAutomationJobOutcomeCallable;
 typedef std::future<StartDashboardSnapshotJobOutcome> StartDashboardSnapshotJobOutcomeCallable;
 typedef std::future<StartDashboardSnapshotJobScheduleOutcome> StartDashboardSnapshotJobScheduleOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -1212,6 +1220,9 @@ typedef std::function<void(const QuickSightClient*, const Model::DescribeAssetBu
                            const Model::DescribeAssetBundleImportJobOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeAssetBundleImportJobResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::DescribeAutomationJobRequest&, const Model::DescribeAutomationJobOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeAutomationJobResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::DescribeBrandRequest&, const Model::DescribeBrandOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeBrandResponseReceivedHandler;
@@ -1543,6 +1554,9 @@ typedef std::function<void(const QuickSightClient*, const Model::StartAssetBundl
 typedef std::function<void(const QuickSightClient*, const Model::StartAssetBundleImportJobRequest&,
                            const Model::StartAssetBundleImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartAssetBundleImportJobResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::StartAutomationJobRequest&, const Model::StartAutomationJobOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartAutomationJobResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::StartDashboardSnapshotJobRequest&,
                            const Model::StartDashboardSnapshotJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartDashboardSnapshotJobResponseReceivedHandler;

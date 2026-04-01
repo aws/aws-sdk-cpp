@@ -9,6 +9,7 @@
 #include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/mailmanager/model/IngressPointConfiguration.h>
 #include <aws/mailmanager/model/IngressPointStatusToUpdate.h>
+#include <aws/mailmanager/model/TlsPolicy.h>
 
 #include <utility>
 
@@ -140,6 +141,24 @@ class UpdateIngressPointRequest : public MailManagerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Transport Layer Security (TLS) policy for the ingress point. Valid values
+   * are REQUIRED, OPTIONAL. Only ingress endpoints using REQUIRED or OPTIONAL as
+   * TlsPolicy can be updated.</p>
+   */
+  inline TlsPolicy GetTlsPolicy() const { return m_tlsPolicy; }
+  inline bool TlsPolicyHasBeenSet() const { return m_tlsPolicyHasBeenSet; }
+  inline void SetTlsPolicy(TlsPolicy value) {
+    m_tlsPolicyHasBeenSet = true;
+    m_tlsPolicy = value;
+  }
+  inline UpdateIngressPointRequest& WithTlsPolicy(TlsPolicy value) {
+    SetTlsPolicy(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_ingressPointId;
 
@@ -152,12 +171,15 @@ class UpdateIngressPointRequest : public MailManagerRequest {
   Aws::String m_trafficPolicyId;
 
   IngressPointConfiguration m_ingressPointConfiguration;
+
+  TlsPolicy m_tlsPolicy{TlsPolicy::NOT_SET};
   bool m_ingressPointIdHasBeenSet = false;
   bool m_ingressPointNameHasBeenSet = false;
   bool m_statusToUpdateHasBeenSet = false;
   bool m_ruleSetIdHasBeenSet = false;
   bool m_trafficPolicyIdHasBeenSet = false;
   bool m_ingressPointConfigurationHasBeenSet = false;
+  bool m_tlsPolicyHasBeenSet = false;
 };
 
 }  // namespace Model

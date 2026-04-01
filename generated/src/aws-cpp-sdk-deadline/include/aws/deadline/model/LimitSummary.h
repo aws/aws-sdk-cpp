@@ -34,61 +34,54 @@ class LimitSummary {
 
   ///@{
   /**
-   * <p>The name of the limit used in lists to identify the limit.</p>
-   * <p>This field can store any content. Escape or encode this content before
-   * displaying it on a webpage or any other system that might interpret the content
-   * of this field.</p>
+   * <p>The unique identifier of the farm that contains the limit.</p>
    */
-  inline const Aws::String& GetDisplayName() const { return m_displayName; }
-  inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-  template <typename DisplayNameT = Aws::String>
-  void SetDisplayName(DisplayNameT&& value) {
-    m_displayNameHasBeenSet = true;
-    m_displayName = std::forward<DisplayNameT>(value);
+  inline const Aws::String& GetFarmId() const { return m_farmId; }
+  inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
+  template <typename FarmIdT = Aws::String>
+  void SetFarmId(FarmIdT&& value) {
+    m_farmIdHasBeenSet = true;
+    m_farmId = std::forward<FarmIdT>(value);
   }
-  template <typename DisplayNameT = Aws::String>
-  LimitSummary& WithDisplayName(DisplayNameT&& value) {
-    SetDisplayName(std::forward<DisplayNameT>(value));
+  template <typename FarmIdT = Aws::String>
+  LimitSummary& WithFarmId(FarmIdT&& value) {
+    SetFarmId(std::forward<FarmIdT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The value that you specify as the <code>name</code> in the
-   * <code>amounts</code> field of the <code>hostRequirements</code> in a step of a
-   * job template to declare the limit requirement.</p>
+   * <p>The unique identifier of the limit.</p>
    */
-  inline const Aws::String& GetAmountRequirementName() const { return m_amountRequirementName; }
-  inline bool AmountRequirementNameHasBeenSet() const { return m_amountRequirementNameHasBeenSet; }
-  template <typename AmountRequirementNameT = Aws::String>
-  void SetAmountRequirementName(AmountRequirementNameT&& value) {
-    m_amountRequirementNameHasBeenSet = true;
-    m_amountRequirementName = std::forward<AmountRequirementNameT>(value);
+  inline const Aws::String& GetLimitId() const { return m_limitId; }
+  inline bool LimitIdHasBeenSet() const { return m_limitIdHasBeenSet; }
+  template <typename LimitIdT = Aws::String>
+  void SetLimitId(LimitIdT&& value) {
+    m_limitIdHasBeenSet = true;
+    m_limitId = std::forward<LimitIdT>(value);
   }
-  template <typename AmountRequirementNameT = Aws::String>
-  LimitSummary& WithAmountRequirementName(AmountRequirementNameT&& value) {
-    SetAmountRequirementName(std::forward<AmountRequirementNameT>(value));
+  template <typename LimitIdT = Aws::String>
+  LimitSummary& WithLimitId(LimitIdT&& value) {
+    SetLimitId(std::forward<LimitIdT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The maximum number of resources constrained by this limit. When all of the
-   * resources are in use, steps that require the limit won't be scheduled until the
-   * resource is available.</p> <p>The <code>maxValue</code> must not be 0. If the
-   * value is -1, there is no restriction on the number of resources that can be
-   * acquired for this limit.</p>
+   * <p>The number of resources from the limit that are being used by jobs. The
+   * result is delayed and may not be the count at the time that you called the
+   * operation.</p>
    */
-  inline int GetMaxCount() const { return m_maxCount; }
-  inline bool MaxCountHasBeenSet() const { return m_maxCountHasBeenSet; }
-  inline void SetMaxCount(int value) {
-    m_maxCountHasBeenSet = true;
-    m_maxCount = value;
+  inline int GetCurrentCount() const { return m_currentCount; }
+  inline bool CurrentCountHasBeenSet() const { return m_currentCountHasBeenSet; }
+  inline void SetCurrentCount(int value) {
+    m_currentCountHasBeenSet = true;
+    m_currentCount = value;
   }
-  inline LimitSummary& WithMaxCount(int value) {
-    SetMaxCount(value);
+  inline LimitSummary& WithCurrentCount(int value) {
+    SetCurrentCount(value);
     return *this;
   }
   ///@}
@@ -167,63 +160,70 @@ class LimitSummary {
 
   ///@{
   /**
-   * <p>The unique identifier of the farm that contains the limit.</p>
+   * <p>The name of the limit used in lists to identify the limit.</p>
+   * <p>This field can store any content. Escape or encode this content before
+   * displaying it on a webpage or any other system that might interpret the content
+   * of this field.</p>
    */
-  inline const Aws::String& GetFarmId() const { return m_farmId; }
-  inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
-  template <typename FarmIdT = Aws::String>
-  void SetFarmId(FarmIdT&& value) {
-    m_farmIdHasBeenSet = true;
-    m_farmId = std::forward<FarmIdT>(value);
+  inline const Aws::String& GetDisplayName() const { return m_displayName; }
+  inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+  template <typename DisplayNameT = Aws::String>
+  void SetDisplayName(DisplayNameT&& value) {
+    m_displayNameHasBeenSet = true;
+    m_displayName = std::forward<DisplayNameT>(value);
   }
-  template <typename FarmIdT = Aws::String>
-  LimitSummary& WithFarmId(FarmIdT&& value) {
-    SetFarmId(std::forward<FarmIdT>(value));
+  template <typename DisplayNameT = Aws::String>
+  LimitSummary& WithDisplayName(DisplayNameT&& value) {
+    SetDisplayName(std::forward<DisplayNameT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The unique identifier of the limit.</p>
+   * <p>The value that you specify as the <code>name</code> in the
+   * <code>amounts</code> field of the <code>hostRequirements</code> in a step of a
+   * job template to declare the limit requirement.</p>
    */
-  inline const Aws::String& GetLimitId() const { return m_limitId; }
-  inline bool LimitIdHasBeenSet() const { return m_limitIdHasBeenSet; }
-  template <typename LimitIdT = Aws::String>
-  void SetLimitId(LimitIdT&& value) {
-    m_limitIdHasBeenSet = true;
-    m_limitId = std::forward<LimitIdT>(value);
+  inline const Aws::String& GetAmountRequirementName() const { return m_amountRequirementName; }
+  inline bool AmountRequirementNameHasBeenSet() const { return m_amountRequirementNameHasBeenSet; }
+  template <typename AmountRequirementNameT = Aws::String>
+  void SetAmountRequirementName(AmountRequirementNameT&& value) {
+    m_amountRequirementNameHasBeenSet = true;
+    m_amountRequirementName = std::forward<AmountRequirementNameT>(value);
   }
-  template <typename LimitIdT = Aws::String>
-  LimitSummary& WithLimitId(LimitIdT&& value) {
-    SetLimitId(std::forward<LimitIdT>(value));
+  template <typename AmountRequirementNameT = Aws::String>
+  LimitSummary& WithAmountRequirementName(AmountRequirementNameT&& value) {
+    SetAmountRequirementName(std::forward<AmountRequirementNameT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The number of resources from the limit that are being used by jobs. The
-   * result is delayed and may not be the count at the time that you called the
-   * operation.</p>
+   * <p>The maximum number of resources constrained by this limit. When all of the
+   * resources are in use, steps that require the limit won't be scheduled until the
+   * resource is available.</p> <p>The <code>maxValue</code> must not be 0. If the
+   * value is -1, there is no restriction on the number of resources that can be
+   * acquired for this limit.</p>
    */
-  inline int GetCurrentCount() const { return m_currentCount; }
-  inline bool CurrentCountHasBeenSet() const { return m_currentCountHasBeenSet; }
-  inline void SetCurrentCount(int value) {
-    m_currentCountHasBeenSet = true;
-    m_currentCount = value;
+  inline int GetMaxCount() const { return m_maxCount; }
+  inline bool MaxCountHasBeenSet() const { return m_maxCountHasBeenSet; }
+  inline void SetMaxCount(int value) {
+    m_maxCountHasBeenSet = true;
+    m_maxCount = value;
   }
-  inline LimitSummary& WithCurrentCount(int value) {
-    SetCurrentCount(value);
+  inline LimitSummary& WithMaxCount(int value) {
+    SetMaxCount(value);
     return *this;
   }
   ///@}
  private:
-  Aws::String m_displayName;
+  Aws::String m_farmId;
 
-  Aws::String m_amountRequirementName;
+  Aws::String m_limitId;
 
-  int m_maxCount{0};
+  int m_currentCount{0};
 
   Aws::Utils::DateTime m_createdAt{};
 
@@ -233,21 +233,21 @@ class LimitSummary {
 
   Aws::String m_updatedBy;
 
-  Aws::String m_farmId;
+  Aws::String m_displayName;
 
-  Aws::String m_limitId;
+  Aws::String m_amountRequirementName;
 
-  int m_currentCount{0};
-  bool m_displayNameHasBeenSet = false;
-  bool m_amountRequirementNameHasBeenSet = false;
-  bool m_maxCountHasBeenSet = false;
+  int m_maxCount{0};
+  bool m_farmIdHasBeenSet = false;
+  bool m_limitIdHasBeenSet = false;
+  bool m_currentCountHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_updatedByHasBeenSet = false;
-  bool m_farmIdHasBeenSet = false;
-  bool m_limitIdHasBeenSet = false;
-  bool m_currentCountHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_amountRequirementNameHasBeenSet = false;
+  bool m_maxCountHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -25,9 +25,11 @@
 #include <aws/pinpoint-sms-voice-v2/model/CarrierLookupRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/CreateConfigurationSetRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/CreateEventDestinationRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/CreateNotifyConfigurationRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/CreateOptOutListRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/CreatePoolRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/CreateProtectConfigurationRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/CreateRcsAgentRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/CreateRegistrationAssociationRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/CreateRegistrationAttachmentRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/CreateRegistrationRequest.h>
@@ -40,11 +42,14 @@
 #include <aws/pinpoint-sms-voice-v2/model/DeleteEventDestinationRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/DeleteKeywordRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/DeleteMediaMessageSpendLimitOverrideRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/DeleteNotifyConfigurationRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/DeleteNotifyMessageSpendLimitOverrideRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/DeleteOptOutListRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/DeleteOptedOutNumberRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/DeletePoolRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/DeleteProtectConfigurationRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/DeleteProtectConfigurationRuleSetNumberOverrideRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/DeleteRcsAgentRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/DeleteRegistrationAttachmentRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/DeleteRegistrationFieldValueRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/DeleteRegistrationRequest.h>
@@ -56,11 +61,15 @@
 #include <aws/pinpoint-sms-voice-v2/model/DescribeAccountLimitsRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeConfigurationSetsRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeKeywordsRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeNotifyConfigurationsRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeNotifyTemplatesRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeOptOutListsRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeOptedOutNumbersRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribePhoneNumbersRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribePoolsRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeProtectConfigurationsRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeRcsAgentCountryLaunchStatusRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeRcsAgentsRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeRegistrationAttachmentsRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeRegistrationFieldDefinitionsRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/DescribeRegistrationFieldValuesRequest.h>
@@ -76,6 +85,7 @@
 #include <aws/pinpoint-sms-voice-v2/model/DiscardRegistrationVersionRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/GetProtectConfigurationCountryRuleSetRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/GetResourcePolicyRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/ListNotifyCountriesRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/ListPoolOriginationIdentitiesRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/ListProtectConfigurationRuleSetNumberOverridesRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/ListRegistrationAssociationsRequest.h>
@@ -92,6 +102,8 @@
 #include <aws/pinpoint-sms-voice-v2/model/RequestSenderIdRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/SendDestinationNumberVerificationCodeRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/SendMediaMessageRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/SendNotifyTextMessageRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/SendNotifyVoiceMessageRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/SendTextMessageRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/SendVoiceMessageRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/SetAccountDefaultProtectConfigurationRequest.h>
@@ -99,16 +111,19 @@
 #include <aws/pinpoint-sms-voice-v2/model/SetDefaultMessageTypeRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/SetDefaultSenderIdRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/SetMediaMessageSpendLimitOverrideRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/SetNotifyMessageSpendLimitOverrideRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/SetTextMessageSpendLimitOverrideRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/SetVoiceMessageSpendLimitOverrideRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/SubmitRegistrationVersionRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/TagResourceRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/UntagResourceRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/UpdateEventDestinationRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/UpdateNotifyConfigurationRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/UpdatePhoneNumberRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/UpdatePoolRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/UpdateProtectConfigurationCountryRuleSetRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/UpdateProtectConfigurationRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/UpdateRcsAgentRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/UpdateSenderIdRequest.h>
 #include <aws/pinpoint-sms-voice-v2/model/VerifyDestinationNumberRequest.h>
 #include <smithy/tracing/TracingUtils.h>
@@ -298,6 +313,13 @@ CreateEventDestinationOutcome PinpointSMSVoiceV2Client::CreateEventDestination(c
                             : CreateEventDestinationOutcome(std::move(result.GetError()));
 }
 
+CreateNotifyConfigurationOutcome PinpointSMSVoiceV2Client::CreateNotifyConfiguration(
+    const CreateNotifyConfigurationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateNotifyConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateNotifyConfigurationOutcome(std::move(result.GetError()));
+}
+
 CreateOptOutListOutcome PinpointSMSVoiceV2Client::CreateOptOutList(const CreateOptOutListRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateOptOutListOutcome(result.GetResultWithOwnership())
@@ -314,6 +336,11 @@ CreateProtectConfigurationOutcome PinpointSMSVoiceV2Client::CreateProtectConfigu
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateProtectConfigurationOutcome(result.GetResultWithOwnership())
                             : CreateProtectConfigurationOutcome(std::move(result.GetError()));
+}
+
+CreateRcsAgentOutcome PinpointSMSVoiceV2Client::CreateRcsAgent(const CreateRcsAgentRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRcsAgentOutcome(result.GetResultWithOwnership()) : CreateRcsAgentOutcome(std::move(result.GetError()));
 }
 
 CreateRegistrationOutcome PinpointSMSVoiceV2Client::CreateRegistration(const CreateRegistrationRequest& request) const {
@@ -393,6 +420,20 @@ DeleteMediaMessageSpendLimitOverrideOutcome PinpointSMSVoiceV2Client::DeleteMedi
                             : DeleteMediaMessageSpendLimitOverrideOutcome(std::move(result.GetError()));
 }
 
+DeleteNotifyConfigurationOutcome PinpointSMSVoiceV2Client::DeleteNotifyConfiguration(
+    const DeleteNotifyConfigurationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteNotifyConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteNotifyConfigurationOutcome(std::move(result.GetError()));
+}
+
+DeleteNotifyMessageSpendLimitOverrideOutcome PinpointSMSVoiceV2Client::DeleteNotifyMessageSpendLimitOverride(
+    const DeleteNotifyMessageSpendLimitOverrideRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteNotifyMessageSpendLimitOverrideOutcome(result.GetResultWithOwnership())
+                            : DeleteNotifyMessageSpendLimitOverrideOutcome(std::move(result.GetError()));
+}
+
 DeleteOptOutListOutcome PinpointSMSVoiceV2Client::DeleteOptOutList(const DeleteOptOutListRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteOptOutListOutcome(result.GetResultWithOwnership())
@@ -422,6 +463,11 @@ DeleteProtectConfigurationRuleSetNumberOverrideOutcome PinpointSMSVoiceV2Client:
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteProtectConfigurationRuleSetNumberOverrideOutcome(result.GetResultWithOwnership())
                             : DeleteProtectConfigurationRuleSetNumberOverrideOutcome(std::move(result.GetError()));
+}
+
+DeleteRcsAgentOutcome PinpointSMSVoiceV2Client::DeleteRcsAgent(const DeleteRcsAgentRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRcsAgentOutcome(result.GetResultWithOwnership()) : DeleteRcsAgentOutcome(std::move(result.GetError()));
 }
 
 DeleteRegistrationOutcome PinpointSMSVoiceV2Client::DeleteRegistration(const DeleteRegistrationRequest& request) const {
@@ -497,6 +543,19 @@ DescribeKeywordsOutcome PinpointSMSVoiceV2Client::DescribeKeywords(const Describ
                             : DescribeKeywordsOutcome(std::move(result.GetError()));
 }
 
+DescribeNotifyConfigurationsOutcome PinpointSMSVoiceV2Client::DescribeNotifyConfigurations(
+    const DescribeNotifyConfigurationsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeNotifyConfigurationsOutcome(result.GetResultWithOwnership())
+                            : DescribeNotifyConfigurationsOutcome(std::move(result.GetError()));
+}
+
+DescribeNotifyTemplatesOutcome PinpointSMSVoiceV2Client::DescribeNotifyTemplates(const DescribeNotifyTemplatesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeNotifyTemplatesOutcome(result.GetResultWithOwnership())
+                            : DescribeNotifyTemplatesOutcome(std::move(result.GetError()));
+}
+
 DescribeOptOutListsOutcome PinpointSMSVoiceV2Client::DescribeOptOutLists(const DescribeOptOutListsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeOptOutListsOutcome(result.GetResultWithOwnership())
@@ -525,6 +584,19 @@ DescribeProtectConfigurationsOutcome PinpointSMSVoiceV2Client::DescribeProtectCo
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeProtectConfigurationsOutcome(result.GetResultWithOwnership())
                             : DescribeProtectConfigurationsOutcome(std::move(result.GetError()));
+}
+
+DescribeRcsAgentCountryLaunchStatusOutcome PinpointSMSVoiceV2Client::DescribeRcsAgentCountryLaunchStatus(
+    const DescribeRcsAgentCountryLaunchStatusRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRcsAgentCountryLaunchStatusOutcome(result.GetResultWithOwnership())
+                            : DescribeRcsAgentCountryLaunchStatusOutcome(std::move(result.GetError()));
+}
+
+DescribeRcsAgentsOutcome PinpointSMSVoiceV2Client::DescribeRcsAgents(const DescribeRcsAgentsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRcsAgentsOutcome(result.GetResultWithOwnership())
+                            : DescribeRcsAgentsOutcome(std::move(result.GetError()));
 }
 
 DescribeRegistrationAttachmentsOutcome PinpointSMSVoiceV2Client::DescribeRegistrationAttachments(
@@ -628,6 +700,12 @@ GetResourcePolicyOutcome PinpointSMSVoiceV2Client::GetResourcePolicy(const GetRe
                             : GetResourcePolicyOutcome(std::move(result.GetError()));
 }
 
+ListNotifyCountriesOutcome PinpointSMSVoiceV2Client::ListNotifyCountries(const ListNotifyCountriesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListNotifyCountriesOutcome(result.GetResultWithOwnership())
+                            : ListNotifyCountriesOutcome(std::move(result.GetError()));
+}
+
 ListPoolOriginationIdentitiesOutcome PinpointSMSVoiceV2Client::ListPoolOriginationIdentities(
     const ListPoolOriginationIdentitiesRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -729,6 +807,18 @@ SendMediaMessageOutcome PinpointSMSVoiceV2Client::SendMediaMessage(const SendMed
                             : SendMediaMessageOutcome(std::move(result.GetError()));
 }
 
+SendNotifyTextMessageOutcome PinpointSMSVoiceV2Client::SendNotifyTextMessage(const SendNotifyTextMessageRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendNotifyTextMessageOutcome(result.GetResultWithOwnership())
+                            : SendNotifyTextMessageOutcome(std::move(result.GetError()));
+}
+
+SendNotifyVoiceMessageOutcome PinpointSMSVoiceV2Client::SendNotifyVoiceMessage(const SendNotifyVoiceMessageRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendNotifyVoiceMessageOutcome(result.GetResultWithOwnership())
+                            : SendNotifyVoiceMessageOutcome(std::move(result.GetError()));
+}
+
 SendTextMessageOutcome PinpointSMSVoiceV2Client::SendTextMessage(const SendTextMessageRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? SendTextMessageOutcome(result.GetResultWithOwnership())
@@ -774,6 +864,13 @@ SetMediaMessageSpendLimitOverrideOutcome PinpointSMSVoiceV2Client::SetMediaMessa
                             : SetMediaMessageSpendLimitOverrideOutcome(std::move(result.GetError()));
 }
 
+SetNotifyMessageSpendLimitOverrideOutcome PinpointSMSVoiceV2Client::SetNotifyMessageSpendLimitOverride(
+    const SetNotifyMessageSpendLimitOverrideRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetNotifyMessageSpendLimitOverrideOutcome(result.GetResultWithOwnership())
+                            : SetNotifyMessageSpendLimitOverrideOutcome(std::move(result.GetError()));
+}
+
 SetTextMessageSpendLimitOverrideOutcome PinpointSMSVoiceV2Client::SetTextMessageSpendLimitOverride(
     const SetTextMessageSpendLimitOverrideRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -811,6 +908,13 @@ UpdateEventDestinationOutcome PinpointSMSVoiceV2Client::UpdateEventDestination(c
                             : UpdateEventDestinationOutcome(std::move(result.GetError()));
 }
 
+UpdateNotifyConfigurationOutcome PinpointSMSVoiceV2Client::UpdateNotifyConfiguration(
+    const UpdateNotifyConfigurationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateNotifyConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateNotifyConfigurationOutcome(std::move(result.GetError()));
+}
+
 UpdatePhoneNumberOutcome PinpointSMSVoiceV2Client::UpdatePhoneNumber(const UpdatePhoneNumberRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdatePhoneNumberOutcome(result.GetResultWithOwnership())
@@ -834,6 +938,11 @@ UpdateProtectConfigurationCountryRuleSetOutcome PinpointSMSVoiceV2Client::Update
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateProtectConfigurationCountryRuleSetOutcome(result.GetResultWithOwnership())
                             : UpdateProtectConfigurationCountryRuleSetOutcome(std::move(result.GetError()));
+}
+
+UpdateRcsAgentOutcome PinpointSMSVoiceV2Client::UpdateRcsAgent(const UpdateRcsAgentRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRcsAgentOutcome(result.GetResultWithOwnership()) : UpdateRcsAgentOutcome(std::move(result.GetError()));
 }
 
 UpdateSenderIdOutcome PinpointSMSVoiceV2Client::UpdateSenderId(const UpdateSenderIdRequest& request) const {

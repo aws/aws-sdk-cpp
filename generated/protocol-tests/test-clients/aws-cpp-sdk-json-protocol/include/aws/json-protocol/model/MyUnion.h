@@ -189,30 +189,30 @@ class MyUnion {
   ///@}
  private:
   Aws::String m_stringValue;
-  bool m_stringValueHasBeenSet = false;
 
   bool m_booleanValue{false};
-  bool m_booleanValueHasBeenSet = false;
 
   int m_numberValue{0};
-  bool m_numberValueHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_blobValue{};
-  bool m_blobValueHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestampValue{};
-  bool m_timestampValueHasBeenSet = false;
 
   FooEnum m_enumValue{FooEnum::NOT_SET};
-  bool m_enumValueHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_listValue;
-  bool m_listValueHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_mapValue;
-  bool m_mapValueHasBeenSet = false;
 
   GreetingStruct m_structureValue;
+  bool m_stringValueHasBeenSet = false;
+  bool m_booleanValueHasBeenSet = false;
+  bool m_numberValueHasBeenSet = false;
+  bool m_blobValueHasBeenSet = false;
+  bool m_timestampValueHasBeenSet = false;
+  bool m_enumValueHasBeenSet = false;
+  bool m_listValueHasBeenSet = false;
+  bool m_mapValueHasBeenSet = false;
   bool m_structureValueHasBeenSet = false;
 };
 

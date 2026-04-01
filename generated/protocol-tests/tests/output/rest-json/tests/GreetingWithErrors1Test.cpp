@@ -16,7 +16,7 @@ AWS_PROTOCOL_TEST(GreetingWithErrors1, RestJsonComplexErrorWithNoMessage) {
 
   OutputResponse mockRs;
   mockRs.statusCode = 403;
-  mockRs.headers = {{"Content-Type", R"(application/json)"}, {"X-Amzn-Errortype", R"(ComplexError)"}, {"X-Header", R"(Header)"}};
+  mockRs.headers = {{"X-Amzn-Errortype", R"(ComplexError)"}, {"X-Header", R"(Header)"}, {"Content-Type", R"(application/json)"}};
   mockRs.body = "ewogICAgIlRvcExldmVsIjogIlRvcCBsZXZlbCIsCiAgICAiTmVzdGVkIjogewogICAgICAgICJGb29vb28iOiAiYmFyIgogICAgfQp9";
   SetMockResponse(mockRs);
 
@@ -31,7 +31,7 @@ AWS_PROTOCOL_TEST(GreetingWithErrors1, RestJsonEmptyComplexErrorWithNoMessage) {
 
   OutputResponse mockRs;
   mockRs.statusCode = 403;
-  mockRs.headers = {{"Content-Type", R"(application/json)"}, {"X-Amzn-Errortype", R"(ComplexError)"}};
+  mockRs.headers = {{"X-Amzn-Errortype", R"(ComplexError)"}, {"Content-Type", R"(application/json)"}};
   mockRs.body = "e30=";
   SetMockResponse(mockRs);
 

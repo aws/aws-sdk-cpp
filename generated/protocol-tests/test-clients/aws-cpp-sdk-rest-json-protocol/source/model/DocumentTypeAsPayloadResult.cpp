@@ -20,6 +20,7 @@ using namespace Aws;
 DocumentTypeAsPayloadResult::DocumentTypeAsPayloadResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DocumentTypeAsPayloadResult& DocumentTypeAsPayloadResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_documentValue = jsonValue;
   m_documentValueHasBeenSet = true;

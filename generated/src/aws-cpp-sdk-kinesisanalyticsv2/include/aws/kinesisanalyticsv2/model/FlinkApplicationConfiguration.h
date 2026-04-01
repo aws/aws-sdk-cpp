@@ -39,9 +39,9 @@ class FlinkApplicationConfiguration {
    * <p>Describes an application's checkpointing configuration. Checkpointing is the
    * process of persisting application state for fault tolerance. For more
    * information, see <a
-   * href="https://nightlies.apache.org/flink/flink-docs-release-1.20/docs/dev/datastream/fault-tolerance/checkpointing/#enabling-and-configuring-checkpointing">
+   * href="https://nightlies.apache.org/flink/flink-docs-release-2.2/docs/dev/datastream/fault-tolerance/checkpointing/#enabling-and-configuring-checkpointing">
    * Checkpoints for Fault Tolerance</a> in the <a
-   * href="https://nightlies.apache.org/flink/flink-docs-release-1.20/">Apache Flink
+   * href="https://nightlies.apache.org/flink/flink-docs-release-2.2/">Apache Flink
    * Documentation</a>. </p>
    */
   inline const CheckpointConfiguration& GetCheckpointConfiguration() const { return m_checkpointConfiguration; }

@@ -35,7 +35,10 @@ static const int PHONE_NUMBER_NOT_ASSOCIATED_TO_POOL_HASH = HashingUtils::HashSt
 static const int PHONE_NUMBER_NOT_IN_REGISTRATION_REGION_HASH = HashingUtils::HashString("PHONE_NUMBER_NOT_IN_REGISTRATION_REGION");
 static const int REGISTRATION_ALREADY_SUBMITTED_HASH = HashingUtils::HashString("REGISTRATION_ALREADY_SUBMITTED");
 static const int REGISTRATION_NOT_COMPLETE_HASH = HashingUtils::HashString("REGISTRATION_NOT_COMPLETE");
+static const int RESOURCE_ALREADY_ASSOCIATED_HASH = HashingUtils::HashString("RESOURCE_ALREADY_ASSOCIATED");
 static const int SENDER_ID_ASSOCIATED_TO_POOL_HASH = HashingUtils::HashString("SENDER_ID_ASSOCIATED_TO_POOL");
+static const int RCS_AGENT_ASSOCIATED_TO_POOL_HASH = HashingUtils::HashString("RCS_AGENT_ASSOCIATED_TO_POOL");
+static const int POOL_ASSOCIATED_TO_NOTIFY_CONFIGURATION_HASH = HashingUtils::HashString("POOL_ASSOCIATED_TO_NOTIFY_CONFIGURATION");
 static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("RESOURCE_ALREADY_EXISTS");
 static const int RESOURCE_DELETION_NOT_ALLOWED_HASH = HashingUtils::HashString("RESOURCE_DELETION_NOT_ALLOWED");
 static const int RESOURCE_MODIFICATION_NOT_ALLOWED_HASH = HashingUtils::HashString("RESOURCE_MODIFICATION_NOT_ALLOWED");
@@ -55,6 +58,9 @@ static const int DESTINATION_COUNTRY_BLOCKED_BY_PROTECT_CONFIGURATION_HASH =
     HashingUtils::HashString("DESTINATION_COUNTRY_BLOCKED_BY_PROTECT_CONFIGURATION");
 static const int DESTINATION_PHONE_NUMBER_BLOCKED_BY_PROTECT_NUMBER_OVERRIDE_HASH =
     HashingUtils::HashString("DESTINATION_PHONE_NUMBER_BLOCKED_BY_PROTECT_NUMBER_OVERRIDE");
+static const int RCS_AGENT_ALREADY_ASSOCIATED_TO_REGISTRATION_TYPE_HASH =
+    HashingUtils::HashString("RCS_AGENT_ALREADY_ASSOCIATED_TO_REGISTRATION_TYPE");
+static const int NOTIFY_CONFIGURATION_NOT_ACTIVE_HASH = HashingUtils::HashString("NOTIFY_CONFIGURATION_NOT_ACTIVE");
 
 ConflictExceptionReason GetConflictExceptionReasonForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -98,8 +104,14 @@ ConflictExceptionReason GetConflictExceptionReasonForName(const Aws::String& nam
     return ConflictExceptionReason::REGISTRATION_ALREADY_SUBMITTED;
   } else if (hashCode == REGISTRATION_NOT_COMPLETE_HASH) {
     return ConflictExceptionReason::REGISTRATION_NOT_COMPLETE;
+  } else if (hashCode == RESOURCE_ALREADY_ASSOCIATED_HASH) {
+    return ConflictExceptionReason::RESOURCE_ALREADY_ASSOCIATED;
   } else if (hashCode == SENDER_ID_ASSOCIATED_TO_POOL_HASH) {
     return ConflictExceptionReason::SENDER_ID_ASSOCIATED_TO_POOL;
+  } else if (hashCode == RCS_AGENT_ASSOCIATED_TO_POOL_HASH) {
+    return ConflictExceptionReason::RCS_AGENT_ASSOCIATED_TO_POOL;
+  } else if (hashCode == POOL_ASSOCIATED_TO_NOTIFY_CONFIGURATION_HASH) {
+    return ConflictExceptionReason::POOL_ASSOCIATED_TO_NOTIFY_CONFIGURATION;
   } else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH) {
     return ConflictExceptionReason::RESOURCE_ALREADY_EXISTS;
   } else if (hashCode == RESOURCE_DELETION_NOT_ALLOWED_HASH) {
@@ -130,6 +142,10 @@ ConflictExceptionReason GetConflictExceptionReasonForName(const Aws::String& nam
     return ConflictExceptionReason::DESTINATION_COUNTRY_BLOCKED_BY_PROTECT_CONFIGURATION;
   } else if (hashCode == DESTINATION_PHONE_NUMBER_BLOCKED_BY_PROTECT_NUMBER_OVERRIDE_HASH) {
     return ConflictExceptionReason::DESTINATION_PHONE_NUMBER_BLOCKED_BY_PROTECT_NUMBER_OVERRIDE;
+  } else if (hashCode == RCS_AGENT_ALREADY_ASSOCIATED_TO_REGISTRATION_TYPE_HASH) {
+    return ConflictExceptionReason::RCS_AGENT_ALREADY_ASSOCIATED_TO_REGISTRATION_TYPE;
+  } else if (hashCode == NOTIFY_CONFIGURATION_NOT_ACTIVE_HASH) {
+    return ConflictExceptionReason::NOTIFY_CONFIGURATION_NOT_ACTIVE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -184,8 +200,14 @@ Aws::String GetNameForConflictExceptionReason(ConflictExceptionReason enumValue)
       return "REGISTRATION_ALREADY_SUBMITTED";
     case ConflictExceptionReason::REGISTRATION_NOT_COMPLETE:
       return "REGISTRATION_NOT_COMPLETE";
+    case ConflictExceptionReason::RESOURCE_ALREADY_ASSOCIATED:
+      return "RESOURCE_ALREADY_ASSOCIATED";
     case ConflictExceptionReason::SENDER_ID_ASSOCIATED_TO_POOL:
       return "SENDER_ID_ASSOCIATED_TO_POOL";
+    case ConflictExceptionReason::RCS_AGENT_ASSOCIATED_TO_POOL:
+      return "RCS_AGENT_ASSOCIATED_TO_POOL";
+    case ConflictExceptionReason::POOL_ASSOCIATED_TO_NOTIFY_CONFIGURATION:
+      return "POOL_ASSOCIATED_TO_NOTIFY_CONFIGURATION";
     case ConflictExceptionReason::RESOURCE_ALREADY_EXISTS:
       return "RESOURCE_ALREADY_EXISTS";
     case ConflictExceptionReason::RESOURCE_DELETION_NOT_ALLOWED:
@@ -216,6 +238,10 @@ Aws::String GetNameForConflictExceptionReason(ConflictExceptionReason enumValue)
       return "DESTINATION_COUNTRY_BLOCKED_BY_PROTECT_CONFIGURATION";
     case ConflictExceptionReason::DESTINATION_PHONE_NUMBER_BLOCKED_BY_PROTECT_NUMBER_OVERRIDE:
       return "DESTINATION_PHONE_NUMBER_BLOCKED_BY_PROTECT_NUMBER_OVERRIDE";
+    case ConflictExceptionReason::RCS_AGENT_ALREADY_ASSOCIATED_TO_REGISTRATION_TYPE:
+      return "RCS_AGENT_ALREADY_ASSOCIATED_TO_REGISTRATION_TYPE";
+    case ConflictExceptionReason::NOTIFY_CONFIGURATION_NOT_ACTIVE:
+      return "NOTIFY_CONFIGURATION_NOT_ACTIVE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -20,7 +20,8 @@ namespace GeoRoutes {
 namespace Model {
 
 /**
- * <p>Zone category to be avoided.</p><p><h3>See Also:</h3>   <a
+ * <p>Types of regulated zones that may affect routing.</p><p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/IsolineAvoidanceZoneCategory">AWS
  * API Reference</a></p>
  */
@@ -33,7 +34,9 @@ class IsolineAvoidanceZoneCategory {
 
   ///@{
   /**
-   * <p>Zone category to be avoided.</p>
+   * <p>The type of regulated zone: <code>CongestionPricing</code> for toll zones
+   * based on traffic levels, <code>Environmental</code> for low-emission zones, or
+   * <code>Vignette</code> for areas requiring special permits or stickers.</p>
    */
   inline IsolineZoneCategory GetCategory() const { return m_category; }
   inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }

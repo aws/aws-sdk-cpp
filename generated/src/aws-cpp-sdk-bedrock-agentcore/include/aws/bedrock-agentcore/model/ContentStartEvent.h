@@ -17,8 +17,9 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>First event indicating command execution has started</p><p><h3>See Also:</h3>
- * <a
+ * <p>An event that signals the start of content streaming from a command
+ * execution. This event is sent when the command begins producing
+ * output.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ContentStartEvent">AWS
  * API Reference</a></p>
  */

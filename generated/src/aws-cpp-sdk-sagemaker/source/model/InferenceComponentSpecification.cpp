@@ -42,6 +42,10 @@ InferenceComponentSpecification& InferenceComponentSpecification::operator=(Json
     m_dataCacheConfig = jsonValue.GetObject("DataCacheConfig");
     m_dataCacheConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SchedulingConfig")) {
+    m_schedulingConfig = jsonValue.GetObject("SchedulingConfig");
+    m_schedulingConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +74,10 @@ JsonValue InferenceComponentSpecification::Jsonize() const {
 
   if (m_dataCacheConfigHasBeenSet) {
     payload.WithObject("DataCacheConfig", m_dataCacheConfig.Jsonize());
+  }
+
+  if (m_schedulingConfigHasBeenSet) {
+    payload.WithObject("SchedulingConfig", m_schedulingConfig.Jsonize());
   }
 
   return payload;

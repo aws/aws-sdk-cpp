@@ -21,8 +21,11 @@ namespace GeoRoutes {
 namespace Model {
 
 /**
- * <p>Travel mode options when the provided travel mode is <code>Scooter</code>
- * </p><p><h3>See Also:</h3>   <a
+ * <p> Travel mode options when the provided travel mode is <code>Scooter</code>.
+ * For <a
+ * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+ * customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+ * support only <code>LicensePlate</code> options. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/RouteScooterOptions">AWS
  * API Reference</a></p>
  */
@@ -35,7 +38,10 @@ class RouteScooterOptions {
 
   ///@{
   /**
-   * <p>Engine type of the vehicle.</p>
+   * <p> Engine type of the vehicle. Not supported in <code>ap-southeast-1</code> and
+   * <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline RouteEngineType GetEngineType() const { return m_engineType; }
   inline bool EngineTypeHasBeenSet() const { return m_engineTypeHasBeenSet; }
@@ -69,7 +75,10 @@ class RouteScooterOptions {
 
   ///@{
   /**
-   * <p>Maximum speed</p> <p> <b>Unit</b>: <code>KilometersPerHour</code> </p>
+   * <p> Maximum speed Not supported in <code>ap-southeast-1</code> and
+   * <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p> <p> <b>Unit</b>: <code>kilometers per hour</code> </p>
    */
   inline double GetMaxSpeed() const { return m_maxSpeed; }
   inline bool MaxSpeedHasBeenSet() const { return m_maxSpeedHasBeenSet; }
@@ -85,8 +94,10 @@ class RouteScooterOptions {
 
   ///@{
   /**
-   * <p>The number of occupants in the vehicle.</p> <p>Default Value: <code>1</code>
-   * </p>
+   * <p> The number of occupants in the vehicle. Not supported in
+   * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p> <p>Default value: <code>1</code> </p>
    */
   inline int GetOccupancy() const { return m_occupancy; }
   inline bool OccupancyHasBeenSet() const { return m_occupancyHasBeenSet; }

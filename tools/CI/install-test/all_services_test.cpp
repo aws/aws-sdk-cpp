@@ -121,6 +121,7 @@
 #include <aws/deadline/DeadlineClient.h>
 #include <aws/detective/DetectiveClient.h>
 #include <aws/devicefarm/DeviceFarmClient.h>
+#include <aws/devops-agent/DevOpsAgentClient.h>
 #include <aws/devops-guru/DevOpsGuruClient.h>
 #include <aws/directconnect/DirectConnectClient.h>
 #include <aws/directory-service-data/DirectoryServiceDataClient.h>
@@ -360,6 +361,7 @@
 #include <aws/sdb/SimpleDBClient.h>
 #include <aws/secretsmanager/SecretsManagerClient.h>
 #include <aws/security-ir/SecurityIRClient.h>
+#include <aws/securityagent/SecurityAgentClient.h>
 #include <aws/securityhub/SecurityHubClient.h>
 #include <aws/securitylake/SecurityLakeClient.h>
 #include <aws/serverlessrepo/ServerlessApplicationRepositoryClient.h>
@@ -395,6 +397,7 @@
 #include <aws/supplychain/SupplyChainClient.h>
 #include <aws/support-app/SupportAppClient.h>
 #include <aws/support/SupportClient.h>
+#include <aws/sustainability/SustainabilityClient.h>
 #include <aws/swf/SWFClient.h>
 #include <aws/synthetics/SyntheticsClient.h>
 #include <aws/taxsettings/TaxSettingsClient.h>

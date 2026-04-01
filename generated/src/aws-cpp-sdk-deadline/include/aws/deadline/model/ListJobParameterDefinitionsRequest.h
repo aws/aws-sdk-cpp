@@ -18,6 +18,10 @@ namespace deadline {
 namespace Model {
 
 /**
+ * <p>Shared pagination fields for List operation inputs (nextToken +
+ * maxResults).</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListJobParameterDefinitionsRequest">AWS
+ * API Reference</a></p>
  */
 class ListJobParameterDefinitionsRequest : public DeadlineRequest {
  public:
@@ -53,24 +57,6 @@ class ListJobParameterDefinitionsRequest : public DeadlineRequest {
 
   ///@{
   /**
-   * <p>The job ID to include on the list.</p>
-   */
-  inline const Aws::String& GetJobId() const { return m_jobId; }
-  inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-  template <typename JobIdT = Aws::String>
-  void SetJobId(JobIdT&& value) {
-    m_jobIdHasBeenSet = true;
-    m_jobId = std::forward<JobIdT>(value);
-  }
-  template <typename JobIdT = Aws::String>
-  ListJobParameterDefinitionsRequest& WithJobId(JobIdT&& value) {
-    SetJobId(std::forward<JobIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The queue ID to include on the list.</p>
    */
   inline const Aws::String& GetQueueId() const { return m_queueId; }
@@ -83,6 +69,24 @@ class ListJobParameterDefinitionsRequest : public DeadlineRequest {
   template <typename QueueIdT = Aws::String>
   ListJobParameterDefinitionsRequest& WithQueueId(QueueIdT&& value) {
     SetQueueId(std::forward<QueueIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The job ID to include on the list.</p>
+   */
+  inline const Aws::String& GetJobId() const { return m_jobId; }
+  inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+  template <typename JobIdT = Aws::String>
+  void SetJobId(JobIdT&& value) {
+    m_jobIdHasBeenSet = true;
+    m_jobId = std::forward<JobIdT>(value);
+  }
+  template <typename JobIdT = Aws::String>
+  ListJobParameterDefinitionsRequest& WithJobId(JobIdT&& value) {
+    SetJobId(std::forward<JobIdT>(value));
     return *this;
   }
   ///@}
@@ -125,16 +129,16 @@ class ListJobParameterDefinitionsRequest : public DeadlineRequest {
  private:
   Aws::String m_farmId;
 
-  Aws::String m_jobId;
-
   Aws::String m_queueId;
+
+  Aws::String m_jobId;
 
   Aws::String m_nextToken;
 
   int m_maxResults{0};
   bool m_farmIdHasBeenSet = false;
-  bool m_jobIdHasBeenSet = false;
   bool m_queueIdHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };

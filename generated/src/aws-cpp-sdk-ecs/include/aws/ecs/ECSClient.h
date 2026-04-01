@@ -159,6 +159,41 @@ class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates a new daemon in the specified cluster and capacity providers. A
+   * daemon deploys cross-cutting software agents such as security monitoring,
+   * telemetry, and logging independently across your Amazon ECS infrastructure.</p>
+   * <p>Amazon ECS deploys exactly one daemon task on each container instance of the
+   * specified capacity providers. When a container instance registers with the
+   * cluster, Amazon ECS automatically starts daemon tasks. Amazon ECS starts a
+   * daemon task before scheduling other tasks.</p> <p>Daemons are essential for
+   * instance health - if a daemon task stops, Amazon ECS automatically drains and
+   * replaces that container instance.</p>  <p>ECS Managed Daemons is only
+   * supported for Amazon ECS Managed Instances Capacity Providers.</p>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateDaemon">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateDaemonOutcome CreateDaemon(const Model::CreateDaemonRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateDaemon that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateDaemonRequestT = Model::CreateDaemonRequest>
+  Model::CreateDaemonOutcomeCallable CreateDaemonCallable(const CreateDaemonRequestT& request) const {
+    return SubmitCallable(&ECSClient::CreateDaemon, request);
+  }
+
+  /**
+   * An Async wrapper for CreateDaemon that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateDaemonRequestT = Model::CreateDaemonRequest>
+  void CreateDaemonAsync(const CreateDaemonRequestT& request, const CreateDaemonResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ECSClient::CreateDaemon, request, handler, context);
+  }
+
+  /**
    * <p>Creates an Express service that simplifies deploying containerized web
    * applications on Amazon ECS with managed Amazon Web Services infrastructure. This
    * operation provisions and configures Application Load Balancers, target groups,
@@ -529,6 +564,70 @@ class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Deletes the specified daemon. The daemon must be in an <code>ACTIVE</code>
+   * state to be deleted. Deleting a daemon stops all running daemon tasks on the
+   * associated container instances. Amazon ECS drains existing container instances
+   * and provisions new instances without the deleted daemon. Amazon ECS
+   * automatically launches replacement tasks for your Amazon ECS services.</p>
+   *  <p>ECS Managed Daemons is only supported for Amazon ECS Managed Instances
+   * Capacity Providers.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteDaemon">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteDaemonOutcome DeleteDaemon(const Model::DeleteDaemonRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteDaemon that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteDaemonRequestT = Model::DeleteDaemonRequest>
+  Model::DeleteDaemonOutcomeCallable DeleteDaemonCallable(const DeleteDaemonRequestT& request) const {
+    return SubmitCallable(&ECSClient::DeleteDaemon, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteDaemon that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteDaemonRequestT = Model::DeleteDaemonRequest>
+  void DeleteDaemonAsync(const DeleteDaemonRequestT& request, const DeleteDaemonResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ECSClient::DeleteDaemon, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes the specified daemon task definition. After a daemon task definition
+   * is deleted, no new daemons can be created using this definition. Existing
+   * daemons that reference the deleted daemon task definition continue to run.</p>
+   * <p>A daemon task definition must be in an <code>ACTIVE</code> state to be
+   * deleted.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteDaemonTaskDefinition">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteDaemonTaskDefinitionOutcome DeleteDaemonTaskDefinition(
+      const Model::DeleteDaemonTaskDefinitionRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteDaemonTaskDefinition that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteDaemonTaskDefinitionRequestT = Model::DeleteDaemonTaskDefinitionRequest>
+  Model::DeleteDaemonTaskDefinitionOutcomeCallable DeleteDaemonTaskDefinitionCallable(
+      const DeleteDaemonTaskDefinitionRequestT& request) const {
+    return SubmitCallable(&ECSClient::DeleteDaemonTaskDefinition, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteDaemonTaskDefinition that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteDaemonTaskDefinitionRequestT = Model::DeleteDaemonTaskDefinitionRequest>
+  void DeleteDaemonTaskDefinitionAsync(const DeleteDaemonTaskDefinitionRequestT& request,
+                                       const DeleteDaemonTaskDefinitionResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ECSClient::DeleteDaemonTaskDefinition, request, handler, context);
+  }
+
+  /**
    * <p>Deletes an Express service and removes all associated Amazon Web Services
    * resources. This operation stops service tasks, removes the Application Load
    * Balancer, target groups, security groups, auto-scaling policies, and other
@@ -861,6 +960,126 @@ class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient,
                                        const DescribeContainerInstancesResponseReceivedHandler& handler,
                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ECSClient::DescribeContainerInstances, request, handler, context);
+  }
+
+  /**
+   * <p>Describes the specified daemon.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeDaemon">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeDaemonOutcome DescribeDaemon(const Model::DescribeDaemonRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeDaemon that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DescribeDaemonRequestT = Model::DescribeDaemonRequest>
+  Model::DescribeDaemonOutcomeCallable DescribeDaemonCallable(const DescribeDaemonRequestT& request) const {
+    return SubmitCallable(&ECSClient::DescribeDaemon, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeDaemon that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DescribeDaemonRequestT = Model::DescribeDaemonRequest>
+  void DescribeDaemonAsync(const DescribeDaemonRequestT& request, const DescribeDaemonResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ECSClient::DescribeDaemon, request, handler, context);
+  }
+
+  /**
+   * <p>Describes one or more of your daemon deployments.</p> <p>A daemon deployment
+   * orchestrates the progressive rollout of daemon task updates across container
+   * instances managed by the daemon's capacity providers. Each deployment includes
+   * circuit breaker and alarm-based rollback capabilities.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeDaemonDeployments">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeDaemonDeploymentsOutcome DescribeDaemonDeployments(const Model::DescribeDaemonDeploymentsRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeDaemonDeployments that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeDaemonDeploymentsRequestT = Model::DescribeDaemonDeploymentsRequest>
+  Model::DescribeDaemonDeploymentsOutcomeCallable DescribeDaemonDeploymentsCallable(
+      const DescribeDaemonDeploymentsRequestT& request) const {
+    return SubmitCallable(&ECSClient::DescribeDaemonDeployments, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeDaemonDeployments that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeDaemonDeploymentsRequestT = Model::DescribeDaemonDeploymentsRequest>
+  void DescribeDaemonDeploymentsAsync(const DescribeDaemonDeploymentsRequestT& request,
+                                      const DescribeDaemonDeploymentsResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ECSClient::DescribeDaemonDeployments, request, handler, context);
+  }
+
+  /**
+   * <p>Describes one or more of your daemon revisions.</p> <p>A daemon revision is a
+   * snapshot of a daemon's configuration at the time a deployment was initiated. It
+   * captures the daemon task definition, container images, tag propagation, and
+   * execute command settings. Daemon revisions are immutable.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeDaemonRevisions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeDaemonRevisionsOutcome DescribeDaemonRevisions(const Model::DescribeDaemonRevisionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeDaemonRevisions that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeDaemonRevisionsRequestT = Model::DescribeDaemonRevisionsRequest>
+  Model::DescribeDaemonRevisionsOutcomeCallable DescribeDaemonRevisionsCallable(const DescribeDaemonRevisionsRequestT& request) const {
+    return SubmitCallable(&ECSClient::DescribeDaemonRevisions, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeDaemonRevisions that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeDaemonRevisionsRequestT = Model::DescribeDaemonRevisionsRequest>
+  void DescribeDaemonRevisionsAsync(const DescribeDaemonRevisionsRequestT& request,
+                                    const DescribeDaemonRevisionsResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ECSClient::DescribeDaemonRevisions, request, handler, context);
+  }
+
+  /**
+   * <p>Describes a daemon task definition. You can specify a <code>family</code> and
+   * <code>revision</code> to find information about a specific daemon task
+   * definition, or you can simply specify the family to find the latest
+   * <code>ACTIVE</code> revision in that family.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeDaemonTaskDefinition">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeDaemonTaskDefinitionOutcome DescribeDaemonTaskDefinition(
+      const Model::DescribeDaemonTaskDefinitionRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeDaemonTaskDefinition that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeDaemonTaskDefinitionRequestT = Model::DescribeDaemonTaskDefinitionRequest>
+  Model::DescribeDaemonTaskDefinitionOutcomeCallable DescribeDaemonTaskDefinitionCallable(
+      const DescribeDaemonTaskDefinitionRequestT& request) const {
+    return SubmitCallable(&ECSClient::DescribeDaemonTaskDefinition, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeDaemonTaskDefinition that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeDaemonTaskDefinitionRequestT = Model::DescribeDaemonTaskDefinitionRequest>
+  void DescribeDaemonTaskDefinitionAsync(const DescribeDaemonTaskDefinitionRequestT& request,
+                                         const DescribeDaemonTaskDefinitionResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ECSClient::DescribeDaemonTaskDefinition, request, handler, context);
   }
 
   /**
@@ -1293,6 +1512,91 @@ class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns a list of daemon deployments for a specified daemon. You can filter
+   * the results by status or creation time.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListDaemonDeployments">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListDaemonDeploymentsOutcome ListDaemonDeployments(const Model::ListDaemonDeploymentsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListDaemonDeployments that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListDaemonDeploymentsRequestT = Model::ListDaemonDeploymentsRequest>
+  Model::ListDaemonDeploymentsOutcomeCallable ListDaemonDeploymentsCallable(const ListDaemonDeploymentsRequestT& request) const {
+    return SubmitCallable(&ECSClient::ListDaemonDeployments, request);
+  }
+
+  /**
+   * An Async wrapper for ListDaemonDeployments that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListDaemonDeploymentsRequestT = Model::ListDaemonDeploymentsRequest>
+  void ListDaemonDeploymentsAsync(const ListDaemonDeploymentsRequestT& request, const ListDaemonDeploymentsResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ECSClient::ListDaemonDeployments, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a list of daemon task definitions that are registered to your
+   * account. You can filter the results by family name, status, or both to find
+   * daemon task definitions that match your criteria.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListDaemonTaskDefinitions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListDaemonTaskDefinitionsOutcome ListDaemonTaskDefinitions(
+      const Model::ListDaemonTaskDefinitionsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListDaemonTaskDefinitions that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListDaemonTaskDefinitionsRequestT = Model::ListDaemonTaskDefinitionsRequest>
+  Model::ListDaemonTaskDefinitionsOutcomeCallable ListDaemonTaskDefinitionsCallable(
+      const ListDaemonTaskDefinitionsRequestT& request = {}) const {
+    return SubmitCallable(&ECSClient::ListDaemonTaskDefinitions, request);
+  }
+
+  /**
+   * An Async wrapper for ListDaemonTaskDefinitions that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListDaemonTaskDefinitionsRequestT = Model::ListDaemonTaskDefinitionsRequest>
+  void ListDaemonTaskDefinitionsAsync(const ListDaemonTaskDefinitionsResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                      const ListDaemonTaskDefinitionsRequestT& request = {}) const {
+    return SubmitAsync(&ECSClient::ListDaemonTaskDefinitions, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a list of daemons. You can filter the results by cluster or capacity
+   * provider.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListDaemons">AWS API
+   * Reference</a></p>
+   */
+  virtual Model::ListDaemonsOutcome ListDaemons(const Model::ListDaemonsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListDaemons that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListDaemonsRequestT = Model::ListDaemonsRequest>
+  Model::ListDaemonsOutcomeCallable ListDaemonsCallable(const ListDaemonsRequestT& request = {}) const {
+    return SubmitCallable(&ECSClient::ListDaemons, request);
+  }
+
+  /**
+   * An Async wrapper for ListDaemons that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListDaemonsRequestT = Model::ListDaemonsRequest>
+  void ListDaemonsAsync(const ListDaemonsResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                        const ListDaemonsRequestT& request = {}) const {
+    return SubmitAsync(&ECSClient::ListDaemons, request, handler, context);
+  }
+
+  /**
    * <p>This operation lists all the service deployments that meet the specified
    * filter criteria.</p> <p>A service deployment happens when you release a software
    * update for the service. You route traffic from the running service revisions to
@@ -1675,6 +1979,47 @@ class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient,
                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                       const RegisterContainerInstanceRequestT& request = {}) const {
     return SubmitAsync(&ECSClient::RegisterContainerInstance, request, handler, context);
+  }
+
+  /**
+   * <p>Registers a new daemon task definition from the supplied <code>family</code>
+   * and <code>containerDefinitions</code>. Optionally, you can add data volumes to
+   * your containers with the <code>volumes</code> parameter. For more information,
+   * see <a
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/daemon-task-definitions.html">Daemon
+   * task definitions</a> in the <i>Amazon Elastic Container Service Developer
+   * Guide</i>.</p> <p>A daemon task definition is a template that describes the
+   * containers that form a daemon. Daemons deploy cross-cutting software agents such
+   * as security monitoring, telemetry, and logging across your Amazon ECS
+   * infrastructure.</p> <p>Each time you call
+   * <code>RegisterDaemonTaskDefinition</code>, a new revision of the daemon task
+   * definition is created. You can't modify a revision after you register
+   * it.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterDaemonTaskDefinition">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RegisterDaemonTaskDefinitionOutcome RegisterDaemonTaskDefinition(
+      const Model::RegisterDaemonTaskDefinitionRequest& request) const;
+
+  /**
+   * A Callable wrapper for RegisterDaemonTaskDefinition that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename RegisterDaemonTaskDefinitionRequestT = Model::RegisterDaemonTaskDefinitionRequest>
+  Model::RegisterDaemonTaskDefinitionOutcomeCallable RegisterDaemonTaskDefinitionCallable(
+      const RegisterDaemonTaskDefinitionRequestT& request) const {
+    return SubmitCallable(&ECSClient::RegisterDaemonTaskDefinition, request);
+  }
+
+  /**
+   * An Async wrapper for RegisterDaemonTaskDefinition that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename RegisterDaemonTaskDefinitionRequestT = Model::RegisterDaemonTaskDefinitionRequest>
+  void RegisterDaemonTaskDefinitionAsync(const RegisterDaemonTaskDefinitionRequestT& request,
+                                         const RegisterDaemonTaskDefinitionResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ECSClient::RegisterDaemonTaskDefinition, request, handler, context);
   }
 
   /**
@@ -2249,6 +2594,42 @@ class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient,
                                           const UpdateContainerInstancesStateResponseReceivedHandler& handler,
                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ECSClient::UpdateContainerInstancesState, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the specified daemon. When you update a daemon, a new deployment is
+   * triggered that progressively rolls out the changes to the container instances
+   * associated with the daemon's capacity providers. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/daemon-deployments.html">Daemon
+   * deployments</a> in the <i>Amazon Elastic Container Service Developer
+   * Guide</i>.</p> <p>Amazon ECS drains existing container instances and provisions
+   * new instances with the updated daemon. Amazon ECS automatically launches
+   * replacement tasks for your services.</p>  <p>Updating a daemon
+   * triggers a rolling deployment that drains and replaces container instances. Plan
+   * updates during maintenance windows to minimize impact on running services.</p>
+   *   <p>ECS Managed Daemons is only supported for Amazon ECS
+   * Managed Instances Capacity Providers.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateDaemon">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateDaemonOutcome UpdateDaemon(const Model::UpdateDaemonRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateDaemon that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UpdateDaemonRequestT = Model::UpdateDaemonRequest>
+  Model::UpdateDaemonOutcomeCallable UpdateDaemonCallable(const UpdateDaemonRequestT& request) const {
+    return SubmitCallable(&ECSClient::UpdateDaemon, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateDaemon that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UpdateDaemonRequestT = Model::UpdateDaemonRequest>
+  void UpdateDaemonAsync(const UpdateDaemonRequestT& request, const UpdateDaemonResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ECSClient::UpdateDaemon, request, handler, context);
   }
 
   /**

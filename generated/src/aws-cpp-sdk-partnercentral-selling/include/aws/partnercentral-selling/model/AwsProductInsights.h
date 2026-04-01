@@ -9,7 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/partnercentral-selling/model/AwsProductDetails.h>
-#include <aws/partnercentral-selling/model/AwsProductInsightsCurrencyCodeEnum.h>
+#include <aws/partnercentral-selling/model/CurrencyCode.h>
 #include <aws/partnercentral-selling/model/PaymentFrequency.h>
 
 #include <utility>
@@ -40,15 +40,17 @@ class AwsProductInsights {
 
   ///@{
   /**
-   * <p>ISO 4217 currency code.</p>
+   * <p>ISO 4217 currency code. Supported values are <code>USD</code> and
+   * <code>EUR</code>. Returns <code>EUR</code> when the opportunity is in the
+   * <code>aws-eusc</code> (AWS European Sovereign Cloud) partition.</p>
    */
-  inline AwsProductInsightsCurrencyCodeEnum GetCurrencyCode() const { return m_currencyCode; }
+  inline CurrencyCode GetCurrencyCode() const { return m_currencyCode; }
   inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
-  inline void SetCurrencyCode(AwsProductInsightsCurrencyCodeEnum value) {
+  inline void SetCurrencyCode(CurrencyCode value) {
     m_currencyCodeHasBeenSet = true;
     m_currencyCode = value;
   }
-  inline AwsProductInsights& WithCurrencyCode(AwsProductInsightsCurrencyCodeEnum value) {
+  inline AwsProductInsights& WithCurrencyCode(CurrencyCode value) {
     SetCurrencyCode(value);
     return *this;
   }
@@ -172,7 +174,7 @@ class AwsProductInsights {
   }
   ///@}
  private:
-  AwsProductInsightsCurrencyCodeEnum m_currencyCode{AwsProductInsightsCurrencyCodeEnum::NOT_SET};
+  CurrencyCode m_currencyCode{CurrencyCode::NOT_SET};
 
   PaymentFrequency m_frequency{PaymentFrequency::NOT_SET};
 

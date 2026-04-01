@@ -28,11 +28,35 @@ class JsonValue;
 }  // namespace Utils
 namespace deadline {
 namespace Model {
+/**
+ * <p>Mixin that adds an optional ARN field to response structures. Apply to
+ * SummaryMixins (flows into Get, Summary, and BatchGet) and Create
+ * outputs.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetQueueResponse">AWS
+ * API Reference</a></p>
+ */
 class GetQueueResult {
  public:
   AWS_DEADLINE_API GetQueueResult() = default;
   AWS_DEADLINE_API GetQueueResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
   AWS_DEADLINE_API GetQueueResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The farm ID for the queue.</p>
+   */
+  inline const Aws::String& GetFarmId() const { return m_farmId; }
+  template <typename FarmIdT = Aws::String>
+  void SetFarmId(FarmIdT&& value) {
+    m_farmIdHasBeenSet = true;
+    m_farmId = std::forward<FarmIdT>(value);
+  }
+  template <typename FarmIdT = Aws::String>
+  GetQueueResult& WithFarmId(FarmIdT&& value) {
+    SetFarmId(std::forward<FarmIdT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -66,42 +90,6 @@ class GetQueueResult {
   template <typename DisplayNameT = Aws::String>
   GetQueueResult& WithDisplayName(DisplayNameT&& value) {
     SetDisplayName(std::forward<DisplayNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The description of the queue.</p>  <p>This field can store any
-   * content. Escape or encode this content before displaying it on a webpage or any
-   * other system that might interpret the content of this field.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  GetQueueResult& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The farm ID for the queue.</p>
-   */
-  inline const Aws::String& GetFarmId() const { return m_farmId; }
-  template <typename FarmIdT = Aws::String>
-  void SetFarmId(FarmIdT&& value) {
-    m_farmIdHasBeenSet = true;
-    m_farmId = std::forward<FarmIdT>(value);
-  }
-  template <typename FarmIdT = Aws::String>
-  GetQueueResult& WithFarmId(FarmIdT&& value) {
-    SetFarmId(std::forward<FarmIdT>(value));
     return *this;
   }
   ///@}
@@ -150,6 +138,93 @@ class GetQueueResult {
   }
   inline GetQueueResult& WithBlockedReason(QueueBlockedReason value) {
     SetBlockedReason(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The date and time the resource was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  GetQueueResult& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The user or system that created this resource.</p>
+   */
+  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+  template <typename CreatedByT = Aws::String>
+  void SetCreatedBy(CreatedByT&& value) {
+    m_createdByHasBeenSet = true;
+    m_createdBy = std::forward<CreatedByT>(value);
+  }
+  template <typename CreatedByT = Aws::String>
+  GetQueueResult& WithCreatedBy(CreatedByT&& value) {
+    SetCreatedBy(std::forward<CreatedByT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The date and time the resource was updated.</p>
+   */
+  inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+  template <typename UpdatedAtT = Aws::Utils::DateTime>
+  void SetUpdatedAt(UpdatedAtT&& value) {
+    m_updatedAtHasBeenSet = true;
+    m_updatedAt = std::forward<UpdatedAtT>(value);
+  }
+  template <typename UpdatedAtT = Aws::Utils::DateTime>
+  GetQueueResult& WithUpdatedAt(UpdatedAtT&& value) {
+    SetUpdatedAt(std::forward<UpdatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The user or system that updated this resource.</p>
+   */
+  inline const Aws::String& GetUpdatedBy() const { return m_updatedBy; }
+  template <typename UpdatedByT = Aws::String>
+  void SetUpdatedBy(UpdatedByT&& value) {
+    m_updatedByHasBeenSet = true;
+    m_updatedBy = std::forward<UpdatedByT>(value);
+  }
+  template <typename UpdatedByT = Aws::String>
+  GetQueueResult& WithUpdatedBy(UpdatedByT&& value) {
+    SetUpdatedBy(std::forward<UpdatedByT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The description of the queue.</p>  <p>This field can store any
+   * content. Escape or encode this content before displaying it on a webpage or any
+   * other system that might interpret the content of this field.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  GetQueueResult& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
     return *this;
   }
   ///@}
@@ -252,74 +327,6 @@ class GetQueueResult {
   ///@}
 
   ///@{
-  /**
-   * <p>The date and time the resource was created.</p>
-   */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
-  }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  GetQueueResult& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The user or system that created this resource.</p>
-   */
-  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
-  template <typename CreatedByT = Aws::String>
-  void SetCreatedBy(CreatedByT&& value) {
-    m_createdByHasBeenSet = true;
-    m_createdBy = std::forward<CreatedByT>(value);
-  }
-  template <typename CreatedByT = Aws::String>
-  GetQueueResult& WithCreatedBy(CreatedByT&& value) {
-    SetCreatedBy(std::forward<CreatedByT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The date and time the resource was updated.</p>
-   */
-  inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
-  template <typename UpdatedAtT = Aws::Utils::DateTime>
-  void SetUpdatedAt(UpdatedAtT&& value) {
-    m_updatedAtHasBeenSet = true;
-    m_updatedAt = std::forward<UpdatedAtT>(value);
-  }
-  template <typename UpdatedAtT = Aws::Utils::DateTime>
-  GetQueueResult& WithUpdatedAt(UpdatedAtT&& value) {
-    SetUpdatedAt(std::forward<UpdatedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The user or system that updated this resource.</p>
-   */
-  inline const Aws::String& GetUpdatedBy() const { return m_updatedBy; }
-  template <typename UpdatedByT = Aws::String>
-  void SetUpdatedBy(UpdatedByT&& value) {
-    m_updatedByHasBeenSet = true;
-    m_updatedBy = std::forward<UpdatedByT>(value);
-  }
-  template <typename UpdatedByT = Aws::String>
-  GetQueueResult& WithUpdatedBy(UpdatedByT&& value) {
-    SetUpdatedBy(std::forward<UpdatedByT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -336,19 +343,27 @@ class GetQueueResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
+  Aws::String m_farmId;
+
   Aws::String m_queueId;
 
   Aws::String m_displayName;
-
-  Aws::String m_description;
-
-  Aws::String m_farmId;
 
   QueueStatus m_status{QueueStatus::NOT_SET};
 
   DefaultQueueBudgetAction m_defaultBudgetAction{DefaultQueueBudgetAction::NOT_SET};
 
   QueueBlockedReason m_blockedReason{QueueBlockedReason::NOT_SET};
+
+  Aws::Utils::DateTime m_createdAt{};
+
+  Aws::String m_createdBy;
+
+  Aws::Utils::DateTime m_updatedAt{};
+
+  Aws::String m_updatedBy;
+
+  Aws::String m_description;
 
   JobAttachmentSettings m_jobAttachmentSettings;
 
@@ -360,32 +375,24 @@ class GetQueueResult {
 
   JobRunAsUser m_jobRunAsUser;
 
-  Aws::Utils::DateTime m_createdAt{};
-
-  Aws::String m_createdBy;
-
-  Aws::Utils::DateTime m_updatedAt{};
-
-  Aws::String m_updatedBy;
-
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_farmIdHasBeenSet = false;
   bool m_queueIdHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
-  bool m_farmIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_defaultBudgetActionHasBeenSet = false;
   bool m_blockedReasonHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_updatedByHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_jobAttachmentSettingsHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
   bool m_requiredFileSystemLocationNamesHasBeenSet = false;
   bool m_allowedStorageProfileIdsHasBeenSet = false;
   bool m_jobRunAsUserHasBeenSet = false;
-  bool m_createdAtHasBeenSet = false;
-  bool m_createdByHasBeenSet = false;
-  bool m_updatedAtHasBeenSet = false;
-  bool m_updatedByHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

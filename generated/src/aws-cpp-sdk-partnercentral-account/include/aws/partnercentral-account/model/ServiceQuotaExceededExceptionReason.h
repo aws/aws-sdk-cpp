@@ -10,7 +10,14 @@
 namespace Aws {
 namespace PartnerCentralAccount {
 namespace Model {
-enum class ServiceQuotaExceededExceptionReason { NOT_SET, LIMIT_EXCEEDED_NUMBER_OF_EMAIL, LIMIT_EXCEEDED_NUMBER_OF_DOMAIN };
+enum class ServiceQuotaExceededExceptionReason {
+  NOT_SET,
+  LIMIT_EXCEEDED_NUMBER_OF_EMAIL,
+  LIMIT_EXCEEDED_NUMBER_OF_DOMAIN,
+  LIMIT_EXCEEDED_NUMBER_OF_CONNECTION_INVITATION_PER_DAY,
+  LIMIT_EXCEEDED_NUMBER_OF_ACTIVE_CONNECTION,
+  LIMIT_EXCEEDED_NUMBER_OF_OPEN_CONNECTION_INVITATION
+};
 
 namespace ServiceQuotaExceededExceptionReasonMapper {
 AWS_PARTNERCENTRALACCOUNT_API ServiceQuotaExceededExceptionReason GetServiceQuotaExceededExceptionReasonForName(const Aws::String& name);

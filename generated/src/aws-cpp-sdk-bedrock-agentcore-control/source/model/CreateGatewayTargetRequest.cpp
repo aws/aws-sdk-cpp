@@ -46,5 +46,9 @@ Aws::String CreateGatewayTargetRequest::SerializePayload() const {
     payload.WithObject("metadataConfiguration", m_metadataConfiguration.Jsonize());
   }
 
+  if (m_privateEndpointHasBeenSet) {
+    payload.WithObject("privateEndpoint", m_privateEndpoint.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
