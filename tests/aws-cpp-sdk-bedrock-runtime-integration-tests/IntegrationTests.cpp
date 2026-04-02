@@ -80,11 +80,11 @@ TEST_F(BedrockRuntimeTests, TestStreaming)
 
 TEST_F(BedrockRuntimeTests, TestInvokeModel)
 {
-  auto bedrockRequest = Aws::BedrockRuntime::Model::InvokeModelRequest{}.WithModelId("us.anthropic.claude-haiku-4-5-20251001-v1:0").WithAccept("application/json") ;
+  auto bedrockRequest = Aws::BedrockRuntime::Model::InvokeModelRequest{}.WithModelId("us.amazon.nova-2-lite-v1:0").WithAccept("application/json");
 
   bedrockRequest.SetBody(Aws::MakeShared<Aws::StringStream>(
         "BedrockRuntimeTests::TestInvokeModel",
-        R"({"anthropic_version":"bedrock-2023-05-31","max_tokens":1024,"messages":[{"role":"user","content":"Why is the Mets baseball team so bad?"}]})"));
+        R"({"messages":[{"role":"user","content":[{"text":"Why is the Mets baseball team so bad?"}]}]})"));
   bedrockRequest.SetContentType("application/json");
 
   Aws::BedrockRuntime::Model::InvokeModelOutcome outcome = m_client->InvokeModel(bedrockRequest);
