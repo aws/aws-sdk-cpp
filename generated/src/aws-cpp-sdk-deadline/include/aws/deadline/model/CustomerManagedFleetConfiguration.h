@@ -54,7 +54,7 @@ class CustomerManagedFleetConfiguration {
 
   ///@{
   /**
-   * <p>The auto scaling configuration options for the customer managed fleet.</p>
+   * <p>The auto scaling configuration settings for the customer managed fleet.</p>
    */
   inline const CustomerManagedAutoScalingConfiguration& GetAutoScalingConfiguration() const { return m_autoScalingConfiguration; }
   inline bool AutoScalingConfigurationHasBeenSet() const { return m_autoScalingConfigurationHasBeenSet; }

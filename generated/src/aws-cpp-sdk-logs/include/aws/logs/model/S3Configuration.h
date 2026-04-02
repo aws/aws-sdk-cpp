@@ -72,7 +72,7 @@ class S3Configuration {
 
   ///@{
   /**
-   * <p>The AWS accountId for the bucket owning account.</p>
+   * <p>The Amazon Web Services accountId for the bucket owning account.</p>
    */
   inline const Aws::String& GetOwnerAccountId() const { return m_ownerAccountId; }
   inline bool OwnerAccountIdHasBeenSet() const { return m_ownerAccountIdHasBeenSet; }
@@ -91,7 +91,7 @@ class S3Configuration {
   ///@{
   /**
    * <p>The Amazon Resource Name (ARN) of the KMS encryption key. Must belong to the
-   * same AWS Region as the destination Amazon S3 bucket.</p>
+   * same Amazon Web Services Region as the destination Amazon S3 bucket.</p>
    */
   inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
   inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }

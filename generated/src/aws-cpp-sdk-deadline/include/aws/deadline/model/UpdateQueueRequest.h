@@ -12,6 +12,7 @@
 #include <aws/deadline/model/DefaultQueueBudgetAction.h>
 #include <aws/deadline/model/JobAttachmentSettings.h>
 #include <aws/deadline/model/JobRunAsUser.h>
+#include <aws/deadline/model/SchedulingConfiguration.h>
 
 #include <utility>
 
@@ -299,6 +300,27 @@ class UpdateQueueRequest : public DeadlineRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The scheduling configuration for the queue. This configuration determines how
+   * workers are assigned to jobs in the queue.</p> <p>When updating the scheduling
+   * configuration, the entire configuration is replaced.</p> <p>In-progress tasks
+   * run to completion before the new scheduling configuration takes effect.</p>
+   */
+  inline const SchedulingConfiguration& GetSchedulingConfiguration() const { return m_schedulingConfiguration; }
+  inline bool SchedulingConfigurationHasBeenSet() const { return m_schedulingConfigurationHasBeenSet; }
+  template <typename SchedulingConfigurationT = SchedulingConfiguration>
+  void SetSchedulingConfiguration(SchedulingConfigurationT&& value) {
+    m_schedulingConfigurationHasBeenSet = true;
+    m_schedulingConfiguration = std::forward<SchedulingConfigurationT>(value);
+  }
+  template <typename SchedulingConfigurationT = SchedulingConfiguration>
+  UpdateQueueRequest& WithSchedulingConfiguration(SchedulingConfigurationT&& value) {
+    SetSchedulingConfiguration(std::forward<SchedulingConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_farmId;
 
@@ -325,6 +347,8 @@ class UpdateQueueRequest : public DeadlineRequest {
   Aws::Vector<Aws::String> m_allowedStorageProfileIdsToAdd;
 
   Aws::Vector<Aws::String> m_allowedStorageProfileIdsToRemove;
+
+  SchedulingConfiguration m_schedulingConfiguration;
   bool m_farmIdHasBeenSet = false;
   bool m_queueIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
@@ -338,6 +362,7 @@ class UpdateQueueRequest : public DeadlineRequest {
   bool m_requiredFileSystemLocationNamesToRemoveHasBeenSet = false;
   bool m_allowedStorageProfileIdsToAddHasBeenSet = false;
   bool m_allowedStorageProfileIdsToRemoveHasBeenSet = false;
+  bool m_schedulingConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

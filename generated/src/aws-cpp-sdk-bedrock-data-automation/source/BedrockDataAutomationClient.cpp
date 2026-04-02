@@ -10,19 +10,29 @@
 #include <aws/bedrock-data-automation/model/CopyBlueprintStageRequest.h>
 #include <aws/bedrock-data-automation/model/CreateBlueprintRequest.h>
 #include <aws/bedrock-data-automation/model/CreateBlueprintVersionRequest.h>
+#include <aws/bedrock-data-automation/model/CreateDataAutomationLibraryRequest.h>
 #include <aws/bedrock-data-automation/model/CreateDataAutomationProjectRequest.h>
 #include <aws/bedrock-data-automation/model/DeleteBlueprintRequest.h>
+#include <aws/bedrock-data-automation/model/DeleteDataAutomationLibraryRequest.h>
 #include <aws/bedrock-data-automation/model/DeleteDataAutomationProjectRequest.h>
 #include <aws/bedrock-data-automation/model/GetBlueprintOptimizationStatusRequest.h>
 #include <aws/bedrock-data-automation/model/GetBlueprintRequest.h>
+#include <aws/bedrock-data-automation/model/GetDataAutomationLibraryEntityRequest.h>
+#include <aws/bedrock-data-automation/model/GetDataAutomationLibraryIngestionJobRequest.h>
+#include <aws/bedrock-data-automation/model/GetDataAutomationLibraryRequest.h>
 #include <aws/bedrock-data-automation/model/GetDataAutomationProjectRequest.h>
 #include <aws/bedrock-data-automation/model/InvokeBlueprintOptimizationAsyncRequest.h>
+#include <aws/bedrock-data-automation/model/InvokeDataAutomationLibraryIngestionJobRequest.h>
 #include <aws/bedrock-data-automation/model/ListBlueprintsRequest.h>
+#include <aws/bedrock-data-automation/model/ListDataAutomationLibrariesRequest.h>
+#include <aws/bedrock-data-automation/model/ListDataAutomationLibraryEntitiesRequest.h>
+#include <aws/bedrock-data-automation/model/ListDataAutomationLibraryIngestionJobsRequest.h>
 #include <aws/bedrock-data-automation/model/ListDataAutomationProjectsRequest.h>
 #include <aws/bedrock-data-automation/model/ListTagsForResourceRequest.h>
 #include <aws/bedrock-data-automation/model/TagResourceRequest.h>
 #include <aws/bedrock-data-automation/model/UntagResourceRequest.h>
 #include <aws/bedrock-data-automation/model/UpdateBlueprintRequest.h>
+#include <aws/bedrock-data-automation/model/UpdateDataAutomationLibraryRequest.h>
 #include <aws/bedrock-data-automation/model/UpdateDataAutomationProjectRequest.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/CoreErrors.h>
@@ -248,6 +258,32 @@ CreateBlueprintVersionOutcome BedrockDataAutomationClient::CreateBlueprintVersio
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+CreateDataAutomationLibraryOutcome BedrockDataAutomationClient::CreateDataAutomationLibrary(
+    const CreateDataAutomationLibraryRequest& request) const {
+  AWS_OPERATION_GUARD(CreateDataAutomationLibrary);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDataAutomationLibrary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, CreateDataAutomationLibrary, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateDataAutomationLibrary, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateDataAutomationLibrary",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateDataAutomationLibraryOutcome>(
+      [&]() -> CreateDataAutomationLibraryOutcome {
+        auto result = MakeRequestDeserialize(
+            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT,
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/data-automation-libraries/"); });
+        return result.IsSuccess() ? CreateDataAutomationLibraryOutcome(result.GetResultWithOwnership())
+                                  : CreateDataAutomationLibraryOutcome(std::move(result.GetError()));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 CreateDataAutomationProjectOutcome BedrockDataAutomationClient::CreateDataAutomationProject(
     const CreateDataAutomationProjectRequest& request) const {
   AWS_OPERATION_GUARD(CreateDataAutomationProject);
@@ -300,6 +336,39 @@ DeleteBlueprintOutcome BedrockDataAutomationClient::DeleteBlueprint(const Delete
                                              });
         return result.IsSuccess() ? DeleteBlueprintOutcome(result.GetResultWithOwnership())
                                   : DeleteBlueprintOutcome(std::move(result.GetError()));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteDataAutomationLibraryOutcome BedrockDataAutomationClient::DeleteDataAutomationLibrary(
+    const DeleteDataAutomationLibraryRequest& request) const {
+  AWS_OPERATION_GUARD(DeleteDataAutomationLibrary);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDataAutomationLibrary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.LibraryArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteDataAutomationLibrary", "Required field: LibraryArn, is not set");
+    return DeleteDataAutomationLibraryOutcome(Aws::Client::AWSError<BedrockDataAutomationErrors>(
+        BedrockDataAutomationErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LibraryArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, DeleteDataAutomationLibrary, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteDataAutomationLibrary, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteDataAutomationLibrary",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteDataAutomationLibraryOutcome>(
+      [&]() -> DeleteDataAutomationLibraryOutcome {
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/data-automation-libraries/");
+                                               resolvedEndpoint.AddPathSegment(request.GetLibraryArn());
+                                             });
+        return result.IsSuccess() ? DeleteDataAutomationLibraryOutcome(result.GetResultWithOwnership())
+                                  : DeleteDataAutomationLibraryOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -404,6 +473,128 @@ GetBlueprintOptimizationStatusOutcome BedrockDataAutomationClient::GetBlueprintO
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetDataAutomationLibraryOutcome BedrockDataAutomationClient::GetDataAutomationLibrary(
+    const GetDataAutomationLibraryRequest& request) const {
+  AWS_OPERATION_GUARD(GetDataAutomationLibrary);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDataAutomationLibrary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.LibraryArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetDataAutomationLibrary", "Required field: LibraryArn, is not set");
+    return GetDataAutomationLibraryOutcome(Aws::Client::AWSError<BedrockDataAutomationErrors>(
+        BedrockDataAutomationErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LibraryArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetDataAutomationLibrary, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetDataAutomationLibrary, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetDataAutomationLibrary",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetDataAutomationLibraryOutcome>(
+      [&]() -> GetDataAutomationLibraryOutcome {
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/data-automation-libraries/");
+                                               resolvedEndpoint.AddPathSegment(request.GetLibraryArn());
+                                             });
+        return result.IsSuccess() ? GetDataAutomationLibraryOutcome(result.GetResultWithOwnership())
+                                  : GetDataAutomationLibraryOutcome(std::move(result.GetError()));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetDataAutomationLibraryEntityOutcome BedrockDataAutomationClient::GetDataAutomationLibraryEntity(
+    const GetDataAutomationLibraryEntityRequest& request) const {
+  AWS_OPERATION_GUARD(GetDataAutomationLibraryEntity);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDataAutomationLibraryEntity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.LibraryArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetDataAutomationLibraryEntity", "Required field: LibraryArn, is not set");
+    return GetDataAutomationLibraryEntityOutcome(Aws::Client::AWSError<BedrockDataAutomationErrors>(
+        BedrockDataAutomationErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LibraryArn]", false));
+  }
+  if (!request.EntityTypeHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetDataAutomationLibraryEntity", "Required field: EntityType, is not set");
+    return GetDataAutomationLibraryEntityOutcome(Aws::Client::AWSError<BedrockDataAutomationErrors>(
+        BedrockDataAutomationErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EntityType]", false));
+  }
+  if (!request.EntityIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetDataAutomationLibraryEntity", "Required field: EntityId, is not set");
+    return GetDataAutomationLibraryEntityOutcome(Aws::Client::AWSError<BedrockDataAutomationErrors>(
+        BedrockDataAutomationErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EntityId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetDataAutomationLibraryEntity, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetDataAutomationLibraryEntity, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetDataAutomationLibraryEntity",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetDataAutomationLibraryEntityOutcome>(
+      [&]() -> GetDataAutomationLibraryEntityOutcome {
+        auto result =
+            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                     resolvedEndpoint.AddPathSegments("/data-automation-libraries/");
+                                     resolvedEndpoint.AddPathSegment(request.GetLibraryArn());
+                                     resolvedEndpoint.AddPathSegments("/entityType/");
+                                     resolvedEndpoint.AddPathSegment(EntityTypeMapper::GetNameForEntityType(request.GetEntityType()));
+                                     resolvedEndpoint.AddPathSegments("/entities/");
+                                     resolvedEndpoint.AddPathSegment(request.GetEntityId());
+                                   });
+        return result.IsSuccess() ? GetDataAutomationLibraryEntityOutcome(result.GetResultWithOwnership())
+                                  : GetDataAutomationLibraryEntityOutcome(std::move(result.GetError()));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetDataAutomationLibraryIngestionJobOutcome BedrockDataAutomationClient::GetDataAutomationLibraryIngestionJob(
+    const GetDataAutomationLibraryIngestionJobRequest& request) const {
+  AWS_OPERATION_GUARD(GetDataAutomationLibraryIngestionJob);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDataAutomationLibraryIngestionJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.LibraryArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetDataAutomationLibraryIngestionJob", "Required field: LibraryArn, is not set");
+    return GetDataAutomationLibraryIngestionJobOutcome(Aws::Client::AWSError<BedrockDataAutomationErrors>(
+        BedrockDataAutomationErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LibraryArn]", false));
+  }
+  if (!request.JobArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetDataAutomationLibraryIngestionJob", "Required field: JobArn, is not set");
+    return GetDataAutomationLibraryIngestionJobOutcome(Aws::Client::AWSError<BedrockDataAutomationErrors>(
+        BedrockDataAutomationErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetDataAutomationLibraryIngestionJob, CoreErrors,
+                          CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetDataAutomationLibraryIngestionJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetDataAutomationLibraryIngestionJob",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetDataAutomationLibraryIngestionJobOutcome>(
+      [&]() -> GetDataAutomationLibraryIngestionJobOutcome {
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/data-automation-libraries/");
+                                               resolvedEndpoint.AddPathSegment(request.GetLibraryArn());
+                                               resolvedEndpoint.AddPathSegments("/library-ingestion-jobs/");
+                                               resolvedEndpoint.AddPathSegment(request.GetJobArn());
+                                             });
+        return result.IsSuccess() ? GetDataAutomationLibraryIngestionJobOutcome(result.GetResultWithOwnership())
+                                  : GetDataAutomationLibraryIngestionJobOutcome(std::move(result.GetError()));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetDataAutomationProjectOutcome BedrockDataAutomationClient::GetDataAutomationProject(
     const GetDataAutomationProjectRequest& request) const {
   AWS_OPERATION_GUARD(GetDataAutomationProject);
@@ -465,6 +656,41 @@ InvokeBlueprintOptimizationAsyncOutcome BedrockDataAutomationClient::InvokeBluep
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+InvokeDataAutomationLibraryIngestionJobOutcome BedrockDataAutomationClient::InvokeDataAutomationLibraryIngestionJob(
+    const InvokeDataAutomationLibraryIngestionJobRequest& request) const {
+  AWS_OPERATION_GUARD(InvokeDataAutomationLibraryIngestionJob);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, InvokeDataAutomationLibraryIngestionJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.LibraryArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("InvokeDataAutomationLibraryIngestionJob", "Required field: LibraryArn, is not set");
+    return InvokeDataAutomationLibraryIngestionJobOutcome(Aws::Client::AWSError<BedrockDataAutomationErrors>(
+        BedrockDataAutomationErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LibraryArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, InvokeDataAutomationLibraryIngestionJob, CoreErrors,
+                          CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, InvokeDataAutomationLibraryIngestionJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".InvokeDataAutomationLibraryIngestionJob",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<InvokeDataAutomationLibraryIngestionJobOutcome>(
+      [&]() -> InvokeDataAutomationLibraryIngestionJobOutcome {
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/data-automation-libraries/");
+                                               resolvedEndpoint.AddPathSegment(request.GetLibraryArn());
+                                               resolvedEndpoint.AddPathSegments("/library-ingestion-jobs/");
+                                             });
+        return result.IsSuccess() ? InvokeDataAutomationLibraryIngestionJobOutcome(result.GetResultWithOwnership())
+                                  : InvokeDataAutomationLibraryIngestionJobOutcome(std::move(result.GetError()));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListBlueprintsOutcome BedrockDataAutomationClient::ListBlueprints(const ListBlueprintsRequest& request) const {
   AWS_OPERATION_GUARD(ListBlueprints);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBlueprints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -484,6 +710,110 @@ ListBlueprintsOutcome BedrockDataAutomationClient::ListBlueprints(const ListBlue
             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/blueprints/"); });
         return result.IsSuccess() ? ListBlueprintsOutcome(result.GetResultWithOwnership())
                                   : ListBlueprintsOutcome(std::move(result.GetError()));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListDataAutomationLibrariesOutcome BedrockDataAutomationClient::ListDataAutomationLibraries(
+    const ListDataAutomationLibrariesRequest& request) const {
+  AWS_OPERATION_GUARD(ListDataAutomationLibraries);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDataAutomationLibraries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ListDataAutomationLibraries, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListDataAutomationLibraries, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListDataAutomationLibraries",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListDataAutomationLibrariesOutcome>(
+      [&]() -> ListDataAutomationLibrariesOutcome {
+        auto result = MakeRequestDeserialize(
+            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/data-automation-libraries/"); });
+        return result.IsSuccess() ? ListDataAutomationLibrariesOutcome(result.GetResultWithOwnership())
+                                  : ListDataAutomationLibrariesOutcome(std::move(result.GetError()));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListDataAutomationLibraryEntitiesOutcome BedrockDataAutomationClient::ListDataAutomationLibraryEntities(
+    const ListDataAutomationLibraryEntitiesRequest& request) const {
+  AWS_OPERATION_GUARD(ListDataAutomationLibraryEntities);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDataAutomationLibraryEntities, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.LibraryArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDataAutomationLibraryEntities", "Required field: LibraryArn, is not set");
+    return ListDataAutomationLibraryEntitiesOutcome(Aws::Client::AWSError<BedrockDataAutomationErrors>(
+        BedrockDataAutomationErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LibraryArn]", false));
+  }
+  if (!request.EntityTypeHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDataAutomationLibraryEntities", "Required field: EntityType, is not set");
+    return ListDataAutomationLibraryEntitiesOutcome(Aws::Client::AWSError<BedrockDataAutomationErrors>(
+        BedrockDataAutomationErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EntityType]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ListDataAutomationLibraryEntities, CoreErrors,
+                          CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListDataAutomationLibraryEntities, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListDataAutomationLibraryEntities",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListDataAutomationLibraryEntitiesOutcome>(
+      [&]() -> ListDataAutomationLibraryEntitiesOutcome {
+        auto result =
+            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                     resolvedEndpoint.AddPathSegments("/data-automation-libraries/");
+                                     resolvedEndpoint.AddPathSegment(request.GetLibraryArn());
+                                     resolvedEndpoint.AddPathSegments("/entityType/");
+                                     resolvedEndpoint.AddPathSegment(EntityTypeMapper::GetNameForEntityType(request.GetEntityType()));
+                                     resolvedEndpoint.AddPathSegments("/entities/");
+                                   });
+        return result.IsSuccess() ? ListDataAutomationLibraryEntitiesOutcome(result.GetResultWithOwnership())
+                                  : ListDataAutomationLibraryEntitiesOutcome(std::move(result.GetError()));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListDataAutomationLibraryIngestionJobsOutcome BedrockDataAutomationClient::ListDataAutomationLibraryIngestionJobs(
+    const ListDataAutomationLibraryIngestionJobsRequest& request) const {
+  AWS_OPERATION_GUARD(ListDataAutomationLibraryIngestionJobs);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDataAutomationLibraryIngestionJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.LibraryArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDataAutomationLibraryIngestionJobs", "Required field: LibraryArn, is not set");
+    return ListDataAutomationLibraryIngestionJobsOutcome(Aws::Client::AWSError<BedrockDataAutomationErrors>(
+        BedrockDataAutomationErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LibraryArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ListDataAutomationLibraryIngestionJobs, CoreErrors,
+                          CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListDataAutomationLibraryIngestionJobs, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListDataAutomationLibraryIngestionJobs",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListDataAutomationLibraryIngestionJobsOutcome>(
+      [&]() -> ListDataAutomationLibraryIngestionJobsOutcome {
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/data-automation-libraries/");
+                                               resolvedEndpoint.AddPathSegment(request.GetLibraryArn());
+                                               resolvedEndpoint.AddPathSegments("/library-ingestion-jobs/");
+                                             });
+        return result.IsSuccess() ? ListDataAutomationLibraryIngestionJobsOutcome(result.GetResultWithOwnership())
+                                  : ListDataAutomationLibraryIngestionJobsOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -616,6 +946,39 @@ UpdateBlueprintOutcome BedrockDataAutomationClient::UpdateBlueprint(const Update
                                              });
         return result.IsSuccess() ? UpdateBlueprintOutcome(result.GetResultWithOwnership())
                                   : UpdateBlueprintOutcome(std::move(result.GetError()));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateDataAutomationLibraryOutcome BedrockDataAutomationClient::UpdateDataAutomationLibrary(
+    const UpdateDataAutomationLibraryRequest& request) const {
+  AWS_OPERATION_GUARD(UpdateDataAutomationLibrary);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDataAutomationLibrary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.LibraryArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateDataAutomationLibrary", "Required field: LibraryArn, is not set");
+    return UpdateDataAutomationLibraryOutcome(Aws::Client::AWSError<BedrockDataAutomationErrors>(
+        BedrockDataAutomationErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LibraryArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, UpdateDataAutomationLibrary, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateDataAutomationLibrary, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateDataAutomationLibrary",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateDataAutomationLibraryOutcome>(
+      [&]() -> UpdateDataAutomationLibraryOutcome {
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/data-automation-libraries/");
+                                               resolvedEndpoint.AddPathSegment(request.GetLibraryArn());
+                                             });
+        return result.IsSuccess() ? UpdateDataAutomationLibraryOutcome(result.GetResultWithOwnership())
+                                  : UpdateDataAutomationLibraryOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

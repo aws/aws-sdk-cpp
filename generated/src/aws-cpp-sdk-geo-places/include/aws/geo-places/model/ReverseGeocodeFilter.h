@@ -34,7 +34,10 @@ class ReverseGeocodeFilter {
 
   ///@{
   /**
-   * <p>The included place types.</p>
+   * <p> The included place types. For <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * support only <code>Street</code> and <code>PointAddress</code> values. </p>
    */
   inline const Aws::Vector<ReverseGeocodeFilterPlaceType>& GetIncludePlaceTypes() const { return m_includePlaceTypes; }
   inline bool IncludePlaceTypesHasBeenSet() const { return m_includePlaceTypesHasBeenSet; }

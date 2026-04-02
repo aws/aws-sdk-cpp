@@ -62,6 +62,10 @@ Session& Session::operator=(JsonView jsonValue) {
     m_instanceId = jsonValue.GetString("InstanceId");
     m_instanceIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("InstanceDrainStatus")) {
+    m_instanceDrainStatus = InstanceDrainStatusMapper::GetInstanceDrainStatusForName(jsonValue.GetString("InstanceDrainStatus"));
+    m_instanceDrainStatusHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -110,6 +114,10 @@ JsonValue Session::Jsonize() const {
 
   if (m_instanceIdHasBeenSet) {
     payload.WithString("InstanceId", m_instanceId);
+  }
+
+  if (m_instanceDrainStatusHasBeenSet) {
+    payload.WithString("InstanceDrainStatus", InstanceDrainStatusMapper::GetNameForInstanceDrainStatus(m_instanceDrainStatus));
   }
 
   return payload;

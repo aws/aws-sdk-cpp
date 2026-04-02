@@ -437,6 +437,28 @@ class GameSession {
 
   ///@{
   /**
+   * <p>A descriptive label for the compute resource. The compute resource that is
+   * hosting the game session. For EC2 fleets, this is the EC2 instance ID. For
+   * Container fleets, each game server container group on a fleet instance is
+   * assigned a compute name. For Anywhere fleets, this is the custom compute
+   * name.</p>
+   */
+  inline const Aws::String& GetComputeName() const { return m_computeName; }
+  inline bool ComputeNameHasBeenSet() const { return m_computeNameHasBeenSet; }
+  template <typename ComputeNameT = Aws::String>
+  void SetComputeName(ComputeNameT&& value) {
+    m_computeNameHasBeenSet = true;
+    m_computeName = std::forward<ComputeNameT>(value);
+  }
+  template <typename ComputeNameT = Aws::String>
+  GameSession& WithComputeName(ComputeNameT&& value) {
+    SetComputeName(std::forward<ComputeNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Indicates whether player gateway is available for use for this game session.
    * Note, even if a fleet has PlayerGatewayMode configured as <code>ENABLED</code>,
    * player gateway might not be available in a specific location. For more
@@ -497,6 +519,8 @@ class GameSession {
 
   Aws::String m_location;
 
+  Aws::String m_computeName;
+
   PlayerGatewayStatus m_playerGatewayStatus{PlayerGatewayStatus::NOT_SET};
   bool m_gameSessionIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -517,6 +541,7 @@ class GameSession {
   bool m_gameSessionDataHasBeenSet = false;
   bool m_matchmakerDataHasBeenSet = false;
   bool m_locationHasBeenSet = false;
+  bool m_computeNameHasBeenSet = false;
   bool m_playerGatewayStatusHasBeenSet = false;
 };
 

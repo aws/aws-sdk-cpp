@@ -299,6 +299,8 @@
 #include <aws/deadline/model/Period.h>
 #include <aws/deadline/model/PosixUser.h>
 #include <aws/deadline/model/PrincipalType.h>
+#include <aws/deadline/model/PriorityBalancedSchedulingConfiguration.h>
+#include <aws/deadline/model/PriorityFifoSchedulingConfiguration.h>
 #include <aws/deadline/model/PutMeteredProductRequest.h>
 #include <aws/deadline/model/PutMeteredProductResult.h>
 #include <aws/deadline/model/QueueBlockedReason.h>
@@ -315,6 +317,11 @@
 #include <aws/deadline/model/ResponseBudgetAction.h>
 #include <aws/deadline/model/RunAs.h>
 #include <aws/deadline/model/S3Location.h>
+#include <aws/deadline/model/SchedulingConfiguration.h>
+#include <aws/deadline/model/SchedulingMaxPriorityOverride.h>
+#include <aws/deadline/model/SchedulingMaxPriorityOverrideAlwaysScheduleFirst.h>
+#include <aws/deadline/model/SchedulingMinPriorityOverride.h>
+#include <aws/deadline/model/SchedulingMinPriorityOverrideAlwaysScheduleLast.h>
 #include <aws/deadline/model/SearchFilterExpression.h>
 #include <aws/deadline/model/SearchGroupedFilterExpressions.h>
 #include <aws/deadline/model/SearchJobsRequest.h>
@@ -432,6 +439,7 @@
 #include <aws/deadline/model/ValidationExceptionField.h>
 #include <aws/deadline/model/ValidationExceptionReason.h>
 #include <aws/deadline/model/VpcConfiguration.h>
+#include <aws/deadline/model/WeightedBalancedSchedulingConfiguration.h>
 #include <aws/deadline/model/WindowsUser.h>
 #include <aws/deadline/model/WorkerAmountCapability.h>
 #include <aws/deadline/model/WorkerAttributeCapability.h>

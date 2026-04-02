@@ -35,6 +35,10 @@ Aws::String UpdateDataAutomationProjectRequest::SerializePayload() const {
     payload.WithObject("overrideConfiguration", m_overrideConfiguration.Jsonize());
   }
 
+  if (m_dataAutomationLibraryConfigurationHasBeenSet) {
+    payload.WithObject("dataAutomationLibraryConfiguration", m_dataAutomationLibraryConfiguration.Jsonize());
+  }
+
   if (m_encryptionConfigurationHasBeenSet) {
     payload.WithObject("encryptionConfiguration", m_encryptionConfiguration.Jsonize());
   }

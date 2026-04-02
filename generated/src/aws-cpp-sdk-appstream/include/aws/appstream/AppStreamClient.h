@@ -1890,6 +1890,35 @@ class AWS_APPSTREAM_API AppStreamClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Drains the instance hosting the specified streaming session. The instance
+   * stops accepting new sessions while existing sessions continue uninterrupted.
+   * Once all sessions end, the instance is reclaimed and replaced. This only applies
+   * to multi-session fleets.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DrainSessionInstance">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DrainSessionInstanceOutcome DrainSessionInstance(const Model::DrainSessionInstanceRequest& request) const;
+
+  /**
+   * A Callable wrapper for DrainSessionInstance that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DrainSessionInstanceRequestT = Model::DrainSessionInstanceRequest>
+  Model::DrainSessionInstanceOutcomeCallable DrainSessionInstanceCallable(const DrainSessionInstanceRequestT& request) const {
+    return SubmitCallable(&AppStreamClient::DrainSessionInstance, request);
+  }
+
+  /**
+   * An Async wrapper for DrainSessionInstance that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DrainSessionInstanceRequestT = Model::DrainSessionInstanceRequest>
+  void DrainSessionInstanceAsync(const DrainSessionInstanceRequestT& request, const DrainSessionInstanceResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AppStreamClient::DrainSessionInstance, request, handler, context);
+  }
+
+  /**
    * <p>Enables a user in the user pool. After being enabled, users can sign in to
    * WorkSpaces Applications and open applications from the stacks to which they are
    * assigned.</p><p><h3>See Also:</h3>   <a

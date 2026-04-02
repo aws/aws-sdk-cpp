@@ -62,9 +62,11 @@ class SearchTextRequest : public GeoPlacesRequest {
   /**
    * <p>The query Id returned by the suggest API. If passed in the request, the
    * SearchText API will preform a SearchText query with the improved query terms for
-   * the original query made to the suggest API.</p>  <p>Exactly one of the
-   * following fields must be set: <code>QueryText</code> or
-   * <code>QueryId</code>.</p>
+   * the original query made to the suggest API. Not available in
+   * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers.</p>  <p>Exactly one of the following fields must be set:
+   * <code>QueryText</code> or <code>QueryId</code>.</p>
    */
   inline const Aws::String& GetQueryId() const { return m_queryId; }
   inline bool QueryIdHasBeenSet() const { return m_queryIdHasBeenSet; }
@@ -146,7 +148,10 @@ class SearchTextRequest : public GeoPlacesRequest {
   ///@{
   /**
    * <p>A list of optional additional parameters, such as time zone, that can be
-   * requested for each result.</p>
+   * requested for each result. For <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * support only the <code>TimeZone</code> value.</p>
    */
   inline const Aws::Vector<SearchTextAdditionalFeature>& GetAdditionalFeatures() const { return m_additionalFeatures; }
   inline bool AdditionalFeaturesHasBeenSet() const { return m_additionalFeaturesHasBeenSet; }
@@ -172,7 +177,11 @@ class SearchTextRequest : public GeoPlacesRequest {
    * <p>A list of <a href="https://en.wikipedia.org/wiki/IETF_language_tag">BCP
    * 47</a> compliant language codes for the results to be rendered in. If there is
    * no data for the result in the requested language, data will be returned in the
-   * default language for the entry.</p>
+   * default language for the entry. For <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * support only the following codes: <code>en, id, km, lo, ms, my, pt, th, tl, vi,
+   * zh</code> </p>
    */
   inline const Aws::String& GetLanguage() const { return m_language; }
   inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
@@ -192,7 +201,11 @@ class SearchTextRequest : public GeoPlacesRequest {
   /**
    * <p>The alpha-2 or alpha-3 character code for the political view of a country.
    * The political view applies to the results of the request to represent unresolved
-   * territorial claims through the point of view of the specified country.</p>
+   * territorial claims through the point of view of the specified country. Not
+   * available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers.</p>
    */
   inline const Aws::String& GetPoliticalView() const { return m_politicalView; }
   inline bool PoliticalViewHasBeenSet() const { return m_politicalViewHasBeenSet; }
@@ -210,13 +223,14 @@ class SearchTextRequest : public GeoPlacesRequest {
 
   ///@{
   /**
-   * <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>,
-   * if left empty.</p>  <p>Storing the response of an SearchText query is
-   * required to comply with service terms, but charged at a higher cost per request.
-   * Please review the <a href="https://aws.amazon.com/location/sla/">user
-   * agreement</a> and <a href="https://aws.amazon.com/location/pricing/">service
-   * pricing structure</a> to determine the correct setting for your use case.</p>
-   *
+   * <p> Indicates if the query results will be persisted in customer infrastructure.
+   * Defaults to <code>SingleUse</code> (not stored). </p>  <p>When storing
+   * <code>SearchText</code> responses, you <i>must</i> set this field to
+   * <code>Storage</code> to comply with the terms of service. These requests will be
+   * charged at a higher rate. Please review the <a
+   * href="https://aws.amazon.com/location/sla/">user agreement</a> and <a
+   * href="https://aws.amazon.com/location/pricing/">service pricing structure</a> to
+   * determine the correct setting for your use case.</p>
    */
   inline SearchTextIntendedUse GetIntendedUse() const { return m_intendedUse; }
   inline bool IntendedUseHasBeenSet() const { return m_intendedUseHasBeenSet; }

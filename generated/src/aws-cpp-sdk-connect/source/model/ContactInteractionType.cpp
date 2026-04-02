@@ -17,6 +17,7 @@ namespace ContactInteractionTypeMapper {
 
 static const int AGENT_HASH = HashingUtils::HashString("AGENT");
 static const int AUTOMATED_HASH = HashingUtils::HashString("AUTOMATED");
+static const int CUSTOMER_HASH = HashingUtils::HashString("CUSTOMER");
 
 ContactInteractionType GetContactInteractionTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ ContactInteractionType GetContactInteractionTypeForName(const Aws::String& name)
     return ContactInteractionType::AGENT;
   } else if (hashCode == AUTOMATED_HASH) {
     return ContactInteractionType::AUTOMATED;
+  } else if (hashCode == CUSTOMER_HASH) {
+    return ContactInteractionType::CUSTOMER;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForContactInteractionType(ContactInteractionType enumValue) {
       return "AGENT";
     case ContactInteractionType::AUTOMATED:
       return "AUTOMATED";
+    case ContactInteractionType::CUSTOMER:
+      return "CUSTOMER";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

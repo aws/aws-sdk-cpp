@@ -116,7 +116,10 @@ class ReverseGeocodeResultItem {
 
   ///@{
   /**
-   * <p>Boolean indicating if the address provided has been corrected.</p>
+   * <p> Boolean indicating if the address provided has been corrected. Not available
+   * in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline bool GetAddressNumberCorrected() const { return m_addressNumberCorrected; }
   inline bool AddressNumberCorrectedHasBeenSet() const { return m_addressNumberCorrectedHasBeenSet; }
@@ -132,7 +135,10 @@ class ReverseGeocodeResultItem {
 
   ///@{
   /**
-   * <p>Contains details about the postal code of the place/result. </p>
+   * <p> Contains details about the postal code of the place/result. Not available in
+   * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const Aws::Vector<PostalCodeDetails>& GetPostalCodeDetails() const { return m_postalCodeDetails; }
   inline bool PostalCodeDetailsHasBeenSet() const { return m_postalCodeDetailsHasBeenSet; }
@@ -246,7 +252,10 @@ class ReverseGeocodeResultItem {
 
   ///@{
   /**
-   * <p>List of food types offered by this result.</p>
+   * <p> List of food types offered by this result. Not available in
+   * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const Aws::Vector<FoodType>& GetFoodTypes() const { return m_foodTypes; }
   inline bool FoodTypesHasBeenSet() const { return m_foodTypesHasBeenSet; }
@@ -270,8 +279,11 @@ class ReverseGeocodeResultItem {
 
   ///@{
   /**
-   * <p>Position of the access point in World Geodetic System (WGS 84) format:
-   * [longitude, latitude].</p>
+   * <p> Position of the access point in World Geodetic System (WGS 84) format:
+   * [longitude, latitude]. Not available in <code>ap-southeast-1</code> and
+   * <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const Aws::Vector<AccessPoint>& GetAccessPoints() const { return m_accessPoints; }
   inline bool AccessPointsHasBeenSet() const { return m_accessPointsHasBeenSet; }
@@ -313,9 +325,13 @@ class ReverseGeocodeResultItem {
 
   ///@{
   /**
-   * <p>The alpha-2 or alpha-3 character code for the political view of a country.
+   * <p> The alpha-2 or alpha-3 character code for the political view of a country.
    * The political view applies to the results of the request to represent unresolved
-   * territorial claims through the point of view of the specified country.</p>
+   * territorial claims through the point of view of the specified country. Not
+   * available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const Aws::String& GetPoliticalView() const { return m_politicalView; }
   inline bool PoliticalViewHasBeenSet() const { return m_politicalViewHasBeenSet; }
@@ -333,7 +349,10 @@ class ReverseGeocodeResultItem {
 
   ///@{
   /**
-   * <p>All Intersections that are near the provided address.</p>
+   * <p> All Intersections that are near the provided address. Not available in
+   * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const Aws::Vector<Intersection>& GetIntersections() const { return m_intersections; }
   inline bool IntersectionsHasBeenSet() const { return m_intersectionsHasBeenSet; }

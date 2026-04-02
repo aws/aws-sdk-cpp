@@ -83,6 +83,12 @@ Aws::String PutMetricAlarmRequest::SerializePayload() const {
   if (m_thresholdMetricIdHasBeenSet) {
     mapSize++;
   }
+  if (m_evaluationCriteriaHasBeenSet) {
+    mapSize++;
+  }
+  if (m_evaluationIntervalHasBeenSet) {
+    mapSize++;
+  }
 
   encoder.WriteMapStart(mapSize);
 
@@ -213,6 +219,16 @@ Aws::String PutMetricAlarmRequest::SerializePayload() const {
   if (m_thresholdMetricIdHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("ThresholdMetricId"));
     encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_thresholdMetricId.c_str()));
+  }
+
+  if (m_evaluationCriteriaHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("EvaluationCriteria"));
+    m_evaluationCriteria.CborEncode(encoder);
+  }
+
+  if (m_evaluationIntervalHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("EvaluationInterval"));
+    (m_evaluationInterval >= 0) ? encoder.WriteUInt(m_evaluationInterval) : encoder.WriteNegInt(m_evaluationInterval);
   }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;

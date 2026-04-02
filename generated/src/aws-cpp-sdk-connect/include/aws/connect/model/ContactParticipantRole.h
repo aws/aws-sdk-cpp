@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Connect {
 namespace Model {
-enum class ContactParticipantRole { NOT_SET, AGENT, SYSTEM, CUSTOM_BOT };
+enum class ContactParticipantRole { NOT_SET, AGENT, SYSTEM, CUSTOM_BOT, CUSTOMER };
 
 namespace ContactParticipantRoleMapper {
 AWS_CONNECT_API ContactParticipantRole GetContactParticipantRoleForName(const Aws::String& name);

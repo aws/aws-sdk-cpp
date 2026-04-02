@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-data-automation/BedrockDataAutomation_EXPORTS.h>
 #include <aws/bedrock-data-automation/model/CustomOutputConfiguration.h>
+#include <aws/bedrock-data-automation/model/DataAutomationLibraryConfiguration.h>
 #include <aws/bedrock-data-automation/model/DataAutomationProjectStage.h>
 #include <aws/bedrock-data-automation/model/DataAutomationProjectStatus.h>
 #include <aws/bedrock-data-automation/model/DataAutomationProjectType.h>
@@ -198,6 +199,24 @@ class DataAutomationProject {
 
   ///@{
 
+  inline const DataAutomationLibraryConfiguration& GetDataAutomationLibraryConfiguration() const {
+    return m_dataAutomationLibraryConfiguration;
+  }
+  inline bool DataAutomationLibraryConfigurationHasBeenSet() const { return m_dataAutomationLibraryConfigurationHasBeenSet; }
+  template <typename DataAutomationLibraryConfigurationT = DataAutomationLibraryConfiguration>
+  void SetDataAutomationLibraryConfiguration(DataAutomationLibraryConfigurationT&& value) {
+    m_dataAutomationLibraryConfigurationHasBeenSet = true;
+    m_dataAutomationLibraryConfiguration = std::forward<DataAutomationLibraryConfigurationT>(value);
+  }
+  template <typename DataAutomationLibraryConfigurationT = DataAutomationLibraryConfiguration>
+  DataAutomationProject& WithDataAutomationLibraryConfiguration(DataAutomationLibraryConfigurationT&& value) {
+    SetDataAutomationLibraryConfiguration(std::forward<DataAutomationLibraryConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
   inline DataAutomationProjectStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
   inline void SetStatus(DataAutomationProjectStatus value) {
@@ -268,6 +287,8 @@ class DataAutomationProject {
 
   OverrideConfiguration m_overrideConfiguration;
 
+  DataAutomationLibraryConfiguration m_dataAutomationLibraryConfiguration;
+
   DataAutomationProjectStatus m_status{DataAutomationProjectStatus::NOT_SET};
 
   Aws::String m_kmsKeyId;
@@ -283,6 +304,7 @@ class DataAutomationProject {
   bool m_standardOutputConfigurationHasBeenSet = false;
   bool m_customOutputConfigurationHasBeenSet = false;
   bool m_overrideConfigurationHasBeenSet = false;
+  bool m_dataAutomationLibraryConfigurationHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
   bool m_kmsEncryptionContextHasBeenSet = false;

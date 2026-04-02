@@ -187,7 +187,10 @@ class SuggestPlaceResult {
 
   ///@{
   /**
-   * <p>List of food types offered by this result.</p>
+   * <p> List of food types offered by this result. Not available in
+   * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const Aws::Vector<FoodType>& GetFoodTypes() const { return m_foodTypes; }
   inline bool FoodTypesHasBeenSet() const { return m_foodTypesHasBeenSet; }
@@ -211,7 +214,10 @@ class SuggestPlaceResult {
 
   ///@{
   /**
-   * <p>The Business Chains associated with the place.</p>
+   * <p> The Business Chains associated with the place. Not available in
+   * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const Aws::Vector<BusinessChain>& GetBusinessChains() const { return m_businessChains; }
   inline bool BusinessChainsHasBeenSet() const { return m_businessChainsHasBeenSet; }
@@ -235,8 +241,11 @@ class SuggestPlaceResult {
 
   ///@{
   /**
-   * <p>Position of the access point in World Geodetic System (WGS 84) format:
-   * [longitude, latitude].</p>
+   * <p> Position of the access point in World Geodetic System (WGS 84) format:
+   * [longitude, latitude]. Not available in <code>ap-southeast-1</code> and
+   * <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const Aws::Vector<AccessPoint>& GetAccessPoints() const { return m_accessPoints; }
   inline bool AccessPointsHasBeenSet() const { return m_accessPointsHasBeenSet; }
@@ -260,9 +269,12 @@ class SuggestPlaceResult {
 
   ///@{
   /**
-   * <p>Indicates known access restrictions on a vehicle access point. The index
+   * <p> Indicates known access restrictions on a vehicle access point. The index
    * correlates to an access point and indicates if access through this point has
-   * some form of restriction.</p>
+   * some form of restriction. Not available in <code>ap-southeast-1</code> and
+   * <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const Aws::Vector<AccessRestriction>& GetAccessRestrictions() const { return m_accessRestrictions; }
   inline bool AccessRestrictionsHasBeenSet() const { return m_accessRestrictionsHasBeenSet; }
@@ -304,9 +316,13 @@ class SuggestPlaceResult {
 
   ///@{
   /**
-   * <p>The alpha-2 or alpha-3 character code for the political view of a country.
+   * <p> The alpha-2 or alpha-3 character code for the political view of a country.
    * The political view applies to the results of the request to represent unresolved
-   * territorial claims through the point of view of the specified country.</p>
+   * territorial claims through the point of view of the specified country. Not
+   * available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const Aws::String& GetPoliticalView() const { return m_politicalView; }
   inline bool PoliticalViewHasBeenSet() const { return m_politicalViewHasBeenSet; }
@@ -324,8 +340,11 @@ class SuggestPlaceResult {
 
   ///@{
   /**
-   * <p>How the various components of the result's address are pronounced in various
-   * languages.</p>
+   * <p> How the various components of the result's address are pronounced in various
+   * languages. Not available in <code>ap-southeast-1</code> and
+   * <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const PhonemeDetails& GetPhonemes() const { return m_phonemes; }
   inline bool PhonemesHasBeenSet() const { return m_phonemesHasBeenSet; }

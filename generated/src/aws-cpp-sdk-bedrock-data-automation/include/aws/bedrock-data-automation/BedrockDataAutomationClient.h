@@ -168,6 +168,36 @@ class AWS_BEDROCKDATAAUTOMATION_API BedrockDataAutomationClient
   }
 
   /**
+   * <p>Creates an Amazon Bedrock Data Automation Library</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/CreateDataAutomationLibrary">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateDataAutomationLibraryOutcome CreateDataAutomationLibrary(
+      const Model::CreateDataAutomationLibraryRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateDataAutomationLibrary that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CreateDataAutomationLibraryRequestT = Model::CreateDataAutomationLibraryRequest>
+  Model::CreateDataAutomationLibraryOutcomeCallable CreateDataAutomationLibraryCallable(
+      const CreateDataAutomationLibraryRequestT& request) const {
+    return SubmitCallable(&BedrockDataAutomationClient::CreateDataAutomationLibrary, request);
+  }
+
+  /**
+   * An Async wrapper for CreateDataAutomationLibrary that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateDataAutomationLibraryRequestT = Model::CreateDataAutomationLibraryRequest>
+  void CreateDataAutomationLibraryAsync(const CreateDataAutomationLibraryRequestT& request,
+                                        const CreateDataAutomationLibraryResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockDataAutomationClient::CreateDataAutomationLibrary, request, handler, context);
+  }
+
+  /**
    * <p>Creates an Amazon Bedrock Data Automation Project</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/CreateDataAutomationProject">AWS
@@ -221,6 +251,36 @@ class AWS_BEDROCKDATAAUTOMATION_API BedrockDataAutomationClient
   void DeleteBlueprintAsync(const DeleteBlueprintRequestT& request, const DeleteBlueprintResponseReceivedHandler& handler,
                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockDataAutomationClient::DeleteBlueprint, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes an existing Amazon Bedrock Data Automation Library</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/DeleteDataAutomationLibrary">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteDataAutomationLibraryOutcome DeleteDataAutomationLibrary(
+      const Model::DeleteDataAutomationLibraryRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteDataAutomationLibrary that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteDataAutomationLibraryRequestT = Model::DeleteDataAutomationLibraryRequest>
+  Model::DeleteDataAutomationLibraryOutcomeCallable DeleteDataAutomationLibraryCallable(
+      const DeleteDataAutomationLibraryRequestT& request) const {
+    return SubmitCallable(&BedrockDataAutomationClient::DeleteDataAutomationLibrary, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteDataAutomationLibrary that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteDataAutomationLibraryRequestT = Model::DeleteDataAutomationLibraryRequest>
+  void DeleteDataAutomationLibraryAsync(const DeleteDataAutomationLibraryRequestT& request,
+                                        const DeleteDataAutomationLibraryResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockDataAutomationClient::DeleteDataAutomationLibrary, request, handler, context);
   }
 
   /**
@@ -309,6 +369,94 @@ class AWS_BEDROCKDATAAUTOMATION_API BedrockDataAutomationClient
   }
 
   /**
+   * <p>Gets an existing Amazon Bedrock Data Automation Library</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/GetDataAutomationLibrary">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetDataAutomationLibraryOutcome GetDataAutomationLibrary(const Model::GetDataAutomationLibraryRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetDataAutomationLibrary that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetDataAutomationLibraryRequestT = Model::GetDataAutomationLibraryRequest>
+  Model::GetDataAutomationLibraryOutcomeCallable GetDataAutomationLibraryCallable(const GetDataAutomationLibraryRequestT& request) const {
+    return SubmitCallable(&BedrockDataAutomationClient::GetDataAutomationLibrary, request);
+  }
+
+  /**
+   * An Async wrapper for GetDataAutomationLibrary that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetDataAutomationLibraryRequestT = Model::GetDataAutomationLibraryRequest>
+  void GetDataAutomationLibraryAsync(const GetDataAutomationLibraryRequestT& request,
+                                     const GetDataAutomationLibraryResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockDataAutomationClient::GetDataAutomationLibrary, request, handler, context);
+  }
+
+  /**
+   * <p>Gets an existing entity based on entity type from the library</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/GetDataAutomationLibraryEntity">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetDataAutomationLibraryEntityOutcome GetDataAutomationLibraryEntity(
+      const Model::GetDataAutomationLibraryEntityRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetDataAutomationLibraryEntity that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetDataAutomationLibraryEntityRequestT = Model::GetDataAutomationLibraryEntityRequest>
+  Model::GetDataAutomationLibraryEntityOutcomeCallable GetDataAutomationLibraryEntityCallable(
+      const GetDataAutomationLibraryEntityRequestT& request) const {
+    return SubmitCallable(&BedrockDataAutomationClient::GetDataAutomationLibraryEntity, request);
+  }
+
+  /**
+   * An Async wrapper for GetDataAutomationLibraryEntity that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetDataAutomationLibraryEntityRequestT = Model::GetDataAutomationLibraryEntityRequest>
+  void GetDataAutomationLibraryEntityAsync(const GetDataAutomationLibraryEntityRequestT& request,
+                                           const GetDataAutomationLibraryEntityResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockDataAutomationClient::GetDataAutomationLibraryEntity, request, handler, context);
+  }
+
+  /**
+   * <p>API used to get status of data automation library ingestion job</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/GetDataAutomationLibraryIngestionJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetDataAutomationLibraryIngestionJobOutcome GetDataAutomationLibraryIngestionJob(
+      const Model::GetDataAutomationLibraryIngestionJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetDataAutomationLibraryIngestionJob that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename GetDataAutomationLibraryIngestionJobRequestT = Model::GetDataAutomationLibraryIngestionJobRequest>
+  Model::GetDataAutomationLibraryIngestionJobOutcomeCallable GetDataAutomationLibraryIngestionJobCallable(
+      const GetDataAutomationLibraryIngestionJobRequestT& request) const {
+    return SubmitCallable(&BedrockDataAutomationClient::GetDataAutomationLibraryIngestionJob, request);
+  }
+
+  /**
+   * An Async wrapper for GetDataAutomationLibraryIngestionJob that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename GetDataAutomationLibraryIngestionJobRequestT = Model::GetDataAutomationLibraryIngestionJobRequest>
+  void GetDataAutomationLibraryIngestionJobAsync(const GetDataAutomationLibraryIngestionJobRequestT& request,
+                                                 const GetDataAutomationLibraryIngestionJobResponseReceivedHandler& handler,
+                                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockDataAutomationClient::GetDataAutomationLibraryIngestionJob, request, handler, context);
+  }
+
+  /**
    * <p>Gets an existing Amazon Bedrock Data Automation Project</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/GetDataAutomationProject">AWS
@@ -367,6 +515,36 @@ class AWS_BEDROCKDATAAUTOMATION_API BedrockDataAutomationClient
   }
 
   /**
+   * <p>Async API: Invoke data automation library ingestion job</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/InvokeDataAutomationLibraryIngestionJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::InvokeDataAutomationLibraryIngestionJobOutcome InvokeDataAutomationLibraryIngestionJob(
+      const Model::InvokeDataAutomationLibraryIngestionJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for InvokeDataAutomationLibraryIngestionJob that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename InvokeDataAutomationLibraryIngestionJobRequestT = Model::InvokeDataAutomationLibraryIngestionJobRequest>
+  Model::InvokeDataAutomationLibraryIngestionJobOutcomeCallable InvokeDataAutomationLibraryIngestionJobCallable(
+      const InvokeDataAutomationLibraryIngestionJobRequestT& request) const {
+    return SubmitCallable(&BedrockDataAutomationClient::InvokeDataAutomationLibraryIngestionJob, request);
+  }
+
+  /**
+   * An Async wrapper for InvokeDataAutomationLibraryIngestionJob that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename InvokeDataAutomationLibraryIngestionJobRequestT = Model::InvokeDataAutomationLibraryIngestionJobRequest>
+  void InvokeDataAutomationLibraryIngestionJobAsync(const InvokeDataAutomationLibraryIngestionJobRequestT& request,
+                                                    const InvokeDataAutomationLibraryIngestionJobResponseReceivedHandler& handler,
+                                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockDataAutomationClient::InvokeDataAutomationLibraryIngestionJob, request, handler, context);
+  }
+
+  /**
    * <p>Lists all existing Amazon Bedrock Data Automation Blueprints</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/ListBlueprints">AWS
@@ -391,6 +569,95 @@ class AWS_BEDROCKDATAAUTOMATION_API BedrockDataAutomationClient
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                            const ListBlueprintsRequestT& request = {}) const {
     return SubmitAsync(&BedrockDataAutomationClient::ListBlueprints, request, handler, context);
+  }
+
+  /**
+   * <p>Lists all existing Amazon Bedrock Data Automation Libraries</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/ListDataAutomationLibraries">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListDataAutomationLibrariesOutcome ListDataAutomationLibraries(
+      const Model::ListDataAutomationLibrariesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListDataAutomationLibraries that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListDataAutomationLibrariesRequestT = Model::ListDataAutomationLibrariesRequest>
+  Model::ListDataAutomationLibrariesOutcomeCallable ListDataAutomationLibrariesCallable(
+      const ListDataAutomationLibrariesRequestT& request = {}) const {
+    return SubmitCallable(&BedrockDataAutomationClient::ListDataAutomationLibraries, request);
+  }
+
+  /**
+   * An Async wrapper for ListDataAutomationLibraries that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListDataAutomationLibrariesRequestT = Model::ListDataAutomationLibrariesRequest>
+  void ListDataAutomationLibrariesAsync(const ListDataAutomationLibrariesResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                        const ListDataAutomationLibrariesRequestT& request = {}) const {
+    return SubmitAsync(&BedrockDataAutomationClient::ListDataAutomationLibraries, request, handler, context);
+  }
+
+  /**
+   * <p>Lists all stored entities in the library</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/ListDataAutomationLibraryEntities">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListDataAutomationLibraryEntitiesOutcome ListDataAutomationLibraryEntities(
+      const Model::ListDataAutomationLibraryEntitiesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListDataAutomationLibraryEntities that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename ListDataAutomationLibraryEntitiesRequestT = Model::ListDataAutomationLibraryEntitiesRequest>
+  Model::ListDataAutomationLibraryEntitiesOutcomeCallable ListDataAutomationLibraryEntitiesCallable(
+      const ListDataAutomationLibraryEntitiesRequestT& request) const {
+    return SubmitCallable(&BedrockDataAutomationClient::ListDataAutomationLibraryEntities, request);
+  }
+
+  /**
+   * An Async wrapper for ListDataAutomationLibraryEntities that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListDataAutomationLibraryEntitiesRequestT = Model::ListDataAutomationLibraryEntitiesRequest>
+  void ListDataAutomationLibraryEntitiesAsync(const ListDataAutomationLibraryEntitiesRequestT& request,
+                                              const ListDataAutomationLibraryEntitiesResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockDataAutomationClient::ListDataAutomationLibraryEntities, request, handler, context);
+  }
+
+  /**
+   * <p>Lists all data automation library ingestion jobs</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/ListDataAutomationLibraryIngestionJobs">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListDataAutomationLibraryIngestionJobsOutcome ListDataAutomationLibraryIngestionJobs(
+      const Model::ListDataAutomationLibraryIngestionJobsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListDataAutomationLibraryIngestionJobs that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ListDataAutomationLibraryIngestionJobsRequestT = Model::ListDataAutomationLibraryIngestionJobsRequest>
+  Model::ListDataAutomationLibraryIngestionJobsOutcomeCallable ListDataAutomationLibraryIngestionJobsCallable(
+      const ListDataAutomationLibraryIngestionJobsRequestT& request) const {
+    return SubmitCallable(&BedrockDataAutomationClient::ListDataAutomationLibraryIngestionJobs, request);
+  }
+
+  /**
+   * An Async wrapper for ListDataAutomationLibraryIngestionJobs that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ListDataAutomationLibraryIngestionJobsRequestT = Model::ListDataAutomationLibraryIngestionJobsRequest>
+  void ListDataAutomationLibraryIngestionJobsAsync(const ListDataAutomationLibraryIngestionJobsRequestT& request,
+                                                   const ListDataAutomationLibraryIngestionJobsResponseReceivedHandler& handler,
+                                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockDataAutomationClient::ListDataAutomationLibraryIngestionJobs, request, handler, context);
   }
 
   /**
@@ -525,6 +792,36 @@ class AWS_BEDROCKDATAAUTOMATION_API BedrockDataAutomationClient
   void UpdateBlueprintAsync(const UpdateBlueprintRequestT& request, const UpdateBlueprintResponseReceivedHandler& handler,
                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockDataAutomationClient::UpdateBlueprint, request, handler, context);
+  }
+
+  /**
+   * <p>Updates an existing Amazon Bedrock Data Automation Library</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/UpdateDataAutomationLibrary">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateDataAutomationLibraryOutcome UpdateDataAutomationLibrary(
+      const Model::UpdateDataAutomationLibraryRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateDataAutomationLibrary that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateDataAutomationLibraryRequestT = Model::UpdateDataAutomationLibraryRequest>
+  Model::UpdateDataAutomationLibraryOutcomeCallable UpdateDataAutomationLibraryCallable(
+      const UpdateDataAutomationLibraryRequestT& request) const {
+    return SubmitCallable(&BedrockDataAutomationClient::UpdateDataAutomationLibrary, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateDataAutomationLibrary that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateDataAutomationLibraryRequestT = Model::UpdateDataAutomationLibraryRequest>
+  void UpdateDataAutomationLibraryAsync(const UpdateDataAutomationLibraryRequestT& request,
+                                        const UpdateDataAutomationLibraryResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockDataAutomationClient::UpdateDataAutomationLibrary, request, handler, context);
   }
 
   /**

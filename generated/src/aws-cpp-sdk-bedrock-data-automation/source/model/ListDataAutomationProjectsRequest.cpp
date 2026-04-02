@@ -36,5 +36,9 @@ Aws::String ListDataAutomationProjectsRequest::SerializePayload() const {
     payload.WithString("resourceOwner", ResourceOwnerMapper::GetNameForResourceOwner(m_resourceOwner));
   }
 
+  if (m_libraryFilterHasBeenSet) {
+    payload.WithObject("libraryFilter", m_libraryFilter.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

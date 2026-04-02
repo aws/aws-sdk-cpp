@@ -43,6 +43,10 @@ Aws::String CreateDataAutomationProjectRequest::SerializePayload() const {
     payload.WithObject("overrideConfiguration", m_overrideConfiguration.Jsonize());
   }
 
+  if (m_dataAutomationLibraryConfigurationHasBeenSet) {
+    payload.WithObject("dataAutomationLibraryConfiguration", m_dataAutomationLibraryConfiguration.Jsonize());
+  }
+
   if (m_clientTokenHasBeenSet) {
     payload.WithString("clientToken", m_clientToken);
   }

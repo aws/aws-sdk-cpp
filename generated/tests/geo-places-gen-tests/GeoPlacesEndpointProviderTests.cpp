@@ -104,7 +104,7 @@ Aws::Vector<GeoPlacesEndpointProviderEndpointTestCase> GeoPlacesEndpointProvider
   {"For region us-east-1 with FIPS enabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://places.geo-fips.us-east-1.api.aws/v2",
+    {{/*epUrl*/"https://places.geo-fips.us-east-1.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
@@ -113,7 +113,7 @@ Aws::Vector<GeoPlacesEndpointProviderEndpointTestCase> GeoPlacesEndpointProvider
   {"For region us-east-1 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://places.geo-fips.us-east-1.amazonaws.com/v2",
+    {{/*epUrl*/"https://places.geo-fips.us-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
@@ -122,7 +122,7 @@ Aws::Vector<GeoPlacesEndpointProviderEndpointTestCase> GeoPlacesEndpointProvider
   {"For region us-east-1 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://places.geo.us-east-1.api.aws/v2",
+    {{/*epUrl*/"https://places.geo.us-east-1.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
@@ -131,7 +131,7 @@ Aws::Vector<GeoPlacesEndpointProviderEndpointTestCase> GeoPlacesEndpointProvider
   {"For region us-east-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://places.geo.us-east-1.amazonaws.com/v2",
+    {{/*epUrl*/"https://places.geo.us-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
@@ -266,7 +266,7 @@ Aws::Vector<GeoPlacesEndpointProviderEndpointTestCase> GeoPlacesEndpointProvider
   {"For region us-gov-west-1 with FIPS enabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://places.geo-fips.us-gov-west-1.api.aws/v2",
+    {{/*epUrl*/"https://places.geo-fips.us-gov-west-1.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
@@ -275,7 +275,7 @@ Aws::Vector<GeoPlacesEndpointProviderEndpointTestCase> GeoPlacesEndpointProvider
   {"For region us-gov-west-1 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://places.geo-fips.us-gov-west-1.amazonaws.com/v2",
+    {{/*epUrl*/"https://places.geo-fips.us-gov-west-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
@@ -284,7 +284,7 @@ Aws::Vector<GeoPlacesEndpointProviderEndpointTestCase> GeoPlacesEndpointProvider
   {"For region us-gov-west-1 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://places.geo.us-gov-west-1.api.aws/v2",
+    {{/*epUrl*/"https://places.geo.us-gov-west-1.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
@@ -293,7 +293,7 @@ Aws::Vector<GeoPlacesEndpointProviderEndpointTestCase> GeoPlacesEndpointProvider
   {"For region us-gov-west-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://places.geo.us-gov-west-1.amazonaws.com/v2",
+    {{/*epUrl*/"https://places.geo.us-gov-west-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect

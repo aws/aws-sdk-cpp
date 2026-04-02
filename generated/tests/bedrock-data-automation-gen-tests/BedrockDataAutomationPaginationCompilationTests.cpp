@@ -8,8 +8,11 @@
 
 #include <aws/bedrock-data-automation/BedrockDataAutomationClientPagination.h>
 #include <aws/bedrock-data-automation/BedrockDataAutomationPaginationBase.h>
+#include <aws/bedrock-data-automation/model/ListDataAutomationLibraryIngestionJobsPaginationTraits.h>
+#include <aws/bedrock-data-automation/model/ListDataAutomationLibrariesPaginationTraits.h>
 #include <aws/bedrock-data-automation/model/ListDataAutomationProjectsPaginationTraits.h>
 #include <aws/bedrock-data-automation/model/ListBlueprintsPaginationTraits.h>
+#include <aws/bedrock-data-automation/model/ListDataAutomationLibraryEntitiesPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

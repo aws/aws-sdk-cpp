@@ -166,6 +166,58 @@ class ComputeCapacityStatus {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The number of instances in drain mode. This only applies to multi-session
+   * fleets.</p>
+   */
+  inline int GetDraining() const { return m_draining; }
+  inline bool DrainingHasBeenSet() const { return m_drainingHasBeenSet; }
+  inline void SetDraining(int value) {
+    m_drainingHasBeenSet = true;
+    m_draining = value;
+  }
+  inline ComputeCapacityStatus& WithDraining(int value) {
+    SetDraining(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The number of active user sessions on instances in drain mode. This only
+   * applies to multi-session fleets.</p>
+   */
+  inline int GetDrainModeActiveUserSessions() const { return m_drainModeActiveUserSessions; }
+  inline bool DrainModeActiveUserSessionsHasBeenSet() const { return m_drainModeActiveUserSessionsHasBeenSet; }
+  inline void SetDrainModeActiveUserSessions(int value) {
+    m_drainModeActiveUserSessionsHasBeenSet = true;
+    m_drainModeActiveUserSessions = value;
+  }
+  inline ComputeCapacityStatus& WithDrainModeActiveUserSessions(int value) {
+    SetDrainModeActiveUserSessions(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The number of unused session slots on instances in drain mode that cannot be
+   * used for user session provisioning. This only applies to multi-session
+   * fleets.</p>
+   */
+  inline int GetDrainModeUnusedUserSessions() const { return m_drainModeUnusedUserSessions; }
+  inline bool DrainModeUnusedUserSessionsHasBeenSet() const { return m_drainModeUnusedUserSessionsHasBeenSet; }
+  inline void SetDrainModeUnusedUserSessions(int value) {
+    m_drainModeUnusedUserSessionsHasBeenSet = true;
+    m_drainModeUnusedUserSessions = value;
+  }
+  inline ComputeCapacityStatus& WithDrainModeUnusedUserSessions(int value) {
+    SetDrainModeUnusedUserSessions(value);
+    return *this;
+  }
+  ///@}
  private:
   int m_desired{0};
 
@@ -182,6 +234,12 @@ class ComputeCapacityStatus {
   int m_activeUserSessions{0};
 
   int m_actualUserSessions{0};
+
+  int m_draining{0};
+
+  int m_drainModeActiveUserSessions{0};
+
+  int m_drainModeUnusedUserSessions{0};
   bool m_desiredHasBeenSet = false;
   bool m_runningHasBeenSet = false;
   bool m_inUseHasBeenSet = false;
@@ -190,6 +248,9 @@ class ComputeCapacityStatus {
   bool m_availableUserSessionsHasBeenSet = false;
   bool m_activeUserSessionsHasBeenSet = false;
   bool m_actualUserSessionsHasBeenSet = false;
+  bool m_drainingHasBeenSet = false;
+  bool m_drainModeActiveUserSessionsHasBeenSet = false;
+  bool m_drainModeUnusedUserSessionsHasBeenSet = false;
 };
 
 }  // namespace Model

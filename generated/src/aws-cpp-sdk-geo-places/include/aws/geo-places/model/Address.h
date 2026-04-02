@@ -189,8 +189,10 @@ class Address {
 
   ///@{
   /**
-   * <p>Name of the block. </p> <p>Example: <code>Sunny Mansion 203 block: 2
-   * Chome</code> </p>
+   * <p> Name of the block. Not available in <code>ap-southeast-1</code> and
+   * <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p> <p>Example: <code>Sunny Mansion 203 block: 2 Chome</code> </p>
    */
   inline const Aws::String& GetBlock() const { return m_block; }
   inline bool BlockHasBeenSet() const { return m_blockHasBeenSet; }
@@ -208,8 +210,10 @@ class Address {
 
   ///@{
   /**
-   * <p>Name of sub-block. </p> <p>Example: <code>Sunny Mansion 203 sub-block:
-   * 4</code> </p>
+   * <p> Name of sub-block. Not available in <code>ap-southeast-1</code> and
+   * <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p> <p>Example: <code>Sunny Mansion 203 sub-block: 4</code> </p>
    */
   inline const Aws::String& GetSubBlock() const { return m_subBlock; }
   inline bool SubBlockHasBeenSet() const { return m_subBlockHasBeenSet; }
@@ -227,8 +231,11 @@ class Address {
 
   ///@{
   /**
-   * <p>Name of the streets in the intersection. </p> <p>Example:
-   * <code>["Friedrichstraße","Unter den Linden"]</code> </p>
+   * <p> Name of the streets in the intersection. Not available in
+   * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p> <p>Example: <code>["Friedrichstraße","Unter den Linden"]</code>
+   * </p>
    */
   inline const Aws::Vector<Aws::String>& GetIntersection() const { return m_intersection; }
   inline bool IntersectionHasBeenSet() const { return m_intersectionHasBeenSet; }
@@ -270,8 +277,10 @@ class Address {
 
   ///@{
   /**
-   * <p>Components of the street. </p> <p>Example: Younge from the "Younge
-   * street".</p>
+   * <p> Components of the street. Not available in <code>ap-southeast-1</code> and
+   * <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p> <p>Example: Yonge from "Yonge street".</p>
    */
   inline const Aws::Vector<StreetComponents>& GetStreetComponents() const { return m_streetComponents; }
   inline bool StreetComponentsHasBeenSet() const { return m_streetComponentsHasBeenSet; }
@@ -313,7 +322,10 @@ class Address {
 
   ///@{
   /**
-   * <p>The name of the building at the address.</p>
+   * <p> The name of the building at the address. Not available in
+   * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const Aws::String& GetBuilding() const { return m_building; }
   inline bool BuildingHasBeenSet() const { return m_buildingHasBeenSet; }
@@ -331,9 +343,12 @@ class Address {
 
   ///@{
   /**
-   * <p>Components that correspond to secondary identifiers on an Address. Secondary
+   * <p> Components that correspond to secondary identifiers on an Address. Secondary
    * address components include information such as Suite or Unit Number, Building,
-   * or Floor.</p>  <p>Coverage for
+   * or Floor. Not available in <code>ap-southeast-1</code> and
+   * <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>  <p>Coverage for
    * <code>Address.SecondaryAddressComponents</code> is available in the following
    * countries:</p> <p>AUS, CAN, NZL, USA, PRI</p>
    */

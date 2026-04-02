@@ -184,7 +184,7 @@ GeoPlacesClient::InvokeOperationOutcome GeoPlacesClient::InvokeServiceOperation(
 AutocompleteOutcome GeoPlacesClient::Autocomplete(const AutocompleteRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/autocomplete");
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/autocomplete");
   };
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
@@ -194,7 +194,7 @@ AutocompleteOutcome GeoPlacesClient::Autocomplete(const AutocompleteRequest& req
 GeocodeOutcome GeoPlacesClient::Geocode(const GeocodeRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/geocode");
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/geocode");
   };
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
@@ -210,7 +210,7 @@ GetPlaceOutcome GeoPlacesClient::GetPlace(const GetPlaceRequest& request) const 
 
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/place/");
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/place/");
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPlaceId());
   };
 
@@ -221,7 +221,7 @@ GetPlaceOutcome GeoPlacesClient::GetPlace(const GetPlaceRequest& request) const 
 ReverseGeocodeOutcome GeoPlacesClient::ReverseGeocode(const ReverseGeocodeRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/reverse-geocode");
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/reverse-geocode");
   };
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
@@ -231,7 +231,7 @@ ReverseGeocodeOutcome GeoPlacesClient::ReverseGeocode(const ReverseGeocodeReques
 SearchNearbyOutcome GeoPlacesClient::SearchNearby(const SearchNearbyRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/search-nearby");
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/search-nearby");
   };
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
@@ -241,7 +241,7 @@ SearchNearbyOutcome GeoPlacesClient::SearchNearby(const SearchNearbyRequest& req
 SearchTextOutcome GeoPlacesClient::SearchText(const SearchTextRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/search-text");
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/search-text");
   };
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
@@ -251,7 +251,7 @@ SearchTextOutcome GeoPlacesClient::SearchText(const SearchTextRequest& request) 
 SuggestOutcome GeoPlacesClient::Suggest(const SuggestRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/suggest");
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/suggest");
   };
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);

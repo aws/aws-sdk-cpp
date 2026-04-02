@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/appstream/model/AuthenticationType.h>
+#include <aws/appstream/model/InstanceDrainStatus.h>
 #include <aws/appstream/model/NetworkAccessConfiguration.h>
 #include <aws/appstream/model/SessionConnectionState.h>
 #include <aws/appstream/model/SessionState.h>
@@ -235,6 +236,23 @@ class Session {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The drain status of the instance hosting the streaming session. This only
+   * applies to multi-session fleets.</p>
+   */
+  inline InstanceDrainStatus GetInstanceDrainStatus() const { return m_instanceDrainStatus; }
+  inline bool InstanceDrainStatusHasBeenSet() const { return m_instanceDrainStatusHasBeenSet; }
+  inline void SetInstanceDrainStatus(InstanceDrainStatus value) {
+    m_instanceDrainStatusHasBeenSet = true;
+    m_instanceDrainStatus = value;
+  }
+  inline Session& WithInstanceDrainStatus(InstanceDrainStatus value) {
+    SetInstanceDrainStatus(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -257,6 +275,8 @@ class Session {
   NetworkAccessConfiguration m_networkAccessConfiguration;
 
   Aws::String m_instanceId;
+
+  InstanceDrainStatus m_instanceDrainStatus{InstanceDrainStatus::NOT_SET};
   bool m_idHasBeenSet = false;
   bool m_userIdHasBeenSet = false;
   bool m_stackNameHasBeenSet = false;
@@ -268,6 +288,7 @@ class Session {
   bool m_authenticationTypeHasBeenSet = false;
   bool m_networkAccessConfigurationHasBeenSet = false;
   bool m_instanceIdHasBeenSet = false;
+  bool m_instanceDrainStatusHasBeenSet = false;
 };
 
 }  // namespace Model

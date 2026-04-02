@@ -729,7 +729,11 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
-   * <p>Deletes a gateway target.</p><p><h3>See Also:</h3>   <a
+   * <p>Deletes a gateway target.</p> <p>You cannot delete a target that is in a
+   * pending authorization state (<code>CREATE_PENDING_AUTH</code>,
+   * <code>UPDATE_PENDING_AUTH</code>, or <code>SYNCHRONIZE_PENDING_AUTH</code>).
+   * Wait for the authorization to complete or fail before deleting the
+   * target.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteGatewayTarget">AWS
    * API Reference</a></p>
    */
@@ -2078,7 +2082,15 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
-   * <p>The gateway targets.</p><p><h3>See Also:</h3>   <a
+   * <p>Synchronizes the gateway targets by fetching the latest tool definitions from
+   * the target endpoints.</p> <p>You cannot synchronize a target that is in a
+   * pending authorization state (<code>CREATE_PENDING_AUTH</code>,
+   * <code>UPDATE_PENDING_AUTH</code>, or <code>SYNCHRONIZE_PENDING_AUTH</code>).
+   * Wait for the authorization to complete or fail before synchronizing.</p> <p>You
+   * cannot synchronize a target that has a static tool schema
+   * (<code>mcpToolSchema</code>) configured. Remove the static schema through an
+   * <code>UpdateGatewayTarget</code> call to enable dynamic tool
+   * synchronization.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/SynchronizeGatewayTargets">AWS
    * API Reference</a></p>
    */
@@ -2302,7 +2314,11 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
-   * <p>Updates an existing gateway target.</p><p><h3>See Also:</h3>   <a
+   * <p>Updates an existing gateway target.</p> <p>You cannot update a target that is
+   * in a pending authorization state (<code>CREATE_PENDING_AUTH</code>,
+   * <code>UPDATE_PENDING_AUTH</code>, or <code>SYNCHRONIZE_PENDING_AUTH</code>).
+   * Wait for the authorization to complete or fail before updating the
+   * target.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateGatewayTarget">AWS
    * API Reference</a></p>
    */

@@ -183,13 +183,16 @@ class SearchNearbyRequest : public GeoPlacesRequest {
 
   ///@{
   /**
-   * <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>,
-   * if left empty.</p>  <p>Storing the response of an SearchNearby query is
-   * required to comply with service terms, but charged at a higher cost per request.
-   * Please review the <a href="https://aws.amazon.com/location/sla/">user
-   * agreement</a> and <a href="https://aws.amazon.com/location/pricing/">service
-   * pricing structure</a> to determine the correct setting for your use case.</p>
-   *
+   * <p> Indicates if the query results will be persisted in customer infrastructure.
+   * Defaults to <code>SingleUse</code> (not stored). Not supported in
+   * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>  <p>When storing <code>SearchNearby</code> responses, you
+   * <i>must</i> set this field to <code>Storage</code> to comply with the terms of
+   * service. These requests will be charged at a higher rate. Please review the <a
+   * href="https://aws.amazon.com/location/sla/">user agreement</a> and <a
+   * href="https://aws.amazon.com/location/pricing/">service pricing structure</a> to
+   * determine the correct setting for your use case.</p>
    */
   inline SearchNearbyIntendedUse GetIntendedUse() const { return m_intendedUse; }
   inline bool IntendedUseHasBeenSet() const { return m_intendedUseHasBeenSet; }

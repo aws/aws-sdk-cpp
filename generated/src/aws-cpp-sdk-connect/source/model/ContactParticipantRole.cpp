@@ -18,6 +18,7 @@ namespace ContactParticipantRoleMapper {
 static const int AGENT_HASH = HashingUtils::HashString("AGENT");
 static const int SYSTEM_HASH = HashingUtils::HashString("SYSTEM");
 static const int CUSTOM_BOT_HASH = HashingUtils::HashString("CUSTOM_BOT");
+static const int CUSTOMER_HASH = HashingUtils::HashString("CUSTOMER");
 
 ContactParticipantRole GetContactParticipantRoleForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ ContactParticipantRole GetContactParticipantRoleForName(const Aws::String& name)
     return ContactParticipantRole::SYSTEM;
   } else if (hashCode == CUSTOM_BOT_HASH) {
     return ContactParticipantRole::CUSTOM_BOT;
+  } else if (hashCode == CUSTOMER_HASH) {
+    return ContactParticipantRole::CUSTOMER;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForContactParticipantRole(ContactParticipantRole enumValue) {
       return "SYSTEM";
     case ContactParticipantRole::CUSTOM_BOT:
       return "CUSTOM_BOT";
+    case ContactParticipantRole::CUSTOMER:
+      return "CUSTOMER";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -11,6 +11,7 @@
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
 #include <aws/monitoring/model/ComparisonOperator.h>
 #include <aws/monitoring/model/Dimension.h>
+#include <aws/monitoring/model/EvaluationCriteria.h>
 #include <aws/monitoring/model/EvaluationState.h>
 #include <aws/monitoring/model/MetricDataQuery.h>
 #include <aws/monitoring/model/StandardUnit.h>
@@ -481,6 +482,7 @@ class MetricAlarm {
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
    * how CloudWatch alarms treat missing data</a>.</p> <p>If this parameter is
    * omitted, the default behavior of <code>missing</code> is used.</p>
+   * <p>This parameter is not applicable to PromQL alarms.</p>
    */
   inline const Aws::String& GetTreatMissingData() const { return m_treatMissingData; }
   inline bool TreatMissingDataHasBeenSet() const { return m_treatMissingDataHasBeenSet; }
@@ -609,6 +611,40 @@ class MetricAlarm {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The evaluation criteria for the alarm.</p>
+   */
+  inline const EvaluationCriteria& GetEvaluationCriteria() const { return m_evaluationCriteria; }
+  inline bool EvaluationCriteriaHasBeenSet() const { return m_evaluationCriteriaHasBeenSet; }
+  template <typename EvaluationCriteriaT = EvaluationCriteria>
+  void SetEvaluationCriteria(EvaluationCriteriaT&& value) {
+    m_evaluationCriteriaHasBeenSet = true;
+    m_evaluationCriteria = std::forward<EvaluationCriteriaT>(value);
+  }
+  template <typename EvaluationCriteriaT = EvaluationCriteria>
+  MetricAlarm& WithEvaluationCriteria(EvaluationCriteriaT&& value) {
+    SetEvaluationCriteria(std::forward<EvaluationCriteriaT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The frequency, in seconds, at which the alarm is evaluated.</p>
+   */
+  inline int64_t GetEvaluationInterval() const { return m_evaluationInterval; }
+  inline bool EvaluationIntervalHasBeenSet() const { return m_evaluationIntervalHasBeenSet; }
+  inline void SetEvaluationInterval(int64_t value) {
+    m_evaluationIntervalHasBeenSet = true;
+    m_evaluationInterval = value;
+  }
+  inline MetricAlarm& WithEvaluationInterval(int64_t value) {
+    SetEvaluationInterval(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_alarmName;
 
@@ -667,6 +703,10 @@ class MetricAlarm {
   EvaluationState m_evaluationState{EvaluationState::NOT_SET};
 
   Aws::Utils::DateTime m_stateTransitionedTimestamp{};
+
+  EvaluationCriteria m_evaluationCriteria;
+
+  int64_t m_evaluationInterval{0};
   bool m_alarmNameHasBeenSet = false;
   bool m_alarmArnHasBeenSet = false;
   bool m_alarmDescriptionHasBeenSet = false;
@@ -696,6 +736,8 @@ class MetricAlarm {
   bool m_thresholdMetricIdHasBeenSet = false;
   bool m_evaluationStateHasBeenSet = false;
   bool m_stateTransitionedTimestampHasBeenSet = false;
+  bool m_evaluationCriteriaHasBeenSet = false;
+  bool m_evaluationIntervalHasBeenSet = false;
 };
 
 }  // namespace Model

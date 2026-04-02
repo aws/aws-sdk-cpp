@@ -894,6 +894,38 @@ class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClie
   }
 
   /**
+   * <p>Returns the current status of vended metric enrichment for the account,
+   * including whether CloudWatch vended metrics are enriched with resource ARN and
+   * resource tag labels and queryable using PromQL. For the list of supported
+   * resources, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingResourceTagsForTelemetry.html">Supported
+   * AWS infrastructure metrics</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetOTelEnrichment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetOTelEnrichmentOutcome GetOTelEnrichment(const Model::GetOTelEnrichmentRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for GetOTelEnrichment that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetOTelEnrichmentRequestT = Model::GetOTelEnrichmentRequest>
+  Model::GetOTelEnrichmentOutcomeCallable GetOTelEnrichmentCallable(const GetOTelEnrichmentRequestT& request = {}) const {
+    return SubmitCallable(&CloudWatchClient::GetOTelEnrichment, request);
+  }
+
+  /**
+   * An Async wrapper for GetOTelEnrichment that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetOTelEnrichmentRequestT = Model::GetOTelEnrichmentRequest>
+  void GetOTelEnrichmentAsync(const GetOTelEnrichmentResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                              const GetOTelEnrichmentRequestT& request = {}) const {
+    return SubmitAsync(&CloudWatchClient::GetOTelEnrichment, request, handler, context);
+  }
+
+  /**
    * <p>Lists alarm mute rules in your Amazon Web Services account and region.</p>
    * <p>You can filter the results by alarm name to find all mute rules targeting a
    * specific alarm, or by status to find rules that are scheduled, active, or
@@ -1106,7 +1138,7 @@ class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClie
    * only specific alarms named "WebServerCPUAlarm" and "DatabaseConnectionAlarm",
    * you would create an IAM policy with one statement granting
    * <code>cloudwatch:PutAlarmMuteRule</code> on the alarm mute rule resource
-   * (<code>arn:aws:cloudwatch:[REGION]:123456789012:alarm-mute:*</code>), and
+   * (<code>arn:aws:cloudwatch:[REGION]:123456789012:alarm-mute-rule:*</code>), and
    * another statement granting <code>cloudwatch:PutAlarmMuteRule</code> on the
    * targeted alarm resources
    * (<code>arn:aws:cloudwatch:[REGION]:123456789012:alarm:WebServerCPUAlarm</code>
@@ -1349,13 +1381,15 @@ class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClie
 
   /**
    * <p>Creates or updates an alarm and associates it with the specified metric,
-   * metric math expression, anomaly detection model, or Metrics Insights query. For
-   * more information about using a Metrics Insights query for an alarm, see <a
+   * metric math expression, anomaly detection model, Metrics Insights query, or
+   * PromQL query. For more information about using a Metrics Insights query for an
+   * alarm, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create
    * alarms on Metrics Insights queries</a>.</p> <p>Alarms based on anomaly detection
    * models cannot have Auto Scaling actions.</p> <p>When this operation creates an
-   * alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>. The
-   * alarm is then evaluated and its state is set appropriately. Any actions
+   * alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>. For
+   * PromQL alarms, the alarm state is instead immediately set to <code>OK</code>.
+   * The alarm is then evaluated and its state is set appropriately. Any actions
    * associated with the new state are then executed.</p> <p>When you update an
    * existing alarm, its state is left unchanged, but the update completely
    * overwrites the previous configuration of the alarm.</p> <p>If you are an IAM
@@ -1609,6 +1643,42 @@ class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClie
   }
 
   /**
+   * <p>Enables enrichment and PromQL access for CloudWatch vended metrics for <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingResourceTagsForTelemetry.html">supported
+   * AWS resources</a> in the account. Once enabled, metrics that contain a resource
+   * identifier dimension (for example, EC2 <code>CPUUtilization</code> with an
+   * <code>InstanceId</code> dimension) are enriched with resource ARN and resource
+   * tag labels and become queryable using PromQL.</p> <p>Before calling this
+   * operation, you must enable resource tags on telemetry for your account. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/EnableResourceTagsOnTelemetry.html">Enable
+   * resource tags on telemetry</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StartOTelEnrichment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartOTelEnrichmentOutcome StartOTelEnrichment(const Model::StartOTelEnrichmentRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for StartOTelEnrichment that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartOTelEnrichmentRequestT = Model::StartOTelEnrichmentRequest>
+  Model::StartOTelEnrichmentOutcomeCallable StartOTelEnrichmentCallable(const StartOTelEnrichmentRequestT& request = {}) const {
+    return SubmitCallable(&CloudWatchClient::StartOTelEnrichment, request);
+  }
+
+  /**
+   * An Async wrapper for StartOTelEnrichment that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename StartOTelEnrichmentRequestT = Model::StartOTelEnrichmentRequest>
+  void StartOTelEnrichmentAsync(const StartOTelEnrichmentResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                const StartOTelEnrichmentRequestT& request = {}) const {
+    return SubmitAsync(&CloudWatchClient::StartOTelEnrichment, request, handler, context);
+  }
+
+  /**
    * <p>Stops the streaming of metrics for one or more of your metric
    * streams.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StopMetricStreams">AWS
@@ -1633,6 +1703,37 @@ class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClie
   void StopMetricStreamsAsync(const StopMetricStreamsRequestT& request, const StopMetricStreamsResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CloudWatchClient::StopMetricStreams, request, handler, context);
+  }
+
+  /**
+   * <p>Disables enrichment and PromQL access for CloudWatch vended metrics for <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingResourceTagsForTelemetry.html">supported
+   * AWS resources</a> in the account. After disabling, these metrics are no longer
+   * enriched with resource ARN and resource tag labels, and cannot be queried using
+   * PromQL.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StopOTelEnrichment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StopOTelEnrichmentOutcome StopOTelEnrichment(const Model::StopOTelEnrichmentRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for StopOTelEnrichment that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StopOTelEnrichmentRequestT = Model::StopOTelEnrichmentRequest>
+  Model::StopOTelEnrichmentOutcomeCallable StopOTelEnrichmentCallable(const StopOTelEnrichmentRequestT& request = {}) const {
+    return SubmitCallable(&CloudWatchClient::StopOTelEnrichment, request);
+  }
+
+  /**
+   * An Async wrapper for StopOTelEnrichment that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename StopOTelEnrichmentRequestT = Model::StopOTelEnrichmentRequest>
+  void StopOTelEnrichmentAsync(const StopOTelEnrichmentResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                               const StopOTelEnrichmentRequestT& request = {}) const {
+    return SubmitAsync(&CloudWatchClient::StopOTelEnrichment, request, handler, context);
   }
 
   /**

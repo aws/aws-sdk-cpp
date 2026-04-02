@@ -227,8 +227,9 @@ class AutocompleteRequest : public GeoPlacesRequest {
 
   ///@{
   /**
-   * <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>,
-   * if left empty.</p>
+   * <p> Indicates if the query results will be persisted in customer infrastructure.
+   * Defaults to <code>SingleUse</code> (not stored). Currently,
+   * <code>Autocomplete</code> does not support storage of results. </p>
    */
   inline AutocompleteIntendedUse GetIntendedUse() const { return m_intendedUse; }
   inline bool IntendedUseHasBeenSet() const { return m_intendedUseHasBeenSet; }

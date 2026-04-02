@@ -7,6 +7,7 @@
 #include <aws/bedrock-data-automation/BedrockDataAutomationRequest.h>
 #include <aws/bedrock-data-automation/BedrockDataAutomation_EXPORTS.h>
 #include <aws/bedrock-data-automation/model/BlueprintFilter.h>
+#include <aws/bedrock-data-automation/model/DataAutomationLibraryFilter.h>
 #include <aws/bedrock-data-automation/model/DataAutomationProjectStageFilter.h>
 #include <aws/bedrock-data-automation/model/ResourceOwner.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -107,6 +108,22 @@ class ListDataAutomationProjectsRequest : public BedrockDataAutomationRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const DataAutomationLibraryFilter& GetLibraryFilter() const { return m_libraryFilter; }
+  inline bool LibraryFilterHasBeenSet() const { return m_libraryFilterHasBeenSet; }
+  template <typename LibraryFilterT = DataAutomationLibraryFilter>
+  void SetLibraryFilter(LibraryFilterT&& value) {
+    m_libraryFilterHasBeenSet = true;
+    m_libraryFilter = std::forward<LibraryFilterT>(value);
+  }
+  template <typename LibraryFilterT = DataAutomationLibraryFilter>
+  ListDataAutomationProjectsRequest& WithLibraryFilter(LibraryFilterT&& value) {
+    SetLibraryFilter(std::forward<LibraryFilterT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_maxResults{0};
 
@@ -117,11 +134,14 @@ class ListDataAutomationProjectsRequest : public BedrockDataAutomationRequest {
   BlueprintFilter m_blueprintFilter;
 
   ResourceOwner m_resourceOwner{ResourceOwner::NOT_SET};
+
+  DataAutomationLibraryFilter m_libraryFilter;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_projectStageFilterHasBeenSet = false;
   bool m_blueprintFilterHasBeenSet = false;
   bool m_resourceOwnerHasBeenSet = false;
+  bool m_libraryFilterHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/McpToolSchemaConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -48,9 +49,33 @@ class McpServerTargetConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The tool schema configuration for the MCP server target. Supported only when
+   * the credential provider is configured with an authorization code grant type.
+   * Dynamic tool discovery/synchronization will be disabled when target is
+   * configured with mcpToolSchema.</p>
+   */
+  inline const McpToolSchemaConfiguration& GetMcpToolSchema() const { return m_mcpToolSchema; }
+  inline bool McpToolSchemaHasBeenSet() const { return m_mcpToolSchemaHasBeenSet; }
+  template <typename McpToolSchemaT = McpToolSchemaConfiguration>
+  void SetMcpToolSchema(McpToolSchemaT&& value) {
+    m_mcpToolSchemaHasBeenSet = true;
+    m_mcpToolSchema = std::forward<McpToolSchemaT>(value);
+  }
+  template <typename McpToolSchemaT = McpToolSchemaConfiguration>
+  McpServerTargetConfiguration& WithMcpToolSchema(McpToolSchemaT&& value) {
+    SetMcpToolSchema(std::forward<McpToolSchemaT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_endpoint;
+
+  McpToolSchemaConfiguration m_mcpToolSchema;
   bool m_endpointHasBeenSet = false;
+  bool m_mcpToolSchemaHasBeenSet = false;
 };
 
 }  // namespace Model

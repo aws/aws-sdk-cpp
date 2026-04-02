@@ -30,6 +30,7 @@
 #include <aws/bedrock-agentcore-control/model/ApiSchemaConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/AtlassianOauth2ProviderConfigInput.h>
 #include <aws/bedrock-agentcore-control/model/AtlassianOauth2ProviderConfigOutput.h>
+#include <aws/bedrock-agentcore-control/model/AuthorizationData.h>
 #include <aws/bedrock-agentcore-control/model/AuthorizerConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/AuthorizerType.h>
 #include <aws/bedrock-agentcore-control/model/AuthorizingClaimMatchValueType.h>
@@ -282,6 +283,7 @@
 #include <aws/bedrock-agentcore-control/model/McpLambdaTargetConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/McpServerTargetConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/McpTargetConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/McpToolSchemaConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/Memory.h>
 #include <aws/bedrock-agentcore-control/model/MemoryStatus.h>
 #include <aws/bedrock-agentcore-control/model/MemoryStrategy.h>
@@ -306,6 +308,7 @@
 #include <aws/bedrock-agentcore-control/model/NetworkConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/NetworkMode.h>
 #include <aws/bedrock-agentcore-control/model/NumericalScaleDefinition.h>
+#include <aws/bedrock-agentcore-control/model/OAuth2AuthorizationData.h>
 #include <aws/bedrock-agentcore-control/model/OAuthCredentialProvider.h>
 #include <aws/bedrock-agentcore-control/model/OAuthGrantType.h>
 #include <aws/bedrock-agentcore-control/model/Oauth2AuthorizationServerMetadata.h>

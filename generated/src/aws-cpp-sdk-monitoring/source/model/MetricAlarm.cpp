@@ -845,6 +845,29 @@ MetricAlarm& MetricAlarm::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDe
                   }
                 }
                 m_stateTransitionedTimestampHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "EvaluationCriteria") {
+                m_evaluationCriteria = EvaluationCriteria(decoder);
+                m_evaluationCriteriaHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "EvaluationInterval") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_evaluationInterval = static_cast<int64_t>(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextNegativeIntVal();
+                    if (val.has_value()) {
+                      m_evaluationInterval = static_cast<int64_t>(1 - val.value());
+                    }
+                  }
+                }
+                m_evaluationIntervalHasBeenSet = true;
               } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
@@ -1686,6 +1709,29 @@ MetricAlarm& MetricAlarm::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDe
                 }
               }
               m_stateTransitionedTimestampHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "EvaluationCriteria") {
+              m_evaluationCriteria = EvaluationCriteria(decoder);
+              m_evaluationCriteriaHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "EvaluationInterval") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                  auto val = decoder->PopNextUnsignedIntVal();
+                  if (val.has_value()) {
+                    m_evaluationInterval = static_cast<int64_t>(val.value());
+                  }
+                } else {
+                  auto val = decoder->PopNextNegativeIntVal();
+                  if (val.has_value()) {
+                    m_evaluationInterval = static_cast<int64_t>(1 - val.value());
+                  }
+                }
+              }
+              m_evaluationIntervalHasBeenSet = true;
             } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
@@ -1787,6 +1833,12 @@ void MetricAlarm::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
     mapSize++;
   }
   if (m_stateTransitionedTimestampHasBeenSet) {
+    mapSize++;
+  }
+  if (m_evaluationCriteriaHasBeenSet) {
+    mapSize++;
+  }
+  if (m_evaluationIntervalHasBeenSet) {
     mapSize++;
   }
 
@@ -1954,6 +2006,16 @@ void MetricAlarm::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("StateTransitionedTimestamp"));
     encoder.WriteTag(1);  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
     encoder.WriteUInt(m_stateTransitionedTimestamp.Seconds());
+  }
+
+  if (m_evaluationCriteriaHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("EvaluationCriteria"));
+    m_evaluationCriteria.CborEncode(encoder);
+  }
+
+  if (m_evaluationIntervalHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("EvaluationInterval"));
+    (m_evaluationInterval >= 0) ? encoder.WriteUInt(m_evaluationInterval) : encoder.WriteNegInt(m_evaluationInterval);
   }
 }
 

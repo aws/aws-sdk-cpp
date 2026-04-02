@@ -43,6 +43,7 @@
 #include <aws/monitoring/model/GetMetricStatisticsRequest.h>
 #include <aws/monitoring/model/GetMetricStreamRequest.h>
 #include <aws/monitoring/model/GetMetricWidgetImageRequest.h>
+#include <aws/monitoring/model/GetOTelEnrichmentRequest.h>
 #include <aws/monitoring/model/ListAlarmMuteRulesRequest.h>
 #include <aws/monitoring/model/ListDashboardsRequest.h>
 #include <aws/monitoring/model/ListManagedInsightRulesRequest.h>
@@ -60,7 +61,9 @@
 #include <aws/monitoring/model/PutMetricStreamRequest.h>
 #include <aws/monitoring/model/SetAlarmStateRequest.h>
 #include <aws/monitoring/model/StartMetricStreamsRequest.h>
+#include <aws/monitoring/model/StartOTelEnrichmentRequest.h>
 #include <aws/monitoring/model/StopMetricStreamsRequest.h>
+#include <aws/monitoring/model/StopOTelEnrichmentRequest.h>
 #include <aws/monitoring/model/TagResourceRequest.h>
 #include <aws/monitoring/model/UntagResourceRequest.h>
 #include <smithy/tracing/TracingUtils.h>
@@ -351,6 +354,12 @@ GetMetricWidgetImageOutcome CloudWatchClient::GetMetricWidgetImage(const GetMetr
                             : GetMetricWidgetImageOutcome(std::move(result.GetError()));
 }
 
+GetOTelEnrichmentOutcome CloudWatchClient::GetOTelEnrichment(const GetOTelEnrichmentRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetOTelEnrichmentOutcome(result.GetResultWithOwnership())
+                            : GetOTelEnrichmentOutcome(std::move(result.GetError()));
+}
+
 ListAlarmMuteRulesOutcome CloudWatchClient::ListAlarmMuteRules(const ListAlarmMuteRulesRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListAlarmMuteRulesOutcome(result.GetResultWithOwnership())
@@ -446,10 +455,22 @@ StartMetricStreamsOutcome CloudWatchClient::StartMetricStreams(const StartMetric
                             : StartMetricStreamsOutcome(std::move(result.GetError()));
 }
 
+StartOTelEnrichmentOutcome CloudWatchClient::StartOTelEnrichment(const StartOTelEnrichmentRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartOTelEnrichmentOutcome(result.GetResultWithOwnership())
+                            : StartOTelEnrichmentOutcome(std::move(result.GetError()));
+}
+
 StopMetricStreamsOutcome CloudWatchClient::StopMetricStreams(const StopMetricStreamsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? StopMetricStreamsOutcome(result.GetResultWithOwnership())
                             : StopMetricStreamsOutcome(std::move(result.GetError()));
+}
+
+StopOTelEnrichmentOutcome CloudWatchClient::StopOTelEnrichment(const StopOTelEnrichmentRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopOTelEnrichmentOutcome(result.GetResultWithOwnership())
+                            : StopOTelEnrichmentOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome CloudWatchClient::TagResource(const TagResourceRequest& request) const {

@@ -96,6 +96,7 @@
 #include <aws/appstream/model/DisassociateApplicationFromEntitlementResult.h>
 #include <aws/appstream/model/DisassociateFleetResult.h>
 #include <aws/appstream/model/DisassociateSoftwareFromImageBuilderResult.h>
+#include <aws/appstream/model/DrainSessionInstanceResult.h>
 #include <aws/appstream/model/EnableUserResult.h>
 #include <aws/appstream/model/ExpireSessionResult.h>
 #include <aws/appstream/model/GetExportImageTaskRequest.h>
@@ -220,6 +221,7 @@ class DisassociateApplicationFleetRequest;
 class DisassociateApplicationFromEntitlementRequest;
 class DisassociateFleetRequest;
 class DisassociateSoftwareFromImageBuilderRequest;
+class DrainSessionInstanceRequest;
 class EnableUserRequest;
 class ExpireSessionRequest;
 class GetExportImageTaskRequest;
@@ -312,6 +314,7 @@ typedef Aws::Utils::Outcome<DisassociateApplicationFleetResult, AppStreamError> 
 typedef Aws::Utils::Outcome<DisassociateApplicationFromEntitlementResult, AppStreamError> DisassociateApplicationFromEntitlementOutcome;
 typedef Aws::Utils::Outcome<DisassociateFleetResult, AppStreamError> DisassociateFleetOutcome;
 typedef Aws::Utils::Outcome<DisassociateSoftwareFromImageBuilderResult, AppStreamError> DisassociateSoftwareFromImageBuilderOutcome;
+typedef Aws::Utils::Outcome<DrainSessionInstanceResult, AppStreamError> DrainSessionInstanceOutcome;
 typedef Aws::Utils::Outcome<EnableUserResult, AppStreamError> EnableUserOutcome;
 typedef Aws::Utils::Outcome<ExpireSessionResult, AppStreamError> ExpireSessionOutcome;
 typedef Aws::Utils::Outcome<GetExportImageTaskResult, AppStreamError> GetExportImageTaskOutcome;
@@ -403,6 +406,7 @@ typedef std::future<DisassociateApplicationFleetOutcome> DisassociateApplication
 typedef std::future<DisassociateApplicationFromEntitlementOutcome> DisassociateApplicationFromEntitlementOutcomeCallable;
 typedef std::future<DisassociateFleetOutcome> DisassociateFleetOutcomeCallable;
 typedef std::future<DisassociateSoftwareFromImageBuilderOutcome> DisassociateSoftwareFromImageBuilderOutcomeCallable;
+typedef std::future<DrainSessionInstanceOutcome> DrainSessionInstanceOutcomeCallable;
 typedef std::future<EnableUserOutcome> EnableUserOutcomeCallable;
 typedef std::future<ExpireSessionOutcome> ExpireSessionOutcomeCallable;
 typedef std::future<GetExportImageTaskOutcome> GetExportImageTaskOutcomeCallable;
@@ -639,6 +643,9 @@ typedef std::function<void(const AppStreamClient*, const Model::DisassociateSoft
                            const Model::DisassociateSoftwareFromImageBuilderOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DisassociateSoftwareFromImageBuilderResponseReceivedHandler;
+typedef std::function<void(const AppStreamClient*, const Model::DrainSessionInstanceRequest&, const Model::DrainSessionInstanceOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DrainSessionInstanceResponseReceivedHandler;
 typedef std::function<void(const AppStreamClient*, const Model::EnableUserRequest&, const Model::EnableUserOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     EnableUserResponseReceivedHandler;
