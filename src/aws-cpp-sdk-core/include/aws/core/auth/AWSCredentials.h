@@ -126,60 +126,14 @@ namespace Aws
             }
 
             /**
-             * Copy assignment operator that securely clears old credential data before assignment.
+             * Copy assignment operator.
              */
-            AWSCredentials& operator=(const AWSCredentials& other)
-            {
-                if (this != &other)
-                {
-                    // Clear old sensitive data before overwriting
-                    if (!m_secretKey.empty())
-                    {
-                        Aws::Security::SecureMemClear(reinterpret_cast<unsigned char*>(&m_secretKey[0]), m_secretKey.size());
-                    }
-                    if (!m_sessionToken.empty())
-                    {
-                        Aws::Security::SecureMemClear(reinterpret_cast<unsigned char*>(&m_sessionToken[0]), m_sessionToken.size());
-                    }
-                    
-                    // Copy all members
-                    m_accessKeyId = other.m_accessKeyId;
-                    m_secretKey = other.m_secretKey;
-                    m_sessionToken = other.m_sessionToken;
-                    m_expiration = other.m_expiration;
-                    m_accountId = other.m_accountId;
-                    m_context = other.m_context;
-                }
-                return *this;
-            }
+            AWSCredentials& operator=(const AWSCredentials& other) = default;
 
             /**
-             * Move assignment operator that securely clears old credential data before assignment.
+             * Move assignment operator.
              */
-            AWSCredentials& operator=(AWSCredentials&& other) noexcept
-            {
-                if (this != &other)
-                {
-                    // Clear old sensitive data before overwriting
-                    if (!m_secretKey.empty())
-                    {
-                        Aws::Security::SecureMemClear(reinterpret_cast<unsigned char*>(&m_secretKey[0]), m_secretKey.size());
-                    }
-                    if (!m_sessionToken.empty())
-                    {
-                        Aws::Security::SecureMemClear(reinterpret_cast<unsigned char*>(&m_sessionToken[0]), m_sessionToken.size());
-                    }
-                    
-                    // Move all members
-                    m_accessKeyId = std::move(other.m_accessKeyId);
-                    m_secretKey = std::move(other.m_secretKey);
-                    m_sessionToken = std::move(other.m_sessionToken);
-                    m_expiration = std::move(other.m_expiration);
-                    m_accountId = std::move(other.m_accountId);
-                    m_context = std::move(other.m_context);
-                }
-                return *this;
-            }
+            AWSCredentials& operator=(AWSCredentials&& other) noexcept = default;
 
             bool operator == (const AWSCredentials& other) const
             {
@@ -267,11 +221,6 @@ namespace Aws
              */
             inline void SetAWSSecretKey(const Aws::String& secretKey)
             {
-                // Clear old value before setting new one
-                if (!m_secretKey.empty())
-                {
-                    Aws::Security::SecureMemClear(reinterpret_cast<unsigned char*>(&m_secretKey[0]), m_secretKey.size());
-                }
                 m_secretKey = secretKey;
             }
 
@@ -280,11 +229,6 @@ namespace Aws
              */
             inline void SetSessionToken(const Aws::String& sessionToken)
             {
-                // Clear old value before setting new one
-                if (!m_sessionToken.empty())
-                {
-                    Aws::Security::SecureMemClear(reinterpret_cast<unsigned char*>(&m_sessionToken[0]), m_sessionToken.size());
-                }
                 m_sessionToken = sessionToken;
             }
 
@@ -310,11 +254,6 @@ namespace Aws
              */
             inline void SetAWSSecretKey(const char* secretKey)
             {
-                // Clear old value before setting new one
-                if (!m_secretKey.empty())
-                {
-                    Aws::Security::SecureMemClear(reinterpret_cast<unsigned char*>(&m_secretKey[0]), m_secretKey.size());
-                }
                 m_secretKey = secretKey;
             }
 
@@ -323,11 +262,6 @@ namespace Aws
              */
             inline void SetSessionToken(const char* sessionToken)
             {
-                // Clear old value before setting new one
-                if (!m_sessionToken.empty())
-                {
-                    Aws::Security::SecureMemClear(reinterpret_cast<unsigned char*>(&m_sessionToken[0]), m_sessionToken.size());
-                }
                 m_sessionToken = sessionToken;
             }
 
