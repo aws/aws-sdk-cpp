@@ -30,9 +30,9 @@ AccountEnforcedGuardrailOutputConfiguration& AccountEnforcedGuardrailOutputConfi
     m_guardrailId = jsonValue.GetString("guardrailId");
     m_guardrailIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("inputTags")) {
-    m_inputTags = InputTagsMapper::GetInputTagsForName(jsonValue.GetString("inputTags"));
-    m_inputTagsHasBeenSet = true;
+  if (jsonValue.ValueExists("selectiveContentGuarding")) {
+    m_selectiveContentGuarding = jsonValue.GetObject("selectiveContentGuarding");
+    m_selectiveContentGuardingHasBeenSet = true;
   }
   if (jsonValue.ValueExists("guardrailVersion")) {
     m_guardrailVersion = jsonValue.GetString("guardrailVersion");
@@ -80,8 +80,8 @@ JsonValue AccountEnforcedGuardrailOutputConfiguration::Jsonize() const {
     payload.WithString("guardrailId", m_guardrailId);
   }
 
-  if (m_inputTagsHasBeenSet) {
-    payload.WithString("inputTags", InputTagsMapper::GetNameForInputTags(m_inputTags));
+  if (m_selectiveContentGuardingHasBeenSet) {
+    payload.WithObject("selectiveContentGuarding", m_selectiveContentGuarding.Jsonize());
   }
 
   if (m_guardrailVersionHasBeenSet) {

@@ -295,8 +295,8 @@ class UpdateGatewayTargetResult {
   ///@{
   /**
    * <p>OAuth2 authorization data for the updated gateway target. This data is
-   * returned when the target requires user authorization through an authorization
-   * code grant type.</p>
+   * returned when a target is configured with a credential provider with
+   * authorization code grant type and requires user federation.</p>
    */
   inline const AuthorizationData& GetAuthorizationData() const { return m_authorizationData; }
   template <typename AuthorizationDataT = AuthorizationData>

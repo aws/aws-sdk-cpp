@@ -37,9 +37,9 @@ class GuardrailContentFiltersTier {
    * <p>The tier that your guardrail uses for content filters. Valid values
    * include:</p> <ul> <li> <p> <code>CLASSIC</code> tier – Provides established
    * guardrails functionality supporting English, French, and Spanish languages.</p>
-   * </li> <li> <p> <code>STANDARD</code> tier – Provides a more robust solution than
-   * the <code>CLASSIC</code> tier and has more comprehensive language support. This
-   * tier requires that your guardrail use <a
+   * </li> <li> <p> <code>STANDARD</code> tier �� Provides a more robust solution
+   * than the <code>CLASSIC</code> tier and has more comprehensive language support.
+   * This tier requires that your guardrail use <a
    * href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-cross-region.html">cross-Region
    * inference</a>.</p> </li> </ul>
    */

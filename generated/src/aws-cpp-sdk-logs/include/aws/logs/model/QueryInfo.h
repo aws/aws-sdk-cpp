@@ -140,6 +140,57 @@ class QueryInfo {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The duration in milliseconds that the query took to execute.</p>
+   */
+  inline long long GetQueryDuration() const { return m_queryDuration; }
+  inline bool QueryDurationHasBeenSet() const { return m_queryDurationHasBeenSet; }
+  inline void SetQueryDuration(long long value) {
+    m_queryDurationHasBeenSet = true;
+    m_queryDuration = value;
+  }
+  inline QueryInfo& WithQueryDuration(long long value) {
+    SetQueryDuration(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The total number of bytes scanned by the query. This indicates the cost
+   * associated with the query.</p>
+   */
+  inline double GetBytesScanned() const { return m_bytesScanned; }
+  inline bool BytesScannedHasBeenSet() const { return m_bytesScannedHasBeenSet; }
+  inline void SetBytesScanned(double value) {
+    m_bytesScannedHasBeenSet = true;
+    m_bytesScanned = value;
+  }
+  inline QueryInfo& WithBytesScanned(double value) {
+    SetBytesScanned(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the user who ran the query.</p>
+   */
+  inline const Aws::String& GetUserIdentity() const { return m_userIdentity; }
+  inline bool UserIdentityHasBeenSet() const { return m_userIdentityHasBeenSet; }
+  template <typename UserIdentityT = Aws::String>
+  void SetUserIdentity(UserIdentityT&& value) {
+    m_userIdentityHasBeenSet = true;
+    m_userIdentity = std::forward<UserIdentityT>(value);
+  }
+  template <typename UserIdentityT = Aws::String>
+  QueryInfo& WithUserIdentity(UserIdentityT&& value) {
+    SetUserIdentity(std::forward<UserIdentityT>(value));
+    return *this;
+  }
+  ///@}
  private:
   QueryLanguage m_queryLanguage{QueryLanguage::NOT_SET};
 
@@ -152,12 +203,21 @@ class QueryInfo {
   long long m_createTime{0};
 
   Aws::String m_logGroupName;
+
+  long long m_queryDuration{0};
+
+  double m_bytesScanned{0.0};
+
+  Aws::String m_userIdentity;
   bool m_queryLanguageHasBeenSet = false;
   bool m_queryIdHasBeenSet = false;
   bool m_queryStringHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_createTimeHasBeenSet = false;
   bool m_logGroupNameHasBeenSet = false;
+  bool m_queryDurationHasBeenSet = false;
+  bool m_bytesScannedHasBeenSet = false;
+  bool m_userIdentityHasBeenSet = false;
 };
 
 }  // namespace Model

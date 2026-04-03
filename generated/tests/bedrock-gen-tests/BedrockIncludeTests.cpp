@@ -206,6 +206,8 @@
 #include <aws/bedrock/model/DeletePromptRouterResult.h>
 #include <aws/bedrock/model/DeleteProvisionedModelThroughputRequest.h>
 #include <aws/bedrock/model/DeleteProvisionedModelThroughputResult.h>
+#include <aws/bedrock/model/DeleteResourcePolicyRequest.h>
+#include <aws/bedrock/model/DeleteResourcePolicyResult.h>
 #include <aws/bedrock/model/DeregisterMarketplaceModelEndpointRequest.h>
 #include <aws/bedrock/model/DeregisterMarketplaceModelEndpointResult.h>
 #include <aws/bedrock/model/DimensionalPriceRate.h>
@@ -292,6 +294,8 @@
 #include <aws/bedrock/model/GetPromptRouterResult.h>
 #include <aws/bedrock/model/GetProvisionedModelThroughputRequest.h>
 #include <aws/bedrock/model/GetProvisionedModelThroughputResult.h>
+#include <aws/bedrock/model/GetResourcePolicyRequest.h>
+#include <aws/bedrock/model/GetResourcePolicyResult.h>
 #include <aws/bedrock/model/GetUseCaseForModelAccessRequest.h>
 #include <aws/bedrock/model/GetUseCaseForModelAccessResult.h>
 #include <aws/bedrock/model/GraderConfig.h>
@@ -355,7 +359,6 @@
 #include <aws/bedrock/model/InferenceProfileSummary.h>
 #include <aws/bedrock/model/InferenceProfileType.h>
 #include <aws/bedrock/model/InferenceType.h>
-#include <aws/bedrock/model/InputTags.h>
 #include <aws/bedrock/model/InvocationLogSource.h>
 #include <aws/bedrock/model/InvocationLogsConfig.h>
 #include <aws/bedrock/model/JobStatusDetails.h>
@@ -449,6 +452,8 @@
 #include <aws/bedrock/model/PutEnforcedGuardrailConfigurationResult.h>
 #include <aws/bedrock/model/PutModelInvocationLoggingConfigurationRequest.h>
 #include <aws/bedrock/model/PutModelInvocationLoggingConfigurationResult.h>
+#include <aws/bedrock/model/PutResourcePolicyRequest.h>
+#include <aws/bedrock/model/PutResourcePolicyResult.h>
 #include <aws/bedrock/model/PutUseCaseForModelAccessRequest.h>
 #include <aws/bedrock/model/PutUseCaseForModelAccessResult.h>
 #include <aws/bedrock/model/QueryTransformationConfiguration.h>
@@ -477,6 +482,8 @@
 #include <aws/bedrock/model/S3ObjectDoc.h>
 #include <aws/bedrock/model/SageMakerEndpoint.h>
 #include <aws/bedrock/model/SearchType.h>
+#include <aws/bedrock/model/SelectiveContentGuarding.h>
+#include <aws/bedrock/model/SelectiveGuardingMode.h>
 #include <aws/bedrock/model/SortByProvisionedModels.h>
 #include <aws/bedrock/model/SortJobsBy.h>
 #include <aws/bedrock/model/SortModelsBy.h>

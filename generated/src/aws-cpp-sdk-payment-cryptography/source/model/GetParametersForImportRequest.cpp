@@ -23,6 +23,10 @@ Aws::String GetParametersForImportRequest::SerializePayload() const {
     payload.WithString("WrappingKeyAlgorithm", KeyAlgorithmMapper::GetNameForKeyAlgorithm(m_wrappingKeyAlgorithm));
   }
 
+  if (m_reuseLastGeneratedTokenHasBeenSet) {
+    payload.WithBool("ReuseLastGeneratedToken", m_reuseLastGeneratedToken);
+  }
+
   return payload.View().WriteReadable();
 }
 

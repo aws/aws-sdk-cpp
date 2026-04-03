@@ -1169,6 +1169,33 @@ class AWS_BEDROCK_API BedrockClient
   }
 
   /**
+   * <p>Deletes a previously created Bedrock resource policy.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteResourcePolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteResourcePolicy that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
+  Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const DeleteResourcePolicyRequestT& request) const {
+    return SubmitCallable(&BedrockClient::DeleteResourcePolicy, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteResourcePolicy that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
+  void DeleteResourcePolicyAsync(const DeleteResourcePolicyRequestT& request, const DeleteResourcePolicyResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::DeleteResourcePolicy, request, handler, context);
+  }
+
+  /**
    * <p>Deregisters an endpoint for a model from Amazon Bedrock Marketplace. This
    * operation removes the endpoint's association with Amazon Bedrock but does not
    * delete the underlying Amazon SageMaker endpoint.</p><p><h3>See Also:</h3>   <a
@@ -1923,6 +1950,33 @@ class AWS_BEDROCK_API BedrockClient
   }
 
   /**
+   * <p>Gets the resource policy document for a Bedrock resource</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetResourcePolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetResourcePolicyOutcome GetResourcePolicy(const Model::GetResourcePolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetResourcePolicy that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetResourcePolicyRequestT = Model::GetResourcePolicyRequest>
+  Model::GetResourcePolicyOutcomeCallable GetResourcePolicyCallable(const GetResourcePolicyRequestT& request) const {
+    return SubmitCallable(&BedrockClient::GetResourcePolicy, request);
+  }
+
+  /**
+   * An Async wrapper for GetResourcePolicy that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetResourcePolicyRequestT = Model::GetResourcePolicyRequest>
+  void GetResourcePolicyAsync(const GetResourcePolicyRequestT& request, const GetResourcePolicyResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::GetResourcePolicy, request, handler, context);
+  }
+
+  /**
    * <p>Get usecase for model access.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetUseCaseForModelAccess">AWS
    * API Reference</a></p>
@@ -2672,6 +2726,32 @@ class AWS_BEDROCK_API BedrockClient
                                                    const PutModelInvocationLoggingConfigurationResponseReceivedHandler& handler,
                                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockClient::PutModelInvocationLoggingConfiguration, request, handler, context);
+  }
+
+  /**
+   * <p>Adds a resource policy for a Bedrock resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutResourcePolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutResourcePolicyOutcome PutResourcePolicy(const Model::PutResourcePolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutResourcePolicy that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename PutResourcePolicyRequestT = Model::PutResourcePolicyRequest>
+  Model::PutResourcePolicyOutcomeCallable PutResourcePolicyCallable(const PutResourcePolicyRequestT& request) const {
+    return SubmitCallable(&BedrockClient::PutResourcePolicy, request);
+  }
+
+  /**
+   * An Async wrapper for PutResourcePolicy that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename PutResourcePolicyRequestT = Model::PutResourcePolicyRequest>
+  void PutResourcePolicyAsync(const PutResourcePolicyRequestT& request, const PutResourcePolicyResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::PutResourcePolicy, request, handler, context);
   }
 
   /**

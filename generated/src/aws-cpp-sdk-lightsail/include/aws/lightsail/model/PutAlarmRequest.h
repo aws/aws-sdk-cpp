@@ -12,6 +12,7 @@
 #include <aws/lightsail/model/ComparisonOperator.h>
 #include <aws/lightsail/model/ContactProtocol.h>
 #include <aws/lightsail/model/MetricName.h>
+#include <aws/lightsail/model/Tag.h>
 #include <aws/lightsail/model/TreatMissingData.h>
 
 #include <utility>
@@ -299,6 +300,32 @@ class PutAlarmRequest : public LightsailRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The tag keys and optional values to add to the alarm during create.</p>
+   * <p>Use the <code>TagResource</code> action to tag a resource after it's
+   * created.</p>
+   */
+  inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Vector<Tag>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Vector<Tag>>
+  PutAlarmRequest& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsT = Tag>
+  PutAlarmRequest& AddTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace_back(std::forward<TagsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_alarmName;
 
@@ -321,6 +348,8 @@ class PutAlarmRequest : public LightsailRequest {
   Aws::Vector<AlarmState> m_notificationTriggers;
 
   bool m_notificationEnabled{false};
+
+  Aws::Vector<Tag> m_tags;
   bool m_alarmNameHasBeenSet = false;
   bool m_metricNameHasBeenSet = false;
   bool m_monitoredResourceNameHasBeenSet = false;
@@ -332,6 +361,7 @@ class PutAlarmRequest : public LightsailRequest {
   bool m_contactProtocolsHasBeenSet = false;
   bool m_notificationTriggersHasBeenSet = false;
   bool m_notificationEnabledHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
 };
 
 }  // namespace Model

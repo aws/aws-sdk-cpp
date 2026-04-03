@@ -40,6 +40,7 @@
 #include <aws/bedrock/model/DeleteModelInvocationLoggingConfigurationRequest.h>
 #include <aws/bedrock/model/DeletePromptRouterRequest.h>
 #include <aws/bedrock/model/DeleteProvisionedModelThroughputRequest.h>
+#include <aws/bedrock/model/DeleteResourcePolicyRequest.h>
 #include <aws/bedrock/model/DeregisterMarketplaceModelEndpointRequest.h>
 #include <aws/bedrock/model/ExportAutomatedReasoningPolicyVersionRequest.h>
 #include <aws/bedrock/model/GetAutomatedReasoningPolicyAnnotationsRequest.h>
@@ -65,6 +66,7 @@
 #include <aws/bedrock/model/GetModelInvocationLoggingConfigurationRequest.h>
 #include <aws/bedrock/model/GetPromptRouterRequest.h>
 #include <aws/bedrock/model/GetProvisionedModelThroughputRequest.h>
+#include <aws/bedrock/model/GetResourcePolicyRequest.h>
 #include <aws/bedrock/model/GetUseCaseForModelAccessRequest.h>
 #include <aws/bedrock/model/ListAutomatedReasoningPoliciesRequest.h>
 #include <aws/bedrock/model/ListAutomatedReasoningPolicyBuildWorkflowsRequest.h>
@@ -89,6 +91,7 @@
 #include <aws/bedrock/model/ListTagsForResourceRequest.h>
 #include <aws/bedrock/model/PutEnforcedGuardrailConfigurationRequest.h>
 #include <aws/bedrock/model/PutModelInvocationLoggingConfigurationRequest.h>
+#include <aws/bedrock/model/PutResourcePolicyRequest.h>
 #include <aws/bedrock/model/PutUseCaseForModelAccessRequest.h>
 #include <aws/bedrock/model/RegisterMarketplaceModelEndpointRequest.h>
 #include <aws/bedrock/model/StartAutomatedReasoningPolicyBuildWorkflowRequest.h>
@@ -1271,6 +1274,38 @@ DeleteProvisionedModelThroughputOutcome BedrockClient::DeleteProvisionedModelThr
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DeleteResourcePolicyOutcome BedrockClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const {
+  AWS_OPERATION_GUARD(DeleteResourcePolicy);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ResourceArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteResourcePolicy", "Required field: ResourceArn, is not set");
+    return DeleteResourcePolicyOutcome(Aws::Client::AWSError<BedrockErrors>(BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [ResourceArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, DeleteResourcePolicy, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteResourcePolicy, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteResourcePolicy",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteResourcePolicyOutcome>(
+      [&]() -> DeleteResourcePolicyOutcome {
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/resource-policy/");
+                                               resolvedEndpoint.AddPathSegment(request.GetResourceArn());
+                                             });
+        return result.IsSuccess() ? DeleteResourcePolicyOutcome(result.GetResultWithOwnership())
+                                  : DeleteResourcePolicyOutcome(std::move(result.GetError()));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DeregisterMarketplaceModelEndpointOutcome BedrockClient::DeregisterMarketplaceModelEndpoint(
     const DeregisterMarketplaceModelEndpointRequest& request) const {
   AWS_OPERATION_GUARD(DeregisterMarketplaceModelEndpoint);
@@ -2146,6 +2181,38 @@ GetProvisionedModelThroughputOutcome BedrockClient::GetProvisionedModelThroughpu
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetResourcePolicyOutcome BedrockClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const {
+  AWS_OPERATION_GUARD(GetResourcePolicy);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ResourceArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetResourcePolicy", "Required field: ResourceArn, is not set");
+    return GetResourcePolicyOutcome(Aws::Client::AWSError<BedrockErrors>(BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                         "Missing required field [ResourceArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetResourcePolicy, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetResourcePolicy, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetResourcePolicy",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetResourcePolicyOutcome>(
+      [&]() -> GetResourcePolicyOutcome {
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/resource-policy/");
+                                               resolvedEndpoint.AddPathSegment(request.GetResourceArn());
+                                             });
+        return result.IsSuccess() ? GetResourcePolicyOutcome(result.GetResultWithOwnership())
+                                  : GetResourcePolicyOutcome(std::move(result.GetError()));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetUseCaseForModelAccessOutcome BedrockClient::GetUseCaseForModelAccess(const GetUseCaseForModelAccessRequest& request) const {
   AWS_OPERATION_GUARD(GetUseCaseForModelAccess);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetUseCaseForModelAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2803,6 +2870,31 @@ PutModelInvocationLoggingConfigurationOutcome BedrockClient::PutModelInvocationL
             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/logging/modelinvocations"); });
         return result.IsSuccess() ? PutModelInvocationLoggingConfigurationOutcome(result.GetResultWithOwnership())
                                   : PutModelInvocationLoggingConfigurationOutcome(std::move(result.GetError()));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+PutResourcePolicyOutcome BedrockClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const {
+  AWS_OPERATION_GUARD(PutResourcePolicy);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, PutResourcePolicy, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, PutResourcePolicy, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PutResourcePolicy",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<PutResourcePolicyOutcome>(
+      [&]() -> PutResourcePolicyOutcome {
+        auto result = MakeRequestDeserialize(
+            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/resource-policy"); });
+        return result.IsSuccess() ? PutResourcePolicyOutcome(result.GetResultWithOwnership())
+                                  : PutResourcePolicyOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

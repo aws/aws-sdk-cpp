@@ -23,6 +23,10 @@ Aws::String GetParametersForExportRequest::SerializePayload() const {
     payload.WithString("SigningKeyAlgorithm", KeyAlgorithmMapper::GetNameForKeyAlgorithm(m_signingKeyAlgorithm));
   }
 
+  if (m_reuseLastGeneratedTokenHasBeenSet) {
+    payload.WithBool("ReuseLastGeneratedToken", m_reuseLastGeneratedToken);
+  }
+
   return payload.View().WriteReadable();
 }
 

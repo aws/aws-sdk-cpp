@@ -20,9 +20,9 @@ namespace BedrockAgentCoreControl {
 namespace Model {
 
 /**
- * <p>Contains the authorization data that is returned when a gateway target
- * requires user authorization through an authorization code grant
- * type.</p><p><h3>See Also:</h3>   <a
+ * <p>Contains the authorization data that is returned when a gateway target is
+ * configured with a credential provider with authorization code grant type and
+ * requires user federation.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/AuthorizationData">AWS
  * API Reference</a></p>
  */

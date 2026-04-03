@@ -32,7 +32,9 @@ class GetPublicKeyCertificateResult {
   /**
    * <p>The public key component of the asymmetric key pair in a certificate PEM
    * format (base64 encoded). It is signed by the root certificate authority (CA).
-   * The certificate expires in 90 days.</p>
+   * The certificate is valid for 90 days from the time it is issued. The service
+   * returns a cached certificate if one exists with at least 30 days of remaining
+   * validity. Otherwise, a new 90-day certificate is issued.</p>
    */
   inline const Aws::String& GetKeyCertificate() const { return m_keyCertificate; }
   template <typename KeyCertificateT = Aws::String>

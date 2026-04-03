@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/bedrock/model/InputTags.h>
+#include <aws/bedrock/model/SelectiveGuardingMode.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -13,35 +13,35 @@ using namespace Aws::Utils;
 namespace Aws {
 namespace Bedrock {
 namespace Model {
-namespace InputTagsMapper {
+namespace SelectiveGuardingModeMapper {
 
-static const int HONOR_HASH = HashingUtils::HashString("HONOR");
-static const int IGNORE_HASH = HashingUtils::HashString("IGNORE");
+static const int SELECTIVE_HASH = HashingUtils::HashString("SELECTIVE");
+static const int COMPREHENSIVE_HASH = HashingUtils::HashString("COMPREHENSIVE");
 
-InputTags GetInputTagsForName(const Aws::String& name) {
+SelectiveGuardingMode GetSelectiveGuardingModeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == HONOR_HASH) {
-    return InputTags::HONOR;
-  } else if (hashCode == IGNORE_HASH) {
-    return InputTags::IGNORE;
+  if (hashCode == SELECTIVE_HASH) {
+    return SelectiveGuardingMode::SELECTIVE;
+  } else if (hashCode == COMPREHENSIVE_HASH) {
+    return SelectiveGuardingMode::COMPREHENSIVE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
     overflowContainer->StoreOverflow(hashCode, name);
-    return static_cast<InputTags>(hashCode);
+    return static_cast<SelectiveGuardingMode>(hashCode);
   }
 
-  return InputTags::NOT_SET;
+  return SelectiveGuardingMode::NOT_SET;
 }
 
-Aws::String GetNameForInputTags(InputTags enumValue) {
+Aws::String GetNameForSelectiveGuardingMode(SelectiveGuardingMode enumValue) {
   switch (enumValue) {
-    case InputTags::NOT_SET:
+    case SelectiveGuardingMode::NOT_SET:
       return {};
-    case InputTags::HONOR:
-      return "HONOR";
-    case InputTags::IGNORE:
-      return "IGNORE";
+    case SelectiveGuardingMode::SELECTIVE:
+      return "SELECTIVE";
+    case SelectiveGuardingMode::COMPREHENSIVE:
+      return "COMPREHENSIVE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {
@@ -52,7 +52,7 @@ Aws::String GetNameForInputTags(InputTags enumValue) {
   }
 }
 
-}  // namespace InputTagsMapper
+}  // namespace SelectiveGuardingModeMapper
 }  // namespace Model
 }  // namespace Bedrock
 }  // namespace Aws

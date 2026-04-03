@@ -53,6 +53,7 @@
 #include <aws/bedrock/model/DeleteModelInvocationLoggingConfigurationResult.h>
 #include <aws/bedrock/model/DeletePromptRouterResult.h>
 #include <aws/bedrock/model/DeleteProvisionedModelThroughputResult.h>
+#include <aws/bedrock/model/DeleteResourcePolicyResult.h>
 #include <aws/bedrock/model/DeregisterMarketplaceModelEndpointResult.h>
 #include <aws/bedrock/model/ExportAutomatedReasoningPolicyVersionResult.h>
 #include <aws/bedrock/model/GetAutomatedReasoningPolicyAnnotationsResult.h>
@@ -79,6 +80,7 @@
 #include <aws/bedrock/model/GetModelInvocationLoggingConfigurationResult.h>
 #include <aws/bedrock/model/GetPromptRouterResult.h>
 #include <aws/bedrock/model/GetProvisionedModelThroughputResult.h>
+#include <aws/bedrock/model/GetResourcePolicyResult.h>
 #include <aws/bedrock/model/GetUseCaseForModelAccessRequest.h>
 #include <aws/bedrock/model/GetUseCaseForModelAccessResult.h>
 #include <aws/bedrock/model/ListAutomatedReasoningPoliciesRequest.h>
@@ -120,6 +122,7 @@
 #include <aws/bedrock/model/ListTagsForResourceResult.h>
 #include <aws/bedrock/model/PutEnforcedGuardrailConfigurationResult.h>
 #include <aws/bedrock/model/PutModelInvocationLoggingConfigurationResult.h>
+#include <aws/bedrock/model/PutResourcePolicyResult.h>
 #include <aws/bedrock/model/PutUseCaseForModelAccessResult.h>
 #include <aws/bedrock/model/RegisterMarketplaceModelEndpointResult.h>
 #include <aws/bedrock/model/StartAutomatedReasoningPolicyBuildWorkflowResult.h>
@@ -202,6 +205,7 @@ class DeleteMarketplaceModelEndpointRequest;
 class DeleteModelInvocationLoggingConfigurationRequest;
 class DeletePromptRouterRequest;
 class DeleteProvisionedModelThroughputRequest;
+class DeleteResourcePolicyRequest;
 class DeregisterMarketplaceModelEndpointRequest;
 class ExportAutomatedReasoningPolicyVersionRequest;
 class GetAutomatedReasoningPolicyRequest;
@@ -227,6 +231,7 @@ class GetModelInvocationJobRequest;
 class GetModelInvocationLoggingConfigurationRequest;
 class GetPromptRouterRequest;
 class GetProvisionedModelThroughputRequest;
+class GetResourcePolicyRequest;
 class GetUseCaseForModelAccessRequest;
 class ListAutomatedReasoningPoliciesRequest;
 class ListAutomatedReasoningPolicyBuildWorkflowsRequest;
@@ -251,6 +256,7 @@ class ListProvisionedModelThroughputsRequest;
 class ListTagsForResourceRequest;
 class PutEnforcedGuardrailConfigurationRequest;
 class PutModelInvocationLoggingConfigurationRequest;
+class PutResourcePolicyRequest;
 class PutUseCaseForModelAccessRequest;
 class RegisterMarketplaceModelEndpointRequest;
 class StartAutomatedReasoningPolicyBuildWorkflowRequest;
@@ -305,6 +311,7 @@ typedef Aws::Utils::Outcome<DeleteMarketplaceModelEndpointResult, BedrockError> 
 typedef Aws::Utils::Outcome<DeleteModelInvocationLoggingConfigurationResult, BedrockError> DeleteModelInvocationLoggingConfigurationOutcome;
 typedef Aws::Utils::Outcome<DeletePromptRouterResult, BedrockError> DeletePromptRouterOutcome;
 typedef Aws::Utils::Outcome<DeleteProvisionedModelThroughputResult, BedrockError> DeleteProvisionedModelThroughputOutcome;
+typedef Aws::Utils::Outcome<DeleteResourcePolicyResult, BedrockError> DeleteResourcePolicyOutcome;
 typedef Aws::Utils::Outcome<DeregisterMarketplaceModelEndpointResult, BedrockError> DeregisterMarketplaceModelEndpointOutcome;
 typedef Aws::Utils::Outcome<ExportAutomatedReasoningPolicyVersionResult, BedrockError> ExportAutomatedReasoningPolicyVersionOutcome;
 typedef Aws::Utils::Outcome<GetAutomatedReasoningPolicyResult, BedrockError> GetAutomatedReasoningPolicyOutcome;
@@ -331,6 +338,7 @@ typedef Aws::Utils::Outcome<GetModelInvocationJobResult, BedrockError> GetModelI
 typedef Aws::Utils::Outcome<GetModelInvocationLoggingConfigurationResult, BedrockError> GetModelInvocationLoggingConfigurationOutcome;
 typedef Aws::Utils::Outcome<GetPromptRouterResult, BedrockError> GetPromptRouterOutcome;
 typedef Aws::Utils::Outcome<GetProvisionedModelThroughputResult, BedrockError> GetProvisionedModelThroughputOutcome;
+typedef Aws::Utils::Outcome<GetResourcePolicyResult, BedrockError> GetResourcePolicyOutcome;
 typedef Aws::Utils::Outcome<GetUseCaseForModelAccessResult, BedrockError> GetUseCaseForModelAccessOutcome;
 typedef Aws::Utils::Outcome<ListAutomatedReasoningPoliciesResult, BedrockError> ListAutomatedReasoningPoliciesOutcome;
 typedef Aws::Utils::Outcome<ListAutomatedReasoningPolicyBuildWorkflowsResult, BedrockError>
@@ -356,6 +364,7 @@ typedef Aws::Utils::Outcome<ListProvisionedModelThroughputsResult, BedrockError>
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, BedrockError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<PutEnforcedGuardrailConfigurationResult, BedrockError> PutEnforcedGuardrailConfigurationOutcome;
 typedef Aws::Utils::Outcome<PutModelInvocationLoggingConfigurationResult, BedrockError> PutModelInvocationLoggingConfigurationOutcome;
+typedef Aws::Utils::Outcome<PutResourcePolicyResult, BedrockError> PutResourcePolicyOutcome;
 typedef Aws::Utils::Outcome<PutUseCaseForModelAccessResult, BedrockError> PutUseCaseForModelAccessOutcome;
 typedef Aws::Utils::Outcome<RegisterMarketplaceModelEndpointResult, BedrockError> RegisterMarketplaceModelEndpointOutcome;
 typedef Aws::Utils::Outcome<StartAutomatedReasoningPolicyBuildWorkflowResult, BedrockError>
@@ -409,6 +418,7 @@ typedef std::future<DeleteMarketplaceModelEndpointOutcome> DeleteMarketplaceMode
 typedef std::future<DeleteModelInvocationLoggingConfigurationOutcome> DeleteModelInvocationLoggingConfigurationOutcomeCallable;
 typedef std::future<DeletePromptRouterOutcome> DeletePromptRouterOutcomeCallable;
 typedef std::future<DeleteProvisionedModelThroughputOutcome> DeleteProvisionedModelThroughputOutcomeCallable;
+typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
 typedef std::future<DeregisterMarketplaceModelEndpointOutcome> DeregisterMarketplaceModelEndpointOutcomeCallable;
 typedef std::future<ExportAutomatedReasoningPolicyVersionOutcome> ExportAutomatedReasoningPolicyVersionOutcomeCallable;
 typedef std::future<GetAutomatedReasoningPolicyOutcome> GetAutomatedReasoningPolicyOutcomeCallable;
@@ -435,6 +445,7 @@ typedef std::future<GetModelInvocationJobOutcome> GetModelInvocationJobOutcomeCa
 typedef std::future<GetModelInvocationLoggingConfigurationOutcome> GetModelInvocationLoggingConfigurationOutcomeCallable;
 typedef std::future<GetPromptRouterOutcome> GetPromptRouterOutcomeCallable;
 typedef std::future<GetProvisionedModelThroughputOutcome> GetProvisionedModelThroughputOutcomeCallable;
+typedef std::future<GetResourcePolicyOutcome> GetResourcePolicyOutcomeCallable;
 typedef std::future<GetUseCaseForModelAccessOutcome> GetUseCaseForModelAccessOutcomeCallable;
 typedef std::future<ListAutomatedReasoningPoliciesOutcome> ListAutomatedReasoningPoliciesOutcomeCallable;
 typedef std::future<ListAutomatedReasoningPolicyBuildWorkflowsOutcome> ListAutomatedReasoningPolicyBuildWorkflowsOutcomeCallable;
@@ -459,6 +470,7 @@ typedef std::future<ListProvisionedModelThroughputsOutcome> ListProvisionedModel
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<PutEnforcedGuardrailConfigurationOutcome> PutEnforcedGuardrailConfigurationOutcomeCallable;
 typedef std::future<PutModelInvocationLoggingConfigurationOutcome> PutModelInvocationLoggingConfigurationOutcomeCallable;
+typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
 typedef std::future<PutUseCaseForModelAccessOutcome> PutUseCaseForModelAccessOutcomeCallable;
 typedef std::future<RegisterMarketplaceModelEndpointOutcome> RegisterMarketplaceModelEndpointOutcomeCallable;
 typedef std::future<StartAutomatedReasoningPolicyBuildWorkflowOutcome> StartAutomatedReasoningPolicyBuildWorkflowOutcomeCallable;
@@ -595,6 +607,9 @@ typedef std::function<void(const BedrockClient*, const Model::DeleteProvisionedM
                            const Model::DeleteProvisionedModelThroughputOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteProvisionedModelThroughputResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::DeleteResourcePolicyRequest&, const Model::DeleteResourcePolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteResourcePolicyResponseReceivedHandler;
 typedef std::function<void(const BedrockClient*, const Model::DeregisterMarketplaceModelEndpointRequest&,
                            const Model::DeregisterMarketplaceModelEndpointOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -681,6 +696,9 @@ typedef std::function<void(const BedrockClient*, const Model::GetProvisionedMode
                            const Model::GetProvisionedModelThroughputOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetProvisionedModelThroughputResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::GetResourcePolicyRequest&, const Model::GetResourcePolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetResourcePolicyResponseReceivedHandler;
 typedef std::function<void(const BedrockClient*, const Model::GetUseCaseForModelAccessRequest&,
                            const Model::GetUseCaseForModelAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetUseCaseForModelAccessResponseReceivedHandler;
@@ -763,6 +781,9 @@ typedef std::function<void(const BedrockClient*, const Model::PutModelInvocation
                            const Model::PutModelInvocationLoggingConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutModelInvocationLoggingConfigurationResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::PutResourcePolicyRequest&, const Model::PutResourcePolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutResourcePolicyResponseReceivedHandler;
 typedef std::function<void(const BedrockClient*, const Model::PutUseCaseForModelAccessRequest&,
                            const Model::PutUseCaseForModelAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutUseCaseForModelAccessResponseReceivedHandler;
