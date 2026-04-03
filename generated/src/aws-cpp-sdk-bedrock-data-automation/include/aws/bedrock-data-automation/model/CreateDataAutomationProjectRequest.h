@@ -7,6 +7,7 @@
 #include <aws/bedrock-data-automation/BedrockDataAutomationRequest.h>
 #include <aws/bedrock-data-automation/BedrockDataAutomation_EXPORTS.h>
 #include <aws/bedrock-data-automation/model/CustomOutputConfiguration.h>
+#include <aws/bedrock-data-automation/model/DataAutomationLibraryConfiguration.h>
 #include <aws/bedrock-data-automation/model/DataAutomationProjectStage.h>
 #include <aws/bedrock-data-automation/model/DataAutomationProjectType.h>
 #include <aws/bedrock-data-automation/model/EncryptionConfiguration.h>
@@ -150,6 +151,24 @@ class CreateDataAutomationProjectRequest : public BedrockDataAutomationRequest {
 
   ///@{
 
+  inline const DataAutomationLibraryConfiguration& GetDataAutomationLibraryConfiguration() const {
+    return m_dataAutomationLibraryConfiguration;
+  }
+  inline bool DataAutomationLibraryConfigurationHasBeenSet() const { return m_dataAutomationLibraryConfigurationHasBeenSet; }
+  template <typename DataAutomationLibraryConfigurationT = DataAutomationLibraryConfiguration>
+  void SetDataAutomationLibraryConfiguration(DataAutomationLibraryConfigurationT&& value) {
+    m_dataAutomationLibraryConfigurationHasBeenSet = true;
+    m_dataAutomationLibraryConfiguration = std::forward<DataAutomationLibraryConfigurationT>(value);
+  }
+  template <typename DataAutomationLibraryConfigurationT = DataAutomationLibraryConfiguration>
+  CreateDataAutomationProjectRequest& WithDataAutomationLibraryConfiguration(DataAutomationLibraryConfigurationT&& value) {
+    SetDataAutomationLibraryConfiguration(std::forward<DataAutomationLibraryConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
   inline const Aws::String& GetClientToken() const { return m_clientToken; }
   inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
   template <typename ClientTokenT = Aws::String>
@@ -216,6 +235,8 @@ class CreateDataAutomationProjectRequest : public BedrockDataAutomationRequest {
 
   OverrideConfiguration m_overrideConfiguration;
 
+  DataAutomationLibraryConfiguration m_dataAutomationLibraryConfiguration;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
   EncryptionConfiguration m_encryptionConfiguration;
@@ -228,6 +249,7 @@ class CreateDataAutomationProjectRequest : public BedrockDataAutomationRequest {
   bool m_standardOutputConfigurationHasBeenSet = false;
   bool m_customOutputConfigurationHasBeenSet = false;
   bool m_overrideConfigurationHasBeenSet = false;
+  bool m_dataAutomationLibraryConfigurationHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_encryptionConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;

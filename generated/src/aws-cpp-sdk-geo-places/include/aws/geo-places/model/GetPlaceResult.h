@@ -132,7 +132,10 @@ class GetPlaceResult {
 
   ///@{
   /**
-   * <p>Boolean indicating if the address provided has been corrected.</p>
+   * <p> Boolean indicating if the address provided has been corrected. Not available
+   * in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline bool GetAddressNumberCorrected() const { return m_addressNumberCorrected; }
   inline void SetAddressNumberCorrected(bool value) {
@@ -147,7 +150,10 @@ class GetPlaceResult {
 
   ///@{
   /**
-   * <p>Contains details about the postal code of the place/result. </p>
+   * <p> Contains details about the postal code of the place/result. Not available in
+   * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const Aws::Vector<PostalCodeDetails>& GetPostalCodeDetails() const { return m_postalCodeDetails; }
   template <typename PostalCodeDetailsT = Aws::Vector<PostalCodeDetails>>
@@ -241,7 +247,10 @@ class GetPlaceResult {
 
   ///@{
   /**
-   * <p>List of food types offered by this result.</p>
+   * <p> List of food types offered by this result. Not available in
+   * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const Aws::Vector<FoodType>& GetFoodTypes() const { return m_foodTypes; }
   template <typename FoodTypesT = Aws::Vector<FoodType>>
@@ -287,7 +296,10 @@ class GetPlaceResult {
 
   ///@{
   /**
-   * <p>List of potential contact methods for the result/place.</p>
+   * <p> List of potential contact methods for the result/place. Not available in
+   * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const Contacts& GetContacts() const { return m_contacts; }
   template <typename ContactsT = Contacts>
@@ -304,7 +316,10 @@ class GetPlaceResult {
 
   ///@{
   /**
-   * <p>List of opening hours objects.</p>
+   * <p> List of opening hours objects. Not available in <code>ap-southeast-1</code>
+   * and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const Aws::Vector<OpeningHours>& GetOpeningHours() const { return m_openingHours; }
   template <typename OpeningHoursT = Aws::Vector<OpeningHours>>
@@ -327,8 +342,11 @@ class GetPlaceResult {
 
   ///@{
   /**
-   * <p>Position of the access point in World Geodetic System (WGS 84) format:
-   * [longitude, latitude].</p>
+   * <p> Position of the access point in World Geodetic System (WGS 84) format:
+   * [longitude, latitude]. Not available in <code>ap-southeast-1</code> and
+   * <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const Aws::Vector<AccessPoint>& GetAccessPoints() const { return m_accessPoints; }
   template <typename AccessPointsT = Aws::Vector<AccessPoint>>
@@ -351,9 +369,12 @@ class GetPlaceResult {
 
   ///@{
   /**
-   * <p>Indicates known access restrictions on a vehicle access point. The index
+   * <p> Indicates known access restrictions on a vehicle access point. The index
    * correlates to an access point and indicates if access through this point has
-   * some form of restriction.</p>
+   * some form of restriction. Not available in <code>ap-southeast-1</code> and
+   * <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const Aws::Vector<AccessRestriction>& GetAccessRestrictions() const { return m_accessRestrictions; }
   template <typename AccessRestrictionsT = Aws::Vector<AccessRestriction>>
@@ -393,9 +414,13 @@ class GetPlaceResult {
 
   ///@{
   /**
-   * <p>The alpha-2 or alpha-3 character code for the political view of a country.
+   * <p> The alpha-2 or alpha-3 character code for the political view of a country.
    * The political view applies to the results of the request to represent unresolved
-   * territorial claims through the point of view of the specified country.</p>
+   * territorial claims through the point of view of the specified country. Not
+   * available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const Aws::String& GetPoliticalView() const { return m_politicalView; }
   template <typename PoliticalViewT = Aws::String>
@@ -412,8 +437,11 @@ class GetPlaceResult {
 
   ///@{
   /**
-   * <p>How the various components of the result's address are pronounced in various
-   * languages.</p>
+   * <p> How the various components of the result's address are pronounced in various
+   * languages. Not available in <code>ap-southeast-1</code> and
+   * <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const PhonemeDetails& GetPhonemes() const { return m_phonemes; }
   template <typename PhonemesT = PhonemeDetails>
@@ -430,7 +458,11 @@ class GetPlaceResult {
 
   ///@{
   /**
-   * <p>The main address corresponding to a place of type Secondary Address.</p>
+   * <p> The main address corresponding to a place of type Secondary Address. Not
+   * available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const RelatedPlace& GetMainAddress() const { return m_mainAddress; }
   template <typename MainAddressT = RelatedPlace>
@@ -447,11 +479,13 @@ class GetPlaceResult {
 
   ///@{
   /**
-   * <p>All secondary addresses that are associated with a main address. A secondary
+   * <p> All secondary addresses that are associated with a main address. A secondary
    * address is one that includes secondary designators, such as a Suite or Unit
-   * Number, Building, or Floor information.</p>  <p>Coverage for this
-   * functionality is available in the following countries: AUS, CAN, NZL, USA,
-   * PRI.</p>
+   * Number, Building, or Floor information. Not available in
+   * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>  <p>Coverage for this functionality is available in the
+   * following countries: AUS, CAN, NZL, USA, PRI.</p>
    */
   inline const Aws::Vector<RelatedPlace>& GetSecondaryAddresses() const { return m_secondaryAddresses; }
   template <typename SecondaryAddressesT = Aws::Vector<RelatedPlace>>

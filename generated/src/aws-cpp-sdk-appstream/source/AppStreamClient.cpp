@@ -69,6 +69,7 @@
 #include <aws/appstream/model/DisassociateApplicationFromEntitlementRequest.h>
 #include <aws/appstream/model/DisassociateFleetRequest.h>
 #include <aws/appstream/model/DisassociateSoftwareFromImageBuilderRequest.h>
+#include <aws/appstream/model/DrainSessionInstanceRequest.h>
 #include <aws/appstream/model/EnableUserRequest.h>
 #include <aws/appstream/model/ExpireSessionRequest.h>
 #include <aws/appstream/model/GetExportImageTaskRequest.h>
@@ -635,6 +636,12 @@ DisassociateSoftwareFromImageBuilderOutcome AppStreamClient::DisassociateSoftwar
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DisassociateSoftwareFromImageBuilderOutcome(result.GetResultWithOwnership())
                             : DisassociateSoftwareFromImageBuilderOutcome(std::move(result.GetError()));
+}
+
+DrainSessionInstanceOutcome AppStreamClient::DrainSessionInstance(const DrainSessionInstanceRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DrainSessionInstanceOutcome(result.GetResultWithOwnership())
+                            : DrainSessionInstanceOutcome(std::move(result.GetError()));
 }
 
 EnableUserOutcome AppStreamClient::EnableUser(const EnableUserRequest& request) const {

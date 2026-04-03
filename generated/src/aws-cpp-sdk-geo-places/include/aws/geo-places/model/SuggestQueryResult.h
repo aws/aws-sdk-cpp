@@ -39,7 +39,10 @@ class SuggestQueryResult {
    * political view and language. See the SearchText API documentation for more
    * details <a
    * href="https://docs.aws.amazon.com/location/latest/APIReference/API_geoplaces_SearchText.html">SearchText
-   * API docs</a>.</p>  <p>The fields <code>QueryText</code>, and
+   * API docs</a>. Not supported in <code>ap-southeast-1</code> and
+   * <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>  <p>The fields <code>QueryText</code>, and
    * <code>QueryID</code> are mutually exclusive.</p>
    */
   inline const Aws::String& GetQueryId() const { return m_queryId; }
@@ -58,9 +61,12 @@ class SuggestQueryResult {
 
   ///@{
   /**
-   * <p>The query type. Category queries will search for places which have an entry
+   * <p> The query type. Category queries will search for places which have an entry
    * matching the given category, for example "doctor office". BusinessChain queries
-   * will search for instances of a given business.</p>
+   * will search for instances of a given business. Not supported in
+   * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline QueryType GetQueryType() const { return m_queryType; }
   inline bool QueryTypeHasBeenSet() const { return m_queryTypeHasBeenSet; }

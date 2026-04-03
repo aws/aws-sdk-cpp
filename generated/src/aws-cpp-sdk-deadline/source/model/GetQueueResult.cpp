@@ -95,6 +95,10 @@ GetQueueResult& GetQueueResult::operator=(const Aws::AmazonWebServiceResult<Json
     m_jobRunAsUser = jsonValue.GetObject("jobRunAsUser");
     m_jobRunAsUserHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("schedulingConfiguration")) {
+    m_schedulingConfiguration = jsonValue.GetObject("schedulingConfiguration");
+    m_schedulingConfigurationHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

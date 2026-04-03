@@ -21,6 +21,9 @@ static const int es_ES_HASH = HashingUtils::HashString("es-ES");
 static const int fr_FR_HASH = HashingUtils::HashString("fr-FR");
 static const int it_IT_HASH = HashingUtils::HashString("it-IT");
 static const int pt_BR_HASH = HashingUtils::HashString("pt-BR");
+static const int ja_JP_HASH = HashingUtils::HashString("ja-JP");
+static const int ko_KR_HASH = HashingUtils::HashString("ko-KR");
+static const int zh_CN_HASH = HashingUtils::HashString("zh-CN");
 
 EvaluationFormLanguageCode GetEvaluationFormLanguageCodeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +39,12 @@ EvaluationFormLanguageCode GetEvaluationFormLanguageCodeForName(const Aws::Strin
     return EvaluationFormLanguageCode::it_IT;
   } else if (hashCode == pt_BR_HASH) {
     return EvaluationFormLanguageCode::pt_BR;
+  } else if (hashCode == ja_JP_HASH) {
+    return EvaluationFormLanguageCode::ja_JP;
+  } else if (hashCode == ko_KR_HASH) {
+    return EvaluationFormLanguageCode::ko_KR;
+  } else if (hashCode == zh_CN_HASH) {
+    return EvaluationFormLanguageCode::zh_CN;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +71,12 @@ Aws::String GetNameForEvaluationFormLanguageCode(EvaluationFormLanguageCode enum
       return "it-IT";
     case EvaluationFormLanguageCode::pt_BR:
       return "pt-BR";
+    case EvaluationFormLanguageCode::ja_JP:
+      return "ja-JP";
+    case EvaluationFormLanguageCode::ko_KR:
+      return "ko-KR";
+    case EvaluationFormLanguageCode::zh_CN:
+      return "zh-CN";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

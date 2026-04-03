@@ -22,6 +22,10 @@ McpServerTargetConfiguration& McpServerTargetConfiguration::operator=(JsonView j
     m_endpoint = jsonValue.GetString("endpoint");
     m_endpointHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("mcpToolSchema")) {
+    m_mcpToolSchema = jsonValue.GetObject("mcpToolSchema");
+    m_mcpToolSchemaHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue McpServerTargetConfiguration::Jsonize() const {
 
   if (m_endpointHasBeenSet) {
     payload.WithString("endpoint", m_endpoint);
+  }
+
+  if (m_mcpToolSchemaHasBeenSet) {
+    payload.WithObject("mcpToolSchema", m_mcpToolSchema.Jsonize());
   }
 
   return payload;

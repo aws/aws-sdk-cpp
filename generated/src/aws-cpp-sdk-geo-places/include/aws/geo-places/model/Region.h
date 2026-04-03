@@ -34,8 +34,11 @@ class Region {
 
   ///@{
   /**
-   * <p>Abbreviated code for a the state, province or region of the country. </p>
-   * <p>Example: <code>BC</code>.</p>
+   * <p> Abbreviated code for a the state, province or region of the country. Not
+   * available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p> <p>Example: <code>BC</code>.</p>
    */
   inline const Aws::String& GetCode() const { return m_code; }
   inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }

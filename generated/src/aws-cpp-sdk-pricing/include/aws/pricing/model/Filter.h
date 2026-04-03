@@ -88,10 +88,7 @@ class Filter {
    * filtering by service code this is the actual service code, such as
    * <code>AmazonEC2</code>. If you're filtering by attribute name, this is the
    * attribute value that you want the returned products to match, such as a
-   * <code>Provisioned IOPS</code> volume.</p> <p>For <code>ANY_OF</code> and
-   * <code>NONE_OF</code> filter types, you can provide multiple values as a
-   * comma-separated string. For example, <code>t2.micro,t2.small,t2.medium</code> or
-   * <code>Compute optimized, GPU instance, Micro instances</code>.</p>
+   * <code>Provisioned IOPS</code> volume.</p>
    */
   inline const Aws::String& GetValue() const { return m_value; }
   inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }

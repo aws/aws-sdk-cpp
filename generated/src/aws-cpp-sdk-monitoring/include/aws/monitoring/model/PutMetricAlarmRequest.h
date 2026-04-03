@@ -10,6 +10,7 @@
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
 #include <aws/monitoring/model/ComparisonOperator.h>
 #include <aws/monitoring/model/Dimension.h>
+#include <aws/monitoring/model/EvaluationCriteria.h>
 #include <aws/monitoring/model/MetricDataQuery.h>
 #include <aws/monitoring/model/StandardUnit.h>
 #include <aws/monitoring/model/Statistic.h>
@@ -259,12 +260,13 @@ class PutMetricAlarmRequest : public CloudWatchRequest {
   /**
    * <p>The name for the metric associated with the alarm. For each
    * <code>PutMetricAlarm</code> operation, you must specify either
-   * <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>If you are
-   * creating an alarm based on a math expression, you cannot specify this parameter,
-   * or any of the <code>Namespace</code>, <code>Dimensions</code>,
-   * <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or
-   * <code>ExtendedStatistic</code> parameters. Instead, you specify all this
-   * information in the <code>Metrics</code> array.</p>
+   * <code>MetricName</code>, a <code>Metrics</code> array, or an
+   * <code>EvaluationCriteria</code>.</p> <p>If you are creating an alarm based on a
+   * math expression, you cannot specify this parameter, or any of the
+   * <code>Namespace</code>, <code>Dimensions</code>, <code>Period</code>,
+   * <code>Unit</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code>
+   * parameters. Instead, you specify all this information in the
+   * <code>Metrics</code> array.</p>
    */
   inline const Aws::String& GetMetricName() const { return m_metricName; }
   inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
@@ -532,7 +534,8 @@ class PutMetricAlarmRequest : public CloudWatchRequest {
    * <code>ignore</code> missing data even if you choose a different option for
    * <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has
    * missing data, alarms that evaluate that metric remain in their current
-   * state.</p>
+   * state.</p>   <p>This parameter is not applicable to PromQL
+   * alarms.</p>
    */
   inline const Aws::String& GetTreatMissingData() const { return m_treatMissingData; }
   inline bool TreatMissingDataHasBeenSet() const { return m_treatMissingDataHasBeenSet; }
@@ -579,12 +582,12 @@ class PutMetricAlarmRequest : public CloudWatchRequest {
    * <p>An array of <code>MetricDataQuery</code> structures that enable you to create
    * an alarm based on the result of a metric math expression. For each
    * <code>PutMetricAlarm</code> operation, you must specify either
-   * <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>Each item in the
-   * <code>Metrics</code> array either retrieves a metric or performs a math
-   * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
-   * that the alarm watches. You designate this expression by setting
-   * <code>ReturnData</code> to true for this object in the array. For more
-   * information, see <a
+   * <code>MetricName</code>, a <code>Metrics</code> array, or an
+   * <code>EvaluationCriteria</code>.</p> <p>Each item in the <code>Metrics</code>
+   * array either retrieves a metric or performs a math expression.</p> <p>One item
+   * in the <code>Metrics</code> array is the expression that the alarm watches. You
+   * designate this expression by setting <code>ReturnData</code> to true for this
+   * object in the array. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
    * <p>If you use the <code>Metrics</code> parameter, you cannot include the
    * <code>Namespace</code>, <code>MetricName</code>, <code>Dimensions</code>,
@@ -671,6 +674,54 @@ class PutMetricAlarmRequest : public CloudWatchRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The evaluation criteria for the alarm. For each <code>PutMetricAlarm</code>
+   * operation, you must specify either <code>MetricName</code>, a
+   * <code>Metrics</code> array, or an <code>EvaluationCriteria</code>.</p> <p>If you
+   * use the <code>EvaluationCriteria</code> parameter, you cannot include the
+   * <code>Namespace</code>, <code>MetricName</code>, <code>Dimensions</code>,
+   * <code>Period</code>, <code>Unit</code>, <code>Statistic</code>,
+   * <code>ExtendedStatistic</code>, <code>Metrics</code>, <code>Threshold</code>,
+   * <code>ComparisonOperator</code>, <code>ThresholdMetricId</code>,
+   * <code>EvaluationPeriods</code>, or <code>DatapointsToAlarm</code> parameters of
+   * <code>PutMetricAlarm</code> in the same operation. Instead, all evaluation
+   * parameters are defined within this structure.</p> <p>For an example of how to
+   * use this parameter, see the <b>PromQL alarm</b> example on this page.</p>
+   */
+  inline const EvaluationCriteria& GetEvaluationCriteria() const { return m_evaluationCriteria; }
+  inline bool EvaluationCriteriaHasBeenSet() const { return m_evaluationCriteriaHasBeenSet; }
+  template <typename EvaluationCriteriaT = EvaluationCriteria>
+  void SetEvaluationCriteria(EvaluationCriteriaT&& value) {
+    m_evaluationCriteriaHasBeenSet = true;
+    m_evaluationCriteria = std::forward<EvaluationCriteriaT>(value);
+  }
+  template <typename EvaluationCriteriaT = EvaluationCriteria>
+  PutMetricAlarmRequest& WithEvaluationCriteria(EvaluationCriteriaT&& value) {
+    SetEvaluationCriteria(std::forward<EvaluationCriteriaT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The frequency, in seconds, at which the alarm is evaluated. Valid values are
+   * 10, 20, 30, and any multiple of 60.</p> <p>This parameter is required for alarms
+   * that use <code>EvaluationCriteria</code>, and cannot be specified for alarms
+   * configured with <code>MetricName</code> or <code>Metrics</code>.</p>
+   */
+  inline int GetEvaluationInterval() const { return m_evaluationInterval; }
+  inline bool EvaluationIntervalHasBeenSet() const { return m_evaluationIntervalHasBeenSet; }
+  inline void SetEvaluationInterval(int value) {
+    m_evaluationIntervalHasBeenSet = true;
+    m_evaluationInterval = value;
+  }
+  inline PutMetricAlarmRequest& WithEvaluationInterval(int value) {
+    SetEvaluationInterval(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_alarmName;
 
@@ -715,6 +766,10 @@ class PutMetricAlarmRequest : public CloudWatchRequest {
   Aws::Vector<Tag> m_tags;
 
   Aws::String m_thresholdMetricId;
+
+  EvaluationCriteria m_evaluationCriteria;
+
+  int m_evaluationInterval{0};
   bool m_alarmNameHasBeenSet = false;
   bool m_alarmDescriptionHasBeenSet = false;
   bool m_actionsEnabledHasBeenSet = false;
@@ -737,6 +792,8 @@ class PutMetricAlarmRequest : public CloudWatchRequest {
   bool m_metricsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_thresholdMetricIdHasBeenSet = false;
+  bool m_evaluationCriteriaHasBeenSet = false;
+  bool m_evaluationIntervalHasBeenSet = false;
 };
 
 }  // namespace Model

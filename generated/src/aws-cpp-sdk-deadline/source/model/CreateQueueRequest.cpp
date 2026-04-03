@@ -68,6 +68,10 @@ Aws::String CreateQueueRequest::SerializePayload() const {
     payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
+  if (m_schedulingConfigurationHasBeenSet) {
+    payload.WithObject("schedulingConfiguration", m_schedulingConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -88,6 +88,10 @@ GatewayTarget& GatewayTarget::operator=(JsonView jsonValue) {
     }
     m_privateEndpointManagedResourcesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("authorizationData")) {
+    m_authorizationData = jsonValue.GetObject("authorizationData");
+    m_authorizationDataHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -166,6 +170,10 @@ JsonValue GatewayTarget::Jsonize() const {
           m_privateEndpointManagedResources[privateEndpointManagedResourcesIndex].Jsonize());
     }
     payload.WithArray("privateEndpointManagedResources", std::move(privateEndpointManagedResourcesJsonList));
+  }
+
+  if (m_authorizationDataHasBeenSet) {
+    payload.WithObject("authorizationData", m_authorizationData.Jsonize());
   }
 
   return payload;

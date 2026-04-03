@@ -33,7 +33,10 @@ class SubRegion {
 
   ///@{
   /**
-   * <p>Abbreviated code for the county or sub-region.</p>
+   * <p> Abbreviated code for the county or sub-region. Not available in
+   * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const Aws::String& GetCode() const { return m_code; }
   inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }

@@ -13,6 +13,7 @@
 #include <aws/deadline/model/DefaultQueueBudgetAction.h>
 #include <aws/deadline/model/JobAttachmentSettings.h>
 #include <aws/deadline/model/JobRunAsUser.h>
+#include <aws/deadline/model/SchedulingConfiguration.h>
 
 #include <utility>
 
@@ -261,6 +262,26 @@ class CreateQueueRequest : public DeadlineRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The scheduling configuration for the queue. This configuration determines how
+   * workers are assigned to jobs in the queue.</p> <p>If not specified, the queue
+   * defaults to the <code>priorityFifo</code> scheduling configuration.</p>
+   */
+  inline const SchedulingConfiguration& GetSchedulingConfiguration() const { return m_schedulingConfiguration; }
+  inline bool SchedulingConfigurationHasBeenSet() const { return m_schedulingConfigurationHasBeenSet; }
+  template <typename SchedulingConfigurationT = SchedulingConfiguration>
+  void SetSchedulingConfiguration(SchedulingConfigurationT&& value) {
+    m_schedulingConfigurationHasBeenSet = true;
+    m_schedulingConfiguration = std::forward<SchedulingConfigurationT>(value);
+  }
+  template <typename SchedulingConfigurationT = SchedulingConfiguration>
+  CreateQueueRequest& WithSchedulingConfiguration(SchedulingConfigurationT&& value) {
+    SetSchedulingConfiguration(std::forward<SchedulingConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_farmId;
 
@@ -283,6 +304,8 @@ class CreateQueueRequest : public DeadlineRequest {
   Aws::Vector<Aws::String> m_allowedStorageProfileIds;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+
+  SchedulingConfiguration m_schedulingConfiguration;
   bool m_farmIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_displayNameHasBeenSet = false;
@@ -294,6 +317,7 @@ class CreateQueueRequest : public DeadlineRequest {
   bool m_requiredFileSystemLocationNamesHasBeenSet = false;
   bool m_allowedStorageProfileIdsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_schedulingConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

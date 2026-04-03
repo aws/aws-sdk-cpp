@@ -119,6 +119,25 @@ class CSV {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The path to the parent field to put transformed key value pairs under. If you
+   * omit this value, the key value pairs will be placed under the root node.</p>
+   */
+  inline const Aws::String& GetDestination() const { return m_destination; }
+  inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
+  template <typename DestinationT = Aws::String>
+  void SetDestination(DestinationT&& value) {
+    m_destinationHasBeenSet = true;
+    m_destination = std::forward<DestinationT>(value);
+  }
+  template <typename DestinationT = Aws::String>
+  CSV& WithDestination(DestinationT&& value) {
+    SetDestination(std::forward<DestinationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_quoteCharacter;
 
@@ -127,10 +146,13 @@ class CSV {
   Aws::Vector<Aws::String> m_columns;
 
   Aws::String m_source;
+
+  Aws::String m_destination;
   bool m_quoteCharacterHasBeenSet = false;
   bool m_delimiterHasBeenSet = false;
   bool m_columnsHasBeenSet = false;
   bool m_sourceHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
 };
 
 }  // namespace Model

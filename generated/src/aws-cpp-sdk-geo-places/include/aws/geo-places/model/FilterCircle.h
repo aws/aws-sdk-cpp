@@ -58,7 +58,10 @@ class FilterCircle {
 
   ///@{
   /**
-   * <p>The radius, in meters, of the <code>FilterCircle</code>.</p>
+   * <p> The radius, in meters, of the <code>FilterCircle</code>. For <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers,<code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * support only up to a maximum value of 300,000. </p>
    */
   inline long long GetRadius() const { return m_radius; }
   inline bool RadiusHasBeenSet() const { return m_radiusHasBeenSet; }

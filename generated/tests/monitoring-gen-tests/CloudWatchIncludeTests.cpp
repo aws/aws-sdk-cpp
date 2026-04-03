@@ -19,6 +19,7 @@
 #include <aws/monitoring/model/AlarmHistoryItem.h>
 #include <aws/monitoring/model/AlarmMuteRuleStatus.h>
 #include <aws/monitoring/model/AlarmMuteRuleSummary.h>
+#include <aws/monitoring/model/AlarmPromQLCriteria.h>
 #include <aws/monitoring/model/AlarmType.h>
 #include <aws/monitoring/model/AnomalyDetector.h>
 #include <aws/monitoring/model/AnomalyDetectorConfiguration.h>
@@ -62,6 +63,7 @@
 #include <aws/monitoring/model/EnableInsightRulesResult.h>
 #include <aws/monitoring/model/Entity.h>
 #include <aws/monitoring/model/EntityMetricData.h>
+#include <aws/monitoring/model/EvaluationCriteria.h>
 #include <aws/monitoring/model/EvaluationState.h>
 #include <aws/monitoring/model/GetAlarmMuteRuleRequest.h>
 #include <aws/monitoring/model/GetAlarmMuteRuleResult.h>
@@ -77,6 +79,8 @@
 #include <aws/monitoring/model/GetMetricStreamResult.h>
 #include <aws/monitoring/model/GetMetricWidgetImageRequest.h>
 #include <aws/monitoring/model/GetMetricWidgetImageResult.h>
+#include <aws/monitoring/model/GetOTelEnrichmentRequest.h>
+#include <aws/monitoring/model/GetOTelEnrichmentResult.h>
 #include <aws/monitoring/model/HistoryItemType.h>
 #include <aws/monitoring/model/InsightRule.h>
 #include <aws/monitoring/model/InsightRuleContributor.h>
@@ -113,6 +117,7 @@
 #include <aws/monitoring/model/MetricStreamStatisticsConfiguration.h>
 #include <aws/monitoring/model/MetricStreamStatisticsMetric.h>
 #include <aws/monitoring/model/MuteTargets.h>
+#include <aws/monitoring/model/OTelEnrichmentStatus.h>
 #include <aws/monitoring/model/PartialFailure.h>
 #include <aws/monitoring/model/PutAlarmMuteRuleRequest.h>
 #include <aws/monitoring/model/PutAnomalyDetectorRequest.h>
@@ -140,12 +145,16 @@
 #include <aws/monitoring/model/StandardUnit.h>
 #include <aws/monitoring/model/StartMetricStreamsRequest.h>
 #include <aws/monitoring/model/StartMetricStreamsResult.h>
+#include <aws/monitoring/model/StartOTelEnrichmentRequest.h>
+#include <aws/monitoring/model/StartOTelEnrichmentResult.h>
 #include <aws/monitoring/model/StateValue.h>
 #include <aws/monitoring/model/Statistic.h>
 #include <aws/monitoring/model/StatisticSet.h>
 #include <aws/monitoring/model/StatusCode.h>
 #include <aws/monitoring/model/StopMetricStreamsRequest.h>
 #include <aws/monitoring/model/StopMetricStreamsResult.h>
+#include <aws/monitoring/model/StopOTelEnrichmentRequest.h>
+#include <aws/monitoring/model/StopOTelEnrichmentResult.h>
 #include <aws/monitoring/model/Tag.h>
 #include <aws/monitoring/model/TagResourceRequest.h>
 #include <aws/monitoring/model/TagResourceResult.h>

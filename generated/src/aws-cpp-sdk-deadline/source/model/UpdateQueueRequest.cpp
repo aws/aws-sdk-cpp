@@ -83,6 +83,10 @@ Aws::String UpdateQueueRequest::SerializePayload() const {
     payload.WithArray("allowedStorageProfileIdsToRemove", std::move(allowedStorageProfileIdsToRemoveJsonList));
   }
 
+  if (m_schedulingConfigurationHasBeenSet) {
+    payload.WithObject("schedulingConfiguration", m_schedulingConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Connect {
 namespace Model {
-enum class ContactInteractionType { NOT_SET, AGENT, AUTOMATED };
+enum class ContactInteractionType { NOT_SET, AGENT, AUTOMATED, CUSTOMER };
 
 namespace ContactInteractionTypeMapper {
 AWS_CONNECT_API ContactInteractionType GetContactInteractionTypeForName(const Aws::String& name);

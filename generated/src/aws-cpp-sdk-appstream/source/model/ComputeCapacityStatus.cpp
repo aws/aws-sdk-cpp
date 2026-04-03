@@ -50,6 +50,18 @@ ComputeCapacityStatus& ComputeCapacityStatus::operator=(JsonView jsonValue) {
     m_actualUserSessions = jsonValue.GetInteger("ActualUserSessions");
     m_actualUserSessionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Draining")) {
+    m_draining = jsonValue.GetInteger("Draining");
+    m_drainingHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DrainModeActiveUserSessions")) {
+    m_drainModeActiveUserSessions = jsonValue.GetInteger("DrainModeActiveUserSessions");
+    m_drainModeActiveUserSessionsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DrainModeUnusedUserSessions")) {
+    m_drainModeUnusedUserSessions = jsonValue.GetInteger("DrainModeUnusedUserSessions");
+    m_drainModeUnusedUserSessionsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -86,6 +98,18 @@ JsonValue ComputeCapacityStatus::Jsonize() const {
 
   if (m_actualUserSessionsHasBeenSet) {
     payload.WithInteger("ActualUserSessions", m_actualUserSessions);
+  }
+
+  if (m_drainingHasBeenSet) {
+    payload.WithInteger("Draining", m_draining);
+  }
+
+  if (m_drainModeActiveUserSessionsHasBeenSet) {
+    payload.WithInteger("DrainModeActiveUserSessions", m_drainModeActiveUserSessions);
+  }
+
+  if (m_drainModeUnusedUserSessionsHasBeenSet) {
+    payload.WithInteger("DrainModeUnusedUserSessions", m_drainModeUnusedUserSessions);
   }
 
   return payload;

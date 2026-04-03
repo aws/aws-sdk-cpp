@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/AuthorizationData.h>
 #include <aws/bedrock-agentcore-control/model/CredentialProviderConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ManagedResourceDetails.h>
 #include <aws/bedrock-agentcore-control/model/MetadataConfiguration.h>
@@ -307,6 +308,26 @@ class GatewayTarget {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>OAuth2 authorization data for the gateway target. This data is returned when
+   * a target is configured with a credential provider with authorization code grant
+   * type and requires user federation.</p>
+   */
+  inline const AuthorizationData& GetAuthorizationData() const { return m_authorizationData; }
+  inline bool AuthorizationDataHasBeenSet() const { return m_authorizationDataHasBeenSet; }
+  template <typename AuthorizationDataT = AuthorizationData>
+  void SetAuthorizationData(AuthorizationDataT&& value) {
+    m_authorizationDataHasBeenSet = true;
+    m_authorizationData = std::forward<AuthorizationDataT>(value);
+  }
+  template <typename AuthorizationDataT = AuthorizationData>
+  GatewayTarget& WithAuthorizationData(AuthorizationDataT&& value) {
+    SetAuthorizationData(std::forward<AuthorizationDataT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_gatewayArn;
 
@@ -335,6 +356,8 @@ class GatewayTarget {
   PrivateEndpoint m_privateEndpoint;
 
   Aws::Vector<ManagedResourceDetails> m_privateEndpointManagedResources;
+
+  AuthorizationData m_authorizationData;
   bool m_gatewayArnHasBeenSet = false;
   bool m_targetIdHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
@@ -349,6 +372,7 @@ class GatewayTarget {
   bool m_metadataConfigurationHasBeenSet = false;
   bool m_privateEndpointHasBeenSet = false;
   bool m_privateEndpointManagedResourcesHasBeenSet = false;
+  bool m_authorizationDataHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -11004,7 +11004,9 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * distribution group, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/update-telephony-traffic-distribution.html">Update
    * telephony traffic distribution across Amazon Web Services Regions </a> in the
-   * <i>Amazon Connect Administrator Guide</i>. </p><p><h3>See Also:</h3>   <a
+   * <i>Amazon Connect Administrator Guide</i>. </p> <p> <b>Important things to
+   * know</b> </p> <ul> <li> <p>Invoke the UpdateTrafficDistribution API in the
+   * region that should handle traffic.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateTrafficDistribution">AWS
    * API Reference</a></p>
    */

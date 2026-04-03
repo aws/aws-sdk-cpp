@@ -37,6 +37,10 @@ CSV& CSV::operator=(JsonView jsonValue) {
     m_source = jsonValue.GetString("source");
     m_sourceHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("destination")) {
+    m_destination = jsonValue.GetString("destination");
+    m_destinationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -61,6 +65,10 @@ JsonValue CSV::Jsonize() const {
 
   if (m_sourceHasBeenSet) {
     payload.WithString("source", m_source);
+  }
+
+  if (m_destinationHasBeenSet) {
+    payload.WithString("destination", m_destination);
   }
 
   return payload;

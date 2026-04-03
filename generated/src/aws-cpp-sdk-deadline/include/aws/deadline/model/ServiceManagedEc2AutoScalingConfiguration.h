@@ -17,7 +17,7 @@ namespace deadline {
 namespace Model {
 
 /**
- * <p>The auto scaling configuration options for a service managed EC2
+ * <p>The auto scaling configuration settings for a service managed EC2
  * fleet.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ServiceManagedEc2AutoScalingConfiguration">AWS
  * API Reference</a></p>
@@ -31,7 +31,8 @@ class ServiceManagedEc2AutoScalingConfiguration {
 
   ///@{
   /**
-   * <p>The number of standby workers to maintain for the fleet.</p>
+   * <p>The number of idle workers maintained and ready to process incoming tasks.
+   * The default is 0.</p>
    */
   inline int GetStandbyWorkerCount() const { return m_standbyWorkerCount; }
   inline bool StandbyWorkerCountHasBeenSet() const { return m_standbyWorkerCountHasBeenSet; }
@@ -47,8 +48,8 @@ class ServiceManagedEc2AutoScalingConfiguration {
 
   ///@{
   /**
-   * <p>The duration in seconds that a worker can be idle before it is scaled
-   * down.</p>
+   * <p>The number of seconds that a worker can remain idle before it is shut down.
+   * The default is 300 seconds (5 minutes).</p>
    */
   inline int GetWorkerIdleDurationSeconds() const { return m_workerIdleDurationSeconds; }
   inline bool WorkerIdleDurationSecondsHasBeenSet() const { return m_workerIdleDurationSecondsHasBeenSet; }
@@ -64,7 +65,8 @@ class ServiceManagedEc2AutoScalingConfiguration {
 
   ///@{
   /**
-   * <p>The number of workers that can be scaled out per minute.</p>
+   * <p>The number of workers that can be added per minute to the fleet. The default
+   * is a service-defined value that balances efficiency with cost.</p>
    */
   inline int GetScaleOutWorkersPerMinute() const { return m_scaleOutWorkersPerMinute; }
   inline bool ScaleOutWorkersPerMinuteHasBeenSet() const { return m_scaleOutWorkersPerMinuteHasBeenSet; }

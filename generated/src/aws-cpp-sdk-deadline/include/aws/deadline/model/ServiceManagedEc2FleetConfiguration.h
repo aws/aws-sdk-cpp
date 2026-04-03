@@ -110,7 +110,8 @@ class ServiceManagedEc2FleetConfiguration {
 
   ///@{
   /**
-   * <p>The auto scaling configuration options for the service managed EC2 fleet.</p>
+   * <p>The auto scaling configuration settings for the service managed EC2
+   * fleet.</p>
    */
   inline const ServiceManagedEc2AutoScalingConfiguration& GetAutoScalingConfiguration() const { return m_autoScalingConfiguration; }
   inline bool AutoScalingConfigurationHasBeenSet() const { return m_autoScalingConfigurationHasBeenSet; }

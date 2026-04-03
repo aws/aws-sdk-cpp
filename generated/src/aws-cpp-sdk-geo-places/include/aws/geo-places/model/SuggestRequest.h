@@ -60,7 +60,7 @@ class SuggestRequest : public GeoPlacesRequest {
 
   ///@{
   /**
-   * <p>An optional limit for the number of results returned in a single call.</p>
+   * <p> An optional limit for the number of results returned in a single call. </p>
    * <p>Default value: 20</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
@@ -77,8 +77,11 @@ class SuggestRequest : public GeoPlacesRequest {
 
   ///@{
   /**
-   * <p>Maximum number of query terms to be returned for use with a search text
-   * query.</p>
+   * <p> Maximum number of query terms to be returned for use with a search text
+   * query. Not supported in <code>ap-southeast-1</code> and
+   * <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline int GetMaxQueryRefinements() const { return m_maxQueryRefinements; }
   inline bool MaxQueryRefinementsHasBeenSet() const { return m_maxQueryRefinementsHasBeenSet; }
@@ -140,8 +143,11 @@ class SuggestRequest : public GeoPlacesRequest {
 
   ///@{
   /**
-   * <p>A list of optional additional parameters, such as time zone, that can be
-   * requested for each result.</p>
+   * <p> A list of optional additional parameters, such as time zone, that can be
+   * requested for each result. For <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * support only the <code>Core</code> and <code>TimeZone</code> values. </p>
    */
   inline const Aws::Vector<SuggestAdditionalFeature>& GetAdditionalFeatures() const { return m_additionalFeatures; }
   inline bool AdditionalFeaturesHasBeenSet() const { return m_additionalFeaturesHasBeenSet; }
@@ -164,10 +170,14 @@ class SuggestRequest : public GeoPlacesRequest {
 
   ///@{
   /**
-   * <p>A list of <a href="https://en.wikipedia.org/wiki/IETF_language_tag">BCP
+   * <p> A list of <a href="https://en.wikipedia.org/wiki/IETF_language_tag">BCP
    * 47</a> compliant language codes for the results to be rendered in. If there is
    * no data for the result in the requested language, data will be returned in the
-   * default language for the entry.</p>
+   * default language for the entry. For <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * support only the following codes: <code>en, id, km, lo, ms, my, pt, th, tl, vi,
+   * zh</code> </p>
    */
   inline const Aws::String& GetLanguage() const { return m_language; }
   inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
@@ -185,9 +195,13 @@ class SuggestRequest : public GeoPlacesRequest {
 
   ///@{
   /**
-   * <p>The alpha-2 or alpha-3 character code for the political view of a country.
+   * <p> The alpha-2 or alpha-3 character code for the political view of a country.
    * The political view applies to the results of the request to represent unresolved
-   * territorial claims through the point of view of the specified country.</p>
+   * territorial claims through the point of view of the specified country. Not
+   * supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const Aws::String& GetPoliticalView() const { return m_politicalView; }
   inline bool PoliticalViewHasBeenSet() const { return m_politicalViewHasBeenSet; }
@@ -205,8 +219,9 @@ class SuggestRequest : public GeoPlacesRequest {
 
   ///@{
   /**
-   * <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>,
-   * if left empty.</p>
+   * <p> Indicates if the query results will be persisted in customer infrastructure.
+   * Defaults to <code>SingleUse</code> (not stored). Currently, <code>Suggest</code>
+   * does not support storage of results. </p>
    */
   inline SuggestIntendedUse GetIntendedUse() const { return m_intendedUse; }
   inline bool IntendedUseHasBeenSet() const { return m_intendedUseHasBeenSet; }

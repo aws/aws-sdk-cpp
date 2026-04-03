@@ -1,0 +1,95 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/bedrock-data-automation/BedrockDataAutomation_EXPORTS.h>
+#include <aws/bedrock-data-automation/model/DataAutomationLibraryStatus.h>
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace BedrockDataAutomation {
+namespace Model {
+/**
+ * <p>Create DataAutomationLibrary Response</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/CreateDataAutomationLibraryResponse">AWS
+ * API Reference</a></p>
+ */
+class CreateDataAutomationLibraryResult {
+ public:
+  AWS_BEDROCKDATAAUTOMATION_API CreateDataAutomationLibraryResult() = default;
+  AWS_BEDROCKDATAAUTOMATION_API CreateDataAutomationLibraryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_BEDROCKDATAAUTOMATION_API CreateDataAutomationLibraryResult& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+
+  inline const Aws::String& GetLibraryArn() const { return m_libraryArn; }
+  template <typename LibraryArnT = Aws::String>
+  void SetLibraryArn(LibraryArnT&& value) {
+    m_libraryArnHasBeenSet = true;
+    m_libraryArn = std::forward<LibraryArnT>(value);
+  }
+  template <typename LibraryArnT = Aws::String>
+  CreateDataAutomationLibraryResult& WithLibraryArn(LibraryArnT&& value) {
+    SetLibraryArn(std::forward<LibraryArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline DataAutomationLibraryStatus GetStatus() const { return m_status; }
+  inline void SetStatus(DataAutomationLibraryStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline CreateDataAutomationLibraryResult& WithStatus(DataAutomationLibraryStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  CreateDataAutomationLibraryResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_libraryArn;
+
+  DataAutomationLibraryStatus m_status{DataAutomationLibraryStatus::NOT_SET};
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_libraryArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace BedrockDataAutomation
+}  // namespace Aws

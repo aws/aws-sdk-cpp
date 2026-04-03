@@ -14,6 +14,7 @@
 #include <aws/deadline/model/JobRunAsUser.h>
 #include <aws/deadline/model/QueueBlockedReason.h>
 #include <aws/deadline/model/QueueStatus.h>
+#include <aws/deadline/model/SchedulingConfiguration.h>
 
 #include <utility>
 
@@ -327,6 +328,24 @@ class GetQueueResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The scheduling configuration for the queue. This configuration determines how
+   * workers are assigned to jobs in the queue.</p>
+   */
+  inline const SchedulingConfiguration& GetSchedulingConfiguration() const { return m_schedulingConfiguration; }
+  template <typename SchedulingConfigurationT = SchedulingConfiguration>
+  void SetSchedulingConfiguration(SchedulingConfigurationT&& value) {
+    m_schedulingConfigurationHasBeenSet = true;
+    m_schedulingConfiguration = std::forward<SchedulingConfigurationT>(value);
+  }
+  template <typename SchedulingConfigurationT = SchedulingConfiguration>
+  GetQueueResult& WithSchedulingConfiguration(SchedulingConfigurationT&& value) {
+    SetSchedulingConfiguration(std::forward<SchedulingConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -375,6 +394,8 @@ class GetQueueResult {
 
   JobRunAsUser m_jobRunAsUser;
 
+  SchedulingConfiguration m_schedulingConfiguration;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_farmIdHasBeenSet = false;
@@ -393,6 +414,7 @@ class GetQueueResult {
   bool m_requiredFileSystemLocationNamesHasBeenSet = false;
   bool m_allowedStorageProfileIdsHasBeenSet = false;
   bool m_jobRunAsUserHasBeenSet = false;
+  bool m_schedulingConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

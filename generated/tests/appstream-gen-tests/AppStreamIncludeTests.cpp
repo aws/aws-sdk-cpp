@@ -169,6 +169,8 @@
 #include <aws/appstream/model/DisassociateSoftwareFromImageBuilderRequest.h>
 #include <aws/appstream/model/DisassociateSoftwareFromImageBuilderResult.h>
 #include <aws/appstream/model/DomainJoinInfo.h>
+#include <aws/appstream/model/DrainSessionInstanceRequest.h>
+#include <aws/appstream/model/DrainSessionInstanceResult.h>
 #include <aws/appstream/model/DynamicAppProvidersEnabled.h>
 #include <aws/appstream/model/EnableUserRequest.h>
 #include <aws/appstream/model/EnableUserResult.h>
@@ -200,6 +202,7 @@
 #include <aws/appstream/model/ImageStateChangeReason.h>
 #include <aws/appstream/model/ImageStateChangeReasonCode.h>
 #include <aws/appstream/model/ImageType.h>
+#include <aws/appstream/model/InstanceDrainStatus.h>
 #include <aws/appstream/model/LastReportGenerationExecutionError.h>
 #include <aws/appstream/model/LatestAppstreamAgentVersion.h>
 #include <aws/appstream/model/ListAssociatedFleetsRequest.h>

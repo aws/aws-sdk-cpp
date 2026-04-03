@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Connect {
 namespace Model {
-enum class EvaluationFormLanguageCode { NOT_SET, de_DE, en_US, es_ES, fr_FR, it_IT, pt_BR };
+enum class EvaluationFormLanguageCode { NOT_SET, de_DE, en_US, es_ES, fr_FR, it_IT, pt_BR, ja_JP, ko_KR, zh_CN };
 
 namespace EvaluationFormLanguageCodeMapper {
 AWS_CONNECT_API EvaluationFormLanguageCode GetEvaluationFormLanguageCodeForName(const Aws::String& name);

@@ -58,6 +58,10 @@ DataAutomationProject& DataAutomationProject::operator=(JsonView jsonValue) {
     m_overrideConfiguration = jsonValue.GetObject("overrideConfiguration");
     m_overrideConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("dataAutomationLibraryConfiguration")) {
+    m_dataAutomationLibraryConfiguration = jsonValue.GetObject("dataAutomationLibraryConfiguration");
+    m_dataAutomationLibraryConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("status")) {
     m_status = DataAutomationProjectStatusMapper::GetDataAutomationProjectStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
@@ -117,6 +121,10 @@ JsonValue DataAutomationProject::Jsonize() const {
 
   if (m_overrideConfigurationHasBeenSet) {
     payload.WithObject("overrideConfiguration", m_overrideConfiguration.Jsonize());
+  }
+
+  if (m_dataAutomationLibraryConfigurationHasBeenSet) {
+    payload.WithObject("dataAutomationLibraryConfiguration", m_dataAutomationLibraryConfiguration.Jsonize());
   }
 
   if (m_statusHasBeenSet) {

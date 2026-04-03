@@ -23,6 +23,9 @@ static const int READY_HASH = HashingUtils::HashString("READY");
 static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 static const int SYNCHRONIZING_HASH = HashingUtils::HashString("SYNCHRONIZING");
 static const int SYNCHRONIZE_UNSUCCESSFUL_HASH = HashingUtils::HashString("SYNCHRONIZE_UNSUCCESSFUL");
+static const int CREATE_PENDING_AUTH_HASH = HashingUtils::HashString("CREATE_PENDING_AUTH");
+static const int UPDATE_PENDING_AUTH_HASH = HashingUtils::HashString("UPDATE_PENDING_AUTH");
+static const int SYNCHRONIZE_PENDING_AUTH_HASH = HashingUtils::HashString("SYNCHRONIZE_PENDING_AUTH");
 
 TargetStatus GetTargetStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -42,6 +45,12 @@ TargetStatus GetTargetStatusForName(const Aws::String& name) {
     return TargetStatus::SYNCHRONIZING;
   } else if (hashCode == SYNCHRONIZE_UNSUCCESSFUL_HASH) {
     return TargetStatus::SYNCHRONIZE_UNSUCCESSFUL;
+  } else if (hashCode == CREATE_PENDING_AUTH_HASH) {
+    return TargetStatus::CREATE_PENDING_AUTH;
+  } else if (hashCode == UPDATE_PENDING_AUTH_HASH) {
+    return TargetStatus::UPDATE_PENDING_AUTH;
+  } else if (hashCode == SYNCHRONIZE_PENDING_AUTH_HASH) {
+    return TargetStatus::SYNCHRONIZE_PENDING_AUTH;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -72,6 +81,12 @@ Aws::String GetNameForTargetStatus(TargetStatus enumValue) {
       return "SYNCHRONIZING";
     case TargetStatus::SYNCHRONIZE_UNSUCCESSFUL:
       return "SYNCHRONIZE_UNSUCCESSFUL";
+    case TargetStatus::CREATE_PENDING_AUTH:
+      return "CREATE_PENDING_AUTH";
+    case TargetStatus::UPDATE_PENDING_AUTH:
+      return "UPDATE_PENDING_AUTH";
+    case TargetStatus::SYNCHRONIZE_PENDING_AUTH:
+      return "SYNCHRONIZE_PENDING_AUTH";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

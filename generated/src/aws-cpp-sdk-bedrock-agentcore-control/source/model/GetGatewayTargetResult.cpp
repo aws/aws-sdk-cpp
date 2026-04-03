@@ -92,6 +92,10 @@ GetGatewayTargetResult& GetGatewayTargetResult::operator=(const Aws::AmazonWebSe
     }
     m_privateEndpointManagedResourcesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("authorizationData")) {
+    m_authorizationData = jsonValue.GetObject("authorizationData");
+    m_authorizationDataHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

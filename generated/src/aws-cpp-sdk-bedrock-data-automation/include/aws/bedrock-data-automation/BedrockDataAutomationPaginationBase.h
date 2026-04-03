@@ -6,6 +6,9 @@
 #pragma once
 
 #include <aws/bedrock-data-automation/model/ListBlueprintsPaginationTraits.h>
+#include <aws/bedrock-data-automation/model/ListDataAutomationLibrariesPaginationTraits.h>
+#include <aws/bedrock-data-automation/model/ListDataAutomationLibraryEntitiesPaginationTraits.h>
+#include <aws/bedrock-data-automation/model/ListDataAutomationLibraryIngestionJobsPaginationTraits.h>
 #include <aws/bedrock-data-automation/model/ListDataAutomationProjectsPaginationTraits.h>
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
@@ -29,6 +32,42 @@ class BedrockDataAutomationPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBlueprintsRequest,
                                              Pagination::ListBlueprintsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
+  }
+
+  /**
+   * Create a paginator for ListDataAutomationLibraries operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataAutomationLibrariesRequest,
+                                    Pagination::ListDataAutomationLibrariesPaginationTraits<DerivedClient>>
+  ListDataAutomationLibrariesPaginator(const Model::ListDataAutomationLibrariesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataAutomationLibrariesRequest,
+                                             Pagination::ListDataAutomationLibrariesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListDataAutomationLibraryEntities operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataAutomationLibraryEntitiesRequest,
+                                    Pagination::ListDataAutomationLibraryEntitiesPaginationTraits<DerivedClient>>
+  ListDataAutomationLibraryEntitiesPaginator(const Model::ListDataAutomationLibraryEntitiesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataAutomationLibraryEntitiesRequest,
+                                             Pagination::ListDataAutomationLibraryEntitiesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListDataAutomationLibraryIngestionJobs operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataAutomationLibraryIngestionJobsRequest,
+                                    Pagination::ListDataAutomationLibraryIngestionJobsPaginationTraits<DerivedClient>>
+  ListDataAutomationLibraryIngestionJobsPaginator(const Model::ListDataAutomationLibraryIngestionJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataAutomationLibraryIngestionJobsRequest,
+                                             Pagination::ListDataAutomationLibraryIngestionJobsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**

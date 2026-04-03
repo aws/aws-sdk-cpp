@@ -75,8 +75,11 @@ class SuggestResult {
 
   ///@{
   /**
-   * <p>Maximum number of query terms to be returned for use with a search text
-   * query.</p>
+   * <p> Maximum number of query terms to be returned for use with a search text
+   * query. Not available in <code>ap-southeast-1</code> and
+   * <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
    */
   inline const Aws::Vector<QueryRefinement>& GetQueryRefinements() const { return m_queryRefinements; }
   template <typename QueryRefinementsT = Aws::Vector<QueryRefinement>>
