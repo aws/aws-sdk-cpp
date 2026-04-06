@@ -9,6 +9,7 @@
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/platform/Security.h>
 namespace Aws
 {
     namespace Auth
@@ -97,6 +98,42 @@ namespace Aws
                   m_sessionToken(sessionToken),
                   m_expiration(expiration),
                   m_accountId(accountId) {}
+
+            /**
+             * Copy constructor.
+             */
+            AWSCredentials(const AWSCredentials& other) = default;
+
+            /**
+             * Move constructor.
+             */
+            AWSCredentials(AWSCredentials&& other) noexcept = default;
+
+            /**
+             * Destructor that securely clears sensitive credential data from memory.
+             */
+            ~AWSCredentials()
+            {
+                // Securely clear sensitive credential data
+                if (!m_secretKey.empty())
+                {
+                    Aws::Security::SecureMemClear(reinterpret_cast<unsigned char*>(&m_secretKey[0]), m_secretKey.size());
+                }
+                if (!m_sessionToken.empty())
+                {
+                    Aws::Security::SecureMemClear(reinterpret_cast<unsigned char*>(&m_sessionToken[0]), m_sessionToken.size());
+                }
+            }
+
+            /**
+             * Copy assignment operator.
+             */
+            AWSCredentials& operator=(const AWSCredentials& other) = default;
+
+            /**
+             * Move assignment operator.
+             */
+            AWSCredentials& operator=(AWSCredentials&& other) noexcept = default;
 
             bool operator == (const AWSCredentials& other) const
             {
