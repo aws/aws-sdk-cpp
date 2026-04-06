@@ -505,7 +505,11 @@ class AWS_LIGHTSAIL_API LightsailClient : public Aws::Client::AWSJsonClient,
    * Web Services Regions, and SMS text messages cannot be sent to some
    * countries/regions. For more information, see <a
    * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-notifications">Notifications
-   * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
+   * in Amazon Lightsail</a>.</p> <p>The <code>create contact method</code> operation
+   * supports tag-based access control via request tags. For more information, see
+   * the <a
+   * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Lightsail
+   * Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContactMethod">AWS
    * API Reference</a></p>
    */
@@ -4162,7 +4166,10 @@ class AWS_LIGHTSAIL_API LightsailClient : public Aws::Client::AWSJsonClient,
    * new state are then executed.</p> <p>When you update an existing alarm, its state
    * is left unchanged, but the update completely overwrites the previous
    * configuration of the alarm. The alarm is then evaluated with the updated
-   * configuration.</p><p><h3>See Also:</h3>   <a
+   * configuration.</p> <p>The <code>put alarm</code> operation supports tag-based
+   * access control via request tags. For more information, see the <a
+   * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Lightsail
+   * Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PutAlarm">AWS
    * API Reference</a></p>
    */

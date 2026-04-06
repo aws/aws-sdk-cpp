@@ -55,7 +55,9 @@ class PutDeliverySourceRequest : public CloudWatchLogsRequest {
    * <p>The ARN of the Amazon Web Services resource that is generating and sending
    * logs. For example,
    * <code>arn:aws:workmail:us-east-1:123456789012:organization/m-1234EXAMPLEabcd1234abcd1234abcd1234</code>
-   * </p>
+   * </p> <p>For the <code>SECURITY_FINDING_LOGS</code> logType, use a wildcard ARN
+   * for the hub resource. For example,
+   * <code>arn:aws:securityhub:us-east-1:111122223333:hub/ *</code> </p>
    */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
@@ -108,10 +110,12 @@ class PutDeliverySourceRequest : public CloudWatchLogsRequest {
    * Amazon Web Services RTB Fabric, the valid values is
    * <code>APPLICATION_LOGS</code>.</p> </li> <li> <p>For Amazon Q, the valid values
    * are <code>EVENT_LOGS</code> and <code>SYNC_JOB_LOGS</code>.</p> </li> <li>
-   * <p>For Amazon SES mail manager, the valid values are
-   * <code>APPLICATION_LOGS</code> and <code>TRAFFIC_POLICY_DEBUG_LOGS</code>.</p>
-   * </li> <li> <p>For Amazon WorkMail, the valid values are
-   * <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>,
+   * <p>For Amazon Web Services Security Hub CSPM, the valid value is
+   * <code>SECURITY_FINDING_LOGS</code>.</p> </li> <li> <p>For Amazon SES mail
+   * manager, the valid values are <code>APPLICATION_LOGS</code> and
+   * <code>TRAFFIC_POLICY_DEBUG_LOGS</code>.</p> </li> <li> <p>For Amazon WorkMail,
+   * the valid values are <code>ACCESS_CONTROL_LOGS</code>,
+   * <code>AUTHENTICATION_LOGS</code>,
    * <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>,
    * <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>, and
    * <code>WORKMAIL_PERSONAL_ACCESS_TOKEN_LOGS</code>.</p> </li> <li> <p>For Amazon

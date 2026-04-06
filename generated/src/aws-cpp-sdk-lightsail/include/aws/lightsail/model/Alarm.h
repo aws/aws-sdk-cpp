@@ -17,6 +17,7 @@
 #include <aws/lightsail/model/MonitoredResourceInfo.h>
 #include <aws/lightsail/model/ResourceLocation.h>
 #include <aws/lightsail/model/ResourceType.h>
+#include <aws/lightsail/model/Tag.h>
 #include <aws/lightsail/model/TreatMissingData.h>
 
 #include <utility>
@@ -426,6 +427,33 @@ class Alarm {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The tag keys and optional values for the resource. For more information about
+   * tags in Lightsail, see the <a
+   * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-tags">Amazon
+   * Lightsail Developer Guide</a>.</p>
+   */
+  inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Vector<Tag>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Vector<Tag>>
+  Alarm& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsT = Tag>
+  Alarm& AddTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace_back(std::forward<TagsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -466,6 +494,8 @@ class Alarm {
   Aws::Vector<AlarmState> m_notificationTriggers;
 
   bool m_notificationEnabled{false};
+
+  Aws::Vector<Tag> m_tags;
   bool m_nameHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
@@ -486,6 +516,7 @@ class Alarm {
   bool m_contactProtocolsHasBeenSet = false;
   bool m_notificationTriggersHasBeenSet = false;
   bool m_notificationEnabledHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
 };
 
 }  // namespace Model

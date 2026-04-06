@@ -107,6 +107,13 @@ Alarm& Alarm::operator=(JsonView jsonValue) {
     m_notificationEnabled = jsonValue.GetBool("notificationEnabled");
     m_notificationEnabledHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("tags")) {
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
+    }
+    m_tagsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -202,6 +209,14 @@ JsonValue Alarm::Jsonize() const {
 
   if (m_notificationEnabledHasBeenSet) {
     payload.WithBool("notificationEnabled", m_notificationEnabled);
+  }
+
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("tags", std::move(tagsJsonList));
   }
 
   return payload;

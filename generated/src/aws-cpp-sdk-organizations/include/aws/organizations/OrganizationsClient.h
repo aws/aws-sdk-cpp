@@ -278,10 +278,11 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * to reopen the account. After 90 days, you can't reopen an account. You might
    * still receive a <a
    * href="https://repost.aws/knowledge-center/closed-account-bill">bill after
-   * account closure</a>. </p> </li> <li> <p>You can close only 10% of member
-   * accounts, between 10 and 1000, within a rolling 30 day period. This quota is not
-   * bound by a calendar month, but starts when you close an account. After you reach
-   * this limit, you can't close additional accounts. For more information, see <a
+   * account closure</a>. </p> </li> <li> <p>Within a rolling 30 day period you can
+   * close the higher of either 250 or 20% of the member accounts in your
+   * organization, up to a maximum of 1,000. This quota is not bound by a calendar
+   * month, but starts when you close an account. After you reach this limit, you
+   * can't close additional accounts. For more information, see <a
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
    * a member account in your organization</a> and <a
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas

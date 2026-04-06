@@ -70,12 +70,37 @@ class GetParametersForImportRequest : public PaymentCryptographyRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to reuse the existing import token and wrapping key
+   * certificate. If set to <code>true</code> and a valid import token exists for the
+   * same key material type and wrapping key algorithm with at least 7 days of
+   * remaining validity, the existing token and wrapping key certificate are
+   * returned. Otherwise, a new import token and wrapping key certificate are
+   * generated. The default value is <code>false</code>, which generates a new import
+   * token and wrapping key certificate on every call.</p>
+   */
+  inline bool GetReuseLastGeneratedToken() const { return m_reuseLastGeneratedToken; }
+  inline bool ReuseLastGeneratedTokenHasBeenSet() const { return m_reuseLastGeneratedTokenHasBeenSet; }
+  inline void SetReuseLastGeneratedToken(bool value) {
+    m_reuseLastGeneratedTokenHasBeenSet = true;
+    m_reuseLastGeneratedToken = value;
+  }
+  inline GetParametersForImportRequest& WithReuseLastGeneratedToken(bool value) {
+    SetReuseLastGeneratedToken(value);
+    return *this;
+  }
+  ///@}
  private:
   KeyMaterialType m_keyMaterialType{KeyMaterialType::NOT_SET};
 
   KeyAlgorithm m_wrappingKeyAlgorithm{KeyAlgorithm::NOT_SET};
+
+  bool m_reuseLastGeneratedToken{false};
   bool m_keyMaterialTypeHasBeenSet = false;
   bool m_wrappingKeyAlgorithmHasBeenSet = false;
+  bool m_reuseLastGeneratedTokenHasBeenSet = false;
 };
 
 }  // namespace Model

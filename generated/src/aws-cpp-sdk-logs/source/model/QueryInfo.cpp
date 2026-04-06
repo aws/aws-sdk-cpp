@@ -42,6 +42,18 @@ QueryInfo& QueryInfo::operator=(JsonView jsonValue) {
     m_logGroupName = jsonValue.GetString("logGroupName");
     m_logGroupNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("queryDuration")) {
+    m_queryDuration = jsonValue.GetInt64("queryDuration");
+    m_queryDurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("bytesScanned")) {
+    m_bytesScanned = jsonValue.GetDouble("bytesScanned");
+    m_bytesScannedHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("userIdentity")) {
+    m_userIdentity = jsonValue.GetString("userIdentity");
+    m_userIdentityHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +82,18 @@ JsonValue QueryInfo::Jsonize() const {
 
   if (m_logGroupNameHasBeenSet) {
     payload.WithString("logGroupName", m_logGroupName);
+  }
+
+  if (m_queryDurationHasBeenSet) {
+    payload.WithInt64("queryDuration", m_queryDuration);
+  }
+
+  if (m_bytesScannedHasBeenSet) {
+    payload.WithDouble("bytesScanned", m_bytesScanned);
+  }
+
+  if (m_userIdentityHasBeenSet) {
+    payload.WithString("userIdentity", m_userIdentity);
   }
 
   return payload;

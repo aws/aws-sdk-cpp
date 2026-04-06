@@ -775,9 +775,11 @@ class AWS_PAYMENTCRYPTOGRAPHY_API PaymentCryptographyClient : public Aws::Client
    * calling <a
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ExportKey.html">ExportKey</a>.
    * The export token expires in 30 days. You can use the same export token to export
-   * multiple keys from your service account.</p> <p> <b>Cross-account use:</b> This
-   * operation can't be used across different Amazon Web Services accounts.</p> <p>
-   * <b>Related operations:</b> </p> <ul> <li> <p> <a
+   * multiple keys from your service account.</p> <p>To return a previously generated
+   * export token and signing key certificate instead of generating new ones, set
+   * <code>ReuseLastGeneratedToken</code> to <code>true</code>.</p> <p>
+   * <b>Cross-account use:</b> This operation can't be used across different Amazon
+   * Web Services accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ExportKey.html">ExportKey</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForImport.html">GetParametersForImport</a>
@@ -815,9 +817,11 @@ class AWS_PAYMENTCRYPTOGRAPHY_API PaymentCryptographyClient : public Aws::Client
    * certificate must be in place and operational before calling <a
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>.
    * The import token expires in 30 days. You can use the same import token to import
-   * multiple keys into your service account.</p> <p> <b>Cross-account use:</b> This
-   * operation can't be used across different Amazon Web Services accounts.</p> <p>
-   * <b>Related operations:</b> </p> <ul> <li> <p> <a
+   * multiple keys into your service account.</p> <p>To return a previously generated
+   * import token and wrapping key certificate instead of generating new ones, set
+   * <code>ReuseLastGeneratedToken</code> to <code>true</code>.</p> <p>
+   * <b>Cross-account use:</b> This operation can't be used across different Amazon
+   * Web Services accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForExport.html">GetParametersForExport</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>

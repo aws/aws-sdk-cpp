@@ -7,6 +7,7 @@
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/ColorSpacePassthroughSettings.h>
 #include <aws/medialive/model/Hdr10Settings.h>
+#include <aws/medialive/model/Hlg2020Settings.h>
 #include <aws/medialive/model/Rec601Settings.h>
 #include <aws/medialive/model/Rec709Settings.h>
 
@@ -97,6 +98,22 @@ class Av1ColorSpaceSettings {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const Hlg2020Settings& GetHlg2020Settings() const { return m_hlg2020Settings; }
+  inline bool Hlg2020SettingsHasBeenSet() const { return m_hlg2020SettingsHasBeenSet; }
+  template <typename Hlg2020SettingsT = Hlg2020Settings>
+  void SetHlg2020Settings(Hlg2020SettingsT&& value) {
+    m_hlg2020SettingsHasBeenSet = true;
+    m_hlg2020Settings = std::forward<Hlg2020SettingsT>(value);
+  }
+  template <typename Hlg2020SettingsT = Hlg2020Settings>
+  Av1ColorSpaceSettings& WithHlg2020Settings(Hlg2020SettingsT&& value) {
+    SetHlg2020Settings(std::forward<Hlg2020SettingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ColorSpacePassthroughSettings m_colorSpacePassthroughSettings;
 
@@ -105,10 +122,13 @@ class Av1ColorSpaceSettings {
   Rec601Settings m_rec601Settings;
 
   Rec709Settings m_rec709Settings;
+
+  Hlg2020Settings m_hlg2020Settings;
   bool m_colorSpacePassthroughSettingsHasBeenSet = false;
   bool m_hdr10SettingsHasBeenSet = false;
   bool m_rec601SettingsHasBeenSet = false;
   bool m_rec709SettingsHasBeenSet = false;
+  bool m_hlg2020SettingsHasBeenSet = false;
 };
 
 }  // namespace Model

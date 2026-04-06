@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/bedrock/model/ConfigurationOwner.h>
-#include <aws/bedrock/model/InputTags.h>
 #include <aws/bedrock/model/ModelEnforcement.h>
+#include <aws/bedrock/model/SelectiveContentGuarding.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -92,16 +92,18 @@ class AccountEnforcedGuardrailOutputConfiguration {
 
   ///@{
   /**
-   * <p>Whether to honor or ignore input tags at runtime.</p>
+   * <p>Selective content guarding controls for enforced guardrails.</p>
    */
-  inline InputTags GetInputTags() const { return m_inputTags; }
-  inline bool InputTagsHasBeenSet() const { return m_inputTagsHasBeenSet; }
-  inline void SetInputTags(InputTags value) {
-    m_inputTagsHasBeenSet = true;
-    m_inputTags = value;
+  inline const SelectiveContentGuarding& GetSelectiveContentGuarding() const { return m_selectiveContentGuarding; }
+  inline bool SelectiveContentGuardingHasBeenSet() const { return m_selectiveContentGuardingHasBeenSet; }
+  template <typename SelectiveContentGuardingT = SelectiveContentGuarding>
+  void SetSelectiveContentGuarding(SelectiveContentGuardingT&& value) {
+    m_selectiveContentGuardingHasBeenSet = true;
+    m_selectiveContentGuarding = std::forward<SelectiveContentGuardingT>(value);
   }
-  inline AccountEnforcedGuardrailOutputConfiguration& WithInputTags(InputTags value) {
-    SetInputTags(value);
+  template <typename SelectiveContentGuardingT = SelectiveContentGuarding>
+  AccountEnforcedGuardrailOutputConfiguration& WithSelectiveContentGuarding(SelectiveContentGuardingT&& value) {
+    SetSelectiveContentGuarding(std::forward<SelectiveContentGuardingT>(value));
     return *this;
   }
   ///@}
@@ -236,7 +238,7 @@ class AccountEnforcedGuardrailOutputConfiguration {
 
   Aws::String m_guardrailId;
 
-  InputTags m_inputTags{InputTags::NOT_SET};
+  SelectiveContentGuarding m_selectiveContentGuarding;
 
   Aws::String m_guardrailVersion;
 
@@ -254,7 +256,7 @@ class AccountEnforcedGuardrailOutputConfiguration {
   bool m_configIdHasBeenSet = false;
   bool m_guardrailArnHasBeenSet = false;
   bool m_guardrailIdHasBeenSet = false;
-  bool m_inputTagsHasBeenSet = false;
+  bool m_selectiveContentGuardingHasBeenSet = false;
   bool m_guardrailVersionHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_createdByHasBeenSet = false;

@@ -28,9 +28,9 @@ AccountEnforcedGuardrailInferenceInputConfiguration& AccountEnforcedGuardrailInf
     m_guardrailVersion = jsonValue.GetString("guardrailVersion");
     m_guardrailVersionHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("inputTags")) {
-    m_inputTags = InputTagsMapper::GetInputTagsForName(jsonValue.GetString("inputTags"));
-    m_inputTagsHasBeenSet = true;
+  if (jsonValue.ValueExists("selectiveContentGuarding")) {
+    m_selectiveContentGuarding = jsonValue.GetObject("selectiveContentGuarding");
+    m_selectiveContentGuardingHasBeenSet = true;
   }
   if (jsonValue.ValueExists("modelEnforcement")) {
     m_modelEnforcement = jsonValue.GetObject("modelEnforcement");
@@ -50,8 +50,8 @@ JsonValue AccountEnforcedGuardrailInferenceInputConfiguration::Jsonize() const {
     payload.WithString("guardrailVersion", m_guardrailVersion);
   }
 
-  if (m_inputTagsHasBeenSet) {
-    payload.WithString("inputTags", InputTagsMapper::GetNameForInputTags(m_inputTags));
+  if (m_selectiveContentGuardingHasBeenSet) {
+    payload.WithObject("selectiveContentGuarding", m_selectiveContentGuarding.Jsonize());
   }
 
   if (m_modelEnforcementHasBeenSet) {

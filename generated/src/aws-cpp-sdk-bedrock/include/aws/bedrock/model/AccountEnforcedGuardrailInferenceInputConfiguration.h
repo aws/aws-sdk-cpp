@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock/Bedrock_EXPORTS.h>
-#include <aws/bedrock/model/InputTags.h>
 #include <aws/bedrock/model/ModelEnforcement.h>
+#include <aws/bedrock/model/SelectiveContentGuarding.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -72,16 +72,18 @@ class AccountEnforcedGuardrailInferenceInputConfiguration {
 
   ///@{
   /**
-   * <p>Whether to honor or ignore input tags at runtime.</p>
+   * <p>Selective content guarding controls for enforced guardrails.</p>
    */
-  inline InputTags GetInputTags() const { return m_inputTags; }
-  inline bool InputTagsHasBeenSet() const { return m_inputTagsHasBeenSet; }
-  inline void SetInputTags(InputTags value) {
-    m_inputTagsHasBeenSet = true;
-    m_inputTags = value;
+  inline const SelectiveContentGuarding& GetSelectiveContentGuarding() const { return m_selectiveContentGuarding; }
+  inline bool SelectiveContentGuardingHasBeenSet() const { return m_selectiveContentGuardingHasBeenSet; }
+  template <typename SelectiveContentGuardingT = SelectiveContentGuarding>
+  void SetSelectiveContentGuarding(SelectiveContentGuardingT&& value) {
+    m_selectiveContentGuardingHasBeenSet = true;
+    m_selectiveContentGuarding = std::forward<SelectiveContentGuardingT>(value);
   }
-  inline AccountEnforcedGuardrailInferenceInputConfiguration& WithInputTags(InputTags value) {
-    SetInputTags(value);
+  template <typename SelectiveContentGuardingT = SelectiveContentGuarding>
+  AccountEnforcedGuardrailInferenceInputConfiguration& WithSelectiveContentGuarding(SelectiveContentGuardingT&& value) {
+    SetSelectiveContentGuarding(std::forward<SelectiveContentGuardingT>(value));
     return *this;
   }
   ///@}
@@ -109,12 +111,12 @@ class AccountEnforcedGuardrailInferenceInputConfiguration {
 
   Aws::String m_guardrailVersion;
 
-  InputTags m_inputTags{InputTags::NOT_SET};
+  SelectiveContentGuarding m_selectiveContentGuarding;
 
   ModelEnforcement m_modelEnforcement;
   bool m_guardrailIdentifierHasBeenSet = false;
   bool m_guardrailVersionHasBeenSet = false;
-  bool m_inputTagsHasBeenSet = false;
+  bool m_selectiveContentGuardingHasBeenSet = false;
   bool m_modelEnforcementHasBeenSet = false;
 };
 

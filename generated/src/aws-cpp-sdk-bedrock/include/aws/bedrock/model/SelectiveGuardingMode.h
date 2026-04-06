@@ -10,13 +10,13 @@
 namespace Aws {
 namespace Bedrock {
 namespace Model {
-enum class InputTags { NOT_SET, HONOR, IGNORE };
+enum class SelectiveGuardingMode { NOT_SET, SELECTIVE, COMPREHENSIVE };
 
-namespace InputTagsMapper {
-AWS_BEDROCK_API InputTags GetInputTagsForName(const Aws::String& name);
+namespace SelectiveGuardingModeMapper {
+AWS_BEDROCK_API SelectiveGuardingMode GetSelectiveGuardingModeForName(const Aws::String& name);
 
-AWS_BEDROCK_API Aws::String GetNameForInputTags(InputTags value);
-}  // namespace InputTagsMapper
+AWS_BEDROCK_API Aws::String GetNameForSelectiveGuardingMode(SelectiveGuardingMode value);
+}  // namespace SelectiveGuardingModeMapper
 }  // namespace Model
 }  // namespace Bedrock
 }  // namespace Aws
