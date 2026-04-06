@@ -619,16 +619,6 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<Aws::Http
         *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
         {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},{TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 
-    context.SetTransmitResponse(httpResponse);
-    for (const auto& interceptor : m_interceptors)
-    {
-        const auto modifiedRequest = interceptor->ModifyBeforeDeserialization(context);
-        if (!modifiedRequest.IsSuccess())
-        {
-            return modifiedRequest.GetError();
-        }
-    }
-
     if (DoesResponseGenerateError(httpResponse) )
     {
         AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request returned error. Attempting to generate appropriate error codes from response");
@@ -641,6 +631,14 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<Aws::Http
 
         auto error = GetErrorMarshaller()->Marshall(*httpResponse);
         return HttpResponseOutcome(std::move(error) );
+    }
+
+    context.SetTransmitResponse(httpResponse);
+    for (const auto& interceptor : m_interceptors) {
+      const auto modifiedRequest = interceptor->ModifyBeforeDeserialization(context);
+      if (!modifiedRequest.IsSuccess()) {
+        return modifiedRequest.GetError();
+      }
     }
 
     AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request returned successful response.");
