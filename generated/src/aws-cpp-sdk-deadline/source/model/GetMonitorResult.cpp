@@ -46,6 +46,10 @@ GetMonitorResult& GetMonitorResult::operator=(const Aws::AmazonWebServiceResult<
     m_identityCenterInstanceArn = jsonValue.GetString("identityCenterInstanceArn");
     m_identityCenterInstanceArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("identityCenterRegion")) {
+    m_identityCenterRegion = jsonValue.GetString("identityCenterRegion");
+    m_identityCenterRegionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("identityCenterApplicationArn")) {
     m_identityCenterApplicationArn = jsonValue.GetString("identityCenterApplicationArn");
     m_identityCenterApplicationArnHasBeenSet = true;

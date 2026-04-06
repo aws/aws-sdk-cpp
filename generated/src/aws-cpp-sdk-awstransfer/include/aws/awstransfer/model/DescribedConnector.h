@@ -8,6 +8,7 @@
 #include <aws/awstransfer/model/As2ConnectorConfig.h>
 #include <aws/awstransfer/model/ConnectorEgressType.h>
 #include <aws/awstransfer/model/ConnectorStatus.h>
+#include <aws/awstransfer/model/ConnectorsIpAddressType.h>
 #include <aws/awstransfer/model/DescribedConnectorEgressConfig.h>
 #include <aws/awstransfer/model/SftpConnectorConfig.h>
 #include <aws/awstransfer/model/Tag.h>
@@ -336,6 +337,25 @@ class DescribedConnector {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>IP address type for the connector's network connections. When set to
+   * <code>IPV4</code>, the connector uses IPv4 addresses only. When set to
+   * <code>DUALSTACK</code>, the connector supports both IPv4 and IPv6 addresses,
+   * with IPv6 preferred when available.</p>
+   */
+  inline ConnectorsIpAddressType GetIpAddressType() const { return m_ipAddressType; }
+  inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+  inline void SetIpAddressType(ConnectorsIpAddressType value) {
+    m_ipAddressTypeHasBeenSet = true;
+    m_ipAddressType = value;
+  }
+  inline DescribedConnector& WithIpAddressType(ConnectorsIpAddressType value) {
+    SetIpAddressType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -364,6 +384,8 @@ class DescribedConnector {
   Aws::String m_errorMessage;
 
   ConnectorStatus m_status{ConnectorStatus::NOT_SET};
+
+  ConnectorsIpAddressType m_ipAddressType{ConnectorsIpAddressType::NOT_SET};
   bool m_arnHasBeenSet = false;
   bool m_connectorIdHasBeenSet = false;
   bool m_urlHasBeenSet = false;
@@ -378,6 +400,7 @@ class DescribedConnector {
   bool m_egressTypeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
 };
 
 }  // namespace Model

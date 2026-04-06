@@ -24,8 +24,8 @@ static const int EBS_MALWARE_PROTECTION_HASH = HashingUtils::HashString("EBS_MAL
 static const int RDS_LOGIN_EVENTS_HASH = HashingUtils::HashString("RDS_LOGIN_EVENTS");
 static const int LAMBDA_NETWORK_LOGS_HASH = HashingUtils::HashString("LAMBDA_NETWORK_LOGS");
 static const int EKS_RUNTIME_MONITORING_HASH = HashingUtils::HashString("EKS_RUNTIME_MONITORING");
-static const int FARGATE_RUNTIME_MONITORING_HASH = HashingUtils::HashString("FARGATE_RUNTIME_MONITORING");
 static const int EC2_RUNTIME_MONITORING_HASH = HashingUtils::HashString("EC2_RUNTIME_MONITORING");
+static const int FARGATE_RUNTIME_MONITORING_HASH = HashingUtils::HashString("FARGATE_RUNTIME_MONITORING");
 static const int RDS_DBI_PROTECTION_PROVISIONED_HASH = HashingUtils::HashString("RDS_DBI_PROTECTION_PROVISIONED");
 static const int RDS_DBI_PROTECTION_SERVERLESS_HASH = HashingUtils::HashString("RDS_DBI_PROTECTION_SERVERLESS");
 
@@ -49,10 +49,10 @@ UsageFeature GetUsageFeatureForName(const Aws::String& name) {
     return UsageFeature::LAMBDA_NETWORK_LOGS;
   } else if (hashCode == EKS_RUNTIME_MONITORING_HASH) {
     return UsageFeature::EKS_RUNTIME_MONITORING;
-  } else if (hashCode == FARGATE_RUNTIME_MONITORING_HASH) {
-    return UsageFeature::FARGATE_RUNTIME_MONITORING;
   } else if (hashCode == EC2_RUNTIME_MONITORING_HASH) {
     return UsageFeature::EC2_RUNTIME_MONITORING;
+  } else if (hashCode == FARGATE_RUNTIME_MONITORING_HASH) {
+    return UsageFeature::FARGATE_RUNTIME_MONITORING;
   } else if (hashCode == RDS_DBI_PROTECTION_PROVISIONED_HASH) {
     return UsageFeature::RDS_DBI_PROTECTION_PROVISIONED;
   } else if (hashCode == RDS_DBI_PROTECTION_SERVERLESS_HASH) {
@@ -89,10 +89,10 @@ Aws::String GetNameForUsageFeature(UsageFeature enumValue) {
       return "LAMBDA_NETWORK_LOGS";
     case UsageFeature::EKS_RUNTIME_MONITORING:
       return "EKS_RUNTIME_MONITORING";
-    case UsageFeature::FARGATE_RUNTIME_MONITORING:
-      return "FARGATE_RUNTIME_MONITORING";
     case UsageFeature::EC2_RUNTIME_MONITORING:
       return "EC2_RUNTIME_MONITORING";
+    case UsageFeature::FARGATE_RUNTIME_MONITORING:
+      return "FARGATE_RUNTIME_MONITORING";
     case UsageFeature::RDS_DBI_PROTECTION_PROVISIONED:
       return "RDS_DBI_PROTECTION_PROVISIONED";
     case UsageFeature::RDS_DBI_PROTECTION_SERVERLESS:

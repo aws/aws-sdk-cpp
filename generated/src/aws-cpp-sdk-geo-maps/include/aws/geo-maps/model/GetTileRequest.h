@@ -38,7 +38,10 @@ class GetTileRequest : public GeoMapsRequest {
   ///@{
   /**
    * <p>A list of optional additional parameters such as map styles that can be
-   * requested for each result.</p>
+   * requested for each result. Not supported in <code>ap-southeast-1</code> and
+   * <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers.</p>
    */
   inline const Aws::Vector<TileAdditionalFeature>& GetAdditionalFeatures() const { return m_additionalFeatures; }
   inline bool AdditionalFeaturesHasBeenSet() const { return m_additionalFeaturesHasBeenSet; }
@@ -61,8 +64,12 @@ class GetTileRequest : public GeoMapsRequest {
 
   ///@{
   /**
-   * <p>Specifies the desired tile set.</p> <p>Valid Values: <code>raster.satellite |
-   * vector.basemap | vector.traffic | raster.dem</code> </p>
+   * <p>Specifies the desired tile set. For <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * support only the <code>vector.basemap</code> value.</p> <p>Valid Values:
+   * <code>raster.satellite | vector.basemap | vector.traffic | raster.dem</code>
+   * </p>
    */
   inline const Aws::String& GetTileset() const { return m_tileset; }
   inline bool TilesetHasBeenSet() const { return m_tilesetHasBeenSet; }
@@ -98,7 +105,7 @@ class GetTileRequest : public GeoMapsRequest {
 
   ///@{
   /**
-   * <p>The X axis value for the map tile. Must be between 0 and 19.</p>
+   * <p>The X axis value for the map tile.</p>
    */
   inline const Aws::String& GetX() const { return m_x; }
   inline bool XHasBeenSet() const { return m_xHasBeenSet; }

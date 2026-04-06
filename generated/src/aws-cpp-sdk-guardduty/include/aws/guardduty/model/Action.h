@@ -152,25 +152,6 @@ class Action {
 
   ///@{
   /**
-   * <p>Information about <code>RDS_LOGIN_ATTEMPT</code> action described in this
-   * finding.</p>
-   */
-  inline const RdsLoginAttemptAction& GetRdsLoginAttemptAction() const { return m_rdsLoginAttemptAction; }
-  inline bool RdsLoginAttemptActionHasBeenSet() const { return m_rdsLoginAttemptActionHasBeenSet; }
-  template <typename RdsLoginAttemptActionT = RdsLoginAttemptAction>
-  void SetRdsLoginAttemptAction(RdsLoginAttemptActionT&& value) {
-    m_rdsLoginAttemptActionHasBeenSet = true;
-    m_rdsLoginAttemptAction = std::forward<RdsLoginAttemptActionT>(value);
-  }
-  template <typename RdsLoginAttemptActionT = RdsLoginAttemptAction>
-  Action& WithRdsLoginAttemptAction(RdsLoginAttemptActionT&& value) {
-    SetRdsLoginAttemptAction(std::forward<RdsLoginAttemptActionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Information whether the user has the permission to use a specific Kubernetes
    * API.</p>
    */
@@ -226,6 +207,25 @@ class Action {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Information about <code>RDS_LOGIN_ATTEMPT</code> action described in this
+   * finding.</p>
+   */
+  inline const RdsLoginAttemptAction& GetRdsLoginAttemptAction() const { return m_rdsLoginAttemptAction; }
+  inline bool RdsLoginAttemptActionHasBeenSet() const { return m_rdsLoginAttemptActionHasBeenSet; }
+  template <typename RdsLoginAttemptActionT = RdsLoginAttemptAction>
+  void SetRdsLoginAttemptAction(RdsLoginAttemptActionT&& value) {
+    m_rdsLoginAttemptActionHasBeenSet = true;
+    m_rdsLoginAttemptAction = std::forward<RdsLoginAttemptActionT>(value);
+  }
+  template <typename RdsLoginAttemptActionT = RdsLoginAttemptAction>
+  Action& WithRdsLoginAttemptAction(RdsLoginAttemptActionT&& value) {
+    SetRdsLoginAttemptAction(std::forward<RdsLoginAttemptActionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_actionType;
 
@@ -239,23 +239,23 @@ class Action {
 
   KubernetesApiCallAction m_kubernetesApiCallAction;
 
-  RdsLoginAttemptAction m_rdsLoginAttemptAction;
-
   KubernetesPermissionCheckedDetails m_kubernetesPermissionCheckedDetails;
 
   KubernetesRoleBindingDetails m_kubernetesRoleBindingDetails;
 
   KubernetesRoleDetails m_kubernetesRoleDetails;
+
+  RdsLoginAttemptAction m_rdsLoginAttemptAction;
   bool m_actionTypeHasBeenSet = false;
   bool m_awsApiCallActionHasBeenSet = false;
   bool m_dnsRequestActionHasBeenSet = false;
   bool m_networkConnectionActionHasBeenSet = false;
   bool m_portProbeActionHasBeenSet = false;
   bool m_kubernetesApiCallActionHasBeenSet = false;
-  bool m_rdsLoginAttemptActionHasBeenSet = false;
   bool m_kubernetesPermissionCheckedDetailsHasBeenSet = false;
   bool m_kubernetesRoleBindingDetailsHasBeenSet = false;
   bool m_kubernetesRoleDetailsHasBeenSet = false;
+  bool m_rdsLoginAttemptActionHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -24,6 +24,10 @@ Aws::String CreateMonitorRequest::SerializePayload() const {
     payload.WithString("identityCenterInstanceArn", m_identityCenterInstanceArn);
   }
 
+  if (m_identityCenterRegionHasBeenSet) {
+    payload.WithString("identityCenterRegion", m_identityCenterRegion);
+  }
+
   if (m_subdomainHasBeenSet) {
     payload.WithString("subdomain", m_subdomain);
   }

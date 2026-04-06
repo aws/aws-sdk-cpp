@@ -8,6 +8,7 @@
 #include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/awstransfer/model/As2ConnectorConfig.h>
 #include <aws/awstransfer/model/ConnectorEgressConfig.h>
+#include <aws/awstransfer/model/ConnectorsIpAddressType.h>
 #include <aws/awstransfer/model/SftpConnectorConfig.h>
 #include <aws/awstransfer/model/Tag.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -216,6 +217,25 @@ class CreateConnectorRequest : public TransferRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the IP address type for the connector's network connections. When
+   * set to <code>IPV4</code>, the connector uses IPv4 addresses only. When set to
+   * <code>DUALSTACK</code>, the connector supports both IPv4 and IPv6 addresses,
+   * with IPv6 preferred when available.</p>
+   */
+  inline ConnectorsIpAddressType GetIpAddressType() const { return m_ipAddressType; }
+  inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+  inline void SetIpAddressType(ConnectorsIpAddressType value) {
+    m_ipAddressTypeHasBeenSet = true;
+    m_ipAddressType = value;
+  }
+  inline CreateConnectorRequest& WithIpAddressType(ConnectorsIpAddressType value) {
+    SetIpAddressType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_url;
 
@@ -232,6 +252,8 @@ class CreateConnectorRequest : public TransferRequest {
   Aws::String m_securityPolicyName;
 
   ConnectorEgressConfig m_egressConfig;
+
+  ConnectorsIpAddressType m_ipAddressType{ConnectorsIpAddressType::NOT_SET};
   bool m_urlHasBeenSet = false;
   bool m_as2ConfigHasBeenSet = false;
   bool m_accessRoleHasBeenSet = false;
@@ -240,6 +262,7 @@ class CreateConnectorRequest : public TransferRequest {
   bool m_sftpConfigHasBeenSet = false;
   bool m_securityPolicyNameHasBeenSet = false;
   bool m_egressConfigHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
 };
 
 }  // namespace Model

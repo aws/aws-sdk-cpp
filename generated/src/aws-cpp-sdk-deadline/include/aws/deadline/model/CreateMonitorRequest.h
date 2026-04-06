@@ -93,6 +93,25 @@ class CreateMonitorRequest : public DeadlineRequest {
 
   ///@{
   /**
+   * <p>The AWS region where IAM Identity Center is enabled. Required when Identity
+   * Center is in a different region than the monitor.</p>
+   */
+  inline const Aws::String& GetIdentityCenterRegion() const { return m_identityCenterRegion; }
+  inline bool IdentityCenterRegionHasBeenSet() const { return m_identityCenterRegionHasBeenSet; }
+  template <typename IdentityCenterRegionT = Aws::String>
+  void SetIdentityCenterRegion(IdentityCenterRegionT&& value) {
+    m_identityCenterRegionHasBeenSet = true;
+    m_identityCenterRegion = std::forward<IdentityCenterRegionT>(value);
+  }
+  template <typename IdentityCenterRegionT = Aws::String>
+  CreateMonitorRequest& WithIdentityCenterRegion(IdentityCenterRegionT&& value) {
+    SetIdentityCenterRegion(std::forward<IdentityCenterRegionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The subdomain to use when creating the monitor URL. The full URL of the
    * monitor is subdomain.Region.deadlinecloud.amazonaws.com.</p>
    */
@@ -162,6 +181,8 @@ class CreateMonitorRequest : public DeadlineRequest {
 
   Aws::String m_identityCenterInstanceArn;
 
+  Aws::String m_identityCenterRegion;
+
   Aws::String m_subdomain;
 
   Aws::String m_roleArn;
@@ -170,6 +191,7 @@ class CreateMonitorRequest : public DeadlineRequest {
   bool m_clientTokenHasBeenSet = true;
   bool m_displayNameHasBeenSet = false;
   bool m_identityCenterInstanceArnHasBeenSet = false;
+  bool m_identityCenterRegionHasBeenSet = false;
   bool m_subdomainHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;

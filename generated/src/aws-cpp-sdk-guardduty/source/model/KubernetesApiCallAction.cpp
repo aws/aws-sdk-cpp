@@ -26,6 +26,22 @@ KubernetesApiCallAction& KubernetesApiCallAction::operator=(JsonView jsonValue) 
     m_verb = jsonValue.GetString("verb");
     m_verbHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("resource")) {
+    m_resource = jsonValue.GetString("resource");
+    m_resourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("subresource")) {
+    m_subresource = jsonValue.GetString("subresource");
+    m_subresourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("namespace")) {
+    m_namespace = jsonValue.GetString("namespace");
+    m_namespaceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("resourceName")) {
+    m_resourceName = jsonValue.GetString("resourceName");
+    m_resourceNameHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("sourceIPs")) {
     Aws::Utils::Array<JsonView> sourceIPsJsonList = jsonValue.GetArray("sourceIPs");
     for (unsigned sourceIPsIndex = 0; sourceIPsIndex < sourceIPsJsonList.GetLength(); ++sourceIPsIndex) {
@@ -49,22 +65,6 @@ KubernetesApiCallAction& KubernetesApiCallAction::operator=(JsonView jsonValue) 
     m_parameters = jsonValue.GetString("parameters");
     m_parametersHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("resource")) {
-    m_resource = jsonValue.GetString("resource");
-    m_resourceHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("subresource")) {
-    m_subresource = jsonValue.GetString("subresource");
-    m_subresourceHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("namespace")) {
-    m_namespace = jsonValue.GetString("namespace");
-    m_namespaceHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("resourceName")) {
-    m_resourceName = jsonValue.GetString("resourceName");
-    m_resourceNameHasBeenSet = true;
-  }
   return *this;
 }
 
@@ -77,6 +77,22 @@ JsonValue KubernetesApiCallAction::Jsonize() const {
 
   if (m_verbHasBeenSet) {
     payload.WithString("verb", m_verb);
+  }
+
+  if (m_resourceHasBeenSet) {
+    payload.WithString("resource", m_resource);
+  }
+
+  if (m_subresourceHasBeenSet) {
+    payload.WithString("subresource", m_subresource);
+  }
+
+  if (m_namespaceHasBeenSet) {
+    payload.WithString("namespace", m_namespace);
+  }
+
+  if (m_resourceNameHasBeenSet) {
+    payload.WithString("resourceName", m_resourceName);
   }
 
   if (m_sourceIpsHasBeenSet) {
@@ -101,22 +117,6 @@ JsonValue KubernetesApiCallAction::Jsonize() const {
 
   if (m_parametersHasBeenSet) {
     payload.WithString("parameters", m_parameters);
-  }
-
-  if (m_resourceHasBeenSet) {
-    payload.WithString("resource", m_resource);
-  }
-
-  if (m_subresourceHasBeenSet) {
-    payload.WithString("subresource", m_subresource);
-  }
-
-  if (m_namespaceHasBeenSet) {
-    payload.WithString("namespace", m_namespace);
-  }
-
-  if (m_resourceNameHasBeenSet) {
-    payload.WithString("resourceName", m_resourceName);
   }
 
   return payload;

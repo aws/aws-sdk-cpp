@@ -15,6 +15,7 @@
 #include <aws/accessanalyzer/model/ListFindingsPaginationTraits.h>
 #include <aws/accessanalyzer/model/ListFindingsV2PaginationTraits.h>
 #include <aws/accessanalyzer/model/ListPolicyGenerationsPaginationTraits.h>
+#include <aws/accessanalyzer/model/ListPolicyPreviewJobsPaginationTraits.h>
 #include <aws/accessanalyzer/model/ValidatePolicyPaginationTraits.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
@@ -45,6 +46,9 @@ using ListFindingsV2Paginator = Aws::Utils::Pagination::Paginator<AccessAnalyzer
 using ListPolicyGenerationsPaginator =
     Aws::Utils::Pagination::Paginator<AccessAnalyzerClient, Model::ListPolicyGenerationsRequest,
                                       Pagination::ListPolicyGenerationsPaginationTraits<AccessAnalyzerClient>>;
+using ListPolicyPreviewJobsPaginator =
+    Aws::Utils::Pagination::Paginator<AccessAnalyzerClient, Model::ListPolicyPreviewJobsRequest,
+                                      Pagination::ListPolicyPreviewJobsPaginationTraits<AccessAnalyzerClient>>;
 using ValidatePolicyPaginator = Aws::Utils::Pagination::Paginator<AccessAnalyzerClient, Model::ValidatePolicyRequest,
                                                                   Pagination::ValidatePolicyPaginationTraits<AccessAnalyzerClient>>;
 

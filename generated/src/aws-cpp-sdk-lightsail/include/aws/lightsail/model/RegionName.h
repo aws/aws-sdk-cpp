@@ -20,14 +20,15 @@ enum class RegionName {
   eu_west_2,
   eu_west_3,
   eu_central_1,
+  eu_north_1,
   ca_central_1,
   ap_south_1,
   ap_southeast_1,
   ap_southeast_2,
   ap_northeast_1,
   ap_northeast_2,
-  eu_north_1,
-  ap_southeast_3
+  ap_southeast_3,
+  ap_southeast_5
 };
 
 namespace RegionNameMapper {

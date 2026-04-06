@@ -108,6 +108,30 @@ class FastRestoreRule {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Availability Zone Ids in which to enable fast snapshot restore.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetAvailabilityZoneIds() const { return m_availabilityZoneIds; }
+  inline bool AvailabilityZoneIdsHasBeenSet() const { return m_availabilityZoneIdsHasBeenSet; }
+  template <typename AvailabilityZoneIdsT = Aws::Vector<Aws::String>>
+  void SetAvailabilityZoneIds(AvailabilityZoneIdsT&& value) {
+    m_availabilityZoneIdsHasBeenSet = true;
+    m_availabilityZoneIds = std::forward<AvailabilityZoneIdsT>(value);
+  }
+  template <typename AvailabilityZoneIdsT = Aws::Vector<Aws::String>>
+  FastRestoreRule& WithAvailabilityZoneIds(AvailabilityZoneIdsT&& value) {
+    SetAvailabilityZoneIds(std::forward<AvailabilityZoneIdsT>(value));
+    return *this;
+  }
+  template <typename AvailabilityZoneIdsT = Aws::String>
+  FastRestoreRule& AddAvailabilityZoneIds(AvailabilityZoneIdsT&& value) {
+    m_availabilityZoneIdsHasBeenSet = true;
+    m_availabilityZoneIds.emplace_back(std::forward<AvailabilityZoneIdsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_count{0};
 
@@ -116,10 +140,13 @@ class FastRestoreRule {
   RetentionIntervalUnitValues m_intervalUnit{RetentionIntervalUnitValues::NOT_SET};
 
   Aws::Vector<Aws::String> m_availabilityZones;
+
+  Aws::Vector<Aws::String> m_availabilityZoneIds;
   bool m_countHasBeenSet = false;
   bool m_intervalHasBeenSet = false;
   bool m_intervalUnitHasBeenSet = false;
   bool m_availabilityZonesHasBeenSet = false;
+  bool m_availabilityZoneIdsHasBeenSet = false;
 };
 
 }  // namespace Model

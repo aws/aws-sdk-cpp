@@ -19,8 +19,8 @@ static const int S3_DATA_EVENTS_HASH = HashingUtils::HashString("S3_DATA_EVENTS"
 static const int EKS_AUDIT_LOGS_HASH = HashingUtils::HashString("EKS_AUDIT_LOGS");
 static const int EBS_MALWARE_PROTECTION_HASH = HashingUtils::HashString("EBS_MALWARE_PROTECTION");
 static const int RDS_LOGIN_EVENTS_HASH = HashingUtils::HashString("RDS_LOGIN_EVENTS");
-static const int EKS_RUNTIME_MONITORING_HASH = HashingUtils::HashString("EKS_RUNTIME_MONITORING");
 static const int LAMBDA_NETWORK_LOGS_HASH = HashingUtils::HashString("LAMBDA_NETWORK_LOGS");
+static const int EKS_RUNTIME_MONITORING_HASH = HashingUtils::HashString("EKS_RUNTIME_MONITORING");
 static const int RUNTIME_MONITORING_HASH = HashingUtils::HashString("RUNTIME_MONITORING");
 
 DetectorFeature GetDetectorFeatureForName(const Aws::String& name) {
@@ -33,10 +33,10 @@ DetectorFeature GetDetectorFeatureForName(const Aws::String& name) {
     return DetectorFeature::EBS_MALWARE_PROTECTION;
   } else if (hashCode == RDS_LOGIN_EVENTS_HASH) {
     return DetectorFeature::RDS_LOGIN_EVENTS;
-  } else if (hashCode == EKS_RUNTIME_MONITORING_HASH) {
-    return DetectorFeature::EKS_RUNTIME_MONITORING;
   } else if (hashCode == LAMBDA_NETWORK_LOGS_HASH) {
     return DetectorFeature::LAMBDA_NETWORK_LOGS;
+  } else if (hashCode == EKS_RUNTIME_MONITORING_HASH) {
+    return DetectorFeature::EKS_RUNTIME_MONITORING;
   } else if (hashCode == RUNTIME_MONITORING_HASH) {
     return DetectorFeature::RUNTIME_MONITORING;
   }
@@ -61,10 +61,10 @@ Aws::String GetNameForDetectorFeature(DetectorFeature enumValue) {
       return "EBS_MALWARE_PROTECTION";
     case DetectorFeature::RDS_LOGIN_EVENTS:
       return "RDS_LOGIN_EVENTS";
-    case DetectorFeature::EKS_RUNTIME_MONITORING:
-      return "EKS_RUNTIME_MONITORING";
     case DetectorFeature::LAMBDA_NETWORK_LOGS:
       return "LAMBDA_NETWORK_LOGS";
+    case DetectorFeature::EKS_RUNTIME_MONITORING:
+      return "EKS_RUNTIME_MONITORING";
     case DetectorFeature::RUNTIME_MONITORING:
       return "RUNTIME_MONITORING";
     default:

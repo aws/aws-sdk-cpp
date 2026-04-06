@@ -150,6 +150,24 @@ class MonitorSummary {
 
   ///@{
   /**
+   * <p>The AWS region where IAM Identity Center is enabled.</p>
+   */
+  inline const Aws::String& GetIdentityCenterRegion() const { return m_identityCenterRegion; }
+  inline bool IdentityCenterRegionHasBeenSet() const { return m_identityCenterRegionHasBeenSet; }
+  template <typename IdentityCenterRegionT = Aws::String>
+  void SetIdentityCenterRegion(IdentityCenterRegionT&& value) {
+    m_identityCenterRegionHasBeenSet = true;
+    m_identityCenterRegion = std::forward<IdentityCenterRegionT>(value);
+  }
+  template <typename IdentityCenterRegionT = Aws::String>
+  MonitorSummary& WithIdentityCenterRegion(IdentityCenterRegionT&& value) {
+    SetIdentityCenterRegion(std::forward<IdentityCenterRegionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Amazon Resource Name that the IAM Identity Center assigned to the monitor
    * when it was created.</p>
    */
@@ -252,6 +270,8 @@ class MonitorSummary {
 
   Aws::String m_identityCenterInstanceArn;
 
+  Aws::String m_identityCenterRegion;
+
   Aws::String m_identityCenterApplicationArn;
 
   Aws::Utils::DateTime m_createdAt{};
@@ -267,6 +287,7 @@ class MonitorSummary {
   bool m_urlHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
   bool m_identityCenterInstanceArnHasBeenSet = false;
+  bool m_identityCenterRegionHasBeenSet = false;
   bool m_identityCenterApplicationArnHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_createdByHasBeenSet = false;

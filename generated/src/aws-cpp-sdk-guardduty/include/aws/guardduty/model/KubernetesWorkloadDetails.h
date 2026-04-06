@@ -126,6 +126,24 @@ class KubernetesWorkloadDetails {
 
   ///@{
   /**
+   * <p>The service account name that is associated with a Kubernetes workload.</p>
+   */
+  inline const Aws::String& GetServiceAccountName() const { return m_serviceAccountName; }
+  inline bool ServiceAccountNameHasBeenSet() const { return m_serviceAccountNameHasBeenSet; }
+  template <typename ServiceAccountNameT = Aws::String>
+  void SetServiceAccountName(ServiceAccountNameT&& value) {
+    m_serviceAccountNameHasBeenSet = true;
+    m_serviceAccountName = std::forward<ServiceAccountNameT>(value);
+  }
+  template <typename ServiceAccountNameT = Aws::String>
+  KubernetesWorkloadDetails& WithServiceAccountName(ServiceAccountNameT&& value) {
+    SetServiceAccountName(std::forward<ServiceAccountNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Containers running as part of the Kubernetes workload.</p>
    */
   inline const Aws::Vector<Container>& GetContainers() const { return m_containers; }
@@ -174,24 +192,6 @@ class KubernetesWorkloadDetails {
 
   ///@{
   /**
-   * <p>The service account name that is associated with a Kubernetes workload.</p>
-   */
-  inline const Aws::String& GetServiceAccountName() const { return m_serviceAccountName; }
-  inline bool ServiceAccountNameHasBeenSet() const { return m_serviceAccountNameHasBeenSet; }
-  template <typename ServiceAccountNameT = Aws::String>
-  void SetServiceAccountName(ServiceAccountNameT&& value) {
-    m_serviceAccountNameHasBeenSet = true;
-    m_serviceAccountName = std::forward<ServiceAccountNameT>(value);
-  }
-  template <typename ServiceAccountNameT = Aws::String>
-  KubernetesWorkloadDetails& WithServiceAccountName(ServiceAccountNameT&& value) {
-    SetServiceAccountName(std::forward<ServiceAccountNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Whether the host IPC flag is enabled for the pods in the workload.</p>
    */
   inline bool GetHostIPC() const { return m_hostIPC; }
@@ -232,11 +232,11 @@ class KubernetesWorkloadDetails {
 
   bool m_hostNetwork{false};
 
+  Aws::String m_serviceAccountName;
+
   Aws::Vector<Container> m_containers;
 
   Aws::Vector<Volume> m_volumes;
-
-  Aws::String m_serviceAccountName;
 
   bool m_hostIPC{false};
 
@@ -246,9 +246,9 @@ class KubernetesWorkloadDetails {
   bool m_uidHasBeenSet = false;
   bool m_namespaceHasBeenSet = false;
   bool m_hostNetworkHasBeenSet = false;
+  bool m_serviceAccountNameHasBeenSet = false;
   bool m_containersHasBeenSet = false;
   bool m_volumesHasBeenSet = false;
-  bool m_serviceAccountNameHasBeenSet = false;
   bool m_hostIPCHasBeenSet = false;
   bool m_hostPIDHasBeenSet = false;
 };

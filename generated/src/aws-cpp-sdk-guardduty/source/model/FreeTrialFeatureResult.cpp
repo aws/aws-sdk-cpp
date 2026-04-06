@@ -22,10 +22,10 @@ static const int S3_DATA_EVENTS_HASH = HashingUtils::HashString("S3_DATA_EVENTS"
 static const int EKS_AUDIT_LOGS_HASH = HashingUtils::HashString("EKS_AUDIT_LOGS");
 static const int EBS_MALWARE_PROTECTION_HASH = HashingUtils::HashString("EBS_MALWARE_PROTECTION");
 static const int RDS_LOGIN_EVENTS_HASH = HashingUtils::HashString("RDS_LOGIN_EVENTS");
-static const int EKS_RUNTIME_MONITORING_HASH = HashingUtils::HashString("EKS_RUNTIME_MONITORING");
 static const int LAMBDA_NETWORK_LOGS_HASH = HashingUtils::HashString("LAMBDA_NETWORK_LOGS");
-static const int FARGATE_RUNTIME_MONITORING_HASH = HashingUtils::HashString("FARGATE_RUNTIME_MONITORING");
+static const int EKS_RUNTIME_MONITORING_HASH = HashingUtils::HashString("EKS_RUNTIME_MONITORING");
 static const int EC2_RUNTIME_MONITORING_HASH = HashingUtils::HashString("EC2_RUNTIME_MONITORING");
+static const int FARGATE_RUNTIME_MONITORING_HASH = HashingUtils::HashString("FARGATE_RUNTIME_MONITORING");
 
 FreeTrialFeatureResult GetFreeTrialFeatureResultForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -43,14 +43,14 @@ FreeTrialFeatureResult GetFreeTrialFeatureResultForName(const Aws::String& name)
     return FreeTrialFeatureResult::EBS_MALWARE_PROTECTION;
   } else if (hashCode == RDS_LOGIN_EVENTS_HASH) {
     return FreeTrialFeatureResult::RDS_LOGIN_EVENTS;
-  } else if (hashCode == EKS_RUNTIME_MONITORING_HASH) {
-    return FreeTrialFeatureResult::EKS_RUNTIME_MONITORING;
   } else if (hashCode == LAMBDA_NETWORK_LOGS_HASH) {
     return FreeTrialFeatureResult::LAMBDA_NETWORK_LOGS;
-  } else if (hashCode == FARGATE_RUNTIME_MONITORING_HASH) {
-    return FreeTrialFeatureResult::FARGATE_RUNTIME_MONITORING;
+  } else if (hashCode == EKS_RUNTIME_MONITORING_HASH) {
+    return FreeTrialFeatureResult::EKS_RUNTIME_MONITORING;
   } else if (hashCode == EC2_RUNTIME_MONITORING_HASH) {
     return FreeTrialFeatureResult::EC2_RUNTIME_MONITORING;
+  } else if (hashCode == FARGATE_RUNTIME_MONITORING_HASH) {
+    return FreeTrialFeatureResult::FARGATE_RUNTIME_MONITORING;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -79,14 +79,14 @@ Aws::String GetNameForFreeTrialFeatureResult(FreeTrialFeatureResult enumValue) {
       return "EBS_MALWARE_PROTECTION";
     case FreeTrialFeatureResult::RDS_LOGIN_EVENTS:
       return "RDS_LOGIN_EVENTS";
-    case FreeTrialFeatureResult::EKS_RUNTIME_MONITORING:
-      return "EKS_RUNTIME_MONITORING";
     case FreeTrialFeatureResult::LAMBDA_NETWORK_LOGS:
       return "LAMBDA_NETWORK_LOGS";
-    case FreeTrialFeatureResult::FARGATE_RUNTIME_MONITORING:
-      return "FARGATE_RUNTIME_MONITORING";
+    case FreeTrialFeatureResult::EKS_RUNTIME_MONITORING:
+      return "EKS_RUNTIME_MONITORING";
     case FreeTrialFeatureResult::EC2_RUNTIME_MONITORING:
       return "EC2_RUNTIME_MONITORING";
+    case FreeTrialFeatureResult::FARGATE_RUNTIME_MONITORING:
+      return "FARGATE_RUNTIME_MONITORING";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

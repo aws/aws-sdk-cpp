@@ -22,8 +22,8 @@ AccessDeniedException& AccessDeniedException::operator=(JsonView jsonValue) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("__type")) {
-    m_type = jsonValue.GetString("__type");
+  if (jsonValue.ValueExists("type")) {
+    m_type = jsonValue.GetString("type");
     m_typeHasBeenSet = true;
   }
   return *this;
@@ -37,7 +37,7 @@ JsonValue AccessDeniedException::Jsonize() const {
   }
 
   if (m_typeHasBeenSet) {
-    payload.WithString("__type", m_type);
+    payload.WithString("type", m_type);
   }
 
   return payload;

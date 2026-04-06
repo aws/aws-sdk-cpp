@@ -37,6 +37,14 @@ FastRestoreRule& FastRestoreRule::operator=(JsonView jsonValue) {
     }
     m_availabilityZonesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AvailabilityZoneIds")) {
+    Aws::Utils::Array<JsonView> availabilityZoneIdsJsonList = jsonValue.GetArray("AvailabilityZoneIds");
+    for (unsigned availabilityZoneIdsIndex = 0; availabilityZoneIdsIndex < availabilityZoneIdsJsonList.GetLength();
+         ++availabilityZoneIdsIndex) {
+      m_availabilityZoneIds.push_back(availabilityZoneIdsJsonList[availabilityZoneIdsIndex].AsString());
+    }
+    m_availabilityZoneIdsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -61,6 +69,15 @@ JsonValue FastRestoreRule::Jsonize() const {
       availabilityZonesJsonList[availabilityZonesIndex].AsString(m_availabilityZones[availabilityZonesIndex]);
     }
     payload.WithArray("AvailabilityZones", std::move(availabilityZonesJsonList));
+  }
+
+  if (m_availabilityZoneIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> availabilityZoneIdsJsonList(m_availabilityZoneIds.size());
+    for (unsigned availabilityZoneIdsIndex = 0; availabilityZoneIdsIndex < availabilityZoneIdsJsonList.GetLength();
+         ++availabilityZoneIdsIndex) {
+      availabilityZoneIdsJsonList[availabilityZoneIdsIndex].AsString(m_availabilityZoneIds[availabilityZoneIdsIndex]);
+    }
+    payload.WithArray("AvailabilityZoneIds", std::move(availabilityZoneIdsJsonList));
   }
 
   return payload;

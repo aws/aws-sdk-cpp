@@ -27,6 +27,7 @@
 #include <aws/awstransfer/model/ConnectorFileTransferResult.h>
 #include <aws/awstransfer/model/ConnectorStatus.h>
 #include <aws/awstransfer/model/ConnectorVpcLatticeEgressConfig.h>
+#include <aws/awstransfer/model/ConnectorsIpAddressType.h>
 #include <aws/awstransfer/model/CopyStepDetails.h>
 #include <aws/awstransfer/model/CreateAccessRequest.h>
 #include <aws/awstransfer/model/CreateAccessResult.h>

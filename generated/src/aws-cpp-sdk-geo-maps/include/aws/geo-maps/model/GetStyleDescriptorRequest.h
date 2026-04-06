@@ -43,7 +43,10 @@ class GetStyleDescriptorRequest : public GeoMapsRequest {
 
   ///@{
   /**
-   * <p>Style specifies the desired map style.</p>
+   * <p>Style specifies the desired map style. For <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * support only the <code>Standard</code> and <code>Monochrome</code> values.</p>
    */
   inline MapStyle GetStyle() const { return m_style; }
   inline bool StyleHasBeenSet() const { return m_styleHasBeenSet; }
@@ -78,10 +81,13 @@ class GetStyleDescriptorRequest : public GeoMapsRequest {
   ///@{
   /**
    * <p>Specifies the political view using ISO 3166-2 or ISO 3166-3 country code
-   * format.</p> <p>The following political views are currently supported:</p> <ul>
-   * <li> <p> <code>ARG</code>: Argentina's view on the Southern Patagonian Ice Field
-   * and Tierra Del Fuego, including the Falkland Islands, South Georgia, and South
-   * Sandwich Islands</p> </li> <li> <p> <code>EGY</code>: Egypt's view on Bir
+   * format. Not supported in <code>ap-southeast-1</code> and
+   * <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers.</p> <p>The following political views are currently supported:</p>
+   * <ul> <li> <p> <code>ARG</code>: Argentina's view on the Southern Patagonian Ice
+   * Field and Tierra Del Fuego, including the Falkland Islands, South Georgia, and
+   * South Sandwich Islands</p> </li> <li> <p> <code>EGY</code>: Egypt's view on Bir
    * Tawil</p> </li> <li> <p> <code>IND</code>: India's view on Gilgit-Baltistan</p>
    * </li> <li> <p> <code>KEN</code>: Kenya's view on the Ilemi Triangle</p> </li>
    * <li> <p> <code>MAR</code>: Morocco's view on Western Sahara</p> </li> <li> <p>
@@ -112,13 +118,16 @@ class GetStyleDescriptorRequest : public GeoMapsRequest {
 
   ///@{
   /**
-   * <p>Adjusts how physical terrain details are rendered on the map.</p> <p>The
-   * following terrain styles are currently supported:</p> <ul> <li> <p>
-   * <code>Hillshade</code>: Displays the physical terrain details through shading
-   * and highlighting of elevation change and geographic features.</p> </li> <li> <p>
-   * <code>Terrain3D</code>: Displays physical terrain details and elevations as a
-   * three-dimensional model.</p> </li> </ul> <p> <code>Hillshade</code> is valid
-   * only for the <code>Standard</code> and <code>Monochrome</code> map styles.</p>
+   * <p>Adjusts how physical terrain details are rendered on the map. Not supported
+   * in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers.</p> <p>The following terrain styles are currently supported:</p> <ul>
+   * <li> <p> <code>Hillshade</code>: Displays the physical terrain details through
+   * shading and highlighting of elevation change and geographic features.</p> </li>
+   * <li> <p> <code>Terrain3D</code>: Displays physical terrain details and
+   * elevations as a three-dimensional model.</p> </li> </ul> <p>
+   * <code>Hillshade</code> is valid only for the <code>Standard</code> and
+   * <code>Monochrome</code> map styles.</p>
    */
   inline Terrain GetTerrain() const { return m_terrain; }
   inline bool TerrainHasBeenSet() const { return m_terrainHasBeenSet; }
@@ -136,7 +145,10 @@ class GetStyleDescriptorRequest : public GeoMapsRequest {
   /**
    * <p>Displays the shape and steepness of terrain features using elevation lines.
    * The density value controls how densely the available contour line information is
-   * rendered on the map.</p> <p>This parameter is valid for all map styles except
+   * rendered on the map. Not supported in <code>ap-southeast-1</code> and
+   * <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers.</p> <p>This parameter is valid for all map styles except
    * <code>Satellite</code>.</p>
    */
   inline ContourDensity GetContourDensity() const { return m_contourDensity; }
@@ -154,7 +166,10 @@ class GetStyleDescriptorRequest : public GeoMapsRequest {
   ///@{
   /**
    * <p>Displays real-time traffic information overlay on map, such as incident
-   * events and flow events.</p> <p>This parameter is valid for all map styles except
+   * events and flow events. Not supported in <code>ap-southeast-1</code> and
+   * <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers.</p> <p>This parameter is valid for all map styles except
    * <code>Satellite</code>.</p>
    */
   inline Traffic GetTraffic() const { return m_traffic; }
@@ -173,8 +188,12 @@ class GetStyleDescriptorRequest : public GeoMapsRequest {
   /**
    * <p>Renders additional map information relevant to selected travel modes.
    * Information for multiple travel modes can be displayed simultaneously, although
-   * this increases the overall information density rendered on the map.</p> <p>This
-   * parameter is valid for all map styles except <code>Satellite</code>.</p>
+   * this increases the overall information density rendered on the map. Not
+   * supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+   * for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers.</p> <p>This parameter is valid for all map styles except
+   * <code>Satellite</code>.</p>
    */
   inline const Aws::Vector<TravelMode>& GetTravelModes() const { return m_travelModes; }
   inline bool TravelModesHasBeenSet() const { return m_travelModesHasBeenSet; }

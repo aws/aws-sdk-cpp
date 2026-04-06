@@ -30,6 +30,14 @@
 #include <aws/deadline/model/AssumeQueueRoleForUserRequest.h>
 #include <aws/deadline/model/AssumeQueueRoleForWorkerRequest.h>
 #include <aws/deadline/model/BatchGetJobEntityRequest.h>
+#include <aws/deadline/model/BatchGetJobRequest.h>
+#include <aws/deadline/model/BatchGetSessionActionRequest.h>
+#include <aws/deadline/model/BatchGetSessionRequest.h>
+#include <aws/deadline/model/BatchGetStepRequest.h>
+#include <aws/deadline/model/BatchGetTaskRequest.h>
+#include <aws/deadline/model/BatchGetWorkerRequest.h>
+#include <aws/deadline/model/BatchUpdateJobRequest.h>
+#include <aws/deadline/model/BatchUpdateTaskRequest.h>
 #include <aws/deadline/model/CopyJobTemplateRequest.h>
 #include <aws/deadline/model/CreateBudgetRequest.h>
 #include <aws/deadline/model/CreateFarmRequest.h>
@@ -564,6 +572,16 @@ AssumeQueueRoleForWorkerOutcome DeadlineClient::AssumeQueueRoleForWorker(const A
                             : AssumeQueueRoleForWorkerOutcome(std::move(result.GetError()));
 }
 
+BatchGetJobOutcome DeadlineClient::BatchGetJob(const BatchGetJobRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/batch-get-job");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetJobOutcome(result.GetResultWithOwnership()) : BatchGetJobOutcome(std::move(result.GetError()));
+}
+
 BatchGetJobEntityOutcome DeadlineClient::BatchGetJobEntity(const BatchGetJobEntityRequest& request) const {
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("BatchGetJobEntity", "Required field: FarmId, is not set");
@@ -595,6 +613,79 @@ BatchGetJobEntityOutcome DeadlineClient::BatchGetJobEntity(const BatchGetJobEnti
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? BatchGetJobEntityOutcome(result.GetResultWithOwnership())
                             : BatchGetJobEntityOutcome(std::move(result.GetError()));
+}
+
+BatchGetSessionOutcome DeadlineClient::BatchGetSession(const BatchGetSessionRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/batch-get-session");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetSessionOutcome(result.GetResultWithOwnership())
+                            : BatchGetSessionOutcome(std::move(result.GetError()));
+}
+
+BatchGetSessionActionOutcome DeadlineClient::BatchGetSessionAction(const BatchGetSessionActionRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/batch-get-session-action");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetSessionActionOutcome(result.GetResultWithOwnership())
+                            : BatchGetSessionActionOutcome(std::move(result.GetError()));
+}
+
+BatchGetStepOutcome DeadlineClient::BatchGetStep(const BatchGetStepRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/batch-get-step");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetStepOutcome(result.GetResultWithOwnership()) : BatchGetStepOutcome(std::move(result.GetError()));
+}
+
+BatchGetTaskOutcome DeadlineClient::BatchGetTask(const BatchGetTaskRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/batch-get-task");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetTaskOutcome(result.GetResultWithOwnership()) : BatchGetTaskOutcome(std::move(result.GetError()));
+}
+
+BatchGetWorkerOutcome DeadlineClient::BatchGetWorker(const BatchGetWorkerRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/batch-get-worker");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetWorkerOutcome(result.GetResultWithOwnership()) : BatchGetWorkerOutcome(std::move(result.GetError()));
+}
+
+BatchUpdateJobOutcome DeadlineClient::BatchUpdateJob(const BatchUpdateJobRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/batch-update-job");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? BatchUpdateJobOutcome(result.GetResultWithOwnership()) : BatchUpdateJobOutcome(std::move(result.GetError()));
+}
+
+BatchUpdateTaskOutcome DeadlineClient::BatchUpdateTask(const BatchUpdateTaskRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/batch-update-task");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? BatchUpdateTaskOutcome(result.GetResultWithOwnership())
+                            : BatchUpdateTaskOutcome(std::move(result.GetError()));
 }
 
 CopyJobTemplateOutcome DeadlineClient::CopyJobTemplate(const CopyJobTemplateRequest& request) const {

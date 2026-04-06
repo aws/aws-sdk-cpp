@@ -220,6 +220,25 @@ class Resource {
 
   ///@{
   /**
+   * <p>Contains information about the Lambda function that was involved in a
+   * finding.</p>
+   */
+  inline const LambdaDetails& GetLambdaDetails() const { return m_lambdaDetails; }
+  inline bool LambdaDetailsHasBeenSet() const { return m_lambdaDetailsHasBeenSet; }
+  template <typename LambdaDetailsT = LambdaDetails>
+  void SetLambdaDetails(LambdaDetailsT&& value) {
+    m_lambdaDetailsHasBeenSet = true;
+    m_lambdaDetails = std::forward<LambdaDetailsT>(value);
+  }
+  template <typename LambdaDetailsT = LambdaDetails>
+  Resource& WithLambdaDetails(LambdaDetailsT&& value) {
+    SetLambdaDetails(std::forward<LambdaDetailsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Contains information about the database instance to which an anomalous login
    * attempt was made.</p>
    */
@@ -271,25 +290,6 @@ class Resource {
   template <typename RdsDbUserDetailsT = RdsDbUserDetails>
   Resource& WithRdsDbUserDetails(RdsDbUserDetailsT&& value) {
     SetRdsDbUserDetails(std::forward<RdsDbUserDetailsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Contains information about the Lambda function that was involved in a
-   * finding.</p>
-   */
-  inline const LambdaDetails& GetLambdaDetails() const { return m_lambdaDetails; }
-  inline bool LambdaDetailsHasBeenSet() const { return m_lambdaDetailsHasBeenSet; }
-  template <typename LambdaDetailsT = LambdaDetails>
-  void SetLambdaDetails(LambdaDetailsT&& value) {
-    m_lambdaDetailsHasBeenSet = true;
-    m_lambdaDetails = std::forward<LambdaDetailsT>(value);
-  }
-  template <typename LambdaDetailsT = LambdaDetails>
-  Resource& WithLambdaDetails(LambdaDetailsT&& value) {
-    SetLambdaDetails(std::forward<LambdaDetailsT>(value));
     return *this;
   }
   ///@}
@@ -366,13 +366,13 @@ class Resource {
 
   Container m_containerDetails;
 
+  LambdaDetails m_lambdaDetails;
+
   RdsDbInstanceDetails m_rdsDbInstanceDetails;
 
   RdsLimitlessDbDetails m_rdsLimitlessDbDetails;
 
   RdsDbUserDetails m_rdsDbUserDetails;
-
-  LambdaDetails m_lambdaDetails;
 
   EbsSnapshotDetails m_ebsSnapshotDetails;
 
@@ -388,10 +388,10 @@ class Resource {
   bool m_ebsVolumeDetailsHasBeenSet = false;
   bool m_ecsClusterDetailsHasBeenSet = false;
   bool m_containerDetailsHasBeenSet = false;
+  bool m_lambdaDetailsHasBeenSet = false;
   bool m_rdsDbInstanceDetailsHasBeenSet = false;
   bool m_rdsLimitlessDbDetailsHasBeenSet = false;
   bool m_rdsDbUserDetailsHasBeenSet = false;
-  bool m_lambdaDetailsHasBeenSet = false;
   bool m_ebsSnapshotDetailsHasBeenSet = false;
   bool m_ec2ImageDetailsHasBeenSet = false;
   bool m_recoveryPointDetailsHasBeenSet = false;

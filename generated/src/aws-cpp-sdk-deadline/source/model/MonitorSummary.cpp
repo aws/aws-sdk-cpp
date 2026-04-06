@@ -42,6 +42,10 @@ MonitorSummary& MonitorSummary::operator=(JsonView jsonValue) {
     m_identityCenterInstanceArn = jsonValue.GetString("identityCenterInstanceArn");
     m_identityCenterInstanceArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("identityCenterRegion")) {
+    m_identityCenterRegion = jsonValue.GetString("identityCenterRegion");
+    m_identityCenterRegionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("identityCenterApplicationArn")) {
     m_identityCenterApplicationArn = jsonValue.GetString("identityCenterApplicationArn");
     m_identityCenterApplicationArnHasBeenSet = true;
@@ -90,6 +94,10 @@ JsonValue MonitorSummary::Jsonize() const {
 
   if (m_identityCenterInstanceArnHasBeenSet) {
     payload.WithString("identityCenterInstanceArn", m_identityCenterInstanceArn);
+  }
+
+  if (m_identityCenterRegionHasBeenSet) {
+    payload.WithString("identityCenterRegion", m_identityCenterRegion);
   }
 
   if (m_identityCenterApplicationArnHasBeenSet) {

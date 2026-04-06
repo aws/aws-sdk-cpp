@@ -42,10 +42,6 @@ Action& Action::operator=(JsonView jsonValue) {
     m_kubernetesApiCallAction = jsonValue.GetObject("kubernetesApiCallAction");
     m_kubernetesApiCallActionHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("rdsLoginAttemptAction")) {
-    m_rdsLoginAttemptAction = jsonValue.GetObject("rdsLoginAttemptAction");
-    m_rdsLoginAttemptActionHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("kubernetesPermissionCheckedDetails")) {
     m_kubernetesPermissionCheckedDetails = jsonValue.GetObject("kubernetesPermissionCheckedDetails");
     m_kubernetesPermissionCheckedDetailsHasBeenSet = true;
@@ -57,6 +53,10 @@ Action& Action::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("kubernetesRoleDetails")) {
     m_kubernetesRoleDetails = jsonValue.GetObject("kubernetesRoleDetails");
     m_kubernetesRoleDetailsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("rdsLoginAttemptAction")) {
+    m_rdsLoginAttemptAction = jsonValue.GetObject("rdsLoginAttemptAction");
+    m_rdsLoginAttemptActionHasBeenSet = true;
   }
   return *this;
 }
@@ -88,10 +88,6 @@ JsonValue Action::Jsonize() const {
     payload.WithObject("kubernetesApiCallAction", m_kubernetesApiCallAction.Jsonize());
   }
 
-  if (m_rdsLoginAttemptActionHasBeenSet) {
-    payload.WithObject("rdsLoginAttemptAction", m_rdsLoginAttemptAction.Jsonize());
-  }
-
   if (m_kubernetesPermissionCheckedDetailsHasBeenSet) {
     payload.WithObject("kubernetesPermissionCheckedDetails", m_kubernetesPermissionCheckedDetails.Jsonize());
   }
@@ -102,6 +98,10 @@ JsonValue Action::Jsonize() const {
 
   if (m_kubernetesRoleDetailsHasBeenSet) {
     payload.WithObject("kubernetesRoleDetails", m_kubernetesRoleDetails.Jsonize());
+  }
+
+  if (m_rdsLoginAttemptActionHasBeenSet) {
+    payload.WithObject("rdsLoginAttemptAction", m_rdsLoginAttemptAction.Jsonize());
   }
 
   return payload;

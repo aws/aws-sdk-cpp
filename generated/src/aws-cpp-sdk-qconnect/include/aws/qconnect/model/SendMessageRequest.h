@@ -222,6 +222,25 @@ class SendMessageRequest : public QConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Request identifier from the origin system, used for end-to-end tracing across
+   * spans.</p>
+   */
+  inline const Aws::String& GetOriginRequestId() const { return m_originRequestId; }
+  inline bool OriginRequestIdHasBeenSet() const { return m_originRequestIdHasBeenSet; }
+  template <typename OriginRequestIdT = Aws::String>
+  void SetOriginRequestId(OriginRequestIdT&& value) {
+    m_originRequestIdHasBeenSet = true;
+    m_originRequestId = std::forward<OriginRequestIdT>(value);
+  }
+  template <typename OriginRequestIdT = Aws::String>
+  SendMessageRequest& WithOriginRequestId(OriginRequestIdT&& value) {
+    SetOriginRequestId(std::forward<OriginRequestIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_assistantId;
 
@@ -242,6 +261,8 @@ class SendMessageRequest : public QConnectRequest {
   Aws::String m_orchestratorUseCase;
 
   Aws::Map<Aws::String, Aws::String> m_metadata;
+
+  Aws::String m_originRequestId;
   bool m_assistantIdHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;
   bool m_typeHasBeenSet = false;
@@ -252,6 +273,7 @@ class SendMessageRequest : public QConnectRequest {
   bool m_clientTokenHasBeenSet = true;
   bool m_orchestratorUseCaseHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
+  bool m_originRequestIdHasBeenSet = false;
 };
 
 }  // namespace Model

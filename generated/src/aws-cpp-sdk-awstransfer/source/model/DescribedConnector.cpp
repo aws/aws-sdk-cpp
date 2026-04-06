@@ -82,6 +82,10 @@ DescribedConnector& DescribedConnector::operator=(JsonView jsonValue) {
     m_status = ConnectorStatusMapper::GetConnectorStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("IpAddressType")) {
+    m_ipAddressType = ConnectorsIpAddressTypeMapper::GetConnectorsIpAddressTypeForName(jsonValue.GetString("IpAddressType"));
+    m_ipAddressTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -153,6 +157,10 @@ JsonValue DescribedConnector::Jsonize() const {
 
   if (m_statusHasBeenSet) {
     payload.WithString("Status", ConnectorStatusMapper::GetNameForConnectorStatus(m_status));
+  }
+
+  if (m_ipAddressTypeHasBeenSet) {
+    payload.WithString("IpAddressType", ConnectorsIpAddressTypeMapper::GetNameForConnectorsIpAddressType(m_ipAddressType));
   }
 
   return payload;

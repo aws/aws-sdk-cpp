@@ -329,6 +329,36 @@ class AWS_DEADLINE_API DeadlineClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Retrieves multiple jobs in a single request. This is a batch version of the
+   * <code>GetJob</code> API.</p> <p>The result of getting each job is reported
+   * individually in the response. Because the batch request can result in a
+   * combination of successful and unsuccessful actions, you should check for batch
+   * errors even when the call returns an HTTP status code of 200.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchGetJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchGetJobOutcome BatchGetJob(const Model::BatchGetJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchGetJob that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename BatchGetJobRequestT = Model::BatchGetJobRequest>
+  Model::BatchGetJobOutcomeCallable BatchGetJobCallable(const BatchGetJobRequestT& request) const {
+    return SubmitCallable(&DeadlineClient::BatchGetJob, request);
+  }
+
+  /**
+   * An Async wrapper for BatchGetJob that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename BatchGetJobRequestT = Model::BatchGetJobRequest>
+  void BatchGetJobAsync(const BatchGetJobRequestT& request, const BatchGetJobResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DeadlineClient::BatchGetJob, request, handler, context);
+  }
+
+  /**
    * <p>Get batched job details for a worker.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchGetJobEntity">AWS
    * API Reference</a></p>
@@ -352,6 +382,220 @@ class AWS_DEADLINE_API DeadlineClient : public Aws::Client::AWSJsonClient,
   void BatchGetJobEntityAsync(const BatchGetJobEntityRequestT& request, const BatchGetJobEntityResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&DeadlineClient::BatchGetJobEntity, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves multiple sessions in a single request. This is a batch version of
+   * the <code>GetSession</code> API.</p> <p>The result of getting each session is
+   * reported individually in the response. Because the batch request can result in a
+   * combination of successful and unsuccessful actions, you should check for batch
+   * errors even when the call returns an HTTP status code of 200.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchGetSession">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchGetSessionOutcome BatchGetSession(const Model::BatchGetSessionRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchGetSession that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename BatchGetSessionRequestT = Model::BatchGetSessionRequest>
+  Model::BatchGetSessionOutcomeCallable BatchGetSessionCallable(const BatchGetSessionRequestT& request) const {
+    return SubmitCallable(&DeadlineClient::BatchGetSession, request);
+  }
+
+  /**
+   * An Async wrapper for BatchGetSession that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename BatchGetSessionRequestT = Model::BatchGetSessionRequest>
+  void BatchGetSessionAsync(const BatchGetSessionRequestT& request, const BatchGetSessionResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DeadlineClient::BatchGetSession, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves multiple session actions in a single request. This is a batch
+   * version of the <code>GetSessionAction</code> API.</p> <p>The result of getting
+   * each session action is reported individually in the response. Because the batch
+   * request can result in a combination of successful and unsuccessful actions, you
+   * should check for batch errors even when the call returns an HTTP status code of
+   * 200.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchGetSessionAction">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchGetSessionActionOutcome BatchGetSessionAction(const Model::BatchGetSessionActionRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchGetSessionAction that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename BatchGetSessionActionRequestT = Model::BatchGetSessionActionRequest>
+  Model::BatchGetSessionActionOutcomeCallable BatchGetSessionActionCallable(const BatchGetSessionActionRequestT& request) const {
+    return SubmitCallable(&DeadlineClient::BatchGetSessionAction, request);
+  }
+
+  /**
+   * An Async wrapper for BatchGetSessionAction that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename BatchGetSessionActionRequestT = Model::BatchGetSessionActionRequest>
+  void BatchGetSessionActionAsync(const BatchGetSessionActionRequestT& request, const BatchGetSessionActionResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DeadlineClient::BatchGetSessionAction, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves multiple steps in a single request. This is a batch version of the
+   * <code>GetStep</code> API.</p> <p>The result of getting each step is reported
+   * individually in the response. Because the batch request can result in a
+   * combination of successful and unsuccessful actions, you should check for batch
+   * errors even when the call returns an HTTP status code of 200.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchGetStep">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchGetStepOutcome BatchGetStep(const Model::BatchGetStepRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchGetStep that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename BatchGetStepRequestT = Model::BatchGetStepRequest>
+  Model::BatchGetStepOutcomeCallable BatchGetStepCallable(const BatchGetStepRequestT& request) const {
+    return SubmitCallable(&DeadlineClient::BatchGetStep, request);
+  }
+
+  /**
+   * An Async wrapper for BatchGetStep that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename BatchGetStepRequestT = Model::BatchGetStepRequest>
+  void BatchGetStepAsync(const BatchGetStepRequestT& request, const BatchGetStepResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DeadlineClient::BatchGetStep, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves multiple tasks in a single request. This is a batch version of the
+   * <code>GetTask</code> API.</p> <p>The result of getting each task is reported
+   * individually in the response. Because the batch request can result in a
+   * combination of successful and unsuccessful actions, you should check for batch
+   * errors even when the call returns an HTTP status code of 200.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchGetTask">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchGetTaskOutcome BatchGetTask(const Model::BatchGetTaskRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchGetTask that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename BatchGetTaskRequestT = Model::BatchGetTaskRequest>
+  Model::BatchGetTaskOutcomeCallable BatchGetTaskCallable(const BatchGetTaskRequestT& request) const {
+    return SubmitCallable(&DeadlineClient::BatchGetTask, request);
+  }
+
+  /**
+   * An Async wrapper for BatchGetTask that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename BatchGetTaskRequestT = Model::BatchGetTaskRequest>
+  void BatchGetTaskAsync(const BatchGetTaskRequestT& request, const BatchGetTaskResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DeadlineClient::BatchGetTask, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves multiple workers in a single request. This is a batch version of
+   * the <code>GetWorker</code> API.</p> <p>The result of getting each worker is
+   * reported individually in the response. Because the batch request can result in a
+   * combination of successful and unsuccessful actions, you should check for batch
+   * errors even when the call returns an HTTP status code of 200.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchGetWorker">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchGetWorkerOutcome BatchGetWorker(const Model::BatchGetWorkerRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchGetWorker that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename BatchGetWorkerRequestT = Model::BatchGetWorkerRequest>
+  Model::BatchGetWorkerOutcomeCallable BatchGetWorkerCallable(const BatchGetWorkerRequestT& request) const {
+    return SubmitCallable(&DeadlineClient::BatchGetWorker, request);
+  }
+
+  /**
+   * An Async wrapper for BatchGetWorker that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename BatchGetWorkerRequestT = Model::BatchGetWorkerRequest>
+  void BatchGetWorkerAsync(const BatchGetWorkerRequestT& request, const BatchGetWorkerResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DeadlineClient::BatchGetWorker, request, handler, context);
+  }
+
+  /**
+   * <p>Updates multiple jobs in a single request. This is a batch version of the
+   * <code>UpdateJob</code> API.</p> <p>The result of updating each job is reported
+   * individually in the response. Because the batch request can result in a
+   * combination of successful and unsuccessful actions, you should check for batch
+   * errors even when the call returns an HTTP status code of 200.</p> <p>When you
+   * change the status of a job to <code>ARCHIVED</code>, the job can't be scheduled
+   * or archived.</p>  <p>An archived job and its steps and tasks are
+   * deleted after 120 days. The job can't be recovered.</p> <p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchUpdateJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchUpdateJobOutcome BatchUpdateJob(const Model::BatchUpdateJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchUpdateJob that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename BatchUpdateJobRequestT = Model::BatchUpdateJobRequest>
+  Model::BatchUpdateJobOutcomeCallable BatchUpdateJobCallable(const BatchUpdateJobRequestT& request) const {
+    return SubmitCallable(&DeadlineClient::BatchUpdateJob, request);
+  }
+
+  /**
+   * An Async wrapper for BatchUpdateJob that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename BatchUpdateJobRequestT = Model::BatchUpdateJobRequest>
+  void BatchUpdateJobAsync(const BatchUpdateJobRequestT& request, const BatchUpdateJobResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DeadlineClient::BatchUpdateJob, request, handler, context);
+  }
+
+  /**
+   * <p>Updates multiple tasks in a single request. This is a batch version of the
+   * <code>UpdateTask</code> API.</p> <p>The result of updating each task is reported
+   * individually in the response. Because the batch request can result in a
+   * combination of successful and unsuccessful actions, you should check for batch
+   * errors even when the call returns an HTTP status code of 200.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchUpdateTask">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchUpdateTaskOutcome BatchUpdateTask(const Model::BatchUpdateTaskRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchUpdateTask that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename BatchUpdateTaskRequestT = Model::BatchUpdateTaskRequest>
+  Model::BatchUpdateTaskOutcomeCallable BatchUpdateTaskCallable(const BatchUpdateTaskRequestT& request) const {
+    return SubmitCallable(&DeadlineClient::BatchUpdateTask, request);
+  }
+
+  /**
+   * An Async wrapper for BatchUpdateTask that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename BatchUpdateTaskRequestT = Model::BatchUpdateTaskRequest>
+  void BatchUpdateTaskAsync(const BatchUpdateTaskRequestT& request, const BatchUpdateTaskResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DeadlineClient::BatchUpdateTask, request, handler, context);
   }
 
   /**

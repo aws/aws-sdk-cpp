@@ -47,6 +47,10 @@ Aws::String UpdateConnectorRequest::SerializePayload() const {
     payload.WithObject("EgressConfig", m_egressConfig.Jsonize());
   }
 
+  if (m_ipAddressTypeHasBeenSet) {
+    payload.WithString("IpAddressType", ConnectorsIpAddressTypeMapper::GetNameForConnectorsIpAddressType(m_ipAddressType));
+  }
+
   return payload.View().WriteReadable();
 }
 

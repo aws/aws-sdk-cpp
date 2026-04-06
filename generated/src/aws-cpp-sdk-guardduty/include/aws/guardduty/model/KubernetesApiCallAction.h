@@ -72,6 +72,79 @@ class KubernetesApiCallAction {
 
   ///@{
   /**
+   * <p>The resource component in the Kubernetes API call action.</p>
+   */
+  inline const Aws::String& GetResource() const { return m_resource; }
+  inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
+  template <typename ResourceT = Aws::String>
+  void SetResource(ResourceT&& value) {
+    m_resourceHasBeenSet = true;
+    m_resource = std::forward<ResourceT>(value);
+  }
+  template <typename ResourceT = Aws::String>
+  KubernetesApiCallAction& WithResource(ResourceT&& value) {
+    SetResource(std::forward<ResourceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the sub-resource in the Kubernetes API call action.</p>
+   */
+  inline const Aws::String& GetSubresource() const { return m_subresource; }
+  inline bool SubresourceHasBeenSet() const { return m_subresourceHasBeenSet; }
+  template <typename SubresourceT = Aws::String>
+  void SetSubresource(SubresourceT&& value) {
+    m_subresourceHasBeenSet = true;
+    m_subresource = std::forward<SubresourceT>(value);
+  }
+  template <typename SubresourceT = Aws::String>
+  KubernetesApiCallAction& WithSubresource(SubresourceT&& value) {
+    SetSubresource(std::forward<SubresourceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the namespace where the Kubernetes API call action takes
+   * place.</p>
+   */
+  inline const Aws::String& GetNamespace() const { return m_namespace; }
+  inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
+  template <typename NamespaceT = Aws::String>
+  void SetNamespace(NamespaceT&& value) {
+    m_namespaceHasBeenSet = true;
+    m_namespace = std::forward<NamespaceT>(value);
+  }
+  template <typename NamespaceT = Aws::String>
+  KubernetesApiCallAction& WithNamespace(NamespaceT&& value) {
+    SetNamespace(std::forward<NamespaceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the resource in the Kubernetes API call action.</p>
+   */
+  inline const Aws::String& GetResourceName() const { return m_resourceName; }
+  inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
+  template <typename ResourceNameT = Aws::String>
+  void SetResourceName(ResourceNameT&& value) {
+    m_resourceNameHasBeenSet = true;
+    m_resourceName = std::forward<ResourceNameT>(value);
+  }
+  template <typename ResourceNameT = Aws::String>
+  KubernetesApiCallAction& WithResourceName(ResourceNameT&& value) {
+    SetResourceName(std::forward<ResourceNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The IP of the Kubernetes API caller and the IPs of any proxies or load
    * balancers between the caller and the API endpoint.</p>
    */
@@ -162,83 +235,18 @@ class KubernetesApiCallAction {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The resource component in the Kubernetes API call action.</p>
-   */
-  inline const Aws::String& GetResource() const { return m_resource; }
-  inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-  template <typename ResourceT = Aws::String>
-  void SetResource(ResourceT&& value) {
-    m_resourceHasBeenSet = true;
-    m_resource = std::forward<ResourceT>(value);
-  }
-  template <typename ResourceT = Aws::String>
-  KubernetesApiCallAction& WithResource(ResourceT&& value) {
-    SetResource(std::forward<ResourceT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name of the sub-resource in the Kubernetes API call action.</p>
-   */
-  inline const Aws::String& GetSubresource() const { return m_subresource; }
-  inline bool SubresourceHasBeenSet() const { return m_subresourceHasBeenSet; }
-  template <typename SubresourceT = Aws::String>
-  void SetSubresource(SubresourceT&& value) {
-    m_subresourceHasBeenSet = true;
-    m_subresource = std::forward<SubresourceT>(value);
-  }
-  template <typename SubresourceT = Aws::String>
-  KubernetesApiCallAction& WithSubresource(SubresourceT&& value) {
-    SetSubresource(std::forward<SubresourceT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name of the namespace where the Kubernetes API call action takes
-   * place.</p>
-   */
-  inline const Aws::String& GetNamespace() const { return m_namespace; }
-  inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-  template <typename NamespaceT = Aws::String>
-  void SetNamespace(NamespaceT&& value) {
-    m_namespaceHasBeenSet = true;
-    m_namespace = std::forward<NamespaceT>(value);
-  }
-  template <typename NamespaceT = Aws::String>
-  KubernetesApiCallAction& WithNamespace(NamespaceT&& value) {
-    SetNamespace(std::forward<NamespaceT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name of the resource in the Kubernetes API call action.</p>
-   */
-  inline const Aws::String& GetResourceName() const { return m_resourceName; }
-  inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
-  template <typename ResourceNameT = Aws::String>
-  void SetResourceName(ResourceNameT&& value) {
-    m_resourceNameHasBeenSet = true;
-    m_resourceName = std::forward<ResourceNameT>(value);
-  }
-  template <typename ResourceNameT = Aws::String>
-  KubernetesApiCallAction& WithResourceName(ResourceNameT&& value) {
-    SetResourceName(std::forward<ResourceNameT>(value));
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_requestUri;
 
   Aws::String m_verb;
+
+  Aws::String m_resource;
+
+  Aws::String m_subresource;
+
+  Aws::String m_namespace;
+
+  Aws::String m_resourceName;
 
   Aws::Vector<Aws::String> m_sourceIps;
 
@@ -249,25 +257,17 @@ class KubernetesApiCallAction {
   int m_statusCode{0};
 
   Aws::String m_parameters;
-
-  Aws::String m_resource;
-
-  Aws::String m_subresource;
-
-  Aws::String m_namespace;
-
-  Aws::String m_resourceName;
   bool m_requestUriHasBeenSet = false;
   bool m_verbHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
+  bool m_subresourceHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_resourceNameHasBeenSet = false;
   bool m_sourceIpsHasBeenSet = false;
   bool m_userAgentHasBeenSet = false;
   bool m_remoteIpDetailsHasBeenSet = false;
   bool m_statusCodeHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
-  bool m_resourceHasBeenSet = false;
-  bool m_subresourceHasBeenSet = false;
-  bool m_namespaceHasBeenSet = false;
-  bool m_resourceNameHasBeenSet = false;
 };
 
 }  // namespace Model

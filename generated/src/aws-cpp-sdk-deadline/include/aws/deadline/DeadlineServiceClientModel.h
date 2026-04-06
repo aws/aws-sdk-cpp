@@ -29,6 +29,14 @@
 #include <aws/deadline/model/AssumeQueueRoleForUserResult.h>
 #include <aws/deadline/model/AssumeQueueRoleForWorkerResult.h>
 #include <aws/deadline/model/BatchGetJobEntityResult.h>
+#include <aws/deadline/model/BatchGetJobResult.h>
+#include <aws/deadline/model/BatchGetSessionActionResult.h>
+#include <aws/deadline/model/BatchGetSessionResult.h>
+#include <aws/deadline/model/BatchGetStepResult.h>
+#include <aws/deadline/model/BatchGetTaskResult.h>
+#include <aws/deadline/model/BatchGetWorkerResult.h>
+#include <aws/deadline/model/BatchUpdateJobResult.h>
+#include <aws/deadline/model/BatchUpdateTaskResult.h>
 #include <aws/deadline/model/CopyJobTemplateResult.h>
 #include <aws/deadline/model/CreateBudgetResult.h>
 #include <aws/deadline/model/CreateFarmResult.h>
@@ -178,7 +186,15 @@ class AssumeFleetRoleForWorkerRequest;
 class AssumeQueueRoleForReadRequest;
 class AssumeQueueRoleForUserRequest;
 class AssumeQueueRoleForWorkerRequest;
+class BatchGetJobRequest;
 class BatchGetJobEntityRequest;
+class BatchGetSessionRequest;
+class BatchGetSessionActionRequest;
+class BatchGetStepRequest;
+class BatchGetTaskRequest;
+class BatchGetWorkerRequest;
+class BatchUpdateJobRequest;
+class BatchUpdateTaskRequest;
 class CopyJobTemplateRequest;
 class CreateBudgetRequest;
 class CreateFarmRequest;
@@ -294,7 +310,15 @@ typedef Aws::Utils::Outcome<AssumeFleetRoleForWorkerResult, DeadlineError> Assum
 typedef Aws::Utils::Outcome<AssumeQueueRoleForReadResult, DeadlineError> AssumeQueueRoleForReadOutcome;
 typedef Aws::Utils::Outcome<AssumeQueueRoleForUserResult, DeadlineError> AssumeQueueRoleForUserOutcome;
 typedef Aws::Utils::Outcome<AssumeQueueRoleForWorkerResult, DeadlineError> AssumeQueueRoleForWorkerOutcome;
+typedef Aws::Utils::Outcome<BatchGetJobResult, DeadlineError> BatchGetJobOutcome;
 typedef Aws::Utils::Outcome<BatchGetJobEntityResult, DeadlineError> BatchGetJobEntityOutcome;
+typedef Aws::Utils::Outcome<BatchGetSessionResult, DeadlineError> BatchGetSessionOutcome;
+typedef Aws::Utils::Outcome<BatchGetSessionActionResult, DeadlineError> BatchGetSessionActionOutcome;
+typedef Aws::Utils::Outcome<BatchGetStepResult, DeadlineError> BatchGetStepOutcome;
+typedef Aws::Utils::Outcome<BatchGetTaskResult, DeadlineError> BatchGetTaskOutcome;
+typedef Aws::Utils::Outcome<BatchGetWorkerResult, DeadlineError> BatchGetWorkerOutcome;
+typedef Aws::Utils::Outcome<BatchUpdateJobResult, DeadlineError> BatchUpdateJobOutcome;
+typedef Aws::Utils::Outcome<BatchUpdateTaskResult, DeadlineError> BatchUpdateTaskOutcome;
 typedef Aws::Utils::Outcome<CopyJobTemplateResult, DeadlineError> CopyJobTemplateOutcome;
 typedef Aws::Utils::Outcome<CreateBudgetResult, DeadlineError> CreateBudgetOutcome;
 typedef Aws::Utils::Outcome<CreateFarmResult, DeadlineError> CreateFarmOutcome;
@@ -410,7 +434,15 @@ typedef std::future<AssumeFleetRoleForWorkerOutcome> AssumeFleetRoleForWorkerOut
 typedef std::future<AssumeQueueRoleForReadOutcome> AssumeQueueRoleForReadOutcomeCallable;
 typedef std::future<AssumeQueueRoleForUserOutcome> AssumeQueueRoleForUserOutcomeCallable;
 typedef std::future<AssumeQueueRoleForWorkerOutcome> AssumeQueueRoleForWorkerOutcomeCallable;
+typedef std::future<BatchGetJobOutcome> BatchGetJobOutcomeCallable;
 typedef std::future<BatchGetJobEntityOutcome> BatchGetJobEntityOutcomeCallable;
+typedef std::future<BatchGetSessionOutcome> BatchGetSessionOutcomeCallable;
+typedef std::future<BatchGetSessionActionOutcome> BatchGetSessionActionOutcomeCallable;
+typedef std::future<BatchGetStepOutcome> BatchGetStepOutcomeCallable;
+typedef std::future<BatchGetTaskOutcome> BatchGetTaskOutcomeCallable;
+typedef std::future<BatchGetWorkerOutcome> BatchGetWorkerOutcomeCallable;
+typedef std::future<BatchUpdateJobOutcome> BatchUpdateJobOutcomeCallable;
+typedef std::future<BatchUpdateTaskOutcome> BatchUpdateTaskOutcomeCallable;
 typedef std::future<CopyJobTemplateOutcome> CopyJobTemplateOutcomeCallable;
 typedef std::future<CreateBudgetOutcome> CreateBudgetOutcomeCallable;
 typedef std::future<CreateFarmOutcome> CreateFarmOutcomeCallable;
@@ -547,9 +579,33 @@ typedef std::function<void(const DeadlineClient*, const Model::AssumeQueueRoleFo
 typedef std::function<void(const DeadlineClient*, const Model::AssumeQueueRoleForWorkerRequest&,
                            const Model::AssumeQueueRoleForWorkerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AssumeQueueRoleForWorkerResponseReceivedHandler;
+typedef std::function<void(const DeadlineClient*, const Model::BatchGetJobRequest&, const Model::BatchGetJobOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchGetJobResponseReceivedHandler;
 typedef std::function<void(const DeadlineClient*, const Model::BatchGetJobEntityRequest&, const Model::BatchGetJobEntityOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     BatchGetJobEntityResponseReceivedHandler;
+typedef std::function<void(const DeadlineClient*, const Model::BatchGetSessionRequest&, const Model::BatchGetSessionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchGetSessionResponseReceivedHandler;
+typedef std::function<void(const DeadlineClient*, const Model::BatchGetSessionActionRequest&, const Model::BatchGetSessionActionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchGetSessionActionResponseReceivedHandler;
+typedef std::function<void(const DeadlineClient*, const Model::BatchGetStepRequest&, const Model::BatchGetStepOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchGetStepResponseReceivedHandler;
+typedef std::function<void(const DeadlineClient*, const Model::BatchGetTaskRequest&, const Model::BatchGetTaskOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchGetTaskResponseReceivedHandler;
+typedef std::function<void(const DeadlineClient*, const Model::BatchGetWorkerRequest&, const Model::BatchGetWorkerOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchGetWorkerResponseReceivedHandler;
+typedef std::function<void(const DeadlineClient*, const Model::BatchUpdateJobRequest&, const Model::BatchUpdateJobOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchUpdateJobResponseReceivedHandler;
+typedef std::function<void(const DeadlineClient*, const Model::BatchUpdateTaskRequest&, const Model::BatchUpdateTaskOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchUpdateTaskResponseReceivedHandler;
 typedef std::function<void(const DeadlineClient*, const Model::CopyJobTemplateRequest&, const Model::CopyJobTemplateOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CopyJobTemplateResponseReceivedHandler;

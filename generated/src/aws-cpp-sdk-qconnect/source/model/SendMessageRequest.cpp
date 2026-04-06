@@ -51,5 +51,9 @@ Aws::String SendMessageRequest::SerializePayload() const {
     payload.WithObject("metadata", std::move(metadataJsonMap));
   }
 
+  if (m_originRequestIdHasBeenSet) {
+    payload.WithString("originRequestId", m_originRequestId);
+  }
+
   return payload.View().WriteReadable();
 }

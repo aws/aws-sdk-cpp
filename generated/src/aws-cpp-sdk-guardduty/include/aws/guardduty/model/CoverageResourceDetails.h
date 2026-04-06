@@ -55,22 +55,6 @@ class CoverageResourceDetails {
 
   ///@{
   /**
-   * <p>The type of Amazon Web Services resource.</p>
-   */
-  inline ResourceType GetResourceType() const { return m_resourceType; }
-  inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-  inline void SetResourceType(ResourceType value) {
-    m_resourceTypeHasBeenSet = true;
-    m_resourceType = value;
-  }
-  inline CoverageResourceDetails& WithResourceType(ResourceType value) {
-    SetResourceType(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Information about the Amazon ECS cluster that is assessed for runtime
    * coverage.</p>
    */
@@ -105,18 +89,34 @@ class CoverageResourceDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of Amazon Web Services resource.</p>
+   */
+  inline ResourceType GetResourceType() const { return m_resourceType; }
+  inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+  inline void SetResourceType(ResourceType value) {
+    m_resourceTypeHasBeenSet = true;
+    m_resourceType = value;
+  }
+  inline CoverageResourceDetails& WithResourceType(ResourceType value) {
+    SetResourceType(value);
+    return *this;
+  }
+  ///@}
  private:
   CoverageEksClusterDetails m_eksClusterDetails;
-
-  ResourceType m_resourceType{ResourceType::NOT_SET};
 
   CoverageEcsClusterDetails m_ecsClusterDetails;
 
   CoverageEc2InstanceDetails m_ec2InstanceDetails;
+
+  ResourceType m_resourceType{ResourceType::NOT_SET};
   bool m_eksClusterDetailsHasBeenSet = false;
-  bool m_resourceTypeHasBeenSet = false;
   bool m_ecsClusterDetailsHasBeenSet = false;
   bool m_ec2InstanceDetailsHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
 };
 
 }  // namespace Model

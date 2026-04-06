@@ -58,6 +58,10 @@ Span& Span::operator=(JsonView jsonValue) {
     m_requestId = jsonValue.GetString("requestId");
     m_requestIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("originRequestId")) {
+    m_originRequestId = jsonValue.GetString("originRequestId");
+    m_originRequestIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("attributes")) {
     m_attributes = jsonValue.GetObject("attributes");
     m_attributesHasBeenSet = true;
@@ -106,6 +110,10 @@ JsonValue Span::Jsonize() const {
 
   if (m_requestIdHasBeenSet) {
     payload.WithString("requestId", m_requestId);
+  }
+
+  if (m_originRequestIdHasBeenSet) {
+    payload.WithString("originRequestId", m_originRequestId);
   }
 
   if (m_attributesHasBeenSet) {

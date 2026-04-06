@@ -57,6 +57,10 @@ Resource& Resource::operator=(JsonView jsonValue) {
     m_containerDetails = jsonValue.GetObject("containerDetails");
     m_containerDetailsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("lambdaDetails")) {
+    m_lambdaDetails = jsonValue.GetObject("lambdaDetails");
+    m_lambdaDetailsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("rdsDbInstanceDetails")) {
     m_rdsDbInstanceDetails = jsonValue.GetObject("rdsDbInstanceDetails");
     m_rdsDbInstanceDetailsHasBeenSet = true;
@@ -68,10 +72,6 @@ Resource& Resource::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("rdsDbUserDetails")) {
     m_rdsDbUserDetails = jsonValue.GetObject("rdsDbUserDetails");
     m_rdsDbUserDetailsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("lambdaDetails")) {
-    m_lambdaDetails = jsonValue.GetObject("lambdaDetails");
-    m_lambdaDetailsHasBeenSet = true;
   }
   if (jsonValue.ValueExists("ebsSnapshotDetails")) {
     m_ebsSnapshotDetails = jsonValue.GetObject("ebsSnapshotDetails");
@@ -131,6 +131,10 @@ JsonValue Resource::Jsonize() const {
     payload.WithObject("containerDetails", m_containerDetails.Jsonize());
   }
 
+  if (m_lambdaDetailsHasBeenSet) {
+    payload.WithObject("lambdaDetails", m_lambdaDetails.Jsonize());
+  }
+
   if (m_rdsDbInstanceDetailsHasBeenSet) {
     payload.WithObject("rdsDbInstanceDetails", m_rdsDbInstanceDetails.Jsonize());
   }
@@ -141,10 +145,6 @@ JsonValue Resource::Jsonize() const {
 
   if (m_rdsDbUserDetailsHasBeenSet) {
     payload.WithObject("rdsDbUserDetails", m_rdsDbUserDetails.Jsonize());
-  }
-
-  if (m_lambdaDetailsHasBeenSet) {
-    payload.WithObject("lambdaDetails", m_lambdaDetails.Jsonize());
   }
 
   if (m_ebsSnapshotDetailsHasBeenSet) {

@@ -38,6 +38,10 @@ KubernetesWorkloadDetails& KubernetesWorkloadDetails::operator=(JsonView jsonVal
     m_hostNetwork = jsonValue.GetBool("hostNetwork");
     m_hostNetworkHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("serviceAccountName")) {
+    m_serviceAccountName = jsonValue.GetString("serviceAccountName");
+    m_serviceAccountNameHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("containers")) {
     Aws::Utils::Array<JsonView> containersJsonList = jsonValue.GetArray("containers");
     for (unsigned containersIndex = 0; containersIndex < containersJsonList.GetLength(); ++containersIndex) {
@@ -51,10 +55,6 @@ KubernetesWorkloadDetails& KubernetesWorkloadDetails::operator=(JsonView jsonVal
       m_volumes.push_back(volumesJsonList[volumesIndex].AsObject());
     }
     m_volumesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("serviceAccountName")) {
-    m_serviceAccountName = jsonValue.GetString("serviceAccountName");
-    m_serviceAccountNameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("hostIPC")) {
     m_hostIPC = jsonValue.GetBool("hostIPC");
@@ -90,6 +90,10 @@ JsonValue KubernetesWorkloadDetails::Jsonize() const {
     payload.WithBool("hostNetwork", m_hostNetwork);
   }
 
+  if (m_serviceAccountNameHasBeenSet) {
+    payload.WithString("serviceAccountName", m_serviceAccountName);
+  }
+
   if (m_containersHasBeenSet) {
     Aws::Utils::Array<JsonValue> containersJsonList(m_containers.size());
     for (unsigned containersIndex = 0; containersIndex < containersJsonList.GetLength(); ++containersIndex) {
@@ -104,10 +108,6 @@ JsonValue KubernetesWorkloadDetails::Jsonize() const {
       volumesJsonList[volumesIndex].AsObject(m_volumes[volumesIndex].Jsonize());
     }
     payload.WithArray("volumes", std::move(volumesJsonList));
-  }
-
-  if (m_serviceAccountNameHasBeenSet) {
-    payload.WithString("serviceAccountName", m_serviceAccountName);
   }
 
   if (m_hostIPCHasBeenSet) {

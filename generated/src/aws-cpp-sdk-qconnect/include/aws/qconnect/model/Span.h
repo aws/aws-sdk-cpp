@@ -214,6 +214,24 @@ class Span {
 
   ///@{
   /**
+   * <p>The origin request identifier for end-to-end tracing.</p>
+   */
+  inline const Aws::String& GetOriginRequestId() const { return m_originRequestId; }
+  inline bool OriginRequestIdHasBeenSet() const { return m_originRequestIdHasBeenSet; }
+  template <typename OriginRequestIdT = Aws::String>
+  void SetOriginRequestId(OriginRequestIdT&& value) {
+    m_originRequestIdHasBeenSet = true;
+    m_originRequestId = std::forward<OriginRequestIdT>(value);
+  }
+  template <typename OriginRequestIdT = Aws::String>
+  Span& WithOriginRequestId(OriginRequestIdT&& value) {
+    SetOriginRequestId(std::forward<OriginRequestIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Span-specific contextual attributes</p>
    */
   inline const SpanAttributes& GetAttributes() const { return m_attributes; }
@@ -250,6 +268,8 @@ class Span {
 
   Aws::String m_requestId;
 
+  Aws::String m_originRequestId;
+
   SpanAttributes m_attributes;
   bool m_spanIdHasBeenSet = false;
   bool m_assistantIdHasBeenSet = false;
@@ -261,6 +281,7 @@ class Span {
   bool m_endTimestampHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
+  bool m_originRequestIdHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 
