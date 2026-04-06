@@ -1,4 +1,3 @@
-#include <gtest/gtest.h>
 #include <aws/core/Aws.h>
 #include <aws/core/auth/AWSCredentials.h>
 #include <aws/core/client/RetryStrategy.h>
@@ -6,16 +5,19 @@
 #include <aws/core/utils/base64/Base64.h>
 #include <aws/core/utils/crypto/CRC64.h>
 #include <aws/s3/S3Client.h>
-#include <aws/s3/model/DeleteObjectsRequest.h>
-#include <aws/s3/model/PutObjectRequest.h>
-#include <aws/s3/model/CopyObjectRequest.h>
-#include <aws/testing/mocks/http/MockHttpClient.h>
-#include <aws/testing/AwsTestHelpers.h>
-#include <aws/testing/MemoryTesting.h>
-#include <memory>
 #include <aws/s3/S3ErrorMarshaller.h>
+#include <aws/s3/model/CopyObjectRequest.h>
+#include <aws/s3/model/DeleteObjectsRequest.h>
+#include <aws/s3/model/GetObjectRequest.h>
 #include <aws/s3/model/HeadBucketRequest.h>
 #include <aws/s3/model/ListObjectsV2Request.h>
+#include <aws/s3/model/PutObjectRequest.h>
+#include <aws/testing/AwsTestHelpers.h>
+#include <aws/testing/MemoryTesting.h>
+#include <aws/testing/mocks/http/MockHttpClient.h>
+#include <gtest/gtest.h>
+
+#include <memory>
 
 using namespace Aws;
 using namespace Aws::Client;
@@ -704,4 +706,23 @@ TEST_F(S3UnitTest, ListObjectsV2PaginatorShouldHaveCMetric) {
   auto businessMetrics = std::find_if(userAgentParsed.begin(), userAgentParsed.end(),
     [](const Aws::String& value) { return value.find("m/") != Aws::String::npos && value.find("C") != Aws::String::npos; });
   EXPECT_TRUE(businessMetrics != userAgentParsed.end());
+}
+
+TEST_F(S3UnitTest, TestGetObjectTimeoutShouldReturnTimeoutError) {
+  auto request = GetObjectRequest().WithBucket("test-bucket").WithKey("test-key");
+
+  auto mockRequest = Aws::MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, "test-bucket.s3.amazonaws.com/", HttpMethod::HTTP_GET);
+  mockRequest->SetResponseStreamFactory(
+      []() -> IOStream* { return Aws::New<StringStream>(ALLOCATION_TAG, "", std::ios_base::in | std::ios_base::binary); });
+  auto mockResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, mockRequest);
+  mockResponse->SetResponseCode(HttpResponseCode::NETWORK_CONNECT_TIMEOUT);
+  mockResponse->AddHeader("x-amz-checksum-crc32", "1f2e4daa");
+  _mockHttpClient->AddResponseToReturn(mockResponse,
+                                       [](Aws::IOStream& response) -> void { response << "The distance between what is said"; });
+
+  const auto response = _s3Client->GetObject(request);
+  EXPECT_FALSE(response.IsSuccess());
+  const auto& error = response.GetError();
+  EXPECT_EQ(error.GetResponseCode(), HttpResponseCode::NETWORK_CONNECT_TIMEOUT);
+  EXPECT_TRUE(error.ShouldRetry());
 }
