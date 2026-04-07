@@ -16,11 +16,23 @@ namespace Model {
 namespace AssetTypeMapper {
 
 static const int COMPUTE_HASH = HashingUtils::HashString("COMPUTE");
+static const int STORAGE_HASH = HashingUtils::HashString("STORAGE");
+static const int POWERSHELF_HASH = HashingUtils::HashString("POWERSHELF");
+static const int SWITCH_HASH = HashingUtils::HashString("SWITCH");
+static const int NETWORKING_HASH = HashingUtils::HashString("NETWORKING");
 
 AssetType GetAssetTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == COMPUTE_HASH) {
     return AssetType::COMPUTE;
+  } else if (hashCode == STORAGE_HASH) {
+    return AssetType::STORAGE;
+  } else if (hashCode == POWERSHELF_HASH) {
+    return AssetType::POWERSHELF;
+  } else if (hashCode == SWITCH_HASH) {
+    return AssetType::SWITCH;
+  } else if (hashCode == NETWORKING_HASH) {
+    return AssetType::NETWORKING;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +49,14 @@ Aws::String GetNameForAssetType(AssetType enumValue) {
       return {};
     case AssetType::COMPUTE:
       return "COMPUTE";
+    case AssetType::STORAGE:
+      return "STORAGE";
+    case AssetType::POWERSHELF:
+      return "POWERSHELF";
+    case AssetType::SWITCH:
+      return "SWITCH";
+    case AssetType::NETWORKING:
+      return "NETWORKING";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

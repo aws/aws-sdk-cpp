@@ -697,6 +697,45 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Invokes an operating system-level action on a browser session in Amazon
+   * Bedrock AgentCore. This operation provides direct OS-level control over browser
+   * sessions, enabling mouse actions, keyboard input, and screenshots that the
+   * WebSocket-based Chrome DevTools Protocol (CDP) cannot handle — such as
+   * interacting with print dialogs, context menus, and JavaScript alerts.</p> <p>You
+   * send a request with exactly one action in the <code>BrowserAction</code> union,
+   * and receive a corresponding result in the <code>BrowserActionResult</code>
+   * union.</p> <p>The following operations are related to
+   * <code>InvokeBrowser</code>:</p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartBrowserSession.html">StartBrowserSession</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetBrowserSession.html">GetBrowserSession</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopBrowserSession.html">StopBrowserSession</a>
+   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/InvokeBrowser">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::InvokeBrowserOutcome InvokeBrowser(const Model::InvokeBrowserRequest& request) const;
+
+  /**
+   * A Callable wrapper for InvokeBrowser that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename InvokeBrowserRequestT = Model::InvokeBrowserRequest>
+  Model::InvokeBrowserOutcomeCallable InvokeBrowserCallable(const InvokeBrowserRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::InvokeBrowser, request);
+  }
+
+  /**
+   * An Async wrapper for InvokeBrowser that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename InvokeBrowserRequestT = Model::InvokeBrowserRequest>
+  void InvokeBrowserAsync(const InvokeBrowserRequestT& request, const InvokeBrowserResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::InvokeBrowser, request, handler, context);
+  }
+
+  /**
    * <p>Executes code within an active code interpreter session in Amazon Bedrock
    * AgentCore. This operation processes the provided code, runs it in a secure
    * environment, and returns the execution results including output, errors, and
@@ -934,7 +973,8 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   /**
    * <p>Lists sessions in an AgentCore Memory resource based on specified criteria.
    * We recommend using pagination to ensure that the operation returns quickly and
-   * successfully.</p> <p>To use this operation, you must have the
+   * successfully.</p> <p>Empty sessions are automatically deleted after one day.</p>
+   * <p>To use this operation, you must have the
    * <code>bedrock-agentcore:ListSessions</code> permission.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListSessions">AWS
@@ -1050,6 +1090,8 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
    * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_SaveBrowserSessionProfile.html">SaveBrowserSessionProfile</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopBrowserSession.html">StopBrowserSession</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_InvokeBrowser.html">InvokeBrowser</a>
    * </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StartBrowserSession">AWS
    * API Reference</a></p>

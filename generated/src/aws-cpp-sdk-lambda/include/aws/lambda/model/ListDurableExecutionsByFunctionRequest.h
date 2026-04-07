@@ -76,7 +76,7 @@ class ListDurableExecutionsByFunctionRequest : public LambdaRequest {
 
   ///@{
   /**
-   * <p>Filter executions by name. Only executions with names that contain this
+   * <p>Filter executions by name. Only executions with names that matches this
    * string are returned.</p>
    */
   inline const Aws::String& GetDurableExecutionName() const { return m_durableExecutionName; }

@@ -9,6 +9,7 @@
 #include <aws/outposts/OutpostsRequest.h>
 #include <aws/outposts/Outposts_EXPORTS.h>
 #include <aws/outposts/model/AssetState.h>
+#include <aws/outposts/model/AssetType.h>
 
 #include <utility>
 
@@ -129,6 +130,33 @@ class ListAssetsRequest : public OutpostsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Filters the results by asset type.</p> <ul> <li> <p>COMPUTE - Server asset
+   * used for customer compute </p> </li> <li> <p>STORAGE - Server asset used by
+   * storage services </p> </li> <li> <p>POWERSHELF - Powershelf assets </p> </li>
+   * <li> <p>SWITCH - Switch assets </p> </li> <li> <p>NETWORKING - Asset managed by
+   * Amazon Web Services for networking purposes </p> </li> </ul>
+   */
+  inline const Aws::Vector<AssetType>& GetAssetTypeFilter() const { return m_assetTypeFilter; }
+  inline bool AssetTypeFilterHasBeenSet() const { return m_assetTypeFilterHasBeenSet; }
+  template <typename AssetTypeFilterT = Aws::Vector<AssetType>>
+  void SetAssetTypeFilter(AssetTypeFilterT&& value) {
+    m_assetTypeFilterHasBeenSet = true;
+    m_assetTypeFilter = std::forward<AssetTypeFilterT>(value);
+  }
+  template <typename AssetTypeFilterT = Aws::Vector<AssetType>>
+  ListAssetsRequest& WithAssetTypeFilter(AssetTypeFilterT&& value) {
+    SetAssetTypeFilter(std::forward<AssetTypeFilterT>(value));
+    return *this;
+  }
+  inline ListAssetsRequest& AddAssetTypeFilter(AssetType value) {
+    m_assetTypeFilterHasBeenSet = true;
+    m_assetTypeFilter.push_back(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_outpostIdentifier;
 
@@ -139,11 +167,14 @@ class ListAssetsRequest : public OutpostsRequest {
   Aws::String m_nextToken;
 
   Aws::Vector<AssetState> m_statusFilter;
+
+  Aws::Vector<AssetType> m_assetTypeFilter;
   bool m_outpostIdentifierHasBeenSet = false;
   bool m_hostIdFilterHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_statusFilterHasBeenSet = false;
+  bool m_assetTypeFilterHasBeenSet = false;
 };
 
 }  // namespace Model

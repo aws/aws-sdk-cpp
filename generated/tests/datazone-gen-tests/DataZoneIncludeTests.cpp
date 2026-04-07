@@ -93,6 +93,7 @@
 #include <aws/datazone/model/ConfigurableActionParameter.h>
 #include <aws/datazone/model/ConfigurableActionTypeAuthorization.h>
 #include <aws/datazone/model/ConfigurableEnvironmentAction.h>
+#include <aws/datazone/model/Configuration.h>
 #include <aws/datazone/model/ConfigurationStatus.h>
 #include <aws/datazone/model/ConnectionCredentials.h>
 #include <aws/datazone/model/ConnectionPropertiesInput.h>

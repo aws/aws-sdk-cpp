@@ -143,6 +143,22 @@ class CreateLinkRequest : public RTBFabricRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The timeout value in milliseconds.</p>
+   */
+  inline long long GetTimeoutInMillis() const { return m_timeoutInMillis; }
+  inline bool TimeoutInMillisHasBeenSet() const { return m_timeoutInMillisHasBeenSet; }
+  inline void SetTimeoutInMillis(long long value) {
+    m_timeoutInMillisHasBeenSet = true;
+    m_timeoutInMillis = value;
+  }
+  inline CreateLinkRequest& WithTimeoutInMillis(long long value) {
+    SetTimeoutInMillis(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_gatewayId;
 
@@ -155,12 +171,15 @@ class CreateLinkRequest : public RTBFabricRequest {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   LinkLogSettings m_logSettings;
+
+  long long m_timeoutInMillis{0};
   bool m_gatewayIdHasBeenSet = false;
   bool m_peerGatewayIdHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
   bool m_httpResponderAllowedHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_logSettingsHasBeenSet = false;
+  bool m_timeoutInMillisHasBeenSet = false;
 };
 
 }  // namespace Model

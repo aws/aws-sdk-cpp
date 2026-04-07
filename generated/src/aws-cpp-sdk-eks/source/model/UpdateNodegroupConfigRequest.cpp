@@ -35,6 +35,10 @@ Aws::String UpdateNodegroupConfigRequest::SerializePayload() const {
     payload.WithObject("nodeRepairConfig", m_nodeRepairConfig.Jsonize());
   }
 
+  if (m_warmPoolConfigHasBeenSet) {
+    payload.WithObject("warmPoolConfig", m_warmPoolConfig.Jsonize());
+  }
+
   if (m_clientRequestTokenHasBeenSet) {
     payload.WithString("clientRequestToken", m_clientRequestToken);
   }

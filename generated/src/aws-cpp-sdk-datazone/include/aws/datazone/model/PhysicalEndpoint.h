@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/model/AwsLocation.h>
 #include <aws/datazone/model/GlueConnection.h>
@@ -66,6 +67,30 @@ class PhysicalEndpoint {
   template <typename GlueConnectionNameT = Aws::String>
   PhysicalEndpoint& WithGlueConnectionName(GlueConnectionNameT&& value) {
     SetGlueConnectionName(std::forward<GlueConnectionNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services Glue connection names in the physical endpoint.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetGlueConnectionNames() const { return m_glueConnectionNames; }
+  inline bool GlueConnectionNamesHasBeenSet() const { return m_glueConnectionNamesHasBeenSet; }
+  template <typename GlueConnectionNamesT = Aws::Vector<Aws::String>>
+  void SetGlueConnectionNames(GlueConnectionNamesT&& value) {
+    m_glueConnectionNamesHasBeenSet = true;
+    m_glueConnectionNames = std::forward<GlueConnectionNamesT>(value);
+  }
+  template <typename GlueConnectionNamesT = Aws::Vector<Aws::String>>
+  PhysicalEndpoint& WithGlueConnectionNames(GlueConnectionNamesT&& value) {
+    SetGlueConnectionNames(std::forward<GlueConnectionNamesT>(value));
+    return *this;
+  }
+  template <typename GlueConnectionNamesT = Aws::String>
+  PhysicalEndpoint& AddGlueConnectionNames(GlueConnectionNamesT&& value) {
+    m_glueConnectionNamesHasBeenSet = true;
+    m_glueConnectionNames.emplace_back(std::forward<GlueConnectionNamesT>(value));
     return *this;
   }
   ///@}
@@ -177,6 +202,8 @@ class PhysicalEndpoint {
 
   Aws::String m_glueConnectionName;
 
+  Aws::Vector<Aws::String> m_glueConnectionNames;
+
   GlueConnection m_glueConnection;
 
   bool m_enableTrustedIdentityPropagation{false};
@@ -190,6 +217,7 @@ class PhysicalEndpoint {
   Aws::String m_stage;
   bool m_awsLocationHasBeenSet = false;
   bool m_glueConnectionNameHasBeenSet = false;
+  bool m_glueConnectionNamesHasBeenSet = false;
   bool m_glueConnectionHasBeenSet = false;
   bool m_enableTrustedIdentityPropagationHasBeenSet = false;
   bool m_hostHasBeenSet = false;

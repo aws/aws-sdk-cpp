@@ -18,6 +18,7 @@ namespace GroupByMapper {
 static const int resource_region_HASH = HashingUtils::HashString("resource-region");
 static const int availability_zone_id_HASH = HashingUtils::HashString("availability-zone-id");
 static const int account_id_HASH = HashingUtils::HashString("account-id");
+static const int account_name_HASH = HashingUtils::HashString("account-name");
 static const int instance_family_HASH = HashingUtils::HashString("instance-family");
 static const int instance_type_HASH = HashingUtils::HashString("instance-type");
 static const int instance_platform_HASH = HashingUtils::HashString("instance-platform");
@@ -41,6 +42,8 @@ GroupBy GetGroupByForName(const Aws::String& name) {
     return GroupBy::availability_zone_id;
   } else if (hashCode == account_id_HASH) {
     return GroupBy::account_id;
+  } else if (hashCode == account_name_HASH) {
+    return GroupBy::account_name;
   } else if (hashCode == instance_family_HASH) {
     return GroupBy::instance_family;
   } else if (hashCode == instance_type_HASH) {
@@ -89,6 +92,8 @@ Aws::String GetNameForGroupBy(GroupBy enumValue) {
       return "availability-zone-id";
     case GroupBy::account_id:
       return "account-id";
+    case GroupBy::account_name:
+      return "account-name";
     case GroupBy::instance_family:
       return "instance-family";
     case GroupBy::instance_type:

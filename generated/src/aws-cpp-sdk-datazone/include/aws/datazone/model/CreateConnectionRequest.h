@@ -6,9 +6,11 @@
 #pragma once
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datazone/DataZoneRequest.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/model/AwsLocation.h>
+#include <aws/datazone/model/Configuration.h>
 #include <aws/datazone/model/ConnectionPropertiesInput.h>
 #include <aws/datazone/model/ConnectionScope.h>
 
@@ -65,6 +67,30 @@ class CreateConnectionRequest : public DataZoneRequest {
   template <typename ClientTokenT = Aws::String>
   CreateConnectionRequest& WithClientToken(ClientTokenT&& value) {
     SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configurations of the connection.</p>
+   */
+  inline const Aws::Vector<Configuration>& GetConfigurations() const { return m_configurations; }
+  inline bool ConfigurationsHasBeenSet() const { return m_configurationsHasBeenSet; }
+  template <typename ConfigurationsT = Aws::Vector<Configuration>>
+  void SetConfigurations(ConfigurationsT&& value) {
+    m_configurationsHasBeenSet = true;
+    m_configurations = std::forward<ConfigurationsT>(value);
+  }
+  template <typename ConfigurationsT = Aws::Vector<Configuration>>
+  CreateConnectionRequest& WithConfigurations(ConfigurationsT&& value) {
+    SetConfigurations(std::forward<ConfigurationsT>(value));
+    return *this;
+  }
+  template <typename ConfigurationsT = Configuration>
+  CreateConnectionRequest& AddConfigurations(ConfigurationsT&& value) {
+    m_configurationsHasBeenSet = true;
+    m_configurations.emplace_back(std::forward<ConfigurationsT>(value));
     return *this;
   }
   ///@}
@@ -195,6 +221,8 @@ class CreateConnectionRequest : public DataZoneRequest {
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
+  Aws::Vector<Configuration> m_configurations;
+
   Aws::String m_description;
 
   Aws::String m_domainIdentifier;
@@ -210,6 +238,7 @@ class CreateConnectionRequest : public DataZoneRequest {
   ConnectionScope m_scope{ConnectionScope::NOT_SET};
   bool m_awsLocationHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
+  bool m_configurationsHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_domainIdentifierHasBeenSet = false;
   bool m_environmentIdentifierHasBeenSet = false;

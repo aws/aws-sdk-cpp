@@ -338,6 +338,7 @@
 #include <aws/ecs/model/RunTaskRequest.h>
 #include <aws/ecs/model/RunTaskResult.h>
 #include <aws/ecs/model/RuntimePlatform.h>
+#include <aws/ecs/model/S3FilesVolumeConfiguration.h>
 #include <aws/ecs/model/Scale.h>
 #include <aws/ecs/model/ScaleUnit.h>
 #include <aws/ecs/model/SchedulingStrategy.h>

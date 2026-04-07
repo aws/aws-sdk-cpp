@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Outposts {
 namespace Model {
-enum class AssetType { NOT_SET, COMPUTE };
+enum class AssetType { NOT_SET, COMPUTE, STORAGE, POWERSHELF, SWITCH, NETWORKING };
 
 namespace AssetTypeMapper {
 AWS_OUTPOSTS_API AssetType GetAssetTypeForName(const Aws::String& name);

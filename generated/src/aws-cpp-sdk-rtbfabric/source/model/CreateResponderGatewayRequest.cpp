@@ -47,6 +47,10 @@ Aws::String CreateResponderGatewayRequest::SerializePayload() const {
     payload.WithString("protocol", ProtocolMapper::GetNameForProtocol(m_protocol));
   }
 
+  if (m_listenerConfigHasBeenSet) {
+    payload.WithObject("listenerConfig", m_listenerConfig.Jsonize());
+  }
+
   if (m_trustStoreConfigurationHasBeenSet) {
     payload.WithObject("trustStoreConfiguration", m_trustStoreConfiguration.Jsonize());
   }
@@ -69,6 +73,10 @@ Aws::String CreateResponderGatewayRequest::SerializePayload() const {
       tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
     }
     payload.WithObject("tags", std::move(tagsJsonMap));
+  }
+
+  if (m_gatewayTypeHasBeenSet) {
+    payload.WithString("gatewayType", GatewayTypeMapper::GetNameForGatewayType(m_gatewayType));
   }
 
   return payload.View().WriteReadable();

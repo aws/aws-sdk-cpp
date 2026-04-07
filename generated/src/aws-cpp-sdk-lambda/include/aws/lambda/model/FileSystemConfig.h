@@ -22,7 +22,9 @@ namespace Model {
 /**
  * <p>Details about the connection between a Lambda function and an <a
  * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon
- * EFS file system</a>.</p><p><h3>See Also:</h3>   <a
+ * EFS file system</a> or an <a
+ * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon
+ * S3 Files file system</a>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/FileSystemConfig">AWS
  * API Reference</a></p>
  */
@@ -35,8 +37,8 @@ class FileSystemConfig {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the Amazon EFS access point that provides
-   * access to the file system.</p>
+   * <p>The Amazon Resource Name (ARN) of the Amazon EFS or Amazon S3 Files access
+   * point that provides access to the file system.</p>
    */
   inline const Aws::String& GetArn() const { return m_arn; }
   inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }

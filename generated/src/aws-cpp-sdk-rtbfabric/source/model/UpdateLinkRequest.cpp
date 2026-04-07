@@ -19,5 +19,9 @@ Aws::String UpdateLinkRequest::SerializePayload() const {
     payload.WithObject("logSettings", m_logSettings.Jsonize());
   }
 
+  if (m_timeoutInMillisHasBeenSet) {
+    payload.WithInt64("timeoutInMillis", m_timeoutInMillis);
+  }
+
   return payload.View().WriteReadable();
 }

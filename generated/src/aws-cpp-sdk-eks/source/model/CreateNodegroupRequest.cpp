@@ -107,5 +107,9 @@ Aws::String CreateNodegroupRequest::SerializePayload() const {
     payload.WithString("releaseVersion", m_releaseVersion);
   }
 
+  if (m_warmPoolConfigHasBeenSet) {
+    payload.WithObject("warmPoolConfig", m_warmPoolConfig.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

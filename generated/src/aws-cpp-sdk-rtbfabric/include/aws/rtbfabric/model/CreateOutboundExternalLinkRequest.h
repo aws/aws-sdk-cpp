@@ -69,7 +69,9 @@ class CreateOutboundExternalLinkRequest : public RTBFabricRequest {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Attributes of the link.</p>
+   */
   inline const LinkAttributes& GetAttributes() const { return m_attributes; }
   inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
   template <typename AttributesT = LinkAttributes>
@@ -103,7 +105,9 @@ class CreateOutboundExternalLinkRequest : public RTBFabricRequest {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Settings for the application logs.</p>
+   */
   inline const LinkLogSettings& GetLogSettings() const { return m_logSettings; }
   inline bool LogSettingsHasBeenSet() const { return m_logSettingsHasBeenSet; }
   template <typename LogSettingsT = LinkLogSettings>

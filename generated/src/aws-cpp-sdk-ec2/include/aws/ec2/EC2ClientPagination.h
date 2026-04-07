@@ -145,6 +145,7 @@
 #include <aws/ec2/model/GetAwsNetworkPerformanceDataPaginationTraits.h>
 #include <aws/ec2/model/GetCapacityManagerMetricDataPaginationTraits.h>
 #include <aws/ec2/model/GetCapacityManagerMetricDimensionsPaginationTraits.h>
+#include <aws/ec2/model/GetCapacityManagerMonitoredTagKeysPaginationTraits.h>
 #include <aws/ec2/model/GetGroupsForCapacityReservationPaginationTraits.h>
 #include <aws/ec2/model/GetInstanceTypesFromInstanceRequirementsPaginationTraits.h>
 #include <aws/ec2/model/GetIpamAddressHistoryPaginationTraits.h>
@@ -555,6 +556,9 @@ using GetCapacityManagerMetricDataPaginator =
 using GetCapacityManagerMetricDimensionsPaginator =
     Aws::Utils::Pagination::Paginator<EC2Client, Model::GetCapacityManagerMetricDimensionsRequest,
                                       Pagination::GetCapacityManagerMetricDimensionsPaginationTraits<EC2Client>>;
+using GetCapacityManagerMonitoredTagKeysPaginator =
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::GetCapacityManagerMonitoredTagKeysRequest,
+                                      Pagination::GetCapacityManagerMonitoredTagKeysPaginationTraits<EC2Client>>;
 using GetGroupsForCapacityReservationPaginator =
     Aws::Utils::Pagination::Paginator<EC2Client, Model::GetGroupsForCapacityReservationRequest,
                                       Pagination::GetGroupsForCapacityReservationPaginationTraits<EC2Client>>;

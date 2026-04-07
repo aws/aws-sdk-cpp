@@ -34,6 +34,10 @@ Volume& Volume::operator=(JsonView jsonValue) {
     m_efsVolumeConfiguration = jsonValue.GetObject("efsVolumeConfiguration");
     m_efsVolumeConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("s3filesVolumeConfiguration")) {
+    m_s3filesVolumeConfiguration = jsonValue.GetObject("s3filesVolumeConfiguration");
+    m_s3filesVolumeConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("fsxWindowsFileServerVolumeConfiguration")) {
     m_fsxWindowsFileServerVolumeConfiguration = jsonValue.GetObject("fsxWindowsFileServerVolumeConfiguration");
     m_fsxWindowsFileServerVolumeConfigurationHasBeenSet = true;
@@ -62,6 +66,10 @@ JsonValue Volume::Jsonize() const {
 
   if (m_efsVolumeConfigurationHasBeenSet) {
     payload.WithObject("efsVolumeConfiguration", m_efsVolumeConfiguration.Jsonize());
+  }
+
+  if (m_s3filesVolumeConfigurationHasBeenSet) {
+    payload.WithObject("s3filesVolumeConfiguration", m_s3filesVolumeConfiguration.Jsonize());
   }
 
   if (m_fsxWindowsFileServerVolumeConfigurationHasBeenSet) {

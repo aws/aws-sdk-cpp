@@ -8,17 +8,14 @@
 #include <aws/accessanalyzer/AccessAnalyzerErrorMarshaller.h>
 #include <aws/accessanalyzer/model/ApplyArchiveRuleRequest.h>
 #include <aws/accessanalyzer/model/CancelPolicyGenerationRequest.h>
-#include <aws/accessanalyzer/model/CancelPolicyPreviewJobRequest.h>
 #include <aws/accessanalyzer/model/CheckAccessNotGrantedRequest.h>
 #include <aws/accessanalyzer/model/CheckNoNewAccessRequest.h>
 #include <aws/accessanalyzer/model/CheckNoPublicAccessRequest.h>
 #include <aws/accessanalyzer/model/CreateAccessPreviewRequest.h>
 #include <aws/accessanalyzer/model/CreateAnalyzerRequest.h>
 #include <aws/accessanalyzer/model/CreateArchiveRuleRequest.h>
-#include <aws/accessanalyzer/model/CreatePolicyPreviewConfigurationRequest.h>
 #include <aws/accessanalyzer/model/DeleteAnalyzerRequest.h>
 #include <aws/accessanalyzer/model/DeleteArchiveRuleRequest.h>
-#include <aws/accessanalyzer/model/DeletePolicyPreviewConfigurationRequest.h>
 #include <aws/accessanalyzer/model/GenerateFindingRecommendationRequest.h>
 #include <aws/accessanalyzer/model/GetAccessPreviewRequest.h>
 #include <aws/accessanalyzer/model/GetAnalyzedResourceRequest.h>
@@ -29,8 +26,6 @@
 #include <aws/accessanalyzer/model/GetFindingV2Request.h>
 #include <aws/accessanalyzer/model/GetFindingsStatisticsRequest.h>
 #include <aws/accessanalyzer/model/GetGeneratedPolicyRequest.h>
-#include <aws/accessanalyzer/model/GetPolicyPreviewConfigurationRequest.h>
-#include <aws/accessanalyzer/model/GetPolicyPreviewJobRequest.h>
 #include <aws/accessanalyzer/model/ListAccessPreviewFindingsRequest.h>
 #include <aws/accessanalyzer/model/ListAccessPreviewsRequest.h>
 #include <aws/accessanalyzer/model/ListAnalyzedResourcesRequest.h>
@@ -39,10 +34,8 @@
 #include <aws/accessanalyzer/model/ListFindingsRequest.h>
 #include <aws/accessanalyzer/model/ListFindingsV2Request.h>
 #include <aws/accessanalyzer/model/ListPolicyGenerationsRequest.h>
-#include <aws/accessanalyzer/model/ListPolicyPreviewJobsRequest.h>
 #include <aws/accessanalyzer/model/ListTagsForResourceRequest.h>
 #include <aws/accessanalyzer/model/StartPolicyGenerationRequest.h>
-#include <aws/accessanalyzer/model/StartPolicyPreviewJobRequest.h>
 #include <aws/accessanalyzer/model/StartResourceScanRequest.h>
 #include <aws/accessanalyzer/model/TagResourceRequest.h>
 #include <aws/accessanalyzer/model/UntagResourceRequest.h>
@@ -248,24 +241,6 @@ CancelPolicyGenerationOutcome AccessAnalyzerClient::CancelPolicyGeneration(const
                             : CancelPolicyGenerationOutcome(std::move(result.GetError()));
 }
 
-CancelPolicyPreviewJobOutcome AccessAnalyzerClient::CancelPolicyPreviewJob(const CancelPolicyPreviewJobRequest& request) const {
-  if (!request.JobIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("CancelPolicyPreviewJob", "Required field: JobId, is not set");
-    return CancelPolicyPreviewJobOutcome(Aws::Client::AWSError<AccessAnalyzerErrors>(
-        AccessAnalyzerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/policy/preview/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? CancelPolicyPreviewJobOutcome(result.GetResultWithOwnership())
-                            : CancelPolicyPreviewJobOutcome(std::move(result.GetError()));
-}
-
 CheckAccessNotGrantedOutcome AccessAnalyzerClient::CheckAccessNotGranted(const CheckAccessNotGrantedRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -339,18 +314,6 @@ CreateArchiveRuleOutcome AccessAnalyzerClient::CreateArchiveRule(const CreateArc
                             : CreateArchiveRuleOutcome(std::move(result.GetError()));
 }
 
-CreatePolicyPreviewConfigurationOutcome AccessAnalyzerClient::CreatePolicyPreviewConfiguration(
-    const CreatePolicyPreviewConfigurationRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/policy/preview-configuration");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? CreatePolicyPreviewConfigurationOutcome(result.GetResultWithOwnership())
-                            : CreatePolicyPreviewConfigurationOutcome(std::move(result.GetError()));
-}
-
 DeleteAnalyzerOutcome AccessAnalyzerClient::DeleteAnalyzer(const DeleteAnalyzerRequest& request) const {
   if (!request.AnalyzerNameHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteAnalyzer", "Required field: AnalyzerName, is not set");
@@ -391,18 +354,6 @@ DeleteArchiveRuleOutcome AccessAnalyzerClient::DeleteArchiveRule(const DeleteArc
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteArchiveRuleOutcome(result.GetResultWithOwnership())
                             : DeleteArchiveRuleOutcome(std::move(result.GetError()));
-}
-
-DeletePolicyPreviewConfigurationOutcome AccessAnalyzerClient::DeletePolicyPreviewConfiguration(
-    const DeletePolicyPreviewConfigurationRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/policy/preview-configuration");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
-  return result.IsSuccess() ? DeletePolicyPreviewConfigurationOutcome(result.GetResultWithOwnership())
-                            : DeletePolicyPreviewConfigurationOutcome(std::move(result.GetError()));
 }
 
 GenerateFindingRecommendationOutcome AccessAnalyzerClient::GenerateFindingRecommendation(
@@ -611,36 +562,6 @@ GetGeneratedPolicyOutcome AccessAnalyzerClient::GetGeneratedPolicy(const GetGene
                             : GetGeneratedPolicyOutcome(std::move(result.GetError()));
 }
 
-GetPolicyPreviewConfigurationOutcome AccessAnalyzerClient::GetPolicyPreviewConfiguration(
-    const GetPolicyPreviewConfigurationRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/policy/preview-configuration");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
-  return result.IsSuccess() ? GetPolicyPreviewConfigurationOutcome(result.GetResultWithOwnership())
-                            : GetPolicyPreviewConfigurationOutcome(std::move(result.GetError()));
-}
-
-GetPolicyPreviewJobOutcome AccessAnalyzerClient::GetPolicyPreviewJob(const GetPolicyPreviewJobRequest& request) const {
-  if (!request.JobIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("GetPolicyPreviewJob", "Required field: JobId, is not set");
-    return GetPolicyPreviewJobOutcome(Aws::Client::AWSError<AccessAnalyzerErrors>(
-        AccessAnalyzerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/policy/preview/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
-  return result.IsSuccess() ? GetPolicyPreviewJobOutcome(result.GetResultWithOwnership())
-                            : GetPolicyPreviewJobOutcome(std::move(result.GetError()));
-}
-
 ListAccessPreviewFindingsOutcome AccessAnalyzerClient::ListAccessPreviewFindings(const ListAccessPreviewFindingsRequest& request) const {
   if (!request.AccessPreviewIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListAccessPreviewFindings", "Required field: AccessPreviewId, is not set");
@@ -747,17 +668,6 @@ ListPolicyGenerationsOutcome AccessAnalyzerClient::ListPolicyGenerations(const L
                             : ListPolicyGenerationsOutcome(std::move(result.GetError()));
 }
 
-ListPolicyPreviewJobsOutcome AccessAnalyzerClient::ListPolicyPreviewJobs(const ListPolicyPreviewJobsRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/policy/preview");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
-  return result.IsSuccess() ? ListPolicyPreviewJobsOutcome(result.GetResultWithOwnership())
-                            : ListPolicyPreviewJobsOutcome(std::move(result.GetError()));
-}
-
 ListTagsForResourceOutcome AccessAnalyzerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
   if (!request.ResourceArnHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
@@ -785,17 +695,6 @@ StartPolicyGenerationOutcome AccessAnalyzerClient::StartPolicyGeneration(const S
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? StartPolicyGenerationOutcome(result.GetResultWithOwnership())
                             : StartPolicyGenerationOutcome(std::move(result.GetError()));
-}
-
-StartPolicyPreviewJobOutcome AccessAnalyzerClient::StartPolicyPreviewJob(const StartPolicyPreviewJobRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/policy/preview");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? StartPolicyPreviewJobOutcome(result.GetResultWithOwnership())
-                            : StartPolicyPreviewJobOutcome(std::move(result.GetError()));
 }
 
 StartResourceScanOutcome AccessAnalyzerClient::StartResourceScan(const StartResourceScanRequest& request) const {

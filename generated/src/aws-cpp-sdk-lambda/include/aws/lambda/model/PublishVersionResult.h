@@ -530,7 +530,9 @@ class PublishVersionResult {
   /**
    * <p>Connection settings for an <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon
-   * EFS file system</a>.</p>
+   * EFS file system</a> or an <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon
+   * S3 Files file system</a>.</p>
    */
   inline const Aws::Vector<FileSystemConfig>& GetFileSystemConfigs() const { return m_fileSystemConfigs; }
   template <typename FileSystemConfigsT = Aws::Vector<FileSystemConfig>>

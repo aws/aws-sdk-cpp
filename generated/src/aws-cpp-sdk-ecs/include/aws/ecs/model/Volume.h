@@ -10,6 +10,7 @@
 #include <aws/ecs/model/EFSVolumeConfiguration.h>
 #include <aws/ecs/model/FSxWindowsFileServerVolumeConfiguration.h>
 #include <aws/ecs/model/HostVolumeProperties.h>
+#include <aws/ecs/model/S3FilesVolumeConfiguration.h>
 
 #include <utility>
 
@@ -30,6 +31,7 @@ namespace Model {
  * launch is supported. Each volume defined in the volume configuration may only
  * specify a <code>name</code> and one of either <code>configuredAtLaunch</code>,
  * <code>dockerVolumeConfiguration</code>, <code>efsVolumeConfiguration</code>,
+ * <code>s3filesVolumeConfiguration</code>,
  * <code>fsxWindowsFileServerVolumeConfiguration</code>, or <code>host</code>. If
  * an empty volume configuration is specified, by default Amazon ECS uses a host
  * volume. For more information, see <a
@@ -55,7 +57,8 @@ class Volume {
    * standalone task.</p> <p>For all other types of volumes, this name is referenced
    * in the <code>sourceVolume</code> parameter of the <code>mountPoints</code>
    * object in the container definition.</p> <p>When a volume is using the
-   * <code>efsVolumeConfiguration</code>, the name is required.</p>
+   * <code>efsVolumeConfiguration</code>, the name is required.</p> <p>When a volume
+   * is using the <code>s3filesVolumeConfiguration</code>, the name is required.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -141,6 +144,25 @@ class Volume {
 
   ///@{
   /**
+   * <p>This parameter is specified when you use an Amazon S3 Files file system for
+   * task storage.</p>
+   */
+  inline const S3FilesVolumeConfiguration& GetS3filesVolumeConfiguration() const { return m_s3filesVolumeConfiguration; }
+  inline bool S3filesVolumeConfigurationHasBeenSet() const { return m_s3filesVolumeConfigurationHasBeenSet; }
+  template <typename S3filesVolumeConfigurationT = S3FilesVolumeConfiguration>
+  void SetS3filesVolumeConfiguration(S3filesVolumeConfigurationT&& value) {
+    m_s3filesVolumeConfigurationHasBeenSet = true;
+    m_s3filesVolumeConfiguration = std::forward<S3filesVolumeConfigurationT>(value);
+  }
+  template <typename S3filesVolumeConfigurationT = S3FilesVolumeConfiguration>
+  Volume& WithS3filesVolumeConfiguration(S3filesVolumeConfigurationT&& value) {
+    SetS3filesVolumeConfiguration(std::forward<S3filesVolumeConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>This parameter is specified when you use Amazon FSx for Windows File Server
    * file system for task storage.</p>
    */
@@ -191,6 +213,8 @@ class Volume {
 
   EFSVolumeConfiguration m_efsVolumeConfiguration;
 
+  S3FilesVolumeConfiguration m_s3filesVolumeConfiguration;
+
   FSxWindowsFileServerVolumeConfiguration m_fsxWindowsFileServerVolumeConfiguration;
 
   bool m_configuredAtLaunch{false};
@@ -198,6 +222,7 @@ class Volume {
   bool m_hostHasBeenSet = false;
   bool m_dockerVolumeConfigurationHasBeenSet = false;
   bool m_efsVolumeConfigurationHasBeenSet = false;
+  bool m_s3filesVolumeConfigurationHasBeenSet = false;
   bool m_fsxWindowsFileServerVolumeConfigurationHasBeenSet = false;
   bool m_configuredAtLaunchHasBeenSet = false;
 };

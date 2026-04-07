@@ -15,6 +15,14 @@ using namespace Aws::Utils;
 Aws::String UpdateConnectionRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_configurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> configurationsJsonList(m_configurations.size());
+    for (unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex) {
+      configurationsJsonList[configurationsIndex].AsObject(m_configurations[configurationsIndex].Jsonize());
+    }
+    payload.WithArray("configurations", std::move(configurationsJsonList));
+  }
+
   if (m_descriptionHasBeenSet) {
     payload.WithString("description", m_description);
   }

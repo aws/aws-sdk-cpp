@@ -65,6 +65,14 @@ GetLinkResult& GetLinkResult::operator=(const Aws::AmazonWebServiceResult<JsonVa
     m_attributes = jsonValue.GetObject("attributes");
     m_attributesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("logSettings")) {
+    m_logSettings = jsonValue.GetObject("logSettings");
+    m_logSettingsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("connectivityType")) {
+    m_connectivityType = ConnectivityTypeMapper::GetConnectivityTypeForName(jsonValue.GetString("connectivityType"));
+    m_connectivityTypeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("linkId")) {
     m_linkId = jsonValue.GetString("linkId");
     m_linkIdHasBeenSet = true;
@@ -76,9 +84,13 @@ GetLinkResult& GetLinkResult::operator=(const Aws::AmazonWebServiceResult<JsonVa
     }
     m_tagsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("logSettings")) {
-    m_logSettings = jsonValue.GetObject("logSettings");
-    m_logSettingsHasBeenSet = true;
+  if (jsonValue.ValueExists("httpResponderAllowed")) {
+    m_httpResponderAllowed = jsonValue.GetBool("httpResponderAllowed");
+    m_httpResponderAllowedHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("timeoutInMillis")) {
+    m_timeoutInMillis = jsonValue.GetInt64("timeoutInMillis");
+    m_timeoutInMillisHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

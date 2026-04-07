@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rtbfabric/RTBFabric_EXPORTS.h>
+#include <aws/rtbfabric/model/ConnectivityType.h>
 #include <aws/rtbfabric/model/LinkAttributes.h>
 #include <aws/rtbfabric/model/LinkLogSettings.h>
 #include <aws/rtbfabric/model/LinkStatus.h>
@@ -222,7 +223,9 @@ class GetInboundExternalLinkResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Settings for the application logs.</p>
+   */
   inline const LinkLogSettings& GetLogSettings() const { return m_logSettings; }
   template <typename LogSettingsT = LinkLogSettings>
   void SetLogSettings(LogSettingsT&& value) {
@@ -232,6 +235,21 @@ class GetInboundExternalLinkResult {
   template <typename LogSettingsT = LinkLogSettings>
   GetInboundExternalLinkResult& WithLogSettings(LogSettingsT&& value) {
     SetLogSettings(std::forward<LogSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The connectivity type of the link.</p>
+   */
+  inline ConnectivityType GetConnectivityType() const { return m_connectivityType; }
+  inline void SetConnectivityType(ConnectivityType value) {
+    m_connectivityTypeHasBeenSet = true;
+    m_connectivityType = value;
+  }
+  inline GetInboundExternalLinkResult& WithConnectivityType(ConnectivityType value) {
+    SetConnectivityType(value);
     return *this;
   }
   ///@}
@@ -275,6 +293,8 @@ class GetInboundExternalLinkResult {
 
   LinkLogSettings m_logSettings;
 
+  ConnectivityType m_connectivityType{ConnectivityType::NOT_SET};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_gatewayIdHasBeenSet = false;
@@ -288,6 +308,7 @@ class GetInboundExternalLinkResult {
   bool m_updatedAtHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_logSettingsHasBeenSet = false;
+  bool m_connectivityTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

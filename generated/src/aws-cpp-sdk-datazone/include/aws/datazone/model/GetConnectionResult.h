@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
+#include <aws/datazone/model/Configuration.h>
 #include <aws/datazone/model/ConnectionCredentials.h>
 #include <aws/datazone/model/ConnectionPropertiesOutput.h>
 #include <aws/datazone/model/ConnectionScope.h>
@@ -46,6 +47,29 @@ class GetConnectionResult {
   template <typename ConnectionCredentialsT = ConnectionCredentials>
   GetConnectionResult& WithConnectionCredentials(ConnectionCredentialsT&& value) {
     SetConnectionCredentials(std::forward<ConnectionCredentialsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configurations of the connection.</p>
+   */
+  inline const Aws::Vector<Configuration>& GetConfigurations() const { return m_configurations; }
+  template <typename ConfigurationsT = Aws::Vector<Configuration>>
+  void SetConfigurations(ConfigurationsT&& value) {
+    m_configurationsHasBeenSet = true;
+    m_configurations = std::forward<ConfigurationsT>(value);
+  }
+  template <typename ConfigurationsT = Aws::Vector<Configuration>>
+  GetConnectionResult& WithConfigurations(ConfigurationsT&& value) {
+    SetConfigurations(std::forward<ConfigurationsT>(value));
+    return *this;
+  }
+  template <typename ConfigurationsT = Configuration>
+  GetConnectionResult& AddConfigurations(ConfigurationsT&& value) {
+    m_configurationsHasBeenSet = true;
+    m_configurations.emplace_back(std::forward<ConfigurationsT>(value));
     return *this;
   }
   ///@}
@@ -275,6 +299,8 @@ class GetConnectionResult {
  private:
   ConnectionCredentials m_connectionCredentials;
 
+  Aws::Vector<Configuration> m_configurations;
+
   Aws::String m_connectionId;
 
   Aws::String m_description;
@@ -302,6 +328,7 @@ class GetConnectionResult {
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_connectionCredentialsHasBeenSet = false;
+  bool m_configurationsHasBeenSet = false;
   bool m_connectionIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_domainIdHasBeenSet = false;

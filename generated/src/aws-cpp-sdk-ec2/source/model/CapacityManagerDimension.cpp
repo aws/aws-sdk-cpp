@@ -38,6 +38,11 @@ CapacityManagerDimension& CapacityManagerDimension::operator=(const XmlNode& xml
       m_accountId = Aws::Utils::Xml::DecodeEscapedXmlText(accountIdNode.GetText());
       m_accountIdHasBeenSet = true;
     }
+    XmlNode accountNameNode = resultNode.FirstChild("accountName");
+    if (!accountNameNode.IsNull()) {
+      m_accountName = Aws::Utils::Xml::DecodeEscapedXmlText(accountNameNode.GetText());
+      m_accountNameHasBeenSet = true;
+    }
     XmlNode instanceFamilyNode = resultNode.FirstChild("instanceFamily");
     if (!instanceFamilyNode.IsNull()) {
       m_instanceFamily = Aws::Utils::Xml::DecodeEscapedXmlText(instanceFamilyNode.GetText());
@@ -118,6 +123,17 @@ CapacityManagerDimension& CapacityManagerDimension::operator=(const XmlNode& xml
       m_reservationUnusedFinancialOwner = Aws::Utils::Xml::DecodeEscapedXmlText(reservationUnusedFinancialOwnerNode.GetText());
       m_reservationUnusedFinancialOwnerHasBeenSet = true;
     }
+    XmlNode tagsNode = resultNode.FirstChild("tagSet");
+    if (!tagsNode.IsNull()) {
+      XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
+      while (!tagsMember.IsNull()) {
+        m_tags.push_back(tagsMember);
+        tagsMember = tagsMember.NextNode("item");
+      }
+
+      m_tagsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -135,6 +151,10 @@ void CapacityManagerDimension::OutputToStream(Aws::OStream& oStream, const char*
 
   if (m_accountIdHasBeenSet) {
     oStream << location << index << locationValue << ".AccountId=" << StringUtils::URLEncode(m_accountId.c_str()) << "&";
+  }
+
+  if (m_accountNameHasBeenSet) {
+    oStream << location << index << locationValue << ".AccountName=" << StringUtils::URLEncode(m_accountName.c_str()) << "&";
   }
 
   if (m_instanceFamilyHasBeenSet) {
@@ -202,6 +222,15 @@ void CapacityManagerDimension::OutputToStream(Aws::OStream& oStream, const char*
     oStream << location << index << locationValue
             << ".ReservationUnusedFinancialOwner=" << StringUtils::URLEncode(m_reservationUnusedFinancialOwner.c_str()) << "&";
   }
+
+  if (m_tagsHasBeenSet) {
+    unsigned tagsIdx = 1;
+    for (auto& item : m_tags) {
+      Aws::StringStream tagsSs;
+      tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
+      item.OutputToStream(oStream, tagsSs.str().c_str());
+    }
+  }
 }
 
 void CapacityManagerDimension::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -213,6 +242,9 @@ void CapacityManagerDimension::OutputToStream(Aws::OStream& oStream, const char*
   }
   if (m_accountIdHasBeenSet) {
     oStream << location << ".AccountId=" << StringUtils::URLEncode(m_accountId.c_str()) << "&";
+  }
+  if (m_accountNameHasBeenSet) {
+    oStream << location << ".AccountName=" << StringUtils::URLEncode(m_accountName.c_str()) << "&";
   }
   if (m_instanceFamilyHasBeenSet) {
     oStream << location << ".InstanceFamily=" << StringUtils::URLEncode(m_instanceFamily.c_str()) << "&";
@@ -263,6 +295,14 @@ void CapacityManagerDimension::OutputToStream(Aws::OStream& oStream, const char*
   }
   if (m_reservationUnusedFinancialOwnerHasBeenSet) {
     oStream << location << ".ReservationUnusedFinancialOwner=" << StringUtils::URLEncode(m_reservationUnusedFinancialOwner.c_str()) << "&";
+  }
+  if (m_tagsHasBeenSet) {
+    unsigned tagsIdx = 1;
+    for (auto& item : m_tags) {
+      Aws::StringStream tagsSs;
+      tagsSs << location << ".TagSet." << tagsIdx++;
+      item.OutputToStream(oStream, tagsSs.str().c_str());
+    }
   }
 }
 

@@ -73,6 +73,10 @@ AgentInfo& AgentInfo::operator=(JsonView jsonValue) {
     }
     m_stateTransitionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("VoiceEnhancementMode")) {
+    m_voiceEnhancementMode = VoiceEnhancementModeMapper::GetVoiceEnhancementModeForName(jsonValue.GetString("VoiceEnhancementMode"));
+    m_voiceEnhancementModeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -133,6 +137,10 @@ JsonValue AgentInfo::Jsonize() const {
       stateTransitionsJsonList[stateTransitionsIndex].AsObject(m_stateTransitions[stateTransitionsIndex].Jsonize());
     }
     payload.WithArray("StateTransitions", std::move(stateTransitionsJsonList));
+  }
+
+  if (m_voiceEnhancementModeHasBeenSet) {
+    payload.WithString("VoiceEnhancementMode", VoiceEnhancementModeMapper::GetNameForVoiceEnhancementMode(m_voiceEnhancementMode));
   }
 
   return payload;

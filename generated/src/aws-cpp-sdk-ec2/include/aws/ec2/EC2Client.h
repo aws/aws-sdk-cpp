@@ -17744,6 +17744,38 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p> Retrieves the tag keys that are currently being monitored by EC2 Capacity
+   * Manager. Monitored tag keys are included as dimensions in capacity metric data,
+   * enabling you to group and filter metrics by tag values. </p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityManagerMonitoredTagKeys">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetCapacityManagerMonitoredTagKeysOutcome GetCapacityManagerMonitoredTagKeys(
+      const Model::GetCapacityManagerMonitoredTagKeysRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for GetCapacityManagerMonitoredTagKeys that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename GetCapacityManagerMonitoredTagKeysRequestT = Model::GetCapacityManagerMonitoredTagKeysRequest>
+  Model::GetCapacityManagerMonitoredTagKeysOutcomeCallable GetCapacityManagerMonitoredTagKeysCallable(
+      const GetCapacityManagerMonitoredTagKeysRequestT& request = {}) const {
+    return SubmitCallable(&EC2Client::GetCapacityManagerMonitoredTagKeys, request);
+  }
+
+  /**
+   * An Async wrapper for GetCapacityManagerMonitoredTagKeys that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetCapacityManagerMonitoredTagKeysRequestT = Model::GetCapacityManagerMonitoredTagKeysRequest>
+  void GetCapacityManagerMonitoredTagKeysAsync(const GetCapacityManagerMonitoredTagKeysResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                               const GetCapacityManagerMonitoredTagKeysRequestT& request = {}) const {
+    return SubmitAsync(&EC2Client::GetCapacityManagerMonitoredTagKeys, request, handler, context);
+  }
+
+  /**
    * <p>Gets usage information about a Capacity Reservation. If the Capacity
    * Reservation is shared, it shows usage information for the Capacity Reservation
    * owner and each Amazon Web Services account that is currently using the shared
@@ -25286,6 +25318,37 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   void UnmonitorInstancesAsync(const UnmonitorInstancesRequestT& request, const UnmonitorInstancesResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::UnmonitorInstances, request, handler, context);
+  }
+
+  /**
+   * <p> Activates or deactivates tag keys for monitoring by EC2 Capacity Manager.
+   * Activated tag keys are included as dimensions in capacity metric data, enabling
+   * you to group and filter metrics by tag values. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateCapacityManagerMonitoredTagKeys">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateCapacityManagerMonitoredTagKeysOutcome UpdateCapacityManagerMonitoredTagKeys(
+      const Model::UpdateCapacityManagerMonitoredTagKeysRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for UpdateCapacityManagerMonitoredTagKeys that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename UpdateCapacityManagerMonitoredTagKeysRequestT = Model::UpdateCapacityManagerMonitoredTagKeysRequest>
+  Model::UpdateCapacityManagerMonitoredTagKeysOutcomeCallable UpdateCapacityManagerMonitoredTagKeysCallable(
+      const UpdateCapacityManagerMonitoredTagKeysRequestT& request = {}) const {
+    return SubmitCallable(&EC2Client::UpdateCapacityManagerMonitoredTagKeys, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateCapacityManagerMonitoredTagKeys that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename UpdateCapacityManagerMonitoredTagKeysRequestT = Model::UpdateCapacityManagerMonitoredTagKeysRequest>
+  void UpdateCapacityManagerMonitoredTagKeysAsync(const UpdateCapacityManagerMonitoredTagKeysResponseReceivedHandler& handler,
+                                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                                  const UpdateCapacityManagerMonitoredTagKeysRequestT& request = {}) const {
+    return SubmitAsync(&EC2Client::UpdateCapacityManagerMonitoredTagKeys, request, handler, context);
   }
 
   /**

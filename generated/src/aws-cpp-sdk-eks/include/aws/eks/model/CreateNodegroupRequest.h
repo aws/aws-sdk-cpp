@@ -18,6 +18,7 @@
 #include <aws/eks/model/NodegroupUpdateConfig.h>
 #include <aws/eks/model/RemoteAccessConfig.h>
 #include <aws/eks/model/Taint.h>
+#include <aws/eks/model/WarmPoolConfig.h>
 
 #include <utility>
 
@@ -493,6 +494,27 @@ class CreateNodegroupRequest : public EKSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The warm pool configuration for the node group. Warm pools maintain
+   * pre-initialized EC2 instances that can quickly join your cluster during
+   * scale-out events, improving application scaling performance and reducing
+   * costs.</p>
+   */
+  inline const WarmPoolConfig& GetWarmPoolConfig() const { return m_warmPoolConfig; }
+  inline bool WarmPoolConfigHasBeenSet() const { return m_warmPoolConfigHasBeenSet; }
+  template <typename WarmPoolConfigT = WarmPoolConfig>
+  void SetWarmPoolConfig(WarmPoolConfigT&& value) {
+    m_warmPoolConfigHasBeenSet = true;
+    m_warmPoolConfig = std::forward<WarmPoolConfigT>(value);
+  }
+  template <typename WarmPoolConfigT = WarmPoolConfig>
+  CreateNodegroupRequest& WithWarmPoolConfig(WarmPoolConfigT&& value) {
+    SetWarmPoolConfig(std::forward<WarmPoolConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clusterName;
 
@@ -531,6 +553,8 @@ class CreateNodegroupRequest : public EKSRequest {
   Aws::String m_version;
 
   Aws::String m_releaseVersion;
+
+  WarmPoolConfig m_warmPoolConfig;
   bool m_clusterNameHasBeenSet = false;
   bool m_nodegroupNameHasBeenSet = false;
   bool m_scalingConfigHasBeenSet = false;
@@ -550,6 +574,7 @@ class CreateNodegroupRequest : public EKSRequest {
   bool m_capacityTypeHasBeenSet = false;
   bool m_versionHasBeenSet = false;
   bool m_releaseVersionHasBeenSet = false;
+  bool m_warmPoolConfigHasBeenSet = false;
 };
 
 }  // namespace Model

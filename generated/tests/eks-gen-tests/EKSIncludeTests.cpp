@@ -300,6 +300,8 @@
 #include <aws/eks/model/VersionStatus.h>
 #include <aws/eks/model/VpcConfigRequest.h>
 #include <aws/eks/model/VpcConfigResponse.h>
+#include <aws/eks/model/WarmPoolConfig.h>
+#include <aws/eks/model/WarmPoolState.h>
 #include <aws/eks/model/ZonalShiftConfigRequest.h>
 #include <aws/eks/model/ZonalShiftConfigResponse.h>
 

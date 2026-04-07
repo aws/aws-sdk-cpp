@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
+#include <aws/datazone/model/Configuration.h>
 #include <aws/datazone/model/ConnectionPropertiesOutput.h>
 #include <aws/datazone/model/ConnectionScope.h>
 #include <aws/datazone/model/ConnectionType.h>
@@ -35,6 +36,30 @@ class ConnectionSummary {
   AWS_DATAZONE_API ConnectionSummary(Aws::Utils::Json::JsonView jsonValue);
   AWS_DATAZONE_API ConnectionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>The configurations of a connection summary.</p>
+   */
+  inline const Aws::Vector<Configuration>& GetConfigurations() const { return m_configurations; }
+  inline bool ConfigurationsHasBeenSet() const { return m_configurationsHasBeenSet; }
+  template <typename ConfigurationsT = Aws::Vector<Configuration>>
+  void SetConfigurations(ConfigurationsT&& value) {
+    m_configurationsHasBeenSet = true;
+    m_configurations = std::forward<ConfigurationsT>(value);
+  }
+  template <typename ConfigurationsT = Aws::Vector<Configuration>>
+  ConnectionSummary& WithConfigurations(ConfigurationsT&& value) {
+    SetConfigurations(std::forward<ConfigurationsT>(value));
+    return *this;
+  }
+  template <typename ConfigurationsT = Configuration>
+  ConnectionSummary& AddConfigurations(ConfigurationsT&& value) {
+    m_configurationsHasBeenSet = true;
+    m_configurations.emplace_back(std::forward<ConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -218,6 +243,8 @@ class ConnectionSummary {
   }
   ///@}
  private:
+  Aws::Vector<Configuration> m_configurations;
+
   Aws::String m_connectionId;
 
   Aws::String m_domainId;
@@ -237,6 +264,7 @@ class ConnectionSummary {
   ConnectionType m_type{ConnectionType::NOT_SET};
 
   ConnectionScope m_scope{ConnectionScope::NOT_SET};
+  bool m_configurationsHasBeenSet = false;
   bool m_connectionIdHasBeenSet = false;
   bool m_domainIdHasBeenSet = false;
   bool m_domainUnitIdHasBeenSet = false;

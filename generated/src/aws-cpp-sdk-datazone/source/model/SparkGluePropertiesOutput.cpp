@@ -26,6 +26,14 @@ SparkGluePropertiesOutput& SparkGluePropertiesOutput::operator=(JsonView jsonVal
     m_glueConnectionName = jsonValue.GetString("glueConnectionName");
     m_glueConnectionNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("glueConnectionNames")) {
+    Aws::Utils::Array<JsonView> glueConnectionNamesJsonList = jsonValue.GetArray("glueConnectionNames");
+    for (unsigned glueConnectionNamesIndex = 0; glueConnectionNamesIndex < glueConnectionNamesJsonList.GetLength();
+         ++glueConnectionNamesIndex) {
+      m_glueConnectionNames.push_back(glueConnectionNamesJsonList[glueConnectionNamesIndex].AsString());
+    }
+    m_glueConnectionNamesHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("glueVersion")) {
     m_glueVersion = jsonValue.GetString("glueVersion");
     m_glueVersionHasBeenSet = true;
@@ -62,6 +70,15 @@ JsonValue SparkGluePropertiesOutput::Jsonize() const {
 
   if (m_glueConnectionNameHasBeenSet) {
     payload.WithString("glueConnectionName", m_glueConnectionName);
+  }
+
+  if (m_glueConnectionNamesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> glueConnectionNamesJsonList(m_glueConnectionNames.size());
+    for (unsigned glueConnectionNamesIndex = 0; glueConnectionNamesIndex < glueConnectionNamesJsonList.GetLength();
+         ++glueConnectionNamesIndex) {
+      glueConnectionNamesJsonList[glueConnectionNamesIndex].AsString(m_glueConnectionNames[glueConnectionNamesIndex]);
+    }
+    payload.WithArray("glueConnectionNames", std::move(glueConnectionNamesJsonList));
   }
 
   if (m_glueVersionHasBeenSet) {

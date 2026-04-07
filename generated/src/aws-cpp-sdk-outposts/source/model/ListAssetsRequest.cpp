@@ -46,4 +46,12 @@ void ListAssetsRequest::AddQueryStringParameters(URI& uri) const {
       ss.str("");
     }
   }
+
+  if (m_assetTypeFilterHasBeenSet) {
+    for (const auto& item : m_assetTypeFilter) {
+      ss << AssetTypeMapper::GetNameForAssetType(item);
+      uri.AddQueryStringParameter("AssetTypeFilter", ss.str());
+      ss.str("");
+    }
+  }
 }

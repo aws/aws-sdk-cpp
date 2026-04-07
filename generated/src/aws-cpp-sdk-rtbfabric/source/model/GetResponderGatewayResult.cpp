@@ -68,6 +68,10 @@ GetResponderGatewayResult& GetResponderGatewayResult::operator=(const Aws::Amazo
     m_protocol = ProtocolMapper::GetProtocolForName(jsonValue.GetString("protocol"));
     m_protocolHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("listenerConfig")) {
+    m_listenerConfig = jsonValue.GetObject("listenerConfig");
+    m_listenerConfigHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("trustStoreConfiguration")) {
     m_trustStoreConfiguration = jsonValue.GetObject("trustStoreConfiguration");
     m_trustStoreConfigurationHasBeenSet = true;
@@ -98,6 +102,14 @@ GetResponderGatewayResult& GetResponderGatewayResult::operator=(const Aws::Amazo
   if (jsonValue.ValueExists("inboundLinksCount")) {
     m_inboundLinksCount = jsonValue.GetInteger("inboundLinksCount");
     m_inboundLinksCountHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("gatewayType")) {
+    m_gatewayType = GatewayTypeMapper::GetGatewayTypeForName(jsonValue.GetString("gatewayType"));
+    m_gatewayTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("externalInboundEndpoint")) {
+    m_externalInboundEndpoint = jsonValue.GetString("externalInboundEndpoint");
+    m_externalInboundEndpointHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

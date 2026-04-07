@@ -76,6 +76,10 @@ GetInboundExternalLinkResult& GetInboundExternalLinkResult::operator=(const Aws:
     m_logSettings = jsonValue.GetObject("logSettings");
     m_logSettingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("connectivityType")) {
+    m_connectivityType = ConnectivityTypeMapper::GetConnectivityTypeForName(jsonValue.GetString("connectivityType"));
+    m_connectivityTypeHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

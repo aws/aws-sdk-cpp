@@ -18,6 +18,7 @@
 #include <aws/rtbfabric/model/AcceptLinkResult.h>
 #include <aws/rtbfabric/model/Action.h>
 #include <aws/rtbfabric/model/AutoScalingGroupsConfiguration.h>
+#include <aws/rtbfabric/model/ConnectivityType.h>
 #include <aws/rtbfabric/model/CreateInboundExternalLinkRequest.h>
 #include <aws/rtbfabric/model/CreateInboundExternalLinkResult.h>
 #include <aws/rtbfabric/model/CreateLinkRequest.h>
@@ -42,6 +43,7 @@
 #include <aws/rtbfabric/model/Filter.h>
 #include <aws/rtbfabric/model/FilterCriterion.h>
 #include <aws/rtbfabric/model/FilterType.h>
+#include <aws/rtbfabric/model/GatewayType.h>
 #include <aws/rtbfabric/model/GetInboundExternalLinkRequest.h>
 #include <aws/rtbfabric/model/GetInboundExternalLinkResult.h>
 #include <aws/rtbfabric/model/GetLinkRequest.h>
@@ -68,6 +70,7 @@
 #include <aws/rtbfabric/model/ListResponderGatewaysResult.h>
 #include <aws/rtbfabric/model/ListTagsForResourceRequest.h>
 #include <aws/rtbfabric/model/ListTagsForResourceResult.h>
+#include <aws/rtbfabric/model/ListenerConfig.h>
 #include <aws/rtbfabric/model/ManagedEndpointConfiguration.h>
 #include <aws/rtbfabric/model/ModuleConfiguration.h>
 #include <aws/rtbfabric/model/ModuleParameters.h>

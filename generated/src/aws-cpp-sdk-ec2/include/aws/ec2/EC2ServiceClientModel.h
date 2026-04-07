@@ -724,6 +724,8 @@
 #include <aws/ec2/model/GetCapacityManagerAttributesResponse.h>
 #include <aws/ec2/model/GetCapacityManagerMetricDataResponse.h>
 #include <aws/ec2/model/GetCapacityManagerMetricDimensionsResponse.h>
+#include <aws/ec2/model/GetCapacityManagerMonitoredTagKeysRequest.h>
+#include <aws/ec2/model/GetCapacityManagerMonitoredTagKeysResponse.h>
 #include <aws/ec2/model/GetCapacityReservationUsageResponse.h>
 #include <aws/ec2/model/GetCoipPoolUsageResponse.h>
 #include <aws/ec2/model/GetConsoleOutputResponse.h>
@@ -945,6 +947,8 @@
 #include <aws/ec2/model/UnassignPrivateNatGatewayAddressResponse.h>
 #include <aws/ec2/model/UnlockSnapshotResponse.h>
 #include <aws/ec2/model/UnmonitorInstancesResponse.h>
+#include <aws/ec2/model/UpdateCapacityManagerMonitoredTagKeysRequest.h>
+#include <aws/ec2/model/UpdateCapacityManagerMonitoredTagKeysResponse.h>
 #include <aws/ec2/model/UpdateCapacityManagerOrganizationsAccessResponse.h>
 #include <aws/ec2/model/UpdateInterruptibleCapacityReservationAllocationResponse.h>
 #include <aws/ec2/model/UpdateSecurityGroupRuleDescriptionsEgressRequest.h>
@@ -1516,6 +1520,7 @@ class GetAwsNetworkPerformanceDataRequest;
 class GetCapacityManagerAttributesRequest;
 class GetCapacityManagerMetricDataRequest;
 class GetCapacityManagerMetricDimensionsRequest;
+class GetCapacityManagerMonitoredTagKeysRequest;
 class GetCapacityReservationUsageRequest;
 class GetCoipPoolUsageRequest;
 class GetConsoleOutputRequest;
@@ -1736,6 +1741,7 @@ class UnassignPrivateIpAddressesRequest;
 class UnassignPrivateNatGatewayAddressRequest;
 class UnlockSnapshotRequest;
 class UnmonitorInstancesRequest;
+class UpdateCapacityManagerMonitoredTagKeysRequest;
 class UpdateCapacityManagerOrganizationsAccessRequest;
 class UpdateInterruptibleCapacityReservationAllocationRequest;
 class UpdateSecurityGroupRuleDescriptionsEgressRequest;
@@ -2299,6 +2305,7 @@ typedef Aws::Utils::Outcome<GetAwsNetworkPerformanceDataResponse, EC2Error> GetA
 typedef Aws::Utils::Outcome<GetCapacityManagerAttributesResponse, EC2Error> GetCapacityManagerAttributesOutcome;
 typedef Aws::Utils::Outcome<GetCapacityManagerMetricDataResponse, EC2Error> GetCapacityManagerMetricDataOutcome;
 typedef Aws::Utils::Outcome<GetCapacityManagerMetricDimensionsResponse, EC2Error> GetCapacityManagerMetricDimensionsOutcome;
+typedef Aws::Utils::Outcome<GetCapacityManagerMonitoredTagKeysResponse, EC2Error> GetCapacityManagerMonitoredTagKeysOutcome;
 typedef Aws::Utils::Outcome<GetCapacityReservationUsageResponse, EC2Error> GetCapacityReservationUsageOutcome;
 typedef Aws::Utils::Outcome<GetCoipPoolUsageResponse, EC2Error> GetCoipPoolUsageOutcome;
 typedef Aws::Utils::Outcome<GetConsoleOutputResponse, EC2Error> GetConsoleOutputOutcome;
@@ -2532,6 +2539,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> UnassignPrivateIpAddressesO
 typedef Aws::Utils::Outcome<UnassignPrivateNatGatewayAddressResponse, EC2Error> UnassignPrivateNatGatewayAddressOutcome;
 typedef Aws::Utils::Outcome<UnlockSnapshotResponse, EC2Error> UnlockSnapshotOutcome;
 typedef Aws::Utils::Outcome<UnmonitorInstancesResponse, EC2Error> UnmonitorInstancesOutcome;
+typedef Aws::Utils::Outcome<UpdateCapacityManagerMonitoredTagKeysResponse, EC2Error> UpdateCapacityManagerMonitoredTagKeysOutcome;
 typedef Aws::Utils::Outcome<UpdateCapacityManagerOrganizationsAccessResponse, EC2Error> UpdateCapacityManagerOrganizationsAccessOutcome;
 typedef Aws::Utils::Outcome<UpdateInterruptibleCapacityReservationAllocationResponse, EC2Error>
     UpdateInterruptibleCapacityReservationAllocationOutcome;
@@ -3079,6 +3087,7 @@ typedef std::future<GetAwsNetworkPerformanceDataOutcome> GetAwsNetworkPerformanc
 typedef std::future<GetCapacityManagerAttributesOutcome> GetCapacityManagerAttributesOutcomeCallable;
 typedef std::future<GetCapacityManagerMetricDataOutcome> GetCapacityManagerMetricDataOutcomeCallable;
 typedef std::future<GetCapacityManagerMetricDimensionsOutcome> GetCapacityManagerMetricDimensionsOutcomeCallable;
+typedef std::future<GetCapacityManagerMonitoredTagKeysOutcome> GetCapacityManagerMonitoredTagKeysOutcomeCallable;
 typedef std::future<GetCapacityReservationUsageOutcome> GetCapacityReservationUsageOutcomeCallable;
 typedef std::future<GetCoipPoolUsageOutcome> GetCoipPoolUsageOutcomeCallable;
 typedef std::future<GetConsoleOutputOutcome> GetConsoleOutputOutcomeCallable;
@@ -3300,6 +3309,7 @@ typedef std::future<UnassignPrivateIpAddressesOutcome> UnassignPrivateIpAddresse
 typedef std::future<UnassignPrivateNatGatewayAddressOutcome> UnassignPrivateNatGatewayAddressOutcomeCallable;
 typedef std::future<UnlockSnapshotOutcome> UnlockSnapshotOutcomeCallable;
 typedef std::future<UnmonitorInstancesOutcome> UnmonitorInstancesOutcomeCallable;
+typedef std::future<UpdateCapacityManagerMonitoredTagKeysOutcome> UpdateCapacityManagerMonitoredTagKeysOutcomeCallable;
 typedef std::future<UpdateCapacityManagerOrganizationsAccessOutcome> UpdateCapacityManagerOrganizationsAccessOutcomeCallable;
 typedef std::future<UpdateInterruptibleCapacityReservationAllocationOutcome>
     UpdateInterruptibleCapacityReservationAllocationOutcomeCallable;
@@ -5132,6 +5142,10 @@ typedef std::function<void(const EC2Client*, const Model::GetCapacityManagerMetr
                            const Model::GetCapacityManagerMetricDimensionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetCapacityManagerMetricDimensionsResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::GetCapacityManagerMonitoredTagKeysRequest&,
+                           const Model::GetCapacityManagerMonitoredTagKeysOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetCapacityManagerMonitoredTagKeysResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::GetCapacityReservationUsageRequest&,
                            const Model::GetCapacityReservationUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetCapacityReservationUsageResponseReceivedHandler;
@@ -5886,6 +5900,10 @@ typedef std::function<void(const EC2Client*, const Model::UnlockSnapshotRequest&
 typedef std::function<void(const EC2Client*, const Model::UnmonitorInstancesRequest&, const Model::UnmonitorInstancesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UnmonitorInstancesResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::UpdateCapacityManagerMonitoredTagKeysRequest&,
+                           const Model::UpdateCapacityManagerMonitoredTagKeysOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateCapacityManagerMonitoredTagKeysResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::UpdateCapacityManagerOrganizationsAccessRequest&,
                            const Model::UpdateCapacityManagerOrganizationsAccessOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

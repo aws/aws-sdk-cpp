@@ -15,7 +15,6 @@
 #include <aws/accessanalyzer/model/ListFindingsPaginationTraits.h>
 #include <aws/accessanalyzer/model/ListFindingsV2PaginationTraits.h>
 #include <aws/accessanalyzer/model/ListPolicyGenerationsPaginationTraits.h>
-#include <aws/accessanalyzer/model/ListPolicyPreviewJobsPaginationTraits.h>
 #include <aws/accessanalyzer/model/ValidatePolicyPaginationTraits.h>
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
@@ -143,18 +142,6 @@ class AccessAnalyzerPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPolicyGenerationsRequest,
                                              Pagination::ListPolicyGenerationsPaginationTraits<DerivedClient>>{
-        static_cast<DerivedClient*>(this), request};
-  }
-
-  /**
-   * Create a paginator for ListPolicyPreviewJobs operation
-   */
-  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPolicyPreviewJobsRequest,
-                                    Pagination::ListPolicyPreviewJobsPaginationTraits<DerivedClient>>
-  ListPolicyPreviewJobsPaginator(const Model::ListPolicyPreviewJobsRequest& request) {
-    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
-    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPolicyPreviewJobsRequest,
-                                             Pagination::ListPolicyPreviewJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

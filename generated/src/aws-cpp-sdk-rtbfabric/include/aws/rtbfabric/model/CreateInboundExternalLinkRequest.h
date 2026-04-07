@@ -87,7 +87,9 @@ class CreateInboundExternalLinkRequest : public RTBFabricRequest {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Settings for the application logs.</p>
+   */
   inline const LinkLogSettings& GetLogSettings() const { return m_logSettings; }
   inline bool LogSettingsHasBeenSet() const { return m_logSettingsHasBeenSet; }
   template <typename LogSettingsT = LinkLogSettings>

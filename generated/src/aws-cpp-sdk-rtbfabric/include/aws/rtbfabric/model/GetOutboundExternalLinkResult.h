@@ -8,9 +8,13 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rtbfabric/RTBFabric_EXPORTS.h>
+#include <aws/rtbfabric/model/ConnectivityType.h>
+#include <aws/rtbfabric/model/LinkAttributes.h>
 #include <aws/rtbfabric/model/LinkLogSettings.h>
 #include <aws/rtbfabric/model/LinkStatus.h>
+#include <aws/rtbfabric/model/ModuleConfiguration.h>
 
 #include <utility>
 
@@ -99,6 +103,67 @@ class GetOutboundExternalLinkResult {
 
   ///@{
   /**
+   * <p>The configuration of flow modules.</p>
+   */
+  inline const Aws::Vector<ModuleConfiguration>& GetFlowModules() const { return m_flowModules; }
+  template <typename FlowModulesT = Aws::Vector<ModuleConfiguration>>
+  void SetFlowModules(FlowModulesT&& value) {
+    m_flowModulesHasBeenSet = true;
+    m_flowModules = std::forward<FlowModulesT>(value);
+  }
+  template <typename FlowModulesT = Aws::Vector<ModuleConfiguration>>
+  GetOutboundExternalLinkResult& WithFlowModules(FlowModulesT&& value) {
+    SetFlowModules(std::forward<FlowModulesT>(value));
+    return *this;
+  }
+  template <typename FlowModulesT = ModuleConfiguration>
+  GetOutboundExternalLinkResult& AddFlowModules(FlowModulesT&& value) {
+    m_flowModulesHasBeenSet = true;
+    m_flowModules.emplace_back(std::forward<FlowModulesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configuration of pending flow modules.</p>
+   */
+  inline const Aws::Vector<ModuleConfiguration>& GetPendingFlowModules() const { return m_pendingFlowModules; }
+  template <typename PendingFlowModulesT = Aws::Vector<ModuleConfiguration>>
+  void SetPendingFlowModules(PendingFlowModulesT&& value) {
+    m_pendingFlowModulesHasBeenSet = true;
+    m_pendingFlowModules = std::forward<PendingFlowModulesT>(value);
+  }
+  template <typename PendingFlowModulesT = Aws::Vector<ModuleConfiguration>>
+  GetOutboundExternalLinkResult& WithPendingFlowModules(PendingFlowModulesT&& value) {
+    SetPendingFlowModules(std::forward<PendingFlowModulesT>(value));
+    return *this;
+  }
+  template <typename PendingFlowModulesT = ModuleConfiguration>
+  GetOutboundExternalLinkResult& AddPendingFlowModules(PendingFlowModulesT&& value) {
+    m_pendingFlowModulesHasBeenSet = true;
+    m_pendingFlowModules.emplace_back(std::forward<PendingFlowModulesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const LinkAttributes& GetAttributes() const { return m_attributes; }
+  template <typename AttributesT = LinkAttributes>
+  void SetAttributes(AttributesT&& value) {
+    m_attributesHasBeenSet = true;
+    m_attributes = std::forward<AttributesT>(value);
+  }
+  template <typename AttributesT = LinkAttributes>
+  GetOutboundExternalLinkResult& WithAttributes(AttributesT&& value) {
+    SetAttributes(std::forward<AttributesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The timestamp of when the outbound external link was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -156,7 +221,9 @@ class GetOutboundExternalLinkResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Settings for the application logs.</p>
+   */
   inline const LinkLogSettings& GetLogSettings() const { return m_logSettings; }
   template <typename LogSettingsT = LinkLogSettings>
   void SetLogSettings(LogSettingsT&& value) {
@@ -166,6 +233,21 @@ class GetOutboundExternalLinkResult {
   template <typename LogSettingsT = LinkLogSettings>
   GetOutboundExternalLinkResult& WithLogSettings(LogSettingsT&& value) {
     SetLogSettings(std::forward<LogSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The connectivity type of the link.</p>
+   */
+  inline ConnectivityType GetConnectivityType() const { return m_connectivityType; }
+  inline void SetConnectivityType(ConnectivityType value) {
+    m_connectivityTypeHasBeenSet = true;
+    m_connectivityType = value;
+  }
+  inline GetOutboundExternalLinkResult& WithConnectivityType(ConnectivityType value) {
+    SetConnectivityType(value);
     return *this;
   }
   ///@}
@@ -195,6 +277,12 @@ class GetOutboundExternalLinkResult {
 
   Aws::String m_publicEndpoint;
 
+  Aws::Vector<ModuleConfiguration> m_flowModules;
+
+  Aws::Vector<ModuleConfiguration> m_pendingFlowModules;
+
+  LinkAttributes m_attributes;
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
@@ -203,16 +291,22 @@ class GetOutboundExternalLinkResult {
 
   LinkLogSettings m_logSettings;
 
+  ConnectivityType m_connectivityType{ConnectivityType::NOT_SET};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_gatewayIdHasBeenSet = false;
   bool m_linkIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_publicEndpointHasBeenSet = false;
+  bool m_flowModulesHasBeenSet = false;
+  bool m_pendingFlowModulesHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_logSettingsHasBeenSet = false;
+  bool m_connectivityTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

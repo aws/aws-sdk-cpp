@@ -10,6 +10,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rtbfabric/RTBFabric_EXPORTS.h>
+#include <aws/rtbfabric/model/GatewayType.h>
+#include <aws/rtbfabric/model/ListenerConfig.h>
 #include <aws/rtbfabric/model/ManagedEndpointConfiguration.h>
 #include <aws/rtbfabric/model/Protocol.h>
 #include <aws/rtbfabric/model/ResponderGatewayStatus.h>
@@ -212,6 +214,23 @@ class GetResponderGatewayResult {
 
   ///@{
   /**
+   * <p>The listener configuration for the responder gateway.</p>
+   */
+  inline const ListenerConfig& GetListenerConfig() const { return m_listenerConfig; }
+  template <typename ListenerConfigT = ListenerConfig>
+  void SetListenerConfig(ListenerConfigT&& value) {
+    m_listenerConfigHasBeenSet = true;
+    m_listenerConfig = std::forward<ListenerConfigT>(value);
+  }
+  template <typename ListenerConfigT = ListenerConfig>
+  GetResponderGatewayResult& WithListenerConfig(ListenerConfigT&& value) {
+    SetListenerConfig(std::forward<ListenerConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The configuration of the trust store.</p>
    */
   inline const TrustStoreConfiguration& GetTrustStoreConfiguration() const { return m_trustStoreConfiguration; }
@@ -331,6 +350,39 @@ class GetResponderGatewayResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The type of gateway. Valid values are <code>EXTERNAL</code> or
+   * <code>INTERNAL</code>.</p>
+   */
+  inline GatewayType GetGatewayType() const { return m_gatewayType; }
+  inline void SetGatewayType(GatewayType value) {
+    m_gatewayTypeHasBeenSet = true;
+    m_gatewayType = value;
+  }
+  inline GetResponderGatewayResult& WithGatewayType(GatewayType value) {
+    SetGatewayType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The external inbound endpoint for the responder gateway.</p>
+   */
+  inline const Aws::String& GetExternalInboundEndpoint() const { return m_externalInboundEndpoint; }
+  template <typename ExternalInboundEndpointT = Aws::String>
+  void SetExternalInboundEndpoint(ExternalInboundEndpointT&& value) {
+    m_externalInboundEndpointHasBeenSet = true;
+    m_externalInboundEndpoint = std::forward<ExternalInboundEndpointT>(value);
+  }
+  template <typename ExternalInboundEndpointT = Aws::String>
+  GetResponderGatewayResult& WithExternalInboundEndpoint(ExternalInboundEndpointT&& value) {
+    SetExternalInboundEndpoint(std::forward<ExternalInboundEndpointT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -367,6 +419,8 @@ class GetResponderGatewayResult {
 
   Protocol m_protocol{Protocol::NOT_SET};
 
+  ListenerConfig m_listenerConfig;
+
   TrustStoreConfiguration m_trustStoreConfiguration;
 
   ManagedEndpointConfiguration m_managedEndpointConfiguration;
@@ -381,6 +435,10 @@ class GetResponderGatewayResult {
 
   int m_inboundLinksCount{0};
 
+  GatewayType m_gatewayType{GatewayType::NOT_SET};
+
+  Aws::String m_externalInboundEndpoint;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_vpcIdHasBeenSet = false;
@@ -393,6 +451,7 @@ class GetResponderGatewayResult {
   bool m_domainNameHasBeenSet = false;
   bool m_portHasBeenSet = false;
   bool m_protocolHasBeenSet = false;
+  bool m_listenerConfigHasBeenSet = false;
   bool m_trustStoreConfigurationHasBeenSet = false;
   bool m_managedEndpointConfigurationHasBeenSet = false;
   bool m_gatewayIdHasBeenSet = false;
@@ -400,6 +459,8 @@ class GetResponderGatewayResult {
   bool m_activeLinksCountHasBeenSet = false;
   bool m_totalLinksCountHasBeenSet = false;
   bool m_inboundLinksCountHasBeenSet = false;
+  bool m_gatewayTypeHasBeenSet = false;
+  bool m_externalInboundEndpointHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

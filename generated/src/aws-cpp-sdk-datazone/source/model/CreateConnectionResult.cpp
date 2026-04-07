@@ -26,6 +26,13 @@ CreateConnectionResult& CreateConnectionResult::operator=(const Aws::AmazonWebSe
     m_connectionId = jsonValue.GetString("connectionId");
     m_connectionIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("configurations")) {
+    Aws::Utils::Array<JsonView> configurationsJsonList = jsonValue.GetArray("configurations");
+    for (unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex) {
+      m_configurations.push_back(configurationsJsonList[configurationsIndex].AsObject());
+    }
+    m_configurationsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;

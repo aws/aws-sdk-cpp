@@ -146,6 +146,7 @@
 #include <aws/ec2/model/GetAwsNetworkPerformanceDataPaginationTraits.h>
 #include <aws/ec2/model/GetCapacityManagerMetricDataPaginationTraits.h>
 #include <aws/ec2/model/GetCapacityManagerMetricDimensionsPaginationTraits.h>
+#include <aws/ec2/model/GetCapacityManagerMonitoredTagKeysPaginationTraits.h>
 #include <aws/ec2/model/GetGroupsForCapacityReservationPaginationTraits.h>
 #include <aws/ec2/model/GetInstanceTypesFromInstanceRequirementsPaginationTraits.h>
 #include <aws/ec2/model/GetIpamAddressHistoryPaginationTraits.h>
@@ -1849,6 +1850,18 @@ class EC2PaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetCapacityManagerMetricDimensionsRequest,
                                              Pagination::GetCapacityManagerMetricDimensionsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for GetCapacityManagerMonitoredTagKeys operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetCapacityManagerMonitoredTagKeysRequest,
+                                    Pagination::GetCapacityManagerMonitoredTagKeysPaginationTraits<DerivedClient>>
+  GetCapacityManagerMonitoredTagKeysPaginator(const Model::GetCapacityManagerMonitoredTagKeysRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetCapacityManagerMonitoredTagKeysRequest,
+                                             Pagination::GetCapacityManagerMonitoredTagKeysPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

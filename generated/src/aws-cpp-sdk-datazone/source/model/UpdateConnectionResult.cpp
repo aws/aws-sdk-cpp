@@ -22,6 +22,13 @@ UpdateConnectionResult::UpdateConnectionResult(const Aws::AmazonWebServiceResult
 UpdateConnectionResult& UpdateConnectionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("configurations")) {
+    Aws::Utils::Array<JsonView> configurationsJsonList = jsonValue.GetArray("configurations");
+    for (unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex) {
+      m_configurations.push_back(configurationsJsonList[configurationsIndex].AsObject());
+    }
+    m_configurationsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("connectionId")) {
     m_connectionId = jsonValue.GetString("connectionId");
     m_connectionIdHasBeenSet = true;

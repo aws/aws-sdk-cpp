@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Outposts {
 namespace Model {
-enum class AssetState { NOT_SET, ACTIVE, RETIRING, ISOLATED };
+enum class AssetState { NOT_SET, ACTIVE, RETIRING, ISOLATED, INSTALLING };
 
 namespace AssetStateMapper {
 AWS_OUTPOSTS_API AssetState GetAssetStateForName(const Aws::String& name);

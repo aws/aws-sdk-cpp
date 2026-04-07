@@ -75,6 +75,38 @@ class RTBFabricWaiter {
     return waiter.Wait(request);
   }
 
+  Aws::Utils::WaiterOutcome<Model::GetInboundExternalLinkOutcome> WaitUntilInboundExternalLinkDeleted(
+      const Model::GetInboundExternalLinkRequest& request) {
+    using OutcomeT = Model::GetInboundExternalLinkOutcome;
+    using RequestT = Model::GetInboundExternalLinkRequest;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "InboundExternalLinkDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DELETED"),
+        [](const Model::GetInboundExternalLinkOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::LinkStatusMapper::GetNameForLinkStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "InboundExternalLinkDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
+        [](const Model::GetInboundExternalLinkOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::LinkStatusMapper::GetNameForLinkStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "InboundExternalLinkDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("REJECTED"),
+        [](const Model::GetInboundExternalLinkOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::LinkStatusMapper::GetNameForLinkStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
+
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetInboundExternalLink(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(30, 4, std::move(acceptors), operation, "WaitUntilInboundExternalLinkDeleted");
+    return waiter.Wait(request);
+  }
+
   Aws::Utils::WaiterOutcome<Model::GetLinkOutcome> WaitUntilLinkAccepted(const Model::GetLinkRequest& request) {
     using OutcomeT = Model::GetLinkOutcome;
     using RequestT = Model::GetLinkRequest;
@@ -151,6 +183,37 @@ class RTBFabricWaiter {
     return waiter.Wait(request);
   }
 
+  Aws::Utils::WaiterOutcome<Model::GetLinkOutcome> WaitUntilLinkDeleted(const Model::GetLinkRequest& request) {
+    using OutcomeT = Model::GetLinkOutcome;
+    using RequestT = Model::GetLinkRequest;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "LinkDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DELETED"),
+        [](const Model::GetLinkOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::LinkStatusMapper::GetNameForLinkStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "LinkDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
+        [](const Model::GetLinkOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::LinkStatusMapper::GetNameForLinkStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "LinkDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("REJECTED"),
+        [](const Model::GetLinkOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::LinkStatusMapper::GetNameForLinkStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
+
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetLink(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(30, 4, std::move(acceptors), operation, "WaitUntilLinkDeleted");
+    return waiter.Wait(request);
+  }
+
   Aws::Utils::WaiterOutcome<Model::GetOutboundExternalLinkOutcome> WaitUntilOutboundExternalLinkActive(
       const Model::GetOutboundExternalLinkRequest& request) {
     using OutcomeT = Model::GetOutboundExternalLinkOutcome;
@@ -194,6 +257,38 @@ class RTBFabricWaiter {
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetOutboundExternalLink(req); };
     Aws::Utils::Waiter<RequestT, OutcomeT> waiter(30, 4, std::move(acceptors), operation, "WaitUntilOutboundExternalLinkActive");
+    return waiter.Wait(request);
+  }
+
+  Aws::Utils::WaiterOutcome<Model::GetOutboundExternalLinkOutcome> WaitUntilOutboundExternalLinkDeleted(
+      const Model::GetOutboundExternalLinkRequest& request) {
+    using OutcomeT = Model::GetOutboundExternalLinkOutcome;
+    using RequestT = Model::GetOutboundExternalLinkRequest;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "OutboundExternalLinkDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DELETED"),
+        [](const Model::GetOutboundExternalLinkOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::LinkStatusMapper::GetNameForLinkStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "OutboundExternalLinkDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
+        [](const Model::GetOutboundExternalLinkOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::LinkStatusMapper::GetNameForLinkStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "OutboundExternalLinkDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("REJECTED"),
+        [](const Model::GetOutboundExternalLinkOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::LinkStatusMapper::GetNameForLinkStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
+
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetOutboundExternalLink(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(30, 4, std::move(acceptors), operation, "WaitUntilOutboundExternalLinkDeleted");
     return waiter.Wait(request);
   }
 
@@ -241,6 +336,8 @@ class RTBFabricWaiter {
           const auto& result = outcome.GetResult();
           return Model::RequesterGatewayStatusMapper::GetNameForRequesterGatewayStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "RequesterGatewayDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ResourceNotFoundException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "RequesterGatewayDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ERROR"),
         [](const Model::GetRequesterGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
@@ -298,6 +395,8 @@ class RTBFabricWaiter {
           const auto& result = outcome.GetResult();
           return Model::ResponderGatewayStatusMapper::GetNameForResponderGatewayStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "ResponderGatewayDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ResourceNotFoundException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ResponderGatewayDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ERROR"),
         [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {

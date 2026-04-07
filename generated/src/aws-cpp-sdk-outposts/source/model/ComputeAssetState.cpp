@@ -18,6 +18,7 @@ namespace ComputeAssetStateMapper {
 static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
 static const int ISOLATED_HASH = HashingUtils::HashString("ISOLATED");
 static const int RETIRING_HASH = HashingUtils::HashString("RETIRING");
+static const int INSTALLING_HASH = HashingUtils::HashString("INSTALLING");
 
 ComputeAssetState GetComputeAssetStateForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ ComputeAssetState GetComputeAssetStateForName(const Aws::String& name) {
     return ComputeAssetState::ISOLATED;
   } else if (hashCode == RETIRING_HASH) {
     return ComputeAssetState::RETIRING;
+  } else if (hashCode == INSTALLING_HASH) {
+    return ComputeAssetState::INSTALLING;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForComputeAssetState(ComputeAssetState enumValue) {
       return "ISOLATED";
     case ComputeAssetState::RETIRING:
       return "RETIRING";
+    case ComputeAssetState::INSTALLING:
+      return "INSTALLING";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -55,6 +55,11 @@ static const int DeletionProtection_HASH = HashingUtils::HashString("DeletionPro
 static const int NodeRepairConfig_HASH = HashingUtils::HashString("NodeRepairConfig");
 static const int UpdatedTier_HASH = HashingUtils::HashString("UpdatedTier");
 static const int PreviousTier_HASH = HashingUtils::HashString("PreviousTier");
+static const int WarmPoolEnabled_HASH = HashingUtils::HashString("WarmPoolEnabled");
+static const int WarmPoolMaxGroupPreparedCapacity_HASH = HashingUtils::HashString("WarmPoolMaxGroupPreparedCapacity");
+static const int WarmPoolMinSize_HASH = HashingUtils::HashString("WarmPoolMinSize");
+static const int WarmPoolState_HASH = HashingUtils::HashString("WarmPoolState");
+static const int WarmPoolReuseOnScaleIn_HASH = HashingUtils::HashString("WarmPoolReuseOnScaleIn");
 
 UpdateParamType GetUpdateParamTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -138,6 +143,16 @@ UpdateParamType GetUpdateParamTypeForName(const Aws::String& name) {
     return UpdateParamType::UpdatedTier;
   } else if (hashCode == PreviousTier_HASH) {
     return UpdateParamType::PreviousTier;
+  } else if (hashCode == WarmPoolEnabled_HASH) {
+    return UpdateParamType::WarmPoolEnabled;
+  } else if (hashCode == WarmPoolMaxGroupPreparedCapacity_HASH) {
+    return UpdateParamType::WarmPoolMaxGroupPreparedCapacity;
+  } else if (hashCode == WarmPoolMinSize_HASH) {
+    return UpdateParamType::WarmPoolMinSize;
+  } else if (hashCode == WarmPoolState_HASH) {
+    return UpdateParamType::WarmPoolState;
+  } else if (hashCode == WarmPoolReuseOnScaleIn_HASH) {
+    return UpdateParamType::WarmPoolReuseOnScaleIn;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -232,6 +247,16 @@ Aws::String GetNameForUpdateParamType(UpdateParamType enumValue) {
       return "UpdatedTier";
     case UpdateParamType::PreviousTier:
       return "PreviousTier";
+    case UpdateParamType::WarmPoolEnabled:
+      return "WarmPoolEnabled";
+    case UpdateParamType::WarmPoolMaxGroupPreparedCapacity:
+      return "WarmPoolMaxGroupPreparedCapacity";
+    case UpdateParamType::WarmPoolMinSize:
+      return "WarmPoolMinSize";
+    case UpdateParamType::WarmPoolState:
+      return "WarmPoolState";
+    case UpdateParamType::WarmPoolReuseOnScaleIn:
+      return "WarmPoolReuseOnScaleIn";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

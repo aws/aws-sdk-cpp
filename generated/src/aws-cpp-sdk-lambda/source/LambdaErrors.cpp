@@ -42,6 +42,9 @@
 #include <aws/lambda/model/ResourceInUseException.h>
 #include <aws/lambda/model/ResourceNotFoundException.h>
 #include <aws/lambda/model/ResourceNotReadyException.h>
+#include <aws/lambda/model/S3FilesMountConnectivityException.h>
+#include <aws/lambda/model/S3FilesMountFailureException.h>
+#include <aws/lambda/model/S3FilesMountTimeoutException.h>
 #include <aws/lambda/model/SerializedRequestEntityTooLargeException.h>
 #include <aws/lambda/model/ServiceException.h>
 #include <aws/lambda/model/SnapStartException.h>
@@ -203,6 +206,12 @@ AWS_LAMBDA_API RequestTooLargeException LambdaError::GetModeledError() {
 }
 
 template <>
+AWS_LAMBDA_API S3FilesMountConnectivityException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::S3_FILES_MOUNT_CONNECTIVITY);
+  return S3FilesMountConnectivityException(this->GetJsonPayload().View());
+}
+
+template <>
 AWS_LAMBDA_API InvalidCodeSignatureException LambdaError::GetModeledError() {
   assert(this->GetErrorType() == LambdaErrors::INVALID_CODE_SIGNATURE);
   return InvalidCodeSignatureException(this->GetJsonPayload().View());
@@ -248,6 +257,18 @@ template <>
 AWS_LAMBDA_API EC2UnexpectedException LambdaError::GetModeledError() {
   assert(this->GetErrorType() == LambdaErrors::E_C2_UNEXPECTED);
   return EC2UnexpectedException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_LAMBDA_API S3FilesMountTimeoutException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::S3_FILES_MOUNT_TIMEOUT);
+  return S3FilesMountTimeoutException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_LAMBDA_API S3FilesMountFailureException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::S3_FILES_MOUNT_FAILURE);
+  return S3FilesMountFailureException(this->GetJsonPayload().View());
 }
 
 template <>
@@ -347,6 +368,7 @@ static const int SNAP_START_NOT_READY_HASH = HashingUtils::HashString("SnapStart
 static const int INVALID_REQUEST_CONTENT_HASH = HashingUtils::HashString("InvalidRequestContentException");
 static const int E_C2_ACCESS_DENIED_HASH = HashingUtils::HashString("EC2AccessDeniedException");
 static const int REQUEST_TOO_LARGE_HASH = HashingUtils::HashString("RequestTooLargeException");
+static const int S3_FILES_MOUNT_CONNECTIVITY_HASH = HashingUtils::HashString("S3FilesMountConnectivityException");
 static const int INVALID_CODE_SIGNATURE_HASH = HashingUtils::HashString("InvalidCodeSignatureException");
 static const int E_F_S_I_O_HASH = HashingUtils::HashString("EFSIOException");
 static const int INVALID_SECURITY_GROUP_I_D_HASH = HashingUtils::HashString("InvalidSecurityGroupIDException");
@@ -355,6 +377,8 @@ static const int CODE_SIGNING_CONFIG_NOT_FOUND_HASH = HashingUtils::HashString("
 static const int E_F_S_MOUNT_TIMEOUT_HASH = HashingUtils::HashString("EFSMountTimeoutException");
 static const int INVALID_RUNTIME_HASH = HashingUtils::HashString("InvalidRuntimeException");
 static const int E_C2_UNEXPECTED_HASH = HashingUtils::HashString("EC2UnexpectedException");
+static const int S3_FILES_MOUNT_TIMEOUT_HASH = HashingUtils::HashString("S3FilesMountTimeoutException");
+static const int S3_FILES_MOUNT_FAILURE_HASH = HashingUtils::HashString("S3FilesMountFailureException");
 static const int INVALID_ZIP_FILE_HASH = HashingUtils::HashString("InvalidZipFileException");
 static const int UNSUPPORTED_MEDIA_TYPE_HASH = HashingUtils::HashString("UnsupportedMediaTypeException");
 static const int K_M_S_ACCESS_DENIED_HASH = HashingUtils::HashString("KMSAccessDeniedException");
@@ -417,6 +441,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_C2_ACCESS_DENIED), RetryableType::RETRYABLE);
   } else if (hashCode == REQUEST_TOO_LARGE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::REQUEST_TOO_LARGE), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == S3_FILES_MOUNT_CONNECTIVITY_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::S3_FILES_MOUNT_CONNECTIVITY), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_CODE_SIGNATURE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_CODE_SIGNATURE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == E_F_S_I_O_HASH) {
@@ -433,6 +459,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_RUNTIME), RetryableType::RETRYABLE);
   } else if (hashCode == E_C2_UNEXPECTED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_C2_UNEXPECTED), RetryableType::RETRYABLE);
+  } else if (hashCode == S3_FILES_MOUNT_TIMEOUT_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::S3_FILES_MOUNT_TIMEOUT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == S3_FILES_MOUNT_FAILURE_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::S3_FILES_MOUNT_FAILURE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_ZIP_FILE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_ZIP_FILE), RetryableType::RETRYABLE);
   } else if (hashCode == UNSUPPORTED_MEDIA_TYPE_HASH) {

@@ -20,6 +20,7 @@
 #include <aws/eks/model/NodegroupUpdateConfig.h>
 #include <aws/eks/model/RemoteAccessConfig.h>
 #include <aws/eks/model/Taint.h>
+#include <aws/eks/model/WarmPoolConfig.h>
 
 #include <utility>
 
@@ -530,6 +531,27 @@ class Nodegroup {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The warm pool configuration attached to the node group. Amazon EKS manages
+   * warm pools throughout the node group lifecycle using the
+   * <code>AWSServiceRoleForAmazonEKSNodegroup</code> service-linked role to create,
+   * update, and delete warm pool resources.</p>
+   */
+  inline const WarmPoolConfig& GetWarmPoolConfig() const { return m_warmPoolConfig; }
+  inline bool WarmPoolConfigHasBeenSet() const { return m_warmPoolConfigHasBeenSet; }
+  template <typename WarmPoolConfigT = WarmPoolConfig>
+  void SetWarmPoolConfig(WarmPoolConfigT&& value) {
+    m_warmPoolConfigHasBeenSet = true;
+    m_warmPoolConfig = std::forward<WarmPoolConfigT>(value);
+  }
+  template <typename WarmPoolConfigT = WarmPoolConfig>
+  Nodegroup& WithWarmPoolConfig(WarmPoolConfigT&& value) {
+    SetWarmPoolConfig(std::forward<WarmPoolConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_nodegroupName;
 
@@ -578,6 +600,8 @@ class Nodegroup {
   LaunchTemplateSpecification m_launchTemplate;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+
+  WarmPoolConfig m_warmPoolConfig;
   bool m_nodegroupNameHasBeenSet = false;
   bool m_nodegroupArnHasBeenSet = false;
   bool m_clusterNameHasBeenSet = false;
@@ -602,6 +626,7 @@ class Nodegroup {
   bool m_nodeRepairConfigHasBeenSet = false;
   bool m_launchTemplateHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_warmPoolConfigHasBeenSet = false;
 };
 
 }  // namespace Model

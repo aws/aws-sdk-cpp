@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
+#include <aws/datazone/model/Configuration.h>
 #include <aws/datazone/model/ConnectionPropertiesOutput.h>
 #include <aws/datazone/model/ConnectionScope.h>
 #include <aws/datazone/model/ConnectionType.h>
@@ -45,6 +46,29 @@ class CreateConnectionResult {
   template <typename ConnectionIdT = Aws::String>
   CreateConnectionResult& WithConnectionId(ConnectionIdT&& value) {
     SetConnectionId(std::forward<ConnectionIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configurations of the connection.</p>
+   */
+  inline const Aws::Vector<Configuration>& GetConfigurations() const { return m_configurations; }
+  template <typename ConfigurationsT = Aws::Vector<Configuration>>
+  void SetConfigurations(ConfigurationsT&& value) {
+    m_configurationsHasBeenSet = true;
+    m_configurations = std::forward<ConfigurationsT>(value);
+  }
+  template <typename ConfigurationsT = Aws::Vector<Configuration>>
+  CreateConnectionResult& WithConfigurations(ConfigurationsT&& value) {
+    SetConfigurations(std::forward<ConfigurationsT>(value));
+    return *this;
+  }
+  template <typename ConfigurationsT = Configuration>
+  CreateConnectionResult& AddConfigurations(ConfigurationsT&& value) {
+    m_configurationsHasBeenSet = true;
+    m_configurations.emplace_back(std::forward<ConfigurationsT>(value));
     return *this;
   }
   ///@}
@@ -240,6 +264,8 @@ class CreateConnectionResult {
  private:
   Aws::String m_connectionId;
 
+  Aws::Vector<Configuration> m_configurations;
+
   Aws::String m_description;
 
   Aws::String m_domainId;
@@ -263,6 +289,7 @@ class CreateConnectionResult {
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_connectionIdHasBeenSet = false;
+  bool m_configurationsHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_domainIdHasBeenSet = false;
   bool m_domainUnitIdHasBeenSet = false;

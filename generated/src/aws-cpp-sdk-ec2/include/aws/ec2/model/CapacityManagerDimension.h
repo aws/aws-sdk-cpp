@@ -7,7 +7,9 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/CapacityManagerTagDimension.h>
 #include <aws/ec2/model/CapacityTenancy.h>
 #include <aws/ec2/model/ReservationEndDateType.h>
 #include <aws/ec2/model/ReservationState.h>
@@ -91,6 +93,26 @@ class CapacityManagerDimension {
   template <typename AccountIdT = Aws::String>
   CapacityManagerDimension& WithAccountId(AccountIdT&& value) {
     SetAccountId(std::forward<AccountIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The name of the Amazon Web Services account that owns the capacity resource.
+   * This dimension is only available when Organizations access is enabled for
+   * Capacity Manager. </p>
+   */
+  inline const Aws::String& GetAccountName() const { return m_accountName; }
+  inline bool AccountNameHasBeenSet() const { return m_accountNameHasBeenSet; }
+  template <typename AccountNameT = Aws::String>
+  void SetAccountName(AccountNameT&& value) {
+    m_accountNameHasBeenSet = true;
+    m_accountName = std::forward<AccountNameT>(value);
+  }
+  template <typename AccountNameT = Aws::String>
+  CapacityManagerDimension& WithAccountName(AccountNameT&& value) {
+    SetAccountName(std::forward<AccountNameT>(value));
     return *this;
   }
   ///@}
@@ -352,12 +374,40 @@ class CapacityManagerDimension {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The tags associated with the capacity resource, represented as key-value
+   * pairs. Only tags that have been activated for monitoring via
+   * <code>UpdateCapacityManagerMonitoredTagKeys</code> are included. </p>
+   */
+  inline const Aws::Vector<CapacityManagerTagDimension>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Vector<CapacityManagerTagDimension>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Vector<CapacityManagerTagDimension>>
+  CapacityManagerDimension& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsT = CapacityManagerTagDimension>
+  CapacityManagerDimension& AddTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace_back(std::forward<TagsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_resourceRegion;
 
   Aws::String m_availabilityZoneId;
 
   Aws::String m_accountId;
+
+  Aws::String m_accountName;
 
   Aws::String m_instanceFamily;
 
@@ -386,9 +436,12 @@ class CapacityManagerDimension {
   Aws::String m_reservationInstanceMatchCriteria;
 
   Aws::String m_reservationUnusedFinancialOwner;
+
+  Aws::Vector<CapacityManagerTagDimension> m_tags;
   bool m_resourceRegionHasBeenSet = false;
   bool m_availabilityZoneIdHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
+  bool m_accountNameHasBeenSet = false;
   bool m_instanceFamilyHasBeenSet = false;
   bool m_instanceTypeHasBeenSet = false;
   bool m_instancePlatformHasBeenSet = false;
@@ -403,6 +456,7 @@ class CapacityManagerDimension {
   bool m_reservationStateHasBeenSet = false;
   bool m_reservationInstanceMatchCriteriaHasBeenSet = false;
   bool m_reservationUnusedFinancialOwnerHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
 };
 
 }  // namespace Model

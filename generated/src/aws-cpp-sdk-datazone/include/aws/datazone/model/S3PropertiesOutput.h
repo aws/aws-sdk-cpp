@@ -72,6 +72,22 @@ class S3PropertiesOutput {
 
   ///@{
   /**
+   * <p>Specifies whether to register the Amazon S3 Access Grant location.</p>
+   */
+  inline bool GetRegisterS3AccessGrantLocation() const { return m_registerS3AccessGrantLocation; }
+  inline bool RegisterS3AccessGrantLocationHasBeenSet() const { return m_registerS3AccessGrantLocationHasBeenSet; }
+  inline void SetRegisterS3AccessGrantLocation(bool value) {
+    m_registerS3AccessGrantLocationHasBeenSet = true;
+    m_registerS3AccessGrantLocation = value;
+  }
+  inline S3PropertiesOutput& WithRegisterS3AccessGrantLocation(bool value) {
+    SetRegisterS3AccessGrantLocation(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The status of the Amazon S3 connection.</p>
    */
   inline ConnectionStatus GetStatus() const { return m_status; }
@@ -108,11 +124,14 @@ class S3PropertiesOutput {
 
   Aws::String m_s3AccessGrantLocationId;
 
+  bool m_registerS3AccessGrantLocation{false};
+
   ConnectionStatus m_status{ConnectionStatus::NOT_SET};
 
   Aws::String m_errorMessage;
   bool m_s3UriHasBeenSet = false;
   bool m_s3AccessGrantLocationIdHasBeenSet = false;
+  bool m_registerS3AccessGrantLocationHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };

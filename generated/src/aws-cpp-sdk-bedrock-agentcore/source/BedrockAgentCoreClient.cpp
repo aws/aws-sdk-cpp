@@ -26,6 +26,7 @@
 #include <aws/bedrock-agentcore/model/GetWorkloadAccessTokenRequest.h>
 #include <aws/bedrock-agentcore/model/InvokeAgentRuntimeCommandRequest.h>
 #include <aws/bedrock-agentcore/model/InvokeAgentRuntimeRequest.h>
+#include <aws/bedrock-agentcore/model/InvokeBrowserRequest.h>
 #include <aws/bedrock-agentcore/model/InvokeCodeInterpreterRequest.h>
 #include <aws/bedrock-agentcore/model/ListActorsRequest.h>
 #include <aws/bedrock-agentcore/model/ListBrowserSessionsRequest.h>
@@ -657,6 +658,29 @@ InvokeAgentRuntimeCommandOutcome BedrockAgentCoreClient::InvokeAgentRuntimeComma
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+InvokeBrowserOutcome BedrockAgentCoreClient::InvokeBrowser(const InvokeBrowserRequest& request) const {
+  if (!request.BrowserIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("InvokeBrowser", "Required field: BrowserIdentifier, is not set");
+    return InvokeBrowserOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(
+        BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BrowserIdentifier]", false));
+  }
+  if (!request.SessionIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("InvokeBrowser", "Required field: SessionId, is not set");
+    return InvokeBrowserOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(
+        BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SessionId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/browsers/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBrowserIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/sessions/invoke");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? InvokeBrowserOutcome(result.GetResultWithOwnership()) : InvokeBrowserOutcome(std::move(result.GetError()));
 }
 
 InvokeCodeInterpreterOutcome BedrockAgentCoreClient::InvokeCodeInterpreter(InvokeCodeInterpreterRequest& request) const {

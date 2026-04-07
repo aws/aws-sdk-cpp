@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rtbfabric/RTBFabricRequest.h>
 #include <aws/rtbfabric/RTBFabric_EXPORTS.h>
+#include <aws/rtbfabric/model/ListenerConfig.h>
 #include <aws/rtbfabric/model/ManagedEndpointConfiguration.h>
 #include <aws/rtbfabric/model/Protocol.h>
 #include <aws/rtbfabric/model/TrustStoreConfiguration.h>
@@ -78,6 +79,24 @@ class UpdateResponderGatewayRequest : public RTBFabricRequest {
   }
   inline UpdateResponderGatewayRequest& WithProtocol(Protocol value) {
     SetProtocol(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The listener configuration for the responder gateway.</p>
+   */
+  inline const ListenerConfig& GetListenerConfig() const { return m_listenerConfig; }
+  inline bool ListenerConfigHasBeenSet() const { return m_listenerConfigHasBeenSet; }
+  template <typename ListenerConfigT = ListenerConfig>
+  void SetListenerConfig(ListenerConfigT&& value) {
+    m_listenerConfigHasBeenSet = true;
+    m_listenerConfig = std::forward<ListenerConfigT>(value);
+  }
+  template <typename ListenerConfigT = ListenerConfig>
+  UpdateResponderGatewayRequest& WithListenerConfig(ListenerConfigT&& value) {
+    SetListenerConfig(std::forward<ListenerConfigT>(value));
     return *this;
   }
   ///@}
@@ -178,6 +197,8 @@ class UpdateResponderGatewayRequest : public RTBFabricRequest {
 
   Protocol m_protocol{Protocol::NOT_SET};
 
+  ListenerConfig m_listenerConfig;
+
   TrustStoreConfiguration m_trustStoreConfiguration;
 
   ManagedEndpointConfiguration m_managedEndpointConfiguration;
@@ -190,6 +211,7 @@ class UpdateResponderGatewayRequest : public RTBFabricRequest {
   bool m_domainNameHasBeenSet = false;
   bool m_portHasBeenSet = false;
   bool m_protocolHasBeenSet = false;
+  bool m_listenerConfigHasBeenSet = false;
   bool m_trustStoreConfigurationHasBeenSet = false;
   bool m_managedEndpointConfigurationHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;

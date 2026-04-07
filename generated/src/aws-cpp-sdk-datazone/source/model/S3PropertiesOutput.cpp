@@ -26,6 +26,10 @@ S3PropertiesOutput& S3PropertiesOutput::operator=(JsonView jsonValue) {
     m_s3AccessGrantLocationId = jsonValue.GetString("s3AccessGrantLocationId");
     m_s3AccessGrantLocationIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("registerS3AccessGrantLocation")) {
+    m_registerS3AccessGrantLocation = jsonValue.GetBool("registerS3AccessGrantLocation");
+    m_registerS3AccessGrantLocationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("status")) {
     m_status = ConnectionStatusMapper::GetConnectionStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
@@ -46,6 +50,10 @@ JsonValue S3PropertiesOutput::Jsonize() const {
 
   if (m_s3AccessGrantLocationIdHasBeenSet) {
     payload.WithString("s3AccessGrantLocationId", m_s3AccessGrantLocationId);
+  }
+
+  if (m_registerS3AccessGrantLocationHasBeenSet) {
+    payload.WithBool("registerS3AccessGrantLocation", m_registerS3AccessGrantLocation);
   }
 
   if (m_statusHasBeenSet) {

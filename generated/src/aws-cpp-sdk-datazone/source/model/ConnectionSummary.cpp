@@ -18,6 +18,13 @@ namespace Model {
 ConnectionSummary::ConnectionSummary(JsonView jsonValue) { *this = jsonValue; }
 
 ConnectionSummary& ConnectionSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("configurations")) {
+    Aws::Utils::Array<JsonView> configurationsJsonList = jsonValue.GetArray("configurations");
+    for (unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex) {
+      m_configurations.push_back(configurationsJsonList[configurationsIndex].AsObject());
+    }
+    m_configurationsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("connectionId")) {
     m_connectionId = jsonValue.GetString("connectionId");
     m_connectionIdHasBeenSet = true;
@@ -66,6 +73,14 @@ ConnectionSummary& ConnectionSummary::operator=(JsonView jsonValue) {
 
 JsonValue ConnectionSummary::Jsonize() const {
   JsonValue payload;
+
+  if (m_configurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> configurationsJsonList(m_configurations.size());
+    for (unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex) {
+      configurationsJsonList[configurationsIndex].AsObject(m_configurations[configurationsIndex].Jsonize());
+    }
+    payload.WithArray("configurations", std::move(configurationsJsonList));
+  }
 
   if (m_connectionIdHasBeenSet) {
     payload.WithString("connectionId", m_connectionId);

@@ -5,9 +5,11 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datazone/DataZoneRequest.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/model/AwsLocation.h>
+#include <aws/datazone/model/Configuration.h>
 #include <aws/datazone/model/ConnectionPropertiesPatch.h>
 
 #include <utility>
@@ -29,6 +31,30 @@ class UpdateConnectionRequest : public DataZoneRequest {
   inline virtual const char* GetServiceRequestName() const override { return "UpdateConnection"; }
 
   AWS_DATAZONE_API Aws::String SerializePayload() const override;
+
+  ///@{
+  /**
+   * <p>The configurations of the connection.</p>
+   */
+  inline const Aws::Vector<Configuration>& GetConfigurations() const { return m_configurations; }
+  inline bool ConfigurationsHasBeenSet() const { return m_configurationsHasBeenSet; }
+  template <typename ConfigurationsT = Aws::Vector<Configuration>>
+  void SetConfigurations(ConfigurationsT&& value) {
+    m_configurationsHasBeenSet = true;
+    m_configurations = std::forward<ConfigurationsT>(value);
+  }
+  template <typename ConfigurationsT = Aws::Vector<Configuration>>
+  UpdateConnectionRequest& WithConfigurations(ConfigurationsT&& value) {
+    SetConfigurations(std::forward<ConfigurationsT>(value));
+    return *this;
+  }
+  template <typename ConfigurationsT = Configuration>
+  UpdateConnectionRequest& AddConfigurations(ConfigurationsT&& value) {
+    m_configurationsHasBeenSet = true;
+    m_configurations.emplace_back(std::forward<ConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -120,6 +146,8 @@ class UpdateConnectionRequest : public DataZoneRequest {
   }
   ///@}
  private:
+  Aws::Vector<Configuration> m_configurations;
+
   Aws::String m_domainIdentifier;
 
   Aws::String m_identifier;
@@ -129,6 +157,7 @@ class UpdateConnectionRequest : public DataZoneRequest {
   AwsLocation m_awsLocation;
 
   ConnectionPropertiesPatch m_props;
+  bool m_configurationsHasBeenSet = false;
   bool m_domainIdentifierHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

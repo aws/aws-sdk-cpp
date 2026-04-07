@@ -9,6 +9,7 @@
 #include <aws/connect/model/HierarchyGroups.h>
 #include <aws/connect/model/ParticipantCapabilities.h>
 #include <aws/connect/model/StateTransition.h>
+#include <aws/connect/model/VoiceEnhancementMode.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -276,6 +277,24 @@ class AgentInfo {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The voice enhancement mode used by the agent as the call is ending. Valid
+   * values: VOICE_ISOLATION | NOISE_SUPPRESSION | NONE. A value of null indicates
+   * this mode has not yet been set for this user.</p>
+   */
+  inline VoiceEnhancementMode GetVoiceEnhancementMode() const { return m_voiceEnhancementMode; }
+  inline bool VoiceEnhancementModeHasBeenSet() const { return m_voiceEnhancementModeHasBeenSet; }
+  inline void SetVoiceEnhancementMode(VoiceEnhancementMode value) {
+    m_voiceEnhancementModeHasBeenSet = true;
+    m_voiceEnhancementMode = value;
+  }
+  inline AgentInfo& WithVoiceEnhancementMode(VoiceEnhancementMode value) {
+    SetVoiceEnhancementMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -302,6 +321,8 @@ class AgentInfo {
   int m_agentInitiatedHoldDuration{0};
 
   Aws::Vector<StateTransition> m_stateTransitions;
+
+  VoiceEnhancementMode m_voiceEnhancementMode{VoiceEnhancementMode::NOT_SET};
   bool m_idHasBeenSet = false;
   bool m_acceptedByAgentTimestampHasBeenSet = false;
   bool m_previewEndTimestampHasBeenSet = false;
@@ -315,6 +336,7 @@ class AgentInfo {
   bool m_afterContactWorkEndTimestampHasBeenSet = false;
   bool m_agentInitiatedHoldDurationHasBeenSet = false;
   bool m_stateTransitionsHasBeenSet = false;
+  bool m_voiceEnhancementModeHasBeenSet = false;
 };
 
 }  // namespace Model

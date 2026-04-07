@@ -310,6 +310,9 @@
 #include <aws/lambda/model/Runtime.h>
 #include <aws/lambda/model/RuntimeVersionConfig.h>
 #include <aws/lambda/model/RuntimeVersionError.h>
+#include <aws/lambda/model/S3FilesMountConnectivityException.h>
+#include <aws/lambda/model/S3FilesMountFailureException.h>
+#include <aws/lambda/model/S3FilesMountTimeoutException.h>
 #include <aws/lambda/model/ScalingConfig.h>
 #include <aws/lambda/model/SchemaRegistryEventRecordFormat.h>
 #include <aws/lambda/model/SelfManagedEventSource.h>

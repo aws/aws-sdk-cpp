@@ -23,6 +23,14 @@ Aws::String CreateConnectionRequest::SerializePayload() const {
     payload.WithString("clientToken", m_clientToken);
   }
 
+  if (m_configurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> configurationsJsonList(m_configurations.size());
+    for (unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex) {
+      configurationsJsonList[configurationsIndex].AsObject(m_configurations[configurationsIndex].Jsonize());
+    }
+    payload.WithArray("configurations", std::move(configurationsJsonList));
+  }
+
   if (m_descriptionHasBeenSet) {
     payload.WithString("description", m_description);
   }

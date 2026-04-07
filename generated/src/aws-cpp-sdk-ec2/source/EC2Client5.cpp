@@ -51,6 +51,7 @@
 #include <aws/ec2/model/GetCapacityManagerAttributesRequest.h>
 #include <aws/ec2/model/GetCapacityManagerMetricDataRequest.h>
 #include <aws/ec2/model/GetCapacityManagerMetricDimensionsRequest.h>
+#include <aws/ec2/model/GetCapacityManagerMonitoredTagKeysRequest.h>
 #include <aws/ec2/model/GetCapacityReservationUsageRequest.h>
 #include <aws/ec2/model/GetCoipPoolUsageRequest.h>
 #include <aws/ec2/model/GetConsoleOutputRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/ec2/model/ImportVolumeRequest.h>
 #include <aws/ec2/model/ListImagesInRecycleBinRequest.h>
 #include <aws/ec2/model/ListSnapshotsInRecycleBinRequest.h>
-#include <aws/ec2/model/ListVolumesInRecycleBinRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -325,6 +325,13 @@ GetCapacityManagerMetricDimensionsOutcome EC2Client::GetCapacityManagerMetricDim
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetCapacityManagerMetricDimensionsOutcome(result.GetResultWithOwnership())
                             : GetCapacityManagerMetricDimensionsOutcome(std::move(result.GetError()));
+}
+
+GetCapacityManagerMonitoredTagKeysOutcome EC2Client::GetCapacityManagerMonitoredTagKeys(
+    const GetCapacityManagerMonitoredTagKeysRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCapacityManagerMonitoredTagKeysOutcome(result.GetResultWithOwnership())
+                            : GetCapacityManagerMonitoredTagKeysOutcome(std::move(result.GetError()));
 }
 
 GetCapacityReservationUsageOutcome EC2Client::GetCapacityReservationUsage(const GetCapacityReservationUsageRequest& request) const {
@@ -758,10 +765,4 @@ ListSnapshotsInRecycleBinOutcome EC2Client::ListSnapshotsInRecycleBin(const List
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListSnapshotsInRecycleBinOutcome(result.GetResultWithOwnership())
                             : ListSnapshotsInRecycleBinOutcome(std::move(result.GetError()));
-}
-
-ListVolumesInRecycleBinOutcome EC2Client::ListVolumesInRecycleBin(const ListVolumesInRecycleBinRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListVolumesInRecycleBinOutcome(result.GetResultWithOwnership())
-                            : ListVolumesInRecycleBinOutcome(std::move(result.GetError()));
 }

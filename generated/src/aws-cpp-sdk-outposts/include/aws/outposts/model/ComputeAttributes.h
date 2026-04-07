@@ -60,7 +60,9 @@ class ComputeAttributes {
    * Existing compute resources on the asset are not affected.</p> </li> <li>
    * <p>RETIRING - The underlying hardware for the asset is degraded. Capacity for
    * new compute resources is reduced. Amazon Web Services sends notifications for
-   * resources that must be stopped before the asset can be replaced.</p> </li> </ul>
+   * resources that must be stopped before the asset can be replaced.</p> </li> <li>
+   * <p>INSTALLING - The asset is being installed and can't yet provide capacity for
+   * new compute resources.</p> </li> </ul>
    */
   inline ComputeAssetState GetState() const { return m_state; }
   inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }

@@ -15,6 +15,7 @@ enum class GroupBy {
   resource_region,
   availability_zone_id,
   account_id,
+  account_name,
   instance_family,
   instance_type,
   instance_platform,

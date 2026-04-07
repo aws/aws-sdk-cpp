@@ -51,7 +51,12 @@ enum class UpdateParamType {
   DeletionProtection,
   NodeRepairConfig,
   UpdatedTier,
-  PreviousTier
+  PreviousTier,
+  WarmPoolEnabled,
+  WarmPoolMaxGroupPreparedCapacity,
+  WarmPoolMinSize,
+  WarmPoolState,
+  WarmPoolReuseOnScaleIn
 };
 
 namespace UpdateParamTypeMapper {

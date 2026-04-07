@@ -9,8 +9,10 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rtbfabric/RTBFabric_EXPORTS.h>
+#include <aws/rtbfabric/model/ConnectivityType.h>
 #include <aws/rtbfabric/model/LinkAttributes.h>
 #include <aws/rtbfabric/model/LinkDirection.h>
+#include <aws/rtbfabric/model/LinkLogSettings.h>
 #include <aws/rtbfabric/model/LinkStatus.h>
 #include <aws/rtbfabric/model/ModuleConfiguration.h>
 
@@ -209,6 +211,38 @@ class ListLinksResponseStructure {
   ///@}
 
   ///@{
+
+  inline const LinkLogSettings& GetLogSettings() const { return m_logSettings; }
+  inline bool LogSettingsHasBeenSet() const { return m_logSettingsHasBeenSet; }
+  template <typename LogSettingsT = LinkLogSettings>
+  void SetLogSettings(LogSettingsT&& value) {
+    m_logSettingsHasBeenSet = true;
+    m_logSettings = std::forward<LogSettingsT>(value);
+  }
+  template <typename LogSettingsT = LinkLogSettings>
+  ListLinksResponseStructure& WithLogSettings(LogSettingsT&& value) {
+    SetLogSettings(std::forward<LogSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The connectivity type of the link.</p>
+   */
+  inline ConnectivityType GetConnectivityType() const { return m_connectivityType; }
+  inline bool ConnectivityTypeHasBeenSet() const { return m_connectivityTypeHasBeenSet; }
+  inline void SetConnectivityType(ConnectivityType value) {
+    m_connectivityTypeHasBeenSet = true;
+    m_connectivityType = value;
+  }
+  inline ListLinksResponseStructure& WithConnectivityType(ConnectivityType value) {
+    SetConnectivityType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
    * <p>The unique identifier of the link.</p>
    */
@@ -250,6 +284,24 @@ class ListLinksResponseStructure {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The public endpoint of the outbound link.</p>
+   */
+  inline const Aws::String& GetPublicEndpoint() const { return m_publicEndpoint; }
+  inline bool PublicEndpointHasBeenSet() const { return m_publicEndpointHasBeenSet; }
+  template <typename PublicEndpointT = Aws::String>
+  void SetPublicEndpoint(PublicEndpointT&& value) {
+    m_publicEndpointHasBeenSet = true;
+    m_publicEndpoint = std::forward<PublicEndpointT>(value);
+  }
+  template <typename PublicEndpointT = Aws::String>
+  ListLinksResponseStructure& WithPublicEndpoint(PublicEndpointT&& value) {
+    SetPublicEndpoint(std::forward<PublicEndpointT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_gatewayId;
 
@@ -269,9 +321,15 @@ class ListLinksResponseStructure {
 
   LinkAttributes m_attributes;
 
+  LinkLogSettings m_logSettings;
+
+  ConnectivityType m_connectivityType{ConnectivityType::NOT_SET};
+
   Aws::String m_linkId;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+
+  Aws::String m_publicEndpoint;
   bool m_gatewayIdHasBeenSet = false;
   bool m_peerGatewayIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
@@ -281,8 +339,11 @@ class ListLinksResponseStructure {
   bool m_flowModulesHasBeenSet = false;
   bool m_pendingFlowModulesHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
+  bool m_logSettingsHasBeenSet = false;
+  bool m_connectivityTypeHasBeenSet = false;
   bool m_linkIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_publicEndpointHasBeenSet = false;
 };
 
 }  // namespace Model

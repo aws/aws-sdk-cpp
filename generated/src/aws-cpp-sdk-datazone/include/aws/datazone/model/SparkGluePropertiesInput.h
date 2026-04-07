@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/model/SparkGlueArgs.h>
 
@@ -53,7 +54,8 @@ class SparkGluePropertiesInput {
   ///@{
   /**
    * <p>The Amazon Web Services Glue connection name in the Spark Amazon Web Services
-   * Glue properties.</p>
+   * Glue properties. Specify either <code>glueConnectionName</code> or
+   * <code>glueConnectionNames</code>, but not both.</p>
    */
   inline const Aws::String& GetGlueConnectionName() const { return m_glueConnectionName; }
   inline bool GlueConnectionNameHasBeenSet() const { return m_glueConnectionNameHasBeenSet; }
@@ -65,6 +67,32 @@ class SparkGluePropertiesInput {
   template <typename GlueConnectionNameT = Aws::String>
   SparkGluePropertiesInput& WithGlueConnectionName(GlueConnectionNameT&& value) {
     SetGlueConnectionName(std::forward<GlueConnectionNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services Glue connection names in the Spark Amazon Web
+   * Services Glue properties. Specify either <code>glueConnectionName</code> or
+   * <code>glueConnectionNames</code>, but not both.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetGlueConnectionNames() const { return m_glueConnectionNames; }
+  inline bool GlueConnectionNamesHasBeenSet() const { return m_glueConnectionNamesHasBeenSet; }
+  template <typename GlueConnectionNamesT = Aws::Vector<Aws::String>>
+  void SetGlueConnectionNames(GlueConnectionNamesT&& value) {
+    m_glueConnectionNamesHasBeenSet = true;
+    m_glueConnectionNames = std::forward<GlueConnectionNamesT>(value);
+  }
+  template <typename GlueConnectionNamesT = Aws::Vector<Aws::String>>
+  SparkGluePropertiesInput& WithGlueConnectionNames(GlueConnectionNamesT&& value) {
+    SetGlueConnectionNames(std::forward<GlueConnectionNamesT>(value));
+    return *this;
+  }
+  template <typename GlueConnectionNamesT = Aws::String>
+  SparkGluePropertiesInput& AddGlueConnectionNames(GlueConnectionNamesT&& value) {
+    m_glueConnectionNamesHasBeenSet = true;
+    m_glueConnectionNames.emplace_back(std::forward<GlueConnectionNamesT>(value));
     return *this;
   }
   ///@}
@@ -178,6 +206,8 @@ class SparkGluePropertiesInput {
 
   Aws::String m_glueConnectionName;
 
+  Aws::Vector<Aws::String> m_glueConnectionNames;
+
   Aws::String m_glueVersion;
 
   int m_idleTimeout{0};
@@ -191,6 +221,7 @@ class SparkGluePropertiesInput {
   Aws::String m_workerType;
   bool m_additionalArgsHasBeenSet = false;
   bool m_glueConnectionNameHasBeenSet = false;
+  bool m_glueConnectionNamesHasBeenSet = false;
   bool m_glueVersionHasBeenSet = false;
   bool m_idleTimeoutHasBeenSet = false;
   bool m_javaVirtualEnvHasBeenSet = false;

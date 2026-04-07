@@ -129,6 +129,10 @@ Nodegroup& Nodegroup::operator=(JsonView jsonValue) {
     }
     m_tagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("warmPoolConfig")) {
+    m_warmPoolConfig = jsonValue.GetObject("warmPoolConfig");
+    m_warmPoolConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -249,6 +253,10 @@ JsonValue Nodegroup::Jsonize() const {
       tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
     }
     payload.WithObject("tags", std::move(tagsJsonMap));
+  }
+
+  if (m_warmPoolConfigHasBeenSet) {
+    payload.WithObject("warmPoolConfig", m_warmPoolConfig.Jsonize());
   }
 
   return payload;

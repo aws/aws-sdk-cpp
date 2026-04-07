@@ -247,7 +247,10 @@
 #include <aws/ec2/model/CapacityManagerDataExportResponse.h>
 #include <aws/ec2/model/CapacityManagerDataExportStatus.h>
 #include <aws/ec2/model/CapacityManagerDimension.h>
+#include <aws/ec2/model/CapacityManagerMonitoredTagKey.h>
+#include <aws/ec2/model/CapacityManagerMonitoredTagKeyStatus.h>
 #include <aws/ec2/model/CapacityManagerStatus.h>
+#include <aws/ec2/model/CapacityManagerTagDimension.h>
 #include <aws/ec2/model/CapacityReservation.h>
 #include <aws/ec2/model/CapacityReservationBillingRequest.h>
 #include <aws/ec2/model/CapacityReservationBillingRequestStatus.h>
@@ -1446,6 +1449,8 @@
 #include <aws/ec2/model/GetCapacityManagerMetricDataResponse.h>
 #include <aws/ec2/model/GetCapacityManagerMetricDimensionsRequest.h>
 #include <aws/ec2/model/GetCapacityManagerMetricDimensionsResponse.h>
+#include <aws/ec2/model/GetCapacityManagerMonitoredTagKeysRequest.h>
+#include <aws/ec2/model/GetCapacityManagerMonitoredTagKeysResponse.h>
 #include <aws/ec2/model/GetCapacityReservationUsageRequest.h>
 #include <aws/ec2/model/GetCapacityReservationUsageResponse.h>
 #include <aws/ec2/model/GetCoipPoolUsageRequest.h>
@@ -2696,6 +2701,8 @@
 #include <aws/ec2/model/UnsuccessfulInstanceCreditSpecificationItemError.h>
 #include <aws/ec2/model/UnsuccessfulItem.h>
 #include <aws/ec2/model/UnsuccessfulItemError.h>
+#include <aws/ec2/model/UpdateCapacityManagerMonitoredTagKeysRequest.h>
+#include <aws/ec2/model/UpdateCapacityManagerMonitoredTagKeysResponse.h>
 #include <aws/ec2/model/UpdateCapacityManagerOrganizationsAccessRequest.h>
 #include <aws/ec2/model/UpdateCapacityManagerOrganizationsAccessResponse.h>
 #include <aws/ec2/model/UpdateInterruptibleCapacityReservationAllocationRequest.h>

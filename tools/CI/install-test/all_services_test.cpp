@@ -344,6 +344,7 @@
 #include <aws/s3-crt/S3CrtClient.h>
 #include <aws/s3/S3Client.h>
 #include <aws/s3control/S3ControlClient.h>
+#include <aws/s3files/S3FilesClient.h>
 #include <aws/s3outposts/S3OutpostsClient.h>
 #include <aws/s3tables/S3TablesClient.h>
 #include <aws/s3vectors/S3VectorsClient.h>

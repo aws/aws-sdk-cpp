@@ -30,6 +30,14 @@ CreateResponderGatewayResult& CreateResponderGatewayResult::operator=(const Aws:
     m_status = ResponderGatewayStatusMapper::GetResponderGatewayStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("listenerConfig")) {
+    m_listenerConfig = jsonValue.GetObject("listenerConfig");
+    m_listenerConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("externalInboundEndpoint")) {
+    m_externalInboundEndpoint = jsonValue.GetString("externalInboundEndpoint");
+    m_externalInboundEndpointHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -38,6 +38,25 @@ GetOutboundExternalLinkResult& GetOutboundExternalLinkResult::operator=(const Aw
     m_publicEndpoint = jsonValue.GetString("publicEndpoint");
     m_publicEndpointHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("flowModules")) {
+    Aws::Utils::Array<JsonView> flowModulesJsonList = jsonValue.GetArray("flowModules");
+    for (unsigned flowModulesIndex = 0; flowModulesIndex < flowModulesJsonList.GetLength(); ++flowModulesIndex) {
+      m_flowModules.push_back(flowModulesJsonList[flowModulesIndex].AsObject());
+    }
+    m_flowModulesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("pendingFlowModules")) {
+    Aws::Utils::Array<JsonView> pendingFlowModulesJsonList = jsonValue.GetArray("pendingFlowModules");
+    for (unsigned pendingFlowModulesIndex = 0; pendingFlowModulesIndex < pendingFlowModulesJsonList.GetLength();
+         ++pendingFlowModulesIndex) {
+      m_pendingFlowModules.push_back(pendingFlowModulesJsonList[pendingFlowModulesIndex].AsObject());
+    }
+    m_pendingFlowModulesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("attributes")) {
+    m_attributes = jsonValue.GetObject("attributes");
+    m_attributesHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;
@@ -56,6 +75,10 @@ GetOutboundExternalLinkResult& GetOutboundExternalLinkResult::operator=(const Aw
   if (jsonValue.ValueExists("logSettings")) {
     m_logSettings = jsonValue.GetObject("logSettings");
     m_logSettingsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("connectivityType")) {
+    m_connectivityType = ConnectivityTypeMapper::GetConnectivityTypeForName(jsonValue.GetString("connectivityType"));
+    m_connectivityTypeHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -61,6 +61,14 @@ ListLinksResponseStructure& ListLinksResponseStructure::operator=(JsonView jsonV
     m_attributes = jsonValue.GetObject("attributes");
     m_attributesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("logSettings")) {
+    m_logSettings = jsonValue.GetObject("logSettings");
+    m_logSettingsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("connectivityType")) {
+    m_connectivityType = ConnectivityTypeMapper::GetConnectivityTypeForName(jsonValue.GetString("connectivityType"));
+    m_connectivityTypeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("linkId")) {
     m_linkId = jsonValue.GetString("linkId");
     m_linkIdHasBeenSet = true;
@@ -71,6 +79,10 @@ ListLinksResponseStructure& ListLinksResponseStructure::operator=(JsonView jsonV
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("publicEndpoint")) {
+    m_publicEndpoint = jsonValue.GetString("publicEndpoint");
+    m_publicEndpointHasBeenSet = true;
   }
   return *this;
 }
@@ -123,6 +135,14 @@ JsonValue ListLinksResponseStructure::Jsonize() const {
     payload.WithObject("attributes", m_attributes.Jsonize());
   }
 
+  if (m_logSettingsHasBeenSet) {
+    payload.WithObject("logSettings", m_logSettings.Jsonize());
+  }
+
+  if (m_connectivityTypeHasBeenSet) {
+    payload.WithString("connectivityType", ConnectivityTypeMapper::GetNameForConnectivityType(m_connectivityType));
+  }
+
   if (m_linkIdHasBeenSet) {
     payload.WithString("linkId", m_linkId);
   }
@@ -133,6 +153,10 @@ JsonValue ListLinksResponseStructure::Jsonize() const {
       tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
     }
     payload.WithObject("tags", std::move(tagsJsonMap));
+  }
+
+  if (m_publicEndpointHasBeenSet) {
+    payload.WithString("publicEndpoint", m_publicEndpoint);
   }
 
   return payload;

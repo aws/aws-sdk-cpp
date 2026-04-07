@@ -10,6 +10,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rtbfabric/RTBFabricRequest.h>
 #include <aws/rtbfabric/RTBFabric_EXPORTS.h>
+#include <aws/rtbfabric/model/GatewayType.h>
+#include <aws/rtbfabric/model/ListenerConfig.h>
 #include <aws/rtbfabric/model/ManagedEndpointConfiguration.h>
 #include <aws/rtbfabric/model/Protocol.h>
 #include <aws/rtbfabric/model/TrustStoreConfiguration.h>
@@ -151,6 +153,22 @@ class CreateResponderGatewayRequest : public RTBFabricRequest {
   ///@}
 
   ///@{
+
+  inline const ListenerConfig& GetListenerConfig() const { return m_listenerConfig; }
+  inline bool ListenerConfigHasBeenSet() const { return m_listenerConfigHasBeenSet; }
+  template <typename ListenerConfigT = ListenerConfig>
+  void SetListenerConfig(ListenerConfigT&& value) {
+    m_listenerConfigHasBeenSet = true;
+    m_listenerConfig = std::forward<ListenerConfigT>(value);
+  }
+  template <typename ListenerConfigT = ListenerConfig>
+  CreateResponderGatewayRequest& WithListenerConfig(ListenerConfigT&& value) {
+    SetListenerConfig(std::forward<ListenerConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
    * <p>The configuration of the trust store.</p>
    */
@@ -246,6 +264,23 @@ class CreateResponderGatewayRequest : public RTBFabricRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of gateway. Valid values are <code>EXTERNAL</code> or
+   * <code>INTERNAL</code>.</p>
+   */
+  inline GatewayType GetGatewayType() const { return m_gatewayType; }
+  inline bool GatewayTypeHasBeenSet() const { return m_gatewayTypeHasBeenSet; }
+  inline void SetGatewayType(GatewayType value) {
+    m_gatewayTypeHasBeenSet = true;
+    m_gatewayType = value;
+  }
+  inline CreateResponderGatewayRequest& WithGatewayType(GatewayType value) {
+    SetGatewayType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_vpcId;
 
@@ -259,6 +294,8 @@ class CreateResponderGatewayRequest : public RTBFabricRequest {
 
   Protocol m_protocol{Protocol::NOT_SET};
 
+  ListenerConfig m_listenerConfig;
+
   TrustStoreConfiguration m_trustStoreConfiguration;
 
   ManagedEndpointConfiguration m_managedEndpointConfiguration;
@@ -268,17 +305,21 @@ class CreateResponderGatewayRequest : public RTBFabricRequest {
   Aws::String m_description;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+
+  GatewayType m_gatewayType{GatewayType::NOT_SET};
   bool m_vpcIdHasBeenSet = false;
   bool m_subnetIdsHasBeenSet = false;
   bool m_securityGroupIdsHasBeenSet = false;
   bool m_domainNameHasBeenSet = false;
   bool m_portHasBeenSet = false;
   bool m_protocolHasBeenSet = false;
+  bool m_listenerConfigHasBeenSet = false;
   bool m_trustStoreConfigurationHasBeenSet = false;
   bool m_managedEndpointConfigurationHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_gatewayTypeHasBeenSet = false;
 };
 
 }  // namespace Model

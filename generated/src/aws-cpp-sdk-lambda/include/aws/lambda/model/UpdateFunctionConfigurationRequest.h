@@ -363,7 +363,8 @@ class UpdateFunctionConfigurationRequest : public LambdaRequest {
 
   ///@{
   /**
-   * <p>Connection settings for an Amazon EFS file system.</p>
+   * <p>Connection settings for an Amazon EFS file system or an Amazon S3 Files file
+   * system.</p>
    */
   inline const Aws::Vector<FileSystemConfig>& GetFileSystemConfigs() const { return m_fileSystemConfigs; }
   inline bool FileSystemConfigsHasBeenSet() const { return m_fileSystemConfigsHasBeenSet; }

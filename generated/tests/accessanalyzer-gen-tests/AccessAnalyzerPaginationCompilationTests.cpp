@@ -18,7 +18,6 @@
 #include <aws/accessanalyzer/model/ListArchiveRulesPaginationTraits.h>
 #include <aws/accessanalyzer/model/ListAccessPreviewFindingsPaginationTraits.h>
 #include <aws/accessanalyzer/model/ListAnalyzedResourcesPaginationTraits.h>
-#include <aws/accessanalyzer/model/ListPolicyPreviewJobsPaginationTraits.h>
 #include <aws/accessanalyzer/model/ListAccessPreviewsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>

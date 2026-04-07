@@ -101,6 +101,22 @@ class AcceptLinkRequest : public RTBFabricRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The timeout value in milliseconds.</p>
+   */
+  inline long long GetTimeoutInMillis() const { return m_timeoutInMillis; }
+  inline bool TimeoutInMillisHasBeenSet() const { return m_timeoutInMillisHasBeenSet; }
+  inline void SetTimeoutInMillis(long long value) {
+    m_timeoutInMillisHasBeenSet = true;
+    m_timeoutInMillis = value;
+  }
+  inline AcceptLinkRequest& WithTimeoutInMillis(long long value) {
+    SetTimeoutInMillis(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_gatewayId;
 
@@ -109,10 +125,13 @@ class AcceptLinkRequest : public RTBFabricRequest {
   LinkAttributes m_attributes;
 
   LinkLogSettings m_logSettings;
+
+  long long m_timeoutInMillis{0};
   bool m_gatewayIdHasBeenSet = false;
   bool m_linkIdHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
   bool m_logSettingsHasBeenSet = false;
+  bool m_timeoutInMillisHasBeenSet = false;
 };
 
 }  // namespace Model

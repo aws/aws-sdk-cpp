@@ -9,8 +9,10 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rtbfabric/RTBFabric_EXPORTS.h>
+#include <aws/rtbfabric/model/ConnectivityType.h>
 #include <aws/rtbfabric/model/LinkAttributes.h>
 #include <aws/rtbfabric/model/LinkDirection.h>
+#include <aws/rtbfabric/model/LinkLogSettings.h>
 #include <aws/rtbfabric/model/LinkStatus.h>
 #include <aws/rtbfabric/model/ModuleConfiguration.h>
 
@@ -195,6 +197,36 @@ class CreateLinkResult {
   ///@}
 
   ///@{
+
+  inline const LinkLogSettings& GetLogSettings() const { return m_logSettings; }
+  template <typename LogSettingsT = LinkLogSettings>
+  void SetLogSettings(LogSettingsT&& value) {
+    m_logSettingsHasBeenSet = true;
+    m_logSettings = std::forward<LogSettingsT>(value);
+  }
+  template <typename LogSettingsT = LinkLogSettings>
+  CreateLinkResult& WithLogSettings(LogSettingsT&& value) {
+    SetLogSettings(std::forward<LogSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The connectivity type of the link.</p>
+   */
+  inline ConnectivityType GetConnectivityType() const { return m_connectivityType; }
+  inline void SetConnectivityType(ConnectivityType value) {
+    m_connectivityTypeHasBeenSet = true;
+    m_connectivityType = value;
+  }
+  inline CreateLinkResult& WithConnectivityType(ConnectivityType value) {
+    SetConnectivityType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
    * <p>The unique identifier of the link.</p>
    */
@@ -263,6 +295,10 @@ class CreateLinkResult {
 
   LinkAttributes m_attributes;
 
+  LinkLogSettings m_logSettings;
+
+  ConnectivityType m_connectivityType{ConnectivityType::NOT_SET};
+
   Aws::String m_linkId;
 
   Aws::String m_customerProvidedId;
@@ -278,6 +314,8 @@ class CreateLinkResult {
   bool m_flowModulesHasBeenSet = false;
   bool m_pendingFlowModulesHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
+  bool m_logSettingsHasBeenSet = false;
+  bool m_connectivityTypeHasBeenSet = false;
   bool m_linkIdHasBeenSet = false;
   bool m_customerProvidedIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

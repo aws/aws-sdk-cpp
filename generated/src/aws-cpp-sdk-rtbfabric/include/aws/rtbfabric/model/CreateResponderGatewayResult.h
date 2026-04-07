@@ -7,6 +7,7 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rtbfabric/RTBFabric_EXPORTS.h>
+#include <aws/rtbfabric/model/ListenerConfig.h>
 #include <aws/rtbfabric/model/ResponderGatewayStatus.h>
 
 #include <utility>
@@ -61,6 +62,40 @@ class CreateResponderGatewayResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The listener configuration for the responder gateway.</p>
+   */
+  inline const ListenerConfig& GetListenerConfig() const { return m_listenerConfig; }
+  template <typename ListenerConfigT = ListenerConfig>
+  void SetListenerConfig(ListenerConfigT&& value) {
+    m_listenerConfigHasBeenSet = true;
+    m_listenerConfig = std::forward<ListenerConfigT>(value);
+  }
+  template <typename ListenerConfigT = ListenerConfig>
+  CreateResponderGatewayResult& WithListenerConfig(ListenerConfigT&& value) {
+    SetListenerConfig(std::forward<ListenerConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The external inbound endpoint for the responder gateway.</p>
+   */
+  inline const Aws::String& GetExternalInboundEndpoint() const { return m_externalInboundEndpoint; }
+  template <typename ExternalInboundEndpointT = Aws::String>
+  void SetExternalInboundEndpoint(ExternalInboundEndpointT&& value) {
+    m_externalInboundEndpointHasBeenSet = true;
+    m_externalInboundEndpoint = std::forward<ExternalInboundEndpointT>(value);
+  }
+  template <typename ExternalInboundEndpointT = Aws::String>
+  CreateResponderGatewayResult& WithExternalInboundEndpoint(ExternalInboundEndpointT&& value) {
+    SetExternalInboundEndpoint(std::forward<ExternalInboundEndpointT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -81,10 +116,16 @@ class CreateResponderGatewayResult {
 
   ResponderGatewayStatus m_status{ResponderGatewayStatus::NOT_SET};
 
+  ListenerConfig m_listenerConfig;
+
+  Aws::String m_externalInboundEndpoint;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_gatewayIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_listenerConfigHasBeenSet = false;
+  bool m_externalInboundEndpointHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

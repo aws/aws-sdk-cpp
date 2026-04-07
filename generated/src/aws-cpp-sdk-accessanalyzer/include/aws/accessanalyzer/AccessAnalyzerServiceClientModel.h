@@ -20,16 +20,11 @@
 
 /* Service model headers required in AccessAnalyzerClient header */
 #include <aws/accessanalyzer/model/CancelPolicyGenerationResult.h>
-#include <aws/accessanalyzer/model/CancelPolicyPreviewJobResult.h>
 #include <aws/accessanalyzer/model/CheckAccessNotGrantedSdkResult.h>
 #include <aws/accessanalyzer/model/CheckNoNewAccessSdkResult.h>
 #include <aws/accessanalyzer/model/CheckNoPublicAccessSdkResult.h>
 #include <aws/accessanalyzer/model/CreateAccessPreviewResult.h>
 #include <aws/accessanalyzer/model/CreateAnalyzerResult.h>
-#include <aws/accessanalyzer/model/CreatePolicyPreviewConfigurationRequest.h>
-#include <aws/accessanalyzer/model/CreatePolicyPreviewConfigurationResult.h>
-#include <aws/accessanalyzer/model/DeletePolicyPreviewConfigurationRequest.h>
-#include <aws/accessanalyzer/model/DeletePolicyPreviewConfigurationResult.h>
 #include <aws/accessanalyzer/model/GetAccessPreviewResult.h>
 #include <aws/accessanalyzer/model/GetAnalyzedResourceResult.h>
 #include <aws/accessanalyzer/model/GetAnalyzerResult.h>
@@ -39,9 +34,6 @@
 #include <aws/accessanalyzer/model/GetFindingV2Result.h>
 #include <aws/accessanalyzer/model/GetFindingsStatisticsResult.h>
 #include <aws/accessanalyzer/model/GetGeneratedPolicyResult.h>
-#include <aws/accessanalyzer/model/GetPolicyPreviewConfigurationRequest.h>
-#include <aws/accessanalyzer/model/GetPolicyPreviewConfigurationResult.h>
-#include <aws/accessanalyzer/model/GetPolicyPreviewJobResult.h>
 #include <aws/accessanalyzer/model/ListAccessPreviewFindingsResult.h>
 #include <aws/accessanalyzer/model/ListAccessPreviewsResult.h>
 #include <aws/accessanalyzer/model/ListAnalyzedResourcesResult.h>
@@ -52,11 +44,8 @@
 #include <aws/accessanalyzer/model/ListFindingsV2Result.h>
 #include <aws/accessanalyzer/model/ListPolicyGenerationsRequest.h>
 #include <aws/accessanalyzer/model/ListPolicyGenerationsResult.h>
-#include <aws/accessanalyzer/model/ListPolicyPreviewJobsRequest.h>
-#include <aws/accessanalyzer/model/ListPolicyPreviewJobsResult.h>
 #include <aws/accessanalyzer/model/ListTagsForResourceResult.h>
 #include <aws/accessanalyzer/model/StartPolicyGenerationResult.h>
-#include <aws/accessanalyzer/model/StartPolicyPreviewJobResult.h>
 #include <aws/accessanalyzer/model/TagResourceResult.h>
 #include <aws/accessanalyzer/model/UntagResourceResult.h>
 #include <aws/accessanalyzer/model/UpdateAnalyzerResult.h>
@@ -97,17 +86,14 @@ namespace Model {
 /* Service model forward declarations required in AccessAnalyzerClient header */
 class ApplyArchiveRuleRequest;
 class CancelPolicyGenerationRequest;
-class CancelPolicyPreviewJobRequest;
 class CheckAccessNotGrantedRequest;
 class CheckNoNewAccessRequest;
 class CheckNoPublicAccessRequest;
 class CreateAccessPreviewRequest;
 class CreateAnalyzerRequest;
 class CreateArchiveRuleRequest;
-class CreatePolicyPreviewConfigurationRequest;
 class DeleteAnalyzerRequest;
 class DeleteArchiveRuleRequest;
-class DeletePolicyPreviewConfigurationRequest;
 class GenerateFindingRecommendationRequest;
 class GetAccessPreviewRequest;
 class GetAnalyzedResourceRequest;
@@ -118,8 +104,6 @@ class GetFindingRecommendationRequest;
 class GetFindingV2Request;
 class GetFindingsStatisticsRequest;
 class GetGeneratedPolicyRequest;
-class GetPolicyPreviewConfigurationRequest;
-class GetPolicyPreviewJobRequest;
 class ListAccessPreviewFindingsRequest;
 class ListAccessPreviewsRequest;
 class ListAnalyzedResourcesRequest;
@@ -128,10 +112,8 @@ class ListArchiveRulesRequest;
 class ListFindingsRequest;
 class ListFindingsV2Request;
 class ListPolicyGenerationsRequest;
-class ListPolicyPreviewJobsRequest;
 class ListTagsForResourceRequest;
 class StartPolicyGenerationRequest;
-class StartPolicyPreviewJobRequest;
 class StartResourceScanRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
@@ -144,17 +126,14 @@ class ValidatePolicyRequest;
 /* Service model Outcome class definitions */
 typedef Aws::Utils::Outcome<Aws::NoResult, AccessAnalyzerError> ApplyArchiveRuleOutcome;
 typedef Aws::Utils::Outcome<CancelPolicyGenerationResult, AccessAnalyzerError> CancelPolicyGenerationOutcome;
-typedef Aws::Utils::Outcome<CancelPolicyPreviewJobResult, AccessAnalyzerError> CancelPolicyPreviewJobOutcome;
 typedef Aws::Utils::Outcome<CheckAccessNotGrantedSdkResult, AccessAnalyzerError> CheckAccessNotGrantedOutcome;
 typedef Aws::Utils::Outcome<CheckNoNewAccessSdkResult, AccessAnalyzerError> CheckNoNewAccessOutcome;
 typedef Aws::Utils::Outcome<CheckNoPublicAccessSdkResult, AccessAnalyzerError> CheckNoPublicAccessOutcome;
 typedef Aws::Utils::Outcome<CreateAccessPreviewResult, AccessAnalyzerError> CreateAccessPreviewOutcome;
 typedef Aws::Utils::Outcome<CreateAnalyzerResult, AccessAnalyzerError> CreateAnalyzerOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, AccessAnalyzerError> CreateArchiveRuleOutcome;
-typedef Aws::Utils::Outcome<CreatePolicyPreviewConfigurationResult, AccessAnalyzerError> CreatePolicyPreviewConfigurationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, AccessAnalyzerError> DeleteAnalyzerOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, AccessAnalyzerError> DeleteArchiveRuleOutcome;
-typedef Aws::Utils::Outcome<DeletePolicyPreviewConfigurationResult, AccessAnalyzerError> DeletePolicyPreviewConfigurationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, AccessAnalyzerError> GenerateFindingRecommendationOutcome;
 typedef Aws::Utils::Outcome<GetAccessPreviewResult, AccessAnalyzerError> GetAccessPreviewOutcome;
 typedef Aws::Utils::Outcome<GetAnalyzedResourceResult, AccessAnalyzerError> GetAnalyzedResourceOutcome;
@@ -165,8 +144,6 @@ typedef Aws::Utils::Outcome<GetFindingRecommendationResult, AccessAnalyzerError>
 typedef Aws::Utils::Outcome<GetFindingV2Result, AccessAnalyzerError> GetFindingV2Outcome;
 typedef Aws::Utils::Outcome<GetFindingsStatisticsResult, AccessAnalyzerError> GetFindingsStatisticsOutcome;
 typedef Aws::Utils::Outcome<GetGeneratedPolicyResult, AccessAnalyzerError> GetGeneratedPolicyOutcome;
-typedef Aws::Utils::Outcome<GetPolicyPreviewConfigurationResult, AccessAnalyzerError> GetPolicyPreviewConfigurationOutcome;
-typedef Aws::Utils::Outcome<GetPolicyPreviewJobResult, AccessAnalyzerError> GetPolicyPreviewJobOutcome;
 typedef Aws::Utils::Outcome<ListAccessPreviewFindingsResult, AccessAnalyzerError> ListAccessPreviewFindingsOutcome;
 typedef Aws::Utils::Outcome<ListAccessPreviewsResult, AccessAnalyzerError> ListAccessPreviewsOutcome;
 typedef Aws::Utils::Outcome<ListAnalyzedResourcesResult, AccessAnalyzerError> ListAnalyzedResourcesOutcome;
@@ -175,10 +152,8 @@ typedef Aws::Utils::Outcome<ListArchiveRulesResult, AccessAnalyzerError> ListArc
 typedef Aws::Utils::Outcome<ListFindingsResult, AccessAnalyzerError> ListFindingsOutcome;
 typedef Aws::Utils::Outcome<ListFindingsV2Result, AccessAnalyzerError> ListFindingsV2Outcome;
 typedef Aws::Utils::Outcome<ListPolicyGenerationsResult, AccessAnalyzerError> ListPolicyGenerationsOutcome;
-typedef Aws::Utils::Outcome<ListPolicyPreviewJobsResult, AccessAnalyzerError> ListPolicyPreviewJobsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, AccessAnalyzerError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<StartPolicyGenerationResult, AccessAnalyzerError> StartPolicyGenerationOutcome;
-typedef Aws::Utils::Outcome<StartPolicyPreviewJobResult, AccessAnalyzerError> StartPolicyPreviewJobOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, AccessAnalyzerError> StartResourceScanOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, AccessAnalyzerError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, AccessAnalyzerError> UntagResourceOutcome;
@@ -191,17 +166,14 @@ typedef Aws::Utils::Outcome<ValidatePolicyResult, AccessAnalyzerError> ValidateP
 /* Service model Outcome callable definitions */
 typedef std::future<ApplyArchiveRuleOutcome> ApplyArchiveRuleOutcomeCallable;
 typedef std::future<CancelPolicyGenerationOutcome> CancelPolicyGenerationOutcomeCallable;
-typedef std::future<CancelPolicyPreviewJobOutcome> CancelPolicyPreviewJobOutcomeCallable;
 typedef std::future<CheckAccessNotGrantedOutcome> CheckAccessNotGrantedOutcomeCallable;
 typedef std::future<CheckNoNewAccessOutcome> CheckNoNewAccessOutcomeCallable;
 typedef std::future<CheckNoPublicAccessOutcome> CheckNoPublicAccessOutcomeCallable;
 typedef std::future<CreateAccessPreviewOutcome> CreateAccessPreviewOutcomeCallable;
 typedef std::future<CreateAnalyzerOutcome> CreateAnalyzerOutcomeCallable;
 typedef std::future<CreateArchiveRuleOutcome> CreateArchiveRuleOutcomeCallable;
-typedef std::future<CreatePolicyPreviewConfigurationOutcome> CreatePolicyPreviewConfigurationOutcomeCallable;
 typedef std::future<DeleteAnalyzerOutcome> DeleteAnalyzerOutcomeCallable;
 typedef std::future<DeleteArchiveRuleOutcome> DeleteArchiveRuleOutcomeCallable;
-typedef std::future<DeletePolicyPreviewConfigurationOutcome> DeletePolicyPreviewConfigurationOutcomeCallable;
 typedef std::future<GenerateFindingRecommendationOutcome> GenerateFindingRecommendationOutcomeCallable;
 typedef std::future<GetAccessPreviewOutcome> GetAccessPreviewOutcomeCallable;
 typedef std::future<GetAnalyzedResourceOutcome> GetAnalyzedResourceOutcomeCallable;
@@ -212,8 +184,6 @@ typedef std::future<GetFindingRecommendationOutcome> GetFindingRecommendationOut
 typedef std::future<GetFindingV2Outcome> GetFindingV2OutcomeCallable;
 typedef std::future<GetFindingsStatisticsOutcome> GetFindingsStatisticsOutcomeCallable;
 typedef std::future<GetGeneratedPolicyOutcome> GetGeneratedPolicyOutcomeCallable;
-typedef std::future<GetPolicyPreviewConfigurationOutcome> GetPolicyPreviewConfigurationOutcomeCallable;
-typedef std::future<GetPolicyPreviewJobOutcome> GetPolicyPreviewJobOutcomeCallable;
 typedef std::future<ListAccessPreviewFindingsOutcome> ListAccessPreviewFindingsOutcomeCallable;
 typedef std::future<ListAccessPreviewsOutcome> ListAccessPreviewsOutcomeCallable;
 typedef std::future<ListAnalyzedResourcesOutcome> ListAnalyzedResourcesOutcomeCallable;
@@ -222,10 +192,8 @@ typedef std::future<ListArchiveRulesOutcome> ListArchiveRulesOutcomeCallable;
 typedef std::future<ListFindingsOutcome> ListFindingsOutcomeCallable;
 typedef std::future<ListFindingsV2Outcome> ListFindingsV2OutcomeCallable;
 typedef std::future<ListPolicyGenerationsOutcome> ListPolicyGenerationsOutcomeCallable;
-typedef std::future<ListPolicyPreviewJobsOutcome> ListPolicyPreviewJobsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<StartPolicyGenerationOutcome> StartPolicyGenerationOutcomeCallable;
-typedef std::future<StartPolicyPreviewJobOutcome> StartPolicyPreviewJobOutcomeCallable;
 typedef std::future<StartResourceScanOutcome> StartResourceScanOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -245,9 +213,6 @@ typedef std::function<void(const AccessAnalyzerClient*, const Model::ApplyArchiv
 typedef std::function<void(const AccessAnalyzerClient*, const Model::CancelPolicyGenerationRequest&,
                            const Model::CancelPolicyGenerationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CancelPolicyGenerationResponseReceivedHandler;
-typedef std::function<void(const AccessAnalyzerClient*, const Model::CancelPolicyPreviewJobRequest&,
-                           const Model::CancelPolicyPreviewJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
-    CancelPolicyPreviewJobResponseReceivedHandler;
 typedef std::function<void(const AccessAnalyzerClient*, const Model::CheckAccessNotGrantedRequest&,
                            const Model::CheckAccessNotGrantedOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CheckAccessNotGrantedResponseReceivedHandler;
@@ -266,20 +231,12 @@ typedef std::function<void(const AccessAnalyzerClient*, const Model::CreateAnaly
 typedef std::function<void(const AccessAnalyzerClient*, const Model::CreateArchiveRuleRequest&, const Model::CreateArchiveRuleOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateArchiveRuleResponseReceivedHandler;
-typedef std::function<void(const AccessAnalyzerClient*, const Model::CreatePolicyPreviewConfigurationRequest&,
-                           const Model::CreatePolicyPreviewConfigurationOutcome&,
-                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
-    CreatePolicyPreviewConfigurationResponseReceivedHandler;
 typedef std::function<void(const AccessAnalyzerClient*, const Model::DeleteAnalyzerRequest&, const Model::DeleteAnalyzerOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteAnalyzerResponseReceivedHandler;
 typedef std::function<void(const AccessAnalyzerClient*, const Model::DeleteArchiveRuleRequest&, const Model::DeleteArchiveRuleOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteArchiveRuleResponseReceivedHandler;
-typedef std::function<void(const AccessAnalyzerClient*, const Model::DeletePolicyPreviewConfigurationRequest&,
-                           const Model::DeletePolicyPreviewConfigurationOutcome&,
-                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
-    DeletePolicyPreviewConfigurationResponseReceivedHandler;
 typedef std::function<void(const AccessAnalyzerClient*, const Model::GenerateFindingRecommendationRequest&,
                            const Model::GenerateFindingRecommendationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -311,13 +268,6 @@ typedef std::function<void(const AccessAnalyzerClient*, const Model::GetFindings
 typedef std::function<void(const AccessAnalyzerClient*, const Model::GetGeneratedPolicyRequest&, const Model::GetGeneratedPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetGeneratedPolicyResponseReceivedHandler;
-typedef std::function<void(const AccessAnalyzerClient*, const Model::GetPolicyPreviewConfigurationRequest&,
-                           const Model::GetPolicyPreviewConfigurationOutcome&,
-                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
-    GetPolicyPreviewConfigurationResponseReceivedHandler;
-typedef std::function<void(const AccessAnalyzerClient*, const Model::GetPolicyPreviewJobRequest&, const Model::GetPolicyPreviewJobOutcome&,
-                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
-    GetPolicyPreviewJobResponseReceivedHandler;
 typedef std::function<void(const AccessAnalyzerClient*, const Model::ListAccessPreviewFindingsRequest&,
                            const Model::ListAccessPreviewFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAccessPreviewFindingsResponseReceivedHandler;
@@ -342,18 +292,12 @@ typedef std::function<void(const AccessAnalyzerClient*, const Model::ListFinding
 typedef std::function<void(const AccessAnalyzerClient*, const Model::ListPolicyGenerationsRequest&,
                            const Model::ListPolicyGenerationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListPolicyGenerationsResponseReceivedHandler;
-typedef std::function<void(const AccessAnalyzerClient*, const Model::ListPolicyPreviewJobsRequest&,
-                           const Model::ListPolicyPreviewJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
-    ListPolicyPreviewJobsResponseReceivedHandler;
 typedef std::function<void(const AccessAnalyzerClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;
 typedef std::function<void(const AccessAnalyzerClient*, const Model::StartPolicyGenerationRequest&,
                            const Model::StartPolicyGenerationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartPolicyGenerationResponseReceivedHandler;
-typedef std::function<void(const AccessAnalyzerClient*, const Model::StartPolicyPreviewJobRequest&,
-                           const Model::StartPolicyPreviewJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
-    StartPolicyPreviewJobResponseReceivedHandler;
 typedef std::function<void(const AccessAnalyzerClient*, const Model::StartResourceScanRequest&, const Model::StartResourceScanOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartResourceScanResponseReceivedHandler;

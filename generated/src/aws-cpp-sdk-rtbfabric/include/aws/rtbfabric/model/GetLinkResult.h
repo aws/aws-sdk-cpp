@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rtbfabric/RTBFabric_EXPORTS.h>
+#include <aws/rtbfabric/model/ConnectivityType.h>
 #include <aws/rtbfabric/model/LinkAttributes.h>
 #include <aws/rtbfabric/model/LinkDirection.h>
 #include <aws/rtbfabric/model/LinkLogSettings.h>
@@ -198,6 +199,38 @@ class GetLinkResult {
 
   ///@{
   /**
+   * <p>Settings for the application logs.</p>
+   */
+  inline const LinkLogSettings& GetLogSettings() const { return m_logSettings; }
+  template <typename LogSettingsT = LinkLogSettings>
+  void SetLogSettings(LogSettingsT&& value) {
+    m_logSettingsHasBeenSet = true;
+    m_logSettings = std::forward<LogSettingsT>(value);
+  }
+  template <typename LogSettingsT = LinkLogSettings>
+  GetLinkResult& WithLogSettings(LogSettingsT&& value) {
+    SetLogSettings(std::forward<LogSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The connectivity type of the link.</p>
+   */
+  inline ConnectivityType GetConnectivityType() const { return m_connectivityType; }
+  inline void SetConnectivityType(ConnectivityType value) {
+    m_connectivityTypeHasBeenSet = true;
+    m_connectivityType = value;
+  }
+  inline GetLinkResult& WithConnectivityType(ConnectivityType value) {
+    SetConnectivityType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The unique identifier of the link.</p>
    */
   inline const Aws::String& GetLinkId() const { return m_linkId; }
@@ -239,17 +272,30 @@ class GetLinkResult {
 
   ///@{
   /**
-   * <p>Settings for the application logs.</p>
+   * <p>Boolean to specify if an HTTP responder is allowed.</p>
    */
-  inline const LinkLogSettings& GetLogSettings() const { return m_logSettings; }
-  template <typename LogSettingsT = LinkLogSettings>
-  void SetLogSettings(LogSettingsT&& value) {
-    m_logSettingsHasBeenSet = true;
-    m_logSettings = std::forward<LogSettingsT>(value);
+  inline bool GetHttpResponderAllowed() const { return m_httpResponderAllowed; }
+  inline void SetHttpResponderAllowed(bool value) {
+    m_httpResponderAllowedHasBeenSet = true;
+    m_httpResponderAllowed = value;
   }
-  template <typename LogSettingsT = LinkLogSettings>
-  GetLinkResult& WithLogSettings(LogSettingsT&& value) {
-    SetLogSettings(std::forward<LogSettingsT>(value));
+  inline GetLinkResult& WithHttpResponderAllowed(bool value) {
+    SetHttpResponderAllowed(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timeout value in milliseconds.</p>
+   */
+  inline long long GetTimeoutInMillis() const { return m_timeoutInMillis; }
+  inline void SetTimeoutInMillis(long long value) {
+    m_timeoutInMillisHasBeenSet = true;
+    m_timeoutInMillis = value;
+  }
+  inline GetLinkResult& WithTimeoutInMillis(long long value) {
+    SetTimeoutInMillis(value);
     return *this;
   }
   ///@}
@@ -289,11 +335,17 @@ class GetLinkResult {
 
   LinkAttributes m_attributes;
 
+  LinkLogSettings m_logSettings;
+
+  ConnectivityType m_connectivityType{ConnectivityType::NOT_SET};
+
   Aws::String m_linkId;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
 
-  LinkLogSettings m_logSettings;
+  bool m_httpResponderAllowed{false};
+
+  long long m_timeoutInMillis{0};
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
@@ -306,9 +358,12 @@ class GetLinkResult {
   bool m_flowModulesHasBeenSet = false;
   bool m_pendingFlowModulesHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
+  bool m_logSettingsHasBeenSet = false;
+  bool m_connectivityTypeHasBeenSet = false;
   bool m_linkIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
-  bool m_logSettingsHasBeenSet = false;
+  bool m_httpResponderAllowedHasBeenSet = false;
+  bool m_timeoutInMillisHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -38,6 +38,7 @@
 #include <aws/bedrock-agentcore/model/GetWorkloadAccessTokenForUserIdResult.h>
 #include <aws/bedrock-agentcore/model/GetWorkloadAccessTokenResult.h>
 #include <aws/bedrock-agentcore/model/InvokeAgentRuntimeResult.h>
+#include <aws/bedrock-agentcore/model/InvokeBrowserResult.h>
 #include <aws/bedrock-agentcore/model/ListActorsResult.h>
 #include <aws/bedrock-agentcore/model/ListBrowserSessionsResult.h>
 #include <aws/bedrock-agentcore/model/ListCodeInterpreterSessionsResult.h>
@@ -108,6 +109,7 @@ class GetWorkloadAccessTokenForJWTRequest;
 class GetWorkloadAccessTokenForUserIdRequest;
 class InvokeAgentRuntimeRequest;
 class InvokeAgentRuntimeCommandRequest;
+class InvokeBrowserRequest;
 class InvokeCodeInterpreterRequest;
 class ListActorsRequest;
 class ListBrowserSessionsRequest;
@@ -148,6 +150,7 @@ typedef Aws::Utils::Outcome<GetWorkloadAccessTokenForJWTResult, BedrockAgentCore
 typedef Aws::Utils::Outcome<GetWorkloadAccessTokenForUserIdResult, BedrockAgentCoreError> GetWorkloadAccessTokenForUserIdOutcome;
 typedef Aws::Utils::Outcome<InvokeAgentRuntimeResult, BedrockAgentCoreError> InvokeAgentRuntimeOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, BedrockAgentCoreError> InvokeAgentRuntimeCommandOutcome;
+typedef Aws::Utils::Outcome<InvokeBrowserResult, BedrockAgentCoreError> InvokeBrowserOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, BedrockAgentCoreError> InvokeCodeInterpreterOutcome;
 typedef Aws::Utils::Outcome<ListActorsResult, BedrockAgentCoreError> ListActorsOutcome;
 typedef Aws::Utils::Outcome<ListBrowserSessionsResult, BedrockAgentCoreError> ListBrowserSessionsOutcome;
@@ -188,6 +191,7 @@ typedef std::future<GetWorkloadAccessTokenForJWTOutcome> GetWorkloadAccessTokenF
 typedef std::future<GetWorkloadAccessTokenForUserIdOutcome> GetWorkloadAccessTokenForUserIdOutcomeCallable;
 typedef std::future<InvokeAgentRuntimeOutcome> InvokeAgentRuntimeOutcomeCallable;
 typedef std::future<InvokeAgentRuntimeCommandOutcome> InvokeAgentRuntimeCommandOutcomeCallable;
+typedef std::future<InvokeBrowserOutcome> InvokeBrowserOutcomeCallable;
 typedef std::future<InvokeCodeInterpreterOutcome> InvokeCodeInterpreterOutcomeCallable;
 typedef std::future<ListActorsOutcome> ListActorsOutcomeCallable;
 typedef std::future<ListBrowserSessionsOutcome> ListBrowserSessionsOutcomeCallable;
@@ -273,6 +277,9 @@ typedef std::function<void(const BedrockAgentCoreClient*, const Model::InvokeAge
 typedef std::function<void(const BedrockAgentCoreClient*, const Model::InvokeAgentRuntimeCommandRequest&,
                            const Model::InvokeAgentRuntimeCommandOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     InvokeAgentRuntimeCommandResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreClient*, const Model::InvokeBrowserRequest&, const Model::InvokeBrowserOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    InvokeBrowserResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreClient*, const Model::InvokeCodeInterpreterRequest&,
                            const Model::InvokeCodeInterpreterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     InvokeCodeInterpreterResponseReceivedHandler;

@@ -13,6 +13,7 @@
 #include <aws/eks/model/NodegroupUpdateConfig.h>
 #include <aws/eks/model/UpdateLabelsPayload.h>
 #include <aws/eks/model/UpdateTaintsPayload.h>
+#include <aws/eks/model/WarmPoolConfig.h>
 
 #include <utility>
 
@@ -167,6 +168,26 @@ class UpdateNodegroupConfigRequest : public EKSRequest {
 
   ///@{
   /**
+   * <p>The warm pool configuration to apply to the node group. You can use this to
+   * add a warm pool to an existing node group or modify the settings of an existing
+   * warm pool.</p>
+   */
+  inline const WarmPoolConfig& GetWarmPoolConfig() const { return m_warmPoolConfig; }
+  inline bool WarmPoolConfigHasBeenSet() const { return m_warmPoolConfigHasBeenSet; }
+  template <typename WarmPoolConfigT = WarmPoolConfig>
+  void SetWarmPoolConfig(WarmPoolConfigT&& value) {
+    m_warmPoolConfigHasBeenSet = true;
+    m_warmPoolConfig = std::forward<WarmPoolConfigT>(value);
+  }
+  template <typename WarmPoolConfigT = WarmPoolConfig>
+  UpdateNodegroupConfigRequest& WithWarmPoolConfig(WarmPoolConfigT&& value) {
+    SetWarmPoolConfig(std::forward<WarmPoolConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A unique, case-sensitive identifier that you provide to ensure the
    * idempotency of the request.</p>
    */
@@ -198,6 +219,8 @@ class UpdateNodegroupConfigRequest : public EKSRequest {
 
   NodeRepairConfig m_nodeRepairConfig;
 
+  WarmPoolConfig m_warmPoolConfig;
+
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_clusterNameHasBeenSet = false;
   bool m_nodegroupNameHasBeenSet = false;
@@ -206,6 +229,7 @@ class UpdateNodegroupConfigRequest : public EKSRequest {
   bool m_scalingConfigHasBeenSet = false;
   bool m_updateConfigHasBeenSet = false;
   bool m_nodeRepairConfigHasBeenSet = false;
+  bool m_warmPoolConfigHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

@@ -27,6 +27,10 @@ Aws::String UpdateResponderGatewayRequest::SerializePayload() const {
     payload.WithString("protocol", ProtocolMapper::GetNameForProtocol(m_protocol));
   }
 
+  if (m_listenerConfigHasBeenSet) {
+    payload.WithObject("listenerConfig", m_listenerConfig.Jsonize());
+  }
+
   if (m_trustStoreConfigurationHasBeenSet) {
     payload.WithObject("trustStoreConfiguration", m_trustStoreConfiguration.Jsonize());
   }
