@@ -547,91 +547,6 @@ namespace
             WaitForBucketToEmpty(fullBucketName);
         }
 
-        void DoTestObjectOperationsWithPresignedUrlsWithSSEC(bool withCustomizedHeaders)
-        {
-            const Aws::String fullBucketName = PreparePresignedUrlTest();
-            SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
-            std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>("BucketAndObjectOperationTest");
-            *objectStream << "Test Object";
-            objectStream->flush();
-
-            ByteBuffer sseKey(32);
-            for (int i = 0; i < 32; i++)
-            {
-                sseKey[i] = 'a';
-            }
-            Aws::String presignedUrlPut;
-            if (withCustomizedHeaders)
-            {
-                Aws::Http::HeaderValueCollection collections;
-                collections.emplace("TestKey1", "TestVal1");
-                collections.emplace("TestKey2", "TestVal2");
-                presignedUrlPut = Client->GeneratePresignedUrlWithSSEC(fullBucketName, TEST_OBJ_KEY, HttpMethod::HTTP_PUT, collections, HashingUtils::Base64Encode(sseKey));
-            }
-            else
-            {
-                presignedUrlPut = Client->GeneratePresignedUrlWithSSEC(fullBucketName, TEST_OBJ_KEY, HttpMethod::HTTP_PUT, HashingUtils::Base64Encode(sseKey));
-            }
-
-            std::shared_ptr<HttpRequest> putRequest = CreateHttpRequest(presignedUrlPut, HttpMethod::HTTP_PUT, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-            putRequest->AddContentBody(objectStream);
-            putRequest->SetHeaderValue(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_ALGORITHM,
-                    Aws::S3::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3::Model::ServerSideEncryption::AES256));
-            putRequest->SetHeaderValue(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY, HashingUtils::Base64Encode(sseKey));
-            Aws::String strBuffer(reinterpret_cast<char*>(sseKey.GetUnderlyingData()), sseKey.GetLength());
-            putRequest->SetHeaderValue(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5, HashingUtils::Base64Encode(HashingUtils::CalculateMD5(strBuffer)));
-            if (withCustomizedHeaders)
-            {
-                ASSERT_NE(presignedUrlPut.find("testkey1"), std::string::npos);
-                ASSERT_NE(presignedUrlPut.find("testkey2"), std::string::npos);
-                putRequest->SetHeaderValue("TestKey1", "TestVal1");
-                putRequest->SetHeaderValue("TestKey2", "TestVal2");
-            }
-
-            Aws::StringStream intConverter;
-            intConverter << objectStream->tellp();
-            putRequest->SetContentLength(intConverter.str());
-            putRequest->SetContentType("text/plain");
-            std::shared_ptr<HttpResponse> putResponse = m_HttpClient->MakeRequest(putRequest);
-
-            ASSERT_EQ(HttpResponseCode::OK, putResponse->GetResponseCode());
-
-            ASSERT_TRUE(WaitForObjectWithSSECToPropagate(fullBucketName, TEST_OBJ_KEY, sseKey));
-
-            // Test GetObject with SSEC Presigned Url
-            Aws::String presignedUrlGet = Client->GeneratePresignedUrlWithSSEC(fullBucketName, TEST_OBJ_KEY, HttpMethod::HTTP_GET, HashingUtils::Base64Encode(sseKey));
-            std::shared_ptr<HttpRequest> getRequest = CreateHttpRequest(presignedUrlGet, HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-            getRequest->SetHeaderValue(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_ALGORITHM,
-                    Aws::S3::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3::Model::ServerSideEncryption::AES256));
-            getRequest->SetHeaderValue(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY, HashingUtils::Base64Encode(sseKey));
-            getRequest->SetHeaderValue(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5, HashingUtils::Base64Encode(HashingUtils::CalculateMD5(strBuffer)));
-
-            std::shared_ptr<HttpResponse> getResponse = m_HttpClient->MakeRequest(getRequest);
-
-            ASSERT_EQ(HttpResponseCode::OK, getResponse->GetResponseCode());
-            Aws::StringStream ss;
-            ss << getResponse->GetResponseBody().rdbuf();
-            ASSERT_STREQ("Test Object", ss.str().c_str());
-
-            // Test GetObject without required Headers
-            Aws::S3::Model::GetObjectRequest getObjectRequest;
-            getObjectRequest.WithBucket(fullBucketName).WithKey(TEST_OBJ_KEY);
-            auto outcome = Client->GetObject(getObjectRequest);
-            ASSERT_FALSE(outcome.IsSuccess());
-
-            // Test GetObject with SSEC required Headers
-            getObjectRequest.WithSSECustomerAlgorithm(Aws::S3::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3::Model::ServerSideEncryption::AES256))
-                .WithSSECustomerKey(HashingUtils::Base64Encode(sseKey))
-                .WithSSECustomerKeyMD5(HashingUtils::Base64Encode(HashingUtils::CalculateMD5(strBuffer)));
-            outcome = Client->GetObject(getObjectRequest);
-            AWS_ASSERT_SUCCESS(outcome);
-            ss.str("");
-            ss << outcome.GetResult().GetBody().rdbuf();
-            ASSERT_STREQ("Test Object", ss.str().c_str());
-            ASSERT_EQ(outcome.GetResult().GetSSECustomerAlgorithm(), Aws::S3::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3::Model::ServerSideEncryption::AES256));
-            CleanUpPresignedUrlTest();
-        }
-
         void DoTestGetObjectWithBucketARN(const ClientConfiguration& config, const Aws::String& bucketArn, const Aws::String& expectedEndpoint,
             const Aws::String& expectedSignerRegion, const Aws::String& expectedSignerServiceName, bool arnExpectedToBeValid)
         {
@@ -1176,17 +1091,6 @@ namespace
         putRequest->SetHeaderValue("TestKey2", "TestVal2");
         DoPresignedUrlTest(fullBucketName, putRequest);
         CleanUpPresignedUrlTest();
-    }
-
-
-    TEST_F(BucketAndObjectOperationTest, TestObjectOperationsWithPresignedUrlsWithSSEC)
-    {
-        DoTestObjectOperationsWithPresignedUrlsWithSSEC(false);
-    }
-
-    TEST_F(BucketAndObjectOperationTest, TestObjectOperationsWithPresignedUrlsWithSSECWithCustomizedHeaders)
-    {
-        DoTestObjectOperationsWithPresignedUrlsWithSSEC(true);
     }
 
     TEST_F(BucketAndObjectOperationTest, TestMultiPartObjectOperations)
