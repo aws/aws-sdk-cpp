@@ -15,16 +15,16 @@ using namespace Aws::Utils;
 Aws::String StartRecoveryRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_isDrillHasBeenSet) {
-    payload.WithBool("isDrill", m_isDrill);
-  }
-
   if (m_sourceServersHasBeenSet) {
     Aws::Utils::Array<JsonValue> sourceServersJsonList(m_sourceServers.size());
     for (unsigned sourceServersIndex = 0; sourceServersIndex < sourceServersJsonList.GetLength(); ++sourceServersIndex) {
       sourceServersJsonList[sourceServersIndex].AsObject(m_sourceServers[sourceServersIndex].Jsonize());
     }
     payload.WithArray("sourceServers", std::move(sourceServersJsonList));
+  }
+
+  if (m_isDrillHasBeenSet) {
+    payload.WithBool("isDrill", m_isDrill);
   }
 
   if (m_tagsHasBeenSet) {

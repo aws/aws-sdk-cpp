@@ -23,5 +23,9 @@ Aws::String UpdateIngestConfigurationRequest::SerializePayload() const {
     payload.WithString("stageArn", m_stageArn);
   }
 
+  if (m_redundantIngestHasBeenSet) {
+    payload.WithBool("redundantIngest", m_redundantIngest);
+  }
+
   return payload.View().WriteReadable();
 }

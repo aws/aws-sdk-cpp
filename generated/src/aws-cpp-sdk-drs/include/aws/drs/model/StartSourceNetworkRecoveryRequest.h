@@ -33,23 +33,6 @@ class StartSourceNetworkRecoveryRequest : public DrsRequest {
 
   ///@{
   /**
-   * <p>Don't update existing CloudFormation Stack, recover the network using a new
-   * stack.</p>
-   */
-  inline bool GetDeployAsNew() const { return m_deployAsNew; }
-  inline bool DeployAsNewHasBeenSet() const { return m_deployAsNewHasBeenSet; }
-  inline void SetDeployAsNew(bool value) {
-    m_deployAsNewHasBeenSet = true;
-    m_deployAsNew = value;
-  }
-  inline StartSourceNetworkRecoveryRequest& WithDeployAsNew(bool value) {
-    SetDeployAsNew(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The Source Networks that we want to start a Recovery Job for.</p>
    */
   inline const Aws::Vector<StartSourceNetworkRecoveryRequestNetworkEntry>& GetSourceNetworks() const { return m_sourceNetworks; }
@@ -68,6 +51,23 @@ class StartSourceNetworkRecoveryRequest : public DrsRequest {
   StartSourceNetworkRecoveryRequest& AddSourceNetworks(SourceNetworksT&& value) {
     m_sourceNetworksHasBeenSet = true;
     m_sourceNetworks.emplace_back(std::forward<SourceNetworksT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Don't update existing CloudFormation Stack, recover the network using a new
+   * stack.</p>
+   */
+  inline bool GetDeployAsNew() const { return m_deployAsNew; }
+  inline bool DeployAsNewHasBeenSet() const { return m_deployAsNewHasBeenSet; }
+  inline void SetDeployAsNew(bool value) {
+    m_deployAsNewHasBeenSet = true;
+    m_deployAsNew = value;
+  }
+  inline StartSourceNetworkRecoveryRequest& WithDeployAsNew(bool value) {
+    SetDeployAsNew(value);
     return *this;
   }
   ///@}
@@ -96,13 +96,13 @@ class StartSourceNetworkRecoveryRequest : public DrsRequest {
   }
   ///@}
  private:
-  bool m_deployAsNew{false};
-
   Aws::Vector<StartSourceNetworkRecoveryRequestNetworkEntry> m_sourceNetworks;
 
+  bool m_deployAsNew{false};
+
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_deployAsNewHasBeenSet = false;
   bool m_sourceNetworksHasBeenSet = false;
+  bool m_deployAsNewHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

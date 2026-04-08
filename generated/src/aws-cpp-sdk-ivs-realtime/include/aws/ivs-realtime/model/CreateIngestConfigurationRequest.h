@@ -155,6 +155,23 @@ class CreateIngestConfigurationRequest : public IvsrealtimeRequest {
 
   ///@{
   /**
+   * <p>Indicates whether redundant ingest is enabled for the ingest configuration.
+   * Default: <code>false</code>.</p>
+   */
+  inline bool GetRedundantIngest() const { return m_redundantIngest; }
+  inline bool RedundantIngestHasBeenSet() const { return m_redundantIngestHasBeenSet; }
+  inline void SetRedundantIngest(bool value) {
+    m_redundantIngestHasBeenSet = true;
+    m_redundantIngest = value;
+  }
+  inline CreateIngestConfigurationRequest& WithRedundantIngest(bool value) {
+    SetRedundantIngest(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Tags attached to the resource. Array of maps, each of the form
    * <code>string:string (key:value)</code>. See <a
    * href="https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html">Best
@@ -195,6 +212,8 @@ class CreateIngestConfigurationRequest : public IvsrealtimeRequest {
 
   bool m_insecureIngest{false};
 
+  bool m_redundantIngest{false};
+
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_nameHasBeenSet = false;
   bool m_stageArnHasBeenSet = false;
@@ -202,6 +221,7 @@ class CreateIngestConfigurationRequest : public IvsrealtimeRequest {
   bool m_attributesHasBeenSet = false;
   bool m_ingestProtocolHasBeenSet = false;
   bool m_insecureIngestHasBeenSet = false;
+  bool m_redundantIngestHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

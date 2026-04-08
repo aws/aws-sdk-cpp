@@ -80,8 +80,10 @@ class Subscription {
    * <p>The status of subscription which can be one of the following:</p> <ul> <li>
    * <p> <b>INACTIVE</b> - Subscription requests that are inactive.</p> </li> <li>
    * <p> <b>ACTIVE</b> - Subscription requests that are in progress and have an end
-   * date in the future.</p> </li> <li> <p> <b>CANCELLED</b> - Subscription requests
-   * that are cancelled.</p> </li> </ul>
+   * date in the future.</p> </li> <li> <p> <b>PENDING</b> - Subscription has been
+   * created but billing has not yet commenced because the subscription begin date
+   * has not been reached.</p> </li> <li> <p> <b>CANCELLED</b> - Subscription
+   * requests that are cancelled.</p> </li> </ul>
    */
   inline SubscriptionStatus GetSubscriptionStatus() const { return m_subscriptionStatus; }
   inline bool SubscriptionStatusHasBeenSet() const { return m_subscriptionStatusHasBeenSet; }

@@ -35,24 +35,6 @@ class StagingSourceServer {
 
   ///@{
   /**
-   * <p>The ARN of the source server.</p>
-   */
-  inline const Aws::String& GetArn() const { return m_arn; }
-  inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-  template <typename ArnT = Aws::String>
-  void SetArn(ArnT&& value) {
-    m_arnHasBeenSet = true;
-    m_arn = std::forward<ArnT>(value);
-  }
-  template <typename ArnT = Aws::String>
-  StagingSourceServer& WithArn(ArnT&& value) {
-    SetArn(std::forward<ArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Hostname of staging source server.</p>
    */
   inline const Aws::String& GetHostname() const { return m_hostname; }
@@ -65,6 +47,24 @@ class StagingSourceServer {
   template <typename HostnameT = Aws::String>
   StagingSourceServer& WithHostname(HostnameT&& value) {
     SetHostname(std::forward<HostnameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the source server.</p>
+   */
+  inline const Aws::String& GetArn() const { return m_arn; }
+  inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+  template <typename ArnT = Aws::String>
+  void SetArn(ArnT&& value) {
+    m_arnHasBeenSet = true;
+    m_arn = std::forward<ArnT>(value);
+  }
+  template <typename ArnT = Aws::String>
+  StagingSourceServer& WithArn(ArnT&& value) {
+    SetArn(std::forward<ArnT>(value));
     return *this;
   }
   ///@}
@@ -93,13 +93,13 @@ class StagingSourceServer {
   }
   ///@}
  private:
-  Aws::String m_arn;
-
   Aws::String m_hostname;
 
+  Aws::String m_arn;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_arnHasBeenSet = false;
   bool m_hostnameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

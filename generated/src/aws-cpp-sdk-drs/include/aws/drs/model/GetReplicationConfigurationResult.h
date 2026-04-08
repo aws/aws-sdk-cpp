@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/drs/Drs_EXPORTS.h>
+#include <aws/drs/model/InternetProtocol.h>
 #include <aws/drs/model/PITPolicyRule.h>
 #include <aws/drs/model/ReplicationConfigurationDataPlaneRouting.h>
 #include <aws/drs/model/ReplicationConfigurationDefaultLargeStagingDiskType.h>
@@ -36,6 +37,57 @@ class GetReplicationConfigurationResult {
 
   ///@{
   /**
+   * <p>The ID of the Source Server for this Replication Configuration.</p>
+   */
+  inline const Aws::String& GetSourceServerID() const { return m_sourceServerID; }
+  template <typename SourceServerIDT = Aws::String>
+  void SetSourceServerID(SourceServerIDT&& value) {
+    m_sourceServerIDHasBeenSet = true;
+    m_sourceServerID = std::forward<SourceServerIDT>(value);
+  }
+  template <typename SourceServerIDT = Aws::String>
+  GetReplicationConfigurationResult& WithSourceServerID(SourceServerIDT&& value) {
+    SetSourceServerID(std::forward<SourceServerIDT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the Replication Configuration.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  GetReplicationConfigurationResult& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The subnet to be used by the replication staging area.</p>
+   */
+  inline const Aws::String& GetStagingAreaSubnetId() const { return m_stagingAreaSubnetId; }
+  template <typename StagingAreaSubnetIdT = Aws::String>
+  void SetStagingAreaSubnetId(StagingAreaSubnetIdT&& value) {
+    m_stagingAreaSubnetIdHasBeenSet = true;
+    m_stagingAreaSubnetId = std::forward<StagingAreaSubnetIdT>(value);
+  }
+  template <typename StagingAreaSubnetIdT = Aws::String>
+  GetReplicationConfigurationResult& WithStagingAreaSubnetId(StagingAreaSubnetIdT&& value) {
+    SetStagingAreaSubnetId(std::forward<StagingAreaSubnetIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Whether to associate the default Elastic Disaster Recovery Security group
    * with the Replication Configuration.</p>
    */
@@ -52,62 +104,56 @@ class GetReplicationConfigurationResult {
 
   ///@{
   /**
-   * <p>Whether to allow the AWS replication agent to automatically replicate newly
-   * added disks.</p>
+   * <p>The security group IDs that will be used by the replication server.</p>
    */
-  inline bool GetAutoReplicateNewDisks() const { return m_autoReplicateNewDisks; }
-  inline void SetAutoReplicateNewDisks(bool value) {
-    m_autoReplicateNewDisksHasBeenSet = true;
-    m_autoReplicateNewDisks = value;
+  inline const Aws::Vector<Aws::String>& GetReplicationServersSecurityGroupsIDs() const { return m_replicationServersSecurityGroupsIDs; }
+  template <typename ReplicationServersSecurityGroupsIDsT = Aws::Vector<Aws::String>>
+  void SetReplicationServersSecurityGroupsIDs(ReplicationServersSecurityGroupsIDsT&& value) {
+    m_replicationServersSecurityGroupsIDsHasBeenSet = true;
+    m_replicationServersSecurityGroupsIDs = std::forward<ReplicationServersSecurityGroupsIDsT>(value);
   }
-  inline GetReplicationConfigurationResult& WithAutoReplicateNewDisks(bool value) {
-    SetAutoReplicateNewDisks(value);
+  template <typename ReplicationServersSecurityGroupsIDsT = Aws::Vector<Aws::String>>
+  GetReplicationConfigurationResult& WithReplicationServersSecurityGroupsIDs(ReplicationServersSecurityGroupsIDsT&& value) {
+    SetReplicationServersSecurityGroupsIDs(std::forward<ReplicationServersSecurityGroupsIDsT>(value));
+    return *this;
+  }
+  template <typename ReplicationServersSecurityGroupsIDsT = Aws::String>
+  GetReplicationConfigurationResult& AddReplicationServersSecurityGroupsIDs(ReplicationServersSecurityGroupsIDsT&& value) {
+    m_replicationServersSecurityGroupsIDsHasBeenSet = true;
+    m_replicationServersSecurityGroupsIDs.emplace_back(std::forward<ReplicationServersSecurityGroupsIDsT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>Configure bandwidth throttling for the outbound data transfer rate of the
-   * Source Server in Mbps.</p>
+   * <p>The instance type to be used for the replication server.</p>
    */
-  inline long long GetBandwidthThrottling() const { return m_bandwidthThrottling; }
-  inline void SetBandwidthThrottling(long long value) {
-    m_bandwidthThrottlingHasBeenSet = true;
-    m_bandwidthThrottling = value;
+  inline const Aws::String& GetReplicationServerInstanceType() const { return m_replicationServerInstanceType; }
+  template <typename ReplicationServerInstanceTypeT = Aws::String>
+  void SetReplicationServerInstanceType(ReplicationServerInstanceTypeT&& value) {
+    m_replicationServerInstanceTypeHasBeenSet = true;
+    m_replicationServerInstanceType = std::forward<ReplicationServerInstanceTypeT>(value);
   }
-  inline GetReplicationConfigurationResult& WithBandwidthThrottling(long long value) {
-    SetBandwidthThrottling(value);
+  template <typename ReplicationServerInstanceTypeT = Aws::String>
+  GetReplicationConfigurationResult& WithReplicationServerInstanceType(ReplicationServerInstanceTypeT&& value) {
+    SetReplicationServerInstanceType(std::forward<ReplicationServerInstanceTypeT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>Whether to create a Public IP for the Recovery Instance by default.</p>
+   * <p>Whether to use a dedicated Replication Server in the replication staging
+   * area.</p>
    */
-  inline bool GetCreatePublicIP() const { return m_createPublicIP; }
-  inline void SetCreatePublicIP(bool value) {
-    m_createPublicIPHasBeenSet = true;
-    m_createPublicIP = value;
+  inline bool GetUseDedicatedReplicationServer() const { return m_useDedicatedReplicationServer; }
+  inline void SetUseDedicatedReplicationServer(bool value) {
+    m_useDedicatedReplicationServerHasBeenSet = true;
+    m_useDedicatedReplicationServer = value;
   }
-  inline GetReplicationConfigurationResult& WithCreatePublicIP(bool value) {
-    SetCreatePublicIP(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The data plane routing mechanism that will be used for replication.</p>
-   */
-  inline ReplicationConfigurationDataPlaneRouting GetDataPlaneRouting() const { return m_dataPlaneRouting; }
-  inline void SetDataPlaneRouting(ReplicationConfigurationDataPlaneRouting value) {
-    m_dataPlaneRoutingHasBeenSet = true;
-    m_dataPlaneRouting = value;
-  }
-  inline GetReplicationConfigurationResult& WithDataPlaneRouting(ReplicationConfigurationDataPlaneRouting value) {
-    SetDataPlaneRouting(value);
+  inline GetReplicationConfigurationResult& WithUseDedicatedReplicationServer(bool value) {
+    SetUseDedicatedReplicationServer(value);
     return *this;
   }
   ///@}
@@ -125,6 +171,29 @@ class GetReplicationConfigurationResult {
   }
   inline GetReplicationConfigurationResult& WithDefaultLargeStagingDiskType(ReplicationConfigurationDefaultLargeStagingDiskType value) {
     SetDefaultLargeStagingDiskType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configuration of the disks of the Source Server to be replicated.</p>
+   */
+  inline const Aws::Vector<ReplicationConfigurationReplicatedDisk>& GetReplicatedDisks() const { return m_replicatedDisks; }
+  template <typename ReplicatedDisksT = Aws::Vector<ReplicationConfigurationReplicatedDisk>>
+  void SetReplicatedDisks(ReplicatedDisksT&& value) {
+    m_replicatedDisksHasBeenSet = true;
+    m_replicatedDisks = std::forward<ReplicatedDisksT>(value);
+  }
+  template <typename ReplicatedDisksT = Aws::Vector<ReplicationConfigurationReplicatedDisk>>
+  GetReplicationConfigurationResult& WithReplicatedDisks(ReplicatedDisksT&& value) {
+    SetReplicatedDisks(std::forward<ReplicatedDisksT>(value));
+    return *this;
+  }
+  template <typename ReplicatedDisksT = ReplicationConfigurationReplicatedDisk>
+  GetReplicationConfigurationResult& AddReplicatedDisks(ReplicatedDisksT&& value) {
+    m_replicatedDisksHasBeenSet = true;
+    m_replicatedDisks.emplace_back(std::forward<ReplicatedDisksT>(value));
     return *this;
   }
   ///@}
@@ -163,138 +232,46 @@ class GetReplicationConfigurationResult {
 
   ///@{
   /**
-   * <p>The name of the Replication Configuration.</p>
+   * <p>Configure bandwidth throttling for the outbound data transfer rate of the
+   * Source Server in Mbps.</p>
    */
-  inline const Aws::String& GetName() const { return m_name; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
+  inline long long GetBandwidthThrottling() const { return m_bandwidthThrottling; }
+  inline void SetBandwidthThrottling(long long value) {
+    m_bandwidthThrottlingHasBeenSet = true;
+    m_bandwidthThrottling = value;
   }
-  template <typename NameT = Aws::String>
-  GetReplicationConfigurationResult& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
+  inline GetReplicationConfigurationResult& WithBandwidthThrottling(long long value) {
+    SetBandwidthThrottling(value);
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The Point in time (PIT) policy to manage snapshots taken during
-   * replication.</p>
+   * <p>The data plane routing mechanism that will be used for replication.</p>
    */
-  inline const Aws::Vector<PITPolicyRule>& GetPitPolicy() const { return m_pitPolicy; }
-  template <typename PitPolicyT = Aws::Vector<PITPolicyRule>>
-  void SetPitPolicy(PitPolicyT&& value) {
-    m_pitPolicyHasBeenSet = true;
-    m_pitPolicy = std::forward<PitPolicyT>(value);
+  inline ReplicationConfigurationDataPlaneRouting GetDataPlaneRouting() const { return m_dataPlaneRouting; }
+  inline void SetDataPlaneRouting(ReplicationConfigurationDataPlaneRouting value) {
+    m_dataPlaneRoutingHasBeenSet = true;
+    m_dataPlaneRouting = value;
   }
-  template <typename PitPolicyT = Aws::Vector<PITPolicyRule>>
-  GetReplicationConfigurationResult& WithPitPolicy(PitPolicyT&& value) {
-    SetPitPolicy(std::forward<PitPolicyT>(value));
-    return *this;
-  }
-  template <typename PitPolicyT = PITPolicyRule>
-  GetReplicationConfigurationResult& AddPitPolicy(PitPolicyT&& value) {
-    m_pitPolicyHasBeenSet = true;
-    m_pitPolicy.emplace_back(std::forward<PitPolicyT>(value));
+  inline GetReplicationConfigurationResult& WithDataPlaneRouting(ReplicationConfigurationDataPlaneRouting value) {
+    SetDataPlaneRouting(value);
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The configuration of the disks of the Source Server to be replicated.</p>
+   * <p>Whether to create a Public IP for the Recovery Instance by default.</p>
    */
-  inline const Aws::Vector<ReplicationConfigurationReplicatedDisk>& GetReplicatedDisks() const { return m_replicatedDisks; }
-  template <typename ReplicatedDisksT = Aws::Vector<ReplicationConfigurationReplicatedDisk>>
-  void SetReplicatedDisks(ReplicatedDisksT&& value) {
-    m_replicatedDisksHasBeenSet = true;
-    m_replicatedDisks = std::forward<ReplicatedDisksT>(value);
+  inline bool GetCreatePublicIP() const { return m_createPublicIP; }
+  inline void SetCreatePublicIP(bool value) {
+    m_createPublicIPHasBeenSet = true;
+    m_createPublicIP = value;
   }
-  template <typename ReplicatedDisksT = Aws::Vector<ReplicationConfigurationReplicatedDisk>>
-  GetReplicationConfigurationResult& WithReplicatedDisks(ReplicatedDisksT&& value) {
-    SetReplicatedDisks(std::forward<ReplicatedDisksT>(value));
-    return *this;
-  }
-  template <typename ReplicatedDisksT = ReplicationConfigurationReplicatedDisk>
-  GetReplicationConfigurationResult& AddReplicatedDisks(ReplicatedDisksT&& value) {
-    m_replicatedDisksHasBeenSet = true;
-    m_replicatedDisks.emplace_back(std::forward<ReplicatedDisksT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The instance type to be used for the replication server.</p>
-   */
-  inline const Aws::String& GetReplicationServerInstanceType() const { return m_replicationServerInstanceType; }
-  template <typename ReplicationServerInstanceTypeT = Aws::String>
-  void SetReplicationServerInstanceType(ReplicationServerInstanceTypeT&& value) {
-    m_replicationServerInstanceTypeHasBeenSet = true;
-    m_replicationServerInstanceType = std::forward<ReplicationServerInstanceTypeT>(value);
-  }
-  template <typename ReplicationServerInstanceTypeT = Aws::String>
-  GetReplicationConfigurationResult& WithReplicationServerInstanceType(ReplicationServerInstanceTypeT&& value) {
-    SetReplicationServerInstanceType(std::forward<ReplicationServerInstanceTypeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The security group IDs that will be used by the replication server.</p>
-   */
-  inline const Aws::Vector<Aws::String>& GetReplicationServersSecurityGroupsIDs() const { return m_replicationServersSecurityGroupsIDs; }
-  template <typename ReplicationServersSecurityGroupsIDsT = Aws::Vector<Aws::String>>
-  void SetReplicationServersSecurityGroupsIDs(ReplicationServersSecurityGroupsIDsT&& value) {
-    m_replicationServersSecurityGroupsIDsHasBeenSet = true;
-    m_replicationServersSecurityGroupsIDs = std::forward<ReplicationServersSecurityGroupsIDsT>(value);
-  }
-  template <typename ReplicationServersSecurityGroupsIDsT = Aws::Vector<Aws::String>>
-  GetReplicationConfigurationResult& WithReplicationServersSecurityGroupsIDs(ReplicationServersSecurityGroupsIDsT&& value) {
-    SetReplicationServersSecurityGroupsIDs(std::forward<ReplicationServersSecurityGroupsIDsT>(value));
-    return *this;
-  }
-  template <typename ReplicationServersSecurityGroupsIDsT = Aws::String>
-  GetReplicationConfigurationResult& AddReplicationServersSecurityGroupsIDs(ReplicationServersSecurityGroupsIDsT&& value) {
-    m_replicationServersSecurityGroupsIDsHasBeenSet = true;
-    m_replicationServersSecurityGroupsIDs.emplace_back(std::forward<ReplicationServersSecurityGroupsIDsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the Source Server for this Replication Configuration.</p>
-   */
-  inline const Aws::String& GetSourceServerID() const { return m_sourceServerID; }
-  template <typename SourceServerIDT = Aws::String>
-  void SetSourceServerID(SourceServerIDT&& value) {
-    m_sourceServerIDHasBeenSet = true;
-    m_sourceServerID = std::forward<SourceServerIDT>(value);
-  }
-  template <typename SourceServerIDT = Aws::String>
-  GetReplicationConfigurationResult& WithSourceServerID(SourceServerIDT&& value) {
-    SetSourceServerID(std::forward<SourceServerIDT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The subnet to be used by the replication staging area.</p>
-   */
-  inline const Aws::String& GetStagingAreaSubnetId() const { return m_stagingAreaSubnetId; }
-  template <typename StagingAreaSubnetIdT = Aws::String>
-  void SetStagingAreaSubnetId(StagingAreaSubnetIdT&& value) {
-    m_stagingAreaSubnetIdHasBeenSet = true;
-    m_stagingAreaSubnetId = std::forward<StagingAreaSubnetIdT>(value);
-  }
-  template <typename StagingAreaSubnetIdT = Aws::String>
-  GetReplicationConfigurationResult& WithStagingAreaSubnetId(StagingAreaSubnetIdT&& value) {
-    SetStagingAreaSubnetId(std::forward<StagingAreaSubnetIdT>(value));
+  inline GetReplicationConfigurationResult& WithCreatePublicIP(bool value) {
+    SetCreatePublicIP(value);
     return *this;
   }
   ///@}
@@ -325,16 +302,56 @@ class GetReplicationConfigurationResult {
 
   ///@{
   /**
-   * <p>Whether to use a dedicated Replication Server in the replication staging
-   * area.</p>
+   * <p>The Point in time (PIT) policy to manage snapshots taken during
+   * replication.</p>
    */
-  inline bool GetUseDedicatedReplicationServer() const { return m_useDedicatedReplicationServer; }
-  inline void SetUseDedicatedReplicationServer(bool value) {
-    m_useDedicatedReplicationServerHasBeenSet = true;
-    m_useDedicatedReplicationServer = value;
+  inline const Aws::Vector<PITPolicyRule>& GetPitPolicy() const { return m_pitPolicy; }
+  template <typename PitPolicyT = Aws::Vector<PITPolicyRule>>
+  void SetPitPolicy(PitPolicyT&& value) {
+    m_pitPolicyHasBeenSet = true;
+    m_pitPolicy = std::forward<PitPolicyT>(value);
   }
-  inline GetReplicationConfigurationResult& WithUseDedicatedReplicationServer(bool value) {
-    SetUseDedicatedReplicationServer(value);
+  template <typename PitPolicyT = Aws::Vector<PITPolicyRule>>
+  GetReplicationConfigurationResult& WithPitPolicy(PitPolicyT&& value) {
+    SetPitPolicy(std::forward<PitPolicyT>(value));
+    return *this;
+  }
+  template <typename PitPolicyT = PITPolicyRule>
+  GetReplicationConfigurationResult& AddPitPolicy(PitPolicyT&& value) {
+    m_pitPolicyHasBeenSet = true;
+    m_pitPolicy.emplace_back(std::forward<PitPolicyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Whether to allow the AWS replication agent to automatically replicate newly
+   * added disks.</p>
+   */
+  inline bool GetAutoReplicateNewDisks() const { return m_autoReplicateNewDisks; }
+  inline void SetAutoReplicateNewDisks(bool value) {
+    m_autoReplicateNewDisksHasBeenSet = true;
+    m_autoReplicateNewDisks = value;
+  }
+  inline GetReplicationConfigurationResult& WithAutoReplicateNewDisks(bool value) {
+    SetAutoReplicateNewDisks(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Which version of the Internet Protocol to use for replication of data. (IPv4
+   * or IPv6)</p>
+   */
+  inline InternetProtocol GetInternetProtocol() const { return m_internetProtocol; }
+  inline void SetInternetProtocol(InternetProtocol value) {
+    m_internetProtocolHasBeenSet = true;
+    m_internetProtocol = value;
+  }
+  inline GetReplicationConfigurationResult& WithInternetProtocol(InternetProtocol value) {
+    SetInternetProtocol(value);
     return *this;
   }
   ///@}
@@ -356,60 +373,63 @@ class GetReplicationConfigurationResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
+  Aws::String m_sourceServerID;
+
+  Aws::String m_name;
+
+  Aws::String m_stagingAreaSubnetId;
+
   bool m_associateDefaultSecurityGroup{false};
 
-  bool m_autoReplicateNewDisks{false};
+  Aws::Vector<Aws::String> m_replicationServersSecurityGroupsIDs;
 
-  long long m_bandwidthThrottling{0};
+  Aws::String m_replicationServerInstanceType;
 
-  bool m_createPublicIP{false};
-
-  ReplicationConfigurationDataPlaneRouting m_dataPlaneRouting{ReplicationConfigurationDataPlaneRouting::NOT_SET};
+  bool m_useDedicatedReplicationServer{false};
 
   ReplicationConfigurationDefaultLargeStagingDiskType m_defaultLargeStagingDiskType{
       ReplicationConfigurationDefaultLargeStagingDiskType::NOT_SET};
+
+  Aws::Vector<ReplicationConfigurationReplicatedDisk> m_replicatedDisks;
 
   ReplicationConfigurationEbsEncryption m_ebsEncryption{ReplicationConfigurationEbsEncryption::NOT_SET};
 
   Aws::String m_ebsEncryptionKeyArn;
 
-  Aws::String m_name;
+  long long m_bandwidthThrottling{0};
 
-  Aws::Vector<PITPolicyRule> m_pitPolicy;
+  ReplicationConfigurationDataPlaneRouting m_dataPlaneRouting{ReplicationConfigurationDataPlaneRouting::NOT_SET};
 
-  Aws::Vector<ReplicationConfigurationReplicatedDisk> m_replicatedDisks;
-
-  Aws::String m_replicationServerInstanceType;
-
-  Aws::Vector<Aws::String> m_replicationServersSecurityGroupsIDs;
-
-  Aws::String m_sourceServerID;
-
-  Aws::String m_stagingAreaSubnetId;
+  bool m_createPublicIP{false};
 
   Aws::Map<Aws::String, Aws::String> m_stagingAreaTags;
 
-  bool m_useDedicatedReplicationServer{false};
+  Aws::Vector<PITPolicyRule> m_pitPolicy;
+
+  bool m_autoReplicateNewDisks{false};
+
+  InternetProtocol m_internetProtocol{InternetProtocol::NOT_SET};
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_sourceServerIDHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_stagingAreaSubnetIdHasBeenSet = false;
   bool m_associateDefaultSecurityGroupHasBeenSet = false;
-  bool m_autoReplicateNewDisksHasBeenSet = false;
-  bool m_bandwidthThrottlingHasBeenSet = false;
-  bool m_createPublicIPHasBeenSet = false;
-  bool m_dataPlaneRoutingHasBeenSet = false;
+  bool m_replicationServersSecurityGroupsIDsHasBeenSet = false;
+  bool m_replicationServerInstanceTypeHasBeenSet = false;
+  bool m_useDedicatedReplicationServerHasBeenSet = false;
   bool m_defaultLargeStagingDiskTypeHasBeenSet = false;
+  bool m_replicatedDisksHasBeenSet = false;
   bool m_ebsEncryptionHasBeenSet = false;
   bool m_ebsEncryptionKeyArnHasBeenSet = false;
-  bool m_nameHasBeenSet = false;
-  bool m_pitPolicyHasBeenSet = false;
-  bool m_replicatedDisksHasBeenSet = false;
-  bool m_replicationServerInstanceTypeHasBeenSet = false;
-  bool m_replicationServersSecurityGroupsIDsHasBeenSet = false;
-  bool m_sourceServerIDHasBeenSet = false;
-  bool m_stagingAreaSubnetIdHasBeenSet = false;
+  bool m_bandwidthThrottlingHasBeenSet = false;
+  bool m_dataPlaneRoutingHasBeenSet = false;
+  bool m_createPublicIPHasBeenSet = false;
   bool m_stagingAreaTagsHasBeenSet = false;
-  bool m_useDedicatedReplicationServerHasBeenSet = false;
+  bool m_pitPolicyHasBeenSet = false;
+  bool m_autoReplicateNewDisksHasBeenSet = false;
+  bool m_internetProtocolHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -18,9 +18,9 @@ namespace Model {
 StagingArea::StagingArea(JsonView jsonValue) { *this = jsonValue; }
 
 StagingArea& StagingArea::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("errorMessage")) {
-    m_errorMessage = jsonValue.GetString("errorMessage");
-    m_errorMessageHasBeenSet = true;
+  if (jsonValue.ValueExists("status")) {
+    m_status = ExtensionStatusMapper::GetExtensionStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
   }
   if (jsonValue.ValueExists("stagingAccountID")) {
     m_stagingAccountID = jsonValue.GetString("stagingAccountID");
@@ -30,9 +30,9 @@ StagingArea& StagingArea::operator=(JsonView jsonValue) {
     m_stagingSourceServerArn = jsonValue.GetString("stagingSourceServerArn");
     m_stagingSourceServerArnHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("status")) {
-    m_status = ExtensionStatusMapper::GetExtensionStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
+  if (jsonValue.ValueExists("errorMessage")) {
+    m_errorMessage = jsonValue.GetString("errorMessage");
+    m_errorMessageHasBeenSet = true;
   }
   return *this;
 }
@@ -40,8 +40,8 @@ StagingArea& StagingArea::operator=(JsonView jsonValue) {
 JsonValue StagingArea::Jsonize() const {
   JsonValue payload;
 
-  if (m_errorMessageHasBeenSet) {
-    payload.WithString("errorMessage", m_errorMessage);
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", ExtensionStatusMapper::GetNameForExtensionStatus(m_status));
   }
 
   if (m_stagingAccountIDHasBeenSet) {
@@ -52,8 +52,8 @@ JsonValue StagingArea::Jsonize() const {
     payload.WithString("stagingSourceServerArn", m_stagingSourceServerArn);
   }
 
-  if (m_statusHasBeenSet) {
-    payload.WithString("status", ExtensionStatusMapper::GetNameForExtensionStatus(m_status));
+  if (m_errorMessageHasBeenSet) {
+    payload.WithString("errorMessage", m_errorMessage);
   }
 
   return payload;

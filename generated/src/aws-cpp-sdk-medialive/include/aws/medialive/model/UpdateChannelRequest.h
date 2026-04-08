@@ -19,6 +19,7 @@
 #include <aws/medialive/model/LogLevel.h>
 #include <aws/medialive/model/MaintenanceUpdateSettings.h>
 #include <aws/medialive/model/OutputDestination.h>
+#include <aws/medialive/model/SpecialRouterSettings.h>
 
 #include <utility>
 
@@ -342,6 +343,29 @@ class UpdateChannelRequest : public MediaLiveRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * When using MediaConnect Router as the source of a MediaLive input there's a
+   * special handoff that occurs when a router output
+is created. This group of
+   * settings is set on your behalf by the MediaConnect Router service using this set
+   * of settings. This
+setting object can only by used by that service.
+   */
+  inline const SpecialRouterSettings& GetSpecialRouterSettings() const { return m_specialRouterSettings; }
+  inline bool SpecialRouterSettingsHasBeenSet() const { return m_specialRouterSettingsHasBeenSet; }
+  template <typename SpecialRouterSettingsT = SpecialRouterSettings>
+  void SetSpecialRouterSettings(SpecialRouterSettingsT&& value) {
+    m_specialRouterSettingsHasBeenSet = true;
+    m_specialRouterSettings = std::forward<SpecialRouterSettingsT>(value);
+  }
+  template <typename SpecialRouterSettingsT = SpecialRouterSettings>
+  UpdateChannelRequest& WithSpecialRouterSettings(SpecialRouterSettingsT&& value) {
+    SetSpecialRouterSettings(std::forward<SpecialRouterSettingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   CdiInputSpecification m_cdiInputSpecification;
 
@@ -374,6 +398,8 @@ class UpdateChannelRequest : public MediaLiveRequest {
   Aws::Vector<Aws::String> m_channelSecurityGroups;
 
   InferenceSettings m_inferenceSettings;
+
+  SpecialRouterSettings m_specialRouterSettings;
   bool m_cdiInputSpecificationHasBeenSet = false;
   bool m_channelIdHasBeenSet = false;
   bool m_destinationsHasBeenSet = false;
@@ -390,6 +416,7 @@ class UpdateChannelRequest : public MediaLiveRequest {
   bool m_linkedChannelSettingsHasBeenSet = false;
   bool m_channelSecurityGroupsHasBeenSet = false;
   bool m_inferenceSettingsHasBeenSet = false;
+  bool m_specialRouterSettingsHasBeenSet = false;
 };
 
 }  // namespace Model

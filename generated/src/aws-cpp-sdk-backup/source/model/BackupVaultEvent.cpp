@@ -36,6 +36,9 @@ static const int CONTINUOUS_BACKUP_INTERRUPTED_HASH = HashingUtils::HashString("
 static const int RECOVERY_POINT_INDEX_COMPLETED_HASH = HashingUtils::HashString("RECOVERY_POINT_INDEX_COMPLETED");
 static const int RECOVERY_POINT_INDEX_DELETED_HASH = HashingUtils::HashString("RECOVERY_POINT_INDEX_DELETED");
 static const int RECOVERY_POINT_INDEXING_FAILED_HASH = HashingUtils::HashString("RECOVERY_POINT_INDEXING_FAILED");
+static const int EKS_RESTORE_OBJECT_FAILED_HASH = HashingUtils::HashString("EKS_RESTORE_OBJECT_FAILED");
+static const int EKS_RESTORE_OBJECT_SKIPPED_HASH = HashingUtils::HashString("EKS_RESTORE_OBJECT_SKIPPED");
+static const int EKS_BACKUP_OBJECT_FAILED_HASH = HashingUtils::HashString("EKS_BACKUP_OBJECT_FAILED");
 
 BackupVaultEvent GetBackupVaultEventForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -81,6 +84,12 @@ BackupVaultEvent GetBackupVaultEventForName(const Aws::String& name) {
     return BackupVaultEvent::RECOVERY_POINT_INDEX_DELETED;
   } else if (hashCode == RECOVERY_POINT_INDEXING_FAILED_HASH) {
     return BackupVaultEvent::RECOVERY_POINT_INDEXING_FAILED;
+  } else if (hashCode == EKS_RESTORE_OBJECT_FAILED_HASH) {
+    return BackupVaultEvent::EKS_RESTORE_OBJECT_FAILED;
+  } else if (hashCode == EKS_RESTORE_OBJECT_SKIPPED_HASH) {
+    return BackupVaultEvent::EKS_RESTORE_OBJECT_SKIPPED;
+  } else if (hashCode == EKS_BACKUP_OBJECT_FAILED_HASH) {
+    return BackupVaultEvent::EKS_BACKUP_OBJECT_FAILED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -137,6 +146,12 @@ Aws::String GetNameForBackupVaultEvent(BackupVaultEvent enumValue) {
       return "RECOVERY_POINT_INDEX_DELETED";
     case BackupVaultEvent::RECOVERY_POINT_INDEXING_FAILED:
       return "RECOVERY_POINT_INDEXING_FAILED";
+    case BackupVaultEvent::EKS_RESTORE_OBJECT_FAILED:
+      return "EKS_RESTORE_OBJECT_FAILED";
+    case BackupVaultEvent::EKS_RESTORE_OBJECT_SKIPPED:
+      return "EKS_RESTORE_OBJECT_SKIPPED";
+    case BackupVaultEvent::EKS_BACKUP_OBJECT_FAILED:
+      return "EKS_BACKUP_OBJECT_FAILED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

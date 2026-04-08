@@ -32,6 +32,24 @@ class DescribeRecoverySnapshotsRequest : public DrsRequest {
 
   ///@{
   /**
+   * <p>Filter Recovery Snapshots by Source Server ID.</p>
+   */
+  inline const Aws::String& GetSourceServerID() const { return m_sourceServerID; }
+  inline bool SourceServerIDHasBeenSet() const { return m_sourceServerIDHasBeenSet; }
+  template <typename SourceServerIDT = Aws::String>
+  void SetSourceServerID(SourceServerIDT&& value) {
+    m_sourceServerIDHasBeenSet = true;
+    m_sourceServerID = std::forward<SourceServerIDT>(value);
+  }
+  template <typename SourceServerIDT = Aws::String>
+  DescribeRecoverySnapshotsRequest& WithSourceServerID(SourceServerIDT&& value) {
+    SetSourceServerID(std::forward<SourceServerIDT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A set of filters by which to return Recovery Snapshots.</p>
    */
   inline const DescribeRecoverySnapshotsRequestFilters& GetFilters() const { return m_filters; }
@@ -44,6 +62,22 @@ class DescribeRecoverySnapshotsRequest : public DrsRequest {
   template <typename FiltersT = DescribeRecoverySnapshotsRequestFilters>
   DescribeRecoverySnapshotsRequest& WithFilters(FiltersT&& value) {
     SetFilters(std::forward<FiltersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The sorted ordering by which to return Recovery Snapshots.</p>
+   */
+  inline RecoverySnapshotsOrder GetOrder() const { return m_order; }
+  inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
+  inline void SetOrder(RecoverySnapshotsOrder value) {
+    m_orderHasBeenSet = true;
+    m_order = value;
+  }
+  inline DescribeRecoverySnapshotsRequest& WithOrder(RecoverySnapshotsOrder value) {
+    SetOrder(value);
     return *this;
   }
   ///@}
@@ -81,55 +115,21 @@ class DescribeRecoverySnapshotsRequest : public DrsRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The sorted ordering by which to return Recovery Snapshots.</p>
-   */
-  inline RecoverySnapshotsOrder GetOrder() const { return m_order; }
-  inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
-  inline void SetOrder(RecoverySnapshotsOrder value) {
-    m_orderHasBeenSet = true;
-    m_order = value;
-  }
-  inline DescribeRecoverySnapshotsRequest& WithOrder(RecoverySnapshotsOrder value) {
-    SetOrder(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Filter Recovery Snapshots by Source Server ID.</p>
-   */
-  inline const Aws::String& GetSourceServerID() const { return m_sourceServerID; }
-  inline bool SourceServerIDHasBeenSet() const { return m_sourceServerIDHasBeenSet; }
-  template <typename SourceServerIDT = Aws::String>
-  void SetSourceServerID(SourceServerIDT&& value) {
-    m_sourceServerIDHasBeenSet = true;
-    m_sourceServerID = std::forward<SourceServerIDT>(value);
-  }
-  template <typename SourceServerIDT = Aws::String>
-  DescribeRecoverySnapshotsRequest& WithSourceServerID(SourceServerIDT&& value) {
-    SetSourceServerID(std::forward<SourceServerIDT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_sourceServerID;
+
   DescribeRecoverySnapshotsRequestFilters m_filters;
+
+  RecoverySnapshotsOrder m_order{RecoverySnapshotsOrder::NOT_SET};
 
   int m_maxResults{0};
 
   Aws::String m_nextToken;
-
-  RecoverySnapshotsOrder m_order{RecoverySnapshotsOrder::NOT_SET};
-
-  Aws::String m_sourceServerID;
+  bool m_sourceServerIDHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
+  bool m_orderHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
-  bool m_orderHasBeenSet = false;
-  bool m_sourceServerIDHasBeenSet = false;
 };
 
 }  // namespace Model

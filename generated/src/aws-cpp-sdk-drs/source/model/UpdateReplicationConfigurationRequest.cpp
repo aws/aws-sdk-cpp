@@ -15,66 +15,20 @@ using namespace Aws::Utils;
 Aws::String UpdateReplicationConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_associateDefaultSecurityGroupHasBeenSet) {
-    payload.WithBool("associateDefaultSecurityGroup", m_associateDefaultSecurityGroup);
-  }
-
-  if (m_autoReplicateNewDisksHasBeenSet) {
-    payload.WithBool("autoReplicateNewDisks", m_autoReplicateNewDisks);
-  }
-
-  if (m_bandwidthThrottlingHasBeenSet) {
-    payload.WithInt64("bandwidthThrottling", m_bandwidthThrottling);
-  }
-
-  if (m_createPublicIPHasBeenSet) {
-    payload.WithBool("createPublicIP", m_createPublicIP);
-  }
-
-  if (m_dataPlaneRoutingHasBeenSet) {
-    payload.WithString(
-        "dataPlaneRouting",
-        ReplicationConfigurationDataPlaneRoutingMapper::GetNameForReplicationConfigurationDataPlaneRouting(m_dataPlaneRouting));
-  }
-
-  if (m_defaultLargeStagingDiskTypeHasBeenSet) {
-    payload.WithString(
-        "defaultLargeStagingDiskType",
-        ReplicationConfigurationDefaultLargeStagingDiskTypeMapper::GetNameForReplicationConfigurationDefaultLargeStagingDiskType(
-            m_defaultLargeStagingDiskType));
-  }
-
-  if (m_ebsEncryptionHasBeenSet) {
-    payload.WithString("ebsEncryption",
-                       ReplicationConfigurationEbsEncryptionMapper::GetNameForReplicationConfigurationEbsEncryption(m_ebsEncryption));
-  }
-
-  if (m_ebsEncryptionKeyArnHasBeenSet) {
-    payload.WithString("ebsEncryptionKeyArn", m_ebsEncryptionKeyArn);
+  if (m_sourceServerIDHasBeenSet) {
+    payload.WithString("sourceServerID", m_sourceServerID);
   }
 
   if (m_nameHasBeenSet) {
     payload.WithString("name", m_name);
   }
 
-  if (m_pitPolicyHasBeenSet) {
-    Aws::Utils::Array<JsonValue> pitPolicyJsonList(m_pitPolicy.size());
-    for (unsigned pitPolicyIndex = 0; pitPolicyIndex < pitPolicyJsonList.GetLength(); ++pitPolicyIndex) {
-      pitPolicyJsonList[pitPolicyIndex].AsObject(m_pitPolicy[pitPolicyIndex].Jsonize());
-    }
-    payload.WithArray("pitPolicy", std::move(pitPolicyJsonList));
+  if (m_stagingAreaSubnetIdHasBeenSet) {
+    payload.WithString("stagingAreaSubnetId", m_stagingAreaSubnetId);
   }
 
-  if (m_replicatedDisksHasBeenSet) {
-    Aws::Utils::Array<JsonValue> replicatedDisksJsonList(m_replicatedDisks.size());
-    for (unsigned replicatedDisksIndex = 0; replicatedDisksIndex < replicatedDisksJsonList.GetLength(); ++replicatedDisksIndex) {
-      replicatedDisksJsonList[replicatedDisksIndex].AsObject(m_replicatedDisks[replicatedDisksIndex].Jsonize());
-    }
-    payload.WithArray("replicatedDisks", std::move(replicatedDisksJsonList));
-  }
-
-  if (m_replicationServerInstanceTypeHasBeenSet) {
-    payload.WithString("replicationServerInstanceType", m_replicationServerInstanceType);
+  if (m_associateDefaultSecurityGroupHasBeenSet) {
+    payload.WithBool("associateDefaultSecurityGroup", m_associateDefaultSecurityGroup);
   }
 
   if (m_replicationServersSecurityGroupsIDsHasBeenSet) {
@@ -88,12 +42,50 @@ Aws::String UpdateReplicationConfigurationRequest::SerializePayload() const {
     payload.WithArray("replicationServersSecurityGroupsIDs", std::move(replicationServersSecurityGroupsIDsJsonList));
   }
 
-  if (m_sourceServerIDHasBeenSet) {
-    payload.WithString("sourceServerID", m_sourceServerID);
+  if (m_replicationServerInstanceTypeHasBeenSet) {
+    payload.WithString("replicationServerInstanceType", m_replicationServerInstanceType);
   }
 
-  if (m_stagingAreaSubnetIdHasBeenSet) {
-    payload.WithString("stagingAreaSubnetId", m_stagingAreaSubnetId);
+  if (m_useDedicatedReplicationServerHasBeenSet) {
+    payload.WithBool("useDedicatedReplicationServer", m_useDedicatedReplicationServer);
+  }
+
+  if (m_defaultLargeStagingDiskTypeHasBeenSet) {
+    payload.WithString(
+        "defaultLargeStagingDiskType",
+        ReplicationConfigurationDefaultLargeStagingDiskTypeMapper::GetNameForReplicationConfigurationDefaultLargeStagingDiskType(
+            m_defaultLargeStagingDiskType));
+  }
+
+  if (m_replicatedDisksHasBeenSet) {
+    Aws::Utils::Array<JsonValue> replicatedDisksJsonList(m_replicatedDisks.size());
+    for (unsigned replicatedDisksIndex = 0; replicatedDisksIndex < replicatedDisksJsonList.GetLength(); ++replicatedDisksIndex) {
+      replicatedDisksJsonList[replicatedDisksIndex].AsObject(m_replicatedDisks[replicatedDisksIndex].Jsonize());
+    }
+    payload.WithArray("replicatedDisks", std::move(replicatedDisksJsonList));
+  }
+
+  if (m_ebsEncryptionHasBeenSet) {
+    payload.WithString("ebsEncryption",
+                       ReplicationConfigurationEbsEncryptionMapper::GetNameForReplicationConfigurationEbsEncryption(m_ebsEncryption));
+  }
+
+  if (m_ebsEncryptionKeyArnHasBeenSet) {
+    payload.WithString("ebsEncryptionKeyArn", m_ebsEncryptionKeyArn);
+  }
+
+  if (m_bandwidthThrottlingHasBeenSet) {
+    payload.WithInt64("bandwidthThrottling", m_bandwidthThrottling);
+  }
+
+  if (m_dataPlaneRoutingHasBeenSet) {
+    payload.WithString(
+        "dataPlaneRouting",
+        ReplicationConfigurationDataPlaneRoutingMapper::GetNameForReplicationConfigurationDataPlaneRouting(m_dataPlaneRouting));
+  }
+
+  if (m_createPublicIPHasBeenSet) {
+    payload.WithBool("createPublicIP", m_createPublicIP);
   }
 
   if (m_stagingAreaTagsHasBeenSet) {
@@ -104,8 +96,20 @@ Aws::String UpdateReplicationConfigurationRequest::SerializePayload() const {
     payload.WithObject("stagingAreaTags", std::move(stagingAreaTagsJsonMap));
   }
 
-  if (m_useDedicatedReplicationServerHasBeenSet) {
-    payload.WithBool("useDedicatedReplicationServer", m_useDedicatedReplicationServer);
+  if (m_pitPolicyHasBeenSet) {
+    Aws::Utils::Array<JsonValue> pitPolicyJsonList(m_pitPolicy.size());
+    for (unsigned pitPolicyIndex = 0; pitPolicyIndex < pitPolicyJsonList.GetLength(); ++pitPolicyIndex) {
+      pitPolicyJsonList[pitPolicyIndex].AsObject(m_pitPolicy[pitPolicyIndex].Jsonize());
+    }
+    payload.WithArray("pitPolicy", std::move(pitPolicyJsonList));
+  }
+
+  if (m_autoReplicateNewDisksHasBeenSet) {
+    payload.WithBool("autoReplicateNewDisks", m_autoReplicateNewDisks);
+  }
+
+  if (m_internetProtocolHasBeenSet) {
+    payload.WithString("internetProtocol", InternetProtocolMapper::GetNameForInternetProtocol(m_internetProtocol));
   }
 
   return payload.View().WriteReadable();

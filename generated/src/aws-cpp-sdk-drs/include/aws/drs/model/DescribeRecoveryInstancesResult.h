@@ -31,6 +31,23 @@ class DescribeRecoveryInstancesResult {
 
   ///@{
   /**
+   * <p>The token of the next Recovery Instance to retrieve.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  DescribeRecoveryInstancesResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>An array of Recovery Instances.</p>
    */
   inline const Aws::Vector<RecoveryInstance>& GetItems() const { return m_items; }
@@ -53,23 +70,6 @@ class DescribeRecoveryInstancesResult {
   ///@}
 
   ///@{
-  /**
-   * <p>The token of the next Recovery Instance to retrieve.</p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  DescribeRecoveryInstancesResult& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -86,14 +86,14 @@ class DescribeRecoveryInstancesResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
-  Aws::Vector<RecoveryInstance> m_items;
-
   Aws::String m_nextToken;
+
+  Aws::Vector<RecoveryInstance> m_items;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
-  bool m_itemsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
+  bool m_itemsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

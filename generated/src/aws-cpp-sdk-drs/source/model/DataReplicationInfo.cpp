@@ -18,25 +18,13 @@ namespace Model {
 DataReplicationInfo::DataReplicationInfo(JsonView jsonValue) { *this = jsonValue; }
 
 DataReplicationInfo& DataReplicationInfo::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("dataReplicationError")) {
-    m_dataReplicationError = jsonValue.GetObject("dataReplicationError");
-    m_dataReplicationErrorHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("dataReplicationInitiation")) {
-    m_dataReplicationInitiation = jsonValue.GetObject("dataReplicationInitiation");
-    m_dataReplicationInitiationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("dataReplicationState")) {
-    m_dataReplicationState = DataReplicationStateMapper::GetDataReplicationStateForName(jsonValue.GetString("dataReplicationState"));
-    m_dataReplicationStateHasBeenSet = true;
+  if (jsonValue.ValueExists("lagDuration")) {
+    m_lagDuration = jsonValue.GetString("lagDuration");
+    m_lagDurationHasBeenSet = true;
   }
   if (jsonValue.ValueExists("etaDateTime")) {
     m_etaDateTime = jsonValue.GetString("etaDateTime");
     m_etaDateTimeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("lagDuration")) {
-    m_lagDuration = jsonValue.GetString("lagDuration");
-    m_lagDurationHasBeenSet = true;
   }
   if (jsonValue.ValueExists("replicatedDisks")) {
     Aws::Utils::Array<JsonView> replicatedDisksJsonList = jsonValue.GetArray("replicatedDisks");
@@ -44,6 +32,18 @@ DataReplicationInfo& DataReplicationInfo::operator=(JsonView jsonValue) {
       m_replicatedDisks.push_back(replicatedDisksJsonList[replicatedDisksIndex].AsObject());
     }
     m_replicatedDisksHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("dataReplicationState")) {
+    m_dataReplicationState = DataReplicationStateMapper::GetDataReplicationStateForName(jsonValue.GetString("dataReplicationState"));
+    m_dataReplicationStateHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("dataReplicationInitiation")) {
+    m_dataReplicationInitiation = jsonValue.GetObject("dataReplicationInitiation");
+    m_dataReplicationInitiationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("dataReplicationError")) {
+    m_dataReplicationError = jsonValue.GetObject("dataReplicationError");
+    m_dataReplicationErrorHasBeenSet = true;
   }
   if (jsonValue.ValueExists("stagingAvailabilityZone")) {
     m_stagingAvailabilityZone = jsonValue.GetString("stagingAvailabilityZone");
@@ -59,24 +59,12 @@ DataReplicationInfo& DataReplicationInfo::operator=(JsonView jsonValue) {
 JsonValue DataReplicationInfo::Jsonize() const {
   JsonValue payload;
 
-  if (m_dataReplicationErrorHasBeenSet) {
-    payload.WithObject("dataReplicationError", m_dataReplicationError.Jsonize());
-  }
-
-  if (m_dataReplicationInitiationHasBeenSet) {
-    payload.WithObject("dataReplicationInitiation", m_dataReplicationInitiation.Jsonize());
-  }
-
-  if (m_dataReplicationStateHasBeenSet) {
-    payload.WithString("dataReplicationState", DataReplicationStateMapper::GetNameForDataReplicationState(m_dataReplicationState));
+  if (m_lagDurationHasBeenSet) {
+    payload.WithString("lagDuration", m_lagDuration);
   }
 
   if (m_etaDateTimeHasBeenSet) {
     payload.WithString("etaDateTime", m_etaDateTime);
-  }
-
-  if (m_lagDurationHasBeenSet) {
-    payload.WithString("lagDuration", m_lagDuration);
   }
 
   if (m_replicatedDisksHasBeenSet) {
@@ -85,6 +73,18 @@ JsonValue DataReplicationInfo::Jsonize() const {
       replicatedDisksJsonList[replicatedDisksIndex].AsObject(m_replicatedDisks[replicatedDisksIndex].Jsonize());
     }
     payload.WithArray("replicatedDisks", std::move(replicatedDisksJsonList));
+  }
+
+  if (m_dataReplicationStateHasBeenSet) {
+    payload.WithString("dataReplicationState", DataReplicationStateMapper::GetNameForDataReplicationState(m_dataReplicationState));
+  }
+
+  if (m_dataReplicationInitiationHasBeenSet) {
+    payload.WithObject("dataReplicationInitiation", m_dataReplicationInitiation.Jsonize());
+  }
+
+  if (m_dataReplicationErrorHasBeenSet) {
+    payload.WithObject("dataReplicationError", m_dataReplicationError.Jsonize());
   }
 
   if (m_stagingAvailabilityZoneHasBeenSet) {

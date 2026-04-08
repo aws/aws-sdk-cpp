@@ -9,6 +9,7 @@
 #include <aws/medialive/model/CmafIngestOutputSettings.h>
 #include <aws/medialive/model/FrameCaptureOutputSettings.h>
 #include <aws/medialive/model/HlsOutputSettings.h>
+#include <aws/medialive/model/MediaConnectRouterOutputSettings.h>
 #include <aws/medialive/model/MediaPackageOutputSettings.h>
 #include <aws/medialive/model/MsSmoothOutputSettings.h>
 #include <aws/medialive/model/MultiplexOutputSettings.h>
@@ -199,6 +200,22 @@ class OutputSettings {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const MediaConnectRouterOutputSettings& GetMediaConnectRouterOutputSettings() const { return m_mediaConnectRouterOutputSettings; }
+  inline bool MediaConnectRouterOutputSettingsHasBeenSet() const { return m_mediaConnectRouterOutputSettingsHasBeenSet; }
+  template <typename MediaConnectRouterOutputSettingsT = MediaConnectRouterOutputSettings>
+  void SetMediaConnectRouterOutputSettings(MediaConnectRouterOutputSettingsT&& value) {
+    m_mediaConnectRouterOutputSettingsHasBeenSet = true;
+    m_mediaConnectRouterOutputSettings = std::forward<MediaConnectRouterOutputSettingsT>(value);
+  }
+  template <typename MediaConnectRouterOutputSettingsT = MediaConnectRouterOutputSettings>
+  OutputSettings& WithMediaConnectRouterOutputSettings(MediaConnectRouterOutputSettingsT&& value) {
+    SetMediaConnectRouterOutputSettings(std::forward<MediaConnectRouterOutputSettingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ArchiveOutputSettings m_archiveOutputSettings;
 
@@ -219,6 +236,8 @@ class OutputSettings {
   CmafIngestOutputSettings m_cmafIngestOutputSettings;
 
   SrtOutputSettings m_srtOutputSettings;
+
+  MediaConnectRouterOutputSettings m_mediaConnectRouterOutputSettings;
   bool m_archiveOutputSettingsHasBeenSet = false;
   bool m_frameCaptureOutputSettingsHasBeenSet = false;
   bool m_hlsOutputSettingsHasBeenSet = false;
@@ -229,6 +248,7 @@ class OutputSettings {
   bool m_udpOutputSettingsHasBeenSet = false;
   bool m_cmafIngestOutputSettingsHasBeenSet = false;
   bool m_srtOutputSettingsHasBeenSet = false;
+  bool m_mediaConnectRouterOutputSettingsHasBeenSet = false;
 };
 
 }  // namespace Model

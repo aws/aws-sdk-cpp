@@ -56,6 +56,14 @@ OutputDestination& OutputDestination::operator=(JsonView jsonValue) {
     }
     m_logicalInterfaceNamesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("mediaConnectRouterSettings")) {
+    Aws::Utils::Array<JsonView> mediaConnectRouterSettingsJsonList = jsonValue.GetArray("mediaConnectRouterSettings");
+    for (unsigned mediaConnectRouterSettingsIndex = 0; mediaConnectRouterSettingsIndex < mediaConnectRouterSettingsJsonList.GetLength();
+         ++mediaConnectRouterSettingsIndex) {
+      m_mediaConnectRouterSettings.push_back(mediaConnectRouterSettingsJsonList[mediaConnectRouterSettingsIndex].AsObject());
+    }
+    m_mediaConnectRouterSettingsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -102,6 +110,16 @@ JsonValue OutputDestination::Jsonize() const {
       logicalInterfaceNamesJsonList[logicalInterfaceNamesIndex].AsString(m_logicalInterfaceNames[logicalInterfaceNamesIndex]);
     }
     payload.WithArray("logicalInterfaceNames", std::move(logicalInterfaceNamesJsonList));
+  }
+
+  if (m_mediaConnectRouterSettingsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> mediaConnectRouterSettingsJsonList(m_mediaConnectRouterSettings.size());
+    for (unsigned mediaConnectRouterSettingsIndex = 0; mediaConnectRouterSettingsIndex < mediaConnectRouterSettingsJsonList.GetLength();
+         ++mediaConnectRouterSettingsIndex) {
+      mediaConnectRouterSettingsJsonList[mediaConnectRouterSettingsIndex].AsObject(
+          m_mediaConnectRouterSettings[mediaConnectRouterSettingsIndex].Jsonize());
+    }
+    payload.WithArray("mediaConnectRouterSettings", std::move(mediaConnectRouterSettingsJsonList));
   }
 
   return payload;

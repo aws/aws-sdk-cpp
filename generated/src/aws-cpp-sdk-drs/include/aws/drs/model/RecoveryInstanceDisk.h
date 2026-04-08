@@ -34,6 +34,25 @@ class RecoveryInstanceDisk {
 
   ///@{
   /**
+   * <p>The internal device name of this disk. This is the name that is visible on
+   * the machine itself and not from the EC2 console.</p>
+   */
+  inline const Aws::String& GetInternalDeviceName() const { return m_internalDeviceName; }
+  inline bool InternalDeviceNameHasBeenSet() const { return m_internalDeviceNameHasBeenSet; }
+  template <typename InternalDeviceNameT = Aws::String>
+  void SetInternalDeviceName(InternalDeviceNameT&& value) {
+    m_internalDeviceNameHasBeenSet = true;
+    m_internalDeviceName = std::forward<InternalDeviceNameT>(value);
+  }
+  template <typename InternalDeviceNameT = Aws::String>
+  RecoveryInstanceDisk& WithInternalDeviceName(InternalDeviceNameT&& value) {
+    SetInternalDeviceName(std::forward<InternalDeviceNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The amount of storage on the disk in bytes.</p>
    */
   inline long long GetBytes() const { return m_bytes; }
@@ -65,34 +84,15 @@ class RecoveryInstanceDisk {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The internal device name of this disk. This is the name that is visible on
-   * the machine itself and not from the EC2 console.</p>
-   */
-  inline const Aws::String& GetInternalDeviceName() const { return m_internalDeviceName; }
-  inline bool InternalDeviceNameHasBeenSet() const { return m_internalDeviceNameHasBeenSet; }
-  template <typename InternalDeviceNameT = Aws::String>
-  void SetInternalDeviceName(InternalDeviceNameT&& value) {
-    m_internalDeviceNameHasBeenSet = true;
-    m_internalDeviceName = std::forward<InternalDeviceNameT>(value);
-  }
-  template <typename InternalDeviceNameT = Aws::String>
-  RecoveryInstanceDisk& WithInternalDeviceName(InternalDeviceNameT&& value) {
-    SetInternalDeviceName(std::forward<InternalDeviceNameT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_internalDeviceName;
+
   long long m_bytes{0};
 
   Aws::String m_ebsVolumeID;
-
-  Aws::String m_internalDeviceName;
+  bool m_internalDeviceNameHasBeenSet = false;
   bool m_bytesHasBeenSet = false;
   bool m_ebsVolumeIDHasBeenSet = false;
-  bool m_internalDeviceNameHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -34,16 +34,32 @@ class PITPolicyRule {
 
   ///@{
   /**
-   * <p>Whether this rule is enabled or not.</p>
+   * <p>The ID of the rule.</p>
    */
-  inline bool GetEnabled() const { return m_enabled; }
-  inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-  inline void SetEnabled(bool value) {
-    m_enabledHasBeenSet = true;
-    m_enabled = value;
+  inline long long GetRuleID() const { return m_ruleID; }
+  inline bool RuleIDHasBeenSet() const { return m_ruleIDHasBeenSet; }
+  inline void SetRuleID(long long value) {
+    m_ruleIDHasBeenSet = true;
+    m_ruleID = value;
   }
-  inline PITPolicyRule& WithEnabled(bool value) {
-    SetEnabled(value);
+  inline PITPolicyRule& WithRuleID(long long value) {
+    SetRuleID(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The units used to measure the interval and retentionDuration.</p>
+   */
+  inline PITPolicyRuleUnits GetUnits() const { return m_units; }
+  inline bool UnitsHasBeenSet() const { return m_unitsHasBeenSet; }
+  inline void SetUnits(PITPolicyRuleUnits value) {
+    m_unitsHasBeenSet = true;
+    m_units = value;
+  }
+  inline PITPolicyRule& WithUnits(PITPolicyRuleUnits value) {
+    SetUnits(value);
     return *this;
   }
   ///@}
@@ -82,50 +98,34 @@ class PITPolicyRule {
 
   ///@{
   /**
-   * <p>The ID of the rule.</p>
+   * <p>Whether this rule is enabled or not.</p>
    */
-  inline long long GetRuleID() const { return m_ruleID; }
-  inline bool RuleIDHasBeenSet() const { return m_ruleIDHasBeenSet; }
-  inline void SetRuleID(long long value) {
-    m_ruleIDHasBeenSet = true;
-    m_ruleID = value;
+  inline bool GetEnabled() const { return m_enabled; }
+  inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+  inline void SetEnabled(bool value) {
+    m_enabledHasBeenSet = true;
+    m_enabled = value;
   }
-  inline PITPolicyRule& WithRuleID(long long value) {
-    SetRuleID(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The units used to measure the interval and retentionDuration.</p>
-   */
-  inline PITPolicyRuleUnits GetUnits() const { return m_units; }
-  inline bool UnitsHasBeenSet() const { return m_unitsHasBeenSet; }
-  inline void SetUnits(PITPolicyRuleUnits value) {
-    m_unitsHasBeenSet = true;
-    m_units = value;
-  }
-  inline PITPolicyRule& WithUnits(PITPolicyRuleUnits value) {
-    SetUnits(value);
+  inline PITPolicyRule& WithEnabled(bool value) {
+    SetEnabled(value);
     return *this;
   }
   ///@}
  private:
-  bool m_enabled{false};
+  long long m_ruleID{0};
+
+  PITPolicyRuleUnits m_units{PITPolicyRuleUnits::NOT_SET};
 
   int m_interval{0};
 
   int m_retentionDuration{0};
 
-  long long m_ruleID{0};
-
-  PITPolicyRuleUnits m_units{PITPolicyRuleUnits::NOT_SET};
-  bool m_enabledHasBeenSet = false;
-  bool m_intervalHasBeenSet = false;
-  bool m_retentionDurationHasBeenSet = false;
+  bool m_enabled{false};
   bool m_ruleIDHasBeenSet = false;
   bool m_unitsHasBeenSet = false;
+  bool m_intervalHasBeenSet = false;
+  bool m_retentionDurationHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
 };
 
 }  // namespace Model

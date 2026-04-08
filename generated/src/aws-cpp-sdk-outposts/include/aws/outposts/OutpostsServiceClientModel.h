@@ -23,6 +23,7 @@
 #include <aws/outposts/model/CancelOrderResult.h>
 #include <aws/outposts/model/CreateOrderResult.h>
 #include <aws/outposts/model/CreateOutpostResult.h>
+#include <aws/outposts/model/CreateRenewalResult.h>
 #include <aws/outposts/model/CreateSiteResult.h>
 #include <aws/outposts/model/DeleteOutpostResult.h>
 #include <aws/outposts/model/DeleteSiteResult.h>
@@ -34,6 +35,7 @@
 #include <aws/outposts/model/GetOutpostInstanceTypesResult.h>
 #include <aws/outposts/model/GetOutpostResult.h>
 #include <aws/outposts/model/GetOutpostSupportedInstanceTypesResult.h>
+#include <aws/outposts/model/GetRenewalPricingResult.h>
 #include <aws/outposts/model/GetSiteAddressResult.h>
 #include <aws/outposts/model/GetSiteResult.h>
 #include <aws/outposts/model/ListAssetInstancesResult.h>
@@ -96,6 +98,7 @@ class CancelCapacityTaskRequest;
 class CancelOrderRequest;
 class CreateOrderRequest;
 class CreateOutpostRequest;
+class CreateRenewalRequest;
 class CreateSiteRequest;
 class DeleteOutpostRequest;
 class DeleteSiteRequest;
@@ -107,6 +110,7 @@ class GetOutpostRequest;
 class GetOutpostBillingInformationRequest;
 class GetOutpostInstanceTypesRequest;
 class GetOutpostSupportedInstanceTypesRequest;
+class GetRenewalPricingRequest;
 class GetSiteRequest;
 class GetSiteAddressRequest;
 class ListAssetInstancesRequest;
@@ -134,6 +138,7 @@ typedef Aws::Utils::Outcome<CancelCapacityTaskResult, OutpostsError> CancelCapac
 typedef Aws::Utils::Outcome<CancelOrderResult, OutpostsError> CancelOrderOutcome;
 typedef Aws::Utils::Outcome<CreateOrderResult, OutpostsError> CreateOrderOutcome;
 typedef Aws::Utils::Outcome<CreateOutpostResult, OutpostsError> CreateOutpostOutcome;
+typedef Aws::Utils::Outcome<CreateRenewalResult, OutpostsError> CreateRenewalOutcome;
 typedef Aws::Utils::Outcome<CreateSiteResult, OutpostsError> CreateSiteOutcome;
 typedef Aws::Utils::Outcome<DeleteOutpostResult, OutpostsError> DeleteOutpostOutcome;
 typedef Aws::Utils::Outcome<DeleteSiteResult, OutpostsError> DeleteSiteOutcome;
@@ -145,6 +150,7 @@ typedef Aws::Utils::Outcome<GetOutpostResult, OutpostsError> GetOutpostOutcome;
 typedef Aws::Utils::Outcome<GetOutpostBillingInformationResult, OutpostsError> GetOutpostBillingInformationOutcome;
 typedef Aws::Utils::Outcome<GetOutpostInstanceTypesResult, OutpostsError> GetOutpostInstanceTypesOutcome;
 typedef Aws::Utils::Outcome<GetOutpostSupportedInstanceTypesResult, OutpostsError> GetOutpostSupportedInstanceTypesOutcome;
+typedef Aws::Utils::Outcome<GetRenewalPricingResult, OutpostsError> GetRenewalPricingOutcome;
 typedef Aws::Utils::Outcome<GetSiteResult, OutpostsError> GetSiteOutcome;
 typedef Aws::Utils::Outcome<GetSiteAddressResult, OutpostsError> GetSiteAddressOutcome;
 typedef Aws::Utils::Outcome<ListAssetInstancesResult, OutpostsError> ListAssetInstancesOutcome;
@@ -172,6 +178,7 @@ typedef std::future<CancelCapacityTaskOutcome> CancelCapacityTaskOutcomeCallable
 typedef std::future<CancelOrderOutcome> CancelOrderOutcomeCallable;
 typedef std::future<CreateOrderOutcome> CreateOrderOutcomeCallable;
 typedef std::future<CreateOutpostOutcome> CreateOutpostOutcomeCallable;
+typedef std::future<CreateRenewalOutcome> CreateRenewalOutcomeCallable;
 typedef std::future<CreateSiteOutcome> CreateSiteOutcomeCallable;
 typedef std::future<DeleteOutpostOutcome> DeleteOutpostOutcomeCallable;
 typedef std::future<DeleteSiteOutcome> DeleteSiteOutcomeCallable;
@@ -183,6 +190,7 @@ typedef std::future<GetOutpostOutcome> GetOutpostOutcomeCallable;
 typedef std::future<GetOutpostBillingInformationOutcome> GetOutpostBillingInformationOutcomeCallable;
 typedef std::future<GetOutpostInstanceTypesOutcome> GetOutpostInstanceTypesOutcomeCallable;
 typedef std::future<GetOutpostSupportedInstanceTypesOutcome> GetOutpostSupportedInstanceTypesOutcomeCallable;
+typedef std::future<GetRenewalPricingOutcome> GetRenewalPricingOutcomeCallable;
 typedef std::future<GetSiteOutcome> GetSiteOutcomeCallable;
 typedef std::future<GetSiteAddressOutcome> GetSiteAddressOutcomeCallable;
 typedef std::future<ListAssetInstancesOutcome> ListAssetInstancesOutcomeCallable;
@@ -221,6 +229,9 @@ typedef std::function<void(const OutpostsClient*, const Model::CreateOrderReques
 typedef std::function<void(const OutpostsClient*, const Model::CreateOutpostRequest&, const Model::CreateOutpostOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateOutpostResponseReceivedHandler;
+typedef std::function<void(const OutpostsClient*, const Model::CreateRenewalRequest&, const Model::CreateRenewalOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateRenewalResponseReceivedHandler;
 typedef std::function<void(const OutpostsClient*, const Model::CreateSiteRequest&, const Model::CreateSiteOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateSiteResponseReceivedHandler;
@@ -256,6 +267,9 @@ typedef std::function<void(const OutpostsClient*, const Model::GetOutpostSupport
                            const Model::GetOutpostSupportedInstanceTypesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetOutpostSupportedInstanceTypesResponseReceivedHandler;
+typedef std::function<void(const OutpostsClient*, const Model::GetRenewalPricingRequest&, const Model::GetRenewalPricingOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetRenewalPricingResponseReceivedHandler;
 typedef std::function<void(const OutpostsClient*, const Model::GetSiteRequest&, const Model::GetSiteOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetSiteResponseReceivedHandler;

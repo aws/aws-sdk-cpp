@@ -34,22 +34,6 @@ class DataReplicationInfoReplicatedDisk {
 
   ///@{
   /**
-   * <p>The size of the replication backlog in bytes.</p>
-   */
-  inline long long GetBackloggedStorageBytes() const { return m_backloggedStorageBytes; }
-  inline bool BackloggedStorageBytesHasBeenSet() const { return m_backloggedStorageBytesHasBeenSet; }
-  inline void SetBackloggedStorageBytes(long long value) {
-    m_backloggedStorageBytesHasBeenSet = true;
-    m_backloggedStorageBytes = value;
-  }
-  inline DataReplicationInfoReplicatedDisk& WithBackloggedStorageBytes(long long value) {
-    SetBackloggedStorageBytes(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The name of the device.</p>
    */
   inline const Aws::String& GetDeviceName() const { return m_deviceName; }
@@ -62,6 +46,22 @@ class DataReplicationInfoReplicatedDisk {
   template <typename DeviceNameT = Aws::String>
   DataReplicationInfoReplicatedDisk& WithDeviceName(DeviceNameT&& value) {
     SetDeviceName(std::forward<DeviceNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The total amount of data to be replicated in bytes.</p>
+   */
+  inline long long GetTotalStorageBytes() const { return m_totalStorageBytes; }
+  inline bool TotalStorageBytesHasBeenSet() const { return m_totalStorageBytesHasBeenSet; }
+  inline void SetTotalStorageBytes(long long value) {
+    m_totalStorageBytesHasBeenSet = true;
+    m_totalStorageBytes = value;
+  }
+  inline DataReplicationInfoReplicatedDisk& WithTotalStorageBytes(long long value) {
+    SetTotalStorageBytes(value);
     return *this;
   }
   ///@}
@@ -100,16 +100,16 @@ class DataReplicationInfoReplicatedDisk {
 
   ///@{
   /**
-   * <p>The total amount of data to be replicated in bytes.</p>
+   * <p>The size of the replication backlog in bytes.</p>
    */
-  inline long long GetTotalStorageBytes() const { return m_totalStorageBytes; }
-  inline bool TotalStorageBytesHasBeenSet() const { return m_totalStorageBytesHasBeenSet; }
-  inline void SetTotalStorageBytes(long long value) {
-    m_totalStorageBytesHasBeenSet = true;
-    m_totalStorageBytes = value;
+  inline long long GetBackloggedStorageBytes() const { return m_backloggedStorageBytes; }
+  inline bool BackloggedStorageBytesHasBeenSet() const { return m_backloggedStorageBytesHasBeenSet; }
+  inline void SetBackloggedStorageBytes(long long value) {
+    m_backloggedStorageBytesHasBeenSet = true;
+    m_backloggedStorageBytes = value;
   }
-  inline DataReplicationInfoReplicatedDisk& WithTotalStorageBytes(long long value) {
-    SetTotalStorageBytes(value);
+  inline DataReplicationInfoReplicatedDisk& WithBackloggedStorageBytes(long long value) {
+    SetBackloggedStorageBytes(value);
     return *this;
   }
   ///@}
@@ -130,22 +130,22 @@ class DataReplicationInfoReplicatedDisk {
   }
   ///@}
  private:
-  long long m_backloggedStorageBytes{0};
-
   Aws::String m_deviceName;
+
+  long long m_totalStorageBytes{0};
 
   long long m_replicatedStorageBytes{0};
 
   long long m_rescannedStorageBytes{0};
 
-  long long m_totalStorageBytes{0};
+  long long m_backloggedStorageBytes{0};
 
   VolumeStatus m_volumeStatus{VolumeStatus::NOT_SET};
-  bool m_backloggedStorageBytesHasBeenSet = false;
   bool m_deviceNameHasBeenSet = false;
+  bool m_totalStorageBytesHasBeenSet = false;
   bool m_replicatedStorageBytesHasBeenSet = false;
   bool m_rescannedStorageBytesHasBeenSet = false;
-  bool m_totalStorageBytesHasBeenSet = false;
+  bool m_backloggedStorageBytesHasBeenSet = false;
   bool m_volumeStatusHasBeenSet = false;
 };
 

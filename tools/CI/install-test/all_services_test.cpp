@@ -246,6 +246,7 @@
 #include <aws/marketplace-agreement/AgreementServiceClient.h>
 #include <aws/marketplace-catalog/MarketplaceCatalogClient.h>
 #include <aws/marketplace-deployment/MarketplaceDeploymentClient.h>
+#include <aws/marketplace-discovery/MarketplaceDiscoveryClient.h>
 #include <aws/marketplace-entitlement/MarketplaceEntitlementServiceClient.h>
 #include <aws/marketplace-reporting/MarketplaceReportingClient.h>
 #include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalyticsClient.h>

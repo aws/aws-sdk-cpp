@@ -161,6 +161,23 @@ class IngestConfigurationSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether redundant ingest is enabled for the ingest
+   * configuration.</p>
+   */
+  inline bool GetRedundantIngest() const { return m_redundantIngest; }
+  inline bool RedundantIngestHasBeenSet() const { return m_redundantIngestHasBeenSet; }
+  inline void SetRedundantIngest(bool value) {
+    m_redundantIngestHasBeenSet = true;
+    m_redundantIngest = value;
+  }
+  inline IngestConfigurationSummary& WithRedundantIngest(bool value) {
+    SetRedundantIngest(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -175,6 +192,8 @@ class IngestConfigurationSummary {
   IngestConfigurationState m_state{IngestConfigurationState::NOT_SET};
 
   Aws::String m_userId;
+
+  bool m_redundantIngest{false};
   bool m_nameHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_ingestProtocolHasBeenSet = false;
@@ -182,6 +201,7 @@ class IngestConfigurationSummary {
   bool m_participantIdHasBeenSet = false;
   bool m_stateHasBeenSet = false;
   bool m_userIdHasBeenSet = false;
+  bool m_redundantIngestHasBeenSet = false;
 };
 
 }  // namespace Model

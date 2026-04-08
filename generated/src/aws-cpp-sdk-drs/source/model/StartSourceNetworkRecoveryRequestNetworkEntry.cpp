@@ -18,13 +18,13 @@ namespace Model {
 StartSourceNetworkRecoveryRequestNetworkEntry::StartSourceNetworkRecoveryRequestNetworkEntry(JsonView jsonValue) { *this = jsonValue; }
 
 StartSourceNetworkRecoveryRequestNetworkEntry& StartSourceNetworkRecoveryRequestNetworkEntry::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("cfnStackName")) {
-    m_cfnStackName = jsonValue.GetString("cfnStackName");
-    m_cfnStackNameHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("sourceNetworkID")) {
     m_sourceNetworkID = jsonValue.GetString("sourceNetworkID");
     m_sourceNetworkIDHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cfnStackName")) {
+    m_cfnStackName = jsonValue.GetString("cfnStackName");
+    m_cfnStackNameHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ StartSourceNetworkRecoveryRequestNetworkEntry& StartSourceNetworkRecoveryRequest
 JsonValue StartSourceNetworkRecoveryRequestNetworkEntry::Jsonize() const {
   JsonValue payload;
 
-  if (m_cfnStackNameHasBeenSet) {
-    payload.WithString("cfnStackName", m_cfnStackName);
-  }
-
   if (m_sourceNetworkIDHasBeenSet) {
     payload.WithString("sourceNetworkID", m_sourceNetworkID);
+  }
+
+  if (m_cfnStackNameHasBeenSet) {
+    payload.WithString("cfnStackName", m_cfnStackName);
   }
 
   return payload;

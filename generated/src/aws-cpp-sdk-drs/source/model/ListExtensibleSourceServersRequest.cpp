@@ -15,16 +15,16 @@ using namespace Aws::Utils;
 Aws::String ListExtensibleSourceServersRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_stagingAccountIDHasBeenSet) {
+    payload.WithString("stagingAccountID", m_stagingAccountID);
+  }
+
   if (m_maxResultsHasBeenSet) {
     payload.WithInteger("maxResults", m_maxResults);
   }
 
   if (m_nextTokenHasBeenSet) {
     payload.WithString("nextToken", m_nextToken);
-  }
-
-  if (m_stagingAccountIDHasBeenSet) {
-    payload.WithString("stagingAccountID", m_stagingAccountID);
   }
 
   return payload.View().WriteReadable();

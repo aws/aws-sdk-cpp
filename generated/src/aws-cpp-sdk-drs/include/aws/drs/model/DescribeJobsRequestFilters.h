@@ -34,24 +34,6 @@ class DescribeJobsRequestFilters {
 
   ///@{
   /**
-   * <p>The start date in a date range query.</p>
-   */
-  inline const Aws::String& GetFromDate() const { return m_fromDate; }
-  inline bool FromDateHasBeenSet() const { return m_fromDateHasBeenSet; }
-  template <typename FromDateT = Aws::String>
-  void SetFromDate(FromDateT&& value) {
-    m_fromDateHasBeenSet = true;
-    m_fromDate = std::forward<FromDateT>(value);
-  }
-  template <typename FromDateT = Aws::String>
-  DescribeJobsRequestFilters& WithFromDate(FromDateT&& value) {
-    SetFromDate(std::forward<FromDateT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>An array of Job IDs that should be returned. An empty array means all
    * jobs.</p>
    */
@@ -77,6 +59,24 @@ class DescribeJobsRequestFilters {
 
   ///@{
   /**
+   * <p>The start date in a date range query.</p>
+   */
+  inline const Aws::String& GetFromDate() const { return m_fromDate; }
+  inline bool FromDateHasBeenSet() const { return m_fromDateHasBeenSet; }
+  template <typename FromDateT = Aws::String>
+  void SetFromDate(FromDateT&& value) {
+    m_fromDateHasBeenSet = true;
+    m_fromDate = std::forward<FromDateT>(value);
+  }
+  template <typename FromDateT = Aws::String>
+  DescribeJobsRequestFilters& WithFromDate(FromDateT&& value) {
+    SetFromDate(std::forward<FromDateT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The end date in a date range query.</p>
    */
   inline const Aws::String& GetToDate() const { return m_toDate; }
@@ -93,13 +93,13 @@ class DescribeJobsRequestFilters {
   }
   ///@}
  private:
-  Aws::String m_fromDate;
-
   Aws::Vector<Aws::String> m_jobIDs;
 
+  Aws::String m_fromDate;
+
   Aws::String m_toDate;
-  bool m_fromDateHasBeenSet = false;
   bool m_jobIDsHasBeenSet = false;
+  bool m_fromDateHasBeenSet = false;
   bool m_toDateHasBeenSet = false;
 };
 

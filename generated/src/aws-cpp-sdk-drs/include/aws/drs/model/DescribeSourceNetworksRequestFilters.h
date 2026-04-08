@@ -35,6 +35,31 @@ class DescribeSourceNetworksRequestFilters {
 
   ///@{
   /**
+   * <p>An array of Source Network IDs that should be returned. An empty array means
+   * all Source Networks.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetSourceNetworkIDs() const { return m_sourceNetworkIDs; }
+  inline bool SourceNetworkIDsHasBeenSet() const { return m_sourceNetworkIDsHasBeenSet; }
+  template <typename SourceNetworkIDsT = Aws::Vector<Aws::String>>
+  void SetSourceNetworkIDs(SourceNetworkIDsT&& value) {
+    m_sourceNetworkIDsHasBeenSet = true;
+    m_sourceNetworkIDs = std::forward<SourceNetworkIDsT>(value);
+  }
+  template <typename SourceNetworkIDsT = Aws::Vector<Aws::String>>
+  DescribeSourceNetworksRequestFilters& WithSourceNetworkIDs(SourceNetworkIDsT&& value) {
+    SetSourceNetworkIDs(std::forward<SourceNetworkIDsT>(value));
+    return *this;
+  }
+  template <typename SourceNetworkIDsT = Aws::String>
+  DescribeSourceNetworksRequestFilters& AddSourceNetworkIDs(SourceNetworkIDsT&& value) {
+    m_sourceNetworkIDsHasBeenSet = true;
+    m_sourceNetworkIDs.emplace_back(std::forward<SourceNetworkIDsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Filter Source Networks by account ID containing the protected VPCs.</p>
    */
   inline const Aws::String& GetOriginAccountID() const { return m_originAccountID; }
@@ -68,40 +93,15 @@ class DescribeSourceNetworksRequestFilters {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>An array of Source Network IDs that should be returned. An empty array means
-   * all Source Networks.</p>
-   */
-  inline const Aws::Vector<Aws::String>& GetSourceNetworkIDs() const { return m_sourceNetworkIDs; }
-  inline bool SourceNetworkIDsHasBeenSet() const { return m_sourceNetworkIDsHasBeenSet; }
-  template <typename SourceNetworkIDsT = Aws::Vector<Aws::String>>
-  void SetSourceNetworkIDs(SourceNetworkIDsT&& value) {
-    m_sourceNetworkIDsHasBeenSet = true;
-    m_sourceNetworkIDs = std::forward<SourceNetworkIDsT>(value);
-  }
-  template <typename SourceNetworkIDsT = Aws::Vector<Aws::String>>
-  DescribeSourceNetworksRequestFilters& WithSourceNetworkIDs(SourceNetworkIDsT&& value) {
-    SetSourceNetworkIDs(std::forward<SourceNetworkIDsT>(value));
-    return *this;
-  }
-  template <typename SourceNetworkIDsT = Aws::String>
-  DescribeSourceNetworksRequestFilters& AddSourceNetworkIDs(SourceNetworkIDsT&& value) {
-    m_sourceNetworkIDsHasBeenSet = true;
-    m_sourceNetworkIDs.emplace_back(std::forward<SourceNetworkIDsT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::Vector<Aws::String> m_sourceNetworkIDs;
+
   Aws::String m_originAccountID;
 
   Aws::String m_originRegion;
-
-  Aws::Vector<Aws::String> m_sourceNetworkIDs;
+  bool m_sourceNetworkIDsHasBeenSet = false;
   bool m_originAccountIDHasBeenSet = false;
   bool m_originRegionHasBeenSet = false;
-  bool m_sourceNetworkIDsHasBeenSet = false;
 };
 
 }  // namespace Model

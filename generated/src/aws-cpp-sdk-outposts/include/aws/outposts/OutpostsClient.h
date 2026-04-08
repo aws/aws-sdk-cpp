@@ -184,6 +184,32 @@ class AWS_OUTPOSTS_API OutpostsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates a renewal contract for the specified Outpost.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CreateRenewal">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateRenewalOutcome CreateRenewal(const Model::CreateRenewalRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateRenewal that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateRenewalRequestT = Model::CreateRenewalRequest>
+  Model::CreateRenewalOutcomeCallable CreateRenewalCallable(const CreateRenewalRequestT& request) const {
+    return SubmitCallable(&OutpostsClient::CreateRenewal, request);
+  }
+
+  /**
+   * An Async wrapper for CreateRenewal that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateRenewalRequestT = Model::CreateRenewalRequest>
+  void CreateRenewalAsync(const CreateRenewalRequestT& request, const CreateRenewalResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OutpostsClient::CreateRenewal, request, handler, context);
+  }
+
+  /**
    * <p> Creates a site for an Outpost. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CreateSite">AWS
    * API Reference</a></p>
@@ -481,6 +507,33 @@ class AWS_OUTPOSTS_API OutpostsClient : public Aws::Client::AWSJsonClient,
                                              const GetOutpostSupportedInstanceTypesResponseReceivedHandler& handler,
                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OutpostsClient::GetOutpostSupportedInstanceTypes, request, handler, context);
+  }
+
+  /**
+   * <p>Gets all available renewal pricing options for the specified
+   * Outpost.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetRenewalPricing">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetRenewalPricingOutcome GetRenewalPricing(const Model::GetRenewalPricingRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetRenewalPricing that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetRenewalPricingRequestT = Model::GetRenewalPricingRequest>
+  Model::GetRenewalPricingOutcomeCallable GetRenewalPricingCallable(const GetRenewalPricingRequestT& request) const {
+    return SubmitCallable(&OutpostsClient::GetRenewalPricing, request);
+  }
+
+  /**
+   * An Async wrapper for GetRenewalPricing that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetRenewalPricingRequestT = Model::GetRenewalPricingRequest>
+  void GetRenewalPricingAsync(const GetRenewalPricingRequestT& request, const GetRenewalPricingResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OutpostsClient::GetRenewalPricing, request, handler, context);
   }
 
   /**

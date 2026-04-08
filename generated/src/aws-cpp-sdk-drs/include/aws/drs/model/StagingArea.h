@@ -34,20 +34,22 @@ class StagingArea {
 
   ///@{
   /**
-   * <p>Shows an error message that occurred when DRS tried to access the staging
-   * source server. In this case StagingArea$status will have value
-   * EXTENSION_ERROR</p>
+   * <p>Status of Source server extension. Possible values: (a) NOT_EXTENDED - This
+   * is a source server that is replicating in the current account. (b) EXTENDED -
+   * Source server is extended from a staging source server. In this case, the value
+   * of stagingSourceServerArn is pointing to the Arn of the source server in the
+   * staging account. (c) EXTENSION_ERROR - Some issue occurred when accessing
+   * staging source server. In this case, errorMessage field will contain an error
+   * message that explains what happened.</p>
    */
-  inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
-  inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-  template <typename ErrorMessageT = Aws::String>
-  void SetErrorMessage(ErrorMessageT&& value) {
-    m_errorMessageHasBeenSet = true;
-    m_errorMessage = std::forward<ErrorMessageT>(value);
+  inline ExtensionStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(ExtensionStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
   }
-  template <typename ErrorMessageT = Aws::String>
-  StagingArea& WithErrorMessage(ErrorMessageT&& value) {
-    SetErrorMessage(std::forward<ErrorMessageT>(value));
+  inline StagingArea& WithStatus(ExtensionStatus value) {
+    SetStatus(value);
     return *this;
   }
   ///@}
@@ -91,37 +93,35 @@ class StagingArea {
 
   ///@{
   /**
-   * <p>Status of Source server extension. Possible values: (a) NOT_EXTENDED - This
-   * is a source server that is replicating in the current account. (b) EXTENDED -
-   * Source server is extended from a staging source server. In this case, the value
-   * of stagingSourceServerArn is pointing to the Arn of the source server in the
-   * staging account. (c) EXTENSION_ERROR - Some issue occurred when accessing
-   * staging source server. In this case, errorMessage field will contain an error
-   * message that explains what happened.</p>
+   * <p>Shows an error message that occurred when DRS tried to access the staging
+   * source server. In this case StagingArea$status will have value
+   * EXTENSION_ERROR</p>
    */
-  inline ExtensionStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(ExtensionStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
+  inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
+  inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
+  template <typename ErrorMessageT = Aws::String>
+  void SetErrorMessage(ErrorMessageT&& value) {
+    m_errorMessageHasBeenSet = true;
+    m_errorMessage = std::forward<ErrorMessageT>(value);
   }
-  inline StagingArea& WithStatus(ExtensionStatus value) {
-    SetStatus(value);
+  template <typename ErrorMessageT = Aws::String>
+  StagingArea& WithErrorMessage(ErrorMessageT&& value) {
+    SetErrorMessage(std::forward<ErrorMessageT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::String m_errorMessage;
+  ExtensionStatus m_status{ExtensionStatus::NOT_SET};
 
   Aws::String m_stagingAccountID;
 
   Aws::String m_stagingSourceServerArn;
 
-  ExtensionStatus m_status{ExtensionStatus::NOT_SET};
-  bool m_errorMessageHasBeenSet = false;
+  Aws::String m_errorMessage;
+  bool m_statusHasBeenSet = false;
   bool m_stagingAccountIDHasBeenSet = false;
   bool m_stagingSourceServerArnHasBeenSet = false;
-  bool m_statusHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -34,22 +34,6 @@ class LaunchActionParameter {
 
   ///@{
   /**
-   * <p>Type.</p>
-   */
-  inline LaunchActionParameterType GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  inline void SetType(LaunchActionParameterType value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
-  }
-  inline LaunchActionParameter& WithType(LaunchActionParameterType value) {
-    SetType(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Value.</p>
    */
   inline const Aws::String& GetValue() const { return m_value; }
@@ -65,12 +49,28 @@ class LaunchActionParameter {
     return *this;
   }
   ///@}
- private:
-  LaunchActionParameterType m_type{LaunchActionParameterType::NOT_SET};
 
+  ///@{
+  /**
+   * <p>Type.</p>
+   */
+  inline LaunchActionParameterType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(LaunchActionParameterType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline LaunchActionParameter& WithType(LaunchActionParameterType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_value;
-  bool m_typeHasBeenSet = false;
+
+  LaunchActionParameterType m_type{LaunchActionParameterType::NOT_SET};
   bool m_valueHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -6,9 +6,11 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
 #include <aws/ivs-realtime/model/IngestConfigurationState.h>
 #include <aws/ivs-realtime/model/IngestProtocol.h>
+#include <aws/ivs-realtime/model/RedundantIngestCredential.h>
 
 #include <utility>
 
@@ -182,6 +184,50 @@ class IngestConfiguration {
 
   ///@{
   /**
+   * <p>Indicates whether redundant ingest is enabled for the ingest
+   * configuration.</p>
+   */
+  inline bool GetRedundantIngest() const { return m_redundantIngest; }
+  inline bool RedundantIngestHasBeenSet() const { return m_redundantIngestHasBeenSet; }
+  inline void SetRedundantIngest(bool value) {
+    m_redundantIngestHasBeenSet = true;
+    m_redundantIngest = value;
+  }
+  inline IngestConfiguration& WithRedundantIngest(bool value) {
+    SetRedundantIngest(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A list of redundant ingest credentials, present only when
+   * <code>redundantIngest</code> is set to <code>true</code>. See <a
+   * href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-rtmp-publishing.html#redundant-ingest">Redundant
+   * Ingest</a> in <i>IVS RTMP Publishing</i> for details.</p>
+   */
+  inline const Aws::Vector<RedundantIngestCredential>& GetRedundantIngestCredentials() const { return m_redundantIngestCredentials; }
+  inline bool RedundantIngestCredentialsHasBeenSet() const { return m_redundantIngestCredentialsHasBeenSet; }
+  template <typename RedundantIngestCredentialsT = Aws::Vector<RedundantIngestCredential>>
+  void SetRedundantIngestCredentials(RedundantIngestCredentialsT&& value) {
+    m_redundantIngestCredentialsHasBeenSet = true;
+    m_redundantIngestCredentials = std::forward<RedundantIngestCredentialsT>(value);
+  }
+  template <typename RedundantIngestCredentialsT = Aws::Vector<RedundantIngestCredential>>
+  IngestConfiguration& WithRedundantIngestCredentials(RedundantIngestCredentialsT&& value) {
+    SetRedundantIngestCredentials(std::forward<RedundantIngestCredentialsT>(value));
+    return *this;
+  }
+  template <typename RedundantIngestCredentialsT = RedundantIngestCredential>
+  IngestConfiguration& AddRedundantIngestCredentials(RedundantIngestCredentialsT&& value) {
+    m_redundantIngestCredentialsHasBeenSet = true;
+    m_redundantIngestCredentials.emplace_back(std::forward<RedundantIngestCredentialsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Application-provided attributes to to store in the IngestConfiguration and
    * attach to a stage. Map keys and values can contain UTF-8 encoded text. The
    * maximum length of this field is 1 KB total. <i>This field is exposed to all
@@ -254,6 +300,10 @@ class IngestConfiguration {
 
   Aws::String m_userId;
 
+  bool m_redundantIngest{false};
+
+  Aws::Vector<RedundantIngestCredential> m_redundantIngestCredentials;
+
   Aws::Map<Aws::String, Aws::String> m_attributes;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
@@ -265,6 +315,8 @@ class IngestConfiguration {
   bool m_participantIdHasBeenSet = false;
   bool m_stateHasBeenSet = false;
   bool m_userIdHasBeenSet = false;
+  bool m_redundantIngestHasBeenSet = false;
+  bool m_redundantIngestCredentialsHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };

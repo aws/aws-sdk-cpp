@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/medialive/model/MediaConnectRouterOutputDestinationSettings.h>
 #include <aws/medialive/model/MediaPackageOutputDestinationSettings.h>
 #include <aws/medialive/model/MultiplexProgramChannelDestinationSettings.h>
 #include <aws/medialive/model/OutputDestinationSettings.h>
@@ -170,6 +171,33 @@ class OutputDestination {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * Destination settings for a MediaConnect Router output; one destination for each
+   * redundant encoder.
+   */
+  inline const Aws::Vector<MediaConnectRouterOutputDestinationSettings>& GetMediaConnectRouterSettings() const {
+    return m_mediaConnectRouterSettings;
+  }
+  inline bool MediaConnectRouterSettingsHasBeenSet() const { return m_mediaConnectRouterSettingsHasBeenSet; }
+  template <typename MediaConnectRouterSettingsT = Aws::Vector<MediaConnectRouterOutputDestinationSettings>>
+  void SetMediaConnectRouterSettings(MediaConnectRouterSettingsT&& value) {
+    m_mediaConnectRouterSettingsHasBeenSet = true;
+    m_mediaConnectRouterSettings = std::forward<MediaConnectRouterSettingsT>(value);
+  }
+  template <typename MediaConnectRouterSettingsT = Aws::Vector<MediaConnectRouterOutputDestinationSettings>>
+  OutputDestination& WithMediaConnectRouterSettings(MediaConnectRouterSettingsT&& value) {
+    SetMediaConnectRouterSettings(std::forward<MediaConnectRouterSettingsT>(value));
+    return *this;
+  }
+  template <typename MediaConnectRouterSettingsT = MediaConnectRouterOutputDestinationSettings>
+  OutputDestination& AddMediaConnectRouterSettings(MediaConnectRouterSettingsT&& value) {
+    m_mediaConnectRouterSettingsHasBeenSet = true;
+    m_mediaConnectRouterSettings.emplace_back(std::forward<MediaConnectRouterSettingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -182,12 +210,15 @@ class OutputDestination {
   Aws::Vector<SrtOutputDestinationSettings> m_srtSettings;
 
   Aws::Vector<Aws::String> m_logicalInterfaceNames;
+
+  Aws::Vector<MediaConnectRouterOutputDestinationSettings> m_mediaConnectRouterSettings;
   bool m_idHasBeenSet = false;
   bool m_mediaPackageSettingsHasBeenSet = false;
   bool m_multiplexSettingsHasBeenSet = false;
   bool m_settingsHasBeenSet = false;
   bool m_srtSettingsHasBeenSet = false;
   bool m_logicalInterfaceNamesHasBeenSet = false;
+  bool m_mediaConnectRouterSettingsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -58,7 +58,7 @@ class CreatePullThroughCacheRuleRequest : public ECRRequest {
    * pull through cache rule. The following is the syntax to use for each supported
    * upstream registry.</p> <ul> <li> <p>Amazon ECR (<code>ecr</code>) –
    * <code>&lt;accountId&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com</code> </p> </li>
-   * <li> <p>Amazon ECR Public (<code>ecr-public</code>) –
+   * <li> <p>Amazon ECR Public (<code>ecr-public</code>) ��
    * <code>public.ecr.aws</code> </p> </li> <li> <p>Docker Hub
    * (<code>docker-hub</code>) – <code>registry-1.docker.io</code> </p> </li> <li>
    * <p>GitHub Container Registry (<code>github-container-registry</code>) –

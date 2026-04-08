@@ -30,6 +30,24 @@ class ListExtensibleSourceServersRequest : public DrsRequest {
 
   ///@{
   /**
+   * <p>The Id of the staging Account to retrieve extensible source servers from.</p>
+   */
+  inline const Aws::String& GetStagingAccountID() const { return m_stagingAccountID; }
+  inline bool StagingAccountIDHasBeenSet() const { return m_stagingAccountIDHasBeenSet; }
+  template <typename StagingAccountIDT = Aws::String>
+  void SetStagingAccountID(StagingAccountIDT&& value) {
+    m_stagingAccountIDHasBeenSet = true;
+    m_stagingAccountID = std::forward<StagingAccountIDT>(value);
+  }
+  template <typename StagingAccountIDT = Aws::String>
+  ListExtensibleSourceServersRequest& WithStagingAccountID(StagingAccountIDT&& value) {
+    SetStagingAccountID(std::forward<StagingAccountIDT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The maximum number of extensible source servers to retrieve.</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
@@ -61,33 +79,15 @@ class ListExtensibleSourceServersRequest : public DrsRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The Id of the staging Account to retrieve extensible source servers from.</p>
-   */
-  inline const Aws::String& GetStagingAccountID() const { return m_stagingAccountID; }
-  inline bool StagingAccountIDHasBeenSet() const { return m_stagingAccountIDHasBeenSet; }
-  template <typename StagingAccountIDT = Aws::String>
-  void SetStagingAccountID(StagingAccountIDT&& value) {
-    m_stagingAccountIDHasBeenSet = true;
-    m_stagingAccountID = std::forward<StagingAccountIDT>(value);
-  }
-  template <typename StagingAccountIDT = Aws::String>
-  ListExtensibleSourceServersRequest& WithStagingAccountID(StagingAccountIDT&& value) {
-    SetStagingAccountID(std::forward<StagingAccountIDT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_stagingAccountID;
+
   int m_maxResults{0};
 
   Aws::String m_nextToken;
-
-  Aws::String m_stagingAccountID;
+  bool m_stagingAccountIDHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
-  bool m_stagingAccountIDHasBeenSet = false;
 };
 
 }  // namespace Model

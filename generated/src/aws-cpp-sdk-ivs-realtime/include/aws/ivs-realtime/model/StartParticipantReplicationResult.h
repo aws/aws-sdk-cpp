@@ -29,7 +29,9 @@ class StartParticipantReplicationResult {
 
   ///@{
   /**
-   * <p/>
+   * <p>See <a
+   * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Allow-Origin">Access-Control-Allow-Origin</a>
+   * in the MDN Web Docs.</p>
    */
   inline const Aws::String& GetAccessControlAllowOrigin() const { return m_accessControlAllowOrigin; }
   template <typename AccessControlAllowOriginT = Aws::String>
@@ -46,7 +48,9 @@ class StartParticipantReplicationResult {
 
   ///@{
   /**
-   * <p/>
+   * <p>See <a
+   * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Expose-Headers">Access-Control-Expose-Headers</a>
+   * in the MDN Web Docs.</p>
    */
   inline const Aws::String& GetAccessControlExposeHeaders() const { return m_accessControlExposeHeaders; }
   template <typename AccessControlExposeHeadersT = Aws::String>
@@ -63,7 +67,9 @@ class StartParticipantReplicationResult {
 
   ///@{
   /**
-   * <p/>
+   * <p>See <a
+   * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control">Cache-Control</a>
+   * in the MDN Web Docs.</p>
    */
   inline const Aws::String& GetCacheControl() const { return m_cacheControl; }
   template <typename CacheControlT = Aws::String>
@@ -80,7 +86,9 @@ class StartParticipantReplicationResult {
 
   ///@{
   /**
-   * <p/>
+   * <p>See <a
+   * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy">Content-Security-Policy</a>
+   * in the MDN Web Docs.</p>
    */
   inline const Aws::String& GetContentSecurityPolicy() const { return m_contentSecurityPolicy; }
   template <typename ContentSecurityPolicyT = Aws::String>
@@ -97,7 +105,9 @@ class StartParticipantReplicationResult {
 
   ///@{
   /**
-   * <p/>
+   * <p>See <a
+   * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security">Strict-Transport-Security</a>
+   * in the MDN Web Docs.</p>
    */
   inline const Aws::String& GetStrictTransportSecurity() const { return m_strictTransportSecurity; }
   template <typename StrictTransportSecurityT = Aws::String>
@@ -114,7 +124,9 @@ class StartParticipantReplicationResult {
 
   ///@{
   /**
-   * <p/>
+   * <p>See <a
+   * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Content-Type-Options">X-Content-Type-Options</a>
+   * in the MDN Web Docs.</p>
    */
   inline const Aws::String& GetXContentTypeOptions() const { return m_xContentTypeOptions; }
   template <typename XContentTypeOptionsT = Aws::String>
@@ -131,7 +143,9 @@ class StartParticipantReplicationResult {
 
   ///@{
   /**
-   * <p/>
+   * <p>See <a
+   * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Frame-Options">X-Frame-Options</a>
+   * in the MDN Web Docs.</p>
    */
   inline const Aws::String& GetXFrameOptions() const { return m_xFrameOptions; }
   template <typename XFrameOptionsT = Aws::String>

@@ -36,6 +36,22 @@ class LaunchAction {
   AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
+
+  inline const Aws::String& GetActionId() const { return m_actionId; }
+  inline bool ActionIdHasBeenSet() const { return m_actionIdHasBeenSet; }
+  template <typename ActionIdT = Aws::String>
+  void SetActionId(ActionIdT&& value) {
+    m_actionIdHasBeenSet = true;
+    m_actionId = std::forward<ActionIdT>(value);
+  }
+  template <typename ActionIdT = Aws::String>
+  LaunchAction& WithActionId(ActionIdT&& value) {
+    SetActionId(std::forward<ActionIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
    * <p>Launch action code.</p>
    */
@@ -54,79 +70,17 @@ class LaunchAction {
   ///@}
 
   ///@{
-
-  inline const Aws::String& GetActionId() const { return m_actionId; }
-  inline bool ActionIdHasBeenSet() const { return m_actionIdHasBeenSet; }
-  template <typename ActionIdT = Aws::String>
-  void SetActionId(ActionIdT&& value) {
-    m_actionIdHasBeenSet = true;
-    m_actionId = std::forward<ActionIdT>(value);
-  }
-  template <typename ActionIdT = Aws::String>
-  LaunchAction& WithActionId(ActionIdT&& value) {
-    SetActionId(std::forward<ActionIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-
-  inline const Aws::String& GetActionVersion() const { return m_actionVersion; }
-  inline bool ActionVersionHasBeenSet() const { return m_actionVersionHasBeenSet; }
-  template <typename ActionVersionT = Aws::String>
-  void SetActionVersion(ActionVersionT&& value) {
-    m_actionVersionHasBeenSet = true;
-    m_actionVersion = std::forward<ActionVersionT>(value);
-  }
-  template <typename ActionVersionT = Aws::String>
-  LaunchAction& WithActionVersion(ActionVersionT&& value) {
-    SetActionVersion(std::forward<ActionVersionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
   /**
-   * <p>Whether the launch action is active.</p>
+   * <p>Launch action type.</p>
    */
-  inline bool GetActive() const { return m_active; }
-  inline bool ActiveHasBeenSet() const { return m_activeHasBeenSet; }
-  inline void SetActive(bool value) {
-    m_activeHasBeenSet = true;
-    m_active = value;
+  inline LaunchActionType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(LaunchActionType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
   }
-  inline LaunchAction& WithActive(bool value) {
-    SetActive(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-
-  inline LaunchActionCategory GetCategory() const { return m_category; }
-  inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-  inline void SetCategory(LaunchActionCategory value) {
-    m_categoryHasBeenSet = true;
-    m_category = value;
-  }
-  inline LaunchAction& WithCategory(LaunchActionCategory value) {
-    SetCategory(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  LaunchAction& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
+  inline LaunchAction& WithType(LaunchActionType value) {
+    SetType(value);
     return *this;
   }
   ///@}
@@ -149,16 +103,16 @@ class LaunchAction {
 
   ///@{
   /**
-   * <p>Whether the launch will not be marked as failed if this action fails.</p>
+   * <p>Whether the launch action is active.</p>
    */
-  inline bool GetOptional() const { return m_optional; }
-  inline bool OptionalHasBeenSet() const { return m_optionalHasBeenSet; }
-  inline void SetOptional(bool value) {
-    m_optionalHasBeenSet = true;
-    m_optional = value;
+  inline bool GetActive() const { return m_active; }
+  inline bool ActiveHasBeenSet() const { return m_activeHasBeenSet; }
+  inline void SetActive(bool value) {
+    m_activeHasBeenSet = true;
+    m_active = value;
   }
-  inline LaunchAction& WithOptional(bool value) {
-    SetOptional(value);
+  inline LaunchAction& WithActive(bool value) {
+    SetActive(value);
     return *this;
   }
   ///@}
@@ -173,6 +127,38 @@ class LaunchAction {
   }
   inline LaunchAction& WithOrder(int value) {
     SetOrder(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetActionVersion() const { return m_actionVersion; }
+  inline bool ActionVersionHasBeenSet() const { return m_actionVersionHasBeenSet; }
+  template <typename ActionVersionT = Aws::String>
+  void SetActionVersion(ActionVersionT&& value) {
+    m_actionVersionHasBeenSet = true;
+    m_actionVersion = std::forward<ActionVersionT>(value);
+  }
+  template <typename ActionVersionT = Aws::String>
+  LaunchAction& WithActionVersion(ActionVersionT&& value) {
+    SetActionVersion(std::forward<ActionVersionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Whether the launch will not be marked as failed if this action fails.</p>
+   */
+  inline bool GetOptional() const { return m_optional; }
+  inline bool OptionalHasBeenSet() const { return m_optionalHasBeenSet; }
+  inline void SetOptional(bool value) {
+    m_optionalHasBeenSet = true;
+    m_optional = value;
+  }
+  inline LaunchAction& WithOptional(bool value) {
+    SetOptional(value);
     return *this;
   }
   ///@}
@@ -200,53 +186,67 @@ class LaunchAction {
   ///@}
 
   ///@{
-  /**
-   * <p>Launch action type.</p>
-   */
-  inline LaunchActionType GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  inline void SetType(LaunchActionType value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
+
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
   }
-  inline LaunchAction& WithType(LaunchActionType value) {
-    SetType(value);
+  template <typename DescriptionT = Aws::String>
+  LaunchAction& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline LaunchActionCategory GetCategory() const { return m_category; }
+  inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+  inline void SetCategory(LaunchActionCategory value) {
+    m_categoryHasBeenSet = true;
+    m_category = value;
+  }
+  inline LaunchAction& WithCategory(LaunchActionCategory value) {
+    SetCategory(value);
     return *this;
   }
   ///@}
  private:
-  Aws::String m_actionCode;
-
   Aws::String m_actionId;
 
-  Aws::String m_actionVersion;
+  Aws::String m_actionCode;
 
-  bool m_active{false};
-
-  LaunchActionCategory m_category{LaunchActionCategory::NOT_SET};
-
-  Aws::String m_description;
+  LaunchActionType m_type{LaunchActionType::NOT_SET};
 
   Aws::String m_name;
 
-  bool m_optional{false};
+  bool m_active{false};
 
   int m_order{0};
 
+  Aws::String m_actionVersion;
+
+  bool m_optional{false};
+
   Aws::Map<Aws::String, LaunchActionParameter> m_parameters;
 
-  LaunchActionType m_type{LaunchActionType::NOT_SET};
-  bool m_actionCodeHasBeenSet = false;
+  Aws::String m_description;
+
+  LaunchActionCategory m_category{LaunchActionCategory::NOT_SET};
   bool m_actionIdHasBeenSet = false;
-  bool m_actionVersionHasBeenSet = false;
-  bool m_activeHasBeenSet = false;
-  bool m_categoryHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
-  bool m_nameHasBeenSet = false;
-  bool m_optionalHasBeenSet = false;
-  bool m_orderHasBeenSet = false;
-  bool m_parametersHasBeenSet = false;
+  bool m_actionCodeHasBeenSet = false;
   bool m_typeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_activeHasBeenSet = false;
+  bool m_orderHasBeenSet = false;
+  bool m_actionVersionHasBeenSet = false;
+  bool m_optionalHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_categoryHasBeenSet = false;
 };
 
 }  // namespace Model

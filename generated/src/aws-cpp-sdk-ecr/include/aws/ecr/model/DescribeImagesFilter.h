@@ -55,7 +55,8 @@ class DescribeImagesFilter {
   /**
    * <p>The image status with which to filter your <a>DescribeImages</a> results.
    * Valid values are <code>ACTIVE</code>, <code>ARCHIVED</code>, and
-   * <code>ACTIVATING</code>.</p>
+   * <code>ACTIVATING</code>. If not specified, only images with <code>ACTIVE</code>
+   * status are returned.</p>
    */
   inline ImageStatusFilter GetImageStatus() const { return m_imageStatus; }
   inline bool ImageStatusHasBeenSet() const { return m_imageStatusHasBeenSet; }

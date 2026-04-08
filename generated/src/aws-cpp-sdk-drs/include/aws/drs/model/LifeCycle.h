@@ -52,6 +52,25 @@ class LifeCycle {
 
   ///@{
   /**
+   * <p>The date and time of the first byte that was replicated from the Source
+   * Server.</p>
+   */
+  inline const Aws::String& GetFirstByteDateTime() const { return m_firstByteDateTime; }
+  inline bool FirstByteDateTimeHasBeenSet() const { return m_firstByteDateTimeHasBeenSet; }
+  template <typename FirstByteDateTimeT = Aws::String>
+  void SetFirstByteDateTime(FirstByteDateTimeT&& value) {
+    m_firstByteDateTimeHasBeenSet = true;
+    m_firstByteDateTime = std::forward<FirstByteDateTimeT>(value);
+  }
+  template <typename FirstByteDateTimeT = Aws::String>
+  LifeCycle& WithFirstByteDateTime(FirstByteDateTimeT&& value) {
+    SetFirstByteDateTime(std::forward<FirstByteDateTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The amount of time that the Source Server has been replicating for.</p>
    */
   inline const Aws::String& GetElapsedReplicationDuration() const { return m_elapsedReplicationDuration; }
@@ -70,19 +89,18 @@ class LifeCycle {
 
   ///@{
   /**
-   * <p>The date and time of the first byte that was replicated from the Source
-   * Server.</p>
+   * <p>The date and time this Source Server was last seen by the service.</p>
    */
-  inline const Aws::String& GetFirstByteDateTime() const { return m_firstByteDateTime; }
-  inline bool FirstByteDateTimeHasBeenSet() const { return m_firstByteDateTimeHasBeenSet; }
-  template <typename FirstByteDateTimeT = Aws::String>
-  void SetFirstByteDateTime(FirstByteDateTimeT&& value) {
-    m_firstByteDateTimeHasBeenSet = true;
-    m_firstByteDateTime = std::forward<FirstByteDateTimeT>(value);
+  inline const Aws::String& GetLastSeenByServiceDateTime() const { return m_lastSeenByServiceDateTime; }
+  inline bool LastSeenByServiceDateTimeHasBeenSet() const { return m_lastSeenByServiceDateTimeHasBeenSet; }
+  template <typename LastSeenByServiceDateTimeT = Aws::String>
+  void SetLastSeenByServiceDateTime(LastSeenByServiceDateTimeT&& value) {
+    m_lastSeenByServiceDateTimeHasBeenSet = true;
+    m_lastSeenByServiceDateTime = std::forward<LastSeenByServiceDateTimeT>(value);
   }
-  template <typename FirstByteDateTimeT = Aws::String>
-  LifeCycle& WithFirstByteDateTime(FirstByteDateTimeT&& value) {
-    SetFirstByteDateTime(std::forward<FirstByteDateTimeT>(value));
+  template <typename LastSeenByServiceDateTimeT = Aws::String>
+  LifeCycle& WithLastSeenByServiceDateTime(LastSeenByServiceDateTimeT&& value) {
+    SetLastSeenByServiceDateTime(std::forward<LastSeenByServiceDateTimeT>(value));
     return *this;
   }
   ///@}
@@ -105,39 +123,21 @@ class LifeCycle {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The date and time this Source Server was last seen by the service.</p>
-   */
-  inline const Aws::String& GetLastSeenByServiceDateTime() const { return m_lastSeenByServiceDateTime; }
-  inline bool LastSeenByServiceDateTimeHasBeenSet() const { return m_lastSeenByServiceDateTimeHasBeenSet; }
-  template <typename LastSeenByServiceDateTimeT = Aws::String>
-  void SetLastSeenByServiceDateTime(LastSeenByServiceDateTimeT&& value) {
-    m_lastSeenByServiceDateTimeHasBeenSet = true;
-    m_lastSeenByServiceDateTime = std::forward<LastSeenByServiceDateTimeT>(value);
-  }
-  template <typename LastSeenByServiceDateTimeT = Aws::String>
-  LifeCycle& WithLastSeenByServiceDateTime(LastSeenByServiceDateTimeT&& value) {
-    SetLastSeenByServiceDateTime(std::forward<LastSeenByServiceDateTimeT>(value));
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_addedToServiceDateTime;
 
-  Aws::String m_elapsedReplicationDuration;
-
   Aws::String m_firstByteDateTime;
 
-  LifeCycleLastLaunch m_lastLaunch;
+  Aws::String m_elapsedReplicationDuration;
 
   Aws::String m_lastSeenByServiceDateTime;
+
+  LifeCycleLastLaunch m_lastLaunch;
   bool m_addedToServiceDateTimeHasBeenSet = false;
-  bool m_elapsedReplicationDurationHasBeenSet = false;
   bool m_firstByteDateTimeHasBeenSet = false;
-  bool m_lastLaunchHasBeenSet = false;
+  bool m_elapsedReplicationDurationHasBeenSet = false;
   bool m_lastSeenByServiceDateTimeHasBeenSet = false;
+  bool m_lastLaunchHasBeenSet = false;
 };
 
 }  // namespace Model

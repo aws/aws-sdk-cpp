@@ -143,7 +143,7 @@ class ListImageReferrersRequest : public ECRRequest {
    * The remaining results of the initial request can be seen by sending another
    * <code>ListImageReferrers</code> request with the returned <code>nextToken</code>
    * value. This value can be between 1 and 50. If this parameter is not used, then
-   * <code>ListImageReferrers</code> returns up to 50 results and a
+   * <code>ListImageReferrers</code> returns up to 20 results and a
    * <code>nextToken</code> value, if applicable.</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }

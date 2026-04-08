@@ -22,13 +22,13 @@ SourceCloudProperties& SourceCloudProperties::operator=(JsonView jsonValue) {
     m_originAccountID = jsonValue.GetString("originAccountID");
     m_originAccountIDHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("originAvailabilityZone")) {
-    m_originAvailabilityZone = jsonValue.GetString("originAvailabilityZone");
-    m_originAvailabilityZoneHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("originRegion")) {
     m_originRegion = jsonValue.GetString("originRegion");
     m_originRegionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("originAvailabilityZone")) {
+    m_originAvailabilityZone = jsonValue.GetString("originAvailabilityZone");
+    m_originAvailabilityZoneHasBeenSet = true;
   }
   if (jsonValue.ValueExists("sourceOutpostArn")) {
     m_sourceOutpostArn = jsonValue.GetString("sourceOutpostArn");
@@ -44,12 +44,12 @@ JsonValue SourceCloudProperties::Jsonize() const {
     payload.WithString("originAccountID", m_originAccountID);
   }
 
-  if (m_originAvailabilityZoneHasBeenSet) {
-    payload.WithString("originAvailabilityZone", m_originAvailabilityZone);
-  }
-
   if (m_originRegionHasBeenSet) {
     payload.WithString("originRegion", m_originRegion);
+  }
+
+  if (m_originAvailabilityZoneHasBeenSet) {
+    payload.WithString("originAvailabilityZone", m_originAvailabilityZone);
   }
 
   if (m_sourceOutpostArnHasBeenSet) {

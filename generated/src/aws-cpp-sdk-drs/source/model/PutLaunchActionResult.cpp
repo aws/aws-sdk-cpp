@@ -22,41 +22,41 @@ PutLaunchActionResult::PutLaunchActionResult(const Aws::AmazonWebServiceResult<J
 PutLaunchActionResult& PutLaunchActionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("actionCode")) {
-    m_actionCode = jsonValue.GetString("actionCode");
-    m_actionCodeHasBeenSet = true;
+  if (jsonValue.ValueExists("resourceId")) {
+    m_resourceId = jsonValue.GetString("resourceId");
+    m_resourceIdHasBeenSet = true;
   }
   if (jsonValue.ValueExists("actionId")) {
     m_actionId = jsonValue.GetString("actionId");
     m_actionIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("actionVersion")) {
-    m_actionVersion = jsonValue.GetString("actionVersion");
-    m_actionVersionHasBeenSet = true;
+  if (jsonValue.ValueExists("actionCode")) {
+    m_actionCode = jsonValue.GetString("actionCode");
+    m_actionCodeHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("active")) {
-    m_active = jsonValue.GetBool("active");
-    m_activeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("category")) {
-    m_category = LaunchActionCategoryMapper::GetLaunchActionCategoryForName(jsonValue.GetString("category"));
-    m_categoryHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("description")) {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
+  if (jsonValue.ValueExists("type")) {
+    m_type = LaunchActionTypeMapper::GetLaunchActionTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("optional")) {
-    m_optional = jsonValue.GetBool("optional");
-    m_optionalHasBeenSet = true;
+  if (jsonValue.ValueExists("active")) {
+    m_active = jsonValue.GetBool("active");
+    m_activeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("order")) {
     m_order = jsonValue.GetInteger("order");
     m_orderHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("actionVersion")) {
+    m_actionVersion = jsonValue.GetString("actionVersion");
+    m_actionVersionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("optional")) {
+    m_optional = jsonValue.GetBool("optional");
+    m_optionalHasBeenSet = true;
   }
   if (jsonValue.ValueExists("parameters")) {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
@@ -65,13 +65,13 @@ PutLaunchActionResult& PutLaunchActionResult::operator=(const Aws::AmazonWebServ
     }
     m_parametersHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("resourceId")) {
-    m_resourceId = jsonValue.GetString("resourceId");
-    m_resourceIdHasBeenSet = true;
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("type")) {
-    m_type = LaunchActionTypeMapper::GetLaunchActionTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
+  if (jsonValue.ValueExists("category")) {
+    m_category = LaunchActionCategoryMapper::GetLaunchActionCategoryForName(jsonValue.GetString("category"));
+    m_categoryHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

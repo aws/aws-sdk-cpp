@@ -30,24 +30,6 @@ class AssociateSourceNetworkStackRequest : public DrsRequest {
 
   ///@{
   /**
-   * <p>CloudFormation template to associate with a Source Network.</p>
-   */
-  inline const Aws::String& GetCfnStackName() const { return m_cfnStackName; }
-  inline bool CfnStackNameHasBeenSet() const { return m_cfnStackNameHasBeenSet; }
-  template <typename CfnStackNameT = Aws::String>
-  void SetCfnStackName(CfnStackNameT&& value) {
-    m_cfnStackNameHasBeenSet = true;
-    m_cfnStackName = std::forward<CfnStackNameT>(value);
-  }
-  template <typename CfnStackNameT = Aws::String>
-  AssociateSourceNetworkStackRequest& WithCfnStackName(CfnStackNameT&& value) {
-    SetCfnStackName(std::forward<CfnStackNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The Source Network ID to associate with CloudFormation template.</p>
    */
   inline const Aws::String& GetSourceNetworkID() const { return m_sourceNetworkID; }
@@ -63,12 +45,30 @@ class AssociateSourceNetworkStackRequest : public DrsRequest {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_cfnStackName;
 
+  ///@{
+  /**
+   * <p>CloudFormation template to associate with a Source Network.</p>
+   */
+  inline const Aws::String& GetCfnStackName() const { return m_cfnStackName; }
+  inline bool CfnStackNameHasBeenSet() const { return m_cfnStackNameHasBeenSet; }
+  template <typename CfnStackNameT = Aws::String>
+  void SetCfnStackName(CfnStackNameT&& value) {
+    m_cfnStackNameHasBeenSet = true;
+    m_cfnStackName = std::forward<CfnStackNameT>(value);
+  }
+  template <typename CfnStackNameT = Aws::String>
+  AssociateSourceNetworkStackRequest& WithCfnStackName(CfnStackNameT&& value) {
+    SetCfnStackName(std::forward<CfnStackNameT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_sourceNetworkID;
-  bool m_cfnStackNameHasBeenSet = false;
+
+  Aws::String m_cfnStackName;
   bool m_sourceNetworkIDHasBeenSet = false;
+  bool m_cfnStackNameHasBeenSet = false;
 };
 
 }  // namespace Model

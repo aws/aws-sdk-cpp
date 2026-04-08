@@ -58,6 +58,14 @@ ParticipantSummary& ParticipantSummary::operator=(JsonView jsonValue) {
     m_sourceSessionId = jsonValue.GetString("sourceSessionId");
     m_sourceSessionIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("redundantIngest")) {
+    m_redundantIngest = jsonValue.GetBool("redundantIngest");
+    m_redundantIngestHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ingestConfigurationArn")) {
+    m_ingestConfigurationArn = jsonValue.GetString("ingestConfigurationArn");
+    m_ingestConfigurationArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -102,6 +110,14 @@ JsonValue ParticipantSummary::Jsonize() const {
 
   if (m_sourceSessionIdHasBeenSet) {
     payload.WithString("sourceSessionId", m_sourceSessionId);
+  }
+
+  if (m_redundantIngestHasBeenSet) {
+    payload.WithBool("redundantIngest", m_redundantIngest);
+  }
+
+  if (m_ingestConfigurationArnHasBeenSet) {
+    payload.WithString("ingestConfigurationArn", m_ingestConfigurationArn);
   }
 
   return payload;

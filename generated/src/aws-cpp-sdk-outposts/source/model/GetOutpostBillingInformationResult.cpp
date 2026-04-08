@@ -39,6 +39,14 @@ GetOutpostBillingInformationResult& GetOutpostBillingInformationResult::operator
     m_contractEndDate = jsonValue.GetString("ContractEndDate");
     m_contractEndDateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("PaymentTerm")) {
+    m_paymentTerm = PaymentTermMapper::GetPaymentTermForName(jsonValue.GetString("PaymentTerm"));
+    m_paymentTermHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("PaymentOption")) {
+    m_paymentOption = PaymentOptionMapper::GetPaymentOptionForName(jsonValue.GetString("PaymentOption"));
+    m_paymentOptionHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

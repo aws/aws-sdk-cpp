@@ -124,6 +124,7 @@
 #include <aws/ivs-realtime/model/PublicKeySummary.h>
 #include <aws/ivs-realtime/model/RecordingConfiguration.h>
 #include <aws/ivs-realtime/model/RecordingConfigurationFormat.h>
+#include <aws/ivs-realtime/model/RedundantIngestCredential.h>
 #include <aws/ivs-realtime/model/ReplicationState.h>
 #include <aws/ivs-realtime/model/ReplicationType.h>
 #include <aws/ivs-realtime/model/ResourceNotFoundException.h>

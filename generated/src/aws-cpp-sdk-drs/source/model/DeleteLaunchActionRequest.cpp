@@ -15,12 +15,12 @@ using namespace Aws::Utils;
 Aws::String DeleteLaunchActionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_actionIdHasBeenSet) {
-    payload.WithString("actionId", m_actionId);
-  }
-
   if (m_resourceIdHasBeenSet) {
     payload.WithString("resourceId", m_resourceId);
+  }
+
+  if (m_actionIdHasBeenSet) {
+    payload.WithString("actionId", m_actionId);
   }
 
   return payload.View().WriteReadable();

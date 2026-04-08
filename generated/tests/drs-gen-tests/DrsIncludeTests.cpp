@@ -95,6 +95,7 @@
 #include <aws/drs/model/InitializeServiceResult.h>
 #include <aws/drs/model/InitiatedBy.h>
 #include <aws/drs/model/InternalServerException.h>
+#include <aws/drs/model/InternetProtocol.h>
 #include <aws/drs/model/Job.h>
 #include <aws/drs/model/JobLog.h>
 #include <aws/drs/model/JobLogEvent.h>

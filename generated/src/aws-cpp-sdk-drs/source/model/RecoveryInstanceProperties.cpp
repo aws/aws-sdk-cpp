@@ -18,27 +18,13 @@ namespace Model {
 RecoveryInstanceProperties::RecoveryInstanceProperties(JsonView jsonValue) { *this = jsonValue; }
 
 RecoveryInstanceProperties& RecoveryInstanceProperties::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("cpus")) {
-    Aws::Utils::Array<JsonView> cpusJsonList = jsonValue.GetArray("cpus");
-    for (unsigned cpusIndex = 0; cpusIndex < cpusJsonList.GetLength(); ++cpusIndex) {
-      m_cpus.push_back(cpusJsonList[cpusIndex].AsObject());
-    }
-    m_cpusHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("disks")) {
-    Aws::Utils::Array<JsonView> disksJsonList = jsonValue.GetArray("disks");
-    for (unsigned disksIndex = 0; disksIndex < disksJsonList.GetLength(); ++disksIndex) {
-      m_disks.push_back(disksJsonList[disksIndex].AsObject());
-    }
-    m_disksHasBeenSet = true;
+  if (jsonValue.ValueExists("lastUpdatedDateTime")) {
+    m_lastUpdatedDateTime = jsonValue.GetString("lastUpdatedDateTime");
+    m_lastUpdatedDateTimeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("identificationHints")) {
     m_identificationHints = jsonValue.GetObject("identificationHints");
     m_identificationHintsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("lastUpdatedDateTime")) {
-    m_lastUpdatedDateTime = jsonValue.GetString("lastUpdatedDateTime");
-    m_lastUpdatedDateTimeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("networkInterfaces")) {
     Aws::Utils::Array<JsonView> networkInterfacesJsonList = jsonValue.GetArray("networkInterfaces");
@@ -47,13 +33,27 @@ RecoveryInstanceProperties& RecoveryInstanceProperties::operator=(JsonView jsonV
     }
     m_networkInterfacesHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("os")) {
-    m_os = jsonValue.GetObject("os");
-    m_osHasBeenSet = true;
+  if (jsonValue.ValueExists("disks")) {
+    Aws::Utils::Array<JsonView> disksJsonList = jsonValue.GetArray("disks");
+    for (unsigned disksIndex = 0; disksIndex < disksJsonList.GetLength(); ++disksIndex) {
+      m_disks.push_back(disksJsonList[disksIndex].AsObject());
+    }
+    m_disksHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cpus")) {
+    Aws::Utils::Array<JsonView> cpusJsonList = jsonValue.GetArray("cpus");
+    for (unsigned cpusIndex = 0; cpusIndex < cpusJsonList.GetLength(); ++cpusIndex) {
+      m_cpus.push_back(cpusJsonList[cpusIndex].AsObject());
+    }
+    m_cpusHasBeenSet = true;
   }
   if (jsonValue.ValueExists("ramBytes")) {
     m_ramBytes = jsonValue.GetInt64("ramBytes");
     m_ramBytesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("os")) {
+    m_os = jsonValue.GetObject("os");
+    m_osHasBeenSet = true;
   }
   return *this;
 }
@@ -61,28 +61,12 @@ RecoveryInstanceProperties& RecoveryInstanceProperties::operator=(JsonView jsonV
 JsonValue RecoveryInstanceProperties::Jsonize() const {
   JsonValue payload;
 
-  if (m_cpusHasBeenSet) {
-    Aws::Utils::Array<JsonValue> cpusJsonList(m_cpus.size());
-    for (unsigned cpusIndex = 0; cpusIndex < cpusJsonList.GetLength(); ++cpusIndex) {
-      cpusJsonList[cpusIndex].AsObject(m_cpus[cpusIndex].Jsonize());
-    }
-    payload.WithArray("cpus", std::move(cpusJsonList));
-  }
-
-  if (m_disksHasBeenSet) {
-    Aws::Utils::Array<JsonValue> disksJsonList(m_disks.size());
-    for (unsigned disksIndex = 0; disksIndex < disksJsonList.GetLength(); ++disksIndex) {
-      disksJsonList[disksIndex].AsObject(m_disks[disksIndex].Jsonize());
-    }
-    payload.WithArray("disks", std::move(disksJsonList));
+  if (m_lastUpdatedDateTimeHasBeenSet) {
+    payload.WithString("lastUpdatedDateTime", m_lastUpdatedDateTime);
   }
 
   if (m_identificationHintsHasBeenSet) {
     payload.WithObject("identificationHints", m_identificationHints.Jsonize());
-  }
-
-  if (m_lastUpdatedDateTimeHasBeenSet) {
-    payload.WithString("lastUpdatedDateTime", m_lastUpdatedDateTime);
   }
 
   if (m_networkInterfacesHasBeenSet) {
@@ -93,12 +77,28 @@ JsonValue RecoveryInstanceProperties::Jsonize() const {
     payload.WithArray("networkInterfaces", std::move(networkInterfacesJsonList));
   }
 
-  if (m_osHasBeenSet) {
-    payload.WithObject("os", m_os.Jsonize());
+  if (m_disksHasBeenSet) {
+    Aws::Utils::Array<JsonValue> disksJsonList(m_disks.size());
+    for (unsigned disksIndex = 0; disksIndex < disksJsonList.GetLength(); ++disksIndex) {
+      disksJsonList[disksIndex].AsObject(m_disks[disksIndex].Jsonize());
+    }
+    payload.WithArray("disks", std::move(disksJsonList));
+  }
+
+  if (m_cpusHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cpusJsonList(m_cpus.size());
+    for (unsigned cpusIndex = 0; cpusIndex < cpusJsonList.GetLength(); ++cpusIndex) {
+      cpusJsonList[cpusIndex].AsObject(m_cpus[cpusIndex].Jsonize());
+    }
+    payload.WithArray("cpus", std::move(cpusJsonList));
   }
 
   if (m_ramBytesHasBeenSet) {
     payload.WithInt64("ramBytes", m_ramBytes);
+  }
+
+  if (m_osHasBeenSet) {
+    payload.WithObject("os", m_os.Jsonize());
   }
 
   return payload;

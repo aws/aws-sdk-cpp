@@ -58,6 +58,10 @@ OutputGroupSettings& OutputGroupSettings::operator=(JsonView jsonValue) {
     m_srtGroupSettings = jsonValue.GetObject("srtGroupSettings");
     m_srtGroupSettingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("mediaConnectRouterGroupSettings")) {
+    m_mediaConnectRouterGroupSettings = jsonValue.GetObject("mediaConnectRouterGroupSettings");
+    m_mediaConnectRouterGroupSettingsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -102,6 +106,10 @@ JsonValue OutputGroupSettings::Jsonize() const {
 
   if (m_srtGroupSettingsHasBeenSet) {
     payload.WithObject("srtGroupSettings", m_srtGroupSettings.Jsonize());
+  }
+
+  if (m_mediaConnectRouterGroupSettingsHasBeenSet) {
+    payload.WithObject("mediaConnectRouterGroupSettings", m_mediaConnectRouterGroupSettings.Jsonize());
   }
 
   return payload;

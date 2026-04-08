@@ -44,6 +44,8 @@
 #include <aws/outposts/model/CreateOrderResult.h>
 #include <aws/outposts/model/CreateOutpostRequest.h>
 #include <aws/outposts/model/CreateOutpostResult.h>
+#include <aws/outposts/model/CreateRenewalRequest.h>
+#include <aws/outposts/model/CreateRenewalResult.h>
 #include <aws/outposts/model/CreateSiteRequest.h>
 #include <aws/outposts/model/CreateSiteResult.h>
 #include <aws/outposts/model/DecommissionRequestStatus.h>
@@ -69,6 +71,8 @@
 #include <aws/outposts/model/GetOutpostResult.h>
 #include <aws/outposts/model/GetOutpostSupportedInstanceTypesRequest.h>
 #include <aws/outposts/model/GetOutpostSupportedInstanceTypesResult.h>
+#include <aws/outposts/model/GetRenewalPricingRequest.h>
+#include <aws/outposts/model/GetRenewalPricingResult.h>
 #include <aws/outposts/model/GetSiteAddressRequest.h>
 #include <aws/outposts/model/GetSiteAddressResult.h>
 #include <aws/outposts/model/GetSiteRequest.h>
@@ -111,6 +115,9 @@
 #include <aws/outposts/model/PowerDrawKva.h>
 #include <aws/outposts/model/PowerFeedDrop.h>
 #include <aws/outposts/model/PowerPhase.h>
+#include <aws/outposts/model/PricingOption.h>
+#include <aws/outposts/model/PricingResult.h>
+#include <aws/outposts/model/QuotePricingType.h>
 #include <aws/outposts/model/RackPhysicalProperties.h>
 #include <aws/outposts/model/ResourceType.h>
 #include <aws/outposts/model/ShipmentCarrier.h>
@@ -123,6 +130,7 @@
 #include <aws/outposts/model/StartOutpostDecommissionRequest.h>
 #include <aws/outposts/model/StartOutpostDecommissionResult.h>
 #include <aws/outposts/model/Subscription.h>
+#include <aws/outposts/model/SubscriptionPricingDetails.h>
 #include <aws/outposts/model/SubscriptionStatus.h>
 #include <aws/outposts/model/SubscriptionType.h>
 #include <aws/outposts/model/SupportedHardwareType.h>

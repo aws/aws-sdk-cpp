@@ -43,6 +43,10 @@ Aws::String CreateIngestConfigurationRequest::SerializePayload() const {
     payload.WithBool("insecureIngest", m_insecureIngest);
   }
 
+  if (m_redundantIngestHasBeenSet) {
+    payload.WithBool("redundantIngest", m_redundantIngest);
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {

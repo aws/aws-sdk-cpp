@@ -35,24 +35,6 @@ class DataReplicationInitiation {
 
   ///@{
   /**
-   * <p>The date and time of the next attempt to initiate data replication.</p>
-   */
-  inline const Aws::String& GetNextAttemptDateTime() const { return m_nextAttemptDateTime; }
-  inline bool NextAttemptDateTimeHasBeenSet() const { return m_nextAttemptDateTimeHasBeenSet; }
-  template <typename NextAttemptDateTimeT = Aws::String>
-  void SetNextAttemptDateTime(NextAttemptDateTimeT&& value) {
-    m_nextAttemptDateTimeHasBeenSet = true;
-    m_nextAttemptDateTime = std::forward<NextAttemptDateTimeT>(value);
-  }
-  template <typename NextAttemptDateTimeT = Aws::String>
-  DataReplicationInitiation& WithNextAttemptDateTime(NextAttemptDateTimeT&& value) {
-    SetNextAttemptDateTime(std::forward<NextAttemptDateTimeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The date and time of the current attempt to initiate data replication.</p>
    */
   inline const Aws::String& GetStartDateTime() const { return m_startDateTime; }
@@ -65,6 +47,24 @@ class DataReplicationInitiation {
   template <typename StartDateTimeT = Aws::String>
   DataReplicationInitiation& WithStartDateTime(StartDateTimeT&& value) {
     SetStartDateTime(std::forward<StartDateTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The date and time of the next attempt to initiate data replication.</p>
+   */
+  inline const Aws::String& GetNextAttemptDateTime() const { return m_nextAttemptDateTime; }
+  inline bool NextAttemptDateTimeHasBeenSet() const { return m_nextAttemptDateTimeHasBeenSet; }
+  template <typename NextAttemptDateTimeT = Aws::String>
+  void SetNextAttemptDateTime(NextAttemptDateTimeT&& value) {
+    m_nextAttemptDateTimeHasBeenSet = true;
+    m_nextAttemptDateTime = std::forward<NextAttemptDateTimeT>(value);
+  }
+  template <typename NextAttemptDateTimeT = Aws::String>
+  DataReplicationInitiation& WithNextAttemptDateTime(NextAttemptDateTimeT&& value) {
+    SetNextAttemptDateTime(std::forward<NextAttemptDateTimeT>(value));
     return *this;
   }
   ///@}
@@ -93,13 +93,13 @@ class DataReplicationInitiation {
   }
   ///@}
  private:
-  Aws::String m_nextAttemptDateTime;
-
   Aws::String m_startDateTime;
 
+  Aws::String m_nextAttemptDateTime;
+
   Aws::Vector<DataReplicationInitiationStep> m_steps;
-  bool m_nextAttemptDateTimeHasBeenSet = false;
   bool m_startDateTimeHasBeenSet = false;
+  bool m_nextAttemptDateTimeHasBeenSet = false;
   bool m_stepsHasBeenSet = false;
 };
 

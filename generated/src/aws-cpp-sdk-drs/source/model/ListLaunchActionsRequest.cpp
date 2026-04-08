@@ -15,6 +15,10 @@ using namespace Aws::Utils;
 Aws::String ListLaunchActionsRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_resourceIdHasBeenSet) {
+    payload.WithString("resourceId", m_resourceId);
+  }
+
   if (m_filtersHasBeenSet) {
     payload.WithObject("filters", m_filters.Jsonize());
   }
@@ -25,10 +29,6 @@ Aws::String ListLaunchActionsRequest::SerializePayload() const {
 
   if (m_nextTokenHasBeenSet) {
     payload.WithString("nextToken", m_nextToken);
-  }
-
-  if (m_resourceIdHasBeenSet) {
-    payload.WithString("resourceId", m_resourceId);
   }
 
   return payload.View().WriteReadable();

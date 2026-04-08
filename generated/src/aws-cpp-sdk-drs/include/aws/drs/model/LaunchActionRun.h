@@ -53,24 +53,6 @@ class LaunchActionRun {
 
   ///@{
   /**
-   * <p>Failure reason.</p>
-   */
-  inline const Aws::String& GetFailureReason() const { return m_failureReason; }
-  inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
-  template <typename FailureReasonT = Aws::String>
-  void SetFailureReason(FailureReasonT&& value) {
-    m_failureReasonHasBeenSet = true;
-    m_failureReason = std::forward<FailureReasonT>(value);
-  }
-  template <typename FailureReasonT = Aws::String>
-  LaunchActionRun& WithFailureReason(FailureReasonT&& value) {
-    SetFailureReason(std::forward<FailureReasonT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Run Id.</p>
    */
   inline const Aws::String& GetRunId() const { return m_runId; }
@@ -102,18 +84,36 @@ class LaunchActionRun {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Failure reason.</p>
+   */
+  inline const Aws::String& GetFailureReason() const { return m_failureReason; }
+  inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
+  template <typename FailureReasonT = Aws::String>
+  void SetFailureReason(FailureReasonT&& value) {
+    m_failureReasonHasBeenSet = true;
+    m_failureReason = std::forward<FailureReasonT>(value);
+  }
+  template <typename FailureReasonT = Aws::String>
+  LaunchActionRun& WithFailureReason(FailureReasonT&& value) {
+    SetFailureReason(std::forward<FailureReasonT>(value));
+    return *this;
+  }
+  ///@}
  private:
   LaunchAction m_action;
-
-  Aws::String m_failureReason;
 
   Aws::String m_runId;
 
   LaunchActionRunStatus m_status{LaunchActionRunStatus::NOT_SET};
+
+  Aws::String m_failureReason;
   bool m_actionHasBeenSet = false;
-  bool m_failureReasonHasBeenSet = false;
   bool m_runIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
 };
 
 }  // namespace Model

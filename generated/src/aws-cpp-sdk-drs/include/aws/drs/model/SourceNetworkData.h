@@ -70,6 +70,24 @@ class SourceNetworkData {
 
   ///@{
   /**
+   * <p>ID of the recovered VPC following Source Network recovery.</p>
+   */
+  inline const Aws::String& GetTargetVpc() const { return m_targetVpc; }
+  inline bool TargetVpcHasBeenSet() const { return m_targetVpcHasBeenSet; }
+  template <typename TargetVpcT = Aws::String>
+  void SetTargetVpc(TargetVpcT&& value) {
+    m_targetVpcHasBeenSet = true;
+    m_targetVpc = std::forward<TargetVpcT>(value);
+  }
+  template <typename TargetVpcT = Aws::String>
+  SourceNetworkData& WithTargetVpc(TargetVpcT&& value) {
+    SetTargetVpc(std::forward<TargetVpcT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>CloudFormation stack name that was deployed for recovering the Source
    * Network.</p>
    */
@@ -86,36 +104,18 @@ class SourceNetworkData {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>ID of the recovered VPC following Source Network recovery.</p>
-   */
-  inline const Aws::String& GetTargetVpc() const { return m_targetVpc; }
-  inline bool TargetVpcHasBeenSet() const { return m_targetVpcHasBeenSet; }
-  template <typename TargetVpcT = Aws::String>
-  void SetTargetVpc(TargetVpcT&& value) {
-    m_targetVpcHasBeenSet = true;
-    m_targetVpc = std::forward<TargetVpcT>(value);
-  }
-  template <typename TargetVpcT = Aws::String>
-  SourceNetworkData& WithTargetVpc(TargetVpcT&& value) {
-    SetTargetVpc(std::forward<TargetVpcT>(value));
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_sourceNetworkID;
 
   Aws::String m_sourceVpc;
 
-  Aws::String m_stackName;
-
   Aws::String m_targetVpc;
+
+  Aws::String m_stackName;
   bool m_sourceNetworkIDHasBeenSet = false;
   bool m_sourceVpcHasBeenSet = false;
-  bool m_stackNameHasBeenSet = false;
   bool m_targetVpcHasBeenSet = false;
+  bool m_stackNameHasBeenSet = false;
 };
 
 }  // namespace Model

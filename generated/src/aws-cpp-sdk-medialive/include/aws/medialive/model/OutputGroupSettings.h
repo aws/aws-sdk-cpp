@@ -9,6 +9,7 @@
 #include <aws/medialive/model/CmafIngestGroupSettings.h>
 #include <aws/medialive/model/FrameCaptureGroupSettings.h>
 #include <aws/medialive/model/HlsGroupSettings.h>
+#include <aws/medialive/model/MediaConnectRouterGroupSettings.h>
 #include <aws/medialive/model/MediaPackageGroupSettings.h>
 #include <aws/medialive/model/MsSmoothGroupSettings.h>
 #include <aws/medialive/model/MultiplexGroupSettings.h>
@@ -199,6 +200,22 @@ class OutputGroupSettings {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const MediaConnectRouterGroupSettings& GetMediaConnectRouterGroupSettings() const { return m_mediaConnectRouterGroupSettings; }
+  inline bool MediaConnectRouterGroupSettingsHasBeenSet() const { return m_mediaConnectRouterGroupSettingsHasBeenSet; }
+  template <typename MediaConnectRouterGroupSettingsT = MediaConnectRouterGroupSettings>
+  void SetMediaConnectRouterGroupSettings(MediaConnectRouterGroupSettingsT&& value) {
+    m_mediaConnectRouterGroupSettingsHasBeenSet = true;
+    m_mediaConnectRouterGroupSettings = std::forward<MediaConnectRouterGroupSettingsT>(value);
+  }
+  template <typename MediaConnectRouterGroupSettingsT = MediaConnectRouterGroupSettings>
+  OutputGroupSettings& WithMediaConnectRouterGroupSettings(MediaConnectRouterGroupSettingsT&& value) {
+    SetMediaConnectRouterGroupSettings(std::forward<MediaConnectRouterGroupSettingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ArchiveGroupSettings m_archiveGroupSettings;
 
@@ -219,6 +236,8 @@ class OutputGroupSettings {
   CmafIngestGroupSettings m_cmafIngestGroupSettings;
 
   SrtGroupSettings m_srtGroupSettings;
+
+  MediaConnectRouterGroupSettings m_mediaConnectRouterGroupSettings;
   bool m_archiveGroupSettingsHasBeenSet = false;
   bool m_frameCaptureGroupSettingsHasBeenSet = false;
   bool m_hlsGroupSettingsHasBeenSet = false;
@@ -229,6 +248,7 @@ class OutputGroupSettings {
   bool m_udpGroupSettingsHasBeenSet = false;
   bool m_cmafIngestGroupSettingsHasBeenSet = false;
   bool m_srtGroupSettingsHasBeenSet = false;
+  bool m_mediaConnectRouterGroupSettingsHasBeenSet = false;
 };
 
 }  // namespace Model

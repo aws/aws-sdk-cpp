@@ -52,24 +52,6 @@ class SourceCloudProperties {
 
   ///@{
   /**
-   * <p>AWS Availability Zone for an EC2-originated Source Server.</p>
-   */
-  inline const Aws::String& GetOriginAvailabilityZone() const { return m_originAvailabilityZone; }
-  inline bool OriginAvailabilityZoneHasBeenSet() const { return m_originAvailabilityZoneHasBeenSet; }
-  template <typename OriginAvailabilityZoneT = Aws::String>
-  void SetOriginAvailabilityZone(OriginAvailabilityZoneT&& value) {
-    m_originAvailabilityZoneHasBeenSet = true;
-    m_originAvailabilityZone = std::forward<OriginAvailabilityZoneT>(value);
-  }
-  template <typename OriginAvailabilityZoneT = Aws::String>
-  SourceCloudProperties& WithOriginAvailabilityZone(OriginAvailabilityZoneT&& value) {
-    SetOriginAvailabilityZone(std::forward<OriginAvailabilityZoneT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>AWS Region for an EC2-originated Source Server.</p>
    */
   inline const Aws::String& GetOriginRegion() const { return m_originRegion; }
@@ -82,6 +64,24 @@ class SourceCloudProperties {
   template <typename OriginRegionT = Aws::String>
   SourceCloudProperties& WithOriginRegion(OriginRegionT&& value) {
     SetOriginRegion(std::forward<OriginRegionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>AWS Availability Zone for an EC2-originated Source Server.</p>
+   */
+  inline const Aws::String& GetOriginAvailabilityZone() const { return m_originAvailabilityZone; }
+  inline bool OriginAvailabilityZoneHasBeenSet() const { return m_originAvailabilityZoneHasBeenSet; }
+  template <typename OriginAvailabilityZoneT = Aws::String>
+  void SetOriginAvailabilityZone(OriginAvailabilityZoneT&& value) {
+    m_originAvailabilityZoneHasBeenSet = true;
+    m_originAvailabilityZone = std::forward<OriginAvailabilityZoneT>(value);
+  }
+  template <typename OriginAvailabilityZoneT = Aws::String>
+  SourceCloudProperties& WithOriginAvailabilityZone(OriginAvailabilityZoneT&& value) {
+    SetOriginAvailabilityZone(std::forward<OriginAvailabilityZoneT>(value));
     return *this;
   }
   ///@}
@@ -106,14 +106,14 @@ class SourceCloudProperties {
  private:
   Aws::String m_originAccountID;
 
-  Aws::String m_originAvailabilityZone;
-
   Aws::String m_originRegion;
+
+  Aws::String m_originAvailabilityZone;
 
   Aws::String m_sourceOutpostArn;
   bool m_originAccountIDHasBeenSet = false;
-  bool m_originAvailabilityZoneHasBeenSet = false;
   bool m_originRegionHasBeenSet = false;
+  bool m_originAvailabilityZoneHasBeenSet = false;
   bool m_sourceOutpostArnHasBeenSet = false;
 };
 

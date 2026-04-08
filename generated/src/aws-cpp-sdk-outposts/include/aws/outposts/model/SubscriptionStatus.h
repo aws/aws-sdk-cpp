@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Outposts {
 namespace Model {
-enum class SubscriptionStatus { NOT_SET, ACTIVE, INACTIVE, CANCELLED };
+enum class SubscriptionStatus { NOT_SET, ACTIVE, PENDING, INACTIVE, CANCELLED };
 
 namespace SubscriptionStatusMapper {
 AWS_OUTPOSTS_API SubscriptionStatus GetSubscriptionStatusForName(const Aws::String& name);

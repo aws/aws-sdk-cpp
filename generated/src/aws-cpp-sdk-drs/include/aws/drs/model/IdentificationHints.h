@@ -33,24 +33,6 @@ class IdentificationHints {
 
   ///@{
   /**
-   * <p>AWS Instance ID identification hint.</p>
-   */
-  inline const Aws::String& GetAwsInstanceID() const { return m_awsInstanceID; }
-  inline bool AwsInstanceIDHasBeenSet() const { return m_awsInstanceIDHasBeenSet; }
-  template <typename AwsInstanceIDT = Aws::String>
-  void SetAwsInstanceID(AwsInstanceIDT&& value) {
-    m_awsInstanceIDHasBeenSet = true;
-    m_awsInstanceID = std::forward<AwsInstanceIDT>(value);
-  }
-  template <typename AwsInstanceIDT = Aws::String>
-  IdentificationHints& WithAwsInstanceID(AwsInstanceIDT&& value) {
-    SetAwsInstanceID(std::forward<AwsInstanceIDT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Fully Qualified Domain Name identification hint.</p>
    */
   inline const Aws::String& GetFqdn() const { return m_fqdn; }
@@ -102,18 +84,36 @@ class IdentificationHints {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_awsInstanceID;
 
+  ///@{
+  /**
+   * <p>AWS Instance ID identification hint.</p>
+   */
+  inline const Aws::String& GetAwsInstanceID() const { return m_awsInstanceID; }
+  inline bool AwsInstanceIDHasBeenSet() const { return m_awsInstanceIDHasBeenSet; }
+  template <typename AwsInstanceIDT = Aws::String>
+  void SetAwsInstanceID(AwsInstanceIDT&& value) {
+    m_awsInstanceIDHasBeenSet = true;
+    m_awsInstanceID = std::forward<AwsInstanceIDT>(value);
+  }
+  template <typename AwsInstanceIDT = Aws::String>
+  IdentificationHints& WithAwsInstanceID(AwsInstanceIDT&& value) {
+    SetAwsInstanceID(std::forward<AwsInstanceIDT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_fqdn;
 
   Aws::String m_hostname;
 
   Aws::String m_vmWareUuid;
-  bool m_awsInstanceIDHasBeenSet = false;
+
+  Aws::String m_awsInstanceID;
   bool m_fqdnHasBeenSet = false;
   bool m_hostnameHasBeenSet = false;
   bool m_vmWareUuidHasBeenSet = false;
+  bool m_awsInstanceIDHasBeenSet = false;
 };
 
 }  // namespace Model

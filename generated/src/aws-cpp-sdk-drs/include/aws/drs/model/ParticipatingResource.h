@@ -35,22 +35,6 @@ class ParticipatingResource {
 
   ///@{
   /**
-   * <p>The launch status of a participating resource.</p>
-   */
-  inline LaunchStatus GetLaunchStatus() const { return m_launchStatus; }
-  inline bool LaunchStatusHasBeenSet() const { return m_launchStatusHasBeenSet; }
-  inline void SetLaunchStatus(LaunchStatus value) {
-    m_launchStatusHasBeenSet = true;
-    m_launchStatus = value;
-  }
-  inline ParticipatingResource& WithLaunchStatus(LaunchStatus value) {
-    SetLaunchStatus(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of a participating resource.</p>
    */
   inline const ParticipatingResourceID& GetParticipatingResourceID() const { return m_participatingResourceID; }
@@ -66,12 +50,28 @@ class ParticipatingResource {
     return *this;
   }
   ///@}
- private:
-  LaunchStatus m_launchStatus{LaunchStatus::NOT_SET};
 
+  ///@{
+  /**
+   * <p>The launch status of a participating resource.</p>
+   */
+  inline LaunchStatus GetLaunchStatus() const { return m_launchStatus; }
+  inline bool LaunchStatusHasBeenSet() const { return m_launchStatusHasBeenSet; }
+  inline void SetLaunchStatus(LaunchStatus value) {
+    m_launchStatusHasBeenSet = true;
+    m_launchStatus = value;
+  }
+  inline ParticipatingResource& WithLaunchStatus(LaunchStatus value) {
+    SetLaunchStatus(value);
+    return *this;
+  }
+  ///@}
+ private:
   ParticipatingResourceID m_participatingResourceID;
-  bool m_launchStatusHasBeenSet = false;
+
+  LaunchStatus m_launchStatus{LaunchStatus::NOT_SET};
   bool m_participatingResourceIDHasBeenSet = false;
+  bool m_launchStatusHasBeenSet = false;
 };
 
 }  // namespace Model

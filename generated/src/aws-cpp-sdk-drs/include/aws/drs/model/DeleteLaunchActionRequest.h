@@ -30,22 +30,6 @@ class DeleteLaunchActionRequest : public DrsRequest {
 
   ///@{
 
-  inline const Aws::String& GetActionId() const { return m_actionId; }
-  inline bool ActionIdHasBeenSet() const { return m_actionIdHasBeenSet; }
-  template <typename ActionIdT = Aws::String>
-  void SetActionId(ActionIdT&& value) {
-    m_actionIdHasBeenSet = true;
-    m_actionId = std::forward<ActionIdT>(value);
-  }
-  template <typename ActionIdT = Aws::String>
-  DeleteLaunchActionRequest& WithActionId(ActionIdT&& value) {
-    SetActionId(std::forward<ActionIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-
   inline const Aws::String& GetResourceId() const { return m_resourceId; }
   inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
   template <typename ResourceIdT = Aws::String>
@@ -59,12 +43,28 @@ class DeleteLaunchActionRequest : public DrsRequest {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_actionId;
 
+  ///@{
+
+  inline const Aws::String& GetActionId() const { return m_actionId; }
+  inline bool ActionIdHasBeenSet() const { return m_actionIdHasBeenSet; }
+  template <typename ActionIdT = Aws::String>
+  void SetActionId(ActionIdT&& value) {
+    m_actionIdHasBeenSet = true;
+    m_actionId = std::forward<ActionIdT>(value);
+  }
+  template <typename ActionIdT = Aws::String>
+  DeleteLaunchActionRequest& WithActionId(ActionIdT&& value) {
+    SetActionId(std::forward<ActionIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_resourceId;
-  bool m_actionIdHasBeenSet = false;
+
+  Aws::String m_actionId;
   bool m_resourceIdHasBeenSet = false;
+  bool m_actionIdHasBeenSet = false;
 };
 
 }  // namespace Model

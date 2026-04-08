@@ -18,6 +18,13 @@ namespace Model {
 DescribeSourceNetworksRequestFilters::DescribeSourceNetworksRequestFilters(JsonView jsonValue) { *this = jsonValue; }
 
 DescribeSourceNetworksRequestFilters& DescribeSourceNetworksRequestFilters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("sourceNetworkIDs")) {
+    Aws::Utils::Array<JsonView> sourceNetworkIDsJsonList = jsonValue.GetArray("sourceNetworkIDs");
+    for (unsigned sourceNetworkIDsIndex = 0; sourceNetworkIDsIndex < sourceNetworkIDsJsonList.GetLength(); ++sourceNetworkIDsIndex) {
+      m_sourceNetworkIDs.push_back(sourceNetworkIDsJsonList[sourceNetworkIDsIndex].AsString());
+    }
+    m_sourceNetworkIDsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("originAccountID")) {
     m_originAccountID = jsonValue.GetString("originAccountID");
     m_originAccountIDHasBeenSet = true;
@@ -26,26 +33,11 @@ DescribeSourceNetworksRequestFilters& DescribeSourceNetworksRequestFilters::oper
     m_originRegion = jsonValue.GetString("originRegion");
     m_originRegionHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("sourceNetworkIDs")) {
-    Aws::Utils::Array<JsonView> sourceNetworkIDsJsonList = jsonValue.GetArray("sourceNetworkIDs");
-    for (unsigned sourceNetworkIDsIndex = 0; sourceNetworkIDsIndex < sourceNetworkIDsJsonList.GetLength(); ++sourceNetworkIDsIndex) {
-      m_sourceNetworkIDs.push_back(sourceNetworkIDsJsonList[sourceNetworkIDsIndex].AsString());
-    }
-    m_sourceNetworkIDsHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue DescribeSourceNetworksRequestFilters::Jsonize() const {
   JsonValue payload;
-
-  if (m_originAccountIDHasBeenSet) {
-    payload.WithString("originAccountID", m_originAccountID);
-  }
-
-  if (m_originRegionHasBeenSet) {
-    payload.WithString("originRegion", m_originRegion);
-  }
 
   if (m_sourceNetworkIDsHasBeenSet) {
     Aws::Utils::Array<JsonValue> sourceNetworkIDsJsonList(m_sourceNetworkIDs.size());
@@ -53,6 +45,14 @@ JsonValue DescribeSourceNetworksRequestFilters::Jsonize() const {
       sourceNetworkIDsJsonList[sourceNetworkIDsIndex].AsString(m_sourceNetworkIDs[sourceNetworkIDsIndex]);
     }
     payload.WithArray("sourceNetworkIDs", std::move(sourceNetworkIDsJsonList));
+  }
+
+  if (m_originAccountIDHasBeenSet) {
+    payload.WithString("originAccountID", m_originAccountID);
+  }
+
+  if (m_originRegionHasBeenSet) {
+    payload.WithString("originRegion", m_originRegion);
   }
 
   return payload;
