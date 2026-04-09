@@ -61,53 +61,6 @@ class RouterOutputFilter {
 
   ///@{
   /**
-   * <p>The types of router outputs to include in the filter.</p>
-   */
-  inline const Aws::Vector<RouterOutputType>& GetOutputTypes() const { return m_outputTypes; }
-  inline bool OutputTypesHasBeenSet() const { return m_outputTypesHasBeenSet; }
-  template <typename OutputTypesT = Aws::Vector<RouterOutputType>>
-  void SetOutputTypes(OutputTypesT&& value) {
-    m_outputTypesHasBeenSet = true;
-    m_outputTypes = std::forward<OutputTypesT>(value);
-  }
-  template <typename OutputTypesT = Aws::Vector<RouterOutputType>>
-  RouterOutputFilter& WithOutputTypes(OutputTypesT&& value) {
-    SetOutputTypes(std::forward<OutputTypesT>(value));
-    return *this;
-  }
-  inline RouterOutputFilter& AddOutputTypes(RouterOutputType value) {
-    m_outputTypesHasBeenSet = true;
-    m_outputTypes.push_back(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The names of the router outputs to include in the filter.</p>
-   */
-  inline const Aws::Vector<Aws::String>& GetNameContains() const { return m_nameContains; }
-  inline bool NameContainsHasBeenSet() const { return m_nameContainsHasBeenSet; }
-  template <typename NameContainsT = Aws::Vector<Aws::String>>
-  void SetNameContains(NameContainsT&& value) {
-    m_nameContainsHasBeenSet = true;
-    m_nameContains = std::forward<NameContainsT>(value);
-  }
-  template <typename NameContainsT = Aws::Vector<Aws::String>>
-  RouterOutputFilter& WithNameContains(NameContainsT&& value) {
-    SetNameContains(std::forward<NameContainsT>(value));
-    return *this;
-  }
-  template <typename NameContainsT = Aws::String>
-  RouterOutputFilter& AddNameContains(NameContainsT&& value) {
-    m_nameContainsHasBeenSet = true;
-    m_nameContains.emplace_back(std::forward<NameContainsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The Amazon Resource Names (ARNs) of the network interfaces associated with
    * the router outputs to include in the filter.</p>
    */
@@ -127,6 +80,52 @@ class RouterOutputFilter {
   RouterOutputFilter& AddNetworkInterfaceArns(NetworkInterfaceArnsT&& value) {
     m_networkInterfaceArnsHasBeenSet = true;
     m_networkInterfaceArns.emplace_back(std::forward<NetworkInterfaceArnsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Filter criteria to list router outputs based on their routing scope.</p>
+   */
+  inline const Aws::Vector<RoutingScope>& GetRoutingScopes() const { return m_routingScopes; }
+  inline bool RoutingScopesHasBeenSet() const { return m_routingScopesHasBeenSet; }
+  template <typename RoutingScopesT = Aws::Vector<RoutingScope>>
+  void SetRoutingScopes(RoutingScopesT&& value) {
+    m_routingScopesHasBeenSet = true;
+    m_routingScopes = std::forward<RoutingScopesT>(value);
+  }
+  template <typename RoutingScopesT = Aws::Vector<RoutingScope>>
+  RouterOutputFilter& WithRoutingScopes(RoutingScopesT&& value) {
+    SetRoutingScopes(std::forward<RoutingScopesT>(value));
+    return *this;
+  }
+  inline RouterOutputFilter& AddRoutingScopes(RoutingScope value) {
+    m_routingScopesHasBeenSet = true;
+    m_routingScopes.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The types of router outputs to include in the filter.</p>
+   */
+  inline const Aws::Vector<RouterOutputType>& GetOutputTypes() const { return m_outputTypes; }
+  inline bool OutputTypesHasBeenSet() const { return m_outputTypesHasBeenSet; }
+  template <typename OutputTypesT = Aws::Vector<RouterOutputType>>
+  void SetOutputTypes(OutputTypesT&& value) {
+    m_outputTypesHasBeenSet = true;
+    m_outputTypes = std::forward<OutputTypesT>(value);
+  }
+  template <typename OutputTypesT = Aws::Vector<RouterOutputType>>
+  RouterOutputFilter& WithOutputTypes(OutputTypesT&& value) {
+    SetOutputTypes(std::forward<OutputTypesT>(value));
+    return *this;
+  }
+  inline RouterOutputFilter& AddOutputTypes(RouterOutputType value) {
+    m_outputTypesHasBeenSet = true;
+    m_outputTypes.push_back(value);
     return *this;
   }
   ///@}
@@ -158,44 +157,45 @@ class RouterOutputFilter {
 
   ///@{
   /**
-   * <p>Filter criteria to list router outputs based on their routing scope.</p>
+   * <p>The names of the router outputs to include in the filter.</p>
    */
-  inline const Aws::Vector<RoutingScope>& GetRoutingScopes() const { return m_routingScopes; }
-  inline bool RoutingScopesHasBeenSet() const { return m_routingScopesHasBeenSet; }
-  template <typename RoutingScopesT = Aws::Vector<RoutingScope>>
-  void SetRoutingScopes(RoutingScopesT&& value) {
-    m_routingScopesHasBeenSet = true;
-    m_routingScopes = std::forward<RoutingScopesT>(value);
+  inline const Aws::Vector<Aws::String>& GetNameContains() const { return m_nameContains; }
+  inline bool NameContainsHasBeenSet() const { return m_nameContainsHasBeenSet; }
+  template <typename NameContainsT = Aws::Vector<Aws::String>>
+  void SetNameContains(NameContainsT&& value) {
+    m_nameContainsHasBeenSet = true;
+    m_nameContains = std::forward<NameContainsT>(value);
   }
-  template <typename RoutingScopesT = Aws::Vector<RoutingScope>>
-  RouterOutputFilter& WithRoutingScopes(RoutingScopesT&& value) {
-    SetRoutingScopes(std::forward<RoutingScopesT>(value));
+  template <typename NameContainsT = Aws::Vector<Aws::String>>
+  RouterOutputFilter& WithNameContains(NameContainsT&& value) {
+    SetNameContains(std::forward<NameContainsT>(value));
     return *this;
   }
-  inline RouterOutputFilter& AddRoutingScopes(RoutingScope value) {
-    m_routingScopesHasBeenSet = true;
-    m_routingScopes.push_back(value);
+  template <typename NameContainsT = Aws::String>
+  RouterOutputFilter& AddNameContains(NameContainsT&& value) {
+    m_nameContainsHasBeenSet = true;
+    m_nameContains.emplace_back(std::forward<NameContainsT>(value));
     return *this;
   }
   ///@}
  private:
   Aws::Vector<Aws::String> m_regionNames;
 
-  Aws::Vector<RouterOutputType> m_outputTypes;
-
-  Aws::Vector<Aws::String> m_nameContains;
-
   Aws::Vector<Aws::String> m_networkInterfaceArns;
+
+  Aws::Vector<RoutingScope> m_routingScopes;
+
+  Aws::Vector<RouterOutputType> m_outputTypes;
 
   Aws::Vector<Aws::String> m_routedInputArns;
 
-  Aws::Vector<RoutingScope> m_routingScopes;
+  Aws::Vector<Aws::String> m_nameContains;
   bool m_regionNamesHasBeenSet = false;
-  bool m_outputTypesHasBeenSet = false;
-  bool m_nameContainsHasBeenSet = false;
   bool m_networkInterfaceArnsHasBeenSet = false;
-  bool m_routedInputArnsHasBeenSet = false;
   bool m_routingScopesHasBeenSet = false;
+  bool m_outputTypesHasBeenSet = false;
+  bool m_routedInputArnsHasBeenSet = false;
+  bool m_nameContainsHasBeenSet = false;
 };
 
 }  // namespace Model

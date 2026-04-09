@@ -47,6 +47,14 @@ Aws::String BatchExecuteStatementRequest::SerializePayload() const {
     payload.WithString("StatementName", m_statementName);
   }
 
+  if (m_parametersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> parametersJsonList(m_parameters.size());
+    for (unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex) {
+      parametersJsonList[parametersIndex].AsObject(m_parameters[parametersIndex].Jsonize());
+    }
+    payload.WithArray("Parameters", std::move(parametersJsonList));
+  }
+
   if (m_workgroupNameHasBeenSet) {
     payload.WithString("WorkgroupName", m_workgroupName);
   }

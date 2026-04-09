@@ -52,8 +52,7 @@ class UpdateDashboardRequest : public BCMDashboardsRequest {
 
   ///@{
   /**
-   * <p>The new name for the dashboard. If not specified, the existing name is
-   * retained.</p>
+   * <p>The new name for the dashboard.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -71,8 +70,7 @@ class UpdateDashboardRequest : public BCMDashboardsRequest {
 
   ///@{
   /**
-   * <p>The new description for the dashboard. If not specified, the existing
-   * description is retained.</p>
+   * <p>The new description for the dashboard.</p>
    */
   inline const Aws::String& GetDescription() const { return m_description; }
   inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }

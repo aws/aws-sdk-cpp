@@ -17,6 +17,7 @@
 #include <aws/bedrock-agentcore-control/model/ListWorkloadIdentitiesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListBrowsersPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListApiKeyCredentialProvidersPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListRegistryRecordsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListEvaluatorsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListOauth2CredentialProvidersPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimesPaginationTraits.h>
@@ -26,6 +27,7 @@
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimeVersionsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewayTargetsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListBrowserProfilesPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListRegistriesPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

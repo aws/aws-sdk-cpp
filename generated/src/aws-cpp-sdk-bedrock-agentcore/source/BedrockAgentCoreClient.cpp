@@ -37,6 +37,7 @@
 #include <aws/bedrock-agentcore/model/ListSessionsRequest.h>
 #include <aws/bedrock-agentcore/model/RetrieveMemoryRecordsRequest.h>
 #include <aws/bedrock-agentcore/model/SaveBrowserSessionProfileRequest.h>
+#include <aws/bedrock-agentcore/model/SearchRegistryRecordsRequest.h>
 #include <aws/bedrock-agentcore/model/StartBrowserSessionRequest.h>
 #include <aws/bedrock-agentcore/model/StartCodeInterpreterSessionRequest.h>
 #include <aws/bedrock-agentcore/model/StartMemoryExtractionJobRequest.h>
@@ -920,6 +921,17 @@ SaveBrowserSessionProfileOutcome BedrockAgentCoreClient::SaveBrowserSessionProfi
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? SaveBrowserSessionProfileOutcome(result.GetResultWithOwnership())
                             : SaveBrowserSessionProfileOutcome(std::move(result.GetError()));
+}
+
+SearchRegistryRecordsOutcome BedrockAgentCoreClient::SearchRegistryRecords(const SearchRegistryRecordsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/registry-records/search");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchRegistryRecordsOutcome(result.GetResultWithOwnership())
+                            : SearchRegistryRecordsOutcome(std::move(result.GetError()));
 }
 
 StartBrowserSessionOutcome BedrockAgentCoreClient::StartBrowserSession(const StartBrowserSessionRequest& request) const {

@@ -52,7 +52,8 @@ class SavingsPlansUtilizationQuery {
 
   ///@{
   /**
-   * <p>The time granularity of the retrieved data: HOURLY, DAILY, or MONTHLY.</p>
+   * <p>The time granularity of the retrieved data: <code>HOURLY</code>,
+   * <code>DAILY</code>, or <code>MONTHLY</code>.</p>
    */
   inline Granularity GetGranularity() const { return m_granularity; }
   inline bool GranularityHasBeenSet() const { return m_granularityHasBeenSet; }

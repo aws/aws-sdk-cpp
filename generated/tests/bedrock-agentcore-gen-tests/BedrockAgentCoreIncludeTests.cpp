@@ -14,7 +14,10 @@
 #include <aws/bedrock-agentcore/BedrockAgentCoreRequest.h>
 #include <aws/bedrock-agentcore/BedrockAgentCoreServiceClientModel.h>
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
+#include <aws/bedrock-agentcore/model/A2aDescriptor.h>
 #include <aws/bedrock-agentcore/model/ActorSummary.h>
+#include <aws/bedrock-agentcore/model/AgentCardDefinition.h>
+#include <aws/bedrock-agentcore/model/AgentSkillsDescriptor.h>
 #include <aws/bedrock-agentcore/model/AutomationStream.h>
 #include <aws/bedrock-agentcore/model/AutomationStreamStatus.h>
 #include <aws/bedrock-agentcore/model/AutomationStreamUpdate.h>
@@ -56,10 +59,13 @@
 #include <aws/bedrock-agentcore/model/Conversational.h>
 #include <aws/bedrock-agentcore/model/CreateEventRequest.h>
 #include <aws/bedrock-agentcore/model/CreateEventResult.h>
+#include <aws/bedrock-agentcore/model/CustomDescriptor.h>
 #include <aws/bedrock-agentcore/model/DeleteEventRequest.h>
 #include <aws/bedrock-agentcore/model/DeleteEventResult.h>
 #include <aws/bedrock-agentcore/model/DeleteMemoryRecordRequest.h>
 #include <aws/bedrock-agentcore/model/DeleteMemoryRecordResult.h>
+#include <aws/bedrock-agentcore/model/DescriptorType.h>
+#include <aws/bedrock-agentcore/model/Descriptors.h>
 #include <aws/bedrock-agentcore/model/EvaluateRequest.h>
 #include <aws/bedrock-agentcore/model/EvaluateResult.h>
 #include <aws/bedrock-agentcore/model/EvaluationContent.h>
@@ -134,6 +140,7 @@
 #include <aws/bedrock-agentcore/model/ListSessionsRequest.h>
 #include <aws/bedrock-agentcore/model/ListSessionsResult.h>
 #include <aws/bedrock-agentcore/model/LiveViewStream.h>
+#include <aws/bedrock-agentcore/model/McpDescriptor.h>
 #include <aws/bedrock-agentcore/model/MemoryContent.h>
 #include <aws/bedrock-agentcore/model/MemoryMetadataFilterExpression.h>
 #include <aws/bedrock-agentcore/model/MemoryRecord.h>
@@ -162,6 +169,8 @@
 #include <aws/bedrock-agentcore/model/ProxyBypass.h>
 #include <aws/bedrock-agentcore/model/ProxyConfiguration.h>
 #include <aws/bedrock-agentcore/model/ProxyCredentials.h>
+#include <aws/bedrock-agentcore/model/RegistryRecordStatus.h>
+#include <aws/bedrock-agentcore/model/RegistryRecordSummary.h>
 #include <aws/bedrock-agentcore/model/ResourceContent.h>
 #include <aws/bedrock-agentcore/model/ResourceContentType.h>
 #include <aws/bedrock-agentcore/model/ResourceLocation.h>
@@ -177,10 +186,15 @@
 #include <aws/bedrock-agentcore/model/ScreenshotFormat.h>
 #include <aws/bedrock-agentcore/model/ScreenshotResult.h>
 #include <aws/bedrock-agentcore/model/SearchCriteria.h>
+#include <aws/bedrock-agentcore/model/SearchRegistryRecordsRequest.h>
+#include <aws/bedrock-agentcore/model/SearchRegistryRecordsResult.h>
 #include <aws/bedrock-agentcore/model/SecretsManagerLocation.h>
+#include <aws/bedrock-agentcore/model/ServerDefinition.h>
 #include <aws/bedrock-agentcore/model/SessionFilter.h>
 #include <aws/bedrock-agentcore/model/SessionStatus.h>
 #include <aws/bedrock-agentcore/model/SessionSummary.h>
+#include <aws/bedrock-agentcore/model/SkillDefinition.h>
+#include <aws/bedrock-agentcore/model/SkillMdDefinition.h>
 #include <aws/bedrock-agentcore/model/SpanContext.h>
 #include <aws/bedrock-agentcore/model/StartBrowserSessionRequest.h>
 #include <aws/bedrock-agentcore/model/StartBrowserSessionResult.h>
@@ -200,6 +214,7 @@
 #include <aws/bedrock-agentcore/model/ToolArguments.h>
 #include <aws/bedrock-agentcore/model/ToolName.h>
 #include <aws/bedrock-agentcore/model/ToolResultStructuredContent.h>
+#include <aws/bedrock-agentcore/model/ToolsDefinition.h>
 #include <aws/bedrock-agentcore/model/UpdateBrowserStreamRequest.h>
 #include <aws/bedrock-agentcore/model/UpdateBrowserStreamResult.h>
 #include <aws/bedrock-agentcore/model/UserIdentifier.h>

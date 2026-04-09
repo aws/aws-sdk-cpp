@@ -20,6 +20,8 @@
 #include <aws/bedrock-agentcore-control/model/CreateOnlineEvaluationConfigRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreatePolicyEngineRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreatePolicyRequest.h>
+#include <aws/bedrock-agentcore-control/model/CreateRegistryRecordRequest.h>
+#include <aws/bedrock-agentcore-control/model/CreateRegistryRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateWorkloadIdentityRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteAgentRuntimeEndpointRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteAgentRuntimeRequest.h>
@@ -35,6 +37,8 @@
 #include <aws/bedrock-agentcore-control/model/DeleteOnlineEvaluationConfigRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeletePolicyEngineRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeletePolicyRequest.h>
+#include <aws/bedrock-agentcore-control/model/DeleteRegistryRecordRequest.h>
+#include <aws/bedrock-agentcore-control/model/DeleteRegistryRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteResourcePolicyRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteWorkloadIdentityRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetAgentRuntimeEndpointRequest.h>
@@ -52,6 +56,8 @@
 #include <aws/bedrock-agentcore-control/model/GetPolicyEngineRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetPolicyGenerationRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetPolicyRequest.h>
+#include <aws/bedrock-agentcore-control/model/GetRegistryRecordRequest.h>
+#include <aws/bedrock-agentcore-control/model/GetRegistryRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetResourcePolicyRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetTokenVaultRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetWorkloadIdentityRequest.h>
@@ -72,11 +78,14 @@
 #include <aws/bedrock-agentcore-control/model/ListPolicyEnginesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyGenerationAssetsRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyGenerationsRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListRegistriesRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListRegistryRecordsRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListTagsForResourceRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListWorkloadIdentitiesRequest.h>
 #include <aws/bedrock-agentcore-control/model/PutResourcePolicyRequest.h>
 #include <aws/bedrock-agentcore-control/model/SetTokenVaultCMKRequest.h>
 #include <aws/bedrock-agentcore-control/model/StartPolicyGenerationRequest.h>
+#include <aws/bedrock-agentcore-control/model/SubmitRegistryRecordForApprovalRequest.h>
 #include <aws/bedrock-agentcore-control/model/SynchronizeGatewayTargetsRequest.h>
 #include <aws/bedrock-agentcore-control/model/TagResourceRequest.h>
 #include <aws/bedrock-agentcore-control/model/UntagResourceRequest.h>
@@ -91,6 +100,9 @@
 #include <aws/bedrock-agentcore-control/model/UpdateOnlineEvaluationConfigRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdatePolicyEngineRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdatePolicyRequest.h>
+#include <aws/bedrock-agentcore-control/model/UpdateRegistryRecordRequest.h>
+#include <aws/bedrock-agentcore-control/model/UpdateRegistryRecordStatusRequest.h>
+#include <aws/bedrock-agentcore-control/model/UpdateRegistryRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateWorkloadIdentityRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
@@ -447,6 +459,35 @@ CreatePolicyEngineOutcome BedrockAgentCoreControlClient::CreatePolicyEngine(cons
                             : CreatePolicyEngineOutcome(std::move(result.GetError()));
 }
 
+CreateRegistryOutcome BedrockAgentCoreControlClient::CreateRegistry(const CreateRegistryRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/registries");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRegistryOutcome(result.GetResultWithOwnership()) : CreateRegistryOutcome(std::move(result.GetError()));
+}
+
+CreateRegistryRecordOutcome BedrockAgentCoreControlClient::CreateRegistryRecord(const CreateRegistryRecordRequest& request) const {
+  if (!request.RegistryIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateRegistryRecord", "Required field: RegistryId, is not set");
+    return CreateRegistryRecordOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RegistryId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/registries/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRegistryId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/records");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRegistryRecordOutcome(result.GetResultWithOwnership())
+                            : CreateRegistryRecordOutcome(std::move(result.GetError()));
+}
+
 CreateWorkloadIdentityOutcome BedrockAgentCoreControlClient::CreateWorkloadIdentity(const CreateWorkloadIdentityRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -716,6 +757,48 @@ DeletePolicyEngineOutcome BedrockAgentCoreControlClient::DeletePolicyEngine(cons
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeletePolicyEngineOutcome(result.GetResultWithOwnership())
                             : DeletePolicyEngineOutcome(std::move(result.GetError()));
+}
+
+DeleteRegistryOutcome BedrockAgentCoreControlClient::DeleteRegistry(const DeleteRegistryRequest& request) const {
+  if (!request.RegistryIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteRegistry", "Required field: RegistryId, is not set");
+    return DeleteRegistryOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RegistryId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/registries/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRegistryId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRegistryOutcome(result.GetResultWithOwnership()) : DeleteRegistryOutcome(std::move(result.GetError()));
+}
+
+DeleteRegistryRecordOutcome BedrockAgentCoreControlClient::DeleteRegistryRecord(const DeleteRegistryRecordRequest& request) const {
+  if (!request.RegistryIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteRegistryRecord", "Required field: RegistryId, is not set");
+    return DeleteRegistryRecordOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RegistryId]", false));
+  }
+  if (!request.RecordIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteRegistryRecord", "Required field: RecordId, is not set");
+    return DeleteRegistryRecordOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecordId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/registries/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRegistryId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/records/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecordId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRegistryRecordOutcome(result.GetResultWithOwnership())
+                            : DeleteRegistryRecordOutcome(std::move(result.GetError()));
 }
 
 DeleteResourcePolicyOutcome BedrockAgentCoreControlClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const {
@@ -1030,6 +1113,48 @@ GetPolicyGenerationOutcome BedrockAgentCoreControlClient::GetPolicyGeneration(co
                             : GetPolicyGenerationOutcome(std::move(result.GetError()));
 }
 
+GetRegistryOutcome BedrockAgentCoreControlClient::GetRegistry(const GetRegistryRequest& request) const {
+  if (!request.RegistryIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetRegistry", "Required field: RegistryId, is not set");
+    return GetRegistryOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RegistryId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/registries/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRegistryId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRegistryOutcome(result.GetResultWithOwnership()) : GetRegistryOutcome(std::move(result.GetError()));
+}
+
+GetRegistryRecordOutcome BedrockAgentCoreControlClient::GetRegistryRecord(const GetRegistryRecordRequest& request) const {
+  if (!request.RegistryIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetRegistryRecord", "Required field: RegistryId, is not set");
+    return GetRegistryRecordOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RegistryId]", false));
+  }
+  if (!request.RecordIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetRegistryRecord", "Required field: RecordId, is not set");
+    return GetRegistryRecordOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecordId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/registries/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRegistryId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/records/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecordId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRegistryRecordOutcome(result.GetResultWithOwnership())
+                            : GetRegistryRecordOutcome(std::move(result.GetError()));
+}
+
 GetResourcePolicyOutcome BedrockAgentCoreControlClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const {
   if (!request.ResourceArnHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetResourcePolicy", "Required field: ResourceArn, is not set");
@@ -1312,6 +1437,35 @@ ListPolicyGenerationsOutcome BedrockAgentCoreControlClient::ListPolicyGeneration
                             : ListPolicyGenerationsOutcome(std::move(result.GetError()));
 }
 
+ListRegistriesOutcome BedrockAgentCoreControlClient::ListRegistries(const ListRegistriesRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/registries");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRegistriesOutcome(result.GetResultWithOwnership()) : ListRegistriesOutcome(std::move(result.GetError()));
+}
+
+ListRegistryRecordsOutcome BedrockAgentCoreControlClient::ListRegistryRecords(const ListRegistryRecordsRequest& request) const {
+  if (!request.RegistryIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListRegistryRecords", "Required field: RegistryId, is not set");
+    return ListRegistryRecordsOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RegistryId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/registries/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRegistryId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/records");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRegistryRecordsOutcome(result.GetResultWithOwnership())
+                            : ListRegistryRecordsOutcome(std::move(result.GetError()));
+}
+
 ListTagsForResourceOutcome BedrockAgentCoreControlClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
   if (!request.ResourceArnHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
@@ -1387,6 +1541,33 @@ StartPolicyGenerationOutcome BedrockAgentCoreControlClient::StartPolicyGeneratio
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? StartPolicyGenerationOutcome(result.GetResultWithOwnership())
                             : StartPolicyGenerationOutcome(std::move(result.GetError()));
+}
+
+SubmitRegistryRecordForApprovalOutcome BedrockAgentCoreControlClient::SubmitRegistryRecordForApproval(
+    const SubmitRegistryRecordForApprovalRequest& request) const {
+  if (!request.RegistryIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("SubmitRegistryRecordForApproval", "Required field: RegistryId, is not set");
+    return SubmitRegistryRecordForApprovalOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RegistryId]", false));
+  }
+  if (!request.RecordIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("SubmitRegistryRecordForApproval", "Required field: RecordId, is not set");
+    return SubmitRegistryRecordForApprovalOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecordId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/registries/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRegistryId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/records/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecordId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/submit-for-approval");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SubmitRegistryRecordForApprovalOutcome(result.GetResultWithOwnership())
+                            : SubmitRegistryRecordForApprovalOutcome(std::move(result.GetError()));
 }
 
 SynchronizeGatewayTargetsOutcome BedrockAgentCoreControlClient::SynchronizeGatewayTargets(
@@ -1653,6 +1834,75 @@ UpdatePolicyEngineOutcome BedrockAgentCoreControlClient::UpdatePolicyEngine(cons
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
   return result.IsSuccess() ? UpdatePolicyEngineOutcome(result.GetResultWithOwnership())
                             : UpdatePolicyEngineOutcome(std::move(result.GetError()));
+}
+
+UpdateRegistryOutcome BedrockAgentCoreControlClient::UpdateRegistry(const UpdateRegistryRequest& request) const {
+  if (!request.RegistryIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateRegistry", "Required field: RegistryId, is not set");
+    return UpdateRegistryOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RegistryId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/registries/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRegistryId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateRegistryOutcome(result.GetResultWithOwnership()) : UpdateRegistryOutcome(std::move(result.GetError()));
+}
+
+UpdateRegistryRecordOutcome BedrockAgentCoreControlClient::UpdateRegistryRecord(const UpdateRegistryRecordRequest& request) const {
+  if (!request.RegistryIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateRegistryRecord", "Required field: RegistryId, is not set");
+    return UpdateRegistryRecordOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RegistryId]", false));
+  }
+  if (!request.RecordIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateRegistryRecord", "Required field: RecordId, is not set");
+    return UpdateRegistryRecordOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecordId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/registries/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRegistryId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/records/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecordId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateRegistryRecordOutcome(result.GetResultWithOwnership())
+                            : UpdateRegistryRecordOutcome(std::move(result.GetError()));
+}
+
+UpdateRegistryRecordStatusOutcome BedrockAgentCoreControlClient::UpdateRegistryRecordStatus(
+    const UpdateRegistryRecordStatusRequest& request) const {
+  if (!request.RegistryIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateRegistryRecordStatus", "Required field: RegistryId, is not set");
+    return UpdateRegistryRecordStatusOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RegistryId]", false));
+  }
+  if (!request.RecordIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateRegistryRecordStatus", "Required field: RecordId, is not set");
+    return UpdateRegistryRecordStatusOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecordId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/registries/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRegistryId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/records/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecordId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/status");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateRegistryRecordStatusOutcome(result.GetResultWithOwnership())
+                            : UpdateRegistryRecordStatusOutcome(std::move(result.GetError()));
 }
 
 UpdateWorkloadIdentityOutcome BedrockAgentCoreControlClient::UpdateWorkloadIdentity(const UpdateWorkloadIdentityRequest& request) const {

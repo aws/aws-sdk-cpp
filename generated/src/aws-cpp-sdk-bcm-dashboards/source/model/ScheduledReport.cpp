@@ -1,0 +1,135 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/bcm-dashboards/model/ScheduledReport.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace BCMDashboards {
+namespace Model {
+
+ScheduledReport::ScheduledReport(JsonView jsonValue) { *this = jsonValue; }
+
+ScheduledReport& ScheduledReport::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("arn")) {
+    m_arn = jsonValue.GetString("arn");
+    m_arnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("name")) {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("dashboardArn")) {
+    m_dashboardArn = jsonValue.GetString("dashboardArn");
+    m_dashboardArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("scheduledReportExecutionRoleArn")) {
+    m_scheduledReportExecutionRoleArn = jsonValue.GetString("scheduledReportExecutionRoleArn");
+    m_scheduledReportExecutionRoleArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("scheduleConfig")) {
+    m_scheduleConfig = jsonValue.GetObject("scheduleConfig");
+    m_scheduleConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("widgetIds")) {
+    Aws::Utils::Array<JsonView> widgetIdsJsonList = jsonValue.GetArray("widgetIds");
+    for (unsigned widgetIdsIndex = 0; widgetIdsIndex < widgetIdsJsonList.GetLength(); ++widgetIdsIndex) {
+      m_widgetIds.push_back(widgetIdsJsonList[widgetIdsIndex].AsString());
+    }
+    m_widgetIdsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("widgetDateRangeOverride")) {
+    m_widgetDateRangeOverride = jsonValue.GetObject("widgetDateRangeOverride");
+    m_widgetDateRangeOverrideHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("createdAt")) {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("updatedAt")) {
+    m_updatedAt = jsonValue.GetDouble("updatedAt");
+    m_updatedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("lastExecutionAt")) {
+    m_lastExecutionAt = jsonValue.GetDouble("lastExecutionAt");
+    m_lastExecutionAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("healthStatus")) {
+    m_healthStatus = jsonValue.GetObject("healthStatus");
+    m_healthStatusHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue ScheduledReport::Jsonize() const {
+  JsonValue payload;
+
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
+  }
+
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
+  }
+
+  if (m_dashboardArnHasBeenSet) {
+    payload.WithString("dashboardArn", m_dashboardArn);
+  }
+
+  if (m_scheduledReportExecutionRoleArnHasBeenSet) {
+    payload.WithString("scheduledReportExecutionRoleArn", m_scheduledReportExecutionRoleArn);
+  }
+
+  if (m_scheduleConfigHasBeenSet) {
+    payload.WithObject("scheduleConfig", m_scheduleConfig.Jsonize());
+  }
+
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
+  }
+
+  if (m_widgetIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> widgetIdsJsonList(m_widgetIds.size());
+    for (unsigned widgetIdsIndex = 0; widgetIdsIndex < widgetIdsJsonList.GetLength(); ++widgetIdsIndex) {
+      widgetIdsJsonList[widgetIdsIndex].AsString(m_widgetIds[widgetIdsIndex]);
+    }
+    payload.WithArray("widgetIds", std::move(widgetIdsJsonList));
+  }
+
+  if (m_widgetDateRangeOverrideHasBeenSet) {
+    payload.WithObject("widgetDateRangeOverride", m_widgetDateRangeOverride.Jsonize());
+  }
+
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  }
+
+  if (m_updatedAtHasBeenSet) {
+    payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
+  }
+
+  if (m_lastExecutionAtHasBeenSet) {
+    payload.WithDouble("lastExecutionAt", m_lastExecutionAt.SecondsWithMSPrecision());
+  }
+
+  if (m_healthStatusHasBeenSet) {
+    payload.WithObject("healthStatus", m_healthStatus.Jsonize());
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace BCMDashboards
+}  // namespace Aws

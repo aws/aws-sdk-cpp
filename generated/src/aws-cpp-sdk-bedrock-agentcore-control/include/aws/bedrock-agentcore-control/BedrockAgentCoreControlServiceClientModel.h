@@ -33,6 +33,8 @@
 #include <aws/bedrock-agentcore-control/model/CreateOnlineEvaluationConfigResult.h>
 #include <aws/bedrock-agentcore-control/model/CreatePolicyEngineResult.h>
 #include <aws/bedrock-agentcore-control/model/CreatePolicyResult.h>
+#include <aws/bedrock-agentcore-control/model/CreateRegistryRecordResult.h>
+#include <aws/bedrock-agentcore-control/model/CreateRegistryResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateWorkloadIdentityResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteAgentRuntimeEndpointResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteAgentRuntimeResult.h>
@@ -48,6 +50,8 @@
 #include <aws/bedrock-agentcore-control/model/DeleteOnlineEvaluationConfigResult.h>
 #include <aws/bedrock-agentcore-control/model/DeletePolicyEngineResult.h>
 #include <aws/bedrock-agentcore-control/model/DeletePolicyResult.h>
+#include <aws/bedrock-agentcore-control/model/DeleteRegistryRecordResult.h>
+#include <aws/bedrock-agentcore-control/model/DeleteRegistryResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteResourcePolicyResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteWorkloadIdentityResult.h>
 #include <aws/bedrock-agentcore-control/model/GetAgentRuntimeEndpointResult.h>
@@ -65,6 +69,8 @@
 #include <aws/bedrock-agentcore-control/model/GetPolicyEngineResult.h>
 #include <aws/bedrock-agentcore-control/model/GetPolicyGenerationResult.h>
 #include <aws/bedrock-agentcore-control/model/GetPolicyResult.h>
+#include <aws/bedrock-agentcore-control/model/GetRegistryRecordResult.h>
+#include <aws/bedrock-agentcore-control/model/GetRegistryResult.h>
 #include <aws/bedrock-agentcore-control/model/GetResourcePolicyResult.h>
 #include <aws/bedrock-agentcore-control/model/GetTokenVaultRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetTokenVaultResult.h>
@@ -97,12 +103,16 @@
 #include <aws/bedrock-agentcore-control/model/ListPolicyEnginesResult.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyGenerationAssetsResult.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyGenerationsResult.h>
+#include <aws/bedrock-agentcore-control/model/ListRegistriesRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListRegistriesResult.h>
+#include <aws/bedrock-agentcore-control/model/ListRegistryRecordsResult.h>
 #include <aws/bedrock-agentcore-control/model/ListTagsForResourceResult.h>
 #include <aws/bedrock-agentcore-control/model/ListWorkloadIdentitiesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListWorkloadIdentitiesResult.h>
 #include <aws/bedrock-agentcore-control/model/PutResourcePolicyResult.h>
 #include <aws/bedrock-agentcore-control/model/SetTokenVaultCMKResult.h>
 #include <aws/bedrock-agentcore-control/model/StartPolicyGenerationResult.h>
+#include <aws/bedrock-agentcore-control/model/SubmitRegistryRecordForApprovalResult.h>
 #include <aws/bedrock-agentcore-control/model/SynchronizeGatewayTargetsResult.h>
 #include <aws/bedrock-agentcore-control/model/TagResourceResult.h>
 #include <aws/bedrock-agentcore-control/model/UntagResourceResult.h>
@@ -117,6 +127,9 @@
 #include <aws/bedrock-agentcore-control/model/UpdateOnlineEvaluationConfigResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdatePolicyEngineResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdatePolicyResult.h>
+#include <aws/bedrock-agentcore-control/model/UpdateRegistryRecordResult.h>
+#include <aws/bedrock-agentcore-control/model/UpdateRegistryRecordStatusResult.h>
+#include <aws/bedrock-agentcore-control/model/UpdateRegistryResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateWorkloadIdentityResult.h>
 /* End of service model headers required in BedrockAgentCoreControlClient header */
 
@@ -165,6 +178,8 @@ class CreateOauth2CredentialProviderRequest;
 class CreateOnlineEvaluationConfigRequest;
 class CreatePolicyRequest;
 class CreatePolicyEngineRequest;
+class CreateRegistryRequest;
+class CreateRegistryRecordRequest;
 class CreateWorkloadIdentityRequest;
 class DeleteAgentRuntimeRequest;
 class DeleteAgentRuntimeEndpointRequest;
@@ -180,6 +195,8 @@ class DeleteOauth2CredentialProviderRequest;
 class DeleteOnlineEvaluationConfigRequest;
 class DeletePolicyRequest;
 class DeletePolicyEngineRequest;
+class DeleteRegistryRequest;
+class DeleteRegistryRecordRequest;
 class DeleteResourcePolicyRequest;
 class DeleteWorkloadIdentityRequest;
 class GetAgentRuntimeRequest;
@@ -197,6 +214,8 @@ class GetOnlineEvaluationConfigRequest;
 class GetPolicyRequest;
 class GetPolicyEngineRequest;
 class GetPolicyGenerationRequest;
+class GetRegistryRequest;
+class GetRegistryRecordRequest;
 class GetResourcePolicyRequest;
 class GetTokenVaultRequest;
 class GetWorkloadIdentityRequest;
@@ -217,11 +236,14 @@ class ListPoliciesRequest;
 class ListPolicyEnginesRequest;
 class ListPolicyGenerationAssetsRequest;
 class ListPolicyGenerationsRequest;
+class ListRegistriesRequest;
+class ListRegistryRecordsRequest;
 class ListTagsForResourceRequest;
 class ListWorkloadIdentitiesRequest;
 class PutResourcePolicyRequest;
 class SetTokenVaultCMKRequest;
 class StartPolicyGenerationRequest;
+class SubmitRegistryRecordForApprovalRequest;
 class SynchronizeGatewayTargetsRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
@@ -236,6 +258,9 @@ class UpdateOauth2CredentialProviderRequest;
 class UpdateOnlineEvaluationConfigRequest;
 class UpdatePolicyRequest;
 class UpdatePolicyEngineRequest;
+class UpdateRegistryRequest;
+class UpdateRegistryRecordRequest;
+class UpdateRegistryRecordStatusRequest;
 class UpdateWorkloadIdentityRequest;
 /* End of service model forward declarations required in BedrockAgentCoreControlClient header */
 
@@ -254,6 +279,8 @@ typedef Aws::Utils::Outcome<CreateOauth2CredentialProviderResult, BedrockAgentCo
 typedef Aws::Utils::Outcome<CreateOnlineEvaluationConfigResult, BedrockAgentCoreControlError> CreateOnlineEvaluationConfigOutcome;
 typedef Aws::Utils::Outcome<CreatePolicyResult, BedrockAgentCoreControlError> CreatePolicyOutcome;
 typedef Aws::Utils::Outcome<CreatePolicyEngineResult, BedrockAgentCoreControlError> CreatePolicyEngineOutcome;
+typedef Aws::Utils::Outcome<CreateRegistryResult, BedrockAgentCoreControlError> CreateRegistryOutcome;
+typedef Aws::Utils::Outcome<CreateRegistryRecordResult, BedrockAgentCoreControlError> CreateRegistryRecordOutcome;
 typedef Aws::Utils::Outcome<CreateWorkloadIdentityResult, BedrockAgentCoreControlError> CreateWorkloadIdentityOutcome;
 typedef Aws::Utils::Outcome<DeleteAgentRuntimeResult, BedrockAgentCoreControlError> DeleteAgentRuntimeOutcome;
 typedef Aws::Utils::Outcome<DeleteAgentRuntimeEndpointResult, BedrockAgentCoreControlError> DeleteAgentRuntimeEndpointOutcome;
@@ -269,6 +296,8 @@ typedef Aws::Utils::Outcome<DeleteOauth2CredentialProviderResult, BedrockAgentCo
 typedef Aws::Utils::Outcome<DeleteOnlineEvaluationConfigResult, BedrockAgentCoreControlError> DeleteOnlineEvaluationConfigOutcome;
 typedef Aws::Utils::Outcome<DeletePolicyResult, BedrockAgentCoreControlError> DeletePolicyOutcome;
 typedef Aws::Utils::Outcome<DeletePolicyEngineResult, BedrockAgentCoreControlError> DeletePolicyEngineOutcome;
+typedef Aws::Utils::Outcome<DeleteRegistryResult, BedrockAgentCoreControlError> DeleteRegistryOutcome;
+typedef Aws::Utils::Outcome<DeleteRegistryRecordResult, BedrockAgentCoreControlError> DeleteRegistryRecordOutcome;
 typedef Aws::Utils::Outcome<DeleteResourcePolicyResult, BedrockAgentCoreControlError> DeleteResourcePolicyOutcome;
 typedef Aws::Utils::Outcome<DeleteWorkloadIdentityResult, BedrockAgentCoreControlError> DeleteWorkloadIdentityOutcome;
 typedef Aws::Utils::Outcome<GetAgentRuntimeResult, BedrockAgentCoreControlError> GetAgentRuntimeOutcome;
@@ -286,6 +315,8 @@ typedef Aws::Utils::Outcome<GetOnlineEvaluationConfigResult, BedrockAgentCoreCon
 typedef Aws::Utils::Outcome<GetPolicyResult, BedrockAgentCoreControlError> GetPolicyOutcome;
 typedef Aws::Utils::Outcome<GetPolicyEngineResult, BedrockAgentCoreControlError> GetPolicyEngineOutcome;
 typedef Aws::Utils::Outcome<GetPolicyGenerationResult, BedrockAgentCoreControlError> GetPolicyGenerationOutcome;
+typedef Aws::Utils::Outcome<GetRegistryResult, BedrockAgentCoreControlError> GetRegistryOutcome;
+typedef Aws::Utils::Outcome<GetRegistryRecordResult, BedrockAgentCoreControlError> GetRegistryRecordOutcome;
 typedef Aws::Utils::Outcome<GetResourcePolicyResult, BedrockAgentCoreControlError> GetResourcePolicyOutcome;
 typedef Aws::Utils::Outcome<GetTokenVaultResult, BedrockAgentCoreControlError> GetTokenVaultOutcome;
 typedef Aws::Utils::Outcome<GetWorkloadIdentityResult, BedrockAgentCoreControlError> GetWorkloadIdentityOutcome;
@@ -306,11 +337,14 @@ typedef Aws::Utils::Outcome<ListPoliciesResult, BedrockAgentCoreControlError> Li
 typedef Aws::Utils::Outcome<ListPolicyEnginesResult, BedrockAgentCoreControlError> ListPolicyEnginesOutcome;
 typedef Aws::Utils::Outcome<ListPolicyGenerationAssetsResult, BedrockAgentCoreControlError> ListPolicyGenerationAssetsOutcome;
 typedef Aws::Utils::Outcome<ListPolicyGenerationsResult, BedrockAgentCoreControlError> ListPolicyGenerationsOutcome;
+typedef Aws::Utils::Outcome<ListRegistriesResult, BedrockAgentCoreControlError> ListRegistriesOutcome;
+typedef Aws::Utils::Outcome<ListRegistryRecordsResult, BedrockAgentCoreControlError> ListRegistryRecordsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, BedrockAgentCoreControlError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<ListWorkloadIdentitiesResult, BedrockAgentCoreControlError> ListWorkloadIdentitiesOutcome;
 typedef Aws::Utils::Outcome<PutResourcePolicyResult, BedrockAgentCoreControlError> PutResourcePolicyOutcome;
 typedef Aws::Utils::Outcome<SetTokenVaultCMKResult, BedrockAgentCoreControlError> SetTokenVaultCMKOutcome;
 typedef Aws::Utils::Outcome<StartPolicyGenerationResult, BedrockAgentCoreControlError> StartPolicyGenerationOutcome;
+typedef Aws::Utils::Outcome<SubmitRegistryRecordForApprovalResult, BedrockAgentCoreControlError> SubmitRegistryRecordForApprovalOutcome;
 typedef Aws::Utils::Outcome<SynchronizeGatewayTargetsResult, BedrockAgentCoreControlError> SynchronizeGatewayTargetsOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, BedrockAgentCoreControlError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, BedrockAgentCoreControlError> UntagResourceOutcome;
@@ -325,6 +359,9 @@ typedef Aws::Utils::Outcome<UpdateOauth2CredentialProviderResult, BedrockAgentCo
 typedef Aws::Utils::Outcome<UpdateOnlineEvaluationConfigResult, BedrockAgentCoreControlError> UpdateOnlineEvaluationConfigOutcome;
 typedef Aws::Utils::Outcome<UpdatePolicyResult, BedrockAgentCoreControlError> UpdatePolicyOutcome;
 typedef Aws::Utils::Outcome<UpdatePolicyEngineResult, BedrockAgentCoreControlError> UpdatePolicyEngineOutcome;
+typedef Aws::Utils::Outcome<UpdateRegistryResult, BedrockAgentCoreControlError> UpdateRegistryOutcome;
+typedef Aws::Utils::Outcome<UpdateRegistryRecordResult, BedrockAgentCoreControlError> UpdateRegistryRecordOutcome;
+typedef Aws::Utils::Outcome<UpdateRegistryRecordStatusResult, BedrockAgentCoreControlError> UpdateRegistryRecordStatusOutcome;
 typedef Aws::Utils::Outcome<UpdateWorkloadIdentityResult, BedrockAgentCoreControlError> UpdateWorkloadIdentityOutcome;
 /* End of service model Outcome class definitions */
 
@@ -343,6 +380,8 @@ typedef std::future<CreateOauth2CredentialProviderOutcome> CreateOauth2Credentia
 typedef std::future<CreateOnlineEvaluationConfigOutcome> CreateOnlineEvaluationConfigOutcomeCallable;
 typedef std::future<CreatePolicyOutcome> CreatePolicyOutcomeCallable;
 typedef std::future<CreatePolicyEngineOutcome> CreatePolicyEngineOutcomeCallable;
+typedef std::future<CreateRegistryOutcome> CreateRegistryOutcomeCallable;
+typedef std::future<CreateRegistryRecordOutcome> CreateRegistryRecordOutcomeCallable;
 typedef std::future<CreateWorkloadIdentityOutcome> CreateWorkloadIdentityOutcomeCallable;
 typedef std::future<DeleteAgentRuntimeOutcome> DeleteAgentRuntimeOutcomeCallable;
 typedef std::future<DeleteAgentRuntimeEndpointOutcome> DeleteAgentRuntimeEndpointOutcomeCallable;
@@ -358,6 +397,8 @@ typedef std::future<DeleteOauth2CredentialProviderOutcome> DeleteOauth2Credentia
 typedef std::future<DeleteOnlineEvaluationConfigOutcome> DeleteOnlineEvaluationConfigOutcomeCallable;
 typedef std::future<DeletePolicyOutcome> DeletePolicyOutcomeCallable;
 typedef std::future<DeletePolicyEngineOutcome> DeletePolicyEngineOutcomeCallable;
+typedef std::future<DeleteRegistryOutcome> DeleteRegistryOutcomeCallable;
+typedef std::future<DeleteRegistryRecordOutcome> DeleteRegistryRecordOutcomeCallable;
 typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
 typedef std::future<DeleteWorkloadIdentityOutcome> DeleteWorkloadIdentityOutcomeCallable;
 typedef std::future<GetAgentRuntimeOutcome> GetAgentRuntimeOutcomeCallable;
@@ -375,6 +416,8 @@ typedef std::future<GetOnlineEvaluationConfigOutcome> GetOnlineEvaluationConfigO
 typedef std::future<GetPolicyOutcome> GetPolicyOutcomeCallable;
 typedef std::future<GetPolicyEngineOutcome> GetPolicyEngineOutcomeCallable;
 typedef std::future<GetPolicyGenerationOutcome> GetPolicyGenerationOutcomeCallable;
+typedef std::future<GetRegistryOutcome> GetRegistryOutcomeCallable;
+typedef std::future<GetRegistryRecordOutcome> GetRegistryRecordOutcomeCallable;
 typedef std::future<GetResourcePolicyOutcome> GetResourcePolicyOutcomeCallable;
 typedef std::future<GetTokenVaultOutcome> GetTokenVaultOutcomeCallable;
 typedef std::future<GetWorkloadIdentityOutcome> GetWorkloadIdentityOutcomeCallable;
@@ -395,11 +438,14 @@ typedef std::future<ListPoliciesOutcome> ListPoliciesOutcomeCallable;
 typedef std::future<ListPolicyEnginesOutcome> ListPolicyEnginesOutcomeCallable;
 typedef std::future<ListPolicyGenerationAssetsOutcome> ListPolicyGenerationAssetsOutcomeCallable;
 typedef std::future<ListPolicyGenerationsOutcome> ListPolicyGenerationsOutcomeCallable;
+typedef std::future<ListRegistriesOutcome> ListRegistriesOutcomeCallable;
+typedef std::future<ListRegistryRecordsOutcome> ListRegistryRecordsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<ListWorkloadIdentitiesOutcome> ListWorkloadIdentitiesOutcomeCallable;
 typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
 typedef std::future<SetTokenVaultCMKOutcome> SetTokenVaultCMKOutcomeCallable;
 typedef std::future<StartPolicyGenerationOutcome> StartPolicyGenerationOutcomeCallable;
+typedef std::future<SubmitRegistryRecordForApprovalOutcome> SubmitRegistryRecordForApprovalOutcomeCallable;
 typedef std::future<SynchronizeGatewayTargetsOutcome> SynchronizeGatewayTargetsOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -414,6 +460,9 @@ typedef std::future<UpdateOauth2CredentialProviderOutcome> UpdateOauth2Credentia
 typedef std::future<UpdateOnlineEvaluationConfigOutcome> UpdateOnlineEvaluationConfigOutcomeCallable;
 typedef std::future<UpdatePolicyOutcome> UpdatePolicyOutcomeCallable;
 typedef std::future<UpdatePolicyEngineOutcome> UpdatePolicyEngineOutcomeCallable;
+typedef std::future<UpdateRegistryOutcome> UpdateRegistryOutcomeCallable;
+typedef std::future<UpdateRegistryRecordOutcome> UpdateRegistryRecordOutcomeCallable;
+typedef std::future<UpdateRegistryRecordStatusOutcome> UpdateRegistryRecordStatusOutcomeCallable;
 typedef std::future<UpdateWorkloadIdentityOutcome> UpdateWorkloadIdentityOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
@@ -466,6 +515,12 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::Cr
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::CreatePolicyEngineRequest&,
                            const Model::CreatePolicyEngineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreatePolicyEngineResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::CreateRegistryRequest&, const Model::CreateRegistryOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateRegistryResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::CreateRegistryRecordRequest&,
+                           const Model::CreateRegistryRecordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateRegistryRecordResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::CreateWorkloadIdentityRequest&,
                            const Model::CreateWorkloadIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateWorkloadIdentityResponseReceivedHandler;
@@ -514,6 +569,12 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::De
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::DeletePolicyEngineRequest&,
                            const Model::DeletePolicyEngineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeletePolicyEngineResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::DeleteRegistryRequest&, const Model::DeleteRegistryOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteRegistryResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::DeleteRegistryRecordRequest&,
+                           const Model::DeleteRegistryRecordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteRegistryRecordResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::DeleteResourcePolicyRequest&,
                            const Model::DeleteResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteResourcePolicyResponseReceivedHandler;
@@ -565,6 +626,12 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::Ge
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::GetPolicyGenerationRequest&,
                            const Model::GetPolicyGenerationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetPolicyGenerationResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::GetRegistryRequest&, const Model::GetRegistryOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetRegistryResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::GetRegistryRecordRequest&,
+                           const Model::GetRegistryRecordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetRegistryRecordResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::GetResourcePolicyRequest&,
                            const Model::GetResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetResourcePolicyResponseReceivedHandler;
@@ -627,6 +694,12 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::Li
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListPolicyGenerationsRequest&,
                            const Model::ListPolicyGenerationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListPolicyGenerationsResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListRegistriesRequest&, const Model::ListRegistriesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListRegistriesResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListRegistryRecordsRequest&,
+                           const Model::ListRegistryRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListRegistryRecordsResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListTagsForResourceRequest&,
                            const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;
@@ -642,6 +715,10 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::Se
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::StartPolicyGenerationRequest&,
                            const Model::StartPolicyGenerationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartPolicyGenerationResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::SubmitRegistryRecordForApprovalRequest&,
+                           const Model::SubmitRegistryRecordForApprovalOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    SubmitRegistryRecordForApprovalResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::SynchronizeGatewayTargetsRequest&,
                            const Model::SynchronizeGatewayTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SynchronizeGatewayTargetsResponseReceivedHandler;
@@ -687,6 +764,15 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::Up
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::UpdatePolicyEngineRequest&,
                            const Model::UpdatePolicyEngineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdatePolicyEngineResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::UpdateRegistryRequest&, const Model::UpdateRegistryOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateRegistryResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::UpdateRegistryRecordRequest&,
+                           const Model::UpdateRegistryRecordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateRegistryRecordResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::UpdateRegistryRecordStatusRequest&,
+                           const Model::UpdateRegistryRecordStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateRegistryRecordStatusResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::UpdateWorkloadIdentityRequest&,
                            const Model::UpdateWorkloadIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateWorkloadIdentityResponseReceivedHandler;

@@ -37,53 +37,6 @@ class RouterInputFilter {
 
   ///@{
   /**
-   * <p>The AWS Regions of the router inputs to include in the filter.</p>
-   */
-  inline const Aws::Vector<Aws::String>& GetRegionNames() const { return m_regionNames; }
-  inline bool RegionNamesHasBeenSet() const { return m_regionNamesHasBeenSet; }
-  template <typename RegionNamesT = Aws::Vector<Aws::String>>
-  void SetRegionNames(RegionNamesT&& value) {
-    m_regionNamesHasBeenSet = true;
-    m_regionNames = std::forward<RegionNamesT>(value);
-  }
-  template <typename RegionNamesT = Aws::Vector<Aws::String>>
-  RouterInputFilter& WithRegionNames(RegionNamesT&& value) {
-    SetRegionNames(std::forward<RegionNamesT>(value));
-    return *this;
-  }
-  template <typename RegionNamesT = Aws::String>
-  RouterInputFilter& AddRegionNames(RegionNamesT&& value) {
-    m_regionNamesHasBeenSet = true;
-    m_regionNames.emplace_back(std::forward<RegionNamesT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The types of router inputs to include in the filter.</p>
-   */
-  inline const Aws::Vector<RouterInputType>& GetInputTypes() const { return m_inputTypes; }
-  inline bool InputTypesHasBeenSet() const { return m_inputTypesHasBeenSet; }
-  template <typename InputTypesT = Aws::Vector<RouterInputType>>
-  void SetInputTypes(InputTypesT&& value) {
-    m_inputTypesHasBeenSet = true;
-    m_inputTypes = std::forward<InputTypesT>(value);
-  }
-  template <typename InputTypesT = Aws::Vector<RouterInputType>>
-  RouterInputFilter& WithInputTypes(InputTypesT&& value) {
-    SetInputTypes(std::forward<InputTypesT>(value));
-    return *this;
-  }
-  inline RouterInputFilter& AddInputTypes(RouterInputType value) {
-    m_inputTypesHasBeenSet = true;
-    m_inputTypes.push_back(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The names of the router inputs to include in the filter.</p>
    */
   inline const Aws::Vector<Aws::String>& GetNameContains() const { return m_nameContains; }
@@ -102,6 +55,30 @@ class RouterInputFilter {
   RouterInputFilter& AddNameContains(NameContainsT&& value) {
     m_nameContainsHasBeenSet = true;
     m_nameContains.emplace_back(std::forward<NameContainsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The AWS Regions of the router inputs to include in the filter.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetRegionNames() const { return m_regionNames; }
+  inline bool RegionNamesHasBeenSet() const { return m_regionNamesHasBeenSet; }
+  template <typename RegionNamesT = Aws::Vector<Aws::String>>
+  void SetRegionNames(RegionNamesT&& value) {
+    m_regionNamesHasBeenSet = true;
+    m_regionNames = std::forward<RegionNamesT>(value);
+  }
+  template <typename RegionNamesT = Aws::Vector<Aws::String>>
+  RouterInputFilter& WithRegionNames(RegionNamesT&& value) {
+    SetRegionNames(std::forward<RegionNamesT>(value));
+    return *this;
+  }
+  template <typename RegionNamesT = Aws::String>
+  RouterInputFilter& AddRegionNames(RegionNamesT&& value) {
+    m_regionNamesHasBeenSet = true;
+    m_regionNames.emplace_back(std::forward<RegionNamesT>(value));
     return *this;
   }
   ///@}
@@ -154,21 +131,44 @@ class RouterInputFilter {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The types of router inputs to include in the filter.</p>
+   */
+  inline const Aws::Vector<RouterInputType>& GetInputTypes() const { return m_inputTypes; }
+  inline bool InputTypesHasBeenSet() const { return m_inputTypesHasBeenSet; }
+  template <typename InputTypesT = Aws::Vector<RouterInputType>>
+  void SetInputTypes(InputTypesT&& value) {
+    m_inputTypesHasBeenSet = true;
+    m_inputTypes = std::forward<InputTypesT>(value);
+  }
+  template <typename InputTypesT = Aws::Vector<RouterInputType>>
+  RouterInputFilter& WithInputTypes(InputTypesT&& value) {
+    SetInputTypes(std::forward<InputTypesT>(value));
+    return *this;
+  }
+  inline RouterInputFilter& AddInputTypes(RouterInputType value) {
+    m_inputTypesHasBeenSet = true;
+    m_inputTypes.push_back(value);
+    return *this;
+  }
+  ///@}
  private:
-  Aws::Vector<Aws::String> m_regionNames;
-
-  Aws::Vector<RouterInputType> m_inputTypes;
-
   Aws::Vector<Aws::String> m_nameContains;
+
+  Aws::Vector<Aws::String> m_regionNames;
 
   Aws::Vector<Aws::String> m_networkInterfaceArns;
 
   Aws::Vector<RoutingScope> m_routingScopes;
-  bool m_regionNamesHasBeenSet = false;
-  bool m_inputTypesHasBeenSet = false;
+
+  Aws::Vector<RouterInputType> m_inputTypes;
   bool m_nameContainsHasBeenSet = false;
+  bool m_regionNamesHasBeenSet = false;
   bool m_networkInterfaceArnsHasBeenSet = false;
   bool m_routingScopesHasBeenSet = false;
+  bool m_inputTypesHasBeenSet = false;
 };
 
 }  // namespace Model

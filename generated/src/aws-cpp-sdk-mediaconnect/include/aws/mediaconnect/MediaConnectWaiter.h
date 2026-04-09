@@ -75,36 +75,6 @@ class MediaConnectWaiter {
     return waiter.Wait(request);
   }
 
-  Aws::Utils::WaiterOutcome<Model::DescribeFlowOutcome> WaitUntilFlowDeleted(const Model::DescribeFlowRequest& request) {
-    using OutcomeT = Model::DescribeFlowOutcome;
-    using RequestT = Model::DescribeFlowRequest;
-    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
-    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("FlowDeletedWaiter", Aws::Utils::WaiterState::SUCCESS,
-                                                                                Aws::String("NotFoundException")));
-    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
-        "FlowDeletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("DELETING"),
-        [](const Model::DescribeFlowOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
-          if (!outcome.IsSuccess()) return false;
-          const auto& result = outcome.GetResult();
-          return Model::StatusMapper::GetNameForStatus(result.GetFlow().GetStatus()) == expected.get<Aws::String>();
-        }));
-    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("FlowDeletedWaiter", Aws::Utils::WaiterState::RETRY,
-                                                                                Aws::String("InternalServerErrorException")));
-    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("FlowDeletedWaiter", Aws::Utils::WaiterState::RETRY,
-                                                                                Aws::String("ServiceUnavailableException")));
-    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
-        "FlowDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ERROR"),
-        [](const Model::DescribeFlowOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
-          if (!outcome.IsSuccess()) return false;
-          const auto& result = outcome.GetResult();
-          return Model::StatusMapper::GetNameForStatus(result.GetFlow().GetStatus()) == expected.get<Aws::String>();
-        }));
-
-    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeFlow(req); };
-    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(3, 40, std::move(acceptors), operation, "WaitUntilFlowDeleted");
-    return waiter.Wait(request);
-  }
-
   Aws::Utils::WaiterOutcome<Model::DescribeFlowOutcome> WaitUntilFlowStandby(const Model::DescribeFlowRequest& request) {
     using OutcomeT = Model::DescribeFlowOutcome;
     using RequestT = Model::DescribeFlowRequest;
@@ -137,6 +107,90 @@ class MediaConnectWaiter {
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeFlow(req); };
     Aws::Utils::Waiter<RequestT, OutcomeT> waiter(3, 40, std::move(acceptors), operation, "WaitUntilFlowStandby");
+    return waiter.Wait(request);
+  }
+
+  Aws::Utils::WaiterOutcome<Model::DescribeFlowOutcome> WaitUntilFlowDeleted(const Model::DescribeFlowRequest& request) {
+    using OutcomeT = Model::DescribeFlowOutcome;
+    using RequestT = Model::DescribeFlowRequest;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("FlowDeletedWaiter", Aws::Utils::WaiterState::SUCCESS,
+                                                                                Aws::String("NotFoundException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "FlowDeletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("DELETING"),
+        [](const Model::DescribeFlowOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::StatusMapper::GetNameForStatus(result.GetFlow().GetStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("FlowDeletedWaiter", Aws::Utils::WaiterState::RETRY,
+                                                                                Aws::String("InternalServerErrorException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("FlowDeletedWaiter", Aws::Utils::WaiterState::RETRY,
+                                                                                Aws::String("ServiceUnavailableException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "FlowDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ERROR"),
+        [](const Model::DescribeFlowOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::StatusMapper::GetNameForStatus(result.GetFlow().GetStatus()) == expected.get<Aws::String>();
+        }));
+
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeFlow(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(3, 40, std::move(acceptors), operation, "WaitUntilFlowDeleted");
+    return waiter.Wait(request);
+  }
+
+  Aws::Utils::WaiterOutcome<Model::GetRouterInputOutcome> WaitUntilInputActive(const Model::GetRouterInputRequest& request) {
+    using OutcomeT = Model::GetRouterInputOutcome;
+    using RequestT = Model::GetRouterInputRequest;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "InputActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
+        [](const Model::GetRouterInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::RouterInputStateMapper::GetNameForRouterInputState(result.GetRouterInput().GetState()) ==
+                 expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "InputActiveWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("STARTING"),
+        [](const Model::GetRouterInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::RouterInputStateMapper::GetNameForRouterInputState(result.GetRouterInput().GetState()) ==
+                 expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "InputActiveWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("UPDATING"),
+        [](const Model::GetRouterInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::RouterInputStateMapper::GetNameForRouterInputState(result.GetRouterInput().GetState()) ==
+                 expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "InputActiveWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("MIGRATING"),
+        [](const Model::GetRouterInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::RouterInputStateMapper::GetNameForRouterInputState(result.GetRouterInput().GetState()) ==
+                 expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("InputActiveWaiter", Aws::Utils::WaiterState::RETRY,
+                                                                                Aws::String("InternalServerErrorException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("InputActiveWaiter", Aws::Utils::WaiterState::RETRY,
+                                                                                Aws::String("ServiceUnavailableException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "InputActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ERROR"),
+        [](const Model::GetRouterInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::RouterInputStateMapper::GetNameForRouterInputState(result.GetRouterInput().GetState()) ==
+                 expected.get<Aws::String>();
+        }));
+
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetRouterInput(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(3, 40, std::move(acceptors), operation, "WaitUntilInputActive");
     return waiter.Wait(request);
   }
 
@@ -210,122 +264,6 @@ class MediaConnectWaiter {
     return waiter.Wait(request);
   }
 
-  Aws::Utils::WaiterOutcome<Model::GetRouterInputOutcome> WaitUntilInputActive(const Model::GetRouterInputRequest& request) {
-    using OutcomeT = Model::GetRouterInputOutcome;
-    using RequestT = Model::GetRouterInputRequest;
-    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
-    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
-        "InputActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
-        [](const Model::GetRouterInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
-          if (!outcome.IsSuccess()) return false;
-          const auto& result = outcome.GetResult();
-          return Model::RouterInputStateMapper::GetNameForRouterInputState(result.GetRouterInput().GetState()) ==
-                 expected.get<Aws::String>();
-        }));
-    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
-        "InputActiveWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("STARTING"),
-        [](const Model::GetRouterInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
-          if (!outcome.IsSuccess()) return false;
-          const auto& result = outcome.GetResult();
-          return Model::RouterInputStateMapper::GetNameForRouterInputState(result.GetRouterInput().GetState()) ==
-                 expected.get<Aws::String>();
-        }));
-    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
-        "InputActiveWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("UPDATING"),
-        [](const Model::GetRouterInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
-          if (!outcome.IsSuccess()) return false;
-          const auto& result = outcome.GetResult();
-          return Model::RouterInputStateMapper::GetNameForRouterInputState(result.GetRouterInput().GetState()) ==
-                 expected.get<Aws::String>();
-        }));
-    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
-        "InputActiveWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("MIGRATING"),
-        [](const Model::GetRouterInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
-          if (!outcome.IsSuccess()) return false;
-          const auto& result = outcome.GetResult();
-          return Model::RouterInputStateMapper::GetNameForRouterInputState(result.GetRouterInput().GetState()) ==
-                 expected.get<Aws::String>();
-        }));
-    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("InputActiveWaiter", Aws::Utils::WaiterState::RETRY,
-                                                                                Aws::String("InternalServerErrorException")));
-    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("InputActiveWaiter", Aws::Utils::WaiterState::RETRY,
-                                                                                Aws::String("ServiceUnavailableException")));
-    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
-        "InputActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ERROR"),
-        [](const Model::GetRouterInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
-          if (!outcome.IsSuccess()) return false;
-          const auto& result = outcome.GetResult();
-          return Model::RouterInputStateMapper::GetNameForRouterInputState(result.GetRouterInput().GetState()) ==
-                 expected.get<Aws::String>();
-        }));
-
-    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetRouterInput(req); };
-    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(3, 40, std::move(acceptors), operation, "WaitUntilInputActive");
-    return waiter.Wait(request);
-  }
-
-  Aws::Utils::WaiterOutcome<Model::GetRouterOutputOutcome> WaitUntilOutputUnrouted(const Model::GetRouterOutputRequest& request) {
-    using OutcomeT = Model::GetRouterOutputOutcome;
-    using RequestT = Model::GetRouterOutputRequest;
-    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
-    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
-        "OutputUnroutedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("UNROUTED"),
-        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
-          if (!outcome.IsSuccess()) return false;
-          const auto& result = outcome.GetResult();
-          return Model::RouterOutputRoutedStateMapper::GetNameForRouterOutputRoutedState(result.GetRouterOutput().GetRoutedState()) ==
-                 expected.get<Aws::String>();
-        }));
-    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
-        "OutputUnroutedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("ROUTING"),
-        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
-          if (!outcome.IsSuccess()) return false;
-          const auto& result = outcome.GetResult();
-          return Model::RouterOutputRoutedStateMapper::GetNameForRouterOutputRoutedState(result.GetRouterOutput().GetRoutedState()) ==
-                 expected.get<Aws::String>();
-        }));
-    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("OutputUnroutedWaiter", Aws::Utils::WaiterState::RETRY,
-                                                                                Aws::String("InternalServerErrorException")));
-    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("OutputUnroutedWaiter", Aws::Utils::WaiterState::RETRY,
-                                                                                Aws::String("ServiceUnavailableException")));
-
-    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetRouterOutput(req); };
-    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(3, 40, std::move(acceptors), operation, "WaitUntilOutputUnrouted");
-    return waiter.Wait(request);
-  }
-
-  Aws::Utils::WaiterOutcome<Model::GetRouterOutputOutcome> WaitUntilOutputDeleted(const Model::GetRouterOutputRequest& request) {
-    using OutcomeT = Model::GetRouterOutputOutcome;
-    using RequestT = Model::GetRouterOutputRequest;
-    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
-    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
-        "OutputDeletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("DELETING"),
-        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
-          if (!outcome.IsSuccess()) return false;
-          const auto& result = outcome.GetResult();
-          return Model::RouterOutputStateMapper::GetNameForRouterOutputState(result.GetRouterOutput().GetState()) ==
-                 expected.get<Aws::String>();
-        }));
-    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("OutputDeletedWaiter", Aws::Utils::WaiterState::RETRY,
-                                                                                Aws::String("InternalServerErrorException")));
-    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("OutputDeletedWaiter", Aws::Utils::WaiterState::RETRY,
-                                                                                Aws::String("ServiceUnavailableException")));
-    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
-        "OutputDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ERROR"),
-        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
-          if (!outcome.IsSuccess()) return false;
-          const auto& result = outcome.GetResult();
-          return Model::RouterOutputStateMapper::GetNameForRouterOutputState(result.GetRouterOutput().GetState()) ==
-                 expected.get<Aws::String>();
-        }));
-    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("OutputDeletedWaiter", Aws::Utils::WaiterState::SUCCESS,
-                                                                                Aws::String("NotFoundException")));
-
-    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetRouterOutput(req); };
-    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(3, 40, std::move(acceptors), operation, "WaitUntilOutputDeleted");
-    return waiter.Wait(request);
-  }
-
   Aws::Utils::WaiterOutcome<Model::GetRouterOutputOutcome> WaitUntilOutputActive(const Model::GetRouterOutputRequest& request) {
     using OutcomeT = Model::GetRouterOutputOutcome;
     using RequestT = Model::GetRouterOutputRequest;
@@ -380,6 +318,68 @@ class MediaConnectWaiter {
     return waiter.Wait(request);
   }
 
+  Aws::Utils::WaiterOutcome<Model::GetRouterOutputOutcome> WaitUntilOutputDeleted(const Model::GetRouterOutputRequest& request) {
+    using OutcomeT = Model::GetRouterOutputOutcome;
+    using RequestT = Model::GetRouterOutputRequest;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "OutputDeletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("DELETING"),
+        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::RouterOutputStateMapper::GetNameForRouterOutputState(result.GetRouterOutput().GetState()) ==
+                 expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("OutputDeletedWaiter", Aws::Utils::WaiterState::RETRY,
+                                                                                Aws::String("InternalServerErrorException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("OutputDeletedWaiter", Aws::Utils::WaiterState::RETRY,
+                                                                                Aws::String("ServiceUnavailableException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "OutputDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ERROR"),
+        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::RouterOutputStateMapper::GetNameForRouterOutputState(result.GetRouterOutput().GetState()) ==
+                 expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("OutputDeletedWaiter", Aws::Utils::WaiterState::SUCCESS,
+                                                                                Aws::String("NotFoundException")));
+
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetRouterOutput(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(3, 40, std::move(acceptors), operation, "WaitUntilOutputDeleted");
+    return waiter.Wait(request);
+  }
+
+  Aws::Utils::WaiterOutcome<Model::GetRouterOutputOutcome> WaitUntilOutputRouted(const Model::GetRouterOutputRequest& request) {
+    using OutcomeT = Model::GetRouterOutputOutcome;
+    using RequestT = Model::GetRouterOutputRequest;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "OutputRoutedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ROUTED"),
+        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::RouterOutputRoutedStateMapper::GetNameForRouterOutputRoutedState(result.GetRouterOutput().GetRoutedState()) ==
+                 expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "OutputRoutedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("ROUTING"),
+        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::RouterOutputRoutedStateMapper::GetNameForRouterOutputRoutedState(result.GetRouterOutput().GetRoutedState()) ==
+                 expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("OutputRoutedWaiter", Aws::Utils::WaiterState::RETRY,
+                                                                                Aws::String("InternalServerErrorException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("OutputRoutedWaiter", Aws::Utils::WaiterState::RETRY,
+                                                                                Aws::String("ServiceUnavailableException")));
+
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetRouterOutput(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(3, 40, std::move(acceptors), operation, "WaitUntilOutputRouted");
+    return waiter.Wait(request);
+  }
+
   Aws::Utils::WaiterOutcome<Model::GetRouterOutputOutcome> WaitUntilOutputStandby(const Model::GetRouterOutputRequest& request) {
     using OutcomeT = Model::GetRouterOutputOutcome;
     using RequestT = Model::GetRouterOutputRequest;
@@ -418,12 +418,12 @@ class MediaConnectWaiter {
     return waiter.Wait(request);
   }
 
-  Aws::Utils::WaiterOutcome<Model::GetRouterOutputOutcome> WaitUntilOutputRouted(const Model::GetRouterOutputRequest& request) {
+  Aws::Utils::WaiterOutcome<Model::GetRouterOutputOutcome> WaitUntilOutputUnrouted(const Model::GetRouterOutputRequest& request) {
     using OutcomeT = Model::GetRouterOutputOutcome;
     using RequestT = Model::GetRouterOutputRequest;
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
-        "OutputRoutedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ROUTED"),
+        "OutputUnroutedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("UNROUTED"),
         [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
@@ -431,20 +431,20 @@ class MediaConnectWaiter {
                  expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
-        "OutputRoutedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("ROUTING"),
+        "OutputUnroutedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("ROUTING"),
         [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::RouterOutputRoutedStateMapper::GetNameForRouterOutputRoutedState(result.GetRouterOutput().GetRoutedState()) ==
                  expected.get<Aws::String>();
         }));
-    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("OutputRoutedWaiter", Aws::Utils::WaiterState::RETRY,
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("OutputUnroutedWaiter", Aws::Utils::WaiterState::RETRY,
                                                                                 Aws::String("InternalServerErrorException")));
-    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("OutputRoutedWaiter", Aws::Utils::WaiterState::RETRY,
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("OutputUnroutedWaiter", Aws::Utils::WaiterState::RETRY,
                                                                                 Aws::String("ServiceUnavailableException")));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetRouterOutput(req); };
-    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(3, 40, std::move(acceptors), operation, "WaitUntilOutputRouted");
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(3, 40, std::move(acceptors), operation, "WaitUntilOutputUnrouted");
     return waiter.Wait(request);
   }
 };

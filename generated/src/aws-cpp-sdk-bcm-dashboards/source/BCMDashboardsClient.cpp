@@ -7,14 +7,20 @@
 #include <aws/bcm-dashboards/BCMDashboardsEndpointProvider.h>
 #include <aws/bcm-dashboards/BCMDashboardsErrorMarshaller.h>
 #include <aws/bcm-dashboards/model/CreateDashboardRequest.h>
+#include <aws/bcm-dashboards/model/CreateScheduledReportRequest.h>
 #include <aws/bcm-dashboards/model/DeleteDashboardRequest.h>
+#include <aws/bcm-dashboards/model/DeleteScheduledReportRequest.h>
+#include <aws/bcm-dashboards/model/ExecuteScheduledReportRequest.h>
 #include <aws/bcm-dashboards/model/GetDashboardRequest.h>
 #include <aws/bcm-dashboards/model/GetResourcePolicyRequest.h>
+#include <aws/bcm-dashboards/model/GetScheduledReportRequest.h>
 #include <aws/bcm-dashboards/model/ListDashboardsRequest.h>
+#include <aws/bcm-dashboards/model/ListScheduledReportsRequest.h>
 #include <aws/bcm-dashboards/model/ListTagsForResourceRequest.h>
 #include <aws/bcm-dashboards/model/TagResourceRequest.h>
 #include <aws/bcm-dashboards/model/UntagResourceRequest.h>
 #include <aws/bcm-dashboards/model/UpdateDashboardRequest.h>
+#include <aws/bcm-dashboards/model/UpdateScheduledReportRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/CoreErrors.h>
@@ -187,10 +193,28 @@ CreateDashboardOutcome BCMDashboardsClient::CreateDashboard(const CreateDashboar
                             : CreateDashboardOutcome(std::move(result.GetError()));
 }
 
+CreateScheduledReportOutcome BCMDashboardsClient::CreateScheduledReport(const CreateScheduledReportRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateScheduledReportOutcome(result.GetResultWithOwnership())
+                            : CreateScheduledReportOutcome(std::move(result.GetError()));
+}
+
 DeleteDashboardOutcome BCMDashboardsClient::DeleteDashboard(const DeleteDashboardRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteDashboardOutcome(result.GetResultWithOwnership())
                             : DeleteDashboardOutcome(std::move(result.GetError()));
+}
+
+DeleteScheduledReportOutcome BCMDashboardsClient::DeleteScheduledReport(const DeleteScheduledReportRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteScheduledReportOutcome(result.GetResultWithOwnership())
+                            : DeleteScheduledReportOutcome(std::move(result.GetError()));
+}
+
+ExecuteScheduledReportOutcome BCMDashboardsClient::ExecuteScheduledReport(const ExecuteScheduledReportRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExecuteScheduledReportOutcome(result.GetResultWithOwnership())
+                            : ExecuteScheduledReportOutcome(std::move(result.GetError()));
 }
 
 GetDashboardOutcome BCMDashboardsClient::GetDashboard(const GetDashboardRequest& request) const {
@@ -204,9 +228,21 @@ GetResourcePolicyOutcome BCMDashboardsClient::GetResourcePolicy(const GetResourc
                             : GetResourcePolicyOutcome(std::move(result.GetError()));
 }
 
+GetScheduledReportOutcome BCMDashboardsClient::GetScheduledReport(const GetScheduledReportRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetScheduledReportOutcome(result.GetResultWithOwnership())
+                            : GetScheduledReportOutcome(std::move(result.GetError()));
+}
+
 ListDashboardsOutcome BCMDashboardsClient::ListDashboards(const ListDashboardsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListDashboardsOutcome(result.GetResultWithOwnership()) : ListDashboardsOutcome(std::move(result.GetError()));
+}
+
+ListScheduledReportsOutcome BCMDashboardsClient::ListScheduledReports(const ListScheduledReportsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListScheduledReportsOutcome(result.GetResultWithOwnership())
+                            : ListScheduledReportsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome BCMDashboardsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -229,4 +265,10 @@ UpdateDashboardOutcome BCMDashboardsClient::UpdateDashboard(const UpdateDashboar
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateDashboardOutcome(result.GetResultWithOwnership())
                             : UpdateDashboardOutcome(std::move(result.GetError()));
+}
+
+UpdateScheduledReportOutcome BCMDashboardsClient::UpdateScheduledReport(const UpdateScheduledReportRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateScheduledReportOutcome(result.GetResultWithOwnership())
+                            : UpdateScheduledReportOutcome(std::move(result.GetError()));
 }

@@ -18,10 +18,6 @@ namespace Model {
 RouterInputProtocolConfiguration::RouterInputProtocolConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
 RouterInputProtocolConfiguration& RouterInputProtocolConfiguration::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("rtp")) {
-    m_rtp = jsonValue.GetObject("rtp");
-    m_rtpHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("rist")) {
     m_rist = jsonValue.GetObject("rist");
     m_ristHasBeenSet = true;
@@ -34,15 +30,15 @@ RouterInputProtocolConfiguration& RouterInputProtocolConfiguration::operator=(Js
     m_srtCaller = jsonValue.GetObject("srtCaller");
     m_srtCallerHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("rtp")) {
+    m_rtp = jsonValue.GetObject("rtp");
+    m_rtpHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue RouterInputProtocolConfiguration::Jsonize() const {
   JsonValue payload;
-
-  if (m_rtpHasBeenSet) {
-    payload.WithObject("rtp", m_rtp.Jsonize());
-  }
 
   if (m_ristHasBeenSet) {
     payload.WithObject("rist", m_rist.Jsonize());
@@ -54,6 +50,10 @@ JsonValue RouterInputProtocolConfiguration::Jsonize() const {
 
   if (m_srtCallerHasBeenSet) {
     payload.WithObject("srtCaller", m_srtCaller.Jsonize());
+  }
+
+  if (m_rtpHasBeenSet) {
+    payload.WithObject("rtp", m_rtp.Jsonize());
   }
 
   return payload;
