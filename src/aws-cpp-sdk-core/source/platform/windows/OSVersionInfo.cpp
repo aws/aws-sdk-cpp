@@ -69,7 +69,6 @@ Aws::String ComputeOSVersionString()
     static const char* FILE_TO_CHECK = "Kernel32.dll";
     DWORD fileVersionSize = GetFileVersionInfoSizeA(FILE_TO_CHECK, &uselessParameter);
     void* blob = Aws::Malloc("OSVersionInfo", static_cast<size_t>(fileVersionSize));
-    bool versionFound(false);
 
     if (GetFileVersionInfoA(FILE_TO_CHECK, 0, fileVersionSize, blob))
     {
@@ -95,7 +94,6 @@ Aws::String ComputeOSVersionString()
             if (VerQueryValueA(blob, codePageSS.str().c_str(), &subBlock, &subBlockSize))
             {
                 ss << "#" << static_cast<const char*>(subBlock);
-                versionFound = true;
             }
         }
     }

@@ -16,7 +16,7 @@
 #include <aws/event-stream/event_stream.h>
 #include <cassert>
 
-#ifdef __MINGW32__
+#if defined(__MINGW32__) && !defined(__clang__)
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wmaybe-uninitialized"
 #pragma GCC diagnostic ignored "-Wuninitialized"
@@ -357,6 +357,6 @@ namespace Aws
     }
 }
 
-#ifdef __MINGW32__
+#if defined(__MINGW32__) && !defined(__clang__)
 #pragma GCC diagnostic pop
 #endif
