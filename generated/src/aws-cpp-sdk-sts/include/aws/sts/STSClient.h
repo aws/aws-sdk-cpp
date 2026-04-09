@@ -9,6 +9,7 @@
 #include <aws/sts/STSErrorMarshaller.h>
 #include <aws/sts/STSPaginationBase.h>
 #include <aws/sts/STSServiceClientModel.h>
+#include <aws/sts/STSWaiter.h>
 #include <aws/sts/STS_EXPORTS.h>
 #include <smithy/client/AwsSmithyClient.h>
 #include <smithy/client/serializer/XmlOutcomeSerializer.h>
@@ -33,7 +34,8 @@ class AWS_STS_API STSClient
                                               Aws::Crt::Variant<smithy::SigV4AuthScheme, smithy::NoAuthScheme>, STSEndpointProviderBase,
                                               smithy::client::XmlOutcomeSerializer, smithy::client::XmlOutcome,
                                               Aws::Client::STSErrorMarshaller>,
-      public STSPaginationBase<STSClient> {
+      public STSPaginationBase<STSClient>,
+      public STSWaiter<STSClient> {
  public:
   static const char* GetServiceName();
   static const char* GetAllocationTag();

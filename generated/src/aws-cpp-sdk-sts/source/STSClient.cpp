@@ -181,9 +181,10 @@ AssumeRoleOutcome STSClient::AssumeRole(const AssumeRoleRequest& request) const 
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<AssumeRoleOutcome>(
       [&]() -> AssumeRoleOutcome {
-        return AssumeRoleOutcome(MakeRequestDeserialize(
-            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); }));
+        auto result =
+            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
+        return result.IsSuccess() ? AssumeRoleOutcome(result.GetResultWithOwnership()) : AssumeRoleOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -204,9 +205,11 @@ AssumeRoleWithSAMLOutcome STSClient::AssumeRoleWithSAML(const AssumeRoleWithSAML
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<AssumeRoleWithSAMLOutcome>(
       [&]() -> AssumeRoleWithSAMLOutcome {
-        return AssumeRoleWithSAMLOutcome(MakeRequestDeserialize(
-            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); }));
+        auto result =
+            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
+        return result.IsSuccess() ? AssumeRoleWithSAMLOutcome(result.GetResultWithOwnership())
+                                  : AssumeRoleWithSAMLOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -227,9 +230,11 @@ AssumeRoleWithWebIdentityOutcome STSClient::AssumeRoleWithWebIdentity(const Assu
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<AssumeRoleWithWebIdentityOutcome>(
       [&]() -> AssumeRoleWithWebIdentityOutcome {
-        return AssumeRoleWithWebIdentityOutcome(MakeRequestDeserialize(
-            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); }));
+        auto result =
+            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
+        return result.IsSuccess() ? AssumeRoleWithWebIdentityOutcome(result.GetResultWithOwnership())
+                                  : AssumeRoleWithWebIdentityOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -250,9 +255,10 @@ AssumeRootOutcome STSClient::AssumeRoot(const AssumeRootRequest& request) const 
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<AssumeRootOutcome>(
       [&]() -> AssumeRootOutcome {
-        return AssumeRootOutcome(MakeRequestDeserialize(
-            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); }));
+        auto result =
+            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
+        return result.IsSuccess() ? AssumeRootOutcome(result.GetResultWithOwnership()) : AssumeRootOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -273,9 +279,11 @@ DecodeAuthorizationMessageOutcome STSClient::DecodeAuthorizationMessage(const De
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DecodeAuthorizationMessageOutcome>(
       [&]() -> DecodeAuthorizationMessageOutcome {
-        return DecodeAuthorizationMessageOutcome(MakeRequestDeserialize(
-            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); }));
+        auto result =
+            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
+        return result.IsSuccess() ? DecodeAuthorizationMessageOutcome(result.GetResultWithOwnership())
+                                  : DecodeAuthorizationMessageOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -296,9 +304,11 @@ GetAccessKeyInfoOutcome STSClient::GetAccessKeyInfo(const GetAccessKeyInfoReques
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetAccessKeyInfoOutcome>(
       [&]() -> GetAccessKeyInfoOutcome {
-        return GetAccessKeyInfoOutcome(MakeRequestDeserialize(
-            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); }));
+        auto result =
+            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
+        return result.IsSuccess() ? GetAccessKeyInfoOutcome(result.GetResultWithOwnership())
+                                  : GetAccessKeyInfoOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -319,9 +329,11 @@ GetCallerIdentityOutcome STSClient::GetCallerIdentity(const GetCallerIdentityReq
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetCallerIdentityOutcome>(
       [&]() -> GetCallerIdentityOutcome {
-        return GetCallerIdentityOutcome(MakeRequestDeserialize(
-            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); }));
+        auto result =
+            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
+        return result.IsSuccess() ? GetCallerIdentityOutcome(result.GetResultWithOwnership())
+                                  : GetCallerIdentityOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -342,9 +354,11 @@ GetDelegatedAccessTokenOutcome STSClient::GetDelegatedAccessToken(const GetDeleg
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetDelegatedAccessTokenOutcome>(
       [&]() -> GetDelegatedAccessTokenOutcome {
-        return GetDelegatedAccessTokenOutcome(MakeRequestDeserialize(
-            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); }));
+        auto result =
+            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
+        return result.IsSuccess() ? GetDelegatedAccessTokenOutcome(result.GetResultWithOwnership())
+                                  : GetDelegatedAccessTokenOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -365,9 +379,11 @@ GetFederationTokenOutcome STSClient::GetFederationToken(const GetFederationToken
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetFederationTokenOutcome>(
       [&]() -> GetFederationTokenOutcome {
-        return GetFederationTokenOutcome(MakeRequestDeserialize(
-            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); }));
+        auto result =
+            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
+        return result.IsSuccess() ? GetFederationTokenOutcome(result.GetResultWithOwnership())
+                                  : GetFederationTokenOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -388,9 +404,11 @@ GetSessionTokenOutcome STSClient::GetSessionToken(const GetSessionTokenRequest& 
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetSessionTokenOutcome>(
       [&]() -> GetSessionTokenOutcome {
-        return GetSessionTokenOutcome(MakeRequestDeserialize(
-            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); }));
+        auto result =
+            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
+        return result.IsSuccess() ? GetSessionTokenOutcome(result.GetResultWithOwnership())
+                                  : GetSessionTokenOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -411,9 +429,11 @@ GetWebIdentityTokenOutcome STSClient::GetWebIdentityToken(const GetWebIdentityTo
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetWebIdentityTokenOutcome>(
       [&]() -> GetWebIdentityTokenOutcome {
-        return GetWebIdentityTokenOutcome(MakeRequestDeserialize(
-            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); }));
+        auto result =
+            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
+        return result.IsSuccess() ? GetWebIdentityTokenOutcome(result.GetResultWithOwnership())
+                                  : GetWebIdentityTokenOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
