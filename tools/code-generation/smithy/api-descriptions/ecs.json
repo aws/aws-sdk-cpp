@@ -215,7 +215,8 @@
             },
             "traits": {
                 "smithy.api#documentation": "<p>You don't have authorization to perform the requested action.</p>",
-                "smithy.api#error": "client"
+                "smithy.api#error": "client",
+                "smithy.api#httpError": 403
             }
         },
         "com.amazonaws.ecs#AccessType": {
@@ -3701,6 +3702,9 @@
             },
             "errors": [
                 {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
+                {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
                 {
@@ -3849,6 +3853,9 @@
                 "target": "com.amazonaws.ecs#CreateClusterResponse"
             },
             "errors": [
+                {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
                 {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
@@ -4757,6 +4764,9 @@
                 },
                 {
                     "target": "com.amazonaws.ecs#InvalidParameterException"
+                },
+                {
+                    "target": "com.amazonaws.ecs#LimitExceededException"
                 },
                 {
                     "target": "com.amazonaws.ecs#NamespaceNotFoundException"
@@ -5794,7 +5804,10 @@
             "type": "structure",
             "members": {
                 "message": {
-                    "target": "com.amazonaws.ecs#String"
+                    "target": "com.amazonaws.ecs#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p> Message that describes the cause of the exception.</p>"
+                    }
                 }
             },
             "traits": {
@@ -5806,7 +5819,10 @@
             "type": "structure",
             "members": {
                 "message": {
-                    "target": "com.amazonaws.ecs#String"
+                    "target": "com.amazonaws.ecs#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p> Message that describes the cause of the exception.</p>"
+                    }
                 }
             },
             "traits": {
@@ -6366,6 +6382,9 @@
             },
             "errors": [
                 {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
+                {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
                 {
@@ -6462,10 +6481,19 @@
             },
             "errors": [
                 {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
+                {
+                    "target": "com.amazonaws.ecs#ClientException"
+                },
+                {
                     "target": "com.amazonaws.ecs#ClusterNotFoundException"
                 },
                 {
                     "target": "com.amazonaws.ecs#InvalidParameterException"
+                },
+                {
+                    "target": "com.amazonaws.ecs#ServerException"
                 },
                 {
                     "target": "com.amazonaws.ecs#TargetNotFoundException"
@@ -6559,6 +6587,9 @@
             },
             "errors": [
                 {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
+                {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
                 {
@@ -6572,6 +6603,9 @@
                 },
                 {
                     "target": "com.amazonaws.ecs#UnsupportedFeatureException"
+                },
+                {
+                    "target": "com.amazonaws.ecs#UpdateInProgressException"
                 }
             ],
             "traits": {
@@ -6665,6 +6699,9 @@
                 "target": "com.amazonaws.ecs#DeleteClusterResponse"
             },
             "errors": [
+                {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
                 {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
@@ -7062,6 +7099,9 @@
             },
             "errors": [
                 {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
+                {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
                 {
@@ -7287,6 +7327,9 @@
                 },
                 {
                     "target": "com.amazonaws.ecs#InvalidParameterException"
+                },
+                {
+                    "target": "com.amazonaws.ecs#LimitExceededException"
                 },
                 {
                     "target": "com.amazonaws.ecs#ServerException"
@@ -7887,6 +7930,9 @@
             },
             "errors": [
                 {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
+                {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
                 {
@@ -7982,6 +8028,9 @@
             },
             "errors": [
                 {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
+                {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
                 {
@@ -8072,6 +8121,9 @@
                 "target": "com.amazonaws.ecs#DescribeCapacityProvidersResponse"
             },
             "errors": [
+                {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
                 {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
@@ -8257,6 +8309,9 @@
             },
             "errors": [
                 {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
+                {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
                 {
@@ -8358,6 +8413,9 @@
                 "target": "com.amazonaws.ecs#DescribeContainerInstancesResponse"
             },
             "errors": [
+                {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
                 {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
@@ -9540,6 +9598,9 @@
             },
             "errors": [
                 {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
+                {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
                 {
@@ -9755,6 +9816,9 @@
                 "target": "com.amazonaws.ecs#DescribeTaskDefinitionResponse"
             },
             "errors": [
+                {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
                 {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
@@ -10039,6 +10103,9 @@
             },
             "errors": [
                 {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
+                {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
                 {
@@ -10316,7 +10383,13 @@
             },
             "errors": [
                 {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
+                {
                     "target": "com.amazonaws.ecs#ClientException"
+                },
+                {
+                    "target": "com.amazonaws.ecs#InvalidParameterException"
                 },
                 {
                     "target": "com.amazonaws.ecs#ServerException"
@@ -10738,6 +10811,9 @@
             "type": "list",
             "member": {
                 "target": "com.amazonaws.ecs#KeyValuePair"
+            },
+            "traits": {
+                "smithy.api#sensitive": {}
             }
         },
         "com.amazonaws.ecs#EphemeralStorage": {
@@ -11717,6 +11793,10 @@
                 }
             },
             "traits": {
+                "smithy.api#deprecated": {
+                    "message": "This feature is no longer available.",
+                    "since": "2023-04-15"
+                },
                 "smithy.api#documentation": "<p>Details on an Elastic Inference accelerator. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-inference.html\">Working with Amazon Elastic Inference on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>"
             }
         },
@@ -11737,6 +11817,10 @@
                 }
             },
             "traits": {
+                "smithy.api#deprecated": {
+                    "message": "This feature is no longer available.",
+                    "since": "2023-04-15"
+                },
                 "smithy.api#documentation": "<p>Details on an Elastic Inference accelerator task override. This parameter is used to override the Elastic Inference accelerator specified in the task definition. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-inference.html\">Working with Amazon Elastic Inference on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>"
             }
         },
@@ -11744,12 +11828,24 @@
             "type": "list",
             "member": {
                 "target": "com.amazonaws.ecs#InferenceAcceleratorOverride"
+            },
+            "traits": {
+                "smithy.api#deprecated": {
+                    "message": "This feature is no longer available.",
+                    "since": "2023-04-15"
+                }
             }
         },
         "com.amazonaws.ecs#InferenceAccelerators": {
             "type": "list",
             "member": {
                 "target": "com.amazonaws.ecs#InferenceAccelerator"
+            },
+            "traits": {
+                "smithy.api#deprecated": {
+                    "message": "This feature is no longer available.",
+                    "since": "2023-04-15"
+                }
             }
         },
         "com.amazonaws.ecs#InfrastructureOptimization": {
@@ -12384,7 +12480,7 @@
                 "tmpfs": {
                     "target": "com.amazonaws.ecs#TmpfsList",
                     "traits": {
-                        "smithy.api#documentation": "<p>The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the <code>--tmpfs</code> option to docker run.</p> <note> <p>If you're using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter isn't supported.</p> </note>"
+                        "smithy.api#documentation": "<p>The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the <code>--tmpfs</code> option to docker run.</p>"
                     }
                 },
                 "maxSwap": {
@@ -12413,6 +12509,9 @@
                 "target": "com.amazonaws.ecs#ListAccountSettingsResponse"
             },
             "errors": [
+                {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
                 {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
@@ -12569,10 +12668,19 @@
             },
             "errors": [
                 {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
+                {
+                    "target": "com.amazonaws.ecs#ClientException"
+                },
+                {
                     "target": "com.amazonaws.ecs#ClusterNotFoundException"
                 },
                 {
                     "target": "com.amazonaws.ecs#InvalidParameterException"
+                },
+                {
+                    "target": "com.amazonaws.ecs#ServerException"
                 }
             ],
             "traits": {
@@ -12698,6 +12806,9 @@
             },
             "errors": [
                 {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
+                {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
                 {
@@ -12800,6 +12911,9 @@
                 "target": "com.amazonaws.ecs#ListContainerInstancesResponse"
             },
             "errors": [
+                {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
                 {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
@@ -13309,6 +13423,9 @@
                     "target": "com.amazonaws.ecs#ClientException"
                 },
                 {
+                    "target": "com.amazonaws.ecs#ClusterNotFoundException"
+                },
+                {
                     "target": "com.amazonaws.ecs#InvalidParameterException"
                 },
                 {
@@ -13441,6 +13558,9 @@
             },
             "errors": [
                 {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
+                {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
                 {
@@ -13491,6 +13611,9 @@
                 "target": "com.amazonaws.ecs#ListServicesByNamespaceResponse"
             },
             "errors": [
+                {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
                 {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
@@ -13647,6 +13770,9 @@
             },
             "errors": [
                 {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
+                {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
                 {
@@ -13737,6 +13863,9 @@
                 "target": "com.amazonaws.ecs#ListTaskDefinitionFamiliesResponse"
             },
             "errors": [
+                {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
                 {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
@@ -13852,6 +13981,9 @@
                 "target": "com.amazonaws.ecs#ListTaskDefinitionsResponse"
             },
             "errors": [
+                {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
                 {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
@@ -13979,6 +14111,9 @@
                 "target": "com.amazonaws.ecs#ListTasksResponse"
             },
             "errors": [
+                {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
                 {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
@@ -15946,6 +16081,9 @@
             },
             "errors": [
                 {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
+                {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
                 {
@@ -16008,6 +16146,9 @@
                 "target": "com.amazonaws.ecs#PutAccountSettingDefaultResponse"
             },
             "errors": [
+                {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
                 {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
@@ -16134,13 +16275,22 @@
             },
             "errors": [
                 {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
+                {
                     "target": "com.amazonaws.ecs#AttributeLimitExceededException"
+                },
+                {
+                    "target": "com.amazonaws.ecs#ClientException"
                 },
                 {
                     "target": "com.amazonaws.ecs#ClusterNotFoundException"
                 },
                 {
                     "target": "com.amazonaws.ecs#InvalidParameterException"
+                },
+                {
+                    "target": "com.amazonaws.ecs#ServerException"
                 },
                 {
                     "target": "com.amazonaws.ecs#TargetNotFoundException"
@@ -16235,6 +16385,9 @@
                 "target": "com.amazonaws.ecs#PutClusterCapacityProvidersResponse"
             },
             "errors": [
+                {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
                 {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
@@ -16562,7 +16715,13 @@
             },
             "errors": [
                 {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
+                {
                     "target": "com.amazonaws.ecs#ClientException"
+                },
+                {
+                    "target": "com.amazonaws.ecs#ClusterNotFoundException"
                 },
                 {
                     "target": "com.amazonaws.ecs#InvalidParameterException"
@@ -16847,10 +17006,16 @@
             },
             "errors": [
                 {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
+                {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
                 {
                     "target": "com.amazonaws.ecs#InvalidParameterException"
+                },
+                {
+                    "target": "com.amazonaws.ecs#LimitExceededException"
                 },
                 {
                     "target": "com.amazonaws.ecs#ServerException"
@@ -17025,6 +17190,10 @@
                 "inferenceAccelerators": {
                     "target": "com.amazonaws.ecs#InferenceAccelerators",
                     "traits": {
+                        "smithy.api#deprecated": {
+                            "message": "This feature is no longer available.",
+                            "since": "2023-04-15"
+                        },
                         "smithy.api#documentation": "<p>The Elastic Inference accelerators to use for the containers in the task.</p>"
                     }
                 },
@@ -19450,6 +19619,9 @@
             },
             "errors": [
                 {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
+                {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
                 {
@@ -19457,6 +19629,9 @@
                 },
                 {
                     "target": "com.amazonaws.ecs#InvalidParameterException"
+                },
+                {
+                    "target": "com.amazonaws.ecs#NamespaceNotFoundException"
                 },
                 {
                     "target": "com.amazonaws.ecs#ServerException"
@@ -19797,6 +19972,9 @@
             },
             "errors": [
                 {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
+                {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
                 {
@@ -19963,6 +20141,9 @@
                     "target": "com.amazonaws.ecs#ClientException"
                 },
                 {
+                    "target": "com.amazonaws.ecs#ClusterNotFoundException"
+                },
+                {
                     "target": "com.amazonaws.ecs#InvalidParameterException"
                 },
                 {
@@ -20036,6 +20217,12 @@
                 },
                 {
                     "target": "com.amazonaws.ecs#ClientException"
+                },
+                {
+                    "target": "com.amazonaws.ecs#ClusterNotFoundException"
+                },
+                {
+                    "target": "com.amazonaws.ecs#InvalidParameterException"
                 },
                 {
                     "target": "com.amazonaws.ecs#ServerException"
@@ -20145,6 +20332,9 @@
                 },
                 {
                     "target": "com.amazonaws.ecs#ClientException"
+                },
+                {
+                    "target": "com.amazonaws.ecs#ClusterNotFoundException"
                 },
                 {
                     "target": "com.amazonaws.ecs#InvalidParameterException"
@@ -20327,6 +20517,9 @@
             },
             "errors": [
                 {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
+                {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
                 {
@@ -20334,6 +20527,9 @@
                 },
                 {
                     "target": "com.amazonaws.ecs#InvalidParameterException"
+                },
+                {
+                    "target": "com.amazonaws.ecs#LimitExceededException"
                 },
                 {
                     "target": "com.amazonaws.ecs#ResourceNotFoundException"
@@ -21855,6 +22051,9 @@
             },
             "errors": [
                 {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
+                {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
                 {
@@ -21946,6 +22145,9 @@
                 "target": "com.amazonaws.ecs#UpdateCapacityProviderResponse"
             },
             "errors": [
+                {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
                 {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
@@ -22074,6 +22276,9 @@
                 "target": "com.amazonaws.ecs#UpdateClusterResponse"
             },
             "errors": [
+                {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
                 {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
@@ -22348,6 +22553,9 @@
             },
             "errors": [
                 {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
+                {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
                 {
@@ -22358,6 +22566,9 @@
                 },
                 {
                     "target": "com.amazonaws.ecs#ServerException"
+                },
+                {
+                    "target": "com.amazonaws.ecs#UpdateInProgressException"
                 }
             ],
             "traits": {
@@ -22458,6 +22669,9 @@
                 "target": "com.amazonaws.ecs#UpdateContainerAgentResponse"
             },
             "errors": [
+                {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
                 {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
@@ -22565,6 +22779,9 @@
                 "target": "com.amazonaws.ecs#UpdateContainerInstancesStateResponse"
             },
             "errors": [
+                {
+                    "target": "com.amazonaws.ecs#AccessDeniedException"
+                },
                 {
                     "target": "com.amazonaws.ecs#ClientException"
                 },
@@ -23773,6 +23990,9 @@
                 },
                 {
                     "target": "com.amazonaws.ecs#InvalidParameterException"
+                },
+                {
+                    "target": "com.amazonaws.ecs#LimitExceededException"
                 },
                 {
                     "target": "com.amazonaws.ecs#ServerException"
