@@ -17,6 +17,7 @@
 #include <aws/core/monitoring/CoreMetrics.h>
 #include <aws/core/monitoring/MonitoringManager.h>
 #include <aws/core/utils/DNS.h>
+#include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
 #include <aws/core/utils/stream/ResponseStream.h>
 #include <aws/core/utils/threading/Executor.h>
@@ -325,14 +326,8 @@ void AwsSmithyClientBase::UpdateAuthSchemeFromEndpoint(const Aws::Endpoint::AWSE
     }
     // If a value is explicitly set in configuration, it must be used over values defined anywhere else (ONLY FOR SigV4a)
     if (strcmp(authscheme.schemeId, SigV4aAuthSchemeOption::sigV4aAuthSchemeOption.schemeId) == 0 && !m_clientConfig->sigV4aSigningRegionSet.empty()) {
-        std::stringstream ss;
-        for (size_t i = 0; i < m_clientConfig->sigV4aSigningRegionSet.size(); ++i) {
-            ss << m_clientConfig->sigV4aSigningRegionSet[i];
-            if (i != m_clientConfig->sigV4aSigningRegionSet.size() - 1) {
-              ss << ",";
-            }
-        }
-        authscheme.putSignerProperty(smithy::SIGNER_REGION_PROPERTY, Aws::Crt::Variant<Aws::String, bool>(Aws::String(ss.str().c_str())));
+        authscheme.putSignerProperty(smithy::SIGNER_REGION_PROPERTY,
+            Aws::Crt::Variant<Aws::String, bool>(Aws::Utils::StringUtils::Join(m_clientConfig->sigV4aSigningRegionSet, ',')));
     }
 }
 
