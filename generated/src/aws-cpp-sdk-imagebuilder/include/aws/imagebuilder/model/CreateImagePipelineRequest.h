@@ -246,6 +246,30 @@ class CreateImagePipelineRequest : public ImagebuilderRequest {
 
   ///@{
   /**
+   * <p>The tags to be applied to the images produced by this pipeline.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetImageTags() const { return m_imageTags; }
+  inline bool ImageTagsHasBeenSet() const { return m_imageTagsHasBeenSet; }
+  template <typename ImageTagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetImageTags(ImageTagsT&& value) {
+    m_imageTagsHasBeenSet = true;
+    m_imageTags = std::forward<ImageTagsT>(value);
+  }
+  template <typename ImageTagsT = Aws::Map<Aws::String, Aws::String>>
+  CreateImagePipelineRequest& WithImageTags(ImageTagsT&& value) {
+    SetImageTags(std::forward<ImageTagsT>(value));
+    return *this;
+  }
+  template <typename ImageTagsKeyT = Aws::String, typename ImageTagsValueT = Aws::String>
+  CreateImagePipelineRequest& AddImageTags(ImageTagsKeyT&& key, ImageTagsValueT&& value) {
+    m_imageTagsHasBeenSet = true;
+    m_imageTags.emplace(std::forward<ImageTagsKeyT>(key), std::forward<ImageTagsValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
    * request. For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
@@ -366,6 +390,8 @@ class CreateImagePipelineRequest : public ImagebuilderRequest {
 
   Aws::Map<Aws::String, Aws::String> m_tags;
 
+  Aws::Map<Aws::String, Aws::String> m_imageTags;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
   ImageScanningConfiguration m_imageScanningConfiguration;
@@ -386,6 +412,7 @@ class CreateImagePipelineRequest : public ImagebuilderRequest {
   bool m_scheduleHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_imageTagsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_imageScanningConfigurationHasBeenSet = false;
   bool m_workflowsHasBeenSet = false;

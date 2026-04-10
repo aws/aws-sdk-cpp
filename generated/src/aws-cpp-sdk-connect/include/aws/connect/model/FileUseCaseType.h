@@ -10,7 +10,15 @@
 namespace Aws {
 namespace Connect {
 namespace Model {
-enum class FileUseCaseType { NOT_SET, EMAIL_MESSAGE, ATTACHMENT };
+enum class FileUseCaseType {
+  NOT_SET,
+  CONTACT_ANALYSIS,
+  EMAIL_MESSAGE,
+  EMAIL_MESSAGE_PLAIN_TEXT,
+  EMAIL_MESSAGE_REDACTED,
+  EMAIL_MESSAGE_PLAIN_TEXT_REDACTED,
+  ATTACHMENT
+};
 
 namespace FileUseCaseTypeMapper {
 AWS_CONNECT_API FileUseCaseType GetFileUseCaseTypeForName(const Aws::String& name);

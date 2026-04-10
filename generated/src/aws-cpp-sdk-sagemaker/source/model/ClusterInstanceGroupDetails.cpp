@@ -38,6 +38,18 @@ ClusterInstanceGroupDetails& ClusterInstanceGroupDetails::operator=(JsonView jso
     m_instanceType = ClusterInstanceTypeMapper::GetClusterInstanceTypeForName(jsonValue.GetString("InstanceType"));
     m_instanceTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("InstanceRequirements")) {
+    m_instanceRequirements = jsonValue.GetObject("InstanceRequirements");
+    m_instanceRequirementsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("InstanceTypeDetails")) {
+    Aws::Utils::Array<JsonView> instanceTypeDetailsJsonList = jsonValue.GetArray("InstanceTypeDetails");
+    for (unsigned instanceTypeDetailsIndex = 0; instanceTypeDetailsIndex < instanceTypeDetailsJsonList.GetLength();
+         ++instanceTypeDetailsIndex) {
+      m_instanceTypeDetails.push_back(instanceTypeDetailsJsonList[instanceTypeDetailsIndex].AsObject());
+    }
+    m_instanceTypeDetailsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("LifeCycleConfig")) {
     m_lifeCycleConfig = jsonValue.GetObject("LifeCycleConfig");
     m_lifeCycleConfigHasBeenSet = true;
@@ -151,6 +163,19 @@ JsonValue ClusterInstanceGroupDetails::Jsonize() const {
 
   if (m_instanceTypeHasBeenSet) {
     payload.WithString("InstanceType", ClusterInstanceTypeMapper::GetNameForClusterInstanceType(m_instanceType));
+  }
+
+  if (m_instanceRequirementsHasBeenSet) {
+    payload.WithObject("InstanceRequirements", m_instanceRequirements.Jsonize());
+  }
+
+  if (m_instanceTypeDetailsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> instanceTypeDetailsJsonList(m_instanceTypeDetails.size());
+    for (unsigned instanceTypeDetailsIndex = 0; instanceTypeDetailsIndex < instanceTypeDetailsJsonList.GetLength();
+         ++instanceTypeDetailsIndex) {
+      instanceTypeDetailsJsonList[instanceTypeDetailsIndex].AsObject(m_instanceTypeDetails[instanceTypeDetailsIndex].Jsonize());
+    }
+    payload.WithArray("InstanceTypeDetails", std::move(instanceTypeDetailsJsonList));
   }
 
   if (m_lifeCycleConfigHasBeenSet) {

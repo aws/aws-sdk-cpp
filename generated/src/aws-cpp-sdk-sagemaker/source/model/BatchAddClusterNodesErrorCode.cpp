@@ -17,6 +17,8 @@ namespace BatchAddClusterNodesErrorCodeMapper {
 
 static const int InstanceGroupNotFound_HASH = HashingUtils::HashString("InstanceGroupNotFound");
 static const int InvalidInstanceGroupStatus_HASH = HashingUtils::HashString("InvalidInstanceGroupStatus");
+static const int IncompatibleAvailabilityZones_HASH = HashingUtils::HashString("IncompatibleAvailabilityZones");
+static const int IncompatibleInstanceTypes_HASH = HashingUtils::HashString("IncompatibleInstanceTypes");
 
 BatchAddClusterNodesErrorCode GetBatchAddClusterNodesErrorCodeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +26,10 @@ BatchAddClusterNodesErrorCode GetBatchAddClusterNodesErrorCodeForName(const Aws:
     return BatchAddClusterNodesErrorCode::InstanceGroupNotFound;
   } else if (hashCode == InvalidInstanceGroupStatus_HASH) {
     return BatchAddClusterNodesErrorCode::InvalidInstanceGroupStatus;
+  } else if (hashCode == IncompatibleAvailabilityZones_HASH) {
+    return BatchAddClusterNodesErrorCode::IncompatibleAvailabilityZones;
+  } else if (hashCode == IncompatibleInstanceTypes_HASH) {
+    return BatchAddClusterNodesErrorCode::IncompatibleInstanceTypes;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +48,10 @@ Aws::String GetNameForBatchAddClusterNodesErrorCode(BatchAddClusterNodesErrorCod
       return "InstanceGroupNotFound";
     case BatchAddClusterNodesErrorCode::InvalidInstanceGroupStatus:
       return "InvalidInstanceGroupStatus";
+    case BatchAddClusterNodesErrorCode::IncompatibleAvailabilityZones:
+      return "IncompatibleAvailabilityZones";
+    case BatchAddClusterNodesErrorCode::IncompatibleInstanceTypes:
+      return "IncompatibleInstanceTypes";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

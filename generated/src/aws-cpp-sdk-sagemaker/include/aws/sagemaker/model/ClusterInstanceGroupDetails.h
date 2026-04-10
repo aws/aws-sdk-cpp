@@ -10,8 +10,10 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/ActiveClusterOperationName.h>
 #include <aws/sagemaker/model/ClusterCapacityRequirements.h>
+#include <aws/sagemaker/model/ClusterInstanceRequirementDetails.h>
 #include <aws/sagemaker/model/ClusterInstanceStorageConfig.h>
 #include <aws/sagemaker/model/ClusterInstanceType.h>
+#include <aws/sagemaker/model/ClusterInstanceTypeDetail.h>
 #include <aws/sagemaker/model/ClusterKubernetesConfigDetails.h>
 #include <aws/sagemaker/model/ClusterLifeCycleConfig.h>
 #include <aws/sagemaker/model/ClusterSlurmConfigDetails.h>
@@ -129,6 +131,52 @@ class ClusterInstanceGroupDetails {
   }
   inline ClusterInstanceGroupDetails& WithInstanceType(ClusterInstanceType value) {
     SetInstanceType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The instance requirements for the instance group, including the current and
+   * desired instance types. This field is present for flexible instance groups that
+   * support multiple instance types.</p>
+   */
+  inline const ClusterInstanceRequirementDetails& GetInstanceRequirements() const { return m_instanceRequirements; }
+  inline bool InstanceRequirementsHasBeenSet() const { return m_instanceRequirementsHasBeenSet; }
+  template <typename InstanceRequirementsT = ClusterInstanceRequirementDetails>
+  void SetInstanceRequirements(InstanceRequirementsT&& value) {
+    m_instanceRequirementsHasBeenSet = true;
+    m_instanceRequirements = std::forward<InstanceRequirementsT>(value);
+  }
+  template <typename InstanceRequirementsT = ClusterInstanceRequirementDetails>
+  ClusterInstanceGroupDetails& WithInstanceRequirements(InstanceRequirementsT&& value) {
+    SetInstanceRequirements(std::forward<InstanceRequirementsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Details about the instance types in the instance group, including the count
+   * and configuration of each instance type. This field is present for flexible
+   * instance groups that support multiple instance types.</p>
+   */
+  inline const Aws::Vector<ClusterInstanceTypeDetail>& GetInstanceTypeDetails() const { return m_instanceTypeDetails; }
+  inline bool InstanceTypeDetailsHasBeenSet() const { return m_instanceTypeDetailsHasBeenSet; }
+  template <typename InstanceTypeDetailsT = Aws::Vector<ClusterInstanceTypeDetail>>
+  void SetInstanceTypeDetails(InstanceTypeDetailsT&& value) {
+    m_instanceTypeDetailsHasBeenSet = true;
+    m_instanceTypeDetails = std::forward<InstanceTypeDetailsT>(value);
+  }
+  template <typename InstanceTypeDetailsT = Aws::Vector<ClusterInstanceTypeDetail>>
+  ClusterInstanceGroupDetails& WithInstanceTypeDetails(InstanceTypeDetailsT&& value) {
+    SetInstanceTypeDetails(std::forward<InstanceTypeDetailsT>(value));
+    return *this;
+  }
+  template <typename InstanceTypeDetailsT = ClusterInstanceTypeDetail>
+  ClusterInstanceGroupDetails& AddInstanceTypeDetails(InstanceTypeDetailsT&& value) {
+    m_instanceTypeDetailsHasBeenSet = true;
+    m_instanceTypeDetails.emplace_back(std::forward<InstanceTypeDetailsT>(value));
     return *this;
   }
   ///@}
@@ -536,6 +584,10 @@ class ClusterInstanceGroupDetails {
 
   ClusterInstanceType m_instanceType{ClusterInstanceType::NOT_SET};
 
+  ClusterInstanceRequirementDetails m_instanceRequirements;
+
+  Aws::Vector<ClusterInstanceTypeDetail> m_instanceTypeDetails;
+
   ClusterLifeCycleConfig m_lifeCycleConfig;
 
   Aws::String m_executionRole;
@@ -578,6 +630,8 @@ class ClusterInstanceGroupDetails {
   bool m_minCountHasBeenSet = false;
   bool m_instanceGroupNameHasBeenSet = false;
   bool m_instanceTypeHasBeenSet = false;
+  bool m_instanceRequirementsHasBeenSet = false;
+  bool m_instanceTypeDetailsHasBeenSet = false;
   bool m_lifeCycleConfigHasBeenSet = false;
   bool m_executionRoleHasBeenSet = false;
   bool m_threadsPerCoreHasBeenSet = false;

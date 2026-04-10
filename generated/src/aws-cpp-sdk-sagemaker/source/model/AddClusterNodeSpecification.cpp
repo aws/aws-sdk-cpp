@@ -26,6 +26,21 @@ AddClusterNodeSpecification& AddClusterNodeSpecification::operator=(JsonView jso
     m_incrementTargetCountBy = jsonValue.GetInteger("IncrementTargetCountBy");
     m_incrementTargetCountByHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AvailabilityZones")) {
+    Aws::Utils::Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
+    for (unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex) {
+      m_availabilityZones.push_back(availabilityZonesJsonList[availabilityZonesIndex].AsString());
+    }
+    m_availabilityZonesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("InstanceTypes")) {
+    Aws::Utils::Array<JsonView> instanceTypesJsonList = jsonValue.GetArray("InstanceTypes");
+    for (unsigned instanceTypesIndex = 0; instanceTypesIndex < instanceTypesJsonList.GetLength(); ++instanceTypesIndex) {
+      m_instanceTypes.push_back(
+          ClusterInstanceTypeMapper::GetClusterInstanceTypeForName(instanceTypesJsonList[instanceTypesIndex].AsString()));
+    }
+    m_instanceTypesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +53,23 @@ JsonValue AddClusterNodeSpecification::Jsonize() const {
 
   if (m_incrementTargetCountByHasBeenSet) {
     payload.WithInteger("IncrementTargetCountBy", m_incrementTargetCountBy);
+  }
+
+  if (m_availabilityZonesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> availabilityZonesJsonList(m_availabilityZones.size());
+    for (unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex) {
+      availabilityZonesJsonList[availabilityZonesIndex].AsString(m_availabilityZones[availabilityZonesIndex]);
+    }
+    payload.WithArray("AvailabilityZones", std::move(availabilityZonesJsonList));
+  }
+
+  if (m_instanceTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> instanceTypesJsonList(m_instanceTypes.size());
+    for (unsigned instanceTypesIndex = 0; instanceTypesIndex < instanceTypesJsonList.GetLength(); ++instanceTypesIndex) {
+      instanceTypesJsonList[instanceTypesIndex].AsString(
+          ClusterInstanceTypeMapper::GetNameForClusterInstanceType(m_instanceTypes[instanceTypesIndex]));
+    }
+    payload.WithArray("InstanceTypes", std::move(instanceTypesJsonList));
   }
 
   return payload;

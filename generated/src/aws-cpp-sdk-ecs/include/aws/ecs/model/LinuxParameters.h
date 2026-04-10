@@ -131,8 +131,6 @@ class LinuxParameters {
   /**
    * <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This
    * parameter maps to the <code>--tmpfs</code> option to docker run.</p>
-   * <p>If you're using tasks that use the Fargate launch type, the
-   * <code>tmpfs</code> parameter isn't supported.</p>
    */
   inline const Aws::Vector<Tmpfs>& GetTmpfs() const { return m_tmpfs; }
   inline bool TmpfsHasBeenSet() const { return m_tmpfsHasBeenSet; }

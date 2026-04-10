@@ -33,6 +33,7 @@
 #include <aws/sagemaker/model/SearchTrainingPlanOfferingsRequest.h>
 #include <aws/sagemaker/model/SendPipelineExecutionStepFailureRequest.h>
 #include <aws/sagemaker/model/SendPipelineExecutionStepSuccessRequest.h>
+#include <aws/sagemaker/model/StartClusterHealthCheckRequest.h>
 #include <aws/sagemaker/model/StartEdgeDeploymentStageRequest.h>
 #include <aws/sagemaker/model/StartInferenceExperimentRequest.h>
 #include <aws/sagemaker/model/StartMlflowTrackingServerRequest.h>
@@ -188,6 +189,12 @@ SendPipelineExecutionStepSuccessOutcome SageMakerClient::SendPipelineExecutionSt
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? SendPipelineExecutionStepSuccessOutcome(result.GetResultWithOwnership())
                             : SendPipelineExecutionStepSuccessOutcome(std::move(result.GetError()));
+}
+
+StartClusterHealthCheckOutcome SageMakerClient::StartClusterHealthCheck(const StartClusterHealthCheckRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartClusterHealthCheckOutcome(result.GetResultWithOwnership())
+                            : StartClusterHealthCheckOutcome(std::move(result.GetError()));
 }
 
 StartEdgeDeploymentStageOutcome SageMakerClient::StartEdgeDeploymentStage(const StartEdgeDeploymentStageRequest& request) const {

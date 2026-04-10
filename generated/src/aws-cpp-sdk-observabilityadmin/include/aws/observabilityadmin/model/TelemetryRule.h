@@ -151,6 +151,52 @@ class TelemetryRule {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> An optional list of Amazon Web Services Regions where this telemetry rule
+   * should be replicated. When specified, the rule is created in the home region and
+   * automatically replicated to all listed regions. Mutually exclusive with
+   * <code>AllRegions</code>. </p>
+   */
+  inline const Aws::Vector<Aws::String>& GetRegions() const { return m_regions; }
+  inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
+  template <typename RegionsT = Aws::Vector<Aws::String>>
+  void SetRegions(RegionsT&& value) {
+    m_regionsHasBeenSet = true;
+    m_regions = std::forward<RegionsT>(value);
+  }
+  template <typename RegionsT = Aws::Vector<Aws::String>>
+  TelemetryRule& WithRegions(RegionsT&& value) {
+    SetRegions(std::forward<RegionsT>(value));
+    return *this;
+  }
+  template <typename RegionsT = Aws::String>
+  TelemetryRule& AddRegions(RegionsT&& value) {
+    m_regionsHasBeenSet = true;
+    m_regions.emplace_back(std::forward<RegionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> If set to <code>true</code>, the telemetry rule is replicated to all Amazon
+   * Web Services Regions where Amazon CloudWatch Observability Admin is available in
+   * the current partition. When new regions become available, the rule automatically
+   * replicates to them. Mutually exclusive with <code>Regions</code>. </p>
+   */
+  inline bool GetAllRegions() const { return m_allRegions; }
+  inline bool AllRegionsHasBeenSet() const { return m_allRegionsHasBeenSet; }
+  inline void SetAllRegions(bool value) {
+    m_allRegionsHasBeenSet = true;
+    m_allRegions = value;
+  }
+  inline TelemetryRule& WithAllRegions(bool value) {
+    SetAllRegions(value);
+    return *this;
+  }
+  ///@}
  private:
   ResourceType m_resourceType{ResourceType::NOT_SET};
 
@@ -163,12 +209,18 @@ class TelemetryRule {
   Aws::String m_scope;
 
   Aws::String m_selectionCriteria;
+
+  Aws::Vector<Aws::String> m_regions;
+
+  bool m_allRegions{false};
   bool m_resourceTypeHasBeenSet = false;
   bool m_telemetryTypeHasBeenSet = false;
   bool m_telemetrySourceTypesHasBeenSet = false;
   bool m_destinationConfigurationHasBeenSet = false;
   bool m_scopeHasBeenSet = false;
   bool m_selectionCriteriaHasBeenSet = false;
+  bool m_regionsHasBeenSet = false;
+  bool m_allRegionsHasBeenSet = false;
 };
 
 }  // namespace Model

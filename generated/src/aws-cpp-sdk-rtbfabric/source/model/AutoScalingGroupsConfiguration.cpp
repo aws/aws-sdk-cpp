@@ -30,6 +30,10 @@ AutoScalingGroupsConfiguration& AutoScalingGroupsConfiguration::operator=(JsonVi
     m_roleArn = jsonValue.GetString("roleArn");
     m_roleArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("healthCheckConfig")) {
+    m_healthCheckConfig = jsonValue.GetObject("healthCheckConfig");
+    m_healthCheckConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -47,6 +51,10 @@ JsonValue AutoScalingGroupsConfiguration::Jsonize() const {
 
   if (m_roleArnHasBeenSet) {
     payload.WithString("roleArn", m_roleArn);
+  }
+
+  if (m_healthCheckConfigHasBeenSet) {
+    payload.WithObject("healthCheckConfig", m_healthCheckConfig.Jsonize());
   }
 
   return payload;

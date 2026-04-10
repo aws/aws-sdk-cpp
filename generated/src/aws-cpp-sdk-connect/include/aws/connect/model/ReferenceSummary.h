@@ -98,6 +98,22 @@ class ReferenceSummary {
 
   ///@{
 
+  inline const EmailMessageReference& GetEmailMessageRedacted() const { return m_emailMessageRedacted; }
+  inline bool EmailMessageRedactedHasBeenSet() const { return m_emailMessageRedactedHasBeenSet; }
+  template <typename EmailMessageRedactedT = EmailMessageReference>
+  void SetEmailMessageRedacted(EmailMessageRedactedT&& value) {
+    m_emailMessageRedactedHasBeenSet = true;
+    m_emailMessageRedacted = std::forward<EmailMessageRedactedT>(value);
+  }
+  template <typename EmailMessageRedactedT = EmailMessageReference>
+  ReferenceSummary& WithEmailMessageRedacted(EmailMessageRedactedT&& value) {
+    SetEmailMessageRedacted(std::forward<EmailMessageRedactedT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
   inline const EmailMessageReference& GetEmailMessagePlainText() const { return m_emailMessagePlainText; }
   inline bool EmailMessagePlainTextHasBeenSet() const { return m_emailMessagePlainTextHasBeenSet; }
   template <typename EmailMessagePlainTextT = EmailMessageReference>
@@ -108,6 +124,22 @@ class ReferenceSummary {
   template <typename EmailMessagePlainTextT = EmailMessageReference>
   ReferenceSummary& WithEmailMessagePlainText(EmailMessagePlainTextT&& value) {
     SetEmailMessagePlainText(std::forward<EmailMessagePlainTextT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const EmailMessageReference& GetEmailMessagePlainTextRedacted() const { return m_emailMessagePlainTextRedacted; }
+  inline bool EmailMessagePlainTextRedactedHasBeenSet() const { return m_emailMessagePlainTextRedactedHasBeenSet; }
+  template <typename EmailMessagePlainTextRedactedT = EmailMessageReference>
+  void SetEmailMessagePlainTextRedacted(EmailMessagePlainTextRedactedT&& value) {
+    m_emailMessagePlainTextRedactedHasBeenSet = true;
+    m_emailMessagePlainTextRedacted = std::forward<EmailMessagePlainTextRedactedT>(value);
+  }
+  template <typename EmailMessagePlainTextRedactedT = EmailMessageReference>
+  ReferenceSummary& WithEmailMessagePlainTextRedacted(EmailMessagePlainTextRedactedT&& value) {
+    SetEmailMessagePlainTextRedacted(std::forward<EmailMessagePlainTextRedactedT>(value));
     return *this;
   }
   ///@}
@@ -194,7 +226,11 @@ class ReferenceSummary {
 
   EmailMessageReference m_emailMessage;
 
+  EmailMessageReference m_emailMessageRedacted;
+
   EmailMessageReference m_emailMessagePlainText;
+
+  EmailMessageReference m_emailMessagePlainTextRedacted;
 
   StringReference m_string;
 
@@ -206,7 +242,9 @@ class ReferenceSummary {
   bool m_urlHasBeenSet = false;
   bool m_attachmentHasBeenSet = false;
   bool m_emailMessageHasBeenSet = false;
+  bool m_emailMessageRedactedHasBeenSet = false;
   bool m_emailMessagePlainTextHasBeenSet = false;
+  bool m_emailMessagePlainTextRedactedHasBeenSet = false;
   bool m_stringHasBeenSet = false;
   bool m_numberHasBeenSet = false;
   bool m_dateHasBeenSet = false;

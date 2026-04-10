@@ -30,9 +30,17 @@ ReferenceSummary& ReferenceSummary::operator=(JsonView jsonValue) {
     m_emailMessage = jsonValue.GetObject("EmailMessage");
     m_emailMessageHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EmailMessageRedacted")) {
+    m_emailMessageRedacted = jsonValue.GetObject("EmailMessageRedacted");
+    m_emailMessageRedactedHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("EmailMessagePlainText")) {
     m_emailMessagePlainText = jsonValue.GetObject("EmailMessagePlainText");
     m_emailMessagePlainTextHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("EmailMessagePlainTextRedacted")) {
+    m_emailMessagePlainTextRedacted = jsonValue.GetObject("EmailMessagePlainTextRedacted");
+    m_emailMessagePlainTextRedactedHasBeenSet = true;
   }
   if (jsonValue.ValueExists("String")) {
     m_string = jsonValue.GetObject("String");
@@ -68,8 +76,16 @@ JsonValue ReferenceSummary::Jsonize() const {
     payload.WithObject("EmailMessage", m_emailMessage.Jsonize());
   }
 
+  if (m_emailMessageRedactedHasBeenSet) {
+    payload.WithObject("EmailMessageRedacted", m_emailMessageRedacted.Jsonize());
+  }
+
   if (m_emailMessagePlainTextHasBeenSet) {
     payload.WithObject("EmailMessagePlainText", m_emailMessagePlainText.Jsonize());
+  }
+
+  if (m_emailMessagePlainTextRedactedHasBeenSet) {
+    payload.WithObject("EmailMessagePlainTextRedacted", m_emailMessagePlainTextRedacted.Jsonize());
   }
 
   if (m_stringHasBeenSet) {

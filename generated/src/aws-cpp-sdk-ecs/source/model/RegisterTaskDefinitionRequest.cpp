@@ -95,15 +95,6 @@ Aws::String RegisterTaskDefinitionRequest::SerializePayload() const {
     payload.WithObject("proxyConfiguration", m_proxyConfiguration.Jsonize());
   }
 
-  if (m_inferenceAcceleratorsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> inferenceAcceleratorsJsonList(m_inferenceAccelerators.size());
-    for (unsigned inferenceAcceleratorsIndex = 0; inferenceAcceleratorsIndex < inferenceAcceleratorsJsonList.GetLength();
-         ++inferenceAcceleratorsIndex) {
-      inferenceAcceleratorsJsonList[inferenceAcceleratorsIndex].AsObject(m_inferenceAccelerators[inferenceAcceleratorsIndex].Jsonize());
-    }
-    payload.WithArray("inferenceAccelerators", std::move(inferenceAcceleratorsJsonList));
-  }
-
   if (m_ephemeralStorageHasBeenSet) {
     payload.WithObject("ephemeralStorage", m_ephemeralStorage.Jsonize());
   }

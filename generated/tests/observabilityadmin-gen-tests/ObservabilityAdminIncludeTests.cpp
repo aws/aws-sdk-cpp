@@ -103,6 +103,7 @@
 #include <aws/observabilityadmin/model/PipelineOutputError.h>
 #include <aws/observabilityadmin/model/Record.h>
 #include <aws/observabilityadmin/model/RecordFormat.h>
+#include <aws/observabilityadmin/model/RegionStatus.h>
 #include <aws/observabilityadmin/model/ResourceNotFoundException.h>
 #include <aws/observabilityadmin/model/ResourceType.h>
 #include <aws/observabilityadmin/model/RuleHealth.h>

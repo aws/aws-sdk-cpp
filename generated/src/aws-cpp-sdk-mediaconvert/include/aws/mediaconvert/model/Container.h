@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/Format.h>
@@ -72,6 +73,26 @@ class Container {
 
   ///@{
   /**
+   * The start timecode of the media file, in HH:MM:SS:FF format (or HH:MM:SS;FF for
+   * drop frame timecode). Note that this field is null when the container does not
+   * include an embedded start timecode.
+   */
+  inline const Aws::String& GetStartTimecode() const { return m_startTimecode; }
+  inline bool StartTimecodeHasBeenSet() const { return m_startTimecodeHasBeenSet; }
+  template <typename StartTimecodeT = Aws::String>
+  void SetStartTimecode(StartTimecodeT&& value) {
+    m_startTimecodeHasBeenSet = true;
+    m_startTimecode = std::forward<StartTimecodeT>(value);
+  }
+  template <typename StartTimecodeT = Aws::String>
+  Container& WithStartTimecode(StartTimecodeT&& value) {
+    SetStartTimecode(std::forward<StartTimecodeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * Details about each track (video, audio, or data) in the media file.
    */
   inline const Aws::Vector<Track>& GetTracks() const { return m_tracks; }
@@ -98,9 +119,12 @@ class Container {
 
   Format m_format{Format::NOT_SET};
 
+  Aws::String m_startTimecode;
+
   Aws::Vector<Track> m_tracks;
   bool m_durationHasBeenSet = false;
   bool m_formatHasBeenSet = false;
+  bool m_startTimecodeHasBeenSet = false;
   bool m_tracksHasBeenSet = false;
 };
 

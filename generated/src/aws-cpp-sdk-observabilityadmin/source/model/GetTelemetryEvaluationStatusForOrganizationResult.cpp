@@ -34,6 +34,17 @@ GetTelemetryEvaluationStatusForOrganizationResult& GetTelemetryEvaluationStatusF
     m_failureReason = jsonValue.GetString("FailureReason");
     m_failureReasonHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("HomeRegion")) {
+    m_homeRegion = jsonValue.GetString("HomeRegion");
+    m_homeRegionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("RegionStatuses")) {
+    Aws::Utils::Array<JsonView> regionStatusesJsonList = jsonValue.GetArray("RegionStatuses");
+    for (unsigned regionStatusesIndex = 0; regionStatusesIndex < regionStatusesJsonList.GetLength(); ++regionStatusesIndex) {
+      m_regionStatuses.push_back(regionStatusesJsonList[regionStatusesIndex].AsObject());
+    }
+    m_regionStatusesHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

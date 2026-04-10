@@ -55,6 +55,7 @@
 #include <aws/rtbfabric/model/GetResponderGatewayRequest.h>
 #include <aws/rtbfabric/model/GetResponderGatewayResult.h>
 #include <aws/rtbfabric/model/HeaderTagAction.h>
+#include <aws/rtbfabric/model/HealthCheckConfig.h>
 #include <aws/rtbfabric/model/LinkApplicationLogConfiguration.h>
 #include <aws/rtbfabric/model/LinkApplicationLogSampling.h>
 #include <aws/rtbfabric/model/LinkAttributes.h>

@@ -215,10 +215,13 @@
 #include <aws/sagemaker/model/ClusterInstanceGroupDetails.h>
 #include <aws/sagemaker/model/ClusterInstanceGroupSpecification.h>
 #include <aws/sagemaker/model/ClusterInstancePlacement.h>
+#include <aws/sagemaker/model/ClusterInstanceRequirementDetails.h>
+#include <aws/sagemaker/model/ClusterInstanceRequirements.h>
 #include <aws/sagemaker/model/ClusterInstanceStatus.h>
 #include <aws/sagemaker/model/ClusterInstanceStatusDetails.h>
 #include <aws/sagemaker/model/ClusterInstanceStorageConfig.h>
 #include <aws/sagemaker/model/ClusterInstanceType.h>
+#include <aws/sagemaker/model/ClusterInstanceTypeDetail.h>
 #include <aws/sagemaker/model/ClusterKubernetesConfig.h>
 #include <aws/sagemaker/model/ClusterKubernetesConfigDetails.h>
 #include <aws/sagemaker/model/ClusterKubernetesConfigNodeDetails.h>
@@ -897,6 +900,7 @@
 #include <aws/sagemaker/model/InputConfig.h>
 #include <aws/sagemaker/model/InputMode.h>
 #include <aws/sagemaker/model/InstanceGroup.h>
+#include <aws/sagemaker/model/InstanceGroupHealthCheckConfiguration.h>
 #include <aws/sagemaker/model/InstanceGroupMetadata.h>
 #include <aws/sagemaker/model/InstanceGroupScalingMetadata.h>
 #include <aws/sagemaker/model/InstanceGroupStatus.h>
@@ -1542,6 +1546,8 @@
 #include <aws/sagemaker/model/SplitType.h>
 #include <aws/sagemaker/model/StageStatus.h>
 #include <aws/sagemaker/model/Stairs.h>
+#include <aws/sagemaker/model/StartClusterHealthCheckRequest.h>
+#include <aws/sagemaker/model/StartClusterHealthCheckResult.h>
 #include <aws/sagemaker/model/StartEdgeDeploymentStageRequest.h>
 #include <aws/sagemaker/model/StartInferenceExperimentRequest.h>
 #include <aws/sagemaker/model/StartInferenceExperimentResult.h>

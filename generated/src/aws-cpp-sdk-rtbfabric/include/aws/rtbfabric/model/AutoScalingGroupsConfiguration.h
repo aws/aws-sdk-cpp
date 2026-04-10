@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rtbfabric/RTBFabric_EXPORTS.h>
+#include <aws/rtbfabric/model/HealthCheckConfig.h>
 
 #include <utility>
 
@@ -74,12 +75,34 @@ class AutoScalingGroupsConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The health check configuration for the Auto Scaling group managed
+   * endpoint.</p>
+   */
+  inline const HealthCheckConfig& GetHealthCheckConfig() const { return m_healthCheckConfig; }
+  inline bool HealthCheckConfigHasBeenSet() const { return m_healthCheckConfigHasBeenSet; }
+  template <typename HealthCheckConfigT = HealthCheckConfig>
+  void SetHealthCheckConfig(HealthCheckConfigT&& value) {
+    m_healthCheckConfigHasBeenSet = true;
+    m_healthCheckConfig = std::forward<HealthCheckConfigT>(value);
+  }
+  template <typename HealthCheckConfigT = HealthCheckConfig>
+  AutoScalingGroupsConfiguration& WithHealthCheckConfig(HealthCheckConfigT&& value) {
+    SetHealthCheckConfig(std::forward<HealthCheckConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_autoScalingGroupNames;
 
   Aws::String m_roleArn;
+
+  HealthCheckConfig m_healthCheckConfig;
   bool m_autoScalingGroupNamesHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
+  bool m_healthCheckConfigHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -10,7 +10,13 @@
 namespace Aws {
 namespace SageMaker {
 namespace Model {
-enum class BatchAddClusterNodesErrorCode { NOT_SET, InstanceGroupNotFound, InvalidInstanceGroupStatus };
+enum class BatchAddClusterNodesErrorCode {
+  NOT_SET,
+  InstanceGroupNotFound,
+  InvalidInstanceGroupStatus,
+  IncompatibleAvailabilityZones,
+  IncompatibleInstanceTypes
+};
 
 namespace BatchAddClusterNodesErrorCodeMapper {
 AWS_SAGEMAKER_API BatchAddClusterNodesErrorCode GetBatchAddClusterNodesErrorCodeForName(const Aws::String& name);
