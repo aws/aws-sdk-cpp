@@ -329,6 +329,10 @@ elseif(PLATFORM_LINUX OR PLATFORM_APPLE)
   #add unix specific impl stuff here.
 
   file(GLOB PLATFORM_LINUX_SHARED_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/platform/linux-shared/*.cpp")
+  if(CMAKE_SYSTEM_NAME STREQUAL "AIX")
+      list(REMOVE_ITEM PLATFORM_LINUX_SHARED_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/platform/linux-shared/Time.cpp")
+      list(APPEND PLATFORM_LINUX_SHARED_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/platform/aix/*.cpp")
+  endif()
 
   file(GLOB AWS_NATIVE_SDK_LINUX_SHARED_SRC
      ${PLATFORM_LINUX_SHARED_SOURCE}
