@@ -25,6 +25,7 @@
 #include <aws/mediaconvert/model/InputTamsSettings.h>
 #include <aws/mediaconvert/model/InputTimecodeSource.h>
 #include <aws/mediaconvert/model/InputVideoGenerator.h>
+#include <aws/mediaconvert/model/MultiViewSettings.h>
 #include <aws/mediaconvert/model/Rectangle.h>
 #include <aws/mediaconvert/model/VideoOverlay.h>
 #include <aws/mediaconvert/model/VideoSelector.h>
@@ -456,6 +457,35 @@ class Input {
 
   ///@{
   /**
+   * Specify the enhancement layer input video file path for Multi View outputs. The
+   * base layer input is treated as the left eye and this Multi View input is treated
+   * as the right eye. Only one Multi View input is currently supported. MediaConvert
+   * encodes both views into a single MV-HEVC output codec. When you add
+   * MultiViewSettings to your job, you can only produce Multi View outputs. Adding
+   * any other codec output to the same job is not supported.
+   */
+  inline const Aws::Vector<MultiViewSettings>& GetMultiViewSettings() const { return m_multiViewSettings; }
+  inline bool MultiViewSettingsHasBeenSet() const { return m_multiViewSettingsHasBeenSet; }
+  template <typename MultiViewSettingsT = Aws::Vector<MultiViewSettings>>
+  void SetMultiViewSettings(MultiViewSettingsT&& value) {
+    m_multiViewSettingsHasBeenSet = true;
+    m_multiViewSettings = std::forward<MultiViewSettingsT>(value);
+  }
+  template <typename MultiViewSettingsT = Aws::Vector<MultiViewSettings>>
+  Input& WithMultiViewSettings(MultiViewSettingsT&& value) {
+    SetMultiViewSettings(std::forward<MultiViewSettingsT>(value));
+    return *this;
+  }
+  template <typename MultiViewSettingsT = MultiViewSettings>
+  Input& AddMultiViewSettings(MultiViewSettingsT&& value) {
+    m_multiViewSettingsHasBeenSet = true;
+    m_multiViewSettings.emplace_back(std::forward<MultiViewSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * Use Selection placement to define the video area in your output frame. The area
    * outside of the rectangle that you specify here is black. If you specify a value
    * here, it will override any value that you specify in the output setting
@@ -718,6 +748,8 @@ class Input {
 
   InputScanType m_inputScanType{InputScanType::NOT_SET};
 
+  Aws::Vector<MultiViewSettings> m_multiViewSettings;
+
   Rectangle m_position;
 
   int m_programNumber{0};
@@ -754,6 +786,7 @@ class Input {
   bool m_imageInserterHasBeenSet = false;
   bool m_inputClippingsHasBeenSet = false;
   bool m_inputScanTypeHasBeenSet = false;
+  bool m_multiViewSettingsHasBeenSet = false;
   bool m_positionHasBeenSet = false;
   bool m_programNumberHasBeenSet = false;
   bool m_psiControlHasBeenSet = false;

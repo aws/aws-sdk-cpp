@@ -32,6 +32,22 @@ class PutLaunchActionRequest : public DrsRequest {
   AWS_DRS_API Aws::String SerializePayload() const override;
 
   ///@{
+
+  inline const Aws::String& GetResourceId() const { return m_resourceId; }
+  inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+  template <typename ResourceIdT = Aws::String>
+  void SetResourceId(ResourceIdT&& value) {
+    m_resourceIdHasBeenSet = true;
+    m_resourceId = std::forward<ResourceIdT>(value);
+  }
+  template <typename ResourceIdT = Aws::String>
+  PutLaunchActionRequest& WithResourceId(ResourceIdT&& value) {
+    SetResourceId(std::forward<ResourceIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
    * <p>Launch action code.</p>
    */
@@ -45,6 +61,20 @@ class PutLaunchActionRequest : public DrsRequest {
   template <typename ActionCodeT = Aws::String>
   PutLaunchActionRequest& WithActionCode(ActionCodeT&& value) {
     SetActionCode(std::forward<ActionCodeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline int GetOrder() const { return m_order; }
+  inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
+  inline void SetOrder(int value) {
+    m_orderHasBeenSet = true;
+    m_order = value;
+  }
+  inline PutLaunchActionRequest& WithOrder(int value) {
+    SetOrder(value);
     return *this;
   }
   ///@}
@@ -66,17 +96,17 @@ class PutLaunchActionRequest : public DrsRequest {
   ///@}
 
   ///@{
-
-  inline const Aws::String& GetActionVersion() const { return m_actionVersion; }
-  inline bool ActionVersionHasBeenSet() const { return m_actionVersionHasBeenSet; }
-  template <typename ActionVersionT = Aws::String>
-  void SetActionVersion(ActionVersionT&& value) {
-    m_actionVersionHasBeenSet = true;
-    m_actionVersion = std::forward<ActionVersionT>(value);
+  /**
+   * <p>Whether the launch will not be marked as failed if this action fails.</p>
+   */
+  inline bool GetOptional() const { return m_optional; }
+  inline bool OptionalHasBeenSet() const { return m_optionalHasBeenSet; }
+  inline void SetOptional(bool value) {
+    m_optionalHasBeenSet = true;
+    m_optional = value;
   }
-  template <typename ActionVersionT = Aws::String>
-  PutLaunchActionRequest& WithActionVersion(ActionVersionT&& value) {
-    SetActionVersion(std::forward<ActionVersionT>(value));
+  inline PutLaunchActionRequest& WithOptional(bool value) {
+    SetOptional(value);
     return *this;
   }
   ///@}
@@ -99,36 +129,6 @@ class PutLaunchActionRequest : public DrsRequest {
 
   ///@{
 
-  inline LaunchActionCategory GetCategory() const { return m_category; }
-  inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-  inline void SetCategory(LaunchActionCategory value) {
-    m_categoryHasBeenSet = true;
-    m_category = value;
-  }
-  inline PutLaunchActionRequest& WithCategory(LaunchActionCategory value) {
-    SetCategory(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  PutLaunchActionRequest& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
   template <typename NameT = Aws::String>
@@ -144,31 +144,31 @@ class PutLaunchActionRequest : public DrsRequest {
   ///@}
 
   ///@{
-  /**
-   * <p>Whether the launch will not be marked as failed if this action fails.</p>
-   */
-  inline bool GetOptional() const { return m_optional; }
-  inline bool OptionalHasBeenSet() const { return m_optionalHasBeenSet; }
-  inline void SetOptional(bool value) {
-    m_optionalHasBeenSet = true;
-    m_optional = value;
+
+  inline const Aws::String& GetActionVersion() const { return m_actionVersion; }
+  inline bool ActionVersionHasBeenSet() const { return m_actionVersionHasBeenSet; }
+  template <typename ActionVersionT = Aws::String>
+  void SetActionVersion(ActionVersionT&& value) {
+    m_actionVersionHasBeenSet = true;
+    m_actionVersion = std::forward<ActionVersionT>(value);
   }
-  inline PutLaunchActionRequest& WithOptional(bool value) {
-    SetOptional(value);
+  template <typename ActionVersionT = Aws::String>
+  PutLaunchActionRequest& WithActionVersion(ActionVersionT&& value) {
+    SetActionVersion(std::forward<ActionVersionT>(value));
     return *this;
   }
   ///@}
 
   ///@{
 
-  inline int GetOrder() const { return m_order; }
-  inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
-  inline void SetOrder(int value) {
-    m_orderHasBeenSet = true;
-    m_order = value;
+  inline LaunchActionCategory GetCategory() const { return m_category; }
+  inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+  inline void SetCategory(LaunchActionCategory value) {
+    m_categoryHasBeenSet = true;
+    m_category = value;
   }
-  inline PutLaunchActionRequest& WithOrder(int value) {
-    SetOrder(value);
+  inline PutLaunchActionRequest& WithCategory(LaunchActionCategory value) {
+    SetCategory(value);
     return *this;
   }
   ///@}
@@ -197,52 +197,52 @@ class PutLaunchActionRequest : public DrsRequest {
 
   ///@{
 
-  inline const Aws::String& GetResourceId() const { return m_resourceId; }
-  inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-  template <typename ResourceIdT = Aws::String>
-  void SetResourceId(ResourceIdT&& value) {
-    m_resourceIdHasBeenSet = true;
-    m_resourceId = std::forward<ResourceIdT>(value);
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
   }
-  template <typename ResourceIdT = Aws::String>
-  PutLaunchActionRequest& WithResourceId(ResourceIdT&& value) {
-    SetResourceId(std::forward<ResourceIdT>(value));
+  template <typename DescriptionT = Aws::String>
+  PutLaunchActionRequest& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
     return *this;
   }
   ///@}
  private:
+  Aws::String m_resourceId;
+
   Aws::String m_actionCode;
-
-  Aws::String m_actionId;
-
-  Aws::String m_actionVersion;
-
-  bool m_active{false};
-
-  LaunchActionCategory m_category{LaunchActionCategory::NOT_SET};
-
-  Aws::String m_description;
-
-  Aws::String m_name;
-
-  bool m_optional{false};
 
   int m_order{0};
 
+  Aws::String m_actionId;
+
+  bool m_optional{false};
+
+  bool m_active{false};
+
+  Aws::String m_name;
+
+  Aws::String m_actionVersion;
+
+  LaunchActionCategory m_category{LaunchActionCategory::NOT_SET};
+
   Aws::Map<Aws::String, LaunchActionParameter> m_parameters;
 
-  Aws::String m_resourceId;
-  bool m_actionCodeHasBeenSet = false;
-  bool m_actionIdHasBeenSet = false;
-  bool m_actionVersionHasBeenSet = false;
-  bool m_activeHasBeenSet = false;
-  bool m_categoryHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
-  bool m_nameHasBeenSet = false;
-  bool m_optionalHasBeenSet = false;
-  bool m_orderHasBeenSet = false;
-  bool m_parametersHasBeenSet = false;
+  Aws::String m_description;
   bool m_resourceIdHasBeenSet = false;
+  bool m_actionCodeHasBeenSet = false;
+  bool m_orderHasBeenSet = false;
+  bool m_actionIdHasBeenSet = false;
+  bool m_optionalHasBeenSet = false;
+  bool m_activeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_actionVersionHasBeenSet = false;
+  bool m_categoryHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
 };
 
 }  // namespace Model

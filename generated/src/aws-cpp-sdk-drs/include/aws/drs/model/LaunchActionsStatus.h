@@ -35,6 +35,25 @@ class LaunchActionsStatus {
 
   ///@{
   /**
+   * <p>Time where the AWS Systems Manager was detected as running on the launched
+   * instance.</p>
+   */
+  inline const Aws::String& GetSsmAgentDiscoveryDatetime() const { return m_ssmAgentDiscoveryDatetime; }
+  inline bool SsmAgentDiscoveryDatetimeHasBeenSet() const { return m_ssmAgentDiscoveryDatetimeHasBeenSet; }
+  template <typename SsmAgentDiscoveryDatetimeT = Aws::String>
+  void SetSsmAgentDiscoveryDatetime(SsmAgentDiscoveryDatetimeT&& value) {
+    m_ssmAgentDiscoveryDatetimeHasBeenSet = true;
+    m_ssmAgentDiscoveryDatetime = std::forward<SsmAgentDiscoveryDatetimeT>(value);
+  }
+  template <typename SsmAgentDiscoveryDatetimeT = Aws::String>
+  LaunchActionsStatus& WithSsmAgentDiscoveryDatetime(SsmAgentDiscoveryDatetimeT&& value) {
+    SetSsmAgentDiscoveryDatetime(std::forward<SsmAgentDiscoveryDatetimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>List of post launch action status.</p>
    */
   inline const Aws::Vector<LaunchActionRun>& GetRuns() const { return m_runs; }
@@ -56,31 +75,12 @@ class LaunchActionsStatus {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Time where the AWS Systems Manager was detected as running on the launched
-   * instance.</p>
-   */
-  inline const Aws::String& GetSsmAgentDiscoveryDatetime() const { return m_ssmAgentDiscoveryDatetime; }
-  inline bool SsmAgentDiscoveryDatetimeHasBeenSet() const { return m_ssmAgentDiscoveryDatetimeHasBeenSet; }
-  template <typename SsmAgentDiscoveryDatetimeT = Aws::String>
-  void SetSsmAgentDiscoveryDatetime(SsmAgentDiscoveryDatetimeT&& value) {
-    m_ssmAgentDiscoveryDatetimeHasBeenSet = true;
-    m_ssmAgentDiscoveryDatetime = std::forward<SsmAgentDiscoveryDatetimeT>(value);
-  }
-  template <typename SsmAgentDiscoveryDatetimeT = Aws::String>
-  LaunchActionsStatus& WithSsmAgentDiscoveryDatetime(SsmAgentDiscoveryDatetimeT&& value) {
-    SetSsmAgentDiscoveryDatetime(std::forward<SsmAgentDiscoveryDatetimeT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::Vector<LaunchActionRun> m_runs;
-
   Aws::String m_ssmAgentDiscoveryDatetime;
-  bool m_runsHasBeenSet = false;
+
+  Aws::Vector<LaunchActionRun> m_runs;
   bool m_ssmAgentDiscoveryDatetimeHasBeenSet = false;
+  bool m_runsHasBeenSet = false;
 };
 
 }  // namespace Model

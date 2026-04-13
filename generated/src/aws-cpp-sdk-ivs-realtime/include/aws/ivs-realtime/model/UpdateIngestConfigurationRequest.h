@@ -64,12 +64,32 @@ class UpdateIngestConfigurationRequest : public IvsrealtimeRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether redundant ingest is enabled for the ingest configuration.
+   * Default: <code>false</code>.</p>
+   */
+  inline bool GetRedundantIngest() const { return m_redundantIngest; }
+  inline bool RedundantIngestHasBeenSet() const { return m_redundantIngestHasBeenSet; }
+  inline void SetRedundantIngest(bool value) {
+    m_redundantIngestHasBeenSet = true;
+    m_redundantIngest = value;
+  }
+  inline UpdateIngestConfigurationRequest& WithRedundantIngest(bool value) {
+    SetRedundantIngest(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
   Aws::String m_stageArn;
+
+  bool m_redundantIngest{false};
   bool m_arnHasBeenSet = false;
   bool m_stageArnHasBeenSet = false;
+  bool m_redundantIngestHasBeenSet = false;
 };
 
 }  // namespace Model

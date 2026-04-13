@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/drs/DrsRequest.h>
 #include <aws/drs/Drs_EXPORTS.h>
+#include <aws/drs/model/InternetProtocol.h>
 
 #include <utility>
 
@@ -30,17 +31,18 @@ class UpdateFailbackReplicationConfigurationRequest : public DrsRequest {
 
   ///@{
   /**
-   * <p>Configure bandwidth throttling for the outbound data transfer rate of the
-   * Recovery Instance in Mbps.</p>
+   * <p>The ID of the Recovery Instance.</p>
    */
-  inline long long GetBandwidthThrottling() const { return m_bandwidthThrottling; }
-  inline bool BandwidthThrottlingHasBeenSet() const { return m_bandwidthThrottlingHasBeenSet; }
-  inline void SetBandwidthThrottling(long long value) {
-    m_bandwidthThrottlingHasBeenSet = true;
-    m_bandwidthThrottling = value;
+  inline const Aws::String& GetRecoveryInstanceID() const { return m_recoveryInstanceID; }
+  inline bool RecoveryInstanceIDHasBeenSet() const { return m_recoveryInstanceIDHasBeenSet; }
+  template <typename RecoveryInstanceIDT = Aws::String>
+  void SetRecoveryInstanceID(RecoveryInstanceIDT&& value) {
+    m_recoveryInstanceIDHasBeenSet = true;
+    m_recoveryInstanceID = std::forward<RecoveryInstanceIDT>(value);
   }
-  inline UpdateFailbackReplicationConfigurationRequest& WithBandwidthThrottling(long long value) {
-    SetBandwidthThrottling(value);
+  template <typename RecoveryInstanceIDT = Aws::String>
+  UpdateFailbackReplicationConfigurationRequest& WithRecoveryInstanceID(RecoveryInstanceIDT&& value) {
+    SetRecoveryInstanceID(std::forward<RecoveryInstanceIDT>(value));
     return *this;
   }
   ///@}
@@ -65,18 +67,17 @@ class UpdateFailbackReplicationConfigurationRequest : public DrsRequest {
 
   ///@{
   /**
-   * <p>The ID of the Recovery Instance.</p>
+   * <p>Configure bandwidth throttling for the outbound data transfer rate of the
+   * Recovery Instance in Mbps.</p>
    */
-  inline const Aws::String& GetRecoveryInstanceID() const { return m_recoveryInstanceID; }
-  inline bool RecoveryInstanceIDHasBeenSet() const { return m_recoveryInstanceIDHasBeenSet; }
-  template <typename RecoveryInstanceIDT = Aws::String>
-  void SetRecoveryInstanceID(RecoveryInstanceIDT&& value) {
-    m_recoveryInstanceIDHasBeenSet = true;
-    m_recoveryInstanceID = std::forward<RecoveryInstanceIDT>(value);
+  inline long long GetBandwidthThrottling() const { return m_bandwidthThrottling; }
+  inline bool BandwidthThrottlingHasBeenSet() const { return m_bandwidthThrottlingHasBeenSet; }
+  inline void SetBandwidthThrottling(long long value) {
+    m_bandwidthThrottlingHasBeenSet = true;
+    m_bandwidthThrottling = value;
   }
-  template <typename RecoveryInstanceIDT = Aws::String>
-  UpdateFailbackReplicationConfigurationRequest& WithRecoveryInstanceID(RecoveryInstanceIDT&& value) {
-    SetRecoveryInstanceID(std::forward<RecoveryInstanceIDT>(value));
+  inline UpdateFailbackReplicationConfigurationRequest& WithBandwidthThrottling(long long value) {
+    SetBandwidthThrottling(value);
     return *this;
   }
   ///@}
@@ -97,18 +98,38 @@ class UpdateFailbackReplicationConfigurationRequest : public DrsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Which version of the Internet Protocol to use for replication of data. (IPv4
+   * or IPv6)</p>
+   */
+  inline InternetProtocol GetInternetProtocol() const { return m_internetProtocol; }
+  inline bool InternetProtocolHasBeenSet() const { return m_internetProtocolHasBeenSet; }
+  inline void SetInternetProtocol(InternetProtocol value) {
+    m_internetProtocolHasBeenSet = true;
+    m_internetProtocol = value;
+  }
+  inline UpdateFailbackReplicationConfigurationRequest& WithInternetProtocol(InternetProtocol value) {
+    SetInternetProtocol(value);
+    return *this;
+  }
+  ///@}
  private:
-  long long m_bandwidthThrottling{0};
+  Aws::String m_recoveryInstanceID;
 
   Aws::String m_name;
 
-  Aws::String m_recoveryInstanceID;
+  long long m_bandwidthThrottling{0};
 
   bool m_usePrivateIP{false};
-  bool m_bandwidthThrottlingHasBeenSet = false;
-  bool m_nameHasBeenSet = false;
+
+  InternetProtocol m_internetProtocol{InternetProtocol::NOT_SET};
   bool m_recoveryInstanceIDHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_bandwidthThrottlingHasBeenSet = false;
   bool m_usePrivateIPHasBeenSet = false;
+  bool m_internetProtocolHasBeenSet = false;
 };
 
 }  // namespace Model

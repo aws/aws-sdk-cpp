@@ -11,7 +11,6 @@
 #include <aws/ecs/model/Compatibility.h>
 #include <aws/ecs/model/ContainerDefinition.h>
 #include <aws/ecs/model/EphemeralStorage.h>
-#include <aws/ecs/model/InferenceAccelerator.h>
 #include <aws/ecs/model/IpcMode.h>
 #include <aws/ecs/model/NetworkMode.h>
 #include <aws/ecs/model/PidMode.h>
@@ -470,30 +469,6 @@ class RegisterTaskDefinitionRequest : public ECSRequest {
 
   ///@{
   /**
-   * <p>The Elastic Inference accelerators to use for the containers in the task.</p>
-   */
-  inline const Aws::Vector<InferenceAccelerator>& GetInferenceAccelerators() const { return m_inferenceAccelerators; }
-  inline bool InferenceAcceleratorsHasBeenSet() const { return m_inferenceAcceleratorsHasBeenSet; }
-  template <typename InferenceAcceleratorsT = Aws::Vector<InferenceAccelerator>>
-  void SetInferenceAccelerators(InferenceAcceleratorsT&& value) {
-    m_inferenceAcceleratorsHasBeenSet = true;
-    m_inferenceAccelerators = std::forward<InferenceAcceleratorsT>(value);
-  }
-  template <typename InferenceAcceleratorsT = Aws::Vector<InferenceAccelerator>>
-  RegisterTaskDefinitionRequest& WithInferenceAccelerators(InferenceAcceleratorsT&& value) {
-    SetInferenceAccelerators(std::forward<InferenceAcceleratorsT>(value));
-    return *this;
-  }
-  template <typename InferenceAcceleratorsT = InferenceAccelerator>
-  RegisterTaskDefinitionRequest& AddInferenceAccelerators(InferenceAcceleratorsT&& value) {
-    m_inferenceAcceleratorsHasBeenSet = true;
-    m_inferenceAccelerators.emplace_back(std::forward<InferenceAcceleratorsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The amount of ephemeral storage to allocate for the task. This parameter is
    * used to expand the total amount of ephemeral storage available, beyond the
    * default amount, for tasks hosted on Fargate. For more information, see <a
@@ -582,8 +557,6 @@ class RegisterTaskDefinitionRequest : public ECSRequest {
 
   ProxyConfiguration m_proxyConfiguration;
 
-  Aws::Vector<InferenceAccelerator> m_inferenceAccelerators;
-
   EphemeralStorage m_ephemeralStorage;
 
   RuntimePlatform m_runtimePlatform;
@@ -603,7 +576,6 @@ class RegisterTaskDefinitionRequest : public ECSRequest {
   bool m_pidModeHasBeenSet = false;
   bool m_ipcModeHasBeenSet = false;
   bool m_proxyConfigurationHasBeenSet = false;
-  bool m_inferenceAcceleratorsHasBeenSet = false;
   bool m_ephemeralStorageHasBeenSet = false;
   bool m_runtimePlatformHasBeenSet = false;
   bool m_enableFaultInjectionHasBeenSet = false;

@@ -37,17 +37,17 @@ class DisconnectSourceServerResult {
 
   ///@{
   /**
-   * <p>The version of the DRS agent installed on the source server</p>
+   * <p>The ID of the Source Server.</p>
    */
-  inline const Aws::String& GetAgentVersion() const { return m_agentVersion; }
-  template <typename AgentVersionT = Aws::String>
-  void SetAgentVersion(AgentVersionT&& value) {
-    m_agentVersionHasBeenSet = true;
-    m_agentVersion = std::forward<AgentVersionT>(value);
+  inline const Aws::String& GetSourceServerID() const { return m_sourceServerID; }
+  template <typename SourceServerIDT = Aws::String>
+  void SetSourceServerID(SourceServerIDT&& value) {
+    m_sourceServerIDHasBeenSet = true;
+    m_sourceServerID = std::forward<SourceServerIDT>(value);
   }
-  template <typename AgentVersionT = Aws::String>
-  DisconnectSourceServerResult& WithAgentVersion(AgentVersionT&& value) {
-    SetAgentVersion(std::forward<AgentVersionT>(value));
+  template <typename SourceServerIDT = Aws::String>
+  DisconnectSourceServerResult& WithSourceServerID(SourceServerIDT&& value) {
+    SetSourceServerID(std::forward<SourceServerIDT>(value));
     return *this;
   }
   ///@}
@@ -71,17 +71,40 @@ class DisconnectSourceServerResult {
 
   ///@{
   /**
-   * <p>The Data Replication Info of the Source Server.</p>
+   * <p>The tags associated with the Source Server.</p>
    */
-  inline const DataReplicationInfo& GetDataReplicationInfo() const { return m_dataReplicationInfo; }
-  template <typename DataReplicationInfoT = DataReplicationInfo>
-  void SetDataReplicationInfo(DataReplicationInfoT&& value) {
-    m_dataReplicationInfoHasBeenSet = true;
-    m_dataReplicationInfo = std::forward<DataReplicationInfoT>(value);
+  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
   }
-  template <typename DataReplicationInfoT = DataReplicationInfo>
-  DisconnectSourceServerResult& WithDataReplicationInfo(DataReplicationInfoT&& value) {
-    SetDataReplicationInfo(std::forward<DataReplicationInfoT>(value));
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  DisconnectSourceServerResult& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+  DisconnectSourceServerResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the Recovery Instance associated with this Source Server.</p>
+   */
+  inline const Aws::String& GetRecoveryInstanceId() const { return m_recoveryInstanceId; }
+  template <typename RecoveryInstanceIdT = Aws::String>
+  void SetRecoveryInstanceId(RecoveryInstanceIdT&& value) {
+    m_recoveryInstanceIdHasBeenSet = true;
+    m_recoveryInstanceId = std::forward<RecoveryInstanceIdT>(value);
+  }
+  template <typename RecoveryInstanceIdT = Aws::String>
+  DisconnectSourceServerResult& WithRecoveryInstanceId(RecoveryInstanceIdT&& value) {
+    SetRecoveryInstanceId(std::forward<RecoveryInstanceIdT>(value));
     return *this;
   }
   ///@}
@@ -97,6 +120,23 @@ class DisconnectSourceServerResult {
   }
   inline DisconnectSourceServerResult& WithLastLaunchResult(LastLaunchResult value) {
     SetLastLaunchResult(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Data Replication Info of the Source Server.</p>
+   */
+  inline const DataReplicationInfo& GetDataReplicationInfo() const { return m_dataReplicationInfo; }
+  template <typename DataReplicationInfoT = DataReplicationInfo>
+  void SetDataReplicationInfo(DataReplicationInfoT&& value) {
+    m_dataReplicationInfoHasBeenSet = true;
+    m_dataReplicationInfo = std::forward<DataReplicationInfoT>(value);
+  }
+  template <typename DataReplicationInfoT = DataReplicationInfo>
+  DisconnectSourceServerResult& WithDataReplicationInfo(DataReplicationInfoT&& value) {
+    SetDataReplicationInfo(std::forward<DataReplicationInfoT>(value));
     return *this;
   }
   ///@}
@@ -120,17 +160,51 @@ class DisconnectSourceServerResult {
 
   ///@{
   /**
-   * <p>The ID of the Recovery Instance associated with this Source Server.</p>
+   * <p>The source properties of the Source Server.</p>
    */
-  inline const Aws::String& GetRecoveryInstanceId() const { return m_recoveryInstanceId; }
-  template <typename RecoveryInstanceIdT = Aws::String>
-  void SetRecoveryInstanceId(RecoveryInstanceIdT&& value) {
-    m_recoveryInstanceIdHasBeenSet = true;
-    m_recoveryInstanceId = std::forward<RecoveryInstanceIdT>(value);
+  inline const SourceProperties& GetSourceProperties() const { return m_sourceProperties; }
+  template <typename SourcePropertiesT = SourceProperties>
+  void SetSourceProperties(SourcePropertiesT&& value) {
+    m_sourcePropertiesHasBeenSet = true;
+    m_sourceProperties = std::forward<SourcePropertiesT>(value);
   }
-  template <typename RecoveryInstanceIdT = Aws::String>
-  DisconnectSourceServerResult& WithRecoveryInstanceId(RecoveryInstanceIdT&& value) {
-    SetRecoveryInstanceId(std::forward<RecoveryInstanceIdT>(value));
+  template <typename SourcePropertiesT = SourceProperties>
+  DisconnectSourceServerResult& WithSourceProperties(SourcePropertiesT&& value) {
+    SetSourceProperties(std::forward<SourcePropertiesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The staging area of the source server.</p>
+   */
+  inline const StagingArea& GetStagingArea() const { return m_stagingArea; }
+  template <typename StagingAreaT = StagingArea>
+  void SetStagingArea(StagingAreaT&& value) {
+    m_stagingAreaHasBeenSet = true;
+    m_stagingArea = std::forward<StagingAreaT>(value);
+  }
+  template <typename StagingAreaT = StagingArea>
+  DisconnectSourceServerResult& WithStagingArea(StagingAreaT&& value) {
+    SetStagingArea(std::forward<StagingAreaT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Source cloud properties of the Source Server.</p>
+   */
+  inline const SourceCloudProperties& GetSourceCloudProperties() const { return m_sourceCloudProperties; }
+  template <typename SourceCloudPropertiesT = SourceCloudProperties>
+  void SetSourceCloudProperties(SourceCloudPropertiesT&& value) {
+    m_sourceCloudPropertiesHasBeenSet = true;
+    m_sourceCloudProperties = std::forward<SourceCloudPropertiesT>(value);
+  }
+  template <typename SourceCloudPropertiesT = SourceCloudProperties>
+  DisconnectSourceServerResult& WithSourceCloudProperties(SourceCloudPropertiesT&& value) {
+    SetSourceCloudProperties(std::forward<SourceCloudPropertiesT>(value));
     return *this;
   }
   ///@}
@@ -171,23 +245,6 @@ class DisconnectSourceServerResult {
 
   ///@{
   /**
-   * <p>Source cloud properties of the Source Server.</p>
-   */
-  inline const SourceCloudProperties& GetSourceCloudProperties() const { return m_sourceCloudProperties; }
-  template <typename SourceCloudPropertiesT = SourceCloudProperties>
-  void SetSourceCloudProperties(SourceCloudPropertiesT&& value) {
-    m_sourceCloudPropertiesHasBeenSet = true;
-    m_sourceCloudProperties = std::forward<SourceCloudPropertiesT>(value);
-  }
-  template <typename SourceCloudPropertiesT = SourceCloudProperties>
-  DisconnectSourceServerResult& WithSourceCloudProperties(SourceCloudPropertiesT&& value) {
-    SetSourceCloudProperties(std::forward<SourceCloudPropertiesT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>ID of the Source Network which is protecting this Source Server's
    * network.</p>
    */
@@ -206,74 +263,17 @@ class DisconnectSourceServerResult {
 
   ///@{
   /**
-   * <p>The source properties of the Source Server.</p>
+   * <p>The version of the DRS agent installed on the source server</p>
    */
-  inline const SourceProperties& GetSourceProperties() const { return m_sourceProperties; }
-  template <typename SourcePropertiesT = SourceProperties>
-  void SetSourceProperties(SourcePropertiesT&& value) {
-    m_sourcePropertiesHasBeenSet = true;
-    m_sourceProperties = std::forward<SourcePropertiesT>(value);
+  inline const Aws::String& GetAgentVersion() const { return m_agentVersion; }
+  template <typename AgentVersionT = Aws::String>
+  void SetAgentVersion(AgentVersionT&& value) {
+    m_agentVersionHasBeenSet = true;
+    m_agentVersion = std::forward<AgentVersionT>(value);
   }
-  template <typename SourcePropertiesT = SourceProperties>
-  DisconnectSourceServerResult& WithSourceProperties(SourcePropertiesT&& value) {
-    SetSourceProperties(std::forward<SourcePropertiesT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the Source Server.</p>
-   */
-  inline const Aws::String& GetSourceServerID() const { return m_sourceServerID; }
-  template <typename SourceServerIDT = Aws::String>
-  void SetSourceServerID(SourceServerIDT&& value) {
-    m_sourceServerIDHasBeenSet = true;
-    m_sourceServerID = std::forward<SourceServerIDT>(value);
-  }
-  template <typename SourceServerIDT = Aws::String>
-  DisconnectSourceServerResult& WithSourceServerID(SourceServerIDT&& value) {
-    SetSourceServerID(std::forward<SourceServerIDT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The staging area of the source server.</p>
-   */
-  inline const StagingArea& GetStagingArea() const { return m_stagingArea; }
-  template <typename StagingAreaT = StagingArea>
-  void SetStagingArea(StagingAreaT&& value) {
-    m_stagingAreaHasBeenSet = true;
-    m_stagingArea = std::forward<StagingAreaT>(value);
-  }
-  template <typename StagingAreaT = StagingArea>
-  DisconnectSourceServerResult& WithStagingArea(StagingAreaT&& value) {
-    SetStagingArea(std::forward<StagingAreaT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The tags associated with the Source Server.</p>
-   */
-  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
-  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
-  void SetTags(TagsT&& value) {
-    m_tagsHasBeenSet = true;
-    m_tags = std::forward<TagsT>(value);
-  }
-  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
-  DisconnectSourceServerResult& WithTags(TagsT&& value) {
-    SetTags(std::forward<TagsT>(value));
-    return *this;
-  }
-  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
-  DisconnectSourceServerResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
-    m_tagsHasBeenSet = true;
-    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
+  template <typename AgentVersionT = Aws::String>
+  DisconnectSourceServerResult& WithAgentVersion(AgentVersionT&& value) {
+    SetAgentVersion(std::forward<AgentVersionT>(value));
     return *this;
   }
   ///@}
@@ -295,50 +295,50 @@ class DisconnectSourceServerResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
-  Aws::String m_agentVersion;
+  Aws::String m_sourceServerID;
 
   Aws::String m_arn;
 
-  DataReplicationInfo m_dataReplicationInfo;
+  Aws::Map<Aws::String, Aws::String> m_tags;
+
+  Aws::String m_recoveryInstanceId;
 
   LastLaunchResult m_lastLaunchResult{LastLaunchResult::NOT_SET};
 
+  DataReplicationInfo m_dataReplicationInfo;
+
   LifeCycle m_lifeCycle;
 
-  Aws::String m_recoveryInstanceId;
+  SourceProperties m_sourceProperties;
+
+  StagingArea m_stagingArea;
+
+  SourceCloudProperties m_sourceCloudProperties;
 
   ReplicationDirection m_replicationDirection{ReplicationDirection::NOT_SET};
 
   Aws::String m_reversedDirectionSourceServerArn;
 
-  SourceCloudProperties m_sourceCloudProperties;
-
   Aws::String m_sourceNetworkID;
 
-  SourceProperties m_sourceProperties;
-
-  Aws::String m_sourceServerID;
-
-  StagingArea m_stagingArea;
-
-  Aws::Map<Aws::String, Aws::String> m_tags;
+  Aws::String m_agentVersion;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
-  bool m_agentVersionHasBeenSet = false;
+  bool m_sourceServerIDHasBeenSet = false;
   bool m_arnHasBeenSet = false;
-  bool m_dataReplicationInfoHasBeenSet = false;
-  bool m_lastLaunchResultHasBeenSet = false;
-  bool m_lifeCycleHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_recoveryInstanceIdHasBeenSet = false;
+  bool m_lastLaunchResultHasBeenSet = false;
+  bool m_dataReplicationInfoHasBeenSet = false;
+  bool m_lifeCycleHasBeenSet = false;
+  bool m_sourcePropertiesHasBeenSet = false;
+  bool m_stagingAreaHasBeenSet = false;
+  bool m_sourceCloudPropertiesHasBeenSet = false;
   bool m_replicationDirectionHasBeenSet = false;
   bool m_reversedDirectionSourceServerArnHasBeenSet = false;
-  bool m_sourceCloudPropertiesHasBeenSet = false;
   bool m_sourceNetworkIDHasBeenSet = false;
-  bool m_sourcePropertiesHasBeenSet = false;
-  bool m_sourceServerIDHasBeenSet = false;
-  bool m_stagingAreaHasBeenSet = false;
-  bool m_tagsHasBeenSet = false;
+  bool m_agentVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

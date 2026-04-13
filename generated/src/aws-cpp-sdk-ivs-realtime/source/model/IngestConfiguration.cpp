@@ -50,6 +50,18 @@ IngestConfiguration& IngestConfiguration::operator=(JsonView jsonValue) {
     m_userId = jsonValue.GetString("userId");
     m_userIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("redundantIngest")) {
+    m_redundantIngest = jsonValue.GetBool("redundantIngest");
+    m_redundantIngestHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("redundantIngestCredentials")) {
+    Aws::Utils::Array<JsonView> redundantIngestCredentialsJsonList = jsonValue.GetArray("redundantIngestCredentials");
+    for (unsigned redundantIngestCredentialsIndex = 0; redundantIngestCredentialsIndex < redundantIngestCredentialsJsonList.GetLength();
+         ++redundantIngestCredentialsIndex) {
+      m_redundantIngestCredentials.push_back(redundantIngestCredentialsJsonList[redundantIngestCredentialsIndex].AsObject());
+    }
+    m_redundantIngestCredentialsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("attributes")) {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
     for (auto& attributesItem : attributesJsonMap) {
@@ -100,6 +112,20 @@ JsonValue IngestConfiguration::Jsonize() const {
 
   if (m_userIdHasBeenSet) {
     payload.WithString("userId", m_userId);
+  }
+
+  if (m_redundantIngestHasBeenSet) {
+    payload.WithBool("redundantIngest", m_redundantIngest);
+  }
+
+  if (m_redundantIngestCredentialsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> redundantIngestCredentialsJsonList(m_redundantIngestCredentials.size());
+    for (unsigned redundantIngestCredentialsIndex = 0; redundantIngestCredentialsIndex < redundantIngestCredentialsJsonList.GetLength();
+         ++redundantIngestCredentialsIndex) {
+      redundantIngestCredentialsJsonList[redundantIngestCredentialsIndex].AsObject(
+          m_redundantIngestCredentials[redundantIngestCredentialsIndex].Jsonize());
+    }
+    payload.WithArray("redundantIngestCredentials", std::move(redundantIngestCredentialsJsonList));
   }
 
   if (m_attributesHasBeenSet) {

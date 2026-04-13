@@ -33,56 +33,6 @@ class UpdateLaunchConfigurationTemplateRequest : public DrsRequest {
 
   ///@{
   /**
-   * <p>Copy private IP.</p>
-   */
-  inline bool GetCopyPrivateIp() const { return m_copyPrivateIp; }
-  inline bool CopyPrivateIpHasBeenSet() const { return m_copyPrivateIpHasBeenSet; }
-  inline void SetCopyPrivateIp(bool value) {
-    m_copyPrivateIpHasBeenSet = true;
-    m_copyPrivateIp = value;
-  }
-  inline UpdateLaunchConfigurationTemplateRequest& WithCopyPrivateIp(bool value) {
-    SetCopyPrivateIp(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Copy tags.</p>
-   */
-  inline bool GetCopyTags() const { return m_copyTags; }
-  inline bool CopyTagsHasBeenSet() const { return m_copyTagsHasBeenSet; }
-  inline void SetCopyTags(bool value) {
-    m_copyTagsHasBeenSet = true;
-    m_copyTags = value;
-  }
-  inline UpdateLaunchConfigurationTemplateRequest& WithCopyTags(bool value) {
-    SetCopyTags(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>S3 bucket ARN to export Source Network templates.</p>
-   */
-  inline const Aws::String& GetExportBucketArn() const { return m_exportBucketArn; }
-  inline bool ExportBucketArnHasBeenSet() const { return m_exportBucketArnHasBeenSet; }
-  template <typename ExportBucketArnT = Aws::String>
-  void SetExportBucketArn(ExportBucketArnT&& value) {
-    m_exportBucketArnHasBeenSet = true;
-    m_exportBucketArn = std::forward<ExportBucketArnT>(value);
-  }
-  template <typename ExportBucketArnT = Aws::String>
-  UpdateLaunchConfigurationTemplateRequest& WithExportBucketArn(ExportBucketArnT&& value) {
-    SetExportBucketArn(std::forward<ExportBucketArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Launch Configuration Template ID.</p>
    */
   inline const Aws::String& GetLaunchConfigurationTemplateID() const { return m_launchConfigurationTemplateID; }
@@ -117,18 +67,50 @@ class UpdateLaunchConfigurationTemplateRequest : public DrsRequest {
 
   ///@{
   /**
-   * <p>DRS will set the 'launch into instance ID' of any source server when
-   * performing a drill, recovery or failback to the previous region or availability
-   * zone, using the instance ID of the source instance.</p>
+   * <p>Target instance type right-sizing method.</p>
    */
-  inline bool GetLaunchIntoSourceInstance() const { return m_launchIntoSourceInstance; }
-  inline bool LaunchIntoSourceInstanceHasBeenSet() const { return m_launchIntoSourceInstanceHasBeenSet; }
-  inline void SetLaunchIntoSourceInstance(bool value) {
-    m_launchIntoSourceInstanceHasBeenSet = true;
-    m_launchIntoSourceInstance = value;
+  inline TargetInstanceTypeRightSizingMethod GetTargetInstanceTypeRightSizingMethod() const {
+    return m_targetInstanceTypeRightSizingMethod;
   }
-  inline UpdateLaunchConfigurationTemplateRequest& WithLaunchIntoSourceInstance(bool value) {
-    SetLaunchIntoSourceInstance(value);
+  inline bool TargetInstanceTypeRightSizingMethodHasBeenSet() const { return m_targetInstanceTypeRightSizingMethodHasBeenSet; }
+  inline void SetTargetInstanceTypeRightSizingMethod(TargetInstanceTypeRightSizingMethod value) {
+    m_targetInstanceTypeRightSizingMethodHasBeenSet = true;
+    m_targetInstanceTypeRightSizingMethod = value;
+  }
+  inline UpdateLaunchConfigurationTemplateRequest& WithTargetInstanceTypeRightSizingMethod(TargetInstanceTypeRightSizingMethod value) {
+    SetTargetInstanceTypeRightSizingMethod(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Copy private IP.</p>
+   */
+  inline bool GetCopyPrivateIp() const { return m_copyPrivateIp; }
+  inline bool CopyPrivateIpHasBeenSet() const { return m_copyPrivateIpHasBeenSet; }
+  inline void SetCopyPrivateIp(bool value) {
+    m_copyPrivateIpHasBeenSet = true;
+    m_copyPrivateIp = value;
+  }
+  inline UpdateLaunchConfigurationTemplateRequest& WithCopyPrivateIp(bool value) {
+    SetCopyPrivateIp(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Copy tags.</p>
+   */
+  inline bool GetCopyTags() const { return m_copyTags; }
+  inline bool CopyTagsHasBeenSet() const { return m_copyTagsHasBeenSet; }
+  inline void SetCopyTags(bool value) {
+    m_copyTagsHasBeenSet = true;
+    m_copyTags = value;
+  }
+  inline UpdateLaunchConfigurationTemplateRequest& WithCopyTags(bool value) {
+    SetCopyTags(value);
     return *this;
   }
   ///@}
@@ -153,6 +135,24 @@ class UpdateLaunchConfigurationTemplateRequest : public DrsRequest {
 
   ///@{
   /**
+   * <p>S3 bucket ARN to export Source Network templates.</p>
+   */
+  inline const Aws::String& GetExportBucketArn() const { return m_exportBucketArn; }
+  inline bool ExportBucketArnHasBeenSet() const { return m_exportBucketArnHasBeenSet; }
+  template <typename ExportBucketArnT = Aws::String>
+  void SetExportBucketArn(ExportBucketArnT&& value) {
+    m_exportBucketArnHasBeenSet = true;
+    m_exportBucketArn = std::forward<ExportBucketArnT>(value);
+  }
+  template <typename ExportBucketArnT = Aws::String>
+  UpdateLaunchConfigurationTemplateRequest& WithExportBucketArn(ExportBucketArnT&& value) {
+    SetExportBucketArn(std::forward<ExportBucketArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Whether we want to activate post-launch actions.</p>
    */
   inline bool GetPostLaunchEnabled() const { return m_postLaunchEnabled; }
@@ -169,48 +169,48 @@ class UpdateLaunchConfigurationTemplateRequest : public DrsRequest {
 
   ///@{
   /**
-   * <p>Target instance type right-sizing method.</p>
+   * <p>DRS will set the 'launch into instance ID' of any source server when
+   * performing a drill, recovery or failback to the previous region or availability
+   * zone, using the instance ID of the source instance.</p>
    */
-  inline TargetInstanceTypeRightSizingMethod GetTargetInstanceTypeRightSizingMethod() const {
-    return m_targetInstanceTypeRightSizingMethod;
+  inline bool GetLaunchIntoSourceInstance() const { return m_launchIntoSourceInstance; }
+  inline bool LaunchIntoSourceInstanceHasBeenSet() const { return m_launchIntoSourceInstanceHasBeenSet; }
+  inline void SetLaunchIntoSourceInstance(bool value) {
+    m_launchIntoSourceInstanceHasBeenSet = true;
+    m_launchIntoSourceInstance = value;
   }
-  inline bool TargetInstanceTypeRightSizingMethodHasBeenSet() const { return m_targetInstanceTypeRightSizingMethodHasBeenSet; }
-  inline void SetTargetInstanceTypeRightSizingMethod(TargetInstanceTypeRightSizingMethod value) {
-    m_targetInstanceTypeRightSizingMethodHasBeenSet = true;
-    m_targetInstanceTypeRightSizingMethod = value;
-  }
-  inline UpdateLaunchConfigurationTemplateRequest& WithTargetInstanceTypeRightSizingMethod(TargetInstanceTypeRightSizingMethod value) {
-    SetTargetInstanceTypeRightSizingMethod(value);
+  inline UpdateLaunchConfigurationTemplateRequest& WithLaunchIntoSourceInstance(bool value) {
+    SetLaunchIntoSourceInstance(value);
     return *this;
   }
   ///@}
  private:
-  bool m_copyPrivateIp{false};
-
-  bool m_copyTags{false};
-
-  Aws::String m_exportBucketArn;
-
   Aws::String m_launchConfigurationTemplateID;
 
   LaunchDisposition m_launchDisposition{LaunchDisposition::NOT_SET};
 
-  bool m_launchIntoSourceInstance{false};
+  TargetInstanceTypeRightSizingMethod m_targetInstanceTypeRightSizingMethod{TargetInstanceTypeRightSizingMethod::NOT_SET};
+
+  bool m_copyPrivateIp{false};
+
+  bool m_copyTags{false};
 
   Licensing m_licensing;
 
+  Aws::String m_exportBucketArn;
+
   bool m_postLaunchEnabled{false};
 
-  TargetInstanceTypeRightSizingMethod m_targetInstanceTypeRightSizingMethod{TargetInstanceTypeRightSizingMethod::NOT_SET};
-  bool m_copyPrivateIpHasBeenSet = false;
-  bool m_copyTagsHasBeenSet = false;
-  bool m_exportBucketArnHasBeenSet = false;
+  bool m_launchIntoSourceInstance{false};
   bool m_launchConfigurationTemplateIDHasBeenSet = false;
   bool m_launchDispositionHasBeenSet = false;
-  bool m_launchIntoSourceInstanceHasBeenSet = false;
-  bool m_licensingHasBeenSet = false;
-  bool m_postLaunchEnabledHasBeenSet = false;
   bool m_targetInstanceTypeRightSizingMethodHasBeenSet = false;
+  bool m_copyPrivateIpHasBeenSet = false;
+  bool m_copyTagsHasBeenSet = false;
+  bool m_licensingHasBeenSet = false;
+  bool m_exportBucketArnHasBeenSet = false;
+  bool m_postLaunchEnabledHasBeenSet = false;
+  bool m_launchIntoSourceInstanceHasBeenSet = false;
 };
 
 }  // namespace Model

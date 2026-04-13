@@ -36,6 +36,42 @@ class SourceNetwork {
 
   ///@{
   /**
+   * <p>Source Network ID.</p>
+   */
+  inline const Aws::String& GetSourceNetworkID() const { return m_sourceNetworkID; }
+  inline bool SourceNetworkIDHasBeenSet() const { return m_sourceNetworkIDHasBeenSet; }
+  template <typename SourceNetworkIDT = Aws::String>
+  void SetSourceNetworkID(SourceNetworkIDT&& value) {
+    m_sourceNetworkIDHasBeenSet = true;
+    m_sourceNetworkID = std::forward<SourceNetworkIDT>(value);
+  }
+  template <typename SourceNetworkIDT = Aws::String>
+  SourceNetwork& WithSourceNetworkID(SourceNetworkIDT&& value) {
+    SetSourceNetworkID(std::forward<SourceNetworkIDT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>VPC ID protected by the Source Network.</p>
+   */
+  inline const Aws::String& GetSourceVpcID() const { return m_sourceVpcID; }
+  inline bool SourceVpcIDHasBeenSet() const { return m_sourceVpcIDHasBeenSet; }
+  template <typename SourceVpcIDT = Aws::String>
+  void SetSourceVpcID(SourceVpcIDT&& value) {
+    m_sourceVpcIDHasBeenSet = true;
+    m_sourceVpcID = std::forward<SourceVpcIDT>(value);
+  }
+  template <typename SourceVpcIDT = Aws::String>
+  SourceNetwork& WithSourceVpcID(SourceVpcIDT&& value) {
+    SetSourceVpcID(std::forward<SourceVpcIDT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ARN of the Source Network.</p>
    */
   inline const Aws::String& GetArn() const { return m_arn; }
@@ -54,56 +90,24 @@ class SourceNetwork {
 
   ///@{
   /**
-   * <p>CloudFormation stack name that was deployed for recovering the Source
-   * Network.</p>
+   * <p>A list of tags associated with the Source Network.</p>
    */
-  inline const Aws::String& GetCfnStackName() const { return m_cfnStackName; }
-  inline bool CfnStackNameHasBeenSet() const { return m_cfnStackNameHasBeenSet; }
-  template <typename CfnStackNameT = Aws::String>
-  void SetCfnStackName(CfnStackNameT&& value) {
-    m_cfnStackNameHasBeenSet = true;
-    m_cfnStackName = std::forward<CfnStackNameT>(value);
+  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
   }
-  template <typename CfnStackNameT = Aws::String>
-  SourceNetwork& WithCfnStackName(CfnStackNameT&& value) {
-    SetCfnStackName(std::forward<CfnStackNameT>(value));
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  SourceNetwork& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
     return *this;
   }
-  ///@}
-
-  ///@{
-  /**
-   * <p>An object containing information regarding the last recovery of the Source
-   * Network.</p>
-   */
-  inline const RecoveryLifeCycle& GetLastRecovery() const { return m_lastRecovery; }
-  inline bool LastRecoveryHasBeenSet() const { return m_lastRecoveryHasBeenSet; }
-  template <typename LastRecoveryT = RecoveryLifeCycle>
-  void SetLastRecovery(LastRecoveryT&& value) {
-    m_lastRecoveryHasBeenSet = true;
-    m_lastRecovery = std::forward<LastRecoveryT>(value);
-  }
-  template <typename LastRecoveryT = RecoveryLifeCycle>
-  SourceNetwork& WithLastRecovery(LastRecoveryT&& value) {
-    SetLastRecovery(std::forward<LastRecoveryT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>ID of the recovered VPC following Source Network recovery.</p>
-   */
-  inline const Aws::String& GetLaunchedVpcID() const { return m_launchedVpcID; }
-  inline bool LaunchedVpcIDHasBeenSet() const { return m_launchedVpcIDHasBeenSet; }
-  template <typename LaunchedVpcIDT = Aws::String>
-  void SetLaunchedVpcID(LaunchedVpcIDT&& value) {
-    m_launchedVpcIDHasBeenSet = true;
-    m_launchedVpcID = std::forward<LaunchedVpcIDT>(value);
-  }
-  template <typename LaunchedVpcIDT = Aws::String>
-  SourceNetwork& WithLaunchedVpcID(LaunchedVpcIDT&& value) {
-    SetLaunchedVpcID(std::forward<LaunchedVpcIDT>(value));
+  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+  SourceNetwork& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
     return *this;
   }
   ///@}
@@ -148,36 +152,19 @@ class SourceNetwork {
 
   ///@{
   /**
-   * <p>Account ID containing the VPC protected by the Source Network.</p>
+   * <p>CloudFormation stack name that was deployed for recovering the Source
+   * Network.</p>
    */
-  inline const Aws::String& GetSourceAccountID() const { return m_sourceAccountID; }
-  inline bool SourceAccountIDHasBeenSet() const { return m_sourceAccountIDHasBeenSet; }
-  template <typename SourceAccountIDT = Aws::String>
-  void SetSourceAccountID(SourceAccountIDT&& value) {
-    m_sourceAccountIDHasBeenSet = true;
-    m_sourceAccountID = std::forward<SourceAccountIDT>(value);
+  inline const Aws::String& GetCfnStackName() const { return m_cfnStackName; }
+  inline bool CfnStackNameHasBeenSet() const { return m_cfnStackNameHasBeenSet; }
+  template <typename CfnStackNameT = Aws::String>
+  void SetCfnStackName(CfnStackNameT&& value) {
+    m_cfnStackNameHasBeenSet = true;
+    m_cfnStackName = std::forward<CfnStackNameT>(value);
   }
-  template <typename SourceAccountIDT = Aws::String>
-  SourceNetwork& WithSourceAccountID(SourceAccountIDT&& value) {
-    SetSourceAccountID(std::forward<SourceAccountIDT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Source Network ID.</p>
-   */
-  inline const Aws::String& GetSourceNetworkID() const { return m_sourceNetworkID; }
-  inline bool SourceNetworkIDHasBeenSet() const { return m_sourceNetworkIDHasBeenSet; }
-  template <typename SourceNetworkIDT = Aws::String>
-  void SetSourceNetworkID(SourceNetworkIDT&& value) {
-    m_sourceNetworkIDHasBeenSet = true;
-    m_sourceNetworkID = std::forward<SourceNetworkIDT>(value);
-  }
-  template <typename SourceNetworkIDT = Aws::String>
-  SourceNetwork& WithSourceNetworkID(SourceNetworkIDT&& value) {
-    SetSourceNetworkID(std::forward<SourceNetworkIDT>(value));
+  template <typename CfnStackNameT = Aws::String>
+  SourceNetwork& WithCfnStackName(CfnStackNameT&& value) {
+    SetCfnStackName(std::forward<CfnStackNameT>(value));
     return *this;
   }
   ///@}
@@ -202,78 +189,91 @@ class SourceNetwork {
 
   ///@{
   /**
-   * <p>VPC ID protected by the Source Network.</p>
+   * <p>Account ID containing the VPC protected by the Source Network.</p>
    */
-  inline const Aws::String& GetSourceVpcID() const { return m_sourceVpcID; }
-  inline bool SourceVpcIDHasBeenSet() const { return m_sourceVpcIDHasBeenSet; }
-  template <typename SourceVpcIDT = Aws::String>
-  void SetSourceVpcID(SourceVpcIDT&& value) {
-    m_sourceVpcIDHasBeenSet = true;
-    m_sourceVpcID = std::forward<SourceVpcIDT>(value);
+  inline const Aws::String& GetSourceAccountID() const { return m_sourceAccountID; }
+  inline bool SourceAccountIDHasBeenSet() const { return m_sourceAccountIDHasBeenSet; }
+  template <typename SourceAccountIDT = Aws::String>
+  void SetSourceAccountID(SourceAccountIDT&& value) {
+    m_sourceAccountIDHasBeenSet = true;
+    m_sourceAccountID = std::forward<SourceAccountIDT>(value);
   }
-  template <typename SourceVpcIDT = Aws::String>
-  SourceNetwork& WithSourceVpcID(SourceVpcIDT&& value) {
-    SetSourceVpcID(std::forward<SourceVpcIDT>(value));
+  template <typename SourceAccountIDT = Aws::String>
+  SourceNetwork& WithSourceAccountID(SourceAccountIDT&& value) {
+    SetSourceAccountID(std::forward<SourceAccountIDT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>A list of tags associated with the Source Network.</p>
+   * <p>An object containing information regarding the last recovery of the Source
+   * Network.</p>
    */
-  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
-  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
-  void SetTags(TagsT&& value) {
-    m_tagsHasBeenSet = true;
-    m_tags = std::forward<TagsT>(value);
+  inline const RecoveryLifeCycle& GetLastRecovery() const { return m_lastRecovery; }
+  inline bool LastRecoveryHasBeenSet() const { return m_lastRecoveryHasBeenSet; }
+  template <typename LastRecoveryT = RecoveryLifeCycle>
+  void SetLastRecovery(LastRecoveryT&& value) {
+    m_lastRecoveryHasBeenSet = true;
+    m_lastRecovery = std::forward<LastRecoveryT>(value);
   }
-  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
-  SourceNetwork& WithTags(TagsT&& value) {
-    SetTags(std::forward<TagsT>(value));
+  template <typename LastRecoveryT = RecoveryLifeCycle>
+  SourceNetwork& WithLastRecovery(LastRecoveryT&& value) {
+    SetLastRecovery(std::forward<LastRecoveryT>(value));
     return *this;
   }
-  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
-  SourceNetwork& AddTags(TagsKeyT&& key, TagsValueT&& value) {
-    m_tagsHasBeenSet = true;
-    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
+  ///@}
+
+  ///@{
+  /**
+   * <p>ID of the recovered VPC following Source Network recovery.</p>
+   */
+  inline const Aws::String& GetLaunchedVpcID() const { return m_launchedVpcID; }
+  inline bool LaunchedVpcIDHasBeenSet() const { return m_launchedVpcIDHasBeenSet; }
+  template <typename LaunchedVpcIDT = Aws::String>
+  void SetLaunchedVpcID(LaunchedVpcIDT&& value) {
+    m_launchedVpcIDHasBeenSet = true;
+    m_launchedVpcID = std::forward<LaunchedVpcIDT>(value);
+  }
+  template <typename LaunchedVpcIDT = Aws::String>
+  SourceNetwork& WithLaunchedVpcID(LaunchedVpcIDT&& value) {
+    SetLaunchedVpcID(std::forward<LaunchedVpcIDT>(value));
     return *this;
   }
   ///@}
  private:
+  Aws::String m_sourceNetworkID;
+
+  Aws::String m_sourceVpcID;
+
   Aws::String m_arn;
 
-  Aws::String m_cfnStackName;
-
-  RecoveryLifeCycle m_lastRecovery;
-
-  Aws::String m_launchedVpcID;
+  Aws::Map<Aws::String, Aws::String> m_tags;
 
   ReplicationStatus m_replicationStatus{ReplicationStatus::NOT_SET};
 
   Aws::String m_replicationStatusDetails;
 
-  Aws::String m_sourceAccountID;
-
-  Aws::String m_sourceNetworkID;
+  Aws::String m_cfnStackName;
 
   Aws::String m_sourceRegion;
 
-  Aws::String m_sourceVpcID;
+  Aws::String m_sourceAccountID;
 
-  Aws::Map<Aws::String, Aws::String> m_tags;
+  RecoveryLifeCycle m_lastRecovery;
+
+  Aws::String m_launchedVpcID;
+  bool m_sourceNetworkIDHasBeenSet = false;
+  bool m_sourceVpcIDHasBeenSet = false;
   bool m_arnHasBeenSet = false;
-  bool m_cfnStackNameHasBeenSet = false;
-  bool m_lastRecoveryHasBeenSet = false;
-  bool m_launchedVpcIDHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_replicationStatusHasBeenSet = false;
   bool m_replicationStatusDetailsHasBeenSet = false;
-  bool m_sourceAccountIDHasBeenSet = false;
-  bool m_sourceNetworkIDHasBeenSet = false;
+  bool m_cfnStackNameHasBeenSet = false;
   bool m_sourceRegionHasBeenSet = false;
-  bool m_sourceVpcIDHasBeenSet = false;
-  bool m_tagsHasBeenSet = false;
+  bool m_sourceAccountIDHasBeenSet = false;
+  bool m_lastRecoveryHasBeenSet = false;
+  bool m_launchedVpcIDHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -25,21 +25,25 @@ GetFailbackReplicationConfigurationResult& GetFailbackReplicationConfigurationRe
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("bandwidthThrottling")) {
-    m_bandwidthThrottling = jsonValue.GetInt64("bandwidthThrottling");
-    m_bandwidthThrottlingHasBeenSet = true;
+  if (jsonValue.ValueExists("recoveryInstanceID")) {
+    m_recoveryInstanceID = jsonValue.GetString("recoveryInstanceID");
+    m_recoveryInstanceIDHasBeenSet = true;
   }
   if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("recoveryInstanceID")) {
-    m_recoveryInstanceID = jsonValue.GetString("recoveryInstanceID");
-    m_recoveryInstanceIDHasBeenSet = true;
+  if (jsonValue.ValueExists("bandwidthThrottling")) {
+    m_bandwidthThrottling = jsonValue.GetInt64("bandwidthThrottling");
+    m_bandwidthThrottlingHasBeenSet = true;
   }
   if (jsonValue.ValueExists("usePrivateIP")) {
     m_usePrivateIP = jsonValue.GetBool("usePrivateIP");
     m_usePrivateIPHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("internetProtocol")) {
+    m_internetProtocol = InternetProtocolMapper::GetInternetProtocolForName(jsonValue.GetString("internetProtocol"));
+    m_internetProtocolHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

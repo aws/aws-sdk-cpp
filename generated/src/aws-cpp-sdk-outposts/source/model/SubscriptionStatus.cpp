@@ -16,6 +16,7 @@ namespace Model {
 namespace SubscriptionStatusMapper {
 
 static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
+static const int PENDING_HASH = HashingUtils::HashString("PENDING");
 static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
 static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
 
@@ -23,6 +24,8 @@ SubscriptionStatus GetSubscriptionStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == ACTIVE_HASH) {
     return SubscriptionStatus::ACTIVE;
+  } else if (hashCode == PENDING_HASH) {
+    return SubscriptionStatus::PENDING;
   } else if (hashCode == INACTIVE_HASH) {
     return SubscriptionStatus::INACTIVE;
   } else if (hashCode == CANCELLED_HASH) {
@@ -43,6 +46,8 @@ Aws::String GetNameForSubscriptionStatus(SubscriptionStatus enumValue) {
       return {};
     case SubscriptionStatus::ACTIVE:
       return "ACTIVE";
+    case SubscriptionStatus::PENDING:
+      return "PENDING";
     case SubscriptionStatus::INACTIVE:
       return "INACTIVE";
     case SubscriptionStatus::CANCELLED:

@@ -38,52 +38,18 @@ class DataReplicationInfo {
 
   ///@{
   /**
-   * <p>Error in data replication.</p>
+   * <p>Data replication lag duration.</p>
    */
-  inline const DataReplicationError& GetDataReplicationError() const { return m_dataReplicationError; }
-  inline bool DataReplicationErrorHasBeenSet() const { return m_dataReplicationErrorHasBeenSet; }
-  template <typename DataReplicationErrorT = DataReplicationError>
-  void SetDataReplicationError(DataReplicationErrorT&& value) {
-    m_dataReplicationErrorHasBeenSet = true;
-    m_dataReplicationError = std::forward<DataReplicationErrorT>(value);
+  inline const Aws::String& GetLagDuration() const { return m_lagDuration; }
+  inline bool LagDurationHasBeenSet() const { return m_lagDurationHasBeenSet; }
+  template <typename LagDurationT = Aws::String>
+  void SetLagDuration(LagDurationT&& value) {
+    m_lagDurationHasBeenSet = true;
+    m_lagDuration = std::forward<LagDurationT>(value);
   }
-  template <typename DataReplicationErrorT = DataReplicationError>
-  DataReplicationInfo& WithDataReplicationError(DataReplicationErrorT&& value) {
-    SetDataReplicationError(std::forward<DataReplicationErrorT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Information about whether the data replication has been initiated.</p>
-   */
-  inline const DataReplicationInitiation& GetDataReplicationInitiation() const { return m_dataReplicationInitiation; }
-  inline bool DataReplicationInitiationHasBeenSet() const { return m_dataReplicationInitiationHasBeenSet; }
-  template <typename DataReplicationInitiationT = DataReplicationInitiation>
-  void SetDataReplicationInitiation(DataReplicationInitiationT&& value) {
-    m_dataReplicationInitiationHasBeenSet = true;
-    m_dataReplicationInitiation = std::forward<DataReplicationInitiationT>(value);
-  }
-  template <typename DataReplicationInitiationT = DataReplicationInitiation>
-  DataReplicationInfo& WithDataReplicationInitiation(DataReplicationInitiationT&& value) {
-    SetDataReplicationInitiation(std::forward<DataReplicationInitiationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The state of the data replication.</p>
-   */
-  inline DataReplicationState GetDataReplicationState() const { return m_dataReplicationState; }
-  inline bool DataReplicationStateHasBeenSet() const { return m_dataReplicationStateHasBeenSet; }
-  inline void SetDataReplicationState(DataReplicationState value) {
-    m_dataReplicationStateHasBeenSet = true;
-    m_dataReplicationState = value;
-  }
-  inline DataReplicationInfo& WithDataReplicationState(DataReplicationState value) {
-    SetDataReplicationState(value);
+  template <typename LagDurationT = Aws::String>
+  DataReplicationInfo& WithLagDuration(LagDurationT&& value) {
+    SetLagDuration(std::forward<LagDurationT>(value));
     return *this;
   }
   ///@}
@@ -108,24 +74,6 @@ class DataReplicationInfo {
 
   ///@{
   /**
-   * <p>Data replication lag duration.</p>
-   */
-  inline const Aws::String& GetLagDuration() const { return m_lagDuration; }
-  inline bool LagDurationHasBeenSet() const { return m_lagDurationHasBeenSet; }
-  template <typename LagDurationT = Aws::String>
-  void SetLagDuration(LagDurationT&& value) {
-    m_lagDurationHasBeenSet = true;
-    m_lagDuration = std::forward<LagDurationT>(value);
-  }
-  template <typename LagDurationT = Aws::String>
-  DataReplicationInfo& WithLagDuration(LagDurationT&& value) {
-    SetLagDuration(std::forward<LagDurationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The disks that should be replicated.</p>
    */
   inline const Aws::Vector<DataReplicationInfoReplicatedDisk>& GetReplicatedDisks() const { return m_replicatedDisks; }
@@ -144,6 +92,58 @@ class DataReplicationInfo {
   DataReplicationInfo& AddReplicatedDisks(ReplicatedDisksT&& value) {
     m_replicatedDisksHasBeenSet = true;
     m_replicatedDisks.emplace_back(std::forward<ReplicatedDisksT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The state of the data replication.</p>
+   */
+  inline DataReplicationState GetDataReplicationState() const { return m_dataReplicationState; }
+  inline bool DataReplicationStateHasBeenSet() const { return m_dataReplicationStateHasBeenSet; }
+  inline void SetDataReplicationState(DataReplicationState value) {
+    m_dataReplicationStateHasBeenSet = true;
+    m_dataReplicationState = value;
+  }
+  inline DataReplicationInfo& WithDataReplicationState(DataReplicationState value) {
+    SetDataReplicationState(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Information about whether the data replication has been initiated.</p>
+   */
+  inline const DataReplicationInitiation& GetDataReplicationInitiation() const { return m_dataReplicationInitiation; }
+  inline bool DataReplicationInitiationHasBeenSet() const { return m_dataReplicationInitiationHasBeenSet; }
+  template <typename DataReplicationInitiationT = DataReplicationInitiation>
+  void SetDataReplicationInitiation(DataReplicationInitiationT&& value) {
+    m_dataReplicationInitiationHasBeenSet = true;
+    m_dataReplicationInitiation = std::forward<DataReplicationInitiationT>(value);
+  }
+  template <typename DataReplicationInitiationT = DataReplicationInitiation>
+  DataReplicationInfo& WithDataReplicationInitiation(DataReplicationInitiationT&& value) {
+    SetDataReplicationInitiation(std::forward<DataReplicationInitiationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Error in data replication.</p>
+   */
+  inline const DataReplicationError& GetDataReplicationError() const { return m_dataReplicationError; }
+  inline bool DataReplicationErrorHasBeenSet() const { return m_dataReplicationErrorHasBeenSet; }
+  template <typename DataReplicationErrorT = DataReplicationError>
+  void SetDataReplicationError(DataReplicationErrorT&& value) {
+    m_dataReplicationErrorHasBeenSet = true;
+    m_dataReplicationError = std::forward<DataReplicationErrorT>(value);
+  }
+  template <typename DataReplicationErrorT = DataReplicationError>
+  DataReplicationInfo& WithDataReplicationError(DataReplicationErrorT&& value) {
+    SetDataReplicationError(std::forward<DataReplicationErrorT>(value));
     return *this;
   }
   ///@}
@@ -184,27 +184,27 @@ class DataReplicationInfo {
   }
   ///@}
  private:
-  DataReplicationError m_dataReplicationError;
-
-  DataReplicationInitiation m_dataReplicationInitiation;
-
-  DataReplicationState m_dataReplicationState{DataReplicationState::NOT_SET};
+  Aws::String m_lagDuration;
 
   Aws::String m_etaDateTime;
 
-  Aws::String m_lagDuration;
-
   Aws::Vector<DataReplicationInfoReplicatedDisk> m_replicatedDisks;
+
+  DataReplicationState m_dataReplicationState{DataReplicationState::NOT_SET};
+
+  DataReplicationInitiation m_dataReplicationInitiation;
+
+  DataReplicationError m_dataReplicationError;
 
   Aws::String m_stagingAvailabilityZone;
 
   Aws::String m_stagingOutpostArn;
-  bool m_dataReplicationErrorHasBeenSet = false;
-  bool m_dataReplicationInitiationHasBeenSet = false;
-  bool m_dataReplicationStateHasBeenSet = false;
-  bool m_etaDateTimeHasBeenSet = false;
   bool m_lagDurationHasBeenSet = false;
+  bool m_etaDateTimeHasBeenSet = false;
   bool m_replicatedDisksHasBeenSet = false;
+  bool m_dataReplicationStateHasBeenSet = false;
+  bool m_dataReplicationInitiationHasBeenSet = false;
+  bool m_dataReplicationErrorHasBeenSet = false;
   bool m_stagingAvailabilityZoneHasBeenSet = false;
   bool m_stagingOutpostArnHasBeenSet = false;
 };

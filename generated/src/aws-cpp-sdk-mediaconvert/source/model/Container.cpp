@@ -26,6 +26,10 @@ Container& Container::operator=(JsonView jsonValue) {
     m_format = FormatMapper::GetFormatForName(jsonValue.GetString("format"));
     m_formatHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("startTimecode")) {
+    m_startTimecode = jsonValue.GetString("startTimecode");
+    m_startTimecodeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("tracks")) {
     Aws::Utils::Array<JsonView> tracksJsonList = jsonValue.GetArray("tracks");
     for (unsigned tracksIndex = 0; tracksIndex < tracksJsonList.GetLength(); ++tracksIndex) {
@@ -45,6 +49,10 @@ JsonValue Container::Jsonize() const {
 
   if (m_formatHasBeenSet) {
     payload.WithString("format", FormatMapper::GetNameForFormat(m_format));
+  }
+
+  if (m_startTimecodeHasBeenSet) {
+    payload.WithString("startTimecode", m_startTimecode);
   }
 
   if (m_tracksHasBeenSet) {

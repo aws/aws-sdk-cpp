@@ -36,34 +36,18 @@ class ParticipatingServer {
 
   ///@{
   /**
-   * <p>The post-launch action runs of a participating server.</p>
+   * <p>The Source Server ID of a participating server.</p>
    */
-  inline const LaunchActionsStatus& GetLaunchActionsStatus() const { return m_launchActionsStatus; }
-  inline bool LaunchActionsStatusHasBeenSet() const { return m_launchActionsStatusHasBeenSet; }
-  template <typename LaunchActionsStatusT = LaunchActionsStatus>
-  void SetLaunchActionsStatus(LaunchActionsStatusT&& value) {
-    m_launchActionsStatusHasBeenSet = true;
-    m_launchActionsStatus = std::forward<LaunchActionsStatusT>(value);
+  inline const Aws::String& GetSourceServerID() const { return m_sourceServerID; }
+  inline bool SourceServerIDHasBeenSet() const { return m_sourceServerIDHasBeenSet; }
+  template <typename SourceServerIDT = Aws::String>
+  void SetSourceServerID(SourceServerIDT&& value) {
+    m_sourceServerIDHasBeenSet = true;
+    m_sourceServerID = std::forward<SourceServerIDT>(value);
   }
-  template <typename LaunchActionsStatusT = LaunchActionsStatus>
-  ParticipatingServer& WithLaunchActionsStatus(LaunchActionsStatusT&& value) {
-    SetLaunchActionsStatus(std::forward<LaunchActionsStatusT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The launch status of a participating server.</p>
-   */
-  inline LaunchStatus GetLaunchStatus() const { return m_launchStatus; }
-  inline bool LaunchStatusHasBeenSet() const { return m_launchStatusHasBeenSet; }
-  inline void SetLaunchStatus(LaunchStatus value) {
-    m_launchStatusHasBeenSet = true;
-    m_launchStatus = value;
-  }
-  inline ParticipatingServer& WithLaunchStatus(LaunchStatus value) {
-    SetLaunchStatus(value);
+  template <typename SourceServerIDT = Aws::String>
+  ParticipatingServer& WithSourceServerID(SourceServerIDT&& value) {
+    SetSourceServerID(std::forward<SourceServerIDT>(value));
     return *this;
   }
   ///@}
@@ -88,33 +72,49 @@ class ParticipatingServer {
 
   ///@{
   /**
-   * <p>The Source Server ID of a participating server.</p>
+   * <p>The launch status of a participating server.</p>
    */
-  inline const Aws::String& GetSourceServerID() const { return m_sourceServerID; }
-  inline bool SourceServerIDHasBeenSet() const { return m_sourceServerIDHasBeenSet; }
-  template <typename SourceServerIDT = Aws::String>
-  void SetSourceServerID(SourceServerIDT&& value) {
-    m_sourceServerIDHasBeenSet = true;
-    m_sourceServerID = std::forward<SourceServerIDT>(value);
+  inline LaunchStatus GetLaunchStatus() const { return m_launchStatus; }
+  inline bool LaunchStatusHasBeenSet() const { return m_launchStatusHasBeenSet; }
+  inline void SetLaunchStatus(LaunchStatus value) {
+    m_launchStatusHasBeenSet = true;
+    m_launchStatus = value;
   }
-  template <typename SourceServerIDT = Aws::String>
-  ParticipatingServer& WithSourceServerID(SourceServerIDT&& value) {
-    SetSourceServerID(std::forward<SourceServerIDT>(value));
+  inline ParticipatingServer& WithLaunchStatus(LaunchStatus value) {
+    SetLaunchStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The post-launch action runs of a participating server.</p>
+   */
+  inline const LaunchActionsStatus& GetLaunchActionsStatus() const { return m_launchActionsStatus; }
+  inline bool LaunchActionsStatusHasBeenSet() const { return m_launchActionsStatusHasBeenSet; }
+  template <typename LaunchActionsStatusT = LaunchActionsStatus>
+  void SetLaunchActionsStatus(LaunchActionsStatusT&& value) {
+    m_launchActionsStatusHasBeenSet = true;
+    m_launchActionsStatus = std::forward<LaunchActionsStatusT>(value);
+  }
+  template <typename LaunchActionsStatusT = LaunchActionsStatus>
+  ParticipatingServer& WithLaunchActionsStatus(LaunchActionsStatusT&& value) {
+    SetLaunchActionsStatus(std::forward<LaunchActionsStatusT>(value));
     return *this;
   }
   ///@}
  private:
-  LaunchActionsStatus m_launchActionsStatus;
-
-  LaunchStatus m_launchStatus{LaunchStatus::NOT_SET};
+  Aws::String m_sourceServerID;
 
   Aws::String m_recoveryInstanceID;
 
-  Aws::String m_sourceServerID;
-  bool m_launchActionsStatusHasBeenSet = false;
-  bool m_launchStatusHasBeenSet = false;
-  bool m_recoveryInstanceIDHasBeenSet = false;
+  LaunchStatus m_launchStatus{LaunchStatus::NOT_SET};
+
+  LaunchActionsStatus m_launchActionsStatus;
   bool m_sourceServerIDHasBeenSet = false;
+  bool m_recoveryInstanceIDHasBeenSet = false;
+  bool m_launchStatusHasBeenSet = false;
+  bool m_launchActionsStatusHasBeenSet = false;
 };
 
 }  // namespace Model

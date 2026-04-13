@@ -392,6 +392,30 @@ class ImagePipeline {
 
   ///@{
   /**
+   * <p>The tags to be applied to the images produced by this pipeline.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetImageTags() const { return m_imageTags; }
+  inline bool ImageTagsHasBeenSet() const { return m_imageTagsHasBeenSet; }
+  template <typename ImageTagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetImageTags(ImageTagsT&& value) {
+    m_imageTagsHasBeenSet = true;
+    m_imageTags = std::forward<ImageTagsT>(value);
+  }
+  template <typename ImageTagsT = Aws::Map<Aws::String, Aws::String>>
+  ImagePipeline& WithImageTags(ImageTagsT&& value) {
+    SetImageTags(std::forward<ImageTagsT>(value));
+    return *this;
+  }
+  template <typename ImageTagsKeyT = Aws::String, typename ImageTagsValueT = Aws::String>
+  ImagePipeline& AddImageTags(ImageTagsKeyT&& key, ImageTagsValueT&& value) {
+    m_imageTagsHasBeenSet = true;
+    m_imageTags.emplace(std::forward<ImageTagsKeyT>(key), std::forward<ImageTagsValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The name or Amazon Resource Name (ARN) for the IAM role you create that
    * grants Image Builder access to perform workflow actions.</p>
    */
@@ -516,6 +540,8 @@ class ImagePipeline {
 
   ImageScanningConfiguration m_imageScanningConfiguration;
 
+  Aws::Map<Aws::String, Aws::String> m_imageTags;
+
   Aws::String m_executionRole;
 
   Aws::Vector<WorkflowConfiguration> m_workflows;
@@ -542,6 +568,7 @@ class ImagePipeline {
   bool m_dateNextRunHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_imageScanningConfigurationHasBeenSet = false;
+  bool m_imageTagsHasBeenSet = false;
   bool m_executionRoleHasBeenSet = false;
   bool m_workflowsHasBeenSet = false;
   bool m_loggingConfigurationHasBeenSet = false;

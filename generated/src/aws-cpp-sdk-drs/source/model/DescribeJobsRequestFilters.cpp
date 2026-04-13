@@ -18,16 +18,16 @@ namespace Model {
 DescribeJobsRequestFilters::DescribeJobsRequestFilters(JsonView jsonValue) { *this = jsonValue; }
 
 DescribeJobsRequestFilters& DescribeJobsRequestFilters::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("fromDate")) {
-    m_fromDate = jsonValue.GetString("fromDate");
-    m_fromDateHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("jobIDs")) {
     Aws::Utils::Array<JsonView> jobIDsJsonList = jsonValue.GetArray("jobIDs");
     for (unsigned jobIDsIndex = 0; jobIDsIndex < jobIDsJsonList.GetLength(); ++jobIDsIndex) {
       m_jobIDs.push_back(jobIDsJsonList[jobIDsIndex].AsString());
     }
     m_jobIDsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("fromDate")) {
+    m_fromDate = jsonValue.GetString("fromDate");
+    m_fromDateHasBeenSet = true;
   }
   if (jsonValue.ValueExists("toDate")) {
     m_toDate = jsonValue.GetString("toDate");
@@ -39,16 +39,16 @@ DescribeJobsRequestFilters& DescribeJobsRequestFilters::operator=(JsonView jsonV
 JsonValue DescribeJobsRequestFilters::Jsonize() const {
   JsonValue payload;
 
-  if (m_fromDateHasBeenSet) {
-    payload.WithString("fromDate", m_fromDate);
-  }
-
   if (m_jobIDsHasBeenSet) {
     Aws::Utils::Array<JsonValue> jobIDsJsonList(m_jobIDs.size());
     for (unsigned jobIDsIndex = 0; jobIDsIndex < jobIDsJsonList.GetLength(); ++jobIDsIndex) {
       jobIDsJsonList[jobIDsIndex].AsString(m_jobIDs[jobIDsIndex]);
     }
     payload.WithArray("jobIDs", std::move(jobIDsJsonList));
+  }
+
+  if (m_fromDateHasBeenSet) {
+    payload.WithString("fromDate", m_fromDate);
   }
 
   if (m_toDateHasBeenSet) {

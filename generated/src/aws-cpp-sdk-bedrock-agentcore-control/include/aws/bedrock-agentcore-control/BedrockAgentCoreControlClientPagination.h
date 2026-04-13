@@ -22,6 +22,8 @@
 #include <aws/bedrock-agentcore-control/model/ListPolicyEnginesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyGenerationAssetsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyGenerationsPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListRegistriesPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListRegistryRecordsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListWorkloadIdentitiesPaginationTraits.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
@@ -75,6 +77,12 @@ using ListPolicyGenerationAssetsPaginator =
 using ListPolicyGenerationsPaginator =
     Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListPolicyGenerationsRequest,
                                       Pagination::ListPolicyGenerationsPaginationTraits<BedrockAgentCoreControlClient>>;
+using ListRegistriesPaginator =
+    Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListRegistriesRequest,
+                                      Pagination::ListRegistriesPaginationTraits<BedrockAgentCoreControlClient>>;
+using ListRegistryRecordsPaginator =
+    Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListRegistryRecordsRequest,
+                                      Pagination::ListRegistryRecordsPaginationTraits<BedrockAgentCoreControlClient>>;
 using ListWorkloadIdentitiesPaginator =
     Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListWorkloadIdentitiesRequest,
                                       Pagination::ListWorkloadIdentitiesPaginationTraits<BedrockAgentCoreControlClient>>;

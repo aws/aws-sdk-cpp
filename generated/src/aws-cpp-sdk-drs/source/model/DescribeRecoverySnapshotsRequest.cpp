@@ -15,8 +15,16 @@ using namespace Aws::Utils;
 Aws::String DescribeRecoverySnapshotsRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_sourceServerIDHasBeenSet) {
+    payload.WithString("sourceServerID", m_sourceServerID);
+  }
+
   if (m_filtersHasBeenSet) {
     payload.WithObject("filters", m_filters.Jsonize());
+  }
+
+  if (m_orderHasBeenSet) {
+    payload.WithString("order", RecoverySnapshotsOrderMapper::GetNameForRecoverySnapshotsOrder(m_order));
   }
 
   if (m_maxResultsHasBeenSet) {
@@ -25,14 +33,6 @@ Aws::String DescribeRecoverySnapshotsRequest::SerializePayload() const {
 
   if (m_nextTokenHasBeenSet) {
     payload.WithString("nextToken", m_nextToken);
-  }
-
-  if (m_orderHasBeenSet) {
-    payload.WithString("order", RecoverySnapshotsOrderMapper::GetNameForRecoverySnapshotsOrder(m_order));
-  }
-
-  if (m_sourceServerIDHasBeenSet) {
-    payload.WithString("sourceServerID", m_sourceServerID);
   }
 
   return payload.View().WriteReadable();

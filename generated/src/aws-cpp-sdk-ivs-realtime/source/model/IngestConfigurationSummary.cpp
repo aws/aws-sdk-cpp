@@ -46,6 +46,10 @@ IngestConfigurationSummary& IngestConfigurationSummary::operator=(JsonView jsonV
     m_userId = jsonValue.GetString("userId");
     m_userIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("redundantIngest")) {
+    m_redundantIngest = jsonValue.GetBool("redundantIngest");
+    m_redundantIngestHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -78,6 +82,10 @@ JsonValue IngestConfigurationSummary::Jsonize() const {
 
   if (m_userIdHasBeenSet) {
     payload.WithString("userId", m_userId);
+  }
+
+  if (m_redundantIngestHasBeenSet) {
+    payload.WithBool("redundantIngest", m_redundantIngest);
   }
 
   return payload;

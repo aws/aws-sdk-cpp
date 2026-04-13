@@ -18,9 +18,21 @@ namespace Model {
 Job::Job(JsonView jsonValue) { *this = jsonValue; }
 
 Job& Job::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("jobID")) {
+    m_jobID = jsonValue.GetString("jobID");
+    m_jobIDHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("type")) {
+    m_type = JobTypeMapper::GetJobTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("initiatedBy")) {
+    m_initiatedBy = InitiatedByMapper::GetInitiatedByForName(jsonValue.GetString("initiatedBy"));
+    m_initiatedByHasBeenSet = true;
   }
   if (jsonValue.ValueExists("creationDateTime")) {
     m_creationDateTime = jsonValue.GetString("creationDateTime");
@@ -30,21 +42,9 @@ Job& Job::operator=(JsonView jsonValue) {
     m_endDateTime = jsonValue.GetString("endDateTime");
     m_endDateTimeHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("initiatedBy")) {
-    m_initiatedBy = InitiatedByMapper::GetInitiatedByForName(jsonValue.GetString("initiatedBy"));
-    m_initiatedByHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("jobID")) {
-    m_jobID = jsonValue.GetString("jobID");
-    m_jobIDHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("participatingResources")) {
-    Aws::Utils::Array<JsonView> participatingResourcesJsonList = jsonValue.GetArray("participatingResources");
-    for (unsigned participatingResourcesIndex = 0; participatingResourcesIndex < participatingResourcesJsonList.GetLength();
-         ++participatingResourcesIndex) {
-      m_participatingResources.push_back(participatingResourcesJsonList[participatingResourcesIndex].AsObject());
-    }
-    m_participatingResourcesHasBeenSet = true;
+  if (jsonValue.ValueExists("status")) {
+    m_status = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
   }
   if (jsonValue.ValueExists("participatingServers")) {
     Aws::Utils::Array<JsonView> participatingServersJsonList = jsonValue.GetArray("participatingServers");
@@ -54,10 +54,6 @@ Job& Job::operator=(JsonView jsonValue) {
     }
     m_participatingServersHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("status")) {
-    m_status = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
     for (auto& tagsItem : tagsJsonMap) {
@@ -65,9 +61,13 @@ Job& Job::operator=(JsonView jsonValue) {
     }
     m_tagsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("type")) {
-    m_type = JobTypeMapper::GetJobTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
+  if (jsonValue.ValueExists("participatingResources")) {
+    Aws::Utils::Array<JsonView> participatingResourcesJsonList = jsonValue.GetArray("participatingResources");
+    for (unsigned participatingResourcesIndex = 0; participatingResourcesIndex < participatingResourcesJsonList.GetLength();
+         ++participatingResourcesIndex) {
+      m_participatingResources.push_back(participatingResourcesJsonList[participatingResourcesIndex].AsObject());
+    }
+    m_participatingResourcesHasBeenSet = true;
   }
   return *this;
 }
@@ -75,8 +75,20 @@ Job& Job::operator=(JsonView jsonValue) {
 JsonValue Job::Jsonize() const {
   JsonValue payload;
 
+  if (m_jobIDHasBeenSet) {
+    payload.WithString("jobID", m_jobID);
+  }
+
   if (m_arnHasBeenSet) {
     payload.WithString("arn", m_arn);
+  }
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", JobTypeMapper::GetNameForJobType(m_type));
+  }
+
+  if (m_initiatedByHasBeenSet) {
+    payload.WithString("initiatedBy", InitiatedByMapper::GetNameForInitiatedBy(m_initiatedBy));
   }
 
   if (m_creationDateTimeHasBeenSet) {
@@ -87,21 +99,8 @@ JsonValue Job::Jsonize() const {
     payload.WithString("endDateTime", m_endDateTime);
   }
 
-  if (m_initiatedByHasBeenSet) {
-    payload.WithString("initiatedBy", InitiatedByMapper::GetNameForInitiatedBy(m_initiatedBy));
-  }
-
-  if (m_jobIDHasBeenSet) {
-    payload.WithString("jobID", m_jobID);
-  }
-
-  if (m_participatingResourcesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> participatingResourcesJsonList(m_participatingResources.size());
-    for (unsigned participatingResourcesIndex = 0; participatingResourcesIndex < participatingResourcesJsonList.GetLength();
-         ++participatingResourcesIndex) {
-      participatingResourcesJsonList[participatingResourcesIndex].AsObject(m_participatingResources[participatingResourcesIndex].Jsonize());
-    }
-    payload.WithArray("participatingResources", std::move(participatingResourcesJsonList));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", JobStatusMapper::GetNameForJobStatus(m_status));
   }
 
   if (m_participatingServersHasBeenSet) {
@@ -113,10 +112,6 @@ JsonValue Job::Jsonize() const {
     payload.WithArray("participatingServers", std::move(participatingServersJsonList));
   }
 
-  if (m_statusHasBeenSet) {
-    payload.WithString("status", JobStatusMapper::GetNameForJobStatus(m_status));
-  }
-
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {
@@ -125,8 +120,13 @@ JsonValue Job::Jsonize() const {
     payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
-  if (m_typeHasBeenSet) {
-    payload.WithString("type", JobTypeMapper::GetNameForJobType(m_type));
+  if (m_participatingResourcesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> participatingResourcesJsonList(m_participatingResources.size());
+    for (unsigned participatingResourcesIndex = 0; participatingResourcesIndex < participatingResourcesJsonList.GetLength();
+         ++participatingResourcesIndex) {
+      participatingResourcesJsonList[participatingResourcesIndex].AsObject(m_participatingResources[participatingResourcesIndex].Jsonize());
+    }
+    payload.WithArray("participatingResources", std::move(participatingResourcesJsonList));
   }
 
   return payload;

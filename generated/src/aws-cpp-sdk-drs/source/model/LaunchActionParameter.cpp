@@ -18,13 +18,13 @@ namespace Model {
 LaunchActionParameter::LaunchActionParameter(JsonView jsonValue) { *this = jsonValue; }
 
 LaunchActionParameter& LaunchActionParameter::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("type")) {
-    m_type = LaunchActionParameterTypeMapper::GetLaunchActionParameterTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetString("value");
     m_valueHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("type")) {
+    m_type = LaunchActionParameterTypeMapper::GetLaunchActionParameterTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ LaunchActionParameter& LaunchActionParameter::operator=(JsonView jsonValue) {
 JsonValue LaunchActionParameter::Jsonize() const {
   JsonValue payload;
 
-  if (m_typeHasBeenSet) {
-    payload.WithString("type", LaunchActionParameterTypeMapper::GetNameForLaunchActionParameterType(m_type));
-  }
-
   if (m_valueHasBeenSet) {
     payload.WithString("value", m_value);
+  }
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", LaunchActionParameterTypeMapper::GetNameForLaunchActionParameterType(m_type));
   }
 
   return payload;

@@ -35,25 +35,6 @@ class DescribeSourceServersRequestFilters {
 
   ///@{
   /**
-   * <p>An ID that describes the hardware of the Source Server. This is either an EC2
-   * instance id, a VMware uuid or a mac address.</p>
-   */
-  inline const Aws::String& GetHardwareId() const { return m_hardwareId; }
-  inline bool HardwareIdHasBeenSet() const { return m_hardwareIdHasBeenSet; }
-  template <typename HardwareIdT = Aws::String>
-  void SetHardwareId(HardwareIdT&& value) {
-    m_hardwareIdHasBeenSet = true;
-    m_hardwareId = std::forward<HardwareIdT>(value);
-  }
-  template <typename HardwareIdT = Aws::String>
-  DescribeSourceServersRequestFilters& WithHardwareId(HardwareIdT&& value) {
-    SetHardwareId(std::forward<HardwareIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>An array of Source Servers IDs that should be returned. An empty array means
    * all Source Servers.</p>
    */
@@ -73,6 +54,25 @@ class DescribeSourceServersRequestFilters {
   DescribeSourceServersRequestFilters& AddSourceServerIDs(SourceServerIDsT&& value) {
     m_sourceServerIDsHasBeenSet = true;
     m_sourceServerIDs.emplace_back(std::forward<SourceServerIDsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An ID that describes the hardware of the Source Server. This is either an EC2
+   * instance id, a VMware uuid or a mac address.</p>
+   */
+  inline const Aws::String& GetHardwareId() const { return m_hardwareId; }
+  inline bool HardwareIdHasBeenSet() const { return m_hardwareIdHasBeenSet; }
+  template <typename HardwareIdT = Aws::String>
+  void SetHardwareId(HardwareIdT&& value) {
+    m_hardwareIdHasBeenSet = true;
+    m_hardwareId = std::forward<HardwareIdT>(value);
+  }
+  template <typename HardwareIdT = Aws::String>
+  DescribeSourceServersRequestFilters& WithHardwareId(HardwareIdT&& value) {
+    SetHardwareId(std::forward<HardwareIdT>(value));
     return *this;
   }
   ///@}
@@ -102,13 +102,13 @@ class DescribeSourceServersRequestFilters {
   }
   ///@}
  private:
-  Aws::String m_hardwareId;
-
   Aws::Vector<Aws::String> m_sourceServerIDs;
 
+  Aws::String m_hardwareId;
+
   Aws::Vector<Aws::String> m_stagingAccountIDs;
-  bool m_hardwareIdHasBeenSet = false;
   bool m_sourceServerIDsHasBeenSet = false;
+  bool m_hardwareIdHasBeenSet = false;
   bool m_stagingAccountIDsHasBeenSet = false;
 };
 

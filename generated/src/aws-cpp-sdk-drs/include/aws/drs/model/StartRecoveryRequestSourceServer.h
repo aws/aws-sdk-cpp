@@ -34,6 +34,24 @@ class StartRecoveryRequestSourceServer {
 
   ///@{
   /**
+   * <p>The ID of the Source Server you want to recover.</p>
+   */
+  inline const Aws::String& GetSourceServerID() const { return m_sourceServerID; }
+  inline bool SourceServerIDHasBeenSet() const { return m_sourceServerIDHasBeenSet; }
+  template <typename SourceServerIDT = Aws::String>
+  void SetSourceServerID(SourceServerIDT&& value) {
+    m_sourceServerIDHasBeenSet = true;
+    m_sourceServerID = std::forward<SourceServerIDT>(value);
+  }
+  template <typename SourceServerIDT = Aws::String>
+  StartRecoveryRequestSourceServer& WithSourceServerID(SourceServerIDT&& value) {
+    SetSourceServerID(std::forward<SourceServerIDT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ID of a Recovery Snapshot we want to recover from. Omit this field to
    * launch from the latest data by taking an on-demand snapshot.</p>
    */
@@ -50,30 +68,12 @@ class StartRecoveryRequestSourceServer {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the Source Server you want to recover.</p>
-   */
-  inline const Aws::String& GetSourceServerID() const { return m_sourceServerID; }
-  inline bool SourceServerIDHasBeenSet() const { return m_sourceServerIDHasBeenSet; }
-  template <typename SourceServerIDT = Aws::String>
-  void SetSourceServerID(SourceServerIDT&& value) {
-    m_sourceServerIDHasBeenSet = true;
-    m_sourceServerID = std::forward<SourceServerIDT>(value);
-  }
-  template <typename SourceServerIDT = Aws::String>
-  StartRecoveryRequestSourceServer& WithSourceServerID(SourceServerIDT&& value) {
-    SetSourceServerID(std::forward<SourceServerIDT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_recoverySnapshotID;
-
   Aws::String m_sourceServerID;
-  bool m_recoverySnapshotIDHasBeenSet = false;
+
+  Aws::String m_recoverySnapshotID;
   bool m_sourceServerIDHasBeenSet = false;
+  bool m_recoverySnapshotIDHasBeenSet = false;
 };
 
 }  // namespace Model

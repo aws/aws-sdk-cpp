@@ -9626,6 +9626,39 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Start deep health checks for a SageMaker HyperPod cluster. You can use <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeClusterNode.html">DescribeClusterNode</a>
+   * API to track progress of the deep health checks. The unhealthy nodes will be
+   * automatically rebooted or replaced. Please see <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-eks-resiliency-node-labels.html">
+   * Resilience-related Kubernetes labels by SageMaker HyperPod</a> for
+   * details.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartClusterHealthCheck">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartClusterHealthCheckOutcome StartClusterHealthCheck(const Model::StartClusterHealthCheckRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartClusterHealthCheck that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartClusterHealthCheckRequestT = Model::StartClusterHealthCheckRequest>
+  Model::StartClusterHealthCheckOutcomeCallable StartClusterHealthCheckCallable(const StartClusterHealthCheckRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::StartClusterHealthCheck, request);
+  }
+
+  /**
+   * An Async wrapper for StartClusterHealthCheck that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StartClusterHealthCheckRequestT = Model::StartClusterHealthCheckRequest>
+  void StartClusterHealthCheckAsync(const StartClusterHealthCheckRequestT& request,
+                                    const StartClusterHealthCheckResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::StartClusterHealthCheck, request, handler, context);
+  }
+
+  /**
    * <p>Starts a stage in an edge deployment plan.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartEdgeDeploymentStage">AWS
    * API Reference</a></p>

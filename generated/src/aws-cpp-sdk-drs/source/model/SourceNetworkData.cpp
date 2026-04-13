@@ -26,13 +26,13 @@ SourceNetworkData& SourceNetworkData::operator=(JsonView jsonValue) {
     m_sourceVpc = jsonValue.GetString("sourceVpc");
     m_sourceVpcHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("stackName")) {
-    m_stackName = jsonValue.GetString("stackName");
-    m_stackNameHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("targetVpc")) {
     m_targetVpc = jsonValue.GetString("targetVpc");
     m_targetVpcHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("stackName")) {
+    m_stackName = jsonValue.GetString("stackName");
+    m_stackNameHasBeenSet = true;
   }
   return *this;
 }
@@ -48,12 +48,12 @@ JsonValue SourceNetworkData::Jsonize() const {
     payload.WithString("sourceVpc", m_sourceVpc);
   }
 
-  if (m_stackNameHasBeenSet) {
-    payload.WithString("stackName", m_stackName);
-  }
-
   if (m_targetVpcHasBeenSet) {
     payload.WithString("targetVpc", m_targetVpc);
+  }
+
+  if (m_stackNameHasBeenSet) {
+    payload.WithString("stackName", m_stackName);
   }
 
   return payload;

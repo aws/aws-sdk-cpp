@@ -10,6 +10,7 @@
 #include <aws/redshift-data/RedshiftDataAPIServiceRequest.h>
 #include <aws/redshift-data/RedshiftDataAPIService_EXPORTS.h>
 #include <aws/redshift-data/model/ResultFormatString.h>
+#include <aws/redshift-data/model/SqlParameter.h>
 
 #include <utility>
 
@@ -176,6 +177,31 @@ class BatchExecuteStatementRequest : public RedshiftDataAPIServiceRequest {
 
   ///@{
   /**
+   * <p>The parameters for the SQL statements. The parameters are shared across all
+   * SQL statements in the batch.</p>
+   */
+  inline const Aws::Vector<SqlParameter>& GetParameters() const { return m_parameters; }
+  inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
+  template <typename ParametersT = Aws::Vector<SqlParameter>>
+  void SetParameters(ParametersT&& value) {
+    m_parametersHasBeenSet = true;
+    m_parameters = std::forward<ParametersT>(value);
+  }
+  template <typename ParametersT = Aws::Vector<SqlParameter>>
+  BatchExecuteStatementRequest& WithParameters(ParametersT&& value) {
+    SetParameters(std::forward<ParametersT>(value));
+    return *this;
+  }
+  template <typename ParametersT = SqlParameter>
+  BatchExecuteStatementRequest& AddParameters(ParametersT&& value) {
+    m_parametersHasBeenSet = true;
+    m_parameters.emplace_back(std::forward<ParametersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter
    * is required when connecting to a serverless workgroup and authenticating using
    * either Secrets Manager or temporary credentials.</p>
@@ -280,6 +306,8 @@ class BatchExecuteStatementRequest : public RedshiftDataAPIServiceRequest {
 
   Aws::String m_statementName;
 
+  Aws::Vector<SqlParameter> m_parameters;
+
   Aws::String m_workgroupName;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
@@ -296,6 +324,7 @@ class BatchExecuteStatementRequest : public RedshiftDataAPIServiceRequest {
   bool m_databaseHasBeenSet = false;
   bool m_withEventHasBeenSet = false;
   bool m_statementNameHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
   bool m_workgroupNameHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_resultFormatHasBeenSet = false;

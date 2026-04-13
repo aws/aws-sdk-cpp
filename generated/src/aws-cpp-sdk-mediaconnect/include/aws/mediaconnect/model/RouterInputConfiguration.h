@@ -7,6 +7,7 @@
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/mediaconnect/model/FailoverRouterInputConfiguration.h>
 #include <aws/mediaconnect/model/MediaConnectFlowRouterInputConfiguration.h>
+#include <aws/mediaconnect/model/MediaLiveChannelRouterInputConfiguration.h>
 #include <aws/mediaconnect/model/MergeRouterInputConfiguration.h>
 #include <aws/mediaconnect/model/StandardRouterInputConfiguration.h>
 
@@ -52,6 +53,22 @@ class RouterInputConfiguration {
 
   ///@{
 
+  inline const MediaLiveChannelRouterInputConfiguration& GetMediaLiveChannel() const { return m_mediaLiveChannel; }
+  inline bool MediaLiveChannelHasBeenSet() const { return m_mediaLiveChannelHasBeenSet; }
+  template <typename MediaLiveChannelT = MediaLiveChannelRouterInputConfiguration>
+  void SetMediaLiveChannel(MediaLiveChannelT&& value) {
+    m_mediaLiveChannelHasBeenSet = true;
+    m_mediaLiveChannel = std::forward<MediaLiveChannelT>(value);
+  }
+  template <typename MediaLiveChannelT = MediaLiveChannelRouterInputConfiguration>
+  RouterInputConfiguration& WithMediaLiveChannel(MediaLiveChannelT&& value) {
+    SetMediaLiveChannel(std::forward<MediaLiveChannelT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
   inline const FailoverRouterInputConfiguration& GetFailover() const { return m_failover; }
   inline bool FailoverHasBeenSet() const { return m_failoverHasBeenSet; }
   template <typename FailoverT = FailoverRouterInputConfiguration>
@@ -62,22 +79,6 @@ class RouterInputConfiguration {
   template <typename FailoverT = FailoverRouterInputConfiguration>
   RouterInputConfiguration& WithFailover(FailoverT&& value) {
     SetFailover(std::forward<FailoverT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-
-  inline const MergeRouterInputConfiguration& GetMerge() const { return m_merge; }
-  inline bool MergeHasBeenSet() const { return m_mergeHasBeenSet; }
-  template <typename MergeT = MergeRouterInputConfiguration>
-  void SetMerge(MergeT&& value) {
-    m_mergeHasBeenSet = true;
-    m_merge = std::forward<MergeT>(value);
-  }
-  template <typename MergeT = MergeRouterInputConfiguration>
-  RouterInputConfiguration& WithMerge(MergeT&& value) {
-    SetMerge(std::forward<MergeT>(value));
     return *this;
   }
   ///@}
@@ -97,18 +98,37 @@ class RouterInputConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const MergeRouterInputConfiguration& GetMerge() const { return m_merge; }
+  inline bool MergeHasBeenSet() const { return m_mergeHasBeenSet; }
+  template <typename MergeT = MergeRouterInputConfiguration>
+  void SetMerge(MergeT&& value) {
+    m_mergeHasBeenSet = true;
+    m_merge = std::forward<MergeT>(value);
+  }
+  template <typename MergeT = MergeRouterInputConfiguration>
+  RouterInputConfiguration& WithMerge(MergeT&& value) {
+    SetMerge(std::forward<MergeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   StandardRouterInputConfiguration m_standard;
 
+  MediaLiveChannelRouterInputConfiguration m_mediaLiveChannel;
+
   FailoverRouterInputConfiguration m_failover;
 
-  MergeRouterInputConfiguration m_merge;
-
   MediaConnectFlowRouterInputConfiguration m_mediaConnectFlow;
+
+  MergeRouterInputConfiguration m_merge;
   bool m_standardHasBeenSet = false;
+  bool m_mediaLiveChannelHasBeenSet = false;
   bool m_failoverHasBeenSet = false;
-  bool m_mergeHasBeenSet = false;
   bool m_mediaConnectFlowHasBeenSet = false;
+  bool m_mergeHasBeenSet = false;
 };
 
 }  // namespace Model

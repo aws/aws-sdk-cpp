@@ -18,13 +18,13 @@ namespace Model {
 StagingSourceServer::StagingSourceServer(JsonView jsonValue) { *this = jsonValue; }
 
 StagingSourceServer& StagingSourceServer::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("arn")) {
-    m_arn = jsonValue.GetString("arn");
-    m_arnHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("hostname")) {
     m_hostname = jsonValue.GetString("hostname");
     m_hostnameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("arn")) {
+    m_arn = jsonValue.GetString("arn");
+    m_arnHasBeenSet = true;
   }
   if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -39,12 +39,12 @@ StagingSourceServer& StagingSourceServer::operator=(JsonView jsonValue) {
 JsonValue StagingSourceServer::Jsonize() const {
   JsonValue payload;
 
-  if (m_arnHasBeenSet) {
-    payload.WithString("arn", m_arn);
-  }
-
   if (m_hostnameHasBeenSet) {
     payload.WithString("hostname", m_hostname);
+  }
+
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
   if (m_tagsHasBeenSet) {

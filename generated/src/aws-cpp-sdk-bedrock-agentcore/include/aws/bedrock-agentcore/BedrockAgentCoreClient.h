@@ -1074,6 +1074,34 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p> Searches for registry records using semantic, lexical, or hybrid queries.
+   * Returns metadata for matching records ordered by relevance within the specified
+   * registry.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/SearchRegistryRecords">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SearchRegistryRecordsOutcome SearchRegistryRecords(const Model::SearchRegistryRecordsRequest& request) const;
+
+  /**
+   * A Callable wrapper for SearchRegistryRecords that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename SearchRegistryRecordsRequestT = Model::SearchRegistryRecordsRequest>
+  Model::SearchRegistryRecordsOutcomeCallable SearchRegistryRecordsCallable(const SearchRegistryRecordsRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::SearchRegistryRecords, request);
+  }
+
+  /**
+   * An Async wrapper for SearchRegistryRecords that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename SearchRegistryRecordsRequestT = Model::SearchRegistryRecordsRequest>
+  void SearchRegistryRecordsAsync(const SearchRegistryRecordsRequestT& request, const SearchRegistryRecordsResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::SearchRegistryRecords, request, handler, context);
+  }
+
+  /**
    * <p>Creates and initializes a browser session in Amazon Bedrock AgentCore. The
    * session enables agents to navigate and interact with web content, extract
    * information from websites, and perform web-based tasks as part of their response

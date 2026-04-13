@@ -35,48 +35,6 @@ class RecoverySnapshot {
 
   ///@{
   /**
-   * <p>A list of EBS snapshots.</p>
-   */
-  inline const Aws::Vector<Aws::String>& GetEbsSnapshots() const { return m_ebsSnapshots; }
-  inline bool EbsSnapshotsHasBeenSet() const { return m_ebsSnapshotsHasBeenSet; }
-  template <typename EbsSnapshotsT = Aws::Vector<Aws::String>>
-  void SetEbsSnapshots(EbsSnapshotsT&& value) {
-    m_ebsSnapshotsHasBeenSet = true;
-    m_ebsSnapshots = std::forward<EbsSnapshotsT>(value);
-  }
-  template <typename EbsSnapshotsT = Aws::Vector<Aws::String>>
-  RecoverySnapshot& WithEbsSnapshots(EbsSnapshotsT&& value) {
-    SetEbsSnapshots(std::forward<EbsSnapshotsT>(value));
-    return *this;
-  }
-  template <typename EbsSnapshotsT = Aws::String>
-  RecoverySnapshot& AddEbsSnapshots(EbsSnapshotsT&& value) {
-    m_ebsSnapshotsHasBeenSet = true;
-    m_ebsSnapshots.emplace_back(std::forward<EbsSnapshotsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The timestamp of when we expect the snapshot to be taken.</p>
-   */
-  inline const Aws::String& GetExpectedTimestamp() const { return m_expectedTimestamp; }
-  inline bool ExpectedTimestampHasBeenSet() const { return m_expectedTimestampHasBeenSet; }
-  template <typename ExpectedTimestampT = Aws::String>
-  void SetExpectedTimestamp(ExpectedTimestampT&& value) {
-    m_expectedTimestampHasBeenSet = true;
-    m_expectedTimestamp = std::forward<ExpectedTimestampT>(value);
-  }
-  template <typename ExpectedTimestampT = Aws::String>
-  RecoverySnapshot& WithExpectedTimestamp(ExpectedTimestampT&& value) {
-    SetExpectedTimestamp(std::forward<ExpectedTimestampT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the Recovery Snapshot.</p>
    */
   inline const Aws::String& GetSnapshotID() const { return m_snapshotID; }
@@ -113,6 +71,24 @@ class RecoverySnapshot {
 
   ///@{
   /**
+   * <p>The timestamp of when we expect the snapshot to be taken.</p>
+   */
+  inline const Aws::String& GetExpectedTimestamp() const { return m_expectedTimestamp; }
+  inline bool ExpectedTimestampHasBeenSet() const { return m_expectedTimestampHasBeenSet; }
+  template <typename ExpectedTimestampT = Aws::String>
+  void SetExpectedTimestamp(ExpectedTimestampT&& value) {
+    m_expectedTimestampHasBeenSet = true;
+    m_expectedTimestamp = std::forward<ExpectedTimestampT>(value);
+  }
+  template <typename ExpectedTimestampT = Aws::String>
+  RecoverySnapshot& WithExpectedTimestamp(ExpectedTimestampT&& value) {
+    SetExpectedTimestamp(std::forward<ExpectedTimestampT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The actual timestamp that the snapshot was taken.</p>
    */
   inline const Aws::String& GetTimestamp() const { return m_timestamp; }
@@ -128,21 +104,45 @@ class RecoverySnapshot {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of EBS snapshots.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetEbsSnapshots() const { return m_ebsSnapshots; }
+  inline bool EbsSnapshotsHasBeenSet() const { return m_ebsSnapshotsHasBeenSet; }
+  template <typename EbsSnapshotsT = Aws::Vector<Aws::String>>
+  void SetEbsSnapshots(EbsSnapshotsT&& value) {
+    m_ebsSnapshotsHasBeenSet = true;
+    m_ebsSnapshots = std::forward<EbsSnapshotsT>(value);
+  }
+  template <typename EbsSnapshotsT = Aws::Vector<Aws::String>>
+  RecoverySnapshot& WithEbsSnapshots(EbsSnapshotsT&& value) {
+    SetEbsSnapshots(std::forward<EbsSnapshotsT>(value));
+    return *this;
+  }
+  template <typename EbsSnapshotsT = Aws::String>
+  RecoverySnapshot& AddEbsSnapshots(EbsSnapshotsT&& value) {
+    m_ebsSnapshotsHasBeenSet = true;
+    m_ebsSnapshots.emplace_back(std::forward<EbsSnapshotsT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  Aws::Vector<Aws::String> m_ebsSnapshots;
-
-  Aws::String m_expectedTimestamp;
-
   Aws::String m_snapshotID;
 
   Aws::String m_sourceServerID;
 
+  Aws::String m_expectedTimestamp;
+
   Aws::String m_timestamp;
-  bool m_ebsSnapshotsHasBeenSet = false;
-  bool m_expectedTimestampHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_ebsSnapshots;
   bool m_snapshotIDHasBeenSet = false;
   bool m_sourceServerIDHasBeenSet = false;
+  bool m_expectedTimestampHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
+  bool m_ebsSnapshotsHasBeenSet = false;
 };
 
 }  // namespace Model

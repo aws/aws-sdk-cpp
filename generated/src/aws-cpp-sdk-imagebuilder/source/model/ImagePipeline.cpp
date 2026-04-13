@@ -97,6 +97,13 @@ ImagePipeline& ImagePipeline::operator=(JsonView jsonValue) {
     m_imageScanningConfiguration = jsonValue.GetObject("imageScanningConfiguration");
     m_imageScanningConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("imageTags")) {
+    Aws::Map<Aws::String, JsonView> imageTagsJsonMap = jsonValue.GetObject("imageTags").GetAllObjects();
+    for (auto& imageTagsItem : imageTagsJsonMap) {
+      m_imageTags[imageTagsItem.first] = imageTagsItem.second.AsString();
+    }
+    m_imageTagsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("executionRole")) {
     m_executionRole = jsonValue.GetString("executionRole");
     m_executionRoleHasBeenSet = true;
@@ -200,6 +207,14 @@ JsonValue ImagePipeline::Jsonize() const {
 
   if (m_imageScanningConfigurationHasBeenSet) {
     payload.WithObject("imageScanningConfiguration", m_imageScanningConfiguration.Jsonize());
+  }
+
+  if (m_imageTagsHasBeenSet) {
+    JsonValue imageTagsJsonMap;
+    for (auto& imageTagsItem : m_imageTags) {
+      imageTagsJsonMap.WithString(imageTagsItem.first, imageTagsItem.second);
+    }
+    payload.WithObject("imageTags", std::move(imageTagsJsonMap));
   }
 
   if (m_executionRoleHasBeenSet) {

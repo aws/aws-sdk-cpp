@@ -18,6 +18,10 @@ namespace Model {
 LaunchActionsStatus::LaunchActionsStatus(JsonView jsonValue) { *this = jsonValue; }
 
 LaunchActionsStatus& LaunchActionsStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ssmAgentDiscoveryDatetime")) {
+    m_ssmAgentDiscoveryDatetime = jsonValue.GetString("ssmAgentDiscoveryDatetime");
+    m_ssmAgentDiscoveryDatetimeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("runs")) {
     Aws::Utils::Array<JsonView> runsJsonList = jsonValue.GetArray("runs");
     for (unsigned runsIndex = 0; runsIndex < runsJsonList.GetLength(); ++runsIndex) {
@@ -25,15 +29,15 @@ LaunchActionsStatus& LaunchActionsStatus::operator=(JsonView jsonValue) {
     }
     m_runsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("ssmAgentDiscoveryDatetime")) {
-    m_ssmAgentDiscoveryDatetime = jsonValue.GetString("ssmAgentDiscoveryDatetime");
-    m_ssmAgentDiscoveryDatetimeHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue LaunchActionsStatus::Jsonize() const {
   JsonValue payload;
+
+  if (m_ssmAgentDiscoveryDatetimeHasBeenSet) {
+    payload.WithString("ssmAgentDiscoveryDatetime", m_ssmAgentDiscoveryDatetime);
+  }
 
   if (m_runsHasBeenSet) {
     Aws::Utils::Array<JsonValue> runsJsonList(m_runs.size());
@@ -41,10 +45,6 @@ JsonValue LaunchActionsStatus::Jsonize() const {
       runsJsonList[runsIndex].AsObject(m_runs[runsIndex].Jsonize());
     }
     payload.WithArray("runs", std::move(runsJsonList));
-  }
-
-  if (m_ssmAgentDiscoveryDatetimeHasBeenSet) {
-    payload.WithString("ssmAgentDiscoveryDatetime", m_ssmAgentDiscoveryDatetime);
   }
 
   return payload;

@@ -15,40 +15,40 @@ using namespace Aws::Utils;
 Aws::String PutLaunchActionRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_resourceIdHasBeenSet) {
+    payload.WithString("resourceId", m_resourceId);
+  }
+
   if (m_actionCodeHasBeenSet) {
     payload.WithString("actionCode", m_actionCode);
+  }
+
+  if (m_orderHasBeenSet) {
+    payload.WithInteger("order", m_order);
   }
 
   if (m_actionIdHasBeenSet) {
     payload.WithString("actionId", m_actionId);
   }
 
-  if (m_actionVersionHasBeenSet) {
-    payload.WithString("actionVersion", m_actionVersion);
+  if (m_optionalHasBeenSet) {
+    payload.WithBool("optional", m_optional);
   }
 
   if (m_activeHasBeenSet) {
     payload.WithBool("active", m_active);
   }
 
-  if (m_categoryHasBeenSet) {
-    payload.WithString("category", LaunchActionCategoryMapper::GetNameForLaunchActionCategory(m_category));
-  }
-
-  if (m_descriptionHasBeenSet) {
-    payload.WithString("description", m_description);
-  }
-
   if (m_nameHasBeenSet) {
     payload.WithString("name", m_name);
   }
 
-  if (m_optionalHasBeenSet) {
-    payload.WithBool("optional", m_optional);
+  if (m_actionVersionHasBeenSet) {
+    payload.WithString("actionVersion", m_actionVersion);
   }
 
-  if (m_orderHasBeenSet) {
-    payload.WithInteger("order", m_order);
+  if (m_categoryHasBeenSet) {
+    payload.WithString("category", LaunchActionCategoryMapper::GetNameForLaunchActionCategory(m_category));
   }
 
   if (m_parametersHasBeenSet) {
@@ -59,8 +59,8 @@ Aws::String PutLaunchActionRequest::SerializePayload() const {
     payload.WithObject("parameters", std::move(parametersJsonMap));
   }
 
-  if (m_resourceIdHasBeenSet) {
-    payload.WithString("resourceId", m_resourceId);
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
   return payload.View().WriteReadable();

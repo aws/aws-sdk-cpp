@@ -18,18 +18,6 @@ namespace Model {
 RecoveryInstance::RecoveryInstance(JsonView jsonValue) { *this = jsonValue; }
 
 RecoveryInstance& RecoveryInstance::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("agentVersion")) {
-    m_agentVersion = jsonValue.GetString("agentVersion");
-    m_agentVersionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("arn")) {
-    m_arn = jsonValue.GetString("arn");
-    m_arnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("dataReplicationInfo")) {
-    m_dataReplicationInfo = jsonValue.GetObject("dataReplicationInfo");
-    m_dataReplicationInfoHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("ec2InstanceID")) {
     m_ec2InstanceID = jsonValue.GetString("ec2InstanceID");
     m_ec2InstanceIDHasBeenSet = true;
@@ -38,45 +26,21 @@ RecoveryInstance& RecoveryInstance::operator=(JsonView jsonValue) {
     m_ec2InstanceState = EC2InstanceStateMapper::GetEC2InstanceStateForName(jsonValue.GetString("ec2InstanceState"));
     m_ec2InstanceStateHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("failback")) {
-    m_failback = jsonValue.GetObject("failback");
-    m_failbackHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("isDrill")) {
-    m_isDrill = jsonValue.GetBool("isDrill");
-    m_isDrillHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("jobID")) {
     m_jobID = jsonValue.GetString("jobID");
     m_jobIDHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("originAvailabilityZone")) {
-    m_originAvailabilityZone = jsonValue.GetString("originAvailabilityZone");
-    m_originAvailabilityZoneHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("originEnvironment")) {
-    m_originEnvironment = OriginEnvironmentMapper::GetOriginEnvironmentForName(jsonValue.GetString("originEnvironment"));
-    m_originEnvironmentHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("pointInTimeSnapshotDateTime")) {
-    m_pointInTimeSnapshotDateTime = jsonValue.GetString("pointInTimeSnapshotDateTime");
-    m_pointInTimeSnapshotDateTimeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("recoveryInstanceID")) {
     m_recoveryInstanceID = jsonValue.GetString("recoveryInstanceID");
     m_recoveryInstanceIDHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("recoveryInstanceProperties")) {
-    m_recoveryInstanceProperties = jsonValue.GetObject("recoveryInstanceProperties");
-    m_recoveryInstancePropertiesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("sourceOutpostArn")) {
-    m_sourceOutpostArn = jsonValue.GetString("sourceOutpostArn");
-    m_sourceOutpostArnHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("sourceServerID")) {
     m_sourceServerID = jsonValue.GetString("sourceServerID");
     m_sourceServerIDHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("arn")) {
+    m_arn = jsonValue.GetString("arn");
+    m_arnHasBeenSet = true;
   }
   if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -85,23 +49,47 @@ RecoveryInstance& RecoveryInstance::operator=(JsonView jsonValue) {
     }
     m_tagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("failback")) {
+    m_failback = jsonValue.GetObject("failback");
+    m_failbackHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("dataReplicationInfo")) {
+    m_dataReplicationInfo = jsonValue.GetObject("dataReplicationInfo");
+    m_dataReplicationInfoHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("recoveryInstanceProperties")) {
+    m_recoveryInstanceProperties = jsonValue.GetObject("recoveryInstanceProperties");
+    m_recoveryInstancePropertiesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("pointInTimeSnapshotDateTime")) {
+    m_pointInTimeSnapshotDateTime = jsonValue.GetString("pointInTimeSnapshotDateTime");
+    m_pointInTimeSnapshotDateTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("isDrill")) {
+    m_isDrill = jsonValue.GetBool("isDrill");
+    m_isDrillHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("originEnvironment")) {
+    m_originEnvironment = OriginEnvironmentMapper::GetOriginEnvironmentForName(jsonValue.GetString("originEnvironment"));
+    m_originEnvironmentHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("originAvailabilityZone")) {
+    m_originAvailabilityZone = jsonValue.GetString("originAvailabilityZone");
+    m_originAvailabilityZoneHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("agentVersion")) {
+    m_agentVersion = jsonValue.GetString("agentVersion");
+    m_agentVersionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("sourceOutpostArn")) {
+    m_sourceOutpostArn = jsonValue.GetString("sourceOutpostArn");
+    m_sourceOutpostArnHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue RecoveryInstance::Jsonize() const {
   JsonValue payload;
-
-  if (m_agentVersionHasBeenSet) {
-    payload.WithString("agentVersion", m_agentVersion);
-  }
-
-  if (m_arnHasBeenSet) {
-    payload.WithString("arn", m_arn);
-  }
-
-  if (m_dataReplicationInfoHasBeenSet) {
-    payload.WithObject("dataReplicationInfo", m_dataReplicationInfo.Jsonize());
-  }
 
   if (m_ec2InstanceIDHasBeenSet) {
     payload.WithString("ec2InstanceID", m_ec2InstanceID);
@@ -111,44 +99,20 @@ JsonValue RecoveryInstance::Jsonize() const {
     payload.WithString("ec2InstanceState", EC2InstanceStateMapper::GetNameForEC2InstanceState(m_ec2InstanceState));
   }
 
-  if (m_failbackHasBeenSet) {
-    payload.WithObject("failback", m_failback.Jsonize());
-  }
-
-  if (m_isDrillHasBeenSet) {
-    payload.WithBool("isDrill", m_isDrill);
-  }
-
   if (m_jobIDHasBeenSet) {
     payload.WithString("jobID", m_jobID);
-  }
-
-  if (m_originAvailabilityZoneHasBeenSet) {
-    payload.WithString("originAvailabilityZone", m_originAvailabilityZone);
-  }
-
-  if (m_originEnvironmentHasBeenSet) {
-    payload.WithString("originEnvironment", OriginEnvironmentMapper::GetNameForOriginEnvironment(m_originEnvironment));
-  }
-
-  if (m_pointInTimeSnapshotDateTimeHasBeenSet) {
-    payload.WithString("pointInTimeSnapshotDateTime", m_pointInTimeSnapshotDateTime);
   }
 
   if (m_recoveryInstanceIDHasBeenSet) {
     payload.WithString("recoveryInstanceID", m_recoveryInstanceID);
   }
 
-  if (m_recoveryInstancePropertiesHasBeenSet) {
-    payload.WithObject("recoveryInstanceProperties", m_recoveryInstanceProperties.Jsonize());
-  }
-
-  if (m_sourceOutpostArnHasBeenSet) {
-    payload.WithString("sourceOutpostArn", m_sourceOutpostArn);
-  }
-
   if (m_sourceServerIDHasBeenSet) {
     payload.WithString("sourceServerID", m_sourceServerID);
+  }
+
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
   if (m_tagsHasBeenSet) {
@@ -157,6 +121,42 @@ JsonValue RecoveryInstance::Jsonize() const {
       tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
     }
     payload.WithObject("tags", std::move(tagsJsonMap));
+  }
+
+  if (m_failbackHasBeenSet) {
+    payload.WithObject("failback", m_failback.Jsonize());
+  }
+
+  if (m_dataReplicationInfoHasBeenSet) {
+    payload.WithObject("dataReplicationInfo", m_dataReplicationInfo.Jsonize());
+  }
+
+  if (m_recoveryInstancePropertiesHasBeenSet) {
+    payload.WithObject("recoveryInstanceProperties", m_recoveryInstanceProperties.Jsonize());
+  }
+
+  if (m_pointInTimeSnapshotDateTimeHasBeenSet) {
+    payload.WithString("pointInTimeSnapshotDateTime", m_pointInTimeSnapshotDateTime);
+  }
+
+  if (m_isDrillHasBeenSet) {
+    payload.WithBool("isDrill", m_isDrill);
+  }
+
+  if (m_originEnvironmentHasBeenSet) {
+    payload.WithString("originEnvironment", OriginEnvironmentMapper::GetNameForOriginEnvironment(m_originEnvironment));
+  }
+
+  if (m_originAvailabilityZoneHasBeenSet) {
+    payload.WithString("originAvailabilityZone", m_originAvailabilityZone);
+  }
+
+  if (m_agentVersionHasBeenSet) {
+    payload.WithString("agentVersion", m_agentVersion);
+  }
+
+  if (m_sourceOutpostArnHasBeenSet) {
+    payload.WithString("sourceOutpostArn", m_sourceOutpostArn);
   }
 
   return payload;

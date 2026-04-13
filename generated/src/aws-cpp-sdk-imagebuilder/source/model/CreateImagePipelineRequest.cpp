@@ -63,6 +63,14 @@ Aws::String CreateImagePipelineRequest::SerializePayload() const {
     payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
+  if (m_imageTagsHasBeenSet) {
+    JsonValue imageTagsJsonMap;
+    for (auto& imageTagsItem : m_imageTags) {
+      imageTagsJsonMap.WithString(imageTagsItem.first, imageTagsItem.second);
+    }
+    payload.WithObject("imageTags", std::move(imageTagsJsonMap));
+  }
+
   if (m_clientTokenHasBeenSet) {
     payload.WithString("clientToken", m_clientToken);
   }

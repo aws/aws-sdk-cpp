@@ -48,10 +48,10 @@ class CmafEncryptionSettings {
    * segment and insert the first #EXT-X-KEY immediately before the first encrypted
    * fragment. This feature is supported exclusively for CMAF HLS (fMP4) outputs and
    * is compatible with all existing key provider integrations (SPEKE v1, SPEKE v2,
-   * and Static Key encryption). Supported codecs: H.264 and H.265 video codecs, and
-   * AAC audio codec. Choose Enabled to activate Clear Lead DRM optimization. Choose
-   * Disabled to use standard encryption where all segments are encrypted from the
-   * beginning.
+   * and Static Key encryption). Supported codecs: H.264, H.265, and AV1 video
+   * codecs, and AAC audio codec. Choose Enabled to activate Clear Lead DRM
+   * optimization. Choose Disabled to use standard encryption where all segments are
+   * encrypted from the beginning.
    */
   inline HlsClearLead GetClearLead() const { return m_clearLead; }
   inline bool ClearLeadHasBeenSet() const { return m_clearLeadHasBeenSet; }

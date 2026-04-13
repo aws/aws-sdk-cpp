@@ -124,11 +124,14 @@
 #include <aws/devops-agent/model/MCPServerAuthorizationDiscoveryConfig.h>
 #include <aws/devops-agent/model/MCPServerAuthorizationMethod.h>
 #include <aws/devops-agent/model/MCPServerBearerTokenConfig.h>
+#include <aws/devops-agent/model/MCPServerConfiguration.h>
+#include <aws/devops-agent/model/MCPServerDatadogConfiguration.h>
 #include <aws/devops-agent/model/MCPServerDetails.h>
 #include <aws/devops-agent/model/MCPServerGrafanaConfiguration.h>
 #include <aws/devops-agent/model/MCPServerNewRelicConfiguration.h>
 #include <aws/devops-agent/model/MCPServerOAuth3LOConfig.h>
 #include <aws/devops-agent/model/MCPServerOAuthClientCredentialsConfig.h>
+#include <aws/devops-agent/model/MCPServerSplunkConfiguration.h>
 #include <aws/devops-agent/model/Message.h>
 #include <aws/devops-agent/model/MonitorAccountType.h>
 #include <aws/devops-agent/model/NewRelicApiKeyConfig.h>

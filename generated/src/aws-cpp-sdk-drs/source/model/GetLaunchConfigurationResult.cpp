@@ -22,13 +22,13 @@ GetLaunchConfigurationResult::GetLaunchConfigurationResult(const Aws::AmazonWebS
 GetLaunchConfigurationResult& GetLaunchConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("copyPrivateIp")) {
-    m_copyPrivateIp = jsonValue.GetBool("copyPrivateIp");
-    m_copyPrivateIpHasBeenSet = true;
+  if (jsonValue.ValueExists("sourceServerID")) {
+    m_sourceServerID = jsonValue.GetString("sourceServerID");
+    m_sourceServerIDHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("copyTags")) {
-    m_copyTags = jsonValue.GetBool("copyTags");
-    m_copyTagsHasBeenSet = true;
+  if (jsonValue.ValueExists("name")) {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("ec2LaunchTemplateID")) {
     m_ec2LaunchTemplateID = jsonValue.GetString("ec2LaunchTemplateID");
@@ -38,30 +38,30 @@ GetLaunchConfigurationResult& GetLaunchConfigurationResult::operator=(const Aws:
     m_launchDisposition = LaunchDispositionMapper::GetLaunchDispositionForName(jsonValue.GetString("launchDisposition"));
     m_launchDispositionHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("launchIntoInstanceProperties")) {
-    m_launchIntoInstanceProperties = jsonValue.GetObject("launchIntoInstanceProperties");
-    m_launchIntoInstancePropertiesHasBeenSet = true;
+  if (jsonValue.ValueExists("targetInstanceTypeRightSizingMethod")) {
+    m_targetInstanceTypeRightSizingMethod = TargetInstanceTypeRightSizingMethodMapper::GetTargetInstanceTypeRightSizingMethodForName(
+        jsonValue.GetString("targetInstanceTypeRightSizingMethod"));
+    m_targetInstanceTypeRightSizingMethodHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("copyPrivateIp")) {
+    m_copyPrivateIp = jsonValue.GetBool("copyPrivateIp");
+    m_copyPrivateIpHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("copyTags")) {
+    m_copyTags = jsonValue.GetBool("copyTags");
+    m_copyTagsHasBeenSet = true;
   }
   if (jsonValue.ValueExists("licensing")) {
     m_licensing = jsonValue.GetObject("licensing");
     m_licensingHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("name")) {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("postLaunchEnabled")) {
     m_postLaunchEnabled = jsonValue.GetBool("postLaunchEnabled");
     m_postLaunchEnabledHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("sourceServerID")) {
-    m_sourceServerID = jsonValue.GetString("sourceServerID");
-    m_sourceServerIDHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("targetInstanceTypeRightSizingMethod")) {
-    m_targetInstanceTypeRightSizingMethod = TargetInstanceTypeRightSizingMethodMapper::GetTargetInstanceTypeRightSizingMethodForName(
-        jsonValue.GetString("targetInstanceTypeRightSizingMethod"));
-    m_targetInstanceTypeRightSizingMethodHasBeenSet = true;
+  if (jsonValue.ValueExists("launchIntoInstanceProperties")) {
+    m_launchIntoInstanceProperties = jsonValue.GetObject("launchIntoInstanceProperties");
+    m_launchIntoInstancePropertiesHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

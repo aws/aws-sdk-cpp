@@ -18,13 +18,13 @@ namespace Model {
 DataReplicationInitiation::DataReplicationInitiation(JsonView jsonValue) { *this = jsonValue; }
 
 DataReplicationInitiation& DataReplicationInitiation::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("nextAttemptDateTime")) {
-    m_nextAttemptDateTime = jsonValue.GetString("nextAttemptDateTime");
-    m_nextAttemptDateTimeHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("startDateTime")) {
     m_startDateTime = jsonValue.GetString("startDateTime");
     m_startDateTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("nextAttemptDateTime")) {
+    m_nextAttemptDateTime = jsonValue.GetString("nextAttemptDateTime");
+    m_nextAttemptDateTimeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("steps")) {
     Aws::Utils::Array<JsonView> stepsJsonList = jsonValue.GetArray("steps");
@@ -39,12 +39,12 @@ DataReplicationInitiation& DataReplicationInitiation::operator=(JsonView jsonVal
 JsonValue DataReplicationInitiation::Jsonize() const {
   JsonValue payload;
 
-  if (m_nextAttemptDateTimeHasBeenSet) {
-    payload.WithString("nextAttemptDateTime", m_nextAttemptDateTime);
-  }
-
   if (m_startDateTimeHasBeenSet) {
     payload.WithString("startDateTime", m_startDateTime);
+  }
+
+  if (m_nextAttemptDateTimeHasBeenSet) {
+    payload.WithString("nextAttemptDateTime", m_nextAttemptDateTime);
   }
 
   if (m_stepsHasBeenSet) {

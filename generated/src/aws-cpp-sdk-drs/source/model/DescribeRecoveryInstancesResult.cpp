@@ -22,16 +22,16 @@ DescribeRecoveryInstancesResult::DescribeRecoveryInstancesResult(const Aws::Amaz
 DescribeRecoveryInstancesResult& DescribeRecoveryInstancesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("nextToken")) {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("items")) {
     Aws::Utils::Array<JsonView> itemsJsonList = jsonValue.GetArray("items");
     for (unsigned itemsIndex = 0; itemsIndex < itemsJsonList.GetLength(); ++itemsIndex) {
       m_items.push_back(itemsJsonList[itemsIndex].AsObject());
     }
     m_itemsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("nextToken")) {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

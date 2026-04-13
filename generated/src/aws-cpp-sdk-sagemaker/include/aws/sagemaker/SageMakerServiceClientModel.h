@@ -363,6 +363,7 @@
 #include <aws/sagemaker/model/SearchTrainingPlanOfferingsResult.h>
 #include <aws/sagemaker/model/SendPipelineExecutionStepFailureResult.h>
 #include <aws/sagemaker/model/SendPipelineExecutionStepSuccessResult.h>
+#include <aws/sagemaker/model/StartClusterHealthCheckResult.h>
 #include <aws/sagemaker/model/StartInferenceExperimentResult.h>
 #include <aws/sagemaker/model/StartMlflowTrackingServerResult.h>
 #include <aws/sagemaker/model/StartPipelineExecutionResult.h>
@@ -758,6 +759,7 @@ class SearchRequest;
 class SearchTrainingPlanOfferingsRequest;
 class SendPipelineExecutionStepFailureRequest;
 class SendPipelineExecutionStepSuccessRequest;
+class StartClusterHealthCheckRequest;
 class StartEdgeDeploymentStageRequest;
 class StartInferenceExperimentRequest;
 class StartMlflowTrackingServerRequest;
@@ -1144,6 +1146,7 @@ typedef Aws::Utils::Outcome<SearchResult, SageMakerError> SearchOutcome;
 typedef Aws::Utils::Outcome<SearchTrainingPlanOfferingsResult, SageMakerError> SearchTrainingPlanOfferingsOutcome;
 typedef Aws::Utils::Outcome<SendPipelineExecutionStepFailureResult, SageMakerError> SendPipelineExecutionStepFailureOutcome;
 typedef Aws::Utils::Outcome<SendPipelineExecutionStepSuccessResult, SageMakerError> SendPipelineExecutionStepSuccessOutcome;
+typedef Aws::Utils::Outcome<StartClusterHealthCheckResult, SageMakerError> StartClusterHealthCheckOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StartEdgeDeploymentStageOutcome;
 typedef Aws::Utils::Outcome<StartInferenceExperimentResult, SageMakerError> StartInferenceExperimentOutcome;
 typedef Aws::Utils::Outcome<StartMlflowTrackingServerResult, SageMakerError> StartMlflowTrackingServerOutcome;
@@ -1528,6 +1531,7 @@ typedef std::future<SearchOutcome> SearchOutcomeCallable;
 typedef std::future<SearchTrainingPlanOfferingsOutcome> SearchTrainingPlanOfferingsOutcomeCallable;
 typedef std::future<SendPipelineExecutionStepFailureOutcome> SendPipelineExecutionStepFailureOutcomeCallable;
 typedef std::future<SendPipelineExecutionStepSuccessOutcome> SendPipelineExecutionStepSuccessOutcomeCallable;
+typedef std::future<StartClusterHealthCheckOutcome> StartClusterHealthCheckOutcomeCallable;
 typedef std::future<StartEdgeDeploymentStageOutcome> StartEdgeDeploymentStageOutcomeCallable;
 typedef std::future<StartInferenceExperimentOutcome> StartInferenceExperimentOutcomeCallable;
 typedef std::future<StartMlflowTrackingServerOutcome> StartMlflowTrackingServerOutcomeCallable;
@@ -2589,6 +2593,9 @@ typedef std::function<void(const SageMakerClient*, const Model::SendPipelineExec
                            const Model::SendPipelineExecutionStepSuccessOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SendPipelineExecutionStepSuccessResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::StartClusterHealthCheckRequest&,
+                           const Model::StartClusterHealthCheckOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartClusterHealthCheckResponseReceivedHandler;
 typedef std::function<void(const SageMakerClient*, const Model::StartEdgeDeploymentStageRequest&,
                            const Model::StartEdgeDeploymentStageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartEdgeDeploymentStageResponseReceivedHandler;

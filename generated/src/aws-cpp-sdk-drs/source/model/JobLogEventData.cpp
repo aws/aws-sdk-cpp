@@ -18,29 +18,37 @@ namespace Model {
 JobLogEventData::JobLogEventData(JsonView jsonValue) { *this = jsonValue; }
 
 JobLogEventData& JobLogEventData::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("conversionProperties")) {
-    m_conversionProperties = jsonValue.GetObject("conversionProperties");
-    m_conversionPropertiesHasBeenSet = true;
+  if (jsonValue.ValueExists("sourceServerID")) {
+    m_sourceServerID = jsonValue.GetString("sourceServerID");
+    m_sourceServerIDHasBeenSet = true;
   }
   if (jsonValue.ValueExists("conversionServerID")) {
     m_conversionServerID = jsonValue.GetString("conversionServerID");
     m_conversionServerIDHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("eventResourceData")) {
-    m_eventResourceData = jsonValue.GetObject("eventResourceData");
-    m_eventResourceDataHasBeenSet = true;
+  if (jsonValue.ValueExists("targetInstanceID")) {
+    m_targetInstanceID = jsonValue.GetString("targetInstanceID");
+    m_targetInstanceIDHasBeenSet = true;
   }
   if (jsonValue.ValueExists("rawError")) {
     m_rawError = jsonValue.GetString("rawError");
     m_rawErrorHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("sourceServerID")) {
-    m_sourceServerID = jsonValue.GetString("sourceServerID");
-    m_sourceServerIDHasBeenSet = true;
+  if (jsonValue.ValueExists("conversionProperties")) {
+    m_conversionProperties = jsonValue.GetObject("conversionProperties");
+    m_conversionPropertiesHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("targetInstanceID")) {
-    m_targetInstanceID = jsonValue.GetString("targetInstanceID");
-    m_targetInstanceIDHasBeenSet = true;
+  if (jsonValue.ValueExists("eventResourceData")) {
+    m_eventResourceData = jsonValue.GetObject("eventResourceData");
+    m_eventResourceDataHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("attemptCount")) {
+    m_attemptCount = jsonValue.GetInt64("attemptCount");
+    m_attemptCountHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("maxAttemptsCount")) {
+    m_maxAttemptsCount = jsonValue.GetInt64("maxAttemptsCount");
+    m_maxAttemptsCountHasBeenSet = true;
   }
   return *this;
 }
@@ -48,28 +56,36 @@ JobLogEventData& JobLogEventData::operator=(JsonView jsonValue) {
 JsonValue JobLogEventData::Jsonize() const {
   JsonValue payload;
 
-  if (m_conversionPropertiesHasBeenSet) {
-    payload.WithObject("conversionProperties", m_conversionProperties.Jsonize());
+  if (m_sourceServerIDHasBeenSet) {
+    payload.WithString("sourceServerID", m_sourceServerID);
   }
 
   if (m_conversionServerIDHasBeenSet) {
     payload.WithString("conversionServerID", m_conversionServerID);
   }
 
-  if (m_eventResourceDataHasBeenSet) {
-    payload.WithObject("eventResourceData", m_eventResourceData.Jsonize());
+  if (m_targetInstanceIDHasBeenSet) {
+    payload.WithString("targetInstanceID", m_targetInstanceID);
   }
 
   if (m_rawErrorHasBeenSet) {
     payload.WithString("rawError", m_rawError);
   }
 
-  if (m_sourceServerIDHasBeenSet) {
-    payload.WithString("sourceServerID", m_sourceServerID);
+  if (m_conversionPropertiesHasBeenSet) {
+    payload.WithObject("conversionProperties", m_conversionProperties.Jsonize());
   }
 
-  if (m_targetInstanceIDHasBeenSet) {
-    payload.WithString("targetInstanceID", m_targetInstanceID);
+  if (m_eventResourceDataHasBeenSet) {
+    payload.WithObject("eventResourceData", m_eventResourceData.Jsonize());
+  }
+
+  if (m_attemptCountHasBeenSet) {
+    payload.WithInt64("attemptCount", m_attemptCount);
+  }
+
+  if (m_maxAttemptsCountHasBeenSet) {
+    payload.WithInt64("maxAttemptsCount", m_maxAttemptsCount);
   }
 
   return payload;

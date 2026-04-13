@@ -203,6 +203,9 @@
 #include <aws/mediaconnect/model/MediaConnectFlowRouterInputStreamDetails.h>
 #include <aws/mediaconnect/model/MediaConnectFlowRouterOutputConfiguration.h>
 #include <aws/mediaconnect/model/MediaConnectFlowRouterOutputStreamDetails.h>
+#include <aws/mediaconnect/model/MediaLiveChannelPipelineId.h>
+#include <aws/mediaconnect/model/MediaLiveChannelRouterInputConfiguration.h>
+#include <aws/mediaconnect/model/MediaLiveChannelRouterInputStreamDetails.h>
 #include <aws/mediaconnect/model/MediaLiveInputPipelineId.h>
 #include <aws/mediaconnect/model/MediaLiveInputRouterOutputConfiguration.h>
 #include <aws/mediaconnect/model/MediaLiveInputRouterOutputStreamDetails.h>

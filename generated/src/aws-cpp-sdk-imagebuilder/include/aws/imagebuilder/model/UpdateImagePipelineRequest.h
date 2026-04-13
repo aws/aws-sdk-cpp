@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/UUID.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/imagebuilder/ImagebuilderRequest.h>
@@ -320,6 +321,30 @@ class UpdateImagePipelineRequest : public ImagebuilderRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The tags to be applied to the images produced by this pipeline.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetImageTags() const { return m_imageTags; }
+  inline bool ImageTagsHasBeenSet() const { return m_imageTagsHasBeenSet; }
+  template <typename ImageTagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetImageTags(ImageTagsT&& value) {
+    m_imageTagsHasBeenSet = true;
+    m_imageTags = std::forward<ImageTagsT>(value);
+  }
+  template <typename ImageTagsT = Aws::Map<Aws::String, Aws::String>>
+  UpdateImagePipelineRequest& WithImageTags(ImageTagsT&& value) {
+    SetImageTags(std::forward<ImageTagsT>(value));
+    return *this;
+  }
+  template <typename ImageTagsKeyT = Aws::String, typename ImageTagsValueT = Aws::String>
+  UpdateImagePipelineRequest& AddImageTags(ImageTagsKeyT&& key, ImageTagsValueT&& value) {
+    m_imageTagsHasBeenSet = true;
+    m_imageTags.emplace(std::forward<ImageTagsKeyT>(key), std::forward<ImageTagsValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_imagePipelineArn;
 
@@ -350,6 +375,8 @@ class UpdateImagePipelineRequest : public ImagebuilderRequest {
   PipelineLoggingConfiguration m_loggingConfiguration;
 
   Aws::String m_executionRole;
+
+  Aws::Map<Aws::String, Aws::String> m_imageTags;
   bool m_imagePipelineArnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_imageRecipeArnHasBeenSet = false;
@@ -365,6 +392,7 @@ class UpdateImagePipelineRequest : public ImagebuilderRequest {
   bool m_workflowsHasBeenSet = false;
   bool m_loggingConfigurationHasBeenSet = false;
   bool m_executionRoleHasBeenSet = false;
+  bool m_imageTagsHasBeenSet = false;
 };
 
 }  // namespace Model

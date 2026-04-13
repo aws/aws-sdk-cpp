@@ -52,6 +52,7 @@ static const int TEMPLATE_ALREADY_EXISTS_HASH = HashingUtils::HashString("Templa
 static const int PULL_THROUGH_CACHE_RULE_NOT_FOUND_HASH = HashingUtils::HashString("PullThroughCacheRuleNotFoundException");
 static const int IMAGE_STORAGE_CLASS_UPDATE_NOT_SUPPORTED_HASH = HashingUtils::HashString("ImageStorageClassUpdateNotSupportedException");
 static const int IMAGE_NOT_FOUND_HASH = HashingUtils::HashString("ImageNotFoundException");
+static const int UNABLE_TO_LIST_UPSTREAM_IMAGE_REFERRERS_HASH = HashingUtils::HashString("UnableToListUpstreamImageReferrersException");
 static const int TEMPLATE_NOT_FOUND_HASH = HashingUtils::HashString("TemplateNotFoundException");
 static const int INVALID_LAYER_HASH = HashingUtils::HashString("InvalidLayerException");
 static const int REFERENCED_IMAGES_NOT_FOUND_HASH = HashingUtils::HashString("ReferencedImagesNotFoundException");
@@ -123,6 +124,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::IMAGE_STORAGE_CLASS_UPDATE_NOT_SUPPORTED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == IMAGE_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::IMAGE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == UNABLE_TO_LIST_UPSTREAM_IMAGE_REFERRERS_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::UNABLE_TO_LIST_UPSTREAM_IMAGE_REFERRERS), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == TEMPLATE_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::TEMPLATE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_LAYER_HASH) {

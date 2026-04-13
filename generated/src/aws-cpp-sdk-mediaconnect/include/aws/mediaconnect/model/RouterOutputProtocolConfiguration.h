@@ -37,22 +37,6 @@ class RouterOutputProtocolConfiguration {
 
   ///@{
 
-  inline const RtpRouterOutputConfiguration& GetRtp() const { return m_rtp; }
-  inline bool RtpHasBeenSet() const { return m_rtpHasBeenSet; }
-  template <typename RtpT = RtpRouterOutputConfiguration>
-  void SetRtp(RtpT&& value) {
-    m_rtpHasBeenSet = true;
-    m_rtp = std::forward<RtpT>(value);
-  }
-  template <typename RtpT = RtpRouterOutputConfiguration>
-  RouterOutputProtocolConfiguration& WithRtp(RtpT&& value) {
-    SetRtp(std::forward<RtpT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-
   inline const RistRouterOutputConfiguration& GetRist() const { return m_rist; }
   inline bool RistHasBeenSet() const { return m_ristHasBeenSet; }
   template <typename RistT = RistRouterOutputConfiguration>
@@ -98,18 +82,34 @@ class RouterOutputProtocolConfiguration {
     return *this;
   }
   ///@}
- private:
-  RtpRouterOutputConfiguration m_rtp;
 
+  ///@{
+
+  inline const RtpRouterOutputConfiguration& GetRtp() const { return m_rtp; }
+  inline bool RtpHasBeenSet() const { return m_rtpHasBeenSet; }
+  template <typename RtpT = RtpRouterOutputConfiguration>
+  void SetRtp(RtpT&& value) {
+    m_rtpHasBeenSet = true;
+    m_rtp = std::forward<RtpT>(value);
+  }
+  template <typename RtpT = RtpRouterOutputConfiguration>
+  RouterOutputProtocolConfiguration& WithRtp(RtpT&& value) {
+    SetRtp(std::forward<RtpT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   RistRouterOutputConfiguration m_rist;
 
   SrtListenerRouterOutputConfiguration m_srtListener;
 
   SrtCallerRouterOutputConfiguration m_srtCaller;
-  bool m_rtpHasBeenSet = false;
+
+  RtpRouterOutputConfiguration m_rtp;
   bool m_ristHasBeenSet = false;
   bool m_srtListenerHasBeenSet = false;
   bool m_srtCallerHasBeenSet = false;
+  bool m_rtpHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -544,6 +544,8 @@
 #include <aws/mediaconvert/model/MsSmoothFragmentLengthControl.h>
 #include <aws/mediaconvert/model/MsSmoothGroupSettings.h>
 #include <aws/mediaconvert/model/MsSmoothManifestEncoding.h>
+#include <aws/mediaconvert/model/MultiViewInput.h>
+#include <aws/mediaconvert/model/MultiViewSettings.h>
 #include <aws/mediaconvert/model/MxfAfdSignaling.h>
 #include <aws/mediaconvert/model/MxfProfile.h>
 #include <aws/mediaconvert/model/MxfSettings.h>

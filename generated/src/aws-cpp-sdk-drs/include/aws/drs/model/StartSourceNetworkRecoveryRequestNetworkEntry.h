@@ -34,24 +34,6 @@ class StartSourceNetworkRecoveryRequestNetworkEntry {
 
   ///@{
   /**
-   * <p>CloudFormation stack name to be used for recovering the network.</p>
-   */
-  inline const Aws::String& GetCfnStackName() const { return m_cfnStackName; }
-  inline bool CfnStackNameHasBeenSet() const { return m_cfnStackNameHasBeenSet; }
-  template <typename CfnStackNameT = Aws::String>
-  void SetCfnStackName(CfnStackNameT&& value) {
-    m_cfnStackNameHasBeenSet = true;
-    m_cfnStackName = std::forward<CfnStackNameT>(value);
-  }
-  template <typename CfnStackNameT = Aws::String>
-  StartSourceNetworkRecoveryRequestNetworkEntry& WithCfnStackName(CfnStackNameT&& value) {
-    SetCfnStackName(std::forward<CfnStackNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the Source Network you want to recover.</p>
    */
   inline const Aws::String& GetSourceNetworkID() const { return m_sourceNetworkID; }
@@ -67,12 +49,30 @@ class StartSourceNetworkRecoveryRequestNetworkEntry {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_cfnStackName;
 
+  ///@{
+  /**
+   * <p>CloudFormation stack name to be used for recovering the network.</p>
+   */
+  inline const Aws::String& GetCfnStackName() const { return m_cfnStackName; }
+  inline bool CfnStackNameHasBeenSet() const { return m_cfnStackNameHasBeenSet; }
+  template <typename CfnStackNameT = Aws::String>
+  void SetCfnStackName(CfnStackNameT&& value) {
+    m_cfnStackNameHasBeenSet = true;
+    m_cfnStackName = std::forward<CfnStackNameT>(value);
+  }
+  template <typename CfnStackNameT = Aws::String>
+  StartSourceNetworkRecoveryRequestNetworkEntry& WithCfnStackName(CfnStackNameT&& value) {
+    SetCfnStackName(std::forward<CfnStackNameT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_sourceNetworkID;
-  bool m_cfnStackNameHasBeenSet = false;
+
+  Aws::String m_cfnStackName;
   bool m_sourceNetworkIDHasBeenSet = false;
+  bool m_cfnStackNameHasBeenSet = false;
 };
 
 }  // namespace Model

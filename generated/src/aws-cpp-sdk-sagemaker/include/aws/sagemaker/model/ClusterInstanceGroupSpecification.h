@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/ClusterCapacityRequirements.h>
+#include <aws/sagemaker/model/ClusterInstanceRequirements.h>
 #include <aws/sagemaker/model/ClusterInstanceStorageConfig.h>
 #include <aws/sagemaker/model/ClusterInstanceType.h>
 #include <aws/sagemaker/model/ClusterKubernetesConfig.h>
@@ -111,6 +112,27 @@ class ClusterInstanceGroupSpecification {
   }
   inline ClusterInstanceGroupSpecification& WithInstanceType(ClusterInstanceType value) {
     SetInstanceType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The instance requirements for the instance group, including the instance
+   * types to use. Use this to create a flexible instance group that supports
+   * multiple instance types. The <code>InstanceType</code> and
+   * <code>InstanceRequirements</code> properties are mutually exclusive.</p>
+   */
+  inline const ClusterInstanceRequirements& GetInstanceRequirements() const { return m_instanceRequirements; }
+  inline bool InstanceRequirementsHasBeenSet() const { return m_instanceRequirementsHasBeenSet; }
+  template <typename InstanceRequirementsT = ClusterInstanceRequirements>
+  void SetInstanceRequirements(InstanceRequirementsT&& value) {
+    m_instanceRequirementsHasBeenSet = true;
+    m_instanceRequirements = std::forward<InstanceRequirementsT>(value);
+  }
+  template <typename InstanceRequirementsT = ClusterInstanceRequirements>
+  ClusterInstanceGroupSpecification& WithInstanceRequirements(InstanceRequirementsT&& value) {
+    SetInstanceRequirements(std::forward<InstanceRequirementsT>(value));
     return *this;
   }
   ///@}
@@ -406,6 +428,8 @@ class ClusterInstanceGroupSpecification {
 
   ClusterInstanceType m_instanceType{ClusterInstanceType::NOT_SET};
 
+  ClusterInstanceRequirements m_instanceRequirements;
+
   ClusterLifeCycleConfig m_lifeCycleConfig;
 
   Aws::String m_executionRole;
@@ -433,6 +457,7 @@ class ClusterInstanceGroupSpecification {
   bool m_minInstanceCountHasBeenSet = false;
   bool m_instanceGroupNameHasBeenSet = false;
   bool m_instanceTypeHasBeenSet = false;
+  bool m_instanceRequirementsHasBeenSet = false;
   bool m_lifeCycleConfigHasBeenSet = false;
   bool m_executionRoleHasBeenSet = false;
   bool m_threadsPerCoreHasBeenSet = false;

@@ -101,6 +101,13 @@ Input& Input::operator=(JsonView jsonValue) {
     m_inputScanType = InputScanTypeMapper::GetInputScanTypeForName(jsonValue.GetString("inputScanType"));
     m_inputScanTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("multiViewSettings")) {
+    Aws::Utils::Array<JsonView> multiViewSettingsJsonList = jsonValue.GetArray("multiViewSettings");
+    for (unsigned multiViewSettingsIndex = 0; multiViewSettingsIndex < multiViewSettingsJsonList.GetLength(); ++multiViewSettingsIndex) {
+      m_multiViewSettings.push_back(multiViewSettingsJsonList[multiViewSettingsIndex].AsObject());
+    }
+    m_multiViewSettingsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("position")) {
     m_position = jsonValue.GetObject("position");
     m_positionHasBeenSet = true;
@@ -239,6 +246,14 @@ JsonValue Input::Jsonize() const {
 
   if (m_inputScanTypeHasBeenSet) {
     payload.WithString("inputScanType", InputScanTypeMapper::GetNameForInputScanType(m_inputScanType));
+  }
+
+  if (m_multiViewSettingsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> multiViewSettingsJsonList(m_multiViewSettings.size());
+    for (unsigned multiViewSettingsIndex = 0; multiViewSettingsIndex < multiViewSettingsJsonList.GetLength(); ++multiViewSettingsIndex) {
+      multiViewSettingsJsonList[multiViewSettingsIndex].AsObject(m_multiViewSettings[multiViewSettingsIndex].Jsonize());
+    }
+    payload.WithArray("multiViewSettings", std::move(multiViewSettingsJsonList));
   }
 
   if (m_positionHasBeenSet) {

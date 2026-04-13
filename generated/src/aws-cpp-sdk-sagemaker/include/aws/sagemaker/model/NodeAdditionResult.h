@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/ClusterInstanceStatus.h>
+#include <aws/sagemaker/model/ClusterInstanceType.h>
 
 #include <utility>
 
@@ -88,15 +90,68 @@ class NodeAdditionResult {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The availability zones associated with the successfully added node.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const { return m_availabilityZones; }
+  inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
+  template <typename AvailabilityZonesT = Aws::Vector<Aws::String>>
+  void SetAvailabilityZones(AvailabilityZonesT&& value) {
+    m_availabilityZonesHasBeenSet = true;
+    m_availabilityZones = std::forward<AvailabilityZonesT>(value);
+  }
+  template <typename AvailabilityZonesT = Aws::Vector<Aws::String>>
+  NodeAdditionResult& WithAvailabilityZones(AvailabilityZonesT&& value) {
+    SetAvailabilityZones(std::forward<AvailabilityZonesT>(value));
+    return *this;
+  }
+  template <typename AvailabilityZonesT = Aws::String>
+  NodeAdditionResult& AddAvailabilityZones(AvailabilityZonesT&& value) {
+    m_availabilityZonesHasBeenSet = true;
+    m_availabilityZones.emplace_back(std::forward<AvailabilityZonesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The instance types associated with the successfully added node.</p>
+   */
+  inline const Aws::Vector<ClusterInstanceType>& GetInstanceTypes() const { return m_instanceTypes; }
+  inline bool InstanceTypesHasBeenSet() const { return m_instanceTypesHasBeenSet; }
+  template <typename InstanceTypesT = Aws::Vector<ClusterInstanceType>>
+  void SetInstanceTypes(InstanceTypesT&& value) {
+    m_instanceTypesHasBeenSet = true;
+    m_instanceTypes = std::forward<InstanceTypesT>(value);
+  }
+  template <typename InstanceTypesT = Aws::Vector<ClusterInstanceType>>
+  NodeAdditionResult& WithInstanceTypes(InstanceTypesT&& value) {
+    SetInstanceTypes(std::forward<InstanceTypesT>(value));
+    return *this;
+  }
+  inline NodeAdditionResult& AddInstanceTypes(ClusterInstanceType value) {
+    m_instanceTypesHasBeenSet = true;
+    m_instanceTypes.push_back(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_nodeLogicalId;
 
   Aws::String m_instanceGroupName;
 
   ClusterInstanceStatus m_status{ClusterInstanceStatus::NOT_SET};
+
+  Aws::Vector<Aws::String> m_availabilityZones;
+
+  Aws::Vector<ClusterInstanceType> m_instanceTypes;
   bool m_nodeLogicalIdHasBeenSet = false;
   bool m_instanceGroupNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_availabilityZonesHasBeenSet = false;
+  bool m_instanceTypesHasBeenSet = false;
 };
 
 }  // namespace Model

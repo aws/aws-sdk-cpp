@@ -39,48 +39,18 @@ class RecoveryInstanceProperties {
 
   ///@{
   /**
-   * <p>An array of CPUs.</p>
+   * <p>The date and time the Recovery Instance properties were last updated on.</p>
    */
-  inline const Aws::Vector<CPU>& GetCpus() const { return m_cpus; }
-  inline bool CpusHasBeenSet() const { return m_cpusHasBeenSet; }
-  template <typename CpusT = Aws::Vector<CPU>>
-  void SetCpus(CpusT&& value) {
-    m_cpusHasBeenSet = true;
-    m_cpus = std::forward<CpusT>(value);
+  inline const Aws::String& GetLastUpdatedDateTime() const { return m_lastUpdatedDateTime; }
+  inline bool LastUpdatedDateTimeHasBeenSet() const { return m_lastUpdatedDateTimeHasBeenSet; }
+  template <typename LastUpdatedDateTimeT = Aws::String>
+  void SetLastUpdatedDateTime(LastUpdatedDateTimeT&& value) {
+    m_lastUpdatedDateTimeHasBeenSet = true;
+    m_lastUpdatedDateTime = std::forward<LastUpdatedDateTimeT>(value);
   }
-  template <typename CpusT = Aws::Vector<CPU>>
-  RecoveryInstanceProperties& WithCpus(CpusT&& value) {
-    SetCpus(std::forward<CpusT>(value));
-    return *this;
-  }
-  template <typename CpusT = CPU>
-  RecoveryInstanceProperties& AddCpus(CpusT&& value) {
-    m_cpusHasBeenSet = true;
-    m_cpus.emplace_back(std::forward<CpusT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>An array of disks.</p>
-   */
-  inline const Aws::Vector<RecoveryInstanceDisk>& GetDisks() const { return m_disks; }
-  inline bool DisksHasBeenSet() const { return m_disksHasBeenSet; }
-  template <typename DisksT = Aws::Vector<RecoveryInstanceDisk>>
-  void SetDisks(DisksT&& value) {
-    m_disksHasBeenSet = true;
-    m_disks = std::forward<DisksT>(value);
-  }
-  template <typename DisksT = Aws::Vector<RecoveryInstanceDisk>>
-  RecoveryInstanceProperties& WithDisks(DisksT&& value) {
-    SetDisks(std::forward<DisksT>(value));
-    return *this;
-  }
-  template <typename DisksT = RecoveryInstanceDisk>
-  RecoveryInstanceProperties& AddDisks(DisksT&& value) {
-    m_disksHasBeenSet = true;
-    m_disks.emplace_back(std::forward<DisksT>(value));
+  template <typename LastUpdatedDateTimeT = Aws::String>
+  RecoveryInstanceProperties& WithLastUpdatedDateTime(LastUpdatedDateTimeT&& value) {
+    SetLastUpdatedDateTime(std::forward<LastUpdatedDateTimeT>(value));
     return *this;
   }
   ///@}
@@ -99,24 +69,6 @@ class RecoveryInstanceProperties {
   template <typename IdentificationHintsT = IdentificationHints>
   RecoveryInstanceProperties& WithIdentificationHints(IdentificationHintsT&& value) {
     SetIdentificationHints(std::forward<IdentificationHintsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The date and time the Recovery Instance properties were last updated on.</p>
-   */
-  inline const Aws::String& GetLastUpdatedDateTime() const { return m_lastUpdatedDateTime; }
-  inline bool LastUpdatedDateTimeHasBeenSet() const { return m_lastUpdatedDateTimeHasBeenSet; }
-  template <typename LastUpdatedDateTimeT = Aws::String>
-  void SetLastUpdatedDateTime(LastUpdatedDateTimeT&& value) {
-    m_lastUpdatedDateTimeHasBeenSet = true;
-    m_lastUpdatedDateTime = std::forward<LastUpdatedDateTimeT>(value);
-  }
-  template <typename LastUpdatedDateTimeT = Aws::String>
-  RecoveryInstanceProperties& WithLastUpdatedDateTime(LastUpdatedDateTimeT&& value) {
-    SetLastUpdatedDateTime(std::forward<LastUpdatedDateTimeT>(value));
     return *this;
   }
   ///@}
@@ -147,18 +99,48 @@ class RecoveryInstanceProperties {
 
   ///@{
   /**
-   * <p>Operating system.</p>
+   * <p>An array of disks.</p>
    */
-  inline const OS& GetOs() const { return m_os; }
-  inline bool OsHasBeenSet() const { return m_osHasBeenSet; }
-  template <typename OsT = OS>
-  void SetOs(OsT&& value) {
-    m_osHasBeenSet = true;
-    m_os = std::forward<OsT>(value);
+  inline const Aws::Vector<RecoveryInstanceDisk>& GetDisks() const { return m_disks; }
+  inline bool DisksHasBeenSet() const { return m_disksHasBeenSet; }
+  template <typename DisksT = Aws::Vector<RecoveryInstanceDisk>>
+  void SetDisks(DisksT&& value) {
+    m_disksHasBeenSet = true;
+    m_disks = std::forward<DisksT>(value);
   }
-  template <typename OsT = OS>
-  RecoveryInstanceProperties& WithOs(OsT&& value) {
-    SetOs(std::forward<OsT>(value));
+  template <typename DisksT = Aws::Vector<RecoveryInstanceDisk>>
+  RecoveryInstanceProperties& WithDisks(DisksT&& value) {
+    SetDisks(std::forward<DisksT>(value));
+    return *this;
+  }
+  template <typename DisksT = RecoveryInstanceDisk>
+  RecoveryInstanceProperties& AddDisks(DisksT&& value) {
+    m_disksHasBeenSet = true;
+    m_disks.emplace_back(std::forward<DisksT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An array of CPUs.</p>
+   */
+  inline const Aws::Vector<CPU>& GetCpus() const { return m_cpus; }
+  inline bool CpusHasBeenSet() const { return m_cpusHasBeenSet; }
+  template <typename CpusT = Aws::Vector<CPU>>
+  void SetCpus(CpusT&& value) {
+    m_cpusHasBeenSet = true;
+    m_cpus = std::forward<CpusT>(value);
+  }
+  template <typename CpusT = Aws::Vector<CPU>>
+  RecoveryInstanceProperties& WithCpus(CpusT&& value) {
+    SetCpus(std::forward<CpusT>(value));
+    return *this;
+  }
+  template <typename CpusT = CPU>
+  RecoveryInstanceProperties& AddCpus(CpusT&& value) {
+    m_cpusHasBeenSet = true;
+    m_cpus.emplace_back(std::forward<CpusT>(value));
     return *this;
   }
   ///@}
@@ -178,27 +160,45 @@ class RecoveryInstanceProperties {
     return *this;
   }
   ///@}
- private:
-  Aws::Vector<CPU> m_cpus;
 
-  Aws::Vector<RecoveryInstanceDisk> m_disks;
+  ///@{
+  /**
+   * <p>Operating system.</p>
+   */
+  inline const OS& GetOs() const { return m_os; }
+  inline bool OsHasBeenSet() const { return m_osHasBeenSet; }
+  template <typename OsT = OS>
+  void SetOs(OsT&& value) {
+    m_osHasBeenSet = true;
+    m_os = std::forward<OsT>(value);
+  }
+  template <typename OsT = OS>
+  RecoveryInstanceProperties& WithOs(OsT&& value) {
+    SetOs(std::forward<OsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_lastUpdatedDateTime;
 
   IdentificationHints m_identificationHints;
 
-  Aws::String m_lastUpdatedDateTime;
-
   Aws::Vector<NetworkInterface> m_networkInterfaces;
 
-  OS m_os;
+  Aws::Vector<RecoveryInstanceDisk> m_disks;
+
+  Aws::Vector<CPU> m_cpus;
 
   long long m_ramBytes{0};
-  bool m_cpusHasBeenSet = false;
-  bool m_disksHasBeenSet = false;
-  bool m_identificationHintsHasBeenSet = false;
+
+  OS m_os;
   bool m_lastUpdatedDateTimeHasBeenSet = false;
+  bool m_identificationHintsHasBeenSet = false;
   bool m_networkInterfacesHasBeenSet = false;
-  bool m_osHasBeenSet = false;
+  bool m_disksHasBeenSet = false;
+  bool m_cpusHasBeenSet = false;
   bool m_ramBytesHasBeenSet = false;
+  bool m_osHasBeenSet = false;
 };
 
 }  // namespace Model

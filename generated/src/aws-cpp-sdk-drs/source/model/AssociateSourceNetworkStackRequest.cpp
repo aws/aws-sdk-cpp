@@ -15,12 +15,12 @@ using namespace Aws::Utils;
 Aws::String AssociateSourceNetworkStackRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_cfnStackNameHasBeenSet) {
-    payload.WithString("cfnStackName", m_cfnStackName);
-  }
-
   if (m_sourceNetworkIDHasBeenSet) {
     payload.WithString("sourceNetworkID", m_sourceNetworkID);
+  }
+
+  if (m_cfnStackNameHasBeenSet) {
+    payload.WithString("cfnStackName", m_cfnStackName);
   }
 
   return payload.View().WriteReadable();

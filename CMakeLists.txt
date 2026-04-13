@@ -38,6 +38,7 @@ if (LEGACY_BUILD)
     option(NO_ENCRYPTION "If enabled, no platform-default encryption will be included in the library.  For the library to be used you will need to provide your own platform-specific implementations" OFF)
     option(USE_IXML_HTTP_REQUEST_2 "If enabled on windows, the com object IXmlHttpRequest2 will be used for the http stack" OFF)
     option(ENABLE_RTTI "Flag to enable/disable rtti within the library" ON)
+    option(NO_CPPSTD_IN_PKG_CONFIG "Removes cpp language standard from being included in pkg config installs" OFF)
     option(ENABLE_TESTING "Flag to enable/disable building unit and integration tests" ON)
     option(AUTORUN_UNIT_TESTS "Flag to enable/disable automatically run unit tests after building" ON)
     option(ANDROID_BUILD_CURL "When building for Android, should curl be built as well" ON)
@@ -153,11 +154,6 @@ if (LEGACY_BUILD)
         endif ()
     endif ()
 
-    # use response files to prevent command-line-too-big errors for large libraries like iam
-    set(CMAKE_CXX_USE_RESPONSE_FILE_FOR_OBJECTS 1)
-    set(CMAKE_CXX_USE_RESPONSE_FILE_FOR_INCLUDES 1)
-    set(CMAKE_CXX_RESPONSE_FILE_LINK_FLAG "@")
-
     if (COMMAND apply_pre_project_platform_settings)
         apply_pre_project_platform_settings()
     endif ()
@@ -172,6 +168,13 @@ if (LEGACY_BUILD)
 
     # build the sdk targets
     project("aws-cpp-sdk-all" VERSION "${PROJECT_VERSION}" LANGUAGES CXX)
+
+    if(NOT CMAKE_SYSTEM_NAME STREQUAL "AIX")
+        # use response files to prevent command-line-too-big errors for large libraries like iam
+        set(CMAKE_CXX_USE_RESPONSE_FILE_FOR_OBJECTS 1)
+        set(CMAKE_CXX_USE_RESPONSE_FILE_FOR_INCLUDES 1)
+        set(CMAKE_CXX_RESPONSE_FILE_LINK_FLAG "@")
+    endif()
 
     find_package(Python3 COMPONENTS Interpreter Development)
     set(PYTHON3_CMD ${PYTHON_EXECUTABLE})

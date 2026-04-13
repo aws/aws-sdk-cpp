@@ -79,5 +79,13 @@ Aws::String UpdateImagePipelineRequest::SerializePayload() const {
     payload.WithString("executionRole", m_executionRole);
   }
 
+  if (m_imageTagsHasBeenSet) {
+    JsonValue imageTagsJsonMap;
+    for (auto& imageTagsItem : m_imageTags) {
+      imageTagsJsonMap.WithString(imageTagsItem.first, imageTagsItem.second);
+    }
+    payload.WithObject("imageTags", std::move(imageTagsJsonMap));
+  }
+
   return payload.View().WriteReadable();
 }

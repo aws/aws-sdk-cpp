@@ -34,7 +34,7 @@ class SelfManagedInput {
 
   ///@{
   /**
-   * <p>The ARN of the Resource Configuration.</p>
+   * <p>The ID or ARN of the resource configuration.</p>
    */
   inline const Aws::String& GetResourceConfigurationId() const { return m_resourceConfigurationId; }
   inline bool ResourceConfigurationIdHasBeenSet() const { return m_resourceConfigurationIdHasBeenSet; }

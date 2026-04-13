@@ -24,6 +24,7 @@
 #include <aws/outposts/model/CancelOrderRequest.h>
 #include <aws/outposts/model/CreateOrderRequest.h>
 #include <aws/outposts/model/CreateOutpostRequest.h>
+#include <aws/outposts/model/CreateRenewalRequest.h>
 #include <aws/outposts/model/CreateSiteRequest.h>
 #include <aws/outposts/model/DeleteOutpostRequest.h>
 #include <aws/outposts/model/DeleteSiteRequest.h>
@@ -35,6 +36,7 @@
 #include <aws/outposts/model/GetOutpostInstanceTypesRequest.h>
 #include <aws/outposts/model/GetOutpostRequest.h>
 #include <aws/outposts/model/GetOutpostSupportedInstanceTypesRequest.h>
+#include <aws/outposts/model/GetRenewalPricingRequest.h>
 #include <aws/outposts/model/GetSiteAddressRequest.h>
 #include <aws/outposts/model/GetSiteRequest.h>
 #include <aws/outposts/model/ListAssetInstancesRequest.h>
@@ -272,6 +274,16 @@ CreateOutpostOutcome OutpostsClient::CreateOutpost(const CreateOutpostRequest& r
   return result.IsSuccess() ? CreateOutpostOutcome(result.GetResultWithOwnership()) : CreateOutpostOutcome(std::move(result.GetError()));
 }
 
+CreateRenewalOutcome OutpostsClient::CreateRenewal(const CreateRenewalRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/renewals");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRenewalOutcome(result.GetResultWithOwnership()) : CreateRenewalOutcome(std::move(result.GetError()));
+}
+
 CreateSiteOutcome OutpostsClient::CreateSite(const CreateSiteRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -465,6 +477,25 @@ GetOutpostSupportedInstanceTypesOutcome OutpostsClient::GetOutpostSupportedInsta
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetOutpostSupportedInstanceTypesOutcome(result.GetResultWithOwnership())
                             : GetOutpostSupportedInstanceTypesOutcome(std::move(result.GetError()));
+}
+
+GetRenewalPricingOutcome OutpostsClient::GetRenewalPricing(const GetRenewalPricingRequest& request) const {
+  if (!request.OutpostIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetRenewalPricing", "Required field: OutpostIdentifier, is not set");
+    return GetRenewalPricingOutcome(Aws::Client::AWSError<OutpostsErrors>(OutpostsErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [OutpostIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/outpost/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOutpostIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/renewal-pricing");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRenewalPricingOutcome(result.GetResultWithOwnership())
+                            : GetRenewalPricingOutcome(std::move(result.GetError()));
 }
 
 GetSiteOutcome OutpostsClient::GetSite(const GetSiteRequest& request) const {

@@ -15,6 +15,10 @@ using namespace Aws::Utils;
 Aws::String CreateSourceNetworkRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_vpcIDHasBeenSet) {
+    payload.WithString("vpcID", m_vpcID);
+  }
+
   if (m_originAccountIDHasBeenSet) {
     payload.WithString("originAccountID", m_originAccountID);
   }
@@ -29,10 +33,6 @@ Aws::String CreateSourceNetworkRequest::SerializePayload() const {
       tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
     }
     payload.WithObject("tags", std::move(tagsJsonMap));
-  }
-
-  if (m_vpcIDHasBeenSet) {
-    payload.WithString("vpcID", m_vpcID);
   }
 
   return payload.View().WriteReadable();

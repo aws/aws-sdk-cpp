@@ -15,16 +15,16 @@ using namespace Aws::Utils;
 Aws::String StartSourceNetworkRecoveryRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_deployAsNewHasBeenSet) {
-    payload.WithBool("deployAsNew", m_deployAsNew);
-  }
-
   if (m_sourceNetworksHasBeenSet) {
     Aws::Utils::Array<JsonValue> sourceNetworksJsonList(m_sourceNetworks.size());
     for (unsigned sourceNetworksIndex = 0; sourceNetworksIndex < sourceNetworksJsonList.GetLength(); ++sourceNetworksIndex) {
       sourceNetworksJsonList[sourceNetworksIndex].AsObject(m_sourceNetworks[sourceNetworksIndex].Jsonize());
     }
     payload.WithArray("sourceNetworks", std::move(sourceNetworksJsonList));
+  }
+
+  if (m_deployAsNewHasBeenSet) {
+    payload.WithBool("deployAsNew", m_deployAsNew);
   }
 
   if (m_tagsHasBeenSet) {

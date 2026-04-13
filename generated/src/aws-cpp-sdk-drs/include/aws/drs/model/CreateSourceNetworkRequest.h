@@ -31,6 +31,24 @@ class CreateSourceNetworkRequest : public DrsRequest {
 
   ///@{
   /**
+   * <p>Which VPC ID to protect.</p>
+   */
+  inline const Aws::String& GetVpcID() const { return m_vpcID; }
+  inline bool VpcIDHasBeenSet() const { return m_vpcIDHasBeenSet; }
+  template <typename VpcIDT = Aws::String>
+  void SetVpcID(VpcIDT&& value) {
+    m_vpcIDHasBeenSet = true;
+    m_vpcID = std::forward<VpcIDT>(value);
+  }
+  template <typename VpcIDT = Aws::String>
+  CreateSourceNetworkRequest& WithVpcID(VpcIDT&& value) {
+    SetVpcID(std::forward<VpcIDT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Account containing the VPC to protect.</p>
    */
   inline const Aws::String& GetOriginAccountID() const { return m_originAccountID; }
@@ -88,36 +106,18 @@ class CreateSourceNetworkRequest : public DrsRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Which VPC ID to protect.</p>
-   */
-  inline const Aws::String& GetVpcID() const { return m_vpcID; }
-  inline bool VpcIDHasBeenSet() const { return m_vpcIDHasBeenSet; }
-  template <typename VpcIDT = Aws::String>
-  void SetVpcID(VpcIDT&& value) {
-    m_vpcIDHasBeenSet = true;
-    m_vpcID = std::forward<VpcIDT>(value);
-  }
-  template <typename VpcIDT = Aws::String>
-  CreateSourceNetworkRequest& WithVpcID(VpcIDT&& value) {
-    SetVpcID(std::forward<VpcIDT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_vpcID;
+
   Aws::String m_originAccountID;
 
   Aws::String m_originRegion;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-
-  Aws::String m_vpcID;
+  bool m_vpcIDHasBeenSet = false;
   bool m_originAccountIDHasBeenSet = false;
   bool m_originRegionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
-  bool m_vpcIDHasBeenSet = false;
 };
 
 }  // namespace Model

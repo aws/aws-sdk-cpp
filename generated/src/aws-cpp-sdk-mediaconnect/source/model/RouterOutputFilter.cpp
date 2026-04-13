@@ -25,20 +25,6 @@ RouterOutputFilter& RouterOutputFilter::operator=(JsonView jsonValue) {
     }
     m_regionNamesHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("outputTypes")) {
-    Aws::Utils::Array<JsonView> outputTypesJsonList = jsonValue.GetArray("outputTypes");
-    for (unsigned outputTypesIndex = 0; outputTypesIndex < outputTypesJsonList.GetLength(); ++outputTypesIndex) {
-      m_outputTypes.push_back(RouterOutputTypeMapper::GetRouterOutputTypeForName(outputTypesJsonList[outputTypesIndex].AsString()));
-    }
-    m_outputTypesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("nameContains")) {
-    Aws::Utils::Array<JsonView> nameContainsJsonList = jsonValue.GetArray("nameContains");
-    for (unsigned nameContainsIndex = 0; nameContainsIndex < nameContainsJsonList.GetLength(); ++nameContainsIndex) {
-      m_nameContains.push_back(nameContainsJsonList[nameContainsIndex].AsString());
-    }
-    m_nameContainsHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("networkInterfaceArns")) {
     Aws::Utils::Array<JsonView> networkInterfaceArnsJsonList = jsonValue.GetArray("networkInterfaceArns");
     for (unsigned networkInterfaceArnsIndex = 0; networkInterfaceArnsIndex < networkInterfaceArnsJsonList.GetLength();
@@ -47,6 +33,20 @@ RouterOutputFilter& RouterOutputFilter::operator=(JsonView jsonValue) {
     }
     m_networkInterfaceArnsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("routingScopes")) {
+    Aws::Utils::Array<JsonView> routingScopesJsonList = jsonValue.GetArray("routingScopes");
+    for (unsigned routingScopesIndex = 0; routingScopesIndex < routingScopesJsonList.GetLength(); ++routingScopesIndex) {
+      m_routingScopes.push_back(RoutingScopeMapper::GetRoutingScopeForName(routingScopesJsonList[routingScopesIndex].AsString()));
+    }
+    m_routingScopesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("outputTypes")) {
+    Aws::Utils::Array<JsonView> outputTypesJsonList = jsonValue.GetArray("outputTypes");
+    for (unsigned outputTypesIndex = 0; outputTypesIndex < outputTypesJsonList.GetLength(); ++outputTypesIndex) {
+      m_outputTypes.push_back(RouterOutputTypeMapper::GetRouterOutputTypeForName(outputTypesJsonList[outputTypesIndex].AsString()));
+    }
+    m_outputTypesHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("routedInputArns")) {
     Aws::Utils::Array<JsonView> routedInputArnsJsonList = jsonValue.GetArray("routedInputArns");
     for (unsigned routedInputArnsIndex = 0; routedInputArnsIndex < routedInputArnsJsonList.GetLength(); ++routedInputArnsIndex) {
@@ -54,12 +54,12 @@ RouterOutputFilter& RouterOutputFilter::operator=(JsonView jsonValue) {
     }
     m_routedInputArnsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("routingScopes")) {
-    Aws::Utils::Array<JsonView> routingScopesJsonList = jsonValue.GetArray("routingScopes");
-    for (unsigned routingScopesIndex = 0; routingScopesIndex < routingScopesJsonList.GetLength(); ++routingScopesIndex) {
-      m_routingScopes.push_back(RoutingScopeMapper::GetRoutingScopeForName(routingScopesJsonList[routingScopesIndex].AsString()));
+  if (jsonValue.ValueExists("nameContains")) {
+    Aws::Utils::Array<JsonView> nameContainsJsonList = jsonValue.GetArray("nameContains");
+    for (unsigned nameContainsIndex = 0; nameContainsIndex < nameContainsJsonList.GetLength(); ++nameContainsIndex) {
+      m_nameContains.push_back(nameContainsJsonList[nameContainsIndex].AsString());
     }
-    m_routingScopesHasBeenSet = true;
+    m_nameContainsHasBeenSet = true;
   }
   return *this;
 }
@@ -75,22 +75,6 @@ JsonValue RouterOutputFilter::Jsonize() const {
     payload.WithArray("regionNames", std::move(regionNamesJsonList));
   }
 
-  if (m_outputTypesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> outputTypesJsonList(m_outputTypes.size());
-    for (unsigned outputTypesIndex = 0; outputTypesIndex < outputTypesJsonList.GetLength(); ++outputTypesIndex) {
-      outputTypesJsonList[outputTypesIndex].AsString(RouterOutputTypeMapper::GetNameForRouterOutputType(m_outputTypes[outputTypesIndex]));
-    }
-    payload.WithArray("outputTypes", std::move(outputTypesJsonList));
-  }
-
-  if (m_nameContainsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> nameContainsJsonList(m_nameContains.size());
-    for (unsigned nameContainsIndex = 0; nameContainsIndex < nameContainsJsonList.GetLength(); ++nameContainsIndex) {
-      nameContainsJsonList[nameContainsIndex].AsString(m_nameContains[nameContainsIndex]);
-    }
-    payload.WithArray("nameContains", std::move(nameContainsJsonList));
-  }
-
   if (m_networkInterfaceArnsHasBeenSet) {
     Aws::Utils::Array<JsonValue> networkInterfaceArnsJsonList(m_networkInterfaceArns.size());
     for (unsigned networkInterfaceArnsIndex = 0; networkInterfaceArnsIndex < networkInterfaceArnsJsonList.GetLength();
@@ -98,6 +82,22 @@ JsonValue RouterOutputFilter::Jsonize() const {
       networkInterfaceArnsJsonList[networkInterfaceArnsIndex].AsString(m_networkInterfaceArns[networkInterfaceArnsIndex]);
     }
     payload.WithArray("networkInterfaceArns", std::move(networkInterfaceArnsJsonList));
+  }
+
+  if (m_routingScopesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> routingScopesJsonList(m_routingScopes.size());
+    for (unsigned routingScopesIndex = 0; routingScopesIndex < routingScopesJsonList.GetLength(); ++routingScopesIndex) {
+      routingScopesJsonList[routingScopesIndex].AsString(RoutingScopeMapper::GetNameForRoutingScope(m_routingScopes[routingScopesIndex]));
+    }
+    payload.WithArray("routingScopes", std::move(routingScopesJsonList));
+  }
+
+  if (m_outputTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> outputTypesJsonList(m_outputTypes.size());
+    for (unsigned outputTypesIndex = 0; outputTypesIndex < outputTypesJsonList.GetLength(); ++outputTypesIndex) {
+      outputTypesJsonList[outputTypesIndex].AsString(RouterOutputTypeMapper::GetNameForRouterOutputType(m_outputTypes[outputTypesIndex]));
+    }
+    payload.WithArray("outputTypes", std::move(outputTypesJsonList));
   }
 
   if (m_routedInputArnsHasBeenSet) {
@@ -108,12 +108,12 @@ JsonValue RouterOutputFilter::Jsonize() const {
     payload.WithArray("routedInputArns", std::move(routedInputArnsJsonList));
   }
 
-  if (m_routingScopesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> routingScopesJsonList(m_routingScopes.size());
-    for (unsigned routingScopesIndex = 0; routingScopesIndex < routingScopesJsonList.GetLength(); ++routingScopesIndex) {
-      routingScopesJsonList[routingScopesIndex].AsString(RoutingScopeMapper::GetNameForRoutingScope(m_routingScopes[routingScopesIndex]));
+  if (m_nameContainsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> nameContainsJsonList(m_nameContains.size());
+    for (unsigned nameContainsIndex = 0; nameContainsIndex < nameContainsJsonList.GetLength(); ++nameContainsIndex) {
+      nameContainsJsonList[nameContainsIndex].AsString(m_nameContains[nameContainsIndex]);
     }
-    payload.WithArray("routingScopes", std::move(routingScopesJsonList));
+    payload.WithArray("nameContains", std::move(nameContainsJsonList));
   }
 
   return payload;

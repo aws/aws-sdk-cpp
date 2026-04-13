@@ -50,6 +50,24 @@ class ThrottlingException {
 
   ///@{
   /**
+   * <p>Service code.</p>
+   */
+  inline const Aws::String& GetServiceCode() const { return m_serviceCode; }
+  inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
+  template <typename ServiceCodeT = Aws::String>
+  void SetServiceCode(ServiceCodeT&& value) {
+    m_serviceCodeHasBeenSet = true;
+    m_serviceCode = std::forward<ServiceCodeT>(value);
+  }
+  template <typename ServiceCodeT = Aws::String>
+  ThrottlingException& WithServiceCode(ServiceCodeT&& value) {
+    SetServiceCode(std::forward<ServiceCodeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Quota code.</p>
    */
   inline const Aws::String& GetQuotaCode() const { return m_quotaCode; }
@@ -83,36 +101,18 @@ class ThrottlingException {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Service code.</p>
-   */
-  inline const Aws::String& GetServiceCode() const { return m_serviceCode; }
-  inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
-  template <typename ServiceCodeT = Aws::String>
-  void SetServiceCode(ServiceCodeT&& value) {
-    m_serviceCodeHasBeenSet = true;
-    m_serviceCode = std::forward<ServiceCodeT>(value);
-  }
-  template <typename ServiceCodeT = Aws::String>
-  ThrottlingException& WithServiceCode(ServiceCodeT&& value) {
-    SetServiceCode(std::forward<ServiceCodeT>(value));
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_message;
+
+  Aws::String m_serviceCode;
 
   Aws::String m_quotaCode;
 
   Aws::String m_retryAfterSeconds;
-
-  Aws::String m_serviceCode;
   bool m_messageHasBeenSet = false;
+  bool m_serviceCodeHasBeenSet = false;
   bool m_quotaCodeHasBeenSet = false;
   bool m_retryAfterSecondsHasBeenSet = false;
-  bool m_serviceCodeHasBeenSet = false;
 };
 
 }  // namespace Model

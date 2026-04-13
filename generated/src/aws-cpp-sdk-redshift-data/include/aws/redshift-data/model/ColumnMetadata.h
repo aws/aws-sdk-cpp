@@ -133,7 +133,8 @@ class ColumnMetadata {
 
   ///@{
   /**
-   * <p>The precision value of a decimal number column. </p>
+   * <p>The precision value of a decimal number column, or the column length for a
+   * non-numeric column. </p>
    */
   inline int GetPrecision() const { return m_precision; }
   inline bool PrecisionHasBeenSet() const { return m_precisionHasBeenSet; }

@@ -18,9 +18,13 @@ namespace Model {
 PITPolicyRule::PITPolicyRule(JsonView jsonValue) { *this = jsonValue; }
 
 PITPolicyRule& PITPolicyRule::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("enabled")) {
-    m_enabled = jsonValue.GetBool("enabled");
-    m_enabledHasBeenSet = true;
+  if (jsonValue.ValueExists("ruleID")) {
+    m_ruleID = jsonValue.GetInt64("ruleID");
+    m_ruleIDHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("units")) {
+    m_units = PITPolicyRuleUnitsMapper::GetPITPolicyRuleUnitsForName(jsonValue.GetString("units"));
+    m_unitsHasBeenSet = true;
   }
   if (jsonValue.ValueExists("interval")) {
     m_interval = jsonValue.GetInteger("interval");
@@ -30,13 +34,9 @@ PITPolicyRule& PITPolicyRule::operator=(JsonView jsonValue) {
     m_retentionDuration = jsonValue.GetInteger("retentionDuration");
     m_retentionDurationHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("ruleID")) {
-    m_ruleID = jsonValue.GetInt64("ruleID");
-    m_ruleIDHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("units")) {
-    m_units = PITPolicyRuleUnitsMapper::GetPITPolicyRuleUnitsForName(jsonValue.GetString("units"));
-    m_unitsHasBeenSet = true;
+  if (jsonValue.ValueExists("enabled")) {
+    m_enabled = jsonValue.GetBool("enabled");
+    m_enabledHasBeenSet = true;
   }
   return *this;
 }
@@ -44,8 +44,12 @@ PITPolicyRule& PITPolicyRule::operator=(JsonView jsonValue) {
 JsonValue PITPolicyRule::Jsonize() const {
   JsonValue payload;
 
-  if (m_enabledHasBeenSet) {
-    payload.WithBool("enabled", m_enabled);
+  if (m_ruleIDHasBeenSet) {
+    payload.WithInt64("ruleID", m_ruleID);
+  }
+
+  if (m_unitsHasBeenSet) {
+    payload.WithString("units", PITPolicyRuleUnitsMapper::GetNameForPITPolicyRuleUnits(m_units));
   }
 
   if (m_intervalHasBeenSet) {
@@ -56,12 +60,8 @@ JsonValue PITPolicyRule::Jsonize() const {
     payload.WithInteger("retentionDuration", m_retentionDuration);
   }
 
-  if (m_ruleIDHasBeenSet) {
-    payload.WithInt64("ruleID", m_ruleID);
-  }
-
-  if (m_unitsHasBeenSet) {
-    payload.WithString("units", PITPolicyRuleUnitsMapper::GetNameForPITPolicyRuleUnits(m_units));
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("enabled", m_enabled);
   }
 
   return payload;

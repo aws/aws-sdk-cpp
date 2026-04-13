@@ -18,6 +18,10 @@ namespace Model {
 RecoveryInstanceDisk::RecoveryInstanceDisk(JsonView jsonValue) { *this = jsonValue; }
 
 RecoveryInstanceDisk& RecoveryInstanceDisk::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("internalDeviceName")) {
+    m_internalDeviceName = jsonValue.GetString("internalDeviceName");
+    m_internalDeviceNameHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("bytes")) {
     m_bytes = jsonValue.GetInt64("bytes");
     m_bytesHasBeenSet = true;
@@ -26,15 +30,15 @@ RecoveryInstanceDisk& RecoveryInstanceDisk::operator=(JsonView jsonValue) {
     m_ebsVolumeID = jsonValue.GetString("ebsVolumeID");
     m_ebsVolumeIDHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("internalDeviceName")) {
-    m_internalDeviceName = jsonValue.GetString("internalDeviceName");
-    m_internalDeviceNameHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue RecoveryInstanceDisk::Jsonize() const {
   JsonValue payload;
+
+  if (m_internalDeviceNameHasBeenSet) {
+    payload.WithString("internalDeviceName", m_internalDeviceName);
+  }
 
   if (m_bytesHasBeenSet) {
     payload.WithInt64("bytes", m_bytes);
@@ -42,10 +46,6 @@ JsonValue RecoveryInstanceDisk::Jsonize() const {
 
   if (m_ebsVolumeIDHasBeenSet) {
     payload.WithString("ebsVolumeID", m_ebsVolumeID);
-  }
-
-  if (m_internalDeviceNameHasBeenSet) {
-    payload.WithString("internalDeviceName", m_internalDeviceName);
   }
 
   return payload;

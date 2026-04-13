@@ -34,6 +34,10 @@ ClusterInstanceGroupSpecification& ClusterInstanceGroupSpecification::operator=(
     m_instanceType = ClusterInstanceTypeMapper::GetClusterInstanceTypeForName(jsonValue.GetString("InstanceType"));
     m_instanceTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("InstanceRequirements")) {
+    m_instanceRequirements = jsonValue.GetObject("InstanceRequirements");
+    m_instanceRequirementsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("LifeCycleConfig")) {
     m_lifeCycleConfig = jsonValue.GetObject("LifeCycleConfig");
     m_lifeCycleConfigHasBeenSet = true;
@@ -111,6 +115,10 @@ JsonValue ClusterInstanceGroupSpecification::Jsonize() const {
 
   if (m_instanceTypeHasBeenSet) {
     payload.WithString("InstanceType", ClusterInstanceTypeMapper::GetNameForClusterInstanceType(m_instanceType));
+  }
+
+  if (m_instanceRequirementsHasBeenSet) {
+    payload.WithObject("InstanceRequirements", m_instanceRequirements.Jsonize());
   }
 
   if (m_lifeCycleConfigHasBeenSet) {

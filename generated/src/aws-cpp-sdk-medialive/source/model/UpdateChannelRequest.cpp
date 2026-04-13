@@ -88,5 +88,9 @@ Aws::String UpdateChannelRequest::SerializePayload() const {
     payload.WithObject("inferenceSettings", m_inferenceSettings.Jsonize());
   }
 
+  if (m_specialRouterSettingsHasBeenSet) {
+    payload.WithObject("specialRouterSettings", m_specialRouterSettings.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

@@ -46,9 +46,21 @@ ServiceConfiguration& ServiceConfiguration::operator=(JsonView jsonValue) {
     m_mcpservernewrelic = jsonValue.GetObject("mcpservernewrelic");
     m_mcpservernewrelicHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("mcpserverdatadog")) {
+    m_mcpserverdatadog = jsonValue.GetObject("mcpserverdatadog");
+    m_mcpserverdatadogHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("mcpserver")) {
+    m_mcpserver = jsonValue.GetObject("mcpserver");
+    m_mcpserverHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("gitlab")) {
     m_gitlab = jsonValue.GetObject("gitlab");
     m_gitlabHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("mcpserversplunk")) {
+    m_mcpserversplunk = jsonValue.GetObject("mcpserversplunk");
+    m_mcpserversplunkHasBeenSet = true;
   }
   if (jsonValue.ValueExists("eventChannel")) {
     m_eventChannel = jsonValue.GetObject("eventChannel");
@@ -104,8 +116,20 @@ JsonValue ServiceConfiguration::Jsonize() const {
     payload.WithObject("mcpservernewrelic", m_mcpservernewrelic.Jsonize());
   }
 
+  if (m_mcpserverdatadogHasBeenSet) {
+    payload.WithObject("mcpserverdatadog", m_mcpserverdatadog.Jsonize());
+  }
+
+  if (m_mcpserverHasBeenSet) {
+    payload.WithObject("mcpserver", m_mcpserver.Jsonize());
+  }
+
   if (m_gitlabHasBeenSet) {
     payload.WithObject("gitlab", m_gitlab.Jsonize());
+  }
+
+  if (m_mcpserversplunkHasBeenSet) {
+    payload.WithObject("mcpserversplunk", m_mcpserversplunk.Jsonize());
   }
 
   if (m_eventChannelHasBeenSet) {

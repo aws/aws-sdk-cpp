@@ -8,6 +8,7 @@
 
 #include <aws/bcm-dashboards/BCMDashboardsClientPagination.h>
 #include <aws/bcm-dashboards/BCMDashboardsPaginationBase.h>
+#include <aws/bcm-dashboards/model/ListScheduledReportsPaginationTraits.h>
 #include <aws/bcm-dashboards/model/ListDashboardsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>

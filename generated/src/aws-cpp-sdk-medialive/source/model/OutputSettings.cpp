@@ -58,6 +58,10 @@ OutputSettings& OutputSettings::operator=(JsonView jsonValue) {
     m_srtOutputSettings = jsonValue.GetObject("srtOutputSettings");
     m_srtOutputSettingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("mediaConnectRouterOutputSettings")) {
+    m_mediaConnectRouterOutputSettings = jsonValue.GetObject("mediaConnectRouterOutputSettings");
+    m_mediaConnectRouterOutputSettingsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -102,6 +106,10 @@ JsonValue OutputSettings::Jsonize() const {
 
   if (m_srtOutputSettingsHasBeenSet) {
     payload.WithObject("srtOutputSettings", m_srtOutputSettings.Jsonize());
+  }
+
+  if (m_mediaConnectRouterOutputSettingsHasBeenSet) {
+    payload.WithObject("mediaConnectRouterOutputSettings", m_mediaConnectRouterOutputSettings.Jsonize());
   }
 
   return payload;

@@ -18,10 +18,6 @@ namespace Model {
 IdentificationHints::IdentificationHints(JsonView jsonValue) { *this = jsonValue; }
 
 IdentificationHints& IdentificationHints::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("awsInstanceID")) {
-    m_awsInstanceID = jsonValue.GetString("awsInstanceID");
-    m_awsInstanceIDHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("fqdn")) {
     m_fqdn = jsonValue.GetString("fqdn");
     m_fqdnHasBeenSet = true;
@@ -34,15 +30,15 @@ IdentificationHints& IdentificationHints::operator=(JsonView jsonValue) {
     m_vmWareUuid = jsonValue.GetString("vmWareUuid");
     m_vmWareUuidHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("awsInstanceID")) {
+    m_awsInstanceID = jsonValue.GetString("awsInstanceID");
+    m_awsInstanceIDHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue IdentificationHints::Jsonize() const {
   JsonValue payload;
-
-  if (m_awsInstanceIDHasBeenSet) {
-    payload.WithString("awsInstanceID", m_awsInstanceID);
-  }
 
   if (m_fqdnHasBeenSet) {
     payload.WithString("fqdn", m_fqdn);
@@ -54,6 +50,10 @@ JsonValue IdentificationHints::Jsonize() const {
 
   if (m_vmWareUuidHasBeenSet) {
     payload.WithString("vmWareUuid", m_vmWareUuid);
+  }
+
+  if (m_awsInstanceIDHasBeenSet) {
+    payload.WithString("awsInstanceID", m_awsInstanceID);
   }
 
   return payload;

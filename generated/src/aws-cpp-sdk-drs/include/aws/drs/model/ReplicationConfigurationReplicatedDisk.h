@@ -53,22 +53,6 @@ class ReplicationConfigurationReplicatedDisk {
 
   ///@{
   /**
-   * <p>The requested number of I/O operations per second (IOPS).</p>
-   */
-  inline long long GetIops() const { return m_iops; }
-  inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
-  inline void SetIops(long long value) {
-    m_iopsHasBeenSet = true;
-    m_iops = value;
-  }
-  inline ReplicationConfigurationReplicatedDisk& WithIops(long long value) {
-    SetIops(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Whether to boot from this disk or not.</p>
    */
   inline bool GetIsBootDisk() const { return m_isBootDisk; }
@@ -79,23 +63,6 @@ class ReplicationConfigurationReplicatedDisk {
   }
   inline ReplicationConfigurationReplicatedDisk& WithIsBootDisk(bool value) {
     SetIsBootDisk(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The Staging Disk EBS volume type to be used during replication when
-   * <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
-   */
-  inline ReplicationConfigurationReplicatedDiskStagingDiskType GetOptimizedStagingDiskType() const { return m_optimizedStagingDiskType; }
-  inline bool OptimizedStagingDiskTypeHasBeenSet() const { return m_optimizedStagingDiskTypeHasBeenSet; }
-  inline void SetOptimizedStagingDiskType(ReplicationConfigurationReplicatedDiskStagingDiskType value) {
-    m_optimizedStagingDiskTypeHasBeenSet = true;
-    m_optimizedStagingDiskType = value;
-  }
-  inline ReplicationConfigurationReplicatedDisk& WithOptimizedStagingDiskType(ReplicationConfigurationReplicatedDiskStagingDiskType value) {
-    SetOptimizedStagingDiskType(value);
     return *this;
   }
   ///@}
@@ -118,6 +85,22 @@ class ReplicationConfigurationReplicatedDisk {
 
   ///@{
   /**
+   * <p>The requested number of I/O operations per second (IOPS).</p>
+   */
+  inline long long GetIops() const { return m_iops; }
+  inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
+  inline void SetIops(long long value) {
+    m_iopsHasBeenSet = true;
+    m_iops = value;
+  }
+  inline ReplicationConfigurationReplicatedDisk& WithIops(long long value) {
+    SetIops(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The throughput to use for the EBS volume in MiB/s. This parameter is valid
    * only for gp3 volumes.</p>
    */
@@ -132,25 +115,42 @@ class ReplicationConfigurationReplicatedDisk {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Staging Disk EBS volume type to be used during replication when
+   * <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
+   */
+  inline ReplicationConfigurationReplicatedDiskStagingDiskType GetOptimizedStagingDiskType() const { return m_optimizedStagingDiskType; }
+  inline bool OptimizedStagingDiskTypeHasBeenSet() const { return m_optimizedStagingDiskTypeHasBeenSet; }
+  inline void SetOptimizedStagingDiskType(ReplicationConfigurationReplicatedDiskStagingDiskType value) {
+    m_optimizedStagingDiskTypeHasBeenSet = true;
+    m_optimizedStagingDiskType = value;
+  }
+  inline ReplicationConfigurationReplicatedDisk& WithOptimizedStagingDiskType(ReplicationConfigurationReplicatedDiskStagingDiskType value) {
+    SetOptimizedStagingDiskType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_deviceName;
 
-  long long m_iops{0};
-
   bool m_isBootDisk{false};
-
-  ReplicationConfigurationReplicatedDiskStagingDiskType m_optimizedStagingDiskType{
-      ReplicationConfigurationReplicatedDiskStagingDiskType::NOT_SET};
 
   ReplicationConfigurationReplicatedDiskStagingDiskType m_stagingDiskType{ReplicationConfigurationReplicatedDiskStagingDiskType::NOT_SET};
 
+  long long m_iops{0};
+
   long long m_throughput{0};
+
+  ReplicationConfigurationReplicatedDiskStagingDiskType m_optimizedStagingDiskType{
+      ReplicationConfigurationReplicatedDiskStagingDiskType::NOT_SET};
   bool m_deviceNameHasBeenSet = false;
-  bool m_iopsHasBeenSet = false;
   bool m_isBootDiskHasBeenSet = false;
-  bool m_optimizedStagingDiskTypeHasBeenSet = false;
   bool m_stagingDiskTypeHasBeenSet = false;
+  bool m_iopsHasBeenSet = false;
   bool m_throughputHasBeenSet = false;
+  bool m_optimizedStagingDiskTypeHasBeenSet = false;
 };
 
 }  // namespace Model

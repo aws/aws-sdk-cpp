@@ -18,13 +18,13 @@ namespace Model {
 ParticipatingResource::ParticipatingResource(JsonView jsonValue) { *this = jsonValue; }
 
 ParticipatingResource& ParticipatingResource::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("launchStatus")) {
-    m_launchStatus = LaunchStatusMapper::GetLaunchStatusForName(jsonValue.GetString("launchStatus"));
-    m_launchStatusHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("participatingResourceID")) {
     m_participatingResourceID = jsonValue.GetObject("participatingResourceID");
     m_participatingResourceIDHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("launchStatus")) {
+    m_launchStatus = LaunchStatusMapper::GetLaunchStatusForName(jsonValue.GetString("launchStatus"));
+    m_launchStatusHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ ParticipatingResource& ParticipatingResource::operator=(JsonView jsonValue) {
 JsonValue ParticipatingResource::Jsonize() const {
   JsonValue payload;
 
-  if (m_launchStatusHasBeenSet) {
-    payload.WithString("launchStatus", LaunchStatusMapper::GetNameForLaunchStatus(m_launchStatus));
-  }
-
   if (m_participatingResourceIDHasBeenSet) {
     payload.WithObject("participatingResourceID", m_participatingResourceID.Jsonize());
+  }
+
+  if (m_launchStatusHasBeenSet) {
+    payload.WithString("launchStatus", LaunchStatusMapper::GetNameForLaunchStatus(m_launchStatus));
   }
 
   return payload;

@@ -12,8 +12,11 @@
 #include <aws/devops-agent/model/EventChannelConfiguration.h>
 #include <aws/devops-agent/model/GitHubConfiguration.h>
 #include <aws/devops-agent/model/GitLabConfiguration.h>
+#include <aws/devops-agent/model/MCPServerConfiguration.h>
+#include <aws/devops-agent/model/MCPServerDatadogConfiguration.h>
 #include <aws/devops-agent/model/MCPServerGrafanaConfiguration.h>
 #include <aws/devops-agent/model/MCPServerNewRelicConfiguration.h>
+#include <aws/devops-agent/model/MCPServerSplunkConfiguration.h>
 #include <aws/devops-agent/model/PagerDutyConfiguration.h>
 #include <aws/devops-agent/model/ServiceNowConfiguration.h>
 #include <aws/devops-agent/model/SlackConfiguration.h>
@@ -172,6 +175,42 @@ class ServiceConfiguration {
 
   ///@{
   /**
+   * <p>Datadog MCP server integration configuration.</p>
+   */
+  inline const MCPServerDatadogConfiguration& GetMcpserverdatadog() const { return m_mcpserverdatadog; }
+  inline bool McpserverdatadogHasBeenSet() const { return m_mcpserverdatadogHasBeenSet; }
+  template <typename McpserverdatadogT = MCPServerDatadogConfiguration>
+  void SetMcpserverdatadog(McpserverdatadogT&& value) {
+    m_mcpserverdatadogHasBeenSet = true;
+    m_mcpserverdatadog = std::forward<McpserverdatadogT>(value);
+  }
+  template <typename McpserverdatadogT = MCPServerDatadogConfiguration>
+  ServiceConfiguration& WithMcpserverdatadog(McpserverdatadogT&& value) {
+    SetMcpserverdatadog(std::forward<McpserverdatadogT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>MCP (Model Context Protocol) server integration configuration.</p>
+   */
+  inline const MCPServerConfiguration& GetMcpserver() const { return m_mcpserver; }
+  inline bool McpserverHasBeenSet() const { return m_mcpserverHasBeenSet; }
+  template <typename McpserverT = MCPServerConfiguration>
+  void SetMcpserver(McpserverT&& value) {
+    m_mcpserverHasBeenSet = true;
+    m_mcpserver = std::forward<McpserverT>(value);
+  }
+  template <typename McpserverT = MCPServerConfiguration>
+  ServiceConfiguration& WithMcpserver(McpserverT&& value) {
+    SetMcpserver(std::forward<McpserverT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>GitLab project integration configuration.</p>
    */
   inline const GitLabConfiguration& GetGitlab() const { return m_gitlab; }
@@ -184,6 +223,24 @@ class ServiceConfiguration {
   template <typename GitlabT = GitLabConfiguration>
   ServiceConfiguration& WithGitlab(GitlabT&& value) {
     SetGitlab(std::forward<GitlabT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Splunk MCP server integration configuration.</p>
+   */
+  inline const MCPServerSplunkConfiguration& GetMcpserversplunk() const { return m_mcpserversplunk; }
+  inline bool McpserversplunkHasBeenSet() const { return m_mcpserversplunkHasBeenSet; }
+  template <typename McpserversplunkT = MCPServerSplunkConfiguration>
+  void SetMcpserversplunk(McpserversplunkT&& value) {
+    m_mcpserversplunkHasBeenSet = true;
+    m_mcpserversplunk = std::forward<McpserversplunkT>(value);
+  }
+  template <typename McpserversplunkT = MCPServerSplunkConfiguration>
+  ServiceConfiguration& WithMcpserversplunk(McpserversplunkT&& value) {
+    SetMcpserversplunk(std::forward<McpserversplunkT>(value));
     return *this;
   }
   ///@}
@@ -292,7 +349,13 @@ class ServiceConfiguration {
 
   MCPServerNewRelicConfiguration m_mcpservernewrelic;
 
+  MCPServerDatadogConfiguration m_mcpserverdatadog;
+
+  MCPServerConfiguration m_mcpserver;
+
   GitLabConfiguration m_gitlab;
+
+  MCPServerSplunkConfiguration m_mcpserversplunk;
 
   EventChannelConfiguration m_eventChannel;
 
@@ -310,7 +373,10 @@ class ServiceConfiguration {
   bool m_dynatraceHasBeenSet = false;
   bool m_servicenowHasBeenSet = false;
   bool m_mcpservernewrelicHasBeenSet = false;
+  bool m_mcpserverdatadogHasBeenSet = false;
+  bool m_mcpserverHasBeenSet = false;
   bool m_gitlabHasBeenSet = false;
+  bool m_mcpserversplunkHasBeenSet = false;
   bool m_eventChannelHasBeenSet = false;
   bool m_azureHasBeenSet = false;
   bool m_azuredevopsHasBeenSet = false;

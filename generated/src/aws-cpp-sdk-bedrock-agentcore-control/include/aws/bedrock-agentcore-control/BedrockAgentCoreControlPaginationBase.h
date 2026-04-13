@@ -22,6 +22,8 @@
 #include <aws/bedrock-agentcore-control/model/ListPolicyEnginesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyGenerationAssetsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyGenerationsPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListRegistriesPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListRegistryRecordsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListWorkloadIdentitiesPaginationTraits.h>
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
@@ -232,6 +234,29 @@ class BedrockAgentCoreControlPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPolicyGenerationsRequest,
                                              Pagination::ListPolicyGenerationsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListRegistries operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRegistriesRequest, Pagination::ListRegistriesPaginationTraits<DerivedClient>>
+  ListRegistriesPaginator(const Model::ListRegistriesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRegistriesRequest,
+                                             Pagination::ListRegistriesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                        request};
+  }
+
+  /**
+   * Create a paginator for ListRegistryRecords operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRegistryRecordsRequest,
+                                    Pagination::ListRegistryRecordsPaginationTraits<DerivedClient>>
+  ListRegistryRecordsPaginator(const Model::ListRegistryRecordsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRegistryRecordsRequest,
+                                             Pagination::ListRegistryRecordsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

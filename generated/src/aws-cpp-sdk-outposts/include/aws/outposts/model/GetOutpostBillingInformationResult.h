@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/outposts/Outposts_EXPORTS.h>
+#include <aws/outposts/model/PaymentOption.h>
+#include <aws/outposts/model/PaymentTerm.h>
 #include <aws/outposts/model/Subscription.h>
 
 #include <utility>
@@ -89,6 +91,36 @@ class GetOutpostBillingInformationResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The payment term.</p>
+   */
+  inline PaymentTerm GetPaymentTerm() const { return m_paymentTerm; }
+  inline void SetPaymentTerm(PaymentTerm value) {
+    m_paymentTermHasBeenSet = true;
+    m_paymentTerm = value;
+  }
+  inline GetOutpostBillingInformationResult& WithPaymentTerm(PaymentTerm value) {
+    SetPaymentTerm(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The payment option.</p>
+   */
+  inline PaymentOption GetPaymentOption() const { return m_paymentOption; }
+  inline void SetPaymentOption(PaymentOption value) {
+    m_paymentOptionHasBeenSet = true;
+    m_paymentOption = value;
+  }
+  inline GetOutpostBillingInformationResult& WithPaymentOption(PaymentOption value) {
+    SetPaymentOption(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -111,11 +143,17 @@ class GetOutpostBillingInformationResult {
 
   Aws::String m_contractEndDate;
 
+  PaymentTerm m_paymentTerm{PaymentTerm::NOT_SET};
+
+  PaymentOption m_paymentOption{PaymentOption::NOT_SET};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_subscriptionsHasBeenSet = false;
   bool m_contractEndDateHasBeenSet = false;
+  bool m_paymentTermHasBeenSet = false;
+  bool m_paymentOptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

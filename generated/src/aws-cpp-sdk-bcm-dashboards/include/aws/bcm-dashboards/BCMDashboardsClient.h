@@ -116,6 +116,35 @@ class AWS_BCMDASHBOARDS_API BCMDashboardsClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Creates a new scheduled report for a dashboard. A scheduled report
+   * automatically generates and delivers dashboard snapshots on a recurring
+   * schedule. Reports are delivered within 15 minutes of the scheduled delivery
+   * time.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bcm-dashboards-2025-08-18/CreateScheduledReport">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateScheduledReportOutcome CreateScheduledReport(const Model::CreateScheduledReportRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateScheduledReport that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateScheduledReportRequestT = Model::CreateScheduledReportRequest>
+  Model::CreateScheduledReportOutcomeCallable CreateScheduledReportCallable(const CreateScheduledReportRequestT& request) const {
+    return SubmitCallable(&BCMDashboardsClient::CreateScheduledReport, request);
+  }
+
+  /**
+   * An Async wrapper for CreateScheduledReport that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateScheduledReportRequestT = Model::CreateScheduledReportRequest>
+  void CreateScheduledReportAsync(const CreateScheduledReportRequestT& request, const CreateScheduledReportResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BCMDashboardsClient::CreateScheduledReport, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a specified dashboard. This action cannot be undone.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bcm-dashboards-2025-08-18/DeleteDashboard">AWS
@@ -139,6 +168,66 @@ class AWS_BCMDASHBOARDS_API BCMDashboardsClient : public Aws::Client::AWSJsonCli
   void DeleteDashboardAsync(const DeleteDashboardRequestT& request, const DeleteDashboardResponseReceivedHandler& handler,
                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BCMDashboardsClient::DeleteDashboard, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a specified scheduled report. This is an irreversible
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bcm-dashboards-2025-08-18/DeleteScheduledReport">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteScheduledReportOutcome DeleteScheduledReport(const Model::DeleteScheduledReportRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteScheduledReport that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteScheduledReportRequestT = Model::DeleteScheduledReportRequest>
+  Model::DeleteScheduledReportOutcomeCallable DeleteScheduledReportCallable(const DeleteScheduledReportRequestT& request) const {
+    return SubmitCallable(&BCMDashboardsClient::DeleteScheduledReport, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteScheduledReport that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteScheduledReportRequestT = Model::DeleteScheduledReportRequest>
+  void DeleteScheduledReportAsync(const DeleteScheduledReportRequestT& request, const DeleteScheduledReportResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BCMDashboardsClient::DeleteScheduledReport, request, handler, context);
+  }
+
+  /**
+   * <p>Triggers an immediate execution of a scheduled report, outside of its regular
+   * schedule. The scheduled report must be in <code>ENABLED</code> state. Calling
+   * this operation on a <code>DISABLED</code> scheduled report returns a
+   * <code>ValidationException</code>.</p>  <p>If a <code>clientToken</code> is
+   * provided, the service uses it for idempotency. Requests with the same client
+   * token will not trigger a new execution within the same minute.</p>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bcm-dashboards-2025-08-18/ExecuteScheduledReport">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ExecuteScheduledReportOutcome ExecuteScheduledReport(const Model::ExecuteScheduledReportRequest& request) const;
+
+  /**
+   * A Callable wrapper for ExecuteScheduledReport that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ExecuteScheduledReportRequestT = Model::ExecuteScheduledReportRequest>
+  Model::ExecuteScheduledReportOutcomeCallable ExecuteScheduledReportCallable(const ExecuteScheduledReportRequestT& request) const {
+    return SubmitCallable(&BCMDashboardsClient::ExecuteScheduledReport, request);
+  }
+
+  /**
+   * An Async wrapper for ExecuteScheduledReport that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ExecuteScheduledReportRequestT = Model::ExecuteScheduledReportRequest>
+  void ExecuteScheduledReportAsync(const ExecuteScheduledReportRequestT& request,
+                                   const ExecuteScheduledReportResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BCMDashboardsClient::ExecuteScheduledReport, request, handler, context);
   }
 
   /**
@@ -195,6 +284,33 @@ class AWS_BCMDASHBOARDS_API BCMDashboardsClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Retrieves the configuration and metadata of a specified scheduled
+   * report.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bcm-dashboards-2025-08-18/GetScheduledReport">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetScheduledReportOutcome GetScheduledReport(const Model::GetScheduledReportRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetScheduledReport that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetScheduledReportRequestT = Model::GetScheduledReportRequest>
+  Model::GetScheduledReportOutcomeCallable GetScheduledReportCallable(const GetScheduledReportRequestT& request) const {
+    return SubmitCallable(&BCMDashboardsClient::GetScheduledReport, request);
+  }
+
+  /**
+   * An Async wrapper for GetScheduledReport that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetScheduledReportRequestT = Model::GetScheduledReportRequest>
+  void GetScheduledReportAsync(const GetScheduledReportRequestT& request, const GetScheduledReportResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BCMDashboardsClient::GetScheduledReport, request, handler, context);
+  }
+
+  /**
    * <p>Returns a list of all dashboards in your account.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bcm-dashboards-2025-08-18/ListDashboards">AWS
@@ -219,6 +335,34 @@ class AWS_BCMDASHBOARDS_API BCMDashboardsClient : public Aws::Client::AWSJsonCli
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                            const ListDashboardsRequestT& request = {}) const {
     return SubmitAsync(&BCMDashboardsClient::ListDashboards, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a list of scheduled reports in your account.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bcm-dashboards-2025-08-18/ListScheduledReports">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListScheduledReportsOutcome ListScheduledReports(const Model::ListScheduledReportsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListScheduledReports that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListScheduledReportsRequestT = Model::ListScheduledReportsRequest>
+  Model::ListScheduledReportsOutcomeCallable ListScheduledReportsCallable(const ListScheduledReportsRequestT& request = {}) const {
+    return SubmitCallable(&BCMDashboardsClient::ListScheduledReports, request);
+  }
+
+  /**
+   * An Async wrapper for ListScheduledReports that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListScheduledReportsRequestT = Model::ListScheduledReportsRequest>
+  void ListScheduledReportsAsync(const ListScheduledReportsResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                 const ListScheduledReportsRequestT& request = {}) const {
+    return SubmitAsync(&BCMDashboardsClient::ListScheduledReports, request, handler, context);
   }
 
   /**
@@ -324,6 +468,35 @@ class AWS_BCMDASHBOARDS_API BCMDashboardsClient : public Aws::Client::AWSJsonCli
   void UpdateDashboardAsync(const UpdateDashboardRequestT& request, const UpdateDashboardResponseReceivedHandler& handler,
                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BCMDashboardsClient::UpdateDashboard, request, handler, context);
+  }
+
+  /**
+   * <p>Updates an existing scheduled report's properties, including its name,
+   * description, schedule configuration, and widget settings. Only the parameters
+   * included in the request are updated; all other properties remain
+   * unchanged.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bcm-dashboards-2025-08-18/UpdateScheduledReport">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateScheduledReportOutcome UpdateScheduledReport(const Model::UpdateScheduledReportRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateScheduledReport that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateScheduledReportRequestT = Model::UpdateScheduledReportRequest>
+  Model::UpdateScheduledReportOutcomeCallable UpdateScheduledReportCallable(const UpdateScheduledReportRequestT& request) const {
+    return SubmitCallable(&BCMDashboardsClient::UpdateScheduledReport, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateScheduledReport that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateScheduledReportRequestT = Model::UpdateScheduledReportRequest>
+  void UpdateScheduledReportAsync(const UpdateScheduledReportRequestT& request, const UpdateScheduledReportResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BCMDashboardsClient::UpdateScheduledReport, request, handler, context);
   }
 
   virtual void OverrideEndpoint(const Aws::String& endpoint);

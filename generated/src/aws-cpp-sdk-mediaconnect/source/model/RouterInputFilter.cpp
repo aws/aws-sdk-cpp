@@ -18,26 +18,19 @@ namespace Model {
 RouterInputFilter::RouterInputFilter(JsonView jsonValue) { *this = jsonValue; }
 
 RouterInputFilter& RouterInputFilter::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("regionNames")) {
-    Aws::Utils::Array<JsonView> regionNamesJsonList = jsonValue.GetArray("regionNames");
-    for (unsigned regionNamesIndex = 0; regionNamesIndex < regionNamesJsonList.GetLength(); ++regionNamesIndex) {
-      m_regionNames.push_back(regionNamesJsonList[regionNamesIndex].AsString());
-    }
-    m_regionNamesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("inputTypes")) {
-    Aws::Utils::Array<JsonView> inputTypesJsonList = jsonValue.GetArray("inputTypes");
-    for (unsigned inputTypesIndex = 0; inputTypesIndex < inputTypesJsonList.GetLength(); ++inputTypesIndex) {
-      m_inputTypes.push_back(RouterInputTypeMapper::GetRouterInputTypeForName(inputTypesJsonList[inputTypesIndex].AsString()));
-    }
-    m_inputTypesHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("nameContains")) {
     Aws::Utils::Array<JsonView> nameContainsJsonList = jsonValue.GetArray("nameContains");
     for (unsigned nameContainsIndex = 0; nameContainsIndex < nameContainsJsonList.GetLength(); ++nameContainsIndex) {
       m_nameContains.push_back(nameContainsJsonList[nameContainsIndex].AsString());
     }
     m_nameContainsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("regionNames")) {
+    Aws::Utils::Array<JsonView> regionNamesJsonList = jsonValue.GetArray("regionNames");
+    for (unsigned regionNamesIndex = 0; regionNamesIndex < regionNamesJsonList.GetLength(); ++regionNamesIndex) {
+      m_regionNames.push_back(regionNamesJsonList[regionNamesIndex].AsString());
+    }
+    m_regionNamesHasBeenSet = true;
   }
   if (jsonValue.ValueExists("networkInterfaceArns")) {
     Aws::Utils::Array<JsonView> networkInterfaceArnsJsonList = jsonValue.GetArray("networkInterfaceArns");
@@ -54,27 +47,18 @@ RouterInputFilter& RouterInputFilter::operator=(JsonView jsonValue) {
     }
     m_routingScopesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("inputTypes")) {
+    Aws::Utils::Array<JsonView> inputTypesJsonList = jsonValue.GetArray("inputTypes");
+    for (unsigned inputTypesIndex = 0; inputTypesIndex < inputTypesJsonList.GetLength(); ++inputTypesIndex) {
+      m_inputTypes.push_back(RouterInputTypeMapper::GetRouterInputTypeForName(inputTypesJsonList[inputTypesIndex].AsString()));
+    }
+    m_inputTypesHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue RouterInputFilter::Jsonize() const {
   JsonValue payload;
-
-  if (m_regionNamesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> regionNamesJsonList(m_regionNames.size());
-    for (unsigned regionNamesIndex = 0; regionNamesIndex < regionNamesJsonList.GetLength(); ++regionNamesIndex) {
-      regionNamesJsonList[regionNamesIndex].AsString(m_regionNames[regionNamesIndex]);
-    }
-    payload.WithArray("regionNames", std::move(regionNamesJsonList));
-  }
-
-  if (m_inputTypesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> inputTypesJsonList(m_inputTypes.size());
-    for (unsigned inputTypesIndex = 0; inputTypesIndex < inputTypesJsonList.GetLength(); ++inputTypesIndex) {
-      inputTypesJsonList[inputTypesIndex].AsString(RouterInputTypeMapper::GetNameForRouterInputType(m_inputTypes[inputTypesIndex]));
-    }
-    payload.WithArray("inputTypes", std::move(inputTypesJsonList));
-  }
 
   if (m_nameContainsHasBeenSet) {
     Aws::Utils::Array<JsonValue> nameContainsJsonList(m_nameContains.size());
@@ -82,6 +66,14 @@ JsonValue RouterInputFilter::Jsonize() const {
       nameContainsJsonList[nameContainsIndex].AsString(m_nameContains[nameContainsIndex]);
     }
     payload.WithArray("nameContains", std::move(nameContainsJsonList));
+  }
+
+  if (m_regionNamesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> regionNamesJsonList(m_regionNames.size());
+    for (unsigned regionNamesIndex = 0; regionNamesIndex < regionNamesJsonList.GetLength(); ++regionNamesIndex) {
+      regionNamesJsonList[regionNamesIndex].AsString(m_regionNames[regionNamesIndex]);
+    }
+    payload.WithArray("regionNames", std::move(regionNamesJsonList));
   }
 
   if (m_networkInterfaceArnsHasBeenSet) {
@@ -99,6 +91,14 @@ JsonValue RouterInputFilter::Jsonize() const {
       routingScopesJsonList[routingScopesIndex].AsString(RoutingScopeMapper::GetNameForRoutingScope(m_routingScopes[routingScopesIndex]));
     }
     payload.WithArray("routingScopes", std::move(routingScopesJsonList));
+  }
+
+  if (m_inputTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> inputTypesJsonList(m_inputTypes.size());
+    for (unsigned inputTypesIndex = 0; inputTypesIndex < inputTypesJsonList.GetLength(); ++inputTypesIndex) {
+      inputTypesJsonList[inputTypesIndex].AsString(RouterInputTypeMapper::GetNameForRouterInputType(m_inputTypes[inputTypesIndex]));
+    }
+    payload.WithArray("inputTypes", std::move(inputTypesJsonList));
   }
 
   return payload;

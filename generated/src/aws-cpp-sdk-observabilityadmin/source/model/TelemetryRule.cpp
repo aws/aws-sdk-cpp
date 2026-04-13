@@ -47,6 +47,17 @@ TelemetryRule& TelemetryRule::operator=(JsonView jsonValue) {
     m_selectionCriteria = jsonValue.GetString("SelectionCriteria");
     m_selectionCriteriaHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Regions")) {
+    Aws::Utils::Array<JsonView> regionsJsonList = jsonValue.GetArray("Regions");
+    for (unsigned regionsIndex = 0; regionsIndex < regionsJsonList.GetLength(); ++regionsIndex) {
+      m_regions.push_back(regionsJsonList[regionsIndex].AsString());
+    }
+    m_regionsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AllRegions")) {
+    m_allRegions = jsonValue.GetBool("AllRegions");
+    m_allRegionsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -81,6 +92,18 @@ JsonValue TelemetryRule::Jsonize() const {
 
   if (m_selectionCriteriaHasBeenSet) {
     payload.WithString("SelectionCriteria", m_selectionCriteria);
+  }
+
+  if (m_regionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> regionsJsonList(m_regions.size());
+    for (unsigned regionsIndex = 0; regionsIndex < regionsJsonList.GetLength(); ++regionsIndex) {
+      regionsJsonList[regionsIndex].AsString(m_regions[regionsIndex]);
+    }
+    payload.WithArray("Regions", std::move(regionsJsonList));
+  }
+
+  if (m_allRegionsHasBeenSet) {
+    payload.WithBool("AllRegions", m_allRegions);
   }
 
   return payload;

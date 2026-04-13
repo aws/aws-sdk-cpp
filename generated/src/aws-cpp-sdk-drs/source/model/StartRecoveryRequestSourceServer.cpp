@@ -18,13 +18,13 @@ namespace Model {
 StartRecoveryRequestSourceServer::StartRecoveryRequestSourceServer(JsonView jsonValue) { *this = jsonValue; }
 
 StartRecoveryRequestSourceServer& StartRecoveryRequestSourceServer::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("recoverySnapshotID")) {
-    m_recoverySnapshotID = jsonValue.GetString("recoverySnapshotID");
-    m_recoverySnapshotIDHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("sourceServerID")) {
     m_sourceServerID = jsonValue.GetString("sourceServerID");
     m_sourceServerIDHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("recoverySnapshotID")) {
+    m_recoverySnapshotID = jsonValue.GetString("recoverySnapshotID");
+    m_recoverySnapshotIDHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ StartRecoveryRequestSourceServer& StartRecoveryRequestSourceServer::operator=(Js
 JsonValue StartRecoveryRequestSourceServer::Jsonize() const {
   JsonValue payload;
 
-  if (m_recoverySnapshotIDHasBeenSet) {
-    payload.WithString("recoverySnapshotID", m_recoverySnapshotID);
-  }
-
   if (m_sourceServerIDHasBeenSet) {
     payload.WithString("sourceServerID", m_sourceServerID);
+  }
+
+  if (m_recoverySnapshotIDHasBeenSet) {
+    payload.WithString("recoverySnapshotID", m_recoverySnapshotID);
   }
 
   return payload;

@@ -22,10 +22,6 @@ LaunchActionRun& LaunchActionRun::operator=(JsonView jsonValue) {
     m_action = jsonValue.GetObject("action");
     m_actionHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("failureReason")) {
-    m_failureReason = jsonValue.GetString("failureReason");
-    m_failureReasonHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("runId")) {
     m_runId = jsonValue.GetString("runId");
     m_runIdHasBeenSet = true;
@@ -33,6 +29,10 @@ LaunchActionRun& LaunchActionRun::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("status")) {
     m_status = LaunchActionRunStatusMapper::GetLaunchActionRunStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("failureReason")) {
+    m_failureReason = jsonValue.GetString("failureReason");
+    m_failureReasonHasBeenSet = true;
   }
   return *this;
 }
@@ -44,16 +44,16 @@ JsonValue LaunchActionRun::Jsonize() const {
     payload.WithObject("action", m_action.Jsonize());
   }
 
-  if (m_failureReasonHasBeenSet) {
-    payload.WithString("failureReason", m_failureReason);
-  }
-
   if (m_runIdHasBeenSet) {
     payload.WithString("runId", m_runId);
   }
 
   if (m_statusHasBeenSet) {
     payload.WithString("status", LaunchActionRunStatusMapper::GetNameForLaunchActionRunStatus(m_status));
+  }
+
+  if (m_failureReasonHasBeenSet) {
+    payload.WithString("failureReason", m_failureReason);
   }
 
   return payload;

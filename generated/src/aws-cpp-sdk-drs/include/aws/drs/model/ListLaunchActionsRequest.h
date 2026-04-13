@@ -30,6 +30,22 @@ class ListLaunchActionsRequest : public DrsRequest {
   AWS_DRS_API Aws::String SerializePayload() const override;
 
   ///@{
+
+  inline const Aws::String& GetResourceId() const { return m_resourceId; }
+  inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+  template <typename ResourceIdT = Aws::String>
+  void SetResourceId(ResourceIdT&& value) {
+    m_resourceIdHasBeenSet = true;
+    m_resourceId = std::forward<ResourceIdT>(value);
+  }
+  template <typename ResourceIdT = Aws::String>
+  ListLaunchActionsRequest& WithResourceId(ResourceIdT&& value) {
+    SetResourceId(std::forward<ResourceIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
    * <p>Filters to apply when listing resource launch actions.</p>
    */
@@ -80,34 +96,18 @@ class ListLaunchActionsRequest : public DrsRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-
-  inline const Aws::String& GetResourceId() const { return m_resourceId; }
-  inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-  template <typename ResourceIdT = Aws::String>
-  void SetResourceId(ResourceIdT&& value) {
-    m_resourceIdHasBeenSet = true;
-    m_resourceId = std::forward<ResourceIdT>(value);
-  }
-  template <typename ResourceIdT = Aws::String>
-  ListLaunchActionsRequest& WithResourceId(ResourceIdT&& value) {
-    SetResourceId(std::forward<ResourceIdT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_resourceId;
+
   LaunchActionsRequestFilters m_filters;
 
   int m_maxResults{0};
 
   Aws::String m_nextToken;
-
-  Aws::String m_resourceId;
+  bool m_resourceIdHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
-  bool m_resourceIdHasBeenSet = false;
 };
 
 }  // namespace Model

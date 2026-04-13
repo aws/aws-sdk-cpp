@@ -489,6 +489,65 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
+   * <p>Creates a new registry in your Amazon Web Services account. A registry serves
+   * as a centralized catalog for organizing and managing registry records, including
+   * MCP servers, A2A agents, agent skills, and custom resource types.</p> <p>If you
+   * specify <code>CUSTOM_JWT</code> as the <code>authorizerType</code>, you must
+   * provide an <code>authorizerConfiguration</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateRegistry">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateRegistryOutcome CreateRegistry(const Model::CreateRegistryRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateRegistry that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateRegistryRequestT = Model::CreateRegistryRequest>
+  Model::CreateRegistryOutcomeCallable CreateRegistryCallable(const CreateRegistryRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::CreateRegistry, request);
+  }
+
+  /**
+   * An Async wrapper for CreateRegistry that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateRegistryRequestT = Model::CreateRegistryRequest>
+  void CreateRegistryAsync(const CreateRegistryRequestT& request, const CreateRegistryResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::CreateRegistry, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a new registry record within the specified registry. A registry
+   * record represents an individual AI resource's metadata in the registry. This
+   * could be an MCP server (and associated tools), A2A agent, agent skill, or a
+   * custom resource with a custom schema.</p> <p>The record is processed
+   * asynchronously and returns HTTP 202 Accepted.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateRegistryRecord">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateRegistryRecordOutcome CreateRegistryRecord(const Model::CreateRegistryRecordRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateRegistryRecord that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateRegistryRecordRequestT = Model::CreateRegistryRecordRequest>
+  Model::CreateRegistryRecordOutcomeCallable CreateRegistryRecordCallable(const CreateRegistryRecordRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::CreateRegistryRecord, request);
+  }
+
+  /**
+   * An Async wrapper for CreateRegistryRecord that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateRegistryRecordRequestT = Model::CreateRegistryRecordRequest>
+  void CreateRegistryRecordAsync(const CreateRegistryRecordRequestT& request, const CreateRegistryRecordResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::CreateRegistryRecord, request, handler, context);
+  }
+
+  /**
    * <p>Creates a new workload identity.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateWorkloadIdentity">AWS
    * API Reference</a></p>
@@ -901,6 +960,61 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   void DeletePolicyEngineAsync(const DeletePolicyEngineRequestT& request, const DeletePolicyEngineResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::DeletePolicyEngine, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a registry. The registry must contain zero records before it can be
+   * deleted. This operation initiates the deletion process
+   * asynchronously.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteRegistry">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteRegistryOutcome DeleteRegistry(const Model::DeleteRegistryRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteRegistry that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteRegistryRequestT = Model::DeleteRegistryRequest>
+  Model::DeleteRegistryOutcomeCallable DeleteRegistryCallable(const DeleteRegistryRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::DeleteRegistry, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteRegistry that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteRegistryRequestT = Model::DeleteRegistryRequest>
+  void DeleteRegistryAsync(const DeleteRegistryRequestT& request, const DeleteRegistryResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::DeleteRegistry, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a registry record. The record's status transitions to
+   * <code>DELETING</code> and the record is removed asynchronously.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteRegistryRecord">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteRegistryRecordOutcome DeleteRegistryRecord(const Model::DeleteRegistryRecordRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteRegistryRecord that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteRegistryRecordRequestT = Model::DeleteRegistryRecordRequest>
+  Model::DeleteRegistryRecordOutcomeCallable DeleteRegistryRecordCallable(const DeleteRegistryRecordRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::DeleteRegistryRecord, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteRegistryRecord that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteRegistryRecordRequestT = Model::DeleteRegistryRecordRequest>
+  void DeleteRegistryRecordAsync(const DeleteRegistryRecordRequestT& request, const DeleteRegistryRecordResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::DeleteRegistryRecord, request, handler, context);
   }
 
   /**
@@ -1367,6 +1481,59 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   void GetPolicyGenerationAsync(const GetPolicyGenerationRequestT& request, const GetPolicyGenerationResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::GetPolicyGeneration, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about a specific registry.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetRegistry">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetRegistryOutcome GetRegistry(const Model::GetRegistryRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetRegistry that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetRegistryRequestT = Model::GetRegistryRequest>
+  Model::GetRegistryOutcomeCallable GetRegistryCallable(const GetRegistryRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::GetRegistry, request);
+  }
+
+  /**
+   * An Async wrapper for GetRegistry that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetRegistryRequestT = Model::GetRegistryRequest>
+  void GetRegistryAsync(const GetRegistryRequestT& request, const GetRegistryResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::GetRegistry, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about a specific registry record.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetRegistryRecord">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetRegistryRecordOutcome GetRegistryRecord(const Model::GetRegistryRecordRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetRegistryRecord that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetRegistryRecordRequestT = Model::GetRegistryRecordRequest>
+  Model::GetRegistryRecordOutcomeCallable GetRegistryRecordCallable(const GetRegistryRecordRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::GetRegistryRecord, request);
+  }
+
+  /**
+   * An Async wrapper for GetRegistryRecord that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetRegistryRecordRequestT = Model::GetRegistryRecordRequest>
+  void GetRegistryRecordAsync(const GetRegistryRecordRequestT& request, const GetRegistryRecordResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::GetRegistryRecord, request, handler, context);
   }
 
   /**
@@ -1933,6 +2100,62 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
+   * <p>Lists all registries in the account. You can optionally filter results by
+   * status using the <code>status</code> parameter.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListRegistries">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListRegistriesOutcome ListRegistries(const Model::ListRegistriesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListRegistries that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListRegistriesRequestT = Model::ListRegistriesRequest>
+  Model::ListRegistriesOutcomeCallable ListRegistriesCallable(const ListRegistriesRequestT& request = {}) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::ListRegistries, request);
+  }
+
+  /**
+   * An Async wrapper for ListRegistries that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListRegistriesRequestT = Model::ListRegistriesRequest>
+  void ListRegistriesAsync(const ListRegistriesResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                           const ListRegistriesRequestT& request = {}) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::ListRegistries, request, handler, context);
+  }
+
+  /**
+   * <p>Lists registry records within a registry. You can optionally filter results
+   * using the <code>name</code>, <code>status</code>, and
+   * <code>descriptorType</code> parameters. When multiple filters are specified,
+   * they are combined using AND logic.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListRegistryRecords">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListRegistryRecordsOutcome ListRegistryRecords(const Model::ListRegistryRecordsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListRegistryRecords that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListRegistryRecordsRequestT = Model::ListRegistryRecordsRequest>
+  Model::ListRegistryRecordsOutcomeCallable ListRegistryRecordsCallable(const ListRegistryRecordsRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::ListRegistryRecords, request);
+  }
+
+  /**
+   * An Async wrapper for ListRegistryRecords that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListRegistryRecordsRequestT = Model::ListRegistryRecordsRequest>
+  void ListRegistryRecordsAsync(const ListRegistryRecordsRequestT& request, const ListRegistryRecordsResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::ListRegistryRecords, request, handler, context);
+  }
+
+  /**
    * <p>Lists the tags associated with the specified resource.</p>  <p>This
    * feature is currently available only for AgentCore Runtime, Browser, Browser
    * Profile, Code Interpreter tool, and Gateway.</p> <p><h3>See Also:</h3>
@@ -2079,6 +2302,38 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   void StartPolicyGenerationAsync(const StartPolicyGenerationRequestT& request, const StartPolicyGenerationResponseReceivedHandler& handler,
                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::StartPolicyGeneration, request, handler, context);
+  }
+
+  /**
+   * <p>Submits a registry record for approval. This transitions the record from
+   * <code>DRAFT</code> status to <code>PENDING_APPROVAL</code> status. If the
+   * registry has auto-approval enabled, the record is automatically
+   * approved.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/SubmitRegistryRecordForApproval">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SubmitRegistryRecordForApprovalOutcome SubmitRegistryRecordForApproval(
+      const Model::SubmitRegistryRecordForApprovalRequest& request) const;
+
+  /**
+   * A Callable wrapper for SubmitRegistryRecordForApproval that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename SubmitRegistryRecordForApprovalRequestT = Model::SubmitRegistryRecordForApprovalRequest>
+  Model::SubmitRegistryRecordForApprovalOutcomeCallable SubmitRegistryRecordForApprovalCallable(
+      const SubmitRegistryRecordForApprovalRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::SubmitRegistryRecordForApproval, request);
+  }
+
+  /**
+   * An Async wrapper for SubmitRegistryRecordForApproval that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename SubmitRegistryRecordForApprovalRequestT = Model::SubmitRegistryRecordForApprovalRequest>
+  void SubmitRegistryRecordForApprovalAsync(const SubmitRegistryRecordForApprovalRequestT& request,
+                                            const SubmitRegistryRecordForApprovalResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::SubmitRegistryRecordForApproval, request, handler, context);
   }
 
   /**
@@ -2487,6 +2742,91 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   void UpdatePolicyEngineAsync(const UpdatePolicyEngineRequestT& request, const UpdatePolicyEngineResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::UpdatePolicyEngine, request, handler, context);
+  }
+
+  /**
+   * <p>Updates an existing registry. This operation uses PATCH semantics, so you
+   * only need to specify the fields you want to change.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateRegistry">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateRegistryOutcome UpdateRegistry(const Model::UpdateRegistryRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateRegistry that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UpdateRegistryRequestT = Model::UpdateRegistryRequest>
+  Model::UpdateRegistryOutcomeCallable UpdateRegistryCallable(const UpdateRegistryRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::UpdateRegistry, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateRegistry that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UpdateRegistryRequestT = Model::UpdateRegistryRequest>
+  void UpdateRegistryAsync(const UpdateRegistryRequestT& request, const UpdateRegistryResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::UpdateRegistry, request, handler, context);
+  }
+
+  /**
+   * <p>Updates an existing registry record. This operation uses PATCH semantics, so
+   * you only need to specify the fields you want to change. The update is processed
+   * asynchronously and returns HTTP 202 Accepted.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateRegistryRecord">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateRegistryRecordOutcome UpdateRegistryRecord(const Model::UpdateRegistryRecordRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateRegistryRecord that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateRegistryRecordRequestT = Model::UpdateRegistryRecordRequest>
+  Model::UpdateRegistryRecordOutcomeCallable UpdateRegistryRecordCallable(const UpdateRegistryRecordRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::UpdateRegistryRecord, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateRegistryRecord that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateRegistryRecordRequestT = Model::UpdateRegistryRecordRequest>
+  void UpdateRegistryRecordAsync(const UpdateRegistryRecordRequestT& request, const UpdateRegistryRecordResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::UpdateRegistryRecord, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the status of a registry record. Use this operation to approve,
+   * reject, or deprecate a registry record.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateRegistryRecordStatus">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateRegistryRecordStatusOutcome UpdateRegistryRecordStatus(
+      const Model::UpdateRegistryRecordStatusRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateRegistryRecordStatus that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateRegistryRecordStatusRequestT = Model::UpdateRegistryRecordStatusRequest>
+  Model::UpdateRegistryRecordStatusOutcomeCallable UpdateRegistryRecordStatusCallable(
+      const UpdateRegistryRecordStatusRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::UpdateRegistryRecordStatus, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateRegistryRecordStatus that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateRegistryRecordStatusRequestT = Model::UpdateRegistryRecordStatusRequest>
+  void UpdateRegistryRecordStatusAsync(const UpdateRegistryRecordStatusRequestT& request,
+                                       const UpdateRegistryRecordStatusResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::UpdateRegistryRecordStatus, request, handler, context);
   }
 
   /**

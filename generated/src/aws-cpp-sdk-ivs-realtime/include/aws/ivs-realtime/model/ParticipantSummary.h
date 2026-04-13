@@ -214,6 +214,40 @@ class ParticipantSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether redundant ingest is enabled for the participant.</p>
+   */
+  inline bool GetRedundantIngest() const { return m_redundantIngest; }
+  inline bool RedundantIngestHasBeenSet() const { return m_redundantIngestHasBeenSet; }
+  inline void SetRedundantIngest(bool value) {
+    m_redundantIngestHasBeenSet = true;
+    m_redundantIngest = value;
+  }
+  inline ParticipantSummary& WithRedundantIngest(bool value) {
+    SetRedundantIngest(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The participant’s ingest configuration.</p>
+   */
+  inline const Aws::String& GetIngestConfigurationArn() const { return m_ingestConfigurationArn; }
+  inline bool IngestConfigurationArnHasBeenSet() const { return m_ingestConfigurationArnHasBeenSet; }
+  template <typename IngestConfigurationArnT = Aws::String>
+  void SetIngestConfigurationArn(IngestConfigurationArnT&& value) {
+    m_ingestConfigurationArnHasBeenSet = true;
+    m_ingestConfigurationArn = std::forward<IngestConfigurationArnT>(value);
+  }
+  template <typename IngestConfigurationArnT = Aws::String>
+  ParticipantSummary& WithIngestConfigurationArn(IngestConfigurationArnT&& value) {
+    SetIngestConfigurationArn(std::forward<IngestConfigurationArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_participantId;
 
@@ -234,6 +268,10 @@ class ParticipantSummary {
   Aws::String m_sourceStageArn;
 
   Aws::String m_sourceSessionId;
+
+  bool m_redundantIngest{false};
+
+  Aws::String m_ingestConfigurationArn;
   bool m_participantIdHasBeenSet = false;
   bool m_userIdHasBeenSet = false;
   bool m_stateHasBeenSet = false;
@@ -244,6 +282,8 @@ class ParticipantSummary {
   bool m_replicationStateHasBeenSet = false;
   bool m_sourceStageArnHasBeenSet = false;
   bool m_sourceSessionIdHasBeenSet = false;
+  bool m_redundantIngestHasBeenSet = false;
+  bool m_ingestConfigurationArnHasBeenSet = false;
 };
 
 }  // namespace Model
