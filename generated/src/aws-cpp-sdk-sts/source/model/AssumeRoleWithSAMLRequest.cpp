@@ -6,6 +6,7 @@
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/sts/model/AssumeRoleWithSAMLRequest.h>
+#include <smithy/identity/auth/built-in/NoAuthSchemeOption.h>
 
 using namespace Aws::STS::Model;
 using namespace Aws::Utils;
@@ -50,3 +51,8 @@ Aws::String AssumeRoleWithSAMLRequest::SerializePayload() const {
 }
 
 void AssumeRoleWithSAMLRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }
+
+Aws::Vector<smithy::AuthSchemeOption> AssumeRoleWithSAMLRequest::GetRequestSpecificSupportedAuth() const {
+  Aws::Vector<smithy::AuthSchemeOption> authOptions{smithy::NoAuthSchemeOption::noAuthSchemeOption};
+  return authOptions;
+}

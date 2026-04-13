@@ -30,6 +30,8 @@ class AssumeRoleWithWebIdentityRequest : public STSRequest {
 
   AWS_STS_API Aws::String SerializePayload() const override;
 
+  AWS_STS_API Aws::Vector<smithy::AuthSchemeOption> GetRequestSpecificSupportedAuth() const override;
+
  protected:
   AWS_STS_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
 

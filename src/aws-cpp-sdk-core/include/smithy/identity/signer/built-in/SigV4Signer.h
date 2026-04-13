@@ -56,7 +56,7 @@ namespace smithy {
             }();
 
             auto signPayloadIt = properties.find("SignPayload");
-            bool signPayload = signPayloadIt != properties.end() ? signPayloadIt->second.get<Aws::String>() == "true" : false;
+            bool signPayload = signPayloadIt == properties.end() ? true : signPayloadIt->second.get<Aws::String>() == "true";
 
             auto signerRegionOverrideIt = properties.find(smithy::SIGNER_REGION_PROPERTY);
             auto region = signerRegionOverrideIt != properties.end() ? signerRegionOverrideIt->second.get<Aws::String>().c_str() : m_region.c_str();

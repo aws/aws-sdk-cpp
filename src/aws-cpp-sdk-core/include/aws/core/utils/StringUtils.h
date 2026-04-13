@@ -233,6 +233,11 @@ namespace Aws
             {
                 return Aws::String(reinterpret_cast<char *>(cursor.ptr), cursor.len);
             }
+
+            /**
+             * Joins a vector of strings with a delimiter.
+             */
+            static Aws::String Join(const Aws::Vector<Aws::String>& elements, char delimiter);
         };
 
 

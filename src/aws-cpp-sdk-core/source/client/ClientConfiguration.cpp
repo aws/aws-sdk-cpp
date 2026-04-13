@@ -56,6 +56,8 @@ static const char* AWS_WEB_IDENTITY_TOKEN_FILE_CONFIG_FILE_OPTION = "web_identit
 static const char* AWS_LOGIN_SESSION_FILE_OPTION = "login_session";
 static const char* AWS_LOGIN_CACHE_DIRECTORY_ENV_VAR = "AWS_LOGIN_CACHE_DIRECTORY";
 static const char* AWS_AUTH_SCHEME_PREFERENCE = "AWS_AUTH_SCHEME_PREFERENCE";
+static const char* AWS_SIGV4A_SIGNING_REGION_SET_ENV_VAR = "AWS_SIGV4A_SIGNING_REGION_SET";
+static const char* AWS_SIGV4A_SIGNING_REGION_SET_CONFIG_VAR = "sigv4a_signing_region_set";
 
 using RequestChecksumConfigurationEnumMapping = std::pair<const char*, RequestChecksumCalculation>;
 static const std::array<RequestChecksumConfigurationEnumMapping, 2> REQUEST_CHECKSUM_CONFIG_MAPPING = {{
@@ -204,6 +206,26 @@ Aws::Vector<Aws::String> calculateAuthPreferences() {
   return res;
 }
 
+Aws::Vector<Aws::String> calculateSigV4aSigningRegionSet(const Aws::String& profileName) {
+  Aws::Vector<Aws::String> res;
+  Aws::String regionSetStr = Aws::Environment::GetEnv(AWS_SIGV4A_SIGNING_REGION_SET_ENV_VAR);
+  if (regionSetStr.empty()) {
+    regionSetStr = Aws::Config::GetCachedConfigValue(profileName, AWS_SIGV4A_SIGNING_REGION_SET_CONFIG_VAR);
+  }
+  if (regionSetStr.empty()) {
+    return res;
+  }
+  Aws::Vector<Aws::String> regionsList = Aws::Utils::StringUtils::Split(regionSetStr, ',');
+  res.reserve(regionsList.size());
+  for (const auto& region : regionsList) {
+    Aws::String trimmed = Aws::Utils::StringUtils::Trim(region.c_str());
+    if (!trimmed.empty()) {
+      res.emplace_back(trimmed);
+    }
+  }
+  return res;
+}
+
 void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
 {
     clientConfig.scheme = Aws::Http::Scheme::HTTPS;
@@ -269,6 +291,7 @@ void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
     clientConfig.region = calculateRegion();
     clientConfig.credentialProviderConfig.region = clientConfig.region;
     clientConfig.authPreferences = calculateAuthPreferences();
+    clientConfig.sigV4aSigningRegionSet = calculateSigV4aSigningRegionSet(clientConfig.profileName);
 
     // Set the endpoint to interact with EC2 instance's metadata service
     Aws::String ec2MetadataServiceEndpoint = Aws::Environment::GetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT");

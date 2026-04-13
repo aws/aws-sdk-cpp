@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <algorithm>
 #include <iomanip>
+#include <numeric>
 #include <cstdlib>
 #include <cstdio>
 #include <cstring>
@@ -384,6 +385,14 @@ double StringUtils::ConvertToDouble(const char* source)
     }
 
     return std::strtod(source, NULL);
+}
+
+Aws::String StringUtils::Join(const Aws::Vector<Aws::String>& elements, char delimiter)
+{
+    return std::accumulate(std::begin(elements), std::end(elements), Aws::String{},
+        [delimiter](const Aws::String& acc, const Aws::String& item) -> Aws::String {
+            return acc.empty() ? item : acc + delimiter + item;
+        });
 }
 
 #ifdef _WIN32
