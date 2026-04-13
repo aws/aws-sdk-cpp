@@ -416,6 +416,7 @@
 #include <aws/securityhub/model/AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails.h>
 #include <aws/securityhub/model/AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails.h>
 #include <aws/securityhub/model/AwsOpenSearchServiceDomainVpcOptionsDetails.h>
+#include <aws/securityhub/model/AwsOrganizationScope.h>
 #include <aws/securityhub/model/AwsRdsDbClusterAssociatedRole.h>
 #include <aws/securityhub/model/AwsRdsDbClusterDetails.h>
 #include <aws/securityhub/model/AwsRdsDbClusterMember.h>
@@ -704,6 +705,7 @@
 #include <aws/securityhub/model/FindingHistoryUpdateSourceType.h>
 #include <aws/securityhub/model/FindingProviderFields.h>
 #include <aws/securityhub/model/FindingProviderSeverity.h>
+#include <aws/securityhub/model/FindingScopes.h>
 #include <aws/securityhub/model/FindingsTrendsCompositeFilter.h>
 #include <aws/securityhub/model/FindingsTrendsFilters.h>
 #include <aws/securityhub/model/FindingsTrendsStringField.h>
@@ -853,6 +855,8 @@
 #include <aws/securityhub/model/OrganizationConfiguration.h>
 #include <aws/securityhub/model/OrganizationConfigurationConfigurationType.h>
 #include <aws/securityhub/model/OrganizationConfigurationStatus.h>
+#include <aws/securityhub/model/OrganizationNotFoundException.h>
+#include <aws/securityhub/model/OrganizationalUnitNotFoundException.h>
 #include <aws/securityhub/model/Page.h>
 #include <aws/securityhub/model/ParameterConfiguration.h>
 #include <aws/securityhub/model/ParameterDefinition.h>
@@ -892,6 +896,7 @@
 #include <aws/securityhub/model/ResourceInUseException.h>
 #include <aws/securityhub/model/ResourceNotFoundException.h>
 #include <aws/securityhub/model/ResourceResult.h>
+#include <aws/securityhub/model/ResourceScopes.h>
 #include <aws/securityhub/model/ResourceSeverityBreakdown.h>
 #include <aws/securityhub/model/ResourceTag.h>
 #include <aws/securityhub/model/ResourcesCompositeFilter.h>

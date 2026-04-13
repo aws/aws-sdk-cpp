@@ -13,6 +13,8 @@
 #include <aws/securityhub/model/InvalidAccessException.h>
 #include <aws/securityhub/model/InvalidInputException.h>
 #include <aws/securityhub/model/LimitExceededException.h>
+#include <aws/securityhub/model/OrganizationNotFoundException.h>
+#include <aws/securityhub/model/OrganizationalUnitNotFoundException.h>
 #include <aws/securityhub/model/ResourceConflictException.h>
 #include <aws/securityhub/model/ResourceInUseException.h>
 #include <aws/securityhub/model/ResourceNotFoundException.h>
@@ -64,6 +66,12 @@ AWS_SECURITYHUB_API LimitExceededException SecurityHubError::GetModeledError() {
 }
 
 template <>
+AWS_SECURITYHUB_API OrganizationNotFoundException SecurityHubError::GetModeledError() {
+  assert(this->GetErrorType() == SecurityHubErrors::ORGANIZATION_NOT_FOUND);
+  return OrganizationNotFoundException(this->GetJsonPayload().View());
+}
+
+template <>
 AWS_SECURITYHUB_API InvalidInputException SecurityHubError::GetModeledError() {
   assert(this->GetErrorType() == SecurityHubErrors::INVALID_INPUT);
   return InvalidInputException(this->GetJsonPayload().View());
@@ -105,6 +113,12 @@ AWS_SECURITYHUB_API ResourceInUseException SecurityHubError::GetModeledError() {
   return ResourceInUseException(this->GetJsonPayload().View());
 }
 
+template <>
+AWS_SECURITYHUB_API OrganizationalUnitNotFoundException SecurityHubError::GetModeledError() {
+  assert(this->GetErrorType() == SecurityHubErrors::ORGANIZATIONAL_UNIT_NOT_FOUND);
+  return OrganizationalUnitNotFoundException(this->GetJsonPayload().View());
+}
+
 namespace SecurityHubErrorMapper {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
@@ -113,9 +127,11 @@ static const int INVALID_ACCESS_HASH = HashingUtils::HashString("InvalidAccessEx
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int ORGANIZATION_NOT_FOUND_HASH = HashingUtils::HashString("OrganizationNotFoundException");
 static const int RESOURCE_CONFLICT_HASH = HashingUtils::HashString("ResourceConflictException");
 static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
+static const int ORGANIZATIONAL_UNIT_NOT_FOUND_HASH = HashingUtils::HashString("OrganizationalUnitNotFoundException");
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
@@ -132,12 +148,16 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SecurityHubErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SecurityHubErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+  } else if (hashCode == ORGANIZATION_NOT_FOUND_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SecurityHubErrors::ORGANIZATION_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == RESOURCE_CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SecurityHubErrors::RESOURCE_CONFLICT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_INPUT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SecurityHubErrors::INVALID_INPUT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == RESOURCE_IN_USE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SecurityHubErrors::RESOURCE_IN_USE), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == ORGANIZATIONAL_UNIT_NOT_FOUND_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SecurityHubErrors::ORGANIZATIONAL_UNIT_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -31,7 +31,7 @@ class GetResourcesV2Result {
 
   ///@{
   /**
-   * <p>Filters resources based on a set of criteria.</p>
+   * <p>An array of resources returned by the operation.</p>
    */
   inline const Aws::Vector<ResourceResult>& GetResources() const { return m_resources; }
   template <typename ResourcesT = Aws::Vector<ResourceResult>>

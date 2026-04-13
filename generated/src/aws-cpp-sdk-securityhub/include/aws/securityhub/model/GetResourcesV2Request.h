@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/securityhub/SecurityHubRequest.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
+#include <aws/securityhub/model/ResourceScopes.h>
 #include <aws/securityhub/model/ResourcesFilters.h>
 #include <aws/securityhub/model/SortCriterion.h>
 
@@ -51,7 +52,32 @@ class GetResourcesV2Request : public SecurityHubRequest {
 
   ///@{
   /**
-   * <p>The finding attributes used to sort the list of returned findings.</p>
+   * <p>Limits the results to resources from specific organizational units or from
+   * the delegated administrator's organization. Only the delegated administrator
+   * account can use this parameter. Other accounts receive an
+   * <code>AccessDeniedException</code>.</p> <p>This parameter is optional. If you
+   * omit it, the delegated administrator sees resources from all accounts across the
+   * entire organization. Other accounts see only their own resources.</p> <p>You can
+   * specify up to 10 entries in <code>Scopes.AwsOrganizations</code>. If multiple
+   * entries are specified, the entries are combined using OR logic.</p>
+   */
+  inline const ResourceScopes& GetScopes() const { return m_scopes; }
+  inline bool ScopesHasBeenSet() const { return m_scopesHasBeenSet; }
+  template <typename ScopesT = ResourceScopes>
+  void SetScopes(ScopesT&& value) {
+    m_scopesHasBeenSet = true;
+    m_scopes = std::forward<ScopesT>(value);
+  }
+  template <typename ScopesT = ResourceScopes>
+  GetResourcesV2Request& WithScopes(ScopesT&& value) {
+    SetScopes(std::forward<ScopesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The resource attributes used to sort the list of returned resources.</p>
    */
   inline const Aws::Vector<SortCriterion>& GetSortCriteria() const { return m_sortCriteria; }
   inline bool SortCriteriaHasBeenSet() const { return m_sortCriteriaHasBeenSet; }
@@ -112,12 +138,15 @@ class GetResourcesV2Request : public SecurityHubRequest {
  private:
   ResourcesFilters m_filters;
 
+  ResourceScopes m_scopes;
+
   Aws::Vector<SortCriterion> m_sortCriteria;
 
   Aws::String m_nextToken;
 
   int m_maxResults{0};
   bool m_filtersHasBeenSet = false;
+  bool m_scopesHasBeenSet = false;
   bool m_sortCriteriaHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;

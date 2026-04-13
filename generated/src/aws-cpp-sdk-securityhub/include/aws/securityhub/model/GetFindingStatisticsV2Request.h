@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/securityhub/SecurityHubRequest.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
+#include <aws/securityhub/model/FindingScopes.h>
 #include <aws/securityhub/model/GroupByRule.h>
 #include <aws/securityhub/model/SortOrder.h>
 
@@ -58,6 +59,32 @@ class GetFindingStatisticsV2Request : public SecurityHubRequest {
 
   ///@{
   /**
+   * <p>Limits the results to findings from specific organizational units or from the
+   * delegated administrator's organization. Only the delegated administrator account
+   * can use this parameter. Other accounts receive an
+   * <code>AccessDeniedException</code>.</p> <p>This parameter is optional. If you
+   * omit it, the delegated administrator sees statistics from all accounts across
+   * the entire organization. Other accounts see only statistics for their own
+   * findings.</p> <p>You can specify up to 10 entries in
+   * <code>Scopes.AwsOrganizations</code>. If multiple entries are specified, the
+   * entries are combined using OR logic.</p>
+   */
+  inline const FindingScopes& GetScopes() const { return m_scopes; }
+  inline bool ScopesHasBeenSet() const { return m_scopesHasBeenSet; }
+  template <typename ScopesT = FindingScopes>
+  void SetScopes(ScopesT&& value) {
+    m_scopesHasBeenSet = true;
+    m_scopes = std::forward<ScopesT>(value);
+  }
+  template <typename ScopesT = FindingScopes>
+  GetFindingStatisticsV2Request& WithScopes(ScopesT&& value) {
+    SetScopes(std::forward<ScopesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Orders the aggregation count in descending or ascending order. Descending
    * order is the default.</p>
    */
@@ -91,10 +118,13 @@ class GetFindingStatisticsV2Request : public SecurityHubRequest {
  private:
   Aws::Vector<GroupByRule> m_groupByRules;
 
+  FindingScopes m_scopes;
+
   SortOrder m_sortOrder{SortOrder::NOT_SET};
 
   int m_maxStatisticResults{0};
   bool m_groupByRulesHasBeenSet = false;
+  bool m_scopesHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
   bool m_maxStatisticResultsHasBeenSet = false;
 };

@@ -190,6 +190,7 @@
 #include <aws/inspector-scan/InspectorscanClient.h>
 #include <aws/inspector/InspectorClient.h>
 #include <aws/inspector2/Inspector2Client.h>
+#include <aws/interconnect/InterconnectClient.h>
 #include <aws/internetmonitor/InternetMonitorClient.h>
 #include <aws/invoicing/InvoicingClient.h>
 #include <aws/iot-data/IoTDataPlaneClient.h>

@@ -173,8 +173,8 @@ class ProductV2 {
 
   ///@{
   /**
-   * <p>The identifier for the AWS Marketplace product associated with this
-   * integration.</p>
+   * <p>The identifier for the Amazon Web Services Marketplace product associated
+   * with this integration.</p>
    */
   inline const Aws::String& GetMarketplaceProductId() const { return m_marketplaceProductId; }
   inline bool MarketplaceProductIdHasBeenSet() const { return m_marketplaceProductIdHasBeenSet; }

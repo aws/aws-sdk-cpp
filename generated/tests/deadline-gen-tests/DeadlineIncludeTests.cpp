@@ -221,6 +221,8 @@
 #include <aws/deadline/model/GetLimitResult.h>
 #include <aws/deadline/model/GetMonitorRequest.h>
 #include <aws/deadline/model/GetMonitorResult.h>
+#include <aws/deadline/model/GetMonitorSettingsRequest.h>
+#include <aws/deadline/model/GetMonitorSettingsResult.h>
 #include <aws/deadline/model/GetQueueEnvironmentRequest.h>
 #include <aws/deadline/model/GetQueueEnvironmentResult.h>
 #include <aws/deadline/model/GetQueueFleetAssociationRequest.h>
@@ -451,6 +453,8 @@
 #include <aws/deadline/model/UpdateLimitResult.h>
 #include <aws/deadline/model/UpdateMonitorRequest.h>
 #include <aws/deadline/model/UpdateMonitorResult.h>
+#include <aws/deadline/model/UpdateMonitorSettingsRequest.h>
+#include <aws/deadline/model/UpdateMonitorSettingsResult.h>
 #include <aws/deadline/model/UpdateQueueEnvironmentRequest.h>
 #include <aws/deadline/model/UpdateQueueEnvironmentResult.h>
 #include <aws/deadline/model/UpdateQueueFleetAssociationRequest.h>

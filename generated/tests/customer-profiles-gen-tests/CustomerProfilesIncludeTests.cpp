@@ -350,9 +350,14 @@
 #include <aws/customer-profiles/model/SegmentGroup.h>
 #include <aws/customer-profiles/model/SegmentGroupStructure.h>
 #include <aws/customer-profiles/model/SegmentSnapshotStatus.h>
+#include <aws/customer-profiles/model/SegmentSort.h>
+#include <aws/customer-profiles/model/SegmentSortDataType.h>
+#include <aws/customer-profiles/model/SegmentSortOrder.h>
 #include <aws/customer-profiles/model/SegmentType.h>
 #include <aws/customer-profiles/model/ServiceNowConnectorOperator.h>
 #include <aws/customer-profiles/model/ServiceNowSourceProperties.h>
+#include <aws/customer-profiles/model/SortAttribute.h>
+#include <aws/customer-profiles/model/SortAttributeType.h>
 #include <aws/customer-profiles/model/SourceConnectorProperties.h>
 #include <aws/customer-profiles/model/SourceConnectorType.h>
 #include <aws/customer-profiles/model/SourceFlowConfig.h>

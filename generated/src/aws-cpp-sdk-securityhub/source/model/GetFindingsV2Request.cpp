@@ -19,6 +19,10 @@ Aws::String GetFindingsV2Request::SerializePayload() const {
     payload.WithObject("Filters", m_filters.Jsonize());
   }
 
+  if (m_scopesHasBeenSet) {
+    payload.WithObject("Scopes", m_scopes.Jsonize());
+  }
+
   if (m_sortCriteriaHasBeenSet) {
     Aws::Utils::Array<JsonValue> sortCriteriaJsonList(m_sortCriteria.size());
     for (unsigned sortCriteriaIndex = 0; sortCriteriaIndex < sortCriteriaJsonList.GetLength(); ++sortCriteriaIndex) {

@@ -76,6 +76,7 @@
 #include <aws/deadline/model/GetLicenseEndpointRequest.h>
 #include <aws/deadline/model/GetLimitRequest.h>
 #include <aws/deadline/model/GetMonitorRequest.h>
+#include <aws/deadline/model/GetMonitorSettingsRequest.h>
 #include <aws/deadline/model/GetQueueEnvironmentRequest.h>
 #include <aws/deadline/model/GetQueueFleetAssociationRequest.h>
 #include <aws/deadline/model/GetQueueLimitAssociationRequest.h>
@@ -131,6 +132,7 @@
 #include <aws/deadline/model/UpdateJobRequest.h>
 #include <aws/deadline/model/UpdateLimitRequest.h>
 #include <aws/deadline/model/UpdateMonitorRequest.h>
+#include <aws/deadline/model/UpdateMonitorSettingsRequest.h>
 #include <aws/deadline/model/UpdateQueueEnvironmentRequest.h>
 #include <aws/deadline/model/UpdateQueueFleetAssociationRequest.h>
 #include <aws/deadline/model/UpdateQueueLimitAssociationRequest.h>
@@ -1563,6 +1565,25 @@ GetMonitorOutcome DeadlineClient::GetMonitor(const GetMonitorRequest& request) c
   return result.IsSuccess() ? GetMonitorOutcome(result.GetResultWithOwnership()) : GetMonitorOutcome(std::move(result.GetError()));
 }
 
+GetMonitorSettingsOutcome DeadlineClient::GetMonitorSettings(const GetMonitorSettingsRequest& request) const {
+  if (!request.MonitorIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetMonitorSettings", "Required field: MonitorId, is not set");
+    return GetMonitorSettingsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [MonitorId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/monitors/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMonitorId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/settings");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMonitorSettingsOutcome(result.GetResultWithOwnership())
+                            : GetMonitorSettingsOutcome(std::move(result.GetError()));
+}
+
 GetQueueOutcome DeadlineClient::GetQueue(const GetQueueRequest& request) const {
   if (!request.FarmIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetQueue", "Required field: FarmId, is not set");
@@ -2940,6 +2961,25 @@ UpdateMonitorOutcome DeadlineClient::UpdateMonitor(const UpdateMonitorRequest& r
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
   return result.IsSuccess() ? UpdateMonitorOutcome(result.GetResultWithOwnership()) : UpdateMonitorOutcome(std::move(result.GetError()));
+}
+
+UpdateMonitorSettingsOutcome DeadlineClient::UpdateMonitorSettings(const UpdateMonitorSettingsRequest& request) const {
+  if (!request.MonitorIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateMonitorSettings", "Required field: MonitorId, is not set");
+    return UpdateMonitorSettingsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                              "Missing required field [MonitorId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/monitors/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMonitorId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/settings");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateMonitorSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdateMonitorSettingsOutcome(std::move(result.GetError()));
 }
 
 UpdateQueueOutcome DeadlineClient::UpdateQueue(const UpdateQueueRequest& request) const {

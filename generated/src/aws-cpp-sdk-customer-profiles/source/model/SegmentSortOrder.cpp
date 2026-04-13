@@ -1,0 +1,58 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/customer-profiles/model/SegmentSortOrder.h>
+
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace CustomerProfiles {
+namespace Model {
+namespace SegmentSortOrderMapper {
+
+static const int ASC_HASH = HashingUtils::HashString("ASC");
+static const int DESC_HASH = HashingUtils::HashString("DESC");
+
+SegmentSortOrder GetSegmentSortOrderForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == ASC_HASH) {
+    return SegmentSortOrder::ASC;
+  } else if (hashCode == DESC_HASH) {
+    return SegmentSortOrder::DESC;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<SegmentSortOrder>(hashCode);
+  }
+
+  return SegmentSortOrder::NOT_SET;
+}
+
+Aws::String GetNameForSegmentSortOrder(SegmentSortOrder enumValue) {
+  switch (enumValue) {
+    case SegmentSortOrder::NOT_SET:
+      return {};
+    case SegmentSortOrder::ASC:
+      return "ASC";
+    case SegmentSortOrder::DESC:
+      return "DESC";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
+
+      return {};
+  }
+}
+
+}  // namespace SegmentSortOrderMapper
+}  // namespace Model
+}  // namespace CustomerProfiles
+}  // namespace Aws
