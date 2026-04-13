@@ -27,7 +27,8 @@ SMITHY_SUPPORTED_CLIENTS = [
     "bedrock-agent",
     "bedrock-agent-runtime",
     "bedrock-data-automation",
-    "bedrock-data-automation-runtime"
+    "bedrock-data-automation-runtime",
+    "sts"
     #"s3",
 ]
 

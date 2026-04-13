@@ -604,6 +604,11 @@ namespace Aws
           Aws::Vector<Aws::String> authPreferences;
 
           /**
+           * List of AWS regions for SigV4a multi-region signing.
+           */
+          Aws::Vector<Aws::String> sigV4aSigningRegionSet;
+
+          /**
            * Buffer size in bytes that will be used to content encode
            * bodies using aws-chunked. Changing this is useful when you
            * want to minimize memory use while uploading to S3. Size MUST

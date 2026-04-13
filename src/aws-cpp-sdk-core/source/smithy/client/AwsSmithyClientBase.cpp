@@ -17,12 +17,14 @@
 #include <aws/core/monitoring/CoreMetrics.h>
 #include <aws/core/monitoring/MonitoringManager.h>
 #include <aws/core/utils/DNS.h>
+#include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
 #include <aws/core/utils/stream/ResponseStream.h>
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/threading/SameThreadExecutor.h>
 #include <aws/crt/Variant.h>
 #include <smithy/identity/auth/built-in/GenericAuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4aAuthSchemeOption.h>
 
 using namespace smithy::client;
 using namespace smithy::client::features;
@@ -321,6 +323,11 @@ void AwsSmithyClientBase::UpdateAuthSchemeFromEndpoint(const Aws::Endpoint::AWSE
             auto signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName();
             authscheme.putSignerProperty(smithy::SIGNER_SERVICE_NAME, Aws::Crt::Variant<Aws::String, bool>(Aws::String(signerServiceNameOverride->c_str())));
         }
+    }
+    // If a value is explicitly set in configuration, it must be used over values defined anywhere else (ONLY FOR SigV4a)
+    if (strcmp(authscheme.schemeId, SigV4aAuthSchemeOption::sigV4aAuthSchemeOption.schemeId) == 0 && !m_clientConfig->sigV4aSigningRegionSet.empty()) {
+        authscheme.putSignerProperty(smithy::SIGNER_REGION_PROPERTY,
+            Aws::Crt::Variant<Aws::String, bool>(Aws::Utils::StringUtils::Join(m_clientConfig->sigV4aSigningRegionSet, ',')));
     }
 }
 
