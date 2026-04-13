@@ -38,6 +38,10 @@ GetSegmentDefinitionResult& GetSegmentDefinitionResult::operator=(const Aws::Ama
     m_segmentGroups = jsonValue.GetObject("SegmentGroups");
     m_segmentGroupsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SegmentSort")) {
+    m_segmentSort = jsonValue.GetObject("SegmentSort");
+    m_segmentSortHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("SegmentDefinitionArn")) {
     m_segmentDefinitionArn = jsonValue.GetString("SegmentDefinitionArn");
     m_segmentDefinitionArnHasBeenSet = true;

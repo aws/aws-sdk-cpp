@@ -1639,6 +1639,32 @@ class AWS_DEADLINE_API DeadlineClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Gets the settings for a Deadline Cloud monitor.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetMonitorSettings">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetMonitorSettingsOutcome GetMonitorSettings(const Model::GetMonitorSettingsRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetMonitorSettings that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetMonitorSettingsRequestT = Model::GetMonitorSettingsRequest>
+  Model::GetMonitorSettingsOutcomeCallable GetMonitorSettingsCallable(const GetMonitorSettingsRequestT& request) const {
+    return SubmitCallable(&DeadlineClient::GetMonitorSettings, request);
+  }
+
+  /**
+   * An Async wrapper for GetMonitorSettings that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetMonitorSettingsRequestT = Model::GetMonitorSettingsRequest>
+  void GetMonitorSettingsAsync(const GetMonitorSettingsRequestT& request, const GetMonitorSettingsResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DeadlineClient::GetMonitorSettings, request, handler, context);
+  }
+
+  /**
    * <p>Gets a queue.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetQueue">AWS
    * API Reference</a></p>
@@ -3088,6 +3114,34 @@ class AWS_DEADLINE_API DeadlineClient : public Aws::Client::AWSJsonClient,
   void UpdateMonitorAsync(const UpdateMonitorRequestT& request, const UpdateMonitorResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&DeadlineClient::UpdateMonitor, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the settings for a Deadline Cloud monitor. Keys present in the
+   * request are upserted; keys absent are left unchanged. Send an empty string value
+   * to delete a key.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateMonitorSettings">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateMonitorSettingsOutcome UpdateMonitorSettings(const Model::UpdateMonitorSettingsRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateMonitorSettings that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateMonitorSettingsRequestT = Model::UpdateMonitorSettingsRequest>
+  Model::UpdateMonitorSettingsOutcomeCallable UpdateMonitorSettingsCallable(const UpdateMonitorSettingsRequestT& request) const {
+    return SubmitCallable(&DeadlineClient::UpdateMonitorSettings, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateMonitorSettings that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateMonitorSettingsRequestT = Model::UpdateMonitorSettingsRequest>
+  void UpdateMonitorSettingsAsync(const UpdateMonitorSettingsRequestT& request, const UpdateMonitorSettingsResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DeadlineClient::UpdateMonitorSettings, request, handler, context);
   }
 
   /**

@@ -103,7 +103,7 @@ class BatchUpdateFindingsV2Request : public SecurityHubRequest {
   ///@{
   /**
    * <p>The updated value for the normalized severity identifier. The severity ID is
-   * an integer with the allowed enum values [0, 1, 2, 3, 4, 5, 99]. When customer
+   * an integer with the allowed enum values [0, 1, 2, 3, 4, 5, 6, 99]. When customer
    * provides the updated severity ID, the string sibling severity will automatically
    * be updated in the finding.</p>
    */
@@ -122,7 +122,7 @@ class BatchUpdateFindingsV2Request : public SecurityHubRequest {
   ///@{
   /**
    * <p>The updated value for the normalized status identifier. The status ID is an
-   * integer with the allowed enum values [0, 1, 2, 3, 4, 5, 6, 99]. When customer
+   * integer with the allowed enum values [0, 1, 2, 3, 4, 5, 99]. When customer
    * provides the updated status ID, the string sibling status will automatically be
    * updated in the finding.</p>
    */

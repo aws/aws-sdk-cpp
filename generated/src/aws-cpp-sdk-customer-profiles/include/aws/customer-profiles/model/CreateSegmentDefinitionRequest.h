@@ -9,6 +9,7 @@
 #include <aws/customer-profiles/CustomerProfilesRequest.h>
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 #include <aws/customer-profiles/model/SegmentGroup.h>
+#include <aws/customer-profiles/model/SegmentSort.h>
 
 #include <utility>
 
@@ -141,6 +142,24 @@ class CreateSegmentDefinitionRequest : public CustomerProfilesRequest {
 
   ///@{
   /**
+   * <p>The segment sort.</p>
+   */
+  inline const SegmentSort& GetSegmentSort() const { return m_segmentSort; }
+  inline bool SegmentSortHasBeenSet() const { return m_segmentSortHasBeenSet; }
+  template <typename SegmentSortT = SegmentSort>
+  void SetSegmentSort(SegmentSortT&& value) {
+    m_segmentSortHasBeenSet = true;
+    m_segmentSort = std::forward<SegmentSortT>(value);
+  }
+  template <typename SegmentSortT = SegmentSort>
+  CreateSegmentDefinitionRequest& WithSegmentSort(SegmentSortT&& value) {
+    SetSegmentSort(std::forward<SegmentSortT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The tags used to organize, track, or control access for this resource.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
@@ -175,6 +194,8 @@ class CreateSegmentDefinitionRequest : public CustomerProfilesRequest {
 
   Aws::String m_segmentSqlQuery;
 
+  SegmentSort m_segmentSort;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_domainNameHasBeenSet = false;
   bool m_segmentDefinitionNameHasBeenSet = false;
@@ -182,6 +203,7 @@ class CreateSegmentDefinitionRequest : public CustomerProfilesRequest {
   bool m_descriptionHasBeenSet = false;
   bool m_segmentGroupsHasBeenSet = false;
   bool m_segmentSqlQueryHasBeenSet = false;
+  bool m_segmentSortHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

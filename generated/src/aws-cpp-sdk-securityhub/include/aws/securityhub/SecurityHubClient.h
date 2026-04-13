@@ -529,18 +529,26 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Used by customers to update information about their investigation into a
-   * finding. Requested by delegated administrator accounts or member accounts.
+   * <p>Updates information about a customer's investigation into a finding.
    * Delegated administrator accounts can update findings for their account and their
-   * member accounts. Member accounts can update findings for their account.
-   * <code>BatchUpdateFindings</code> and <code>BatchUpdateFindingV2</code> both use
-   * <code>securityhub:BatchUpdateFindings</code> in the <code>Action</code> element
-   * of an IAM policy statement. You must have permission to perform the
-   * <code>securityhub:BatchUpdateFindings</code> action. Updates from
-   * <code>BatchUpdateFindingsV2</code> don't affect the value of
-   * f<code>inding_info.modified_time</code>,
-   * <code>finding_info.modified_time_dt</code>, <code>time</code>, <code>time_dt for
-   * a finding</code>.</p><p><h3>See Also:</h3>   <a
+   * member accounts. Member accounts can update findings for their own account.</p>
+   * <p> <code>BatchUpdateFindings</code> and <code>BatchUpdateFindingsV2</code> both
+   * use <code>securityhub:BatchUpdateFindings</code> in the <code>Action</code>
+   * element of an IAM policy statement. You must have permission to perform the
+   * <code>securityhub:BatchUpdateFindings</code> action. You can configure IAM
+   * policies to restrict access to specific finding fields or field values by using
+   * the <code>securityhub:OCSFSyntaxPath/&lt;fieldName&gt;</code> condition key,
+   * where <code>&lt;fieldName&gt;</code> is one of the following supported fields:
+   * <code>SeverityId</code>, <code>StatusId</code>, or <code>Comment</code>.</p>
+   * <p>To prevent a user from updating a specific field, use a <code>Null</code>
+   * condition with <code>securityhub:OCSFSyntaxPath/&lt;fieldName&gt;</code> set to
+   * <code>"false"</code>. To prevent a user from setting a field to a specific
+   * value, use a <code>StringEquals</code> condition with
+   * <code>securityhub:OCSFSyntaxPath/&lt;fieldName&gt;</code> set to the disallowed
+   * value or list of values.</p> <p>Updates from <code>BatchUpdateFindingsV2</code>
+   * don't affect the value of <code>finding_info.modified_time</code>,
+   * <code>finding_info.modified_time_dt</code>, <code>time</code>, or
+   * <code>time_dt</code> for a finding.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindingsV2">AWS
    * API Reference</a></p>
    */
@@ -2025,11 +2033,16 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Returns aggregated statistical data about findings.
-   * <code>GetFindingStatisticsV2</code> use
+   * <p>Returns aggregated statistical data about findings.</p> <p>You can use the
+   * <code>Scopes</code> parameter to define the data boundary for the query.
+   * Currently, <code>Scopes</code> supports <code>AwsOrganizations</code>, which
+   * lets you aggregate findings from your entire organization or from specific
+   * organizational units. Only the delegated administrator account can use
+   * <code>Scopes</code>.</p> <p> <code>GetFindingStatisticsV2</code> uses
    * <code>securityhub:GetAdhocInsightResults</code> in the <code>Action</code>
    * element of an IAM policy statement. You must have permission to perform the
-   * <code>s</code> action.</p><p><h3>See Also:</h3>   <a
+   * <code>securityhub:GetAdhocInsightResults</code> action.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingStatisticsV2">AWS
    * API Reference</a></p>
    */
@@ -2113,11 +2126,20 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Return a list of findings that match the specified criteria.
-   * <code>GetFindings</code> and <code>GetFindingsV2</code> both use
-   * <code>securityhub:GetFindings</code> in the <code>Action</code> element of an
-   * IAM policy statement. You must have permission to perform the
-   * <code>securityhub:GetFindings</code> action.</p><p><h3>See Also:</h3>   <a
+   * <p>Returns a list of findings that match the specified criteria.</p> <p>You can
+   * use the <code>Scopes</code> parameter to define the data boundary for the query.
+   * Currently, <code>Scopes</code> supports <code>AwsOrganizations</code>, which
+   * lets you retrieve findings from your entire organization or from specific
+   * organizational units. Only the delegated administrator account can use
+   * <code>Scopes</code>.</p> <p>You can use the <code>Filters</code> parameter to
+   * refine results based on finding attributes. You can use <code>Scopes</code> and
+   * <code>Filters</code> independently or together. When both are provided,
+   * <code>Scopes</code> narrows the data set first, and then <code>Filters</code>
+   * refines results within that scoped data set.</p> <p> <code>GetFindings</code>
+   * and <code>GetFindingsV2</code> both use <code>securityhub:GetFindings</code> in
+   * the <code>Action</code> element of an IAM policy statement. You must have
+   * permission to perform the <code>securityhub:GetFindings</code>
+   * action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingsV2">AWS
    * API Reference</a></p>
    */
@@ -2262,7 +2284,12 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Retrieves statistical information about Amazon Web Services resources and
-   * their associated security findings.</p><p><h3>See Also:</h3>   <a
+   * their associated security findings.</p> <p>You can use the <code>Scopes</code>
+   * parameter to define the data boundary for the query. Currently,
+   * <code>Scopes</code> supports <code>AwsOrganizations</code>, which lets you
+   * aggregate resources from your entire organization or from specific
+   * organizational units. Only the delegated administrator account can use
+   * <code>Scopes</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetResourcesStatisticsV2">AWS
    * API Reference</a></p>
    */
@@ -2317,7 +2344,16 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Returns a list of resources.</p><p><h3>See Also:</h3>   <a
+   * <p>Returns a list of resources.</p> <p>You can use the <code>Scopes</code>
+   * parameter to define the data boundary for the query. Currently,
+   * <code>Scopes</code> supports <code>AwsOrganizations</code>, which lets you
+   * retrieve resources from your entire organization or from specific organizational
+   * units. Only the delegated administrator account can use <code>Scopes</code>.</p>
+   * <p>You can use the <code>Filters</code> parameter to refine results based on
+   * resource attributes. You can use <code>Scopes</code> and <code>Filters</code>
+   * independently or together. When both are provided, <code>Scopes</code> narrows
+   * the data set first, and then <code>Filters</code> refines results within that
+   * scoped data set.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetResourcesV2">AWS
    * API Reference</a></p>
    */

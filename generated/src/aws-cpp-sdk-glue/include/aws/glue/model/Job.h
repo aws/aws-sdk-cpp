@@ -481,7 +481,7 @@ class Job {
    * versions, see <a
    * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
    * in the developer guide.</p> <p>Jobs that are created without specifying a Glue
-   * version default to Glue 0.9.</p>
+   * version default to Glue 5.1.</p>
    */
   inline const Aws::String& GetGlueVersion() const { return m_glueVersion; }
   inline bool GlueVersionHasBeenSet() const { return m_glueVersionHasBeenSet; }

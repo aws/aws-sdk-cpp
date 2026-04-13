@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/securityhub/SecurityHubRequest.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
+#include <aws/securityhub/model/FindingScopes.h>
 #include <aws/securityhub/model/OcsfFindingFilters.h>
 #include <aws/securityhub/model/SortCriterion.h>
 
@@ -47,6 +48,31 @@ class GetFindingsV2Request : public SecurityHubRequest {
   template <typename FiltersT = OcsfFindingFilters>
   GetFindingsV2Request& WithFilters(FiltersT&& value) {
     SetFilters(std::forward<FiltersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Limits the results to findings from specific organizational units or from the
+   * delegated administrator's organization. Only the delegated administrator account
+   * can use this parameter. Other accounts receive an
+   * <code>AccessDeniedException</code>.</p> <p>This parameter is optional. If you
+   * omit it, the delegated administrator sees findings from all accounts across the
+   * entire organization. Other accounts see only their own findings.</p> <p>You can
+   * specify up to 10 entries in <code>Scopes.AwsOrganizations</code>. If multiple
+   * entries are specified, the entries are combined using OR logic.</p>
+   */
+  inline const FindingScopes& GetScopes() const { return m_scopes; }
+  inline bool ScopesHasBeenSet() const { return m_scopesHasBeenSet; }
+  template <typename ScopesT = FindingScopes>
+  void SetScopes(ScopesT&& value) {
+    m_scopesHasBeenSet = true;
+    m_scopes = std::forward<ScopesT>(value);
+  }
+  template <typename ScopesT = FindingScopes>
+  GetFindingsV2Request& WithScopes(ScopesT&& value) {
+    SetScopes(std::forward<ScopesT>(value));
     return *this;
   }
   ///@}
@@ -114,12 +140,15 @@ class GetFindingsV2Request : public SecurityHubRequest {
  private:
   OcsfFindingFilters m_filters;
 
+  FindingScopes m_scopes;
+
   Aws::Vector<SortCriterion> m_sortCriteria;
 
   Aws::String m_nextToken;
 
   int m_maxResults{0};
   bool m_filtersHasBeenSet = false;
+  bool m_scopesHasBeenSet = false;
   bool m_sortCriteriaHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;

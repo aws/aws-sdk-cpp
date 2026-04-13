@@ -75,6 +75,7 @@
 #include <aws/deadline/model/GetLicenseEndpointResult.h>
 #include <aws/deadline/model/GetLimitResult.h>
 #include <aws/deadline/model/GetMonitorResult.h>
+#include <aws/deadline/model/GetMonitorSettingsResult.h>
 #include <aws/deadline/model/GetQueueEnvironmentResult.h>
 #include <aws/deadline/model/GetQueueFleetAssociationResult.h>
 #include <aws/deadline/model/GetQueueLimitAssociationResult.h>
@@ -134,6 +135,7 @@
 #include <aws/deadline/model/UpdateJobResult.h>
 #include <aws/deadline/model/UpdateLimitResult.h>
 #include <aws/deadline/model/UpdateMonitorResult.h>
+#include <aws/deadline/model/UpdateMonitorSettingsResult.h>
 #include <aws/deadline/model/UpdateQueueEnvironmentResult.h>
 #include <aws/deadline/model/UpdateQueueFleetAssociationResult.h>
 #include <aws/deadline/model/UpdateQueueLimitAssociationResult.h>
@@ -233,6 +235,7 @@ class GetJobRequest;
 class GetLicenseEndpointRequest;
 class GetLimitRequest;
 class GetMonitorRequest;
+class GetMonitorSettingsRequest;
 class GetQueueRequest;
 class GetQueueEnvironmentRequest;
 class GetQueueFleetAssociationRequest;
@@ -288,6 +291,7 @@ class UpdateFleetRequest;
 class UpdateJobRequest;
 class UpdateLimitRequest;
 class UpdateMonitorRequest;
+class UpdateMonitorSettingsRequest;
 class UpdateQueueRequest;
 class UpdateQueueEnvironmentRequest;
 class UpdateQueueFleetAssociationRequest;
@@ -357,6 +361,7 @@ typedef Aws::Utils::Outcome<GetJobResult, DeadlineError> GetJobOutcome;
 typedef Aws::Utils::Outcome<GetLicenseEndpointResult, DeadlineError> GetLicenseEndpointOutcome;
 typedef Aws::Utils::Outcome<GetLimitResult, DeadlineError> GetLimitOutcome;
 typedef Aws::Utils::Outcome<GetMonitorResult, DeadlineError> GetMonitorOutcome;
+typedef Aws::Utils::Outcome<GetMonitorSettingsResult, DeadlineError> GetMonitorSettingsOutcome;
 typedef Aws::Utils::Outcome<GetQueueResult, DeadlineError> GetQueueOutcome;
 typedef Aws::Utils::Outcome<GetQueueEnvironmentResult, DeadlineError> GetQueueEnvironmentOutcome;
 typedef Aws::Utils::Outcome<GetQueueFleetAssociationResult, DeadlineError> GetQueueFleetAssociationOutcome;
@@ -412,6 +417,7 @@ typedef Aws::Utils::Outcome<UpdateFleetResult, DeadlineError> UpdateFleetOutcome
 typedef Aws::Utils::Outcome<UpdateJobResult, DeadlineError> UpdateJobOutcome;
 typedef Aws::Utils::Outcome<UpdateLimitResult, DeadlineError> UpdateLimitOutcome;
 typedef Aws::Utils::Outcome<UpdateMonitorResult, DeadlineError> UpdateMonitorOutcome;
+typedef Aws::Utils::Outcome<UpdateMonitorSettingsResult, DeadlineError> UpdateMonitorSettingsOutcome;
 typedef Aws::Utils::Outcome<UpdateQueueResult, DeadlineError> UpdateQueueOutcome;
 typedef Aws::Utils::Outcome<UpdateQueueEnvironmentResult, DeadlineError> UpdateQueueEnvironmentOutcome;
 typedef Aws::Utils::Outcome<UpdateQueueFleetAssociationResult, DeadlineError> UpdateQueueFleetAssociationOutcome;
@@ -481,6 +487,7 @@ typedef std::future<GetJobOutcome> GetJobOutcomeCallable;
 typedef std::future<GetLicenseEndpointOutcome> GetLicenseEndpointOutcomeCallable;
 typedef std::future<GetLimitOutcome> GetLimitOutcomeCallable;
 typedef std::future<GetMonitorOutcome> GetMonitorOutcomeCallable;
+typedef std::future<GetMonitorSettingsOutcome> GetMonitorSettingsOutcomeCallable;
 typedef std::future<GetQueueOutcome> GetQueueOutcomeCallable;
 typedef std::future<GetQueueEnvironmentOutcome> GetQueueEnvironmentOutcomeCallable;
 typedef std::future<GetQueueFleetAssociationOutcome> GetQueueFleetAssociationOutcomeCallable;
@@ -536,6 +543,7 @@ typedef std::future<UpdateFleetOutcome> UpdateFleetOutcomeCallable;
 typedef std::future<UpdateJobOutcome> UpdateJobOutcomeCallable;
 typedef std::future<UpdateLimitOutcome> UpdateLimitOutcomeCallable;
 typedef std::future<UpdateMonitorOutcome> UpdateMonitorOutcomeCallable;
+typedef std::future<UpdateMonitorSettingsOutcome> UpdateMonitorSettingsOutcomeCallable;
 typedef std::future<UpdateQueueOutcome> UpdateQueueOutcomeCallable;
 typedef std::future<UpdateQueueEnvironmentOutcome> UpdateQueueEnvironmentOutcomeCallable;
 typedef std::future<UpdateQueueFleetAssociationOutcome> UpdateQueueFleetAssociationOutcomeCallable;
@@ -720,6 +728,9 @@ typedef std::function<void(const DeadlineClient*, const Model::GetLimitRequest&,
 typedef std::function<void(const DeadlineClient*, const Model::GetMonitorRequest&, const Model::GetMonitorOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetMonitorResponseReceivedHandler;
+typedef std::function<void(const DeadlineClient*, const Model::GetMonitorSettingsRequest&, const Model::GetMonitorSettingsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetMonitorSettingsResponseReceivedHandler;
 typedef std::function<void(const DeadlineClient*, const Model::GetQueueRequest&, const Model::GetQueueOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetQueueResponseReceivedHandler;
@@ -888,6 +899,9 @@ typedef std::function<void(const DeadlineClient*, const Model::UpdateLimitReques
 typedef std::function<void(const DeadlineClient*, const Model::UpdateMonitorRequest&, const Model::UpdateMonitorOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateMonitorResponseReceivedHandler;
+typedef std::function<void(const DeadlineClient*, const Model::UpdateMonitorSettingsRequest&, const Model::UpdateMonitorSettingsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateMonitorSettingsResponseReceivedHandler;
 typedef std::function<void(const DeadlineClient*, const Model::UpdateQueueRequest&, const Model::UpdateQueueOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateQueueResponseReceivedHandler;

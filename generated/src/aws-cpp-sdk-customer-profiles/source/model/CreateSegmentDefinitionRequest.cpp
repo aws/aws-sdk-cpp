@@ -31,6 +31,10 @@ Aws::String CreateSegmentDefinitionRequest::SerializePayload() const {
     payload.WithString("SegmentSqlQuery", m_segmentSqlQuery);
   }
 
+  if (m_segmentSortHasBeenSet) {
+    payload.WithObject("SegmentSort", m_segmentSort.Jsonize());
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {

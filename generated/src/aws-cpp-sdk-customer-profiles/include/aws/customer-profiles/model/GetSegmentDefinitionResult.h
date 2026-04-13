@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 #include <aws/customer-profiles/model/SegmentGroup.h>
+#include <aws/customer-profiles/model/SegmentSort.h>
 #include <aws/customer-profiles/model/SegmentType.h>
 
 #include <utility>
@@ -95,6 +96,23 @@ class GetSegmentDefinitionResult {
   template <typename SegmentGroupsT = SegmentGroup>
   GetSegmentDefinitionResult& WithSegmentGroups(SegmentGroupsT&& value) {
     SetSegmentGroups(std::forward<SegmentGroupsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The segment sort.</p>
+   */
+  inline const SegmentSort& GetSegmentSort() const { return m_segmentSort; }
+  template <typename SegmentSortT = SegmentSort>
+  void SetSegmentSort(SegmentSortT&& value) {
+    m_segmentSortHasBeenSet = true;
+    m_segmentSort = std::forward<SegmentSortT>(value);
+  }
+  template <typename SegmentSortT = SegmentSort>
+  GetSegmentDefinitionResult& WithSegmentSort(SegmentSortT&& value) {
+    SetSegmentSort(std::forward<SegmentSortT>(value));
     return *this;
   }
   ///@}
@@ -215,6 +233,8 @@ class GetSegmentDefinitionResult {
 
   SegmentGroup m_segmentGroups;
 
+  SegmentSort m_segmentSort;
+
   Aws::String m_segmentDefinitionArn;
 
   Aws::Utils::DateTime m_createdAt{};
@@ -231,6 +251,7 @@ class GetSegmentDefinitionResult {
   bool m_displayNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_segmentGroupsHasBeenSet = false;
+  bool m_segmentSortHasBeenSet = false;
   bool m_segmentDefinitionArnHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_tagsHasBeenSet = false;

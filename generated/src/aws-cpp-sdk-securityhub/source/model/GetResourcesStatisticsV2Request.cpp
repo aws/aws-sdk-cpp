@@ -23,6 +23,10 @@ Aws::String GetResourcesStatisticsV2Request::SerializePayload() const {
     payload.WithArray("GroupByRules", std::move(groupByRulesJsonList));
   }
 
+  if (m_scopesHasBeenSet) {
+    payload.WithObject("Scopes", m_scopes.Jsonize());
+  }
+
   if (m_sortOrderHasBeenSet) {
     payload.WithString("SortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
   }
