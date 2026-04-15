@@ -157,7 +157,6 @@ namespace smithy {
           Aws::Crt::Auth::SignatureType signatureType)
         {
             assert(httpRequest);
-            assert(identity.expiration().has_value());
 
             const auto legacyCreds = [&identity]() -> Aws::Auth::AWSCredentials {
               if(identity.sessionToken().has_value() && identity.expiration().has_value())
@@ -191,11 +190,13 @@ namespace smithy {
             httpRequest->SetSigningAccessKey(legacyCreds.GetAWSAccessKeyId());
             httpRequest->SetSigningRegion(regionOverride);
 
+            //Expiration should always have a value, since we default construct it to std::chrono::time_point<std::chrono::system_clock>::max in AWSCredentials.h
+            //SessionToken will be null for long-term credentials
             auto crtCredentials = Aws::MakeShared<Aws::Crt::Auth::Credentials>(v4AsymmetricLogTag,
                 Aws::Crt::ByteCursorFromCString(identity.accessKeyId().c_str()),
                 Aws::Crt::ByteCursorFromCString(identity.secretAccessKey().c_str()),
-                Aws::Crt::ByteCursorFromCString((*identity.sessionToken()).c_str()),
-                (*identity.expiration()).Seconds());
+                Aws::Crt::ByteCursorFromCString(identity.sessionToken().has_value() ? identity.sessionToken()->c_str() : ""),
+                identity.expiration().has_value() ? identity.expiration()->Seconds() : UINT64_MAX);
 
             Aws::Crt::Auth::AwsSigningConfig awsSigningConfig;
 
