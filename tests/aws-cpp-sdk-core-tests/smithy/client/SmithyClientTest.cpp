@@ -275,6 +275,55 @@ TEST_F(SmithyClientTest, testSigV4) {
 }
 
 
+TEST_F(SmithyClientTest, testSigV4WithLongTermCredentials) {
+
+    std::shared_ptr<MyServiceAuthSchemeResolver> authSchemeResolver = Aws::MakeShared<smithy::GenericAuthSchemeResolver<> >(ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption}));
+
+    Aws::UnorderedMap<Aws::String, SigVariant> authSchemesMap;
+
+    Aws::String key{"aws.auth#sigv4"};
+
+    auto credentialsResolver = Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG, credsProviderChain);
+
+    SigVariant val{smithy::SigV4AuthScheme( credentialsResolver, "MyService", "us-west-2")};
+
+    authSchemesMap.emplace(key, val);
+
+    std::shared_ptr<TestClient> ptr = Aws::MakeShared<TestClient>(
+        ALLOCATION_TAG,
+        clientConfig,
+        "MyService",
+        httpClient,
+        errorMarshaller,
+        endPointProvider,
+        authSchemeResolver,
+        authSchemesMap);
+    smithy::client::AwsSmithyClientAsyncRequestContext ctx;
+    ctx.m_pRequest = nullptr;
+
+    auto res = ptr->SelectAuthSchemeOption(ctx);
+    EXPECT_EQ(res.IsSuccess(), true);
+    ctx.m_authSchemeOption = res.GetResultWithOwnership();
+
+    // Long-term credentials: no session token, no expiration
+    ctx.m_awsIdentity = Aws::MakeShared<smithy::AwsCredentialIdentity>(ALLOCATION_TAG,
+        "longTermAccessKey",
+        "longTermSecretKey",
+        Aws::Crt::Optional<Aws::String>{},
+        Aws::Crt::Optional<Aws::Utils::DateTime>{},
+        Aws::Crt::Optional<Aws::String>{});
+
+    Aws::String uri{"https://treasureisland-cb93079d-24a0-4862-8es2-88456ead.xyz.amazonaws.com"};
+
+    std::shared_ptr<Aws::Http::HttpRequest> httpRequest(Aws::Http::CreateHttpRequest(uri, Aws::Http::HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
+
+    auto res2 = ptr->SignRequest(httpRequest, ctx);
+
+    EXPECT_EQ(res2.IsSuccess(), true);
+    EXPECT_EQ(res2.GetResult()->GetSigningAccessKey(), "longTermAccessKey");
+}
+
+
 TEST_F(SmithyClientTest, testSigV4a) {
 
     std::shared_ptr<MyServiceAuthSchemeResolver> authSchemeResolver = Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption}));
@@ -319,6 +368,54 @@ TEST_F(SmithyClientTest, testSigV4a) {
 
     EXPECT_EQ(res2.IsSuccess(), true);
     EXPECT_TRUE(!res2.GetResult()->GetSigningAccessKey().empty());
+    EXPECT_FALSE(res2.GetResult()->GetUri().GetURIString(true).empty());
+}
+
+TEST_F(SmithyClientTest, testSigV4aWithLongTermCredentials) {
+
+    std::shared_ptr<MyServiceAuthSchemeResolver> authSchemeResolver = Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption}));
+
+    Aws::UnorderedMap<Aws::String, SigVariant> authSchemesMap;
+
+    Aws::String key{"aws.auth#sigv4a"};
+    auto credentialsResolver = Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG, credsProviderChain);
+
+    SigVariant val{smithy::SigV4aAuthScheme(credentialsResolver, "MyService", "us-west-2")};
+
+    authSchemesMap.emplace(key, val);
+
+    std::shared_ptr<TestClient> ptr = Aws::MakeShared<TestClient>(
+        ALLOCATION_TAG,
+        clientConfig,
+        "MyAuthaService",
+        httpClient,
+        errorMarshaller,
+        endPointProvider,
+        authSchemeResolver,
+        authSchemesMap);
+    smithy::client::AwsSmithyClientAsyncRequestContext ctx;
+    ctx.m_pRequest = nullptr;
+
+    auto res = ptr->SelectAuthSchemeOption(ctx);
+    EXPECT_EQ(res.IsSuccess(), true);
+    ctx.m_authSchemeOption = res.GetResultWithOwnership();
+
+    // Long-term credentials: no session token, no expiration
+    ctx.m_awsIdentity = Aws::MakeShared<smithy::AwsCredentialIdentity>(ALLOCATION_TAG,
+        "longTermAccessKey",
+        "longTermSecretKey",
+        Aws::Crt::Optional<Aws::String>{},
+        Aws::Crt::Optional<Aws::Utils::DateTime>{},
+        Aws::Crt::Optional<Aws::String>{});
+
+    Aws::String uri{"https://treasureisland-cb93079d-24a0-4862-8es2-88456ead.xyz.amazonaws.com"};
+
+    std::shared_ptr<Aws::Http::HttpRequest> httpRequest(Aws::Http::CreateHttpRequest(uri, Aws::Http::HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
+
+    auto res2 = ptr->SignRequest(httpRequest, ctx);
+
+    EXPECT_EQ(res2.IsSuccess(), true);
+    EXPECT_EQ(res2.GetResult()->GetSigningAccessKey(), "longTermAccessKey");
     EXPECT_FALSE(res2.GetResult()->GetUri().GetURIString(true).empty());
 }
 
