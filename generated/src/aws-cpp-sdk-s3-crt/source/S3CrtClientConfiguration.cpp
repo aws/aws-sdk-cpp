@@ -5,6 +5,7 @@
 
 #include <aws/core/Globals.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/s3-crt/S3CrtClientConfiguration.h>
 
 namespace Aws {

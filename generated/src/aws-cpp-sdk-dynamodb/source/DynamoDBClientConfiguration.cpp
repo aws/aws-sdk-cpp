@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/dynamodb/DynamoDBClientConfiguration.h>
 
 namespace Aws {

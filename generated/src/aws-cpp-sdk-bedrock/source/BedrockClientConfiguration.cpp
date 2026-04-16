@@ -4,6 +4,7 @@
  */
 
 #include <aws/bedrock/BedrockClientConfiguration.h>
+#include <aws/core/utils/UnreferencedParam.h>
 
 namespace Aws {
 namespace Bedrock {
