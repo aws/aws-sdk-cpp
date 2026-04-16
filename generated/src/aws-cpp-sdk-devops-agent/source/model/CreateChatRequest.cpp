@@ -19,12 +19,6 @@ Aws::String CreateChatRequest::SerializePayload() const { return {}; }
 
 void CreateChatRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
-  if (m_userIdHasBeenSet) {
-    ss << m_userId;
-    uri.AddQueryStringParameter("userId", ss.str());
-    ss.str("");
-  }
-
   if (m_userTypeHasBeenSet) {
     ss << UserTypeMapper::GetNameForUserType(m_userType);
     uri.AddQueryStringParameter("userType", ss.str());

@@ -223,6 +223,31 @@ class UpdateAutoScalingGroupRequest : public AutoScalingRequest {
 
   ///@{
   /**
+   * <p> A list of Availability Zone IDs for the Auto Scaling group. You cannot
+   * specify both AvailabilityZones and AvailabilityZoneIds in the same request. </p>
+   */
+  inline const Aws::Vector<Aws::String>& GetAvailabilityZoneIds() const { return m_availabilityZoneIds; }
+  inline bool AvailabilityZoneIdsHasBeenSet() const { return m_availabilityZoneIdsHasBeenSet; }
+  template <typename AvailabilityZoneIdsT = Aws::Vector<Aws::String>>
+  void SetAvailabilityZoneIds(AvailabilityZoneIdsT&& value) {
+    m_availabilityZoneIdsHasBeenSet = true;
+    m_availabilityZoneIds = std::forward<AvailabilityZoneIdsT>(value);
+  }
+  template <typename AvailabilityZoneIdsT = Aws::Vector<Aws::String>>
+  UpdateAutoScalingGroupRequest& WithAvailabilityZoneIds(AvailabilityZoneIdsT&& value) {
+    SetAvailabilityZoneIds(std::forward<AvailabilityZoneIdsT>(value));
+    return *this;
+  }
+  template <typename AvailabilityZoneIdsT = Aws::String>
+  UpdateAutoScalingGroupRequest& AddAvailabilityZoneIds(AvailabilityZoneIdsT&& value) {
+    m_availabilityZoneIdsHasBeenSet = true;
+    m_availabilityZoneIds.emplace_back(std::forward<AvailabilityZoneIdsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A comma-separated value string of one or more health check types.</p> <p>The
    * valid values are <code>EC2</code>, <code>EBS</code>, <code>ELB</code>, and
    * <code>VPC_LATTICE</code>. <code>EC2</code> is the default health check and
@@ -677,6 +702,8 @@ class UpdateAutoScalingGroupRequest : public AutoScalingRequest {
 
   Aws::Vector<Aws::String> m_availabilityZones;
 
+  Aws::Vector<Aws::String> m_availabilityZoneIds;
+
   Aws::String m_healthCheckType;
 
   int m_healthCheckGracePeriod{0};
@@ -723,6 +750,7 @@ class UpdateAutoScalingGroupRequest : public AutoScalingRequest {
   bool m_desiredCapacityHasBeenSet = false;
   bool m_defaultCooldownHasBeenSet = false;
   bool m_availabilityZonesHasBeenSet = false;
+  bool m_availabilityZoneIdsHasBeenSet = false;
   bool m_healthCheckTypeHasBeenSet = false;
   bool m_healthCheckGracePeriodHasBeenSet = false;
   bool m_placementGroupHasBeenSet = false;

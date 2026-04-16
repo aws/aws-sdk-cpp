@@ -271,6 +271,10 @@
 #include <aws/mediaconvert/model/Eac3StereoDownmix.h>
 #include <aws/mediaconvert/model/Eac3SurroundExMode.h>
 #include <aws/mediaconvert/model/Eac3SurroundMode.h>
+#include <aws/mediaconvert/model/ElementalInferenceConfiguration.h>
+#include <aws/mediaconvert/model/ElementalInferenceFeature.h>
+#include <aws/mediaconvert/model/ElementalInferenceFeed.h>
+#include <aws/mediaconvert/model/ElementalInferenceFeedManagementState.h>
 #include <aws/mediaconvert/model/EmbeddedConvert608To708.h>
 #include <aws/mediaconvert/model/EmbeddedDestinationSettings.h>
 #include <aws/mediaconvert/model/EmbeddedSourceSettings.h>

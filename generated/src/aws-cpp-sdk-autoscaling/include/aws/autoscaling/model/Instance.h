@@ -91,6 +91,24 @@ class Instance {
 
   ///@{
   /**
+   * <p> The Availability Zone ID where the instance was launched. </p>
+   */
+  inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
+  inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+  template <typename AvailabilityZoneIdT = Aws::String>
+  void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) {
+    m_availabilityZoneIdHasBeenSet = true;
+    m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value);
+  }
+  template <typename AvailabilityZoneIdT = Aws::String>
+  Instance& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) {
+    SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A description of the current lifecycle state. The <code>Quarantined</code>
    * state is not used. For more information, see <a
    * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-lifecycle.html">Amazon
@@ -234,6 +252,8 @@ class Instance {
 
   Aws::String m_availabilityZone;
 
+  Aws::String m_availabilityZoneId;
+
   LifecycleState m_lifecycleState{LifecycleState::NOT_SET};
 
   Aws::String m_healthStatus;
@@ -250,6 +270,7 @@ class Instance {
   bool m_instanceIdHasBeenSet = false;
   bool m_instanceTypeHasBeenSet = false;
   bool m_availabilityZoneHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
   bool m_lifecycleStateHasBeenSet = false;
   bool m_healthStatusHasBeenSet = false;
   bool m_launchConfigurationNameHasBeenSet = false;

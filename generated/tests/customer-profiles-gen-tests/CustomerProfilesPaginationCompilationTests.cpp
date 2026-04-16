@@ -8,18 +8,19 @@
 
 #include <aws/customer-profiles/CustomerProfilesClientPagination.h>
 #include <aws/customer-profiles/CustomerProfilesPaginationBase.h>
-#include <aws/customer-profiles/model/ListDomainLayoutsPaginationTraits.h>
 #include <aws/customer-profiles/model/ListRecommendersPaginationTraits.h>
 #include <aws/customer-profiles/model/ListRecommenderFiltersPaginationTraits.h>
 #include <aws/customer-profiles/model/ListEventTriggersPaginationTraits.h>
+#include <aws/customer-profiles/model/ListRecommenderSchemasPaginationTraits.h>
 #include <aws/customer-profiles/model/ListSegmentDefinitionsPaginationTraits.h>
 #include <aws/customer-profiles/model/ListDomainObjectTypesPaginationTraits.h>
-#include <aws/customer-profiles/model/ListEventStreamsPaginationTraits.h>
 #include <aws/customer-profiles/model/ListRuleBasedMatchesPaginationTraits.h>
-#include <aws/customer-profiles/model/ListUploadJobsPaginationTraits.h>
-#include <aws/customer-profiles/model/GetSimilarProfilesPaginationTraits.h>
 #include <aws/customer-profiles/model/ListObjectTypeAttributesPaginationTraits.h>
 #include <aws/customer-profiles/model/ListRecommenderRecipesPaginationTraits.h>
+#include <aws/customer-profiles/model/ListDomainLayoutsPaginationTraits.h>
+#include <aws/customer-profiles/model/ListEventStreamsPaginationTraits.h>
+#include <aws/customer-profiles/model/ListUploadJobsPaginationTraits.h>
+#include <aws/customer-profiles/model/GetSimilarProfilesPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

@@ -21,7 +21,6 @@
 #include <aws/devops-agent/DevOpsAgentClient.h>
 #include <aws/devops-agent/DevOpsAgentEndpointProvider.h>
 #include <aws/devops-agent/DevOpsAgentErrorMarshaller.h>
-#include <aws/devops-agent/model/AllowVendedLogDeliveryForResourceRequest.h>
 #include <aws/devops-agent/model/AssociateServiceRequest.h>
 #include <aws/devops-agent/model/CreateAgentSpaceRequest.h>
 #include <aws/devops-agent/model/CreateBacklogTaskRequest.h>
@@ -220,18 +219,6 @@ DevOpsAgentClient::InvokeOperationOutcome DevOpsAgentClient::InvokeServiceOperat
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 
-AllowVendedLogDeliveryForResourceOutcome DevOpsAgentClient::AllowVendedLogDeliveryForResource(
-    const AllowVendedLogDeliveryForResourceRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/allow-vended-log-delivery-for-resource");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? AllowVendedLogDeliveryForResourceOutcome(result.GetResultWithOwnership())
-                            : AllowVendedLogDeliveryForResourceOutcome(std::move(result.GetError()));
-}
-
 AssociateServiceOutcome DevOpsAgentClient::AssociateService(const AssociateServiceRequest& request) const {
   if (!request.AgentSpaceIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("AssociateService", "Required field: AgentSpaceId, is not set");
@@ -286,11 +273,6 @@ CreateChatOutcome DevOpsAgentClient::CreateChat(const CreateChatRequest& request
     AWS_LOGSTREAM_ERROR("CreateChat", "Required field: AgentSpaceId, is not set");
     return CreateChatOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                       "Missing required field [AgentSpaceId]", false));
-  }
-  if (!request.UserIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("CreateChat", "Required field: UserId, is not set");
-    return CreateChatOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                      "Missing required field [UserId]", false));
   }
 
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
@@ -640,11 +622,6 @@ ListChatsOutcome DevOpsAgentClient::ListChats(const ListChatsRequest& request) c
     AWS_LOGSTREAM_ERROR("ListChats", "Required field: AgentSpaceId, is not set");
     return ListChatsOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                      "Missing required field [AgentSpaceId]", false));
-  }
-  if (!request.UserIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListChats", "Required field: UserId, is not set");
-    return ListChatsOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                     "Missing required field [UserId]", false));
   }
 
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {

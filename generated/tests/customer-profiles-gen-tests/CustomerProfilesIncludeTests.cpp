@@ -70,6 +70,8 @@
 #include <aws/customer-profiles/model/CreateRecommenderFilterResult.h>
 #include <aws/customer-profiles/model/CreateRecommenderRequest.h>
 #include <aws/customer-profiles/model/CreateRecommenderResult.h>
+#include <aws/customer-profiles/model/CreateRecommenderSchemaRequest.h>
+#include <aws/customer-profiles/model/CreateRecommenderSchemaResult.h>
 #include <aws/customer-profiles/model/CreateSegmentDefinitionRequest.h>
 #include <aws/customer-profiles/model/CreateSegmentDefinitionResult.h>
 #include <aws/customer-profiles/model/CreateSegmentEstimateRequest.h>
@@ -110,6 +112,8 @@
 #include <aws/customer-profiles/model/DeleteRecommenderFilterResult.h>
 #include <aws/customer-profiles/model/DeleteRecommenderRequest.h>
 #include <aws/customer-profiles/model/DeleteRecommenderResult.h>
+#include <aws/customer-profiles/model/DeleteRecommenderSchemaRequest.h>
+#include <aws/customer-profiles/model/DeleteRecommenderSchemaResult.h>
 #include <aws/customer-profiles/model/DeleteSegmentDefinitionRequest.h>
 #include <aws/customer-profiles/model/DeleteSegmentDefinitionResult.h>
 #include <aws/customer-profiles/model/DeleteWorkflowRequest.h>
@@ -187,6 +191,8 @@
 #include <aws/customer-profiles/model/GetRecommenderFilterResult.h>
 #include <aws/customer-profiles/model/GetRecommenderRequest.h>
 #include <aws/customer-profiles/model/GetRecommenderResult.h>
+#include <aws/customer-profiles/model/GetRecommenderSchemaRequest.h>
+#include <aws/customer-profiles/model/GetRecommenderSchemaResult.h>
 #include <aws/customer-profiles/model/GetSegmentDefinitionRequest.h>
 #include <aws/customer-profiles/model/GetSegmentDefinitionResult.h>
 #include <aws/customer-profiles/model/GetSegmentEstimateRequest.h>
@@ -265,6 +271,8 @@
 #include <aws/customer-profiles/model/ListRecommenderFiltersResult.h>
 #include <aws/customer-profiles/model/ListRecommenderRecipesRequest.h>
 #include <aws/customer-profiles/model/ListRecommenderRecipesResult.h>
+#include <aws/customer-profiles/model/ListRecommenderSchemasRequest.h>
+#include <aws/customer-profiles/model/ListRecommenderSchemasResult.h>
 #include <aws/customer-profiles/model/ListRecommendersRequest.h>
 #include <aws/customer-profiles/model/ListRecommendersResult.h>
 #include <aws/customer-profiles/model/ListRuleBasedMatchesRequest.h>
@@ -329,6 +337,9 @@
 #include <aws/customer-profiles/model/RecommenderPromotionalFilter.h>
 #include <aws/customer-profiles/model/RecommenderRecipe.h>
 #include <aws/customer-profiles/model/RecommenderRecipeName.h>
+#include <aws/customer-profiles/model/RecommenderSchemaField.h>
+#include <aws/customer-profiles/model/RecommenderSchemaStatus.h>
+#include <aws/customer-profiles/model/RecommenderSchemaSummary.h>
 #include <aws/customer-profiles/model/RecommenderStatus.h>
 #include <aws/customer-profiles/model/RecommenderSummary.h>
 #include <aws/customer-profiles/model/RecommenderUpdate.h>

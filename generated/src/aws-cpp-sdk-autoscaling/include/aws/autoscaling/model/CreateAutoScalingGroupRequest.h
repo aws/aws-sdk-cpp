@@ -270,6 +270,32 @@ class CreateAutoScalingGroupRequest : public AutoScalingRequest {
 
   ///@{
   /**
+   * <p> A list of Availability Zone IDs where the Auto Scaling group can launch
+   * instances. You cannot specify both AvailabilityZones and AvailabilityZoneIds in
+   * the same request. </p>
+   */
+  inline const Aws::Vector<Aws::String>& GetAvailabilityZoneIds() const { return m_availabilityZoneIds; }
+  inline bool AvailabilityZoneIdsHasBeenSet() const { return m_availabilityZoneIdsHasBeenSet; }
+  template <typename AvailabilityZoneIdsT = Aws::Vector<Aws::String>>
+  void SetAvailabilityZoneIds(AvailabilityZoneIdsT&& value) {
+    m_availabilityZoneIdsHasBeenSet = true;
+    m_availabilityZoneIds = std::forward<AvailabilityZoneIdsT>(value);
+  }
+  template <typename AvailabilityZoneIdsT = Aws::Vector<Aws::String>>
+  CreateAutoScalingGroupRequest& WithAvailabilityZoneIds(AvailabilityZoneIdsT&& value) {
+    SetAvailabilityZoneIds(std::forward<AvailabilityZoneIdsT>(value));
+    return *this;
+  }
+  template <typename AvailabilityZoneIdsT = Aws::String>
+  CreateAutoScalingGroupRequest& AddAvailabilityZoneIds(AvailabilityZoneIdsT&& value) {
+    m_availabilityZoneIdsHasBeenSet = true;
+    m_availabilityZoneIds.emplace_back(std::forward<AvailabilityZoneIdsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A list of Classic Load Balancers associated with this Auto Scaling group. For
    * Application Load Balancers, Network Load Balancers, and Gateway Load Balancers,
    * specify the <code>TargetGroupARNs</code> property instead.</p>
@@ -870,6 +896,8 @@ class CreateAutoScalingGroupRequest : public AutoScalingRequest {
 
   Aws::Vector<Aws::String> m_availabilityZones;
 
+  Aws::Vector<Aws::String> m_availabilityZoneIds;
+
   Aws::Vector<Aws::String> m_loadBalancerNames;
 
   Aws::Vector<Aws::String> m_targetGroupARNs;
@@ -927,6 +955,7 @@ class CreateAutoScalingGroupRequest : public AutoScalingRequest {
   bool m_desiredCapacityHasBeenSet = false;
   bool m_defaultCooldownHasBeenSet = false;
   bool m_availabilityZonesHasBeenSet = false;
+  bool m_availabilityZoneIdsHasBeenSet = false;
   bool m_loadBalancerNamesHasBeenSet = false;
   bool m_targetGroupARNsHasBeenSet = false;
   bool m_healthCheckTypeHasBeenSet = false;

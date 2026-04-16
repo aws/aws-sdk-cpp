@@ -14,6 +14,7 @@
 #include <aws/customer-profiles/model/ListObjectTypeAttributesPaginationTraits.h>
 #include <aws/customer-profiles/model/ListRecommenderFiltersPaginationTraits.h>
 #include <aws/customer-profiles/model/ListRecommenderRecipesPaginationTraits.h>
+#include <aws/customer-profiles/model/ListRecommenderSchemasPaginationTraits.h>
 #include <aws/customer-profiles/model/ListRecommendersPaginationTraits.h>
 #include <aws/customer-profiles/model/ListRuleBasedMatchesPaginationTraits.h>
 #include <aws/customer-profiles/model/ListSegmentDefinitionsPaginationTraits.h>
@@ -45,6 +46,9 @@ using ListRecommenderRecipesPaginator =
                                       Pagination::ListRecommenderRecipesPaginationTraits<CustomerProfilesClient>>;
 using ListRecommendersPaginator = Aws::Utils::Pagination::Paginator<CustomerProfilesClient, Model::ListRecommendersRequest,
                                                                     Pagination::ListRecommendersPaginationTraits<CustomerProfilesClient>>;
+using ListRecommenderSchemasPaginator =
+    Aws::Utils::Pagination::Paginator<CustomerProfilesClient, Model::ListRecommenderSchemasRequest,
+                                      Pagination::ListRecommenderSchemasPaginationTraits<CustomerProfilesClient>>;
 using ListRuleBasedMatchesPaginator =
     Aws::Utils::Pagination::Paginator<CustomerProfilesClient, Model::ListRuleBasedMatchesRequest,
                                       Pagination::ListRuleBasedMatchesPaginationTraits<CustomerProfilesClient>>;

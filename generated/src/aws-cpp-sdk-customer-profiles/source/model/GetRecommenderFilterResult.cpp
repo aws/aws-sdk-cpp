@@ -30,6 +30,10 @@ GetRecommenderFilterResult& GetRecommenderFilterResult::operator=(const Aws::Ama
     m_recommenderFilterExpression = jsonValue.GetString("RecommenderFilterExpression");
     m_recommenderFilterExpressionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RecommenderSchemaName")) {
+    m_recommenderSchemaName = jsonValue.GetString("RecommenderSchemaName");
+    m_recommenderSchemaNameHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("CreatedAt")) {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
     m_createdAtHasBeenSet = true;

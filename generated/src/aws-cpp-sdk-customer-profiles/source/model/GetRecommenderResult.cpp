@@ -30,6 +30,10 @@ GetRecommenderResult& GetRecommenderResult::operator=(const Aws::AmazonWebServic
     m_recommenderRecipeName = RecommenderRecipeNameMapper::GetRecommenderRecipeNameForName(jsonValue.GetString("RecommenderRecipeName"));
     m_recommenderRecipeNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RecommenderSchemaName")) {
+    m_recommenderSchemaName = jsonValue.GetString("RecommenderSchemaName");
+    m_recommenderSchemaNameHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("RecommenderConfig")) {
     m_recommenderConfig = jsonValue.GetObject("RecommenderConfig");
     m_recommenderConfigHasBeenSet = true;

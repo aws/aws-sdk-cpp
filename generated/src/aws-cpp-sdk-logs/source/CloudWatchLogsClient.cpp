@@ -687,7 +687,7 @@ GetLogObjectOutcome CloudWatchLogsClient::GetLogObject(GetLogObjectRequest& requ
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetLogObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("streaming-");
+        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("stream-");
         AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetLogObjectOutcome(addPrefixErr.value()));
         request.SetResponseStreamFactory([&] {
           request.GetEventStreamDecoder().Reset();
@@ -924,7 +924,7 @@ StartLiveTailOutcome CloudWatchLogsClient::StartLiveTail(StartLiveTailRequest& r
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartLiveTail, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("streaming-");
+        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("stream-");
         AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), StartLiveTailOutcome(addPrefixErr.value()));
         request.SetResponseStreamFactory([&] {
           request.GetEventStreamDecoder().Reset();

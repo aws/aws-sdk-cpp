@@ -141,8 +141,8 @@ class SetUserPoolMfaConfigRequest : public CognitoIdentityProviderRequest {
   ///@{
   /**
    * <p>The configuration of your user pool for passkey, or WebAuthn, authentication
-   * and registration. You can set this configuration independent of the MFA
-   * configuration options in this operation.</p>
+   * and registration. Includes relying-party configuration, user-verification
+   * requirements, and whether passkeys can satisfy MFA requirements.</p>
    */
   inline const WebAuthnConfigurationType& GetWebAuthnConfiguration() const { return m_webAuthnConfiguration; }
   inline bool WebAuthnConfigurationHasBeenSet() const { return m_webAuthnConfigurationHasBeenSet; }

@@ -20,6 +20,7 @@ static const int STRETCH_TO_OUTPUT_HASH = HashingUtils::HashString("STRETCH_TO_O
 static const int FIT_HASH = HashingUtils::HashString("FIT");
 static const int FIT_NO_UPSCALE_HASH = HashingUtils::HashString("FIT_NO_UPSCALE");
 static const int FILL_HASH = HashingUtils::HashString("FILL");
+static const int SMART_CROP_HASH = HashingUtils::HashString("SMART_CROP");
 
 ScalingBehavior GetScalingBehaviorForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +34,8 @@ ScalingBehavior GetScalingBehaviorForName(const Aws::String& name) {
     return ScalingBehavior::FIT_NO_UPSCALE;
   } else if (hashCode == FILL_HASH) {
     return ScalingBehavior::FILL;
+  } else if (hashCode == SMART_CROP_HASH) {
+    return ScalingBehavior::SMART_CROP;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +60,8 @@ Aws::String GetNameForScalingBehavior(ScalingBehavior enumValue) {
       return "FIT_NO_UPSCALE";
     case ScalingBehavior::FILL:
       return "FILL";
+    case ScalingBehavior::SMART_CROP:
+      return "SMART_CROP";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -38,6 +38,14 @@ GetGroupProfileResult& GetGroupProfileResult::operator=(const Aws::AmazonWebServ
     m_groupName = jsonValue.GetString("groupName");
     m_groupNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("rolePrincipalArn")) {
+    m_rolePrincipalArn = jsonValue.GetString("rolePrincipalArn");
+    m_rolePrincipalArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("rolePrincipalId")) {
+    m_rolePrincipalId = jsonValue.GetString("rolePrincipalId");
+    m_rolePrincipalIdHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

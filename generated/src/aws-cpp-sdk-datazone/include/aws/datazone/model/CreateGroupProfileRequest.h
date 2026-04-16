@@ -68,6 +68,26 @@ class CreateGroupProfileRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The ARN of the IAM role that will be associated with the group profile. This
+   * role defines the permissions that group members will assume when accessing
+   * Amazon DataZone resources.</p>
+   */
+  inline const Aws::String& GetRolePrincipalArn() const { return m_rolePrincipalArn; }
+  inline bool RolePrincipalArnHasBeenSet() const { return m_rolePrincipalArnHasBeenSet; }
+  template <typename RolePrincipalArnT = Aws::String>
+  void SetRolePrincipalArn(RolePrincipalArnT&& value) {
+    m_rolePrincipalArnHasBeenSet = true;
+    m_rolePrincipalArn = std::forward<RolePrincipalArnT>(value);
+  }
+  template <typename RolePrincipalArnT = Aws::String>
+  CreateGroupProfileRequest& WithRolePrincipalArn(RolePrincipalArnT&& value) {
+    SetRolePrincipalArn(std::forward<RolePrincipalArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> A unique, case-sensitive identifier that is provided to ensure the
    * idempotency of the request.</p>
    */
@@ -89,9 +109,12 @@ class CreateGroupProfileRequest : public DataZoneRequest {
 
   Aws::String m_groupIdentifier;
 
+  Aws::String m_rolePrincipalArn;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_domainIdentifierHasBeenSet = false;
   bool m_groupIdentifierHasBeenSet = false;
+  bool m_rolePrincipalArnHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

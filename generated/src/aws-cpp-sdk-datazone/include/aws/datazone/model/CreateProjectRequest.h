@@ -10,6 +10,7 @@
 #include <aws/datazone/DataZoneRequest.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/model/EnvironmentConfigurationUserParameter.h>
+#include <aws/datazone/model/ProjectMembershipAssignment.h>
 
 #include <utility>
 
@@ -193,6 +194,68 @@ class CreateProjectRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The category of the project. Set to 'ADMIN' designates this as an
+   * administrative project for the Amazon DataZone domain.</p>
+   */
+  inline const Aws::String& GetProjectCategory() const { return m_projectCategory; }
+  inline bool ProjectCategoryHasBeenSet() const { return m_projectCategoryHasBeenSet; }
+  template <typename ProjectCategoryT = Aws::String>
+  void SetProjectCategory(ProjectCategoryT&& value) {
+    m_projectCategoryHasBeenSet = true;
+    m_projectCategory = std::forward<ProjectCategoryT>(value);
+  }
+  template <typename ProjectCategoryT = Aws::String>
+  CreateProjectRequest& WithProjectCategory(ProjectCategoryT&& value) {
+    SetProjectCategory(std::forward<ProjectCategoryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The default project IAM role that is used to access project resources and run
+   * computes such as Glue and Sagemaker.</p>
+   */
+  inline const Aws::String& GetProjectExecutionRole() const { return m_projectExecutionRole; }
+  inline bool ProjectExecutionRoleHasBeenSet() const { return m_projectExecutionRoleHasBeenSet; }
+  template <typename ProjectExecutionRoleT = Aws::String>
+  void SetProjectExecutionRole(ProjectExecutionRoleT&& value) {
+    m_projectExecutionRoleHasBeenSet = true;
+    m_projectExecutionRole = std::forward<ProjectExecutionRoleT>(value);
+  }
+  template <typename ProjectExecutionRoleT = Aws::String>
+  CreateProjectRequest& WithProjectExecutionRole(ProjectExecutionRoleT&& value) {
+    SetProjectExecutionRole(std::forward<ProjectExecutionRoleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The members to be assigned to the project.</p>
+   */
+  inline const Aws::Vector<ProjectMembershipAssignment>& GetMembershipAssignments() const { return m_membershipAssignments; }
+  inline bool MembershipAssignmentsHasBeenSet() const { return m_membershipAssignmentsHasBeenSet; }
+  template <typename MembershipAssignmentsT = Aws::Vector<ProjectMembershipAssignment>>
+  void SetMembershipAssignments(MembershipAssignmentsT&& value) {
+    m_membershipAssignmentsHasBeenSet = true;
+    m_membershipAssignments = std::forward<MembershipAssignmentsT>(value);
+  }
+  template <typename MembershipAssignmentsT = Aws::Vector<ProjectMembershipAssignment>>
+  CreateProjectRequest& WithMembershipAssignments(MembershipAssignmentsT&& value) {
+    SetMembershipAssignments(std::forward<MembershipAssignmentsT>(value));
+    return *this;
+  }
+  template <typename MembershipAssignmentsT = ProjectMembershipAssignment>
+  CreateProjectRequest& AddMembershipAssignments(MembershipAssignmentsT&& value) {
+    m_membershipAssignmentsHasBeenSet = true;
+    m_membershipAssignments.emplace_back(std::forward<MembershipAssignmentsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainIdentifier;
 
@@ -209,6 +272,12 @@ class CreateProjectRequest : public DataZoneRequest {
   Aws::String m_projectProfileId;
 
   Aws::Vector<EnvironmentConfigurationUserParameter> m_userParameters;
+
+  Aws::String m_projectCategory;
+
+  Aws::String m_projectExecutionRole;
+
+  Aws::Vector<ProjectMembershipAssignment> m_membershipAssignments;
   bool m_domainIdentifierHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
@@ -217,6 +286,9 @@ class CreateProjectRequest : public DataZoneRequest {
   bool m_domainUnitIdHasBeenSet = false;
   bool m_projectProfileIdHasBeenSet = false;
   bool m_userParametersHasBeenSet = false;
+  bool m_projectCategoryHasBeenSet = false;
+  bool m_projectExecutionRoleHasBeenSet = false;
+  bool m_membershipAssignmentsHasBeenSet = false;
 };
 
 }  // namespace Model

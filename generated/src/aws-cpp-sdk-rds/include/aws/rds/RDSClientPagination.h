@@ -44,6 +44,7 @@
 #include <aws/rds/model/DescribePendingMaintenanceActionsPaginationTraits.h>
 #include <aws/rds/model/DescribeReservedDBInstancesOfferingsPaginationTraits.h>
 #include <aws/rds/model/DescribeReservedDBInstancesPaginationTraits.h>
+#include <aws/rds/model/DescribeServerlessV2PlatformVersionsPaginationTraits.h>
 #include <aws/rds/model/DescribeSourceRegionsPaginationTraits.h>
 #include <aws/rds/model/DescribeTenantDatabasesPaginationTraits.h>
 #include <aws/rds/model/DownloadDBLogFilePortionPaginationTraits.h>
@@ -151,6 +152,9 @@ using DescribeReservedDBInstancesPaginator =
 using DescribeReservedDBInstancesOfferingsPaginator =
     Aws::Utils::Pagination::Paginator<RDSClient, Model::DescribeReservedDBInstancesOfferingsRequest,
                                       Pagination::DescribeReservedDBInstancesOfferingsPaginationTraits<RDSClient>>;
+using DescribeServerlessV2PlatformVersionsPaginator =
+    Aws::Utils::Pagination::Paginator<RDSClient, Model::DescribeServerlessV2PlatformVersionsRequest,
+                                      Pagination::DescribeServerlessV2PlatformVersionsPaginationTraits<RDSClient>>;
 using DescribeSourceRegionsPaginator = Aws::Utils::Pagination::Paginator<RDSClient, Model::DescribeSourceRegionsRequest,
                                                                          Pagination::DescribeSourceRegionsPaginationTraits<RDSClient>>;
 using DescribeTenantDatabasesPaginator = Aws::Utils::Pagination::Paginator<RDSClient, Model::DescribeTenantDatabasesRequest,

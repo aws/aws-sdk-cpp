@@ -18,6 +18,7 @@ namespace UserTypeMapper {
 static const int IAM_USER_HASH = HashingUtils::HashString("IAM_USER");
 static const int IAM_ROLE_HASH = HashingUtils::HashString("IAM_ROLE");
 static const int SSO_USER_HASH = HashingUtils::HashString("SSO_USER");
+static const int IAM_ROLE_SESSION_HASH = HashingUtils::HashString("IAM_ROLE_SESSION");
 
 UserType GetUserTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ UserType GetUserTypeForName(const Aws::String& name) {
     return UserType::IAM_ROLE;
   } else if (hashCode == SSO_USER_HASH) {
     return UserType::SSO_USER;
+  } else if (hashCode == IAM_ROLE_SESSION_HASH) {
+    return UserType::IAM_ROLE_SESSION;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForUserType(UserType enumValue) {
       return "IAM_ROLE";
     case UserType::SSO_USER:
       return "SSO_USER";
+    case UserType::IAM_ROLE_SESSION:
+      return "IAM_ROLE_SESSION";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

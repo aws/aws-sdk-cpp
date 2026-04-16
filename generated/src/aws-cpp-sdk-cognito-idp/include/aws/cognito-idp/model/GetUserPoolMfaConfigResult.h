@@ -116,11 +116,10 @@ class GetUserPoolMfaConfigResult {
 
   ///@{
   /**
-   * <p>Shows user pool configuration for sign-in with passkey authenticators like
-   * biometric devices and security keys. Passkeys are not eligible MFA factors. They
-   * are instead an eligible primary sign-in factor for <a
-   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-selection-sdk.html#authentication-flows-selection-choice">choice-based
-   * authentication</a>, or the <code>USER_AUTH</code> flow.</p>
+   * <p>Shows user pool configuration for sign-in with passkey authenticators such as
+   * biometric devices and security keys. Includes relying-party configuration,
+   * user-verification requirements, and whether passkeys can satisfy MFA
+   * requirements.</p>
    */
   inline const WebAuthnConfigurationType& GetWebAuthnConfiguration() const { return m_webAuthnConfiguration; }
   template <typename WebAuthnConfigurationT = WebAuthnConfigurationType>

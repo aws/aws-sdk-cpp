@@ -133,6 +133,23 @@ class Queue {
 
   ///@{
   /**
+   * Specify the maximum number of Elemental Inference feeds MediaConvert can process
+   * concurrently.
+   */
+  inline int GetMaximumConcurrentFeeds() const { return m_maximumConcurrentFeeds; }
+  inline bool MaximumConcurrentFeedsHasBeenSet() const { return m_maximumConcurrentFeedsHasBeenSet; }
+  inline void SetMaximumConcurrentFeeds(int value) {
+    m_maximumConcurrentFeedsHasBeenSet = true;
+    m_maximumConcurrentFeeds = value;
+  }
+  inline Queue& WithMaximumConcurrentFeeds(int value) {
+    SetMaximumConcurrentFeeds(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * A name that you create for each queue. Each name must be unique within your
    * account.
    */
@@ -292,6 +309,8 @@ class Queue {
 
   Aws::Utils::DateTime m_lastUpdated{};
 
+  int m_maximumConcurrentFeeds{0};
+
   Aws::String m_name;
 
   PricingPlan m_pricingPlan{PricingPlan::NOT_SET};
@@ -312,6 +331,7 @@ class Queue {
   bool m_createdAtHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_lastUpdatedHasBeenSet = false;
+  bool m_maximumConcurrentFeedsHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_pricingPlanHasBeenSet = false;
   bool m_progressingJobsCountHasBeenSet = false;

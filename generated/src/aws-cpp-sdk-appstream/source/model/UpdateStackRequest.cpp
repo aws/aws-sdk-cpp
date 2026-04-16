@@ -85,6 +85,10 @@ Aws::String UpdateStackRequest::SerializePayload() const {
     payload.WithObject("StreamingExperienceSettings", m_streamingExperienceSettings.Jsonize());
   }
 
+  if (m_contentRedirectionHasBeenSet) {
+    payload.WithObject("ContentRedirection", m_contentRedirection.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

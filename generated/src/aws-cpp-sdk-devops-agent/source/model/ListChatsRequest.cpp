@@ -19,12 +19,6 @@ Aws::String ListChatsRequest::SerializePayload() const { return {}; }
 
 void ListChatsRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
-  if (m_userIdHasBeenSet) {
-    ss << m_userId;
-    uri.AddQueryStringParameter("userId", ss.str());
-    ss.str("");
-  }
-
   if (m_maxResultsHasBeenSet) {
     ss << m_maxResults;
     uri.AddQueryStringParameter("maxResults", ss.str());

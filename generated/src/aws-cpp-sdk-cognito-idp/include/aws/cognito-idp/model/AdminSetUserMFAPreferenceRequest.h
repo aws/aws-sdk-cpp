@@ -9,6 +9,7 @@
 #include <aws/cognito-idp/model/EmailMfaSettingsType.h>
 #include <aws/cognito-idp/model/SMSMfaSettingsType.h>
 #include <aws/cognito-idp/model/SoftwareTokenMfaSettingsType.h>
+#include <aws/cognito-idp/model/WebAuthnMfaSettingsType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -96,6 +97,32 @@ class AdminSetUserMFAPreferenceRequest : public CognitoIdentityProviderRequest {
 
   ///@{
   /**
+   * <p>User preferences for passkey MFA. Activates or deactivates passkey MFA for
+   * the user. When activated, passkey authentication requires user verification, and
+   * passkey sign-in is available when MFA is required. To activate this setting, the
+   * <code>FactorConfiguration</code> of your user pool
+   * <code>WebAuthnConfiguration</code> must be
+   * <code>MULTI_FACTOR_WITH_USER_VERIFICATION</code>. To activate this setting, your
+   * user pool must be in the <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html">
+   * Essentials tier</a> or higher.</p>
+   */
+  inline const WebAuthnMfaSettingsType& GetWebAuthnMfaSettings() const { return m_webAuthnMfaSettings; }
+  inline bool WebAuthnMfaSettingsHasBeenSet() const { return m_webAuthnMfaSettingsHasBeenSet; }
+  template <typename WebAuthnMfaSettingsT = WebAuthnMfaSettingsType>
+  void SetWebAuthnMfaSettings(WebAuthnMfaSettingsT&& value) {
+    m_webAuthnMfaSettingsHasBeenSet = true;
+    m_webAuthnMfaSettings = std::forward<WebAuthnMfaSettingsT>(value);
+  }
+  template <typename WebAuthnMfaSettingsT = WebAuthnMfaSettingsType>
+  AdminSetUserMFAPreferenceRequest& WithWebAuthnMfaSettings(WebAuthnMfaSettingsT&& value) {
+    SetWebAuthnMfaSettings(std::forward<WebAuthnMfaSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The name of the user that you want to query or modify. The value of this
    * parameter is typically your user's username, but it can be any of their alias
    * attributes. If <code>username</code> isn't an alias attribute in your user pool,
@@ -140,12 +167,15 @@ class AdminSetUserMFAPreferenceRequest : public CognitoIdentityProviderRequest {
 
   EmailMfaSettingsType m_emailMfaSettings;
 
+  WebAuthnMfaSettingsType m_webAuthnMfaSettings;
+
   Aws::String m_username;
 
   Aws::String m_userPoolId;
   bool m_sMSMfaSettingsHasBeenSet = false;
   bool m_softwareTokenMfaSettingsHasBeenSet = false;
   bool m_emailMfaSettingsHasBeenSet = false;
+  bool m_webAuthnMfaSettingsHasBeenSet = false;
   bool m_usernameHasBeenSet = false;
   bool m_userPoolIdHasBeenSet = false;
 };

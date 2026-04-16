@@ -21,6 +21,13 @@ static const int recall_HASH = HashingUtils::HashString("recall");
 static const int popularity_HASH = HashingUtils::HashString("popularity");
 static const int freshness_HASH = HashingUtils::HashString("freshness");
 static const int similarity_HASH = HashingUtils::HashString("similarity");
+static const int mean_reciprocal_rank_at_25_HASH = HashingUtils::HashString("mean_reciprocal_rank_at_25");
+static const int normalized_discounted_cumulative_gain_at_5_HASH = HashingUtils::HashString("normalized_discounted_cumulative_gain_at_5");
+static const int normalized_discounted_cumulative_gain_at_10_HASH = HashingUtils::HashString("normalized_discounted_cumulative_gain_at_10");
+static const int normalized_discounted_cumulative_gain_at_25_HASH = HashingUtils::HashString("normalized_discounted_cumulative_gain_at_25");
+static const int precision_at_5_HASH = HashingUtils::HashString("precision_at_5");
+static const int precision_at_10_HASH = HashingUtils::HashString("precision_at_10");
+static const int precision_at_25_HASH = HashingUtils::HashString("precision_at_25");
 
 TrainingMetricName GetTrainingMetricNameForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +43,20 @@ TrainingMetricName GetTrainingMetricNameForName(const Aws::String& name) {
     return TrainingMetricName::freshness;
   } else if (hashCode == similarity_HASH) {
     return TrainingMetricName::similarity;
+  } else if (hashCode == mean_reciprocal_rank_at_25_HASH) {
+    return TrainingMetricName::mean_reciprocal_rank_at_25;
+  } else if (hashCode == normalized_discounted_cumulative_gain_at_5_HASH) {
+    return TrainingMetricName::normalized_discounted_cumulative_gain_at_5;
+  } else if (hashCode == normalized_discounted_cumulative_gain_at_10_HASH) {
+    return TrainingMetricName::normalized_discounted_cumulative_gain_at_10;
+  } else if (hashCode == normalized_discounted_cumulative_gain_at_25_HASH) {
+    return TrainingMetricName::normalized_discounted_cumulative_gain_at_25;
+  } else if (hashCode == precision_at_5_HASH) {
+    return TrainingMetricName::precision_at_5;
+  } else if (hashCode == precision_at_10_HASH) {
+    return TrainingMetricName::precision_at_10;
+  } else if (hashCode == precision_at_25_HASH) {
+    return TrainingMetricName::precision_at_25;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +83,20 @@ Aws::String GetNameForTrainingMetricName(TrainingMetricName enumValue) {
       return "freshness";
     case TrainingMetricName::similarity:
       return "similarity";
+    case TrainingMetricName::mean_reciprocal_rank_at_25:
+      return "mean_reciprocal_rank_at_25";
+    case TrainingMetricName::normalized_discounted_cumulative_gain_at_5:
+      return "normalized_discounted_cumulative_gain_at_5";
+    case TrainingMetricName::normalized_discounted_cumulative_gain_at_10:
+      return "normalized_discounted_cumulative_gain_at_10";
+    case TrainingMetricName::normalized_discounted_cumulative_gain_at_25:
+      return "normalized_discounted_cumulative_gain_at_25";
+    case TrainingMetricName::precision_at_5:
+      return "precision_at_5";
+    case TrainingMetricName::precision_at_10:
+      return "precision_at_10";
+    case TrainingMetricName::precision_at_25:
+      return "precision_at_25";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

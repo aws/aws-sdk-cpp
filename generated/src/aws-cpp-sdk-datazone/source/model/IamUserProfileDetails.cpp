@@ -26,6 +26,14 @@ IamUserProfileDetails& IamUserProfileDetails::operator=(JsonView jsonValue) {
     m_principalId = jsonValue.GetString("principalId");
     m_principalIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("sessionName")) {
+    m_sessionName = jsonValue.GetString("sessionName");
+    m_sessionNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("groupProfileId")) {
+    m_groupProfileId = jsonValue.GetString("groupProfileId");
+    m_groupProfileIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +46,14 @@ JsonValue IamUserProfileDetails::Jsonize() const {
 
   if (m_principalIdHasBeenSet) {
     payload.WithString("principalId", m_principalId);
+  }
+
+  if (m_sessionNameHasBeenSet) {
+    payload.WithString("sessionName", m_sessionName);
+  }
+
+  if (m_groupProfileIdHasBeenSet) {
+    payload.WithString("groupProfileId", m_groupProfileId);
   }
 
   return payload;

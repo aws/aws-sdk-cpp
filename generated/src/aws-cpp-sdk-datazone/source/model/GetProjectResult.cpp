@@ -94,6 +94,10 @@ GetProjectResult& GetProjectResult::operator=(const Aws::AmazonWebServiceResult<
     m_environmentDeploymentDetails = jsonValue.GetObject("environmentDeploymentDetails");
     m_environmentDeploymentDetailsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("projectCategory")) {
+    m_projectCategory = jsonValue.GetString("projectCategory");
+    m_projectCategoryHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

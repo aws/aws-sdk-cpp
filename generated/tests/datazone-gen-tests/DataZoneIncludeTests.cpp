@@ -559,6 +559,7 @@
 #include <aws/datazone/model/ProjectDesignation.h>
 #include <aws/datazone/model/ProjectGrantFilter.h>
 #include <aws/datazone/model/ProjectMember.h>
+#include <aws/datazone/model/ProjectMembershipAssignment.h>
 #include <aws/datazone/model/ProjectPolicyGrantPrincipal.h>
 #include <aws/datazone/model/ProjectProfileSummary.h>
 #include <aws/datazone/model/ProjectStatus.h>

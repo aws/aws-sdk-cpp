@@ -24,4 +24,10 @@ void GetUserProfileRequest::AddQueryStringParameters(URI& uri) const {
     uri.AddQueryStringParameter("type", ss.str());
     ss.str("");
   }
+
+  if (m_sessionNameHasBeenSet) {
+    ss << m_sessionName;
+    uri.AddQueryStringParameter("sessionName", ss.str());
+    ss.str("");
+  }
 }

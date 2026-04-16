@@ -55,6 +55,25 @@ class RecommenderFilterSummary {
 
   ///@{
   /**
+   * <p>The name of the recommender schema associated with this recommender
+   * filter.</p>
+   */
+  inline const Aws::String& GetRecommenderSchemaName() const { return m_recommenderSchemaName; }
+  inline bool RecommenderSchemaNameHasBeenSet() const { return m_recommenderSchemaNameHasBeenSet; }
+  template <typename RecommenderSchemaNameT = Aws::String>
+  void SetRecommenderSchemaName(RecommenderSchemaNameT&& value) {
+    m_recommenderSchemaNameHasBeenSet = true;
+    m_recommenderSchemaName = std::forward<RecommenderSchemaNameT>(value);
+  }
+  template <typename RecommenderSchemaNameT = Aws::String>
+  RecommenderFilterSummary& WithRecommenderSchemaName(RecommenderSchemaNameT&& value) {
+    SetRecommenderSchemaName(std::forward<RecommenderSchemaNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The filter expression that defines which items to include or exclude from
    * recommendations.</p>
    */
@@ -169,6 +188,8 @@ class RecommenderFilterSummary {
  private:
   Aws::String m_recommenderFilterName;
 
+  Aws::String m_recommenderSchemaName;
+
   Aws::String m_recommenderFilterExpression;
 
   Aws::Utils::DateTime m_createdAt{};
@@ -181,6 +202,7 @@ class RecommenderFilterSummary {
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_recommenderFilterNameHasBeenSet = false;
+  bool m_recommenderSchemaNameHasBeenSet = false;
   bool m_recommenderFilterExpressionHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

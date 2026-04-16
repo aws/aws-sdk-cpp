@@ -10,7 +10,7 @@
 namespace Aws {
 namespace DataZone {
 namespace Model {
-enum class UserType { NOT_SET, IAM_USER, IAM_ROLE, SSO_USER };
+enum class UserType { NOT_SET, IAM_USER, IAM_ROLE, SSO_USER, IAM_ROLE_SESSION };
 
 namespace UserTypeMapper {
 AWS_DATAZONE_API UserType GetUserTypeForName(const Aws::String& name);

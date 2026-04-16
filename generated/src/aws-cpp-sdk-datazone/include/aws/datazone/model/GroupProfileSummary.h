@@ -101,6 +101,44 @@ class GroupProfileSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the IAM role principal. This role is associated with the group
+   * profile.</p>
+   */
+  inline const Aws::String& GetRolePrincipalArn() const { return m_rolePrincipalArn; }
+  inline bool RolePrincipalArnHasBeenSet() const { return m_rolePrincipalArnHasBeenSet; }
+  template <typename RolePrincipalArnT = Aws::String>
+  void SetRolePrincipalArn(RolePrincipalArnT&& value) {
+    m_rolePrincipalArnHasBeenSet = true;
+    m_rolePrincipalArn = std::forward<RolePrincipalArnT>(value);
+  }
+  template <typename RolePrincipalArnT = Aws::String>
+  GroupProfileSummary& WithRolePrincipalArn(RolePrincipalArnT&& value) {
+    SetRolePrincipalArn(std::forward<RolePrincipalArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the IAM role principal. This principal is associated
+   * with the group profile.</p>
+   */
+  inline const Aws::String& GetRolePrincipalId() const { return m_rolePrincipalId; }
+  inline bool RolePrincipalIdHasBeenSet() const { return m_rolePrincipalIdHasBeenSet; }
+  template <typename RolePrincipalIdT = Aws::String>
+  void SetRolePrincipalId(RolePrincipalIdT&& value) {
+    m_rolePrincipalIdHasBeenSet = true;
+    m_rolePrincipalId = std::forward<RolePrincipalIdT>(value);
+  }
+  template <typename RolePrincipalIdT = Aws::String>
+  GroupProfileSummary& WithRolePrincipalId(RolePrincipalIdT&& value) {
+    SetRolePrincipalId(std::forward<RolePrincipalIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainId;
 
@@ -109,10 +147,16 @@ class GroupProfileSummary {
   GroupProfileStatus m_status{GroupProfileStatus::NOT_SET};
 
   Aws::String m_groupName;
+
+  Aws::String m_rolePrincipalArn;
+
+  Aws::String m_rolePrincipalId;
   bool m_domainIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_groupNameHasBeenSet = false;
+  bool m_rolePrincipalArnHasBeenSet = false;
+  bool m_rolePrincipalIdHasBeenSet = false;
 };
 
 }  // namespace Model
