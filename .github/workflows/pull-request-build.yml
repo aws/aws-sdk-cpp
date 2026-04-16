@@ -2,6 +2,7 @@ name: Build SDK
 on:
   pull_request:
     types: [ opened, synchronize, ready_for_review ]
+  merge_group:
 
 concurrency:
   group: start-pull-request-build-${{ github.ref }}
@@ -15,7 +16,7 @@ env:
 
 jobs:
   aws-sdk-pr-build:
-    if: github.event.pull_request.draft == false
+    if: github.event.pull_request.draft == false || github.event_name == 'merge_group'
     runs-on: ubuntu-latest
     permissions:
       id-token: write
@@ -23,7 +24,33 @@ jobs:
       pull-requests: write
       contents: read
     steps:
+      - name: Checkout merge group (shallow)
+        if: github.event_name == 'merge_group'
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Check if merge queue build is needed
+        if: github.event_name == 'merge_group'
+        id: queue-check
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HEAD_REF: ${{ github.event.merge_group.head_ref }}
+          REPO: ${{ github.repository }}
+        run: |
+          PR_NUM=$(echo "$HEAD_REF" | grep -oP 'pr-\K[0-9]+')
+          PR_BASE_SHA=$(gh api "repos/$REPO/pulls/$PR_NUM" --jq '.base.sha')
+          PARENT_SHA=$(git rev-parse HEAD~1)
+          echo "PR #$PR_NUM base SHA: $PR_BASE_SHA"
+          echo "Merge group HEAD~1:   $PARENT_SHA"
+          if [ "$PARENT_SHA" == "$PR_BASE_SHA" ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "First in queue, same base — PR build already validated this, skipping."
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+            echo "Other PRs ahead or base moved — build needed."
+          fi
       - name: Configure AWS Credentials
+        if: steps.queue-check.outputs.skip != 'true'
         uses: aws-actions/configure-aws-credentials@main
         with:
           role-to-assume: ${{ env.IAM_ROLE_ARN }}
@@ -32,17 +59,20 @@ jobs:
           aws-region: us-west-2
           role-duration-seconds: 7200
       - name: Download Build Script
+        if: steps.queue-check.outputs.skip != 'true'
         run: |
           aws s3 cp s3://aws-sdk-builds-github-assets-prod-us-west-2/$SCRIPT_LOCATION ./$DOWNLOAD_FOLDER/$SCRIPT_LOCATION --no-progress
           chmod +x ./$DOWNLOAD_FOLDER/$SCRIPT_LOCATION
       - name: Build
+        if: steps.queue-check.outputs.skip != 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
-          HEAD_REF: ${{ github.event.pull_request.head.ref }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref || github.event.merge_group.head_ref }}
+          PR_NUMBER: ${{ github.event.pull_request.number || '0' }}
           RUN_ID: ${{ github.run_id }}
         run: |
+          HEAD_REF="${HEAD_REF#refs/heads/}"
           ./$DOWNLOAD_FOLDER/$SCRIPT_LOCATION \
             --repo "$REPO" \
             --branch "$HEAD_REF" \
