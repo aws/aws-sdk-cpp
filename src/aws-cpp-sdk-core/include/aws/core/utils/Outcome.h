@@ -27,8 +27,8 @@ namespace Aws
         class Outcome
         {
         public:
-            typedef R RESULT;
-            typedef E ERROR;
+            typedef R RESULT_TYPE;
+            typedef E ERROR_TYPE;
 
             Outcome() : result(), error(), success(false)
             {
