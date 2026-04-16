@@ -3,7 +3,6 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/s3control/S3ControlClientConfiguration.h>
 
 namespace Aws {

@@ -4,7 +4,6 @@
  */
 
 #include <aws/bedrock-data-automation/BedrockDataAutomationClientConfiguration.h>
-#include <aws/core/utils/UnreferencedParam.h>
 
 namespace Aws {
 namespace BedrockDataAutomation {

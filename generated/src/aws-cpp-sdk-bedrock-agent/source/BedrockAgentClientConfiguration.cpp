@@ -4,7 +4,6 @@
  */
 
 #include <aws/bedrock-agent/BedrockAgentClientConfiguration.h>
-#include <aws/core/utils/UnreferencedParam.h>
 
 namespace Aws {
 namespace BedrockAgent {
