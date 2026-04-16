@@ -80,7 +80,7 @@ protected:
 
         // Set up buffer pointers to read from chunking buffer
         size_t remainingBytes = m_chunkingBufferSize - m_chunkingBufferPos;
-        size_t bytesToRead = std::min(remainingBytes, DataBufferSize);
+        size_t bytesToRead = (std::min)(remainingBytes, DataBufferSize);
         
         setg(m_chunkingBuffer.GetUnderlyingData() + m_chunkingBufferPos, 
              m_chunkingBuffer.GetUnderlyingData() + m_chunkingBufferPos, 
