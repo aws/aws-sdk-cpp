@@ -6,6 +6,7 @@
 #set($endpointPrefix = $metadata.endpointPrefix)
 #set($serviceNameCaps = $metadata.serviceId.replaceAll("[^a-zA-Z\d]+", "_").toUpperCase())
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ClientConfiguration.h>
+\#include <aws/core/utils/UnreferencedParam.h>
 #if($serviceNamespace == "S3Crt")
 \#include <aws/core/Globals.h>
 \#include <aws/core/client/RetryStrategy.h>
@@ -73,6 +74,7 @@ bool IsEndpointDiscoveryEnabled(const Aws::String& endpointOverride, const Aws::
 #end
 void ${metadata.classNamePrefix}ClientConfiguration::Load${serviceNamespace}SpecificConfig(const Aws::String& inputProfileName)
 {
+  AWS_UNREFERENCED_PARAM(inputProfileName);
 #if($serviceModel.metadata.serviceId == "S3")
   if (Aws::${serviceNamespace}::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET == this->useUSEast1RegionalEndPointOption)
   {
