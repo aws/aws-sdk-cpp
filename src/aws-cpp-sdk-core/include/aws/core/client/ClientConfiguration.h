@@ -368,9 +368,9 @@ namespace Aws
              * before sending the request body. This corresponds to CURLOPT_EXPECT_100_TIMEOUT_MS.
              * Useful when operating behind proxies that introduce network delays, where the default 1000ms
              * may be too short and cause IncompleteBody errors.
-             * Default 0 means use Curl's built-in default (1000ms).
+             * Default 1000ms (Curl's built-in default).
              */
-            long expect100ContinueTimeoutMs = 0;
+            long expect100ContinueTimeoutMs = 1000;
 
             /**
              * If set to true clock skew will be adjusted after each http attempt, default to true.
