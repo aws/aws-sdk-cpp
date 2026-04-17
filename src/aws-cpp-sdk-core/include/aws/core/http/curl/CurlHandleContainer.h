@@ -31,7 +31,7 @@ public:
       */
     CurlHandleContainer(unsigned maxSize = 50, long httpRequestTimeout = 0, long connectTimeout = 1000, bool tcpKeepAlive = true,
                         unsigned long tcpKeepAliveIntervalMs = 30000, long lowSpeedTime = 3000, unsigned long lowSpeedLimit = 1,
-                        Version version = Version::HTTP_VERSION_2TLS, long expect100ContinueTimeoutMs = 0);
+                        Version version = Version::HTTP_VERSION_2TLS, long expect100ContinueTimeoutMs = 1000);
     ~CurlHandleContainer();
 
     /**
