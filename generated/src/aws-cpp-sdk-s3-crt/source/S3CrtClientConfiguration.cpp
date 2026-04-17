@@ -3,16 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3-crt/S3CrtClientConfiguration.h>
-
-#if defined(_MSC_VER)
-#define AWS_UNREFERENCED_PARAM(x) (&reinterpret_cast<const int&>(x))
-#else
-#define AWS_UNREFERENCED_PARAM(x) ((void)(x))
-#endif
-
 #include <aws/core/Globals.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/s3-crt/S3CrtClientConfiguration.h>
 
 namespace Aws {
 namespace S3Crt {

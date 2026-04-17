@@ -7,12 +7,6 @@
 #set($serviceNameCaps = $metadata.serviceId.replaceAll("[^a-zA-Z\d]+", "_").toUpperCase())
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ClientConfiguration.h>
 
-\#if defined(_MSC_VER)
-\#define AWS_UNREFERENCED_PARAM(x) (&reinterpret_cast<const int &>(x))
-\#else
-\#define AWS_UNREFERENCED_PARAM(x) ((void)(x))
-#endif
-
 #if($serviceNamespace == "S3Crt")
 \#include <aws/core/Globals.h>
 \#include <aws/core/client/RetryStrategy.h>
@@ -164,6 +158,11 @@ void ${metadata.classNamePrefix}ClientConfiguration::Load${serviceNamespace}Spec
     }
 #end
 #if(!$inputProfileNameUsed)
+\#if defined(_MSC_VER)
+\#define AWS_UNREFERENCED_PARAM(x) (&reinterpret_cast<const int &>(x))
+\#else
+\#define AWS_UNREFERENCED_PARAM(x) ((void)(x))
+#endif
   AWS_UNREFERENCED_PARAM(inputProfileName);
 #end
 }
