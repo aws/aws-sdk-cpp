@@ -363,6 +363,16 @@ namespace Aws
             bool disableExpectHeader = false;
 
             /**
+             * Only works for Curl http client.
+             * Sets the timeout in milliseconds that Curl will wait for a 100-Continue response from the server
+             * before sending the request body. This corresponds to CURLOPT_EXPECT_100_TIMEOUT_MS.
+             * Useful when operating behind proxies that introduce network delays, where the default 1000ms
+             * may be too short and cause IncompleteBody errors.
+             * Default 0 means use Curl's built-in default (1000ms).
+             */
+            long expect100ContinueTimeoutMs = 0;
+
+            /**
              * If set to true clock skew will be adjusted after each http attempt, default to true.
              */
             bool enableClockSkewAdjustment = true;

@@ -247,6 +247,7 @@ void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
     clientConfig.httpClientChunkedMode = HttpClientChunkedMode::CLIENT_IMPLEMENTATION;
     clientConfig.followRedirects = FollowRedirectsPolicy::DEFAULT;
     clientConfig.disableExpectHeader = false;
+    clientConfig.expect100ContinueTimeoutMs = 0;
     clientConfig.enableClockSkewAdjustment = true;
     clientConfig.enableHostPrefixInjection = true;
     clientConfig.enableHttpClientTrace = false;
