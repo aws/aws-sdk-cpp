@@ -22,7 +22,8 @@ class JsonValue;
 namespace GroundStation {
 namespace Model {
 /**
- * <p> </p><p><h3>See Also:</h3>   <a
+ * <p>Response containing the ID of a dataflow endpoint group. </p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DataflowEndpointGroupIdResponse">AWS
  * API Reference</a></p>
  */

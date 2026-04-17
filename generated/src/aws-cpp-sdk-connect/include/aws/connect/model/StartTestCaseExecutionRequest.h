@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/ConnectRequest.h>
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -90,10 +91,10 @@ class StartTestCaseExecutionRequest : public ConnectRequest {
 
   Aws::String m_testCaseId;
 
-  Aws::String m_clientToken;
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_instanceIdHasBeenSet = false;
   bool m_testCaseIdHasBeenSet = false;
-  bool m_clientTokenHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
 };
 
 }  // namespace Model

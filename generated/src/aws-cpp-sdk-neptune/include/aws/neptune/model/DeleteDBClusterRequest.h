@@ -78,7 +78,7 @@ class DeleteDBClusterRequest : public NeptuneRequest {
   /**
    * <p> The DB cluster snapshot identifier of the new DB cluster snapshot created
    * when <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p>  <p>
-   * Specifying this parameter and also setting the <code>SkipFinalShapshot</code>
+   * Specifying this parameter and also setting the <code>SkipFinalSnapshot</code>
    * parameter to true results in an error.</p>  <p>Constraints:</p> <ul> <li>
    * <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
    * character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain

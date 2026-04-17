@@ -26,6 +26,10 @@ ReserveContactResult& ReserveContactResult::operator=(const Aws::AmazonWebServic
     m_contactId = jsonValue.GetString("contactId");
     m_contactIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("versionId")) {
+    m_versionId = jsonValue.GetInteger("versionId");
+    m_versionIdHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

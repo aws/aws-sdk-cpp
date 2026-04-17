@@ -15,6 +15,7 @@
 #include <aws/sagemaker/model/ClusterInstanceType.h>
 #include <aws/sagemaker/model/ClusterKubernetesConfigNodeDetails.h>
 #include <aws/sagemaker/model/ClusterLifeCycleConfig.h>
+#include <aws/sagemaker/model/ClusterNetworkInterfaceDetails.h>
 #include <aws/sagemaker/model/UltraServerInfo.h>
 #include <aws/sagemaker/model/VpcConfig.h>
 
@@ -416,6 +417,24 @@ class ClusterNodeDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The network interface configuration for the cluster node.</p>
+   */
+  inline const ClusterNetworkInterfaceDetails& GetNetworkInterface() const { return m_networkInterface; }
+  inline bool NetworkInterfaceHasBeenSet() const { return m_networkInterfaceHasBeenSet; }
+  template <typename NetworkInterfaceT = ClusterNetworkInterfaceDetails>
+  void SetNetworkInterface(NetworkInterfaceT&& value) {
+    m_networkInterfaceHasBeenSet = true;
+    m_networkInterface = std::forward<NetworkInterfaceT>(value);
+  }
+  template <typename NetworkInterfaceT = ClusterNetworkInterfaceDetails>
+  ClusterNodeDetails& WithNetworkInterface(NetworkInterfaceT&& value) {
+    SetNetworkInterface(std::forward<NetworkInterfaceT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_instanceGroupName;
 
@@ -456,6 +475,8 @@ class ClusterNodeDetails {
   ClusterKubernetesConfigNodeDetails m_kubernetesConfig;
 
   ClusterCapacityType m_capacityType{ClusterCapacityType::NOT_SET};
+
+  ClusterNetworkInterfaceDetails m_networkInterface;
   bool m_instanceGroupNameHasBeenSet = false;
   bool m_instanceIdHasBeenSet = false;
   bool m_nodeLogicalIdHasBeenSet = false;
@@ -476,6 +497,7 @@ class ClusterNodeDetails {
   bool m_ultraServerInfoHasBeenSet = false;
   bool m_kubernetesConfigHasBeenSet = false;
   bool m_capacityTypeHasBeenSet = false;
+  bool m_networkInterfaceHasBeenSet = false;
 };
 
 }  // namespace Model

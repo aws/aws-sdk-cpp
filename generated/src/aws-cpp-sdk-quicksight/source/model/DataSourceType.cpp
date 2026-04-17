@@ -30,6 +30,7 @@ static const int POSTGRESQL_HASH = HashingUtils::HashString("POSTGRESQL");
 static const int PRESTO_HASH = HashingUtils::HashString("PRESTO");
 static const int REDSHIFT_HASH = HashingUtils::HashString("REDSHIFT");
 static const int S3_HASH = HashingUtils::HashString("S3");
+static const int S3_TABLES_HASH = HashingUtils::HashString("S3_TABLES");
 static const int SALESFORCE_HASH = HashingUtils::HashString("SALESFORCE");
 static const int SERVICENOW_HASH = HashingUtils::HashString("SERVICENOW");
 static const int SNOWFLAKE_HASH = HashingUtils::HashString("SNOWFLAKE");
@@ -85,6 +86,8 @@ DataSourceType GetDataSourceTypeForName(const Aws::String& name) {
     return DataSourceType::REDSHIFT;
   } else if (hashCode == S3_HASH) {
     return DataSourceType::S3;
+  } else if (hashCode == S3_TABLES_HASH) {
+    return DataSourceType::S3_TABLES;
   } else if (hashCode == SALESFORCE_HASH) {
     return DataSourceType::SALESFORCE;
   } else if (hashCode == SERVICENOW_HASH) {
@@ -173,6 +176,8 @@ Aws::String GetNameForDataSourceType(DataSourceType enumValue) {
       return "REDSHIFT";
     case DataSourceType::S3:
       return "S3";
+    case DataSourceType::S3_TABLES:
+      return "S3_TABLES";
     case DataSourceType::SALESFORCE:
       return "SALESFORCE";
     case DataSourceType::SERVICENOW:

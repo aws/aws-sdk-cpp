@@ -61,10 +61,13 @@ STSClient::STSClient(const STS::STSClientConfiguration& clientConfiguration, std
           Aws::MakeShared<STSErrorMarshaller>(ALLOCATION_TAG),
           endpointProvider ? endpointProvider : Aws::MakeShared<STSEndpointProvider>(ALLOCATION_TAG),
           Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
-              ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
+              ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption,
+                                                                     smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption})),
           {
               {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
                smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}},
+              {smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption.schemeId,
+               smithy::SigV4aAuthScheme{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}},
               {smithy::NoAuthSchemeOption::noAuthSchemeOption.schemeId,
                smithy::NoAuthScheme{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}},
           }) {}
@@ -76,11 +79,15 @@ STSClient::STSClient(const AWSCredentials& credentials, std::shared_ptr<STSEndpo
           Aws::MakeShared<STSErrorMarshaller>(ALLOCATION_TAG),
           endpointProvider ? endpointProvider : Aws::MakeShared<STSEndpointProvider>(ALLOCATION_TAG),
           Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
-              ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
+              ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption,
+                                                                     smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption})),
           {
               {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
                smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials),
                                        GetServiceName(), clientConfiguration.region}},
+              {smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption.schemeId,
+               smithy::SigV4aAuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials),
+                                        GetServiceName(), clientConfiguration.region}},
               {smithy::NoAuthSchemeOption::noAuthSchemeOption.schemeId,
                smithy::NoAuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials),
                                     GetServiceName(), clientConfiguration.region}},
@@ -93,11 +100,16 @@ STSClient::STSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
           Aws::MakeShared<STSErrorMarshaller>(ALLOCATION_TAG),
           endpointProvider ? endpointProvider : Aws::MakeShared<STSEndpointProvider>(ALLOCATION_TAG),
           Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
-              ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
+              ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption,
+                                                                     smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption})),
           {
               {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
                smithy::SigV4AuthScheme{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider),
                                        GetServiceName(), clientConfiguration.region}},
+              {smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption.schemeId,
+               smithy::SigV4aAuthScheme{
+                   Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(),
+                   clientConfiguration.region}},
               {smithy::NoAuthSchemeOption::noAuthSchemeOption.schemeId,
                smithy::NoAuthScheme{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider),
                                     GetServiceName(), clientConfiguration.region}},
@@ -109,10 +121,13 @@ STSClient::STSClient(const Aws::Client::ClientConfiguration& clientConfiguration
           clientConfiguration, GetServiceName(), "STS", Aws::Http::CreateHttpClient(clientConfiguration),
           Aws::MakeShared<STSErrorMarshaller>(ALLOCATION_TAG), Aws::MakeShared<STSEndpointProvider>(ALLOCATION_TAG),
           Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
-              ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
+              ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption,
+                                                                     smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption})),
           {
               {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
                smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}},
+              {smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption.schemeId,
+               smithy::SigV4aAuthScheme{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}},
               {smithy::NoAuthSchemeOption::noAuthSchemeOption.schemeId,
                smithy::NoAuthScheme{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}},
           }) {}
@@ -122,11 +137,15 @@ STSClient::STSClient(const AWSCredentials& credentials, const Aws::Client::Clien
           clientConfiguration, GetServiceName(), "STS", Aws::Http::CreateHttpClient(clientConfiguration),
           Aws::MakeShared<STSErrorMarshaller>(ALLOCATION_TAG), Aws::MakeShared<STSEndpointProvider>(ALLOCATION_TAG),
           Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
-              ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
+              ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption,
+                                                                     smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption})),
           {
               {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
                smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials),
                                        GetServiceName(), clientConfiguration.region}},
+              {smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption.schemeId,
+               smithy::SigV4aAuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials),
+                                        GetServiceName(), clientConfiguration.region}},
               {smithy::NoAuthSchemeOption::noAuthSchemeOption.schemeId,
                smithy::NoAuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials),
                                     GetServiceName(), clientConfiguration.region}},
@@ -138,11 +157,16 @@ STSClient::STSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
           clientConfiguration, GetServiceName(), "STS", Aws::Http::CreateHttpClient(clientConfiguration),
           Aws::MakeShared<STSErrorMarshaller>(ALLOCATION_TAG), Aws::MakeShared<STSEndpointProvider>(ALLOCATION_TAG),
           Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
-              ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
+              ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption,
+                                                                     smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption})),
           {
               {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
                smithy::SigV4AuthScheme{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider),
                                        GetServiceName(), clientConfiguration.region}},
+              {smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption.schemeId,
+               smithy::SigV4aAuthScheme{
+                   Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(),
+                   clientConfiguration.region}},
               {smithy::NoAuthSchemeOption::noAuthSchemeOption.schemeId,
                smithy::NoAuthScheme{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider),
                                     GetServiceName(), clientConfiguration.region}},

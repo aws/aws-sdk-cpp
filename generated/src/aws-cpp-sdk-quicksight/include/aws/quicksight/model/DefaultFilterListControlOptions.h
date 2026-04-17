@@ -4,7 +4,9 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
+#include <aws/quicksight/model/ControlSortConfiguration.h>
 #include <aws/quicksight/model/FilterSelectableValues.h>
 #include <aws/quicksight/model/ListControlDisplayOptions.h>
 #include <aws/quicksight/model/SheetControlListType.h>
@@ -89,15 +91,43 @@ class DefaultFilterListControlOptions {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The sort configuration for the values displayed in the control. Only one sort
+   * configuration can be applied per control.</p>
+   */
+  inline const Aws::Vector<ControlSortConfiguration>& GetControlSortConfigurations() const { return m_controlSortConfigurations; }
+  inline bool ControlSortConfigurationsHasBeenSet() const { return m_controlSortConfigurationsHasBeenSet; }
+  template <typename ControlSortConfigurationsT = Aws::Vector<ControlSortConfiguration>>
+  void SetControlSortConfigurations(ControlSortConfigurationsT&& value) {
+    m_controlSortConfigurationsHasBeenSet = true;
+    m_controlSortConfigurations = std::forward<ControlSortConfigurationsT>(value);
+  }
+  template <typename ControlSortConfigurationsT = Aws::Vector<ControlSortConfiguration>>
+  DefaultFilterListControlOptions& WithControlSortConfigurations(ControlSortConfigurationsT&& value) {
+    SetControlSortConfigurations(std::forward<ControlSortConfigurationsT>(value));
+    return *this;
+  }
+  template <typename ControlSortConfigurationsT = ControlSortConfiguration>
+  DefaultFilterListControlOptions& AddControlSortConfigurations(ControlSortConfigurationsT&& value) {
+    m_controlSortConfigurationsHasBeenSet = true;
+    m_controlSortConfigurations.emplace_back(std::forward<ControlSortConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ListControlDisplayOptions m_displayOptions;
 
   SheetControlListType m_type{SheetControlListType::NOT_SET};
 
   FilterSelectableValues m_selectableValues;
+
+  Aws::Vector<ControlSortConfiguration> m_controlSortConfigurations;
   bool m_displayOptionsHasBeenSet = false;
   bool m_typeHasBeenSet = false;
   bool m_selectableValuesHasBeenSet = false;
+  bool m_controlSortConfigurationsHasBeenSet = false;
 };
 
 }  // namespace Model

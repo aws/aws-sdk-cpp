@@ -139,6 +139,10 @@ ClusterInstanceGroupDetails& ClusterInstanceGroupDetails::operator=(JsonView jso
     m_slurmConfig = jsonValue.GetObject("SlurmConfig");
     m_slurmConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("NetworkInterface")) {
+    m_networkInterface = jsonValue.GetObject("NetworkInterface");
+    m_networkInterfaceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -268,6 +272,10 @@ JsonValue ClusterInstanceGroupDetails::Jsonize() const {
 
   if (m_slurmConfigHasBeenSet) {
     payload.WithObject("SlurmConfig", m_slurmConfig.Jsonize());
+  }
+
+  if (m_networkInterfaceHasBeenSet) {
+    payload.WithObject("NetworkInterface", m_networkInterface.Jsonize());
   }
 
   return payload;

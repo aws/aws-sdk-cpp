@@ -78,7 +78,7 @@ class FailoverGlobalClusterRequest : public NeptuneRequest {
    * <p>Specifies whether to allow data loss for this global database cluster
    * operation. Allowing data loss triggers a global failover operation.</p> <p>If
    * you don't specify <code>AllowDataLoss</code>, the global database cluster
-   * operation defaults to a switchover.</p> <p>Constraints:Can't be specified
+   * operation defaults to a switchover.</p> <p>Constraints: Can't be specified
    * together with the <code>Switchover</code> parameter.</p>
    */
   inline bool GetAllowDataLoss() const { return m_allowDataLoss; }
@@ -96,7 +96,7 @@ class FailoverGlobalClusterRequest : public NeptuneRequest {
   ///@{
   /**
    * <p>Specifies whether to switch over this global database cluster.</p>
-   * <p>Constraints:Can't be specified together with the <code>AllowDataLoss</code>
+   * <p>Constraints: Can't be specified together with the <code>AllowDataLoss</code>
    * parameter.</p>
    */
   inline bool GetSwitchover() const { return m_switchover; }

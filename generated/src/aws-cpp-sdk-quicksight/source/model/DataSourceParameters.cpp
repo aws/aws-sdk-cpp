@@ -74,6 +74,10 @@ DataSourceParameters& DataSourceParameters::operator=(JsonView jsonValue) {
     m_s3Parameters = jsonValue.GetObject("S3Parameters");
     m_s3ParametersHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("S3TablesParameters")) {
+    m_s3TablesParameters = jsonValue.GetObject("S3TablesParameters");
+    m_s3TablesParametersHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("S3KnowledgeBaseParameters")) {
     m_s3KnowledgeBaseParameters = jsonValue.GetObject("S3KnowledgeBaseParameters");
     m_s3KnowledgeBaseParametersHasBeenSet = true;
@@ -206,6 +210,10 @@ JsonValue DataSourceParameters::Jsonize() const {
 
   if (m_s3ParametersHasBeenSet) {
     payload.WithObject("S3Parameters", m_s3Parameters.Jsonize());
+  }
+
+  if (m_s3TablesParametersHasBeenSet) {
+    payload.WithObject("S3TablesParameters", m_s3TablesParameters.Jsonize());
   }
 
   if (m_s3KnowledgeBaseParametersHasBeenSet) {

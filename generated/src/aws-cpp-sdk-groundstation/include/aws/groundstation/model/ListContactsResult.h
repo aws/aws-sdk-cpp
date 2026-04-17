@@ -24,7 +24,8 @@ class JsonValue;
 namespace GroundStation {
 namespace Model {
 /**
- * <p> </p><p><h3>See Also:</h3>   <a
+ * <p>Output for the <code>ListContacts</code> operation. </p><p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListContactsResponse">AWS
  * API Reference</a></p>
  */

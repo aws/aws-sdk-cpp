@@ -100,6 +100,10 @@ DescribeContactResult& DescribeContactResult::operator=(const Aws::AmazonWebServ
     m_ephemeris = jsonValue.GetObject("ephemeris");
     m_ephemerisHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("version")) {
+    m_version = jsonValue.GetObject("version");
+    m_versionHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

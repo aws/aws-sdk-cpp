@@ -77,12 +77,35 @@ class ClusterLifeCycleConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The file name of the entrypoint script of lifecycle scripts under
+   * <code>SourceS3Uri</code>. This script runs on the node after the AMI-based
+   * initialization is complete.</p>
+   */
+  inline const Aws::String& GetOnInitComplete() const { return m_onInitComplete; }
+  inline bool OnInitCompleteHasBeenSet() const { return m_onInitCompleteHasBeenSet; }
+  template <typename OnInitCompleteT = Aws::String>
+  void SetOnInitComplete(OnInitCompleteT&& value) {
+    m_onInitCompleteHasBeenSet = true;
+    m_onInitComplete = std::forward<OnInitCompleteT>(value);
+  }
+  template <typename OnInitCompleteT = Aws::String>
+  ClusterLifeCycleConfig& WithOnInitComplete(OnInitCompleteT&& value) {
+    SetOnInitComplete(std::forward<OnInitCompleteT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_sourceS3Uri;
 
   Aws::String m_onCreate;
+
+  Aws::String m_onInitComplete;
   bool m_sourceS3UriHasBeenSet = false;
   bool m_onCreateHasBeenSet = false;
+  bool m_onInitCompleteHasBeenSet = false;
 };
 
 }  // namespace Model

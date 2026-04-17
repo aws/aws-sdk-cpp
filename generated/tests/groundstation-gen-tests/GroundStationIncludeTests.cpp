@@ -21,6 +21,7 @@
 #include <aws/groundstation/model/AntennaDemodDecodeDetails.h>
 #include <aws/groundstation/model/AntennaDownlinkConfig.h>
 #include <aws/groundstation/model/AntennaDownlinkDemodDecodeConfig.h>
+#include <aws/groundstation/model/AntennaListItem.h>
 #include <aws/groundstation/model/AntennaUplinkConfig.h>
 #include <aws/groundstation/model/AuditResults.h>
 #include <aws/groundstation/model/AwsGroundStationAgentEndpoint.h>
@@ -43,7 +44,9 @@
 #include <aws/groundstation/model/ConfigTypeData.h>
 #include <aws/groundstation/model/ConnectionDetails.h>
 #include <aws/groundstation/model/ContactData.h>
+#include <aws/groundstation/model/ContactReservationDetails.h>
 #include <aws/groundstation/model/ContactStatus.h>
+#include <aws/groundstation/model/ContactVersion.h>
 #include <aws/groundstation/model/CreateConfigRequest.h>
 #include <aws/groundstation/model/CreateConfigResult.h>
 #include <aws/groundstation/model/CreateDataflowEndpointGroupRequest.h>
@@ -73,6 +76,8 @@
 #include <aws/groundstation/model/DependencyException.h>
 #include <aws/groundstation/model/DescribeContactRequest.h>
 #include <aws/groundstation/model/DescribeContactResult.h>
+#include <aws/groundstation/model/DescribeContactVersionRequest.h>
+#include <aws/groundstation/model/DescribeContactVersionResult.h>
 #include <aws/groundstation/model/DescribeEphemerisRequest.h>
 #include <aws/groundstation/model/DescribeEphemerisResult.h>
 #include <aws/groundstation/model/Destination.h>
@@ -117,19 +122,26 @@
 #include <aws/groundstation/model/GetSatelliteRequest.h>
 #include <aws/groundstation/model/GetSatelliteResult.h>
 #include <aws/groundstation/model/GroundStationData.h>
+#include <aws/groundstation/model/GroundStationReservationListItem.h>
 #include <aws/groundstation/model/ISO8601TimeRange.h>
 #include <aws/groundstation/model/IntegerRange.h>
 #include <aws/groundstation/model/InvalidParameterException.h>
 #include <aws/groundstation/model/KinesisDataStreamData.h>
 #include <aws/groundstation/model/KmsKey.h>
+#include <aws/groundstation/model/ListAntennasRequest.h>
+#include <aws/groundstation/model/ListAntennasResult.h>
 #include <aws/groundstation/model/ListConfigsRequest.h>
 #include <aws/groundstation/model/ListConfigsResult.h>
+#include <aws/groundstation/model/ListContactVersionsRequest.h>
+#include <aws/groundstation/model/ListContactVersionsResult.h>
 #include <aws/groundstation/model/ListContactsRequest.h>
 #include <aws/groundstation/model/ListContactsResult.h>
 #include <aws/groundstation/model/ListDataflowEndpointGroupsRequest.h>
 #include <aws/groundstation/model/ListDataflowEndpointGroupsResult.h>
 #include <aws/groundstation/model/ListEphemeridesRequest.h>
 #include <aws/groundstation/model/ListEphemeridesResult.h>
+#include <aws/groundstation/model/ListGroundStationReservationsRequest.h>
+#include <aws/groundstation/model/ListGroundStationReservationsResult.h>
 #include <aws/groundstation/model/ListGroundStationsRequest.h>
 #include <aws/groundstation/model/ListGroundStationsResult.h>
 #include <aws/groundstation/model/ListMissionProfilesRequest.h>
@@ -138,14 +150,19 @@
 #include <aws/groundstation/model/ListSatellitesResult.h>
 #include <aws/groundstation/model/ListTagsForResourceRequest.h>
 #include <aws/groundstation/model/ListTagsForResourceResult.h>
+#include <aws/groundstation/model/MaintenanceReservationDetails.h>
+#include <aws/groundstation/model/MaintenanceType.h>
 #include <aws/groundstation/model/MissionProfileListItem.h>
 #include <aws/groundstation/model/OEMEphemeris.h>
+#include <aws/groundstation/model/OemProgramTrackSettings.h>
 #include <aws/groundstation/model/Polarization.h>
 #include <aws/groundstation/model/ProgramTrackSettings.h>
 #include <aws/groundstation/model/RangedConnectionDetails.h>
 #include <aws/groundstation/model/RangedSocketAddress.h>
 #include <aws/groundstation/model/RegisterAgentRequest.h>
 #include <aws/groundstation/model/RegisterAgentResult.h>
+#include <aws/groundstation/model/ReservationDetails.h>
+#include <aws/groundstation/model/ReservationType.h>
 #include <aws/groundstation/model/ReserveContactRequest.h>
 #include <aws/groundstation/model/ReserveContactResult.h>
 #include <aws/groundstation/model/ResourceLimitExceededException.h>
@@ -167,6 +184,7 @@
 #include <aws/groundstation/model/TelemetrySinkType.h>
 #include <aws/groundstation/model/TimeAzEl.h>
 #include <aws/groundstation/model/TimeRange.h>
+#include <aws/groundstation/model/TleProgramTrackSettings.h>
 #include <aws/groundstation/model/TrackingConfig.h>
 #include <aws/groundstation/model/TrackingOverrides.h>
 #include <aws/groundstation/model/UntagResourceRequest.h>
@@ -175,6 +193,8 @@
 #include <aws/groundstation/model/UpdateAgentStatusResult.h>
 #include <aws/groundstation/model/UpdateConfigRequest.h>
 #include <aws/groundstation/model/UpdateConfigResult.h>
+#include <aws/groundstation/model/UpdateContactRequest.h>
+#include <aws/groundstation/model/UpdateContactResult.h>
 #include <aws/groundstation/model/UpdateEphemerisRequest.h>
 #include <aws/groundstation/model/UpdateEphemerisResult.h>
 #include <aws/groundstation/model/UpdateMissionProfileRequest.h>
@@ -185,6 +205,8 @@
 #include <aws/groundstation/model/UplinkDataflowDetails.h>
 #include <aws/groundstation/model/UplinkEchoConfig.h>
 #include <aws/groundstation/model/UplinkSpectrumConfig.h>
+#include <aws/groundstation/model/VersionFailureReasonCode.h>
+#include <aws/groundstation/model/VersionStatus.h>
 
 using GroundStationIncludeTest = ::testing::Test;
 

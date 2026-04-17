@@ -3564,6 +3564,22 @@ class Capabilities {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ability to generate analysis using AI</p>
+   */
+  inline CapabilityState GetGenerateAnalyses() const { return m_generateAnalyses; }
+  inline bool GenerateAnalysesHasBeenSet() const { return m_generateAnalysesHasBeenSet; }
+  inline void SetGenerateAnalyses(CapabilityState value) {
+    m_generateAnalysesHasBeenSet = true;
+    m_generateAnalyses = value;
+  }
+  inline Capabilities& WithGenerateAnalyses(CapabilityState value) {
+    SetGenerateAnalyses(value);
+    return *this;
+  }
+  ///@}
  private:
   CapabilityState m_exportToCsv{CapabilityState::NOT_SET};
 
@@ -4004,6 +4020,8 @@ class Capabilities {
   CapabilityState m_extension{CapabilityState::NOT_SET};
 
   CapabilityState m_manageSharedFolders{CapabilityState::NOT_SET};
+
+  CapabilityState m_generateAnalyses{CapabilityState::NOT_SET};
   bool m_exportToCsvHasBeenSet = false;
   bool m_exportToExcelHasBeenSet = false;
   bool m_exportToPdfHasBeenSet = false;
@@ -4224,6 +4242,7 @@ class Capabilities {
   bool m_selfUpgradeUserRoleHasBeenSet = false;
   bool m_extensionHasBeenSet = false;
   bool m_manageSharedFoldersHasBeenSet = false;
+  bool m_generateAnalysesHasBeenSet = false;
 };
 
 }  // namespace Model

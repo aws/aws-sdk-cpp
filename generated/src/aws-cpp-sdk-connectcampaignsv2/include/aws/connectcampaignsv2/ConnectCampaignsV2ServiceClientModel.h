@@ -72,6 +72,7 @@ class DeleteCampaignRequest;
 class DeleteCampaignChannelSubtypeConfigRequest;
 class DeleteCampaignCommunicationLimitsRequest;
 class DeleteCampaignCommunicationTimeRequest;
+class DeleteCampaignEntryLimitsRequest;
 class DeleteConnectInstanceConfigRequest;
 class DeleteConnectInstanceIntegrationRequest;
 class DeleteInstanceOnboardingJobRequest;
@@ -98,6 +99,7 @@ class UntagResourceRequest;
 class UpdateCampaignChannelSubtypeConfigRequest;
 class UpdateCampaignCommunicationLimitsRequest;
 class UpdateCampaignCommunicationTimeRequest;
+class UpdateCampaignEntryLimitsRequest;
 class UpdateCampaignFlowAssociationRequest;
 class UpdateCampaignNameRequest;
 class UpdateCampaignScheduleRequest;
@@ -110,6 +112,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, ConnectCampaignsV2Error> DeleteCampai
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectCampaignsV2Error> DeleteCampaignChannelSubtypeConfigOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectCampaignsV2Error> DeleteCampaignCommunicationLimitsOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectCampaignsV2Error> DeleteCampaignCommunicationTimeOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, ConnectCampaignsV2Error> DeleteCampaignEntryLimitsOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectCampaignsV2Error> DeleteConnectInstanceConfigOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectCampaignsV2Error> DeleteConnectInstanceIntegrationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectCampaignsV2Error> DeleteInstanceOnboardingJobOutcome;
@@ -136,6 +139,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, ConnectCampaignsV2Error> UntagResourc
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectCampaignsV2Error> UpdateCampaignChannelSubtypeConfigOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectCampaignsV2Error> UpdateCampaignCommunicationLimitsOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectCampaignsV2Error> UpdateCampaignCommunicationTimeOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, ConnectCampaignsV2Error> UpdateCampaignEntryLimitsOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectCampaignsV2Error> UpdateCampaignFlowAssociationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectCampaignsV2Error> UpdateCampaignNameOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectCampaignsV2Error> UpdateCampaignScheduleOutcome;
@@ -148,6 +152,7 @@ typedef std::future<DeleteCampaignOutcome> DeleteCampaignOutcomeCallable;
 typedef std::future<DeleteCampaignChannelSubtypeConfigOutcome> DeleteCampaignChannelSubtypeConfigOutcomeCallable;
 typedef std::future<DeleteCampaignCommunicationLimitsOutcome> DeleteCampaignCommunicationLimitsOutcomeCallable;
 typedef std::future<DeleteCampaignCommunicationTimeOutcome> DeleteCampaignCommunicationTimeOutcomeCallable;
+typedef std::future<DeleteCampaignEntryLimitsOutcome> DeleteCampaignEntryLimitsOutcomeCallable;
 typedef std::future<DeleteConnectInstanceConfigOutcome> DeleteConnectInstanceConfigOutcomeCallable;
 typedef std::future<DeleteConnectInstanceIntegrationOutcome> DeleteConnectInstanceIntegrationOutcomeCallable;
 typedef std::future<DeleteInstanceOnboardingJobOutcome> DeleteInstanceOnboardingJobOutcomeCallable;
@@ -174,6 +179,7 @@ typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateCampaignChannelSubtypeConfigOutcome> UpdateCampaignChannelSubtypeConfigOutcomeCallable;
 typedef std::future<UpdateCampaignCommunicationLimitsOutcome> UpdateCampaignCommunicationLimitsOutcomeCallable;
 typedef std::future<UpdateCampaignCommunicationTimeOutcome> UpdateCampaignCommunicationTimeOutcomeCallable;
+typedef std::future<UpdateCampaignEntryLimitsOutcome> UpdateCampaignEntryLimitsOutcomeCallable;
 typedef std::future<UpdateCampaignFlowAssociationOutcome> UpdateCampaignFlowAssociationOutcomeCallable;
 typedef std::future<UpdateCampaignNameOutcome> UpdateCampaignNameOutcomeCallable;
 typedef std::future<UpdateCampaignScheduleOutcome> UpdateCampaignScheduleOutcomeCallable;
@@ -202,6 +208,9 @@ typedef std::function<void(const ConnectCampaignsV2Client*, const Model::DeleteC
                            const Model::DeleteCampaignCommunicationTimeOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteCampaignCommunicationTimeResponseReceivedHandler;
+typedef std::function<void(const ConnectCampaignsV2Client*, const Model::DeleteCampaignEntryLimitsRequest&,
+                           const Model::DeleteCampaignEntryLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteCampaignEntryLimitsResponseReceivedHandler;
 typedef std::function<void(const ConnectCampaignsV2Client*, const Model::DeleteConnectInstanceConfigRequest&,
                            const Model::DeleteConnectInstanceConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteConnectInstanceConfigResponseReceivedHandler;
@@ -290,6 +299,9 @@ typedef std::function<void(const ConnectCampaignsV2Client*, const Model::UpdateC
                            const Model::UpdateCampaignCommunicationTimeOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateCampaignCommunicationTimeResponseReceivedHandler;
+typedef std::function<void(const ConnectCampaignsV2Client*, const Model::UpdateCampaignEntryLimitsRequest&,
+                           const Model::UpdateCampaignEntryLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateCampaignEntryLimitsResponseReceivedHandler;
 typedef std::function<void(const ConnectCampaignsV2Client*, const Model::UpdateCampaignFlowAssociationRequest&,
                            const Model::UpdateCampaignFlowAssociationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

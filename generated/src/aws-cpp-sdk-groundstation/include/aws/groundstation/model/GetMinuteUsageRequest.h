@@ -12,7 +12,8 @@ namespace GroundStation {
 namespace Model {
 
 /**
- * <p/><p><h3>See Also:</h3>   <a
+ * <p>Input for the <code>GetMinuteUsage</code> operation.</p><p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetMinuteUsageRequest">AWS
  * API Reference</a></p>
  */

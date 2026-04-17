@@ -50,6 +50,14 @@ FilterDropDownControl& FilterDropDownControl::operator=(JsonView jsonValue) {
     m_commitMode = CommitModeMapper::GetCommitModeForName(jsonValue.GetString("CommitMode"));
     m_commitModeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ControlSortConfigurations")) {
+    Aws::Utils::Array<JsonView> controlSortConfigurationsJsonList = jsonValue.GetArray("ControlSortConfigurations");
+    for (unsigned controlSortConfigurationsIndex = 0; controlSortConfigurationsIndex < controlSortConfigurationsJsonList.GetLength();
+         ++controlSortConfigurationsIndex) {
+      m_controlSortConfigurations.push_back(controlSortConfigurationsJsonList[controlSortConfigurationsIndex].AsObject());
+    }
+    m_controlSortConfigurationsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -86,6 +94,16 @@ JsonValue FilterDropDownControl::Jsonize() const {
 
   if (m_commitModeHasBeenSet) {
     payload.WithString("CommitMode", CommitModeMapper::GetNameForCommitMode(m_commitMode));
+  }
+
+  if (m_controlSortConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> controlSortConfigurationsJsonList(m_controlSortConfigurations.size());
+    for (unsigned controlSortConfigurationsIndex = 0; controlSortConfigurationsIndex < controlSortConfigurationsJsonList.GetLength();
+         ++controlSortConfigurationsIndex) {
+      controlSortConfigurationsJsonList[controlSortConfigurationsIndex].AsObject(
+          m_controlSortConfigurations[controlSortConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("ControlSortConfigurations", std::move(controlSortConfigurationsJsonList));
   }
 
   return payload;

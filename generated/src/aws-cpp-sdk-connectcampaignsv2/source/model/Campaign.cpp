@@ -54,6 +54,10 @@ Campaign& Campaign::operator=(JsonView jsonValue) {
     m_schedule = jsonValue.GetObject("schedule");
     m_scheduleHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("entryLimitsConfig")) {
+    m_entryLimitsConfig = jsonValue.GetObject("entryLimitsConfig");
+    m_entryLimitsConfigHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("communicationTimeConfig")) {
     m_communicationTimeConfig = jsonValue.GetObject("communicationTimeConfig");
     m_communicationTimeConfigHasBeenSet = true;
@@ -109,6 +113,10 @@ JsonValue Campaign::Jsonize() const {
 
   if (m_scheduleHasBeenSet) {
     payload.WithObject("schedule", m_schedule.Jsonize());
+  }
+
+  if (m_entryLimitsConfigHasBeenSet) {
+    payload.WithObject("entryLimitsConfig", m_entryLimitsConfig.Jsonize());
   }
 
   if (m_communicationTimeConfigHasBeenSet) {

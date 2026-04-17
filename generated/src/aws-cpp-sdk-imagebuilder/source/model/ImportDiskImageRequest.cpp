@@ -59,6 +59,14 @@ Aws::String ImportDiskImageRequest::SerializePayload() const {
     payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
+  if (m_registerImageOptionsHasBeenSet) {
+    payload.WithObject("registerImageOptions", m_registerImageOptions.Jsonize());
+  }
+
+  if (m_windowsConfigurationHasBeenSet) {
+    payload.WithObject("windowsConfiguration", m_windowsConfiguration.Jsonize());
+  }
+
   if (m_clientTokenHasBeenSet) {
     payload.WithString("clientToken", m_clientToken);
   }

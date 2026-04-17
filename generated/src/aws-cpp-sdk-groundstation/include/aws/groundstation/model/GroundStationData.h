@@ -33,7 +33,7 @@ class GroundStationData {
 
   ///@{
   /**
-   * <p>UUID of a ground station.</p>
+   * <p>ID of a ground station.</p>
    */
   inline const Aws::String& GetGroundStationId() const { return m_groundStationId; }
   inline bool GroundStationIdHasBeenSet() const { return m_groundStationIdHasBeenSet; }

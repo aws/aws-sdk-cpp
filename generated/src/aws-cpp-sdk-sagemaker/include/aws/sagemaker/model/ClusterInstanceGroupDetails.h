@@ -16,6 +16,7 @@
 #include <aws/sagemaker/model/ClusterInstanceTypeDetail.h>
 #include <aws/sagemaker/model/ClusterKubernetesConfigDetails.h>
 #include <aws/sagemaker/model/ClusterLifeCycleConfig.h>
+#include <aws/sagemaker/model/ClusterNetworkInterfaceDetails.h>
 #include <aws/sagemaker/model/ClusterSlurmConfigDetails.h>
 #include <aws/sagemaker/model/DeepHealthCheckType.h>
 #include <aws/sagemaker/model/DeploymentConfiguration.h>
@@ -573,6 +574,24 @@ class ClusterInstanceGroupDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The network interface configuration for the instance group.</p>
+   */
+  inline const ClusterNetworkInterfaceDetails& GetNetworkInterface() const { return m_networkInterface; }
+  inline bool NetworkInterfaceHasBeenSet() const { return m_networkInterfaceHasBeenSet; }
+  template <typename NetworkInterfaceT = ClusterNetworkInterfaceDetails>
+  void SetNetworkInterface(NetworkInterfaceT&& value) {
+    m_networkInterfaceHasBeenSet = true;
+    m_networkInterface = std::forward<NetworkInterfaceT>(value);
+  }
+  template <typename NetworkInterfaceT = ClusterNetworkInterfaceDetails>
+  ClusterInstanceGroupDetails& WithNetworkInterface(NetworkInterfaceT&& value) {
+    SetNetworkInterface(std::forward<NetworkInterfaceT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_currentCount{0};
 
@@ -625,6 +644,8 @@ class ClusterInstanceGroupDetails {
   DeploymentConfiguration m_activeSoftwareUpdateConfig;
 
   ClusterSlurmConfigDetails m_slurmConfig;
+
+  ClusterNetworkInterfaceDetails m_networkInterface;
   bool m_currentCountHasBeenSet = false;
   bool m_targetCountHasBeenSet = false;
   bool m_minCountHasBeenSet = false;
@@ -651,6 +672,7 @@ class ClusterInstanceGroupDetails {
   bool m_softwareUpdateStatusHasBeenSet = false;
   bool m_activeSoftwareUpdateConfigHasBeenSet = false;
   bool m_slurmConfigHasBeenSet = false;
+  bool m_networkInterfaceHasBeenSet = false;
 };
 
 }  // namespace Model

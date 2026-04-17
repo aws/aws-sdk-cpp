@@ -62,7 +62,7 @@ class GlobalCluster {
 
   ///@{
   /**
-   * <p>An immutable identifier for the global database that is unique within in all
+   * <p>An immutable identifier for the global database that is unique within all
    * regions. This identifier is found in CloudTrail log entries whenever the KMS key
    * for the DB cluster is accessed.</p>
    */

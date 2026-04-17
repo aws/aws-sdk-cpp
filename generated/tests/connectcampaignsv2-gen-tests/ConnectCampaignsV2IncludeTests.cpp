@@ -43,6 +43,7 @@
 #include <aws/connectcampaignsv2/model/DeleteCampaignChannelSubtypeConfigRequest.h>
 #include <aws/connectcampaignsv2/model/DeleteCampaignCommunicationLimitsRequest.h>
 #include <aws/connectcampaignsv2/model/DeleteCampaignCommunicationTimeRequest.h>
+#include <aws/connectcampaignsv2/model/DeleteCampaignEntryLimitsRequest.h>
 #include <aws/connectcampaignsv2/model/DeleteCampaignRequest.h>
 #include <aws/connectcampaignsv2/model/DeleteConnectInstanceConfigRequest.h>
 #include <aws/connectcampaignsv2/model/DeleteConnectInstanceIntegrationRequest.h>
@@ -55,6 +56,7 @@
 #include <aws/connectcampaignsv2/model/EmailOutboundMode.h>
 #include <aws/connectcampaignsv2/model/EncryptionConfig.h>
 #include <aws/connectcampaignsv2/model/EncryptionType.h>
+#include <aws/connectcampaignsv2/model/EntryLimitsConfig.h>
 #include <aws/connectcampaignsv2/model/EventTrigger.h>
 #include <aws/connectcampaignsv2/model/EventType.h>
 #include <aws/connectcampaignsv2/model/ExternalCampaignType.h>
@@ -146,6 +148,7 @@
 #include <aws/connectcampaignsv2/model/UpdateCampaignChannelSubtypeConfigRequest.h>
 #include <aws/connectcampaignsv2/model/UpdateCampaignCommunicationLimitsRequest.h>
 #include <aws/connectcampaignsv2/model/UpdateCampaignCommunicationTimeRequest.h>
+#include <aws/connectcampaignsv2/model/UpdateCampaignEntryLimitsRequest.h>
 #include <aws/connectcampaignsv2/model/UpdateCampaignFlowAssociationRequest.h>
 #include <aws/connectcampaignsv2/model/UpdateCampaignNameRequest.h>
 #include <aws/connectcampaignsv2/model/UpdateCampaignScheduleRequest.h>

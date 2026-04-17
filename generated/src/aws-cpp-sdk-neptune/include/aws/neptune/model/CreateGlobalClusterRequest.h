@@ -128,7 +128,7 @@ class CreateGlobalClusterRequest : public NeptuneRequest {
 
   ///@{
   /**
-   * <p>The name for the new global database (up to 64 alpha-numeric characters.</p>
+   * <p>The name for the new global database (up to 64 alpha-numeric characters).</p>
    */
   inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
   inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }

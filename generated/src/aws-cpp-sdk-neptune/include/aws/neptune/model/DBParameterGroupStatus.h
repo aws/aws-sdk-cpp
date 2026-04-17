@@ -39,7 +39,7 @@ class DBParameterGroupStatus {
 
   ///@{
   /**
-   * <p>The name of the DP parameter group.</p>
+   * <p>The name of the DB parameter group.</p>
    */
   inline const Aws::String& GetDBParameterGroupName() const { return m_dBParameterGroupName; }
   inline bool DBParameterGroupNameHasBeenSet() const { return m_dBParameterGroupNameHasBeenSet; }

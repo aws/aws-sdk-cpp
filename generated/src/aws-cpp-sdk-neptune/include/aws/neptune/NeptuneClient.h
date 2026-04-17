@@ -1954,7 +1954,7 @@ class AWS_NEPTUNE_API NeptuneClient : public Aws::Client::AWSXMLClient,
   /**
    * <p>Detaches a Neptune DB cluster from a Neptune global database. A secondary
    * cluster becomes a normal standalone cluster with read-write capability instead
-   * of being read-only, and no longer receives data from a the primary
+   * of being read-only, and no longer receives data from the primary
    * cluster.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RemoveFromGlobalCluster">AWS
    * API Reference</a></p>

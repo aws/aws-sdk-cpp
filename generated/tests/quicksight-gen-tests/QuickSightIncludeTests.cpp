@@ -298,6 +298,8 @@
 #include <aws/quicksight/model/ContributionAnalysisFactor.h>
 #include <aws/quicksight/model/ContributionAnalysisSortType.h>
 #include <aws/quicksight/model/ContributionAnalysisTimeRanges.h>
+#include <aws/quicksight/model/ControlSortConfiguration.h>
+#include <aws/quicksight/model/ControlSortDirection.h>
 #include <aws/quicksight/model/Coordinate.h>
 #include <aws/quicksight/model/CreateAccountCustomizationRequest.h>
 #include <aws/quicksight/model/CreateAccountCustomizationResult.h>
@@ -376,6 +378,7 @@
 #include <aws/quicksight/model/Dashboard.h>
 #include <aws/quicksight/model/DashboardBehavior.h>
 #include <aws/quicksight/model/DashboardCustomizationStatus.h>
+#include <aws/quicksight/model/DashboardCustomizationSummaryConfigurations.h>
 #include <aws/quicksight/model/DashboardCustomizationVisualOptions.h>
 #include <aws/quicksight/model/DashboardError.h>
 #include <aws/quicksight/model/DashboardErrorType.h>
@@ -1335,6 +1338,7 @@
 #include <aws/quicksight/model/S3KnowledgeBaseParameters.h>
 #include <aws/quicksight/model/S3Parameters.h>
 #include <aws/quicksight/model/S3Source.h>
+#include <aws/quicksight/model/S3TablesParameters.h>
 #include <aws/quicksight/model/SaaSTable.h>
 #include <aws/quicksight/model/SameSheetTargetVisualConfiguration.h>
 #include <aws/quicksight/model/SankeyDiagramAggregatedFieldWells.h>
@@ -1381,6 +1385,7 @@
 #include <aws/quicksight/model/SectionPageBreakStatus.h>
 #include <aws/quicksight/model/SectionStyle.h>
 #include <aws/quicksight/model/SelectAllValueOptions.h>
+#include <aws/quicksight/model/SelectableValuesSort.h>
 #include <aws/quicksight/model/SelectedFieldOptions.h>
 #include <aws/quicksight/model/SelectedSheetsFilterScopeConfiguration.h>
 #include <aws/quicksight/model/SelectedTooltipType.h>

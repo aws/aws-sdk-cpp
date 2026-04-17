@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/AmazonQInQuickSightConsoleConfigurations.h>
+#include <aws/quicksight/model/DashboardCustomizationSummaryConfigurations.h>
 #include <aws/quicksight/model/RecentSnapshotsConfigurations.h>
 #include <aws/quicksight/model/SchedulesConfigurations.h>
 #include <aws/quicksight/model/SharedViewConfigurations.h>
@@ -145,6 +146,27 @@ class RegisteredUserConsoleFeatureConfigurations {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The dashboard customization summary configuration for an embedded Quick Sight
+   * console.</p>
+   */
+  inline const DashboardCustomizationSummaryConfigurations& GetDashboardCustomizationSummary() const {
+    return m_dashboardCustomizationSummary;
+  }
+  inline bool DashboardCustomizationSummaryHasBeenSet() const { return m_dashboardCustomizationSummaryHasBeenSet; }
+  template <typename DashboardCustomizationSummaryT = DashboardCustomizationSummaryConfigurations>
+  void SetDashboardCustomizationSummary(DashboardCustomizationSummaryT&& value) {
+    m_dashboardCustomizationSummaryHasBeenSet = true;
+    m_dashboardCustomizationSummary = std::forward<DashboardCustomizationSummaryT>(value);
+  }
+  template <typename DashboardCustomizationSummaryT = DashboardCustomizationSummaryConfigurations>
+  RegisteredUserConsoleFeatureConfigurations& WithDashboardCustomizationSummary(DashboardCustomizationSummaryT&& value) {
+    SetDashboardCustomizationSummary(std::forward<DashboardCustomizationSummaryT>(value));
+    return *this;
+  }
+  ///@}
  private:
   StatePersistenceConfigurations m_statePersistence;
 
@@ -157,12 +179,15 @@ class RegisteredUserConsoleFeatureConfigurations {
   RecentSnapshotsConfigurations m_recentSnapshots;
 
   ThresholdAlertsConfigurations m_thresholdAlerts;
+
+  DashboardCustomizationSummaryConfigurations m_dashboardCustomizationSummary;
   bool m_statePersistenceHasBeenSet = false;
   bool m_sharedViewHasBeenSet = false;
   bool m_amazonQInQuickSightHasBeenSet = false;
   bool m_schedulesHasBeenSet = false;
   bool m_recentSnapshotsHasBeenSet = false;
   bool m_thresholdAlertsHasBeenSet = false;
+  bool m_dashboardCustomizationSummaryHasBeenSet = false;
 };
 
 }  // namespace Model

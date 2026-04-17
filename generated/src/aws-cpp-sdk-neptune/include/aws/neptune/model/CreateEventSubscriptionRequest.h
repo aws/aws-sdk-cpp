@@ -160,7 +160,7 @@ class CreateEventSubscriptionRequest : public NeptuneRequest {
   ///@{
   /**
    * <p> A Boolean value; set to <b>true</b> to activate the subscription, set to
-   * <b>false</b> to create the subscription but not active it.</p>
+   * <b>false</b> to create the subscription but not activate it.</p>
    */
   inline bool GetEnabled() const { return m_enabled; }
   inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }

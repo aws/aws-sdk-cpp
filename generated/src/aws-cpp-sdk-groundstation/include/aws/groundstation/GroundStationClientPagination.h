@@ -6,10 +6,13 @@
 #pragma once
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/groundstation/GroundStationClient.h>
+#include <aws/groundstation/model/ListAntennasPaginationTraits.h>
 #include <aws/groundstation/model/ListConfigsPaginationTraits.h>
+#include <aws/groundstation/model/ListContactVersionsPaginationTraits.h>
 #include <aws/groundstation/model/ListContactsPaginationTraits.h>
 #include <aws/groundstation/model/ListDataflowEndpointGroupsPaginationTraits.h>
 #include <aws/groundstation/model/ListEphemeridesPaginationTraits.h>
+#include <aws/groundstation/model/ListGroundStationReservationsPaginationTraits.h>
 #include <aws/groundstation/model/ListGroundStationsPaginationTraits.h>
 #include <aws/groundstation/model/ListMissionProfilesPaginationTraits.h>
 #include <aws/groundstation/model/ListSatellitesPaginationTraits.h>
@@ -17,15 +20,23 @@
 namespace Aws {
 namespace GroundStation {
 
+using ListAntennasPaginator = Aws::Utils::Pagination::Paginator<GroundStationClient, Model::ListAntennasRequest,
+                                                                Pagination::ListAntennasPaginationTraits<GroundStationClient>>;
 using ListConfigsPaginator = Aws::Utils::Pagination::Paginator<GroundStationClient, Model::ListConfigsRequest,
                                                                Pagination::ListConfigsPaginationTraits<GroundStationClient>>;
 using ListContactsPaginator = Aws::Utils::Pagination::Paginator<GroundStationClient, Model::ListContactsRequest,
                                                                 Pagination::ListContactsPaginationTraits<GroundStationClient>>;
+using ListContactVersionsPaginator =
+    Aws::Utils::Pagination::Paginator<GroundStationClient, Model::ListContactVersionsRequest,
+                                      Pagination::ListContactVersionsPaginationTraits<GroundStationClient>>;
 using ListDataflowEndpointGroupsPaginator =
     Aws::Utils::Pagination::Paginator<GroundStationClient, Model::ListDataflowEndpointGroupsRequest,
                                       Pagination::ListDataflowEndpointGroupsPaginationTraits<GroundStationClient>>;
 using ListEphemeridesPaginator = Aws::Utils::Pagination::Paginator<GroundStationClient, Model::ListEphemeridesRequest,
                                                                    Pagination::ListEphemeridesPaginationTraits<GroundStationClient>>;
+using ListGroundStationReservationsPaginator =
+    Aws::Utils::Pagination::Paginator<GroundStationClient, Model::ListGroundStationReservationsRequest,
+                                      Pagination::ListGroundStationReservationsPaginationTraits<GroundStationClient>>;
 using ListGroundStationsPaginator = Aws::Utils::Pagination::Paginator<GroundStationClient, Model::ListGroundStationsRequest,
                                                                       Pagination::ListGroundStationsPaginationTraits<GroundStationClient>>;
 using ListMissionProfilesPaginator =

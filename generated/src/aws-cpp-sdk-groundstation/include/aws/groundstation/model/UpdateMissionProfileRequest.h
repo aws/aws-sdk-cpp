@@ -17,7 +17,8 @@ namespace GroundStation {
 namespace Model {
 
 /**
- * <p> </p><p><h3>See Also:</h3>   <a
+ * <p>Input for the <code>UpdateMissionProfile</code> operation. </p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateMissionProfileRequest">AWS
  * API Reference</a></p>
  */
@@ -71,7 +72,7 @@ class UpdateMissionProfileRequest : public GroundStationRequest {
 
   ///@{
   /**
-   * <p>Amount of time after a contact ends that you’d like to receive a Ground
+   * <p>Amount of time after a contact ends that you'd like to receive a Ground
    * Station Contact State Change event indicating the pass has finished.</p>
    */
   inline int GetContactPrePassDurationSeconds() const { return m_contactPrePassDurationSeconds; }
@@ -88,7 +89,7 @@ class UpdateMissionProfileRequest : public GroundStationRequest {
 
   ///@{
   /**
-   * <p>Amount of time after a contact ends that you’d like to receive a Ground
+   * <p>Amount of time after a contact ends that you'd like to receive a Ground
    * Station Contact State Change event indicating the pass has finished.</p>
    */
   inline int GetContactPostPassDurationSeconds() const { return m_contactPostPassDurationSeconds; }
@@ -105,7 +106,7 @@ class UpdateMissionProfileRequest : public GroundStationRequest {
 
   ///@{
   /**
-   * <p>Smallest amount of time in seconds that you’d like to see for an available
+   * <p>Smallest amount of time in seconds that you'd like to see for an available
    * contact. AWS Ground Station will not present you with contacts shorter than this
    * duration.</p>
    */

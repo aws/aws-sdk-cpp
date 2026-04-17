@@ -17,7 +17,8 @@ namespace GroundStation {
 namespace Model {
 
 /**
- * <p> </p><p><h3>See Also:</h3>   <a
+ * <p>Input for the <code>CreateConfig</code> operation. </p><p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CreateConfigRequest">AWS
  * API Reference</a></p>
  */

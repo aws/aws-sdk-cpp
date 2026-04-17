@@ -128,7 +128,8 @@ class TestCase {
 
   ///@{
   /**
-   * <p>Defines the test attributes for precise data representation.</p>
+   * <p>Defines the test attributes for precise data representation. The value must
+   * be a valid JSON string.</p>
    */
   inline const Aws::String& GetInitializationData() const { return m_initializationData; }
   inline bool InitializationDataHasBeenSet() const { return m_initializationDataHasBeenSet; }

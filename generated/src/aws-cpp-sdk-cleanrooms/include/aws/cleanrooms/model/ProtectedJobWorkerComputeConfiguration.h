@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/cleanrooms/model/ProtectedJobWorkerComputeType.h>
+#include <aws/cleanrooms/model/WorkerComputeConfigurationProperties.h>
 
 #include <utility>
 
@@ -63,12 +64,35 @@ class ProtectedJobWorkerComputeConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration properties for the worker compute environment. These
+   * properties allow you to customize the compute settings for your Clean Rooms
+   * workloads.</p>
+   */
+  inline const WorkerComputeConfigurationProperties& GetProperties() const { return m_properties; }
+  inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
+  template <typename PropertiesT = WorkerComputeConfigurationProperties>
+  void SetProperties(PropertiesT&& value) {
+    m_propertiesHasBeenSet = true;
+    m_properties = std::forward<PropertiesT>(value);
+  }
+  template <typename PropertiesT = WorkerComputeConfigurationProperties>
+  ProtectedJobWorkerComputeConfiguration& WithProperties(PropertiesT&& value) {
+    SetProperties(std::forward<PropertiesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ProtectedJobWorkerComputeType m_type{ProtectedJobWorkerComputeType::NOT_SET};
 
   int m_number{0};
+
+  WorkerComputeConfigurationProperties m_properties;
   bool m_typeHasBeenSet = false;
   bool m_numberHasBeenSet = false;
+  bool m_propertiesHasBeenSet = false;
 };
 
 }  // namespace Model

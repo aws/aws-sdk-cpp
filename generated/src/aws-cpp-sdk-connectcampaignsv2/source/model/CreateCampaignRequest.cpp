@@ -43,6 +43,10 @@ Aws::String CreateCampaignRequest::SerializePayload() const {
     payload.WithObject("schedule", m_schedule.Jsonize());
   }
 
+  if (m_entryLimitsConfigHasBeenSet) {
+    payload.WithObject("entryLimitsConfig", m_entryLimitsConfig.Jsonize());
+  }
+
   if (m_communicationTimeConfigHasBeenSet) {
     payload.WithObject("communicationTimeConfig", m_communicationTimeConfig.Jsonize());
   }

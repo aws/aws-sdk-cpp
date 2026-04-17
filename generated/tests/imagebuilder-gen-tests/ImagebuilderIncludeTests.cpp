@@ -253,6 +253,7 @@
 #include <aws/imagebuilder/model/PutImagePolicyResult.h>
 #include <aws/imagebuilder/model/PutImageRecipePolicyRequest.h>
 #include <aws/imagebuilder/model/PutImageRecipePolicyResult.h>
+#include <aws/imagebuilder/model/RegisterImageOptions.h>
 #include <aws/imagebuilder/model/Remediation.h>
 #include <aws/imagebuilder/model/RemediationRecommendation.h>
 #include <aws/imagebuilder/model/ResourceState.h>
@@ -290,6 +291,7 @@
 #include <aws/imagebuilder/model/UpdateLifecyclePolicyResult.h>
 #include <aws/imagebuilder/model/VulnerabilityIdAggregation.h>
 #include <aws/imagebuilder/model/VulnerablePackage.h>
+#include <aws/imagebuilder/model/WindowsConfiguration.h>
 #include <aws/imagebuilder/model/Workflow.h>
 #include <aws/imagebuilder/model/WorkflowConfiguration.h>
 #include <aws/imagebuilder/model/WorkflowExecutionMetadata.h>

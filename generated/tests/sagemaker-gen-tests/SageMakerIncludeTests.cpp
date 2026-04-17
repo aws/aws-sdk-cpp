@@ -222,6 +222,7 @@
 #include <aws/sagemaker/model/ClusterInstanceStorageConfig.h>
 #include <aws/sagemaker/model/ClusterInstanceType.h>
 #include <aws/sagemaker/model/ClusterInstanceTypeDetail.h>
+#include <aws/sagemaker/model/ClusterInterfaceType.h>
 #include <aws/sagemaker/model/ClusterKubernetesConfig.h>
 #include <aws/sagemaker/model/ClusterKubernetesConfigDetails.h>
 #include <aws/sagemaker/model/ClusterKubernetesConfigNodeDetails.h>
@@ -229,6 +230,8 @@
 #include <aws/sagemaker/model/ClusterKubernetesTaintEffect.h>
 #include <aws/sagemaker/model/ClusterLifeCycleConfig.h>
 #include <aws/sagemaker/model/ClusterMetadata.h>
+#include <aws/sagemaker/model/ClusterNetworkInterface.h>
+#include <aws/sagemaker/model/ClusterNetworkInterfaceDetails.h>
 #include <aws/sagemaker/model/ClusterNodeDetails.h>
 #include <aws/sagemaker/model/ClusterNodeProvisioningMode.h>
 #include <aws/sagemaker/model/ClusterNodeRecovery.h>

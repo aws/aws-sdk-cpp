@@ -31,6 +31,7 @@
 #include <aws/groundstation/model/DeleteEphemerisRequest.h>
 #include <aws/groundstation/model/DeleteMissionProfileRequest.h>
 #include <aws/groundstation/model/DescribeContactRequest.h>
+#include <aws/groundstation/model/DescribeContactVersionRequest.h>
 #include <aws/groundstation/model/DescribeEphemerisRequest.h>
 #include <aws/groundstation/model/GetAgentConfigurationRequest.h>
 #include <aws/groundstation/model/GetAgentTaskResponseUrlRequest.h>
@@ -39,10 +40,13 @@
 #include <aws/groundstation/model/GetMinuteUsageRequest.h>
 #include <aws/groundstation/model/GetMissionProfileRequest.h>
 #include <aws/groundstation/model/GetSatelliteRequest.h>
+#include <aws/groundstation/model/ListAntennasRequest.h>
 #include <aws/groundstation/model/ListConfigsRequest.h>
+#include <aws/groundstation/model/ListContactVersionsRequest.h>
 #include <aws/groundstation/model/ListContactsRequest.h>
 #include <aws/groundstation/model/ListDataflowEndpointGroupsRequest.h>
 #include <aws/groundstation/model/ListEphemeridesRequest.h>
+#include <aws/groundstation/model/ListGroundStationReservationsRequest.h>
 #include <aws/groundstation/model/ListGroundStationsRequest.h>
 #include <aws/groundstation/model/ListMissionProfilesRequest.h>
 #include <aws/groundstation/model/ListSatellitesRequest.h>
@@ -53,6 +57,7 @@
 #include <aws/groundstation/model/UntagResourceRequest.h>
 #include <aws/groundstation/model/UpdateAgentStatusRequest.h>
 #include <aws/groundstation/model/UpdateConfigRequest.h>
+#include <aws/groundstation/model/UpdateContactRequest.h>
 #include <aws/groundstation/model/UpdateEphemerisRequest.h>
 #include <aws/groundstation/model/UpdateMissionProfileRequest.h>
 #include <smithy/tracing/TracingUtils.h>
@@ -380,6 +385,31 @@ DescribeContactOutcome GroundStationClient::DescribeContact(const DescribeContac
                             : DescribeContactOutcome(std::move(result.GetError()));
 }
 
+DescribeContactVersionOutcome GroundStationClient::DescribeContactVersion(const DescribeContactVersionRequest& request) const {
+  if (!request.ContactIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeContactVersion", "Required field: ContactId, is not set");
+    return DescribeContactVersionOutcome(Aws::Client::AWSError<GroundStationErrors>(
+        GroundStationErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContactId]", false));
+  }
+  if (!request.VersionIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeContactVersion", "Required field: VersionId, is not set");
+    return DescribeContactVersionOutcome(Aws::Client::AWSError<GroundStationErrors>(
+        GroundStationErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/contact/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContactId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/versions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeContactVersionOutcome(result.GetResultWithOwnership())
+                            : DescribeContactVersionOutcome(std::move(result.GetError()));
+}
+
 DescribeEphemerisOutcome GroundStationClient::DescribeEphemeris(const DescribeEphemerisRequest& request) const {
   if (!request.EphemerisIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DescribeEphemeris", "Required field: EphemerisId, is not set");
@@ -528,6 +558,24 @@ GetSatelliteOutcome GroundStationClient::GetSatellite(const GetSatelliteRequest&
   return result.IsSuccess() ? GetSatelliteOutcome(result.GetResultWithOwnership()) : GetSatelliteOutcome(std::move(result.GetError()));
 }
 
+ListAntennasOutcome GroundStationClient::ListAntennas(const ListAntennasRequest& request) const {
+  if (!request.GroundStationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListAntennas", "Required field: GroundStationId, is not set");
+    return ListAntennasOutcome(Aws::Client::AWSError<GroundStationErrors>(GroundStationErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [GroundStationId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/groundstation/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGroundStationId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/antenna");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAntennasOutcome(result.GetResultWithOwnership()) : ListAntennasOutcome(std::move(result.GetError()));
+}
+
 ListConfigsOutcome GroundStationClient::ListConfigs(const ListConfigsRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -536,6 +584,25 @@ ListConfigsOutcome GroundStationClient::ListConfigs(const ListConfigsRequest& re
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListConfigsOutcome(result.GetResultWithOwnership()) : ListConfigsOutcome(std::move(result.GetError()));
+}
+
+ListContactVersionsOutcome GroundStationClient::ListContactVersions(const ListContactVersionsRequest& request) const {
+  if (!request.ContactIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListContactVersions", "Required field: ContactId, is not set");
+    return ListContactVersionsOutcome(Aws::Client::AWSError<GroundStationErrors>(
+        GroundStationErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContactId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/contact/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContactId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListContactVersionsOutcome(result.GetResultWithOwnership())
+                            : ListContactVersionsOutcome(std::move(result.GetError()));
 }
 
 ListContactsOutcome GroundStationClient::ListContacts(const ListContactsRequest& request) const {
@@ -568,6 +635,36 @@ ListEphemeridesOutcome GroundStationClient::ListEphemerides(const ListEphemeride
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListEphemeridesOutcome(result.GetResultWithOwnership())
                             : ListEphemeridesOutcome(std::move(result.GetError()));
+}
+
+ListGroundStationReservationsOutcome GroundStationClient::ListGroundStationReservations(
+    const ListGroundStationReservationsRequest& request) const {
+  if (!request.GroundStationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListGroundStationReservations", "Required field: GroundStationId, is not set");
+    return ListGroundStationReservationsOutcome(Aws::Client::AWSError<GroundStationErrors>(
+        GroundStationErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroundStationId]", false));
+  }
+  if (!request.StartTimeHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListGroundStationReservations", "Required field: StartTime, is not set");
+    return ListGroundStationReservationsOutcome(Aws::Client::AWSError<GroundStationErrors>(
+        GroundStationErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StartTime]", false));
+  }
+  if (!request.EndTimeHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListGroundStationReservations", "Required field: EndTime, is not set");
+    return ListGroundStationReservationsOutcome(Aws::Client::AWSError<GroundStationErrors>(
+        GroundStationErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EndTime]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/groundstation/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGroundStationId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/reservation");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListGroundStationReservationsOutcome(result.GetResultWithOwnership())
+                            : ListGroundStationReservationsOutcome(std::move(result.GetError()));
 }
 
 ListGroundStationsOutcome GroundStationClient::ListGroundStations(const ListGroundStationsRequest& request) const {
@@ -719,6 +816,24 @@ UpdateConfigOutcome GroundStationClient::UpdateConfig(const UpdateConfigRequest&
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? UpdateConfigOutcome(result.GetResultWithOwnership()) : UpdateConfigOutcome(std::move(result.GetError()));
+}
+
+UpdateContactOutcome GroundStationClient::UpdateContact(const UpdateContactRequest& request) const {
+  if (!request.ContactIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateContact", "Required field: ContactId, is not set");
+    return UpdateContactOutcome(Aws::Client::AWSError<GroundStationErrors>(GroundStationErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [ContactId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/contact/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContactId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateContactOutcome(result.GetResultWithOwnership()) : UpdateContactOutcome(std::move(result.GetError()));
 }
 
 UpdateEphemerisOutcome GroundStationClient::UpdateEphemeris(const UpdateEphemerisRequest& request) const {
