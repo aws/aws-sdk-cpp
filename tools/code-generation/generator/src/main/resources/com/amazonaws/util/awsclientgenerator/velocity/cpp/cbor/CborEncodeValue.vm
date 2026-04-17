@@ -23,7 +23,11 @@ for(const auto& item_${recursionDepth} : ${value}) {
 #elseif($shapeMember.map)
 encoder.WriteMapStart(${value}.size());
 for(const auto& item_${recursionDepth} : ${value}) {
+#if($shapeMember.mapKey.shape.enum)
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(${shapeMember.mapKey.shape.name}Mapper::GetNameFor${shapeMember.mapKey.shape.name}(item_${recursionDepth}.first).c_str()));
+#else
     encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_${recursionDepth}.first.c_str()));
+#end
 #if($shapeMember.sparse)
     if (!item_${recursionDepth}.second.has_value()) { encoder.WriteNull(); } else {
     const auto& sparseVal_${recursionDepth} = *item_${recursionDepth}.second;
