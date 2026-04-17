@@ -11,7 +11,7 @@
 \#define AWS_UNREFERENCED_PARAM(x) (&reinterpret_cast<const int &>(x))
 \#else
 \#define AWS_UNREFERENCED_PARAM(x) ((void)(x))
-\#endif
+#endif
 
 #if($serviceNamespace == "S3Crt")
 \#include <aws/core/Globals.h>
