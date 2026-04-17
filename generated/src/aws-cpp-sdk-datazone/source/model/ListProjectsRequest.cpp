@@ -37,6 +37,12 @@ void ListProjectsRequest::AddQueryStringParameters(URI& uri) const {
     ss.str("");
   }
 
+  if (m_projectCategoryHasBeenSet) {
+    ss << m_projectCategory;
+    uri.AddQueryStringParameter("projectCategory", ss.str());
+    ss.str("");
+  }
+
   if (m_nextTokenHasBeenSet) {
     ss << m_nextToken;
     uri.AddQueryStringParameter("nextToken", ss.str());

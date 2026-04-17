@@ -30,6 +30,19 @@ RecommenderConfig& RecommenderConfig::operator=(JsonView jsonValue) {
     m_inferenceConfig = jsonValue.GetObject("InferenceConfig");
     m_inferenceConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("IncludedColumns")) {
+    Aws::Map<Aws::String, JsonView> includedColumnsJsonMap = jsonValue.GetObject("IncludedColumns").GetAllObjects();
+    for (auto& includedColumnsItem : includedColumnsJsonMap) {
+      Aws::Utils::Array<JsonView> columnNamesList2JsonList = includedColumnsItem.second.AsArray();
+      Aws::Vector<Aws::String> columnNamesList2List;
+      columnNamesList2List.reserve((size_t)columnNamesList2JsonList.GetLength());
+      for (unsigned columnNamesList2Index = 0; columnNamesList2Index < columnNamesList2JsonList.GetLength(); ++columnNamesList2Index) {
+        columnNamesList2List.push_back(columnNamesList2JsonList[columnNamesList2Index].AsString());
+      }
+      m_includedColumns[includedColumnsItem.first] = std::move(columnNamesList2List);
+    }
+    m_includedColumnsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +59,18 @@ JsonValue RecommenderConfig::Jsonize() const {
 
   if (m_inferenceConfigHasBeenSet) {
     payload.WithObject("InferenceConfig", m_inferenceConfig.Jsonize());
+  }
+
+  if (m_includedColumnsHasBeenSet) {
+    JsonValue includedColumnsJsonMap;
+    for (auto& includedColumnsItem : m_includedColumns) {
+      Aws::Utils::Array<JsonValue> columnNamesListJsonList(includedColumnsItem.second.size());
+      for (unsigned columnNamesListIndex = 0; columnNamesListIndex < columnNamesListJsonList.GetLength(); ++columnNamesListIndex) {
+        columnNamesListJsonList[columnNamesListIndex].AsString(includedColumnsItem.second[columnNamesListIndex]);
+      }
+      includedColumnsJsonMap.WithArray(includedColumnsItem.first, std::move(columnNamesListJsonList));
+    }
+    payload.WithObject("IncludedColumns", std::move(includedColumnsJsonMap));
   }
 
   return payload;

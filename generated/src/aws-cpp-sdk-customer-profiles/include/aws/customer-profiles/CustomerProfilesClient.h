@@ -454,6 +454,35 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Creates a recommender schema. A recommender schema defines the set of data
+   * columns available for training recommenders and filters under a
+   * domain.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateRecommenderSchema">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateRecommenderSchemaOutcome CreateRecommenderSchema(const Model::CreateRecommenderSchemaRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateRecommenderSchema that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateRecommenderSchemaRequestT = Model::CreateRecommenderSchemaRequest>
+  Model::CreateRecommenderSchemaOutcomeCallable CreateRecommenderSchemaCallable(const CreateRecommenderSchemaRequestT& request) const {
+    return SubmitCallable(&CustomerProfilesClient::CreateRecommenderSchema, request);
+  }
+
+  /**
+   * An Async wrapper for CreateRecommenderSchema that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateRecommenderSchemaRequestT = Model::CreateRecommenderSchemaRequest>
+  void CreateRecommenderSchemaAsync(const CreateRecommenderSchemaRequestT& request,
+                                    const CreateRecommenderSchemaResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CustomerProfilesClient::CreateRecommenderSchema, request, handler, context);
+  }
+
+  /**
    * <p>Creates a segment definition associated to the given domain.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateSegmentDefinition">AWS
@@ -918,6 +947,33 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
                                     const DeleteRecommenderFilterResponseReceivedHandler& handler,
                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CustomerProfilesClient::DeleteRecommenderFilter, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a recommender schema from a domain.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteRecommenderSchema">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteRecommenderSchemaOutcome DeleteRecommenderSchema(const Model::DeleteRecommenderSchemaRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteRecommenderSchema that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteRecommenderSchemaRequestT = Model::DeleteRecommenderSchemaRequest>
+  Model::DeleteRecommenderSchemaOutcomeCallable DeleteRecommenderSchemaCallable(const DeleteRecommenderSchemaRequestT& request) const {
+    return SubmitCallable(&CustomerProfilesClient::DeleteRecommenderSchema, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteRecommenderSchema that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteRecommenderSchemaRequestT = Model::DeleteRecommenderSchemaRequest>
+  void DeleteRecommenderSchemaAsync(const DeleteRecommenderSchemaRequestT& request,
+                                    const DeleteRecommenderSchemaResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CustomerProfilesClient::DeleteRecommenderSchema, request, handler, context);
   }
 
   /**
@@ -1542,6 +1598,33 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
   void GetRecommenderFilterAsync(const GetRecommenderFilterRequestT& request, const GetRecommenderFilterResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CustomerProfilesClient::GetRecommenderFilter, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about a specific recommender schema in a
+   * domain.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetRecommenderSchema">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetRecommenderSchemaOutcome GetRecommenderSchema(const Model::GetRecommenderSchemaRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetRecommenderSchema that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetRecommenderSchemaRequestT = Model::GetRecommenderSchemaRequest>
+  Model::GetRecommenderSchemaOutcomeCallable GetRecommenderSchemaCallable(const GetRecommenderSchemaRequestT& request) const {
+    return SubmitCallable(&CustomerProfilesClient::GetRecommenderSchema, request);
+  }
+
+  /**
+   * An Async wrapper for GetRecommenderSchema that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetRecommenderSchemaRequestT = Model::GetRecommenderSchemaRequest>
+  void GetRecommenderSchemaAsync(const GetRecommenderSchemaRequestT& request, const GetRecommenderSchemaResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CustomerProfilesClient::GetRecommenderSchema, request, handler, context);
   }
 
   /**
@@ -2324,6 +2407,34 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                    const ListRecommenderRecipesRequestT& request = {}) const {
     return SubmitAsync(&CustomerProfilesClient::ListRecommenderRecipes, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a list of recommender schemas in the specified domain.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRecommenderSchemas">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListRecommenderSchemasOutcome ListRecommenderSchemas(const Model::ListRecommenderSchemasRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListRecommenderSchemas that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListRecommenderSchemasRequestT = Model::ListRecommenderSchemasRequest>
+  Model::ListRecommenderSchemasOutcomeCallable ListRecommenderSchemasCallable(const ListRecommenderSchemasRequestT& request) const {
+    return SubmitCallable(&CustomerProfilesClient::ListRecommenderSchemas, request);
+  }
+
+  /**
+   * An Async wrapper for ListRecommenderSchemas that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListRecommenderSchemasRequestT = Model::ListRecommenderSchemasRequest>
+  void ListRecommenderSchemasAsync(const ListRecommenderSchemasRequestT& request,
+                                   const ListRecommenderSchemasResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CustomerProfilesClient::ListRecommenderSchemas, request, handler, context);
   }
 
   /**

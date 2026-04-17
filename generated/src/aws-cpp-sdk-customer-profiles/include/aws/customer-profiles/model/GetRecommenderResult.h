@@ -70,6 +70,23 @@ class GetRecommenderResult {
 
   ///@{
   /**
+   * <p>The name of the recommender schema associated with this recommender.</p>
+   */
+  inline const Aws::String& GetRecommenderSchemaName() const { return m_recommenderSchemaName; }
+  template <typename RecommenderSchemaNameT = Aws::String>
+  void SetRecommenderSchemaName(RecommenderSchemaNameT&& value) {
+    m_recommenderSchemaNameHasBeenSet = true;
+    m_recommenderSchemaName = std::forward<RecommenderSchemaNameT>(value);
+  }
+  template <typename RecommenderSchemaNameT = Aws::String>
+  GetRecommenderResult& WithRecommenderSchemaName(RecommenderSchemaNameT&& value) {
+    SetRecommenderSchemaName(std::forward<RecommenderSchemaNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The configuration settings for the recommender, including parameters and
    * settings that define its behavior.</p>
    */
@@ -257,6 +274,8 @@ class GetRecommenderResult {
 
   RecommenderRecipeName m_recommenderRecipeName{RecommenderRecipeName::NOT_SET};
 
+  Aws::String m_recommenderSchemaName;
+
   RecommenderConfig m_recommenderConfig;
 
   Aws::String m_description;
@@ -279,6 +298,7 @@ class GetRecommenderResult {
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_recommenderNameHasBeenSet = false;
   bool m_recommenderRecipeNameHasBeenSet = false;
+  bool m_recommenderSchemaNameHasBeenSet = false;
   bool m_recommenderConfigHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_statusHasBeenSet = false;

@@ -17,6 +17,7 @@ namespace GroupSearchTypeMapper {
 
 static const int SSO_GROUP_HASH = HashingUtils::HashString("SSO_GROUP");
 static const int DATAZONE_SSO_GROUP_HASH = HashingUtils::HashString("DATAZONE_SSO_GROUP");
+static const int IAM_ROLE_SESSION_GROUP_HASH = HashingUtils::HashString("IAM_ROLE_SESSION_GROUP");
 
 GroupSearchType GetGroupSearchTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ GroupSearchType GetGroupSearchTypeForName(const Aws::String& name) {
     return GroupSearchType::SSO_GROUP;
   } else if (hashCode == DATAZONE_SSO_GROUP_HASH) {
     return GroupSearchType::DATAZONE_SSO_GROUP;
+  } else if (hashCode == IAM_ROLE_SESSION_GROUP_HASH) {
+    return GroupSearchType::IAM_ROLE_SESSION_GROUP;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForGroupSearchType(GroupSearchType enumValue) {
       return "SSO_GROUP";
     case GroupSearchType::DATAZONE_SSO_GROUP:
       return "DATAZONE_SSO_GROUP";
+    case GroupSearchType::IAM_ROLE_SESSION_GROUP:
+      return "IAM_ROLE_SESSION_GROUP";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

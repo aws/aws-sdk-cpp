@@ -61,6 +61,10 @@ ProjectSummary& ProjectSummary::operator=(JsonView jsonValue) {
     m_domainUnitId = jsonValue.GetString("domainUnitId");
     m_domainUnitIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("projectCategory")) {
+    m_projectCategory = jsonValue.GetString("projectCategory");
+    m_projectCategoryHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -109,6 +113,10 @@ JsonValue ProjectSummary::Jsonize() const {
 
   if (m_domainUnitIdHasBeenSet) {
     payload.WithString("domainUnitId", m_domainUnitId);
+  }
+
+  if (m_projectCategoryHasBeenSet) {
+    payload.WithString("projectCategory", m_projectCategory);
   }
 
   return payload;

@@ -4,6 +4,9 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 #include <aws/customer-profiles/model/EventsConfig.h>
 #include <aws/customer-profiles/model/InferenceConfig.h>
@@ -85,15 +88,47 @@ class RecommenderConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A map of dataset type to a list of column names to train on. The column names
+   * must be a subset of the columns defined in the recommender schema. If not
+   * specified, all columns in the schema are used for training. The following
+   * columns are always included and do not need to be specified:
+   * <code>Item.Id</code>, <code>ItemList[].Id</code>, <code>EventTimestamp</code>,
+   * <code>EventType</code>, and <code>EventValue</code>.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetIncludedColumns() const { return m_includedColumns; }
+  inline bool IncludedColumnsHasBeenSet() const { return m_includedColumnsHasBeenSet; }
+  template <typename IncludedColumnsT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+  void SetIncludedColumns(IncludedColumnsT&& value) {
+    m_includedColumnsHasBeenSet = true;
+    m_includedColumns = std::forward<IncludedColumnsT>(value);
+  }
+  template <typename IncludedColumnsT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+  RecommenderConfig& WithIncludedColumns(IncludedColumnsT&& value) {
+    SetIncludedColumns(std::forward<IncludedColumnsT>(value));
+    return *this;
+  }
+  template <typename IncludedColumnsKeyT = Aws::String, typename IncludedColumnsValueT = Aws::Vector<Aws::String>>
+  RecommenderConfig& AddIncludedColumns(IncludedColumnsKeyT&& key, IncludedColumnsValueT&& value) {
+    m_includedColumnsHasBeenSet = true;
+    m_includedColumns.emplace(std::forward<IncludedColumnsKeyT>(key), std::forward<IncludedColumnsValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   EventsConfig m_eventsConfig;
 
   int m_trainingFrequency{0};
 
   InferenceConfig m_inferenceConfig;
+
+  Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_includedColumns;
   bool m_eventsConfigHasBeenSet = false;
   bool m_trainingFrequencyHasBeenSet = false;
   bool m_inferenceConfigHasBeenSet = false;
+  bool m_includedColumnsHasBeenSet = false;
 };
 
 }  // namespace Model

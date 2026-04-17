@@ -132,24 +132,6 @@ class SendMessageRequest : public DevOpsAgentRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Required user identifier</p>
-   */
-  inline const Aws::String& GetUserId() const { return m_userId; }
-  inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-  template <typename UserIdT = Aws::String>
-  void SetUserId(UserIdT&& value) {
-    m_userIdHasBeenSet = true;
-    m_userId = std::forward<UserIdT>(value);
-  }
-  template <typename UserIdT = Aws::String>
-  SendMessageRequest& WithUserId(UserIdT&& value) {
-    SetUserId(std::forward<UserIdT>(value));
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_agentSpaceId;
 
@@ -158,8 +140,6 @@ class SendMessageRequest : public DevOpsAgentRequest {
   Aws::String m_content;
 
   SendMessageContext m_context;
-
-  Aws::String m_userId;
   SendMessageHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
 
@@ -167,7 +147,6 @@ class SendMessageRequest : public DevOpsAgentRequest {
   bool m_executionIdHasBeenSet = false;
   bool m_contentHasBeenSet = false;
   bool m_contextHasBeenSet = false;
-  bool m_userIdHasBeenSet = false;
 };
 
 }  // namespace Model

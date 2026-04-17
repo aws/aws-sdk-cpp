@@ -23,6 +23,10 @@ Aws::String UpdateQueueRequest::SerializePayload() const {
     payload.WithString("description", m_description);
   }
 
+  if (m_maximumConcurrentFeedsHasBeenSet) {
+    payload.WithInteger("maximumConcurrentFeeds", m_maximumConcurrentFeeds);
+  }
+
   if (m_reservationPlanSettingsHasBeenSet) {
     payload.WithObject("reservationPlanSettings", m_reservationPlanSettings.Jsonize());
   }

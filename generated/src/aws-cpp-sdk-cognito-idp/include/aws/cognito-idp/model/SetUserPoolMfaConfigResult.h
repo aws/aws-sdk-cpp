@@ -118,8 +118,8 @@ class SetUserPoolMfaConfigResult {
   ///@{
   /**
    * <p>The configuration of your user pool for passkey, or WebAuthn, sign-in with
-   * authenticators like biometric and security-key devices. Includes relying-party
-   * configuration and settings for user-verification requirements.</p>
+   * authenticators such as biometric and security-key devices. Includes
+   * relying-party configuration and settings for user-verification requirements.</p>
    */
   inline const WebAuthnConfigurationType& GetWebAuthnConfiguration() const { return m_webAuthnConfiguration; }
   template <typename WebAuthnConfigurationT = WebAuthnConfigurationType>

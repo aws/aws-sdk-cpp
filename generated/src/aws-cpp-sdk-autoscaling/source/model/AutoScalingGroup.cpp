@@ -89,6 +89,17 @@ AutoScalingGroup& AutoScalingGroup::operator=(const XmlNode& xmlNode) {
 
       m_availabilityZonesHasBeenSet = true;
     }
+    XmlNode availabilityZoneIdsNode = resultNode.FirstChild("AvailabilityZoneIds");
+    if (!availabilityZoneIdsNode.IsNull()) {
+      XmlNode availabilityZoneIdsMember = availabilityZoneIdsNode.FirstChild("member");
+      m_availabilityZoneIdsHasBeenSet = !availabilityZoneIdsMember.IsNull();
+      while (!availabilityZoneIdsMember.IsNull()) {
+        m_availabilityZoneIds.push_back(availabilityZoneIdsMember.GetText());
+        availabilityZoneIdsMember = availabilityZoneIdsMember.NextNode("member");
+      }
+
+      m_availabilityZoneIdsHasBeenSet = true;
+    }
     XmlNode loadBalancerNamesNode = resultNode.FirstChild("LoadBalancerNames");
     if (!loadBalancerNamesNode.IsNull()) {
       XmlNode loadBalancerNamesMember = loadBalancerNamesNode.FirstChild("member");
@@ -351,6 +362,14 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
     }
   }
 
+  if (m_availabilityZoneIdsHasBeenSet) {
+    unsigned availabilityZoneIdsIdx = 1;
+    for (auto& item : m_availabilityZoneIds) {
+      oStream << location << index << locationValue << ".AvailabilityZoneIds.member." << availabilityZoneIdsIdx++ << "="
+              << StringUtils::URLEncode(item.c_str()) << "&";
+    }
+  }
+
   if (m_loadBalancerNamesHasBeenSet) {
     unsigned loadBalancerNamesIdx = 1;
     for (auto& item : m_loadBalancerNames) {
@@ -561,6 +580,13 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
     unsigned availabilityZonesIdx = 1;
     for (auto& item : m_availabilityZones) {
       oStream << location << ".AvailabilityZones.member." << availabilityZonesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+    }
+  }
+  if (m_availabilityZoneIdsHasBeenSet) {
+    unsigned availabilityZoneIdsIdx = 1;
+    for (auto& item : m_availabilityZoneIds) {
+      oStream << location << ".AvailabilityZoneIds.member." << availabilityZoneIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str())
+              << "&";
     }
   }
   if (m_loadBalancerNamesHasBeenSet) {

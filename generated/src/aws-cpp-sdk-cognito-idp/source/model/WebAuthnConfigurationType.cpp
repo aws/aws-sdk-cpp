@@ -26,6 +26,11 @@ WebAuthnConfigurationType& WebAuthnConfigurationType::operator=(JsonView jsonVal
     m_userVerification = UserVerificationTypeMapper::GetUserVerificationTypeForName(jsonValue.GetString("UserVerification"));
     m_userVerificationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("FactorConfiguration")) {
+    m_factorConfiguration =
+        WebAuthnFactorConfigurationTypeMapper::GetWebAuthnFactorConfigurationTypeForName(jsonValue.GetString("FactorConfiguration"));
+    m_factorConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +43,11 @@ JsonValue WebAuthnConfigurationType::Jsonize() const {
 
   if (m_userVerificationHasBeenSet) {
     payload.WithString("UserVerification", UserVerificationTypeMapper::GetNameForUserVerificationType(m_userVerification));
+  }
+
+  if (m_factorConfigurationHasBeenSet) {
+    payload.WithString("FactorConfiguration",
+                       WebAuthnFactorConfigurationTypeMapper::GetNameForWebAuthnFactorConfigurationType(m_factorConfiguration));
   }
 
   return payload;

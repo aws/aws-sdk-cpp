@@ -43,6 +43,11 @@ AutoScalingInstanceDetails& AutoScalingInstanceDetails::operator=(const XmlNode&
       m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
     }
+    XmlNode availabilityZoneIdNode = resultNode.FirstChild("AvailabilityZoneId");
+    if (!availabilityZoneIdNode.IsNull()) {
+      m_availabilityZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneIdNode.GetText());
+      m_availabilityZoneIdHasBeenSet = true;
+    }
     XmlNode lifecycleStateNode = resultNode.FirstChild("LifecycleState");
     if (!lifecycleStateNode.IsNull()) {
       m_lifecycleState = Aws::Utils::Xml::DecodeEscapedXmlText(lifecycleStateNode.GetText());
@@ -103,6 +108,10 @@ void AutoScalingInstanceDetails::OutputToStream(Aws::OStream& oStream, const cha
     oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
 
+  if (m_availabilityZoneIdHasBeenSet) {
+    oStream << location << index << locationValue << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
+  }
+
   if (m_lifecycleStateHasBeenSet) {
     oStream << location << index << locationValue << ".LifecycleState=" << StringUtils::URLEncode(m_lifecycleState.c_str()) << "&";
   }
@@ -147,6 +156,9 @@ void AutoScalingInstanceDetails::OutputToStream(Aws::OStream& oStream, const cha
   }
   if (m_availabilityZoneHasBeenSet) {
     oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+  if (m_availabilityZoneIdHasBeenSet) {
+    oStream << location << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
   }
   if (m_lifecycleStateHasBeenSet) {
     oStream << location << ".LifecycleState=" << StringUtils::URLEncode(m_lifecycleState.c_str()) << "&";

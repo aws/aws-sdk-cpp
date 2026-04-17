@@ -87,35 +87,6 @@ class AWS_DEVOPSAGENT_API DevOpsAgentClient : public Aws::Client::AWSJsonClient,
   virtual ~DevOpsAgentClient();
 
   /**
-   * <p>Authorize Ingestion Hub subscription operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/AllowVendedLogDeliveryForResource">AWS
-   * API Reference</a></p>
-   */
-  virtual Model::AllowVendedLogDeliveryForResourceOutcome AllowVendedLogDeliveryForResource(
-      const Model::AllowVendedLogDeliveryForResourceRequest& request) const;
-
-  /**
-   * A Callable wrapper for AllowVendedLogDeliveryForResource that returns a future to the operation so that it can be executed in parallel
-   * to other requests.
-   */
-  template <typename AllowVendedLogDeliveryForResourceRequestT = Model::AllowVendedLogDeliveryForResourceRequest>
-  Model::AllowVendedLogDeliveryForResourceOutcomeCallable AllowVendedLogDeliveryForResourceCallable(
-      const AllowVendedLogDeliveryForResourceRequestT& request) const {
-    return SubmitCallable(&DevOpsAgentClient::AllowVendedLogDeliveryForResource, request);
-  }
-
-  /**
-   * An Async wrapper for AllowVendedLogDeliveryForResource that queues the request into a thread executor and triggers associated callback
-   * when operation has finished.
-   */
-  template <typename AllowVendedLogDeliveryForResourceRequestT = Model::AllowVendedLogDeliveryForResourceRequest>
-  void AllowVendedLogDeliveryForResourceAsync(const AllowVendedLogDeliveryForResourceRequestT& request,
-                                              const AllowVendedLogDeliveryForResourceResponseReceivedHandler& handler,
-                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
-    return SubmitAsync(&DevOpsAgentClient::AllowVendedLogDeliveryForResource, request, handler, context);
-  }
-
-  /**
    * <p>Adds a specific service association to an AgentSpace. It overwrites the
    * existing association of the same service. Returns 201 Created on
    * success.</p><p><h3>See Also:</h3>   <a

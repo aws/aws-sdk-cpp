@@ -10,7 +10,7 @@
 namespace Aws {
 namespace DataZone {
 namespace Model {
-enum class GroupSearchType { NOT_SET, SSO_GROUP, DATAZONE_SSO_GROUP };
+enum class GroupSearchType { NOT_SET, SSO_GROUP, DATAZONE_SSO_GROUP, IAM_ROLE_SESSION_GROUP };
 
 namespace GroupSearchTypeMapper {
 AWS_DATAZONE_API GroupSearchType GetGroupSearchTypeForName(const Aws::String& name);

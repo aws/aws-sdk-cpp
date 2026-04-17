@@ -380,6 +380,8 @@
 #include <aws/cognito-idp/model/VerifyUserAttributeResult.h>
 #include <aws/cognito-idp/model/WebAuthnConfigurationType.h>
 #include <aws/cognito-idp/model/WebAuthnCredentialDescription.h>
+#include <aws/cognito-idp/model/WebAuthnFactorConfigurationType.h>
+#include <aws/cognito-idp/model/WebAuthnMfaSettingsType.h>
 
 using CognitoIdentityProviderIncludeTest = ::testing::Test;
 

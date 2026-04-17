@@ -85,6 +85,24 @@ class CreateUserProfileRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The session name for IAM role sessions.</p>
+   */
+  inline const Aws::String& GetSessionName() const { return m_sessionName; }
+  inline bool SessionNameHasBeenSet() const { return m_sessionNameHasBeenSet; }
+  template <typename SessionNameT = Aws::String>
+  void SetSessionName(SessionNameT&& value) {
+    m_sessionNameHasBeenSet = true;
+    m_sessionName = std::forward<SessionNameT>(value);
+  }
+  template <typename SessionNameT = Aws::String>
+  CreateUserProfileRequest& WithSessionName(SessionNameT&& value) {
+    SetSessionName(std::forward<SessionNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A unique, case-sensitive identifier that is provided to ensure the
    * idempotency of the request.</p>
    */
@@ -108,10 +126,13 @@ class CreateUserProfileRequest : public DataZoneRequest {
 
   UserType m_userType{UserType::NOT_SET};
 
+  Aws::String m_sessionName;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_domainIdentifierHasBeenSet = false;
   bool m_userIdentifierHasBeenSet = false;
   bool m_userTypeHasBeenSet = false;
+  bool m_sessionNameHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

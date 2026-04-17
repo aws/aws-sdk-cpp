@@ -269,6 +269,8 @@
 #include <aws/rds/model/DescribeReservedDBInstancesOfferingsResult.h>
 #include <aws/rds/model/DescribeReservedDBInstancesRequest.h>
 #include <aws/rds/model/DescribeReservedDBInstancesResult.h>
+#include <aws/rds/model/DescribeServerlessV2PlatformVersionsRequest.h>
+#include <aws/rds/model/DescribeServerlessV2PlatformVersionsResult.h>
 #include <aws/rds/model/DescribeSourceRegionsRequest.h>
 #include <aws/rds/model/DescribeSourceRegionsResult.h>
 #include <aws/rds/model/DescribeTenantDatabasesRequest.h>
@@ -443,6 +445,7 @@
 #include <aws/rds/model/ScalingConfiguration.h>
 #include <aws/rds/model/ScalingConfigurationInfo.h>
 #include <aws/rds/model/ServerlessV2FeaturesSupport.h>
+#include <aws/rds/model/ServerlessV2PlatformVersionInfo.h>
 #include <aws/rds/model/ServerlessV2ScalingConfiguration.h>
 #include <aws/rds/model/ServerlessV2ScalingConfigurationInfo.h>
 #include <aws/rds/model/SourceRegion.h>

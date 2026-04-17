@@ -109,6 +109,24 @@ class AutoScalingInstanceDetails {
 
   ///@{
   /**
+   * <p> The Availability Zone ID where the instance is located. </p>
+   */
+  inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
+  inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+  template <typename AvailabilityZoneIdT = Aws::String>
+  void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) {
+    m_availabilityZoneIdHasBeenSet = true;
+    m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value);
+  }
+  template <typename AvailabilityZoneIdT = Aws::String>
+  AutoScalingInstanceDetails& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) {
+    SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The lifecycle state for the instance. The <code>Quarantined</code> state is
    * not used. For more information, see <a
    * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-lifecycle.html">Amazon
@@ -271,6 +289,8 @@ class AutoScalingInstanceDetails {
 
   Aws::String m_availabilityZone;
 
+  Aws::String m_availabilityZoneId;
+
   Aws::String m_lifecycleState;
 
   Aws::String m_healthStatus;
@@ -288,6 +308,7 @@ class AutoScalingInstanceDetails {
   bool m_instanceTypeHasBeenSet = false;
   bool m_autoScalingGroupNameHasBeenSet = false;
   bool m_availabilityZoneHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
   bool m_lifecycleStateHasBeenSet = false;
   bool m_healthStatusHasBeenSet = false;
   bool m_launchConfigurationNameHasBeenSet = false;

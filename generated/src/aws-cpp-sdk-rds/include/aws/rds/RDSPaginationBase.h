@@ -45,6 +45,7 @@
 #include <aws/rds/model/DescribePendingMaintenanceActionsPaginationTraits.h>
 #include <aws/rds/model/DescribeReservedDBInstancesOfferingsPaginationTraits.h>
 #include <aws/rds/model/DescribeReservedDBInstancesPaginationTraits.h>
+#include <aws/rds/model/DescribeServerlessV2PlatformVersionsPaginationTraits.h>
 #include <aws/rds/model/DescribeSourceRegionsPaginationTraits.h>
 #include <aws/rds/model/DescribeTenantDatabasesPaginationTraits.h>
 #include <aws/rds/model/DownloadDBLogFilePortionPaginationTraits.h>
@@ -511,6 +512,18 @@ class RDSPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeReservedDBInstancesOfferingsRequest,
                                              Pagination::DescribeReservedDBInstancesOfferingsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for DescribeServerlessV2PlatformVersions operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeServerlessV2PlatformVersionsRequest,
+                                    Pagination::DescribeServerlessV2PlatformVersionsPaginationTraits<DerivedClient>>
+  DescribeServerlessV2PlatformVersionsPaginator(const Model::DescribeServerlessV2PlatformVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeServerlessV2PlatformVersionsRequest,
+                                             Pagination::DescribeServerlessV2PlatformVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

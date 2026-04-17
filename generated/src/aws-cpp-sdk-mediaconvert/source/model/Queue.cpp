@@ -38,6 +38,10 @@ Queue& Queue::operator=(JsonView jsonValue) {
     m_lastUpdated = jsonValue.GetDouble("lastUpdated");
     m_lastUpdatedHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("maximumConcurrentFeeds")) {
+    m_maximumConcurrentFeeds = jsonValue.GetInteger("maximumConcurrentFeeds");
+    m_maximumConcurrentFeedsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
@@ -97,6 +101,10 @@ JsonValue Queue::Jsonize() const {
 
   if (m_lastUpdatedHasBeenSet) {
     payload.WithDouble("lastUpdated", m_lastUpdated.SecondsWithMSPrecision());
+  }
+
+  if (m_maximumConcurrentFeedsHasBeenSet) {
+    payload.WithInteger("maximumConcurrentFeeds", m_maximumConcurrentFeeds);
   }
 
   if (m_nameHasBeenSet) {

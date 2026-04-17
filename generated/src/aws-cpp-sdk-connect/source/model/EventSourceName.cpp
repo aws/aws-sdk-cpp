@@ -19,6 +19,7 @@ static const int OnPostCallAnalysisAvailable_HASH = HashingUtils::HashString("On
 static const int OnRealTimeCallAnalysisAvailable_HASH = HashingUtils::HashString("OnRealTimeCallAnalysisAvailable");
 static const int OnRealTimeChatAnalysisAvailable_HASH = HashingUtils::HashString("OnRealTimeChatAnalysisAvailable");
 static const int OnPostChatAnalysisAvailable_HASH = HashingUtils::HashString("OnPostChatAnalysisAvailable");
+static const int OnEmailAnalysisAvailable_HASH = HashingUtils::HashString("OnEmailAnalysisAvailable");
 static const int OnZendeskTicketCreate_HASH = HashingUtils::HashString("OnZendeskTicketCreate");
 static const int OnZendeskTicketStatusUpdate_HASH = HashingUtils::HashString("OnZendeskTicketStatusUpdate");
 static const int OnSalesforceCaseCreate_HASH = HashingUtils::HashString("OnSalesforceCaseCreate");
@@ -38,6 +39,8 @@ EventSourceName GetEventSourceNameForName(const Aws::String& name) {
     return EventSourceName::OnRealTimeChatAnalysisAvailable;
   } else if (hashCode == OnPostChatAnalysisAvailable_HASH) {
     return EventSourceName::OnPostChatAnalysisAvailable;
+  } else if (hashCode == OnEmailAnalysisAvailable_HASH) {
+    return EventSourceName::OnEmailAnalysisAvailable;
   } else if (hashCode == OnZendeskTicketCreate_HASH) {
     return EventSourceName::OnZendeskTicketCreate;
   } else if (hashCode == OnZendeskTicketStatusUpdate_HASH) {
@@ -76,6 +79,8 @@ Aws::String GetNameForEventSourceName(EventSourceName enumValue) {
       return "OnRealTimeChatAnalysisAvailable";
     case EventSourceName::OnPostChatAnalysisAvailable:
       return "OnPostChatAnalysisAvailable";
+    case EventSourceName::OnEmailAnalysisAvailable:
+      return "OnEmailAnalysisAvailable";
     case EventSourceName::OnZendeskTicketCreate:
       return "OnZendeskTicketCreate";
     case EventSourceName::OnZendeskTicketStatusUpdate:

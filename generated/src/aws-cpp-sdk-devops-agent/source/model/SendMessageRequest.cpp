@@ -27,9 +27,5 @@ Aws::String SendMessageRequest::SerializePayload() const {
     payload.WithObject("context", m_context.Jsonize());
   }
 
-  if (m_userIdHasBeenSet) {
-    payload.WithString("userId", m_userId);
-  }
-
   return payload.View().WriteReadable();
 }

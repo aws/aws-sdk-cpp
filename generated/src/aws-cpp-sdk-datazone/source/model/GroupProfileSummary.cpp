@@ -34,6 +34,14 @@ GroupProfileSummary& GroupProfileSummary::operator=(JsonView jsonValue) {
     m_groupName = jsonValue.GetString("groupName");
     m_groupNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("rolePrincipalArn")) {
+    m_rolePrincipalArn = jsonValue.GetString("rolePrincipalArn");
+    m_rolePrincipalArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("rolePrincipalId")) {
+    m_rolePrincipalId = jsonValue.GetString("rolePrincipalId");
+    m_rolePrincipalIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +62,14 @@ JsonValue GroupProfileSummary::Jsonize() const {
 
   if (m_groupNameHasBeenSet) {
     payload.WithString("groupName", m_groupName);
+  }
+
+  if (m_rolePrincipalArnHasBeenSet) {
+    payload.WithString("rolePrincipalArn", m_rolePrincipalArn);
+  }
+
+  if (m_rolePrincipalIdHasBeenSet) {
+    payload.WithString("rolePrincipalId", m_rolePrincipalId);
   }
 
   return payload;

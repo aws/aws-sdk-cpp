@@ -289,7 +289,7 @@ class CreateJobRequest : public MediaConvertRequest {
   ///@{
   /**
    * Optional. The tags that you want to add to the resource. You can tag resources
-   * with a key-value pair or with only a key.  Use standard AWS tags on your job for
+   * with a key-value pair or with only a key. Use standard AWS tags on your job for
    * automatic integration with AWS services and for custom integrations and
    * workflows.
    */
@@ -316,9 +316,9 @@ class CreateJobRequest : public MediaConvertRequest {
   ///@{
   /**
    * Optional. User-defined metadata that you want to associate with an MediaConvert
-   * job. You specify metadata in key/value pairs.  Use only for existing
-   * integrations or workflows that rely on job metadata tags. Otherwise, we
-   * recommend that you use standard AWS tags.
+   * job. You specify metadata in key/value pairs. Use only for existing integrations
+   * or workflows that rely on job metadata tags. Otherwise, we recommend that you
+   * use standard AWS tags.
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetUserMetadata() const { return m_userMetadata; }
   inline bool UserMetadataHasBeenSet() const { return m_userMetadataHasBeenSet; }

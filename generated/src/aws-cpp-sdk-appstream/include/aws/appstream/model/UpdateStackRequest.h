@@ -8,6 +8,7 @@
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/appstream/model/AccessEndpoint.h>
 #include <aws/appstream/model/ApplicationSettings.h>
+#include <aws/appstream/model/ContentRedirection.h>
 #include <aws/appstream/model/StackAttribute.h>
 #include <aws/appstream/model/StorageConnector.h>
 #include <aws/appstream/model/StreamingExperienceSettings.h>
@@ -290,6 +291,22 @@ class UpdateStackRequest : public AppStreamRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const ContentRedirection& GetContentRedirection() const { return m_contentRedirection; }
+  inline bool ContentRedirectionHasBeenSet() const { return m_contentRedirectionHasBeenSet; }
+  template <typename ContentRedirectionT = ContentRedirection>
+  void SetContentRedirection(ContentRedirectionT&& value) {
+    m_contentRedirectionHasBeenSet = true;
+    m_contentRedirection = std::forward<ContentRedirectionT>(value);
+  }
+  template <typename ContentRedirectionT = ContentRedirection>
+  UpdateStackRequest& WithContentRedirection(ContentRedirectionT&& value) {
+    SetContentRedirection(std::forward<ContentRedirectionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_displayName;
 
@@ -314,6 +331,8 @@ class UpdateStackRequest : public AppStreamRequest {
   Aws::Vector<Aws::String> m_embedHostDomains;
 
   StreamingExperienceSettings m_streamingExperienceSettings;
+
+  ContentRedirection m_contentRedirection;
   bool m_displayNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -326,6 +345,7 @@ class UpdateStackRequest : public AppStreamRequest {
   bool m_accessEndpointsHasBeenSet = false;
   bool m_embedHostDomainsHasBeenSet = false;
   bool m_streamingExperienceSettingsHasBeenSet = false;
+  bool m_contentRedirectionHasBeenSet = false;
 };
 
 }  // namespace Model

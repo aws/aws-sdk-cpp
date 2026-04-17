@@ -19,6 +19,10 @@ Aws::String CreateRecommenderFilterRequest::SerializePayload() const {
     payload.WithString("RecommenderFilterExpression", m_recommenderFilterExpression);
   }
 
+  if (m_recommenderSchemaNameHasBeenSet) {
+    payload.WithString("RecommenderSchemaName", m_recommenderSchemaName);
+  }
+
   if (m_descriptionHasBeenSet) {
     payload.WithString("Description", m_description);
   }

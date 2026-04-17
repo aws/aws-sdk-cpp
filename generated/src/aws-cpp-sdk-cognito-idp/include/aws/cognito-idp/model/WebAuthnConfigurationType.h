@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/model/UserVerificationType.h>
+#include <aws/cognito-idp/model/WebAuthnFactorConfigurationType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -82,12 +83,37 @@ class WebAuthnConfigurationType {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Sets whether passkeys can be used as multi-factor authentication (MFA). When
+   * set to <code>MULTI_FACTOR_WITH_USER_VERIFICATION</code>, passkey authentication
+   * with user verification satisfies MFA requirements. When set to
+   * <code>SINGLE_FACTOR</code> or not set, passkeys are a single authentication
+   * factor. To activate this setting, your user pool must be in the <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html">
+   * Essentials tier</a> or higher.</p>
+   */
+  inline WebAuthnFactorConfigurationType GetFactorConfiguration() const { return m_factorConfiguration; }
+  inline bool FactorConfigurationHasBeenSet() const { return m_factorConfigurationHasBeenSet; }
+  inline void SetFactorConfiguration(WebAuthnFactorConfigurationType value) {
+    m_factorConfigurationHasBeenSet = true;
+    m_factorConfiguration = value;
+  }
+  inline WebAuthnConfigurationType& WithFactorConfiguration(WebAuthnFactorConfigurationType value) {
+    SetFactorConfiguration(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_relyingPartyId;
 
   UserVerificationType m_userVerification{UserVerificationType::NOT_SET};
+
+  WebAuthnFactorConfigurationType m_factorConfiguration{WebAuthnFactorConfigurationType::NOT_SET};
   bool m_relyingPartyIdHasBeenSet = false;
   bool m_userVerificationHasBeenSet = false;
+  bool m_factorConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

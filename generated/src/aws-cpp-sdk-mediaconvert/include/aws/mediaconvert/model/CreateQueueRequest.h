@@ -72,6 +72,23 @@ class CreateQueueRequest : public MediaConvertRequest {
 
   ///@{
   /**
+   * Specify the maximum number of Elemental Inference feeds MediaConvert can process
+   * concurrently.
+   */
+  inline int GetMaximumConcurrentFeeds() const { return m_maximumConcurrentFeeds; }
+  inline bool MaximumConcurrentFeedsHasBeenSet() const { return m_maximumConcurrentFeedsHasBeenSet; }
+  inline void SetMaximumConcurrentFeeds(int value) {
+    m_maximumConcurrentFeedsHasBeenSet = true;
+    m_maximumConcurrentFeeds = value;
+  }
+  inline CreateQueueRequest& WithMaximumConcurrentFeeds(int value) {
+    SetMaximumConcurrentFeeds(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * The name of the queue that you are creating.
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -173,6 +190,8 @@ class CreateQueueRequest : public MediaConvertRequest {
 
   Aws::String m_description;
 
+  int m_maximumConcurrentFeeds{0};
+
   Aws::String m_name;
 
   PricingPlan m_pricingPlan{PricingPlan::NOT_SET};
@@ -184,6 +203,7 @@ class CreateQueueRequest : public MediaConvertRequest {
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_concurrentJobsHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
+  bool m_maximumConcurrentFeedsHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_pricingPlanHasBeenSet = false;
   bool m_reservationPlanSettingsHasBeenSet = false;

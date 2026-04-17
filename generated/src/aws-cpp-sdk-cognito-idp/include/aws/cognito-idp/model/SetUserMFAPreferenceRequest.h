@@ -9,6 +9,7 @@
 #include <aws/cognito-idp/model/EmailMfaSettingsType.h>
 #include <aws/cognito-idp/model/SMSMfaSettingsType.h>
 #include <aws/cognito-idp/model/SoftwareTokenMfaSettingsType.h>
+#include <aws/cognito-idp/model/WebAuthnMfaSettingsType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -97,6 +98,32 @@ class SetUserMFAPreferenceRequest : public CognitoIdentityProviderRequest {
 
   ///@{
   /**
+   * <p>User preferences for passkey MFA. Activates or deactivates passkey MFA for
+   * the user. When activated, passkey authentication requires user verification, and
+   * passkey sign-in is available when MFA is required. To activate this setting, the
+   * <code>FactorConfiguration</code> of your user pool
+   * <code>WebAuthnConfiguration</code> must be
+   * <code>MULTI_FACTOR_WITH_USER_VERIFICATION</code>. To activate this setting, your
+   * user pool must be in the <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html">
+   * Essentials tier</a> or higher.</p>
+   */
+  inline const WebAuthnMfaSettingsType& GetWebAuthnMfaSettings() const { return m_webAuthnMfaSettings; }
+  inline bool WebAuthnMfaSettingsHasBeenSet() const { return m_webAuthnMfaSettingsHasBeenSet; }
+  template <typename WebAuthnMfaSettingsT = WebAuthnMfaSettingsType>
+  void SetWebAuthnMfaSettings(WebAuthnMfaSettingsT&& value) {
+    m_webAuthnMfaSettingsHasBeenSet = true;
+    m_webAuthnMfaSettings = std::forward<WebAuthnMfaSettingsT>(value);
+  }
+  template <typename WebAuthnMfaSettingsT = WebAuthnMfaSettingsType>
+  SetUserMFAPreferenceRequest& WithWebAuthnMfaSettings(WebAuthnMfaSettingsT&& value) {
+    SetWebAuthnMfaSettings(std::forward<WebAuthnMfaSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A valid access token that Amazon Cognito issued to the currently signed-in
    * user. Must include a scope claim for
    * <code>aws.cognito.signin.user.admin</code>.</p>
@@ -121,10 +148,13 @@ class SetUserMFAPreferenceRequest : public CognitoIdentityProviderRequest {
 
   EmailMfaSettingsType m_emailMfaSettings;
 
+  WebAuthnMfaSettingsType m_webAuthnMfaSettings;
+
   Aws::String m_accessToken;
   bool m_sMSMfaSettingsHasBeenSet = false;
   bool m_softwareTokenMfaSettingsHasBeenSet = false;
   bool m_emailMfaSettingsHasBeenSet = false;
+  bool m_webAuthnMfaSettingsHasBeenSet = false;
   bool m_accessTokenHasBeenSet = false;
 };
 

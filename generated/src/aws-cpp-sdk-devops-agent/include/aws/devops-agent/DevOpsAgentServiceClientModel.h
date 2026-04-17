@@ -20,7 +20,6 @@
 
 /* Service model headers required in DevOpsAgentClient header */
 #include <aws/core/NoResult.h>
-#include <aws/devops-agent/model/AllowVendedLogDeliveryForResourceResult.h>
 #include <aws/devops-agent/model/AssociateServiceResult.h>
 #include <aws/devops-agent/model/CreateAgentSpaceResult.h>
 #include <aws/devops-agent/model/CreateBacklogTaskResult.h>
@@ -100,7 +99,6 @@ using DevOpsAgentEndpointProvider = Aws::DevOpsAgent::Endpoint::DevOpsAgentEndpo
 
 namespace Model {
 /* Service model forward declarations required in DevOpsAgentClient header */
-class AllowVendedLogDeliveryForResourceRequest;
 class AssociateServiceRequest;
 class CreateAgentSpaceRequest;
 class CreateBacklogTaskRequest;
@@ -148,7 +146,6 @@ class ValidateAwsAssociationsRequest;
 /* End of service model forward declarations required in DevOpsAgentClient header */
 
 /* Service model Outcome class definitions */
-typedef Aws::Utils::Outcome<AllowVendedLogDeliveryForResourceResult, DevOpsAgentError> AllowVendedLogDeliveryForResourceOutcome;
 typedef Aws::Utils::Outcome<AssociateServiceResult, DevOpsAgentError> AssociateServiceOutcome;
 typedef Aws::Utils::Outcome<CreateAgentSpaceResult, DevOpsAgentError> CreateAgentSpaceOutcome;
 typedef Aws::Utils::Outcome<CreateBacklogTaskResult, DevOpsAgentError> CreateBacklogTaskOutcome;
@@ -196,7 +193,6 @@ typedef Aws::Utils::Outcome<ValidateAwsAssociationsResult, DevOpsAgentError> Val
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
-typedef std::future<AllowVendedLogDeliveryForResourceOutcome> AllowVendedLogDeliveryForResourceOutcomeCallable;
 typedef std::future<AssociateServiceOutcome> AssociateServiceOutcomeCallable;
 typedef std::future<CreateAgentSpaceOutcome> CreateAgentSpaceOutcomeCallable;
 typedef std::future<CreateBacklogTaskOutcome> CreateBacklogTaskOutcomeCallable;
@@ -247,10 +243,6 @@ typedef std::future<ValidateAwsAssociationsOutcome> ValidateAwsAssociationsOutco
 class DevOpsAgentClient;
 
 /* Service model async handlers definitions */
-typedef std::function<void(const DevOpsAgentClient*, const Model::AllowVendedLogDeliveryForResourceRequest&,
-                           const Model::AllowVendedLogDeliveryForResourceOutcome&,
-                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
-    AllowVendedLogDeliveryForResourceResponseReceivedHandler;
 typedef std::function<void(const DevOpsAgentClient*, const Model::AssociateServiceRequest&, const Model::AssociateServiceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AssociateServiceResponseReceivedHandler;

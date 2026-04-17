@@ -19,6 +19,10 @@ Aws::String CreateGroupProfileRequest::SerializePayload() const {
     payload.WithString("groupIdentifier", m_groupIdentifier);
   }
 
+  if (m_rolePrincipalArnHasBeenSet) {
+    payload.WithString("rolePrincipalArn", m_rolePrincipalArn);
+  }
+
   if (m_clientTokenHasBeenSet) {
     payload.WithString("clientToken", m_clientToken);
   }

@@ -67,6 +67,24 @@ class GetRecommenderFilterResult {
 
   ///@{
   /**
+   * <p>The name of the recommender schema associated with this recommender
+   * filter.</p>
+   */
+  inline const Aws::String& GetRecommenderSchemaName() const { return m_recommenderSchemaName; }
+  template <typename RecommenderSchemaNameT = Aws::String>
+  void SetRecommenderSchemaName(RecommenderSchemaNameT&& value) {
+    m_recommenderSchemaNameHasBeenSet = true;
+    m_recommenderSchemaName = std::forward<RecommenderSchemaNameT>(value);
+  }
+  template <typename RecommenderSchemaNameT = Aws::String>
+  GetRecommenderFilterResult& WithRecommenderSchemaName(RecommenderSchemaNameT&& value) {
+    SetRecommenderSchemaName(std::forward<RecommenderSchemaNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The timestamp of when the recommender filter was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -175,6 +193,8 @@ class GetRecommenderFilterResult {
 
   Aws::String m_recommenderFilterExpression;
 
+  Aws::String m_recommenderSchemaName;
+
   Aws::Utils::DateTime m_createdAt{};
 
   RecommenderFilterStatus m_status{RecommenderFilterStatus::NOT_SET};
@@ -189,6 +209,7 @@ class GetRecommenderFilterResult {
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_recommenderFilterNameHasBeenSet = false;
   bool m_recommenderFilterExpressionHasBeenSet = false;
+  bool m_recommenderSchemaNameHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

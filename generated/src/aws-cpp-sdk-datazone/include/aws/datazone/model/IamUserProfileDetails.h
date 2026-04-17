@@ -66,12 +66,56 @@ class IamUserProfileDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The session name for IAM role sessions.</p>
+   */
+  inline const Aws::String& GetSessionName() const { return m_sessionName; }
+  inline bool SessionNameHasBeenSet() const { return m_sessionNameHasBeenSet; }
+  template <typename SessionNameT = Aws::String>
+  void SetSessionName(SessionNameT&& value) {
+    m_sessionNameHasBeenSet = true;
+    m_sessionName = std::forward<SessionNameT>(value);
+  }
+  template <typename SessionNameT = Aws::String>
+  IamUserProfileDetails& WithSessionName(SessionNameT&& value) {
+    SetSessionName(std::forward<SessionNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the group profile associated with the IAM user profile.
+   * This links the user to a specific group profile within the Amazon DataZone
+   * domain.</p>
+   */
+  inline const Aws::String& GetGroupProfileId() const { return m_groupProfileId; }
+  inline bool GroupProfileIdHasBeenSet() const { return m_groupProfileIdHasBeenSet; }
+  template <typename GroupProfileIdT = Aws::String>
+  void SetGroupProfileId(GroupProfileIdT&& value) {
+    m_groupProfileIdHasBeenSet = true;
+    m_groupProfileId = std::forward<GroupProfileIdT>(value);
+  }
+  template <typename GroupProfileIdT = Aws::String>
+  IamUserProfileDetails& WithGroupProfileId(GroupProfileIdT&& value) {
+    SetGroupProfileId(std::forward<GroupProfileIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
   Aws::String m_principalId;
+
+  Aws::String m_sessionName;
+
+  Aws::String m_groupProfileId;
   bool m_arnHasBeenSet = false;
   bool m_principalIdHasBeenSet = false;
+  bool m_sessionNameHasBeenSet = false;
+  bool m_groupProfileIdHasBeenSet = false;
 };
 
 }  // namespace Model
