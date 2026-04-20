@@ -35,6 +35,14 @@ std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> GetSTSCrtProvider(
   }()
                                                         .c_str();
 
+  Aws::Crt::Http::ProxyEnvVarOptions options{};
+  options.proxyEnvVarType = Aws::Crt::Http::ProxyEnvVarType::Enabled;
+  options.connectionType = Aws::Crt::Http::AwsHttpProxyConnectionType::Legacy;
+  if (tlsOptions) {
+    options.TlsOptions = *tlsOptions;
+  }
+  stsConfig.ProxyEnvVarOptions = options;
+
   return Aws::Crt::Auth::CredentialsProvider::CreateCredentialsProviderSTSWebIdentity(stsConfig);
 }
 }  // namespace
