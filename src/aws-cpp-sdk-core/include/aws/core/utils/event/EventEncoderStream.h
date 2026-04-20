@@ -20,6 +20,19 @@ namespace Aws
 
     namespace Utils
     {
+        namespace Stream
+        {
+          class HttpWriteDataStreamBuf;
+
+          /**
+           * Adapter that virtualizes streambuf lifecycle operations (close, drain)
+           * so EventEncoderStream can work with different underlying streambufs
+           * (e.g. ConcurrentStreamBuf for the pull model, HttpWriteDataStreamBuf
+           * for the push model).
+           */
+          class CloseableStreamBuf;
+        }
+
         namespace Event
         {
             extern AWS_CORE_API const size_t DEFAULT_BUF_SIZE;
@@ -36,6 +49,12 @@ namespace Aws
                  * @param bufferSize The length of the underlying buffer.
                  */
                 explicit EventEncoderStream(size_t bufferSize = DEFAULT_BUF_SIZE);
+
+                /**
+                 * Creates a stream for encoding events sent by the client.
+                 * @param streambuf the underlying buffer used by event encoder.
+                 */
+                explicit EventEncoderStream(std::shared_ptr<Aws::Utils::Stream::HttpWriteDataStreamBuf> streambuf);
 
                 /**
                  * Sets the signature seed used by event-stream events.
@@ -65,16 +84,15 @@ namespace Aws
                  * Any writes to the stream after this call are not guaranteed to be read by another concurrent
                  * read thread.
                  */
-                void Close() { m_streambuf.SetEofInput(this); }
+                void Close();
 
                 /**
                  * Blocks the current thread until all submitted data is consumed.
                  * Returns false on timeout, and true if GetArea and back buffer are empty.
                  */
                 bool WaitForDrain(int64_t timeoutMs = 1000);
-
             private:
-                Stream::ConcurrentStreamBuf m_streambuf;
+                std::shared_ptr<Aws::Utils::Stream::CloseableStreamBuf> m_streambuf;
                 EventStreamEncoder m_encoder;
             };
         }

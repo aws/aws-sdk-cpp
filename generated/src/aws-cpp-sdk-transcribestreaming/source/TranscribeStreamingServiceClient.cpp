@@ -5,6 +5,7 @@
 
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
+#include <aws/core/client/AWSClientBidirectionalStreaming.h>
 #include <aws/core/client/AWSClientEventStreamingAsyncTask.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
@@ -256,10 +257,43 @@ void TranscribeStreamingServiceClient::StartCallAnalyticsStreamTranscriptionAsyn
   }
   endpointResolutionOutcome.GetResult().AddPathSegments("/call-analytics-stream-transcription");
 
+#if AWS_SDK_USE_CRT_HTTP
+  // Push-based WriteData path (CRT HTTP client only)
+  auto writeDataStreamBuf = Aws::MakeShared<Aws::Utils::Stream::HttpWriteDataStreamBuf>(ALLOCATION_TAG, GetHttpClient());
+  auto signer = GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
+
+  auto eventEncoderStream = Aws::MakeShared<Model::AudioStream>(ALLOCATION_TAG, writeDataStreamBuf);
+  eventEncoderStream->SetSigner(signer);
+
+  auto requestCopy = Aws::MakeShared<StartCallAnalyticsStreamTranscriptionRequest>(ALLOCATION_TAG, request);
+  request.SetAudioStream(eventEncoderStream);
+
+  auto& endpoint = endpointResolutionOutcome.GetResult();
+  auto httpRequest =
+      CreateHttpRequest(endpoint.GetURI(), Aws::Http::HttpMethod::HTTP_POST, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+  httpRequest->SetEventStreamRequest(true);
+  httpRequest->SetHasEventStreamResponse(true);
+  BuildHttpRequest(*requestCopy, httpRequest);
+
+  if (!signer->SignRequest(*httpRequest, nullptr, nullptr, true)) {
+    handler(this, request,
+            StartCallAnalyticsStreamTranscriptionOutcome(
+                Aws::Client::AWSError<CoreErrors>(CoreErrors::CLIENT_SIGNING_FAILURE, "", "Failed to sign request", false)),
+            handlerContext);
+    return;
+  }
+  eventEncoderStream->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(*httpRequest));
+
+  Aws::Client::SubmitBidirectionalStreamingRequest<TranscribeStreamingServiceClient, StartCallAnalyticsStreamTranscriptionOutcome,
+                                                   StartCallAnalyticsStreamTranscriptionRequest, Model::AudioStream>(
+      this, request, requestCopy, eventEncoderStream, writeDataStreamBuf, httpRequest, m_clientConfiguration.executor.get(),
+      streamReadyHandler, handler, handlerContext);
+#else
+  // Pull-based path (curl/WinHTTP)
   auto eventEncoderStream = Aws::MakeShared<Model::AudioStream>(ALLOCATION_TAG);
   eventEncoderStream->SetSigner(GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER));
   auto requestCopy = Aws::MakeShared<StartCallAnalyticsStreamTranscriptionRequest>("StartCallAnalyticsStreamTranscription", request);
-  requestCopy->SetAudioStream(eventEncoderStream);  // this becomes the body of the request
+  requestCopy->SetAudioStream(eventEncoderStream);
   request.SetAudioStream(eventEncoderStream);
 
   auto asyncTask = CreateBidirectionalEventStreamTask<StartCallAnalyticsStreamTranscriptionOutcome>(
@@ -268,6 +302,7 @@ void TranscribeStreamingServiceClient::StartCallAnalyticsStreamTranscriptionAsyn
   m_clientConfiguration.executor->Submit(std::move(asyncTask));
   sem->WaitOne();
   streamReadyHandler(*eventEncoderStream);
+#endif
 }
 void TranscribeStreamingServiceClient::StartMedicalScribeStreamAsync(
     Model::StartMedicalScribeStreamRequest& request, const StartMedicalScribeStreamStreamReadyHandler& streamReadyHandler,
@@ -322,10 +357,43 @@ void TranscribeStreamingServiceClient::StartMedicalScribeStreamAsync(
   }
   endpointResolutionOutcome.GetResult().AddPathSegments("/medical-scribe-stream");
 
+#if AWS_SDK_USE_CRT_HTTP
+  // Push-based WriteData path (CRT HTTP client only)
+  auto writeDataStreamBuf = Aws::MakeShared<Aws::Utils::Stream::HttpWriteDataStreamBuf>(ALLOCATION_TAG, GetHttpClient());
+  auto signer = GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
+
+  auto eventEncoderStream = Aws::MakeShared<Model::MedicalScribeInputStream>(ALLOCATION_TAG, writeDataStreamBuf);
+  eventEncoderStream->SetSigner(signer);
+
+  auto requestCopy = Aws::MakeShared<StartMedicalScribeStreamRequest>(ALLOCATION_TAG, request);
+  request.SetInputStream(eventEncoderStream);
+
+  auto& endpoint = endpointResolutionOutcome.GetResult();
+  auto httpRequest =
+      CreateHttpRequest(endpoint.GetURI(), Aws::Http::HttpMethod::HTTP_POST, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+  httpRequest->SetEventStreamRequest(true);
+  httpRequest->SetHasEventStreamResponse(true);
+  BuildHttpRequest(*requestCopy, httpRequest);
+
+  if (!signer->SignRequest(*httpRequest, nullptr, nullptr, true)) {
+    handler(this, request,
+            StartMedicalScribeStreamOutcome(
+                Aws::Client::AWSError<CoreErrors>(CoreErrors::CLIENT_SIGNING_FAILURE, "", "Failed to sign request", false)),
+            handlerContext);
+    return;
+  }
+  eventEncoderStream->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(*httpRequest));
+
+  Aws::Client::SubmitBidirectionalStreamingRequest<TranscribeStreamingServiceClient, StartMedicalScribeStreamOutcome,
+                                                   StartMedicalScribeStreamRequest, Model::MedicalScribeInputStream>(
+      this, request, requestCopy, eventEncoderStream, writeDataStreamBuf, httpRequest, m_clientConfiguration.executor.get(),
+      streamReadyHandler, handler, handlerContext);
+#else
+  // Pull-based path (curl/WinHTTP)
   auto eventEncoderStream = Aws::MakeShared<Model::MedicalScribeInputStream>(ALLOCATION_TAG);
   eventEncoderStream->SetSigner(GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER));
   auto requestCopy = Aws::MakeShared<StartMedicalScribeStreamRequest>("StartMedicalScribeStream", request);
-  requestCopy->SetInputStream(eventEncoderStream);  // this becomes the body of the request
+  requestCopy->SetInputStream(eventEncoderStream);
   request.SetInputStream(eventEncoderStream);
 
   auto asyncTask = CreateBidirectionalEventStreamTask<StartMedicalScribeStreamOutcome>(
@@ -334,6 +402,7 @@ void TranscribeStreamingServiceClient::StartMedicalScribeStreamAsync(
   m_clientConfiguration.executor->Submit(std::move(asyncTask));
   sem->WaitOne();
   streamReadyHandler(*eventEncoderStream);
+#endif
 }
 void TranscribeStreamingServiceClient::StartMedicalStreamTranscriptionAsync(
     Model::StartMedicalStreamTranscriptionRequest& request, const StartMedicalStreamTranscriptionStreamReadyHandler& streamReadyHandler,
@@ -404,10 +473,43 @@ void TranscribeStreamingServiceClient::StartMedicalStreamTranscriptionAsync(
   }
   endpointResolutionOutcome.GetResult().AddPathSegments("/medical-stream-transcription");
 
+#if AWS_SDK_USE_CRT_HTTP
+  // Push-based WriteData path (CRT HTTP client only)
+  auto writeDataStreamBuf = Aws::MakeShared<Aws::Utils::Stream::HttpWriteDataStreamBuf>(ALLOCATION_TAG, GetHttpClient());
+  auto signer = GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
+
+  auto eventEncoderStream = Aws::MakeShared<Model::AudioStream>(ALLOCATION_TAG, writeDataStreamBuf);
+  eventEncoderStream->SetSigner(signer);
+
+  auto requestCopy = Aws::MakeShared<StartMedicalStreamTranscriptionRequest>(ALLOCATION_TAG, request);
+  request.SetAudioStream(eventEncoderStream);
+
+  auto& endpoint = endpointResolutionOutcome.GetResult();
+  auto httpRequest =
+      CreateHttpRequest(endpoint.GetURI(), Aws::Http::HttpMethod::HTTP_POST, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+  httpRequest->SetEventStreamRequest(true);
+  httpRequest->SetHasEventStreamResponse(true);
+  BuildHttpRequest(*requestCopy, httpRequest);
+
+  if (!signer->SignRequest(*httpRequest, nullptr, nullptr, true)) {
+    handler(this, request,
+            StartMedicalStreamTranscriptionOutcome(
+                Aws::Client::AWSError<CoreErrors>(CoreErrors::CLIENT_SIGNING_FAILURE, "", "Failed to sign request", false)),
+            handlerContext);
+    return;
+  }
+  eventEncoderStream->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(*httpRequest));
+
+  Aws::Client::SubmitBidirectionalStreamingRequest<TranscribeStreamingServiceClient, StartMedicalStreamTranscriptionOutcome,
+                                                   StartMedicalStreamTranscriptionRequest, Model::AudioStream>(
+      this, request, requestCopy, eventEncoderStream, writeDataStreamBuf, httpRequest, m_clientConfiguration.executor.get(),
+      streamReadyHandler, handler, handlerContext);
+#else
+  // Pull-based path (curl/WinHTTP)
   auto eventEncoderStream = Aws::MakeShared<Model::AudioStream>(ALLOCATION_TAG);
   eventEncoderStream->SetSigner(GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER));
   auto requestCopy = Aws::MakeShared<StartMedicalStreamTranscriptionRequest>("StartMedicalStreamTranscription", request);
-  requestCopy->SetAudioStream(eventEncoderStream);  // this becomes the body of the request
+  requestCopy->SetAudioStream(eventEncoderStream);
   request.SetAudioStream(eventEncoderStream);
 
   auto asyncTask = CreateBidirectionalEventStreamTask<StartMedicalStreamTranscriptionOutcome>(
@@ -416,6 +518,7 @@ void TranscribeStreamingServiceClient::StartMedicalStreamTranscriptionAsync(
   m_clientConfiguration.executor->Submit(std::move(asyncTask));
   sem->WaitOne();
   streamReadyHandler(*eventEncoderStream);
+#endif
 }
 void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(
     Model::StartStreamTranscriptionRequest& request, const StartStreamTranscriptionStreamReadyHandler& streamReadyHandler,
@@ -462,10 +565,43 @@ void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(
   }
   endpointResolutionOutcome.GetResult().AddPathSegments("/stream-transcription");
 
+#if AWS_SDK_USE_CRT_HTTP
+  // Push-based WriteData path (CRT HTTP client only)
+  auto writeDataStreamBuf = Aws::MakeShared<Aws::Utils::Stream::HttpWriteDataStreamBuf>(ALLOCATION_TAG, GetHttpClient());
+  auto signer = GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
+
+  auto eventEncoderStream = Aws::MakeShared<Model::AudioStream>(ALLOCATION_TAG, writeDataStreamBuf);
+  eventEncoderStream->SetSigner(signer);
+
+  auto requestCopy = Aws::MakeShared<StartStreamTranscriptionRequest>(ALLOCATION_TAG, request);
+  request.SetAudioStream(eventEncoderStream);
+
+  auto& endpoint = endpointResolutionOutcome.GetResult();
+  auto httpRequest =
+      CreateHttpRequest(endpoint.GetURI(), Aws::Http::HttpMethod::HTTP_POST, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+  httpRequest->SetEventStreamRequest(true);
+  httpRequest->SetHasEventStreamResponse(true);
+  BuildHttpRequest(*requestCopy, httpRequest);
+
+  if (!signer->SignRequest(*httpRequest, nullptr, nullptr, true)) {
+    handler(this, request,
+            StartStreamTranscriptionOutcome(
+                Aws::Client::AWSError<CoreErrors>(CoreErrors::CLIENT_SIGNING_FAILURE, "", "Failed to sign request", false)),
+            handlerContext);
+    return;
+  }
+  eventEncoderStream->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(*httpRequest));
+
+  Aws::Client::SubmitBidirectionalStreamingRequest<TranscribeStreamingServiceClient, StartStreamTranscriptionOutcome,
+                                                   StartStreamTranscriptionRequest, Model::AudioStream>(
+      this, request, requestCopy, eventEncoderStream, writeDataStreamBuf, httpRequest, m_clientConfiguration.executor.get(),
+      streamReadyHandler, handler, handlerContext);
+#else
+  // Pull-based path (curl/WinHTTP)
   auto eventEncoderStream = Aws::MakeShared<Model::AudioStream>(ALLOCATION_TAG);
   eventEncoderStream->SetSigner(GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER));
   auto requestCopy = Aws::MakeShared<StartStreamTranscriptionRequest>("StartStreamTranscription", request);
-  requestCopy->SetAudioStream(eventEncoderStream);  // this becomes the body of the request
+  requestCopy->SetAudioStream(eventEncoderStream);
   request.SetAudioStream(eventEncoderStream);
 
   auto asyncTask = CreateBidirectionalEventStreamTask<StartStreamTranscriptionOutcome>(
@@ -474,4 +610,5 @@ void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(
   m_clientConfiguration.executor->Submit(std::move(asyncTask));
   sem->WaitOne();
   streamReadyHandler(*eventEncoderStream);
+#endif
 }

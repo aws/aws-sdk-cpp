@@ -195,6 +195,10 @@ class CRTClientStream : public Aws::Http::ClientStream {
 
   int WriteData(std::shared_ptr<Aws::IOStream> stream, const std::function<void(int errorCode)>& onComplete, bool endStream) override {
     auto crtStream = std::make_shared<Aws::Crt::Io::StdIOStreamInputStream>(stream, Aws::Crt::ApiAllocator());
+    if (!crtStream->IsValid()) {
+      onComplete(AWS_ERROR_HTTP_STREAM_HAS_COMPLETED);
+      return AWS_ERROR_HTTP_STREAM_HAS_COMPLETED;
+    }
     return m_stream->WriteData(crtStream,
         [onComplete](std::shared_ptr<Aws::Crt::Http::HttpStream>&, int errorCode) {
             onComplete(errorCode);

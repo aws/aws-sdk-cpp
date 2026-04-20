@@ -9,6 +9,7 @@
 #include <aws/connecthealth/model/MedicalScribeConfigurationEvent.h>
 #include <aws/connecthealth/model/MedicalScribeSessionControlEvent.h>
 #include <aws/core/utils/event/EventStream.h>
+#include <aws/core/utils/stream/HttpWriteDataStreamBuf.h>
 
 #include <utility>
 
@@ -24,6 +25,9 @@ namespace Model {
  */
 class AWS_CONNECTHEALTH_API MedicalScribeInputStream : public Aws::Utils::Event::EventEncoderStream {
  public:
+  MedicalScribeInputStream() = default;
+  explicit MedicalScribeInputStream(std::shared_ptr<Aws::Utils::Stream::HttpWriteDataStreamBuf> streambuf)
+      : Aws::Utils::Event::EventEncoderStream(std::move(streambuf)) {}
   MedicalScribeInputStream& WriteMedicalScribeAudioEvent(const MedicalScribeAudioEvent& value) {
     Aws::Utils::Event::Message msg;
     msg.InsertEventHeader(":message-type", Aws::String("event"));

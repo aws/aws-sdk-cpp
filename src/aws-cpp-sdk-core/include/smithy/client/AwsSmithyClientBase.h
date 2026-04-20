@@ -167,6 +167,9 @@ namespace client
     protected:
         template <typename OutcomeT, typename ClientT, typename RequestT, typename HandlerT>
         friend class SmithyBidirectionalEventStreamingTask;
+
+        template <typename OutcomeT, typename ClientT, typename RequestT, typename EncoderStreamT, typename HandlerT>
+        friend class SmithyBidirectionalStreamingWriteDataTask;
         
         //for backwards compatibility
         const std::shared_ptr<Aws::Client::AWSErrorMarshaller>& GetErrorMarshaller() const

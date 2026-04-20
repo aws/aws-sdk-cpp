@@ -25,11 +25,48 @@ void ${className}::${operation.name}Async(Model::${operation.request.shape.name}
 #end
 #end
 #set($streamModelNameWithFirstLetterCapitalized = $CppViewHelper.capitalizeFirstChar($streamModelName))
-  auto eventEncoderStream = Aws::MakeShared<Model::$streamModelType>(ALLOCATION_TAG);
+\#if AWS_SDK_USE_CRT_HTTP
+  // Push-based WriteData path (CRT HTTP client only)
+  auto writeDataStreamBuf = Aws::MakeShared<Aws::Utils::Stream::HttpWriteDataStreamBuf>(ALLOCATION_TAG, GetHttpClient());
+  auto signer = GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
+
+  auto eventEncoderStream = Aws::MakeShared<Model::${streamModelType}>(ALLOCATION_TAG, writeDataStreamBuf);
+  eventEncoderStream->SetSigner(signer);
+
+  auto requestCopy = Aws::MakeShared<${operation.request.shape.name}>(ALLOCATION_TAG, request);
+  request.Set${streamModelNameWithFirstLetterCapitalized}(eventEncoderStream);
+
+  auto& endpoint = endpointResolutionOutcome.GetResult();
+  auto httpRequest = CreateHttpRequest(
+      endpoint.GetURI(), Aws::Http::HttpMethod::HTTP_${operation.http.method},
+      Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+  httpRequest->SetEventStreamRequest(true);
+  httpRequest->SetHasEventStreamResponse(true);
+  BuildHttpRequest(*requestCopy, httpRequest);
+
+  if (!signer->SignRequest(*httpRequest, nullptr, nullptr, true)) {
+    handler(this, request,
+        ${operation.name}Outcome(Aws::Client::AWSError<CoreErrors>(
+            CoreErrors::CLIENT_SIGNING_FAILURE, "", "Failed to sign request", false)),
+        handlerContext);
+    return;
+  }
+  eventEncoderStream->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(*httpRequest));
+
+  Aws::Client::SubmitBidirectionalStreamingRequest<
+      ${className},
+      ${operation.name}Outcome,
+      ${operation.request.shape.name},
+      Model::${streamModelType}>(
+    this, request, requestCopy, eventEncoderStream, writeDataStreamBuf,
+    httpRequest, m_clientConfiguration.executor.get(),
+    streamReadyHandler, handler, handlerContext);
+\#else
+  // Pull-based path (curl/WinHTTP)
+  auto eventEncoderStream = Aws::MakeShared<Model::${streamModelType}>(ALLOCATION_TAG);
   eventEncoderStream->SetSigner(GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER));
   auto requestCopy = Aws::MakeShared<${operation.request.shape.name}>("${operation.name}", request);
-  requestCopy->Set${streamModelNameWithFirstLetterCapitalized}(eventEncoderStream); // this becomes the body of the request
-##TODO 1.12: remove next line
+  requestCopy->Set${streamModelNameWithFirstLetterCapitalized}(eventEncoderStream);
   request.Set${streamModelNameWithFirstLetterCapitalized}(eventEncoderStream);
 
   auto asyncTask = CreateBidirectionalEventStreamTask<${operation.name}Outcome>(this,
@@ -42,4 +79,5 @@ void ${className}::${operation.name}Async(Model::${operation.request.shape.name}
   m_clientConfiguration.executor->Submit(std::move(asyncTask));
   sem->WaitOne();
   streamReadyHandler(*eventEncoderStream);
+#endif
 }

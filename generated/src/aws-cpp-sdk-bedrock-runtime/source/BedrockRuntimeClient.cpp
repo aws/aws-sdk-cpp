@@ -30,6 +30,7 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/threading/Executor.h>
+#include <smithy/client/SmithyBidirectionalStreamingWriteDataTask.h>
 #include <smithy/client/SmithyEventStreamingAsyncTask.h>
 #include <smithy/identity/resolver/built-in/AwsCredentialsProviderIdentityResolver.h>
 #include <smithy/identity/resolver/built-in/DefaultAwsCredentialIdentityResolver.h>
@@ -387,6 +388,30 @@ void BedrockRuntimeClient::InvokeModelWithBidirectionalStreamAsync(
     resolvedEndpoint.AddPathSegments("/invoke-with-bidirectional-stream");
   };
 
+#if AWS_SDK_USE_CRT_HTTP
+  // Push-based WriteData path (CRT HTTP client only)
+  auto writeDataStreamBuf = Aws::MakeShared<Aws::Utils::Stream::HttpWriteDataStreamBuf>(ALLOCATION_TAG, m_httpClient);
+  auto eventEncoderStream = Aws::MakeShared<Model::InvokeModelWithBidirectionalStreamInput>(ALLOCATION_TAG, writeDataStreamBuf);
+  request.SetBody(eventEncoderStream);
+
+  auto requestCopy = Aws::MakeShared<InvokeModelWithBidirectionalStreamRequest>(ALLOCATION_TAG, request);
+
+  auto authCallback = [&](std::shared_ptr<smithy::client::AwsSmithyClientAsyncRequestContext> ctx) -> void {
+    eventEncoderStream->SetSigningCallback([this, ctx, eventEncoderStream](Aws::Utils::Event::Message& message, Aws::String& seed) -> bool {
+      auto outcome = SignEventMessage(message, seed, ctx);
+      return outcome.IsSuccess();
+    });
+  };
+
+  auto asyncTask = smithy::client::CreateSmithyBidirectionalWriteDataTask<InvokeModelWithBidirectionalStreamOutcome>(
+      this, requestCopy, handler, handlerContext, eventEncoderStream, writeDataStreamBuf, std::move(endpointCallback),
+      std::move(authCallback));
+  auto sem = asyncTask.GetSemaphore();
+  m_clientConfiguration.executor->Submit(std::move(asyncTask));
+  sem->WaitOne();
+  streamReadyHandler(*eventEncoderStream);
+#else
+  // Pull-based path
   auto eventEncoderStream = Aws::MakeShared<Model::InvokeModelWithBidirectionalStreamInput>(ALLOCATION_TAG);
   auto authCallback = [&](std::shared_ptr<smithy::client::AwsSmithyClientAsyncRequestContext> ctx) -> void {
     eventEncoderStream->SetSigningCallback([this, ctx, eventEncoderStream](Aws::Utils::Event::Message& message, Aws::String& seed) -> bool {
@@ -395,8 +420,8 @@ void BedrockRuntimeClient::InvokeModelWithBidirectionalStreamAsync(
     });
   };
   auto requestCopy = Aws::MakeShared<InvokeModelWithBidirectionalStreamRequest>("InvokeModelWithBidirectionalStream", request);
-  requestCopy->SetBody(eventEncoderStream);  // this becomes the body of the request
-  request.SetBody(eventEncoderStream);       // this becomes the body of the request
+  requestCopy->SetBody(eventEncoderStream);
+  request.SetBody(eventEncoderStream);
 
   auto asyncTask = smithy::client::CreateSmithyBidirectionalEventStreamTask<InvokeModelWithBidirectionalStreamOutcome>(
       this, requestCopy, handler, handlerContext, eventEncoderStream, endpointCallback, authCallback);
@@ -404,6 +429,7 @@ void BedrockRuntimeClient::InvokeModelWithBidirectionalStreamAsync(
   m_clientConfiguration.executor->Submit(std::move(asyncTask));
   sem->WaitOne();
   streamReadyHandler(*eventEncoderStream);
+#endif
 }
 InvokeModelWithResponseStreamOutcome BedrockRuntimeClient::InvokeModelWithResponseStream(
     InvokeModelWithResponseStreamRequest& request) const {

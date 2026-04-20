@@ -5,6 +5,7 @@
 
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
+#include <aws/core/client/AWSClientBidirectionalStreaming.h>
 #include <aws/core/client/AWSClientEventStreamingAsyncTask.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
@@ -489,10 +490,43 @@ void LexRuntimeV2Client::StartConversationAsync(Model::StartConversationRequest&
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
   endpointResolutionOutcome.GetResult().AddPathSegments("/conversation");
 
+#if AWS_SDK_USE_CRT_HTTP
+  // Push-based WriteData path (CRT HTTP client only)
+  auto writeDataStreamBuf = Aws::MakeShared<Aws::Utils::Stream::HttpWriteDataStreamBuf>(ALLOCATION_TAG, GetHttpClient());
+  auto signer = GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
+
+  auto eventEncoderStream = Aws::MakeShared<Model::StartConversationRequestEventStream>(ALLOCATION_TAG, writeDataStreamBuf);
+  eventEncoderStream->SetSigner(signer);
+
+  auto requestCopy = Aws::MakeShared<StartConversationRequest>(ALLOCATION_TAG, request);
+  request.SetRequestEventStream(eventEncoderStream);
+
+  auto& endpoint = endpointResolutionOutcome.GetResult();
+  auto httpRequest =
+      CreateHttpRequest(endpoint.GetURI(), Aws::Http::HttpMethod::HTTP_POST, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+  httpRequest->SetEventStreamRequest(true);
+  httpRequest->SetHasEventStreamResponse(true);
+  BuildHttpRequest(*requestCopy, httpRequest);
+
+  if (!signer->SignRequest(*httpRequest, nullptr, nullptr, true)) {
+    handler(this, request,
+            StartConversationOutcome(
+                Aws::Client::AWSError<CoreErrors>(CoreErrors::CLIENT_SIGNING_FAILURE, "", "Failed to sign request", false)),
+            handlerContext);
+    return;
+  }
+  eventEncoderStream->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(*httpRequest));
+
+  Aws::Client::SubmitBidirectionalStreamingRequest<LexRuntimeV2Client, StartConversationOutcome, StartConversationRequest,
+                                                   Model::StartConversationRequestEventStream>(
+      this, request, requestCopy, eventEncoderStream, writeDataStreamBuf, httpRequest, m_clientConfiguration.executor.get(),
+      streamReadyHandler, handler, handlerContext);
+#else
+  // Pull-based path (curl/WinHTTP)
   auto eventEncoderStream = Aws::MakeShared<Model::StartConversationRequestEventStream>(ALLOCATION_TAG);
   eventEncoderStream->SetSigner(GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER));
   auto requestCopy = Aws::MakeShared<StartConversationRequest>("StartConversation", request);
-  requestCopy->SetRequestEventStream(eventEncoderStream);  // this becomes the body of the request
+  requestCopy->SetRequestEventStream(eventEncoderStream);
   request.SetRequestEventStream(eventEncoderStream);
 
   auto asyncTask = CreateBidirectionalEventStreamTask<StartConversationOutcome>(this, endpointResolutionOutcome.GetResultWithOwnership(),
@@ -501,4 +535,5 @@ void LexRuntimeV2Client::StartConversationAsync(Model::StartConversationRequest&
   m_clientConfiguration.executor->Submit(std::move(asyncTask));
   sem->WaitOne();
   streamReadyHandler(*eventEncoderStream);
+#endif
 }
