@@ -159,11 +159,10 @@ void ${metadata.classNamePrefix}ClientConfiguration::Load${serviceNamespace}Spec
 #end
 #if(!$inputProfileNameUsed)
 \#if defined(_MSC_VER)
-\#define AWS_UNREFERENCED_PARAM(x) (&reinterpret_cast<const int &>(x))
+  (&reinterpret_cast<const int &>(inputProfileName));
 \#else
-\#define AWS_UNREFERENCED_PARAM(x) ((void)(x))
+  (void)(inputProfileName);
 #endif
-  AWS_UNREFERENCED_PARAM(inputProfileName);
 #end
 }
 
