@@ -61,6 +61,18 @@ Aws::String CreateAutoScalingGroupRequest::SerializePayload() const {
     }
   }
 
+  if (m_availabilityZoneIdsHasBeenSet) {
+    if (m_availabilityZoneIds.empty()) {
+      ss << "AvailabilityZoneIds=&";
+    } else {
+      unsigned availabilityZoneIdsCount = 1;
+      for (auto& item : m_availabilityZoneIds) {
+        ss << "AvailabilityZoneIds.member." << availabilityZoneIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        availabilityZoneIdsCount++;
+      }
+    }
+  }
+
   if (m_loadBalancerNamesHasBeenSet) {
     if (m_loadBalancerNames.empty()) {
       ss << "LoadBalancerNames=&";

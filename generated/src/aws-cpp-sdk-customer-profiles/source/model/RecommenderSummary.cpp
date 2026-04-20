@@ -26,6 +26,10 @@ RecommenderSummary& RecommenderSummary::operator=(JsonView jsonValue) {
     m_recipeName = RecommenderRecipeNameMapper::GetRecommenderRecipeNameForName(jsonValue.GetString("RecipeName"));
     m_recipeNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RecommenderSchemaName")) {
+    m_recommenderSchemaName = jsonValue.GetString("RecommenderSchemaName");
+    m_recommenderSchemaNameHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("RecommenderConfig")) {
     m_recommenderConfig = jsonValue.GetObject("RecommenderConfig");
     m_recommenderConfigHasBeenSet = true;
@@ -73,6 +77,10 @@ JsonValue RecommenderSummary::Jsonize() const {
 
   if (m_recipeNameHasBeenSet) {
     payload.WithString("RecipeName", RecommenderRecipeNameMapper::GetNameForRecommenderRecipeName(m_recipeName));
+  }
+
+  if (m_recommenderSchemaNameHasBeenSet) {
+    payload.WithString("RecommenderSchemaName", m_recommenderSchemaName);
   }
 
   if (m_recommenderConfigHasBeenSet) {

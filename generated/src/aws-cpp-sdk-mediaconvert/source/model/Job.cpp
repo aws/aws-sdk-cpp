@@ -46,6 +46,10 @@ Job& Job::operator=(JsonView jsonValue) {
     m_currentPhase = JobPhaseMapper::GetJobPhaseForName(jsonValue.GetString("currentPhase"));
     m_currentPhaseHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("elementalInferenceConfiguration")) {
+    m_elementalInferenceConfiguration = jsonValue.GetObject("elementalInferenceConfiguration");
+    m_elementalInferenceConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("errorCode")) {
     m_errorCode = jsonValue.GetInteger("errorCode");
     m_errorCodeHasBeenSet = true;
@@ -190,6 +194,10 @@ JsonValue Job::Jsonize() const {
 
   if (m_currentPhaseHasBeenSet) {
     payload.WithString("currentPhase", JobPhaseMapper::GetNameForJobPhase(m_currentPhase));
+  }
+
+  if (m_elementalInferenceConfigurationHasBeenSet) {
+    payload.WithObject("elementalInferenceConfiguration", m_elementalInferenceConfiguration.Jsonize());
   }
 
   if (m_errorCodeHasBeenSet) {

@@ -80,7 +80,7 @@ class DeleteDBInstanceRequest : public NeptuneRequest {
   /**
    * <p> The DBSnapshotIdentifier of the new DBSnapshot created when
    * SkipFinalSnapshot is set to <code>false</code>.</p>  <p>Specifying this
-   * parameter and also setting the SkipFinalShapshot parameter to true results in an
+   * parameter and also setting the SkipFinalSnapshot parameter to true results in an
    * error.</p>  <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
    * numbers.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
    * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> <li>

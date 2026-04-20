@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/groundstation/GroundStation_EXPORTS.h>
 #include <aws/groundstation/model/ContactStatus.h>
+#include <aws/groundstation/model/ContactVersion.h>
 #include <aws/groundstation/model/DataflowDetail.h>
 #include <aws/groundstation/model/Elevation.h>
 #include <aws/groundstation/model/EphemerisResponseData.h>
@@ -30,7 +31,8 @@ class JsonValue;
 namespace GroundStation {
 namespace Model {
 /**
- * <p> </p><p><h3>See Also:</h3>   <a
+ * <p>Output for the <code>DescribeContact</code> operation. </p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DescribeContactResponse">AWS
  * API Reference</a></p>
  */
@@ -127,7 +129,7 @@ class DescribeContactResult {
 
   ///@{
   /**
-   * <p>Amount of time prior to contact start you’d like to receive a CloudWatch
+   * <p>Start time in UTC of the pre-pass period, at which you receive a CloudWatch
    * event indicating an upcoming pass.</p>
    */
   inline const Aws::Utils::DateTime& GetPrePassStartTime() const { return m_prePassStartTime; }
@@ -145,7 +147,7 @@ class DescribeContactResult {
 
   ///@{
   /**
-   * <p>Amount of time after a contact ends that you’d like to receive a CloudWatch
+   * <p>End time in UTC of the post-pass period, at which you receive a CloudWatch
    * event indicating the pass has finished.</p>
    */
   inline const Aws::Utils::DateTime& GetPostPassEndTime() const { return m_postPassEndTime; }
@@ -252,7 +254,8 @@ class DescribeContactResult {
 
   ///@{
   /**
-   * <p>Region of a contact.</p>
+   * <p>Region where the <code>ReserveContact</code> API was called to schedule this
+   * contact.</p>
    */
   inline const Aws::String& GetRegion() const { return m_region; }
   template <typename RegionT = Aws::String>
@@ -296,7 +299,7 @@ class DescribeContactResult {
    * href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive
    * mask</a>. This time is based on the satellite's current active ephemeris for
    * future contacts and the ephemeris that was active during contact execution for
-   * completed contacts. </p>
+   * completed contacts.</p>
    */
   inline const Aws::Utils::DateTime& GetVisibilityStartTime() const { return m_visibilityStartTime; }
   template <typename VisibilityStartTimeT = Aws::Utils::DateTime>
@@ -317,7 +320,7 @@ class DescribeContactResult {
    * href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive
    * mask</a>. This time is based on the satellite's current active ephemeris for
    * future contacts and the ephemeris that was active during contact execution for
-   * completed contacts. </p>
+   * completed contacts.</p>
    */
   inline const Aws::Utils::DateTime& GetVisibilityEndTime() const { return m_visibilityEndTime; }
   template <typename VisibilityEndTimeT = Aws::Utils::DateTime>
@@ -363,6 +366,23 @@ class DescribeContactResult {
   template <typename EphemerisT = EphemerisResponseData>
   DescribeContactResult& WithEphemeris(EphemerisT&& value) {
     SetEphemeris(std::forward<EphemerisT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Version information for a contact.</p>
+   */
+  inline const ContactVersion& GetVersion() const { return m_version; }
+  template <typename VersionT = ContactVersion>
+  void SetVersion(VersionT&& value) {
+    m_versionHasBeenSet = true;
+    m_version = std::forward<VersionT>(value);
+  }
+  template <typename VersionT = ContactVersion>
+  DescribeContactResult& WithVersion(VersionT&& value) {
+    SetVersion(std::forward<VersionT>(value));
     return *this;
   }
   ///@}
@@ -420,6 +440,8 @@ class DescribeContactResult {
 
   EphemerisResponseData m_ephemeris;
 
+  ContactVersion m_version;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_contactIdHasBeenSet = false;
@@ -440,6 +462,7 @@ class DescribeContactResult {
   bool m_visibilityEndTimeHasBeenSet = false;
   bool m_trackingOverridesHasBeenSet = false;
   bool m_ephemerisHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

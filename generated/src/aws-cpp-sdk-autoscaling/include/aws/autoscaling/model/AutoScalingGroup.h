@@ -248,6 +248,31 @@ class AutoScalingGroup {
 
   ///@{
   /**
+   * <p> The Availability Zone IDs where the Auto Scaling group can launch instances.
+   * </p>
+   */
+  inline const Aws::Vector<Aws::String>& GetAvailabilityZoneIds() const { return m_availabilityZoneIds; }
+  inline bool AvailabilityZoneIdsHasBeenSet() const { return m_availabilityZoneIdsHasBeenSet; }
+  template <typename AvailabilityZoneIdsT = Aws::Vector<Aws::String>>
+  void SetAvailabilityZoneIds(AvailabilityZoneIdsT&& value) {
+    m_availabilityZoneIdsHasBeenSet = true;
+    m_availabilityZoneIds = std::forward<AvailabilityZoneIdsT>(value);
+  }
+  template <typename AvailabilityZoneIdsT = Aws::Vector<Aws::String>>
+  AutoScalingGroup& WithAvailabilityZoneIds(AvailabilityZoneIdsT&& value) {
+    SetAvailabilityZoneIds(std::forward<AvailabilityZoneIdsT>(value));
+    return *this;
+  }
+  template <typename AvailabilityZoneIdsT = Aws::String>
+  AutoScalingGroup& AddAvailabilityZoneIds(AvailabilityZoneIdsT&& value) {
+    m_availabilityZoneIdsHasBeenSet = true;
+    m_availabilityZoneIds.emplace_back(std::forward<AvailabilityZoneIdsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>One or more load balancers associated with the group.</p>
    */
   inline const Aws::Vector<Aws::String>& GetLoadBalancerNames() const { return m_loadBalancerNames; }
@@ -841,6 +866,8 @@ class AutoScalingGroup {
 
   Aws::Vector<Aws::String> m_availabilityZones;
 
+  Aws::Vector<Aws::String> m_availabilityZoneIds;
+
   Aws::Vector<Aws::String> m_loadBalancerNames;
 
   Aws::Vector<Aws::String> m_targetGroupARNs;
@@ -909,6 +936,7 @@ class AutoScalingGroup {
   bool m_predictedCapacityHasBeenSet = false;
   bool m_defaultCooldownHasBeenSet = false;
   bool m_availabilityZonesHasBeenSet = false;
+  bool m_availabilityZoneIdsHasBeenSet = false;
   bool m_loadBalancerNamesHasBeenSet = false;
   bool m_targetGroupARNsHasBeenSet = false;
   bool m_healthCheckTypeHasBeenSet = false;

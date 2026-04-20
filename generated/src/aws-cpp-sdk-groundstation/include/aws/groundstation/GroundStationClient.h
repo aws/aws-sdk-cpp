@@ -395,6 +395,33 @@ class AWS_GROUNDSTATION_API GroundStationClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Describes a specific version of a contact.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DescribeContactVersion">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeContactVersionOutcome DescribeContactVersion(const Model::DescribeContactVersionRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeContactVersion that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeContactVersionRequestT = Model::DescribeContactVersionRequest>
+  Model::DescribeContactVersionOutcomeCallable DescribeContactVersionCallable(const DescribeContactVersionRequestT& request) const {
+    return SubmitCallable(&GroundStationClient::DescribeContactVersion, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeContactVersion that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeContactVersionRequestT = Model::DescribeContactVersionRequest>
+  void DescribeContactVersionAsync(const DescribeContactVersionRequestT& request,
+                                   const DescribeContactVersionResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GroundStationClient::DescribeContactVersion, request, handler, context);
+  }
+
+  /**
    * <p>Retrieve information about an existing ephemeris.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DescribeEphemeris">AWS
@@ -609,6 +636,32 @@ class AWS_GROUNDSTATION_API GroundStationClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Returns a list of antennas at a specified ground station.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListAntennas">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAntennasOutcome ListAntennas(const Model::ListAntennasRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListAntennas that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListAntennasRequestT = Model::ListAntennasRequest>
+  Model::ListAntennasOutcomeCallable ListAntennasCallable(const ListAntennasRequestT& request) const {
+    return SubmitCallable(&GroundStationClient::ListAntennas, request);
+  }
+
+  /**
+   * An Async wrapper for ListAntennas that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListAntennasRequestT = Model::ListAntennasRequest>
+  void ListAntennasAsync(const ListAntennasRequestT& request, const ListAntennasResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GroundStationClient::ListAntennas, request, handler, context);
+  }
+
+  /**
    * <p>Returns a list of <code>Config</code> objects.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListConfigs">AWS
    * API Reference</a></p>
@@ -632,6 +685,33 @@ class AWS_GROUNDSTATION_API GroundStationClient : public Aws::Client::AWSJsonCli
                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                         const ListConfigsRequestT& request = {}) const {
     return SubmitAsync(&GroundStationClient::ListConfigs, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a list of versions for a specified contact.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListContactVersions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListContactVersionsOutcome ListContactVersions(const Model::ListContactVersionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListContactVersions that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListContactVersionsRequestT = Model::ListContactVersionsRequest>
+  Model::ListContactVersionsOutcomeCallable ListContactVersionsCallable(const ListContactVersionsRequestT& request) const {
+    return SubmitCallable(&GroundStationClient::ListContactVersions, request);
+  }
+
+  /**
+   * An Async wrapper for ListContactVersions that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListContactVersionsRequestT = Model::ListContactVersionsRequest>
+  void ListContactVersionsAsync(const ListContactVersionsRequestT& request, const ListContactVersionsResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GroundStationClient::ListContactVersions, request, handler, context);
   }
 
   /**
@@ -715,6 +795,36 @@ class AWS_GROUNDSTATION_API GroundStationClient : public Aws::Client::AWSJsonCli
   void ListEphemeridesAsync(const ListEphemeridesRequestT& request, const ListEphemeridesResponseReceivedHandler& handler,
                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&GroundStationClient::ListEphemerides, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a list of reservations for a specified ground station.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListGroundStationReservations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListGroundStationReservationsOutcome ListGroundStationReservations(
+      const Model::ListGroundStationReservationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListGroundStationReservations that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListGroundStationReservationsRequestT = Model::ListGroundStationReservationsRequest>
+  Model::ListGroundStationReservationsOutcomeCallable ListGroundStationReservationsCallable(
+      const ListGroundStationReservationsRequestT& request) const {
+    return SubmitCallable(&GroundStationClient::ListGroundStationReservations, request);
+  }
+
+  /**
+   * An Async wrapper for ListGroundStationReservations that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListGroundStationReservationsRequestT = Model::ListGroundStationReservationsRequest>
+  void ListGroundStationReservationsAsync(const ListGroundStationReservationsRequestT& request,
+                                          const ListGroundStationReservationsResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GroundStationClient::ListGroundStationReservations, request, handler, context);
   }
 
   /**
@@ -980,6 +1090,31 @@ class AWS_GROUNDSTATION_API GroundStationClient : public Aws::Client::AWSJsonCli
   void UpdateConfigAsync(const UpdateConfigRequestT& request, const UpdateConfigResponseReceivedHandler& handler,
                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&GroundStationClient::UpdateConfig, request, handler, context);
+  }
+
+  /**
+   * <p>Updates a specific contact.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateContact">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateContactOutcome UpdateContact(const Model::UpdateContactRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateContact that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UpdateContactRequestT = Model::UpdateContactRequest>
+  Model::UpdateContactOutcomeCallable UpdateContactCallable(const UpdateContactRequestT& request) const {
+    return SubmitCallable(&GroundStationClient::UpdateContact, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateContact that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UpdateContactRequestT = Model::UpdateContactRequest>
+  void UpdateContactAsync(const UpdateContactRequestT& request, const UpdateContactResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GroundStationClient::UpdateContact, request, handler, context);
   }
 
   /**

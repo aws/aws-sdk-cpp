@@ -26,6 +26,10 @@ AthenaParameters& AthenaParameters::operator=(JsonView jsonValue) {
     m_roleArn = jsonValue.GetString("RoleArn");
     m_roleArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ConsumerAccountRoleArn")) {
+    m_consumerAccountRoleArn = jsonValue.GetString("ConsumerAccountRoleArn");
+    m_consumerAccountRoleArnHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("IdentityCenterConfiguration")) {
     m_identityCenterConfiguration = jsonValue.GetObject("IdentityCenterConfiguration");
     m_identityCenterConfigurationHasBeenSet = true;
@@ -42,6 +46,10 @@ JsonValue AthenaParameters::Jsonize() const {
 
   if (m_roleArnHasBeenSet) {
     payload.WithString("RoleArn", m_roleArn);
+  }
+
+  if (m_consumerAccountRoleArnHasBeenSet) {
+    payload.WithString("ConsumerAccountRoleArn", m_consumerAccountRoleArn);
   }
 
   if (m_identityCenterConfigurationHasBeenSet) {

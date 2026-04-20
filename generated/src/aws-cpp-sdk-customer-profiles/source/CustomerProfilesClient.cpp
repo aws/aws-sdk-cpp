@@ -32,6 +32,7 @@
 #include <aws/customer-profiles/model/CreateProfileRequest.h>
 #include <aws/customer-profiles/model/CreateRecommenderFilterRequest.h>
 #include <aws/customer-profiles/model/CreateRecommenderRequest.h>
+#include <aws/customer-profiles/model/CreateRecommenderSchemaRequest.h>
 #include <aws/customer-profiles/model/CreateSegmentDefinitionRequest.h>
 #include <aws/customer-profiles/model/CreateSegmentEstimateRequest.h>
 #include <aws/customer-profiles/model/CreateSegmentSnapshotRequest.h>
@@ -49,6 +50,7 @@
 #include <aws/customer-profiles/model/DeleteProfileRequest.h>
 #include <aws/customer-profiles/model/DeleteRecommenderFilterRequest.h>
 #include <aws/customer-profiles/model/DeleteRecommenderRequest.h>
+#include <aws/customer-profiles/model/DeleteRecommenderSchemaRequest.h>
 #include <aws/customer-profiles/model/DeleteSegmentDefinitionRequest.h>
 #include <aws/customer-profiles/model/DeleteWorkflowRequest.h>
 #include <aws/customer-profiles/model/DetectProfileObjectTypeRequest.h>
@@ -70,6 +72,7 @@
 #include <aws/customer-profiles/model/GetProfileRecommendationsRequest.h>
 #include <aws/customer-profiles/model/GetRecommenderFilterRequest.h>
 #include <aws/customer-profiles/model/GetRecommenderRequest.h>
+#include <aws/customer-profiles/model/GetRecommenderSchemaRequest.h>
 #include <aws/customer-profiles/model/GetSegmentDefinitionRequest.h>
 #include <aws/customer-profiles/model/GetSegmentEstimateRequest.h>
 #include <aws/customer-profiles/model/GetSegmentMembershipRequest.h>
@@ -98,6 +101,7 @@
 #include <aws/customer-profiles/model/ListProfileObjectsRequest.h>
 #include <aws/customer-profiles/model/ListRecommenderFiltersRequest.h>
 #include <aws/customer-profiles/model/ListRecommenderRecipesRequest.h>
+#include <aws/customer-profiles/model/ListRecommenderSchemasRequest.h>
 #include <aws/customer-profiles/model/ListRecommendersRequest.h>
 #include <aws/customer-profiles/model/ListRuleBasedMatchesRequest.h>
 #include <aws/customer-profiles/model/ListSegmentDefinitionsRequest.h>
@@ -550,6 +554,31 @@ CreateRecommenderFilterOutcome CustomerProfilesClient::CreateRecommenderFilter(c
                             : CreateRecommenderFilterOutcome(std::move(result.GetError()));
 }
 
+CreateRecommenderSchemaOutcome CustomerProfilesClient::CreateRecommenderSchema(const CreateRecommenderSchemaRequest& request) const {
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateRecommenderSchema", "Required field: DomainName, is not set");
+    return CreateRecommenderSchemaOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  if (!request.RecommenderSchemaNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateRecommenderSchema", "Required field: RecommenderSchemaName, is not set");
+    return CreateRecommenderSchemaOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecommenderSchemaName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/recommender-schemas/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommenderSchemaName());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRecommenderSchemaOutcome(result.GetResultWithOwnership())
+                            : CreateRecommenderSchemaOutcome(std::move(result.GetError()));
+}
+
 CreateSegmentDefinitionOutcome CustomerProfilesClient::CreateSegmentDefinition(const CreateSegmentDefinitionRequest& request) const {
   if (!request.DomainNameHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("CreateSegmentDefinition", "Required field: DomainName, is not set");
@@ -930,6 +959,31 @@ DeleteRecommenderFilterOutcome CustomerProfilesClient::DeleteRecommenderFilter(c
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteRecommenderFilterOutcome(result.GetResultWithOwnership())
                             : DeleteRecommenderFilterOutcome(std::move(result.GetError()));
+}
+
+DeleteRecommenderSchemaOutcome CustomerProfilesClient::DeleteRecommenderSchema(const DeleteRecommenderSchemaRequest& request) const {
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteRecommenderSchema", "Required field: DomainName, is not set");
+    return DeleteRecommenderSchemaOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  if (!request.RecommenderSchemaNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteRecommenderSchema", "Required field: RecommenderSchemaName, is not set");
+    return DeleteRecommenderSchemaOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecommenderSchemaName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/recommender-schemas/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommenderSchemaName());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRecommenderSchemaOutcome(result.GetResultWithOwnership())
+                            : DeleteRecommenderSchemaOutcome(std::move(result.GetError()));
 }
 
 DeleteSegmentDefinitionOutcome CustomerProfilesClient::DeleteSegmentDefinition(const DeleteSegmentDefinitionRequest& request) const {
@@ -1438,6 +1492,31 @@ GetRecommenderFilterOutcome CustomerProfilesClient::GetRecommenderFilter(const G
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetRecommenderFilterOutcome(result.GetResultWithOwnership())
                             : GetRecommenderFilterOutcome(std::move(result.GetError()));
+}
+
+GetRecommenderSchemaOutcome CustomerProfilesClient::GetRecommenderSchema(const GetRecommenderSchemaRequest& request) const {
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetRecommenderSchema", "Required field: DomainName, is not set");
+    return GetRecommenderSchemaOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  if (!request.RecommenderSchemaNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetRecommenderSchema", "Required field: RecommenderSchemaName, is not set");
+    return GetRecommenderSchemaOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecommenderSchemaName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/recommender-schemas/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommenderSchemaName());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRecommenderSchemaOutcome(result.GetResultWithOwnership())
+                            : GetRecommenderSchemaOutcome(std::move(result.GetError()));
 }
 
 GetSegmentDefinitionOutcome CustomerProfilesClient::GetSegmentDefinition(const GetSegmentDefinitionRequest& request) const {
@@ -2034,6 +2113,25 @@ ListRecommenderRecipesOutcome CustomerProfilesClient::ListRecommenderRecipes(con
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListRecommenderRecipesOutcome(result.GetResultWithOwnership())
                             : ListRecommenderRecipesOutcome(std::move(result.GetError()));
+}
+
+ListRecommenderSchemasOutcome CustomerProfilesClient::ListRecommenderSchemas(const ListRecommenderSchemasRequest& request) const {
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListRecommenderSchemas", "Required field: DomainName, is not set");
+    return ListRecommenderSchemasOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/recommender-schemas");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRecommenderSchemasOutcome(result.GetResultWithOwnership())
+                            : ListRecommenderSchemasOutcome(std::move(result.GetError()));
 }
 
 ListRecommendersOutcome CustomerProfilesClient::ListRecommenders(const ListRecommendersRequest& request) const {

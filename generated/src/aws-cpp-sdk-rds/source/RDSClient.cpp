@@ -118,6 +118,7 @@
 #include <aws/rds/model/DescribePendingMaintenanceActionsRequest.h>
 #include <aws/rds/model/DescribeReservedDBInstancesOfferingsRequest.h>
 #include <aws/rds/model/DescribeReservedDBInstancesRequest.h>
+#include <aws/rds/model/DescribeServerlessV2PlatformVersionsRequest.h>
 #include <aws/rds/model/DescribeSourceRegionsRequest.h>
 #include <aws/rds/model/DescribeTenantDatabasesRequest.h>
 #include <aws/rds/model/DescribeValidDBInstanceModificationsRequest.h>
@@ -1011,6 +1012,13 @@ DescribeReservedDBInstancesOfferingsOutcome RDSClient::DescribeReservedDBInstanc
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeReservedDBInstancesOfferingsOutcome(result.GetResultWithOwnership())
                             : DescribeReservedDBInstancesOfferingsOutcome(std::move(result.GetError()));
+}
+
+DescribeServerlessV2PlatformVersionsOutcome RDSClient::DescribeServerlessV2PlatformVersions(
+    const DescribeServerlessV2PlatformVersionsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeServerlessV2PlatformVersionsOutcome(result.GetResultWithOwnership())
+                            : DescribeServerlessV2PlatformVersionsOutcome(std::move(result.GetError()));
 }
 
 DescribeSourceRegionsOutcome RDSClient::DescribeSourceRegions(const DescribeSourceRegionsRequest& request) const {

@@ -95,6 +95,10 @@ ClusterInstanceGroupSpecification& ClusterInstanceGroupSpecification::operator=(
     m_capacityRequirements = jsonValue.GetObject("CapacityRequirements");
     m_capacityRequirementsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("NetworkInterface")) {
+    m_networkInterface = jsonValue.GetObject("NetworkInterface");
+    m_networkInterfaceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -178,6 +182,10 @@ JsonValue ClusterInstanceGroupSpecification::Jsonize() const {
 
   if (m_capacityRequirementsHasBeenSet) {
     payload.WithObject("CapacityRequirements", m_capacityRequirements.Jsonize());
+  }
+
+  if (m_networkInterfaceHasBeenSet) {
+    payload.WithObject("NetworkInterface", m_networkInterface.Jsonize());
   }
 
   return payload;

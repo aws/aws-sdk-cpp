@@ -3329,6 +3329,36 @@ class AWS_RDS_API RDSClient : public Aws::Client::AWSXMLClient, public Aws::Clie
   }
 
   /**
+   * <p>Describes the properties of specific platform versions for Aurora Serverless
+   * v2.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeServerlessV2PlatformVersions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeServerlessV2PlatformVersionsOutcome DescribeServerlessV2PlatformVersions(
+      const Model::DescribeServerlessV2PlatformVersionsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeServerlessV2PlatformVersions that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DescribeServerlessV2PlatformVersionsRequestT = Model::DescribeServerlessV2PlatformVersionsRequest>
+  Model::DescribeServerlessV2PlatformVersionsOutcomeCallable DescribeServerlessV2PlatformVersionsCallable(
+      const DescribeServerlessV2PlatformVersionsRequestT& request = {}) const {
+    return SubmitCallable(&RDSClient::DescribeServerlessV2PlatformVersions, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeServerlessV2PlatformVersions that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DescribeServerlessV2PlatformVersionsRequestT = Model::DescribeServerlessV2PlatformVersionsRequest>
+  void DescribeServerlessV2PlatformVersionsAsync(const DescribeServerlessV2PlatformVersionsResponseReceivedHandler& handler,
+                                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                                 const DescribeServerlessV2PlatformVersionsRequestT& request = {}) const {
+    return SubmitAsync(&RDSClient::DescribeServerlessV2PlatformVersions, request, handler, context);
+  }
+
+  /**
    * <p>Returns a list of the source Amazon Web Services Regions where the current
    * Amazon Web Services Region can create a read replica, copy a DB snapshot from,
    * or replicate automated backups from.</p> <p>Use this operation to determine

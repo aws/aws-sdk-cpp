@@ -7,7 +7,6 @@
 #include <aws/connect/ConnectRequest.h>
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/TestCaseExecutionStatus.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -93,16 +92,14 @@ class ListTestCaseExecutionsRequest : public ConnectRequest {
   /**
    * <p>Filter executions that started after this time.</p>
    */
-  inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
+  inline long long GetStartTime() const { return m_startTime; }
   inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-  template <typename StartTimeT = Aws::Utils::DateTime>
-  void SetStartTime(StartTimeT&& value) {
+  inline void SetStartTime(long long value) {
     m_startTimeHasBeenSet = true;
-    m_startTime = std::forward<StartTimeT>(value);
+    m_startTime = value;
   }
-  template <typename StartTimeT = Aws::Utils::DateTime>
-  ListTestCaseExecutionsRequest& WithStartTime(StartTimeT&& value) {
-    SetStartTime(std::forward<StartTimeT>(value));
+  inline ListTestCaseExecutionsRequest& WithStartTime(long long value) {
+    SetStartTime(value);
     return *this;
   }
   ///@}
@@ -111,16 +108,14 @@ class ListTestCaseExecutionsRequest : public ConnectRequest {
   /**
    * <p>Filter executions that started before this time.</p>
    */
-  inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
+  inline long long GetEndTime() const { return m_endTime; }
   inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-  template <typename EndTimeT = Aws::Utils::DateTime>
-  void SetEndTime(EndTimeT&& value) {
+  inline void SetEndTime(long long value) {
     m_endTimeHasBeenSet = true;
-    m_endTime = std::forward<EndTimeT>(value);
+    m_endTime = value;
   }
-  template <typename EndTimeT = Aws::Utils::DateTime>
-  ListTestCaseExecutionsRequest& WithEndTime(EndTimeT&& value) {
-    SetEndTime(std::forward<EndTimeT>(value));
+  inline ListTestCaseExecutionsRequest& WithEndTime(long long value) {
+    SetEndTime(value);
     return *this;
   }
   ///@}
@@ -182,9 +177,9 @@ class ListTestCaseExecutionsRequest : public ConnectRequest {
 
   Aws::String m_testCaseName;
 
-  Aws::Utils::DateTime m_startTime{};
+  long long m_startTime{0};
 
-  Aws::Utils::DateTime m_endTime{};
+  long long m_endTime{0};
 
   TestCaseExecutionStatus m_status{TestCaseExecutionStatus::NOT_SET};
 

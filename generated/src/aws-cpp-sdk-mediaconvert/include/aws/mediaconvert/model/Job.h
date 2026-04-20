@@ -12,6 +12,7 @@
 #include <aws/mediaconvert/model/AccelerationSettings.h>
 #include <aws/mediaconvert/model/AccelerationStatus.h>
 #include <aws/mediaconvert/model/BillingTagsSource.h>
+#include <aws/mediaconvert/model/ElementalInferenceConfiguration.h>
 #include <aws/mediaconvert/model/HopDestination.h>
 #include <aws/mediaconvert/model/JobMessages.h>
 #include <aws/mediaconvert/model/JobPhase.h>
@@ -185,6 +186,24 @@ class Job {
   }
   inline Job& WithCurrentPhase(JobPhase value) {
     SetCurrentPhase(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * The Elemental Inference configuration used in this job.
+   */
+  inline const ElementalInferenceConfiguration& GetElementalInferenceConfiguration() const { return m_elementalInferenceConfiguration; }
+  inline bool ElementalInferenceConfigurationHasBeenSet() const { return m_elementalInferenceConfigurationHasBeenSet; }
+  template <typename ElementalInferenceConfigurationT = ElementalInferenceConfiguration>
+  void SetElementalInferenceConfiguration(ElementalInferenceConfigurationT&& value) {
+    m_elementalInferenceConfigurationHasBeenSet = true;
+    m_elementalInferenceConfiguration = std::forward<ElementalInferenceConfigurationT>(value);
+  }
+  template <typename ElementalInferenceConfigurationT = ElementalInferenceConfiguration>
+  Job& WithElementalInferenceConfiguration(ElementalInferenceConfigurationT&& value) {
+    SetElementalInferenceConfiguration(std::forward<ElementalInferenceConfigurationT>(value));
     return *this;
   }
   ///@}
@@ -684,6 +703,8 @@ class Job {
 
   JobPhase m_currentPhase{JobPhase::NOT_SET};
 
+  ElementalInferenceConfiguration m_elementalInferenceConfiguration;
+
   int m_errorCode{0};
 
   Aws::String m_errorMessage;
@@ -738,6 +759,7 @@ class Job {
   bool m_clientRequestTokenHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_currentPhaseHasBeenSet = false;
+  bool m_elementalInferenceConfigurationHasBeenSet = false;
   bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
   bool m_hopDestinationsHasBeenSet = false;

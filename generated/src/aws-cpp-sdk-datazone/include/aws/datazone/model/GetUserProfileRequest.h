@@ -86,15 +86,36 @@ class GetUserProfileRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The session name for IAM role sessions.</p>
+   */
+  inline const Aws::String& GetSessionName() const { return m_sessionName; }
+  inline bool SessionNameHasBeenSet() const { return m_sessionNameHasBeenSet; }
+  template <typename SessionNameT = Aws::String>
+  void SetSessionName(SessionNameT&& value) {
+    m_sessionNameHasBeenSet = true;
+    m_sessionName = std::forward<SessionNameT>(value);
+  }
+  template <typename SessionNameT = Aws::String>
+  GetUserProfileRequest& WithSessionName(SessionNameT&& value) {
+    SetSessionName(std::forward<SessionNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainIdentifier;
 
   Aws::String m_userIdentifier;
 
   UserProfileType m_type{UserProfileType::NOT_SET};
+
+  Aws::String m_sessionName;
   bool m_domainIdentifierHasBeenSet = false;
   bool m_userIdentifierHasBeenSet = false;
   bool m_typeHasBeenSet = false;
+  bool m_sessionNameHasBeenSet = false;
 };
 
 }  // namespace Model

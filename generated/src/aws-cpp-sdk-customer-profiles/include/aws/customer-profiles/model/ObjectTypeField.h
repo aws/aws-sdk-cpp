@@ -34,7 +34,7 @@ class ObjectTypeField {
 
   ///@{
   /**
-   * <p>A field of a ProfileObject. For example: _source.FirstName, where “_source”
+   * <p>A field of a ProfileObject. For example: _source.FirstName, where “_source���
    * is a ProfileObjectType of a Zendesk user and “FirstName” is a field in that
    * ObjectType.</p>
    */
@@ -55,7 +55,8 @@ class ObjectTypeField {
   ///@{
   /**
    * <p>The location of the data in the standard ProfileObject model. For example:
-   * _profile.Address.PostalCode.</p>
+   * _profile.Address.PostalCode. Do not include sensitive or personally identifiable
+   * information (PII) in the target field name.</p>
    */
   inline const Aws::String& GetTarget() const { return m_target; }
   inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }

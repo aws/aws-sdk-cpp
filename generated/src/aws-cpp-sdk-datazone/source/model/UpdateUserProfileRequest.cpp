@@ -23,5 +23,9 @@ Aws::String UpdateUserProfileRequest::SerializePayload() const {
     payload.WithString("status", UserProfileStatusMapper::GetNameForUserProfileStatus(m_status));
   }
 
+  if (m_sessionNameHasBeenSet) {
+    payload.WithString("sessionName", m_sessionName);
+  }
+
   return payload.View().WriteReadable();
 }

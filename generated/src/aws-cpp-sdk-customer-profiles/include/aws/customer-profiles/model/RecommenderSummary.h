@@ -74,6 +74,24 @@ class RecommenderSummary {
 
   ///@{
   /**
+   * <p>The name of the recommender schema associated with this recommender.</p>
+   */
+  inline const Aws::String& GetRecommenderSchemaName() const { return m_recommenderSchemaName; }
+  inline bool RecommenderSchemaNameHasBeenSet() const { return m_recommenderSchemaNameHasBeenSet; }
+  template <typename RecommenderSchemaNameT = Aws::String>
+  void SetRecommenderSchemaName(RecommenderSchemaNameT&& value) {
+    m_recommenderSchemaNameHasBeenSet = true;
+    m_recommenderSchemaName = std::forward<RecommenderSchemaNameT>(value);
+  }
+  template <typename RecommenderSchemaNameT = Aws::String>
+  RecommenderSummary& WithRecommenderSchemaName(RecommenderSchemaNameT&& value) {
+    SetRecommenderSchemaName(std::forward<RecommenderSchemaNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The configuration settings applied to this recommender.</p>
    */
   inline const RecommenderConfig& GetRecommenderConfig() const { return m_recommenderConfig; }
@@ -226,6 +244,8 @@ class RecommenderSummary {
 
   RecommenderRecipeName m_recipeName{RecommenderRecipeName::NOT_SET};
 
+  Aws::String m_recommenderSchemaName;
+
   RecommenderConfig m_recommenderConfig;
 
   Aws::Utils::DateTime m_createdAt{};
@@ -243,6 +263,7 @@ class RecommenderSummary {
   RecommenderUpdate m_latestRecommenderUpdate;
   bool m_recommenderNameHasBeenSet = false;
   bool m_recipeNameHasBeenSet = false;
+  bool m_recommenderSchemaNameHasBeenSet = false;
   bool m_recommenderConfigHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

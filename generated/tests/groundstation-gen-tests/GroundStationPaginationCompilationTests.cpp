@@ -8,13 +8,16 @@
 
 #include <aws/groundstation/GroundStationClientPagination.h>
 #include <aws/groundstation/GroundStationPaginationBase.h>
+#include <aws/groundstation/model/ListAntennasPaginationTraits.h>
 #include <aws/groundstation/model/ListEphemeridesPaginationTraits.h>
 #include <aws/groundstation/model/ListGroundStationsPaginationTraits.h>
+#include <aws/groundstation/model/ListContactVersionsPaginationTraits.h>
 #include <aws/groundstation/model/ListMissionProfilesPaginationTraits.h>
 #include <aws/groundstation/model/ListSatellitesPaginationTraits.h>
 #include <aws/groundstation/model/ListDataflowEndpointGroupsPaginationTraits.h>
 #include <aws/groundstation/model/ListConfigsPaginationTraits.h>
 #include <aws/groundstation/model/ListContactsPaginationTraits.h>
+#include <aws/groundstation/model/ListGroundStationReservationsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

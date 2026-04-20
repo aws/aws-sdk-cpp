@@ -12,7 +12,260 @@
 #include <aws/crt/http/HttpConnectionManager.h>
 #include <aws/crt/http/HttpRequestResponse.h>
 
+#include <utility>
+
 static const char *const CRT_HTTP_CLIENT_TAG = "CRTHttpClient";
+
+namespace {
+// Just a wrapper around a Condition Variable and a mutex, which handles wait and timed waits while protecting
+// from spurious wakeups.
+class AsyncWaiter {
+ public:
+  AsyncWaiter() = default;
+  AsyncWaiter(const AsyncWaiter&) = delete;
+  AsyncWaiter& operator=(const AsyncWaiter&) = delete;
+
+  void Wakeup() {
+    std::lock_guard<std::mutex> locker(m_lock);
+    m_wakeupIntentional = true;
+    m_cvar.notify_one();
+  }
+
+  void WaitOnCompletion() {
+    std::unique_lock<std::mutex> uniqueLocker(m_lock);
+    m_cvar.wait(uniqueLocker, [this]() { return m_wakeupIntentional; });
+  }
+
+  bool WaitOnCompletionFor(const size_t ms) {
+    std::unique_lock<std::mutex> uniqueLocker(m_lock);
+    return m_cvar.wait_for(uniqueLocker, std::chrono::milliseconds(ms), [this]() { return m_wakeupIntentional; });
+  }
+
+ private:
+  std::mutex m_lock;
+  std::condition_variable m_cvar;
+  bool m_wakeupIntentional{false};
+};
+
+void AddRequestMetadataToCrtRequest(const std::shared_ptr<Aws::Http::HttpRequest>& request,
+                                    const std::shared_ptr<Aws::Crt::Http::HttpRequest>& crtRequest) {
+  const char* methodStr = Aws::Http::HttpMethodMapper::GetNameForHttpMethod(request->GetMethod());
+  AWS_LOGSTREAM_TRACE(CRT_HTTP_CLIENT_TAG, "Making " << methodStr << " request to " << request->GetURIString());
+  AWS_LOGSTREAM_TRACE(CRT_HTTP_CLIENT_TAG, "Including headers:");
+  // Add http headers to the request.
+  for (const auto& header : request->GetHeaders()) {
+    Aws::Crt::Http::HttpHeader crtHeader;
+    AWS_LOGSTREAM_TRACE(CRT_HTTP_CLIENT_TAG, header.first << ": " << header.second);
+    crtHeader.name = Aws::Crt::ByteCursorFromArray((const uint8_t*)header.first.data(), header.first.length());
+    crtHeader.value = Aws::Crt::ByteCursorFromArray((const uint8_t*)header.second.data(), header.second.length());
+    crtRequest->AddHeader(crtHeader);
+  }
+
+  // HTTP method, GET, PUT, DELETE, etc...
+  auto methodCursor = Aws::Crt::ByteCursorFromCString(methodStr);
+  crtRequest->SetMethod(methodCursor);
+
+  // Path portion of the request
+  auto pathStrCpy = request->GetUri().GetURLEncodedPathRFC3986();
+  auto queryStrCpy = request->GetUri().GetQueryString();
+  Aws::StringStream ss;
+
+  // CRT client has you pass the query string as part of the path. concatenate that here.
+  ss << pathStrCpy << queryStrCpy;
+  auto fullPathAndQueryCpy = ss.str();
+  auto pathCursor = Aws::Crt::ByteCursorFromArray((uint8_t*)fullPathAndQueryCpy.c_str(), fullPathAndQueryCpy.length());
+  crtRequest->SetPath(pathCursor);
+}
+
+void OnResponseBodyReceived(Aws::Crt::Http::HttpStream&, const Aws::Crt::ByteCursor& body,
+                            const std::shared_ptr<Aws::Http::HttpResponse>& response,
+                            const std::shared_ptr<Aws::Http::HttpRequest>& request) {
+  assert(response);
+  for (const auto& hashIterator : request->GetResponseValidationHashes()) {
+    std::stringstream headerStr;
+    headerStr << "x-amz-checksum-" << hashIterator.first;
+    if (response->HasHeader(headerStr.str().c_str())) {
+      hashIterator.second->Update(reinterpret_cast<unsigned char*>(body.ptr), body.len);
+      break;
+    }
+  }
+
+  // When data is received from the content body of the incoming response, just copy it to the output stream.
+  response->GetResponseBody().write((const char*)body.ptr, static_cast<long>(body.len));
+  if (response->GetResponseBody().fail()) {
+    const auto& ref = response->GetResponseBody();
+    AWS_LOGSTREAM_ERROR(CRT_HTTP_CLIENT_TAG, "Failed to write " << body.len << " (eof: " << ref.eof() << ", bad: " << ref.bad() << ")");
+  }
+
+  if (request->IsEventStreamRequest() && !response->HasHeader(Aws::Http::X_AMZN_ERROR_TYPE)) {
+    response->GetResponseBody().flush();
+  }
+
+  auto& receivedHandler = request->GetDataReceivedEventHandler();
+  if (receivedHandler) {
+    receivedHandler(request.get(), response.get(), static_cast<long long>(body.len));
+  }
+
+  AWS_LOGSTREAM_TRACE(CRT_HTTP_CLIENT_TAG, body.len << " bytes written to response.");
+}
+
+// on response headers arriving, write them to the response.
+void OnIncomingHeaders(Aws::Crt::Http::HttpStream&, enum aws_http_header_block block, const Aws::Crt::Http::HttpHeader* headersArray,
+                       std::size_t headersCount, const std::shared_ptr<Aws::Http::HttpResponse>& response) {
+  if (block == AWS_HTTP_HEADER_BLOCK_INFORMATIONAL) return;
+
+  AWS_LOGSTREAM_TRACE(CRT_HTTP_CLIENT_TAG, "Received Headers: ");
+
+  for (size_t i = 0; i < headersCount; ++i) {
+    const Aws::Crt::Http::HttpHeader* header = &headersArray[i];
+    Aws::String headerNameStr((const char*)header->name.ptr, header->name.len);
+    Aws::String headerValueStr((const char*)header->value.ptr, header->value.len);
+    AWS_LOGSTREAM_TRACE(CRT_HTTP_CLIENT_TAG, headerNameStr << ": " << headerValueStr);
+    response->AddHeader(headerNameStr, std::move(headerValueStr));
+  }
+}
+
+void OnIncomingHeadersBlockDone(Aws::Crt::Http::HttpStream& stream, enum aws_http_header_block,
+                                const std::shared_ptr<Aws::Http::HttpResponse>& response) {
+  AWS_LOGSTREAM_TRACE(CRT_HTTP_CLIENT_TAG, "Received response code: " << stream.GetResponseStatusCode());
+  response->SetResponseCode((Aws::Http::HttpResponseCode)stream.GetResponseStatusCode());
+}
+
+// Request is done. If there was an error set it, otherwise just wake up the cvar.
+void OnStreamComplete(Aws::Crt::Http::HttpStream&, int errorCode, AsyncWaiter& waiter,
+                      const std::shared_ptr<Aws::Http::HttpResponse>& response) {
+  if (errorCode) {
+    // TODO: get the right error parsed out.
+    response->SetClientErrorType(Aws::Client::CoreErrors::NETWORK_CONNECTION);
+    response->SetClientErrorMessage(aws_error_debug_str(errorCode));
+  }
+
+  waiter.Wakeup();
+}
+
+// if the connection acquisition failed, go ahead and fail the request and wakeup the cvar.
+// If it succeeded go ahead and make the request.
+void OnClientConnectionAvailable(std::shared_ptr<Aws::Crt::Http::HttpClientConnection> connection, int errorCode,
+                                 std::shared_ptr<Aws::Crt::Http::HttpClientConnection>& connectionReference,
+                                 Aws::Crt::Http::HttpRequestOptions& requestOptions, AsyncWaiter& waiter,
+                                 const std::shared_ptr<Aws::Http::HttpRequest>& request,
+                                 const std::shared_ptr<Aws::Http::HttpResponse>& response, const Aws::Http::HttpClient& client) {
+  bool shouldContinueRequest = client.ContinueRequest(*request);
+
+  if (!shouldContinueRequest) {
+    response->SetClientErrorType(Aws::Client::CoreErrors::USER_CANCELLED);
+    response->SetClientErrorMessage("Request cancelled by user's continuation handler");
+    waiter.Wakeup();
+    return;
+  }
+
+  int finalErrorCode = errorCode;
+  if (connection) {
+    AWS_LOGSTREAM_DEBUG(CRT_HTTP_CLIENT_TAG, "Obtained connection handle " << (void*)connection.get());
+
+    auto clientStream = connection->NewClientStream(requestOptions);
+    connectionReference = connection;
+
+    if (clientStream && clientStream->Activate()) {
+      return;
+    }
+
+    finalErrorCode = aws_last_error();
+    AWS_LOGSTREAM_ERROR(CRT_HTTP_CLIENT_TAG, "Initiation of request failed because " << aws_error_debug_str(finalErrorCode));
+  }
+
+  const char* errorMsg = aws_error_debug_str(finalErrorCode);
+  AWS_LOGSTREAM_ERROR(CRT_HTTP_CLIENT_TAG, "Obtaining connection failed because " << errorMsg);
+  response->SetClientErrorType(Aws::Client::CoreErrors::NETWORK_CONNECTION);
+  response->SetClientErrorMessage(errorMsg);
+
+  waiter.Wakeup();
+}
+
+class CRTClientStream : public Aws::Http::ClientStream {
+ public:
+  CRTClientStream(std::shared_ptr<Aws::Crt::Http::HttpClientStream> stream, std::shared_ptr<Aws::Http::HttpResponse> response,
+                  std::shared_ptr<Aws::Crt::Http::HttpRequest> crtRequest)
+      : m_stream(std::move(stream)), m_response(std::move(response)), m_crtRequest(std::move(crtRequest)) {}
+  ~CRTClientStream() override = default;
+
+  bool Activate() override {
+    return m_stream->Activate();
+  };
+
+  int WriteData(std::shared_ptr<Aws::IOStream> stream, const std::function<void(int errorCode)>& onComplete, bool endStream) override {
+    auto crtStream = std::make_shared<Aws::Crt::Io::StdIOStreamInputStream>(stream, Aws::Crt::ApiAllocator());
+    return m_stream->WriteData(crtStream,
+        [onComplete](std::shared_ptr<Aws::Crt::Http::HttpStream>&, int errorCode) {
+            onComplete(errorCode);
+        },
+        endStream);
+  }
+
+  std::shared_ptr<Aws::Http::HttpResponse> GetResponse() const override { return m_response; }
+
+ private:
+  std::shared_ptr<Aws::Crt::Http::HttpClientStream> m_stream;
+  std::shared_ptr<Aws::Http::HttpResponse> m_response;
+  // extend life of request for duration of client stream. Request must outlive
+  // the last call to WriteData.
+  std::shared_ptr<Aws::Crt::Http::HttpRequest> m_crtRequest;
+};
+
+class CRTConnection : public Aws::Http::Connection {
+ public:
+  explicit CRTConnection(std::shared_ptr<Aws::Crt::Http::HttpClientConnection> connection) : m_connection(std::move(connection)) {}
+  ~CRTConnection() override = default;
+
+  std::shared_ptr<Aws::Http::ClientStream> NewClientStream(const std::shared_ptr<Aws::Http::HttpRequest>& request,
+                                                           std::function<void(int errorCode)> onStreamComplete) override {
+    auto crtRequest = Aws::Crt::MakeShared<Aws::Crt::Http::HttpRequest>(Aws::Crt::g_allocator);
+    auto response = Aws::MakeShared<Aws::Http::Standard::StandardHttpResponse>(CRT_HTTP_CLIENT_TAG, request);
+
+    AddRequestMetadataToCrtRequest(request, crtRequest);
+
+    Aws::Crt::Http::HttpRequestOptions requestOptions{};
+    requestOptions.request = crtRequest.get();
+
+    requestOptions.onIncomingHeaders = [response](Aws::Crt::Http::HttpStream& stream, enum aws_http_header_block block,
+                                                  const Aws::Crt::Http::HttpHeader* headersArray, std::size_t headersCount) {
+      OnIncomingHeaders(stream, block, headersArray, headersCount, response);
+    };
+
+    requestOptions.onIncomingHeadersBlockDone = [request, response](Aws::Crt::Http::HttpStream& stream, enum aws_http_header_block block) {
+      OnIncomingHeadersBlockDone(stream, block, response);
+      auto& headersHandler = request->GetHeadersReceivedEventHandler();
+      if (headersHandler) {
+        headersHandler(request.get(), response.get());
+      }
+    };
+
+    requestOptions.onIncomingBody = [request, response](Aws::Crt::Http::HttpStream& stream, const Aws::Crt::ByteCursor& body) {
+      OnResponseBodyReceived(stream, body, response, request);
+    };
+
+    requestOptions.onStreamComplete = [response, onStreamComplete](Aws::Crt::Http::HttpStream &, int errorCode) -> void {
+      if (errorCode) {
+        // TODO: get the right error parsed out.
+        response->SetClientErrorType(Aws::Client::CoreErrors::NETWORK_CONNECTION);
+        response->SetClientErrorMessage(aws_error_debug_str(errorCode));
+      }
+      onStreamComplete(errorCode);
+    };
+
+    requestOptions.UseManualDataWrites = true;
+
+    auto crtStream = m_connection->NewClientStream(requestOptions);
+    if (!crtStream) {
+      return nullptr;
+    }
+    return Aws::MakeShared<CRTClientStream>(CRT_HTTP_CLIENT_TAG, std::move(crtStream), std::move(response), std::move(crtRequest));
+  }
+
+ private:
+  std::shared_ptr<Aws::Crt::Http::HttpClientConnection> m_connection;
+};
+}  // namespace
 
 // Adapts AWS SDK input streams and rate limiters to the CRT input stream reading model.
 class SDKAdaptingInputStream : public Aws::Crt::Io::StdIOStreamInputStream {
@@ -98,40 +351,6 @@ private:
     bool m_isStreaming;
 };
 
-// Just a wrapper around a Condition Variable and a mutex, which handles wait and timed waits while protecting
-// from spurious wakeups.
-class AsyncWaiter
-{
-public:
-    AsyncWaiter() = default;
-    AsyncWaiter(const AsyncWaiter&) = delete;
-    AsyncWaiter& operator=(const AsyncWaiter&) = delete;
-
-    void Wakeup()
-    {
-        std::lock_guard<std::mutex> locker(m_lock);
-        m_wakeupIntentional = true;
-        m_cvar.notify_one();
-    }
-
-    void WaitOnCompletion()
-    {
-        std::unique_lock<std::mutex> uniqueLocker(m_lock);
-        m_cvar.wait(uniqueLocker, [this](){return m_wakeupIntentional;});
-    }
-
-    bool WaitOnCompletionFor(const size_t ms)
-    {
-        std::unique_lock<std::mutex> uniqueLocker(m_lock);
-        return m_cvar.wait_for(uniqueLocker, std::chrono::milliseconds(ms), [this](){return m_wakeupIntentional;});
-    }
-
-private:
-    std::mutex m_lock;
-    std::condition_variable m_cvar;
-    bool m_wakeupIntentional{false};
-};
-
 namespace Aws
 {
     namespace Http
@@ -202,158 +421,6 @@ namespace Aws
             m_connectionPools.clear();
         }
 
-        static void AddRequestMetadataToCrtRequest(const std::shared_ptr<HttpRequest>& request, const std::shared_ptr<Crt::Http::HttpRequest>& crtRequest)
-        {
-            const char* methodStr = Aws::Http::HttpMethodMapper::GetNameForHttpMethod(request->GetMethod());
-            AWS_LOGSTREAM_TRACE(CRT_HTTP_CLIENT_TAG, "Making " << methodStr << " request to " << request->GetURIString());
-            AWS_LOGSTREAM_TRACE(CRT_HTTP_CLIENT_TAG, "Including headers:");
-            //Add http headers to the request.
-            for (const auto& header : request->GetHeaders())
-            {
-                Crt::Http::HttpHeader crtHeader;
-                AWS_LOGSTREAM_TRACE(CRT_HTTP_CLIENT_TAG, header.first << ": " << header.second);
-                crtHeader.name = Crt::ByteCursorFromArray((const uint8_t *)header.first.data(), header.first.length());
-                crtHeader.value = Crt::ByteCursorFromArray((const uint8_t *)header.second.data(), header.second.length());
-                crtRequest->AddHeader(crtHeader);
-            }
-
-            // HTTP method, GET, PUT, DELETE, etc...
-            auto methodCursor = Crt::ByteCursorFromCString(methodStr);
-            crtRequest->SetMethod(methodCursor);
-
-            // Path portion of the request
-            auto pathStrCpy = request->GetUri().GetURLEncodedPathRFC3986();
-            auto queryStrCpy = request->GetUri().GetQueryString();
-            Aws::StringStream ss;
-
-            //CRT client has you pass the query string as part of the path. concatenate that here.
-            ss << pathStrCpy << queryStrCpy;
-            auto fullPathAndQueryCpy = ss.str();
-            auto pathCursor = Crt::ByteCursorFromArray((uint8_t *)fullPathAndQueryCpy.c_str(), fullPathAndQueryCpy.length());
-            crtRequest->SetPath(pathCursor);
-        }
-
-        static void OnResponseBodyReceived(Crt::Http::HttpStream& stream, const Crt::ByteCursor& body, const std::shared_ptr<HttpResponse>& response, const std::shared_ptr<HttpRequest>& request, const Http::HttpClient& client)
-        {
-            if (!client.ContinueRequest(*request) || !client.IsRequestProcessingEnabled())
-            {
-                AWS_LOGSTREAM_INFO(CRT_HTTP_CLIENT_TAG, "Request canceled. Canceling request by closing the connection.");
-                stream.GetConnection().Close();                
-                return;
-            }
-
-            //TODO: handle the read rate limiter here, once back pressure is setup.
-            assert(response);
-            for (const auto& hashIterator : request->GetResponseValidationHashes())
-            {
-              std::stringstream headerStr;
-              headerStr<<"x-amz-checksum-"<<hashIterator.first;
-              if(response->HasHeader(headerStr.str().c_str()))
-              {
-                hashIterator.second->Update(reinterpret_cast<unsigned char*>(body.ptr), body.len);
-                break;
-              }
-            }
-
-            // When data is received from the content body of the incoming response, just copy it to the output stream.
-            response->GetResponseBody().write((const char*)body.ptr, static_cast<long>(body.len));
-            if (response->GetResponseBody().fail()) {
-                const auto& ref = response->GetResponseBody();
-                AWS_LOGSTREAM_ERROR(CRT_HTTP_CLIENT_TAG, "Failed to write " << body.len << " (eof: " << ref.eof() << ", bad: " << ref.bad() << ")");
-            }
-
-            if (request->IsEventStreamRequest() && !response->HasHeader(Aws::Http::X_AMZN_ERROR_TYPE))
-            {
-                response->GetResponseBody().flush();
-            }
-
-            auto& receivedHandler = request->GetDataReceivedEventHandler();
-            if (receivedHandler)
-            {
-                receivedHandler(request.get(), response.get(), static_cast<long long>(body.len));
-            }
-
-            AWS_LOGSTREAM_TRACE(CRT_HTTP_CLIENT_TAG, body.len << " bytes written to response.");
-
-        }
-
-        // on response headers arriving, write them to the response.
-        static void OnIncomingHeaders(Crt::Http::HttpStream&, enum aws_http_header_block block, const Crt::Http::HttpHeader* headersArray, std::size_t headersCount, const std::shared_ptr<HttpResponse>& response)
-        {
-            if (block == AWS_HTTP_HEADER_BLOCK_INFORMATIONAL) return;
-
-            AWS_LOGSTREAM_TRACE(CRT_HTTP_CLIENT_TAG, "Received Headers: ");
-
-            for (size_t i = 0; i < headersCount; ++i)
-            {
-                const Crt::Http::HttpHeader* header = &headersArray[i];
-                Aws::String headerNameStr((const char*)header->name.ptr, header->name.len);
-                Aws::String headerValueStr((const char*)header->value.ptr, header->value.len);
-                AWS_LOGSTREAM_TRACE(CRT_HTTP_CLIENT_TAG, headerNameStr << ": " << headerValueStr);
-                response->AddHeader(headerNameStr, std::move(headerValueStr));
-            }
-        }
-
-        static void OnIncomingHeadersBlockDone(Crt::Http::HttpStream& stream, enum aws_http_header_block, const std::shared_ptr<HttpResponse>& response)
-        {
-            AWS_LOGSTREAM_TRACE(CRT_HTTP_CLIENT_TAG, "Received response code: " << stream.GetResponseStatusCode());
-            response->SetResponseCode((HttpResponseCode)stream.GetResponseStatusCode());
-        }
-
-        // Request is done. If there was an error set it, otherwise just wake up the cvar.
-        static void OnStreamComplete(Crt::Http::HttpStream&, int errorCode, AsyncWaiter& waiter, const std::shared_ptr<HttpResponse>& response)
-        {
-            if (errorCode)
-            {
-                //TODO: get the right error parsed out.
-                response->SetClientErrorType(Aws::Client::CoreErrors::NETWORK_CONNECTION);
-                response->SetClientErrorMessage(aws_error_debug_str(errorCode));
-            }
-
-            waiter.Wakeup();
-        }
-
-        // if the connection acquisition failed, go ahead and fail the request and wakeup the cvar.
-        // If it succeeded go ahead and make the request.
-        static void OnClientConnectionAvailable(std::shared_ptr<Crt::Http::HttpClientConnection> connection, int errorCode, std::shared_ptr<Crt::Http::HttpClientConnection>& connectionReference,
-                                         Crt::Http::HttpRequestOptions& requestOptions, AsyncWaiter& waiter, const std::shared_ptr<HttpRequest>& request, 
-                                         const std::shared_ptr<HttpResponse>& response, const HttpClient& client)
-        {
-            bool shouldContinueRequest = client.ContinueRequest(*request);
-
-            if (!shouldContinueRequest)
-            {
-                response->SetClientErrorType(Client::CoreErrors::USER_CANCELLED);
-                response->SetClientErrorMessage("Request cancelled by user's continuation handler");
-                waiter.Wakeup();
-                return;
-            }
-
-            int finalErrorCode = errorCode;
-            if (connection)
-            {
-                AWS_LOGSTREAM_DEBUG(CRT_HTTP_CLIENT_TAG, "Obtained connection handle " << (void*)connection.get());
-
-                auto clientStream = connection->NewClientStream(requestOptions);
-                connectionReference = connection;
-
-                if (clientStream && clientStream->Activate()) {
-                    return;
-                }
-
-                finalErrorCode = aws_last_error();
-                AWS_LOGSTREAM_ERROR(CRT_HTTP_CLIENT_TAG, "Initiation of request failed because " << aws_error_debug_str(finalErrorCode));
-
-            }
-
-            const char *errorMsg = aws_error_debug_str(finalErrorCode);
-            AWS_LOGSTREAM_ERROR(CRT_HTTP_CLIENT_TAG, "Obtaining connection failed because " << errorMsg);
-            response->SetClientErrorType(Aws::Client::CoreErrors::NETWORK_CONNECTION);
-            response->SetClientErrorMessage(errorMsg);
-
-            waiter.Wakeup();
-        }
-
         std::shared_ptr<HttpResponse> CRTHttpClient::MakeRequest(const std::shared_ptr<HttpRequest>& request,
                                                                  Aws::Utils::RateLimits::RateLimiterInterface*,
                                                                  Aws::Utils::RateLimits::RateLimiterInterface*) const
@@ -385,7 +452,13 @@ namespace Aws
             requestOptions.onIncomingBody =
                 [this, request, response](Crt::Http::HttpStream& stream, const Crt::ByteCursor& body)
             {
-                OnResponseBodyReceived(stream, body, response, request, *this);
+                if (!ContinueRequest(*request) || !IsRequestProcessingEnabled())
+                {
+                    AWS_LOGSTREAM_INFO(CRT_HTTP_CLIENT_TAG, "Request canceled. Canceling request by closing the connection.");
+                    stream.GetConnection().Close();
+                    return;
+                }
+                OnResponseBodyReceived(stream, body, response, request);
             };
 
             requestOptions.onIncomingHeaders =
@@ -618,5 +691,30 @@ namespace Aws
             }
         }
 
+        Aws::Crt::Optional<Aws::Client::AWSError<Aws::Client::CoreErrors>> CRTHttpClient::AcquireConnection(
+            const std::shared_ptr<HttpRequest>& request,
+            const std::function<void(std::shared_ptr<Aws::Http::Connection>, int)>& onClientConnectionAvailable) {
+          auto requestConnOptions = CreateConnectionOptionsForRequest(request);
+          auto connectionManager = GetWithCreateConnectionManagerForRequest(request, requestConnOptions);
+
+          if (!connectionManager)
+          {
+            return Aws::Client::AWSError<Aws::Client::CoreErrors>{
+              Aws::Client::CoreErrors::INVALID_PARAMETER_COMBINATION,
+              "InvalidParameterCombination",
+              aws_error_debug_str(aws_last_error()),
+              false
+            };
+          }
+
+          connectionManager->AcquireConnection(
+              [onClientConnectionAvailable](std::shared_ptr<Aws::Crt::Http::HttpClientConnection> acquiredConnection,
+                                             int errorCode) -> void {
+                auto crtConnection = Aws::MakeShared<CRTConnection>(CRT_HTTP_CLIENT_TAG, std::move(acquiredConnection));
+                onClientConnectionAvailable(std::move(crtConnection), errorCode);
+              });
+
+          return {};
+        }
     }
 }

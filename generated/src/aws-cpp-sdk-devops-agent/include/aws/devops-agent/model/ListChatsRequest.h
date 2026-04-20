@@ -54,24 +54,6 @@ class ListChatsRequest : public DevOpsAgentRequest {
 
   ///@{
   /**
-   * <p>The user identifier to list chats for</p>
-   */
-  inline const Aws::String& GetUserId() const { return m_userId; }
-  inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-  template <typename UserIdT = Aws::String>
-  void SetUserId(UserIdT&& value) {
-    m_userIdHasBeenSet = true;
-    m_userId = std::forward<UserIdT>(value);
-  }
-  template <typename UserIdT = Aws::String>
-  ListChatsRequest& WithUserId(UserIdT&& value) {
-    SetUserId(std::forward<UserIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Maximum number of results to return</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
@@ -106,13 +88,10 @@ class ListChatsRequest : public DevOpsAgentRequest {
  private:
   Aws::String m_agentSpaceId;
 
-  Aws::String m_userId;
-
   int m_maxResults{0};
 
   Aws::String m_nextToken;
   bool m_agentSpaceIdHasBeenSet = false;
-  bool m_userIdHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };

@@ -102,6 +102,10 @@ ClusterNodeDetails& ClusterNodeDetails::operator=(JsonView jsonValue) {
     m_capacityType = ClusterCapacityTypeMapper::GetClusterCapacityTypeForName(jsonValue.GetString("CapacityType"));
     m_capacityTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("NetworkInterface")) {
+    m_networkInterface = jsonValue.GetObject("NetworkInterface");
+    m_networkInterfaceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -191,6 +195,10 @@ JsonValue ClusterNodeDetails::Jsonize() const {
 
   if (m_capacityTypeHasBeenSet) {
     payload.WithString("CapacityType", ClusterCapacityTypeMapper::GetNameForClusterCapacityType(m_capacityType));
+  }
+
+  if (m_networkInterfaceHasBeenSet) {
+    payload.WithObject("NetworkInterface", m_networkInterface.Jsonize());
   }
 
   return payload;

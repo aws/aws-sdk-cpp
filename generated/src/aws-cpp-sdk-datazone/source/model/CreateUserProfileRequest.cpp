@@ -23,6 +23,10 @@ Aws::String CreateUserProfileRequest::SerializePayload() const {
     payload.WithString("userType", UserTypeMapper::GetNameForUserType(m_userType));
   }
 
+  if (m_sessionNameHasBeenSet) {
+    payload.WithString("sessionName", m_sessionName);
+  }
+
   if (m_clientTokenHasBeenSet) {
     payload.WithString("clientToken", m_clientToken);
   }

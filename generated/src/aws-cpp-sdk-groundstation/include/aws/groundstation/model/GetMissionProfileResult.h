@@ -25,7 +25,8 @@ class JsonValue;
 namespace GroundStation {
 namespace Model {
 /**
- * <p> </p><p><h3>See Also:</h3>   <a
+ * <p>Output for the <code>GetMissionProfile</code> operation. </p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetMissionProfileResponse">AWS
  * API Reference</a></p>
  */
@@ -105,7 +106,7 @@ class GetMissionProfileResult {
 
   ///@{
   /**
-   * <p>Amount of time prior to contact start you’d like to receive a CloudWatch
+   * <p>Amount of time prior to contact start you'd like to receive a CloudWatch
    * event indicating an upcoming pass.</p>
    */
   inline int GetContactPrePassDurationSeconds() const { return m_contactPrePassDurationSeconds; }
@@ -121,7 +122,7 @@ class GetMissionProfileResult {
 
   ///@{
   /**
-   * <p>Amount of time after a contact ends that you’d like to receive a CloudWatch
+   * <p>Amount of time after a contact ends that you'd like to receive a CloudWatch
    * event indicating the pass has finished.</p>
    */
   inline int GetContactPostPassDurationSeconds() const { return m_contactPostPassDurationSeconds; }
@@ -137,7 +138,7 @@ class GetMissionProfileResult {
 
   ///@{
   /**
-   * <p>Smallest amount of time in seconds that you’d like to see for an available
+   * <p>Smallest amount of time in seconds that you'd like to see for an available
    * contact. AWS Ground Station will not present you with contacts shorter than this
    * duration.</p>
    */

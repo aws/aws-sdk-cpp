@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaConvert {
 namespace Model {
-enum class ScalingBehavior { NOT_SET, DEFAULT, STRETCH_TO_OUTPUT, FIT, FIT_NO_UPSCALE, FILL };
+enum class ScalingBehavior { NOT_SET, DEFAULT, STRETCH_TO_OUTPUT, FIT, FIT_NO_UPSCALE, FILL, SMART_CROP };
 
 namespace ScalingBehaviorMapper {
 AWS_MEDIACONVERT_API ScalingBehavior GetScalingBehaviorForName(const Aws::String& name);

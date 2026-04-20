@@ -19,6 +19,10 @@ Aws::String ListMemoryRecordsRequest::SerializePayload() const {
     payload.WithString("namespace", m_namespace);
   }
 
+  if (m_namespacePathHasBeenSet) {
+    payload.WithString("namespacePath", m_namespacePath);
+  }
+
   if (m_memoryStrategyIdHasBeenSet) {
     payload.WithString("memoryStrategyId", m_memoryStrategyId);
   }

@@ -85,6 +85,10 @@ ContactData& ContactData::operator=(JsonView jsonValue) {
     m_ephemeris = jsonValue.GetObject("ephemeris");
     m_ephemerisHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("version")) {
+    m_version = jsonValue.GetObject("version");
+    m_versionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -157,6 +161,10 @@ JsonValue ContactData::Jsonize() const {
 
   if (m_ephemerisHasBeenSet) {
     payload.WithObject("ephemeris", m_ephemeris.Jsonize());
+  }
+
+  if (m_versionHasBeenSet) {
+    payload.WithObject("version", m_version.Jsonize());
   }
 
   return payload;

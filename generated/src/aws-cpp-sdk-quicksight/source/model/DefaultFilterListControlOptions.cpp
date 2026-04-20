@@ -30,6 +30,14 @@ DefaultFilterListControlOptions& DefaultFilterListControlOptions::operator=(Json
     m_selectableValues = jsonValue.GetObject("SelectableValues");
     m_selectableValuesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ControlSortConfigurations")) {
+    Aws::Utils::Array<JsonView> controlSortConfigurationsJsonList = jsonValue.GetArray("ControlSortConfigurations");
+    for (unsigned controlSortConfigurationsIndex = 0; controlSortConfigurationsIndex < controlSortConfigurationsJsonList.GetLength();
+         ++controlSortConfigurationsIndex) {
+      m_controlSortConfigurations.push_back(controlSortConfigurationsJsonList[controlSortConfigurationsIndex].AsObject());
+    }
+    m_controlSortConfigurationsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +54,16 @@ JsonValue DefaultFilterListControlOptions::Jsonize() const {
 
   if (m_selectableValuesHasBeenSet) {
     payload.WithObject("SelectableValues", m_selectableValues.Jsonize());
+  }
+
+  if (m_controlSortConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> controlSortConfigurationsJsonList(m_controlSortConfigurations.size());
+    for (unsigned controlSortConfigurationsIndex = 0; controlSortConfigurationsIndex < controlSortConfigurationsJsonList.GetLength();
+         ++controlSortConfigurationsIndex) {
+      controlSortConfigurationsJsonList[controlSortConfigurationsIndex].AsObject(
+          m_controlSortConfigurations[controlSortConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("ControlSortConfigurations", std::move(controlSortConfigurationsJsonList));
   }
 
   return payload;

@@ -23,7 +23,8 @@ class JsonValue;
 namespace GroundStation {
 namespace Model {
 /**
- * <p> </p><p><h3>See Also:</h3>   <a
+ * <p>Response containing the ARN, ID, and type of a <code>Config</code>.
+ * </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ConfigIdResponse">AWS
  * API Reference</a></p>
  */

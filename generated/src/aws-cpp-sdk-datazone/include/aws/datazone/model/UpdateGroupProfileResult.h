@@ -96,6 +96,42 @@ class UpdateGroupProfileResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The ARN of the IAM role principal. This role is associated with the updated
+   * group profile.</p>
+   */
+  inline const Aws::String& GetRolePrincipalArn() const { return m_rolePrincipalArn; }
+  template <typename RolePrincipalArnT = Aws::String>
+  void SetRolePrincipalArn(RolePrincipalArnT&& value) {
+    m_rolePrincipalArnHasBeenSet = true;
+    m_rolePrincipalArn = std::forward<RolePrincipalArnT>(value);
+  }
+  template <typename RolePrincipalArnT = Aws::String>
+  UpdateGroupProfileResult& WithRolePrincipalArn(RolePrincipalArnT&& value) {
+    SetRolePrincipalArn(std::forward<RolePrincipalArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the IAM role principal. This principal is associated
+   * with the updated group profile.</p>
+   */
+  inline const Aws::String& GetRolePrincipalId() const { return m_rolePrincipalId; }
+  template <typename RolePrincipalIdT = Aws::String>
+  void SetRolePrincipalId(RolePrincipalIdT&& value) {
+    m_rolePrincipalIdHasBeenSet = true;
+    m_rolePrincipalId = std::forward<RolePrincipalIdT>(value);
+  }
+  template <typename RolePrincipalIdT = Aws::String>
+  UpdateGroupProfileResult& WithRolePrincipalId(RolePrincipalIdT&& value) {
+    SetRolePrincipalId(std::forward<RolePrincipalIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -120,12 +156,18 @@ class UpdateGroupProfileResult {
 
   Aws::String m_groupName;
 
+  Aws::String m_rolePrincipalArn;
+
+  Aws::String m_rolePrincipalId;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_domainIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_groupNameHasBeenSet = false;
+  bool m_rolePrincipalArnHasBeenSet = false;
+  bool m_rolePrincipalIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

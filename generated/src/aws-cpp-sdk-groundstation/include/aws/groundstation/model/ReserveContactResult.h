@@ -22,7 +22,7 @@ class JsonValue;
 namespace GroundStation {
 namespace Model {
 /**
- * <p> </p><p><h3>See Also:</h3>   <a
+ * <p>Response containing the ID of a contact. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ContactIdResponse">AWS
  * API Reference</a></p>
  */
@@ -50,6 +50,21 @@ class ReserveContactResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Version ID of a contact.</p>
+   */
+  inline int GetVersionId() const { return m_versionId; }
+  inline void SetVersionId(int value) {
+    m_versionIdHasBeenSet = true;
+    m_versionId = value;
+  }
+  inline ReserveContactResult& WithVersionId(int value) {
+    SetVersionId(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -68,9 +83,12 @@ class ReserveContactResult {
  private:
   Aws::String m_contactId;
 
+  int m_versionId{0};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_contactIdHasBeenSet = false;
+  bool m_versionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -10,6 +10,8 @@
 #include <aws/imagebuilder/ImagebuilderRequest.h>
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/imagebuilder/model/ImageLoggingConfiguration.h>
+#include <aws/imagebuilder/model/RegisterImageOptions.h>
+#include <aws/imagebuilder/model/WindowsConfiguration.h>
 
 #include <utility>
 
@@ -225,6 +227,42 @@ class ImportDiskImageRequest : public ImagebuilderRequest {
 
   ///@{
   /**
+   * <p>Configures Secure Boot and UEFI settings for the imported image.</p>
+   */
+  inline const RegisterImageOptions& GetRegisterImageOptions() const { return m_registerImageOptions; }
+  inline bool RegisterImageOptionsHasBeenSet() const { return m_registerImageOptionsHasBeenSet; }
+  template <typename RegisterImageOptionsT = RegisterImageOptions>
+  void SetRegisterImageOptions(RegisterImageOptionsT&& value) {
+    m_registerImageOptionsHasBeenSet = true;
+    m_registerImageOptions = std::forward<RegisterImageOptionsT>(value);
+  }
+  template <typename RegisterImageOptionsT = RegisterImageOptions>
+  ImportDiskImageRequest& WithRegisterImageOptions(RegisterImageOptionsT&& value) {
+    SetRegisterImageOptions(std::forward<RegisterImageOptionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies Windows settings for ISO imports.</p>
+   */
+  inline const WindowsConfiguration& GetWindowsConfiguration() const { return m_windowsConfiguration; }
+  inline bool WindowsConfigurationHasBeenSet() const { return m_windowsConfigurationHasBeenSet; }
+  template <typename WindowsConfigurationT = WindowsConfiguration>
+  void SetWindowsConfiguration(WindowsConfigurationT&& value) {
+    m_windowsConfigurationHasBeenSet = true;
+    m_windowsConfiguration = std::forward<WindowsConfigurationT>(value);
+  }
+  template <typename WindowsConfigurationT = WindowsConfiguration>
+  ImportDiskImageRequest& WithWindowsConfiguration(WindowsConfigurationT&& value) {
+    SetWindowsConfiguration(std::forward<WindowsConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
    * request. For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
@@ -264,6 +302,10 @@ class ImportDiskImageRequest : public ImagebuilderRequest {
 
   Aws::Map<Aws::String, Aws::String> m_tags;
 
+  RegisterImageOptions m_registerImageOptions;
+
+  WindowsConfiguration m_windowsConfiguration;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_nameHasBeenSet = false;
   bool m_semanticVersionHasBeenSet = false;
@@ -275,6 +317,8 @@ class ImportDiskImageRequest : public ImagebuilderRequest {
   bool m_uriHasBeenSet = false;
   bool m_loggingConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_registerImageOptionsHasBeenSet = false;
+  bool m_windowsConfigurationHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

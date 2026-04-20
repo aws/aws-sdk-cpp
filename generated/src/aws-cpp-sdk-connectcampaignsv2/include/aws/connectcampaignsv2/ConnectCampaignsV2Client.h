@@ -222,6 +222,35 @@ class AWS_CONNECTCAMPAIGNSV2_API ConnectCampaignsV2Client : public Aws::Client::
   }
 
   /**
+   * <p>Deletes the entry limits config for a campaign. This API is
+   * idempotent.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/DeleteCampaignEntryLimits">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteCampaignEntryLimitsOutcome DeleteCampaignEntryLimits(const Model::DeleteCampaignEntryLimitsRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteCampaignEntryLimits that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteCampaignEntryLimitsRequestT = Model::DeleteCampaignEntryLimitsRequest>
+  Model::DeleteCampaignEntryLimitsOutcomeCallable DeleteCampaignEntryLimitsCallable(
+      const DeleteCampaignEntryLimitsRequestT& request) const {
+    return SubmitCallable(&ConnectCampaignsV2Client::DeleteCampaignEntryLimits, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteCampaignEntryLimits that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteCampaignEntryLimitsRequestT = Model::DeleteCampaignEntryLimitsRequest>
+  void DeleteCampaignEntryLimitsAsync(const DeleteCampaignEntryLimitsRequestT& request,
+                                      const DeleteCampaignEntryLimitsResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectCampaignsV2Client::DeleteCampaignEntryLimits, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a connect instance config from the specified AWS
    * account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/DeleteConnectInstanceConfig">AWS
@@ -950,6 +979,35 @@ class AWS_CONNECTCAMPAIGNSV2_API ConnectCampaignsV2Client : public Aws::Client::
                                             const UpdateCampaignCommunicationTimeResponseReceivedHandler& handler,
                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectCampaignsV2Client::UpdateCampaignCommunicationTime, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the entry limits config for a campaign. This API is
+   * idempotent.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/UpdateCampaignEntryLimits">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateCampaignEntryLimitsOutcome UpdateCampaignEntryLimits(const Model::UpdateCampaignEntryLimitsRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateCampaignEntryLimits that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateCampaignEntryLimitsRequestT = Model::UpdateCampaignEntryLimitsRequest>
+  Model::UpdateCampaignEntryLimitsOutcomeCallable UpdateCampaignEntryLimitsCallable(
+      const UpdateCampaignEntryLimitsRequestT& request) const {
+    return SubmitCallable(&ConnectCampaignsV2Client::UpdateCampaignEntryLimits, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateCampaignEntryLimits that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateCampaignEntryLimitsRequestT = Model::UpdateCampaignEntryLimitsRequest>
+  void UpdateCampaignEntryLimitsAsync(const UpdateCampaignEntryLimitsRequestT& request,
+                                      const UpdateCampaignEntryLimitsResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectCampaignsV2Client::UpdateCampaignEntryLimits, request, handler, context);
   }
 
   /**

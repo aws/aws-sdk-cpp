@@ -15,7 +15,8 @@ namespace GroundStation {
 namespace Model {
 
 /**
- * <p/><p><h3>See Also:</h3>   <a
+ * <p>Input for the <code>GetSatellite</code> operation.</p><p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetSatelliteRequest">AWS
  * API Reference</a></p>
  */

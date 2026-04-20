@@ -55,24 +55,6 @@ class CreateChatRequest : public DevOpsAgentRequest {
 
   ///@{
   /**
-   * <p>The user identifier for the chat</p>
-   */
-  inline const Aws::String& GetUserId() const { return m_userId; }
-  inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-  template <typename UserIdT = Aws::String>
-  void SetUserId(UserIdT&& value) {
-    m_userIdHasBeenSet = true;
-    m_userId = std::forward<UserIdT>(value);
-  }
-  template <typename UserIdT = Aws::String>
-  CreateChatRequest& WithUserId(UserIdT&& value) {
-    SetUserId(std::forward<UserIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The authentication type of the user</p>
    */
   inline UserType GetUserType() const { return m_userType; }
@@ -89,11 +71,8 @@ class CreateChatRequest : public DevOpsAgentRequest {
  private:
   Aws::String m_agentSpaceId;
 
-  Aws::String m_userId;
-
   UserType m_userType{UserType::NOT_SET};
   bool m_agentSpaceIdHasBeenSet = false;
-  bool m_userIdHasBeenSet = false;
   bool m_userTypeHasBeenSet = false;
 };
 

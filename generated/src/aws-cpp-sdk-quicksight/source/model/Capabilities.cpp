@@ -942,6 +942,10 @@ Capabilities& Capabilities::operator=(JsonView jsonValue) {
     m_manageSharedFolders = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ManageSharedFolders"));
     m_manageSharedFoldersHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("GenerateAnalyses")) {
+    m_generateAnalyses = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("GenerateAnalyses"));
+    m_generateAnalysesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -1858,6 +1862,10 @@ JsonValue Capabilities::Jsonize() const {
 
   if (m_manageSharedFoldersHasBeenSet) {
     payload.WithString("ManageSharedFolders", CapabilityStateMapper::GetNameForCapabilityState(m_manageSharedFolders));
+  }
+
+  if (m_generateAnalysesHasBeenSet) {
+    payload.WithString("GenerateAnalyses", CapabilityStateMapper::GetNameForCapabilityState(m_generateAnalyses));
   }
 
   return payload;

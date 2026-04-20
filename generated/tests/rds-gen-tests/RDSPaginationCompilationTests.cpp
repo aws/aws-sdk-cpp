@@ -37,6 +37,7 @@
 #include <aws/rds/model/DescribeCertificatesPaginationTraits.h>
 #include <aws/rds/model/DescribeEventsPaginationTraits.h>
 #include <aws/rds/model/DescribeDBSubnetGroupsPaginationTraits.h>
+#include <aws/rds/model/DescribeServerlessV2PlatformVersionsPaginationTraits.h>
 #include <aws/rds/model/DescribeDBLogFilesPaginationTraits.h>
 #include <aws/rds/model/DescribeDBMajorEngineVersionsPaginationTraits.h>
 #include <aws/rds/model/DescribeIntegrationsPaginationTraits.h>

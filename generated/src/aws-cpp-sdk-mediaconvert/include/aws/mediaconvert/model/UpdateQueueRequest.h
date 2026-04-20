@@ -70,6 +70,23 @@ class UpdateQueueRequest : public MediaConvertRequest {
 
   ///@{
   /**
+   * Specify the maximum number of Elemental Inference feeds MediaConvert can process
+   * concurrently.
+   */
+  inline int GetMaximumConcurrentFeeds() const { return m_maximumConcurrentFeeds; }
+  inline bool MaximumConcurrentFeedsHasBeenSet() const { return m_maximumConcurrentFeedsHasBeenSet; }
+  inline void SetMaximumConcurrentFeeds(int value) {
+    m_maximumConcurrentFeedsHasBeenSet = true;
+    m_maximumConcurrentFeeds = value;
+  }
+  inline UpdateQueueRequest& WithMaximumConcurrentFeeds(int value) {
+    SetMaximumConcurrentFeeds(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * The name of the queue that you are modifying.
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -130,6 +147,8 @@ class UpdateQueueRequest : public MediaConvertRequest {
 
   Aws::String m_description;
 
+  int m_maximumConcurrentFeeds{0};
+
   Aws::String m_name;
 
   ReservationPlanSettings m_reservationPlanSettings;
@@ -137,6 +156,7 @@ class UpdateQueueRequest : public MediaConvertRequest {
   QueueStatus m_status{QueueStatus::NOT_SET};
   bool m_concurrentJobsHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
+  bool m_maximumConcurrentFeedsHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_reservationPlanSettingsHasBeenSet = false;
   bool m_statusHasBeenSet = false;

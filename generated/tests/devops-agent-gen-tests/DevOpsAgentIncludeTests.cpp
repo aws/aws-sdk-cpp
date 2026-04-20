@@ -18,8 +18,6 @@
 #include <aws/devops-agent/model/AdditionalServiceDetails.h>
 #include <aws/devops-agent/model/AdditionalServiceRegistrationStep.h>
 #include <aws/devops-agent/model/AgentSpace.h>
-#include <aws/devops-agent/model/AllowVendedLogDeliveryForResourceRequest.h>
-#include <aws/devops-agent/model/AllowVendedLogDeliveryForResourceResult.h>
 #include <aws/devops-agent/model/AssistantMessageBlock.h>
 #include <aws/devops-agent/model/AssociateServiceRequest.h>
 #include <aws/devops-agent/model/AssociateServiceResult.h>

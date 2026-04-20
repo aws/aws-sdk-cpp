@@ -75,6 +75,29 @@ class AthenaParameters {
 
   ///@{
   /**
+   * <p>Use <code>ConsumerAccountRoleArn</code> to perform cross-account Athena
+   * access. This is an IAM role ARN in the same AWS account as the Athena resources
+   * you want to access. Provide this along with <code>RoleArn</code> to enable
+   * role-chaining, where Amazon Quick Sight first assumes the <code>RoleArn</code>
+   * and then assumes the <code>ConsumerAccountRoleArn</code> to access Athena
+   * resources.</p>
+   */
+  inline const Aws::String& GetConsumerAccountRoleArn() const { return m_consumerAccountRoleArn; }
+  inline bool ConsumerAccountRoleArnHasBeenSet() const { return m_consumerAccountRoleArnHasBeenSet; }
+  template <typename ConsumerAccountRoleArnT = Aws::String>
+  void SetConsumerAccountRoleArn(ConsumerAccountRoleArnT&& value) {
+    m_consumerAccountRoleArnHasBeenSet = true;
+    m_consumerAccountRoleArn = std::forward<ConsumerAccountRoleArnT>(value);
+  }
+  template <typename ConsumerAccountRoleArnT = Aws::String>
+  AthenaParameters& WithConsumerAccountRoleArn(ConsumerAccountRoleArnT&& value) {
+    SetConsumerAccountRoleArn(std::forward<ConsumerAccountRoleArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>An optional parameter that configures IAM Identity Center authentication to
    * grant Quick Sight access to your workgroup.</p> <p>This parameter can only be
    * specified if your Quick Sight account is configured with IAM Identity
@@ -98,9 +121,12 @@ class AthenaParameters {
 
   Aws::String m_roleArn;
 
+  Aws::String m_consumerAccountRoleArn;
+
   IdentityCenterConfiguration m_identityCenterConfiguration;
   bool m_workGroupHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
+  bool m_consumerAccountRoleArnHasBeenSet = false;
   bool m_identityCenterConfigurationHasBeenSet = false;
 };
 

@@ -10,6 +10,7 @@
 #include <aws/connectcampaignsv2/model/DeleteCampaignChannelSubtypeConfigRequest.h>
 #include <aws/connectcampaignsv2/model/DeleteCampaignCommunicationLimitsRequest.h>
 #include <aws/connectcampaignsv2/model/DeleteCampaignCommunicationTimeRequest.h>
+#include <aws/connectcampaignsv2/model/DeleteCampaignEntryLimitsRequest.h>
 #include <aws/connectcampaignsv2/model/DeleteCampaignRequest.h>
 #include <aws/connectcampaignsv2/model/DeleteConnectInstanceConfigRequest.h>
 #include <aws/connectcampaignsv2/model/DeleteConnectInstanceIntegrationRequest.h>
@@ -37,6 +38,7 @@
 #include <aws/connectcampaignsv2/model/UpdateCampaignChannelSubtypeConfigRequest.h>
 #include <aws/connectcampaignsv2/model/UpdateCampaignCommunicationLimitsRequest.h>
 #include <aws/connectcampaignsv2/model/UpdateCampaignCommunicationTimeRequest.h>
+#include <aws/connectcampaignsv2/model/UpdateCampaignEntryLimitsRequest.h>
 #include <aws/connectcampaignsv2/model/UpdateCampaignFlowAssociationRequest.h>
 #include <aws/connectcampaignsv2/model/UpdateCampaignNameRequest.h>
 #include <aws/connectcampaignsv2/model/UpdateCampaignScheduleRequest.h>
@@ -314,6 +316,26 @@ DeleteCampaignCommunicationTimeOutcome ConnectCampaignsV2Client::DeleteCampaignC
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteCampaignCommunicationTimeOutcome(result.GetResultWithOwnership())
                             : DeleteCampaignCommunicationTimeOutcome(std::move(result.GetError()));
+}
+
+DeleteCampaignEntryLimitsOutcome ConnectCampaignsV2Client::DeleteCampaignEntryLimits(
+    const DeleteCampaignEntryLimitsRequest& request) const {
+  if (!request.IdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteCampaignEntryLimits", "Required field: Id, is not set");
+    return DeleteCampaignEntryLimitsOutcome(Aws::Client::AWSError<ConnectCampaignsV2Errors>(
+        ConnectCampaignsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/campaigns/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/entry-limits");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCampaignEntryLimitsOutcome(result.GetResultWithOwnership())
+                            : DeleteCampaignEntryLimitsOutcome(std::move(result.GetError()));
 }
 
 DeleteConnectInstanceConfigOutcome ConnectCampaignsV2Client::DeleteConnectInstanceConfig(
@@ -799,6 +821,26 @@ UpdateCampaignCommunicationTimeOutcome ConnectCampaignsV2Client::UpdateCampaignC
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateCampaignCommunicationTimeOutcome(result.GetResultWithOwnership())
                             : UpdateCampaignCommunicationTimeOutcome(std::move(result.GetError()));
+}
+
+UpdateCampaignEntryLimitsOutcome ConnectCampaignsV2Client::UpdateCampaignEntryLimits(
+    const UpdateCampaignEntryLimitsRequest& request) const {
+  if (!request.IdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateCampaignEntryLimits", "Required field: Id, is not set");
+    return UpdateCampaignEntryLimitsOutcome(Aws::Client::AWSError<ConnectCampaignsV2Errors>(
+        ConnectCampaignsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/campaigns/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/entry-limits");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCampaignEntryLimitsOutcome(result.GetResultWithOwnership())
+                            : UpdateCampaignEntryLimitsOutcome(std::move(result.GetError()));
 }
 
 UpdateCampaignFlowAssociationOutcome ConnectCampaignsV2Client::UpdateCampaignFlowAssociation(

@@ -68,6 +68,25 @@ class ListMemoryRecordsRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
+   * <p>Use namespacePath for hierarchical retrievals. Return all memory records
+   * where namespace falls under the same parent hierarchy.</p>
+   */
+  inline const Aws::String& GetNamespacePath() const { return m_namespacePath; }
+  inline bool NamespacePathHasBeenSet() const { return m_namespacePathHasBeenSet; }
+  template <typename NamespacePathT = Aws::String>
+  void SetNamespacePath(NamespacePathT&& value) {
+    m_namespacePathHasBeenSet = true;
+    m_namespacePath = std::forward<NamespacePathT>(value);
+  }
+  template <typename NamespacePathT = Aws::String>
+  ListMemoryRecordsRequest& WithNamespacePath(NamespacePathT&& value) {
+    SetNamespacePath(std::forward<NamespacePathT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The memory strategy identifier to filter memory records by. If specified,
    * only memory records with this strategy ID are returned.</p>
    */
@@ -125,6 +144,8 @@ class ListMemoryRecordsRequest : public BedrockAgentCoreRequest {
 
   Aws::String m_namespace;
 
+  Aws::String m_namespacePath;
+
   Aws::String m_memoryStrategyId;
 
   int m_maxResults{0};
@@ -132,6 +153,7 @@ class ListMemoryRecordsRequest : public BedrockAgentCoreRequest {
   Aws::String m_nextToken;
   bool m_memoryIdHasBeenSet = false;
   bool m_namespaceHasBeenSet = false;
+  bool m_namespacePathHasBeenSet = false;
   bool m_memoryStrategyIdHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

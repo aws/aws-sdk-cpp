@@ -42,6 +42,10 @@ RegisteredUserConsoleFeatureConfigurations& RegisteredUserConsoleFeatureConfigur
     m_thresholdAlerts = jsonValue.GetObject("ThresholdAlerts");
     m_thresholdAlertsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DashboardCustomizationSummary")) {
+    m_dashboardCustomizationSummary = jsonValue.GetObject("DashboardCustomizationSummary");
+    m_dashboardCustomizationSummaryHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +74,10 @@ JsonValue RegisteredUserConsoleFeatureConfigurations::Jsonize() const {
 
   if (m_thresholdAlertsHasBeenSet) {
     payload.WithObject("ThresholdAlerts", m_thresholdAlerts.Jsonize());
+  }
+
+  if (m_dashboardCustomizationSummaryHasBeenSet) {
+    payload.WithObject("DashboardCustomizationSummary", m_dashboardCustomizationSummary.Jsonize());
   }
 
   return payload;

@@ -49,6 +49,10 @@ CampaignSummary& CampaignSummary::operator=(JsonView jsonValue) {
     m_schedule = jsonValue.GetObject("schedule");
     m_scheduleHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("entryLimitsConfig")) {
+    m_entryLimitsConfig = jsonValue.GetObject("entryLimitsConfig");
+    m_entryLimitsConfigHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("connectCampaignFlowArn")) {
     m_connectCampaignFlowArn = jsonValue.GetString("connectCampaignFlowArn");
     m_connectCampaignFlowArnHasBeenSet = true;
@@ -90,6 +94,10 @@ JsonValue CampaignSummary::Jsonize() const {
 
   if (m_scheduleHasBeenSet) {
     payload.WithObject("schedule", m_schedule.Jsonize());
+  }
+
+  if (m_entryLimitsConfigHasBeenSet) {
+    payload.WithObject("entryLimitsConfig", m_entryLimitsConfig.Jsonize());
   }
 
   if (m_connectCampaignFlowArnHasBeenSet) {

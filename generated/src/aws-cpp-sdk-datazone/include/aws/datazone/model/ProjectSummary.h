@@ -219,6 +219,24 @@ class ProjectSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The category of the project.</p>
+   */
+  inline const Aws::String& GetProjectCategory() const { return m_projectCategory; }
+  inline bool ProjectCategoryHasBeenSet() const { return m_projectCategoryHasBeenSet; }
+  template <typename ProjectCategoryT = Aws::String>
+  void SetProjectCategory(ProjectCategoryT&& value) {
+    m_projectCategoryHasBeenSet = true;
+    m_projectCategory = std::forward<ProjectCategoryT>(value);
+  }
+  template <typename ProjectCategoryT = Aws::String>
+  ProjectSummary& WithProjectCategory(ProjectCategoryT&& value) {
+    SetProjectCategory(std::forward<ProjectCategoryT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainId;
 
@@ -239,6 +257,8 @@ class ProjectSummary {
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::String m_domainUnitId;
+
+  Aws::String m_projectCategory;
   bool m_domainIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -249,6 +269,7 @@ class ProjectSummary {
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_domainUnitIdHasBeenSet = false;
+  bool m_projectCategoryHasBeenSet = false;
 };
 
 }  // namespace Model

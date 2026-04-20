@@ -313,6 +313,23 @@ class GetProjectResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The category of the project.</p>
+   */
+  inline const Aws::String& GetProjectCategory() const { return m_projectCategory; }
+  template <typename ProjectCategoryT = Aws::String>
+  void SetProjectCategory(ProjectCategoryT&& value) {
+    m_projectCategoryHasBeenSet = true;
+    m_projectCategory = std::forward<ProjectCategoryT>(value);
+  }
+  template <typename ProjectCategoryT = Aws::String>
+  GetProjectResult& WithProjectCategory(ProjectCategoryT&& value) {
+    SetProjectCategory(std::forward<ProjectCategoryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -359,6 +376,8 @@ class GetProjectResult {
 
   EnvironmentDeploymentDetails m_environmentDeploymentDetails;
 
+  Aws::String m_projectCategory;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_domainIdHasBeenSet = false;
@@ -376,6 +395,7 @@ class GetProjectResult {
   bool m_projectProfileIdHasBeenSet = false;
   bool m_userParametersHasBeenSet = false;
   bool m_environmentDeploymentDetailsHasBeenSet = false;
+  bool m_projectCategoryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

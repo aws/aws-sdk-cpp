@@ -27,6 +27,10 @@ Aws::String AdminSetUserMFAPreferenceRequest::SerializePayload() const {
     payload.WithObject("EmailMfaSettings", m_emailMfaSettings.Jsonize());
   }
 
+  if (m_webAuthnMfaSettingsHasBeenSet) {
+    payload.WithObject("WebAuthnMfaSettings", m_webAuthnMfaSettings.Jsonize());
+  }
+
   if (m_usernameHasBeenSet) {
     payload.WithString("Username", m_username);
   }

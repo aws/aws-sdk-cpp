@@ -27,6 +27,7 @@ enum class DataSourceType {
   PRESTO,
   REDSHIFT,
   S3,
+  S3_TABLES,
   SALESFORCE,
   SERVICENOW,
   SNOWFLAKE,

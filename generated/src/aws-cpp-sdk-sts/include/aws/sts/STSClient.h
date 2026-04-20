@@ -16,6 +16,7 @@
 #include <smithy/identity/auth/built-in/GenericAuthSchemeResolver.h>
 #include <smithy/identity/auth/built-in/NoAuthScheme.h>
 #include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/identity/auth/built-in/SigV4aAuthScheme.h>
 
 namespace Aws {
 namespace STS {
@@ -31,8 +32,8 @@ AWS_STS_API extern const char SERVICE_NAME[];
 class AWS_STS_API STSClient
     : Aws::Client::ClientWithAsyncTemplateMethods<STSClient>,
       public smithy::client::AwsSmithyClientT<Aws::STS::SERVICE_NAME, Aws::STS::STSClientConfiguration, smithy::AuthSchemeResolverBase<>,
-                                              Aws::Crt::Variant<smithy::SigV4AuthScheme, smithy::NoAuthScheme>, STSEndpointProviderBase,
-                                              smithy::client::XmlOutcomeSerializer, smithy::client::XmlOutcome,
+                                              Aws::Crt::Variant<smithy::SigV4AuthScheme, smithy::SigV4aAuthScheme, smithy::NoAuthScheme>,
+                                              STSEndpointProviderBase, smithy::client::XmlOutcomeSerializer, smithy::client::XmlOutcome,
                                               Aws::Client::STSErrorMarshaller>,
       public STSPaginationBase<STSClient>,
       public STSWaiter<STSClient> {

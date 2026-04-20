@@ -26,6 +26,10 @@ ClusterLifeCycleConfig& ClusterLifeCycleConfig::operator=(JsonView jsonValue) {
     m_onCreate = jsonValue.GetString("OnCreate");
     m_onCreateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("OnInitComplete")) {
+    m_onInitComplete = jsonValue.GetString("OnInitComplete");
+    m_onInitCompleteHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue ClusterLifeCycleConfig::Jsonize() const {
 
   if (m_onCreateHasBeenSet) {
     payload.WithString("OnCreate", m_onCreate);
+  }
+
+  if (m_onInitCompleteHasBeenSet) {
+    payload.WithString("OnInitComplete", m_onInitComplete);
   }
 
   return payload;

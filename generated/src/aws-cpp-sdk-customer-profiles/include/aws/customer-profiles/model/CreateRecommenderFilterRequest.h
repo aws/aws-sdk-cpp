@@ -87,6 +87,25 @@ class CreateRecommenderFilterRequest : public CustomerProfilesRequest {
 
   ///@{
   /**
+   * <p>The name of the recommender schema to use for this recommender filter. If not
+   * specified, the default schema is used.</p>
+   */
+  inline const Aws::String& GetRecommenderSchemaName() const { return m_recommenderSchemaName; }
+  inline bool RecommenderSchemaNameHasBeenSet() const { return m_recommenderSchemaNameHasBeenSet; }
+  template <typename RecommenderSchemaNameT = Aws::String>
+  void SetRecommenderSchemaName(RecommenderSchemaNameT&& value) {
+    m_recommenderSchemaNameHasBeenSet = true;
+    m_recommenderSchemaName = std::forward<RecommenderSchemaNameT>(value);
+  }
+  template <typename RecommenderSchemaNameT = Aws::String>
+  CreateRecommenderFilterRequest& WithRecommenderSchemaName(RecommenderSchemaNameT&& value) {
+    SetRecommenderSchemaName(std::forward<RecommenderSchemaNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A description of the recommender filter.</p>
    */
   inline const Aws::String& GetDescription() const { return m_description; }
@@ -133,12 +152,15 @@ class CreateRecommenderFilterRequest : public CustomerProfilesRequest {
 
   Aws::String m_recommenderFilterExpression;
 
+  Aws::String m_recommenderSchemaName;
+
   Aws::String m_description;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_domainNameHasBeenSet = false;
   bool m_recommenderFilterNameHasBeenSet = false;
   bool m_recommenderFilterExpressionHasBeenSet = false;
+  bool m_recommenderSchemaNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };

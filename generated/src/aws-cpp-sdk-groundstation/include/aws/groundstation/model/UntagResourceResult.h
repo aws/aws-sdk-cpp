@@ -22,7 +22,8 @@ class JsonValue;
 namespace GroundStation {
 namespace Model {
 /**
- * <p/><p><h3>See Also:</h3>   <a
+ * <p>Output for the <code>UntagResource</code> operation.</p><p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UntagResourceResponse">AWS
  * API Reference</a></p>
  */

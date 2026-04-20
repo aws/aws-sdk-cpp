@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/groundstation/GroundStation_EXPORTS.h>
 #include <aws/groundstation/model/ContactStatus.h>
+#include <aws/groundstation/model/ContactVersion.h>
 #include <aws/groundstation/model/Elevation.h>
 #include <aws/groundstation/model/EphemerisResponseData.h>
 
@@ -128,7 +129,7 @@ class ContactData {
 
   ///@{
   /**
-   * <p>Amount of time prior to contact start you’d like to receive a CloudWatch
+   * <p>Start time in UTC of the pre-pass period, at which you receive a CloudWatch
    * event indicating an upcoming pass.</p>
    */
   inline const Aws::Utils::DateTime& GetPrePassStartTime() const { return m_prePassStartTime; }
@@ -147,7 +148,7 @@ class ContactData {
 
   ///@{
   /**
-   * <p>Amount of time after a contact ends that you’d like to receive a CloudWatch
+   * <p>End time in UTC of the post-pass period, at which you receive a CloudWatch
    * event indicating the pass has finished.</p>
    */
   inline const Aws::Utils::DateTime& GetPostPassEndTime() const { return m_postPassEndTime; }
@@ -339,6 +340,24 @@ class ContactData {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Version information for a contact.</p>
+   */
+  inline const ContactVersion& GetVersion() const { return m_version; }
+  inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+  template <typename VersionT = ContactVersion>
+  void SetVersion(VersionT&& value) {
+    m_versionHasBeenSet = true;
+    m_version = std::forward<VersionT>(value);
+  }
+  template <typename VersionT = ContactVersion>
+  ContactData& WithVersion(VersionT&& value) {
+    SetVersion(std::forward<VersionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_contactId;
 
@@ -371,6 +390,8 @@ class ContactData {
   Aws::Utils::DateTime m_visibilityEndTime{};
 
   EphemerisResponseData m_ephemeris;
+
+  ContactVersion m_version;
   bool m_contactIdHasBeenSet = false;
   bool m_missionProfileArnHasBeenSet = false;
   bool m_satelliteArnHasBeenSet = false;
@@ -387,6 +408,7 @@ class ContactData {
   bool m_visibilityStartTimeHasBeenSet = false;
   bool m_visibilityEndTimeHasBeenSet = false;
   bool m_ephemerisHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
 };
 
 }  // namespace Model

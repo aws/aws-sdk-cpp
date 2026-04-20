@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/CascadingControlConfiguration.h>
+#include <aws/quicksight/model/ControlSortConfiguration.h>
 #include <aws/quicksight/model/ListControlDisplayOptions.h>
 #include <aws/quicksight/model/ParameterSelectableValues.h>
 #include <aws/quicksight/model/SheetControlListType.h>
@@ -160,6 +162,31 @@ class ParameterListControl {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The sort configuration for the values displayed in the control. Only one sort
+   * configuration can be applied per control.</p>
+   */
+  inline const Aws::Vector<ControlSortConfiguration>& GetControlSortConfigurations() const { return m_controlSortConfigurations; }
+  inline bool ControlSortConfigurationsHasBeenSet() const { return m_controlSortConfigurationsHasBeenSet; }
+  template <typename ControlSortConfigurationsT = Aws::Vector<ControlSortConfiguration>>
+  void SetControlSortConfigurations(ControlSortConfigurationsT&& value) {
+    m_controlSortConfigurationsHasBeenSet = true;
+    m_controlSortConfigurations = std::forward<ControlSortConfigurationsT>(value);
+  }
+  template <typename ControlSortConfigurationsT = Aws::Vector<ControlSortConfiguration>>
+  ParameterListControl& WithControlSortConfigurations(ControlSortConfigurationsT&& value) {
+    SetControlSortConfigurations(std::forward<ControlSortConfigurationsT>(value));
+    return *this;
+  }
+  template <typename ControlSortConfigurationsT = ControlSortConfiguration>
+  ParameterListControl& AddControlSortConfigurations(ControlSortConfigurationsT&& value) {
+    m_controlSortConfigurationsHasBeenSet = true;
+    m_controlSortConfigurations.emplace_back(std::forward<ControlSortConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_parameterControlId;
 
@@ -174,6 +201,8 @@ class ParameterListControl {
   ParameterSelectableValues m_selectableValues;
 
   CascadingControlConfiguration m_cascadingControlConfiguration;
+
+  Aws::Vector<ControlSortConfiguration> m_controlSortConfigurations;
   bool m_parameterControlIdHasBeenSet = false;
   bool m_titleHasBeenSet = false;
   bool m_sourceParameterNameHasBeenSet = false;
@@ -181,6 +210,7 @@ class ParameterListControl {
   bool m_typeHasBeenSet = false;
   bool m_selectableValuesHasBeenSet = false;
   bool m_cascadingControlConfigurationHasBeenSet = false;
+  bool m_controlSortConfigurationsHasBeenSet = false;
 };
 
 }  // namespace Model

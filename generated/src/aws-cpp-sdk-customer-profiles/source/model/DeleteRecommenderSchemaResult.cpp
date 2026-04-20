@@ -8,27 +8,20 @@
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
-#include <aws/devops-agent/model/AllowVendedLogDeliveryForResourceResult.h>
+#include <aws/customer-profiles/model/DeleteRecommenderSchemaResult.h>
 
 #include <utility>
 
-using namespace Aws::DevOpsAgent::Model;
+using namespace Aws::CustomerProfiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AllowVendedLogDeliveryForResourceResult::AllowVendedLogDeliveryForResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  *this = result;
-}
+DeleteRecommenderSchemaResult::DeleteRecommenderSchemaResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-AllowVendedLogDeliveryForResourceResult& AllowVendedLogDeliveryForResourceResult::operator=(
-    const Aws::AmazonWebServiceResult<JsonValue>& result) {
+DeleteRecommenderSchemaResult& DeleteRecommenderSchemaResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
-  JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("message")) {
-    m_message = jsonValue.GetString("message");
-    m_messageHasBeenSet = true;
-  }
+  AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

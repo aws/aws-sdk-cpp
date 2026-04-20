@@ -28,6 +28,7 @@
 #include <aws/quicksight/model/RedshiftParameters.h>
 #include <aws/quicksight/model/S3KnowledgeBaseParameters.h>
 #include <aws/quicksight/model/S3Parameters.h>
+#include <aws/quicksight/model/S3TablesParameters.h>
 #include <aws/quicksight/model/ServiceNowParameters.h>
 #include <aws/quicksight/model/SnowflakeParameters.h>
 #include <aws/quicksight/model/SparkParameters.h>
@@ -312,6 +313,24 @@ class DataSourceParameters {
   template <typename S3ParametersT = S3Parameters>
   DataSourceParameters& WithS3Parameters(S3ParametersT&& value) {
     SetS3Parameters(std::forward<S3ParametersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The parameters for S3 Tables.</p>
+   */
+  inline const S3TablesParameters& GetS3TablesParameters() const { return m_s3TablesParameters; }
+  inline bool S3TablesParametersHasBeenSet() const { return m_s3TablesParametersHasBeenSet; }
+  template <typename S3TablesParametersT = S3TablesParameters>
+  void SetS3TablesParameters(S3TablesParametersT&& value) {
+    m_s3TablesParametersHasBeenSet = true;
+    m_s3TablesParameters = std::forward<S3TablesParametersT>(value);
+  }
+  template <typename S3TablesParametersT = S3TablesParameters>
+  DataSourceParameters& WithS3TablesParameters(S3TablesParametersT&& value) {
+    SetS3TablesParameters(std::forward<S3TablesParametersT>(value));
     return *this;
   }
   ///@}
@@ -669,6 +688,8 @@ class DataSourceParameters {
 
   S3Parameters m_s3Parameters;
 
+  S3TablesParameters m_s3TablesParameters;
+
   S3KnowledgeBaseParameters m_s3KnowledgeBaseParameters;
 
   ServiceNowParameters m_serviceNowParameters;
@@ -718,6 +739,7 @@ class DataSourceParameters {
   bool m_rdsParametersHasBeenSet = false;
   bool m_redshiftParametersHasBeenSet = false;
   bool m_s3ParametersHasBeenSet = false;
+  bool m_s3TablesParametersHasBeenSet = false;
   bool m_s3KnowledgeBaseParametersHasBeenSet = false;
   bool m_serviceNowParametersHasBeenSet = false;
   bool m_snowflakeParametersHasBeenSet = false;

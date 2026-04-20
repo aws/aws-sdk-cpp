@@ -50,7 +50,7 @@ class ResourceLimitExceededException {
 
   ///@{
   /**
-   * <p/>
+   * <p>Name of the parameter that exceeded the resource limit.</p>
    */
   inline const Aws::String& GetParameterName() const { return m_parameterName; }
   inline bool ParameterNameHasBeenSet() const { return m_parameterNameHasBeenSet; }

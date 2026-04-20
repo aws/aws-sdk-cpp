@@ -22,6 +22,14 @@ ProgramTrackSettings& ProgramTrackSettings::operator=(JsonView jsonValue) {
     m_azEl = jsonValue.GetObject("azEl");
     m_azElHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("oem")) {
+    m_oem = jsonValue.GetObject("oem");
+    m_oemHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("tle")) {
+    m_tle = jsonValue.GetObject("tle");
+    m_tleHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +38,14 @@ JsonValue ProgramTrackSettings::Jsonize() const {
 
   if (m_azElHasBeenSet) {
     payload.WithObject("azEl", m_azEl.Jsonize());
+  }
+
+  if (m_oemHasBeenSet) {
+    payload.WithObject("oem", m_oem.Jsonize());
+  }
+
+  if (m_tleHasBeenSet) {
+    payload.WithObject("tle", m_tle.Jsonize());
   }
 
   return payload;

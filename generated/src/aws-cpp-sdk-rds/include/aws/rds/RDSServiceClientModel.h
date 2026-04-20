@@ -142,6 +142,8 @@
 #include <aws/rds/model/DescribeReservedDBInstancesOfferingsResult.h>
 #include <aws/rds/model/DescribeReservedDBInstancesRequest.h>
 #include <aws/rds/model/DescribeReservedDBInstancesResult.h>
+#include <aws/rds/model/DescribeServerlessV2PlatformVersionsRequest.h>
+#include <aws/rds/model/DescribeServerlessV2PlatformVersionsResult.h>
 #include <aws/rds/model/DescribeSourceRegionsRequest.h>
 #include <aws/rds/model/DescribeSourceRegionsResult.h>
 #include <aws/rds/model/DescribeTenantDatabasesRequest.h>
@@ -339,6 +341,7 @@ class DescribeOrderableDBInstanceOptionsRequest;
 class DescribePendingMaintenanceActionsRequest;
 class DescribeReservedDBInstancesRequest;
 class DescribeReservedDBInstancesOfferingsRequest;
+class DescribeServerlessV2PlatformVersionsRequest;
 class DescribeSourceRegionsRequest;
 class DescribeTenantDatabasesRequest;
 class DescribeValidDBInstanceModificationsRequest;
@@ -505,6 +508,7 @@ typedef Aws::Utils::Outcome<DescribeOrderableDBInstanceOptionsResult, RDSError> 
 typedef Aws::Utils::Outcome<DescribePendingMaintenanceActionsResult, RDSError> DescribePendingMaintenanceActionsOutcome;
 typedef Aws::Utils::Outcome<DescribeReservedDBInstancesResult, RDSError> DescribeReservedDBInstancesOutcome;
 typedef Aws::Utils::Outcome<DescribeReservedDBInstancesOfferingsResult, RDSError> DescribeReservedDBInstancesOfferingsOutcome;
+typedef Aws::Utils::Outcome<DescribeServerlessV2PlatformVersionsResult, RDSError> DescribeServerlessV2PlatformVersionsOutcome;
 typedef Aws::Utils::Outcome<DescribeSourceRegionsResult, RDSError> DescribeSourceRegionsOutcome;
 typedef Aws::Utils::Outcome<DescribeTenantDatabasesResult, RDSError> DescribeTenantDatabasesOutcome;
 typedef Aws::Utils::Outcome<DescribeValidDBInstanceModificationsResult, RDSError> DescribeValidDBInstanceModificationsOutcome;
@@ -671,6 +675,7 @@ typedef std::future<DescribeOrderableDBInstanceOptionsOutcome> DescribeOrderable
 typedef std::future<DescribePendingMaintenanceActionsOutcome> DescribePendingMaintenanceActionsOutcomeCallable;
 typedef std::future<DescribeReservedDBInstancesOutcome> DescribeReservedDBInstancesOutcomeCallable;
 typedef std::future<DescribeReservedDBInstancesOfferingsOutcome> DescribeReservedDBInstancesOfferingsOutcomeCallable;
+typedef std::future<DescribeServerlessV2PlatformVersionsOutcome> DescribeServerlessV2PlatformVersionsOutcomeCallable;
 typedef std::future<DescribeSourceRegionsOutcome> DescribeSourceRegionsOutcomeCallable;
 typedef std::future<DescribeTenantDatabasesOutcome> DescribeTenantDatabasesOutcomeCallable;
 typedef std::future<DescribeValidDBInstanceModificationsOutcome> DescribeValidDBInstanceModificationsOutcomeCallable;
@@ -1056,6 +1061,10 @@ typedef std::function<void(const RDSClient*, const Model::DescribeReservedDBInst
                            const Model::DescribeReservedDBInstancesOfferingsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeReservedDBInstancesOfferingsResponseReceivedHandler;
+typedef std::function<void(const RDSClient*, const Model::DescribeServerlessV2PlatformVersionsRequest&,
+                           const Model::DescribeServerlessV2PlatformVersionsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeServerlessV2PlatformVersionsResponseReceivedHandler;
 typedef std::function<void(const RDSClient*, const Model::DescribeSourceRegionsRequest&, const Model::DescribeSourceRegionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeSourceRegionsResponseReceivedHandler;

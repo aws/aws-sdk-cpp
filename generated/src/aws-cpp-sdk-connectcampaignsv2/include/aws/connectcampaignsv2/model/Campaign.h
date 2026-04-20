@@ -8,6 +8,7 @@
 #include <aws/connectcampaignsv2/model/ChannelSubtypeConfig.h>
 #include <aws/connectcampaignsv2/model/CommunicationLimitsConfig.h>
 #include <aws/connectcampaignsv2/model/CommunicationTimeConfig.h>
+#include <aws/connectcampaignsv2/model/EntryLimitsConfig.h>
 #include <aws/connectcampaignsv2/model/ExternalCampaignType.h>
 #include <aws/connectcampaignsv2/model/Schedule.h>
 #include <aws/connectcampaignsv2/model/Source.h>
@@ -182,6 +183,22 @@ class Campaign {
 
   ///@{
 
+  inline const EntryLimitsConfig& GetEntryLimitsConfig() const { return m_entryLimitsConfig; }
+  inline bool EntryLimitsConfigHasBeenSet() const { return m_entryLimitsConfigHasBeenSet; }
+  template <typename EntryLimitsConfigT = EntryLimitsConfig>
+  void SetEntryLimitsConfig(EntryLimitsConfigT&& value) {
+    m_entryLimitsConfigHasBeenSet = true;
+    m_entryLimitsConfig = std::forward<EntryLimitsConfigT>(value);
+  }
+  template <typename EntryLimitsConfigT = EntryLimitsConfig>
+  Campaign& WithEntryLimitsConfig(EntryLimitsConfigT&& value) {
+    SetEntryLimitsConfig(std::forward<EntryLimitsConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
   inline const CommunicationTimeConfig& GetCommunicationTimeConfig() const { return m_communicationTimeConfig; }
   inline bool CommunicationTimeConfigHasBeenSet() const { return m_communicationTimeConfigHasBeenSet; }
   template <typename CommunicationTimeConfigT = CommunicationTimeConfig>
@@ -252,6 +269,8 @@ class Campaign {
 
   Schedule m_schedule;
 
+  EntryLimitsConfig m_entryLimitsConfig;
+
   CommunicationTimeConfig m_communicationTimeConfig;
 
   CommunicationLimitsConfig m_communicationLimitsOverride;
@@ -266,6 +285,7 @@ class Campaign {
   bool m_sourceHasBeenSet = false;
   bool m_connectCampaignFlowArnHasBeenSet = false;
   bool m_scheduleHasBeenSet = false;
+  bool m_entryLimitsConfigHasBeenSet = false;
   bool m_communicationTimeConfigHasBeenSet = false;
   bool m_communicationLimitsOverrideHasBeenSet = false;
   bool m_tagsHasBeenSet = false;

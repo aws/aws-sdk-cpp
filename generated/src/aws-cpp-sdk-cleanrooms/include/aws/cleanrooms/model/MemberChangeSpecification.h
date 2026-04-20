@@ -57,10 +57,11 @@ class MemberChangeSpecification {
   /**
    * <p>The abilities granted to the collaboration member. These determine what
    * actions the member can perform within the collaboration.</p>  <p>The
-   * following values are currently not supported: <code>CAN_QUERY</code>,
-   * <code>CAN_RECEIVE_RESULTS,</code> and <code>CAN_RUN_JOB</code>. </p> <p>Set the
-   * value of <code>memberAbilities</code> to <code>[]</code> to allow a member to
-   * contribute data.</p>
+   * following values are currently not supported: <code>CAN_QUERY</code> and
+   * <code>CAN_RUN_JOB</code>. </p> <p>Set the value of <code>memberAbilities</code>
+   * to <code>[]</code> to allow a member to contribute data.</p> <p>Set the value of
+   * <code>memberAbilities</code> to <code>[CAN_RECEIVE_RESULTS]</code> to allow a
+   * member to contribute data and receive results.</p>
    */
   inline const Aws::Vector<MemberAbility>& GetMemberAbilities() const { return m_memberAbilities; }
   inline bool MemberAbilitiesHasBeenSet() const { return m_memberAbilitiesHasBeenSet; }

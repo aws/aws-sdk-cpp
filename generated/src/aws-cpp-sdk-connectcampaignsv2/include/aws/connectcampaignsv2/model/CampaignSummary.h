@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connectcampaignsv2/ConnectCampaignsV2_EXPORTS.h>
 #include <aws/connectcampaignsv2/model/ChannelSubtype.h>
+#include <aws/connectcampaignsv2/model/EntryLimitsConfig.h>
 #include <aws/connectcampaignsv2/model/ExternalCampaignType.h>
 #include <aws/connectcampaignsv2/model/Schedule.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -152,6 +153,22 @@ class CampaignSummary {
 
   ///@{
 
+  inline const EntryLimitsConfig& GetEntryLimitsConfig() const { return m_entryLimitsConfig; }
+  inline bool EntryLimitsConfigHasBeenSet() const { return m_entryLimitsConfigHasBeenSet; }
+  template <typename EntryLimitsConfigT = EntryLimitsConfig>
+  void SetEntryLimitsConfig(EntryLimitsConfigT&& value) {
+    m_entryLimitsConfigHasBeenSet = true;
+    m_entryLimitsConfig = std::forward<EntryLimitsConfigT>(value);
+  }
+  template <typename EntryLimitsConfigT = EntryLimitsConfig>
+  CampaignSummary& WithEntryLimitsConfig(EntryLimitsConfigT&& value) {
+    SetEntryLimitsConfig(std::forward<EntryLimitsConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
   inline const Aws::String& GetConnectCampaignFlowArn() const { return m_connectCampaignFlowArn; }
   inline bool ConnectCampaignFlowArnHasBeenSet() const { return m_connectCampaignFlowArnHasBeenSet; }
   template <typename ConnectCampaignFlowArnT = Aws::String>
@@ -180,6 +197,8 @@ class CampaignSummary {
 
   Schedule m_schedule;
 
+  EntryLimitsConfig m_entryLimitsConfig;
+
   Aws::String m_connectCampaignFlowArn;
   bool m_idHasBeenSet = false;
   bool m_arnHasBeenSet = false;
@@ -188,6 +207,7 @@ class CampaignSummary {
   bool m_channelSubtypesHasBeenSet = false;
   bool m_typeHasBeenSet = false;
   bool m_scheduleHasBeenSet = false;
+  bool m_entryLimitsConfigHasBeenSet = false;
   bool m_connectCampaignFlowArnHasBeenSet = false;
 };
 

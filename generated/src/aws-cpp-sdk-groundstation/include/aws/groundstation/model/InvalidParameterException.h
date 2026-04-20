@@ -49,7 +49,7 @@ class InvalidParameterException {
 
   ///@{
   /**
-   * <p/>
+   * <p>Name of the invalid parameter.</p>
    */
   inline const Aws::String& GetParameterName() const { return m_parameterName; }
   inline bool ParameterNameHasBeenSet() const { return m_parameterNameHasBeenSet; }

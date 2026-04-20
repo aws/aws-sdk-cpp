@@ -27,6 +27,10 @@ Aws::String CreateRecommenderRequest::SerializePayload() const {
     payload.WithString("Description", m_description);
   }
 
+  if (m_recommenderSchemaNameHasBeenSet) {
+    payload.WithString("RecommenderSchemaName", m_recommenderSchemaName);
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {

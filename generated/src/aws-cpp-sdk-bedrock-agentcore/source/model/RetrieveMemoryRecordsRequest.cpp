@@ -19,6 +19,10 @@ Aws::String RetrieveMemoryRecordsRequest::SerializePayload() const {
     payload.WithString("namespace", m_namespace);
   }
 
+  if (m_namespacePathHasBeenSet) {
+    payload.WithString("namespacePath", m_namespacePath);
+  }
+
   if (m_searchCriteriaHasBeenSet) {
     payload.WithObject("searchCriteria", m_searchCriteria.Jsonize());
   }

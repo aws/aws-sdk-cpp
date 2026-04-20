@@ -37,12 +37,12 @@ class WorkerComputeConfigurationProperties {
 
   ///@{
   /**
-   * <p>The Spark configuration properties for SQL workloads. This map contains
-   * key-value pairs that configure Apache Spark settings to optimize performance for
-   * your data processing jobs. You can specify up to 50 Spark properties, with each
-   * key being 1-200 characters and each value being 0-500 characters. These
-   * properties allow you to adjust compute capacity for large datasets and complex
-   * workloads.</p>
+   * <p>The Spark configuration properties for SQL and PySpark workloads. This map
+   * contains key-value pairs that configure Apache Spark settings to optimize
+   * performance for your data processing jobs. You can specify up to 50 Spark
+   * properties, with each key being 1-200 characters and each value being 0-500
+   * characters. These properties allow you to adjust compute capacity for large
+   * datasets and complex workloads.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetSpark() const { return m_spark; }
   inline bool SparkHasBeenSet() const { return m_sparkHasBeenSet; }

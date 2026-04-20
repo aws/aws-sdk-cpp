@@ -55,5 +55,22 @@ Aws::String CreateProjectRequest::SerializePayload() const {
     payload.WithArray("userParameters", std::move(userParametersJsonList));
   }
 
+  if (m_projectCategoryHasBeenSet) {
+    payload.WithString("projectCategory", m_projectCategory);
+  }
+
+  if (m_projectExecutionRoleHasBeenSet) {
+    payload.WithString("projectExecutionRole", m_projectExecutionRole);
+  }
+
+  if (m_membershipAssignmentsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> membershipAssignmentsJsonList(m_membershipAssignments.size());
+    for (unsigned membershipAssignmentsIndex = 0; membershipAssignmentsIndex < membershipAssignmentsJsonList.GetLength();
+         ++membershipAssignmentsIndex) {
+      membershipAssignmentsJsonList[membershipAssignmentsIndex].AsObject(m_membershipAssignments[membershipAssignmentsIndex].Jsonize());
+    }
+    payload.WithArray("membershipAssignments", std::move(membershipAssignmentsJsonList));
+  }
+
   return payload.View().WriteReadable();
 }

@@ -1,0 +1,56 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/DescribeServerlessV2PlatformVersionsRequest.h>
+
+using namespace Aws::RDS::Model;
+using namespace Aws::Utils;
+
+Aws::String DescribeServerlessV2PlatformVersionsRequest::SerializePayload() const {
+  Aws::StringStream ss;
+  ss << "Action=DescribeServerlessV2PlatformVersions&";
+  if (m_serverlessV2PlatformVersionHasBeenSet) {
+    ss << "ServerlessV2PlatformVersion=" << StringUtils::URLEncode(m_serverlessV2PlatformVersion.c_str()) << "&";
+  }
+
+  if (m_engineHasBeenSet) {
+    ss << "Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
+  }
+
+  if (m_filtersHasBeenSet) {
+    if (m_filters.empty()) {
+      ss << "Filters=&";
+    } else {
+      unsigned filtersCount = 1;
+      for (auto& item : m_filters) {
+        item.OutputToStream(ss, "Filters.Filter.", filtersCount, "");
+        filtersCount++;
+      }
+    }
+  }
+
+  if (m_defaultOnlyHasBeenSet) {
+    ss << "DefaultOnly=" << std::boolalpha << m_defaultOnly << "&";
+  }
+
+  if (m_includeAllHasBeenSet) {
+    ss << "IncludeAll=" << std::boolalpha << m_includeAll << "&";
+  }
+
+  if (m_maxRecordsHasBeenSet) {
+    ss << "MaxRecords=" << m_maxRecords << "&";
+  }
+
+  if (m_markerHasBeenSet) {
+    ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
+  }
+
+  ss << "Version=2014-10-31";
+  return ss.str();
+}
+
+void DescribeServerlessV2PlatformVersionsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

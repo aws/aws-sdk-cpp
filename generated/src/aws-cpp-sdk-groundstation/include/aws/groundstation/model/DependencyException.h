@@ -49,7 +49,7 @@ class DependencyException {
 
   ///@{
   /**
-   * <p/>
+   * <p>Name of the parameter that caused the exception.</p>
    */
   inline const Aws::String& GetParameterName() const { return m_parameterName; }
   inline bool ParameterNameHasBeenSet() const { return m_parameterNameHasBeenSet; }

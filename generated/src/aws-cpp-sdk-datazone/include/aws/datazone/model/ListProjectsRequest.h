@@ -107,6 +107,24 @@ class ListProjectsRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>A parameter to filter projects by their category.</p>
+   */
+  inline const Aws::String& GetProjectCategory() const { return m_projectCategory; }
+  inline bool ProjectCategoryHasBeenSet() const { return m_projectCategoryHasBeenSet; }
+  template <typename ProjectCategoryT = Aws::String>
+  void SetProjectCategory(ProjectCategoryT&& value) {
+    m_projectCategoryHasBeenSet = true;
+    m_projectCategory = std::forward<ProjectCategoryT>(value);
+  }
+  template <typename ProjectCategoryT = Aws::String>
+  ListProjectsRequest& WithProjectCategory(ProjectCategoryT&& value) {
+    SetProjectCategory(std::forward<ProjectCategoryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>When the number of projects is greater than the default value for the
    * <code>MaxResults</code> parameter, or if you explicitly specify a value for
    * <code>MaxResults</code> that is less than the number of projects, the response
@@ -156,6 +174,8 @@ class ListProjectsRequest : public DataZoneRequest {
 
   Aws::String m_name;
 
+  Aws::String m_projectCategory;
+
   Aws::String m_nextToken;
 
   int m_maxResults{0};
@@ -163,6 +183,7 @@ class ListProjectsRequest : public DataZoneRequest {
   bool m_userIdentifierHasBeenSet = false;
   bool m_groupIdentifierHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_projectCategoryHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };

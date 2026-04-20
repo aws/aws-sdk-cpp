@@ -22,6 +22,10 @@ RecommenderFilterSummary& RecommenderFilterSummary::operator=(JsonView jsonValue
     m_recommenderFilterName = jsonValue.GetString("RecommenderFilterName");
     m_recommenderFilterNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RecommenderSchemaName")) {
+    m_recommenderSchemaName = jsonValue.GetString("RecommenderSchemaName");
+    m_recommenderSchemaNameHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("RecommenderFilterExpression")) {
     m_recommenderFilterExpression = jsonValue.GetString("RecommenderFilterExpression");
     m_recommenderFilterExpressionHasBeenSet = true;
@@ -57,6 +61,10 @@ JsonValue RecommenderFilterSummary::Jsonize() const {
 
   if (m_recommenderFilterNameHasBeenSet) {
     payload.WithString("RecommenderFilterName", m_recommenderFilterName);
+  }
+
+  if (m_recommenderSchemaNameHasBeenSet) {
+    payload.WithString("RecommenderSchemaName", m_recommenderSchemaName);
   }
 
   if (m_recommenderFilterExpressionHasBeenSet) {
