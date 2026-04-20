@@ -9,6 +9,7 @@
 \#include $header
 #end
 \#include <aws/core/utils/event/EventStream.h>
+\#include <aws/core/utils/stream/HttpWriteDataStreamBuf.h>
 #foreach($entry in $shape.members.entrySet())
 #if($entry.value.shape.isEvent())
 #foreach($eventMemberEntry in $entry.value.shape.members.entrySet())
@@ -43,6 +44,9 @@ namespace Model
   class $typeInfo.exportValue $typeInfo.className : public Aws::Utils::Event::EventEncoderStream
   {
   public:
+    ${typeInfo.className}() = default;
+    explicit ${typeInfo.className}(std::shared_ptr<Aws::Utils::Stream::HttpWriteDataStreamBuf> streambuf)
+        : Aws::Utils::Event::EventEncoderStream(std::move(streambuf)) {}
 #foreach($entry in $shape.members.entrySet())
 #if($entry.value.shape.isEvent())
     ${typeInfo.className}& Write${entry.value.shape.name}(const ${entry.value.shape.name}& value)

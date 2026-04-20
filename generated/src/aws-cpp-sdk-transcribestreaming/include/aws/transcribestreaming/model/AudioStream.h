@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/event/EventStream.h>
+#include <aws/core/utils/stream/HttpWriteDataStreamBuf.h>
 #include <aws/transcribestreaming/TranscribeStreamingService_EXPORTS.h>
 #include <aws/transcribestreaming/model/AudioEvent.h>
 #include <aws/transcribestreaming/model/ConfigurationEvent.h>
@@ -25,6 +26,9 @@ namespace Model {
  */
 class AWS_TRANSCRIBESTREAMINGSERVICE_API AudioStream : public Aws::Utils::Event::EventEncoderStream {
  public:
+  AudioStream() = default;
+  explicit AudioStream(std::shared_ptr<Aws::Utils::Stream::HttpWriteDataStreamBuf> streambuf)
+      : Aws::Utils::Event::EventEncoderStream(std::move(streambuf)) {}
   AudioStream& WriteAudioEvent(const AudioEvent& value) {
     Aws::Utils::Event::Message msg;
     if (!value.GetAudioChunk().empty()) {

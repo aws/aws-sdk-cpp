@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/event/EventStream.h>
+#include <aws/core/utils/stream/HttpWriteDataStreamBuf.h>
 #include <aws/transcribestreaming/TranscribeStreamingService_EXPORTS.h>
 #include <aws/transcribestreaming/model/MedicalScribeAudioEvent.h>
 #include <aws/transcribestreaming/model/MedicalScribeConfigurationEvent.h>
@@ -29,6 +30,9 @@ namespace Model {
  */
 class AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalScribeInputStream : public Aws::Utils::Event::EventEncoderStream {
  public:
+  MedicalScribeInputStream() = default;
+  explicit MedicalScribeInputStream(std::shared_ptr<Aws::Utils::Stream::HttpWriteDataStreamBuf> streambuf)
+      : Aws::Utils::Event::EventEncoderStream(std::move(streambuf)) {}
   MedicalScribeInputStream& WriteMedicalScribeAudioEvent(const MedicalScribeAudioEvent& value) {
     Aws::Utils::Event::Message msg;
     if (!value.GetAudioChunk().empty()) {

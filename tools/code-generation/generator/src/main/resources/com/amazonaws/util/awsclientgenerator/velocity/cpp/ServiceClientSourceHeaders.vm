@@ -12,8 +12,10 @@
 #if($hasEventStreamRequest)
 #if($serviceModel.useSmithyClient)
 \#include <smithy/client/SmithyEventStreamingAsyncTask.h>
+\#include <smithy/client/SmithyBidirectionalStreamingWriteDataTask.h>
 #else
 \#include <aws/core/client/AWSClientEventStreamingAsyncTask.h>
+\#include <aws/core/client/AWSClientBidirectionalStreaming.h>
 #end
 #end
 \#include <aws/core/utils/event/EventStream.h>

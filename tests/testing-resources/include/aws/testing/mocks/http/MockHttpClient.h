@@ -8,13 +8,14 @@
 #include <assert.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/http/HttpClient.h>
+#include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/http/URI.h>
 #include <aws/core/http/standard/StandardHttpRequest.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
-#include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/utils/UnreferencedParam.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSQueue.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/testing/mocks/http/MockConnection.h>
 
 static const char MockHttpAllocationTag[] = "MockHttp";
 
@@ -86,9 +87,19 @@ public:
         std::swap(m_responsesToUse, empty);
     }
 
+  void SetConnectionTestCase(const ConnectionTestCase& testCase) { m_connectionTestCase = testCase; }
 
+  Aws::Crt::Optional<Aws::Client::AWSError<Aws::Client::CoreErrors>> AcquireConnection(
+        const std::shared_ptr<Aws::Http::HttpRequest>& request,
+        const std::function<void(std::shared_ptr<Aws::Http::Connection>, int)>& onClientConnectionAvailable) override {
+      AWS_UNREFERENCED_PARAM(request);
+      auto connection = Aws::MakeShared<MockConnection>(MockHttpAllocationTag, m_connectionTestCase);
+      onClientConnectionAvailable(connection, m_connectionTestCase.connectionErrorCode);
+      return m_connectionTestCase.connectionError;
+    }
 
-private:
+   private:
+    mutable ConnectionTestCase m_connectionTestCase;
     mutable Aws::Vector<Aws::Http::Standard::StandardHttpRequest> m_requestsMade;
     mutable Aws::Queue<ResponseCallbackTuple> m_responsesToUse;
     mutable Aws::Queue<ResponseAndRequestCallbackTuple> m_responseAndRequestsCallback;
