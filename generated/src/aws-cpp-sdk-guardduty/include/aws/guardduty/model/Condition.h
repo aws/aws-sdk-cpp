@@ -35,7 +35,7 @@ class Condition {
   ///@{
   /**
    * <p>Represents an <i>equal</i> <b/> condition to be applied to a single field
-   * when querying for findings.</p>
+   * when querying for findings.</p> <p>Max values: 50</p>
    */
   inline const Aws::Vector<Aws::String>& GetEquals() const { return m_equals; }
   inline bool EqualsHasBeenSet() const { return m_equalsHasBeenSet; }
@@ -60,7 +60,7 @@ class Condition {
   ///@{
   /**
    * <p>Represents a <i>not equal</i> <b/> condition to be applied to a single field
-   * when querying for findings.</p>
+   * when querying for findings.</p> <p>Max values: 50</p>
    */
   inline const Aws::Vector<Aws::String>& GetNotEquals() const { return m_notEquals; }
   inline bool NotEqualsHasBeenSet() const { return m_notEqualsHasBeenSet; }

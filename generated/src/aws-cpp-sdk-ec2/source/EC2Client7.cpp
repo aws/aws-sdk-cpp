@@ -20,6 +20,9 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/RejectTransitGatewayClientVpnAttachmentRequest.h>
+#include <aws/ec2/model/RejectTransitGatewayMulticastDomainAssociationsRequest.h>
+#include <aws/ec2/model/RejectTransitGatewayPeeringAttachmentRequest.h>
 #include <aws/ec2/model/RejectTransitGatewayVpcAttachmentRequest.h>
 #include <aws/ec2/model/RejectVpcEndpointConnectionsRequest.h>
 #include <aws/ec2/model/RejectVpcPeeringConnectionRequest.h>
@@ -89,6 +92,27 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+RejectTransitGatewayClientVpnAttachmentOutcome EC2Client::RejectTransitGatewayClientVpnAttachment(
+    const RejectTransitGatewayClientVpnAttachmentRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RejectTransitGatewayClientVpnAttachmentOutcome(result.GetResultWithOwnership())
+                            : RejectTransitGatewayClientVpnAttachmentOutcome(std::move(result.GetError()));
+}
+
+RejectTransitGatewayMulticastDomainAssociationsOutcome EC2Client::RejectTransitGatewayMulticastDomainAssociations(
+    const RejectTransitGatewayMulticastDomainAssociationsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RejectTransitGatewayMulticastDomainAssociationsOutcome(result.GetResultWithOwnership())
+                            : RejectTransitGatewayMulticastDomainAssociationsOutcome(std::move(result.GetError()));
+}
+
+RejectTransitGatewayPeeringAttachmentOutcome EC2Client::RejectTransitGatewayPeeringAttachment(
+    const RejectTransitGatewayPeeringAttachmentRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RejectTransitGatewayPeeringAttachmentOutcome(result.GetResultWithOwnership())
+                            : RejectTransitGatewayPeeringAttachmentOutcome(std::move(result.GetError()));
+}
 
 RejectTransitGatewayVpcAttachmentOutcome EC2Client::RejectTransitGatewayVpcAttachment(
     const RejectTransitGatewayVpcAttachmentRequest& request) const {

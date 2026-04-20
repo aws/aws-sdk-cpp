@@ -19,6 +19,7 @@ static const int pending_associate_HASH = HashingUtils::HashString("pending-asso
 static const int available_HASH = HashingUtils::HashString("available");
 static const int deleting_HASH = HashingUtils::HashString("deleting");
 static const int deleted_HASH = HashingUtils::HashString("deleted");
+static const int pending_HASH = HashingUtils::HashString("pending");
 
 ClientVpnEndpointStatusCode GetClientVpnEndpointStatusCodeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ ClientVpnEndpointStatusCode GetClientVpnEndpointStatusCodeForName(const Aws::Str
     return ClientVpnEndpointStatusCode::deleting;
   } else if (hashCode == deleted_HASH) {
     return ClientVpnEndpointStatusCode::deleted;
+  } else if (hashCode == pending_HASH) {
+    return ClientVpnEndpointStatusCode::pending;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForClientVpnEndpointStatusCode(ClientVpnEndpointStatusCode en
       return "deleting";
     case ClientVpnEndpointStatusCode::deleted:
       return "deleted";
+    case ClientVpnEndpointStatusCode::pending:
+      return "pending";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

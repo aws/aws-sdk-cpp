@@ -84,6 +84,10 @@ DescribeReplicatorResult& DescribeReplicatorResult::operator=(const Aws::AmazonW
     }
     m_tagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("logDelivery")) {
+    m_logDelivery = jsonValue.GetObject("logDelivery");
+    m_logDeliveryHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

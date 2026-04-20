@@ -1,0 +1,153 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/UUID.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/evs/EVSRequest.h>
+#include <aws/evs/EVS_EXPORTS.h>
+#include <aws/evs/model/EntitlementType.h>
+
+#include <utility>
+
+namespace Aws {
+namespace EVS {
+namespace Model {
+
+/**
+ */
+class DeleteEntitlementRequest : public EVSRequest {
+ public:
+  AWS_EVS_API DeleteEntitlementRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteEntitlement"; }
+
+  AWS_EVS_API Aws::String SerializePayload() const override;
+
+  AWS_EVS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
+  /**
+   * <p> <p>This parameter is not used in Amazon EVS currently. If you supply
+   * input for this parameter, it will have no effect.</p>  <p>A unique,
+   * case-sensitive identifier that you provide to ensure the idempotency of the
+   * entitlement deletion request. If you do not specify a client token, a randomly
+   * generated token is used for the request to ensure idempotency.</p></p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  DeleteEntitlementRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A unique ID for the environment that the entitlement belongs to.</p>
+   */
+  inline const Aws::String& GetEnvironmentId() const { return m_environmentId; }
+  inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
+  template <typename EnvironmentIdT = Aws::String>
+  void SetEnvironmentId(EnvironmentIdT&& value) {
+    m_environmentIdHasBeenSet = true;
+    m_environmentId = std::forward<EnvironmentIdT>(value);
+  }
+  template <typename EnvironmentIdT = Aws::String>
+  DeleteEntitlementRequest& WithEnvironmentId(EnvironmentIdT&& value) {
+    SetEnvironmentId(std::forward<EnvironmentIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A unique ID for the connector associated with the entitlement.</p>
+   */
+  inline const Aws::String& GetConnectorId() const { return m_connectorId; }
+  inline bool ConnectorIdHasBeenSet() const { return m_connectorIdHasBeenSet; }
+  template <typename ConnectorIdT = Aws::String>
+  void SetConnectorId(ConnectorIdT&& value) {
+    m_connectorIdHasBeenSet = true;
+    m_connectorId = std::forward<ConnectorIdT>(value);
+  }
+  template <typename ConnectorIdT = Aws::String>
+  DeleteEntitlementRequest& WithConnectorId(ConnectorIdT&& value) {
+    SetConnectorId(std::forward<ConnectorIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type of entitlement to delete.</p>
+   */
+  inline EntitlementType GetEntitlementType() const { return m_entitlementType; }
+  inline bool EntitlementTypeHasBeenSet() const { return m_entitlementTypeHasBeenSet; }
+  inline void SetEntitlementType(EntitlementType value) {
+    m_entitlementTypeHasBeenSet = true;
+    m_entitlementType = value;
+  }
+  inline DeleteEntitlementRequest& WithEntitlementType(EntitlementType value) {
+    SetEntitlementType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The list of VMware vSphere virtual machine managed object IDs to delete
+   * entitlements for.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetVmIds() const { return m_vmIds; }
+  inline bool VmIdsHasBeenSet() const { return m_vmIdsHasBeenSet; }
+  template <typename VmIdsT = Aws::Vector<Aws::String>>
+  void SetVmIds(VmIdsT&& value) {
+    m_vmIdsHasBeenSet = true;
+    m_vmIds = std::forward<VmIdsT>(value);
+  }
+  template <typename VmIdsT = Aws::Vector<Aws::String>>
+  DeleteEntitlementRequest& WithVmIds(VmIdsT&& value) {
+    SetVmIds(std::forward<VmIdsT>(value));
+    return *this;
+  }
+  template <typename VmIdsT = Aws::String>
+  DeleteEntitlementRequest& AddVmIds(VmIdsT&& value) {
+    m_vmIdsHasBeenSet = true;
+    m_vmIds.emplace_back(std::forward<VmIdsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+
+  Aws::String m_environmentId;
+
+  Aws::String m_connectorId;
+
+  EntitlementType m_entitlementType{EntitlementType::NOT_SET};
+
+  Aws::Vector<Aws::String> m_vmIds;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_connectorIdHasBeenSet = false;
+  bool m_entitlementTypeHasBeenSet = false;
+  bool m_vmIdsHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace EVS
+}  // namespace Aws

@@ -20,6 +20,8 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DescribeSpotFleetInstancesRequest.h>
+#include <aws/ec2/model/DescribeSpotFleetRequestHistoryRequest.h>
 #include <aws/ec2/model/DescribeSpotFleetRequestsRequest.h>
 #include <aws/ec2/model/DescribeSpotInstanceRequestsRequest.h>
 #include <aws/ec2/model/DescribeSpotPriceHistoryRequest.h>
@@ -118,8 +120,6 @@
 #include <aws/ec2/model/EnableAddressTransferRequest.h>
 #include <aws/ec2/model/EnableAllowedImagesSettingsRequest.h>
 #include <aws/ec2/model/EnableAwsNetworkPerformanceMetricSubscriptionRequest.h>
-#include <aws/ec2/model/EnableCapacityManagerRequest.h>
-#include <aws/ec2/model/EnableEbsEncryptionByDefaultRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,19 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DescribeSpotFleetInstancesOutcome EC2Client::DescribeSpotFleetInstances(const DescribeSpotFleetInstancesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSpotFleetInstancesOutcome(result.GetResultWithOwnership())
+                            : DescribeSpotFleetInstancesOutcome(std::move(result.GetError()));
+}
+
+DescribeSpotFleetRequestHistoryOutcome EC2Client::DescribeSpotFleetRequestHistory(
+    const DescribeSpotFleetRequestHistoryRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSpotFleetRequestHistoryOutcome(result.GetResultWithOwnership())
+                            : DescribeSpotFleetRequestHistoryOutcome(std::move(result.GetError()));
+}
 
 DescribeSpotFleetRequestsOutcome EC2Client::DescribeSpotFleetRequests(const DescribeSpotFleetRequestsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -756,16 +769,4 @@ EnableAwsNetworkPerformanceMetricSubscriptionOutcome EC2Client::EnableAwsNetwork
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? EnableAwsNetworkPerformanceMetricSubscriptionOutcome(result.GetResultWithOwnership())
                             : EnableAwsNetworkPerformanceMetricSubscriptionOutcome(std::move(result.GetError()));
-}
-
-EnableCapacityManagerOutcome EC2Client::EnableCapacityManager(const EnableCapacityManagerRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? EnableCapacityManagerOutcome(result.GetResultWithOwnership())
-                            : EnableCapacityManagerOutcome(std::move(result.GetError()));
-}
-
-EnableEbsEncryptionByDefaultOutcome EC2Client::EnableEbsEncryptionByDefault(const EnableEbsEncryptionByDefaultRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? EnableEbsEncryptionByDefaultOutcome(result.GetResultWithOwnership())
-                            : EnableEbsEncryptionByDefaultOutcome(std::move(result.GetError()));
 }

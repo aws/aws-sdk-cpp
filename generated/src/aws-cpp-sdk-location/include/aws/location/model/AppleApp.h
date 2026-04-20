@@ -34,8 +34,8 @@ class AppleApp {
 
   ///@{
   /**
-   * <p>The unique identifier of the app across all Apple platforms (iOS, macOS,
-   * tvOS, watchOS, etc.)</p>
+   * <p>The unique identifier of the app across all Apple platforms (iOS, macOS, tvOS
+   * and watchOS).</p> <p>Example: <code>com.mydomain.appname</code> </p>
    */
   inline const Aws::String& GetBundleId() const { return m_bundleId; }
   inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }

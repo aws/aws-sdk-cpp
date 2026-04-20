@@ -6,7 +6,10 @@
 #pragma once
 #include <aws/kafka/Kafka_EXPORTS.h>
 #include <aws/kafka/model/AmazonMskCluster.h>
+#include <aws/kafka/model/ApacheKafkaCluster.h>
+#include <aws/kafka/model/KafkaClusterClientAuthentication.h>
 #include <aws/kafka/model/KafkaClusterClientVpcConfig.h>
+#include <aws/kafka/model/KafkaClusterEncryptionInTransit.h>
 
 #include <utility>
 
@@ -53,6 +56,24 @@ class KafkaCluster {
 
   ///@{
   /**
+   * <p>Details of an Apache Kafka Cluster.</p>
+   */
+  inline const ApacheKafkaCluster& GetApacheKafkaCluster() const { return m_apacheKafkaCluster; }
+  inline bool ApacheKafkaClusterHasBeenSet() const { return m_apacheKafkaClusterHasBeenSet; }
+  template <typename ApacheKafkaClusterT = ApacheKafkaCluster>
+  void SetApacheKafkaCluster(ApacheKafkaClusterT&& value) {
+    m_apacheKafkaClusterHasBeenSet = true;
+    m_apacheKafkaCluster = std::forward<ApacheKafkaClusterT>(value);
+  }
+  template <typename ApacheKafkaClusterT = ApacheKafkaCluster>
+  KafkaCluster& WithApacheKafkaCluster(ApacheKafkaClusterT&& value) {
+    SetApacheKafkaCluster(std::forward<ApacheKafkaClusterT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka
    * cluster.</p>
    */
@@ -69,12 +90,57 @@ class KafkaCluster {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Details of the client authentication used by the Apache Kafka cluster.</p>
+   */
+  inline const KafkaClusterClientAuthentication& GetClientAuthentication() const { return m_clientAuthentication; }
+  inline bool ClientAuthenticationHasBeenSet() const { return m_clientAuthenticationHasBeenSet; }
+  template <typename ClientAuthenticationT = KafkaClusterClientAuthentication>
+  void SetClientAuthentication(ClientAuthenticationT&& value) {
+    m_clientAuthenticationHasBeenSet = true;
+    m_clientAuthentication = std::forward<ClientAuthenticationT>(value);
+  }
+  template <typename ClientAuthenticationT = KafkaClusterClientAuthentication>
+  KafkaCluster& WithClientAuthentication(ClientAuthenticationT&& value) {
+    SetClientAuthentication(std::forward<ClientAuthenticationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Details of encryption in transit to the Apache Kafka cluster.</p>
+   */
+  inline const KafkaClusterEncryptionInTransit& GetEncryptionInTransit() const { return m_encryptionInTransit; }
+  inline bool EncryptionInTransitHasBeenSet() const { return m_encryptionInTransitHasBeenSet; }
+  template <typename EncryptionInTransitT = KafkaClusterEncryptionInTransit>
+  void SetEncryptionInTransit(EncryptionInTransitT&& value) {
+    m_encryptionInTransitHasBeenSet = true;
+    m_encryptionInTransit = std::forward<EncryptionInTransitT>(value);
+  }
+  template <typename EncryptionInTransitT = KafkaClusterEncryptionInTransit>
+  KafkaCluster& WithEncryptionInTransit(EncryptionInTransitT&& value) {
+    SetEncryptionInTransit(std::forward<EncryptionInTransitT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AmazonMskCluster m_amazonMskCluster;
 
+  ApacheKafkaCluster m_apacheKafkaCluster;
+
   KafkaClusterClientVpcConfig m_vpcConfig;
+
+  KafkaClusterClientAuthentication m_clientAuthentication;
+
+  KafkaClusterEncryptionInTransit m_encryptionInTransit;
   bool m_amazonMskClusterHasBeenSet = false;
+  bool m_apacheKafkaClusterHasBeenSet = false;
   bool m_vpcConfigHasBeenSet = false;
+  bool m_clientAuthenticationHasBeenSet = false;
+  bool m_encryptionInTransitHasBeenSet = false;
 };
 
 }  // namespace Model

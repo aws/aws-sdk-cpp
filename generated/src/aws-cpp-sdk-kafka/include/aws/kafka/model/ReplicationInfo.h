@@ -73,6 +73,24 @@ class ReplicationInfo {
 
   ///@{
   /**
+   * <p>The ID of the source Kafka cluster.</p>
+   */
+  inline const Aws::String& GetSourceKafkaClusterId() const { return m_sourceKafkaClusterId; }
+  inline bool SourceKafkaClusterIdHasBeenSet() const { return m_sourceKafkaClusterIdHasBeenSet; }
+  template <typename SourceKafkaClusterIdT = Aws::String>
+  void SetSourceKafkaClusterId(SourceKafkaClusterIdT&& value) {
+    m_sourceKafkaClusterIdHasBeenSet = true;
+    m_sourceKafkaClusterId = std::forward<SourceKafkaClusterIdT>(value);
+  }
+  template <typename SourceKafkaClusterIdT = Aws::String>
+  ReplicationInfo& WithSourceKafkaClusterId(SourceKafkaClusterIdT&& value) {
+    SetSourceKafkaClusterId(std::forward<SourceKafkaClusterIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The compression type to use when producing records to target cluster.</p>
    */
   inline TargetCompressionType GetTargetCompressionType() const { return m_targetCompressionType; }
@@ -107,6 +125,24 @@ class ReplicationInfo {
 
   ///@{
   /**
+   * <p>The ID of the target Kafka cluster.</p>
+   */
+  inline const Aws::String& GetTargetKafkaClusterId() const { return m_targetKafkaClusterId; }
+  inline bool TargetKafkaClusterIdHasBeenSet() const { return m_targetKafkaClusterIdHasBeenSet; }
+  template <typename TargetKafkaClusterIdT = Aws::String>
+  void SetTargetKafkaClusterId(TargetKafkaClusterIdT&& value) {
+    m_targetKafkaClusterIdHasBeenSet = true;
+    m_targetKafkaClusterId = std::forward<TargetKafkaClusterIdT>(value);
+  }
+  template <typename TargetKafkaClusterIdT = Aws::String>
+  ReplicationInfo& WithTargetKafkaClusterId(TargetKafkaClusterIdT&& value) {
+    SetTargetKafkaClusterId(std::forward<TargetKafkaClusterIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Configuration relating to topic replication.</p>
    */
   inline const TopicReplication& GetTopicReplication() const { return m_topicReplication; }
@@ -127,15 +163,21 @@ class ReplicationInfo {
 
   Aws::String m_sourceKafkaClusterArn;
 
+  Aws::String m_sourceKafkaClusterId;
+
   TargetCompressionType m_targetCompressionType{TargetCompressionType::NOT_SET};
 
   Aws::String m_targetKafkaClusterArn;
 
+  Aws::String m_targetKafkaClusterId;
+
   TopicReplication m_topicReplication;
   bool m_consumerGroupReplicationHasBeenSet = false;
   bool m_sourceKafkaClusterArnHasBeenSet = false;
+  bool m_sourceKafkaClusterIdHasBeenSet = false;
   bool m_targetCompressionTypeHasBeenSet = false;
   bool m_targetKafkaClusterArnHasBeenSet = false;
+  bool m_targetKafkaClusterIdHasBeenSet = false;
   bool m_topicReplicationHasBeenSet = false;
 };
 

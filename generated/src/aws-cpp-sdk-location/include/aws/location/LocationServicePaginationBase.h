@@ -12,6 +12,7 @@
 #include <aws/location/model/ListDevicePositionsPaginationTraits.h>
 #include <aws/location/model/ListGeofenceCollectionsPaginationTraits.h>
 #include <aws/location/model/ListGeofencesPaginationTraits.h>
+#include <aws/location/model/ListJobsPaginationTraits.h>
 #include <aws/location/model/ListKeysPaginationTraits.h>
 #include <aws/location/model/ListMapsPaginationTraits.h>
 #include <aws/location/model/ListPlaceIndexesPaginationTraits.h>
@@ -86,6 +87,16 @@ class LocationServicePaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGeofencesRequest,
                                              Pagination::ListGeofencesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
+  }
+
+  /**
+   * Create a paginator for ListJobs operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobsRequest, Pagination::ListJobsPaginationTraits<DerivedClient>>
+  ListJobsPaginator(const Model::ListJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobsRequest, Pagination::ListJobsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**

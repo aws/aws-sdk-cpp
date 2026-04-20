@@ -30,6 +30,7 @@ static const int AWS_BedrockAgentCore_Gateway_HASH = HashingUtils::HashString("A
 static const int AWS_BedrockAgentCore_Memory_HASH = HashingUtils::HashString("AWS::BedrockAgentCore::Memory");
 static const int AWS_SecurityHub_Hub_HASH = HashingUtils::HashString("AWS::SecurityHub::Hub");
 static const int AWS_CloudFront_Distribution_HASH = HashingUtils::HashString("AWS::CloudFront::Distribution");
+static const int AWS_SecurityHub_HubV2_HASH = HashingUtils::HashString("AWS::SecurityHub::HubV2");
 
 ResourceType GetResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -63,6 +64,8 @@ ResourceType GetResourceTypeForName(const Aws::String& name) {
     return ResourceType::AWS_SecurityHub_Hub;
   } else if (hashCode == AWS_CloudFront_Distribution_HASH) {
     return ResourceType::AWS_CloudFront_Distribution;
+  } else if (hashCode == AWS_SecurityHub_HubV2_HASH) {
+    return ResourceType::AWS_SecurityHub_HubV2;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -107,6 +110,8 @@ Aws::String GetNameForResourceType(ResourceType enumValue) {
       return "AWS::SecurityHub::Hub";
     case ResourceType::AWS_CloudFront_Distribution:
       return "AWS::CloudFront::Distribution";
+    case ResourceType::AWS_SecurityHub_HubV2:
+      return "AWS::SecurityHub::HubV2";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

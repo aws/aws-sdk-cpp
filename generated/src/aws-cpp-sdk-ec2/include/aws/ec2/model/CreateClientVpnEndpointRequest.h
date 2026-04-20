@@ -18,6 +18,7 @@
 #include <aws/ec2/model/SelfServicePortal.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <aws/ec2/model/TrafficIpAddressType.h>
+#include <aws/ec2/model/TransitGatewayConfigurationInputStructure.h>
 #include <aws/ec2/model/TransportProtocol.h>
 
 #include <utility>
@@ -500,6 +501,27 @@ class CreateClientVpnEndpointRequest : public EC2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Transit Gateway configuration for the Client VPN endpoint. Use this
+   * parameter to associate the endpoint with a Transit Gateway instead of a VPC. You
+   * cannot specify both <code>TransitGatewayConfiguration</code> and
+   * <code>VpcId</code>/<code>SecurityGroupIds</code>.</p>
+   */
+  inline const TransitGatewayConfigurationInputStructure& GetTransitGatewayConfiguration() const { return m_transitGatewayConfiguration; }
+  inline bool TransitGatewayConfigurationHasBeenSet() const { return m_transitGatewayConfigurationHasBeenSet; }
+  template <typename TransitGatewayConfigurationT = TransitGatewayConfigurationInputStructure>
+  void SetTransitGatewayConfiguration(TransitGatewayConfigurationT&& value) {
+    m_transitGatewayConfigurationHasBeenSet = true;
+    m_transitGatewayConfiguration = std::forward<TransitGatewayConfigurationT>(value);
+  }
+  template <typename TransitGatewayConfigurationT = TransitGatewayConfigurationInputStructure>
+  CreateClientVpnEndpointRequest& WithTransitGatewayConfiguration(TransitGatewayConfigurationT&& value) {
+    SetTransitGatewayConfiguration(std::forward<TransitGatewayConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clientCidrBlock;
 
@@ -544,6 +566,8 @@ class CreateClientVpnEndpointRequest : public EC2Request {
   EndpointIpAddressType m_endpointIpAddressType{EndpointIpAddressType::NOT_SET};
 
   TrafficIpAddressType m_trafficIpAddressType{TrafficIpAddressType::NOT_SET};
+
+  TransitGatewayConfigurationInputStructure m_transitGatewayConfiguration;
   bool m_clientCidrBlockHasBeenSet = false;
   bool m_serverCertificateArnHasBeenSet = false;
   bool m_authenticationOptionsHasBeenSet = false;
@@ -566,6 +590,7 @@ class CreateClientVpnEndpointRequest : public EC2Request {
   bool m_disconnectOnSessionTimeoutHasBeenSet = false;
   bool m_endpointIpAddressTypeHasBeenSet = false;
   bool m_trafficIpAddressTypeHasBeenSet = false;
+  bool m_transitGatewayConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

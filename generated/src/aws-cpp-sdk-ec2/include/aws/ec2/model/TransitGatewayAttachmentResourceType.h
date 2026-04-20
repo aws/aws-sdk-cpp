@@ -19,7 +19,8 @@ enum class TransitGatewayAttachmentResourceType {
   connect,
   peering,
   tgw_peering,
-  network_function
+  network_function,
+  client_vpn
 };
 
 namespace TransitGatewayAttachmentResourceTypeMapper {

@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kafka/Kafka_EXPORTS.h>
 #include <aws/kafka/model/AmazonMskCluster.h>
+#include <aws/kafka/model/ApacheKafkaCluster.h>
 
 #include <utility>
 
@@ -53,6 +54,24 @@ class KafkaClusterSummary {
 
   ///@{
   /**
+   * <p>Details of an Apache Kafka Cluster.</p>
+   */
+  inline const ApacheKafkaCluster& GetApacheKafkaCluster() const { return m_apacheKafkaCluster; }
+  inline bool ApacheKafkaClusterHasBeenSet() const { return m_apacheKafkaClusterHasBeenSet; }
+  template <typename ApacheKafkaClusterT = ApacheKafkaCluster>
+  void SetApacheKafkaCluster(ApacheKafkaClusterT&& value) {
+    m_apacheKafkaClusterHasBeenSet = true;
+    m_apacheKafkaCluster = std::forward<ApacheKafkaClusterT>(value);
+  }
+  template <typename ApacheKafkaClusterT = ApacheKafkaCluster>
+  KafkaClusterSummary& WithApacheKafkaCluster(ApacheKafkaClusterT&& value) {
+    SetApacheKafkaCluster(std::forward<ApacheKafkaClusterT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The alias of the Kafka cluster. Used to prefix names of replicated
    * topics.</p>
    */
@@ -72,8 +91,11 @@ class KafkaClusterSummary {
  private:
   AmazonMskCluster m_amazonMskCluster;
 
+  ApacheKafkaCluster m_apacheKafkaCluster;
+
   Aws::String m_kafkaClusterAlias;
   bool m_amazonMskClusterHasBeenSet = false;
+  bool m_apacheKafkaClusterHasBeenSet = false;
   bool m_kafkaClusterAliasHasBeenSet = false;
 };
 

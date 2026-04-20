@@ -163,6 +163,25 @@ class ClientVpnRoute {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the Transit Gateway attachment, if the route targets a Transit
+   * Gateway.</p>
+   */
+  inline const Aws::String& GetTransitGatewayAttachmentId() const { return m_transitGatewayAttachmentId; }
+  inline bool TransitGatewayAttachmentIdHasBeenSet() const { return m_transitGatewayAttachmentIdHasBeenSet; }
+  template <typename TransitGatewayAttachmentIdT = Aws::String>
+  void SetTransitGatewayAttachmentId(TransitGatewayAttachmentIdT&& value) {
+    m_transitGatewayAttachmentIdHasBeenSet = true;
+    m_transitGatewayAttachmentId = std::forward<TransitGatewayAttachmentIdT>(value);
+  }
+  template <typename TransitGatewayAttachmentIdT = Aws::String>
+  ClientVpnRoute& WithTransitGatewayAttachmentId(TransitGatewayAttachmentIdT&& value) {
+    SetTransitGatewayAttachmentId(std::forward<TransitGatewayAttachmentIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clientVpnEndpointId;
 
@@ -177,6 +196,8 @@ class ClientVpnRoute {
   ClientVpnRouteStatus m_status;
 
   Aws::String m_description;
+
+  Aws::String m_transitGatewayAttachmentId;
   bool m_clientVpnEndpointIdHasBeenSet = false;
   bool m_destinationCidrHasBeenSet = false;
   bool m_targetSubnetHasBeenSet = false;
@@ -184,6 +205,7 @@ class ClientVpnRoute {
   bool m_originHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
+  bool m_transitGatewayAttachmentIdHasBeenSet = false;
 };
 
 }  // namespace Model

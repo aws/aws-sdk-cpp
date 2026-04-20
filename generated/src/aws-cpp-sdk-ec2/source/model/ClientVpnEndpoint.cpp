@@ -185,6 +185,11 @@ ClientVpnEndpoint& ClientVpnEndpoint::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(trafficIpAddressTypeNode.GetText()).c_str()));
       m_trafficIpAddressTypeHasBeenSet = true;
     }
+    XmlNode transitGatewayConfigurationNode = resultNode.FirstChild("transitGatewayConfiguration");
+    if (!transitGatewayConfigurationNode.IsNull()) {
+      m_transitGatewayConfiguration = transitGatewayConfigurationNode;
+      m_transitGatewayConfigurationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -331,6 +336,12 @@ void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* locati
     oStream << location << index << locationValue << ".TrafficIpAddressType="
             << StringUtils::URLEncode(TrafficIpAddressTypeMapper::GetNameForTrafficIpAddressType(m_trafficIpAddressType)) << "&";
   }
+
+  if (m_transitGatewayConfigurationHasBeenSet) {
+    Aws::StringStream transitGatewayConfigurationLocationAndMemberSs;
+    transitGatewayConfigurationLocationAndMemberSs << location << index << locationValue << ".TransitGatewayConfiguration";
+    m_transitGatewayConfiguration.OutputToStream(oStream, transitGatewayConfigurationLocationAndMemberSs.str().c_str());
+  }
 }
 
 void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -441,6 +452,11 @@ void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* locati
   if (m_trafficIpAddressTypeHasBeenSet) {
     oStream << location << ".TrafficIpAddressType="
             << StringUtils::URLEncode(TrafficIpAddressTypeMapper::GetNameForTrafficIpAddressType(m_trafficIpAddressType)) << "&";
+  }
+  if (m_transitGatewayConfigurationHasBeenSet) {
+    Aws::String transitGatewayConfigurationLocationAndMember(location);
+    transitGatewayConfigurationLocationAndMember += ".TransitGatewayConfiguration";
+    m_transitGatewayConfiguration.OutputToStream(oStream, transitGatewayConfigurationLocationAndMember.c_str());
   }
 }
 

@@ -59,6 +59,28 @@ TargetNetwork& TargetNetwork::operator=(const XmlNode& xmlNode) {
 
       m_securityGroupsHasBeenSet = true;
     }
+    XmlNode availabilityZonesNode = resultNode.FirstChild("availabilityZoneSet");
+    if (!availabilityZonesNode.IsNull()) {
+      XmlNode availabilityZonesMember = availabilityZonesNode.FirstChild("item");
+      m_availabilityZonesHasBeenSet = !availabilityZonesMember.IsNull();
+      while (!availabilityZonesMember.IsNull()) {
+        m_availabilityZones.push_back(availabilityZonesMember.GetText());
+        availabilityZonesMember = availabilityZonesMember.NextNode("item");
+      }
+
+      m_availabilityZonesHasBeenSet = true;
+    }
+    XmlNode availabilityZoneIdsNode = resultNode.FirstChild("availabilityZoneIdSet");
+    if (!availabilityZoneIdsNode.IsNull()) {
+      XmlNode availabilityZoneIdsMember = availabilityZoneIdsNode.FirstChild("item");
+      m_availabilityZoneIdsHasBeenSet = !availabilityZoneIdsMember.IsNull();
+      while (!availabilityZoneIdsMember.IsNull()) {
+        m_availabilityZoneIds.push_back(availabilityZoneIdsMember.GetText());
+        availabilityZoneIdsMember = availabilityZoneIdsMember.NextNode("item");
+      }
+
+      m_availabilityZoneIdsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -95,6 +117,22 @@ void TargetNetwork::OutputToStream(Aws::OStream& oStream, const char* location, 
               << StringUtils::URLEncode(item.c_str()) << "&";
     }
   }
+
+  if (m_availabilityZonesHasBeenSet) {
+    unsigned availabilityZonesIdx = 1;
+    for (auto& item : m_availabilityZones) {
+      oStream << location << index << locationValue << ".AvailabilityZoneSet." << availabilityZonesIdx++ << "="
+              << StringUtils::URLEncode(item.c_str()) << "&";
+    }
+  }
+
+  if (m_availabilityZoneIdsHasBeenSet) {
+    unsigned availabilityZoneIdsIdx = 1;
+    for (auto& item : m_availabilityZoneIds) {
+      oStream << location << index << locationValue << ".AvailabilityZoneIdSet." << availabilityZoneIdsIdx++ << "="
+              << StringUtils::URLEncode(item.c_str()) << "&";
+    }
+  }
 }
 
 void TargetNetwork::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -119,6 +157,18 @@ void TargetNetwork::OutputToStream(Aws::OStream& oStream, const char* location) 
     unsigned securityGroupsIdx = 1;
     for (auto& item : m_securityGroups) {
       oStream << location << ".SecurityGroups." << securityGroupsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+    }
+  }
+  if (m_availabilityZonesHasBeenSet) {
+    unsigned availabilityZonesIdx = 1;
+    for (auto& item : m_availabilityZones) {
+      oStream << location << ".AvailabilityZoneSet." << availabilityZonesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+    }
+  }
+  if (m_availabilityZoneIdsHasBeenSet) {
+    unsigned availabilityZoneIdsIdx = 1;
+    for (auto& item : m_availabilityZoneIds) {
+      oStream << location << ".AvailabilityZoneIdSet." << availabilityZoneIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
     }
   }
 }

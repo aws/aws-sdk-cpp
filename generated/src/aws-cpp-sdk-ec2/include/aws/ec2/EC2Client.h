@@ -174,6 +174,38 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Accepts a Transit Gateway attachment request for a Client VPN endpoint. The
+   * Transit Gateway owner must accept the attachment request before the Client VPN
+   * endpoint can route traffic through the Transit Gateway.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayClientVpnAttachment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AcceptTransitGatewayClientVpnAttachmentOutcome AcceptTransitGatewayClientVpnAttachment(
+      const Model::AcceptTransitGatewayClientVpnAttachmentRequest& request) const;
+
+  /**
+   * A Callable wrapper for AcceptTransitGatewayClientVpnAttachment that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename AcceptTransitGatewayClientVpnAttachmentRequestT = Model::AcceptTransitGatewayClientVpnAttachmentRequest>
+  Model::AcceptTransitGatewayClientVpnAttachmentOutcomeCallable AcceptTransitGatewayClientVpnAttachmentCallable(
+      const AcceptTransitGatewayClientVpnAttachmentRequestT& request) const {
+    return SubmitCallable(&EC2Client::AcceptTransitGatewayClientVpnAttachment, request);
+  }
+
+  /**
+   * An Async wrapper for AcceptTransitGatewayClientVpnAttachment that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename AcceptTransitGatewayClientVpnAttachmentRequestT = Model::AcceptTransitGatewayClientVpnAttachmentRequest>
+  void AcceptTransitGatewayClientVpnAttachmentAsync(const AcceptTransitGatewayClientVpnAttachmentRequestT& request,
+                                                    const AcceptTransitGatewayClientVpnAttachmentResponseReceivedHandler& handler,
+                                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::AcceptTransitGatewayClientVpnAttachment, request, handler, context);
+  }
+
+  /**
    * <p>Accepts a request to associate subnets with a transit gateway multicast
    * domain.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayMulticastDomainAssociations">AWS
@@ -7799,6 +7831,37 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   void DeleteTransitGatewayAsync(const DeleteTransitGatewayRequestT& request, const DeleteTransitGatewayResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::DeleteTransitGateway, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a Transit Gateway attachment for a Client VPN endpoint. The Transit
+   * Gateway owner can delete the attachment to remove the association between the
+   * Client VPN endpoint and the Transit Gateway.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayClientVpnAttachment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteTransitGatewayClientVpnAttachmentOutcome DeleteTransitGatewayClientVpnAttachment(
+      const Model::DeleteTransitGatewayClientVpnAttachmentRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteTransitGatewayClientVpnAttachment that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DeleteTransitGatewayClientVpnAttachmentRequestT = Model::DeleteTransitGatewayClientVpnAttachmentRequest>
+  Model::DeleteTransitGatewayClientVpnAttachmentOutcomeCallable DeleteTransitGatewayClientVpnAttachmentCallable(
+      const DeleteTransitGatewayClientVpnAttachmentRequestT& request) const {
+    return SubmitCallable(&EC2Client::DeleteTransitGatewayClientVpnAttachment, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteTransitGatewayClientVpnAttachment that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DeleteTransitGatewayClientVpnAttachmentRequestT = Model::DeleteTransitGatewayClientVpnAttachmentRequest>
+  void DeleteTransitGatewayClientVpnAttachmentAsync(const DeleteTransitGatewayClientVpnAttachmentRequestT& request,
+                                                    const DeleteTransitGatewayClientVpnAttachmentResponseReceivedHandler& handler,
+                                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::DeleteTransitGatewayClientVpnAttachment, request, handler, context);
   }
 
   /**
@@ -23397,6 +23460,38 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
       const RejectCapacityReservationBillingOwnershipResponseReceivedHandler& handler,
       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::RejectCapacityReservationBillingOwnership, request, handler, context);
+  }
+
+  /**
+   * <p>Rejects a Transit Gateway attachment request for a Client VPN endpoint. The
+   * Transit Gateway owner can reject the attachment request to prevent the Client
+   * VPN endpoint from routing traffic through the Transit Gateway.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayClientVpnAttachment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RejectTransitGatewayClientVpnAttachmentOutcome RejectTransitGatewayClientVpnAttachment(
+      const Model::RejectTransitGatewayClientVpnAttachmentRequest& request) const;
+
+  /**
+   * A Callable wrapper for RejectTransitGatewayClientVpnAttachment that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename RejectTransitGatewayClientVpnAttachmentRequestT = Model::RejectTransitGatewayClientVpnAttachmentRequest>
+  Model::RejectTransitGatewayClientVpnAttachmentOutcomeCallable RejectTransitGatewayClientVpnAttachmentCallable(
+      const RejectTransitGatewayClientVpnAttachmentRequestT& request) const {
+    return SubmitCallable(&EC2Client::RejectTransitGatewayClientVpnAttachment, request);
+  }
+
+  /**
+   * An Async wrapper for RejectTransitGatewayClientVpnAttachment that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename RejectTransitGatewayClientVpnAttachmentRequestT = Model::RejectTransitGatewayClientVpnAttachmentRequest>
+  void RejectTransitGatewayClientVpnAttachmentAsync(const RejectTransitGatewayClientVpnAttachmentRequestT& request,
+                                                    const RejectTransitGatewayClientVpnAttachmentResponseReceivedHandler& handler,
+                                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::RejectTransitGatewayClientVpnAttachment, request, handler, context);
   }
 
   /**

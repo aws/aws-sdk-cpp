@@ -14,6 +14,7 @@
 #include <aws/ec2/model/ConnectionLogOptions.h>
 #include <aws/ec2/model/DnsServersOptionsModifyStructure.h>
 #include <aws/ec2/model/SelfServicePortal.h>
+#include <aws/ec2/model/TransitGatewayConfigurationInputStructure.h>
 
 #include <utility>
 
@@ -351,6 +352,25 @@ class ModifyClientVpnEndpointRequest : public EC2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Transit Gateway configuration for the Client VPN endpoint. This option is
+   * currently not supported.</p>
+   */
+  inline const TransitGatewayConfigurationInputStructure& GetTransitGatewayConfiguration() const { return m_transitGatewayConfiguration; }
+  inline bool TransitGatewayConfigurationHasBeenSet() const { return m_transitGatewayConfigurationHasBeenSet; }
+  template <typename TransitGatewayConfigurationT = TransitGatewayConfigurationInputStructure>
+  void SetTransitGatewayConfiguration(TransitGatewayConfigurationT&& value) {
+    m_transitGatewayConfigurationHasBeenSet = true;
+    m_transitGatewayConfiguration = std::forward<TransitGatewayConfigurationT>(value);
+  }
+  template <typename TransitGatewayConfigurationT = TransitGatewayConfigurationInputStructure>
+  ModifyClientVpnEndpointRequest& WithTransitGatewayConfiguration(TransitGatewayConfigurationT&& value) {
+    SetTransitGatewayConfiguration(std::forward<TransitGatewayConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clientVpnEndpointId;
 
@@ -383,6 +403,8 @@ class ModifyClientVpnEndpointRequest : public EC2Request {
   ClientRouteEnforcementOptions m_clientRouteEnforcementOptions;
 
   bool m_disconnectOnSessionTimeout{false};
+
+  TransitGatewayConfigurationInputStructure m_transitGatewayConfiguration;
   bool m_clientVpnEndpointIdHasBeenSet = false;
   bool m_serverCertificateArnHasBeenSet = false;
   bool m_connectionLogOptionsHasBeenSet = false;
@@ -399,6 +421,7 @@ class ModifyClientVpnEndpointRequest : public EC2Request {
   bool m_clientLoginBannerOptionsHasBeenSet = false;
   bool m_clientRouteEnforcementOptionsHasBeenSet = false;
   bool m_disconnectOnSessionTimeoutHasBeenSet = false;
+  bool m_transitGatewayConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -27,6 +27,8 @@
 #include <aws/ec2/model/AcceptCapacityReservationBillingOwnershipResponse.h>
 #include <aws/ec2/model/AcceptReservedInstancesExchangeQuoteRequest.h>
 #include <aws/ec2/model/AcceptReservedInstancesExchangeQuoteResponse.h>
+#include <aws/ec2/model/AcceptTransitGatewayClientVpnAttachmentRequest.h>
+#include <aws/ec2/model/AcceptTransitGatewayClientVpnAttachmentResponse.h>
 #include <aws/ec2/model/AcceptTransitGatewayMulticastDomainAssociationsRequest.h>
 #include <aws/ec2/model/AcceptTransitGatewayMulticastDomainAssociationsResponse.h>
 #include <aws/ec2/model/AcceptTransitGatewayPeeringAttachmentRequest.h>
@@ -705,6 +707,8 @@
 #include <aws/ec2/model/DeleteTrafficMirrorSessionResponse.h>
 #include <aws/ec2/model/DeleteTrafficMirrorTargetRequest.h>
 #include <aws/ec2/model/DeleteTrafficMirrorTargetResponse.h>
+#include <aws/ec2/model/DeleteTransitGatewayClientVpnAttachmentRequest.h>
+#include <aws/ec2/model/DeleteTransitGatewayClientVpnAttachmentResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayConnectPeerRequest.h>
 #include <aws/ec2/model/DeleteTransitGatewayConnectPeerResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayConnectRequest.h>
@@ -2292,6 +2296,8 @@
 #include <aws/ec2/model/RegisteredInstance.h>
 #include <aws/ec2/model/RejectCapacityReservationBillingOwnershipRequest.h>
 #include <aws/ec2/model/RejectCapacityReservationBillingOwnershipResponse.h>
+#include <aws/ec2/model/RejectTransitGatewayClientVpnAttachmentRequest.h>
+#include <aws/ec2/model/RejectTransitGatewayClientVpnAttachmentResponse.h>
 #include <aws/ec2/model/RejectTransitGatewayMulticastDomainAssociationsRequest.h>
 #include <aws/ec2/model/RejectTransitGatewayMulticastDomainAssociationsResponse.h>
 #include <aws/ec2/model/RejectTransitGatewayPeeringAttachmentRequest.h>
@@ -2628,6 +2634,10 @@
 #include <aws/ec2/model/TransitGatewayAttachmentPropagation.h>
 #include <aws/ec2/model/TransitGatewayAttachmentResourceType.h>
 #include <aws/ec2/model/TransitGatewayAttachmentState.h>
+#include <aws/ec2/model/TransitGatewayAttachmentStatusType.h>
+#include <aws/ec2/model/TransitGatewayClientVpnAttachment.h>
+#include <aws/ec2/model/TransitGatewayConfigurationDescribeEndpointStructure.h>
+#include <aws/ec2/model/TransitGatewayConfigurationInputStructure.h>
 #include <aws/ec2/model/TransitGatewayConnect.h>
 #include <aws/ec2/model/TransitGatewayConnectOptions.h>
 #include <aws/ec2/model/TransitGatewayConnectPeer.h>

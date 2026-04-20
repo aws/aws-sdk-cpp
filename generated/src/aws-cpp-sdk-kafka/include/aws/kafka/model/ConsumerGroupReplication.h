@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kafka/Kafka_EXPORTS.h>
+#include <aws/kafka/model/ConsumerGroupOffsetSyncMode.h>
 
 #include <utility>
 
@@ -114,6 +115,26 @@ class ConsumerGroupReplication {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The consumer group offset synchronization mode. With LEGACY, offsets are
+   * synchronized when producers write to the source cluster. With ENHANCED, consumer
+   * offsets are synchronized regardless of producer location. ENHANCED requires a
+   * corresponding replicator that replicates data from the target cluster to the
+   * source cluster.</p>
+   */
+  inline ConsumerGroupOffsetSyncMode GetConsumerGroupOffsetSyncMode() const { return m_consumerGroupOffsetSyncMode; }
+  inline bool ConsumerGroupOffsetSyncModeHasBeenSet() const { return m_consumerGroupOffsetSyncModeHasBeenSet; }
+  inline void SetConsumerGroupOffsetSyncMode(ConsumerGroupOffsetSyncMode value) {
+    m_consumerGroupOffsetSyncModeHasBeenSet = true;
+    m_consumerGroupOffsetSyncMode = value;
+  }
+  inline ConsumerGroupReplication& WithConsumerGroupOffsetSyncMode(ConsumerGroupOffsetSyncMode value) {
+    SetConsumerGroupOffsetSyncMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_consumerGroupsToExclude;
 
@@ -122,10 +143,13 @@ class ConsumerGroupReplication {
   bool m_detectAndCopyNewConsumerGroups{false};
 
   bool m_synchroniseConsumerGroupOffsets{false};
+
+  ConsumerGroupOffsetSyncMode m_consumerGroupOffsetSyncMode{ConsumerGroupOffsetSyncMode::NOT_SET};
   bool m_consumerGroupsToExcludeHasBeenSet = false;
   bool m_consumerGroupsToReplicateHasBeenSet = false;
   bool m_detectAndCopyNewConsumerGroupsHasBeenSet = false;
   bool m_synchroniseConsumerGroupOffsetsHasBeenSet = false;
+  bool m_consumerGroupOffsetSyncModeHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -42,6 +42,11 @@ ConsumerGroupReplication& ConsumerGroupReplication::operator=(JsonView jsonValue
     m_synchroniseConsumerGroupOffsets = jsonValue.GetBool("synchroniseConsumerGroupOffsets");
     m_synchroniseConsumerGroupOffsetsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("consumerGroupOffsetSyncMode")) {
+    m_consumerGroupOffsetSyncMode =
+        ConsumerGroupOffsetSyncModeMapper::GetConsumerGroupOffsetSyncModeForName(jsonValue.GetString("consumerGroupOffsetSyncMode"));
+    m_consumerGroupOffsetSyncModeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -73,6 +78,11 @@ JsonValue ConsumerGroupReplication::Jsonize() const {
 
   if (m_synchroniseConsumerGroupOffsetsHasBeenSet) {
     payload.WithBool("synchroniseConsumerGroupOffsets", m_synchroniseConsumerGroupOffsets);
+  }
+
+  if (m_consumerGroupOffsetSyncModeHasBeenSet) {
+    payload.WithString("consumerGroupOffsetSyncMode",
+                       ConsumerGroupOffsetSyncModeMapper::GetNameForConsumerGroupOffsetSyncMode(m_consumerGroupOffsetSyncMode));
   }
 
   return payload;

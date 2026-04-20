@@ -80,7 +80,9 @@ class CreateClientVpnRouteRequest : public EC2Request {
    * <p>The ID of the subnet through which you want to route traffic. The specified
    * subnet must be an existing target network of the Client VPN endpoint.</p>
    * <p>Alternatively, if you're adding a route for the local network, specify
-   * <code>local</code>.</p>
+   * <code>local</code>.</p> <p>This parameter is required for VPC-based Client VPN
+   * endpoints. For Transit Gateway-based endpoints, this parameter is not
+   * required.</p>
    */
   inline const Aws::String& GetTargetVpcSubnetId() const { return m_targetVpcSubnetId; }
   inline bool TargetVpcSubnetIdHasBeenSet() const { return m_targetVpcSubnetIdHasBeenSet; }

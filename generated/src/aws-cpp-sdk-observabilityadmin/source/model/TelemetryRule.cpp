@@ -47,6 +47,10 @@ TelemetryRule& TelemetryRule::operator=(JsonView jsonValue) {
     m_selectionCriteria = jsonValue.GetString("SelectionCriteria");
     m_selectionCriteriaHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AllowFieldUpdates")) {
+    m_allowFieldUpdates = jsonValue.GetBool("AllowFieldUpdates");
+    m_allowFieldUpdatesHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Regions")) {
     Aws::Utils::Array<JsonView> regionsJsonList = jsonValue.GetArray("Regions");
     for (unsigned regionsIndex = 0; regionsIndex < regionsJsonList.GetLength(); ++regionsIndex) {
@@ -92,6 +96,10 @@ JsonValue TelemetryRule::Jsonize() const {
 
   if (m_selectionCriteriaHasBeenSet) {
     payload.WithString("SelectionCriteria", m_selectionCriteria);
+  }
+
+  if (m_allowFieldUpdatesHasBeenSet) {
+    payload.WithBool("AllowFieldUpdates", m_allowFieldUpdates);
   }
 
   if (m_regionsHasBeenSet) {

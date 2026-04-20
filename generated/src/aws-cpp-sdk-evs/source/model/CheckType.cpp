@@ -19,6 +19,9 @@ static const int KEY_REUSE_HASH = HashingUtils::HashString("KEY_REUSE");
 static const int KEY_COVERAGE_HASH = HashingUtils::HashString("KEY_COVERAGE");
 static const int REACHABILITY_HASH = HashingUtils::HashString("REACHABILITY");
 static const int HOST_COUNT_HASH = HashingUtils::HashString("HOST_COUNT");
+static const int VCENTER_REACHABILITY_HASH = HashingUtils::HashString("VCENTER_REACHABILITY");
+static const int VCENTER_VM_SYNC_HASH = HashingUtils::HashString("VCENTER_VM_SYNC");
+static const int VCENTER_VM_EVENT_HASH = HashingUtils::HashString("VCENTER_VM_EVENT");
 
 CheckType GetCheckTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +33,12 @@ CheckType GetCheckTypeForName(const Aws::String& name) {
     return CheckType::REACHABILITY;
   } else if (hashCode == HOST_COUNT_HASH) {
     return CheckType::HOST_COUNT;
+  } else if (hashCode == VCENTER_REACHABILITY_HASH) {
+    return CheckType::VCENTER_REACHABILITY;
+  } else if (hashCode == VCENTER_VM_SYNC_HASH) {
+    return CheckType::VCENTER_VM_SYNC;
+  } else if (hashCode == VCENTER_VM_EVENT_HASH) {
+    return CheckType::VCENTER_VM_EVENT;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +61,12 @@ Aws::String GetNameForCheckType(CheckType enumValue) {
       return "REACHABILITY";
     case CheckType::HOST_COUNT:
       return "HOST_COUNT";
+    case CheckType::VCENTER_REACHABILITY:
+      return "VCENTER_REACHABILITY";
+    case CheckType::VCENTER_VM_SYNC:
+      return "VCENTER_VM_SYNC";
+    case CheckType::VCENTER_VM_EVENT:
+      return "VCENTER_VM_EVENT";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

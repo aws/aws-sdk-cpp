@@ -11,6 +11,7 @@
 #include <aws/location/model/ListDevicePositionsPaginationTraits.h>
 #include <aws/location/model/ListGeofenceCollectionsPaginationTraits.h>
 #include <aws/location/model/ListGeofencesPaginationTraits.h>
+#include <aws/location/model/ListJobsPaginationTraits.h>
 #include <aws/location/model/ListKeysPaginationTraits.h>
 #include <aws/location/model/ListMapsPaginationTraits.h>
 #include <aws/location/model/ListPlaceIndexesPaginationTraits.h>
@@ -35,6 +36,8 @@ using ListGeofenceCollectionsPaginator =
                                       Pagination::ListGeofenceCollectionsPaginationTraits<LocationServiceClient>>;
 using ListGeofencesPaginator = Aws::Utils::Pagination::Paginator<LocationServiceClient, Model::ListGeofencesRequest,
                                                                  Pagination::ListGeofencesPaginationTraits<LocationServiceClient>>;
+using ListJobsPaginator = Aws::Utils::Pagination::Paginator<LocationServiceClient, Model::ListJobsRequest,
+                                                            Pagination::ListJobsPaginationTraits<LocationServiceClient>>;
 using ListKeysPaginator = Aws::Utils::Pagination::Paginator<LocationServiceClient, Model::ListKeysRequest,
                                                             Pagination::ListKeysPaginationTraits<LocationServiceClient>>;
 using ListMapsPaginator = Aws::Utils::Pagination::Paginator<LocationServiceClient, Model::ListMapsRequest,

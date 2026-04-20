@@ -45,6 +45,9 @@ class ClientVpnEndpointStatus {
    * The Client VPN endpoint is being deleted. The Client VPN endpoint cannot accept
    * connections.</p> </li> <li> <p> <code>deleted</code> - The Client VPN endpoint
    * has been deleted. The Client VPN endpoint cannot accept connections.</p> </li>
+   * <li> <p> <code>pending</code> - The Client VPN endpoint has been created with a
+   * Transit Gateway configuration and is waiting for the Transit Gateway attachment
+   * to be accepted. The Client VPN endpoint cannot accept connections.</p> </li>
    * </ul>
    */
   inline ClientVpnEndpointStatusCode GetCode() const { return m_code; }

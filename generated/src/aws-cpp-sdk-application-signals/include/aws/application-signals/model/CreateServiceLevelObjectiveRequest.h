@@ -185,6 +185,27 @@ class CreateServiceLevelObjectiveRequest : public ApplicationSignalsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Set this to <code>true</code> to create a recommended SLO out of the box.
+   * When set to <code>true</code>, you don't need to specify the
+   * <code>MetricThreshold</code> or <code>ComparisonOperator</code> in the
+   * <code>SliConfig</code> or <code>RequestBasedSliConfig</code>. The default value
+   * is <code>false</code>.</p> <p>This is supported for SLOs on a service, service
+   * operation, or a dependency.</p>
+   */
+  inline bool GetCreateRecommendedSlo() const { return m_createRecommendedSlo; }
+  inline bool CreateRecommendedSloHasBeenSet() const { return m_createRecommendedSloHasBeenSet; }
+  inline void SetCreateRecommendedSlo(bool value) {
+    m_createRecommendedSloHasBeenSet = true;
+    m_createRecommendedSlo = value;
+  }
+  inline CreateServiceLevelObjectiveRequest& WithCreateRecommendedSlo(bool value) {
+    SetCreateRecommendedSlo(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -199,6 +220,8 @@ class CreateServiceLevelObjectiveRequest : public ApplicationSignalsRequest {
   Aws::Vector<Tag> m_tags;
 
   Aws::Vector<BurnRateConfiguration> m_burnRateConfigurations;
+
+  bool m_createRecommendedSlo{false};
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_sliConfigHasBeenSet = false;
@@ -206,6 +229,7 @@ class CreateServiceLevelObjectiveRequest : public ApplicationSignalsRequest {
   bool m_goalHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_burnRateConfigurationsHasBeenSet = false;
+  bool m_createRecommendedSloHasBeenSet = false;
 };
 
 }  // namespace Model

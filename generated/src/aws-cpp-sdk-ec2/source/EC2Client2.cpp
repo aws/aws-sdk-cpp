@@ -20,6 +20,7 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DeleteNatGatewayRequest.h>
 #include <aws/ec2/model/DeleteNetworkAclEntryRequest.h>
 #include <aws/ec2/model/DeleteNetworkAclRequest.h>
 #include <aws/ec2/model/DeleteNetworkInsightsAccessScopeAnalysisRequest.h>
@@ -48,6 +49,7 @@
 #include <aws/ec2/model/DeleteTrafficMirrorFilterRuleRequest.h>
 #include <aws/ec2/model/DeleteTrafficMirrorSessionRequest.h>
 #include <aws/ec2/model/DeleteTrafficMirrorTargetRequest.h>
+#include <aws/ec2/model/DeleteTransitGatewayClientVpnAttachmentRequest.h>
 #include <aws/ec2/model/DeleteTransitGatewayConnectPeerRequest.h>
 #include <aws/ec2/model/DeleteTransitGatewayConnectRequest.h>
 #include <aws/ec2/model/DeleteTransitGatewayMeteringPolicyEntryRequest.h>
@@ -118,8 +120,6 @@
 #include <aws/ec2/model/DescribeDhcpOptionsRequest.h>
 #include <aws/ec2/model/DescribeEgressOnlyInternetGatewaysRequest.h>
 #include <aws/ec2/model/DescribeElasticGpusRequest.h>
-#include <aws/ec2/model/DescribeExportImageTasksRequest.h>
-#include <aws/ec2/model/DescribeExportTasksRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,12 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DeleteNatGatewayOutcome EC2Client::DeleteNatGateway(const DeleteNatGatewayRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteNatGatewayOutcome(result.GetResultWithOwnership())
+                            : DeleteNatGatewayOutcome(std::move(result.GetError()));
+}
 
 DeleteNetworkAclOutcome EC2Client::DeleteNetworkAcl(const DeleteNetworkAclRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -304,6 +310,13 @@ DeleteTransitGatewayOutcome EC2Client::DeleteTransitGateway(const DeleteTransitG
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteTransitGatewayOutcome(result.GetResultWithOwnership())
                             : DeleteTransitGatewayOutcome(std::move(result.GetError()));
+}
+
+DeleteTransitGatewayClientVpnAttachmentOutcome EC2Client::DeleteTransitGatewayClientVpnAttachment(
+    const DeleteTransitGatewayClientVpnAttachmentRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTransitGatewayClientVpnAttachmentOutcome(result.GetResultWithOwnership())
+                            : DeleteTransitGatewayClientVpnAttachmentOutcome(std::move(result.GetError()));
 }
 
 DeleteTransitGatewayConnectOutcome EC2Client::DeleteTransitGatewayConnect(const DeleteTransitGatewayConnectRequest& request) const {
@@ -745,16 +758,4 @@ DescribeElasticGpusOutcome EC2Client::DescribeElasticGpus(const DescribeElasticG
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeElasticGpusOutcome(result.GetResultWithOwnership())
                             : DescribeElasticGpusOutcome(std::move(result.GetError()));
-}
-
-DescribeExportImageTasksOutcome EC2Client::DescribeExportImageTasks(const DescribeExportImageTasksRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeExportImageTasksOutcome(result.GetResultWithOwnership())
-                            : DescribeExportImageTasksOutcome(std::move(result.GetError()));
-}
-
-DescribeExportTasksOutcome EC2Client::DescribeExportTasks(const DescribeExportTasksRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeExportTasksOutcome(result.GetResultWithOwnership())
-                            : DescribeExportTasksOutcome(std::move(result.GetError()));
 }

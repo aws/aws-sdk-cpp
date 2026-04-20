@@ -300,6 +300,7 @@
 #include <aws/bedrock-agentcore-control/model/ListTagsForResourceResult.h>
 #include <aws/bedrock-agentcore-control/model/ListWorkloadIdentitiesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListWorkloadIdentitiesResult.h>
+#include <aws/bedrock-agentcore-control/model/ListingMode.h>
 #include <aws/bedrock-agentcore-control/model/LlmAsAJudgeEvaluatorConfig.h>
 #include <aws/bedrock-agentcore-control/model/MCPGatewayConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ManagedLatticeResource.h>

@@ -7,9 +7,11 @@
 
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
+#include <aws/evs/model/ListEnvironmentConnectorsPaginationTraits.h>
 #include <aws/evs/model/ListEnvironmentHostsPaginationTraits.h>
 #include <aws/evs/model/ListEnvironmentVlansPaginationTraits.h>
 #include <aws/evs/model/ListEnvironmentsPaginationTraits.h>
+#include <aws/evs/model/ListVmEntitlementsPaginationTraits.h>
 
 #include <memory>
 
@@ -21,6 +23,18 @@ class EVSClient;
 template <typename DerivedClient>
 class EVSPaginationBase {
  public:
+  /**
+   * Create a paginator for ListEnvironmentConnectors operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEnvironmentConnectorsRequest,
+                                    Pagination::ListEnvironmentConnectorsPaginationTraits<DerivedClient>>
+  ListEnvironmentConnectorsPaginator(const Model::ListEnvironmentConnectorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEnvironmentConnectorsRequest,
+                                             Pagination::ListEnvironmentConnectorsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
   /**
    * Create a paginator for ListEnvironmentHosts operation
    */
@@ -54,6 +68,18 @@ class EVSPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEnvironmentVlansRequest,
                                              Pagination::ListEnvironmentVlansPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListVmEntitlements operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVmEntitlementsRequest,
+                                    Pagination::ListVmEntitlementsPaginationTraits<DerivedClient>>
+  ListVmEntitlementsPaginator(const Model::ListVmEntitlementsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVmEntitlementsRequest,
+                                             Pagination::ListVmEntitlementsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 };

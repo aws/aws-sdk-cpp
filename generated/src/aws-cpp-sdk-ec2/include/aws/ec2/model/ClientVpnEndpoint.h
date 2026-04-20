@@ -17,6 +17,7 @@
 #include <aws/ec2/model/EndpointIpAddressType.h>
 #include <aws/ec2/model/Tag.h>
 #include <aws/ec2/model/TrafficIpAddressType.h>
+#include <aws/ec2/model/TransitGatewayConfigurationDescribeEndpointStructure.h>
 #include <aws/ec2/model/TransportProtocol.h>
 #include <aws/ec2/model/VpnProtocol.h>
 
@@ -547,6 +548,26 @@ class ClientVpnEndpoint {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Transit Gateway configuration for the Client VPN endpoint.</p>
+   */
+  inline const TransitGatewayConfigurationDescribeEndpointStructure& GetTransitGatewayConfiguration() const {
+    return m_transitGatewayConfiguration;
+  }
+  inline bool TransitGatewayConfigurationHasBeenSet() const { return m_transitGatewayConfigurationHasBeenSet; }
+  template <typename TransitGatewayConfigurationT = TransitGatewayConfigurationDescribeEndpointStructure>
+  void SetTransitGatewayConfiguration(TransitGatewayConfigurationT&& value) {
+    m_transitGatewayConfigurationHasBeenSet = true;
+    m_transitGatewayConfiguration = std::forward<TransitGatewayConfigurationT>(value);
+  }
+  template <typename TransitGatewayConfigurationT = TransitGatewayConfigurationDescribeEndpointStructure>
+  ClientVpnEndpoint& WithTransitGatewayConfiguration(TransitGatewayConfigurationT&& value) {
+    SetTransitGatewayConfiguration(std::forward<TransitGatewayConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clientVpnEndpointId;
 
@@ -599,6 +620,8 @@ class ClientVpnEndpoint {
   EndpointIpAddressType m_endpointIpAddressType{EndpointIpAddressType::NOT_SET};
 
   TrafficIpAddressType m_trafficIpAddressType{TrafficIpAddressType::NOT_SET};
+
+  TransitGatewayConfigurationDescribeEndpointStructure m_transitGatewayConfiguration;
   bool m_clientVpnEndpointIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_statusHasBeenSet = false;
@@ -625,6 +648,7 @@ class ClientVpnEndpoint {
   bool m_disconnectOnSessionTimeoutHasBeenSet = false;
   bool m_endpointIpAddressTypeHasBeenSet = false;
   bool m_trafficIpAddressTypeHasBeenSet = false;
+  bool m_transitGatewayConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

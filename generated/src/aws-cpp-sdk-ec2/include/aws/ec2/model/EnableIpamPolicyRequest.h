@@ -71,13 +71,13 @@ class EnableIpamPolicyRequest : public EC2Request {
 
   ///@{
   /**
+   * <p>A target can be an individual Amazon Web Services account or an entity within
+   * an Amazon Web Services Organization to which an IPAM policy can be applied.</p>
    * <p>The ID of the Amazon Web Services Organizations target for which to enable
    * the IPAM policy. This parameter is required only when IPAM is integrated with
    * Amazon Web Services Organizations. When IPAM is not integrated with Amazon Web
    * Services Organizations, omit this parameter and the policy will apply to the
-   * current account.</p> <p>A target can be an individual Amazon Web Services
-   * account or an entity within an Amazon Web Services Organization to which an IPAM
-   * policy can be applied.</p>
+   * current account.</p>
    */
   inline const Aws::String& GetOrganizationTargetId() const { return m_organizationTargetId; }
   inline bool OrganizationTargetIdHasBeenSet() const { return m_organizationTargetIdHasBeenSet; }

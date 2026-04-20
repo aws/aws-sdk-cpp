@@ -23,6 +23,7 @@ static const int connect_HASH = HashingUtils::HashString("connect");
 static const int peering_HASH = HashingUtils::HashString("peering");
 static const int tgw_peering_HASH = HashingUtils::HashString("tgw-peering");
 static const int network_function_HASH = HashingUtils::HashString("network-function");
+static const int client_vpn_HASH = HashingUtils::HashString("client-vpn");
 
 TransitGatewayAttachmentResourceType GetTransitGatewayAttachmentResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -42,6 +43,8 @@ TransitGatewayAttachmentResourceType GetTransitGatewayAttachmentResourceTypeForN
     return TransitGatewayAttachmentResourceType::tgw_peering;
   } else if (hashCode == network_function_HASH) {
     return TransitGatewayAttachmentResourceType::network_function;
+  } else if (hashCode == client_vpn_HASH) {
+    return TransitGatewayAttachmentResourceType::client_vpn;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -72,6 +75,8 @@ Aws::String GetNameForTransitGatewayAttachmentResourceType(TransitGatewayAttachm
       return "tgw-peering";
     case TransitGatewayAttachmentResourceType::network_function:
       return "network-function";
+    case TransitGatewayAttachmentResourceType::client_vpn:
+      return "client-vpn";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

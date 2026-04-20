@@ -21,19 +21,26 @@
 #include <aws/evs/EVSEndpointProvider.h>
 #include <aws/evs/EVSErrorMarshaller.h>
 #include <aws/evs/model/AssociateEipToVlanRequest.h>
+#include <aws/evs/model/CreateEntitlementRequest.h>
+#include <aws/evs/model/CreateEnvironmentConnectorRequest.h>
 #include <aws/evs/model/CreateEnvironmentHostRequest.h>
 #include <aws/evs/model/CreateEnvironmentRequest.h>
+#include <aws/evs/model/DeleteEntitlementRequest.h>
+#include <aws/evs/model/DeleteEnvironmentConnectorRequest.h>
 #include <aws/evs/model/DeleteEnvironmentHostRequest.h>
 #include <aws/evs/model/DeleteEnvironmentRequest.h>
 #include <aws/evs/model/DisassociateEipFromVlanRequest.h>
 #include <aws/evs/model/GetEnvironmentRequest.h>
 #include <aws/evs/model/GetVersionsRequest.h>
+#include <aws/evs/model/ListEnvironmentConnectorsRequest.h>
 #include <aws/evs/model/ListEnvironmentHostsRequest.h>
 #include <aws/evs/model/ListEnvironmentVlansRequest.h>
 #include <aws/evs/model/ListEnvironmentsRequest.h>
 #include <aws/evs/model/ListTagsForResourceRequest.h>
+#include <aws/evs/model/ListVmEntitlementsRequest.h>
 #include <aws/evs/model/TagResourceRequest.h>
 #include <aws/evs/model/UntagResourceRequest.h>
+#include <aws/evs/model/UpdateEnvironmentConnectorRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -189,10 +196,22 @@ AssociateEipToVlanOutcome EVSClient::AssociateEipToVlan(const AssociateEipToVlan
                             : AssociateEipToVlanOutcome(std::move(result.GetError()));
 }
 
+CreateEntitlementOutcome EVSClient::CreateEntitlement(const CreateEntitlementRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEntitlementOutcome(result.GetResultWithOwnership())
+                            : CreateEntitlementOutcome(std::move(result.GetError()));
+}
+
 CreateEnvironmentOutcome EVSClient::CreateEnvironment(const CreateEnvironmentRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateEnvironmentOutcome(result.GetResultWithOwnership())
                             : CreateEnvironmentOutcome(std::move(result.GetError()));
+}
+
+CreateEnvironmentConnectorOutcome EVSClient::CreateEnvironmentConnector(const CreateEnvironmentConnectorRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEnvironmentConnectorOutcome(result.GetResultWithOwnership())
+                            : CreateEnvironmentConnectorOutcome(std::move(result.GetError()));
 }
 
 CreateEnvironmentHostOutcome EVSClient::CreateEnvironmentHost(const CreateEnvironmentHostRequest& request) const {
@@ -201,10 +220,22 @@ CreateEnvironmentHostOutcome EVSClient::CreateEnvironmentHost(const CreateEnviro
                             : CreateEnvironmentHostOutcome(std::move(result.GetError()));
 }
 
+DeleteEntitlementOutcome EVSClient::DeleteEntitlement(const DeleteEntitlementRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteEntitlementOutcome(result.GetResultWithOwnership())
+                            : DeleteEntitlementOutcome(std::move(result.GetError()));
+}
+
 DeleteEnvironmentOutcome EVSClient::DeleteEnvironment(const DeleteEnvironmentRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteEnvironmentOutcome(result.GetResultWithOwnership())
                             : DeleteEnvironmentOutcome(std::move(result.GetError()));
+}
+
+DeleteEnvironmentConnectorOutcome EVSClient::DeleteEnvironmentConnector(const DeleteEnvironmentConnectorRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteEnvironmentConnectorOutcome(result.GetResultWithOwnership())
+                            : DeleteEnvironmentConnectorOutcome(std::move(result.GetError()));
 }
 
 DeleteEnvironmentHostOutcome EVSClient::DeleteEnvironmentHost(const DeleteEnvironmentHostRequest& request) const {
@@ -227,6 +258,12 @@ GetEnvironmentOutcome EVSClient::GetEnvironment(const GetEnvironmentRequest& req
 GetVersionsOutcome EVSClient::GetVersions(const GetVersionsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetVersionsOutcome(result.GetResultWithOwnership()) : GetVersionsOutcome(std::move(result.GetError()));
+}
+
+ListEnvironmentConnectorsOutcome EVSClient::ListEnvironmentConnectors(const ListEnvironmentConnectorsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEnvironmentConnectorsOutcome(result.GetResultWithOwnership())
+                            : ListEnvironmentConnectorsOutcome(std::move(result.GetError()));
 }
 
 ListEnvironmentHostsOutcome EVSClient::ListEnvironmentHosts(const ListEnvironmentHostsRequest& request) const {
@@ -253,6 +290,12 @@ ListTagsForResourceOutcome EVSClient::ListTagsForResource(const ListTagsForResou
                             : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
+ListVmEntitlementsOutcome EVSClient::ListVmEntitlements(const ListVmEntitlementsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListVmEntitlementsOutcome(result.GetResultWithOwnership())
+                            : ListVmEntitlementsOutcome(std::move(result.GetError()));
+}
+
 TagResourceOutcome EVSClient::TagResource(const TagResourceRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
@@ -261,4 +304,10 @@ TagResourceOutcome EVSClient::TagResource(const TagResourceRequest& request) con
 UntagResourceOutcome EVSClient::UntagResource(const UntagResourceRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
+}
+
+UpdateEnvironmentConnectorOutcome EVSClient::UpdateEnvironmentConnector(const UpdateEnvironmentConnectorRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateEnvironmentConnectorOutcome(result.GetResultWithOwnership())
+                            : UpdateEnvironmentConnectorOutcome(std::move(result.GetError()));
 }

@@ -9,7 +9,9 @@
 #include <aws/evs/EVSClientPagination.h>
 #include <aws/evs/EVSPaginationBase.h>
 #include <aws/evs/model/ListEnvironmentHostsPaginationTraits.h>
+#include <aws/evs/model/ListEnvironmentConnectorsPaginationTraits.h>
 #include <aws/evs/model/ListEnvironmentVlansPaginationTraits.h>
+#include <aws/evs/model/ListVmEntitlementsPaginationTraits.h>
 #include <aws/evs/model/ListEnvironmentsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>

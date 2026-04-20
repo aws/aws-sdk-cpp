@@ -154,6 +154,28 @@ class TelemetryRule {
 
   ///@{
   /**
+   * <p> If set to <code>true</code>, Amazon CloudWatch Observability Admin detects
+   * and remediates configuration drift in telemetry resources that it manages. For
+   * example, if a VPC flow log's format, traffic type, or aggregation interval no
+   * longer matches the rule's destination configuration, the flow log is replaced
+   * with one that matches. Only Observability Admin-managed resources are updated;
+   * customer-created resources are never modified. Currently supported for
+   * <code>AWS::EC2::VPC</code> resources (VPC flow logs). </p>
+   */
+  inline bool GetAllowFieldUpdates() const { return m_allowFieldUpdates; }
+  inline bool AllowFieldUpdatesHasBeenSet() const { return m_allowFieldUpdatesHasBeenSet; }
+  inline void SetAllowFieldUpdates(bool value) {
+    m_allowFieldUpdatesHasBeenSet = true;
+    m_allowFieldUpdates = value;
+  }
+  inline TelemetryRule& WithAllowFieldUpdates(bool value) {
+    SetAllowFieldUpdates(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> An optional list of Amazon Web Services Regions where this telemetry rule
    * should be replicated. When specified, the rule is created in the home region and
    * automatically replicated to all listed regions. Mutually exclusive with
@@ -210,6 +232,8 @@ class TelemetryRule {
 
   Aws::String m_selectionCriteria;
 
+  bool m_allowFieldUpdates{false};
+
   Aws::Vector<Aws::String> m_regions;
 
   bool m_allRegions{false};
@@ -219,6 +243,7 @@ class TelemetryRule {
   bool m_destinationConfigurationHasBeenSet = false;
   bool m_scopeHasBeenSet = false;
   bool m_selectionCriteriaHasBeenSet = false;
+  bool m_allowFieldUpdatesHasBeenSet = false;
   bool m_regionsHasBeenSet = false;
   bool m_allRegionsHasBeenSet = false;
 };
