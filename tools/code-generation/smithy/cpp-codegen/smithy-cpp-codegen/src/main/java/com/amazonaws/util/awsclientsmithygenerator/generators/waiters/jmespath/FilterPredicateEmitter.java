@@ -4,8 +4,10 @@
  */
 package com.amazonaws.util.awsclientsmithygenerator.generators.waiters.jmespath;
 
+import com.amazonaws.util.awsclientsmithygenerator.generators.ServiceNameUtil;
 import software.amazon.smithy.jmespath.ast.AndExpression;
 import software.amazon.smithy.jmespath.ast.ComparatorExpression;
+import software.amazon.smithy.jmespath.ast.FieldExpression;
 import software.amazon.smithy.jmespath.ast.NotExpression;
 import software.amazon.smithy.jmespath.ast.OrExpression;
 import software.amazon.smithy.model.Model;
@@ -50,6 +52,14 @@ public class FilterPredicateEmitter extends UnsupportedExpressionVisitor<String>
         String left = expression.getLeft().accept(this);
         String right = expression.getRight().accept(this);
         return "(" + left + " && " + right + ")";
+    }
+
+    @Override
+    public String visitField(FieldExpression expression) {
+        // This will work on lists, strings, and maps.
+        // If a service weirdly models boolean expressions for objects, booleans, or null types,
+        // we'll need to change this to return shape-specific "empty" checks
+        return "!" + itemVar + ".Get" + ServiceNameUtil.capitalize(expression.getName()) + "().empty()";
     }
 
     @Override
