@@ -4,8 +4,10 @@
  */
 package com.amazonaws.util.awsclientsmithygenerator.generators.waiters.jmespath;
 
+import com.amazonaws.util.awsclientsmithygenerator.generators.ServiceNameUtil;
 import software.amazon.smithy.jmespath.ast.AndExpression;
 import software.amazon.smithy.jmespath.ast.ComparatorExpression;
+import software.amazon.smithy.jmespath.ast.FieldExpression;
 import software.amazon.smithy.jmespath.ast.NotExpression;
 import software.amazon.smithy.jmespath.ast.OrExpression;
 import software.amazon.smithy.model.Model;
@@ -50,6 +52,31 @@ public class FilterPredicateEmitter extends UnsupportedExpressionVisitor<String>
         String left = expression.getLeft().accept(this);
         String right = expression.getRight().accept(this);
         return "(" + left + " && " + right + ")";
+    }
+
+    /**
+     * A bare field in a boolean context is truthy per JmesPath spec if it is not:
+     * empty list, empty object, empty string, false, or null.
+     * Numbers, structs, and enums are always truthy in C++ SDK.
+     */
+    @Override
+    public String visitField(FieldExpression expression) {
+        String access = itemVar + ".Get" + ServiceNameUtil.capitalize(expression.getName()) + "()";
+        Shape fieldShape = CollectionElementTypeResolver.resolveMemberTarget(itemShape, expression.getName(), model).orElse(null);
+        if (fieldShape == null) {
+            throw new UnsupportedOperationException("Could not resolve shape type in " + smithyServiceName + ": " + expression.getName());
+        }
+        if (fieldShape.isListShape() || fieldShape.isMapShape() || fieldShape.isStringShape()) {
+            return "!" + access + ".empty()";
+        }
+        if (fieldShape.isBooleanShape()){
+            return access;
+        }
+        if (fieldShape.isStructureShape()){
+            throw new UnsupportedOperationException("visitField: Boolean check for structure shape - we should implement a check for pointer vs non-pointer (nullptr vs true)");
+        }
+        // Numbers, enums always truthy in C++ SDK - this would be pretty bad service modeling
+        return "true";
     }
 
     @Override
