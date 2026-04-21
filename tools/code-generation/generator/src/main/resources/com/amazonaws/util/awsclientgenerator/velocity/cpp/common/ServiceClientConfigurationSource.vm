@@ -71,9 +71,11 @@ bool IsEndpointDiscoveryEnabled(const Aws::String& endpointOverride, const Aws::
 }
 
 #end
+#set($inputProfileNameUsed = false)
 void ${metadata.classNamePrefix}ClientConfiguration::Load${serviceNamespace}SpecificConfig(const Aws::String& inputProfileName)
 {
 #if($serviceModel.metadata.serviceId == "S3")
+#set($inputProfileNameUsed = true)
   if (Aws::${serviceNamespace}::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET == this->useUSEast1RegionalEndPointOption)
   {
     const Aws::String& useUSEastOption =
@@ -111,6 +113,7 @@ void ${metadata.classNamePrefix}ClientConfiguration::Load${serviceNamespace}Spec
 
 #end
 #if($serviceModel.metadata.serviceId == "S3" || $serviceModel.metadata.serviceId == "S3 Control")
+#set($inputProfileNameUsed = true)
   Aws::String useArnRegionCfg = ClientConfiguration::LoadConfigFromEnvOrProfile(S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE,
                                                                                inputProfileName,
                                                                                S3_USE_ARN_REGION_CONFIG_FILE_OPTION,
@@ -122,6 +125,7 @@ void ${metadata.classNamePrefix}ClientConfiguration::Load${serviceNamespace}Spec
   }
 #end
 #if($metadata.hasEndpointDiscoveryTrait)
+#set($inputProfileNameUsed = true)
   if(!enableEndpointDiscovery) {
     enableEndpointDiscovery = IsEndpointDiscoveryEnabled(this->endpointOverride, inputProfileName);
   }
@@ -137,6 +141,7 @@ void ${metadata.classNamePrefix}ClientConfiguration::Load${serviceNamespace}Spec
 #end
 ## Bedrock API key auth 
 #if($serviceModel.metadata.signingName == "bedrock")
+#set($inputProfileNameUsed = true)
     const Aws::String& bedrockToken =
     BaseClientConfigClass::LoadConfigFromEnvOrProfile(AWS_BEARER_TOKEN_BEDROCK,
     inputProfileName,
@@ -150,6 +155,13 @@ void ${metadata.classNamePrefix}ClientConfiguration::Load${serviceNamespace}Spec
         }
         authPreferences.insert(authPreferences.begin(), "bearer");
     }
+#end
+#if(!$inputProfileNameUsed)
+\#if defined(_MSC_VER)
+  (&reinterpret_cast<const int &>(inputProfileName));
+\#else
+  (void)(inputProfileName);
+#endif
 #end
 }
 
