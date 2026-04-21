@@ -54,7 +54,7 @@ public class EnumResolver {
     private static Shape walkExpression(JmespathExpression expr, Shape current, Model model) {
         if (current == null) return null;
         if (expr instanceof FieldExpression) {
-            return resolveMemberTarget(current, ((FieldExpression) expr).getName(), model);
+            return CollectionElementTypeResolver.resolveMemberTarget(current, ((FieldExpression) expr).getName(), model).orElse(null);
         } else if (expr instanceof Subexpression) {
             Shape left = walkExpression(((Subexpression) expr).getLeft(), current, model);
             return walkExpression(((Subexpression) expr).getRight(), left, model);
@@ -87,7 +87,7 @@ public class EnumResolver {
     private static Shape walkProjectionLeft(JmespathExpression expr, Shape current, Model model) {
         if (current == null) return null;
         if (expr instanceof FieldExpression) {
-            return resolveMemberTarget(current, ((FieldExpression) expr).getName(), model);
+            return CollectionElementTypeResolver.resolveMemberTarget(current, ((FieldExpression) expr).getName(), model).orElse(null);
         } else if (expr instanceof Subexpression) {
             Shape left = walkExpression(((Subexpression) expr).getLeft(), current, model);
             return walkProjectionLeft(((Subexpression) expr).getRight(), left, model);
@@ -107,13 +107,5 @@ public class EnumResolver {
             return walkProjectionLeft(inner, current, model);
         }
         return current;
-    }
-
-    private static Shape resolveMemberTarget(Shape structShape, String memberName, Model model) {
-        if (!structShape.isStructureShape()) return null;
-        return structShape.asStructureShape().get()
-                .getMember(memberName)
-                .flatMap(member -> model.getShape(member.getTarget()))
-                .orElse(null);
     }
 }
