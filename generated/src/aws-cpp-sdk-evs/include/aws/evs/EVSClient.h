@@ -108,6 +108,35 @@ class AWS_EVS_API EVSClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates a Windows Server License entitlement for virtual machines in an
+   * Amazon EVS environment using the provided vCenter Server connector. This is an
+   * asynchronous operation. Amazon EVS validates the specified virtual machines
+   * before starting usage tracking.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/CreateEntitlement">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateEntitlementOutcome CreateEntitlement(const Model::CreateEntitlementRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateEntitlement that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateEntitlementRequestT = Model::CreateEntitlementRequest>
+  Model::CreateEntitlementOutcomeCallable CreateEntitlementCallable(const CreateEntitlementRequestT& request) const {
+    return SubmitCallable(&EVSClient::CreateEntitlement, request);
+  }
+
+  /**
+   * An Async wrapper for CreateEntitlement that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateEntitlementRequestT = Model::CreateEntitlementRequest>
+  void CreateEntitlementAsync(const CreateEntitlementRequestT& request, const CreateEntitlementResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EVSClient::CreateEntitlement, request, handler, context);
+  }
+
+  /**
    * <p>Creates an Amazon EVS environment that runs VCF software, such as SDDC
    * Manager, NSX Manager, and vCenter Server.</p> <p>During environment creation,
    * Amazon EVS performs validations on DNS settings, provisions VLAN subnets and
@@ -144,6 +173,38 @@ class AWS_EVS_API EVSClient : public Aws::Client::AWSJsonClient,
   void CreateEnvironmentAsync(const CreateEnvironmentRequestT& request, const CreateEnvironmentResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EVSClient::CreateEnvironment, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a connector for an Amazon EVS environment. A connector establishes a
+   * connection to a VCF appliance, such as vCenter, using a fully qualified domain
+   * name and an Amazon Web Services Secrets Manager secret that stores the appliance
+   * credentials.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/CreateEnvironmentConnector">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateEnvironmentConnectorOutcome CreateEnvironmentConnector(
+      const Model::CreateEnvironmentConnectorRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateEnvironmentConnector that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CreateEnvironmentConnectorRequestT = Model::CreateEnvironmentConnectorRequest>
+  Model::CreateEnvironmentConnectorOutcomeCallable CreateEnvironmentConnectorCallable(
+      const CreateEnvironmentConnectorRequestT& request) const {
+    return SubmitCallable(&EVSClient::CreateEnvironmentConnector, request);
+  }
+
+  /**
+   * An Async wrapper for CreateEnvironmentConnector that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateEnvironmentConnectorRequestT = Model::CreateEnvironmentConnectorRequest>
+  void CreateEnvironmentConnectorAsync(const CreateEnvironmentConnectorRequestT& request,
+                                       const CreateEnvironmentConnectorResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EVSClient::CreateEnvironmentConnector, request, handler, context);
   }
 
   /**
@@ -187,6 +248,34 @@ class AWS_EVS_API EVSClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Deletes a Windows Server License entitlement for virtual machines in an
+   * Amazon EVS environment. Deleting an entitlement stops usage tracking for the
+   * specified virtual machines.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/DeleteEntitlement">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteEntitlementOutcome DeleteEntitlement(const Model::DeleteEntitlementRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteEntitlement that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteEntitlementRequestT = Model::DeleteEntitlementRequest>
+  Model::DeleteEntitlementOutcomeCallable DeleteEntitlementCallable(const DeleteEntitlementRequestT& request) const {
+    return SubmitCallable(&EVSClient::DeleteEntitlement, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteEntitlement that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteEntitlementRequestT = Model::DeleteEntitlementRequest>
+  void DeleteEntitlementAsync(const DeleteEntitlementRequestT& request, const DeleteEntitlementResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EVSClient::DeleteEntitlement, request, handler, context);
+  }
+
+  /**
    * <p>Deletes an Amazon EVS environment.</p> <p>Amazon EVS environments will only
    * be enabled for deletion once the hosts are deleted. You can delete hosts using
    * the <code>DeleteEnvironmentHost</code> action.</p> <p>Environment deletion also
@@ -216,6 +305,37 @@ class AWS_EVS_API EVSClient : public Aws::Client::AWSJsonClient,
   void DeleteEnvironmentAsync(const DeleteEnvironmentRequestT& request, const DeleteEnvironmentResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EVSClient::DeleteEnvironment, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a connector from an Amazon EVS environment.</p>  <p>Before
+   * deleting a connector, you must remove all entitlements that are associated with
+   * the same vCenter.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/DeleteEnvironmentConnector">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteEnvironmentConnectorOutcome DeleteEnvironmentConnector(
+      const Model::DeleteEnvironmentConnectorRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteEnvironmentConnector that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteEnvironmentConnectorRequestT = Model::DeleteEnvironmentConnectorRequest>
+  Model::DeleteEnvironmentConnectorOutcomeCallable DeleteEnvironmentConnectorCallable(
+      const DeleteEnvironmentConnectorRequestT& request) const {
+    return SubmitCallable(&EVSClient::DeleteEnvironmentConnector, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteEnvironmentConnector that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteEnvironmentConnectorRequestT = Model::DeleteEnvironmentConnectorRequest>
+  void DeleteEnvironmentConnectorAsync(const DeleteEnvironmentConnectorRequestT& request,
+                                       const DeleteEnvironmentConnectorResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EVSClient::DeleteEnvironmentConnector, request, handler, context);
   }
 
   /**
@@ -330,6 +450,36 @@ class AWS_EVS_API EVSClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Lists the connectors within an environment. Returns the status of each
+   * connector and its applicable checks, among other connector
+   * details.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/ListEnvironmentConnectors">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListEnvironmentConnectorsOutcome ListEnvironmentConnectors(const Model::ListEnvironmentConnectorsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListEnvironmentConnectors that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListEnvironmentConnectorsRequestT = Model::ListEnvironmentConnectorsRequest>
+  Model::ListEnvironmentConnectorsOutcomeCallable ListEnvironmentConnectorsCallable(
+      const ListEnvironmentConnectorsRequestT& request) const {
+    return SubmitCallable(&EVSClient::ListEnvironmentConnectors, request);
+  }
+
+  /**
+   * An Async wrapper for ListEnvironmentConnectors that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListEnvironmentConnectorsRequestT = Model::ListEnvironmentConnectorsRequest>
+  void ListEnvironmentConnectorsAsync(const ListEnvironmentConnectorsRequestT& request,
+                                      const ListEnvironmentConnectorsResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EVSClient::ListEnvironmentConnectors, request, handler, context);
+  }
+
+  /**
    * <p>List the hosts within an environment.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/ListEnvironmentHosts">AWS
    * API Reference</a></p>
@@ -437,6 +587,35 @@ class AWS_EVS_API EVSClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Lists the Windows Server License entitlements for virtual machines in an
+   * Amazon EVS environment. Returns existing entitlements for virtual machines
+   * associated with the specified environment and connector.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/ListVmEntitlements">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListVmEntitlementsOutcome ListVmEntitlements(const Model::ListVmEntitlementsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListVmEntitlements that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListVmEntitlementsRequestT = Model::ListVmEntitlementsRequest>
+  Model::ListVmEntitlementsOutcomeCallable ListVmEntitlementsCallable(const ListVmEntitlementsRequestT& request) const {
+    return SubmitCallable(&EVSClient::ListVmEntitlements, request);
+  }
+
+  /**
+   * An Async wrapper for ListVmEntitlements that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListVmEntitlementsRequestT = Model::ListVmEntitlementsRequest>
+  void ListVmEntitlementsAsync(const ListVmEntitlementsRequestT& request, const ListVmEntitlementsResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EVSClient::ListVmEntitlements, request, handler, context);
+  }
+
+  /**
    * <p>Associates the specified tags to an Amazon EVS resource with the specified
    * <code>resourceArn</code>. If existing tags on a resource are not specified in
    * the request parameters, they aren't changed. When a resource is deleted, the
@@ -492,6 +671,38 @@ class AWS_EVS_API EVSClient : public Aws::Client::AWSJsonClient,
   void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EVSClient::UntagResource, request, handler, context);
+  }
+
+  /**
+   * <p>Updates a connector for an Amazon EVS environment. You can update the Amazon
+   * Web Services Secrets Manager secret ARN or the appliance FQDN to reconfigure the
+   * connector metadata.</p>  <p>You cannot update both the secret and the FQDN
+   * in the same request.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/UpdateEnvironmentConnector">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateEnvironmentConnectorOutcome UpdateEnvironmentConnector(
+      const Model::UpdateEnvironmentConnectorRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateEnvironmentConnector that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateEnvironmentConnectorRequestT = Model::UpdateEnvironmentConnectorRequest>
+  Model::UpdateEnvironmentConnectorOutcomeCallable UpdateEnvironmentConnectorCallable(
+      const UpdateEnvironmentConnectorRequestT& request) const {
+    return SubmitCallable(&EVSClient::UpdateEnvironmentConnector, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateEnvironmentConnector that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateEnvironmentConnectorRequestT = Model::UpdateEnvironmentConnectorRequest>
+  void UpdateEnvironmentConnectorAsync(const UpdateEnvironmentConnectorRequestT& request,
+                                       const UpdateEnvironmentConnectorResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EVSClient::UpdateEnvironmentConnector, request, handler, context);
   }
 
   virtual void OverrideEndpoint(const Aws::String& endpoint);

@@ -23,6 +23,7 @@
 #include <aws/ec2/model/AcceptAddressTransferResponse.h>
 #include <aws/ec2/model/AcceptCapacityReservationBillingOwnershipResponse.h>
 #include <aws/ec2/model/AcceptReservedInstancesExchangeQuoteResponse.h>
+#include <aws/ec2/model/AcceptTransitGatewayClientVpnAttachmentResponse.h>
 #include <aws/ec2/model/AcceptTransitGatewayMulticastDomainAssociationsRequest.h>
 #include <aws/ec2/model/AcceptTransitGatewayMulticastDomainAssociationsResponse.h>
 #include <aws/ec2/model/AcceptTransitGatewayPeeringAttachmentResponse.h>
@@ -254,6 +255,7 @@
 #include <aws/ec2/model/DeleteTrafficMirrorFilterRuleResponse.h>
 #include <aws/ec2/model/DeleteTrafficMirrorSessionResponse.h>
 #include <aws/ec2/model/DeleteTrafficMirrorTargetResponse.h>
+#include <aws/ec2/model/DeleteTransitGatewayClientVpnAttachmentResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayConnectPeerResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayConnectResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayMeteringPolicyEntryResponse.h>
@@ -897,6 +899,7 @@
 #include <aws/ec2/model/RegisterTransitGatewayMulticastGroupMembersResponse.h>
 #include <aws/ec2/model/RegisterTransitGatewayMulticastGroupSourcesResponse.h>
 #include <aws/ec2/model/RejectCapacityReservationBillingOwnershipResponse.h>
+#include <aws/ec2/model/RejectTransitGatewayClientVpnAttachmentResponse.h>
 #include <aws/ec2/model/RejectTransitGatewayMulticastDomainAssociationsRequest.h>
 #include <aws/ec2/model/RejectTransitGatewayMulticastDomainAssociationsResponse.h>
 #include <aws/ec2/model/RejectTransitGatewayPeeringAttachmentResponse.h>
@@ -992,6 +995,7 @@ namespace Model {
 class AcceptAddressTransferRequest;
 class AcceptCapacityReservationBillingOwnershipRequest;
 class AcceptReservedInstancesExchangeQuoteRequest;
+class AcceptTransitGatewayClientVpnAttachmentRequest;
 class AcceptTransitGatewayMulticastDomainAssociationsRequest;
 class AcceptTransitGatewayPeeringAttachmentRequest;
 class AcceptTransitGatewayVpcAttachmentRequest;
@@ -1218,6 +1222,7 @@ class DeleteTrafficMirrorFilterRuleRequest;
 class DeleteTrafficMirrorSessionRequest;
 class DeleteTrafficMirrorTargetRequest;
 class DeleteTransitGatewayRequest;
+class DeleteTransitGatewayClientVpnAttachmentRequest;
 class DeleteTransitGatewayConnectRequest;
 class DeleteTransitGatewayConnectPeerRequest;
 class DeleteTransitGatewayMeteringPolicyRequest;
@@ -1687,6 +1692,7 @@ class RegisterInstanceEventNotificationAttributesRequest;
 class RegisterTransitGatewayMulticastGroupMembersRequest;
 class RegisterTransitGatewayMulticastGroupSourcesRequest;
 class RejectCapacityReservationBillingOwnershipRequest;
+class RejectTransitGatewayClientVpnAttachmentRequest;
 class RejectTransitGatewayMulticastDomainAssociationsRequest;
 class RejectTransitGatewayPeeringAttachmentRequest;
 class RejectTransitGatewayVpcAttachmentRequest;
@@ -1753,6 +1759,7 @@ class WithdrawByoipCidrRequest;
 typedef Aws::Utils::Outcome<AcceptAddressTransferResponse, EC2Error> AcceptAddressTransferOutcome;
 typedef Aws::Utils::Outcome<AcceptCapacityReservationBillingOwnershipResponse, EC2Error> AcceptCapacityReservationBillingOwnershipOutcome;
 typedef Aws::Utils::Outcome<AcceptReservedInstancesExchangeQuoteResponse, EC2Error> AcceptReservedInstancesExchangeQuoteOutcome;
+typedef Aws::Utils::Outcome<AcceptTransitGatewayClientVpnAttachmentResponse, EC2Error> AcceptTransitGatewayClientVpnAttachmentOutcome;
 typedef Aws::Utils::Outcome<AcceptTransitGatewayMulticastDomainAssociationsResponse, EC2Error>
     AcceptTransitGatewayMulticastDomainAssociationsOutcome;
 typedef Aws::Utils::Outcome<AcceptTransitGatewayPeeringAttachmentResponse, EC2Error> AcceptTransitGatewayPeeringAttachmentOutcome;
@@ -1987,6 +1994,7 @@ typedef Aws::Utils::Outcome<DeleteTrafficMirrorFilterRuleResponse, EC2Error> Del
 typedef Aws::Utils::Outcome<DeleteTrafficMirrorSessionResponse, EC2Error> DeleteTrafficMirrorSessionOutcome;
 typedef Aws::Utils::Outcome<DeleteTrafficMirrorTargetResponse, EC2Error> DeleteTrafficMirrorTargetOutcome;
 typedef Aws::Utils::Outcome<DeleteTransitGatewayResponse, EC2Error> DeleteTransitGatewayOutcome;
+typedef Aws::Utils::Outcome<DeleteTransitGatewayClientVpnAttachmentResponse, EC2Error> DeleteTransitGatewayClientVpnAttachmentOutcome;
 typedef Aws::Utils::Outcome<DeleteTransitGatewayConnectResponse, EC2Error> DeleteTransitGatewayConnectOutcome;
 typedef Aws::Utils::Outcome<DeleteTransitGatewayConnectPeerResponse, EC2Error> DeleteTransitGatewayConnectPeerOutcome;
 typedef Aws::Utils::Outcome<DeleteTransitGatewayMeteringPolicyResponse, EC2Error> DeleteTransitGatewayMeteringPolicyOutcome;
@@ -2482,6 +2490,7 @@ typedef Aws::Utils::Outcome<RegisterTransitGatewayMulticastGroupMembersResponse,
 typedef Aws::Utils::Outcome<RegisterTransitGatewayMulticastGroupSourcesResponse, EC2Error>
     RegisterTransitGatewayMulticastGroupSourcesOutcome;
 typedef Aws::Utils::Outcome<RejectCapacityReservationBillingOwnershipResponse, EC2Error> RejectCapacityReservationBillingOwnershipOutcome;
+typedef Aws::Utils::Outcome<RejectTransitGatewayClientVpnAttachmentResponse, EC2Error> RejectTransitGatewayClientVpnAttachmentOutcome;
 typedef Aws::Utils::Outcome<RejectTransitGatewayMulticastDomainAssociationsResponse, EC2Error>
     RejectTransitGatewayMulticastDomainAssociationsOutcome;
 typedef Aws::Utils::Outcome<RejectTransitGatewayPeeringAttachmentResponse, EC2Error> RejectTransitGatewayPeeringAttachmentOutcome;
@@ -2552,6 +2561,7 @@ typedef Aws::Utils::Outcome<WithdrawByoipCidrResponse, EC2Error> WithdrawByoipCi
 typedef std::future<AcceptAddressTransferOutcome> AcceptAddressTransferOutcomeCallable;
 typedef std::future<AcceptCapacityReservationBillingOwnershipOutcome> AcceptCapacityReservationBillingOwnershipOutcomeCallable;
 typedef std::future<AcceptReservedInstancesExchangeQuoteOutcome> AcceptReservedInstancesExchangeQuoteOutcomeCallable;
+typedef std::future<AcceptTransitGatewayClientVpnAttachmentOutcome> AcceptTransitGatewayClientVpnAttachmentOutcomeCallable;
 typedef std::future<AcceptTransitGatewayMulticastDomainAssociationsOutcome> AcceptTransitGatewayMulticastDomainAssociationsOutcomeCallable;
 typedef std::future<AcceptTransitGatewayPeeringAttachmentOutcome> AcceptTransitGatewayPeeringAttachmentOutcomeCallable;
 typedef std::future<AcceptTransitGatewayVpcAttachmentOutcome> AcceptTransitGatewayVpcAttachmentOutcomeCallable;
@@ -2782,6 +2792,7 @@ typedef std::future<DeleteTrafficMirrorFilterRuleOutcome> DeleteTrafficMirrorFil
 typedef std::future<DeleteTrafficMirrorSessionOutcome> DeleteTrafficMirrorSessionOutcomeCallable;
 typedef std::future<DeleteTrafficMirrorTargetOutcome> DeleteTrafficMirrorTargetOutcomeCallable;
 typedef std::future<DeleteTransitGatewayOutcome> DeleteTransitGatewayOutcomeCallable;
+typedef std::future<DeleteTransitGatewayClientVpnAttachmentOutcome> DeleteTransitGatewayClientVpnAttachmentOutcomeCallable;
 typedef std::future<DeleteTransitGatewayConnectOutcome> DeleteTransitGatewayConnectOutcomeCallable;
 typedef std::future<DeleteTransitGatewayConnectPeerOutcome> DeleteTransitGatewayConnectPeerOutcomeCallable;
 typedef std::future<DeleteTransitGatewayMeteringPolicyOutcome> DeleteTransitGatewayMeteringPolicyOutcomeCallable;
@@ -3255,6 +3266,7 @@ typedef std::future<RegisterInstanceEventNotificationAttributesOutcome> Register
 typedef std::future<RegisterTransitGatewayMulticastGroupMembersOutcome> RegisterTransitGatewayMulticastGroupMembersOutcomeCallable;
 typedef std::future<RegisterTransitGatewayMulticastGroupSourcesOutcome> RegisterTransitGatewayMulticastGroupSourcesOutcomeCallable;
 typedef std::future<RejectCapacityReservationBillingOwnershipOutcome> RejectCapacityReservationBillingOwnershipOutcomeCallable;
+typedef std::future<RejectTransitGatewayClientVpnAttachmentOutcome> RejectTransitGatewayClientVpnAttachmentOutcomeCallable;
 typedef std::future<RejectTransitGatewayMulticastDomainAssociationsOutcome> RejectTransitGatewayMulticastDomainAssociationsOutcomeCallable;
 typedef std::future<RejectTransitGatewayPeeringAttachmentOutcome> RejectTransitGatewayPeeringAttachmentOutcomeCallable;
 typedef std::future<RejectTransitGatewayVpcAttachmentOutcome> RejectTransitGatewayVpcAttachmentOutcomeCallable;
@@ -3333,6 +3345,10 @@ typedef std::function<void(const EC2Client*, const Model::AcceptReservedInstance
                            const Model::AcceptReservedInstancesExchangeQuoteOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AcceptReservedInstancesExchangeQuoteResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::AcceptTransitGatewayClientVpnAttachmentRequest&,
+                           const Model::AcceptTransitGatewayClientVpnAttachmentOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    AcceptTransitGatewayClientVpnAttachmentResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::AcceptTransitGatewayMulticastDomainAssociationsRequest&,
                            const Model::AcceptTransitGatewayMulticastDomainAssociationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -4087,6 +4103,10 @@ typedef std::function<void(const EC2Client*, const Model::DeleteTrafficMirrorTar
 typedef std::function<void(const EC2Client*, const Model::DeleteTransitGatewayRequest&, const Model::DeleteTransitGatewayOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteTransitGatewayResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DeleteTransitGatewayClientVpnAttachmentRequest&,
+                           const Model::DeleteTransitGatewayClientVpnAttachmentOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteTransitGatewayClientVpnAttachmentResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::DeleteTransitGatewayConnectRequest&,
                            const Model::DeleteTransitGatewayConnectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteTransitGatewayConnectResponseReceivedHandler;
@@ -5720,6 +5740,10 @@ typedef std::function<void(const EC2Client*, const Model::RejectCapacityReservat
                            const Model::RejectCapacityReservationBillingOwnershipOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     RejectCapacityReservationBillingOwnershipResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::RejectTransitGatewayClientVpnAttachmentRequest&,
+                           const Model::RejectTransitGatewayClientVpnAttachmentOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    RejectTransitGatewayClientVpnAttachmentResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::RejectTransitGatewayMulticastDomainAssociationsRequest&,
                            const Model::RejectTransitGatewayMulticastDomainAssociationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

@@ -56,7 +56,8 @@ class ServiceLevelIndicatorConfig {
   /**
    * <p>This parameter is used only when a request-based SLO tracks the
    * <code>Latency</code> metric. Specify the threshold value that the observed
-   * <code>Latency</code> metric values are to be compared to.</p>
+   * <code>Latency</code> metric values are to be compared to.</p> <p>This is not
+   * required if <code>CreateRecommendedSlo</code> is set to <code>true</code>.</p>
    */
   inline double GetMetricThreshold() const { return m_metricThreshold; }
   inline bool MetricThresholdHasBeenSet() const { return m_metricThresholdHasBeenSet; }
@@ -73,7 +74,8 @@ class ServiceLevelIndicatorConfig {
   ///@{
   /**
    * <p>The arithmetic operation to use when comparing the specified metric to the
-   * threshold.</p>
+   * threshold.</p> <p>This is not required if <code>CreateRecommendedSlo</code> is
+   * set to <code>true</code>.</p>
    */
   inline ServiceLevelIndicatorComparisonOperator GetComparisonOperator() const { return m_comparisonOperator; }
   inline bool ComparisonOperatorHasBeenSet() const { return m_comparisonOperatorHasBeenSet; }

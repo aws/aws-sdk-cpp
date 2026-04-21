@@ -28,6 +28,7 @@
 #include <aws/location/model/BatchUpdateDevicePositionResult.h>
 #include <aws/location/model/CalculateRouteMatrixResult.h>
 #include <aws/location/model/CalculateRouteResult.h>
+#include <aws/location/model/CancelJobResult.h>
 #include <aws/location/model/CreateGeofenceCollectionResult.h>
 #include <aws/location/model/CreateKeyResult.h>
 #include <aws/location/model/CreateMapResult.h>
@@ -51,6 +52,7 @@
 #include <aws/location/model/GetDevicePositionHistoryResult.h>
 #include <aws/location/model/GetDevicePositionResult.h>
 #include <aws/location/model/GetGeofenceResult.h>
+#include <aws/location/model/GetJobResult.h>
 #include <aws/location/model/GetMapGlyphsResult.h>
 #include <aws/location/model/GetMapSpritesResult.h>
 #include <aws/location/model/GetMapStyleDescriptorResult.h>
@@ -60,6 +62,8 @@
 #include <aws/location/model/ListGeofenceCollectionsRequest.h>
 #include <aws/location/model/ListGeofenceCollectionsResult.h>
 #include <aws/location/model/ListGeofencesResult.h>
+#include <aws/location/model/ListJobsRequest.h>
+#include <aws/location/model/ListJobsResult.h>
 #include <aws/location/model/ListKeysRequest.h>
 #include <aws/location/model/ListKeysResult.h>
 #include <aws/location/model/ListMapsRequest.h>
@@ -76,6 +80,7 @@
 #include <aws/location/model/SearchPlaceIndexForPositionResult.h>
 #include <aws/location/model/SearchPlaceIndexForSuggestionsResult.h>
 #include <aws/location/model/SearchPlaceIndexForTextResult.h>
+#include <aws/location/model/StartJobResult.h>
 #include <aws/location/model/TagResourceResult.h>
 #include <aws/location/model/UntagResourceResult.h>
 #include <aws/location/model/UpdateGeofenceCollectionResult.h>
@@ -127,6 +132,7 @@ class BatchPutGeofenceRequest;
 class BatchUpdateDevicePositionRequest;
 class CalculateRouteRequest;
 class CalculateRouteMatrixRequest;
+class CancelJobRequest;
 class CreateGeofenceCollectionRequest;
 class CreateKeyRequest;
 class CreateMapRequest;
@@ -150,6 +156,7 @@ class ForecastGeofenceEventsRequest;
 class GetDevicePositionRequest;
 class GetDevicePositionHistoryRequest;
 class GetGeofenceRequest;
+class GetJobRequest;
 class GetMapGlyphsRequest;
 class GetMapSpritesRequest;
 class GetMapStyleDescriptorRequest;
@@ -158,6 +165,7 @@ class GetPlaceRequest;
 class ListDevicePositionsRequest;
 class ListGeofenceCollectionsRequest;
 class ListGeofencesRequest;
+class ListJobsRequest;
 class ListKeysRequest;
 class ListMapsRequest;
 class ListPlaceIndexesRequest;
@@ -169,6 +177,7 @@ class PutGeofenceRequest;
 class SearchPlaceIndexForPositionRequest;
 class SearchPlaceIndexForSuggestionsRequest;
 class SearchPlaceIndexForTextRequest;
+class StartJobRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
 class UpdateGeofenceCollectionRequest;
@@ -190,6 +199,7 @@ typedef Aws::Utils::Outcome<BatchPutGeofenceResult, LocationServiceError> BatchP
 typedef Aws::Utils::Outcome<BatchUpdateDevicePositionResult, LocationServiceError> BatchUpdateDevicePositionOutcome;
 typedef Aws::Utils::Outcome<CalculateRouteResult, LocationServiceError> CalculateRouteOutcome;
 typedef Aws::Utils::Outcome<CalculateRouteMatrixResult, LocationServiceError> CalculateRouteMatrixOutcome;
+typedef Aws::Utils::Outcome<CancelJobResult, LocationServiceError> CancelJobOutcome;
 typedef Aws::Utils::Outcome<CreateGeofenceCollectionResult, LocationServiceError> CreateGeofenceCollectionOutcome;
 typedef Aws::Utils::Outcome<CreateKeyResult, LocationServiceError> CreateKeyOutcome;
 typedef Aws::Utils::Outcome<CreateMapResult, LocationServiceError> CreateMapOutcome;
@@ -213,6 +223,7 @@ typedef Aws::Utils::Outcome<ForecastGeofenceEventsResult, LocationServiceError> 
 typedef Aws::Utils::Outcome<GetDevicePositionResult, LocationServiceError> GetDevicePositionOutcome;
 typedef Aws::Utils::Outcome<GetDevicePositionHistoryResult, LocationServiceError> GetDevicePositionHistoryOutcome;
 typedef Aws::Utils::Outcome<GetGeofenceResult, LocationServiceError> GetGeofenceOutcome;
+typedef Aws::Utils::Outcome<GetJobResult, LocationServiceError> GetJobOutcome;
 typedef Aws::Utils::Outcome<GetMapGlyphsResult, LocationServiceError> GetMapGlyphsOutcome;
 typedef Aws::Utils::Outcome<GetMapSpritesResult, LocationServiceError> GetMapSpritesOutcome;
 typedef Aws::Utils::Outcome<GetMapStyleDescriptorResult, LocationServiceError> GetMapStyleDescriptorOutcome;
@@ -221,6 +232,7 @@ typedef Aws::Utils::Outcome<GetPlaceResult, LocationServiceError> GetPlaceOutcom
 typedef Aws::Utils::Outcome<ListDevicePositionsResult, LocationServiceError> ListDevicePositionsOutcome;
 typedef Aws::Utils::Outcome<ListGeofenceCollectionsResult, LocationServiceError> ListGeofenceCollectionsOutcome;
 typedef Aws::Utils::Outcome<ListGeofencesResult, LocationServiceError> ListGeofencesOutcome;
+typedef Aws::Utils::Outcome<ListJobsResult, LocationServiceError> ListJobsOutcome;
 typedef Aws::Utils::Outcome<ListKeysResult, LocationServiceError> ListKeysOutcome;
 typedef Aws::Utils::Outcome<ListMapsResult, LocationServiceError> ListMapsOutcome;
 typedef Aws::Utils::Outcome<ListPlaceIndexesResult, LocationServiceError> ListPlaceIndexesOutcome;
@@ -232,6 +244,7 @@ typedef Aws::Utils::Outcome<PutGeofenceResult, LocationServiceError> PutGeofence
 typedef Aws::Utils::Outcome<SearchPlaceIndexForPositionResult, LocationServiceError> SearchPlaceIndexForPositionOutcome;
 typedef Aws::Utils::Outcome<SearchPlaceIndexForSuggestionsResult, LocationServiceError> SearchPlaceIndexForSuggestionsOutcome;
 typedef Aws::Utils::Outcome<SearchPlaceIndexForTextResult, LocationServiceError> SearchPlaceIndexForTextOutcome;
+typedef Aws::Utils::Outcome<StartJobResult, LocationServiceError> StartJobOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, LocationServiceError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, LocationServiceError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateGeofenceCollectionResult, LocationServiceError> UpdateGeofenceCollectionOutcome;
@@ -253,6 +266,7 @@ typedef std::future<BatchPutGeofenceOutcome> BatchPutGeofenceOutcomeCallable;
 typedef std::future<BatchUpdateDevicePositionOutcome> BatchUpdateDevicePositionOutcomeCallable;
 typedef std::future<CalculateRouteOutcome> CalculateRouteOutcomeCallable;
 typedef std::future<CalculateRouteMatrixOutcome> CalculateRouteMatrixOutcomeCallable;
+typedef std::future<CancelJobOutcome> CancelJobOutcomeCallable;
 typedef std::future<CreateGeofenceCollectionOutcome> CreateGeofenceCollectionOutcomeCallable;
 typedef std::future<CreateKeyOutcome> CreateKeyOutcomeCallable;
 typedef std::future<CreateMapOutcome> CreateMapOutcomeCallable;
@@ -276,6 +290,7 @@ typedef std::future<ForecastGeofenceEventsOutcome> ForecastGeofenceEventsOutcome
 typedef std::future<GetDevicePositionOutcome> GetDevicePositionOutcomeCallable;
 typedef std::future<GetDevicePositionHistoryOutcome> GetDevicePositionHistoryOutcomeCallable;
 typedef std::future<GetGeofenceOutcome> GetGeofenceOutcomeCallable;
+typedef std::future<GetJobOutcome> GetJobOutcomeCallable;
 typedef std::future<GetMapGlyphsOutcome> GetMapGlyphsOutcomeCallable;
 typedef std::future<GetMapSpritesOutcome> GetMapSpritesOutcomeCallable;
 typedef std::future<GetMapStyleDescriptorOutcome> GetMapStyleDescriptorOutcomeCallable;
@@ -284,6 +299,7 @@ typedef std::future<GetPlaceOutcome> GetPlaceOutcomeCallable;
 typedef std::future<ListDevicePositionsOutcome> ListDevicePositionsOutcomeCallable;
 typedef std::future<ListGeofenceCollectionsOutcome> ListGeofenceCollectionsOutcomeCallable;
 typedef std::future<ListGeofencesOutcome> ListGeofencesOutcomeCallable;
+typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
 typedef std::future<ListKeysOutcome> ListKeysOutcomeCallable;
 typedef std::future<ListMapsOutcome> ListMapsOutcomeCallable;
 typedef std::future<ListPlaceIndexesOutcome> ListPlaceIndexesOutcomeCallable;
@@ -295,6 +311,7 @@ typedef std::future<PutGeofenceOutcome> PutGeofenceOutcomeCallable;
 typedef std::future<SearchPlaceIndexForPositionOutcome> SearchPlaceIndexForPositionOutcomeCallable;
 typedef std::future<SearchPlaceIndexForSuggestionsOutcome> SearchPlaceIndexForSuggestionsOutcomeCallable;
 typedef std::future<SearchPlaceIndexForTextOutcome> SearchPlaceIndexForTextOutcomeCallable;
+typedef std::future<StartJobOutcome> StartJobOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateGeofenceCollectionOutcome> UpdateGeofenceCollectionOutcomeCallable;
@@ -338,6 +355,9 @@ typedef std::function<void(const LocationServiceClient*, const Model::CalculateR
 typedef std::function<void(const LocationServiceClient*, const Model::CalculateRouteMatrixRequest&,
                            const Model::CalculateRouteMatrixOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CalculateRouteMatrixResponseReceivedHandler;
+typedef std::function<void(const LocationServiceClient*, const Model::CancelJobRequest&, const Model::CancelJobOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CancelJobResponseReceivedHandler;
 typedef std::function<void(const LocationServiceClient*, const Model::CreateGeofenceCollectionRequest&,
                            const Model::CreateGeofenceCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateGeofenceCollectionResponseReceivedHandler;
@@ -407,6 +427,9 @@ typedef std::function<void(const LocationServiceClient*, const Model::GetDeviceP
 typedef std::function<void(const LocationServiceClient*, const Model::GetGeofenceRequest&, const Model::GetGeofenceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetGeofenceResponseReceivedHandler;
+typedef std::function<void(const LocationServiceClient*, const Model::GetJobRequest&, const Model::GetJobOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetJobResponseReceivedHandler;
 typedef std::function<void(const LocationServiceClient*, const Model::GetMapGlyphsRequest&, Model::GetMapGlyphsOutcome,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetMapGlyphsResponseReceivedHandler;
@@ -431,6 +454,9 @@ typedef std::function<void(const LocationServiceClient*, const Model::ListGeofen
 typedef std::function<void(const LocationServiceClient*, const Model::ListGeofencesRequest&, const Model::ListGeofencesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListGeofencesResponseReceivedHandler;
+typedef std::function<void(const LocationServiceClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListJobsResponseReceivedHandler;
 typedef std::function<void(const LocationServiceClient*, const Model::ListKeysRequest&, const Model::ListKeysOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListKeysResponseReceivedHandler;
@@ -465,6 +491,9 @@ typedef std::function<void(const LocationServiceClient*, const Model::SearchPlac
 typedef std::function<void(const LocationServiceClient*, const Model::SearchPlaceIndexForTextRequest&,
                            const Model::SearchPlaceIndexForTextOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SearchPlaceIndexForTextResponseReceivedHandler;
+typedef std::function<void(const LocationServiceClient*, const Model::StartJobRequest&, const Model::StartJobOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartJobResponseReceivedHandler;
 typedef std::function<void(const LocationServiceClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     TagResourceResponseReceivedHandler;

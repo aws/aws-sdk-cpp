@@ -20,10 +20,22 @@
 #include <aws/evs/model/CheckResult.h>
 #include <aws/evs/model/CheckType.h>
 #include <aws/evs/model/ConnectivityInfo.h>
+#include <aws/evs/model/Connector.h>
+#include <aws/evs/model/ConnectorCheck.h>
+#include <aws/evs/model/ConnectorState.h>
+#include <aws/evs/model/ConnectorType.h>
+#include <aws/evs/model/CreateEntitlementRequest.h>
+#include <aws/evs/model/CreateEntitlementResult.h>
+#include <aws/evs/model/CreateEnvironmentConnectorRequest.h>
+#include <aws/evs/model/CreateEnvironmentConnectorResult.h>
 #include <aws/evs/model/CreateEnvironmentHostRequest.h>
 #include <aws/evs/model/CreateEnvironmentHostResult.h>
 #include <aws/evs/model/CreateEnvironmentRequest.h>
 #include <aws/evs/model/CreateEnvironmentResult.h>
+#include <aws/evs/model/DeleteEntitlementRequest.h>
+#include <aws/evs/model/DeleteEntitlementResult.h>
+#include <aws/evs/model/DeleteEnvironmentConnectorRequest.h>
+#include <aws/evs/model/DeleteEnvironmentConnectorResult.h>
 #include <aws/evs/model/DeleteEnvironmentHostRequest.h>
 #include <aws/evs/model/DeleteEnvironmentHostResult.h>
 #include <aws/evs/model/DeleteEnvironmentRequest.h>
@@ -31,9 +43,12 @@
 #include <aws/evs/model/DisassociateEipFromVlanRequest.h>
 #include <aws/evs/model/DisassociateEipFromVlanResult.h>
 #include <aws/evs/model/EipAssociation.h>
+#include <aws/evs/model/EntitlementStatus.h>
+#include <aws/evs/model/EntitlementType.h>
 #include <aws/evs/model/Environment.h>
 #include <aws/evs/model/EnvironmentState.h>
 #include <aws/evs/model/EnvironmentSummary.h>
+#include <aws/evs/model/ErrorDetail.h>
 #include <aws/evs/model/GetEnvironmentRequest.h>
 #include <aws/evs/model/GetEnvironmentResult.h>
 #include <aws/evs/model/GetVersionsRequest.h>
@@ -46,6 +61,8 @@
 #include <aws/evs/model/InstanceType.h>
 #include <aws/evs/model/InstanceTypeEsxVersionsInfo.h>
 #include <aws/evs/model/LicenseInfo.h>
+#include <aws/evs/model/ListEnvironmentConnectorsRequest.h>
+#include <aws/evs/model/ListEnvironmentConnectorsResult.h>
 #include <aws/evs/model/ListEnvironmentHostsRequest.h>
 #include <aws/evs/model/ListEnvironmentHostsResult.h>
 #include <aws/evs/model/ListEnvironmentVlansRequest.h>
@@ -54,6 +71,8 @@
 #include <aws/evs/model/ListEnvironmentsResult.h>
 #include <aws/evs/model/ListTagsForResourceRequest.h>
 #include <aws/evs/model/ListTagsForResourceResult.h>
+#include <aws/evs/model/ListVmEntitlementsRequest.h>
+#include <aws/evs/model/ListVmEntitlementsResult.h>
 #include <aws/evs/model/NetworkInterface.h>
 #include <aws/evs/model/ResourceNotFoundException.h>
 #include <aws/evs/model/Secret.h>
@@ -63,6 +82,8 @@
 #include <aws/evs/model/ThrottlingException.h>
 #include <aws/evs/model/UntagResourceRequest.h>
 #include <aws/evs/model/UntagResourceResult.h>
+#include <aws/evs/model/UpdateEnvironmentConnectorRequest.h>
+#include <aws/evs/model/UpdateEnvironmentConnectorResult.h>
 #include <aws/evs/model/ValidationException.h>
 #include <aws/evs/model/ValidationExceptionField.h>
 #include <aws/evs/model/ValidationExceptionReason.h>
@@ -71,6 +92,7 @@
 #include <aws/evs/model/VcfVersionInfo.h>
 #include <aws/evs/model/Vlan.h>
 #include <aws/evs/model/VlanState.h>
+#include <aws/evs/model/VmEntitlement.h>
 
 using EVSIncludeTest = ::testing::Test;
 

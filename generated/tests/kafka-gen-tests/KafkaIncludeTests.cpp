@@ -15,6 +15,7 @@
 #include <aws/kafka/KafkaServiceClientModel.h>
 #include <aws/kafka/Kafka_EXPORTS.h>
 #include <aws/kafka/model/AmazonMskCluster.h>
+#include <aws/kafka/model/ApacheKafkaCluster.h>
 #include <aws/kafka/model/BadRequestException.h>
 #include <aws/kafka/model/BatchAssociateScramSecretRequest.h>
 #include <aws/kafka/model/BatchAssociateScramSecretResult.h>
@@ -50,6 +51,7 @@
 #include <aws/kafka/model/ConfigurationState.h>
 #include <aws/kafka/model/ConflictException.h>
 #include <aws/kafka/model/ConnectivityInfo.h>
+#include <aws/kafka/model/ConsumerGroupOffsetSyncMode.h>
 #include <aws/kafka/model/ConsumerGroupReplication.h>
 #include <aws/kafka/model/ConsumerGroupReplicationUpdate.h>
 #include <aws/kafka/model/ControllerMovedException.h>
@@ -119,8 +121,13 @@
 #include <aws/kafka/model/JmxExporter.h>
 #include <aws/kafka/model/JmxExporterInfo.h>
 #include <aws/kafka/model/KafkaCluster.h>
+#include <aws/kafka/model/KafkaClusterClientAuthentication.h>
 #include <aws/kafka/model/KafkaClusterClientVpcConfig.h>
 #include <aws/kafka/model/KafkaClusterDescription.h>
+#include <aws/kafka/model/KafkaClusterEncryptionInTransit.h>
+#include <aws/kafka/model/KafkaClusterEncryptionInTransitType.h>
+#include <aws/kafka/model/KafkaClusterSaslScramAuthentication.h>
+#include <aws/kafka/model/KafkaClusterSaslScramMechanism.h>
 #include <aws/kafka/model/KafkaClusterSummary.h>
 #include <aws/kafka/model/KafkaRequestException.h>
 #include <aws/kafka/model/KafkaTimeoutException.h>
@@ -154,6 +161,7 @@
 #include <aws/kafka/model/ListTopicsResult.h>
 #include <aws/kafka/model/ListVpcConnectionsRequest.h>
 #include <aws/kafka/model/ListVpcConnectionsResult.h>
+#include <aws/kafka/model/LogDelivery.h>
 #include <aws/kafka/model/LoggingInfo.h>
 #include <aws/kafka/model/MutableClusterInfo.h>
 #include <aws/kafka/model/NetworkType.h>
@@ -188,6 +196,10 @@
 #include <aws/kafka/model/ReplicationStateInfo.h>
 #include <aws/kafka/model/ReplicationTopicNameConfiguration.h>
 #include <aws/kafka/model/ReplicationTopicNameConfigurationType.h>
+#include <aws/kafka/model/ReplicatorCloudWatchLogs.h>
+#include <aws/kafka/model/ReplicatorFirehose.h>
+#include <aws/kafka/model/ReplicatorLogDelivery.h>
+#include <aws/kafka/model/ReplicatorS3.h>
 #include <aws/kafka/model/ReplicatorState.h>
 #include <aws/kafka/model/ReplicatorSummary.h>
 #include <aws/kafka/model/S3.h>

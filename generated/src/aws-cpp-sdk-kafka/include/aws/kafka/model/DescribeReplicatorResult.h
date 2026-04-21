@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kafka/Kafka_EXPORTS.h>
 #include <aws/kafka/model/KafkaClusterDescription.h>
+#include <aws/kafka/model/LogDelivery.h>
 #include <aws/kafka/model/ReplicationInfoDescription.h>
 #include <aws/kafka/model/ReplicationStateInfo.h>
 #include <aws/kafka/model/ReplicatorState.h>
@@ -273,6 +274,23 @@ class DescribeReplicatorResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Configuration for log delivery.</p>
+   */
+  inline const LogDelivery& GetLogDelivery() const { return m_logDelivery; }
+  template <typename LogDeliveryT = LogDelivery>
+  void SetLogDelivery(LogDeliveryT&& value) {
+    m_logDeliveryHasBeenSet = true;
+    m_logDelivery = std::forward<LogDeliveryT>(value);
+  }
+  template <typename LogDeliveryT = LogDelivery>
+  DescribeReplicatorResult& WithLogDelivery(LogDeliveryT&& value) {
+    SetLogDelivery(std::forward<LogDeliveryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -315,6 +333,8 @@ class DescribeReplicatorResult {
 
   Aws::Map<Aws::String, Aws::String> m_tags;
 
+  LogDelivery m_logDelivery;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_creationTimeHasBeenSet = false;
@@ -330,6 +350,7 @@ class DescribeReplicatorResult {
   bool m_serviceExecutionRoleArnHasBeenSet = false;
   bool m_stateInfoHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_logDeliveryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

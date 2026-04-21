@@ -10,7 +10,7 @@
 namespace Aws {
 namespace EC2 {
 namespace Model {
-enum class ClientVpnEndpointStatusCode { NOT_SET, pending_associate, available, deleting, deleted };
+enum class ClientVpnEndpointStatusCode { NOT_SET, pending_associate, available, deleting, deleted, pending };
 
 namespace ClientVpnEndpointStatusCodeMapper {
 AWS_EC2_API ClientVpnEndpointStatusCode GetClientVpnEndpointStatusCodeForName(const Aws::String& name);

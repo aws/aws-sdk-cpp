@@ -10,7 +10,16 @@
 namespace Aws {
 namespace EVS {
 namespace Model {
-enum class CheckType { NOT_SET, KEY_REUSE, KEY_COVERAGE, REACHABILITY, HOST_COUNT };
+enum class CheckType {
+  NOT_SET,
+  KEY_REUSE,
+  KEY_COVERAGE,
+  REACHABILITY,
+  HOST_COUNT,
+  VCENTER_REACHABILITY,
+  VCENTER_VM_SYNC,
+  VCENTER_VM_EVENT
+};
 
 namespace CheckTypeMapper {
 AWS_EVS_API CheckType GetCheckTypeForName(const Aws::String& name);

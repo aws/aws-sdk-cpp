@@ -27,12 +27,24 @@ Aws::String UpdateReplicationInfoRequest::SerializePayload() const {
     payload.WithString("sourceKafkaClusterArn", m_sourceKafkaClusterArn);
   }
 
+  if (m_sourceKafkaClusterIdHasBeenSet) {
+    payload.WithString("sourceKafkaClusterId", m_sourceKafkaClusterId);
+  }
+
   if (m_targetKafkaClusterArnHasBeenSet) {
     payload.WithString("targetKafkaClusterArn", m_targetKafkaClusterArn);
   }
 
+  if (m_targetKafkaClusterIdHasBeenSet) {
+    payload.WithString("targetKafkaClusterId", m_targetKafkaClusterId);
+  }
+
   if (m_topicReplicationHasBeenSet) {
     payload.WithObject("topicReplication", m_topicReplication.Jsonize());
+  }
+
+  if (m_logDeliveryHasBeenSet) {
+    payload.WithObject("logDelivery", m_logDelivery.Jsonize());
   }
 
   return payload.View().WriteReadable();

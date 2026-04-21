@@ -58,6 +58,11 @@ ClientVpnRoute& ClientVpnRoute::operator=(const XmlNode& xmlNode) {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
+    XmlNode transitGatewayAttachmentIdNode = resultNode.FirstChild("transitGatewayAttachmentId");
+    if (!transitGatewayAttachmentIdNode.IsNull()) {
+      m_transitGatewayAttachmentId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayAttachmentIdNode.GetText());
+      m_transitGatewayAttachmentIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -94,6 +99,11 @@ void ClientVpnRoute::OutputToStream(Aws::OStream& oStream, const char* location,
   if (m_descriptionHasBeenSet) {
     oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
+  if (m_transitGatewayAttachmentIdHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".TransitGatewayAttachmentId=" << StringUtils::URLEncode(m_transitGatewayAttachmentId.c_str()) << "&";
+  }
 }
 
 void ClientVpnRoute::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -119,6 +129,9 @@ void ClientVpnRoute::OutputToStream(Aws::OStream& oStream, const char* location)
   }
   if (m_descriptionHasBeenSet) {
     oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+  if (m_transitGatewayAttachmentIdHasBeenSet) {
+    oStream << location << ".TransitGatewayAttachmentId=" << StringUtils::URLEncode(m_transitGatewayAttachmentId.c_str()) << "&";
   }
 }
 

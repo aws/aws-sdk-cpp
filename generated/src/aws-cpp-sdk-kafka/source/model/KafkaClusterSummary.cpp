@@ -22,6 +22,10 @@ KafkaClusterSummary& KafkaClusterSummary::operator=(JsonView jsonValue) {
     m_amazonMskCluster = jsonValue.GetObject("amazonMskCluster");
     m_amazonMskClusterHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("apacheKafkaCluster")) {
+    m_apacheKafkaCluster = jsonValue.GetObject("apacheKafkaCluster");
+    m_apacheKafkaClusterHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("kafkaClusterAlias")) {
     m_kafkaClusterAlias = jsonValue.GetString("kafkaClusterAlias");
     m_kafkaClusterAliasHasBeenSet = true;
@@ -34,6 +38,10 @@ JsonValue KafkaClusterSummary::Jsonize() const {
 
   if (m_amazonMskClusterHasBeenSet) {
     payload.WithObject("amazonMskCluster", m_amazonMskCluster.Jsonize());
+  }
+
+  if (m_apacheKafkaClusterHasBeenSet) {
+    payload.WithObject("apacheKafkaCluster", m_apacheKafkaCluster.Jsonize());
   }
 
   if (m_kafkaClusterAliasHasBeenSet) {

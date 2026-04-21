@@ -34,7 +34,8 @@ class AndroidApp {
 
   ///@{
   /**
-   * <p>Unique package name for an Android app.</p>
+   * <p>Unique package name identifier for an Android app.</p> <p>Example:
+   * <code>com.mydomain.appname</code> </p>
    */
   inline const Aws::String& GetPackage() const { return m_package; }
   inline bool PackageHasBeenSet() const { return m_packageHasBeenSet; }
@@ -53,7 +54,8 @@ class AndroidApp {
   ///@{
   /**
    * <p>20 byte SHA-1 certificate fingerprint associated with the Android app signing
-   * certificate.</p>
+   * certificate.</p> <p>Example:
+   * <code>BB:0D:AC:74:D3:21:E1:43:67:71:9B:62:91:AF:A1:66:6E:44:5D:75</code> </p>
    */
   inline const Aws::String& GetCertificateFingerprint() const { return m_certificateFingerprint; }
   inline bool CertificateFingerprintHasBeenSet() const { return m_certificateFingerprintHasBeenSet; }

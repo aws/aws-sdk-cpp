@@ -150,6 +150,56 @@ class TargetNetwork {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Availability Zone names for the target network association, if the Client
+   * VPN endpoint uses a Transit Gateway.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const { return m_availabilityZones; }
+  inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
+  template <typename AvailabilityZonesT = Aws::Vector<Aws::String>>
+  void SetAvailabilityZones(AvailabilityZonesT&& value) {
+    m_availabilityZonesHasBeenSet = true;
+    m_availabilityZones = std::forward<AvailabilityZonesT>(value);
+  }
+  template <typename AvailabilityZonesT = Aws::Vector<Aws::String>>
+  TargetNetwork& WithAvailabilityZones(AvailabilityZonesT&& value) {
+    SetAvailabilityZones(std::forward<AvailabilityZonesT>(value));
+    return *this;
+  }
+  template <typename AvailabilityZonesT = Aws::String>
+  TargetNetwork& AddAvailabilityZones(AvailabilityZonesT&& value) {
+    m_availabilityZonesHasBeenSet = true;
+    m_availabilityZones.emplace_back(std::forward<AvailabilityZonesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Availability Zone IDs for the target network association, if the Client
+   * VPN endpoint uses a Transit Gateway.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetAvailabilityZoneIds() const { return m_availabilityZoneIds; }
+  inline bool AvailabilityZoneIdsHasBeenSet() const { return m_availabilityZoneIdsHasBeenSet; }
+  template <typename AvailabilityZoneIdsT = Aws::Vector<Aws::String>>
+  void SetAvailabilityZoneIds(AvailabilityZoneIdsT&& value) {
+    m_availabilityZoneIdsHasBeenSet = true;
+    m_availabilityZoneIds = std::forward<AvailabilityZoneIdsT>(value);
+  }
+  template <typename AvailabilityZoneIdsT = Aws::Vector<Aws::String>>
+  TargetNetwork& WithAvailabilityZoneIds(AvailabilityZoneIdsT&& value) {
+    SetAvailabilityZoneIds(std::forward<AvailabilityZoneIdsT>(value));
+    return *this;
+  }
+  template <typename AvailabilityZoneIdsT = Aws::String>
+  TargetNetwork& AddAvailabilityZoneIds(AvailabilityZoneIdsT&& value) {
+    m_availabilityZoneIdsHasBeenSet = true;
+    m_availabilityZoneIds.emplace_back(std::forward<AvailabilityZoneIdsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_associationId;
 
@@ -162,12 +212,18 @@ class TargetNetwork {
   AssociationStatus m_status;
 
   Aws::Vector<Aws::String> m_securityGroups;
+
+  Aws::Vector<Aws::String> m_availabilityZones;
+
+  Aws::Vector<Aws::String> m_availabilityZoneIds;
   bool m_associationIdHasBeenSet = false;
   bool m_vpcIdHasBeenSet = false;
   bool m_targetNetworkIdHasBeenSet = false;
   bool m_clientVpnEndpointIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_securityGroupsHasBeenSet = false;
+  bool m_availabilityZonesHasBeenSet = false;
+  bool m_availabilityZoneIdsHasBeenSet = false;
 };
 
 }  // namespace Model

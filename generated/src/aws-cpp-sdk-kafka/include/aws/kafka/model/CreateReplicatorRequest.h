@@ -10,6 +10,7 @@
 #include <aws/kafka/KafkaRequest.h>
 #include <aws/kafka/Kafka_EXPORTS.h>
 #include <aws/kafka/model/KafkaCluster.h>
+#include <aws/kafka/model/LogDelivery.h>
 #include <aws/kafka/model/ReplicationInfo.h>
 
 #include <utility>
@@ -164,6 +165,24 @@ class CreateReplicatorRequest : public KafkaRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration for delivering replicator logs to customer destinations.</p>
+   */
+  inline const LogDelivery& GetLogDelivery() const { return m_logDelivery; }
+  inline bool LogDeliveryHasBeenSet() const { return m_logDeliveryHasBeenSet; }
+  template <typename LogDeliveryT = LogDelivery>
+  void SetLogDelivery(LogDeliveryT&& value) {
+    m_logDeliveryHasBeenSet = true;
+    m_logDelivery = std::forward<LogDeliveryT>(value);
+  }
+  template <typename LogDeliveryT = LogDelivery>
+  CreateReplicatorRequest& WithLogDelivery(LogDeliveryT&& value) {
+    SetLogDelivery(std::forward<LogDeliveryT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_description;
 
@@ -176,12 +195,15 @@ class CreateReplicatorRequest : public KafkaRequest {
   Aws::String m_serviceExecutionRoleArn;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+
+  LogDelivery m_logDelivery;
   bool m_descriptionHasBeenSet = false;
   bool m_kafkaClustersHasBeenSet = false;
   bool m_replicationInfoListHasBeenSet = false;
   bool m_replicatorNameHasBeenSet = false;
   bool m_serviceExecutionRoleArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_logDeliveryHasBeenSet = false;
 };
 
 }  // namespace Model

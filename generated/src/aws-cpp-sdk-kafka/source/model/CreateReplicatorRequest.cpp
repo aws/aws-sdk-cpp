@@ -52,5 +52,9 @@ Aws::String CreateReplicatorRequest::SerializePayload() const {
     payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
+  if (m_logDeliveryHasBeenSet) {
+    payload.WithObject("logDelivery", m_logDelivery.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

@@ -29,6 +29,7 @@
 #include <aws/location/model/BatchUpdateDevicePositionRequest.h>
 #include <aws/location/model/CalculateRouteMatrixRequest.h>
 #include <aws/location/model/CalculateRouteRequest.h>
+#include <aws/location/model/CancelJobRequest.h>
 #include <aws/location/model/CreateGeofenceCollectionRequest.h>
 #include <aws/location/model/CreateKeyRequest.h>
 #include <aws/location/model/CreateMapRequest.h>
@@ -52,6 +53,7 @@
 #include <aws/location/model/GetDevicePositionHistoryRequest.h>
 #include <aws/location/model/GetDevicePositionRequest.h>
 #include <aws/location/model/GetGeofenceRequest.h>
+#include <aws/location/model/GetJobRequest.h>
 #include <aws/location/model/GetMapGlyphsRequest.h>
 #include <aws/location/model/GetMapSpritesRequest.h>
 #include <aws/location/model/GetMapStyleDescriptorRequest.h>
@@ -60,6 +62,7 @@
 #include <aws/location/model/ListDevicePositionsRequest.h>
 #include <aws/location/model/ListGeofenceCollectionsRequest.h>
 #include <aws/location/model/ListGeofencesRequest.h>
+#include <aws/location/model/ListJobsRequest.h>
 #include <aws/location/model/ListKeysRequest.h>
 #include <aws/location/model/ListMapsRequest.h>
 #include <aws/location/model/ListPlaceIndexesRequest.h>
@@ -71,6 +74,7 @@
 #include <aws/location/model/SearchPlaceIndexForPositionRequest.h>
 #include <aws/location/model/SearchPlaceIndexForSuggestionsRequest.h>
 #include <aws/location/model/SearchPlaceIndexForTextRequest.h>
+#include <aws/location/model/StartJobRequest.h>
 #include <aws/location/model/TagResourceRequest.h>
 #include <aws/location/model/UntagResourceRequest.h>
 #include <aws/location/model/UpdateGeofenceCollectionRequest.h>
@@ -407,6 +411,16 @@ CalculateRouteMatrixOutcome LocationServiceClient::CalculateRouteMatrix(const Ca
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CalculateRouteMatrixOutcome(result.GetResultWithOwnership())
                             : CalculateRouteMatrixOutcome(std::move(result.GetError()));
+}
+
+CancelJobOutcome LocationServiceClient::CancelJob(const CancelJobRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/metadata/v0/jobs/cancel-job");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelJobOutcome(result.GetResultWithOwnership()) : CancelJobOutcome(std::move(result.GetError()));
 }
 
 CreateGeofenceCollectionOutcome LocationServiceClient::CreateGeofenceCollection(const CreateGeofenceCollectionRequest& request) const {
@@ -805,6 +819,23 @@ GetGeofenceOutcome LocationServiceClient::GetGeofence(const GetGeofenceRequest& 
   return result.IsSuccess() ? GetGeofenceOutcome(result.GetResultWithOwnership()) : GetGeofenceOutcome(std::move(result.GetError()));
 }
 
+GetJobOutcome LocationServiceClient::GetJob(const GetJobRequest& request) const {
+  if (!request.JobIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetJob", "Required field: JobId, is not set");
+    return GetJobOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                      "Missing required field [JobId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/metadata/v0/jobs/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetJobOutcome(result.GetResultWithOwnership()) : GetJobOutcome(std::move(result.GetError()));
+}
+
 GetMapGlyphsOutcome LocationServiceClient::GetMapGlyphs(const GetMapGlyphsRequest& request) const {
   AWS_OPERATION_GUARD(GetMapGlyphs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMapGlyphs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1072,6 +1103,16 @@ ListGeofencesOutcome LocationServiceClient::ListGeofences(const ListGeofencesReq
   return result.IsSuccess() ? ListGeofencesOutcome(result.GetResultWithOwnership()) : ListGeofencesOutcome(std::move(result.GetError()));
 }
 
+ListJobsOutcome LocationServiceClient::ListJobs(const ListJobsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/metadata/v0/jobs/list-jobs");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListJobsOutcome(result.GetResultWithOwnership()) : ListJobsOutcome(std::move(result.GetError()));
+}
+
 ListKeysOutcome LocationServiceClient::ListKeys(const ListKeysRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -1242,6 +1283,16 @@ SearchPlaceIndexForTextOutcome LocationServiceClient::SearchPlaceIndexForText(co
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? SearchPlaceIndexForTextOutcome(result.GetResultWithOwnership())
                             : SearchPlaceIndexForTextOutcome(std::move(result.GetError()));
+}
+
+StartJobOutcome LocationServiceClient::StartJob(const StartJobRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/metadata/v0/jobs");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartJobOutcome(result.GetResultWithOwnership()) : StartJobOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome LocationServiceClient::TagResource(const TagResourceRequest& request) const {

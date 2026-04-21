@@ -52,5 +52,9 @@ Aws::String CreateServiceLevelObjectiveRequest::SerializePayload() const {
     payload.WithArray("BurnRateConfigurations", std::move(burnRateConfigurationsJsonList));
   }
 
+  if (m_createRecommendedSloHasBeenSet) {
+    payload.WithBool("CreateRecommendedSlo", m_createRecommendedSlo);
+  }
+
   return payload.View().WriteReadable();
 }

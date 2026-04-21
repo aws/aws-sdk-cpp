@@ -81,6 +81,10 @@ Aws::String ModifyClientVpnEndpointRequest::SerializePayload() const {
     ss << "DisconnectOnSessionTimeout=" << std::boolalpha << m_disconnectOnSessionTimeout << "&";
   }
 
+  if (m_transitGatewayConfigurationHasBeenSet) {
+    m_transitGatewayConfiguration.OutputToStream(ss, "TransitGatewayConfiguration");
+  }
+
   ss << "Version=2016-11-15";
   return ss.str();
 }

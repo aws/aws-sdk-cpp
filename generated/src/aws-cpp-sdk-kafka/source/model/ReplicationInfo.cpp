@@ -26,6 +26,10 @@ ReplicationInfo& ReplicationInfo::operator=(JsonView jsonValue) {
     m_sourceKafkaClusterArn = jsonValue.GetString("sourceKafkaClusterArn");
     m_sourceKafkaClusterArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("sourceKafkaClusterId")) {
+    m_sourceKafkaClusterId = jsonValue.GetString("sourceKafkaClusterId");
+    m_sourceKafkaClusterIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("targetCompressionType")) {
     m_targetCompressionType = TargetCompressionTypeMapper::GetTargetCompressionTypeForName(jsonValue.GetString("targetCompressionType"));
     m_targetCompressionTypeHasBeenSet = true;
@@ -33,6 +37,10 @@ ReplicationInfo& ReplicationInfo::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("targetKafkaClusterArn")) {
     m_targetKafkaClusterArn = jsonValue.GetString("targetKafkaClusterArn");
     m_targetKafkaClusterArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("targetKafkaClusterId")) {
+    m_targetKafkaClusterId = jsonValue.GetString("targetKafkaClusterId");
+    m_targetKafkaClusterIdHasBeenSet = true;
   }
   if (jsonValue.ValueExists("topicReplication")) {
     m_topicReplication = jsonValue.GetObject("topicReplication");
@@ -52,12 +60,20 @@ JsonValue ReplicationInfo::Jsonize() const {
     payload.WithString("sourceKafkaClusterArn", m_sourceKafkaClusterArn);
   }
 
+  if (m_sourceKafkaClusterIdHasBeenSet) {
+    payload.WithString("sourceKafkaClusterId", m_sourceKafkaClusterId);
+  }
+
   if (m_targetCompressionTypeHasBeenSet) {
     payload.WithString("targetCompressionType", TargetCompressionTypeMapper::GetNameForTargetCompressionType(m_targetCompressionType));
   }
 
   if (m_targetKafkaClusterArnHasBeenSet) {
     payload.WithString("targetKafkaClusterArn", m_targetKafkaClusterArn);
+  }
+
+  if (m_targetKafkaClusterIdHasBeenSet) {
+    payload.WithString("targetKafkaClusterId", m_targetKafkaClusterId);
   }
 
   if (m_topicReplicationHasBeenSet) {

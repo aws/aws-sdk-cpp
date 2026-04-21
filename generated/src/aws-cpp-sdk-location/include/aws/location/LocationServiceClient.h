@@ -459,6 +459,37 @@ class AWS_LOCATIONSERVICE_API LocationServiceClient : public Aws::Client::AWSJso
   }
 
   /**
+   * <p> <code>CancelJob</code> cancels a job that is currently running or pending.
+   * If the job is already in a terminal state (<code>Completed</code>,
+   * <code>Failed</code>, or <code>Cancelled</code>), the operation returns
+   * successfully with the current status.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/jobs-concepts.html">Job
+   * concepts</a> in the <i>Amazon Location Service Developer
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CancelJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CancelJobOutcome CancelJob(const Model::CancelJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for CancelJob that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CancelJobRequestT = Model::CancelJobRequest>
+  Model::CancelJobOutcomeCallable CancelJobCallable(const CancelJobRequestT& request) const {
+    return SubmitCallable(&LocationServiceClient::CancelJob, request);
+  }
+
+  /**
+   * An Async wrapper for CancelJob that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CancelJobRequestT = Model::CancelJobRequest>
+  void CancelJobAsync(const CancelJobRequestT& request, const CancelJobResponseReceivedHandler& handler,
+                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LocationServiceClient::CancelJob, request, handler, context);
+  }
+
+  /**
    * <p>Creates a geofence collection, which manages and stores
    * geofences.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CreateGeofenceCollection">AWS
@@ -1279,6 +1310,36 @@ class AWS_LOCATIONSERVICE_API LocationServiceClient : public Aws::Client::AWSJso
   }
 
   /**
+   * <p> <code>GetJob</code> retrieves detailed information about a specific job,
+   * including its current status, configuration, and error information if the job
+   * failed.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/jobs-concepts.html">Job
+   * concepts</a> in the <i>Amazon Location Service Developer
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/GetJob">AWS API
+   * Reference</a></p>
+   */
+  virtual Model::GetJobOutcome GetJob(const Model::GetJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetJob that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetJobRequestT = Model::GetJobRequest>
+  Model::GetJobOutcomeCallable GetJobCallable(const GetJobRequestT& request) const {
+    return SubmitCallable(&LocationServiceClient::GetJob, request);
+  }
+
+  /**
+   * An Async wrapper for GetJob that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetJobRequestT = Model::GetJobRequest>
+  void GetJobAsync(const GetJobRequestT& request, const GetJobResponseReceivedHandler& handler,
+                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LocationServiceClient::GetJob, request, handler, context);
+  }
+
+  /**
    * <p> <p>This operation is no longer current and may be deprecated in
    * the future. We recommend upgrading to <a
    * href="https://docs.aws.amazon.com/location/latest/APIReference/API_geomaps_GetGlyphs.html">
@@ -1597,6 +1658,36 @@ class AWS_LOCATIONSERVICE_API LocationServiceClient : public Aws::Client::AWSJso
   void ListGeofencesAsync(const ListGeofencesRequestT& request, const ListGeofencesResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&LocationServiceClient::ListGeofences, request, handler, context);
+  }
+
+  /**
+   * <p> <code>ListJobs</code> retrieves a list of jobs with optional filtering and
+   * pagination support.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/jobs-concepts.html">Job
+   * concepts</a> in the <i>Amazon Location Service Developer
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListJobs">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListJobsOutcome ListJobs(const Model::ListJobsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListJobs that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListJobsRequestT = Model::ListJobsRequest>
+  Model::ListJobsOutcomeCallable ListJobsCallable(const ListJobsRequestT& request = {}) const {
+    return SubmitCallable(&LocationServiceClient::ListJobs, request);
+  }
+
+  /**
+   * An Async wrapper for ListJobs that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListJobsRequestT = Model::ListJobsRequest>
+  void ListJobsAsync(const ListJobsResponseReceivedHandler& handler,
+                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                     const ListJobsRequestT& request = {}) const {
+    return SubmitAsync(&LocationServiceClient::ListJobs, request, handler, context);
   }
 
   /**
@@ -2020,6 +2111,36 @@ class AWS_LOCATIONSERVICE_API LocationServiceClient : public Aws::Client::AWSJso
                                     const SearchPlaceIndexForTextResponseReceivedHandler& handler,
                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&LocationServiceClient::SearchPlaceIndexForText, request, handler, context);
+  }
+
+  /**
+   * <p> <code>StartJob</code> starts a new asynchronous bulk processing job. You
+   * specify the input data location in Amazon S3, the action to perform, and the
+   * output location where results are written.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/jobs-concepts.html">Job
+   * concepts</a> in the <i>Amazon Location Service Developer
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/StartJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartJobOutcome StartJob(const Model::StartJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartJob that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename StartJobRequestT = Model::StartJobRequest>
+  Model::StartJobOutcomeCallable StartJobCallable(const StartJobRequestT& request) const {
+    return SubmitCallable(&LocationServiceClient::StartJob, request);
+  }
+
+  /**
+   * An Async wrapper for StartJob that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename StartJobRequestT = Model::StartJobRequest>
+  void StartJobAsync(const StartJobRequestT& request, const StartJobResponseReceivedHandler& handler,
+                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LocationServiceClient::StartJob, request, handler, context);
   }
 
   /**

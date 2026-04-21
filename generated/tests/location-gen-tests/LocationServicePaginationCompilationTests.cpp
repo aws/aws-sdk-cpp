@@ -19,6 +19,7 @@
 #include <aws/location/model/ListGeofenceCollectionsPaginationTraits.h>
 #include <aws/location/model/ListDevicePositionsPaginationTraits.h>
 #include <aws/location/model/ListGeofencesPaginationTraits.h>
+#include <aws/location/model/ListJobsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

@@ -53,7 +53,9 @@ class AssociateClientVpnTargetNetworkRequest : public EC2Request {
 
   ///@{
   /**
-   * <p>The ID of the subnet to associate with the Client VPN endpoint.</p>
+   * <p>The ID of the subnet to associate with the Client VPN endpoint. Required for
+   * VPC-based endpoints. For Transit Gateway-based endpoints, use
+   * <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> instead.</p>
    */
   inline const Aws::String& GetSubnetId() const { return m_subnetId; }
   inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
@@ -108,6 +110,48 @@ class AssociateClientVpnTargetNetworkRequest : public EC2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Availability Zone name for the Transit Gateway association. Required if
+   * when associating an Availability Zone with a Client VPN endpoint that uses a
+   * Transit Gateway. You cannot specify both <code>SubnetId</code> and
+   * <code>AvailabilityZone</code>.</p>
+   */
+  inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
+  inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+  template <typename AvailabilityZoneT = Aws::String>
+  void SetAvailabilityZone(AvailabilityZoneT&& value) {
+    m_availabilityZoneHasBeenSet = true;
+    m_availabilityZone = std::forward<AvailabilityZoneT>(value);
+  }
+  template <typename AvailabilityZoneT = Aws::String>
+  AssociateClientVpnTargetNetworkRequest& WithAvailabilityZone(AvailabilityZoneT&& value) {
+    SetAvailabilityZone(std::forward<AvailabilityZoneT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Availability Zone ID for the Transit Gateway association. Required if
+   * when associating an Availability Zone with a Client VPN endpoint that uses a
+   * Transit Gateway. You cannot specify both <code>AvailabilityZone</code> and
+   * <code>AvailabilityZoneId</code>.</p>
+   */
+  inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
+  inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+  template <typename AvailabilityZoneIdT = Aws::String>
+  void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) {
+    m_availabilityZoneIdHasBeenSet = true;
+    m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value);
+  }
+  template <typename AvailabilityZoneIdT = Aws::String>
+  AssociateClientVpnTargetNetworkRequest& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) {
+    SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clientVpnEndpointId;
 
@@ -116,10 +160,16 @@ class AssociateClientVpnTargetNetworkRequest : public EC2Request {
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
   bool m_dryRun{false};
+
+  Aws::String m_availabilityZone;
+
+  Aws::String m_availabilityZoneId;
   bool m_clientVpnEndpointIdHasBeenSet = false;
   bool m_subnetIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_dryRunHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
 };
 
 }  // namespace Model

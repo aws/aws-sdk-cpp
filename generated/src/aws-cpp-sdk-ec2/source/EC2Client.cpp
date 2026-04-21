@@ -23,6 +23,7 @@
 #include <aws/ec2/model/AcceptAddressTransferRequest.h>
 #include <aws/ec2/model/AcceptCapacityReservationBillingOwnershipRequest.h>
 #include <aws/ec2/model/AcceptReservedInstancesExchangeQuoteRequest.h>
+#include <aws/ec2/model/AcceptTransitGatewayClientVpnAttachmentRequest.h>
 #include <aws/ec2/model/AcceptTransitGatewayMulticastDomainAssociationsRequest.h>
 #include <aws/ec2/model/AcceptTransitGatewayPeeringAttachmentRequest.h>
 #include <aws/ec2/model/AcceptTransitGatewayVpcAttachmentRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/ec2/model/CreateLaunchTemplateVersionRequest.h>
 #include <aws/ec2/model/CreateLocalGatewayRouteRequest.h>
 #include <aws/ec2/model/CreateLocalGatewayRouteTableRequest.h>
-#include <aws/ec2/model/CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -287,6 +287,13 @@ AcceptReservedInstancesExchangeQuoteOutcome EC2Client::AcceptReservedInstancesEx
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? AcceptReservedInstancesExchangeQuoteOutcome(result.GetResultWithOwnership())
                             : AcceptReservedInstancesExchangeQuoteOutcome(std::move(result.GetError()));
+}
+
+AcceptTransitGatewayClientVpnAttachmentOutcome EC2Client::AcceptTransitGatewayClientVpnAttachment(
+    const AcceptTransitGatewayClientVpnAttachmentRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptTransitGatewayClientVpnAttachmentOutcome(result.GetResultWithOwnership())
+                            : AcceptTransitGatewayClientVpnAttachmentOutcome(std::move(result.GetError()));
 }
 
 AcceptTransitGatewayMulticastDomainAssociationsOutcome EC2Client::AcceptTransitGatewayMulticastDomainAssociations(
@@ -887,11 +894,4 @@ CreateLocalGatewayRouteTableOutcome EC2Client::CreateLocalGatewayRouteTable(cons
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateLocalGatewayRouteTableOutcome(result.GetResultWithOwnership())
                             : CreateLocalGatewayRouteTableOutcome(std::move(result.GetError()));
-}
-
-CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome EC2Client::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation(
-    const CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome(result.GetResultWithOwnership())
-                            : CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome(std::move(result.GetError()));
 }
