@@ -564,6 +564,21 @@ class WaiterJmesPathCppCodeGeneratorTest {
         }
 
         @Test
+        void filterProjection_ListAsTruthyBoolean() {
+            // deployments field used as JmesPath truthy: this is primarily done because python by default has nullable lists
+            String expr = "length(services[?!(deployments && length(deployments) == `1` && runningCount == desiredCount)]) == `0`";
+            String code = gen(expr, PathComparator.BOOLEAN_EQUALS);
+            assertContains(code, "std::count_if");
+            assertContains(code, "!item.GetDeployments().empty()");
+            assertContains(code, "item.GetDeployments().size() == 1");
+            assertContains(code, "item.GetRunningCount() == item.GetDesiredCount()");
+            assertContains(code, "!");
+            assertContains(code, "== 0");
+            assertContains(code, "== expected.get<bool>();");
+            assertBalanced(expr, PathComparator.BOOLEAN_EQUALS);
+        }
+
+        @Test
         void andExpression_lengthWithFilterProjection() {
             String expr = "length(KinesisDataStreamDestinations) > `0` && "
                     + "length(KinesisDataStreamDestinations[?DestinationStatus == 'DISABLED' "
