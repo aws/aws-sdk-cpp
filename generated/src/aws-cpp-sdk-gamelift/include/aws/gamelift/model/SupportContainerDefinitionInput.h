@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/ContainerDependency.h>
 #include <aws/gamelift/model/ContainerEnvironment.h>
@@ -17,10 +18,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace GameLift {
 namespace Model {
@@ -44,9 +44,9 @@ namespace Model {
 class SupportContainerDefinitionInput {
  public:
   AWS_GAMELIFT_API SupportContainerDefinitionInput() = default;
-  AWS_GAMELIFT_API SupportContainerDefinitionInput(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API SupportContainerDefinitionInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_GAMELIFT_API SupportContainerDefinitionInput(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API SupportContainerDefinitionInput& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -231,13 +231,13 @@ class SupportContainerDefinitionInput {
    * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a>TotalMemoryLimitMebibytes<code/>
    * </p>
    */
-  inline int GetMemoryHardLimitMebibytes() const { return m_memoryHardLimitMebibytes; }
+  inline int64_t GetMemoryHardLimitMebibytes() const { return m_memoryHardLimitMebibytes; }
   inline bool MemoryHardLimitMebibytesHasBeenSet() const { return m_memoryHardLimitMebibytesHasBeenSet; }
-  inline void SetMemoryHardLimitMebibytes(int value) {
+  inline void SetMemoryHardLimitMebibytes(int64_t value) {
     m_memoryHardLimitMebibytesHasBeenSet = true;
     m_memoryHardLimitMebibytes = value;
   }
-  inline SupportContainerDefinitionInput& WithMemoryHardLimitMebibytes(int value) {
+  inline SupportContainerDefinitionInput& WithMemoryHardLimitMebibytes(int64_t value) {
     SetMemoryHardLimitMebibytes(value);
     return *this;
   }
@@ -304,7 +304,7 @@ class SupportContainerDefinitionInput {
 
   Aws::String m_imageUri;
 
-  int m_memoryHardLimitMebibytes{0};
+  int64_t m_memoryHardLimitMebibytes{0};
 
   ContainerPortConfiguration m_portConfiguration;
 

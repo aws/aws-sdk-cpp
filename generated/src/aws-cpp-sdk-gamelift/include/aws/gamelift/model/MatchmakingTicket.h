@@ -7,6 +7,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/GameSessionConnectionInfo.h>
 #include <aws/gamelift/model/MatchmakingConfigurationStatus.h>
@@ -16,10 +17,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace GameLift {
 namespace Model {
@@ -34,9 +34,9 @@ namespace Model {
 class MatchmakingTicket {
  public:
   AWS_GAMELIFT_API MatchmakingTicket() = default;
-  AWS_GAMELIFT_API MatchmakingTicket(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API MatchmakingTicket& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_GAMELIFT_API MatchmakingTicket(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API MatchmakingTicket& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -265,13 +265,13 @@ class MatchmakingTicket {
    * <p>Average amount of time (in seconds) that players are currently waiting for a
    * match. If there is not enough recent data, this property may be empty.</p>
    */
-  inline int GetEstimatedWaitTime() const { return m_estimatedWaitTime; }
+  inline int64_t GetEstimatedWaitTime() const { return m_estimatedWaitTime; }
   inline bool EstimatedWaitTimeHasBeenSet() const { return m_estimatedWaitTimeHasBeenSet; }
-  inline void SetEstimatedWaitTime(int value) {
+  inline void SetEstimatedWaitTime(int64_t value) {
     m_estimatedWaitTimeHasBeenSet = true;
     m_estimatedWaitTime = value;
   }
-  inline MatchmakingTicket& WithEstimatedWaitTime(int value) {
+  inline MatchmakingTicket& WithEstimatedWaitTime(int64_t value) {
     SetEstimatedWaitTime(value);
     return *this;
   }
@@ -297,7 +297,7 @@ class MatchmakingTicket {
 
   GameSessionConnectionInfo m_gameSessionConnectionInfo;
 
-  int m_estimatedWaitTime{0};
+  int64_t m_estimatedWaitTime{0};
   bool m_ticketIdHasBeenSet = false;
   bool m_configurationNameHasBeenSet = false;
   bool m_configurationArnHasBeenSet = false;

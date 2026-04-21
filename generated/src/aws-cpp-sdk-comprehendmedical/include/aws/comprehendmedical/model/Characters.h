@@ -5,13 +5,13 @@
 
 #pragma once
 #include <aws/comprehendmedical/ComprehendMedical_EXPORTS.h>
+#include <aws/crt/cbor/Cbor.h>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ComprehendMedical {
 namespace Model {
@@ -25,28 +25,28 @@ namespace Model {
 class Characters {
  public:
   AWS_COMPREHENDMEDICAL_API Characters() = default;
-  AWS_COMPREHENDMEDICAL_API Characters(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPREHENDMEDICAL_API Characters& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPREHENDMEDICAL_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPREHENDMEDICAL_API Characters(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPREHENDMEDICAL_API Characters& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPREHENDMEDICAL_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p> The number of characters present in the input text document as processed by
    * Amazon Comprehend Medical. </p>
    */
-  inline int GetOriginalTextCharacters() const { return m_originalTextCharacters; }
+  inline int64_t GetOriginalTextCharacters() const { return m_originalTextCharacters; }
   inline bool OriginalTextCharactersHasBeenSet() const { return m_originalTextCharactersHasBeenSet; }
-  inline void SetOriginalTextCharacters(int value) {
+  inline void SetOriginalTextCharacters(int64_t value) {
     m_originalTextCharactersHasBeenSet = true;
     m_originalTextCharacters = value;
   }
-  inline Characters& WithOriginalTextCharacters(int value) {
+  inline Characters& WithOriginalTextCharacters(int64_t value) {
     SetOriginalTextCharacters(value);
     return *this;
   }
   ///@}
  private:
-  int m_originalTextCharacters{0};
+  int64_t m_originalTextCharacters{0};
   bool m_originalTextCharactersHasBeenSet = false;
 };
 

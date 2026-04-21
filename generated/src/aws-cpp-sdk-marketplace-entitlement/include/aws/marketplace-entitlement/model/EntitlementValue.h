@@ -5,16 +5,16 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/marketplace-entitlement/MarketplaceEntitlementService_EXPORTS.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace MarketplaceEntitlementService {
 namespace Model {
@@ -28,22 +28,22 @@ namespace Model {
 class EntitlementValue {
  public:
   AWS_MARKETPLACEENTITLEMENTSERVICE_API EntitlementValue() = default;
-  AWS_MARKETPLACEENTITLEMENTSERVICE_API EntitlementValue(Aws::Utils::Json::JsonView jsonValue);
-  AWS_MARKETPLACEENTITLEMENTSERVICE_API EntitlementValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_MARKETPLACEENTITLEMENTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_MARKETPLACEENTITLEMENTSERVICE_API EntitlementValue(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_MARKETPLACEENTITLEMENTSERVICE_API EntitlementValue& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_MARKETPLACEENTITLEMENTSERVICE_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p>The IntegerValue field will be populated with an integer value when the
    * entitlement is an integer type. Otherwise, the field will not be set.</p>
    */
-  inline int GetIntegerValue() const { return m_integerValue; }
+  inline int64_t GetIntegerValue() const { return m_integerValue; }
   inline bool IntegerValueHasBeenSet() const { return m_integerValueHasBeenSet; }
-  inline void SetIntegerValue(int value) {
+  inline void SetIntegerValue(int64_t value) {
     m_integerValueHasBeenSet = true;
     m_integerValue = value;
   }
-  inline EntitlementValue& WithIntegerValue(int value) {
+  inline EntitlementValue& WithIntegerValue(int64_t value) {
     SetIntegerValue(value);
     return *this;
   }
@@ -102,7 +102,7 @@ class EntitlementValue {
   }
   ///@}
  private:
-  int m_integerValue{0};
+  int64_t m_integerValue{0};
 
   double m_doubleValue{0.0};
 

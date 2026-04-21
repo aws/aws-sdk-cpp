@@ -3,35 +3,49 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/model/CreateFleetLocationsRequest.h>
 
 #include <utility>
 
 using namespace Aws::GameLift::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String CreateFleetLocationsRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_fleetIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_locationsHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_fleetIdHasBeenSet) {
-    payload.WithString("FleetId", m_fleetId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FleetId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_fleetId.c_str()));
   }
 
   if (m_locationsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> locationsJsonList(m_locations.size());
-    for (unsigned locationsIndex = 0; locationsIndex < locationsJsonList.GetLength(); ++locationsIndex) {
-      locationsJsonList[locationsIndex].AsObject(m_locations[locationsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Locations"));
+    encoder.WriteArrayStart(m_locations.size());
+    for (const auto& item_0 : m_locations) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("Locations", std::move(locationsJsonList));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection CreateFleetLocationsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "GameLift.CreateFleetLocations"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

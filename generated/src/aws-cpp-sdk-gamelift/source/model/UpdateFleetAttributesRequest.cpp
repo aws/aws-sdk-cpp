@@ -3,56 +3,90 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/model/UpdateFleetAttributesRequest.h>
 
 #include <utility>
 
 using namespace Aws::GameLift::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String UpdateFleetAttributesRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_fleetIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_nameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_descriptionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_newGameSessionProtectionPolicyHasBeenSet) {
+    mapSize++;
+  }
+  if (m_resourceCreationLimitPolicyHasBeenSet) {
+    mapSize++;
+  }
+  if (m_metricGroupsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_anywhereConfigurationHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_fleetIdHasBeenSet) {
-    payload.WithString("FleetId", m_fleetId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FleetId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_fleetId.c_str()));
   }
 
   if (m_nameHasBeenSet) {
-    payload.WithString("Name", m_name);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Name"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_name.c_str()));
   }
 
   if (m_descriptionHasBeenSet) {
-    payload.WithString("Description", m_description);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Description"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_description.c_str()));
   }
 
   if (m_newGameSessionProtectionPolicyHasBeenSet) {
-    payload.WithString("NewGameSessionProtectionPolicy",
-                       ProtectionPolicyMapper::GetNameForProtectionPolicy(m_newGameSessionProtectionPolicy));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NewGameSessionProtectionPolicy"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(ProtectionPolicyMapper::GetNameForProtectionPolicy(m_newGameSessionProtectionPolicy).c_str()));
   }
 
   if (m_resourceCreationLimitPolicyHasBeenSet) {
-    payload.WithObject("ResourceCreationLimitPolicy", m_resourceCreationLimitPolicy.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ResourceCreationLimitPolicy"));
+    m_resourceCreationLimitPolicy.CborEncode(encoder);
   }
 
   if (m_metricGroupsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> metricGroupsJsonList(m_metricGroups.size());
-    for (unsigned metricGroupsIndex = 0; metricGroupsIndex < metricGroupsJsonList.GetLength(); ++metricGroupsIndex) {
-      metricGroupsJsonList[metricGroupsIndex].AsString(m_metricGroups[metricGroupsIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MetricGroups"));
+    encoder.WriteArrayStart(m_metricGroups.size());
+    for (const auto& item_0 : m_metricGroups) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("MetricGroups", std::move(metricGroupsJsonList));
   }
 
   if (m_anywhereConfigurationHasBeenSet) {
-    payload.WithObject("AnywhereConfiguration", m_anywhereConfiguration.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AnywhereConfiguration"));
+    m_anywhereConfiguration.CborEncode(encoder);
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection UpdateFleetAttributesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "GameLift.UpdateFleetAttributes"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

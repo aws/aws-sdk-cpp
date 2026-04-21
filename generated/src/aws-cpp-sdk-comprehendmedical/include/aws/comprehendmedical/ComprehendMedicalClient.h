@@ -11,7 +11,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 namespace Aws {
 namespace ComprehendMedical {
@@ -24,12 +24,12 @@ namespace ComprehendMedical {
  * href="https://docs.aws.amazon.com/comprehend-medical/latest/dev/comprehendmedical-quotas.html">Guidelines
  * and quotas</a> in the <i>Amazon Comprehend Medical Developer Guide</i>.</p>
  */
-class AWS_COMPREHENDMEDICAL_API ComprehendMedicalClient : public Aws::Client::AWSJsonClient,
+class AWS_COMPREHENDMEDICAL_API ComprehendMedicalClient : public Aws::Client::AWSRpcV2CborClient,
                                                           public Aws::Client::ClientWithAsyncTemplateMethods<ComprehendMedicalClient>,
                                                           public ComprehendMedicalPaginationBase<ComprehendMedicalClient>,
                                                           public ComprehendMedicalWaiter<ComprehendMedicalClient> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
+  typedef Aws::Client::AWSRpcV2CborClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
 

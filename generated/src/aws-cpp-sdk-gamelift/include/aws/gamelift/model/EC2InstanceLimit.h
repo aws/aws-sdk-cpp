@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/EC2InstanceType.h>
 
@@ -12,10 +13,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace GameLift {
 namespace Model {
@@ -33,9 +33,9 @@ namespace Model {
 class EC2InstanceLimit {
  public:
   AWS_GAMELIFT_API EC2InstanceLimit() = default;
-  AWS_GAMELIFT_API EC2InstanceLimit(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API EC2InstanceLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_GAMELIFT_API EC2InstanceLimit(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API EC2InstanceLimit& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -60,13 +60,13 @@ class EC2InstanceLimit {
    * <p>The number of instances for the specified type and location that are
    * currently being used by the Amazon Web Services account. </p>
    */
-  inline int GetCurrentInstances() const { return m_currentInstances; }
+  inline int64_t GetCurrentInstances() const { return m_currentInstances; }
   inline bool CurrentInstancesHasBeenSet() const { return m_currentInstancesHasBeenSet; }
-  inline void SetCurrentInstances(int value) {
+  inline void SetCurrentInstances(int64_t value) {
     m_currentInstancesHasBeenSet = true;
     m_currentInstances = value;
   }
-  inline EC2InstanceLimit& WithCurrentInstances(int value) {
+  inline EC2InstanceLimit& WithCurrentInstances(int64_t value) {
     SetCurrentInstances(value);
     return *this;
   }
@@ -77,13 +77,13 @@ class EC2InstanceLimit {
    * <p>The number of instances that is allowed for the specified instance type and
    * location.</p>
    */
-  inline int GetInstanceLimit() const { return m_instanceLimit; }
+  inline int64_t GetInstanceLimit() const { return m_instanceLimit; }
   inline bool InstanceLimitHasBeenSet() const { return m_instanceLimitHasBeenSet; }
-  inline void SetInstanceLimit(int value) {
+  inline void SetInstanceLimit(int64_t value) {
     m_instanceLimitHasBeenSet = true;
     m_instanceLimit = value;
   }
-  inline EC2InstanceLimit& WithInstanceLimit(int value) {
+  inline EC2InstanceLimit& WithInstanceLimit(int64_t value) {
     SetInstanceLimit(value);
     return *this;
   }
@@ -109,9 +109,9 @@ class EC2InstanceLimit {
  private:
   EC2InstanceType m_eC2InstanceType{EC2InstanceType::NOT_SET};
 
-  int m_currentInstances{0};
+  int64_t m_currentInstances{0};
 
-  int m_instanceLimit{0};
+  int64_t m_instanceLimit{0};
 
   Aws::String m_location;
   bool m_eC2InstanceTypeHasBeenSet = false;

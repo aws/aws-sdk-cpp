@@ -6,15 +6,15 @@
 #pragma once
 #include <aws/compute-optimizer-automation/ComputeOptimizerAutomation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ComputeOptimizerAutomation {
 namespace Model {
@@ -27,9 +27,9 @@ namespace Model {
 class EbsVolumeConfiguration {
  public:
   AWS_COMPUTEOPTIMIZERAUTOMATION_API EbsVolumeConfiguration() = default;
-  AWS_COMPUTEOPTIMIZERAUTOMATION_API EbsVolumeConfiguration(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZERAUTOMATION_API EbsVolumeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZERAUTOMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPUTEOPTIMIZERAUTOMATION_API EbsVolumeConfiguration(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZERAUTOMATION_API EbsVolumeConfiguration& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZERAUTOMATION_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -53,13 +53,13 @@ class EbsVolumeConfiguration {
   /**
    * <p>The size of the EBS volume in gibibytes (GiB).</p>
    */
-  inline int GetSizeInGib() const { return m_sizeInGib; }
+  inline int64_t GetSizeInGib() const { return m_sizeInGib; }
   inline bool SizeInGibHasBeenSet() const { return m_sizeInGibHasBeenSet; }
-  inline void SetSizeInGib(int value) {
+  inline void SetSizeInGib(int64_t value) {
     m_sizeInGibHasBeenSet = true;
     m_sizeInGib = value;
   }
-  inline EbsVolumeConfiguration& WithSizeInGib(int value) {
+  inline EbsVolumeConfiguration& WithSizeInGib(int64_t value) {
     SetSizeInGib(value);
     return *this;
   }
@@ -70,13 +70,13 @@ class EbsVolumeConfiguration {
    * <p>The number of I/O operations per second (IOPS) provisioned for the
    * volume.</p>
    */
-  inline int GetIops() const { return m_iops; }
+  inline int64_t GetIops() const { return m_iops; }
   inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
-  inline void SetIops(int value) {
+  inline void SetIops(int64_t value) {
     m_iopsHasBeenSet = true;
     m_iops = value;
   }
-  inline EbsVolumeConfiguration& WithIops(int value) {
+  inline EbsVolumeConfiguration& WithIops(int64_t value) {
     SetIops(value);
     return *this;
   }
@@ -87,13 +87,13 @@ class EbsVolumeConfiguration {
    * <p>The throughput in MiB/s provisioned for the volume (applicable to gp3, io1,
    * and io2bx volumes).</p>
    */
-  inline int GetThroughput() const { return m_throughput; }
+  inline int64_t GetThroughput() const { return m_throughput; }
   inline bool ThroughputHasBeenSet() const { return m_throughputHasBeenSet; }
-  inline void SetThroughput(int value) {
+  inline void SetThroughput(int64_t value) {
     m_throughputHasBeenSet = true;
     m_throughput = value;
   }
-  inline EbsVolumeConfiguration& WithThroughput(int value) {
+  inline EbsVolumeConfiguration& WithThroughput(int64_t value) {
     SetThroughput(value);
     return *this;
   }
@@ -101,11 +101,11 @@ class EbsVolumeConfiguration {
  private:
   Aws::String m_type;
 
-  int m_sizeInGib{0};
+  int64_t m_sizeInGib{0};
 
-  int m_iops{0};
+  int64_t m_iops{0};
 
-  int m_throughput{0};
+  int64_t m_throughput{0};
   bool m_typeHasBeenSet = false;
   bool m_sizeInGibHasBeenSet = false;
   bool m_iopsHasBeenSet = false;

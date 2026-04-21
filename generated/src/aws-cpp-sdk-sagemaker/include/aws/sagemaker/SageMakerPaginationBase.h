@@ -9,6 +9,9 @@
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/sagemaker/model/CreateHubContentPresignedUrlsPaginationTraits.h>
 #include <aws/sagemaker/model/DescribeTrainingPlanExtensionHistoryPaginationTraits.h>
+#include <aws/sagemaker/model/ListAIBenchmarkJobsPaginationTraits.h>
+#include <aws/sagemaker/model/ListAIRecommendationJobsPaginationTraits.h>
+#include <aws/sagemaker/model/ListAIWorkloadConfigsPaginationTraits.h>
 #include <aws/sagemaker/model/ListActionsPaginationTraits.h>
 #include <aws/sagemaker/model/ListAlgorithmsPaginationTraits.h>
 #include <aws/sagemaker/model/ListAliasesPaginationTraits.h>
@@ -137,6 +140,42 @@ class SageMakerPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListActionsRequest,
                                              Pagination::ListActionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
+  }
+
+  /**
+   * Create a paginator for ListAIBenchmarkJobs operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAIBenchmarkJobsRequest,
+                                    Pagination::ListAIBenchmarkJobsPaginationTraits<DerivedClient>>
+  ListAIBenchmarkJobsPaginator(const Model::ListAIBenchmarkJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAIBenchmarkJobsRequest,
+                                             Pagination::ListAIBenchmarkJobsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListAIRecommendationJobs operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAIRecommendationJobsRequest,
+                                    Pagination::ListAIRecommendationJobsPaginationTraits<DerivedClient>>
+  ListAIRecommendationJobsPaginator(const Model::ListAIRecommendationJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAIRecommendationJobsRequest,
+                                             Pagination::ListAIRecommendationJobsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListAIWorkloadConfigs operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAIWorkloadConfigsRequest,
+                                    Pagination::ListAIWorkloadConfigsPaginationTraits<DerivedClient>>
+  ListAIWorkloadConfigsPaginator(const Model::ListAIWorkloadConfigsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAIWorkloadConfigsRequest,
+                                             Pagination::ListAIWorkloadConfigsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**

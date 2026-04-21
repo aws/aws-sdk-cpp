@@ -3,48 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/marketplace-entitlement/model/GetEntitlementsRequest.h>
 
 #include <utility>
 
 using namespace Aws::MarketplaceEntitlementService::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String GetEntitlementsRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_productCodeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_filterHasBeenSet) {
+    mapSize++;
+  }
+  if (m_nextTokenHasBeenSet) {
+    mapSize++;
+  }
+  if (m_maxResultsHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_productCodeHasBeenSet) {
-    payload.WithString("ProductCode", m_productCode);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ProductCode"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_productCode.c_str()));
   }
 
   if (m_filterHasBeenSet) {
-    JsonValue filterJsonMap;
-    for (auto& filterItem : m_filter) {
-      Aws::Utils::Array<JsonValue> filterValueListJsonList(filterItem.second.size());
-      for (unsigned filterValueListIndex = 0; filterValueListIndex < filterValueListJsonList.GetLength(); ++filterValueListIndex) {
-        filterValueListJsonList[filterValueListIndex].AsString(filterItem.second[filterValueListIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Filter"));
+    encoder.WriteMapStart(m_filter.size());
+    for (const auto& item_0 : m_filter) {
+      encoder.WriteText(
+          Aws::Crt::ByteCursorFromCString(GetEntitlementFilterNameMapper::GetNameForGetEntitlementFilterName(item_0.first).c_str()));
+      encoder.WriteArrayStart(item_0.second.size());
+      for (const auto& item_1 : item_0.second) {
+        encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_1.c_str()));
       }
-      filterJsonMap.WithArray(GetEntitlementFilterNameMapper::GetNameForGetEntitlementFilterName(filterItem.first),
-                              std::move(filterValueListJsonList));
     }
-    payload.WithObject("Filter", std::move(filterJsonMap));
   }
 
   if (m_nextTokenHasBeenSet) {
-    payload.WithString("NextToken", m_nextToken);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NextToken"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_nextToken.c_str()));
   }
 
   if (m_maxResultsHasBeenSet) {
-    payload.WithInteger("MaxResults", m_maxResults);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MaxResults"));
+    (m_maxResults >= 0) ? encoder.WriteUInt(m_maxResults) : encoder.WriteNegInt(m_maxResults);
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection GetEntitlementsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSMPEntitlementService.GetEntitlements"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

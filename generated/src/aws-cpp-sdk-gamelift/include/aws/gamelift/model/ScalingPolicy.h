@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/ComparisonOperatorType.h>
 #include <aws/gamelift/model/LocationUpdateStatus.h>
@@ -18,10 +19,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace GameLift {
 namespace Model {
@@ -36,9 +36,9 @@ namespace Model {
 class ScalingPolicy {
  public:
   AWS_GAMELIFT_API ScalingPolicy() = default;
-  AWS_GAMELIFT_API ScalingPolicy(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API ScalingPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_GAMELIFT_API ScalingPolicy(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API ScalingPolicy& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -131,13 +131,13 @@ class ScalingPolicy {
   /**
    * <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
    */
-  inline int GetScalingAdjustment() const { return m_scalingAdjustment; }
+  inline int64_t GetScalingAdjustment() const { return m_scalingAdjustment; }
   inline bool ScalingAdjustmentHasBeenSet() const { return m_scalingAdjustmentHasBeenSet; }
-  inline void SetScalingAdjustment(int value) {
+  inline void SetScalingAdjustment(int64_t value) {
     m_scalingAdjustmentHasBeenSet = true;
     m_scalingAdjustment = value;
   }
-  inline ScalingPolicy& WithScalingAdjustment(int value) {
+  inline ScalingPolicy& WithScalingAdjustment(int64_t value) {
     SetScalingAdjustment(value);
     return *this;
   }
@@ -204,13 +204,13 @@ class ScalingPolicy {
    * <p>Length of time (in minutes) the metric must be at or beyond the threshold
    * before a scaling event is triggered.</p>
    */
-  inline int GetEvaluationPeriods() const { return m_evaluationPeriods; }
+  inline int64_t GetEvaluationPeriods() const { return m_evaluationPeriods; }
   inline bool EvaluationPeriodsHasBeenSet() const { return m_evaluationPeriodsHasBeenSet; }
-  inline void SetEvaluationPeriods(int value) {
+  inline void SetEvaluationPeriods(int64_t value) {
     m_evaluationPeriodsHasBeenSet = true;
     m_evaluationPeriods = value;
   }
-  inline ScalingPolicy& WithEvaluationPeriods(int value) {
+  inline ScalingPolicy& WithEvaluationPeriods(int64_t value) {
     SetEvaluationPeriods(value);
     return *this;
   }
@@ -340,7 +340,7 @@ class ScalingPolicy {
 
   ScalingStatusType m_status{ScalingStatusType::NOT_SET};
 
-  int m_scalingAdjustment{0};
+  int64_t m_scalingAdjustment{0};
 
   ScalingAdjustmentType m_scalingAdjustmentType{ScalingAdjustmentType::NOT_SET};
 
@@ -348,7 +348,7 @@ class ScalingPolicy {
 
   double m_threshold{0.0};
 
-  int m_evaluationPeriods{0};
+  int64_t m_evaluationPeriods{0};
 
   MetricName m_metricName{MetricName::NOT_SET};
 

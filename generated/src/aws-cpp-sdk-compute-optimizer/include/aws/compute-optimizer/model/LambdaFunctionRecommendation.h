@@ -15,15 +15,15 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ComputeOptimizer {
 namespace Model {
@@ -36,9 +36,9 @@ namespace Model {
 class LambdaFunctionRecommendation {
  public:
   AWS_COMPUTEOPTIMIZER_API LambdaFunctionRecommendation() = default;
-  AWS_COMPUTEOPTIMIZER_API LambdaFunctionRecommendation(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API LambdaFunctionRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPUTEOPTIMIZER_API LambdaFunctionRecommendation(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API LambdaFunctionRecommendation& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -98,13 +98,13 @@ class LambdaFunctionRecommendation {
   /**
    * <p>The amount of memory, in MB, that's allocated to the current function.</p>
    */
-  inline int GetCurrentMemorySize() const { return m_currentMemorySize; }
+  inline int64_t GetCurrentMemorySize() const { return m_currentMemorySize; }
   inline bool CurrentMemorySizeHasBeenSet() const { return m_currentMemorySizeHasBeenSet; }
-  inline void SetCurrentMemorySize(int value) {
+  inline void SetCurrentMemorySize(int64_t value) {
     m_currentMemorySizeHasBeenSet = true;
     m_currentMemorySize = value;
   }
-  inline LambdaFunctionRecommendation& WithCurrentMemorySize(int value) {
+  inline LambdaFunctionRecommendation& WithCurrentMemorySize(int64_t value) {
     SetCurrentMemorySize(value);
     return *this;
   }
@@ -364,7 +364,7 @@ class LambdaFunctionRecommendation {
 
   Aws::String m_accountId;
 
-  int m_currentMemorySize{0};
+  int64_t m_currentMemorySize{0};
 
   long long m_numberOfInvocations{0};
 

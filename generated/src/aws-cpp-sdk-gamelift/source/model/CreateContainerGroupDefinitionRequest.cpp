@@ -3,69 +3,110 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/model/CreateContainerGroupDefinitionRequest.h>
 
 #include <utility>
 
 using namespace Aws::GameLift::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String CreateContainerGroupDefinitionRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_nameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_containerGroupTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_totalMemoryLimitMebibytesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_totalVcpuLimitHasBeenSet) {
+    mapSize++;
+  }
+  if (m_gameServerContainerDefinitionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_supportContainerDefinitionsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_operatingSystemHasBeenSet) {
+    mapSize++;
+  }
+  if (m_versionDescriptionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagsHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_nameHasBeenSet) {
-    payload.WithString("Name", m_name);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Name"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_name.c_str()));
   }
 
   if (m_containerGroupTypeHasBeenSet) {
-    payload.WithString("ContainerGroupType", ContainerGroupTypeMapper::GetNameForContainerGroupType(m_containerGroupType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ContainerGroupType"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(ContainerGroupTypeMapper::GetNameForContainerGroupType(m_containerGroupType).c_str()));
   }
 
   if (m_totalMemoryLimitMebibytesHasBeenSet) {
-    payload.WithInteger("TotalMemoryLimitMebibytes", m_totalMemoryLimitMebibytes);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("TotalMemoryLimitMebibytes"));
+    (m_totalMemoryLimitMebibytes >= 0) ? encoder.WriteUInt(m_totalMemoryLimitMebibytes) : encoder.WriteNegInt(m_totalMemoryLimitMebibytes);
   }
 
   if (m_totalVcpuLimitHasBeenSet) {
-    payload.WithDouble("TotalVcpuLimit", m_totalVcpuLimit);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("TotalVcpuLimit"));
+    encoder.WriteFloat(m_totalVcpuLimit);
   }
 
   if (m_gameServerContainerDefinitionHasBeenSet) {
-    payload.WithObject("GameServerContainerDefinition", m_gameServerContainerDefinition.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("GameServerContainerDefinition"));
+    m_gameServerContainerDefinition.CborEncode(encoder);
   }
 
   if (m_supportContainerDefinitionsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> supportContainerDefinitionsJsonList(m_supportContainerDefinitions.size());
-    for (unsigned supportContainerDefinitionsIndex = 0; supportContainerDefinitionsIndex < supportContainerDefinitionsJsonList.GetLength();
-         ++supportContainerDefinitionsIndex) {
-      supportContainerDefinitionsJsonList[supportContainerDefinitionsIndex].AsObject(
-          m_supportContainerDefinitions[supportContainerDefinitionsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SupportContainerDefinitions"));
+    encoder.WriteArrayStart(m_supportContainerDefinitions.size());
+    for (const auto& item_0 : m_supportContainerDefinitions) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("SupportContainerDefinitions", std::move(supportContainerDefinitionsJsonList));
   }
 
   if (m_operatingSystemHasBeenSet) {
-    payload.WithString("OperatingSystem", ContainerOperatingSystemMapper::GetNameForContainerOperatingSystem(m_operatingSystem));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("OperatingSystem"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(ContainerOperatingSystemMapper::GetNameForContainerOperatingSystem(m_operatingSystem).c_str()));
   }
 
   if (m_versionDescriptionHasBeenSet) {
-    payload.WithString("VersionDescription", m_versionDescription);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("VersionDescription"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_versionDescription.c_str()));
   }
 
   if (m_tagsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Tags"));
+    encoder.WriteArrayStart(m_tags.size());
+    for (const auto& item_0 : m_tags) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("Tags", std::move(tagsJsonList));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection CreateContainerGroupDefinitionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "GameLift.CreateContainerGroupDefinition"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

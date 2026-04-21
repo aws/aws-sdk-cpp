@@ -6,33 +6,32 @@
 #pragma once
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/compute-optimizer/model/Currency.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ComputeOptimizer {
 namespace Model {
 
 /**
  * <p> An object that describes the estimated monthly savings possible by adopting
- * Compute Optimizer’s Amazon EC2 Auto Scaling group recommendations. This is based
- * on the Savings Plans and Reserved Instances discounts. </p><p><h3>See Also:</h3>
- * <a
+ * Compute Optimizer’s Auto Scaling group recommendations. This is based on the
+ * Savings Plans and Reserved Instances discounts. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/AutoScalingGroupEstimatedMonthlySavings">AWS
  * API Reference</a></p>
  */
 class AutoScalingGroupEstimatedMonthlySavings {
  public:
   AWS_COMPUTEOPTIMIZER_API AutoScalingGroupEstimatedMonthlySavings() = default;
-  AWS_COMPUTEOPTIMIZER_API AutoScalingGroupEstimatedMonthlySavings(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API AutoScalingGroupEstimatedMonthlySavings& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPUTEOPTIMIZER_API AutoScalingGroupEstimatedMonthlySavings(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API AutoScalingGroupEstimatedMonthlySavings& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

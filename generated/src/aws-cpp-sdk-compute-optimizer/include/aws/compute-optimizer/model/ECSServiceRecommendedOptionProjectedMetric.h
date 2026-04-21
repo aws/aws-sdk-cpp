@@ -7,15 +7,15 @@
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/compute-optimizer/model/ECSServiceProjectedMetric.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ComputeOptimizer {
 namespace Model {
@@ -31,21 +31,22 @@ namespace Model {
 class ECSServiceRecommendedOptionProjectedMetric {
  public:
   AWS_COMPUTEOPTIMIZER_API ECSServiceRecommendedOptionProjectedMetric() = default;
-  AWS_COMPUTEOPTIMIZER_API ECSServiceRecommendedOptionProjectedMetric(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API ECSServiceRecommendedOptionProjectedMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPUTEOPTIMIZER_API ECSServiceRecommendedOptionProjectedMetric(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API ECSServiceRecommendedOptionProjectedMetric& operator=(
+      const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p> The recommended CPU size for the Amazon ECS service. </p>
    */
-  inline int GetRecommendedCpuUnits() const { return m_recommendedCpuUnits; }
+  inline int64_t GetRecommendedCpuUnits() const { return m_recommendedCpuUnits; }
   inline bool RecommendedCpuUnitsHasBeenSet() const { return m_recommendedCpuUnitsHasBeenSet; }
-  inline void SetRecommendedCpuUnits(int value) {
+  inline void SetRecommendedCpuUnits(int64_t value) {
     m_recommendedCpuUnitsHasBeenSet = true;
     m_recommendedCpuUnits = value;
   }
-  inline ECSServiceRecommendedOptionProjectedMetric& WithRecommendedCpuUnits(int value) {
+  inline ECSServiceRecommendedOptionProjectedMetric& WithRecommendedCpuUnits(int64_t value) {
     SetRecommendedCpuUnits(value);
     return *this;
   }
@@ -55,13 +56,13 @@ class ECSServiceRecommendedOptionProjectedMetric {
   /**
    * <p> The recommended memory size for the Amazon ECS service. </p>
    */
-  inline int GetRecommendedMemorySize() const { return m_recommendedMemorySize; }
+  inline int64_t GetRecommendedMemorySize() const { return m_recommendedMemorySize; }
   inline bool RecommendedMemorySizeHasBeenSet() const { return m_recommendedMemorySizeHasBeenSet; }
-  inline void SetRecommendedMemorySize(int value) {
+  inline void SetRecommendedMemorySize(int64_t value) {
     m_recommendedMemorySizeHasBeenSet = true;
     m_recommendedMemorySize = value;
   }
-  inline ECSServiceRecommendedOptionProjectedMetric& WithRecommendedMemorySize(int value) {
+  inline ECSServiceRecommendedOptionProjectedMetric& WithRecommendedMemorySize(int64_t value) {
     SetRecommendedMemorySize(value);
     return *this;
   }
@@ -91,9 +92,9 @@ class ECSServiceRecommendedOptionProjectedMetric {
   }
   ///@}
  private:
-  int m_recommendedCpuUnits{0};
+  int64_t m_recommendedCpuUnits{0};
 
-  int m_recommendedMemorySize{0};
+  int64_t m_recommendedMemorySize{0};
 
   Aws::Vector<ECSServiceProjectedMetric> m_projectedMetrics;
   bool m_recommendedCpuUnitsHasBeenSet = false;

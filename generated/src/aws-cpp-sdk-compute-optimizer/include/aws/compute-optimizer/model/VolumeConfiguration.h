@@ -6,15 +6,15 @@
 #pragma once
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ComputeOptimizer {
 namespace Model {
@@ -28,9 +28,9 @@ namespace Model {
 class VolumeConfiguration {
  public:
   AWS_COMPUTEOPTIMIZER_API VolumeConfiguration() = default;
-  AWS_COMPUTEOPTIMIZER_API VolumeConfiguration(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API VolumeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPUTEOPTIMIZER_API VolumeConfiguration(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API VolumeConfiguration& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -59,13 +59,13 @@ class VolumeConfiguration {
   /**
    * <p>The size of the volume, in GiB.</p>
    */
-  inline int GetVolumeSize() const { return m_volumeSize; }
+  inline int64_t GetVolumeSize() const { return m_volumeSize; }
   inline bool VolumeSizeHasBeenSet() const { return m_volumeSizeHasBeenSet; }
-  inline void SetVolumeSize(int value) {
+  inline void SetVolumeSize(int64_t value) {
     m_volumeSizeHasBeenSet = true;
     m_volumeSize = value;
   }
-  inline VolumeConfiguration& WithVolumeSize(int value) {
+  inline VolumeConfiguration& WithVolumeSize(int64_t value) {
     SetVolumeSize(value);
     return *this;
   }
@@ -75,13 +75,13 @@ class VolumeConfiguration {
   /**
    * <p>The baseline IOPS of the volume.</p>
    */
-  inline int GetVolumeBaselineIOPS() const { return m_volumeBaselineIOPS; }
+  inline int64_t GetVolumeBaselineIOPS() const { return m_volumeBaselineIOPS; }
   inline bool VolumeBaselineIOPSHasBeenSet() const { return m_volumeBaselineIOPSHasBeenSet; }
-  inline void SetVolumeBaselineIOPS(int value) {
+  inline void SetVolumeBaselineIOPS(int64_t value) {
     m_volumeBaselineIOPSHasBeenSet = true;
     m_volumeBaselineIOPS = value;
   }
-  inline VolumeConfiguration& WithVolumeBaselineIOPS(int value) {
+  inline VolumeConfiguration& WithVolumeBaselineIOPS(int64_t value) {
     SetVolumeBaselineIOPS(value);
     return *this;
   }
@@ -91,13 +91,13 @@ class VolumeConfiguration {
   /**
    * <p>The burst IOPS of the volume.</p>
    */
-  inline int GetVolumeBurstIOPS() const { return m_volumeBurstIOPS; }
+  inline int64_t GetVolumeBurstIOPS() const { return m_volumeBurstIOPS; }
   inline bool VolumeBurstIOPSHasBeenSet() const { return m_volumeBurstIOPSHasBeenSet; }
-  inline void SetVolumeBurstIOPS(int value) {
+  inline void SetVolumeBurstIOPS(int64_t value) {
     m_volumeBurstIOPSHasBeenSet = true;
     m_volumeBurstIOPS = value;
   }
-  inline VolumeConfiguration& WithVolumeBurstIOPS(int value) {
+  inline VolumeConfiguration& WithVolumeBurstIOPS(int64_t value) {
     SetVolumeBurstIOPS(value);
     return *this;
   }
@@ -107,13 +107,13 @@ class VolumeConfiguration {
   /**
    * <p>The baseline throughput of the volume.</p>
    */
-  inline int GetVolumeBaselineThroughput() const { return m_volumeBaselineThroughput; }
+  inline int64_t GetVolumeBaselineThroughput() const { return m_volumeBaselineThroughput; }
   inline bool VolumeBaselineThroughputHasBeenSet() const { return m_volumeBaselineThroughputHasBeenSet; }
-  inline void SetVolumeBaselineThroughput(int value) {
+  inline void SetVolumeBaselineThroughput(int64_t value) {
     m_volumeBaselineThroughputHasBeenSet = true;
     m_volumeBaselineThroughput = value;
   }
-  inline VolumeConfiguration& WithVolumeBaselineThroughput(int value) {
+  inline VolumeConfiguration& WithVolumeBaselineThroughput(int64_t value) {
     SetVolumeBaselineThroughput(value);
     return *this;
   }
@@ -123,13 +123,13 @@ class VolumeConfiguration {
   /**
    * <p>The burst throughput of the volume.</p>
    */
-  inline int GetVolumeBurstThroughput() const { return m_volumeBurstThroughput; }
+  inline int64_t GetVolumeBurstThroughput() const { return m_volumeBurstThroughput; }
   inline bool VolumeBurstThroughputHasBeenSet() const { return m_volumeBurstThroughputHasBeenSet; }
-  inline void SetVolumeBurstThroughput(int value) {
+  inline void SetVolumeBurstThroughput(int64_t value) {
     m_volumeBurstThroughputHasBeenSet = true;
     m_volumeBurstThroughput = value;
   }
-  inline VolumeConfiguration& WithVolumeBurstThroughput(int value) {
+  inline VolumeConfiguration& WithVolumeBurstThroughput(int64_t value) {
     SetVolumeBurstThroughput(value);
     return *this;
   }
@@ -153,15 +153,15 @@ class VolumeConfiguration {
  private:
   Aws::String m_volumeType;
 
-  int m_volumeSize{0};
+  int64_t m_volumeSize{0};
 
-  int m_volumeBaselineIOPS{0};
+  int64_t m_volumeBaselineIOPS{0};
 
-  int m_volumeBurstIOPS{0};
+  int64_t m_volumeBurstIOPS{0};
 
-  int m_volumeBaselineThroughput{0};
+  int64_t m_volumeBaselineThroughput{0};
 
-  int m_volumeBurstThroughput{0};
+  int64_t m_volumeBurstThroughput{0};
 
   bool m_rootVolume{false};
   bool m_volumeTypeHasBeenSet = false;

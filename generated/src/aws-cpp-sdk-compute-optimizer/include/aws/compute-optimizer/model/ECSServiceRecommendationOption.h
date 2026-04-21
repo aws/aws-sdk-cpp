@@ -10,15 +10,15 @@
 #include <aws/compute-optimizer/model/ECSServiceProjectedUtilizationMetric.h>
 #include <aws/compute-optimizer/model/SavingsOpportunity.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ComputeOptimizer {
 namespace Model {
@@ -32,21 +32,21 @@ namespace Model {
 class ECSServiceRecommendationOption {
  public:
   AWS_COMPUTEOPTIMIZER_API ECSServiceRecommendationOption() = default;
-  AWS_COMPUTEOPTIMIZER_API ECSServiceRecommendationOption(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API ECSServiceRecommendationOption& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPUTEOPTIMIZER_API ECSServiceRecommendationOption(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API ECSServiceRecommendationOption& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p> The memory size of the Amazon ECS service recommendation option. </p>
    */
-  inline int GetMemory() const { return m_memory; }
+  inline int64_t GetMemory() const { return m_memory; }
   inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
-  inline void SetMemory(int value) {
+  inline void SetMemory(int64_t value) {
     m_memoryHasBeenSet = true;
     m_memory = value;
   }
-  inline ECSServiceRecommendationOption& WithMemory(int value) {
+  inline ECSServiceRecommendationOption& WithMemory(int64_t value) {
     SetMemory(value);
     return *this;
   }
@@ -56,13 +56,13 @@ class ECSServiceRecommendationOption {
   /**
    * <p> The CPU size of the Amazon ECS service recommendation option. </p>
    */
-  inline int GetCpu() const { return m_cpu; }
+  inline int64_t GetCpu() const { return m_cpu; }
   inline bool CpuHasBeenSet() const { return m_cpuHasBeenSet; }
-  inline void SetCpu(int value) {
+  inline void SetCpu(int64_t value) {
     m_cpuHasBeenSet = true;
     m_cpu = value;
   }
-  inline ECSServiceRecommendationOption& WithCpu(int value) {
+  inline ECSServiceRecommendationOption& WithCpu(int64_t value) {
     SetCpu(value);
     return *this;
   }
@@ -159,9 +159,9 @@ class ECSServiceRecommendationOption {
   }
   ///@}
  private:
-  int m_memory{0};
+  int64_t m_memory{0};
 
-  int m_cpu{0};
+  int64_t m_cpu{0};
 
   SavingsOpportunity m_savingsOpportunity;
 

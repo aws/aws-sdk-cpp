@@ -9,17 +9,17 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
-
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
 namespace Utils {
-namespace Json {
-class JsonValue;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ComputeOptimizerAutomation {
 namespace Model {
@@ -27,9 +27,9 @@ class ListAutomationEventSummariesResult {
  public:
   AWS_COMPUTEOPTIMIZERAUTOMATION_API ListAutomationEventSummariesResult() = default;
   AWS_COMPUTEOPTIMIZERAUTOMATION_API ListAutomationEventSummariesResult(
-      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+      const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
   AWS_COMPUTEOPTIMIZERAUTOMATION_API ListAutomationEventSummariesResult& operator=(
-      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+      const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
   /**

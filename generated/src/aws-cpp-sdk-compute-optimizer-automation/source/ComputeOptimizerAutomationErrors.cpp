@@ -32,7 +32,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ComputeOptimizerAutomationErrors::SERVICE_QUOTA_EXCEEDED),
                                 RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INTERNAL_SERVER_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ComputeOptimizerAutomationErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ComputeOptimizerAutomationErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
   } else if (hashCode == FORBIDDEN_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ComputeOptimizerAutomationErrors::FORBIDDEN), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == IDEMPOTENT_PARAMETER_MISMATCH_HASH) {

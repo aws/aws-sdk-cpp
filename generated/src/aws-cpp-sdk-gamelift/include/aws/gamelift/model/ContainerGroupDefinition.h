@@ -7,6 +7,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/ContainerGroupDefinitionStatus.h>
 #include <aws/gamelift/model/ContainerGroupType.h>
@@ -18,10 +19,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace GameLift {
 namespace Model {
@@ -44,9 +44,9 @@ namespace Model {
 class ContainerGroupDefinition {
  public:
   AWS_GAMELIFT_API ContainerGroupDefinition() = default;
-  AWS_GAMELIFT_API ContainerGroupDefinition(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API ContainerGroupDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_GAMELIFT_API ContainerGroupDefinition(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API ContainerGroupDefinition& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -160,13 +160,13 @@ class ContainerGroupDefinition {
    * containers have limits, this total value must be greater than any individual
    * container's memory limit.</p>
    */
-  inline int GetTotalMemoryLimitMebibytes() const { return m_totalMemoryLimitMebibytes; }
+  inline int64_t GetTotalMemoryLimitMebibytes() const { return m_totalMemoryLimitMebibytes; }
   inline bool TotalMemoryLimitMebibytesHasBeenSet() const { return m_totalMemoryLimitMebibytesHasBeenSet; }
-  inline void SetTotalMemoryLimitMebibytes(int value) {
+  inline void SetTotalMemoryLimitMebibytes(int64_t value) {
     m_totalMemoryLimitMebibytesHasBeenSet = true;
     m_totalMemoryLimitMebibytes = value;
   }
-  inline ContainerGroupDefinition& WithTotalMemoryLimitMebibytes(int value) {
+  inline ContainerGroupDefinition& WithTotalMemoryLimitMebibytes(int64_t value) {
     SetTotalMemoryLimitMebibytes(value);
     return *this;
   }
@@ -246,13 +246,13 @@ class ContainerGroupDefinition {
    * can view, update, or delete individual versions or the entire container group
    * definition.</p>
    */
-  inline int GetVersionNumber() const { return m_versionNumber; }
+  inline int64_t GetVersionNumber() const { return m_versionNumber; }
   inline bool VersionNumberHasBeenSet() const { return m_versionNumberHasBeenSet; }
-  inline void SetVersionNumber(int value) {
+  inline void SetVersionNumber(int64_t value) {
     m_versionNumberHasBeenSet = true;
     m_versionNumber = value;
   }
-  inline ContainerGroupDefinition& WithVersionNumber(int value) {
+  inline ContainerGroupDefinition& WithVersionNumber(int64_t value) {
     SetVersionNumber(value);
     return *this;
   }
@@ -349,7 +349,7 @@ class ContainerGroupDefinition {
 
   ContainerGroupType m_containerGroupType{ContainerGroupType::NOT_SET};
 
-  int m_totalMemoryLimitMebibytes{0};
+  int64_t m_totalMemoryLimitMebibytes{0};
 
   double m_totalVcpuLimit{0.0};
 
@@ -357,7 +357,7 @@ class ContainerGroupDefinition {
 
   Aws::Vector<SupportContainerDefinition> m_supportContainerDefinitions;
 
-  int m_versionNumber{0};
+  int64_t m_versionNumber{0};
 
   Aws::String m_versionDescription;
 

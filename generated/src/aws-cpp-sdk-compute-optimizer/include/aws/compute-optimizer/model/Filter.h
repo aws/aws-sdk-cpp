@@ -8,15 +8,15 @@
 #include <aws/compute-optimizer/model/FilterName.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ComputeOptimizer {
 namespace Model {
@@ -36,9 +36,9 @@ namespace Model {
 class Filter {
  public:
   AWS_COMPUTEOPTIMIZER_API Filter() = default;
-  AWS_COMPUTEOPTIMIZER_API Filter(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API Filter& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPUTEOPTIMIZER_API Filter(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API Filter& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -82,7 +82,7 @@ class Filter {
    * the resource type that you wish to filter results for:</p> <ul> <li> <p>Specify
    * <code>Optimized</code> or <code>NotOptimized</code> if you specify the
    * <code>name</code> parameter as <code>Finding</code> and you want to filter
-   * results for Amazon EC2 Auto Scaling groups.</p> </li> <li> <p>Specify
+   * results for Auto Scaling groups.</p> </li> <li> <p>Specify
    * <code>Underprovisioned</code>, <code>Overprovisioned</code>, or
    * <code>Optimized</code> if you specify the <code>name</code> parameter as
    * <code>Finding</code> and you want to filter results for EC2 instances.</p> </li>

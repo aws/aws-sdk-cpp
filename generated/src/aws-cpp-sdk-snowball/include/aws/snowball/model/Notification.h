@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/snowball/model/JobState.h>
 
@@ -13,10 +14,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Snowball {
 namespace Model {
@@ -36,9 +36,9 @@ namespace Model {
 class Notification {
  public:
   AWS_SNOWBALL_API Notification() = default;
-  AWS_SNOWBALL_API Notification(Aws::Utils::Json::JsonView jsonValue);
-  AWS_SNOWBALL_API Notification& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_SNOWBALL_API Notification(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_SNOWBALL_API Notification& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_SNOWBALL_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

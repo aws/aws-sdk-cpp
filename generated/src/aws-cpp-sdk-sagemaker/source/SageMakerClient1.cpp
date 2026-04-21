@@ -20,8 +20,14 @@
 #include <aws/sagemaker/SageMakerClient.h>
 #include <aws/sagemaker/SageMakerEndpointProvider.h>
 #include <aws/sagemaker/SageMakerErrorMarshaller.h>
+#include <aws/sagemaker/model/DeleteEndpointConfigRequest.h>
+#include <aws/sagemaker/model/DeleteEndpointRequest.h>
+#include <aws/sagemaker/model/DeleteExperimentRequest.h>
+#include <aws/sagemaker/model/DeleteFeatureGroupRequest.h>
+#include <aws/sagemaker/model/DeleteFlowDefinitionRequest.h>
 #include <aws/sagemaker/model/DeleteHubContentReferenceRequest.h>
 #include <aws/sagemaker/model/DeleteHubContentRequest.h>
+#include <aws/sagemaker/model/DeleteHubRequest.h>
 #include <aws/sagemaker/model/DeleteHumanTaskUiRequest.h>
 #include <aws/sagemaker/model/DeleteHyperParameterTuningJobRequest.h>
 #include <aws/sagemaker/model/DeleteImageRequest.h>
@@ -56,6 +62,9 @@
 #include <aws/sagemaker/model/DeleteWorkforceRequest.h>
 #include <aws/sagemaker/model/DeleteWorkteamRequest.h>
 #include <aws/sagemaker/model/DeregisterDevicesRequest.h>
+#include <aws/sagemaker/model/DescribeAIBenchmarkJobRequest.h>
+#include <aws/sagemaker/model/DescribeAIRecommendationJobRequest.h>
+#include <aws/sagemaker/model/DescribeAIWorkloadConfigRequest.h>
 #include <aws/sagemaker/model/DescribeActionRequest.h>
 #include <aws/sagemaker/model/DescribeAlgorithmRequest.h>
 #include <aws/sagemaker/model/DescribeAppImageConfigRequest.h>
@@ -110,16 +119,7 @@
 #include <aws/sagemaker/model/DescribeOptimizationJobRequest.h>
 #include <aws/sagemaker/model/DescribePartnerAppRequest.h>
 #include <aws/sagemaker/model/DescribePipelineDefinitionForExecutionRequest.h>
-#include <aws/sagemaker/model/DescribePipelineExecutionRequest.h>
 #include <aws/sagemaker/model/DescribePipelineRequest.h>
-#include <aws/sagemaker/model/DescribeProcessingJobRequest.h>
-#include <aws/sagemaker/model/DescribeProjectRequest.h>
-#include <aws/sagemaker/model/DescribeReservedCapacityRequest.h>
-#include <aws/sagemaker/model/DescribeSpaceRequest.h>
-#include <aws/sagemaker/model/DescribeStudioLifecycleConfigRequest.h>
-#include <aws/sagemaker/model/DescribeSubscribedWorkteamRequest.h>
-#include <aws/sagemaker/model/DescribeTrainingJobRequest.h>
-#include <aws/sagemaker/model/DescribeTrainingPlanRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,40 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DeleteEndpointOutcome SageMakerClient::DeleteEndpoint(const DeleteEndpointRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteEndpointOutcome(result.GetResultWithOwnership()) : DeleteEndpointOutcome(std::move(result.GetError()));
+}
+
+DeleteEndpointConfigOutcome SageMakerClient::DeleteEndpointConfig(const DeleteEndpointConfigRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteEndpointConfigOutcome(result.GetResultWithOwnership())
+                            : DeleteEndpointConfigOutcome(std::move(result.GetError()));
+}
+
+DeleteExperimentOutcome SageMakerClient::DeleteExperiment(const DeleteExperimentRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteExperimentOutcome(result.GetResultWithOwnership())
+                            : DeleteExperimentOutcome(std::move(result.GetError()));
+}
+
+DeleteFeatureGroupOutcome SageMakerClient::DeleteFeatureGroup(const DeleteFeatureGroupRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteFeatureGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteFeatureGroupOutcome(std::move(result.GetError()));
+}
+
+DeleteFlowDefinitionOutcome SageMakerClient::DeleteFlowDefinition(const DeleteFlowDefinitionRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteFlowDefinitionOutcome(result.GetResultWithOwnership())
+                            : DeleteFlowDefinitionOutcome(std::move(result.GetError()));
+}
+
+DeleteHubOutcome SageMakerClient::DeleteHub(const DeleteHubRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteHubOutcome(result.GetResultWithOwnership()) : DeleteHubOutcome(std::move(result.GetError()));
+}
 
 DeleteHubContentOutcome SageMakerClient::DeleteHubContent(const DeleteHubContentRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -344,6 +378,24 @@ DeregisterDevicesOutcome SageMakerClient::DeregisterDevices(const DeregisterDevi
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeregisterDevicesOutcome(result.GetResultWithOwnership())
                             : DeregisterDevicesOutcome(std::move(result.GetError()));
+}
+
+DescribeAIBenchmarkJobOutcome SageMakerClient::DescribeAIBenchmarkJob(const DescribeAIBenchmarkJobRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAIBenchmarkJobOutcome(result.GetResultWithOwnership())
+                            : DescribeAIBenchmarkJobOutcome(std::move(result.GetError()));
+}
+
+DescribeAIRecommendationJobOutcome SageMakerClient::DescribeAIRecommendationJob(const DescribeAIRecommendationJobRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAIRecommendationJobOutcome(result.GetResultWithOwnership())
+                            : DescribeAIRecommendationJobOutcome(std::move(result.GetError()));
+}
+
+DescribeAIWorkloadConfigOutcome SageMakerClient::DescribeAIWorkloadConfig(const DescribeAIWorkloadConfigRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAIWorkloadConfigOutcome(result.GetResultWithOwnership())
+                            : DescribeAIWorkloadConfigOutcome(std::move(result.GetError()));
 }
 
 DescribeActionOutcome SageMakerClient::DescribeAction(const DescribeActionRequest& request) const {
@@ -677,58 +729,4 @@ DescribePipelineDefinitionForExecutionOutcome SageMakerClient::DescribePipelineD
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribePipelineDefinitionForExecutionOutcome(result.GetResultWithOwnership())
                             : DescribePipelineDefinitionForExecutionOutcome(std::move(result.GetError()));
-}
-
-DescribePipelineExecutionOutcome SageMakerClient::DescribePipelineExecution(const DescribePipelineExecutionRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribePipelineExecutionOutcome(result.GetResultWithOwnership())
-                            : DescribePipelineExecutionOutcome(std::move(result.GetError()));
-}
-
-DescribeProcessingJobOutcome SageMakerClient::DescribeProcessingJob(const DescribeProcessingJobRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeProcessingJobOutcome(result.GetResultWithOwnership())
-                            : DescribeProcessingJobOutcome(std::move(result.GetError()));
-}
-
-DescribeProjectOutcome SageMakerClient::DescribeProject(const DescribeProjectRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeProjectOutcome(result.GetResultWithOwnership())
-                            : DescribeProjectOutcome(std::move(result.GetError()));
-}
-
-DescribeReservedCapacityOutcome SageMakerClient::DescribeReservedCapacity(const DescribeReservedCapacityRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeReservedCapacityOutcome(result.GetResultWithOwnership())
-                            : DescribeReservedCapacityOutcome(std::move(result.GetError()));
-}
-
-DescribeSpaceOutcome SageMakerClient::DescribeSpace(const DescribeSpaceRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeSpaceOutcome(result.GetResultWithOwnership()) : DescribeSpaceOutcome(std::move(result.GetError()));
-}
-
-DescribeStudioLifecycleConfigOutcome SageMakerClient::DescribeStudioLifecycleConfig(
-    const DescribeStudioLifecycleConfigRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeStudioLifecycleConfigOutcome(result.GetResultWithOwnership())
-                            : DescribeStudioLifecycleConfigOutcome(std::move(result.GetError()));
-}
-
-DescribeSubscribedWorkteamOutcome SageMakerClient::DescribeSubscribedWorkteam(const DescribeSubscribedWorkteamRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeSubscribedWorkteamOutcome(result.GetResultWithOwnership())
-                            : DescribeSubscribedWorkteamOutcome(std::move(result.GetError()));
-}
-
-DescribeTrainingJobOutcome SageMakerClient::DescribeTrainingJob(const DescribeTrainingJobRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeTrainingJobOutcome(result.GetResultWithOwnership())
-                            : DescribeTrainingJobOutcome(std::move(result.GetError()));
-}
-
-DescribeTrainingPlanOutcome SageMakerClient::DescribeTrainingPlan(const DescribeTrainingPlanRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeTrainingPlanOutcome(result.GetResultWithOwnership())
-                            : DescribeTrainingPlanOutcome(std::move(result.GetError()));
 }

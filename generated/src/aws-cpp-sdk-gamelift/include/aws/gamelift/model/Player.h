@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/AttributeValue.h>
 
@@ -13,10 +14,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace GameLift {
 namespace Model {
@@ -31,9 +31,9 @@ namespace Model {
 class Player {
  public:
   AWS_GAMELIFT_API Player() = default;
-  AWS_GAMELIFT_API Player(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API Player& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_GAMELIFT_API Player(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API Player& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -110,19 +110,19 @@ class Player {
    * no latency is reported in this scenario, FlexMatch assumes that no Regions are
    * available to the player and the ticket is not matchable. </p>
    */
-  inline const Aws::Map<Aws::String, int>& GetLatencyInMs() const { return m_latencyInMs; }
+  inline const Aws::Map<Aws::String, int64_t>& GetLatencyInMs() const { return m_latencyInMs; }
   inline bool LatencyInMsHasBeenSet() const { return m_latencyInMsHasBeenSet; }
-  template <typename LatencyInMsT = Aws::Map<Aws::String, int>>
+  template <typename LatencyInMsT = Aws::Map<Aws::String, int64_t>>
   void SetLatencyInMs(LatencyInMsT&& value) {
     m_latencyInMsHasBeenSet = true;
     m_latencyInMs = std::forward<LatencyInMsT>(value);
   }
-  template <typename LatencyInMsT = Aws::Map<Aws::String, int>>
+  template <typename LatencyInMsT = Aws::Map<Aws::String, int64_t>>
   Player& WithLatencyInMs(LatencyInMsT&& value) {
     SetLatencyInMs(std::forward<LatencyInMsT>(value));
     return *this;
   }
-  inline Player& AddLatencyInMs(Aws::String key, int value) {
+  inline Player& AddLatencyInMs(Aws::String key, int64_t value) {
     m_latencyInMsHasBeenSet = true;
     m_latencyInMs.emplace(key, value);
     return *this;
@@ -135,7 +135,7 @@ class Player {
 
   Aws::String m_team;
 
-  Aws::Map<Aws::String, int> m_latencyInMs;
+  Aws::Map<Aws::String, int64_t> m_latencyInMs;
   bool m_playerIdHasBeenSet = false;
   bool m_playerAttributesHasBeenSet = false;
   bool m_teamHasBeenSet = false;

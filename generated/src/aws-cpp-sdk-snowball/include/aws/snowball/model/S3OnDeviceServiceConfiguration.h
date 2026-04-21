@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/snowball/model/StorageUnit.h>
 
@@ -11,10 +12,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Snowball {
 namespace Model {
@@ -28,9 +28,9 @@ namespace Model {
 class S3OnDeviceServiceConfiguration {
  public:
   AWS_SNOWBALL_API S3OnDeviceServiceConfiguration() = default;
-  AWS_SNOWBALL_API S3OnDeviceServiceConfiguration(Aws::Utils::Json::JsonView jsonValue);
-  AWS_SNOWBALL_API S3OnDeviceServiceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_SNOWBALL_API S3OnDeviceServiceConfiguration(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_SNOWBALL_API S3OnDeviceServiceConfiguration& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_SNOWBALL_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -74,13 +74,13 @@ class S3OnDeviceServiceConfiguration {
    * Amazon S3 compatible storage on Snow family devices. If specified, the other
    * input can be omitted.</p>
    */
-  inline int GetServiceSize() const { return m_serviceSize; }
+  inline int64_t GetServiceSize() const { return m_serviceSize; }
   inline bool ServiceSizeHasBeenSet() const { return m_serviceSizeHasBeenSet; }
-  inline void SetServiceSize(int value) {
+  inline void SetServiceSize(int64_t value) {
     m_serviceSizeHasBeenSet = true;
     m_serviceSize = value;
   }
-  inline S3OnDeviceServiceConfiguration& WithServiceSize(int value) {
+  inline S3OnDeviceServiceConfiguration& WithServiceSize(int64_t value) {
     SetServiceSize(value);
     return *this;
   }
@@ -94,13 +94,13 @@ class S3OnDeviceServiceConfiguration {
    * than one Amazon S3 compatible storage on Snow family devices service
    * configuration.</p>
    */
-  inline int GetFaultTolerance() const { return m_faultTolerance; }
+  inline int64_t GetFaultTolerance() const { return m_faultTolerance; }
   inline bool FaultToleranceHasBeenSet() const { return m_faultToleranceHasBeenSet; }
-  inline void SetFaultTolerance(int value) {
+  inline void SetFaultTolerance(int64_t value) {
     m_faultToleranceHasBeenSet = true;
     m_faultTolerance = value;
   }
-  inline S3OnDeviceServiceConfiguration& WithFaultTolerance(int value) {
+  inline S3OnDeviceServiceConfiguration& WithFaultTolerance(int64_t value) {
     SetFaultTolerance(value);
     return *this;
   }
@@ -110,9 +110,9 @@ class S3OnDeviceServiceConfiguration {
 
   StorageUnit m_storageUnit{StorageUnit::NOT_SET};
 
-  int m_serviceSize{0};
+  int64_t m_serviceSize{0};
 
-  int m_faultTolerance{0};
+  int64_t m_faultTolerance{0};
   bool m_storageLimitHasBeenSet = false;
   bool m_storageUnitHasBeenSet = false;
   bool m_serviceSizeHasBeenSet = false;

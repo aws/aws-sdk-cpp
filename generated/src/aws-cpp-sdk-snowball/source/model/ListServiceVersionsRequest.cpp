@@ -3,43 +3,65 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/snowball/model/ListServiceVersionsRequest.h>
 
 #include <utility>
 
 using namespace Aws::Snowball::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String ListServiceVersionsRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_serviceNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_dependentServicesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_maxResultsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_nextTokenHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_serviceNameHasBeenSet) {
-    payload.WithString("ServiceName", ServiceNameMapper::GetNameForServiceName(m_serviceName));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ServiceName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(ServiceNameMapper::GetNameForServiceName(m_serviceName).c_str()));
   }
 
   if (m_dependentServicesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> dependentServicesJsonList(m_dependentServices.size());
-    for (unsigned dependentServicesIndex = 0; dependentServicesIndex < dependentServicesJsonList.GetLength(); ++dependentServicesIndex) {
-      dependentServicesJsonList[dependentServicesIndex].AsObject(m_dependentServices[dependentServicesIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DependentServices"));
+    encoder.WriteArrayStart(m_dependentServices.size());
+    for (const auto& item_0 : m_dependentServices) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("DependentServices", std::move(dependentServicesJsonList));
   }
 
   if (m_maxResultsHasBeenSet) {
-    payload.WithInteger("MaxResults", m_maxResults);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MaxResults"));
+    (m_maxResults >= 0) ? encoder.WriteUInt(m_maxResults) : encoder.WriteNegInt(m_maxResults);
   }
 
   if (m_nextTokenHasBeenSet) {
-    payload.WithString("NextToken", m_nextToken);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NextToken"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_nextToken.c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection ListServiceVersionsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSIESnowballJobManagementService.ListServiceVersions"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

@@ -65,6 +65,14 @@ ModelPackageContainerDefinition& ModelPackageContainerDefinition::operator=(Json
     m_nearestModelName = jsonValue.GetString("NearestModelName");
     m_nearestModelNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AdditionalModelDataSources")) {
+    Aws::Utils::Array<JsonView> additionalModelDataSourcesJsonList = jsonValue.GetArray("AdditionalModelDataSources");
+    for (unsigned additionalModelDataSourcesIndex = 0; additionalModelDataSourcesIndex < additionalModelDataSourcesJsonList.GetLength();
+         ++additionalModelDataSourcesIndex) {
+      m_additionalModelDataSources.push_back(additionalModelDataSourcesJsonList[additionalModelDataSourcesIndex].AsObject());
+    }
+    m_additionalModelDataSourcesHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("AdditionalS3DataSource")) {
     m_additionalS3DataSource = jsonValue.GetObject("AdditionalS3DataSource");
     m_additionalS3DataSourceHasBeenSet = true;
@@ -133,6 +141,16 @@ JsonValue ModelPackageContainerDefinition::Jsonize() const {
 
   if (m_nearestModelNameHasBeenSet) {
     payload.WithString("NearestModelName", m_nearestModelName);
+  }
+
+  if (m_additionalModelDataSourcesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> additionalModelDataSourcesJsonList(m_additionalModelDataSources.size());
+    for (unsigned additionalModelDataSourcesIndex = 0; additionalModelDataSourcesIndex < additionalModelDataSourcesJsonList.GetLength();
+         ++additionalModelDataSourcesIndex) {
+      additionalModelDataSourcesJsonList[additionalModelDataSourcesIndex].AsObject(
+          m_additionalModelDataSources[additionalModelDataSourcesIndex].Jsonize());
+    }
+    payload.WithArray("AdditionalModelDataSources", std::move(additionalModelDataSourcesJsonList));
   }
 
   if (m_additionalS3DataSourceHasBeenSet) {

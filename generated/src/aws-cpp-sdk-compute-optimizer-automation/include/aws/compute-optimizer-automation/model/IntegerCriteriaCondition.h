@@ -7,15 +7,15 @@
 #include <aws/compute-optimizer-automation/ComputeOptimizerAutomation_EXPORTS.h>
 #include <aws/compute-optimizer-automation/model/ComparisonOperator.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ComputeOptimizerAutomation {
 namespace Model {
@@ -29,9 +29,9 @@ namespace Model {
 class IntegerCriteriaCondition {
  public:
   AWS_COMPUTEOPTIMIZERAUTOMATION_API IntegerCriteriaCondition() = default;
-  AWS_COMPUTEOPTIMIZERAUTOMATION_API IntegerCriteriaCondition(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZERAUTOMATION_API IntegerCriteriaCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZERAUTOMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPUTEOPTIMIZERAUTOMATION_API IntegerCriteriaCondition(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZERAUTOMATION_API IntegerCriteriaCondition& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZERAUTOMATION_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -55,19 +55,19 @@ class IntegerCriteriaCondition {
    * <p>The list of integer values to compare against using the specified comparison
    * operator.</p>
    */
-  inline const Aws::Vector<int>& GetValues() const { return m_values; }
+  inline const Aws::Vector<int64_t>& GetValues() const { return m_values; }
   inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-  template <typename ValuesT = Aws::Vector<int>>
+  template <typename ValuesT = Aws::Vector<int64_t>>
   void SetValues(ValuesT&& value) {
     m_valuesHasBeenSet = true;
     m_values = std::forward<ValuesT>(value);
   }
-  template <typename ValuesT = Aws::Vector<int>>
+  template <typename ValuesT = Aws::Vector<int64_t>>
   IntegerCriteriaCondition& WithValues(ValuesT&& value) {
     SetValues(std::forward<ValuesT>(value));
     return *this;
   }
-  inline IntegerCriteriaCondition& AddValues(int value) {
+  inline IntegerCriteriaCondition& AddValues(int64_t value) {
     m_valuesHasBeenSet = true;
     m_values.push_back(value);
     return *this;
@@ -76,7 +76,7 @@ class IntegerCriteriaCondition {
  private:
   ComparisonOperator m_comparison{ComparisonOperator::NOT_SET};
 
-  Aws::Vector<int> m_values;
+  Aws::Vector<int64_t> m_values;
   bool m_comparisonHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };

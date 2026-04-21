@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/AdditionalModelDataSource.h>
 #include <aws/sagemaker/model/AdditionalS3DataSource.h>
 #include <aws/sagemaker/model/BaseModel.h>
 #include <aws/sagemaker/model/ModelDataSource.h>
@@ -260,6 +262,32 @@ class ModelPackageContainerDefinition {
 
   ///@{
   /**
+   * <p>Data sources that are available to your model in addition to the one that you
+   * specify for <code>ModelDataSource</code> when you use the
+   * <code>CreateModelPackage</code> action.</p>
+   */
+  inline const Aws::Vector<AdditionalModelDataSource>& GetAdditionalModelDataSources() const { return m_additionalModelDataSources; }
+  inline bool AdditionalModelDataSourcesHasBeenSet() const { return m_additionalModelDataSourcesHasBeenSet; }
+  template <typename AdditionalModelDataSourcesT = Aws::Vector<AdditionalModelDataSource>>
+  void SetAdditionalModelDataSources(AdditionalModelDataSourcesT&& value) {
+    m_additionalModelDataSourcesHasBeenSet = true;
+    m_additionalModelDataSources = std::forward<AdditionalModelDataSourcesT>(value);
+  }
+  template <typename AdditionalModelDataSourcesT = Aws::Vector<AdditionalModelDataSource>>
+  ModelPackageContainerDefinition& WithAdditionalModelDataSources(AdditionalModelDataSourcesT&& value) {
+    SetAdditionalModelDataSources(std::forward<AdditionalModelDataSourcesT>(value));
+    return *this;
+  }
+  template <typename AdditionalModelDataSourcesT = AdditionalModelDataSource>
+  ModelPackageContainerDefinition& AddAdditionalModelDataSources(AdditionalModelDataSourcesT&& value) {
+    m_additionalModelDataSourcesHasBeenSet = true;
+    m_additionalModelDataSources.emplace_back(std::forward<AdditionalModelDataSourcesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The additional data source that is used during inference in the Docker
    * container for your model package.</p>
    */
@@ -352,6 +380,8 @@ class ModelPackageContainerDefinition {
 
   Aws::String m_nearestModelName;
 
+  Aws::Vector<AdditionalModelDataSource> m_additionalModelDataSources;
+
   AdditionalS3DataSource m_additionalS3DataSource;
 
   Aws::String m_modelDataETag;
@@ -370,6 +400,7 @@ class ModelPackageContainerDefinition {
   bool m_frameworkHasBeenSet = false;
   bool m_frameworkVersionHasBeenSet = false;
   bool m_nearestModelNameHasBeenSet = false;
+  bool m_additionalModelDataSourcesHasBeenSet = false;
   bool m_additionalS3DataSourceHasBeenSet = false;
   bool m_modelDataETagHasBeenSet = false;
   bool m_isCheckpointHasBeenSet = false;

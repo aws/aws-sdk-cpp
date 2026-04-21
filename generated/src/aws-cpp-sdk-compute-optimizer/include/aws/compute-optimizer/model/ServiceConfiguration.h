@@ -9,15 +9,15 @@
 #include <aws/compute-optimizer/model/ContainerConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ComputeOptimizer {
 namespace Model {
@@ -31,21 +31,21 @@ namespace Model {
 class ServiceConfiguration {
  public:
   AWS_COMPUTEOPTIMIZER_API ServiceConfiguration() = default;
-  AWS_COMPUTEOPTIMIZER_API ServiceConfiguration(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API ServiceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPUTEOPTIMIZER_API ServiceConfiguration(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API ServiceConfiguration& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p> The amount of memory used by the tasks in the Amazon ECS service. </p>
    */
-  inline int GetMemory() const { return m_memory; }
+  inline int64_t GetMemory() const { return m_memory; }
   inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
-  inline void SetMemory(int value) {
+  inline void SetMemory(int64_t value) {
     m_memoryHasBeenSet = true;
     m_memory = value;
   }
-  inline ServiceConfiguration& WithMemory(int value) {
+  inline ServiceConfiguration& WithMemory(int64_t value) {
     SetMemory(value);
     return *this;
   }
@@ -55,13 +55,13 @@ class ServiceConfiguration {
   /**
    * <p> The number of CPU units used by the tasks in the Amazon ECS service. </p>
    */
-  inline int GetCpu() const { return m_cpu; }
+  inline int64_t GetCpu() const { return m_cpu; }
   inline bool CpuHasBeenSet() const { return m_cpuHasBeenSet; }
-  inline void SetCpu(int value) {
+  inline void SetCpu(int64_t value) {
     m_cpuHasBeenSet = true;
     m_cpu = value;
   }
-  inline ServiceConfiguration& WithCpu(int value) {
+  inline ServiceConfiguration& WithCpu(int64_t value) {
     SetCpu(value);
     return *this;
   }
@@ -140,9 +140,9 @@ class ServiceConfiguration {
   }
   ///@}
  private:
-  int m_memory{0};
+  int64_t m_memory{0};
 
-  int m_cpu{0};
+  int64_t m_cpu{0};
 
   Aws::Vector<ContainerConfiguration> m_containerConfigurations;
 

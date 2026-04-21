@@ -4,54 +4,78 @@
  */
 
 #include <aws/compute-optimizer/model/GetECSServiceRecommendationsRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::ComputeOptimizer::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String GetECSServiceRecommendationsRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_serviceArnsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_nextTokenHasBeenSet) {
+    mapSize++;
+  }
+  if (m_maxResultsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_filtersHasBeenSet) {
+    mapSize++;
+  }
+  if (m_accountIdsHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_serviceArnsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> serviceArnsJsonList(m_serviceArns.size());
-    for (unsigned serviceArnsIndex = 0; serviceArnsIndex < serviceArnsJsonList.GetLength(); ++serviceArnsIndex) {
-      serviceArnsJsonList[serviceArnsIndex].AsString(m_serviceArns[serviceArnsIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("serviceArns"));
+    encoder.WriteArrayStart(m_serviceArns.size());
+    for (const auto& item_0 : m_serviceArns) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("serviceArns", std::move(serviceArnsJsonList));
   }
 
   if (m_nextTokenHasBeenSet) {
-    payload.WithString("nextToken", m_nextToken);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("nextToken"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_nextToken.c_str()));
   }
 
   if (m_maxResultsHasBeenSet) {
-    payload.WithInteger("maxResults", m_maxResults);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("maxResults"));
+    (m_maxResults >= 0) ? encoder.WriteUInt(m_maxResults) : encoder.WriteNegInt(m_maxResults);
   }
 
   if (m_filtersHasBeenSet) {
-    Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
-    for (unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex) {
-      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("filters"));
+    encoder.WriteArrayStart(m_filters.size());
+    for (const auto& item_0 : m_filters) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("filters", std::move(filtersJsonList));
   }
 
   if (m_accountIdsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> accountIdsJsonList(m_accountIds.size());
-    for (unsigned accountIdsIndex = 0; accountIdsIndex < accountIdsJsonList.GetLength(); ++accountIdsIndex) {
-      accountIdsJsonList[accountIdsIndex].AsString(m_accountIds[accountIdsIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("accountIds"));
+    encoder.WriteArrayStart(m_accountIds.size());
+    for (const auto& item_0 : m_accountIds) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("accountIds", std::move(accountIdsJsonList));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection GetECSServiceRecommendationsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ComputeOptimizerService.GetECSServiceRecommendations"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

@@ -8,15 +8,15 @@
 #include <aws/compute-optimizer-automation/model/AutomationEventFilterName.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ComputeOptimizerAutomation {
 namespace Model {
@@ -30,9 +30,9 @@ namespace Model {
 class AutomationEventFilter {
  public:
   AWS_COMPUTEOPTIMIZERAUTOMATION_API AutomationEventFilter() = default;
-  AWS_COMPUTEOPTIMIZERAUTOMATION_API AutomationEventFilter(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZERAUTOMATION_API AutomationEventFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZERAUTOMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPUTEOPTIMIZERAUTOMATION_API AutomationEventFilter(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZERAUTOMATION_API AutomationEventFilter& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZERAUTOMATION_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

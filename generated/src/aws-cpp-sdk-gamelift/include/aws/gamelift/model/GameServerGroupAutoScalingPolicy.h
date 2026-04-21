@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/TargetTrackingConfiguration.h>
 
@@ -11,10 +12,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace GameLift {
 namespace Model {
@@ -32,9 +32,9 @@ namespace Model {
 class GameServerGroupAutoScalingPolicy {
  public:
   AWS_GAMELIFT_API GameServerGroupAutoScalingPolicy() = default;
-  AWS_GAMELIFT_API GameServerGroupAutoScalingPolicy(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API GameServerGroupAutoScalingPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_GAMELIFT_API GameServerGroupAutoScalingPolicy(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API GameServerGroupAutoScalingPolicy& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -43,13 +43,13 @@ class GameServerGroupAutoScalingPolicy {
    * warm-up time can be useful, particularly with game servers that take a long time
    * to start up, because it avoids prematurely starting new instances. </p>
    */
-  inline int GetEstimatedInstanceWarmup() const { return m_estimatedInstanceWarmup; }
+  inline int64_t GetEstimatedInstanceWarmup() const { return m_estimatedInstanceWarmup; }
   inline bool EstimatedInstanceWarmupHasBeenSet() const { return m_estimatedInstanceWarmupHasBeenSet; }
-  inline void SetEstimatedInstanceWarmup(int value) {
+  inline void SetEstimatedInstanceWarmup(int64_t value) {
     m_estimatedInstanceWarmupHasBeenSet = true;
     m_estimatedInstanceWarmup = value;
   }
-  inline GameServerGroupAutoScalingPolicy& WithEstimatedInstanceWarmup(int value) {
+  inline GameServerGroupAutoScalingPolicy& WithEstimatedInstanceWarmup(int64_t value) {
     SetEstimatedInstanceWarmup(value);
     return *this;
   }
@@ -78,7 +78,7 @@ class GameServerGroupAutoScalingPolicy {
   }
   ///@}
  private:
-  int m_estimatedInstanceWarmup{0};
+  int64_t m_estimatedInstanceWarmup{0};
 
   TargetTrackingConfiguration m_targetTrackingConfiguration;
   bool m_estimatedInstanceWarmupHasBeenSet = false;

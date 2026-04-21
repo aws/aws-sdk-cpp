@@ -7,15 +7,15 @@
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/compute-optimizer/model/CpuVendorArchitecture.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ComputeOptimizer {
 namespace Model {
@@ -33,14 +33,14 @@ namespace Model {
 class RecommendationPreferences {
  public:
   AWS_COMPUTEOPTIMIZER_API RecommendationPreferences() = default;
-  AWS_COMPUTEOPTIMIZER_API RecommendationPreferences(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API RecommendationPreferences& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPUTEOPTIMIZER_API RecommendationPreferences(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API RecommendationPreferences& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
-   * <p>Specifies the CPU vendor and architecture for Amazon EC2 instance and Amazon
-   * EC2 Auto Scaling group recommendations.</p> <p>For example, when you specify
+   * <p>Specifies the CPU vendor and architecture for Amazon EC2 instance and Auto
+   * Scaling group recommendations.</p> <p>For example, when you specify
    * <code>AWS_ARM64</code> with:</p> <ul> <li> <p>A
    * <a>GetEC2InstanceRecommendations</a> or
    * <a>GetAutoScalingGroupRecommendations</a> request, Compute Optimizer returns

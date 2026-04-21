@@ -5,16 +5,16 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace GameLift {
 namespace Model {
@@ -28,9 +28,9 @@ namespace Model {
 class UDPEndpoint {
  public:
   AWS_GAMELIFT_API UDPEndpoint() = default;
-  AWS_GAMELIFT_API UDPEndpoint(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API UDPEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_GAMELIFT_API UDPEndpoint(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API UDPEndpoint& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -55,13 +55,13 @@ class UDPEndpoint {
    * <p>The port number of the UDP endpoint. For Amazon GameLift Servers ping
    * beacons, this is typically port 7770.</p>
    */
-  inline int GetPort() const { return m_port; }
+  inline int64_t GetPort() const { return m_port; }
   inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
-  inline void SetPort(int value) {
+  inline void SetPort(int64_t value) {
     m_portHasBeenSet = true;
     m_port = value;
   }
-  inline UDPEndpoint& WithPort(int value) {
+  inline UDPEndpoint& WithPort(int64_t value) {
     SetPort(value);
     return *this;
   }
@@ -69,7 +69,7 @@ class UDPEndpoint {
  private:
   Aws::String m_domain;
 
-  int m_port{0};
+  int64_t m_port{0};
   bool m_domainHasBeenSet = false;
   bool m_portHasBeenSet = false;
 };

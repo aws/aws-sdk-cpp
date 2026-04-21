@@ -6,15 +6,15 @@
 #pragma once
 #include <aws/compute-optimizer-automation/ComputeOptimizerAutomation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ComputeOptimizerAutomation {
 namespace Model {
@@ -28,9 +28,9 @@ namespace Model {
 class Schedule {
  public:
   AWS_COMPUTEOPTIMIZERAUTOMATION_API Schedule() = default;
-  AWS_COMPUTEOPTIMIZERAUTOMATION_API Schedule(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZERAUTOMATION_API Schedule& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZERAUTOMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPUTEOPTIMIZERAUTOMATION_API Schedule(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZERAUTOMATION_API Schedule& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZERAUTOMATION_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -80,13 +80,13 @@ class Schedule {
    * <p>The time window in minutes during which the automation rule can start
    * implementing recommended actions.</p>
    */
-  inline int GetExecutionWindowInMinutes() const { return m_executionWindowInMinutes; }
+  inline int64_t GetExecutionWindowInMinutes() const { return m_executionWindowInMinutes; }
   inline bool ExecutionWindowInMinutesHasBeenSet() const { return m_executionWindowInMinutesHasBeenSet; }
-  inline void SetExecutionWindowInMinutes(int value) {
+  inline void SetExecutionWindowInMinutes(int64_t value) {
     m_executionWindowInMinutesHasBeenSet = true;
     m_executionWindowInMinutes = value;
   }
-  inline Schedule& WithExecutionWindowInMinutes(int value) {
+  inline Schedule& WithExecutionWindowInMinutes(int64_t value) {
     SetExecutionWindowInMinutes(value);
     return *this;
   }
@@ -96,7 +96,7 @@ class Schedule {
 
   Aws::String m_scheduleExpressionTimezone;
 
-  int m_executionWindowInMinutes{0};
+  int64_t m_executionWindowInMinutes{0};
   bool m_scheduleExpressionHasBeenSet = false;
   bool m_scheduleExpressionTimezoneHasBeenSet = false;
   bool m_executionWindowInMinutesHasBeenSet = false;

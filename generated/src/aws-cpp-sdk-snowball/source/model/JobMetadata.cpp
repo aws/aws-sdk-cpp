@@ -3,228 +3,1059 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/snowball/model/JobMetadata.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace Snowball {
 namespace Model {
 
-JobMetadata::JobMetadata(JsonView jsonValue) { *this = jsonValue; }
+JobMetadata::JobMetadata(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-JobMetadata& JobMetadata::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("JobId")) {
-    m_jobId = jsonValue.GetString("JobId");
-    m_jobIdHasBeenSet = true;
+JobMetadata& JobMetadata::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "JobId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_jobId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_jobId = ss.str();
+                  }
+                }
+                m_jobIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "JobState") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_jobState =
+                      JobStateMapper::GetJobStateForName(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_jobStateHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "JobType") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_jobType =
+                      JobTypeMapper::GetJobTypeForName(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_jobTypeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "SnowballType") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_snowballType = SnowballTypeMapper::GetSnowballTypeForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_snowballTypeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "CreationDate") {
+                auto tag = decoder->PopNextTagVal();
+                if (tag.has_value() &&
+                    tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+                {
+                  auto dateType = decoder->PeekType();
+                  if (dateType.has_value()) {
+                    if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_creationDate = Aws::Utils::DateTime(val.value());
+                      }
+                    } else {
+                      auto val = decoder->PopNextUnsignedIntVal();
+                      if (val.has_value()) {
+                        m_creationDate = Aws::Utils::DateTime(val.value());
+                      }
+                    }
+                  }
+                }
+                m_creationDateHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Resources") {
+                m_resources = JobResource(decoder);
+                m_resourcesHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Description") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_description = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_description = ss.str();
+                  }
+                }
+                m_descriptionHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "KmsKeyARN") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_kmsKeyARN = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_kmsKeyARN = ss.str();
+                  }
+                }
+                m_kmsKeyARNHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "RoleARN") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_roleARN = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_roleARN = ss.str();
+                  }
+                }
+                m_roleARNHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "AddressId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_addressId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_addressId = ss.str();
+                  }
+                }
+                m_addressIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ShippingDetails") {
+                m_shippingDetails = ShippingDetails(decoder);
+                m_shippingDetailsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "SnowballCapacityPreference") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_snowballCapacityPreference = SnowballCapacityMapper::GetSnowballCapacityForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_snowballCapacityPreferenceHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Notification") {
+                m_notification = Notification(decoder);
+                m_notificationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "DataTransferProgress") {
+                m_dataTransferProgress = DataTransfer(decoder);
+                m_dataTransferProgressHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "JobLogInfo") {
+                m_jobLogInfo = JobLogs(decoder);
+                m_jobLogInfoHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ClusterId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_clusterId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_clusterId = ss.str();
+                  }
+                }
+                m_clusterIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ForwardingAddressId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_forwardingAddressId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_forwardingAddressId = ss.str();
+                  }
+                }
+                m_forwardingAddressIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "TaxDocuments") {
+                m_taxDocuments = TaxDocuments(decoder);
+                m_taxDocumentsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "DeviceConfiguration") {
+                m_deviceConfiguration = DeviceConfiguration(decoder);
+                m_deviceConfigurationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "RemoteManagement") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_remoteManagement = RemoteManagementMapper::GetRemoteManagementForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_remoteManagementHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "LongTermPricingId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_longTermPricingId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_longTermPricingId = ss.str();
+                  }
+                }
+                m_longTermPricingIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "OnDeviceServiceConfiguration") {
+                m_onDeviceServiceConfiguration = OnDeviceServiceConfiguration(decoder);
+                m_onDeviceServiceConfigurationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ImpactLevel") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_impactLevel = ImpactLevelMapper::GetImpactLevelForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_impactLevelHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "PickupDetails") {
+                m_pickupDetails = PickupDetails(decoder);
+                m_pickupDetailsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "SnowballId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_snowballId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_snowballId = ss.str();
+                  }
+                }
+                m_snowballIdHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("JobMetadata", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "JobId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_jobId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_jobId = ss.str();
+                }
+              }
+              m_jobIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "JobState") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_jobState =
+                    JobStateMapper::GetJobStateForName(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_jobStateHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "JobType") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_jobType = JobTypeMapper::GetJobTypeForName(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_jobTypeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "SnowballType") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_snowballType = SnowballTypeMapper::GetSnowballTypeForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_snowballTypeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "CreationDate") {
+              auto tag = decoder->PopNextTagVal();
+              if (tag.has_value() &&
+                  tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+              {
+                auto dateType = decoder->PeekType();
+                if (dateType.has_value()) {
+                  if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                    auto val = decoder->PopNextFloatVal();
+                    if (val.has_value()) {
+                      m_creationDate = Aws::Utils::DateTime(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_creationDate = Aws::Utils::DateTime(val.value());
+                    }
+                  }
+                }
+              }
+              m_creationDateHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Resources") {
+              m_resources = JobResource(decoder);
+              m_resourcesHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Description") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_description = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_description = ss.str();
+                }
+              }
+              m_descriptionHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "KmsKeyARN") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_kmsKeyARN = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_kmsKeyARN = ss.str();
+                }
+              }
+              m_kmsKeyARNHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "RoleARN") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_roleARN = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_roleARN = ss.str();
+                }
+              }
+              m_roleARNHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "AddressId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_addressId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_addressId = ss.str();
+                }
+              }
+              m_addressIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ShippingDetails") {
+              m_shippingDetails = ShippingDetails(decoder);
+              m_shippingDetailsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "SnowballCapacityPreference") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_snowballCapacityPreference = SnowballCapacityMapper::GetSnowballCapacityForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_snowballCapacityPreferenceHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Notification") {
+              m_notification = Notification(decoder);
+              m_notificationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "DataTransferProgress") {
+              m_dataTransferProgress = DataTransfer(decoder);
+              m_dataTransferProgressHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "JobLogInfo") {
+              m_jobLogInfo = JobLogs(decoder);
+              m_jobLogInfoHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ClusterId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_clusterId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_clusterId = ss.str();
+                }
+              }
+              m_clusterIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ForwardingAddressId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_forwardingAddressId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_forwardingAddressId = ss.str();
+                }
+              }
+              m_forwardingAddressIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "TaxDocuments") {
+              m_taxDocuments = TaxDocuments(decoder);
+              m_taxDocumentsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "DeviceConfiguration") {
+              m_deviceConfiguration = DeviceConfiguration(decoder);
+              m_deviceConfigurationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "RemoteManagement") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_remoteManagement = RemoteManagementMapper::GetRemoteManagementForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_remoteManagementHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "LongTermPricingId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_longTermPricingId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_longTermPricingId = ss.str();
+                }
+              }
+              m_longTermPricingIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "OnDeviceServiceConfiguration") {
+              m_onDeviceServiceConfiguration = OnDeviceServiceConfiguration(decoder);
+              m_onDeviceServiceConfigurationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ImpactLevel") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_impactLevel =
+                    ImpactLevelMapper::GetImpactLevelForName(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_impactLevelHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "PickupDetails") {
+              m_pickupDetails = PickupDetails(decoder);
+              m_pickupDetailsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "SnowballId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_snowballId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_snowballId = ss.str();
+                }
+              }
+              m_snowballIdHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
-  if (jsonValue.ValueExists("JobState")) {
-    m_jobState = JobStateMapper::GetJobStateForName(jsonValue.GetString("JobState"));
-    m_jobStateHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("JobType")) {
-    m_jobType = JobTypeMapper::GetJobTypeForName(jsonValue.GetString("JobType"));
-    m_jobTypeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("SnowballType")) {
-    m_snowballType = SnowballTypeMapper::GetSnowballTypeForName(jsonValue.GetString("SnowballType"));
-    m_snowballTypeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("CreationDate")) {
-    m_creationDate = jsonValue.GetDouble("CreationDate");
-    m_creationDateHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Resources")) {
-    m_resources = jsonValue.GetObject("Resources");
-    m_resourcesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Description")) {
-    m_description = jsonValue.GetString("Description");
-    m_descriptionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("KmsKeyARN")) {
-    m_kmsKeyARN = jsonValue.GetString("KmsKeyARN");
-    m_kmsKeyARNHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("RoleARN")) {
-    m_roleARN = jsonValue.GetString("RoleARN");
-    m_roleARNHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("AddressId")) {
-    m_addressId = jsonValue.GetString("AddressId");
-    m_addressIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ShippingDetails")) {
-    m_shippingDetails = jsonValue.GetObject("ShippingDetails");
-    m_shippingDetailsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("SnowballCapacityPreference")) {
-    m_snowballCapacityPreference = SnowballCapacityMapper::GetSnowballCapacityForName(jsonValue.GetString("SnowballCapacityPreference"));
-    m_snowballCapacityPreferenceHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Notification")) {
-    m_notification = jsonValue.GetObject("Notification");
-    m_notificationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("DataTransferProgress")) {
-    m_dataTransferProgress = jsonValue.GetObject("DataTransferProgress");
-    m_dataTransferProgressHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("JobLogInfo")) {
-    m_jobLogInfo = jsonValue.GetObject("JobLogInfo");
-    m_jobLogInfoHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ClusterId")) {
-    m_clusterId = jsonValue.GetString("ClusterId");
-    m_clusterIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ForwardingAddressId")) {
-    m_forwardingAddressId = jsonValue.GetString("ForwardingAddressId");
-    m_forwardingAddressIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("TaxDocuments")) {
-    m_taxDocuments = jsonValue.GetObject("TaxDocuments");
-    m_taxDocumentsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("DeviceConfiguration")) {
-    m_deviceConfiguration = jsonValue.GetObject("DeviceConfiguration");
-    m_deviceConfigurationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("RemoteManagement")) {
-    m_remoteManagement = RemoteManagementMapper::GetRemoteManagementForName(jsonValue.GetString("RemoteManagement"));
-    m_remoteManagementHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("LongTermPricingId")) {
-    m_longTermPricingId = jsonValue.GetString("LongTermPricingId");
-    m_longTermPricingIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("OnDeviceServiceConfiguration")) {
-    m_onDeviceServiceConfiguration = jsonValue.GetObject("OnDeviceServiceConfiguration");
-    m_onDeviceServiceConfigurationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ImpactLevel")) {
-    m_impactLevel = ImpactLevelMapper::GetImpactLevelForName(jsonValue.GetString("ImpactLevel"));
-    m_impactLevelHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("PickupDetails")) {
-    m_pickupDetails = jsonValue.GetObject("PickupDetails");
-    m_pickupDetailsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("SnowballId")) {
-    m_snowballId = jsonValue.GetString("SnowballId");
-    m_snowballIdHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue JobMetadata::Jsonize() const {
-  JsonValue payload;
+void JobMetadata::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_jobIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_jobStateHasBeenSet) {
+    mapSize++;
+  }
+  if (m_jobTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_snowballTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_creationDateHasBeenSet) {
+    mapSize++;
+  }
+  if (m_resourcesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_descriptionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_kmsKeyARNHasBeenSet) {
+    mapSize++;
+  }
+  if (m_roleARNHasBeenSet) {
+    mapSize++;
+  }
+  if (m_addressIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_shippingDetailsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_snowballCapacityPreferenceHasBeenSet) {
+    mapSize++;
+  }
+  if (m_notificationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_dataTransferProgressHasBeenSet) {
+    mapSize++;
+  }
+  if (m_jobLogInfoHasBeenSet) {
+    mapSize++;
+  }
+  if (m_clusterIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_forwardingAddressIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_taxDocumentsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_deviceConfigurationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_remoteManagementHasBeenSet) {
+    mapSize++;
+  }
+  if (m_longTermPricingIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_onDeviceServiceConfigurationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_impactLevelHasBeenSet) {
+    mapSize++;
+  }
+  if (m_pickupDetailsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_snowballIdHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_jobIdHasBeenSet) {
-    payload.WithString("JobId", m_jobId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("JobId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_jobId.c_str()));
   }
 
   if (m_jobStateHasBeenSet) {
-    payload.WithString("JobState", JobStateMapper::GetNameForJobState(m_jobState));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("JobState"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(JobStateMapper::GetNameForJobState(m_jobState).c_str()));
   }
 
   if (m_jobTypeHasBeenSet) {
-    payload.WithString("JobType", JobTypeMapper::GetNameForJobType(m_jobType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("JobType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(JobTypeMapper::GetNameForJobType(m_jobType).c_str()));
   }
 
   if (m_snowballTypeHasBeenSet) {
-    payload.WithString("SnowballType", SnowballTypeMapper::GetNameForSnowballType(m_snowballType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SnowballType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(SnowballTypeMapper::GetNameForSnowballType(m_snowballType).c_str()));
   }
 
   if (m_creationDateHasBeenSet) {
-    payload.WithDouble("CreationDate", m_creationDate.SecondsWithMSPrecision());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("CreationDate"));
+    encoder.WriteTag(1);  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+    encoder.WriteUInt(m_creationDate.Seconds());
   }
 
   if (m_resourcesHasBeenSet) {
-    payload.WithObject("Resources", m_resources.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Resources"));
+    m_resources.CborEncode(encoder);
   }
 
   if (m_descriptionHasBeenSet) {
-    payload.WithString("Description", m_description);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Description"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_description.c_str()));
   }
 
   if (m_kmsKeyARNHasBeenSet) {
-    payload.WithString("KmsKeyARN", m_kmsKeyARN);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("KmsKeyARN"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_kmsKeyARN.c_str()));
   }
 
   if (m_roleARNHasBeenSet) {
-    payload.WithString("RoleARN", m_roleARN);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RoleARN"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_roleARN.c_str()));
   }
 
   if (m_addressIdHasBeenSet) {
-    payload.WithString("AddressId", m_addressId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AddressId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_addressId.c_str()));
   }
 
   if (m_shippingDetailsHasBeenSet) {
-    payload.WithObject("ShippingDetails", m_shippingDetails.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ShippingDetails"));
+    m_shippingDetails.CborEncode(encoder);
   }
 
   if (m_snowballCapacityPreferenceHasBeenSet) {
-    payload.WithString("SnowballCapacityPreference", SnowballCapacityMapper::GetNameForSnowballCapacity(m_snowballCapacityPreference));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SnowballCapacityPreference"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(SnowballCapacityMapper::GetNameForSnowballCapacity(m_snowballCapacityPreference).c_str()));
   }
 
   if (m_notificationHasBeenSet) {
-    payload.WithObject("Notification", m_notification.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Notification"));
+    m_notification.CborEncode(encoder);
   }
 
   if (m_dataTransferProgressHasBeenSet) {
-    payload.WithObject("DataTransferProgress", m_dataTransferProgress.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DataTransferProgress"));
+    m_dataTransferProgress.CborEncode(encoder);
   }
 
   if (m_jobLogInfoHasBeenSet) {
-    payload.WithObject("JobLogInfo", m_jobLogInfo.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("JobLogInfo"));
+    m_jobLogInfo.CborEncode(encoder);
   }
 
   if (m_clusterIdHasBeenSet) {
-    payload.WithString("ClusterId", m_clusterId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ClusterId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_clusterId.c_str()));
   }
 
   if (m_forwardingAddressIdHasBeenSet) {
-    payload.WithString("ForwardingAddressId", m_forwardingAddressId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ForwardingAddressId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_forwardingAddressId.c_str()));
   }
 
   if (m_taxDocumentsHasBeenSet) {
-    payload.WithObject("TaxDocuments", m_taxDocuments.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("TaxDocuments"));
+    m_taxDocuments.CborEncode(encoder);
   }
 
   if (m_deviceConfigurationHasBeenSet) {
-    payload.WithObject("DeviceConfiguration", m_deviceConfiguration.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DeviceConfiguration"));
+    m_deviceConfiguration.CborEncode(encoder);
   }
 
   if (m_remoteManagementHasBeenSet) {
-    payload.WithString("RemoteManagement", RemoteManagementMapper::GetNameForRemoteManagement(m_remoteManagement));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RemoteManagement"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(RemoteManagementMapper::GetNameForRemoteManagement(m_remoteManagement).c_str()));
   }
 
   if (m_longTermPricingIdHasBeenSet) {
-    payload.WithString("LongTermPricingId", m_longTermPricingId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("LongTermPricingId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_longTermPricingId.c_str()));
   }
 
   if (m_onDeviceServiceConfigurationHasBeenSet) {
-    payload.WithObject("OnDeviceServiceConfiguration", m_onDeviceServiceConfiguration.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("OnDeviceServiceConfiguration"));
+    m_onDeviceServiceConfiguration.CborEncode(encoder);
   }
 
   if (m_impactLevelHasBeenSet) {
-    payload.WithString("ImpactLevel", ImpactLevelMapper::GetNameForImpactLevel(m_impactLevel));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ImpactLevel"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(ImpactLevelMapper::GetNameForImpactLevel(m_impactLevel).c_str()));
   }
 
   if (m_pickupDetailsHasBeenSet) {
-    payload.WithObject("PickupDetails", m_pickupDetails.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("PickupDetails"));
+    m_pickupDetails.CborEncode(encoder);
   }
 
   if (m_snowballIdHasBeenSet) {
-    payload.WithString("SnowballId", m_snowballId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SnowballId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_snowballId.c_str()));
   }
-
-  return payload;
 }
 
 }  // namespace Model

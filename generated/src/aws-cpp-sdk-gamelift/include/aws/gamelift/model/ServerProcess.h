@@ -5,16 +5,16 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace GameLift {
 namespace Model {
@@ -30,9 +30,9 @@ namespace Model {
 class ServerProcess {
  public:
   AWS_GAMELIFT_API ServerProcess() = default;
-  AWS_GAMELIFT_API ServerProcess(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API ServerProcess& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_GAMELIFT_API ServerProcess(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API ServerProcess& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -85,13 +85,13 @@ class ServerProcess {
    * <p>The number of server processes using this configuration that run concurrently
    * on each instance or compute.</p>
    */
-  inline int GetConcurrentExecutions() const { return m_concurrentExecutions; }
+  inline int64_t GetConcurrentExecutions() const { return m_concurrentExecutions; }
   inline bool ConcurrentExecutionsHasBeenSet() const { return m_concurrentExecutionsHasBeenSet; }
-  inline void SetConcurrentExecutions(int value) {
+  inline void SetConcurrentExecutions(int64_t value) {
     m_concurrentExecutionsHasBeenSet = true;
     m_concurrentExecutions = value;
   }
-  inline ServerProcess& WithConcurrentExecutions(int value) {
+  inline ServerProcess& WithConcurrentExecutions(int64_t value) {
     SetConcurrentExecutions(value);
     return *this;
   }
@@ -101,7 +101,7 @@ class ServerProcess {
 
   Aws::String m_parameters;
 
-  int m_concurrentExecutions{0};
+  int64_t m_concurrentExecutions{0};
   bool m_launchPathHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
   bool m_concurrentExecutionsHasBeenSet = false;

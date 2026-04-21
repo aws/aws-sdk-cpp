@@ -10,7 +10,7 @@
 namespace Aws {
 namespace NetworkFirewall {
 namespace Model {
-enum class RuleGroupType { NOT_SET, STATELESS, STATEFUL };
+enum class RuleGroupType { NOT_SET, STATELESS, STATEFUL, STATEFUL_DOMAIN };
 
 namespace RuleGroupTypeMapper {
 AWS_NETWORKFIREWALL_API RuleGroupType GetRuleGroupTypeForName(const Aws::String& name);

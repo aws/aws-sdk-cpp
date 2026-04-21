@@ -3,51 +3,81 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/model/CreateBuildRequest.h>
 
 #include <utility>
 
 using namespace Aws::GameLift::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String CreateBuildRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_nameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_versionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_storageLocationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_operatingSystemHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_serverSdkVersionHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_nameHasBeenSet) {
-    payload.WithString("Name", m_name);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Name"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_name.c_str()));
   }
 
   if (m_versionHasBeenSet) {
-    payload.WithString("Version", m_version);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Version"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_version.c_str()));
   }
 
   if (m_storageLocationHasBeenSet) {
-    payload.WithObject("StorageLocation", m_storageLocation.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("StorageLocation"));
+    m_storageLocation.CborEncode(encoder);
   }
 
   if (m_operatingSystemHasBeenSet) {
-    payload.WithString("OperatingSystem", OperatingSystemMapper::GetNameForOperatingSystem(m_operatingSystem));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("OperatingSystem"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(OperatingSystemMapper::GetNameForOperatingSystem(m_operatingSystem).c_str()));
   }
 
   if (m_tagsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Tags"));
+    encoder.WriteArrayStart(m_tags.size());
+    for (const auto& item_0 : m_tags) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
   if (m_serverSdkVersionHasBeenSet) {
-    payload.WithString("ServerSdkVersion", m_serverSdkVersion);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ServerSdkVersion"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_serverSdkVersion.c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection CreateBuildRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "GameLift.CreateBuild"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

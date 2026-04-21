@@ -3,146 +3,247 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/model/CreateFleetRequest.h>
 
 #include <utility>
 
 using namespace Aws::GameLift::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String CreateFleetRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_nameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_descriptionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_buildIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_scriptIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_serverLaunchPathHasBeenSet) {
+    mapSize++;
+  }
+  if (m_serverLaunchParametersHasBeenSet) {
+    mapSize++;
+  }
+  if (m_logPathsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_eC2InstanceTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_eC2InboundPermissionsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_newGameSessionProtectionPolicyHasBeenSet) {
+    mapSize++;
+  }
+  if (m_runtimeConfigurationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_resourceCreationLimitPolicyHasBeenSet) {
+    mapSize++;
+  }
+  if (m_metricGroupsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_peerVpcAwsAccountIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_peerVpcIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_fleetTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_instanceRoleArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_certificateConfigurationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_locationsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_computeTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_anywhereConfigurationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_instanceRoleCredentialsProviderHasBeenSet) {
+    mapSize++;
+  }
+  if (m_playerGatewayModeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_playerGatewayConfigurationHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_nameHasBeenSet) {
-    payload.WithString("Name", m_name);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Name"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_name.c_str()));
   }
 
   if (m_descriptionHasBeenSet) {
-    payload.WithString("Description", m_description);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Description"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_description.c_str()));
   }
 
   if (m_buildIdHasBeenSet) {
-    payload.WithString("BuildId", m_buildId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("BuildId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_buildId.c_str()));
   }
 
   if (m_scriptIdHasBeenSet) {
-    payload.WithString("ScriptId", m_scriptId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ScriptId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_scriptId.c_str()));
   }
 
   if (m_serverLaunchPathHasBeenSet) {
-    payload.WithString("ServerLaunchPath", m_serverLaunchPath);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ServerLaunchPath"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_serverLaunchPath.c_str()));
   }
 
   if (m_serverLaunchParametersHasBeenSet) {
-    payload.WithString("ServerLaunchParameters", m_serverLaunchParameters);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ServerLaunchParameters"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_serverLaunchParameters.c_str()));
   }
 
   if (m_logPathsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> logPathsJsonList(m_logPaths.size());
-    for (unsigned logPathsIndex = 0; logPathsIndex < logPathsJsonList.GetLength(); ++logPathsIndex) {
-      logPathsJsonList[logPathsIndex].AsString(m_logPaths[logPathsIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("LogPaths"));
+    encoder.WriteArrayStart(m_logPaths.size());
+    for (const auto& item_0 : m_logPaths) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("LogPaths", std::move(logPathsJsonList));
   }
 
   if (m_eC2InstanceTypeHasBeenSet) {
-    payload.WithString("EC2InstanceType", EC2InstanceTypeMapper::GetNameForEC2InstanceType(m_eC2InstanceType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("EC2InstanceType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(EC2InstanceTypeMapper::GetNameForEC2InstanceType(m_eC2InstanceType).c_str()));
   }
 
   if (m_eC2InboundPermissionsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> eC2InboundPermissionsJsonList(m_eC2InboundPermissions.size());
-    for (unsigned eC2InboundPermissionsIndex = 0; eC2InboundPermissionsIndex < eC2InboundPermissionsJsonList.GetLength();
-         ++eC2InboundPermissionsIndex) {
-      eC2InboundPermissionsJsonList[eC2InboundPermissionsIndex].AsObject(m_eC2InboundPermissions[eC2InboundPermissionsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("EC2InboundPermissions"));
+    encoder.WriteArrayStart(m_eC2InboundPermissions.size());
+    for (const auto& item_0 : m_eC2InboundPermissions) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("EC2InboundPermissions", std::move(eC2InboundPermissionsJsonList));
   }
 
   if (m_newGameSessionProtectionPolicyHasBeenSet) {
-    payload.WithString("NewGameSessionProtectionPolicy",
-                       ProtectionPolicyMapper::GetNameForProtectionPolicy(m_newGameSessionProtectionPolicy));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NewGameSessionProtectionPolicy"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(ProtectionPolicyMapper::GetNameForProtectionPolicy(m_newGameSessionProtectionPolicy).c_str()));
   }
 
   if (m_runtimeConfigurationHasBeenSet) {
-    payload.WithObject("RuntimeConfiguration", m_runtimeConfiguration.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RuntimeConfiguration"));
+    m_runtimeConfiguration.CborEncode(encoder);
   }
 
   if (m_resourceCreationLimitPolicyHasBeenSet) {
-    payload.WithObject("ResourceCreationLimitPolicy", m_resourceCreationLimitPolicy.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ResourceCreationLimitPolicy"));
+    m_resourceCreationLimitPolicy.CborEncode(encoder);
   }
 
   if (m_metricGroupsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> metricGroupsJsonList(m_metricGroups.size());
-    for (unsigned metricGroupsIndex = 0; metricGroupsIndex < metricGroupsJsonList.GetLength(); ++metricGroupsIndex) {
-      metricGroupsJsonList[metricGroupsIndex].AsString(m_metricGroups[metricGroupsIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MetricGroups"));
+    encoder.WriteArrayStart(m_metricGroups.size());
+    for (const auto& item_0 : m_metricGroups) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("MetricGroups", std::move(metricGroupsJsonList));
   }
 
   if (m_peerVpcAwsAccountIdHasBeenSet) {
-    payload.WithString("PeerVpcAwsAccountId", m_peerVpcAwsAccountId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("PeerVpcAwsAccountId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_peerVpcAwsAccountId.c_str()));
   }
 
   if (m_peerVpcIdHasBeenSet) {
-    payload.WithString("PeerVpcId", m_peerVpcId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("PeerVpcId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_peerVpcId.c_str()));
   }
 
   if (m_fleetTypeHasBeenSet) {
-    payload.WithString("FleetType", FleetTypeMapper::GetNameForFleetType(m_fleetType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FleetType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(FleetTypeMapper::GetNameForFleetType(m_fleetType).c_str()));
   }
 
   if (m_instanceRoleArnHasBeenSet) {
-    payload.WithString("InstanceRoleArn", m_instanceRoleArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("InstanceRoleArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_instanceRoleArn.c_str()));
   }
 
   if (m_certificateConfigurationHasBeenSet) {
-    payload.WithObject("CertificateConfiguration", m_certificateConfiguration.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("CertificateConfiguration"));
+    m_certificateConfiguration.CborEncode(encoder);
   }
 
   if (m_locationsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> locationsJsonList(m_locations.size());
-    for (unsigned locationsIndex = 0; locationsIndex < locationsJsonList.GetLength(); ++locationsIndex) {
-      locationsJsonList[locationsIndex].AsObject(m_locations[locationsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Locations"));
+    encoder.WriteArrayStart(m_locations.size());
+    for (const auto& item_0 : m_locations) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("Locations", std::move(locationsJsonList));
   }
 
   if (m_tagsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Tags"));
+    encoder.WriteArrayStart(m_tags.size());
+    for (const auto& item_0 : m_tags) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
   if (m_computeTypeHasBeenSet) {
-    payload.WithString("ComputeType", ComputeTypeMapper::GetNameForComputeType(m_computeType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ComputeType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(ComputeTypeMapper::GetNameForComputeType(m_computeType).c_str()));
   }
 
   if (m_anywhereConfigurationHasBeenSet) {
-    payload.WithObject("AnywhereConfiguration", m_anywhereConfiguration.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AnywhereConfiguration"));
+    m_anywhereConfiguration.CborEncode(encoder);
   }
 
   if (m_instanceRoleCredentialsProviderHasBeenSet) {
-    payload.WithString("InstanceRoleCredentialsProvider",
-                       InstanceRoleCredentialsProviderMapper::GetNameForInstanceRoleCredentialsProvider(m_instanceRoleCredentialsProvider));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("InstanceRoleCredentialsProvider"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(
+        InstanceRoleCredentialsProviderMapper::GetNameForInstanceRoleCredentialsProvider(m_instanceRoleCredentialsProvider).c_str()));
   }
 
   if (m_playerGatewayModeHasBeenSet) {
-    payload.WithString("PlayerGatewayMode", PlayerGatewayModeMapper::GetNameForPlayerGatewayMode(m_playerGatewayMode));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("PlayerGatewayMode"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(PlayerGatewayModeMapper::GetNameForPlayerGatewayMode(m_playerGatewayMode).c_str()));
   }
 
   if (m_playerGatewayConfigurationHasBeenSet) {
-    payload.WithObject("PlayerGatewayConfiguration", m_playerGatewayConfiguration.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("PlayerGatewayConfiguration"));
+    m_playerGatewayConfiguration.CborEncode(encoder);
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection CreateFleetRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "GameLift.CreateFleet"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

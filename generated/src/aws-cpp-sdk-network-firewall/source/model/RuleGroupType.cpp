@@ -17,6 +17,7 @@ namespace RuleGroupTypeMapper {
 
 static const int STATELESS_HASH = HashingUtils::HashString("STATELESS");
 static const int STATEFUL_HASH = HashingUtils::HashString("STATEFUL");
+static const int STATEFUL_DOMAIN_HASH = HashingUtils::HashString("STATEFUL_DOMAIN");
 
 RuleGroupType GetRuleGroupTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ RuleGroupType GetRuleGroupTypeForName(const Aws::String& name) {
     return RuleGroupType::STATELESS;
   } else if (hashCode == STATEFUL_HASH) {
     return RuleGroupType::STATEFUL;
+  } else if (hashCode == STATEFUL_DOMAIN_HASH) {
+    return RuleGroupType::STATEFUL_DOMAIN;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForRuleGroupType(RuleGroupType enumValue) {
       return "STATELESS";
     case RuleGroupType::STATEFUL:
       return "STATEFUL";
+    case RuleGroupType::STATEFUL_DOMAIN:
+      return "STATEFUL_DOMAIN";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -48,6 +48,7 @@
 #include <aws/sagemaker/model/ListModelPackagesPaginationTraits.h>
 #include <aws/sagemaker/model/ListImageVersionsPaginationTraits.h>
 #include <aws/sagemaker/model/ListPartnerAppsPaginationTraits.h>
+#include <aws/sagemaker/model/ListAIBenchmarkJobsPaginationTraits.h>
 #include <aws/sagemaker/model/ListStudioLifecycleConfigsPaginationTraits.h>
 #include <aws/sagemaker/model/ListMlflowAppsPaginationTraits.h>
 #include <aws/sagemaker/model/ListResourceCatalogsPaginationTraits.h>
@@ -59,6 +60,7 @@
 #include <aws/sagemaker/model/ListMlflowTrackingServersPaginationTraits.h>
 #include <aws/sagemaker/model/ListFeatureGroupsPaginationTraits.h>
 #include <aws/sagemaker/model/ListTrialComponentsPaginationTraits.h>
+#include <aws/sagemaker/model/ListAIWorkloadConfigsPaginationTraits.h>
 #include <aws/sagemaker/model/ListCompilationJobsPaginationTraits.h>
 #include <aws/sagemaker/model/ListMonitoringAlertsPaginationTraits.h>
 #include <aws/sagemaker/model/ListHumanTaskUisPaginationTraits.h>
@@ -93,6 +95,7 @@
 #include <aws/sagemaker/model/ListMonitoringSchedulesPaginationTraits.h>
 #include <aws/sagemaker/model/ListModelBiasJobDefinitionsPaginationTraits.h>
 #include <aws/sagemaker/model/ListTrainingJobsForHyperParameterTuningJobPaginationTraits.h>
+#include <aws/sagemaker/model/ListAIRecommendationJobsPaginationTraits.h>
 #include <aws/sagemaker/model/ListEdgeDeploymentPlansPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>

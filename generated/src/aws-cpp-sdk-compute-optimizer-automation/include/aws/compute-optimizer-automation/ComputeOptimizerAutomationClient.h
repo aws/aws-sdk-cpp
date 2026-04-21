@@ -11,7 +11,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 namespace Aws {
 namespace ComputeOptimizerAutomation {
@@ -29,12 +29,12 @@ namespace ComputeOptimizerAutomation {
  * Optimizer when needed. </p>
  */
 class AWS_COMPUTEOPTIMIZERAUTOMATION_API ComputeOptimizerAutomationClient
-    : public Aws::Client::AWSJsonClient,
+    : public Aws::Client::AWSRpcV2CborClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<ComputeOptimizerAutomationClient>,
       public ComputeOptimizerAutomationPaginationBase<ComputeOptimizerAutomationClient>,
       public ComputeOptimizerAutomationWaiter<ComputeOptimizerAutomationClient> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
+  typedef Aws::Client::AWSRpcV2CborClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
 
