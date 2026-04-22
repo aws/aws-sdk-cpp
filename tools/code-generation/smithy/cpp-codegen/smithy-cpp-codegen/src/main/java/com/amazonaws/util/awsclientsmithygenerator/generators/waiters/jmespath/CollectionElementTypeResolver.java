@@ -116,7 +116,7 @@ public class CollectionElementTypeResolver {
         return Optional.of(current);
     }
 
-    private static Optional<Shape> resolveMemberTarget(Shape structShape, String memberName, Model model) {
+    static Optional<Shape> resolveMemberTarget(Shape structShape, String memberName, Model model) {
         if (!structShape.isStructureShape()) return Optional.empty();
         return structShape.asStructureShape().get()
                 .getMember(memberName)

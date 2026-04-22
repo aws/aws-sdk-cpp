@@ -417,6 +417,84 @@ class WaiterJmesPathCppCodeGeneratorTest {
         }
 
         @Test
+        void filterProjection_bareFieldAsTruthyBoolean_withModel() {
+            // Model with various field types to test all truthiness branches
+            ListShape deploymentList = ListShape.builder()
+                .id("test.ns#DeploymentList")
+                .member(ShapeId.from("smithy.api#String"))
+                .build();
+            StructureShape configShape = StructureShape.builder()
+                .id("test.ns#Config")
+                .addMember("Name", ShapeId.from("smithy.api#String"))
+                .build();
+            MapShape tagMap = MapShape.builder()
+                .id("test.ns#TagMap")
+                .key(ShapeId.from("smithy.api#String"))
+                .value(ShapeId.from("smithy.api#String"))
+                .build();
+            StructureShape serviceShape = StructureShape.builder()
+                .id("test.ns#Service")
+                .addMember("Deployments", deploymentList.getId())
+                .addMember("Enabled", ShapeId.from("smithy.api#Boolean"))
+                .addMember("RunningCount", ShapeId.from("smithy.api#Integer"))
+                .addMember("DesiredCount", ShapeId.from("smithy.api#Integer"))
+                .addMember("Config", configShape.getId())
+                .addMember("Name", ShapeId.from("smithy.api#String"))
+                .addMember("Tags", tagMap.getId())
+                .build();
+            ListShape serviceList = ListShape.builder()
+                .id("test.ns#ServiceList")
+                .member(serviceShape.getId())
+                .build();
+            StructureShape outputShape = StructureShape.builder()
+                .id("test.ns#DescribeServicesOutput")
+                .addMember("Services", serviceList.getId())
+                .build();
+            StructureShape inputShape = StructureShape.builder()
+                .id("test.ns#DescribeServicesInput")
+                .build();
+            OperationShape opShape = OperationShape.builder()
+                .id("test.ns#DescribeServices")
+                .input(inputShape.getId())
+                .output(outputShape.getId())
+                .build();
+            Model model = Model.assembler()
+                .addShapes(deploymentList, configShape, tagMap, serviceShape, serviceList, outputShape, inputShape, opShape)
+                .assemble().unwrap();
+            OperationShape op = model.expectShape(ShapeId.from("test.ns#DescribeServices"), OperationShape.class);
+
+            // List field: truthy = !empty()
+            String listExpr = "length(Services[?!(Deployments && length(Deployments) == `1` && RunningCount == DesiredCount)]) == `0`";
+            String listCode = WaiterJmesPathCppCodeGenerator.generate(
+                listExpr, PathComparator.BOOLEAN_EQUALS, OUTCOME, model, op, "testService").getCode();
+            assertContains(listCode, "!item.GetDeployments().empty()");
+
+            // Boolean field: truthy = the value itself
+            String boolExpr = "length(Services[?Enabled && RunningCount == DesiredCount]) == `0`";
+            String boolCode = WaiterJmesPathCppCodeGenerator.generate(
+                boolExpr, PathComparator.BOOLEAN_EQUALS, OUTCOME, model, op, "testService").getCode();
+            assertContains(boolCode, "(item.GetEnabled() && ");
+
+            // Integer field: always truthy
+            String intExpr = "length(Services[?RunningCount && Enabled]) == `0`";
+            String intCode = WaiterJmesPathCppCodeGenerator.generate(
+                intExpr, PathComparator.BOOLEAN_EQUALS, OUTCOME, model, op, "testService").getCode();
+            assertContains(intCode, "(true && ");
+
+            // String field: truthy = !empty()
+            String strExpr = "length(Services[?Name && Enabled]) == `0`";
+            String strCode = WaiterJmesPathCppCodeGenerator.generate(
+                strExpr, PathComparator.BOOLEAN_EQUALS, OUTCOME, model, op, "testService").getCode();
+            assertContains(strCode, "(!item.GetName().empty() && ");
+
+            // Map field: truthy = !empty()
+            String mapExpr = "length(Services[?Tags && Enabled]) == `0`";
+            String mapCode = WaiterJmesPathCppCodeGenerator.generate(
+                mapExpr, PathComparator.BOOLEAN_EQUALS, OUTCOME, model, op, "testService").getCode();
+            assertContains(mapCode, "(!item.GetTags().empty() && ");
+        }
+
+        @Test
         void countIf_withModel_usesConcreteType() {
             Model model = buildCountIfModel();
             OperationShape op = getOp(model, "DescribeItems");
