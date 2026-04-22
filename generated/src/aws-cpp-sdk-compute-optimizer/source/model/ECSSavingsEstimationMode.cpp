@@ -4,35 +4,100 @@
  */
 
 #include <aws/compute-optimizer/model/ECSSavingsEstimationMode.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace ComputeOptimizer {
 namespace Model {
 
-ECSSavingsEstimationMode::ECSSavingsEstimationMode(JsonView jsonValue) { *this = jsonValue; }
+ECSSavingsEstimationMode::ECSSavingsEstimationMode(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-ECSSavingsEstimationMode& ECSSavingsEstimationMode::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("source")) {
-    m_source = ECSSavingsEstimationModeSourceMapper::GetECSSavingsEstimationModeSourceForName(jsonValue.GetString("source"));
-    m_sourceHasBeenSet = true;
+ECSSavingsEstimationMode& ECSSavingsEstimationMode::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "source") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_source = ECSSavingsEstimationModeSourceMapper::GetECSSavingsEstimationModeSourceForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_sourceHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("ECSSavingsEstimationMode", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "source") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_source = ECSSavingsEstimationModeSourceMapper::GetECSSavingsEstimationModeSourceForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_sourceHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
+
   return *this;
 }
 
-JsonValue ECSSavingsEstimationMode::Jsonize() const {
-  JsonValue payload;
-
+void ECSSavingsEstimationMode::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
   if (m_sourceHasBeenSet) {
-    payload.WithString("source", ECSSavingsEstimationModeSourceMapper::GetNameForECSSavingsEstimationModeSource(m_source));
+    mapSize++;
   }
 
-  return payload;
+  encoder.WriteMapStart(mapSize);
+
+  if (m_sourceHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("source"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(ECSSavingsEstimationModeSourceMapper::GetNameForECSSavingsEstimationModeSource(m_source).c_str()));
+  }
 }
 
 }  // namespace Model

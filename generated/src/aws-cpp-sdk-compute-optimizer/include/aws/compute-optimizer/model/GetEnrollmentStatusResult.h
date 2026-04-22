@@ -9,25 +9,25 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
-
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
 namespace Utils {
-namespace Json {
-class JsonValue;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ComputeOptimizer {
 namespace Model {
 class GetEnrollmentStatusResult {
  public:
   AWS_COMPUTEOPTIMIZER_API GetEnrollmentStatusResult() = default;
-  AWS_COMPUTEOPTIMIZER_API GetEnrollmentStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_COMPUTEOPTIMIZER_API GetEnrollmentStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_COMPUTEOPTIMIZER_API GetEnrollmentStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
+  AWS_COMPUTEOPTIMIZER_API GetEnrollmentStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
   /**
@@ -102,12 +102,12 @@ class GetEnrollmentStatusResult {
    * <p>The count of organization member accounts that are opted in to the service,
    * if your account is an organization management account.</p>
    */
-  inline int GetNumberOfMemberAccountsOptedIn() const { return m_numberOfMemberAccountsOptedIn; }
-  inline void SetNumberOfMemberAccountsOptedIn(int value) {
+  inline int64_t GetNumberOfMemberAccountsOptedIn() const { return m_numberOfMemberAccountsOptedIn; }
+  inline void SetNumberOfMemberAccountsOptedIn(int64_t value) {
     m_numberOfMemberAccountsOptedInHasBeenSet = true;
     m_numberOfMemberAccountsOptedIn = value;
   }
-  inline GetEnrollmentStatusResult& WithNumberOfMemberAccountsOptedIn(int value) {
+  inline GetEnrollmentStatusResult& WithNumberOfMemberAccountsOptedIn(int64_t value) {
     SetNumberOfMemberAccountsOptedIn(value);
     return *this;
   }
@@ -138,7 +138,7 @@ class GetEnrollmentStatusResult {
 
   Aws::Utils::DateTime m_lastUpdatedTimestamp{};
 
-  int m_numberOfMemberAccountsOptedIn{0};
+  int64_t m_numberOfMemberAccountsOptedIn{0};
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;

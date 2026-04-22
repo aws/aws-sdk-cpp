@@ -4,30 +4,45 @@
  */
 
 #include <aws/compute-optimizer/model/UpdateEnrollmentStatusRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::ComputeOptimizer::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String UpdateEnrollmentStatusRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_statusHasBeenSet) {
+    mapSize++;
+  }
+  if (m_includeMemberAccountsHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_statusHasBeenSet) {
-    payload.WithString("status", StatusMapper::GetNameForStatus(m_status));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("status"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(StatusMapper::GetNameForStatus(m_status).c_str()));
   }
 
   if (m_includeMemberAccountsHasBeenSet) {
-    payload.WithBool("includeMemberAccounts", m_includeMemberAccounts);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("includeMemberAccounts"));
+    encoder.WriteBool(m_includeMemberAccounts);
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection UpdateEnrollmentStatusRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ComputeOptimizerService.UpdateEnrollmentStatus"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

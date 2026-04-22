@@ -7,7 +7,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/snowball/SnowballPaginationBase.h>
 #include <aws/snowball/SnowballServiceClientModel.h>
 #include <aws/snowball/SnowballWaiter.h>
@@ -28,12 +28,12 @@ namespace Snowball {
  * href="https://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User
  * Guide</a>.</p>
  */
-class AWS_SNOWBALL_API SnowballClient : public Aws::Client::AWSJsonClient,
+class AWS_SNOWBALL_API SnowballClient : public Aws::Client::AWSRpcV2CborClient,
                                         public Aws::Client::ClientWithAsyncTemplateMethods<SnowballClient>,
                                         public SnowballPaginationBase<SnowballClient>,
                                         public SnowballWaiter<SnowballClient> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
+  typedef Aws::Client::AWSRpcV2CborClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
 

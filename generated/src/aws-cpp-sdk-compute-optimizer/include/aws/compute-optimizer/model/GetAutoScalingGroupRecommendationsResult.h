@@ -10,32 +10,32 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
-
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
 namespace Utils {
-namespace Json {
-class JsonValue;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ComputeOptimizer {
 namespace Model {
 class GetAutoScalingGroupRecommendationsResult {
  public:
   AWS_COMPUTEOPTIMIZER_API GetAutoScalingGroupRecommendationsResult() = default;
-  AWS_COMPUTEOPTIMIZER_API GetAutoScalingGroupRecommendationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_COMPUTEOPTIMIZER_API GetAutoScalingGroupRecommendationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
   AWS_COMPUTEOPTIMIZER_API GetAutoScalingGroupRecommendationsResult& operator=(
-      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+      const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
   /**
-   * <p>The token to use to advance to the next page of Amazon EC2 Auto Scaling group
-   * recommendations.</p> <p>This value is null when there are no more pages of
-   * Amazon EC2 Auto Scaling group recommendations to return.</p>
+   * <p>The token to use to advance to the next page of Auto Scaling group
+   * recommendations.</p> <p>This value is null when there are no more pages of Auto
+   * Scaling group recommendations to return.</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   template <typename NextTokenT = Aws::String>
@@ -52,8 +52,7 @@ class GetAutoScalingGroupRecommendationsResult {
 
   ///@{
   /**
-   * <p>An array of objects that describe Amazon EC2 Auto Scaling group
-   * recommendations.</p>
+   * <p>An array of objects that describe Auto Scaling group recommendations.</p>
    */
   inline const Aws::Vector<AutoScalingGroupRecommendation>& GetAutoScalingGroupRecommendations() const {
     return m_autoScalingGroupRecommendations;
@@ -79,8 +78,8 @@ class GetAutoScalingGroupRecommendationsResult {
   ///@{
   /**
    * <p>An array of objects that describe errors of the request.</p> <p>For example,
-   * an error is returned if you request recommendations for an unsupported Amazon
-   * EC2 Auto Scaling group.</p>
+   * an error is returned if you request recommendations for an unsupported Auto
+   * Scaling group.</p>
    */
   inline const Aws::Vector<GetRecommendationError>& GetErrors() const { return m_errors; }
   template <typename ErrorsT = Aws::Vector<GetRecommendationError>>

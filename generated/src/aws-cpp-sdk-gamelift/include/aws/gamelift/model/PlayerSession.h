@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/PlayerSessionStatus.h>
 
@@ -13,10 +14,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace GameLift {
 namespace Model {
@@ -39,9 +39,9 @@ namespace Model {
 class PlayerSession {
  public:
   AWS_GAMELIFT_API PlayerSession() = default;
-  AWS_GAMELIFT_API PlayerSession(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API PlayerSession& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_GAMELIFT_API PlayerSession(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API PlayerSession& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -254,13 +254,13 @@ class PlayerSession {
    * <p>Port number for the game session. To connect to a Amazon GameLift Servers
    * server process, an app needs both the IP address and port number.</p>
    */
-  inline int GetPort() const { return m_port; }
+  inline int64_t GetPort() const { return m_port; }
   inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
-  inline void SetPort(int value) {
+  inline void SetPort(int64_t value) {
     m_portHasBeenSet = true;
     m_port = value;
   }
-  inline PlayerSession& WithPort(int value) {
+  inline PlayerSession& WithPort(int64_t value) {
     SetPort(value);
     return *this;
   }
@@ -306,7 +306,7 @@ class PlayerSession {
 
   Aws::String m_dnsName;
 
-  int m_port{0};
+  int64_t m_port{0};
 
   Aws::String m_playerData;
   bool m_playerSessionIdHasBeenSet = false;

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/FilterConfiguration.h>
 #include <aws/gamelift/model/GameSessionQueueDestination.h>
@@ -16,10 +17,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace GameLift {
 namespace Model {
@@ -34,9 +34,9 @@ namespace Model {
 class GameSessionQueue {
  public:
   AWS_GAMELIFT_API GameSessionQueue() = default;
-  AWS_GAMELIFT_API GameSessionQueue(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API GameSessionQueue& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_GAMELIFT_API GameSessionQueue(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API GameSessionQueue& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -88,13 +88,13 @@ class GameSessionQueue {
    * placement changes to a <code>TIMED_OUT</code> status.</p>  <p>The minimum
    * value is 10 and the maximum value is 600.</p>
    */
-  inline int GetTimeoutInSeconds() const { return m_timeoutInSeconds; }
+  inline int64_t GetTimeoutInSeconds() const { return m_timeoutInSeconds; }
   inline bool TimeoutInSecondsHasBeenSet() const { return m_timeoutInSecondsHasBeenSet; }
-  inline void SetTimeoutInSeconds(int value) {
+  inline void SetTimeoutInSeconds(int64_t value) {
     m_timeoutInSecondsHasBeenSet = true;
     m_timeoutInSeconds = value;
   }
-  inline GameSessionQueue& WithTimeoutInSeconds(int value) {
+  inline GameSessionQueue& WithTimeoutInSeconds(int64_t value) {
     SetTimeoutInSeconds(value);
     return *this;
   }
@@ -241,7 +241,7 @@ class GameSessionQueue {
 
   Aws::String m_gameSessionQueueArn;
 
-  int m_timeoutInSeconds{0};
+  int64_t m_timeoutInSeconds{0};
 
   Aws::Vector<PlayerLatencyPolicy> m_playerLatencyPolicies;
 

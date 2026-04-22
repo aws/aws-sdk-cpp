@@ -8,15 +8,15 @@
 #include <aws/compute-optimizer/model/RDSDBRecommendationFilterName.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ComputeOptimizer {
 namespace Model {
@@ -31,9 +31,9 @@ namespace Model {
 class RDSDBRecommendationFilter {
  public:
   AWS_COMPUTEOPTIMIZER_API RDSDBRecommendationFilter() = default;
-  AWS_COMPUTEOPTIMIZER_API RDSDBRecommendationFilter(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API RDSDBRecommendationFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPUTEOPTIMIZER_API RDSDBRecommendationFilter(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API RDSDBRecommendationFilter& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

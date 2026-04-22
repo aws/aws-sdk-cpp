@@ -7,7 +7,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/marketplace-entitlement/MarketplaceEntitlementServicePaginationBase.h>
 #include <aws/marketplace-entitlement/MarketplaceEntitlementServiceServiceClientModel.h>
 #include <aws/marketplace-entitlement/MarketplaceEntitlementServiceWaiter.h>
@@ -27,12 +27,12 @@ namespace MarketplaceEntitlementService {
  * </li> </ul>
  */
 class AWS_MARKETPLACEENTITLEMENTSERVICE_API MarketplaceEntitlementServiceClient
-    : public Aws::Client::AWSJsonClient,
+    : public Aws::Client::AWSRpcV2CborClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceEntitlementServiceClient>,
       public MarketplaceEntitlementServicePaginationBase<MarketplaceEntitlementServiceClient>,
       public MarketplaceEntitlementServiceWaiter<MarketplaceEntitlementServiceClient> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
+  typedef Aws::Client::AWSRpcV2CborClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
 

@@ -7,6 +7,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/GameProperty.h>
 #include <aws/gamelift/model/GameSessionStatus.h>
@@ -18,10 +19,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace GameLift {
 namespace Model {
@@ -41,9 +41,9 @@ namespace Model {
 class GameSession {
  public:
   AWS_GAMELIFT_API GameSession() = default;
-  AWS_GAMELIFT_API GameSession(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API GameSession& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_GAMELIFT_API GameSession(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API GameSession& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -166,13 +166,13 @@ class GameSession {
   /**
    * <p>Number of players currently in the game session.</p>
    */
-  inline int GetCurrentPlayerSessionCount() const { return m_currentPlayerSessionCount; }
+  inline int64_t GetCurrentPlayerSessionCount() const { return m_currentPlayerSessionCount; }
   inline bool CurrentPlayerSessionCountHasBeenSet() const { return m_currentPlayerSessionCountHasBeenSet; }
-  inline void SetCurrentPlayerSessionCount(int value) {
+  inline void SetCurrentPlayerSessionCount(int64_t value) {
     m_currentPlayerSessionCountHasBeenSet = true;
     m_currentPlayerSessionCount = value;
   }
-  inline GameSession& WithCurrentPlayerSessionCount(int value) {
+  inline GameSession& WithCurrentPlayerSessionCount(int64_t value) {
     SetCurrentPlayerSessionCount(value);
     return *this;
   }
@@ -183,13 +183,13 @@ class GameSession {
    * <p>The maximum number of players that can be connected simultaneously to the
    * game session.</p>
    */
-  inline int GetMaximumPlayerSessionCount() const { return m_maximumPlayerSessionCount; }
+  inline int64_t GetMaximumPlayerSessionCount() const { return m_maximumPlayerSessionCount; }
   inline bool MaximumPlayerSessionCountHasBeenSet() const { return m_maximumPlayerSessionCountHasBeenSet; }
-  inline void SetMaximumPlayerSessionCount(int value) {
+  inline void SetMaximumPlayerSessionCount(int64_t value) {
     m_maximumPlayerSessionCountHasBeenSet = true;
     m_maximumPlayerSessionCount = value;
   }
-  inline GameSession& WithMaximumPlayerSessionCount(int value) {
+  inline GameSession& WithMaximumPlayerSessionCount(int64_t value) {
     SetMaximumPlayerSessionCount(value);
     return *this;
   }
@@ -319,13 +319,13 @@ class GameSession {
    * <p>The port number for the game session. To connect to a Amazon GameLift Servers
    * game server, an app needs both the IP address and port number.</p>
    */
-  inline int GetPort() const { return m_port; }
+  inline int64_t GetPort() const { return m_port; }
   inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
-  inline void SetPort(int value) {
+  inline void SetPort(int64_t value) {
     m_portHasBeenSet = true;
     m_port = value;
   }
-  inline GameSession& WithPort(int value) {
+  inline GameSession& WithPort(int64_t value) {
     SetPort(value);
     return *this;
   }
@@ -493,9 +493,9 @@ class GameSession {
 
   Aws::Utils::DateTime m_terminationTime{};
 
-  int m_currentPlayerSessionCount{0};
+  int64_t m_currentPlayerSessionCount{0};
 
-  int m_maximumPlayerSessionCount{0};
+  int64_t m_maximumPlayerSessionCount{0};
 
   GameSessionStatus m_status{GameSessionStatus::NOT_SET};
 
@@ -507,7 +507,7 @@ class GameSession {
 
   Aws::String m_dnsName;
 
-  int m_port{0};
+  int64_t m_port{0};
 
   PlayerSessionCreationPolicy m_playerSessionCreationPolicy{PlayerSessionCreationPolicy::NOT_SET};
 

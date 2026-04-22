@@ -3,96 +3,170 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/snowball/model/CreateClusterRequest.h>
 
 #include <utility>
 
 using namespace Aws::Snowball::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String CreateClusterRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_jobTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_resourcesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_onDeviceServiceConfigurationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_descriptionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_addressIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_kmsKeyARNHasBeenSet) {
+    mapSize++;
+  }
+  if (m_roleARNHasBeenSet) {
+    mapSize++;
+  }
+  if (m_snowballTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_shippingOptionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_notificationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_forwardingAddressIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_taxDocumentsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_remoteManagementHasBeenSet) {
+    mapSize++;
+  }
+  if (m_initialClusterSizeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_forceCreateJobsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_longTermPricingIdsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_snowballCapacityPreferenceHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_jobTypeHasBeenSet) {
-    payload.WithString("JobType", JobTypeMapper::GetNameForJobType(m_jobType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("JobType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(JobTypeMapper::GetNameForJobType(m_jobType).c_str()));
   }
 
   if (m_resourcesHasBeenSet) {
-    payload.WithObject("Resources", m_resources.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Resources"));
+    m_resources.CborEncode(encoder);
   }
 
   if (m_onDeviceServiceConfigurationHasBeenSet) {
-    payload.WithObject("OnDeviceServiceConfiguration", m_onDeviceServiceConfiguration.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("OnDeviceServiceConfiguration"));
+    m_onDeviceServiceConfiguration.CborEncode(encoder);
   }
 
   if (m_descriptionHasBeenSet) {
-    payload.WithString("Description", m_description);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Description"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_description.c_str()));
   }
 
   if (m_addressIdHasBeenSet) {
-    payload.WithString("AddressId", m_addressId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AddressId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_addressId.c_str()));
   }
 
   if (m_kmsKeyARNHasBeenSet) {
-    payload.WithString("KmsKeyARN", m_kmsKeyARN);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("KmsKeyARN"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_kmsKeyARN.c_str()));
   }
 
   if (m_roleARNHasBeenSet) {
-    payload.WithString("RoleARN", m_roleARN);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RoleARN"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_roleARN.c_str()));
   }
 
   if (m_snowballTypeHasBeenSet) {
-    payload.WithString("SnowballType", SnowballTypeMapper::GetNameForSnowballType(m_snowballType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SnowballType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(SnowballTypeMapper::GetNameForSnowballType(m_snowballType).c_str()));
   }
 
   if (m_shippingOptionHasBeenSet) {
-    payload.WithString("ShippingOption", ShippingOptionMapper::GetNameForShippingOption(m_shippingOption));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ShippingOption"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(ShippingOptionMapper::GetNameForShippingOption(m_shippingOption).c_str()));
   }
 
   if (m_notificationHasBeenSet) {
-    payload.WithObject("Notification", m_notification.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Notification"));
+    m_notification.CborEncode(encoder);
   }
 
   if (m_forwardingAddressIdHasBeenSet) {
-    payload.WithString("ForwardingAddressId", m_forwardingAddressId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ForwardingAddressId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_forwardingAddressId.c_str()));
   }
 
   if (m_taxDocumentsHasBeenSet) {
-    payload.WithObject("TaxDocuments", m_taxDocuments.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("TaxDocuments"));
+    m_taxDocuments.CborEncode(encoder);
   }
 
   if (m_remoteManagementHasBeenSet) {
-    payload.WithString("RemoteManagement", RemoteManagementMapper::GetNameForRemoteManagement(m_remoteManagement));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RemoteManagement"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(RemoteManagementMapper::GetNameForRemoteManagement(m_remoteManagement).c_str()));
   }
 
   if (m_initialClusterSizeHasBeenSet) {
-    payload.WithInteger("InitialClusterSize", m_initialClusterSize);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("InitialClusterSize"));
+    (m_initialClusterSize >= 0) ? encoder.WriteUInt(m_initialClusterSize) : encoder.WriteNegInt(m_initialClusterSize);
   }
 
   if (m_forceCreateJobsHasBeenSet) {
-    payload.WithBool("ForceCreateJobs", m_forceCreateJobs);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ForceCreateJobs"));
+    encoder.WriteBool(m_forceCreateJobs);
   }
 
   if (m_longTermPricingIdsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> longTermPricingIdsJsonList(m_longTermPricingIds.size());
-    for (unsigned longTermPricingIdsIndex = 0; longTermPricingIdsIndex < longTermPricingIdsJsonList.GetLength();
-         ++longTermPricingIdsIndex) {
-      longTermPricingIdsJsonList[longTermPricingIdsIndex].AsString(m_longTermPricingIds[longTermPricingIdsIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("LongTermPricingIds"));
+    encoder.WriteArrayStart(m_longTermPricingIds.size());
+    for (const auto& item_0 : m_longTermPricingIds) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("LongTermPricingIds", std::move(longTermPricingIdsJsonList));
   }
 
   if (m_snowballCapacityPreferenceHasBeenSet) {
-    payload.WithString("SnowballCapacityPreference", SnowballCapacityMapper::GetNameForSnowballCapacity(m_snowballCapacityPreference));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SnowballCapacityPreference"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(SnowballCapacityMapper::GetNameForSnowballCapacity(m_snowballCapacityPreference).c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection CreateClusterRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSIESnowballJobManagementService.CreateCluster"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

@@ -4,43 +4,168 @@
  */
 
 #include <aws/compute-optimizer/model/ExternalMetricStatus.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace ComputeOptimizer {
 namespace Model {
 
-ExternalMetricStatus::ExternalMetricStatus(JsonView jsonValue) { *this = jsonValue; }
+ExternalMetricStatus::ExternalMetricStatus(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-ExternalMetricStatus& ExternalMetricStatus::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("statusCode")) {
-    m_statusCode = ExternalMetricStatusCodeMapper::GetExternalMetricStatusCodeForName(jsonValue.GetString("statusCode"));
-    m_statusCodeHasBeenSet = true;
+ExternalMetricStatus& ExternalMetricStatus::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "statusCode") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_statusCode = ExternalMetricStatusCodeMapper::GetExternalMetricStatusCodeForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_statusCodeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "statusReason") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_statusReason = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_statusReason = ss.str();
+                  }
+                }
+                m_statusReasonHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("ExternalMetricStatus", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "statusCode") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_statusCode = ExternalMetricStatusCodeMapper::GetExternalMetricStatusCodeForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_statusCodeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "statusReason") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_statusReason = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_statusReason = ss.str();
+                }
+              }
+              m_statusReasonHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
-  if (jsonValue.ValueExists("statusReason")) {
-    m_statusReason = jsonValue.GetString("statusReason");
-    m_statusReasonHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue ExternalMetricStatus::Jsonize() const {
-  JsonValue payload;
+void ExternalMetricStatus::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_statusCodeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_statusReasonHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_statusCodeHasBeenSet) {
-    payload.WithString("statusCode", ExternalMetricStatusCodeMapper::GetNameForExternalMetricStatusCode(m_statusCode));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("statusCode"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(ExternalMetricStatusCodeMapper::GetNameForExternalMetricStatusCode(m_statusCode).c_str()));
   }
 
   if (m_statusReasonHasBeenSet) {
-    payload.WithString("statusReason", m_statusReason);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("statusReason"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_statusReason.c_str()));
   }
-
-  return payload;
 }
 
 }  // namespace Model

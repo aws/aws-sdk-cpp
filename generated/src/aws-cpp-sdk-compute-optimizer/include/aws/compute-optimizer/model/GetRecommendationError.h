@@ -6,15 +6,15 @@
 #pragma once
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ComputeOptimizer {
 namespace Model {
@@ -22,17 +22,17 @@ namespace Model {
 /**
  * <p>Describes an error experienced when getting recommendations.</p> <p>For
  * example, an error is returned if you request recommendations for an unsupported
- * Amazon EC2 Auto Scaling group, or if you request recommendations for an instance
- * of an unsupported instance family.</p><p><h3>See Also:</h3>   <a
+ * Auto Scaling group, or if you request recommendations for an instance of an
+ * unsupported instance family.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetRecommendationError">AWS
  * API Reference</a></p>
  */
 class GetRecommendationError {
  public:
   AWS_COMPUTEOPTIMIZER_API GetRecommendationError() = default;
-  AWS_COMPUTEOPTIMIZER_API GetRecommendationError(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API GetRecommendationError& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPUTEOPTIMIZER_API GetRecommendationError(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API GetRecommendationError& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

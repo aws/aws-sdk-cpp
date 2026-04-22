@@ -29,6 +29,9 @@
 #include <aws/sagemaker/model/BatchDescribeModelPackageRequest.h>
 #include <aws/sagemaker/model/BatchRebootClusterNodesRequest.h>
 #include <aws/sagemaker/model/BatchReplaceClusterNodesRequest.h>
+#include <aws/sagemaker/model/CreateAIBenchmarkJobRequest.h>
+#include <aws/sagemaker/model/CreateAIRecommendationJobRequest.h>
+#include <aws/sagemaker/model/CreateAIWorkloadConfigRequest.h>
 #include <aws/sagemaker/model/CreateActionRequest.h>
 #include <aws/sagemaker/model/CreateAlgorithmRequest.h>
 #include <aws/sagemaker/model/CreateAppImageConfigRequest.h>
@@ -97,6 +100,9 @@
 #include <aws/sagemaker/model/CreateUserProfileRequest.h>
 #include <aws/sagemaker/model/CreateWorkforceRequest.h>
 #include <aws/sagemaker/model/CreateWorkteamRequest.h>
+#include <aws/sagemaker/model/DeleteAIBenchmarkJobRequest.h>
+#include <aws/sagemaker/model/DeleteAIRecommendationJobRequest.h>
+#include <aws/sagemaker/model/DeleteAIWorkloadConfigRequest.h>
 #include <aws/sagemaker/model/DeleteActionRequest.h>
 #include <aws/sagemaker/model/DeleteAlgorithmRequest.h>
 #include <aws/sagemaker/model/DeleteAppImageConfigRequest.h>
@@ -114,12 +120,6 @@
 #include <aws/sagemaker/model/DeleteDomainRequest.h>
 #include <aws/sagemaker/model/DeleteEdgeDeploymentPlanRequest.h>
 #include <aws/sagemaker/model/DeleteEdgeDeploymentStageRequest.h>
-#include <aws/sagemaker/model/DeleteEndpointConfigRequest.h>
-#include <aws/sagemaker/model/DeleteEndpointRequest.h>
-#include <aws/sagemaker/model/DeleteExperimentRequest.h>
-#include <aws/sagemaker/model/DeleteFeatureGroupRequest.h>
-#include <aws/sagemaker/model/DeleteFlowDefinitionRequest.h>
-#include <aws/sagemaker/model/DeleteHubRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -321,6 +321,24 @@ BatchReplaceClusterNodesOutcome SageMakerClient::BatchReplaceClusterNodes(const 
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? BatchReplaceClusterNodesOutcome(result.GetResultWithOwnership())
                             : BatchReplaceClusterNodesOutcome(std::move(result.GetError()));
+}
+
+CreateAIBenchmarkJobOutcome SageMakerClient::CreateAIBenchmarkJob(const CreateAIBenchmarkJobRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAIBenchmarkJobOutcome(result.GetResultWithOwnership())
+                            : CreateAIBenchmarkJobOutcome(std::move(result.GetError()));
+}
+
+CreateAIRecommendationJobOutcome SageMakerClient::CreateAIRecommendationJob(const CreateAIRecommendationJobRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAIRecommendationJobOutcome(result.GetResultWithOwnership())
+                            : CreateAIRecommendationJobOutcome(std::move(result.GetError()));
+}
+
+CreateAIWorkloadConfigOutcome SageMakerClient::CreateAIWorkloadConfig(const CreateAIWorkloadConfigRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAIWorkloadConfigOutcome(result.GetResultWithOwnership())
+                            : CreateAIWorkloadConfigOutcome(std::move(result.GetError()));
 }
 
 CreateActionOutcome SageMakerClient::CreateAction(const CreateActionRequest& request) const {
@@ -728,6 +746,24 @@ CreateWorkteamOutcome SageMakerClient::CreateWorkteam(const CreateWorkteamReques
   return result.IsSuccess() ? CreateWorkteamOutcome(result.GetResultWithOwnership()) : CreateWorkteamOutcome(std::move(result.GetError()));
 }
 
+DeleteAIBenchmarkJobOutcome SageMakerClient::DeleteAIBenchmarkJob(const DeleteAIBenchmarkJobRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAIBenchmarkJobOutcome(result.GetResultWithOwnership())
+                            : DeleteAIBenchmarkJobOutcome(std::move(result.GetError()));
+}
+
+DeleteAIRecommendationJobOutcome SageMakerClient::DeleteAIRecommendationJob(const DeleteAIRecommendationJobRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAIRecommendationJobOutcome(result.GetResultWithOwnership())
+                            : DeleteAIRecommendationJobOutcome(std::move(result.GetError()));
+}
+
+DeleteAIWorkloadConfigOutcome SageMakerClient::DeleteAIWorkloadConfig(const DeleteAIWorkloadConfigRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAIWorkloadConfigOutcome(result.GetResultWithOwnership())
+                            : DeleteAIWorkloadConfigOutcome(std::move(result.GetError()));
+}
+
 DeleteActionOutcome SageMakerClient::DeleteAction(const DeleteActionRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteActionOutcome(result.GetResultWithOwnership()) : DeleteActionOutcome(std::move(result.GetError()));
@@ -824,38 +860,4 @@ DeleteEdgeDeploymentStageOutcome SageMakerClient::DeleteEdgeDeploymentStage(cons
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteEdgeDeploymentStageOutcome(result.GetResultWithOwnership())
                             : DeleteEdgeDeploymentStageOutcome(std::move(result.GetError()));
-}
-
-DeleteEndpointOutcome SageMakerClient::DeleteEndpoint(const DeleteEndpointRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteEndpointOutcome(result.GetResultWithOwnership()) : DeleteEndpointOutcome(std::move(result.GetError()));
-}
-
-DeleteEndpointConfigOutcome SageMakerClient::DeleteEndpointConfig(const DeleteEndpointConfigRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteEndpointConfigOutcome(result.GetResultWithOwnership())
-                            : DeleteEndpointConfigOutcome(std::move(result.GetError()));
-}
-
-DeleteExperimentOutcome SageMakerClient::DeleteExperiment(const DeleteExperimentRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteExperimentOutcome(result.GetResultWithOwnership())
-                            : DeleteExperimentOutcome(std::move(result.GetError()));
-}
-
-DeleteFeatureGroupOutcome SageMakerClient::DeleteFeatureGroup(const DeleteFeatureGroupRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteFeatureGroupOutcome(result.GetResultWithOwnership())
-                            : DeleteFeatureGroupOutcome(std::move(result.GetError()));
-}
-
-DeleteFlowDefinitionOutcome SageMakerClient::DeleteFlowDefinition(const DeleteFlowDefinitionRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteFlowDefinitionOutcome(result.GetResultWithOwnership())
-                            : DeleteFlowDefinitionOutcome(std::move(result.GetError()));
-}
-
-DeleteHubOutcome SageMakerClient::DeleteHub(const DeleteHubRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteHubOutcome(result.GetResultWithOwnership()) : DeleteHubOutcome(std::move(result.GetError()));
 }

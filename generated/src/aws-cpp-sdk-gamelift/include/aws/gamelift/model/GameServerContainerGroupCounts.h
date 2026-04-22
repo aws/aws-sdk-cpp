@@ -4,14 +4,14 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace GameLift {
 namespace Model {
@@ -34,22 +34,22 @@ namespace Model {
 class GameServerContainerGroupCounts {
  public:
   AWS_GAMELIFT_API GameServerContainerGroupCounts() = default;
-  AWS_GAMELIFT_API GameServerContainerGroupCounts(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API GameServerContainerGroupCounts& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_GAMELIFT_API GameServerContainerGroupCounts(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API GameServerContainerGroupCounts& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p> The number of container groups that are starting up but haven't yet
    * registered. </p>
    */
-  inline int GetPENDING() const { return m_pENDING; }
+  inline int64_t GetPENDING() const { return m_pENDING; }
   inline bool PENDINGHasBeenSet() const { return m_pENDINGHasBeenSet; }
-  inline void SetPENDING(int value) {
+  inline void SetPENDING(int64_t value) {
     m_pENDINGHasBeenSet = true;
     m_pENDING = value;
   }
-  inline GameServerContainerGroupCounts& WithPENDING(int value) {
+  inline GameServerContainerGroupCounts& WithPENDING(int64_t value) {
     SetPENDING(value);
     return *this;
   }
@@ -59,13 +59,13 @@ class GameServerContainerGroupCounts {
   /**
    * <p> The number of container groups that have active game sessions. </p>
    */
-  inline int GetACTIVE() const { return m_aCTIVE; }
+  inline int64_t GetACTIVE() const { return m_aCTIVE; }
   inline bool ACTIVEHasBeenSet() const { return m_aCTIVEHasBeenSet; }
-  inline void SetACTIVE(int value) {
+  inline void SetACTIVE(int64_t value) {
     m_aCTIVEHasBeenSet = true;
     m_aCTIVE = value;
   }
-  inline GameServerContainerGroupCounts& WithACTIVE(int value) {
+  inline GameServerContainerGroupCounts& WithACTIVE(int64_t value) {
     SetACTIVE(value);
     return *this;
   }
@@ -75,13 +75,13 @@ class GameServerContainerGroupCounts {
   /**
    * <p> The number of container groups that have no active game sessions. </p>
    */
-  inline int GetIDLE() const { return m_iDLE; }
+  inline int64_t GetIDLE() const { return m_iDLE; }
   inline bool IDLEHasBeenSet() const { return m_iDLEHasBeenSet; }
-  inline void SetIDLE(int value) {
+  inline void SetIDLE(int64_t value) {
     m_iDLEHasBeenSet = true;
     m_iDLE = value;
   }
-  inline GameServerContainerGroupCounts& WithIDLE(int value) {
+  inline GameServerContainerGroupCounts& WithIDLE(int64_t value) {
     SetIDLE(value);
     return *this;
   }
@@ -92,25 +92,25 @@ class GameServerContainerGroupCounts {
    * <p> The number of container groups that are in the process of shutting down.
    * </p>
    */
-  inline int GetTERMINATING() const { return m_tERMINATING; }
+  inline int64_t GetTERMINATING() const { return m_tERMINATING; }
   inline bool TERMINATINGHasBeenSet() const { return m_tERMINATINGHasBeenSet; }
-  inline void SetTERMINATING(int value) {
+  inline void SetTERMINATING(int64_t value) {
     m_tERMINATINGHasBeenSet = true;
     m_tERMINATING = value;
   }
-  inline GameServerContainerGroupCounts& WithTERMINATING(int value) {
+  inline GameServerContainerGroupCounts& WithTERMINATING(int64_t value) {
     SetTERMINATING(value);
     return *this;
   }
   ///@}
  private:
-  int m_pENDING{0};
+  int64_t m_pENDING{0};
 
-  int m_aCTIVE{0};
+  int64_t m_aCTIVE{0};
 
-  int m_iDLE{0};
+  int64_t m_iDLE{0};
 
-  int m_tERMINATING{0};
+  int64_t m_tERMINATING{0};
   bool m_pENDINGHasBeenSet = false;
   bool m_aCTIVEHasBeenSet = false;
   bool m_iDLEHasBeenSet = false;

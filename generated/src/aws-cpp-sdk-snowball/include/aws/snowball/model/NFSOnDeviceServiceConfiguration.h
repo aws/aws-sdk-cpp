@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/snowball/model/StorageUnit.h>
 
@@ -11,10 +12,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Snowball {
 namespace Model {
@@ -29,21 +29,21 @@ namespace Model {
 class NFSOnDeviceServiceConfiguration {
  public:
   AWS_SNOWBALL_API NFSOnDeviceServiceConfiguration() = default;
-  AWS_SNOWBALL_API NFSOnDeviceServiceConfiguration(Aws::Utils::Json::JsonView jsonValue);
-  AWS_SNOWBALL_API NFSOnDeviceServiceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_SNOWBALL_API NFSOnDeviceServiceConfiguration(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_SNOWBALL_API NFSOnDeviceServiceConfiguration& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_SNOWBALL_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p>The maximum NFS storage for one Snow Family device.</p>
    */
-  inline int GetStorageLimit() const { return m_storageLimit; }
+  inline int64_t GetStorageLimit() const { return m_storageLimit; }
   inline bool StorageLimitHasBeenSet() const { return m_storageLimitHasBeenSet; }
-  inline void SetStorageLimit(int value) {
+  inline void SetStorageLimit(int64_t value) {
     m_storageLimitHasBeenSet = true;
     m_storageLimit = value;
   }
-  inline NFSOnDeviceServiceConfiguration& WithStorageLimit(int value) {
+  inline NFSOnDeviceServiceConfiguration& WithStorageLimit(int64_t value) {
     SetStorageLimit(value);
     return *this;
   }
@@ -65,7 +65,7 @@ class NFSOnDeviceServiceConfiguration {
   }
   ///@}
  private:
-  int m_storageLimit{0};
+  int64_t m_storageLimit{0};
 
   StorageUnit m_storageUnit{StorageUnit::NOT_SET};
   bool m_storageLimitHasBeenSet = false;

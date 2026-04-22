@@ -7,6 +7,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/GameProperty.h>
 #include <aws/gamelift/model/GameSessionPlacementState.h>
@@ -19,10 +20,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace GameLift {
 namespace Model {
@@ -45,9 +45,9 @@ namespace Model {
 class GameSessionPlacement {
  public:
   AWS_GAMELIFT_API GameSessionPlacement() = default;
-  AWS_GAMELIFT_API GameSessionPlacement(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API GameSessionPlacement& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_GAMELIFT_API GameSessionPlacement(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API GameSessionPlacement& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -149,13 +149,13 @@ class GameSessionPlacement {
    * <p>The maximum number of players that can be connected simultaneously to the
    * game session.</p>
    */
-  inline int GetMaximumPlayerSessionCount() const { return m_maximumPlayerSessionCount; }
+  inline int64_t GetMaximumPlayerSessionCount() const { return m_maximumPlayerSessionCount; }
   inline bool MaximumPlayerSessionCountHasBeenSet() const { return m_maximumPlayerSessionCountHasBeenSet; }
-  inline void SetMaximumPlayerSessionCount(int value) {
+  inline void SetMaximumPlayerSessionCount(int64_t value) {
     m_maximumPlayerSessionCountHasBeenSet = true;
     m_maximumPlayerSessionCount = value;
   }
-  inline GameSessionPlacement& WithMaximumPlayerSessionCount(int value) {
+  inline GameSessionPlacement& WithMaximumPlayerSessionCount(int64_t value) {
     SetMaximumPlayerSessionCount(value);
     return *this;
   }
@@ -357,13 +357,13 @@ class GameSessionPlacement {
    * game server, an app needs both the IP address and port number. This value isn't
    * final until placement status is <code>FULFILLED</code>.</p>
    */
-  inline int GetPort() const { return m_port; }
+  inline int64_t GetPort() const { return m_port; }
   inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
-  inline void SetPort(int value) {
+  inline void SetPort(int64_t value) {
     m_portHasBeenSet = true;
     m_port = value;
   }
-  inline GameSessionPlacement& WithPort(int value) {
+  inline GameSessionPlacement& WithPort(int64_t value) {
     SetPort(value);
     return *this;
   }
@@ -498,7 +498,7 @@ class GameSessionPlacement {
 
   Aws::Vector<GameProperty> m_gameProperties;
 
-  int m_maximumPlayerSessionCount{0};
+  int64_t m_maximumPlayerSessionCount{0};
 
   Aws::String m_gameSessionName;
 
@@ -518,7 +518,7 @@ class GameSessionPlacement {
 
   Aws::String m_dnsName;
 
-  int m_port{0};
+  int64_t m_port{0};
 
   Aws::Vector<PlacedPlayerSession> m_placedPlayerSessions;
 

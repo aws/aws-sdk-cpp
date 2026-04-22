@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/ServerProcess.h>
 
@@ -12,10 +13,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace GameLift {
 namespace Model {
@@ -38,9 +38,9 @@ namespace Model {
 class RuntimeConfiguration {
  public:
   AWS_GAMELIFT_API RuntimeConfiguration() = default;
-  AWS_GAMELIFT_API RuntimeConfiguration(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API RuntimeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_GAMELIFT_API RuntimeConfiguration(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API RuntimeConfiguration& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -73,13 +73,13 @@ class RuntimeConfiguration {
    * instance or compute. This setting limits the instance resources that can be used
    * for new game activations at any one time.</p>
    */
-  inline int GetMaxConcurrentGameSessionActivations() const { return m_maxConcurrentGameSessionActivations; }
+  inline int64_t GetMaxConcurrentGameSessionActivations() const { return m_maxConcurrentGameSessionActivations; }
   inline bool MaxConcurrentGameSessionActivationsHasBeenSet() const { return m_maxConcurrentGameSessionActivationsHasBeenSet; }
-  inline void SetMaxConcurrentGameSessionActivations(int value) {
+  inline void SetMaxConcurrentGameSessionActivations(int64_t value) {
     m_maxConcurrentGameSessionActivationsHasBeenSet = true;
     m_maxConcurrentGameSessionActivations = value;
   }
-  inline RuntimeConfiguration& WithMaxConcurrentGameSessionActivations(int value) {
+  inline RuntimeConfiguration& WithMaxConcurrentGameSessionActivations(int64_t value) {
     SetMaxConcurrentGameSessionActivations(value);
     return *this;
   }
@@ -93,13 +93,13 @@ class RuntimeConfiguration {
    * before the timeout, it is ended and the game session status is changed to
    * <code>TERMINATED</code>.</p>
    */
-  inline int GetGameSessionActivationTimeoutSeconds() const { return m_gameSessionActivationTimeoutSeconds; }
+  inline int64_t GetGameSessionActivationTimeoutSeconds() const { return m_gameSessionActivationTimeoutSeconds; }
   inline bool GameSessionActivationTimeoutSecondsHasBeenSet() const { return m_gameSessionActivationTimeoutSecondsHasBeenSet; }
-  inline void SetGameSessionActivationTimeoutSeconds(int value) {
+  inline void SetGameSessionActivationTimeoutSeconds(int64_t value) {
     m_gameSessionActivationTimeoutSecondsHasBeenSet = true;
     m_gameSessionActivationTimeoutSeconds = value;
   }
-  inline RuntimeConfiguration& WithGameSessionActivationTimeoutSeconds(int value) {
+  inline RuntimeConfiguration& WithGameSessionActivationTimeoutSeconds(int64_t value) {
     SetGameSessionActivationTimeoutSeconds(value);
     return *this;
   }
@@ -107,9 +107,9 @@ class RuntimeConfiguration {
  private:
   Aws::Vector<ServerProcess> m_serverProcesses;
 
-  int m_maxConcurrentGameSessionActivations{0};
+  int64_t m_maxConcurrentGameSessionActivations{0};
 
-  int m_gameSessionActivationTimeoutSeconds{0};
+  int64_t m_gameSessionActivationTimeoutSeconds{0};
   bool m_serverProcessesHasBeenSet = false;
   bool m_maxConcurrentGameSessionActivationsHasBeenSet = false;
   bool m_gameSessionActivationTimeoutSecondsHasBeenSet = false;

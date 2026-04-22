@@ -4,14 +4,14 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace GameLift {
 namespace Model {
@@ -30,9 +30,9 @@ namespace Model {
 class ResourceCreationLimitPolicy {
  public:
   AWS_GAMELIFT_API ResourceCreationLimitPolicy() = default;
-  AWS_GAMELIFT_API ResourceCreationLimitPolicy(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API ResourceCreationLimitPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_GAMELIFT_API ResourceCreationLimitPolicy(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API ResourceCreationLimitPolicy& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -44,13 +44,13 @@ class ResourceCreationLimitPolicy {
    * player (identified by <code>CreatorId</code>) has created fewer than game
    * session limit in the specified time period.</p>
    */
-  inline int GetNewGameSessionsPerCreator() const { return m_newGameSessionsPerCreator; }
+  inline int64_t GetNewGameSessionsPerCreator() const { return m_newGameSessionsPerCreator; }
   inline bool NewGameSessionsPerCreatorHasBeenSet() const { return m_newGameSessionsPerCreatorHasBeenSet; }
-  inline void SetNewGameSessionsPerCreator(int value) {
+  inline void SetNewGameSessionsPerCreator(int64_t value) {
     m_newGameSessionsPerCreatorHasBeenSet = true;
     m_newGameSessionsPerCreator = value;
   }
-  inline ResourceCreationLimitPolicy& WithNewGameSessionsPerCreator(int value) {
+  inline ResourceCreationLimitPolicy& WithNewGameSessionsPerCreator(int64_t value) {
     SetNewGameSessionsPerCreator(value);
     return *this;
   }
@@ -60,21 +60,21 @@ class ResourceCreationLimitPolicy {
   /**
    * <p>The time span used in evaluating the resource creation limit policy. </p>
    */
-  inline int GetPolicyPeriodInMinutes() const { return m_policyPeriodInMinutes; }
+  inline int64_t GetPolicyPeriodInMinutes() const { return m_policyPeriodInMinutes; }
   inline bool PolicyPeriodInMinutesHasBeenSet() const { return m_policyPeriodInMinutesHasBeenSet; }
-  inline void SetPolicyPeriodInMinutes(int value) {
+  inline void SetPolicyPeriodInMinutes(int64_t value) {
     m_policyPeriodInMinutesHasBeenSet = true;
     m_policyPeriodInMinutes = value;
   }
-  inline ResourceCreationLimitPolicy& WithPolicyPeriodInMinutes(int value) {
+  inline ResourceCreationLimitPolicy& WithPolicyPeriodInMinutes(int64_t value) {
     SetPolicyPeriodInMinutes(value);
     return *this;
   }
   ///@}
  private:
-  int m_newGameSessionsPerCreator{0};
+  int64_t m_newGameSessionsPerCreator{0};
 
-  int m_policyPeriodInMinutes{0};
+  int64_t m_policyPeriodInMinutes{0};
   bool m_newGameSessionsPerCreatorHasBeenSet = false;
   bool m_policyPeriodInMinutesHasBeenSet = false;
 };

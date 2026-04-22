@@ -14,15 +14,15 @@
 #include <aws/compute-optimizer/model/LookBackPeriodPreference.h>
 #include <aws/compute-optimizer/model/UtilizationPreference.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ComputeOptimizer {
 namespace Model {
@@ -36,14 +36,14 @@ namespace Model {
 class EffectiveRecommendationPreferences {
  public:
   AWS_COMPUTEOPTIMIZER_API EffectiveRecommendationPreferences() = default;
-  AWS_COMPUTEOPTIMIZER_API EffectiveRecommendationPreferences(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API EffectiveRecommendationPreferences& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPUTEOPTIMIZER_API EffectiveRecommendationPreferences(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API EffectiveRecommendationPreferences& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
-   * <p>Describes the CPU vendor and architecture for an instance or Amazon EC2 Auto
-   * Scaling group recommendations.</p> <p>For example, when you specify
+   * <p>Describes the CPU vendor and architecture for an instance or Auto Scaling
+   * group recommendations.</p> <p>For example, when you specify
    * <code>AWS_ARM64</code> with:</p> <ul> <li> <p>A
    * <a>GetEC2InstanceRecommendations</a> or
    * <a>GetAutoScalingGroupRecommendations</a> request, Compute Optimizer returns

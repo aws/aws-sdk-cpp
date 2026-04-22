@@ -6,15 +6,15 @@
 #pragma once
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ComputeOptimizer {
 namespace Model {
@@ -29,9 +29,9 @@ namespace Model {
 class S3Destination {
  public:
   AWS_COMPUTEOPTIMIZER_API S3Destination() = default;
-  AWS_COMPUTEOPTIMIZER_API S3Destination(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API S3Destination& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPUTEOPTIMIZER_API S3Destination(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API S3Destination& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

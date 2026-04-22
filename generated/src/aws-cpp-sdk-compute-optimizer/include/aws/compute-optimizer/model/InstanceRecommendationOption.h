@@ -13,15 +13,15 @@
 #include <aws/compute-optimizer/model/UtilizationMetric.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ComputeOptimizer {
 namespace Model {
@@ -35,9 +35,9 @@ namespace Model {
 class InstanceRecommendationOption {
  public:
   AWS_COMPUTEOPTIMIZER_API InstanceRecommendationOption() = default;
-  AWS_COMPUTEOPTIMIZER_API InstanceRecommendationOption(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API InstanceRecommendationOption& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPUTEOPTIMIZER_API InstanceRecommendationOption(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API InstanceRecommendationOption& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -250,13 +250,13 @@ class InstanceRecommendationOption {
    * <p>The rank of the instance recommendation option.</p> <p>The top recommendation
    * option is ranked as <code>1</code>.</p>
    */
-  inline int GetRank() const { return m_rank; }
+  inline int64_t GetRank() const { return m_rank; }
   inline bool RankHasBeenSet() const { return m_rankHasBeenSet; }
-  inline void SetRank(int value) {
+  inline void SetRank(int64_t value) {
     m_rankHasBeenSet = true;
     m_rank = value;
   }
-  inline InstanceRecommendationOption& WithRank(int value) {
+  inline InstanceRecommendationOption& WithRank(int64_t value) {
     SetRank(value);
     return *this;
   }
@@ -338,7 +338,7 @@ class InstanceRecommendationOption {
 
   double m_performanceRisk{0.0};
 
-  int m_rank{0};
+  int64_t m_rank{0};
 
   SavingsOpportunity m_savingsOpportunity;
 

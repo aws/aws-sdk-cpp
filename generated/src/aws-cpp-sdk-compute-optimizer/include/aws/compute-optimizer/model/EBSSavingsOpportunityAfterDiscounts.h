@@ -6,15 +6,15 @@
 #pragma once
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/compute-optimizer/model/EBSEstimatedMonthlySavings.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ComputeOptimizer {
 namespace Model {
@@ -28,9 +28,9 @@ namespace Model {
 class EBSSavingsOpportunityAfterDiscounts {
  public:
   AWS_COMPUTEOPTIMIZER_API EBSSavingsOpportunityAfterDiscounts() = default;
-  AWS_COMPUTEOPTIMIZER_API EBSSavingsOpportunityAfterDiscounts(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API EBSSavingsOpportunityAfterDiscounts& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPUTEOPTIMIZER_API EBSSavingsOpportunityAfterDiscounts(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API EBSSavingsOpportunityAfterDiscounts& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -53,7 +53,7 @@ class EBSSavingsOpportunityAfterDiscounts {
   ///@{
   /**
    * <p> The estimated monthly savings possible as a percentage of monthly cost by
-   * adopting Compute Optimizer’s Amazon EBS volume recommendations. This saving
+   * adopting Compute Optimizer��s Amazon EBS volume recommendations. This saving
    * includes any applicable discounts. </p>
    */
   inline const EBSEstimatedMonthlySavings& GetEstimatedMonthlySavings() const { return m_estimatedMonthlySavings; }

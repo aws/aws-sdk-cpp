@@ -4,51 +4,203 @@
  */
 
 #include <aws/compute-optimizer/model/ContainerConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace ComputeOptimizer {
 namespace Model {
 
-ContainerConfiguration::ContainerConfiguration(JsonView jsonValue) { *this = jsonValue; }
+ContainerConfiguration::ContainerConfiguration(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-ContainerConfiguration& ContainerConfiguration::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("containerName")) {
-    m_containerName = jsonValue.GetString("containerName");
-    m_containerNameHasBeenSet = true;
+ContainerConfiguration& ContainerConfiguration::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "containerName") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_containerName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_containerName = ss.str();
+                  }
+                }
+                m_containerNameHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "memorySizeConfiguration") {
+                m_memorySizeConfiguration = MemorySizeConfiguration(decoder);
+                m_memorySizeConfigurationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "cpu") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_cpu = static_cast<int64_t>(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextNegativeIntVal();
+                    if (val.has_value()) {
+                      m_cpu = static_cast<int64_t>(1 - val.value());
+                    }
+                  }
+                }
+                m_cpuHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("ContainerConfiguration", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "containerName") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_containerName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_containerName = ss.str();
+                }
+              }
+              m_containerNameHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "memorySizeConfiguration") {
+              m_memorySizeConfiguration = MemorySizeConfiguration(decoder);
+              m_memorySizeConfigurationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "cpu") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                  auto val = decoder->PopNextUnsignedIntVal();
+                  if (val.has_value()) {
+                    m_cpu = static_cast<int64_t>(val.value());
+                  }
+                } else {
+                  auto val = decoder->PopNextNegativeIntVal();
+                  if (val.has_value()) {
+                    m_cpu = static_cast<int64_t>(1 - val.value());
+                  }
+                }
+              }
+              m_cpuHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
-  if (jsonValue.ValueExists("memorySizeConfiguration")) {
-    m_memorySizeConfiguration = jsonValue.GetObject("memorySizeConfiguration");
-    m_memorySizeConfigurationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("cpu")) {
-    m_cpu = jsonValue.GetInteger("cpu");
-    m_cpuHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue ContainerConfiguration::Jsonize() const {
-  JsonValue payload;
+void ContainerConfiguration::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_containerNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_memorySizeConfigurationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_cpuHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_containerNameHasBeenSet) {
-    payload.WithString("containerName", m_containerName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("containerName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_containerName.c_str()));
   }
 
   if (m_memorySizeConfigurationHasBeenSet) {
-    payload.WithObject("memorySizeConfiguration", m_memorySizeConfiguration.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("memorySizeConfiguration"));
+    m_memorySizeConfiguration.CborEncode(encoder);
   }
 
   if (m_cpuHasBeenSet) {
-    payload.WithInteger("cpu", m_cpu);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("cpu"));
+    (m_cpu >= 0) ? encoder.WriteUInt(m_cpu) : encoder.WriteNegInt(m_cpu);
   }
-
-  return payload;
 }
 
 }  // namespace Model

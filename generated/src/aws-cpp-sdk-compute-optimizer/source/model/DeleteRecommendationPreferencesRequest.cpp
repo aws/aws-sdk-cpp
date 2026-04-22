@@ -4,41 +4,57 @@
  */
 
 #include <aws/compute-optimizer/model/DeleteRecommendationPreferencesRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::ComputeOptimizer::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String DeleteRecommendationPreferencesRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_resourceTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_scopeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_recommendationPreferenceNamesHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_resourceTypeHasBeenSet) {
-    payload.WithString("resourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("resourceType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(ResourceTypeMapper::GetNameForResourceType(m_resourceType).c_str()));
   }
 
   if (m_scopeHasBeenSet) {
-    payload.WithObject("scope", m_scope.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("scope"));
+    m_scope.CborEncode(encoder);
   }
 
   if (m_recommendationPreferenceNamesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> recommendationPreferenceNamesJsonList(m_recommendationPreferenceNames.size());
-    for (unsigned recommendationPreferenceNamesIndex = 0;
-         recommendationPreferenceNamesIndex < recommendationPreferenceNamesJsonList.GetLength(); ++recommendationPreferenceNamesIndex) {
-      recommendationPreferenceNamesJsonList[recommendationPreferenceNamesIndex].AsString(
-          RecommendationPreferenceNameMapper::GetNameForRecommendationPreferenceName(
-              m_recommendationPreferenceNames[recommendationPreferenceNamesIndex]));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("recommendationPreferenceNames"));
+    encoder.WriteArrayStart(m_recommendationPreferenceNames.size());
+    for (const auto& item_0 : m_recommendationPreferenceNames) {
+      encoder.WriteText(
+          Aws::Crt::ByteCursorFromCString(RecommendationPreferenceNameMapper::GetNameForRecommendationPreferenceName(item_0).c_str()));
     }
-    payload.WithArray("recommendationPreferenceNames", std::move(recommendationPreferenceNamesJsonList));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection DeleteRecommendationPreferencesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ComputeOptimizerService.DeleteRecommendationPreferences"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

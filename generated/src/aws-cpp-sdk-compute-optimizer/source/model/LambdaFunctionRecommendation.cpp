@@ -4,181 +4,813 @@
  */
 
 #include <aws/compute-optimizer/model/LambdaFunctionRecommendation.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace ComputeOptimizer {
 namespace Model {
 
-LambdaFunctionRecommendation::LambdaFunctionRecommendation(JsonView jsonValue) { *this = jsonValue; }
+LambdaFunctionRecommendation::LambdaFunctionRecommendation(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-LambdaFunctionRecommendation& LambdaFunctionRecommendation::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("functionArn")) {
-    m_functionArn = jsonValue.GetString("functionArn");
-    m_functionArnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("functionVersion")) {
-    m_functionVersion = jsonValue.GetString("functionVersion");
-    m_functionVersionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("accountId")) {
-    m_accountId = jsonValue.GetString("accountId");
-    m_accountIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("currentMemorySize")) {
-    m_currentMemorySize = jsonValue.GetInteger("currentMemorySize");
-    m_currentMemorySizeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("numberOfInvocations")) {
-    m_numberOfInvocations = jsonValue.GetInt64("numberOfInvocations");
-    m_numberOfInvocationsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("utilizationMetrics")) {
-    Aws::Utils::Array<JsonView> utilizationMetricsJsonList = jsonValue.GetArray("utilizationMetrics");
-    for (unsigned utilizationMetricsIndex = 0; utilizationMetricsIndex < utilizationMetricsJsonList.GetLength();
-         ++utilizationMetricsIndex) {
-      m_utilizationMetrics.push_back(utilizationMetricsJsonList[utilizationMetricsIndex].AsObject());
+LambdaFunctionRecommendation& LambdaFunctionRecommendation::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "functionArn") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_functionArn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_functionArn = ss.str();
+                  }
+                }
+                m_functionArnHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "functionVersion") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_functionVersion = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_functionVersion = ss.str();
+                  }
+                }
+                m_functionVersionHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "accountId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_accountId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_accountId = ss.str();
+                  }
+                }
+                m_accountIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "currentMemorySize") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_currentMemorySize = static_cast<int64_t>(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextNegativeIntVal();
+                    if (val.has_value()) {
+                      m_currentMemorySize = static_cast<int64_t>(1 - val.value());
+                    }
+                  }
+                }
+                m_currentMemorySizeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "numberOfInvocations") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_numberOfInvocations = static_cast<int64_t>(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextNegativeIntVal();
+                    if (val.has_value()) {
+                      m_numberOfInvocations = static_cast<int64_t>(1 - val.value());
+                    }
+                  }
+                }
+                m_numberOfInvocationsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "utilizationMetrics") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_utilizationMetrics.push_back(LambdaFunctionUtilizationMetric(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_utilizationMetrics.push_back(LambdaFunctionUtilizationMetric(decoder));
+                    }
+                  }
+                }
+                m_utilizationMetricsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "lookbackPeriodInDays") {
+                auto val = decoder->PopNextFloatVal();
+                if (val.has_value()) {
+                  m_lookbackPeriodInDays = val.value();
+                }
+                m_lookbackPeriodInDaysHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "lastRefreshTimestamp") {
+                auto tag = decoder->PopNextTagVal();
+                if (tag.has_value() &&
+                    tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+                {
+                  auto dateType = decoder->PeekType();
+                  if (dateType.has_value()) {
+                    if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_lastRefreshTimestamp = Aws::Utils::DateTime(val.value());
+                      }
+                    } else {
+                      auto val = decoder->PopNextUnsignedIntVal();
+                      if (val.has_value()) {
+                        m_lastRefreshTimestamp = Aws::Utils::DateTime(val.value());
+                      }
+                    }
+                  }
+                }
+                m_lastRefreshTimestampHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "finding") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_finding = LambdaFunctionRecommendationFindingMapper::GetLambdaFunctionRecommendationFindingForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_findingHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "findingReasonCodes") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        auto val = decoder->PopNextTextVal();
+                        if (val.has_value()) {
+                          m_findingReasonCodes.push_back(
+                              LambdaFunctionRecommendationFindingReasonCodeMapper::GetLambdaFunctionRecommendationFindingReasonCodeForName(
+                                  Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len)));
+                        }
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        m_findingReasonCodes.push_back(
+                            LambdaFunctionRecommendationFindingReasonCodeMapper::GetLambdaFunctionRecommendationFindingReasonCodeForName(
+                                Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len)));
+                      }
+                    }
+                  }
+                }
+                m_findingReasonCodesHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "memorySizeRecommendationOptions") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_memorySizeRecommendationOptions.push_back(LambdaFunctionMemoryRecommendationOption(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_memorySizeRecommendationOptions.push_back(LambdaFunctionMemoryRecommendationOption(decoder));
+                    }
+                  }
+                }
+                m_memorySizeRecommendationOptionsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "currentPerformanceRisk") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_currentPerformanceRisk = CurrentPerformanceRiskMapper::GetCurrentPerformanceRiskForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_currentPerformanceRiskHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "effectiveRecommendationPreferences") {
+                m_effectiveRecommendationPreferences = LambdaEffectiveRecommendationPreferences(decoder);
+                m_effectiveRecommendationPreferencesHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "tags") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_tags.push_back(Tag(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_tags.push_back(Tag(decoder));
+                    }
+                  }
+                }
+                m_tagsHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("LambdaFunctionRecommendation", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "functionArn") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_functionArn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_functionArn = ss.str();
+                }
+              }
+              m_functionArnHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "functionVersion") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_functionVersion = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_functionVersion = ss.str();
+                }
+              }
+              m_functionVersionHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "accountId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_accountId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_accountId = ss.str();
+                }
+              }
+              m_accountIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "currentMemorySize") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                  auto val = decoder->PopNextUnsignedIntVal();
+                  if (val.has_value()) {
+                    m_currentMemorySize = static_cast<int64_t>(val.value());
+                  }
+                } else {
+                  auto val = decoder->PopNextNegativeIntVal();
+                  if (val.has_value()) {
+                    m_currentMemorySize = static_cast<int64_t>(1 - val.value());
+                  }
+                }
+              }
+              m_currentMemorySizeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "numberOfInvocations") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                  auto val = decoder->PopNextUnsignedIntVal();
+                  if (val.has_value()) {
+                    m_numberOfInvocations = static_cast<int64_t>(val.value());
+                  }
+                } else {
+                  auto val = decoder->PopNextNegativeIntVal();
+                  if (val.has_value()) {
+                    m_numberOfInvocations = static_cast<int64_t>(1 - val.value());
+                  }
+                }
+              }
+              m_numberOfInvocationsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "utilizationMetrics") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_utilizationMetrics.push_back(LambdaFunctionUtilizationMetric(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_utilizationMetrics.push_back(LambdaFunctionUtilizationMetric(decoder));
+                  }
+                }
+              }
+              m_utilizationMetricsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "lookbackPeriodInDays") {
+              auto val = decoder->PopNextFloatVal();
+              if (val.has_value()) {
+                m_lookbackPeriodInDays = val.value();
+              }
+              m_lookbackPeriodInDaysHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "lastRefreshTimestamp") {
+              auto tag = decoder->PopNextTagVal();
+              if (tag.has_value() &&
+                  tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+              {
+                auto dateType = decoder->PeekType();
+                if (dateType.has_value()) {
+                  if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                    auto val = decoder->PopNextFloatVal();
+                    if (val.has_value()) {
+                      m_lastRefreshTimestamp = Aws::Utils::DateTime(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_lastRefreshTimestamp = Aws::Utils::DateTime(val.value());
+                    }
+                  }
+                }
+              }
+              m_lastRefreshTimestampHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "finding") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_finding = LambdaFunctionRecommendationFindingMapper::GetLambdaFunctionRecommendationFindingForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_findingHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "findingReasonCodes") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        m_findingReasonCodes.push_back(
+                            LambdaFunctionRecommendationFindingReasonCodeMapper::GetLambdaFunctionRecommendationFindingReasonCodeForName(
+                                Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len)));
+                      }
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_findingReasonCodes.push_back(
+                          LambdaFunctionRecommendationFindingReasonCodeMapper::GetLambdaFunctionRecommendationFindingReasonCodeForName(
+                              Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len)));
+                    }
+                  }
+                }
+              }
+              m_findingReasonCodesHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "memorySizeRecommendationOptions") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_memorySizeRecommendationOptions.push_back(LambdaFunctionMemoryRecommendationOption(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_memorySizeRecommendationOptions.push_back(LambdaFunctionMemoryRecommendationOption(decoder));
+                  }
+                }
+              }
+              m_memorySizeRecommendationOptionsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "currentPerformanceRisk") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_currentPerformanceRisk = CurrentPerformanceRiskMapper::GetCurrentPerformanceRiskForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_currentPerformanceRiskHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "effectiveRecommendationPreferences") {
+              m_effectiveRecommendationPreferences = LambdaEffectiveRecommendationPreferences(decoder);
+              m_effectiveRecommendationPreferencesHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "tags") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_tags.push_back(Tag(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_tags.push_back(Tag(decoder));
+                  }
+                }
+              }
+              m_tagsHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
     }
-    m_utilizationMetricsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("lookbackPeriodInDays")) {
-    m_lookbackPeriodInDays = jsonValue.GetDouble("lookbackPeriodInDays");
-    m_lookbackPeriodInDaysHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("lastRefreshTimestamp")) {
-    m_lastRefreshTimestamp = jsonValue.GetDouble("lastRefreshTimestamp");
-    m_lastRefreshTimestampHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("finding")) {
-    m_finding = LambdaFunctionRecommendationFindingMapper::GetLambdaFunctionRecommendationFindingForName(jsonValue.GetString("finding"));
-    m_findingHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("findingReasonCodes")) {
-    Aws::Utils::Array<JsonView> findingReasonCodesJsonList = jsonValue.GetArray("findingReasonCodes");
-    for (unsigned findingReasonCodesIndex = 0; findingReasonCodesIndex < findingReasonCodesJsonList.GetLength();
-         ++findingReasonCodesIndex) {
-      m_findingReasonCodes.push_back(
-          LambdaFunctionRecommendationFindingReasonCodeMapper::GetLambdaFunctionRecommendationFindingReasonCodeForName(
-              findingReasonCodesJsonList[findingReasonCodesIndex].AsString()));
-    }
-    m_findingReasonCodesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("memorySizeRecommendationOptions")) {
-    Aws::Utils::Array<JsonView> memorySizeRecommendationOptionsJsonList = jsonValue.GetArray("memorySizeRecommendationOptions");
-    for (unsigned memorySizeRecommendationOptionsIndex = 0;
-         memorySizeRecommendationOptionsIndex < memorySizeRecommendationOptionsJsonList.GetLength();
-         ++memorySizeRecommendationOptionsIndex) {
-      m_memorySizeRecommendationOptions.push_back(memorySizeRecommendationOptionsJsonList[memorySizeRecommendationOptionsIndex].AsObject());
-    }
-    m_memorySizeRecommendationOptionsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("currentPerformanceRisk")) {
-    m_currentPerformanceRisk =
-        CurrentPerformanceRiskMapper::GetCurrentPerformanceRiskForName(jsonValue.GetString("currentPerformanceRisk"));
-    m_currentPerformanceRiskHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("effectiveRecommendationPreferences")) {
-    m_effectiveRecommendationPreferences = jsonValue.GetObject("effectiveRecommendationPreferences");
-    m_effectiveRecommendationPreferencesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("tags")) {
-    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
-    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
-    }
-    m_tagsHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue LambdaFunctionRecommendation::Jsonize() const {
-  JsonValue payload;
+void LambdaFunctionRecommendation::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_functionArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_functionVersionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_accountIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_currentMemorySizeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_numberOfInvocationsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_utilizationMetricsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_lookbackPeriodInDaysHasBeenSet) {
+    mapSize++;
+  }
+  if (m_lastRefreshTimestampHasBeenSet) {
+    mapSize++;
+  }
+  if (m_findingHasBeenSet) {
+    mapSize++;
+  }
+  if (m_findingReasonCodesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_memorySizeRecommendationOptionsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_currentPerformanceRiskHasBeenSet) {
+    mapSize++;
+  }
+  if (m_effectiveRecommendationPreferencesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagsHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_functionArnHasBeenSet) {
-    payload.WithString("functionArn", m_functionArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("functionArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_functionArn.c_str()));
   }
 
   if (m_functionVersionHasBeenSet) {
-    payload.WithString("functionVersion", m_functionVersion);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("functionVersion"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_functionVersion.c_str()));
   }
 
   if (m_accountIdHasBeenSet) {
-    payload.WithString("accountId", m_accountId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("accountId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_accountId.c_str()));
   }
 
   if (m_currentMemorySizeHasBeenSet) {
-    payload.WithInteger("currentMemorySize", m_currentMemorySize);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("currentMemorySize"));
+    (m_currentMemorySize >= 0) ? encoder.WriteUInt(m_currentMemorySize) : encoder.WriteNegInt(m_currentMemorySize);
   }
 
   if (m_numberOfInvocationsHasBeenSet) {
-    payload.WithInt64("numberOfInvocations", m_numberOfInvocations);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("numberOfInvocations"));
+    (m_numberOfInvocations >= 0) ? encoder.WriteUInt(m_numberOfInvocations) : encoder.WriteNegInt(m_numberOfInvocations);
   }
 
   if (m_utilizationMetricsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> utilizationMetricsJsonList(m_utilizationMetrics.size());
-    for (unsigned utilizationMetricsIndex = 0; utilizationMetricsIndex < utilizationMetricsJsonList.GetLength();
-         ++utilizationMetricsIndex) {
-      utilizationMetricsJsonList[utilizationMetricsIndex].AsObject(m_utilizationMetrics[utilizationMetricsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("utilizationMetrics"));
+    encoder.WriteArrayStart(m_utilizationMetrics.size());
+    for (const auto& item_0 : m_utilizationMetrics) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("utilizationMetrics", std::move(utilizationMetricsJsonList));
   }
 
   if (m_lookbackPeriodInDaysHasBeenSet) {
-    payload.WithDouble("lookbackPeriodInDays", m_lookbackPeriodInDays);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("lookbackPeriodInDays"));
+    encoder.WriteFloat(m_lookbackPeriodInDays);
   }
 
   if (m_lastRefreshTimestampHasBeenSet) {
-    payload.WithDouble("lastRefreshTimestamp", m_lastRefreshTimestamp.SecondsWithMSPrecision());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("lastRefreshTimestamp"));
+    encoder.WriteTag(1);  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+    encoder.WriteUInt(m_lastRefreshTimestamp.Seconds());
   }
 
   if (m_findingHasBeenSet) {
-    payload.WithString("finding", LambdaFunctionRecommendationFindingMapper::GetNameForLambdaFunctionRecommendationFinding(m_finding));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("finding"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(
+        LambdaFunctionRecommendationFindingMapper::GetNameForLambdaFunctionRecommendationFinding(m_finding).c_str()));
   }
 
   if (m_findingReasonCodesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> findingReasonCodesJsonList(m_findingReasonCodes.size());
-    for (unsigned findingReasonCodesIndex = 0; findingReasonCodesIndex < findingReasonCodesJsonList.GetLength();
-         ++findingReasonCodesIndex) {
-      findingReasonCodesJsonList[findingReasonCodesIndex].AsString(
-          LambdaFunctionRecommendationFindingReasonCodeMapper::GetNameForLambdaFunctionRecommendationFindingReasonCode(
-              m_findingReasonCodes[findingReasonCodesIndex]));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("findingReasonCodes"));
+    encoder.WriteArrayStart(m_findingReasonCodes.size());
+    for (const auto& item_0 : m_findingReasonCodes) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(
+          LambdaFunctionRecommendationFindingReasonCodeMapper::GetNameForLambdaFunctionRecommendationFindingReasonCode(item_0).c_str()));
     }
-    payload.WithArray("findingReasonCodes", std::move(findingReasonCodesJsonList));
   }
 
   if (m_memorySizeRecommendationOptionsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> memorySizeRecommendationOptionsJsonList(m_memorySizeRecommendationOptions.size());
-    for (unsigned memorySizeRecommendationOptionsIndex = 0;
-         memorySizeRecommendationOptionsIndex < memorySizeRecommendationOptionsJsonList.GetLength();
-         ++memorySizeRecommendationOptionsIndex) {
-      memorySizeRecommendationOptionsJsonList[memorySizeRecommendationOptionsIndex].AsObject(
-          m_memorySizeRecommendationOptions[memorySizeRecommendationOptionsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("memorySizeRecommendationOptions"));
+    encoder.WriteArrayStart(m_memorySizeRecommendationOptions.size());
+    for (const auto& item_0 : m_memorySizeRecommendationOptions) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("memorySizeRecommendationOptions", std::move(memorySizeRecommendationOptionsJsonList));
   }
 
   if (m_currentPerformanceRiskHasBeenSet) {
-    payload.WithString("currentPerformanceRisk", CurrentPerformanceRiskMapper::GetNameForCurrentPerformanceRisk(m_currentPerformanceRisk));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("currentPerformanceRisk"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(CurrentPerformanceRiskMapper::GetNameForCurrentPerformanceRisk(m_currentPerformanceRisk).c_str()));
   }
 
   if (m_effectiveRecommendationPreferencesHasBeenSet) {
-    payload.WithObject("effectiveRecommendationPreferences", m_effectiveRecommendationPreferences.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("effectiveRecommendationPreferences"));
+    m_effectiveRecommendationPreferences.CborEncode(encoder);
   }
 
   if (m_tagsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("tags"));
+    encoder.WriteArrayStart(m_tags.size());
+    for (const auto& item_0 : m_tags) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("tags", std::move(tagsJsonList));
   }
-
-  return payload;
 }
 
 }  // namespace Model

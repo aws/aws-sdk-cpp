@@ -7,7 +7,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/GameLiftPaginationBase.h>
 #include <aws/gamelift/GameLiftServiceClientModel.h>
 #include <aws/gamelift/GameLiftWaiter.h>
@@ -56,12 +56,12 @@ namespace GameLift {
  * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-components.html">
  * Amazon GameLift Servers tools and resources</a> </p> </li> </ul>
  */
-class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSJsonClient,
+class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSRpcV2CborClient,
                                         public Aws::Client::ClientWithAsyncTemplateMethods<GameLiftClient>,
                                         public GameLiftPaginationBase<GameLiftClient>,
                                         public GameLiftWaiter<GameLiftClient> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
+  typedef Aws::Client::AWSRpcV2CborClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
 

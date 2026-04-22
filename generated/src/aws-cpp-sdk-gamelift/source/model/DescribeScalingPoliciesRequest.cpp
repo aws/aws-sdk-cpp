@@ -3,43 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/model/DescribeScalingPoliciesRequest.h>
 
 #include <utility>
 
 using namespace Aws::GameLift::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String DescribeScalingPoliciesRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_fleetIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_statusFilterHasBeenSet) {
+    mapSize++;
+  }
+  if (m_limitHasBeenSet) {
+    mapSize++;
+  }
+  if (m_nextTokenHasBeenSet) {
+    mapSize++;
+  }
+  if (m_locationHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_fleetIdHasBeenSet) {
-    payload.WithString("FleetId", m_fleetId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FleetId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_fleetId.c_str()));
   }
 
   if (m_statusFilterHasBeenSet) {
-    payload.WithString("StatusFilter", ScalingStatusTypeMapper::GetNameForScalingStatusType(m_statusFilter));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("StatusFilter"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(ScalingStatusTypeMapper::GetNameForScalingStatusType(m_statusFilter).c_str()));
   }
 
   if (m_limitHasBeenSet) {
-    payload.WithInteger("Limit", m_limit);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Limit"));
+    (m_limit >= 0) ? encoder.WriteUInt(m_limit) : encoder.WriteNegInt(m_limit);
   }
 
   if (m_nextTokenHasBeenSet) {
-    payload.WithString("NextToken", m_nextToken);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NextToken"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_nextToken.c_str()));
   }
 
   if (m_locationHasBeenSet) {
-    payload.WithString("Location", m_location);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Location"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_location.c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection DescribeScalingPoliciesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "GameLift.DescribeScalingPolicies"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

@@ -8,26 +8,26 @@
 #include <aws/compute-optimizer/model/S3Destination.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
-
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
 namespace Utils {
-namespace Json {
-class JsonValue;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ComputeOptimizer {
 namespace Model {
 class ExportEC2InstanceRecommendationsResult {
  public:
   AWS_COMPUTEOPTIMIZER_API ExportEC2InstanceRecommendationsResult() = default;
-  AWS_COMPUTEOPTIMIZER_API ExportEC2InstanceRecommendationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_COMPUTEOPTIMIZER_API ExportEC2InstanceRecommendationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
   AWS_COMPUTEOPTIMIZER_API ExportEC2InstanceRecommendationsResult& operator=(
-      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+      const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
   /**

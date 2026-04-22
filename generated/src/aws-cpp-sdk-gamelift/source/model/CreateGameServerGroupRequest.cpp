@@ -3,81 +3,128 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/model/CreateGameServerGroupRequest.h>
 
 #include <utility>
 
 using namespace Aws::GameLift::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String CreateGameServerGroupRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_gameServerGroupNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_roleArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_minSizeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_maxSizeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_launchTemplateHasBeenSet) {
+    mapSize++;
+  }
+  if (m_instanceDefinitionsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_autoScalingPolicyHasBeenSet) {
+    mapSize++;
+  }
+  if (m_balancingStrategyHasBeenSet) {
+    mapSize++;
+  }
+  if (m_gameServerProtectionPolicyHasBeenSet) {
+    mapSize++;
+  }
+  if (m_vpcSubnetsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagsHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_gameServerGroupNameHasBeenSet) {
-    payload.WithString("GameServerGroupName", m_gameServerGroupName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("GameServerGroupName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_gameServerGroupName.c_str()));
   }
 
   if (m_roleArnHasBeenSet) {
-    payload.WithString("RoleArn", m_roleArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RoleArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_roleArn.c_str()));
   }
 
   if (m_minSizeHasBeenSet) {
-    payload.WithInteger("MinSize", m_minSize);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MinSize"));
+    (m_minSize >= 0) ? encoder.WriteUInt(m_minSize) : encoder.WriteNegInt(m_minSize);
   }
 
   if (m_maxSizeHasBeenSet) {
-    payload.WithInteger("MaxSize", m_maxSize);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MaxSize"));
+    (m_maxSize >= 0) ? encoder.WriteUInt(m_maxSize) : encoder.WriteNegInt(m_maxSize);
   }
 
   if (m_launchTemplateHasBeenSet) {
-    payload.WithObject("LaunchTemplate", m_launchTemplate.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("LaunchTemplate"));
+    m_launchTemplate.CborEncode(encoder);
   }
 
   if (m_instanceDefinitionsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> instanceDefinitionsJsonList(m_instanceDefinitions.size());
-    for (unsigned instanceDefinitionsIndex = 0; instanceDefinitionsIndex < instanceDefinitionsJsonList.GetLength();
-         ++instanceDefinitionsIndex) {
-      instanceDefinitionsJsonList[instanceDefinitionsIndex].AsObject(m_instanceDefinitions[instanceDefinitionsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("InstanceDefinitions"));
+    encoder.WriteArrayStart(m_instanceDefinitions.size());
+    for (const auto& item_0 : m_instanceDefinitions) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("InstanceDefinitions", std::move(instanceDefinitionsJsonList));
   }
 
   if (m_autoScalingPolicyHasBeenSet) {
-    payload.WithObject("AutoScalingPolicy", m_autoScalingPolicy.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AutoScalingPolicy"));
+    m_autoScalingPolicy.CborEncode(encoder);
   }
 
   if (m_balancingStrategyHasBeenSet) {
-    payload.WithString("BalancingStrategy", BalancingStrategyMapper::GetNameForBalancingStrategy(m_balancingStrategy));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("BalancingStrategy"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(BalancingStrategyMapper::GetNameForBalancingStrategy(m_balancingStrategy).c_str()));
   }
 
   if (m_gameServerProtectionPolicyHasBeenSet) {
-    payload.WithString("GameServerProtectionPolicy",
-                       GameServerProtectionPolicyMapper::GetNameForGameServerProtectionPolicy(m_gameServerProtectionPolicy));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("GameServerProtectionPolicy"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(
+        GameServerProtectionPolicyMapper::GetNameForGameServerProtectionPolicy(m_gameServerProtectionPolicy).c_str()));
   }
 
   if (m_vpcSubnetsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> vpcSubnetsJsonList(m_vpcSubnets.size());
-    for (unsigned vpcSubnetsIndex = 0; vpcSubnetsIndex < vpcSubnetsJsonList.GetLength(); ++vpcSubnetsIndex) {
-      vpcSubnetsJsonList[vpcSubnetsIndex].AsString(m_vpcSubnets[vpcSubnetsIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("VpcSubnets"));
+    encoder.WriteArrayStart(m_vpcSubnets.size());
+    for (const auto& item_0 : m_vpcSubnets) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("VpcSubnets", std::move(vpcSubnetsJsonList));
   }
 
   if (m_tagsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Tags"));
+    encoder.WriteArrayStart(m_tags.size());
+    for (const auto& item_0 : m_tags) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("Tags", std::move(tagsJsonList));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection CreateGameServerGroupRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "GameLift.CreateGameServerGroup"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

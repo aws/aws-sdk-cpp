@@ -5,13 +5,13 @@
 
 #pragma once
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
+#include <aws/crt/cbor/Cbor.h>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ComputeOptimizer {
 namespace Model {
@@ -25,21 +25,21 @@ namespace Model {
 class Gpu {
  public:
   AWS_COMPUTEOPTIMIZER_API Gpu() = default;
-  AWS_COMPUTEOPTIMIZER_API Gpu(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API Gpu& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPUTEOPTIMIZER_API Gpu(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API Gpu& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p> The number of GPUs for the instance type. </p>
    */
-  inline int GetGpuCount() const { return m_gpuCount; }
+  inline int64_t GetGpuCount() const { return m_gpuCount; }
   inline bool GpuCountHasBeenSet() const { return m_gpuCountHasBeenSet; }
-  inline void SetGpuCount(int value) {
+  inline void SetGpuCount(int64_t value) {
     m_gpuCountHasBeenSet = true;
     m_gpuCount = value;
   }
-  inline Gpu& WithGpuCount(int value) {
+  inline Gpu& WithGpuCount(int64_t value) {
     SetGpuCount(value);
     return *this;
   }
@@ -50,21 +50,21 @@ class Gpu {
    * <p> The total size of the memory for the GPU accelerators for the instance type,
    * in MiB. </p>
    */
-  inline int GetGpuMemorySizeInMiB() const { return m_gpuMemorySizeInMiB; }
+  inline int64_t GetGpuMemorySizeInMiB() const { return m_gpuMemorySizeInMiB; }
   inline bool GpuMemorySizeInMiBHasBeenSet() const { return m_gpuMemorySizeInMiBHasBeenSet; }
-  inline void SetGpuMemorySizeInMiB(int value) {
+  inline void SetGpuMemorySizeInMiB(int64_t value) {
     m_gpuMemorySizeInMiBHasBeenSet = true;
     m_gpuMemorySizeInMiB = value;
   }
-  inline Gpu& WithGpuMemorySizeInMiB(int value) {
+  inline Gpu& WithGpuMemorySizeInMiB(int64_t value) {
     SetGpuMemorySizeInMiB(value);
     return *this;
   }
   ///@}
  private:
-  int m_gpuCount{0};
+  int64_t m_gpuCount{0};
 
-  int m_gpuMemorySizeInMiB{0};
+  int64_t m_gpuMemorySizeInMiB{0};
   bool m_gpuCountHasBeenSet = false;
   bool m_gpuMemorySizeInMiBHasBeenSet = false;
 };

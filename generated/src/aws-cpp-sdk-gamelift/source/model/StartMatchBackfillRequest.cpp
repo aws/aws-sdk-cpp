@@ -3,43 +3,65 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/model/StartMatchBackfillRequest.h>
 
 #include <utility>
 
 using namespace Aws::GameLift::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String StartMatchBackfillRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_ticketIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_configurationNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_gameSessionArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_playersHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_ticketIdHasBeenSet) {
-    payload.WithString("TicketId", m_ticketId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("TicketId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_ticketId.c_str()));
   }
 
   if (m_configurationNameHasBeenSet) {
-    payload.WithString("ConfigurationName", m_configurationName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ConfigurationName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_configurationName.c_str()));
   }
 
   if (m_gameSessionArnHasBeenSet) {
-    payload.WithString("GameSessionArn", m_gameSessionArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("GameSessionArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_gameSessionArn.c_str()));
   }
 
   if (m_playersHasBeenSet) {
-    Aws::Utils::Array<JsonValue> playersJsonList(m_players.size());
-    for (unsigned playersIndex = 0; playersIndex < playersJsonList.GetLength(); ++playersIndex) {
-      playersJsonList[playersIndex].AsObject(m_players[playersIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Players"));
+    encoder.WriteArrayStart(m_players.size());
+    for (const auto& item_0 : m_players) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("Players", std::move(playersJsonList));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection StartMatchBackfillRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "GameLift.StartMatchBackfill"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

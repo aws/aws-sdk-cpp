@@ -7,6 +7,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/BackfillMode.h>
 #include <aws/gamelift/model/FlexMatchMode.h>
@@ -16,10 +17,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace GameLift {
 namespace Model {
@@ -34,9 +34,9 @@ namespace Model {
 class MatchmakingConfiguration {
  public:
   AWS_GAMELIFT_API MatchmakingConfiguration() = default;
-  AWS_GAMELIFT_API MatchmakingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API MatchmakingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_GAMELIFT_API MatchmakingConfiguration(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API MatchmakingConfiguration& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -137,13 +137,13 @@ class MatchmakingConfiguration {
    * process before timing out. Requests that fail due to timing out can be
    * resubmitted as needed.</p>
    */
-  inline int GetRequestTimeoutSeconds() const { return m_requestTimeoutSeconds; }
+  inline int64_t GetRequestTimeoutSeconds() const { return m_requestTimeoutSeconds; }
   inline bool RequestTimeoutSecondsHasBeenSet() const { return m_requestTimeoutSecondsHasBeenSet; }
-  inline void SetRequestTimeoutSeconds(int value) {
+  inline void SetRequestTimeoutSeconds(int64_t value) {
     m_requestTimeoutSecondsHasBeenSet = true;
     m_requestTimeoutSeconds = value;
   }
-  inline MatchmakingConfiguration& WithRequestTimeoutSeconds(int value) {
+  inline MatchmakingConfiguration& WithRequestTimeoutSeconds(int64_t value) {
     SetRequestTimeoutSeconds(value);
     return *this;
   }
@@ -156,13 +156,13 @@ class MatchmakingConfiguration {
    * accept before the timeout, the ticket continues to look for an acceptable
    * match.</p>
    */
-  inline int GetAcceptanceTimeoutSeconds() const { return m_acceptanceTimeoutSeconds; }
+  inline int64_t GetAcceptanceTimeoutSeconds() const { return m_acceptanceTimeoutSeconds; }
   inline bool AcceptanceTimeoutSecondsHasBeenSet() const { return m_acceptanceTimeoutSecondsHasBeenSet; }
-  inline void SetAcceptanceTimeoutSeconds(int value) {
+  inline void SetAcceptanceTimeoutSeconds(int64_t value) {
     m_acceptanceTimeoutSecondsHasBeenSet = true;
     m_acceptanceTimeoutSeconds = value;
   }
-  inline MatchmakingConfiguration& WithAcceptanceTimeoutSeconds(int value) {
+  inline MatchmakingConfiguration& WithAcceptanceTimeoutSeconds(int64_t value) {
     SetAcceptanceTimeoutSeconds(value);
     return *this;
   }
@@ -255,13 +255,13 @@ class MatchmakingConfiguration {
    * selected for the match. This parameter is not used when
    * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
    */
-  inline int GetAdditionalPlayerCount() const { return m_additionalPlayerCount; }
+  inline int64_t GetAdditionalPlayerCount() const { return m_additionalPlayerCount; }
   inline bool AdditionalPlayerCountHasBeenSet() const { return m_additionalPlayerCountHasBeenSet; }
-  inline void SetAdditionalPlayerCount(int value) {
+  inline void SetAdditionalPlayerCount(int64_t value) {
     m_additionalPlayerCountHasBeenSet = true;
     m_additionalPlayerCount = value;
   }
-  inline MatchmakingConfiguration& WithAdditionalPlayerCount(int value) {
+  inline MatchmakingConfiguration& WithAdditionalPlayerCount(int64_t value) {
     SetAdditionalPlayerCount(value);
     return *this;
   }
@@ -420,9 +420,9 @@ class MatchmakingConfiguration {
 
   Aws::Vector<Aws::String> m_gameSessionQueueArns;
 
-  int m_requestTimeoutSeconds{0};
+  int64_t m_requestTimeoutSeconds{0};
 
-  int m_acceptanceTimeoutSeconds{0};
+  int64_t m_acceptanceTimeoutSeconds{0};
 
   bool m_acceptanceRequired{false};
 
@@ -432,7 +432,7 @@ class MatchmakingConfiguration {
 
   Aws::String m_notificationTarget;
 
-  int m_additionalPlayerCount{0};
+  int64_t m_additionalPlayerCount{0};
 
   Aws::String m_customEventData;
 

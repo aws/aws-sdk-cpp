@@ -4,43 +4,70 @@
  */
 
 #include <aws/core/utils/HashingUtils.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/model/UpdateScriptRequest.h>
 
 #include <utility>
 
 using namespace Aws::GameLift::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String UpdateScriptRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_scriptIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_nameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_versionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_storageLocationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_zipFileHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_scriptIdHasBeenSet) {
-    payload.WithString("ScriptId", m_scriptId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ScriptId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_scriptId.c_str()));
   }
 
   if (m_nameHasBeenSet) {
-    payload.WithString("Name", m_name);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Name"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_name.c_str()));
   }
 
   if (m_versionHasBeenSet) {
-    payload.WithString("Version", m_version);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Version"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_version.c_str()));
   }
 
   if (m_storageLocationHasBeenSet) {
-    payload.WithObject("StorageLocation", m_storageLocation.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("StorageLocation"));
+    m_storageLocation.CborEncode(encoder);
   }
 
   if (m_zipFileHasBeenSet) {
-    payload.WithString("ZipFile", HashingUtils::Base64Encode(m_zipFile));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ZipFile"));
+    encoder.WriteBytes(Aws::Crt::ByteCursorFromCString(reinterpret_cast<const char*>(m_zipFile.GetUnderlyingData())));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection UpdateScriptRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "GameLift.UpdateScript"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

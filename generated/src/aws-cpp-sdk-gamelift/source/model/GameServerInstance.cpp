@@ -3,60 +3,305 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/model/GameServerInstance.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace GameLift {
 namespace Model {
 
-GameServerInstance::GameServerInstance(JsonView jsonValue) { *this = jsonValue; }
+GameServerInstance::GameServerInstance(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-GameServerInstance& GameServerInstance::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("GameServerGroupName")) {
-    m_gameServerGroupName = jsonValue.GetString("GameServerGroupName");
-    m_gameServerGroupNameHasBeenSet = true;
+GameServerInstance& GameServerInstance::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "GameServerGroupName") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_gameServerGroupName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_gameServerGroupName = ss.str();
+                  }
+                }
+                m_gameServerGroupNameHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "GameServerGroupArn") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_gameServerGroupArn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_gameServerGroupArn = ss.str();
+                  }
+                }
+                m_gameServerGroupArnHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "InstanceId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_instanceId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_instanceId = ss.str();
+                  }
+                }
+                m_instanceIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "InstanceStatus") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_instanceStatus = GameServerInstanceStatusMapper::GetGameServerInstanceStatusForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_instanceStatusHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("GameServerInstance", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "GameServerGroupName") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_gameServerGroupName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_gameServerGroupName = ss.str();
+                }
+              }
+              m_gameServerGroupNameHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "GameServerGroupArn") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_gameServerGroupArn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_gameServerGroupArn = ss.str();
+                }
+              }
+              m_gameServerGroupArnHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "InstanceId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_instanceId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_instanceId = ss.str();
+                }
+              }
+              m_instanceIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "InstanceStatus") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_instanceStatus = GameServerInstanceStatusMapper::GetGameServerInstanceStatusForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_instanceStatusHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
-  if (jsonValue.ValueExists("GameServerGroupArn")) {
-    m_gameServerGroupArn = jsonValue.GetString("GameServerGroupArn");
-    m_gameServerGroupArnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("InstanceId")) {
-    m_instanceId = jsonValue.GetString("InstanceId");
-    m_instanceIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("InstanceStatus")) {
-    m_instanceStatus = GameServerInstanceStatusMapper::GetGameServerInstanceStatusForName(jsonValue.GetString("InstanceStatus"));
-    m_instanceStatusHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue GameServerInstance::Jsonize() const {
-  JsonValue payload;
+void GameServerInstance::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_gameServerGroupNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_gameServerGroupArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_instanceIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_instanceStatusHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_gameServerGroupNameHasBeenSet) {
-    payload.WithString("GameServerGroupName", m_gameServerGroupName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("GameServerGroupName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_gameServerGroupName.c_str()));
   }
 
   if (m_gameServerGroupArnHasBeenSet) {
-    payload.WithString("GameServerGroupArn", m_gameServerGroupArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("GameServerGroupArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_gameServerGroupArn.c_str()));
   }
 
   if (m_instanceIdHasBeenSet) {
-    payload.WithString("InstanceId", m_instanceId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("InstanceId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_instanceId.c_str()));
   }
 
   if (m_instanceStatusHasBeenSet) {
-    payload.WithString("InstanceStatus", GameServerInstanceStatusMapper::GetNameForGameServerInstanceStatus(m_instanceStatus));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("InstanceStatus"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(GameServerInstanceStatusMapper::GetNameForGameServerInstanceStatus(m_instanceStatus).c_str()));
   }
-
-  return payload;
 }
 
 }  // namespace Model

@@ -12,36 +12,35 @@
 #include <aws/compute-optimizer/model/SavingsOpportunity.h>
 #include <aws/compute-optimizer/model/UtilizationMetric.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ComputeOptimizer {
 namespace Model {
 
 /**
- * <p>Describes a recommendation option for an Amazon EC2 Auto Scaling
- * group.</p><p><h3>See Also:</h3>   <a
+ * <p>Describes a recommendation option for an Auto Scaling group.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/AutoScalingGroupRecommendationOption">AWS
  * API Reference</a></p>
  */
 class AutoScalingGroupRecommendationOption {
  public:
   AWS_COMPUTEOPTIMIZER_API AutoScalingGroupRecommendationOption() = default;
-  AWS_COMPUTEOPTIMIZER_API AutoScalingGroupRecommendationOption(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API AutoScalingGroupRecommendationOption& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPUTEOPTIMIZER_API AutoScalingGroupRecommendationOption(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API AutoScalingGroupRecommendationOption& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
-   * <p>An array of objects that describe an Amazon EC2 Auto Scaling group
-   * configuration.</p>
+   * <p>An array of objects that describe an Auto Scaling group configuration.</p>
    */
   inline const AutoScalingGroupConfiguration& GetConfiguration() const { return m_configuration; }
   inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
@@ -60,7 +59,7 @@ class AutoScalingGroupRecommendationOption {
   ///@{
   /**
    * <p> Describes the GPU accelerator settings for the recommended instance type of
-   * the Amazon EC2 Auto Scaling group. </p>
+   * the Auto Scaling group. </p>
    */
   inline const GpuInfo& GetInstanceGpuInfo() const { return m_instanceGpuInfo; }
   inline bool InstanceGpuInfoHasBeenSet() const { return m_instanceGpuInfoHasBeenSet; }
@@ -79,11 +78,11 @@ class AutoScalingGroupRecommendationOption {
   ///@{
   /**
    * <p>An array of objects that describe the projected utilization metrics of the
-   * Amazon EC2 Auto Scaling group recommendation option.</p>  <p>The
-   * <code>Cpu</code> and <code>Memory</code> metrics are the only projected
-   * utilization metrics returned. Additionally, the <code>Memory</code> metric is
-   * returned only for resources that have the unified CloudWatch agent installed on
-   * them. For more information, see <a
+   * Auto Scaling group recommendation option.</p>  <p>The <code>Cpu</code> and
+   * <code>Memory</code> metrics are the only projected utilization metrics returned.
+   * Additionally, the <code>Memory</code> metric is returned only for resources that
+   * have the unified CloudWatch agent installed on them. For more information, see
+   * <a
    * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
    * Memory Utilization with the CloudWatch Agent</a>.</p>
    */
@@ -109,7 +108,7 @@ class AutoScalingGroupRecommendationOption {
 
   ///@{
   /**
-   * <p>The performance risk of the Amazon EC2 Auto Scaling group configuration
+   * <p>The performance risk of the Auto Scaling group configuration
    * recommendation.</p> <p>Performance risk indicates the likelihood of the
    * recommended instance type not meeting the resource needs of your workload.
    * Compute Optimizer calculates an individual performance risk score for each
@@ -137,16 +136,16 @@ class AutoScalingGroupRecommendationOption {
 
   ///@{
   /**
-   * <p>The rank of the Amazon EC2 Auto Scaling group recommendation option.</p>
-   * <p>The top recommendation option is ranked as <code>1</code>.</p>
+   * <p>The rank of the Auto Scaling group recommendation option.</p> <p>The top
+   * recommendation option is ranked as <code>1</code>.</p>
    */
-  inline int GetRank() const { return m_rank; }
+  inline int64_t GetRank() const { return m_rank; }
   inline bool RankHasBeenSet() const { return m_rankHasBeenSet; }
-  inline void SetRank(int value) {
+  inline void SetRank(int64_t value) {
     m_rankHasBeenSet = true;
     m_rank = value;
   }
-  inline AutoScalingGroupRecommendationOption& WithRank(int value) {
+  inline AutoScalingGroupRecommendationOption& WithRank(int64_t value) {
     SetRank(value);
     return *this;
   }
@@ -154,9 +153,9 @@ class AutoScalingGroupRecommendationOption {
 
   ///@{
   /**
-   * <p>An object that describes the savings opportunity for the Amazon EC2 Auto
-   * Scaling group recommendation option. Savings opportunity includes the estimated
-   * monthly savings amount and percentage.</p>
+   * <p>An object that describes the savings opportunity for the Auto Scaling group
+   * recommendation option. Savings opportunity includes the estimated monthly
+   * savings amount and percentage.</p>
    */
   inline const SavingsOpportunity& GetSavingsOpportunity() const { return m_savingsOpportunity; }
   inline bool SavingsOpportunityHasBeenSet() const { return m_savingsOpportunityHasBeenSet; }
@@ -174,10 +173,10 @@ class AutoScalingGroupRecommendationOption {
 
   ///@{
   /**
-   * <p> An object that describes the savings opportunity for the Amazon EC2 Auto
-   * Scaling group recommendation option that includes Savings Plans and Reserved
-   * Instances discounts. Savings opportunity includes the estimated monthly savings
-   * and percentage. </p>
+   * <p> An object that describes the savings opportunity for the Auto Scaling group
+   * recommendation option that includes Savings Plans and Reserved Instances
+   * discounts. Savings opportunity includes the estimated monthly savings and
+   * percentage. </p>
    */
   inline const AutoScalingGroupSavingsOpportunityAfterDiscounts& GetSavingsOpportunityAfterDiscounts() const {
     return m_savingsOpportunityAfterDiscounts;
@@ -226,7 +225,7 @@ class AutoScalingGroupRecommendationOption {
 
   double m_performanceRisk{0.0};
 
-  int m_rank{0};
+  int64_t m_rank{0};
 
   SavingsOpportunity m_savingsOpportunity;
 

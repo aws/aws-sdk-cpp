@@ -15,15 +15,15 @@
 #include <aws/compute-optimizer/model/Scope.h>
 #include <aws/compute-optimizer/model/UtilizationPreference.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ComputeOptimizer {
 namespace Model {
@@ -36,9 +36,9 @@ namespace Model {
 class RecommendationPreferencesDetail {
  public:
   AWS_COMPUTEOPTIMIZER_API RecommendationPreferencesDetail() = default;
-  AWS_COMPUTEOPTIMIZER_API RecommendationPreferencesDetail(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API RecommendationPreferencesDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPUTEOPTIMIZER_API RecommendationPreferencesDetail(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API RecommendationPreferencesDetail& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -68,9 +68,9 @@ class RecommendationPreferencesDetail {
   /**
    * <p>The target resource type of the recommendation preference to create.</p>
    * <p>The <code>Ec2Instance</code> option encompasses standalone instances and
-   * instances that are part of Amazon EC2 Auto Scaling groups. The
+   * instances that are part of Auto Scaling groups. The
    * <code>AutoScalingGroup</code> option encompasses only instances that are part of
-   * an Amazon EC2 Auto Scaling group.</p>
+   * an Auto Scaling group.</p>
    */
   inline ResourceType GetResourceType() const { return m_resourceType; }
   inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }

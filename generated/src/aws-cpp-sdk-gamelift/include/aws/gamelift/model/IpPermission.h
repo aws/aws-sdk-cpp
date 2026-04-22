@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/IpProtocol.h>
 
@@ -12,10 +13,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace GameLift {
 namespace Model {
@@ -33,9 +33,9 @@ namespace Model {
 class IpPermission {
  public:
   AWS_GAMELIFT_API IpPermission() = default;
-  AWS_GAMELIFT_API IpPermission(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API IpPermission& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_GAMELIFT_API IpPermission(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API IpPermission& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -44,13 +44,13 @@ class IpPermission {
    * valid.</p> <p>For fleets using Windows builds, only ports
    * <code>1026-60000</code> are valid.</p>
    */
-  inline int GetFromPort() const { return m_fromPort; }
+  inline int64_t GetFromPort() const { return m_fromPort; }
   inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
-  inline void SetFromPort(int value) {
+  inline void SetFromPort(int64_t value) {
     m_fromPortHasBeenSet = true;
     m_fromPort = value;
   }
-  inline IpPermission& WithFromPort(int value) {
+  inline IpPermission& WithFromPort(int64_t value) {
     SetFromPort(value);
     return *this;
   }
@@ -64,13 +64,13 @@ class IpPermission {
    * <code>22</code> and <code>1026-60000</code> are valid.</p> <p>For fleets using
    * Windows builds, only ports <code>1026-60000</code> are valid.</p>
    */
-  inline int GetToPort() const { return m_toPort; }
+  inline int64_t GetToPort() const { return m_toPort; }
   inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
-  inline void SetToPort(int value) {
+  inline void SetToPort(int64_t value) {
     m_toPortHasBeenSet = true;
     m_toPort = value;
   }
-  inline IpPermission& WithToPort(int value) {
+  inline IpPermission& WithToPort(int64_t value) {
     SetToPort(value);
     return *this;
   }
@@ -112,9 +112,9 @@ class IpPermission {
   }
   ///@}
  private:
-  int m_fromPort{0};
+  int64_t m_fromPort{0};
 
-  int m_toPort{0};
+  int64_t m_toPort{0};
 
   Aws::String m_ipRange;
 

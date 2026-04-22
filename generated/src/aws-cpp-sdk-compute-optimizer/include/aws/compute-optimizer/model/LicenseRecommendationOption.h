@@ -9,15 +9,15 @@
 #include <aws/compute-optimizer/model/LicenseModel.h>
 #include <aws/compute-optimizer/model/SavingsOpportunity.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ComputeOptimizer {
 namespace Model {
@@ -31,22 +31,22 @@ namespace Model {
 class LicenseRecommendationOption {
  public:
   AWS_COMPUTEOPTIMIZER_API LicenseRecommendationOption() = default;
-  AWS_COMPUTEOPTIMIZER_API LicenseRecommendationOption(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API LicenseRecommendationOption& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPUTEOPTIMIZER_API LicenseRecommendationOption(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API LicenseRecommendationOption& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p> The rank of the license recommendation option. </p> <p> The top
    * recommendation option is ranked as <code>1</code>. </p>
    */
-  inline int GetRank() const { return m_rank; }
+  inline int64_t GetRank() const { return m_rank; }
   inline bool RankHasBeenSet() const { return m_rankHasBeenSet; }
-  inline void SetRank(int value) {
+  inline void SetRank(int64_t value) {
     m_rankHasBeenSet = true;
     m_rank = value;
   }
-  inline LicenseRecommendationOption& WithRank(int value) {
+  inline LicenseRecommendationOption& WithRank(int64_t value) {
     SetRank(value);
     return *this;
   }
@@ -119,7 +119,7 @@ class LicenseRecommendationOption {
   }
   ///@}
  private:
-  int m_rank{0};
+  int64_t m_rank{0};
 
   Aws::String m_operatingSystem;
 

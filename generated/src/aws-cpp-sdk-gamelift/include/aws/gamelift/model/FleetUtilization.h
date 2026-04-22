@@ -5,16 +5,16 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace GameLift {
 namespace Model {
@@ -29,9 +29,9 @@ namespace Model {
 class FleetUtilization {
  public:
   AWS_GAMELIFT_API FleetUtilization() = default;
-  AWS_GAMELIFT_API FleetUtilization(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API FleetUtilization& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_GAMELIFT_API FleetUtilization(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API FleetUtilization& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -78,13 +78,13 @@ class FleetUtilization {
    * <p>The number of server processes in <code>ACTIVE</code> status that are
    * currently running across all instances in the fleet location. </p>
    */
-  inline int GetActiveServerProcessCount() const { return m_activeServerProcessCount; }
+  inline int64_t GetActiveServerProcessCount() const { return m_activeServerProcessCount; }
   inline bool ActiveServerProcessCountHasBeenSet() const { return m_activeServerProcessCountHasBeenSet; }
-  inline void SetActiveServerProcessCount(int value) {
+  inline void SetActiveServerProcessCount(int64_t value) {
     m_activeServerProcessCountHasBeenSet = true;
     m_activeServerProcessCount = value;
   }
-  inline FleetUtilization& WithActiveServerProcessCount(int value) {
+  inline FleetUtilization& WithActiveServerProcessCount(int64_t value) {
     SetActiveServerProcessCount(value);
     return *this;
   }
@@ -95,13 +95,13 @@ class FleetUtilization {
    * <p>The number of active game sessions that are currently being hosted across all
    * instances in the fleet location.</p>
    */
-  inline int GetActiveGameSessionCount() const { return m_activeGameSessionCount; }
+  inline int64_t GetActiveGameSessionCount() const { return m_activeGameSessionCount; }
   inline bool ActiveGameSessionCountHasBeenSet() const { return m_activeGameSessionCountHasBeenSet; }
-  inline void SetActiveGameSessionCount(int value) {
+  inline void SetActiveGameSessionCount(int64_t value) {
     m_activeGameSessionCountHasBeenSet = true;
     m_activeGameSessionCount = value;
   }
-  inline FleetUtilization& WithActiveGameSessionCount(int value) {
+  inline FleetUtilization& WithActiveGameSessionCount(int64_t value) {
     SetActiveGameSessionCount(value);
     return *this;
   }
@@ -112,13 +112,13 @@ class FleetUtilization {
    * <p>The number of active player sessions that are currently being hosted across
    * all instances in the fleet location.</p>
    */
-  inline int GetCurrentPlayerSessionCount() const { return m_currentPlayerSessionCount; }
+  inline int64_t GetCurrentPlayerSessionCount() const { return m_currentPlayerSessionCount; }
   inline bool CurrentPlayerSessionCountHasBeenSet() const { return m_currentPlayerSessionCountHasBeenSet; }
-  inline void SetCurrentPlayerSessionCount(int value) {
+  inline void SetCurrentPlayerSessionCount(int64_t value) {
     m_currentPlayerSessionCountHasBeenSet = true;
     m_currentPlayerSessionCount = value;
   }
-  inline FleetUtilization& WithCurrentPlayerSessionCount(int value) {
+  inline FleetUtilization& WithCurrentPlayerSessionCount(int64_t value) {
     SetCurrentPlayerSessionCount(value);
     return *this;
   }
@@ -129,13 +129,13 @@ class FleetUtilization {
    * <p>The maximum number of players allowed across all game sessions that are
    * currently being hosted across all instances in the fleet location.</p>
    */
-  inline int GetMaximumPlayerSessionCount() const { return m_maximumPlayerSessionCount; }
+  inline int64_t GetMaximumPlayerSessionCount() const { return m_maximumPlayerSessionCount; }
   inline bool MaximumPlayerSessionCountHasBeenSet() const { return m_maximumPlayerSessionCountHasBeenSet; }
-  inline void SetMaximumPlayerSessionCount(int value) {
+  inline void SetMaximumPlayerSessionCount(int64_t value) {
     m_maximumPlayerSessionCountHasBeenSet = true;
     m_maximumPlayerSessionCount = value;
   }
-  inline FleetUtilization& WithMaximumPlayerSessionCount(int value) {
+  inline FleetUtilization& WithMaximumPlayerSessionCount(int64_t value) {
     SetMaximumPlayerSessionCount(value);
     return *this;
   }
@@ -164,13 +164,13 @@ class FleetUtilization {
 
   Aws::String m_fleetArn;
 
-  int m_activeServerProcessCount{0};
+  int64_t m_activeServerProcessCount{0};
 
-  int m_activeGameSessionCount{0};
+  int64_t m_activeGameSessionCount{0};
 
-  int m_currentPlayerSessionCount{0};
+  int64_t m_currentPlayerSessionCount{0};
 
-  int m_maximumPlayerSessionCount{0};
+  int64_t m_maximumPlayerSessionCount{0};
 
   Aws::String m_location;
   bool m_fleetIdHasBeenSet = false;

@@ -53,6 +53,10 @@ FirewallPolicyResponse& FirewallPolicyResponse::operator=(JsonView jsonValue) {
     m_consumedStatefulRuleCapacity = jsonValue.GetInteger("ConsumedStatefulRuleCapacity");
     m_consumedStatefulRuleCapacityHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ConsumedStatefulDomainCapacity")) {
+    m_consumedStatefulDomainCapacity = jsonValue.GetInteger("ConsumedStatefulDomainCapacity");
+    m_consumedStatefulDomainCapacityHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("NumberOfAssociations")) {
     m_numberOfAssociations = jsonValue.GetInteger("NumberOfAssociations");
     m_numberOfAssociationsHasBeenSet = true;
@@ -105,6 +109,10 @@ JsonValue FirewallPolicyResponse::Jsonize() const {
 
   if (m_consumedStatefulRuleCapacityHasBeenSet) {
     payload.WithInteger("ConsumedStatefulRuleCapacity", m_consumedStatefulRuleCapacity);
+  }
+
+  if (m_consumedStatefulDomainCapacityHasBeenSet) {
+    payload.WithInteger("ConsumedStatefulDomainCapacity", m_consumedStatefulDomainCapacity);
   }
 
   if (m_numberOfAssociationsHasBeenSet) {

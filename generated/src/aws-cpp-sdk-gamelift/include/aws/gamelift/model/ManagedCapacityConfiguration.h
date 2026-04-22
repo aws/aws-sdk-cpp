@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/ZeroCapacityStrategy.h>
 
@@ -11,10 +12,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace GameLift {
 namespace Model {
@@ -42,9 +42,9 @@ namespace Model {
 class ManagedCapacityConfiguration {
  public:
   AWS_GAMELIFT_API ManagedCapacityConfiguration() = default;
-  AWS_GAMELIFT_API ManagedCapacityConfiguration(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API ManagedCapacityConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_GAMELIFT_API ManagedCapacityConfiguration(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API ManagedCapacityConfiguration& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -78,13 +78,13 @@ class ManagedCapacityConfiguration {
    * scaling in your MinSize and DesiredInstances to 0 after a period with no game
    * session activity. Default: 30 minutes.</p>
    */
-  inline int GetScaleInAfterInactivityMinutes() const { return m_scaleInAfterInactivityMinutes; }
+  inline int64_t GetScaleInAfterInactivityMinutes() const { return m_scaleInAfterInactivityMinutes; }
   inline bool ScaleInAfterInactivityMinutesHasBeenSet() const { return m_scaleInAfterInactivityMinutesHasBeenSet; }
-  inline void SetScaleInAfterInactivityMinutes(int value) {
+  inline void SetScaleInAfterInactivityMinutes(int64_t value) {
     m_scaleInAfterInactivityMinutesHasBeenSet = true;
     m_scaleInAfterInactivityMinutes = value;
   }
-  inline ManagedCapacityConfiguration& WithScaleInAfterInactivityMinutes(int value) {
+  inline ManagedCapacityConfiguration& WithScaleInAfterInactivityMinutes(int64_t value) {
     SetScaleInAfterInactivityMinutes(value);
     return *this;
   }
@@ -92,7 +92,7 @@ class ManagedCapacityConfiguration {
  private:
   ZeroCapacityStrategy m_zeroCapacityStrategy{ZeroCapacityStrategy::NOT_SET};
 
-  int m_scaleInAfterInactivityMinutes{0};
+  int64_t m_scaleInAfterInactivityMinutes{0};
   bool m_zeroCapacityStrategyHasBeenSet = false;
   bool m_scaleInAfterInactivityMinutesHasBeenSet = false;
 };

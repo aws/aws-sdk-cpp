@@ -8,15 +8,15 @@
 #include <aws/compute-optimizer/model/PreferredResourceName.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ComputeOptimizer {
 namespace Model {
@@ -30,8 +30,8 @@ namespace Model {
  * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/rightsizing-preferences.html">
  * Rightsizing recommendation preferences</a> in the <i>Compute Optimizer User
  * Guide</i>. </p>  <ul> <li> <p>This preference is only available for the
- * Amazon EC2 instance and Amazon EC2 Auto Scaling group resource types.</p> </li>
- * <li> <p>Compute Optimizer only supports the customization of
+ * Amazon EC2 instance and Auto Scaling group resource types.</p> </li> <li>
+ * <p>Compute Optimizer only supports the customization of
  * <code>Ec2InstanceTypes</code>.</p> </li> </ul> <p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/PreferredResource">AWS
  * API Reference</a></p>
@@ -39,9 +39,9 @@ namespace Model {
 class PreferredResource {
  public:
   AWS_COMPUTEOPTIMIZER_API PreferredResource() = default;
-  AWS_COMPUTEOPTIMIZER_API PreferredResource(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API PreferredResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPUTEOPTIMIZER_API PreferredResource(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API PreferredResource& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

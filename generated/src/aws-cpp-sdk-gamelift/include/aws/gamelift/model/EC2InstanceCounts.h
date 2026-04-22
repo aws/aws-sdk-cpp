@@ -4,14 +4,14 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace GameLift {
 namespace Model {
@@ -27,9 +27,9 @@ namespace Model {
 class EC2InstanceCounts {
  public:
   AWS_GAMELIFT_API EC2InstanceCounts() = default;
-  AWS_GAMELIFT_API EC2InstanceCounts(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API EC2InstanceCounts& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_GAMELIFT_API EC2InstanceCounts(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API EC2InstanceCounts& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -39,13 +39,13 @@ class EC2InstanceCounts {
    * can take up to 1 minute to be reflected when viewing a fleet's capacity
    * settings. </p>
    */
-  inline int GetDESIRED() const { return m_dESIRED; }
+  inline int64_t GetDESIRED() const { return m_dESIRED; }
   inline bool DESIREDHasBeenSet() const { return m_dESIREDHasBeenSet; }
-  inline void SetDESIRED(int value) {
+  inline void SetDESIRED(int64_t value) {
     m_dESIREDHasBeenSet = true;
     m_dESIRED = value;
   }
-  inline EC2InstanceCounts& WithDESIRED(int value) {
+  inline EC2InstanceCounts& WithDESIRED(int64_t value) {
     SetDESIRED(value);
     return *this;
   }
@@ -55,13 +55,13 @@ class EC2InstanceCounts {
   /**
    * <p>The minimum instance count value allowed.</p>
    */
-  inline int GetMINIMUM() const { return m_mINIMUM; }
+  inline int64_t GetMINIMUM() const { return m_mINIMUM; }
   inline bool MINIMUMHasBeenSet() const { return m_mINIMUMHasBeenSet; }
-  inline void SetMINIMUM(int value) {
+  inline void SetMINIMUM(int64_t value) {
     m_mINIMUMHasBeenSet = true;
     m_mINIMUM = value;
   }
-  inline EC2InstanceCounts& WithMINIMUM(int value) {
+  inline EC2InstanceCounts& WithMINIMUM(int64_t value) {
     SetMINIMUM(value);
     return *this;
   }
@@ -71,13 +71,13 @@ class EC2InstanceCounts {
   /**
    * <p>The maximum instance count value allowed.</p>
    */
-  inline int GetMAXIMUM() const { return m_mAXIMUM; }
+  inline int64_t GetMAXIMUM() const { return m_mAXIMUM; }
   inline bool MAXIMUMHasBeenSet() const { return m_mAXIMUMHasBeenSet; }
-  inline void SetMAXIMUM(int value) {
+  inline void SetMAXIMUM(int64_t value) {
     m_mAXIMUMHasBeenSet = true;
     m_mAXIMUM = value;
   }
-  inline EC2InstanceCounts& WithMAXIMUM(int value) {
+  inline EC2InstanceCounts& WithMAXIMUM(int64_t value) {
     SetMAXIMUM(value);
     return *this;
   }
@@ -87,13 +87,13 @@ class EC2InstanceCounts {
   /**
    * <p>Number of instances that are starting but not yet active.</p>
    */
-  inline int GetPENDING() const { return m_pENDING; }
+  inline int64_t GetPENDING() const { return m_pENDING; }
   inline bool PENDINGHasBeenSet() const { return m_pENDINGHasBeenSet; }
-  inline void SetPENDING(int value) {
+  inline void SetPENDING(int64_t value) {
     m_pENDINGHasBeenSet = true;
     m_pENDING = value;
   }
-  inline EC2InstanceCounts& WithPENDING(int value) {
+  inline EC2InstanceCounts& WithPENDING(int64_t value) {
     SetPENDING(value);
     return *this;
   }
@@ -103,13 +103,13 @@ class EC2InstanceCounts {
   /**
    * <p>Actual number of instances that are ready to host game sessions.</p>
    */
-  inline int GetACTIVE() const { return m_aCTIVE; }
+  inline int64_t GetACTIVE() const { return m_aCTIVE; }
   inline bool ACTIVEHasBeenSet() const { return m_aCTIVEHasBeenSet; }
-  inline void SetACTIVE(int value) {
+  inline void SetACTIVE(int64_t value) {
     m_aCTIVEHasBeenSet = true;
     m_aCTIVE = value;
   }
-  inline EC2InstanceCounts& WithACTIVE(int value) {
+  inline EC2InstanceCounts& WithACTIVE(int64_t value) {
     SetACTIVE(value);
     return *this;
   }
@@ -119,13 +119,13 @@ class EC2InstanceCounts {
   /**
    * <p>Number of active instances that are not currently hosting a game session.</p>
    */
-  inline int GetIDLE() const { return m_iDLE; }
+  inline int64_t GetIDLE() const { return m_iDLE; }
   inline bool IDLEHasBeenSet() const { return m_iDLEHasBeenSet; }
-  inline void SetIDLE(int value) {
+  inline void SetIDLE(int64_t value) {
     m_iDLEHasBeenSet = true;
     m_iDLE = value;
   }
-  inline EC2InstanceCounts& WithIDLE(int value) {
+  inline EC2InstanceCounts& WithIDLE(int64_t value) {
     SetIDLE(value);
     return *this;
   }
@@ -136,31 +136,31 @@ class EC2InstanceCounts {
    * <p>Number of instances that are no longer active but haven't yet been
    * terminated.</p>
    */
-  inline int GetTERMINATING() const { return m_tERMINATING; }
+  inline int64_t GetTERMINATING() const { return m_tERMINATING; }
   inline bool TERMINATINGHasBeenSet() const { return m_tERMINATINGHasBeenSet; }
-  inline void SetTERMINATING(int value) {
+  inline void SetTERMINATING(int64_t value) {
     m_tERMINATINGHasBeenSet = true;
     m_tERMINATING = value;
   }
-  inline EC2InstanceCounts& WithTERMINATING(int value) {
+  inline EC2InstanceCounts& WithTERMINATING(int64_t value) {
     SetTERMINATING(value);
     return *this;
   }
   ///@}
  private:
-  int m_dESIRED{0};
+  int64_t m_dESIRED{0};
 
-  int m_mINIMUM{0};
+  int64_t m_mINIMUM{0};
 
-  int m_mAXIMUM{0};
+  int64_t m_mAXIMUM{0};
 
-  int m_pENDING{0};
+  int64_t m_pENDING{0};
 
-  int m_aCTIVE{0};
+  int64_t m_aCTIVE{0};
 
-  int m_iDLE{0};
+  int64_t m_iDLE{0};
 
-  int m_tERMINATING{0};
+  int64_t m_tERMINATING{0};
   bool m_dESIREDHasBeenSet = false;
   bool m_mINIMUMHasBeenSet = false;
   bool m_mAXIMUMHasBeenSet = false;

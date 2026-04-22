@@ -11,7 +11,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 namespace Aws {
 namespace ComputeOptimizer {
@@ -32,12 +32,12 @@ namespace ComputeOptimizer {
  * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">Compute
  * Optimizer User Guide</a>.</p>
  */
-class AWS_COMPUTEOPTIMIZER_API ComputeOptimizerClient : public Aws::Client::AWSJsonClient,
+class AWS_COMPUTEOPTIMIZER_API ComputeOptimizerClient : public Aws::Client::AWSRpcV2CborClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<ComputeOptimizerClient>,
                                                         public ComputeOptimizerPaginationBase<ComputeOptimizerClient>,
                                                         public ComputeOptimizerWaiter<ComputeOptimizerClient> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
+  typedef Aws::Client::AWSRpcV2CborClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
 
@@ -160,15 +160,15 @@ class AWS_COMPUTEOPTIMIZER_API ComputeOptimizerClient : public Aws::Client::AWSJ
   }
 
   /**
-   * <p>Exports optimization recommendations for Amazon EC2 Auto Scaling groups.</p>
+   * <p>Exports optimization recommendations for Auto Scaling groups.</p>
    * <p>Recommendations are exported in a comma-separated values (.csv) file, and its
    * metadata in a JavaScript Object Notation (JSON) (.json) file, to an existing
    * Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
    * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.</p> <p>You can
-   * have only one Amazon EC2 Auto Scaling group export job in progress per Amazon
-   * Web Services Region.</p><p><h3>See Also:</h3>   <a
+   * have only one Auto Scaling group export job in progress per Amazon Web Services
+   * Region.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportAutoScalingGroupRecommendations">AWS
    * API Reference</a></p>
    */
@@ -454,9 +454,9 @@ class AWS_COMPUTEOPTIMIZER_API ComputeOptimizerClient : public Aws::Client::AWSJ
   }
 
   /**
-   * <p>Returns Amazon EC2 Auto Scaling group recommendations.</p> <p>Compute
-   * Optimizer generates recommendations for Amazon EC2 Auto Scaling groups that meet
-   * a specific set of requirements. For more information, see the <a
+   * <p>Returns Auto Scaling group recommendations.</p> <p>Compute Optimizer
+   * generates recommendations for Amazon EC2 Auto Scaling groups that meet a
+   * specific set of requirements. For more information, see the <a
    * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
    * resources and requirements</a> in the <i>Compute Optimizer User
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -927,9 +927,8 @@ class AWS_COMPUTEOPTIMIZER_API ComputeOptimizerClient : public Aws::Client::AWSJ
    * <p>Returns existing recommendation preferences, such as enhanced infrastructure
    * metrics.</p> <p>Use the <code>scope</code> parameter to specify which
    * preferences to return. You can specify to return preferences for an
-   * organization, a specific account ID, or a specific EC2 instance or Amazon EC2
-   * Auto Scaling group Amazon Resource Name (ARN).</p> <p>For more information, see
-   * <a
+   * organization, a specific account ID, or a specific EC2 instance or Auto Scaling
+   * group Amazon Resource Name (ARN).</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
    * enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -964,15 +963,15 @@ class AWS_COMPUTEOPTIMIZER_API ComputeOptimizerClient : public Aws::Client::AWSJ
    * <p>Returns the optimization findings for an account.</p> <p>It returns the
    * number of:</p> <ul> <li> <p>Amazon EC2 instances in an account that are
    * <code>Underprovisioned</code>, <code>Overprovisioned</code>, or
-   * <code>Optimized</code>.</p> </li> <li> <p>EC2Amazon EC2 Auto Scaling groups in
-   * an account that are <code>NotOptimized</code>, or <code>Optimized</code>.</p>
-   * </li> <li> <p>Amazon EBS volumes in an account that are
-   * <code>NotOptimized</code>, or <code>Optimized</code>.</p> </li> <li> <p>Lambda
-   * functions in an account that are <code>NotOptimized</code>, or
-   * <code>Optimized</code>.</p> </li> <li> <p>Amazon ECS services in an account that
-   * are <code>Underprovisioned</code>, <code>Overprovisioned</code>, or
-   * <code>Optimized</code>.</p> </li> <li> <p>Commercial software licenses in an
-   * account that are <code>InsufficientMetrics</code>, <code>NotOptimized</code> or
+   * <code>Optimized</code>.</p> </li> <li> <p>EC2Auto Scaling groups in an account
+   * that are <code>NotOptimized</code>, or <code>Optimized</code>.</p> </li> <li>
+   * <p>Amazon EBS volumes in an account that are <code>NotOptimized</code>, or
+   * <code>Optimized</code>.</p> </li> <li> <p>Lambda functions in an account that
+   * are <code>NotOptimized</code>, or <code>Optimized</code>.</p> </li> <li>
+   * <p>Amazon ECS services in an account that are <code>Underprovisioned</code>,
+   * <code>Overprovisioned</code>, or <code>Optimized</code>.</p> </li> <li>
+   * <p>Commercial software licenses in an account that are
+   * <code>InsufficientMetrics</code>, <code>NotOptimized</code> or
    * <code>Optimized</code>.</p> </li> <li> <p>Amazon Aurora and Amazon RDS databases
    * in an account that are <code>Underprovisioned</code>,
    * <code>Overprovisioned</code>, <code>Optimized</code>, or

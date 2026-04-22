@@ -414,6 +414,98 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates a benchmark job that runs performance benchmarks against inference
+   * infrastructure using a predefined AI workload configuration. The benchmark job
+   * measures metrics such as latency, throughput, and cost for your generative AI
+   * inference endpoints.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAIBenchmarkJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateAIBenchmarkJobOutcome CreateAIBenchmarkJob(const Model::CreateAIBenchmarkJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateAIBenchmarkJob that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateAIBenchmarkJobRequestT = Model::CreateAIBenchmarkJobRequest>
+  Model::CreateAIBenchmarkJobOutcomeCallable CreateAIBenchmarkJobCallable(const CreateAIBenchmarkJobRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::CreateAIBenchmarkJob, request);
+  }
+
+  /**
+   * An Async wrapper for CreateAIBenchmarkJob that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateAIBenchmarkJobRequestT = Model::CreateAIBenchmarkJobRequest>
+  void CreateAIBenchmarkJobAsync(const CreateAIBenchmarkJobRequestT& request, const CreateAIBenchmarkJobResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::CreateAIBenchmarkJob, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a recommendation job that generates intelligent optimization
+   * recommendations for generative AI inference deployments. The job analyzes your
+   * model, workload configuration, and performance targets to recommend optimal
+   * instance types, model optimization techniques (such as quantization and
+   * speculative decoding), and deployment configurations.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAIRecommendationJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateAIRecommendationJobOutcome CreateAIRecommendationJob(const Model::CreateAIRecommendationJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateAIRecommendationJob that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateAIRecommendationJobRequestT = Model::CreateAIRecommendationJobRequest>
+  Model::CreateAIRecommendationJobOutcomeCallable CreateAIRecommendationJobCallable(
+      const CreateAIRecommendationJobRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::CreateAIRecommendationJob, request);
+  }
+
+  /**
+   * An Async wrapper for CreateAIRecommendationJob that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateAIRecommendationJobRequestT = Model::CreateAIRecommendationJobRequest>
+  void CreateAIRecommendationJobAsync(const CreateAIRecommendationJobRequestT& request,
+                                      const CreateAIRecommendationJobResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::CreateAIRecommendationJob, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a reusable AI workload configuration that defines datasets, data
+   * sources, and benchmark tool settings for consistent performance testing of
+   * generative AI inference deployments on Amazon SageMaker AI.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAIWorkloadConfig">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateAIWorkloadConfigOutcome CreateAIWorkloadConfig(const Model::CreateAIWorkloadConfigRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateAIWorkloadConfig that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateAIWorkloadConfigRequestT = Model::CreateAIWorkloadConfigRequest>
+  Model::CreateAIWorkloadConfigOutcomeCallable CreateAIWorkloadConfigCallable(const CreateAIWorkloadConfigRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::CreateAIWorkloadConfig, request);
+  }
+
+  /**
+   * An Async wrapper for CreateAIWorkloadConfig that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateAIWorkloadConfigRequestT = Model::CreateAIWorkloadConfigRequest>
+  void CreateAIWorkloadConfigAsync(const CreateAIWorkloadConfigRequestT& request,
+                                   const CreateAIWorkloadConfigResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::CreateAIWorkloadConfig, request, handler, context);
+  }
+
+  /**
    * <p>Creates an <i>action</i>. An action is a lineage tracking entity that
    * represents an action or activity. For example, a model deployment or an HPO job.
    * Generally, an action involves at least one input or output artifact. For more
@@ -2909,6 +3001,89 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Deletes the specified AI benchmark job.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAIBenchmarkJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteAIBenchmarkJobOutcome DeleteAIBenchmarkJob(const Model::DeleteAIBenchmarkJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteAIBenchmarkJob that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteAIBenchmarkJobRequestT = Model::DeleteAIBenchmarkJobRequest>
+  Model::DeleteAIBenchmarkJobOutcomeCallable DeleteAIBenchmarkJobCallable(const DeleteAIBenchmarkJobRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::DeleteAIBenchmarkJob, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteAIBenchmarkJob that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteAIBenchmarkJobRequestT = Model::DeleteAIBenchmarkJobRequest>
+  void DeleteAIBenchmarkJobAsync(const DeleteAIBenchmarkJobRequestT& request, const DeleteAIBenchmarkJobResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::DeleteAIBenchmarkJob, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes the specified AI recommendation job.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAIRecommendationJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteAIRecommendationJobOutcome DeleteAIRecommendationJob(const Model::DeleteAIRecommendationJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteAIRecommendationJob that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteAIRecommendationJobRequestT = Model::DeleteAIRecommendationJobRequest>
+  Model::DeleteAIRecommendationJobOutcomeCallable DeleteAIRecommendationJobCallable(
+      const DeleteAIRecommendationJobRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::DeleteAIRecommendationJob, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteAIRecommendationJob that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteAIRecommendationJobRequestT = Model::DeleteAIRecommendationJobRequest>
+  void DeleteAIRecommendationJobAsync(const DeleteAIRecommendationJobRequestT& request,
+                                      const DeleteAIRecommendationJobResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::DeleteAIRecommendationJob, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes the specified AI workload configuration. You cannot delete a
+   * configuration that is referenced by an active benchmark job.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAIWorkloadConfig">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteAIWorkloadConfigOutcome DeleteAIWorkloadConfig(const Model::DeleteAIWorkloadConfigRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteAIWorkloadConfig that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteAIWorkloadConfigRequestT = Model::DeleteAIWorkloadConfigRequest>
+  Model::DeleteAIWorkloadConfigOutcomeCallable DeleteAIWorkloadConfigCallable(const DeleteAIWorkloadConfigRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::DeleteAIWorkloadConfig, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteAIWorkloadConfig that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteAIWorkloadConfigRequestT = Model::DeleteAIWorkloadConfigRequest>
+  void DeleteAIWorkloadConfigAsync(const DeleteAIWorkloadConfigRequestT& request,
+                                   const DeleteAIWorkloadConfigResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::DeleteAIWorkloadConfig, request, handler, context);
+  }
+
+  /**
    * <p>Deletes an action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAction">AWS
    * API Reference</a></p>
@@ -4591,6 +4766,94 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   void DeregisterDevicesAsync(const DeregisterDevicesRequestT& request, const DeregisterDevicesResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SageMakerClient::DeregisterDevices, request, handler, context);
+  }
+
+  /**
+   * <p>Returns details of an AI benchmark job, including its status, configuration,
+   * target endpoint, and timing information.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAIBenchmarkJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeAIBenchmarkJobOutcome DescribeAIBenchmarkJob(const Model::DescribeAIBenchmarkJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeAIBenchmarkJob that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeAIBenchmarkJobRequestT = Model::DescribeAIBenchmarkJobRequest>
+  Model::DescribeAIBenchmarkJobOutcomeCallable DescribeAIBenchmarkJobCallable(const DescribeAIBenchmarkJobRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::DescribeAIBenchmarkJob, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeAIBenchmarkJob that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeAIBenchmarkJobRequestT = Model::DescribeAIBenchmarkJobRequest>
+  void DescribeAIBenchmarkJobAsync(const DescribeAIBenchmarkJobRequestT& request,
+                                   const DescribeAIBenchmarkJobResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::DescribeAIBenchmarkJob, request, handler, context);
+  }
+
+  /**
+   * <p>Returns details of an AI recommendation job, including its status, model
+   * source, performance targets, optimization recommendations, and deployment
+   * configurations.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAIRecommendationJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeAIRecommendationJobOutcome DescribeAIRecommendationJob(
+      const Model::DescribeAIRecommendationJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeAIRecommendationJob that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeAIRecommendationJobRequestT = Model::DescribeAIRecommendationJobRequest>
+  Model::DescribeAIRecommendationJobOutcomeCallable DescribeAIRecommendationJobCallable(
+      const DescribeAIRecommendationJobRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::DescribeAIRecommendationJob, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeAIRecommendationJob that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeAIRecommendationJobRequestT = Model::DescribeAIRecommendationJobRequest>
+  void DescribeAIRecommendationJobAsync(const DescribeAIRecommendationJobRequestT& request,
+                                        const DescribeAIRecommendationJobResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::DescribeAIRecommendationJob, request, handler, context);
+  }
+
+  /**
+   * <p>Returns details of an AI workload configuration, including the dataset
+   * configuration, benchmark tool settings, tags, and creation time.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAIWorkloadConfig">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeAIWorkloadConfigOutcome DescribeAIWorkloadConfig(const Model::DescribeAIWorkloadConfigRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeAIWorkloadConfig that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeAIWorkloadConfigRequestT = Model::DescribeAIWorkloadConfigRequest>
+  Model::DescribeAIWorkloadConfigOutcomeCallable DescribeAIWorkloadConfigCallable(const DescribeAIWorkloadConfigRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::DescribeAIWorkloadConfig, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeAIWorkloadConfig that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeAIWorkloadConfigRequestT = Model::DescribeAIWorkloadConfigRequest>
+  void DescribeAIWorkloadConfigAsync(const DescribeAIWorkloadConfigRequestT& request,
+                                     const DescribeAIWorkloadConfigResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::DescribeAIWorkloadConfig, request, handler, context);
   }
 
   /**
@@ -6948,6 +7211,94 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   void ImportHubContentAsync(const ImportHubContentRequestT& request, const ImportHubContentResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SageMakerClient::ImportHubContent, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a list of AI benchmark jobs in your account. You can filter the
+   * results by name, status, and creation time, and sort the results. The response
+   * is paginated.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAIBenchmarkJobs">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAIBenchmarkJobsOutcome ListAIBenchmarkJobs(const Model::ListAIBenchmarkJobsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListAIBenchmarkJobs that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListAIBenchmarkJobsRequestT = Model::ListAIBenchmarkJobsRequest>
+  Model::ListAIBenchmarkJobsOutcomeCallable ListAIBenchmarkJobsCallable(const ListAIBenchmarkJobsRequestT& request = {}) const {
+    return SubmitCallable(&SageMakerClient::ListAIBenchmarkJobs, request);
+  }
+
+  /**
+   * An Async wrapper for ListAIBenchmarkJobs that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListAIBenchmarkJobsRequestT = Model::ListAIBenchmarkJobsRequest>
+  void ListAIBenchmarkJobsAsync(const ListAIBenchmarkJobsResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                const ListAIBenchmarkJobsRequestT& request = {}) const {
+    return SubmitAsync(&SageMakerClient::ListAIBenchmarkJobs, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a list of AI recommendation jobs in your account. You can filter the
+   * results by name, status, and creation time, and sort the results. The response
+   * is paginated.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAIRecommendationJobs">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAIRecommendationJobsOutcome ListAIRecommendationJobs(const Model::ListAIRecommendationJobsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListAIRecommendationJobs that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListAIRecommendationJobsRequestT = Model::ListAIRecommendationJobsRequest>
+  Model::ListAIRecommendationJobsOutcomeCallable ListAIRecommendationJobsCallable(
+      const ListAIRecommendationJobsRequestT& request = {}) const {
+    return SubmitCallable(&SageMakerClient::ListAIRecommendationJobs, request);
+  }
+
+  /**
+   * An Async wrapper for ListAIRecommendationJobs that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListAIRecommendationJobsRequestT = Model::ListAIRecommendationJobsRequest>
+  void ListAIRecommendationJobsAsync(const ListAIRecommendationJobsResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                     const ListAIRecommendationJobsRequestT& request = {}) const {
+    return SubmitAsync(&SageMakerClient::ListAIRecommendationJobs, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a list of AI workload configurations in your account. You can filter
+   * the results by name and creation time, and sort the results. The response is
+   * paginated.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAIWorkloadConfigs">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAIWorkloadConfigsOutcome ListAIWorkloadConfigs(const Model::ListAIWorkloadConfigsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListAIWorkloadConfigs that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListAIWorkloadConfigsRequestT = Model::ListAIWorkloadConfigsRequest>
+  Model::ListAIWorkloadConfigsOutcomeCallable ListAIWorkloadConfigsCallable(const ListAIWorkloadConfigsRequestT& request = {}) const {
+    return SubmitCallable(&SageMakerClient::ListAIWorkloadConfigs, request);
+  }
+
+  /**
+   * An Async wrapper for ListAIWorkloadConfigs that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListAIWorkloadConfigsRequestT = Model::ListAIWorkloadConfigsRequest>
+  void ListAIWorkloadConfigsAsync(const ListAIWorkloadConfigsResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                  const ListAIWorkloadConfigsRequestT& request = {}) const {
+    return SubmitAsync(&SageMakerClient::ListAIWorkloadConfigs, request, handler, context);
   }
 
   /**
@@ -9851,6 +10202,59 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   void StartSessionAsync(const StartSessionRequestT& request, const StartSessionResponseReceivedHandler& handler,
                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SageMakerClient::StartSession, request, handler, context);
+  }
+
+  /**
+   * <p>Stops a running AI benchmark job.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopAIBenchmarkJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StopAIBenchmarkJobOutcome StopAIBenchmarkJob(const Model::StopAIBenchmarkJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for StopAIBenchmarkJob that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StopAIBenchmarkJobRequestT = Model::StopAIBenchmarkJobRequest>
+  Model::StopAIBenchmarkJobOutcomeCallable StopAIBenchmarkJobCallable(const StopAIBenchmarkJobRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::StopAIBenchmarkJob, request);
+  }
+
+  /**
+   * An Async wrapper for StopAIBenchmarkJob that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename StopAIBenchmarkJobRequestT = Model::StopAIBenchmarkJobRequest>
+  void StopAIBenchmarkJobAsync(const StopAIBenchmarkJobRequestT& request, const StopAIBenchmarkJobResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::StopAIBenchmarkJob, request, handler, context);
+  }
+
+  /**
+   * <p>Stops a running AI recommendation job.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopAIRecommendationJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StopAIRecommendationJobOutcome StopAIRecommendationJob(const Model::StopAIRecommendationJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for StopAIRecommendationJob that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StopAIRecommendationJobRequestT = Model::StopAIRecommendationJobRequest>
+  Model::StopAIRecommendationJobOutcomeCallable StopAIRecommendationJobCallable(const StopAIRecommendationJobRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::StopAIRecommendationJob, request);
+  }
+
+  /**
+   * An Async wrapper for StopAIRecommendationJob that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StopAIRecommendationJobRequestT = Model::StopAIRecommendationJobRequest>
+  void StopAIRecommendationJobAsync(const StopAIRecommendationJobRequestT& request,
+                                    const StopAIRecommendationJobResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::StopAIRecommendationJob, request, handler, context);
   }
 
   /**

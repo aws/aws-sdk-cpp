@@ -7,15 +7,15 @@
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/compute-optimizer/model/MemorySizeConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ComputeOptimizer {
 namespace Model {
@@ -29,9 +29,9 @@ namespace Model {
 class ContainerRecommendation {
  public:
   AWS_COMPUTEOPTIMIZER_API ContainerRecommendation() = default;
-  AWS_COMPUTEOPTIMIZER_API ContainerRecommendation(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API ContainerRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPUTEOPTIMIZER_API ContainerRecommendation(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API ContainerRecommendation& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -73,13 +73,13 @@ class ContainerRecommendation {
   /**
    * <p> The recommended number of CPU units reserved for the container. </p>
    */
-  inline int GetCpu() const { return m_cpu; }
+  inline int64_t GetCpu() const { return m_cpu; }
   inline bool CpuHasBeenSet() const { return m_cpuHasBeenSet; }
-  inline void SetCpu(int value) {
+  inline void SetCpu(int64_t value) {
     m_cpuHasBeenSet = true;
     m_cpu = value;
   }
-  inline ContainerRecommendation& WithCpu(int value) {
+  inline ContainerRecommendation& WithCpu(int64_t value) {
     SetCpu(value);
     return *this;
   }
@@ -89,7 +89,7 @@ class ContainerRecommendation {
 
   MemorySizeConfiguration m_memorySizeConfiguration;
 
-  int m_cpu{0};
+  int64_t m_cpu{0};
   bool m_containerNameHasBeenSet = false;
   bool m_memorySizeConfigurationHasBeenSet = false;
   bool m_cpuHasBeenSet = false;

@@ -193,6 +193,24 @@ class FirewallPolicyResponse {
 
   ///@{
   /**
+   * <p>The total number of domain name specifications across all domain list rule
+   * groups in the firewall policy that use the
+   * <code>stateful-domain-rulegroup</code> resource type.</p>
+   */
+  inline int GetConsumedStatefulDomainCapacity() const { return m_consumedStatefulDomainCapacity; }
+  inline bool ConsumedStatefulDomainCapacityHasBeenSet() const { return m_consumedStatefulDomainCapacityHasBeenSet; }
+  inline void SetConsumedStatefulDomainCapacity(int value) {
+    m_consumedStatefulDomainCapacityHasBeenSet = true;
+    m_consumedStatefulDomainCapacity = value;
+  }
+  inline FirewallPolicyResponse& WithConsumedStatefulDomainCapacity(int value) {
+    SetConsumedStatefulDomainCapacity(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The number of firewalls that are associated with this firewall policy.</p>
    */
   inline int GetNumberOfAssociations() const { return m_numberOfAssociations; }
@@ -260,6 +278,8 @@ class FirewallPolicyResponse {
 
   int m_consumedStatefulRuleCapacity{0};
 
+  int m_consumedStatefulDomainCapacity{0};
+
   int m_numberOfAssociations{0};
 
   EncryptionConfiguration m_encryptionConfiguration;
@@ -273,6 +293,7 @@ class FirewallPolicyResponse {
   bool m_tagsHasBeenSet = false;
   bool m_consumedStatelessRuleCapacityHasBeenSet = false;
   bool m_consumedStatefulRuleCapacityHasBeenSet = false;
+  bool m_consumedStatefulDomainCapacityHasBeenSet = false;
   bool m_numberOfAssociationsHasBeenSet = false;
   bool m_encryptionConfigurationHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;

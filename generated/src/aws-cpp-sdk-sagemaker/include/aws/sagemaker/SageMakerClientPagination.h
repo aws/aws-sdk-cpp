@@ -8,6 +8,9 @@
 #include <aws/sagemaker/SageMakerClient.h>
 #include <aws/sagemaker/model/CreateHubContentPresignedUrlsPaginationTraits.h>
 #include <aws/sagemaker/model/DescribeTrainingPlanExtensionHistoryPaginationTraits.h>
+#include <aws/sagemaker/model/ListAIBenchmarkJobsPaginationTraits.h>
+#include <aws/sagemaker/model/ListAIRecommendationJobsPaginationTraits.h>
+#include <aws/sagemaker/model/ListAIWorkloadConfigsPaginationTraits.h>
 #include <aws/sagemaker/model/ListActionsPaginationTraits.h>
 #include <aws/sagemaker/model/ListAlgorithmsPaginationTraits.h>
 #include <aws/sagemaker/model/ListAliasesPaginationTraits.h>
@@ -104,6 +107,14 @@ using DescribeTrainingPlanExtensionHistoryPaginator =
                                       Pagination::DescribeTrainingPlanExtensionHistoryPaginationTraits<SageMakerClient>>;
 using ListActionsPaginator =
     Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListActionsRequest, Pagination::ListActionsPaginationTraits<SageMakerClient>>;
+using ListAIBenchmarkJobsPaginator = Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListAIBenchmarkJobsRequest,
+                                                                       Pagination::ListAIBenchmarkJobsPaginationTraits<SageMakerClient>>;
+using ListAIRecommendationJobsPaginator =
+    Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListAIRecommendationJobsRequest,
+                                      Pagination::ListAIRecommendationJobsPaginationTraits<SageMakerClient>>;
+using ListAIWorkloadConfigsPaginator =
+    Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListAIWorkloadConfigsRequest,
+                                      Pagination::ListAIWorkloadConfigsPaginationTraits<SageMakerClient>>;
 using ListAlgorithmsPaginator = Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListAlgorithmsRequest,
                                                                   Pagination::ListAlgorithmsPaginationTraits<SageMakerClient>>;
 using ListAliasesPaginator =

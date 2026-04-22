@@ -4,139 +4,651 @@
  */
 
 #include <aws/compute-optimizer/model/IdleRecommendation.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace ComputeOptimizer {
 namespace Model {
 
-IdleRecommendation::IdleRecommendation(JsonView jsonValue) { *this = jsonValue; }
+IdleRecommendation::IdleRecommendation(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-IdleRecommendation& IdleRecommendation::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("resourceArn")) {
-    m_resourceArn = jsonValue.GetString("resourceArn");
-    m_resourceArnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("resourceId")) {
-    m_resourceId = jsonValue.GetString("resourceId");
-    m_resourceIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("resourceType")) {
-    m_resourceType = IdleRecommendationResourceTypeMapper::GetIdleRecommendationResourceTypeForName(jsonValue.GetString("resourceType"));
-    m_resourceTypeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("accountId")) {
-    m_accountId = jsonValue.GetString("accountId");
-    m_accountIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("finding")) {
-    m_finding = IdleFindingMapper::GetIdleFindingForName(jsonValue.GetString("finding"));
-    m_findingHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("findingDescription")) {
-    m_findingDescription = jsonValue.GetString("findingDescription");
-    m_findingDescriptionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("savingsOpportunity")) {
-    m_savingsOpportunity = jsonValue.GetObject("savingsOpportunity");
-    m_savingsOpportunityHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("savingsOpportunityAfterDiscounts")) {
-    m_savingsOpportunityAfterDiscounts = jsonValue.GetObject("savingsOpportunityAfterDiscounts");
-    m_savingsOpportunityAfterDiscountsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("utilizationMetrics")) {
-    Aws::Utils::Array<JsonView> utilizationMetricsJsonList = jsonValue.GetArray("utilizationMetrics");
-    for (unsigned utilizationMetricsIndex = 0; utilizationMetricsIndex < utilizationMetricsJsonList.GetLength();
-         ++utilizationMetricsIndex) {
-      m_utilizationMetrics.push_back(utilizationMetricsJsonList[utilizationMetricsIndex].AsObject());
+IdleRecommendation& IdleRecommendation::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "resourceArn") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_resourceArn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_resourceArn = ss.str();
+                  }
+                }
+                m_resourceArnHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "resourceId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_resourceId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_resourceId = ss.str();
+                  }
+                }
+                m_resourceIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "resourceType") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_resourceType = IdleRecommendationResourceTypeMapper::GetIdleRecommendationResourceTypeForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_resourceTypeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "accountId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_accountId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_accountId = ss.str();
+                  }
+                }
+                m_accountIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "finding") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_finding = IdleFindingMapper::GetIdleFindingForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_findingHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "findingDescription") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_findingDescription = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_findingDescription = ss.str();
+                  }
+                }
+                m_findingDescriptionHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "savingsOpportunity") {
+                m_savingsOpportunity = IdleSavingsOpportunity(decoder);
+                m_savingsOpportunityHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "savingsOpportunityAfterDiscounts") {
+                m_savingsOpportunityAfterDiscounts = IdleSavingsOpportunityAfterDiscounts(decoder);
+                m_savingsOpportunityAfterDiscountsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "utilizationMetrics") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_utilizationMetrics.push_back(IdleUtilizationMetric(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_utilizationMetrics.push_back(IdleUtilizationMetric(decoder));
+                    }
+                  }
+                }
+                m_utilizationMetricsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "lookBackPeriodInDays") {
+                auto val = decoder->PopNextFloatVal();
+                if (val.has_value()) {
+                  m_lookBackPeriodInDays = val.value();
+                }
+                m_lookBackPeriodInDaysHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "lastRefreshTimestamp") {
+                auto tag = decoder->PopNextTagVal();
+                if (tag.has_value() &&
+                    tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+                {
+                  auto dateType = decoder->PeekType();
+                  if (dateType.has_value()) {
+                    if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_lastRefreshTimestamp = Aws::Utils::DateTime(val.value());
+                      }
+                    } else {
+                      auto val = decoder->PopNextUnsignedIntVal();
+                      if (val.has_value()) {
+                        m_lastRefreshTimestamp = Aws::Utils::DateTime(val.value());
+                      }
+                    }
+                  }
+                }
+                m_lastRefreshTimestampHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "tags") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_tags.push_back(Tag(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_tags.push_back(Tag(decoder));
+                    }
+                  }
+                }
+                m_tagsHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("IdleRecommendation", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "resourceArn") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_resourceArn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_resourceArn = ss.str();
+                }
+              }
+              m_resourceArnHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "resourceId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_resourceId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_resourceId = ss.str();
+                }
+              }
+              m_resourceIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "resourceType") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_resourceType = IdleRecommendationResourceTypeMapper::GetIdleRecommendationResourceTypeForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_resourceTypeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "accountId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_accountId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_accountId = ss.str();
+                }
+              }
+              m_accountIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "finding") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_finding =
+                    IdleFindingMapper::GetIdleFindingForName(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_findingHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "findingDescription") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_findingDescription = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_findingDescription = ss.str();
+                }
+              }
+              m_findingDescriptionHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "savingsOpportunity") {
+              m_savingsOpportunity = IdleSavingsOpportunity(decoder);
+              m_savingsOpportunityHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "savingsOpportunityAfterDiscounts") {
+              m_savingsOpportunityAfterDiscounts = IdleSavingsOpportunityAfterDiscounts(decoder);
+              m_savingsOpportunityAfterDiscountsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "utilizationMetrics") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_utilizationMetrics.push_back(IdleUtilizationMetric(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_utilizationMetrics.push_back(IdleUtilizationMetric(decoder));
+                  }
+                }
+              }
+              m_utilizationMetricsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "lookBackPeriodInDays") {
+              auto val = decoder->PopNextFloatVal();
+              if (val.has_value()) {
+                m_lookBackPeriodInDays = val.value();
+              }
+              m_lookBackPeriodInDaysHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "lastRefreshTimestamp") {
+              auto tag = decoder->PopNextTagVal();
+              if (tag.has_value() &&
+                  tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+              {
+                auto dateType = decoder->PeekType();
+                if (dateType.has_value()) {
+                  if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                    auto val = decoder->PopNextFloatVal();
+                    if (val.has_value()) {
+                      m_lastRefreshTimestamp = Aws::Utils::DateTime(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_lastRefreshTimestamp = Aws::Utils::DateTime(val.value());
+                    }
+                  }
+                }
+              }
+              m_lastRefreshTimestampHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "tags") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_tags.push_back(Tag(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_tags.push_back(Tag(decoder));
+                  }
+                }
+              }
+              m_tagsHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
     }
-    m_utilizationMetricsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("lookBackPeriodInDays")) {
-    m_lookBackPeriodInDays = jsonValue.GetDouble("lookBackPeriodInDays");
-    m_lookBackPeriodInDaysHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("lastRefreshTimestamp")) {
-    m_lastRefreshTimestamp = jsonValue.GetDouble("lastRefreshTimestamp");
-    m_lastRefreshTimestampHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("tags")) {
-    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
-    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
-    }
-    m_tagsHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue IdleRecommendation::Jsonize() const {
-  JsonValue payload;
+void IdleRecommendation::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_resourceArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_resourceIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_resourceTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_accountIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_findingHasBeenSet) {
+    mapSize++;
+  }
+  if (m_findingDescriptionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_savingsOpportunityHasBeenSet) {
+    mapSize++;
+  }
+  if (m_savingsOpportunityAfterDiscountsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_utilizationMetricsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_lookBackPeriodInDaysHasBeenSet) {
+    mapSize++;
+  }
+  if (m_lastRefreshTimestampHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagsHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_resourceArnHasBeenSet) {
-    payload.WithString("resourceArn", m_resourceArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("resourceArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_resourceArn.c_str()));
   }
 
   if (m_resourceIdHasBeenSet) {
-    payload.WithString("resourceId", m_resourceId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("resourceId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_resourceId.c_str()));
   }
 
   if (m_resourceTypeHasBeenSet) {
-    payload.WithString("resourceType", IdleRecommendationResourceTypeMapper::GetNameForIdleRecommendationResourceType(m_resourceType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("resourceType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(
+        IdleRecommendationResourceTypeMapper::GetNameForIdleRecommendationResourceType(m_resourceType).c_str()));
   }
 
   if (m_accountIdHasBeenSet) {
-    payload.WithString("accountId", m_accountId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("accountId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_accountId.c_str()));
   }
 
   if (m_findingHasBeenSet) {
-    payload.WithString("finding", IdleFindingMapper::GetNameForIdleFinding(m_finding));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("finding"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(IdleFindingMapper::GetNameForIdleFinding(m_finding).c_str()));
   }
 
   if (m_findingDescriptionHasBeenSet) {
-    payload.WithString("findingDescription", m_findingDescription);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("findingDescription"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_findingDescription.c_str()));
   }
 
   if (m_savingsOpportunityHasBeenSet) {
-    payload.WithObject("savingsOpportunity", m_savingsOpportunity.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("savingsOpportunity"));
+    m_savingsOpportunity.CborEncode(encoder);
   }
 
   if (m_savingsOpportunityAfterDiscountsHasBeenSet) {
-    payload.WithObject("savingsOpportunityAfterDiscounts", m_savingsOpportunityAfterDiscounts.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("savingsOpportunityAfterDiscounts"));
+    m_savingsOpportunityAfterDiscounts.CborEncode(encoder);
   }
 
   if (m_utilizationMetricsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> utilizationMetricsJsonList(m_utilizationMetrics.size());
-    for (unsigned utilizationMetricsIndex = 0; utilizationMetricsIndex < utilizationMetricsJsonList.GetLength();
-         ++utilizationMetricsIndex) {
-      utilizationMetricsJsonList[utilizationMetricsIndex].AsObject(m_utilizationMetrics[utilizationMetricsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("utilizationMetrics"));
+    encoder.WriteArrayStart(m_utilizationMetrics.size());
+    for (const auto& item_0 : m_utilizationMetrics) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("utilizationMetrics", std::move(utilizationMetricsJsonList));
   }
 
   if (m_lookBackPeriodInDaysHasBeenSet) {
-    payload.WithDouble("lookBackPeriodInDays", m_lookBackPeriodInDays);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("lookBackPeriodInDays"));
+    encoder.WriteFloat(m_lookBackPeriodInDays);
   }
 
   if (m_lastRefreshTimestampHasBeenSet) {
-    payload.WithDouble("lastRefreshTimestamp", m_lastRefreshTimestamp.SecondsWithMSPrecision());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("lastRefreshTimestamp"));
+    encoder.WriteTag(1);  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+    encoder.WriteUInt(m_lastRefreshTimestamp.Seconds());
   }
 
   if (m_tagsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("tags"));
+    encoder.WriteArrayStart(m_tags.size());
+    for (const auto& item_0 : m_tags) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("tags", std::move(tagsJsonList));
   }
-
-  return payload;
 }
 
 }  // namespace Model

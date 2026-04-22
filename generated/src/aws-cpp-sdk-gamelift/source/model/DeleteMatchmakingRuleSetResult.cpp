@@ -6,22 +6,27 @@
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/model/DeleteMatchmakingRuleSetResult.h>
 
 #include <utility>
 
 using namespace Aws::GameLift::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
+using namespace Aws::Utils::Cbor;
 using namespace Aws;
 
-DeleteMatchmakingRuleSetResult::DeleteMatchmakingRuleSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+DeleteMatchmakingRuleSetResult::DeleteMatchmakingRuleSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result) {
+  *this = result;
+}
 
-DeleteMatchmakingRuleSetResult& DeleteMatchmakingRuleSetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+DeleteMatchmakingRuleSetResult& DeleteMatchmakingRuleSetResult::operator=(
+    const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
-  AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -12,15 +12,15 @@
 #include <aws/comprehendmedical/model/RxNormTrait.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ComprehendMedical {
 namespace Model {
@@ -38,22 +38,22 @@ namespace Model {
 class RxNormEntity {
  public:
   AWS_COMPREHENDMEDICAL_API RxNormEntity() = default;
-  AWS_COMPREHENDMEDICAL_API RxNormEntity(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPREHENDMEDICAL_API RxNormEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPREHENDMEDICAL_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPREHENDMEDICAL_API RxNormEntity(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPREHENDMEDICAL_API RxNormEntity& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPREHENDMEDICAL_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p>The numeric identifier for the entity. This is a monotonically increasing id
    * unique within this response rather than a global unique identifier.</p>
    */
-  inline int GetId() const { return m_id; }
+  inline int64_t GetId() const { return m_id; }
   inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-  inline void SetId(int value) {
+  inline void SetId(int64_t value) {
     m_idHasBeenSet = true;
     m_id = value;
   }
-  inline RxNormEntity& WithId(int value) {
+  inline RxNormEntity& WithId(int64_t value) {
     SetId(value);
     return *this;
   }
@@ -133,13 +133,13 @@ class RxNormEntity {
    * <p>The 0-based character offset in the input text that shows where the entity
    * begins. The offset returns the UTF-8 code point in the string.</p>
    */
-  inline int GetBeginOffset() const { return m_beginOffset; }
+  inline int64_t GetBeginOffset() const { return m_beginOffset; }
   inline bool BeginOffsetHasBeenSet() const { return m_beginOffsetHasBeenSet; }
-  inline void SetBeginOffset(int value) {
+  inline void SetBeginOffset(int64_t value) {
     m_beginOffsetHasBeenSet = true;
     m_beginOffset = value;
   }
-  inline RxNormEntity& WithBeginOffset(int value) {
+  inline RxNormEntity& WithBeginOffset(int64_t value) {
     SetBeginOffset(value);
     return *this;
   }
@@ -150,13 +150,13 @@ class RxNormEntity {
    * <p>The 0-based character offset in the input text that shows where the entity
    * ends. The offset returns the UTF-8 code point in the string.</p>
    */
-  inline int GetEndOffset() const { return m_endOffset; }
+  inline int64_t GetEndOffset() const { return m_endOffset; }
   inline bool EndOffsetHasBeenSet() const { return m_endOffsetHasBeenSet; }
-  inline void SetEndOffset(int value) {
+  inline void SetEndOffset(int64_t value) {
     m_endOffsetHasBeenSet = true;
     m_endOffset = value;
   }
-  inline RxNormEntity& WithEndOffset(int value) {
+  inline RxNormEntity& WithEndOffset(int64_t value) {
     SetEndOffset(value);
     return *this;
   }
@@ -238,7 +238,7 @@ class RxNormEntity {
   }
   ///@}
  private:
-  int m_id{0};
+  int64_t m_id{0};
 
   Aws::String m_text;
 
@@ -248,9 +248,9 @@ class RxNormEntity {
 
   double m_score{0.0};
 
-  int m_beginOffset{0};
+  int64_t m_beginOffset{0};
 
-  int m_endOffset{0};
+  int64_t m_endOffset{0};
 
   Aws::Vector<RxNormAttribute> m_attributes;
 

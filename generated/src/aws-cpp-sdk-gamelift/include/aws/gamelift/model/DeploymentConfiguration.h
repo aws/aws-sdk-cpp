@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/DeploymentImpairmentStrategy.h>
 #include <aws/gamelift/model/DeploymentProtectionStrategy.h>
@@ -12,10 +13,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace GameLift {
 namespace Model {
@@ -29,9 +29,9 @@ namespace Model {
 class DeploymentConfiguration {
  public:
   AWS_GAMELIFT_API DeploymentConfiguration() = default;
-  AWS_GAMELIFT_API DeploymentConfiguration(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API DeploymentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_GAMELIFT_API DeploymentConfiguration(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API DeploymentConfiguration& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -59,13 +59,13 @@ class DeploymentConfiguration {
    * <p>Sets a minimum level of healthy tasks to maintain during deployment activity.
    * </p>
    */
-  inline int GetMinimumHealthyPercentage() const { return m_minimumHealthyPercentage; }
+  inline int64_t GetMinimumHealthyPercentage() const { return m_minimumHealthyPercentage; }
   inline bool MinimumHealthyPercentageHasBeenSet() const { return m_minimumHealthyPercentageHasBeenSet; }
-  inline void SetMinimumHealthyPercentage(int value) {
+  inline void SetMinimumHealthyPercentage(int64_t value) {
     m_minimumHealthyPercentageHasBeenSet = true;
     m_minimumHealthyPercentage = value;
   }
-  inline DeploymentConfiguration& WithMinimumHealthyPercentage(int value) {
+  inline DeploymentConfiguration& WithMinimumHealthyPercentage(int64_t value) {
     SetMinimumHealthyPercentage(value);
     return *this;
   }
@@ -94,7 +94,7 @@ class DeploymentConfiguration {
  private:
   DeploymentProtectionStrategy m_protectionStrategy{DeploymentProtectionStrategy::NOT_SET};
 
-  int m_minimumHealthyPercentage{0};
+  int64_t m_minimumHealthyPercentage{0};
 
   DeploymentImpairmentStrategy m_impairmentStrategy{DeploymentImpairmentStrategy::NOT_SET};
   bool m_protectionStrategyHasBeenSet = false;

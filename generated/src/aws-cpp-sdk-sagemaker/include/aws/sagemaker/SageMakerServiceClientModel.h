@@ -29,6 +29,9 @@
 #include <aws/sagemaker/model/BatchDescribeModelPackageResult.h>
 #include <aws/sagemaker/model/BatchRebootClusterNodesResult.h>
 #include <aws/sagemaker/model/BatchReplaceClusterNodesResult.h>
+#include <aws/sagemaker/model/CreateAIBenchmarkJobResult.h>
+#include <aws/sagemaker/model/CreateAIRecommendationJobResult.h>
+#include <aws/sagemaker/model/CreateAIWorkloadConfigResult.h>
 #include <aws/sagemaker/model/CreateActionResult.h>
 #include <aws/sagemaker/model/CreateAlgorithmResult.h>
 #include <aws/sagemaker/model/CreateAppImageConfigResult.h>
@@ -95,6 +98,9 @@
 #include <aws/sagemaker/model/CreateUserProfileResult.h>
 #include <aws/sagemaker/model/CreateWorkforceResult.h>
 #include <aws/sagemaker/model/CreateWorkteamResult.h>
+#include <aws/sagemaker/model/DeleteAIBenchmarkJobResult.h>
+#include <aws/sagemaker/model/DeleteAIRecommendationJobResult.h>
+#include <aws/sagemaker/model/DeleteAIWorkloadConfigResult.h>
 #include <aws/sagemaker/model/DeleteActionResult.h>
 #include <aws/sagemaker/model/DeleteArtifactRequest.h>
 #include <aws/sagemaker/model/DeleteArtifactResult.h>
@@ -116,6 +122,9 @@
 #include <aws/sagemaker/model/DeleteTrialResult.h>
 #include <aws/sagemaker/model/DeleteWorkforceResult.h>
 #include <aws/sagemaker/model/DeleteWorkteamResult.h>
+#include <aws/sagemaker/model/DescribeAIBenchmarkJobResult.h>
+#include <aws/sagemaker/model/DescribeAIRecommendationJobResult.h>
+#include <aws/sagemaker/model/DescribeAIWorkloadConfigResult.h>
 #include <aws/sagemaker/model/DescribeActionResult.h>
 #include <aws/sagemaker/model/DescribeAlgorithmResult.h>
 #include <aws/sagemaker/model/DescribeAppImageConfigResult.h>
@@ -202,6 +211,12 @@
 #include <aws/sagemaker/model/GetScalingConfigurationRecommendationResult.h>
 #include <aws/sagemaker/model/GetSearchSuggestionsResult.h>
 #include <aws/sagemaker/model/ImportHubContentResult.h>
+#include <aws/sagemaker/model/ListAIBenchmarkJobsRequest.h>
+#include <aws/sagemaker/model/ListAIBenchmarkJobsResult.h>
+#include <aws/sagemaker/model/ListAIRecommendationJobsRequest.h>
+#include <aws/sagemaker/model/ListAIRecommendationJobsResult.h>
+#include <aws/sagemaker/model/ListAIWorkloadConfigsRequest.h>
+#include <aws/sagemaker/model/ListAIWorkloadConfigsResult.h>
 #include <aws/sagemaker/model/ListActionsRequest.h>
 #include <aws/sagemaker/model/ListActionsResult.h>
 #include <aws/sagemaker/model/ListAlgorithmsRequest.h>
@@ -368,6 +383,8 @@
 #include <aws/sagemaker/model/StartMlflowTrackingServerResult.h>
 #include <aws/sagemaker/model/StartPipelineExecutionResult.h>
 #include <aws/sagemaker/model/StartSessionResult.h>
+#include <aws/sagemaker/model/StopAIBenchmarkJobResult.h>
+#include <aws/sagemaker/model/StopAIRecommendationJobResult.h>
 #include <aws/sagemaker/model/StopInferenceExperimentResult.h>
 #include <aws/sagemaker/model/StopMlflowTrackingServerResult.h>
 #include <aws/sagemaker/model/StopPipelineExecutionResult.h>
@@ -455,6 +472,9 @@ class BatchDeleteClusterNodesRequest;
 class BatchDescribeModelPackageRequest;
 class BatchRebootClusterNodesRequest;
 class BatchReplaceClusterNodesRequest;
+class CreateAIBenchmarkJobRequest;
+class CreateAIRecommendationJobRequest;
+class CreateAIWorkloadConfigRequest;
 class CreateActionRequest;
 class CreateAlgorithmRequest;
 class CreateAppRequest;
@@ -523,6 +543,9 @@ class CreateTrialComponentRequest;
 class CreateUserProfileRequest;
 class CreateWorkforceRequest;
 class CreateWorkteamRequest;
+class DeleteAIBenchmarkJobRequest;
+class DeleteAIRecommendationJobRequest;
+class DeleteAIWorkloadConfigRequest;
 class DeleteActionRequest;
 class DeleteAlgorithmRequest;
 class DeleteAppRequest;
@@ -582,6 +605,9 @@ class DeleteUserProfileRequest;
 class DeleteWorkforceRequest;
 class DeleteWorkteamRequest;
 class DeregisterDevicesRequest;
+class DescribeAIBenchmarkJobRequest;
+class DescribeAIRecommendationJobRequest;
+class DescribeAIWorkloadConfigRequest;
 class DescribeActionRequest;
 class DescribeAlgorithmRequest;
 class DescribeAppRequest;
@@ -665,6 +691,9 @@ class GetSagemakerServicecatalogPortfolioStatusRequest;
 class GetScalingConfigurationRecommendationRequest;
 class GetSearchSuggestionsRequest;
 class ImportHubContentRequest;
+class ListAIBenchmarkJobsRequest;
+class ListAIRecommendationJobsRequest;
+class ListAIWorkloadConfigsRequest;
 class ListActionsRequest;
 class ListAlgorithmsRequest;
 class ListAliasesRequest;
@@ -767,6 +796,8 @@ class StartMonitoringScheduleRequest;
 class StartNotebookInstanceRequest;
 class StartPipelineExecutionRequest;
 class StartSessionRequest;
+class StopAIBenchmarkJobRequest;
+class StopAIRecommendationJobRequest;
 class StopAutoMLJobRequest;
 class StopCompilationJobRequest;
 class StopEdgeDeploymentStageRequest;
@@ -840,6 +871,9 @@ typedef Aws::Utils::Outcome<BatchDeleteClusterNodesResult, SageMakerError> Batch
 typedef Aws::Utils::Outcome<BatchDescribeModelPackageResult, SageMakerError> BatchDescribeModelPackageOutcome;
 typedef Aws::Utils::Outcome<BatchRebootClusterNodesResult, SageMakerError> BatchRebootClusterNodesOutcome;
 typedef Aws::Utils::Outcome<BatchReplaceClusterNodesResult, SageMakerError> BatchReplaceClusterNodesOutcome;
+typedef Aws::Utils::Outcome<CreateAIBenchmarkJobResult, SageMakerError> CreateAIBenchmarkJobOutcome;
+typedef Aws::Utils::Outcome<CreateAIRecommendationJobResult, SageMakerError> CreateAIRecommendationJobOutcome;
+typedef Aws::Utils::Outcome<CreateAIWorkloadConfigResult, SageMakerError> CreateAIWorkloadConfigOutcome;
 typedef Aws::Utils::Outcome<CreateActionResult, SageMakerError> CreateActionOutcome;
 typedef Aws::Utils::Outcome<CreateAlgorithmResult, SageMakerError> CreateAlgorithmOutcome;
 typedef Aws::Utils::Outcome<CreateAppResult, SageMakerError> CreateAppOutcome;
@@ -908,6 +942,9 @@ typedef Aws::Utils::Outcome<CreateTrialComponentResult, SageMakerError> CreateTr
 typedef Aws::Utils::Outcome<CreateUserProfileResult, SageMakerError> CreateUserProfileOutcome;
 typedef Aws::Utils::Outcome<CreateWorkforceResult, SageMakerError> CreateWorkforceOutcome;
 typedef Aws::Utils::Outcome<CreateWorkteamResult, SageMakerError> CreateWorkteamOutcome;
+typedef Aws::Utils::Outcome<DeleteAIBenchmarkJobResult, SageMakerError> DeleteAIBenchmarkJobOutcome;
+typedef Aws::Utils::Outcome<DeleteAIRecommendationJobResult, SageMakerError> DeleteAIRecommendationJobOutcome;
+typedef Aws::Utils::Outcome<DeleteAIWorkloadConfigResult, SageMakerError> DeleteAIWorkloadConfigOutcome;
 typedef Aws::Utils::Outcome<DeleteActionResult, SageMakerError> DeleteActionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteAlgorithmOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteAppOutcome;
@@ -967,6 +1004,9 @@ typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteUserProfileOutc
 typedef Aws::Utils::Outcome<DeleteWorkforceResult, SageMakerError> DeleteWorkforceOutcome;
 typedef Aws::Utils::Outcome<DeleteWorkteamResult, SageMakerError> DeleteWorkteamOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeregisterDevicesOutcome;
+typedef Aws::Utils::Outcome<DescribeAIBenchmarkJobResult, SageMakerError> DescribeAIBenchmarkJobOutcome;
+typedef Aws::Utils::Outcome<DescribeAIRecommendationJobResult, SageMakerError> DescribeAIRecommendationJobOutcome;
+typedef Aws::Utils::Outcome<DescribeAIWorkloadConfigResult, SageMakerError> DescribeAIWorkloadConfigOutcome;
 typedef Aws::Utils::Outcome<DescribeActionResult, SageMakerError> DescribeActionOutcome;
 typedef Aws::Utils::Outcome<DescribeAlgorithmResult, SageMakerError> DescribeAlgorithmOutcome;
 typedef Aws::Utils::Outcome<DescribeAppResult, SageMakerError> DescribeAppOutcome;
@@ -1051,6 +1091,9 @@ typedef Aws::Utils::Outcome<GetSagemakerServicecatalogPortfolioStatusResult, Sag
 typedef Aws::Utils::Outcome<GetScalingConfigurationRecommendationResult, SageMakerError> GetScalingConfigurationRecommendationOutcome;
 typedef Aws::Utils::Outcome<GetSearchSuggestionsResult, SageMakerError> GetSearchSuggestionsOutcome;
 typedef Aws::Utils::Outcome<ImportHubContentResult, SageMakerError> ImportHubContentOutcome;
+typedef Aws::Utils::Outcome<ListAIBenchmarkJobsResult, SageMakerError> ListAIBenchmarkJobsOutcome;
+typedef Aws::Utils::Outcome<ListAIRecommendationJobsResult, SageMakerError> ListAIRecommendationJobsOutcome;
+typedef Aws::Utils::Outcome<ListAIWorkloadConfigsResult, SageMakerError> ListAIWorkloadConfigsOutcome;
 typedef Aws::Utils::Outcome<ListActionsResult, SageMakerError> ListActionsOutcome;
 typedef Aws::Utils::Outcome<ListAlgorithmsResult, SageMakerError> ListAlgorithmsOutcome;
 typedef Aws::Utils::Outcome<ListAliasesResult, SageMakerError> ListAliasesOutcome;
@@ -1154,6 +1197,8 @@ typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StartMonitoringSchedu
 typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StartNotebookInstanceOutcome;
 typedef Aws::Utils::Outcome<StartPipelineExecutionResult, SageMakerError> StartPipelineExecutionOutcome;
 typedef Aws::Utils::Outcome<StartSessionResult, SageMakerError> StartSessionOutcome;
+typedef Aws::Utils::Outcome<StopAIBenchmarkJobResult, SageMakerError> StopAIBenchmarkJobOutcome;
+typedef Aws::Utils::Outcome<StopAIRecommendationJobResult, SageMakerError> StopAIRecommendationJobOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopAutoMLJobOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopCompilationJobOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopEdgeDeploymentStageOutcome;
@@ -1227,6 +1272,9 @@ typedef std::future<BatchDeleteClusterNodesOutcome> BatchDeleteClusterNodesOutco
 typedef std::future<BatchDescribeModelPackageOutcome> BatchDescribeModelPackageOutcomeCallable;
 typedef std::future<BatchRebootClusterNodesOutcome> BatchRebootClusterNodesOutcomeCallable;
 typedef std::future<BatchReplaceClusterNodesOutcome> BatchReplaceClusterNodesOutcomeCallable;
+typedef std::future<CreateAIBenchmarkJobOutcome> CreateAIBenchmarkJobOutcomeCallable;
+typedef std::future<CreateAIRecommendationJobOutcome> CreateAIRecommendationJobOutcomeCallable;
+typedef std::future<CreateAIWorkloadConfigOutcome> CreateAIWorkloadConfigOutcomeCallable;
 typedef std::future<CreateActionOutcome> CreateActionOutcomeCallable;
 typedef std::future<CreateAlgorithmOutcome> CreateAlgorithmOutcomeCallable;
 typedef std::future<CreateAppOutcome> CreateAppOutcomeCallable;
@@ -1295,6 +1343,9 @@ typedef std::future<CreateTrialComponentOutcome> CreateTrialComponentOutcomeCall
 typedef std::future<CreateUserProfileOutcome> CreateUserProfileOutcomeCallable;
 typedef std::future<CreateWorkforceOutcome> CreateWorkforceOutcomeCallable;
 typedef std::future<CreateWorkteamOutcome> CreateWorkteamOutcomeCallable;
+typedef std::future<DeleteAIBenchmarkJobOutcome> DeleteAIBenchmarkJobOutcomeCallable;
+typedef std::future<DeleteAIRecommendationJobOutcome> DeleteAIRecommendationJobOutcomeCallable;
+typedef std::future<DeleteAIWorkloadConfigOutcome> DeleteAIWorkloadConfigOutcomeCallable;
 typedef std::future<DeleteActionOutcome> DeleteActionOutcomeCallable;
 typedef std::future<DeleteAlgorithmOutcome> DeleteAlgorithmOutcomeCallable;
 typedef std::future<DeleteAppOutcome> DeleteAppOutcomeCallable;
@@ -1354,6 +1405,9 @@ typedef std::future<DeleteUserProfileOutcome> DeleteUserProfileOutcomeCallable;
 typedef std::future<DeleteWorkforceOutcome> DeleteWorkforceOutcomeCallable;
 typedef std::future<DeleteWorkteamOutcome> DeleteWorkteamOutcomeCallable;
 typedef std::future<DeregisterDevicesOutcome> DeregisterDevicesOutcomeCallable;
+typedef std::future<DescribeAIBenchmarkJobOutcome> DescribeAIBenchmarkJobOutcomeCallable;
+typedef std::future<DescribeAIRecommendationJobOutcome> DescribeAIRecommendationJobOutcomeCallable;
+typedef std::future<DescribeAIWorkloadConfigOutcome> DescribeAIWorkloadConfigOutcomeCallable;
 typedef std::future<DescribeActionOutcome> DescribeActionOutcomeCallable;
 typedef std::future<DescribeAlgorithmOutcome> DescribeAlgorithmOutcomeCallable;
 typedef std::future<DescribeAppOutcome> DescribeAppOutcomeCallable;
@@ -1437,6 +1491,9 @@ typedef std::future<GetSagemakerServicecatalogPortfolioStatusOutcome> GetSagemak
 typedef std::future<GetScalingConfigurationRecommendationOutcome> GetScalingConfigurationRecommendationOutcomeCallable;
 typedef std::future<GetSearchSuggestionsOutcome> GetSearchSuggestionsOutcomeCallable;
 typedef std::future<ImportHubContentOutcome> ImportHubContentOutcomeCallable;
+typedef std::future<ListAIBenchmarkJobsOutcome> ListAIBenchmarkJobsOutcomeCallable;
+typedef std::future<ListAIRecommendationJobsOutcome> ListAIRecommendationJobsOutcomeCallable;
+typedef std::future<ListAIWorkloadConfigsOutcome> ListAIWorkloadConfigsOutcomeCallable;
 typedef std::future<ListActionsOutcome> ListActionsOutcomeCallable;
 typedef std::future<ListAlgorithmsOutcome> ListAlgorithmsOutcomeCallable;
 typedef std::future<ListAliasesOutcome> ListAliasesOutcomeCallable;
@@ -1539,6 +1596,8 @@ typedef std::future<StartMonitoringScheduleOutcome> StartMonitoringScheduleOutco
 typedef std::future<StartNotebookInstanceOutcome> StartNotebookInstanceOutcomeCallable;
 typedef std::future<StartPipelineExecutionOutcome> StartPipelineExecutionOutcomeCallable;
 typedef std::future<StartSessionOutcome> StartSessionOutcomeCallable;
+typedef std::future<StopAIBenchmarkJobOutcome> StopAIBenchmarkJobOutcomeCallable;
+typedef std::future<StopAIRecommendationJobOutcome> StopAIRecommendationJobOutcomeCallable;
 typedef std::future<StopAutoMLJobOutcome> StopAutoMLJobOutcomeCallable;
 typedef std::future<StopCompilationJobOutcome> StopCompilationJobOutcomeCallable;
 typedef std::future<StopEdgeDeploymentStageOutcome> StopEdgeDeploymentStageOutcomeCallable;
@@ -1633,6 +1692,15 @@ typedef std::function<void(const SageMakerClient*, const Model::BatchRebootClust
 typedef std::function<void(const SageMakerClient*, const Model::BatchReplaceClusterNodesRequest&,
                            const Model::BatchReplaceClusterNodesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     BatchReplaceClusterNodesResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::CreateAIBenchmarkJobRequest&, const Model::CreateAIBenchmarkJobOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateAIBenchmarkJobResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::CreateAIRecommendationJobRequest&,
+                           const Model::CreateAIRecommendationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateAIRecommendationJobResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::CreateAIWorkloadConfigRequest&, const Model::CreateAIWorkloadConfigOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateAIWorkloadConfigResponseReceivedHandler;
 typedef std::function<void(const SageMakerClient*, const Model::CreateActionRequest&, const Model::CreateActionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateActionResponseReceivedHandler;
@@ -1849,6 +1917,15 @@ typedef std::function<void(const SageMakerClient*, const Model::CreateWorkforceR
 typedef std::function<void(const SageMakerClient*, const Model::CreateWorkteamRequest&, const Model::CreateWorkteamOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateWorkteamResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::DeleteAIBenchmarkJobRequest&, const Model::DeleteAIBenchmarkJobOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteAIBenchmarkJobResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::DeleteAIRecommendationJobRequest&,
+                           const Model::DeleteAIRecommendationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteAIRecommendationJobResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::DeleteAIWorkloadConfigRequest&, const Model::DeleteAIWorkloadConfigOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteAIWorkloadConfigResponseReceivedHandler;
 typedef std::function<void(const SageMakerClient*, const Model::DeleteActionRequest&, const Model::DeleteActionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteActionResponseReceivedHandler;
@@ -2034,6 +2111,15 @@ typedef std::function<void(const SageMakerClient*, const Model::DeleteWorkteamRe
 typedef std::function<void(const SageMakerClient*, const Model::DeregisterDevicesRequest&, const Model::DeregisterDevicesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeregisterDevicesResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::DescribeAIBenchmarkJobRequest&, const Model::DescribeAIBenchmarkJobOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeAIBenchmarkJobResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::DescribeAIRecommendationJobRequest&,
+                           const Model::DescribeAIRecommendationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeAIRecommendationJobResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::DescribeAIWorkloadConfigRequest&,
+                           const Model::DescribeAIWorkloadConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeAIWorkloadConfigResponseReceivedHandler;
 typedef std::function<void(const SageMakerClient*, const Model::DescribeActionRequest&, const Model::DescribeActionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeActionResponseReceivedHandler;
@@ -2299,6 +2385,15 @@ typedef std::function<void(const SageMakerClient*, const Model::GetSearchSuggest
 typedef std::function<void(const SageMakerClient*, const Model::ImportHubContentRequest&, const Model::ImportHubContentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ImportHubContentResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::ListAIBenchmarkJobsRequest&, const Model::ListAIBenchmarkJobsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListAIBenchmarkJobsResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::ListAIRecommendationJobsRequest&,
+                           const Model::ListAIRecommendationJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListAIRecommendationJobsResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::ListAIWorkloadConfigsRequest&, const Model::ListAIWorkloadConfigsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListAIWorkloadConfigsResponseReceivedHandler;
 typedef std::function<void(const SageMakerClient*, const Model::ListActionsRequest&, const Model::ListActionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListActionsResponseReceivedHandler;
@@ -2617,6 +2712,12 @@ typedef std::function<void(const SageMakerClient*, const Model::StartPipelineExe
 typedef std::function<void(const SageMakerClient*, const Model::StartSessionRequest&, const Model::StartSessionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartSessionResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::StopAIBenchmarkJobRequest&, const Model::StopAIBenchmarkJobOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StopAIBenchmarkJobResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::StopAIRecommendationJobRequest&,
+                           const Model::StopAIRecommendationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StopAIRecommendationJobResponseReceivedHandler;
 typedef std::function<void(const SageMakerClient*, const Model::StopAutoMLJobRequest&, const Model::StopAutoMLJobOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StopAutoMLJobResponseReceivedHandler;

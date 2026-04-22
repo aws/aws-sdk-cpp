@@ -6,15 +6,15 @@
 #pragma once
 #include <aws/compute-optimizer-automation/ComputeOptimizerAutomation_EXPORTS.h>
 #include <aws/compute-optimizer-automation/model/EstimatedMonthlySavings.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ComputeOptimizerAutomation {
 namespace Model {
@@ -28,21 +28,21 @@ namespace Model {
 class RecommendedActionTotal {
  public:
   AWS_COMPUTEOPTIMIZERAUTOMATION_API RecommendedActionTotal() = default;
-  AWS_COMPUTEOPTIMIZERAUTOMATION_API RecommendedActionTotal(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZERAUTOMATION_API RecommendedActionTotal& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPUTEOPTIMIZERAUTOMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPUTEOPTIMIZERAUTOMATION_API RecommendedActionTotal(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZERAUTOMATION_API RecommendedActionTotal& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZERAUTOMATION_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p>The total number of recommended actions in this group.</p>
    */
-  inline int GetRecommendedActionCount() const { return m_recommendedActionCount; }
+  inline int64_t GetRecommendedActionCount() const { return m_recommendedActionCount; }
   inline bool RecommendedActionCountHasBeenSet() const { return m_recommendedActionCountHasBeenSet; }
-  inline void SetRecommendedActionCount(int value) {
+  inline void SetRecommendedActionCount(int64_t value) {
     m_recommendedActionCountHasBeenSet = true;
     m_recommendedActionCount = value;
   }
-  inline RecommendedActionTotal& WithRecommendedActionCount(int value) {
+  inline RecommendedActionTotal& WithRecommendedActionCount(int64_t value) {
     SetRecommendedActionCount(value);
     return *this;
   }
@@ -64,7 +64,7 @@ class RecommendedActionTotal {
   }
   ///@}
  private:
-  int m_recommendedActionCount{0};
+  int64_t m_recommendedActionCount{0};
 
   EstimatedMonthlySavings m_estimatedMonthlySavings;
   bool m_recommendedActionCountHasBeenSet = false;

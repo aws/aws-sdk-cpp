@@ -5,16 +5,16 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace GameLift {
 namespace Model {
@@ -28,9 +28,9 @@ namespace Model {
 class PlayerConnectionEndpoint {
  public:
   AWS_GAMELIFT_API PlayerConnectionEndpoint() = default;
-  AWS_GAMELIFT_API PlayerConnectionEndpoint(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API PlayerConnectionEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_GAMELIFT_API PlayerConnectionEndpoint(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API PlayerConnectionEndpoint& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -58,13 +58,13 @@ class PlayerConnectionEndpoint {
    * enabled, this is a player gateway port. When player gateway is disabled, this is
    * the game server port.</p>
    */
-  inline int GetPort() const { return m_port; }
+  inline int64_t GetPort() const { return m_port; }
   inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
-  inline void SetPort(int value) {
+  inline void SetPort(int64_t value) {
     m_portHasBeenSet = true;
     m_port = value;
   }
-  inline PlayerConnectionEndpoint& WithPort(int value) {
+  inline PlayerConnectionEndpoint& WithPort(int64_t value) {
     SetPort(value);
     return *this;
   }
@@ -72,7 +72,7 @@ class PlayerConnectionEndpoint {
  private:
   Aws::String m_ipAddress;
 
-  int m_port{0};
+  int64_t m_port{0};
   bool m_ipAddressHasBeenSet = false;
   bool m_portHasBeenSet = false;
 };

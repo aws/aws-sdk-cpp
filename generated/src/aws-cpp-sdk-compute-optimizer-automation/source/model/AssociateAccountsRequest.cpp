@@ -4,34 +4,48 @@
  */
 
 #include <aws/compute-optimizer-automation/model/AssociateAccountsRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::ComputeOptimizerAutomation::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String AssociateAccountsRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_accountIdsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_clientTokenHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_accountIdsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> accountIdsJsonList(m_accountIds.size());
-    for (unsigned accountIdsIndex = 0; accountIdsIndex < accountIdsJsonList.GetLength(); ++accountIdsIndex) {
-      accountIdsJsonList[accountIdsIndex].AsString(m_accountIds[accountIdsIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("accountIds"));
+    encoder.WriteArrayStart(m_accountIds.size());
+    for (const auto& item_0 : m_accountIds) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("accountIds", std::move(accountIdsJsonList));
   }
 
   if (m_clientTokenHasBeenSet) {
-    payload.WithString("clientToken", m_clientToken);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("clientToken"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_clientToken.c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection AssociateAccountsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ComputeOptimizerAutomationService.AssociateAccounts"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

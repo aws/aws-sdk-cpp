@@ -6,16 +6,16 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace GameLift {
 namespace Model {
@@ -45,9 +45,9 @@ namespace Model {
 class ContainerHealthCheck {
  public:
   AWS_GAMELIFT_API ContainerHealthCheck() = default;
-  AWS_GAMELIFT_API ContainerHealthCheck(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API ContainerHealthCheck& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_GAMELIFT_API ContainerHealthCheck(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API ContainerHealthCheck& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -78,13 +78,13 @@ class ContainerHealthCheck {
   /**
    * <p>The time period (in seconds) between each health check.</p>
    */
-  inline int GetInterval() const { return m_interval; }
+  inline int64_t GetInterval() const { return m_interval; }
   inline bool IntervalHasBeenSet() const { return m_intervalHasBeenSet; }
-  inline void SetInterval(int value) {
+  inline void SetInterval(int64_t value) {
     m_intervalHasBeenSet = true;
     m_interval = value;
   }
-  inline ContainerHealthCheck& WithInterval(int value) {
+  inline ContainerHealthCheck& WithInterval(int64_t value) {
     SetInterval(value);
     return *this;
   }
@@ -95,13 +95,13 @@ class ContainerHealthCheck {
    * <p>The number of times to retry a failed health check before flagging the
    * container unhealthy. The first run of the command does not count as a retry.</p>
    */
-  inline int GetRetries() const { return m_retries; }
+  inline int64_t GetRetries() const { return m_retries; }
   inline bool RetriesHasBeenSet() const { return m_retriesHasBeenSet; }
-  inline void SetRetries(int value) {
+  inline void SetRetries(int64_t value) {
     m_retriesHasBeenSet = true;
     m_retries = value;
   }
-  inline ContainerHealthCheck& WithRetries(int value) {
+  inline ContainerHealthCheck& WithRetries(int64_t value) {
     SetRetries(value);
     return *this;
   }
@@ -112,13 +112,13 @@ class ContainerHealthCheck {
    * <p>The optional grace period (in seconds) to give a container time to bootstrap
    * before the first failed health check counts toward the number of retries.</p>
    */
-  inline int GetStartPeriod() const { return m_startPeriod; }
+  inline int64_t GetStartPeriod() const { return m_startPeriod; }
   inline bool StartPeriodHasBeenSet() const { return m_startPeriodHasBeenSet; }
-  inline void SetStartPeriod(int value) {
+  inline void SetStartPeriod(int64_t value) {
     m_startPeriodHasBeenSet = true;
     m_startPeriod = value;
   }
-  inline ContainerHealthCheck& WithStartPeriod(int value) {
+  inline ContainerHealthCheck& WithStartPeriod(int64_t value) {
     SetStartPeriod(value);
     return *this;
   }
@@ -129,13 +129,13 @@ class ContainerHealthCheck {
    * <p>The time period (in seconds) to wait for a health check to succeed before
    * counting a failed health check. </p>
    */
-  inline int GetTimeout() const { return m_timeout; }
+  inline int64_t GetTimeout() const { return m_timeout; }
   inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
-  inline void SetTimeout(int value) {
+  inline void SetTimeout(int64_t value) {
     m_timeoutHasBeenSet = true;
     m_timeout = value;
   }
-  inline ContainerHealthCheck& WithTimeout(int value) {
+  inline ContainerHealthCheck& WithTimeout(int64_t value) {
     SetTimeout(value);
     return *this;
   }
@@ -143,13 +143,13 @@ class ContainerHealthCheck {
  private:
   Aws::Vector<Aws::String> m_command;
 
-  int m_interval{0};
+  int64_t m_interval{0};
 
-  int m_retries{0};
+  int64_t m_retries{0};
 
-  int m_startPeriod{0};
+  int64_t m_startPeriod{0};
 
-  int m_timeout{0};
+  int64_t m_timeout{0};
   bool m_commandHasBeenSet = false;
   bool m_intervalHasBeenSet = false;
   bool m_retriesHasBeenSet = false;

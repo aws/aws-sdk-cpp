@@ -20,6 +20,12 @@ static const int ml_p4de_24xlarge_HASH = HashingUtils::HashString("ml.p4de.24xla
 static const int ml_p5_48xlarge_HASH = HashingUtils::HashString("ml.p5.48xlarge");
 static const int ml_p5e_48xlarge_HASH = HashingUtils::HashString("ml.p5e.48xlarge");
 static const int ml_p5en_48xlarge_HASH = HashingUtils::HashString("ml.p5en.48xlarge");
+static const int ml_g4dn_xlarge_HASH = HashingUtils::HashString("ml.g4dn.xlarge");
+static const int ml_g4dn_2xlarge_HASH = HashingUtils::HashString("ml.g4dn.2xlarge");
+static const int ml_g4dn_4xlarge_HASH = HashingUtils::HashString("ml.g4dn.4xlarge");
+static const int ml_g4dn_8xlarge_HASH = HashingUtils::HashString("ml.g4dn.8xlarge");
+static const int ml_g4dn_12xlarge_HASH = HashingUtils::HashString("ml.g4dn.12xlarge");
+static const int ml_g4dn_16xlarge_HASH = HashingUtils::HashString("ml.g4dn.16xlarge");
 static const int ml_g5_xlarge_HASH = HashingUtils::HashString("ml.g5.xlarge");
 static const int ml_g5_2xlarge_HASH = HashingUtils::HashString("ml.g5.2xlarge");
 static const int ml_g5_4xlarge_HASH = HashingUtils::HashString("ml.g5.4xlarge");
@@ -64,6 +70,18 @@ OptimizationJobDeploymentInstanceType GetOptimizationJobDeploymentInstanceTypeFo
     return OptimizationJobDeploymentInstanceType::ml_p5e_48xlarge;
   } else if (hashCode == ml_p5en_48xlarge_HASH) {
     return OptimizationJobDeploymentInstanceType::ml_p5en_48xlarge;
+  } else if (hashCode == ml_g4dn_xlarge_HASH) {
+    return OptimizationJobDeploymentInstanceType::ml_g4dn_xlarge;
+  } else if (hashCode == ml_g4dn_2xlarge_HASH) {
+    return OptimizationJobDeploymentInstanceType::ml_g4dn_2xlarge;
+  } else if (hashCode == ml_g4dn_4xlarge_HASH) {
+    return OptimizationJobDeploymentInstanceType::ml_g4dn_4xlarge;
+  } else if (hashCode == ml_g4dn_8xlarge_HASH) {
+    return OptimizationJobDeploymentInstanceType::ml_g4dn_8xlarge;
+  } else if (hashCode == ml_g4dn_12xlarge_HASH) {
+    return OptimizationJobDeploymentInstanceType::ml_g4dn_12xlarge;
+  } else if (hashCode == ml_g4dn_16xlarge_HASH) {
+    return OptimizationJobDeploymentInstanceType::ml_g4dn_16xlarge;
   } else if (hashCode == ml_g5_xlarge_HASH) {
     return OptimizationJobDeploymentInstanceType::ml_g5_xlarge;
   } else if (hashCode == ml_g5_2xlarge_HASH) {
@@ -150,6 +168,18 @@ Aws::String GetNameForOptimizationJobDeploymentInstanceType(OptimizationJobDeplo
       return "ml.p5e.48xlarge";
     case OptimizationJobDeploymentInstanceType::ml_p5en_48xlarge:
       return "ml.p5en.48xlarge";
+    case OptimizationJobDeploymentInstanceType::ml_g4dn_xlarge:
+      return "ml.g4dn.xlarge";
+    case OptimizationJobDeploymentInstanceType::ml_g4dn_2xlarge:
+      return "ml.g4dn.2xlarge";
+    case OptimizationJobDeploymentInstanceType::ml_g4dn_4xlarge:
+      return "ml.g4dn.4xlarge";
+    case OptimizationJobDeploymentInstanceType::ml_g4dn_8xlarge:
+      return "ml.g4dn.8xlarge";
+    case OptimizationJobDeploymentInstanceType::ml_g4dn_12xlarge:
+      return "ml.g4dn.12xlarge";
+    case OptimizationJobDeploymentInstanceType::ml_g4dn_16xlarge:
+      return "ml.g4dn.16xlarge";
     case OptimizationJobDeploymentInstanceType::ml_g5_xlarge:
       return "ml.g5.xlarge";
     case OptimizationJobDeploymentInstanceType::ml_g5_2xlarge:
