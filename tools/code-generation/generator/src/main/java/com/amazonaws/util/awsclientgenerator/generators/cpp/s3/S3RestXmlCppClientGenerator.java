@@ -149,7 +149,12 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
             "ChecksumCRC32", "CRC32",
             "ChecksumCRC32C", "CRC32C",
             "ChecksumSHA1", "SHA1",
-            "ChecksumSHA256", "SHA256"
+            "ChecksumSHA256", "SHA256",
+            "ChecksumSHA512", "SHA512",
+            "ChecksumXXHASH64", "XXHASH64",
+            "ChecksumXXHASH3", "XXHASH3",
+            "ChecksumXXHASH128", "XXHASH128",
+            "ChecksumMD5", "MD5"
     );
 
     static {

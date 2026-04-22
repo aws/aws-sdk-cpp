@@ -482,7 +482,7 @@ namespace {
         },
         HttpResponseCode::OK,
         "Then all at once he was standing there"
-      }
+      },
     };
 
     for (const auto&testCase: testCases) {

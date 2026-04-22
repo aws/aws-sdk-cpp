@@ -1480,6 +1480,34 @@ namespace
             },
             {
                 [](PutObjectRequest request) -> PutObjectRequest {
+                  return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA512).WithChecksumSHA512("If he came back and wanted you?");
+                },
+                HttpResponseCode::BAD_REQUEST,
+                "If he came back and wanted you?"
+            },
+            {
+                [](PutObjectRequest request) -> PutObjectRequest {
+                  return request.WithChecksumAlgorithm(ChecksumAlgorithm::XXHASH64).WithChecksumXXHASH64("If he came back and wanted you?");
+                },
+                HttpResponseCode::BAD_REQUEST,
+                "If he came back and wanted you?"
+            },
+            {
+                [](PutObjectRequest request) -> PutObjectRequest {
+                  return request.WithChecksumAlgorithm(ChecksumAlgorithm::XXHASH3).WithChecksumXXHASH3("If he came back and wanted you?");
+                },
+                HttpResponseCode::BAD_REQUEST,
+                "If he came back and wanted you?"
+            },
+            {
+                [](PutObjectRequest request) -> PutObjectRequest {
+                  return request.WithChecksumAlgorithm(ChecksumAlgorithm::XXHASH128).WithChecksumXXHASH128("If he came back and wanted you?");
+                },
+                HttpResponseCode::BAD_REQUEST,
+                "If he came back and wanted you?"
+            },
+            {
+                [](PutObjectRequest request) -> PutObjectRequest {
                     return request.WithContentMD5("Just runnin' scared, feelin' low");
                 },
                 HttpResponseCode::BAD_REQUEST,
@@ -1523,7 +1551,109 @@ namespace
                 },
                 HttpResponseCode::OK,
                 "So sure of himself, his head in the air"
-            }
+            },
+            {
+                [](PutObjectRequest request) -> PutObjectRequest {
+                  return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA512)
+                      .WithChecksumSHA512(HashingUtils::Base64Encode(HashingUtils::CalculateSHA512("If he came back, which one would you choose?")));
+                },
+                HttpResponseCode::OK,
+                "If he came back, which one would you choose?"
+            },
+            {
+                [](PutObjectRequest request) -> PutObjectRequest {
+                  return request.WithChecksumAlgorithm(ChecksumAlgorithm::XXHASH64)
+                      .WithChecksumXXHASH64(HashingUtils::Base64Encode(HashingUtils::CalculateXXHash64("If he came back, which one would you choose?")));
+                },
+                HttpResponseCode::OK,
+                "If he came back, which one would you choose?"
+            },
+            {
+                [](PutObjectRequest request) -> PutObjectRequest {
+                  return request.WithChecksumAlgorithm(ChecksumAlgorithm::XXHASH3)
+                      .WithChecksumXXHASH3(HashingUtils::Base64Encode(HashingUtils::CalculateXXHash3("If he came back, which one would you choose?")));
+                },
+                HttpResponseCode::OK,
+                "If he came back, which one would you choose?"
+            },
+            {
+                [](PutObjectRequest request) -> PutObjectRequest {
+                  return request.WithChecksumAlgorithm(ChecksumAlgorithm::XXHASH128)
+                      .WithChecksumXXHASH128(HashingUtils::Base64Encode(HashingUtils::CalculateXXHash128("If he came back, which one would you choose?")));
+                },
+                HttpResponseCode::OK,
+                "If he came back, which one would you choose?"
+            },
+            {
+                [](PutObjectRequest request) -> PutObjectRequest {
+                  return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA512);
+                },
+                HttpResponseCode::OK,
+                "If he came back, which one would you choose?"
+            },
+            {
+                [](PutObjectRequest request) -> PutObjectRequest {
+                  return request.WithChecksumAlgorithm(ChecksumAlgorithm::XXHASH64);
+                },
+                HttpResponseCode::OK,
+                "If he came back, which one would you choose?"
+            },
+            {
+                [](PutObjectRequest request) -> PutObjectRequest {
+                  return request.WithChecksumAlgorithm(ChecksumAlgorithm::XXHASH3);
+                },
+                HttpResponseCode::OK,
+                "If he came back, which one would you choose?"
+            },
+            {
+                [](PutObjectRequest request) -> PutObjectRequest {
+                  return request.WithChecksumAlgorithm(ChecksumAlgorithm::XXHASH128);
+                },
+                HttpResponseCode::OK,
+                "If he came back, which one would you choose?"
+            },
+            {
+                [](PutObjectRequest request) -> PutObjectRequest {
+                  return request.WithChecksumSHA512(HashingUtils::Base64Encode(HashingUtils::CalculateSHA512("If he came back, which one would you choose?")));
+                },
+                HttpResponseCode::OK,
+                "If he came back, which one would you choose?"
+            },
+            {
+                [](PutObjectRequest request) -> PutObjectRequest {
+                  return request.WithChecksumXXHASH64(HashingUtils::Base64Encode(HashingUtils::CalculateXXHash64("If he came back, which one would you choose?")));
+                },
+                HttpResponseCode::OK,
+                "If he came back, which one would you choose?"
+            },
+            {
+                [](PutObjectRequest request) -> PutObjectRequest {
+                  return request.WithChecksumXXHASH3(HashingUtils::Base64Encode(HashingUtils::CalculateXXHash3("If he came back, which one would you choose?")));
+                },
+                HttpResponseCode::OK,
+                "If he came back, which one would you choose?"
+            },
+            {
+                [](PutObjectRequest request) -> PutObjectRequest {
+                  return request.WithChecksumXXHASH128(HashingUtils::Base64Encode(HashingUtils::CalculateXXHash128("If he came back, which one would you choose?")));
+                },
+                HttpResponseCode::OK,
+                "If he came back, which one would you choose?"
+            },
+            {
+                [](PutObjectRequest request) -> PutObjectRequest {
+                  return request.WithChecksumMD5(HashingUtils::Base64Encode(HashingUtils::CalculateMD5("If he came back, which one would you choose?")));
+                },
+                HttpResponseCode::OK,
+                "If he came back, which one would you choose?"
+            },
+            {
+                [](PutObjectRequest request) -> PutObjectRequest {
+                  return request.WithChecksumAlgorithm(ChecksumAlgorithm::MD5);
+                },
+                HttpResponseCode::BAD_REQUEST,
+                "If he came back, which one would you choose?"
+            },
         };
 
         for (const auto&testCase: testCases) {
